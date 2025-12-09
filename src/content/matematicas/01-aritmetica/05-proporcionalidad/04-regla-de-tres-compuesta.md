@@ -6,21 +6,20 @@ En este tema aprenderemos a resolver problemas donde intervienen más de dos mag
 
 ## 📖 ¿Qué es la regla de tres compuesta?
 
-La **regla de tres compuesta** se usa cuando hay tres o más magnitudes relacionadas, pudiendo ser algunas directas y otras inversas.
+La **regla de tres compuesta** se usa cuando hay tres o más magnitudes relacionadas, pudiendo ser algunas directas y otras inversas respecto a la incógnita.
 
 ---
 
 ## 📖 Método de resolución
 
-1. **Identificar** todas las magnitudes
-2. **Colocar** la incógnita $x$ al final
-3. **Determinar** si cada magnitud es directa o inversa respecto a $x$
-4. **Invertir** las razones de las magnitudes inversas
-5. **Multiplicar** todas las razones
+1. **Identificar** todas las magnitudes y la incógnita
+2. **Determinar** si cada magnitud es directa o inversa respecto a la incógnita
+3. **Invertir** las razones de las magnitudes inversas
+4. **Multiplicar** todas las razones
 
 ---
 
-## 📖 Ejemplo paso a paso
+## 📖 Ejemplo 1 — Dos magnitudes inversas
 
 Si $6$ obreros trabajando $8$ horas diarias terminan una obra en $15$ días, ¿cuántos días tardarán $4$ obreros trabajando $10$ horas diarias?
 
@@ -30,7 +29,7 @@ Si $6$ obreros trabajando $8$ horas diarias terminan una obra en $15$ días, ¿c
 | Horas/día | $8$ | $10$ | Inversa (más horas → menos días) |
 | Días | $15$ | $x$ | — |
 
-**Aplicamos:**
+**Solución:**
 
 $$
 x = 15 \times \frac{6}{4} \times \frac{8}{10}
@@ -46,26 +45,17 @@ $$
 
 ---
 
-## 📖 Regla para invertir
-
-| Relación con $x$ | Acción | Razón |
-|------------------|--------|-------|
-| Directa | Mantener | $\frac{A_2}{A_1}$ |
-| Inversa | Invertir | $\frac{A_1}{A_2}$ |
-
----
-
-## ⚙️ Ejercicio 1 — Tres magnitudes
+## 📖 Ejemplo 2 — Magnitudes directas
 
 $8$ máquinas producen $200$ piezas en $5$ días. ¿Cuántas piezas producen $12$ máquinas en $4$ días?
 
-### ✅ Solución
-
-| Magnitud | Dato 1 | Dato 2 | Relación |
-|----------|--------|--------|----------|
-| Máquinas | $8$ | $12$ | Directa |
-| Días | $5$ | $4$ | Directa |
+| Magnitud | Dato 1 | Dato 2 | Relación con piezas |
+|----------|--------|--------|---------------------|
+| Máquinas | $8$ | $12$ | Directa (más máquinas → más piezas) |
+| Días | $5$ | $4$ | Directa (más días → más piezas) |
 | Piezas | $200$ | $x$ | — |
+
+**Solución:**
 
 $$
 x = 200 \times \frac{12}{8} \times \frac{4}{5}
@@ -81,54 +71,19 @@ $$
 
 ---
 
-## ⚙️ Ejercicio 2 — Trabajo y personas
+## 📖 Regla para las razones
 
-$5$ pintores pintan $3$ casas en $12$ días. ¿Cuántos días tardan $9$ pintores en pintar $6$ casas?
-
-### ✅ Solución
-
-| Magnitud | Dato 1 | Dato 2 | Relación |
-|----------|--------|--------|----------|
-| Pintores | $5$ | $9$ | Inversa |
-| Casas | $3$ | $6$ | Directa |
-| Días | $12$ | $x$ | — |
-
-$$
-x = 12 \times \frac{5}{9} \times \frac{6}{3}
-$$
-
-$$
-x = 12 \times \frac{30}{27} = 12 \times \frac{10}{9} = \frac{120}{9} = 13.\overline{3}
-$$
-
-$$
-\boxed{\text{Tardan } 13.\overline{3} \text{ días} \approx 14 \text{ días}}
-$$
+| Relación con $x$ | Acción | Razón |
+|------------------|--------|-------|
+| Directa | Mantener | $\frac{A_2}{A_1}$ |
+| Inversa | Invertir | $\frac{A_1}{A_2}$ |
 
 ---
 
-## ⚙️ Ejercicio 3 — Consumo de recursos
+## 📝 Ejercicios de práctica
 
-$4$ personas consumen $60$ kg de alimento en $10$ días. ¿Cuántos kg consumen $6$ personas en $15$ días?
+**Ejercicio 1:** $5$ pintores pintan $3$ casas en $12$ días. ¿Cuántos días tardan $9$ pintores en pintar $6$ casas?
 
-### ✅ Solución
-
-| Magnitud | Dato 1 | Dato 2 | Relación |
-|----------|--------|--------|----------|
-| Personas | $4$ | $6$ | Directa |
-| Días | $10$ | $15$ | Directa |
-| Alimento | $60$ | $x$ | — |
-
-$$
-x = 60 \times \frac{6}{4} \times \frac{15}{10}
-$$
-
-$$
-x = 60 \times \frac{90}{40} = 60 \times 2.25 = 135
-$$
-
-$$
-\boxed{\text{Consumen } 135 \text{ kg}}
-$$
+**Ejercicio 2:** $4$ personas consumen $60$ kg de alimento en $10$ días. ¿Cuántos kg consumen $6$ personas en $15$ días?
 
 ---

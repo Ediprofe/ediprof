@@ -10,10 +10,18 @@ $$
 \log_b(m \times n) = \log_b(m) + \log_b(n)
 $$
 
-### Ejemplo
+### Ejemplo 1
 
 $$
 \log_2(8 \times 4) = \log_2(8) + \log_2(4) = 3 + 2 = 5
+$$
+
+---
+
+### Ejemplo 2
+
+$$
+\log_3(9 \times 27) = \log_3(9) + \log_3(27) = 2 + 3 = 5
 $$
 
 ---
@@ -24,10 +32,18 @@ $$
 \log_b\left(\frac{m}{n}\right) = \log_b(m) - \log_b(n)
 $$
 
-### Ejemplo
+### Ejemplo 1
 
 $$
-\log_{10}\left(\frac{1000}{10}\right) = \log_{10}(1000) - \log_{10}(10) = 3 - 1 = 2
+\log_2\left(\frac{32}{4}\right) = \log_2(32) - \log_2(4) = 5 - 2 = 3
+$$
+
+---
+
+### Ejemplo 2
+
+$$
+\log_{10}(1000) - \log_{10}(10) = 3 - 1 = 2
 $$
 
 ---
@@ -38,83 +54,30 @@ $$
 \log_b(m^n) = n \times \log_b(m)
 $$
 
-### Ejemplo
+### Ejemplo 1
 
 $$
-\log_3(9^2) = 2 \times \log_3(9) = 2 \times 2 = 4
-$$
-
----
-
-## 📖 Cambio de base
-
-$$
-\log_b(a) = \frac{\log_c(a)}{\log_c(b)}
-$$
-
-### Ejemplo
-
-$$
-\log_2(8) = \frac{\log_{10}(8)}{\log_{10}(2)} = \frac{0.903}{0.301} = 3
+\log_2(8^2) = 2 \times \log_2(8) = 2 \times 3 = 6
 $$
 
 ---
 
-## 📖 Resumen de propiedades
-
-| Propiedad | Fórmula |
-|-----------|---------|
-| Producto | $\log_b(mn) = \log_b(m) + \log_b(n)$ |
-| Cociente | $\log_b(m/n) = \log_b(m) - \log_b(n)$ |
-| Potencia | $\log_b(m^n) = n \cdot \log_b(m)$ |
-| Cambio de base | $\log_b(a) = \frac{\log_c(a)}{\log_c(b)}$ |
-
----
-
-## ⚙️ Ejercicio 1 — Logaritmo de producto
-
-Expande: $\log_5(25 \times 125)$
-
-### ✅ Solución
+### Ejemplo 2
 
 $$
-\log_5(25) + \log_5(125) = 2 + 3 = \boxed{5}
+\log_3(27^2) = 2 \times \log_3(27) = 2 \times 3 = 6
 $$
 
 ---
 
-## ⚙️ Ejercicio 2 — Logaritmo de cociente
+## 📝 Ejercicios de práctica
 
-Calcula: $\log_2(32) - \log_2(4)$
+**Ejercicio 1:** Expande $\log_5(25 \times 125)$
 
-### ✅ Solución
+**Ejercicio 2:** Simplifica $\log_2(64) - \log_2(8)$
 
-$$
-\log_2\left(\frac{32}{4}\right) = \log_2(8) = \boxed{3}
-$$
+**Ejercicio 3:** Calcula $\log_2(16^3)$
 
----
-
-## ⚙️ Ejercicio 3 — Logaritmo de potencia
-
-Simplifica: $\log_3(27^2)$
-
-### ✅ Solución
-
-$$
-2 \times \log_3(27) = 2 \times 3 = \boxed{6}
-$$
-
----
-
-## ⚙️ Ejercicio 4 — Expresión combinada
-
-Simplifica: $\log_2(8) + \log_2(4) - \log_2(16)$
-
-### ✅ Solución
-
-$$
-\log_2\left(\frac{8 \times 4}{16}\right) = \log_2\left(\frac{32}{16}\right) = \log_2(2) = \boxed{1}
-$$
+**Ejercicio 4:** Simplifica $\log_3(9) + \log_3(27) - \log_3(81)$
 
 ---

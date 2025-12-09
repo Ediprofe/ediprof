@@ -1,141 +1,55 @@
 # 🛠️ Taller: Aplicaciones de Proporcionalidad
 
-En este taller resolveremos problemas variados que integran todos los conceptos de proporcionalidad aprendidos.
+Este taller integra todos los conceptos de proporcionalidad aprendidos en este tema.
 
 ---
 
-## 🎯 Problema 1 — Escala de mapas
+## 📝 Problemas de práctica
 
-En un mapa, $2$ cm representan $50$ km de distancia real. Si dos ciudades están a $7$ cm en el mapa, ¿cuál es la distancia real?
+### Razones y proporciones
 
-### ✅ Solución
+**Problema 1:** En un mapa, $2$ cm representan $50$ km de distancia real. Si dos ciudades están a $7$ cm en el mapa, ¿cuál es la distancia real?
 
-$$
-\frac{2 \text{ cm}}{50 \text{ km}} = \frac{7 \text{ cm}}{x}
-$$
-
-$$
-x = \frac{7 \times 50}{2} = \frac{350}{2} = 175
-$$
-
-$$
-\boxed{\text{Distancia real: } 175 \text{ km}}
-$$
+**Problema 2:** En una receta, por cada $3$ tazas de harina se usan $2$ huevos. Si tienes $9$ tazas de harina, ¿cuántos huevos necesitas?
 
 ---
 
-## 🎯 Problema 2 — Mezclas
+### Proporcionalidad directa e inversa
 
-Para preparar un jugo se mezclan agua y concentrado en razón $4:1$. Si se quieren preparar $2.5$ litros, ¿cuánto de cada ingrediente se necesita?
+**Problema 3:** Un ciclista recorre $60$ km en $3$ horas. A la misma velocidad, ¿cuánto tiempo tardará en recorrer $100$ km?
 
-### ✅ Solución
-
-Proporción $4:1$, suma $= 5$
-
-$$
-\text{Agua} = \frac{4}{5} \times 2.5 = \boxed{2 \text{ L}}
-$$
-
-$$
-\text{Concentrado} = \frac{1}{5} \times 2.5 = \boxed{0.5 \text{ L}}
-$$
+**Problema 4:** $3$ albañiles construyen un muro en $8$ días. ¿Cuántos albañiles se necesitan para hacerlo en $2$ días?
 
 ---
 
-## 🎯 Problema 3 — Velocidad y tiempo
+### Regla de tres simple
 
-Un ciclista recorre $60$ km en $3$ horas. A la misma velocidad, ¿cuánto tiempo tardará en recorrer $100$ km?
+**Problema 5:** Si $12$ lápices cuestan \$$36$, ¿cuánto cuestan $20$ lápices?
 
-### ✅ Solución
-
-Directa: más distancia → más tiempo
-
-$$
-x = \frac{100 \times 3}{60} = \frac{300}{60} = 5
-$$
-
-$$
-\boxed{\text{Tardará } 5 \text{ horas}}
-$$
+**Problema 6:** Si $5$ bombas vacían un tanque en $6$ horas, ¿cuánto tardan $10$ bombas?
 
 ---
 
-## 🎯 Problema 4 — Trabajo conjunto
+### Regla de tres compuesta
 
-$3$ albañiles construyen un muro en $8$ días. ¿Cuántos albañiles se necesitan para hacerlo en $2$ días?
+**Problema 7:** $6$ máquinas producen $300$ piezas en $4$ días. ¿Cuántas piezas producen $9$ máquinas en $6$ días?
 
-### ✅ Solución
-
-Inversa: menos días → más albañiles
-
-$$
-x = \frac{3 \times 8}{2} = \frac{24}{2} = 12
-$$
-
-$$
-\boxed{\text{Se necesitan } 12 \text{ albañiles}}
-$$
+**Problema 8:** $4$ obreros trabajando $6$ horas diarias terminan una obra en $10$ días. ¿Cuántos días tardan $8$ obreros trabajando $5$ horas diarias?
 
 ---
 
-## 🎯 Problema 5 — Descuento sucesivo
+### Porcentajes
 
-Un artículo de \$$500$ tiene primero un $20\%$ de descuento y luego un $10\%$ adicional. ¿Cuál es el precio final?
+**Problema 9:** Un artículo de \$$850$ tiene primero un $20\%$ de descuento y luego un $10\%$ adicional. ¿Cuál es el precio final?
 
-### ✅ Solución
-
-**Primer descuento:**
-
-$$
-500 \times 0.80 = 400
-$$
-
-**Segundo descuento:**
-
-$$
-400 \times 0.90 = 360
-$$
-
-$$
-\boxed{\text{Precio final: } \$360}
-$$
+**Problema 10:** Si se invierten \$$2000$ al $6\%$ anual simple, ¿cuánto interés se gana en $4$ años?
 
 ---
 
-## 🎯 Problema 6 — Interés simple
+### Repartos proporcionales
 
-Si se invierten \$$1000$ al $5\%$ anual simple, ¿cuánto interés se gana en $3$ años?
+**Problema 11:** Una herencia de \$$120,000$ se reparte entre $3$ hermanos en proporción a sus edades: $18$, $24$ y $30$ años. ¿Cuánto recibe cada uno?
 
-### ✅ Solución
-
-$$
-I = C \times r \times t = 1000 \times 0.05 \times 3 = 150
-$$
-
-$$
-\boxed{\text{Interés: } \$150}
-$$
-
----
-
-## 🎯 Problema 7 — Reparto de herencia
-
-Una herencia de \$$90,000$ se reparte entre $3$ hermanos en proporción a sus edades: $20$, $25$ y $30$ años. ¿Cuánto recibe cada uno?
-
-### ✅ Solución
-
-Suma: $20 + 25 + 30 = 75$
-
-$$
-\text{Hermano 1} = \frac{20}{75} \times 90000 = \boxed{\$24,000}
-$$
-
-$$
-\text{Hermano 2} = \frac{25}{75} \times 90000 = \boxed{\$30,000}
-$$
-
-$$
-\text{Hermano 3} = \frac{30}{75} \times 90000 = \boxed{\$36,000}
-$$
+**Problema 12:** \$$480$ se reparten inversamente proporcional a $2$, $4$ y $8$. ¿Cuánto recibe cada parte?
 
 ---

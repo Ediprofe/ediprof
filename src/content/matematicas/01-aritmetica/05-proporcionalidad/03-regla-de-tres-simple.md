@@ -1,18 +1,18 @@
 # 🔢 Regla de Tres Simple
 
-En este tema aprenderemos a resolver problemas de proporcionalidad usando la regla de tres simple.
+En este tema aprenderemos a resolver problemas de proporcionalidad usando la regla de tres simple, que puede ser directa o inversa.
 
 ---
 
 ## 📖 ¿Qué es la regla de tres simple?
 
-La **regla de tres simple** es un método para encontrar un valor desconocido cuando hay dos magnitudes proporcionales.
+La **regla de tres simple** es un método para encontrar un valor desconocido cuando hay dos magnitudes proporcionales. Se llama "simple" porque solo intervienen dos magnitudes.
 
 ---
 
 ## 📖 Regla de tres directa
 
-Se usa cuando las magnitudes son **directamente proporcionales**.
+Se usa cuando las magnitudes son **directamente proporcionales**, es decir, cuando al aumentar una, la otra también aumenta.
 
 ### Estructura
 
@@ -29,9 +29,11 @@ $$
 x = \frac{A_2 \times B_1}{A_1}
 $$
 
-### Ejemplo
+### Ejemplo 1
 
 Si $3$ kg de naranjas cuestan \$$45$, ¿cuánto cuestan $5$ kg?
+
+**Análisis:** Más kilogramos → más dinero (directa)
 
 $$
 \begin{array}{ccc}
@@ -39,6 +41,8 @@ $$
 5 \text{ kg} & \longrightarrow & x
 \end{array}
 $$
+
+**Solución:**
 
 $$
 x = \frac{5 \times 45}{3} = \frac{225}{3} = 75
@@ -50,9 +54,34 @@ $$
 
 ---
 
+### Ejemplo 2
+
+Un auto recorre $180$ km con $12$ litros de gasolina. ¿Cuántos km recorre con $20$ litros?
+
+**Análisis:** Más gasolina → más kilómetros (directa)
+
+$$
+\begin{array}{ccc}
+12 \text{ L} & \longrightarrow & 180 \text{ km} \\
+20 \text{ L} & \longrightarrow & x
+\end{array}
+$$
+
+**Solución:**
+
+$$
+x = \frac{20 \times 180}{12} = \frac{3600}{12} = 300
+$$
+
+$$
+\boxed{\text{Recorre } 300 \text{ km}}
+$$
+
+---
+
 ## 📖 Regla de tres inversa
 
-Se usa cuando las magnitudes son **inversamente proporcionales**.
+Se usa cuando las magnitudes son **inversamente proporcionales**, es decir, cuando al aumentar una, la otra disminuye.
 
 ### Fórmula
 
@@ -60,9 +89,11 @@ $$
 x = \frac{A_1 \times B_1}{A_2}
 $$
 
-### Ejemplo
+### Ejemplo 1
 
 Si $4$ obreros terminan un trabajo en $15$ días, ¿cuántos días tardarán $6$ obreros?
+
+**Análisis:** Más obreros → menos días (inversa)
 
 $$
 \begin{array}{ccc}
@@ -71,7 +102,7 @@ $$
 \end{array}
 $$
 
-Más obreros → menos días (inversa)
+**Solución:**
 
 $$
 x = \frac{4 \times 15}{6} = \frac{60}{6} = 10
@@ -83,82 +114,45 @@ $$
 
 ---
 
-## 📖 Pasos para resolver
+### Ejemplo 2
 
-1. **Identificar** las magnitudes
-2. **Determinar** si es directa o inversa
-3. **Plantear** la regla de tres
-4. **Aplicar** la fórmula correspondiente
-5. **Verificar** que la respuesta tenga sentido
+Una llave llena un tanque en $8$ horas. ¿Cuánto tardan $4$ llaves iguales trabajando juntas?
 
----
-
-## ⚙️ Ejercicio 1 — Directa
-
-Un auto recorre $240$ km con $20$ litros de gasolina. ¿Cuántos km recorre con $35$ litros?
-
-### ✅ Solución
-
-Más gasolina → más km (directa)
+**Análisis:** Más llaves → menos tiempo (inversa)
 
 $$
-x = \frac{35 \times 240}{20} = \frac{8400}{20} = 420
+\begin{array}{ccc}
+1 \text{ llave} & \longrightarrow & 8 \text{ horas} \\
+4 \text{ llaves} & \longrightarrow & x
+\end{array}
+$$
+
+**Solución:**
+
+$$
+x = \frac{1 \times 8}{4} = \frac{8}{4} = 2
 $$
 
 $$
-\boxed{\text{Recorre } 420 \text{ km}}
+\boxed{4 \text{ llaves tardan } 2 \text{ horas}}
 $$
 
 ---
 
-## ⚙️ Ejercicio 2 — Inversa
+## 📝 Ejercicios de práctica
 
-Una llave llena un tanque en $6$ horas. ¿Cuánto tardan $3$ llaves iguales?
+### Regla de tres directa
 
-### ✅ Solución
+**Ejercicio 1:** Si $8$ metros de tela cuestan \$$120$, ¿cuánto cuestan $15$ metros?
 
-Más llaves → menos tiempo (inversa)
-
-$$
-x = \frac{1 \times 6}{3} = 2
-$$
-
-$$
-\boxed{\text{Tardan } 2 \text{ horas}}
-$$
+**Ejercicio 2:** Una máquina produce $200$ piezas en $5$ horas. ¿Cuántas piezas produce en $8$ horas?
 
 ---
 
-## ⚙️ Ejercicio 3 — Directa con dinero
+### Regla de tres inversa
 
-Si $8$ metros de tela cuestan \$$120$, ¿cuánto cuestan $12$ metros?
+**Ejercicio 3:** Un tren viaja de A a B en $4$ horas a $90$ km/h. ¿Cuánto tarda a $120$ km/h?
 
-### ✅ Solución
-
-$$
-x = \frac{12 \times 120}{8} = \frac{1440}{8} = 180
-$$
-
-$$
-\boxed{12 \text{ metros cuestan } \$180}
-$$
-
----
-
-## ⚙️ Ejercicio 4 — Inversa con velocidad
-
-Un tren viaja de A a B en $4$ horas a $90$ km/h. ¿Cuánto tarda a $120$ km/h?
-
-### ✅ Solución
-
-Más velocidad → menos tiempo (inversa)
-
-$$
-x = \frac{90 \times 4}{120} = \frac{360}{120} = 3
-$$
-
-$$
-\boxed{\text{Tarda } 3 \text{ horas}}
-$$
+**Ejercicio 4:** Si $5$ pintores pintan una casa en $12$ días, ¿cuántos días tardan $10$ pintores?
 
 ---

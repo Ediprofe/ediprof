@@ -4,12 +4,6 @@ En este tema aprenderemos a identificar y trabajar con magnitudes directa e inve
 
 ---
 
-## 📖 Magnitudes proporcionales
-
-Dos magnitudes son **proporcionales** cuando al variar una, la otra varía de manera constante y predecible.
-
----
-
 ## 📖 Proporcionalidad directa
 
 Dos magnitudes son **directamente proporcionales** cuando al aumentar una, la otra aumenta en la misma proporción (y viceversa).
@@ -22,18 +16,33 @@ $$
 
 * Si una se duplica, la otra se duplica
 * Si una se reduce a la mitad, la otra también
-* El cociente entre ellas es constante
+* El **cociente** entre ellas es constante
 
-### Ejemplo
+### Ejemplo 1
 
 | Kg de manzanas | Precio (\$) | Razón |
 |----------------|-------------|-------|
 | $1$ | $25$ | $25$ |
 | $2$ | $50$ | $25$ |
 | $3$ | $75$ | $25$ |
-| $4$ | $100$ | $25$ |
 
-La constante $k = 25$ (precio por kg).
+La constante $k = 25$ (precio por kg). Más kg → más dinero.
+
+---
+
+### Ejemplo 2
+
+Un grifo llena $10$ litros en $2$ minutos. ¿Cuántos litros llena en $5$ minutos?
+
+**Análisis:** Más tiempo → más litros (directa)
+
+$$
+\frac{10}{2} = \frac{x}{5}
+$$
+
+$$
+x = \frac{10 \times 5}{2} = 25 \text{ litros}
+$$
 
 ---
 
@@ -48,18 +57,33 @@ $$
 ### Características
 
 * Si una se duplica, la otra se reduce a la mitad
-* El producto entre ellas es constante
+* El **producto** entre ellas es constante
 
-### Ejemplo
+### Ejemplo 1
 
 | Trabajadores | Días para terminar | Producto |
 |--------------|-------------------|----------|
 | $2$ | $12$ | $24$ |
 | $3$ | $8$ | $24$ |
 | $4$ | $6$ | $24$ |
-| $6$ | $4$ | $24$ |
 
-La constante $k = 24$ (trabajo total).
+La constante $k = 24$. Más trabajadores → menos días.
+
+---
+
+### Ejemplo 2
+
+Si $6$ obreros terminan una obra en $10$ días, ¿cuántos días tardarán $4$ obreros?
+
+**Análisis:** Menos obreros → más días (inversa)
+
+$$
+6 \times 10 = 4 \times x
+$$
+
+$$
+60 = 4x \quad \Rightarrow \quad x = 15 \text{ días}
+$$
 
 ---
 
@@ -72,82 +96,24 @@ La constante $k = 24$ (trabajo total).
 
 ---
 
-## ⚙️ Ejercicio 1 — Identificar tipo
+## 📝 Ejercicios de práctica
 
-Clasifica como directa (D) o inversa (I):
+### Identificar tipo
 
-1. Litros de gasolina y kilómetros recorridos
-2. Velocidad y tiempo de viaje (distancia fija)
-3. Número de obreros y días de trabajo
-4. Horas trabajadas y salario
-
-### ✅ Solución
-
-1. Más gasolina → más km → $\boxed{\text{Directa}}$
-2. Más velocidad → menos tiempo → $\boxed{\text{Inversa}}$
-3. Más obreros → menos días → $\boxed{\text{Inversa}}$
-4. Más horas → más salario → $\boxed{\text{Directa}}$
+**Ejercicio 1:** Clasifica como directa o inversa:
+- a) Litros de gasolina y kilómetros recorridos
+- b) Velocidad y tiempo de viaje (distancia fija)
 
 ---
 
-## ⚙️ Ejercicio 2 — Proporcionalidad directa
+### Proporcionalidad directa
 
-Si $5$ cuadernos cuestan \$$40$, ¿cuánto cuestan $8$ cuadernos?
-
-### ✅ Solución
-
-$$
-\frac{5}{40} = \frac{8}{x}
-$$
-
-$$
-5x = 40 \times 8 = 320
-$$
-
-$$
-x = 64
-$$
-
-$$
-\boxed{8 \text{ cuadernos cuestan } \$64}
-$$
+**Ejercicio 2:** Si $5$ cuadernos cuestan \$$40$, ¿cuánto cuestan $12$ cuadernos?
 
 ---
 
-## ⚙️ Ejercicio 3 — Proporcionalidad inversa
+### Proporcionalidad inversa
 
-Si $6$ obreros terminan una obra en $10$ días, ¿cuántos días tardarán $4$ obreros?
-
-### ✅ Solución
-
-Producto constante: $6 \times 10 = 60$
-
-$$
-4 \times x = 60
-$$
-
-$$
-x = 15
-$$
-
-$$
-\boxed{4 \text{ obreros tardarán } 15 \text{ días}}
-$$
-
----
-
-## ⚙️ Ejercicio 4 — Completar tablas
-
-**Directa ($k = 3$):**
-
-| $x$ | $1$ | $2$ | $4$ | $?$ |
-|-----|-----|-----|-----|-----|
-| $y$ | $3$ | $6$ | $?$ | $15$ |
-
-### ✅ Solución
-
-$y = 3x$, entonces:
-- $x = 4$ → $y = \boxed{12}$
-- $y = 15$ → $x = \boxed{5}$
+**Ejercicio 3:** Si $8$ grifos llenan un tanque en $6$ horas, ¿cuánto tardan $12$ grifos?
 
 ---

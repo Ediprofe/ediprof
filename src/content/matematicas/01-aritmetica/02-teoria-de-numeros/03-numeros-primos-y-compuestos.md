@@ -1,163 +1,109 @@
-# 🔍 Números Primos y Compuestos
+# 🔢 Números Primos y Compuestos
 
-Ahora que conocemos los divisores, podemos clasificar los números naturales según cuántos divisores tienen. Esta clasificación es clave para la factorización.
-
----
-
-## 📖 Números Primos
-
-Un número es **primo** si tiene **exactamente dos divisores**: el $1$ y él mismo.
-
-$$
-\text{Número primo: } D(p) = \{1, p\}
-$$
-
-### Ejemplos de números primos
-
-| Número | Divisores | ¿Es primo? |
-|--------|-----------|------------|
-| $2$ | $\{1, 2\}$ | ✓ |
-| $3$ | $\{1, 3\}$ | ✓ |
-| $5$ | $\{1, 5\}$ | ✓ |
-| $7$ | $\{1, 7\}$ | ✓ |
-| $11$ | $\{1, 11\}$ | ✓ |
-
-### Propiedades de los primos
-
-* El $2$ es el **único primo par**.
-* El $1$ **no es primo** (solo tiene un divisor).
-* Hay **infinitos** números primos.
+En este tema aprenderemos a distinguir entre números primos y compuestos.
 
 ---
 
-## 📖 Números Compuestos
+## 📖 Números primos
 
-Un número es **compuesto** si tiene **más de dos divisores**.
+Un **número primo** es aquel que solo tiene dos divisores: el $1$ y él mismo.
 
-$$
-\text{Número compuesto: } |D(n)| > 2
-$$
+### Ejemplo 1
 
-### Ejemplos de números compuestos
-
-| Número | Divisores | ¿Es compuesto? |
-|--------|-----------|----------------|
-| $4$ | $\{1, 2, 4\}$ | ✓ |
-| $6$ | $\{1, 2, 3, 6\}$ | ✓ |
-| $9$ | $\{1, 3, 9\}$ | ✓ |
-| $12$ | $\{1, 2, 3, 4, 6, 12\}$ | ✓ |
-
-### Propiedad clave
-
-Todo número compuesto puede expresarse como **producto de números primos**.
-
----
-
-## 🔢 Clasificación de los números naturales
-
-| Categoría | Descripción | Ejemplos |
-|-----------|-------------|----------|
-| Ni primo ni compuesto | $1$ (solo un divisor) | $1$ |
-| Primo | Exactamente 2 divisores | $2, 3, 5, 7, 11, 13$ |
-| Compuesto | Más de 2 divisores | $4, 6, 8, 9, 10, 12$ |
-
----
-
-## 🧮 Criba de Eratóstenes
-
-Es un método antiguo para encontrar todos los primos hasta un número dado.
-
-### Procedimiento
-
-1. Escribir los números del $2$ hasta $n$.
-2. Tachar los múltiplos de $2$ (excepto el $2$).
-3. Tachar los múltiplos de $3$ (excepto el $3$).
-4. Continuar con el siguiente número no tachado.
-5. Los números que quedan sin tachar son **primos**.
-
-### Ejemplo: Primos hasta 30
-
-Después de aplicar la criba:
+$7$ es primo porque solo es divisible por $1$ y $7$.
 
 $$
-\{2, 3, 5, 7, 11, 13, 17, 19, 23, 29\}
+D(7) = \{1, 7\}
 $$
 
 ---
 
-## ⚙️ Ejercicio 1 — Identificar primos y compuestos
+### Ejemplo 2
 
-Clasifica los siguientes números como primos o compuestos: $15$, $17$, $21$, $23$, $25$.
-
-### ✅ Solución
-
-| Número | Divisores | Clasificación |
-|--------|-----------|---------------|
-| $15$ | $\{1, 3, 5, 15\}$ | Compuesto |
-| $17$ | $\{1, 17\}$ | Primo |
-| $21$ | $\{1, 3, 7, 21\}$ | Compuesto |
-| $23$ | $\{1, 23\}$ | Primo |
-| $25$ | $\{1, 5, 25\}$ | Compuesto |
-
----
-
-## ⚙️ Ejercicio 2 — Primos entre 40 y 60
-
-Encuentra todos los números primos entre $40$ y $60$.
-
-### ✅ Solución
-
-Verificamos cada número:
-
-| Número | ¿Es primo? | Justificación |
-|--------|------------|---------------|
-| $41$ | ✓ | Solo divisible por $1$ y $41$ |
-| $43$ | ✓ | Solo divisible por $1$ y $43$ |
-| $47$ | ✓ | Solo divisible por $1$ y $47$ |
-| $53$ | ✓ | Solo divisible por $1$ y $53$ |
-| $59$ | ✓ | Solo divisible por $1$ y $59$ |
+$13$ es primo porque solo es divisible por $1$ y $13$.
 
 $$
-\boxed{\text{Primos entre 40 y 60: } 41, 43, 47, 53, 59}
+D(13) = \{1, 13\}
 $$
 
 ---
 
-## ⚙️ Ejercicio 3 — ¿Es primo?
+## 📖 Números compuestos
 
-Determina si $91$ es primo o compuesto.
+Un **número compuesto** tiene más de dos divisores.
 
-### ✅ Solución
+### Ejemplo 1
 
-Probamos dividir entre primos pequeños:
-
-* $91 \div 2 = 45.5$ ✗
-* $91 \div 3 = 30.33...$ ✗
-* $91 \div 5 = 18.2$ ✗
-* $91 \div 7 = 13$ ✓
-
-Como $91 = 7 \times 13$, tiene más de dos divisores.
+$12$ es compuesto porque tiene más de dos divisores.
 
 $$
-\boxed{91 \text{ es compuesto}}
+D(12) = \{1, 2, 3, 4, 6, 12\}
 $$
 
 ---
 
-## ⚙️ Ejercicio 4 — Suma de primos
+### Ejemplo 2
 
-Expresa $30$ como suma de dos números primos.
-
-### ✅ Solución
-
-Probamos combinaciones:
-
-* $30 = 7 + 23$ ✓ (ambos son primos)
-* $30 = 11 + 19$ ✓ (ambos son primos)
-* $30 = 13 + 17$ ✓ (ambos son primos)
+$15$ es compuesto.
 
 $$
-\boxed{30 = 7 + 23 = 11 + 19 = 13 + 17}
+D(15) = \{1, 3, 5, 15\}
 $$
+
+---
+
+## 📖 Casos especiales
+
+* El número $1$ **no es primo ni compuesto**
+* El número $2$ es el único primo par
+
+---
+
+## 📖 Primeros números primos
+
+$$
+2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, \ldots
+$$
+
+---
+
+## 📖 Cómo identificar si un número es primo
+
+Para saber si $n$ es primo, verificamos si tiene divisores entre $2$ y $\sqrt{n}$.
+
+### Ejemplo 1
+
+¿Es $29$ primo?
+
+$\sqrt{29} \approx 5.4$, verificamos divisibilidad por 2, 3, 5:
+- No es par
+- $2+9 = 11$ (no múltiplo de 3)
+- No termina en 0 o 5
+
+$29$ **es primo** ✓
+
+---
+
+### Ejemplo 2
+
+¿Es $51$ primo?
+
+$\sqrt{51} \approx 7.1$, verificamos por 2, 3, 5, 7:
+- $5+1 = 6$ (múltiplo de 3)
+- $51 = 3 \times 17$
+
+$51$ **no es primo** ✗
+
+---
+
+## 📝 Ejercicios de práctica
+
+**Ejercicio 1:** Clasifica como primo o compuesto: $23$, $35$, $41$.
+
+**Ejercicio 2:** Escribe todos los números primos menores que $30$.
+
+**Ejercicio 3:** ¿Es $97$ un número primo?
+
+**Ejercicio 4:** Encuentra los divisores de $28$ y clasifícalo.
 
 ---
