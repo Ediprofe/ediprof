@@ -9,7 +9,7 @@ import { youtubeAutoEmbed } from './src/plugins/youtube-auto-embed.js';
 import tableWrapper from './src/plugins/table-wrapper.js';
 
 export default defineConfig({
-  site: 'https://ediprofe.com',
+  site: process.env.URL || 'https://ediprofe.com',
   output: 'static',
   build: {
     format: 'directory'
