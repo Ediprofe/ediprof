@@ -10,6 +10,10 @@ import tableWrapper from './src/plugins/table-wrapper.js';
 
 export default defineConfig({
   site: 'https://ediprofe.com',
+  output: 'static',
+  build: {
+    format: 'directory'
+  },
   integrations: [
     mdx(),
     sitemap({
