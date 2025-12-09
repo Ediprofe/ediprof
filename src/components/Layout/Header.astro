@@ -1,0 +1,69 @@
+---
+/**
+ * Header/Navegación superior - Componente para página principal
+ * Solo muestra logo y ThemeToggle (sin menú hamburguesa)
+ */
+import ThemeToggle from '../UI/ThemeToggle.astro';
+---
+
+<nav class="top-nav">
+  <div class="nav-content">
+    <a href="/" class="nav-brand">
+      <span class="nav-logo">🎓</span>
+      <span class="nav-name">Ediprofe</span>
+    </a>
+    <div class="nav-actions">
+      <ThemeToggle />
+    </div>
+  </div>
+</nav>
+
+<style>
+  .top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 0.625rem 1.5rem;
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    text-decoration: none;
+    color: white;
+  }
+
+  .nav-brand:hover {
+    text-decoration: none;
+  }
+
+  .nav-logo {
+    font-size: 1.5rem;
+  }
+
+  .nav-name {
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: -0.02em;
+  }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+</style>

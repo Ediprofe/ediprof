@@ -1,0 +1,280 @@
+---
+import TopBar from '../components/Layout/TopBar.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  type?: 'website' | 'article';
+  publishedTime?: string;
+  modifiedTime?: string;
+  showTopBar?: boolean;
+}
+
+const { 
+  title, 
+  description = 'Guía educativa para ciencias y matemáticas. Lecciones estructuradas con videos explicativos, material didáctico y recursos descargables.',
+  image = '/og-image.svg',
+  type = 'website',
+  publishedTime,
+  modifiedTime,
+  showTopBar = true
+} = Astro.props;
+
+const siteTitle = 'Ediprofe';
+const fullTitle = title === 'Inicio' ? siteTitle : `${title} | ${siteTitle}`;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://ediprofe.com');
+const ogImage = new URL(image, Astro.site || 'https://ediprofe.com');
+
+// Structured Data para SEO
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "Ediprofe",
+  "description": description,
+  "url": "https://ediprofe.com",
+  "logo": "https://ediprofe.com/logo.svg",
+  "sameAs": [
+    "https://www.youtube.com/@profeedi",
+    "https://www.tiktok.com/@ediprofe"
+  ],
+  "teaches": [
+    {
+      "@type": "Course",
+      "name": "Matemáticas",
+      "description": "Lecciones de álgebra, geometría y más"
+    },
+    {
+      "@type": "Course", 
+      "name": "Física",
+      "description": "Conceptos fundamentales de física"
+    },
+    {
+      "@type": "Course",
+      "name": "Química",
+      "description": "Química general y aplicada"
+    },
+    {
+      "@type": "Course",
+      "name": "Ciencias Naturales",
+      "description": "Biología y ciencias de la naturaleza"
+    }
+  ]
+};
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO básico -->
+  <title>{fullTitle}</title>
+  <meta name="description" content={description}>
+  <meta name="keywords" content="matemáticas, física, química, ciencias, educación, lecciones, ejercicios, aprendizaje, estudiantes, bachillerato, universidad, tutoriales">
+  <meta name="author" content="Ediprofe">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow">
+  <link rel="canonical" href={canonicalURL}>
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content={type}>
+  <meta property="og:url" content={canonicalURL}>
+  <meta property="og:title" content={fullTitle}>
+  <meta property="og:description" content={description}>
+  <meta property="og:image" content={ogImage}>
+  <meta property="og:site_name" content="Ediprofe">
+  <meta property="og:locale" content="es_ES">
+  {publishedTime && <meta property="article:published_time" content={publishedTime} />}
+  {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content={canonicalURL}>
+  <meta name="twitter:title" content={fullTitle}>
+  <meta name="twitter:description" content={description}>
+  <meta name="twitter:image" content={ogImage}>
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  
+  <!-- Preconnect para performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://i.ytimg.com">
+  <link rel="dns-prefetch" href="https://www.youtube-nocookie.com">
+  
+  <!-- Fonts con display swap para mejor rendimiento -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+  
+  <!-- KaTeX CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#2563eb">
+  
+  </head>
+<body>
+  {showTopBar && <TopBar />}
+  <slot />
+</body>
+</html>
+
+<style is:global>
+  :root {
+    --color-primary: #2563eb;
+    --color-secondary: #3b82f6;
+    --color-accent: #60a5fa;
+    --bg-primary: #f8fafc;
+    --bg-secondary: #ffffff;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --sidebar-width: 280px;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+  }
+
+  a {
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  /* Utilidades globales */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  /* Modo claro - explícito */
+  html.light {
+    --bg-primary: #f8fafc;
+    --bg-secondary: #ffffff;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --border-color: #e2e8f0;
+  }
+
+  /* Modo oscuro - por clase */
+  html.dark {
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --border-color: #334155;
+  }
+
+  /* Modo oscuro - por preferencia del sistema (fallback cuando no hay clase) */
+  @media (prefers-color-scheme: dark) {
+    html:not(.light):not(.dark) {
+      --bg-primary: #0f172a;
+      --bg-secondary: #1e293b;
+      --text-primary: #f1f5f9;
+      --text-secondary: #cbd5e1;
+      --border-color: #334155;
+    }
+  }
+
+  /* Print styles */
+  @media print {
+    .video-container,
+    nav,
+    .sidebar,
+    .theme-toggle,
+    .mobile-menu {
+      display: none !important;
+    }
+    
+    .lesson-container {
+      grid-template-columns: 1fr !important;
+    }
+    
+    .content-article {
+      box-shadow: none !important;
+    }
+  }
+
+  /* ========================================
+     GOOGLE DRIVE LINK
+     ======================================== */
+
+  a[href*="drive.google.com"] {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+    padding: 0.875rem 1.25rem !important;
+    margin: 1rem 0 !important;
+    background: linear-gradient(135deg, #4285f4 0%, #1a73e8 100%) !important;
+    border-radius: 10px !important;
+    text-decoration: none !important;
+    font-size: 0 !important;
+    transition: all 0.2s ease !important;
+    white-space: nowrap !important;
+    box-shadow: 0 2px 8px rgba(66, 133, 244, 0.3) !important;
+  }
+
+  a[href*="drive.google.com"] > * {
+    display: none !important;
+  }
+
+  a[href*="drive.google.com"]::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/%3E%3Cpath d='M14 2v6h6'/%3E%3Cpath d='M16 13H8'/%3E%3Cpath d='M16 17H8'/%3E%3C/svg%3E") no-repeat center;
+    background-size: contain;
+    flex-shrink: 0;
+  }
+
+  a[href*="drive.google.com"]::after {
+    content: 'Ver documento';
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: white;
+    letter-spacing: -0.01em;
+  }
+
+  a[href*="drive.google.com"]:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 16px rgba(66, 133, 244, 0.4) !important;
+    text-decoration: none !important;
+  }
+
+  a[href*="drive.google.com"]:active {
+    transform: translateY(0) !important;
+  }
+
+  /* Carpetas de Drive */
+  a[href*="drive.google.com/folders"]::before {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z'/%3E%3C/svg%3E");
+  }
+
+  a[href*="drive.google.com/folders"]::after {
+    content: 'Abrir carpeta';
+  }
+</style>

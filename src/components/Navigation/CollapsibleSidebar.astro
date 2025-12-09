@@ -1,0 +1,179 @@
+---
+import { getCollection } from 'astro:content';
+import { buildNavigationFromLessonsWithCollection, mergeNavigations } from '../../utils/navigation-generator.js';
+import { allMeta } from '../../utils/load-meta';
+import { materiaConfig, getMateriaConfig } from '../../config/materias';
+import { MATERIA_SLUGS, isMateriaSlug } from '../../types/content';
+
+interface Props {
+  currentPath: string;
+}
+
+const { currentPath } = Astro.props;
+
+// Obtener navegación de cada colección
+let navigation: any = {};
+
+try {
+  const matematicas = await getCollection('matematicas');
+  const navMat = buildNavigationFromLessonsWithCollection(matematicas, 'matematicas', allMeta);
+  navigation = mergeNavigations(navigation, navMat);
+} catch (e) {}
+
+try {
+  const fisica = await getCollection('fisica');
+  const navFis = buildNavigationFromLessonsWithCollection(fisica, 'fisica', allMeta);
+  navigation = mergeNavigations(navigation, navFis);
+} catch (e) {}
+
+try {
+  const quimica = await getCollection('quimica');
+  const navQui = buildNavigationFromLessonsWithCollection(quimica, 'quimica', allMeta);
+  navigation = mergeNavigations(navigation, navQui);
+} catch (e) {}
+
+try {
+  const ciencias = await getCollection('ciencias');
+  const navCie = buildNavigationFromLessonsWithCollection(ciencias, 'ciencias', allMeta);
+  navigation = mergeNavigations(navigation, navCie);
+} catch (e) {}
+
+// materiaConfig importado desde config/materias.ts
+
+// Función para contar lecciones de una materia
+const countLessons = (materia: any) => {
+  return Object.values(materia.unidades).reduce((acc: number, unidad: any) => {
+    return acc + Object.values(unidad.bloques).reduce((acc2: number, bloque: any) => acc2 + bloque.lecciones.length, 0);
+  }, 0);
+};
+
+// Filtrar materias que tienen al menos 1 lección
+const filteredNavigation = Object.fromEntries(
+  Object.entries(navigation).filter(([_, materia]: [string, any]) => countLessons(materia) > 0)
+);
+
+// Determinar qué secciones deben estar abiertas basándose en la ruta actual
+// Decodificar para manejar caracteres especiales como tildes en URLs
+const pathParts = currentPath.split('/').filter(Boolean).map(part => decodeURIComponent(part));
+const currentMateria = pathParts[0] || '';
+const currentUnidad = pathParts[1] || '';
+const currentBloque = pathParts[2] || '';
+
+// Funciones helper para determinar si una sección está activa
+const isMateriaActive = (materiaKey: string) => currentPath.startsWith(`/${materiaKey}`);
+const isUnidadActive = (unidadKey: string) => currentPath.includes(`/${unidadKey}`);
+const isBloqueActive = (bloqueKey: string) => currentPath.includes(`/${bloqueKey}`);
+---
+
+<aside class="sidebar">
+  <!-- Header Premium -->
+  <div class="sidebar-header">
+    <a href="/" class="logo">
+      <div class="logo-icon-wrapper">
+        <span class="logo-icon">🎓</span>
+      </div>
+      <div class="logo-text-wrapper">
+        <span class="logo-text">Ediprofe</span>
+        <span class="logo-tagline">Tu guía educativa</span>
+      </div>
+    </a>
+  </div>
+  
+  <!-- Navegación Premium -->
+  <nav class="sidebar-nav">
+    <div class="nav-label">Materias</div>
+    
+    {Object.entries(filteredNavigation).map(([materiaKey, materia]: [string, any]) => {
+      const config = getMateriaConfig(materiaKey);
+      const isActive = isMateriaActive(materiaKey);
+      const lessonCount = Object.values(materia.unidades).reduce((acc: number, unidad: any) => {
+        return acc + Object.values(unidad.bloques).reduce((acc2: number, bloque: any) => acc2 + bloque.lecciones.length, 0);
+      }, 0);
+      
+      return (
+        <div class={`nav-section nav-section-${materiaKey}`}>
+          <details open={isActive} class="nav-details materia-details">
+            <summary class={`nav-materia-summary ${isActive ? 'active' : ''}`}>
+              <div class="materia-icon" style={`background: ${config.gradient}`}>
+                {config.icon}
+              </div>
+              <div class="materia-info">
+                <span class="materia-name">{materia.name}</span>
+                <span class="materia-count">{lessonCount} lecciones</span>
+              </div>
+              <span class="nav-chevron">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"/>
+                </svg>
+              </span>
+            </summary>
+            
+            <div class="nav-content">
+              {Object.entries(materia.unidades).map(([unidadKey, unidad]: [string, any], unidadIndex: number) => {
+                const unidadActive = isUnidadActive(unidadKey);
+                return (
+                <details open={unidadActive} class="nav-details unidad-details">
+                  <summary class={`nav-unidad-summary ${unidadActive ? 'active' : ''}`}>
+                    <span class="unidad-number" style={`background: ${config.gradient}`}>{unidadIndex + 1}</span>
+                    <span class="unidad-name">{unidad.name}</span>
+                    <span class="nav-chevron-small">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"/>
+                      </svg>
+                    </span>
+                  </summary>
+                  
+                  <div class="nav-content-inner">
+                    {Object.entries(unidad.bloques).map(([bloqueKey, bloque]: [string, any]) => {
+                      const bloqueActive = isBloqueActive(bloqueKey);
+                      return (
+                      <details class="nav-details bloque-details">
+                        <summary class={`nav-bloque-summary ${bloqueActive ? 'active' : ''}`}>
+                          <span class="bloque-indicator" style={`background: ${config.color}`}></span>
+                          <span class="bloque-name">{bloque.name}</span>
+                          <span class="bloque-count">{bloque.lecciones.length}</span>
+                        </summary>
+                        
+                        <ul class="nav-lessons">
+                          {bloque.lecciones.map((leccion: any, leccionIndex: number) => {
+                            const isLessonActive = currentPath === `/${leccion.slug}` || currentPath.endsWith(leccion.slug);
+                            return (
+                              <li>
+                                <a 
+                                  href={`/${leccion.slug}`}
+                                  class:list={['nav-lesson-link', { active: isLessonActive }]}
+                                  style={isLessonActive ? `--accent-color: ${config.color}` : ''}
+                                >
+                                  <span class="lesson-number">{leccionIndex + 1}</span>
+                                  <span class="lesson-title">{leccion.title}</span>
+                                  {isLessonActive && <span class="lesson-active-indicator"></span>}
+                                </a>
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      </details>
+                    )})}
+                  </div>
+                </details>
+              )})}
+            </div>
+          </details>
+        </div>
+      );
+    })}
+    
+    {Object.keys(filteredNavigation).length === 0 && (
+      <div class="nav-empty">
+        <div class="empty-icon">📚</div>
+        <p>No hay contenido disponible</p>
+        <code>src/content/</code>
+      </div>
+    )}
+  </nav>
+  
+  </aside>
+
+<style>
+  @import '../../styles/components/sidebar.css';
+</style>

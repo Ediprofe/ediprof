@@ -1,0 +1,179 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Footer from '../../../../components/Layout/Footer.astro';
+import { formatName, formatBlockName, extractTitleFromContent, cleanSegment, cleanSlug } from '../../../../utils/navigation-generator.js';
+import { getMetaName as getMetaNameFromStore } from '../../../../utils/load-meta';
+import CollapsibleSidebar from '../../../../components/Navigation/CollapsibleSidebar.astro';
+import MobileMenu from '../../../../components/Navigation/MobileMenu.astro';
+import StickyHeader from '../../../../components/Layout/StickyHeader.astro';
+import { 
+  getLessonsByMateria, 
+  filterLessonsByPath,
+  getUniqueCapitulos,
+  getUniqueTemas
+} from '../../../../utils/content-helpers';
+import { MATERIA_SLUGS, type MateriaSlug, type Lesson } from '../../../../types/content';
+import { materiaConfig, getMateriaName } from '../../../../config/materias';
+
+export async function getStaticPaths() {
+  const paths: Array<{ 
+    params: { materia: string; capitulo: string; tema: string }; 
+    props: { materia: MateriaSlug; capitulo: string; tema: string; cleanCapitulo: string; cleanTema: string } 
+  }> = [];
+  
+  for (const materia of MATERIA_SLUGS) {
+    const lessons = await getLessonsByMateria(materia);
+    const temasSet = new Set<string>();
+    
+    for (const lesson of lessons) {
+      const parts = lesson.slug.split('/');
+      if (parts[0] && parts[1]) {
+        temasSet.add(`${parts[0]}/${parts[1]}`);
+      }
+    }
+    
+    for (const temaPath of temasSet) {
+      const [capitulo, tema] = temaPath.split('/');
+      if (capitulo && tema) {
+        // URLs limpias sin prefijos numéricos
+        const cleanCapitulo = cleanSegment(capitulo);
+        const cleanTema = cleanSegment(tema);
+        paths.push({
+          params: { materia, capitulo: cleanCapitulo, tema: cleanTema },
+          props: { materia, capitulo, tema, cleanCapitulo, cleanTema }
+        });
+      }
+    }
+  }
+  
+  return paths;
+}
+
+interface Props {
+  materia: MateriaSlug;
+  capitulo: string;
+  tema: string;
+  cleanCapitulo: string;
+  cleanTema: string;
+}
+
+const { materia, capitulo, tema, cleanCapitulo, cleanTema } = Astro.props;
+const config = materiaConfig[materia] ?? materiaConfig.fisica;
+
+// Obtener lecciones de este tema (tipado)
+const allLessons = await getLessonsByMateria(materia);
+const lecciones = filterLessonsByPath(allLessons, `${capitulo}/${tema}/`)
+  .sort((a, b) => a.slug.localeCompare(b.slug));
+
+// Obtener nombres desde metadatos (usar claves limpias en minúsculas)
+const materiaName = getMateriaName(materia);
+const capituloKey = `${materia}/${cleanCapitulo.toLowerCase()}`;
+const temaKey = `${materia}/${cleanCapitulo.toLowerCase()}/${cleanTema.toLowerCase()}`;
+const capituloName = getMetaNameFromStore(capituloKey, formatName(capitulo));
+const temaName = getMetaNameFromStore(temaKey, formatBlockName(tema));
+
+// Calcular índices
+const allCapitulos = getUniqueCapitulos(allLessons);
+const capituloIndex = allCapitulos.indexOf(capitulo);
+
+const temasDelCapitulo = getUniqueTemas(allLessons, capitulo);
+const temaIndex = temasDelCapitulo.indexOf(tema);
+---
+
+<BaseLayout title={`${temaName} - ${capituloName} - ${materiaName}`} showTopBar={false}>
+  <StickyHeader 
+    showBreadcrumb={true}
+    breadcrumbItems={[
+      { label: 'Inicio', href: '/', icon: '🏠' },
+      { label: materiaName, href: `/${materia}`, icon: config.icon },
+      { label: capituloName, href: `/${materia}/${cleanCapitulo}` },
+      { label: temaName }
+    ]}
+  />
+  <MobileMenu currentPath={Astro.url.pathname} />
+  
+  <div class="page-container">
+    <CollapsibleSidebar currentPath={Astro.url.pathname} />
+    
+    <main class="main-content">
+      <!-- Header Premium -->
+      <header class={`page-header page-header-${materia}`}>
+        <div class="header-bg">
+          <div class="header-orb header-orb-1"></div>
+          <div class="header-orb header-orb-2"></div>
+          <div class="header-grid"></div>
+        </div>
+        
+        <div class="header-content">
+          <div class="header-main">
+            <div class="header-icon-wrapper" style={`background: ${config.gradient}`}>
+              <span class="header-icon">{config.icon}</span>
+            </div>
+            <div class="header-text">
+              <span class="header-label">Tema {temaIndex + 1}</span>
+              <h1 class="header-title">{temaName}</h1>
+              <p class="header-desc">Explora las lecciones de este tema</p>
+            </div>
+          </div>
+          
+          <div class="header-stats">
+            <div class="stat-item">
+              <span class="stat-number">{lecciones.length}</span>
+              <span class="stat-label">{lecciones.length === 1 ? 'Lección' : 'Lecciones'}</span>
+            </div>
+          </div>
+          
+          <!-- Breadcrumb integrado -->
+          <div class="header-breadcrumb">
+            <a href={`/${materia}`} class="crumb-link">
+              <span class="crumb-icon">{config.icon}</span>
+              <span>{materiaName}</span>
+            </a>
+            <span class="crumb-sep">›</span>
+            <a href={`/${materia}/${cleanCapitulo}`} class="crumb-link">{capituloName}</a>
+            <span class="crumb-sep">›</span>
+            <span class="crumb-current">{temaName}</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Lista de Lecciones -->
+      <section class="lecciones-section">
+        <div class="lecciones-grid">
+          {lecciones.map((leccion, leccionIndex) => {
+            const title = leccion.data?.title || extractTitleFromContent(leccion.body || '');
+            
+            return (
+              <a 
+                href={`/${materia}/${cleanSlug(leccion.slug)}`}
+                class="leccion-card-link" 
+                style={`--delay: ${leccionIndex * 0.08}s; --accent: ${config.color}`}
+              >
+                <div class="leccion-card-inner">
+                  <div class="leccion-number" style={`background: ${config.gradient}`}>
+                    <span>{leccionIndex + 1}</span>
+                  </div>
+                  <div class="leccion-info">
+                    <span class="leccion-label">Lección {leccionIndex + 1}</span>
+                    <h3 class="leccion-name">{title}</h3>
+                  </div>
+                  <div class="leccion-arrow">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                  </div>
+                </div>
+              </a>
+            );
+          })}
+        </div>
+      </section>
+    </main>
+  </div>
+  
+  <Footer variant="minimal" />
+</BaseLayout>
+
+<style>
+  @import '../../../../styles/pages/tema.css';
+</style>

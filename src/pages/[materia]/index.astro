@@ -1,0 +1,176 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Footer from '../../components/Layout/Footer.astro';
+import MobileMenu from '../../components/Navigation/MobileMenu.astro';
+import CollapsibleSidebar from '../../components/Navigation/CollapsibleSidebar.astro';
+import StickyHeader from '../../components/Layout/StickyHeader.astro';
+import { formatName, formatBlockName, cleanSegment, cleanSlug } from '../../utils/navigation-generator.js';
+import { getMateriaConfig, getMateriaName } from '../../config/materias';
+import { getMetaName as getMetaNameFromStore } from '../../utils/load-meta';
+import { getLessonsByMateria, groupLessonsByCapituloAndTema } from '../../utils/content-helpers';
+import { MATERIA_SLUGS, type MateriaSlug } from '../../types/content';
+
+export async function getStaticPaths() {
+  return MATERIA_SLUGS.map(materia => ({
+    params: { materia },
+    props: { materia }
+  }));
+}
+
+interface Props {
+  materia: MateriaSlug;
+}
+
+const { materia } = Astro.props;
+
+// Obtener lecciones de esta materia (tipado)
+const lessons = await getLessonsByMateria(materia);
+
+const materiaName = getMateriaName(materia);
+
+// Helper para obtener nombre de unidad/bloque desde metadatos
+// Las claves en el store están limpias (sin prefijos numéricos) y en minúsculas
+const getMetaName = (unidadSlug: string, bloqueSlug?: string): string => {
+  const cleanUnidad = cleanSegment(unidadSlug).toLowerCase();
+  const key = bloqueSlug 
+    ? `${materia}/${cleanUnidad}/${cleanSegment(bloqueSlug).toLowerCase()}`
+    : `${materia}/${cleanUnidad}`;
+  const fallback = bloqueSlug ? formatBlockName(bloqueSlug) : formatName(unidadSlug);
+  return getMetaNameFromStore(key, fallback);
+};
+
+const config = getMateriaConfig(materia);
+const icon = config.icon;
+
+// Agrupar por unidad y bloque usando helper tipado
+const grouped = groupLessonsByCapituloAndTema(lessons);
+
+// Calcular total de temas
+const totalTemas = Object.values(grouped).reduce((acc, temas) => acc + Object.keys(temas).length, 0);
+---
+
+<BaseLayout title={materiaName} showTopBar={false}>
+  <StickyHeader 
+    showBreadcrumb={true}
+    breadcrumbItems={[
+      { label: 'Inicio', href: '/', icon: '🏠' },
+      { label: materiaName, icon: config.icon }
+    ]}
+  />
+  <MobileMenu currentPath={`/${materia}`} />
+  
+  <div class="page-container">
+    <CollapsibleSidebar currentPath={`/${materia}`} />
+    
+    <main class="main-content">
+      <!-- Header Premium -->
+      <header class={`page-header page-header-${materia}`}>
+        <div class="header-bg">
+          <div class="header-orb header-orb-1"></div>
+          <div class="header-orb header-orb-2"></div>
+          <div class="header-grid"></div>
+        </div>
+        
+        <div class="header-content">
+          <div class="header-main">
+            <div class="header-icon-wrapper" style={`background: ${config.gradient}`}>
+              <span class="header-icon">{icon}</span>
+            </div>
+            <div class="header-text">
+              <h1 class="header-title">{materiaName}</h1>
+              <p class="header-desc">
+                {materia === 'matematicas' && 'Explora álgebra, geometría, cálculo y más conceptos matemáticos'}
+                {materia === 'fisica' && 'Descubre mecánica, ondas, termodinámica y fenómenos físicos'}
+                {materia === 'quimica' && 'Aprende química general, orgánica y reacciones químicas'}
+                {materia === 'ciencias' && 'Estudia biología, ecología y ciencias naturales'}
+              </p>
+            </div>
+          </div>
+          
+          <div class="header-stats">
+            <div class="stat-item">
+              <span class="stat-number">{Object.keys(grouped).length}</span>
+              <span class="stat-label">{Object.keys(grouped).length === 1 ? 'Capítulo' : 'Capítulos'}</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-number">{totalTemas}</span>
+              <span class="stat-label">{totalTemas === 1 ? 'Tema' : 'Temas'}</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {lessons.length > 0 ? (
+        <div class="content-sections">
+          <!-- CAPÍTULOS -->
+          <section class="capitulos-section">
+            <div class="capitulos-grid">
+              {Object.entries(grouped).map(([capitulo, temas], capituloIndex) => {
+                const temasCount = Object.keys(temas).length;
+                const leccionesCount = Object.values(temas).reduce((acc: number, t: any) => acc + t.length, 0);
+                const firstTema = Object.values(temas)[0] as any[];
+                const firstLesson = firstTema?.[0];
+                
+                return (
+                  <a 
+                    href={`/${materia}/${cleanSegment(capitulo)}`} 
+                    id={`capitulo-${capitulo}`} 
+                    class="capitulo-card-link" 
+                    style={`--delay: ${capituloIndex * 0.1}s; --accent: ${config.color}`}
+                  >
+                    <div class="capitulo-card-inner">
+                      <div class="capitulo-number" style={`background: ${config.gradient}`}>
+                        <span>{capituloIndex + 1}</span>
+                      </div>
+                      <div class="capitulo-info">
+                        <span class="capitulo-label">Capítulo {capituloIndex + 1}</span>
+                        <h3 class="capitulo-name">{getMetaName(capitulo)}</h3>
+                        <div class="capitulo-stats">
+                          <span class="capitulo-stat">{temasCount} {temasCount === 1 ? 'tema' : 'temas'}</span>
+                        </div>
+                      </div>
+                      <div class="capitulo-arrow">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                      </div>
+                    </div>
+                    
+                    <!-- Preview de temas -->
+                    <div class="capitulo-temas-preview">
+                      {Object.entries(temas).slice(0, 3).map(([tema, lecciones]: [string, any[]]) => (
+                        <span class="tema-preview-tag">{getMetaName(capitulo, tema)}</span>
+                      ))}
+                      {temasCount > 3 && (
+                        <span class="tema-preview-more">+{temasCount - 3} más</span>
+                      )}
+                    </div>
+                  </a>
+                );
+              })}
+            </div>
+          </section>
+        </div>
+      ) : (
+        <div class="empty-state">
+          <div class="empty-icon-wrapper" style={`background: ${config.lightBg}`}>
+            <span class="empty-icon">{icon}</span>
+          </div>
+          <h2>Sin contenido aún</h2>
+          <p>No hay temas disponibles en {materiaName}.</p>
+          <div class="empty-hint">
+            <p>Para agregar contenido, crea archivos en:</p>
+            <code>src/content/{materia}/</code>
+          </div>
+        </div>
+      )}
+    </main>
+  </div>
+  
+  <Footer variant="minimal" />
+</BaseLayout>
+
+<style>
+  @import '../../styles/pages/materia.css';
+</style>

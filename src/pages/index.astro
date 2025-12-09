@@ -1,0 +1,114 @@
+---
+/**
+ * Página principal - Refactorizada
+ * Usa componentes modulares para mejor mantenibilidad
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Layout/Header.astro';
+import Footer from '../components/Layout/Footer.astro';
+import HeroSection from '../components/Sections/HeroSection.astro';
+import SectionHeader from '../components/UI/SectionHeader.astro';
+import MateriaCard from '../components/Content/MateriaCard.astro';
+import { getAllLessons, getMateriasInfo } from '../utils/collections';
+
+// Obtener datos
+const allLessons = await getAllLessons();
+const materias = await getMateriasInfo();
+
+// Stats para el hero
+const heroStats = [
+  { value: materias.length, label: 'Materias' },
+  { value: `${allLessons.length}+`, label: 'Lecciones' },
+  { value: '∞', label: 'Recursos' }
+];
+---
+
+<BaseLayout title="Inicio" showTopBar={false}>
+  <div class="home-container">
+    <Header />
+
+    <HeroSection
+      title="Guía Educativa para"
+      highlightedText="Ciencias y Matemáticas"
+      subtitle="Contenido estructurado con videos explicativos, ejercicios prácticos y recursos descargables. Aprende a tu ritmo con lecciones diseñadas para maximizar tu comprensión."
+      showSocial={false}
+      showStats={true}
+      stats={heroStats}
+      primaryCta={{ text: "Comenzar Ahora", href: "#materias" }}
+    />
+
+    <main class="main-content">
+      {materias.length > 0 ? (
+        <section class="materias-section" id="materias">
+          <SectionHeader
+            badge="Explora"
+            title="Materias Disponibles"
+            description="Elige tu área de estudio y comienza tu viaje de aprendizaje"
+          />
+          
+          <div class="materias-grid">
+            {materias.map((materia, index) => (
+              <MateriaCard
+                slug={materia.slug}
+                name={materia.name}
+                lessonCount={materia.lessonCount}
+                delay={index * 0.1}
+              />
+            ))}
+          </div>
+        </section>
+      ) : (
+        <section class="empty-state">
+          <div class="empty-icon">📝</div>
+          <h2>¡Bienvenido!</h2>
+          <p>Aún no hay contenido disponible.</p>
+        </section>
+      )}
+    </main>
+
+    <Footer variant="full" />
+  </div>
+</BaseLayout>
+
+<style>
+  .home-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-primary);
+  }
+
+  .main-content {
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+    width: 100%;
+  }
+
+  .materias-section {
+    margin-bottom: 4rem;
+  }
+
+  .materias-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .materias-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+  }
+
+  .empty-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+  }
+</style>

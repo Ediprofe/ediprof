@@ -1,0 +1,146 @@
+---
+import { getCollection } from 'astro:content';
+import LessonLayout from '../layouts/LessonLayout.astro';
+import { cleanSlug } from '../utils/navigation-generator.js';
+
+export async function getStaticPaths() {
+  // Helper para extraer título del primer H1 del markdown
+  function extractTitleFromBody(body: string): string | null {
+    const match = body?.match(/^#\s+(.+)$/m);
+    if (match) {
+      // Limpiar: quitar **, emojis, y espacios extra
+      return match[1]
+        .replace(/\*\*/g, '')                    // Quitar negritas **
+        .replace(/[\u{1F300}-\u{1F9FF}]/gu, '')  // Quitar emojis
+        .replace(/[\u{2600}-\u{26FF}]/gu, '')    // Quitar símbolos misc
+        .replace(/[\u{2700}-\u{27BF}]/gu, '')    // Quitar dingbats
+        .trim();
+    }
+    return null;
+  }
+  
+  // Obtener todas las lecciones de todas las colecciones
+  const allLessons: Array<{ lesson: any; materia: string; fullSlug: string; cleanFullSlug: string }> = [];
+  
+  // Función helper para agregar lecciones con su materia
+  const addLessons = (lessons: any[], materiaName: string) => {
+    lessons.forEach(lesson => {
+      const fullSlug = `${materiaName}/${lesson.slug}`;
+      const cleanFullSlug = `${materiaName}/${cleanSlug(lesson.slug)}`;
+      allLessons.push({ lesson, materia: materiaName, fullSlug, cleanFullSlug });
+    });
+  };
+  
+  try {
+    const matematicas = await getCollection('matematicas');
+    addLessons(matematicas, 'matematicas');
+  } catch (e) {}
+  
+  try {
+    const fisica = await getCollection('fisica');
+    addLessons(fisica, 'fisica');
+  } catch (e) {}
+  
+  try {
+    const quimica = await getCollection('quimica');
+    addLessons(quimica, 'quimica');
+  } catch (e) {}
+  
+  try {
+    const ciencias = await getCollection('ciencias');
+    addLessons(ciencias, 'ciencias');
+  } catch (e) {}
+  
+  // Ordenar lecciones por slug para navegación secuencial
+  allLessons.sort((a, b) => a.fullSlug.localeCompare(b.fullSlug));
+  
+  // Crear paths con información de navegación prev/next (SOLO dentro de la misma materia)
+  return allLessons.map((item, index) => {
+    const parts = item.lesson.slug.split('/');
+    const currentMateria = item.materia;
+    
+    // Buscar lección anterior SOLO en la misma materia
+    let prevLesson = null;
+    for (let i = index - 1; i >= 0; i--) {
+      if (allLessons[i].materia === currentMateria) {
+        prevLesson = allLessons[i];
+        break;
+      }
+    }
+    
+    // Buscar lección siguiente SOLO en la misma materia
+    let nextLesson = null;
+    for (let i = index + 1; i < allLessons.length; i++) {
+      if (allLessons[i].materia === currentMateria) {
+        nextLesson = allLessons[i];
+        break;
+      }
+    }
+    
+    // Partes limpias para navegación
+    const cleanParts = cleanSlug(item.lesson.slug).split('/');
+    
+    return {
+      params: { 
+        // URL limpia sin números
+        slug: item.cleanFullSlug 
+      },
+      props: { 
+        lesson: item.lesson,
+        materia: item.materia,
+        capitulo: cleanParts[0] || '',  // Sin prefijo numérico
+        tema: cleanParts[1] || '',       // Sin prefijo numérico
+        archivo: cleanParts[2] || '',
+        prevLesson: prevLesson ? {
+          slug: prevLesson.cleanFullSlug,  // URL limpia
+          title: prevLesson.lesson.data?.title || extractTitleFromBody(prevLesson.lesson.body) || 'Lección anterior'
+        } : null,
+        nextLesson: nextLesson ? {
+          slug: nextLesson.cleanFullSlug,  // URL limpia
+          title: nextLesson.lesson.data?.title || extractTitleFromBody(nextLesson.lesson.body) || 'Siguiente lección'
+        } : null
+      }
+    };
+  });
+}
+
+interface Props {
+  lesson: any;
+  materia: string;
+  capitulo: string;  // Antes: unidad
+  tema: string;      // Antes: bloque
+  archivo: string;
+  prevLesson: { slug: string; title: string } | null;
+  nextLesson: { slug: string; title: string } | null;
+}
+
+const { lesson, prevLesson, nextLesson } = Astro.props;
+const { Content, headings } = await lesson.render();
+
+// Extraer título del primer H1 si no hay title en frontmatter
+const firstH1 = headings.find((h: any) => h.depth === 1);
+// Limpiar título: quitar negritas y emojis
+const cleanTitle = (text: string) => text
+  .replace(/\*\*/g, '')
+  .replace(/[\u{1F300}-\u{1F9FF}]/gu, '')
+  .replace(/[\u{2600}-\u{26FF}]/gu, '')
+  .replace(/[\u{2700}-\u{27BF}]/gu, '')
+  .trim();
+const title = lesson.data?.title || (firstH1?.text ? cleanTitle(firstH1.text) : 'Sin título');
+
+// Crear frontmatter extendido con el título extraído
+const extendedFrontmatter = {
+  ...lesson.data,
+  title
+};
+---
+
+<LessonLayout 
+  frontmatter={extendedFrontmatter} 
+  headings={headings} 
+  url={Astro.url.pathname}
+  prevLesson={prevLesson}
+  nextLesson={nextLesson}
+>
+  <Content />
+</LessonLayout>
