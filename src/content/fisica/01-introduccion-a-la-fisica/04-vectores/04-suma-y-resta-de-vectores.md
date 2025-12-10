@@ -29,8 +29,9 @@ $$
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   if (typeof JXG !== 'undefined') {
+    
     var board1 = JXG.JSXGraph.initBoard('jsxgraph-triangulo', {
-      boundingbox: [-1, 6, 8, -1],
+      boundingbox: [-1, 8, 10, -1],
       axis: true,
       showCopyright: false,
       showNavigation: false,
@@ -38,29 +39,37 @@ document.addEventListener('DOMContentLoaded', function() {
       zoom: { enabled: false }
     });
     
-    // Vector A (azul)
-    var A = board1.create('point', [0, 0], {name: 'O', size: 3, fixed: true, color: '#3b82f6'});
-    var A_end = board1.create('point', [4, 2], {name: '', size: 3, color: '#3b82f6'});
-    var vecA = board1.create('arrow', [A, A_end], {strokeColor: '#3b82f6', strokeWidth: 3});
-    var labelA = board1.create('text', [2, 1.5, 'A'], {fontSize: 18, color: '#3b82f6', cssStyle: 'font-weight: bold; font-style: italic;'});
+    // Origen fijo
+    var O = board1.create('point', [0, 0], {name: 'O', size: 3, fixed: true, color: '#64748b', label: {offset: [-12, -12]}});
     
-    // Vector B (rojo) - cola en la punta de A
-    var B_end = board1.create('point', [6, 5], {name: '', size: 3, color: '#ef4444'});
-    var vecB = board1.create('arrow', [A_end, B_end], {strokeColor: '#ef4444', strokeWidth: 3});
-    var labelB = board1.create('text', [5.5, 3.5, 'B'], {fontSize: 18, color: '#ef4444', cssStyle: 'font-weight: bold; font-style: italic;'});
+    // Punto A - ARRASTRABLE (punta del vector A)
+    var A = board1.create('point', [4, 1.5], {name: '', size: 4, color: '#3b82f6'});
     
-    // Vector Resultante (verde)
-    var vecR = board1.create('arrow', [A, B_end], {strokeColor: '#22c55e', strokeWidth: 3, dash: 2});
-    var labelR = board1.create('text', [3, 3, 'R'], {fontSize: 18, color: '#22c55e', cssStyle: 'font-weight: bold; font-style: italic;'});
+    // Vector A (de O a A)
+    board1.create('arrow', [O, A], {strokeColor: '#3b82f6', strokeWidth: 3});
+    board1.create('text', [function() { return A.X()/2 - 0.3; }, function() { return A.Y()/2 + 0.5; }, 'A'], 
+      {fontSize: 16, strokeColor: '#3b82f6', cssStyle: 'font-weight: bold; font-style: italic;', fixed: true});
+    
+    // Punto R - ARRASTRABLE (punta del vector B, que es donde termina el resultante)
+    var R = board1.create('point', [6, 5], {name: '', size: 4, color: '#ef4444'});
+    
+    // Vector B va de A a R (regla del triángulo). B = R - A conceptualmente.
+    board1.create('arrow', [A, R], {strokeColor: '#ef4444', strokeWidth: 3});
+    board1.create('text', [function() { return (A.X() + R.X())/2 + 0.4; }, function() { return (A.Y() + R.Y())/2 + 0.3; }, 'B'], 
+      {fontSize: 16, strokeColor: '#ef4444', cssStyle: 'font-weight: bold; font-style: italic;', fixed: true});
+    
+    // Vector Resultante R (desde O hasta R, punteado verde)
+    board1.create('arrow', [O, R], {strokeColor: '#22c55e', strokeWidth: 3, dash: 2});
+    board1.create('text', [function() { return R.X()/2 - 0.5; }, function() { return R.Y()/2 + 0.5; }, 'R'], 
+      {fontSize: 16, strokeColor: '#22c55e', cssStyle: 'font-weight: bold; font-style: italic;', fixed: true});
     
     board1.unsuspendUpdate();
   }
 });
 </script>
 
-> 💡 **¡Interactivo!** Arrastra los puntos azul y rojo para ver cómo cambia el vector resultante (verde punteado).
+> 💡 **¡Interactivo!** Arrastra el punto azul (punta de A) o el punto rojo (punta de B) para ver cómo cambia el vector resultante R.
 
-> 💡 Este método también puede extenderse para tres o más vectores, colocando cada uno a continuación del anterior.
 
 ### **b) Método gráfico: regla del paralelogramo**
 
@@ -72,8 +81,9 @@ La **diagonal del paralelogramo** representa el vector resultante $\vec{R}$.
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   if (typeof JXG !== 'undefined') {
+    
     var board2 = JXG.JSXGraph.initBoard('jsxgraph-paralelogramo', {
-      boundingbox: [-1, 6, 8, -1],
+      boundingbox: [-1, 7, 9, -1],
       axis: true,
       showCopyright: false,
       showNavigation: false,
@@ -81,31 +91,33 @@ document.addEventListener('DOMContentLoaded', function() {
       zoom: { enabled: false }
     });
     
-    // Punto origen
-    var O = board2.create('point', [0, 0], {name: 'O', size: 3, fixed: true, color: '#64748b'});
+    // Origen fijo
+    var O = board2.create('point', [0, 0], {name: 'O', size: 3, fixed: true, color: '#64748b', label: {offset: [-12, -12]}});
     
-    // Vector A (azul)
-    var A = board2.create('point', [5, 1], {name: '', size: 3, color: '#3b82f6'});
-    var vecA = board2.create('arrow', [O, A], {strokeColor: '#3b82f6', strokeWidth: 3});
-    var labelA = board2.create('text', [2.5, 0.2, 'A'], {fontSize: 18, color: '#3b82f6', cssStyle: 'font-weight: bold; font-style: italic;'});
+    // Punto A - ARRASTRABLE
+    var A = board2.create('point', [5, 1], {name: '', size: 4, color: '#3b82f6'});
+    board2.create('arrow', [O, A], {strokeColor: '#3b82f6', strokeWidth: 3});
+    board2.create('text', [function() { return A.X()/2; }, function() { return A.Y()/2 - 0.5; }, 'A'], 
+      {fontSize: 16, strokeColor: '#3b82f6', cssStyle: 'font-weight: bold; font-style: italic;', fixed: true});
     
-    // Vector B (rojo)
-    var B = board2.create('point', [2, 4], {name: '', size: 3, color: '#ef4444'});
-    var vecB = board2.create('arrow', [O, B], {strokeColor: '#ef4444', strokeWidth: 3});
-    var labelB = board2.create('text', [0.7, 2.2, 'B'], {fontSize: 18, color: '#ef4444', cssStyle: 'font-weight: bold; font-style: italic;'});
+    // Punto B - ARRASTRABLE
+    var B = board2.create('point', [2, 4], {name: '', size: 4, color: '#ef4444'});
+    board2.create('arrow', [O, B], {strokeColor: '#ef4444', strokeWidth: 3});
+    board2.create('text', [function() { return B.X()/2 - 0.6; }, function() { return B.Y()/2 + 0.3; }, 'B'], 
+      {fontSize: 16, strokeColor: '#ef4444', cssStyle: 'font-weight: bold; font-style: italic;', fixed: true});
     
-    // Punto de la diagonal (suma de vectores)
+    // Punto R (suma, calculado)
     var R = board2.create('point', [function() { return A.X() + B.X(); }, function() { return A.Y() + B.Y(); }], 
-      {name: '', size: 3, color: '#22c55e', visible: true});
+      {name: '', size: 3, color: '#22c55e', fixed: true});
     
     // Lados del paralelogramo (punteados)
-    var lado1 = board2.create('segment', [A, R], {strokeColor: '#94a3b8', strokeWidth: 1, dash: 2});
-    var lado2 = board2.create('segment', [B, R], {strokeColor: '#94a3b8', strokeWidth: 1, dash: 2});
+    board2.create('segment', [A, R], {strokeColor: '#94a3b8', strokeWidth: 1, dash: 2});
+    board2.create('segment', [B, R], {strokeColor: '#94a3b8', strokeWidth: 1, dash: 2});
     
-    // Vector Resultante (diagonal)
-    var vecR = board2.create('arrow', [O, R], {strokeColor: '#22c55e', strokeWidth: 3});
-    var labelR = board2.create('text', [function() { return (A.X() + B.X())/2 + 0.3; }, function() { return (A.Y() + B.Y())/2 + 0.3; }, 'R'], 
-      {fontSize: 18, color: '#22c55e', cssStyle: 'font-weight: bold; font-style: italic;'});
+    // Vector Resultante
+    board2.create('arrow', [O, R], {strokeColor: '#22c55e', strokeWidth: 3});
+    board2.create('text', [function() { return (A.X() + B.X())/2 + 0.4; }, function() { return (A.Y() + B.Y())/2 + 0.4; }, 'R'], 
+      {fontSize: 16, strokeColor: '#22c55e', cssStyle: 'font-weight: bold; font-style: italic;', fixed: true});
     
     board2.unsuspendUpdate();
   }
@@ -168,13 +180,14 @@ $$
 \vec{A} - \vec{B} = \vec{A} + (-\vec{B})
 $$
 
-<div id="jsxgraph-resta" class="jsxgraph-container" style="width: 100%; max-width: 500px; height: 400px; margin: 1.5rem auto;"></div>
+<div id="jsxgraph-resta" class="jsxgraph-container" style="width: 100%; max-width: 520px; height: 380px; margin: 1.5rem auto;"></div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   if (typeof JXG !== 'undefined') {
+    
     var board3 = JXG.JSXGraph.initBoard('jsxgraph-resta', {
-      boundingbox: [-4, 5, 6, -3],
+      boundingbox: [-5, 5, 6, -3],
       axis: true,
       showCopyright: false,
       showNavigation: false,
@@ -182,39 +195,40 @@ document.addEventListener('DOMContentLoaded', function() {
       zoom: { enabled: false }
     });
     
-    // Punto origen
-    var O = board3.create('point', [0, 0], {name: 'O', size: 3, fixed: true, color: '#64748b'});
+    // Origen fijo
+    var O = board3.create('point', [0, 0], {name: 'O', size: 3, fixed: true, color: '#64748b', label: {offset: [-12, -12]}});
     
-    // Vector A (azul)
-    var A = board3.create('point', [4, 3], {name: '', size: 3, color: '#3b82f6'});
-    var vecA = board3.create('arrow', [O, A], {strokeColor: '#3b82f6', strokeWidth: 3});
-    var labelA = board3.create('text', [4.3, 3.3, 'A'], {fontSize: 18, color: '#3b82f6', cssStyle: 'font-weight: bold; font-style: italic;'});
+    // Vector A - ARRASTRABLE
+    var A = board3.create('point', [4, 3], {name: '', size: 4, color: '#3b82f6'});
+    board3.create('arrow', [O, A], {strokeColor: '#3b82f6', strokeWidth: 3});
+    board3.create('text', [function() { return A.X() + 0.3; }, function() { return A.Y() + 0.4; }, 'A'], 
+      {fontSize: 16, strokeColor: '#3b82f6', cssStyle: 'font-weight: bold; font-style: italic;', fixed: true});
     
-    // Vector B (rojo)
-    var B = board3.create('point', [3, 1], {name: '', size: 3, color: '#ef4444'});
-    var vecB = board3.create('arrow', [O, B], {strokeColor: '#ef4444', strokeWidth: 3});
-    var labelB = board3.create('text', [3.3, 1.3, 'B'], {fontSize: 18, color: '#ef4444', cssStyle: 'font-weight: bold; font-style: italic;'});
+    // Vector B - ARRASTRABLE
+    var B = board3.create('point', [3, 1], {name: '', size: 4, color: '#ef4444'});
+    board3.create('arrow', [O, B], {strokeColor: '#ef4444', strokeWidth: 3});
+    board3.create('text', [function() { return B.X() + 0.3; }, function() { return B.Y() - 0.5; }, 'B'], 
+      {fontSize: 16, strokeColor: '#ef4444', cssStyle: 'font-weight: bold; font-style: italic;', fixed: true});
     
-    // Vector -B (naranja, punteado)
-    var negB = board3.create('point', [function() { return -B.X(); }, function() { return -B.Y(); }], 
-      {name: '', size: 2, color: '#f97316', visible: false});
-    var vecNegB = board3.create('arrow', [O, negB], {strokeColor: '#f97316', strokeWidth: 2, dash: 2});
-    var labelNegB = board3.create('text', [function() { return -B.X() - 0.7; }, function() { return -B.Y() - 0.3; }, '-B'], 
-      {fontSize: 16, color: '#f97316', cssStyle: 'font-weight: bold; font-style: italic;'});
+    // Vector -B (calculado, punteado naranja)
+    var negB = board3.create('point', [function() { return -B.X(); }, function() { return -B.Y(); }], {visible: false, fixed: true});
+    board3.create('arrow', [O, negB], {strokeColor: '#f97316', strokeWidth: 2, dash: 2});
+    board3.create('text', [function() { return -B.X() - 0.6; }, function() { return -B.Y() - 0.4; }, '-B'], 
+      {fontSize: 14, strokeColor: '#f97316', cssStyle: 'font-weight: bold; font-style: italic;', fixed: true});
     
-    // Vector Resultante R = A - B = A + (-B)
+    // Vector Resultante R = A - B (calculado)
     var R = board3.create('point', [function() { return A.X() - B.X(); }, function() { return A.Y() - B.Y(); }], 
-      {name: '', size: 3, color: '#22c55e'});
-    var vecR = board3.create('arrow', [O, R], {strokeColor: '#22c55e', strokeWidth: 3});
-    var labelR = board3.create('text', [function() { return A.X() - B.X() + 0.3; }, function() { return A.Y() - B.Y() + 0.3; }, 'R = A - B'], 
-      {fontSize: 14, color: '#22c55e', cssStyle: 'font-weight: bold; font-style: italic;'});
+      {name: '', size: 3, color: '#22c55e', fixed: true});
+    board3.create('arrow', [O, R], {strokeColor: '#22c55e', strokeWidth: 3});
+    board3.create('text', [function() { return (A.X() - B.X()) + 0.4; }, function() { return (A.Y() - B.Y()) + 0.4; }, 'R'], 
+      {fontSize: 16, strokeColor: '#22c55e', cssStyle: 'font-weight: bold; font-style: italic;', fixed: true});
     
     board3.unsuspendUpdate();
   }
 });
 </script>
 
-> 💡 **¡Interactivo!** Observa cómo $-\vec{B}$ (naranja punteado) es el opuesto de $\vec{B}$. El vector resultante verde es $\vec{A} + (-\vec{B})$.
+> 💡 **¡Interactivo!** Arrastra A y B para ver cómo cambia $-\vec{B}$ (naranja) y el vector resultante (verde) $\vec{R} = \vec{A} - \vec{B}$.
 
 ### **Ejemplo gráfico**
 
@@ -236,11 +250,12 @@ $$
 \vec{B} = 2\,\hat{i} + 5\,\hat{j}
 $$
 
-<div id="jsxgraph-ejemplo" class="jsxgraph-container" style="width: 100%; max-width: 500px; height: 400px; margin: 1.5rem auto;"></div>
+<div id="jsxgraph-ejemplo" class="jsxgraph-container" style="width: 100%; max-width: 500px; height: 380px; margin: 1.5rem auto;"></div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   if (typeof JXG !== 'undefined') {
+    
     var board4 = JXG.JSXGraph.initBoard('jsxgraph-ejemplo', {
       boundingbox: [-1, 10, 10, -1],
       axis: true,
@@ -250,36 +265,35 @@ document.addEventListener('DOMContentLoaded', function() {
       zoom: { enabled: false }
     });
     
-    // Punto origen
-    var O = board4.create('point', [0, 0], {name: 'O', size: 3, fixed: true, color: '#64748b'});
+    // Origen fijo
+    var O = board4.create('point', [0, 0], {name: 'O', size: 3, fixed: true, color: '#64748b', label: {offset: [-12, -12]}});
     
-    // Vector A = 6i + 3j (azul)
+    // Vector A = 6i + 3j (FIJO - es un ejemplo concreto)
     var A = board4.create('point', [6, 3], {name: '', size: 3, fixed: true, color: '#3b82f6'});
-    var vecA = board4.create('arrow', [O, A], {strokeColor: '#3b82f6', strokeWidth: 3});
-    var labelA = board4.create('text', [6.3, 3.3, 'A = (6, 3)'], {fontSize: 14, color: '#3b82f6', cssStyle: 'font-weight: bold; font-style: italic;'});
+    board4.create('arrow', [O, A], {strokeColor: '#3b82f6', strokeWidth: 3, fixed: true});
+    board4.create('text', [3, 2, 'A'], {fontSize: 16, strokeColor: '#3b82f6', cssStyle: 'font-weight: bold; font-style: italic;', fixed: true});
     
-    // Vector B = 2i + 5j (rojo) - desde la punta de A
-    var B_start = board4.create('point', [6, 3], {visible: false});
+    // Vector B desde la punta de A (FIJO)
     var B_end = board4.create('point', [8, 8], {name: '', size: 3, fixed: true, color: '#ef4444'});
-    var vecB = board4.create('arrow', [B_start, B_end], {strokeColor: '#ef4444', strokeWidth: 3});
-    var labelB = board4.create('text', [7.3, 5.5, 'B = (2, 5)'], {fontSize: 14, color: '#ef4444', cssStyle: 'font-weight: bold; font-style: italic;'});
+    board4.create('arrow', [A, B_end], {strokeColor: '#ef4444', strokeWidth: 3, fixed: true});
+    board4.create('text', [7.3, 5, 'B'], {fontSize: 16, strokeColor: '#ef4444', cssStyle: 'font-weight: bold; font-style: italic;', fixed: true});
     
-    // Vector Resultante R = 8i + 8j (verde)
-    var vecR = board4.create('arrow', [O, B_end], {strokeColor: '#22c55e', strokeWidth: 3});
-    var labelR = board4.create('text', [4, 4.5, 'R = (8, 8)'], {fontSize: 14, color: '#22c55e', cssStyle: 'font-weight: bold; font-style: italic;'});
+    // Vector Resultante (FIJO)
+    board4.create('arrow', [O, B_end], {strokeColor: '#22c55e', strokeWidth: 3, fixed: true});
+    board4.create('text', [3.5, 5, 'R = (8, 8)'], {fontSize: 13, strokeColor: '#22c55e', cssStyle: 'font-weight: bold; font-style: italic;', fixed: true});
     
     // Ángulo de 45°
-    var angle = board4.create('angle', [A, O, B_end], {
-      radius: 1.5,
-      name: '45',
-      color: '#22c55e',
-      fillColor: 'rgba(34, 197, 94, 0.2)'
+    board4.create('angle', [A, O, B_end], {
+      radius: 1.3,
+      name: '45°',
+      strokeColor: '#22c55e',
+      fillColor: 'rgba(34, 197, 94, 0.2)',
+      fixed: true
     });
     
-    // Línea al eje X para mostrar componentes
-    var projX = board4.create('point', [8, 0], {visible: false});
-    var lineX = board4.create('segment', [B_end, projX], {strokeColor: '#94a3b8', strokeWidth: 1, dash: 3});
-    var lineY = board4.create('segment', [projX, O], {strokeColor: '#94a3b8', strokeWidth: 1, dash: 3});
+    // Líneas punteadas para componentes
+    var projX = board4.create('point', [8, 0], {visible: false, fixed: true});
+    board4.create('segment', [B_end, projX], {strokeColor: '#94a3b8', strokeWidth: 1, dash: 3});
     
     board4.unsuspendUpdate();
   }

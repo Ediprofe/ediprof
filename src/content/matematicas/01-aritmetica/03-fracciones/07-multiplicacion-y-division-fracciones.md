@@ -18,6 +18,43 @@ $$
 \frac{2}{3} \times \frac{4}{5} = \frac{2 \times 4}{3 \times 5} = \frac{8}{15}
 $$
 
+Multiplicar $\frac{2}{3}$ por $\frac{4}{5}$ significa tomar **2/3 de 4/5**:
+
+<div style="display: flex; justify-content: center; align-items: center; gap: 0.5rem; margin: 1rem auto;">
+  <div style="text-align: center;">
+    <div style="width: 80px;"><canvas id="chart-mult-23"></canvas></div>
+    <p style="font-size: 11px; color: #374151;">2/3</p>
+  </div>
+  <span style="font-size: 1rem; color: #374151;">de</span>
+  <div style="text-align: center;">
+    <div style="width: 80px;"><canvas id="chart-mult-45"></canvas></div>
+    <p style="font-size: 11px; color: #374151;">4/5</p>
+  </div>
+  <span style="font-size: 1rem; color: #374151;">=</span>
+  <div style="text-align: center;">
+    <div style="width: 80px;"><canvas id="chart-mult-815"></canvas></div>
+    <p style="font-size: 11px; color: #22c55e; font-weight: bold;">8/15</p>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof Chart !== 'undefined') {
+    if (document.getElementById('chart-mult-23')) {
+      new Chart(document.getElementById('chart-mult-23'), { type: 'pie', data: { labels: ['1','2','3'], datasets: [{ data: [1,1,1], backgroundColor: ['#3b82f6','#3b82f6','#e5e7eb'], borderColor: '#374151', borderWidth: 2 }] }, options: { responsive: true, plugins: { legend: { display: false }, tooltip: { enabled: false } } } });
+    }
+    if (document.getElementById('chart-mult-45')) {
+      new Chart(document.getElementById('chart-mult-45'), { type: 'pie', data: { labels: ['1','2','3','4','5'], datasets: [{ data: [1,1,1,1,1], backgroundColor: ['#ef4444','#ef4444','#ef4444','#ef4444','#e5e7eb'], borderColor: '#374151', borderWidth: 2 }] }, options: { responsive: true, plugins: { legend: { display: false }, tooltip: { enabled: false } } } });
+    }
+    if (document.getElementById('chart-mult-815')) {
+      var colors15 = [];
+      for (var i = 0; i < 15; i++) colors15.push(i < 8 ? '#22c55e' : '#e5e7eb');
+      new Chart(document.getElementById('chart-mult-815'), { type: 'pie', data: { labels: Array(15).fill(''), datasets: [{ data: Array(15).fill(1), backgroundColor: colors15, borderColor: '#374151', borderWidth: 1 }] }, options: { responsive: true, plugins: { legend: { display: false }, tooltip: { enabled: false } } } });
+    }
+  }
+});
+</script>
+
 ---
 
 ### Ejemplo 2

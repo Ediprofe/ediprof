@@ -18,6 +18,43 @@ $$
 \frac{2}{7} + \frac{3}{7} = \frac{2 + 3}{7} = \frac{5}{7}
 $$
 
+Visualmente: combinamos las partes de ambas fracciones:
+
+<div style="display: flex; justify-content: center; align-items: center; gap: 0.5rem; flex-wrap: wrap; margin: 1rem auto;">
+  <div style="text-align: center;">
+    <div style="width: 70px;"><canvas id="chart-suma-27"></canvas></div>
+    <p style="font-size: 11px; color: #374151;">2/7</p>
+  </div>
+  <span style="font-size: 1.2rem; color: #374151;">+</span>
+  <div style="text-align: center;">
+    <div style="width: 70px;"><canvas id="chart-suma-37"></canvas></div>
+    <p style="font-size: 11px; color: #374151;">3/7</p>
+  </div>
+  <span style="font-size: 1.2rem; color: #374151;">=</span>
+  <div style="text-align: center;">
+    <div style="width: 70px;"><canvas id="chart-suma-57"></canvas></div>
+    <p style="font-size: 11px; color: #22c55e; font-weight: bold;">5/7</p>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof Chart !== 'undefined') {
+    var labels7 = ['1','2','3','4','5','6','7'];
+    var data7 = [1,1,1,1,1,1,1];
+    if (document.getElementById('chart-suma-27')) {
+      new Chart(document.getElementById('chart-suma-27'), { type: 'pie', data: { labels: labels7, datasets: [{ data: data7, backgroundColor: ['#3b82f6','#3b82f6','#e5e7eb','#e5e7eb','#e5e7eb','#e5e7eb','#e5e7eb'], borderColor: '#374151', borderWidth: 2 }] }, options: { responsive: true, plugins: { legend: { display: false }, tooltip: { enabled: false } } } });
+    }
+    if (document.getElementById('chart-suma-37')) {
+      new Chart(document.getElementById('chart-suma-37'), { type: 'pie', data: { labels: labels7, datasets: [{ data: data7, backgroundColor: ['#ef4444','#ef4444','#ef4444','#e5e7eb','#e5e7eb','#e5e7eb','#e5e7eb'], borderColor: '#374151', borderWidth: 2 }] }, options: { responsive: true, plugins: { legend: { display: false }, tooltip: { enabled: false } } } });
+    }
+    if (document.getElementById('chart-suma-57')) {
+      new Chart(document.getElementById('chart-suma-57'), { type: 'pie', data: { labels: labels7, datasets: [{ data: data7, backgroundColor: ['#22c55e','#22c55e','#22c55e','#22c55e','#22c55e','#e5e7eb','#e5e7eb'], borderColor: '#374151', borderWidth: 2 }] }, options: { responsive: true, plugins: { legend: { display: false }, tooltip: { enabled: false } } } });
+    }
+  }
+});
+</script>
+
 ---
 
 ### Ejemplo 2

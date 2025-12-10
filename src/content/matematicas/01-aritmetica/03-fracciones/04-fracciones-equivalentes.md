@@ -12,6 +12,53 @@ $$
 \frac{1}{2} = \frac{2}{4} = \frac{3}{6}
 $$
 
+Observa cómo las tres fracciones llenan **exactamente la mitad** del círculo:
+
+<div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin: 1rem auto;">
+  <div style="text-align: center;">
+    <div style="width: 90px;"><canvas id="chart-equiv-12"></canvas></div>
+    <p style="font-size: 12px; color: #374151; margin-top: 0.25rem;">1/2</p>
+  </div>
+  <div style="text-align: center;">
+    <div style="width: 90px;"><canvas id="chart-equiv-24"></canvas></div>
+    <p style="font-size: 12px; color: #374151; margin-top: 0.25rem;">2/4</p>
+  </div>
+  <div style="text-align: center;">
+    <div style="width: 90px;"><canvas id="chart-equiv-36"></canvas></div>
+    <p style="font-size: 12px; color: #374151; margin-top: 0.25rem;">3/6</p>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof Chart !== 'undefined') {
+    // 1/2
+    if (document.getElementById('chart-equiv-12')) {
+      new Chart(document.getElementById('chart-equiv-12'), {
+        type: 'pie', data: { labels: ['1','2'], datasets: [{ data: [1,1], backgroundColor: ['#3b82f6','#e5e7eb'], borderColor: '#374151', borderWidth: 2 }] },
+        options: { responsive: true, plugins: { legend: { display: false }, tooltip: { enabled: false } } }
+      });
+    }
+    // 2/4
+    if (document.getElementById('chart-equiv-24')) {
+      new Chart(document.getElementById('chart-equiv-24'), {
+        type: 'pie', data: { labels: ['1','2','3','4'], datasets: [{ data: [1,1,1,1], backgroundColor: ['#3b82f6','#3b82f6','#e5e7eb','#e5e7eb'], borderColor: '#374151', borderWidth: 2 }] },
+        options: { responsive: true, plugins: { legend: { display: false }, tooltip: { enabled: false } } }
+      });
+    }
+    // 3/6
+    if (document.getElementById('chart-equiv-36')) {
+      new Chart(document.getElementById('chart-equiv-36'), {
+        type: 'pie', data: { labels: ['1','2','3','4','5','6'], datasets: [{ data: [1,1,1,1,1,1], backgroundColor: ['#3b82f6','#3b82f6','#3b82f6','#e5e7eb','#e5e7eb','#e5e7eb'], borderColor: '#374151', borderWidth: 2 }] },
+        options: { responsive: true, plugins: { legend: { display: false }, tooltip: { enabled: false } } }
+      });
+    }
+  }
+});
+</script>
+
+Aunque tienen diferente numerador y denominador, **todas representan la mitad**.
+
 ---
 
 ## 📖 Amplificar fracciones

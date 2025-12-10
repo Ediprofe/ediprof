@@ -130,6 +130,21 @@ const structuredData = {
   
   <!-- JSXGraph JS para gráficos interactivos (carga diferida) -->
   <script src="https://cdn.jsdelivr.net/npm/jsxgraph@1.8.0/distrib/jsxgraphcore.js" defer></script>
+  
+  <!-- JSXGraph: Colores estándar para vectores -->
+  <script defer>
+    window.JSXGRAPH_COLORS = {
+      vectorA: '#3b82f6',    // Azul
+      vectorB: '#ef4444',    // Rojo
+      resultant: '#22c55e',  // Verde
+      auxiliary: '#f97316',  // Naranja
+      origin: '#64748b',     // Gris
+      auxLine: '#94a3b8'     // Gris claro (líneas punteadas)
+    };
+  </script>
+  
+  <!-- Chart.js para gráficos de fracciones (pie, barras) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
 </body>
 </html>
 

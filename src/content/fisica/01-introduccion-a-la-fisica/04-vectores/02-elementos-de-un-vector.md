@@ -1,57 +1,80 @@
+
 # Elementos de un vector
 
 Un **vector** es una magnitud que tiene **módulo (magnitud)**, **dirección** y **sentido**.
 Se representa mediante una **flecha**.
 La longitud de la flecha indica la magnitud, la inclinación muestra la dirección y la punta señala el sentido.
 
-<div id="jsxgraph-elementos" class="jsxgraph-container" style="width: 100%; max-width: 500px; height: 350px; margin: 1.5rem auto;"></div>
+<div id="jsxgraph-elementos" class="jsxgraph-container" style="width: 100%; max-width: 500px; height: 320px; margin: 1.5rem auto;"></div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   if (typeof JXG !== 'undefined') {
+    var isDark = document.documentElement.classList.contains('dark');
+    var axisColor = isDark ? '#94a3b8' : '#ccc';
+    
     var board = JXG.JSXGraph.initBoard('jsxgraph-elementos', {
-      boundingbox: [-1, 6, 8, -1],
-      axis: true,
+      boundingbox: [-0.5, 5.5, 8, -0.5],
+      axis: false,
       showCopyright: false,
       showNavigation: false,
       pan: { enabled: false },
       zoom: { enabled: false }
     });
     
-    // Punto origen
-    var O = board.create('point', [1, 1], {name: 'Origen', size: 4, fixed: true, color: '#64748b', label: {offset: [-40, -15]}});
-    
-    // Punto final del vector
-    var P = board.create('point', [6, 4], {name: 'Extremo', size: 4, color: '#3b82f6', label: {offset: [10, 5]}});
-    
-    // Vector principal
-    var vec = board.create('arrow', [O, P], {strokeColor: '#3b82f6', strokeWidth: 4});
-    
-    // Etiqueta del vector
-    var labelVec = board.create('text', [3.5, 3.2, 'Magnitud'], {fontSize: 14, color: '#3b82f6', cssStyle: 'font-weight: bold;'});
-    
-    // Línea de dirección (extendida)
-    var lineDir = board.create('line', [O, P], {strokeColor: '#94a3b8', strokeWidth: 1, dash: 3, straightFirst: true, straightLast: true});
-    var labelDir = board.create('text', [7, 5, 'Direccion'], {fontSize: 12, color: '#94a3b8', cssStyle: 'font-style: italic;'});
-    
-    // Ángulo con el eje X
-    var puntoEjeX = board.create('point', [6, 1], {visible: false});
-    var angulo = board.create('angle', [puntoEjeX, O, P], {
-      radius: 1,
-      name: 'θ',
-      color: '#22c55e',
-      fillColor: 'rgba(34, 197, 94, 0.2)'
+    // Ejes manuales para control de color
+    board.create('axis', [[0, 0], [1, 0]], {
+      ticks: {visible: false},
+      strokeColor: axisColor
+    });
+    board.create('axis', [[0, 0], [0, 1]], {
+      ticks: {visible: false},
+      strokeColor: axisColor
     });
     
-    // Flecha indicando sentido
-    var labelSentido = board.create('text', [5.5, 4.5, 'Sentido'], {fontSize: 12, color: '#ef4444', cssStyle: 'font-weight: bold;'});
+    // Puntos del vector (ocultos y fijos - NO interactivo)
+    var O = board.create('point', [1, 1], {visible: false, fixed: true});
+    var P = board.create('point', [6, 4], {visible: false, fixed: true});
+    
+    // Vector principal
+    var vec = board.create('arrow', [O, P], {strokeColor: '#3b82f6', strokeWidth: 4, fixed: true});
+    
+    // Punto visible en origen (sin arrastrar)
+    board.create('point', [1, 1], {name: '', size: 4, color: '#64748b', fixed: true});
+    
+    // Punto visible en extremo (sin arrastrar)  
+    board.create('point', [6, 4], {name: '', size: 4, color: '#3b82f6', fixed: true});
+    
+    // Etiquetas posicionadas para NO superponerse
+    board.create('text', [0.3, 0.5, 'Origen'], {fontSize: 11, color: '#64748b', fixed: true});
+    board.create('text', [6.2, 4.3, 'Extremo'], {fontSize: 11, color: '#3b82f6', fixed: true});
+    
+    // Magnitud - etiqueta ARRIBA del vector
+    board.create('text', [3, 3.5, 'Magnitud'], {fontSize: 13, color: '#3b82f6', cssStyle: 'font-weight: bold;', fixed: true});
+    
+    // Flecha pequeña indicando sentido
+    board.create('text', [5.5, 5, 'Sentido'], {fontSize: 11, color: '#22c55e', cssStyle: 'font-weight: bold;', fixed: true});
+    board.create('arrow', [[5.2, 4.6], [5.8, 4.2]], {strokeColor: '#22c55e', strokeWidth: 1, fixed: true});
+    
+    // Ángulo theta
+    var puntoEjeX = board.create('point', [3, 1], {visible: false, fixed: true});
+    board.create('angle', [puntoEjeX, O, P], {
+      radius: 0.8,
+      name: 'θ',
+      color: '#8b5cf6',
+      fillColor: 'rgba(139, 92, 246, 0.2)',
+      fixed: true
+    });
+    
+    // Dirección - etiqueta a la derecha
+    board.create('text', [7, 2.5, 'Direccion'], {fontSize: 11, color: '#8b5cf6', cssStyle: 'font-style: italic;', fixed: true});
     
     board.unsuspendUpdate();
   }
 });
 </script>
 
-> 💡 **¡Interactivo!** Arrastra el punto azul (extremo) para ver cómo cambian los elementos del vector.
+> 💡 El gráfico muestra los elementos de un vector: **magnitud** (longitud), **dirección** (ángulo θ) y **sentido** (hacia dónde apunta la flecha).
 
 ## 1. Magnitud (o módulo)
 
@@ -80,34 +103,40 @@ Por ejemplo, si un vector forma un ángulo de $30^\circ$ con el eje $x$, decimos
 El **sentido** señala **hacia dónde apunta el vector** a lo largo de su dirección.
 Por ejemplo, un vector velocidad hacia el norte y otro hacia el sur tienen la misma dirección (vertical), pero **sentidos opuestos**.
 
-<div id="jsxgraph-sentido" class="jsxgraph-container" style="width: 100%; max-width: 500px; height: 280px; margin: 1.5rem auto;"></div>
+<div id="jsxgraph-sentido" class="jsxgraph-container" style="width: 100%; max-width: 450px; height: 280px; margin: 1.5rem auto;"></div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   if (typeof JXG !== 'undefined') {
+    var isDark = document.documentElement.classList.contains('dark');
+    var textColor = isDark ? '#e2e8f0' : '#64748b';
+    
     var board2 = JXG.JSXGraph.initBoard('jsxgraph-sentido', {
-      boundingbox: [-5, 4, 5, -4],
-      axis: true,
+      boundingbox: [-4, 4, 4, -4],
+      axis: false,
       showCopyright: false,
       showNavigation: false,
       pan: { enabled: false },
       zoom: { enabled: false }
     });
     
-    // Vector hacia arriba (norte)
-    var O1 = board2.create('point', [-2, 0], {visible: false});
-    var P1 = board2.create('point', [-2, 3], {visible: false});
-    var vec1 = board2.create('arrow', [O1, P1], {strokeColor: '#3b82f6', strokeWidth: 3});
-    var label1 = board2.create('text', [-2.5, 1.5, 'Norte'], {fontSize: 14, color: '#3b82f6', cssStyle: 'font-weight: bold;'});
+    // Título
+    board2.create('text', [-2.5, 3.5, 'Misma direccion, sentidos opuestos'], {fontSize: 12, color: textColor, cssStyle: 'font-style: italic;', fixed: true});
     
-    // Vector hacia abajo (sur)
-    var O2 = board2.create('point', [2, 0], {visible: false});
-    var P2 = board2.create('point', [2, -3], {visible: false});
-    var vec2 = board2.create('arrow', [O2, P2], {strokeColor: '#ef4444', strokeWidth: 3});
-    var label2 = board2.create('text', [2.3, -1.5, 'Sur'], {fontSize: 14, color: '#ef4444', cssStyle: 'font-weight: bold;'});
+    // Línea de referencia (dirección vertical)
+    board2.create('line', [[0, -3], [0, 3]], {strokeColor: '#cbd5e1', strokeWidth: 1, dash: 2, straightFirst: false, straightLast: false, fixed: true});
     
-    // Etiqueta central
-    var labelCentral = board2.create('text', [-0.5, 3.5, 'Misma direccion, sentidos opuestos'], {fontSize: 12, color: '#64748b', cssStyle: 'font-style: italic;'});
+    // Vector hacia arriba (norte) - puntos ocultos
+    var O1 = board2.create('point', [-1.5, 0], {visible: false, fixed: true});
+    var P1 = board2.create('point', [-1.5, 2.5], {visible: false, fixed: true});
+    board2.create('arrow', [O1, P1], {strokeColor: '#3b82f6', strokeWidth: 4, fixed: true});
+    board2.create('text', [-2.3, 1.2, 'Norte'], {fontSize: 14, color: '#3b82f6', cssStyle: 'font-weight: bold;', fixed: true});
+    
+    // Vector hacia abajo (sur) - puntos ocultos
+    var O2 = board2.create('point', [1.5, 0], {visible: false, fixed: true});
+    var P2 = board2.create('point', [1.5, -2.5], {visible: false, fixed: true});
+    board2.create('arrow', [O2, P2], {strokeColor: '#ef4444', strokeWidth: 4, fixed: true});
+    board2.create('text', [1.8, -1.2, 'Sur'], {fontSize: 14, color: '#ef4444', cssStyle: 'font-weight: bold;', fixed: true});
     
     board2.unsuspendUpdate();
   }

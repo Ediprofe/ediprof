@@ -58,20 +58,4 @@ $$
 
 ---
 
-## 📐 **Marco de Referencia**
-
-El movimiento es **relativo**. Para describir la posición de una partícula, necesitamos un sistema desde donde observar y medir. Esto es el **Marco de Referencia**.
-
-Un marco de referencia consta de tres elementos esenciales:
-1.  **Origen de coordenadas:** El punto $(0,0)$ desde donde se mide la posición.
-2.  **Sistema de ejes:** Generalmente ejes cartesianos ($x, y, z$) para dar dirección.
-3.  **Reloj:** Para medir el tiempo ($t$).
-
-
-**Ejemplo de importancia:**
-Si vas leyendo dentro de un tren en movimiento:
-* Para un observador **dentro del tren**, tu velocidad es $v = 0$.
-* Para un observador **en la estación**, tu velocidad es igual a la del tren ($v > 0$).
-
-> 💡 **Conclusión:**
-> No existe el "movimiento absoluto". Siempre debemos especificar respecto a qué marco de referencia estamos midiendo la posición ($x$), la velocidad ($v$) y la aceleración ($a$).
+> 💡 **A continuación:** En la siguiente lección estudiaremos cómo describir la **posición** de una partícula usando un **marco de referencia**.

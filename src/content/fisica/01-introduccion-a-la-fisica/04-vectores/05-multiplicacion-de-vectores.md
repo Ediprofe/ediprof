@@ -1,5 +1,4 @@
 
-
 # Multiplicación de vectores
 
 La **multiplicación de vectores** puede entenderse como una forma de **cambiar el tamaño o el sentido de un vector**.
@@ -28,44 +27,52 @@ $$
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   if (typeof JXG !== 'undefined') {
+    var isDark = document.documentElement.classList.contains('dark');
+    var axisColor = isDark ? '#94a3b8' : '#888888';
+    
     var board = JXG.JSXGraph.initBoard('jsxgraph-escalar', {
-      boundingbox: [-6, 5, 10, -3],
+      boundingbox: [-7, 5, 8, -3],
       axis: true,
       showCopyright: false,
       showNavigation: false,
       pan: { enabled: false },
-      zoom: { enabled: false }
+      zoom: { enabled: false },
+      defaultAxes: {x: {strokeColor: axisColor}, y: {strokeColor: axisColor}}
     });
     
-    // Punto origen
-    var O = board.create('point', [0, 0], {name: 'O', size: 3, fixed: true, color: '#64748b'});
+    // Origen fijo
+    var O = board.create('point', [0, 0], {name: 'O', size: 3, fixed: true, color: '#64748b', label: {offset: [-12, -12]}});
     
-    // Vector A original (referencia)
-    var A = board.create('point', [3, 2], {name: '', size: 3, fixed: true, color: '#3b82f6'});
-    var vecA = board.create('arrow', [O, A], {strokeColor: '#3b82f6', strokeWidth: 3});
-    var labelA = board.create('text', [3.3, 2.3, 'A (original)'], {fontSize: 12, color: '#3b82f6', cssStyle: 'font-weight: bold; font-style: italic;'});
+    // Vector A original - ARRASTRABLE para explorar
+    var A = board.create('point', [3, 2], {name: '', size: 4, color: '#3b82f6'});
+    board.create('arrow', [O, A], {strokeColor: '#3b82f6', strokeWidth: 3});
+    board.create('text', [function() { return A.X() + 0.3; }, function() { return A.Y() + 0.3; }, 'A'], 
+      {fontSize: 14, color: '#3b82f6', cssStyle: 'font-weight: bold; font-style: italic;', fixed: true});
     
-    // Vector 2A (k=2)
-    var A2 = board.create('point', [6, 4], {visible: false});
-    var vecA2 = board.create('arrow', [O, A2], {strokeColor: '#22c55e', strokeWidth: 2});
-    var labelA2 = board.create('text', [6.3, 4.3, '2A (k=2)'], {fontSize: 12, color: '#22c55e', cssStyle: 'font-weight: bold;'});
+    // Vector 2A (k=2) - calculado
+    var A2 = board.create('point', [function() { return 2*A.X(); }, function() { return 2*A.Y(); }], {visible: false, fixed: true});
+    board.create('arrow', [O, A2], {strokeColor: '#22c55e', strokeWidth: 2});
+    board.create('text', [function() { return 2*A.X() + 0.3; }, function() { return 2*A.Y() + 0.3; }, '2A'], 
+      {fontSize: 12, color: '#22c55e', cssStyle: 'font-weight: bold;', fixed: true});
     
-    // Vector 0.5A (k=0.5)
-    var Ahalf = board.create('point', [1.5, 1], {visible: false});
-    var vecAhalf = board.create('arrow', [O, Ahalf], {strokeColor: '#f59e0b', strokeWidth: 2});
-    var labelAhalf = board.create('text', [1.7, 1.3, '0.5A (k=0.5)'], {fontSize: 11, color: '#f59e0b', cssStyle: 'font-weight: bold;'});
+    // Vector 0.5A (k=0.5) - calculado
+    var Ahalf = board.create('point', [function() { return 0.5*A.X(); }, function() { return 0.5*A.Y(); }], {visible: false, fixed: true});
+    board.create('arrow', [O, Ahalf], {strokeColor: '#f59e0b', strokeWidth: 2});
+    board.create('text', [function() { return 0.5*A.X() - 0.8; }, function() { return 0.5*A.Y() + 0.3; }, '0.5A'], 
+      {fontSize: 11, color: '#f59e0b', cssStyle: 'font-weight: bold;', fixed: true});
     
-    // Vector -A (k=-1)
-    var Aneg = board.create('point', [-3, -2], {visible: false});
-    var vecAneg = board.create('arrow', [O, Aneg], {strokeColor: '#ef4444', strokeWidth: 2});
-    var labelAneg = board.create('text', [-4, -2.3, '-A (k=-1)'], {fontSize: 12, color: '#ef4444', cssStyle: 'font-weight: bold;'});
+    // Vector -A (k=-1) - calculado
+    var Aneg = board.create('point', [function() { return -A.X(); }, function() { return -A.Y(); }], {visible: false, fixed: true});
+    board.create('arrow', [O, Aneg], {strokeColor: '#ef4444', strokeWidth: 2});
+    board.create('text', [function() { return -A.X() - 0.5; }, function() { return -A.Y() - 0.4; }, '-A'], 
+      {fontSize: 12, color: '#ef4444', cssStyle: 'font-weight: bold;', fixed: true});
     
     board.unsuspendUpdate();
   }
 });
 </script>
 
-> 💡 Observa cómo el vector **azul original** se transforma: **verde** al duplicarlo ($k=2$), **naranja** al reducirlo ($k=0.5$), y **rojo** al invertirlo ($k=-1$).
+> 💡 **¡Interactivo!** Arrastra el punto **A** (azul) y observa cómo todos los múltiplos cambian: **2A** (verde), **0.5A** (naranja), **-A** (rojo).
 
 ### Ejemplo:
 
@@ -111,40 +118,46 @@ $$
 2\vec{A} = 6\,\hat{i} + 4\,\hat{j}
 $$
 
-<div id="jsxgraph-componentes" class="jsxgraph-container" style="width: 100%; max-width: 500px; height: 350px; margin: 1.5rem auto;"></div>
+<div id="jsxgraph-componentes" class="jsxgraph-container" style="width: 100%; max-width: 500px; height: 320px; margin: 1.5rem auto;"></div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   if (typeof JXG !== 'undefined') {
+    var isDark = document.documentElement.classList.contains('dark');
+    var axisColor = isDark ? '#94a3b8' : '#888888';
+    
     var board2 = JXG.JSXGraph.initBoard('jsxgraph-componentes', {
       boundingbox: [-1, 6, 8, -1],
       axis: true,
       showCopyright: false,
       showNavigation: false,
       pan: { enabled: false },
-      zoom: { enabled: false }
+      zoom: { enabled: false },
+      defaultAxes: {x: {strokeColor: axisColor}, y: {strokeColor: axisColor}}
     });
     
-    // Punto origen
-    var O = board2.create('point', [0, 0], {name: 'O', size: 3, fixed: true, color: '#64748b'});
+    // Origen fijo
+    var O = board2.create('point', [0, 0], {name: 'O', size: 3, fixed: true, color: '#64748b', label: {offset: [-12, -12]}});
     
-    // Vector A = 3i + 2j
+    // Vector A = 3i + 2j (FIJO - ejemplo concreto)
     var A = board2.create('point', [3, 2], {name: '', size: 3, fixed: true, color: '#3b82f6'});
-    var vecA = board2.create('arrow', [O, A], {strokeColor: '#3b82f6', strokeWidth: 3});
-    var labelA = board2.create('text', [3.2, 2.3, 'A = (3, 2)'], {fontSize: 12, color: '#3b82f6', cssStyle: 'font-weight: bold; font-style: italic;'});
+    board2.create('arrow', [O, A], {strokeColor: '#3b82f6', strokeWidth: 3, fixed: true});
+    board2.create('text', [3.3, 2.3, 'A = (3, 2)'], {fontSize: 12, color: '#3b82f6', cssStyle: 'font-weight: bold; font-style: italic;', fixed: true});
     
-    // Vector 2A = 6i + 4j
+    // Vector 2A = 6i + 4j (FIJO)
     var A2 = board2.create('point', [6, 4], {name: '', size: 3, fixed: true, color: '#22c55e'});
-    var vecA2 = board2.create('arrow', [O, A2], {strokeColor: '#22c55e', strokeWidth: 3});
-    var labelA2 = board2.create('text', [6.2, 4.3, '2A = (6, 4)'], {fontSize: 12, color: '#22c55e', cssStyle: 'font-weight: bold; font-style: italic;'});
+    board2.create('arrow', [O, A2], {strokeColor: '#22c55e', strokeWidth: 3, fixed: true});
+    board2.create('text', [6.3, 4.3, '2A = (6, 4)'], {fontSize: 12, color: '#22c55e', cssStyle: 'font-weight: bold; font-style: italic;', fixed: true});
     
-    // Línea de dirección
-    var lineDir = board2.create('line', [O, A], {strokeColor: '#94a3b8', strokeWidth: 1, dash: 3, straightFirst: false, straightLast: true});
+    // Línea de dirección (punteada)
+    board2.create('line', [O, A], {strokeColor: '#94a3b8', strokeWidth: 1, dash: 3, straightFirst: false, straightLast: true, fixed: true});
     
     board2.unsuspendUpdate();
   }
 });
 </script>
+
+> 💡 Observa cómo **A** y **2A** tienen la misma dirección, pero **2A** es el doble de largo.
 
 ---
 

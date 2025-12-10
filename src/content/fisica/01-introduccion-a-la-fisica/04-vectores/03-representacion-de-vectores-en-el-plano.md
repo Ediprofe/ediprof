@@ -21,60 +21,74 @@ Esto significa que el vector va desde el origen hasta el punto $(4,3)$.
 
 En el plano cartesiano, el vector $\vec{A}$ se dibuja como una **flecha** desde $(0,0)$ hasta $(4,3)$:
 
-<div id="jsxgraph-plano" class="jsxgraph-container" style="width: 100%; max-width: 500px; height: 400px; margin: 1.5rem auto;"></div>
+<div id="jsxgraph-plano" class="jsxgraph-container" style="width: 100%; max-width: 500px; height: 380px; margin: 1.5rem auto;"></div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   if (typeof JXG !== 'undefined') {
+    var isDark = document.documentElement.classList.contains('dark');
+    var axisColor = isDark ? '#94a3b8' : '#888888';
+    
     var board = JXG.JSXGraph.initBoard('jsxgraph-plano', {
-      boundingbox: [-1, 6, 7, -1],
+      boundingbox: [-1, 7, 8, -1.5],
       axis: true,
       showCopyright: false,
       showNavigation: false,
       pan: { enabled: false },
-      zoom: { enabled: false }
+      zoom: { enabled: false },
+      defaultAxes: {
+        x: {strokeColor: axisColor, ticks: {strokeColor: axisColor}},
+        y: {strokeColor: axisColor, ticks: {strokeColor: axisColor}}
+      }
     });
     
-    // Punto origen
-    var O = board.create('point', [0, 0], {name: 'O(0,0)', size: 4, fixed: true, color: '#64748b', label: {offset: [-35, -15]}});
+    // Punto origen (fijo)
+    var O = board.create('point', [0, 0], {name: 'O', size: 4, fixed: true, color: '#64748b', label: {offset: [-15, -15]}});
     
-    // Punto final del vector
-    var P = board.create('point', [4, 3], {name: 'P(4,3)', size: 4, color: '#3b82f6', label: {offset: [10, 5]}});
+    // Punto final del vector (ARRASTRABLE - esto SÍ aporta)
+    var P = board.create('point', [4, 3], {name: 'P', size: 4, color: '#3b82f6', label: {offset: [8, 8]}});
     
     // Vector A
     var vecA = board.create('arrow', [O, P], {strokeColor: '#3b82f6', strokeWidth: 3});
-    var labelA = board.create('text', [2.3, 2, 'A'], {fontSize: 18, color: '#3b82f6', cssStyle: 'font-weight: bold; font-style: italic;'});
     
-    // Proyección sobre eje X
-    var projX = board.create('point', [function() { return P.X(); }, 0], {visible: false});
-    var lineX = board.create('segment', [P, projX], {strokeColor: '#ef4444', strokeWidth: 2, dash: 2});
-    var labelAx = board.create('text', [function() { return P.X()/2; }, -0.5, function() { return 'Ax = ' + P.X().toFixed(1); }], {fontSize: 12, color: '#ef4444'});
+    // Etiqueta A - posición dinámica ARRIBA del vector
+    board.create('text', [function() { return P.X()/2 - 0.5; }, function() { return P.Y()/2 + 0.8; }, 'A'], 
+      {fontSize: 18, color: '#3b82f6', cssStyle: 'font-weight: bold; font-style: italic;', fixed: true});
     
-    // Proyección sobre eje Y
-    var projY = board.create('point', [0, function() { return P.Y(); }], {visible: false});
-    var lineY = board.create('segment', [P, projY], {strokeColor: '#22c55e', strokeWidth: 2, dash: 2});
-    var labelAy = board.create('text', [-0.8, function() { return P.Y()/2; }, function() { return 'Ay = ' + P.Y().toFixed(1); }], {fontSize: 12, color: '#22c55e'});
+    // Proyección sobre eje X (componente Ax)
+    var projX = board.create('point', [function() { return P.X(); }, 0], {visible: false, fixed: true});
+    board.create('segment', [P, projX], {strokeColor: '#ef4444', strokeWidth: 2, dash: 2});
+    
+    // Proyección sobre eje Y (componente Ay)  
+    var projY = board.create('point', [0, function() { return P.Y(); }], {visible: false, fixed: true});
+    board.create('segment', [P, projY], {strokeColor: '#22c55e', strokeWidth: 2, dash: 2});
+    
+    // Etiquetas de componentes - posiciones que no se superponen
+    board.create('text', [function() { return P.X()/2; }, -0.8, function() { return 'Ax = ' + P.X().toFixed(1); }], 
+      {fontSize: 12, color: '#ef4444', cssStyle: 'font-weight: bold;', fixed: true});
+    board.create('text', [-0.9, function() { return P.Y()/2; }, function() { return 'Ay = ' + P.Y().toFixed(1); }], 
+      {fontSize: 12, color: '#22c55e', cssStyle: 'font-weight: bold;', fixed: true});
     
     // Ángulo
-    var angulo = board.create('angle', [projX, O, P], {
-      radius: 0.8,
+    board.create('angle', [projX, O, P], {
+      radius: 0.7,
       name: 'θ',
       color: '#8b5cf6',
       fillColor: 'rgba(139, 92, 246, 0.2)'
     });
     
-    // Magnitud (mostrar cálculo)
-    var labelMag = board.create('text', [4.5, 5, function() { 
+    // Magnitud (mostrar cálculo) - arriba a la derecha
+    board.create('text', [5.5, 6, function() { 
       var mag = Math.sqrt(P.X()*P.X() + P.Y()*P.Y());
       return '|A| = ' + mag.toFixed(2); 
-    }], {fontSize: 14, color: '#3b82f6', cssStyle: 'font-weight: bold;'});
+    }], {fontSize: 13, color: '#3b82f6', cssStyle: 'font-weight: bold;', fixed: true});
     
     board.unsuspendUpdate();
   }
 });
 </script>
 
-> 💡 **¡Interactivo!** Arrastra el punto P para ver cómo cambian las componentes $A_x$ (rojo) y $A_y$ (verde), así como la magnitud del vector.
+> 💡 **¡Interactivo!** Arrastra el punto **P** para ver cómo cambian las componentes $A_x$ (rojo) y $A_y$ (verde), así como la magnitud del vector.
 
 * La **longitud de la flecha** representa la **magnitud**.
 * La **inclinación** con respecto al eje $x$ muestra la **dirección**.
@@ -135,43 +149,53 @@ $$
 \vec{B} = 8\,\hat{i} + 6\,\hat{j}
 $$
 
-<div id="jsxgraph-ejemplo" class="jsxgraph-container" style="width: 100%; max-width: 500px; height: 350px; margin: 1.5rem auto;"></div>
+<div id="jsxgraph-ejemplo" class="jsxgraph-container" style="width: 100%; max-width: 520px; height: 350px; margin: 1.5rem auto;"></div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   if (typeof JXG !== 'undefined') {
+    var isDark = document.documentElement.classList.contains('dark');
+    var axisColor = isDark ? '#94a3b8' : '#888888';
+    
     var board2 = JXG.JSXGraph.initBoard('jsxgraph-ejemplo', {
-      boundingbox: [-1, 8, 10, -1],
+      boundingbox: [-1, 8, 10, -1.5],
       axis: true,
       showCopyright: false,
       showNavigation: false,
       pan: { enabled: false },
-      zoom: { enabled: false }
+      zoom: { enabled: false },
+      defaultAxes: {
+        x: {strokeColor: axisColor},
+        y: {strokeColor: axisColor}
+      }
     });
     
-    // Punto origen
-    var O = board2.create('point', [0, 0], {name: 'O', size: 3, fixed: true, color: '#64748b'});
+    // Punto origen (fijo)
+    var O = board2.create('point', [0, 0], {name: 'O', size: 3, fixed: true, color: '#64748b', label: {offset: [-12, -12]}});
     
-    // Vector B (8, 6)
+    // Vector B (8, 6) - punto FIJO, no interactivo
     var B = board2.create('point', [8, 6], {name: '', size: 3, fixed: true, color: '#3b82f6'});
-    var vecB = board2.create('arrow', [O, B], {strokeColor: '#3b82f6', strokeWidth: 3});
-    var labelB = board2.create('text', [4, 3.5, 'B = 10 m'], {fontSize: 14, color: '#3b82f6', cssStyle: 'font-weight: bold; font-style: italic;'});
+    board2.create('arrow', [O, B], {strokeColor: '#3b82f6', strokeWidth: 3, fixed: true});
     
-    // Componente X
-    var Bx = board2.create('point', [8, 0], {visible: false});
-    var vecBx = board2.create('arrow', [O, Bx], {strokeColor: '#ef4444', strokeWidth: 2});
-    var labelBx = board2.create('text', [4, -0.5, 'Bx = 8 m'], {fontSize: 12, color: '#ef4444', cssStyle: 'font-weight: bold;'});
+    // Etiqueta B - ARRIBA del vector para no superponerse
+    board2.create('text', [3.2, 4.2, 'B = 10 m'], {fontSize: 13, color: '#3b82f6', cssStyle: 'font-weight: bold; font-style: italic;', fixed: true});
     
-    // Componente Y
-    var vecBy = board2.create('arrow', [Bx, B], {strokeColor: '#22c55e', strokeWidth: 2});
-    var labelBy = board2.create('text', [8.3, 3, 'By = 6 m'], {fontSize: 12, color: '#22c55e', cssStyle: 'font-weight: bold;'});
+    // Componente X - flecha roja
+    var Bx = board2.create('point', [8, 0], {visible: false, fixed: true});
+    board2.create('arrow', [O, Bx], {strokeColor: '#ef4444', strokeWidth: 2, fixed: true});
+    board2.create('text', [4, -0.8, 'Bx = 8 m'], {fontSize: 12, color: '#ef4444', cssStyle: 'font-weight: bold;', fixed: true});
+    
+    // Componente Y - flecha verde (desde Bx hacia B)
+    board2.create('arrow', [Bx, B], {strokeColor: '#22c55e', strokeWidth: 2, fixed: true});
+    board2.create('text', [8.5, 3, 'By = 6 m'], {fontSize: 12, color: '#22c55e', cssStyle: 'font-weight: bold;', fixed: true});
     
     // Ángulo de 37°
-    var angulo = board2.create('angle', [Bx, O, B], {
-      radius: 1.5,
-      name: '37',
+    board2.create('angle', [Bx, O, B], {
+      radius: 1.2,
+      name: '37°',
       color: '#8b5cf6',
-      fillColor: 'rgba(139, 92, 246, 0.2)'
+      fillColor: 'rgba(139, 92, 246, 0.2)',
+      fixed: true
     });
     
     board2.unsuspendUpdate();

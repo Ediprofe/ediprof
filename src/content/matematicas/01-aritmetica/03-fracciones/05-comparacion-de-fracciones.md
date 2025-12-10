@@ -14,6 +14,39 @@ Comparar $\frac{5}{8}$ y $\frac{3}{8}$:
 
 Como $5 > 3$ y ambas tienen denominador $8$:
 
+<div style="display: flex; justify-content: center; align-items: center; gap: 1rem; margin: 1rem auto;">
+  <div style="text-align: center;">
+    <div style="width: 100px;"><canvas id="chart-comp-58"></canvas></div>
+    <p style="font-size: 12px; color: #374151; margin-top: 0.25rem;">5/8</p>
+  </div>
+  <span style="font-size: 1.5rem; color: #374151; font-weight: bold;">></span>
+  <div style="text-align: center;">
+    <div style="width: 100px;"><canvas id="chart-comp-38"></canvas></div>
+    <p style="font-size: 12px; color: #374151; margin-top: 0.25rem;">3/8</p>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof Chart !== 'undefined') {
+    // 5/8
+    if (document.getElementById('chart-comp-58')) {
+      new Chart(document.getElementById('chart-comp-58'), {
+        type: 'pie', data: { labels: ['1','2','3','4','5','6','7','8'], datasets: [{ data: [1,1,1,1,1,1,1,1], backgroundColor: ['#3b82f6','#3b82f6','#3b82f6','#3b82f6','#3b82f6','#e5e7eb','#e5e7eb','#e5e7eb'], borderColor: '#374151', borderWidth: 2 }] },
+        options: { responsive: true, plugins: { legend: { display: false }, tooltip: { enabled: false } } }
+      });
+    }
+    // 3/8
+    if (document.getElementById('chart-comp-38')) {
+      new Chart(document.getElementById('chart-comp-38'), {
+        type: 'pie', data: { labels: ['1','2','3','4','5','6','7','8'], datasets: [{ data: [1,1,1,1,1,1,1,1], backgroundColor: ['#ef4444','#ef4444','#ef4444','#e5e7eb','#e5e7eb','#e5e7eb','#e5e7eb','#e5e7eb'], borderColor: '#374151', borderWidth: 2 }] },
+        options: { responsive: true, plugins: { legend: { display: false }, tooltip: { enabled: false } } }
+      });
+    }
+  }
+});
+</script>
+
 $$
 \frac{5}{8} > \frac{3}{8}
 $$
