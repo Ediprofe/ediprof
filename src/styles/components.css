@@ -240,3 +240,33 @@
   .md\:flex { display: flex; }
 }
 
+/* ========================================
+   JSXGRAPH - GRÁFICOS INTERACTIVOS
+   ======================================== */
+
+.jsxgraph-container {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color, rgba(0,0,0,0.1));
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  overflow: hidden;
+  margin: 1.5rem auto;
+}
+
+.jsxgraph-container .jxgbox {
+  border-radius: 12px;
+}
+
+/* Modo oscuro para JSXGraph */
+html.dark .jsxgraph-container {
+  background: var(--bg-secondary);
+  border-color: var(--border-color);
+}
+
+@media (max-width: 640px) {
+  .jsxgraph-container {
+    max-width: 100% !important;
+    height: 300px !important;
+  }
+}
+
