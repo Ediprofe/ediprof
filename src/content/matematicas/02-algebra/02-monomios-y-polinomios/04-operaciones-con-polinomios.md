@@ -1,6 +1,6 @@
 # ➕ Operaciones con Polinomios
 
-En esta lección aprenderemos a realizar las operaciones fundamentales con polinomios: suma, resta, multiplicación, extracción de factor común y potenciación.
+En esta lección aprenderemos a realizar las operaciones fundamentales con polinomios: suma, resta, multiplicación y potenciación.
 
 ---
 
@@ -260,20 +260,28 @@ $$
 \boxed{x^3 - x^2 - 5x + 2}
 $$
 
-### Ejemplo 12: Multiplicación vertical
+### Ejemplo 12
 
 Calcula: $(2x^2 - x + 3)(x + 4)$
 
+Multiplicamos cada término del primer polinomio por cada término del segundo:
+
 $$
-\begin{array}{r}
-2x^2 - x + 3 \\
-\times \quad x + 4 \\
-\hline
-8x^2 - 4x + 12 \quad \text{(multiplicando por 4)} \\
-2x^3 - x^2 + 3x \phantom{+ 12} \quad \text{(multiplicando por } x \text{)} \\
-\hline
-2x^3 + 7x^2 - x + 12
-\end{array}
+= 2x^2(x + 4) - x(x + 4) + 3(x + 4)
+$$
+
+$$
+= 2x^3 + 8x^2 - x^2 - 4x + 3x + 12
+$$
+
+Agrupamos términos semejantes:
+
+$$
+= 2x^3 + (8x^2 - x^2) + (-4x + 3x) + 12
+$$
+
+$$
+= 2x^3 + 7x^2 - x + 12
 $$
 
 $$
@@ -282,82 +290,11 @@ $$
 
 ---
 
-## 📖 Sacar factor común
-
-**Sacar factor común** es el proceso inverso de la multiplicación de un monomio por un polinomio. Consiste en identificar el máximo factor que es común a todos los términos y extraerlo.
-
-### Procedimiento
-
-1. Identificar el **MCD de los coeficientes**
-2. Identificar las **variables comunes** con el menor exponente
-3. Dividir cada término por el factor común
-4. Escribir el resultado como producto
-
-### Ejemplo 13
-
-Saca factor común: $6x^3 + 9x^2$
-
-**Paso 1:** MCD de coeficientes: $\text{MCD}(6, 9) = 3$
-
-**Paso 2:** Variable común: $x^2$ (menor exponente)
-
-**Paso 3:** Factor común: $3x^2$
-
-**Paso 4:** Dividir cada término:
-- $\frac{6x^3}{3x^2} = 2x$
-- $\frac{9x^2}{3x^2} = 3$
-
-$$
-6x^3 + 9x^2 = 3x^2(2x + 3)
-$$
-
-$$
-\boxed{3x^2(2x + 3)}
-$$
-
-### Ejemplo 14
-
-Saca factor común: $12a^4b^2 - 8a^3b^3 + 4a^2b$
-
-**MCD de coeficientes:** $\text{MCD}(12, 8, 4) = 4$
-
-**Variables comunes:** $a^2$ y $b$
-
-**Factor común:** $4a^2b$
-
-$$
-= 4a^2b(3a^2b - 2ab^2 + 1)
-$$
-
-$$
-\boxed{4a^2b(3a^2b - 2ab^2 + 1)}
-$$
-
-### Ejemplo 15
-
-Saca factor común: $-15x^3y + 10x^2y^2 - 5xy^3$
-
-**MCD de coeficientes:** $5$
-
-**Variables comunes:** $xy$
-
-**Factor común:** $-5xy$ (tomamos el signo negativo para que el primer término quede positivo)
-
-$$
-= -5xy(3x^2 - 2xy + y^2)
-$$
-
-$$
-\boxed{-5xy(3x^2 - 2xy + y^2)}
-$$
-
----
-
 ## 📖 Potencia de un polinomio
 
 Para elevar un polinomio a una potencia, debemos multiplicar el polinomio por sí mismo tantas veces como indique el exponente.
 
-### Ejemplo 16: Cuadrado de un binomio
+### Ejemplo 13: Cuadrado de un binomio
 
 Calcula: $(x + 2)^2$
 
@@ -377,7 +314,7 @@ $$
 \boxed{x^2 + 4x + 4}
 $$
 
-### Ejemplo 17
+### Ejemplo 14
 
 Calcula: $(2a - 3)^2$
 
@@ -397,7 +334,7 @@ $$
 \boxed{4a^2 - 12a + 9}
 $$
 
-### Ejemplo 18: Cubo de un binomio
+### Ejemplo 15: Cubo de un binomio
 
 Calcula: $(x + 1)^3$
 
@@ -455,17 +392,9 @@ $$
 
 ---
 
-### Sacar factor común
-
-**Ejercicio 8:** $8x^4 - 12x^3 + 4x^2$
-
-**Ejercicio 9:** $15a^3b^2 - 10a^2b^3 + 5ab$
-
----
-
 ### Potencia de un polinomio
 
-**Ejercicio 10:** $(3x - 2)^2$
+**Ejercicio 8:** $(3x - 2)^2$
 
 ---
 
@@ -512,21 +441,9 @@ $$
 2x^3 + 8x^2 - 2x - 3x^2 - 12x + 3 = 2x^3 + 5x^2 - 14x + 3
 $$
 
-### Sacar factor común
-
-**Ejercicio 8:**
-$$
-4x^2(2x^2 - 3x + 1)
-$$
-
-**Ejercicio 9:**
-$$
-5ab(3a^2b - 2ab^2 + 1)
-$$
-
 ### Potencia de un polinomio
 
-**Ejercicio 10:**
+**Ejercicio 8:**
 $$
 (3x)^2 - 2(3x)(2) + 2^2 = 9x^2 - 12x + 4
 $$

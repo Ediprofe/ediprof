@@ -40,6 +40,54 @@ $$
 \boxed{3a^2b - 2a + b^2}
 $$
 
+### Ejemplo 3
+
+Calcula: $\frac{15x^5 - 10x^4 + 20x^3}{5x^2}$
+
+$$
+= \frac{15x^5}{5x^2} - \frac{10x^4}{5x^2} + \frac{20x^3}{5x^2}
+$$
+
+$$
+= 3x^3 - 2x^2 + 4x
+$$
+
+$$
+\boxed{3x^3 - 2x^2 + 4x}
+$$
+
+### Ejemplo 4
+
+Calcula: $\frac{24m^3n^2 - 18m^2n^3 + 12mn^4}{6mn^2}$
+
+$$
+= \frac{24m^3n^2}{6mn^2} - \frac{18m^2n^3}{6mn^2} + \frac{12mn^4}{6mn^2}
+$$
+
+$$
+= 4m^2 - 3mn + 2n^2
+$$
+
+$$
+\boxed{4m^2 - 3mn + 2n^2}
+$$
+
+### Ejemplo 5
+
+Calcula: $\frac{8x^6 - 4x^4 + 16x^3 - 2x^2}{2x^2}$
+
+$$
+= \frac{8x^6}{2x^2} - \frac{4x^4}{2x^2} + \frac{16x^3}{2x^2} - \frac{2x^2}{2x^2}
+$$
+
+$$
+= 4x^4 - 2x^2 + 8x - 1
+$$
+
+$$
+\boxed{4x^4 - 2x^2 + 8x - 1}
+$$
+
 ---
 
 ## 📖 División de polinomios (método clásico)
@@ -58,37 +106,27 @@ $$
 4. Restar del dividendo
 5. Repetir con el nuevo polinomio hasta que el grado del resto sea menor que el del divisor
 
-### Ejemplo 3
+### Ejemplo 6
 
 Divide: $(x^2 + 5x + 6) \div (x + 2)$
 
-$$
-\begin{array}{c|cc}
- & x^2 + 5x + 6 & \underline{x + 2} \\
-\hline
--(x^2 + 2x) & & x + 3 \\
-\hline
- & 3x + 6 & \\
--(3x + 6) & & \\
-\hline
- & 0 & \\
-\end{array}
-$$
+**Paso 1:** $\frac{x^2}{x} = x$ → primer término del cociente
 
-**Paso a paso:**
+**Paso 2:** $x \cdot (x + 2) = x^2 + 2x$
 
-1. $\frac{x^2}{x} = x$ → primer término del cociente
-2. $x \cdot (x + 2) = x^2 + 2x$
-3. $(x^2 + 5x + 6) - (x^2 + 2x) = 3x + 6$
-4. $\frac{3x}{x} = 3$ → segundo término del cociente
-5. $3 \cdot (x + 2) = 3x + 6$
-6. $(3x + 6) - (3x + 6) = 0$ → resto
+**Paso 3:** $(x^2 + 5x + 6) - (x^2 + 2x) = 3x + 6$
+
+**Paso 4:** $\frac{3x}{x} = 3$ → segundo término del cociente
+
+**Paso 5:** $3 \cdot (x + 2) = 3x + 6$
+
+**Paso 6:** $(3x + 6) - (3x + 6) = 0$ → resto
 
 $$
 \boxed{\text{Cociente} = x + 3, \quad \text{Resto} = 0}
 $$
 
-### Ejemplo 4
+### Ejemplo 7
 
 Divide: $(2x^3 - 5x^2 + 3x - 4) \div (x - 2)$
 
@@ -118,21 +156,7 @@ $$
 \boxed{\text{Cociente} = 2x^2 - x + 1, \quad \text{Resto} = -2}
 $$
 
-**Verificación:**
-
-$$
-(x - 2)(2x^2 - x + 1) + (-2)
-$$
-
-$$
-= 2x^3 - x^2 + x - 4x^2 + 2x - 2 - 2
-$$
-
-$$
-= 2x^3 - 5x^2 + 3x - 4 \quad ✓
-$$
-
-### Ejemplo 5
+### Ejemplo 8
 
 Divide: $(x^3 - 8) \div (x - 2)$
 
@@ -164,6 +188,62 @@ $$
 \boxed{\text{Cociente} = x^2 + 2x + 4, \quad \text{Resto} = 0}
 $$
 
+### Ejemplo 9
+
+Divide: $(3x^3 + 2x^2 - 7x + 2) \div (x + 2)$
+
+**Paso 1:** $\frac{3x^3}{x} = 3x^2$
+
+**Paso 2:** $3x^2 \cdot (x + 2) = 3x^3 + 6x^2$
+
+**Paso 3:** $(3x^3 + 2x^2) - (3x^3 + 6x^2) = -4x^2$
+
+Bajamos: $-4x^2 - 7x$
+
+**Paso 4:** $\frac{-4x^2}{x} = -4x$
+
+**Paso 5:** $-4x \cdot (x + 2) = -4x^2 - 8x$
+
+**Paso 6:** $(-4x^2 - 7x) - (-4x^2 - 8x) = x$
+
+Bajamos: $x + 2$
+
+**Paso 7:** $\frac{x}{x} = 1$
+
+**Paso 8:** $1 \cdot (x + 2) = x + 2$
+
+**Paso 9:** $(x + 2) - (x + 2) = 0$
+
+$$
+\boxed{\text{Cociente} = 3x^2 - 4x + 1, \quad \text{Resto} = 0}
+$$
+
+### Ejemplo 10
+
+Divide: $(4x^4 - 2x^3 + 6x^2 - 3x + 1) \div (2x - 1)$
+
+**Paso 1:** $\frac{4x^4}{2x} = 2x^3$
+
+**Paso 2:** $2x^3 \cdot (2x - 1) = 4x^4 - 2x^3$
+
+**Paso 3:** $(4x^4 - 2x^3) - (4x^4 - 2x^3) = 0$
+
+Bajamos: $6x^2$
+
+**Paso 4:** $\frac{6x^2}{2x} = 3x$
+
+**Paso 5:** $3x \cdot (2x - 1) = 6x^2 - 3x$
+
+**Paso 6:** $(6x^2 - 3x) - (6x^2 - 3x) = 0$
+
+Bajamos: $1$
+
+**Paso 7:** $\frac{1}{2x}$ → No es posible (el grado del resto es menor que el del divisor)
+
+$$
+\boxed{\text{Cociente} = 2x^3 + 3x, \quad \text{Resto} = 1}
+$$
+
 ---
 
 ## 📖 Regla de Ruffini
@@ -184,7 +264,7 @@ La **Regla de Ruffini** es un método abreviado para dividir un polinomio entre 
 5. Repetir hasta terminar
 6. El último número es el resto; los demás son los coeficientes del cociente
 
-### Ejemplo 6
+### Ejemplo 11
 
 Divide: $(x^3 - 2x^2 - 5x + 6) \div (x - 3)$
 
@@ -211,7 +291,7 @@ $$
 \boxed{\text{Cociente} = x^2 + x - 2, \quad \text{Resto} = 0}
 $$
 
-### Ejemplo 7
+### Ejemplo 12
 
 Divide: $(2x^4 - 3x^3 + 5x - 1) \div (x - 1)$
 
@@ -232,7 +312,7 @@ $$
 \boxed{\text{Cociente} = 2x^3 - x^2 - x + 4, \quad \text{Resto} = 3}
 $$
 
-### Ejemplo 8
+### Ejemplo 13
 
 Divide: $(x^3 + 8) \div (x + 2)$
 
@@ -253,7 +333,7 @@ $$
 \boxed{\text{Cociente} = x^2 - 2x + 4, \quad \text{Resto} = 0}
 $$
 
-### Ejemplo 9
+### Ejemplo 14
 
 Divide: $(3x^3 - 7x^2 + 2x + 5) \div (x + 1)$
 
@@ -274,13 +354,34 @@ $$
 \boxed{\text{Cociente} = 3x^2 - 10x + 12, \quad \text{Resto} = -7}
 $$
 
+### Ejemplo 15
+
+Divide: $(x^4 - 5x^3 + 8x^2 - 4x + 1) \div (x - 2)$
+
+**Divisor:** $x - 2$ → $a = 2$
+
+**Coeficientes:** $1, -5, 8, -4, 1$
+
+$$
+\begin{array}{c|ccccc}
+2 & 1 & -5 & 8 & -4 & 1 \\
+  &   & 2 & -6 & 4 & 0 \\
+\hline
+  & 1 & -3 & 2 & 0 & 1 \\
+\end{array}
+$$
+
+$$
+\boxed{\text{Cociente} = x^3 - 3x^2 + 2x, \quad \text{Resto} = 1}
+$$
+
 ---
 
 ## 📖 Teorema del Resto
 
 Si dividimos un polinomio $P(x)$ entre $(x - a)$, el resto es igual a $P(a)$.
 
-### Ejemplo 10
+### Ejemplo 16
 
 Sin realizar la división, encuentra el resto de dividir $P(x) = x^3 - 2x^2 + 3x - 1$ entre $(x - 2)$.
 
@@ -296,6 +397,54 @@ $$
 \boxed{\text{Resto} = 5}
 $$
 
+### Ejemplo 17
+
+Sin realizar la división, encuentra el resto de dividir $P(x) = 2x^4 - 3x^2 + x - 5$ entre $(x + 1)$.
+
+**Divisor:** $x + 1 = x - (-1)$ → evaluamos en $a = -1$
+
+$$
+P(-1) = 2(-1)^4 - 3(-1)^2 + (-1) - 5
+$$
+
+$$
+= 2(1) - 3(1) - 1 - 5 = 2 - 3 - 1 - 5 = -7
+$$
+
+$$
+\boxed{\text{Resto} = -7}
+$$
+
+### Ejemplo 18
+
+Sin realizar la división, encuentra el resto de dividir $P(x) = x^5 - 32$ entre $(x - 2)$.
+
+$$
+P(2) = (2)^5 - 32 = 32 - 32 = 0
+$$
+
+$$
+\boxed{\text{Resto} = 0}
+$$
+
+> **Nota:** Un resto de cero indica que $(x - 2)$ es un factor de $x^5 - 32$.
+
+### Ejemplo 19
+
+Sin realizar la división, encuentra el resto de dividir $P(x) = 3x^3 + 2x^2 - 5x + 7$ entre $(x - 1)$.
+
+$$
+P(1) = 3(1)^3 + 2(1)^2 - 5(1) + 7
+$$
+
+$$
+= 3 + 2 - 5 + 7 = 7
+$$
+
+$$
+\boxed{\text{Resto} = 7}
+$$
+
 ---
 
 ## 📝 Ejercicios de práctica
@@ -306,29 +455,53 @@ $$
 
 **Ejercicio 2:** $\frac{18a^3b^2 - 12a^2b^3 + 6ab}{6ab}$
 
+**Ejercicio 3:** $\frac{21m^5 - 14m^4 + 7m^3}{7m^2}$
+
+**Ejercicio 4:** $\frac{24x^4y^3 - 16x^3y^2 + 8x^2y}{8x^2y}$
+
+**Ejercicio 5:** $\frac{30a^6 - 20a^4 + 10a^2}{10a^2}$
+
 ---
 
 ### División de polinomios
 
-**Ejercicio 3:** $(x^2 + 7x + 12) \div (x + 3)$
+**Ejercicio 6:** $(x^2 + 7x + 12) \div (x + 3)$
 
-**Ejercicio 4:** $(2x^3 - 3x^2 + 4x - 5) \div (x - 1)$
+**Ejercicio 7:** $(2x^3 - 3x^2 + 4x - 5) \div (x - 1)$
+
+**Ejercicio 8:** $(x^3 + 27) \div (x + 3)$
+
+**Ejercicio 9:** $(4x^3 - 6x^2 + 2x - 1) \div (2x - 1)$
+
+**Ejercicio 10:** $(x^4 - 16) \div (x - 2)$
 
 ---
 
 ### Regla de Ruffini
 
-**Ejercicio 5:** $(x^3 - 6x^2 + 11x - 6) \div (x - 2)$
+**Ejercicio 11:** $(x^3 - 6x^2 + 11x - 6) \div (x - 2)$
 
-**Ejercicio 6:** $(x^4 - 1) \div (x - 1)$
+**Ejercicio 12:** $(x^4 - 1) \div (x - 1)$
 
-**Ejercicio 7:** $(2x^3 + 5x^2 - 4x - 3) \div (x + 3)$
+**Ejercicio 13:** $(2x^3 + 5x^2 - 4x - 3) \div (x + 3)$
+
+**Ejercicio 14:** $(x^4 + 2x^3 - x^2 - 2x) \div (x + 1)$
+
+**Ejercicio 15:** $(3x^3 - 2x^2 + x - 4) \div (x - 2)$
 
 ---
 
 ### Teorema del resto
 
-**Ejercicio 8:** Sin dividir, calcula el resto de $(x^3 - 4x + 2) \div (x - 3)$
+**Ejercicio 16:** Sin dividir, calcula el resto de $(x^3 - 4x + 2) \div (x - 3)$
+
+**Ejercicio 17:** Sin dividir, calcula el resto de $(2x^4 + x^3 - 3x + 1) \div (x + 2)$
+
+**Ejercicio 18:** Sin dividir, calcula el resto de $(x^5 + x^4 - x - 1) \div (x - 1)$
+
+**Ejercicio 19:** Sin dividir, calcula el resto de $(4x^3 - 2x^2 + x - 3) \div (x - 1)$
+
+**Ejercicio 20:** Sin dividir, calcula el resto de $(x^4 - 81) \div (x + 3)$
 
 ---
 
@@ -346,66 +519,90 @@ $$
 \frac{18a^3b^2}{6ab} - \frac{12a^2b^3}{6ab} + \frac{6ab}{6ab} = 3a^2b - 2ab^2 + 1
 $$
 
-### División de polinomios
-
 **Ejercicio 3:**
 $$
-\text{Cociente} = x + 4, \quad \text{Resto} = 0
+\frac{21m^5}{7m^2} - \frac{14m^4}{7m^2} + \frac{7m^3}{7m^2} = 3m^3 - 2m^2 + m
 $$
 
 **Ejercicio 4:**
 $$
+\frac{24x^4y^3}{8x^2y} - \frac{16x^3y^2}{8x^2y} + \frac{8x^2y}{8x^2y} = 3x^2y^2 - 2xy + 1
+$$
+
+**Ejercicio 5:**
+$$
+\frac{30a^6}{10a^2} - \frac{20a^4}{10a^2} + \frac{10a^2}{10a^2} = 3a^4 - 2a^2 + 1
+$$
+
+### División de polinomios
+
+**Ejercicio 6:**
+$$
+\text{Cociente} = x + 4, \quad \text{Resto} = 0
+$$
+
+**Ejercicio 7:**
+$$
 \text{Cociente} = 2x^2 - x + 3, \quad \text{Resto} = -2
+$$
+
+**Ejercicio 8:**
+$$
+\text{Cociente} = x^2 - 3x + 9, \quad \text{Resto} = 0
+$$
+
+**Ejercicio 9:**
+$$
+\text{Cociente} = 2x^2 - 2x, \quad \text{Resto} = -1
+$$
+
+**Ejercicio 10:**
+$$
+\text{Cociente} = x^3 + 2x^2 + 4x + 8, \quad \text{Resto} = 0
 $$
 
 ### Regla de Ruffini
 
-**Ejercicio 5:**
-
-$$
-\begin{array}{c|cccc}
-2 & 1 & -6 & 11 & -6 \\
-  &   & 2 & -8 & 6 \\
-\hline
-  & 1 & -4 & 3 & 0 \\
-\end{array}
-$$
-
+**Ejercicio 11:**
 Cociente: $x^2 - 4x + 3$, Resto: $0$
 
-**Ejercicio 6:**
-
-$$
-\begin{array}{c|ccccc}
-1 & 1 & 0 & 0 & 0 & -1 \\
-  &   & 1 & 1 & 1 & 1 \\
-\hline
-  & 1 & 1 & 1 & 1 & 0 \\
-\end{array}
-$$
-
+**Ejercicio 12:**
 Cociente: $x^3 + x^2 + x + 1$, Resto: $0$
 
-**Ejercicio 7:**
-
-$$
-\begin{array}{c|cccc}
--3 & 2 & 5 & -4 & -3 \\
-   &   & -6 & 3 & 3 \\
-\hline
-   & 2 & -1 & -1 & 0 \\
-\end{array}
-$$
-
+**Ejercicio 13:**
 Cociente: $2x^2 - x - 1$, Resto: $0$
+
+**Ejercicio 14:**
+Cociente: $x^3 + x^2 - 2x$, Resto: $0$
+
+**Ejercicio 15:**
+Cociente: $3x^2 + 4x + 9$, Resto: $14$
 
 ### Teorema del resto
 
-**Ejercicio 8:**
+**Ejercicio 16:**
 $$
 P(3) = (3)^3 - 4(3) + 2 = 27 - 12 + 2 = 17
 $$
 
-Resto: $17$
+**Ejercicio 17:**
+$$
+P(-2) = 2(-2)^4 + (-2)^3 - 3(-2) + 1 = 32 - 8 + 6 + 1 = 31
+$$
+
+**Ejercicio 18:**
+$$
+P(1) = (1)^5 + (1)^4 - (1) - 1 = 1 + 1 - 1 - 1 = 0
+$$
+
+**Ejercicio 19:**
+$$
+P(1) = 4(1)^3 - 2(1)^2 + (1) - 3 = 4 - 2 + 1 - 3 = 0
+$$
+
+**Ejercicio 20:**
+$$
+P(-3) = (-3)^4 - 81 = 81 - 81 = 0
+$$
 
 ---

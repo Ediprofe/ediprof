@@ -36,96 +36,23 @@ Para la elaboración de la lecciones, ten en cuenta que el una MATERIA > CAPITUL
 
 ## Solicitud concreta
 
-Planear estructura del capítulo "Álgebra" de la materia de matemáticas
+Te voy pasando el link de la lección en cuestión, y a partir de ahí te paso la solicitud concreta.
 
-Para el capítulo de Álgebra tengo los siguientes temas propuestos:
+http://localhost:4321/matematicas/algebra/monomios-y-polinomios/operaciones-con-polinomios
+En la multiplicación de polinimoios, ejemplo 12, elimina eso de la multiplicación vertical, y más bien explica el ejercicio como venías trabajando los demás.
 
-### CAPÍTULO: Álgebra
+En esta misma lección, hay una sección que se llama "Sacar Factor Común"....Quiero que la omitas, ya que la parte de factor común y demás se explica en la lección de factor común, correspondiente al tema de factorización. Ten cuidado porque en esta lección hay una sección que se llama "Potencia de unu polinomio", y esa sí quiera que la conserves.
 
-#### TEMA 1: Introducción
+http://localhost:4321/matematicas/algebra/monomios-y-polinomios/division-de-polinomios
+En la división de polinomios, la sección llamada "División de un polinomio entre un monomio", quiero que des tres ejemplos más. De igual manera, en la sección llamada "División de polinomios (método clásico)", quiero que des dos ejemplos más. En la sección llamada "Regla de Ruffini", quiero que des 1 ejemplos más. En la sección llamada "Teorema del Resto", quiero que des tres ejemplo más. Y en la sección llamada "Ejercicios de práctica", quiero que des en total 5 ejercicios por cada sección.
 
-##### LECCIÓN 1: Lenguaje algebraico
+IMPORTANTE: EN GENERAL QUIERO QUE PARA TODO EL TEMA DE ÁLGEBRA (http://localhost:4321/matematicas/algebra) QUE MANEJAS LA IDEA DE QUE CADA LECCIÓN (DENTRO DE UN TEMA, DENTRO DE UN CAPÍTULO, DENTRO DE UN MATERIA) SE TRABAJE CON 5 EJEMPLOS, COMO TE LA ACABÉ DE SOLICITAR. Y QUE POR FAVOR CUANDO REDACTES AL FINAL LOS EJERCICIOS DE PRÁCTICA, PROPONGAS 5 EJERCICIOS POR SECCIÓN DE ESA LECCIÓN. PERO LÓGICAMENTE HABRÁN CASOS ESPECIALES COMO POR EJEMPLO ESA INTRODUCCIÓN A LOS MONOMIOS DONDE TOCA IDENTIFICAR TÉRMINOS Y ESAS COSAS, DONDE ES TAN SENCILLO QUE SE PRESTA PARA HACER MÁS EJERCICIOS, COMO DE HECHO YA LO IMPLEMENTASTE.
 
-Hablar sobre el lenguaje algebraico y las características del lenguaje algebraico. Ten en cuenta algo tipo así:![alt text](IMG_0967.jpeg)
+EN EL TEMA DE LOS PRODUCTOS NOTABLES (http://localhost:4321/matematicas/algebra/productos-notables), la lección de introducción (http://localhost:4321/matematicas/algebra/productos-notables/introduccion-cuadrado-binomio), QUIERO QUE DES DE UNA VEZ UN TIPO RESUMEN DE LOS PRODUCTOS NOTABLES QUE VEREMOS, COMO PARA TENERLO EN LA INTRODUCCIÓN, Y DE UNA VEZ PROCEDAS CON EL TEMA EN SÍ MISMO, O PRIMER PRODUCTO NOTABLE, TAL COMO LO TIENES.
 
-##### LECCIÓN 2: Expresiones algebraicas
-Expresión escrita y expresión algebraica, ejemplos, términos y factores, ejemplos de identificación, valor. númerico de una expresión algebraica, ejemplos y en general ejercicios de práctica.
-
-#### TEMA 2: Monomios y polinomios
-
-##### LECCIÓN 1: Monomios: Estructura, Grado y Valor Numérico
-
-Definir qué es un monomio, su estructura (coeficiente, parte literal y grado), cómo calcular su valor numérico y cómo determinar su grado. Incluir ejercicios de práctica para identificar sus componentes, hallar el valor numérico y encontrar el grado de diversos monomios.
-
-##### LECCIÓN 2: Polinomios: Definición y Términos Semejantes
-
-Definir qué es un polinomio, explicar el concepto de términos semejantes y cómo identificarlos. Detallar el proceso de reducción de polinomios mediante la combinación de términos semejantes. Incluir ejercicios de práctica para identificar términos semejantes y simplificar expresiones polinómicas.
-
-##### LECCIÓN 3: Operaciones con monomios
-
-Dar definiciones, ejemplos y ejercicios de práctica.
-Suma y resta de monomios.
-Producto de monomios.
-División de monomios.
-
-##### LECCIÓN 4: Operaciones con polinomios
-
-Dar definiciones, ejemplos y ejercicios de práctica.
-Suma y resta de polinomios.
-Producto de polinomios.
-Sacar factor común.
-Potencia de un polinomio.
-
-##### LECCIÓN 5: División de polinomios
-
-Dar definiciones y ejemplos.
-Regla de Ruffini.
-
-#### TEMA 3: Productos notables
-
-##### LECCIÓN 1: Introducción y cuadrado de un binomio
-Definición
-Cuadrado de un binomio
-
-##### LECCIÓN 2: Cuadrado de un trinomio
-
-##### LECCIÓN 3: Binomios conjugados
-
-Hablar de binomios conjugados, y de binomios donde se aplican los binomios conjugados.
-
-##### LECCIÓN 4: Binomios con término común
-
-##### LECCIÓN 5: Cubo de un binomio
-
-##### LECCIÓN 6: Multiplicación y productos notables
-
-#### TEMA 4: Factorización
-
-##### LECCIÓN 1: Introducción
-Introduce la definición de factorización, y haz analogías con la factorización de números naturales. Del resto, igual, con las indicaciones generales de ejemplos y ejercicios de práctica.
-
-##### LECCIÓN 2: Factor común
-
-##### LECCIÓN 3: Factor común por agrupación de términos
-
-##### LECCIÓN 4: Diferencia de cuadrados
-
-##### LECCIÓN 5: Trinomio cuadrado perfecto
-Hablar de los pasos para factorizar un trinomio cuadrado perfecto
-
-##### LECCIÓN 6: Trinomio de la forma x2 + bx + c
-
-##### LECCIÓN 7: Trinomio de la forma ax2 + bx + c
-
-##### LECCIÓN 8: Suma y diferencia de cubos
-
-##### LECCIÓN 9: Suma y diferencia de potencias impares iguales
-
-##### LECCIÓN 10: Trinomio cuadrado perfecto completando el cuadrado
-
-##### LECCIÓN 11: Casos especiales
+En la lección "Introducción" del tema "Factorización" (http://localhost:4321/matematicas/algebra/factorizacion/introduccion), ![alt text](image-1.png), quiero que esa parte del resumen de casos de factorización lodes ahí en el princpio. Pero sin dar ejemplos miscelaneos de una vez, ya que eso confunde. Mejor deja esa tabla resumen ahí en la introducción, sin más, solo para que quede fácil de encontrar al inicio del tema, y además, la dejas en una lección, la cual debes crear, llamada tipo "Resumen de casos de factorización" o algo así. ESE RESUMEN DE CASOS DE FACTORIZACIÓN POR FAVOR PONLO COMO UNA LECCIÓN ANTES DE HABLAR DE CASOS ESPECIALES DE FACTORIZACIÓN (http://localhost:4321/matematicas/algebra/factorizacion/casos-especiales).
 
 
-PROCEDE CON LA PRIMERA LECCIÓN, YO LA APRUEBO, Y CUANDO YO APRUEBE LA PRIMERA LECCIÓN DENTRO DE ESTE CAPÍTULO, AHÍ SÍ TE AUTORIZARÉ SEGUIR CON LAS DEMÁS SOLICITADAS.
 
-
+http://localhost:4321/matematicas/algebra/productos-notables/binomios-conjugados
+COMO INTRODUCIR RACIONALIZACIÓN

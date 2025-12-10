@@ -21,6 +21,24 @@ Se llaman **notables** porque:
 
 ---
 
+## 📋 Resumen de Productos Notables
+
+A continuación se presenta un resumen de todos los productos notables que estudiaremos en este tema:
+
+| Nombre | Fórmula | Resultado |
+|:-------|:--------|:----------|
+| Cuadrado de una suma | $(a + b)^2$ | $a^2 + 2ab + b^2$ |
+| Cuadrado de una diferencia | $(a - b)^2$ | $a^2 - 2ab + b^2$ |
+| Cuadrado de un trinomio | $(a + b + c)^2$ | $a^2 + b^2 + c^2 + 2ab + 2ac + 2bc$ |
+| Producto de conjugados | $(a + b)(a - b)$ | $a^2 - b^2$ |
+| Binomios con término común | $(x + a)(x + b)$ | $x^2 + (a+b)x + ab$ |
+| Cubo de una suma | $(a + b)^3$ | $a^3 + 3a^2b + 3ab^2 + b^3$ |
+| Cubo de una diferencia | $(a - b)^3$ | $a^3 - 3a^2b + 3ab^2 - b^3$ |
+
+> **Nota:** Cada producto notable se estudia en detalle en las siguientes lecciones de este tema.
+
+---
+
 ## 📖 Cuadrado de un binomio
 
 El **cuadrado de un binomio** es el resultado de multiplicar un binomio por sí mismo.
