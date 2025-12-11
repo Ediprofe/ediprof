@@ -1,10 +1,10 @@
 ---
-description: Guía para generar gráficos en lecciones educativas - JSXGraph y Chart.js
+description: Guía para generar gráficos en lecciones educativas - JSXGraph, Chart.js y Three.js
 ---
 
 # 📊 Guía de Generación de Gráficos Educativos
 
-Este documento define las buenas prácticas para generar gráficos en las lecciones de ediprofe.com. Se usan **dos librerías** según el tipo de contenido.
+Este documento define las buenas prácticas para generar gráficos en las lecciones de ediprofe.com. Se usan **tres librerías** según el tipo de contenido.
 
 ---
 
@@ -16,11 +16,17 @@ Este documento define las buenas prácticas para generar gráficos en las leccio
 | **Estadística** (barras, histogramas, líneas) | **Chart.js** | Su especialidad |
 | **Porcentajes** | **Chart.js** | Pie/doughnut charts |
 | **Vectores** | **JSXGraph** | Interactividad, puntos arrastrables |
-| **Geometría** (figuras, ángulos, transformaciones) | **JSXGraph** | Construcciones dinámicas |
+| **Geometría 2D** (figuras, ángulos) | **JSXGraph** | Construcciones dinámicas |
+| **Productos notables** (área, cuadrados) | **JSXGraph** | Visualización de áreas |
 | **Funciones matemáticas** (gráficas, límites) | **JSXGraph** | Ejes coordenados, zoom |
 | **Trigonometría** (círculo unitario) | **JSXGraph** | Interactividad angular |
+| **Cubos y Geometría 3D** | **Three.js** | Cubos rotativos, volúmenes |
+| **Suma/diferencia de cubos** | **Three.js** | Visualización 3D interactiva |
 
-> 💡 **Regla general:** Si necesitas mostrar "partes de un todo" → Chart.js. Si necesitas coordenadas o interactividad → JSXGraph.
+> 💡 **Regla general:** 
+> - Partes de un todo → **Chart.js**
+> - Coordenadas 2D o interactividad → **JSXGraph**
+> - Volúmenes o 3D → **Three.js**
 
 ---
 
@@ -217,9 +223,30 @@ board.create('text', [x, y, '\\(\\vec{A}\\)'], {useMathJax: true});
 
 ## ⚠️ Limitaciones conocidas
 
-- **Modo oscuro**: Ambas librerías tienen fondo blanco fijo
+- **Modo oscuro**: Las tres librerías tienen fondo blanco fijo
 - **LaTeX en JSXGraph**: No funciona, usar texto simple
 - **SVG inline**: No se renderiza correctamente en markdown (no usar)
+- **Three.js mobile**: Verificar rendimiento en móviles
+
+---
+
+# SECCIÓN C: Three.js (Cubos 3D, Geometría espacial)
+
+## C.1 Configuración (ya en BaseLayout.astro)
+```html
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js" defer></script>
+```
+
+## C.2 Estructura HTML estándar
+```html
+<div id="threejs-NOMBRE" style="width: 100%; max-width: 600px; height: 350px; margin: 1.5rem auto;"></div>
+```
+
+## C.3 Cuándo usar Three.js
+- Suma y diferencia de cubos ($a^3 \pm b^3$)
+- Volúmenes de sólidos
+- Geometría espacial interactiva
+- Cualquier visualización que requiera rotación 3D
 
 ---
 
@@ -228,7 +255,8 @@ board.create('text', [x, y, '\\(\\vec{A}\\)'], {useMathJax: true});
 Cuando generes una lección, pregúntate:
 
 1. **¿Es sobre fracciones, porcentajes o estadística?** → **Chart.js pie/bar**
-2. **¿Es sobre vectores, geometría o funciones?** → **JSXGraph**
-3. **¿Solo necesitas una fórmula sin visualización?** → **KaTeX ($$...$$)**
+2. **¿Es sobre vectores, geometría 2D o funciones?** → **JSXGraph**
+3. **¿Es sobre cubos, volúmenes o geometría 3D?** → **Three.js**
+4. **¿Solo necesitas una fórmula sin visualización?** → **KaTeX ($$...$$)**
 
 Siempre añade texto contextual que explique qué representa el gráfico antes y después de incluirlo.

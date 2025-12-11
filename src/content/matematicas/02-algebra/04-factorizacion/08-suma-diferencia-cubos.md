@@ -22,20 +22,26 @@ $$
 
 ## 📖 Cómo recordar las fórmulas
 
-### Patrón SOAP
+La clave está en observar el patrón entre los signos:
 
-**S** - Same (mismo signo)
-**O** - Opposite (signo opuesto)
-**A** - Always
-**P** - Positive (siempre positivo)
+### Para suma de cubos ($a^3 + b^3$):
 
-$$
-a^3 \pm b^3 = (a \stackrel{S}{\pm} b)(a^2 \stackrel{O}{\mp} ab \stackrel{AP}{+} b^2)
-$$
+| Factor | Contenido |
+|:------:|:----------|
+| **1er factor** | $(a + b)$ — suma de las raíces cúbicas |
+| **2do factor** | $a^2 - ab + b^2$ — cuadrado, producto con signo opuesto, cuadrado |
 
-- El **primer factor** tiene el **mismo signo** que la expresión original
-- El **término medio** del segundo factor tiene **signo opuesto**
-- El **último término** es **siempre positivo**
+### Para diferencia de cubos ($a^3 - b^3$):
+
+| Factor | Contenido |
+|:------:|:----------|
+| **1er factor** | $(a - b)$ — diferencia de las raíces cúbicas |
+| **2do factor** | $a^2 + ab + b^2$ — cuadrado, producto con signo opuesto, cuadrado |
+
+> 💡 **Truco para recordar:**
+> - El **primer factor** tiene el **mismo signo** que la expresión original
+> - En el **segundo factor**, el término del medio tiene **signo contrario**
+> - El **último término** siempre es **positivo** ($+b^2$)
 
 ---
 

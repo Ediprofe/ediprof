@@ -8,24 +8,55 @@ En este tema aprenderemos a calcular el Mínimo Común Múltiplo (MCM) y el Máx
 
 El **MCD** es el mayor número que divide exactamente a dos o más números.
 
-### Método por factorización
+### Método por factorización simultánea
 
-1. Descomponer en factores primos
-2. Tomar los factores **comunes** con el **menor** exponente
+Descomponemos ambos números al mismo tiempo, dividiendo por primos que dividan al menos a uno de ellos.
 
-### Ejemplo 1
+### Ejemplo 1: MCD de 12 y 18
 
-MCD de $12$ y $18$:
+<div id="jsxgraph-mcd1" class="jsxgraph-container" style="width: 100%; max-width: 400px; height: 280px; margin: 1rem auto;"></div>
 
-$$
-12 = 2^2 \times 3
-$$
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-mcd1')) {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-mcd1', {
+      boundingbox: [-0.5, 6, 6, -0.5], axis: false, showCopyright: false, showNavigation: false, pan: {enabled: false}, zoom: {enabled: false}
+    });
+    // Líneas divisoras
+    board.create('segment', [[1.5, 5.5], [1.5, 1]], {strokeColor: '#374151', strokeWidth: 3, fixed: true});
+    board.create('segment', [[3, 5.5], [3, 1]], {strokeColor: '#374151', strokeWidth: 3, fixed: true});
+    // Encabezados
+    board.create('text', [0.7, 5.5, '12'], {fontSize: 16, strokeColor: '#374151', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
+    board.create('text', [2.3, 5.5, '18'], {fontSize: 16, strokeColor: '#374151', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
+    // Fila 1: ÷2
+    board.create('text', [0.7, 4.5, '6'], {fontSize: 16, strokeColor: '#374151', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
+    board.create('text', [2.3, 4.5, '9'], {fontSize: 16, strokeColor: '#374151', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
+    board.create('text', [3.5, 4.5, '2'], {fontSize: 16, strokeColor: '#ef4444', fixed: true, cssStyle: 'font-weight: bold;'});
+    // Fila 2: ÷3
+    board.create('text', [0.7, 3.5, '2'], {fontSize: 16, strokeColor: '#374151', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
+    board.create('text', [2.3, 3.5, '3'], {fontSize: 16, strokeColor: '#374151', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
+    board.create('text', [3.5, 3.5, '3'], {fontSize: 16, strokeColor: '#3b82f6', fixed: true, cssStyle: 'font-weight: bold;'});
+    // Fila 3: ÷2
+    board.create('text', [0.7, 2.5, '1'], {fontSize: 16, strokeColor: '#22c55e', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
+    board.create('text', [2.3, 2.5, '3'], {fontSize: 16, strokeColor: '#374151', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
+    board.create('text', [3.5, 2.5, '2'], {fontSize: 16, strokeColor: '#94a3b8', fixed: true, cssStyle: 'font-weight: bold;'});
+    // Fila 4: ÷3
+    board.create('text', [0.7, 1.5, '1'], {fontSize: 16, strokeColor: '#22c55e', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
+    board.create('text', [2.3, 1.5, '1'], {fontSize: 16, strokeColor: '#22c55e', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
+    board.create('text', [3.5, 1.5, '3'], {fontSize: 16, strokeColor: '#94a3b8', fixed: true, cssStyle: 'font-weight: bold;'});
+    // Líneas horizontales
+    for (var i = 0; i < 4; i++) {
+      board.create('segment', [[0, 5-i], [4.2, 5-i]], {strokeColor: '#d1d5db', strokeWidth: 1, fixed: true});
+    }
+    // Resultado
+    board.create('text', [2, 0.5, 'MCD = 2 × 3 = 6'], {fontSize: 14, strokeColor: '#22c55e', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
+    board.create('text', [5, 3.5, '← comunes'], {fontSize: 11, strokeColor: '#22c55e', fixed: true});
+    board.unsuspendUpdate();
+  }
+});
+</script>
 
-$$
-18 = 2 \times 3^2
-$$
-
-Factores comunes: $2^1$ y $3^1$
+> 💡 Para el **MCD**: multiplicamos solo los primos que dividen **a ambos números** (filas donde ambos cambian).
 
 $$
 \text{MCD}(12, 18) = 2 \times 3 = 6
@@ -33,17 +64,49 @@ $$
 
 ---
 
-### Ejemplo 2
+### Ejemplo 2: MCD de 24 y 36
 
-MCD de $24$ y $36$:
+<div id="jsxgraph-mcd2" class="jsxgraph-container" style="width: 100%; max-width: 400px; height: 300px; margin: 1rem auto;"></div>
 
-$$
-24 = 2^3 \times 3
-$$
-
-$$
-36 = 2^2 \times 3^2
-$$
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-mcd2')) {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-mcd2', {
+      boundingbox: [-0.5, 6.5, 6, -0.5], axis: false, showCopyright: false, showNavigation: false, pan: {enabled: false}, zoom: {enabled: false}
+    });
+    board.create('segment', [[1.5, 6], [1.5, 0.5]], {strokeColor: '#374151', strokeWidth: 3, fixed: true});
+    board.create('segment', [[3, 6], [3, 0.5]], {strokeColor: '#374151', strokeWidth: 3, fixed: true});
+    // Encabezados
+    board.create('text', [0.7, 5.8, '24'], {fontSize: 16, strokeColor: '#374151', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
+    board.create('text', [2.3, 5.8, '36'], {fontSize: 16, strokeColor: '#374151', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
+    // 24÷2=12, 36÷2=18
+    board.create('text', [0.7, 4.8, '12'], {fontSize: 16, strokeColor: '#374151', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
+    board.create('text', [2.3, 4.8, '18'], {fontSize: 16, strokeColor: '#374151', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
+    board.create('text', [3.5, 4.8, '2'], {fontSize: 16, strokeColor: '#ef4444', fixed: true, cssStyle: 'font-weight: bold;'});
+    // 12÷2=6, 18÷2=9
+    board.create('text', [0.7, 3.8, '6'], {fontSize: 16, strokeColor: '#374151', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
+    board.create('text', [2.3, 3.8, '9'], {fontSize: 16, strokeColor: '#374151', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
+    board.create('text', [3.5, 3.8, '2'], {fontSize: 16, strokeColor: '#ef4444', fixed: true, cssStyle: 'font-weight: bold;'});
+    // 6÷3=2, 9÷3=3
+    board.create('text', [0.7, 2.8, '2'], {fontSize: 16, strokeColor: '#374151', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
+    board.create('text', [2.3, 2.8, '3'], {fontSize: 16, strokeColor: '#374151', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
+    board.create('text', [3.5, 2.8, '3'], {fontSize: 16, strokeColor: '#3b82f6', fixed: true, cssStyle: 'font-weight: bold;'});
+    // Resto
+    board.create('text', [0.7, 1.8, '1'], {fontSize: 16, strokeColor: '#22c55e', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
+    board.create('text', [2.3, 1.8, '3'], {fontSize: 16, strokeColor: '#374151', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
+    board.create('text', [3.5, 1.8, '2'], {fontSize: 16, strokeColor: '#94a3b8', fixed: true, cssStyle: 'font-weight: bold;'});
+    board.create('text', [0.7, 0.8, '1'], {fontSize: 16, strokeColor: '#22c55e', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
+    board.create('text', [2.3, 0.8, '1'], {fontSize: 16, strokeColor: '#22c55e', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
+    board.create('text', [3.5, 0.8, '3'], {fontSize: 16, strokeColor: '#94a3b8', fixed: true, cssStyle: 'font-weight: bold;'});
+    // Líneas horizontales
+    for (var i = 0; i < 5; i++) {
+      board.create('segment', [[0, 5.3-i], [4.2, 5.3-i]], {strokeColor: '#d1d5db', strokeWidth: 1, fixed: true});
+    }
+    board.create('text', [2, 0.1, 'MCD = 2 × 2 × 3 = 12'], {fontSize: 14, strokeColor: '#22c55e', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
+    board.unsuspendUpdate();
+  }
+});
+</script>
 
 $$
 \text{MCD}(24, 36) = 2^2 \times 3 = 12
@@ -55,42 +118,95 @@ $$
 
 El **MCM** es el menor número que es múltiplo de dos o más números.
 
-### Método por factorización
+### Método por factorización simultánea
 
-1. Descomponer en factores primos
-2. Tomar **todos** los factores con el **mayor** exponente
+Usamos el mismo proceso, pero multiplicamos **todos** los factores primos.
 
-### Ejemplo 1
+### Ejemplo 1: MCM de 12 y 18
 
-MCM de $12$ y $18$:
+<div id="jsxgraph-mcm1" class="jsxgraph-container" style="width: 100%; max-width: 400px; height: 280px; margin: 1rem auto;"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-mcm1')) {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-mcm1', {
+      boundingbox: [-0.5, 6, 6, -0.5], axis: false, showCopyright: false, showNavigation: false, pan: {enabled: false}, zoom: {enabled: false}
+    });
+    board.create('segment', [[1.5, 5.5], [1.5, 1]], {strokeColor: '#374151', strokeWidth: 3, fixed: true});
+    board.create('segment', [[3, 5.5], [3, 1]], {strokeColor: '#374151', strokeWidth: 3, fixed: true});
+    // Encabezados
+    board.create('text', [0.7, 5.5, '12'], {fontSize: 16, strokeColor: '#374151', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
+    board.create('text', [2.3, 5.5, '18'], {fontSize: 16, strokeColor: '#374151', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
+    // Filas
+    board.create('text', [0.7, 4.5, '6'], {fontSize: 16, strokeColor: '#374151', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
+    board.create('text', [2.3, 4.5, '9'], {fontSize: 16, strokeColor: '#374151', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
+    board.create('text', [3.5, 4.5, '2'], {fontSize: 16, strokeColor: '#ef4444', fixed: true, cssStyle: 'font-weight: bold;'});
+    board.create('text', [0.7, 3.5, '2'], {fontSize: 16, strokeColor: '#374151', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
+    board.create('text', [2.3, 3.5, '3'], {fontSize: 16, strokeColor: '#374151', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
+    board.create('text', [3.5, 3.5, '3'], {fontSize: 16, strokeColor: '#3b82f6', fixed: true, cssStyle: 'font-weight: bold;'});
+    board.create('text', [0.7, 2.5, '1'], {fontSize: 16, strokeColor: '#22c55e', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
+    board.create('text', [2.3, 2.5, '3'], {fontSize: 16, strokeColor: '#374151', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
+    board.create('text', [3.5, 2.5, '2'], {fontSize: 16, strokeColor: '#ef4444', fixed: true, cssStyle: 'font-weight: bold;'});
+    board.create('text', [0.7, 1.5, '1'], {fontSize: 16, strokeColor: '#22c55e', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
+    board.create('text', [2.3, 1.5, '1'], {fontSize: 16, strokeColor: '#22c55e', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
+    board.create('text', [3.5, 1.5, '3'], {fontSize: 16, strokeColor: '#3b82f6', fixed: true, cssStyle: 'font-weight: bold;'});
+    for (var i = 0; i < 4; i++) {
+      board.create('segment', [[0, 5-i], [4.2, 5-i]], {strokeColor: '#d1d5db', strokeWidth: 1, fixed: true});
+    }
+    board.create('text', [2, 0.5, 'MCM = 2×3×2×3 = 36'], {fontSize: 14, strokeColor: '#3b82f6', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
+    board.create('text', [5, 3, '← todos'], {fontSize: 11, strokeColor: '#3b82f6', fixed: true});
+    board.unsuspendUpdate();
+  }
+});
+</script>
+
+> 💡 Para el **MCM**: multiplicamos **todos** los primos de la columna derecha.
 
 $$
-12 = 2^2 \times 3
-$$
-
-$$
-18 = 2 \times 3^2
-$$
-
-Todos los factores con mayor exponente: $2^2$ y $3^2$
-
-$$
-\text{MCM}(12, 18) = 2^2 \times 3^2 = 4 \times 9 = 36
+\text{MCM}(12, 18) = 2 \times 3 \times 2 \times 3 = 36
 $$
 
 ---
 
-### Ejemplo 2
+### Ejemplo 2: MCM de 8 y 12
 
-MCM de $8$ y $12$:
+<div id="jsxgraph-mcm2" class="jsxgraph-container" style="width: 100%; max-width: 400px; height: 280px; margin: 1rem auto;"></div>
 
-$$
-8 = 2^3
-$$
-
-$$
-12 = 2^2 \times 3
-$$
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-mcm2')) {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-mcm2', {
+      boundingbox: [-0.5, 6, 6, -0.5], axis: false, showCopyright: false, showNavigation: false, pan: {enabled: false}, zoom: {enabled: false}
+    });
+    board.create('segment', [[1.5, 5.5], [1.5, 1]], {strokeColor: '#374151', strokeWidth: 3, fixed: true});
+    board.create('segment', [[3, 5.5], [3, 1]], {strokeColor: '#374151', strokeWidth: 3, fixed: true});
+    // 8 y 12
+    board.create('text', [0.7, 5.5, '8'], {fontSize: 16, strokeColor: '#374151', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
+    board.create('text', [2.3, 5.5, '12'], {fontSize: 16, strokeColor: '#374151', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
+    // ÷2
+    board.create('text', [0.7, 4.5, '4'], {fontSize: 16, strokeColor: '#374151', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
+    board.create('text', [2.3, 4.5, '6'], {fontSize: 16, strokeColor: '#374151', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
+    board.create('text', [3.5, 4.5, '2'], {fontSize: 16, strokeColor: '#ef4444', fixed: true, cssStyle: 'font-weight: bold;'});
+    // ÷2
+    board.create('text', [0.7, 3.5, '2'], {fontSize: 16, strokeColor: '#374151', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
+    board.create('text', [2.3, 3.5, '3'], {fontSize: 16, strokeColor: '#374151', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
+    board.create('text', [3.5, 3.5, '2'], {fontSize: 16, strokeColor: '#ef4444', fixed: true, cssStyle: 'font-weight: bold;'});
+    // ÷2
+    board.create('text', [0.7, 2.5, '1'], {fontSize: 16, strokeColor: '#22c55e', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
+    board.create('text', [2.3, 2.5, '3'], {fontSize: 16, strokeColor: '#374151', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
+    board.create('text', [3.5, 2.5, '2'], {fontSize: 16, strokeColor: '#ef4444', fixed: true, cssStyle: 'font-weight: bold;'});
+    // ÷3
+    board.create('text', [0.7, 1.5, '1'], {fontSize: 16, strokeColor: '#22c55e', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
+    board.create('text', [2.3, 1.5, '1'], {fontSize: 16, strokeColor: '#22c55e', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
+    board.create('text', [3.5, 1.5, '3'], {fontSize: 16, strokeColor: '#3b82f6', fixed: true, cssStyle: 'font-weight: bold;'});
+    for (var i = 0; i < 4; i++) {
+      board.create('segment', [[0, 5-i], [4.2, 5-i]], {strokeColor: '#d1d5db', strokeWidth: 1, fixed: true});
+    }
+    board.create('text', [2, 0.5, 'MCM = 2×2×2×3 = 24'], {fontSize: 14, strokeColor: '#3b82f6', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
+    board.unsuspendUpdate();
+  }
+});
+</script>
 
 $$
 \text{MCM}(8, 12) = 2^3 \times 3 = 24
@@ -100,16 +216,42 @@ $$
 
 ## 📖 Relación entre MCM y MCD
 
+<div id="jsxgraph-relacion" class="jsxgraph-container" style="width: 100%; max-width: 450px; height: 180px; margin: 1rem auto;"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-relacion')) {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-relacion', {
+      boundingbox: [-0.5, 4, 9, -0.5], axis: false, showCopyright: false, showNavigation: false, pan: {enabled: false}, zoom: {enabled: false}
+    });
+    // Caja de fórmula
+    board.create('polygon', [[0.5, 3.6], [8.5, 3.6], [8.5, 2.6], [0.5, 2.6]], {fillColor: '#dbeafe', fillOpacity: 0.5, strokeColor: '#3b82f6', strokeWidth: 2, fixed: true, vertices: {visible: false}});
+    board.create('text', [4.5, 3.1, 'MCM(a,b) × MCD(a,b) = a × b'], {fontSize: 16, strokeColor: '#1e40af', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
+    // Ejemplo
+    board.create('text', [4.5, 1.8, 'Ejemplo: 12 y 18'], {fontSize: 13, strokeColor: '#374151', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
+    // MCM × MCD = a × b
+    board.create('text', [1.5, 0.8, '36'], {fontSize: 18, strokeColor: '#3b82f6', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
+    board.create('text', [2.2, 0.8, '×'], {fontSize: 16, strokeColor: '#374151', fixed: true, anchorX: 'middle'});
+    board.create('text', [2.9, 0.8, '6'], {fontSize: 18, strokeColor: '#22c55e', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
+    board.create('text', [3.6, 0.8, '='], {fontSize: 16, strokeColor: '#374151', fixed: true, anchorX: 'middle'});
+    board.create('text', [4.5, 0.8, '216'], {fontSize: 18, strokeColor: '#374151', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
+    board.create('text', [5.4, 0.8, '='], {fontSize: 16, strokeColor: '#374151', fixed: true, anchorX: 'middle'});
+    board.create('text', [6.2, 0.8, '12'], {fontSize: 18, strokeColor: '#ef4444', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
+    board.create('text', [6.9, 0.8, '×'], {fontSize: 16, strokeColor: '#374151', fixed: true, anchorX: 'middle'});
+    board.create('text', [7.6, 0.8, '18'], {fontSize: 18, strokeColor: '#ef4444', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
+    // Etiquetas
+    board.create('text', [1.5, 0.2, 'MCM'], {fontSize: 10, strokeColor: '#3b82f6', fixed: true, anchorX: 'middle'});
+    board.create('text', [2.9, 0.2, 'MCD'], {fontSize: 10, strokeColor: '#22c55e', fixed: true, anchorX: 'middle'});
+    board.create('text', [6.9, 0.2, 'a × b'], {fontSize: 10, strokeColor: '#ef4444', fixed: true, anchorX: 'middle'});
+    // Check mark
+    board.create('text', [8.3, 0.8, '✓'], {fontSize: 20, strokeColor: '#22c55e', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
+    board.unsuspendUpdate();
+  }
+});
+</script>
+
 $$
 \text{MCM}(a, b) \times \text{MCD}(a, b) = a \times b
-$$
-
-### Ejemplo
-
-Para $12$ y $18$:
-
-$$
-36 \times 6 = 216 = 12 \times 18 \quad ✓
 $$
 
 ---

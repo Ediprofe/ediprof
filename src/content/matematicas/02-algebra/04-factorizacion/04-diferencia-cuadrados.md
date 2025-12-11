@@ -12,6 +12,108 @@ $$
 a^2 - b^2 = (a + b)(a - b)
 $$
 
+### Demostración algebraica
+
+Podemos verificar esta fórmula multiplicando los binomios conjugados:
+
+$$
+(a + b)(a - b)
+$$
+
+$$
+= a \cdot a + a \cdot (-b) + b \cdot a + b \cdot (-b)
+$$
+
+$$
+= a^2 - ab + ab - b^2
+$$
+
+$$
+= a^2 - b^2 \quad ✓
+$$
+
+### Ejemplo: Si $a = 5$ y $b = 2$
+
+$$
+(5 + 2)(5 - 2) = 7 \times 3 = 21
+$$
+
+$$
+5^2 - 2^2 = 25 - 4 = 21 \quad ✓
+$$
+
+---
+
+### Interpretación geométrica (con $a = 5$, $b = 2$)
+
+<div id="jsxgraph-diff-sq" class="jsxgraph-container" style="width: 100%; max-width: 650px; height: 380px; margin: 1.5rem auto;"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-diff-sq')) {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-diff-sq', {
+      boundingbox: [-2.5, 9.5, 19, -3.5], axis: false, showCopyright: false, showNavigation: false, pan: {enabled: false}, zoom: {enabled: false}
+    });
+    var a = 5, b = 2;
+    // Título fórmula
+    board.create('text', [8, 8.8, '5² − 2² = (5+2)(5−2)'], {fontSize: 17, strokeColor: '#374151', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
+    
+    // === LADO IZQUIERDO: Cuadrado grande con cuadrado restado ===
+    // Cuadrado grande a² (azul)
+    board.create('polygon', [[0, 0], [a, 0], [a, a], [0, a]], {fillColor: '#3b82f6', fillOpacity: 0.6, strokeColor: '#1d4ed8', strokeWidth: 2, fixed: true, vertices: {visible: false}});
+    // Cuadrado pequeño b² (rojo)
+    board.create('polygon', [[a-b, a-b], [a, a-b], [a, a], [a-b, a]], {fillColor: '#ef4444', fillOpacity: 0.85, strokeColor: '#b91c1c', strokeWidth: 2, fixed: true, vertices: {visible: false}});
+    // Etiqueta b² = 4
+    board.create('text', [a - b/2, a - b/2, 'b²=4'], {fontSize: 13, strokeColor: '#fff', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
+    // Etiqueta a² = 25 dentro
+    board.create('text', [1.3, 1.5, 'a²=25'], {fontSize: 14, strokeColor: '#1e40af', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
+    
+    // Dimensión inferior: a = 5
+    board.create('segment', [[0, -0.7], [a, -0.7]], {strokeColor: '#3b82f6', strokeWidth: 3, fixed: true});
+    board.create('text', [a/2, -1.6, 'a = 5'], {fontSize: 15, strokeColor: '#3b82f6', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
+    // Dimensión lateral: a = 5
+    board.create('segment', [[-0.7, 0], [-0.7, a]], {strokeColor: '#3b82f6', strokeWidth: 3, fixed: true});
+    board.create('text', [-1.8, a/2, 'a = 5'], {fontSize: 15, strokeColor: '#3b82f6', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
+    // Dimensión b = 2 (lado del cuadrado rojo)
+    board.create('segment', [[a+0.3, a-b], [a+0.3, a]], {strokeColor: '#ef4444', strokeWidth: 3, fixed: true});
+    board.create('text', [a + 1.2, a - b/2, 'b = 2'], {fontSize: 13, strokeColor: '#ef4444', fixed: true, cssStyle: 'font-weight: bold;'});
+    
+    // Resultado lado izquierdo: a² - b² = 21
+    board.create('text', [2.5, 7.5, 'a² − b² = 21'], {fontSize: 15, strokeColor: '#374151', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
+    board.create('text', [2.5, 6.5, '5² − 2² = 21'], {fontSize: 14, strokeColor: '#3b82f6', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
+    
+    // === SIGNO IGUAL ===
+    board.create('text', [8, 3, '='], {fontSize: 36, strokeColor: '#374151', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
+    
+    // === LADO DERECHO: Rectángulo (a+b)(a-b) ===
+    var xOff = 10;
+    var rectW = a + b; // 7
+    var rectH = a - b; // 3
+    board.create('polygon', [[xOff, 0.5], [xOff + rectW, 0.5], [xOff + rectW, rectH + 0.5], [xOff, rectH + 0.5]], {fillColor: '#22c55e', fillOpacity: 0.7, strokeColor: '#166534', strokeWidth: 2, fixed: true, vertices: {visible: false}});
+    // Valor dentro 7 × 3
+    board.create('text', [xOff + rectW/2, 2, '7 × 3'], {fontSize: 18, strokeColor: '#166534', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
+    
+    // Dimensión inferior: (5+2) = 7
+    board.create('segment', [[xOff, -0.3], [xOff + rectW, -0.3]], {strokeColor: '#22c55e', strokeWidth: 3, fixed: true});
+    board.create('text', [xOff + rectW/2, -1.2, '(5+2) = 7'], {fontSize: 14, strokeColor: '#22c55e', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
+    board.create('text', [xOff + rectW/2, -2.3, 'a + b'], {fontSize: 12, strokeColor: '#64748b', fixed: true, anchorX: 'middle', cssStyle: 'font-style: italic;'});
+    
+    // Dimensión lateral: (5-2) = 3
+    board.create('segment', [[xOff - 0.5, 0.5], [xOff - 0.5, rectH + 0.5]], {strokeColor: '#22c55e', strokeWidth: 3, fixed: true});
+    board.create('text', [xOff - 1.5, 2, '(5−2)'], {fontSize: 13, strokeColor: '#22c55e', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
+    board.create('text', [xOff - 1.5, 1.1, '= 3'], {fontSize: 13, strokeColor: '#22c55e', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
+    board.create('text', [xOff - 1.5, 0.2, 'a − b'], {fontSize: 11, strokeColor: '#64748b', fixed: true, anchorX: 'middle', cssStyle: 'font-style: italic;'});
+    
+    // Resultado lado derecho: (a+b)(a-b) = 21
+    board.create('text', [xOff + rectW/2, 7.5, '(a+b)(a−b) = 21'], {fontSize: 15, strokeColor: '#374151', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
+    board.create('text', [xOff + rectW/2, 6.5, '(5+2)(5−2) = 21'], {fontSize: 14, strokeColor: '#22c55e', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
+    board.unsuspendUpdate();
+  }
+});
+</script>
+
+> 💡 **Interpretación:** El área del cuadrado azul ($25$) menos el área del cuadrado rojo ($4$) es igual al área del rectángulo verde ($7 \times 3 = 21$). ¡Ambas áreas son **21**!
+
 **En palabras:** La diferencia de dos cuadrados es igual al producto de la suma de sus raíces por la diferencia de sus raíces.
 
 ---

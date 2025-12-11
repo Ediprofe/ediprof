@@ -167,6 +167,46 @@ $$
 = a^2 - 2ab + b^2
 $$
 
+### Representación geométrica de $(a-b)^2$
+
+<div id="jsxgraph-binomio-resta" class="jsxgraph-container" style="width: 100%; max-width: 450px; height: 380px; margin: 1.5rem auto;"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-binomio-resta')) {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-binomio-resta', {
+      boundingbox: [-1, 7.5, 7.5, -1], axis: false, showCopyright: false, showNavigation: false, pan: {enabled: false}, zoom: {enabled: false}
+    });
+    var a = 5, b = 2;
+    // Cuadrado grande a² (todo el cuadrado original)
+    board.create('polygon', [[0, 0], [a, 0], [a, a], [0, a]], {fillColor: '#dbeafe', fillOpacity: 0.5, strokeColor: '#3b82f6', strokeWidth: 2, fixed: true, vertices: {visible: false}});
+    // Cuadrado (a-b)² resultado
+    board.create('polygon', [[0, 0], [a-b, 0], [a-b, a-b], [0, a-b]], {fillColor: '#3b82f6', fillOpacity: 0.8, strokeColor: '#1d4ed8', strokeWidth: 3, fixed: true, vertices: {visible: false}});
+    board.create('text', [(a-b)/2, (a-b)/2, '(a-b)²'], {fontSize: 16, strokeColor: '#1e40af', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
+    // Área que se resta (L invertida)
+    // Rectángulo superior
+    board.create('polygon', [[0, a-b], [a, a-b], [a, a], [0, a]], {fillColor: '#ef4444', fillOpacity: 0.4, strokeColor: '#dc2626', strokeWidth: 2, fixed: true, vertices: {visible: false}});
+    board.create('text', [a/2, a - b/2, 'ab'], {fontSize: 14, strokeColor: '#991b1b', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
+    // Rectángulo derecho (sin la esquina)
+    board.create('polygon', [[a-b, 0], [a, 0], [a, a-b], [a-b, a-b]], {fillColor: '#ef4444', fillOpacity: 0.4, strokeColor: '#dc2626', strokeWidth: 2, fixed: true, vertices: {visible: false}});
+    board.create('text', [a - b/2, (a-b)/2, 'ab'], {fontSize: 14, strokeColor: '#991b1b', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
+    // Esquina b² (se resta dos veces, hay que sumar una)
+    board.create('polygon', [[a-b, a-b], [a, a-b], [a, a], [a-b, a]], {fillColor: '#22c55e', fillOpacity: 0.7, strokeColor: '#166534', strokeWidth: 2, fixed: true, vertices: {visible: false}});
+    board.create('text', [a - b/2, a - b/2, '+b²'], {fontSize: 13, strokeColor: '#166534', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
+    // Dimensiones
+    board.create('segment', [[0, -0.4], [a, -0.4]], {strokeColor: '#374151', strokeWidth: 2, fixed: true});
+    board.create('text', [a/2, -0.8, 'a'], {fontSize: 14, strokeColor: '#374151', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
+    board.create('segment', [[-0.4, 0], [-0.4, a]], {strokeColor: '#374151', strokeWidth: 2, fixed: true});
+    board.create('text', [-0.8, a/2, 'a'], {fontSize: 14, strokeColor: '#374151', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
+    // Fórmula
+    board.create('text', [3.5, 7, '(a - b)² = a² - 2ab + b²'], {fontSize: 15, strokeColor: '#374151', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
+    board.unsuspendUpdate();
+  }
+});
+</script>
+
+> 💡 **Interpretación:** Empezamos con $a^2$, restamos dos áreas $ab$ (rojo), pero como la esquina $b^2$ se restó dos veces, la sumamos una vez (verde).
+
 ### Ejemplo 5
 
 Desarrolla: $(x - 4)^2$
@@ -259,16 +299,57 @@ Si $x = 2$:
 
 ## 📖 Representación geométrica
 
-El cuadrado de un binomio tiene una interpretación geométrica:
+El cuadrado de un binomio tiene una interpretación geométrica muy clara:
 
-$(a + b)^2$ representa el área de un cuadrado de lado $(a + b)$.
+$(a + b)^2$ representa el **área de un cuadrado** de lado $(a + b)$.
 
-Este cuadrado se puede dividir en:
-- Un cuadrado de lado $a$ → área $a^2$
-- Un cuadrado de lado $b$ → área $b^2$
-- Dos rectángulos de lados $a$ y $b$ → área $ab$ cada uno
+<div id="jsxgraph-binomio" class="jsxgraph-container" style="width: 100%; max-width: 450px; height: 400px; margin: 1.5rem auto;"></div>
 
-Total: $a^2 + ab + ab + b^2 = a^2 + 2ab + b^2$
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-binomio')) {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-binomio', {
+      boundingbox: [-1.5, 8.5, 8, -1.8], axis: false, showCopyright: false, showNavigation: false, pan: {enabled: false}, zoom: {enabled: false}
+    });
+    var a = 4, b = 2.5; // valores para visualización
+    // Cuadrado a² (esquina inferior izquierda)
+    board.create('polygon', [[0, 0], [a, 0], [a, a], [0, a]], {fillColor: '#3b82f6', fillOpacity: 0.7, strokeColor: '#1d4ed8', strokeWidth: 2, fixed: true, vertices: {visible: false}});
+    board.create('text', [a/2, a/2, 'a²'], {fontSize: 20, strokeColor: '#1e40af', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
+    // Cuadrado b² (esquina superior derecha)
+    board.create('polygon', [[a, a], [a+b, a], [a+b, a+b], [a, a+b]], {fillColor: '#22c55e', fillOpacity: 0.7, strokeColor: '#166534', strokeWidth: 2, fixed: true, vertices: {visible: false}});
+    board.create('text', [a+b/2, a+b/2, 'b²'], {fontSize: 18, strokeColor: '#166534', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
+    // Rectángulo ab (derecha abajo)
+    board.create('polygon', [[a, 0], [a+b, 0], [a+b, a], [a, a]], {fillColor: '#f59e0b', fillOpacity: 0.7, strokeColor: '#d97706', strokeWidth: 2, fixed: true, vertices: {visible: false}});
+    board.create('text', [a+b/2, a/2, 'ab'], {fontSize: 18, strokeColor: '#92400e', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
+    // Rectángulo ab (arriba izquierda)
+    board.create('polygon', [[0, a], [a, a], [a, a+b], [0, a+b]], {fillColor: '#f59e0b', fillOpacity: 0.7, strokeColor: '#d97706', strokeWidth: 2, fixed: true, vertices: {visible: false}});
+    board.create('text', [a/2, a+b/2, 'ab'], {fontSize: 18, strokeColor: '#92400e', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
+    // Etiquetas de dimensiones
+    // Base: a
+    board.create('segment', [[0, -0.6], [a, -0.6]], {strokeColor: '#3b82f6', strokeWidth: 3, fixed: true});
+    board.create('text', [a/2, -1.2, 'a'], {fontSize: 18, strokeColor: '#3b82f6', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
+    // Base: b
+    board.create('segment', [[a, -0.6], [a+b, -0.6]], {strokeColor: '#22c55e', strokeWidth: 3, fixed: true});
+    board.create('text', [a+b/2, -1.2, 'b'], {fontSize: 18, strokeColor: '#22c55e', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
+    // Lado izquierdo: a
+    board.create('segment', [[-0.6, 0], [-0.6, a]], {strokeColor: '#3b82f6', strokeWidth: 3, fixed: true});
+    board.create('text', [-1.1, a/2, 'a'], {fontSize: 18, strokeColor: '#3b82f6', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
+    // Lado izquierdo: b
+    board.create('segment', [[-0.6, a], [-0.6, a+b]], {strokeColor: '#22c55e', strokeWidth: 3, fixed: true});
+    board.create('text', [-1.1, a+b/2, 'b'], {fontSize: 18, strokeColor: '#22c55e', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
+    // Fórmula
+    board.create('text', [3.25, 7.8, '(a + b)² = a² + 2ab + b²'], {fontSize: 16, strokeColor: '#374151', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
+    board.unsuspendUpdate();
+  }
+});
+</script>
+
+> 💡 **Interpretación visual:** El cuadrado grande de lado $(a+b)$ se divide en **4 regiones**:
+> - 🔵 Un cuadrado azul de área $a^2$
+> - 🟢 Un cuadrado verde de área $b^2$  
+> - 🟠 Dos rectángulos naranjas de área $ab$ cada uno
+
+**Total:** $a^2 + ab + ab + b^2 = a^2 + 2ab + b^2$
 
 ---
 
