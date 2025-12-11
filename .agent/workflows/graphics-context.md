@@ -125,6 +125,18 @@ En la siguiente figura, las **porciones azules** representan las partes que toma
 <div id="jsxgraph-NOMBRE-UNICO" class="jsxgraph-container" style="width: 100%; max-width: 500px; height: 350px; margin: 1.5rem auto;"></div>
 ```
 
+## B.2.1 Ancho responsivo para pantallas grandes
+
+Para gráficos que necesitan más espacio horizontal (cuadrículas, múltiples elementos):
+- **max-width: 700px** mínimo para gráficos con varios grupos lado a lado
+- **height: 250px** o más para cuadrículas con varias filas
+- Siempre dejar **separación visual** entre elementos (mínimo 0.1 de gap en coordenadas)
+
+```html
+<!-- Ejemplo para gráficos más anchos -->
+<div id="jsxgraph-ID" style="width: 100%; max-width: 700px; height: 250px; margin: 1rem auto;"></div>
+```
+
 ## B.3 Estructura JavaScript estándar
 ```javascript
 <script>
