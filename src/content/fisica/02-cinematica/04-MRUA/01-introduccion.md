@@ -38,57 +38,94 @@ $$
 
 ## ⚙️ **Ejercicio 1 — El Arranque de una Moto**
 
-Una motocicleta está detenida frente a un semáforo en rojo. Cuando cambia a verde, el conductor acelera en línea recta con una aceleración constante de $5\,\mathrm{m/s^2}$ durante 4 segundos.
+Una motocicleta está detenida frente a un semáforo en rojo. Cuando cambia a verde, el conductor acelera con $a = 5\,\mathrm{m/s^2}$ durante 4 segundos.
 
-### **✅ Análisis Didáctico**
+<div id="jsxgraph-moto" class="jsxgraph-container" style="width: 100%; max-width: 500px; height: 200px; margin: 1rem auto;"></div>
 
-**1. Interpretación del dato:**
-Tenemos que $a = 5\,\mathrm{m/s^2}$.
-Esto significa: **"Cada segundo que pase, la moto sumará $5\,\mathrm{m/s}$ a su velocidad anterior"**.
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-moto')) {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-moto', {
+      boundingbox: [-0.8, 25, 5.5, -4], axis: false, showCopyright: false, showNavigation: false, pan: {enabled: false}, zoom: {enabled: false}
+    });
+    // Ejes manuales
+    board.create('axis', [[0, 0], [1, 0]], {ticks: {insertTicks: false, ticksDistance: 1, label: {offset: [0, -12]}}});
+    board.create('axis', [[0, 0], [0, 1]], {ticks: {insertTicks: false, ticksDistance: 5, label: {offset: [-15, 0]}}});
+    board.create('text', [5.2, -1.5, 't (s)'], {fontSize: 12, strokeColor: '#374151', fixed: true, cssStyle: 'font-weight: bold;'});
+    board.create('text', [-0.6, 23, 'v (m/s)'], {fontSize: 12, strokeColor: '#374151', fixed: true, cssStyle: 'font-weight: bold;'});
+    // Línea principal
+    board.create('segment', [[0, 0], [4, 20]], {strokeColor: '#3b82f6', strokeWidth: 3, fixed: true});
+    // Puntos con etiquetas de velocidad
+    board.create('point', [0, 0], {size: 5, fixed: true, color: '#22c55e', name: '0', label: {offset: [-15, -5], strokeColor: '#22c55e', fontSize: 11}});
+    board.create('point', [1, 5], {size: 5, fixed: true, color: '#3b82f6', name: '', withLabel: false});
+    board.create('point', [2, 10], {size: 5, fixed: true, color: '#3b82f6', name: '', withLabel: false});
+    board.create('point', [3, 15], {size: 5, fixed: true, color: '#3b82f6', name: '', withLabel: false});
+    board.create('point', [4, 20], {size: 5, fixed: true, color: '#ef4444', name: '20 m/s', label: {offset: [8, 5], strokeColor: '#ef4444', fontSize: 12, cssStyle: 'font-weight: bold;'}});
+    // Etiqueta de aceleración
+    board.create('text', [2.5, 6, 'a = 5 m/s²'], {fontSize: 13, strokeColor: '#f59e0b', fixed: true, cssStyle: 'font-weight: bold;'});
+    board.unsuspendUpdate();
+  }
+});
+</script>
 
-**2. Condiciones Iniciales:**
-* Tiempo inicial: $t = 0\,\mathrm{s}$
-* Velocidad inicial ($v_i$): $0\,\mathrm{m/s}$ (Estaba quieta).
+> 💡 El gráfico muestra cómo la velocidad aumenta **+5 m/s cada segundo** (pendiente constante = aceleración constante).
 
-**3. Evolución paso a paso:**
+### **✅ Análisis**
 
-| Tiempo ($t$) | ¿Qué ocurre? (Concepto) | Operación | Velocidad Instantánea ($v$) |
-| :---: | :--- | :--- | :---: |
-| **0 s** | Inicio del movimiento | $0$ | **$0\,\mathrm{m/s}$** |
-| **1 s** | Ganó sus primeros 5 de velocidad | $0 + 5$ | **$5\,\mathrm{m/s}$** |
-| **2 s** | Ganó *otros* 5 de velocidad | $5 + 5$ | **$10\,\mathrm{m/s}$** |
-| **3 s** | Ganó *otros* 5 de velocidad | $10 + 5$ | **$15\,\mathrm{m/s}$** |
-| **4 s** | Ganó *otros* 5 de velocidad | $15 + 5$ | **$20\,\mathrm{m/s}$** |
+$a = 5\,\mathrm{m/s^2}$ significa: **"Cada segundo, la moto suma 5 m/s a su velocidad"**.
 
-**Conclusión:**
-Al cabo de 4 segundos, la moto viaja a $20\,\mathrm{m/s}$. La aceleración actuó como una "tasa de recarga" constante de velocidad.
+| Tiempo | Operación | Velocidad |
+|--------|-----------|-----------|
+| $0\,\mathrm{s}$ | — | $0\,\mathrm{m/s}$ |
+| $1\,\mathrm{s}$ | $0 + 5$ | $5\,\mathrm{m/s}$ |
+| $2\,\mathrm{s}$ | $5 + 5$ | $10\,\mathrm{m/s}$ |
+| $3\,\mathrm{s}$ | $10 + 5$ | $15\,\mathrm{m/s}$ |
+| $4\,\mathrm{s}$ | $15 + 5$ | $\boxed{20\,\mathrm{m/s}}$ |
 
 ---
 
 ## ⚙️ **Ejercicio 2 — Caída Libre (La Gravedad)**
 
-Un estudiante deja caer una piedra desde la azotea de un edificio alto. La **Caída Libre** es el ejemplo perfecto de MRUA en la naturaleza, donde la aceleración es provocada por la atracción de la Tierra.
+Un estudiante deja caer una piedra desde la azotea de un edificio alto. La **Caída Libre** es MRUA donde la aceleración es la **Gravedad**: $g = 9.8\,\mathrm{m/s^2}$.
 
-A esta aceleración la llamamos **Gravedad ($g$)** y su valor aproximado es $9.8\,\mathrm{m/s^2}$.
+<div id="jsxgraph-caida" class="jsxgraph-container" style="width: 100%; max-width: 450px; height: 220px; margin: 1rem auto;"></div>
 
-### **✅ Análisis Didáctico**
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-caida')) {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-caida', {
+      boundingbox: [-0.8, 35, 4.8, -5], axis: false, showCopyright: false, showNavigation: false, pan: {enabled: false}, zoom: {enabled: false}
+    });
+    // Ejes manuales
+    board.create('axis', [[0, 0], [1, 0]], {ticks: {insertTicks: false, ticksDistance: 1, label: {offset: [0, -12]}}});
+    board.create('axis', [[0, 0], [0, 1]], {ticks: {insertTicks: false, ticksDistance: 10, label: {offset: [-15, 0]}}});
+    board.create('text', [4.5, -2, 't (s)'], {fontSize: 12, strokeColor: '#374151', fixed: true, cssStyle: 'font-weight: bold;'});
+    board.create('text', [-0.6, 32, 'v (m/s)'], {fontSize: 12, strokeColor: '#374151', fixed: true, cssStyle: 'font-weight: bold;'});
+    // Línea principal
+    board.create('segment', [[0, 0], [3, 29.4]], {strokeColor: '#3b82f6', strokeWidth: 3, fixed: true});
+    // Puntos con etiquetas de velocidad
+    board.create('point', [0, 0], {size: 5, fixed: true, color: '#22c55e', name: '0', label: {offset: [-15, -5], strokeColor: '#22c55e', fontSize: 11}});
+    board.create('point', [1, 9.8], {size: 5, fixed: true, color: '#3b82f6', name: '', withLabel: false});
+    board.create('point', [2, 19.6], {size: 5, fixed: true, color: '#3b82f6', name: '', withLabel: false});
+    board.create('point', [3, 29.4], {size: 5, fixed: true, color: '#ef4444', name: '29.4 m/s', label: {offset: [8, 5], strokeColor: '#ef4444', fontSize: 12, cssStyle: 'font-weight: bold;'}});
+    // Etiqueta de aceleración (gravedad)
+    board.create('text', [1.8, 8, 'g = 9.8 m/s²'], {fontSize: 13, strokeColor: '#f59e0b', fixed: true, cssStyle: 'font-weight: bold;'});
+    board.unsuspendUpdate();
+  }
+});
+</script>
 
-**1. Interpretación del dato:**
-Tenemos que $g = 9.8\,\mathrm{m/s^2}$.
-Esto significa: **"La gravedad provoca que la piedra aumente su velocidad en $9.8\,\mathrm{m/s}$ por cada segundo que cae"**.
+> 💡 La gravedad actúa como una "tasa de recarga" constante de velocidad: **+9.8 m/s cada segundo**.
 
-**2. Condiciones Iniciales:**
-* Tiempo inicial: $t = 0\,\mathrm{s}$
-* Velocidad inicial ($v_i$): $0\,\mathrm{m/s}$ (Se deja caer, no se lanza).
+### **✅ Análisis**
 
-**3. Evolución paso a paso:**
+$g = 9.8\,\mathrm{m/s^2}$ significa: **"Cada segundo, la piedra suma 9.8 m/s a su velocidad"**.
 
-| Tiempo ($t$) | ¿Qué ocurre? (Concepto) | Operación | Velocidad Instantánea ($v$) |
-| :---: | :--- | :--- | :---: |
-| **0 s** | Instante en que se suelta | $0$ | **$0\,\mathrm{m/s}$** |
-| **1 s** | La gravedad aceleró la piedra | $0 + 9.8$ | **$9.8\,\mathrm{m/s}$** |
-| **2 s** | Se suma otro "paquete" de velocidad | $9.8 + 9.8$ | **$19.6\,\mathrm{m/s}$** |
-| **3 s** | Se suma otro "paquete" de velocidad | $19.6 + 9.8$ | **$29.4\,\mathrm{m/s}$** |
+| Tiempo | Operación | Velocidad |
+|--------|-----------|-----------|
+| $0\,\mathrm{s}$ | Se suelta | $0\,\mathrm{m/s}$ |
+| $1\,\mathrm{s}$ | $0 + 9.8$ | $9.8\,\mathrm{m/s}$ |
+| $2\,\mathrm{s}$ | $9.8 + 9.8$ | $19.6\,\mathrm{m/s}$ |
+| $3\,\mathrm{s}$ | $19.6 + 9.8$ | $\boxed{29.4\,\mathrm{m/s}}$ |
 
-**Conclusión:**
-Sin usar fórmulas complejas, sabemos que a los 3 segundos la piedra viaja a $29.4\,\mathrm{m/s}$. Esto demuestra que la caída libre es simplemente un MRUA donde la aceleración ya está definida por la naturaleza.
+> 💡 Sin usar fórmulas complejas, sabemos que a los 3 segundos la piedra viaja a 29.4 m/s. La caída libre es simplemente un MRUA donde la aceleración está definida por la naturaleza.

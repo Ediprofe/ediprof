@@ -38,124 +38,146 @@ $$
 
 ## ⚙️ **Ejercicio 1 — Carrera de 100 metros**
 
-Un atleta olímpico corre en una pista recta. Inicia en la línea de salida y cruza la meta ubicada a $100\,\mathrm{m}$ de distancia en un tiempo de $10\,\mathrm{s}$. Calcular su rapidez y su velocidad.
+Un atleta olímpico corre en una pista recta. Inicia en la línea de salida y cruza la meta ubicada a $100\,\mathrm{m}$ de distancia en un tiempo de $10\,\mathrm{s}$.
+
+<div id="jsxgraph-100m" class="jsxgraph-container" style="width: 100%; max-width: 500px; height: 120px; margin: 1rem auto;"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-100m')) {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-100m', {
+      boundingbox: [-5, 3, 105, -1], axis: false, showCopyright: false, showNavigation: false, pan: {enabled: false}, zoom: {enabled: false}
+    });
+    board.create('segment', [[0, 0.5], [100, 0.5]], {strokeWidth: 3, strokeColor: '#374151', fixed: true});
+    board.create('point', [0, 0.5], {name: 'Salida', size: 4, fixed: true, color: '#22c55e', label: {offset: [0, -20], strokeColor: '#22c55e'}});
+    board.create('point', [100, 0.5], {name: 'Meta', size: 4, fixed: true, color: '#ef4444', label: {offset: [0, -20], strokeColor: '#ef4444'}});
+    board.create('arrow', [[0, 1.8], [100, 1.8]], {strokeColor: '#3b82f6', strokeWidth: 2, fixed: true});
+    board.create('text', [50, 2.4, '100 m en 10 s'], {fontSize: 12, strokeColor: '#3b82f6', fixed: true, anchorX: 'middle'});
+    board.unsuspendUpdate();
+  }
+});
+</script>
 
 ### **✅ Solución**
 
-**1. Análisis de movimiento:**
-Al ser una línea recta sin retrocesos, la distancia es igual a la magnitud del desplazamiento.
-* Distancia: $d = 100\,\mathrm{m}$
-* Desplazamiento: $\Delta x = +100\,\mathrm{m}$ (sentido positivo)
-* Tiempo: $t = 10\,\mathrm{s}$
-
-**2. Cálculo de la Rapidez**
+**Análisis:** Al ser línea recta sin retrocesos: $d = \Delta x = 100\,\mathrm{m}$
 
 $$
-v = \frac{100\,\mathrm{m}}{10\,\mathrm{s}} = 10\,\mathrm{m/s}
+\text{Rapidez} = \frac{100\,\mathrm{m}}{10\,\mathrm{s}} = 10\,\mathrm{m/s} \qquad \text{Velocidad} = \frac{+100\,\mathrm{m}}{10\,\mathrm{s}} = +10\,\mathrm{m/s}
 $$
 
-**3. Cálculo de la Velocidad**
-
-$$
-\vec{v} = \frac{+100\,\mathrm{m}}{10\,\mathrm{s}} = +10\,\mathrm{m/s}
-$$
-
-$$
-\boxed{\text{Rapidez} = 10\,\mathrm{m/s}, \quad \text{Velocidad} = +10\,\mathrm{m/s}}
-$$
+> 💡 En movimiento rectilíneo sin retrocesos, rapidez = |velocidad|.
 
 ---
 
 ## ⚙️ **Ejercicio 2 — Caminata de ida y vuelta**
 
-Una persona camina $60\,\mathrm{m}$ hacia el este (derecha) en un pasillo recto, se detiene, da media vuelta y camina $20\,\mathrm{m}$ hacia el oeste (izquierda). Todo el recorrido le tomó $40\,\mathrm{s}$. Calcular su rapidez media y su velocidad media.
+Una persona camina $60\,\mathrm{m}$ hacia el este, luego retrocede $20\,\mathrm{m}$ hacia el oeste. Tiempo total: $40\,\mathrm{s}$.
+
+<div id="jsxgraph-idavuelta" class="jsxgraph-container" style="width: 100%; max-width: 500px; height: 150px; margin: 1rem auto;"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-idavuelta')) {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-idavuelta', {
+      boundingbox: [-5, 4, 70, -1], axis: false, showCopyright: false, showNavigation: false, pan: {enabled: false}, zoom: {enabled: false}
+    });
+    board.create('segment', [[0, 1], [60, 1]], {strokeWidth: 2, strokeColor: '#374151', fixed: true});
+    board.create('point', [0, 1], {name: 'Inicio (0m)', size: 4, fixed: true, color: '#22c55e', label: {offset: [0, -20], strokeColor: '#22c55e'}});
+    board.create('point', [60, 1], {name: '60m', size: 4, fixed: true, color: '#3b82f6', label: {offset: [0, -20], strokeColor: '#3b82f6'}});
+    board.create('point', [40, 1], {name: 'Final (40m)', size: 4, fixed: true, color: '#ef4444', label: {offset: [0, -20], strokeColor: '#ef4444'}});
+    board.create('arrow', [[0, 2.5], [60, 2.5]], {strokeColor: '#3b82f6', strokeWidth: 2, fixed: true});
+    board.create('arrow', [[60, 2.2], [40, 2.2]], {strokeColor: '#ef4444', strokeWidth: 2, fixed: true});
+    board.create('text', [30, 3.2, '60 m →'], {fontSize: 11, strokeColor: '#3b82f6', fixed: true, anchorX: 'middle'});
+    board.create('text', [50, 1.6, '← 20 m'], {fontSize: 11, strokeColor: '#ef4444', fixed: true, anchorX: 'middle'});
+    board.unsuspendUpdate();
+  }
+});
+</script>
 
 ### **✅ Solución**
 
-**1. Análisis de movimiento:**
-* **Distancia ($d$):** Sumamos los trayectos ($60 + 20$).
-    $$d = 80\,\mathrm{m}$$
-* **Desplazamiento ($\Delta x$):** Posición final menos inicial ($60 - 20$). Quedó a $40\,\mathrm{m}$ del origen.
-    $$\Delta x = +40\,\mathrm{m}$$
-* **Tiempo ($t$):** $40\,\mathrm{s}$
-
-**2. Cálculo de la Rapidez ($v$):**
-Mide qué tan rápido movió las piernas durante todo el trayecto.
+| Magnitud | Cálculo | Resultado |
+|----------|---------|-----------|
+| Distancia | $60 + 20$ | $80\,\mathrm{m}$ |
+| Desplazamiento | $60 - 20$ | $+40\,\mathrm{m}$ |
 
 $$
-v = \frac{80\,\mathrm{m}}{40\,\mathrm{s}} = 2\,\mathrm{m/s}
+\text{Rapidez} = \frac{80\,\mathrm{m}}{40\,\mathrm{s}} = 2\,\mathrm{m/s} \qquad \text{Velocidad} = \frac{+40\,\mathrm{m}}{40\,\mathrm{s}} = +1\,\mathrm{m/s}
 $$
 
-**3. Cálculo de la Velocidad ($\vec{v}$):**
-Mide qué tan rápido se alejó efectivamente del punto de partida.
-
-$$
-\vec{v} = \frac{+40\,\mathrm{m}}{40\,\mathrm{s}} = +1\,\mathrm{m/s}
-$$
-
-$$
-\boxed{\text{Rapidez} = 2\,\mathrm{m/s}, \quad \text{Velocidad} = +1\,\mathrm{m/s}}
-$$
+> 💡 La rapidez es mayor porque considera todo el movimiento; la velocidad solo el cambio neto de posición.
 
 ---
 
 ## ⚙️ **Ejercicio 3 — Vuelta a la pista**
 
-Un ciclista da una vuelta completa a un velódromo circular de $500\,\mathrm{m}$ de longitud. Tarda $50\,\mathrm{s}$ en completar el giro y regresar al punto de salida. Calcular su rapidez y velocidad.
+Un ciclista da una vuelta completa a un velódromo circular de $500\,\mathrm{m}$ en $50\,\mathrm{s}$.
+
+<div id="jsxgraph-velodromo" class="jsxgraph-container" style="width: 100%; max-width: 250px; height: 250px; margin: 1rem auto;"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-velodromo')) {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-velodromo', {
+      boundingbox: [-4, 4, 4, -4], axis: false, showCopyright: false, showNavigation: false, pan: {enabled: false}, zoom: {enabled: false}
+    });
+    board.create('circle', [[0, 0], 2.5], {strokeColor: '#3b82f6', strokeWidth: 3, fillColor: 'transparent', fixed: true});
+    board.create('point', [2.5, 0], {name: 'Inicio/Fin', size: 5, fixed: true, color: '#22c55e', label: {offset: [10, 0], strokeColor: '#22c55e'}});
+    board.create('arrow', [[0, 2.5], [1.5, 2]], {strokeColor: '#f59e0b', strokeWidth: 2, fixed: true});
+    board.create('text', [0, 3.2, 'd = 500 m'], {fontSize: 11, strokeColor: '#3b82f6', fixed: true, anchorX: 'middle'});
+    board.create('text', [0, -3.2, 'Δx = 0 m'], {fontSize: 11, strokeColor: '#ef4444', fixed: true, anchorX: 'middle'});
+    board.unsuspendUpdate();
+  }
+});
+</script>
 
 ### **✅ Solución**
 
-**1. Análisis de movimiento:**
-* **Distancia ($d$):** Recorrió toda la longitud de la pista.
-    $$d = 500\,\mathrm{m}$$
-* **Desplazamiento ($\Delta x$):** Como termina donde empezó, el cambio de posición es nulo.
-    $$\Delta x = 0\,\mathrm{m}$$
-* **Tiempo ($t$):** $50\,\mathrm{s}$
-
-**2. Cálculo de la Rapidez ($v$):**
-
 $$
-v = \frac{500\,\mathrm{m}}{50\,\mathrm{s}} = 10\,\mathrm{m/s}
+\text{Rapidez} = \frac{500\,\mathrm{m}}{50\,\mathrm{s}} = 10\,\mathrm{m/s} \qquad \text{Velocidad} = \frac{0\,\mathrm{m}}{50\,\mathrm{s}} = 0\,\mathrm{m/s}
 $$
 
-**3. Cálculo de la Velocidad ($\vec{v}$):**
-
-$$
-\vec{v} = \frac{0\,\mathrm{m}}{50\,\mathrm{s}} = 0\,\mathrm{m/s}
-$$
-
-$$
-\boxed{\text{Rapidez} = 10\,\mathrm{m/s}, \quad \text{Velocidad} = 0\,\mathrm{m/s}}
-$$
-*(Aunque se movió muy rápido, su velocidad neta fue cero porque no hubo cambio efectivo de posición).*
+> 💡 ¡Aunque se movió muy rápido, su velocidad media es cero porque regresó al punto de partida!
 
 ---
 
 ## ⚙️ **Ejercicio 4 — Movimiento en "L"**
 
-Un robot se mueve $3\,\mathrm{m}$ hacia el Norte en $2\,\mathrm{s}$ y luego gira $90^{\circ}$ y se mueve $4\,\mathrm{m}$ hacia el Este en $3\,\mathrm{s}$. Calcular la rapidez media y la magnitud de la velocidad media de todo el viaje.
+Un robot se mueve $3\,\mathrm{m}$ al Norte en $2\,\mathrm{s}$, luego $4\,\mathrm{m}$ al Este en $3\,\mathrm{s}$.
+
+<div id="jsxgraph-robotL" class="jsxgraph-container" style="width: 100%; max-width: 300px; height: 250px; margin: 1rem auto;"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-robotL')) {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-robotL', {
+      boundingbox: [-1, 5, 6, -1], axis: true, showCopyright: false, showNavigation: false, pan: {enabled: false}, zoom: {enabled: false}
+    });
+    var A = board.create('point', [0, 0], {name: 'Inicio', size: 4, fixed: true, color: '#22c55e', label: {offset: [-15, -15], strokeColor: '#22c55e'}});
+    var B = board.create('point', [0, 3], {name: '', size: 3, fixed: true, color: '#3b82f6'});
+    var C = board.create('point', [4, 3], {name: 'Fin', size: 4, fixed: true, color: '#ef4444', label: {offset: [10, 0], strokeColor: '#ef4444'}});
+    board.create('arrow', [A, B], {strokeColor: '#3b82f6', strokeWidth: 3, fixed: true});
+    board.create('arrow', [B, C], {strokeColor: '#3b82f6', strokeWidth: 3, fixed: true});
+    board.create('arrow', [A, C], {strokeColor: '#22c55e', strokeWidth: 3, dash: 2, fixed: true});
+    board.create('text', [-0.5, 1.5, '3m ↑'], {fontSize: 12, strokeColor: '#3b82f6', fixed: true, anchorX: 'right'});
+    board.create('text', [2, 3.5, '4m'], {fontSize: 12, strokeColor: '#3b82f6', fixed: true});
+    board.create('text', [2.5, 1, 'Δx=5m'], {fontSize: 11, strokeColor: '#22c55e', cssStyle: 'font-weight: bold;', fixed: true});
+    board.unsuspendUpdate();
+  }
+});
+</script>
 
 ### **✅ Solución**
 
-**1. Análisis de movimiento:**
-* **Distancia ($d$):** Suma aritmética ($3 + 4$).
-    $$d = 7\,\mathrm{m}$$
-* **Desplazamiento ($\Delta x$):** Es la hipotenusa del triángulo (distancia recta desde el inicio). $\sqrt{3^2 + 4^2} = \sqrt{9+16} = \sqrt{25}$.
-    $$\Delta x = 5\,\mathrm{m}$$
-* **Tiempo Total ($t$):** $2\,\mathrm{s} + 3\,\mathrm{s} = 5\,\mathrm{s}$.
-
-**2. Cálculo de la Rapidez ($v$):**
+| Magnitud | Cálculo | Resultado |
+|----------|---------|-----------|
+| Distancia | $3 + 4$ | $7\,\mathrm{m}$ |
+| Desplazamiento | $\sqrt{3^2 + 4^2}$ | $5\,\mathrm{m}$ |
+| Tiempo total | $2 + 3$ | $5\,\mathrm{s}$ |
 
 $$
-v = \frac{7\,\mathrm{m}}{5\,\mathrm{s}} = 1.4\,\mathrm{m/s}
+\text{Rapidez} = \frac{7\,\mathrm{m}}{5\,\mathrm{s}} = 1.4\,\mathrm{m/s} \qquad \text{Velocidad} = \frac{5\,\mathrm{m}}{5\,\mathrm{s}} = 1\,\mathrm{m/s}
 $$
 
-**3. Cálculo de la Velocidad ($\vec{v}$):**
-
-$$
-\vec{v} = \frac{5\,\mathrm{m}}{5\,\mathrm{s}} = 1\,\mathrm{m/s}
-$$
-
-$$
-\boxed{\text{Rapidez} = 1.4\,\mathrm{m/s}, \quad \text{Velocidad} = 1\,\mathrm{m/s}}
-$$
+> 💡 El robot recorrió más distancia de la que avanzó en línea recta.
