@@ -12,6 +12,74 @@ El **plano cartesiano** es un sistema formado por dos rectas numéricas perpendi
 - **Eje Y** (vertical): también llamado eje de las ordenadas
 - **Origen**: punto donde se cruzan ambos ejes, con coordenadas $(0, 0)$
 
+En la siguiente visualización puedes ver el plano cartesiano con sus ejes y los cuatro cuadrantes:
+
+<div id="jsxgraph-plano-intro" class="jsxgraph-container" style="width: 100%; max-width: 500px; height: 400px; margin: 1.5rem auto;"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined') {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-plano-intro', {
+      boundingbox: [-6, 6, 6, -6],
+      axis: true,
+      showCopyright: false,
+      showNavigation: false,
+      pan: { enabled: false },
+      zoom: { enabled: false }
+    });
+    
+    // Origen
+    board.create('point', [0, 0], {
+      name: 'Origen (0,0)',
+      size: 4,
+      fixed: true,
+      color: '#ef4444',
+      label: { fontSize: 12, offset: [10, -15] }
+    });
+    
+    // Etiquetas de cuadrantes
+    board.create('text', [3, 3, 'I'], {
+      fontSize: 24,
+      strokeColor: '#3b82f6',
+      cssStyle: 'font-weight: bold;',
+      fixed: true
+    });
+    board.create('text', [-3, 3, 'II'], {
+      fontSize: 24,
+      strokeColor: '#22c55e',
+      cssStyle: 'font-weight: bold;',
+      fixed: true
+    });
+    board.create('text', [-3.2, -3, 'III'], {
+      fontSize: 24,
+      strokeColor: '#f97316',
+      cssStyle: 'font-weight: bold;',
+      fixed: true
+    });
+    board.create('text', [3, -3, 'IV'], {
+      fontSize: 24,
+      strokeColor: '#a855f7',
+      cssStyle: 'font-weight: bold;',
+      fixed: true
+    });
+    
+    // Etiquetas de ejes
+    board.create('text', [5.3, 0.4, 'Eje X'], {
+      fontSize: 12,
+      strokeColor: '#374151',
+      fixed: true
+    });
+    board.create('text', [0.3, 5.3, 'Eje Y'], {
+      fontSize: 12,
+      strokeColor: '#374151',
+      fixed: true
+    });
+    
+    board.unsuspendUpdate();
+  }
+});
+</script>
+
 ---
 
 ## 📖 Coordenadas de un punto
@@ -27,15 +95,11 @@ El punto $P(3, 4)$ está ubicado:
 - $3$ unidades a la derecha del origen
 - $4$ unidades hacia arriba
 
----
-
 ### Ejemplo 2
 
 El punto $Q(-2, 5)$ está ubicado:
 - $2$ unidades a la izquierda del origen
 - $5$ unidades hacia arriba
-
----
 
 ### Ejemplo 3
 
@@ -43,13 +107,72 @@ El punto $R(4, -3)$ está ubicado:
 - $4$ unidades a la derecha
 - $3$ unidades hacia abajo
 
----
-
 ### Ejemplo 4
 
 El punto $S(-1, -2)$ está ubicado:
 - $1$ unidad a la izquierda
 - $2$ unidades hacia abajo
+
+En la siguiente gráfica puedes ver los cuatro puntos ubicados en el plano:
+
+<div id="jsxgraph-puntos-ejemplos" class="jsxgraph-container" style="width: 100%; max-width: 500px; height: 400px; margin: 1.5rem auto;"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined') {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-puntos-ejemplos', {
+      boundingbox: [-6, 7, 6, -5],
+      axis: true,
+      showCopyright: false,
+      showNavigation: false,
+      pan: { enabled: false },
+      zoom: { enabled: false }
+    });
+    
+    // Punto P(3, 4) - Cuadrante I
+    board.create('point', [3, 4], {
+      name: 'P(3, 4)',
+      size: 4,
+      fixed: true,
+      color: '#3b82f6',
+      label: { fontSize: 12, offset: [8, 8] }
+    });
+    
+    // Punto Q(-2, 5) - Cuadrante II
+    board.create('point', [-2, 5], {
+      name: 'Q(-2, 5)',
+      size: 4,
+      fixed: true,
+      color: '#22c55e',
+      label: { fontSize: 12, offset: [-60, 8] }
+    });
+    
+    // Punto R(4, -3) - Cuadrante IV
+    board.create('point', [4, -3], {
+      name: 'R(4, -3)',
+      size: 4,
+      fixed: true,
+      color: '#a855f7',
+      label: { fontSize: 12, offset: [8, -15] }
+    });
+    
+    // Punto S(-1, -2) - Cuadrante III
+    board.create('point', [-1, -2], {
+      name: 'S(-1, -2)',
+      size: 4,
+      fixed: true,
+      color: '#f97316',
+      label: { fontSize: 12, offset: [-65, -15] }
+    });
+    
+    // Líneas punteadas al origen para P
+    board.create('segment', [[0, 0], [3, 0]], { strokeColor: '#3b82f6', strokeWidth: 1, dash: 2, fixed: true });
+    board.create('segment', [[3, 0], [3, 4]], { strokeColor: '#3b82f6', strokeWidth: 1, dash: 2, fixed: true });
+    
+    board.unsuspendUpdate();
+  }
+});
+</script>
 
 ---
 
@@ -76,6 +199,83 @@ El plano se divide en cuatro regiones llamadas **cuadrantes**:
 | $(-4, 2)$ | II |
 | $(-3, -1)$ | III |
 | $(2, -5)$ | IV |
+
+Observa cada punto en su cuadrante correspondiente:
+
+<div id="jsxgraph-cuadrantes" class="jsxgraph-container" style="width: 100%; max-width: 500px; height: 400px; margin: 1.5rem auto;"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined') {
+    var board2 = JXG.JSXGraph.initBoard('jsxgraph-cuadrantes', {
+      boundingbox: [-7, 7, 7, -7],
+      axis: true,
+      showCopyright: false,
+      showNavigation: false,
+      pan: { enabled: false },
+      zoom: { enabled: false }
+    });
+    
+    // Cuadrante I: (5, 3)
+    board2.create('point', [5, 3], {
+      name: '(5, 3)',
+      size: 4,
+      fixed: true,
+      color: '#3b82f6',
+      label: { fontSize: 11, offset: [5, 10] }
+    });
+    board2.create('text', [4, 5, 'Cuad. I'], {
+      fontSize: 11,
+      strokeColor: '#3b82f6',
+      fixed: true
+    });
+    
+    // Cuadrante II: (-4, 2)
+    board2.create('point', [-4, 2], {
+      name: '(-4, 2)',
+      size: 4,
+      fixed: true,
+      color: '#22c55e',
+      label: { fontSize: 11, offset: [-50, 10] }
+    });
+    board2.create('text', [-5.5, 5, 'Cuad. II'], {
+      fontSize: 11,
+      strokeColor: '#22c55e',
+      fixed: true
+    });
+    
+    // Cuadrante III: (-3, -1)
+    board2.create('point', [-3, -1], {
+      name: '(-3, -1)',
+      size: 4,
+      fixed: true,
+      color: '#f97316',
+      label: { fontSize: 11, offset: [-55, -12] }
+    });
+    board2.create('text', [-5.5, -5, 'Cuad. III'], {
+      fontSize: 11,
+      strokeColor: '#f97316',
+      fixed: true
+    });
+    
+    // Cuadrante IV: (2, -5)
+    board2.create('point', [2, -5], {
+      name: '(2, -5)',
+      size: 4,
+      fixed: true,
+      color: '#a855f7',
+      label: { fontSize: 11, offset: [5, -12] }
+    });
+    board2.create('text', [4, -5, 'Cuad. IV'], {
+      fontSize: 11,
+      strokeColor: '#a855f7',
+      fixed: true
+    });
+    
+    board2.unsuspendUpdate();
+  }
+});
+</script>
 
 ---
 
@@ -117,6 +317,59 @@ $$
 \boxed{d = 5}
 $$
 
+<div id="jsxgraph-distancia1" class="jsxgraph-container" style="width: 100%; max-width: 450px; height: 350px; margin: 1.5rem auto;"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined') {
+    var board3 = JXG.JSXGraph.initBoard('jsxgraph-distancia1', {
+      boundingbox: [-1, 8, 7, -1],
+      axis: true,
+      showCopyright: false,
+      showNavigation: false,
+      pan: { enabled: false },
+      zoom: { enabled: false }
+    });
+    
+    var A = board3.create('point', [1, 2], {
+      name: 'A(1, 2)',
+      size: 4,
+      fixed: true,
+      color: '#3b82f6',
+      label: { fontSize: 11, offset: [-50, -10] }
+    });
+    
+    var B = board3.create('point', [4, 6], {
+      name: 'B(4, 6)',
+      size: 4,
+      fixed: true,
+      color: '#3b82f6',
+      label: { fontSize: 11, offset: [5, 10] }
+    });
+    
+    // Línea de distancia
+    board3.create('segment', [A, B], {
+      strokeColor: '#22c55e',
+      strokeWidth: 3,
+      fixed: true
+    });
+    
+    // Triángulo auxiliar
+    board3.create('segment', [[1, 2], [4, 2]], { strokeColor: '#94a3b8', strokeWidth: 1, dash: 2, fixed: true });
+    board3.create('segment', [[4, 2], [4, 6]], { strokeColor: '#94a3b8', strokeWidth: 1, dash: 2, fixed: true });
+    
+    // Etiquetas de catetos
+    board3.create('text', [2.5, 1.5, '3'], { fontSize: 12, strokeColor: '#64748b', fixed: true });
+    board3.create('text', [4.3, 4, '4'], { fontSize: 12, strokeColor: '#64748b', fixed: true });
+    
+    // Etiqueta de distancia
+    board3.create('text', [2, 4.5, 'd = 5'], { fontSize: 14, strokeColor: '#22c55e', cssStyle: 'font-weight: bold;', fixed: true });
+    
+    board3.unsuspendUpdate();
+  }
+});
+</script>
+
 ---
 
 ### Ejemplo 7
@@ -130,6 +383,59 @@ $$
 $$
 \boxed{d = 10}
 $$
+
+<div id="jsxgraph-distancia2" class="jsxgraph-container" style="width: 100%; max-width: 500px; height: 400px; margin: 1.5rem auto;"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined') {
+    var board4 = JXG.JSXGraph.initBoard('jsxgraph-distancia2', {
+      boundingbox: [-5, 5, 7, -6],
+      axis: true,
+      showCopyright: false,
+      showNavigation: false,
+      pan: { enabled: false },
+      zoom: { enabled: false }
+    });
+    
+    var P = board4.create('point', [-3, 2], {
+      name: 'P(-3, 2)',
+      size: 4,
+      fixed: true,
+      color: '#ef4444',
+      label: { fontSize: 11, offset: [-60, 10] }
+    });
+    
+    var Q = board4.create('point', [5, -4], {
+      name: 'Q(5, -4)',
+      size: 4,
+      fixed: true,
+      color: '#ef4444',
+      label: { fontSize: 11, offset: [5, -12] }
+    });
+    
+    // Línea de distancia
+    board4.create('segment', [P, Q], {
+      strokeColor: '#22c55e',
+      strokeWidth: 3,
+      fixed: true
+    });
+    
+    // Triángulo auxiliar
+    board4.create('segment', [[-3, 2], [5, 2]], { strokeColor: '#94a3b8', strokeWidth: 1, dash: 2, fixed: true });
+    board4.create('segment', [[5, 2], [5, -4]], { strokeColor: '#94a3b8', strokeWidth: 1, dash: 2, fixed: true });
+    
+    // Etiquetas de catetos
+    board4.create('text', [1, 2.5, '8'], { fontSize: 12, strokeColor: '#64748b', fixed: true });
+    board4.create('text', [5.3, -1, '6'], { fontSize: 12, strokeColor: '#64748b', fixed: true });
+    
+    // Etiqueta de distancia
+    board4.create('text', [0, -1.5, 'd = 10'], { fontSize: 14, strokeColor: '#22c55e', cssStyle: 'font-weight: bold;', fixed: true });
+    
+    board4.unsuspendUpdate();
+  }
+});
+</script>
 
 ---
 
@@ -153,6 +459,57 @@ $$
 \boxed{M = (5, 7)}
 $$
 
+<div id="jsxgraph-puntomedio1" class="jsxgraph-container" style="width: 100%; max-width: 450px; height: 380px; margin: 1.5rem auto;"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined') {
+    var board5 = JXG.JSXGraph.initBoard('jsxgraph-puntomedio1', {
+      boundingbox: [-1, 12, 10, -1],
+      axis: true,
+      showCopyright: false,
+      showNavigation: false,
+      pan: { enabled: false },
+      zoom: { enabled: false }
+    });
+    
+    var A = board5.create('point', [2, 4], {
+      name: 'A(2, 4)',
+      size: 4,
+      fixed: true,
+      color: '#3b82f6',
+      label: { fontSize: 11, offset: [-50, -10] }
+    });
+    
+    var B = board5.create('point', [8, 10], {
+      name: 'B(8, 10)',
+      size: 4,
+      fixed: true,
+      color: '#3b82f6',
+      label: { fontSize: 11, offset: [5, 10] }
+    });
+    
+    // Segmento AB
+    board5.create('segment', [A, B], {
+      strokeColor: '#94a3b8',
+      strokeWidth: 2,
+      fixed: true
+    });
+    
+    // Punto medio
+    var M = board5.create('point', [5, 7], {
+      name: 'M(5, 7)',
+      size: 5,
+      fixed: true,
+      color: '#22c55e',
+      label: { fontSize: 12, offset: [8, 8], cssStyle: 'font-weight: bold;' }
+    });
+    
+    board5.unsuspendUpdate();
+  }
+});
+</script>
+
 ---
 
 ### Ejemplo 9
@@ -166,6 +523,57 @@ $$
 $$
 \boxed{M = (1, 1)}
 $$
+
+<div id="jsxgraph-puntomedio2" class="jsxgraph-container" style="width: 100%; max-width: 500px; height: 350px; margin: 1.5rem auto;"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined') {
+    var board6 = JXG.JSXGraph.initBoard('jsxgraph-puntomedio2', {
+      boundingbox: [-6, 5, 8, -3],
+      axis: true,
+      showCopyright: false,
+      showNavigation: false,
+      pan: { enabled: false },
+      zoom: { enabled: false }
+    });
+    
+    var P = board6.create('point', [-4, 3], {
+      name: 'P(-4, 3)',
+      size: 4,
+      fixed: true,
+      color: '#ef4444',
+      label: { fontSize: 11, offset: [-55, 10] }
+    });
+    
+    var Q = board6.create('point', [6, -1], {
+      name: 'Q(6, -1)',
+      size: 4,
+      fixed: true,
+      color: '#ef4444',
+      label: { fontSize: 11, offset: [5, -12] }
+    });
+    
+    // Segmento PQ
+    board6.create('segment', [P, Q], {
+      strokeColor: '#94a3b8',
+      strokeWidth: 2,
+      fixed: true
+    });
+    
+    // Punto medio
+    board6.create('point', [1, 1], {
+      name: 'M(1, 1)',
+      size: 5,
+      fixed: true,
+      color: '#22c55e',
+      label: { fontSize: 12, offset: [8, 8], cssStyle: 'font-weight: bold;' }
+    });
+    
+    board6.unsuspendUpdate();
+  }
+});
+</script>
 
 ---
 
@@ -182,7 +590,68 @@ Para graficar un punto $(a, b)$:
 
 Graficar los puntos $A(3, 2)$, $B(-2, 4)$, $C(-3, -1)$ y $D(4, -3)$.
 
-Cada punto se ubica siguiendo las reglas de signos y los pasos descritos.
+Cada punto se ubica siguiendo las reglas de signos y los pasos descritos:
+
+<div id="jsxgraph-graficar" class="jsxgraph-container" style="width: 100%; max-width: 500px; height: 400px; margin: 1.5rem auto;"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined') {
+    var board7 = JXG.JSXGraph.initBoard('jsxgraph-graficar', {
+      boundingbox: [-6, 6, 6, -5],
+      axis: true,
+      showCopyright: false,
+      showNavigation: false,
+      pan: { enabled: false },
+      zoom: { enabled: false }
+    });
+    
+    // Cuadrante I: A(3, 2)
+    board7.create('point', [3, 2], {
+      name: 'A(3, 2)',
+      size: 5,
+      fixed: true,
+      color: '#3b82f6',
+      label: { fontSize: 12, offset: [8, 8] }
+    });
+    
+    // Cuadrante II: B(-2, 4)
+    board7.create('point', [-2, 4], {
+      name: 'B(-2, 4)',
+      size: 5,
+      fixed: true,
+      color: '#22c55e',
+      label: { fontSize: 12, offset: [-60, 8] }
+    });
+    
+    // Cuadrante III: C(-3, -1)
+    board7.create('point', [-3, -1], {
+      name: 'C(-3, -1)',
+      size: 5,
+      fixed: true,
+      color: '#f97316',
+      label: { fontSize: 12, offset: [-65, -15] }
+    });
+    
+    // Cuadrante IV: D(4, -3)
+    board7.create('point', [4, -3], {
+      name: 'D(4, -3)',
+      size: 5,
+      fixed: true,
+      color: '#a855f7',
+      label: { fontSize: 12, offset: [8, -15] }
+    });
+    
+    // Etiquetas de cuadrantes
+    board7.create('text', [4.5, 4.5, 'I'], { fontSize: 18, strokeColor: '#cbd5e1', cssStyle: 'font-weight: bold;', fixed: true });
+    board7.create('text', [-5, 4.5, 'II'], { fontSize: 18, strokeColor: '#cbd5e1', cssStyle: 'font-weight: bold;', fixed: true });
+    board7.create('text', [-5, -4, 'III'], { fontSize: 18, strokeColor: '#cbd5e1', cssStyle: 'font-weight: bold;', fixed: true });
+    board7.create('text', [4, -4, 'IV'], { fontSize: 18, strokeColor: '#cbd5e1', cssStyle: 'font-weight: bold;', fixed: true });
+    
+    board7.unsuspendUpdate();
+  }
+});
+</script>
 
 ---
 
