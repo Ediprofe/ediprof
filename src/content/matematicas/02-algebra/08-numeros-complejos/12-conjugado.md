@@ -26,6 +26,29 @@ $$
 \boxed{\overline{3 + 4i} = 3 - 4i}
 $$
 
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 350px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-conj1" class="jsxgraph-container" style="width: 100%; height: 280px; border-radius: 8px; overflow: hidden;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-conj1')) {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-conj1', {
+      boundingbox: [-1, 6, 5, -6], axis: true, showCopyright: false, showNavigation: false, pan: {enabled: false}, zoom: {enabled: false}
+    });
+    board.create('point', [3, 4], { name: 'z = 3+4i', size: 5, fixed: true, color: '#3b82f6', label: { fontSize: 11, offset: [5, 5] } });
+    board.create('point', [3, -4], { name: 'z̄ = 3-4i', size: 5, fixed: true, color: '#22c55e', label: { fontSize: 11, offset: [5, -12] } });
+    board.create('segment', [[3,4], [3,-4]], { strokeColor: '#f97316', strokeWidth: 2, dash: 2, fixed: true });
+    board.create('text', [4.3, -0.5, 'Re'], { fontSize: 10, strokeColor: '#374151', cssStyle: 'font-weight: bold;', fixed: true });
+    board.create('text', [-0.7, 5.3, 'Im'], { fontSize: 10, strokeColor: '#374151', cssStyle: 'font-weight: bold;', fixed: true });
+    board.unsuspendUpdate();
+  }
+});
+</script>
+
 ---
 
 ### Ejemplo 2
@@ -40,6 +63,29 @@ $$
 \boxed{\overline{5 - 2i} = 5 + 2i}
 $$
 
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 350px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-conj2" class="jsxgraph-container" style="width: 100%; height: 250px; border-radius: 8px; overflow: hidden;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-conj2')) {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-conj2', {
+      boundingbox: [-1, 4, 7, -4], axis: true, showCopyright: false, showNavigation: false, pan: {enabled: false}, zoom: {enabled: false}
+    });
+    board.create('point', [5, -2], { name: 'z = 5-2i', size: 5, fixed: true, color: '#3b82f6', label: { fontSize: 11, offset: [5, -12] } });
+    board.create('point', [5, 2], { name: 'z̄ = 5+2i', size: 5, fixed: true, color: '#22c55e', label: { fontSize: 11, offset: [5, 5] } });
+    board.create('segment', [[5,-2], [5,2]], { strokeColor: '#f97316', strokeWidth: 2, dash: 2, fixed: true });
+    board.create('text', [6.3, -0.5, 'Re'], { fontSize: 10, strokeColor: '#374151', cssStyle: 'font-weight: bold;', fixed: true });
+    board.create('text', [-0.7, 3.3, 'Im'], { fontSize: 10, strokeColor: '#374151', cssStyle: 'font-weight: bold;', fixed: true });
+    board.unsuspendUpdate();
+  }
+});
+</script>
+
 ---
 
 ### Ejemplo 3
@@ -53,6 +99,29 @@ $$
 $$
 \boxed{\overline{-1 + 7i} = -1 - 7i}
 $$
+
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 320px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-conj3" class="jsxgraph-container" style="width: 100%; height: 320px; border-radius: 8px; overflow: hidden;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-conj3')) {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-conj3', {
+      boundingbox: [-4, 9, 3, -9], axis: true, showCopyright: false, showNavigation: false, pan: {enabled: false}, zoom: {enabled: false}
+    });
+    board.create('point', [-1, 7], { name: 'z = -1+7i', size: 5, fixed: true, color: '#3b82f6', label: { fontSize: 11, offset: [5, 5] } });
+    board.create('point', [-1, -7], { name: 'z̄ = -1-7i', size: 5, fixed: true, color: '#22c55e', label: { fontSize: 11, offset: [5, -12] } });
+    board.create('segment', [[-1,7], [-1,-7]], { strokeColor: '#f97316', strokeWidth: 2, dash: 2, fixed: true });
+    board.create('text', [2.3, -0.5, 'Re'], { fontSize: 10, strokeColor: '#374151', cssStyle: 'font-weight: bold;', fixed: true });
+    board.create('text', [-3.5, 8.2, 'Im'], { fontSize: 10, strokeColor: '#374151', cssStyle: 'font-weight: bold;', fixed: true });
+    board.unsuspendUpdate();
+  }
+});
+</script>
 
 ---
 
@@ -70,6 +139,30 @@ $$
 \boxed{\bar{6} = 6}
 $$
 
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 350px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-conj4" class="jsxgraph-container" style="width: 100%; height: 180px; border-radius: 8px; overflow: hidden;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-conj4')) {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-conj4', {
+      boundingbox: [-1, 3, 8, -3], axis: true, showCopyright: false, showNavigation: false, pan: {enabled: false}, zoom: {enabled: false}
+    });
+    board.create('point', [6, 0], { name: 'z = z̄ = 6', size: 6, fixed: true, color: '#ef4444', label: { fontSize: 12, offset: [5, 10] } });
+    board.create('text', [7.3, -0.5, 'Re'], { fontSize: 10, strokeColor: '#374151', cssStyle: 'font-weight: bold;', fixed: true });
+    board.create('text', [-0.7, 2.3, 'Im'], { fontSize: 10, strokeColor: '#374151', cssStyle: 'font-weight: bold;', fixed: true });
+    board.create('text', [2, 1.5, 'Los reales están sobre el eje'], { fontSize: 9, strokeColor: '#64748b', cssStyle: 'font-style: italic;', fixed: true });
+    board.unsuspendUpdate();
+  }
+});
+</script>
+
+> 💡 El conjugado es el **reflejo** respecto al eje real. Los números reales están sobre el eje, así que coinciden con su conjugado.
+
 ---
 
 ### Ejemplo 5
@@ -85,6 +178,31 @@ $$
 $$
 \boxed{\overline{4i} = -4i}
 $$
+
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 280px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-conj5" class="jsxgraph-container" style="width: 100%; height: 280px; border-radius: 8px; overflow: hidden;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-conj5')) {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-conj5', {
+      boundingbox: [-3, 6, 3, -6], axis: true, showCopyright: false, showNavigation: false, pan: {enabled: false}, zoom: {enabled: false}
+    });
+    board.create('point', [0, 4], { name: 'z = 4i', size: 5, fixed: true, color: '#3b82f6', label: { fontSize: 11, offset: [8, 5] } });
+    board.create('point', [0, -4], { name: 'z̄ = -4i', size: 5, fixed: true, color: '#22c55e', label: { fontSize: 11, offset: [8, -12] } });
+    board.create('segment', [[0,4], [0,-4]], { strokeColor: '#f97316', strokeWidth: 2, dash: 2, fixed: true });
+    board.create('text', [2.3, -0.5, 'Re'], { fontSize: 10, strokeColor: '#374151', cssStyle: 'font-weight: bold;', fixed: true });
+    board.create('text', [-2.5, 5.3, 'Im'], { fontSize: 10, strokeColor: '#374151', cssStyle: 'font-weight: bold;', fixed: true });
+    board.unsuspendUpdate();
+  }
+});
+</script>
+
+> 💡 Los imaginarios puros están sobre el eje imaginario. Su conjugado es el mismo punto reflejado al lado opuesto.
 
 ---
 

@@ -55,6 +55,56 @@ El punto es $(-1, -2)$:
 - $1$ unidad a la izquierda
 - $2$ unidades hacia abajo
 
+Visualización de estos 4 puntos:
+
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 500px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-plano-complejo" class="jsxgraph-container" style="width: 100%; height: 400px; border-radius: 8px; overflow: hidden;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined') {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-plano-complejo', {
+      boundingbox: [-6, 6, 9, -5],
+      axis: true,
+      showCopyright: false,
+      showNavigation: false,
+      pan: { enabled: false },
+      zoom: { enabled: false }
+    });
+    
+    // Cuadrantes
+    board.create('text', [5, 4, 'I'], { fontSize: 20, strokeColor: '#94a3b8', cssStyle: 'font-weight: bold;', fixed: true });
+    board.create('text', [-4, 4, 'II'], { fontSize: 20, strokeColor: '#94a3b8', cssStyle: 'font-weight: bold;', fixed: true });
+    board.create('text', [-4, -3.5, 'III'], { fontSize: 20, strokeColor: '#94a3b8', cssStyle: 'font-weight: bold;', fixed: true });
+    board.create('text', [5, -3.5, 'IV'], { fontSize: 20, strokeColor: '#94a3b8', cssStyle: 'font-weight: bold;', fixed: true });
+    
+    // Puntos de los ejemplos
+    var z1 = board.create('point', [3, 2], { name: '3 + 2i', size: 5, fixed: true, color: '#3b82f6', label: { fontSize: 12, offset: [8, 8] } });
+    var z2 = board.create('point', [-2, 4], { name: '-2 + 4i', size: 5, fixed: true, color: '#22c55e', label: { fontSize: 12, offset: [8, 8] } });
+    var z3 = board.create('point', [4, -3], { name: '4 - 3i', size: 5, fixed: true, color: '#f97316', label: { fontSize: 12, offset: [8, -12] } });
+    var z4 = board.create('point', [-1, -2], { name: '-1 - 2i', size: 5, fixed: true, color: '#a855f7', label: { fontSize: 12, offset: [8, -12] } });
+    
+    // Vectores desde el origen
+    board.create('arrow', [[0, 0], z1], { strokeColor: '#3b82f6', strokeWidth: 2, fixed: true });
+    board.create('arrow', [[0, 0], z2], { strokeColor: '#22c55e', strokeWidth: 2, fixed: true });
+    board.create('arrow', [[0, 0], z3], { strokeColor: '#f97316', strokeWidth: 2, fixed: true });
+    board.create('arrow', [[0, 0], z4], { strokeColor: '#a855f7', strokeWidth: 2, fixed: true });
+    
+    // Etiquetas de ejes
+    board.create('text', [8.3, -0.5, 'Eje Real'], { fontSize: 11, strokeColor: '#374151', cssStyle: 'font-weight: bold;', fixed: true });
+    board.create('text', [0.3, 5.5, 'Eje Imaginario'], { fontSize: 11, strokeColor: '#374151', cssStyle: 'font-weight: bold;', fixed: true });
+    
+    board.unsuspendUpdate();
+  }
+});
+</script>
+
+> 💡 Cada número complejo se representa como un punto (o vector) en el plano. La parte real va en el eje horizontal y la parte imaginaria en el vertical.
+
 ---
 
 ## 📖 Casos especiales
@@ -150,12 +200,60 @@ El opuesto de $z = a + bi$ es $-z = -a - bi$.
 
 Gráficamente, el opuesto es la **reflexión** respecto al origen.
 
-### Ejemplo 8
-
 Si $z = 2 + 3i$, entonces $-z = -2 - 3i$.
 
 - $z$ está en $(2, 3)$ (cuadrante I)
 - $-z$ está en $(-2, -3)$ (cuadrante III)
+
+Visualización del conjugado y opuesto:
+
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 480px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-conjugado-opuesto" class="jsxgraph-container" style="width: 100%; height: 380px; border-radius: 8px; overflow: hidden;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined') {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-conjugado-opuesto', {
+      boundingbox: [-5, 5, 5, -5],
+      axis: true,
+      showCopyright: false,
+      showNavigation: false,
+      pan: { enabled: false },
+      zoom: { enabled: false }
+    });
+    
+    // z = 3 + 4i
+    var z = board.create('point', [3, 4], { name: 'z = 3 + 4i', size: 5, fixed: true, color: '#3b82f6', label: { fontSize: 11, offset: [8, 8] } });
+    board.create('arrow', [[0, 0], z], { strokeColor: '#3b82f6', strokeWidth: 2, fixed: true });
+    
+    // Conjugado z̄ = 3 - 4i
+    var zbar = board.create('point', [3, -4], { name: 'z̄ = 3 - 4i', size: 5, fixed: true, color: '#22c55e', label: { fontSize: 11, offset: [8, -12] } });
+    board.create('arrow', [[0, 0], zbar], { strokeColor: '#22c55e', strokeWidth: 2, fixed: true });
+    
+    // Línea de simetría (eje real)
+    board.create('segment', [z, zbar], { strokeColor: '#94a3b8', strokeWidth: 1, dash: 2, fixed: true });
+    
+    // Opuesto -z = -3 - 4i
+    var negz = board.create('point', [-3, -4], { name: '-z = -3 - 4i', size: 5, fixed: true, color: '#ef4444', label: { fontSize: 11, offset: [-80, -12] } });
+    board.create('arrow', [[0, 0], negz], { strokeColor: '#ef4444', strokeWidth: 2, fixed: true });
+    
+    // Línea de simetría (origen)
+    board.create('segment', [z, negz], { strokeColor: '#f97316', strokeWidth: 1, dash: 3, fixed: true });
+    
+    // Etiquetas de ejes
+    board.create('text', [4.3, -0.4, 'Re'], { fontSize: 12, strokeColor: '#374151', cssStyle: 'font-weight: bold;', fixed: true });
+    board.create('text', [0.2, 4.5, 'Im'], { fontSize: 12, strokeColor: '#374151', cssStyle: 'font-weight: bold;', fixed: true });
+    
+    board.unsuspendUpdate();
+  }
+});
+</script>
+
+> 💡 El **conjugado** (verde) es la reflexión respecto al eje real. El **opuesto** (rojo) es la reflexión respecto al origen.
 
 ---
 

@@ -46,7 +46,8 @@ Para la elaboración de la lecciones, ten en cuenta que el una MATERIA > CAPITUL
 
 ## Solicitud concreta
 
-ESTAS LECCIONES NO TIENEN EL WRAPPER VISUAL:
-http://localhost:4321/fisica/introduccion-a-la-fisica/introduccion/precision-y-exactitud
+APLICA EL RECURSO GRÁFICO QUE CORRESPONDA PARA LA SIGUIENTE LECCIÓN
+http://localhost:4321/matematicas/algebra/numeros-complejos/conjugado
+
 
 

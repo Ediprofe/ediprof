@@ -42,6 +42,59 @@ $$
 \boxed{|3 + 4i| = 5}
 $$
 
+Visualización del módulo:
+
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 480px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-modulo" class="jsxgraph-container" style="width: 100%; height: 350px; border-radius: 8px; overflow: hidden;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined') {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-modulo', {
+      boundingbox: [-1, 6, 6, -1],
+      axis: true,
+      showCopyright: false,
+      showNavigation: false,
+      pan: { enabled: false },
+      zoom: { enabled: false }
+    });
+    
+    var O = board.create('point', [0, 0], { name: 'O', size: 2, fixed: true, color: '#64748b', label: { offset: [-12, -12] } });
+    var z = board.create('point', [3, 4], { name: 'z = 3 + 4i', size: 5, fixed: true, color: '#3b82f6', label: { fontSize: 12, offset: [8, 8] } });
+    
+    // Vector desde origen
+    board.create('arrow', [O, z], { strokeColor: '#3b82f6', strokeWidth: 3, fixed: true });
+    
+    // Proyecciones (catetos del triángulo)
+    var projX = board.create('point', [3, 0], { visible: false, fixed: true });
+    board.create('segment', [O, projX], { strokeColor: '#ef4444', strokeWidth: 2, fixed: true });
+    board.create('segment', [projX, z], { strokeColor: '#22c55e', strokeWidth: 2, fixed: true });
+    
+    // Ángulo recto
+    board.create('polygon', [[2.7, 0], [2.7, 0.3], [3, 0.3], projX], { fillColor: 'transparent', strokeColor: '#94a3b8', strokeWidth: 1, fixed: true, vertices: { visible: false } });
+    
+    // Etiquetas de catetos
+    board.create('text', [1.5, -0.5, 'a = 3'], { fontSize: 12, strokeColor: '#ef4444', cssStyle: 'font-weight: bold;', fixed: true });
+    board.create('text', [3.3, 2, 'b = 4'], { fontSize: 12, strokeColor: '#22c55e', cssStyle: 'font-weight: bold;', fixed: true });
+    
+    // Etiqueta del módulo (hipotenusa)
+    board.create('text', [0.8, 2.8, '|z| = 5'], { fontSize: 14, strokeColor: '#3b82f6', cssStyle: 'font-weight: bold;', fixed: true });
+    
+    // Etiquetas de ejes
+    board.create('text', [5.3, -0.5, 'Re'], { fontSize: 12, strokeColor: '#374151', cssStyle: 'font-weight: bold;', fixed: true });
+    board.create('text', [0.2, 5.5, 'Im'], { fontSize: 12, strokeColor: '#374151', cssStyle: 'font-weight: bold;', fixed: true });
+    
+    board.unsuspendUpdate();
+  }
+});
+</script>
+
+> 💡 El **módulo** es la hipotenusa del triángulo rectángulo formado por la parte real (cateto horizontal) y la parte imaginaria (cateto vertical).
+
 ---
 
 ### Ejemplo 2

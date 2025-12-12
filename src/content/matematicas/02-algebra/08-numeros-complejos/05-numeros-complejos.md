@@ -30,6 +30,44 @@ donde:
 | $4$ | $4$ | $0$ |
 | $2i$ | $0$ | $2$ |
 
+Visualización en el plano complejo:
+
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 500px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-complejos-intro" class="jsxgraph-container" style="width: 100%; height: 400px; border-radius: 8px; overflow: hidden;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined') {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-complejos-intro', {
+      boundingbox: [-8, 8, 9, -8],
+      axis: true,
+      showCopyright: false,
+      showNavigation: false,
+      pan: { enabled: false },
+      zoom: { enabled: false }
+    });
+    
+    // Puntos de los números complejos
+    board.create('point', [3, 4], { name: '3 + 4i', size: 4, fixed: true, color: '#3b82f6', label: { fontSize: 12, offset: [8, 8] } });
+    board.create('point', [-2, 5], { name: '-2 + 5i', size: 4, fixed: true, color: '#22c55e', label: { fontSize: 12, offset: [8, 8] } });
+    board.create('point', [7, -3], { name: '7 - 3i', size: 4, fixed: true, color: '#f97316', label: { fontSize: 12, offset: [8, -12] } });
+    board.create('point', [-1, -6], { name: '-1 - 6i', size: 4, fixed: true, color: '#a855f7', label: { fontSize: 12, offset: [8, -12] } });
+    board.create('point', [4, 0], { name: '4', size: 4, fixed: true, color: '#ef4444', label: { fontSize: 12, offset: [0, -15] } });
+    board.create('point', [0, 2], { name: '2i', size: 4, fixed: true, color: '#14b8a6', label: { fontSize: 12, offset: [10, 0] } });
+    
+    // Etiquetas de ejes
+    board.create('text', [8.3, -0.5, 'Parte Real'], { fontSize: 11, strokeColor: '#374151', cssStyle: 'font-weight: bold;', fixed: true });
+    board.create('text', [0.3, 7.5, 'Parte Imaginaria'], { fontSize: 11, strokeColor: '#374151', cssStyle: 'font-weight: bold;', fixed: true });
+    
+    board.unsuspendUpdate();
+  }
+});
+</script>
+
 ---
 
 ## 📖 Notación

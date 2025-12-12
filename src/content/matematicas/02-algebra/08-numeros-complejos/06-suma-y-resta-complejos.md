@@ -26,6 +26,58 @@ $$
 \boxed{(3 + 2i) + (5 + 4i) = 8 + 6i}
 $$
 
+Visualización de la suma (método punta a cola):
+
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 480px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-suma-complejos" class="jsxgraph-container" style="width: 100%; height: 350px; border-radius: 8px; overflow: hidden;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined') {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-suma-complejos', {
+      boundingbox: [-1, 8, 10, -1],
+      axis: true,
+      showCopyright: false,
+      showNavigation: false,
+      pan: { enabled: false },
+      zoom: { enabled: false }
+    });
+    
+    // Origen
+    var O = board.create('point', [0, 0], { name: '', size: 3, fixed: true, color: '#64748b' });
+    
+    // PASO 1: z₁ = 3 + 2i (azul, desde el origen)
+    var z1 = board.create('point', [3, 2], { name: '', size: 5, fixed: true, color: '#3b82f6' });
+    board.create('arrow', [O, z1], { strokeColor: '#3b82f6', strokeWidth: 4, fixed: true });
+    board.create('text', [1, 2.3, '① z₁ = 3 + 2i'], { fontSize: 13, strokeColor: '#3b82f6', cssStyle: 'font-weight: bold;', fixed: true });
+    
+    // PASO 2: z₂ = 5 + 4i (verde, desde la PUNTA de z₁)
+    var sum = board.create('point', [8, 6], { name: '', size: 5, fixed: true, color: '#ef4444' });
+    board.create('arrow', [z1, sum], { strokeColor: '#22c55e', strokeWidth: 4, fixed: true });
+    board.create('text', [5.5, 5, '② z₂ = 5 + 4i'], { fontSize: 13, strokeColor: '#22c55e', cssStyle: 'font-weight: bold;', fixed: true });
+    
+    // RESULTADO: z₁ + z₂ = 8 + 6i (rojo, del origen al final)
+    board.create('arrow', [O, sum], { strokeColor: '#ef4444', strokeWidth: 3, dash: 2, fixed: true });
+    board.create('text', [6.5, 7, '③ Resultado = 8 + 6i'], { fontSize: 13, strokeColor: '#ef4444', cssStyle: 'font-weight: bold;', fixed: true });
+    
+    // Etiquetas de ejes
+    board.create('text', [9.3, -0.5, 'Real'], { fontSize: 11, strokeColor: '#374151', cssStyle: 'font-weight: bold;', fixed: true });
+    board.create('text', [-0.7, 7.3, 'Imag'], { fontSize: 11, strokeColor: '#374151', cssStyle: 'font-weight: bold;', fixed: true });
+    
+    board.unsuspendUpdate();
+  }
+});
+</script>
+
+> 💡 **Método punta a cola:**  
+> ① Dibujamos $z_1$ desde el origen (azul).  
+> ② Dibujamos $z_2$ desde la **punta** de $z_1$ (verde).  
+> ③ El **resultado** va del origen a donde terminamos (rojo punteado).
+
 ---
 
 ### Ejemplo 2
