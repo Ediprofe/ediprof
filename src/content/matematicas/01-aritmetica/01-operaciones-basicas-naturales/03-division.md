@@ -18,7 +18,7 @@ $$
 
 Una división es **exacta** cuando el residuo es **cero**.
 
-### Ejemplo 1: $56 \div 8 = 7$
+### Ejemplo 1
 
 <div id="jsxgraph-div1" class="jsxgraph-container" style="width: 100%; max-width: 350px; height: 200px; margin: 1rem auto;"></div>
 
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ---
 
-### Ejemplo 2: $144 \div 12 = 12$
+### Ejemplo 2
 
 <div id="jsxgraph-div2" class="jsxgraph-container" style="width: 100%; max-width: 400px; height: 260px; margin: 1rem auto;"></div>
 
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ---
 
-### Ejemplo 3: $245 \div 7 = 35$
+### Ejemplo 3
 
 <div id="jsxgraph-div3" class="jsxgraph-container" style="width: 100%; max-width: 400px; height: 300px; margin: 1rem auto;"></div>
 
@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 Una división tiene **residuo** cuando no es exacta. El residuo siempre debe ser **menor que el divisor**.
 
-### Ejemplo 4: $83 \div 6 = 13$ (residuo 5)
+### Ejemplo 4
 
 <div id="jsxgraph-div4" class="jsxgraph-container" style="width: 100%; max-width: 400px; height: 280px; margin: 1rem auto;"></div>
 
@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ---
 
-### Ejemplo 5: $100 \div 7 = 14$ (residuo 2)
+### Ejemplo 5
 
 <div id="jsxgraph-div5" class="jsxgraph-container" style="width: 100%; max-width: 400px; height: 280px; margin: 1rem auto;"></div>
 
@@ -242,7 +242,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ---
 
-### Ejemplo 6: $500 \div 15 = 33$ (residuo 5)
+### Ejemplo 6
 
 <div id="jsxgraph-div6" class="jsxgraph-container" style="width: 100%; max-width: 400px; height: 280px; margin: 1rem auto;"></div>
 
@@ -291,7 +291,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ---
 
-### Ejemplo 7: $1000 \div 23 = 43$ (residuo 11)
+### Ejemplo 7
 
 <div id="jsxgraph-div7" class="jsxgraph-container" style="width: 100%; max-width: 450px; height: 280px; margin: 1rem auto;"></div>
 
@@ -342,7 +342,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ---
 
-### Ejemplo 8: $1728 \div 24 = 72$
+### Ejemplo 8
 
 <div id="jsxgraph-div8" class="jsxgraph-container" style="width: 100%; max-width: 450px; height: 320px; margin: 1rem auto;"></div>
 
@@ -391,7 +391,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ---
 
-### Ejemplo 9: $2500 \div 35 = 71$ (residuo 15)
+### Ejemplo 9
 
 <div id="jsxgraph-div9" class="jsxgraph-container" style="width: 100%; max-width: 450px; height: 280px; margin: 1rem auto;"></div>
 
@@ -443,7 +443,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ---
 
-### Ejemplo 10: $9999 \div 11 = 909$
+### Ejemplo 10
 
 <div id="jsxgraph-div10" class="jsxgraph-container" style="width: 100%; max-width: 450px; height: 340px; margin: 1rem auto;"></div>
 

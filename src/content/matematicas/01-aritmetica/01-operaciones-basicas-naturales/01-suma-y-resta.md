@@ -26,7 +26,7 @@ $$
 
 ## 📖 Ejemplos de suma
 
-### Ejemplo 1: $234 + 152 = 386$ (sin llevar)
+### Ejemplo 1: 
 
 <div id="jsxgraph-suma1" class="jsxgraph-container" style="width: 100%; max-width: 300px; height: 180px; margin: 1rem auto;"></div>
 
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ---
 
-### Ejemplo 2: $478 + 256 = 734$ (con llevar)
+### Ejemplo 2
 
 <div id="jsxgraph-suma2" class="jsxgraph-container" style="width: 100%; max-width: 320px; height: 200px; margin: 1rem auto;"></div>
 
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ---
 
-### Ejemplo 3: $567 + 389 = 956$
+### Ejemplo 3
 
 <div id="jsxgraph-suma3" class="jsxgraph-container" style="width: 100%; max-width: 320px; height: 200px; margin: 1rem auto;"></div>
 
@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ---
 
-### Ejemplo 4: $1245 + 3867 = 5112$
+### Ejemplo 4
 
 <div id="jsxgraph-suma4" class="jsxgraph-container" style="width: 100%; max-width: 350px; height: 200px; margin: 1rem auto;"></div>
 
@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ---
 
-### Ejemplo 5: $2589 + 4376 = 6965$
+### Ejemplo 5
 
 <div id="jsxgraph-suma5" class="jsxgraph-container" style="width: 100%; max-width: 350px; height: 200px; margin: 1rem auto;"></div>
 
@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ---
 
-### Ejemplo 6: $3456 + 2789 = 6245$
+### Ejemplo 6
 
 <div id="jsxgraph-suma6" class="jsxgraph-container" style="width: 100%; max-width: 350px; height: 200px; margin: 1rem auto;"></div>
 
@@ -227,7 +227,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ---
 
-### Ejemplo 7: $5678 + 1234 = 6912$
+### Ejemplo 7
 
 <div id="jsxgraph-suma7" class="jsxgraph-container" style="width: 100%; max-width: 350px; height: 200px; margin: 1rem auto;"></div>
 
@@ -261,7 +261,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ---
 
-### Ejemplo 8: $7890 + 2345 = 10235$
+### Ejemplo 8
 
 <div id="jsxgraph-suma8" class="jsxgraph-container" style="width: 100%; max-width: 380px; height: 200px; margin: 1rem auto;"></div>
 
@@ -297,7 +297,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ---
 
-### Ejemplo 9: $4567 + 8765 = 13332$
+### Ejemplo 9
 
 <div id="jsxgraph-suma9" class="jsxgraph-container" style="width: 100%; max-width: 380px; height: 200px; margin: 1rem auto;"></div>
 
@@ -335,7 +335,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ---
 
-### Ejemplo 10: $9999 + 1111 = 11110$
+### Ejemplo 10
 
 <div id="jsxgraph-suma10" class="jsxgraph-container" style="width: 100%; max-width: 380px; height: 200px; margin: 1rem auto;"></div>
 
@@ -395,7 +395,7 @@ $$
 
 ## 📖 Ejemplos de resta
 
-### Ejemplo 1: $587 - 234 = 353$ (sin prestar)
+### Ejemplo 1
 
 <div id="jsxgraph-resta1" class="jsxgraph-container" style="width: 100%; max-width: 300px; height: 180px; margin: 1rem auto;"></div>
 
@@ -425,7 +425,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ---
 
-### Ejemplo 2: $452 - 178 = 274$ (con prestar)
+### Ejemplo 2
 
 <div id="jsxgraph-resta2" class="jsxgraph-container" style="width: 100%; max-width: 350px; height: 200px; margin: 1rem auto;"></div>
 
@@ -458,7 +458,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ---
 
-### Ejemplo 3: $703 - 258 = 445$
+### Ejemplo 3
 
 <div id="jsxgraph-resta3" class="jsxgraph-container" style="width: 100%; max-width: 300px; height: 200px; margin: 1rem auto;"></div>
 
@@ -491,7 +491,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ---
 
-### Ejemplo 4: $1000 - 456 = 544$
+### Ejemplo 4
 
 <div id="jsxgraph-resta4" class="jsxgraph-container" style="width: 100%; max-width: 350px; height: 200px; margin: 1rem auto;"></div>
 
@@ -526,7 +526,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ---
 
-### Ejemplo 5: $5000 - 1234 = 3766$
+### Ejemplo 5
 
 <div id="jsxgraph-resta5" class="jsxgraph-container" style="width: 100%; max-width: 350px; height: 200px; margin: 1rem auto;"></div>
 
@@ -563,7 +563,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ---
 
-### Ejemplo 6: $8765 - 3456 = 5309$
+### Ejemplo 6
 
 <div id="jsxgraph-resta6" class="jsxgraph-container" style="width: 100%; max-width: 350px; height: 200px; margin: 1rem auto;"></div>
 
@@ -598,7 +598,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ---
 
-### Ejemplo 7: $9876 - 5432 = 4444$
+### Ejemplo 7
 
 <div id="jsxgraph-resta7" class="jsxgraph-container" style="width: 100%; max-width: 350px; height: 200px; margin: 1rem auto;"></div>
 
@@ -631,7 +631,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ---
 
-### Ejemplo 8: $7500 - 2867 = 4633$
+### Ejemplo 8
 
 <div id="jsxgraph-resta8" class="jsxgraph-container" style="width: 100%; max-width: 350px; height: 200px; margin: 1rem auto;"></div>
 
@@ -668,7 +668,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ---
 
-### Ejemplo 9: $6543 - 1987 = 4556$
+### Ejemplo 9
 
 <div id="jsxgraph-resta9" class="jsxgraph-container" style="width: 100%; max-width: 350px; height: 200px; margin: 1rem auto;"></div>
 
@@ -704,7 +704,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ---
 
-### Ejemplo 10: $9001 - 4567 = 4434$
+### Ejemplo 10
 
 <div id="jsxgraph-resta10" class="jsxgraph-container" style="width: 100%; max-width: 350px; height: 200px; margin: 1rem auto;"></div>
 

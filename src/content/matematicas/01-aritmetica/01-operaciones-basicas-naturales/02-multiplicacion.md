@@ -39,7 +39,7 @@ Es fundamental memorizar las tablas del 1 al 10.
 
 ## 📖 Multiplicación por una cifra
 
-### Ejemplo 1: $123 \times 3 = 369$ (sin llevar)
+### Ejemplo 1
 
 <div id="jsxgraph-mult1" class="jsxgraph-container" style="width: 100%; max-width: 300px; height: 180px; margin: 1rem auto;"></div>
 
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ---
 
-### Ejemplo 2: $47 \times 6 = 282$ (con llevar)
+### Ejemplo 2
 
 <div id="jsxgraph-mult2" class="jsxgraph-container" style="width: 100%; max-width: 320px; height: 200px; margin: 1rem auto;"></div>
 
@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ---
 
-### Ejemplo 3: $58 \times 9 = 522$
+### Ejemplo 3
 
 <div id="jsxgraph-mult3" class="jsxgraph-container" style="width: 100%; max-width: 320px; height: 200px; margin: 1rem auto;"></div>
 
@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ## 📖 Multiplicación por dos cifras (productos parciales)
 
-### Ejemplo 4: $34 \times 25 = 850$
+### Ejemplo 4
 
 <div id="jsxgraph-mult4" class="jsxgraph-container" style="width: 100%; max-width: 350px; height: 260px; margin: 1rem auto;"></div>
 
@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ---
 
-### Ejemplo 5: $56 \times 12 = 672$
+### Ejemplo 5
 
 <div id="jsxgraph-mult5" class="jsxgraph-container" style="width: 100%; max-width: 350px; height: 260px; margin: 1rem auto;"></div>
 
@@ -242,7 +242,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ---
 
-### Ejemplo 6: $78 \times 34 = 2652$
+### Ejemplo 6
 
 <div id="jsxgraph-mult6" class="jsxgraph-container" style="width: 100%; max-width: 380px; height: 280px; margin: 1rem auto;"></div>
 
@@ -290,7 +290,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ---
 
-### Ejemplo 7: $156 \times 23 = 3588$
+### Ejemplo 7
 
 <div id="jsxgraph-mult7" class="jsxgraph-container" style="width: 100%; max-width: 400px; height: 280px; margin: 1rem auto;"></div>
 
@@ -339,7 +339,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ---
 
-### Ejemplo 8: $245 \times 38 = 9310$
+### Ejemplo 8
 
 <div id="jsxgraph-mult8" class="jsxgraph-container" style="width: 100%; max-width: 420px; height: 280px; margin: 1rem auto;"></div>
 
@@ -389,7 +389,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ---
 
-### Ejemplo 9: $325 \times 46 = 14950$
+### Ejemplo 9
 
 <div id="jsxgraph-mult9" class="jsxgraph-container" style="width: 100%; max-width: 440px; height: 280px; margin: 1rem auto;"></div>
 
@@ -441,7 +441,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ---
 
-### Ejemplo 10: $512 \times 75 = 38400$
+### Ejemplo 10
 
 <div id="jsxgraph-mult10" class="jsxgraph-container" style="width: 100%; max-width: 440px; height: 280px; margin: 1rem auto;"></div>
 
