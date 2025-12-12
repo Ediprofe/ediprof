@@ -17,7 +17,7 @@ En esta lección aplicaremos las funciones lineales a la resolución de problema
 
 ### Ejemplo 1
 
-Un gimnasio cobra una inscripción de $\$50$ y una mensualidad de $\$30$. ¿Cuál es el costo total después de $x$ meses?
+Un gimnasio cobra una inscripción de 50 pesos y una mensualidad de 30 pesos. ¿Cuál es el costo total después de $x$ meses?
 
 **Función:**
 $$
@@ -26,10 +26,10 @@ $$
 
 **a)** ¿Cuánto cuesta después de 6 meses?
 $$
-C(6) = 30(6) + 50 = 180 + 50 = \$230
+C(6) = 30(6) + 50 = 180 + 50 = 230 \text{ pesos}
 $$
 
-**b)** ¿Después de cuántos meses el costo será $\$290$?
+**b)** ¿Después de cuántos meses el costo será 290 pesos?
 $$
 290 = 30x + 50 \quad \Rightarrow \quad 30x = 240 \quad \Rightarrow \quad x = 8 \text{ meses}
 $$
@@ -42,7 +42,7 @@ $$
 
 ### Ejemplo 2
 
-Un fontanero cobra $\$40$ por visita más $\$25$ por hora de trabajo. Si trabaja $h$ horas, ¿cuál es el costo?
+Un fontanero cobra 40 pesos por visita más 25 pesos por hora de trabajo. Si trabaja $h$ horas, ¿cuál es el costo?
 
 $$
 C(h) = 25h + 40
@@ -50,11 +50,11 @@ $$
 
 ¿Cuánto cobra por un trabajo de 3 horas?
 $$
-C(3) = 25(3) + 40 = 75 + 40 = \$115
+C(3) = 25(3) + 40 = 75 + 40 = 115 \text{ pesos}
 $$
 
 $$
-\boxed{C(3) = \$115}
+\boxed{C(3) = 115 \text{ pesos}}
 $$
 
 ---
@@ -63,7 +63,7 @@ $$
 
 ### Ejemplo 3
 
-Un auto sale de una ciudad y viaja a $80$ km/h. ¿A qué distancia estará después de $t$ horas?
+Un auto sale de una ciudad y viaja a 80 km/h. ¿A qué distancia estará después de $t$ horas?
 
 $$
 d(t) = 80t
@@ -108,7 +108,7 @@ $$
 
 ### Ejemplo 5
 
-Un auto nuevo vale $\$25,000$ y pierde $\$2,000$ de valor cada año. ¿Cuál es su valor después de $t$ años?
+Un auto nuevo vale 25,000 pesos y pierde 2,000 pesos de valor cada año. ¿Cuál es su valor después de $t$ años?
 
 $$
 V(t) = -2000t + 25000
@@ -116,10 +116,10 @@ $$
 
 **a)** ¿Valor después de 4 años?
 $$
-V(4) = -2000(4) + 25000 = -8000 + 25000 = \$17,000
+V(4) = -2000(4) + 25000 = -8000 + 25000 = 17,000 \text{ pesos}
 $$
 
-**b)** ¿Cuándo valdrá $\$15,000$?
+**b)** ¿Cuándo valdrá 15,000 pesos?
 $$
 15000 = -2000t + 25000 \quad \Rightarrow \quad t = 5 \text{ años}
 $$
@@ -134,7 +134,7 @@ $$
 
 ### Ejemplo 6
 
-La temperatura en una montaña disminuye $6°C$ por cada 1000 metros de altura. Si a nivel del suelo (0 m) la temperatura es $24°C$, ¿cuál es la temperatura a $h$ kilómetros de altura?
+La temperatura en una montaña disminuye 6°C por cada 1000 metros de altura. Si a nivel del suelo (0 m) la temperatura es 24°C, ¿cuál es la temperatura a $h$ kilómetros de altura?
 
 $$
 T(h) = -6h + 24
@@ -208,7 +208,7 @@ $$
 
 ### Ejemplo 9
 
-Un negocio tuvo ventas de $\$1200$ en enero y $\$1800$ en abril (3 meses después). Encuentra la función de ventas.
+Un negocio tuvo ventas de 1200 pesos en enero y 1800 pesos en abril (3 meses después). Encuentra la función de ventas.
 
 $$
 m = \frac{1800 - 1200}{3 - 0} = \frac{600}{3} = 200
@@ -220,7 +220,7 @@ $$
 
 ¿Ventas proyectadas para diciembre (11 meses después de enero)?
 $$
-V(11) = 200(11) + 1200 = \$3400
+V(11) = 200(11) + 1200 = 3400 \text{ pesos}
 $$
 
 $$
@@ -231,7 +231,7 @@ $$
 
 ### Ejemplo 10
 
-El precio de un producto era $\$50$ hace 2 años y ahora es $\$80$. Si la tendencia continúa, ¿cuánto costará en 3 años más?
+El precio de un producto era 50 pesos hace 2 años y ahora es 80 pesos. Si la tendencia continúa, ¿cuánto costará en 3 años más?
 
 $t = 0$ corresponde a hace 2 años: $(0, 50)$
 $t = 2$ corresponde a ahora: $(2, 80)$
@@ -246,25 +246,25 @@ $$
 
 En 3 años más (5 años desde $t = 0$):
 $$
-P(5) = 15(5) + 50 = \$125
+P(5) = 15(5) + 50 = 125 \text{ pesos}
 $$
 
 $$
-\boxed{P(5) = \$125}
+\boxed{P(5) = 125 \text{ pesos}}
 $$
 
 ---
 
 ## 📝 Ejercicios de práctica
 
-**Ejercicio 1:** Un taxi cobra $\$2.50$ por kilómetro más $\$5$ de banderazo. Escribe la función de costo y calcula el costo de un viaje de 12 km.
+**Ejercicio 1:** Un taxi cobra 2.50 pesos por kilómetro más 5 pesos de banderazo. Escribe la función de costo y calcula el costo de un viaje de 12 km.
 
 <details>
 <summary>Ver solución</summary>
 
 $C(x) = 2.50x + 5$
 
-$C(12) = 30 + 5 = \$35$
+$C(12) = 30 + 5 = 35$ pesos
 
 </details>
 
@@ -283,7 +283,7 @@ $V(8) = 1600 + 5000 = 6600$ litros
 
 ---
 
-**Ejercicio 3:** Un teléfono nuevo cuesta $\$800$ y pierde $\$100$ de valor cada año. ¿Cuándo valdrá $\$300$?
+**Ejercicio 3:** Un teléfono nuevo cuesta 800 pesos y pierde 100 pesos de valor cada año. ¿Cuándo valdrá 300 pesos?
 
 <details>
 <summary>Ver solución</summary>
@@ -298,7 +298,7 @@ $t = 5$ años
 
 ---
 
-**Ejercicio 4:** La temperatura de un horno sube de $20°C$ a $220°C$ en 10 minutos. Encuentra la función y calcula la temperatura a los 6 minutos.
+**Ejercicio 4:** La temperatura de un horno sube de 20°C a 220°C en 10 minutos. Encuentra la función y calcula la temperatura a los 6 minutos.
 
 <details>
 <summary>Ver solución</summary>

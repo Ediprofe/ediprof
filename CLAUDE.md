@@ -267,20 +267,6 @@ Término general, primer término, razón, número de términos, suma de los pri
 
 # RETROALIMENTACIÓN
 
-Binomio de newton muy complejo, creo que mejor sacarlo de ahí o meterlo en un lugar donde quepa mejor.
+AL FINAL DE ESTA LECCIÓN http://localhost:4321/matematicas/algebra/ecuaciones-lineales/despeje-ecuaciones, QUIERO QUE LE INTEGRES LO DE ESTA LECCIÓN http://localhost:4321/matematicas/algebra/ecuaciones-lineales/despeje-formulas
 
-
-Lo de operaciones con fracciones por favor ten en cuenta que para la suma y la resta hay un método en cruz que ayuda mucho a los estudiantes a entender ese tema, incluso más fácil que sacando factores comunes. Por favor me gustaría que mantengas la idea del factor común y demás, pero mayoritariamente quiero que lo expliques con esa regla en cruz que es más fácil de digerir por mis estudiantes de nivel escolar.  
-
-En la lección, http://localhost:4321/matematicas/algebra/funciones-lineales/introduccion, ten cuidado con el latex y el símbolo peso ($), ya que no está renderizando bien. Es decir, sale el latex crudo. Lo mismo sucede con esta lección: http://localhost:4321/matematicas/algebra/funciones-lineales/resolucion-problemas , y con esta otra http://localhost:4321/matematicas/algebra/sistemas-ecuaciones-lineales/problemas-aplicacion 
-
-En esta lección: http://localhost:4321/matematicas/algebra/funciones-lineales/funcion-lineal, no puedes decir “rate of change”, acuérdate que la página está en español.
-
-En esta lección: http://localhost:4321/matematicas/algebra/funciones-lineales/rectas-paralelas-perpendiculares, también habla sobre rectas secantes.
-
-Después de esta lección http://localhost:4321/matematicas/algebra/ecuaciones-lineales/introduccion, me gustaría que crees otra lección que profundice sobre el despeje de ecuaciones, y que ademas hables sobre el método de despeje ese tipo lo que uno dice en maerica latina, de que pasa al otro lado a realizar a operacion contraria. Manejando la idea de con una analogía de que una igualdad es como una balanza, en la que si se hace una cosa a un lado, toca hacerle lo mismo al otro lado para que se mantenga la igualdad, y que eso se hace para manipular la ecuación de manera conveniente hasta despejar la incógnita…me entiendes la idea…ya con esa idea, haces unos ejemplos con el despeje normal de hacer la misma operación a ambos lados, pero luego entonces vas a seguir con muchos ejemplos que se usan en la jerga común de América Latina (sin decir eso de “América Latina”), que si suma, pasa a restar, si divide a un lado, pasa al otro lado a multiplicar…me entiendes, la operación contraria al otro lado….muchos ejemplos…
-
-NOTA IMPORTANTE: YA VI QUE HAY UNA LECCIÓN http://localhost:4321/matematicas/algebra/ecuaciones-lineales/despeje-formulas, EN LA CUAL HABLAS DE DESPEJE DE FÓRMULAS. ENTONCES, POR FAVOR ESTA LECCIÓN MUEVELA JUSTO DESPUES DE ESTA: http://localhost:4321/matematicas/algebra/ecuaciones-lineales/introduccion, RECONCILIANDOLA CON LO QUE TE PEDÍ, Y POR FAVOR ENRIQUECELA MUCHO CON EJEMPLOS.
-
-Por FAVOR EL MÉTODO GRÁFICO PARA RESOLVER SISTEMAS DE ECUACIONES 2X2 MUÉVELO Y PONLO DE PRIMERO. O SEA PON ESTA LECCIÓN PRIMERO QUE LAS OTRAS LECCIONES QUE TIENEN OTROS MÉTODOS PARA RESOLVER SISTEMAS 2X2.
-
+y ELIMINAS LA LECCIÓN INTEGRADA (http://localhost:4321/matematicas/algebra/ecuaciones-lineales/despeje-formulas)

@@ -13,7 +13,7 @@ y = mx + b
 $$
 
 donde:
-- $m$ = **pendiente** (rate of change)
+- $m$ = **pendiente** (razón de cambio)
 - $b$ = **intercepto con el eje y** (ordenada al origen)
 
 ---

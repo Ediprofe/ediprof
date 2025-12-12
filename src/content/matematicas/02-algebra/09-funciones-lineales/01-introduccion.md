@@ -8,8 +8,8 @@ En esta lección introduciremos el concepto de función lineal, su importancia y
 
 Las funciones lineales están en todas partes en nuestra vida cotidiana:
 
-- **Salarios**: Si ganas $\$50$ por hora, tu ingreso depende linealmente de las horas trabajadas.
-- **Distancia**: Si un auto viaja a velocidad constante de $80$ km/h, la distancia recorrida es proporcional al tiempo.
+- **Salarios**: Si ganas 50 pesos por hora, tu ingreso depende linealmente de las horas trabajadas.
+- **Distancia**: Si un auto viaja a velocidad constante de 80 km/h, la distancia recorrida es proporcional al tiempo.
 - **Costos**: El costo total de un taxi incluye una tarifa base más un costo por kilómetro.
 - **Temperatura**: La conversión entre Celsius y Fahrenheit es una relación lineal.
 
@@ -51,26 +51,26 @@ donde:
 
 ### Ejemplo 1: Salario por horas
 
-Un trabajador gana $\$15$ por hora. Si trabaja $x$ horas, su salario es:
+Un trabajador gana 15 pesos por hora. Si trabaja $x$ horas, su salario es:
 
 $$
 f(x) = 15x
 $$
 
-Aquí $m = 15$ (gana $15 por hora) y $b = 0$ (no hay pago base).
+Aquí $m = 15$ (gana 15 por hora) y $b = 0$ (no hay pago base).
 
 | Horas ($x$) | Salario ($y$) |
 |:-----------:|:-------------:|
-| 0 | $\$0$ |
-| 1 | $\$15$ |
-| 5 | $\$75$ |
-| 8 | $\$120$ |
+| 0 | 0 |
+| 1 | 15 |
+| 5 | 75 |
+| 8 | 120 |
 
 ---
 
 ### Ejemplo 2: Servicio de taxi
 
-Un taxi cobra $\$3$ de tarifa base más $\$2$ por kilómetro. El costo de un viaje de $x$ kilómetros es:
+Un taxi cobra 3 pesos de tarifa base más 2 pesos por kilómetro. El costo de un viaje de $x$ kilómetros es:
 
 $$
 f(x) = 2x + 3
@@ -80,9 +80,9 @@ Aquí $m = 2$ (costo por km) y $b = 3$ (tarifa base).
 
 | Kilómetros ($x$) | Costo ($y$) |
 |:----------------:|:-----------:|
-| 0 | $\$3$ |
-| 5 | $\$13$ |
-| 10 | $\$23$ |
+| 0 | 3 |
+| 5 | 13 |
+| 10 | 23 |
 
 ---
 
@@ -233,7 +233,7 @@ $m = 2$ (pendiente), $b = -3$ (intercepto)
 
 ---
 
-**Ejercicio 4:** Un plan de celular cobra $\$20$ fijos más $\$0.10$ por minuto. Escribe la función de costo.
+**Ejercicio 4:** Un plan de celular cobra 20 pesos fijos más 0.10 pesos por minuto. Escribe la función de costo.
 
 <details>
 <summary>Ver solución</summary>

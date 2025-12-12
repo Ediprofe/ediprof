@@ -107,11 +107,11 @@ $$
 
 ### Ejemplo 4
 
-Un comerciante mezcla café de $\$8$/kg con café de $\$12$/kg para obtener 50 kg de mezcla a $\$9$/kg. ¿Cuántos kg de cada tipo necesita?
+Un comerciante mezcla café de 8 pesos/kg con café de 12 pesos/kg para obtener 50 kg de mezcla a 9 pesos/kg. ¿Cuántos kg de cada tipo necesita?
 
 **Variables:**
-- $x$ = kg de café a $\$8$
-- $y$ = kg de café a $\$12$
+- $x$ = kg de café a 8 pesos
+- $y$ = kg de café a 12 pesos
 
 **Ecuaciones:**
 $$
@@ -137,7 +137,7 @@ x = 37.5, \quad y = 12.5
 $$
 
 $$
-\boxed{37.5 \text{ kg a } \$8 \text{ y } 12.5 \text{ kg a } \$12}
+\boxed{37.5 \text{ kg a 8 pesos y } 12.5 \text{ kg a 12 pesos}}
 $$
 
 ---
@@ -181,7 +181,7 @@ $$
 
 ### Ejemplo 6
 
-María tiene 25 monedas de $\$1$ y $\$5$. El total es $\$65$. ¿Cuántas monedas de cada tipo tiene?
+María tiene 25 monedas de 1 peso y de 5 pesos. El total es 65 pesos. ¿Cuántas monedas de cada tipo tiene?
 
 $$
 \begin{cases}
@@ -203,14 +203,14 @@ y = 10, \quad x = 15
 $$
 
 $$
-\boxed{15 \text{ monedas de } \$1 \text{ y } 10 \text{ monedas de } \$5}
+\boxed{15 \text{ monedas de 1 peso y } 10 \text{ monedas de 5 pesos}}
 $$
 
 ---
 
 ### Ejemplo 7
 
-Se invirtieron $\$10,000$ en dos cuentas: una al 5% anual y otra al 8% anual. El interés total anual fue $\$650$. ¿Cuánto se invirtió en cada cuenta?
+Se invirtieron 10,000 pesos en dos cuentas: una al 5% anual y otra al 8% anual. El interés total anual fue 650 pesos. ¿Cuánto se invirtió en cada cuenta?
 
 $$
 \begin{cases}
@@ -240,7 +240,7 @@ y = 5000, \quad x = 5000
 $$
 
 $$
-\boxed{\$5000 \text{ al } 5\% \text{ y } \$5000 \text{ al } 8\%}
+\boxed{5000 \text{ pesos al } 5\% \text{ y } 5000 \text{ pesos al } 8\%}
 $$
 
 ---

@@ -1,17 +1,31 @@
-# ⊥ Rectas Paralelas y Perpendiculares
+# ⊥ Rectas Paralelas, Secantes y Perpendiculares
 
-En esta lección estudiaremos las relaciones entre rectas paralelas y perpendiculares usando sus pendientes.
+En esta lección estudiaremos las relaciones entre rectas usando sus pendientes.
+
+---
+
+## 📖 Clasificación de rectas
+
+Dos rectas en el plano pueden ser:
+
+| Tipo | Descripción | Intersección |
+|:-----|:------------|:-------------|
+| **Paralelas** | Nunca se cruzan | Ningún punto |
+| **Secantes** | Se cruzan en un punto | Un punto |
+| **Perpendiculares** | Se cruzan formando ángulo de 90° | Un punto |
+
+> Las rectas perpendiculares son un caso especial de rectas secantes.
 
 ---
 
 ## 📖 Rectas paralelas
 
-Dos rectas son **paralelas** si nunca se intersectan. Para que esto ocurra, deben tener la **misma pendiente**.
+Dos rectas son **paralelas** si nunca se intersectan. Para que esto ocurra, deben tener la **misma pendiente** pero **diferente intercepto**.
 
 ### Condición de paralelismo
 
 $$
-\ell_1 \parallel \ell_2 \quad \Leftrightarrow \quad m_1 = m_2
+\ell_1 \parallel \ell_2 \quad \Leftrightarrow \quad m_1 = m_2 \text{ y } b_1 \neq b_2
 $$
 
 ---
@@ -20,7 +34,7 @@ $$
 
 ¿Son paralelas $y = 3x + 2$ y $y = 3x - 5$?
 
-Ambas tienen pendiente $m = 3$.
+Ambas tienen pendiente $m = 3$, pero diferentes interceptos.
 
 $$
 \boxed{\text{Sí, son paralelas}}
@@ -60,22 +74,64 @@ $$
 
 ---
 
+## 📖 Rectas secantes
+
+Dos rectas son **secantes** si se cruzan en exactamente **un punto**. Esto ocurre cuando tienen **pendientes diferentes**.
+
+### Condición de rectas secantes
+
+$$
+\ell_1 \text{ y } \ell_2 \text{ son secantes} \quad \Leftrightarrow \quad m_1 \neq m_2
+$$
+
+---
+
 ### Ejemplo 4
 
-Encontrar la recta paralela a $y = -\frac{1}{2}x + 1$ que pasa por $(4, 3)$.
+¿Son secantes $y = 2x + 3$ y $y = 5x - 1$?
 
-Pendiente: $m = -\frac{1}{2}$
+$m_1 = 2$ y $m_2 = 5$
 
-Usamos la forma punto-pendiente:
-$$
-y - 3 = -\frac{1}{2}(x - 4)
-$$
-$$
-y = -\frac{1}{2}x + 2 + 3 = -\frac{1}{2}x + 5
-$$
+Las pendientes son diferentes, por lo tanto se cruzan en un punto.
 
 $$
-\boxed{y = -\frac{1}{2}x + 5}
+\boxed{\text{Sí, son secantes}}
+$$
+
+---
+
+### Ejemplo 5
+
+Encontrar el punto de intersección de $y = x + 1$ y $y = -2x + 7$.
+
+Igualamos las ecuaciones:
+$$
+x + 1 = -2x + 7
+$$
+$$
+3x = 6
+$$
+$$
+x = 2
+$$
+$$
+y = 2 + 1 = 3
+$$
+
+$$
+\boxed{\text{Punto de intersección: } (2, 3)}
+$$
+
+---
+
+### Ejemplo 6
+
+¿Las rectas $y = 4x + 2$ y $y = 4x - 3$ son secantes?
+
+Ambas tienen $m = 4$. Como las pendientes son iguales, son paralelas, **no secantes**.
+
+$$
+\boxed{\text{No, son paralelas}}
 $$
 
 ---
@@ -100,7 +156,7 @@ Las pendientes son **recíprocas negativas**.
 
 ---
 
-### Ejemplo 5
+### Ejemplo 7
 
 ¿Son perpendiculares $y = 2x + 3$ y $y = -\frac{1}{2}x + 1$?
 
@@ -116,23 +172,7 @@ $$
 
 ---
 
-### Ejemplo 6
-
-¿Son perpendiculares $y = 3x - 1$ y $y = 3x + 4$?
-
-$m_1 = 3$ y $m_2 = 3$
-
-$$
-m_1 \cdot m_2 = 9 \neq -1
-$$
-
-$$
-\boxed{\text{No, son paralelas (no perpendiculares)}}
-$$
-
----
-
-### Ejemplo 7
+### Ejemplo 8
 
 Encontrar la pendiente de una recta perpendicular a $y = 4x + 2$.
 
@@ -148,7 +188,7 @@ $$
 
 ---
 
-### Ejemplo 8
+### Ejemplo 9
 
 Encontrar la ecuación de la recta perpendicular a $y = 3x - 1$ que pasa por $(6, 2)$.
 
@@ -167,7 +207,7 @@ $$
 
 ---
 
-### Ejemplo 9
+### Ejemplo 10
 
 ¿Son perpendiculares $y = \frac{3}{4}x + 1$ y $y = -\frac{4}{3}x - 2$?
 
@@ -187,7 +227,7 @@ $$
 
 Una recta **horizontal** ($y = b$) y una **vertical** ($x = a$) son siempre perpendiculares.
 
-### Ejemplo 10
+### Ejemplo 11
 
 $y = 5$ (horizontal) y $x = 3$ (vertical) son perpendiculares.
 
@@ -197,7 +237,8 @@ $y = 5$ (horizontal) y $x = 3$ (vertical) son perpendiculares.
 
 | Relación | Condición |
 |:---------|:----------|
-| Paralelas | $m_1 = m_2$ |
+| Paralelas | $m_1 = m_2$ (misma pendiente) |
+| Secantes | $m_1 \neq m_2$ (diferentes pendientes) |
 | Perpendiculares | $m_1 \cdot m_2 = -1$ |
 
 ---
@@ -215,7 +256,33 @@ Sí, ambas tienen $m = 5$.
 
 ---
 
-**Ejercicio 2:** Encuentra la pendiente perpendicular a $m = 2$.
+**Ejercicio 2:** ¿Son secantes $y = 2x + 1$ y $y = 3x - 4$?
+
+<details>
+<summary>Ver solución</summary>
+
+Sí, tienen pendientes diferentes ($m_1 = 2$, $m_2 = 3$).
+
+</details>
+
+---
+
+**Ejercicio 3:** Encuentra el punto de intersección de $y = x + 2$ y $y = 3x - 2$.
+
+<details>
+<summary>Ver solución</summary>
+
+$x + 2 = 3x - 2$, $2x = 4$, $x = 2$
+
+$y = 4$
+
+Punto: $(2, 4)$
+
+</details>
+
+---
+
+**Ejercicio 4:** Encuentra la pendiente perpendicular a $m = 2$.
 
 <details>
 <summary>Ver solución</summary>
@@ -226,38 +293,12 @@ $m = -\frac{1}{2}$
 
 ---
 
-**Ejercicio 3:** ¿Son perpendiculares $y = -5x + 1$ y $y = \frac{1}{5}x - 3$?
+**Ejercicio 5:** ¿Son perpendiculares $y = -5x + 1$ y $y = \frac{1}{5}x - 3$?
 
 <details>
 <summary>Ver solución</summary>
 
 $(-5) \cdot \frac{1}{5} = -1$ ✓ Sí.
-
-</details>
-
----
-
-**Ejercicio 4:** Encuentra la recta paralela a $y = -2x + 4$ que pasa por $(0, -1)$.
-
-<details>
-<summary>Ver solución</summary>
-
-$y = -2x - 1$
-
-</details>
-
----
-
-**Ejercicio 5:** Encuentra la recta perpendicular a $y = \frac{1}{2}x$ que pasa por $(4, 1)$.
-
-<details>
-<summary>Ver solución</summary>
-
-$m = -2$
-
-$y - 1 = -2(x - 4)$
-
-$y = -2x + 9$
 
 </details>
 
