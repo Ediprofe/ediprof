@@ -36,7 +36,12 @@ $$
 
 Un tenista comienza en la línea de fondo ($x=0$ m), corre hasta la red ubicada a 12 m, y luego retrocede hasta la línea de saque, ubicada a 6 m.
 
-<div id="jsxgraph-tenista" class="jsxgraph-container" style="width: 100%; max-width: 500px; height: 150px; margin: 1rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 500px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-tenista" class="jsxgraph-container" style="width: 100%; height: 150px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -73,7 +78,12 @@ $$\Delta x = 6 - 0 = +6\ \text{m}$$
 
 El ascensor sube de 0 m a 20 m, luego baja hasta -4 m.
 
-<div id="jsxgraph-ascensor" class="jsxgraph-container" style="width: 100%; max-width: 200px; height: 280px; margin: 1rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 200px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-ascensor" class="jsxgraph-container" style="width: 100%; height: 280px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -110,7 +120,12 @@ $$\Delta x = -4 - 0 = -4\ \text{m}$$
 
 Una persona recorre una pista circular de 400 m y termina en el mismo punto.
 
-<div id="jsxgraph-circular" class="jsxgraph-container" style="width: 100%; max-width: 250px; height: 250px; margin: 1rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 250px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-circular" class="jsxgraph-container" style="width: 100%; height: 250px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -144,7 +159,12 @@ $$\Delta x = 0$$ (regresó al punto de partida)
 
 Camina 30 m al norte y luego 40 m al este.
 
-<div id="jsxgraph-2d" class="jsxgraph-container" style="width: 100%; max-width: 350px; height: 300px; margin: 1rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 350px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-2d" class="jsxgraph-container" style="width: 100%; height: 300px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {

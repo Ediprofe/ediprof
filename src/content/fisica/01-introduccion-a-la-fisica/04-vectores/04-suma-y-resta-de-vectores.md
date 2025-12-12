@@ -24,7 +24,12 @@ $$
 \vec{R} = \vec{A} + \vec{B}
 $$
 
-<div id="jsxgraph-triangulo" class="jsxgraph-container" style="width: 100%; max-width: 500px; height: 350px; margin: 1.5rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 500px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-triangulo" class="jsxgraph-container" style="width: 100%; height: 350px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -76,7 +81,12 @@ document.addEventListener('DOMContentLoaded', function() {
 Si los vectores $\vec{A}$ y $\vec{B}$ parten del mismo punto, se completa un **paralelogramo** con ellos como lados adyacentes.
 La **diagonal del paralelogramo** representa el vector resultante $\vec{R}$.
 
-<div id="jsxgraph-paralelogramo" class="jsxgraph-container" style="width: 100%; max-width: 500px; height: 350px; margin: 1.5rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 500px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-paralelogramo" class="jsxgraph-container" style="width: 100%; height: 350px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -180,7 +190,12 @@ $$
 \vec{A} - \vec{B} = \vec{A} + (-\vec{B})
 $$
 
-<div id="jsxgraph-resta" class="jsxgraph-container" style="width: 100%; max-width: 520px; height: 380px; margin: 1.5rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 520px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-resta" class="jsxgraph-container" style="width: 100%; height: 380px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -250,7 +265,12 @@ $$
 \vec{B} = 2\,\hat{i} + 5\,\hat{j}
 $$
 
-<div id="jsxgraph-ejemplo" class="jsxgraph-container" style="width: 100%; max-width: 500px; height: 380px; margin: 1.5rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 500px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-ejemplo" class="jsxgraph-container" style="width: 100%; height: 380px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {

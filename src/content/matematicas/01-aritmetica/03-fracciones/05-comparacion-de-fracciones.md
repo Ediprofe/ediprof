@@ -14,15 +14,20 @@ Comparar $\frac{5}{8}$ y $\frac{3}{8}$:
 
 Como $5 > 3$ y ambas tienen denominador $8$:
 
-<div style="display: flex; justify-content: center; align-items: center; gap: 1rem; margin: 1rem auto;">
-  <div style="text-align: center;">
-    <div style="width: 100px;"><canvas id="chart-comp-58"></canvas></div>
-    <p style="font-size: 12px; color: #374151; margin-top: 0.25rem;">5/8</p>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1rem auto; max-width: 320px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
   </div>
-  <span style="font-size: 1.5rem; color: #374151; font-weight: bold;">></span>
-  <div style="text-align: center;">
-    <div style="width: 100px;"><canvas id="chart-comp-38"></canvas></div>
-    <p style="font-size: 12px; color: #374151; margin-top: 0.25rem;">3/8</p>
+  <div style="display: flex; justify-content: center; align-items: center; gap: 1rem;">
+    <div style="text-align: center;">
+      <div style="width: 100px;"><canvas id="chart-comp-58"></canvas></div>
+      <p style="font-size: 12px; color: #374151; margin-top: 0.25rem;">5/8</p>
+    </div>
+    <span style="font-size: 1.5rem; color: #374151; font-weight: bold;">></span>
+    <div style="text-align: center;">
+      <div style="width: 100px;"><canvas id="chart-comp-38"></canvas></div>
+      <p style="font-size: 12px; color: #374151; margin-top: 0.25rem;">3/8</p>
+    </div>
   </div>
 </div>
 

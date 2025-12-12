@@ -14,18 +14,23 @@ $$
 
 Observa cómo las tres fracciones llenan **exactamente la mitad** del círculo:
 
-<div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin: 1rem auto;">
-  <div style="text-align: center;">
-    <div style="width: 90px;"><canvas id="chart-equiv-12"></canvas></div>
-    <p style="font-size: 12px; color: #374151; margin-top: 0.25rem;">1/2</p>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1rem auto; max-width: 380px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
   </div>
-  <div style="text-align: center;">
-    <div style="width: 90px;"><canvas id="chart-equiv-24"></canvas></div>
-    <p style="font-size: 12px; color: #374151; margin-top: 0.25rem;">2/4</p>
-  </div>
-  <div style="text-align: center;">
-    <div style="width: 90px;"><canvas id="chart-equiv-36"></canvas></div>
-    <p style="font-size: 12px; color: #374151; margin-top: 0.25rem;">3/6</p>
+  <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+    <div style="text-align: center;">
+      <div style="width: 90px;"><canvas id="chart-equiv-12"></canvas></div>
+      <p style="font-size: 12px; color: #374151; margin-top: 0.25rem;">1/2</p>
+    </div>
+    <div style="text-align: center;">
+      <div style="width: 90px;"><canvas id="chart-equiv-24"></canvas></div>
+      <p style="font-size: 12px; color: #374151; margin-top: 0.25rem;">2/4</p>
+    </div>
+    <div style="text-align: center;">
+      <div style="width: 90px;"><canvas id="chart-equiv-36"></canvas></div>
+      <p style="font-size: 12px; color: #374151; margin-top: 0.25rem;">3/6</p>
+    </div>
   </div>
 </div>
 

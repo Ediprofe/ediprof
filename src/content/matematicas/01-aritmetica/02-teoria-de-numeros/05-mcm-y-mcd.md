@@ -14,7 +14,12 @@ Descomponemos ambos números al mismo tiempo, dividiendo por primos que dividan 
 
 ### Ejemplo 1: MCD de 12 y 18
 
-<div id="jsxgraph-mcd1" class="jsxgraph-container" style="width: 100%; max-width: 400px; height: 280px; margin: 1rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 400px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-mcd1" class="jsxgraph-container" style="width: 100%; height: 280px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -66,7 +71,12 @@ $$
 
 ### Ejemplo 2: MCD de 24 y 36
 
-<div id="jsxgraph-mcd2" class="jsxgraph-container" style="width: 100%; max-width: 400px; height: 300px; margin: 1rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 400px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-mcd2" class="jsxgraph-container" style="width: 100%; height: 300px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -124,7 +134,12 @@ Usamos el mismo proceso, pero multiplicamos **todos** los factores primos.
 
 ### Ejemplo 1: MCM de 12 y 18
 
-<div id="jsxgraph-mcm1" class="jsxgraph-container" style="width: 100%; max-width: 400px; height: 280px; margin: 1rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 400px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-mcm1" class="jsxgraph-container" style="width: 100%; height: 280px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -170,7 +185,12 @@ $$
 
 ### Ejemplo 2: MCM de 8 y 12
 
-<div id="jsxgraph-mcm2" class="jsxgraph-container" style="width: 100%; max-width: 400px; height: 280px; margin: 1rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 400px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-mcm2" class="jsxgraph-container" style="width: 100%; height: 280px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -216,7 +236,12 @@ $$
 
 ## 📖 Relación entre MCM y MCD
 
-<div id="jsxgraph-relacion" class="jsxgraph-container" style="width: 100%; max-width: 450px; height: 180px; margin: 1rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 450px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-relacion" class="jsxgraph-container" style="width: 100%; height: 180px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {

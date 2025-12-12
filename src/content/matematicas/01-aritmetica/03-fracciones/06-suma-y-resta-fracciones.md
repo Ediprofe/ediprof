@@ -20,20 +20,25 @@ $$
 
 Visualmente: combinamos las partes de ambas fracciones:
 
-<div style="display: flex; justify-content: center; align-items: center; gap: 0.5rem; flex-wrap: wrap; margin: 1rem auto;">
-  <div style="text-align: center;">
-    <div style="width: 70px;"><canvas id="chart-suma-27"></canvas></div>
-    <p style="font-size: 11px; color: #374151;">2/7</p>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1rem auto; max-width: 340px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
   </div>
-  <span style="font-size: 1.2rem; color: #374151;">+</span>
-  <div style="text-align: center;">
-    <div style="width: 70px;"><canvas id="chart-suma-37"></canvas></div>
-    <p style="font-size: 11px; color: #374151;">3/7</p>
-  </div>
-  <span style="font-size: 1.2rem; color: #374151;">=</span>
-  <div style="text-align: center;">
-    <div style="width: 70px;"><canvas id="chart-suma-57"></canvas></div>
-    <p style="font-size: 11px; color: #22c55e; font-weight: bold;">5/7</p>
+  <div style="display: flex; justify-content: center; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+    <div style="text-align: center;">
+      <div style="width: 70px;"><canvas id="chart-suma-27"></canvas></div>
+      <p style="font-size: 11px; color: #374151;">2/7</p>
+    </div>
+    <span style="font-size: 1.2rem; color: #374151;">+</span>
+    <div style="text-align: center;">
+      <div style="width: 70px;"><canvas id="chart-suma-37"></canvas></div>
+      <p style="font-size: 11px; color: #374151;">3/7</p>
+    </div>
+    <span style="font-size: 1.2rem; color: #374151;">=</span>
+    <div style="text-align: center;">
+      <div style="width: 70px;"><canvas id="chart-suma-57"></canvas></div>
+      <p style="font-size: 11px; color: #22c55e; font-weight: bold;">5/7</p>
+    </div>
   </div>
 </div>
 

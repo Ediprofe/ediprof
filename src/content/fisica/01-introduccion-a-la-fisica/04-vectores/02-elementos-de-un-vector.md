@@ -5,7 +5,12 @@ Un **vector** es una magnitud que tiene **módulo (magnitud)**, **dirección** y
 Se representa mediante una **flecha**.
 La longitud de la flecha indica la magnitud, la inclinación muestra la dirección y la punta señala el sentido.
 
-<div id="jsxgraph-elementos" class="jsxgraph-container" style="width: 100%; max-width: 500px; height: 320px; margin: 1.5rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 500px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-elementos" class="jsxgraph-container" style="width: 100%; height: 320px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -69,6 +74,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Dirección - etiqueta a la derecha
     board.create('text', [7, 2.5, 'Direccion'], {fontSize: 11, color: '#8b5cf6', cssStyle: 'font-style: italic;', fixed: true});
     
+    // Etiquetas de ejes
+    board.create('text', [7.5, -0.3, 'x'], {fontSize: 14, strokeColor: '#374151', cssStyle: 'font-weight: bold;', fixed: true});
+    board.create('text', [-0.3, 5, 'y'], {fontSize: 14, strokeColor: '#374151', cssStyle: 'font-weight: bold;', fixed: true});
+    
     board.unsuspendUpdate();
   }
 });
@@ -103,7 +112,12 @@ Por ejemplo, si un vector forma un ángulo de $30^\circ$ con el eje $x$, decimos
 El **sentido** señala **hacia dónde apunta el vector** a lo largo de su dirección.
 Por ejemplo, un vector velocidad hacia el norte y otro hacia el sur tienen la misma dirección (vertical), pero **sentidos opuestos**.
 
-<div id="jsxgraph-sentido" class="jsxgraph-container" style="width: 100%; max-width: 450px; height: 280px; margin: 1.5rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 450px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-sentido" class="jsxgraph-container" style="width: 100%; height: 280px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {

@@ -169,7 +169,12 @@ $$
 
 ### Representación geométrica de $(a-b)^2$
 
-<div id="jsxgraph-binomio-resta" class="jsxgraph-container" style="width: 100%; max-width: 450px; height: 380px; margin: 1.5rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 450px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-binomio-resta" class="jsxgraph-container" style="width: 100%; height: 380px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -303,7 +308,12 @@ El cuadrado de un binomio tiene una interpretación geométrica muy clara:
 
 $(a + b)^2$ representa el **área de un cuadrado** de lado $(a + b)$.
 
-<div id="jsxgraph-binomio" class="jsxgraph-container" style="width: 100%; max-width: 450px; height: 400px; margin: 1.5rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 450px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-binomio" class="jsxgraph-container" style="width: 100%; height: 400px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {

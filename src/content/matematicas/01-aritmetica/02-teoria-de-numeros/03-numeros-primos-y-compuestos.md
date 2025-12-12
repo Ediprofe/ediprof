@@ -10,7 +10,12 @@ Un **número primo** es aquel que solo tiene dos divisores: el $1$ y él mismo.
 
 ### Ejemplo 1: El número 7 es primo
 
-<div id="jsxgraph-primo7" class="jsxgraph-container" style="width: 100%; max-width: 350px; height: 120px; margin: 1rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 350px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-primo7" class="jsxgraph-container" style="width: 100%; height: 120px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -39,7 +44,12 @@ $$
 
 ### Ejemplo 2: El número 13 es primo
 
-<div id="jsxgraph-primo13" class="jsxgraph-container" style="width: 100%; max-width: 500px; height: 100px; margin: 1rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 500px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-primo13" class="jsxgraph-container" style="width: 100%; height: 100px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -68,7 +78,12 @@ Un **número compuesto** tiene más de dos divisores.
 
 ### Ejemplo 1: El número 12 es compuesto
 
-<div id="jsxgraph-comp12" class="jsxgraph-container" style="width: 100%; max-width: 700px; height: 250px; margin: 1rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 700px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-comp12" class="jsxgraph-container" style="width: 100%; height: 250px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -111,7 +126,12 @@ $$
 
 ### Ejemplo 2: El número 15 es compuesto
 
-<div id="jsxgraph-comp15" class="jsxgraph-container" style="width: 100%; max-width: 600px; height: 180px; margin: 1rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 600px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-comp15" class="jsxgraph-container" style="width: 100%; height: 180px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -152,7 +172,12 @@ $$
 
 ## 📖 Primeros números primos
 
-<div id="jsxgraph-primos-lista" class="jsxgraph-container" style="width: 100%; max-width: 700px; height: 80px; margin: 1rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 700px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-primos-lista" class="jsxgraph-container" style="width: 100%; height: 80px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {

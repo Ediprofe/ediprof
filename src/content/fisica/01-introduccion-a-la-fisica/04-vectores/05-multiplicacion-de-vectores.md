@@ -22,7 +22,12 @@ $$
 * Si $0 < k < 1$, el vector es **más corto**.
 * Si $k = -1$, el vector mantiene la magnitud pero **invierte el sentido**.
 
-<div id="jsxgraph-escalar" class="jsxgraph-container" style="width: 100%; max-width: 550px; height: 350px; margin: 1.5rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 550px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-escalar" class="jsxgraph-container" style="width: 100%; height: 350px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -66,6 +71,10 @@ document.addEventListener('DOMContentLoaded', function() {
     board.create('arrow', [O, Aneg], {strokeColor: '#ef4444', strokeWidth: 2});
     board.create('text', [function() { return -A.X() - 0.5; }, function() { return -A.Y() - 0.4; }, '-A'], 
       {fontSize: 12, color: '#ef4444', cssStyle: 'font-weight: bold;', fixed: true});
+    
+    // Etiquetas de ejes
+    board.create('text', [7.5, -0.5, 'x'], {fontSize: 14, strokeColor: '#374151', cssStyle: 'font-weight: bold;', fixed: true});
+    board.create('text', [-0.5, 4.5, 'y'], {fontSize: 14, strokeColor: '#374151', cssStyle: 'font-weight: bold;', fixed: true});
     
     board.unsuspendUpdate();
   }
@@ -118,7 +127,12 @@ $$
 2\vec{A} = 6\,\hat{i} + 4\,\hat{j}
 $$
 
-<div id="jsxgraph-componentes" class="jsxgraph-container" style="width: 100%; max-width: 500px; height: 320px; margin: 1.5rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 500px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-componentes" class="jsxgraph-container" style="width: 100%; height: 320px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -151,6 +165,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Línea de dirección (punteada)
     board2.create('line', [O, A], {strokeColor: '#94a3b8', strokeWidth: 1, dash: 3, straightFirst: false, straightLast: true, fixed: true});
+    
+    // Etiquetas de ejes
+    board2.create('text', [7.5, -0.5, 'x'], {fontSize: 14, strokeColor: '#374151', cssStyle: 'font-weight: bold;', fixed: true});
+    board2.create('text', [-0.5, 5.5, 'y'], {fontSize: 14, strokeColor: '#374151', cssStyle: 'font-weight: bold;', fixed: true});
     
     board2.unsuspendUpdate();
   }

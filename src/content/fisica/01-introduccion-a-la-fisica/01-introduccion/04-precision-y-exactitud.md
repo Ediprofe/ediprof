@@ -51,22 +51,27 @@ las mediciones son **precisas**, ya que presentan poca variación entre sí.
 
 Imagina que lanzas dardos hacia el centro de una diana. El **centro** representa el **valor real** y los **dardos** representan tus **mediciones**:
 
-<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin: 1.5rem auto;">
-  <div style="text-align: center;">
-    <div id="target-exacto-preciso" style="width: 150px; height: 150px;"></div>
-    <p style="font-size: 11px; color: #22c55e; font-weight: bold; margin-top: 0.25rem;">✓ Exacto y Preciso</p>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 700px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
   </div>
-  <div style="text-align: center;">
-    <div id="target-preciso-no-exacto" style="width: 150px; height: 150px;"></div>
-    <p style="font-size: 11px; color: #f59e0b; font-weight: bold; margin-top: 0.25rem;">Preciso, no Exacto</p>
-  </div>
-  <div style="text-align: center;">
-    <div id="target-exacto-no-preciso" style="width: 150px; height: 150px;"></div>
-    <p style="font-size: 11px; color: #3b82f6; font-weight: bold; margin-top: 0.25rem;">Exacto, no Preciso</p>
-  </div>
-  <div style="text-align: center;">
-    <div id="target-ni-ni" style="width: 150px; height: 150px;"></div>
-    <p style="font-size: 11px; color: #ef4444; font-weight: bold; margin-top: 0.25rem;">✗ Ni Exacto ni Preciso</p>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;">
+    <div style="text-align: center;">
+      <div id="target-exacto-preciso" style="width: 150px; height: 150px;"></div>
+      <p style="font-size: 11px; color: #22c55e; font-weight: bold; margin-top: 0.25rem;">✓ Exacto y Preciso</p>
+    </div>
+    <div style="text-align: center;">
+      <div id="target-preciso-no-exacto" style="width: 150px; height: 150px;"></div>
+      <p style="font-size: 11px; color: #f59e0b; font-weight: bold; margin-top: 0.25rem;">Preciso, no Exacto</p>
+    </div>
+    <div style="text-align: center;">
+      <div id="target-exacto-no-preciso" style="width: 150px; height: 150px;"></div>
+      <p style="font-size: 11px; color: #3b82f6; font-weight: bold; margin-top: 0.25rem;">Exacto, no Preciso</p>
+    </div>
+    <div style="text-align: center;">
+      <div id="target-ni-ni" style="width: 150px; height: 150px;"></div>
+      <p style="font-size: 11px; color: #ef4444; font-weight: bold; margin-top: 0.25rem;">✗ Ni Exacto ni Preciso</p>
+    </div>
   </div>
 </div>
 

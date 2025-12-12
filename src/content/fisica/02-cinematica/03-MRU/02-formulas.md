@@ -61,7 +61,12 @@ $$
 
 Un atleta corre un desplazamiento de $100\,\mathrm{m}$ partiendo desde la línea de salida. Si tarda $10\,\mathrm{s}$ en llegar a la meta, ¿cuál fue su velocidad?
 
-<div id="jsxgraph-atleta" class="jsxgraph-container" style="width: 100%; max-width: 500px; height: 100px; margin: 1rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 500px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-atleta" class="jsxgraph-container" style="width: 100%; height: 100px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -96,7 +101,12 @@ $$
 
 El sonido viaja a una velocidad constante de $340\,\mathrm{m/s}$. Si un trueno se escucha $3\,\mathrm{s}$ después del relámpago, ¿cuál fue el desplazamiento ($x$) del sonido?
 
-<div id="jsxgraph-trueno" class="jsxgraph-container" style="width: 100%; max-width: 500px; height: 100px; margin: 1rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 500px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-trueno" class="jsxgraph-container" style="width: 100%; height: 100px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -131,7 +141,12 @@ $$
 
 Un ciclista se encuentra en el **Kilómetro 10** ($x_i = 10\,\mathrm{km}$). Continúa a $20\,\mathrm{km/h}$ durante **2 horas**. ¿En qué kilómetro estará?
 
-<div id="jsxgraph-ciclista" class="jsxgraph-container" style="width: 100%; max-width: 500px; height: 120px; margin: 1rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 500px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-ciclista" class="jsxgraph-container" style="width: 100%; height: 120px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -172,7 +187,12 @@ $$
 
 Un tren sale de **Ciudad A** ($x_i = 200\,\mathrm{km}$) hacia **Ciudad B** ($x_f = 500\,\mathrm{km}$) a $100\,\mathrm{km/h}$. ¿Cuánto tiempo tardará?
 
-<div id="jsxgraph-tren" class="jsxgraph-container" style="width: 100%; max-width: 500px; height: 120px; margin: 1rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 500px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-tren" class="jsxgraph-container" style="width: 100%; height: 120px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {

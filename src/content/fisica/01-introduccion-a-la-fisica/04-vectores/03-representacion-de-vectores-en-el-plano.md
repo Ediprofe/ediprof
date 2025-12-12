@@ -21,7 +21,12 @@ Esto significa que el vector va desde el origen hasta el punto $(4,3)$.
 
 En el plano cartesiano, el vector $\vec{A}$ se dibuja como una **flecha** desde $(0,0)$ hasta $(4,3)$:
 
-<div id="jsxgraph-plano" class="jsxgraph-container" style="width: 100%; max-width: 500px; height: 380px; margin: 1.5rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 500px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-plano" class="jsxgraph-container" style="width: 100%; height: 380px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -82,6 +87,10 @@ document.addEventListener('DOMContentLoaded', function() {
       var mag = Math.sqrt(P.X()*P.X() + P.Y()*P.Y());
       return '|A| = ' + mag.toFixed(2); 
     }], {fontSize: 13, color: '#3b82f6', cssStyle: 'font-weight: bold;', fixed: true});
+    
+    // Etiquetas de ejes
+    board.create('text', [7.5, -0.5, 'x'], {fontSize: 14, strokeColor: '#374151', cssStyle: 'font-weight: bold;', fixed: true});
+    board.create('text', [-0.5, 6.5, 'y'], {fontSize: 14, strokeColor: '#374151', cssStyle: 'font-weight: bold;', fixed: true});
     
     board.unsuspendUpdate();
   }
@@ -149,7 +158,12 @@ $$
 \vec{B} = 8\,\hat{i} + 6\,\hat{j}
 $$
 
-<div id="jsxgraph-ejemplo" class="jsxgraph-container" style="width: 100%; max-width: 520px; height: 350px; margin: 1.5rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 520px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-ejemplo" class="jsxgraph-container" style="width: 100%; height: 350px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -197,6 +211,10 @@ document.addEventListener('DOMContentLoaded', function() {
       fillColor: 'rgba(139, 92, 246, 0.2)',
       fixed: true
     });
+    
+    // Etiquetas de ejes
+    board2.create('text', [9.5, -0.5, 'x'], {fontSize: 14, strokeColor: '#374151', cssStyle: 'font-weight: bold;', fixed: true});
+    board2.create('text', [-0.5, 7.5, 'y'], {fontSize: 14, strokeColor: '#374151', cssStyle: 'font-weight: bold;', fixed: true});
     
     board2.unsuspendUpdate();
   }

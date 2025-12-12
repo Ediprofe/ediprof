@@ -20,7 +20,12 @@ Dividimos el número entre primos comenzando por el menor posible.
 
 ### Ejemplo 1: Descomponer 60
 
-<div id="jsxgraph-fact60" class="jsxgraph-container" style="width: 100%; max-width: 300px; height: 220px; margin: 1rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 300px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-fact60" class="jsxgraph-container" style="width: 100%; height: 220px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -60,7 +65,12 @@ $$
 
 ### Ejemplo 2: Descomponer 84
 
-<div id="jsxgraph-fact84" class="jsxgraph-container" style="width: 100%; max-width: 300px; height: 220px; margin: 1rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 300px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-fact84" class="jsxgraph-container" style="width: 100%; height: 220px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -98,7 +108,12 @@ $$
 
 ### Ejemplo 3: Descomponer 72
 
-<div id="jsxgraph-fact72" class="jsxgraph-container" style="width: 100%; max-width: 300px; height: 280px; margin: 1rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 300px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-fact72" class="jsxgraph-container" style="width: 100%; height: 280px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -138,7 +153,12 @@ $$
 
 ### Ejemplo 4: Descomponer 150
 
-<div id="jsxgraph-fact150" class="jsxgraph-container" style="width: 100%; max-width: 300px; height: 250px; margin: 1rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 300px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-fact150" class="jsxgraph-container" style="width: 100%; height: 250px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -180,7 +200,12 @@ Descomponemos en cualquier par de factores y seguimos hasta llegar a primos.
 
 ### Ejemplo 1: Descomponer 36
 
-<div id="jsxgraph-arbol36" class="jsxgraph-container" style="width: 100%; max-width: 350px; height: 200px; margin: 1rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 350px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-arbol36" class="jsxgraph-container" style="width: 100%; height: 200px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -221,7 +246,12 @@ $$
 
 ### Ejemplo 2: Descomponer 100
 
-<div id="jsxgraph-arbol100" class="jsxgraph-container" style="width: 100%; max-width: 350px; height: 200px; margin: 1rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 350px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-arbol100" class="jsxgraph-container" style="width: 100%; height: 200px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -262,7 +292,12 @@ $$
 
 ### Ejemplo 3: Descomponer 48
 
-<div id="jsxgraph-arbol48" class="jsxgraph-container" style="width: 100%; max-width: 400px; height: 250px; margin: 1rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 400px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-arbol48" class="jsxgraph-container" style="width: 100%; height: 250px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -309,7 +344,12 @@ $$
 
 ### Ejemplo 4: Descomponer 72
 
-<div id="jsxgraph-arbol72" class="jsxgraph-container" style="width: 100%; max-width: 400px; height: 250px; margin: 1rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 400px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-arbol72" class="jsxgraph-container" style="width: 100%; height: 250px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {

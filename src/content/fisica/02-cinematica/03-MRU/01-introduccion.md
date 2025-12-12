@@ -15,7 +15,12 @@ El **Movimiento Rectilíneo Uniforme (MRU)** es el modelo de movimiento más fun
 
 Un robot de juguete se mueve en línea recta con una velocidad constante de $4\,\mathrm{m/s}$. Si parte desde la posición cero, determinar su posición final después de $3\,\mathrm{s}$.
 
-<div id="jsxgraph-robot" class="jsxgraph-container" style="width: 100%; max-width: 550px; height: 150px; margin: 1rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 550px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-robot" class="jsxgraph-container" style="width: 100%; height: 150px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -74,7 +79,12 @@ Un corredor de larga distancia entrena manteniendo un ritmo constante. Se observ
 1.  ¿Cuál es su velocidad constante?
 2.  Si mantiene ese mismo ritmo, ¿qué distancia recorrerá en $10\,\mathrm{s}$?
 
-<div id="jsxgraph-corredor" class="jsxgraph-container" style="width: 100%; max-width: 550px; height: 150px; margin: 1rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 550px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-corredor" class="jsxgraph-container" style="width: 100%; height: 150px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {

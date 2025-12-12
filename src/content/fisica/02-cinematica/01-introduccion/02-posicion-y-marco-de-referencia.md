@@ -16,7 +16,12 @@ El movimiento es **relativo**. Para describir la posición de una partícula, ne
 
 El siguiente diagrama muestra un marco de referencia con una partícula ubicada en la posición $(x, y)$:
 
-<div id="jsxgraph-posicion" class="jsxgraph-container" style="width: 100%; max-width: 400px; height: 300px; margin: 1.5rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 400px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-posicion" class="jsxgraph-container" style="width: 100%; height: 300px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -51,7 +56,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
 El origen del marco de referencia **no tiene que estar en un lugar "especial"**. Podemos elegirlo donde sea más conveniente. Observa cómo la **misma partícula** tiene coordenadas diferentes según dónde coloquemos el origen:
 
-<div id="jsxgraph-marcos-ref" class="jsxgraph-container" style="width: 100%; max-width: 500px; height: 350px; margin: 1.5rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 500px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-marcos-ref" class="jsxgraph-container" style="width: 100%; height: 350px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -123,7 +133,12 @@ $$
 **1. Marco de Referencia: Origen en la Rectoría ($x=0$)**
 Ubicamos el cero en el extremo izquierdo. Todo lo demás queda a la derecha (positivo).
 
-<div id="jsxgraph-salones1" class="jsxgraph-container" style="width: 100%; max-width: 500px; height: 100px; margin: 1rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 500px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-salones1" class="jsxgraph-container" style="width: 100%; height: 100px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -150,7 +165,12 @@ document.addEventListener('DOMContentLoaded', function() {
 **2. Marco de Referencia: Origen en el Salón A ($x=0$)**
 Ubicamos el cero en el medio.
 
-<div id="jsxgraph-salones2" class="jsxgraph-container" style="width: 100%; max-width: 500px; height: 100px; margin: 1rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 500px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-salones2" class="jsxgraph-container" style="width: 100%; height: 100px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -177,7 +197,12 @@ document.addEventListener('DOMContentLoaded', function() {
 **3. Marco de Referencia: Origen en el Salón B ($x=0$)**
 Ubicamos el cero en el extremo derecho. Todo lo demás queda a la izquierda (negativo).
 
-<div id="jsxgraph-salones3" class="jsxgraph-container" style="width: 100%; max-width: 500px; height: 100px; margin: 1rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 500px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-salones3" class="jsxgraph-container" style="width: 100%; height: 100px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -225,7 +250,12 @@ $$
 **1. Marco de Referencia: Origen en el Atleta 2 ($x=0$)**
 El observador está en el centro.
 
-<div id="jsxgraph-atletas1" class="jsxgraph-container" style="width: 100%; max-width: 450px; height: 100px; margin: 1rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 450px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-atletas1" class="jsxgraph-container" style="width: 100%; height: 100px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -252,7 +282,12 @@ document.addEventListener('DOMContentLoaded', function() {
 **2. Marco de Referencia: Origen en el Atleta 1 ($x=0$)**
 El observador está en el extremo izquierdo. Todos los demás están a su derecha (positivos).
 
-<div id="jsxgraph-atletas2" class="jsxgraph-container" style="width: 100%; max-width: 450px; height: 100px; margin: 1rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 450px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-atletas2" class="jsxgraph-container" style="width: 100%; height: 100px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -287,7 +322,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
 Un dron sobrevuela un parque. En un sistema de coordenadas donde el **kiosko** está en el origen $(0,0)$, el dron se encuentra en la posición $(4, 3)$ metros.
 
-<div id="jsxgraph-dron" class="jsxgraph-container" style="width: 100%; max-width: 400px; height: 350px; margin: 1.5rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 400px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-dron" class="jsxgraph-container" style="width: 100%; height: 350px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -332,7 +372,12 @@ Tres amigos están en una plaza:
 - **Beto** está en $(3, 4)$
 - **Carlos** está en $(6, 0)$
 
-<div id="jsxgraph-plaza" class="jsxgraph-container" style="width: 100%; max-width: 450px; height: 350px; margin: 1.5rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 450px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-plaza" class="jsxgraph-container" style="width: 100%; height: 350px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -380,7 +425,12 @@ Restamos las coordenadas de Carlos a cada punto:
 * **Posición de Carlos:**
   $$\vec{r}_C = (0, 0) \quad \text{(es el nuevo origen)}$$
 
-<div id="jsxgraph-plaza2" class="jsxgraph-container" style="width: 100%; max-width: 450px; height: 350px; margin: 1.5rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 450px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-plaza2" class="jsxgraph-container" style="width: 100%; height: 350px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {

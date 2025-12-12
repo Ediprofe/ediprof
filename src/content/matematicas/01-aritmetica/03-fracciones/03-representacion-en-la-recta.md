@@ -18,7 +18,12 @@ Ubicar $\frac{3}{4}$:
 
 Dividimos el intervalo en $4$ partes y avanzamos $3$:
 
-<div id="jsxgraph-recta-34" class="jsxgraph-container" style="width: 100%; max-width: 500px; height: 100px; margin: 1rem auto;"></div>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 500px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-recta-34" class="jsxgraph-container" style="width: 100%; height: 100px; border-radius: 8px; overflow: hidden;"></div>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {

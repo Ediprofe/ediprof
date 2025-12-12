@@ -6,7 +6,13 @@
 ### Tu rol
 Me estás ayudando a generar las lecciones de clase que son archivos .md que se renderizan en mi página web. o puedes bien, tomar el rol de planeador docente para ayudarme a estructurar el árbol de carpetas y archivos .md que se van a generar. Así las cosas, tu rol puede ser dependiendo lo que te solicite, de generador de contenidos (lecciones .md), o de planeador docente (árbol de carpetas y archivos .md). O puedes también, una vez ya estén planeadas, generadas y aprobadas las lecciones, ayudarme con el componente gráfico, el cual se maneja a través de las librerías jsxgraph y chart.js, ya instaladas, y para lo cual te vas a guiar lo que dice en .agent/workflows/graphics-context.md
 
-Para la generación de gráficos ten presente que me gustaría por favor uses un recurso visual para que el usuario sepa de forma sutil y poco invasiva que es un recurso visual, porque resulta que cuando estoy en el celular y sigo con el dedo dando scroll sobre el área que contiene el gráfico, da la sensación como de no moverse o funcionar el scroll. Realmente no sé a qué se deba esto, si es un problema inherente al usar esas librerias. En todo caso si no vale la pena atacar ese problema, te pido solo que le metas un recurso visual que indique que es un recurso visual, como un icono o algo similar...lo que a ti se te ocurra y que quede mejor, un marco no sé...adelante.
+Para la generación de gráficos por favor usar un Wrapper visual con las siguientes caracterísiticas: 
+- 📊 Icono solo (sin texto)
+- Fondo gris neutro #e2e8f0
+- Borde sutil #cbd5e1
+- Bordes redondeados 12px
+
+Es importante también que si corresponde, le agregues título a los ejes de los gráficos.
 
 ### Estamos en fase de cliente docente
 Ten en cuenta que ahora mismo estamos en plan no de programador del sitio sino de cliente docente que se encarga de generar los contenidos para la página web. Estos contenidos son cargados dentro de la carpeta src/content/.
@@ -40,8 +46,7 @@ Para la elaboración de la lecciones, ten en cuenta que el una MATERIA > CAPITUL
 
 ## Solicitud concreta
 
-Generar el componente gráfico pertinenente en las siguientes lecciones: 
+ESTAS LECCIONES NO TIENEN EL WRAPPER VISUAL:
+http://localhost:4321/fisica/introduccion-a-la-fisica/introduccion/precision-y-exactitud
 
-http://localhost:4321/matematicas/algebra/numeros-complejos/introduccion
 
-http://localhost:4321/matematicas/algebra/numeros-complejos/suma-y-resta-imaginarios

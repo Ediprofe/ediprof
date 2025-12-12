@@ -20,20 +20,25 @@ $$
 
 Multiplicar $\frac{2}{3}$ por $\frac{4}{5}$ significa tomar **2/3 de 4/5**:
 
-<div style="display: flex; justify-content: center; align-items: center; gap: 0.5rem; margin: 1rem auto;">
-  <div style="text-align: center;">
-    <div style="width: 80px;"><canvas id="chart-mult-23"></canvas></div>
-    <p style="font-size: 11px; color: #374151;">2/3</p>
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1rem auto; max-width: 340px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
   </div>
-  <span style="font-size: 1rem; color: #374151;">de</span>
-  <div style="text-align: center;">
-    <div style="width: 80px;"><canvas id="chart-mult-45"></canvas></div>
-    <p style="font-size: 11px; color: #374151;">4/5</p>
-  </div>
-  <span style="font-size: 1rem; color: #374151;">=</span>
-  <div style="text-align: center;">
-    <div style="width: 80px;"><canvas id="chart-mult-815"></canvas></div>
-    <p style="font-size: 11px; color: #22c55e; font-weight: bold;">8/15</p>
+  <div style="display: flex; justify-content: center; align-items: center; gap: 0.5rem;">
+    <div style="text-align: center;">
+      <div style="width: 80px;"><canvas id="chart-mult-23"></canvas></div>
+      <p style="font-size: 11px; color: #374151;">2/3</p>
+    </div>
+    <span style="font-size: 1rem; color: #374151;">de</span>
+    <div style="text-align: center;">
+      <div style="width: 80px;"><canvas id="chart-mult-45"></canvas></div>
+      <p style="font-size: 11px; color: #374151;">4/5</p>
+    </div>
+    <span style="font-size: 1rem; color: #374151;">=</span>
+    <div style="text-align: center;">
+      <div style="width: 80px;"><canvas id="chart-mult-815"></canvas></div>
+      <p style="font-size: 11px; color: #22c55e; font-weight: bold;">8/15</p>
+    </div>
   </div>
 </div>
 
