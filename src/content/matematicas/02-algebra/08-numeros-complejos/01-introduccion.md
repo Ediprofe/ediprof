@@ -40,6 +40,85 @@ $$
 
 Con esta definición, la ecuación $x^2 = -1$ tiene solución: $x = i$ o $x = -i$.
 
+Observa cómo el eje imaginario **extiende** la recta numérica real hacia una nueva dimensión vertical:
+
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 470px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-eje-imaginario" class="jsxgraph-container" style="width: 100%; height: 380px; border-radius: 8px; overflow: hidden;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined') {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-eje-imaginario', {
+      boundingbox: [-4, 4, 4, -4],
+      axis: false,
+      showCopyright: false,
+      showNavigation: false,
+      pan: { enabled: false },
+      zoom: { enabled: false }
+    });
+    
+    // Eje real (horizontal)
+    board.create('line', [[0, 0], [1, 0]], {
+      strokeColor: '#3b82f6',
+      strokeWidth: 2,
+      straightFirst: true,
+      straightLast: true,
+      fixed: true
+    });
+    board.create('text', [3.3, -0.4, 'Reales'], {
+      fontSize: 12,
+      strokeColor: '#3b82f6',
+      cssStyle: 'font-weight: bold;',
+      fixed: true
+    });
+    
+    // Eje imaginario (vertical)
+    board.create('line', [[0, 0], [0, 1]], {
+      strokeColor: '#22c55e',
+      strokeWidth: 2,
+      straightFirst: true,
+      straightLast: true,
+      fixed: true
+    });
+    board.create('text', [0.3, 3.5, 'Imaginarios'], {
+      fontSize: 12,
+      strokeColor: '#22c55e',
+      cssStyle: 'font-weight: bold;',
+      fixed: true
+    });
+    
+    // Origen
+    board.create('point', [0, 0], {
+      name: '0',
+      size: 3,
+      fixed: true,
+      color: '#374151',
+      label: { fontSize: 12, offset: [-15, -15] }
+    });
+    
+    // Puntos en eje real
+    board.create('point', [1, 0], { name: '1', size: 2, fixed: true, color: '#3b82f6', label: { fontSize: 11, offset: [0, -15] } });
+    board.create('point', [2, 0], { name: '2', size: 2, fixed: true, color: '#3b82f6', label: { fontSize: 11, offset: [0, -15] } });
+    board.create('point', [-1, 0], { name: '-1', size: 2, fixed: true, color: '#3b82f6', label: { fontSize: 11, offset: [0, -15] } });
+    board.create('point', [-2, 0], { name: '-2', size: 2, fixed: true, color: '#3b82f6', label: { fontSize: 11, offset: [0, -15] } });
+    
+    // Puntos en eje imaginario
+    board.create('point', [0, 1], { name: 'i', size: 4, fixed: true, color: '#22c55e', label: { fontSize: 13, offset: [10, 0], cssStyle: 'font-weight: bold; font-style: italic;' } });
+    board.create('point', [0, 2], { name: '2i', size: 3, fixed: true, color: '#22c55e', label: { fontSize: 12, offset: [10, 0], cssStyle: 'font-style: italic;' } });
+    board.create('point', [0, -1], { name: '-i', size: 4, fixed: true, color: '#ef4444', label: { fontSize: 13, offset: [10, 0], cssStyle: 'font-weight: bold; font-style: italic;' } });
+    board.create('point', [0, -2], { name: '-2i', size: 3, fixed: true, color: '#ef4444', label: { fontSize: 12, offset: [10, 0], cssStyle: 'font-style: italic;' } });
+    
+    board.unsuspendUpdate();
+  }
+});
+</script>
+
+> 💡 **Observa:** La unidad imaginaria $i$ está ubicada en el punto $(0, 1)$ del plano, exactamente una unidad hacia arriba desde el origen.
+
 ---
 
 ## 📖 Aplicaciones en el mundo real
@@ -82,6 +161,74 @@ donde $b$ es un número real y $b \neq 0$.
 | $-5i$ | Imaginario puro |
 | $\frac{1}{2}i$ | Imaginario puro |
 | $\sqrt{2}i$ | Imaginario puro |
+
+En el eje imaginario, podemos visualizar estos números:
+
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 420px;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-imaginarios-puros" class="jsxgraph-container" style="width: 100%; height: 360px; border-radius: 8px; overflow: hidden;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined') {
+    var board2 = JXG.JSXGraph.initBoard('jsxgraph-imaginarios-puros', {
+      boundingbox: [-3, 6, 3, -6],
+      axis: false,
+      showCopyright: false,
+      showNavigation: false,
+      pan: { enabled: false },
+      zoom: { enabled: false }
+    });
+    
+    // Eje imaginario con flechas
+    board2.create('line', [[0, 0], [0, 1]], {
+      strokeColor: '#64748b',
+      strokeWidth: 2,
+      straightFirst: true,
+      straightLast: true,
+      fixed: true
+    });
+    
+    // Título
+    board2.create('text', [0, 5.5, 'Eje Imaginario'], {
+      fontSize: 14,
+      strokeColor: '#374151',
+      cssStyle: 'font-weight: bold;',
+      anchorX: 'middle',
+      fixed: true
+    });
+    
+    // Origen
+    board2.create('point', [0, 0], {
+      name: '0',
+      size: 3,
+      fixed: true,
+      color: '#374151',
+      label: { fontSize: 11, offset: [10, 0] }
+    });
+    
+    // Imaginarios positivos
+    board2.create('point', [0, 3], { name: '3i', size: 5, fixed: true, color: '#3b82f6', label: { fontSize: 14, offset: [12, 0], cssStyle: 'font-weight: bold; font-style: italic;' } });
+    board2.create('point', [0, 1.41], { name: '√2 i', size: 4, fixed: true, color: '#22c55e', label: { fontSize: 12, offset: [12, 0], cssStyle: 'font-style: italic;' } });
+    board2.create('point', [0, 0.5], { name: '½i', size: 4, fixed: true, color: '#f97316', label: { fontSize: 12, offset: [12, 0], cssStyle: 'font-style: italic;' } });
+    
+    // Imaginarios negativos
+    board2.create('point', [0, -5], { name: '-5i', size: 5, fixed: true, color: '#ef4444', label: { fontSize: 14, offset: [12, 0], cssStyle: 'font-weight: bold; font-style: italic;' } });
+    
+    // Marcas de escala
+    for (var j = -5; j <= 5; j++) {
+      if (j !== 0) {
+        board2.create('segment', [[-0.15, j], [0.15, j]], { strokeColor: '#94a3b8', strokeWidth: 1, fixed: true });
+      }
+    }
+    
+    board2.unsuspendUpdate();
+  }
+});
+</script>
 
 ---
 
