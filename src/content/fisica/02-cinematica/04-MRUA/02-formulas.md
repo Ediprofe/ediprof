@@ -2,6 +2,77 @@
 
 En física, las fórmulas no son "magia"; son consecuencias lógicas de las definiciones básicas. A continuación, vamos a deducir las tres ecuaciones fundamentales del **Movimiento Rectilíneo Uniformemente Acelerado (MRUA)** paso a paso.
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem auto; max-width: 600px;">
+  <canvas id="rough-mrua-intro" width="550" height="180" style="width: 100%; height: auto;"></canvas>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var canvas = document.getElementById('rough-mrua-intro');
+  if (!canvas || typeof rough === 'undefined') return;
+  
+  var rc = rough.canvas(canvas);
+  var ctx = canvas.getContext('2d');
+  
+  // Piso
+  rc.line(20, 130, 530, 130, { stroke: '#64748b', strokeWidth: 2, roughness: 0.5 });
+  
+  // Auto inicial (pequeño)
+  rc.rectangle(40, 100, 50, 25, { fill: '#3b82f6', fillStyle: 'solid', stroke: '#1d4ed8', roughness: 0.8 });
+  rc.circle(55, 128, 12, { fill: '#1e293b', fillStyle: 'solid', roughness: 0.5 });
+  rc.circle(80, 128, 12, { fill: '#1e293b', fillStyle: 'solid', roughness: 0.5 });
+  
+  // Flechas de velocidad creciente
+  rc.line(100, 105, 130, 105, { stroke: '#22c55e', strokeWidth: 2, roughness: 0.5 });
+  rc.line(125, 100, 130, 105, { stroke: '#22c55e', strokeWidth: 2, roughness: 0.5 });
+  rc.line(125, 110, 130, 105, { stroke: '#22c55e', strokeWidth: 2, roughness: 0.5 });
+  
+  ctx.font = '10px Inter, sans-serif';
+  ctx.fillStyle = '#16a34a';
+  ctx.textAlign = 'left';
+  ctx.fillText('v₁', 105, 98);
+  
+  // Auto medio
+  rc.rectangle(180, 100, 50, 25, { fill: '#60a5fa', fillStyle: 'solid', stroke: '#2563eb', roughness: 0.8 });
+  rc.circle(195, 128, 12, { fill: '#1e293b', fillStyle: 'solid', roughness: 0.5 });
+  rc.circle(220, 128, 12, { fill: '#1e293b', fillStyle: 'solid', roughness: 0.5 });
+  
+  // Flecha más larga
+  rc.line(240, 105, 290, 105, { stroke: '#22c55e', strokeWidth: 2, roughness: 0.5 });
+  rc.line(285, 100, 290, 105, { stroke: '#22c55e', strokeWidth: 2, roughness: 0.5 });
+  rc.line(285, 110, 290, 105, { stroke: '#22c55e', strokeWidth: 2, roughness: 0.5 });
+  
+  ctx.fillText('v₂ > v₁', 250, 98);
+  
+  // Auto final
+  rc.rectangle(340, 100, 50, 25, { fill: '#93c5fd', fillStyle: 'solid', stroke: '#3b82f6', roughness: 0.8 });
+  rc.circle(355, 128, 12, { fill: '#1e293b', fillStyle: 'solid', roughness: 0.5 });
+  rc.circle(380, 128, 12, { fill: '#1e293b', fillStyle: 'solid', roughness: 0.5 });
+  
+  // Flecha aún más larga
+  rc.line(400, 105, 480, 105, { stroke: '#22c55e', strokeWidth: 3, roughness: 0.5 });
+  rc.line(475, 98, 480, 105, { stroke: '#22c55e', strokeWidth: 3, roughness: 0.5 });
+  rc.line(475, 112, 480, 105, { stroke: '#22c55e', strokeWidth: 3, roughness: 0.5 });
+  
+  ctx.fillText('v₃ > v₂', 430, 98);
+  
+  // Aceleración
+  rc.rectangle(180, 20, 180, 50, { fill: '#fef3c7', fillStyle: 'solid', stroke: '#f59e0b', strokeWidth: 2, roughness: 1 });
+  
+  ctx.font = 'bold 14px Inter, sans-serif';
+  ctx.fillStyle = '#b45309';
+  ctx.textAlign = 'center';
+  ctx.fillText('MRUA: a = constante', 270, 42);
+  ctx.font = '11px Inter, sans-serif';
+  ctx.fillText('La velocidad cambia uniformemente', 270, 58);
+  
+  // Título
+  ctx.font = 'bold 13px Inter, sans-serif';
+  ctx.fillStyle = '#1e293b';
+  ctx.fillText('Velocidad AUMENTA con el tiempo', 270, 160);
+});
+</script>
+
 ---
 
 ## 1️⃣ **Primera Ecuación: Calculando la Velocidad Final**
@@ -95,7 +166,7 @@ A veces tenemos problemas donde conocemos las velocidades y distancias, pero **n
 1.  **Desplazamiento por promedio:** $\Delta x = \left( \frac{v_f + v_i}{2} \right) \cdot t$
 2.  **Definición de Aceleración:** $a = \frac{v_f - v_i}{t}$
 
-### **Paso 2: Despejamos el Tiempo ($t$)**
+### **Paso 2: Despejamos el Tiempo (t)**
 
 De la ecuación de aceleración, despejamos $t$:
 

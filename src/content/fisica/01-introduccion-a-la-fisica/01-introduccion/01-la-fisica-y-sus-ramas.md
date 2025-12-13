@@ -31,6 +31,70 @@ La física explica el funcionamiento del mundo natural, desde lo microscópico h
 
 Las ramas de la física pueden organizarse en dos grandes bloques:
 
+### 🎯 **Visualización: El árbol de la Física**
+
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
+  <canvas id="roughjs-ramas" width="600" height="320" style="width: 100%; height: auto;"></canvas>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof rough !== 'undefined' && document.getElementById('roughjs-ramas')) {
+    var canvas = document.getElementById('roughjs-ramas');
+    var rc = rough.canvas(canvas);
+    var ctx = canvas.getContext('2d');
+    
+    // Nodo Central: FÍSICA
+    var cx = 300;
+    rc.rectangle(cx - 55, 15, 110, 40, { fill: '#1e293b', fillStyle: 'solid', stroke: '#0f172a', strokeWidth: 2, roughness: 0.5 });
+    ctx.font = 'bold 16px Inter, sans-serif';
+    ctx.fillStyle = '#ffffff';
+    ctx.textAlign = 'center';
+    ctx.fillText('🔬 FÍSICA', cx, 42);
+    
+    // Líneas de conexión
+    rc.line(cx, 55, 150, 90, { stroke: '#3b82f6', strokeWidth: 2, roughness: 0.5 });
+    rc.line(cx, 55, 450, 90, { stroke: '#db2777', strokeWidth: 2, roughness: 0.5 });
+    
+    // --- Rama Izquierda: CLÁSICA ---
+    rc.rectangle(75, 90, 150, 35, { fill: '#dbeafe', fillStyle: 'solid', stroke: '#3b82f6', strokeWidth: 2, roughness: 0.5 });
+    ctx.fillStyle = '#1e3a8a';
+    ctx.font = 'bold 13px Inter, sans-serif';
+    ctx.fillText('🏛️ CLÁSICA', 150, 113);
+    
+    // Sub-ramas Clásica
+    var branchesC = ['Mecánica', 'Termodinámica', 'Óptica', 'Acústica', 'Electromagnetismo'];
+    for(var i=0; i<branchesC.length; i++) {
+       var y = 145 + i*35;
+       rc.line(150, 125, 150, y, { stroke: '#94a3b8', roughness: 0.5 });
+       rc.line(150, y, 165, y, { stroke: '#94a3b8', roughness: 0.5 });
+       rc.rectangle(35, y-12, 115, 24, { stroke: '#3b82f6', roughness: 0.5, fill: 'rgba(59, 130, 246, 0.15)', fillStyle: 'solid' });
+       ctx.fillStyle = '#1e40af';
+       ctx.font = '11px Inter, sans-serif';
+       ctx.fillText(branchesC[i], 92, y+4);
+    }
+    
+    // --- Rama Derecha: MODERNA ---
+    rc.rectangle(375, 90, 150, 35, { fill: '#fce7f3', fillStyle: 'solid', stroke: '#db2777', strokeWidth: 2, roughness: 0.5 });
+    ctx.fillStyle = '#831843';
+    ctx.font = 'bold 13px Inter, sans-serif';
+    ctx.fillText('🚀 MODERNA', 450, 113);
+    
+    // Sub-ramas Moderna
+    var branchesM = ['Relatividad', 'Mecánica Cuántica', 'Atómica / Nuclear', 'Partículas', 'Cosmología'];
+    for(var i=0; i<branchesM.length; i++) {
+       var y = 145 + i*35;
+       rc.line(450, 125, 450, y, { stroke: '#94a3b8', roughness: 0.5 });
+       rc.line(450, y, 435, y, { stroke: '#94a3b8', roughness: 0.5 });
+       rc.rectangle(450, y-12, 120, 24, { stroke: '#db2777', roughness: 0.5, fill: 'rgba(219, 39, 119, 0.15)', fillStyle: 'solid' });
+       ctx.fillStyle = '#9d174d';
+       ctx.font = '11px Inter, sans-serif';
+       ctx.fillText(branchesM[i], 510, y+4);
+    }
+  }
+});
+</script>
+
 ---
 
 ### 🏛️ **1. Física clásica**

@@ -577,3 +577,179 @@ document.addEventListener('DOMContentLoaded', function() {
 | **Tiempo** | $t = \frac{\Delta x}{v} = \frac{300}{100}$ | $3\,\mathrm{h}$ |
 
 > 💡 **Conclusión:** El viaje de Montería a Cartagena durará 3 horas.
+
+---
+
+## 📝 **Ejercicios de Práctica**
+
+### **Ejercicio 5 — Encuentro de dos autos: Medellín - Bogotá**
+
+Dos autos parten **simultáneamente** desde ciudades diferentes viajando en **sentidos contrarios** (uno hacia el otro):
+
+- **Auto A** sale de **Medellín** (km 0) a **80 km/h** hacia Bogotá.
+- **Auto B** sale de **Bogotá** (km 420) a **60 km/h** hacia Medellín.
+
+¿Después de cuántas horas se encuentran? ¿En qué kilómetro?
+
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
+  <canvas id="roughjs-encuentro" width="600" height="120" style="width: 100%; height: auto;"></canvas>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof rough !== 'undefined' && document.getElementById('roughjs-encuentro')) {
+    var canvas = document.getElementById('roughjs-encuentro');
+    var rc = rough.canvas(canvas);
+    var ctx = canvas.getContext('2d');
+    
+    // Carretera
+    rc.line(40, 60, 560, 60, { stroke: '#64748b', strokeWidth: 2, roughness: 0.8 });
+    
+    // Auto A (Medellín)
+    rc.rectangle(50, 40, 50, 25, { fill: '#3b82f6', fillStyle: 'solid', stroke: '#1d4ed8', roughness: 0.8 });
+    rc.circle(65, 68, 10, { fill: '#1e293b', fillStyle: 'solid', roughness: 0.5 });
+    rc.circle(85, 68, 10, { fill: '#1e293b', fillStyle: 'solid', roughness: 0.5 });
+    
+    // Auto B (Bogotá)
+    rc.rectangle(500, 40, 50, 25, { fill: '#ef4444', fillStyle: 'solid', stroke: '#b91c1c', roughness: 0.8 });
+    rc.circle(515, 68, 10, { fill: '#1e293b', fillStyle: 'solid', roughness: 0.5 });
+    rc.circle(535, 68, 10, { fill: '#1e293b', fillStyle: 'solid', roughness: 0.5 });
+    
+    // Flechas de movimiento
+    rc.line(110, 50, 250, 50, { stroke: '#3b82f6', strokeWidth: 2, roughness: 0.5 });
+    rc.line(240, 45, 250, 50, { stroke: '#3b82f6', strokeWidth: 2, roughness: 0.5 });
+    rc.line(240, 55, 250, 50, { stroke: '#3b82f6', strokeWidth: 2, roughness: 0.5 });
+    
+    rc.line(490, 50, 350, 50, { stroke: '#ef4444', strokeWidth: 2, roughness: 0.5 });
+    rc.line(360, 45, 350, 50, { stroke: '#ef4444', strokeWidth: 2, roughness: 0.5 });
+    rc.line(360, 55, 350, 50, { stroke: '#ef4444', strokeWidth: 2, roughness: 0.5 });
+    
+    // Punto de encuentro
+    rc.circle(300, 50, 16, { fill: '#22c55e', fillStyle: 'solid', stroke: '#16a34a', roughness: 0.5 });
+    ctx.font = 'bold 10px Inter, sans-serif';
+    ctx.fillStyle = '#ffffff';
+    ctx.textAlign = 'center';
+    ctx.fillText('?', 300, 54);
+    
+    // Etiquetas
+    ctx.font = 'bold 11px Inter, sans-serif';
+    ctx.fillStyle = '#3b82f6';
+    ctx.fillText('Medellín', 75, 95);
+    ctx.fillText('80 km/h →', 75, 30);
+    
+    ctx.fillStyle = '#ef4444';
+    ctx.fillText('Bogotá', 525, 95);
+    ctx.fillText('← 60 km/h', 525, 30);
+    
+    ctx.fillStyle = '#64748b';
+    ctx.fillText('km 0', 75, 108);
+    ctx.fillText('km 420', 525, 108);
+  }
+});
+</script>
+
+<details>
+<summary><strong>Ver solución</strong></summary>
+
+**Concepto clave:** Al viajar en sentidos contrarios, las velocidades **se suman**.
+
+$$
+v_{\text{relativa}} = 80 + 60 = 140\,\mathrm{km/h}
+$$
+
+**Tiempo para encontrarse:**
+
+$$
+t = \frac{\text{Distancia entre ciudades}}{v_{\text{relativa}}} = \frac{420\,\mathrm{km}}{140\,\mathrm{km/h}} = \boxed{3\,\mathrm{h}}
+$$
+
+**Posición del encuentro** (desde Medellín):
+
+$$
+x = 80\,\mathrm{km/h} \times 3\,\mathrm{h} = \boxed{240\,\mathrm{km}}
+$$
+
+> Los autos se encuentran a las **3 horas** en el **kilómetro 240** (medido desde Medellín).
+
+</details>
+
+---
+
+### **Ejercicio 6 — Avión cruzando el país**
+
+Un avión comercial viaja de Bogotá a Cartagena a una velocidad de crucero de **$800\,\mathrm{km/h}$**. Si la distancia es de **$650\,\mathrm{km}$**, ¿cuánto tiempo dura el vuelo?
+
+<details>
+<summary><strong>Ver solución</strong></summary>
+
+**Datos:**
+- $v = 800\,\mathrm{km/h}$
+- $x = 650\,\mathrm{km}$
+- $t = ?$
+
+**Fórmula:**
+
+$$
+t = \frac{x}{v} = \frac{650\,\mathrm{km}}{800\,\mathrm{km/h}} = 0.8125\,\mathrm{h}
+$$
+
+**Convertir a minutos:**
+
+$$
+t = 0.8125 \times 60 = \boxed{48.75\,\mathrm{min}} \approx 49\,\text{minutos}
+$$
+
+</details>
+
+---
+
+### **Ejercicio 7 — Ciclista con viento a favor**
+
+Un ciclista profesional mantiene una velocidad constante de **$45\,\mathrm{km/h}$** durante una etapa de contrarreloj. Si la etapa tiene **$30\,\mathrm{km}$**, ¿cuántos minutos tardará en completarla?
+
+<details>
+<summary><strong>Ver solución</strong></summary>
+
+**Datos:**
+- $v = 45\,\mathrm{km/h}$
+- $x = 30\,\mathrm{km}$
+- $t = ?$
+
+**Cálculo:**
+
+$$
+t = \frac{x}{v} = \frac{30\,\mathrm{km}}{45\,\mathrm{km/h}} = \frac{2}{3}\,\mathrm{h} = 0.667\,\mathrm{h}
+$$
+
+**En minutos:**
+
+$$
+t = 0.667 \times 60 = \boxed{40\,\mathrm{min}}
+$$
+
+</details>
+
+---
+
+### **Ejercicio 8 — Nadador olímpico**
+
+Un nadador olímpico recorre la piscina de **$50\,\mathrm{m}$** en **$25\,\mathrm{s}$**. ¿Cuál es su velocidad en m/s? Si mantiene ese ritmo, ¿cuántos metros recorrerá en 2 minutos?
+
+<details>
+<summary><strong>Ver solución</strong></summary>
+
+**Parte 1: Calcular la velocidad**
+
+$$
+v = \frac{x}{t} = \frac{50\,\mathrm{m}}{25\,\mathrm{s}} = \boxed{2\,\mathrm{m/s}}
+$$
+
+**Parte 2: Distancia en 2 minutos** (120 segundos)
+
+$$
+x = v \cdot t = 2\,\mathrm{m/s} \times 120\,\mathrm{s} = \boxed{240\,\mathrm{m}}
+$$
+
+> En 2 minutos, el nadador recorrería 240 metros (casi 5 largos de piscina olímpica).
+
+</details>

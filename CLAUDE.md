@@ -47,13 +47,6 @@ Para la elaboración de la lecciones, ten en cuenta que el una MATERIA > CAPITUL
 
 ## Solicitud concreta
 
-quiero que los gráficos cont tengan los ejes pintados así, de 1 en 1, y loas etiquetas de los ejes horicontal y vertical, o sea los valores (1,2,3,4...) vayan en la mitad, no al extremo de la cuadrícula que representa el plano me entiendes?
-![alt text](image-6.png)
-![alt text](image-7.png)
+recuerda lo que digo de que los títulos de sección en una lección no deben tener código de latex, ya que se renderiza mal (latex crudo), tanto en la tabla de contenidos como en la barra de navegación lateral. Así que por favor tenlo en cuenta.
 
-
-confirmame si me entiendes la solciitud
-
-
-
-
+http://localhost:4321/fisica/cinematica/mrua/caida-libre

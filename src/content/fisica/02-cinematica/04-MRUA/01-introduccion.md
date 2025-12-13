@@ -260,3 +260,164 @@ $g = 9.8\,\mathrm{m/s^2}$ significa: **"Cada segundo, la piedra suma 9.8 m/s a s
 | $3\,\mathrm{s}$ | $19.6 + 9.8$ | $\boxed{29.4\,\mathrm{m/s}}$ |
 
 > 💡 Sin usar fórmulas complejas, sabemos que a los 3 segundos la piedra viaja a 29.4 m/s. La caída libre es simplemente un MRUA donde la aceleración está definida por la naturaleza.
+
+---
+
+## 📝 **Ejercicios de Práctica**
+
+### **Ejercicio 3 — Auto deportivo acelerando**
+
+Un auto deportivo parte del reposo y acelera a $8\,\mathrm{m/s^2}$ durante $5$ segundos. ¿Cuál es su velocidad final?
+
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
+  <canvas id="roughjs-deportivo" width="600" height="100" style="width: 100%; height: auto;"></canvas>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof rough !== 'undefined' && document.getElementById('roughjs-deportivo')) {
+    var canvas = document.getElementById('roughjs-deportivo');
+    var rc = rough.canvas(canvas);
+    var ctx = canvas.getContext('2d');
+    
+    // Carretera
+    rc.line(30, 60, 570, 60, { stroke: '#64748b', strokeWidth: 2, roughness: 0.8 });
+    
+    // Auto inicial
+    rc.rectangle(50, 35, 60, 30, { fill: '#ef4444', fillStyle: 'solid', stroke: '#b91c1c', roughness: 0.8 });
+    rc.circle(65, 68, 12, { fill: '#1e293b', fillStyle: 'solid', roughness: 0.5 });
+    rc.circle(95, 68, 12, { fill: '#1e293b', fillStyle: 'solid', roughness: 0.5 });
+    
+    // Flechas crecientes
+    rc.line(120, 45, 180, 45, { stroke: '#22c55e', strokeWidth: 2, roughness: 0.5 });
+    rc.line(200, 45, 280, 45, { stroke: '#22c55e', strokeWidth: 2, roughness: 0.5 });
+    rc.line(300, 45, 400, 45, { stroke: '#22c55e', strokeWidth: 3, roughness: 0.5 });
+    rc.line(390, 38, 400, 45, { stroke: '#22c55e', strokeWidth: 2, roughness: 0.5 });
+    rc.line(390, 52, 400, 45, { stroke: '#22c55e', strokeWidth: 2, roughness: 0.5 });
+    
+    // Auto final (en movimiento)
+    rc.rectangle(480, 35, 60, 30, { fill: '#22c55e', fillStyle: 'solid', stroke: '#16a34a', roughness: 0.8 });
+    rc.circle(495, 68, 12, { fill: '#1e293b', fillStyle: 'solid', roughness: 0.5 });
+    rc.circle(525, 68, 12, { fill: '#1e293b', fillStyle: 'solid', roughness: 0.5 });
+    
+    // Etiquetas
+    ctx.font = 'bold 11px Inter, sans-serif';
+    ctx.fillStyle = '#ef4444';
+    ctx.textAlign = 'center';
+    ctx.fillText('v₀ = 0', 80, 90);
+    
+    ctx.fillStyle = '#22c55e';
+    ctx.fillText('v = ?', 510, 90);
+    
+    ctx.font = 'bold 12px Inter, sans-serif';
+    ctx.fillStyle = '#3b82f6';
+    ctx.fillText('a = 8 m/s² durante t = 5 s', 300, 25);
+  }
+});
+</script>
+
+<details>
+<summary><strong>Ver solución</strong></summary>
+
+**Datos:**
+- $v_0 = 0\,\mathrm{m/s}$ (parte del reposo)
+- $a = 8\,\mathrm{m/s^2}$
+- $t = 5\,\mathrm{s}$
+
+**Análisis paso a paso:**
+
+| Tiempo | Velocidad |
+|--------|-----------|
+| $0\,\mathrm{s}$ | $0\,\mathrm{m/s}$ |
+| $1\,\mathrm{s}$ | $8\,\mathrm{m/s}$ |
+| $2\,\mathrm{s}$ | $16\,\mathrm{m/s}$ |
+| $3\,\mathrm{s}$ | $24\,\mathrm{m/s}$ |
+| $4\,\mathrm{s}$ | $32\,\mathrm{m/s}$ |
+| $5\,\mathrm{s}$ | $\boxed{40\,\mathrm{m/s}}$ |
+
+**O directamente:** $v = a \cdot t = 8 \times 5 = 40\,\mathrm{m/s}$
+
+> El auto alcanza **40 m/s** (144 km/h).
+
+</details>
+
+---
+
+### **Ejercicio 4 — Bicicleta frenando**
+
+Un ciclista viaja a $12\,\mathrm{m/s}$ y frena con una desaceleración de $3\,\mathrm{m/s^2}$. ¿Cuántos segundos tarda en detenerse?
+
+<details>
+<summary><strong>Ver solución</strong></summary>
+
+**Datos:**
+- $v_0 = 12\,\mathrm{m/s}$
+- $v_f = 0\,\mathrm{m/s}$ (se detiene)
+- $a = -3\,\mathrm{m/s^2}$ (desaceleración, por eso negativa)
+
+**Análisis:** Cada segundo pierde 3 m/s de velocidad.
+
+| Tiempo | Velocidad |
+|--------|-----------|
+| $0\,\mathrm{s}$ | $12\,\mathrm{m/s}$ |
+| $1\,\mathrm{s}$ | $9\,\mathrm{m/s}$ |
+| $2\,\mathrm{s}$ | $6\,\mathrm{m/s}$ |
+| $3\,\mathrm{s}$ | $3\,\mathrm{m/s}$ |
+| $4\,\mathrm{s}$ | $\boxed{0\,\mathrm{m/s}}$ |
+
+> Tarda **4 segundos** en detenerse.
+
+</details>
+
+---
+
+### **Ejercicio 5 — Cohete despegando**
+
+Un cohete modelo despega desde el suelo con una aceleración de $15\,\mathrm{m/s^2}$. ¿Qué velocidad tendrá después de 6 segundos?
+
+<details>
+<summary><strong>Ver solución</strong></summary>
+
+**Datos:**
+- $v_0 = 0\,\mathrm{m/s}$ (parte del reposo)
+- $a = 15\,\mathrm{m/s^2}$
+- $t = 6\,\mathrm{s}$
+
+**Cálculo:**
+
+Cada segundo el cohete suma 15 m/s a su velocidad:
+
+$$
+v = a \cdot t = 15\,\mathrm{m/s^2} \times 6\,\mathrm{s} = \boxed{90\,\mathrm{m/s}}
+$$
+
+> El cohete viajará a **90 m/s** (324 km/h) después de 6 segundos.
+
+</details>
+
+---
+
+### **Ejercicio 6 — Lanzamiento vertical hacia arriba**
+
+Una pelota se lanza hacia arriba con una velocidad inicial de $30\,\mathrm{m/s}$. Si la gravedad la desacelera a $10\,\mathrm{m/s^2}$, ¿cuántos segundos tardará en alcanzar su punto más alto (donde $v = 0$)?
+
+<details>
+<summary><strong>Ver solución</strong></summary>
+
+**Datos:**
+- $v_0 = 30\,\mathrm{m/s}$ (hacia arriba)
+- $v_f = 0\,\mathrm{m/s}$ (en el punto más alto)
+- $a = -10\,\mathrm{m/s^2}$ (la gravedad desacelera el ascenso)
+
+**Análisis:** Cada segundo pierde 10 m/s de velocidad.
+
+| Tiempo | Velocidad |
+|--------|-----------|
+| $0\,\mathrm{s}$ | $30\,\mathrm{m/s}$ |
+| $1\,\mathrm{s}$ | $20\,\mathrm{m/s}$ |
+| $2\,\mathrm{s}$ | $10\,\mathrm{m/s}$ |
+| $3\,\mathrm{s}$ | $\boxed{0\,\mathrm{m/s}}$ |
+
+> La pelota alcanza su punto más alto a los **3 segundos** después del lanzamiento.
+
+</details>

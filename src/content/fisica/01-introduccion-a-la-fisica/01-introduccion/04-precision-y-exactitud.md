@@ -51,61 +51,73 @@ las mediciones son **precisas**, ya que presentan poca variación entre sí.
 
 Imagina que lanzas dardos hacia el centro de una diana. El **centro** representa el **valor real** y los **dardos** representan tus **mediciones**:
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 700px;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;">
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem auto; max-width: 700px;">
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
+    <!-- Exacto y Preciso -->
     <div style="text-align: center;">
-      <div id="target-exacto-preciso" style="width: 150px; height: 150px;"></div>
-      <p style="font-size: 11px; color: #22c55e; font-weight: bold; margin-top: 0.25rem;">✓ Exacto y Preciso</p>
+      <canvas id="rough-exacto-preciso" width="140" height="140"></canvas>
+      <p style="font-size: 11px; color: #22c55e; font-weight: bold; margin-top: 5px;">✓ Exacto y Preciso</p>
     </div>
+    <!-- Preciso, no Exacto -->
     <div style="text-align: center;">
-      <div id="target-preciso-no-exacto" style="width: 150px; height: 150px;"></div>
-      <p style="font-size: 11px; color: #f59e0b; font-weight: bold; margin-top: 0.25rem;">Preciso, no Exacto</p>
+      <canvas id="rough-preciso-no-exacto" width="140" height="140"></canvas>
+      <p style="font-size: 11px; color: #f59e0b; font-weight: bold; margin-top: 5px;">Preciso, no Exacto</p>
     </div>
+    <!-- Exacto, no Preciso -->
     <div style="text-align: center;">
-      <div id="target-exacto-no-preciso" style="width: 150px; height: 150px;"></div>
-      <p style="font-size: 11px; color: #3b82f6; font-weight: bold; margin-top: 0.25rem;">Exacto, no Preciso</p>
+      <canvas id="rough-exacto-no-preciso" width="140" height="140"></canvas>
+      <p style="font-size: 11px; color: #3b82f6; font-weight: bold; margin-top: 5px;">Exacto, no Preciso</p>
     </div>
+    <!-- Ni Exacto ni Preciso -->
     <div style="text-align: center;">
-      <div id="target-ni-ni" style="width: 150px; height: 150px;"></div>
-      <p style="font-size: 11px; color: #ef4444; font-weight: bold; margin-top: 0.25rem;">✗ Ni Exacto ni Preciso</p>
+      <canvas id="rough-ni-ni" width="140" height="140"></canvas>
+      <p style="font-size: 11px; color: #ef4444; font-weight: bold; margin-top: 5px;">✗ Ni Exacto ni Preciso</p>
     </div>
   </div>
 </div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined') {
-    var createTarget = function(id, darts, dartColor) {
-      if (!document.getElementById(id)) return;
-      var board = JXG.JSXGraph.initBoard(id, {
-        boundingbox: [-3, 3, 3, -3], axis: false, showCopyright: false, showNavigation: false, pan: {enabled: false}, zoom: {enabled: false}
-      });
-      // Círculos de diana
-      board.create('circle', [[0,0], 2.5], {strokeColor: '#374151', strokeWidth: 1, fillColor: '#f3f4f6', fixed: true});
-      board.create('circle', [[0,0], 1.8], {strokeColor: '#374151', strokeWidth: 1, fillColor: '#e5e7eb', fixed: true});
-      board.create('circle', [[0,0], 1.1], {strokeColor: '#374151', strokeWidth: 1, fillColor: '#d1d5db', fixed: true});
-      board.create('circle', [[0,0], 0.5], {strokeColor: '#374151', strokeWidth: 1, fillColor: '#ef4444', fixed: true});
+  if (typeof rough !== 'undefined') {
+    
+    function drawTarget(canvasId, darts, dartColor) {
+      if (!document.getElementById(canvasId)) return;
+      var canvas = document.getElementById(canvasId);
+      var rc = rough.canvas(canvas);
+      var ctx = canvas.getContext('2d');
+      var cx = canvas.width / 2;
+      var cy = canvas.height / 2;
+      
+      // Diana
+      rc.circle(cx, cy, 120, { stroke: '#475569', strokeWidth: 1.5, fill: '#f8fafc', fillStyle: 'solid', roughness: 0.5 });
+      rc.circle(cx, cy, 90, { stroke: '#475569', strokeWidth: 1, fill: '#f1f5f9', fillStyle: 'solid', roughness: 0.5 });
+      rc.circle(cx, cy, 60, { stroke: '#475569', strokeWidth: 1, fill: '#e2e8f0', fillStyle: 'solid', roughness: 0.5 });
+      rc.circle(cx, cy, 30, { stroke: '#ef4444', strokeWidth: 1, fill: '#ef4444', fillStyle: 'solid', roughness: 0.5 }); // Centro rojo
+      
       // Dardos
-      for (var i = 0; i < darts.length; i++) {
-        board.create('point', darts[i], {size: 4, color: dartColor, fixed: true, name: ''});
-      }
-      board.unsuspendUpdate();
-    };
+      darts.forEach(function(pos) {
+        // Ajustar coordenadas relativas a absolutas del canvas
+        // Suponemos pos en rango [-1, 1] desde el centro
+        var dx = cx + pos[0] * 50; 
+        var dy = cy + pos[1] * 50;
+        
+        // Dibujar dardo (x)
+        rc.line(dx-3, dy-3, dx+3, dy+3, { stroke: dartColor, strokeWidth: 2, roughness: 0.5 });
+        rc.line(dx+3, dy-3, dx-3, dy+3, { stroke: dartColor, strokeWidth: 2, roughness: 0.5 });
+      });
+    }
+
+    // Exacto y Preciso: Centro
+    drawTarget('rough-exacto-preciso', [[0,0], [0.1, 0.1], [-0.1, -0.05], [0.05, -0.1], [-0.05, 0.05]], '#15803d'); // Verde oscuro
     
-    // Exacto y Preciso: agrupados en el centro
-    createTarget('target-exacto-preciso', [[0.1, 0.15], [-0.1, -0.05], [0.05, -0.1], [-0.05, 0.1], [0, 0.05]], '#22c55e');
+    // Preciso, no Exacto: Agrupados arriba izquierda
+    drawTarget('rough-preciso-no-exacto', [[-0.8, -0.8], [-0.75, -0.85], [-0.7, -0.75], [-0.85, -0.8], [-0.8, -0.7]], '#b45309'); // Ámbar oscuro
     
-    // Preciso, no Exacto: agrupados pero lejos del centro
-    createTarget('target-preciso-no-exacto', [[-1.5, 1.6], [-1.6, 1.4], [-1.4, 1.5], [-1.55, 1.55], [-1.45, 1.45]], '#f59e0b');
+    // Exacto, no Preciso: Dispersos alrededor del centro
+    drawTarget('rough-exacto-no-preciso', [[0.6, 0.6], [-0.5, -0.6], [0.5, -0.5], [-0.6, 0.5], [0, 0]], '#1d4ed8'); // Azul oscuro
     
-    // Exacto, no Preciso: dispersos pero promedio cerca del centro
-    createTarget('target-exacto-no-preciso', [[0.8, -0.9], [-0.7, 0.8], [0.1, 0.1], [-0.5, -0.6], [0.6, 0.5]], '#3b82f6');
-    
-    // Ni Exacto ni Preciso: dispersos y lejos
-    createTarget('target-ni-ni', [[1.8, 0.5], [-0.5, -2], [2, -1.5], [-1.8, 1], [0.3, 2.2]], '#ef4444');
+    // Ni Exacto ni Preciso: Muy dispersos y lejos
+    drawTarget('rough-ni-ni', [[0.9, -0.9], [-0.8, 0.2], [0.5, 0.9], [-0.9, -0.8], [0.2, -1]], '#b91c1c'); // Rojo oscuro
   }
 });
 </script>
