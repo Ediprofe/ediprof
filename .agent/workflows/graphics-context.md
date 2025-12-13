@@ -1,155 +1,205 @@
 ---
-description: Guía para generar gráficos en lecciones educativas - JSXGraph, Chart.js y Three.js
+description: Guía para generar gráficos en lecciones educativas - ECharts, JSXGraph, Chart.js y Three.js
 ---
 
 # 📊 Guía de Generación de Gráficos Educativos
 
-Este documento define las buenas prácticas para generar gráficos en las lecciones de ediprofe.com. Se usan **tres librerías** según el tipo de contenido.
+Este documento define las buenas prácticas para generar gráficos en las lecciones de ediprofe.com.
 
 ---
 
-## 🎯 Cuándo usar cada librería
+## 🎯 REGLA DE ORO
 
-| Materia/Contenido | Librería | Razón |
-|-------------------|----------|-------|
-| **Fracciones** (pizzas, partes de un todo) | **Chart.js** | Pie charts limpios y profesionales |
-| **Estadística** (barras, histogramas, líneas) | **Chart.js** | Su especialidad |
-| **Porcentajes** | **Chart.js** | Pie/doughnut charts |
-| **Vectores** | **JSXGraph** | Interactividad, puntos arrastrables |
-| **Geometría 2D** (figuras, ángulos) | **JSXGraph** | Construcciones dinámicas |
-| **Productos notables** (área, cuadrados) | **JSXGraph** | Visualización de áreas |
-| **Funciones matemáticas** (gráficas, límites) | **JSXGraph** | Ejes coordenados, zoom |
-| **Trigonometría** (círculo unitario) | **JSXGraph** | Interactividad angular |
-| **Cubos y Geometría 3D** | **Three.js** | Cubos rotativos, volúmenes |
-| **Suma/diferencia de cubos** | **Three.js** | Visualización 3D interactiva |
-
-> 💡 **Regla general:** 
-> - Partes de un todo → **Chart.js**
-> - Coordenadas 2D o interactividad → **JSXGraph**
-> - Volúmenes o 3D → **Three.js**
+> **ECharts es la PRIMERA opción** para cualquier gráfico de funciones, datos o visualizaciones estáticas.
+> 
+> Solo usar **JSXGraph cuando se requiera INTERACTIVIDAD** (arrastrar puntos, manipular vectores).
 
 ---
 
-# SECCIÓN A: Chart.js (Fracciones, Estadística)
+## 📐 Estilo visual obligatorio para TODOS los gráficos
 
-## A.1 Configuración (ya en BaseLayout.astro)
-```html
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
-```
+Todos los gráficos deben seguir este wrapper visual:
 
-## A.2 Estructura HTML estándar
 ```html
-<div style="max-width: 250px; margin: 1rem auto;">
-  <canvas id="chart-NOMBRE-UNICO"></canvas>
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="CHART-ID" style="width: 100%; height: 400px; border-radius: 8px;"></div>
 </div>
 ```
 
-## A.3 Estructura JavaScript estándar
-```javascript
+### Especificaciones del wrapper:
+| Propiedad | Valor | Descripción |
+|-----------|-------|-------------|
+| Fondo | `#f1f5f9` | Gris neutro claro |
+| Borde | `1px solid #cbd5e1` | Borde sutil |
+| Bordes redondeados | `12px` | Esquinas suaves |
+| Padding | `1rem` | Espacio interno |
+| Icono | `📊` solo | Sin texto adicional |
+| Ancho | `100%` | Responsive, ocupa todo el ancho |
+| Alto | `400px` | Altura decente para visualización |
+
+---
+
+# SECCIÓN A: ECharts (Primera opción) ✨
+
+## A.1 Cuándo usar ECharts
+
+| Tipo de Gráfico | Usar ECharts |
+|-----------------|--------------|
+| Funciones lineales (f(x) = mx + b) | ✅ SÍ |
+| Gráficas de datos (series, líneas) | ✅ SÍ |
+| Comparativos (múltiples funciones) | ✅ SÍ |
+| Estadística (barras, histogramas) | ✅ SÍ |
+| Cualquier visualización estática | ✅ SÍ |
+
+## A.2 Configuración obligatoria ECharts
+
+Cada gráfico ECharts DEBE incluir:
+
+1. **Título descriptivo** con subtítulo de la función
+2. **Cuadrícula visible** con color `#94a3b8`
+3. **Nombres de ejes** en negrita
+4. **Responsive** con resize listener
+5. **Animación** de entrada
+
+## A.3 Plantilla completa ECharts (COPIAR ESTA)
+
+```html
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="echarts-NOMBRE" style="width: 100%; height: 400px; border-radius: 8px;"></div>
+</div>
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  if (typeof Chart !== 'undefined' && document.getElementById('chart-ID')) {
-    new Chart(document.getElementById('chart-ID'), {
-      type: 'pie',  // o 'bar', 'doughnut', 'line'
-      data: { /* ... */ },
-      options: {
-        responsive: true,
-        plugins: {
-          legend: { display: false },
-          tooltip: { enabled: false }
+  if (typeof echarts !== 'undefined' && document.getElementById('echarts-NOMBRE')) {
+    var chart = echarts.init(document.getElementById('echarts-NOMBRE'));
+    
+    var option = {
+      title: {
+        text: 'TÍTULO DESCRIPTIVO DEL GRÁFICO',
+        subtext: 'f(x) = expresión',
+        left: 'center',
+        textStyle: { fontSize: 16, fontWeight: 'bold', color: '#1e293b' },
+        subtextStyle: { fontSize: 13, color: '#3b82f6', fontWeight: 'bold' }
+      },
+      animation: true,
+      animationDuration: 1000,
+      grid: { 
+        left: '15%', 
+        right: '8%', 
+        top: '18%', 
+        bottom: '18%', 
+        show: true, 
+        borderColor: '#cbd5e1' 
+      },
+      xAxis: {
+        type: 'value',
+        name: 'Nombre eje X (x)',
+        nameLocation: 'middle',
+        nameGap: 32,
+        nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#374151' },
+        min: 0,
+        max: 10,
+        axisLine: { lineStyle: { color: '#64748b' } },
+        splitLine: { show: true, lineStyle: { type: 'solid', color: '#94a3b8', width: 1 } }
+      },
+      yAxis: {
+        type: 'value',
+        name: 'Nombre eje Y',
+        nameLocation: 'middle',
+        nameGap: 50,
+        nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#374151' },
+        min: 0,
+        max: 30,
+        axisLine: { lineStyle: { color: '#64748b' } },
+        splitLine: { show: true, lineStyle: { type: 'solid', color: '#94a3b8', width: 1 } }
+      },
+      series: [
+        {
+          name: 'Función',
+          type: 'line',
+          smooth: true,
+          symbol: 'none',
+          lineStyle: { width: 3, color: '#3b82f6' },
+          areaStyle: {
+            color: {
+              type: 'linear', x: 0, y: 0, x2: 0, y2: 1,
+              colorStops: [
+                { offset: 0, color: 'rgba(59, 130, 246, 0.3)' },
+                { offset: 1, color: 'rgba(59, 130, 246, 0.05)' }
+              ]
+            }
+          },
+          data: [[0, 0], [2, 6], [4, 12], [6, 18], [8, 24], [10, 30]]
+        },
+        {
+          name: 'Puntos',
+          type: 'scatter',
+          symbolSize: 12,
+          itemStyle: { color: '#22c55e', borderColor: '#fff', borderWidth: 2 },
+          label: { 
+            show: true, 
+            formatter: function(p) { return '(' + p.data[0] + ', ' + p.data[1] + ')'; }, 
+            position: 'top', 
+            fontSize: 10 
+          },
+          data: [[0, 0], [5, 15], [10, 30]]
         }
-      }
-    });
+      ],
+      tooltip: { trigger: 'axis' }
+    };
+    
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
   }
 });
 </script>
 ```
 
-## A.4 Paleta de colores Chart.js
+## A.4 Paleta de colores ECharts
 
 | Color | Hex | Uso |
 |-------|-----|-----|
-| Azul | `#3b82f6` | Partes tomadas (propia) |
-| Rojo | `#ef4444` | Fracciones impropias |
-| Verde | `#22c55e` | Unidades completas |
-| Gris | `#e5e7eb` | Partes no tomadas/vacías |
-| Borde | `#374151` | Bordes de todos los gráficos |
-
-## A.5 Patrones comunes Chart.js
-
-### Fracción simple (ej: 3/8)
-```javascript
-new Chart(document.getElementById('chart-fraccion'), {
-  type: 'pie',
-  data: {
-    labels: ['1','2','3','4','5','6','7','8'],
-    datasets: [{
-      data: [1,1,1,1,1,1,1,1],
-      backgroundColor: ['#3b82f6','#3b82f6','#3b82f6','#e5e7eb','#e5e7eb','#e5e7eb','#e5e7eb','#e5e7eb'],
-      borderColor: '#374151',
-      borderWidth: 2
-    }]
-  },
-  options: { responsive: true, plugins: { legend: { display: false }, tooltip: { enabled: false } } }
-});
-```
-
-### Número mixto (ej: 2 3/4 = 1 + 1 + 3/4)
-Usar múltiples canvas en un flexbox:
-```html
-<div style="display: flex; justify-content: center; gap: 0.5rem; margin: 1rem auto;">
-  <div style="width: 80px;"><canvas id="chart-1"></canvas></div>
-  <span>+</span>
-  <div style="width: 80px;"><canvas id="chart-2"></canvas></div>
-  <span>+</span>
-  <div style="width: 80px;"><canvas id="chart-3"></canvas></div>
-</div>
-```
-
-## A.6 Texto contextual obligatorio
-
-Siempre añadir texto **antes** del gráfico que explique qué representa:
-```markdown
-En la siguiente figura, las **porciones azules** representan las partes que tomamos, mientras que las **porciones grises** son las que quedan:
-
-[gráfico aquí]
-
-**Interpretación:** "Tres de ocho partes" o "tres octavos".
-```
+| Azul | `#3b82f6` | Función principal |
+| Rojo | `#ef4444` | Función secundaria |
+| Verde | `#22c55e` | Puntos destacados |
+| Naranja | `#f97316` | Interceptos, marcas especiales |
+| Gris cuadrícula | `#94a3b8` | Líneas de cuadrícula |
+| Gris eje | `#64748b` | Líneas de ejes |
 
 ---
 
-# SECCIÓN B: JSXGraph (Vectores, Geometría, Funciones)
+# SECCIÓN B: JSXGraph (Solo para interactividad)
 
-## B.1 Configuración (ya en BaseLayout.astro)
-```html
-<script src="https://cdn.jsdelivr.net/npm/jsxgraph@1.8.0/distrib/jsxgraphcore.js" defer></script>
-```
+## B.1 Cuándo usar JSXGraph
 
-## B.2 Estructura HTML estándar
-```html
-<div id="jsxgraph-NOMBRE-UNICO" class="jsxgraph-container" style="width: 100%; max-width: 500px; height: 350px; margin: 1.5rem auto;"></div>
-```
+| Necesidad | Librería |
+|-----------|----------|
+| Arrastrar puntos | JSXGraph |
+| Vectores interactivos | JSXGraph |
+| Explorar construcciones | JSXGraph |
+| Visualizar función SIN interacción | ECharts ✨ |
 
-## B.2.1 Ancho responsivo para pantallas grandes
-
-Para gráficos que necesitan más espacio horizontal (cuadrículas, múltiples elementos):
-- **max-width: 700px** mínimo para gráficos con varios grupos lado a lado
-- **height: 250px** o más para cuadrículas con varias filas
-- Siempre dejar **separación visual** entre elementos (mínimo 0.1 de gap en coordenadas)
+## B.2 Plantilla JSXGraph con wrapper
 
 ```html
-<!-- Ejemplo para gráficos más anchos -->
-<div id="jsxgraph-ID" style="width: 100%; max-width: 700px; height: 250px; margin: 1rem auto;"></div>
-```
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-NOMBRE" style="width: 100%; height: 400px; border-radius: 8px;"></div>
+</div>
 
-## B.3 Estructura JavaScript estándar
-```javascript
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined') {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-ID', {
-      boundingbox: [-1, 7, 9, -1],  // [xmin, ymax, xmax, ymin]
+  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-NOMBRE')) {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-NOMBRE', {
+      boundingbox: [-1, 7, 9, -1],
       axis: true,
       showCopyright: false,
       showNavigation: false,
@@ -157,7 +207,7 @@ document.addEventListener('DOMContentLoaded', function() {
       zoom: { enabled: false }
     });
     
-    // ... crear elementos ...
+    // ... elementos interactivos ...
     
     board.unsuspendUpdate();
   }
@@ -165,98 +215,40 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 ```
 
-## B.4 Paleta de colores JSXGraph
+## B.3 Paleta de colores JSXGraph
 
 | Color | Hex | Uso |
 |-------|-----|-----|
-| Azul | `#3b82f6` | Vector A (primario) |
-| Rojo | `#ef4444` | Vector B (secundario) |
-| Verde | `#22c55e` | Resultante R |
-| Naranja | `#f97316` | Auxiliares (-B) |
-| Gris | `#64748b` | Origen, puntos neutros |
-| Gris claro | `#94a3b8` | Líneas auxiliares punteadas |
-
-## B.5 Interactivo vs Estático
-
-### INTERACTIVO (puntos arrastrables)
-- Exploración de conceptos
-- El usuario puede mover elementos
-
-### ESTÁTICO (puntos fijos)
-```javascript
-var P = board.create('point', [3, 2], {name: '', size: 3, fixed: true, color: '#3b82f6'});
-```
-
-## B.6 Etiquetas - NO usar LaTeX
-```javascript
-// ✅ CORRECTO
-board.create('text', [x, y, 'A'], {
-  fontSize: 16, 
-  strokeColor: '#3b82f6', 
-  cssStyle: 'font-weight: bold; font-style: italic;', 
-  fixed: true
-});
-
-// ❌ INCORRECTO - LaTeX no funciona en JSXGraph
-board.create('text', [x, y, '\\(\\vec{A}\\)'], {useMathJax: true});
-```
+| Azul | `#3b82f6` | Vector A |
+| Rojo | `#ef4444` | Vector B |
+| Verde | `#22c55e` | Resultante |
+| Naranja | `#f97316` | Auxiliares |
+| Gris | `#94a3b8` | Líneas punteadas |
 
 ---
 
-## ✅ Checklist antes de generar gráficos
+# SECCIÓN C: Chart.js (Solo fracciones)
 
-### Para Chart.js (fracciones):
-- [ ] ¿Es un gráfico de "partes de un todo"? → Usar Chart.js
-- [ ] ¿El ID del canvas es único?
-- [ ] ¿Los colores siguen la paleta?
-- [ ] ¿Hay texto explicativo antes y después del gráfico?
-- [ ] ¿borderWidth: 2 en el dataset?
-
-### Para JSXGraph (geometría/vectores):
-- [ ] ¿Necesita coordenadas o interactividad? → Usar JSXGraph
-- [ ] ¿El ID del contenedor es único?
-- [ ] ¿Las etiquetas usan strokeColor (no color)?
-- [ ] ¿Los puntos calculados tienen fixed: true?
-- [ ] ¿Hay board.unsuspendUpdate() al final?
+Mantener solo para gráficos de fracciones (pie charts) donde ya esté implementado.
 
 ---
 
-## ⚠️ Limitaciones conocidas
+# SECCIÓN D: Three.js (Solo 3D)
 
-- **Modo oscuro**: Las tres librerías tienen fondo blanco fijo
-- **LaTeX en JSXGraph**: No funciona, usar texto simple
-- **SVG inline**: No se renderiza correctamente en markdown (no usar)
-- **Three.js mobile**: Verificar rendimiento en móviles
+Usar para cubos, volúmenes y geometría espacial.
 
 ---
 
-# SECCIÓN C: Three.js (Cubos 3D, Geometría espacial)
+## ✅ Checklist obligatorio
 
-## C.1 Configuración (ya en BaseLayout.astro)
-```html
-<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js" defer></script>
-```
+Antes de generar cualquier gráfico:
 
-## C.2 Estructura HTML estándar
-```html
-<div id="threejs-NOMBRE" style="width: 100%; max-width: 600px; height: 350px; margin: 1.5rem auto;"></div>
-```
-
-## C.3 Cuándo usar Three.js
-- Suma y diferencia de cubos ($a^3 \pm b^3$)
-- Volúmenes de sólidos
-- Geometría espacial interactiva
-- Cualquier visualización que requiera rotación 3D
-
----
-
-## 📋 Resumen rápido para la IA
-
-Cuando generes una lección, pregúntate:
-
-1. **¿Es sobre fracciones, porcentajes o estadística?** → **Chart.js pie/bar**
-2. **¿Es sobre vectores, geometría 2D o funciones?** → **JSXGraph**
-3. **¿Es sobre cubos, volúmenes o geometría 3D?** → **Three.js**
-4. **¿Solo necesitas una fórmula sin visualización?** → **KaTeX ($$...$$)**
-
-Siempre añade texto contextual que explique qué representa el gráfico antes y después de incluirlo.
+- [ ] ¿Necesita interactividad con arrastre? → JSXGraph
+- [ ] ¿Es visualización estática? → **ECharts** ✨
+- [ ] ¿Tiene el wrapper con fondo `#f1f5f9` y borde redondeado?
+- [ ] ¿Tiene icono 📊 solo (sin texto)?
+- [ ] ¿Es responsive (width: 100%, height: 400px)?
+- [ ] ¿Tiene título descriptivo?
+- [ ] ¿Tiene cuadrícula visible (#94a3b8)?
+- [ ] ¿Tiene nombres de ejes en negrita?
+- [ ] ¿Tiene resize listener para responsive?

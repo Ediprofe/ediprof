@@ -44,51 +44,36 @@ $$
 
 Visualización del módulo:
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 480px;">
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
-  <div id="jsxgraph-modulo" class="jsxgraph-container" style="width: 100%; height: 350px; border-radius: 8px; overflow: hidden;"></div>
+  <div id="echarts-modulo" style="width: 100%; height: 380px; border-radius: 8px;"></div>
 </div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined') {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-modulo', {
-      boundingbox: [-1, 6, 6, -1],
-      axis: true,
-      showCopyright: false,
-      showNavigation: false,
-      pan: { enabled: false },
-      zoom: { enabled: false }
-    });
-    
-    var O = board.create('point', [0, 0], { name: 'O', size: 2, fixed: true, color: '#64748b', label: { offset: [-12, -12] } });
-    var z = board.create('point', [3, 4], { name: 'z = 3 + 4i', size: 5, fixed: true, color: '#3b82f6', label: { fontSize: 12, offset: [8, 8] } });
-    
-    // Vector desde origen
-    board.create('arrow', [O, z], { strokeColor: '#3b82f6', strokeWidth: 3, fixed: true });
-    
-    // Proyecciones (catetos del triángulo)
-    var projX = board.create('point', [3, 0], { visible: false, fixed: true });
-    board.create('segment', [O, projX], { strokeColor: '#ef4444', strokeWidth: 2, fixed: true });
-    board.create('segment', [projX, z], { strokeColor: '#22c55e', strokeWidth: 2, fixed: true });
-    
-    // Ángulo recto
-    board.create('polygon', [[2.7, 0], [2.7, 0.3], [3, 0.3], projX], { fillColor: 'transparent', strokeColor: '#94a3b8', strokeWidth: 1, fixed: true, vertices: { visible: false } });
-    
-    // Etiquetas de catetos
-    board.create('text', [1.5, -0.5, 'a = 3'], { fontSize: 12, strokeColor: '#ef4444', cssStyle: 'font-weight: bold;', fixed: true });
-    board.create('text', [3.3, 2, 'b = 4'], { fontSize: 12, strokeColor: '#22c55e', cssStyle: 'font-weight: bold;', fixed: true });
-    
-    // Etiqueta del módulo (hipotenusa)
-    board.create('text', [0.8, 2.8, '|z| = 5'], { fontSize: 14, strokeColor: '#3b82f6', cssStyle: 'font-weight: bold;', fixed: true });
-    
-    // Etiquetas de ejes
-    board.create('text', [5.3, -0.5, 'Re'], { fontSize: 12, strokeColor: '#374151', cssStyle: 'font-weight: bold;', fixed: true });
-    board.create('text', [0.2, 5.5, 'Im'], { fontSize: 12, strokeColor: '#374151', cssStyle: 'font-weight: bold;', fixed: true });
-    
-    board.unsuspendUpdate();
+  if (typeof echarts !== 'undefined' && document.getElementById('echarts-modulo')) {
+    var chart = echarts.init(document.getElementById('echarts-modulo'));
+    var option = {
+      title: { text: 'Módulo de z = 3 + 4i', subtext: '|z| = √(3² + 4²) = 5 (Teorema de Pitágoras)', left: 'center', textStyle: { fontSize: 15, fontWeight: 'bold', color: '#1e293b' }, subtextStyle: { fontSize: 11, color: '#3b82f6' } },
+      animation: true, animationDuration: 1000,
+      grid: { left: '12%', right: '8%', top: '18%', bottom: '12%', show: true, borderColor: '#cbd5e1' },
+      xAxis: { type: 'value', name: 'Re', nameLocation: 'end', nameTextStyle: { fontSize: 12, fontWeight: 'bold', color: '#374151' }, min: -1, max: 6, axisLine: { lineStyle: { color: '#374151', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
+      yAxis: { type: 'value', name: 'Im', nameLocation: 'end', nameTextStyle: { fontSize: 12, fontWeight: 'bold', color: '#374151' }, min: -1, max: 6, axisLine: { lineStyle: { color: '#374151', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
+      series: [
+        { name: 'Cateto a (parte real)', type: 'line', lineStyle: { width: 3, color: '#ef4444' }, symbol: 'none', data: [[0, 0], [3, 0]] },
+        { name: 'Cateto b (parte imaginaria)', type: 'line', lineStyle: { width: 3, color: '#22c55e' }, symbol: 'none', data: [[3, 0], [3, 4]] },
+        { name: 'Módulo |z| = 5', type: 'line', lineStyle: { width: 4, color: '#3b82f6' }, symbol: 'none', data: [[0, 0], [3, 4]] },
+        { name: 'z = 3 + 4i', type: 'scatter', symbolSize: 18, itemStyle: { color: '#3b82f6', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: 'z = 3 + 4i', position: 'right', fontSize: 12, fontWeight: 'bold' }, data: [[3, 4]] },
+        { name: 'a = 3', type: 'scatter', symbolSize: 0, label: { show: true, formatter: 'a = 3', fontSize: 12, fontWeight: 'bold', color: '#ef4444' }, data: [[1.5, -0.5]] },
+        { name: 'b = 4', type: 'scatter', symbolSize: 0, label: { show: true, formatter: 'b = 4', fontSize: 12, fontWeight: 'bold', color: '#22c55e' }, data: [[3.5, 2]] },
+        { name: '|z| = 5', type: 'scatter', symbolSize: 0, label: { show: true, formatter: '|z| = 5', fontSize: 14, fontWeight: 'bold', color: '#3b82f6' }, data: [[0.8, 2.5]] }
+      ],
+      tooltip: { trigger: 'item' }
+    };
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
   }
 });
 </script>

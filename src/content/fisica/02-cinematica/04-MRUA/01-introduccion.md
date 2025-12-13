@@ -40,35 +40,30 @@ $$
 
 Una motocicleta está detenida frente a un semáforo en rojo. Cuando cambia a verde, el conductor acelera con $a = 5\,\mathrm{m/s^2}$ durante 4 segundos.
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 500px;">
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
-  <div id="jsxgraph-moto" class="jsxgraph-container" style="width: 100%; height: 200px; border-radius: 8px; overflow: hidden;"></div>
+  <div id="echarts-moto" style="width: 100%; height: 380px; border-radius: 8px;"></div>
 </div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-moto')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-moto', {
-      boundingbox: [-0.8, 25, 5.5, -4], axis: false, showCopyright: false, showNavigation: false, pan: {enabled: false}, zoom: {enabled: false}
-    });
-    // Ejes manuales
-    board.create('axis', [[0, 0], [1, 0]], {ticks: {insertTicks: false, ticksDistance: 1, label: {offset: [0, -12]}}});
-    board.create('axis', [[0, 0], [0, 1]], {ticks: {insertTicks: false, ticksDistance: 5, label: {offset: [-15, 0]}}});
-    board.create('text', [5.2, -1.5, 't (s)'], {fontSize: 12, strokeColor: '#374151', fixed: true, cssStyle: 'font-weight: bold;'});
-    board.create('text', [-0.6, 23, 'v (m/s)'], {fontSize: 12, strokeColor: '#374151', fixed: true, cssStyle: 'font-weight: bold;'});
-    // Línea principal
-    board.create('segment', [[0, 0], [4, 20]], {strokeColor: '#3b82f6', strokeWidth: 3, fixed: true});
-    // Puntos con etiquetas de velocidad
-    board.create('point', [0, 0], {size: 5, fixed: true, color: '#22c55e', name: '0', label: {offset: [-15, -5], strokeColor: '#22c55e', fontSize: 11}});
-    board.create('point', [1, 5], {size: 5, fixed: true, color: '#3b82f6', name: '', withLabel: false});
-    board.create('point', [2, 10], {size: 5, fixed: true, color: '#3b82f6', name: '', withLabel: false});
-    board.create('point', [3, 15], {size: 5, fixed: true, color: '#3b82f6', name: '', withLabel: false});
-    board.create('point', [4, 20], {size: 5, fixed: true, color: '#ef4444', name: '20 m/s', label: {offset: [8, 5], strokeColor: '#ef4444', fontSize: 12, cssStyle: 'font-weight: bold;'}});
-    // Etiqueta de aceleración
-    board.create('text', [2.5, 6, 'a = 5 m/s²'], {fontSize: 13, strokeColor: '#f59e0b', fixed: true, cssStyle: 'font-weight: bold;'});
-    board.unsuspendUpdate();
+  if (typeof echarts !== 'undefined' && document.getElementById('echarts-moto')) {
+    var chart = echarts.init(document.getElementById('echarts-moto'));
+    var option = {
+      title: { text: 'Velocidad vs Tiempo: Moto acelerando', subtext: 'MRUA: a = 5 m/s² (velocidad aumenta +5 m/s cada segundo)', left: 'center', textStyle: { fontSize: 15, fontWeight: 'bold', color: '#1e293b' }, subtextStyle: { fontSize: 12, color: '#f59e0b' } },
+      animation: true, animationDuration: 1000,
+      grid: { left: '12%', right: '8%', top: '20%', bottom: '15%', show: true, borderColor: '#cbd5e1' },
+      xAxis: { type: 'value', name: 'Tiempo (s)', nameLocation: 'middle', nameGap: 30, nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#374151' }, min: 0, max: 4.5, axisLine: { lineStyle: { color: '#64748b' } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
+      yAxis: { type: 'value', name: 'Velocidad (m/s)', nameLocation: 'middle', nameGap: 50, nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#374151' }, min: 0, max: 22, axisLine: { lineStyle: { color: '#64748b' } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
+      series: [
+        { type: 'line', smooth: false, symbol: 'circle', symbolSize: 14, lineStyle: { width: 3, color: '#3b82f6' }, areaStyle: { color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1, colorStops: [{ offset: 0, color: 'rgba(59, 130, 246, 0.3)' }, { offset: 1, color: 'rgba(59, 130, 246, 0.05)' }] } }, itemStyle: { color: '#3b82f6', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: function(p) { return p.data[1] + ' m/s'; }, position: 'top', fontSize: 11, fontWeight: 'bold' }, data: [[0, 0], [1, 5], [2, 10], [3, 15], [4, 20]] }
+      ],
+      tooltip: { trigger: 'axis', formatter: 't = {b} s<br/>v = {c} m/s' }
+    };
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
   }
 });
 </script>
@@ -93,34 +88,30 @@ $a = 5\,\mathrm{m/s^2}$ significa: **"Cada segundo, la moto suma 5 m/s a su velo
 
 Un estudiante deja caer una piedra desde la azotea de un edificio alto. La **Caída Libre** es MRUA donde la aceleración es la **Gravedad**: $g = 9.8\,\mathrm{m/s^2}$.
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 450px;">
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
-  <div id="jsxgraph-caida" class="jsxgraph-container" style="width: 100%; height: 220px; border-radius: 8px; overflow: hidden;"></div>
+  <div id="echarts-caida" style="width: 100%; height: 380px; border-radius: 8px;"></div>
 </div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-caida')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-caida', {
-      boundingbox: [-0.8, 35, 4.8, -5], axis: false, showCopyright: false, showNavigation: false, pan: {enabled: false}, zoom: {enabled: false}
-    });
-    // Ejes manuales
-    board.create('axis', [[0, 0], [1, 0]], {ticks: {insertTicks: false, ticksDistance: 1, label: {offset: [0, -12]}}});
-    board.create('axis', [[0, 0], [0, 1]], {ticks: {insertTicks: false, ticksDistance: 10, label: {offset: [-15, 0]}}});
-    board.create('text', [4.5, -2, 't (s)'], {fontSize: 12, strokeColor: '#374151', fixed: true, cssStyle: 'font-weight: bold;'});
-    board.create('text', [-0.6, 32, 'v (m/s)'], {fontSize: 12, strokeColor: '#374151', fixed: true, cssStyle: 'font-weight: bold;'});
-    // Línea principal
-    board.create('segment', [[0, 0], [3, 29.4]], {strokeColor: '#3b82f6', strokeWidth: 3, fixed: true});
-    // Puntos con etiquetas de velocidad
-    board.create('point', [0, 0], {size: 5, fixed: true, color: '#22c55e', name: '0', label: {offset: [-15, -5], strokeColor: '#22c55e', fontSize: 11}});
-    board.create('point', [1, 9.8], {size: 5, fixed: true, color: '#3b82f6', name: '', withLabel: false});
-    board.create('point', [2, 19.6], {size: 5, fixed: true, color: '#3b82f6', name: '', withLabel: false});
-    board.create('point', [3, 29.4], {size: 5, fixed: true, color: '#ef4444', name: '29.4 m/s', label: {offset: [8, 5], strokeColor: '#ef4444', fontSize: 12, cssStyle: 'font-weight: bold;'}});
-    // Etiqueta de aceleración (gravedad)
-    board.create('text', [1.8, 8, 'g = 9.8 m/s²'], {fontSize: 13, strokeColor: '#f59e0b', fixed: true, cssStyle: 'font-weight: bold;'});
-    board.unsuspendUpdate();
+  if (typeof echarts !== 'undefined' && document.getElementById('echarts-caida')) {
+    var chart = echarts.init(document.getElementById('echarts-caida'));
+    var option = {
+      title: { text: 'Velocidad vs Tiempo: Caída Libre', subtext: 'g = 9.8 m/s² (velocidad aumenta +9.8 m/s cada segundo)', left: 'center', textStyle: { fontSize: 15, fontWeight: 'bold', color: '#1e293b' }, subtextStyle: { fontSize: 12, color: '#f59e0b' } },
+      animation: true, animationDuration: 1000,
+      grid: { left: '12%', right: '8%', top: '20%', bottom: '15%', show: true, borderColor: '#cbd5e1' },
+      xAxis: { type: 'value', name: 'Tiempo (s)', nameLocation: 'middle', nameGap: 30, nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#374151' }, min: 0, max: 3.5, axisLine: { lineStyle: { color: '#64748b' } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
+      yAxis: { type: 'value', name: 'Velocidad (m/s)', nameLocation: 'middle', nameGap: 50, nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#374151' }, min: 0, max: 32, axisLine: { lineStyle: { color: '#64748b' } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
+      series: [
+        { type: 'line', smooth: false, symbol: 'circle', symbolSize: 14, lineStyle: { width: 3, color: '#ef4444' }, areaStyle: { color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1, colorStops: [{ offset: 0, color: 'rgba(239, 68, 68, 0.3)' }, { offset: 1, color: 'rgba(239, 68, 68, 0.05)' }] } }, itemStyle: { color: '#ef4444', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: function(p) { return p.data[1] + ' m/s'; }, position: 'top', fontSize: 11, fontWeight: 'bold' }, data: [[0, 0], [1, 9.8], [2, 19.6], [3, 29.4]] }
+      ],
+      tooltip: { trigger: 'axis', formatter: 't = {b} s<br/>v = {c} m/s' }
+    };
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
   }
 });
 </script>

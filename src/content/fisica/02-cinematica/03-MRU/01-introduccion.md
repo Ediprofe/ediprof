@@ -15,38 +15,72 @@ El **Movimiento Rectilíneo Uniforme (MRU)** es el modelo de movimiento más fun
 
 Un robot de juguete se mueve en línea recta con una velocidad constante de $4\,\mathrm{m/s}$. Si parte desde la posición cero, determinar su posición final después de $3\,\mathrm{s}$.
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 550px;">
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
-  <div id="jsxgraph-robot" class="jsxgraph-container" style="width: 100%; height: 150px; border-radius: 8px; overflow: hidden;"></div>
+  <div id="echarts-robot" style="width: 100%; height: 350px; border-radius: 8px;"></div>
 </div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-robot')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-robot', {
-      boundingbox: [-1, 3.5, 14, -0.5], axis: false, showCopyright: false, showNavigation: false, pan: {enabled: false}, zoom: {enabled: false}
-    });
-    board.create('segment', [[0, 1], [12, 1]], {strokeWidth: 3, strokeColor: '#374151', fixed: true});
-    // Marcas cada 4 metros
-    board.create('point', [0, 1], {name: 't=0s', size: 4, fixed: true, color: '#22c55e', label: {offset: [0, -20], strokeColor: '#22c55e'}});
-    board.create('point', [4, 1], {name: 't=1s', size: 4, fixed: true, color: '#3b82f6', label: {offset: [0, -20], strokeColor: '#3b82f6'}});
-    board.create('point', [8, 1], {name: 't=2s', size: 4, fixed: true, color: '#3b82f6', label: {offset: [0, -20], strokeColor: '#3b82f6'}});
-    board.create('point', [12, 1], {name: 't=3s', size: 4, fixed: true, color: '#ef4444', label: {offset: [0, -20], strokeColor: '#ef4444'}});
-    // Etiquetas de posición
-    board.create('text', [0, 1.8, '0m'], {fontSize: 11, strokeColor: '#374151', fixed: true, anchorX: 'middle'});
-    board.create('text', [4, 1.8, '4m'], {fontSize: 11, strokeColor: '#374151', fixed: true, anchorX: 'middle'});
-    board.create('text', [8, 1.8, '8m'], {fontSize: 11, strokeColor: '#374151', fixed: true, anchorX: 'middle'});
-    board.create('text', [12, 1.8, '12m'], {fontSize: 11, strokeColor: '#374151', fixed: true, anchorX: 'middle'});
-    // Flechas de avance
-    board.create('arrow', [[0, 2.6], [4, 2.6]], {strokeColor: '#3b82f6', strokeWidth: 2, fixed: true});
-    board.create('arrow', [[4, 2.6], [8, 2.6]], {strokeColor: '#3b82f6', strokeWidth: 2, fixed: true});
-    board.create('arrow', [[8, 2.6], [12, 2.6]], {strokeColor: '#3b82f6', strokeWidth: 2, fixed: true});
-    board.create('text', [2, 3.1, '+4m'], {fontSize: 10, strokeColor: '#3b82f6', fixed: true, anchorX: 'middle'});
-    board.create('text', [6, 3.1, '+4m'], {fontSize: 10, strokeColor: '#3b82f6', fixed: true, anchorX: 'middle'});
-    board.create('text', [10, 3.1, '+4m'], {fontSize: 10, strokeColor: '#3b82f6', fixed: true, anchorX: 'middle'});
-    board.unsuspendUpdate();
+  if (typeof echarts !== 'undefined' && document.getElementById('echarts-robot')) {
+    var chart = echarts.init(document.getElementById('echarts-robot'));
+    
+    var option = {
+      title: {
+        text: 'Posición del robot vs Tiempo',
+        subtext: 'MRU: v = 4 m/s (distancias iguales en tiempos iguales)',
+        left: 'center',
+        textStyle: { fontSize: 16, fontWeight: 'bold', color: '#1e293b' },
+        subtextStyle: { fontSize: 12, color: '#3b82f6' }
+      },
+      animation: true,
+      animationDuration: 1000,
+      grid: { left: '12%', right: '8%', top: '20%', bottom: '15%', show: true, borderColor: '#cbd5e1' },
+      xAxis: {
+        type: 'value',
+        name: 'Tiempo (s)',
+        nameLocation: 'middle',
+        nameGap: 30,
+        nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#374151' },
+        min: 0, max: 3.5,
+        axisLine: { lineStyle: { color: '#64748b' } },
+        splitLine: { show: true, lineStyle: { type: 'solid', color: '#94a3b8', width: 1 } }
+      },
+      yAxis: {
+        type: 'value',
+        name: 'Posición (m)',
+        nameLocation: 'middle',
+        nameGap: 45,
+        nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#374151' },
+        min: 0, max: 14,
+        axisLine: { lineStyle: { color: '#64748b' } },
+        splitLine: { show: true, lineStyle: { type: 'solid', color: '#94a3b8', width: 1 } }
+      },
+      series: [
+        {
+          name: 'Posición',
+          type: 'line',
+          smooth: false,
+          symbol: 'circle',
+          symbolSize: 12,
+          lineStyle: { width: 3, color: '#3b82f6' },
+          areaStyle: {
+            color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1,
+              colorStops: [{ offset: 0, color: 'rgba(59, 130, 246, 0.3)' }, { offset: 1, color: 'rgba(59, 130, 246, 0.05)' }]
+            }
+          },
+          itemStyle: { color: '#3b82f6', borderColor: '#fff', borderWidth: 2 },
+          label: { show: true, formatter: function(p) { return p.data[1] + ' m'; }, position: 'top', fontSize: 11, fontWeight: 'bold' },
+          data: [[0, 0], [1, 4], [2, 8], [3, 12]]
+        }
+      ],
+      tooltip: { trigger: 'axis', formatter: 't = {b} s<br/>x = {c} m' }
+    };
+    
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
   }
 });
 </script>
@@ -79,35 +113,87 @@ Un corredor de larga distancia entrena manteniendo un ritmo constante. Se observ
 1.  ¿Cuál es su velocidad constante?
 2.  Si mantiene ese mismo ritmo, ¿qué distancia recorrerá en $10\,\mathrm{s}$?
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 550px;">
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
-  <div id="jsxgraph-corredor" class="jsxgraph-container" style="width: 100%; height: 150px; border-radius: 8px; overflow: hidden;"></div>
+  <div id="echarts-corredor" style="width: 100%; height: 350px; border-radius: 8px;"></div>
 </div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-corredor')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-corredor', {
-      boundingbox: [-3, 3.5, 55, -0.5], axis: false, showCopyright: false, showNavigation: false, pan: {enabled: false}, zoom: {enabled: false}
-    });
-    board.create('segment', [[0, 1], [50, 1]], {strokeWidth: 3, strokeColor: '#374151', fixed: true});
-    // Marcas cada 5 metros (v = 5 m/s)
-    for (var i = 0; i <= 10; i++) {
-      var x = i * 5;
-      var col = (i == 0) ? '#22c55e' : (i == 4) ? '#f59e0b' : (i == 10) ? '#ef4444' : '#94a3b8';
-      board.create('point', [x, 1], {size: 3, fixed: true, color: col, name: '', withLabel: false});
-      board.create('text', [x, 0.4, i + 's'], {fontSize: 9, strokeColor: '#374151', fixed: true, anchorX: 'middle'});
-    }
-    // Etiquetas de posición
-    board.create('text', [0, 1.5, '0m'], {fontSize: 10, strokeColor: '#22c55e', fixed: true, anchorX: 'middle'});
-    board.create('text', [20, 1.5, '20m'], {fontSize: 10, strokeColor: '#f59e0b', fixed: true, anchorX: 'middle'});
-    board.create('text', [50, 1.5, '50m'], {fontSize: 10, strokeColor: '#ef4444', fixed: true, anchorX: 'middle'});
-    // Paso 1: Dato 20m en 4s
-    board.create('arrow', [[0, 2.3], [20, 2.3]], {strokeColor: '#f59e0b', strokeWidth: 2, fixed: true});
-    board.create('text', [10, 2.8, 'Dato: 20m en 4s'], {fontSize: 11, strokeColor: '#f59e0b', fixed: true, anchorX: 'middle'});
-    board.unsuspendUpdate();
+  if (typeof echarts !== 'undefined' && document.getElementById('echarts-corredor')) {
+    var chart = echarts.init(document.getElementById('echarts-corredor'));
+    
+    var option = {
+      title: {
+        text: 'Posición del corredor vs Tiempo',
+        subtext: 'MRU: v = 5 m/s → En 10s recorre 50m',
+        left: 'center',
+        textStyle: { fontSize: 16, fontWeight: 'bold', color: '#1e293b' },
+        subtextStyle: { fontSize: 12, color: '#22c55e' }
+      },
+      animation: true,
+      animationDuration: 1000,
+      grid: { left: '12%', right: '8%', top: '20%', bottom: '15%', show: true, borderColor: '#cbd5e1' },
+      xAxis: {
+        type: 'value',
+        name: 'Tiempo (s)',
+        nameLocation: 'middle',
+        nameGap: 30,
+        nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#374151' },
+        min: 0, max: 11,
+        axisLine: { lineStyle: { color: '#64748b' } },
+        splitLine: { show: true, lineStyle: { type: 'solid', color: '#94a3b8', width: 1 } }
+      },
+      yAxis: {
+        type: 'value',
+        name: 'Posición (m)',
+        nameLocation: 'middle',
+        nameGap: 45,
+        nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#374151' },
+        min: 0, max: 55,
+        axisLine: { lineStyle: { color: '#64748b' } },
+        splitLine: { show: true, lineStyle: { type: 'solid', color: '#94a3b8', width: 1 } }
+      },
+      series: [
+        {
+          name: 'Posición',
+          type: 'line',
+          smooth: false,
+          symbol: 'circle',
+          symbolSize: 10,
+          lineStyle: { width: 3, color: '#3b82f6' },
+          areaStyle: {
+            color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1,
+              colorStops: [{ offset: 0, color: 'rgba(59, 130, 246, 0.25)' }, { offset: 1, color: 'rgba(59, 130, 246, 0.02)' }]
+            }
+          },
+          itemStyle: { color: '#3b82f6', borderColor: '#fff', borderWidth: 2 },
+          data: [[0, 0], [2, 10], [4, 20], [6, 30], [8, 40], [10, 50]]
+        },
+        {
+          name: 'Dato (4s, 20m)',
+          type: 'scatter',
+          symbolSize: 16,
+          itemStyle: { color: '#f59e0b', borderColor: '#fff', borderWidth: 2 },
+          label: { show: true, formatter: 'Dato: 20m en 4s', position: 'right', fontSize: 11, fontWeight: 'bold', color: '#f59e0b' },
+          data: [[4, 20]]
+        },
+        {
+          name: 'Resultado',
+          type: 'scatter',
+          symbolSize: 16,
+          itemStyle: { color: '#22c55e', borderColor: '#fff', borderWidth: 2 },
+          label: { show: true, formatter: '50m en 10s', position: 'top', fontSize: 11, fontWeight: 'bold', color: '#22c55e' },
+          data: [[10, 50]]
+        }
+      ],
+      tooltip: { trigger: 'axis' }
+    };
+    
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
   }
 });
 </script>

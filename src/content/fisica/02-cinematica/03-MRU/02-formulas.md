@@ -61,25 +61,30 @@ $$
 
 Un atleta corre un desplazamiento de $100\,\mathrm{m}$ partiendo desde la línea de salida. Si tarda $10\,\mathrm{s}$ en llegar a la meta, ¿cuál fue su velocidad?
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 500px;">
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
-  <div id="jsxgraph-atleta" class="jsxgraph-container" style="width: 100%; height: 100px; border-radius: 8px; overflow: hidden;"></div>
+  <div id="echarts-atleta" style="width: 100%; height: 350px; border-radius: 8px;"></div>
 </div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-atleta')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-atleta', {
-      boundingbox: [-5, 2.5, 105, -0.5], axis: false, showCopyright: false, showNavigation: false, pan: {enabled: false}, zoom: {enabled: false}
-    });
-    board.create('segment', [[0, 0.8], [100, 0.8]], {strokeWidth: 3, strokeColor: '#374151', fixed: true});
-    board.create('point', [0, 0.8], {name: '0m', size: 4, fixed: true, color: '#22c55e', label: {offset: [0, -18], strokeColor: '#22c55e'}});
-    board.create('point', [100, 0.8], {name: '100m', size: 4, fixed: true, color: '#ef4444', label: {offset: [0, -18], strokeColor: '#ef4444'}});
-    board.create('arrow', [[0, 1.6], [100, 1.6]], {strokeColor: '#3b82f6', strokeWidth: 2, fixed: true});
-    board.create('text', [50, 2.1, 'x = 100m, t = 10s → v = ?'], {fontSize: 11, strokeColor: '#3b82f6', fixed: true, anchorX: 'middle'});
-    board.unsuspendUpdate();
+  if (typeof echarts !== 'undefined' && document.getElementById('echarts-atleta')) {
+    var chart = echarts.init(document.getElementById('echarts-atleta'));
+    var option = {
+      title: { text: 'Atleta: x = 100m, t = 10s → v = ?', left: 'center', textStyle: { fontSize: 15, fontWeight: 'bold', color: '#1e293b' } },
+      animation: true, animationDuration: 1000,
+      grid: { left: '12%', right: '8%', top: '15%', bottom: '15%', show: true, borderColor: '#cbd5e1' },
+      xAxis: { type: 'value', name: 'Tiempo (s)', nameLocation: 'middle', nameGap: 30, nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#374151' }, min: 0, max: 11, axisLine: { lineStyle: { color: '#64748b' } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
+      yAxis: { type: 'value', name: 'Posición (m)', nameLocation: 'middle', nameGap: 50, nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#374151' }, min: 0, max: 110, axisLine: { lineStyle: { color: '#64748b' } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
+      series: [
+        { type: 'line', smooth: false, symbol: 'circle', symbolSize: 12, lineStyle: { width: 3, color: '#3b82f6' }, areaStyle: { color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1, colorStops: [{ offset: 0, color: 'rgba(59, 130, 246, 0.3)' }, { offset: 1, color: 'rgba(59, 130, 246, 0.05)' }] } }, itemStyle: { color: '#3b82f6', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: function(p) { return p.data[1] + 'm'; }, position: 'top', fontSize: 11, fontWeight: 'bold' }, data: [[0, 0], [5, 50], [10, 100]] }
+      ],
+      tooltip: { trigger: 'axis' }
+    };
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
   }
 });
 </script>
@@ -101,25 +106,30 @@ $$
 
 El sonido viaja a una velocidad constante de $340\,\mathrm{m/s}$. Si un trueno se escucha $3\,\mathrm{s}$ después del relámpago, ¿cuál fue el desplazamiento ($x$) del sonido?
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 500px;">
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
-  <div id="jsxgraph-trueno" class="jsxgraph-container" style="width: 100%; height: 100px; border-radius: 8px; overflow: hidden;"></div>
+  <div id="echarts-trueno" style="width: 100%; height: 350px; border-radius: 8px;"></div>
 </div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-trueno')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-trueno', {
-      boundingbox: [-50, 2.5, 1100, -0.5], axis: false, showCopyright: false, showNavigation: false, pan: {enabled: false}, zoom: {enabled: false}
-    });
-    board.create('segment', [[0, 0.8], [1020, 0.8]], {strokeWidth: 3, strokeColor: '#374151', fixed: true});
-    board.create('point', [0, 0.8], {name: '⚡ Nube', size: 4, fixed: true, color: '#f59e0b', label: {offset: [0, -18], strokeColor: '#f59e0b'}});
-    board.create('point', [1020, 0.8], {name: '👂 Tú', size: 4, fixed: true, color: '#22c55e', label: {offset: [0, -18], strokeColor: '#22c55e'}});
-    board.create('arrow', [[0, 1.6], [1020, 1.6]], {strokeColor: '#3b82f6', strokeWidth: 2, fixed: true});
-    board.create('text', [510, 2.1, 'v = 340 m/s, t = 3s → x = ?'], {fontSize: 11, strokeColor: '#3b82f6', fixed: true, anchorX: 'middle'});
-    board.unsuspendUpdate();
+  if (typeof echarts !== 'undefined' && document.getElementById('echarts-trueno')) {
+    var chart = echarts.init(document.getElementById('echarts-trueno'));
+    var option = {
+      title: { text: 'Sonido del trueno: v = 340 m/s, t = 3s → x = ?', left: 'center', textStyle: { fontSize: 15, fontWeight: 'bold', color: '#1e293b' } },
+      animation: true, animationDuration: 1000,
+      grid: { left: '12%', right: '8%', top: '15%', bottom: '15%', show: true, borderColor: '#cbd5e1' },
+      xAxis: { type: 'value', name: 'Tiempo (s)', nameLocation: 'middle', nameGap: 30, nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#374151' }, min: 0, max: 3.5, axisLine: { lineStyle: { color: '#64748b' } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
+      yAxis: { type: 'value', name: 'Posición (m)', nameLocation: 'middle', nameGap: 55, nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#374151' }, min: 0, max: 1100, axisLine: { lineStyle: { color: '#64748b' } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
+      series: [
+        { type: 'line', smooth: false, symbol: 'circle', symbolSize: 12, lineStyle: { width: 3, color: '#f59e0b' }, areaStyle: { color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1, colorStops: [{ offset: 0, color: 'rgba(245, 158, 11, 0.3)' }, { offset: 1, color: 'rgba(245, 158, 11, 0.05)' }] } }, itemStyle: { color: '#f59e0b', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: function(p) { return p.data[1] + 'm'; }, position: 'top', fontSize: 11, fontWeight: 'bold' }, data: [[0, 0], [1, 340], [2, 680], [3, 1020]] }
+      ],
+      tooltip: { trigger: 'axis' }
+    };
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
   }
 });
 </script>
@@ -141,30 +151,32 @@ $$
 
 Un ciclista se encuentra en el **Kilómetro 10** ($x_i = 10\,\mathrm{km}$). Continúa a $20\,\mathrm{km/h}$ durante **2 horas**. ¿En qué kilómetro estará?
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 500px;">
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
-  <div id="jsxgraph-ciclista" class="jsxgraph-container" style="width: 100%; height: 120px; border-radius: 8px; overflow: hidden;"></div>
+  <div id="echarts-ciclista" style="width: 100%; height: 350px; border-radius: 8px;"></div>
 </div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-ciclista')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-ciclista', {
-      boundingbox: [-3, 3, 55, -0.5], axis: false, showCopyright: false, showNavigation: false, pan: {enabled: false}, zoom: {enabled: false}
-    });
-    board.create('segment', [[0, 1], [50, 1]], {strokeWidth: 3, strokeColor: '#374151', fixed: true});
-    // Marcas
-    board.create('point', [0, 1], {name: 'km 0', size: 3, fixed: true, color: '#94a3b8', label: {offset: [0, -18], strokeColor: '#94a3b8'}});
-    board.create('point', [10, 1], {name: 'km 10', size: 4, fixed: true, color: '#f59e0b', label: {offset: [0, -18], strokeColor: '#f59e0b'}});
-    board.create('point', [50, 1], {name: 'km 50', size: 4, fixed: true, color: '#22c55e', label: {offset: [0, -18], strokeColor: '#22c55e'}});
-    // Posición inicial
-    board.create('text', [10, 1.6, 'xᵢ = 10'], {fontSize: 10, strokeColor: '#f59e0b', fixed: true, anchorX: 'middle'});
-    // Desplazamiento
-    board.create('arrow', [[10, 2.2], [50, 2.2]], {strokeColor: '#3b82f6', strokeWidth: 2, fixed: true});
-    board.create('text', [30, 2.6, 'v·t = 20×2 = 40 km'], {fontSize: 10, strokeColor: '#3b82f6', fixed: true, anchorX: 'middle'});
-    board.unsuspendUpdate();
+  if (typeof echarts !== 'undefined' && document.getElementById('echarts-ciclista')) {
+    var chart = echarts.init(document.getElementById('echarts-ciclista'));
+    var option = {
+      title: { text: 'Ciclista: xᵢ = 10km, v = 20 km/h, t = 2h → xf = ?', left: 'center', textStyle: { fontSize: 14, fontWeight: 'bold', color: '#1e293b' } },
+      animation: true, animationDuration: 1000,
+      grid: { left: '12%', right: '8%', top: '15%', bottom: '15%', show: true, borderColor: '#cbd5e1' },
+      xAxis: { type: 'value', name: 'Tiempo (h)', nameLocation: 'middle', nameGap: 30, nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#374151' }, min: 0, max: 2.5, axisLine: { lineStyle: { color: '#64748b' } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
+      yAxis: { type: 'value', name: 'Posición (km)', nameLocation: 'middle', nameGap: 45, nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#374151' }, min: 0, max: 55, axisLine: { lineStyle: { color: '#64748b' } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
+      series: [
+        { type: 'line', smooth: false, symbol: 'circle', symbolSize: 12, lineStyle: { width: 3, color: '#22c55e' }, areaStyle: { color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1, colorStops: [{ offset: 0, color: 'rgba(34, 197, 94, 0.3)' }, { offset: 1, color: 'rgba(34, 197, 94, 0.05)' }] } }, itemStyle: { color: '#22c55e', borderColor: '#fff', borderWidth: 2 }, data: [[0, 10], [1, 30], [2, 50]] },
+        { type: 'scatter', symbolSize: 16, itemStyle: { color: '#f59e0b', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: 'xᵢ = 10 km', position: 'left', fontSize: 11, fontWeight: 'bold', color: '#f59e0b' }, data: [[0, 10]] },
+        { type: 'scatter', symbolSize: 16, itemStyle: { color: '#22c55e', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: 'xf = 50 km', position: 'top', fontSize: 11, fontWeight: 'bold', color: '#22c55e' }, data: [[2, 50]] }
+      ],
+      tooltip: { trigger: 'axis' }
+    };
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
   }
 });
 </script>
@@ -187,31 +199,32 @@ $$
 
 Un tren sale de **Ciudad A** ($x_i = 200\,\mathrm{km}$) hacia **Ciudad B** ($x_f = 500\,\mathrm{km}$) a $100\,\mathrm{km/h}$. ¿Cuánto tiempo tardará?
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 500px;">
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
-  <div id="jsxgraph-tren" class="jsxgraph-container" style="width: 100%; height: 120px; border-radius: 8px; overflow: hidden;"></div>
+  <div id="echarts-tren" style="width: 100%; height: 350px; border-radius: 8px;"></div>
 </div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-tren')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-tren', {
-      boundingbox: [-30, 3, 550, -0.5], axis: false, showCopyright: false, showNavigation: false, pan: {enabled: false}, zoom: {enabled: false}
-    });
-    board.create('segment', [[0, 1], [500, 1]], {strokeWidth: 3, strokeColor: '#374151', fixed: true});
-    // Marcas
-    board.create('point', [0, 1], {name: 'km 0', size: 3, fixed: true, color: '#94a3b8', label: {offset: [0, -18], strokeColor: '#94a3b8'}});
-    board.create('point', [200, 1], {name: 'Ciudad A', size: 4, fixed: true, color: '#f59e0b', label: {offset: [0, -18], strokeColor: '#f59e0b'}});
-    board.create('point', [500, 1], {name: 'Ciudad B', size: 4, fixed: true, color: '#22c55e', label: {offset: [0, -18], strokeColor: '#22c55e'}});
-    // Posiciones
-    board.create('text', [200, 1.5, '200 km'], {fontSize: 10, strokeColor: '#f59e0b', fixed: true, anchorX: 'middle'});
-    board.create('text', [500, 1.5, '500 km'], {fontSize: 10, strokeColor: '#22c55e', fixed: true, anchorX: 'middle'});
-    // Desplazamiento
-    board.create('arrow', [[200, 2.2], [500, 2.2]], {strokeColor: '#3b82f6', strokeWidth: 2, fixed: true});
-    board.create('text', [350, 2.6, 'Δx = 300 km, v = 100 km/h'], {fontSize: 10, strokeColor: '#3b82f6', fixed: true, anchorX: 'middle'});
-    board.unsuspendUpdate();
+  if (typeof echarts !== 'undefined' && document.getElementById('echarts-tren')) {
+    var chart = echarts.init(document.getElementById('echarts-tren'));
+    var option = {
+      title: { text: 'Tren: Δx = 300km, v = 100 km/h → t = ?', left: 'center', textStyle: { fontSize: 15, fontWeight: 'bold', color: '#1e293b' } },
+      animation: true, animationDuration: 1000,
+      grid: { left: '12%', right: '8%', top: '15%', bottom: '15%', show: true, borderColor: '#cbd5e1' },
+      xAxis: { type: 'value', name: 'Tiempo (h)', nameLocation: 'middle', nameGap: 30, nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#374151' }, min: 0, max: 3.5, axisLine: { lineStyle: { color: '#64748b' } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
+      yAxis: { type: 'value', name: 'Posición (km)', nameLocation: 'middle', nameGap: 50, nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#374151' }, min: 0, max: 550, axisLine: { lineStyle: { color: '#64748b' } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
+      series: [
+        { type: 'line', smooth: false, symbol: 'circle', symbolSize: 12, lineStyle: { width: 3, color: '#a855f7' }, areaStyle: { color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1, colorStops: [{ offset: 0, color: 'rgba(168, 85, 247, 0.3)' }, { offset: 1, color: 'rgba(168, 85, 247, 0.05)' }] } }, itemStyle: { color: '#a855f7', borderColor: '#fff', borderWidth: 2 }, data: [[0, 200], [1, 300], [2, 400], [3, 500]] },
+        { type: 'scatter', symbolSize: 16, itemStyle: { color: '#f59e0b', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: 'Ciudad A (200km)', position: 'left', fontSize: 10, fontWeight: 'bold', color: '#f59e0b' }, data: [[0, 200]] },
+        { type: 'scatter', symbolSize: 16, itemStyle: { color: '#22c55e', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: 'Ciudad B (500km)', position: 'top', fontSize: 10, fontWeight: 'bold', color: '#22c55e' }, data: [[3, 500]] }
+      ],
+      tooltip: { trigger: 'axis' }
+    };
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
   }
 });
 </script>

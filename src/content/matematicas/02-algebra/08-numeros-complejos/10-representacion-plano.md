@@ -57,48 +57,37 @@ El punto es $(-1, -2)$:
 
 Visualización de estos 4 puntos:
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 500px;">
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
-  <div id="jsxgraph-plano-complejo" class="jsxgraph-container" style="width: 100%; height: 400px; border-radius: 8px; overflow: hidden;"></div>
+  <div id="echarts-plano-complejo" style="width: 100%; height: 420px; border-radius: 8px;"></div>
 </div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined') {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-plano-complejo', {
-      boundingbox: [-6, 6, 9, -5],
-      axis: true,
-      showCopyright: false,
-      showNavigation: false,
-      pan: { enabled: false },
-      zoom: { enabled: false }
-    });
-    
-    // Cuadrantes
-    board.create('text', [5, 4, 'I'], { fontSize: 20, strokeColor: '#94a3b8', cssStyle: 'font-weight: bold;', fixed: true });
-    board.create('text', [-4, 4, 'II'], { fontSize: 20, strokeColor: '#94a3b8', cssStyle: 'font-weight: bold;', fixed: true });
-    board.create('text', [-4, -3.5, 'III'], { fontSize: 20, strokeColor: '#94a3b8', cssStyle: 'font-weight: bold;', fixed: true });
-    board.create('text', [5, -3.5, 'IV'], { fontSize: 20, strokeColor: '#94a3b8', cssStyle: 'font-weight: bold;', fixed: true });
-    
-    // Puntos de los ejemplos
-    var z1 = board.create('point', [3, 2], { name: '3 + 2i', size: 5, fixed: true, color: '#3b82f6', label: { fontSize: 12, offset: [8, 8] } });
-    var z2 = board.create('point', [-2, 4], { name: '-2 + 4i', size: 5, fixed: true, color: '#22c55e', label: { fontSize: 12, offset: [8, 8] } });
-    var z3 = board.create('point', [4, -3], { name: '4 - 3i', size: 5, fixed: true, color: '#f97316', label: { fontSize: 12, offset: [8, -12] } });
-    var z4 = board.create('point', [-1, -2], { name: '-1 - 2i', size: 5, fixed: true, color: '#a855f7', label: { fontSize: 12, offset: [8, -12] } });
-    
-    // Vectores desde el origen
-    board.create('arrow', [[0, 0], z1], { strokeColor: '#3b82f6', strokeWidth: 2, fixed: true });
-    board.create('arrow', [[0, 0], z2], { strokeColor: '#22c55e', strokeWidth: 2, fixed: true });
-    board.create('arrow', [[0, 0], z3], { strokeColor: '#f97316', strokeWidth: 2, fixed: true });
-    board.create('arrow', [[0, 0], z4], { strokeColor: '#a855f7', strokeWidth: 2, fixed: true });
-    
-    // Etiquetas de ejes
-    board.create('text', [8.3, -0.5, 'Eje Real'], { fontSize: 11, strokeColor: '#374151', cssStyle: 'font-weight: bold;', fixed: true });
-    board.create('text', [0.3, 5.5, 'Eje Imaginario'], { fontSize: 11, strokeColor: '#374151', cssStyle: 'font-weight: bold;', fixed: true });
-    
-    board.unsuspendUpdate();
+  if (typeof echarts !== 'undefined' && document.getElementById('echarts-plano-complejo')) {
+    var chart = echarts.init(document.getElementById('echarts-plano-complejo'));
+    var option = {
+      title: { text: 'Números complejos en el plano', subtext: 'Cada número z = a + bi corresponde al punto (a, b)', left: 'center', textStyle: { fontSize: 15, fontWeight: 'bold', color: '#1e293b' }, subtextStyle: { fontSize: 11, color: '#64748b' } },
+      animation: true, animationDuration: 1000,
+      grid: { left: '12%', right: '8%', top: '15%', bottom: '12%', show: true, borderColor: '#cbd5e1' },
+      xAxis: { type: 'value', name: 'Eje Real', nameLocation: 'end', nameTextStyle: { fontSize: 12, fontWeight: 'bold', color: '#374151' }, min: -5, max: 8, axisLine: { lineStyle: { color: '#374151', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
+      yAxis: { type: 'value', name: 'Eje Imaginario', nameLocation: 'end', nameTextStyle: { fontSize: 12, fontWeight: 'bold', color: '#374151' }, min: -5, max: 6, axisLine: { lineStyle: { color: '#374151', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
+      series: [
+        { name: 'z₁ = 3 + 2i', type: 'scatter', symbolSize: 16, itemStyle: { color: '#3b82f6', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: '3 + 2i', position: 'top', fontSize: 11, fontWeight: 'bold' }, data: [[3, 2]] },
+        { name: 'z₂ = -2 + 4i', type: 'scatter', symbolSize: 16, itemStyle: { color: '#22c55e', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: '-2 + 4i', position: 'top', fontSize: 11, fontWeight: 'bold' }, data: [[-2, 4]] },
+        { name: 'z₃ = 4 - 3i', type: 'scatter', symbolSize: 16, itemStyle: { color: '#f97316', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: '4 - 3i', position: 'bottom', fontSize: 11, fontWeight: 'bold' }, data: [[4, -3]] },
+        { name: 'z₄ = -1 - 2i', type: 'scatter', symbolSize: 16, itemStyle: { color: '#a855f7', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: '-1 - 2i', position: 'bottom', fontSize: 11, fontWeight: 'bold' }, data: [[-1, -2]] },
+        { name: 'Cuadrante I', type: 'scatter', symbolSize: 0, label: { show: true, formatter: 'I', fontSize: 22, fontWeight: 'bold', color: '#94a3b8' }, data: [[5, 4]] },
+        { name: 'Cuadrante II', type: 'scatter', symbolSize: 0, label: { show: true, formatter: 'II', fontSize: 22, fontWeight: 'bold', color: '#94a3b8' }, data: [[-4, 4]] },
+        { name: 'Cuadrante III', type: 'scatter', symbolSize: 0, label: { show: true, formatter: 'III', fontSize: 22, fontWeight: 'bold', color: '#94a3b8' }, data: [[-4, -4]] },
+        { name: 'Cuadrante IV', type: 'scatter', symbolSize: 0, label: { show: true, formatter: 'IV', fontSize: 22, fontWeight: 'bold', color: '#94a3b8' }, data: [[5, -4]] }
+      ],
+      tooltip: { trigger: 'item', formatter: function(p) { return p.seriesName; } }
+    };
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
   }
 });
 </script>
@@ -207,48 +196,35 @@ Si $z = 2 + 3i$, entonces $-z = -2 - 3i$.
 
 Visualización del conjugado y opuesto:
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 480px;">
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
-  <div id="jsxgraph-conjugado-opuesto" class="jsxgraph-container" style="width: 100%; height: 380px; border-radius: 8px; overflow: hidden;"></div>
+  <div id="echarts-conjugado-opuesto" style="width: 100%; height: 400px; border-radius: 8px;"></div>
 </div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined') {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-conjugado-opuesto', {
-      boundingbox: [-5, 5, 5, -5],
-      axis: true,
-      showCopyright: false,
-      showNavigation: false,
-      pan: { enabled: false },
-      zoom: { enabled: false }
-    });
-    
-    // z = 3 + 4i
-    var z = board.create('point', [3, 4], { name: 'z = 3 + 4i', size: 5, fixed: true, color: '#3b82f6', label: { fontSize: 11, offset: [8, 8] } });
-    board.create('arrow', [[0, 0], z], { strokeColor: '#3b82f6', strokeWidth: 2, fixed: true });
-    
-    // Conjugado z̄ = 3 - 4i
-    var zbar = board.create('point', [3, -4], { name: 'z̄ = 3 - 4i', size: 5, fixed: true, color: '#22c55e', label: { fontSize: 11, offset: [8, -12] } });
-    board.create('arrow', [[0, 0], zbar], { strokeColor: '#22c55e', strokeWidth: 2, fixed: true });
-    
-    // Línea de simetría (eje real)
-    board.create('segment', [z, zbar], { strokeColor: '#94a3b8', strokeWidth: 1, dash: 2, fixed: true });
-    
-    // Opuesto -z = -3 - 4i
-    var negz = board.create('point', [-3, -4], { name: '-z = -3 - 4i', size: 5, fixed: true, color: '#ef4444', label: { fontSize: 11, offset: [-80, -12] } });
-    board.create('arrow', [[0, 0], negz], { strokeColor: '#ef4444', strokeWidth: 2, fixed: true });
-    
-    // Línea de simetría (origen)
-    board.create('segment', [z, negz], { strokeColor: '#f97316', strokeWidth: 1, dash: 3, fixed: true });
-    
-    // Etiquetas de ejes
-    board.create('text', [4.3, -0.4, 'Re'], { fontSize: 12, strokeColor: '#374151', cssStyle: 'font-weight: bold;', fixed: true });
-    board.create('text', [0.2, 4.5, 'Im'], { fontSize: 12, strokeColor: '#374151', cssStyle: 'font-weight: bold;', fixed: true });
-    
-    board.unsuspendUpdate();
+  if (typeof echarts !== 'undefined' && document.getElementById('echarts-conjugado-opuesto')) {
+    var chart = echarts.init(document.getElementById('echarts-conjugado-opuesto'));
+    var option = {
+      title: { text: 'Conjugado y Opuesto', subtext: 'Conjugado: reflexión sobre eje real | Opuesto: reflexión sobre origen', left: 'center', textStyle: { fontSize: 15, fontWeight: 'bold', color: '#1e293b' }, subtextStyle: { fontSize: 10, color: '#64748b' } },
+      animation: true, animationDuration: 1000,
+      legend: { data: ['z = 3 + 4i', 'z̄ = 3 - 4i (conjugado)', '-z = -3 - 4i (opuesto)'], bottom: 5, textStyle: { fontSize: 10 } },
+      grid: { left: '12%', right: '8%', top: '18%', bottom: '20%', show: true, borderColor: '#cbd5e1' },
+      xAxis: { type: 'value', name: 'Re', nameLocation: 'end', nameTextStyle: { fontSize: 12, fontWeight: 'bold', color: '#374151' }, min: -5, max: 5, axisLine: { lineStyle: { color: '#374151', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
+      yAxis: { type: 'value', name: 'Im', nameLocation: 'end', nameTextStyle: { fontSize: 12, fontWeight: 'bold', color: '#374151' }, min: -5, max: 5, axisLine: { lineStyle: { color: '#374151', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
+      series: [
+        { name: 'z = 3 + 4i', type: 'scatter', symbolSize: 18, itemStyle: { color: '#3b82f6', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: 'z = 3 + 4i', position: 'right', fontSize: 11, fontWeight: 'bold' }, data: [[3, 4]] },
+        { name: 'z̄ = 3 - 4i (conjugado)', type: 'scatter', symbolSize: 18, itemStyle: { color: '#22c55e', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: 'z̄ = 3 - 4i', position: 'right', fontSize: 11, fontWeight: 'bold' }, data: [[3, -4]] },
+        { name: '-z = -3 - 4i (opuesto)', type: 'scatter', symbolSize: 18, itemStyle: { color: '#ef4444', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: '-z = -3 - 4i', position: 'left', fontSize: 11, fontWeight: 'bold' }, data: [[-3, -4]] },
+        { name: 'Simetría conjugado', type: 'line', lineStyle: { width: 2, type: 'dashed', color: '#94a3b8' }, symbol: 'none', data: [[3, 4], [3, -4]] },
+        { name: 'Simetría opuesto', type: 'line', lineStyle: { width: 2, type: 'dotted', color: '#f97316' }, symbol: 'none', data: [[3, 4], [-3, -4]] }
+      ],
+      tooltip: { trigger: 'item', formatter: function(p) { return p.seriesName; } }
+    };
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
   }
 });
 </script>

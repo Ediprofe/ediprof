@@ -40,25 +40,32 @@ $$
 
 Un atleta olímpico corre en una pista recta. Inicia en la línea de salida y cruza la meta ubicada a $100\,\mathrm{m}$ de distancia en un tiempo de $10\,\mathrm{s}$.
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 500px;">
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
-  <div id="jsxgraph-100m" class="jsxgraph-container" style="width: 100%; height: 120px; border-radius: 8px; overflow: hidden;"></div>
+  <div id="echarts-100m" style="width: 100%; height: 350px; border-radius: 8px;"></div>
 </div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-100m')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-100m', {
-      boundingbox: [-5, 3, 105, -1], axis: false, showCopyright: false, showNavigation: false, pan: {enabled: false}, zoom: {enabled: false}
-    });
-    board.create('segment', [[0, 0.5], [100, 0.5]], {strokeWidth: 3, strokeColor: '#374151', fixed: true});
-    board.create('point', [0, 0.5], {name: 'Salida', size: 4, fixed: true, color: '#22c55e', label: {offset: [0, -20], strokeColor: '#22c55e'}});
-    board.create('point', [100, 0.5], {name: 'Meta', size: 4, fixed: true, color: '#ef4444', label: {offset: [0, -20], strokeColor: '#ef4444'}});
-    board.create('arrow', [[0, 1.8], [100, 1.8]], {strokeColor: '#3b82f6', strokeWidth: 2, fixed: true});
-    board.create('text', [50, 2.4, '100 m en 10 s'], {fontSize: 12, strokeColor: '#3b82f6', fixed: true, anchorX: 'middle'});
-    board.unsuspendUpdate();
+  if (typeof echarts !== 'undefined' && document.getElementById('echarts-100m')) {
+    var chart = echarts.init(document.getElementById('echarts-100m'));
+    var option = {
+      title: { text: 'Carrera de 100 metros', subtext: '100m en 10s → v = 10 m/s', left: 'center', textStyle: { fontSize: 15, fontWeight: 'bold', color: '#1e293b' }, subtextStyle: { fontSize: 12, color: '#3b82f6' } },
+      animation: true, animationDuration: 1000,
+      grid: { left: '12%', right: '8%', top: '18%', bottom: '15%', show: true, borderColor: '#cbd5e1' },
+      xAxis: { type: 'value', name: 'Tiempo (s)', nameLocation: 'middle', nameGap: 30, nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#374151' }, min: 0, max: 11, axisLine: { lineStyle: { color: '#64748b' } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
+      yAxis: { type: 'value', name: 'Posición (m)', nameLocation: 'middle', nameGap: 50, nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#374151' }, min: 0, max: 110, axisLine: { lineStyle: { color: '#64748b' } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
+      series: [
+        { type: 'line', smooth: false, symbol: 'circle', symbolSize: 14, lineStyle: { width: 3, color: '#3b82f6' }, areaStyle: { color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1, colorStops: [{ offset: 0, color: 'rgba(59, 130, 246, 0.3)' }, { offset: 1, color: 'rgba(59, 130, 246, 0.05)' }] } }, itemStyle: { color: '#3b82f6', borderColor: '#fff', borderWidth: 2 }, data: [[0, 0], [5, 50], [10, 100]] },
+        { type: 'scatter', symbolSize: 18, itemStyle: { color: '#22c55e', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: 'Salida', position: 'bottom', fontSize: 11, fontWeight: 'bold', color: '#22c55e' }, data: [[0, 0]] },
+        { type: 'scatter', symbolSize: 18, itemStyle: { color: '#ef4444', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: 'Meta', position: 'top', fontSize: 11, fontWeight: 'bold', color: '#ef4444' }, data: [[10, 100]] }
+      ],
+      tooltip: { trigger: 'axis' }
+    };
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
   }
 });
 </script>
@@ -79,28 +86,34 @@ $$
 
 Una persona camina $60\,\mathrm{m}$ hacia el este, luego retrocede $20\,\mathrm{m}$ hacia el oeste. Tiempo total: $40\,\mathrm{s}$.
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 500px;">
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
-  <div id="jsxgraph-idavuelta" class="jsxgraph-container" style="width: 100%; height: 150px; border-radius: 8px; overflow: hidden;"></div>
+  <div id="echarts-idavuelta" style="width: 100%; height: 350px; border-radius: 8px;"></div>
 </div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-idavuelta')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-idavuelta', {
-      boundingbox: [-5, 4, 70, -1], axis: false, showCopyright: false, showNavigation: false, pan: {enabled: false}, zoom: {enabled: false}
-    });
-    board.create('segment', [[0, 1], [60, 1]], {strokeWidth: 2, strokeColor: '#374151', fixed: true});
-    board.create('point', [0, 1], {name: 'Inicio (0m)', size: 4, fixed: true, color: '#22c55e', label: {offset: [0, -20], strokeColor: '#22c55e'}});
-    board.create('point', [60, 1], {name: '60m', size: 4, fixed: true, color: '#3b82f6', label: {offset: [0, -20], strokeColor: '#3b82f6'}});
-    board.create('point', [40, 1], {name: 'Final (40m)', size: 4, fixed: true, color: '#ef4444', label: {offset: [0, -20], strokeColor: '#ef4444'}});
-    board.create('arrow', [[0, 2.5], [60, 2.5]], {strokeColor: '#3b82f6', strokeWidth: 2, fixed: true});
-    board.create('arrow', [[60, 2.2], [40, 2.2]], {strokeColor: '#ef4444', strokeWidth: 2, fixed: true});
-    board.create('text', [30, 3.2, '60 m →'], {fontSize: 11, strokeColor: '#3b82f6', fixed: true, anchorX: 'middle'});
-    board.create('text', [50, 1.6, '← 20 m'], {fontSize: 11, strokeColor: '#ef4444', fixed: true, anchorX: 'middle'});
-    board.unsuspendUpdate();
+  if (typeof echarts !== 'undefined' && document.getElementById('echarts-idavuelta')) {
+    var chart = echarts.init(document.getElementById('echarts-idavuelta'));
+    var option = {
+      title: { text: 'Caminata de ida y vuelta', subtext: 'Distancia = 80m, Desplazamiento = 40m', left: 'center', textStyle: { fontSize: 15, fontWeight: 'bold', color: '#1e293b' }, subtextStyle: { fontSize: 12, color: '#f59e0b' } },
+      animation: true, animationDuration: 1000,
+      grid: { left: '12%', right: '8%', top: '18%', bottom: '15%', show: true, borderColor: '#cbd5e1' },
+      xAxis: { type: 'value', name: 'Tiempo (s)', nameLocation: 'middle', nameGap: 30, nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#374151' }, min: 0, max: 45, axisLine: { lineStyle: { color: '#64748b' } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
+      yAxis: { type: 'value', name: 'Posición (m)', nameLocation: 'middle', nameGap: 45, nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#374151' }, min: 0, max: 70, axisLine: { lineStyle: { color: '#64748b' } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
+      series: [
+        { type: 'line', smooth: false, symbol: 'circle', symbolSize: 12, lineStyle: { width: 3, color: '#3b82f6' }, itemStyle: { color: '#3b82f6', borderColor: '#fff', borderWidth: 2 }, data: [[0, 0], [30, 60]] },
+        { type: 'line', smooth: false, symbol: 'circle', symbolSize: 12, lineStyle: { width: 3, color: '#ef4444' }, itemStyle: { color: '#ef4444', borderColor: '#fff', borderWidth: 2 }, data: [[30, 60], [40, 40]] },
+        { type: 'scatter', symbolSize: 18, itemStyle: { color: '#22c55e', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: 'Inicio', position: 'right', fontSize: 11, fontWeight: 'bold', color: '#22c55e' }, data: [[0, 0]] },
+        { type: 'scatter', symbolSize: 18, itemStyle: { color: '#3b82f6', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: '60m (ida)', position: 'top', fontSize: 10, fontWeight: 'bold', color: '#3b82f6' }, data: [[30, 60]] },
+        { type: 'scatter', symbolSize: 18, itemStyle: { color: '#ef4444', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: '40m (final)', position: 'right', fontSize: 10, fontWeight: 'bold', color: '#ef4444' }, data: [[40, 40]] }
+      ],
+      tooltip: { trigger: 'axis' }
+    };
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
   }
 });
 </script>

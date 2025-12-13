@@ -66,6 +66,88 @@ Aquí $m = 15$ (gana 15 por hora) y $b = 0$ (no hay pago base).
 | 5 | 75 |
 | 8 | 120 |
 
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="echarts-salario" style="width: 100%; height: 400px; border-radius: 8px;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof echarts !== 'undefined' && document.getElementById('echarts-salario')) {
+    var chart = echarts.init(document.getElementById('echarts-salario'));
+    
+    var option = {
+      title: {
+        text: 'Salario vs Horas trabajadas',
+        subtext: 'f(x) = 15x',
+        left: 'center',
+        textStyle: { fontSize: 16, fontWeight: 'bold', color: '#1e293b' },
+        subtextStyle: { fontSize: 13, color: '#3b82f6', fontWeight: 'bold' }
+      },
+      animation: true,
+      animationDuration: 1000,
+      grid: { left: '15%', right: '8%', top: '18%', bottom: '18%', show: true, borderColor: '#cbd5e1' },
+      xAxis: {
+        type: 'value',
+        name: 'Horas (x)',
+        nameLocation: 'middle',
+        nameGap: 32,
+        nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#374151' },
+        min: 0,
+        max: 9,
+        axisLine: { lineStyle: { color: '#64748b' } },
+        splitLine: { show: true, lineStyle: { type: 'solid', color: '#94a3b8', width: 1 } }
+      },
+      yAxis: {
+        type: 'value',
+        name: 'Salario ($)',
+        nameLocation: 'middle',
+        nameGap: 50,
+        nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#374151' },
+        min: 0,
+        max: 140,
+        axisLine: { lineStyle: { color: '#64748b' } },
+        splitLine: { show: true, lineStyle: { type: 'solid', color: '#94a3b8', width: 1 } }
+      },
+      series: [
+        {
+          name: 'f(x) = 15x',
+          type: 'line',
+          smooth: true,
+          symbol: 'none',
+          lineStyle: { width: 3, color: '#3b82f6' },
+          areaStyle: {
+            color: {
+              type: 'linear',
+              x: 0, y: 0, x2: 0, y2: 1,
+              colorStops: [
+                { offset: 0, color: 'rgba(59, 130, 246, 0.3)' },
+                { offset: 1, color: 'rgba(59, 130, 246, 0.05)' }
+              ]
+            }
+          },
+          data: [[0, 0], [1, 15], [2, 30], [3, 45], [4, 60], [5, 75], [6, 90], [7, 105], [8, 120]]
+        },
+        {
+          name: 'Puntos',
+          type: 'scatter',
+          symbolSize: 12,
+          itemStyle: { color: '#22c55e', borderColor: '#fff', borderWidth: 2 },
+          label: { show: true, formatter: function(p) { return '(' + p.data[0] + ', ' + p.data[1] + ')'; }, position: 'top', fontSize: 10 },
+          data: [[0, 0], [1, 15], [5, 75], [8, 120]]
+        }
+      ],
+      tooltip: { trigger: 'axis', formatter: 'Horas: {b}<br/>Salario: ${c}' }
+    };
+    
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
+  }
+});
+</script>
+
 ---
 
 ### Ejemplo 2: Servicio de taxi
@@ -83,6 +165,96 @@ Aquí $m = 2$ (costo por km) y $b = 3$ (tarifa base).
 | 0 | 3 |
 | 5 | 13 |
 | 10 | 23 |
+
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="echarts-taxi" style="width: 100%; height: 400px; border-radius: 8px;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof echarts !== 'undefined' && document.getElementById('echarts-taxi')) {
+    var chart = echarts.init(document.getElementById('echarts-taxi'));
+    
+    var option = {
+      title: {
+        text: 'Costo del taxi vs Kilómetros',
+        subtext: 'f(x) = 2x + 3',
+        left: 'center',
+        textStyle: { fontSize: 16, fontWeight: 'bold', color: '#1e293b' },
+        subtextStyle: { fontSize: 13, color: '#ef4444', fontWeight: 'bold' }
+      },
+      animation: true,
+      animationDuration: 1000,
+      grid: { left: '15%', right: '8%', top: '18%', bottom: '18%', show: true, borderColor: '#cbd5e1' },
+      xAxis: {
+        type: 'value',
+        name: 'Kilómetros (x)',
+        nameLocation: 'middle',
+        nameGap: 32,
+        nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#374151' },
+        min: 0,
+        max: 12,
+        axisLine: { lineStyle: { color: '#64748b' } },
+        splitLine: { show: true, lineStyle: { type: 'solid', color: '#94a3b8', width: 1 } }
+      },
+      yAxis: {
+        type: 'value',
+        name: 'Costo ($)',
+        nameLocation: 'middle',
+        nameGap: 45,
+        nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#374151' },
+        min: 0,
+        max: 28,
+        axisLine: { lineStyle: { color: '#64748b' } },
+        splitLine: { show: true, lineStyle: { type: 'solid', color: '#94a3b8', width: 1 } }
+      },
+      series: [
+        {
+          name: 'f(x) = 2x + 3',
+          type: 'line',
+          smooth: true,
+          symbol: 'none',
+          lineStyle: { width: 3, color: '#ef4444' },
+          areaStyle: {
+            color: {
+              type: 'linear', x: 0, y: 0, x2: 0, y2: 1,
+              colorStops: [
+                { offset: 0, color: 'rgba(239, 68, 68, 0.25)' },
+                { offset: 1, color: 'rgba(239, 68, 68, 0.02)' }
+              ]
+            }
+          },
+          data: [[0, 3], [2, 7], [4, 11], [6, 15], [8, 19], [10, 23]]
+        },
+        {
+          name: 'Puntos',
+          type: 'scatter',
+          symbolSize: 12,
+          itemStyle: { color: '#22c55e', borderColor: '#fff', borderWidth: 2 },
+          label: { show: true, formatter: function(p) { return '(' + p.data[0] + ', ' + p.data[1] + ')'; }, position: 'top', fontSize: 10 },
+          data: [[0, 3], [5, 13], [10, 23]]
+        },
+        {
+          name: 'Intercepto',
+          type: 'scatter',
+          symbolSize: 14,
+          symbol: 'diamond',
+          itemStyle: { color: '#f97316', borderColor: '#fff', borderWidth: 2 },
+          label: { show: true, formatter: 'b = 3', position: 'right', fontSize: 11, fontWeight: 'bold', color: '#f97316' },
+          data: [[0, 3]]
+        }
+      ],
+      tooltip: { trigger: 'axis' }
+    };
+    
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
+  }
+});
+</script>
 
 ---
 
@@ -118,6 +290,37 @@ La **pendiente** indica:
 | $m < 0$ | Recta descendente (baja de izquierda a derecha) |
 | $m = 0$ | Recta horizontal |
 
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="echarts-pendientes" style="width: 100%; height: 400px; border-radius: 8px;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof echarts !== 'undefined' && document.getElementById('echarts-pendientes')) {
+    var chart = echarts.init(document.getElementById('echarts-pendientes'));
+    var option = {
+      title: { text: 'Tipos de pendiente en funciones lineales', left: 'center', textStyle: { fontSize: 15, fontWeight: 'bold', color: '#1e293b' } },
+      animation: true, animationDuration: 1000,
+      legend: { data: ['m > 0 (ascendente)', 'm < 0 (descendente)', 'm = 0 (horizontal)'], bottom: 5, textStyle: { fontSize: 11 } },
+      grid: { left: '12%', right: '8%', top: '12%', bottom: '18%', show: true, borderColor: '#cbd5e1' },
+      xAxis: { type: 'value', name: 'x', nameLocation: 'end', min: -5, max: 5, axisLine: { lineStyle: { color: '#374151', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
+      yAxis: { type: 'value', name: 'y', nameLocation: 'end', min: -4, max: 6, axisLine: { lineStyle: { color: '#374151', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
+      series: [
+        { name: 'm > 0 (ascendente)', type: 'line', smooth: false, symbol: 'none', lineStyle: { width: 3, color: '#3b82f6' }, data: [[-4, -3], [-2, -1], [0, 1], [2, 3], [4, 5]] },
+        { name: 'm < 0 (descendente)', type: 'line', smooth: false, symbol: 'none', lineStyle: { width: 3, color: '#ef4444' }, data: [[-4, 5], [-2, 3], [0, 1], [2, -1], [4, -3]] },
+        { name: 'm = 0 (horizontal)', type: 'line', smooth: false, symbol: 'none', lineStyle: { width: 3, color: '#22c55e' }, data: [[-4, -2], [0, -2], [4, -2]] }
+      ],
+      tooltip: { trigger: 'item' }
+    };
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
+  }
+});
+</script>
+
 ---
 
 ### El intercepto (b)
@@ -149,6 +352,35 @@ f(x) = 5
 $$
 
 Para cualquier valor de $x$, $f(x) = 5$. La gráfica es una línea horizontal que pasa por $y = 5$.
+
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="echarts-constante" style="width: 100%; height: 350px; border-radius: 8px;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof echarts !== 'undefined' && document.getElementById('echarts-constante')) {
+    var chart = echarts.init(document.getElementById('echarts-constante'));
+    var option = {
+      title: { text: 'Función constante: f(x) = 5', subtext: 'Para cualquier valor de x, f(x) = 5', left: 'center', textStyle: { fontSize: 15, fontWeight: 'bold', color: '#1e293b' }, subtextStyle: { fontSize: 12, color: '#22c55e' } },
+      animation: true, animationDuration: 1000,
+      grid: { left: '12%', right: '8%', top: '18%', bottom: '15%', show: true, borderColor: '#cbd5e1' },
+      xAxis: { type: 'value', name: 'x', nameLocation: 'end', min: -5, max: 5, axisLine: { lineStyle: { color: '#374151', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
+      yAxis: { type: 'value', name: 'f(x)', nameLocation: 'end', min: 0, max: 8, axisLine: { lineStyle: { color: '#374151', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
+      series: [
+        { name: 'f(x) = 5', type: 'line', smooth: false, symbol: 'none', lineStyle: { width: 3, color: '#22c55e' }, data: [[-4.5, 5], [0, 5], [4.5, 5]] },
+        { name: 'Puntos', type: 'scatter', symbolSize: 14, itemStyle: { color: '#3b82f6', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: function(p) { return '(' + p.data[0] + ', 5)'; }, position: 'top', fontSize: 10 }, data: [[-3, 5], [0, 5], [3, 5]] }
+      ],
+      tooltip: { trigger: 'item' }
+    };
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
+  }
+});
+</script>
 
 ---
 

@@ -46,8 +46,12 @@ Para la elaboración de la lecciones, ten en cuenta que el una MATERIA > CAPITUL
 
 ## Solicitud concreta
 
-APLICA EL RECURSO GRÁFICO QUE CORRESPONDA PARA LA SIGUIENTE LECCIÓN
-http://localhost:4321/matematicas/algebra/numeros-complejos/conjugado
+APLICA EL RECURSO GRÁFICO QUE CORRESPONDA PARA LAS SIGUIENTES LECCIÓN
 
+http://localhost:4321/matematicas/algebra/funciones-lineales/introduccion
 
+PARA LA SIGUIENTE LECCIÓN: 
+http://localhost:4321/matematicas/algebra/funciones-lineales/plano-cartesiano
+
+POR FAVOR REPIENSA BIEN CÓMO ES LA SECUENCIA, SIENDO BRUTALMENTE SIMPLES Y CLAROS A LA VEZ, CON LOS GRÁFICOS INCLUIDOS. APLICA CORRECCIONES, CREO QUE ESTÁ MEJORABLE EN SU ORGANIZACIÓN.
 

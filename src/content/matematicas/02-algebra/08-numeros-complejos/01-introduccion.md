@@ -42,77 +42,33 @@ Con esta definición, la ecuación $x^2 = -1$ tiene solución: $x = i$ o $x = -i
 
 Observa cómo el eje imaginario **extiende** la recta numérica real hacia una nueva dimensión vertical:
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 470px;">
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
-  <div id="jsxgraph-eje-imaginario" class="jsxgraph-container" style="width: 100%; height: 380px; border-radius: 8px; overflow: hidden;"></div>
+  <div id="echarts-eje-imaginario" style="width: 100%; height: 400px; border-radius: 8px;"></div>
 </div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined') {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-eje-imaginario', {
-      boundingbox: [-4, 4, 4, -4],
-      axis: false,
-      showCopyright: false,
-      showNavigation: false,
-      pan: { enabled: false },
-      zoom: { enabled: false }
-    });
-    
-    // Eje real (horizontal)
-    board.create('line', [[0, 0], [1, 0]], {
-      strokeColor: '#3b82f6',
-      strokeWidth: 2,
-      straightFirst: true,
-      straightLast: true,
-      fixed: true
-    });
-    board.create('text', [3.3, -0.4, 'Reales'], {
-      fontSize: 12,
-      strokeColor: '#3b82f6',
-      cssStyle: 'font-weight: bold;',
-      fixed: true
-    });
-    
-    // Eje imaginario (vertical)
-    board.create('line', [[0, 0], [0, 1]], {
-      strokeColor: '#22c55e',
-      strokeWidth: 2,
-      straightFirst: true,
-      straightLast: true,
-      fixed: true
-    });
-    board.create('text', [0.3, 3.5, 'Imaginarios'], {
-      fontSize: 12,
-      strokeColor: '#22c55e',
-      cssStyle: 'font-weight: bold;',
-      fixed: true
-    });
-    
-    // Origen
-    board.create('point', [0, 0], {
-      name: '0',
-      size: 3,
-      fixed: true,
-      color: '#374151',
-      label: { fontSize: 12, offset: [-15, -15] }
-    });
-    
-    // Puntos en eje real
-    board.create('point', [1, 0], { name: '1', size: 2, fixed: true, color: '#3b82f6', label: { fontSize: 11, offset: [0, -15] } });
-    board.create('point', [2, 0], { name: '2', size: 2, fixed: true, color: '#3b82f6', label: { fontSize: 11, offset: [0, -15] } });
-    board.create('point', [-1, 0], { name: '-1', size: 2, fixed: true, color: '#3b82f6', label: { fontSize: 11, offset: [0, -15] } });
-    board.create('point', [-2, 0], { name: '-2', size: 2, fixed: true, color: '#3b82f6', label: { fontSize: 11, offset: [0, -15] } });
-    
-    // Puntos en eje imaginario
-    board.create('point', [0, 1], { name: 'i', size: 4, fixed: true, color: '#22c55e', label: { fontSize: 13, offset: [10, 0], cssStyle: 'font-weight: bold; font-style: italic;' } });
-    board.create('point', [0, 2], { name: '2i', size: 3, fixed: true, color: '#22c55e', label: { fontSize: 12, offset: [10, 0], cssStyle: 'font-style: italic;' } });
-    board.create('point', [0, -1], { name: '-i', size: 4, fixed: true, color: '#ef4444', label: { fontSize: 13, offset: [10, 0], cssStyle: 'font-weight: bold; font-style: italic;' } });
-    board.create('point', [0, -2], { name: '-2i', size: 3, fixed: true, color: '#ef4444', label: { fontSize: 12, offset: [10, 0], cssStyle: 'font-style: italic;' } });
-    
-    board.unsuspendUpdate();
+  if (typeof echarts !== 'undefined' && document.getElementById('echarts-eje-imaginario')) {
+    var chart = echarts.init(document.getElementById('echarts-eje-imaginario'));
+    var option = {
+      title: { text: 'El Plano Complejo', subtext: 'Eje real (horizontal) y eje imaginario (vertical)', left: 'center', textStyle: { fontSize: 15, fontWeight: 'bold', color: '#1e293b' }, subtextStyle: { fontSize: 11, color: '#64748b' } },
+      animation: true, animationDuration: 1000,
+      grid: { left: '15%', right: '15%', top: '15%', bottom: '12%', show: true, borderColor: '#cbd5e1' },
+      xAxis: { type: 'value', name: 'Reales', nameLocation: 'end', nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#3b82f6' }, min: -4, max: 4, axisLine: { lineStyle: { color: '#3b82f6', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
+      yAxis: { type: 'value', name: 'Imaginarios', nameLocation: 'end', nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#22c55e' }, min: -4, max: 4, axisLine: { lineStyle: { color: '#22c55e', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
+      series: [
+        { name: 'Origen', type: 'scatter', symbolSize: 16, itemStyle: { color: '#374151', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: '0', position: 'left', fontSize: 11, fontWeight: 'bold' }, data: [[0, 0]] },
+        { name: 'Reales', type: 'scatter', symbolSize: 12, itemStyle: { color: '#3b82f6', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: function(p) { return p.data[0]; }, position: 'bottom', fontSize: 10 }, data: [[-2, 0], [-1, 0], [1, 0], [2, 0]] },
+        { name: 'Imaginarios +', type: 'scatter', symbolSize: 14, itemStyle: { color: '#22c55e', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: function(p) { return p.data[1] + 'i'; }, position: 'right', fontSize: 11, fontWeight: 'bold', fontStyle: 'italic' }, data: [[0, 1], [0, 2]] },
+        { name: 'Imaginarios -', type: 'scatter', symbolSize: 14, itemStyle: { color: '#ef4444', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: function(p) { return p.data[1] + 'i'; }, position: 'right', fontSize: 11, fontWeight: 'bold', fontStyle: 'italic' }, data: [[0, -1], [0, -2]] }
+      ],
+      tooltip: { trigger: 'item' }
+    };
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
   }
 });
 </script>
@@ -164,68 +120,34 @@ donde $b$ es un número real y $b \neq 0$.
 
 En el eje imaginario, podemos visualizar estos números:
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 420px;">
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
-  <div id="jsxgraph-imaginarios-puros" class="jsxgraph-container" style="width: 100%; height: 360px; border-radius: 8px; overflow: hidden;"></div>
+  <div id="echarts-imaginarios-puros" style="width: 100%; height: 380px; border-radius: 8px;"></div>
 </div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined') {
-    var board2 = JXG.JSXGraph.initBoard('jsxgraph-imaginarios-puros', {
-      boundingbox: [-3, 6, 3, -6],
-      axis: false,
-      showCopyright: false,
-      showNavigation: false,
-      pan: { enabled: false },
-      zoom: { enabled: false }
-    });
-    
-    // Eje imaginario con flechas
-    board2.create('line', [[0, 0], [0, 1]], {
-      strokeColor: '#64748b',
-      strokeWidth: 2,
-      straightFirst: true,
-      straightLast: true,
-      fixed: true
-    });
-    
-    // Título
-    board2.create('text', [0, 5.5, 'Eje Imaginario'], {
-      fontSize: 14,
-      strokeColor: '#374151',
-      cssStyle: 'font-weight: bold;',
-      anchorX: 'middle',
-      fixed: true
-    });
-    
-    // Origen
-    board2.create('point', [0, 0], {
-      name: '0',
-      size: 3,
-      fixed: true,
-      color: '#374151',
-      label: { fontSize: 11, offset: [10, 0] }
-    });
-    
-    // Imaginarios positivos
-    board2.create('point', [0, 3], { name: '3i', size: 5, fixed: true, color: '#3b82f6', label: { fontSize: 14, offset: [12, 0], cssStyle: 'font-weight: bold; font-style: italic;' } });
-    board2.create('point', [0, 1.41], { name: '√2 i', size: 4, fixed: true, color: '#22c55e', label: { fontSize: 12, offset: [12, 0], cssStyle: 'font-style: italic;' } });
-    board2.create('point', [0, 0.5], { name: '½i', size: 4, fixed: true, color: '#f97316', label: { fontSize: 12, offset: [12, 0], cssStyle: 'font-style: italic;' } });
-    
-    // Imaginarios negativos
-    board2.create('point', [0, -5], { name: '-5i', size: 5, fixed: true, color: '#ef4444', label: { fontSize: 14, offset: [12, 0], cssStyle: 'font-weight: bold; font-style: italic;' } });
-    
-    // Marcas de escala
-    for (var j = -5; j <= 5; j++) {
-      if (j !== 0) {
-        board2.create('segment', [[-0.15, j], [0.15, j]], { strokeColor: '#94a3b8', strokeWidth: 1, fixed: true });
-      }
-    }
-    
-    board2.unsuspendUpdate();
+  if (typeof echarts !== 'undefined' && document.getElementById('echarts-imaginarios-puros')) {
+    var chart = echarts.init(document.getElementById('echarts-imaginarios-puros'));
+    var option = {
+      title: { text: 'Números Imaginarios Puros', subtext: 'Ubicados en el eje imaginario', left: 'center', textStyle: { fontSize: 15, fontWeight: 'bold', color: '#1e293b' }, subtextStyle: { fontSize: 11, color: '#64748b' } },
+      animation: true, animationDuration: 1000,
+      grid: { left: '20%', right: '20%', top: '15%', bottom: '12%', show: true, borderColor: '#cbd5e1' },
+      xAxis: { type: 'value', min: -1, max: 1, show: false },
+      yAxis: { type: 'value', name: 'Eje Imaginario', nameLocation: 'end', nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#374151' }, min: -6, max: 6, axisLine: { lineStyle: { color: '#64748b', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
+      series: [
+        { name: '0', type: 'scatter', symbolSize: 14, itemStyle: { color: '#374151', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: '0', position: 'right', fontSize: 11 }, data: [[0, 0]] },
+        { name: '3i', type: 'scatter', symbolSize: 16, itemStyle: { color: '#3b82f6', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: '3i', position: 'right', fontSize: 14, fontWeight: 'bold', fontStyle: 'italic' }, data: [[0, 3]] },
+        { name: '√2i', type: 'scatter', symbolSize: 14, itemStyle: { color: '#22c55e', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: '√2 i', position: 'right', fontSize: 12, fontStyle: 'italic' }, data: [[0, 1.41]] },
+        { name: '½i', type: 'scatter', symbolSize: 14, itemStyle: { color: '#f97316', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: '½i', position: 'right', fontSize: 12, fontStyle: 'italic' }, data: [[0, 0.5]] },
+        { name: '-5i', type: 'scatter', symbolSize: 16, itemStyle: { color: '#ef4444', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: '-5i', position: 'right', fontSize: 14, fontWeight: 'bold', fontStyle: 'italic' }, data: [[0, -5]] }
+      ],
+      tooltip: { trigger: 'item', formatter: function(p) { return p.seriesName; } }
+    };
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
   }
 });
 </script>
