@@ -4,7 +4,7 @@
 ## Contexto general
 
 ### Tu rol
-Me estás ayudando a generar las lecciones de clase que son archivos .md que se renderizan en mi página web. o puedes bien, tomar el rol de planeador docente para ayudarme a estructurar el árbol de carpetas y archivos .md que se van a generar. Así las cosas, tu rol puede ser dependiendo lo que te solicite, de generador de contenidos (lecciones .md), o de planeador docente (árbol de carpetas y archivos .md). O puedes también, una vez ya estén planeadas, generadas y aprobadas las lecciones, ayudarme con el componente gráfico, el cual se maneja a través de las librerías jsxgraph y chart.js, ya instaladas, y para lo cual te vas a guiar lo que dice en .agent/workflows/graphics-context.md
+Me estás ayudando a generar las lecciones de clase que son archivos .md que se renderizan en mi página web. o puedes bien, tomar el rol de planeador docente para ayudarme a estructurar el árbol de carpetas y archivos .md que se van a generar. Así las cosas, tu rol puede ser dependiendo lo que te solicite, de generador de contenidos (lecciones .md), o de planeador docente (árbol de carpetas y archivos .md). O puedes también, una vez ya estén planeadas, generadas y aprobadas las lecciones, ayudarme con el componente gráfico, el cual se maneja a través de las librerías ECHARTS y JSXGRAPHS, ya instaladas, y para lo cual te vas a guiar lo que dice en .agent/workflows/graphics-context.md
 
 Para la generación de gráficos por favor usar un Wrapper visual con las siguientes caracterísiticas: 
 - 📊 Icono solo (sin texto)
@@ -44,14 +44,16 @@ Por favor, en los títulos de cada sección de una lección, no les metas códig
 Para la elaboración de la lecciones, ten en cuenta que el una MATERIA > CAPITULO > TEMAS > LECCIÓN, y que en cada lección se abordan diferentes conceptos, los cuales quiero que los trabajes progresivamente, uno a uno, cosa que si empiezas uno, lo explicas por su definición o introducción, luego haces un par de ejemplos de ese concepto (o más si ves que es algo muy fácil, tipo identificar los elementos en una expresión algebraica), luego pasas al otro concepto dentro de esa lección, y luego haces un par de ejemplos de ese concepto, y luego pasas al siguiente concepto, y así sucesivamente. La idea es que al final cierres con una sección tipo, 2 ejercicios por concepto en una nueva sección de esa lección que se llame tipo "Ejercicios de práctica" o "Ejercicios para practicar", o el nombre que más adecuado encuentres.
 
 
+
 ## Solicitud concreta
 
-APLICA EL RECURSO GRÁFICO QUE CORRESPONDA PARA LAS SIGUIENTES LECCIÓN
+quiero que los gráficos cont tengan los ejes pintados así, de 1 en 1, y loas etiquetas de los ejes horicontal y vertical, o sea los valores (1,2,3,4...) vayan en la mitad, no al extremo de la cuadrícula que representa el plano me entiendes?
+![alt text](image-6.png)
+![alt text](image-7.png)
 
-http://localhost:4321/matematicas/algebra/funciones-lineales/introduccion
 
-PARA LA SIGUIENTE LECCIÓN: 
-http://localhost:4321/matematicas/algebra/funciones-lineales/plano-cartesiano
+confirmame si me entiendes la solciitud
 
-POR FAVOR REPIENSA BIEN CÓMO ES LA SECUENCIA, SIENDO BRUTALMENTE SIMPLES Y CLAROS A LA VEZ, CON LOS GRÁFICOS INCLUIDOS. APLICA CORRECCIONES, CREO QUE ESTÁ MEJORABLE EN SU ORGANIZACIÓN.
+
+
 

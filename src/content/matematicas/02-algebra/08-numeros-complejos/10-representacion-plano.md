@@ -69,11 +69,11 @@ document.addEventListener('DOMContentLoaded', function() {
   if (typeof echarts !== 'undefined' && document.getElementById('echarts-plano-complejo')) {
     var chart = echarts.init(document.getElementById('echarts-plano-complejo'));
     var option = {
-      title: { text: 'Números complejos en el plano', subtext: 'Cada número z = a + bi corresponde al punto (a, b)', left: 'center', textStyle: { fontSize: 15, fontWeight: 'bold', color: '#1e293b' }, subtextStyle: { fontSize: 11, color: '#64748b' } },
+      title: { text: 'Números complejos en el plano', left: 'center', textStyle: { fontSize: 15, fontWeight: 'bold', color: '#1e293b' } },
       animation: true, animationDuration: 1000,
-      grid: { left: '12%', right: '8%', top: '15%', bottom: '12%', show: true, borderColor: '#cbd5e1' },
-      xAxis: { type: 'value', name: 'Eje Real', nameLocation: 'end', nameTextStyle: { fontSize: 12, fontWeight: 'bold', color: '#374151' }, min: -5, max: 8, axisLine: { lineStyle: { color: '#374151', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
-      yAxis: { type: 'value', name: 'Eje Imaginario', nameLocation: 'end', nameTextStyle: { fontSize: 12, fontWeight: 'bold', color: '#374151' }, min: -5, max: 6, axisLine: { lineStyle: { color: '#374151', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
+      grid: { left: '12%', right: '8%', top: '10%', bottom: '15%', show: true, borderColor: '#cbd5e1' },
+      xAxis: { type: 'value', name: 'Eje Real', nameLocation: 'middle', nameGap: 30, nameTextStyle: { fontSize: 14, fontWeight: 'bold', color: '#374151' }, min: -5, max: 8, interval: 1, axisLine: { lineStyle: { color: '#374151', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } }, axisLabel: { fontSize: 11 } },
+      yAxis: { type: 'value', name: 'Eje Imaginario', nameLocation: 'middle', nameGap: 55, nameTextStyle: { fontSize: 14, fontWeight: 'bold', color: '#374151' }, min: -5, max: 6, interval: 1, axisLine: { lineStyle: { color: '#374151', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } }, axisLabel: { fontSize: 11 } },
       series: [
         { name: 'z₁ = 3 + 2i', type: 'scatter', symbolSize: 16, itemStyle: { color: '#3b82f6', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: '3 + 2i', position: 'top', fontSize: 11, fontWeight: 'bold' }, data: [[3, 2]] },
         { name: 'z₂ = -2 + 4i', type: 'scatter', symbolSize: 16, itemStyle: { color: '#22c55e', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: '-2 + 4i', position: 'top', fontSize: 11, fontWeight: 'bold' }, data: [[-2, 4]] },
@@ -208,12 +208,12 @@ document.addEventListener('DOMContentLoaded', function() {
   if (typeof echarts !== 'undefined' && document.getElementById('echarts-conjugado-opuesto')) {
     var chart = echarts.init(document.getElementById('echarts-conjugado-opuesto'));
     var option = {
-      title: { text: 'Conjugado y Opuesto', subtext: 'Conjugado: reflexión sobre eje real | Opuesto: reflexión sobre origen', left: 'center', textStyle: { fontSize: 15, fontWeight: 'bold', color: '#1e293b' }, subtextStyle: { fontSize: 10, color: '#64748b' } },
+      title: { text: 'Conjugado y Opuesto', left: 'center', textStyle: { fontSize: 15, fontWeight: 'bold', color: '#1e293b' } },
       animation: true, animationDuration: 1000,
       legend: { data: ['z = 3 + 4i', 'z̄ = 3 - 4i (conjugado)', '-z = -3 - 4i (opuesto)'], bottom: 5, textStyle: { fontSize: 10 } },
-      grid: { left: '12%', right: '8%', top: '18%', bottom: '20%', show: true, borderColor: '#cbd5e1' },
-      xAxis: { type: 'value', name: 'Re', nameLocation: 'end', nameTextStyle: { fontSize: 12, fontWeight: 'bold', color: '#374151' }, min: -5, max: 5, axisLine: { lineStyle: { color: '#374151', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
-      yAxis: { type: 'value', name: 'Im', nameLocation: 'end', nameTextStyle: { fontSize: 12, fontWeight: 'bold', color: '#374151' }, min: -5, max: 5, axisLine: { lineStyle: { color: '#374151', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
+      grid: { left: '12%', right: '8%', top: '10%', bottom: '22%', show: true, borderColor: '#cbd5e1' },
+      xAxis: { type: 'value', name: 'Re', nameLocation: 'middle', nameGap: 30, nameTextStyle: { fontSize: 14, fontWeight: 'bold', color: '#374151' }, min: -5, max: 5, interval: 1, axisLine: { lineStyle: { color: '#374151', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } }, axisLabel: { fontSize: 11 } },
+      yAxis: { type: 'value', name: 'Im', nameLocation: 'middle', nameGap: 30, nameTextStyle: { fontSize: 14, fontWeight: 'bold', color: '#374151' }, min: -5, max: 5, interval: 1, axisLine: { lineStyle: { color: '#374151', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } }, axisLabel: { fontSize: 11 } },
       series: [
         { name: 'z = 3 + 4i', type: 'scatter', symbolSize: 18, itemStyle: { color: '#3b82f6', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: 'z = 3 + 4i', position: 'right', fontSize: 11, fontWeight: 'bold' }, data: [[3, 4]] },
         { name: 'z̄ = 3 - 4i (conjugado)', type: 'scatter', symbolSize: 18, itemStyle: { color: '#22c55e', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: 'z̄ = 3 - 4i', position: 'right', fontSize: 11, fontWeight: 'bold' }, data: [[3, -4]] },

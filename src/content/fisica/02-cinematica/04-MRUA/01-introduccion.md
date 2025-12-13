@@ -52,9 +52,9 @@ document.addEventListener('DOMContentLoaded', function() {
   if (typeof echarts !== 'undefined' && document.getElementById('echarts-moto')) {
     var chart = echarts.init(document.getElementById('echarts-moto'));
     var option = {
-      title: { text: 'Velocidad vs Tiempo: Moto acelerando', subtext: 'MRUA: a = 5 m/s² (velocidad aumenta +5 m/s cada segundo)', left: 'center', textStyle: { fontSize: 15, fontWeight: 'bold', color: '#1e293b' }, subtextStyle: { fontSize: 12, color: '#f59e0b' } },
+      title: { text: 'Velocidad vs Tiempo: Moto acelerando', left: 'center', textStyle: { fontSize: 15, fontWeight: 'bold', color: '#1e293b' } },
       animation: true, animationDuration: 1000,
-      grid: { left: '12%', right: '8%', top: '20%', bottom: '15%', show: true, borderColor: '#cbd5e1' },
+      grid: { left: '12%', right: '8%', top: '12%', bottom: '15%', show: true, borderColor: '#cbd5e1' },
       xAxis: { type: 'value', name: 'Tiempo (s)', nameLocation: 'middle', nameGap: 30, nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#374151' }, min: 0, max: 4.5, axisLine: { lineStyle: { color: '#64748b' } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
       yAxis: { type: 'value', name: 'Velocidad (m/s)', nameLocation: 'middle', nameGap: 50, nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#374151' }, min: 0, max: 22, axisLine: { lineStyle: { color: '#64748b' } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
       series: [
@@ -100,9 +100,9 @@ document.addEventListener('DOMContentLoaded', function() {
   if (typeof echarts !== 'undefined' && document.getElementById('echarts-caida')) {
     var chart = echarts.init(document.getElementById('echarts-caida'));
     var option = {
-      title: { text: 'Velocidad vs Tiempo: Caída Libre', subtext: 'g = 9.8 m/s² (velocidad aumenta +9.8 m/s cada segundo)', left: 'center', textStyle: { fontSize: 15, fontWeight: 'bold', color: '#1e293b' }, subtextStyle: { fontSize: 12, color: '#f59e0b' } },
+      title: { text: 'Velocidad vs Tiempo: Caída Libre', left: 'center', textStyle: { fontSize: 15, fontWeight: 'bold', color: '#1e293b' } },
       animation: true, animationDuration: 1000,
-      grid: { left: '12%', right: '8%', top: '20%', bottom: '15%', show: true, borderColor: '#cbd5e1' },
+      grid: { left: '12%', right: '8%', top: '12%', bottom: '15%', show: true, borderColor: '#cbd5e1' },
       xAxis: { type: 'value', name: 'Tiempo (s)', nameLocation: 'middle', nameGap: 30, nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#374151' }, min: 0, max: 3.5, axisLine: { lineStyle: { color: '#64748b' } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
       yAxis: { type: 'value', name: 'Velocidad (m/s)', nameLocation: 'middle', nameGap: 50, nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#374151' }, min: 0, max: 32, axisLine: { lineStyle: { color: '#64748b' } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
       series: [

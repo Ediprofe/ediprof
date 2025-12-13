@@ -81,14 +81,12 @@ document.addEventListener('DOMContentLoaded', function() {
     var option = {
       title: {
         text: 'Salario vs Horas trabajadas',
-        subtext: 'f(x) = 15x',
         left: 'center',
-        textStyle: { fontSize: 16, fontWeight: 'bold', color: '#1e293b' },
-        subtextStyle: { fontSize: 13, color: '#3b82f6', fontWeight: 'bold' }
+        textStyle: { fontSize: 16, fontWeight: 'bold', color: '#1e293b' }
       },
       animation: true,
       animationDuration: 1000,
-      grid: { left: '15%', right: '8%', top: '18%', bottom: '18%', show: true, borderColor: '#cbd5e1' },
+      grid: { left: '15%', right: '8%', top: '12%', bottom: '18%', show: true, borderColor: '#cbd5e1' },
       xAxis: {
         type: 'value',
         name: 'Horas (x)',
@@ -181,14 +179,12 @@ document.addEventListener('DOMContentLoaded', function() {
     var option = {
       title: {
         text: 'Costo del taxi vs Kilómetros',
-        subtext: 'f(x) = 2x + 3',
         left: 'center',
-        textStyle: { fontSize: 16, fontWeight: 'bold', color: '#1e293b' },
-        subtextStyle: { fontSize: 13, color: '#ef4444', fontWeight: 'bold' }
+        textStyle: { fontSize: 16, fontWeight: 'bold', color: '#1e293b' }
       },
       animation: true,
       animationDuration: 1000,
-      grid: { left: '15%', right: '8%', top: '18%', bottom: '18%', show: true, borderColor: '#cbd5e1' },
+      grid: { left: '15%', right: '8%', top: '12%', bottom: '18%', show: true, borderColor: '#cbd5e1' },
       xAxis: {
         type: 'value',
         name: 'Kilómetros (x)',
@@ -305,10 +301,32 @@ document.addEventListener('DOMContentLoaded', function() {
       title: { text: 'Tipos de pendiente en funciones lineales', left: 'center', textStyle: { fontSize: 15, fontWeight: 'bold', color: '#1e293b' } },
       animation: true, animationDuration: 1000,
       legend: { data: ['m > 0 (ascendente)', 'm < 0 (descendente)', 'm = 0 (horizontal)'], bottom: 5, textStyle: { fontSize: 11 } },
-      grid: { left: '12%', right: '8%', top: '12%', bottom: '18%', show: true, borderColor: '#cbd5e1' },
-      xAxis: { type: 'value', name: 'x', nameLocation: 'end', min: -5, max: 5, axisLine: { lineStyle: { color: '#374151', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
-      yAxis: { type: 'value', name: 'y', nameLocation: 'end', min: -4, max: 6, axisLine: { lineStyle: { color: '#374151', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
+      grid: { left: '5%', right: '5%', top: '10%', bottom: '18%', show: true, borderColor: '#cbd5e1' },
+      xAxis: { 
+        type: 'value', min: -5, max: 5, interval: 1, 
+        axisLine: { onZero: true, lineStyle: { color: '#374151', width: 2 } }, 
+        splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } }, 
+        axisLabel: { show: false },
+        axisTick: { show: true, length: 6 }
+      },
+      yAxis: { 
+        type: 'value', min: -4, max: 6, interval: 1, 
+        axisLine: { onZero: true, lineStyle: { color: '#374151', width: 2 } }, 
+        splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } }, 
+        axisLabel: { show: false },
+        axisTick: { show: true, length: 6 }
+      },
       series: [
+        // Etiquetas eje X (sobre y=0)
+        { type: 'scatter', symbolSize: 0, label: { show: true, position: 'bottom', fontSize: 9, color: '#374151', formatter: function(p) { return p.data[0] !== 0 ? p.data[0] : ''; } }, data: [[-5,0],[-4,0],[-3,0],[-2,0],[-1,0],[1,0],[2,0],[3,0],[4,0],[5,0]] },
+        // Etiquetas eje Y (sobre x=0)
+        { type: 'scatter', symbolSize: 0, label: { show: true, position: 'left', fontSize: 9, color: '#374151', formatter: function(p) { return p.data[1] !== 0 ? p.data[1] : ''; } }, data: [[0,-4],[0,-3],[0,-2],[0,-1],[0,1],[0,2],[0,3],[0,4],[0,5],[0,6]] },
+        // Etiquetas x, y
+        { type: 'scatter', symbolSize: 0, label: { show: true, formatter: 'x', position: 'right', fontSize: 14, fontWeight: 'bold', color: '#374151' }, data: [[5, 0]] },
+        { type: 'scatter', symbolSize: 0, label: { show: true, formatter: 'y', position: 'top', fontSize: 14, fontWeight: 'bold', color: '#374151' }, data: [[0, 6]] },
+        // Origen
+        { type: 'scatter', symbolSize: 0, label: { show: true, formatter: '0', position: 'bottom', fontSize: 9, color: '#374151', offset: [-10, 0] }, data: [[0, 0]] },
+        // Líneas
         { name: 'm > 0 (ascendente)', type: 'line', smooth: false, symbol: 'none', lineStyle: { width: 3, color: '#3b82f6' }, data: [[-4, -3], [-2, -1], [0, 1], [2, 3], [4, 5]] },
         { name: 'm < 0 (descendente)', type: 'line', smooth: false, symbol: 'none', lineStyle: { width: 3, color: '#ef4444' }, data: [[-4, 5], [-2, 3], [0, 1], [2, -1], [4, -3]] },
         { name: 'm = 0 (horizontal)', type: 'line', smooth: false, symbol: 'none', lineStyle: { width: 3, color: '#22c55e' }, data: [[-4, -2], [0, -2], [4, -2]] }
@@ -365,12 +383,32 @@ document.addEventListener('DOMContentLoaded', function() {
   if (typeof echarts !== 'undefined' && document.getElementById('echarts-constante')) {
     var chart = echarts.init(document.getElementById('echarts-constante'));
     var option = {
-      title: { text: 'Función constante: f(x) = 5', subtext: 'Para cualquier valor de x, f(x) = 5', left: 'center', textStyle: { fontSize: 15, fontWeight: 'bold', color: '#1e293b' }, subtextStyle: { fontSize: 12, color: '#22c55e' } },
+      title: { text: 'Función constante: f(x) = 5', left: 'center', textStyle: { fontSize: 15, fontWeight: 'bold', color: '#1e293b' } },
       animation: true, animationDuration: 1000,
-      grid: { left: '12%', right: '8%', top: '18%', bottom: '15%', show: true, borderColor: '#cbd5e1' },
-      xAxis: { type: 'value', name: 'x', nameLocation: 'end', min: -5, max: 5, axisLine: { lineStyle: { color: '#374151', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
-      yAxis: { type: 'value', name: 'f(x)', nameLocation: 'end', min: 0, max: 8, axisLine: { lineStyle: { color: '#374151', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
+      grid: { left: '5%', right: '5%', top: '10%', bottom: '12%', show: true, borderColor: '#cbd5e1' },
+      xAxis: { 
+        type: 'value', min: -5, max: 5, interval: 1, 
+        axisLine: { onZero: true, lineStyle: { color: '#374151', width: 2 } }, 
+        splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } }, 
+        axisLabel: { show: false },
+        axisTick: { show: true, length: 6 }
+      },
+      yAxis: { 
+        type: 'value', min: 0, max: 8, interval: 1, 
+        axisLine: { lineStyle: { color: '#374151', width: 2 } }, 
+        splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } }, 
+        axisLabel: { show: false },
+        axisTick: { show: true, length: 6 }
+      },
       series: [
+        // Etiquetas eje X (sobre y=0)
+        { type: 'scatter', symbolSize: 0, label: { show: true, position: 'bottom', fontSize: 9, color: '#374151', formatter: function(p) { return p.data[0] !== 0 ? p.data[0] : ''; } }, data: [[-5,0],[-4,0],[-3,0],[-2,0],[-1,0],[1,0],[2,0],[3,0],[4,0],[5,0]] },
+        // Etiquetas eje Y (sobre x=0)
+        { type: 'scatter', symbolSize: 0, label: { show: true, position: 'left', fontSize: 9, color: '#374151', formatter: function(p) { return p.data[1]; } }, data: [[0,0],[0,1],[0,2],[0,3],[0,4],[0,5],[0,6],[0,7],[0,8]] },
+        // Etiquetas x, f(x)
+        { type: 'scatter', symbolSize: 0, label: { show: true, formatter: 'x', position: 'right', fontSize: 14, fontWeight: 'bold', color: '#374151' }, data: [[5, 0]] },
+        { type: 'scatter', symbolSize: 0, label: { show: true, formatter: 'f(x)', position: 'top', fontSize: 12, fontWeight: 'bold', color: '#374151' }, data: [[0, 8]] },
+        // Línea y puntos
         { name: 'f(x) = 5', type: 'line', smooth: false, symbol: 'none', lineStyle: { width: 3, color: '#22c55e' }, data: [[-4.5, 5], [0, 5], [4.5, 5]] },
         { name: 'Puntos', type: 'scatter', symbolSize: 14, itemStyle: { color: '#3b82f6', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: function(p) { return '(' + p.data[0] + ', 5)'; }, position: 'top', fontSize: 10 }, data: [[-3, 5], [0, 5], [3, 5]] }
       ],

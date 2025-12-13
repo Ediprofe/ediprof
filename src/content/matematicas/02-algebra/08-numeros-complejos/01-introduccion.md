@@ -54,11 +54,11 @@ document.addEventListener('DOMContentLoaded', function() {
   if (typeof echarts !== 'undefined' && document.getElementById('echarts-eje-imaginario')) {
     var chart = echarts.init(document.getElementById('echarts-eje-imaginario'));
     var option = {
-      title: { text: 'El Plano Complejo', subtext: 'Eje real (horizontal) y eje imaginario (vertical)', left: 'center', textStyle: { fontSize: 15, fontWeight: 'bold', color: '#1e293b' }, subtextStyle: { fontSize: 11, color: '#64748b' } },
+      title: { text: 'El Plano Complejo', left: 'center', textStyle: { fontSize: 15, fontWeight: 'bold', color: '#1e293b' } },
       animation: true, animationDuration: 1000,
-      grid: { left: '15%', right: '15%', top: '15%', bottom: '12%', show: true, borderColor: '#cbd5e1' },
-      xAxis: { type: 'value', name: 'Reales', nameLocation: 'end', nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#3b82f6' }, min: -4, max: 4, axisLine: { lineStyle: { color: '#3b82f6', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
-      yAxis: { type: 'value', name: 'Imaginarios', nameLocation: 'end', nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#22c55e' }, min: -4, max: 4, axisLine: { lineStyle: { color: '#22c55e', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
+      grid: { left: '15%', right: '10%', top: '10%', bottom: '15%', show: true, borderColor: '#cbd5e1' },
+      xAxis: { type: 'value', name: 'Reales', nameLocation: 'middle', nameGap: 30, nameTextStyle: { fontSize: 14, fontWeight: 'bold', color: '#3b82f6' }, min: -4, max: 4, interval: 1, axisLine: { lineStyle: { color: '#3b82f6', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } }, axisLabel: { fontSize: 11 } },
+      yAxis: { type: 'value', name: 'Imaginarios', nameLocation: 'middle', nameGap: 55, nameTextStyle: { fontSize: 14, fontWeight: 'bold', color: '#22c55e' }, min: -4, max: 4, interval: 1, axisLine: { lineStyle: { color: '#22c55e', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } }, axisLabel: { fontSize: 11 } },
       series: [
         { name: 'Origen', type: 'scatter', symbolSize: 16, itemStyle: { color: '#374151', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: '0', position: 'left', fontSize: 11, fontWeight: 'bold' }, data: [[0, 0]] },
         { name: 'Reales', type: 'scatter', symbolSize: 12, itemStyle: { color: '#3b82f6', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: function(p) { return p.data[0]; }, position: 'bottom', fontSize: 10 }, data: [[-2, 0], [-1, 0], [1, 0], [2, 0]] },
@@ -132,11 +132,11 @@ document.addEventListener('DOMContentLoaded', function() {
   if (typeof echarts !== 'undefined' && document.getElementById('echarts-imaginarios-puros')) {
     var chart = echarts.init(document.getElementById('echarts-imaginarios-puros'));
     var option = {
-      title: { text: 'Números Imaginarios Puros', subtext: 'Ubicados en el eje imaginario', left: 'center', textStyle: { fontSize: 15, fontWeight: 'bold', color: '#1e293b' }, subtextStyle: { fontSize: 11, color: '#64748b' } },
+      title: { text: 'Números Imaginarios Puros', left: 'center', textStyle: { fontSize: 15, fontWeight: 'bold', color: '#1e293b' } },
       animation: true, animationDuration: 1000,
-      grid: { left: '20%', right: '20%', top: '15%', bottom: '12%', show: true, borderColor: '#cbd5e1' },
+      grid: { left: '20%', right: '15%', top: '10%', bottom: '15%', show: true, borderColor: '#cbd5e1' },
       xAxis: { type: 'value', min: -1, max: 1, show: false },
-      yAxis: { type: 'value', name: 'Eje Imaginario', nameLocation: 'end', nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#374151' }, min: -6, max: 6, axisLine: { lineStyle: { color: '#64748b', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
+      yAxis: { type: 'value', name: 'Eje Imaginario', nameLocation: 'middle', nameGap: 50, nameTextStyle: { fontSize: 14, fontWeight: 'bold', color: '#374151' }, min: -6, max: 6, interval: 1, axisLine: { lineStyle: { color: '#64748b', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } }, axisLabel: { fontSize: 11 } },
       series: [
         { name: '0', type: 'scatter', symbolSize: 14, itemStyle: { color: '#374151', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: '0', position: 'right', fontSize: 11 }, data: [[0, 0]] },
         { name: '3i', type: 'scatter', symbolSize: 16, itemStyle: { color: '#3b82f6', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: '3i', position: 'right', fontSize: 14, fontWeight: 'bold', fontStyle: 'italic' }, data: [[0, 3]] },

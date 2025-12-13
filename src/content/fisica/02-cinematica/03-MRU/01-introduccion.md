@@ -30,14 +30,12 @@ document.addEventListener('DOMContentLoaded', function() {
     var option = {
       title: {
         text: 'Posición del robot vs Tiempo',
-        subtext: 'MRU: v = 4 m/s (distancias iguales en tiempos iguales)',
         left: 'center',
-        textStyle: { fontSize: 16, fontWeight: 'bold', color: '#1e293b' },
-        subtextStyle: { fontSize: 12, color: '#3b82f6' }
+        textStyle: { fontSize: 16, fontWeight: 'bold', color: '#1e293b' }
       },
       animation: true,
       animationDuration: 1000,
-      grid: { left: '12%', right: '8%', top: '20%', bottom: '15%', show: true, borderColor: '#cbd5e1' },
+      grid: { left: '12%', right: '8%', top: '12%', bottom: '15%', show: true, borderColor: '#cbd5e1' },
       xAxis: {
         type: 'value',
         name: 'Tiempo (s)',
@@ -128,14 +126,12 @@ document.addEventListener('DOMContentLoaded', function() {
     var option = {
       title: {
         text: 'Posición del corredor vs Tiempo',
-        subtext: 'MRU: v = 5 m/s → En 10s recorre 50m',
         left: 'center',
-        textStyle: { fontSize: 16, fontWeight: 'bold', color: '#1e293b' },
-        subtextStyle: { fontSize: 12, color: '#22c55e' }
+        textStyle: { fontSize: 16, fontWeight: 'bold', color: '#1e293b' }
       },
       animation: true,
       animationDuration: 1000,
-      grid: { left: '12%', right: '8%', top: '20%', bottom: '15%', show: true, borderColor: '#cbd5e1' },
+      grid: { left: '12%', right: '8%', top: '12%', bottom: '15%', show: true, borderColor: '#cbd5e1' },
       xAxis: {
         type: 'value',
         name: 'Tiempo (s)',

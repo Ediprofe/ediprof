@@ -56,11 +56,11 @@ document.addEventListener('DOMContentLoaded', function() {
   if (typeof echarts !== 'undefined' && document.getElementById('echarts-modulo')) {
     var chart = echarts.init(document.getElementById('echarts-modulo'));
     var option = {
-      title: { text: 'Módulo de z = 3 + 4i', subtext: '|z| = √(3² + 4²) = 5 (Teorema de Pitágoras)', left: 'center', textStyle: { fontSize: 15, fontWeight: 'bold', color: '#1e293b' }, subtextStyle: { fontSize: 11, color: '#3b82f6' } },
+      title: { text: 'Módulo de z = 3 + 4i', left: 'center', textStyle: { fontSize: 15, fontWeight: 'bold', color: '#1e293b' } },
       animation: true, animationDuration: 1000,
-      grid: { left: '12%', right: '8%', top: '18%', bottom: '12%', show: true, borderColor: '#cbd5e1' },
-      xAxis: { type: 'value', name: 'Re', nameLocation: 'end', nameTextStyle: { fontSize: 12, fontWeight: 'bold', color: '#374151' }, min: -1, max: 6, axisLine: { lineStyle: { color: '#374151', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
-      yAxis: { type: 'value', name: 'Im', nameLocation: 'end', nameTextStyle: { fontSize: 12, fontWeight: 'bold', color: '#374151' }, min: -1, max: 6, axisLine: { lineStyle: { color: '#374151', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
+      grid: { left: '12%', right: '8%', top: '10%', bottom: '15%', show: true, borderColor: '#cbd5e1' },
+      xAxis: { type: 'value', name: 'Re', nameLocation: 'middle', nameGap: 30, nameTextStyle: { fontSize: 14, fontWeight: 'bold', color: '#374151' }, min: -1, max: 6, interval: 1, axisLine: { lineStyle: { color: '#374151', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } }, axisLabel: { fontSize: 11 } },
+      yAxis: { type: 'value', name: 'Im', nameLocation: 'middle', nameGap: 30, nameTextStyle: { fontSize: 14, fontWeight: 'bold', color: '#374151' }, min: -1, max: 6, interval: 1, axisLine: { lineStyle: { color: '#374151', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } }, axisLabel: { fontSize: 11 } },
       series: [
         { name: 'Cateto a (parte real)', type: 'line', lineStyle: { width: 3, color: '#ef4444' }, symbol: 'none', data: [[0, 0], [3, 0]] },
         { name: 'Cateto b (parte imaginaria)', type: 'line', lineStyle: { width: 3, color: '#22c55e' }, symbol: 'none', data: [[3, 0], [3, 4]] },
