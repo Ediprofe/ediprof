@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var option = {
       title: { text: 'Posición vs Tiempo del atleta', left: 'center', textStyle: { fontSize: 15, fontWeight: 'bold', color: '#1e293b' } },
       animation: true, animationDuration: 1000,
-      grid: { left: '12%', right: '8%', top: '15%', bottom: '15%', show: true, borderColor: '#cbd5e1' },
+      grid: { left: '18%', right: '8%', top: '15%', bottom: '18%', show: true, borderColor: '#cbd5e1' },
       xAxis: { type: 'value', name: 'Tiempo (s)', nameLocation: 'middle', nameGap: 30, nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#374151' }, min: 0, max: 11, interval: 1, axisLine: { lineStyle: { color: '#64748b' } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
       yAxis: { type: 'value', name: 'Posición (m)', nameLocation: 'middle', nameGap: 50, nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#374151' }, min: 0, max: 110, interval: 10, axisLine: { lineStyle: { color: '#64748b' } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
       series: [
@@ -281,7 +281,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var option = {
       title: { text: 'Posición del sonido vs Tiempo', left: 'center', textStyle: { fontSize: 15, fontWeight: 'bold', color: '#1e293b' } },
       animation: true, animationDuration: 1000,
-      grid: { left: '12%', right: '8%', top: '15%', bottom: '15%', show: true, borderColor: '#cbd5e1' },
+      grid: { left: '18%', right: '8%', top: '15%', bottom: '18%', show: true, borderColor: '#cbd5e1' },
       xAxis: { type: 'value', name: 'Tiempo (s)', nameLocation: 'middle', nameGap: 30, nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#374151' }, min: 0, max: 3.5, interval: 0.5, axisLine: { lineStyle: { color: '#64748b' } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
       yAxis: { type: 'value', name: 'Posición (m)', nameLocation: 'middle', nameGap: 55, nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#374151' }, min: 0, max: 1100, interval: 200, axisLine: { lineStyle: { color: '#64748b' } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
       series: [
@@ -405,7 +405,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var option = {
       title: { text: 'Posición del ciclista vs Tiempo', left: 'center', textStyle: { fontSize: 15, fontWeight: 'bold', color: '#1e293b' } },
       animation: true, animationDuration: 1000,
-      grid: { left: '12%', right: '8%', top: '15%', bottom: '15%', show: true, borderColor: '#cbd5e1' },
+      grid: { left: '18%', right: '8%', top: '15%', bottom: '18%', show: true, borderColor: '#cbd5e1' },
       xAxis: { type: 'value', name: 'Tiempo (h)', nameLocation: 'middle', nameGap: 30, nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#374151' }, min: 0, max: 2.5, interval: 0.5, axisLine: { lineStyle: { color: '#64748b' } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
       yAxis: { type: 'value', name: 'Posición (km)', nameLocation: 'middle', nameGap: 45, nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#374151' }, min: 0, max: 55, interval: 10, axisLine: { lineStyle: { color: '#64748b' } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
       series: [
@@ -552,13 +552,13 @@ document.addEventListener('DOMContentLoaded', function() {
     var option = {
       title: { text: 'Posición del tren vs Tiempo', left: 'center', textStyle: { fontSize: 15, fontWeight: 'bold', color: '#1e293b' } },
       animation: true, animationDuration: 1000,
-      grid: { left: '12%', right: '8%', top: '15%', bottom: '15%', show: true, borderColor: '#cbd5e1' },
+      grid: { left: '18%', right: '8%', top: '15%', bottom: '18%', show: true, borderColor: '#cbd5e1' },
       xAxis: { type: 'value', name: 'Tiempo (h)', nameLocation: 'middle', nameGap: 30, nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#374151' }, min: 0, max: 3.5, interval: 0.5, axisLine: { lineStyle: { color: '#64748b' } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
       yAxis: { type: 'value', name: 'Posición (km)', nameLocation: 'middle', nameGap: 50, nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#374151' }, min: 0, max: 550, interval: 100, axisLine: { lineStyle: { color: '#64748b' } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } } },
       series: [
         { type: 'line', smooth: false, symbol: 'circle', symbolSize: 12, lineStyle: { width: 3, color: '#a855f7' }, areaStyle: { color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1, colorStops: [{ offset: 0, color: 'rgba(168, 85, 247, 0.3)' }, { offset: 1, color: 'rgba(168, 85, 247, 0.05)' }] } }, itemStyle: { color: '#a855f7', borderColor: '#fff', borderWidth: 2 }, data: [[0, 200], [1, 300], [2, 400], [3, 500]] },
-        { type: 'scatter', symbolSize: 16, itemStyle: { color: '#f59e0b', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: 'Ciudad A', position: 'left', fontSize: 10, fontWeight: 'bold', color: '#f59e0b' }, data: [[0, 200]] },
-        { type: 'scatter', symbolSize: 16, itemStyle: { color: '#22c55e', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: 'Ciudad B', position: 'top', fontSize: 10, fontWeight: 'bold', color: '#22c55e' }, data: [[3, 500]] }
+        { type: 'scatter', symbolSize: 16, itemStyle: { color: '#f59e0b', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: 'Montería', position: 'right', fontSize: 10, fontWeight: 'bold', color: '#f59e0b' }, data: [[0, 200]] },
+        { type: 'scatter', symbolSize: 16, itemStyle: { color: '#22c55e', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: 'Cartagena', position: 'top', fontSize: 10, fontWeight: 'bold', color: '#22c55e' }, data: [[3, 500]] }
       ],
       tooltip: { trigger: 'axis' }
     };
@@ -576,4 +576,4 @@ document.addEventListener('DOMContentLoaded', function() {
 |----------|---------|-----------|
 | **Tiempo** | $t = \frac{\Delta x}{v} = \frac{300}{100}$ | $3\,\mathrm{h}$ |
 
-> 💡 **Conclusión:** El viaje de Ciudad A a Ciudad B durará 3 horas.
+> 💡 **Conclusión:** El viaje de Montería a Cartagena durará 3 horas.

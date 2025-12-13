@@ -40,6 +40,67 @@ $$
 
 Una motocicleta está detenida frente a un semáforo en rojo. Cuando cambia a verde, el conductor acelera con $a = 5\,\mathrm{m/s^2}$ durante 4 segundos.
 
+### 🎯 **Representación de la situación**
+
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
+  <canvas id="roughjs-moto-sit" width="600" height="110" style="width: 100%; height: auto;"></canvas>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof rough !== 'undefined' && document.getElementById('roughjs-moto-sit')) {
+    var canvas = document.getElementById('roughjs-moto-sit');
+    var rc = rough.canvas(canvas);
+    var ctx = canvas.getContext('2d');
+    
+    // Carretera
+    rc.line(30, 60, 570, 60, { stroke: '#64748b', strokeWidth: 2, roughness: 0.8 });
+    
+    // Semáforo (poste y círculos)
+    rc.rectangle(45, 15, 25, 40, { fill: '#1f2937', fillStyle: 'solid', stroke: '#1f2937', roughness: 0.6 });
+    rc.circle(57, 25, 10, { fill: '#22c55e', fillStyle: 'solid', stroke: '#22c55e', roughness: 0.5 });
+    rc.rectangle(55, 55, 5, 20, { fill: '#64748b', fillStyle: 'solid', stroke: '#64748b', roughness: 0.4 });
+    
+    // Moto (en el inicio)
+    rc.circle(90, 55, 14, { fill: '#3b82f6', fillStyle: 'solid', stroke: '#3b82f6', roughness: 0.8 });
+    
+    // Flecha de movimiento (acelerando)
+    rc.line(110, 50, 450, 50, { stroke: '#3b82f6', strokeWidth: 3, roughness: 1.3 });
+    rc.line(430, 40, 450, 50, { stroke: '#3b82f6', strokeWidth: 2, roughness: 1 });
+    rc.line(430, 60, 450, 50, { stroke: '#3b82f6', strokeWidth: 2, roughness: 1 });
+    
+    // Velocidades en puntos intermedios
+    rc.circle(200, 50, 6, { fill: '#94a3b8', fillStyle: 'solid', roughness: 0.5 });
+    rc.circle(300, 50, 6, { fill: '#94a3b8', fillStyle: 'solid', roughness: 0.5 });
+    rc.circle(400, 50, 6, { fill: '#94a3b8', fillStyle: 'solid', roughness: 0.5 });
+    
+    // Moto al final
+    rc.circle(480, 55, 14, { fill: '#22c55e', fillStyle: 'solid', stroke: '#22c55e', roughness: 0.8 });
+    
+    // Textos
+    ctx.font = 'bold 11px Inter, sans-serif';
+    ctx.fillStyle = '#3b82f6';
+    ctx.fillText('🏍️ v₀=0', 70, 90);
+    
+    ctx.fillStyle = '#22c55e';
+    ctx.fillText('🏍️ v=?', 460, 90);
+    
+    ctx.font = 'bold 14px Inter, sans-serif';
+    ctx.fillStyle = '#3b82f6';
+    ctx.textAlign = 'center';
+    ctx.fillText('a = 5 m/s² durante t = 4 s', 300, 20);
+    
+    ctx.font = '11px Inter, sans-serif';
+    ctx.fillStyle = '#64748b';
+    ctx.fillText('La velocidad aumenta cada segundo', 300, 105);
+  }
+});
+</script>
+
+---
+
+### 📊 **Visualización: Velocidad vs Tiempo**
+
 <div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
@@ -87,6 +148,75 @@ $a = 5\,\mathrm{m/s^2}$ significa: **"Cada segundo, la moto suma 5 m/s a su velo
 ## ⚙️ **Ejercicio 2 — Caída Libre (La Gravedad)**
 
 Un estudiante deja caer una piedra desde la azotea de un edificio alto. La **Caída Libre** es MRUA donde la aceleración es la **Gravedad**: $g = 9.8\,\mathrm{m/s^2}$.
+
+### 🎯 **Representación de la situación**
+
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
+  <canvas id="roughjs-caida-sit" width="600" height="150" style="width: 100%; height: auto;"></canvas>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof rough !== 'undefined' && document.getElementById('roughjs-caida-sit')) {
+    var canvas = document.getElementById('roughjs-caida-sit');
+    var rc = rough.canvas(canvas);
+    var ctx = canvas.getContext('2d');
+    
+    // Edificio
+    rc.rectangle(50, 20, 80, 120, { fill: '#cbd5e1', fillStyle: 'solid', stroke: '#64748b', roughness: 0.6 });
+    
+    // Ventanas del edificio
+    for (var row = 0; row < 3; row++) {
+      for (var col = 0; col < 2; col++) {
+        rc.rectangle(60 + col * 35, 35 + row * 35, 20, 20, { fill: '#93c5fd', fillStyle: 'solid', stroke: '#3b82f6', roughness: 0.4 });
+      }
+    }
+    
+    // Azotea
+    rc.line(45, 20, 135, 20, { stroke: '#475569', strokeWidth: 3, roughness: 0.5 });
+    
+    // Persona en la azotea
+    rc.circle(115, 15, 8, { fill: '#f59e0b', fillStyle: 'solid', roughness: 0.6 });
+    
+    // Piedra inicial
+    rc.circle(160, 20, 10, { fill: '#ef4444', fillStyle: 'solid', stroke: '#ef4444', roughness: 0.8 });
+    
+    // Flecha de caída (hacia abajo)
+    rc.line(160, 35, 160, 130, { stroke: '#ef4444', strokeWidth: 3, roughness: 1.2 });
+    rc.line(150, 115, 160, 130, { stroke: '#ef4444', strokeWidth: 2, roughness: 0.8 });
+    rc.line(170, 115, 160, 130, { stroke: '#ef4444', strokeWidth: 2, roughness: 0.8 });
+    
+    // Marcas de velocidad creciente
+    rc.circle(160, 50, 5, { fill: '#94a3b8', fillStyle: 'solid', roughness: 0.5 });
+    rc.circle(160, 75, 5, { fill: '#94a3b8', fillStyle: 'solid', roughness: 0.5 });
+    rc.circle(160, 100, 5, { fill: '#94a3b8', fillStyle: 'solid', roughness: 0.5 });
+    
+    // Suelo
+    rc.line(30, 140, 200, 140, { stroke: '#65a30d', strokeWidth: 3, roughness: 0.8 });
+    
+    // Textos - sección derecha
+    ctx.font = 'bold 13px Inter, sans-serif';
+    ctx.fillStyle = '#ef4444';
+    ctx.fillText('g = 9.8 m/s²', 220, 40);
+    
+    ctx.font = '11px Inter, sans-serif';
+    ctx.fillStyle = '#64748b';
+    ctx.fillText('v₀ = 0 (se suelta)', 220, 60);
+    ctx.fillText('t = 1s → v = 9.8 m/s', 220, 80);
+    ctx.fillText('t = 2s → v = 19.6 m/s', 220, 100);
+    ctx.fillText('t = 3s → v = 29.4 m/s', 220, 120);
+    
+    ctx.font = 'bold 12px Inter, sans-serif';
+    ctx.fillStyle = '#ef4444';
+    ctx.fillText('⬇️ La velocidad aumenta', 350, 70);
+    ctx.fillText('cada segundo por la gravedad', 350, 90);
+  }
+});
+</script>
+
+---
+
+### 📊 **Visualización: Velocidad vs Tiempo**
 
 <div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
