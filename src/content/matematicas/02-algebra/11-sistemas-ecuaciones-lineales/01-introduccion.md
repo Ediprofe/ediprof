@@ -63,6 +63,32 @@ $$
 
 Solución: $(3, 1)$
 
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem 0;">
+  <div id="echarts-compatible-determinado" style="width: 100%; height: 320px; border-radius: 8px;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof echarts !== 'undefined' && document.getElementById('echarts-compatible-determinado')) {
+    var chart = echarts.init(document.getElementById('echarts-compatible-determinado'));
+    var option = {
+      title: { text: 'Compatible determinado: Una solución', left: 'center', textStyle: { fontSize: 14, fontWeight: 'bold', color: '#1e293b' } },
+      legend: { data: ['x + y = 4', 'x - y = 2'], top: 30, textStyle: { fontSize: 11 } },
+      grid: { left: '12%', right: '8%', top: '20%', bottom: '12%', show: true, borderColor: '#94a3b8' },
+      xAxis: { type: 'value', name: 'x', nameLocation: 'middle', nameGap: 25, min: 0, max: 5, axisLine: { onZero: true, lineStyle: { color: '#374151', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', type: 'dashed' } } },
+      yAxis: { type: 'value', name: 'y', nameLocation: 'middle', nameGap: 30, min: -1, max: 5, axisLine: { onZero: true, lineStyle: { color: '#374151', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', type: 'dashed' } } },
+      series: [
+        { name: 'x + y = 4', type: 'line', symbol: 'none', lineStyle: { width: 3, color: '#3b82f6' }, data: [[0, 4], [4, 0]] },
+        { name: 'x - y = 2', type: 'line', symbol: 'none', lineStyle: { width: 3, color: '#22c55e' }, data: [[0, -2], [5, 3]] },
+        { type: 'scatter', symbolSize: 16, symbol: 'diamond', itemStyle: { color: '#ef4444', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: '(3, 1)', position: 'top', fontSize: 11, fontWeight: 'bold', color: '#ef4444' }, data: [[3, 1]] }
+      ]
+    };
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
+  }
+});
+</script>
+
 ---
 
 ### Sistema compatible indeterminado
@@ -77,6 +103,32 @@ x + y = 3 \\
 $$
 
 La segunda ecuación es el doble de la primera.
+
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem 0;">
+  <div id="echarts-compatible-indeterminado" style="width: 100%; height: 320px; border-radius: 8px;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof echarts !== 'undefined' && document.getElementById('echarts-compatible-indeterminado')) {
+    var chart = echarts.init(document.getElementById('echarts-compatible-indeterminado'));
+    var option = {
+      title: { text: 'Compatible indeterminado: Infinitas soluciones', left: 'center', textStyle: { fontSize: 14, fontWeight: 'bold', color: '#1e293b' } },
+      legend: { data: ['x + y = 3', '2x + 2y = 6 (misma)'], top: 30, textStyle: { fontSize: 11 } },
+      grid: { left: '12%', right: '8%', top: '20%', bottom: '12%', show: true, borderColor: '#94a3b8' },
+      xAxis: { type: 'value', name: 'x', nameLocation: 'middle', nameGap: 25, min: -1, max: 5, axisLine: { onZero: true, lineStyle: { color: '#374151', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', type: 'dashed' } } },
+      yAxis: { type: 'value', name: 'y', nameLocation: 'middle', nameGap: 30, min: -1, max: 5, axisLine: { onZero: true, lineStyle: { color: '#374151', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', type: 'dashed' } } },
+      series: [
+        { name: 'x + y = 3', type: 'line', symbol: 'none', lineStyle: { width: 4, color: '#22c55e' }, data: [[0, 3], [3, 0]] },
+        { name: '2x + 2y = 6 (misma)', type: 'line', symbol: 'none', lineStyle: { width: 2, color: '#86efac', type: 'dashed' }, data: [[0, 3], [3, 0]] },
+        { type: 'scatter', symbolSize: 10, itemStyle: { color: '#22c55e', borderColor: '#fff', borderWidth: 1 }, data: [[0, 3], [1, 2], [2, 1], [3, 0]] }
+      ]
+    };
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
+  }
+});
+</script>
 
 ---
 
@@ -93,7 +145,35 @@ $$
 
 Las rectas tienen la misma pendiente pero diferente intercepto.
 
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem 0;">
+  <div id="echarts-incompatible" style="width: 100%; height: 320px; border-radius: 8px;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof echarts !== 'undefined' && document.getElementById('echarts-incompatible')) {
+    var chart = echarts.init(document.getElementById('echarts-incompatible'));
+    var option = {
+      title: { text: 'Incompatible: Sin solución', left: 'center', textStyle: { fontSize: 14, fontWeight: 'bold', color: '#1e293b' } },
+      legend: { data: ['x + y = 3', 'x + y = 5'], top: 30, textStyle: { fontSize: 11 } },
+      grid: { left: '12%', right: '8%', top: '20%', bottom: '12%', show: true, borderColor: '#94a3b8' },
+      xAxis: { type: 'value', name: 'x', nameLocation: 'middle', nameGap: 25, min: -1, max: 6, axisLine: { onZero: true, lineStyle: { color: '#374151', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', type: 'dashed' } } },
+      yAxis: { type: 'value', name: 'y', nameLocation: 'middle', nameGap: 30, min: -1, max: 7, axisLine: { onZero: true, lineStyle: { color: '#374151', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', type: 'dashed' } } },
+      series: [
+        { name: 'x + y = 3', type: 'line', symbol: 'none', lineStyle: { width: 3, color: '#ef4444' }, data: [[-1, 4], [4, -1]] },
+        { name: 'x + y = 5', type: 'line', symbol: 'none', lineStyle: { width: 3, color: '#f87171', type: 'dashed' }, data: [[-1, 6], [6, -1]] }
+      ]
+    };
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
+  }
+});
+</script>
+
 ---
+
+---
+
 
 ## 📖 Clasificación por relación de coeficientes
 

@@ -47,6 +47,7 @@ Para la elaboración de la lecciones, ten en cuenta que el una MATERIA > CAPITUL
 
 ## Solicitud concreta
 
-recuerda lo que digo de que los títulos de sección en una lección no deben tener código de latex, ya que se renderiza mal (latex crudo), tanto en la tabla de contenidos como en la barra de navegación lateral. Así que por favor tenlo en cuenta.
+http://localhost:4321/matematicas/algebra/funciones-ecuaciones-cuadraticas/graficas
 
-http://localhost:4321/fisica/cinematica/mrua/caida-libre
+
+por favor haz la lección un poco más didáctic ay consisa en el sentido de qué se maneje una idea sintetizadora sobre qué se debe encontrar para deerminar por completo la gráfica de la ecuacióm cuadrática...algo así me entiendes?

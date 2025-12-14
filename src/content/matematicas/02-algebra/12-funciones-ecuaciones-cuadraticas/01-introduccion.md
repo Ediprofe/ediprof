@@ -25,6 +25,41 @@ La gráfica de una función cuadrática es una **parábola**, una curva en forma
 | $a > 0$ | Abre hacia arriba ∪ |
 | $a < 0$ | Abre hacia abajo ∩ |
 
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem 0;">
+  <div id="echarts-efecto-a" style="width: 100%; height: 400px; border-radius: 8px;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof echarts !== 'undefined' && document.getElementById('echarts-efecto-a')) {
+    var chart = echarts.init(document.getElementById('echarts-efecto-a'));
+    var xData = [];
+    var y1 = [], y2 = [], y3 = [];
+    for (var i = -3; i <= 3; i += 0.1) {
+      xData.push(i.toFixed(1));
+      y1.push([i, i * i]);
+      y2.push([i, -i * i]);
+      y3.push([i, 0.5 * i * i]);
+    }
+    var option = {
+      title: { text: '📊 Efecto del coeficiente a', left: 'center', textStyle: { fontSize: 15, fontWeight: 'bold', color: '#1e293b' } },
+      tooltip: { trigger: 'axis' },
+      legend: { data: ['a = 1 (arriba)', 'a = -1 (abajo)', 'a = 0.5 (más abierta)'], top: 35, textStyle: { fontSize: 11 } },
+      grid: { left: '10%', right: '8%', top: '22%', bottom: '12%', show: true, borderColor: '#94a3b8' },
+      xAxis: { type: 'value', name: 'x', nameLocation: 'middle', nameGap: 25, min: -3, max: 3, axisLine: { lineStyle: { color: '#374151', width: 2 } }, splitLine: { lineStyle: { color: '#cbd5e1', type: 'dashed' } } },
+      yAxis: { type: 'value', name: 'y', nameLocation: 'middle', nameGap: 30, min: -5, max: 5, axisLine: { lineStyle: { color: '#374151', width: 2 } }, splitLine: { lineStyle: { color: '#cbd5e1', type: 'dashed' } } },
+      series: [
+        { name: 'a = 1 (arriba)', type: 'line', smooth: true, symbol: 'none', lineStyle: { width: 3, color: '#3b82f6' }, itemStyle: { color: '#3b82f6' }, data: y1 },
+        { name: 'a = -1 (abajo)', type: 'line', smooth: true, symbol: 'none', lineStyle: { width: 3, color: '#ef4444' }, itemStyle: { color: '#ef4444' }, data: y2 },
+        { name: 'a = 0.5 (más abierta)', type: 'line', smooth: true, symbol: 'none', lineStyle: { width: 3, color: '#22c55e' }, itemStyle: { color: '#22c55e' }, data: y3 }
+      ]
+    };
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
+  }
+});
+</script>
+
 ---
 
 ## 📖 Elementos de la parábola
@@ -77,6 +112,32 @@ $$
 
 Vértice: $(2, -1)$
 
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem 0;">
+  <div id="echarts-ejemplo1" style="width: 100%; height: 350px; border-radius: 8px;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof echarts !== 'undefined' && document.getElementById('echarts-ejemplo1')) {
+    var chart = echarts.init(document.getElementById('echarts-ejemplo1'));
+    var data = [];
+    for (var x = -1; x <= 5; x += 0.1) { data.push([x, x*x - 4*x + 3]); }
+    var option = {
+      title: { text: '📊 Ejemplo 1: f(x) = x² - 4x + 3', left: 'center', textStyle: { fontSize: 14, fontWeight: 'bold', color: '#1e293b' } },
+      grid: { left: '12%', right: '8%', top: '15%', bottom: '12%', show: true, borderColor: '#94a3b8' },
+      xAxis: { type: 'value', name: 'x', nameLocation: 'middle', nameGap: 25, min: -1, max: 5, axisLine: { lineStyle: { color: '#374151', width: 2 } }, splitLine: { lineStyle: { color: '#cbd5e1', type: 'dashed' } } },
+      yAxis: { type: 'value', name: 'y', nameLocation: 'middle', nameGap: 30, min: -2, max: 8, axisLine: { lineStyle: { color: '#374151', width: 2 } }, splitLine: { lineStyle: { color: '#cbd5e1', type: 'dashed' } } },
+      series: [
+        { type: 'line', smooth: true, symbol: 'none', lineStyle: { width: 3, color: '#8b5cf6' }, data: data },
+        { type: 'scatter', symbolSize: 14, itemStyle: { color: '#ef4444', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: 'V(2,-1)', position: 'bottom', fontSize: 11, fontWeight: 'bold', color: '#ef4444' }, data: [[2, -1]] }
+      ]
+    };
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
+  }
+});
+</script>
+
 ---
 
 ### Ejemplo 2
@@ -99,6 +160,32 @@ $$
 
 Vértice: $(2, 2)$
 
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem 0;">
+  <div id="echarts-ejemplo2" style="width: 100%; height: 350px; border-radius: 8px;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof echarts !== 'undefined' && document.getElementById('echarts-ejemplo2')) {
+    var chart = echarts.init(document.getElementById('echarts-ejemplo2'));
+    var data = [];
+    for (var x = -0.5; x <= 4.5; x += 0.1) { data.push([x, -2*x*x + 8*x - 6]); }
+    var option = {
+      title: { text: '📊 Ejemplo 2: f(x) = -2x² + 8x - 6', left: 'center', textStyle: { fontSize: 14, fontWeight: 'bold', color: '#1e293b' } },
+      grid: { left: '12%', right: '8%', top: '15%', bottom: '12%', show: true, borderColor: '#94a3b8' },
+      xAxis: { type: 'value', name: 'x', nameLocation: 'middle', nameGap: 25, min: -1, max: 5, axisLine: { lineStyle: { color: '#374151', width: 2 } }, splitLine: { lineStyle: { color: '#cbd5e1', type: 'dashed' } } },
+      yAxis: { type: 'value', name: 'y', nameLocation: 'middle', nameGap: 30, min: -7, max: 3, axisLine: { lineStyle: { color: '#374151', width: 2 } }, splitLine: { lineStyle: { color: '#cbd5e1', type: 'dashed' } } },
+      series: [
+        { type: 'line', smooth: true, symbol: 'none', lineStyle: { width: 3, color: '#22c55e' }, data: data },
+        { type: 'scatter', symbolSize: 14, itemStyle: { color: '#ef4444', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: 'V(2,2)', position: 'top', fontSize: 11, fontWeight: 'bold', color: '#ef4444' }, data: [[2, 2]] }
+      ]
+    };
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
+  }
+});
+</script>
+
 ---
 
 ### Ejemplo 3
@@ -120,6 +207,33 @@ $$
 Vértice: $(-1, -3)$
 
 Intercepto Y: $(0, 0)$
+
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem 0;">
+  <div id="echarts-ejemplo3" style="width: 100%; height: 350px; border-radius: 8px;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof echarts !== 'undefined' && document.getElementById('echarts-ejemplo3')) {
+    var chart = echarts.init(document.getElementById('echarts-ejemplo3'));
+    var data = [];
+    for (var x = -3; x <= 1; x += 0.1) { data.push([x, 3*x*x + 6*x]); }
+    var option = {
+      title: { text: '📊 Ejemplo 3: f(x) = 3x² + 6x', left: 'center', textStyle: { fontSize: 14, fontWeight: 'bold', color: '#1e293b' } },
+      grid: { left: '12%', right: '8%', top: '15%', bottom: '12%', show: true, borderColor: '#94a3b8' },
+      xAxis: { type: 'value', name: 'x', nameLocation: 'middle', nameGap: 25, min: -4, max: 2, axisLine: { lineStyle: { color: '#374151', width: 2 } }, splitLine: { lineStyle: { color: '#cbd5e1', type: 'dashed' } } },
+      yAxis: { type: 'value', name: 'y', nameLocation: 'middle', nameGap: 30, min: -4, max: 10, axisLine: { lineStyle: { color: '#374151', width: 2 } }, splitLine: { lineStyle: { color: '#cbd5e1', type: 'dashed' } } },
+      series: [
+        { type: 'line', smooth: true, symbol: 'none', lineStyle: { width: 3, color: '#f59e0b' }, data: data },
+        { type: 'scatter', symbolSize: 14, itemStyle: { color: '#ef4444', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: 'V(-1,-3)', position: 'top', fontSize: 11, fontWeight: 'bold', color: '#ef4444' }, data: [[-1, -3]] },
+        { type: 'scatter', symbolSize: 10, itemStyle: { color: '#3b82f6', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: '(0,0)', position: 'right', fontSize: 10, color: '#3b82f6' }, data: [[0, 0]] }
+      ]
+    };
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
+  }
+});
+</script>
 
 ---
 

@@ -270,6 +270,95 @@ Aquí $m = \frac{9}{5} = 1.8$ y $b = 32$.
 | 20 | 68 |
 | 100 | 212 |
 
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="echarts-temperatura" style="width: 100%; height: 400px; border-radius: 8px;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof echarts !== 'undefined' && document.getElementById('echarts-temperatura')) {
+    var chart = echarts.init(document.getElementById('echarts-temperatura'));
+    
+    var option = {
+      title: {
+        text: 'Conversión Celsius a Fahrenheit',
+        left: 'center',
+        textStyle: { fontSize: 16, fontWeight: 'bold', color: '#1e293b' }
+      },
+      animation: true,
+      animationDuration: 1000,
+      grid: { left: '15%', right: '8%', top: '12%', bottom: '18%', show: true, borderColor: '#94a3b8' },
+      xAxis: {
+        type: 'value',
+        name: 'Celsius (°C)',
+        nameLocation: 'middle',
+        nameGap: 32,
+        nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#374151' },
+        min: -20,
+        max: 110,
+        axisLine: { lineStyle: { color: '#64748b' } },
+        splitLine: { show: true, lineStyle: { type: 'dashed', color: '#94a3b8', width: 1 } }
+      },
+      yAxis: {
+        type: 'value',
+        name: 'Fahrenheit (°F)',
+        nameLocation: 'middle',
+        nameGap: 50,
+        nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#374151' },
+        min: 0,
+        max: 230,
+        axisLine: { lineStyle: { color: '#64748b' } },
+        splitLine: { show: true, lineStyle: { type: 'dashed', color: '#94a3b8', width: 1 } }
+      },
+      series: [
+        {
+          name: 'F = 1.8C + 32',
+          type: 'line',
+          smooth: true,
+          symbol: 'none',
+          lineStyle: { width: 3, color: '#a855f7' },
+          areaStyle: {
+            color: {
+              type: 'linear',
+              x: 0, y: 0, x2: 0, y2: 1,
+              colorStops: [
+                { offset: 0, color: 'rgba(168, 85, 247, 0.3)' },
+                { offset: 1, color: 'rgba(168, 85, 247, 0.05)' }
+              ]
+            }
+          },
+          data: [[-20, -4], [0, 32], [20, 68], [37, 98.6], [100, 212]]
+        },
+        {
+          name: 'Puntos clave',
+          type: 'scatter',
+          symbolSize: 14,
+          itemStyle: { color: '#f59e0b', borderColor: '#fff', borderWidth: 2 },
+          label: { show: true, formatter: function(p) { return p.data[0] + '°C = ' + p.data[1] + '°F'; }, position: 'right', fontSize: 10 },
+          data: [[0, 32], [100, 212]]
+        },
+        {
+          name: 'Temperatura corporal',
+          type: 'scatter',
+          symbolSize: 12,
+          symbol: 'diamond',
+          itemStyle: { color: '#ef4444', borderColor: '#fff', borderWidth: 2 },
+          label: { show: true, formatter: '37°C (corporal)', position: 'top', fontSize: 10, color: '#ef4444' },
+          data: [[37, 98.6]]
+        }
+      ],
+      tooltip: { trigger: 'axis', formatter: '{b}°C = {c}°F' }
+    };
+    
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
+  }
+});
+</script>
+
 ---
 
 ## 📖 Elementos de una función lineal
@@ -350,6 +439,57 @@ El **intercepto** $b$ es el valor de $y$ cuando $x = 0$. Es el punto donde la re
 | $b > 0$ | Cruza el eje $y$ arriba del origen |
 | $b < 0$ | Cruza el eje $y$ abajo del origen |
 | $b = 0$ | Pasa por el origen |
+
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="echarts-interceptos" style="width: 100%; height: 400px; border-radius: 8px;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof echarts !== 'undefined' && document.getElementById('echarts-interceptos')) {
+    var chart = echarts.init(document.getElementById('echarts-interceptos'));
+    var option = {
+      title: { text: 'Casos de intercepto (b) en funciones lineales', left: 'center', textStyle: { fontSize: 15, fontWeight: 'bold', color: '#1e293b' } },
+      animation: true, animationDuration: 1000,
+      legend: { data: ['b > 0 (y = x + 3)', 'b < 0 (y = x - 2)', 'b = 0 (y = x)'], bottom: 5, textStyle: { fontSize: 11 } },
+      grid: { left: '5%', right: '5%', top: '10%', bottom: '18%', show: true, borderColor: '#94a3b8' },
+      xAxis: { 
+        type: 'value', min: -5, max: 5, interval: 1, 
+        axisLine: { onZero: true, lineStyle: { color: '#374151', width: 2 } }, 
+        splitLine: { show: true, lineStyle: { color: '#94a3b8', type: 'dashed', width: 1 } }, 
+        axisLabel: { show: false },
+        axisTick: { show: true, length: 6 }
+      },
+      yAxis: { 
+        type: 'value', min: -4, max: 6, interval: 1, 
+        axisLine: { onZero: true, lineStyle: { color: '#374151', width: 2 } }, 
+        splitLine: { show: true, lineStyle: { color: '#94a3b8', type: 'dashed', width: 1 } }, 
+        axisLabel: { show: false },
+        axisTick: { show: true, length: 6 }
+      },
+      series: [
+        // Etiquetas de ejes
+        { type: 'scatter', symbolSize: 0, label: { show: true, formatter: 'x', position: 'right', fontSize: 14, fontWeight: 'bold', color: '#374151' }, data: [[5, 0]] },
+        { type: 'scatter', symbolSize: 0, label: { show: true, formatter: 'y', position: 'top', fontSize: 14, fontWeight: 'bold', color: '#374151' }, data: [[0, 6]] },
+        // Líneas
+        { name: 'b > 0 (y = x + 3)', type: 'line', smooth: false, symbol: 'none', lineStyle: { width: 3, color: '#3b82f6' }, data: [[-4, -1], [-2, 1], [0, 3], [2, 5]] },
+        { name: 'b < 0 (y = x - 2)', type: 'line', smooth: false, symbol: 'none', lineStyle: { width: 3, color: '#ef4444' }, data: [[-2, -4], [0, -2], [2, 0], [4, 2]] },
+        { name: 'b = 0 (y = x)', type: 'line', smooth: false, symbol: 'none', lineStyle: { width: 3, color: '#22c55e' }, data: [[-4, -4], [0, 0], [4, 4]] },
+        // Interceptos marcados
+        { type: 'scatter', symbolSize: 16, symbol: 'circle', itemStyle: { color: '#3b82f6', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: 'b=3', position: 'right', fontSize: 11, fontWeight: 'bold', color: '#3b82f6' }, data: [[0, 3]] },
+        { type: 'scatter', symbolSize: 16, symbol: 'circle', itemStyle: { color: '#ef4444', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: 'b=-2', position: 'right', fontSize: 11, fontWeight: 'bold', color: '#ef4444' }, data: [[0, -2]] },
+        { type: 'scatter', symbolSize: 16, symbol: 'circle', itemStyle: { color: '#22c55e', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: 'b=0', position: 'right', fontSize: 11, fontWeight: 'bold', color: '#22c55e' }, data: [[0, 0]] }
+      ],
+      tooltip: { trigger: 'item' }
+    };
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
+  }
+});
+</script>
 
 ---
 

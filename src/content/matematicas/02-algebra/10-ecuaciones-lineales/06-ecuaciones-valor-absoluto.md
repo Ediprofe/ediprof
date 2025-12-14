@@ -18,6 +18,36 @@ $$
 |5| = 5, \quad |-5| = 5, \quad |0| = 0
 $$
 
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span> El valor absoluto como distancia al cero
+  </div>
+  <div id="echarts-valor-absoluto" style="width: 100%; height: 350px; border-radius: 8px;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof echarts !== 'undefined' && document.getElementById('echarts-valor-absoluto')) {
+    var chart = echarts.init(document.getElementById('echarts-valor-absoluto'));
+    var option = {
+      title: { text: 'Función y = |x|', left: 'center', textStyle: { fontSize: 15, fontWeight: 'bold', color: '#1e293b' } },
+      animation: true,
+      grid: { left: '10%', right: '8%', top: '15%', bottom: '12%', show: true, borderColor: '#94a3b8' },
+      xAxis: { type: 'value', min: -8, max: 8, interval: 1, axisLine: { onZero: true, lineStyle: { color: '#374151', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', type: 'dashed' } } },
+      yAxis: { type: 'value', min: 0, max: 8, interval: 1, axisLine: { onZero: true, lineStyle: { color: '#374151', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', type: 'dashed' } } },
+      series: [
+        { name: 'y = |x|', type: 'line', symbol: 'none', lineStyle: { width: 3, color: '#3b82f6' }, data: [[-8, 8], [-4, 4], [0, 0], [4, 4], [8, 8]] },
+        { type: 'scatter', symbolSize: 16, itemStyle: { color: '#ef4444', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: 'Vértice', position: 'top', fontSize: 10, fontWeight: 'bold', color: '#ef4444' }, data: [[0, 0]] },
+        { type: 'scatter', symbolSize: 12, itemStyle: { color: '#22c55e', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: function(p) { return '|' + p.data[0] + '|=' + p.data[1]; }, position: 'right', fontSize: 10 }, data: [[5, 5], [-5, 5]] }
+      ],
+      tooltip: { trigger: 'axis' }
+    };
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
+  }
+});
+</script>
+
 ---
 
 ## 📖 Ecuaciones básicas con valor absoluto

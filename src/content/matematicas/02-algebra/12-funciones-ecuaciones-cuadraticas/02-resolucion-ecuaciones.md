@@ -16,6 +16,51 @@ donde $a \neq 0$.
 
 ---
 
+## 📖 ¿Qué significa resolver una ecuación cuadrática?
+
+Resolver una ecuación cuadrática es encontrar los valores de $x$ que hacen que la expresión sea igual a cero.
+
+> 💡 **Idea clave**: Si graficamos la función $f(x) = ax^2 + bx + c$, las **soluciones** de la ecuación $ax^2 + bx + c = 0$ son exactamente los puntos donde la parábola **corta el eje X**.
+
+En otras palabras:
+- Cuando la parábola **cruza** el eje X en dos puntos → hay **2 soluciones**
+- Cuando la parábola **toca** el eje X en un punto → hay **1 solución** 
+- Cuando la parábola **no toca** el eje X → **no hay solución real**
+
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem 0;">
+  <div id="echarts-intro-soluciones" style="width: 100%; height: 350px; border-radius: 8px;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof echarts !== 'undefined' && document.getElementById('echarts-intro-soluciones')) {
+    var chart = echarts.init(document.getElementById('echarts-intro-soluciones'));
+    var data1 = [], data2 = [], data3 = [];
+    for (var x = -2; x <= 4; x += 0.1) { data1.push([x, x*x - 2*x - 3]); }
+    for (var x = -1; x <= 3; x += 0.1) { data2.push([x, (x-1)*(x-1)]); }
+    for (var x = -1; x <= 3; x += 0.1) { data3.push([x, x*x - 2*x + 2]); }
+    var option = {
+      title: { text: '📊 Las soluciones son los cortes con el eje X', left: 'center', textStyle: { fontSize: 14, fontWeight: 'bold', color: '#1e293b' } },
+      legend: { data: ['2 soluciones', '1 solución', 'Sin solución real'], top: 35, textStyle: { fontSize: 10 } },
+      grid: { left: '10%', right: '8%', top: '22%', bottom: '12%', show: true, borderColor: '#94a3b8' },
+      xAxis: { type: 'value', name: 'x', nameLocation: 'middle', nameGap: 25, min: -2, max: 4, axisLine: { lineStyle: { color: '#374151', width: 2 } }, splitLine: { lineStyle: { color: '#cbd5e1', type: 'dashed' } } },
+      yAxis: { type: 'value', name: 'y', nameLocation: 'middle', nameGap: 30, min: -5, max: 5, axisLine: { lineStyle: { color: '#374151', width: 2 } }, splitLine: { lineStyle: { color: '#cbd5e1', type: 'dashed' } } },
+      series: [
+        { name: '2 soluciones', type: 'line', smooth: true, symbol: 'none', lineStyle: { width: 3, color: '#3b82f6' }, itemStyle: { color: '#3b82f6' }, data: data1 },
+        { name: '1 solución', type: 'line', smooth: true, symbol: 'none', lineStyle: { width: 3, color: '#22c55e' }, itemStyle: { color: '#22c55e' }, data: data2 },
+        { name: 'Sin solución real', type: 'line', smooth: true, symbol: 'none', lineStyle: { width: 3, color: '#ef4444' }, itemStyle: { color: '#ef4444' }, data: data3 },
+        { type: 'scatter', symbolSize: 12, itemStyle: { color: '#3b82f6', borderColor: '#fff', borderWidth: 2 }, data: [[-1, 0], [3, 0]] },
+        { type: 'scatter', symbolSize: 12, itemStyle: { color: '#22c55e', borderColor: '#fff', borderWidth: 2 }, data: [[1, 0]] }
+      ]
+    };
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
+  }
+});
+</script>
+
+---
+
 ## 📖 Método 1: Factorización
 
 Si podemos factorizar la expresión, usamos la propiedad del producto cero.

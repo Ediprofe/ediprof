@@ -172,6 +172,37 @@ document.addEventListener('DOMContentLoaded', function() {
 | Gris cuadrícula | `#94a3b8` | Líneas de cuadrícula |
 | Gris eje | `#64748b` | Líneas de ejes |
 
+## A.5 IMPORTANTE: Colores en leyendas
+
+> ⚠️ **REGLA CRÍTICA**: Cuando una serie tiene un color específico, SIEMPRE incluir `itemStyle` con el MISMO color que `lineStyle`. Esto asegura que la leyenda muestre el color correcto.
+
+### ❌ INCORRECTO (confunde en la leyenda):
+```javascript
+series: [
+  { 
+    name: 'a = 1', 
+    type: 'line', 
+    lineStyle: { color: '#3b82f6' }, 
+    data: data1 
+  }
+]
+```
+
+### ✅ CORRECTO (leyenda muestra color correcto):
+```javascript
+series: [
+  { 
+    name: 'a = 1', 
+    type: 'line', 
+    lineStyle: { width: 3, color: '#3b82f6' }, 
+    itemStyle: { color: '#3b82f6' },  // ← SIEMPRE AGREGAR ESTO
+    data: data1 
+  }
+]
+```
+
+**Razón**: Sin `itemStyle`, la leyenda puede mostrar un color predeterminado diferente al de la línea, causando confusión visual.
+
 ---
 
 # SECCIÓN B: JSXGraph (Solo para interactividad)

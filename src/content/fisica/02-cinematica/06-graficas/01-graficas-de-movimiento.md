@@ -1,32 +1,33 @@
 # 📈 **Gráficas de Movimiento**
 
-Las gráficas son una herramienta poderosa para **visualizar** y **analizar** el movimiento. En esta lección aprenderás a construir e interpretar las gráficas más importantes de la cinemática.
+Las gráficas son una herramienta poderosa para **visualizar** y **analizar** el movimiento. En esta lección aprenderás a leerlas como un experto.
 
 ---
 
 ## 🎯 **Las Tres Gráficas Fundamentales**
 
-Existen tres tipos de gráficas que describen completamente cualquier movimiento:
+| Gráfica | Eje vertical | ¿Qué muestra? |
+|---------|-------------|---------------|
+| **x vs t** | Posición (m) | Dónde está el objeto |
+| **v vs t** | Velocidad (m/s) | Qué tan rápido y hacia dónde |
+| **a vs t** | Aceleración (m/s²) | Cómo cambia la velocidad |
 
-| Gráfica | Eje vertical | Eje horizontal | ¿Qué muestra? |
-|---------|-------------|----------------|---------------|
-| **Posición vs Tiempo** | $x$ (metros) | $t$ (segundos) | Dónde está el objeto en cada instante |
-| **Velocidad vs Tiempo** | $v$ (m/s) | $t$ (segundos) | Qué tan rápido se mueve en cada instante |
-| **Aceleración vs Tiempo** | $a$ (m/s²) | $t$ (segundos) | Cómo cambia la velocidad en cada instante |
+### **Relaciones clave**
+
+| Relación | Significado |
+|----------|-------------|
+| Pendiente de **x-t** | = **velocidad** |
+| Pendiente de **v-t** | = **aceleración** |
+| Área bajo **v-t** | = **desplazamiento** |
 
 ---
 
-## 📊 **Gráfica Posición vs Tiempo (x-t)**
+## 📊 **Gráficas por Tipo de Movimiento**
 
-### **Caso 1: Objeto en reposo**
-
-Si el objeto no se mueve, su posición no cambia con el tiempo.
+### **1. Reposo (Objeto quieto)**
 
 <div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem 0;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="echarts-reposo" style="width: 100%; height: 280px; border-radius: 8px;"></div>
+  <div id="echarts-reposo" style="width: 100%; height: 200px; border-radius: 8px;"></div>
 </div>
 
 <script>
@@ -34,12 +35,27 @@ document.addEventListener('DOMContentLoaded', function() {
   if (typeof echarts !== 'undefined' && document.getElementById('echarts-reposo')) {
     var chart = echarts.init(document.getElementById('echarts-reposo'));
     var option = {
-      title: { text: 'Posición vs Tiempo: Objeto en Reposo', left: 'center', textStyle: { fontSize: 14, fontWeight: 'bold', color: '#1e293b' } },
-      animation: true,
-      grid: { left: '15%', right: '10%', top: '18%', bottom: '18%', show: true, borderColor: '#cbd5e1' },
-      xAxis: { type: 'value', name: 'Tiempo (s)', nameLocation: 'middle', nameGap: 30, nameTextStyle: { fontSize: 12, fontWeight: 'bold' }, min: 0, max: 5, axisLine: { lineStyle: { color: '#64748b' } }, splitLine: { show: true, lineStyle: { color: '#e2e8f0' } } },
-      yAxis: { type: 'value', name: 'Posición (m)', nameLocation: 'middle', nameGap: 40, nameTextStyle: { fontSize: 12, fontWeight: 'bold' }, min: 0, max: 10, axisLine: { lineStyle: { color: '#64748b' } }, splitLine: { show: true, lineStyle: { color: '#e2e8f0' } } },
-      series: [{ type: 'line', data: [[0, 5], [1, 5], [2, 5], [3, 5], [4, 5], [5, 5]], lineStyle: { width: 3, color: '#3b82f6' }, symbol: 'circle', symbolSize: 8, itemStyle: { color: '#3b82f6' } }]
+      title: { text: 'Reposo', left: 'center', textStyle: { fontSize: 13, color: '#1e293b' } },
+      grid: [
+        { left: '8%', right: '68%', top: '25%', bottom: '20%' },
+        { left: '38%', right: '38%', top: '25%', bottom: '20%' },
+        { left: '68%', right: '8%', top: '25%', bottom: '20%' }
+      ],
+      xAxis: [
+        { gridIndex: 0, type: 'value', name: 't', min: 0, max: 4, axisLabel: { fontSize: 9 }, nameTextStyle: { fontSize: 10 } },
+        { gridIndex: 1, type: 'value', name: 't', min: 0, max: 4, axisLabel: { fontSize: 9 }, nameTextStyle: { fontSize: 10 } },
+        { gridIndex: 2, type: 'value', name: 't', min: 0, max: 4, axisLabel: { fontSize: 9 }, nameTextStyle: { fontSize: 10 } }
+      ],
+      yAxis: [
+        { gridIndex: 0, type: 'value', name: 'x', min: 0, max: 8, axisLabel: { fontSize: 9 }, nameTextStyle: { fontSize: 10 } },
+        { gridIndex: 1, type: 'value', name: 'v', min: -2, max: 4, axisLabel: { fontSize: 9 }, nameTextStyle: { fontSize: 10 } },
+        { gridIndex: 2, type: 'value', name: 'a', min: -2, max: 2, axisLabel: { fontSize: 9 }, nameTextStyle: { fontSize: 10 } }
+      ],
+      series: [
+        { type: 'line', xAxisIndex: 0, yAxisIndex: 0, data: [[0, 4], [4, 4]], lineStyle: { width: 3, color: '#3b82f6' }, symbol: 'none' },
+        { type: 'line', xAxisIndex: 1, yAxisIndex: 1, data: [[0, 0], [4, 0]], lineStyle: { width: 3, color: '#22c55e' }, symbol: 'none' },
+        { type: 'line', xAxisIndex: 2, yAxisIndex: 2, data: [[0, 0], [4, 0]], lineStyle: { width: 3, color: '#ef4444' }, symbol: 'none' }
+      ]
     };
     chart.setOption(option);
     window.addEventListener('resize', function() { chart.resize(); });
@@ -47,162 +63,42 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-> 💡 **Interpretación:** Una **línea horizontal** indica que la posición no cambia → **objeto en reposo**.
+**Características:** x = constante, v = 0, a = 0
 
 ---
 
-### **Caso 2: MRU (Velocidad Constante)**
-
-El objeto avanza la misma distancia en cada segundo.
+### **2. MRU hacia adelante (v > 0)**
 
 <div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem 0;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span> Interactivo: Arrastra el deslizador para cambiar la velocidad
-  </div>
-  <div id="jsxgraph-mru-grafica" class="jsxgraph-container" style="width: 100%; height: 300px; border-radius: 8px; overflow: hidden;"></div>
+  <div id="echarts-mru-adelante" style="width: 100%; height: 200px; border-radius: 8px;"></div>
 </div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-mru-grafica')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-mru-grafica', {
-      boundingbox: [-0.5, 25, 6, -3],
-      axis: true,
-      showCopyright: false,
-      showNavigation: false,
-      pan: {enabled: false},
-      zoom: {enabled: false}
-    });
-    
-    // Deslizador para la velocidad
-    var velocidad = board.create('slider', [[0.5, -1.5], [4, -1.5], [1, 4, 8]], {
-      name: 'v (m/s)',
-      snapWidth: 0.5,
-      precision: 1
-    });
-    
-    // Línea de posición vs tiempo
-    var linea = board.create('functiongraph', [function(t) {
-      return velocidad.Value() * t;
-    }, 0, 5], {
-      strokeColor: '#3b82f6',
-      strokeWidth: 3
-    });
-    
-    // Etiquetas
-    board.create('text', [0.2, 23, 'Posición (m)'], {fontSize: 12, strokeColor: '#374151', fixed: true});
-    board.create('text', [5.2, -0.5, 'Tiempo (s)'], {fontSize: 12, strokeColor: '#374151', fixed: true});
-    
-    board.create('text', [3.5, 20, function() {
-      return 'Pendiente = v = ' + velocidad.Value().toFixed(1) + ' m/s';
-    }], {fontSize: 12, strokeColor: '#3b82f6', fixed: true});
-    
-    board.unsuspendUpdate();
-  }
-});
-</script>
-
-> 💡 **Interpretación:** Una **línea recta inclinada** indica MRU. La **pendiente** de la recta es igual a la **velocidad**.
-
-$$
-\text{Pendiente} = \frac{\Delta x}{\Delta t} = v
-$$
-
----
-
-### **Caso 3: MRUA (Aceleración Constante)**
-
-El objeto avanza cada vez más (o cada vez menos) en cada segundo.
-
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem 0;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span> Interactivo: Cambia la aceleración
-  </div>
-  <div id="jsxgraph-mrua-grafica" class="jsxgraph-container" style="width: 100%; height: 300px; border-radius: 8px; overflow: hidden;"></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-mrua-grafica')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-mrua-grafica', {
-      boundingbox: [-0.5, 55, 6, -8],
-      axis: true,
-      showCopyright: false,
-      showNavigation: false,
-      pan: {enabled: false},
-      zoom: {enabled: false}
-    });
-    
-    // Deslizador para la aceleración
-    var aceleracion = board.create('slider', [[0.5, -4], [4, -4], [1, 4, 8]], {
-      name: 'a (m/s²)',
-      snapWidth: 0.5,
-      precision: 1
-    });
-    
-    // Parábola de posición vs tiempo
-    var parabola = board.create('functiongraph', [function(t) {
-      return 0.5 * aceleracion.Value() * t * t;
-    }, 0, 5], {
-      strokeColor: '#ef4444',
-      strokeWidth: 3
-    });
-    
-    // Etiquetas
-    board.create('text', [0.2, 52, 'Posición (m)'], {fontSize: 12, strokeColor: '#374151', fixed: true});
-    board.create('text', [5.2, -1, 'Tiempo (s)'], {fontSize: 12, strokeColor: '#374151', fixed: true});
-    
-    board.create('text', [3, 45, function() {
-      return 'a = ' + aceleracion.Value().toFixed(1) + ' m/s²';
-    }], {fontSize: 12, strokeColor: '#ef4444', fixed: true});
-    
-    board.create('text', [3, 40, 'x = ½at²'], {fontSize: 11, strokeColor: '#64748b', fixed: true});
-    
-    board.unsuspendUpdate();
-  }
-});
-</script>
-
-> 💡 **Interpretación:** Una **parábola** indica MRUA. La curva se hace más pronunciada si la aceleración es mayor.
-
----
-
-## 📊 **Gráfica Velocidad vs Tiempo (v-t)**
-
-### **El Área Bajo la Curva = Desplazamiento**
-
-Un concepto muy importante: el **área bajo la gráfica v-t** representa el **desplazamiento** del objeto.
-
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem 0;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="echarts-vt-area" style="width: 100%; height: 320px; border-radius: 8px;"></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof echarts !== 'undefined' && document.getElementById('echarts-vt-area')) {
-    var chart = echarts.init(document.getElementById('echarts-vt-area'));
+  if (typeof echarts !== 'undefined' && document.getElementById('echarts-mru-adelante')) {
+    var chart = echarts.init(document.getElementById('echarts-mru-adelante'));
     var option = {
-      title: { text: 'Velocidad vs Tiempo (MRU)', left: 'center', textStyle: { fontSize: 14, fontWeight: 'bold', color: '#1e293b' } },
-      animation: true,
-      grid: { left: '15%', right: '10%', top: '18%', bottom: '18%', show: true, borderColor: '#cbd5e1' },
-      xAxis: { type: 'value', name: 'Tiempo (s)', nameLocation: 'middle', nameGap: 30, nameTextStyle: { fontSize: 12, fontWeight: 'bold' }, min: 0, max: 5, axisLine: { lineStyle: { color: '#64748b' } }, splitLine: { show: true, lineStyle: { color: '#e2e8f0' } } },
-      yAxis: { type: 'value', name: 'Velocidad (m/s)', nameLocation: 'middle', nameGap: 40, nameTextStyle: { fontSize: 12, fontWeight: 'bold' }, min: 0, max: 12, axisLine: { lineStyle: { color: '#64748b' } }, splitLine: { show: true, lineStyle: { color: '#e2e8f0' } } },
-      series: [{
-        type: 'line',
-        data: [[0, 8], [1, 8], [2, 8], [3, 8], [4, 8]],
-        lineStyle: { width: 3, color: '#22c55e' },
-        symbol: 'circle',
-        symbolSize: 8,
-        itemStyle: { color: '#22c55e' },
-        areaStyle: {
-          color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1,
-            colorStops: [{ offset: 0, color: 'rgba(34, 197, 94, 0.4)' }, { offset: 1, color: 'rgba(34, 197, 94, 0.1)' }]
-          }
-        }
-      }]
+      title: { text: 'MRU hacia adelante (v > 0)', left: 'center', textStyle: { fontSize: 13, color: '#1e293b' } },
+      grid: [
+        { left: '8%', right: '68%', top: '25%', bottom: '20%' },
+        { left: '38%', right: '38%', top: '25%', bottom: '20%' },
+        { left: '68%', right: '8%', top: '25%', bottom: '20%' }
+      ],
+      xAxis: [
+        { gridIndex: 0, type: 'value', name: 't', min: 0, max: 4, axisLabel: { fontSize: 9 } },
+        { gridIndex: 1, type: 'value', name: 't', min: 0, max: 4, axisLabel: { fontSize: 9 } },
+        { gridIndex: 2, type: 'value', name: 't', min: 0, max: 4, axisLabel: { fontSize: 9 } }
+      ],
+      yAxis: [
+        { gridIndex: 0, type: 'value', name: 'x', min: 0, max: 16, axisLabel: { fontSize: 9 } },
+        { gridIndex: 1, type: 'value', name: 'v', min: 0, max: 6, axisLabel: { fontSize: 9 } },
+        { gridIndex: 2, type: 'value', name: 'a', min: -2, max: 2, axisLabel: { fontSize: 9 } }
+      ],
+      series: [
+        { type: 'line', xAxisIndex: 0, yAxisIndex: 0, data: [[0, 0], [1, 4], [2, 8], [3, 12], [4, 16]], lineStyle: { width: 3, color: '#3b82f6' }, symbol: 'none' },
+        { type: 'line', xAxisIndex: 1, yAxisIndex: 1, data: [[0, 4], [4, 4]], lineStyle: { width: 3, color: '#22c55e' }, symbol: 'none' },
+        { type: 'line', xAxisIndex: 2, yAxisIndex: 2, data: [[0, 0], [4, 0]], lineStyle: { width: 3, color: '#ef4444' }, symbol: 'none' }
+      ]
     };
     chart.setOption(option);
     window.addEventListener('resize', function() { chart.resize(); });
@@ -210,50 +106,42 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-| Tipo de movimiento | Forma de gráfica v-t | Área bajo la curva |
-|--------------------|---------------------|-------------------|
-| **MRU** | Línea horizontal | Rectángulo: $\Delta x = v \cdot t$ |
-| **MRUA** | Línea inclinada | Triángulo + rectángulo |
+**Características:** x crece linealmente (recta ↗), v = constante positiva, a = 0
 
 ---
 
-### **La Pendiente = Aceleración**
-
-$$
-\text{Pendiente de v-t} = \frac{\Delta v}{\Delta t} = a
-$$
+### **3. MRU hacia atrás (v < 0)**
 
 <div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem 0;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="echarts-vt-mrua" style="width: 100%; height: 320px; border-radius: 8px;"></div>
+  <div id="echarts-mru-atras" style="width: 100%; height: 200px; border-radius: 8px;"></div>
 </div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  if (typeof echarts !== 'undefined' && document.getElementById('echarts-vt-mrua')) {
-    var chart = echarts.init(document.getElementById('echarts-vt-mrua'));
+  if (typeof echarts !== 'undefined' && document.getElementById('echarts-mru-atras')) {
+    var chart = echarts.init(document.getElementById('echarts-mru-atras'));
     var option = {
-      title: { text: 'Velocidad vs Tiempo (MRUA)', left: 'center', textStyle: { fontSize: 14, fontWeight: 'bold', color: '#1e293b' } },
-      animation: true,
-      grid: { left: '15%', right: '10%', top: '18%', bottom: '18%', show: true, borderColor: '#cbd5e1' },
-      xAxis: { type: 'value', name: 'Tiempo (s)', nameLocation: 'middle', nameGap: 30, nameTextStyle: { fontSize: 12, fontWeight: 'bold' }, min: 0, max: 5, axisLine: { lineStyle: { color: '#64748b' } }, splitLine: { show: true, lineStyle: { color: '#e2e8f0' } } },
-      yAxis: { type: 'value', name: 'Velocidad (m/s)', nameLocation: 'middle', nameGap: 40, nameTextStyle: { fontSize: 12, fontWeight: 'bold' }, min: 0, max: 25, axisLine: { lineStyle: { color: '#64748b' } }, splitLine: { show: true, lineStyle: { color: '#e2e8f0' } } },
-      series: [{
-        type: 'line',
-        data: [[0, 0], [1, 5], [2, 10], [3, 15], [4, 20]],
-        lineStyle: { width: 3, color: '#ef4444' },
-        symbol: 'circle',
-        symbolSize: 10,
-        itemStyle: { color: '#ef4444' },
-        label: { show: true, formatter: function(p) { return p.data[1] + ' m/s'; }, position: 'top', fontSize: 10 },
-        areaStyle: {
-          color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1,
-            colorStops: [{ offset: 0, color: 'rgba(239, 68, 68, 0.3)' }, { offset: 1, color: 'rgba(239, 68, 68, 0.05)' }]
-          }
-        }
-      }]
+      title: { text: 'MRU hacia atrás (v < 0)', left: 'center', textStyle: { fontSize: 13, color: '#1e293b' } },
+      grid: [
+        { left: '8%', right: '68%', top: '25%', bottom: '20%' },
+        { left: '38%', right: '38%', top: '25%', bottom: '20%' },
+        { left: '68%', right: '8%', top: '25%', bottom: '20%' }
+      ],
+      xAxis: [
+        { gridIndex: 0, type: 'value', name: 't', min: 0, max: 4, axisLabel: { fontSize: 9 } },
+        { gridIndex: 1, type: 'value', name: 't', min: 0, max: 4, axisLabel: { fontSize: 9 } },
+        { gridIndex: 2, type: 'value', name: 't', min: 0, max: 4, axisLabel: { fontSize: 9 } }
+      ],
+      yAxis: [
+        { gridIndex: 0, type: 'value', name: 'x', min: 0, max: 16, axisLabel: { fontSize: 9 } },
+        { gridIndex: 1, type: 'value', name: 'v', min: -6, max: 2, axisLabel: { fontSize: 9 } },
+        { gridIndex: 2, type: 'value', name: 'a', min: -2, max: 2, axisLabel: { fontSize: 9 } }
+      ],
+      series: [
+        { type: 'line', xAxisIndex: 0, yAxisIndex: 0, data: [[0, 16], [1, 12], [2, 8], [3, 4], [4, 0]], lineStyle: { width: 3, color: '#3b82f6' }, symbol: 'none' },
+        { type: 'line', xAxisIndex: 1, yAxisIndex: 1, data: [[0, -4], [4, -4]], lineStyle: { width: 3, color: '#22c55e' }, symbol: 'none' },
+        { type: 'line', xAxisIndex: 2, yAxisIndex: 2, data: [[0, 0], [4, 0]], lineStyle: { width: 3, color: '#ef4444' }, symbol: 'none' }
+      ]
     };
     chart.setOption(option);
     window.addEventListener('resize', function() { chart.resize(); });
@@ -261,60 +149,128 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-> 💡 En este ejemplo: $a = \frac{20 - 0}{4 - 0} = \frac{20}{4} = 5\,\mathrm{m/s^2}$
+**Características:** x decrece linealmente (recta ↘), v = constante negativa, a = 0
 
 ---
 
-## 📋 **Resumen: Cómo Leer las Gráficas**
-
-| Si en la gráfica x-t veo... | Significa que... |
-|----------------------------|------------------|
-| Línea horizontal | El objeto está en **reposo** |
-| Línea recta inclinada hacia arriba | Movimiento con **velocidad positiva constante** (MRU) |
-| Línea recta inclinada hacia abajo | Movimiento con **velocidad negativa** (regresa) |
-| Parábola hacia arriba | **Aceleración positiva** (MRUA) |
-| Parábola hacia abajo | **Desaceleración** (frena) |
-
-| Si en la gráfica v-t veo... | Significa que... |
-|----------------------------|------------------|
-| Línea horizontal en v > 0 | MRU hacia adelante |
-| Línea horizontal en v < 0 | MRU hacia atrás |
-| Línea inclinada hacia arriba | **Aceleración positiva** |
-| Línea inclinada hacia abajo | **Aceleración negativa** (frena o invierte) |
-
----
-
-## 📝 **Ejercicios de Práctica**
-
-### **Ejercicio 1 — Identificar el movimiento**
-
-Observa la siguiente gráfica y determina qué tipo de movimiento representa cada tramo:
+### **4. MRUA — Acelerando (a > 0)**
 
 <div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem 0;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="echarts-ejercicio" style="width: 100%; height: 300px; border-radius: 8px;"></div>
+  <div id="echarts-mrua-acelera" style="width: 100%; height: 200px; border-radius: 8px;"></div>
 </div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  if (typeof echarts !== 'undefined' && document.getElementById('echarts-ejercicio')) {
-    var chart = echarts.init(document.getElementById('echarts-ejercicio'));
+  if (typeof echarts !== 'undefined' && document.getElementById('echarts-mrua-acelera')) {
+    var chart = echarts.init(document.getElementById('echarts-mrua-acelera'));
     var option = {
-      title: { text: 'Posición vs Tiempo', left: 'center', textStyle: { fontSize: 14, fontWeight: 'bold', color: '#1e293b' } },
-      animation: true,
-      grid: { left: '15%', right: '10%', top: '18%', bottom: '18%', show: true, borderColor: '#cbd5e1' },
-      xAxis: { type: 'value', name: 'Tiempo (s)', nameLocation: 'middle', nameGap: 30, nameTextStyle: { fontSize: 12, fontWeight: 'bold' }, min: 0, max: 12, axisLine: { lineStyle: { color: '#64748b' } }, splitLine: { show: true, lineStyle: { color: '#e2e8f0' } } },
-      yAxis: { type: 'value', name: 'Posición (m)', nameLocation: 'middle', nameGap: 40, nameTextStyle: { fontSize: 12, fontWeight: 'bold' }, min: 0, max: 25, axisLine: { lineStyle: { color: '#64748b' } }, splitLine: { show: true, lineStyle: { color: '#e2e8f0' } } },
-      series: [{
-        type: 'line',
-        data: [[0, 0], [2, 10], [4, 20], [6, 20], [8, 20], [10, 10], [12, 0]],
-        lineStyle: { width: 3, color: '#3b82f6' },
-        symbol: 'circle',
-        symbolSize: 10,
-        itemStyle: { color: '#3b82f6' }
-      }]
+      title: { text: 'MRUA — Acelerando (a > 0)', left: 'center', textStyle: { fontSize: 13, color: '#1e293b' } },
+      grid: [
+        { left: '8%', right: '68%', top: '25%', bottom: '20%' },
+        { left: '38%', right: '38%', top: '25%', bottom: '20%' },
+        { left: '68%', right: '8%', top: '25%', bottom: '20%' }
+      ],
+      xAxis: [
+        { gridIndex: 0, type: 'value', name: 't', min: 0, max: 4, axisLabel: { fontSize: 9 } },
+        { gridIndex: 1, type: 'value', name: 't', min: 0, max: 4, axisLabel: { fontSize: 9 } },
+        { gridIndex: 2, type: 'value', name: 't', min: 0, max: 4, axisLabel: { fontSize: 9 } }
+      ],
+      yAxis: [
+        { gridIndex: 0, type: 'value', name: 'x', min: 0, max: 18, axisLabel: { fontSize: 9 } },
+        { gridIndex: 1, type: 'value', name: 'v', min: 0, max: 10, axisLabel: { fontSize: 9 } },
+        { gridIndex: 2, type: 'value', name: 'a', min: 0, max: 4, axisLabel: { fontSize: 9 } }
+      ],
+      series: [
+        { type: 'line', xAxisIndex: 0, yAxisIndex: 0, data: [[0, 0], [1, 1], [2, 4], [3, 9], [4, 16]], lineStyle: { width: 3, color: '#3b82f6' }, symbol: 'none', smooth: true },
+        { type: 'line', xAxisIndex: 1, yAxisIndex: 1, data: [[0, 0], [1, 2], [2, 4], [3, 6], [4, 8]], lineStyle: { width: 3, color: '#22c55e' }, symbol: 'none' },
+        { type: 'line', xAxisIndex: 2, yAxisIndex: 2, data: [[0, 2], [4, 2]], lineStyle: { width: 3, color: '#ef4444' }, symbol: 'none' }
+      ]
+    };
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
+  }
+});
+</script>
+
+**Características:** x es parábola (crece cada vez más), v crece linealmente, a = constante positiva
+
+---
+
+### **5. MRUA — Frenando (a < 0)**
+
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem 0;">
+  <div id="echarts-mrua-frena" style="width: 100%; height: 200px; border-radius: 8px;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof echarts !== 'undefined' && document.getElementById('echarts-mrua-frena')) {
+    var chart = echarts.init(document.getElementById('echarts-mrua-frena'));
+    var option = {
+      title: { text: 'MRUA — Frenando (a < 0)', left: 'center', textStyle: { fontSize: 13, color: '#1e293b' } },
+      grid: [
+        { left: '8%', right: '68%', top: '25%', bottom: '20%' },
+        { left: '38%', right: '38%', top: '25%', bottom: '20%' },
+        { left: '68%', right: '8%', top: '25%', bottom: '20%' }
+      ],
+      xAxis: [
+        { gridIndex: 0, type: 'value', name: 't', min: 0, max: 4, axisLabel: { fontSize: 9 } },
+        { gridIndex: 1, type: 'value', name: 't', min: 0, max: 4, axisLabel: { fontSize: 9 } },
+        { gridIndex: 2, type: 'value', name: 't', min: 0, max: 4, axisLabel: { fontSize: 9 } }
+      ],
+      yAxis: [
+        { gridIndex: 0, type: 'value', name: 'x', min: 0, max: 35, axisLabel: { fontSize: 9 } },
+        { gridIndex: 1, type: 'value', name: 'v', min: 0, max: 10, axisLabel: { fontSize: 9 } },
+        { gridIndex: 2, type: 'value', name: 'a', min: -4, max: 1, axisLabel: { fontSize: 9 } }
+      ],
+      series: [
+        { type: 'line', xAxisIndex: 0, yAxisIndex: 0, data: [[0, 0], [1, 7], [2, 12], [3, 15], [4, 16]], lineStyle: { width: 3, color: '#3b82f6' }, symbol: 'none', smooth: true },
+        { type: 'line', xAxisIndex: 1, yAxisIndex: 1, data: [[0, 8], [1, 6], [2, 4], [3, 2], [4, 0]], lineStyle: { width: 3, color: '#22c55e' }, symbol: 'none' },
+        { type: 'line', xAxisIndex: 2, yAxisIndex: 2, data: [[0, -2], [4, -2]], lineStyle: { width: 3, color: '#ef4444' }, symbol: 'none' }
+      ]
+    };
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
+  }
+});
+</script>
+
+**Características:** x es parábola (crece cada vez menos hasta detenerse), v decrece linealmente hasta 0, a = constante negativa
+
+---
+
+## 📋 **Tabla Maestra: Resumen de Gráficas**
+
+| Tipo de movimiento | x vs t | v vs t | a vs t |
+|--------------------|--------|--------|--------|
+| **Reposo** | Horizontal | En cero | En cero |
+| **MRU adelante** | Recta ↗ | Horizontal positiva | En cero |
+| **MRU atrás** | Recta ↘ | Horizontal negativa | En cero |
+| **MRUA acelera** | Parábola ⌒ | Recta ↗ | Horizontal positiva |
+| **MRUA frena** | Parábola ⌒ aplana | Recta ↘ | Horizontal negativa |
+
+---
+
+## 📝 **Ejercicios Resueltos con Contexto**
+
+### **Ejercicio 1 — El ciclista en la ciudad**
+
+Un ciclista recorre una avenida. Su gráfica x-t se muestra abajo. Describe su movimiento en cada tramo.
+
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem 0;">
+  <div id="echarts-ej1" style="width: 100%; height: 250px; border-radius: 8px;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof echarts !== 'undefined' && document.getElementById('echarts-ej1')) {
+    var chart = echarts.init(document.getElementById('echarts-ej1'));
+    var option = {
+      title: { text: 'Ejercicio 1: El ciclista', left: 'center', textStyle: { fontSize: 13 } },
+      grid: { left: '15%', right: '8%', top: '15%', bottom: '20%', show: true, borderColor: '#94a3b8', borderWidth: 1 },
+      xAxis: { type: 'value', name: 't (min)', min: 0, max: 20, nameLocation: 'middle', nameGap: 28, nameTextStyle: { fontSize: 12, fontWeight: 'bold' }, axisLine: { lineStyle: { color: '#475569', width: 1 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', type: 'dashed' } } },
+      yAxis: { type: 'value', name: 'x (km)', min: 0, max: 12, nameLocation: 'middle', nameGap: 40, nameTextStyle: { fontSize: 12, fontWeight: 'bold' }, axisLine: { lineStyle: { color: '#475569', width: 1 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', type: 'dashed' } } },
+      series: [{ type: 'line', data: [[0, 0], [5, 5], [10, 5], [15, 10], [20, 10]], lineStyle: { width: 3, color: '#3b82f6' }, symbol: 'circle', symbolSize: 8 }]
     };
     chart.setOption(option);
     window.addEventListener('resize', function() { chart.resize(); });
@@ -325,57 +281,181 @@ document.addEventListener('DOMContentLoaded', function() {
 <details>
 <summary><strong>Ver solución</strong></summary>
 
-| Tramo | Tiempo | Tipo de movimiento |
-|-------|--------|-------------------|
-| **A** | 0s → 4s | MRU (avanza a velocidad constante) |
-| **B** | 4s → 8s | Reposo (no se mueve) |
-| **C** | 8s → 12s | MRU en sentido contrario (regresa) |
+| Tramo | Tiempo | Forma | Interpretación |
+|-------|--------|-------|----------------|
+| **A** | 0-5 min | Recta ↗ | MRU hacia adelante (v = 1 km/min) |
+| **B** | 5-10 min | Horizontal | Reposo (semáforo o descanso) |
+| **C** | 10-15 min | Recta ↗ | MRU hacia adelante (v = 1 km/min) |
+| **D** | 15-20 min | Horizontal | Reposo (llegó al destino) |
 
 </details>
 
 ---
 
-### **Ejercicio 2 — Calcular velocidad desde gráfica**
+### **Ejercicio 2 — La carrera de autos**
 
-En la gráfica del ejercicio anterior, calcula la velocidad en el tramo A.
+Dos autos parten del mismo lugar. Observa sus gráficas v-t y responde: ¿Cuál recorrió más distancia en 4 segundos?
+
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem 0;">
+  <div id="echarts-ej2" style="width: 100%; height: 250px; border-radius: 8px;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof echarts !== 'undefined' && document.getElementById('echarts-ej2')) {
+    var chart = echarts.init(document.getElementById('echarts-ej2'));
+    var option = {
+      title: { text: 'Ejercicio 2: Carrera de autos', left: 'center', textStyle: { fontSize: 13 } },
+      legend: { data: ['Auto A', 'Auto B'], top: 25 },
+      grid: { left: '15%', right: '8%', top: '22%', bottom: '20%', show: true, borderColor: '#94a3b8', borderWidth: 1 },
+      xAxis: { type: 'value', name: 't (s)', min: 0, max: 4, nameLocation: 'middle', nameGap: 28, nameTextStyle: { fontSize: 12, fontWeight: 'bold' }, axisLine: { lineStyle: { color: '#475569', width: 1 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', type: 'dashed' } } },
+      yAxis: { type: 'value', name: 'v (m/s)', min: 0, max: 16, nameLocation: 'middle', nameGap: 40, nameTextStyle: { fontSize: 12, fontWeight: 'bold' }, axisLine: { lineStyle: { color: '#475569', width: 1 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', type: 'dashed' } } },
+      series: [
+        { name: 'Auto A', type: 'line', data: [[0, 8], [4, 8]], lineStyle: { width: 3, color: '#3b82f6' }, areaStyle: { color: 'rgba(59, 130, 246, 0.2)' } },
+        { name: 'Auto B', type: 'line', data: [[0, 0], [4, 16]], lineStyle: { width: 3, color: '#ef4444' }, areaStyle: { color: 'rgba(239, 68, 68, 0.2)' } }
+      ]
+    };
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
+  }
+});
+</script>
 
 <details>
 <summary><strong>Ver solución</strong></summary>
 
-**Datos del tramo A:**
-- $x_i = 0\,\mathrm{m}$, $x_f = 20\,\mathrm{m}$
-- $t_i = 0\,\mathrm{s}$, $t_f = 4\,\mathrm{s}$
+El **área bajo v-t** = desplazamiento:
 
-**Cálculo:**
+- **Auto A:** Área = 8 × 4 = **32 m** (rectángulo)
+- **Auto B:** Área = ½ × 16 × 4 = **32 m** (triángulo)
 
+**¡Ambos recorrieron la misma distancia!** Aunque B aceleró y A fue constante.
+
+</details>
+
+---
+
+### **Ejercicio 3 — El tren que frena**
+
+Un tren viaja a 20 m/s y frena uniformemente hasta detenerse en 10 segundos. Calcula la aceleración y la distancia de frenado.
+
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem 0;">
+  <div id="echarts-ej3" style="width: 100%; height: 250px; border-radius: 8px;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof echarts !== 'undefined' && document.getElementById('echarts-ej3')) {
+    var chart = echarts.init(document.getElementById('echarts-ej3'));
+    var option = {
+      title: { text: 'Ejercicio 3: Tren frenando', left: 'center', textStyle: { fontSize: 13 } },
+      grid: { left: '15%', right: '8%', top: '15%', bottom: '20%', show: true, borderColor: '#94a3b8', borderWidth: 1 },
+      xAxis: { type: 'value', name: 't (s)', min: 0, max: 10, nameLocation: 'middle', nameGap: 28, nameTextStyle: { fontSize: 12, fontWeight: 'bold' }, axisLine: { lineStyle: { color: '#475569', width: 1 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', type: 'dashed' } } },
+      yAxis: { type: 'value', name: 'v (m/s)', min: 0, max: 25, nameLocation: 'middle', nameGap: 40, nameTextStyle: { fontSize: 12, fontWeight: 'bold' }, axisLine: { lineStyle: { color: '#475569', width: 1 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', type: 'dashed' } } },
+      series: [{ type: 'line', data: [[0, 20], [10, 0]], lineStyle: { width: 3, color: '#22c55e' }, areaStyle: { color: 'rgba(34, 197, 94, 0.2)' } }]
+    };
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
+  }
+});
+</script>
+
+<details>
+<summary><strong>Ver solución</strong></summary>
+
+**Aceleración** (pendiente de v-t):
 $$
-v = \frac{\Delta x}{\Delta t} = \frac{20 - 0}{4 - 0} = \boxed{5\,\mathrm{m/s}}
+a = \frac{\Delta v}{\Delta t} = \frac{0 - 20}{10 - 0} = -2\,\mathrm{m/s^2}
+$$
+
+**Distancia** (área bajo v-t):
+$$
+d = \frac{1}{2} \times 20 \times 10 = 100\,\mathrm{m}
 $$
 
 </details>
 
 ---
 
-### **Ejercicio 3 — Construir gráfica desde datos**
+### **Ejercicio 4 — La pelota que rebota**
 
-Un auto parte del reposo y acelera a $2\,\mathrm{m/s^2}$ durante 5 segundos. Construye la gráfica v-t.
+Una pelota se lanza hacia arriba y cae. Observa su gráfica v-t. ¿En qué instante alcanzó la altura máxima?
+
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem 0;">
+  <div id="echarts-ej4" style="width: 100%; height: 250px; border-radius: 8px;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof echarts !== 'undefined' && document.getElementById('echarts-ej4')) {
+    var chart = echarts.init(document.getElementById('echarts-ej4'));
+    var option = {
+      title: { text: 'Ejercicio 4: Pelota lanzada', left: 'center', textStyle: { fontSize: 13 } },
+      grid: { left: '18%', right: '8%', top: '15%', bottom: '20%', show: true, borderColor: '#94a3b8', borderWidth: 1 },
+      xAxis: { type: 'value', name: 't (s)', min: 0, max: 4, nameLocation: 'middle', nameGap: 28, nameTextStyle: { fontSize: 12, fontWeight: 'bold' }, axisLine: { lineStyle: { color: '#475569', width: 1 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', type: 'dashed' } } },
+      yAxis: { type: 'value', name: 'v (m/s)', min: -25, max: 25, nameLocation: 'middle', nameGap: 50, nameTextStyle: { fontSize: 12, fontWeight: 'bold' }, axisLine: { lineStyle: { color: '#475569', width: 1 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', type: 'dashed' } } },
+      series: [{ type: 'line', data: [[0, 20], [1, 10], [2, 0], [3, -10], [4, -20]], lineStyle: { width: 3, color: '#a855f7' }, symbol: 'circle', symbolSize: 8 }]
+    };
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
+  }
+});
+</script>
 
 <details>
 <summary><strong>Ver solución</strong></summary>
 
-**Tabla de valores:**
+La altura máxima se alcanza cuando **v = 0**.
 
-| t (s) | v (m/s) |
-|-------|---------|
-| 0 | 0 |
-| 1 | 2 |
-| 2 | 4 |
-| 3 | 6 |
-| 4 | 8 |
-| 5 | 10 |
+Observando la gráfica: v = 0 en **t = 2 s**.
 
-La gráfica es una **línea recta** que parte de (0, 0) y llega a (5, 10).
+En ese instante la pelota alcanzó la altura máxima y comenzó a caer (v se vuelve negativa).
 
-La **pendiente** de esta línea es $\frac{10}{5} = 2\,\mathrm{m/s^2}$, que es exactamente la aceleración.
+</details>
+
+---
+
+### **Ejercicio 5 — Comparación de movimientos**
+
+Tres objetos tienen las siguientes gráficas x-t. ¿Cuál tiene mayor velocidad?
+
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem 0;">
+  <div id="echarts-ej5" style="width: 100%; height: 250px; border-radius: 8px;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof echarts !== 'undefined' && document.getElementById('echarts-ej5')) {
+    var chart = echarts.init(document.getElementById('echarts-ej5'));
+    var option = {
+      title: { text: 'Ejercicio 5: Comparación', left: 'center', textStyle: { fontSize: 13 } },
+      legend: { data: ['Objeto A', 'Objeto B', 'Objeto C'], top: 25 },
+      grid: { left: '15%', right: '8%', top: '22%', bottom: '20%', show: true, borderColor: '#94a3b8', borderWidth: 1 },
+      xAxis: { type: 'value', name: 't (s)', min: 0, max: 4, nameLocation: 'middle', nameGap: 28, nameTextStyle: { fontSize: 12, fontWeight: 'bold' }, axisLine: { lineStyle: { color: '#475569', width: 1 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', type: 'dashed' } } },
+      yAxis: { type: 'value', name: 'x (m)', min: 0, max: 25, nameLocation: 'middle', nameGap: 40, nameTextStyle: { fontSize: 12, fontWeight: 'bold' }, axisLine: { lineStyle: { color: '#475569', width: 1 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', type: 'dashed' } } },
+      series: [
+        { name: 'Objeto A', type: 'line', data: [[0, 0], [4, 8]], lineStyle: { width: 3, color: '#3b82f6' } },
+        { name: 'Objeto B', type: 'line', data: [[0, 0], [4, 16]], lineStyle: { width: 3, color: '#22c55e' } },
+        { name: 'Objeto C', type: 'line', data: [[0, 0], [4, 24]], lineStyle: { width: 3, color: '#ef4444' } }
+      ]
+    };
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
+  }
+});
+</script>
+
+<details>
+<summary><strong>Ver solución</strong></summary>
+
+La **velocidad = pendiente** de la gráfica x-t:
+
+| Objeto | Pendiente | Velocidad |
+|--------|-----------|-----------|
+| A | 8/4 = 2 | **2 m/s** |
+| B | 16/4 = 4 | **4 m/s** |
+| C | 24/4 = 6 | **6 m/s** |
+
+**El objeto C tiene la mayor velocidad** porque su línea tiene la mayor pendiente.
 
 </details>

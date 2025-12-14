@@ -253,6 +253,38 @@ $$
 \boxed{P(5) = 125 \text{ pesos}}
 $$
 
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span> Visualización de problemas: Costos, Distancia, Depreciación
+  </div>
+  <div id="echarts-problemas-lineales" style="width: 100%; height: 420px; border-radius: 8px;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof echarts !== 'undefined' && document.getElementById('echarts-problemas-lineales')) {
+    var chart = echarts.init(document.getElementById('echarts-problemas-lineales'));
+    var option = {
+      title: { text: 'Aplicaciones de funciones lineales', left: 'center', textStyle: { fontSize: 14, fontWeight: 'bold', color: '#1e293b' } },
+      animation: true,
+      legend: { data: ['Gimnasio C(x)=30x+50', 'Distancia d(t)=80t', 'Depreciación V(t)=-2000t+25000', 'Tanque V(t)=-10t+100'], top: 30, textStyle: { fontSize: 9 } },
+      grid: { left: '12%', right: '8%', top: '22%', bottom: '12%', show: true, borderColor: '#94a3b8' },
+      xAxis: { type: 'value', name: 'Tiempo', nameLocation: 'middle', nameGap: 25, min: 0, max: 12, interval: 2, axisLine: { lineStyle: { color: '#374151', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', type: 'dashed' } } },
+      yAxis: { type: 'value', name: 'Valor', nameLocation: 'middle', nameGap: 50, min: 0, max: 450, axisLine: { lineStyle: { color: '#374151', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', type: 'dashed' } } },
+      series: [
+        { name: 'Gimnasio C(x)=30x+50', type: 'line', symbol: 'circle', symbolSize: 8, lineStyle: { width: 3, color: '#3b82f6' }, data: [[0, 50], [3, 140], [6, 230], [9, 320], [12, 410]] },
+        { name: 'Distancia d(t)=80t', type: 'line', symbol: 'circle', symbolSize: 8, lineStyle: { width: 3, color: '#22c55e' }, data: [[0, 0], [2, 160], [4, 320], [5, 400]] },
+        { name: 'Depreciación V(t)=-2000t+25000', type: 'line', symbol: 'circle', symbolSize: 8, lineStyle: { width: 3, color: '#ef4444' }, data: [[0, 250], [4, 170], [8, 90], [12, 10]] },
+        { name: 'Tanque V(t)=-10t+100', type: 'line', symbol: 'circle', symbolSize: 8, lineStyle: { width: 3, color: '#a855f7' }, data: [[0, 100], [4, 60], [8, 20], [10, 0]] }
+      ],
+      tooltip: { trigger: 'axis', formatter: function(params) { var result = ''; params.forEach(function(p) { result += p.marker + ' ' + p.seriesName + ': ' + p.data[1] + '<br/>'; }); return result; } }
+    };
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
+  }
+});
+</script>
+
 ---
 
 ## 📝 Ejercicios de práctica

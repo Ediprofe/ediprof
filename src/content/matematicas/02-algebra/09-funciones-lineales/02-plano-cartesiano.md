@@ -46,6 +46,14 @@ document.addEventListener('DOMContentLoaded', function() {
         axisTick: { show: true, length: 6, alignWithLabel: true }
       },
       series: [
+        // Cuadrante I (azul) - x>0, y>0
+        { type: 'line', symbol: 'none', lineStyle: { width: 0 }, areaStyle: { color: 'rgba(59, 130, 246, 0.15)' }, data: [[0, 0], [0, 6], [6, 6], [6, 0], [0, 0]] },
+        // Cuadrante II (verde) - x<0, y>0
+        { type: 'line', symbol: 'none', lineStyle: { width: 0 }, areaStyle: { color: 'rgba(34, 197, 94, 0.15)' }, data: [[0, 0], [0, 6], [-6, 6], [-6, 0], [0, 0]] },
+        // Cuadrante III (naranja) - x<0, y<0
+        { type: 'line', symbol: 'none', lineStyle: { width: 0 }, areaStyle: { color: 'rgba(249, 115, 22, 0.15)' }, data: [[0, 0], [0, -6], [-6, -6], [-6, 0], [0, 0]] },
+        // Cuadrante IV (morado) - x>0, y<0
+        { type: 'line', symbol: 'none', lineStyle: { width: 0 }, areaStyle: { color: 'rgba(168, 85, 247, 0.15)' }, data: [[0, 0], [0, -6], [6, -6], [6, 0], [0, 0]] },
         // Etiquetas del eje X (números a lo largo de y=0)
         { type: 'scatter', symbolSize: 0, label: { show: true, position: 'bottom', fontSize: 10, color: '#374151', formatter: function(p) { return p.data[0] !== 0 ? p.data[0] : ''; } }, data: [[-6,0],[-5,0],[-4,0],[-3,0],[-2,0],[-1,0],[1,0],[2,0],[3,0],[4,0],[5,0],[6,0]] },
         // Etiquetas del eje Y (números a lo largo de x=0)
@@ -56,11 +64,16 @@ document.addEventListener('DOMContentLoaded', function() {
         { type: 'scatter', symbolSize: 0, label: { show: true, formatter: 'y', position: 'top', fontSize: 14, fontWeight: 'bold', color: '#374151' }, data: [[0, 6]] },
         // Origen
         { type: 'scatter', symbolSize: 14, itemStyle: { color: '#ef4444', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: '0', position: 'bottom', fontSize: 10, color: '#374151', offset: [-8, 0] }, data: [[0, 0]] },
-        // Cuadrantes
+        // Cuadrantes - Números romanos
         { type: 'scatter', symbolSize: 0, label: { show: true, formatter: 'I', fontSize: 28, fontWeight: 'bold', color: '#3b82f6' }, data: [[3, 3]] },
         { type: 'scatter', symbolSize: 0, label: { show: true, formatter: 'II', fontSize: 28, fontWeight: 'bold', color: '#22c55e' }, data: [[-3, 3]] },
         { type: 'scatter', symbolSize: 0, label: { show: true, formatter: 'III', fontSize: 28, fontWeight: 'bold', color: '#f97316' }, data: [[-3, -3]] },
-        { type: 'scatter', symbolSize: 0, label: { show: true, formatter: 'IV', fontSize: 28, fontWeight: 'bold', color: '#a855f7' }, data: [[3, -3]] }
+        { type: 'scatter', symbolSize: 0, label: { show: true, formatter: 'IV', fontSize: 28, fontWeight: 'bold', color: '#a855f7' }, data: [[3, -3]] },
+        // Subtítulos de signos
+        { type: 'scatter', symbolSize: 0, label: { show: true, formatter: '(+, +)', fontSize: 12, color: '#3b82f6' }, data: [[3, 2]] },
+        { type: 'scatter', symbolSize: 0, label: { show: true, formatter: '(−, +)', fontSize: 12, color: '#22c55e' }, data: [[-3, 2]] },
+        { type: 'scatter', symbolSize: 0, label: { show: true, formatter: '(−, −)', fontSize: 12, color: '#f97316' }, data: [[-3, -4]] },
+        { type: 'scatter', symbolSize: 0, label: { show: true, formatter: '(+, −)', fontSize: 12, color: '#a855f7' }, data: [[3, -4]] }
       ],
       tooltip: { show: false }
     };

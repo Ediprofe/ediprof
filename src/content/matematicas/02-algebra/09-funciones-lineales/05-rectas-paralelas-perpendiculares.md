@@ -40,6 +40,31 @@ $$
 \boxed{\text{Sí, son paralelas}}
 $$
 
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem 0;">
+  <div id="echarts-ejemplo1-paralelas" style="width: 100%; height: 320px; border-radius: 8px;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof echarts !== 'undefined' && document.getElementById('echarts-ejemplo1-paralelas')) {
+    var chart = echarts.init(document.getElementById('echarts-ejemplo1-paralelas'));
+    var option = {
+      title: { text: 'Ejemplo 1: Rectas paralelas', left: 'center', textStyle: { fontSize: 14, fontWeight: 'bold', color: '#1e293b' } },
+      legend: { data: ['y = 3x + 2', 'y = 3x - 5'], top: 30, textStyle: { fontSize: 11 } },
+      grid: { left: '12%', right: '8%', top: '20%', bottom: '12%', show: true, borderColor: '#94a3b8' },
+      xAxis: { type: 'value', name: 'x', nameLocation: 'middle', nameGap: 25, min: -2, max: 3, axisLine: { onZero: true, lineStyle: { color: '#374151', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', type: 'dashed' } } },
+      yAxis: { type: 'value', name: 'y', nameLocation: 'middle', nameGap: 30, min: -8, max: 10, axisLine: { onZero: true, lineStyle: { color: '#374151', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', type: 'dashed' } } },
+      series: [
+        { name: 'y = 3x + 2', type: 'line', symbol: 'none', lineStyle: { width: 3, color: '#3b82f6' }, data: [[-2, -4], [2, 8]] },
+        { name: 'y = 3x - 5', type: 'line', symbol: 'none', lineStyle: { width: 3, color: '#60a5fa' }, data: [[-1, -8], [3, 4]] }
+      ]
+    };
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
+  }
+});
+</script>
+
 ---
 
 ### Ejemplo 2
@@ -122,6 +147,32 @@ $$
 \boxed{\text{Punto de intersección: } (2, 3)}
 $$
 
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem 0;">
+  <div id="echarts-ejemplo5-secantes" style="width: 100%; height: 320px; border-radius: 8px;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof echarts !== 'undefined' && document.getElementById('echarts-ejemplo5-secantes')) {
+    var chart = echarts.init(document.getElementById('echarts-ejemplo5-secantes'));
+    var option = {
+      title: { text: 'Ejemplo 5: Rectas secantes', left: 'center', textStyle: { fontSize: 14, fontWeight: 'bold', color: '#1e293b' } },
+      legend: { data: ['y = x + 1', 'y = -2x + 7'], top: 30, textStyle: { fontSize: 11 } },
+      grid: { left: '12%', right: '8%', top: '20%', bottom: '12%', show: true, borderColor: '#94a3b8' },
+      xAxis: { type: 'value', name: 'x', nameLocation: 'middle', nameGap: 25, min: -1, max: 5, axisLine: { onZero: true, lineStyle: { color: '#374151', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', type: 'dashed' } } },
+      yAxis: { type: 'value', name: 'y', nameLocation: 'middle', nameGap: 30, min: -2, max: 8, axisLine: { onZero: true, lineStyle: { color: '#374151', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', type: 'dashed' } } },
+      series: [
+        { name: 'y = x + 1', type: 'line', symbol: 'none', lineStyle: { width: 3, color: '#22c55e' }, data: [[-1, 0], [4, 5]] },
+        { name: 'y = -2x + 7', type: 'line', symbol: 'none', lineStyle: { width: 3, color: '#f59e0b' }, data: [[0, 7], [4, -1]] },
+        { type: 'scatter', symbolSize: 16, symbol: 'diamond', itemStyle: { color: '#ef4444', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: '(2, 3)', position: 'top', fontSize: 11, fontWeight: 'bold', color: '#ef4444' }, data: [[2, 3]] }
+      ]
+    };
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
+  }
+});
+</script>
+
 ---
 
 ### Ejemplo 6
@@ -169,6 +220,31 @@ $$
 $$
 \boxed{\text{Sí, son perpendiculares}}
 $$
+
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem 0;">
+  <div id="echarts-ejemplo7-perpendiculares" style="width: 100%; height: 400px; border-radius: 8px;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof echarts !== 'undefined' && document.getElementById('echarts-ejemplo7-perpendiculares')) {
+    var chart = echarts.init(document.getElementById('echarts-ejemplo7-perpendiculares'));
+    var option = {
+      title: { text: 'Ejemplo 7: Rectas perpendiculares', left: 'center', textStyle: { fontSize: 14, fontWeight: 'bold', color: '#1e293b' } },
+      legend: { data: ['y = 2x + 3', 'y = -½x + 1'], top: 30, textStyle: { fontSize: 11 } },
+      grid: { left: '12%', right: '8%', top: '20%', bottom: '12%', show: true, borderColor: '#94a3b8' },
+      xAxis: { type: 'value', name: 'x', nameLocation: 'middle', nameGap: 25, min: -5, max: 5, interval: 1, axisLine: { onZero: true, lineStyle: { color: '#374151', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', type: 'dashed' } } },
+      yAxis: { type: 'value', name: 'y', nameLocation: 'middle', nameGap: 30, min: -5, max: 5, interval: 1, axisLine: { onZero: true, lineStyle: { color: '#374151', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', type: 'dashed' } } },
+      series: [
+        { name: 'y = 2x + 3', type: 'line', symbol: 'none', lineStyle: { width: 3, color: '#a855f7' }, data: [[-4, -5], [1, 5]] },
+        { name: 'y = -½x + 1', type: 'line', symbol: 'none', lineStyle: { width: 3, color: '#ec4899' }, data: [[-4, 3], [5, -1.5]] }
+      ]
+    };
+    chart.setOption(option);
+    window.addEventListener('resize', function() { chart.resize(); });
+  }
+});
+</script>
 
 ---
 
