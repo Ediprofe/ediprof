@@ -18,14 +18,14 @@ Este documento define las buenas prácticas para generar gráficos en las leccio
 
 ## 📐 Estilo visual obligatorio para TODOS los gráficos
 
-Todos los gráficos deben seguir este wrapper visual:
+Todos los gráficos deben seguir este wrapper visual **100% responsive**:
 
 ```html
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
-  <div id="CHART-ID" style="width: 100%; height: 400px; border-radius: 8px;"></div>
+  <div id="CHART-ID" style="width: 100%; height: 450px; min-height: 350px; border-radius: 8px;"></div>
 </div>
 ```
 
@@ -37,8 +37,9 @@ Todos los gráficos deben seguir este wrapper visual:
 | Bordes redondeados | `12px` | Esquinas suaves |
 | Padding | `1rem` | Espacio interno |
 | Icono | `📊` solo | Sin texto adicional |
-| Ancho | `100%` | Responsive, ocupa todo el ancho |
-| Alto | `400px` | Altura decente para visualización |
+| **Ancho wrapper** | `width: 100%; box-sizing: border-box;` | **Ocupa TODO el ancho disponible** |
+| **Ancho chart** | `width: 100%` | **Ocupa todo el wrapper** |
+| **Alto chart** | `height: 450px; min-height: 350px` | Altura generosa con mínimo garantizado |
 
 ---
 
@@ -67,11 +68,11 @@ Cada gráfico ECharts DEBE incluir:
 ## A.3 Plantilla completa ECharts (COPIAR ESTA)
 
 ```html
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
-  <div id="echarts-NOMBRE" style="width: 100%; height: 400px; border-radius: 8px;"></div>
+  <div id="echarts-NOMBRE" style="width: 100%; height: 450px; min-height: 350px; border-radius: 8px;"></div>
 </div>
 
 <script>
@@ -219,11 +220,11 @@ series: [
 ## B.2 Plantilla JSXGraph con wrapper
 
 ```html
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
-  <div id="jsxgraph-NOMBRE" style="width: 100%; height: 400px; border-radius: 8px;"></div>
+  <div id="jsxgraph-NOMBRE" style="width: 100%; height: 450px; min-height: 350px; border-radius: 8px;"></div>
 </div>
 
 <script>
@@ -277,11 +278,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ## C.2 Estilo visual obligatorio para Rough.js
 
-Todos los diagramas Rough.js deben seguir este wrapper:
+Todos los diagramas Rough.js deben seguir este wrapper **100% responsive**:
 
 ```html
-<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
-  <canvas id="roughjs-NOMBRE" width="600" height="300" style="width: 100%; height: auto;"></canvas>
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <canvas id="roughjs-NOMBRE" width="800" height="400" style="width: 100%; height: auto; display: block;"></canvas>
 </div>
 ```
 
@@ -292,15 +293,16 @@ Todos los diagramas Rough.js deben seguir este wrapper:
 | Borde | `1px solid #cbd5e1` | Borde sutil |
 | Bordes redondeados | `12px` | Esquinas suaves |
 | Padding | `1rem` | Espacio interno |
-| Canvas width | `600` (o según necesidad) | Ancho fijo del canvas |
-| Canvas height | `200-400` (según contenido) | Altura fija del canvas |
-| Canvas style | `width: 100%; height: auto;` | Responsive |
+| **Ancho wrapper** | `width: 100%; box-sizing: border-box;` | **Ocupa TODO el ancho disponible** |
+| **Canvas width** | `800` (base para resolución) | Ancho base para la resolución del canvas |
+| **Canvas height** | `400` (base proporcional) | Altura base para la resolución del canvas |
+| **Canvas style** | `width: 100%; height: auto; display: block;` | **Escala manteniendo proporción** |
 
 ## C.3 Plantilla completa Rough.js (COPIAR ESTA)
 
 ```html
-<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
-  <canvas id="roughjs-ejemplo" width="600" height="300" style="width: 100%; height: auto;"></canvas>
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <canvas id="roughjs-ejemplo" width="800" height="400" style="width: 100%; height: auto; display: block;"></canvas>
 </div>
 
 <script>

@@ -14,8 +14,66 @@ $$
 
 > 💡 **Significado:** Cada segundo que cae un objeto, su velocidad **aumenta en 10 m/s**.
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
+  <canvas id="roughjs-caida-intro" width="600" height="350" style="width: 100%; height: auto;"></canvas>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof rough !== 'undefined' && document.getElementById('roughjs-caida-intro')) {
+    var canvas = document.getElementById('roughjs-caida-intro');
+    var rc = rough.canvas(canvas);
+    var ctx = canvas.getContext('2d');
+    
+    // Título
+    ctx.font = 'bold 14px Inter, sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.textAlign = 'center';
+    ctx.fillText('La velocidad aumenta cada segundo', 300, 25);
+    
+    // Posiciones de las pelotas (espaciadas, más arriba)
+    var positions = [[100, 55], [230, 85], [360, 125], [490, 175]];
+    var times = ['t = 0s', 't = 1s', 't = 2s', 't = 3s'];
+    var velocities = ['v = 0', 'v = 10 m/s', 'v = 20 m/s', 'v = 30 m/s'];
+    var arrowLengths = [0, 30, 55, 80];
+    
+    for (var i = 0; i < positions.length; i++) {
+      var x = positions[i][0];
+      var y = positions[i][1];
+      
+      // Pelota
+      rc.circle(x, y, 28, { fill: '#3b82f6', fillStyle: 'solid', roughness: 0.5 });
+      
+      // Flecha de velocidad (hacia abajo)
+      if (arrowLengths[i] > 0) {
+        rc.line(x, y + 17, x, y + 17 + arrowLengths[i], { stroke: '#ef4444', strokeWidth: 3, roughness: 0.4 });
+        rc.line(x - 7, y + 11 + arrowLengths[i], x, y + 17 + arrowLengths[i], { stroke: '#ef4444', strokeWidth: 2 });
+        rc.line(x + 7, y + 11 + arrowLengths[i], x, y + 17 + arrowLengths[i], { stroke: '#ef4444', strokeWidth: 2 });
+      }
+      
+      // Etiquetas de tiempo
+      ctx.font = 'bold 12px Inter, sans-serif';
+      ctx.fillStyle = '#64748b';
+      ctx.textAlign = 'center';
+      ctx.fillText(times[i], x, y - 22);
+      
+      // Etiquetas de velocidad
+      ctx.font = 'bold 11px Inter, sans-serif';
+      ctx.fillStyle = '#ef4444';
+      ctx.fillText(velocities[i], x, y + 30 + arrowLengths[i] + 10);
+    }
+    
+    // Leyenda
+    ctx.font = '12px Inter, sans-serif';
+    ctx.fillStyle = '#64748b';
+    ctx.textAlign = 'left';
+    ctx.fillText('📌 Las flechas rojas muestran la velocidad (más larga = más rápido)', 80, 335);
+  }
+});
+</script>
+
 | Tiempo de caída | Velocidad |
-|-----------------|-----------|
+|-----------------|-----------| 
 | $t = 0\,\mathrm{s}$ | $0\,\mathrm{m/s}$ |
 | $t = 1\,\mathrm{s}$ | $10\,\mathrm{m/s}$ |
 | $t = 2\,\mathrm{s}$ | $20\,\mathrm{m/s}$ |

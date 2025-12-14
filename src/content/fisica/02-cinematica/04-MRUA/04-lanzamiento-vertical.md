@@ -10,6 +10,97 @@ El **Lanzamiento Vertical** ocurre cuando lanzamos un objeto hacia arriba con un
 
 > 💡 **Idea clave:** La gravedad siempre apunta hacia abajo. Cuando el objeto sube, la gravedad lo frena. Cuando baja, lo acelera.
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
+  <canvas id="roughjs-lv-intro" width="600" height="250" style="width: 100%; height: auto;"></canvas>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof rough !== 'undefined' && document.getElementById('roughjs-lv-intro')) {
+    var canvas = document.getElementById('roughjs-lv-intro');
+    var rc = rough.canvas(canvas);
+    var ctx = canvas.getContext('2d');
+    
+    // Título
+    ctx.font = 'bold 14px Inter, sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.textAlign = 'center';
+    ctx.fillText('Las tres fases del lanzamiento vertical', 300, 20);
+    
+    // FASE 1: Subida
+    // Suelo
+    rc.line(40, 230, 160, 230, { stroke: '#65a30d', strokeWidth: 2, roughness: 0.5 });
+    // Pelota
+    rc.circle(100, 180, 25, { fill: '#3b82f6', fillStyle: 'solid', roughness: 0.5 });
+    // Flecha velocidad (arriba)
+    rc.line(100, 160, 100, 100, { stroke: '#22c55e', strokeWidth: 3, roughness: 0.4 });
+    rc.line(93, 110, 100, 100, { stroke: '#22c55e', strokeWidth: 2 });
+    rc.line(107, 110, 100, 100, { stroke: '#22c55e', strokeWidth: 2 });
+    // Flecha gravedad (abajo) - CONSTANTE 40px
+    rc.line(130, 150, 130, 190, { stroke: '#ef4444', strokeWidth: 2, roughness: 0.4 });
+    rc.line(125, 183, 130, 190, { stroke: '#ef4444', strokeWidth: 2 });
+    rc.line(135, 183, 130, 190, { stroke: '#ef4444', strokeWidth: 2 });
+    
+    ctx.font = 'bold 12px Inter, sans-serif';
+    ctx.fillStyle = '#3b82f6';
+    ctx.textAlign = 'center';
+    ctx.fillText('① SUBIDA', 100, 245);
+    ctx.font = '10px Inter, sans-serif';
+    ctx.fillStyle = '#64748b';
+    ctx.fillText('v ↑, g ↓', 100, 75);
+    ctx.fillText('v disminuye', 100, 60);
+    
+    // FASE 2: Punto más alto
+    rc.line(220, 230, 340, 230, { stroke: '#65a30d', strokeWidth: 2, roughness: 0.5 });
+    // Pelota en el punto más alto
+    rc.circle(280, 60, 25, { fill: '#f59e0b', fillStyle: 'solid', roughness: 0.5 });
+    // Solo flecha gravedad (abajo) - CONSTANTE 40px
+    rc.line(280, 80, 280, 120, { stroke: '#ef4444', strokeWidth: 3, roughness: 0.4 });
+    rc.line(273, 113, 280, 120, { stroke: '#ef4444', strokeWidth: 2 });
+    rc.line(287, 113, 280, 120, { stroke: '#ef4444', strokeWidth: 2 });
+    
+    ctx.font = 'bold 12px Inter, sans-serif';
+    ctx.fillStyle = '#f59e0b';
+    ctx.textAlign = 'center';
+    ctx.fillText('② PUNTO MÁS ALTO', 280, 245);
+    ctx.font = '10px Inter, sans-serif';
+    ctx.fillStyle = '#64748b';
+    ctx.fillText('v = 0', 280, 45);
+    ctx.fillText('(se detiene)', 280, 140);
+    
+    // FASE 3: Bajada
+    rc.line(400, 230, 520, 230, { stroke: '#65a30d', strokeWidth: 2, roughness: 0.5 });
+    // Pelota
+    rc.circle(460, 120, 25, { fill: '#3b82f6', fillStyle: 'solid', roughness: 0.5 });
+    // Flecha velocidad (abajo)
+    rc.line(460, 140, 460, 200, { stroke: '#22c55e', strokeWidth: 3, roughness: 0.4 });
+    rc.line(453, 193, 460, 200, { stroke: '#22c55e', strokeWidth: 2 });
+    rc.line(467, 193, 460, 200, { stroke: '#22c55e', strokeWidth: 2 });
+    // Flecha gravedad (abajo) - CONSTANTE 40px
+    rc.line(490, 140, 490, 180, { stroke: '#ef4444', strokeWidth: 2, roughness: 0.4 });
+    rc.line(483, 173, 490, 180, { stroke: '#ef4444', strokeWidth: 2 });
+    rc.line(497, 173, 490, 180, { stroke: '#ef4444', strokeWidth: 2 });
+    
+    ctx.font = 'bold 12px Inter, sans-serif';
+    ctx.fillStyle = '#3b82f6';
+    ctx.textAlign = 'center';
+    ctx.fillText('③ BAJADA', 460, 245);
+    ctx.font = '10px Inter, sans-serif';
+    ctx.fillStyle = '#64748b';
+    ctx.fillText('v ↓, g ↓', 475, 95);
+    ctx.fillText('v aumenta', 475, 80);
+    
+    // Leyenda
+    ctx.font = '11px Inter, sans-serif';
+    ctx.textAlign = 'left';
+    ctx.fillStyle = '#22c55e';
+    ctx.fillText('→ Verde: velocidad', 50, 210);
+    ctx.fillStyle = '#ef4444';
+    ctx.fillText('→ Rojo: gravedad (siempre ↓)', 180, 210);
+  }
+});
+</script>
+
 ### **Dos fases del movimiento:**
 
 | Fase | Descripción | ¿Qué pasa con v? |

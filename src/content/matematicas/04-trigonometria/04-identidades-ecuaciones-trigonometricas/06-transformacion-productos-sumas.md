@@ -1,0 +1,177 @@
+# Transformación de Productos a Sumas
+
+Las **identidades de producto a suma** (y suma a producto) permiten convertir productos de funciones trigonométricas en sumas, y viceversa.
+
+---
+
+## 📖 Producto a suma
+
+### Producto de senos y cosenos
+
+$$
+\sin\alpha\cos\beta = \frac{1}{2}[\sin(\alpha + \beta) + \sin(\alpha - \beta)]
+$$
+
+$$
+\cos\alpha\sin\beta = \frac{1}{2}[\sin(\alpha + \beta) - \sin(\alpha - \beta)]
+$$
+
+$$
+\cos\alpha\cos\beta = \frac{1}{2}[\cos(\alpha + \beta) + \cos(\alpha - \beta)]
+$$
+
+$$
+\sin\alpha\sin\beta = \frac{1}{2}[\cos(\alpha - \beta) - \cos(\alpha + \beta)]
+$$
+
+---
+
+## 📖 Suma a producto
+
+### Sumas de senos y cosenos
+
+$$
+\sin A + \sin B = 2\sin\frac{A + B}{2}\cos\frac{A - B}{2}
+$$
+
+$$
+\sin A - \sin B = 2\cos\frac{A + B}{2}\sin\frac{A - B}{2}
+$$
+
+$$
+\cos A + \cos B = 2\cos\frac{A + B}{2}\cos\frac{A - B}{2}
+$$
+
+$$
+\cos A - \cos B = -2\sin\frac{A + B}{2}\sin\frac{A - B}{2}
+$$
+
+---
+
+## 📖 Ejemplo 1: Producto a suma
+
+Expresar $\sin 5x \cos 3x$ como suma:
+
+$$
+\sin 5x \cos 3x = \frac{1}{2}[\sin(5x + 3x) + \sin(5x - 3x)]
+$$
+
+$$
+= \frac{1}{2}[\sin 8x + \sin 2x]
+$$
+
+---
+
+## 📖 Ejemplo 2: Suma a producto
+
+Expresar $\sin 7x + \sin 3x$ como producto:
+
+$$
+\sin 7x + \sin 3x = 2\sin\frac{7x + 3x}{2}\cos\frac{7x - 3x}{2}
+$$
+
+$$
+= 2\sin 5x \cos 2x
+$$
+
+---
+
+## 📖 Utilidad
+
+### En cálculo
+
+Estas identidades facilitan la integración de productos trigonométricos.
+
+### En física
+
+Útiles para analizar ondas y fenómenos de batimiento (beats).
+
+### Ejemplo: Batimiento
+
+Cuando dos ondas con frecuencias cercanas se suman:
+
+$$
+\cos\omega_1 t + \cos\omega_2 t = 2\cos\frac{\omega_1 + \omega_2}{2}t \cos\frac{\omega_1 - \omega_2}{2}t
+$$
+
+---
+
+## 📝 Ejercicios de práctica
+
+### Ejercicio 1: Producto a suma
+
+Expresa como suma o diferencia:
+
+1. $\cos 4x \cos 2x$
+2. $\sin 6x \sin 2x$
+
+<details>
+<summary><strong>Ver respuestas</strong></summary>
+
+1. $\cos 4x \cos 2x = \frac{1}{2}[\cos 6x + \cos 2x]$
+
+2. $\sin 6x \sin 2x = \frac{1}{2}[\cos 4x - \cos 8x]$
+
+</details>
+
+---
+
+### Ejercicio 2: Suma a producto
+
+Expresa como producto:
+
+1. $\cos 5x + \cos 3x$
+2. $\sin 4x - \sin 2x$
+
+<details>
+<summary><strong>Ver respuestas</strong></summary>
+
+1. $\cos 5x + \cos 3x = 2\cos 4x \cos x$
+
+2. $\sin 4x - \sin 2x = 2\cos 3x \sin x$
+
+</details>
+
+---
+
+### Ejercicio 3: Simplificar
+
+Simplifica: $\frac{\sin 5x + \sin x}{\cos 5x + \cos x}$
+
+<details>
+<summary><strong>Ver respuesta</strong></summary>
+
+Numerador: $\sin 5x + \sin x = 2\sin 3x \cos 2x$
+
+Denominador: $\cos 5x + \cos x = 2\cos 3x \cos 2x$
+
+$$
+\frac{2\sin 3x \cos 2x}{2\cos 3x \cos 2x} = \frac{\sin 3x}{\cos 3x} = \tan 3x
+$$
+
+</details>
+
+---
+
+### Ejercicio 4: Verificar
+
+Verifica que $\cos 3x - \cos x = -2\sin 2x \sin x$.
+
+<details>
+<summary><strong>Ver respuesta</strong></summary>
+
+Usando la fórmula:
+
+$$
+\cos A - \cos B = -2\sin\frac{A + B}{2}\sin\frac{A - B}{2}
+$$
+
+Con $A = 3x$, $B = x$:
+
+$$
+= -2\sin\frac{3x + x}{2}\sin\frac{3x - x}{2} = -2\sin 2x \sin x \quad ✓
+$$
+
+</details>
+
+---

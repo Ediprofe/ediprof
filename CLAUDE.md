@@ -43,19 +43,64 @@ Por favor, en los títulos de cada sección de una lección, no les metas códig
 
 Para la elaboración de la lecciones, ten en cuenta que el una MATERIA > CAPITULO > TEMAS > LECCIÓN, y que en cada lección se abordan diferentes conceptos, los cuales quiero que los trabajes progresivamente, uno a uno, cosa que si empiezas uno, lo explicas por su definición o introducción, luego haces un par de ejemplos de ese concepto (o más si ves que es algo muy fácil, tipo identificar los elementos en una expresión algebraica), luego pasas al otro concepto dentro de esa lección, y luego haces un par de ejemplos de ese concepto, y luego pasas al siguiente concepto, y así sucesivamente. La idea es que al final cierres con una sección tipo, 2 ejercicios por concepto en una nueva sección de esa lección que se llame tipo "Ejercicios de práctica" o "Ejercicios para practicar", o el nombre que más adecuado encuentres.
 
-LAS LECCIONES DEBE SER LO MÁS BRUTALMENTE ENTENDIBLES Y SIMPLES A LA VEZ, DE TAL FORMA QUE EL PROFESOR MÁS RESPETADO POR SU DIDÁCTICA EN EL COLEGIO LA SIGA AL PIE DE LA LETRA EN SU SECUENCIA, POR SUS ILUSTRACIONES Y CLARIDAD ABSOLUTA, MANEJANDO UN MÉTODO INTUITIVO DE INTRODUCIR LOS TEMAS, BASADO EN SITUACIONES REALES Y PRÁCTICAS, SIENDO PROGRESIVO E INDUCTIVO, REDONDEANDO IDEAS DE FORMA SISTEMÁTICA Y CON CLARIDAD ABSOLUTA.
+LAS LECCIONES DEBE SER LO MÁS BRUTALMENTE ENTENDIBLES Y SIMPLES A LA VEZ, DE TAL FORMA QUE EL PROFESOR MÁS RESPETADO POR SU DIDÁCTICA EN EL COLEGIO LA SIGA AL PIE DE LA LETRA EN SU SECUENCIA, POR SUS ILUSTRACIONES Y CLARIDAD ABSOLUTA, MANEJANDO UN MÉTODO INTUITIVO DE INTRODUCIR LOS TEMAS, BASADO EN SITUACIONES REALES Y PRÁCTICAS, SIENDO PROGRESIVO E INDUCTIVO, REDONDEANDO IDEAS DE FORMA SISTEMÁTICA, SINTÉTICA Y CONCISA"
 
 
 
 ## Solicitud concreta
 
+VAMOS A CREAR UN CAPÍTULO LLAMADO "GEOMETRÍA Y TRIGONOMETRÍA" O CÓMO AL FINAL DECIDAMOS CON BASE EN EL ANÁLISIS QUE PRIMERO VAS HACER DE FORMA EXHAUSTIVA COMO UN EXPERTO DOCENTE COLOMBIANO.
+
+VAS A EVALUAR EL ORDEN DE LOS TEMAS QUE MANEJA UN LIBRO GUÍA QUE TE VOY A DEJAR. EN ESE SENTIDO, TÚ VAS A EVALUAR Y DEFINIR CUÁL ES EL ORDEN MÁS ADECUADO PARA UN ESTUDIANTE DE NIVEL ESCOLAR EN COLOMBIA, SIGUIENDO ESA FILOSOFÍA DE QUE "LAS LECCIONES DEBE SER LO MÁS BRUTALMENTE ENTENDIBLES Y SIMPLES A LA VEZ, DE TAL FORMA QUE EL PROFESOR MÁS RESPETADO POR SU DIDÁCTICA EN EL COLEGIO LA SIGA AL PIE DE LA LETRA EN SU SECUENCIA, POR SUS ILUSTRACIONES Y CLARIDAD ABSOLUTA, MANEJANDO UN MÉTODO INTUITIVO DE INTRODUCIR LOS TEMAS, BASADO EN SITUACIONES REALES Y PRÁCTICAS, SIENDO PROGRESIVO E INDUCTIVO, REDONDEANDO IDEAS DE FORMA SISTEMÁTICA Y CON CLARIDAD ABSOLUTA. TEN EN CUENTA: EXTREMADAMENTE FÁCILES DE ENTENDER, INTUITIVOS, PROGRESIVOS, INDUCTIVOS, SISTEMÁTICOS Y CONCISOS, REFORZANDO CON EJEMPLOS DE UN CONCEPTO HASTA AFIANZAR Y LUEGO PASAR A OTRO CONCEPTO EN LA MISMA LECCIÓN!!".
+
+LOS TEMAS QUE PROPONE EL LIBRO (BAJO EL NOMBRE DE CAPÍTULOS EN SU CONVENCIÓN) SON:
+
+Geometría Euclidiana
+• Capítulo 1: Conceptos básicos
+    ◦ Trata las definiciones fundamentales introductorias de la geometría.
+• Capítulo 2: Ángulos
+    ◦ Cubre la definición de ángulo, sistemas de medición (sistema sexagesimal y cíclico/circular), conversión entre grados y radianes, operaciones con ángulos y su clasificación de acuerdo con su medida (convexos, llanos, cóncavos, perigonales, complementarios, suplementarios y conjugados).
+• Capítulo 3: Rectas perpendiculares y paralelas
+    ◦ Aborda los conceptos de perpendicularidad y paralelismo, así como el estudio de los ángulos que se forman entre rectas (opuestos por el vértice, contiguos y adyacentes) y las propiedades de las rectas paralelas cortadas por una secante.
+• Capítulo 4: Triángulos
+    ◦ Se enfoca en la definición y clasificación de triángulos (por sus lados y ángulos). Estudia las rectas y puntos notables, teoremas de congruencia, proporciones, semejanza (incluyendo el Teorema de Tales) y el Teorema de Pitágoras.
+• Capítulo 5: Cuadriláteros
+    ◦ Examina la definición y clasificación de cuadriláteros. Analiza teoremas y propiedades específicas de paralelogramos y trapecios (incluyendo trapecios isósceles).
+• Capítulo 6: Polígonos
+    ◦ Trata sobre la definición y clasificación de polígonos por sus lados y ángulos. Incluye el cálculo del número de diagonales (desde un vértice y totales) y el estudio de los ángulos de un polígono.
+• Capítulo 7: Transformaciones
+    ◦ Estudia el manejo de escalas y figuras a escala. Aborda las transformaciones de figuras en el plano, tales como traslación, rotación, simetría axial y simetría central.
+• Capítulo 8: Circunferencia y círculo
+    ◦ Cubre las rectas notables de la circunferencia, porciones de un círculo, relaciones entre circunferencia y polígonos, ángulos notables, teoremas relacionados y propiedades de las tangentes.
+• Capítulo 9: Perímetros y superficies
+    ◦ Se dedica al cálculo de perímetros y áreas de figuras planas como triángulos, cuadriláteros, polígonos regulares, así como del círculo (incluyendo sector y segmento circular) y áreas de figuras combinadas.
+• Capítulo 10: Cuerpos geométricos, áreas y volúmenes
+    ◦ Estudia los ángulos diedros, triedros y poliedros. Analiza poliedros regulares, prismas, pirámides y cuerpos con superficies no planas como el cilindro, el cono y la esfera, incluyendo el cálculo de sus áreas y volúmenes.
+Trigonometría
+• Capítulo 11: Funciones trigonométricas
+    ◦ Introduce las definiciones de las funciones trigonométricas, cofunciones, rango numérico y valor. Estudia los signos de estas funciones en el plano cartesiano, así como funciones para ángulos mayores de 90° y ángulos negativos.
+• Capítulo 12: Funciones trigonométricas para ángulos notables
+    ◦ Se centra en los valores exactos de las funciones trigonométricas para ángulos específicos como 0°, 30°, 45°, 60°, 90°, 180°, 270° y 360°, y sus aplicaciones.
+• Capítulo 13: Representación gráfica de las funciones trigonométricas
+    ◦ Analiza las gráficas de las funciones seno, coseno, tangente, cotangente, secante y cosecante. Incluye el estudio de amplitud, periodo, desplazamiento de fase y las gráficas de funciones inversas.
+• Capítulo 14: Identidades y ecuaciones trigonométricas
+    ◦ Cubre la obtención y demostración de identidades trigonométricas (básicas, suma y diferencia de ángulos, ángulo doble, mitad de un ángulo). También trata la transformación de productos en sumas o restas y la resolución de ecuaciones trigonométricas.
+• Capítulo 15: Triángulos rectángulos
+    ◦ Se enfoca en la aplicación práctica de las funciones trigonométricas para la solución de triángulos rectángulos.
+• Capítulo 16: Triángulos oblicuángulos
+    ◦ Trata la resolución de triángulos que no poseen un ángulo recto (oblicuángulos) utilizando las leyes de senos, cosenos y tangentes.
+• Capítulo 17: Forma trigonométrica de los números complejos
+    ◦ Explica la forma trigonométrica o polar de los números complejos y las operaciones fundamentales que se pueden realizar con ella.
+
+![alt text](image-27.png)
+![alt text](image-28.png)
+![alt text](image-29.png)
+
+EVALÚA, ANALIZA, REFLEXIONA Y PROPÓN UN ÁRBOL DETALLADO DE LA CARPETA DE ESTA UNIDAD DE LA ASIGNATURA MATEMÁTICAS
 
 
+# RETROALIMENTACIÓN
 
-![alt text](image-25.png)
-http://localhost:4323/fisica/cinematica/mrua/lanzamiento-vertical
-la flecha de la gravedad trata de que sea constante en tamaño para que no confunda.
+TE PREGUNTO AHORA, CUÁL CREES QUE ES EL FLUJO DE TRABAJO MÁS ÓPTIMO PARA QUE SIGAS FILEMENTE LA FILOSOFIA E INDICACIONES AQUÍ DADAS.
 
-![alt text](image-26.png)
-http://localhost:4323/fisica/cinematica/mrua/caida-libre
-El canvas cortado no deja ver la v = 30 m/s
+SE ME OCURRE PEDIRTE PRIMERO UN PLAN DETALLADO DE QUE LLEVARÁ CADA LECCIÓN DE CADA TEMA DE CADA CAPÍTULO. Y QUE CON BASE EN ESE PLAN, YO APRUEBO O DESAPRUEBO PIDIENDO AJUSTES, PERO CÓMO MANEJAMOS ESTO DE FORMA ÓPTIMA Y MASIVA??
