@@ -43,11 +43,19 @@ Por favor, en los títulos de cada sección de una lección, no les metas códig
 
 Para la elaboración de la lecciones, ten en cuenta que el una MATERIA > CAPITULO > TEMAS > LECCIÓN, y que en cada lección se abordan diferentes conceptos, los cuales quiero que los trabajes progresivamente, uno a uno, cosa que si empiezas uno, lo explicas por su definición o introducción, luego haces un par de ejemplos de ese concepto (o más si ves que es algo muy fácil, tipo identificar los elementos en una expresión algebraica), luego pasas al otro concepto dentro de esa lección, y luego haces un par de ejemplos de ese concepto, y luego pasas al siguiente concepto, y así sucesivamente. La idea es que al final cierres con una sección tipo, 2 ejercicios por concepto en una nueva sección de esa lección que se llame tipo "Ejercicios de práctica" o "Ejercicios para practicar", o el nombre que más adecuado encuentres.
 
+LAS LECCIONES DEBE SER LO MÁS BRUTALMENTE ENTENDIBLES Y SIMPLES A LA VEZ, DE TAL FORMA QUE EL PROFESOR MÁS RESPETADO POR SU DIDÁCTICA EN EL COLEGIO LA SIGA AL PIE DE LA LETRA EN SU SECUENCIA, POR SUS ILUSTRACIONES Y CLARIDAD ABSOLUTA, MANEJANDO UN MÉTODO INTUITIVO DE INTRODUCIR LOS TEMAS, BASADO EN SITUACIONES REALES Y PRÁCTICAS, SIENDO PROGRESIVO E INDUCTIVO, REDONDEANDO IDEAS DE FORMA SISTEMÁTICA Y CON CLARIDAD ABSOLUTA.
+
 
 
 ## Solicitud concreta
 
-http://localhost:4321/matematicas/algebra/funciones-ecuaciones-cuadraticas/graficas
 
 
-por favor haz la lección un poco más didáctic ay consisa en el sentido de qué se maneje una idea sintetizadora sobre qué se debe encontrar para deerminar por completo la gráfica de la ecuacióm cuadrática...algo así me entiendes?
+
+![alt text](image-25.png)
+http://localhost:4323/fisica/cinematica/mrua/lanzamiento-vertical
+la flecha de la gravedad trata de que sea constante en tamaño para que no confunda.
+
+![alt text](image-26.png)
+http://localhost:4323/fisica/cinematica/mrua/caida-libre
+El canvas cortado no deja ver la v = 30 m/s
