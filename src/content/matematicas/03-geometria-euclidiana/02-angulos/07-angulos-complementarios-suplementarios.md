@@ -162,6 +162,68 @@ Para un ángulo de $50°$:
 | Suplemento | $180° - 50°$ | $130°$ |
 | Conjugado | $360° - 50°$ | $310°$ |
 
+**Ángulos complementarios ($\alpha + \beta = 90°$) y suplementarios ($\alpha + \beta = 180°$):**
+
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-relaciones-angulos" style="width: 100%; height: 380px; min-height: 320px; border-radius: 8px;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-relaciones-angulos')) {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-relaciones-angulos', {
+      boundingbox: [-1, 9, 15, -1],
+      axis: false,
+      showCopyright: false,
+      showNavigation: false,
+      pan: { enabled: false },
+      zoom: { enabled: false }
+    });
+    
+    board.create('text', [7, 8.3, 'Relaciones entre Ángulos'], {fontSize: 14, fontWeight: 'bold', color: '#1e293b', anchorX: 'middle'});
+    
+    // COMPLEMENTARIOS (suman 90°) - izquierda
+    board.create('text', [2.5, 7, 'COMPLEMENTARIOS'], {fontSize: 11, fontWeight: 'bold', color: '#22c55e', anchorX: 'middle'});
+    var c_v = board.create('point', [2.5, 4.5], {name: '', size: 4, fixed: true, color: '#1e293b'});
+    var c_p1 = board.create('point', [5, 4.5], {visible: false, fixed: true});
+    var c_p2 = board.create('point', [4.3, 6.3], {visible: false, fixed: true}); // ~60°
+    var c_p3 = board.create('point', [2.5, 6.5], {visible: false, fixed: true}); // 90°
+    
+    board.create('segment', [c_v, c_p1], {strokeColor: '#22c55e', strokeWidth: 2});
+    board.create('segment', [c_v, c_p2], {strokeColor: '#f59e0b', strokeWidth: 2});
+    board.create('segment', [c_v, c_p3], {strokeColor: '#22c55e', strokeWidth: 2, dash: 2});
+    
+    board.create('text', [3.8, 5, 'α'], {fontSize: 12, color: '#22c55e'});
+    board.create('text', [3.2, 5.8, 'β'], {fontSize: 12, color: '#f59e0b'});
+    board.create('text', [2.5, 3, 'α + β = 90°'], {fontSize: 11, color: '#64748b', anchorX: 'middle'});
+    
+    // SUPLEMENTARIOS (suman 180°) - centro
+    board.create('text', [7.5, 7, 'SUPLEMENTARIOS'], {fontSize: 11, fontWeight: 'bold', color: '#3b82f6', anchorX: 'middle'});
+    var s_v = board.create('point', [7.5, 4.5], {name: '', size: 4, fixed: true, color: '#1e293b'});
+    var s_p1 = board.create('point', [10, 4.5], {visible: false, fixed: true});
+    var s_p2 = board.create('point', [5, 4.5], {visible: false, fixed: true});
+    var s_p3 = board.create('point', [9, 6], {visible: false, fixed: true}); // ~45°
+    
+    board.create('segment', [s_v, s_p1], {strokeColor: '#3b82f6', strokeWidth: 2});
+    board.create('segment', [s_v, s_p2], {strokeColor: '#3b82f6', strokeWidth: 2});
+    board.create('segment', [s_v, s_p3], {strokeColor: '#ef4444', strokeWidth: 2});
+    
+    board.create('text', [8.5, 5, 'α'], {fontSize: 12, color: '#ef4444'});
+    board.create('text', [6.2, 5, 'β'], {fontSize: 12, color: '#3b82f6'});
+    board.create('text', [7.5, 3, 'α + β = 180°'], {fontSize: 11, color: '#64748b', anchorX: 'middle'});
+    
+    // Leyenda
+    board.create('text', [7, 1.5, 'Los ángulos complementarios suman 90° (ángulo recto)'], {fontSize: 10, color: '#475569', anchorX: 'middle'});
+    board.create('text', [7, 0.8, 'Los ángulos suplementarios suman 180° (ángulo llano)'], {fontSize: 10, color: '#475569', anchorX: 'middle'});
+    
+    board.unsuspendUpdate();
+  }
+});
+</script>
+
 ---
 
 ## 📖 Aplicaciones prácticas

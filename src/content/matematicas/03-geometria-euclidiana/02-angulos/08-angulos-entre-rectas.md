@@ -105,6 +105,57 @@ Si uno de los cuatro ángulos mide $70°$:
 
 Verificación: $70° + 110° + 70° + 110° = 360°$ ✓
 
+**Ángulos opuestos por el vértice ($\alpha = \gamma$) y adyacentes ($\alpha + \beta = 180°$):**
+
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-angulos-rectas" style="width: 100%; height: 380px; min-height: 320px; border-radius: 8px;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-angulos-rectas')) {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-angulos-rectas', {
+      boundingbox: [-1, 8, 12, -1],
+      axis: false,
+      showCopyright: false,
+      showNavigation: false,
+      pan: { enabled: false },
+      zoom: { enabled: false }
+    });
+    
+    board.create('text', [5.5, 7.3, 'Ángulos formados por dos rectas secantes'], {fontSize: 14, fontWeight: 'bold', color: '#1e293b', anchorX: 'middle'});
+    
+    // Punto de intersección
+    var P = board.create('point', [5.5, 3.5], {name: 'P', size: 5, fixed: true, color: '#1e293b', label: {fontSize: 12, offset: [-15, -15]}});
+    
+    // Rectas secantes
+    var r1a = board.create('point', [2, 1.5], {visible: false, fixed: true});
+    var r1b = board.create('point', [9, 5.5], {visible: false, fixed: true});
+    var r2a = board.create('point', [2, 5.5], {visible: false, fixed: true});
+    var r2b = board.create('point', [9, 1.5], {visible: false, fixed: true});
+    
+    board.create('line', [r1a, r1b], {strokeColor: '#64748b', strokeWidth: 2});
+    board.create('line', [r2a, r2b], {strokeColor: '#64748b', strokeWidth: 2});
+    
+    // Etiquetas de los 4 ángulos
+    board.create('text', [6.8, 4.3, 'α'], {fontSize: 16, fontWeight: 'bold', color: '#22c55e'});
+    board.create('text', [4.2, 4.3, 'β'], {fontSize: 16, fontWeight: 'bold', color: '#ef4444'});
+    board.create('text', [4.2, 2.5, 'γ'], {fontSize: 16, fontWeight: 'bold', color: '#22c55e'});
+    board.create('text', [6.8, 2.5, 'δ'], {fontSize: 16, fontWeight: 'bold', color: '#ef4444'});
+    
+    // Leyenda
+    board.create('text', [5.5, 1.2, 'α = γ (opuestos por el vértice)'], {fontSize: 11, color: '#22c55e', anchorX: 'middle'});
+    board.create('text', [5.5, 0.6, 'β = δ (opuestos por el vértice)'], {fontSize: 11, color: '#ef4444', anchorX: 'middle'});
+    board.create('text', [5.5, 0, 'α + β = 180° (adyacentes = suplementarios)'], {fontSize: 10, color: '#64748b', anchorX: 'middle'});
+    
+    board.unsuspendUpdate();
+  }
+});
+</script>
+
 ---
 
 ## 📖 Par Lineal

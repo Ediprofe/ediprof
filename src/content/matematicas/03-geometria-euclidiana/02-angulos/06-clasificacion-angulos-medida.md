@@ -207,6 +207,71 @@ Una rueda que da una vuelta completa gira $360°$.
 | Cóncavo | $180° - 360°$ | Más de media vuelta |
 | Perigonal | $360°$ | Vuelta completa |
 
+**Ángulos: nulo ($0°$), agudo ($0° < \alpha < 90°$), recto ($90°$), obtuso ($90° < \alpha < 180°$), llano ($180°$):**
+
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-tipos-angulos" style="width: 100%; height: 450px; min-height: 400px; border-radius: 8px;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-tipos-angulos')) {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-tipos-angulos', {
+      boundingbox: [-1, 10, 15, -1],
+      axis: false,
+      showCopyright: false,
+      showNavigation: false,
+      pan: { enabled: false },
+      zoom: { enabled: false }
+    });
+    
+    board.create('text', [7, 9.3, 'Clasificación de Ángulos por su Medida'], {fontSize: 14, fontWeight: 'bold', color: '#1e293b', anchorX: 'middle'});
+    
+    // Función para crear un ángulo con etiqueta
+    function crearAngulo(cx, cy, angGrados, nombre, color) {
+      var rad = angGrados * Math.PI / 180;
+      var r = 1.2;
+      
+      // Lados del ángulo
+      var p1 = board.create('point', [cx + r, cy], {visible: false, fixed: true});
+      var p2 = board.create('point', [cx + r * Math.cos(rad), cy + r * Math.sin(rad)], {visible: false, fixed: true});
+      var v = board.create('point', [cx, cy], {name: '', size: 4, fixed: true, color: color});
+      
+      board.create('segment', [v, p1], {strokeColor: color, strokeWidth: 2});
+      board.create('segment', [v, p2], {strokeColor: color, strokeWidth: 2});
+      
+      // Arco
+      if (angGrados > 0 && angGrados < 360) {
+        board.create('arc', [v, p1, p2], {strokeColor: color, strokeWidth: 2});
+      }
+      
+      // Etiquetas
+      board.create('text', [cx, cy - 1.5, nombre + ' (' + angGrados + '°)'], {fontSize: 10, color: color, anchorX: 'middle'});
+    }
+    
+    // FILA 1: Nulo, Agudo, Recto
+    crearAngulo(2, 6.5, 0, 'NULO', '#94a3b8');
+    crearAngulo(6, 6.5, 45, 'AGUDO', '#22c55e');
+    crearAngulo(10, 6.5, 90, 'RECTO', '#3b82f6');
+    
+    // Cuadradito para ángulo recto
+    board.create('polygon', [[10.3, 6.5], [10.3, 6.8], [10, 6.8]], {
+      fillColor: 'transparent',
+      borders: {strokeColor: '#3b82f6', strokeWidth: 1}
+    });
+    
+    // FILA 2: Obtuso, Llano
+    crearAngulo(4, 2.5, 135, 'OBTUSO', '#f59e0b');
+    crearAngulo(9, 2.5, 180, 'LLANO', '#ef4444');
+    
+    board.unsuspendUpdate();
+  }
+});
+</script>
+
 ---
 
 ## 📝 Ejercicios de práctica

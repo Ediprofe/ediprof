@@ -16,6 +16,66 @@ Este documento define las buenas prácticas para generar gráficos en las leccio
 
 ---
 
+## ⚠️ REGLAS CRÍTICAS PARA ILUSTRACIONES GEOMÉTRICAS
+
+### Regla 1: Figuras ESTÁTICAS por defecto
+
+> **TODOS los puntos deben ser fijos** (`fixed: true`) a menos que el usuario solicite explícitamente interactividad.
+
+La interactividad mal diseñada causa confusión cuando:
+- Las etiquetas se separan de los puntos
+- Los elementos se mueven de forma no intencional
+- La figura pierde su significado geométrico
+
+**✅ SIEMPRE agregar `fixed: true` a TODOS los puntos:**
+
+```javascript
+// Puntos visibles con etiquetas
+board.create('point', [2, 3], {name: 'A', size: 6, fixed: true, color: '#3b82f6', label: {...}});
+
+// Puntos invisibles (usados para definir rectas/segmentos)
+board.create('point', [5, 5], {visible: false, fixed: true});
+
+// Puntos sin nombre
+board.create('point', [3, 2], {name: '', size: 5, fixed: true, color: '#22c55e'});
+```
+
+### Regla 2: Notaciones LaTeX FUERA del wrapper
+
+> **Las notaciones matemáticas (LaTeX) deben ir ARRIBA del wrapper**, nunca dentro de la ilustración JSXGraph.
+
+JSXGraph no puede renderizar LaTeX correctamente. Colocar las notaciones como texto en negrita **inmediatamente antes** del wrapper `<div>`:
+
+**✅ CORRECTO:**
+
+```markdown
+**Representación del segmento $\overline{AB}$:**
+
+<div style="background: #f1f5f9; ...">
+  ...
+</div>
+```
+
+**✅ Ejemplos de títulos con notación:**
+
+| Concepto | Título LaTeX |
+|----------|--------------|
+| Segmento | `**Segmento $\overline{AB}$:**` |
+| Recta | `**Recta $\overleftrightarrow{AB}$ (notación: $l$):**` |
+| Rayo | `**Rayo $\overrightarrow{AB}$:**` |
+| Ángulo | `**Ángulo $\angle ABC$:**` |
+| Paralelas | `**Rectas paralelas ($l \parallel m$):**` |
+| Complementarios | `**Ángulos complementarios ($\alpha + \beta = 90°$):**` |
+
+**❌ INCORRECTO (dentro de JSXGraph):**
+
+```javascript
+// NO HACER: LaTeX no se renderiza correctamente dentro de JSXGraph
+board.create('text', [5, 5, 'Segmento AB con barra'], {...});
+```
+
+---
+
 ## 📐 Estilo visual obligatorio para TODOS los gráficos
 
 Todos los gráficos deben seguir este wrapper visual **100% responsive**:
@@ -219,7 +279,13 @@ series: [
 
 ## B.2 Plantilla JSXGraph con wrapper
 
-```html
+> ⚠️ **IMPORTANTE**: Por defecto, TODOS los puntos deben tener `fixed: true` (ver Regla 1 arriba). Solo si el usuario solicita explícitamente interactividad, omitir `fixed: true` en los puntos que deban moverse.
+
+**Título LaTeX ARRIBA del wrapper (Regla 2):**
+
+```markdown
+**Representación del segmento $\overline{AB}$:**
+
 <div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
@@ -232,14 +298,22 @@ document.addEventListener('DOMContentLoaded', function() {
   if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-NOMBRE')) {
     var board = JXG.JSXGraph.initBoard('jsxgraph-NOMBRE', {
       boundingbox: [-1, 7, 9, -1],
-      axis: true,
+      axis: false,
       showCopyright: false,
       showNavigation: false,
       pan: { enabled: false },
       zoom: { enabled: false }
     });
     
-    // ... elementos interactivos ...
+    // Puntos SIEMPRE con fixed: true (a menos que se solicite interactividad)
+    var pA = board.create('point', [2, 3], {name: 'A', size: 6, fixed: true, color: '#3b82f6', label: {fontSize: 14, color: '#3b82f6', offset: [10, 10]}});
+    var pB = board.create('point', [7, 3], {name: 'B', size: 6, fixed: true, color: '#3b82f6', label: {fontSize: 14, color: '#3b82f6', offset: [10, 10]}});
+    
+    // Puntos invisibles también con fixed: true
+    var pHidden = board.create('point', [5, 5], {visible: false, fixed: true});
+    
+    // Segmento/recta usando los puntos
+    board.create('segment', [pA, pB], {strokeColor: '#22c55e', strokeWidth: 3});
     
     board.unsuspendUpdate();
   }

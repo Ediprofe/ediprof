@@ -64,6 +64,47 @@ Euclides estableció 5 principios básicos (postulados) que son el fundamento de
 4. Todos los ángulos rectos son iguales
 5. Por un punto exterior a una recta pasa una única recta paralela
 
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-postulado1" style="width: 100%; height: 300px; min-height: 250px; border-radius: 8px;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-postulado1')) {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-postulado1', {
+      boundingbox: [-1, 6, 12, -1],
+      axis: false,
+      showCopyright: false,
+      showNavigation: false,
+      pan: { enabled: false },
+      zoom: { enabled: false }
+    });
+    
+    // Título
+    board.create('text', [5.5, 5.2, 'Primer Postulado de Euclides'], {fontSize: 14, fontWeight: 'bold', color: '#1e293b', anchorX: 'middle'});
+    board.create('text', [5.5, 4.5, '"Por dos puntos pasa una única recta"'], {fontSize: 12, fontStyle: 'italic', color: '#64748b', anchorX: 'middle'});
+    
+    // Puntos A y B
+    var pA = board.create('point', [2, 2], {name: 'A', size: 5, fixed: true, color: '#3b82f6', label: {fontSize: 14, color: '#3b82f6', offset: [-15, 10]}});
+    var pB = board.create('point', [9, 2], {name: 'B', size: 5, fixed: true, color: '#3b82f6', label: {fontSize: 14, color: '#3b82f6', offset: [10, 10]}});
+    
+    // Única recta que pasa por A y B
+    board.create('line', [pA, pB], {strokeColor: '#22c55e', strokeWidth: 3});
+    
+    // Etiqueta de la recta
+    board.create('text', [10.5, 2.8, 'l'], {fontSize: 14, fontStyle: 'italic', color: '#22c55e'});
+    
+    // Nota explicativa
+    board.create('text', [5.5, 0.3, '¡Solo existe una recta que pasa por ambos puntos!'], {fontSize: 11, color: '#475569', anchorX: 'middle'});
+    
+    board.unsuspendUpdate();
+  }
+});
+</script>
+
 ---
 
 ## 📖 Los elementos fundamentales de la geometría
@@ -77,6 +118,60 @@ Antes de estudiar figuras complejas, necesitamos conocer los **tres elementos b�
 | Plano | $\pi$, $\alpha$ | Tiene largo y ancho (infinito en todas direcciones) |
 
 Estos elementos se llaman **conceptos primitivos** porque no se pueden definir con otros más simples, solo se pueden describir.
+
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-elementos-fundamentales" style="width: 100%; height: 350px; min-height: 300px; border-radius: 8px;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-elementos-fundamentales')) {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-elementos-fundamentales', {
+      boundingbox: [-1, 8, 14, -1],
+      axis: false,
+      showCopyright: false,
+      showNavigation: false,
+      pan: { enabled: false },
+      zoom: { enabled: false }
+    });
+    
+    // PUNTO
+    board.create('text', [1.5, 7, 'PUNTO'], {fontSize: 14, fontWeight: 'bold', color: '#1e293b'});
+    board.create('point', [1.5, 5.5], {name: 'A', size: 5, fixed: true, color: '#3b82f6', label: {fontSize: 14, color: '#3b82f6', offset: [10, 5]}});
+    board.create('text', [1.5, 4, 'Sin dimensiones'], {fontSize: 11, color: '#64748b', anchorX: 'middle'});
+    board.create('text', [1.5, 3.3, '(solo posición)'], {fontSize: 10, color: '#94a3b8', anchorX: 'middle'});
+    
+    // RECTA
+    board.create('text', [7, 7, 'RECTA'], {fontSize: 14, fontWeight: 'bold', color: '#1e293b'});
+    var p1 = board.create('point', [5, 5.5], {visible: false, fixed: true});
+    var p2 = board.create('point', [9, 5.5], {visible: false, fixed: true});
+    board.create('line', [p1, p2], {strokeColor: '#22c55e', strokeWidth: 3, straightFirst: true, straightLast: true});
+    board.create('text', [7, 7.3, 'l'], {fontSize: 14, fontStyle: 'italic', color: '#22c55e', anchorX: 'middle'});
+    board.create('text', [7, 4, '1 dimensión'], {fontSize: 11, color: '#64748b', anchorX: 'middle'});
+    board.create('text', [7, 3.3, '(longitud infinita)'], {fontSize: 10, color: '#94a3b8', anchorX: 'middle'});
+    
+    // PLANO
+    board.create('text', [12, 7, 'PLANO'], {fontSize: 14, fontWeight: 'bold', color: '#1e293b'});
+    var planoPoints = [[10, 4.5], [11.5, 6], [14, 6], [12.5, 4.5]];
+    board.create('polygon', planoPoints.map(function(p) { return board.create('point', p, {visible: false, fixed: true}); }), {
+      fillColor: '#fef3c7', 
+      fillOpacity: 0.6, 
+      borders: {strokeColor: '#f59e0b', strokeWidth: 2}
+    });
+    board.create('text', [12.2, 5.2, 'α'], {fontSize: 16, fontStyle: 'italic', color: '#f59e0b'});
+    board.create('text', [12, 3.3, '2 dimensiones'], {fontSize: 11, color: '#64748b', anchorX: 'middle'});
+    board.create('text', [12, 2.6, '(largo y ancho)'], {fontSize: 10, color: '#94a3b8', anchorX: 'middle'});
+    
+    // Leyenda inferior
+    board.create('text', [7, 1, 'Los tres elementos fundamentales de la geometría'], {fontSize: 12, color: '#475569', anchorX: 'middle', fontWeight: 'bold'});
+    
+    board.unsuspendUpdate();
+  }
+});
+</script>
 
 > En las próximas lecciones estudiaremos cada uno de estos elementos en detalle.
 

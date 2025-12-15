@@ -132,6 +132,70 @@ Esto se debe al axioma: "Por dos puntos pasa una única recta".
 | Paralelas | 0 puntos | $\parallel$ | Rieles del tren |
 | Coincidentes | Infinitos | $=$ | Misma recta con dos nombres |
 
+**Rectas secantes, paralelas ($l \parallel m$) y coincidentes ($l = m$):**
+
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-posiciones-rectas" style="width: 100%; height: 380px; min-height: 320px; border-radius: 8px;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-posiciones-rectas')) {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-posiciones-rectas', {
+      boundingbox: [-1, 9, 12, -1],
+      axis: false,
+      showCopyright: false,
+      showNavigation: false,
+      pan: { enabled: false },
+      zoom: { enabled: false }
+    });
+    
+    board.create('text', [5.5, 8.3, 'Posiciones Relativas de Dos Rectas'], {fontSize: 14, fontWeight: 'bold', color: '#1e293b', anchorX: 'middle'});
+    
+    // RECTAS SECANTES (izquierda)
+    board.create('text', [2, 7, 'SECANTES'], {fontSize: 12, fontWeight: 'bold', color: '#ef4444', anchorX: 'middle'});
+    var sec1a = board.create('point', [0.5, 4], {visible: false, fixed: true});
+    var sec1b = board.create('point', [3.5, 6], {visible: false, fixed: true});
+    var sec2a = board.create('point', [0.5, 6], {visible: false, fixed: true});
+    var sec2b = board.create('point', [3.5, 4], {visible: false, fixed: true});
+    board.create('line', [sec1a, sec1b], {strokeColor: '#ef4444', strokeWidth: 2, straightFirst: false, straightLast: false});
+    board.create('line', [sec2a, sec2b], {strokeColor: '#ef4444', strokeWidth: 2, straightFirst: false, straightLast: false});
+    // Punto de intersección
+    board.create('point', [2, 5], {name: 'P', size: 5, fixed: true, color: '#1e293b', label: {fontSize: 10, color: '#1e293b', offset: [8, 5]}});
+    board.create('text', [2, 3.3, '1 punto común'], {fontSize: 10, color: '#64748b', anchorX: 'middle'});
+    
+    // RECTAS PARALELAS (centro)
+    board.create('text', [5.5, 7, 'PARALELAS'], {fontSize: 12, fontWeight: 'bold', color: '#22c55e', anchorX: 'middle'});
+    var par1a = board.create('point', [4, 5.5], {visible: false, fixed: true});
+    var par1b = board.create('point', [7, 5.5], {visible: false, fixed: true});
+    var par2a = board.create('point', [4, 4.5], {visible: false, fixed: true});
+    var par2b = board.create('point', [7, 4.5], {visible: false, fixed: true});
+    board.create('segment', [par1a, par1b], {strokeColor: '#22c55e', strokeWidth: 2});
+    board.create('segment', [par2a, par2b], {strokeColor: '#22c55e', strokeWidth: 2});
+    board.create('text', [7.3, 5.5, 'l'], {fontSize: 11, fontStyle: 'italic', color: '#22c55e'});
+    board.create('text', [7.3, 4.5, 'm'], {fontSize: 11, fontStyle: 'italic', color: '#22c55e'});
+    board.create('text', [5.5, 3.8, 'l ∥ m'], {fontSize: 11, color: '#22c55e', anchorX: 'middle'});
+    board.create('text', [5.5, 3.3, '0 puntos comunes'], {fontSize: 10, color: '#64748b', anchorX: 'middle'});
+    
+    // RECTAS COINCIDENTES (derecha)
+    board.create('text', [9.5, 7, 'COINCIDENTES'], {fontSize: 12, fontWeight: 'bold', color: '#3b82f6', anchorX: 'middle'});
+    var coi1a = board.create('point', [8, 5], {visible: false, fixed: true});
+    var coi1b = board.create('point', [11, 5], {visible: false, fixed: true});
+    board.create('segment', [coi1a, coi1b], {strokeColor: '#3b82f6', strokeWidth: 4});
+    board.create('text', [11.2, 5.3, 'l = m'], {fontSize: 11, color: '#3b82f6'});
+    board.create('text', [9.5, 3.3, '∞ puntos comunes'], {fontSize: 10, color: '#64748b', anchorX: 'middle'});
+    
+    // Leyenda inferior
+    board.create('text', [5.5, 1.5, '¡Observa cómo se relacionan las rectas en cada caso!'], {fontSize: 11, color: '#475569', anchorX: 'middle'});
+    
+    board.unsuspendUpdate();
+  }
+});
+</script>
+
 ---
 
 ## 📖 ¿Cómo identificar la posición relativa?

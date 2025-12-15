@@ -46,6 +46,41 @@ Un lápiz nuevo mide aproximadamente 19 cm. Podemos representarlo como un segmen
 
 El larguero de una portería de fútbol es un segmento: tiene una longitud exacta (7.32 metros en canchas oficiales) con extremos en cada poste.
 
+**Representación del segmento $\overline{AB}$:**
+
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-segmento" style="width: 100%; height: 280px; min-height: 250px; border-radius: 8px;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-segmento')) {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-segmento', {
+      boundingbox: [-1, 5, 12, -1],
+      axis: false,
+      showCopyright: false,
+      showNavigation: false,
+      pan: { enabled: false },
+      zoom: { enabled: false }
+    });
+    
+    // Extremos del segmento
+    var pA = board.create('point', [2, 2.5], {name: 'A', size: 6, fixed: true, color: '#3b82f6', label: {fontSize: 14, color: '#3b82f6', offset: [-15, 10]}});
+    var pB = board.create('point', [9, 2.5], {name: 'B', size: 6, fixed: true, color: '#3b82f6', label: {fontSize: 14, color: '#3b82f6', offset: [10, 10]}});
+    
+    // Segmento (NO es recta infinita)
+    board.create('segment', [pA, pB], {strokeColor: '#22c55e', strokeWidth: 4});
+    
+    board.create('text', [5.5, 0.8, 'Un segmento tiene DOS EXTREMOS (puntos A y B)'], {fontSize: 11, color: '#64748b', anchorX: 'middle'});
+    
+    board.unsuspendUpdate();
+  }
+});
+</script>
+
 ---
 
 ## 📖 Longitud de un Segmento
@@ -114,6 +149,44 @@ Encontrar el punto medio es útil para:
 - Encontrar el centro de una pared para colgar un cuadro
 - Doblar una hoja de papel exactamente a la mitad
 
+**Punto medio $M$ del segmento $\overline{AB}$ donde $AM = MB$:**
+
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-puntomedio" style="width: 100%; height: 280px; min-height: 250px; border-radius: 8px;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-puntomedio')) {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-puntomedio', {
+      boundingbox: [-1, 5, 12, -1],
+      axis: false,
+      showCopyright: false,
+      showNavigation: false,
+      pan: { enabled: false },
+      zoom: { enabled: false }
+    });
+    
+    // Extremos del segmento
+    var pA = board.create('point', [1, 2.5], {name: 'A', size: 6, fixed: true, color: '#3b82f6', label: {fontSize: 14, color: '#3b82f6', offset: [-15, 10]}});
+    var pB = board.create('point', [10, 2.5], {name: 'B', size: 6, fixed: true, color: '#3b82f6', label: {fontSize: 14, color: '#3b82f6', offset: [10, 10]}});
+    
+    // Punto medio M
+    var pM = board.create('midpoint', [pA, pB], {name: 'M', size: 7, fixed: true, color: '#f59e0b', label: {fontSize: 14, color: '#f59e0b', offset: [0, 15]}});
+    
+    // Segmento completo
+    board.create('segment', [pA, pB], {strokeColor: '#22c55e', strokeWidth: 3});
+    
+    board.create('text', [5.5, 0.8, 'El punto M divide al segmento en dos partes IGUALES'], {fontSize: 11, color: '#64748b', anchorX: 'middle'});
+    
+    board.unsuspendUpdate();
+  }
+});
+</script>
+
 ---
 
 ## 📖 El Rayo (o Semirrecta)
@@ -157,6 +230,103 @@ Un rayo de luz láser que sale de un puntero. El origen es el puntero, y la luz 
 ### Ejemplo 2
 
 Si estás parado en un punto $A$ mirando hacia un punto $B$, la dirección de tu mirada representa el rayo $\overrightarrow{AB}$.
+
+**Representación del rayo $\overrightarrow{AB}$:**
+
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-rayo" style="width: 100%; height: 280px; min-height: 250px; border-radius: 8px;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-rayo')) {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-rayo', {
+      boundingbox: [-1, 6, 12, -1],
+      axis: false,
+      showCopyright: false,
+      showNavigation: false,
+      pan: { enabled: false },
+      zoom: { enabled: false }
+    });
+    
+    board.create('text', [5.5, 5.2, 'El Rayo (Semirrecta)'], {fontSize: 14, fontWeight: 'bold', color: '#1e293b', anchorX: 'middle'});
+    
+    // Origen del rayo
+    var pA = board.create('point', [2, 3], {name: 'A', size: 7, fixed: true, color: '#3b82f6', label: {fontSize: 14, color: '#3b82f6', offset: [-15, 10]}});
+    var pB = board.create('point', [6, 3], {name: 'B', size: 5, fixed: true, color: '#94a3b8', label: {fontSize: 14, color: '#94a3b8', offset: [0, 15]}});
+    
+    // Rayo (desde A, pasando por B, hacia el infinito)
+    board.create('line', [pA, pB], {strokeColor: '#ef4444', strokeWidth: 3, straightFirst: false, straightLast: true});
+    
+    // Etiqueta del rayo
+    board.create('text', [10.5, 3.5, '→ AB'], {fontSize: 12, color: '#ef4444'});
+    
+    // Flecha indicativa
+    board.create('text', [11, 3, '→'], {fontSize: 20, color: '#ef4444'});
+    
+    // Punto de origen destacado
+    board.create('text', [2, 1.8, 'ORIGEN'], {fontSize: 10, color: '#3b82f6', anchorX: 'middle'});
+    
+    board.create('text', [5.5, 1, 'Un rayo tiene UN ORIGEN y se extiende infinitamente en UNA dirección'], {fontSize: 11, color: '#64748b', anchorX: 'middle'});
+    board.create('text', [5.5, 0.3, 'Notación: →AB (flecha sobre AB)'], {fontSize: 11, color: '#94a3b8', anchorX: 'middle'});
+    
+    board.unsuspendUpdate();
+  }
+});
+</script>
+
+**Comparativa: Recta $\overleftrightarrow{AB}$ vs Segmento $\overline{AB}$ vs Rayo $\overrightarrow{AB}$:**
+
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-comparativa" style="width: 100%; height: 350px; min-height: 300px; border-radius: 8px;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-comparativa')) {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-comparativa', {
+      boundingbox: [-1, 7, 12, -1],
+      axis: false,
+      showCopyright: false,
+      showNavigation: false,
+      pan: { enabled: false },
+      zoom: { enabled: false }
+    });
+    
+    // RECTA (arriba)
+    board.create('text', [0.5, 5.5, 'RECTA'], {fontSize: 12, fontWeight: 'bold', color: '#22c55e'});
+    var r1 = board.create('point', [2, 5.5], {visible: false, fixed: true});
+    var r2 = board.create('point', [10, 5.5], {visible: false, fixed: true});
+    board.create('line', [r1, r2], {strokeColor: '#22c55e', strokeWidth: 3});
+    board.create('text', [1, 5.5, '←'], {fontSize: 16, color: '#22c55e'});
+    board.create('text', [11, 5.5, '→'], {fontSize: 16, color: '#22c55e'});
+    
+    // SEGMENTO (medio)
+    board.create('text', [0.2, 3.5, 'SEGMENTO'], {fontSize: 12, fontWeight: 'bold', color: '#3b82f6'});
+    var s1 = board.create('point', [3, 3.5], {name: '', size: 5, fixed: true, color: '#3b82f6'});
+    var s2 = board.create('point', [9, 3.5], {name: '', size: 5, fixed: true, color: '#3b82f6'});
+    board.create('segment', [s1, s2], {strokeColor: '#3b82f6', strokeWidth: 3});
+    board.create('text', [3, 2.7, 'A'], {fontSize: 11, color: '#3b82f6', anchorX: 'middle'});
+    board.create('text', [9, 2.7, 'B'], {fontSize: 11, color: '#3b82f6', anchorX: 'middle'});
+    
+    // RAYO (abajo)
+    board.create('text', [0.5, 1.5, 'RAYO'], {fontSize: 12, fontWeight: 'bold', color: '#ef4444'});
+    var y1 = board.create('point', [3, 1.5], {name: '', size: 5, fixed: true, color: '#ef4444'});
+    var y2 = board.create('point', [9, 1.5], {visible: false, fixed: true});
+    board.create('line', [y1, y2], {strokeColor: '#ef4444', strokeWidth: 3, straightFirst: false, straightLast: true});
+    board.create('text', [3, 0.7, 'A'], {fontSize: 11, color: '#ef4444', anchorX: 'middle'});
+    board.create('text', [11, 1.5, '→'], {fontSize: 16, color: '#ef4444'});
+    
+    board.unsuspendUpdate();
+  }
+});
+</script>
 
 ---
 
