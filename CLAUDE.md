@@ -268,13 +268,7 @@ Para ver el estilo correcto de lecciones, revisar:
 
 ## SOLICITUD CONCRETA
 
-genera las ilustraciones para estas lecciones:
-
 http://localhost:4321/matematicas/geometria-euclidiana/cuadrilateros/definicion-cuadrilatero
 
-http://localhost:4321/matematicas/geometria-euclidiana/cuadrilateros/paralelogramos
-
-http://localhost:4321/matematicas/geometria-euclidiana/cuadrilateros/rectangulo-rombo-cuadrado
-
-
-http://localhost:4321/matematicas/geometria-euclidiana/cuadrilateros/trapecio
+![alt text](image-58.png)
+el cuadrilatero concavo muestra que su vértice superior casi no se. De otro lado, quiero que muestres el ángulo interior mayor a 180°

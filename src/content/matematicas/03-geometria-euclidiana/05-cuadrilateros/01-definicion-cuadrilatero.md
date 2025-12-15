@@ -71,12 +71,12 @@ Las diagonales dividen al cuadrilátero en **triángulos**.
     board.create('segment', [A, C], {strokeColor: '#ef4444', strokeWidth: 2, dash: 2});
     board.create('segment', [B, D], {strokeColor: '#f97316', strokeWidth: 2, dash: 2});
 
-    // Ángulos
+    // Ángulos (Orden: Siguiente, Vértice, Anterior para ángulos interiores en polígono CCW)
     var angleStyle = {radius: 0.5, fillColor: '#22c55e', fillOpacity: 0.3, strokeColor: '#166534'};
-    board.create('angle', [D, A, B], { ...angleStyle, name: 'α' });
-    board.create('angle', [A, B, C], { ...angleStyle, name: 'β' });
-    board.create('angle', [B, C, D], { ...angleStyle, name: 'γ' });
-    board.create('angle', [C, D, A], { ...angleStyle, name: 'δ' });
+    board.create('angle', [B, A, D], { ...angleStyle, name: 'α' });
+    board.create('angle', [C, B, A], { ...angleStyle, name: 'β' });
+    board.create('angle', [D, C, B], { ...angleStyle, name: 'γ' });
+    board.create('angle', [A, D, C], { ...angleStyle, name: 'δ' });
     
     // Etiquetas adicionales
     board.create('text', [2.5, 2.5, 'Diagonales'], {color: '#ef4444', fontSize: 11, fixed: true, anchorX: 'middle'});
@@ -158,7 +158,7 @@ Un ángulo interior es **mayor que 180°** (ángulo reflejo). Una diagonal queda
     if (JXG.boards['jsxgraph-tipos']) return;
 
     var board = JXG.JSXGraph.initBoard('jsxgraph-tipos', {
-      boundingbox: [-1, 5, 11, -2],
+      boundingbox: [-1, 6, 11, -2],
       axis: false,
       showCopyright: false,
       showNavigation: false,
@@ -166,76 +166,78 @@ Un ángulo interior es **mayor que 180°** (ángulo reflejo). Una diagonal queda
     });
     
     // --- CONVEXO ---
-    var A1 = board.create('point', [0, 0], {name: '', size: 2, color: '#1e293b', fixed: true});
-    var B1 = board.create('point', [3, 0], {name: '', size: 2, color: '#1e293b', fixed: true});
-    var C1 = board.create('point', [3.5, 3], {name: '', size: 2, color: '#1e293b', fixed: true});
-    var D1 = board.create('point', [0.5, 2.5], {name: '', size: 2, color: '#1e293b', fixed: true});
+    // Un cuadrilátero convexo simple
+    var A1 = board.create('point', [0, 0], {name: 'A', size: 2, color: '#1e293b', variable: false, fixed: true, label:{visible:false}});
+    var B1 = board.create('point', [3, 0], {name: 'B', size: 2, color: '#1e293b', variable: false, fixed: true, label:{visible:false}});
+    var C1 = board.create('point', [3.5, 3], {name: 'C', size: 2, color: '#1e293b', variable: false, fixed: true, label:{visible:false}});
+    var D1 = board.create('point', [0.5, 2.5], {name: 'D', size: 2, color: '#1e293b', variable: false, fixed: true, label:{visible:false}});
     
-    board.create('polygon', [A1, B1, C1, D1], {fillColor: '#22c55e', fillOpacity: 0.3, borders: {strokeColor: '#166534'}});
-    board.create('segment', [A1, C1], {strokeColor: '#166534', dash: 2}); // Diagonal interna
+    board.create('polygon', [A1, B1, C1, D1], {fillColor: '#22c55e', fillOpacity: 0.3, borders: {strokeColor: '#166534', strokeWidth: 2}});
+    
+    // Diagonales (ambas internas)
+    board.create('segment', [A1, C1], {strokeColor: '#166534', strokeWidth: 2, dash: 2}); 
+    board.create('segment', [B1, D1], {strokeColor: '#166534', strokeWidth: 2, dash: 2});
+    
     board.create('text', [1.8, -1, 'Convexo'], {fontSize: 12, fontWeight: 'bold', color: '#166534', fixed: true, anchorX: 'middle'});
-    board.create('text', [1.8, -1.5, 'Diagonales internas'], {fontSize: 10, color: '#1e293b', fixed: true, anchorX: 'middle'});
+    board.create('text', [1.8, -1.5, 'Diagonales internas'], {fontSize: 11, color: '#1e293b', fixed: true, anchorX: 'middle'});
 
     // --- CÓNCAVO ---
-    var A2 = board.create('point', [6, 0], {name: '', size: 2, color: '#1e293b', fixed: true});
-    var B2 = board.create('point', [10, 0], {name: '', size: 2, color: '#1e293b', fixed: true});
-    var C2 = board.create('point', [8, 1.5], {name: '', size: 2, color: '#1e293b', fixed: true}); // Vértice entrante
-    var D2 = board.create('point', [8, 3.5], {name: '', size: 2, color: '#1e293b', fixed: true});
+    // Polígono tipo "Punta de Flecha" (Arrowhead)
+    // L(Left), T(Tip/Top), R(Right), I(Indent/Bottom)
+    var L = board.create('point', [6, 2], {name: '', size: 2, color: '#1e293b', fixed: true, visible: true});
+    var T = board.create('point', [8, 5], {name: '', size: 2, color: '#1e293b', fixed: true, visible: true});
+    var R = board.create('point', [10, 2], {name: '', size: 2, color: '#1e293b', fixed: true, visible: true});
+    var I = board.create('point', [8, 3], {name: '', size: 2, color: '#1e293b', fixed: true, visible: true});
     
-    board.create('polygon', [A2, B2, C2, D2], {fillColor: '#ef4444', fillOpacity: 0.3, borders: {strokeColor: '#b91c1c'}});
+    // El polígono se dibuja L -> T -> R -> I -> L.
+    board.create('polygon', [L, T, R, I], {
+        fillColor: '#ef4444', 
+        fillOpacity: 0.3, 
+        borders: {strokeColor: '#b91c1c', strokeWidth: 2}
+    });
     
-    // Diagonal externa
-    board.create('segment', [D2, C2], {visible: false}); // Ocultar segmento del polígono para no confundir con diagonal
-    board.create('segment', [A2, B2], {visible: true, strokeColor: '#b91c1c'});
+    // Diagonal Externa: Une L y R.
+    board.create('segment', [L, R], {strokeColor: '#b91c1c', strokeWidth: 2, dash: 2}); 
     
-    // Diagonal que sale fuera (A2-B2 ya es lado, D2-C2 es lado... diagonal es D2-A2? No, diagonal une opuestos: D2-A2 y C2-B2 son lados. Diagonales: D2-B2 y A2-C2... )
-    // Hmmm en este "delta head" (o punta de flecha), A, B, C(entrante), D(punta arriba).
-    // Orden puntos: A(6,0) -> B(10,0) -> C(8,1.5) -> D(8,3.5)
-    // Lados: AB, BC, CD, DA.
-    // Opuestos: A y C. B y D.
-    // Diagonal AC: (6,0) a (8,1.5). Pasa por dentro.
-    // Diagonal BD: (10,0) a (8,3.5). Pasa por FUERA si el orden es A-B-C-D?
-    // Espera, si es A->B->C->D, A(6,0), B(10,0), C(8,1.5), D(8,3.5).
-    // Poligono cruzado? No.
-    // Dibujémoslo mentalmente: Base AB grande. C está "arriba" en medio. D más arriba en medio.
-    // Es como una punta de flecha apuntando arriba, pero C está 'metido'.
-    // Vértices A, B, C, D.
-    // Si recorro A->B->C->D->A.
-    // A(6,0) -> B(10,0) -> C(8,1.5) (sube e izquierda) -> D(8,3.5) (sube) -> A (baja izq).
-    // C es el vértice cóncavo (ángulo > 180 interior).
-    // Diagonal une opuestos: A con C, B con D.
-    // A-C: (6,0)-(8,1.5). Dentro.
-    // B-D: (10,0)-(8,3.5). Dentro?
-    // El punto cóncavo es C? Ángulo en C es interior del polígono. El interior está "a la izquierda" del recorrido A->B->C->D ?
-    // A->B (derecha). B->C (izq arriba). C->D (arriba). D->A (abajo izq).
-    // El "interior" es lo encerrado.
-    // El ángulo en C (B-C-D) ... vector CB (-2, 1.5), CD (0, 2).
-    // Producto cruz...
-    // Mejor usaremos una forma clásica de "boomerang" o "delta".
-    // A(6,0), B(8,1), C(10,0), D(8,4). Orden A,B,C,D.
-    // Vértice B es el entrante.
-    // Diagonal AC une (6,0) y (10,0). Pasa por (8,0). El punto B está en (8,1).
-    // Entonces AC pasa por DEBAJO de B? No, si B está en (8,1), el segmento (6,0)-(10,0) está en y=0. B está "encima".
-    // Si el polígono es A-B-C-D-A.
-    // El interior depende del winding.
-    // Usemos la forma clásica:
-    // A(6,3), B(8,1) [entrante], C(10,3), D(8,5).
-    // Diagonal AC (horizontal y=3). B está en y=1. D en y=5.
-    // Si B es el vértice entrante, la diagonal AC pasa "fuera" del polígono (porque B se "metió" hacia D).
+    // Diagonal Interna: Une I y T.
+    board.create('segment', [I, T], {strokeColor: '#b91c1c', strokeWidth: 1, dash: 3, opacity: 0.5});
+
+    // Ángulo reflejo en I (> 180°). 
+    // El ángulo interior en I se define por los vértices adyacentes R y L.
+    // En JSXGraph, angle(p1, p2, p3) dibuja el ángulo p1->p2->p3 en sentido antihorario.
+    // Queremos el ángulo interior, que es el "grande".
+    // Viniendo de R, pasando por I, hacia L.
+    // Vector IR: (2, -1). Vector IL: (-2, -1).
+    // Si vamos R -> I -> L antihorario, barremos el ángulo de abajo (el pequeño, < 180).
+    // Si vamos L -> I -> R antihorario, barremos el ángulo de arriba (el grande, reflejo).
+    // Comprobemos: L(6,2) -> I(8,3) -> R(10,2).
+    // L está a la izquierda. R a la derecha. I arriba.
+    // Vector IL = (-2, -1). Vector IR = (2, -1).
+    // Ángulo de IL a IR en sentido antihorario:
+    // IL está en 3er cuadrante (apunta izq abajo). IR está en 4to cuadrante (apunta der abajo).
+    // De 3er a 4to cuadrante antihorario pasa por 2do y 1er? No.
+    // De 210 grados a 330 grados?
+    // IL angle approx 206 deg. IR angle approx 333 deg.
+    // Diferencia 333 - 206 = 127 deg.
+    // Ese sería el ángulo pequeño.
+    // Entonces para el ángulo GRANDE (reflejo) necesitamos ir de IR a IL?
+    // Angle(R, I, L)?
+    // R(-2, -1 from I?) -> angle -26 deg.
+    // L(-2, -1 from I?).
+    // De R a L antihorario... -26 -> ... -> 206. Total ~230 grados.
+    // Exacto. Así que Angle(R, I, L) debe darnos el reflejo.
     
-    // Puntos redefinidos para Cóncavo:
-    var P1 = board.create('point', [6, 3], {name: '', size: 2, color: '#1e293b', fixed: true});
-    var P2 = board.create('point', [8, 1.5], {name: '', size: 2, color: '#1e293b', fixed: true}); // Entrante
-    var P3 = board.create('point', [10, 3], {name: '', size: 2, color: '#1e293b', fixed: true});
-    var P4 = board.create('point', [8, 5], {name: '', size: 2, color: '#1e293b', fixed: true});
-    
-    board.create('polygon', [P1, P2, P3, P4], {fillColor: '#ef4444', fillOpacity: 0.3, borders: {strokeColor: '#b91c1c'}});
-    
-    // Diagonal externa P1-P3
-    board.create('segment', [P1, P3], {strokeColor: '#b91c1c', dash: 2}); 
-    
+    var reflexAngle = board.create('angle', [R, I, L], {
+      radius: 0.5, 
+      fillColor: '#ef4444', 
+      fillOpacity: 0.3, 
+      strokeColor: '#b91c1c',
+      name: '> 180°'
+    });
+    // Forzamos etiqueta visible un poco desplazada si es necesario, pero JSXGraph suele colocarla bien.
+
     board.create('text', [8, -1, 'Cóncavo'], {fontSize: 12, fontWeight: 'bold', color: '#b91c1c', fixed: true, anchorX: 'middle'});
-    board.create('text', [8, -1.5, 'Diagonal externa'], {fontSize: 10, color: '#1e293b', fixed: true, anchorX: 'middle'});
+    board.create('text', [8, -1.5, 'Diagonal externa'], {fontSize: 11, color: '#1e293b', fixed: true, anchorX: 'middle'});
     
   }
   
