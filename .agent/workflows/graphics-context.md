@@ -94,7 +94,6 @@ document.addEventListener('DOMContentLoaded', function() {
 ```
 
 ---
-
 ## 🎯 REGLA DE ORO
 
 > **ECharts es la PRIMERA opción** para cualquier gráfico de funciones, datos o visualizaciones estáticas.
@@ -104,6 +103,46 @@ document.addEventListener('DOMContentLoaded', function() {
 ---
 
 ## ⚠️ REGLAS CRÍTICAS PARA ILUSTRACIONES GEOMÉTRICAS
+
+### Regla 0.4: MEDICIONES EXACTAS vs APROXIMACIONES VISUALES
+
+> **PRINCIPIO**: La verdad matemática visual refuerza el aprendizaje. Las aproximaciones visuales ("a ojo") crean "valles inquietantes" geométricos que confunden al estudiante observador.
+
+| Situación | Método | ¿Por qué? |
+|-----------|--------|-----------|
+| **Propiedad Geométrica Específica** (paralelismo, perpendicularidad, trisección, tangencia, intersección, bisectriz) | **CÁLCULO EXACTO OBLIGATORIO** | Si el estudiante hace zoom o verifica, la propiedad DEBE cumplirse matemáticamente. Usar fórmulas de vectores, pies de altura, puntos medios, etc. |
+| **Formas Genéricas / Topológicas** (curvas abiertas/cerradas, polígonos irregulares sin propiedades especiales, "una figura cualquiera") | **Aproximación "Hardcodeada"** (Coordenadas fijas) | Gestiona mejor los recursos y evita complejidad innecesaria. Solo asegúrate de que sea estéticamente agradable. |
+| **Ilustraciones Físicas / Diagramas** (bloques, resortes, escenarios) | **Aproximación Estilizada** (Coordenadas fijas) o **Rough.js** | El foco es la situación, no la precisión métrica. |
+
+**Ejemplo de Decisión:**
+- Ilustrar "Las diagonales de un paralelogramo se bisecan": **EXACTO**. Calcula el punto medio y úsalo.
+- Ilustrar "Un polígono cóncavo cualquiera": **APROXIMADO**. Define puntos fijos que formen la concavidad visualmente clara (como hicimos con la punta de flecha).
+
+### Regla 0.4.1: Coherencia Pedagógica y Sentido Común (La Regla del "Por qué")
+
+> **PRINCIPIO**: No ilustrar "por pintar". Cada gráfico debe tener una intención didáctica clara alineada con el concepto.
+
+**Ejemplos de decisiones pedagógicas:**
+*   **Concepto "Irregular/General"**: NO dibujar un polígono que parezca regular o rectángulo. Dibujar algo visiblemente asimétrico ("caos") para que el ojo capte la falta de patrón.
+*   **Concepto "Simetría" (ej: Deltoide)**: Resaltar ejes, lados iguales y ángulos rectos. La simetría debe ser obvia.
+*   **Concepto "Área"**: Si explicas dividir en triángulos, colorea los triángulos de diferente color.
+
+### Regla 0.5: ÁNGULOS y Arcos en JSXGraph (Orden Anti-horario)
+
+> ⚠️ **ERROR COMÚN**: Dibujar arcos de 270° (exteriores) cuando se quieren de 90° (interiores).
+> **SOLUCIÓN**: JSXGraph dibuja arcos siguiendo el **orden de los puntos** en sentido **ANTI-HORARIO (CCW)**.
+
+Para dibujar un ángulo interior $\angle ABC$:
+1.  Imagina el reloj.
+2.  El arco va del **Primer Punto (P1)** hacia el **Tercer Punto (P3)** girando **en contra de las manecillas**.
+3.  Si el camino corto es horario, JSXGraph dibujará el camino largo (el reflex).
+4.  **REGLA:** Verifica siempre: `P1 -> Vértice -> P3` debe recorrer < 180° en sentido CCW.
+
+**Ejemplo Práctico (Ángulo de 90° en la esquina superior izquierda de un rectángulo):**
+*   Vértice $A$ (Arriba-Izq), $B$ (Arriba-Der), $D$ (Abajo-Izq).
+*   Queremos el ángulo en $A$.
+*   **INCORRECTO**: `angle(D, A, B)` -> De $D$ a $B$ en sentido CCW va por "fuera" (abajo/derecha) $\rightarrow$ **270°**.
+*   **CORRECTO**: `angle(B, A, D)` -> De $B$ a $D$ en sentido CCW va por "dentro" $\rightarrow$ **90°**.
 
 ### Regla 1: Figuras ESTÁTICAS por defecto
 

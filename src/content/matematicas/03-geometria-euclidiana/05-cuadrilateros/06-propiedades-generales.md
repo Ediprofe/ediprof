@@ -17,6 +17,118 @@ Todo cuadrilátero cumple:
 | Suma de ángulos interiores | 360° |
 | Suma de ángulos exteriores | 360° |
 
+### Ilustración: Elementos del Cuadrilátero
+
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.5rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.25rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-elementos" style="width: 100%; height: 400px; min-height: 350px; border-radius: 8px;"></div>
+</div>
+
+<script>
+(function() {
+  function initElementos() {
+    if (typeof JXG === 'undefined' || !document.getElementById('jsxgraph-elementos')) {
+      setTimeout(initElementos, 100);
+      return;
+    }
+    
+    if (JXG.boards['jsxgraph-elementos']) return;
+
+    var board = JXG.JSXGraph.initBoard('jsxgraph-elementos', {
+      boundingbox: [-2, 6, 8, -2],
+      axis: false,
+      showCopyright: false,
+      showNavigation: false,
+      keepaspectratio: true
+    });
+    
+    // Puntos (Irregular convexo)
+    var A = board.create('point', [0, 0], {name: 'A', size: 3, color: '#1e293b', fixed: true});
+    var B = board.create('point', [6, 1], {name: 'B', size: 3, color: '#1e293b', fixed: true});
+    var C = board.create('point', [5, 5], {name: 'C', size: 3, color: '#1e293b', fixed: true});
+    var D = board.create('point', [1, 4], {name: 'D', size: 3, color: '#1e293b', fixed: true});
+    
+    // Polígono
+    board.create('polygon', [A, B, C, D], {
+      fillColor: '#dbeafe', 
+      fillOpacity: 0.5, 
+      borders: {strokeColor: '#3b82f6', strokeWidth: 2}
+    });
+
+    // Diagonales (Punteadas)
+    board.create('segment', [A, C], {strokeColor: '#ef4444', strokeWidth: 2, dash: 2});
+    board.create('segment', [B, D], {strokeColor: '#ef4444', strokeWidth: 2, dash: 2});
+    
+    // Ángulos Interiores (CCW)
+    var angStyle = {orthoType: 'sectordot', radius: 0.5, fillColor: '#22c55e', fillOpacity: 0.3, strokeColor: '#166534'};
+    board.create('angle', [B, A, D], { ...angStyle }); // A
+    board.create('angle', [C, B, A], { ...angStyle }); // B
+    board.create('angle', [D, C, B], { ...angStyle }); // C
+    board.create('angle', [A, D, C], { ...angStyle }); // D
+    
+    // Etiquetas
+    board.create('text', [3.5, 5.5, 'Vértices, Lados, Diagonales (rojas), Ángulos (verdes)'], {anchorX:'middle', fontSize:11, color:'#64748b', fixed:true});
+  }
+  
+  initElementos();
+})();
+</script>
+
+### Ilustración: Suma de Ángulos (360°)
+
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.5rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.25rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-suma-angulos" style="width: 100%; height: 400px; min-height: 350px; border-radius: 8px;"></div>
+</div>
+
+<script>
+(function() {
+  function initSuma() {
+    if (typeof JXG === 'undefined' || !document.getElementById('jsxgraph-suma-angulos')) {
+      setTimeout(initSuma, 100);
+      return;
+    }
+    
+    if (JXG.boards['jsxgraph-suma-angulos']) return;
+
+    var board = JXG.JSXGraph.initBoard('jsxgraph-suma-angulos', {
+      boundingbox: [-2, 6, 8, -2],
+      axis: false,
+      showCopyright: false,
+      showNavigation: false,
+      keepaspectratio: true
+    });
+    
+    // Puntos (Irregular)
+    var A = board.create('point', [0, 0], {name: 'A', size: 3, color: '#1e293b', fixed: true});
+    var B = board.create('point', [7, 0.5], {name: 'B', size: 3, color: '#1e293b', fixed: true});
+    var C = board.create('point', [5, 5], {name: 'C', size: 3, color: '#1e293b', fixed: true});
+    var D = board.create('point', [1.5, 4], {name: 'D', size: 3, color: '#1e293b', fixed: true});
+    
+    // Dividir en 2 triángulos por diagonal AC
+    // T1: ABC
+    board.create('polygon', [A, B, C], {fillColor: '#bfdbfe', fillOpacity: 0.6, borders:{strokeColor: '#3b82f6'}});
+    // T2: ADC
+    board.create('polygon', [A, D, C], {fillColor: '#bbf7d0', fillOpacity: 0.6, borders:{strokeColor: '#22c55e'}});
+    
+    // Diagonal AC
+    board.create('segment', [A, C], {strokeColor: '#64748b', strokeWidth: 2, dash: 2});
+
+    // Etiquetas
+    board.create('text', [4, 1.5, 'Suma = 180°'], {fontSize: 12, color: '#1e3a8a', anchorX:'middle'});
+    board.create('text', [2, 3.5, 'Suma = 180°'], {fontSize: 12, color: '#14532d', anchorX:'middle'});
+    
+    board.create('text', [3.5, 5.5, 'Total = 180° + 180° = 360°'], {fontSize: 14, fontWeight:'bold', color: '#1e293b', anchorX:'middle', fixed:true});
+  }
+  
+  initSuma();
+})();
+</script>
+
 ---
 
 ## 📖 Fórmula de diagonales
@@ -37,20 +149,105 @@ $$
 
 ## 📖 Jerarquía de cuadriláteros
 
-```
-CUADRILÁTERO
-├── Paralelogramo (2 pares de lados paralelos)
-│   ├── Rectángulo (4 ángulos rectos)
-│   │   └── Cuadrado
-│   └── Rombo (4 lados iguales)
-│       └── Cuadrado
-├── Trapecio (1 par de lados paralelos)
-│   ├── Isósceles
-│   ├── Rectángulo
-│   └── Escaleno
-└── Trapezoide (0 pares paralelos)
-    └── Deltoide (cometa)
-```
+**Ilustración: Jerarquía de Cuadriláteros:**
+
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <canvas id="rough-jerarquia-cuad" width="800" height="500" style="width: 100%; height: auto; display: block;"></canvas>
+</div>
+
+<script src="https://unpkg.com/roughjs@4.6.6/bundled/rough.js"></script>
+<script>
+  function initJerarquiaCuad() {
+     if (typeof rough === 'undefined') {
+        setTimeout(initJerarquiaCuad, 100);
+        return;
+    }
+    const canvas = document.getElementById('rough-jerarquia-cuad');
+    if (!canvas) {
+        setTimeout(initJerarquiaCuad, 100);
+        return;
+    }
+    const rc = rough.canvas(canvas);
+    const ctx = canvas.getContext('2d');
+    
+    // Limpiar
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    // Conf
+    const cardW = 120;
+    const cardH = 40;
+    const colorFill = '#f1f5f9';
+    const colorStroke = '#1e293b';
+    
+    function drawBox(x, y, label, bg) {
+        rc.rectangle(x - cardW/2, y - cardH/2, cardW, cardH, {
+            fill: bg || colorFill, fillStyle: 'solid', roughness: 0.5, stroke: colorStroke
+        });
+        ctx.font = 'bold 13px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillStyle = '#1e293b';
+        ctx.fillText(label, x, y);
+    }
+    
+    function connect(x1, y1, x2, y2) {
+        rc.line(x1, y1, x2, y2, {stroke: '#64748b', roughness: 0.5});
+    }
+
+    // Nivel 0: Cuadrilátero
+    const midX = 400;
+    drawBox(midX, 30, 'CUADRILÁTERO', '#e2e8f0');
+    
+    // Nivel 1: Paralelogramo, Trapecio, Trapezoide
+    const y1 = 120;
+    const xPara = 150;
+    const xTrap = 400;
+    const xTrapz = 650;
+    
+    drawBox(xPara, y1, 'Paralelogramo', '#dbeafe');
+    drawBox(xTrap, y1, 'Trapecio', '#dbeafe');
+    drawBox(xTrapz, y1, 'Trapezoide', '#dbeafe');
+    
+    connect(midX, 50, xPara, y1 - 20);
+    connect(midX, 50, xTrap, y1 - 20);
+    connect(midX, 50, xTrapz, y1 - 20);
+    
+    // Nivel 2 (Bajo Paralelogramo): Rectángulo, Rombo
+    const y2 = 220;
+    const xRect = 80;
+    const xRombo = 220;
+    drawBox(xRect, y2, 'Rectángulo', '#bfdbfe');
+    drawBox(xRombo, y2, 'Rombo', '#bfdbfe');
+    connect(xPara, y1+20, xRect, y2-20);
+    connect(xPara, y1+20, xRombo, y2-20);
+    
+    // Nivel 3 (Bajo Rect/Rombo): Cuadrado
+    const y3 = 320;
+    const xCuad = 150;
+    drawBox(xCuad, y3, 'Cuadrado', '#60a5fa');
+    connect(xRect, y2+20, xCuad, y3-20);
+    connect(xRombo, y2+20, xCuad, y3-20);
+    
+    // Nivel 2 (Bajo Trapecio): Isósceles, Rectángulo, Escaleno
+    drawBox(xTrap - 80, y2, 'Isósceles', '#e2e8f0');
+    drawBox(xTrap, y2, 'Rectángulo', '#e2e8f0');
+    drawBox(xTrap + 80, y2, 'Escaleno', '#e2e8f0');
+    connect(xTrap, y1+20, xTrap-80, y2-20);
+    connect(xTrap, y1+20, xTrap, y2-20);
+    connect(xTrap, y1+20, xTrap+80, y2-20);
+    
+    // Nivel 2 (Bajo Trapezoide): Deltoide
+    drawBox(xTrapz, y2, 'Deltoide', '#e2e8f0');
+    connect(xTrapz, y1+20, xTrapz, y2-20);
+    
+  }
+
+  if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initJerarquiaCuad);
+  } else {
+      initJerarquiaCuad();
+  }
+</script>
 
 ---
 

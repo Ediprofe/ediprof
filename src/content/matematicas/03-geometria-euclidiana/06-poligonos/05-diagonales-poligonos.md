@@ -15,6 +15,58 @@ En un cuadrilátero $ABCD$:
 - $\overline{BD}$ es diagonal (une vértices no consecutivos)
 - $\overline{AB}$ **no** es diagonal (es un lado)
 
+**Ilustración: ¿Qué es una Diagonal?**
+
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.5rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.25rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-def-diagonal" style="width: 100%; height: 300px; min-height: 250px; border-radius: 8px;"></div>
+</div>
+
+<script>
+(function() {
+  function initDefDiag() {
+    if (typeof JXG === 'undefined' || !document.getElementById('jsxgraph-def-diagonal')) {
+      setTimeout(initDefDiag, 100);
+      return;
+    }
+    
+    if (JXG.boards['jsxgraph-def-diagonal']) return;
+
+    var board = JXG.JSXGraph.initBoard('jsxgraph-def-diagonal', {
+      boundingbox: [-1, 4, 5, -1],
+      axis: false,
+      showCopyright: false,
+      showNavigation: false,
+      keepaspectratio: true
+    });
+    
+    // Cuadrilátero ABCD
+    var A = board.create('point', [0, 0], {name:'A', size:3, color:'#1e293b', fixed:true});
+    var B = board.create('point', [4, 0], {name:'B', size:3, color:'#1e293b', fixed:true});
+    var C = board.create('point', [4, 3], {name:'C', size:3, color:'#1e293b', fixed:true});
+    var D = board.create('point', [0, 3], {name:'D', size:3, color:'#1e293b', fixed:true});
+    
+    // Lados (azul, sólido)
+    board.create('polygon', [A, B, C, D], {
+        fillColor: '#dbeafe', fillOpacity:0.2,
+        borders: {strokeColor: '#3b82f6', strokeWidth:2}
+    });
+    
+    // Diagonales (rojo, punteadas)
+    board.create('segment', [A, C], {strokeColor: '#ef4444', strokeWidth:2, dash:2});
+    board.create('segment', [B, D], {strokeColor: '#ef4444', strokeWidth:2, dash:2});
+    
+    // Etiquetas
+    board.create('text', [2, 1.5, 'Diagonales'], {fontSize:12, color:'#ef4444', fontWeight:'bold'});
+    board.create('text', [2, -0.5, 'Lados = Azul (sólido)'], {fontSize:10, color:'#3b82f6', anchorX:'middle'});
+  }
+  
+  initDefDiag();
+})();
+</script>
+
 ---
 
 ## 📖 Fórmula del número de diagonales
@@ -46,6 +98,96 @@ $$
 | Octágono | 8 | $\frac{8(5)}{2} = 20$ |
 | Decágono | 10 | $\frac{10(7)}{2} = 35$ |
 | Dodecágono | 12 | $\frac{12(9)}{2} = 54$ |
+
+**Ilustración: Comparativa de Diagonales:**
+
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.5rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.25rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <canvas id="rough-comp-diagonales" width="800" height="600" style="width: 100%; height: auto; border-radius: 8px;"></canvas>
+</div>
+
+<script>
+(function() {
+  function initCompDiagRough() {
+    if (typeof rough === 'undefined') {
+      setTimeout(initCompDiagRough, 100);
+      return;
+    }
+    
+    const canvas = document.getElementById('rough-comp-diagonales');
+    if (!canvas) {
+      setTimeout(initCompDiagRough, 100);
+      return;
+    }
+    
+    const rc = rough.canvas(canvas);
+    const ctx = canvas.getContext('2d');
+    
+    // Función para dibujar polígono con diagonales
+    function drawPolygonWithDiagonals(cx, cy, n, label, diagCount) {
+      const r = 80;
+      const points = [];
+      const startAngle = (n === 3) ? -Math.PI/2 : ((n === 4) ? -Math.PI/4 : Math.PI/10);
+      
+      // Calcular vértices
+      for(let i=0; i<n; i++) {
+        const ang = (2*Math.PI/n) * i + startAngle;
+        points.push([cx + r*Math.cos(ang), cy + r*Math.sin(ang)]);
+      }
+      
+      // Dibujar polígono
+      rc.polygon(points, { 
+        stroke: '#3b82f6', 
+        strokeWidth: 2,
+        fill: '#dbeafe',
+        fillStyle: 'solid'
+      });
+      
+      // Dibujar diagonales
+      for(let i=0; i<n; i++) {
+        for(let j=i+1; j<n; j++) {
+          // Saltar lados
+          if (j === i+1) continue;
+          if (i === 0 && j === n-1) continue;
+          
+          // Dibujar diagonal
+          rc.line(points[i][0], points[i][1], points[j][0], points[j][1], {
+            stroke: '#ef4444',
+            strokeWidth: 1.5,
+            roughness: 1.5
+          });
+        }
+      }
+      
+      // Etiquetas
+      ctx.font = 'bold 16px Inter, sans-serif';
+      ctx.fillStyle = '#1e3a8a';
+      ctx.textAlign = 'center';
+      ctx.fillText(label, cx, cy + r + 30);
+      
+      ctx.font = 'bold 14px Inter, sans-serif';
+      ctx.fillStyle = '#ef4444';
+      ctx.fillText('d = ' + diagCount, cx, cy + r + 55);
+    }
+    
+    // Grid 2x2
+    // Ajustamos coordenadas para que quepan las etiquetas
+    // Canvas height aumentado a 600
+    drawPolygonWithDiagonals(200, 130, 3, 'Triángulo (n=3)', 0);
+    drawPolygonWithDiagonals(600, 130, 4, 'Cuadrilátero (n=4)', 2);
+    drawPolygonWithDiagonals(200, 410, 5, 'Pentágono (n=5)', 5);
+    drawPolygonWithDiagonals(600, 410, 6, 'Hexágono (n=6)', 9);
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCompDiagRough);
+  } else {
+    initCompDiagRough();
+  }
+})();
+</script>
 
 ---
 
@@ -82,6 +224,77 @@ Un hexágono (6 lados):
 - Triángulos formados: $6 - 2 = 4$
 
 Esta propiedad es la base de la fórmula para la suma de ángulos interiores.
+
+**Ilustración: Diagonales desde un Vértice:**
+
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.5rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.25rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-diag-vertice" style="width: 100%; height: 350px; min-height: 300px; border-radius: 8px;"></div>
+</div>
+
+<script>
+(function() {
+  function initDiagVert() {
+    if (typeof JXG === 'undefined' || !document.getElementById('jsxgraph-diag-vertice')) {
+      setTimeout(initDiagVert, 100);
+      return;
+    }
+    
+    if (JXG.boards['jsxgraph-diag-vertice']) return;
+
+    var board = JXG.JSXGraph.initBoard('jsxgraph-diag-vertice', {
+      boundingbox: [-3, 4, 5, -3],
+      axis: false,
+      showCopyright: false,
+      showNavigation: false,
+      keepaspectratio: true
+    });
+    
+    // Pentágono
+    var r = 2.5;
+    var cx = 1, cy = 0.5;
+    var points = [];
+    for(var i=0; i<5; i++) {
+        var ang = (72 * i + 18) * Math.PI / 180;
+        points.push(board.create('point', [cx + r*Math.cos(ang), cy + r*Math.sin(ang)], {
+            name: String.fromCharCode(65+i),
+            size:3, color:'#1e293b', fixed:true
+        }));
+    }
+    
+    // Polígono
+    var poly = board.create('polygon', points, {
+        fillColor: 'none',
+        borders: {strokeColor: '#3b82f6', strokeWidth:2}
+    });
+    
+    // Diagonales desde A (points[0]) a C y D (points[2] y points[3])
+    // n=5, n-3=2 diagonales
+    board.create('segment', [points[0], points[2]], {strokeColor: '#ef4444', strokeWidth:2, dash:2});
+    board.create('segment', [points[0], points[3]], {strokeColor: '#ef4444', strokeWidth:2, dash:2});
+    
+    // Colorear los 3 triángulos: ABC, ACD, ADE
+    var colors = ['#bfdbfe', '#fef3c7', '#bbf7d0'];
+    board.create('polygon', [points[0], points[1], points[2]], {
+        fillColor: colors[0], fillOpacity:0.4, borders:{visible:false}
+    });
+    board.create('polygon', [points[0], points[2], points[3]], {
+        fillColor: colors[1], fillOpacity:0.4, borders:{visible:false}
+    });
+    board.create('polygon', [points[0], points[3], points[4]], {
+        fillColor: colors[2], fillOpacity:0.4, borders:{visible:false}
+    });
+    
+    // Etiquetas
+    board.create('text', [1, -2.2, 'Desde A: (n-3) = 2 diagonales'], {fontSize:11, fontWeight:'bold', color:'#1e3a8a', anchorX:'middle'});
+    board.create('text', [1, -2.5, '(n-2) = 3 triángulos'], {fontSize:11, fontWeight:'bold', color:'#1e3a8a', anchorX:'middle'});
+  }
+  
+  initDiagVert();
+})();
+</script>
 
 ---
 

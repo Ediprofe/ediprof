@@ -18,11 +18,11 @@ Estos tres cuadriláteros son **casos especiales de paralelogramos**. Cada uno a
 
 **Ilustración: El Rectángulo:**
 
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.5rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.25rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
-  <div id="jsxgraph-rectangulo" style="width: 100%; height: 300px; min-height: 250px; border-radius: 8px;"></div>
+  <div id="jsxgraph-rectangulo" style="width: 100%; height: 450px; min-height: 400px; border-radius: 8px;"></div>
 </div>
 
 <script>
@@ -36,7 +36,7 @@ Estos tres cuadriláteros son **casos especiales de paralelogramos**. Cada uno a
     if (JXG.boards['jsxgraph-rectangulo']) return;
 
     var board = JXG.JSXGraph.initBoard('jsxgraph-rectangulo', {
-      boundingbox: [-2, 5, 10, -3],
+      boundingbox: [-2, 6, 10, -3],
       axis: false,
       showCopyright: false,
       showNavigation: false,
@@ -60,14 +60,26 @@ Estos tres cuadriláteros son **casos especiales de paralelogramos**. Cada uno a
     board.create('segment', [A, C], {strokeColor: '#ef4444', strokeWidth: 2, dash: 2});
     board.create('segment', [B, D], {strokeColor: '#ef4444', strokeWidth: 2, dash: 2});
     
-    board.create('text', [4, 1.5, 'Diagonales iguales'], {color: '#ef4444', fontSize: 11, fixed: true, anchorX: 'middle'});
+    // Punto medio
+    var M = board.create('point', [4, 2], {visible: false, fixed: true});
 
-    // Ángulos rectos
+    // Ticks en las diagonales (iguales para los 4 segmentos)
+    board.create('group', [
+        board.create('text', [2, 1.2, '|'], {color: '#ef4444', anchorX:'middle', rotation: 26}), // Sobre AC
+        board.create('text', [6, 2.8, '|'], {color: '#ef4444', anchorX:'middle', rotation: 26}),
+        board.create('text', [2, 2.8, '|'], {color: '#ef4444', anchorX:'middle', rotation: -26}), // Sobre BD
+        board.create('text', [6, 1.2, '|'], {color: '#ef4444', anchorX:'middle', rotation: -26})
+    ]);
+    
+    board.create('text', [4, 5, 'Diagonales iguales y se bisecan'], {color: '#ef4444', fontSize: 12, fontWeight:'bold', fixed: true, anchorX: 'middle'});
+
+    // Ángulos rectos (Interiores: CCW)
+    // D->A->B es 270 (Exterior). B->A->D es 90 (Interior).
     var angleProps = {orthoType: 'sectordot', radius: 0.4, fillColor: 'none', strokeColor: '#1e293b'};
-    board.create('angle', [D, A, B], angleProps);
-    board.create('angle', [A, B, C], angleProps);
-    board.create('angle', [B, C, D], angleProps);
-    board.create('angle', [C, D, A], angleProps);
+    board.create('angle', [B, A, D], angleProps);
+    board.create('angle', [C, B, A], angleProps);
+    board.create('angle', [D, C, B], angleProps);
+    board.create('angle', [A, D, C], angleProps);
     
   }
   
@@ -83,7 +95,7 @@ $$
 AC = BD
 $$
 
-Además, se bisecan mutuamente (como todo paralelogramo).
+Además, se bisecan mutuamente (se cortan exactamente a la mitad, como todo paralelogramo).
 
 ### Diagonal con Pitágoras
 
@@ -117,11 +129,11 @@ $$
 
 **Ilustración: El Rombo:**
 
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.5rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.25rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
-  <div id="jsxgraph-rombo" style="width: 100%; height: 350px; min-height: 250px; border-radius: 8px;"></div>
+  <div id="jsxgraph-rombo" style="width: 100%; height: 450px; min-height: 400px; border-radius: 8px;"></div>
 </div>
 
 <script>
@@ -135,7 +147,7 @@ $$
     if (JXG.boards['jsxgraph-rombo']) return;
 
     var board = JXG.JSXGraph.initBoard('jsxgraph-rombo', {
-      boundingbox: [-3, 6, 9, -2],
+      boundingbox: [-3, 7, 9, -3],
       axis: false,
       showCopyright: false,
       showNavigation: false,
@@ -153,12 +165,12 @@ $$
     var M = board.create('intersection', [
       board.create('line', [A, C], {visible: false}),
       board.create('line', [B, D], {visible: false})
-    ], {visible: false});
+    ], {visible: false, name:'M'});
 
     // Polígono
     board.create('polygon', [A, B, C, D], {
       fillColor: '#fef3c7', 
-      fillOpacity: 0.5, 
+      fillOpacity: 0.4, 
       borders: {strokeColor: '#f59e0b', strokeWidth: 2}
     });
 
@@ -166,13 +178,26 @@ $$
     board.create('segment', [A, C], {strokeColor: '#f97316', strokeWidth: 2, dash: 2});
     board.create('segment', [B, D], {strokeColor: '#f97316', strokeWidth: 2, dash: 2});
     
-    // Ángulo recto intersección
+    // Ángulo recto intersección (Interior)
     board.create('angle', [A, M, B], {orthoType: 'sectordot', radius: 0.3, fillColor: 'none', strokeColor: '#f97316'});
-    board.create('text', [3.2, 2.2, '90°'], {color: '#f97316', fontSize: 10});
+    board.create('text', [3.3, 2.3, '90°'], {color: '#f97316', fontSize: 10});
 
-    // Lados iguales
-    board.create('text', [1, 0.5, 'L'], {color: '#f59e0b', fontSize: 12});
-    board.create('text', [5, 0.5, 'L'], {color: '#f59e0b', fontSize: 12});
+    // Lados iguales (Ticks: || en cada lado)
+    var sideTicks = {color: '#f59e0b', anchorX:'middle', fontSize: 10};
+    board.create('text', [1, 0.5, '||'], { ...sideTicks, rotation: -37 }); // DA
+    board.create('text', [5, 0.5, '||'], { ...sideTicks, rotation: 37 });  // AB
+    board.create('text', [5, 3.5, '||'], { ...sideTicks, rotation: -37 }); // BC
+    board.create('text', [1, 3.5, '||'], { ...sideTicks, rotation: 37 });  // CD
+
+    // Diagonales se bisecan pero NO son iguales
+    // Vertical (AC): 1 tick (|)
+    board.create('text', [3, 0.5, '-'], {color: '#f97316', anchorX:'middle', rotation: 0, fontSize: 14});
+    board.create('text', [3, 3.5, '-'], {color: '#f97316', anchorX:'middle', rotation: 0, fontSize: 14});
+
+    // Horizontal (BD): 2 ticks (=) o marca diferente (x)
+    board.create('text', [5, 2, '='], {color: '#f97316', anchorX:'middle', rotation: 90, fontSize: 14});
+    board.create('text', [1, 2, '='], {color: '#f97316', anchorX:'middle', rotation: 90, fontSize: 14});
+
     
   }
   
@@ -184,7 +209,7 @@ $$
 
 Las diagonales del rombo tienen propiedades especiales:
 1. Son **perpendiculares** entre sí ($d_1 \perp d_2$)
-2. Se **bisecan** mutuamente
+2. Se **bisecan** mutuamente (se cortan en su punto medio)
 3. **No** son iguales (excepto en el cuadrado)
 
 ### Área del rombo
@@ -221,11 +246,11 @@ El cuadrado es simultáneamente un **rectángulo** y un **rombo**.
 
 **Ilustración: El Cuadrado:**
 
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.5rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.25rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
-  <div id="jsxgraph-cuadrado" style="width: 100%; height: 350px; min-height: 250px; border-radius: 8px;"></div>
+  <div id="jsxgraph-cuadrado" style="width: 100%; height: 450px; min-height: 400px; border-radius: 8px;"></div>
 </div>
 
 <script>
@@ -239,7 +264,7 @@ El cuadrado es simultáneamente un **rectángulo** y un **rombo**.
     if (JXG.boards['jsxgraph-cuadrado']) return;
 
     var board = JXG.JSXGraph.initBoard('jsxgraph-cuadrado', {
-      boundingbox: [-2, 6, 8, -2],
+      boundingbox: [-2, 6, 8, -3],
       axis: false,
       showCopyright: false,
       showNavigation: false,
@@ -252,32 +277,45 @@ El cuadrado es simultáneamente un **rectángulo** y un **rombo**.
     var C = board.create('point', [4, 4], {name: 'C', size: 3, color: '#1e293b', fixed: true, label: {offset: [10, 10]}});
     var D = board.create('point', [0, 4], {name: 'D', size: 3, color: '#1e293b', fixed: true, label: {offset: [-10, 10]}});
     
-    // Polígono
+    // Polígono (Colores estandarizados: Azul/Slate)
     board.create('polygon', [A, B, C, D], {
-      fillColor: '#a7f3d0', 
+      fillColor: '#dbeafe', 
       fillOpacity: 0.5, 
-      borders: {strokeColor: '#059669', strokeWidth: 2}
+      borders: {strokeColor: '#3b82f6', strokeWidth: 2}
     });
 
     // Diagonales (iguales y perpendiculares)
-    board.create('segment', [A, C], {strokeColor: '#059669', strokeWidth: 2, dash: 2});
-    board.create('segment', [B, D], {strokeColor: '#059669', strokeWidth: 2, dash: 2});
+    board.create('segment', [A, C], {strokeColor: '#ef4444', strokeWidth: 2, dash: 2});
+    board.create('segment', [B, D], {strokeColor: '#ef4444', strokeWidth: 2, dash: 2});
     
     // Centro
     var M = board.create('point', [2, 2], {visible: false});
-    // Ángulo recto intersección
-    board.create('angle', [A, M, B], {orthoType: 'sectordot', radius: 0.3, fillColor: 'none', strokeColor: '#059669'});
+    // Ángulo recto intersección (Interior)
+    board.create('angle', [A, M, B], {orthoType: 'sectordot', radius: 0.3, fillColor: 'none', strokeColor: '#ef4444'});
 
-    // Ángulos rectos vértices
+    // Ángulos rectos vértices (Interiores CCW)
+    // D->A->B es 270(Ext). B->A->D es 90(Int).
     var angleProps = {orthoType: 'sectordot', radius: 0.4, fillColor: 'none', strokeColor: '#1e293b'};
-    board.create('angle', [D, A, B], angleProps);
-    board.create('angle', [A, B, C], angleProps);
-    board.create('angle', [B, C, D], angleProps);
-    board.create('angle', [C, D, A], angleProps);
+    board.create('angle', [B, A, D], angleProps);
+    board.create('angle', [C, B, A], angleProps);
+    board.create('angle', [D, C, B], angleProps);
+    board.create('angle', [A, D, C], angleProps);
     
-    // Texto
-    board.create('text', [2, -0.5, 'Todos los lados iguales'], {color: '#059669', fontSize: 11, fixed: true, anchorX: 'middle'});
-    board.create('text', [2, 4.5, '90° vértices & diagonales'], {color: '#059669', fontSize: 11, fixed: true, anchorX: 'middle'});
+    // Ticks de lados iguales (||) 
+    var sideTicks = {color: '#3b82f6', anchorX:'middle', fontSize: 10};
+    board.create('text', [2, -0.2, '||'], { ...sideTicks, rotation: 0 });  // AB
+    board.create('text', [4.2, 2, '||'], { ...sideTicks, rotation: 90 });  // BC
+    board.create('text', [2, 4.2, '||'], { ...sideTicks, rotation: 0 });   // CD
+    board.create('text', [-0.2, 2, '||'], { ...sideTicks, rotation: 90 }); // DA
+
+    // Ticks diagonales (iguales en los 4 semi-segmentos: |)
+    var diagTicks = {color: '#ef4444', anchorX:'middle', fontSize: 10};
+    board.create('text', [1, 1, '|'], { ...diagTicks, rotation: 45 });
+    board.create('text', [3, 1, '|'], { ...diagTicks, rotation: -45 });
+    board.create('text', [3, 3, '|'], { ...diagTicks, rotation: 45 });
+    board.create('text', [1, 3, '|'], { ...diagTicks, rotation: -45 });
+    
+    board.create('text', [2, 5, 'Unión perfecta: Lados iguales + Ángulos 90°'], {color: '#1e293b', fontSize: 12, fontWeight: 'bold', fixed: true, anchorX: 'middle'});
 
   }
   
@@ -290,7 +328,7 @@ El cuadrado es simultáneamente un **rectángulo** y un **rombo**.
 Las diagonales del cuadrado combinan las propiedades de rectángulo y rombo:
 - Son **iguales** (como en el rectángulo)
 - Son **perpendiculares** (como en el rombo)
-- Se **bisecan** (como todo paralelogramo)
+- Se **bisecan** (se dividen en dos partes iguales)
 
 ### Diagonal del cuadrado
 
@@ -312,14 +350,109 @@ $$
 
 ## 📖 Jerarquía de paralelogramos
 
-```
-Paralelogramo (general)
-├── Rectángulo (4 ángulos rectos)
-│   └── Cuadrado
-├── Rombo (4 lados iguales)
-│   └── Cuadrado
-└── Cuadrado (4 ángulos rectos Y 4 lados iguales)
-```
+**Ilustración: Jerarquía de Paralelogramos:**
+<div style="display: flex; justify-content: center; width: 100%; margin: 2rem 0;">
+    <canvas id="rough-jerarquia" width="600" height="400"></canvas>
+</div>
+
+<script src="https://unpkg.com/roughjs@4.6.6/bundled/rough.js"></script>
+<script>
+  function initJerarquia() {
+    // Esperar a que rough esté cargado globalmente
+    if (typeof rough === 'undefined') {
+        // Intentar cargar dinámicamente si el script no funcionó o esperar
+        setTimeout(initJerarquia, 100);
+        return;
+    }
+
+    const canvas = document.getElementById('rough-jerarquia');
+    if (!canvas) {
+        setTimeout(initJerarquia, 100);
+        return;
+    }
+    const rc = rough.canvas(canvas);
+    const ctx = canvas.getContext('2d');
+    
+    // Limpiar
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    // Configuración
+    const cardW = 140;
+    const cardH = 50;
+    const colorFill = '#f1f5f9';
+    const colorStroke = '#1e293b';
+    
+    // Coordenadas Centros
+    const topX = 300, topY = 50;       // Paralelogramo
+    const midLeftX = 150, midY = 180;  // Rectángulo
+    const midRightX = 450;             // Rombo
+    const botX = 300, botY = 320;      // Cuadrado
+    
+    // Función para dibujar tarjeta
+    // x, y es el CENTRO
+    function drawCard(x, y, text, color) {
+        const xrec = x - cardW/2;
+        const yrec = y - cardH/2;
+        rc.rectangle(xrec, yrec, cardW, cardH, {
+             fill: color || colorFill, 
+             fillStyle: 'solid',
+             roughness: 0.5,
+             stroke: colorStroke
+        });
+        
+        ctx.font = 'bold 16px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillStyle = '#1e293b';
+        ctx.fillText(text, x, y);
+    }
+    
+    // Función para dibujar flecha
+    function drawArrow(x1, y1, x2, y2) {
+        rc.line(x1, y1, x2, y2, {stroke: '#64748b', strokeWidth: 2, roughness: 0.5});
+        // Punta simple (círculo pequeño o linea)
+        rc.circle(x2, y2, 5, {fill: '#64748b', stroke: 'none'});
+    }
+
+    // --- Dibujo ---
+    
+    // Nivel 1: Paralelogramo
+    drawCard(topX, topY, 'Paralelogramo', '#e2e8f0');
+    
+    // Nivel 2: Rectángulo y Rombo
+    drawCard(midLeftX, midY, 'Rectángulo', '#dbeafe');
+    drawCard(midRightX, midY, 'Rombo', '#fef3c7');
+    
+    // Nivel 3: Cuadrado
+    drawCard(botX, botY, 'Cuadrado', '#a7f3d0');
+    
+    // Flechas
+    // Para -> Rect
+    drawArrow(topX, topY + cardH/2, midLeftX, midY - cardH/2);
+    // Para -> Rombo
+    drawArrow(topX, topY + cardH/2, midRightX, midY - cardH/2);
+    
+    // Rect -> Cuadrado
+    drawArrow(midLeftX, midY + cardH/2, botX, botY - cardH/2);
+    // Rombo -> Cuadrado
+    drawArrow(midRightX, midY + cardH/2, botX, botY - cardH/2);
+    
+    // Etiquetas de flechas (Opcional)
+    ctx.font = '12px sans-serif';
+    ctx.fillStyle = '#475569';
+    // P->Rect: "+ 90°"
+    ctx.fillText('+ Ángulos rectos', (topX+midLeftX)/2 - 40, (topY+midY)/2);
+    // P->Rombo: "+ Lados iguales"
+    ctx.fillText('+ Lados iguales', (topX+midRightX)/2 + 40, (topY+midY)/2);
+  }
+
+  // Ejecutar cuando RoughJS esté cargado o esperar un poco
+  if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initJerarquia);
+  } else {
+      initJerarquia();
+  }
+</script>
 
 > **Importante:** Todo cuadrado es rectángulo. Todo cuadrado es rombo. Pero no todo rectángulo ni todo rombo es cuadrado.
 

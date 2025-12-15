@@ -151,12 +151,19 @@ document.addEventListener('DOMContentLoaded', function() {
     board.create('text', [5.5, 1.5, '90°'], {fontSize: 10, color: '#ef4444', fixed: true});
     
     // OBTUSÁNGULO (derecha) - un ángulo > 90°
+    // Base 10->13. Apex (9, 2.5).
+    // Vector 1->2: (3,0). Vector 1->3: (-1, 2.5). Dot product < 0 -> Obtuse at 1.
     var ob1 = board.create('point', [10, 0], {size: 2, color: '#f59e0b', fixed: true, name: '', withLabel: false});
-    var ob2 = board.create('point', [14.5, 0], {size: 2, color: '#f59e0b', fixed: true, name: '', withLabel: false});
-    var ob3 = board.create('point', [13, 2], {size: 2, color: '#f59e0b', fixed: true, name: '', withLabel: false});
+    var ob2 = board.create('point', [13, 0], {size: 2, color: '#f59e0b', fixed: true, name: '', withLabel: false});
+    var ob3 = board.create('point', [9, 2.5], {size: 2, color: '#f59e0b', fixed: true, name: '', withLabel: false});
+    
     board.create('polygon', [ob1, ob2, ob3], {fillColor: '#f59e0b', fillOpacity: 0.2, borders: {strokeColor: '#f59e0b', strokeWidth: 3}});
+    
+    // Marcar el ángulo obtuso
+    board.create('angle', [ob2, ob1, ob3], {radius: 0.4, fillColor: '#f59e0b', strokeColor: '#f59e0b', fillOpacity: 0.3});
+    
     board.create('text', [12.2, -0.7, 'Obtusángulo'], {fontSize: 12, color: '#f59e0b', fixed: true, anchorX: 'middle'});
-    board.create('text', [10.8, 0.6, '> 90°'], {fontSize: 10, color: '#f59e0b', fixed: true});
+    board.create('text', [10.5, 0.4, '> 90°'], {fontSize: 10, color: '#f59e0b', fixed: true, anchorX: 'left'});
   }
 });
 </script>

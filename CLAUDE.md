@@ -268,7 +268,6 @@ Para ver el estilo correcto de lecciones, revisar:
 
 ## SOLICITUD CONCRETA
 
-http://localhost:4321/matematicas/geometria-euclidiana/cuadrilateros/definicion-cuadrilatero
+http://localhost:4321/matematicas/geometria-euclidiana/poligonos/diagonales-poligonos
 
-![alt text](image-58.png)
-el cuadrilatero concavo muestra que su vértice superior casi no se. De otro lado, quiero que muestres el ángulo interior mayor a 180°
+![alt text](image-74.png) ESTA ILUSTRACIÓN DE ROUGH.JS NO SE VE LA ETIQUETA DE PENTAGONO Y HEXAGONO, Y LAS OTRAS ETIQUETAS ESTÁN MAL POSICIONADAS. ORGANIZA

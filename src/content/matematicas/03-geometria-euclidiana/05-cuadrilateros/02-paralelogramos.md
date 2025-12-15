@@ -14,11 +14,11 @@ $$
 
 **Ilustración: Propiedades del Paralelogramo:**
 
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.5rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.25rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
-  <div id="jsxgraph-paralelogramo" style="width: 100%; height: 350px; min-height: 300px; border-radius: 8px;"></div>
+  <div id="jsxgraph-paralelogramo" style="width: 100%; height: 450px; min-height: 400px; border-radius: 8px;"></div>
 </div>
 
 <script>
@@ -32,7 +32,7 @@ $$
     if (JXG.boards['jsxgraph-paralelogramo']) return;
 
     var board = JXG.JSXGraph.initBoard('jsxgraph-paralelogramo', {
-      boundingbox: [-2, 5, 10, -2],
+      boundingbox: [-2, 5, 10, -3],
       axis: false,
       showCopyright: false,
       showNavigation: false,
@@ -58,11 +58,36 @@ $$
     var angleStyle = {radius: 0.5, fillOpacity: 0.3};
     // A y C son agudos. B y D son obtusos.
     // Coloreamos pares iguales.
-    board.create('angle', [D, A, B], { ...angleStyle, fillColor: '#22c55e', strokeColor: '#166534', name: 'α' });
-    board.create('angle', [B, C, D], { ...angleStyle, fillColor: '#22c55e', strokeColor: '#166534', name: 'α' });
+    // Orden CCW para angulos interiores: (Previous, Vertex, Next)
+    // A es (0,0). Prev es D, Next es B. Angle(B, A, D)? No, Angle(Vertex) uses 3 points. Angle(p1, p2, p3): Angle at p2. From p1 to p3 counter-clock-wise.
+    // Vector A->B (6,0). Vector A->D (2,3).
+    // B(6,0) es 0 deg. D(2,3) es approx 56 deg.
+    // De B a D CCW es 56 deg (interno).
+    // Angle(B, A, D) -> empieza en AB, va a AD. Correcto.
+    board.create('angle', [B, A, D], { ...angleStyle, fillColor: '#22c55e', strokeColor: '#166534', name: 'α' });
     
-    board.create('angle', [A, B, C], { ...angleStyle, fillColor: '#f97316', strokeColor: '#c2410c', name: 'β' });
-    board.create('angle', [C, D, A], { ...angleStyle, fillColor: '#f97316', strokeColor: '#c2410c', name: 'β' });
+    // C(8,3). Prev B(6,0). Next D(2,3).
+    // Vector C->B (-2, -3). Vector C->D (-6, 0).
+    // CB angle approx 236 deg. CD angle 180 deg.
+    // De D a B CCW. 180 -> 236. Delta 56 deg. (Interno).
+    // Angle(D, C, B).
+    board.create('angle', [D, C, B], { ...angleStyle, fillColor: '#22c55e', strokeColor: '#166534', name: 'α' });
+    
+    // B(6,0). Prev A, Next C.
+    // Vector B->A (-6,0). Vector B->C (2,3).
+    // BA 180 deg. BC approx 56 deg (360+56=416).
+    // De C a A CCW?
+    // C (approx 56) -> A (180). Delta 124 deg.
+    // Angle(C, B, A).
+    board.create('angle', [C, B, A], { ...angleStyle, fillColor: '#f97316', strokeColor: '#c2410c', name: 'β' });
+    
+    // D(2,3). Prev C(8,3). Next A(0,0).
+    // Vector D->C (6,0). Vector D->A (-2,-3).
+    // DC 0 deg. DA approx 236.
+    // De A a C CCW?
+    // A (236) -> C (0/360). Delta 124.
+    // Angle(A, D, C).
+    board.create('angle', [A, D, C], { ...angleStyle, fillColor: '#f97316', strokeColor: '#c2410c', name: 'β' });
     
     // Etiquetas de lados (mostrando igualdad)
     // Lados paralelos horizontales (a)
@@ -77,8 +102,8 @@ $$
     var H = board.create('point', [2, 0], {visible: false});
     board.create('segment', [D, H], {strokeColor: '#64748b', dash: 2});
     board.create('text', [2.2, 1.5, 'h'], {color: '#64748b', fontSize: 11, fixed: true});
-    // Ángulo recto de la altura
-    board.create('angle', [D, H, B], {orthoType: 'sectordot', radius: 0.3, fillColor: 'none', strokeColor: '#64748b'});
+    // Ángulo recto de la altura (Removido por petición del usuario - se sobreentiende)
+    // board.create('angle', [D, H, B], {orthoType: 'sectordot', radius: 0.3, fillColor: 'none', strokeColor: '#64748b'});
 
   }
   
@@ -150,6 +175,70 @@ $$
 
 Si la diagonal $AC = 12$ cm, entonces $AM = MC = 6$ cm.
 
+**Ilustración: Las diagonales se bisecan:**
+
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.5rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.25rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-diagonales" style="width: 100%; height: 450px; min-height: 400px; border-radius: 8px;"></div>
+</div>
+
+<script>
+(function() {
+  function initDiagonales() {
+    if (typeof JXG === 'undefined' || !document.getElementById('jsxgraph-diagonales')) {
+      setTimeout(initDiagonales, 100);
+      return;
+    }
+    
+    if (JXG.boards['jsxgraph-diagonales']) return;
+
+    var board = JXG.JSXGraph.initBoard('jsxgraph-diagonales', {
+        boundingbox: [-2, 6, 12, -3],
+        axis: false,
+        showCopyright: false,
+        showNavigation: false,
+        keepaspectratio: true
+    });
+
+    // Puntos fijos para un paralelogramo atractivo
+    var A = board.create('point', [0, 0], {name: 'A', size: 3, color: '#1e293b', fixed: true, label: {offset: [-10, -10]}});
+    var B = board.create('point', [7, 0], {name: 'B', size: 3, color: '#1e293b', fixed: true, label: {offset: [10, -10]}});
+    var C = board.create('point', [10, 4], {name: 'C', size: 3, color: '#1e293b', fixed: true, label: {offset: [10, 10]}});
+    var D = board.create('point', [3, 4], {name: 'D', size: 3, color: '#1e293b', fixed: true, label: {offset: [-10, 10]}});
+
+    // Polígono
+    board.create('polygon', [A, B, C, D], {
+        fillColor: '#f1f5f9', 
+        borders: {strokeColor: '#64748b', strokeWidth: 1}
+    });
+
+    // Diagonales
+    var AC = board.create('segment', [A, C], {strokeColor: '#ef4444', strokeWidth: 2});
+    var BD = board.create('segment', [B, D], {strokeColor: '#3b82f6', strokeWidth: 2});
+
+    // Punto medio M (Calculado explícitamente)
+    var Mx = (A.X() + C.X()) / 2;
+    var My = (A.Y() + C.Y()) / 2;
+    var M = board.create('point', [Mx, My], {name: 'M', size: 3, color: '#f97316', fixed: true, label:{autoPosition:true}});
+
+    // Marcas de igualdad (ticks) o etiquetas
+    // AM = MC
+    board.create('text', [(A.X()+Mx)/2, (A.Y()+My)/2 + 0.3, '6'], {color: '#ef4444', anchorX:'middle'});
+    board.create('text', [(C.X()+Mx)/2, (C.Y()+My)/2 + 0.3, '6'], {color: '#ef4444', anchorX:'middle'});
+
+    // BM = MD
+    // Usamos ticks visuales para diferenciar
+    board.create('text', [(D.X()+Mx)/2, (D.Y()+My)/2, '||'], {color: '#3b82f6', anchorX:'middle', rotation: 45});
+    board.create('text', [(B.X()+Mx)/2, (B.Y()+My)/2, '||'], {color: '#3b82f6', anchorX:'middle', rotation: 45});
+
+  }
+  
+  initDiagonales();
+})();
+</script>
+
 ---
 
 ## 📖 Resumen de propiedades
@@ -182,6 +271,70 @@ Si $b = 10$ cm y $h = 6$ cm:
 $$
 A = 10 \times 6 = 60 \text{ cm}^2
 $$
+
+**Ilustración: Área del Paralelogramo:**
+
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.5rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.25rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-area" style="width: 100%; height: 450px; min-height: 400px; border-radius: 8px;"></div>
+</div>
+
+<script>
+(function() {
+  function initArea() {
+    if (typeof JXG === 'undefined' || !document.getElementById('jsxgraph-area')) {
+      setTimeout(initArea, 100);
+      return;
+    }
+    
+    if (JXG.boards['jsxgraph-area']) return;
+
+    var board = JXG.JSXGraph.initBoard('jsxgraph-area', {
+        boundingbox: [-2, 8, 12, -2],
+        axis: false,
+        showCopyright: false,
+        showNavigation: false,
+        keepaspectratio: true
+    });
+
+    // Ejemplo: b=10, h=6.
+    // Usamos coordenadas exactas para representar esto.
+    // A(0,0), B(10,0). Altura 6.
+    // Skew opcional. D(2, 6) -> C(12, 6).
+    
+    var A = board.create('point', [0, 0], {name: 'A', size: 2, color: '#1e293b', fixed: true, label: {visible:false}});
+    var B = board.create('point', [10, 0], {name: 'B', size: 2, color: '#1e293b', fixed: true, label: {visible:false}});
+    var C = board.create('point', [12, 6], {name: 'C', size: 2, color: '#1e293b', fixed: true, label: {visible:false}});
+    var D = board.create('point', [2, 6], {name: 'D', size: 2, color: '#1e293b', fixed: true, label: {visible:false}});
+
+    // Área coloreada
+    board.create('polygon', [A, B, C, D], {
+        fillColor: '#22c55e', 
+        fillOpacity: 0.3,
+        borders: {strokeColor: '#166534', strokeWidth: 2}
+    });
+
+    // Base
+    board.create('text', [5, -0.6, 'b = 10 cm'], {fontSize: 12, fontWeight: 'bold', color: '#166534', anchorX: 'middle', fixed: true});
+
+    // Altura (segmento perpendicular)
+    // Desde D(2,6) hasta proyección en eje x: (2,0). Llamemos H.
+    var H = board.create('point', [2, 0], {name: 'H', visible: false, fixed: true});
+    board.create('segment', [D, H], {strokeColor: '#f97316', strokeWidth: 2, dash: 2});
+    
+    // Etiqueta altura
+    board.create('text', [1.5, 3, 'h = 6 cm'], {fontSize: 12, fontWeight: 'bold', color: '#f97316', anchorX: 'right', fixed: true});
+
+    // Nota del área
+    board.create('text', [6, 3, 'Área = 60 cm²'], {fontSize: 14, fontWeight: 'bold', color: '#22c55e', anchorX: 'middle', fixed: true});
+
+  }
+  
+  initArea();
+})();
+</script>
 
 ---
 

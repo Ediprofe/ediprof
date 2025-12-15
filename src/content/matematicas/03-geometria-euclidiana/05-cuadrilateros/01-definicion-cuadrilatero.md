@@ -29,11 +29,11 @@ Las diagonales dividen al cuadrilátero en **triángulos**.
 
 **Ilustración: Elementos del Cuadrilátero:**
 
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.5rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.25rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
-  <div id="jsxgraph-general" style="width: 100%; height: 350px; min-height: 300px; border-radius: 8px;"></div>
+  <div id="jsxgraph-general" style="width: 100%; height: 450px; min-height: 400px; border-radius: 8px;"></div>
 </div>
 
 <script>
@@ -47,7 +47,7 @@ Las diagonales dividen al cuadrilátero en **triángulos**.
     if (JXG.boards['jsxgraph-general']) return;
 
     var board = JXG.JSXGraph.initBoard('jsxgraph-general', {
-      boundingbox: [-2, 6, 8, -2],
+      boundingbox: [-2, 7, 8, -3],
       axis: false,
       showCopyright: false,
       showNavigation: false,
@@ -140,11 +140,11 @@ Un ángulo interior es **mayor que 180°** (ángulo reflejo). Una diagonal queda
 
 **Ilustración: Convexo vs Cóncavo:**
 
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.5rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.25rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
-  <div id="jsxgraph-tipos" style="width: 100%; height: 350px; min-height: 300px; border-radius: 8px;"></div>
+  <div id="jsxgraph-tipos" style="width: 100%; height: 450px; min-height: 400px; border-radius: 8px;"></div>
 </div>
 
 <script>
@@ -158,7 +158,7 @@ Un ángulo interior es **mayor que 180°** (ángulo reflejo). Una diagonal queda
     if (JXG.boards['jsxgraph-tipos']) return;
 
     var board = JXG.JSXGraph.initBoard('jsxgraph-tipos', {
-      boundingbox: [-1, 6, 11, -2],
+      boundingbox: [-1, 7, 11, -3],
       axis: false,
       showCopyright: false,
       showNavigation: false,
