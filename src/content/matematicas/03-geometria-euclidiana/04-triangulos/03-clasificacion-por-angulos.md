@@ -114,6 +114,55 @@ Verificación: $120° + 35° + 25° = 180°$ ✓
 | Rectángulo | $= 90°$ | Dos agudos que suman 90° |
 | Obtusángulo | $> 90°$ | Dos agudos que suman menos de 90° |
 
+### 📊 Ilustración: Los tres tipos de triángulos por ángulos
+
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
+  <span>📊</span>
+  <div id="jsxgraph-tipos-angulos" style="width: 100%; height: 280px;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-tipos-angulos')) {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-tipos-angulos', {
+      boundingbox: [-1, 4, 15, -1],
+      axis: false,
+      showCopyright: false,
+      showNavigation: false,
+      pan: { enabled: false },
+      zoom: { enabled: false }
+    });
+    
+    // ACUTÁNGULO (izquierda) - todos ángulos < 90°
+    var ac1 = board.create('point', [0, 0], {size: 2, color: '#22c55e', fixed: true, name: '', withLabel: false});
+    var ac2 = board.create('point', [3, 0], {size: 2, color: '#22c55e', fixed: true, name: '', withLabel: false});
+    var ac3 = board.create('point', [1.5, 2.5], {size: 2, color: '#22c55e', fixed: true, name: '', withLabel: false});
+    board.create('polygon', [ac1, ac2, ac3], {fillColor: '#22c55e', fillOpacity: 0.2, borders: {strokeColor: '#22c55e', strokeWidth: 3}});
+    board.create('text', [1.5, -0.7, 'Acutángulo'], {fontSize: 12, color: '#22c55e', fixed: true, anchorX: 'middle'});
+    board.create('text', [1.5, 1, '< 90°'], {fontSize: 10, color: '#22c55e', fixed: true, anchorX: 'middle'});
+    
+    // RECTÁNGULO (centro) - un ángulo = 90°
+    var re1 = board.create('point', [5, 0], {size: 2, color: '#3b82f6', fixed: true, name: '', withLabel: false});
+    var re2 = board.create('point', [9, 0], {size: 2, color: '#3b82f6', fixed: true, name: '', withLabel: false});
+    var re3 = board.create('point', [5, 3], {size: 2, color: '#3b82f6', fixed: true, name: '', withLabel: false});
+    board.create('polygon', [re1, re2, re3], {fillColor: '#3b82f6', fillOpacity: 0.2, borders: {strokeColor: '#3b82f6', strokeWidth: 3}});
+    board.create('angle', [re2, re1, re3], {radius: 0.4, orthoType: 'square', orthoSensitivity: 1, fillColor: '#ef4444', strokeColor: '#ef4444'});
+    board.create('text', [7, -0.7, 'Rectángulo'], {fontSize: 12, color: '#3b82f6', fixed: true, anchorX: 'middle'});
+    board.create('text', [5.5, 1.5, '90°'], {fontSize: 10, color: '#ef4444', fixed: true});
+    
+    // OBTUSÁNGULO (derecha) - un ángulo > 90°
+    var ob1 = board.create('point', [10, 0], {size: 2, color: '#f59e0b', fixed: true, name: '', withLabel: false});
+    var ob2 = board.create('point', [14.5, 0], {size: 2, color: '#f59e0b', fixed: true, name: '', withLabel: false});
+    var ob3 = board.create('point', [13, 2], {size: 2, color: '#f59e0b', fixed: true, name: '', withLabel: false});
+    board.create('polygon', [ob1, ob2, ob3], {fillColor: '#f59e0b', fillOpacity: 0.2, borders: {strokeColor: '#f59e0b', strokeWidth: 3}});
+    board.create('text', [12.2, -0.7, 'Obtusángulo'], {fontSize: 12, color: '#f59e0b', fixed: true, anchorX: 'middle'});
+    board.create('text', [10.8, 0.6, '> 90°'], {fontSize: 10, color: '#f59e0b', fixed: true});
+  }
+});
+</script>
+
+> 💡 **Clave:** Mira el ángulo **más grande**. Si es menor de 90° → Acutángulo. Si es exactamente 90° → Rectángulo. Si es mayor de 90° → Obtusángulo.
+
 ---
 
 ## 📖 Identificar el tipo de triángulo

@@ -38,6 +38,45 @@ A diferencia de otras rectas secantes (donde hay ángulos agudos y obtusos), las
 
 Si $l \perp m$, entonces también $m \perp l$.
 
+### 📊 Ilustración: Rectas Perpendiculares
+
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
+  <span>📊</span>
+  <div id="jsxgraph-perpendiculares" style="width: 100%; height: 300px;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-perpendiculares')) {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-perpendiculares', {
+      boundingbox: [-5, 5, 5, -5],
+      axis: false,
+      showCopyright: false,
+      showNavigation: false,
+      pan: { enabled: false },
+      zoom: { enabled: false }
+    });
+    
+    // Recta horizontal (l)
+    board.create('line', [[-4, 0], [4, 0]], {strokeColor: '#3b82f6', strokeWidth: 3, fixed: true});
+    
+    // Recta vertical (m) - perpendicular
+    board.create('line', [[0, -4], [0, 4]], {strokeColor: '#22c55e', strokeWidth: 3, fixed: true});
+    
+    // Ángulo recto (cuadradito)
+    board.create('angle', [[1, 0], [0, 0], [0, 1]], {radius: 0.6, orthoType: 'square', orthoSensitivity: 1, fillColor: '#f59e0b', fillOpacity: 0.5});
+    
+    // Etiquetas
+    board.create('text', [3.5, 0.5, 'l'], {fontSize: 16, color: '#3b82f6', fixed: true});
+    board.create('text', [0.5, 3.5, 'm'], {fontSize: 16, color: '#22c55e', fixed: true});
+    board.create('text', [0.8, 0.8, '90°'], {fontSize: 14, color: '#f59e0b', fixed: true});
+    board.create('text', [0, -4.5, 'l ⊥ m'], {fontSize: 14, color: '#1e293b', fixed: true, anchorX: 'middle'});
+  }
+});
+</script>
+
+> 💡 **Observa:** El cuadradito amarillo indica que el ángulo es de **90°** (ángulo recto). La notación $l \perp m$ significa "l es perpendicular a m".
+
 ---
 
 ## 📖 Ejemplos en la vida real

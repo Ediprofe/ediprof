@@ -39,6 +39,47 @@ Las rectas paralelas tienen la **misma dirección** o "inclinación". En el plan
 - Si $a \parallel b$, entonces $b \parallel a$ (simétrica)
 - Si $a \parallel b$ y $b \parallel c$, entonces $a \parallel c$ (transitiva)
 
+### 📊 Ilustración: Rectas Paralelas
+
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
+  <span>📊</span>
+  <div id="jsxgraph-paralelas" style="width: 100%; height: 300px;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-paralelas')) {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-paralelas', {
+      boundingbox: [-5, 5, 5, -5],
+      axis: false,
+      showCopyright: false,
+      showNavigation: false,
+      pan: { enabled: false },
+      zoom: { enabled: false }
+    });
+    
+    // Recta l (arriba)
+    board.create('line', [[-4, 2], [4, 2]], {strokeColor: '#3b82f6', strokeWidth: 3, fixed: true});
+    
+    // Recta m (abajo) - paralela
+    board.create('line', [[-4, -2], [4, -2]], {strokeColor: '#22c55e', strokeWidth: 3, fixed: true});
+    
+    // Línea de distancia (perpendicular)
+    board.create('segment', [[0, 2], [0, -2]], {strokeColor: '#f59e0b', strokeWidth: 2, dash: 2, fixed: true});
+    board.create('point', [0, 2], {size: 3, color: '#f59e0b', fixed: true, name: ''});
+    board.create('point', [0, -2], {size: 3, color: '#f59e0b', fixed: true, name: ''});
+    
+    // Etiquetas
+    board.create('text', [4.2, 2, 'l'], {fontSize: 16, color: '#3b82f6', fixed: true});
+    board.create('text', [4.2, -2, 'm'], {fontSize: 16, color: '#22c55e', fixed: true});
+    board.create('text', [0.3, 0, 'd'], {fontSize: 14, color: '#f59e0b', fixed: true});
+    board.create('text', [0, -4.2, 'l ∥ m (distancia constante d)'], {fontSize: 13, color: '#1e293b', fixed: true, anchorX: 'middle'});
+  }
+});
+</script>
+
+> 💡 **Observa:** Las rectas $l$ y $m$ **nunca se cruzan** y mantienen la misma distancia $d$ en cualquier punto. La notación $l \parallel m$ significa "l es paralela a m".
+
 ---
 
 ## 📖 El quinto postulado de Euclides

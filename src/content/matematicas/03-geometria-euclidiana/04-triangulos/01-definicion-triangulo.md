@@ -2,6 +2,42 @@
 
 El **triángulo** es una de las figuras geométricas más importantes. Es el polígono más simple (tiene el menor número de lados posible) y es la base para construir y analizar figuras más complejas.
 
+### 📊 Mira primero: Un triángulo y sus partes
+
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
+  <span>📊</span>
+  <div id="jsxgraph-triangulo-intro" style="width: 100%; height: 280px;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-triangulo-intro')) {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-triangulo-intro', {
+      boundingbox: [-1, 5, 7, -1],
+      axis: false,
+      showCopyright: false,
+      showNavigation: false,
+      pan: { enabled: false },
+      zoom: { enabled: false }
+    });
+    
+    var A = board.create('point', [0, 0], {name: 'A', size: 4, color: '#ef4444', fixed: true, label: {fontSize: 16, color: '#ef4444', offset: [-15, -10]}});
+    var B = board.create('point', [6, 0], {name: 'B', size: 4, color: '#ef4444', fixed: true, label: {fontSize: 16, color: '#ef4444', offset: [10, -10]}});
+    var C = board.create('point', [3, 4], {name: 'C', size: 4, color: '#ef4444', fixed: true, label: {fontSize: 16, color: '#ef4444', offset: [0, 10]}});
+    
+    board.create('segment', [A, B], {strokeColor: '#3b82f6', strokeWidth: 3, fixed: true});
+    board.create('segment', [B, C], {strokeColor: '#22c55e', strokeWidth: 3, fixed: true});
+    board.create('segment', [C, A], {strokeColor: '#f59e0b', strokeWidth: 3, fixed: true});
+    
+    board.create('text', [3, -0.5, 'lado c'], {fontSize: 12, color: '#3b82f6', fixed: true});
+    board.create('text', [5, 2.2, 'lado a'], {fontSize: 12, color: '#22c55e', fixed: true});
+    board.create('text', [0.8, 2.2, 'lado b'], {fontSize: 12, color: '#f59e0b', fixed: true});
+  }
+});
+</script>
+
+> 🎯 **En esta lección:** 3 vértices (A, B, C) + 3 lados + 3 ángulos = Triángulo
+
 ---
 
 ## 📖 ¿Qué es un triángulo?
@@ -44,6 +80,50 @@ Son los **tres ángulos** formados por los lados:
 | Vértices | 3 | $A$, $B$, $C$ |
 | Lados | 3 | $\overline{AB}$, $\overline{BC}$, $\overline{CA}$ o $a$, $b$, $c$ |
 | Ángulos interiores | 3 | $\angle A$, $\angle B$, $\angle C$ |
+
+### 📊 Ilustración: Elementos del triángulo
+
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
+  <span>📊</span>
+  <div id="jsxgraph-triangulo-elementos" style="width: 100%; height: 320px;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-triangulo-elementos')) {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-triangulo-elementos', {
+      boundingbox: [-1, 5, 7, -1],
+      axis: false,
+      showCopyright: false,
+      showNavigation: false,
+      pan: { enabled: false },
+      zoom: { enabled: false }
+    });
+    
+    // Vértices
+    var A = board.create('point', [0, 0], {name: 'A', size: 4, color: '#ef4444', fixed: true, label: {fontSize: 16, color: '#ef4444', offset: [-15, -10]}});
+    var B = board.create('point', [6, 0], {name: 'B', size: 4, color: '#ef4444', fixed: true, label: {fontSize: 16, color: '#ef4444', offset: [10, -10]}});
+    var C = board.create('point', [3, 4], {name: 'C', size: 4, color: '#ef4444', fixed: true, label: {fontSize: 16, color: '#ef4444', offset: [0, 10]}});
+    
+    // Lados
+    board.create('segment', [A, B], {strokeColor: '#3b82f6', strokeWidth: 3, fixed: true});
+    board.create('segment', [B, C], {strokeColor: '#22c55e', strokeWidth: 3, fixed: true});
+    board.create('segment', [C, A], {strokeColor: '#f59e0b', strokeWidth: 3, fixed: true});
+    
+    // Etiquetas de lados
+    board.create('text', [3, -0.5, 'c'], {fontSize: 14, color: '#3b82f6', fixed: true});
+    board.create('text', [4.8, 2.2, 'a'], {fontSize: 14, color: '#22c55e', fixed: true});
+    board.create('text', [1, 2.2, 'b'], {fontSize: 14, color: '#f59e0b', fixed: true});
+    
+    // Ángulos
+    board.create('angle', [B, A, C], {radius: 0.6, fillColor: '#ef4444', fillOpacity: 0.3, strokeColor: '#ef4444'});
+    board.create('angle', [C, B, A], {radius: 0.6, fillColor: '#ef4444', fillOpacity: 0.3, strokeColor: '#ef4444'});
+    board.create('angle', [A, C, B], {radius: 0.6, fillColor: '#ef4444', fillOpacity: 0.3, strokeColor: '#ef4444'});
+  }
+});
+</script>
+
+> 💡 **Observa:** Los **vértices** (A, B, C) son los puntos rojos. Los **lados** (a, b, c) son los segmentos de colores. El lado $a$ (verde) es opuesto al vértice $A$.
 
 ---
 

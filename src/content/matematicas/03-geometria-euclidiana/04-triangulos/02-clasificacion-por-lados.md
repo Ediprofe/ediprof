@@ -125,6 +125,51 @@ Un triángulo con lados de $3$ cm, $5$ cm y $7$ cm es escaleno porque todos sus 
 | Ejes de simetría | 3 | 1 | 0 |
 | Todos diferentes | No | No | Sí |
 
+### 📊 Ilustración: Los tres tipos de triángulos
+
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
+  <span>📊</span>
+  <div id="jsxgraph-tipos-triangulos" style="width: 100%; height: 280px;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-tipos-triangulos')) {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-tipos-triangulos', {
+      boundingbox: [-1, 4, 15, -1],
+      axis: false,
+      showCopyright: false,
+      showNavigation: false,
+      pan: { enabled: false },
+      zoom: { enabled: false }
+    });
+    
+    // EQUILÁTERO (izquierda)
+    var eq1 = board.create('point', [0, 0], {size: 2, color: '#22c55e', fixed: true, name: '', withLabel: false});
+    var eq2 = board.create('point', [3, 0], {size: 2, color: '#22c55e', fixed: true, name: '', withLabel: false});
+    var eq3 = board.create('point', [1.5, 2.6], {size: 2, color: '#22c55e', fixed: true, name: '', withLabel: false});
+    board.create('polygon', [eq1, eq2, eq3], {fillColor: '#22c55e', fillOpacity: 0.2, borders: {strokeColor: '#22c55e', strokeWidth: 3}});
+    board.create('text', [1.5, -0.7, 'Equilátero'], {fontSize: 13, color: '#22c55e', fixed: true, anchorX: 'middle'});
+    
+    // ISÓSCELES (centro)
+    var is1 = board.create('point', [5, 0], {size: 2, color: '#3b82f6', fixed: true, name: '', withLabel: false});
+    var is2 = board.create('point', [9, 0], {size: 2, color: '#3b82f6', fixed: true, name: '', withLabel: false});
+    var is3 = board.create('point', [7, 3], {size: 2, color: '#3b82f6', fixed: true, name: '', withLabel: false});
+    board.create('polygon', [is1, is2, is3], {fillColor: '#3b82f6', fillOpacity: 0.2, borders: {strokeColor: '#3b82f6', strokeWidth: 3}});
+    board.create('text', [7, -0.7, 'Isósceles'], {fontSize: 13, color: '#3b82f6', fixed: true, anchorX: 'middle'});
+    
+    // ESCALENO (derecha)
+    var sc1 = board.create('point', [10, 0], {size: 2, color: '#f59e0b', fixed: true, name: '', withLabel: false});
+    var sc2 = board.create('point', [14, 0], {size: 2, color: '#f59e0b', fixed: true, name: '', withLabel: false});
+    var sc3 = board.create('point', [11, 2.5], {size: 2, color: '#f59e0b', fixed: true, name: '', withLabel: false});
+    board.create('polygon', [sc1, sc2, sc3], {fillColor: '#f59e0b', fillOpacity: 0.2, borders: {strokeColor: '#f59e0b', strokeWidth: 3}});
+    board.create('text', [12, -0.7, 'Escaleno'], {fontSize: 13, color: '#f59e0b', fixed: true, anchorX: 'middle'});
+  }
+});
+</script>
+
+> 💡 **Mnemotécnica:** **Equi**látero = lados **iguales**. **Iso**sceles = **dos** iguales. **Esca**leno = todos **diferentes**.
+
 ---
 
 ## 📖 Identificar el tipo de triángulo

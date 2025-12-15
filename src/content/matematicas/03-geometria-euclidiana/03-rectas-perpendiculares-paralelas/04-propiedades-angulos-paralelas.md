@@ -1,8 +1,69 @@
 # Propiedades de Ángulos en Paralelas
 
-En la lección anterior aprendimos a identificar los tipos de ángulos que se forman cuando una transversal corta a dos paralelas. Ahora estudiaremos las **propiedades** de estos ángulos: cuáles son iguales y cuáles son suplementarios.
+En la lección anterior identificamos los tipos de ángulos. Ahora aprenderás **las propiedades** que te permiten calcularlos.
 
----
+### 🎯 Cheat Sheet: Propiedades clave
+
+| Tipo de ángulos | Propiedad | Pares |
+|-----------------|-----------|-------|
+| Correspondientes | **=** IGUALES | (1,5), (2,6), (3,7), (4,8) |
+| Alternos internos | **=** IGUALES | (3,5), (4,6) |
+| Alternos externos | **=** IGUALES | (1,7), (2,8) |
+| Conjugados internos | **+** SUMAN 180° | (3,6), (4,5) |
+| Conjugados externos | **+** SUMAN 180° | (1,8), (2,7) |
+
+### 📊 Referencia visual de los 8 ángulos:
+
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
+  <div id="jsxgraph-propiedades-angulos" style="width: 100%; height: 320px;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-propiedades-angulos')) {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-propiedades-angulos', {
+      boundingbox: [-7, 6, 7, -6],
+      axis: false,
+      showCopyright: false,
+      showNavigation: false,
+      pan: { enabled: false },
+      zoom: { enabled: false }
+    });
+    
+    // Paralelas horizontales
+    board.create('line', [[-6, 2], [6, 2]], {strokeColor: '#3b82f6', strokeWidth: 3, fixed: true});
+    board.create('line', [[-6, -2], [6, -2]], {strokeColor: '#3b82f6', strokeWidth: 3, fixed: true});
+    
+    // Transversal
+    board.create('line', [[-3, -5], [3, 5]], {strokeColor: '#ef4444', strokeWidth: 3, fixed: true});
+    
+    // En P1 (intersección superior): ángulos 1,2,3,4
+    board.create('text', [2.3, 3.2, '1'], {fontSize: 16, color: '#22c55e', fixed: true});
+    board.create('text', [1, 3.2, '2'], {fontSize: 16, color: '#22c55e', fixed: true});
+    board.create('text', [0, 1, '3'], {fontSize: 16, color: '#f59e0b', fixed: true});
+    board.create('text', [1.3, 0.8, '4'], {fontSize: 16, color: '#f59e0b', fixed: true});
+    
+    // En P2 (intersección inferior): ángulos 5,6,7,8
+    board.create('text', [-0.2, -1.2, '5'], {fontSize: 16, color: '#f59e0b', fixed: true});
+    board.create('text', [-1.8, -1.2, '6'], {fontSize: 16, color: '#f59e0b', fixed: true});
+    board.create('text', [-2.5, -3.2, '7'], {fontSize: 16, color: '#22c55e', fixed: true});
+    board.create('text', [-1, -3.2, '8'], {fontSize: 16, color: '#22c55e', fixed: true});
+    
+    // Puntos de intersección
+    board.create('point', [1.2, 2], {size: 4, color: '#1e293b', fixed: true, name: '', withLabel: false});
+    board.create('point', [-1.2, -2], {size: 4, color: '#1e293b', fixed: true, name: '', withLabel: false});
+    
+    // Etiquetas
+    board.create('text', [6.2, 2, 'l₁'], {fontSize: 14, color: '#3b82f6', fixed: true});
+    board.create('text', [6.2, -2, 'l₂'], {fontSize: 14, color: '#3b82f6', fixed: true});
+    board.create('text', [3.3, 5, 't'], {fontSize: 14, color: '#ef4444', fixed: true});
+  }
+});
+</script>
+
+> 💡 **Truco para recordar:**
+> - **Alternos/Correspondientes** = IGUALES (posición cruzada o misma)
+> - **Conjugados** = SUPLEMENTARIOS (mismo lado)
 
 ## 📖 Propiedad de los ángulos correspondientes
 

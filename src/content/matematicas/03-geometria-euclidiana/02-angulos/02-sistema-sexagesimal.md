@@ -223,14 +223,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 Los ángulos en sistema sexagesimal se escriben así:
 
-<div style="background: #f0fdf4; border: 2px solid #22c55e; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; text-align: center;">
-  <div style="font-size: 2.5rem; font-weight: bold; font-family: monospace; color: #1e293b; letter-spacing: 3px;">
-    45° 30' 25''
-  </div>
-  <div style="margin-top: 0.5rem; color: #166534;">
-    Se lee: <strong>"45 grados, 30 minutos, 25 segundos"</strong>
-  </div>
-</div>
+$$
+\LARGE 45° \, 30' \, 25''
+$$
+
+> 📖 **Se lee:** "Cuarenta y cinco grados, treinta minutos, veinticinco segundos"
 
 ### Formas de escribir un ángulo
 
@@ -454,16 +451,45 @@ $$
 
 ---
 
-## 🌍 **Aplicación: Sistema de Coordenadas Geográficas**
+## 🌍 **Aplicación: Ubicar cualquier lugar en el planeta Tierra**
 
-Una de las aplicaciones más importantes del sistema sexagesimal es la **navegación** y **geografía**. Las coordenadas de cualquier lugar en la Tierra se expresan en grados, minutos y segundos.
+> 🎯 **¿Alguna vez te has preguntado cómo sabe Google Maps exactamente dónde estás?**
+
+En esta sección vas a aprender algo increíble: **cómo ubicar cualquier punto en la superficie de la Tierra** usando solo **dos números** expresados en grados, minutos y segundos.
+
+Sí, literalmente **cualquier lugar del mundo**: tu casa, el Coliseo de Roma, la cima del Everest, o un barco en medio del océano. Todo se puede ubicar con este sistema.
+
+### 🗺️ El problema: ¿Cómo dar direcciones en el planeta?
+
+Imagina que encuentras un tesoro en una isla desierta. ¿Cómo le dirías a alguien exactamente dónde está? No hay calles, no hay direcciones, solo mar y arena.
+
+**La solución:** Los humanos inventaron un sistema de líneas imaginarias sobre la Tierra:
+
+> 🌐 **El sistema de coordenadas geográficas:**
+>
+> • **Líneas horizontales** = Paralelos (miden la LATITUD)
+>
+> • **Líneas verticales** = Meridianos (miden la LONGITUD)
+>
+> Con solo 2 números (latitud y longitud) puedes ubicar **CUALQUIER** punto en la Tierra.
+
+### 🔑 Lo que vas a aprender:
+
+1. **Qué es la latitud** (qué tan al Norte o Sur estás)
+2. **Qué es la longitud** (qué tan al Este o Oeste estás)
+3. **Cómo leer y escribir coordenadas** en grados, minutos y segundos
+4. **Ejemplo práctico:** Ubicar Bogotá en el globo terráqueo
+
+---
+
+### 📊 Resumen: Las dos coordenadas
 
 Para ubicar cualquier punto en la Tierra necesitamos **dos ángulos**:
 
-| Coordenada | ¿Qué mide? | Desde dónde | Rango |
-|------------|------------|-------------|-------|
-| **Latitud** | Norte ↔ Sur | El Ecuador | 0° a 90° N/S |
-| **Longitud** | Este ↔ Oeste | Meridiano de Greenwich | 0° a 180° E/W |
+| Coordenada | ¿Qué mide? | Línea de referencia | Rango |
+|------------|------------|---------------------|-------|
+| **Latitud** | Distancia Norte ↔ Sur | El **Ecuador** (0°) | 0° a 90° N o S |
+| **Longitud** | Distancia Este ↔ Oeste | **Meridiano de Greenwich** (0°) | 0° a 180° E o W |
 
 ---
 
@@ -664,12 +690,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ### 🌍 Coordenadas completas de Bogotá
 
-<div style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border: 2px solid #22c55e; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; text-align: center;">
-  <div style="font-size: 2rem; margin-bottom: 0.5rem;">🇨🇴 Bogotá, Colombia</div>
-  <div style="font-size: 2rem; font-weight: bold; color: #1e293b; font-family: monospace; letter-spacing: 2px;">
+<div style="background: linear-gradient(135deg, #064e3b 0%, #065f46 100%); border: 2px solid #22c55e; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; text-align: center;">
+  <div style="font-size: 2rem; margin-bottom: 0.5rem; color: #ffffff;">🇨🇴 Bogotá, Colombia</div>
+  <div style="font-size: 2rem; font-weight: bold; color: #f8fafc; font-family: monospace; letter-spacing: 2px;">
     4° 36' N &nbsp;&nbsp;•&nbsp;&nbsp; 74° 04' W
   </div>
-  <div style="color: #64748b; margin-top: 0.5rem;">
+  <div style="color: #86efac; margin-top: 0.5rem;">
     ↑ Latitud (Norte) &nbsp;&nbsp;&nbsp;&nbsp; ↑ Longitud (Oeste)
   </div>
 </div>
@@ -677,120 +703,79 @@ document.addEventListener('DOMContentLoaded', function() {
 **📍 Visualización: Bogotá en el Globo Terráqueo**
 
 <div style="background: linear-gradient(135deg, #0f172a, #1e293b); border: 2px solid #475569; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
-  <canvas id="roughjs-globo-3d" width="500" height="450" style="width: 100%; max-width: 500px; height: auto; display: block; margin: 0 auto;"></canvas>
+  <canvas id="roughjs-globo-bogota" width="500" height="450" style="width: 100%; max-width: 500px; height: auto; display: block; margin: 0 auto;"></canvas>
 </div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  if (typeof rough !== 'undefined' && document.getElementById('roughjs-globo-3d')) {
-    var canvas = document.getElementById('roughjs-globo-3d');
+  if (typeof rough !== 'undefined' && document.getElementById('roughjs-globo-bogota')) {
+    var canvas = document.getElementById('roughjs-globo-bogota');
     var rc = rough.canvas(canvas);
     var ctx = canvas.getContext('2d');
     
-    var cx = 250, cy = 210, R = 160;
+    var cx = 250, cy = 225, R = 120;
     
-    // Fondo espacial
-    ctx.fillStyle = '#0f172a';
+    // Fondo pizarra verde oscuro
+    ctx.fillStyle = '#1a2f23';
     ctx.fillRect(0, 0, 500, 450);
     
-    // Estrellas
-    ctx.fillStyle = '#475569';
-    for (var i = 0; i < 30; i++) {
-      ctx.beginPath();
-      ctx.arc(Math.random() * 500, Math.random() * 450, 1, 0, Math.PI * 2);
-      ctx.fill();
-    }
+    // Título
+    ctx.font = 'bold 18px Inter, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillStyle = '#ffffff';
+    ctx.fillText('Coordenadas de Bogotá', cx, 35);
     
-    // Globo terráqueo (esfera)
-    rc.circle(cx, cy, R * 2, { stroke: '#60a5fa', strokeWidth: 2, fill: '#1e3a5f', fillStyle: 'solid', roughness: 0.3 });
+    // Globo
+    rc.circle(cx, cy, R*2, { stroke: '#4a90d9', strokeWidth: 3, fill: '#1e3a5f', fillStyle: 'solid', roughness: 0.5 });
     
-    // Líneas de paralelos (latitudes)
-    for (var lat = -60; lat <= 60; lat += 30) {
-      var yOffset = R * Math.sin(lat * Math.PI / 180);
-      var rParalelo = R * Math.cos(lat * Math.PI / 180);
-      rc.ellipse(cx, cy + yOffset, rParalelo * 2, rParalelo * 0.3, { stroke: '#475569', strokeWidth: 0.5, roughness: 0.2 });
-    }
+    // Ecuador - verde horizontal
+    rc.ellipse(cx, cy, R*2, R*0.35, { stroke: '#4ade80', strokeWidth: 5, roughness: 0.4 });
     
-    // Ecuador (destacado en verde)
-    rc.ellipse(cx, cy, R * 2, R * 0.35, { stroke: '#22c55e', strokeWidth: 3, roughness: 0.3 });
+    // Greenwich - naranja vertical
+    rc.ellipse(cx, cy, R*0.35, R*2, { stroke: '#fbbf24', strokeWidth: 5, roughness: 0.4 });
     
-    // Meridiano de Greenwich (naranja)
-    rc.ellipse(cx, cy, R * 0.35, R * 2, { stroke: '#f59e0b', strokeWidth: 3, roughness: 0.3 });
+    // Polos
+    rc.circle(cx, cy - R, 12, { fill: '#ef4444', fillStyle: 'solid', roughness: 0.3 });
+    rc.circle(cx, cy + R, 12, { fill: '#60a5fa', fillStyle: 'solid', roughness: 0.3 });
     
-    // Polo Norte
-    rc.circle(cx, cy - R, 14, { fill: '#ef4444', fillStyle: 'solid', stroke: '#7f1d1d', strokeWidth: 2, roughness: 0.3 });
-    
-    // Polo Sur
-    rc.circle(cx, cy + R, 14, { fill: '#3b82f6', fillStyle: 'solid', stroke: '#1e40af', strokeWidth: 2, roughness: 0.3 });
-    
-    // Bogotá en el borde izquierdo
-    var bogotaX = cx - R * 0.95;
-    var bogotaY = cy - R * 0.08;
-    
-    rc.circle(bogotaX, bogotaY, 22, { fill: '#ef4444', fillStyle: 'solid', stroke: '#fcd34d', strokeWidth: 4, roughness: 0.3 });
-    
-    // Líneas de referencia
-    ctx.setLineDash([4, 4]);
-    ctx.beginPath();
-    ctx.moveTo(bogotaX, bogotaY);
-    ctx.lineTo(cx, bogotaY);
-    ctx.strokeStyle = '#22c55e';
-    ctx.lineWidth = 2;
-    ctx.stroke();
-    ctx.beginPath();
-    ctx.moveTo(bogotaX, bogotaY);
-    ctx.lineTo(bogotaX, cy);
-    ctx.strokeStyle = '#f59e0b';
-    ctx.stroke();
-    ctx.setLineDash([]);
+    // Bogotá
+    var bX = cx - R + 3, bY = cy - 8;
+    rc.circle(bX, bY, 18, { fill: '#ef4444', fillStyle: 'solid', stroke: '#fcd34d', strokeWidth: 4, roughness: 0.3 });
     
     // Etiquetas
-    ctx.font = 'bold 16px Inter, sans-serif';
+    ctx.font = 'bold 14px Inter, sans-serif';
     ctx.textAlign = 'center';
-    ctx.fillStyle = '#f8fafc';
-    ctx.fillText('🌍 Ubicación de Bogotá', cx, 30);
-    
-    ctx.font = '12px Inter, sans-serif';
     ctx.fillStyle = '#ef4444';
-    ctx.fillText('Polo Norte', cx, cy - R - 20);
+    ctx.fillText('N', cx, cy - R - 20);
     ctx.fillStyle = '#60a5fa';
-    ctx.fillText('Polo Sur', cx, cy + R + 28);
+    ctx.fillText('S', cx, cy + R + 30);
     
-    ctx.fillStyle = '#22c55e';
-    ctx.font = 'bold 11px Inter, sans-serif';
-    ctx.fillText('ECUADOR 0°', cx + R + 25, cy + 5);
-    ctx.fillStyle = '#f59e0b';
-    ctx.fillText('GREENWICH 0°', cx, cy - R - 35);
+    ctx.textAlign = 'left';
+    ctx.fillStyle = '#4ade80';
+    ctx.font = 'bold 15px Inter, sans-serif';
+    ctx.fillText('ECUADOR', cx + R + 15, cy + 5);
     
-    // Etiqueta Bogotá
-    ctx.fillStyle = 'rgba(15, 23, 42, 0.9)';
-    ctx.fillRect(bogotaX - 80, bogotaY - 50, 70, 45);
-    ctx.strokeStyle = '#fcd34d';
-    ctx.lineWidth = 1;
-    ctx.strokeRect(bogotaX - 80, bogotaY - 50, 70, 45);
+    ctx.fillStyle = '#fbbf24';
+    ctx.fillText('GREENWICH', cx + 20, 65);
     
-    ctx.font = 'bold 12px Inter, sans-serif';
+    ctx.textAlign = 'right';
     ctx.fillStyle = '#fcd34d';
-    ctx.fillText('BOGOTÁ', bogotaX - 45, bogotaY - 32);
-    ctx.font = '10px Inter, sans-serif';
-    ctx.fillStyle = '#94a3b8';
-    ctx.fillText("4° 36' N", bogotaX - 45, bogotaY - 18);
-    ctx.fillText("74° 04' W", bogotaX - 45, bogotaY - 5);
+    ctx.font = 'bold 16px Inter, sans-serif';
+    ctx.fillText('BOGOTÁ', bX - 25, bY - 8);
     
     // Leyenda
-    ctx.font = '11px Inter, sans-serif';
     ctx.textAlign = 'left';
-    ctx.fillStyle = '#22c55e';
-    ctx.fillText('━━ Ecuador (0° lat)', 30, 415);
-    ctx.fillStyle = '#f59e0b';
-    ctx.fillText('━━ Greenwich (0° lon)', 30, 433);
-    ctx.fillStyle = '#ef4444';
-    ctx.fillText('● Bogotá', 280, 415);
-    ctx.fillStyle = '#94a3b8';
-    ctx.fillText('--- Líneas referencia', 280, 433);
+    ctx.font = 'bold 13px Inter, sans-serif';
+    ctx.fillStyle = '#4ade80';
+    ctx.fillText('━━ ECUADOR = Latitud 0°', 25, 400);
+    ctx.fillStyle = '#fbbf24';
+    ctx.fillText('━━ GREENWICH = Longitud 0°', 25, 425);
+    ctx.fillStyle = '#fcd34d';
+    ctx.fillText('● BOGOTÁ: 4°36\'N, 74°04\'W', 280, 412);
   }
 });
 </script>
+
 > 💡 **Observa:** Bogotá está **muy cerca del ecuador** (solo 4.6° al norte) y **74° al oeste** de Greenwich (en América del Sur).
 
 ---

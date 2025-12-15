@@ -32,6 +32,61 @@ Donde:
 | Catetos | Los dos lados que forman el ángulo recto |
 | Hipotenusa | El lado opuesto al ángulo recto (siempre el más largo) |
 
+### 📊 Ilustración: Teorema de Pitágoras
+
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
+  <span>📊</span>
+  <div id="jsxgraph-pitagoras" style="width: 100%; height: 350px;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-pitagoras')) {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-pitagoras', {
+      boundingbox: [-2, 7, 10, -4],
+      axis: false,
+      showCopyright: false,
+      showNavigation: false,
+      pan: { enabled: false },
+      zoom: { enabled: false }
+    });
+    
+    // Triángulo 3-4-5
+    var A = board.create('point', [0, 0], {size: 3, color: '#ef4444', fixed: true, name: '', withLabel: false});
+    var B = board.create('point', [4, 0], {size: 3, color: '#ef4444', fixed: true, name: '', withLabel: false});
+    var C = board.create('point', [0, 3], {size: 3, color: '#ef4444', fixed: true, name: '', withLabel: false});
+    
+    board.create('polygon', [A, B, C], {fillColor: '#e2e8f0', fillOpacity: 0.5, borders: {strokeColor: '#1e293b', strokeWidth: 3}});
+    
+    // Ángulo recto
+    board.create('angle', [B, A, C], {radius: 0.4, orthoType: 'square', orthoSensitivity: 1, fillColor: '#ef4444', strokeColor: '#ef4444'});
+    
+    // Cuadrado sobre cateto a (vertical, lado = 3)
+    board.create('polygon', [[0, 0], [-3, 0], [-3, 3], [0, 3]], {fillColor: '#22c55e', fillOpacity: 0.3, borders: {strokeColor: '#22c55e', strokeWidth: 2}});
+    board.create('text', [-1.5, 1.5, 'a² = 9'], {fontSize: 12, color: '#166534', fixed: true, anchorX: 'middle'});
+    
+    // Cuadrado sobre cateto b (horizontal, lado = 4)
+    board.create('polygon', [[0, 0], [0, -4], [4, -4], [4, 0]], {fillColor: '#3b82f6', fillOpacity: 0.3, borders: {strokeColor: '#3b82f6', strokeWidth: 2}});
+    board.create('text', [2, -2, 'b² = 16'], {fontSize: 12, color: '#1e40af', fixed: true, anchorX: 'middle'});
+    
+    // Cuadrado sobre hipotenusa c (diagonal, lado = 5)
+    board.create('polygon', [[4, 0], [7.2, 2.4], [4.2, 5.4], [1, 3]], {fillColor: '#f59e0b', fillOpacity: 0.3, borders: {strokeColor: '#f59e0b', strokeWidth: 2}});
+    board.create('text', [5.5, 3], 'c² = 25'], {fontSize: 12, color: '#b45309', fixed: true, anchorX: 'middle'});
+    
+    // Etiquetas de lados
+    board.create('text', [-0.5, 1.5, 'a=3'], {fontSize: 11, color: '#22c55e', fixed: true});
+    board.create('text', [2, 0.3, 'b=4'], {fontSize: 11, color: '#3b82f6', fixed: true});
+    board.create('text', [2.5, 2, 'c=5'], {fontSize: 11, color: '#f59e0b', fixed: true});
+    
+    // Fórmula
+    board.create('text', [8, -2.5, 'a² + b² = c²'], {fontSize: 14, color: '#1e293b', fixed: true});
+    board.create('text', [8, -3.3, '9 + 16 = 25 ✓'], {fontSize: 12, color: '#22c55e', fixed: true});
+  }
+});
+</script>
+
+> 💡 **Visual:** El área del cuadrado sobre la hipotenusa (amarillo, 25) es igual a la suma de las áreas de los cuadrados sobre los catetos (verde 9 + azul 16).
+
 ---
 
 ## 📖 Fórmulas derivadas
