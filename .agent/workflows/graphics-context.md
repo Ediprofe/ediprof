@@ -8,11 +8,94 @@ Este documento define las buenas prácticas para generar gráficos en las leccio
 
 ---
 
+## 🚨 REGLAS ABSOLUTAS (NO NEGOCIABLES)
+
+### Regla 0: CERO INTERACTIVIDAD por defecto
+
+> ⚠️ **NUNCA agregar interactividad a menos que el USUARIO lo solicite EXPLÍCITAMENTE.**
+
+La interactividad introduce errores y complejidad innecesaria:
+- Los puntos arrastrables causan bugs de renderizado
+- Las etiquetas se desalinean al mover elementos
+- El usuario pierde contexto geométrico
+
+**✅ SIEMPRE usar `fixed: true` en TODOS los puntos**
+**❌ NUNCA permitir zoom, pan, ni elementos arrastrables**
+
+### Regla 0.1: Coordenadas CALCULADAS, nunca hardcodeadas
+
+> ⚠️ **TODOS los puntos derivados deben calcularse con FÓRMULAS MATEMÁTICAS.**
+
+Nunca hardcodear posiciones como `[4, 2.5]`. En su lugar, calcular:
+
+```javascript
+// ✅ CORRECTO: Coordenadas calculadas
+var A = [1, 1], B = [7, 1], C = [4, 6];
+
+// Punto medio calculado
+var mAB = [(A[0]+B[0])/2, (A[1]+B[1])/2];
+
+// Baricentro calculado
+var G = [(A[0]+B[0]+C[0])/3, (A[1]+B[1]+C[1])/3];
+
+// Incentro calculado
+function dist(p1, p2) {
+  return Math.sqrt((p2[0]-p1[0])*(p2[0]-p1[0]) + (p2[1]-p1[1])*(p2[1]-p1[1]));
+}
+var a = dist(B, C), b = dist(A, C), c = dist(A, B);
+var I = [
+  (a * A[0] + b * B[0] + c * C[0]) / (a + b + c),
+  (a * A[1] + b * B[1] + c * C[1]) / (a + b + c)
+];
+
+// Circuncentro calculado
+var D = 2 * (A[0]*(B[1]-C[1]) + B[0]*(C[1]-A[1]) + C[0]*(A[1]-B[1]));
+var Ox = ((A[0]*A[0]+A[1]*A[1])*(B[1]-C[1]) + (B[0]*B[0]+B[1]*B[1])*(C[1]-A[1]) + (C[0]*C[0]+C[1]*C[1])*(A[1]-B[1])) / D;
+var Oy = ((A[0]*A[0]+A[1]*A[1])*(C[0]-B[0]) + (B[0]*B[0]+B[1]*B[1])*(A[0]-C[0]) + (C[0]*C[0]+C[1]*C[1])*(B[0]-A[0])) / D;
+
+// Pie de altura (proyección ortogonal)
+function footOfAltitude(P, Q, R) {
+  var dx = R[0] - Q[0], dy = R[1] - Q[1];
+  var t = ((P[0] - Q[0]) * dx + (P[1] - Q[1]) * dy) / (dx * dx + dy * dy);
+  return [Q[0] + t * dx, Q[1] + t * dy];
+}
+```
+
+**❌ INCORRECTO: Coordenadas hardcodeadas**
+```javascript
+// NO HACER: Adivinar posiciones
+var H = [4, 2.5];  // ¿De dónde sale este número?
+var O = [4, 2.6];  // Aproximación manual = ERROR
+```
+
+### Regla 0.2: Funciones JSXGraph PROHIBIDAS
+
+Estas funciones de JSXGraph **NO funcionan correctamente** y están PROHIBIDAS:
+
+| Función | Problema | Alternativa |
+|---------|----------|-------------|
+| `perpendicularbisector` | No renderiza | Calcular manualmente con fórmula |
+| `circumcenter` | No renderiza | Calcular con fórmula del circuncentro |
+| `circumcircle` | No renderiza | Usar `circle` con centro y radio calculados |
+| `incenter` | Inconsistente | Calcular con fórmula del incentro |
+| `incircle` | Inconsistente | Usar `circle` con centro y radio calculados |
+| `perpendicularsegment` | Extiende demasiado | Calcular pie de altura y usar `segment` |
+
+**✅ USAR SOLO elementos básicos:**
+- `point` - Puntos
+- `segment` - Segmentos (inicio y fin definidos)
+- `line` - Líneas (solo si necesita extenderse)
+- `circle` - Círculos (con centro y radio/punto)
+- `polygon` - Polígonos
+- `text` - Texto simple (sin LaTeX)
+
+---
+
 ## 🎯 REGLA DE ORO
 
 > **ECharts es la PRIMERA opción** para cualquier gráfico de funciones, datos o visualizaciones estáticas.
 > 
-> Solo usar **JSXGraph cuando se requiera INTERACTIVIDAD** (arrastrar puntos, manipular vectores).
+> Solo usar **JSXGraph para geometría** con elementos básicos y coordenadas calculadas.
 
 ---
 

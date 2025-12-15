@@ -166,6 +166,62 @@ $$
 6^2 + 8^2 = 36 + 64 = 100 = 10^2 \quad ✓
 $$
 
+**Ilustración: Ternas pitagóricas comunes:**
+
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-ternas" style="width: 100%; height: 350px; min-height: 300px; border-radius: 8px;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-ternas')) {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-ternas', {
+      boundingbox: [-1, 6, 15, -1.5],
+      axis: false,
+      showCopyright: false,
+      showNavigation: false,
+      pan: { enabled: false },
+      zoom: { enabled: false }
+    });
+    
+    // Terna 3-4-5
+    var A1 = board.create('point', [0.5, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
+    var B1 = board.create('point', [3.5, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
+    var C1 = board.create('point', [0.5, 2.75], {name: '', size: 3, color: '#1e293b', fixed: true});
+    board.create('polygon', [A1, B1, C1], {fillColor: '#22c55e', fillOpacity: 0.3, borders: {strokeColor: '#22c55e', strokeWidth: 2}, fixed: true});
+    board.create('text', [2, 0.2, '4'], {fontSize: 10, color: '#22c55e', fixed: true, anchorX: 'middle'});
+    board.create('text', [0.2, 1.6, '3'], {fontSize: 10, color: '#22c55e', fixed: true});
+    board.create('text', [2.2, 2, '5'], {fontSize: 10, color: '#22c55e', fixed: true});
+    board.create('text', [2, -0.8, '(3,4,5)'], {fontSize: 11, color: '#22c55e', fixed: true, anchorX: 'middle', fontWeight: 'bold'});
+    
+    // Terna 5-12-13
+    var A2 = board.create('point', [5, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
+    var B2 = board.create('point', [9, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
+    var C2 = board.create('point', [5, 2.2], {name: '', size: 3, color: '#1e293b', fixed: true});
+    board.create('polygon', [A2, B2, C2], {fillColor: '#3b82f6', fillOpacity: 0.3, borders: {strokeColor: '#3b82f6', strokeWidth: 2}, fixed: true});
+    board.create('text', [7, 0.2, '12'], {fontSize: 10, color: '#3b82f6', fixed: true, anchorX: 'middle'});
+    board.create('text', [4.7, 1.3, '5'], {fontSize: 10, color: '#3b82f6', fixed: true});
+    board.create('text', [7.2, 1.5, '13'], {fontSize: 10, color: '#3b82f6', fixed: true});
+    board.create('text', [7, -0.8, '(5,12,13)'], {fontSize: 11, color: '#3b82f6', fixed: true, anchorX: 'middle', fontWeight: 'bold'});
+    
+    // Terna 8-15-17
+    var A3 = board.create('point', [10, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
+    var B3 = board.create('point', [14.5, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
+    var C3 = board.create('point', [10, 2.9], {name: '', size: 3, color: '#1e293b', fixed: true});
+    board.create('polygon', [A3, B3, C3], {fillColor: '#f59e0b', fillOpacity: 0.3, borders: {strokeColor: '#f59e0b', strokeWidth: 2}, fixed: true});
+    board.create('text', [12.2, 0.2, '15'], {fontSize: 10, color: '#f59e0b', fixed: true, anchorX: 'middle'});
+    board.create('text', [9.6, 1.7, '8'], {fontSize: 10, color: '#f59e0b', fixed: true});
+    board.create('text', [12.5, 2, '17'], {fontSize: 10, color: '#f59e0b', fixed: true});
+    board.create('text', [12.2, -0.8, '(8,15,17)'], {fontSize: 11, color: '#f59e0b', fixed: true, anchorX: 'middle', fontWeight: 'bold'});
+    
+    board.create('text', [7.5, 5, 'Ternas pitagóricas: números enteros que cumplen a² + b² = c²'], {fontSize: 12, color: '#1e293b', fixed: true, anchorX: 'middle'});
+  }
+});
+</script>
+
 ---
 
 ## 📖 Aplicaciones prácticas
@@ -181,6 +237,61 @@ $$
 $$
 h = 4 \text{ m}
 $$
+
+**Ilustración: Escalera apoyada en pared:**
+
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-escalera" style="width: 100%; height: 350px; min-height: 300px; border-radius: 8px;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-escalera')) {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-escalera', {
+      boundingbox: [-1, 6, 8, -1],
+      axis: false,
+      showCopyright: false,
+      showNavigation: false,
+      pan: { enabled: false },
+      zoom: { enabled: false }
+    });
+    
+    // Pared
+    board.create('segment', [[0.5, 0], [0.5, 5]], {strokeColor: '#94a3b8', strokeWidth: 6, fixed: true});
+    
+    // Suelo
+    board.create('segment', [[0, 0], [5, 0]], {strokeColor: '#94a3b8', strokeWidth: 4, fixed: true});
+    
+    // Escalera (hipotenusa = 5m)
+    board.create('segment', [[0.5, 4], [3.5, 0]], {strokeColor: '#ef4444', strokeWidth: 4, fixed: true});
+    
+    // Altura (4m)
+    board.create('segment', [[0.5, 0], [0.5, 4]], {strokeColor: '#22c55e', strokeWidth: 3, dash: 2, fixed: true});
+    
+    // Base (3m)
+    board.create('segment', [[0.5, 0], [3.5, 0]], {strokeColor: '#3b82f6', strokeWidth: 3, dash: 2, fixed: true});
+    
+    // Ángulo recto
+    board.create('polygon', [[0.5, 0], [0.5, 0.3], [0.8, 0.3], [0.8, 0]], {fillColor: '#1e293b', fillOpacity: 0.3, borders: {strokeColor: '#1e293b', strokeWidth: 1}, fixed: true});
+    
+    // Etiquetas
+    board.create('text', [0.1, 2, 'h=4m'], {fontSize: 12, color: '#22c55e', fixed: true});
+    board.create('text', [2, -0.4, '3m'], {fontSize: 12, color: '#3b82f6', fixed: true, anchorX: 'middle'});
+    board.create('text', [2.3, 2.3, '5m'], {fontSize: 12, color: '#ef4444', fixed: true});
+    
+    // Punto de apoyo
+    board.create('point', [0.5, 4], {name: '', size: 5, color: '#ef4444', fixed: true});
+    board.create('point', [3.5, 0], {name: '', size: 5, color: '#ef4444', fixed: true});
+    
+    board.create('text', [5.5, 3, 'h² + 3² = 5²'], {fontSize: 12, color: '#1e293b', fixed: true});
+    board.create('text', [5.5, 2.3, 'h² = 25 - 9 = 16'], {fontSize: 12, color: '#1e293b', fixed: true});
+    board.create('text', [5.5, 1.6, 'h = 4 metros'], {fontSize: 12, color: '#22c55e', fixed: true, fontWeight: 'bold'});
+  }
+});
+</script>
 
 ### Ejemplo 2: Diagonal de un rectángulo
 

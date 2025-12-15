@@ -28,6 +28,49 @@ Significa que los elementos correspondientes son iguales:
 - $\angle B = \angle E$
 - $\angle C = \angle F$
 
+**Ilustración: Triángulos congruentes:**
+
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-congruentes" style="width: 100%; height: 350px; min-height: 300px; border-radius: 8px;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-congruentes')) {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-congruentes', {
+      boundingbox: [-1, 5, 13, -1],
+      axis: false,
+      showCopyright: false,
+      showNavigation: false,
+      pan: { enabled: false },
+      zoom: { enabled: false }
+    });
+    
+    // Triángulo ABC
+    var A = board.create('point', [0.5, 0.5], {name: 'A', size: 4, color: '#22c55e', fixed: true, label: {fontSize: 12, color: '#22c55e', offset: [-10, -10]}});
+    var B = board.create('point', [4.5, 0.5], {name: 'B', size: 4, color: '#22c55e', fixed: true, label: {fontSize: 12, color: '#22c55e', offset: [5, -10]}});
+    var C = board.create('point', [2.5, 3.5], {name: 'C', size: 4, color: '#22c55e', fixed: true, label: {fontSize: 12, color: '#22c55e', offset: [0, 10]}});
+    board.create('polygon', [A, B, C], {fillColor: '#dcfce7', fillOpacity: 0.4, borders: {strokeColor: '#22c55e', strokeWidth: 2}, fixed: true});
+    board.create('text', [2.5, -0.3, '△ABC'], {fontSize: 13, color: '#22c55e', fixed: true, anchorX: 'middle'});
+    
+    // Triángulo DEF (congruente)
+    var D = board.create('point', [7, 0.5], {name: 'D', size: 4, color: '#3b82f6', fixed: true, label: {fontSize: 12, color: '#3b82f6', offset: [-10, -10]}});
+    var E = board.create('point', [11, 0.5], {name: 'E', size: 4, color: '#3b82f6', fixed: true, label: {fontSize: 12, color: '#3b82f6', offset: [5, -10]}});
+    var F = board.create('point', [9, 3.5], {name: 'F', size: 4, color: '#3b82f6', fixed: true, label: {fontSize: 12, color: '#3b82f6', offset: [0, 10]}});
+    board.create('polygon', [D, E, F], {fillColor: '#dbeafe', fillOpacity: 0.4, borders: {strokeColor: '#3b82f6', strokeWidth: 2}, fixed: true});
+    board.create('text', [9, -0.3, '△DEF'], {fontSize: 13, color: '#3b82f6', fixed: true, anchorX: 'middle'});
+    
+    // Símbolo de congruencia
+    board.create('text', [5.75, 2, '≅'], {fontSize: 24, color: '#1e293b', fixed: true, anchorX: 'middle'});
+    
+    board.create('text', [6, 4.3, 'Misma forma + Mismo tamaño = CONGRUENTES'], {fontSize: 12, color: '#1e293b', fixed: true, anchorX: 'middle'});
+  }
+});
+</script>
+
 ---
 
 ## 📖 Los criterios de congruencia
@@ -47,6 +90,54 @@ $$
 ### Ejemplo
 
 Si el triángulo $ABC$ tiene lados de 3, 4 y 5 cm, y el triángulo $DEF$ también tiene lados de 3, 4 y 5 cm, entonces son congruentes por LLL.
+
+**Ilustración: Criterio LLL (Lado-Lado-Lado):**
+
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-lll" style="width: 100%; height: 350px; min-height: 300px; border-radius: 8px;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-lll')) {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-lll', {
+      boundingbox: [-1, 5, 13, -1.5],
+      axis: false,
+      showCopyright: false,
+      showNavigation: false,
+      pan: { enabled: false },
+      zoom: { enabled: false }
+    });
+    
+    // Triángulo 1 (3-4-5)
+    var A1 = board.create('point', [0.5, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
+    var B1 = board.create('point', [4.5, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
+    var C1 = board.create('point', [0.5, 3.5], {name: '', size: 3, color: '#1e293b', fixed: true});
+    board.create('polygon', [A1, B1, C1], {fillColor: '#fef3c7', fillOpacity: 0.4, borders: {strokeColor: '#1e293b', strokeWidth: 2}, fixed: true});
+    
+    // Etiquetas de lados
+    board.create('text', [2.5, 0.2, '4'], {fontSize: 12, color: '#ef4444', fixed: true, anchorX: 'middle'});
+    board.create('text', [0.1, 2, '3'], {fontSize: 12, color: '#3b82f6', fixed: true});
+    board.create('text', [2.8, 2.3, '5'], {fontSize: 12, color: '#22c55e', fixed: true});
+    
+    // Triángulo 2 (3-4-5) - idéntico
+    var A2 = board.create('point', [7, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
+    var B2 = board.create('point', [11, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
+    var C2 = board.create('point', [7, 3.5], {name: '', size: 3, color: '#1e293b', fixed: true});
+    board.create('polygon', [A2, B2, C2], {fillColor: '#fef3c7', fillOpacity: 0.4, borders: {strokeColor: '#1e293b', strokeWidth: 2}, fixed: true});
+    
+    board.create('text', [9, 0.2, '4'], {fontSize: 12, color: '#ef4444', fixed: true, anchorX: 'middle'});
+    board.create('text', [6.6, 2, '3'], {fontSize: 12, color: '#3b82f6', fixed: true});
+    board.create('text', [9.3, 2.3, '5'], {fontSize: 12, color: '#22c55e', fixed: true});
+    
+    board.create('text', [5.75, 2, '≅'], {fontSize: 24, color: '#1e293b', fixed: true, anchorX: 'middle'});
+    board.create('text', [6, -1, 'LLL: Los 3 lados son iguales → Congruentes'], {fontSize: 12, color: '#1e293b', fixed: true, anchorX: 'middle'});
+  }
+});
+</script>
 
 ---
 
@@ -71,6 +162,54 @@ Si dos triángulos tienen:
 
 Entonces son congruentes por LAL.
 
+**Ilustración: Criterio LAL (Lado-Ángulo-Lado):**
+
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-lal" style="width: 100%; height: 350px; min-height: 300px; border-radius: 8px;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-lal')) {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-lal', {
+      boundingbox: [-1, 5, 13, -1.5],
+      axis: false,
+      showCopyright: false,
+      showNavigation: false,
+      pan: { enabled: false },
+      zoom: { enabled: false }
+    });
+    
+    // Triángulo 1
+    var A1 = board.create('point', [0.5, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
+    var B1 = board.create('point', [4, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
+    var C1 = board.create('point', [1.5, 3.5], {name: '', size: 3, color: '#1e293b', fixed: true});
+    board.create('polygon', [A1, B1, C1], {fillColor: '#dbeafe', fillOpacity: 0.4, borders: {strokeColor: '#1e293b', strokeWidth: 2}, fixed: true});
+    
+    // Ángulo destacado
+    board.create('angle', [B1, A1, C1], {radius: 0.5, fillColor: '#f59e0b', fillOpacity: 0.5, strokeColor: '#f59e0b', name: '60°', label: {fontSize: 10}});
+    board.create('text', [2.2, 0.2, '5'], {fontSize: 12, color: '#ef4444', fixed: true});
+    board.create('text', [0.7, 2, '7'], {fontSize: 12, color: '#3b82f6', fixed: true});
+    
+    // Triángulo 2
+    var A2 = board.create('point', [7, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
+    var B2 = board.create('point', [10.5, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
+    var C2 = board.create('point', [8, 3.5], {name: '', size: 3, color: '#1e293b', fixed: true});
+    board.create('polygon', [A2, B2, C2], {fillColor: '#dbeafe', fillOpacity: 0.4, borders: {strokeColor: '#1e293b', strokeWidth: 2}, fixed: true});
+    
+    board.create('angle', [B2, A2, C2], {radius: 0.5, fillColor: '#f59e0b', fillOpacity: 0.5, strokeColor: '#f59e0b', name: '60°', label: {fontSize: 10}});
+    board.create('text', [8.7, 0.2, '5'], {fontSize: 12, color: '#ef4444', fixed: true});
+    board.create('text', [7.2, 2, '7'], {fontSize: 12, color: '#3b82f6', fixed: true});
+    
+    board.create('text', [5.75, 2, '≅'], {fontSize: 24, color: '#1e293b', fixed: true, anchorX: 'middle'});
+    board.create('text', [6, -1, 'LAL: 2 lados + ángulo entre ellos iguales → Congruentes'], {fontSize: 12, color: '#1e293b', fixed: true, anchorX: 'middle'});
+  }
+});
+</script>
+
 ---
 
 ## 📖 Criterio ALA (Ángulo-Lado-Ángulo)
@@ -89,6 +228,54 @@ Si dos triángulos tienen:
 - Un ángulo de 70°
 
 Entonces son congruentes por ALA.
+
+**Ilustración: Criterio ALA (Ángulo-Lado-Ángulo):**
+
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-ala" style="width: 100%; height: 350px; min-height: 300px; border-radius: 8px;"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-ala')) {
+    var board = JXG.JSXGraph.initBoard('jsxgraph-ala', {
+      boundingbox: [-1, 5, 13, -1.5],
+      axis: false,
+      showCopyright: false,
+      showNavigation: false,
+      pan: { enabled: false },
+      zoom: { enabled: false }
+    });
+    
+    // Triángulo 1
+    var A1 = board.create('point', [0.5, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
+    var B1 = board.create('point', [4.5, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
+    var C1 = board.create('point', [2.5, 3.5], {name: '', size: 3, color: '#1e293b', fixed: true});
+    board.create('polygon', [A1, B1, C1], {fillColor: '#dcfce7', fillOpacity: 0.4, borders: {strokeColor: '#1e293b', strokeWidth: 2}, fixed: true});
+    
+    // Ángulos destacados
+    board.create('angle', [B1, A1, C1], {radius: 0.5, fillColor: '#a855f7', fillOpacity: 0.5, strokeColor: '#a855f7', name: '40°', label: {fontSize: 10}});
+    board.create('angle', [C1, B1, A1], {radius: 0.5, fillColor: '#f59e0b', fillOpacity: 0.5, strokeColor: '#f59e0b', name: '70°', label: {fontSize: 10}});
+    board.create('text', [2.5, 0.2, '8'], {fontSize: 12, color: '#ef4444', fixed: true, anchorX: 'middle'});
+    
+    // Triángulo 2
+    var A2 = board.create('point', [7, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
+    var B2 = board.create('point', [11, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
+    var C2 = board.create('point', [9, 3.5], {name: '', size: 3, color: '#1e293b', fixed: true});
+    board.create('polygon', [A2, B2, C2], {fillColor: '#dcfce7', fillOpacity: 0.4, borders: {strokeColor: '#1e293b', strokeWidth: 2}, fixed: true});
+    
+    board.create('angle', [B2, A2, C2], {radius: 0.5, fillColor: '#a855f7', fillOpacity: 0.5, strokeColor: '#a855f7', name: '40°', label: {fontSize: 10}});
+    board.create('angle', [C2, B2, A2], {radius: 0.5, fillColor: '#f59e0b', fillOpacity: 0.5, strokeColor: '#f59e0b', name: '70°', label: {fontSize: 10}});
+    board.create('text', [9, 0.2, '8'], {fontSize: 12, color: '#ef4444', fixed: true, anchorX: 'middle'});
+    
+    board.create('text', [5.75, 2, '≅'], {fontSize: 24, color: '#1e293b', fixed: true, anchorX: 'middle'});
+    board.create('text', [6, -1, 'ALA: 2 ángulos + lado entre ellos iguales → Congruentes'], {fontSize: 12, color: '#1e293b', fixed: true, anchorX: 'middle'});
+  }
+});
+</script>
 
 ---
 

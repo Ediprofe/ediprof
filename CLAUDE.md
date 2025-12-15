@@ -267,6 +267,10 @@ Para ver el estilo correcto de lecciones, revisar:
 ---
 
 ## SOLICITUD CONCRETA
-http://localhost:4321/matematicas/geometria-euclidiana/triangulos/angulos-internos-externos
-![alt text](image-50.png)
-la linea punteada esta incorrecta...debe quedar en la dirección de la línea rosada que te dibujo a mano
+http://localhost:4321/matematicas/geometria-euclidiana/triangulos/rectas-notables
+
+![alt text](image-51.png)
+![alt text](image-52.png)
+![alt text](image-53.png)
+
+hay errores en estas tres, qué puedo hacer? no hay una librería que produzca eso sin tanto error por lección? POR FAVOR CERO IMÁGENES PNG, QUE ADEMÁS LAS GENERAS TAMBIÉN CON ERRORES. DAME UNA LIBRERÍA QUE HAGA EL TRABAJO SIN TANTO ERROR SI TÚ LO EJECUTAS.
