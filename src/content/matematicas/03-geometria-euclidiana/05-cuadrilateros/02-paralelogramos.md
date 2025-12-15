@@ -12,6 +12,80 @@ $$
 AB \parallel CD \quad \text{y} \quad BC \parallel AD
 $$
 
+**Ilustración: Propiedades del Paralelogramo:**
+
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-paralelogramo" style="width: 100%; height: 350px; min-height: 300px; border-radius: 8px;"></div>
+</div>
+
+<script>
+(function() {
+  function initParalelogramo() {
+    if (typeof JXG === 'undefined' || !document.getElementById('jsxgraph-paralelogramo')) {
+      setTimeout(initParalelogramo, 100);
+      return;
+    }
+    
+    if (JXG.boards['jsxgraph-paralelogramo']) return;
+
+    var board = JXG.JSXGraph.initBoard('jsxgraph-paralelogramo', {
+      boundingbox: [-2, 5, 10, -2],
+      axis: false,
+      showCopyright: false,
+      showNavigation: false,
+      keepaspectratio: true
+    });
+    
+    // Puntos fijos
+    // Base 6. Altura 3. Skew 2.
+    // A(0,0), B(6,0), D(2,3), C(8,3).
+    var A = board.create('point', [0, 0], {name: 'A', size: 3, color: '#1e293b', fixed: true, label: {offset: [-10, -10]}});
+    var B = board.create('point', [6, 0], {name: 'B', size: 3, color: '#1e293b', fixed: true, label: {offset: [10, -10]}});
+    var C = board.create('point', [8, 3], {name: 'C', size: 3, color: '#1e293b', fixed: true, label: {offset: [10, 10]}});
+    var D = board.create('point', [2, 3], {name: 'D', size: 3, color: '#1e293b', fixed: true, label: {offset: [-10, 10]}});
+    
+    // Polígono
+    var poly = board.create('polygon', [A, B, C, D], {
+      fillColor: '#dbeafe', 
+      fillOpacity: 0.5, 
+      borders: {strokeColor: '#3b82f6', strokeWidth: 2}
+    });
+
+    // Ángulos
+    var angleStyle = {radius: 0.5, fillOpacity: 0.3};
+    // A y C son agudos. B y D son obtusos.
+    // Coloreamos pares iguales.
+    board.create('angle', [D, A, B], { ...angleStyle, fillColor: '#22c55e', strokeColor: '#166534', name: 'α' });
+    board.create('angle', [B, C, D], { ...angleStyle, fillColor: '#22c55e', strokeColor: '#166534', name: 'α' });
+    
+    board.create('angle', [A, B, C], { ...angleStyle, fillColor: '#f97316', strokeColor: '#c2410c', name: 'β' });
+    board.create('angle', [C, D, A], { ...angleStyle, fillColor: '#f97316', strokeColor: '#c2410c', name: 'β' });
+    
+    // Etiquetas de lados (mostrando igualdad)
+    // Lados paralelos horizontales (a)
+    board.create('text', [3, -0.3, 'a'], {color: '#3b82f6', fontSize: 12, fixed: true, anchorX: 'middle'});
+    board.create('text', [5, 3.3, 'a'], {color: '#3b82f6', fontSize: 12, fixed: true, anchorX: 'middle'});
+
+    // Lados paralelos inclinados (b)
+    board.create('text', [0.8, 1.5, 'b'], {color: '#3b82f6', fontSize: 12, fixed: true, anchorX: 'right'});
+    board.create('text', [7.2, 1.5, 'b'], {color: '#3b82f6', fontSize: 12, fixed: true, anchorX: 'left'});
+
+    // Altura (opcional pero instructiva para el área)
+    var H = board.create('point', [2, 0], {visible: false});
+    board.create('segment', [D, H], {strokeColor: '#64748b', dash: 2});
+    board.create('text', [2.2, 1.5, 'h'], {color: '#64748b', fontSize: 11, fixed: true});
+    // Ángulo recto de la altura
+    board.create('angle', [D, H, B], {orthoType: 'sectordot', radius: 0.3, fillColor: 'none', strokeColor: '#64748b'});
+
+  }
+  
+  initParalelogramo();
+})();
+</script>
+
 ---
 
 ## 📖 Propiedades de los lados

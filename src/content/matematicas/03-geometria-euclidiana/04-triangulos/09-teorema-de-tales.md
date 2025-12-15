@@ -39,49 +39,45 @@ $$
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-tales-intro')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-tales-intro', {
-      boundingbox: [-1, 8, 12, -1],
-      axis: false,
-      showCopyright: false,
-      showNavigation: false,
-      pan: { enabled: false },
-      zoom: { enabled: false }
-    });
-    
-    // Transversal 1 (izquierda)
-    board.create('segment', [[2, 0.5], [2, 7]], {strokeColor: '#1e293b', strokeWidth: 2, fixed: true});
-    // Transversal 2 (derecha)
-    board.create('segment', [[8, 0.5], [8, 7]], {strokeColor: '#1e293b', strokeWidth: 2, fixed: true});
-    
-    // Líneas paralelas horizontales
-    board.create('segment', [[1, 2], [9, 2]], {strokeColor: '#3b82f6', strokeWidth: 2, fixed: true});
-    board.create('segment', [[1, 4], [9, 4]], {strokeColor: '#22c55e', strokeWidth: 2, fixed: true});
-    board.create('segment', [[1, 6.5], [9, 6.5]], {strokeColor: '#f59e0b', strokeWidth: 2, fixed: true});
-    
-    // Puntos en transversal 1
-    var A = board.create('point', [2, 2], {name: 'A', size: 4, color: '#3b82f6', fixed: true, label: {fontSize: 12, offset: [-15, 0]}});
-    var B = board.create('point', [2, 4], {name: 'B', size: 4, color: '#22c55e', fixed: true, label: {fontSize: 12, offset: [-15, 0]}});
-    var C = board.create('point', [2, 6.5], {name: 'C', size: 4, color: '#f59e0b', fixed: true, label: {fontSize: 12, offset: [-15, 0]}});
-    
-    // Puntos en transversal 2
-    var Ap = board.create('point', [8, 2], {name: "A'", size: 4, color: '#3b82f6', fixed: true, label: {fontSize: 12, offset: [10, 0]}});
-    var Bp = board.create('point', [8, 4], {name: "B'", size: 4, color: '#22c55e', fixed: true, label: {fontSize: 12, offset: [10, 0]}});
-    var Cp = board.create('point', [8, 6.5], {name: "C'", size: 4, color: '#f59e0b', fixed: true, label: {fontSize: 12, offset: [10, 0]}});
-    
-    // Etiquetas de segmentos
-    board.create('text', [1.3, 3, '4'], {fontSize: 12, color: '#ef4444', fixed: true});
-    board.create('text', [1.3, 5.2, '6'], {fontSize: 12, color: '#a855f7', fixed: true});
-    board.create('text', [8.5, 3, '8'], {fontSize: 12, color: '#ef4444', fixed: true});
-    board.create('text', [8.5, 5.2, '12'], {fontSize: 12, color: '#a855f7', fixed: true});
-    
-    // Etiquetas "paralelas"
-    board.create('text', [9.5, 2, '∥'], {fontSize: 14, color: '#3b82f6', fixed: true});
-    board.create('text', [9.5, 4, '∥'], {fontSize: 14, color: '#22c55e', fixed: true});
-    board.create('text', [9.5, 6.5, '∥'], {fontSize: 14, color: '#f59e0b', fixed: true});
-    
-    board.create('text', [5, -0.3, 'AB/BC = A\'B\'/B\'C\' → 4/6 = 8/12 ✓'], {fontSize: 13, color: '#1e293b', fixed: true, anchorX: 'middle', fontWeight: 'bold'});
-  }
+  var board = JXG.JSXGraph.initBoard('jsxgraph-tales-intro', {
+    boundingbox: [-1, 8, 12, -1],
+    axis: false,
+    showCopyright: false,
+    showNavigation: false
+  });
+  
+  // Transversal 1 (izquierda)
+  board.create('segment', [[2, 0.5], [2, 7]], {strokeColor: '#1e293b', strokeWidth: 2, fixed: true});
+  // Transversal 2 (derecha)
+  board.create('segment', [[8, 0.5], [8, 7]], {strokeColor: '#1e293b', strokeWidth: 2, fixed: true});
+  
+  // Líneas paralelas horizontales
+  board.create('segment', [[1, 2], [9, 2]], {strokeColor: '#3b82f6', strokeWidth: 2, fixed: true});
+  board.create('segment', [[1, 4], [9, 4]], {strokeColor: '#22c55e', strokeWidth: 2, fixed: true});
+  board.create('segment', [[1, 6.5], [9, 6.5]], {strokeColor: '#f59e0b', strokeWidth: 2, fixed: true});
+  
+  // Puntos en transversal 1
+  var A = board.create('point', [2, 2], {name: 'A', size: 4, color: '#3b82f6', fixed: true, label: {fontSize: 12, offset: [-15, 0]}});
+  var B = board.create('point', [2, 4], {name: 'B', size: 4, color: '#22c55e', fixed: true, label: {fontSize: 12, offset: [-15, 0]}});
+  var C = board.create('point', [2, 6.5], {name: 'C', size: 4, color: '#f59e0b', fixed: true, label: {fontSize: 12, offset: [-15, 0]}});
+  
+  // Puntos en transversal 2
+  var Ap = board.create('point', [8, 2], {name: "A'", size: 4, color: '#3b82f6', fixed: true, label: {fontSize: 12, offset: [10, 0]}});
+  var Bp = board.create('point', [8, 4], {name: "B'", size: 4, color: '#22c55e', fixed: true, label: {fontSize: 12, offset: [10, 0]}});
+  var Cp = board.create('point', [8, 6.5], {name: "C'", size: 4, color: '#f59e0b', fixed: true, label: {fontSize: 12, offset: [10, 0]}});
+  
+  // Etiquetas de segmentos
+  board.create('text', [1.3, 3, '4'], {fontSize: 12, color: '#ef4444', fixed: true});
+  board.create('text', [1.3, 5.2, '6'], {fontSize: 12, color: '#a855f7', fixed: true});
+  board.create('text', [8.5, 3, '8'], {fontSize: 12, color: '#ef4444', fixed: true});
+  board.create('text', [8.5, 5.2, '12'], {fontSize: 12, color: '#a855f7', fixed: true});
+  
+  // Etiquetas "paralelas"
+  board.create('text', [9.5, 2, '∥'], {fontSize: 14, color: '#3b82f6', fixed: true});
+  board.create('text', [9.5, 4, '∥'], {fontSize: 14, color: '#22c55e', fixed: true});
+  board.create('text', [9.5, 6.5, '∥'], {fontSize: 14, color: '#f59e0b', fixed: true});
+  
+  board.create('text', [5, -0.3, 'AB/BC = A\'B\'/B\'C\' → 4/6 = 8/12 ✓'], {fontSize: 13, color: '#1e293b', fixed: true, anchorX: 'middle', fontWeight: 'bold'});
 });
 </script>
 
@@ -134,41 +130,37 @@ $$
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-tales-triangulo')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-tales-triangulo', {
-      boundingbox: [-1, 7, 10, -1.5],
-      axis: false,
-      showCopyright: false,
-      showNavigation: false,
-      pan: { enabled: false },
-      zoom: { enabled: false }
-    });
-    
-    // Triángulo ABC
-    var A = board.create('point', [4.5, 6], {name: 'A', size: 4, color: '#1e293b', fixed: true, label: {fontSize: 13, offset: [0, 10]}});
-    var B = board.create('point', [1, 0.5], {name: 'B', size: 4, color: '#1e293b', fixed: true, label: {fontSize: 13, offset: [-10, -10]}});
-    var C = board.create('point', [8, 0.5], {name: 'C', size: 4, color: '#1e293b', fixed: true, label: {fontSize: 13, offset: [10, -10]}});
-    
-    board.create('segment', [A, B], {strokeColor: '#1e293b', strokeWidth: 2, fixed: true});
-    board.create('segment', [A, C], {strokeColor: '#1e293b', strokeWidth: 2, fixed: true});
-    board.create('segment', [B, C], {strokeColor: '#1e293b', strokeWidth: 2, fixed: true});
-    
-    // Puntos D y E en los lados (DE paralelo a BC)
-    var D = board.create('point', [2.75, 3.25], {name: 'D', size: 4, color: '#22c55e', fixed: true, label: {fontSize: 12, color: '#22c55e', offset: [-15, 0]}});
-    var E = board.create('point', [6.25, 3.25], {name: 'E', size: 4, color: '#22c55e', fixed: true, label: {fontSize: 12, color: '#22c55e', offset: [10, 0]}});
-    
-    // Línea DE paralela a BC
-    board.create('segment', [D, E], {strokeColor: '#ef4444', strokeWidth: 3, fixed: true});
-    
-    // Etiquetas
-    board.create('text', [1.7, 4.7, 'AD'], {fontSize: 11, color: '#3b82f6', fixed: true});
-    board.create('text', [1.5, 1.8, 'DB'], {fontSize: 11, color: '#a855f7', fixed: true});
-    board.create('text', [7, 4.7, 'AE'], {fontSize: 11, color: '#3b82f6', fixed: true});
-    board.create('text', [7.3, 1.8, 'EC'], {fontSize: 11, color: '#a855f7', fixed: true});
-    
-    board.create('text', [4.5, 3.6, 'DE ∥ BC'], {fontSize: 11, color: '#ef4444', fixed: true, anchorX: 'middle'});
-    board.create('text', [4.5, -0.8, 'AD/DB = AE/EC (proporcionales)'], {fontSize: 13, color: '#1e293b', fixed: true, anchorX: 'middle', fontWeight: 'bold'});
-  }
+  var board = JXG.JSXGraph.initBoard('jsxgraph-tales-triangulo', {
+    boundingbox: [-1, 7, 10, -1.5],
+    axis: false,
+    showCopyright: false,
+    showNavigation: false
+  });
+  
+  // Triángulo ABC
+  var A = board.create('point', [4.5, 6], {name: 'A', size: 4, color: '#1e293b', fixed: true, label: {fontSize: 13, offset: [0, 10]}});
+  var B = board.create('point', [1, 0.5], {name: 'B', size: 4, color: '#1e293b', fixed: true, label: {fontSize: 13, offset: [-10, -10]}});
+  var C = board.create('point', [8, 0.5], {name: 'C', size: 4, color: '#1e293b', fixed: true, label: {fontSize: 13, offset: [10, -10]}});
+  
+  board.create('segment', [A, B], {strokeColor: '#1e293b', strokeWidth: 2, fixed: true});
+  board.create('segment', [A, C], {strokeColor: '#1e293b', strokeWidth: 2, fixed: true});
+  board.create('segment', [B, C], {strokeColor: '#1e293b', strokeWidth: 2, fixed: true});
+  
+  // Puntos D y E en los lados (DE paralelo a BC)
+  var D = board.create('point', [2.75, 3.25], {name: 'D', size: 4, color: '#22c55e', fixed: true, label: {fontSize: 12, color: '#22c55e', offset: [-15, 0]}});
+  var E = board.create('point', [6.25, 3.25], {name: 'E', size: 4, color: '#22c55e', fixed: true, label: {fontSize: 12, color: '#22c55e', offset: [10, 0]}});
+  
+  // Línea DE paralela a BC
+  board.create('segment', [D, E], {strokeColor: '#ef4444', strokeWidth: 3, fixed: true});
+  
+  // Etiquetas
+  board.create('text', [1.7, 4.7, 'AD'], {fontSize: 11, color: '#3b82f6', fixed: true});
+  board.create('text', [1.5, 1.8, 'DB'], {fontSize: 11, color: '#a855f7', fixed: true});
+  board.create('text', [7, 4.7, 'AE'], {fontSize: 11, color: '#3b82f6', fixed: true});
+  board.create('text', [7.3, 1.8, 'EC'], {fontSize: 11, color: '#a855f7', fixed: true});
+  
+  board.create('text', [4.5, 3.6, 'DE ∥ BC'], {fontSize: 11, color: '#ef4444', fixed: true, anchorX: 'middle'});
+  board.create('text', [4.5, -0.8, 'AD/DB = AE/EC (proporcionales)'], {fontSize: 13, color: '#1e293b', fixed: true, anchorX: 'middle', fontWeight: 'bold'});
 });
 </script>
 
@@ -232,44 +224,40 @@ $$
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-sombras')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-sombras', {
-      boundingbox: [-1, 8, 14, -1.5],
-      axis: false,
-      showCopyright: false,
-      showNavigation: false,
-      pan: { enabled: false },
-      zoom: { enabled: false }
-    });
-    
-    // Suelo
-    board.create('segment', [[0, 0.5], [13, 0.5]], {strokeColor: '#94a3b8', strokeWidth: 2, fixed: true});
-    
-    // Poste (3m)
-    board.create('segment', [[2, 0.5], [2, 2.5]], {strokeColor: '#22c55e', strokeWidth: 4, fixed: true});
-    board.create('text', [1.5, 1.5, '3m'], {fontSize: 11, color: '#22c55e', fixed: true});
-    
-    // Sombra del poste (2m)
-    board.create('segment', [[2, 0.5], [4, 0.5]], {strokeColor: '#64748b', strokeWidth: 3, fixed: true});
-    board.create('text', [3, 0.1, '2m'], {fontSize: 10, color: '#64748b', fixed: true, anchorX: 'middle'});
-    
-    // Edificio (30m = h)
-    board.create('segment', [[8, 0.5], [8, 7]], {strokeColor: '#3b82f6', strokeWidth: 5, fixed: true});
-    board.create('text', [7.3, 3.5, 'h=?'], {fontSize: 12, color: '#3b82f6', fixed: true});
-    
-    // Sombra del edificio (20m)
-    board.create('segment', [[8, 0.5], [12, 0.5]], {strokeColor: '#64748b', strokeWidth: 3, fixed: true});
-    board.create('text', [10, 0.1, '20m'], {fontSize: 10, color: '#64748b', fixed: true, anchorX: 'middle'});
-    
-    // Rayos del sol
-    board.create('segment', [[2, 2.5], [4, 0.5]], {strokeColor: '#f59e0b', strokeWidth: 1, dash: 2, fixed: true});
-    board.create('segment', [[8, 7], [12, 0.5]], {strokeColor: '#f59e0b', strokeWidth: 1, dash: 2, fixed: true});
-    
-    // Sol
-    board.create('point', [0.5, 7], {name: '☀️', size: 0, color: 'transparent', fixed: true, label: {fontSize: 20, offset: [0, 0]}});
-    
-    board.create('text', [6.5, -0.8, '3/2 = h/20 → h = 30 metros'], {fontSize: 13, color: '#1e293b', fixed: true, anchorX: 'middle', fontWeight: 'bold'});
-  }
+  var board = JXG.JSXGraph.initBoard('jsxgraph-sombras', {
+    boundingbox: [-1, 8, 14, -1.5],
+    axis: false,
+    showCopyright: false,
+    showNavigation: false
+  });
+  
+  // Suelo
+  board.create('segment', [[0, 0.5], [13, 0.5]], {strokeColor: '#94a3b8', strokeWidth: 2, fixed: true});
+  
+  // Poste (3m)
+  board.create('segment', [[2, 0.5], [2, 2.5]], {strokeColor: '#22c55e', strokeWidth: 4, fixed: true});
+  board.create('text', [1.5, 1.5, '3m'], {fontSize: 11, color: '#22c55e', fixed: true});
+  
+  // Sombra del poste (2m)
+  board.create('segment', [[2, 0.5], [4, 0.5]], {strokeColor: '#64748b', strokeWidth: 3, fixed: true});
+  board.create('text', [3, 0.1, '2m'], {fontSize: 10, color: '#64748b', fixed: true, anchorX: 'middle'});
+  
+  // Edificio (30m = h)
+  board.create('segment', [[8, 0.5], [8, 7]], {strokeColor: '#3b82f6', strokeWidth: 5, fixed: true});
+  board.create('text', [7.3, 3.5, 'h=?'], {fontSize: 12, color: '#3b82f6', fixed: true});
+  
+  // Sombra del edificio (20m)
+  board.create('segment', [[8, 0.5], [12, 0.5]], {strokeColor: '#64748b', strokeWidth: 3, fixed: true});
+  board.create('text', [10, 0.1, '20m'], {fontSize: 10, color: '#64748b', fixed: true, anchorX: 'middle'});
+  
+  // Rayos del sol
+  board.create('segment', [[2, 2.5], [4, 0.5]], {strokeColor: '#f59e0b', strokeWidth: 1, dash: 2, fixed: true});
+  board.create('segment', [[8, 7], [12, 0.5]], {strokeColor: '#f59e0b', strokeWidth: 1, dash: 2, fixed: true});
+  
+  // Sol
+  board.create('point', [0.5, 7], {name: '☀️', size: 0, color: 'transparent', fixed: true, label: {fontSize: 20, offset: [0, 0]}});
+  
+  board.create('text', [6.5, -0.8, '3/2 = h/20 → h = 30 metros'], {fontSize: 13, color: '#1e293b', fixed: true, anchorX: 'middle', fontWeight: 'bold'});
 });
 </script>
 

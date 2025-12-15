@@ -1,96 +1,57 @@
 # Puntos Notables del Triángulo
 
-Las rectas notables de un triángulo (medianas, alturas, bisectrices y mediatrices) se cortan en puntos especiales llamados **puntos notables**. Cada punto tiene propiedades geométricas únicas.
+Las rectas notables (medianas, alturas, bisectrices, mediatrices) se cortan en 4 puntos clave.
+
+## ⚡ Conceptos Clave
+
+| Punto | Rectas | Característica |
+|---|---|---|
+| **Baricentro (G)** | Medianas | Centro de Gravedad (2:1) |
+| **Ortocentro (H)** | Alturas | Puede caer FUERA del triángulo |
+| **Incentro (I)** | Bisectrices | Centro del círculo INSCRITO |
+| **Circuncentro (O)** | Mediatrices | Centro del círculo CIRCUNSCRITO |
 
 ---
 
-## 📖 Los cuatro puntos notables
+## 1. El Baricentro (G)
 
-| Punto | Intersección de | Característica principal |
-|-------|-----------------|-------------------------|
-| Baricentro (G) | Medianas | Centro de gravedad |
-| Ortocentro (H) | Alturas | Depende del tipo de triángulo |
-| Incentro (I) | Bisectrices | Centro de circunferencia inscrita |
-| Circuncentro (O) | Mediatrices | Centro de circunferencia circunscrita |
+Es la intersección de las **Medianas**.
 
----
+> **📝 ¿Qué es una Mediana?**
+> Es la línea que une un **vértice** con el **punto medio** del lado opuesto.
 
-## 📖 El Baricentro (G)
+El baricentro es el **centro de gravedad**. Si sostienes el triángulo por este punto, se mantiene en equilibrio.
 
-El **baricentro** es el punto donde se cortan las tres medianas del triángulo.
+### Propiedad Clave: Regla 2 a 1
+Divide la mediana en dos partes proporcionales:
+*   La parte larga (vértice a $G$) mide el **doble** que la corta.
 
-### Propiedades
-
-1. **Siempre está dentro** del triángulo (sin importar el tipo)
-2. Es el **centro de gravedad** o centro de masa del triángulo
-3. Divide cada mediana en razón **2:1** desde el vértice
-
-### La razón 2:1
-
-Si $G$ es el baricentro y $M$ es el punto medio del lado opuesto al vértice $A$:
-
-$$
-\frac{AG}{GM} = \frac{2}{1}
-$$
-
-Esto significa que la distancia del vértice al baricentro es el **doble** de la distancia del baricentro al punto medio del lado.
-
-### Ejemplo
-
-Si la mediana $\overline{AM}$ mide 9 cm:
-- $AG = \frac{2}{3} \times 9 = 6$ cm (del vértice al baricentro)
-- $GM = \frac{1}{3} \times 9 = 3$ cm (del baricentro al punto medio)
+> **⚙️ Ejemplo:**
+> Si la mediana mide 9 cm:
+> *   Lado largo ($AG$): 6 cm
+> *   Lado corto ($GM$): 3 cm
 
 **Ilustración: El baricentro divide cada mediana en razón 2:1:**
 
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="jsxgraph-baricentro" style="width: 100%; height: 380px; min-height: 320px; border-radius: 8px;"></div>
-</div>
+<div id="jxgbox-baricentro" class="jxgbox" style="width:100%; height:350px; border-radius:12px; border:1px solid #cbd5e1; background:#f8fafc;"></div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-baricentro')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-baricentro', {
-      boundingbox: [-1, 6, 9, -1],
-      axis: false,
-      showCopyright: false,
-      showNavigation: false,
-      pan: { enabled: false },
-      zoom: { enabled: false }
-    });
-    
-    var Ax = 1, Ay = 0.5;
-    var Bx = 7, By = 0.5;
-    var Cx = 4, Cy = 5;
-    
-    var A = board.create('point', [Ax, Ay], {name: 'A', size: 4, color: '#1e293b', fixed: true, label: {fontSize: 13, offset: [-10, -10]}});
-    var B = board.create('point', [Bx, By], {name: 'B', size: 4, color: '#1e293b', fixed: true, label: {fontSize: 13, offset: [5, -10]}});
-    var C = board.create('point', [Cx, Cy], {name: 'C', size: 4, color: '#1e293b', fixed: true, label: {fontSize: 13, offset: [0, 10]}});
-    
-    board.create('segment', [A, B], {strokeColor: '#1e293b', strokeWidth: 2, fixed: true});
-    board.create('segment', [B, C], {strokeColor: '#1e293b', strokeWidth: 2, fixed: true});
-    board.create('segment', [C, A], {strokeColor: '#1e293b', strokeWidth: 2, fixed: true});
-    
-    // Punto medio de AB
-    var M = board.create('point', [(Ax+Bx)/2, (Ay+By)/2], {name: 'M', size: 4, color: '#22c55e', fixed: true, label: {fontSize: 12, color: '#22c55e', offset: [0, -12]}});
-    
-    // Mediana CM
-    board.create('segment', [C, M], {strokeColor: '#22c55e', strokeWidth: 3, fixed: true});
-    
-    // Baricentro
-    var Gx = (Ax+Bx+Cx)/3;
-    var Gy = (Ay+By+Cy)/3;
-    var G = board.create('point', [Gx, Gy], {name: 'G', size: 5, color: '#ef4444', fixed: true, label: {fontSize: 13, color: '#ef4444', offset: [10, 5]}});
-    
-    // Etiquetas de segmentos
-    board.create('text', [(Cx+Gx)/2 - 0.5, (Cy+Gy)/2 + 0.3, '2'], {fontSize: 14, color: '#3b82f6', fixed: true, fontWeight: 'bold'});
-    board.create('text', [(Gx+M.X())/2 + 0.3, (Gy+M.Y())/2, '1'], {fontSize: 14, color: '#3b82f6', fixed: true, fontWeight: 'bold'});
-    
-    board.create('text', [4, -0.5, 'CG : GM = 2 : 1'], {fontSize: 13, color: '#1e293b', fixed: true, anchorX: 'middle', fontWeight: 'bold'});
-  }
+  var board = JXG.JSXGraph.initBoard('jxgbox-baricentro', {boundingbox: [-1, 6, 9, -1], axis: false, showCopyright: false, showNavigation: false, pan: {enabled: false}, zoom: {enabled: false}});
+  var A = board.create('point', [1, 0.5], {name: 'A', fixed: true, size: 4, color: '#1e293b'});
+  var B = board.create('point', [7, 0.5], {name: 'B', fixed: true, size: 4, color: '#1e293b'});
+  var C = board.create('point', [4, 5], {name: 'C', fixed: true, size: 4, color: '#1e293b'});
+  board.create('polygon', [A,B,C], {borders: {strokeColor: '#334155', strokeWidth: 2}, fillColor: '#f1f5f9', highlight: false});
+  // Midpoints manual calc
+  var M_AB = board.create('point', [(A.X()+B.X())/2, (A.Y()+B.Y())/2], {name: '', size: 2, color: '#94a3b8', fixed: true});
+  var M_BC = board.create('point', [(B.X()+C.X())/2, (B.Y()+C.Y())/2], {name: '', size: 2, color: '#94a3b8', fixed: true});
+  var M_CA = board.create('point', [(C.X()+A.X())/2, (C.Y()+A.Y())/2], {name: '', size: 2, color: '#94a3b8', fixed: true});
+  // Medians (Green)
+  board.create('segment', [C, M_AB], {strokeColor: '#16a34a', strokeWidth: 2, dash: 2});
+  board.create('segment', [A, M_BC], {strokeColor: '#16a34a', strokeWidth: 2, dash: 2});
+  board.create('segment', [B, M_CA], {strokeColor: '#16a34a', strokeWidth: 2, dash: 2});
+  // Baricentro
+  var G = board.create('point', [(A.X()+B.X()+C.X())/3, (A.Y()+B.Y()+C.Y())/3], {name: 'G', size: 5, color: '#dc2626', fixed: true, label: {offset: [10,0]}});
 });
 </script>
 
@@ -104,363 +65,196 @@ $$
 
 ---
 
-## 📖 El Ortocentro (H)
+## 2. El Ortocentro (H)
 
-El **ortocentro** es el punto donde se cortan las tres alturas del triángulo.
+Es la intersección de las **Alturas**.
 
-### Propiedades
+> **📝 ¿Qué es una Altura?**
+> Es la línea que baja desde un **vértice** perpendicularmente ($90^\circ$) al lado opuesto (o su prolongación).
 
-1. Su posición depende del **tipo de triángulo** (por ángulos)
-2. En triángulos **acutángulos**: el ortocentro está **dentro**
-3. En triángulos **obtusángulos**: el ortocentro está **fuera**
-4. En triángulos **rectángulos**: el ortocentro coincide con el **vértice del ángulo recto**
+Su ubicación depende totalmente del tipo de triángulo:
 
-### Ejemplo
+> **⚙️ Ejemplo de Identificación:**
+> En un triángulo rectángulo ($90^\circ$), el Ortocentro es **el mismo vértice del ángulo recto**.
 
-En un triángulo rectángulo con el ángulo recto en $C$, el ortocentro es exactamente el punto $C$.
+### 1. Acutángulo (Dentro)
+Cae **dentro** del triángulo.
 
-### Caso 1: Triángulo acutángulo → H está DENTRO
-
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="jsxgraph-orto-acutangulo" style="width: 100%; height: 320px; min-height: 280px; border-radius: 8px;"></div>
-</div>
-
+<div id="jxgbox-acute" class="jxgbox" style="width:100%; height:320px; border-radius:12px; border:1px solid #cbd5e1; background:#f8fafc;"></div>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-orto-acutangulo')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-orto-acutangulo', {
-      boundingbox: [-1, 6, 9, -1],
-      axis: false,
-      showCopyright: false,
-      showNavigation: false,
-      pan: { enabled: false },
-      zoom: { enabled: false }
-    });
-    
-    // Vertices del triangulo acutangulo
-    var Ax = 1, Ay = 0.5;
-    var Bx = 7, By = 0.5;
-    var Cx = 4, Cy = 5;
-    
-    // Funcion para calcular pie de altura
-    function footOfAltitude(Px, Py, Qx, Qy, Rx, Ry) {
-      var dx = Rx - Qx, dy = Ry - Qy;
-      var t = ((Px - Qx) * dx + (Py - Qy) * dy) / (dx * dx + dy * dy);
-      return [Qx + t * dx, Qy + t * dy];
-    }
-    
-    // Pies de alturas
-    var hA = footOfAltitude(Ax, Ay, Bx, By, Cx, Cy);
-    var hB = footOfAltitude(Bx, By, Ax, Ay, Cx, Cy);
-    var hC = footOfAltitude(Cx, Cy, Ax, Ay, Bx, By);
-    
-    // Ortocentro (calculado)
-    var Hx = Ax + Bx + Cx - 2 * ((Ax+Bx)/2 + (Bx+Cx)/2 + (Cx+Ax)/2) / 3 * 0 + Cx;
-    // Simplificado para este triangulo
-    Hx = 4; var Hy = 2.1;
-    
-    // Triangulo
-    var pA = board.create('point', [Ax, Ay], {name: 'A', size: 4, color: '#1e293b', fixed: true, label: {fontSize: 12, offset: [-10, -10]}});
-    var pB = board.create('point', [Bx, By], {name: 'B', size: 4, color: '#1e293b', fixed: true, label: {fontSize: 12, offset: [5, -10]}});
-    var pC = board.create('point', [Cx, Cy], {name: 'C', size: 4, color: '#1e293b', fixed: true, label: {fontSize: 12, offset: [0, 10]}});
-    
-    board.create('polygon', [pA, pB, pC], {fillColor: '#dcfce7', fillOpacity: 0.3, borders: {strokeColor: '#22c55e', strokeWidth: 2}, fixed: true});
-    
-    // Alturas (lineas punteadas)
-    board.create('segment', [[Ax, Ay], hA], {strokeColor: '#3b82f6', strokeWidth: 2, dash: 2, fixed: true});
-    board.create('segment', [[Bx, By], hB], {strokeColor: '#3b82f6', strokeWidth: 2, dash: 2, fixed: true});
-    board.create('segment', [[Cx, Cy], hC], {strokeColor: '#3b82f6', strokeWidth: 2, dash: 2, fixed: true});
-    
-    // Pies de altura
-    board.create('point', hA, {name: '', size: 3, color: '#3b82f6', fixed: true});
-    board.create('point', hB, {name: '', size: 3, color: '#3b82f6', fixed: true});
-    board.create('point', hC, {name: '', size: 3, color: '#3b82f6', fixed: true});
-    
-    // Ortocentro
-    board.create('point', [Hx, Hy], {name: 'H', size: 6, color: '#ef4444', fixed: true, label: {fontSize: 13, color: '#ef4444', offset: [8, 5]}});
-    
-    board.create('text', [4, -0.5, 'Triangulo acutangulo: H esta DENTRO'], {fontSize: 12, color: '#22c55e', fixed: true, anchorX: 'middle', fontWeight: 'bold'});
+  var board = JXG.JSXGraph.initBoard('jxgbox-acute', {boundingbox: [-1, 5, 8, -1], axis: false, showCopyright: false, showNavigation: false});
+  var A = board.create('point', [2, 4], {name:'A', fixed:true, size:3, color:'#1e293b'});
+  var B = board.create('point', [0, 0], {name:'B', fixed:true, size:3, color:'#1e293b'});
+  var C = board.create('point', [6, 0], {name:'C', fixed:true, size:3, color:'#1e293b'});
+  board.create('polygon', [A,B,C], {fillColor:'#f1f5f9', borders:{strokeColor:'#1e293b'}});
+  // Helper: Foot of altitude from P to segment QR
+  function getFoot(P, Q, R) {
+    var dx = R.X() - Q.X(), dy = R.Y() - Q.Y();
+    var t = ((P.X() - Q.X()) * dx + (P.Y() - Q.Y()) * dy) / (dx * dx + dy * dy);
+    return [Q.X() + t * dx, Q.Y() + t * dy];
   }
+  var Fa = board.create('point', getFoot(A, B, C), {size:0, visible:false});
+  var Fb = board.create('point', getFoot(B, A, C), {size:0, visible:false});
+  var Fc = board.create('point', getFoot(C, A, B), {size:0, visible:false});
+  // Altitudes (Orange)
+  board.create('segment', [A, Fa], {strokeColor:'#ea580c', strokeWidth:2, dash:2});
+  board.create('segment', [B, Fb], {strokeColor:'#ea580c', strokeWidth:2, dash:2});
+  board.create('segment', [C, Fc], {strokeColor:'#ea580c', strokeWidth:2, dash:2});
+  // Orthocentro (Intersection)
+  var H = board.create('intersection', [board.create('line', [A, Fa], {visible:false}), board.create('line', [B, Fb], {visible:false})], {name:'H', size:4, color:'#ea580c', fixed:true});
 });
 </script>
 
-### Caso 2: Triángulo rectángulo → H está EN EL VÉRTICE del ángulo recto
 
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="jsxgraph-orto-rectangulo" style="width: 100%; height: 320px; min-height: 280px; border-radius: 8px;"></div>
-</div>
+### 2. Rectángulo (En el Vértice)
+Coincide con el **vértice del ángulo recto**.
 
+<div id="jxgbox-right" class="jxgbox" style="width:100%; height:320px; border-radius:12px; border:1px solid #cbd5e1; background:#f8fafc;"></div>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-orto-rectangulo')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-orto-rectangulo', {
-      boundingbox: [-1, 6, 9, -1],
-      axis: false,
-      showCopyright: false,
-      showNavigation: false,
-      pan: { enabled: false },
-      zoom: { enabled: false }
-    });
-    
-    // Triangulo rectangulo (angulo recto en A)
-    var Ax = 2, Ay = 0.5;
-    var Bx = 7, By = 0.5;
-    var Cx = 2, Cy = 4.5;
-    
-    // Triangulo
-    var pA = board.create('point', [Ax, Ay], {name: 'A', size: 4, color: '#1e293b', fixed: true, label: {fontSize: 12, offset: [-15, -10]}});
-    var pB = board.create('point', [Bx, By], {name: 'B', size: 4, color: '#1e293b', fixed: true, label: {fontSize: 12, offset: [5, -10]}});
-    var pC = board.create('point', [Cx, Cy], {name: 'C', size: 4, color: '#1e293b', fixed: true, label: {fontSize: 12, offset: [-15, 5]}});
-    
-    board.create('polygon', [pA, pB, pC], {fillColor: '#dbeafe', fillOpacity: 0.3, borders: {strokeColor: '#3b82f6', strokeWidth: 2}, fixed: true});
-    
-    // Simbolo de angulo recto
-    board.create('segment', [[Ax + 0.4, Ay], [Ax + 0.4, Ay + 0.4]], {strokeColor: '#64748b', strokeWidth: 1.5, fixed: true});
-    board.create('segment', [[Ax, Ay + 0.4], [Ax + 0.4, Ay + 0.4]], {strokeColor: '#64748b', strokeWidth: 1.5, fixed: true});
-    
-    // Alturas (los catetos SON las alturas, mas la altura a la hipotenusa)
-    // Altura desde C a AB (el cateto CA es perpendicular a AB)
-    board.create('segment', [[Cx, Cy], [Cx, Ay]], {strokeColor: '#ef4444', strokeWidth: 2, dash: 2, fixed: true});
-    // Altura desde B a AC
-    board.create('segment', [[Bx, By], [Ax, Ay]], {strokeColor: '#ef4444', strokeWidth: 2, dash: 2, fixed: true});
-    
-    // El ortocentro ES el vertice A
-    board.create('point', [Ax, Ay], {name: 'H=A', size: 7, color: '#ef4444', fixed: true, label: {fontSize: 12, color: '#ef4444', offset: [10, -15]}});
-    
-    board.create('text', [4.5, -0.5, 'Triangulo rectangulo: H = vertice del angulo recto'], {fontSize: 12, color: '#3b82f6', fixed: true, anchorX: 'middle', fontWeight: 'bold'});
+  var board = JXG.JSXGraph.initBoard('jxgbox-right', {boundingbox: [-1, 5, 8, -1], axis: false, showCopyright: false, showNavigation: false});
+  var A = board.create('point', [0, 4], {name:'A', fixed:true, size:3, color:'#1e293b'});
+  var B = board.create('point', [0, 0], {name:'B = H', fixed:true, size:5, color:'#ea580c', label:{offset:[10,10]}}); // Right angle at B
+  var C = board.create('point', [6, 0], {name:'C', fixed:true, size:3, color:'#1e293b'});
+  board.create('polygon', [A,B,C], {fillColor:'#f1f5f9', borders:{strokeColor:'#1e293b'}});
+  // Right angle symbol
+  board.create('curve', [[0, 0.5], [0.5, 0.5], [0.5, 0]], {strokeColor:'black', strokeWidth:1});
+  var H = B; // H is B
+  // Altitudes are legs
+  board.create('segment', [A, B], {strokeColor:'#ea580c', strokeWidth:3});
+  board.create('segment', [C, B], {strokeColor:'#ea580c', strokeWidth:3});
+  // Altitude from B to AC
+  function getFoot(P, Q, R) {
+    var dx = R.X() - Q.X(), dy = R.Y() - Q.Y();
+    var t = ((P.X() - Q.X()) * dx + (P.Y() - Q.Y()) * dy) / (dx * dx + dy * dy);
+    return [Q.X() + t * dx, Q.Y() + t * dy];
   }
+  var Fb = board.create('point', getFoot(B, A, C), {visible:false});
+  board.create('segment', [B, Fb], {strokeColor:'#ea580c', strokeWidth:2, dash:2});
 });
 </script>
 
-### Caso 3: Triángulo obtusángulo → H está FUERA
+### 3. Obtusángulo (Fuera)
+Cae **fuera** del triángulo (en la prolongación de los lados).
 
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="jsxgraph-orto-obtusangulo" style="width: 100%; height: 350px; min-height: 300px; border-radius: 8px;"></div>
-</div>
-
+<div id="jxgbox-obtuse" class="jxgbox" style="width:100%; height:400px; border-radius:12px; border:1px solid #cbd5e1; background:#f8fafc;"></div>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-orto-obtusangulo')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-orto-obtusangulo', {
-      boundingbox: [-1, 5, 10, -3],
-      axis: false,
-      showCopyright: false,
-      showNavigation: false,
-      pan: { enabled: false },
-      zoom: { enabled: false }
-    });
-    
-    // Triangulo obtusangulo (angulo obtuso en A)
-    var Ax = 2, Ay = 1;
-    var Bx = 8, By = 1;
-    var Cx = 1, Cy = 3;
-    
-    // Triangulo
-    var pA = board.create('point', [Ax, Ay], {name: 'A', size: 4, color: '#1e293b', fixed: true, label: {fontSize: 12, offset: [-5, -15]}});
-    var pB = board.create('point', [Bx, By], {name: 'B', size: 4, color: '#1e293b', fixed: true, label: {fontSize: 12, offset: [5, -10]}});
-    var pC = board.create('point', [Cx, Cy], {name: 'C', size: 4, color: '#1e293b', fixed: true, label: {fontSize: 12, offset: [-15, 5]}});
-    
-    board.create('polygon', [pA, pB, pC], {fillColor: '#fef3c7', fillOpacity: 0.3, borders: {strokeColor: '#f59e0b', strokeWidth: 2}, fixed: true});
-    
-    // Extension del lado AB (punteado, hacia la izquierda)
-    board.create('segment', [[Ax, Ay], [-0.5, Ay]], {strokeColor: '#94a3b8', strokeWidth: 1, dash: 3, fixed: true});
-    
-    // Extension del lado BC (punteado)
-    board.create('segment', [[Cx, Cy], [Cx - 1, Cy + 0.5]], {strokeColor: '#94a3b8', strokeWidth: 1, dash: 3, fixed: true});
-    
-    // Altura desde C a AB (cae dentro)
-    board.create('segment', [[Cx, Cy], [Cx, Ay]], {strokeColor: '#3b82f6', strokeWidth: 2, dash: 2, fixed: true});
-    board.create('point', [Cx, Ay], {name: '', size: 3, color: '#3b82f6', fixed: true});
-    
-    // Altura desde B a AC (extendido, cae fuera)
-    // La prolongacion de AC pasa por debajo del triangulo
-    board.create('segment', [[Bx, By], [0.5, -1]], {strokeColor: '#3b82f6', strokeWidth: 2, dash: 2, fixed: true});
-    
-    // Altura desde A a BC
-    board.create('segment', [[Ax, Ay], [1.3, 2.4]], {strokeColor: '#3b82f6', strokeWidth: 2, dash: 2, fixed: true});
-    
-    // Ortocentro FUERA del triangulo
-    var Hx = 0.8, Hy = -0.8;
-    board.create('point', [Hx, Hy], {name: 'H', size: 6, color: '#ef4444', fixed: true, label: {fontSize: 13, color: '#ef4444', offset: [-15, -10]}});
-    
-    board.create('text', [4.5, -2.3, 'Triangulo obtusangulo: H esta FUERA del triangulo'], {fontSize: 12, color: '#f59e0b', fixed: true, anchorX: 'middle', fontWeight: 'bold'});
+  var board = JXG.JSXGraph.initBoard('jxgbox-obtuse', {boundingbox: [-3, 6, 9, -2], axis: false, showCopyright: false, showNavigation: false});
+  var A = board.create('point', [1, 4], {name:'A', fixed:true, size:3, color:'#1e293b'});
+  var B = board.create('point', [4, 4], {name:'B', fixed:true, size:3, color:'#1e293b'});
+  var C = board.create('point', [0, 0], {name:'C', fixed:true, size:3, color:'#1e293b'});
+  board.create('polygon', [A,B,C], {fillColor:'#f1f5f9', borders:{strokeColor:'#1e293b'}});
+  // Helper
+  function getFoot(P, Q, R) {
+    var dx = R.X() - Q.X(), dy = R.Y() - Q.Y();
+    var t = ((P.X() - Q.X()) * dx + (P.Y() - Q.Y()) * dy) / (dx * dx + dy * dy);
+    return [Q.X() + t * dx, Q.Y() + t * dy];
   }
+  // Feet
+  var Fa = board.create('point', getFoot(A, B, C), {visible:false});
+  var Fb = board.create('point', getFoot(B, A, C), {visible:false});
+  var Fc = board.create('point', getFoot(C, A, B), {visible:false});
+  // Extensions
+  board.create('line', [B, C], {strokeColor:'#94a3b8', strokeWidth:1, dash:3});
+  board.create('line', [A, C], {strokeColor:'#94a3b8', strokeWidth:1, dash:3});
+  board.create('line', [A, B], {strokeColor:'#94a3b8', strokeWidth:1, dash:3});
+  // Altitudes
+  var lA = board.create('line', [A, Fa], {strokeColor:'#ea580c', strokeWidth:1, dash:2});
+  var lB = board.create('line', [B, Fb], {strokeColor:'#ea580c', strokeWidth:1, dash:2});
+  var lC = board.create('line', [C, Fc], {strokeColor:'#ea580c', strokeWidth:1, dash:2});
+  // H
+  var H = board.create('intersection', [lA, lB], {name:'H', size:4, color:'#ea580c', fixed:true});
 });
 </script>
 
 ---
 
-## 📖 El Incentro (I)
+## 3. El Incentro (I)
 
-El **incentro** es el punto donde se cortan las tres bisectrices interiores del triángulo.
+Es la intersección de las **Bisectrices**.
 
-### Propiedades
+> **📝 ¿Qué es una Bisectriz?**
+> Es la semirrecta que divide un **ángulo** en dos partes iguales.
 
-1. **Siempre está dentro** del triángulo
-2. Es **equidistante a los tres lados**
-3. Es el centro de la **circunferencia inscrita** (la más grande que cabe dentro)
+### Propiedad Clave
+Está a la **misma distancia de los tres lados**.
+Esto permite dibujar una circunferencia que toca los 3 lados por dentro (**Inscrita**).
 
-### El radio del incírculo
-
-El radio de la circunferencia inscrita se llama **inradio** ($r$) y se calcula:
-
-$$
-r = \frac{\text{Área del triángulo}}{\text{Semiperímetro}}
-$$
-
-Donde el semiperímetro es $s = \frac{a + b + c}{2}$.
-
-### Ejemplo
-
-Si un triángulo tiene área $= 30$ cm² y semiperímetro $= 10$ cm:
-
-$$
-r = \frac{30}{10} = 3 \text{ cm}
-$$
+> **⚙️ Ejemplo:**
+> Si el incentro está a 5 cm del lado base, también está a 5 cm de los otros dos lados.
 
 **Ilustración: El incentro y la circunferencia inscrita:**
 
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="jsxgraph-incentro" style="width: 100%; height: 380px; min-height: 320px; border-radius: 8px;"></div>
-</div>
-
+<div id="jxgbox-incenter" class="jxgbox" style="width:100%; height:350px; border-radius:12px; border:1px solid #cbd5e1; background:#f8fafc;"></div>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-incentro')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-incentro', {
-      boundingbox: [-1, 6, 9, -1],
-      axis: false,
-      showCopyright: false,
-      showNavigation: false,
-      pan: { enabled: false },
-      zoom: { enabled: false }
-    });
-    
-    var Ax = 1, Ay = 0.5;
-    var Bx = 7, By = 0.5;
-    var Cx = 4, Cy = 5;
-    
-    var A = board.create('point', [Ax, Ay], {name: 'A', size: 4, color: '#1e293b', fixed: true, label: {fontSize: 13, offset: [-10, -10]}});
-    var B = board.create('point', [Bx, By], {name: 'B', size: 4, color: '#1e293b', fixed: true, label: {fontSize: 13, offset: [5, -10]}});
-    var C = board.create('point', [Cx, Cy], {name: 'C', size: 4, color: '#1e293b', fixed: true, label: {fontSize: 13, offset: [0, 10]}});
-    
-    board.create('segment', [A, B], {strokeColor: '#1e293b', strokeWidth: 2, fixed: true});
-    board.create('segment', [B, C], {strokeColor: '#1e293b', strokeWidth: 2, fixed: true});
-    board.create('segment', [C, A], {strokeColor: '#1e293b', strokeWidth: 2, fixed: true});
-    
-    // Calcular longitudes de lados
-    function dist(x1, y1, x2, y2) {
-      return Math.sqrt((x2-x1)*(x2-x1) + (y2-y1)*(y2-y1));
-    }
-    var a = dist(Bx, By, Cx, Cy);
-    var b = dist(Ax, Ay, Cx, Cy);
-    var c = dist(Ax, Ay, Bx, By);
-    
-    // Incentro calculado
-    var Ix = (a * Ax + b * Bx + c * Cx) / (a + b + c);
-    var Iy = (a * Ay + b * By + c * Cy) / (a + b + c);
-    
-    // Inradio = Area / semiperimetro
-    var s = (a + b + c) / 2;
-    var area = Math.abs((Bx-Ax)*(Cy-Ay) - (Cx-Ax)*(By-Ay)) / 2;
-    var inradius = area / s;
-    
-    var I = board.create('point', [Ix, Iy], {name: 'I', size: 5, color: '#a855f7', fixed: true, label: {fontSize: 13, color: '#a855f7', offset: [8, 5]}});
-    
-    // Circunferencia inscrita
-    board.create('circle', [[Ix, Iy], inradius], {strokeColor: '#f59e0b', strokeWidth: 2, fillColor: '#fef3c7', fillOpacity: 0.3, fixed: true});
-    
-    board.create('text', [4, -0.5, 'I = Incentro (equidistante a los 3 lados)'], {fontSize: 12, color: '#a855f7', fixed: true, anchorX: 'middle'});
-  }
+  var board = JXG.JSXGraph.initBoard('jxgbox-incenter', {boundingbox: [-1, 6, 9, -1], axis: false, showCopyright: false, showNavigation: false});
+  var A = board.create('point', [1, 0.5], {name:'A', fixed:true, color:'#1e293b'});
+  var B = board.create('point', [7, 0.5], {name:'B', fixed:true, color:'#1e293b'});
+  var C = board.create('point', [4, 5], {name:'C', fixed:true, color:'#1e293b'});
+  board.create('polygon', [A,B,C], {fillColor:'#f1f5f9'});
+  // Calc lengths
+  function d(P1, P2) { return Math.sqrt(Math.pow(P1.X()-P2.X(), 2) + Math.pow(P1.Y()-P2.Y(), 2)); }
+  var la = d(B,C), lb = d(A,C), lc = d(A,B);
+  // Incenter
+  var Ix = (la*A.X() + lb*B.X() + lc*C.X()) / (la+lb+lc);
+  var Iy = (la*A.Y() + lb*B.Y() + lc*C.Y()) / (la+lb+lc);
+  var I = board.create('point', [Ix, Iy], {name:'I', size:4, color:'#9333ea', fixed:true});
+  // Bisectors (dashed purple)
+  board.create('segment', [A,I], {strokeColor:'#9333ea', dash:2});
+  board.create('segment', [B,I], {strokeColor:'#9333ea', dash:2});
+  board.create('segment', [C,I], {strokeColor:'#9333ea', dash:2});
+  // Incircle
+  var s = (la+lb+lc)/2;
+  var area = Math.abs((B.X()-A.X())*(C.Y()-A.Y()) - (C.X()-A.X())*(B.Y()-A.Y())) / 2;
+  var r = area/s;
+  board.create('circle', [I, r], {strokeColor:'#9333ea', fillColor:'#9333ea', fillOpacity:0.1});
 });
 </script>
 
 ---
 
-## 📖 El Circuncentro (O)
+## 4. El Circuncentro (O)
 
-El **circuncentro** es el punto donde se cortan las tres mediatrices del triángulo.
+Es la intersección de las **Mediatrices**.
 
-### Propiedades
+> **📝 ¿Qué es una Mediatriz?**
+> Es la recta perpendicular ($90^\circ$) que pasa por el **punto medio** de un lado.
+> *(Ojo: No necesariamente sale de un vértice).*
 
-1. Es **equidistante a los tres vértices**
-2. Es el centro de la **circunferencia circunscrita** (la que pasa por los tres vértices)
-3. Su posición depende del tipo de triángulo:
-   - **Acutángulo**: dentro del triángulo
-   - **Rectángulo**: en el punto medio de la hipotenusa
-   - **Obtusángulo**: fuera del triángulo
+### Propiedad Clave
+Está a la **misma distancia de los tres vértices**.
+Esto permite dibujar una circunferencia que pasa por las 3 esquinas (**Circunscrita**).
 
-### El radio del circuncírculo
-
-El radio de la circunferencia circunscrita se llama **circunradio** ($R$).
-
-### Ejemplo especial
-
-En un triángulo rectángulo, el circuncentro está en el **punto medio de la hipotenusa**, y el circunradio es la **mitad de la hipotenusa**.
+> **⚙️ Ejemplo:**
+> En un triángulo rectángulo, el circuncentro siempre es el **punto medio de la hipotenusa**.
 
 **Ilustración: El circuncentro y la circunferencia circunscrita:**
 
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="jsxgraph-circuncentro" style="width: 100%; height: 380px; min-height: 320px; border-radius: 8px;"></div>
-</div>
-
+<div id="jxgbox-circumcenter" class="jxgbox" style="width:100%; height:400px; border-radius:12px; border:1px solid #cbd5e1; background:#f8fafc;"></div>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-circuncentro')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-circuncentro', {
-      boundingbox: [-1, 7, 9, -2],
-      axis: false,
-      showCopyright: false,
-      showNavigation: false,
-      pan: { enabled: false },
-      zoom: { enabled: false }
-    });
-    
-    var Ax = 1, Ay = 0.5;
-    var Bx = 7, By = 0.5;
-    var Cx = 4, Cy = 5;
-    
-    var A = board.create('point', [Ax, Ay], {name: 'A', size: 4, color: '#1e293b', fixed: true, label: {fontSize: 13, offset: [-10, -10]}});
-    var B = board.create('point', [Bx, By], {name: 'B', size: 4, color: '#1e293b', fixed: true, label: {fontSize: 13, offset: [5, -10]}});
-    var C = board.create('point', [Cx, Cy], {name: 'C', size: 4, color: '#1e293b', fixed: true, label: {fontSize: 13, offset: [0, 10]}});
-    
-    board.create('segment', [A, B], {strokeColor: '#1e293b', strokeWidth: 2, fixed: true});
-    board.create('segment', [B, C], {strokeColor: '#1e293b', strokeWidth: 2, fixed: true});
-    board.create('segment', [C, A], {strokeColor: '#1e293b', strokeWidth: 2, fixed: true});
-    
-    // Circuncentro calculado
-    var D = 2 * (Ax*(By-Cy) + Bx*(Cy-Ay) + Cx*(Ay-By));
-    var Ox = ((Ax*Ax+Ay*Ay)*(By-Cy) + (Bx*Bx+By*By)*(Cy-Ay) + (Cx*Cx+Cy*Cy)*(Ay-By)) / D;
-    var Oy = ((Ax*Ax+Ay*Ay)*(Cx-Bx) + (Bx*Bx+By*By)*(Ax-Cx) + (Cx*Cx+Cy*Cy)*(Bx-Ax)) / D;
-    var circumradius = Math.sqrt((Ax-Ox)*(Ax-Ox) + (Ay-Oy)*(Ay-Oy));
-    
-    var O = board.create('point', [Ox, Oy], {name: 'O', size: 5, color: '#f97316', fixed: true, label: {fontSize: 13, color: '#f97316', offset: [8, 5]}});
-    
-    // Circunferencia circunscrita
-    board.create('circle', [[Ox, Oy], circumradius], {strokeColor: '#3b82f6', strokeWidth: 2, fillColor: '#dbeafe', fillOpacity: 0.2, fixed: true});
-    
-    // Radios a cada vértice
-    board.create('segment', [[Ox, Oy], A], {strokeColor: '#22c55e', strokeWidth: 1, dash: 2, fixed: true});
-    board.create('segment', [[Ox, Oy], B], {strokeColor: '#22c55e', strokeWidth: 1, dash: 2, fixed: true});
-    board.create('segment', [[Ox, Oy], C], {strokeColor: '#22c55e', strokeWidth: 1, dash: 2, fixed: true});
-    
-    board.create('text', [4, -1.3, 'O = Circuncentro (equidistante a los 3 vertices)'], {fontSize: 12, color: '#f97316', fixed: true, anchorX: 'middle'});
-  }
+  var board = JXG.JSXGraph.initBoard('jxgbox-circumcenter', {boundingbox: [-1, 7, 9, -2], axis: false, showCopyright: false, showNavigation: false});
+  var A = board.create('point', [0.5, 1], {name:'A', fixed:true, color:'#1e293b'});
+  var B = board.create('point', [7.5, 1], {name:'B', fixed:true, color:'#1e293b'});
+  var C = board.create('point', [3, 5], {name:'C', fixed:true, color:'#1e293b'});
+  board.create('polygon', [A,B,C], {fillColor:'#f1f5f9'});
+  // Circumcenter Calc
+  var D = 2 * (A.X()*(B.Y()-C.Y()) + B.X()*(C.Y()-A.Y()) + C.X()*(A.Y()-B.Y()));
+  var Ox = ((A.X()*A.X()+A.Y()*A.Y())*(B.Y()-C.Y()) + (B.X()*B.X()+B.Y()*B.Y())*(C.Y()-A.Y()) + (C.X()*C.X()+C.Y()*C.Y())*(A.Y()-B.Y())) / D;
+  var Oy = ((A.X()*A.X()+A.Y()*A.Y())*(C.X()-B.X()) + (B.X()*B.X()+B.Y()*B.Y())*(A.X()-C.X()) + (C.X()*C.X()+C.Y()*C.Y())*(B.X()-A.X())) / D;
+  var O = board.create('point', [Ox, Oy], {name:'O', size:4, color:'#be123c', fixed:true});
+  // Circumcircle
+  board.create('circle', [O, A], {strokeColor:'#be123c', fillColor:'#be123c', fillOpacity:0.05});
+  // Mediatrices (Perpendicular Bisectors) - Pink
+  var M_AB = board.create('point', [(A.X()+B.X())/2, (A.Y()+B.Y())/2], {visible:false});
+  var M_BC = board.create('point', [(B.X()+C.X())/2, (B.Y()+C.Y())/2], {visible:false});
+  var M_CA = board.create('point', [(C.X()+A.X())/2, (C.Y()+A.Y())/2], {visible:false});
+  board.create('line', [O, M_AB], {strokeColor:'#be123c', dash:2, strokeWidth:1});
+  board.create('line', [O, M_BC], {strokeColor:'#be123c', dash:2, strokeWidth:1});
+  board.create('line', [O, M_CA], {strokeColor:'#be123c', dash:2, strokeWidth:1});
 });
 </script>
 
@@ -476,77 +270,39 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ---
 
-## 📖 La recta de Euler
+## 5. La Recta de Euler
 
-En todo triángulo, tres de los puntos notables están **alineados**: el **Baricentro (G)**, el **Ortocentro (H)** y el **Circuncentro (O)**.
+En la mayoría de triángulos, tres puntos están **alineados en una recta**:
+1.  **O**rtocentro
+2.  **B**aricentro
+3.  **C**ircuncentro
 
-Esta recta se llama **recta de Euler**.
-
-### Propiedad adicional
-
-El baricentro $G$ divide el segmento $\overline{OH}$ en razón $1:2$:
-
-$$
-OG = \frac{1}{3} OH, \quad GH = \frac{2}{3} OH
-$$
-
-> **Nota:** El incentro generalmente NO está en la recta de Euler.
+> **Nota:** El Incentro NO suele estar en esta recta.
 
 **Ilustración: La recta de Euler (G, H, O alineados):**
 
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="jsxgraph-euler" style="width: 100%; height: 380px; min-height: 320px; border-radius: 8px;"></div>
-</div>
-
+<div id="jxgbox-euler" class="jxgbox" style="width:100%; height:350px; border-radius:12px; border:1px solid #cbd5e1; background:#f8fafc;"></div>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-euler')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-euler', {
-      boundingbox: [-1, 7, 10, -1],
-      axis: false,
-      showCopyright: false,
-      showNavigation: false,
-      pan: { enabled: false },
-      zoom: { enabled: false }
-    });
-    
-    var Ax = 1, Ay = 0.5;
-    var Bx = 8, By = 0.5;
-    var Cx = 4.5, Cy = 5.5;
-    
-    var A = board.create('point', [Ax, Ay], {name: 'A', size: 4, color: '#1e293b', fixed: true, label: {fontSize: 13, offset: [-10, -10]}});
-    var B = board.create('point', [Bx, By], {name: 'B', size: 4, color: '#1e293b', fixed: true, label: {fontSize: 13, offset: [5, -10]}});
-    var C = board.create('point', [Cx, Cy], {name: 'C', size: 4, color: '#1e293b', fixed: true, label: {fontSize: 13, offset: [0, 10]}});
-    
-    board.create('segment', [A, B], {strokeColor: '#1e293b', strokeWidth: 2, fixed: true});
-    board.create('segment', [B, C], {strokeColor: '#1e293b', strokeWidth: 2, fixed: true});
-    board.create('segment', [C, A], {strokeColor: '#1e293b', strokeWidth: 2, fixed: true});
-    
-    // Circuncentro calculado
-    var D = 2 * (Ax*(By-Cy) + Bx*(Cy-Ay) + Cx*(Ay-By));
-    var Ox = ((Ax*Ax+Ay*Ay)*(By-Cy) + (Bx*Bx+By*By)*(Cy-Ay) + (Cx*Cx+Cy*Cy)*(Ay-By)) / D;
-    var Oy = ((Ax*Ax+Ay*Ay)*(Cx-Bx) + (Bx*Bx+By*By)*(Ax-Cx) + (Cx*Cx+Cy*Cy)*(Bx-Ax)) / D;
-    
-    var O = board.create('point', [Ox, Oy], {name: 'O', size: 5, color: '#3b82f6', fixed: true, label: {fontSize: 12, color: '#3b82f6', offset: [-15, 5]}});
-    
-    // Baricentro calculado
-    var Gx = (Ax+Bx+Cx)/3;
-    var Gy = (Ay+By+Cy)/3;
-    var G = board.create('point', [Gx, Gy], {name: 'G', size: 5, color: '#22c55e', fixed: true, label: {fontSize: 12, color: '#22c55e', offset: [8, 5]}});
-    
-    // Ortocentro calculado (H = A + B + C - 2*O para triángulo escaleno)
-    var Hx = Ax + Bx + Cx - 2*Ox;
-    var Hy = Ay + By + Cy - 2*Oy;
-    var H = board.create('point', [Hx, Hy], {name: 'H', size: 5, color: '#ef4444', fixed: true, label: {fontSize: 12, color: '#ef4444', offset: [8, 5]}});
-    
-    // Recta de Euler
-    board.create('line', [O, H], {strokeColor: '#a855f7', strokeWidth: 2, dash: 2, fixed: true});
-    
-    board.create('text', [5, -0.5, 'Recta de Euler: O, G y H estan alineados'], {fontSize: 12, color: '#a855f7', fixed: true, anchorX: 'middle'});
-  }
+  var board = JXG.JSXGraph.initBoard('jxgbox-euler', {boundingbox: [-1, 7, 10, -1], axis: false, showCopyright: false, showNavigation: false});
+  var A = board.create('point', [1, 1], {name:'A', fixed:true, color:'#1e293b'});
+  var B = board.create('point', [9, 1], {name:'B', fixed:true, color:'#1e293b'});
+  var C = board.create('point', [3, 6], {name:'C', fixed:true, color:'#1e293b'});
+  board.create('polygon', [A,B,C], {fillColor:'#f1f5f9'});
+  // Calc G
+  var Gx = (A.X()+B.X()+C.X())/3, Gy = (A.Y()+B.Y()+C.Y())/3;
+  var G = board.create('point', [Gx, Gy], {name:'G', size:4, color:'#16a34a', fixed:true});
+  // Calc O
+  var D = 2 * (A.X()*(B.Y()-C.Y()) + B.X()*(C.Y()-A.Y()) + C.X()*(A.Y()-B.Y()));
+  var Ox = ((A.X()*A.X()+A.Y()*A.Y())*(B.Y()-C.Y()) + (B.X()*B.X()+B.Y()*B.Y())*(C.Y()-A.Y()) + (C.X()*C.X()+C.Y()*C.Y())*(A.Y()-B.Y())) / D;
+  var Oy = ((A.X()*A.X()+A.Y()*A.Y())*(C.X()-B.X()) + (B.X()*B.X()+B.Y()*B.Y())*(A.X()-C.X()) + (C.X()*C.X()+C.Y()*C.Y())*(B.X()-A.X())) / D;
+  var O = board.create('point', [Ox, Oy], {name:'O', size:4, color:'#be123c', fixed:true});
+  // Calc H (Euler relation: O, G, Hcollinear, HG = 2GO => H = 3G - 2O)
+  var Hx = 3*Gx - 2*Ox;
+  var Hy = 3*Gy - 2*Oy;
+  var H = board.create('point', [Hx, Hy], {name:'H', size:4, color:'#ea580c', fixed:true});
+  // Euler Line
+  board.create('line', [O, H], {strokeColor:'#7c3aed', strokeWidth:2, dash:2});
 });
 </script>
 

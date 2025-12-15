@@ -45,41 +45,37 @@ Se lee: "El triángulo ABC es semejante al triángulo DEF"
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-semejanza-intro')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-semejanza-intro', {
-      boundingbox: [-1, 6, 14, -1.5],
-      axis: false,
-      showCopyright: false,
-      showNavigation: false,
-      pan: { enabled: false },
-      zoom: { enabled: false }
-    });
-    
-    // Triángulo original (pequeño)
-    var A1 = board.create('point', [1, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-    var B1 = board.create('point', [3.5, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-    var C1 = board.create('point', [2.25, 2.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-    board.create('polygon', [A1, B1, C1], {fillColor: '#22c55e', fillOpacity: 0.3, borders: {strokeColor: '#22c55e', strokeWidth: 2}, fixed: true});
-    board.create('text', [2.25, -0.3, 'Original'], {fontSize: 11, color: '#22c55e', fixed: true, anchorX: 'middle'});
-    
-    // Triángulo congruente (mismo tamaño)
-    var A2 = board.create('point', [5, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-    var B2 = board.create('point', [7.5, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-    var C2 = board.create('point', [6.25, 2.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-    board.create('polygon', [A2, B2, C2], {fillColor: '#3b82f6', fillOpacity: 0.3, borders: {strokeColor: '#3b82f6', strokeWidth: 2}, fixed: true});
-    board.create('text', [6.25, -0.3, 'Congruente'], {fontSize: 11, color: '#3b82f6', fixed: true, anchorX: 'middle'});
-    board.create('text', [6.25, -0.8, '(= tamaño)'], {fontSize: 10, color: '#3b82f6', fixed: true, anchorX: 'middle'});
-    
-    // Triángulo semejante (diferente tamaño, misma forma)
-    var A3 = board.create('point', [9, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-    var B3 = board.create('point', [13, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-    var C3 = board.create('point', [11, 4.2], {name: '', size: 3, color: '#1e293b', fixed: true});
-    board.create('polygon', [A3, B3, C3], {fillColor: '#f59e0b', fillOpacity: 0.3, borders: {strokeColor: '#f59e0b', strokeWidth: 2}, fixed: true});
-    board.create('text', [11, -0.3, 'Semejante'], {fontSize: 11, color: '#f59e0b', fixed: true, anchorX: 'middle'});
-    board.create('text', [11, -0.8, '(k=1.6)'], {fontSize: 10, color: '#f59e0b', fixed: true, anchorX: 'middle'});
-    
-    board.create('text', [7, 5.3, 'Semejante = misma FORMA | Congruente = misma forma + mismo TAMAÑO'], {fontSize: 12, color: '#1e293b', fixed: true, anchorX: 'middle'});
-  }
+  var board = JXG.JSXGraph.initBoard('jsxgraph-semejanza-intro', {
+    boundingbox: [-1, 6, 14, -1.5],
+    axis: false,
+    showCopyright: false,
+    showNavigation: false
+  });
+  
+  // Triángulo original (pequeño)
+  var A1 = board.create('point', [1, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
+  var B1 = board.create('point', [3.5, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
+  var C1 = board.create('point', [2.25, 2.5], {name: '', size: 3, color: '#1e293b', fixed: true});
+  board.create('polygon', [A1, B1, C1], {fillColor: '#22c55e', fillOpacity: 0.3, borders: {strokeColor: '#22c55e', strokeWidth: 2}, fixed: true});
+  board.create('text', [2.25, -0.3, 'Original'], {fontSize: 11, color: '#22c55e', fixed: true, anchorX: 'middle'});
+  
+  // Triángulo congruente (mismo tamaño)
+  var A2 = board.create('point', [5, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
+  var B2 = board.create('point', [7.5, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
+  var C2 = board.create('point', [6.25, 2.5], {name: '', size: 3, color: '#1e293b', fixed: true});
+  board.create('polygon', [A2, B2, C2], {fillColor: '#3b82f6', fillOpacity: 0.3, borders: {strokeColor: '#3b82f6', strokeWidth: 2}, fixed: true});
+  board.create('text', [6.25, -0.3, 'Congruente'], {fontSize: 11, color: '#3b82f6', fixed: true, anchorX: 'middle'});
+  board.create('text', [6.25, -0.8, '(= tamaño)'], {fontSize: 10, color: '#3b82f6', fixed: true, anchorX: 'middle'});
+  
+  // Triángulo semejante (diferente tamaño, misma forma)
+  var A3 = board.create('point', [9, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
+  var B3 = board.create('point', [13, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
+  var C3 = board.create('point', [11, 4.2], {name: '', size: 3, color: '#1e293b', fixed: true});
+  board.create('polygon', [A3, B3, C3], {fillColor: '#f59e0b', fillOpacity: 0.3, borders: {strokeColor: '#f59e0b', strokeWidth: 2}, fixed: true});
+  board.create('text', [11, -0.3, 'Semejante'], {fontSize: 11, color: '#f59e0b', fixed: true, anchorX: 'middle'});
+  board.create('text', [11, -0.8, '(k=1.6)'], {fontSize: 10, color: '#f59e0b', fixed: true, anchorX: 'middle'});
+  
+  board.create('text', [7, 5.3, 'Semejante = misma FORMA | Congruente = misma forma + mismo TAMAÑO'], {fontSize: 12, color: '#1e293b', fixed: true, anchorX: 'middle'});
 });
 </script>
 
@@ -114,40 +110,36 @@ La razón de semejanza es $k = 2$ (el segundo triángulo es el doble del primero
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-razon')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-razon', {
-      boundingbox: [-1, 6, 14, -1.5],
-      axis: false,
-      showCopyright: false,
-      showNavigation: false,
-      pan: { enabled: false },
-      zoom: { enabled: false }
-    });
-    
-    // Triángulo pequeño (3-4-5)
-    var A1 = board.create('point', [1, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-    var B1 = board.create('point', [4, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-    var C1 = board.create('point', [1, 3], {name: '', size: 3, color: '#1e293b', fixed: true});
-    board.create('polygon', [A1, B1, C1], {fillColor: '#dbeafe', fillOpacity: 0.4, borders: {strokeColor: '#3b82f6', strokeWidth: 2}, fixed: true});
-    
-    board.create('text', [2.5, 0.2, '4'], {fontSize: 12, color: '#ef4444', fixed: true, anchorX: 'middle'});
-    board.create('text', [0.6, 1.7, '3'], {fontSize: 12, color: '#22c55e', fixed: true});
-    board.create('text', [2.8, 2, '5'], {fontSize: 12, color: '#3b82f6', fixed: true});
-    
-    // Triángulo grande (6-8-10) = k*2
-    var A2 = board.create('point', [6, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-    var B2 = board.create('point', [12, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-    var C2 = board.create('point', [6, 5.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-    board.create('polygon', [A2, B2, C2], {fillColor: '#fef3c7', fillOpacity: 0.4, borders: {strokeColor: '#f59e0b', strokeWidth: 2}, fixed: true});
-    
-    board.create('text', [9, 0.2, '8'], {fontSize: 12, color: '#ef4444', fixed: true, anchorX: 'middle'});
-    board.create('text', [5.5, 3, '6'], {fontSize: 12, color: '#22c55e', fixed: true});
-    board.create('text', [9.5, 3.5, '10'], {fontSize: 12, color: '#3b82f6', fixed: true});
-    
-    // Flecha y k
-    board.create('text', [4.8, 2.5, '× k'], {fontSize: 14, color: '#a855f7', fixed: true});
-    board.create('text', [9, -1, 'k = 6/3 = 8/4 = 10/5 = 2'], {fontSize: 13, color: '#1e293b', fixed: true, anchorX: 'middle', fontWeight: 'bold'});
-  }
+  var board = JXG.JSXGraph.initBoard('jsxgraph-razon', {
+    boundingbox: [-1, 6, 14, -1.5],
+    axis: false,
+    showCopyright: false,
+    showNavigation: false
+  });
+  
+  // Triángulo pequeño (3-4-5)
+  var A1 = board.create('point', [1, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
+  var B1 = board.create('point', [4, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
+  var C1 = board.create('point', [1, 3], {name: '', size: 3, color: '#1e293b', fixed: true});
+  board.create('polygon', [A1, B1, C1], {fillColor: '#dbeafe', fillOpacity: 0.4, borders: {strokeColor: '#3b82f6', strokeWidth: 2}, fixed: true});
+  
+ board.create('text', [2.5, 0.2, '4'], {fontSize: 12, color: '#ef4444', fixed: true, anchorX: 'middle'});
+  board.create('text', [0.6, 1.7, '3'], {fontSize: 12, color: '#22c55e', fixed: true});
+  board.create('text', [2.8, 2, '5'], {fontSize: 12, color: '#3b82f6', fixed: true});
+  
+  // Triángulo grande (6-8-10) = k*2
+  var A2 = board.create('point', [6, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
+  var B2 = board.create('point', [12, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
+  var C2 = board.create('point', [6, 5.5], {name: '', size: 3, color: '#1e293b', fixed: true});
+  board.create('polygon', [A2, B2, C2], {fillColor: '#fef3c7', fillOpacity: 0.4, borders: {strokeColor: '#f59e0b', strokeWidth: 2}, fixed: true});
+  
+  board.create('text', [9, 0.2, '8'], {fontSize: 12, color: '#ef4444', fixed: true, anchorX: 'middle'});
+  board.create('text', [5.5, 3, '6'], {fontSize: 12, color: '#22c55e', fixed: true});
+  board.create('text', [9.5, 3.5, '10'], {fontSize: 12, color: '#3b82f6', fixed: true});
+  
+  // Flecha y k
+  board.create('text', [4.8, 2.5, '× k'], {fontSize: 14, color: '#a855f7', fixed: true});
+  board.create('text', [9, -1, 'k = 6/3 = 8/4 = 10/5 = 2'], {fontSize: 13, color: '#1e293b', fixed: true, anchorX: 'middle', fontWeight: 'bold'});
 });
 </script>
 
@@ -184,37 +176,33 @@ Son semejantes por AA.
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-aa')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-aa', {
-      boundingbox: [-1, 5, 14, -1.5],
-      axis: false,
-      showCopyright: false,
-      showNavigation: false,
-      pan: { enabled: false },
-      zoom: { enabled: false }
-    });
-    
-    // Triángulo 1 (pequeño)
-    var A1 = board.create('point', [1, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-    var B1 = board.create('point', [4, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-    var C1 = board.create('point', [2.5, 3], {name: '', size: 3, color: '#1e293b', fixed: true});
-    board.create('polygon', [A1, B1, C1], {fillColor: '#dcfce7', fillOpacity: 0.4, borders: {strokeColor: '#1e293b', strokeWidth: 2}, fixed: true});
-    
-    board.create('angle', [B1, A1, C1], {radius: 0.4, fillColor: '#a855f7', fillOpacity: 0.5, strokeColor: '#a855f7', name: '30°', label: {fontSize: 9}});
-    board.create('angle', [C1, B1, A1], {radius: 0.4, fillColor: '#f59e0b', fillOpacity: 0.5, strokeColor: '#f59e0b', name: '60°', label: {fontSize: 9}});
-    
-    // Triángulo 2 (grande, mismos ángulos)
-    var A2 = board.create('point', [6, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-    var B2 = board.create('point', [12, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-    var C2 = board.create('point', [9, 4.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-    board.create('polygon', [A2, B2, C2], {fillColor: '#dcfce7', fillOpacity: 0.4, borders: {strokeColor: '#1e293b', strokeWidth: 2}, fixed: true});
-    
-    board.create('angle', [B2, A2, C2], {radius: 0.5, fillColor: '#a855f7', fillOpacity: 0.5, strokeColor: '#a855f7', name: '30°', label: {fontSize: 10}});
-    board.create('angle', [C2, B2, A2], {radius: 0.5, fillColor: '#f59e0b', fillOpacity: 0.5, strokeColor: '#f59e0b', name: '60°', label: {fontSize: 10}});
-    
-    board.create('text', [5, 2.5, '∼'], {fontSize: 24, color: '#1e293b', fixed: true, anchorX: 'middle'});
-    board.create('text', [6.5, -1, 'AA: 2 ángulos iguales → Semejantes (el 3° también es igual: 90°)'], {fontSize: 12, color: '#1e293b', fixed: true, anchorX: 'middle'});
-  }
+  var board = JXG.JSXGraph.initBoard('jsxgraph-aa', {
+    boundingbox: [-1, 5, 14, -1.5],
+    axis: false,
+    showCopyright: false,
+    showNavigation: false
+  });
+  
+  // Triángulo 1 (pequeño)
+  var A1 = board.create('point', [1, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
+  var B1 = board.create('point', [4, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
+  var C1 = board.create('point', [2.5, 3], {name: '', size: 3, color: '#1e293b', fixed: true});
+  board.create('polygon', [A1, B1, C1], {fillColor: '#dcfce7', fillOpacity: 0.4, borders: {strokeColor: '#1e293b', strokeWidth: 2}, fixed: true});
+  
+  board.create('angle', [B1, A1, C1], {radius: 0.4, fillColor: '#a855f7', fillOpacity: 0.5, strokeColor: '#a855f7', name: '30°', label: {fontSize: 9}});
+  board.create('angle', [C1, B1, A1], {radius: 0.4, fillColor: '#f59e0b', fillOpacity: 0.5, strokeColor: '#f59e0b', name: '60°', label: {fontSize: 9}});
+  
+  // Triángulo 2 (grande, mismos ángulos)
+  var A2 = board.create('point', [6, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
+  var B2 = board.create('point', [12, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
+  var C2 = board.create('point', [9, 4.5], {name: '', size: 3, color: '#1e293b', fixed: true});
+  board.create('polygon', [A2, B2, C2], {fillColor: '#dcfce7', fillOpacity: 0.4, borders: {strokeColor: '#1e293b', strokeWidth: 2}, fixed: true});
+  
+  board.create('angle', [B2, A2, C2], {radius: 0.5, fillColor: '#a855f7', fillOpacity: 0.5, strokeColor: '#a855f7', name: '30°', label: {fontSize: 10}});
+  board.create('angle', [C2, B2, A2], {radius: 0.5, fillColor: '#f59e0b', fillOpacity: 0.5, strokeColor: '#f59e0b', name: '60°', label: {fontSize: 10}});
+  
+  board.create('text', [5, 2.5, '∼'], {fontSize: 24, color: '#1e293b', fixed: true, anchorX: 'middle'});
+  board.create('text', [6.5, -1, 'AA: 2 ángulos iguales → Semejantes (el 3° también es igual: 90°)'], {fontSize: 12, color: '#1e293b', fixed: true, anchorX: 'middle'});
 });
 </script>
 
@@ -295,39 +283,35 @@ Si $k = 3$:
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-areas')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-areas', {
-      boundingbox: [-1, 6, 14, -2],
-      axis: false,
-      showCopyright: false,
-      showNavigation: false,
-      pan: { enabled: false },
-      zoom: { enabled: false }
-    });
-    
-    // Triángulo pequeño (área = 2)
-    var A1 = board.create('point', [1, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-    var B1 = board.create('point', [3, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-    var C1 = board.create('point', [2, 2.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-    board.create('polygon', [A1, B1, C1], {fillColor: '#22c55e', fillOpacity: 0.5, borders: {strokeColor: '#22c55e', strokeWidth: 2}, fixed: true});
-    board.create('text', [2, 1.2, 'Área=2'], {fontSize: 11, color: '#166534', fixed: true, anchorX: 'middle'});
-    
-    // Triángulo grande (k=2, área = 2*k² = 8)
-    var A2 = board.create('point', [5, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-    var B2 = board.create('point', [9, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-    var C2 = board.create('point', [7, 4.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-    board.create('polygon', [A2, B2, C2], {fillColor: '#3b82f6', fillOpacity: 0.5, borders: {strokeColor: '#3b82f6', strokeWidth: 2}, fixed: true});
-    board.create('text', [7, 2, 'Área=8'], {fontSize: 12, color: '#1e40af', fixed: true, anchorX: 'middle'});
-    
-    // Triángulo más grande (k=3, área = 2*9 = 18)
-    var A3 = board.create('point', [10, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-    var B3 = board.create('point', [16, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-    // Ajustamos para que quepa
-    board.create('text', [13, 2.5, 'k=3: Área=18'], {fontSize: 12, color: '#f59e0b', fixed: true, anchorX: 'middle'});
-    
-    board.create('text', [7, -1.3, 'Si k=2: Área₂ = Área₁ × k² = 2 × 4 = 8'], {fontSize: 12, color: '#1e293b', fixed: true, anchorX: 'middle'});
-    board.create('text', [3.8, 3, 'k=2'], {fontSize: 12, color: '#a855f7', fixed: true});
-  }
+  var board = JXG.JSXGraph.initBoard('jsxgraph-areas', {
+    boundingbox: [-1, 6, 14, -2],
+    axis: false,
+    showCopyright: false,
+    showNavigation: false
+  });
+  
+  // Triángulo pequeño (área = 2)
+  var A1 = board.create('point', [1, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
+  var B1 = board.create('point', [3, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
+  var C1 = board.create('point', [2, 2.5], {name: '', size: 3, color: '#1e293b', fixed: true});
+  board.create('polygon', [A1, B1, C1], {fillColor: '#22c55e', fillOpacity: 0.5, borders: {strokeColor: '#22c55e', strokeWidth: 2}, fixed: true});
+  board.create('text', [2, 1.2, 'Área=2'], {fontSize: 11, color: '#166534', fixed: true, anchorX: 'middle'});
+  
+  // Triángulo grande (k=2, área = 2*k² = 8)
+  var A2 = board.create('point', [5, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
+  var B2 = board.create('point', [9, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
+  var C2 = board.create('point', [7, 4.5], {name: '', size: 3, color: '#1e293b', fixed: true});
+  board.create('polygon', [A2, B2, C2], {fillColor: '#3b82f6', fillOpacity: 0.5, borders: {strokeColor: '#3b82f6', strokeWidth: 2}, fixed: true});
+  board.create('text', [7, 2, 'Área=8'], {fontSize: 12, color: '#1e40af', fixed: true, anchorX: 'middle'});
+  
+  // Triángulo más grande (k=3, área = 2*9 = 18)
+  var A3 = board.create('point', [10, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
+  var B3 = board.create('point', [16, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
+  // Ajustamos para que quepa
+  board.create('text', [13, 2.5, 'k=3: Área=18'], {fontSize: 12, color: '#f59e0b', fixed: true, anchorX: 'middle'});
+  
+  board.create('text', [7, -1.3, 'Si k=2: Área₂ = Área₁ × k² = 2 × 4 = 8'], {fontSize: 12, color: '#1e293b', fixed: true, anchorX: 'middle'});
+  board.create('text', [3.8, 3, 'k=2'], {fontSize: 12, color: '#a855f7', fixed: true});
 });
 </script>
 

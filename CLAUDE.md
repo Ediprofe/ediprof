@@ -267,10 +267,14 @@ Para ver el estilo correcto de lecciones, revisar:
 ---
 
 ## SOLICITUD CONCRETA
-http://localhost:4321/matematicas/geometria-euclidiana/triangulos/rectas-notables
 
-![alt text](image-51.png)
-![alt text](image-52.png)
-![alt text](image-53.png)
+genera las ilustraciones para estas lecciones:
 
-hay errores en estas tres, qué puedo hacer? no hay una librería que produzca eso sin tanto error por lección? POR FAVOR CERO IMÁGENES PNG, QUE ADEMÁS LAS GENERAS TAMBIÉN CON ERRORES. DAME UNA LIBRERÍA QUE HAGA EL TRABAJO SIN TANTO ERROR SI TÚ LO EJECUTAS.
+http://localhost:4321/matematicas/geometria-euclidiana/cuadrilateros/definicion-cuadrilatero
+
+http://localhost:4321/matematicas/geometria-euclidiana/cuadrilateros/paralelogramos
+
+http://localhost:4321/matematicas/geometria-euclidiana/cuadrilateros/rectangulo-rombo-cuadrado
+
+
+http://localhost:4321/matematicas/geometria-euclidiana/cuadrilateros/trapecio

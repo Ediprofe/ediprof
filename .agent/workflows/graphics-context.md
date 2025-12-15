@@ -22,43 +22,33 @@ La interactividad introduce errores y complejidad innecesaria:
 **✅ SIEMPRE usar `fixed: true` en TODOS los puntos**
 **❌ NUNCA permitir zoom, pan, ni elementos arrastrables**
 
-### Regla 0.1: Coordenadas CALCULADAS, nunca hardcodeadas
+### Regla 0.1: Geometría Analítica EXPLÍCITA en JS (Calculada a mano)
+> ⚠️ **NO CONFÍES en las funciones "mágicas" de las librerías.**
+> Tu código debe ser capaz de calcular las coordenadas $(x,y)$ de CUALQUIER punto usando fórmulas matemáticas explícitas.
 
-> ⚠️ **TODOS los puntos derivados deben calcularse con FÓRMULAS MATEMÁTICAS.**
+**El "Cerebro" es Matemático, el "Músculo" es JSXGraph.**
 
-Nunca hardcodear posiciones como `[4, 2.5]`. En su lugar, calcular:
-
+Debes implementar funciones auxiliares para cálculos comunes:
 ```javascript
-// ✅ CORRECTO: Coordenadas calculadas
-var A = [1, 1], B = [7, 1], C = [4, 6];
-
-// Punto medio calculado
-var mAB = [(A[0]+B[0])/2, (A[1]+B[1])/2];
-
-// Baricentro calculado
-var G = [(A[0]+B[0]+C[0])/3, (A[1]+B[1]+C[1])/3];
-
-// Incentro calculado
-function dist(p1, p2) {
-  return Math.sqrt((p2[0]-p1[0])*(p2[0]-p1[0]) + (p2[1]-p1[1])*(p2[1]-p1[1]));
+// ✅ CORRECTO: Matemáticas explícitas
+function dist(P, Q) {
+  return Math.sqrt(Math.pow(P.X() - Q.X(), 2) + Math.pow(P.Y() - Q.Y(), 2));
 }
-var a = dist(B, C), b = dist(A, C), c = dist(A, B);
-var I = [
-  (a * A[0] + b * B[0] + c * C[0]) / (a + b + c),
-  (a * A[1] + b * B[1] + c * C[1]) / (a + b + c)
-];
 
-// Circuncentro calculado
-var D = 2 * (A[0]*(B[1]-C[1]) + B[0]*(C[1]-A[1]) + C[0]*(A[1]-B[1]));
-var Ox = ((A[0]*A[0]+A[1]*A[1])*(B[1]-C[1]) + (B[0]*B[0]+B[1]*B[1])*(C[1]-A[1]) + (C[0]*C[0]+C[1]*C[1])*(A[1]-B[1])) / D;
-var Oy = ((A[0]*A[0]+A[1]*A[1])*(C[0]-B[0]) + (B[0]*B[0]+B[1]*B[1])*(A[0]-C[0]) + (C[0]*C[0]+C[1]*C[1])*(B[0]-A[0])) / D;
-
-// Pie de altura (proyección ortogonal)
-function footOfAltitude(P, Q, R) {
-  var dx = R[0] - Q[0], dy = R[1] - Q[1];
-  var t = ((P[0] - Q[0]) * dx + (P[1] - Q[1]) * dy) / (dx * dx + dy * dy);
-  return [Q[0] + t * dx, Q[1] + t * dy];
+function getMidpoint(P, Q) {
+  return [(P.X() + Q.X()) / 2, (P.Y() + Q.Y()) / 2];
 }
+
+// Fórmula del Pie de Altura (Ortogonal)
+function getFoot(P, Q, R) {
+  var dx = R.X() - Q.X(), dy = R.Y() - Q.Y();
+  var t = ((P.X() - Q.X()) * dx + (P.Y() - Q.Y()) * dy) / (dx * dx + dy * dy);
+  return [Q.X() + t * dx, Q.Y() + t * dy];
+}
+
+// Baricentro (Promedio de coordenadas)
+var Gx = (A.X() + B.X() + C.X()) / 3;
+var Gy = (A.Y() + B.Y() + C.Y()) / 3;
 ```
 
 **❌ INCORRECTO: Coordenadas hardcodeadas**
@@ -88,6 +78,20 @@ Estas funciones de JSXGraph **NO funcionan correctamente** y están PROHIBIDAS:
 - `circle` - Círculos (con centro y radio/punto)
 - `polygon` - Polígonos
 - `text` - Texto simple (sin LaTeX)
+
+### Regla 0.3: Manejo Seguro del DOM (Timing)
+
+> ⚠️ **CRÍTICO:** Las librerías gráficas (JSXGraph, ECharts) se cargan de forma DIFERIDA (defer).
+> Si ejecutas tu script inmediatamente, fallará ("JXG is not defined").
+
+**Solución OBLIGATORIA:** Envolver TODO el código de inicialización en un Event Listener:
+
+```javascript
+document.addEventListener('DOMContentLoaded', function() {
+    // Tu código gráfico AQUÍ
+    // Solo ahora es seguro llamar a JXG.JSXGraph.initBoard...
+});
+```
 
 ---
 
@@ -376,30 +380,33 @@ series: [
   <div id="jsxgraph-NOMBRE" style="width: 100%; height: 450px; min-height: 350px; border-radius: 8px;"></div>
 </div>
 
+```javascript
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-NOMBRE')) {
+    // 1. Inicializar Tablero
     var board = JXG.JSXGraph.initBoard('jsxgraph-NOMBRE', {
-      boundingbox: [-1, 7, 9, -1],
-      axis: false,
-      showCopyright: false,
-      showNavigation: false,
-      pan: { enabled: false },
-      zoom: { enabled: false }
+        boundingbox: [-1, 7, 9, -1],
+        axis: false,
+        showCopyright: false,
+        showNavigation: false
     });
-    
-    // Puntos SIEMPRE con fixed: true (a menos que se solicite interactividad)
-    var pA = board.create('point', [2, 3], {name: 'A', size: 6, fixed: true, color: '#3b82f6', label: {fontSize: 14, color: '#3b82f6', offset: [10, 10]}});
-    var pB = board.create('point', [7, 3], {name: 'B', size: 6, fixed: true, color: '#3b82f6', label: {fontSize: 14, color: '#3b82f6', offset: [10, 10]}});
-    
-    // Puntos invisibles también con fixed: true
-    var pHidden = board.create('point', [5, 5], {visible: false, fixed: true});
-    
-    // Segmento/recta usando los puntos
-    board.create('segment', [pA, pB], {strokeColor: '#22c55e', strokeWidth: 3});
-    
-    board.unsuspendUpdate();
-  }
+
+    // 2. Definir Puntos Base (Fixed)
+    var A = board.create('point', [1, 1], {name: 'A', fixed: true, color: '#1e293b'});
+    var B = board.create('point', [6, 1], {name: 'B', fixed: true, color: '#1e293b'});
+    var C = board.create('point', [3, 5], {name: 'C', fixed: true, color: '#1e293b'});
+
+    // 3. Dibujar Estructura Base
+    board.create('polygon', [A,B,C], {fillColor: '#f1f5f9', borders: {strokeColor: '#1e293b'}});
+
+    // 4. CÁLCULOS MATEMÁTICOS EXPLÍCITOS (No usar black-box)
+    // Ejemplo: Punto Medio
+    var Mx = (A.X() + B.X()) / 2;
+    var My = (A.Y() + B.Y()) / 2;
+    var M = board.create('point', [Mx, My], {name: 'M', size: 3, color: '#94a3b8', fixed: true});
+
+    // 5. Dibujar Elementos Derivados
+    board.create('segment', [C, M], {strokeColor: '#ea580c', strokeWidth: 2, dash: 2});
 });
 </script>
 ```

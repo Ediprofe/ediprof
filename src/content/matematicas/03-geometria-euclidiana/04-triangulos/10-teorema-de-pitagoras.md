@@ -22,6 +22,99 @@ Donde:
 - $c$ = **hipotenusa** (lado opuesto al ángulo recto, el más largo)
 - $a$ y $b$ = **catetos** (los lados que forman el ángulo recto)
 
+**Ilustración: Partes del triángulo rectángulo:**
+
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+  </div>
+  <div id="jsxgraph-partes" style="width: 100%; height: 350px; min-height: 300px; border-radius: 8px;"></div>
+</div>
+
+<script>
+(function() {
+  function initPartes() {
+    if (typeof JXG === 'undefined' || !document.getElementById('jsxgraph-partes')) {
+      setTimeout(initPartes, 100);
+      return;
+    }
+    
+    if (JXG.boards['jsxgraph-partes']) return;
+
+    var board = JXG.JSXGraph.initBoard('jsxgraph-partes', {
+      boundingbox: [-1, 5, 6, -1], // Ajustado para triángulo 3-4-5
+      axis: false,
+      showCopyright: false,
+      showNavigation: false,
+      keepaspectratio: true
+    });
+    
+    // Puntos fijos (Triángulo 3-4-5)
+    var A = board.create('point', [0, 0], {name: '', size: 3, color: '#1e293b', fixed: true});
+    var B = board.create('point', [4, 0], {name: '', size: 3, color: '#1e293b', fixed: true});
+    var C = board.create('point', [0, 3], {name: '', size: 3, color: '#1e293b', fixed: true});
+    
+    // Triángulo
+    board.create('polygon', [A, B, C], {
+      fillColor: '#dbeafe', 
+      fillOpacity: 0.5, 
+      borders: {strokeColor: '#1e293b', strokeWidth: 2}
+    });
+
+    // Ángulo Recto
+    board.create('angle', [B, A, C], {
+      radius: 0.4, 
+      orthoType: 'sectordot', 
+      fillColor: 'none', 
+      strokeColor: '#ef4444', // Rojo para destacar
+      strokeWidth: 2,
+      fixed: true,
+      name: ''
+    });
+    
+    // Etiquetas descriptivas
+    // Hipotenusa
+    board.create('text', [2.2, 1.7, 'Hipotenusa (c)'], {
+      fontSize: 12, 
+      color: '#b45309', 
+      fixed: true, 
+      anchorX: 'left',
+      anchorY: 'bottom',
+      rotate: 37 // Rotar texto alineado aprox
+    });
+
+    // Cateto a (vertical)
+    board.create('text', [-0.2, 1.5, 'Cateto (a)'], {
+      fontSize: 12, 
+      color: '#166534', 
+      fixed: true, 
+      anchorX: 'right',
+      anchorY: 'middle',
+      rotate: 90
+    });
+
+    // Cateto b (base)
+    board.create('text', [2, -0.3, 'Cateto (b)'], {
+      fontSize: 12, 
+      color: '#1e40af', 
+      fixed: true, 
+      anchorX: 'middle',
+      anchorY: 'top'
+    });
+
+    // Nota Ángulo recto
+    board.create('text', [0.6, 0.6, '90°'], {
+      fontSize: 11, 
+      color: '#ef4444', 
+      fixed: true
+    });
+
+  }
+  
+  initPartes();
+})();
+</script>
+
 ---
 
 ## 📖 Recordatorio: Partes del triángulo rectángulo
@@ -32,60 +125,7 @@ Donde:
 | Catetos | Los dos lados que forman el ángulo recto |
 | Hipotenusa | El lado opuesto al ángulo recto (siempre el más largo) |
 
-### 📊 Ilustración: Teorema de Pitágoras
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
-  <span>📊</span>
-  <div id="jsxgraph-pitagoras" style="width: 100%; height: 350px;"></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-pitagoras')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-pitagoras', {
-      boundingbox: [-2, 7, 10, -4],
-      axis: false,
-      showCopyright: false,
-      showNavigation: false,
-      pan: { enabled: false },
-      zoom: { enabled: false }
-    });
-    
-    // Triángulo 3-4-5
-    var A = board.create('point', [0, 0], {size: 3, color: '#ef4444', fixed: true, name: '', withLabel: false});
-    var B = board.create('point', [4, 0], {size: 3, color: '#ef4444', fixed: true, name: '', withLabel: false});
-    var C = board.create('point', [0, 3], {size: 3, color: '#ef4444', fixed: true, name: '', withLabel: false});
-    
-    board.create('polygon', [A, B, C], {fillColor: '#e2e8f0', fillOpacity: 0.5, borders: {strokeColor: '#1e293b', strokeWidth: 3}});
-    
-    // Ángulo recto
-    board.create('angle', [B, A, C], {radius: 0.4, orthoType: 'square', orthoSensitivity: 1, fillColor: '#ef4444', strokeColor: '#ef4444'});
-    
-    // Cuadrado sobre cateto a (vertical, lado = 3)
-    board.create('polygon', [[0, 0], [-3, 0], [-3, 3], [0, 3]], {fillColor: '#22c55e', fillOpacity: 0.3, borders: {strokeColor: '#22c55e', strokeWidth: 2}});
-    board.create('text', [-1.5, 1.5, 'a² = 9'], {fontSize: 12, color: '#166534', fixed: true, anchorX: 'middle'});
-    
-    // Cuadrado sobre cateto b (horizontal, lado = 4)
-    board.create('polygon', [[0, 0], [0, -4], [4, -4], [4, 0]], {fillColor: '#3b82f6', fillOpacity: 0.3, borders: {strokeColor: '#3b82f6', strokeWidth: 2}});
-    board.create('text', [2, -2, 'b² = 16'], {fontSize: 12, color: '#1e40af', fixed: true, anchorX: 'middle'});
-    
-    // Cuadrado sobre hipotenusa c (diagonal, lado = 5)
-    board.create('polygon', [[4, 0], [7.2, 2.4], [4.2, 5.4], [1, 3]], {fillColor: '#f59e0b', fillOpacity: 0.3, borders: {strokeColor: '#f59e0b', strokeWidth: 2}});
-    board.create('text', [5.5, 3], 'c² = 25'], {fontSize: 12, color: '#b45309', fixed: true, anchorX: 'middle'});
-    
-    // Etiquetas de lados
-    board.create('text', [-0.5, 1.5, 'a=3'], {fontSize: 11, color: '#22c55e', fixed: true});
-    board.create('text', [2, 0.3, 'b=4'], {fontSize: 11, color: '#3b82f6', fixed: true});
-    board.create('text', [2.5, 2, 'c=5'], {fontSize: 11, color: '#f59e0b', fixed: true});
-    
-    // Fórmula
-    board.create('text', [8, -2.5, 'a² + b² = c²'], {fontSize: 14, color: '#1e293b', fixed: true});
-    board.create('text', [8, -3.3, '9 + 16 = 25 ✓'], {fontSize: 12, color: '#22c55e', fixed: true});
-  }
-});
-</script>
-
-> 💡 **Visual:** El área del cuadrado sobre la hipotenusa (amarillo, 25) es igual a la suma de las áreas de los cuadrados sobre los catetos (verde 9 + azul 16).
 
 ---
 
@@ -176,15 +216,20 @@ $$
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-ternas')) {
+(function() {
+  function initTernas() {
+    if (typeof JXG === 'undefined' || !document.getElementById('jsxgraph-ternas')) {
+      setTimeout(initTernas, 100);
+      return;
+    }
+    
+    if (JXG.boards['jsxgraph-ternas']) return;
+
     var board = JXG.JSXGraph.initBoard('jsxgraph-ternas', {
       boundingbox: [-1, 6, 15, -1.5],
       axis: false,
       showCopyright: false,
-      showNavigation: false,
-      pan: { enabled: false },
-      zoom: { enabled: false }
+      showNavigation: false
     });
     
     // Terna 3-4-5
@@ -219,7 +264,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     board.create('text', [7.5, 5, 'Ternas pitagóricas: números enteros que cumplen a² + b² = c²'], {fontSize: 12, color: '#1e293b', fixed: true, anchorX: 'middle'});
   }
-});
+  
+  initTernas();
+})();
 </script>
 
 ---
@@ -242,55 +289,103 @@ $$
 
 <div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
+    <span style="font-size: 1.1rem;">📊</span> Interactivo: Desliza el punto azul de la base
   </div>
   <div id="jsxgraph-escalera" style="width: 100%; height: 350px; min-height: 300px; border-radius: 8px;"></div>
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-escalera')) {
+(function() {
+  function initEscalera() {
+    if (typeof JXG === 'undefined' || !document.getElementById('jsxgraph-escalera')) {
+      setTimeout(initEscalera, 100);
+      return;
+    }
+    
+    if (JXG.boards['jsxgraph-escalera']) return;
+
     var board = JXG.JSXGraph.initBoard('jsxgraph-escalera', {
       boundingbox: [-1, 6, 8, -1],
       axis: false,
       showCopyright: false,
-      showNavigation: false,
-      pan: { enabled: false },
-      zoom: { enabled: false }
+      showNavigation: false
     });
     
     // Pared
-    board.create('segment', [[0.5, 0], [0.5, 5]], {strokeColor: '#94a3b8', strokeWidth: 6, fixed: true});
+    board.create('segment', [[0.5, 0], [0.5, 5.5]], {strokeColor: '#94a3b8', strokeWidth: 6, fixed: true});
     
     // Suelo
-    board.create('segment', [[0, 0], [5, 0]], {strokeColor: '#94a3b8', strokeWidth: 4, fixed: true});
+    board.create('segment', [[0, 0], [6, 0]], {strokeColor: '#94a3b8', strokeWidth: 4, fixed: true});
     
-    // Escalera (hipotenusa = 5m)
-    board.create('segment', [[0.5, 4], [3.5, 0]], {strokeColor: '#ef4444', strokeWidth: 4, fixed: true});
+    // Eje X invisible para restringir movimiento
+    var xaxis = board.create('line', [[0,0], [1,0]], {visible: false});
     
-    // Altura (4m)
-    board.create('segment', [[0.5, 0], [0.5, 4]], {strokeColor: '#22c55e', strokeWidth: 3, dash: 2, fixed: true});
+    // Punto base (deslizable)
+    var B = board.create('glider', [3.5, 0, xaxis], {name: '', size: 5, color: '#3b82f6'});
     
-    // Base (3m)
-    board.create('segment', [[0.5, 0], [3.5, 0]], {strokeColor: '#3b82f6', strokeWidth: 3, dash: 2, fixed: true});
+    // Punto base de la pared (fijo)
+    var origin = board.create('point', [0.5, 0], {visible: false, fixed: true});
     
-    // Ángulo recto
-    board.create('polygon', [[0.5, 0], [0.5, 0.3], [0.8, 0.3], [0.8, 0]], {fillColor: '#1e293b', fillOpacity: 0.3, borders: {strokeColor: '#1e293b', strokeWidth: 1}, fixed: true});
+    // Calcular punto superior de la escalera
+    var T = board.create('point', [0.5, function() {
+      var dist = B.X() - 0.5;
+      if (dist < 0 || dist > 5) return 0;
+      return Math.sqrt(25 - dist*dist);
+    }], {name: '', size: 5, color: '#ef4444', fixed: true}); 
+
+    // Escalera
+    board.create('segment', [T, B], {strokeColor: '#ef4444', strokeWidth: 4});
+    
+    // Altura (linea punteada)
+    board.create('segment', [origin, T], {strokeColor: '#22c55e', strokeWidth: 3, dash: 2});
+    
+    // Base (linea punteada)
+    board.create('segment', [origin, B], {strokeColor: '#3b82f6', strokeWidth: 3, dash: 2});
+    
+    // Ángulo recto (construido con puntos invisibles fijos para evitar deformación)
+    var p1 = board.create('point', [0.5, 0], {visible: false, fixed: true});
+    var p2 = board.create('point', [0.5, 0.3], {visible: false, fixed: true});
+    var p3 = board.create('point', [0.8, 0.3], {visible: false, fixed: true});
+    var p4 = board.create('point', [0.8, 0], {visible: false, fixed: true});
+    
+    board.create('polygon', [p1, p2, p3, p4], {
+      fillColor: '#1e293b', 
+      fillOpacity: 0.3, 
+      borders: {strokeColor: '#1e293b', strokeWidth: 1}, 
+      fixed: true,
+      hasInnerPoints: false
+    });
     
     // Etiquetas
-    board.create('text', [0.1, 2, 'h=4m'], {fontSize: 12, color: '#22c55e', fixed: true});
-    board.create('text', [2, -0.4, '3m'], {fontSize: 12, color: '#3b82f6', fixed: true, anchorX: 'middle'});
-    board.create('text', [2.3, 2.3, '5m'], {fontSize: 12, color: '#ef4444', fixed: true});
+    board.create('text', [0.1, function(){ return T.Y()/2; }, function() { 
+      return 'h=' + T.Y().toFixed(1) + 'm';
+    }], {fontSize: 12, color: '#22c55e'});
+
+    board.create('text', [function(){ return (B.X()+0.5)/2; }, -0.4, function() {
+      return (B.X()-0.5).toFixed(1) + 'm';
+    }], {fontSize: 12, color: '#3b82f6', anchorX: 'middle'});
+
+    board.create('text', [function(){ return (B.X()+0.5)/2 + 0.3; }, function(){ return T.Y()/2 + 0.3; }, '5m'], {fontSize: 12, color: '#ef4444'});
     
-    // Punto de apoyo
-    board.create('point', [0.5, 4], {name: '', size: 5, color: '#ef4444', fixed: true});
-    board.create('point', [3.5, 0], {name: '', size: 5, color: '#ef4444', fixed: true});
+    // Cálculos
+    board.create('text', [5.5, 3, function() {
+      var base = B.X() - 0.5;
+      return 'h² + ' + base.toFixed(1) + '² = 5²';
+    }], {fontSize: 12, color: '#1e293b'});
     
-    board.create('text', [5.5, 3, 'h² + 3² = 5²'], {fontSize: 12, color: '#1e293b', fixed: true});
-    board.create('text', [5.5, 2.3, 'h² = 25 - 9 = 16'], {fontSize: 12, color: '#1e293b', fixed: true});
-    board.create('text', [5.5, 1.6, 'h = 4 metros'], {fontSize: 12, color: '#22c55e', fixed: true, fontWeight: 'bold'});
+    board.create('text', [5.5, 2.3, function() {
+       var base = B.X() - 0.5;
+       var h2 = 25 - base*base;
+       return 'h² = ' + h2.toFixed(1);
+    }], {fontSize: 12, color: '#1e293b'});
+    
+    board.create('text', [5.5, 1.6, function() {
+      return 'h = ' + T.Y().toFixed(2) + ' m';
+    }], {fontSize: 12, color: '#22c55e', fontWeight: 'bold'});
   }
-});
+  
+  initEscalera();
+})();
 </script>
 
 ### Ejemplo 2: Diagonal de un rectángulo
