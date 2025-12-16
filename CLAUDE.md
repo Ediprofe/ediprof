@@ -379,3 +379,14 @@ CON TODO ESTO EN METE, YO LO PREVISUALIZO END DOS CAPÍTULOS (CÁLCULO DIFERENCI
 
 
 PROCEDE CON LA PROPUESTA DE ÁRBOL DE CARPETAS.
+
+### RETROALIMENTACIÓN: 
+
+
+http://localhost:4321/matematicas/precalculo/catalogo-funciones/funcion-mayor-entero
+
+![alt text](image-96.png) TODO LO QUE TENGA QUE VER CON COSTOS COMO QUE SE RENDERIZA MAL, ASÍ QUE TE PIDO EL FAVOR QUE LO HAGAS CON OTRO SÍMBOLO DE MONEDA, O LA SOLUCIÓN QUE TÚ PREFIERAS.
+
+http://localhost:4321/matematicas/precalculo/catalogo-funciones/funcion-racional
+![alt text](image-97.png)
+
