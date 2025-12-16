@@ -322,3 +322,482 @@ CONTENIDO
 $$
 
 PERO NO ES CAMBIAR POR CAMBIAR, ES CAMBIAR LO QUE VEAS QUE DEBERÍA CAMBIARSE, ASÍ COMO LO HARÍA UN LIBRO CON LATO VALOR DIDÁCTICO Y CONCRETO. COMIENZA DESDE DONDE DEJASTE: http://localhost:4321/matematicas/calculo-diferencial/derivadas-funciones-trascendentes/derivacion-logaritmica, yo todo el resto de lecciones del capitulo 9
+
+
+
+
+
+
+# 🎯 OBJETIVO DEL PILOTO
+
+Validar un flujo automático donde:
+
+* La IA **NO dibuja**.
+* La IA **produce reglas geométricas formales** (spec).
+* Un sistema **calcula coordenadas correctas**.
+* Un renderer **genera SVG / JSXGraph**.
+* La revisión humana es **casi nula**.
+
+El piloto debe cubrir **3–5 figuras geométricas básicas** (triángulo, bisectriz, mediatriz, punto medio).
+
+---
+
+# 🧠 ROL DEL AGENTE (definición clara)
+
+**Rol:**
+Eres un *Agente de Especificación Geométrica*.
+Tu función es **describir construcciones matemáticas**, no dibujar figuras ni elegir coordenadas arbitrarias.
+
+---
+
+# 📦 SALIDA ESPERADA DEL AGENTE (obligatorio)
+
+El agente **SIEMPRE** debe devolver **solo un JSON válido**, sin texto adicional.
+
+❌ Prohibido:
+
+* SVG
+* JSXGraph
+* Coordenadas inventadas
+* Explicaciones en lenguaje natural
+
+✅ Permitido:
+
+* Objetos geométricos
+* Relaciones formales
+* Parámetros mínimos necesarios
+
+---
+
+# 🧩 FORMATO DE SPEC (VERSIÓN PILOTO)
+
+El agente debe usar **exactamente** este formato:
+
+```json
+{
+  "id": "string",
+  "domain": "geometry",
+  "title": "string",
+  "objects": ["A", "B", "C", "D"],
+  "parameters": {
+    "AB": "number | null",
+    "AC": "number | null",
+    "BC": "number | null"
+  },
+  "constructs": [
+    {
+      "op": "triangle",
+      "points": ["A", "B", "C"]
+    },
+    {
+      "op": "angle_bisector",
+      "at": "C",
+      "of": ["A", "B"],
+      "label": "l1"
+    },
+    {
+      "op": "intersection",
+      "of": ["l1", "AB"],
+      "label": "D"
+    }
+  ],
+  "constraints": [
+    "A,B,C are non-collinear"
+  ],
+  "render_hints": {
+    "style": "clean | rough",
+    "interactive": false
+  }
+}
+```
+
+---
+
+# 📏 REGLAS ABSOLUTAS PARA EL AGENTE
+
+1. **Nunca generar coordenadas**
+2. **Nunca generar SVG**
+3. **Nunca asumir escalas**
+4. **Nunca dibujar a ojo**
+5. **Toda figura debe ser construible con regla y compás**
+6. Si la figura está **subdeterminada**, añadir parámetros mínimos
+7. Si hay ambigüedad, **documentarla en `constraints`**
+
+---
+
+# 🧪 CASOS DEL PILOTO (el agente debe generar)
+
+El agente debe producir specs para **exactamente estos casos**:
+
+### Caso 1 — Triángulo y bisectriz
+
+* Triángulo ABC
+* Bisectriz del ángulo en C
+* Punto de intersección con AB
+
+### Caso 2 — Mediatriz de un segmento
+
+* Segmento AB
+* Mediatriz
+* Punto medio M
+
+### Caso 3 — Altura de un triángulo
+
+* Triángulo ABC
+* Altura desde C
+* Pie de la altura H
+
+---
+
+# 🧠 LÓGICA DE AUTOCONTROL DEL AGENTE
+
+Antes de devolver el JSON, el agente debe verificar internamente:
+
+* ¿Cada objeto está definido?
+* ¿Cada construct depende solo de objetos previos?
+* ¿La figura es construible?
+* ¿Se usan solo operaciones permitidas?
+
+Si alguna respuesta es **NO**, el agente debe **corregir el spec antes de devolverlo**.
+
+---
+
+# 🔁 FLUJO AUTOMÁTICO DEL PILOTO (paso a paso)
+
+1. **Prompt** → el agente genera el JSON spec
+2. **Spec Linter** → valida formato (JSON Schema simple)
+3. **Geometry Solver (mínimo)**
+
+   * Fija A=(0,0), B=(L,0) si hay AB
+   * Calcula C por intersección de círculos o fallback
+   * Resuelve bisectriz / mediatriz / altura
+   * Verifica propiedad geométrica
+4. **Renderer**
+
+   * Convierte coordenadas a JSXGraph
+   * (Opcional) Rough.js solo para estilo
+5. **Snapshot**
+
+   * Render headless
+   * Guardar PNG/SVG
+6. **Resultado**
+
+   * ✔ OK → aprobado automáticamente
+   * ❌ FAIL → log + reintento automático
+   * ❌ FAIL persistente → revisión humana
+
+---
+
+# 📊 MÉTRICAS DEL PILOTO (obligatorias)
+
+Al final del piloto debes reportar:
+
+* Nº total de specs generadas
+* % que pasan sin corrección
+* % que requieren fallback
+* % que requieren revisión humana
+* Tiempo promedio por figura
+
+**Objetivo del piloto:**
+👉 ≥ 90% de figuras aprobadas automáticamente
+
+---
+
+# 🧠 PROMPT BASE (listo para usar)
+
+Puedes usar esto **tal cual** como system/user prompt para el agente:
+
+> Eres un Agente de Especificación Geométrica.
+> Tu tarea es describir construcciones geométricas formales para figuras educativas.
+> NO dibujes, NO uses coordenadas, NO generes SVG.
+> Devuelve únicamente un JSON válido siguiendo el formato indicado.
+> Usa solo operaciones geométricas clásicas (triángulo, mediatriz, bisectriz, altura, intersección).
+> Si la construcción requiere parámetros, decláralos explícitamente.
+> Si existe ambigüedad, indícalo en constraints.
+
+---
+
+# ✅ CRITERIO DE ÉXITO DEL PILOTO
+
+El piloto se considera exitoso si:
+
+* Las figuras renderizadas **son correctas por construcción**
+* Los errores visuales **desaparecen**
+* La revisión humana se reduce **drásticamente**
+* El flujo se puede repetir automáticamente para cientos de figuras
+
+---
+
+## 🧭 Siguiente paso (cuando completes el piloto)
+
+Después del piloto, el siguiente upgrade natural es:
+
+* Añadir **circuncentro, incentro, baricentro**
+* Añadir **cuadriláteros**
+* Añadir **verificación simbólica**
+* Añadir **regresión visual automática**
+
+Si quieres, en el próximo mensaje puedo:
+
+* Generarte el **JSON Schema** exacto
+* Simular una **ejecución completa del piloto**
+* Revisar un spec generado por tu agente y corregirlo
+
+Dime cómo quieres continuar y avanzamos sin fricción 🚀
+
+
+Perfecto. Te doy **retroalimentación directa sobre tus instrucciones al agente**, con foco en **claridad, reducción de errores y alineación con el objetivo automático y escalable**. No es teoría: son **ajustes prácticos** para que el agente falle menos y produzca mejores specs desde el primer intento.
+
+Voy por capas.
+
+---
+
+## 1️⃣ Lo que YA está muy bien (no lo cambies)
+
+Estas decisiones son correctas y fundamentales:
+
+* ✅ Separar **descripción geométrica** de **renderizado**
+* ✅ Prohibir coordenadas y SVG
+* ✅ Forzar salida **solo JSON**
+* ✅ Limitar el dominio (geometría clásica, regla y compás)
+* ✅ Definir un formato fijo de salida
+* ✅ Exigir autocontrol antes de responder
+
+Esto ya te pone por delante del 90% de proyectos similares.
+
+---
+
+## 2️⃣ Mejora clave #1: deja explícito *para qué* sirve el spec
+
+Ahora mismo el agente sabe **qué producir**, pero no **para qué motor**.
+
+### Recomendación
+
+Añade una frase como esta al inicio de las instrucciones:
+
+> *Este JSON será consumido por un motor automático que resuelve construcciones geométricas y genera SVG a partir de cálculos matemáticos. Cualquier ambigüedad, suposición implícita o dependencia circular causará error.*
+
+📌 **Por qué**
+Los LLM tienden a “rellenar huecos” si no sienten consecuencias. Esta frase reduce su propensión a improvisar.
+
+---
+
+## 3️⃣ Mejora clave #2: lista explícita de operaciones permitidas (whitelist)
+
+Ahora el agente sabe lo que **no** debe hacer, pero no exactamente **qué sí** puede usar.
+
+### Recomendación
+
+Añade una whitelist pequeña y cerrada:
+
+```text
+Operaciones permitidas (PILOTO):
+- triangle(A,B,C)
+- segment(A,B)
+- midpoint(A,B)
+- perpendicular(line, point)
+- parallel(line, point)
+- angle_bisector(C, A, B)
+- altitude(from=C, to=AB)
+- intersection(obj1, obj2)
+```
+
+Y añade:
+
+> *No uses ninguna operación fuera de esta lista.*
+
+📌 **Por qué**
+Reduce creatividad inútil y errores semánticos.
+
+---
+
+## 4️⃣ Mejora clave #3: reglas de dependencia (orden importa)
+
+Muchos errores vienen de **definir cosas antes de que existan**.
+
+### Recomendación
+
+Añade esta regla explícita:
+
+> *Cada construct debe depender únicamente de objetos definidos en constructs anteriores. No se permiten referencias hacia adelante.*
+
+Ejemplo de error a evitar:
+
+```json
+{"op":"intersection","of":["l1","AB"],"label":"D"}
+```
+
+si `l1` aún no existe.
+
+📌 **Por qué**
+Facilita parsing, validación y debugging automático.
+
+---
+
+## 5️⃣ Mejora clave #4: instrucción clara para casos subdeterminados
+
+Esto es crucial para reducir fallos.
+
+### Recomendación
+
+Añade una política clara:
+
+> *Si la construcción es subdeterminada, añade el **mínimo parámetro numérico necesario** (una longitud o un ángulo).
+> No añadas más de dos parámetros sin justificación.*
+
+Y un ejemplo:
+
+```json
+"parameters": {
+  "AB": 6
+}
+```
+
+📌 **Por qué**
+Evita specs “bonitos pero imposibles de resolver”.
+
+---
+
+## 6️⃣ Mejora clave #5: distinguir entre `parameters` y `constraints`
+
+Ahora están algo mezclados conceptualmente.
+
+### Recomendación
+
+Aclara así:
+
+* **parameters** → valores numéricos necesarios para construir
+* **constraints** → condiciones lógicas no numéricas
+
+Ejemplo correcto:
+
+```json
+"parameters": { "AB": 6 },
+"constraints": ["A,B,C are non-collinear"]
+```
+
+Ejemplo incorrecto:
+
+```json
+"constraints": ["AB = 6"]
+```
+
+📌 **Por qué**
+Esto facilita verificación automática y mensajes de error claros.
+
+---
+
+## 7️⃣ Mejora clave #6: instrucción de validación interna (checklist)
+
+Ya tienes autocontrol, pero hazlo **más mecánico**.
+
+### Recomendación
+
+Incluye esta checklist obligatoria:
+
+> Antes de devolver el JSON, verifica:
+>
+> 1. Todos los objetos usados están declarados.
+> 2. Cada construct depende solo de objetos previos.
+> 3. La figura es construible con los parámetros dados.
+> 4. No hay coordenadas ni SVG.
+> 5. El JSON es válido y parseable.
+
+📌 **Por qué**
+Reduce respuestas “casi correctas”.
+
+---
+
+## 8️⃣ Mejora clave #7: mensaje de error explícito (cuando no puede)
+
+A veces el agente **no debería forzar una respuesta**.
+
+### Recomendación
+
+Autoriza una salida de error controlada:
+
+```json
+{
+  "status": "error",
+  "reason": "La construcción es ambigua sin al menos una longitud del triángulo"
+}
+```
+
+📌 **Por qué**
+Es mejor un error limpio que una spec incorrecta.
+
+---
+
+## 9️⃣ Mejora clave #8: ejemplo BUENO vs MALO (muy efectivo)
+
+Añade **un ejemplo malo explícito** en las instrucciones.
+
+### Ejemplo MALO (prohibido)
+
+```json
+{
+  "A":[0,0],
+  "B":[5,0],
+  "C":[2,3]
+}
+```
+
+### Ejemplo BUENO (correcto)
+
+```json
+{
+  "parameters":{"AB":5},
+  "constructs":[{"op":"triangle","points":["A","B","C"]}]
+}
+```
+
+📌 **Por qué**
+Los LLM aprenden muchísimo por contraste.
+
+---
+
+## 10️⃣ Mejora clave #9: tono de “agente de backend”, no “docente”
+
+Haz explícito esto:
+
+> *No expliques matemáticas ni pedagogía. Tu salida es para un sistema automático, no para estudiantes.*
+
+📌 **Por qué**
+Evita verbosidad y ruido.
+
+---
+
+## 11️⃣ Mejora clave #10: versión final condensada de instrucciones (recomendada)
+
+Te dejo una **versión mejorada y compacta** que puedes usar como **system prompt**:
+
+> Eres un Agente de Especificación Geométrica para un sistema automático.
+> Devuelves exclusivamente JSON válido.
+> No generes coordenadas, SVG ni código gráfico.
+> Describe construcciones geométricas formales usando solo operaciones permitidas.
+> Cada construct debe depender solo de objetos definidos previamente.
+> Si la figura es subdeterminada, añade el mínimo parámetro numérico necesario.
+> Declara parámetros y constraints por separado.
+> Si no puedes producir una construcción válida, devuelve un error estructurado.
+> Tu salida será consumida por un motor matemático; cualquier ambigüedad causará fallo.
+
+---
+
+## 12️⃣ Indicador de que tus instrucciones están bien
+
+Sabes que están funcionando cuando:
+
+* El agente **rechaza** generar SVG por sí solo
+* Añade parámetros cuando faltan
+* Declara errores en vez de improvisar
+* Las figuras pasan el verificador en el primer intento
+
+---
+
+Si quieres, en el siguiente mensaje puedo:
+
+* Revisar **tus instrucciones actuales línea por línea**
+* Simular cómo respondería un agente **antes vs después** de estas mejoras
+* Convertir estas recomendaciones en un **JSON Schema + tests automáticos**
+
+Dime cómo seguimos.
