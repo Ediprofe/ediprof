@@ -21,102 +21,48 @@ Si tuvieras que escalar una montaña, ¿cómo calcularías qué tan empinada es 
 | **Coseno** | $\cos\theta = \dfrac{A}{H}$ | 0 a 1 | Disminuye con el ángulo |
 | **Tangente** | $\tan\theta = \dfrac{O}{A}$ | 0 a ∞ | Aumenta rápidamente |
 
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span> <strong style="color: #1e293b;">Comportamiento de sin, cos y tan de 0° a 90°</strong>
+### Comportamiento de 0° a 90°
+
+| θ | $\sin\theta$ | $\cos\theta$ | $\tan\theta$ |
+|---|--------------|--------------|--------------|
+| 0° | 0 | 1 | 0 |
+| 30° | 0.5 | 0.866 | 0.577 |
+| 45° | 0.707 | 0.707 | 1 |
+| 60° | 0.866 | 0.5 | 1.732 |
+| 90° | 1 | 0 | ∞ |
+
+> 📈 **Tendencias:** A medida que θ aumenta: **seno** aumenta (0→1), **coseno** disminuye (1→0), **tangente** crece muy rápido (0→∞).
+
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
+  <div style="margin-bottom: 0.5rem;">
+    <span style="font-size: 1.1rem;">📈</span> <strong style="color: #1e293b;">Gráfica de seno, coseno y tangente</strong>
   </div>
-  <div id="echarts-sincostan-comportamiento" style="width: 100%; height: 420px; min-height: 380px; border-radius: 8px;"></div>
+  <div id="echarts-sincostan" style="width: 100%; height: 380px; border-radius: 8px;"></div>
 </div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  if (typeof echarts !== 'undefined' && document.getElementById('echarts-sincostan-comportamiento')) {
-    var chart = echarts.init(document.getElementById('echarts-sincostan-comportamiento'));
-    
-    // Generar datos
+  if (typeof echarts !== 'undefined' && document.getElementById('echarts-sincostan')) {
+    var chart = echarts.init(document.getElementById('echarts-sincostan'));
     var sinData = [], cosData = [], tanData = [];
     for (var deg = 0; deg <= 90; deg += 2) {
       var rad = deg * Math.PI / 180;
       sinData.push([deg, Math.sin(rad)]);
       cosData.push([deg, Math.cos(rad)]);
-      if (deg < 85) {
-        tanData.push([deg, Math.tan(rad)]);
-      }
+      if (deg < 85) tanData.push([deg, Math.tan(rad)]);
     }
-    
-    var option = {
+    chart.setOption({
       animation: true,
-      animationDuration: 1000,
-      title: {
-        text: 'Gráficas de seno, coseno y tangente',
-        left: 'center',
-        top: 5,
-        textStyle: { fontSize: 14, fontWeight: 'bold', color: '#1e293b' }
-      },
-      legend: {
-        data: ['sin θ', 'cos θ', 'tan θ'],
-        top: 30,
-        textStyle: { fontSize: 12 }
-      },
-      grid: { left: '10%', right: '8%', top: '18%', bottom: '15%' },
-      xAxis: {
-        type: 'value',
-        name: 'θ (grados)',
-        nameLocation: 'middle',
-        nameGap: 30,
-        min: 0, max: 90,
-        axisLine: { lineStyle: { color: '#374151', width: 2 } },
-        splitLine: { lineStyle: { color: '#e2e8f0', type: 'dashed' } },
-        axisLabel: { formatter: '{value}°' }
-      },
-      yAxis: {
-        type: 'value',
-        name: 'Valor',
-        min: 0, max: 3,
-        axisLine: { lineStyle: { color: '#374151', width: 2 } },
-        splitLine: { lineStyle: { color: '#e2e8f0', type: 'dashed' } }
-      },
+      legend: { data: ['sin θ', 'cos θ', 'tan θ'], top: 10 },
+      grid: { left: '12%', right: '5%', top: '18%', bottom: '15%' },
+      xAxis: { type: 'value', name: 'θ (grados)', min: 0, max: 90, axisLabel: { formatter: '{value}°' } },
+      yAxis: { type: 'value', min: 0, max: 3 },
       series: [
-        {
-          name: 'sin θ',
-          type: 'line',
-          symbol: 'none',
-          lineStyle: { width: 3, color: '#3b82f6' },
-          itemStyle: { color: '#3b82f6' },
-          data: sinData
-        },
-        {
-          name: 'cos θ',
-          type: 'line',
-          symbol: 'none',
-          lineStyle: { width: 3, color: '#22c55e' },
-          itemStyle: { color: '#22c55e' },
-          data: cosData
-        },
-        {
-          name: 'tan θ',
-          type: 'line',
-          symbol: 'none',
-          lineStyle: { width: 3, color: '#f97316' },
-          itemStyle: { color: '#f97316' },
-          data: tanData
-        },
-        // Línea y=1 de referencia
-        {
-          type: 'line',
-          symbol: 'none',
-          lineStyle: { width: 1, color: '#94a3b8', type: 'dashed' },
-          data: [[0, 1], [90, 1]]
-        }
-      ],
-      graphic: [
-        { type: 'text', left: '75%', top: '62%', style: { text: 'tan → ∞', fontSize: 11, fill: '#f97316' } },
-        { type: 'text', left: '75%', top: '35%', style: { text: 'sin → 1', fontSize: 11, fill: '#3b82f6' } },
-        { type: 'text', left: '75%', top: '80%', style: { text: 'cos → 0', fontSize: 11, fill: '#22c55e' } }
+        { name: 'sin θ', type: 'line', symbol: 'none', lineStyle: { width: 3, color: '#3b82f6' }, data: sinData },
+        { name: 'cos θ', type: 'line', symbol: 'none', lineStyle: { width: 3, color: '#22c55e' }, data: cosData },
+        { name: 'tan θ', type: 'line', symbol: 'none', lineStyle: { width: 3, color: '#f97316' }, data: tanData }
       ]
-    };
-    
-    chart.setOption(option);
+    });
     window.addEventListener('resize', function() { chart.resize(); });
   }
 });
@@ -150,66 +96,11 @@ $$
 
 Esto significa que el cateto opuesto es el 60% de la hipotenusa.
 
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span> <strong style="color: #1e293b;">El seno como proporción del opuesto respecto a la hipotenusa</strong>
-  </div>
-  <div id="echarts-seno-visual" style="width: 100%; height: 350px; min-height: 320px; border-radius: 8px;"></div>
-</div>
+**Ejemplo:** En un triángulo con Opuesto = 6, Adyacente = 8, Hipotenusa = 10:
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof echarts !== 'undefined' && document.getElementById('echarts-seno-visual')) {
-    var chart = echarts.init(document.getElementById('echarts-seno-visual'));
-    
-    var option = {
-      animation: true,
-      title: {
-        text: 'sin θ = Opuesto / Hipotenusa = 6/10 = 0.6',
-        left: 'center',
-        top: 5,
-        textStyle: { fontSize: 13, fontWeight: 'bold', color: '#3b82f6' }
-      },
-      grid: { left: '10%', right: '10%', top: '15%', bottom: '10%' },
-      xAxis: { type: 'value', min: 0, max: 14, show: false },
-      yAxis: { type: 'value', min: 0, max: 10, show: false },
-      series: [
-        // Triángulo
-        {
-          type: 'line',
-          symbol: 'none',
-          lineStyle: { width: 3, color: '#1e293b' },
-          data: [[2, 2], [10, 2], [10, 8], [2, 2]]
-        },
-        // Lado opuesto destacado
-        {
-          type: 'line',
-          symbol: 'none',
-          lineStyle: { width: 5, color: '#ef4444' },
-          data: [[10, 2], [10, 8]]
-        },
-        // Hipotenusa destacada
-        {
-          type: 'line',
-          symbol: 'none',
-          lineStyle: { width: 4, color: '#8b5cf6' },
-          data: [[2, 2], [10, 8]]
-        }
-      ],
-      graphic: [
-        { type: 'text', left: '15%', top: '72%', style: { text: 'θ', fontSize: 18, fontWeight: 'bold', fill: '#3b82f6' } },
-        { type: 'text', left: '75%', top: '45%', style: { text: '6', fontSize: 18, fontWeight: 'bold', fill: '#ef4444' } },
-        { type: 'text', left: '78%', top: '50%', style: { text: '(Opuesto)', fontSize: 11, fill: '#ef4444' } },
-        { type: 'text', left: '38%', top: '35%', style: { text: '10 (Hipotenusa)', fontSize: 14, fontWeight: 'bold', fill: '#8b5cf6' } },
-        { type: 'text', left: '42%', top: '85%', style: { text: '8 (Adyacente)', fontSize: 12, fill: '#64748b' } }
-      ]
-    };
-    
-    chart.setOption(option);
-    window.addEventListener('resize', function() { chart.resize(); });
-  }
-});
-</script>
+$$\sin\theta = \frac{6}{10} = 0.6$$
+
+![Triángulo con razones trigonométricas](/images/geometria/trigonometria/03-triangulo-345.svg)
 
 ---
 
@@ -315,88 +206,17 @@ $$
 0.6^2 + 0.8^2 = 0.36 + 0.64 = 1 \quad ✓
 $$
 
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span> <strong style="color: #1e293b;">La identidad pitagórica: sin²θ + cos²θ = 1</strong>
-  </div>
-  <div id="echarts-identidad-pitagorica" style="width: 100%; height: 380px; min-height: 340px; border-radius: 8px;"></div>
-</div>
+### Verificación con valores
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof echarts !== 'undefined' && document.getElementById('echarts-identidad-pitagorica')) {
-    var chart = echarts.init(document.getElementById('echarts-identidad-pitagorica'));
-    
-    // Generar datos para sin² y cos²
-    var sin2Data = [], cos2Data = [];
-    for (var deg = 0; deg <= 90; deg += 2) {
-      var rad = deg * Math.PI / 180;
-      var sinVal = Math.sin(rad);
-      var cosVal = Math.cos(rad);
-      sin2Data.push([deg, sinVal * sinVal]);
-      cos2Data.push([deg, cosVal * cosVal]);
-    }
-    
-    var option = {
-      animation: true,
-      title: {
-        text: 'sin²θ + cos²θ = 1 (siempre)',
-        left: 'center',
-        top: 5,
-        textStyle: { fontSize: 14, fontWeight: 'bold', color: '#1e293b' }
-      },
-      legend: {
-        data: ['sin²θ', 'cos²θ'],
-        top: 30
-      },
-      grid: { left: '10%', right: '8%', top: '18%', bottom: '15%' },
-      xAxis: {
-        type: 'value',
-        name: 'θ (grados)',
-        nameLocation: 'middle',
-        nameGap: 30,
-        min: 0, max: 90,
-        axisLine: { lineStyle: { color: '#374151', width: 2 } },
-        splitLine: { lineStyle: { color: '#e2e8f0', type: 'dashed' } },
-        axisLabel: { formatter: '{value}°' }
-      },
-      yAxis: {
-        type: 'value',
-        name: 'Valor',
-        min: 0, max: 1.1,
-        axisLine: { lineStyle: { color: '#374151', width: 2 } },
-        splitLine: { lineStyle: { color: '#e2e8f0', type: 'dashed' } }
-      },
-      series: [
-        {
-          name: 'sin²θ',
-          type: 'line',
-          symbol: 'none',
-          stack: 'Total',
-          areaStyle: { color: 'rgba(59, 130, 246, 0.5)' },
-          lineStyle: { width: 2, color: '#3b82f6' },
-          data: sin2Data
-        },
-        {
-          name: 'cos²θ',
-          type: 'line',
-          symbol: 'none',
-          stack: 'Total',
-          areaStyle: { color: 'rgba(34, 197, 94, 0.5)' },
-          lineStyle: { width: 2, color: '#22c55e' },
-          data: cos2Data
-        }
-      ],
-      graphic: [
-        { type: 'text', left: '45%', top: '50%', style: { text: '¡Siempre suman 1!', fontSize: 13, fontWeight: 'bold', fill: '#1e293b' } }
-      ]
-    };
-    
-    chart.setOption(option);
-    window.addEventListener('resize', function() { chart.resize(); });
-  }
-});
-</script>
+| θ | $\sin^2\theta$ | $\cos^2\theta$ | Suma |
+|---|----------------|----------------|------|
+| 0° | 0 | 1 | **1** |
+| 30° | 0.25 | 0.75 | **1** |
+| 45° | 0.5 | 0.5 | **1** |
+| 60° | 0.75 | 0.25 | **1** |
+| 90° | 1 | 0 | **1** |
+
+> ✓ **¡Siempre suman 1!** No importa el ángulo.
 
 ---
 

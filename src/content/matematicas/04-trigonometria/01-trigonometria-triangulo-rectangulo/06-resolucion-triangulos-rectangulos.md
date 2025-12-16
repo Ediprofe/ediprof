@@ -1,6 +1,30 @@
 # Resolución de Triángulos Rectángulos
 
-**Resolver un triángulo** significa encontrar todas sus medidas: los tres lados y los tres ángulos. Con las razones trigonométricas, podemos hacerlo conociendo pocos datos.
+¿Tienes un triángulo rectángulo pero solo conoces algunos datos? Con las razones trigonométricas puedes encontrar **todos los lados y ángulos** de un triángulo a partir de muy poca información. Esta habilidad es fundamental en arquitectura, navegación, topografía y muchas otras áreas.
+
+---
+
+## 🎯 Lo que vas a aprender
+
+- Qué significa "resolver" un triángulo
+- Qué datos mínimos necesitas para resolverlo
+- Cómo elegir la razón trigonométrica adecuada
+- Cómo usar las funciones inversas (arcsen, arccos, arctan)
+- Cómo verificar tus resultados
+
+---
+
+## 📋 Lo Esencial: Estrategia de Resolución
+
+| Datos que tienes | Qué usar | Fórmula típica |
+|------------------|----------|----------------|
+| 1 lado + 1 ángulo agudo | Razones directas | $\text{lado} = \text{dato} \times \sin/\cos/\tan$ |
+| 2 lados | Función inversa + Pitágoras | $\theta = \arctan(O/A)$ |
+| Hipotenusa + 1 cateto | $\sin$ o $\cos$ inversa | $\theta = \arcsin(O/H)$ |
+
+> 💡 **Regla de oro:** Con **un lado y un ángulo agudo**, o con **dos lados**, puedes resolver cualquier triángulo rectángulo.
+
+![Resolver un triángulo: θ = 35°, Adyacente = 10](/images/geometria/trigonometria/06-resolver-triangulo.svg)
 
 ---
 

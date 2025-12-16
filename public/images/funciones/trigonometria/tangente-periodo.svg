@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" 
+style="max-width: 100%; height: auto; font-family: Inter, system-ui, sans-serif;">
+
+  <style>
+    .wave-path {
+      stroke-dasharray: 3000;
+      stroke-dashoffset: 3000;
+      animation: drawWave 2s ease-out forwards;
+    }
+    .marker-group { opacity: 0; animation: fadeIn 0.5s ease-out 2s forwards; }
+    .label-group { opacity: 0; animation: fadeIn 0.5s ease-out 2.3s forwards; }
+    .annotation-group { opacity: 0; animation: fadeIn 0.5s ease-out 2.5s forwards; }
+    @keyframes drawWave { to { stroke-dashoffset: 0; } }
+    @keyframes fadeIn { to { opacity: 1; } }
+  </style>
+
+  <rect width="800" height="400" fill="#f8fafc" rx="8"/>
+  <text x="400.0" y="25" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">Período de la tangente: π</text>
+  <g class="grid">
+    <line x1="55.0" y1="55" x2="55.0" y2="345" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="170.0" y1="55" x2="170.0" y2="345" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="285.0" y1="55" x2="285.0" y2="345" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="400.0" y1="55" x2="400.0" y2="345" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="515.0" y1="55" x2="515.0" y2="345" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="630.0" y1="55" x2="630.0" y2="345" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="745.0" y1="55" x2="745.0" y2="345" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="55" y1="229.0" x2="745" y2="229.0" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="55" y1="214.5" x2="745" y2="214.5" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="55" y1="185.5" x2="745" y2="185.5" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="55" y1="171.0" x2="745" y2="171.0" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+  </g>
+  <g class="axes">
+    <line x1="55" y1="200.0" x2="745" y2="200.0" stroke="#374151" stroke-width="2"/>
+    <polygon points="745,200.0 737,196.0 737,204.0" fill="#374151"/>
+    <line x1="400.0" y1="55" x2="400.0" y2="345" stroke="#374151" stroke-width="2"/>
+    <polygon points="400.0,55 396.0,63 404.0,63" fill="#374151"/>
+    <text x="755" y="205.0" font-size="14" font-weight="bold" fill="#374151">x</text>
+    <text x="408.0" y="50" font-size="14" font-weight="bold" fill="#374151">y</text>
+    <line x1="170.0" y1="196.0" x2="170.0" y2="204.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="170.0" y="220.0" text-anchor="middle" font-size="12" fill="#374151">-π</text>
+    <line x1="285.0" y1="196.0" x2="285.0" y2="204.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="285.0" y="220.0" text-anchor="middle" font-size="12" fill="#374151">-π/2</text>
+    <line x1="515.0" y1="196.0" x2="515.0" y2="204.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="515.0" y="220.0" text-anchor="middle" font-size="12" fill="#374151">π/2</text>
+    <line x1="630.0" y1="196.0" x2="630.0" y2="204.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="630.0" y="220.0" text-anchor="middle" font-size="12" fill="#374151">π</text>
+    <line x1="396.0" y1="229.0" x2="404.0" y2="229.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="388.0" y="233.0" text-anchor="end" font-size="12" fill="#374151">-1</text>
+    <line x1="396.0" y1="171.0" x2="404.0" y2="171.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="388.0" y="175.0" text-anchor="end" font-size="12" fill="#374151">1</text>
+  </g>
+  <path id="tan-x" class="wave-path" d="M 72.25 320.79 L 75.70 299.82 L 79.15 284.70 L 82.60 273.25 L 86.05 264.23 L 89.50 256.92 L 92.95 250.84 L 96.40 245.70 L 99.85 241.26 L 103.30 237.39 L 106.75 233.95 L 110.20 230.88 L 113.65 228.10 L 117.10 225.57 L 120.55 223.23 L 124.00 221.07 L 127.45 219.05 L 130.90 217.15 L 134.35 215.35 L 137.80 213.65 L 141.25 212.01 L 144.70 210.44 L 148.15 208.92 L 151.60 207.45 L 155.05 206.01 L 158.50 204.59 L 161.95 203.20 L 165.40 201.82 L 168.85 200.46 L 172.30 199.09 L 175.75 197.72 L 179.20 196.34 L 182.65 194.94 L 186.10 193.52 L 189.55 192.07 L 193.00 190.58 L 196.45 189.04 L 199.90 187.45 L 203.35 185.79 L 206.80 184.06 L 210.25 182.23 L 213.70 180.29 L 217.15 178.23 L 220.60 176.01 L 224.05 173.61 L 227.50 171.00 L 230.95 168.13 L 234.40 164.95 L 237.85 161.38 L 241.30 157.33 L 244.75 152.68 L 248.20 147.25 L 251.65 140.80 L 255.10 132.98 L 258.55 123.25 L 262.00 110.75 L 265.45 93.99 L 268.90 70.26 M 299.95 340.04 L 303.40 312.95 L 306.85 294.27 L 310.30 280.55 L 313.75 270.01 L 317.20 261.63 L 320.65 254.77 L 324.10 249.04 L 327.55 244.15 L 331.00 239.92 L 334.45 236.20 L 337.90 232.89 L 341.35 229.93 L 344.80 227.23 L 348.25 224.77 L 351.70 222.49 L 355.15 220.38 L 358.60 218.40 L 362.05 216.54 L 365.50 214.78 L 368.95 213.09 L 372.40 211.48 L 375.85 209.93 L 379.30 208.43 L 382.75 206.96 L 386.20 205.53 L 389.65 204.13 L 393.10 202.74 L 396.55 201.37 L 400.00 200.00 L 403.45 198.63 L 406.90 197.26 L 410.35 195.87 L 413.80 194.47 L 417.25 193.04 L 420.70 191.57 L 424.15 190.07 L 427.60 188.52 L 431.05 186.91 L 434.50 185.22 L 437.95 183.46 L 441.40 181.60 L 444.85 179.62 L 448.30 177.51 L 451.75 175.23 L 455.20 172.77 L 458.65 170.07 L 462.10 167.11 L 465.55 163.80 L 469.00 160.08 L 472.45 155.85 L 475.90 150.96 L 479.35 145.23 L 482.80 138.37 L 486.25 129.99 L 489.70 119.45 L 493.15 105.73 L 496.60 87.05 L 500.05 59.96 M 531.10 329.74 L 534.55 306.01 L 538.00 289.25 L 541.45 276.75 L 544.90 267.02 L 548.35 259.20 L 551.80 252.75 L 555.25 247.32 L 558.70 242.67 L 562.15 238.62 L 565.60 235.05 L 569.05 231.87 L 572.50 229.00 L 575.95 226.39 L 579.40 223.99 L 582.85 221.77 L 586.30 219.71 L 589.75 217.77 L 593.20 215.94 L 596.65 214.21 L 600.10 212.55 L 603.55 210.96 L 607.00 209.42 L 610.45 207.93 L 613.90 206.48 L 617.35 205.06 L 620.80 203.66 L 624.25 202.28 L 627.70 200.91 L 631.15 199.54 L 634.60 198.18 L 638.05 196.80 L 641.50 195.41 L 644.95 193.99 L 648.40 192.55 L 651.85 191.08 L 655.30 189.56 L 658.75 187.99 L 662.20 186.35 L 665.65 184.65 L 669.10 182.85 L 672.55 180.95 L 676.00 178.93 L 679.45 176.77 L 682.90 174.43 L 686.35 171.90 L 689.80 169.12 L 693.25 166.05 L 696.70 162.61 L 700.15 158.74 L 703.60 154.30 L 707.05 149.16 L 710.50 143.08 L 713.95 135.77 L 717.40 126.75 L 720.85 115.30 L 724.30 100.18 L 727.75 79.21" fill="none" stroke="#3b82f6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <g class="annotation-group">
+    <line x1="285.0" y1="55" x2="285.0" y2="345" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="8,4"/>
+    <line x1="515.0" y1="55" x2="515.0" y2="345" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="8,4"/>
+    <line x1="745.0" y1="55" x2="745.0" y2="345" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="8,4"/>
+    <path d="M 285.0 325.5 L 285.0 330.5 L 515.0 330.5 L 515.0 325.5" fill="none" stroke="#ef4444" stroke-width="2"/>
+    <text x="400.0" y="348.5" text-anchor="middle" font-size="12" font-weight="bold" fill="#ef4444">Período = π</text>
+    <path d="M 515.0 325.5 L 515.0 330.5 L 745.0 330.5 L 745.0 325.5" fill="none" stroke="#22c55e" stroke-width="2"/>
+    <text x="630.0" y="348.5" text-anchor="middle" font-size="12" font-weight="bold" fill="#22c55e">Período = π</text>
+  </g>
+</svg>

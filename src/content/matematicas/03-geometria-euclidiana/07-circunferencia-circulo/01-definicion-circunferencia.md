@@ -2,6 +2,16 @@
 
 Aunque a veces se usan como sinónimos, la **circunferencia** y el **círculo** son conceptos diferentes. En esta lección aprendemos la diferencia y los elementos básicos.
 
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+    <strong style="color: #1e293b; font-size: 0.95rem; margin-left: 0.3rem;">Circunferencia: puntos equidistantes del centro</strong>
+  </div>
+
+![Circunferencia básica](/images/geometria/circulos/circunferencia-basica.svg)
+
+</div>
+
 ---
 
 ## 📖 Diferencia entre circunferencia y círculo
@@ -54,6 +64,16 @@ El diámetro es el **mayor segmento** que se puede trazar dentro de un círculo.
 ---
 
 ## 📖 Posición de un punto respecto a la circunferencia
+
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; max-width: 700px;">
+  <div style="margin-bottom: 0.5rem;">
+    <span style="font-size: 1rem;">📊</span>
+    <strong style="color: #1e293b; font-size: 0.9rem; margin-left: 0.3rem;">Posiciones de un punto</strong>
+  </div>
+
+![Posiciones de un punto](/images/geometria/circulos/posiciones-punto.svg)
+
+</div>
 
 | Posición | Condición | Descripción |
 |----------|-----------|-------------|

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" 
+style="font-family: Inter, system-ui, sans-serif;">
+<rect width="600" height="500" fill="#f8fafc"/>
+
+<!-- Título -->
+<text x="300.0" y="30" text-anchor="middle" font-size="18" font-weight="bold" fill="#1e293b">Signos en los Cuadrantes</text>
+<text x="300.0" y="50" text-anchor="middle" font-size="12" fill="#64748b">Mnemotecnia: "Todos Saben Tomar Café"</text>
+
+<!-- Ejes -->
+<line x1="120.0" y1="270.0" x2="480.0" y2="270.0" stroke="#374151" stroke-width="2"/>
+<line x1="300.0" y1="90.0" x2="300.0" y2="450.0" stroke="#374151" stroke-width="2"/>
+
+<!-- Círculo -->
+<circle cx="300.0" cy="270.0" r="150.0" fill="none" stroke="#94a3b8" stroke-width="1" stroke-dasharray="5,3"/>
+<rect x="320.0" y="160.0" width="110" height="70" rx="8" fill="#22c55e" fill-opacity="0.15" stroke="#22c55e" stroke-width="2"/>
+<text x="375.0" y="180.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#22c55e">I</text>
+<text x="375.0" y="200.0" text-anchor="middle" font-size="11" font-weight="bold" fill="#22c55e">TODOS</text>
+<text x="375.0" y="217.0" text-anchor="middle" font-size="10" fill="#1e293b">sin +, cos +, tan +</text>
+<rect x="170.0" y="160.0" width="110" height="70" rx="8" fill="#3b82f6" fill-opacity="0.15" stroke="#3b82f6" stroke-width="2"/>
+<text x="225.0" y="180.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#3b82f6">II</text>
+<text x="225.0" y="200.0" text-anchor="middle" font-size="11" font-weight="bold" fill="#3b82f6">SENO</text>
+<text x="225.0" y="217.0" text-anchor="middle" font-size="10" fill="#1e293b">sin +</text>
+<rect x="170.0" y="310.0" width="110" height="70" rx="8" fill="#f97316" fill-opacity="0.15" stroke="#f97316" stroke-width="2"/>
+<text x="225.0" y="330.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#f97316">III</text>
+<text x="225.0" y="350.0" text-anchor="middle" font-size="11" font-weight="bold" fill="#f97316">TANGENTE</text>
+<text x="225.0" y="367.0" text-anchor="middle" font-size="10" fill="#1e293b">tan +</text>
+<rect x="320.0" y="310.0" width="110" height="70" rx="8" fill="#ec4899" fill-opacity="0.15" stroke="#ec4899" stroke-width="2"/>
+<text x="375.0" y="330.0" text-anchor="middle" font-size="20" font-weight="bold" fill="#ec4899">IV</text>
+<text x="375.0" y="350.0" text-anchor="middle" font-size="11" font-weight="bold" fill="#ec4899">COSENO</text>
+<text x="375.0" y="367.0" text-anchor="middle" font-size="10" fill="#1e293b">cos +</text>
+
+<!-- Leyenda -->
+<rect x="380" y="400" width="200" height="85" rx="8" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="390" y="420" font-size="11" font-weight="bold" fill="#1e293b">ASTC - Funciones Positivas:</text>
+<text x="390" y="438" font-size="10" fill="#22c55e">I: All (Todas)</text>
+<text x="390" y="453" font-size="10" fill="#3b82f6">II: Sin (Seno)</text>
+<text x="390" y="468" font-size="10" fill="#f97316">III: Tan (Tangente)</text>
+<text x="390" y="483" font-size="10" fill="#ec4899">IV: Cos (Coseno)</text>
+</svg>

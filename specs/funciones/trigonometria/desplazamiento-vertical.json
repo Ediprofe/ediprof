@@ -1,0 +1,85 @@
+{
+  "type": "function",
+  "metadata": {
+    "id": "desplazamiento-vertical",
+    "title": "Desplazamiento Vertical (D)",
+    "lesson": "04-trigonometria/03-graficas-funciones-trigonometricas/06-desplazamiento-fase"
+  },
+  "canvas": {
+    "width": 800,
+    "height": 450,
+    "padding": 55,
+    "background": "#f8fafc"
+  },
+  "axes": {
+    "x": {
+      "min": 0,
+      "max": "2*pi",
+      "label": "x",
+      "ticks": "pi"
+    },
+    "y": {
+      "min": -2.5,
+      "max": 4,
+      "label": "y"
+    }
+  },
+  "functions": [
+    {
+      "id": "sin-x-base",
+      "expression": "sin(x)",
+      "color": "#94a3b8",
+      "strokeWidth": 2,
+      "label": "sin(x) - Original"
+    },
+    {
+      "id": "sin-x-arriba",
+      "expression": "sin(x) + 2",
+      "color": "#3b82f6",
+      "strokeWidth": 3,
+      "label": "sin(x) + 2 ↑ Sube"
+    },
+    {
+      "id": "sin-x-abajo",
+      "expression": "sin(x) - 1",
+      "color": "#f97316",
+      "strokeWidth": 3,
+      "label": "sin(x) - 1 ↓ Baja"
+    }
+  ],
+  "markers": [],
+  "annotations": [
+    {
+      "type": "legend",
+      "position": "top-right"
+    },
+    {
+      "type": "horizontal_line",
+      "y": 2,
+      "color": "#3b82f6",
+      "dashed": true,
+      "label": "Nueva línea central (D=2)"
+    },
+    {
+      "type": "horizontal_line",
+      "y": -1,
+      "color": "#f97316",
+      "dashed": true,
+      "label": "Nueva línea central (D=-1)"
+    },
+    {
+      "type": "text",
+      "x": "pi",
+      "y": 3.7,
+      "text": "Rango: [D - A, D + A]",
+      "fontSize": 12,
+      "color": "#1e293b"
+    }
+  ],
+  "animations": {
+    "enabled": true,
+    "style": "draw",
+    "duration": 2,
+    "markersDelay": 2
+  }
+}

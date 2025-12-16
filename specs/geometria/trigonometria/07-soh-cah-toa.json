@@ -1,0 +1,57 @@
+{
+  "tipo": "triangulo-rectangulo",
+  "titulo": "SOH-CAH-TOA: La regla para recordar",
+  "canvas": {
+    "width": 580,
+    "height": 380,
+    "padding": 50
+  },
+  "vertices": {
+    "A": [70, 300],
+    "B": [310, 300],
+    "C": [310, 110]
+  },
+  "angulos": {
+    "A": {
+      "tipo": "agudo",
+      "etiqueta": "θ",
+      "color": "#8b5cf6",
+      "radio": 35,
+      "offset_etiqueta": 50
+    },
+    "B": {
+      "tipo": "recto"
+    }
+  },
+  "lados": {
+    "AB": {
+      "texto": "A",
+      "color": "#22c55e"
+    },
+    "BC": {
+      "texto": "O",
+      "color": "#ef4444"
+    },
+    "AC": {
+      "texto": "H",
+      "color": "#3b82f6"
+    }
+  },
+  "offset_etiquetas": 25,
+  "info_box": {
+    "x": 365,
+    "y": 70,
+    "width": 200,
+    "titulo": "SOH - CAH - TOA",
+    "lineas": [
+      {"texto": "SOH → Sin = O / H", "color": "#ef4444"},
+      {"texto": "CAH → Cos = A / H", "color": "#22c55e"},
+      {"texto": "TOA → Tan = O / A", "color": "#f97316"},
+      {"texto": "─────────────────", "color": "#cbd5e1"},
+      {"texto": "💡 Memoriza esta regla", "color": "#64748b"},
+      {"texto": "y nunca olvidarás las", "color": "#64748b"},
+      {"texto": "razones trigonométricas", "color": "#64748b"}
+    ]
+  }
+}
+

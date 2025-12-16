@@ -12,6 +12,16 @@ $$
 A = \pi r^2
 $$
 
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; max-width: 550px;">
+  <div style="margin-bottom: 0.5rem;">
+    <span style="font-size: 1rem;">📊</span>
+    <strong style="color: #1e293b; font-size: 0.9rem; margin-left: 0.3rem;">Área: A = πr²</strong>
+  </div>
+
+![Área del círculo](/images/geometria/circulos/formula-area.svg)
+
+</div>
+
 ### ¿Por qué $\pi r^2$?
 
 El círculo puede dividirse en muchos sectores pequeños que, al reorganizarse, forman aproximadamente un rectángulo de:
@@ -65,6 +75,16 @@ $$
 
 Un **sector circular** es la región comprendida entre dos radios y un arco (como una rebanada de pizza).
 
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; max-width: 500px;">
+  <div style="margin-bottom: 0.5rem;">
+    <span style="font-size: 1rem;">📊</span>
+    <strong style="color: #1e293b; font-size: 0.9rem; margin-left: 0.3rem;">Área del Sector</strong>
+  </div>
+
+![Área del sector circular](/images/geometria/circulos/formula-area-sector.svg)
+
+</div>
+
 ### Fórmula (ángulo en grados)
 
 $$
@@ -90,6 +110,16 @@ $$
 ## 📖 Área del segmento circular
 
 Un **segmento circular** es la región entre una cuerda y su arco.
+
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; max-width: 500px;">
+  <div style="margin-bottom: 0.5rem;">
+    <span style="font-size: 1rem;">📊</span>
+    <strong style="color: #1e293b; font-size: 0.9rem; margin-left: 0.3rem;">Área del Segmento</strong>
+  </div>
+
+![Área del segmento circular](/images/geometria/circulos/formula-area-segmento.svg)
+
+</div>
 
 $$
 A_{segmento} = A_{sector} - A_{triángulo}

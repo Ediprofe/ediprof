@@ -1,25 +1,110 @@
 ---
-description: Árbol de decisión expandido con ejemplos para elegir la tecnología correcta de ilustración globs: ["src/content/**/*.md"]
+description: Árbol de decisión simplificado para elegir tecnología de ilustración globs: ["src/content/**/*.md"]
 ---
 
-# 🌳 Workflow: Decisión de Ilustraciones
+# 🌳 Workflow: Decisión de Ilustraciones (SIMPLIFICADO)
 
 Este documento ayuda a elegir la **tecnología correcta** para cada tipo de ilustración.
 
 ---
 
-## 🔑 Pregunta Clave
+## 🔑 Sistema Unificado: GraphSpec
 
-> **¿La ilustración requiere precisión matemática exacta o es conceptual/ilustrativa?**
+> **GraphSpec** unifica todas las gráficas (funciones, datos, estadísticas) en un solo sistema:
+> JSON → Python → SVG animado
 
-| Respuesta | Acción |
-|-----------|--------|
-| **Precisión exacta** (propiedades geométricas, teoremas) | → GeometrySpec |
-| **Conceptual/ilustrativa** (situaciones, procesos, modelos) | → Rough.js |
-| **Datos/funciones** (gráficas, estadísticas) | → ECharts |
-| **Fracciones visuales** (pie charts) | → Chart.js |
-| **3D** (volúmenes, geometría espacial) | → Three.js |
-| **Solo fórmula** | → LaTeX |
+| Antes | Ahora |
+|-------|-------|
+| FunctionSpec (funciones) | **GraphSpec** type: `function` |
+| ECharts (barras, histogramas) | **GraphSpec** type: `bar`, `histogram` |
+| Chart.js (fracciones) | **GraphSpec** type: `pie` |
+| ECharts (dispersión) | **GraphSpec** type: `scatter` |
+
+---
+
+## 🌳 Árbol de Decisión
+
+```
+¿QUÉ TIPO DE ILUSTRACIÓN NECESITO?
+│
+├─── 📈 ¿Es una GRÁFICA?
+│    │   (funciones, datos, estadísticas, fracciones)
+│    │
+│    ├── Función matemática (sin, cos, lineal, cuadrática)
+│    │   └── GraphSpec type: "function"
+│    │
+│    ├── Histograma de frecuencias
+│    │   └── GraphSpec type: "histogram"
+│    │
+│    ├── Gráfico de barras
+│    │   └── GraphSpec type: "bar"
+│    │
+│    ├── Fracción como pastel
+│    │   └── GraphSpec type: "pie"
+│    │
+│    └── Puntos dispersos (correlación)
+│        └── GraphSpec type: "scatter"
+│
+├─── 📐 ¿Es GEOMETRÍA con propiedades exactas?
+│    │   (perpendiculares, bisectrices, puntos notables)
+│    └── GeometrySpec
+│
+├─── ✏️ ¿Es un DIAGRAMA ilustrativo/conceptual?
+│    │   (situaciones físicas, modelos, procesos)
+│    └── Rough.js
+│
+├─── 🎲 ¿Es GEOMETRÍA 3D?
+│    └── Three.js
+│
+└─── 📝 ¿Es solo una FÓRMULA?
+     └── LaTeX
+```
+
+---
+
+## 📋 Ejemplos por Tipo de GraphSpec
+
+### `type: "function"` - Funciones Matemáticas
+
+| Ejemplo | Por qué GraphSpec |
+|---------|-------------------|
+| $y = \sin(x)$ | Animación que dibuja la curva |
+| $y = \cos(x)$ con máximos marcados | Etiquetas precisas en puntos notables |
+| $y = 2x + 3$ | Control total de ejes y grid |
+| $y = x^2$ con vértice | Marcadores con coordenadas exactas |
+| Comparar $\sin(x)$ vs $2\sin(x)$ | Múltiples funciones con leyenda |
+
+### `type: "bar"` - Gráficos de Barras
+
+| Ejemplo | Por qué GraphSpec |
+|---------|-------------------|
+| Notas de estudiantes por materia | Animación de crecimiento |
+| Comparación de temperaturas | Barras con colores y etiquetas |
+| Ventas mensuales | SVG ligero sin JavaScript |
+
+### `type: "histogram"` - Histogramas
+
+| Ejemplo | Por qué GraphSpec |
+|---------|-------------------|
+| Distribución de edades | Bins con rangos precisos |
+| Frecuencias de datos | Animación secuencial |
+| Datos agrupados en intervalos | Barras contiguas |
+
+### `type: "pie"` - Gráficos de Pastel
+
+| Ejemplo | Por qué GraphSpec |
+|---------|-------------------|
+| Fracción 3/4 | Segmentos animados |
+| Distribución porcentual | Etiquetas centradas |
+| Partes de un todo | Colores por segmento |
+
+### `type: "scatter"` - Dispersión
+
+| Ejemplo | Por qué GraphSpec |
+|---------|-------------------|
+| Correlación altura vs peso | Puntos animados |
+| Datos experimentales | Etiquetas por punto |
+| Relación entre variables | Grid y ejes automáticos |
 
 ---
 
@@ -27,188 +112,239 @@ Este documento ayuda a elegir la **tecnología correcta** para cada tipo de ilus
 
 ### 🧮 MATEMÁTICAS
 
-| Necesidad | Tecnología | Razón |
-|-----------|------------|-------|
-| Gráfica de $f(x) = 2x + 3$ | **ECharts** | Es función, no geometría |
-| Baricentro de un triángulo | **GeometrySpec** | Propiedad exacta |
-| Comparar $y = x^2$ vs $y = x^3$ | **ECharts** | Son funciones |
-| Circuncentro y circunferencia circunscrita | **GeometrySpec** | Propiedades exactas |
-| Fracción 3/4 como pastel | **Chart.js** | Visualización de fracción |
-| Recta de Euler | **GeometrySpec** | Alineación exacta de 3 puntos |
-| Histograma de frecuencias | **ECharts** | Datos estadísticos |
-| Sistema de ecuaciones (intersección) | **ECharts** | Son funciones |
-| Ángulos complementarios | **GeometrySpec** | Medida exacta |
-| Mapa conceptual de tipos de números | **Rough.js** | Conceptual |
+| Necesidad | Tecnología | Tipo |
+|-----------|------------|------|
+| Gráfica de $\sin x$, $\cos x$ | GraphSpec | `function` |
+| Histograma de frecuencias | GraphSpec | `histogram` |
+| Fracción 3/4 como pastel | GraphSpec | `pie` |
+| Baricentro de triángulo | GeometrySpec | - |
+| Circuncentro exacto | GeometrySpec | - |
+| Mapa conceptual de tipos de números | Rough.js | - |
 
 ### 🚀 FÍSICA
 
-| Necesidad | Tecnología | Razón |
-|-----------|------------|-------|
-| Bloque en plano inclinado | **Rough.js** | Situación ilustrativa |
-| Gráfica posición vs tiempo | **ECharts** | Datos/función |
-| Diagrama de fuerzas | **Rough.js** | Ilustrativo |
-| Gráfica velocidad vs tiempo | **ECharts** | Datos/función |
-| Circuito eléctrico simple | **Rough.js** | Esquemático |
-| Gráfica de MRU | **ECharts** | Función lineal |
-| Ciclo del método científico | **Rough.js** | Proceso/ciclo |
-| Ramas de la física (organigrama) | **Rough.js** | Jerarquía |
-| Resorte con masa | **Rough.js** | Situación física |
-| Gráfica de Hooke (F vs x) | **ECharts** | Función lineal |
+| Necesidad | Tecnología | Tipo |
+|-----------|------------|------|
+| Gráfica posición vs tiempo | GraphSpec | `function` |
+| Gráfica velocidad vs tiempo | GraphSpec | `function` |
+| Gráfica de MRU (lineal) | GraphSpec | `function` |
+| Bloque en plano inclinado | Rough.js | - |
+| Diagrama de fuerzas | Rough.js | - |
+| Circuito eléctrico | Rough.js | - |
 
 ### ⚛️ QUÍMICA
 
-| Necesidad | Tecnología | Razón |
-|-----------|------------|-------|
-| Modelo atómico de Bohr | **Rough.js** | Modelo ilustrativo |
-| Estados de la materia (partículas) | **Rough.js** | Conceptual |
-| Equipo de destilación | **Rough.js** | Esquema de equipo |
-| Tabla periódica (sección) | **Rough.js** | Diagrama |
-| Gráfica de solubilidad vs temperatura | **ECharts** | Datos |
-| Enlace covalente (electrones compartidos) | **Rough.js** | Modelo |
-| Diagrama de fases del agua | **ECharts** | Gráfica con regiones |
-| Proceso de cromatografía | **Rough.js** | Proceso |
-| Estructura de Lewis | **Rough.js** | Modelo molecular |
-| Titulación (equipo) | **Rough.js** | Esquema |
+| Necesidad | Tecnología | Tipo |
+|-----------|------------|------|
+| Gráfica de solubilidad vs temperatura | GraphSpec | `function` |
+| Distribución de electrones | GraphSpec | `bar` |
+| Modelo atómico de Bohr | Rough.js | - |
+| Enlace covalente | Rough.js | - |
 
 ### 🌍 CIENCIAS
 
-| Necesidad | Tecnología | Razón |
-|-----------|------------|-------|
-| Ciclo del agua | **Rough.js** | Proceso/ciclo |
-| Cadena alimenticia | **Rough.js** | Jerarquía |
-| Célula (organelos) | **Rough.js** | Diagrama ilustrativo |
-| Gráfica de población vs tiempo | **ECharts** | Datos |
-| Capas de la Tierra | **Rough.js** | Diagrama |
-| Pirámide ecológica | **Rough.js** | Jerarquía |
-| Fotosíntesis (proceso) | **Rough.js** | Proceso |
+| Necesidad | Tecnología | Tipo |
+|-----------|------------|------|
+| Gráfica de población vs tiempo | GraphSpec | `function` |
+| Distribución de especies | GraphSpec | `pie` |
+| Ciclo del agua | Rough.js | - |
+| Cadena alimenticia | Rough.js | - |
 
 ---
 
-## 🎯 Casos Especiales
+## 🔧 Comandos Rápidos
 
-### Caso 1: "Triángulo con alturas"
+### GraphSpec (todas las gráficas)
 
-❓ ¿Las alturas deben ser matemáticamente perpendiculares?
+```bash
+# Función matemática
+python3 scripts/functions/renderer.py \
+  --spec specs/funciones/trigonometria/seno-principal.json \
+  --output public/images/funciones/trigonometria/seno-principal.svg
 
-- **SÍ** → GeometrySpec (la perpendicularidad es una propiedad exacta)
-- **NO, solo ilustrativo** → Rough.js (si solo quieres mostrar "la idea" de altura)
+# Histograma
+python3 scripts/functions/renderer.py \
+  --spec specs/funciones/estadistica/histograma-edades.json \
+  --output public/images/funciones/estadistica/histograma-edades.svg
 
-**Regla:** Si el estudiante podría "verificar" la propiedad con una regla/compás, usa GeometrySpec.
-
-### Caso 2: "Función lineal con intersección"
-
-Es una **función** → ECharts
-
-Aunque tenga un punto de intersección (que podrías llamar "geometría"), el contexto es álgebra de funciones, no geometría euclidiana.
-
-### Caso 3: "Comparar áreas de figuras"
-
-❓ ¿Las figuras tienen medidas exactas que demostrar?
-
-- **SÍ** (ej: "el cuadrado de lado 4 tiene área 16") → GeometrySpec
-- **NO** (ej: "visualmente comparar que un rectángulo parece más grande") → Rough.js
-
-### Caso 4: "Diagrama de vectores"
-
-❓ ¿Los vectores deben tener magnitudes/direcciones exactas?
-
-- **SÍ** (ej: "vector de 5N a 30°") → GeometrySpec o ECharts con cálculos
-- **NO** (ej: "mostrar que hay fuerzas actuando") → Rough.js
-
-### Caso 5: "Plano cartesiano"
-
-❓ ¿Qué se grafica?
-
-- **Puntos sueltos o funciones** → ECharts
-- **Figuras geométricas con propiedades** → GeometrySpec
-- **Solo mostrar el concepto de coordenadas** → Rough.js
-
----
-
-## 📊 Matriz de Decisión Completa
-
+# Pie chart
+python3 scripts/functions/renderer.py \
+  --spec specs/funciones/fracciones/tres-cuartos.json \
+  --output public/images/funciones/fracciones/tres-cuartos.svg
 ```
-                        ┌─────────────────────────────────────────────┐
-                        │        TIPO DE CONTENIDO                    │
-                        ├─────────────────────────────────────────────┤
-                        │                                             │
- PRECISIÓN   Alta       │  GeometrySpec    │    ECharts               │
- REQUERIDA              │  (geometría)     │    (funciones)           │
-             ──────────────────────────────────────────────────────────
-             Baja       │  Rough.js        │    Rough.js              │
-                        │  (diagramas)     │    (conceptos)           │
-                        │                                             │
-                        └────────┬─────────────────┬──────────────────┘
-                                 │                 │
-                           Geométrico        Numérico/Datos
-                        
-                                NATURALEZA
+
+### GeometrySpec
+
+```bash
+python3 scripts/geometry/renderer.py \
+  --spec specs/geometria/triangulos/baricentro.json \
+  --output public/images/geometria/ \
+  --verify
 ```
 
 ---
 
-## ⚠️ Señales de Alerta
+## 🎯 Formato JSON por Tipo
 
-### 🚨 Probablemente estás eligiendo MAL si...
+### `function`
 
-| Señal | Problema | Solución |
-|-------|----------|----------|
-| Usas JSXGraph con `circumcenter`, `incircle` | Estas funciones fallan | Cambiar a GeometrySpec |
-| Hardcodeas coordenadas de puntos notables | No son exactas | Cambiar a GeometrySpec |
-| Usas ECharts para dibujar un triángulo | No es una función | Cambiar a GeometrySpec o Rough.js |
-| Usas Rough.js para "bisectriz exacta" | No garantiza ángulos iguales | Cambiar a GeometrySpec |
-| Usas GeometrySpec para "bloque en rampa" | Overkill, es ilustrativo | Cambiar a Rough.js |
-
----
-
-## 🔄 Flujo de Decisión Paso a Paso
-
+```json
+{
+  "type": "function",
+  "metadata": { "id": "sin-x", "title": "y = sin(x)" },
+  "canvas": { "width": 800, "height": 400, "padding": 50 },
+  "axes": {
+    "x": { "min": -6.28, "max": 6.28, "label": "x", "ticks": "pi" },
+    "y": { "min": -1.5, "max": 1.5, "label": "y" }
+  },
+  "functions": [
+    { "expression": "sin(x)", "color": "#3b82f6", "strokeWidth": 3 }
+  ],
+  "markers": [
+    { "x": "pi/2", "y": 1, "label": "Máximo", "color": "#ef4444" }
+  ]
+}
 ```
-1. ¿Necesito mostrar una FÓRMULA MATEMÁTICA?
-   └── SÍ → LaTeX ($...$ o $$...$$)
-   └── NO → Continuar
 
-2. ¿Es una GRÁFICA de función o datos?
-   └── SÍ → ECharts
-   └── NO → Continuar
+### `bar`
 
-3. ¿Es GEOMETRÍA con propiedades que DEBEN cumplirse exactamente?
-   (perpendiculares, bisectrices, puntos notables, tangencias, etc.)
-   └── SÍ → GeometrySpec
-   └── NO → Continuar
+```json
+{
+  "type": "bar",
+  "metadata": { "id": "notas", "title": "Notas por Materia" },
+  "canvas": { "width": 600, "height": 400 },
+  "data": {
+    "labels": ["Matemáticas", "Física", "Química"],
+    "values": [85, 78, 92],
+    "colors": ["#3b82f6", "#ef4444", "#22c55e"]
+  }
+}
+```
 
-4. ¿Es GEOMETRÍA 3D?
-   └── SÍ → Three.js
-   └── NO → Continuar
+### `histogram`
 
-5. ¿Es una FRACCIÓN visual (pie chart)?
-   └── SÍ → Chart.js
-   └── NO → Continuar
+```json
+{
+  "type": "histogram",
+  "metadata": { "id": "edades", "title": "Distribución de Edades" },
+  "canvas": { "width": 600, "height": 400 },
+  "axes": {
+    "x": { "label": "Edad" },
+    "y": { "label": "Frecuencia" }
+  },
+  "data": {
+    "bins": [
+      { "from": 0, "to": 10, "count": 5 },
+      { "from": 10, "to": 20, "count": 15 },
+      { "from": 20, "to": 30, "count": 25 }
+    ],
+    "color": "#3b82f6"
+  }
+}
+```
 
-6. Es un DIAGRAMA ilustrativo/conceptual
-   └── → Rough.js
+### `pie`
+
+```json
+{
+  "type": "pie",
+  "metadata": { "id": "fraccion", "title": "Fracción 3/4" },
+  "canvas": { "width": 400, "height": 400 },
+  "data": {
+    "segments": [
+      { "value": 3, "label": "3/4", "color": "#3b82f6" },
+      { "value": 1, "label": "1/4", "color": "#e2e8f0" }
+    ]
+  }
+}
+```
+
+### `scatter`
+
+```json
+{
+  "type": "scatter",
+  "metadata": { "id": "correlacion", "title": "Altura vs Peso" },
+  "canvas": { "width": 600, "height": 400 },
+  "axes": {
+    "x": { "label": "Altura (cm)", "min": 150, "max": 200 },
+    "y": { "label": "Peso (kg)", "min": 50, "max": 100 }
+  },
+  "data": {
+    "points": [
+      { "x": 160, "y": 55 },
+      { "x": 175, "y": 70 },
+      { "x": 180, "y": 80 }
+    ],
+    "color": "#3b82f6",
+    "size": 8
+  }
+}
 ```
 
 ---
 
 ## ✅ Resumen Ejecutivo
 
-| Pregúntate | Si SÍ → Usa |
-|------------|-------------|
-| ¿Es una función $f(x)$? | ECharts |
-| ¿Son datos/estadísticas? | ECharts |
-| ¿Las propiedades geométricas DEBEN ser exactas? | GeometrySpec |
-| ¿Es solo ilustrativo/conceptual? | Rough.js |
+| Pregúntate | Usa |
+|------------|-----|
+| ¿Es una función matemática? | **GraphSpec** `function` |
+| ¿Es un histograma? | **GraphSpec** `histogram` |
+| ¿Es un gráfico de barras? | **GraphSpec** `bar` |
+| ¿Es una fracción/porcentaje? | **GraphSpec** `pie` |
+| ¿Son puntos dispersos? | **GraphSpec** `scatter` |
+| ¿Es geometría con propiedades exactas? | GeometrySpec |
+| ¿Es ilustrativo/conceptual? | Rough.js |
 | ¿Es 3D? | Three.js |
-| ¿Es fracción como pastel? | Chart.js |
 | ¿Es solo texto matemático? | LaTeX |
+
+---
+
+## 🔧 Renderers Especializados por Tema
+
+Además de los sistemas principales, existen renderers especializados:
+
+| Tema | Renderer | Comando |
+|------|----------|---------|
+| Círculo unitario | `unit_circle_renderer.py` | `python3 scripts/geometry/unit_circle_renderer.py --type TYPE --output FILE.svg` |
+| Identidades trig | `identity_renderer.py` | `python3 scripts/geometry/identity_renderer.py --type TYPE --output FILE.svg` |
+| Triángulos trig | `trigonometry_renderer.py` | `python3 scripts/geometry/trigonometry_renderer.py --spec JSON --output FILE.svg` |
+
+### Tipos disponibles:
+
+**unit_circle_renderer.py:**
+- `basic` - Círculo unitario con cuadrantes
+- `point` - Punto P = (cos θ, sin θ)
+- `quadrants` - Signos ASTC
+- `reference` - Ángulos de referencia
+- `negative` - Ángulos negativos
+- `quadrantal` - Ángulos cuadrantales
+- `cofunctions` - Cofunciones
+
+**identity_renderer.py:**
+- `map` - Mapa de identidades fundamentales
+- `pythagorean` - Identidad pitagórica en círculo
+- `double` - Fórmulas ángulo doble
+- `half` - Fórmulas ángulo mitad
+- `proof` - Estrategias de demostración
+- `equations` - Soluciones de ecuaciones
+
+### Organización de outputs:
+
+```
+public/images/
+├── funciones/trigonometria/     # GraphSpec de sin, cos, tan
+├── trigonometria/
+│   ├── circulo-unitario/        # unit_circle_renderer.py
+│   └── identidades/             # identity_renderer.py
+└── geometria/trigonometria/     # trigonometry_renderer.py
+```
 
 ---
 
 ## 🔗 Workflows Detallados
 
-- [ECharts](./echarts.md) - Funciones y datos
+- [GraphSpec](./graphspec.md) - **Sistema unificado de gráficas** ⭐
 - [GeometrySpec](./geometry-exact.md) - Geometría exacta
 - [Rough.js](./roughjs.md) - Diagramas ilustrativos
-- [Chart.js](./chartjs.md) - Fracciones
 - [Three.js](./threejs.md) - Geometría 3D

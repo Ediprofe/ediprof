@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 450" 
+style="font-family: Inter, system-ui, sans-serif;">
+<rect width="650" height="450" fill="#f8fafc"/>
+
+<!-- Título -->
+<text x="325.0" y="30" text-anchor="middle" font-size="18" font-weight="bold" fill="#1e293b">Aplicación: Navegación</text>
+<text x="325.0" y="50" text-anchor="middle" font-size="11" fill="#94a3b8">Calcular distancia entre dos barcos</text>
+
+<circle cx="150" cy="350" r="10" fill="#1e293b"/>
+<text x="150" y="375" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e293b">Puerto</text>
+<circle cx="150" cy="120" r="8" fill="#3b82f6"/>
+<text x="110" y="125" font-size="11" font-weight="bold" fill="#3b82f6">Barco 1</text>
+<circle cx="450" cy="200" r="8" fill="#22c55e"/>
+<text x="465" y="205" font-size="11" font-weight="bold" fill="#22c55e">Barco 2</text>
+<line x1="150" y1="350" x2="150" y2="120" stroke="#3b82f6" stroke-width="3"/>
+<text x="120" y="235.0" font-size="12" font-weight="bold" fill="#3b82f6">80 km</text>
+<line x1="150" y1="350" x2="450" y2="200" stroke="#22c55e" stroke-width="3"/>
+<text x="290.0" y="295.0" font-size="12" font-weight="bold" fill="#22c55e">60 km</text>
+<line x1="150" y1="120" x2="450" y2="200" stroke="#ef4444" stroke-width="3" stroke-dasharray="8,4"/>
+<text x="310.0" y="150.0" font-size="14" font-weight="bold" fill="#ef4444">d = ?</text>
+<path d="M 150 300 A 50 50 0 0 1 193 325" fill="none" stroke="#f97316" stroke-width="2"/>
+<text x="185" y="300" font-size="12" font-weight="bold" fill="#f97316">60°</text>
+<line x1="150" y1="330" x2="150" y2="280" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3,2"/>
+<text x="150" y="275" text-anchor="middle" font-size="10" fill="#94a3b8">N</text>
+<rect x="470" y="280" width="160" height="140" rx="10" fill="white" stroke="#e2e8f0" stroke-width="2"/>
+<text x="550" y="305" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e293b">📐 SOLUCIÓN (LAL)</text>
+<text x="480" y="330" font-size="10" fill="#1e293b">d² = 80² + 60²</text>
+<text x="480" y="350" font-size="10" fill="#1e293b">    - 2(80)(60)cos 60°</text>
+<text x="480" y="375" font-size="10" fill="#1e293b">d² = 6400 + 3600 - 4800</text>
+<text x="480" y="395" font-size="10" fill="#1e293b">d² = 5200</text>
+<text x="550" y="415" text-anchor="middle" font-size="12" font-weight="bold" fill="#ef4444">d ≈ 72.1 km</text>
+</svg>

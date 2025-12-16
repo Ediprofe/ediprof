@@ -2,6 +2,16 @@
 
 Los **ángulos cuadrantales** son aquellos cuyos lados terminales coinciden con los ejes coordenados: 0°, 90°, 180°, 270° y 360°.
 
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+    <strong style="color: #1e293b; font-size: 0.95rem; margin-left: 0.3rem;">Los 4 ángulos cuadrantales</strong>
+  </div>
+
+![Ángulos cuadrantales](/images/trigonometria/circulo-unitario/angulos-cuadrantales.svg)
+
+</div>
+
 ---
 
 ## 📖 ¿Qué son los ángulos cuadrantales?

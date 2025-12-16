@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" 
+style="max-width: 100%; height: auto; font-family: Inter, system-ui, sans-serif;">
+
+  <style>
+    .wave-path {
+      stroke-dasharray: 3000;
+      stroke-dashoffset: 3000;
+      animation: drawWave 2s ease-out forwards;
+    }
+    .marker-group { opacity: 0; animation: fadeIn 0.5s ease-out 2s forwards; }
+    .label-group { opacity: 0; animation: fadeIn 0.5s ease-out 2.3s forwards; }
+    .annotation-group { opacity: 0; animation: fadeIn 0.5s ease-out 2.5s forwards; }
+    @keyframes drawWave { to { stroke-dashoffset: 0; } }
+    @keyframes fadeIn { to { opacity: 1; } }
+  </style>
+
+  <rect width="800" height="450" fill="#f8fafc" rx="8"/>
+  <text x="400.0" y="25" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">Funciones Inversas: arcsin, arccos, arctan</text>
+  <g class="grid">
+    <line x1="60.0" y1="60" x2="60.0" y2="390" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="128.0" y1="60" x2="128.0" y2="390" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="196.0" y1="60" x2="196.0" y2="390" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="264.0" y1="60" x2="264.0" y2="390" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="332.0" y1="60" x2="332.0" y2="390" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="400.0" y1="60" x2="400.0" y2="390" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="468.0" y1="60" x2="468.0" y2="390" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="536.0" y1="60" x2="536.0" y2="390" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="604.0" y1="60" x2="604.0" y2="390" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="672.0" y1="60" x2="672.0" y2="390" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="740.0" y1="60" x2="740.0" y2="390" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="60" y1="330.0" x2="740" y2="330.0" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="60" y1="300.0" x2="740" y2="300.0" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="60" y1="240.0" x2="740" y2="240.0" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="60" y1="210.0" x2="740" y2="210.0" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+  </g>
+  <g class="axes">
+    <line x1="60" y1="270.0" x2="740" y2="270.0" stroke="#374151" stroke-width="2"/>
+    <polygon points="740,270.0 732,266.0 732,274.0" fill="#374151"/>
+    <line x1="400.0" y1="60" x2="400.0" y2="390" stroke="#374151" stroke-width="2"/>
+    <polygon points="400.0,60 396.0,68 404.0,68" fill="#374151"/>
+    <text x="750" y="275.0" font-size="14" font-weight="bold" fill="#374151">x</text>
+    <text x="408.0" y="55" font-size="14" font-weight="bold" fill="#374151">y (rad)</text>
+    <line x1="60.0" y1="266.0" x2="60.0" y2="274.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="60.0" y="290.0" text-anchor="middle" font-size="12" fill="#374151">-5</text>
+    <line x1="128.0" y1="266.0" x2="128.0" y2="274.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="128.0" y="290.0" text-anchor="middle" font-size="12" fill="#374151">-4</text>
+    <line x1="196.0" y1="266.0" x2="196.0" y2="274.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="196.0" y="290.0" text-anchor="middle" font-size="12" fill="#374151">-3</text>
+    <line x1="264.0" y1="266.0" x2="264.0" y2="274.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="264.0" y="290.0" text-anchor="middle" font-size="12" fill="#374151">-2</text>
+    <line x1="332.0" y1="266.0" x2="332.0" y2="274.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="332.0" y="290.0" text-anchor="middle" font-size="12" fill="#374151">-1</text>
+    <line x1="468.0" y1="266.0" x2="468.0" y2="274.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="468.0" y="290.0" text-anchor="middle" font-size="12" fill="#374151">1</text>
+    <line x1="536.0" y1="266.0" x2="536.0" y2="274.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="536.0" y="290.0" text-anchor="middle" font-size="12" fill="#374151">2</text>
+    <line x1="604.0" y1="266.0" x2="604.0" y2="274.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="604.0" y="290.0" text-anchor="middle" font-size="12" fill="#374151">3</text>
+    <line x1="672.0" y1="266.0" x2="672.0" y2="274.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="672.0" y="290.0" text-anchor="middle" font-size="12" fill="#374151">4</text>
+    <line x1="740.0" y1="266.0" x2="740.0" y2="274.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="740.0" y="290.0" text-anchor="middle" font-size="12" fill="#374151">5</text>
+    <line x1="396.0" y1="330.0" x2="404.0" y2="330.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="388.0" y="334.0" text-anchor="end" font-size="12" fill="#374151">-1</text>
+    <line x1="396.0" y1="210.0" x2="404.0" y2="210.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="388.0" y="214.0" text-anchor="end" font-size="12" fill="#374151">1</text>
+  </g>
+  <path id="arctan-x" class="wave-path" d="M 60.00 352.40 L 63.40 352.29 L 66.80 352.17 L 70.20 352.05 L 73.60 351.92 L 77.00 351.80 L 80.40 351.67 L 83.80 351.54 L 87.20 351.40 L 90.60 351.27 L 94.00 351.13 L 97.40 350.98 L 100.80 350.84 L 104.20 350.69 L 107.60 350.54 L 111.00 350.38 L 114.40 350.22 L 117.80 350.06 L 121.20 349.89 L 124.60 349.72 L 128.00 349.55 L 131.40 349.37 L 134.80 349.19 L 138.20 349.00 L 141.60 348.81 L 145.00 348.61 L 148.40 348.41 L 151.80 348.20 L 155.20 347.99 L 158.60 347.77 L 162.00 347.55 L 165.40 347.32 L 168.80 347.08 L 172.20 346.84 L 175.60 346.59 L 179.00 346.34 L 182.40 346.07 L 185.80 345.80 L 189.20 345.53 L 192.60 345.24 L 196.00 344.94 L 199.40 344.64 L 202.80 344.32 L 206.20 344.00 L 209.60 343.67 L 213.00 343.32 L 216.40 342.97 L 219.80 342.60 L 223.20 342.22 L 226.60 341.82 L 230.00 341.42 L 233.40 341.00 L 236.80 340.56 L 240.20 340.11 L 243.60 339.64 L 247.00 339.15 L 250.40 338.65 L 253.80 338.13 L 257.20 337.58 L 260.60 337.02 L 264.00 336.43 L 267.40 335.82 L 270.80 335.18 L 274.20 334.51 L 277.60 333.82 L 281.00 333.10 L 284.40 332.34 L 287.80 331.56 L 291.20 330.73 L 294.60 329.87 L 298.00 328.97 L 301.40 328.02 L 304.80 327.03 L 308.20 325.99 L 311.60 324.91 L 315.00 323.76 L 318.40 322.56 L 321.80 321.30 L 325.20 319.98 L 328.60 318.59 L 332.00 317.12 L 335.40 315.59 L 338.80 313.97 L 342.20 312.27 L 345.60 310.48 L 349.00 308.61 L 352.40 306.64 L 355.80 304.58 L 359.20 302.43 L 362.60 300.17 L 366.00 297.82 L 369.40 295.37 L 372.80 292.83 L 376.20 290.20 L 379.60 287.49 L 383.00 284.70 L 386.40 281.84 L 389.80 278.93 L 393.20 275.98 L 396.60 273.00 L 400.00 270.00 L 403.40 267.00 L 406.80 264.02 L 410.20 261.07 L 413.60 258.16 L 417.00 255.30 L 420.40 252.51 L 423.80 249.80 L 427.20 247.17 L 430.60 244.63 L 434.00 242.18 L 437.40 239.83 L 440.80 237.57 L 444.20 235.42 L 447.60 233.36 L 451.00 231.39 L 454.40 229.52 L 457.80 227.73 L 461.20 226.03 L 464.60 224.41 L 468.00 222.88 L 471.40 221.41 L 474.80 220.02 L 478.20 218.70 L 481.60 217.44 L 485.00 216.24 L 488.40 215.09 L 491.80 214.01 L 495.20 212.97 L 498.60 211.98 L 502.00 211.03 L 505.40 210.13 L 508.80 209.27 L 512.20 208.44 L 515.60 207.66 L 519.00 206.90 L 522.40 206.18 L 525.80 205.49 L 529.20 204.82 L 532.60 204.18 L 536.00 203.57 L 539.40 202.98 L 542.80 202.42 L 546.20 201.87 L 549.60 201.35 L 553.00 200.85 L 556.40 200.36 L 559.80 199.89 L 563.20 199.44 L 566.60 199.00 L 570.00 198.58 L 573.40 198.18 L 576.80 197.78 L 580.20 197.40 L 583.60 197.03 L 587.00 196.68 L 590.40 196.33 L 593.80 196.00 L 597.20 195.68 L 600.60 195.36 L 604.00 195.06 L 607.40 194.76 L 610.80 194.47 L 614.20 194.20 L 617.60 193.93 L 621.00 193.66 L 624.40 193.41 L 627.80 193.16 L 631.20 192.92 L 634.60 192.68 L 638.00 192.45 L 641.40 192.23 L 644.80 192.01 L 648.20 191.80 L 651.60 191.59 L 655.00 191.39 L 658.40 191.19 L 661.80 191.00 L 665.20 190.81 L 668.60 190.63 L 672.00 190.45 L 675.40 190.28 L 678.80 190.11 L 682.20 189.94 L 685.60 189.78 L 689.00 189.62 L 692.40 189.46 L 695.80 189.31 L 699.20 189.16 L 702.60 189.02 L 706.00 188.87 L 709.40 188.73 L 712.80 188.60 L 716.20 188.46 L 719.60 188.33 L 723.00 188.20 L 726.40 188.08 L 729.80 187.95 L 733.20 187.83 L 736.60 187.71 L 740.00 187.60" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <g class="marker-group">
+    <circle cx="400.0" cy="270.0" r="6" fill="#ef4444" stroke="white" stroke-width="2"/>
+    <circle cx="468.0" cy="222.9" r="6" fill="#ef4444" stroke="white" stroke-width="2"/>
+  </g>
+  <g class="label-group">
+    <rect x="350.0" y="243.0" width="100" height="16" fill="white" fill-opacity="0.9" rx="3"/>
+    <text x="400.0" y="255.0" text-anchor="middle" font-size="11" font-weight="bold" fill="#ef4444">arctan(0) = 0</text>
+    <rect x="418.0" y="195.89999999999998" width="100" height="16" fill="white" fill-opacity="0.9" rx="3"/>
+    <text x="468.0" y="207.9" text-anchor="middle" font-size="11" font-weight="bold" fill="#ef4444">arctan(1) = π/4</text>
+  </g>
+</svg>

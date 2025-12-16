@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400" 
+style="font-family: Inter, system-ui, sans-serif;">
+<rect width="700" height="400" fill="#f8fafc"/>
+
+<!-- Título -->
+<text x="350.0" y="30" text-anchor="middle" font-size="18" font-weight="bold" fill="#1e293b">Tipos de Triángulos Oblicuángulos</text>
+
+<!-- Triángulo Acutángulo -->
+<text x="175" y="70" text-anchor="middle" font-size="14" font-weight="bold" fill="#3b82f6">ACUTÁNGULO</text>
+<text x="175" y="88" text-anchor="middle" font-size="11" fill="#94a3b8">Todos los ángulos &lt; 90°</text>
+<polygon points="80,320 270,320 175,130" fill="#3b82f6" fill-opacity="0.15" stroke="#3b82f6" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="80" cy="320" r="5" fill="#1e293b"/>
+<circle cx="270" cy="320" r="5" fill="#1e293b"/>
+<circle cx="175" cy="130" r="5" fill="#1e293b"/>
+<text x="65" y="325" font-size="13" font-weight="bold" fill="#1e293b">65°</text>
+<text x="280" y="325" font-size="13" font-weight="bold" fill="#1e293b">55°</text>
+<text x="175" y="115" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e293b">60°</text>
+<text x="175" y="360" text-anchor="middle" font-size="11" fill="#94a3b8">65° + 55° + 60° = 180°</text>
+<!-- Triángulo Obtusángulo -->
+<text x="525" y="70" text-anchor="middle" font-size="14" font-weight="bold" fill="#ef4444">OBTUSÁNGULO</text>
+<text x="525" y="88" text-anchor="middle" font-size="11" fill="#94a3b8">Un ángulo &gt; 90°</text>
+<polygon points="380,320 670,320 420,150" fill="#ef4444" fill-opacity="0.15" stroke="#ef4444" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="380" cy="320" r="5" fill="#1e293b"/>
+<circle cx="670" cy="320" r="5" fill="#1e293b"/>
+<circle cx="420" cy="150" r="5" fill="#1e293b"/>
+<text x="405" y="295" font-size="13" font-weight="bold" fill="#ef4444">110°</text>
+<text x="660" y="325" font-size="13" font-weight="bold" fill="#1e293b">30°</text>
+<text x="400" y="155" font-size="13" font-weight="bold" fill="#1e293b">40°</text>
+<text x="525" y="360" text-anchor="middle" font-size="11" fill="#94a3b8">110° + 30° + 40° = 180°</text>
+<line x1="350.0" y1="60" x2="350.0" y2="380" stroke="#94a3b8" stroke-width="1" stroke-dasharray="5,3"/>
+</svg>

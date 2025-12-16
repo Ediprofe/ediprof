@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 500" 
+style="font-family: Inter, system-ui, sans-serif;">
+<rect width="650" height="500" fill="#f8fafc"/>
+
+<!-- Título -->
+<text x="325.0" y="28" text-anchor="middle" font-size="18" font-weight="bold" fill="#1e293b">Soluciones de sin θ = 0.5</text>
+<text x="325.0" y="48" text-anchor="middle" font-size="12" fill="#94a3b8">¿En qué ángulos el seno vale 0.5?</text>
+
+<!-- Ejes -->
+<line x1="165.0" y1="290.0" x2="485.0" y2="290.0" stroke="#1e293b" stroke-width="2"/>
+<line x1="325.0" y1="130.0" x2="325.0" y2="450.0" stroke="#1e293b" stroke-width="2"/>
+
+<!-- Círculo unitario -->
+<circle cx="325.0" cy="290.0" r="130" fill="none" stroke="#3b82f6" stroke-width="2"/>
+
+<!-- Línea y = 0.5 -->
+<line x1="175.0" y1="225.0" x2="475.0" y2="225.0" stroke="#ef4444" stroke-width="2" stroke-dasharray="8,4"/>
+<text x="480.0" y="230.0" font-size="12" font-weight="bold" fill="#ef4444">y = 0.5</text>
+
+<line x1="325.0" y1="290.0" x2="437.6" y2="225.0" stroke="#22c55e" stroke-width="2"/>
+<circle cx="437.6" cy="225.0" r="10" fill="#22c55e" stroke="white" stroke-width="2"/>
+<text x="457.6" y="215.0" text-anchor="start" font-size="14" font-weight="bold" fill="#22c55e">θ = 30°</text>
+<text x="457.6" y="233.0" text-anchor="start" font-size="11" fill="#94a3b8">QI</text>
+<line x1="325.0" y1="290.0" x2="212.4" y2="225.0" stroke="#8b5cf6" stroke-width="2"/>
+<circle cx="212.4" cy="225.0" r="10" fill="#8b5cf6" stroke="white" stroke-width="2"/>
+<text x="192.4" y="215.0" text-anchor="end" font-size="14" font-weight="bold" fill="#8b5cf6">θ = 150°</text>
+<text x="192.4" y="233.0" text-anchor="end" font-size="11" fill="#94a3b8">QII</text>
+
+<!-- Método -->
+<rect x="30" y="360" width="280" height="125" rx="10" fill="white" stroke="#e2e8f0" stroke-width="2"/>
+<text x="45" y="385" font-size="12" font-weight="bold" fill="#1e293b">📋 Método:</text>
+<text x="45" y="407" font-size="11" fill="#1e293b">1. Ángulo de referencia: arcsin(0.5) = 30°</text>
+<text x="45" y="427" font-size="11" fill="#1e293b">2. Seno positivo → QI y QII</text>
+<text x="45" y="447" font-size="11" fill="#22c55e">3. QI: θ = 30°</text>
+<text x="45" y="467" font-size="11" fill="#8b5cf6">4. QII: θ = 180° - 30° = 150°</text>
+<rect x="340" y="360" width="280" height="125" rx="10" fill="#f97316" fill-opacity="0.15" stroke="#f97316" stroke-width="2"/>
+<text x="355" y="385" font-size="12" font-weight="bold" fill="#f97316">✅ Soluciones:</text>
+<text x="355" y="410" font-size="12" fill="#1e293b">Principales [0°, 360°):</text>
+<text x="355" y="430" font-size="13" font-weight="bold" fill="#1e293b">θ = 30° y θ = 150°</text>
+<text x="355" y="455" font-size="12" fill="#1e293b">Generales:</text>
+<text x="355" y="475" font-size="11" fill="#1e293b">θ = 30° + k·360° , θ = 150° + k·360°</text>
+</svg>

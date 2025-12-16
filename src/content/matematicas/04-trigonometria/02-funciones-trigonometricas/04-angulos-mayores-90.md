@@ -2,6 +2,16 @@
 
 Para calcular las funciones trigonométricas de ángulos mayores que 90°, usamos el **ángulo de referencia** y los signos según el cuadrante.
 
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+    <strong style="color: #1e293b; font-size: 0.95rem; margin-left: 0.3rem;">Ángulos de referencia en cada cuadrante</strong>
+  </div>
+
+![Ángulos de referencia](/images/trigonometria/circulo-unitario/angulos-referencia.svg)
+
+</div>
+
 ---
 
 ## 📖 Ángulo de referencia

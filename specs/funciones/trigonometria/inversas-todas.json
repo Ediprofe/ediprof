@@ -1,0 +1,59 @@
+{
+  "type": "function",
+  "metadata": {
+    "id": "inversas-todas",
+    "title": "Funciones Inversas: arcsin, arccos, arctan",
+    "lesson": "04-trigonometria/03-graficas-funciones-trigonometricas/07-funciones-inversas"
+  },
+  "canvas": {
+    "width": 800,
+    "height": 450,
+    "padding": 60,
+    "background": "#f8fafc"
+  },
+  "axes": {
+    "x": {
+      "min": -5,
+      "max": 5,
+      "label": "x",
+      "ticks": "number"
+    },
+    "y": {
+      "min": -2,
+      "max": 3.5,
+      "label": "y (rad)"
+    }
+  },
+  "functions": [
+    {
+      "id": "arctan-x",
+      "expression": "atan(x)",
+      "color": "#22c55e",
+      "strokeWidth": 3
+    }
+  ],
+  "markers": [
+    {
+      "x": 0,
+      "y": 0,
+      "label": "arctan(0) = 0",
+      "color": "#ef4444",
+      "labelPosition": "top"
+    },
+    {
+      "x": 1,
+      "y": 0.785,
+      "label": "arctan(1) = π/4",
+      "color": "#ef4444",
+      "labelPosition": "top"
+    }
+  ],
+  "annotations": [],
+  "animations": {
+    "enabled": true,
+    "style": "draw",
+    "duration": 2,
+    "markersDelay": 2
+  }
+}
+

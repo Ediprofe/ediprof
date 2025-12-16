@@ -1,0 +1,56 @@
+{
+  "type": "function",
+  "metadata": {
+    "id": "amplitud-comparacion",
+    "title": "Efecto de la Amplitud: A = 1, 2, 0.5",
+    "lesson": "04-trigonometria/03-graficas-funciones-trigonometricas/05-amplitud-periodo"
+  },
+  "canvas": {
+    "width": 800,
+    "height": 400,
+    "padding": 55,
+    "background": "#f8fafc"
+  },
+  "axes": {
+    "x": {
+      "min": 0,
+      "max": "2*pi",
+      "label": "x",
+      "ticks": "pi"
+    },
+    "y": {
+      "min": -2.5,
+      "max": 2.5,
+      "label": "y"
+    }
+  },
+  "functions": [
+    {
+      "id": "sin-x",
+      "expression": "sin(x)",
+      "color": "#3b82f6",
+      "strokeWidth": 2
+    },
+    {
+      "id": "2sin-x",
+      "expression": "2*sin(x)",
+      "color": "#ef4444",
+      "strokeWidth": 3
+    },
+    {
+      "id": "05sin-x",
+      "expression": "0.5*sin(x)",
+      "color": "#22c55e",
+      "strokeWidth": 2
+    }
+  ],
+  "markers": [],
+  "annotations": [],
+  "animations": {
+    "enabled": true,
+    "style": "draw",
+    "duration": 2,
+    "markersDelay": 2
+  }
+}
+

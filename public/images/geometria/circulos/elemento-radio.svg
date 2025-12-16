@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 350" 
+style="font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;">
+<rect width="400" height="350" fill="#f8fafc"/>
+<text x="200.00" y="30.00" text-anchor="middle" font-size="18" font-weight="bold" fill="#ef4444">Radio</text>
+<circle cx="200" cy="175" r="110" fill="none" stroke="#3b82f6" stroke-width="2"/>
+<circle cx="200" cy="175" r="5" fill="#ef4444"/>
+<text x="182.00" y="180.00" text-anchor="start" font-size="14" font-weight="bold" fill="#ef4444">O</text>
+<line x1="200" y1="175" x2="284.26" y2="104.29" stroke="#ef4444" stroke-width="4"/>
+<circle cx="284.26" cy="104.29" r="5" fill="#ef4444"/>
+<text x="254.13" y="131.65" text-anchor="start" font-size="16" font-weight="bold" fill="#ef4444">r</text>
+<rect x="50" y="305" width="300" height="35" rx="8" fill="#fef3c7" stroke="#ef4444"/>
+<text x="200.0" y="326.5" text-anchor="middle" font-size="12" fill="#1e293b">Segmento del centro a la circunferencia</text>
+</svg>

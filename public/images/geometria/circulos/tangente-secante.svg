@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 380" 
+style="font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;">
+<rect width="650" height="380" fill="#f8fafc"/>
+<text x="325.00" y="28.00" text-anchor="middle" font-size="18" font-weight="bold" fill="#1e293b">Tangente y Secante</text>
+<circle cx="170" cy="190" r="90" fill="none" stroke="#3b82f6" stroke-width="2"/>
+<circle cx="170" cy="190" r="3" fill="#ef4444"/>
+<circle cx="170.00" cy="100.00" r="5" fill="#ec4899"/>
+<text x="180.00" y="95.00" text-anchor="start" font-size="12" font-weight="bold" fill="#ec4899">T</text>
+<line x1="50" y1="100.00" x2="290" y2="100.00" stroke="#ec4899" stroke-width="3"/>
+<line x1="170" y1="190" x2="170.00" y2="100.00" stroke="#ef4444" stroke-width="2" stroke-dasharray="5,3"/>
+<rect x="162.00" y="100.00" width="8" height="8" fill="none" stroke="#1e293b" stroke-width="1.5"/>
+<rect x="110" y="310" width="120" height="55" rx="8" fill="white" stroke="#ec4899" stroke-width="2"/>
+<text x="170.00" y="330.00" text-anchor="middle" font-size="13" font-weight="bold" fill="#ec4899">TANGENTE</text>
+<text x="170.00" y="348.00" text-anchor="middle" font-size="10" font-weight="normal" fill="#1e293b">Toca en 1 punto</text>
+<text x="170.00" y="360.00" text-anchor="middle" font-size="10" font-weight="normal" fill="#1e293b">⊥ al radio</text>
+<circle cx="480" cy="190" r="90" fill="none" stroke="#3b82f6" stroke-width="2"/>
+<circle cx="480" cy="190" r="3" fill="#ef4444"/>
+<circle cx="406.28" cy="138.38" r="5" fill="#14b8a6"/>
+<circle cx="553.72" cy="138.38" r="5" fill="#14b8a6"/>
+<text x="391.28" y="130.38" text-anchor="start" font-size="12" font-weight="bold" fill="#14b8a6">A</text>
+<text x="561.72" y="130.38" text-anchor="start" font-size="12" font-weight="bold" fill="#14b8a6">B</text>
+<line x1="369.41" y1="138.38" x2="590.59" y2="138.38" stroke="#14b8a6" stroke-width="3"/>
+<rect x="420" y="310" width="120" height="55" rx="8" fill="white" stroke="#14b8a6" stroke-width="2"/>
+<text x="480.00" y="330.00" text-anchor="middle" font-size="13" font-weight="bold" fill="#14b8a6">SECANTE</text>
+<text x="480.00" y="348.00" text-anchor="middle" font-size="10" font-weight="normal" fill="#1e293b">Corta en 2 puntos</text>
+<text x="480.00" y="360.00" text-anchor="middle" font-size="10" font-weight="normal" fill="#1e293b">Cuerda AB interior</text>
+</svg>

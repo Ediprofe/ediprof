@@ -1,104 +1,163 @@
 # Gráfica de la Función Tangente
 
-La gráfica de la función **tangente** es muy diferente a las del seno y coseno. Tiene **asíntotas verticales** y no está acotada.
+La **tangente** rompe el molde. A diferencia de las ondas suaves del seno y coseno, la tangente tiene "explosiones" hacia el infinito y huecos donde no existe. Es la rebelde de la familia trigonométrica.
 
 ---
 
-## 📖 La función tangente
+## 🎯 En esta lección aprenderás
 
-$$
-f(x) = \tan x = \frac{\sin x}{\cos x}
-$$
+- Por qué la tangente tiene asíntotas (líneas que nunca toca)
+- Cómo su período es la mitad que el del seno/coseno
+- El comportamiento dramático de la función
+- Cómo identificar dónde está definida y dónde no
 
-### Características principales
+---
+
+## 📋 Cheat Sheet + Ilustración
 
 | Propiedad | Valor |
 |-----------|-------|
+| Definición | $\tan x = \frac{\sin x}{\cos x}$ |
 | Dominio | $x \neq \frac{\pi}{2} + k\pi$ |
-| Rango | Todos los reales |
-| Período | $\pi$ (o 180°) |
-| Amplitud | No aplica (no está acotada) |
+| Rango | $\mathbb{R}$ (todos los reales) |
+| Período | $\pi$ (¡la mitad!) |
+| Paridad | Impar: $\tan(-x) = -\tan x$ |
+| Asíntotas | En $x = \frac{\pi}{2} + k\pi$ |
+
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+    <strong style="color: #1e293b; font-size: 0.95rem; margin-left: 0.3rem;">Gráfica de y = tan(x)</strong>
+  </div>
+
+![Gráfica de la función tangente](/images/funciones/trigonometria/tangente-principal.svg)
+
+</div>
 
 ---
 
-## 📖 Asíntotas verticales
+## 📖 ¿Por qué tiene agujeros?
 
-La tangente no está definida cuando $\cos x = 0$:
+La tangente se define como:
 
 $$
-x = \frac{\pi}{2} + k\pi, \quad k \in \mathbb{Z}
+\tan x = \frac{\sin x}{\cos x}
 $$
 
-En estos puntos hay **asíntotas verticales** (la función tiende a $\pm\infty$).
+> ⚠️ **Problema:** Cuando el denominador ($\cos x$) vale **cero**, la división explota.
+
+¿Cuándo $\cos x = 0$? En $x = \frac{\pi}{2}, \frac{3\pi}{2}, -\frac{\pi}{2}, \ldots$
+
+En esos puntos, la tangente **no existe** y la gráfica tiene **asíntotas verticales**.
 
 ---
 
-## 📖 Puntos clave en un período
+## 📖 Anatomía de la tangente
 
-| $x$ (rad) | $x$ (grados) | $\tan x$ |
-|-----------|--------------|----------|
+En cada período (entre dos asíntotas consecutivas):
+
+| Evento | Descripción |
+|--------|-------------|
+| 📉 Viene desde $-\infty$ | Cerca de la asíntota izquierda |
+| ↗️ Cruza el eje X | En el centro del período |
+| 📈 Se va hacia $+\infty$ | Cerca de la asíntota derecha |
+
+### Puntos clave en el período central $\left(-\frac{\pi}{2}, \frac{\pi}{2}\right)$:
+
+| $x$ | $x$ (grados) | $\tan x$ |
+|-----|--------------|----------|
 | $-\frac{\pi}{4}$ | -45° | -1 |
 | 0 | 0° | 0 |
 | $\frac{\pi}{4}$ | 45° | 1 |
 
-La función va de $-\infty$ a $+\infty$ en cada período.
-
 ---
 
-## 📖 Descripción de la gráfica
+## 📖 El período es π (¡la mitad!)
 
-En cada período (entre dos asíntotas):
-
-1. Viene desde $-\infty$ (cerca de la asíntota izquierda)
-2. **Cruza** el eje X en el centro del período
-3. **Pasa** por el punto donde $\tan x = 1$ (45°)
-4. Se va hacia $+\infty$ (cerca de la asíntota derecha)
-
-La curva tiene forma de "S" estirada.
-
----
-
-## 📖 Propiedades de la gráfica
-
-### Interceptos con el eje X
-
-$$
-x = k\pi, \quad k \in \mathbb{Z}
-$$
-
-(0, $\pm\pi$, $\pm 2\pi$, ...)
-
-### Período más corto
-
-A diferencia de seno y coseno ($2\pi$), la tangente tiene período $\pi$:
+Mientras que seno y coseno se repiten cada $2\pi$, la tangente lo hace cada $\pi$:
 
 $$
 \tan(x + \pi) = \tan x
 $$
 
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+    <strong style="color: #1e293b; font-size: 0.95rem; margin-left: 0.3rem;">Período de la tangente: π</strong>
+  </div>
+
+![Período de la tangente](/images/funciones/trigonometria/tangente-periodo.svg)
+
+</div>
+
+> 💡 **¿Por qué?** Porque $\sin x$ y $\cos x$ ambos cambian de signo después de $\pi$, así que su cociente queda igual.
+
 ---
 
-## 📖 Simetría
+## 📖 Propiedades matemáticas
 
-La función tangente es **impar**:
+### 1. Asíntotas verticales
+
+$$
+x = \frac{\pi}{2} + k\pi, \quad k \in \mathbb{Z}
+$$
+
+En estos puntos, $\cos x = 0$ y la tangente no existe.
+
+### 2. Interceptos con el eje X
+
+$$
+\tan x = 0 \quad \Rightarrow \quad x = k\pi
+$$
+
+(Donde $\sin x = 0$)
+
+### 3. Siempre creciente
+
+Dentro de cada período, la tangente es **estrictamente creciente**.
+
+### 4. Sin máximos ni mínimos
+
+La función no tiene valores máximo ni mínimo: va de $-\infty$ a $+\infty$.
+
+---
+
+## 📖 Simetría: función impar
 
 $$
 \tan(-x) = -\tan x
 $$
 
-Su gráfica tiene **simetría respecto al origen**.
+> 🔄 La gráfica tiene simetría respecto al origen.
 
 ---
 
-## 📖 Comportamiento
+## 📖 Comportamiento en los límites
 
-### Siempre creciente
+Cuando $x$ se acerca a una asíntota:
 
-Dentro de cada período, la tangente es **siempre creciente**.
+$$
+\lim_{x \to \frac{\pi}{2}^-} \tan x = +\infty
+$$
 
-### Sin máximos ni mínimos
+$$
+\lim_{x \to \frac{\pi}{2}^+} \tan x = -\infty
+$$
 
-La función no tiene valores máximo ni mínimo (va de $-\infty$ a $+\infty$).
+> 📊 La función "salta" de $+\infty$ a $-\infty$ al cruzar la asíntota (por eso hay discontinuidad).
+
+---
+
+## 🧠 Comparación de las tres funciones básicas
+
+| Propiedad | Seno | Coseno | Tangente |
+|-----------|------|--------|----------|
+| Período | $2\pi$ | $2\pi$ | $\pi$ |
+| Rango | $[-1, 1]$ | $[-1, 1]$ | $\mathbb{R}$ |
+| Asíntotas | No | No | **Sí** |
+| Paridad | Impar | Par | Impar |
+| Valor en 0 | 0 | 1 | 0 |
+| Valor en 45° | $\frac{\sqrt{2}}{2}$ | $\frac{\sqrt{2}}{2}$ | **1** |
 
 ---
 
@@ -106,7 +165,7 @@ La función no tiene valores máximo ni mínimo (va de $-\infty$ a $+\infty$).
 
 ### Ejercicio 1: Valores de la gráfica
 
-¿Cuál es el valor de...?
+Determina el valor de:
 
 1. $\tan 0$
 2. $\tan \frac{\pi}{4}$
@@ -115,9 +174,9 @@ La función no tiene valores máximo ni mínimo (va de $-\infty$ a $+\infty$).
 <details>
 <summary><strong>Ver respuestas</strong></summary>
 
-1. $\tan 0 = 0$
-2. $\tan \frac{\pi}{4} = 1$
-3. $\tan \pi = 0$
+1. $\tan 0 = \frac{\sin 0}{\cos 0} = \frac{0}{1} = 0$
+2. $\tan \frac{\pi}{4} = \frac{\sin 45°}{\cos 45°} = \frac{\frac{\sqrt{2}}{2}}{\frac{\sqrt{2}}{2}} = 1$
+3. $\tan \pi = \frac{\sin \pi}{\cos \pi} = \frac{0}{-1} = 0$
 
 </details>
 
@@ -130,7 +189,9 @@ La función no tiene valores máximo ni mínimo (va de $-\infty$ a $+\infty$).
 <details>
 <summary><strong>Ver respuesta</strong></summary>
 
-En $x = -\frac{\pi}{2}$ y $x = \frac{\pi}{2}$
+Las asíntotas están donde $\cos x = 0$:
+
+$$x = -\frac{\pi}{2} \quad \text{y} \quad x = \frac{\pi}{2}$$
 
 </details>
 
@@ -143,9 +204,15 @@ En $x = -\frac{\pi}{2}$ y $x = \frac{\pi}{2}$
 <details>
 <summary><strong>Ver respuesta</strong></summary>
 
-$$
-\lim_{x \to \frac{\pi}{2}^-} \tan x = +\infty
-$$
+Cuando $x \to \frac{\pi}{2}^-$:
+- $\sin x \to 1$ (positivo)
+- $\cos x \to 0^+$ (positivo, acercándose a cero)
+
+Por lo tanto:
+
+$$\lim_{x \to \frac{\pi}{2}^-} \tan x = \frac{1}{0^+} = +\infty$$
+
+La función "explota" hacia arriba.
 
 </details>
 
@@ -161,10 +228,10 @@ $$
 <details>
 <summary><strong>Ver respuestas</strong></summary>
 
-1. **Falso** - El período es $\pi$
-2. **Verdadero**
-3. **Falso** - Va de $-\infty$ a $+\infty$
-4. **Verdadero** - $\tan 0 = 0$
+1. **Falso** — El período es $\pi$
+2. **Verdadero** — Hay asíntota en $x = \frac{\pi}{2}$
+3. **Falso** — Va de $-\infty$ a $+\infty$
+4. **Verdadero** — $\tan 0 = 0$
 
 </details>
 

@@ -1,0 +1,89 @@
+{
+  "type": "function",
+  "metadata": {
+    "id": "seno-principal",
+    "title": "La Onda del Seno: y = sin(x)",
+    "lesson": "04-trigonometria/03-graficas-funciones-trigonometricas/01-grafica-seno"
+  },
+  "canvas": {
+    "width": 800,
+    "height": 400,
+    "padding": 55,
+    "background": "#f8fafc"
+  },
+  "axes": {
+    "x": {
+      "min": "-2*pi",
+      "max": "2*pi",
+      "label": "x",
+      "ticks": "pi"
+    },
+    "y": {
+      "min": -1.5,
+      "max": 1.5,
+      "label": "y"
+    }
+  },
+  "functions": [
+    {
+      "id": "sin-x",
+      "expression": "sin(x)",
+      "color": "#3b82f6",
+      "strokeWidth": 3
+    }
+  ],
+  "markers": [
+    {
+      "x": 0,
+      "y": 0,
+      "label": "Origen (0, 0)",
+      "color": "#374151",
+      "labelPosition": "top"
+    },
+    {
+      "x": "pi/2",
+      "y": 1,
+      "label": "Máximo (π/2, 1)",
+      "color": "#ef4444",
+      "labelPosition": "top"
+    },
+    {
+      "x": "pi",
+      "y": 0,
+      "label": "Cruza en π",
+      "color": "#22c55e",
+      "labelPosition": "bottom"
+    },
+    {
+      "x": "3*pi/2",
+      "y": -1,
+      "label": "Mínimo (3π/2, -1)",
+      "color": "#ef4444",
+      "labelPosition": "bottom"
+    },
+    {
+      "x": "2*pi",
+      "y": 0,
+      "label": "Fin ciclo (2π, 0)",
+      "color": "#374151",
+      "labelPosition": "top"
+    }
+  ],
+  "annotations": [
+    {
+      "type": "brace",
+      "from_x": 0,
+      "to_x": "2*pi",
+      "y": -1.35,
+      "label": "Período = 2π",
+      "color": "#8b5cf6"
+    }
+  ],
+  "animations": {
+    "enabled": true,
+    "style": "draw",
+    "duration": 2,
+    "markersDelay": 2
+  }
+}
+

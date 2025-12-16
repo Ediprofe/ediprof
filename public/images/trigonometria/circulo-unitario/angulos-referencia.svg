@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 500" 
+style="font-family: Inter, system-ui, sans-serif;">
+<rect width="650" height="500" fill="#f8fafc"/>
+
+<!-- Título -->
+<text x="325.0" y="30" text-anchor="middle" font-size="18" font-weight="bold" fill="#1e293b">Ángulos de Referencia</text>
+<text x="325.0" y="48" text-anchor="middle" font-size="11" fill="#64748b">El ángulo agudo formado con el eje X</text>
+
+<!-- Ejes -->
+<line x1="165.0" y1="260.0" x2="485.0" y2="260.0" stroke="#374151" stroke-width="2"/>
+<line x1="325.0" y1="100.0" x2="325.0" y2="420.0" stroke="#374151" stroke-width="2"/>
+
+<!-- Círculo -->
+<circle cx="325.0" cy="260.0" r="130" fill="none" stroke="#cbd5e1" stroke-width="1"/>
+<line x1="325.0" y1="260.0" x2="212.4" y2="195.0" stroke="#3b82f6" stroke-width="2"/>
+<circle cx="212.4" cy="195.0" r="6" fill="#3b82f6"/>
+<line x1="212.4" y1="195.0" x2="212.4" y2="260.0" stroke="#3b82f6" stroke-width="1" stroke-dasharray="4,2"/>
+<path d="M 295.0 260.0 A 30 30 0 0 0 299.0 245.0" fill="none" stroke="#8b5cf6" stroke-width="2"/>
+<text x="197.4" y="180.0" text-anchor="end" font-size="12" font-weight="bold" fill="#3b82f6">150°</text>
+<line x1="325.0" y1="260.0" x2="233.1" y2="351.9" stroke="#f97316" stroke-width="2"/>
+<circle cx="233.1" cy="351.9" r="6" fill="#f97316"/>
+<line x1="233.1" y1="351.9" x2="233.1" y2="260.0" stroke="#f97316" stroke-width="1" stroke-dasharray="4,2"/>
+<text x="218.1" y="371.9" text-anchor="end" font-size="12" font-weight="bold" fill="#f97316">225°</text>
+<line x1="325.0" y1="260.0" x2="390.0" y2="372.6" stroke="#ec4899" stroke-width="2"/>
+<circle cx="390.0" cy="372.6" r="6" fill="#ec4899"/>
+<line x1="390.0" y1="372.6" x2="390.0" y2="260.0" stroke="#ec4899" stroke-width="1" stroke-dasharray="4,2"/>
+<text x="405.0" y="392.6" text-anchor="start" font-size="12" font-weight="bold" fill="#ec4899">300°</text>
+
+<!-- Fórmulas -->
+<rect x="15" y="370" width="180" height="115" rx="8" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="25" y="390" font-size="11" font-weight="bold" fill="#1e293b">Fórmulas por cuadrante:</text>
+<text x="25" y="408" font-size="10" fill="#22c55e">I: α = θ</text>
+<text x="25" y="423" font-size="10" fill="#3b82f6">II: α = 180° - θ</text>
+<text x="25" y="438" font-size="10" fill="#f97316">III: α = θ - 180°</text>
+<text x="25" y="453" font-size="10" fill="#ec4899">IV: α = 360° - θ</text>
+<text x="25" y="473" font-size="10" fill="#64748b">α = ángulo de referencia</text>
+</svg>

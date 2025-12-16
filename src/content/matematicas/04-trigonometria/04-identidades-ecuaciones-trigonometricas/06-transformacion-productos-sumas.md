@@ -2,6 +2,25 @@
 
 Las **identidades de producto a suma** (y suma a producto) permiten convertir productos de funciones trigonométricas en sumas, y viceversa.
 
+<div style="background: linear-gradient(135deg, #dcfce7 0%, #fef3c7 100%); border: 2px solid #16a34a; border-radius: 12px; padding: 1.2rem; margin: 1.5rem 0;">
+<div style="font-weight: bold; color: #166534; margin-bottom: 0.8rem;">📋 Resumen Rápido</div>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: 0.9rem;">
+<div>
+<strong style="color: #3b82f6;">Producto → Suma</strong><br>
+sin α cos β = ½[sin(α+β) + sin(α-β)]<br>
+cos α cos β = ½[cos(α+β) + cos(α-β)]
+</div>
+<div>
+<strong style="color: #dc2626;">Suma → Producto</strong><br>
+sin A + sin B = 2 sin((A+B)/2) cos((A-B)/2)<br>
+cos A + cos B = 2 cos((A+B)/2) cos((A-B)/2)
+</div>
+</div>
+<div style="margin-top: 0.8rem; font-size: 0.85rem; color: #64748b;">
+💡 Útiles en cálculo integral y análisis de ondas (batimiento)
+</div>
+</div>
+
 ---
 
 ## 📖 Producto a suma

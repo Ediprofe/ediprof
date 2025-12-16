@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" 
+style="max-width: 100%; height: auto; font-family: Inter, system-ui, sans-serif;">
+
+  <style>
+    .pie-segment { transform-origin: 200.0px 215.0px; transform: scale(0); animation: popIn 0.5s ease-out forwards; }
+    .pie-label { opacity: 0; animation: fadeIn 0.5s ease-out 0.5s forwards; }
+    @keyframes popIn { to { transform: scale(1); } }
+    @keyframes fadeIn { to { opacity: 1; } }
+  </style>
+
+  <rect width="400" height="400" fill="#f8fafc" rx="8"/>
+  <text x="200.0" y="30" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">Representación de 3/4</text>
+  <path class="pie-segment" d="M 200.0 215.0 L 200.0 75.0 A 140.0 140.0 0 1 1 60.0 215.0 Z" fill="#3b82f6" stroke="white" stroke-width="2" style="animation-delay: 0.0s;"/>
+  <text class="pie-label" x="264.3" y="279.3" text-anchor="middle" dominant-baseline="middle" font-size="14" font-weight="bold" fill="white" style="animation-delay: 0.5s;">3/4</text>
+  <path class="pie-segment" d="M 200.0 215.0 L 60.0 215.0 A 140.0 140.0 0 0 1 200.0 75.0 Z" fill="#e2e8f0" stroke="white" stroke-width="2" style="animation-delay: 0.15s;"/>
+  <text class="pie-label" x="135.7" y="150.7" text-anchor="middle" dominant-baseline="middle" font-size="14" font-weight="bold" fill="white" style="animation-delay: 0.65s;">1/4</text>
+</svg>

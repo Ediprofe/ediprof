@@ -20,6 +20,16 @@ Los ángulos asociados a la circunferencia tienen propiedades especiales según 
 
 > **Definición:** Un ángulo central tiene su **vértice en el centro** de la circunferencia y sus lados son radios.
 
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; max-width: 500px;">
+  <div style="margin-bottom: 0.5rem;">
+    <span style="font-size: 1rem;">📊</span>
+    <strong style="color: #1e293b; font-size: 0.9rem; margin-left: 0.3rem;">Ángulo Central</strong>
+  </div>
+
+![Ángulo central](/images/geometria/circulos/angulo-central.svg)
+
+</div>
+
 ### Propiedad
 
 El ángulo central tiene la **misma medida** que el arco que abarca:
@@ -37,6 +47,16 @@ Si el ángulo central mide 60°, el arco que abarca también mide 60°.
 ## 📖 Ángulo inscrito
 
 > **Definición:** Un ángulo inscrito tiene su **vértice en la circunferencia** y sus lados son cuerdas.
+
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; max-width: 500px;">
+  <div style="margin-bottom: 0.5rem;">
+    <span style="font-size: 1rem;">📊</span>
+    <strong style="color: #1e293b; font-size: 0.9rem; margin-left: 0.3rem;">Ángulo Inscrito</strong>
+  </div>
+
+![Ángulo inscrito](/images/geometria/circulos/angulo-inscrito.svg)
+
+</div>
 
 ### Propiedad fundamental
 
@@ -82,6 +102,16 @@ $$
 
 > **Definición:** Un ángulo semi-inscrito tiene su vértice en la circunferencia, un lado es una **cuerda** y el otro es una **tangente**.
 
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; max-width: 500px;">
+  <div style="margin-bottom: 0.5rem;">
+    <span style="font-size: 1rem;">📊</span>
+    <strong style="color: #1e293b; font-size: 0.9rem; margin-left: 0.3rem;">Ángulo Semi-inscrito</strong>
+  </div>
+
+![Ángulo semi-inscrito](/images/geometria/circulos/angulo-semi-inscrito.svg)
+
+</div>
+
 ### Propiedad
 
 El ángulo semi-inscrito mide la **mitad del arco** que determina:
@@ -97,6 +127,16 @@ $$
 ## 📖 Ángulo interior (vértice dentro)
 
 > **Definición:** Un ángulo interior tiene su vértice **dentro** de la circunferencia (pero no en el centro).
+
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; max-width: 500px;">
+  <div style="margin-bottom: 0.5rem;">
+    <span style="font-size: 1rem;">📊</span>
+    <strong style="color: #1e293b; font-size: 0.9rem; margin-left: 0.3rem;">Ángulo Interior</strong>
+  </div>
+
+![Ángulo interior](/images/geometria/circulos/angulo-interior.svg)
+
+</div>
 
 ### Propiedad
 
@@ -119,6 +159,16 @@ $$
 ## 📖 Ángulo exterior (vértice fuera)
 
 > **Definición:** Un ángulo exterior tiene su vértice **fuera** de la circunferencia.
+
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; max-width: 550px;">
+  <div style="margin-bottom: 0.5rem;">
+    <span style="font-size: 1rem;">📊</span>
+    <strong style="color: #1e293b; font-size: 0.9rem; margin-left: 0.3rem;">Ángulo Exterior</strong>
+  </div>
+
+![Ángulo exterior](/images/geometria/circulos/angulo-exterior.svg)
+
+</div>
 
 ### Propiedad
 

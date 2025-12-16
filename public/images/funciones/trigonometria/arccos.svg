@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" 
+style="max-width: 100%; height: auto; font-family: Inter, system-ui, sans-serif;">
+
+  <style>
+    .wave-path {
+      stroke-dasharray: 3000;
+      stroke-dashoffset: 3000;
+      animation: drawWave 1.5s ease-out forwards;
+    }
+    .marker-group { opacity: 0; animation: fadeIn 0.5s ease-out 1.5s forwards; }
+    .label-group { opacity: 0; animation: fadeIn 0.5s ease-out 1.8s forwards; }
+    .annotation-group { opacity: 0; animation: fadeIn 0.5s ease-out 2.0s forwards; }
+    @keyframes drawWave { to { stroke-dashoffset: 0; } }
+    @keyframes fadeIn { to { opacity: 1; } }
+  </style>
+
+  <rect width="600" height="400" fill="#f8fafc" rx="8"/>
+  <text x="300.0" y="25" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">Arcocoseno: de números a ángulos</text>
+  <g class="grid">
+    <line x1="300.0" y1="55" x2="300.0" y2="345" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="55" y1="345.0" x2="545" y2="345.0" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="55" y1="272.5" x2="545" y2="272.5" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="55" y1="236.2" x2="545" y2="236.2" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+  </g>
+  <g class="axes">
+    <line x1="55" y1="308.8" x2="545" y2="308.8" stroke="#374151" stroke-width="2"/>
+    <polygon points="545,308.8 537,304.8 537,312.8" fill="#374151"/>
+    <line x1="300.0" y1="55" x2="300.0" y2="345" stroke="#374151" stroke-width="2"/>
+    <polygon points="300.0,55 296.0,63 304.0,63" fill="#374151"/>
+    <text x="555" y="313.8" font-size="14" font-weight="bold" fill="#374151">x</text>
+    <text x="308.0" y="50" font-size="14" font-weight="bold" fill="#374151">y (radianes)</text>
+    <line x1="296.0" y1="236.2" x2="304.0" y2="236.2" stroke="#374151" stroke-width="1.5"/>
+    <text x="288.0" y="240.2" text-anchor="end" font-size="12" fill="#374151">1</text>
+  </g>
+  <path id="arccos-x" class="wave-path" d="M 113.80 92.23 L 116.25 97.23 L 118.70 101.04 L 121.15 104.24 L 123.60 107.06 L 126.05 109.62 L 128.50 111.98 L 130.95 114.18 L 133.40 116.25 L 135.85 118.22 L 138.30 120.09 L 140.75 121.89 L 143.20 123.62 L 145.65 125.29 L 148.10 126.91 L 150.55 128.48 L 153.00 130.00 L 155.45 131.49 L 157.90 132.94 L 160.35 134.36 L 162.80 135.75 L 165.25 137.11 L 167.70 138.45 L 170.15 139.76 L 172.60 141.05 L 175.05 142.32 L 177.50 143.57 L 179.95 144.80 L 182.40 146.01 L 184.85 147.21 L 187.30 148.39 L 189.75 149.56 L 192.20 150.72 L 194.65 151.86 L 197.10 152.99 L 199.55 154.11 L 202.00 155.22 L 204.45 156.32 L 206.90 157.41 L 209.35 158.49 L 211.80 159.56 L 214.25 160.62 L 216.70 161.67 L 219.15 162.72 L 221.60 163.76 L 224.05 164.79 L 226.50 165.82 L 228.95 166.84 L 231.40 167.86 L 233.85 168.87 L 236.30 169.87 L 238.75 170.87 L 241.20 171.86 L 243.65 172.85 L 246.10 173.84 L 248.55 174.82 L 251.00 175.80 L 253.45 176.77 L 255.90 177.74 L 258.35 178.71 L 260.80 179.68 L 263.25 180.64 L 265.70 181.60 L 268.15 182.56 L 270.60 183.51 L 273.05 184.46 L 275.50 185.42 L 277.95 186.37 L 280.40 187.31 L 282.85 188.26 L 285.30 189.21 L 287.75 190.15 L 290.20 191.10 L 292.65 192.04 L 295.10 192.98 L 297.55 193.92 L 300.00 194.87 L 302.45 195.81 L 304.90 196.75 L 307.35 197.70 L 309.80 198.64 L 312.25 199.58 L 314.70 200.53 L 317.15 201.47 L 319.60 202.42 L 322.05 203.37 L 324.50 204.32 L 326.95 205.27 L 329.40 206.22 L 331.85 207.18 L 334.30 208.14 L 336.75 209.10 L 339.20 210.06 L 341.65 211.02 L 344.10 211.99 L 346.55 212.96 L 349.00 213.94 L 351.45 214.91 L 353.90 215.90 L 356.35 216.88 L 358.80 217.87 L 361.25 218.87 L 363.70 219.86 L 366.15 220.87 L 368.60 221.88 L 371.05 222.89 L 373.50 223.91 L 375.95 224.94 L 378.40 225.97 L 380.85 227.01 L 383.30 228.06 L 385.75 229.11 L 388.20 230.18 L 390.65 231.25 L 393.10 232.33 L 395.55 233.42 L 398.00 234.51 L 400.45 235.62 L 402.90 236.74 L 405.35 237.87 L 407.80 239.02 L 410.25 240.17 L 412.70 241.34 L 415.15 242.52 L 417.60 243.72 L 420.05 244.94 L 422.50 246.17 L 424.95 247.42 L 427.40 248.69 L 429.85 249.98 L 432.30 251.29 L 434.75 252.62 L 437.20 253.98 L 439.65 255.37 L 442.10 256.79 L 444.55 258.24 L 447.00 259.73 L 449.45 261.26 L 451.90 262.83 L 454.35 264.44 L 456.80 266.11 L 459.25 267.84 L 461.70 269.64 L 464.15 271.52 L 466.60 273.48 L 469.05 275.56 L 471.50 277.76 L 473.95 280.11 L 476.40 282.67 L 478.85 285.50 L 481.30 288.70 L 483.75 292.50 L 486.20 297.51" fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <g class="marker-group">
+    <circle cx="111.5" cy="81.0" r="6" fill="#3b82f6" stroke="white" stroke-width="2"/>
+    <circle cx="300.0" cy="194.9" r="6" fill="#22c55e" stroke="white" stroke-width="2"/>
+    <circle cx="488.5" cy="308.8" r="6" fill="#3b82f6" stroke="white" stroke-width="2"/>
+  </g>
+  <g class="label-group">
+    <rect x="46.53846153846155" y="72.98453261474" width="100" height="16" fill="white" fill-opacity="0.9" rx="3"/>
+    <text x="96.5" y="85.0" text-anchor="end" font-size="11" font-weight="bold" fill="#3b82f6">(-1, π)</text>
+    <rect x="265.0" y="186.86726630737" width="100" height="16" fill="white" fill-opacity="0.9" rx="3"/>
+    <text x="315.0" y="198.9" text-anchor="start" font-size="11" font-weight="bold" fill="#22c55e">(0, π/2)</text>
+    <rect x="453.4615384615384" y="300.75" width="100" height="16" fill="white" fill-opacity="0.9" rx="3"/>
+    <text x="503.5" y="312.8" text-anchor="start" font-size="11" font-weight="bold" fill="#3b82f6">(1, 0)</text>
+  </g>
+  <g class="annotation-group">
+    <line x1="55" y1="81.0" x2="545" y2="81.0" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="8,4"/>
+    <text x="550" y="85.0" text-anchor="start" font-size="10" fill="#94a3b8">π</text>
+    <line x1="55" y1="308.8" x2="545" y2="308.8" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="8,4"/>
+  </g>
+</svg>

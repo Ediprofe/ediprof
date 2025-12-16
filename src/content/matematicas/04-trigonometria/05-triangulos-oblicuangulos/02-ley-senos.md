@@ -2,6 +2,16 @@
 
 La **Ley de Senos** relaciona los lados de un triángulo con los senos de sus ángulos opuestos.
 
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+    <strong style="color: #1e293b; font-size: 0.95rem; margin-left: 0.3rem;">Ley de Senos: a/sin A = b/sin B = c/sin C</strong>
+  </div>
+
+![Ley de Senos](/images/trigonometria/triangulos-oblicuangulos/ley-senos.svg)
+
+</div>
+
 ---
 
 ## 📖 Enunciado

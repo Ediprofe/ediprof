@@ -1,0 +1,53 @@
+{
+  "tipo": "triangulo-rectangulo",
+  "titulo": "Los tres lados: Opuesto, Adyacente e Hipotenusa",
+  "canvas": {
+    "width": 550,
+    "height": 380,
+    "padding": 50
+  },
+  "vertices": {
+    "A": [70, 300],
+    "B": [310, 300],
+    "C": [310, 110]
+  },
+  "angulos": {
+    "A": {
+      "tipo": "agudo",
+      "etiqueta": "θ",
+      "color": "#8b5cf6",
+      "radio": 35,
+      "offset_etiqueta": 50
+    },
+    "B": {
+      "tipo": "recto"
+    }
+  },
+  "lados": {
+    "AB": {
+      "texto": "A (Adyacente)",
+      "color": "#22c55e"
+    },
+    "BC": {
+      "texto": "O (Opuesto)",
+      "color": "#ef4444"
+    },
+    "AC": {
+      "texto": "H (Hipotenusa)",
+      "color": "#3b82f6"
+    }
+  },
+  "offset_etiquetas": 30,
+  "info_box": {
+    "x": 365,
+    "y": 90,
+    "width": 170,
+    "titulo": "NOMENCLATURA",
+    "lineas": [
+      {"texto": "H = Hipotenusa", "color": "#3b82f6"},
+      {"texto": "O = Cateto Opuesto", "color": "#ef4444"},
+      {"texto": "A = Cateto Adyacente", "color": "#22c55e"}
+    ]
+  }
+}
+

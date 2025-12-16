@@ -1,68 +1,107 @@
 # Desplazamiento de Fase
 
-El **desplazamiento de fase** (o desfase) mueve la gráfica horizontalmente. También estudiaremos el desplazamiento vertical.
+Ya dominaste cómo estirar y comprimir las ondas. Ahora aprenderás a **moverlas**: hacia los lados y hacia arriba o abajo. Es como ajustar la posición de un slider en la pantalla.
 
 ---
 
-## 📖 La función general
+## 🎯 En esta lección aprenderás
+
+- Cómo mover la onda horizontalmente (desplazamiento de fase)
+- Cómo mover la onda verticalmente (desplazamiento vertical)
+- La fórmula general completa con los 4 parámetros
+- A identificar todos los parámetros en cualquier función
+
+---
+
+## 📋 Cheat Sheet
+
+Para la función general:
 
 $$
-y = A \sin(Bx - C) + D
+y = A \sin(B(x - C)) + D \quad \text{o} \quad y = A \sin(Bx - C) + D
 $$
 
-o
+| Parámetro | Nombre | Efecto |
+|-----------|--------|--------|
+| A | Amplitud | Estiramiento vertical |
+| B | Frecuencia | Compresión horizontal |
+| C | Fase | Desplazamiento horizontal |
+| D | Desplazamiento vertical | Subir/bajar toda la onda |
 
-$$
-y = A \sin\left(B\left(x - \frac{C}{B}\right)\right) + D
-$$
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+    <strong style="color: #1e293b; font-size: 0.95rem; margin-left: 0.3rem;">Desplazamiento de fase (horizontal)</strong>
+  </div>
 
-Donde:
-- $A$ = amplitud
-- $B$ = afecta el período
-- $C$ (o $\frac{C}{B}$) = desplazamiento de fase
-- $D$ = desplazamiento vertical
+![Desplazamiento de fase horizontal](/images/funciones/trigonometria/fase-horizontal.svg)
+
+</div>
 
 ---
 
 ## 📖 Desplazamiento de fase (horizontal)
 
-> **Definición:** El desplazamiento de fase es cuánto se mueve la gráfica horizontalmente.
+### La regla de oro
+
+$$
+y = \sin(x - C) \quad \Rightarrow \quad \text{desplaza } C \text{ unidades a la DERECHA}
+$$
+
+$$
+y = \sin(x + C) \quad \Rightarrow \quad \text{desplaza } C \text{ unidades a la IZQUIERDA}
+$$
+
+> ⚠️ **¡Contraintuitivo!** Restar mueve a la derecha, sumar mueve a la izquierda.
+
+### Forma general con B
+
+Cuando hay un coeficiente $B$:
+
+$$
+y = \sin(Bx - C) = \sin\left(B\left(x - \frac{C}{B}\right)\right)
+$$
+
+El desplazamiento de fase es:
 
 $$
 \text{Fase} = \frac{C}{B}
 $$
 
-### Efecto
-
-| Signo | Dirección |
-|-------|-----------|
-| $\frac{C}{B} > 0$ | Desplaza a la **derecha** |
-| $\frac{C}{B} < 0$ | Desplaza a la **izquierda** |
-
 ### Ejemplo
 
 $$
-y = \sin\left(x - \frac{\pi}{4}\right)
+y = \sin(2x - \pi)
 $$
 
-Desplazamiento de fase = $\frac{\pi}{4}$ a la derecha
+- $B = 2$
+- $C = \pi$
+- Fase $= \frac{\pi}{2}$ a la **derecha**
 
 ---
 
 ## 📖 Desplazamiento vertical
 
-> **Definición:** El desplazamiento vertical sube o baja toda la gráfica.
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+    <strong style="color: #1e293b; font-size: 0.95rem; margin-left: 0.3rem;">Desplazamiento vertical (D)</strong>
+  </div>
+
+![Desplazamiento vertical](/images/funciones/trigonometria/desplazamiento-vertical.svg)
+
+</div>
+
+### La fórmula
 
 $$
-\text{Desplazamiento vertical} = D
+y = \sin x + D
 $$
 
-### Efecto
-
-| Valor | Dirección |
-|-------|-----------|
-| $D > 0$ | Sube la gráfica |
-| $D < 0$ | Baja la gráfica |
+| Valor de D | Efecto |
+|------------|--------|
+| $D > 0$ | Sube toda la onda |
+| $D < 0$ | Baja toda la onda |
 
 ### Nuevo rango
 
@@ -72,13 +111,21 @@ $$
 
 ---
 
-## 📖 Ejemplo completo
+## 📖 Ejemplo completo: los 4 parámetros
 
-$$
-y = 3\sin(2x - \pi) + 1
-$$
+Analicemos $y = 3\sin(2x - \pi) + 1$:
 
-### Análisis
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+    <strong style="color: #1e293b; font-size: 0.95rem; margin-left: 0.3rem;">y = 3sin(2x - π) + 1: Análisis completo</strong>
+  </div>
+
+![Ejemplo completo: y = 3sin(2x - π) + 1](/images/funciones/trigonometria/ejemplo-4-parametros.svg)
+
+</div>
+
+### Análisis paso a paso
 
 | Parámetro | Valor | Significado |
 |-----------|-------|-------------|
@@ -90,12 +137,12 @@ $$
 ### Rango
 
 $$
-[1 - 3, 1 + 3] = [-2, 4]
+\text{Rango} = [D - |A|, D + |A|] = [1 - 3, 1 + 3] = [-2, 4]
 $$
 
 ---
 
-## 📖 Forma alternativa
+## 📖 Forma alternativa (más intuitiva)
 
 A veces se escribe:
 
@@ -104,22 +151,35 @@ y = A\sin(B(x - h)) + k
 $$
 
 Donde:
-- $h$ = desplazamiento horizontal directo
+- $h$ = desplazamiento horizontal **directo**
 - $k$ = desplazamiento vertical
 
-Esta forma es más intuitiva.
+> 💡 Esta forma es más fácil de leer: $h$ te dice directamente cuánto se desplaza.
 
 ---
 
-## 📖 Puntos clave nuevo
+## 📖 Puntos clave desplazados
 
-Para $y = A\sin(B(x - h)) + k$, los puntos clave se desplazan:
+Para $y = A\sin(B(x - h)) + k$, los puntos clave se mueven:
 
-| Punto original | Punto desplazado |
-|----------------|------------------|
+| Punto original de sin(x) | Nuevo punto |
+|--------------------------|-------------|
 | $(0, 0)$ | $(h, k)$ |
 | $(\frac{\pi}{2B}, A)$ | $(\frac{\pi}{2B} + h, A + k)$ |
 | $(\frac{\pi}{B}, 0)$ | $(\frac{\pi}{B} + h, k)$ |
+| $(\frac{3\pi}{2B}, -A)$ | $(\frac{3\pi}{2B} + h, -A + k)$ |
+| $(\frac{2\pi}{B}, 0)$ | $(\frac{2\pi}{B} + h, k)$ |
+
+---
+
+## 🧠 Resumen de efectos
+
+| Transformación | Fórmula | Efecto |
+|----------------|---------|--------|
+| Estiramiento vertical | $A \cdot f(x)$ | Multiplica altura por $A$ |
+| Compresión horizontal | $f(Bx)$ | Divide período por $B$ |
+| Desplazamiento derecha | $f(x - C)$ | Mueve $C$ a la derecha |
+| Desplazamiento arriba | $f(x) + D$ | Sube $D$ unidades |
 
 ---
 
@@ -136,9 +196,9 @@ Para $y = A\sin(B(x - h)) + k$, los puntos clave se desplazan:
 <details>
 <summary><strong>Ver respuestas</strong></summary>
 
-1. Fase = $\pi$ a la derecha
-2. Fase = $-\frac{\pi}{2}$ = $\frac{\pi}{2}$ a la izquierda
-3. Fase = $\frac{\pi}{2}$ a la derecha (porque $\frac{\pi}{2} = \frac{C}{B} = \frac{\pi}{2}$)
+1. Fase = $\pi$ a la **derecha** (restar = derecha)
+2. Fase = $\frac{\pi}{2}$ a la **izquierda** (sumar = izquierda)
+3. Fase = $\frac{\pi}{2}$ a la **derecha** (porque $\frac{C}{B} = \frac{\pi}{2}$)
 
 </details>
 
@@ -178,8 +238,8 @@ Para $y = 4\sin\left(3x + \frac{\pi}{2}\right) - 2$, determina:
 
 1. Amplitud = 4
 2. Período = $\frac{2\pi}{3}$
-3. Fase = $-\frac{\pi}{6}$ (a la izquierda)
-4. Desplazamiento vertical = -2 (abajo)
+3. Fase = $\frac{\pi/2}{3} = \frac{\pi}{6}$ a la **izquierda** (signo positivo)
+4. Desplazamiento vertical = 2 hacia **abajo**
 5. Rango = $[-2-4, -2+4] = [-6, 2]$
 
 </details>
@@ -197,11 +257,17 @@ Escribe una función coseno con:
 <details>
 <summary><strong>Ver respuesta</strong></summary>
 
+Necesitamos:
+- $A = 2$
+- Período = $4\pi$ → $B = \frac{2\pi}{4\pi} = \frac{1}{2}$
+- Fase = $\frac{\pi}{3}$ derecha
+- $D = 5$
+
 $$
 y = 2\cos\left(\frac{1}{2}\left(x - \frac{\pi}{3}\right)\right) + 5
 $$
 
-o
+O expandiendo:
 
 $$
 y = 2\cos\left(\frac{x}{2} - \frac{\pi}{6}\right) + 5

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 400" 
+style="font-family: Inter, system-ui, sans-serif;">
+<rect width="650" height="400" fill="#f8fafc"/>
+
+<!-- Título -->
+<text x="325.0" y="28" text-anchor="middle" font-size="18" font-weight="bold" fill="#1e293b">Identidades del Ángulo Mitad</text>
+<text x="325.0" y="48" text-anchor="middle" font-size="11" fill="#94a3b8">De θ a θ/2: "Dividimos el ángulo a la mitad"</text>
+
+<!-- Seno mitad -->
+<rect x="30" y="70" width="190" height="100" rx="10" fill="#3b82f6" fill-opacity="0.15" stroke="#3b82f6" stroke-width="2"/>
+<text x="125" y="95" text-anchor="middle" font-size="12" font-weight="bold" fill="#3b82f6">SENO</text>
+<text x="125" y="125" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e293b">sin(θ/2) = ±√[(1-cos θ)/2]</text>
+<text x="125" y="158" text-anchor="middle" font-size="10" fill="#ef4444">⚠️ El signo depende del cuadrante</text>
+
+<!-- Coseno mitad -->
+<rect x="230" y="70" width="190" height="100" rx="10" fill="#22c55e" fill-opacity="0.15" stroke="#22c55e" stroke-width="2"/>
+<text x="325" y="95" text-anchor="middle" font-size="12" font-weight="bold" fill="#22c55e">COSENO</text>
+<text x="325" y="125" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e293b">cos(θ/2) = ±√[(1+cos θ)/2]</text>
+<text x="325" y="158" text-anchor="middle" font-size="10" fill="#ef4444">⚠️ El signo depende del cuadrante</text>
+
+<!-- Tangente mitad -->
+<rect x="430" y="70" width="190" height="100" rx="10" fill="#8b5cf6" fill-opacity="0.15" stroke="#8b5cf6" stroke-width="2"/>
+<text x="525" y="95" text-anchor="middle" font-size="12" font-weight="bold" fill="#8b5cf6">TANGENTE (sin radicales)</text>
+<text x="525" y="122" text-anchor="middle" font-size="12" fill="#1e293b">tan(θ/2) = sin θ / (1+cos θ)</text>
+<text x="525" y="148" text-anchor="middle" font-size="12" fill="#1e293b">tan(θ/2) = (1-cos θ) / sin θ</text>
+
+<!-- Tabla de signos -->
+<rect x="100" y="190" width="450" height="130" rx="10" fill="white" stroke="#e2e8f0" stroke-width="2"/>
+<text x="325.0" y="215" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e293b">📋 Determinación del signo según el cuadrante de θ/2</text>
+
+<text x="180" y="245" text-anchor="middle" font-size="11" font-weight="bold" fill="#94a3b8">Cuadrante</text>
+<text x="280" y="245" text-anchor="middle" font-size="11" font-weight="bold" fill="#3b82f6">sin</text>
+<text x="360" y="245" text-anchor="middle" font-size="11" font-weight="bold" fill="#22c55e">cos</text>
+<text x="440" y="245" text-anchor="middle" font-size="11" font-weight="bold" fill="#8b5cf6">tan</text>
+
+<line x1="120" y1="252" x2="530" y2="252" stroke="#e2e8f0" stroke-width="1"/>
+
+<text x="180" y="272" text-anchor="middle" font-size="11" fill="#1e293b">I (0° - 90°)</text>
+<text x="280" y="272" text-anchor="middle" font-size="12" fill="#22c55e">+</text>
+<text x="360" y="272" text-anchor="middle" font-size="12" fill="#22c55e">+</text>
+<text x="440" y="272" text-anchor="middle" font-size="12" fill="#22c55e">+</text>
+
+<text x="180" y="292" text-anchor="middle" font-size="11" fill="#1e293b">II (90° - 180°)</text>
+<text x="280" y="292" text-anchor="middle" font-size="12" fill="#22c55e">+</text>
+<text x="360" y="292" text-anchor="middle" font-size="12" fill="#ef4444">−</text>
+<text x="440" y="292" text-anchor="middle" font-size="12" fill="#ef4444">−</text>
+
+<text x="180" y="312" text-anchor="middle" font-size="11" fill="#1e293b">III y IV</text>
+<text x="360" y="312" text-anchor="middle" font-size="10" fill="#94a3b8">seguir regla ASTC</text>
+
+<!-- Tip -->
+<text x="325.0" y="365" text-anchor="middle" font-size="11" fill="#94a3b8">💡 Primero encuentra θ/2, luego determina su cuadrante para elegir el signo correcto</text>
+
+</svg>

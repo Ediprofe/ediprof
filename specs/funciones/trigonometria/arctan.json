@@ -1,0 +1,42 @@
+{
+  "type": "function",
+  "metadata": {
+    "id": "arctan",
+    "title": "Arcotangente: asíntotas horizontales",
+    "lesson": "04-trigonometria/03-graficas-funciones-trigonometricas/07-funciones-inversas"
+  },
+  "canvas": {
+    "width": 650,
+    "height": 400,
+    "padding": 55,
+    "background": "#f8fafc"
+  },
+  "axes": {
+    "x": { "min": -5, "max": 5, "label": "x" },
+    "y": { "min": -2, "max": 2, "label": "y (radianes)", "ticks": "pi" }
+  },
+  "functions": [
+    {
+      "id": "arctan-x",
+      "expression": "arctan(x)",
+      "color": "#22c55e",
+      "strokeWidth": 3
+    }
+  ],
+  "markers": [
+    { "x": -1, "y": "-pi/4", "label": "(-1, -π/4)", "color": "#8b5cf6", "labelPosition": "bottom" },
+    { "x": 0, "y": 0, "label": "(0, 0)", "color": "#374151", "labelPosition": "top" },
+    { "x": 1, "y": "pi/4", "label": "(1, π/4)", "color": "#8b5cf6", "labelPosition": "top" }
+  ],
+  "annotations": [
+    { "type": "horizontal_line", "y": "pi/2", "color": "#ef4444", "style": "dashed", "label": "Asíntota y = π/2" },
+    { "type": "horizontal_line", "y": "-pi/2", "color": "#ef4444", "style": "dashed", "label": "Asíntota y = -π/2" }
+  ],
+  "animations": {
+    "enabled": true,
+    "style": "draw",
+    "duration": 1.5,
+    "markersDelay": 1.5
+  }
+}
+

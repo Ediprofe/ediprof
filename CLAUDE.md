@@ -31,11 +31,14 @@ ediprofe/
 │   └── utils/
 ├── public/
 │   └── images/
-│       └── geometria/
+│       ├── geometria/              # SVGs de GeometrySpec
+│       └── funciones/              # SVGs de GraphSpec
 ├── scripts/
-│   └── geometry/
+│   ├── geometry/                   # Renderer de geometría exacta
+│   └── functions/                  # Renderer de GraphSpec (unificado)
 ├── specs/
-│   └── geometria/
+│   ├── geometria/                  # Specs de geometría
+│   └── funciones/                  # Specs de GraphSpec (gráficas)
 ├── .agent/
 │   └── workflows/
 └── CLAUDE.md
@@ -127,7 +130,28 @@ CAPÍTULO: [Nombre]
 | Progresión | ¿Simple → complejo? |
 | Ejemplos | ¿Suficientes y paso a paso? |
 | Visuales | ¿Hay mínimo 1 ilustración por concepto? |
+| **Ilustraciones Dicentes** | ¿Cada gráfico tiene leyenda y anotaciones explicativas? |
 | Motivación | ¿El estudiante sabe POR QUÉ? |
+
+> 🚨 **CRÍTICO: Ilustraciones Auto-Explicativas**
+>
+> Todo gráfico DEBE ser **auto-explicativo** sin necesidad de leer el texto alrededor:
+> - **Leyendas:** Cuando hay múltiples curvas/elementos, cada uno debe estar etiquetado con su fórmula/nombre y color
+> - **Anotaciones:** Flechas indicando dirección de transformaciones, líneas de referencia con etiquetas
+> - **Colores consistentes:** La función base en gris (`#94a3b8`), transformaciones en colores vivos
+> - **Texto contextual:** Notas breves dentro del gráfico explicando el "¿por qué?"
+
+> 🚨 **CRÍTICO: Verificación Matemática de Puntos Críticos**
+>
+> Cuando se marcan puntos en gráficos de funciones transformadas, **VERIFICAR matemáticamente** las coordenadas:
+>
+> Para `y = A·sin(Bx - C) + D`, el **máximo** (donde sin = 1) ocurre cuando:
+> - `Bx - C = π/2` → `x = (π/2 + C) / B`
+>
+> **Ejemplo:** `y = 3sin(2x - π) + 1`
+> - Máximo: `2x - π = π/2` → `x = 3π/4` (NO π/2)
+>
+> **NUNCA asumir** que el máximo está en π/2 sin calcular.
 
 ### 3.3 Proponer Mejoras
 
@@ -235,38 +259,32 @@ Cada lección debe ser un **LIBRETO LITERAL** que el mejor profesor del colegio 
 
 ---
 
-## 🌳 Árbol de Decisión
+## 🌳 Árbol de Decisión SIMPLIFICADO
 
 ```
 ¿QUÉ TIPO DE ILUSTRACIÓN NECESITO?
 │
-├─── 📊 ¿Es una GRÁFICA de funciones o datos?
-│    └─── SÍ → ECHARTS (inline en .md)
-│         • Funciones: f(x), parábolas, exponenciales
-│         • Series de datos, estadísticas
-│         • Histogramas, barras, líneas
-│         • Plano cartesiano con puntos
-│         📁 Ver: .agent/workflows/echarts.md
+├─── 📈 ¿Es una GRÁFICA (funciones, datos, estadísticas)?
+│    └─── SÍ → GRAPHSPEC (JSON → Python → SVG animado) ⭐ RECOMENDADO
+│         • Funciones: sin(x), cos(x), lineales, cuadráticas
+│         • Datos: histogramas, barras, scatter plots
+│         • Fracciones: pie charts
+│         • Animaciones CSS automáticas
+│         📁 Ver: .agent/workflows/graphspec.md
 │
 ├─── 📐 ¿Es GEOMETRÍA con propiedades exactas?
 │    └─── SÍ → GEOMETRYSPEC (JSON → Python → SVG)
 │         • Triángulos con puntos notables
 │         • Mediatrices, bisectrices, alturas, medianas
 │         • Circunferencias inscritas/circunscritas
-│         • Paralelismo, perpendicularidad exacta
 │         📁 Ver: .agent/workflows/geometry-exact.md
 │
 ├─── ✏️ ¿Es un DIAGRAMA ilustrativo/conceptual?
 │    └─── SÍ → ROUGH.JS (inline en .md)
 │         • Situaciones físicas (bloques, poleas)
-│         • Modelos atómicos, partículas
-│         • Equipos de laboratorio
-│         • Mapas conceptuales, organigramas
+│         • Modelos atómicos, equipos de laboratorio
+│         • Mapas conceptuales
 │         📁 Ver: .agent/workflows/roughjs.md
-│
-├─── 🥧 ¿Es una representación de FRACCIONES?
-│    └─── SÍ → CHART.JS (pie charts, inline)
-│         📁 Ver: .agent/workflows/chartjs.md
 │
 ├─── 🎲 ¿Es GEOMETRÍA 3D?
 │    └─── SÍ → THREE.JS (inline en .md)
@@ -277,26 +295,49 @@ Cada lección debe ser un **LIBRETO LITERAL** que el mejor profesor del colegio 
           • $inline$ o $$bloque$$
 ```
 
+> **NOTA:** GraphSpec unifica lo que antes eran FunctionSpec, ECharts y Chart.js en un solo sistema optimizado.
+
 ---
 
 ## Matriz de Decisión Rápida
 
-| Necesito... | Uso... | Confianza |
-|-------------|--------|-----------|
-| Gráfica de $f(x) = 2x + 3$ | ECharts | ⭐⭐⭐⭐⭐ 95% |
-| Baricentro de triángulo | GeometrySpec | ⭐⭐⭐⭐⭐ 99% |
-| Histograma de datos | ECharts | ⭐⭐⭐⭐⭐ 95% |
-| Circuncentro exacto | GeometrySpec | ⭐⭐⭐⭐⭐ 99% |
-| Bloque en plano inclinado | Rough.js | ⭐⭐⭐⭐ 85% |
-| Modelo atómico de Bohr | Rough.js | ⭐⭐⭐⭐ 85% |
-| Fracción 3/4 visual | Chart.js | ⭐⭐⭐⭐ 90% |
-| Cubo con diagonales | Three.js | ⭐⭐⭐ 70% |
+| Necesito... | Uso... | Tipo GraphSpec |
+|-------------|--------|----------------|
+| Gráfica de $\sin x$, $\cos x$, $\tan x$ | **GraphSpec** | `function` |
+| Onda con amplitud/período/fase | **GraphSpec** | `function` |
+| Gráfica lineal $f(x) = 2x + 3$ | **GraphSpec** | `function` |
+| Histograma de frecuencias | **GraphSpec** | `histogram` |
+| Gráfico de barras | **GraphSpec** | `bar` |
+| Scatter plot (dispersión) | **GraphSpec** | `scatter` |
+| Fracción 3/4 como pastel | **GraphSpec** | `pie` |
+| Baricentro de triángulo | GeometrySpec | - |
+| Circuncentro exacto | GeometrySpec | - |
+| Bloque en plano inclinado | Rough.js | - |
+| Modelo atómico de Bohr | Rough.js | - |
+| Cubo con diagonales 3D | Three.js | - |
 
 ---
 
 ## 🚨 Reglas Críticas para Ilustraciones
 
-### Para Geometría Exacta
+### Para Gráficas de Funciones y Datos (GraphSpec)
+
+```
+✅ OBLIGATORIO:
+   • Crear GraphSpec JSON en specs/funciones/
+   • Especificar "type": "function" | "bar" | "histogram" | "pie" | "scatter"
+   • Ejecutar: python scripts/functions/renderer.py --spec [archivo]
+   • Enlazar SVG resultante: ![Alt](/images/funciones/...)
+
+TIPOS DISPONIBLES:
+   • "function" → Funciones matemáticas (sin, cos, lineales, etc.)
+   • "bar" → Gráficos de barras
+   • "histogram" → Histogramas de frecuencias
+   • "pie" → Gráficos de pastel (fracciones)
+   • "scatter" → Gráficos de dispersión
+```
+
+### Para Geometría Exacta (GeometrySpec)
 
 ```
 ❌ PROHIBIDO:
@@ -310,18 +351,25 @@ Cada lección debe ser un **LIBRETO LITERAL** que el mejor profesor del colegio 
    • Enlazar SVG resultante: ![Alt](/images/geometria/...)
 ```
 
-### Para Todos los Gráficos
+### Reutilización Inteligente de Specs
 
 ```
-✅ SIEMPRE:
-   • Envolver en DOMContentLoaded
-   • Verificar disponibilidad: if (typeof echarts !== 'undefined')
-   • Usar wrapper con fondo y bordes redondeados
-   • ID únicos: tipo-leccion-numero
+ANTES de crear un nuevo spec:
 
-❌ NUNCA:
-   • Interactividad por defecto (fixed: true en todos los puntos)
-   • Zoom, pan, o elementos arrastrables sin solicitud explícita
+1. BUSCAR si ya existe uno similar:
+   • Funciones trig → specs/funciones/trigonometria/
+   • Geometría → specs/geometria/triangulos/
+
+2. SI EXISTE similar:
+   • Duplicar y modificar parámetros
+   • Mantener nomenclatura consistente
+
+3. SI NO EXISTE:
+   • Crear nuevo con nombre descriptivo
+
+CONVENCIÓN DE NOMBRES:
+   • descripcion-concisa.json
+   • Ejemplos: seno-principal.json, histograma-edades.json
 ```
 
 ---
@@ -352,6 +400,16 @@ La fórmula es $a^2 + b^2 = c^2$
 | LaTeX en títulos de secciones | Usar texto plano o Unicode |
 | `\[...\]` o `\(...\)` | Usar `$$...$$` o `$...$` |
 | Símbolos de moneda `$` solos | Usar `USD`, `COP`, o escapar |
+
+> 🚨 **CRÍTICO: NUNCA usar LaTeX en títulos Markdown**
+> 
+> Los títulos `## Sección` aparecen en la tabla de contenidos. Si tienen `$x^2$`, se verá como código crudo: `$x^2$`
+> 
+> | ❌ MAL | ✅ BIEN |
+> |--------|---------|
+> | `## Función $f(x) = x^2$` | `## Función cuadrática f(x) = x²` |
+> | `## El seno $\sin\theta$` | `## El seno (sin θ)` |
+> | `## Derivada $\frac{dy}{dx}$` | `## La derivada dy/dx` |
 
 ---
 
@@ -445,12 +503,223 @@ Controlan sus propios colores
 | Archivo | Contenido |
 |---------|-----------|
 | `.agent/workflows/content-generation.md` | Flujo de generación de lecciones |
-| `.agent/workflows/echarts.md` | Funciones, datos, estadísticas |
+| `.agent/workflows/graphspec.md` | **GraphSpec: sistema unificado de gráficas** ⭐ PRINCIPAL |
 | `.agent/workflows/geometry-exact.md` | GeometrySpec: geometría exacta |
 | `.agent/workflows/roughjs.md` | Diagramas ilustrativos |
-| `.agent/workflows/chartjs.md` | Fracciones |
 | `.agent/workflows/threejs.md` | Geometría 3D |
-| `.agent/workflows/illustration-decision.md` | Árbol de decisión expandido |
+| `.agent/workflows/illustration-decision.md` | Árbol de decisión simplificado |
+
+> **NOTA:** GraphSpec reemplaza a ECharts, Chart.js y FunctionSpec para todas las gráficas.
+
+---
+
+# 🔧 SISTEMA DE RENDERERS ESPECIALIZADOS
+
+Además de los renderers principales (GraphSpec, GeometrySpec), existen renderers especializados por tema:
+
+## Renderers Disponibles
+
+| Renderer | Ubicación | Propósito |
+|----------|-----------|-----------|
+| `renderer.py` | `scripts/functions/` | GraphSpec: funciones, barras, pie, scatter |
+| `renderer.py` | `scripts/geometry/` | GeometrySpec: geometría exacta |
+| `trigonometry_renderer.py` | `scripts/geometry/` | Triángulos trigonométricos con etiquetas |
+| `unit_circle_renderer.py` | `scripts/geometry/` | Círculo unitario, cuadrantes, signos |
+| `identity_renderer.py` | `scripts/geometry/` | Identidades trig, fórmulas, estrategias |
+| `oblique_triangle_renderer.py` | `scripts/geometry/` | Triángulos oblicuángulos, leyes de senos/cosenos |
+| `circle_renderer.py` | `scripts/geometry/` | Circunferencia, círculo, elementos, ángulos, teoremas |
+
+## Uso de Renderers Especializados
+
+```bash
+# Círculo unitario
+python3 scripts/geometry/unit_circle_renderer.py --type basic --output archivo.svg
+# Tipos: basic, point, quadrants, reference, negative, quadrantal, cofunctions
+
+# Identidades trigonométricas  
+python3 scripts/geometry/identity_renderer.py --type map --output archivo.svg
+# Tipos: map, pythagorean, double, half, proof, equations
+
+# Triángulos trigonométricos
+python3 scripts/geometry/trigonometry_renderer.py --spec archivo.json --output archivo.svg
+
+# Triángulos oblicuángulos
+python3 scripts/geometry/oblique_triangle_renderer.py --type types --output archivo.svg
+# Tipos: types, sines, cosines, cases, navigation
+
+# Circunferencia y círculo (v2.0 - una ilustración por concepto)
+python3 scripts/geometry/circle_renderer.py --type TYPE --output archivo.svg
+
+# === BÁSICOS ===
+#   basic              → Circunferencia con centro y radio
+
+# === ELEMENTOS (uno por concepto) ===
+#   element_radius     → Solo el radio
+#   element_diameter   → Solo el diámetro
+#   element_chord      → Solo la cuerda
+#   element_arc        → Solo el arco
+#   element_sector     → Sector circular (2 radios + arco, "rebanada de pizza")
+#   element_segment    → Segmento circular (cuerda + arco, "media luna")
+#   element_crown      → Corona circular (2 circunferencias concéntricas)
+
+# === POSICIONES ===
+#   point_positions    → Punto interior/sobre/exterior
+#   tangent_secant     → Recta tangente vs secante
+#   circle_positions   → Exteriores, tangentes, secantes, concéntricas
+
+# === ÁNGULOS (uno por tipo) ===
+#   angle_central      → Ángulo central (vértice en centro)
+#   angle_inscribed    → Ángulo inscrito (vértice en circunferencia)
+#   angle_semi_inscribed → Ángulo semi-inscrito (un lado tangente)
+#   angle_interior     → Ángulo interior (vértice dentro)
+#   angle_exterior     → Ángulo exterior (vértice fuera)
+
+# === TEOREMAS ===
+#   theorem_inscribed  → Teorema: inscrito = ½ central
+#   theorem_tales      → Teorema de Tales (semicircunferencia = 90°)
+
+# === FÓRMULAS ===
+#   formula_length     → Longitud L = 2πr
+#   formula_area       → Área A = πr²
+#   formula_sector_area → Área del sector
+#   formula_segment_area → Área del segmento
+```
+
+## Organización de Salidas SVG
+
+```
+public/images/
+├── funciones/           # GraphSpec (gráficas de funciones)
+│   └── trigonometria/   # sin, cos, tan, inversas, etc.
+├── geometria/           # GeometrySpec (construcciones geométricas)
+│   └── triangulos/      # Puntos notables, etc.
+├── trigonometria/       # Renderers especializados
+│   ├── circulo-unitario/  # unit_circle_renderer.py
+│   ├── identidades/       # identity_renderer.py
+│   └── triangulos-oblicuangulos/  # oblique_triangle_renderer.py
+└── geometria/
+    └── circulos/          # circle_renderer.py
+```
+
+---
+
+# 📊 MANTENIBILIDAD DEL SISTEMA DE SPECS
+
+## Principio de Organización
+
+> **REGLA:** Cada tipo de ilustración tiene su lugar predefinido.
+> El agente NO debe crear nuevas carpetas sin justificación.
+
+## Estructura de Specs
+
+```
+specs/
+├── geometria/
+│   ├── triangulos/      # GeometrySpec de triángulos
+│   ├── cuadrilateros/   # GeometrySpec de cuadriláteros
+│   ├── circulos/        # GeometrySpec de círculos
+│   └── trigonometria/   # Specs de triángulos trig (OAH)
+└── funciones/
+    ├── trigonometria/   # GraphSpec de sin, cos, tan
+    ├── estadistica/     # GraphSpec de histogramas, barras
+    └── fracciones/      # GraphSpec de pie charts
+```
+
+## ¿Qué Renderer Usar por Tema?
+
+| Tema de la Lección | Renderer | Carpeta Output |
+|--------------------|----------|----------------|
+| Gráficas de funciones trig | `scripts/functions/renderer.py` | `public/images/funciones/trigonometria/` |
+| Círculo unitario | `scripts/geometry/unit_circle_renderer.py` | `public/images/trigonometria/circulo-unitario/` |
+| Identidades trig | `scripts/geometry/identity_renderer.py` | `public/images/trigonometria/identidades/` |
+| Triángulos rectángulos | `scripts/geometry/trigonometry_renderer.py` | `public/images/geometria/trigonometria/` |
+| Triángulos oblicuángulos | `scripts/geometry/oblique_triangle_renderer.py` | `public/images/trigonometria/triangulos-oblicuangulos/` |
+| **Circunferencia y círculo** | `scripts/geometry/circle_renderer.py` | `public/images/geometria/circulos/` |
+| Puntos notables | `scripts/geometry/renderer.py` | `public/images/geometria/triangulos/` |
+| Histogramas/barras | `scripts/functions/renderer.py` | `public/images/funciones/estadistica/` |
+
+## Checklist para Nuevos Renderers
+
+Antes de crear un nuevo renderer, verificar:
+
+1. [ ] ¿Existe ya un renderer que cubra este caso?
+2. [ ] ¿Se puede extender un renderer existente?
+3. [ ] Si es nuevo: documentar en esta tabla y en `.agent/workflows/`
+4. [ ] Crear carpeta de output en `public/images/` correspondiente
+
+---
+
+# 🔒 REGLAS DE RIGUROSIDAD PARA SVGs (TODAS LAS ILUSTRACIONES)
+
+> **PRINCIPIO:** Todo SVG generado debe ser 100% fiel a la descripción matemática. No hay margen para "aproximaciones visuales".
+
+## 1. Validación Matemática de Coordenadas
+
+```
+ANTES DE GENERAR:
+1. ¿Se calcularon TODAS las coordenadas con fórmulas matemáticas?
+2. ¿Se usaron funciones trigonométricas exactas (cos, sin, etc.)?
+3. ¿Se verificó que los puntos están donde deben estar?
+
+NUNCA:
+- Hardcodear coordenadas "a ojo"
+- Copiar coordenadas de un ejemplo sin recalcular
+- Asumir que x=π/2 es siempre el máximo de una función transformada
+```
+
+## 2. Verificación de Visibilidad del Texto
+
+```
+REGLA: Todo texto/etiqueta debe ser 100% visible.
+
+CHECKLIST:
+- [ ] ¿El texto cabe dentro del viewBox?
+- [ ] ¿No hay texto cortado en los bordes?
+- [ ] ¿El texto no se superpone con otros elementos?
+- [ ] ¿El tamaño de fuente es legible (mínimo 10px)?
+
+SOLUCIÓN: Calcular posición del texto DESPUÉS de definir el viewBox.
+Si el texto no cabe, ajustar viewBox o reubicar el texto.
+```
+
+## 3. Fidelidad Visual de Figuras Geométricas
+
+```
+REGLA: Cada figura debe ser EXACTAMENTE lo que representa.
+
+SECTOR CIRCULAR ≠ SEGMENTO CIRCULAR:
+- SECTOR: Región limitada por 2 radios y un arco (triángulo curvo)
+- SEGMENTO: Región limitada por 1 cuerda y un arco (media luna)
+
+VERIFICACIÓN: Antes de renderizar, preguntar:
+"¿Esta figura se ve EXACTAMENTE como la definición matemática?"
+```
+
+## 4. Consistencia de Escala y Proporciones
+
+```
+REGLA: Los elementos relacionados deben mantener proporciones coherentes.
+
+EJEMPLOS:
+- Radio menor < Radio mayor (siempre)
+- Ángulo de 30° debe verse como 30° (no como 60°)
+- Circunferencias concéntricas deben compartir el mismo centro
+```
+
+## 5. Control de Calidad en Arcos y Curvas
+
+```
+REGLA: Arcos y curvas deben ser suaves y matemáticamente correctos.
+
+CHECKLIST:
+- [ ] ¿Los arcos usan SVG path con A (arc) correctamente?
+- [ ] ¿El sweep-flag y large-arc-flag son correctos?
+- [ ] ¿Los ángulos de inicio y fin son precisos?
+
+FÓRMULA para punto en circunferencia:
+x = cx + r * cos(θ)
+y = cy - r * sin(θ)  ← NOTA: "-" porque Y en SVG crece hacia abajo
+```
 
 ---
 
@@ -470,6 +739,10 @@ Controlan sus propios colores
 - [ ] ¿Tecnología correcta según árbol de decisión?
 - [ ] ¿Las tarjetas HTML funcionan en modo oscuro?
 - [ ] ¿Las ilustraciones son claras como un dibujo de pizarra?
+- [ ] **¿Gráficos auto-explicativos?** (leyendas, flechas, anotaciones cuando hay múltiples elementos)
+- [ ] **¿Puntos marcados verificados matemáticamente?** (máximos, mínimos, intersecciones calculados correctamente)
+- [ ] **¿Texto 100% visible?** (no cortado, no superpuesto)
+- [ ] **¿Figuras geométricas fieles a su definición?** (sector ≠ segmento, etc.)
 - [ ] ¿IDs únicos en todos los gráficos?
 - [ ] ¿Wrapper estándar con fondo y bordes?
 
@@ -484,8 +757,23 @@ npm run dev
 # Build de producción
 npm run build
 
-# Generar SVG de geometría
-python scripts/geometry/renderer.py --spec specs/geometria/triangulos/baricentro.json --output public/images/geometria/ --verify
+# === GraphSpec (gráficas de funciones y datos) ===
+# Generar SVG de función
+python3 scripts/functions/renderer.py \
+  --spec specs/funciones/trigonometria/seno-principal.json \
+  --output public/images/funciones/trigonometria/seno-principal.svg
+
+# Generar con preview en navegador
+python3 scripts/functions/renderer.py \
+  --spec specs/funciones/ejemplo.json \
+  --output public/images/funciones/ejemplo.svg \
+  --preview
+
+# === GeometrySpec (geometría exacta) ===
+python3 scripts/geometry/renderer.py \
+  --spec specs/geometria/triangulos/baricentro.json \
+  --output public/images/geometria/ \
+  --verify
 
 # Crear nueva lección
 node scripts/new-lesson.js
@@ -503,6 +791,58 @@ node scripts/new-lesson.js
 6. **Validar geometría exacta** con `--verify` antes de enlazar SVG
 7. **IDs únicos** para evitar colisiones en gráficos inline
 8. **Anti-abrumamiento:** Cheat Sheet + Ilustración JUNTOS al inicio
+9. **NUNCA usar LaTeX en títulos Markdown** (se ve mal en tabla de contenidos)
+10. **Consultar tabla de renderers** para saber qué usar por tema
+
+---
+
+# 🎯 FLUJO DE EVALUACIÓN PEDAGÓGICA E ILUSTRACIONES
+
+> Cuando el usuario pide "evaluación pedagógica e ilustraciones" para un tema, seguir este flujo:
+
+## Paso 1: Leer las lecciones del tema
+```bash
+# Listar archivos del tema
+ls src/content/matematicas/XX-capitulo/YY-tema/
+# Leer cada .md para evaluar
+```
+
+## Paso 2: Evaluar pedagógicamente
+| Aspecto | Verificar |
+|---------|-----------|
+| Ilustraciones | ¿Tiene al menos 1 por concepto? |
+| Cheat Sheet | ¿Tabla resumen + ilustración juntos al inicio? |
+| Títulos | ¿Sin LaTeX? |
+| Progresión | ¿Simple → complejo? |
+| Ejercicios | ¿Con soluciones en `<details>`? |
+
+## Paso 3: Identificar renderer correcto
+Consultar la **tabla "¿Qué Renderer Usar por Tema?"** más arriba.
+
+## Paso 4: Generar specs e ilustraciones
+```bash
+# 1. Crear specs (si aplica) o usar renderer directo
+# 2. Ejecutar renderer
+# 3. Guardar en carpeta correcta de public/images/
+```
+
+## Paso 5: Actualizar archivos .md
+```markdown
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
+  <div style="margin-bottom: 0.5rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+    <strong style="color: #1e293b;">Título de la ilustración</strong>
+  </div>
+
+![Alt text](/images/carpeta/archivo.svg)
+
+</div>
+```
+
+## Paso 6: Reportar resultados
+- Número de ilustraciones creadas
+- Archivos actualizados
+- Mejoras pedagógicas aplicadas
 
 ---
 

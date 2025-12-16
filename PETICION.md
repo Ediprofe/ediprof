@@ -1,3 +1,24 @@
-evalúa si las lecciones en este tema siguen el patrón pedagógico solicitado, y de una vez agrega los gráficos. AGREGA LO QUE NECESITES.
+REALIZA LA EVALUACIÓN PEDAGÓGICA Y RESPECTIVAS ILUSTRACIONES PARA LAS LECCIONES DE ESTE TEMA: http://localhost:4321/matematicas/geometria-euclidiana/circunferencia-circulo/definicion-circunferencia
 
-http://localhost:4321/matematicas/trigonometria/trigonometria-triangulo-rectangulo
+
+CONTEXTO EN CLAUDE.md y documentos que ahí se citan.
+
+RETROALIMENTACIÓN:
+
+ESTÁS HACIENDO UNA SOLA ILUSTRACIÓN POR LECCIÓN, CUANDO EN CLAUDE.md dice que es una ilustración por concepto, y ahí especifico qué es un concepto...
+
+NO ESTÁ FALTANDO ALGO PARA QUE LOS GRÁFICOS SVG SEAN 100% FIABLES, YA QUE POR EJEMPLO EL GRÁFICO "Elementos de la circunferencia" EN LA LECCIÓN http://localhost:4321/matematicas/geometria-euclidiana/circunferencia-circulo/elementos-circunferencia, MUESTRA EL SECTOR CIRUCLAR Y EL SEGMENTO CIRCULAR Y ESO SE PARECE A TODO, MENOS A ESOS ELEMENTOS. ASÍ QUE NO TE VOY A MANDAR LA IMAGEN PORQUENO SE TRATA DE CORREGIR ERROR POR ERROR, COMO HARDCODEANDO, SINO ANALIZAR DE FONDO CÓMO HACER PARA QUE LAS ILUSTRACIONES SEAN FIELES 100% A LO QUE VAS HACER.
+
+MANEJANDO LA MISMA IDEA DE QUE NOS FALTA ALGO PARA LA FIABILIDAD EN AUTOMÁTICO GARANTIZADA, SOBRE ESTA LECCIÓN:http://localhost:4321/matematicas/geometria-euclidiana/circunferencia-circulo/posiciones-recta-circunferencia, LA DESCRIPCIÓN DE LO QUE ES UNA TANGENTE Y UNA SECANTE, NO APARECE, O SEA SE VE Y LUEGO SE CORTA HACIA ABAJO. OTRO PUNTO PARA CORREGIR.
+
+http://localhost:4321/matematicas/geometria-euclidiana/circunferencia-circulo/posiciones-circunferencias
+EN ESTA LECCION, LA GRÁFICA "Posiciones relativas entre circunferencias", NO MUESTRA IMAGEN ALGUNA.
+
+EN ESTA LECCIÓN, LOS ÁNGULOS CENTRA E INSCRTO COMO QUE NO TIENEN LA CALIDAD Y VEO CIERTA CURVATURA RARA. http://localhost:4321/matematicas/geometria-euclidiana/circunferencia-circulo/angulos-en-circunferencia
+NUEVAMENTE VA POR LA LÍNEA DE MEJOR LOS SPECS, O NO SÉ QUÉ SERÁ. 
+
+POR FAVOR REFLEXIONA Y MIRA A VER CÓMO VAMOS A SOLUCIONAR PARA QUE EL SISTEMA SE MANTENGA ESCALABLE Y MANTENIBLE.
+
+CONTEXTO EN CLAUDE.md y documentos que ahí se citen.
+
+APENAS TE APRUEBE ALGO, POR FAVOR ACTUALIZA LA DOCUMENTACIÓN PARA QUE ESTOS ERRORES NO VUELVAN A REPETIRSE.

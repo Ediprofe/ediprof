@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 420" 
+style="font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;">
+<rect width="600" height="420" fill="#f8fafc"/>
+<text x="300.00" y="30.00" text-anchor="middle" font-size="18" font-weight="bold" fill="#1e293b">Teorema del Ángulo Inscrito</text>
+<circle cx="300" cy="210" r="130" fill="none" stroke="#3b82f6" stroke-width="2"/>
+<circle cx="193.51" cy="135.44" r="5" fill="#1e293b"/>
+<circle cx="406.49" cy="135.44" r="5" fill="#1e293b"/>
+<circle cx="245.06" cy="327.82" r="6" fill="#f97316"/>
+<text x="175.51" y="127.44" text-anchor="start" font-size="14" font-weight="bold" fill="#1e293b">A</text>
+<text x="416.49" y="135.44" text-anchor="start" font-size="14" font-weight="bold" fill="#1e293b">B</text>
+<text x="240.06" y="349.82" text-anchor="start" font-size="14" font-weight="bold" fill="#f97316">P</text>
+<line x1="300" y1="210" x2="193.51" y2="135.44" stroke="#ef4444" stroke-width="2"/>
+<line x1="300" y1="210" x2="406.49" y2="135.44" stroke="#ef4444" stroke-width="2"/>
+<line x1="245.06" y1="327.82" x2="193.51" y2="135.44" stroke="#f97316" stroke-width="2"/>
+<line x1="245.06" y1="327.82" x2="406.49" y2="135.44" stroke="#f97316" stroke-width="2"/>
+<circle cx="300" cy="210" r="5" fill="#ef4444"/>
+<text x="310.00" y="215.00" text-anchor="start" font-size="12" font-weight="bold" fill="#ef4444">O</text>
+<path d="M 328.67 189.92 A 35 35 0 0 0 271.33 189.92" fill="none" stroke="#ef4444" stroke-width="2.5"/>
+<text x="348.00" y="182.00" text-anchor="start" font-size="16" font-weight="bold" fill="#ef4444">θ</text>
+<rect x="30" y="60" width="110" height="60" rx="8" fill="white" stroke="#ef4444" stroke-width="2"/>
+<text x="85.00" y="82.00" text-anchor="middle" font-size="12" font-weight="bold" fill="#ef4444">Central</text>
+<text x="85.00" y="102.00" text-anchor="middle" font-size="12" font-weight="normal" fill="#1e293b">θ = arco</text>
+<rect x="460" y="60" width="110" height="60" rx="8" fill="white" stroke="#f97316" stroke-width="2"/>
+<text x="515.00" y="82.00" text-anchor="middle" font-size="12" font-weight="bold" fill="#f97316">Inscrito</text>
+<text x="515.00" y="102.00" text-anchor="middle" font-size="12" font-weight="normal" fill="#1e293b">α = θ / 2</text>
+<rect x="150" y="370" width="300" height="40" rx="10" fill="#fbbf24" fill-opacity="0.3" stroke="#fbbf24" stroke-width="2"/>
+<text x="300.00" y="395.00" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e293b">INSCRITO = ½ CENTRAL</text>
+</svg>

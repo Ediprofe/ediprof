@@ -2,6 +2,16 @@
 
 Las **identidades pitagóricas** son las más importantes en trigonometría. Se derivan del teorema de Pitágoras aplicado al círculo unitario.
 
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+    <strong style="color: #1e293b; font-size: 0.95rem; margin-left: 0.3rem;">Identidad Pitagórica en el Círculo Unitario</strong>
+  </div>
+
+![Identidad pitagórica](/images/trigonometria/identidades/identidad-pitagorica.svg)
+
+</div>
+
 ---
 
 ## 📖 La identidad fundamental

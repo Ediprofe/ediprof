@@ -1,0 +1,5 @@
+# Scripts del renderer de FunctionSpec
+# renderer.py - Motor principal que convierte JSON → SVG
+# expressions.py - Parser de expresiones matemáticas
+# animations.py - Generador de CSS para animaciones
+

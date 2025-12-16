@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" 
+style="font-family: Inter, system-ui, sans-serif;">
+<rect width="600" height="500" fill="#f8fafc"/>
+
+<!-- Título -->
+<text x="300.0" y="30" text-anchor="middle" font-size="18" font-weight="bold" fill="#1e293b">Identidad Pitagórica: sin²θ + cos²θ = 1</text>
+<text x="300.0" y="50" text-anchor="middle" font-size="12" fill="#94a3b8">El punto (cos θ, sin θ) está sobre el círculo x² + y² = 1</text>
+
+<!-- Ejes -->
+<line x1="120.0" y1="280.0" x2="480.0" y2="280.0" stroke="#1e293b" stroke-width="2"/>
+<line x1="300.0" y1="100.0" x2="300.0" y2="460.0" stroke="#1e293b" stroke-width="2"/>
+
+<!-- Círculo unitario -->
+<circle cx="300.0" cy="280.0" r="150" fill="none" stroke="#3b82f6" stroke-width="3"/>
+
+<!-- Triángulo rectángulo -->
+<polygon points="300.0,280.0 406.1,280.0 406.1,173.9" fill="#8b5cf6" fill-opacity="0.2" stroke="#8b5cf6" stroke-width="2"/>
+
+<!-- Radio (hipotenusa) -->
+<line x1="300.0" y1="280.0" x2="406.1" y2="173.9" stroke="#ef4444" stroke-width="4"/>
+
+<!-- Cateto horizontal (cos θ) -->
+<line x1="300.0" y1="280.0" x2="406.1" y2="280.0" stroke="#3b82f6" stroke-width="3"/>
+
+<!-- Cateto vertical (sin θ) -->
+<line x1="406.1" y1="280.0" x2="406.1" y2="173.9" stroke="#22c55e" stroke-width="3"/>
+
+<!-- Punto P -->
+<circle cx="406.1" cy="173.9" r="8" fill="#ef4444" stroke="white" stroke-width="2"/>
+
+<!-- Símbolo de ángulo recto -->
+<path d="M 391.1 280.0 L 391.1 265.0 L 406.1 265.0" fill="none" stroke="#94a3b8" stroke-width="2"/>
+
+<!-- Etiquetas -->
+<text x="353.0" y="305.0" text-anchor="middle" font-size="16" font-weight="bold" fill="#3b82f6">cos θ</text>
+<text x="436.1" y="227.0" font-size="16" font-weight="bold" fill="#22c55e">sin θ</text>
+<text x="323.0" y="217.0" font-size="14" font-weight="bold" fill="#ef4444">r = 1</text>
+<text x="421.1" y="158.9" font-size="13" font-weight="bold" fill="#1e293b">P = (cos θ, sin θ)</text>
+
+<!-- Cuadro de Pitágoras -->
+<rect x="30" y="400" width="250" height="85" rx="10" fill="white" stroke="#ef4444" stroke-width="2"/>
+<text x="45" y="425" font-size="12" font-weight="bold" fill="#ef4444">Teorema de Pitágoras:</text>
+<text x="45" y="445" font-size="12" fill="#1e293b">cateto² + cateto² = hipotenusa²</text>
+<text x="45" y="465" font-size="14" font-weight="bold" fill="#8b5cf6">cos²θ + sin²θ = 1²</text>
+
+<!-- Ecuación del círculo -->
+<rect x="400" y="400" width="180" height="85" rx="10" fill="white" stroke="#3b82f6" stroke-width="2"/>
+<text x="410" y="425" font-size="12" font-weight="bold" fill="#3b82f6">Ecuación del círculo:</text>
+<text x="410" y="445" font-size="12" fill="#1e293b">x² + y² = r²</text>
+<text x="410" y="465" font-size="14" font-weight="bold" fill="#8b5cf6">cos²θ + sin²θ = 1</text>
+
+</svg>

@@ -1,138 +1,158 @@
 # Gráfica de la Función Coseno
 
-La gráfica de la función **coseno** es similar a la del seno, pero está **desplazada** $\frac{\pi}{2}$ hacia la izquierda.
+El **coseno** es el "hermano gemelo" del seno. Su gráfica tiene exactamente la misma forma de onda, pero con un pequeño giro: ¡empieza en el máximo en lugar de en cero!
 
 ---
 
-## 📖 La función coseno
+## 🎯 En esta lección aprenderás
+
+- Cómo se ve la gráfica de $y = \cos x$
+- La relación visual entre seno y coseno
+- Por qué el coseno es una función "par"
+- Cómo identificar máximos, mínimos y ceros
+
+---
+
+## 📋 Cheat Sheet + Ilustración
+
+| Propiedad | Valor |
+|-----------|-------|
+| Dominio | $\mathbb{R}$ (todos los reales) |
+| Rango | $[-1, 1]$ |
+| Período | $2\pi$ (o 360°) |
+| Amplitud | 1 |
+| Paridad | Par: $\cos(-x) = \cos x$ |
+| Cruza el eje X | En $x = \frac{\pi}{2} + k\pi$ |
+
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+    <strong style="color: #1e293b; font-size: 0.95rem; margin-left: 0.3rem;">Gráfica de y = cos(x)</strong>
+  </div>
+
+![Gráfica de la función coseno](/images/funciones/trigonometria/coseno-principal.svg)
+
+</div>
+
+---
+
+## 📖 La función coseno básica
 
 $$
 f(x) = \cos x
 $$
 
-### Características principales
-
-| Propiedad | Valor |
-|-----------|-------|
-| Dominio | Todos los reales |
-| Rango | $[-1, 1]$ |
-| Período | $2\pi$ (o 360°) |
-| Amplitud | 1 |
+> 💡 **Diferencia clave con el seno:** El coseno empieza en su valor máximo (1) cuando $x = 0$, mientras que el seno empieza en 0.
 
 ---
 
-## 📖 Puntos clave en un período
+## 📖 Anatomía de la onda coseno
 
-| $x$ (rad) | $x$ (grados) | $\cos x$ |
-|-----------|--------------|----------|
-| 0 | 0° | 1 |
-| $\frac{\pi}{2}$ | 90° | 0 |
-| $\pi$ | 180° | -1 |
-| $\frac{3\pi}{2}$ | 270° | 0 |
-| $2\pi$ | 360° | 1 |
-
----
-
-## 📖 Descripción de la gráfica
-
-La función coseno:
-
-1. **Comienza** en el máximo (0, 1)
-2. **Baja** cruzando el cero en $\frac{\pi}{2}$
-3. **Continúa bajando** hasta el mínimo (-1) en $\pi$
-4. **Sube** cruzando el cero en $\frac{3\pi}{2}$
-5. **Vuelve** al máximo (1) en $2\pi$
-6. **Se repite** indefinidamente
+| Punto | $x$ (rad) | $x$ (grados) | $\cos x$ | ¿Qué pasa? |
+|-------|-----------|--------------|----------|------------|
+| Inicio | 0 | 0° | 1 | 📈 Máximo |
+| Primer cero | $\frac{\pi}{2}$ | 90° | 0 | Cruza eje X bajando |
+| Mínimo | $\pi$ | 180° | -1 | 📉 Punto más bajo |
+| Segundo cero | $\frac{3\pi}{2}$ | 270° | 0 | Cruza eje X subiendo |
+| Fin ciclo | $2\pi$ | 360° | 1 | 📈 Vuelve al máximo |
 
 ---
 
-## 📖 Relación con el seno
+## 📖 Seno vs Coseno: ¡Son la misma onda desplazada!
+
+Esta es una de las relaciones más bellas de la trigonometría:
 
 $$
 \cos x = \sin\left(x + \frac{\pi}{2}\right)
 $$
 
-El coseno es el seno **adelantado** $\frac{\pi}{2}$ (90°).
+> 🔑 **Traducción:** El coseno es el seno "adelantado" 90° (o $\frac{\pi}{2}$ radianes).
 
-También:
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+    <strong style="color: #1e293b; font-size: 0.95rem; margin-left: 0.3rem;">Comparación: Seno vs Coseno</strong>
+  </div>
 
-$$
-\cos x = \sin\left(\frac{\pi}{2} - x\right)
-$$
+![Comparación sin(x) vs cos(x)](/images/funciones/trigonometria/seno-vs-coseno.svg)
 
-(Identidad de cofunción)
-
----
-
-## 📖 Propiedades de la gráfica
-
-### Interceptos con el eje X
-
-$$
-x = \frac{\pi}{2} + k\pi, \quad k \in \mathbb{Z}
-$$
-
-($\frac{\pi}{2}$, $\frac{3\pi}{2}$, $-\frac{\pi}{2}$, ...)
-
-### Máximos
-
-$$
-x = 2k\pi, \quad k \in \mathbb{Z}
-$$
-
-Valor máximo: 1
-
-### Mínimos
-
-$$
-x = \pi + 2k\pi, \quad k \in \mathbb{Z}
-$$
-
-Valor mínimo: -1
+</div>
 
 ---
 
-## 📖 Simetría
+## 📖 Simetría: función par
 
-La función coseno es **par**:
+A diferencia del seno, el coseno es una **función par**:
 
 $$
 \cos(-x) = \cos x
 $$
 
-Su gráfica tiene **simetría respecto al eje Y**.
+> 🪞 **¿Qué significa?** La gráfica es simétrica respecto al eje Y (como mirarse en un espejo vertical).
+
+**Ejemplo:** $\cos(-60°) = \cos(60°) = 0.5$
 
 ---
 
-## 📖 Comparación seno vs coseno
+## 📖 Tabla comparativa completa
 
 | Propiedad | Seno | Coseno |
 |-----------|------|--------|
-| Valor en 0 | 0 | 1 |
-| Paridad | Impar | Par |
-| Primer máximo | $\frac{\pi}{2}$ | 0 |
-| Primer cero | 0 | $\frac{\pi}{2}$ |
+| Valor en $x = 0$ | 0 | **1** |
+| Paridad | Impar | **Par** |
+| Primer máximo | $\frac{\pi}{2}$ | **0** |
+| Primer cero positivo | 0 | **$\frac{\pi}{2}$** |
+| Simetría | Respecto al origen | **Respecto al eje Y** |
+| Fórmula equivalente | $\sin x = \cos(x - \frac{\pi}{2})$ | $\cos x = \sin(x + \frac{\pi}{2})$ |
+
+---
+
+## 📖 Propiedades matemáticas
+
+### 1. Interceptos con el eje X
+
+$$
+\cos x = 0 \quad \Rightarrow \quad x = \frac{\pi}{2} + k\pi \quad (k \in \mathbb{Z})
+$$
+
+Es decir, en $x = \frac{\pi}{2}, \frac{3\pi}{2}, -\frac{\pi}{2}, \ldots$
+
+### 2. Máximos (donde vale 1)
+
+$$
+\cos x = 1 \quad \Rightarrow \quad x = 2k\pi
+$$
+
+### 3. Mínimos (donde vale -1)
+
+$$
+\cos x = -1 \quad \Rightarrow \quad x = \pi + 2k\pi
+$$
+
+---
+
+## 🧠 Tip para recordar
+
+> **"El coseno empieza en UNO, baja a CERO, llega al menos UNO, sube a CERO, y regresa al UNO."**
+
+Memoriza: **1 → 0 → -1 → 0 → 1** (en un ciclo de $2\pi$)
 
 ---
 
 ## 📝 Ejercicios de práctica
 
-### Ejercicio 1: Valores de la gráfica
+### Ejercicio 1: Lectura de la gráfica
 
-Según la gráfica, ¿cuál es el valor de...?
-
-1. $\cos 0$
-2. $\cos \frac{\pi}{2}$
-3. $\cos \pi$
-4. $\cos 2\pi$
+1. ¿Cuál es $\cos 0$?
+2. ¿En qué punto $x$ (en $[0, 2\pi]$) la función vale 0 por primera vez?
+3. ¿Dónde alcanza su mínimo en $[0, 2\pi]$?
 
 <details>
 <summary><strong>Ver respuestas</strong></summary>
 
-1. $\cos 0 = 1$
-2. $\cos \frac{\pi}{2} = 0$
-3. $\cos \pi = -1$
-4. $\cos 2\pi = 1$
+1. $\cos 0 = 1$ (empieza en el máximo)
+2. En $x = \frac{\pi}{2}$ (90°)
+3. En $x = \pi$ (180°), donde $\cos \pi = -1$
 
 </details>
 
@@ -145,7 +165,9 @@ Según la gráfica, ¿cuál es el valor de...?
 <details>
 <summary><strong>Ver respuesta</strong></summary>
 
-En $x = -\frac{\pi}{2}$ y $x = \frac{\pi}{2}$
+El coseno vale 0 cuando $x = \frac{\pi}{2} + k\pi$:
+
+$$x = -\frac{\pi}{2} \quad \text{y} \quad x = \frac{\pi}{2}$$
 
 </details>
 
@@ -158,24 +180,28 @@ En $x = -\frac{\pi}{2}$ y $x = \frac{\pi}{2}$
 <details>
 <summary><strong>Ver respuesta</strong></summary>
 
-$\cos x < 0$ cuando $x \in \left(\frac{\pi}{2}, \frac{3\pi}{2}\right)$
+El coseno es negativo (la onda está "debajo" del eje X) cuando:
+
+$$x \in \left(\frac{\pi}{2}, \frac{3\pi}{2}\right)$$
+
+Es decir, entre 90° y 270°.
 
 </details>
 
 ---
 
-### Ejercicio 4: Simetría
+### Ejercicio 4: Usando la simetría
 
 Si $\cos 30° = \frac{\sqrt{3}}{2}$, ¿cuánto vale $\cos(-30°)$?
 
 <details>
 <summary><strong>Ver respuesta</strong></summary>
 
-Como coseno es función par:
+Como el coseno es función **par**:
 
-$$
-\cos(-30°) = \cos(30°) = \frac{\sqrt{3}}{2}
-$$
+$$\cos(-30°) = \cos(30°) = \frac{\sqrt{3}}{2}$$
+
+¡Los valores son iguales!
 
 </details>
 

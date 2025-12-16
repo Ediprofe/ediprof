@@ -1,0 +1,65 @@
+{
+  "type": "function",
+  "metadata": {
+    "id": "seno-vs-coseno",
+    "title": "Comparación: sin(x) vs cos(x)",
+    "lesson": "04-trigonometria/03-graficas-funciones-trigonometricas/02-grafica-coseno"
+  },
+  "canvas": {
+    "width": 800,
+    "height": 400,
+    "padding": 55,
+    "background": "#f8fafc"
+  },
+  "axes": {
+    "x": {
+      "min": "-2*pi",
+      "max": "2*pi",
+      "label": "x",
+      "ticks": "pi"
+    },
+    "y": {
+      "min": -1.5,
+      "max": 1.5,
+      "label": "y"
+    }
+  },
+  "functions": [
+    {
+      "id": "sin-x",
+      "expression": "sin(x)",
+      "color": "#3b82f6",
+      "strokeWidth": 3
+    },
+    {
+      "id": "cos-x",
+      "expression": "cos(x)",
+      "color": "#ef4444",
+      "strokeWidth": 3
+    }
+  ],
+  "markers": [
+    {
+      "x": 0,
+      "y": 0,
+      "label": "sin(0)=0",
+      "color": "#3b82f6",
+      "labelPosition": "bottom"
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "label": "cos(0)=1",
+      "color": "#ef4444",
+      "labelPosition": "top"
+    }
+  ],
+  "annotations": [],
+  "animations": {
+    "enabled": true,
+    "style": "draw",
+    "duration": 2,
+    "markersDelay": 2
+  }
+}
+

@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 400" 
+style="max-width: 100%; height: auto; font-family: Inter, system-ui, sans-serif;">
+
+  <style>
+    .wave-path {
+      stroke-dasharray: 3000;
+      stroke-dashoffset: 3000;
+      animation: drawWave 1.5s ease-out forwards;
+    }
+    .marker-group { opacity: 0; animation: fadeIn 0.5s ease-out 1.5s forwards; }
+    .label-group { opacity: 0; animation: fadeIn 0.5s ease-out 1.8s forwards; }
+    .annotation-group { opacity: 0; animation: fadeIn 0.5s ease-out 2.0s forwards; }
+    @keyframes drawWave { to { stroke-dashoffset: 0; } }
+    @keyframes fadeIn { to { opacity: 1; } }
+  </style>
+
+  <rect width="650" height="400" fill="#f8fafc" rx="8"/>
+  <text x="325.0" y="25" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">Arcotangente: asíntotas horizontales</text>
+  <g class="grid">
+    <line x1="70.5" y1="55" x2="70.5" y2="345" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="155.4" y1="55" x2="155.4" y2="345" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="240.2" y1="55" x2="240.2" y2="345" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="325.0" y1="55" x2="325.0" y2="345" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="409.8" y1="55" x2="409.8" y2="345" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="494.6" y1="55" x2="494.6" y2="345" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="579.5" y1="55" x2="579.5" y2="345" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="55" y1="272.5" x2="595" y2="272.5" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="55" y1="236.2" x2="595" y2="236.2" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="55" y1="163.8" x2="595" y2="163.8" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="55" y1="127.5" x2="595" y2="127.5" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+  </g>
+  <g class="axes">
+    <line x1="55" y1="200.0" x2="595" y2="200.0" stroke="#374151" stroke-width="2"/>
+    <polygon points="595,200.0 587,196.0 587,204.0" fill="#374151"/>
+    <line x1="325.0" y1="55" x2="325.0" y2="345" stroke="#374151" stroke-width="2"/>
+    <polygon points="325.0,55 321.0,63 329.0,63" fill="#374151"/>
+    <text x="605" y="205.0" font-size="14" font-weight="bold" fill="#374151">x</text>
+    <text x="333.0" y="50" font-size="14" font-weight="bold" fill="#374151">y (radianes)</text>
+    <line x1="70.5" y1="196.0" x2="70.5" y2="204.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="70.5" y="220.0" text-anchor="middle" font-size="12" fill="#374151">-3π/2</text>
+    <line x1="155.4" y1="196.0" x2="155.4" y2="204.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="155.4" y="220.0" text-anchor="middle" font-size="12" fill="#374151">-π</text>
+    <line x1="240.2" y1="196.0" x2="240.2" y2="204.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="240.2" y="220.0" text-anchor="middle" font-size="12" fill="#374151">-π/2</text>
+    <line x1="409.8" y1="196.0" x2="409.8" y2="204.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="409.8" y="220.0" text-anchor="middle" font-size="12" fill="#374151">π/2</text>
+    <line x1="494.6" y1="196.0" x2="494.6" y2="204.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="494.6" y="220.0" text-anchor="middle" font-size="12" fill="#374151">π</text>
+    <line x1="579.5" y1="196.0" x2="579.5" y2="204.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="579.5" y="220.0" text-anchor="middle" font-size="12" fill="#374151">3π/2</text>
+    <line x1="321.0" y1="272.5" x2="329.0" y2="272.5" stroke="#374151" stroke-width="1.5"/>
+    <text x="313.0" y="276.5" text-anchor="end" font-size="12" fill="#374151">-1</text>
+    <line x1="321.0" y1="127.5" x2="329.0" y2="127.5" stroke="#374151" stroke-width="1.5"/>
+    <text x="313.0" y="131.5" text-anchor="end" font-size="12" fill="#374151">1</text>
+  </g>
+  <path id="arctan-x" class="wave-path" d="M 55.00 299.57 L 57.70 299.43 L 60.40 299.29 L 63.10 299.14 L 65.80 298.99 L 68.50 298.84 L 71.20 298.68 L 73.90 298.53 L 76.60 298.36 L 79.30 298.20 L 82.00 298.03 L 84.70 297.86 L 87.40 297.68 L 90.10 297.50 L 92.80 297.32 L 95.50 297.13 L 98.20 296.94 L 100.90 296.74 L 103.60 296.54 L 106.30 296.33 L 109.00 296.12 L 111.70 295.91 L 114.40 295.69 L 117.10 295.46 L 119.80 295.23 L 122.50 294.99 L 125.20 294.75 L 127.90 294.50 L 130.60 294.24 L 133.30 293.98 L 136.00 293.71 L 138.70 293.43 L 141.40 293.14 L 144.10 292.85 L 146.80 292.55 L 149.50 292.24 L 152.20 291.92 L 154.90 291.60 L 157.60 291.26 L 160.30 290.91 L 163.00 290.56 L 165.70 290.19 L 168.40 289.81 L 171.10 289.42 L 173.80 289.01 L 176.50 288.60 L 179.20 288.17 L 181.90 287.72 L 184.60 287.26 L 187.30 286.79 L 190.00 286.30 L 192.70 285.79 L 195.40 285.26 L 198.10 284.71 L 200.80 284.15 L 203.50 283.56 L 206.20 282.95 L 208.90 282.32 L 211.60 281.66 L 214.30 280.98 L 217.00 280.27 L 219.70 279.53 L 222.40 278.76 L 225.10 277.96 L 227.80 277.12 L 230.50 276.24 L 233.20 275.33 L 235.90 274.38 L 238.60 273.38 L 241.30 272.34 L 244.00 271.25 L 246.70 270.11 L 249.40 268.91 L 252.10 267.66 L 254.80 266.34 L 257.50 264.96 L 260.20 263.51 L 262.90 261.99 L 265.60 260.39 L 268.30 258.71 L 271.00 256.94 L 273.70 255.08 L 276.40 253.13 L 279.10 251.08 L 281.80 248.92 L 284.50 246.65 L 287.20 244.28 L 289.90 241.79 L 292.60 239.18 L 295.30 236.46 L 298.00 233.61 L 300.70 230.66 L 303.40 227.59 L 306.10 224.41 L 308.80 221.13 L 311.50 217.76 L 314.20 214.31 L 316.90 210.79 L 319.60 207.23 L 322.30 203.62 L 325.00 200.00 L 327.70 196.38 L 330.40 192.77 L 333.10 189.21 L 335.80 185.69 L 338.50 182.24 L 341.20 178.87 L 343.90 175.59 L 346.60 172.41 L 349.30 169.34 L 352.00 166.39 L 354.70 163.54 L 357.40 160.82 L 360.10 158.21 L 362.80 155.72 L 365.50 153.35 L 368.20 151.08 L 370.90 148.92 L 373.60 146.87 L 376.30 144.92 L 379.00 143.06 L 381.70 141.29 L 384.40 139.61 L 387.10 138.01 L 389.80 136.49 L 392.50 135.04 L 395.20 133.66 L 397.90 132.34 L 400.60 131.09 L 403.30 129.89 L 406.00 128.75 L 408.70 127.66 L 411.40 126.62 L 414.10 125.62 L 416.80 124.67 L 419.50 123.76 L 422.20 122.88 L 424.90 122.04 L 427.60 121.24 L 430.30 120.47 L 433.00 119.73 L 435.70 119.02 L 438.40 118.34 L 441.10 117.68 L 443.80 117.05 L 446.50 116.44 L 449.20 115.85 L 451.90 115.29 L 454.60 114.74 L 457.30 114.21 L 460.00 113.70 L 462.70 113.21 L 465.40 112.74 L 468.10 112.28 L 470.80 111.83 L 473.50 111.40 L 476.20 110.99 L 478.90 110.58 L 481.60 110.19 L 484.30 109.81 L 487.00 109.44 L 489.70 109.09 L 492.40 108.74 L 495.10 108.40 L 497.80 108.08 L 500.50 107.76 L 503.20 107.45 L 505.90 107.15 L 508.60 106.86 L 511.30 106.57 L 514.00 106.29 L 516.70 106.02 L 519.40 105.76 L 522.10 105.50 L 524.80 105.25 L 527.50 105.01 L 530.20 104.77 L 532.90 104.54 L 535.60 104.31 L 538.30 104.09 L 541.00 103.88 L 543.70 103.67 L 546.40 103.46 L 549.10 103.26 L 551.80 103.06 L 554.50 102.87 L 557.20 102.68 L 559.90 102.50 L 562.60 102.32 L 565.30 102.14 L 568.00 101.97 L 570.70 101.80 L 573.40 101.64 L 576.10 101.47 L 578.80 101.32 L 581.50 101.16 L 584.20 101.01 L 586.90 100.86 L 589.60 100.71 L 592.30 100.57 L 595.00 100.43" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <g class="marker-group">
+    <circle cx="271.0" cy="256.9" r="6" fill="#8b5cf6" stroke="white" stroke-width="2"/>
+    <circle cx="325.0" cy="200.0" r="6" fill="#374151" stroke="white" stroke-width="2"/>
+    <circle cx="379.0" cy="143.1" r="6" fill="#8b5cf6" stroke="white" stroke-width="2"/>
+  </g>
+  <g class="label-group">
+    <rect x="221.0" y="269.94136684631496" width="100" height="16" fill="white" fill-opacity="0.9" rx="3"/>
+    <text x="271.0" y="281.9" text-anchor="middle" font-size="11" font-weight="bold" fill="#8b5cf6">(-1, -π/4)</text>
+    <rect x="275.0" y="173.0" width="100" height="16" fill="white" fill-opacity="0.9" rx="3"/>
+    <text x="325.0" y="185.0" text-anchor="middle" font-size="11" font-weight="bold" fill="#374151">(0, 0)</text>
+    <rect x="329.0" y="116.05863315368498" width="100" height="16" fill="white" fill-opacity="0.9" rx="3"/>
+    <text x="379.0" y="128.1" text-anchor="middle" font-size="11" font-weight="bold" fill="#8b5cf6">(1, π/4)</text>
+  </g>
+  <g class="annotation-group">
+    <line x1="55" y1="86.1" x2="595" y2="86.1" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="8,4"/>
+    <text x="600" y="90.1" text-anchor="start" font-size="10" fill="#ef4444">Asíntota y = π/2</text>
+    <line x1="55" y1="313.9" x2="595" y2="313.9" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="8,4"/>
+    <text x="600" y="317.9" text-anchor="start" font-size="10" fill="#ef4444">Asíntota y = -π/2</text>
+  </g>
+</svg>

@@ -1,0 +1,44 @@
+{
+  "type": "function",
+  "metadata": {
+    "id": "cotangente",
+    "title": "La función cotangente: cot(x) = cos(x)/sin(x)",
+    "lesson": "04-trigonometria/03-graficas-funciones-trigonometricas/04-graficas-cotangente-secante-cosecante"
+  },
+  "canvas": {
+    "width": 800,
+    "height": 450,
+    "padding": 55,
+    "background": "#f8fafc"
+  },
+  "axes": {
+    "x": { "min": "-1.5*pi", "max": "1.5*pi", "label": "x", "ticks": "pi" },
+    "y": { "min": -6, "max": 6, "label": "y" }
+  },
+  "functions": [
+    {
+      "id": "cot-x",
+      "expression": "cot(x)",
+      "color": "#8b5cf6",
+      "strokeWidth": 3
+    }
+  ],
+  "markers": [
+    { "x": "pi/4", "y": 1, "label": "(π/4, 1)", "color": "#ef4444", "labelPosition": "top" },
+    { "x": "-pi/4", "y": -1, "label": "(-π/4, -1)", "color": "#ef4444", "labelPosition": "bottom" },
+    { "x": "pi/2", "y": 0, "label": "(π/2, 0)", "color": "#22c55e", "labelPosition": "bottom" }
+  ],
+  "annotations": [
+    { "type": "vertical_asymptote", "x": 0, "color": "#ef4444", "label": "x = 0" },
+    { "type": "vertical_asymptote", "x": "pi", "color": "#ef4444", "label": "x = π" },
+    { "type": "vertical_asymptote", "x": "-pi", "color": "#ef4444", "label": "x = -π" },
+    { "type": "brace", "from_x": 0, "to_x": "pi", "y": -5.5, "label": "Período = π", "color": "#3b82f6" }
+  ],
+  "animations": {
+    "enabled": true,
+    "style": "draw",
+    "duration": 2,
+    "markersDelay": 2
+  }
+}
+

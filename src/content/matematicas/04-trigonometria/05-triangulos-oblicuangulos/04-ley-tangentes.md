@@ -2,6 +2,16 @@
 
 La **Ley de Tangentes** es una alternativa a las leyes de Senos y Cosenos, aunque se usa con menos frecuencia.
 
+<div style="background: linear-gradient(135deg, #fef3c7 0%, #fce7f3 100%); border: 2px solid #f97316; border-radius: 12px; padding: 1.2rem; margin: 1.5rem 0;">
+<div style="font-weight: bold; color: #c2410c; margin-bottom: 0.8rem;">📋 Fórmula de la Ley de Tangentes</div>
+<div style="font-size: 1.1rem; text-align: center; color: #1e293b; margin: 0.5rem 0;">
+(a - b) / (a + b) = tan[(A - B)/2] / tan[(A + B)/2]
+</div>
+<div style="margin-top: 0.8rem; font-size: 0.9rem; color: #64748b;">
+💡 Útil para caso LAL: encuentra los ángulos directamente sin calcular el tercer lado primero.
+</div>
+</div>
+
 ---
 
 ## 📖 Enunciado

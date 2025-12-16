@@ -2,6 +2,16 @@
 
 El **círculo unitario** es la herramienta fundamental para extender las funciones trigonométricas a cualquier ángulo, no solo los agudos del triángulo rectángulo.
 
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+    <strong style="color: #1e293b; font-size: 0.95rem; margin-left: 0.3rem;">El Círculo Unitario</strong>
+  </div>
+
+![El círculo unitario](/images/trigonometria/circulo-unitario/circulo-unitario-basico.svg)
+
+</div>
+
 ---
 
 ## 📖 Definición
@@ -39,6 +49,16 @@ Para cualquier ángulo $\theta$, el punto correspondiente en el círculo unitari
 $$
 P = (\cos\theta, \sin\theta)
 $$
+
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+    <strong style="color: #1e293b; font-size: 0.95rem; margin-left: 0.3rem;">El punto P = (cos θ, sin θ)</strong>
+  </div>
+
+![Punto P en el círculo unitario](/images/trigonometria/circulo-unitario/punto-cos-sin.svg)
+
+</div>
 
 ### Los cuatro cuadrantes
 

@@ -1,0 +1,66 @@
+{
+  "type": "function",
+  "metadata": {
+    "id": "tangente-principal",
+    "title": "Función Tangente: y = tan(x)",
+    "lesson": "04-trigonometria/03-graficas-funciones-trigonometricas/03-grafica-tangente"
+  },
+  "canvas": {
+    "width": 800,
+    "height": 450,
+    "padding": 55,
+    "background": "#f8fafc"
+  },
+  "axes": {
+    "x": {
+      "min": -5,
+      "max": 5,
+      "label": "x",
+      "ticks": "pi"
+    },
+    "y": {
+      "min": -8,
+      "max": 8,
+      "label": "y"
+    }
+  },
+  "functions": [
+    {
+      "id": "tan-x",
+      "expression": "tan(x)",
+      "color": "#22c55e",
+      "strokeWidth": 3
+    }
+  ],
+  "markers": [
+    {
+      "x": 0,
+      "y": 0,
+      "label": "Origen (0, 0)",
+      "color": "#ef4444",
+      "labelPosition": "top"
+    },
+    {
+      "x": "pi/4",
+      "y": 1,
+      "label": "(π/4, 1)",
+      "color": "#ef4444",
+      "labelPosition": "top"
+    },
+    {
+      "x": "-pi/4",
+      "y": -1,
+      "label": "(-π/4, -1)",
+      "color": "#ef4444",
+      "labelPosition": "bottom"
+    }
+  ],
+  "annotations": [],
+  "animations": {
+    "enabled": true,
+    "style": "draw",
+    "duration": 2,
+    "markersDelay": 2
+  }
+}
+

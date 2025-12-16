@@ -2,6 +2,16 @@
 
 **Demostrar una identidad** significa mostrar que ambos lados de la ecuación son equivalentes para todos los valores donde están definidos.
 
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+    <strong style="color: #1e293b; font-size: 0.95rem; margin-left: 0.3rem;">Estrategias para Demostrar Identidades</strong>
+  </div>
+
+![Estrategias de demostración](/images/trigonometria/identidades/estrategias-demostracion.svg)
+
+</div>
+
 ---
 
 ## 📖 Estrategias de demostración

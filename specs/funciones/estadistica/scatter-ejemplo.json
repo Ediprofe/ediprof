@@ -1,0 +1,37 @@
+{
+  "type": "scatter",
+  "metadata": {
+    "id": "scatter-ejemplo",
+    "title": "Correlación Altura vs Peso"
+  },
+  "canvas": {
+    "width": 600,
+    "height": 400,
+    "padding": 60,
+    "background": "#f8fafc"
+  },
+  "axes": {
+    "x": { "label": "Altura (cm)", "min": 150, "max": 195 },
+    "y": { "label": "Peso (kg)", "min": 45, "max": 95 }
+  },
+  "data": {
+    "points": [
+      { "x": 155, "y": 48 },
+      { "x": 160, "y": 54 },
+      { "x": 163, "y": 56 },
+      { "x": 168, "y": 62 },
+      { "x": 170, "y": 65, "label": "Promedio" },
+      { "x": 175, "y": 72 },
+      { "x": 180, "y": 78 },
+      { "x": 183, "y": 82 },
+      { "x": 188, "y": 88 },
+      { "x": 192, "y": 92 }
+    ],
+    "color": "#3b82f6",
+    "size": 8
+  },
+  "animations": {
+    "enabled": true
+  }
+}
+

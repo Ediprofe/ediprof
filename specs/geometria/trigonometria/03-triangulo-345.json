@@ -1,0 +1,57 @@
+{
+  "tipo": "triangulo-rectangulo",
+  "titulo": "Triángulo 3-4-5: Razones trigonométricas",
+  "canvas": {
+    "width": 600,
+    "height": 400,
+    "padding": 50
+  },
+  "vertices": {
+    "A": [60, 320],
+    "B": [300, 320],
+    "C": [300, 110]
+  },
+  "angulos": {
+    "A": {
+      "tipo": "agudo",
+      "etiqueta": "θ",
+      "color": "#8b5cf6",
+      "radio": 35,
+      "offset_etiqueta": 50
+    },
+    "B": {
+      "tipo": "recto"
+    }
+  },
+  "lados": {
+    "AB": {
+      "texto": "4 (Adyacente)",
+      "color": "#22c55e"
+    },
+    "BC": {
+      "texto": "3 (Opuesto)",
+      "color": "#ef4444"
+    },
+    "AC": {
+      "texto": "5 (Hipotenusa)",
+      "color": "#3b82f6"
+    }
+  },
+  "offset_etiquetas": 32,
+  "info_box": {
+    "x": 380,
+    "y": 60,
+    "width": 200,
+    "titulo": "RAZONES TRIGONOMÉTRICAS",
+    "lineas": [
+      {"texto": "sin θ = O/H = 3/5 = 0.6", "color": "#ef4444"},
+      {"texto": "cos θ = A/H = 4/5 = 0.8", "color": "#22c55e"},
+      {"texto": "tan θ = O/A = 3/4 = 0.75", "color": "#f97316"},
+      {"texto": "─────────────────", "color": "#cbd5e1"},
+      {"texto": "csc θ = H/O = 5/3 ≈ 1.67", "color": "#ef4444"},
+      {"texto": "sec θ = H/A = 5/4 = 1.25", "color": "#22c55e"},
+      {"texto": "cot θ = A/O = 4/3 ≈ 1.33", "color": "#f97316"}
+    ]
+  }
+}
+

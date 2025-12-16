@@ -1,6 +1,32 @@
 # Cotangente, Secante y Cosecante
 
-Las razones **cotangente**, **secante** y **cosecante** son las recíprocas de las razones principales. Aunque se usan menos, son importantes en cálculos avanzados.
+¿Sabías que para cada razón trigonométrica principal existe una **"hermana gemela"** que trabaja al revés? Las razones **cotangente**, **secante** y **cosecante** son las recíprocas de tangente, coseno y seno respectivamente. Aunque se usan menos en cálculos básicos, son **fundamentales** en identidades trigonométricas y cálculo avanzado.
+
+---
+
+## 🎯 Lo que vas a aprender
+
+- Qué significa "razón recíproca"
+- Las fórmulas de cotangente, secante y cosecante
+- Cómo calcularlas a partir de las razones principales
+- Las identidades pitagóricas adicionales
+
+---
+
+## 📋 Lo Esencial: Razones Recíprocas
+
+| Razón Principal | Su Recíproca | Fórmula |
+|-----------------|--------------|---------|
+| $\sin\theta = \frac{O}{H}$ | $\csc\theta$ (cosecante) | $\csc\theta = \frac{H}{O}$ |
+| $\cos\theta = \frac{A}{H}$ | $\sec\theta$ (secante) | $\sec\theta = \frac{H}{A}$ |
+| $\tan\theta = \frac{O}{A}$ | $\cot\theta$ (cotangente) | $\cot\theta = \frac{A}{O}$ |
+
+> 💡 **Tip para recordar:** El prefijo "co-" indica relación de reciprocidad:
+> - **Co**secante es recíproca del **seno**
+> - **Sec**ante es recíproca del **co**seno  
+> - **Co**tangente es recíproca de la **tan**gente
+
+![Triángulo 3-4-5 con las 6 razones](/images/geometria/trigonometria/03-triangulo-345.svg)
 
 ---
 
@@ -126,6 +152,16 @@ $$
 $$
 1 + \cot^2\theta = \csc^2\theta
 $$
+
+| Identidad | Fórmula | Derivada de... |
+|-----------|---------|----------------|
+| **Fundamental** | $\sin^2\theta + \cos^2\theta = 1$ | Teorema de Pitágoras |
+| **Con tangente** | $1 + \tan^2\theta = \sec^2\theta$ | Dividiendo entre $\cos^2\theta$ |
+| **Con cotangente** | $1 + \cot^2\theta = \csc^2\theta$ | Dividiendo entre $\sin^2\theta$ |
+
+> 💡 **¿De dónde salen estas identidades?**
+> - Dividiendo $\sin^2\theta + \cos^2\theta = 1$ entre $\cos^2\theta$ → $\tan^2\theta + 1 = \sec^2\theta$
+> - Dividiendo $\sin^2\theta + \cos^2\theta = 1$ entre $\sin^2\theta$ → $1 + \cot^2\theta = \csc^2\theta$
 
 ---
 

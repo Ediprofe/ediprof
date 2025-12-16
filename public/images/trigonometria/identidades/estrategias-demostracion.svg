@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 450" 
+style="font-family: Inter, system-ui, sans-serif;">
+<rect width="650" height="450" fill="#f8fafc"/>
+
+<!-- Título -->
+<text x="325.0" y="28" text-anchor="middle" font-size="18" font-weight="bold" fill="#1e293b">Estrategias para Demostrar Identidades</text>
+
+<!-- Estrategia 1 -->
+<rect x="30" y="55" width="590" height="80" rx="10" fill="#3b82f6" fill-opacity="0.15" stroke="#3b82f6" stroke-width="2"/>
+<text x="50" y="80" font-size="14" font-weight="bold" fill="#3b82f6">1️⃣ CONVERTIR TODO A SIN Y COS</text>
+<text x="50" y="102" font-size="12" fill="#1e293b">Reemplaza tan, cot, sec, csc usando las identidades de cociente y recíprocas.</text>
+<text x="50" y="122" font-size="11" fill="#94a3b8">Ejemplo: tan θ → sin θ / cos θ, sec θ → 1/cos θ</text>
+
+<!-- Estrategia 2 -->
+<rect x="30" y="145" width="590" height="80" rx="10" fill="#22c55e" fill-opacity="0.15" stroke="#22c55e" stroke-width="2"/>
+<text x="50" y="170" font-size="14" font-weight="bold" fill="#22c55e">2️⃣ BUSCAR DENOMINADOR COMÚN</text>
+<text x="50" y="192" font-size="12" fill="#1e293b">Si hay fracciones, combínalas con denominador común y simplifica.</text>
+<text x="50" y="212" font-size="11" fill="#94a3b8">Ejemplo: sin/cos + cos/sin → (sin² + cos²)/(sin·cos) = 1/(sin·cos)</text>
+
+<!-- Estrategia 3 -->
+<rect x="30" y="235" width="590" height="80" rx="10" fill="#ef4444" fill-opacity="0.15" stroke="#ef4444" stroke-width="2"/>
+<text x="50" y="260" font-size="14" font-weight="bold" fill="#ef4444">3️⃣ MULTIPLICAR POR CONJUGADO</text>
+<text x="50" y="282" font-size="12" fill="#1e293b">Si hay (1 ± sin θ) o (1 ± cos θ), multiplica arriba y abajo por el conjugado.</text>
+<text x="50" y="302" font-size="11" fill="#94a3b8">Ejemplo: (1 - sin θ) × (1 + sin θ) = 1 - sin²θ = cos²θ</text>
+
+<!-- Estrategia 4 -->
+<rect x="30" y="325" width="590" height="80" rx="10" fill="#8b5cf6" fill-opacity="0.15" stroke="#8b5cf6" stroke-width="2"/>
+<text x="50" y="350" font-size="14" font-weight="bold" fill="#8b5cf6">4️⃣ USAR IDENTIDADES PITAGÓRICAS</text>
+<text x="50" y="372" font-size="12" fill="#1e293b">Sustituye sin²θ + cos²θ = 1, o despeja según necesites.</text>
+<text x="50" y="392" font-size="11" fill="#94a3b8">sin²θ = 1 - cos²θ, tan²θ = sec²θ - 1, etc.</text>
+
+<!-- Regla importante -->
+<text x="325.0" y="430" text-anchor="middle" font-size="11" font-weight="bold" fill="#ef4444">⚠️ REGLA DE ORO: Trabaja UN SOLO LADO a la vez. Nunca cruces el signo "="</text>
+
+</svg>

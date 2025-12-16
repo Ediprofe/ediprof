@@ -1,0 +1,22 @@
+{
+  "type": "bar",
+  "metadata": {
+    "id": "barras-ejemplo",
+    "title": "Calificaciones por Materia"
+  },
+  "canvas": {
+    "width": 600,
+    "height": 400,
+    "padding": 60,
+    "background": "#f8fafc"
+  },
+  "data": {
+    "labels": ["Matemáticas", "Física", "Química", "Biología"],
+    "values": [85, 78, 92, 88],
+    "colors": ["#3b82f6", "#ef4444", "#22c55e", "#f97316"]
+  },
+  "animations": {
+    "enabled": true
+  }
+}
+

@@ -1,0 +1,41 @@
+{
+  "type": "function",
+  "metadata": {
+    "id": "tangente-periodo",
+    "title": "Período de la tangente: π",
+    "lesson": "04-trigonometria/03-graficas-funciones-trigonometricas/03-grafica-tangente"
+  },
+  "canvas": {
+    "width": 800,
+    "height": 400,
+    "padding": 55,
+    "background": "#f8fafc"
+  },
+  "axes": {
+    "x": { "min": "-1.5*pi", "max": "1.5*pi", "label": "x", "ticks": "pi" },
+    "y": { "min": -5, "max": 5, "label": "y" }
+  },
+  "functions": [
+    {
+      "id": "tan-x",
+      "expression": "tan(x)",
+      "color": "#3b82f6",
+      "strokeWidth": 3
+    }
+  ],
+  "markers": [],
+  "annotations": [
+    { "type": "vertical_asymptote", "x": "-pi/2", "color": "#94a3b8", "style": "dashed" },
+    { "type": "vertical_asymptote", "x": "pi/2", "color": "#94a3b8", "style": "dashed" },
+    { "type": "vertical_asymptote", "x": "3*pi/2", "color": "#94a3b8", "style": "dashed" },
+    { "type": "brace", "from_x": "-pi/2", "to_x": "pi/2", "y": -4.5, "label": "Período = π", "color": "#ef4444" },
+    { "type": "brace", "from_x": "pi/2", "to_x": "3*pi/2", "y": -4.5, "label": "Período = π", "color": "#22c55e" }
+  ],
+  "animations": {
+    "enabled": true,
+    "style": "draw",
+    "duration": 2,
+    "markersDelay": 2
+  }
+}
+

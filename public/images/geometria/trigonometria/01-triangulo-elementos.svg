@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 380" style="font-family: Inter, system-ui, sans-serif;">
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+<rect width="550" height="380" fill="#ffffff"/>
+  <text x="275.0" y="25" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">Elementos del triángulo rectángulo</text>
+  <polygon points="60.0,300.0 300.0,300.0 300.0,100.0" fill="#f8fafc" stroke="#1e293b" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="60.0" cy="300.0" r="5" fill="#1e293b"/>
+  <circle cx="300.0" cy="300.0" r="5" fill="#1e293b"/>
+  <circle cx="300.0" cy="100.0" r="5" fill="#1e293b"/>
+  <path d="M 95.0 300.0 A 35 35 0 0 0 86.9 277.6" fill="none" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="107.0" y="283.0" text-anchor="middle" dominant-baseline="middle" font-size="18" font-weight="bold" fill="#8b5cf6">θ</text>
+  <path d="M 282.0 300.0 L 282.0 282.0 L 300.0 282.0" fill="none" stroke="#64748b" stroke-width="2"/>
+  <rect x="108.0" y="320.0" width="144" height="24" rx="4" ry="4" fill="#ffffff" filter="url(#shadow)"/>
+  <text x="180.0" y="332.0" text-anchor="middle" dominant-baseline="middle" font-size="13" font-weight="bold" fill="#22c55e">Cateto Adyacente</text>
+  <rect x="268.0" y="188.0" width="128" height="24" rx="4" ry="4" fill="#ffffff" filter="url(#shadow)"/>
+  <text x="332.0" y="200.0" text-anchor="middle" dominant-baseline="middle" font-size="13" font-weight="bold" fill="#ef4444">Cateto Opuesto</text>
+  <rect x="111.5" y="163.4" width="96" height="24" rx="4" ry="4" fill="#ffffff" filter="url(#shadow)"/>
+  <text x="159.5" y="175.4" text-anchor="middle" dominant-baseline="middle" font-size="13" font-weight="bold" fill="#3b82f6">Hipotenusa</text>
+  <rect x="360" y="80" width="175" height="123" rx="8" ry="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="447.5" y="98" text-anchor="middle" font-size="11" font-weight="bold" fill="#475569">ELEMENTOS CLAVE</text>
+  <text x="370" y="118" font-size="12" fill="#3b82f6">• Hipotenusa: lado mayor</text>
+  <text x="370" y="140" font-size="12" fill="#ef4444">• Opuesto: frente a θ</text>
+  <text x="370" y="162" font-size="12" fill="#22c55e">• Adyacente: junto a θ</text>
+  <text x="370" y="184" font-size="12" fill="#64748b">• Ángulo recto: 90°</text>
+</svg>

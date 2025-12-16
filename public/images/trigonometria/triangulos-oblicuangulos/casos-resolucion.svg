@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 500" 
+style="font-family: Inter, system-ui, sans-serif;">
+<rect width="750" height="500" fill="#f8fafc"/>
+
+<!-- Título -->
+<text x="375.0" y="30" text-anchor="middle" font-size="18" font-weight="bold" fill="#1e293b">Los 4 Casos de Resolución de Triángulos</text>
+
+<rect x="30" y="60" width="330" height="190" rx="12" fill="#3b82f6" fill-opacity="0.1" stroke="#3b82f6" stroke-width="2"/>
+<text x="195" y="90" text-anchor="middle" font-size="22" font-weight="bold" fill="#3b82f6">ALA</text>
+<line x1="50" y1="105" x2="340" y2="105" stroke="#3b82f6" stroke-width="1" opacity="0.5"/>
+<polygon points="70,210 160,210 110,140" fill="white" stroke="#3b82f6" stroke-width="2"/>
+<text x="85" y="205" font-size="10" fill="#3b82f6">A✓</text>
+<text x="145" y="205" font-size="10" fill="#3b82f6">B✓</text>
+<text x="110" y="225" text-anchor="middle" font-size="10" fill="#3b82f6">c✓</text>
+<text x="200" y="140" font-size="11" fill="#1e293b">📊 2 ángulos + 1 lado</text>
+<text x="200" y="160" font-size="11" fill="#1e293b">🔧 Ley de Senos</text>
+<rect x="180" y="175" width="160" height="30" rx="6" fill="white" stroke="#e2e8f0"/>
+<text x="260" y="195" text-anchor="middle" font-size="10" fill="#1e293b">Siempre solución única</text>
+<rect x="390" y="60" width="330" height="190" rx="12" fill="#22c55e" fill-opacity="0.1" stroke="#22c55e" stroke-width="2"/>
+<text x="555" y="90" text-anchor="middle" font-size="22" font-weight="bold" fill="#22c55e">LAL</text>
+<line x1="410" y1="105" x2="700" y2="105" stroke="#22c55e" stroke-width="1" opacity="0.5"/>
+<polygon points="430,210 520,210 470,140" fill="white" stroke="#22c55e" stroke-width="2"/>
+<text x="440" y="180" font-size="10" fill="#22c55e">b✓</text>
+<text x="445" y="205" font-size="10" fill="#22c55e">A✓</text>
+<text x="470" y="225" text-anchor="middle" font-size="10" fill="#22c55e">c✓</text>
+<text x="560" y="140" font-size="11" fill="#1e293b">📊 2 lados + ángulo entre ellos</text>
+<text x="560" y="160" font-size="11" fill="#1e293b">🔧 Ley de Cosenos</text>
+<rect x="540" y="175" width="160" height="30" rx="6" fill="white" stroke="#e2e8f0"/>
+<text x="620" y="195" text-anchor="middle" font-size="10" fill="#1e293b">Siempre solución única</text>
+<rect x="30" y="280" width="330" height="190" rx="12" fill="#f97316" fill-opacity="0.1" stroke="#f97316" stroke-width="2"/>
+<text x="195" y="310" text-anchor="middle" font-size="22" font-weight="bold" fill="#f97316">LLL</text>
+<line x1="50" y1="325" x2="340" y2="325" stroke="#f97316" stroke-width="1" opacity="0.5"/>
+<polygon points="70,430 160,430 110,360" fill="white" stroke="#f97316" stroke-width="2"/>
+<text x="140" y="400" font-size="10" fill="#f97316">a✓</text>
+<text x="80" y="400" font-size="10" fill="#f97316">b✓</text>
+<text x="110" y="445" text-anchor="middle" font-size="10" fill="#f97316">c✓</text>
+<text x="200" y="360" font-size="11" fill="#1e293b">📊 3 lados</text>
+<text x="200" y="380" font-size="11" fill="#1e293b">🔧 Ley de Cosenos</text>
+<rect x="180" y="395" width="160" height="30" rx="6" fill="white" stroke="#e2e8f0"/>
+<text x="260" y="415" text-anchor="middle" font-size="10" fill="#1e293b">Siempre solución única</text>
+<rect x="390" y="280" width="330" height="190" rx="12" fill="#ef4444" fill-opacity="0.1" stroke="#ef4444" stroke-width="2"/>
+<text x="555" y="310" text-anchor="middle" font-size="22" font-weight="bold" fill="#ef4444">LLA</text>
+<line x1="410" y1="325" x2="700" y2="325" stroke="#ef4444" stroke-width="1" opacity="0.5"/>
+<polygon points="430,430 520,430 470,360" fill="white" stroke="#ef4444" stroke-width="2"/>
+<text x="500" y="400" font-size="10" fill="#ef4444">a✓</text>
+<text x="440" y="400" font-size="10" fill="#ef4444">b✓</text>
+<text x="445" y="425" font-size="10" fill="#ef4444">A✓</text>
+<text x="560" y="360" font-size="11" fill="#1e293b">📊 2 lados + ángulo opuesto</text>
+<text x="560" y="380" font-size="11" fill="#1e293b">🔧 Ley de Senos</text>
+<rect x="540" y="395" width="160" height="30" rx="6" fill="white" stroke="#e2e8f0"/>
+<text x="620" y="415" text-anchor="middle" font-size="10" fill="#1e293b">⚠️ CASO AMBIGUO</text>
+<text x="555" y="450" text-anchor="middle" font-size="9" fill="#ef4444">0, 1 o 2 soluciones</text>
+<text x="375.0" y="485" text-anchor="middle" font-size="10" fill="#94a3b8">💡 Siempre necesitas al menos 3 datos incluyendo al menos 1 lado para resolver un triángulo</text>
+</svg>

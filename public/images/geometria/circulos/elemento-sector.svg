@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 380" 
+style="font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;">
+<rect width="400" height="380" fill="#f8fafc"/>
+<text x="200.00" y="30.00" text-anchor="middle" font-size="18" font-weight="bold" fill="#f97316">Sector Circular</text>
+<circle cx="200" cy="180" r="110" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4"/>
+<path d="M 200 180 L 303.37 142.38 A 110 110 0 0 0 180.90 71.67 Z" fill="#fef3c7" stroke="#f97316" stroke-width="3"/>
+<circle cx="200" cy="180" r="5" fill="#ef4444"/>
+<text x="182.00" y="185.00" text-anchor="start" font-size="14" font-weight="bold" fill="#ef4444">O</text>
+<circle cx="180.90" cy="71.67" r="4" fill="#1e293b"/>
+<circle cx="303.37" cy="142.38" r="4" fill="#1e293b"/>
+<text x="175.90" y="59.67" text-anchor="start" font-size="12" font-weight="bold" fill="#1e293b">A</text>
+<text x="311.37" y="142.38" text-anchor="start" font-size="12" font-weight="bold" fill="#1e293b">B</text>
+<path d="M 228.19 169.74 A 30 30 0 0 0 194.79 150.46" fill="none" stroke="#f97316" stroke-width="2"/>
+<text x="240.00" y="155.00" text-anchor="start" font-size="14" font-weight="bold" fill="#f97316">θ</text>
+<text x="230.00" y="130.00" text-anchor="start" font-size="11" font-weight="normal" fill="#f97316">Arco</text>
+<text x="150.00" y="140.00" text-anchor="start" font-size="11" font-weight="normal" fill="#ef4444">Radio</text>
+<rect x="30" y="320" width="340" height="50" rx="8" fill="#fef3c7" stroke="#f97316"/>
+<text x="200.0" y="349.0" text-anchor="middle" font-size="12" fill="#1e293b">Limitado por 2 RADIOS + ARCO</text>
+<text x="200.00" y="355.00" text-anchor="middle" font-size="10" font-weight="normal" fill="#94a3b8">(Como una "rebanada de pizza")</text>
+</svg>

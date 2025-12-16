@@ -1,0 +1,67 @@
+{
+  "type": "function",
+  "metadata": {
+    "id": "amplitud-periodo-ejemplo",
+    "title": "Ejemplo: y = 3sin(2x)",
+    "lesson": "04-trigonometria/03-graficas-funciones-trigonometricas/05-amplitud-periodo"
+  },
+  "canvas": {
+    "width": 800,
+    "height": 400,
+    "padding": 55,
+    "background": "#f8fafc"
+  },
+  "axes": {
+    "x": {
+      "min": 0,
+      "max": "2*pi",
+      "label": "x",
+      "ticks": "pi"
+    },
+    "y": {
+      "min": -4,
+      "max": 4,
+      "label": "y"
+    }
+  },
+  "functions": [
+    {
+      "id": "sin-x-base",
+      "expression": "sin(x)",
+      "color": "#94a3b8",
+      "strokeWidth": 2
+    },
+    {
+      "id": "3sin-2x",
+      "expression": "3*sin(2*x)",
+      "color": "#8b5cf6",
+      "strokeWidth": 3
+    }
+  ],
+  "markers": [
+    {
+      "x": "pi/4",
+      "y": 3,
+      "label": "Máximo (π/4, 3)",
+      "color": "#ef4444",
+      "labelPosition": "top"
+    }
+  ],
+  "annotations": [
+    {
+      "type": "brace",
+      "from_x": 0,
+      "to_x": "pi",
+      "y": -3.5,
+      "label": "Período = π",
+      "color": "#8b5cf6"
+    }
+  ],
+  "animations": {
+    "enabled": true,
+    "style": "draw",
+    "duration": 2,
+    "markersDelay": 2
+  }
+}
+

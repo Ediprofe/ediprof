@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" 
+style="font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;">
+<rect width="500" height="400" fill="#f8fafc"/>
+<text x="250.00" y="30.00" text-anchor="middle" font-size="18" font-weight="bold" fill="#f97316">Ángulo Exterior</text>
+<circle cx="280" cy="200" r="100" fill="none" stroke="#3b82f6" stroke-width="2"/>
+<circle cx="100" cy="200" r="6" fill="#f97316"/>
+<text x="80.00" y="205.00" text-anchor="start" font-size="14" font-weight="bold" fill="#f97316">P</text>
+<line x1="100" y1="200" x2="203.40" y2="135.72" stroke="#22c55e" stroke-width="2"/>
+<line x1="100" y1="200" x2="356.60" y2="264.28" stroke="#14b8a6" stroke-width="2"/>
+<circle cx="203.40" cy="135.72" r="4" fill="#22c55e"/>
+<circle cx="356.60" cy="264.28" r="4" fill="#14b8a6"/>
+<text x="211.40" y="125.72" text-anchor="start" font-size="12" font-weight="bold" fill="#22c55e">A</text>
+<text x="366.60" y="269.28" text-anchor="start" font-size="12" font-weight="bold" fill="#14b8a6">C</text>
+<circle cx="280" cy="200" r="3" fill="#94a3b8"/>
+<path d="M 356.60 264.28 A 100 100 0 0 0 203.40 135.72" fill="none" stroke="#f97316" stroke-width="4"/>
+<path d="M 378.48 217.36 A 100 100 0 0 0 262.64 101.52" fill="none" stroke="#fbbf24" stroke-width="4"/>
+<text x="395.00" y="170.00" text-anchor="start" font-size="10" font-weight="normal" fill="#f97316">mayor</text>
+<text x="245.00" y="90.00" text-anchor="start" font-size="10" font-weight="normal" fill="#fbbf24">menor</text>
+<rect x="100" y="340" width="300" height="50" rx="8" fill="white" stroke="#f97316"/>
+<text x="250.0" y="369.0" text-anchor="middle" font-size="12" fill="#1e293b"></text>
+<text x="250.00" y="360.00" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e293b">α = (mayor - menor) / 2</text>
+<text x="250.00" y="378.00" text-anchor="middle" font-size="10" font-weight="normal" fill="#94a3b8">Semidiferencia de arcos</text>
+</svg>

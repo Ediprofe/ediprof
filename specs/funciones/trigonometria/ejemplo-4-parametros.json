@@ -1,0 +1,58 @@
+{
+  "type": "function",
+  "metadata": {
+    "id": "ejemplo-4-parametros",
+    "title": "Ejemplo: y = 3sin(2x - π) + 1",
+    "lesson": "04-trigonometria/03-graficas-funciones-trigonometricas/06-desplazamiento-fase"
+  },
+  "canvas": {
+    "width": 800,
+    "height": 450,
+    "padding": 55,
+    "background": "#f8fafc"
+  },
+  "axes": {
+    "x": {
+      "min": -1,
+      "max": 10,
+      "label": "x",
+      "ticks": "number"
+    },
+    "y": {
+      "min": -3,
+      "max": 5,
+      "label": "y"
+    }
+  },
+  "functions": [
+    {
+      "id": "sin-x-base",
+      "expression": "sin(x)",
+      "color": "#94a3b8",
+      "strokeWidth": 1
+    },
+    {
+      "id": "completa",
+      "expression": "3*sin(2*x - pi) + 1",
+      "color": "#8b5cf6",
+      "strokeWidth": 3
+    }
+  ],
+  "markers": [
+    {
+      "x": "3*pi/4",
+      "y": 4,
+      "label": "Máximo (3π/4, 4)",
+      "color": "#ef4444",
+      "labelPosition": "top"
+    }
+  ],
+  "annotations": [],
+  "animations": {
+    "enabled": true,
+    "style": "draw",
+    "duration": 2,
+    "markersDelay": 2
+  }
+}
+

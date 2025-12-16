@@ -1,98 +1,152 @@
 # Gráficas de Cotangente, Secante y Cosecante
 
-Las gráficas de las funciones recíprocas tienen características especiales relacionadas con sus funciones base.
+Las **funciones recíprocas** tienen personalidades dramáticas: nunca tocan el cero, tienen asíntotas, y sus formas son espejos invertidos de sus funciones base.
 
 ---
 
-## 📖 Gráfica de Cotangente
+## 🎯 En esta lección aprenderás
+
+- Las gráficas de cot(x), sec(x) y csc(x)
+- Por qué tienen asíntotas (y dónde)
+- La relación visual con sus funciones base
+- Por qué nunca valen entre -1 y 1 (excepto cot)
+
+---
+
+## 📋 Cheat Sheet General
+
+| Función | Definición | Período | Asíntotas en... | Rango |
+|---------|------------|---------|-----------------|-------|
+| $\cot x$ | $\frac{\cos x}{\sin x}$ | $\pi$ | $k\pi$ | $\mathbb{R}$ |
+| $\sec x$ | $\frac{1}{\cos x}$ | $2\pi$ | $\frac{\pi}{2} + k\pi$ | $(-\infty,-1] \cup [1,\infty)$ |
+| $\csc x$ | $\frac{1}{\sin x}$ | $2\pi$ | $k\pi$ | $(-\infty,-1] \cup [1,\infty)$ |
+
+---
+
+## 📖 Gráfica de la Cotangente
+
+### Definición
 
 $$
 \cot x = \frac{\cos x}{\sin x} = \frac{1}{\tan x}
 $$
 
-### Características
+> 🔄 Es como la tangente "volteada y reflejada".
+
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+    <strong style="color: #1e293b; font-size: 0.95rem; margin-left: 0.3rem;">Gráfica de y = cot(x)</strong>
+  </div>
+
+![Gráfica de la cotangente](/images/funciones/trigonometria/cotangente.svg)
+
+</div>
+
+### Características de la cotangente
 
 | Propiedad | Valor |
 |-----------|-------|
 | Dominio | $x \neq k\pi$ |
 | Rango | Todos los reales |
 | Período | $\pi$ |
-| Asíntotas | $x = k\pi$ |
+| Asíntotas | Donde $\sin x = 0$ (en $x = k\pi$) |
+| Cruza eje X | Donde $\cos x = 0$ (en $x = \frac{\pi}{2} + k\pi$) |
+| Comportamiento | **Siempre decreciente** en cada período |
 
-### Descripción
-
-- Asíntotas donde $\sin x = 0$ (múltiplos de $\pi$)
-- Cruza el eje X donde $\cos x = 0$ ($\frac{\pi}{2} + k\pi$)
-- Función **decreciente** en cada período
-- Es como la tangente "reflejada" y desplazada
+> 💡 **Nota clave:** A diferencia de la tangente que siempre crece, la cotangente siempre decrece.
 
 ---
 
-## 📖 Gráfica de Secante
+## 📖 Gráfica de la Secante
+
+### Definición
 
 $$
 \sec x = \frac{1}{\cos x}
 $$
 
-### Características
+> 🪞 Es el recíproco del coseno.
+
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+    <strong style="color: #1e293b; font-size: 0.95rem; margin-left: 0.3rem;">Gráfica de y = sec(x) vs y = cos(x)</strong>
+  </div>
+
+![Gráfica de la secante](/images/funciones/trigonometria/secante.svg)
+
+</div>
+
+### Características de la secante
 
 | Propiedad | Valor |
 |-----------|-------|
 | Dominio | $x \neq \frac{\pi}{2} + k\pi$ |
 | Rango | $(-\infty, -1] \cup [1, \infty)$ |
 | Período | $2\pi$ |
-| Asíntotas | $x = \frac{\pi}{2} + k\pi$ |
+| Asíntotas | Donde $\cos x = 0$ |
+| Mínimo local | $\sec x = 1$ cuando $\cos x = 1$ |
+| Máximo local | $\sec x = -1$ cuando $\cos x = -1$ |
 
-### Descripción
-
-- Asíntotas donde $\cos x = 0$
-- **Nunca** toma valores entre -1 y 1
-- Cuando $\cos x = 1$, $\sec x = 1$
-- Cuando $\cos x = -1$, $\sec x = -1$
-- Forma "parábolas invertidas" entre las asíntotas
+> ⚠️ **Nunca vale entre -1 y 1:** Si $|\cos x| \leq 1$, entonces $|\sec x| = \frac{1}{|\cos x|} \geq 1$.
 
 ---
 
-## 📖 Gráfica de Cosecante
+## 📖 Gráfica de la Cosecante
+
+### Definición
 
 $$
 \csc x = \frac{1}{\sin x}
 $$
 
-### Características
+> 🪞 Es el recíproco del seno.
+
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+    <strong style="color: #1e293b; font-size: 0.95rem; margin-left: 0.3rem;">Gráfica de y = csc(x) vs y = sin(x)</strong>
+  </div>
+
+![Gráfica de la cosecante](/images/funciones/trigonometria/cosecante.svg)
+
+</div>
+
+### Características de la cosecante
 
 | Propiedad | Valor |
 |-----------|-------|
 | Dominio | $x \neq k\pi$ |
 | Rango | $(-\infty, -1] \cup [1, \infty)$ |
 | Período | $2\pi$ |
-| Asíntotas | $x = k\pi$ |
-
-### Descripción
-
-- Asíntotas donde $\sin x = 0$ (múltiplos de $\pi$)
-- **Nunca** toma valores entre -1 y 1
-- Cuando $\sin x = 1$, $\csc x = 1$
-- Cuando $\sin x = -1$, $\csc x = -1$
-- Forma "parábolas invertidas" entre las asíntotas
+| Asíntotas | Donde $\sin x = 0$ (en $x = k\pi$) |
+| Mínimo local | $\csc x = 1$ cuando $\sin x = 1$ |
+| Máximo local | $\csc x = -1$ cuando $\sin x = -1$ |
 
 ---
 
-## 📖 Tabla comparativa
+## 📖 Relación entre las funciones
 
-| Función | Período | Asíntotas | Rango |
-|---------|---------|-----------|-------|
-| $\cot x$ | $\pi$ | $x = k\pi$ | $\mathbb{R}$ |
-| $\sec x$ | $2\pi$ | $x = \frac{\pi}{2} + k\pi$ | $|y| \geq 1$ |
-| $\csc x$ | $2\pi$ | $x = k\pi$ | $|y| \geq 1$ |
+### Regla de oro para las asíntotas
+
+| Función recíproca | Tiene asíntotas donde... |
+|-------------------|-------------------------|
+| $\sec x = \frac{1}{\cos x}$ | $\cos x = 0$ (ceros del coseno) |
+| $\csc x = \frac{1}{\sin x}$ | $\sin x = 0$ (ceros del seno) |
+| $\cot x = \frac{1}{\tan x}$ | $\tan x = 0$ → realmente donde $\sin x = 0$ |
+
+> 💡 **Patrón:** Los ceros de la función base se convierten en asíntotas de la función recíproca.
 
 ---
 
-## 📖 Relación con las funciones base
+## 🧠 Resumen Visual
 
-- $\sec x$ tiene los mismos ceros que $\cos x$ como asíntotas
-- $\csc x$ tiene los mismos ceros que $\sin x$ como asíntotas
-- $\cot x$ tiene los mismos ceros que $\tan x$ como asíntotas
+| Función | Forma de la gráfica | Asíntotas |
+|---------|---------------------|-----------|
+| $\cot x$ | Curvas "S" descendentes | $x = k\pi$ |
+| $\sec x$ | "Parábolas" arriba y abajo | $x = \frac{\pi}{2} + k\pi$ |
+| $\csc x$ | "Parábolas" arriba y abajo | $x = k\pi$ |
 
 ---
 
@@ -109,9 +163,9 @@ $$
 <details>
 <summary><strong>Ver respuestas</strong></summary>
 
-1. $\cot x$: en $x = 0, \pi, 2\pi$
-2. $\sec x$: en $x = \frac{\pi}{2}, \frac{3\pi}{2}$
-3. $\csc x$: en $x = 0, \pi, 2\pi$
+1. **$\cot x$:** en $x = 0, \pi, 2\pi$ (donde $\sin x = 0$)
+2. **$\sec x$:** en $x = \frac{\pi}{2}, \frac{3\pi}{2}$ (donde $\cos x = 0$)
+3. **$\csc x$:** en $x = 0, \pi, 2\pi$ (donde $\sin x = 0$)
 
 </details>
 
@@ -132,6 +186,8 @@ Calcula:
 2. $\csc \frac{\pi}{2} = \frac{1}{\sin \frac{\pi}{2}} = \frac{1}{1} = 1$
 3. $\cot \frac{\pi}{4} = \frac{1}{\tan \frac{\pi}{4}} = \frac{1}{1} = 1$
 
+¡Los tres valen 1 en estos puntos especiales!
+
 </details>
 
 ---
@@ -145,7 +201,9 @@ Calcula:
 
 **No**, porque el rango de $\sec x$ es $(-\infty, -1] \cup [1, \infty)$.
 
-El valor 0.5 está entre -1 y 1, así que es imposible.
+El valor 0.5 está entre -1 y 1, así que es **imposible**.
+
+Para que $\sec x = 0.5$, necesitaríamos $\cos x = 2$, lo cual nunca ocurre.
 
 </details>
 
@@ -160,9 +218,9 @@ El valor 0.5 está entre -1 y 1, así que es imposible.
 <details>
 <summary><strong>Ver respuestas</strong></summary>
 
-1. **Falso** - El período es $\pi$
-2. **Verdadero** - Nunca cruza el eje X
-3. **Verdadero** - Ambas en $x = \frac{\pi}{2} + k\pi$
+1. **Falso** — El período de $\cot x$ es $\pi$
+2. **Verdadero** — $\csc x = \frac{1}{\sin x}$ nunca puede ser cero
+3. **Verdadero** — Ambas tienen asíntotas donde $\cos x = 0$
 
 </details>
 

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 450" 
+style="font-family: Inter, system-ui, sans-serif;">
+<rect width="650" height="450" fill="#f8fafc"/>
+
+<!-- Título -->
+<text x="325.0" y="30" text-anchor="middle" font-size="18" font-weight="bold" fill="#1e293b">Ley de Cosenos</text>
+<text x="325.0" y="50" text-anchor="middle" font-size="11" fill="#94a3b8">Generalización del Teorema de Pitágoras</text>
+
+<polygon points="80,330 350,330 200,100" fill="#f1f5f9" stroke="#1e293b" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="80" cy="330" r="6" fill="#1e293b"/>
+<text x="60" y="345" font-size="16" font-weight="bold" fill="#1e293b">A</text>
+<circle cx="350" cy="330" r="6" fill="#1e293b"/>
+<text x="365" y="345" font-size="16" font-weight="bold" fill="#1e293b">B</text>
+<circle cx="200" cy="100" r="6" fill="#1e293b"/>
+<text x="200" y="85" font-size="16" font-weight="bold" fill="#1e293b">C</text>
+<line x1="350" y1="330" x2="200" y2="100" stroke="#ef4444" stroke-width="4" stroke-dasharray="8,4"/>
+<text x="295.0" y="215.0" font-size="18" font-weight="bold" fill="#ef4444">a = ?</text>
+<line x1="80" y1="330" x2="200" y2="100" stroke="#3b82f6" stroke-width="4"/>
+<text x="115.0" y="215.0" font-size="18" font-weight="bold" fill="#3b82f6">b</text>
+<line x1="80" y1="330" x2="350" y2="330" stroke="#22c55e" stroke-width="4"/>
+<text x="215.0" y="355.0" text-anchor="middle" font-size="18" font-weight="bold" fill="#22c55e">c</text>
+<path d="M 120 330 A 40 40 0 0 0 105 300" fill="none" stroke="#f97316" stroke-width="3"/>
+<text x="135" y="315" font-size="14" font-weight="bold" fill="#f97316">A</text>
+<rect x="400" y="70" width="230" height="100" rx="10" fill="white" stroke="#ef4444" stroke-width="2"/>
+<text x="515" y="95" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e293b">LEY DE COSENOS</text>
+<text x="515" y="130" text-anchor="middle" font-size="16" font-weight="bold" fill="#ef4444">a² = b² + c² - 2bc·cos A</text>
+<text x="515" y="155" text-anchor="middle" font-size="10" fill="#94a3b8">Si A = 90°, cos A = 0 → Pitágoras</text>
+<rect x="400" y="185" width="230" height="90" rx="8" fill="#f1f5f9" stroke="#e2e8f0"/>
+<text x="515" y="208" text-anchor="middle" font-size="10" font-weight="bold" fill="#1e293b">LAS 3 FORMAS:</text>
+<text x="410" y="228" font-size="11" fill="#ef4444">a² = b² + c² - 2bc·cos A</text>
+<text x="410" y="248" font-size="11" fill="#3b82f6">b² = a² + c² - 2ac·cos B</text>
+<text x="410" y="268" font-size="11" fill="#22c55e">c² = a² + b² - 2ab·cos C</text>
+<rect x="40" y="380" width="570" height="55" rx="8" fill="white" stroke="#f97316" stroke-width="2"/>
+<text x="55" y="405" font-size="11" font-weight="bold" fill="#f97316">📋 USAR CUANDO:</text>
+<text x="200" y="405" font-size="11" fill="#1e293b">Caso LAL (2 lados + ángulo entre ellos)</text>
+<text x="450" y="405" font-size="11" fill="#1e293b">Caso LLL (3 lados → encontrar ángulos)</text>
+</svg>

@@ -23,95 +23,13 @@
 | **60°** | $\dfrac{\sqrt{3}}{2}$ | $\dfrac{1}{2}$ | $\sqrt{3}$ |
 | **90°** | $1$ | $0$ | $\infty$ |
 
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span> <strong style="color: #1e293b;">Los dos triángulos especiales que debes conocer</strong>
-  </div>
-  <div id="echarts-angulos-notables-triangulos" style="width: 100%; height: 450px; min-height: 400px; border-radius: 8px;"></div>
-</div>
+**Triángulo 45-45-90 (Isósceles):** Lados en proporción 1 : 1 : √2
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof echarts !== 'undefined' && document.getElementById('echarts-angulos-notables-triangulos')) {
-    var chart = echarts.init(document.getElementById('echarts-angulos-notables-triangulos'));
-    
-    var option = {
-      animation: true,
-      animationDuration: 1000,
-      title: {
-        text: 'Triángulo 45-45-90 y Triángulo 30-60-90',
-        left: 'center',
-        top: 5,
-        textStyle: { fontSize: 14, fontWeight: 'bold', color: '#1e293b' }
-      },
-      grid: { left: '5%', right: '5%', top: '12%', bottom: '5%' },
-      xAxis: { type: 'value', min: 0, max: 20, show: false },
-      yAxis: { type: 'value', min: 0, max: 10, show: false },
-      series: [
-        // Triángulo 45-45-90 (izquierda)
-        {
-          type: 'line',
-          symbol: 'none',
-          lineStyle: { width: 3, color: '#3b82f6' },
-          areaStyle: { color: 'rgba(59, 130, 246, 0.15)' },
-          data: [[1, 2], [5, 2], [5, 6], [1, 2]]
-        },
-        // Marca de ángulo recto 45-45-90
-        {
-          type: 'line',
-          symbol: 'none',
-          lineStyle: { width: 2, color: '#64748b' },
-          data: [[4.6, 2], [4.6, 2.4], [5, 2.4]]
-        },
-        
-        // Triángulo 30-60-90 (derecha)
-        {
-          type: 'line',
-          symbol: 'none',
-          lineStyle: { width: 3, color: '#22c55e' },
-          areaStyle: { color: 'rgba(34, 197, 94, 0.15)' },
-          data: [[11, 2], [17, 2], [17, 5.46], [11, 2]]
-        },
-        // Marca de ángulo recto 30-60-90
-        {
-          type: 'line',
-          symbol: 'none',
-          lineStyle: { width: 2, color: '#64748b' },
-          data: [[16.6, 2], [16.6, 2.4], [17, 2.4]]
-        }
-      ],
-      graphic: [
-        // Triángulo 45-45-90
-        { type: 'text', left: '8%', top: '18%', style: { text: 'TRIÁNGULO 45-45-90', fontSize: 12, fontWeight: 'bold', fill: '#3b82f6' } },
-        { type: 'text', left: '8%', top: '23%', style: { text: '(Isósceles rectángulo)', fontSize: 10, fill: '#64748b' } },
-        { type: 'text', left: '8%', top: '58%', style: { text: '45°', fontSize: 14, fontWeight: 'bold', fill: '#3b82f6' } },
-        { type: 'text', left: '23%', top: '32%', style: { text: '45°', fontSize: 14, fontWeight: 'bold', fill: '#3b82f6' } },
-        { type: 'text', left: '25%', top: '70%', style: { text: '90°', fontSize: 10, fill: '#64748b' } },
-        { type: 'text', left: '14%', top: '80%', style: { text: '1', fontSize: 16, fontWeight: 'bold', fill: '#ef4444' } },
-        { type: 'text', left: '27%', top: '48%', style: { text: '1', fontSize: 16, fontWeight: 'bold', fill: '#ef4444' } },
-        { type: 'text', left: '10%', top: '42%', style: { text: '√2', fontSize: 16, fontWeight: 'bold', fill: '#8b5cf6' } },
-        
-        // Triángulo 30-60-90
-        { type: 'text', left: '60%', top: '18%', style: { text: 'TRIÁNGULO 30-60-90', fontSize: 12, fontWeight: 'bold', fill: '#22c55e' } },
-        { type: 'text', left: '60%', top: '23%', style: { text: '(Mitad de equilátero)', fontSize: 10, fill: '#64748b' } },
-        { type: 'text', left: '58%', top: '58%', style: { text: '30°', fontSize: 14, fontWeight: 'bold', fill: '#22c55e' } },
-        { type: 'text', left: '80%', top: '38%', style: { text: '60°', fontSize: 14, fontWeight: 'bold', fill: '#22c55e' } },
-        { type: 'text', left: '82%', top: '70%', style: { text: '90°', fontSize: 10, fill: '#64748b' } },
-        { type: 'text', left: '68%', top: '80%', style: { text: '√3', fontSize: 16, fontWeight: 'bold', fill: '#ef4444' } },
-        { type: 'text', left: '87%', top: '50%', style: { text: '1', fontSize: 16, fontWeight: 'bold', fill: '#ef4444' } },
-        { type: 'text', left: '62%', top: '42%', style: { text: '2', fontSize: 16, fontWeight: 'bold', fill: '#8b5cf6' } },
-        
-        // Proporciones
-        { type: 'text', left: '8%', top: '90%', style: { text: 'Lados: 1 : 1 : √2', fontSize: 12, fontWeight: 'bold', fill: '#3b82f6' } },
-        { type: 'text', left: '58%', top: '90%', style: { text: 'Lados: 1 : √3 : 2', fontSize: 12, fontWeight: 'bold', fill: '#22c55e' } }
-      ]
-    };
-    
-    chart.setOption(option);
-    window.addEventListener('resize', function() { chart.resize(); });
-  }
-});
-</script>
+![Triángulo 45-45-90](/images/geometria/trigonometria/04-triangulo-45-45-90.svg)
+
+**Triángulo 30-60-90:** Lados en proporción 1 : √3 : 2
+
+![Triángulo 30-60-90](/images/geometria/trigonometria/05-triangulo-30-60-90.svg)
 
 > 💡 **Memoriza las proporciones:**
 > - **45-45-90:** Los catetos son iguales (1:1), hipotenusa = √2
@@ -184,81 +102,17 @@ $$
 \tan 60° = \frac{\sqrt{3}}{1} = \sqrt{3} \approx 1.732
 $$
 
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span> <strong style="color: #1e293b;">Valores de seno, coseno y tangente para ángulos notables</strong>
-  </div>
-  <div id="echarts-angulos-notables-valores" style="width: 100%; height: 400px; min-height: 360px; border-radius: 8px;"></div>
-</div>
+### Valores decimales de referencia
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof echarts !== 'undefined' && document.getElementById('echarts-angulos-notables-valores')) {
-    var chart = echarts.init(document.getElementById('echarts-angulos-notables-valores'));
-    
-    var angulos = ['0°', '30°', '45°', '60°', '90°'];
-    var seno = [0, 0.5, 0.707, 0.866, 1];
-    var coseno = [1, 0.866, 0.707, 0.5, 0];
-    var tangente = [0, 0.577, 1, 1.732, null];
-    
-    var option = {
-      animation: true,
-      title: {
-        text: 'Valores de sin, cos, tan para ángulos notables',
-        left: 'center',
-        top: 5,
-        textStyle: { fontSize: 13, fontWeight: 'bold', color: '#1e293b' }
-      },
-      legend: {
-        data: ['sin θ', 'cos θ', 'tan θ'],
-        top: 30
-      },
-      grid: { left: '10%', right: '8%', top: '18%', bottom: '12%' },
-      xAxis: {
-        type: 'category',
-        data: angulos,
-        axisLine: { lineStyle: { color: '#374151', width: 2 } }
-      },
-      yAxis: {
-        type: 'value',
-        name: 'Valor',
-        min: 0, max: 2,
-        axisLine: { lineStyle: { color: '#374151', width: 2 } },
-        splitLine: { lineStyle: { color: '#e2e8f0', type: 'dashed' } }
-      },
-      series: [
-        {
-          name: 'sin θ',
-          type: 'bar',
-          barWidth: '20%',
-          itemStyle: { color: '#3b82f6' },
-          data: seno,
-          label: { show: true, position: 'top', fontSize: 10 }
-        },
-        {
-          name: 'cos θ',
-          type: 'bar',
-          barWidth: '20%',
-          itemStyle: { color: '#22c55e' },
-          data: coseno,
-          label: { show: true, position: 'top', fontSize: 10 }
-        },
-        {
-          name: 'tan θ',
-          type: 'bar',
-          barWidth: '20%',
-          itemStyle: { color: '#f97316' },
-          data: tangente,
-          label: { show: true, position: 'top', fontSize: 10 }
-        }
-      ]
-    };
-    
-    chart.setOption(option);
-    window.addEventListener('resize', function() { chart.resize(); });
-  }
-});
-</script>
+| Ángulo | $\sin\theta$ | $\cos\theta$ | $\tan\theta$ |
+|--------|--------------|--------------|--------------|
+| 0° | 0 | 1 | 0 |
+| 30° | 0.5 | 0.866 | 0.577 |
+| 45° | 0.707 | 0.707 | 1 |
+| 60° | 0.866 | 0.5 | 1.732 |
+| 90° | 1 | 0 | ∞ |
+
+> 💡 **Observa:** A medida que el ángulo aumenta de 0° a 90°, el seno aumenta y el coseno disminuye.
 
 ---
 

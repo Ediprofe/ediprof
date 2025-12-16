@@ -1,0 +1,57 @@
+{
+  "tipo": "triangulo-rectangulo",
+  "titulo": "Resolver un triángulo: θ = 35°, Adyacente = 10",
+  "canvas": {
+    "width": 580,
+    "height": 380,
+    "padding": 50
+  },
+  "vertices": {
+    "A": [60, 300],
+    "B": [320, 300],
+    "C": [320, 115]
+  },
+  "angulos": {
+    "A": {
+      "tipo": "agudo",
+      "etiqueta": "35°",
+      "color": "#8b5cf6",
+      "radio": 40,
+      "offset_etiqueta": 55
+    },
+    "B": {
+      "tipo": "recto"
+    }
+  },
+  "lados": {
+    "AB": {
+      "texto": "10 cm ✓",
+      "color": "#22c55e"
+    },
+    "BC": {
+      "texto": "O = ?",
+      "color": "#ef4444"
+    },
+    "AC": {
+      "texto": "H = ?",
+      "color": "#3b82f6"
+    }
+  },
+  "offset_etiquetas": 30,
+  "info_box": {
+    "x": 380,
+    "y": 80,
+    "width": 185,
+    "titulo": "SOLUCIÓN",
+    "lineas": [
+      {"texto": "Para encontrar O:", "color": "#64748b"},
+      {"texto": "tan 35° = O/10", "color": "#1e293b"},
+      {"texto": "O = 10 × tan 35° ≈ 7.0 cm", "color": "#ef4444"},
+      {"texto": "─────────────────", "color": "#cbd5e1"},
+      {"texto": "Para encontrar H:", "color": "#64748b"},
+      {"texto": "cos 35° = 10/H", "color": "#1e293b"},
+      {"texto": "H = 10/cos 35° ≈ 12.2 cm", "color": "#3b82f6"}
+    ]
+  }
+}
+

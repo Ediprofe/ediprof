@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 400" 
+style="font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;">
+<rect width="450" height="400" fill="#f8fafc"/>
+<text x="225.00" y="30.00" text-anchor="middle" font-size="18" font-weight="bold" fill="#f97316">Ángulo Interior</text>
+<circle cx="225" cy="200" r="110" fill="none" stroke="#3b82f6" stroke-width="2"/>
+<line x1="140.74" y1="129.29" x2="328.37" y2="237.62" stroke="#22c55e" stroke-width="2"/>
+<line x1="262.62" y1="96.63" x2="140.74" y2="270.71" stroke="#14b8a6" stroke-width="2"/>
+<circle cx="240" cy="190" r="6" fill="#f97316"/>
+<text x="252.00" y="195.00" text-anchor="start" font-size="14" font-weight="bold" fill="#f97316">P</text>
+<circle cx="140.74" cy="129.29" r="4" fill="#1e293b"/>
+<circle cx="262.62" cy="96.63" r="4" fill="#1e293b"/>
+<circle cx="328.37" cy="237.62" r="4" fill="#1e293b"/>
+<circle cx="140.74" cy="270.71" r="4" fill="#1e293b"/>
+<text x="122.74" y="124.29" text-anchor="start" font-size="12" font-weight="bold" fill="#1e293b">A</text>
+<text x="267.62" y="84.63" text-anchor="start" font-size="12" font-weight="bold" fill="#1e293b">B</text>
+<text x="338.37" y="242.62" text-anchor="start" font-size="12" font-weight="bold" fill="#1e293b">C</text>
+<text x="122.74" y="275.71" text-anchor="start" font-size="12" font-weight="bold" fill="#1e293b">D</text>
+<path d="M 262.62 96.63 A 110 110 0 0 0 140.74 129.29" fill="none" stroke="#f97316" stroke-width="4"/>
+<path d="M 140.74 270.71 A 110 110 0 0 0 328.37 237.62" fill="none" stroke="#fbbf24" stroke-width="4"/>
+<circle cx="225" cy="200" r="3" fill="#94a3b8"/>
+<rect x="75" y="340" width="300" height="50" rx="8" fill="white" stroke="#f97316"/>
+<text x="225.0" y="369.0" text-anchor="middle" font-size="12" fill="#1e293b"></text>
+<text x="225.00" y="360.00" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e293b">α = (arco₁ + arco₂) / 2</text>
+<text x="225.00" y="378.00" text-anchor="middle" font-size="10" font-weight="normal" fill="#94a3b8">Semisuma de arcos opuestos</text>
+</svg>

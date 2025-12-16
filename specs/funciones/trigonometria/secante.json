@@ -1,0 +1,52 @@
+{
+  "type": "function",
+  "metadata": {
+    "id": "secante",
+    "title": "La función secante: sec(x) = 1/cos(x)",
+    "lesson": "04-trigonometria/03-graficas-funciones-trigonometricas/04-graficas-cotangente-secante-cosecante"
+  },
+  "canvas": {
+    "width": 800,
+    "height": 450,
+    "padding": 55,
+    "background": "#f8fafc"
+  },
+  "axes": {
+    "x": { "min": "-2*pi", "max": "2*pi", "label": "x", "ticks": "pi" },
+    "y": { "min": -5, "max": 5, "label": "y" }
+  },
+  "functions": [
+    {
+      "id": "cos-x",
+      "expression": "cos(x)",
+      "color": "#94a3b8",
+      "strokeWidth": 2,
+      "style": "dashed"
+    },
+    {
+      "id": "sec-x",
+      "expression": "sec(x)",
+      "color": "#f97316",
+      "strokeWidth": 3
+    }
+  ],
+  "markers": [
+    { "x": 0, "y": 1, "label": "(0, 1)", "color": "#3b82f6", "labelPosition": "top" },
+    { "x": "pi", "y": -1, "label": "(π, -1)", "color": "#3b82f6", "labelPosition": "bottom" }
+  ],
+  "annotations": [
+    { "type": "vertical_asymptote", "x": "pi/2", "color": "#ef4444", "label": "x = π/2" },
+    { "type": "vertical_asymptote", "x": "-pi/2", "color": "#ef4444", "label": "x = -π/2" },
+    { "type": "vertical_asymptote", "x": "3*pi/2", "color": "#ef4444" },
+    { "type": "vertical_asymptote", "x": "-3*pi/2", "color": "#ef4444" },
+    { "type": "horizontal_line", "y": 1, "color": "#22c55e", "style": "dashed", "label": "y = 1" },
+    { "type": "horizontal_line", "y": -1, "color": "#22c55e", "style": "dashed", "label": "y = -1" }
+  ],
+  "animations": {
+    "enabled": true,
+    "style": "draw",
+    "duration": 2,
+    "stagger": 0.5
+  }
+}
+

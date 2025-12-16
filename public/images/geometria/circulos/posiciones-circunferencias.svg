@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 480" 
+style="font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;">
+<rect width="750" height="480" fill="#f8fafc"/>
+<text x="375.00" y="28.00" text-anchor="middle" font-size="18" font-weight="bold" fill="#1e293b">Posiciones entre Circunferencias</text>
+<circle cx="125" cy="140" r="50" fill="#dbeafe" fill-opacity="0.3" stroke="#3b82f6" stroke-width="2"/>
+<circle cx="125" cy="140" r="3" fill="#ef4444"/>
+<circle cx="220" cy="140" r="35" fill="#fef3c7" fill-opacity="0.5" stroke="#22c55e" stroke-width="2"/>
+<circle cx="220" cy="140" r="3" fill="#22c55e"/>
+<text x="125.00" y="220.00" text-anchor="middle" font-size="12" font-weight="bold" fill="#22c55e">Exteriores</text>
+<text x="125.00" y="236.00" text-anchor="middle" font-size="10" font-weight="normal" fill="#94a3b8">d > R + r</text>
+<circle cx="375" cy="140" r="50" fill="#dbeafe" fill-opacity="0.3" stroke="#3b82f6" stroke-width="2"/>
+<circle cx="375" cy="140" r="3" fill="#ef4444"/>
+<circle cx="425" cy="140" r="35" fill="#fef3c7" fill-opacity="0.5" stroke="#f97316" stroke-width="2"/>
+<circle cx="425" cy="140" r="3" fill="#f97316"/>
+<text x="375.00" y="220.00" text-anchor="middle" font-size="12" font-weight="bold" fill="#f97316">Tang. Ext.</text>
+<text x="375.00" y="236.00" text-anchor="middle" font-size="10" font-weight="normal" fill="#94a3b8">d = R + r</text>
+<circle cx="625" cy="140" r="55" fill="#dbeafe" fill-opacity="0.3" stroke="#3b82f6" stroke-width="2"/>
+<circle cx="625" cy="140" r="3" fill="#ef4444"/>
+<circle cx="655" cy="140" r="40" fill="#fef3c7" fill-opacity="0.5" stroke="#14b8a6" stroke-width="2"/>
+<circle cx="655" cy="140" r="3" fill="#14b8a6"/>
+<text x="625.00" y="220.00" text-anchor="middle" font-size="12" font-weight="bold" fill="#14b8a6">Secantes</text>
+<text x="625.00" y="236.00" text-anchor="middle" font-size="10" font-weight="normal" fill="#94a3b8">|R-r| < d < R+r</text>
+<circle cx="200" cy="340" r="60" fill="#dbeafe" fill-opacity="0.3" stroke="#3b82f6" stroke-width="2"/>
+<circle cx="200" cy="340" r="3" fill="#ef4444"/>
+<circle cx="225" cy="340" r="35" fill="#fef3c7" fill-opacity="0.5" stroke="#ec4899" stroke-width="2"/>
+<circle cx="225" cy="340" r="3" fill="#ec4899"/>
+<text x="200.00" y="420.00" text-anchor="middle" font-size="12" font-weight="bold" fill="#ec4899">Tang. Int.</text>
+<text x="200.00" y="436.00" text-anchor="middle" font-size="10" font-weight="normal" fill="#94a3b8">d = R - r</text>
+<circle cx="500" cy="340" r="65" fill="#dbeafe" fill-opacity="0.3" stroke="#3b82f6" stroke-width="2"/>
+<circle cx="500" cy="340" r="3" fill="#ef4444"/>
+<circle cx="500" cy="340" r="35" fill="#fef3c7" fill-opacity="0.5" stroke="#8b5cf6" stroke-width="2"/>
+<text x="500.00" y="420.00" text-anchor="middle" font-size="12" font-weight="bold" fill="#8b5cf6">Concéntricas</text>
+<text x="500.00" y="436.00" text-anchor="middle" font-size="10" font-weight="normal" fill="#94a3b8">d = 0</text>
+</svg>
