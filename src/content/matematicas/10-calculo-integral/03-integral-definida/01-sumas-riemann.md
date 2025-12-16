@@ -25,10 +25,15 @@ Las sumas de Riemann aproximan el área bajo una curva mediante rectángulos. So
 
 Dividimos $[a, b]$ en $n$ subintervalos:
 
-$$a = x_0 < x_1 < x_2 < ... < x_n = b$$
+$$
+a = x_0 < x_1 < x_2 < ... < x_n = b
+$$
 
 **Ancho de cada subintervalo (uniforme):**
-$$\Delta x = \frac{b - a}{n}$$
+
+$$
+\Delta x = \frac{b - a}{n}
+$$
 
 ---
 
@@ -36,7 +41,9 @@ $$\Delta x = \frac{b - a}{n}$$
 
 La **suma de Riemann** es:
 
-$$S_n = \sum_{i=1}^{n} f(x_i^*) \cdot \Delta x$$
+$$
+S_n = \sum_{i=1}^{n} f(x_i^*) \cdot \Delta x
+$$
 
 donde $x_i^*$ es un punto de muestra en el $i$-ésimo subintervalo.
 
@@ -59,12 +66,16 @@ Con $n = 4$ subintervalos: $\Delta x = \frac{2-0}{4} = 0.5$
 **Puntos:** $x_0=0$, $x_1=0.5$, $x_2=1$, $x_3=1.5$, $x_4=2$
 
 **Suma izquierda:**
-$$L_4 = \Delta x[f(0) + f(0.5) + f(1) + f(1.5)]$$
-$$= 0.5[0 + 0.25 + 1 + 2.25] = 0.5(3.5) = 1.75$$
+
+$$
+L_4 = \Delta x[f(0) + f(0.5) + f(1) + f(1.5)] = 0.5[0 + 0.25 + 1 + 2.25] = 0.5(3.5) = 1.75
+$$
 
 **Suma derecha:**
-$$R_4 = \Delta x[f(0.5) + f(1) + f(1.5) + f(2)]$$
-$$= 0.5[0.25 + 1 + 2.25 + 4] = 0.5(7.5) = 3.75$$
+
+$$
+R_4 = \Delta x[f(0.5) + f(1) + f(1.5) + f(2)] = 0.5[0.25 + 1 + 2.25 + 4] = 0.5(7.5) = 3.75
+$$
 
 **Valor real:** $\int_0^2 x^2\,dx = \frac{8}{3} \approx 2.67$
 
@@ -75,9 +86,10 @@ $$= 0.5[0.25 + 1 + 2.25 + 4] = 0.5(7.5) = 3.75$$
 Para $f(x) = x^2$ en $[0, 2]$ con $n = 8$: $\Delta x = 0.25$
 
 **Suma derecha:**
-$$R_8 = 0.25[f(0.25) + f(0.5) + ... + f(2)]$$
-$$= 0.25[0.0625 + 0.25 + 0.5625 + 1 + 1.5625 + 2.25 + 3.0625 + 4]$$
-$$= 0.25(12.75) = 3.1875$$
+
+$$
+R_8 = 0.25[f(0.25) + f(0.5) + ... + f(2)] = 0.25[0.0625 + 0.25 + 0.5625 + 1 + 1.5625 + 2.25 + 3.0625 + 4] = 0.25(12.75) = 3.1875
+$$
 
 ¡Más cerca de 2.67!
 
@@ -85,10 +97,15 @@ $$= 0.25(12.75) = 3.1875$$
 
 ## 📖 Notación sigma
 
-$$S_n = \sum_{i=1}^{n} f(x_i^*) \Delta x$$
+$$
+S_n = \sum_{i=1}^{n} f(x_i^*) \Delta x
+$$
 
 Para suma derecha con partición uniforme:
-$$R_n = \sum_{i=1}^{n} f\left(a + i \cdot \frac{b-a}{n}\right) \cdot \frac{b-a}{n}$$
+
+$$
+R_n = \sum_{i=1}^{n} f\left(a + i \cdot \frac{b-a}{n}\right) \cdot \frac{b-a}{n}
+$$
 
 ---
 
@@ -96,7 +113,9 @@ $$R_n = \sum_{i=1}^{n} f\left(a + i \cdot \frac{b-a}{n}\right) \cdot \frac{b-a}{
 
 Cuando $n \to \infty$:
 
-$$\lim_{n \to \infty} \sum_{i=1}^{n} f(x_i^*) \Delta x = \int_a^b f(x)\,dx$$
+$$
+\lim_{n \to \infty} \sum_{i=1}^{n} f(x_i^*) \Delta x = \int_a^b f(x)\,dx
+$$
 
 Todas las sumas de Riemann convergen al mismo valor.
 

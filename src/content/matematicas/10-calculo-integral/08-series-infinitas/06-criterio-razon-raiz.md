@@ -27,11 +27,17 @@ Sea $L = \lim_{n \to \infty} \left|\frac{a_{n+1}}{a_n}\right|$
 
 ## ⚙️ Ejemplo 1: Factorial
 
-$$\sum \frac{n!}{n^n}$$
+$$
+\sum \frac{n!}{n^n}
+$$
 
-$$\frac{a_{n+1}}{a_n} = \frac{(n+1)!}{(n+1)^{n+1}} \cdot \frac{n^n}{n!} = \frac{n^n}{(n+1)^n} = \left(\frac{n}{n+1}\right)^n$$
+$$
+\frac{a_{n+1}}{a_n} = \frac{(n+1)!}{(n+1)^{n+1}} \cdot \frac{n^n}{n!} = \frac{n^n}{(n+1)^n} = \left(\frac{n}{n+1}\right)^n
+$$
 
-$$L = \lim \left(\frac{n}{n+1}\right)^n = \lim \left(1 - \frac{1}{n+1}\right)^n = \frac{1}{e} < 1$$
+$$
+L = \lim \left(\frac{n}{n+1}\right)^n = \lim \left(1 - \frac{1}{n+1}\right)^n = \frac{1}{e} < 1
+$$
 
 **Converge.**
 
@@ -39,11 +45,17 @@ $$L = \lim \left(\frac{n}{n+1}\right)^n = \lim \left(1 - \frac{1}{n+1}\right)^n 
 
 ## ⚙️ Ejemplo 2: Exponencial sobre factorial
 
-$$\sum \frac{2^n}{n!}$$
+$$
+\sum \frac{2^n}{n!}
+$$
 
-$$\frac{a_{n+1}}{a_n} = \frac{2^{n+1}}{(n+1)!} \cdot \frac{n!}{2^n} = \frac{2}{n+1}$$
+$$
+\frac{a_{n+1}}{a_n} = \frac{2^{n+1}}{(n+1)!} \cdot \frac{n!}{2^n} = \frac{2}{n+1}
+$$
 
-$$L = \lim \frac{2}{n+1} = 0 < 1$$
+$$
+L = \lim \frac{2}{n+1} = 0 < 1
+$$
 
 **Converge.**
 
@@ -51,11 +63,17 @@ $$L = \lim \frac{2}{n+1} = 0 < 1$$
 
 ## ⚙️ Ejemplo 3: Divergencia
 
-$$\sum \frac{3^n}{n^2}$$
+$$
+\sum \frac{3^n}{n^2}
+$$
 
-$$\frac{a_{n+1}}{a_n} = \frac{3^{n+1}/(n+1)^2}{3^n/n^2} = 3 \cdot \frac{n^2}{(n+1)^2}$$
+$$
+\frac{a_{n+1}}{a_n} = \frac{3^{n+1}/(n+1)^2}{3^n/n^2} = 3 \cdot \frac{n^2}{(n+1)^2}
+$$
 
-$$L = 3 \cdot 1 = 3 > 1$$
+$$
+L = 3 \cdot 1 = 3 > 1
+$$
 
 **Diverge.**
 
@@ -75,11 +93,17 @@ Sea $L = \lim_{n \to \infty} \sqrt[n]{|a_n|}$
 
 ## ⚙️ Ejemplo 4: Usando raíz
 
-$$\sum \left(\frac{n}{2n+1}\right)^n$$
+$$
+\sum \left(\frac{n}{2n+1}\right)^n
+$$
 
-$$\sqrt[n]{a_n} = \frac{n}{2n+1}$$
+$$
+\sqrt[n]{a_n} = \frac{n}{2n+1}
+$$
 
-$$L = \lim \frac{n}{2n+1} = \frac{1}{2} < 1$$
+$$
+L = \lim \frac{n}{2n+1} = \frac{1}{2} < 1
+$$
 
 **Converge.**
 
@@ -87,11 +111,17 @@ $$L = \lim \frac{n}{2n+1} = \frac{1}{2} < 1$$
 
 ## ⚙️ Ejemplo 5: Exponente en n
 
-$$\sum \left(\frac{3n+1}{2n+5}\right)^n$$
+$$
+\sum \left(\frac{3n+1}{2n+5}\right)^n
+$$
 
-$$\sqrt[n]{a_n} = \frac{3n+1}{2n+5}$$
+$$
+\sqrt[n]{a_n} = \frac{3n+1}{2n+5}
+$$
 
-$$L = \lim \frac{3n+1}{2n+5} = \frac{3}{2} > 1$$
+$$
+L = \lim \frac{3n+1}{2n+5} = \frac{3}{2} > 1
+$$
 
 **Diverge.**
 
@@ -108,7 +138,7 @@ $$L = \lim \frac{3n+1}{2n+5} = \frac{3}{2} > 1$$
 
 ---
 
-## 📖 El caso $L = 1$
+## 📖 El caso L = 1
 
 Cuando $L = 1$, el criterio falla. Ejemplos:
 
@@ -126,9 +156,13 @@ Usar otro criterio (comparación, integral).
 <details>
 <summary>Ver solución</summary>
 
-$\frac{a_{n+1}}{a_n} = \frac{(n+1)^{100}}{2^{n+1}} \cdot \frac{2^n}{n^{100}} = \frac{1}{2}\left(\frac{n+1}{n}\right)^{100}$
+$$
+\frac{a_{n+1}}{a_n} = \frac{(n+1)^{100}}{2^{n+1}} \cdot \frac{2^n}{n^{100}} = \frac{1}{2}\left(\frac{n+1}{n}\right)^{100}
+$$
 
-$L = \frac{1}{2} \cdot 1 = \frac{1}{2} < 1$
+$$
+L = \frac{1}{2} \cdot 1 = \frac{1}{2} < 1
+$$
 
 **Converge.**
 </details>
@@ -140,7 +174,9 @@ $L = \frac{1}{2} \cdot 1 = \frac{1}{2} < 1$
 <details>
 <summary>Ver solución</summary>
 
-$\sqrt[n]{a_n} = \frac{n^2}{2n^2+1} \to \frac{1}{2} < 1$
+$$
+\sqrt[n]{a_n} = \frac{n^2}{2n^2+1} \to \frac{1}{2} < 1
+$$
 
 **Converge.**
 </details>

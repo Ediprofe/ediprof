@@ -17,7 +17,9 @@ Las ecuaciones homogéneas se resuelven mediante una sustitución que las convie
 
 Una función $f(x, y)$ es **homogénea de grado $n$** si:
 
-$$f(tx, ty) = t^n f(x, y)$$
+$$
+f(tx, ty) = t^n f(x, y)
+$$
 
 ---
 
@@ -25,7 +27,9 @@ $$f(tx, ty) = t^n f(x, y)$$
 
 Una ED de primer orden es homogénea si puede escribirse:
 
-$$\frac{dy}{dx} = F\left(\frac{y}{x}\right)$$
+$$
+\frac{dy}{dx} = F\left(\frac{y}{x}\right)
+$$
 
 o si $M(x,y)\,dx + N(x,y)\,dy = 0$ donde $M$ y $N$ son homogéneas del mismo grado.
 
@@ -44,7 +48,9 @@ o si $M(x,y)\,dx + N(x,y)\,dy = 0$ donde $M$ y $N$ son homogéneas del mismo gra
 
 ## ⚙️ Ejemplo 1: Básica
 
-$$\frac{dy}{dx} = \frac{x + y}{x}$$
+$$
+\frac{dy}{dx} = \frac{x + y}{x}
+$$
 
 **Verificar homogeneidad:** $= 1 + \frac{y}{x} = F(y/x)$ ✓
 
@@ -60,13 +66,17 @@ $$dv = \frac{dx}{x}$$
 
 **Revertir:** $\frac{y}{x} = \ln|x| + C$
 
-$$y = x\ln|x| + Cx$$
+$$
+y = x\ln|x| + Cx
+$$
 
 ---
 
 ## ⚙️ Ejemplo 2: Forma M-N
 
-$$(x^2 + y^2)\,dx - 2xy\,dy = 0$$
+$$
+(x^2 + y^2)\,dx - 2xy\,dy = 0
+$$
 
 **Reescribir:** $\frac{dy}{dx} = \frac{x^2 + y^2}{2xy}$
 
@@ -86,7 +96,9 @@ $\frac{1}{|1-v^2|} = A|x|$
 
 ## ⚙️ Ejemplo 3: Con condición inicial
 
-$$\frac{dy}{dx} = \frac{y}{x} + \tan\frac{y}{x}, \quad y(1) = \frac{\pi}{4}$$
+$$
+\frac{dy}{dx} = \frac{y}{x} + \tan\frac{y}{x}, \quad y(1) = \frac{\pi}{4}
+$$
 
 $y = vx$: $v + xv' = v + \tan v$
 

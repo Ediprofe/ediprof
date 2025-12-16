@@ -15,7 +15,9 @@ Las funciones trigonométricas tienen límites especiales que aparecen constante
 
 ## 📖 El límite fundamental
 
-$$\boxed{\lim_{x \to 0} \frac{\sin x}{x} = 1}$$
+$$
+\boxed{\lim_{x \to 0} \frac{\sin x}{x} = 1}
+$$
 
 Este es el límite más importante en trigonometría diferencial.
 
@@ -27,11 +29,15 @@ Este límite solo vale cuando $x$ está en **radianes**.
 
 Para $0 < x < \frac{\pi}{2}$:
 
-$$\cos x < \frac{\sin x}{x} < 1$$
+$$
+\cos x < \frac{\sin x}{x} < 1
+$$
 
 Cuando $x \to 0$, $\cos x \to 1$, por el teorema del encaje:
 
-$$\lim_{x \to 0} \frac{\sin x}{x} = 1$$
+$$
+\lim_{x \to 0} \frac{\sin x}{x} = 1
+$$
 
 ---
 
@@ -39,13 +45,21 @@ $$\lim_{x \to 0} \frac{\sin x}{x} = 1$$
 
 Del límite fundamental se derivan:
 
-$$\lim_{x \to 0} \frac{x}{\sin x} = 1$$
+$$
+\lim_{x \to 0} \frac{x}{\sin x} = 1
+$$
 
-$$\lim_{x \to 0} \frac{\tan x}{x} = 1$$
+$$
+\lim_{x \to 0} \frac{\tan x}{x} = 1
+$$
 
-$$\lim_{x \to 0} \frac{1 - \cos x}{x} = 0$$
+$$
+\lim_{x \to 0} \frac{1 - \cos x}{x} = 0
+$$
 
-$$\lim_{x \to 0} \frac{1 - \cos x}{x^2} = \frac{1}{2}$$
+$$
+\lim_{x \to 0} \frac{1 - \cos x}{x^2} = \frac{1}{2}
+$$
 
 ---
 

@@ -17,7 +17,9 @@ Las funciones algebraicas incluyen polinomios, raíces y cocientes. Aprenderemos
 
 Para cualquier polinomio $P(x) = a_n x^n + a_{n-1}x^{n-1} + \cdots + a_0$:
 
-$$\lim_{x \to a} P(x) = P(a)$$
+$$
+\lim_{x \to a} P(x) = P(a)
+$$
 
 Basta **sustituir directamente**.
 
@@ -35,7 +37,9 @@ Para $f(x) = \frac{P(x)}{Q(x)}$:
 
 ### Caso 1: $Q(a) \neq 0$
 
-$$\lim_{x \to a} \frac{P(x)}{Q(x)} = \frac{P(a)}{Q(a)}$$
+$$
+\lim_{x \to a} \frac{P(x)}{Q(x)} = \frac{P(a)}{Q(a)}
+$$
 
 ### Caso 2: $Q(a) = 0$ y $P(a) \neq 0$
 
@@ -51,7 +55,9 @@ Forma indeterminada $\frac{0}{0}$. Requiere factorización.
 
 $$\lim_{x \to 2} \frac{x^2 + 3x - 1}{x + 5}$$
 
-$$= \frac{4 + 6 - 1}{2 + 5} = \frac{9}{7}$$
+$$
+= \frac{4 + 6 - 1}{2 + 5} = \frac{9}{7}
+$$
 
 ---
 
@@ -79,9 +85,13 @@ $$\lim_{x \to 2} \frac{x^3 - 8}{x^2 - 4}$$
 - $x^3 - 8 = (x - 2)(x^2 + 2x + 4)$ (diferencia de cubos)
 - $x^2 - 4 = (x - 2)(x + 2)$
 
-$$= \lim_{x \to 2} \frac{(x-2)(x^2 + 2x + 4)}{(x-2)(x+2)}$$
+$$
+= \lim_{x \to 2} \frac{(x-2)(x^2 + 2x + 4)}{(x-2)(x+2)}
+$$
 
-$$= \lim_{x \to 2} \frac{x^2 + 2x + 4}{x + 2} = \frac{4 + 4 + 4}{4} = \frac{12}{4} = 3$$
+$$
+= \lim_{x \to 2} \frac{x^2 + 2x + 4}{x + 2} = \frac{4 + 4 + 4}{4} = \frac{12}{4} = 3
+$$
 
 ---
 
@@ -109,7 +119,9 @@ $$= \lim_{x \to 0} \frac{(x + 4) - 4}{x(\sqrt{x + 4} + 2)}$$
 
 $$= \lim_{x \to 0} \frac{x}{x(\sqrt{x + 4} + 2)}$$
 
-$$= \lim_{x \to 0} \frac{1}{\sqrt{x + 4} + 2} = \frac{1}{2 + 2} = \frac{1}{4}$$
+$$
+= \lim_{x \to 0} \frac{1}{\sqrt{x + 4} + 2} = \frac{1}{2 + 2} = \frac{1}{4}
+$$
 
 ---
 
@@ -125,7 +137,9 @@ $$= \lim_{x \to 4} \frac{(x - 4)(\sqrt{x} + 2)}{(\sqrt{x} - 2)(\sqrt{x} + 2)}$$
 
 $$= \lim_{x \to 4} \frac{(x - 4)(\sqrt{x} + 2)}{x - 4}$$
 
-$$= \lim_{x \to 4} (\sqrt{x} + 2) = 2 + 2 = 4$$
+$$
+= \lim_{x \to 4} (\sqrt{x} + 2) = 2 + 2 = 4
+$$
 
 ---
 
@@ -143,7 +157,9 @@ $$= \lim_{x \to 0} \frac{(1+x) - (1-x)}{x(\sqrt{1+x} + \sqrt{1-x})}$$
 
 $$= \lim_{x \to 0} \frac{2x}{x(\sqrt{1+x} + \sqrt{1-x})}$$
 
-$$= \lim_{x \to 0} \frac{2}{\sqrt{1+x} + \sqrt{1-x}} = \frac{2}{1 + 1} = 1$$
+$$
+= \lim_{x \to 0} \frac{2}{\sqrt{1+x} + \sqrt{1-x}} = \frac{2}{1 + 1} = 1
+$$
 
 ---
 

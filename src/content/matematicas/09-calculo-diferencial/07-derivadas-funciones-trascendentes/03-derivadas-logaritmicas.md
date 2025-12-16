@@ -15,7 +15,9 @@ Los logaritmos son las inversas de las exponenciales. Sus derivadas aparecen fre
 
 ## 📖 Derivada del logaritmo natural
 
-$$\boxed{\frac{d}{dx}[\ln x] = \frac{1}{x}}$$
+$$
+\boxed{\frac{d}{dx}[\ln x] = \frac{1}{x}}
+$$
 
 Válida para $x > 0$.
 
@@ -27,13 +29,17 @@ Si $y = \ln x$, entonces $e^y = x$.
 
 Derivando implícitamente: $e^y \frac{dy}{dx} = 1$
 
-$$\frac{dy}{dx} = \frac{1}{e^y} = \frac{1}{x}$$
+$$
+\frac{dy}{dx} = \frac{1}{e^y} = \frac{1}{x}
+$$
 
 ---
 
 ## 📖 Con la regla de la cadena
 
-$$\frac{d}{dx}[\ln u] = \frac{1}{u} \cdot u' = \frac{u'}{u}$$
+$$
+\frac{d}{dx}[\ln u] = \frac{1}{u} \cdot u' = \frac{u'}{u}
+$$
 
 "Derivada del argumento sobre el argumento."
 
@@ -51,7 +57,9 @@ $$\frac{d}{dx}[3\ln x] = \frac{3}{x}$$
 
 Deriva $f(x) = \ln(3x)$
 
-$$f'(x) = \frac{1}{3x} \cdot 3 = \frac{3}{3x} = \frac{1}{x}$$
+$$
+f'(x) = \frac{1}{3x} \cdot 3 = \frac{3}{3x} = \frac{1}{x}
+$$
 
 **Interesante:** $\ln(3x) = \ln 3 + \ln x$, así que $(\ln 3 + \ln x)' = 0 + \frac{1}{x}$
 
@@ -61,7 +69,9 @@ $$f'(x) = \frac{1}{3x} \cdot 3 = \frac{3}{3x} = \frac{1}{x}$$
 
 Deriva $g(x) = \ln(x^2 + 1)$
 
-$$g'(x) = \frac{2x}{x^2 + 1}$$
+$$
+g'(x) = \frac{2x}{x^2 + 1}
+$$
 
 ---
 
@@ -79,13 +89,17 @@ También por cadena: $\frac{1}{\sqrt{x}} \cdot \frac{1}{2\sqrt{x}} = \frac{1}{2x
 
 Deriva $f(x) = \ln(\sin x)$
 
-$$f'(x) = \frac{\cos x}{\sin x} = \cot x$$
+$$
+f'(x) = \frac{\cos x}{\sin x} = \cot x
+$$
 
 ---
 
 ## 📖 Derivada de $\ln|x|$
 
-$$\frac{d}{dx}[\ln|x|] = \frac{1}{x}$$
+$$
+\frac{d}{dx}[\ln|x|] = \frac{1}{x}
+$$
 
 Válida para $x \neq 0$ (tanto positivo como negativo).
 
@@ -93,11 +107,15 @@ Válida para $x \neq 0$ (tanto positivo como negativo).
 
 ## 📖 Logaritmo de base $a$
 
-$$\log_a x = \frac{\ln x}{\ln a}$$
+$$
+\log_a x = \frac{\ln x}{\ln a}
+$$
 
 Por lo tanto:
 
-$$\boxed{\frac{d}{dx}[\log_a x] = \frac{1}{x \ln a}}$$
+$$
+\boxed{\frac{d}{dx}[\log_a x] = \frac{1}{x \ln a}}
+$$
 
 ---
 
@@ -105,7 +123,9 @@ $$\boxed{\frac{d}{dx}[\log_a x] = \frac{1}{x \ln a}}$$
 
 Deriva $f(x) = \log_{10} x$
 
-$$f'(x) = \frac{1}{x \ln 10} \approx \frac{0.434}{x}$$
+$$
+f'(x) = \frac{1}{x \ln 10} \approx \frac{0.434}{x}
+$$
 
 ---
 
@@ -113,7 +133,9 @@ $$f'(x) = \frac{1}{x \ln 10} \approx \frac{0.434}{x}$$
 
 Deriva $g(x) = \log_2(x^2)$
 
-$$g'(x) = \frac{2x}{x^2 \ln 2} = \frac{2}{x \ln 2}$$
+$$
+g'(x) = \frac{2x}{x^2 \ln 2} = \frac{2}{x \ln 2}
+$$
 
 También: $\log_2(x^2) = 2\log_2 x$, así que $g'(x) = \frac{2}{x \ln 2}$ ✓
 
@@ -121,7 +143,9 @@ También: $\log_2(x^2) = 2\log_2 x$, así que $g'(x) = \frac{2}{x \ln 2}$ ✓
 
 ## 📖 Patrón importante
 
-$$\frac{d}{dx}[\ln f(x)] = \frac{f'(x)}{f(x)}$$
+$$
+\frac{d}{dx}[\ln f(x)] = \frac{f'(x)}{f(x)}
+$$
 
 Este patrón es la base de la **derivación logarítmica**.
 
@@ -131,7 +155,9 @@ Este patrón es la base de la **derivación logarítmica**.
 
 Deriva $h(x) = x \ln x$
 
-$$h'(x) = 1 \cdot \ln x + x \cdot \frac{1}{x} = \ln x + 1$$
+$$
+h'(x) = 1 \cdot \ln x + x \cdot \frac{1}{x} = \ln x + 1
+$$
 
 ---
 
@@ -169,7 +195,9 @@ c) $\frac{e^x}{e^x} = 1$ (o directamente: $\ln(e^x) = x \to 1$)
 
 **Ejercicio 2:** Deriva:
 
-$$f(x) = \frac{\ln x}{x}$$
+$$
+f(x) = \frac{\ln x}{x}
+$$
 
 <details>
 <summary>Ver solución</summary>

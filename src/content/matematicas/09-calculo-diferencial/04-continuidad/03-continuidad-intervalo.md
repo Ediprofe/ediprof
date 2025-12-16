@@ -17,7 +17,9 @@ Una función puede ser continua en un punto pero discontinua en otro. Estudiar l
 
 $f$ es **continua en $(a, b)$** si es continua en cada punto del intervalo.
 
-$$\forall c \in (a, b): \lim_{x \to c} f(x) = f(c)$$
+$$
+\forall c \in (a, b): \lim_{x \to c} f(x) = f(c)
+$$
 
 ---
 
@@ -35,7 +37,11 @@ Los extremos solo requieren continuidad **unilateral**.
 
 ## ⚙️ Ejemplo 1: Continuidad en intervalo cerrado
 
-$$f(x) = \sqrt{x}$$ en $[0, 4]$
+$$
+f(x) = \sqrt{x}
+$$
+
+en $[0, 4]$
 
 **En el interior $(0, 4)$:** $f$ es continua (composición de funciones continuas)
 
@@ -49,7 +55,11 @@ $$f(x) = \sqrt{x}$$ en $[0, 4]$
 
 ## ⚙️ Ejemplo 2: Raíz cuadrada modificada
 
-$$g(x) = \sqrt{4 - x^2}$$ en $[-2, 2]$
+$$
+g(x) = \sqrt{4 - x^2}
+$$
+
+en $[-2, 2]$
 
 **Dominio:** $4 - x^2 \geq 0 \Rightarrow |x| \leq 2$
 
@@ -90,7 +100,9 @@ Una función es **continua por partes** en $[a, b]$ si:
 
 ## ⚙️ Ejemplo 3: Continua por partes
 
-$$f(x) = \begin{cases} x^2 & \text{si } x < 1 \\ 2x - 1 & \text{si } x \geq 1 \end{cases}$$
+$$
+f(x) = \begin{cases} x^2 & \text{si } x < 1 \\ 2x - 1 & \text{si } x \geq 1 \end{cases}
+$$
 
 **En $(-\infty, 1)$:** $x^2$ es continua
 
@@ -110,7 +122,9 @@ $f$ es continua en todo $\mathbb{R}$.
 
 La función escalón:
 
-$$\lfloor x \rfloor = \text{mayor entero } \leq x$$
+$$
+\lfloor x \rfloor = \text{mayor entero } \leq x
+$$
 
 - Es continua en cada intervalo $[n, n+1)$
 - Tiene discontinuidades de salto en cada entero
@@ -133,7 +147,9 @@ Si $f$ es continua en $[a, b]$:
 
 ## ⚙️ Ejemplo 5: Determinar intervalo de continuidad
 
-$$h(x) = \frac{x + 2}{x^2 - 4}$$
+$$
+h(x) = \frac{x + 2}{x^2 - 4}
+$$
 
 **Discontinuidades:** $x^2 - 4 = 0 \Rightarrow x = \pm 2$
 
@@ -159,7 +175,9 @@ $$h(x) = \frac{x + 2}{x^2 - 4}$$
 
 **Ejercicio 1:** Determina los intervalos de continuidad:
 
-$$f(x) = \frac{1}{x(x-3)}$$
+$$
+f(x) = \frac{1}{x(x-3)}
+$$
 
 <details>
 <summary>Ver solución</summary>
@@ -176,7 +194,9 @@ Discontinuidades en $x = 0$ y $x = 3$
 
 **Ejercicio 2:** ¿Es continua en $[0, 2]$?
 
-$$g(x) = \begin{cases} x + 1 & \text{si } 0 \leq x < 1 \\ 2 & \text{si } x = 1 \\ 3 - x & \text{si } 1 < x \leq 2 \end{cases}$$
+$$
+g(x) = \begin{cases} x + 1 & \text{si } 0 \leq x < 1 \\ 2 & \text{si } x = 1 \\ 3 - x & \text{si } 1 < x \leq 2 \end{cases}
+$$
 
 <details>
 <summary>Ver solución</summary>

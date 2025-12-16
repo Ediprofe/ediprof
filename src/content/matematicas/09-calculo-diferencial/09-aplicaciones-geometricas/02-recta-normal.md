@@ -23,7 +23,9 @@ La **recta normal** a una curva en un punto es la recta perpendicular a la tange
 
 Si la tangente tiene pendiente $m_t = f'(a)$:
 
-$$m_n = -\frac{1}{f'(a)}$$
+$$
+m_n = -\frac{1}{f'(a)}
+$$
 
 (Las pendientes de rectas perpendiculares son opuestas recíprocas)
 

@@ -31,7 +31,9 @@ Si **cualquiera** de estas condiciones falla, la función es **discontinua** en 
 
 ## 📖 Definición compacta
 
-$$f \text{ es continua en } a \quad \Leftrightarrow \quad \lim_{x \to a} f(x) = f(a)$$
+$$
+f \text{ es continua en } a \quad \Leftrightarrow \quad \lim_{x \to a} f(x) = f(a)
+$$
 
 Esta ecuación implica las tres condiciones simultáneamente.
 
@@ -53,7 +55,9 @@ Esta ecuación implica las tres condiciones simultáneamente.
 
 ## ⚙️ Ejemplo 2: Falla condición 1
 
-$$g(x) = \frac{x^2 - 4}{x - 2}$$
+$$
+g(x) = \frac{x^2 - 4}{x - 2}
+$$
 
 ¿Es continua en $x = 2$?
 
@@ -65,7 +69,9 @@ $$g(x) = \frac{x^2 - 4}{x - 2}$$
 
 ## ⚙️ Ejemplo 3: Falla condición 3
 
-$$h(x) = \begin{cases} x^2 & \text{si } x \neq 1 \\ 5 & \text{si } x = 1 \end{cases}$$
+$$
+h(x) = \begin{cases} x^2 & \text{si } x \neq 1 \\ 5 & \text{si } x = 1 \end{cases}
+$$
 
 ¿Es continua en $x = 1$?
 
@@ -81,7 +87,9 @@ $$h(x) = \begin{cases} x^2 & \text{si } x \neq 1 \\ 5 & \text{si } x = 1 \end{ca
 
 ## ⚙️ Ejemplo 4: Función por partes continua
 
-$$p(x) = \begin{cases} 2x + 1 & \text{si } x < 3 \\ x^2 - 2 & \text{si } x \geq 3 \end{cases}$$
+$$
+p(x) = \begin{cases} 2x + 1 & \text{si } x < 3 \\ x^2 - 2 & \text{si } x \geq 3 \end{cases}
+$$
 
 ¿Es continua en $x = 3$?
 
@@ -143,10 +151,16 @@ Por composición: $f = h \circ g$ es continua en todo $\mathbb{R}$.
 ## 📖 Continuidad lateral
 
 $f$ es **continua por la derecha** en $a$ si:
-$$\lim_{x \to a^+} f(x) = f(a)$$
+
+$$
+\lim_{x \to a^+} f(x) = f(a)
+$$
 
 $f$ es **continua por la izquierda** en $a$ si:
-$$\lim_{x \to a^-} f(x) = f(a)$$
+
+$$
+\lim_{x \to a^-} f(x) = f(a)
+$$
 
 ---
 
@@ -154,7 +168,11 @@ $$\lim_{x \to a^-} f(x) = f(a)$$
 
 **Ejercicio 1:** Determina si la función es continua en el punto indicado:
 
-$$f(x) = \frac{x^2 - 9}{x - 3}$$ en $x = 3$
+$$
+f(x) = \frac{x^2 - 9}{x - 3}
+$$
+
+en $x = 3$
 
 <details>
 <summary>Ver solución</summary>
@@ -168,7 +186,9 @@ $f(3)$ no existe (división por cero).
 
 **Ejercicio 2:** Encuentra el valor de $k$ para que $f$ sea continua en $x = 2$:
 
-$$f(x) = \begin{cases} x^2 - 1 & \text{si } x < 2 \\ kx + 1 & \text{si } x \geq 2 \end{cases}$$
+$$
+f(x) = \begin{cases} x^2 - 1 & \text{si } x < 2 \\ kx + 1 & \text{si } x \geq 2 \end{cases}
+$$
 
 <details>
 <summary>Ver solución</summary>

@@ -19,13 +19,17 @@ Sean $\lim_{x \to a} f(x) = L$ y $\lim_{x \to a} g(x) = M$, donde $L$ y $M$ son 
 
 ### 1. Límite de una constante
 
-$$\lim_{x \to a} c = c$$
+$$
+\lim_{x \to a} c = c
+$$
 
 El límite de una constante es la misma constante.
 
 ### 2. Límite de la identidad
 
-$$\lim_{x \to a} x = a$$
+$$
+\lim_{x \to a} x = a
+$$
 
 El límite de $x$ cuando $x \to a$ es $a$.
 
@@ -35,23 +39,31 @@ El límite de $x$ cuando $x \to a$ es $a$.
 
 ### 3. Suma y resta
 
-$$\lim_{x \to a} [f(x) \pm g(x)] = L \pm M$$
+$$
+\lim_{x \to a} [f(x) \pm g(x)] = L \pm M
+$$
 
 "El límite de la suma es la suma de los límites."
 
 ### 4. Producto por constante
 
-$$\lim_{x \to a} [c \cdot f(x)] = c \cdot L$$
+$$
+\lim_{x \to a} [c \cdot f(x)] = c \cdot L
+$$
 
 ### 5. Producto
 
-$$\lim_{x \to a} [f(x) \cdot g(x)] = L \cdot M$$
+$$
+\lim_{x \to a} [f(x) \cdot g(x)] = L \cdot M
+$$
 
 "El límite del producto es el producto de los límites."
 
 ### 6. Cociente
 
-$$\lim_{x \to a} \frac{f(x)}{g(x)} = \frac{L}{M} \quad \text{si } M \neq 0$$
+$$
+\lim_{x \to a} \frac{f(x)}{g(x)} = \frac{L}{M} \quad \text{si } M \neq 0
+$$
 
 "El límite del cociente es el cociente de los límites."
 
@@ -61,11 +73,15 @@ $$\lim_{x \to a} \frac{f(x)}{g(x)} = \frac{L}{M} \quad \text{si } M \neq 0$$
 
 ### 7. Potencia
 
-$$\lim_{x \to a} [f(x)]^n = L^n$$
+$$
+\lim_{x \to a} [f(x)]^n = L^n
+$$
 
 ### 8. Raíz
 
-$$\lim_{x \to a} \sqrt[n]{f(x)} = \sqrt[n]{L}$$
+$$
+\lim_{x \to a} \sqrt[n]{f(x)} = \sqrt[n]{L}
+$$
 
 (Si $n$ es par, requiere $L \geq 0$)
 
@@ -93,7 +109,9 @@ Calcula $\lim_{x \to 3} \frac{x^2 + 1}{x - 1}$
 
 **Verificamos:** El denominador cuando $x \to 3$ es $3 - 1 = 2 \neq 0$.
 
-$$= \frac{\lim_{x \to 3}(x^2 + 1)}{\lim_{x \to 3}(x - 1)} = \frac{9 + 1}{3 - 1} = \frac{10}{2} = 5$$
+$$
+= \frac{\lim_{x \to 3}(x^2 + 1)}{\lim_{x \to 3}(x - 1)} = \frac{9 + 1}{3 - 1} = \frac{10}{2} = 5
+$$
 
 ---
 
@@ -101,7 +119,9 @@ $$= \frac{\lim_{x \to 3}(x^2 + 1)}{\lim_{x \to 3}(x - 1)} = \frac{9 + 1}{3 - 1} 
 
 Calcula $\lim_{x \to 4} \sqrt{x^2 + 9}$
 
-$$= \sqrt{\lim_{x \to 4}(x^2 + 9)} = \sqrt{16 + 9} = \sqrt{25} = 5$$
+$$
+= \sqrt{\lim_{x \to 4}(x^2 + 9)} = \sqrt{16 + 9} = \sqrt{25} = 5
+$$
 
 ---
 
@@ -109,7 +129,9 @@ $$= \sqrt{\lim_{x \to 4}(x^2 + 9)} = \sqrt{16 + 9} = \sqrt{25} = 5$$
 
 Para cualquier polinomio $P(x)$:
 
-$$\lim_{x \to a} P(x) = P(a)$$
+$$
+\lim_{x \to a} P(x) = P(a)
+$$
 
 **Simplemente sustituimos** $x = a$ en el polinomio.
 
@@ -125,7 +147,9 @@ $$= (-1)^4 + 2(-1)^3 - (-1) + 7 = 1 - 2 + 1 + 7 = 7$$
 
 Para una función racional $\frac{P(x)}{Q(x)}$ donde $Q(a) \neq 0$:
 
-$$\lim_{x \to a} \frac{P(x)}{Q(x)} = \frac{P(a)}{Q(a)}$$
+$$
+\lim_{x \to a} \frac{P(x)}{Q(x)} = \frac{P(a)}{Q(a)}
+$$
 
 ### ⚙️ Ejemplo 5
 
@@ -139,7 +163,9 @@ $$= \frac{8 - 1}{4 + 3} = \frac{7}{7} = 1$$
 
 Si $\lim_{x \to a} g(x) = L$ y $f$ es continua en $L$:
 
-$$\lim_{x \to a} f(g(x)) = f\left(\lim_{x \to a} g(x)\right) = f(L)$$
+$$
+\lim_{x \to a} f(g(x)) = f\left(\lim_{x \to a} g(x)\right) = f(L)
+$$
 
 ### ⚙️ Ejemplo 6
 
@@ -153,11 +179,17 @@ $$= \sin\left(\lim_{x \to 0}(x^2 + \pi)\right) = \sin(0 + \pi) = \sin\pi = 0$$
 
 Si $g(x) \leq f(x) \leq h(x)$ para todo $x$ cerca de $a$ (excepto posiblemente en $a$), y:
 
-$$\lim_{x \to a} g(x) = \lim_{x \to a} h(x) = L$$
+Si $\lim_{x \to a} g(x) = \lim_{x \to a} h(x) = L$
+
+$$
+\lim_{x \to a} g(x) = \lim_{x \to a} h(x) = L
+$$
 
 Entonces:
 
-$$\lim_{x \to a} f(x) = L$$
+$$
+\lim_{x \to a} f(x) = L
+$$
 
 ### ⚙️ Ejemplo 7
 
@@ -169,7 +201,9 @@ Entonces: $-x^2 \leq x^2 \sin\left(\frac{1}{x}\right) \leq x^2$
 
 Como $\lim_{x \to 0} (-x^2) = 0$ y $\lim_{x \to 0} x^2 = 0$:
 
-$$\lim_{x \to 0} x^2 \sin\left(\frac{1}{x}\right) = 0$$
+$$
+\lim_{x \to 0} x^2 \sin\left(\frac{1}{x}\right) = 0
+$$
 
 ---
 

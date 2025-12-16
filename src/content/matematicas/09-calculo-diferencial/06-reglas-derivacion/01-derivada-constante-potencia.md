@@ -15,7 +15,9 @@ Las reglas de derivación nos permiten calcular derivadas sin usar la definició
 
 ## 📖 Derivada de una constante
 
-$$\frac{d}{dx}[c] = 0$$
+$$
+\frac{d}{dx}[c] = 0
+$$
 
 La derivada de cualquier constante es cero.
 
@@ -40,7 +42,9 @@ $$\frac{d}{dx}[e^2] = 0 \quad \text{(es un número fijo)}$$
 
 ## 📖 Regla de la potencia
 
-$$\boxed{\frac{d}{dx}[x^n] = n \cdot x^{n-1}}$$
+$$
+\boxed{\frac{d}{dx}[x^n] = n \cdot x^{n-1}}
+$$
 
 Esto funciona para **cualquier** $n$ real.
 
@@ -84,7 +88,9 @@ $$\frac{d}{dx}[\sqrt[4]{x^3}] = \frac{d}{dx}[x^{3/4}] = \frac{3}{4}x^{-1/4} = \f
 
 ## 📖 Múltiplo constante
 
-$$\frac{d}{dx}[c \cdot f(x)] = c \cdot f'(x)$$
+$$
+\frac{d}{dx}[c \cdot f(x)] = c \cdot f'(x)
+$$
 
 Las constantes "salen" de la derivada.
 

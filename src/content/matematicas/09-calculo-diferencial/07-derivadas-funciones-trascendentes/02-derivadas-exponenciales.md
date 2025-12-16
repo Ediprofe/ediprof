@@ -15,7 +15,9 @@ La función exponencial $e^x$ tiene una propiedad única: es su propia derivada.
 
 ## 📖 La derivada más especial
 
-$$\boxed{\frac{d}{dx}[e^x] = e^x}$$
+$$
+\boxed{\frac{d}{dx}[e^x] = e^x}
+$$
 
 **La función $e^x$ es su propia derivada.**
 
@@ -37,7 +39,9 @@ Por lo tanto: $\frac{d}{dx}[e^x] = e^x$
 
 ## 📖 Con la regla de la cadena
 
-$$\frac{d}{dx}[e^{u(x)}] = e^{u(x)} \cdot u'(x)$$
+$$
+\frac{d}{dx}[e^{u(x)}] = e^{u(x)} \cdot u'(x)
+$$
 
 La exponencial se mantiene y se multiplica por la derivada del exponente.
 
@@ -57,7 +61,9 @@ $$\frac{d}{dx}[e^x + 3] = e^x$$
 
 Deriva $f(x) = e^{3x}$
 
-$$f'(x) = e^{3x} \cdot 3 = 3e^{3x}$$
+$$
+f'(x) = e^{3x} \cdot 3 = 3e^{3x}
+$$
 
 ---
 
@@ -65,7 +71,9 @@ $$f'(x) = e^{3x} \cdot 3 = 3e^{3x}$$
 
 Deriva $g(x) = e^{x^2}$
 
-$$g'(x) = e^{x^2} \cdot 2x = 2xe^{x^2}$$
+$$
+g'(x) = e^{x^2} \cdot 2x = 2xe^{x^2}
+$$
 
 ---
 
@@ -73,7 +81,9 @@ $$g'(x) = e^{x^2} \cdot 2x = 2xe^{x^2}$$
 
 Deriva $h(x) = e^{\sin x}$
 
-$$h'(x) = e^{\sin x} \cdot \cos x = \cos x \cdot e^{\sin x}$$
+$$
+h'(x) = e^{\sin x} \cdot \cos x = \cos x \cdot e^{\sin x}
+$$
 
 ---
 
@@ -83,7 +93,9 @@ Deriva $f(x) = x^2 e^x$
 
 Usamos la regla del producto:
 
-$$f'(x) = 2x \cdot e^x + x^2 \cdot e^x = e^x(2x + x^2) = xe^x(2 + x)$$
+$$
+f'(x) = 2x \cdot e^x + x^2 \cdot e^x = e^x(2x + x^2) = xe^x(2 + x)
+$$
 
 ---
 
@@ -91,7 +103,9 @@ $$f'(x) = 2x \cdot e^x + x^2 \cdot e^x = e^x(2x + x^2) = xe^x(2 + x)$$
 
 Para cualquier $a > 0$, $a \neq 1$:
 
-$$\boxed{\frac{d}{dx}[a^x] = a^x \ln a}$$
+$$
+\boxed{\frac{d}{dx}[a^x] = a^x \ln a}
+$$
 
 **Nota:** Si $a = e$, entonces $\ln e = 1$ y recuperamos $\frac{d}{dx}[e^x] = e^x$.
 
@@ -101,7 +115,9 @@ $$\boxed{\frac{d}{dx}[a^x] = a^x \ln a}$$
 
 Reescribimos $a^x = e^{x \ln a}$
 
-$$\frac{d}{dx}[a^x] = \frac{d}{dx}[e^{x \ln a}] = e^{x \ln a} \cdot \ln a = a^x \ln a$$
+$$
+\frac{d}{dx}[a^x] = \frac{d}{dx}[e^{x \ln a}] = e^{x \ln a} \cdot \ln a = a^x \ln a
+$$
 
 ---
 
@@ -109,7 +125,9 @@ $$\frac{d}{dx}[a^x] = \frac{d}{dx}[e^{x \ln a}] = e^{x \ln a} \cdot \ln a = a^x 
 
 Deriva $f(x) = 2^x$
 
-$$f'(x) = 2^x \ln 2 \approx 0.693 \cdot 2^x$$
+$$
+f'(x) = 2^x \ln 2 \approx 0.693 \cdot 2^x
+$$
 
 ---
 
@@ -117,7 +135,9 @@ $$f'(x) = 2^x \ln 2 \approx 0.693 \cdot 2^x$$
 
 Deriva $g(x) = 10^x$
 
-$$g'(x) = 10^x \ln 10 \approx 2.303 \cdot 10^x$$
+$$
+g'(x) = 10^x \ln 10 \approx 2.303 \cdot 10^x
+$$
 
 ---
 
@@ -125,13 +145,17 @@ $$g'(x) = 10^x \ln 10 \approx 2.303 \cdot 10^x$$
 
 Deriva $h(x) = 3^{2x}$
 
-$$h'(x) = 3^{2x} \cdot \ln 3 \cdot 2 = 2 \ln 3 \cdot 3^{2x}$$
+$$
+h'(x) = 3^{2x} \cdot \ln 3 \cdot 2 = 2 \ln 3 \cdot 3^{2x}
+$$
 
 ---
 
 ## 📖 Exponencial negativa
 
-$$\frac{d}{dx}[e^{-x}] = e^{-x} \cdot (-1) = -e^{-x}$$
+$$
+\frac{d}{dx}[e^{-x}] = e^{-x} \cdot (-1) = -e^{-x}
+$$
 
 Útil en decaimiento exponencial.
 
@@ -171,7 +195,9 @@ c) $3x^2 e^{x^3}$
 
 **Ejercicio 2:** Deriva:
 
-$$f(x) = \frac{e^x}{x}$$
+$$
+f(x) = \frac{e^x}{x}
+$$
 
 <details>
 <summary>Ver solución</summary>

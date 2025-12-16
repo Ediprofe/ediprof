@@ -21,7 +21,9 @@ El Teorema del Valor Intermedio (TVI) es uno de los resultados más poderosos so
 
 En símbolos:
 
-$$f \text{ continua en } [a, b], \quad f(a) < k < f(b) \quad \Rightarrow \quad \exists c \in (a, b): f(c) = k$$
+$$
+f \text{ continua en } [a, b], \quad f(a) < k < f(b) \quad \Rightarrow \quad \exists c \in (a, b): f(c) = k
+$$
 
 ---
 
@@ -37,7 +39,9 @@ No puedes ir de un valor a otro sin pasar por los valores intermedios.
 
 Si $f$ es continua en $[a, b]$ y $f(a)$ y $f(b)$ tienen **signos opuestos**:
 
-$$f(a) \cdot f(b) < 0$$
+$$
+f(a) \cdot f(b) < 0
+$$
 
 Entonces existe al menos un $c \in (a, b)$ tal que $f(c) = 0$.
 

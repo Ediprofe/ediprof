@@ -15,7 +15,9 @@ La integración por partes es la "inversa" de la regla del producto para derivad
 
 ## 📖 La fórmula
 
-$$\boxed{\int u\,dv = uv - \int v\,du}$$
+$$
+\boxed{\int u\,dv = uv - \int v\,du}
+$$
 
 Se deriva de la regla del producto: $(uv)' = u'v + uv'$
 
@@ -32,7 +34,7 @@ Integrando: $uv = \int u'v\,dx + \int uv'\,dx$
 
 ---
 
-## 📖 Regla ILATE para elegir $u$
+## 📖 Regla ILATE para elegir u
 
 Elige como $u$ la función que aparezca primero en:
 
@@ -46,93 +48,143 @@ Elige como $u$ la función que aparezca primero en:
 
 ---
 
-## ⚙️ Ejemplo 1: $x$ por exponencial
+## ⚙️ Ejemplo 1: x por exponencial
 
-$$\int xe^x\,dx$$
+Calcula:
 
-Por ILATE: $u = x$ (algebraica), $dv = e^x\,dx$
+$$
+\int xe^x\,dx
+$$
+
+**Solución:** Por ILATE: $u = x$ (algebraica), $dv = e^x\,dx$
 
 $du = dx$, $v = e^x$
 
-$$= xe^x - \int e^x\,dx = xe^x - e^x + C = e^x(x-1) + C$$
+$$
+= xe^x - \int e^x\,dx = xe^x - e^x + C = e^x(x-1) + C
+$$
 
 ---
 
 ## ⚙️ Ejemplo 2: Logaritmo
 
-$$\int \ln x\,dx$$
+Calcula:
 
-$u = \ln x$, $dv = dx$
+$$
+\int \ln x\,dx
+$$
+
+**Solución:** $u = \ln x$, $dv = dx$
 
 $du = \frac{1}{x}\,dx$, $v = x$
 
-$$= x\ln x - \int x \cdot \frac{1}{x}\,dx = x\ln x - \int 1\,dx$$
+$$
+= x\ln x - \int x \cdot \frac{1}{x}\,dx = x\ln x - \int 1\,dx
+$$
 
-$$= x\ln x - x + C = x(\ln x - 1) + C$$
+$$
+= x\ln x - x + C = x(\ln x - 1) + C
+$$
 
 ---
 
-## ⚙️ Ejemplo 3: $x$ por seno
+## ⚙️ Ejemplo 3: x por seno
 
-$$\int x\sin x\,dx$$
+Calcula:
 
-$u = x$, $dv = \sin x\,dx$
+$$
+\int x\sin x\,dx
+$$
+
+**Solución:** $u = x$, $dv = \sin x\,dx$
 
 $du = dx$, $v = -\cos x$
 
-$$= -x\cos x - \int (-\cos x)\,dx = -x\cos x + \sin x + C$$
+$$
+= -x\cos x - \int (-\cos x)\,dx = -x\cos x + \sin x + C
+$$
 
 ---
 
 ## ⚙️ Ejemplo 4: Doble aplicación
 
-$$\int x^2 e^x\,dx$$
+Calcula:
+
+$$
+\int x^2 e^x\,dx
+$$
 
 **Primera vez:** $u = x^2$, $dv = e^x\,dx$
 
-$$= x^2 e^x - \int 2xe^x\,dx$$
+$$
+= x^2 e^x - \int 2xe^x\,dx
+$$
 
 **Segunda vez:** Ya resolvimos $\int xe^x\,dx = e^x(x-1)$
 
-$$= x^2 e^x - 2e^x(x-1) + C = e^x(x^2 - 2x + 2) + C$$
+$$
+= x^2 e^x - 2e^x(x-1) + C = e^x(x^2 - 2x + 2) + C
+$$
 
 ---
 
 ## ⚙️ Ejemplo 5: Truco cíclico
 
-$$\int e^x \sin x\,dx$$
+Calcula:
 
-$u = e^x$, $dv = \sin x\,dx$ → $du = e^x\,dx$, $v = -\cos x$
+$$
+\int e^x \sin x\,dx
+$$
 
-$$= -e^x\cos x + \int e^x\cos x\,dx$$
+**Solución:** $u = e^x$, $dv = \sin x\,dx$ → $du = e^x\,dx$, $v = -\cos x$
+
+$$
+= -e^x\cos x + \int e^x\cos x\,dx
+$$
 
 Ahora para $\int e^x\cos x\,dx$: $u = e^x$, $dv = \cos x\,dx$
 
-$$= e^x\sin x - \int e^x\sin x\,dx$$
+$$
+= e^x\sin x - \int e^x\sin x\,dx
+$$
 
 Sustituyendo:
 
-$$I = -e^x\cos x + e^x\sin x - I$$
+$$
+I = -e^x\cos x + e^x\sin x - I
+$$
 
-$$2I = e^x(\sin x - \cos x)$$
+$$
+2I = e^x(\sin x - \cos x)
+$$
 
-$$I = \frac{e^x(\sin x - \cos x)}{2} + C$$
+$$
+I = \frac{e^x(\sin x - \cos x)}{2} + C
+$$
 
 ---
 
 ## ⚙️ Ejemplo 6: Arco tangente
 
-$$\int \arctan x\,dx$$
+Calcula:
 
-$u = \arctan x$, $dv = dx$
+$$
+\int \arctan x\,dx
+$$
+
+**Solución:** $u = \arctan x$, $dv = dx$
 
 $du = \frac{1}{1+x^2}\,dx$, $v = x$
 
-$$= x\arctan x - \int \frac{x}{1+x^2}\,dx$$
+$$
+= x\arctan x - \int \frac{x}{1+x^2}\,dx
+$$
 
 Para la segunda integral: $w = 1 + x^2$, $dw = 2x\,dx$
 
-$$= x\arctan x - \frac{1}{2}\ln(1+x^2) + C$$
+$$
+= x\arctan x - \frac{1}{2}\ln(1+x^2) + C
+$$
 
 ---
 
@@ -163,25 +215,41 @@ b) $\int x^2 \ln x\,dx$
 
 a) $u = x$, $dv = \cos x\,dx$
    
-   $= x\sin x - \int \sin x\,dx = x\sin x + \cos x + C$
+$$
+= x\sin x - \int \sin x\,dx = x\sin x + \cos x + C
+$$
 
 b) $u = \ln x$, $dv = x^2\,dx$
    
-   $= \frac{x^3}{3}\ln x - \int \frac{x^3}{3} \cdot \frac{1}{x}\,dx$
+$$
+= \frac{x^3}{3}\ln x - \int \frac{x^3}{3} \cdot \frac{1}{x}\,dx
+$$
    
-   $= \frac{x^3}{3}\ln x - \frac{x^3}{9} + C$
+$$
+= \frac{x^3}{3}\ln x - \frac{x^3}{9} + C
+$$
+
 </details>
 
 ---
 
-**Ejercicio 2:** Calcula $\int e^x \cos x\,dx$
+**Ejercicio 2:** Calcula:
+
+$$
+\int e^x \cos x\,dx
+$$
 
 <details>
 <summary>Ver solución</summary>
 
 Similar al ejemplo 5:
 
-$I = e^x\cos x + e^x\sin x - I$
+$$
+I = e^x\cos x + e^x\sin x - I
+$$
 
-$I = \frac{e^x(\sin x + \cos x)}{2} + C$
+$$
+I = \frac{e^x(\sin x + \cos x)}{2} + C
+$$
+
 </details>

@@ -17,11 +17,15 @@ Las propiedades de la integral definida nos permiten simplificar cálculos y rel
 
 ### 1. Constante multiplicativa
 
-$$\int_a^b c \cdot f(x)\,dx = c \int_a^b f(x)\,dx$$
+$$
+\int_a^b c \cdot f(x)\,dx = c \int_a^b f(x)\,dx
+$$
 
 ### 2. Suma y resta
 
-$$\int_a^b [f(x) \pm g(x)]\,dx = \int_a^b f(x)\,dx \pm \int_a^b g(x)\,dx$$
+$$
+\int_a^b [f(x) \pm g(x)]\,dx = \int_a^b f(x)\,dx \pm \int_a^b g(x)\,dx
+$$
 
 ---
 
@@ -29,15 +33,21 @@ $$\int_a^b [f(x) \pm g(x)]\,dx = \int_a^b f(x)\,dx \pm \int_a^b g(x)\,dx$$
 
 ### 3. Intervalo de longitud cero
 
-$$\int_a^a f(x)\,dx = 0$$
+$$
+\int_a^a f(x)\,dx = 0
+$$
 
 ### 4. Intercambio de límites
 
-$$\int_a^b f(x)\,dx = -\int_b^a f(x)\,dx$$
+$$
+\int_a^b f(x)\,dx = -\int_b^a f(x)\,dx
+$$
 
 ### 5. Aditividad de intervalos
 
-$$\int_a^c f(x)\,dx = \int_a^b f(x)\,dx + \int_b^c f(x)\,dx$$
+$$
+\int_a^c f(x)\,dx = \int_a^b f(x)\,dx + \int_b^c f(x)\,dx
+$$
 
 para cualquier $b$ entre $a$ y $c$ (o fuera).
 
@@ -47,17 +57,25 @@ para cualquier $b$ entre $a$ y $c$ (o fuera).
 
 Si $\int_0^5 f(x)\,dx = 10$ y $\int_0^3 f(x)\,dx = 4$, encuentra $\int_3^5 f(x)\,dx$.
 
-$$\int_0^5 f(x)\,dx = \int_0^3 f(x)\,dx + \int_3^5 f(x)\,dx$$
+$$
+\int_0^5 f(x)\,dx = \int_0^3 f(x)\,dx + \int_3^5 f(x)\,dx
+$$
 
-$$10 = 4 + \int_3^5 f(x)\,dx$$
+$$
+10 = 4 + \int_3^5 f(x)\,dx
+$$
 
-$$\int_3^5 f(x)\,dx = 6$$
+$$
+\boxed{\int_3^5 f(x)\,dx = 6}
+$$
 
 ---
 
 ## ⚙️ Ejemplo 2: Intercambio
 
-$$\int_5^2 x\,dx = -\int_2^5 x\,dx = -\left[\frac{x^2}{2}\right]_2^5 = -\left(\frac{25}{2} - 2\right) = -\frac{21}{2}$$
+$$
+\int_5^2 x\,dx = -\int_2^5 x\,dx = -\left[\frac{x^2}{2}\right]_2^5 = -\left(\frac{25}{2} - 2\right) = -\frac{21}{2}
+$$
 
 ---
 
@@ -67,13 +85,17 @@ $$\int_5^2 x\,dx = -\int_2^5 x\,dx = -\left[\frac{x^2}{2}\right]_2^5 = -\left(\f
 
 Si $f(x) \leq g(x)$ para todo $x \in [a, b]$:
 
-$$\int_a^b f(x)\,dx \leq \int_a^b g(x)\,dx$$
+$$
+\int_a^b f(x)\,dx \leq \int_a^b g(x)\,dx
+$$
 
 ### 7. Cotas
 
 Si $m \leq f(x) \leq M$ para todo $x \in [a, b]$:
 
-$$m(b-a) \leq \int_a^b f(x)\,dx \leq M(b-a)$$
+$$
+m(b-a) \leq \int_a^b f(x)\,dx \leq M(b-a)
+$$
 
 ---
 
@@ -83,9 +105,13 @@ Estima $\int_1^4 \sqrt{x}\,dx$ sin calcularla.
 
 En $[1, 4]$: $1 \leq \sqrt{x} \leq 2$
 
-$$1 \cdot 3 \leq \int_1^4 \sqrt{x}\,dx \leq 2 \cdot 3$$
+$$
+1 \cdot 3 \leq \int_1^4 \sqrt{x}\,dx \leq 2 \cdot 3
+$$
 
-$$3 \leq \int_1^4 \sqrt{x}\,dx \leq 6$$
+$$
+3 \leq \int_1^4 \sqrt{x}\,dx \leq 6
+$$
 
 (Valor real: $\frac{14}{3} \approx 4.67$)
 
@@ -96,24 +122,34 @@ $$3 \leq \int_1^4 \sqrt{x}\,dx \leq 6$$
 ### 8. Función par
 
 Si $f(-x) = f(x)$:
-$$\int_{-a}^{a} f(x)\,dx = 2\int_0^a f(x)\,dx$$
+
+$$
+\int_{-a}^{a} f(x)\,dx = 2\int_0^a f(x)\,dx
+$$
 
 ### 9. Función impar
 
 Si $f(-x) = -f(x)$:
-$$\int_{-a}^{a} f(x)\,dx = 0$$
+
+$$
+\int_{-a}^{a} f(x)\,dx = 0
+$$
 
 ---
 
 ## ⚙️ Ejemplo 4: Función par
 
-$$\int_{-2}^{2} x^2\,dx = 2\int_0^2 x^2\,dx = 2 \cdot \frac{8}{3} = \frac{16}{3}$$
+$$
+\int_{-2}^{2} x^2\,dx = 2\int_0^2 x^2\,dx = 2 \cdot \frac{8}{3} = \frac{16}{3}
+$$
 
 ---
 
 ## ⚙️ Ejemplo 5: Función impar
 
-$$\int_{-\pi}^{\pi} \sin x\,dx = 0$$
+$$
+\int_{-\pi}^{\pi} \sin x\,dx = 0
+$$
 
 (El área positiva cancela la negativa por simetría)
 
@@ -121,13 +157,17 @@ $$\int_{-\pi}^{\pi} \sin x\,dx = 0$$
 
 ## ⚙️ Ejemplo 6: Combinación
 
-$$\int_{-1}^{1} (x^3 + x^2)\,dx$$
+$$
+\int_{-1}^{1} (x^3 + x^2)\,dx
+$$
 
 $x^3$ es impar → integral = 0
 
 $x^2$ es par → $2\int_0^1 x^2\,dx = \frac{2}{3}$
 
-**Total = $\frac{2}{3}$**
+$$
+\boxed{\text{Total} = \frac{2}{3}}
+$$
 
 ---
 
@@ -135,7 +175,9 @@ $x^2$ es par → $2\int_0^1 x^2\,dx = \frac{2}{3}$
 
 El **valor promedio** de $f$ en $[a, b]$ es:
 
-$$f_{prom} = \frac{1}{b-a}\int_a^b f(x)\,dx$$
+$$
+f_{prom} = \frac{1}{b-a}\int_a^b f(x)\,dx
+$$
 
 ---
 
@@ -143,7 +185,9 @@ $$f_{prom} = \frac{1}{b-a}\int_a^b f(x)\,dx$$
 
 Valor promedio de $f(x) = x^2$ en $[0, 3]$:
 
-$$f_{prom} = \frac{1}{3}\int_0^3 x^2\,dx = \frac{1}{3} \cdot 9 = 3$$
+$$
+f_{prom} = \frac{1}{3}\int_0^3 x^2\,dx = \frac{1}{3} \cdot 9 = 3
+$$
 
 ---
 
@@ -171,7 +215,9 @@ $\int_1^6 = \int_1^4 + \int_4^6$
 
 $8 = 3 + \int_4^6$
 
-$\int_4^6 f(x)\,dx = 5$
+$$
+\boxed{\int_4^6 f(x)\,dx = 5}
+$$
 </details>
 
 ---
@@ -185,5 +231,7 @@ Todos los términos ($x^5$, $x^3$, $x$) son funciones impares.
 
 La suma de impares es impar.
 
-$\int_{-2}^{2} = 0$
+$$
+\boxed{\int_{-2}^{2} = 0}
+$$
 </details>

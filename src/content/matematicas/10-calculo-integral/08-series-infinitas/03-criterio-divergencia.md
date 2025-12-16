@@ -23,9 +23,13 @@ Los criterios de convergencia nos permiten determinar si una serie converge sin 
 
 ## ⚙️ Ejemplo 1: Divergencia inmediata
 
-$$\sum_{n=1}^{\infty} \frac{n+1}{2n+3}$$
+$$
+\sum_{n=1}^{\infty} \frac{n+1}{2n+3}
+$$
 
-$\lim \frac{n+1}{2n+3} = \frac{1}{2} \neq 0$ → **Diverge**
+$$
+\lim \frac{n+1}{2n+3} = \frac{1}{2} \neq 0 \quad \Rightarrow \quad \text{Diverge}
+$$
 
 ---
 
@@ -33,15 +37,21 @@ $\lim \frac{n+1}{2n+3} = \frac{1}{2} \neq 0$ → **Diverge**
 
 Si $f$ es positiva, continua y decreciente para $x \geq 1$, y $a_n = f(n)$:
 
-$$\sum_{n=1}^{\infty} a_n \text{ converge } \Leftrightarrow \int_1^{\infty} f(x)\,dx \text{ converge}$$
+$$
+\sum_{n=1}^{\infty} a_n \text{ converge } \Leftrightarrow \int_1^{\infty} f(x)\,dx \text{ converge}
+$$
 
 ---
 
 ## ⚙️ Ejemplo 2: Serie p
 
-$$\sum_{n=1}^{\infty} \frac{1}{n^p}$$
+$$
+\sum_{n=1}^{\infty} \frac{1}{n^p}
+$$
 
-$$\int_1^{\infty} \frac{1}{x^p}\,dx = \begin{cases} \frac{1}{p-1} & p > 1 \\ \infty & p \leq 1 \end{cases}$$
+$$
+\int_1^{\infty} \frac{1}{x^p}\,dx = \begin{cases} \frac{1}{p-1} & p > 1 \\ \infty & p \leq 1 \end{cases}
+$$
 
 **Resultado:** $\sum \frac{1}{n^p}$ converge si y solo si $p > 1$.
 
@@ -49,9 +59,13 @@ $$\int_1^{\infty} \frac{1}{x^p}\,dx = \begin{cases} \frac{1}{p-1} & p > 1 \\ \in
 
 ## ⚙️ Ejemplo 3: Logaritmo
 
-$$\sum_{n=2}^{\infty} \frac{1}{n\ln n}$$
+$$
+\sum_{n=2}^{\infty} \frac{1}{n\ln n}
+$$
 
-$$\int_2^{\infty} \frac{1}{x\ln x}\,dx = [\ln(\ln x)]_2^{\infty} = \infty$$
+$$
+\int_2^{\infty} \frac{1}{x\ln x}\,dx = [\ln(\ln x)]_2^{\infty} = \infty
+$$
 
 **Diverge.**
 
@@ -68,7 +82,9 @@ Si $0 \leq a_n \leq b_n$ para todo $n$:
 
 ## ⚙️ Ejemplo 4: Comparación
 
-$$\sum_{n=1}^{\infty} \frac{1}{n^2 + 1}$$
+$$
+\sum_{n=1}^{\infty} \frac{1}{n^2 + 1}
+$$
 
 $\frac{1}{n^2 + 1} < \frac{1}{n^2}$ y $\sum \frac{1}{n^2}$ converge (p = 2 > 1)
 
@@ -88,11 +104,15 @@ Si $a_n, b_n > 0$ y $\lim \frac{a_n}{b_n} = L$:
 
 ## ⚙️ Ejemplo 5: Comparación por límite
 
-$$\sum_{n=1}^{\infty} \frac{n^2 + 3n}{n^4 - 2}$$
+$$
+\sum_{n=1}^{\infty} \frac{n^2 + 3n}{n^4 - 2}
+$$
 
 Comparamos con $\frac{1}{n^2}$:
 
-$$\lim \frac{\frac{n^2+3n}{n^4-2}}{\frac{1}{n^2}} = \lim \frac{n^4 + 3n^3}{n^4 - 2} = 1$$
+$$
+\lim \frac{\frac{n^2+3n}{n^4-2}}{\frac{1}{n^2}} = \lim \frac{n^4 + 3n^3}{n^4 - 2} = 1
+$$
 
 Como $\sum \frac{1}{n^2}$ converge y $L = 1$, **converge**.
 
@@ -128,7 +148,9 @@ $\frac{1}{n^3+n} < \frac{1}{n^3}$ y $\sum \frac{1}{n^3}$ converge (p = 3 > 1)
 <details>
 <summary>Ver solución</summary>
 
-$\int_2^{\infty} \frac{1}{x(\ln x)^2}\,dx = [-\frac{1}{\ln x}]_2^{\infty} = 0 + \frac{1}{\ln 2}$
+$$
+\int_2^{\infty} \frac{1}{x(\ln x)^2}\,dx = \left[-\frac{1}{\ln x}\right]_2^{\infty} = 0 + \frac{1}{\ln 2}
+$$
 
 **Converge** por el criterio de la integral.
 </details>

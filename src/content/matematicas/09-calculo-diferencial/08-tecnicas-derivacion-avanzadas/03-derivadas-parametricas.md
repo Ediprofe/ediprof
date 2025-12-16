@@ -16,7 +16,10 @@ A veces las curvas se describen usando un parámetro: $x = f(t)$, $y = g(t)$. La
 ## 📖 Ecuaciones paramétricas
 
 Una curva se describe por:
-$$x = f(t), \quad y = g(t)$$
+
+$$
+x = f(t), \quad y = g(t)
+$$
 
 donde $t$ es el **parámetro**.
 
@@ -71,7 +74,9 @@ $$\frac{dy}{dx} = \frac{2\cos t}{-3\sin t} = -\frac{2}{3}\cot t$$
 
 ## 📖 Segunda derivada
 
-$$\frac{d^2y}{dx^2} = \frac{d}{dx}\left(\frac{dy}{dx}\right) = \frac{\frac{d}{dt}\left(\frac{dy}{dx}\right)}{\frac{dx}{dt}}$$
+$$
+\frac{d^2y}{dx^2} = \frac{d}{dx}\left(\frac{dy}{dx}\right) = \frac{\frac{d}{dt}\left(\frac{dy}{dx}\right)}{\frac{dx}{dt}}
+$$
 
 ---
 

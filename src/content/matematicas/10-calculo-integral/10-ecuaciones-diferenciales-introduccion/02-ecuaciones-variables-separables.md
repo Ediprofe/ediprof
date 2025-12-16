@@ -17,7 +17,9 @@ Las ecuaciones de variables separables son las más simples de resolver: se sepa
 
 Una ED es **separable** si se puede escribir como:
 
-$$\frac{dy}{dx} = f(x) \cdot g(y)$$
+$$
+\frac{dy}{dx} = f(x) \cdot g(y)
+$$
 
 o equivalentemente: $M(x) + N(y)y' = 0$
 
@@ -34,22 +36,34 @@ o equivalentemente: $M(x) + N(y)y' = 0$
 
 ## ⚙️ Ejemplo 1: Básica
 
-$$\frac{dy}{dx} = xy$$
+$$
+\frac{dy}{dx} = xy
+$$
 
 **Separar:**
-$$\frac{dy}{y} = x\,dx$$
+$$
+\frac{dy}{y} = x\,dx
+$$
 
 **Integrar:**
-$$\ln|y| = \frac{x^2}{2} + C$$
+$$
+\ln|y| = \frac{x^2}{2} + C
+$$
 
 **Despejar:**
-$$y = Ae^{x^2/2}$$ donde $A = \pm e^C$
+$$
+y = Ae^{x^2/2}
+$$
+
+donde $A = \pm e^C$
 
 ---
 
 ## ⚙️ Ejemplo 2: Con condición inicial
 
-$$\frac{dy}{dx} = \frac{x}{y}, \quad y(0) = 2$$
+$$
+\frac{dy}{dx} = \frac{x}{y}, \quad y(0) = 2
+$$
 
 **Separar:** $y\,dy = x\,dx$
 
@@ -65,7 +79,9 @@ $y^2 = x^2 + 2C$
 
 ## ⚙️ Ejemplo 3: Exponencial
 
-$$y' = y(1-y)$$
+$$
+y' = y(1-y)
+$$
 
 **Separar:** $\frac{dy}{y(1-y)} = dx$
 
@@ -83,7 +99,9 @@ $\frac{y}{1-y} = Ae^x$
 
 ## ⚙️ Ejemplo 4: Trigonométrica
 
-$$\frac{dy}{dx} = \frac{\cos x}{e^y}$$
+$$
+\frac{dy}{dx} = \frac{\cos x}{e^y}
+$$
 
 **Separar:** $e^y\,dy = \cos x\,dx$
 
@@ -97,7 +115,9 @@ $$\frac{dy}{dx} = \frac{\cos x}{e^y}$$
 
 El modelo $\frac{dy}{dt} = ky$ tiene solución:
 
-$$y = y_0 e^{kt}$$
+$$
+y = y_0 e^{kt}
+$$
 
 - $k > 0$: crecimiento exponencial
 - $k < 0$: decaimiento exponencial

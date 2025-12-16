@@ -17,11 +17,15 @@
 
 La razón de cambio promedio en $[a, a+h]$:
 
-$$\text{RCP} = \frac{f(a + h) - f(a)}{h}$$
+$$
+\text{RCP} = \frac{f(a + h) - f(a)}{h}
+$$
 
 La **razón de cambio instantánea** en $x = a$ se obtiene cuando $h \to 0$:
 
-$$\text{RCI en } x = a = \lim_{h \to 0} \frac{f(a + h) - f(a)}{h}$$
+$$
+\text{RCI en } x = a = \lim_{h \to 0} \frac{f(a + h) - f(a)}{h}
+$$
 
 ---
 
@@ -31,7 +35,9 @@ $$\text{RCI en } x = a = \lim_{h \to 0} \frac{f(a + h) - f(a)}{h}$$
 
 Si $s(t)$ es la posición en el tiempo $t$:
 
-$$v(t) = \lim_{h \to 0} \frac{s(t + h) - s(t)}{h}$$
+$$
+v(t) = \lim_{h \to 0} \frac{s(t + h) - s(t)}{h}
+$$
 
 Es la velocidad en el instante exacto $t$.
 
@@ -82,7 +88,9 @@ Verificación: en $t = 3$, $v(3) = 6$ m/s ✓
 
 La razón de cambio instantánea es la **pendiente de la recta tangente** a la curva en el punto.
 
-$$m_{\text{tangente}} = \lim_{h \to 0} \frac{f(a + h) - f(a)}{h}$$
+$$
+m_{\text{tangente}} = \lim_{h \to 0} \frac{f(a + h) - f(a)}{h}
+$$
 
 A medida que $h \to 0$:
 - La recta **secante** se aproxima a la recta **tangente**

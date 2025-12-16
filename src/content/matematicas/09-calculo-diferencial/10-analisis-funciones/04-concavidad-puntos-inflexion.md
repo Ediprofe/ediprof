@@ -52,8 +52,13 @@ Un **punto de inflexión** es donde la función cambia de concavidad.
 
 $f(x) = x^3 - 3x^2 + 2$
 
-$$f'(x) = 3x^2 - 6x$$
-$$f''(x) = 6x - 6 = 6(x - 1)$$
+$$
+f'(x) = 3x^2 - 6x
+$$
+
+$$
+f''(x) = 6x - 6 = 6(x - 1)
+$$
 
 **$f''(x) = 0$:** $x = 1$
 
@@ -69,8 +74,13 @@ $$f''(x) = 6x - 6 = 6(x - 1)$$
 
 $f(x) = x^4 - 6x^2$
 
-$$f'(x) = 4x^3 - 12x$$
-$$f''(x) = 12x^2 - 12 = 12(x^2 - 1) = 12(x-1)(x+1)$$
+$$
+f'(x) = 4x^3 - 12x
+$$
+
+$$
+f''(x) = 12x^2 - 12 = 12(x^2 - 1) = 12(x-1)(x+1)
+$$
 
 **$f''(x) = 0$:** $x = -1, 1$
 
@@ -106,8 +116,13 @@ Pero $f''(x) \geq 0$ para todo $x$ (no cambia de signo).
 
 $f(x) = xe^x$
 
-$$f'(x) = e^x + xe^x = e^x(1 + x)$$
-$$f''(x) = e^x(1+x) + e^x = e^x(2 + x)$$
+$$
+f'(x) = e^x + xe^x = e^x(1 + x)
+$$
+
+$$
+f''(x) = e^x(1+x) + e^x = e^x(2 + x)
+$$
 
 **$f''(x) = 0$:** $x = -2$
 
@@ -159,7 +174,9 @@ Cóncava arriba (f'' > 0):    Cóncava abajo (f'' < 0):
 
 **Ejercicio 1:** Encuentra intervalos de concavidad y puntos de inflexión:
 
-$$f(x) = x^3 + 3x^2 - 9x + 5$$
+$$
+f(x) = x^3 + 3x^2 - 9x + 5
+$$
 
 <details>
 <summary>Ver solución</summary>

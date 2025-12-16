@@ -15,11 +15,17 @@ Diferentes funciones se pueden representar como series de potencias, lo que perm
 
 ## 📖 Series de referencia
 
-$$\frac{1}{1-x} = \sum_{n=0}^{\infty} x^n, \quad |x| < 1$$
+$$
+\frac{1}{1-x} = \sum_{n=0}^{\infty} x^n, \quad |x| < 1
+$$
 
-$$e^x = \sum_{n=0}^{\infty} \frac{x^n}{n!}$$
+$$
+e^x = \sum_{n=0}^{\infty} \frac{x^n}{n!}
+$$
 
-$$\ln(1+x) = \sum_{n=1}^{\infty} \frac{(-1)^{n+1}x^n}{n}, \quad -1 < x \leq 1$$
+$$
+\ln(1+x) = \sum_{n=1}^{\infty} \frac{(-1)^{n+1}x^n}{n}, \quad -1 < x \leq 1
+$$
 
 ---
 
@@ -37,9 +43,13 @@ $$\ln(1+x) = \sum_{n=1}^{\infty} \frac{(-1)^{n+1}x^n}{n}, \quad -1 < x \leq 1$$
 
 Encontrar la serie de $\frac{1}{1+x^2}$:
 
-$$\frac{1}{1-u} = \sum u^n \text{ con } u = -x^2$$
+$$
+\frac{1}{1-u} = \sum u^n \text{ con } u = -x^2
+$$
 
-$$\frac{1}{1+x^2} = \sum_{n=0}^{\infty} (-x^2)^n = 1 - x^2 + x^4 - x^6 + ...$$
+$$
+\frac{1}{1+x^2} = \sum_{n=0}^{\infty} (-x^2)^n = 1 - x^2 + x^4 - x^6 + ...
+$$
 
 ---
 
@@ -47,9 +57,15 @@ $$\frac{1}{1+x^2} = \sum_{n=0}^{\infty} (-x^2)^n = 1 - x^2 + x^4 - x^6 + ...$$
 
 De $\frac{1}{1-x} = \sum x^n$:
 
-$$\frac{d}{dx}\left[\frac{1}{1-x}\right] = \frac{1}{(1-x)^2} = \sum_{n=1}^{\infty} nx^{n-1}$$
+$$
+\frac{d}{dx}\left[\frac{1}{1-x}\right] = \frac{1}{(1-x)^2} = \sum_{n=1}^{\infty} nx^{n-1}
+$$
 
-O equivalentemente: $\frac{1}{(1-x)^2} = \sum_{n=0}^{\infty} (n+1)x^n$
+O equivalentemente:
+
+$$
+\frac{1}{(1-x)^2} = \sum_{n=0}^{\infty} (n+1)x^n
+$$
 
 ---
 
@@ -57,17 +73,23 @@ O equivalentemente: $\frac{1}{(1-x)^2} = \sum_{n=0}^{\infty} (n+1)x^n$
 
 De $\frac{1}{1+x} = \sum_{n=0}^{\infty} (-1)^n x^n$:
 
-$$\int \frac{dx}{1+x} = \ln(1+x) = \sum_{n=0}^{\infty} \frac{(-1)^n x^{n+1}}{n+1} + C$$
+$$
+\int \frac{dx}{1+x} = \ln(1+x) = \sum_{n=0}^{\infty} \frac{(-1)^n x^{n+1}}{n+1} + C
+$$
 
 Con $C = 0$ (evaluando en $x = 0$):
 
-$$\ln(1+x) = x - \frac{x^2}{2} + \frac{x^3}{3} - ...$$
+$$
+\ln(1+x) = x - \frac{x^2}{2} + \frac{x^3}{3} - ...
+$$
 
 ---
 
 ## 📖 Serie binomial
 
-$$(1+x)^k = \sum_{n=0}^{\infty} \binom{k}{n} x^n$$
+$$
+(1+x)^k = \sum_{n=0}^{\infty} \binom{k}{n} x^n
+$$
 
 donde $\binom{k}{n} = \frac{k(k-1)(k-2)...(k-n+1)}{n!}$
 
@@ -77,11 +99,17 @@ Válida para $|x| < 1$ si $k$ no es entero no negativo.
 
 ## ⚙️ Ejemplo 4: Raíz cuadrada
 
-$$\sqrt{1+x} = (1+x)^{1/2}$$
+$$
+\sqrt{1+x} = (1+x)^{1/2}
+$$
 
-$$= 1 + \frac{1}{2}x + \frac{\frac{1}{2}(-\frac{1}{2})}{2!}x^2 + \frac{\frac{1}{2}(-\frac{1}{2})(-\frac{3}{2})}{3!}x^3 + ...$$
+$$
+= 1 + \frac{1}{2}x + \frac{\frac{1}{2}(-\frac{1}{2})}{2!}x^2 + \frac{\frac{1}{2}(-\frac{1}{2})(-\frac{3}{2})}{3!}x^3 + ...
+$$
 
-$$= 1 + \frac{x}{2} - \frac{x^2}{8} + \frac{x^3}{16} - ...$$
+$$
+= 1 + \frac{x}{2} - \frac{x^2}{8} + \frac{x^3}{16} - ...
+$$
 
 ---
 
@@ -89,11 +117,15 @@ $$= 1 + \frac{x}{2} - \frac{x^2}{8} + \frac{x^3}{16} - ...$$
 
 De $\frac{1}{1+x^2} = 1 - x^2 + x^4 - ...$:
 
-$$\arctan x = \int \frac{dx}{1+x^2} = x - \frac{x^3}{3} + \frac{x^5}{5} - ...$$
+$$
+\arctan x = \int \frac{dx}{1+x^2} = x - \frac{x^3}{3} + \frac{x^5}{5} - ...
+$$
 
 Con $x = 1$:
 
-$$\frac{\pi}{4} = 1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + ...$$
+$$
+\frac{\pi}{4} = 1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + ...
+$$
 
 (Serie de Leibniz para $\pi$)
 
@@ -105,7 +137,9 @@ La serie de $\frac{x}{(1-x)^2}$:
 
 De $\frac{1}{(1-x)^2} = \sum (n+1)x^n$:
 
-$$\frac{x}{(1-x)^2} = \sum_{n=0}^{\infty} (n+1)x^{n+1} = \sum_{n=1}^{\infty} nx^n$$
+$$
+\frac{x}{(1-x)^2} = \sum_{n=0}^{\infty} (n+1)x^{n+1} = \sum_{n=1}^{\infty} nx^n
+$$
 
 ---
 
@@ -128,9 +162,13 @@ $$\frac{x}{(1-x)^2} = \sum_{n=0}^{\infty} (n+1)x^{n+1} = \sum_{n=1}^{\infty} nx^
 <details>
 <summary>Ver solución</summary>
 
-$\frac{1}{1-x^2} = \sum (x^2)^n = \sum x^{2n}$
+$$
+\frac{1}{1-x^2} = \sum (x^2)^n = \sum x^{2n}
+$$
 
-$\frac{x}{1-x^2} = \sum x^{2n+1} = x + x^3 + x^5 + ...$
+$$
+\frac{x}{1-x^2} = \sum x^{2n+1} = x + x^3 + x^5 + ...
+$$
 </details>
 
 ---
@@ -140,7 +178,11 @@ $\frac{x}{1-x^2} = \sum x^{2n+1} = x + x^3 + x^5 + ...$
 <details>
 <summary>Ver solución</summary>
 
-$(1-x)^{-1/2} = 1 + \frac{1}{2}x + \frac{3}{8}x^2 + \frac{5}{16}x^3 + ...$
+$$
+(1-x)^{-1/2} = 1 + \frac{1}{2}x + \frac{3}{8}x^2 + \frac{5}{16}x^3 + ...
+$$
 
-$= \sum_{n=0}^{\infty} \binom{-1/2}{n}(-x)^n$
+$$
+= \sum_{n=0}^{\infty} \binom{-1/2}{n}(-x)^n
+$$
 </details>

@@ -15,11 +15,15 @@ Derivar un cociente de funciones requiere su propia regla. Es un poco más compl
 
 ## 📖 La regla del cociente
 
-$$\frac{d}{dx}\left[\frac{f(x)}{g(x)}\right] = \frac{f'(x) \cdot g(x) - f(x) \cdot g'(x)}{[g(x)]^2}$$
+$$
+\frac{d}{dx}\left[\frac{f(x)}{g(x)}\right] = \frac{f'(x) \cdot g(x) - f(x) \cdot g'(x)}{[g(x)]^2}
+$$
 
 O en notación corta:
 
-$$\left(\frac{f}{g}\right)' = \frac{f'g - fg'}{g^2}$$
+$$
+\left(\frac{f}{g}\right)' = \frac{f'g - fg'}{g^2}
+$$
 
 ---
 
@@ -100,7 +104,9 @@ $$= -\csc^2 x$$
 
 A veces es más fácil evitar la regla del cociente reescribiendo:
 
-$$\frac{f}{g} = f \cdot g^{-1}$$
+$$
+\frac{f}{g} = f \cdot g^{-1}
+$$
 
 Y usando producto + regla de la cadena.
 

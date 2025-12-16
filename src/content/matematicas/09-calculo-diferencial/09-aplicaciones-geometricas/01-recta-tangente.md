@@ -17,11 +17,15 @@ La recta tangente es la mejor aproximación lineal a una curva en un punto. La d
 
 La recta tangente a $y = f(x)$ en el punto $(a, f(a))$:
 
-$$\boxed{y - f(a) = f'(a)(x - a)}$$
+$$
+\boxed{y - f(a) = f'(a)(x - a)}
+$$
 
 O en forma explícita:
 
-$$y = f(a) + f'(a)(x - a)$$
+$$
+y = f(a) + f'(a)(x - a)
+$$
 
 ---
 
@@ -56,7 +60,9 @@ $$y = \frac{1}{4}x + 1$$
 ## 📖 Tangente horizontal
 
 La tangente es **horizontal** cuando:
-$$f'(a) = 0$$
+$$
+f'(a) = 0
+$$
 
 En estos puntos, la tangente tiene la forma $y = f(a)$ (constante).
 
@@ -78,7 +84,9 @@ $$x = \pm 1$$
 ## 📖 Tangente de pendiente dada
 
 Para encontrar dónde la tangente tiene pendiente $m$, resolvemos:
-$$f'(x) = m$$
+$$
+f'(x) = m
+$$
 
 ---
 
@@ -125,7 +133,9 @@ $$y = -\frac{3}{4}x + \frac{25}{4}$$
 
 La tangente aproxima la función cerca del punto de tangencia:
 
-$$f(x) \approx f(a) + f'(a)(x - a)$$
+$$
+f(x) \approx f(a) + f'(a)(x - a)
+$$
 
 para $x$ cerca de $a$.
 

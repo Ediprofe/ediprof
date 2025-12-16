@@ -85,7 +85,11 @@ $$f^{(4)}(x) = \sin x$$
 
 El ciclo se repite cada 4 derivadas.
 
-**Patrón:** $f^{(n)}(x) = \sin\left(x + \frac{n\pi}{2}\right)$
+**Patrón:**
+
+$$
+f^{(n)}(x) = \sin\left(x + \frac{n\pi}{2}\right)
+$$
 
 ---
 

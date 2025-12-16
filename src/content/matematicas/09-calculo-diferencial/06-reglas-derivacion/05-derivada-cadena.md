@@ -17,13 +17,17 @@ La regla de la cadena es la herramienta más poderosa de diferenciación. Permit
 
 Si $y = f(g(x))$, entonces:
 
-$$\frac{dy}{dx} = f'(g(x)) \cdot g'(x)$$
+$$
+\frac{dy}{dx} = f'(g(x)) \cdot g'(x)
+$$
 
 **"Derivada de afuera evaluada en dentro, por derivada de dentro."**
 
 En notación de Leibniz:
 
-$$\frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx}$$
+$$
+\frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx}
+$$
 
 donde $u = g(x)$.
 
@@ -108,7 +112,9 @@ $$g'(x) = \frac{1}{x^2 + 1} \cdot 2x = \frac{2x}{x^2 + 1}$$
 
 Para composiciones múltiples $f(g(h(x)))$:
 
-$$\frac{d}{dx}[f(g(h(x)))] = f'(g(h(x))) \cdot g'(h(x)) \cdot h'(x)$$
+$$
+\frac{d}{dx}[f(g(h(x)))] = f'(g(h(x))) \cdot g'(h(x)) \cdot h'(x)
+$$
 
 ---
 
@@ -142,7 +148,9 @@ $$= e^{3x}(2x + 3x^2) = xe^{3x}(2 + 3x)$$
 
 ## 📖 Regla de la potencia generalizada
 
-$$\frac{d}{dx}[u^n] = nu^{n-1} \cdot u'$$
+$$
+\frac{d}{dx}[u^n] = nu^{n-1} \cdot u'
+$$
 
 donde $u$ es una función de $x$.
 

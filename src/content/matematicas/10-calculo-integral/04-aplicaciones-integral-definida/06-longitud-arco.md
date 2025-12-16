@@ -17,11 +17,15 @@ La integral nos permite calcular la longitud de curvas suaves en el plano.
 
 Un pequeño arco tiene longitud aproximada:
 
-$$ds = \sqrt{(dx)^2 + (dy)^2} = \sqrt{1 + \left(\frac{dy}{dx}\right)^2}\,dx$$
+$$
+ds = \sqrt{(dx)^2 + (dy)^2} = \sqrt{1 + \left(\frac{dy}{dx}\right)^2}\,dx
+$$
 
 Integrando:
 
-$$\boxed{L = \int_a^b \sqrt{1 + [f'(x)]^2}\,dx}$$
+$$
+\boxed{L = \int_a^b \sqrt{1 + [f'(x)]^2}\,dx}
+$$
 
 ---
 
@@ -31,7 +35,9 @@ Longitud de $y = 2x$ de $x = 0$ a $x = 3$:
 
 $f'(x) = 2$
 
-$$L = \int_0^3 \sqrt{1 + 4}\,dx = \sqrt{5} \cdot 3 = 3\sqrt{5}$$
+$$
+L = \int_0^3 \sqrt{1 + 4}\,dx = \sqrt{5} \cdot 3 = 3\sqrt{5}
+$$
 
 **Verificación por Pitágoras:** $\sqrt{3^2 + 6^2} = \sqrt{45} = 3\sqrt{5}$ ✓
 
@@ -43,13 +49,15 @@ Longitud de $y = x^2$ de $x = 0$ a $x = 1$:
 
 $f'(x) = 2x$
 
-$$L = \int_0^1 \sqrt{1 + 4x^2}\,dx$$
+$$
+L = \int_0^1 \sqrt{1 + 4x^2}\,dx
+$$
 
 Por sustitución trigonométrica ($x = \frac{1}{2}\tan\theta$):
 
-$$L = \frac{1}{2}[\sec\theta\tan\theta + \ln|\sec\theta + \tan\theta|]_{...}$$
-
-$$\approx 1.479$$
+$$
+L = \frac{1}{2}[\sec\theta\tan\theta + \ln|\sec\theta + \tan\theta|]_{...} \approx 1.479
+$$
 
 ---
 
@@ -57,15 +65,25 @@ $$\approx 1.479$$
 
 Longitud de $y = \frac{x^3}{3} + \frac{1}{4x}$ de $x = 1$ a $x = 2$:
 
-$$f'(x) = x^2 - \frac{1}{4x^2}$$
+$$
+f'(x) = x^2 - \frac{1}{4x^2}
+$$
 
-$$1 + [f'(x)]^2 = 1 + x^4 - \frac{1}{2} + \frac{1}{16x^4} = x^4 + \frac{1}{2} + \frac{1}{16x^4}$$
+$$
+1 + [f'(x)]^2 = 1 + x^4 - \frac{1}{2} + \frac{1}{16x^4} = x^4 + \frac{1}{2} + \frac{1}{16x^4}
+$$
 
-$$= \left(x^2 + \frac{1}{4x^2}\right)^2$$
+$$
+= \left(x^2 + \frac{1}{4x^2}\right)^2
+$$
 
-$$L = \int_1^2 \left(x^2 + \frac{1}{4x^2}\right)\,dx = \left[\frac{x^3}{3} - \frac{1}{4x}\right]_1^2$$
+$$
+L = \int_1^2 \left(x^2 + \frac{1}{4x^2}\right)\,dx = \left[\frac{x^3}{3} - \frac{1}{4x}\right]_1^2
+$$
 
-$$= \left(\frac{8}{3} - \frac{1}{8}\right) - \left(\frac{1}{3} - \frac{1}{4}\right) = \frac{59}{24}$$
+$$
+= \left(\frac{8}{3} - \frac{1}{8}\right) - \left(\frac{1}{3} - \frac{1}{4}\right) = \frac{59}{24}
+$$
 
 ---
 
@@ -73,7 +91,9 @@ $$= \left(\frac{8}{3} - \frac{1}{8}\right) - \left(\frac{1}{3} - \frac{1}{4}\rig
 
 Si $x = x(t)$, $y = y(t)$ para $t \in [\alpha, \beta]$:
 
-$$L = \int_{\alpha}^{\beta} \sqrt{[x'(t)]^2 + [y'(t)]^2}\,dt$$
+$$
+L = \int_{\alpha}^{\beta} \sqrt{[x'(t)]^2 + [y'(t)]^2}\,dt
+$$
 
 ---
 
@@ -83,9 +103,15 @@ Circunferencia de radio $r$:
 
 $x = r\cos t$, $y = r\sin t$, $t \in [0, 2\pi]$
 
-$$x'(t) = -r\sin t, \quad y'(t) = r\cos t$$
+$$
+x'(t) = -r\sin t, \quad y'(t) = r\cos t
+$$
 
-$$L = \int_0^{2\pi} \sqrt{r^2\sin^2 t + r^2\cos^2 t}\,dt = \int_0^{2\pi} r\,dt = 2\pi r$$ ✓
+$$
+L = \int_0^{2\pi} \sqrt{r^2\sin^2 t + r^2\cos^2 t}\,dt = \int_0^{2\pi} r\,dt = 2\pi r
+$$
+
+✓
 
 ---
 
@@ -93,11 +119,17 @@ $$L = \int_0^{2\pi} \sqrt{r^2\sin^2 t + r^2\cos^2 t}\,dt = \int_0^{2\pi} r\,dt =
 
 $x = t - \sin t$, $y = 1 - \cos t$, un arco ($t \in [0, 2\pi]$):
 
-$$x' = 1 - \cos t, \quad y' = \sin t$$
+$$
+x' = 1 - \cos t, \quad y' = \sin t
+$$
 
-$$[x']^2 + [y']^2 = (1-\cos t)^2 + \sin^2 t = 2(1 - \cos t) = 4\sin^2\frac{t}{2}$$
+$$
+[x']^2 + [y']^2 = (1-\cos t)^2 + \sin^2 t = 2(1 - \cos t) = 4\sin^2\frac{t}{2}
+$$
 
-$$L = \int_0^{2\pi} 2\sin\frac{t}{2}\,dt = \left[-4\cos\frac{t}{2}\right]_0^{2\pi} = 4 + 4 = 8$$
+$$
+L = \int_0^{2\pi} 2\sin\frac{t}{2}\,dt = \left[-4\cos\frac{t}{2}\right]_0^{2\pi} = 4 + 4 = 8
+$$
 
 ---
 
@@ -105,7 +137,9 @@ $$L = \int_0^{2\pi} 2\sin\frac{t}{2}\,dt = \left[-4\cos\frac{t}{2}\right]_0^{2\p
 
 Si $r = f(\theta)$:
 
-$$L = \int_{\alpha}^{\beta} \sqrt{r^2 + \left(\frac{dr}{d\theta}\right)^2}\,d\theta$$
+$$
+L = \int_{\alpha}^{\beta} \sqrt{r^2 + \left(\frac{dr}{d\theta}\right)^2}\,d\theta
+$$
 
 ---
 
@@ -113,9 +147,13 @@ $$L = \int_{\alpha}^{\beta} \sqrt{r^2 + \left(\frac{dr}{d\theta}\right)^2}\,d\th
 
 Espiral $r = \theta$ de $\theta = 0$ a $\theta = 2\pi$:
 
-$$\frac{dr}{d\theta} = 1$$
+$$
+\frac{dr}{d\theta} = 1
+$$
 
-$$L = \int_0^{2\pi} \sqrt{\theta^2 + 1}\,d\theta \approx 21.26$$
+$$
+L = \int_0^{2\pi} \sqrt{\theta^2 + 1}\,d\theta \approx 21.26
+$$
 
 ---
 
@@ -138,9 +176,13 @@ $$L = \int_0^{2\pi} \sqrt{\theta^2 + 1}\,d\theta \approx 21.26$$
 
 $f'(x) = \frac{-\sin x}{\cos x} = -\tan x$
 
-$L = \int_0^{\pi/4} \sqrt{1 + \tan^2 x}\,dx = \int_0^{\pi/4} \sec x\,dx$
+$$
+L = \int_0^{\pi/4} \sqrt{1 + \tan^2 x}\,dx = \int_0^{\pi/4} \sec x\,dx
+$$
 
-$= [\ln|\sec x + \tan x|]_0^{\pi/4} = \ln(\sqrt{2} + 1)$
+$$
+= [\ln|\sec x + \tan x|]_0^{\pi/4} = \ln(\sqrt{2} + 1)
+$$
 </details>
 
 ---
@@ -152,7 +194,11 @@ $= [\ln|\sec x + \tan x|]_0^{\pi/4} = \ln(\sqrt{2} + 1)$
 
 $r' = -\sin\theta$
 
-$L = \int_0^{2\pi}\sqrt{(1+\cos\theta)^2 + \sin^2\theta}\,d\theta$
+$$
+L = \int_0^{2\pi}\sqrt{(1+\cos\theta)^2 + \sin^2\theta}\,d\theta
+$$
 
-$= \int_0^{2\pi}\sqrt{2 + 2\cos\theta}\,d\theta = 2\int_0^{2\pi}|\cos\frac{\theta}{2}|\,d\theta = 8$
+$$
+= \int_0^{2\pi}\sqrt{2 + 2\cos\theta}\,d\theta = 2\int_0^{2\pi}|\cos\frac{\theta}{2}|\,d\theta = 8
+$$
 </details>

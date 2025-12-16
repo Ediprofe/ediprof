@@ -17,7 +17,9 @@ La derivada mide cómo cambia una función. Antes de llegar a la derivada, enten
 
 Una **razón de cambio** mide cuánto cambia una cantidad con respecto a otra.
 
-$$\text{Razón de cambio} = \frac{\text{Cambio en la salida}}{\text{Cambio en la entrada}} = \frac{\Delta y}{\Delta x}$$
+$$
+\text{Razón de cambio} = \frac{\text{Cambio en la salida}}{\text{Cambio en la entrada}} = \frac{\Delta y}{\Delta x}
+$$
 
 ---
 
@@ -25,7 +27,9 @@ $$\text{Razón de cambio} = \frac{\text{Cambio en la salida}}{\text{Cambio en la
 
 La **razón de cambio promedio** de $f$ en el intervalo $[a, b]$ es:
 
-$$\text{RCP} = \frac{f(b) - f(a)}{b - a} = \frac{\Delta f}{\Delta x}$$
+$$
+\text{RCP} = \frac{f(b) - f(a)}{b - a} = \frac{\Delta f}{\Delta x}
+$$
 
 Mide el cambio **promedio** de $f$ por cada unidad de cambio en $x$.
 
@@ -35,7 +39,9 @@ Mide el cambio **promedio** de $f$ por cada unidad de cambio en $x$.
 
 Un automóvil recorre una distancia $d(t)$ en metros, donde $t$ es el tiempo en segundos:
 
-$$d(t) = t^2 + 3t$$
+$$
+d(t) = t^2 + 3t
+$$
 
 ¿Cuál es la velocidad promedio entre $t = 2$ y $t = 5$ segundos?
 
@@ -53,7 +59,9 @@ $$\text{Velocidad promedio} = \frac{40 - 10}{3} = \frac{30}{3} = 10 \text{ m/s}$
 
 La razón de cambio promedio es la **pendiente de la recta secante** que pasa por los puntos $(a, f(a))$ y $(b, f(b))$.
 
-$$m_{\text{secante}} = \frac{f(b) - f(a)}{b - a}$$
+$$
+m_{\text{secante}} = \frac{f(b) - f(a)}{b - a}
+$$
 
 ---
 
@@ -88,7 +96,9 @@ Observa: A medida que el intervalo se acerca a $x = 2$, la RCP se acerca a un va
 
 Usando $h$ como el incremento:
 
-$$\text{RCP} = \frac{f(a + h) - f(a)}{h}$$
+$$
+\text{RCP} = \frac{f(a + h) - f(a)}{h}
+$$
 
 donde $h = b - a$ es el "paso" o incremento.
 

@@ -65,7 +65,9 @@ $f(x) = x^3 - 3x + 2$
 
 $f(x) = x^3$
 
-$$f'(x) = 3x^2$$
+$$
+f'(x) = 3x^2
+$$
 
 **Punto crítico:** $x = 0$
 
@@ -120,7 +122,9 @@ De un ejemplo anterior: $f'(x) = \frac{x(x-2)}{(x-1)^2}$
 
 $f(x) = \sin x + \cos x$ en $[0, 2\pi]$
 
-$$f'(x) = \cos x - \sin x = 0 \Rightarrow x = \frac{\pi}{4}, \frac{5\pi}{4}$$
+$$
+f'(x) = \cos x - \sin x = 0 \Rightarrow x = \frac{\pi}{4}, \frac{5\pi}{4}
+$$
 
 **Signos:**
 - En $(0, \frac{\pi}{4})$: $f'(\frac{\pi}{8}) > 0$

@@ -43,7 +43,10 @@ $$\frac{d}{dx}[x^2] + \frac{d}{dx}[y^2] = \frac{d}{dx}[25]$$
 $$2x + 2y \cdot \frac{dy}{dx} = 0$$
 
 **Despejamos:**
-$$\frac{dy}{dx} = -\frac{2x}{2y} = -\frac{x}{y}$$
+
+$$
+\frac{dy}{dx} = -\frac{2x}{2y} = -\frac{x}{y}
+$$
 
 ---
 
@@ -68,9 +71,13 @@ Encuentra $\frac{dy}{dx}$ para $xy = 1$
 **Derivamos usando regla del producto:**
 $$\frac{d}{dx}[xy] = \frac{d}{dx}[1]$$
 
-$$1 \cdot y + x \cdot \frac{dy}{dx} = 0$$
+$$
+1 \cdot y + x \cdot \frac{dy}{dx} = 0
+$$
 
-$$\frac{dy}{dx} = -\frac{y}{x}$$
+$$
+\frac{dy}{dx} = -\frac{y}{x}
+$$
 
 ---
 

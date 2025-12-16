@@ -17,7 +17,9 @@ Los puntos críticos son candidatos a extremos (máximos y mínimos). Son los pu
 
 Un **punto crítico** de $f$ es un valor $c$ en el dominio de $f$ donde:
 
-$$f'(c) = 0 \quad \text{o} \quad f'(c) \text{ no existe}$$
+$$
+f'(c) = 0 \quad \text{o} \quad f'(c) \text{ no existe}
+$$
 
 ---
 
@@ -45,7 +47,9 @@ $$f'(x) = 0 \Rightarrow x = 0 \text{ o } x = 2$$
 
 $f(x) = |x|$
 
-$$f'(x) = \begin{cases} 1 & x > 0 \\ -1 & x < 0 \end{cases}$$
+$$
+f'(x) = \begin{cases} 1 & x > 0 \\ -1 & x < 0 \end{cases}
+$$
 
 $f'(0)$ no existe (límites laterales diferentes).
 

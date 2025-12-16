@@ -28,7 +28,9 @@ Al rotar $y = f(x)$ alrededor del eje x, cada "rebanada" es un disco de:
 - Espesor: $dx$
 - Volumen: $\pi r^2 \cdot dx = \pi[f(x)]^2\,dx$
 
-$$\boxed{V = \pi\int_a^b [f(x)]^2\,dx}$$
+$$
+\boxed{V = \pi\int_a^b [f(x)]^2\,dx}
+$$
 
 ---
 
@@ -36,11 +38,15 @@ $$\boxed{V = \pi\int_a^b [f(x)]^2\,dx}$$
 
 Rotar $y = x$ (de $x = 0$ a $x = h$) alrededor del eje x.
 
-$$V = \pi\int_0^h x^2\,dx = \pi\left[\frac{x^3}{3}\right]_0^h = \frac{\pi h^3}{3}$$
+$$
+V = \pi\int_0^h x^2\,dx = \pi\left[\frac{x^3}{3}\right]_0^h = \frac{\pi h^3}{3}
+$$
 
 Para un cono con altura $h$ y radio $r$, usaríamos $y = \frac{r}{h}x$:
 
-$$V = \pi\int_0^h \left(\frac{r}{h}x\right)^2\,dx = \frac{\pi r^2}{h^2} \cdot \frac{h^3}{3} = \frac{\pi r^2 h}{3}$$
+$$
+V = \pi\int_0^h \left(\frac{r}{h}x\right)^2\,dx = \frac{\pi r^2}{h^2} \cdot \frac{h^3}{3} = \frac{\pi r^2 h}{3}
+$$
 
 ---
 
@@ -48,13 +54,21 @@ $$V = \pi\int_0^h \left(\frac{r}{h}x\right)^2\,dx = \frac{\pi r^2}{h^2} \cdot \f
 
 Rotar $y = \sqrt{r^2 - x^2}$ (semicírculo) de $-r$ a $r$:
 
-$$V = \pi\int_{-r}^{r} (r^2 - x^2)\,dx$$
+$$
+V = \pi\int_{-r}^{r} (r^2 - x^2)\,dx
+$$
 
-$$= \pi\left[r^2x - \frac{x^3}{3}\right]_{-r}^{r}$$
+$$
+= \pi\left[r^2x - \frac{x^3}{3}\right]_{-r}^{r}
+$$
 
-$$= \pi\left[\left(r^3 - \frac{r^3}{3}\right) - \left(-r^3 + \frac{r^3}{3}\right)\right]$$
+$$
+= \pi\left[\left(r^3 - \frac{r^3}{3}\right) - \left(-r^3 + \frac{r^3}{3}\right)\right]
+$$
 
-$$= \pi \cdot \frac{4r^3}{3} = \frac{4\pi r^3}{3}$$
+$$
+= \pi \cdot \frac{4r^3}{3} = \frac{4\pi r^3}{3}
+$$
 
 ---
 
@@ -62,7 +76,9 @@ $$= \pi \cdot \frac{4r^3}{3} = \frac{4\pi r^3}{3}$$
 
 Rotar $y = \sqrt{x}$ de $x = 0$ a $x = 4$ alrededor del eje x:
 
-$$V = \pi\int_0^4 (\sqrt{x})^2\,dx = \pi\int_0^4 x\,dx = \pi\left[\frac{x^2}{2}\right]_0^4 = 8\pi$$
+$$
+V = \pi\int_0^4 (\sqrt{x})^2\,dx = \pi\int_0^4 x\,dx = \pi\left[\frac{x^2}{2}\right]_0^4 = 8\pi
+$$
 
 ---
 
@@ -70,7 +86,9 @@ $$V = \pi\int_0^4 (\sqrt{x})^2\,dx = \pi\int_0^4 x\,dx = \pi\left[\frac{x^2}{2}\
 
 Si rotamos $x = g(y)$ alrededor del eje y:
 
-$$V = \pi\int_c^d [g(y)]^2\,dy$$
+$$
+V = \pi\int_c^d [g(y)]^2\,dy
+$$
 
 ---
 
@@ -80,7 +98,9 @@ Rotar la región acotada por $y = x^2$ y $y = 4$ alrededor del eje y.
 
 Despejamos: $x = \sqrt{y}$ (lado derecho)
 
-$$V = \pi\int_0^4 (\sqrt{y})^2\,dy = \pi\int_0^4 y\,dy = \pi\left[\frac{y^2}{2}\right]_0^4 = 8\pi$$
+$$
+V = \pi\int_0^4 (\sqrt{y})^2\,dy = \pi\int_0^4 y\,dy = \pi\left[\frac{y^2}{2}\right]_0^4 = 8\pi
+$$
 
 ---
 
@@ -88,9 +108,13 @@ $$V = \pi\int_0^4 (\sqrt{y})^2\,dy = \pi\int_0^4 y\,dy = \pi\left[\frac{y^2}{2}\
 
 Rotar $x = \sqrt{4 - y^2}$ de $y = 0$ a $y = 2$ alrededor del eje y:
 
-$$V = \pi\int_0^2 (4 - y^2)\,dy = \pi\left[4y - \frac{y^3}{3}\right]_0^2$$
+$$
+V = \pi\int_0^2 (4 - y^2)\,dy = \pi\left[4y - \frac{y^3}{3}\right]_0^2
+$$
 
-$$= \pi\left(8 - \frac{8}{3}\right) = \frac{16\pi}{3}$$
+$$
+= \pi\left(8 - \frac{8}{3}\right) = \frac{16\pi}{3}
+$$
 
 (Esto es media esfera de radio 2)
 
@@ -112,7 +136,9 @@ $$= \pi\left(8 - \frac{8}{3}\right) = \frac{16\pi}{3}$$
 <details>
 <summary>Ver solución</summary>
 
-$V = \pi\int_0^2 x^6\,dx = \pi\left[\frac{x^7}{7}\right]_0^2 = \frac{128\pi}{7}$
+$$
+V = \pi\int_0^2 x^6\,dx = \pi\left[\frac{x^7}{7}\right]_0^2 = \frac{128\pi}{7}
+$$
 </details>
 
 ---
@@ -122,5 +148,7 @@ $V = \pi\int_0^2 x^6\,dx = \pi\left[\frac{x^7}{7}\right]_0^2 = \frac{128\pi}{7}$
 <details>
 <summary>Ver solución</summary>
 
-$V = \pi\int_0^1 e^{2x}\,dx = \pi\left[\frac{e^{2x}}{2}\right]_0^1 = \frac{\pi(e^2 - 1)}{2}$
+$$
+V = \pi\int_0^1 e^{2x}\,dx = \pi\left[\frac{e^{2x}}{2}\right]_0^1 = \frac{\pi(e^2 - 1)}{2}
+$$
 </details>

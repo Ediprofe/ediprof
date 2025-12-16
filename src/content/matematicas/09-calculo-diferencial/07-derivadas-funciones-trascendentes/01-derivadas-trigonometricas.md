@@ -30,7 +30,9 @@ Las funciones trigonométricas tienen derivadas que forman un patrón elegante y
 
 Usando la definición de derivada:
 
-$$(\sin x)' = \lim_{h \to 0} \frac{\sin(x + h) - \sin x}{h}$$
+$$
+(\sin x)' = \lim_{h \to 0} \frac{\sin(x + h) - \sin x}{h}
+$$
 
 Aplicamos la fórmula de suma: $\sin(x + h) = \sin x \cos h + \cos x \sin h$
 
@@ -47,7 +49,10 @@ $$= \sin x \cdot 0 + \cos x \cdot 1 = \cos x$$
 ## 📖 Demostración: $(\cos x)' = -\sin x$
 
 Similarmente:
-$$(\cos x)' = \lim_{h \to 0} \frac{\cos(x + h) - \cos x}{h}$$
+
+$$
+(\cos x)' = \lim_{h \to 0} \frac{\cos(x + h) - \cos x}{h}
+$$
 
 Usando $\cos(x + h) = \cos x \cos h - \sin x \sin h$:
 
@@ -79,7 +84,9 @@ c) $\frac{d}{dx}[\tan x + \sec x] = \sec^2 x + \sec x \tan x$
 
 Deriva $f(x) = \sin(3x)$
 
-$$f'(x) = \cos(3x) \cdot 3 = 3\cos(3x)$$
+$$
+f'(x) = \cos(3x) \cdot 3 = 3\cos(3x)
+$$
 
 ---
 
@@ -87,7 +94,9 @@ $$f'(x) = \cos(3x) \cdot 3 = 3\cos(3x)$$
 
 Deriva $g(x) = \cos(x^2 + 1)$
 
-$$g'(x) = -\sin(x^2 + 1) \cdot 2x = -2x\sin(x^2 + 1)$$
+$$
+g'(x) = -\sin(x^2 + 1) \cdot 2x = -2x\sin(x^2 + 1)
+$$
 
 ---
 
@@ -95,7 +104,9 @@ $$g'(x) = -\sin(x^2 + 1) \cdot 2x = -2x\sin(x^2 + 1)$$
 
 Deriva $h(x) = \tan(\sqrt{x})$
 
-$$h'(x) = \sec^2(\sqrt{x}) \cdot \frac{1}{2\sqrt{x}} = \frac{\sec^2(\sqrt{x})}{2\sqrt{x}}$$
+$$
+h'(x) = \sec^2(\sqrt{x}) \cdot \frac{1}{2\sqrt{x}} = \frac{\sec^2(\sqrt{x})}{2\sqrt{x}}
+$$
 
 ---
 
@@ -103,7 +114,9 @@ $$h'(x) = \sec^2(\sqrt{x}) \cdot \frac{1}{2\sqrt{x}} = \frac{\sec^2(\sqrt{x})}{2
 
 Deriva $f(x) = \sin^3 x = (\sin x)^3$
 
-$$f'(x) = 3(\sin x)^2 \cdot \cos x = 3\sin^2 x \cos x$$
+$$
+f'(x) = 3(\sin x)^2 \cdot \cos x = 3\sin^2 x \cos x
+$$
 
 ---
 
@@ -111,7 +124,9 @@ $$f'(x) = 3(\sin x)^2 \cdot \cos x = 3\sin^2 x \cos x$$
 
 Deriva $g(x) = x^2 \sin x$
 
-$$g'(x) = 2x \sin x + x^2 \cos x = x(2\sin x + x\cos x)$$
+$$
+g'(x) = 2x \sin x + x^2 \cos x = x(2\sin x + x\cos x)
+$$
 
 ---
 
@@ -119,7 +134,9 @@ $$g'(x) = 2x \sin x + x^2 \cos x = x(2\sin x + x\cos x)$$
 
 Deriva $h(x) = \sec(2x)$
 
-$$h'(x) = \sec(2x)\tan(2x) \cdot 2 = 2\sec(2x)\tan(2x)$$
+$$
+h'(x) = \sec(2x)\tan(2x) \cdot 2 = 2\sec(2x)\tan(2x)
+$$
 
 ---
 

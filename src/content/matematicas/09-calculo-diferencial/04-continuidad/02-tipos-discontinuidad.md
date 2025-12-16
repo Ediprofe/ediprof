@@ -62,11 +62,15 @@ El límite no existe y no es infinito.
 
 ## ⚙️ Ejemplo 1: Discontinuidad removible
 
-$$f(x) = \frac{x^2 - 1}{x - 1}$$
+$$
+f(x) = \frac{x^2 - 1}{x - 1}
+$$
 
 En $x = 1$:
 
-$$\lim_{x \to 1} \frac{(x-1)(x+1)}{x-1} = \lim_{x \to 1} (x+1) = 2$$
+$$
+\lim_{x \to 1} \frac{(x-1)(x+1)}{x-1} = \lim_{x \to 1} (x+1) = 2
+$$
 
 El límite es 2, pero $f(1)$ no existe.
 
@@ -78,21 +82,35 @@ El límite es 2, pero $f(1)$ no existe.
 
 ## ⚙️ Ejemplo 2: Discontinuidad de salto
 
-$$g(x) = \begin{cases} x + 1 & \text{si } x < 2 \\ x^2 - 1 & \text{si } x \geq 2 \end{cases}$$
+$$
+g(x) = \begin{cases} x + 1 & \text{si } x < 2 \\ x^2 - 1 & \text{si } x \geq 2 \end{cases}
+$$
 
 En $x = 2$:
 
-$$\lim_{x \to 2^-} (x + 1) = 3$$
-$$\lim_{x \to 2^+} (x^2 - 1) = 3$$
+$$
+\lim_{x \to 2^-} (x + 1) = 3
+$$
+
+$$
+\lim_{x \to 2^+} (x^2 - 1) = 3
+$$
 
 Espera... estos son iguales. ¡Esta es continua!
 
 Cambiemos el ejemplo:
 
-$$g(x) = \begin{cases} x + 1 & \text{si } x < 2 \\ 3x - 2 & \text{si } x \geq 2 \end{cases}$$
+$$
+g(x) = \begin{cases} x + 1 & \text{si } x < 2 \\ 3x - 2 & \text{si } x \geq 2 \end{cases}
+$$
 
-$$\lim_{x \to 2^-} (x + 1) = 3$$
-$$\lim_{x \to 2^+} (3x - 2) = 4$$
+$$
+\lim_{x \to 2^-} (x + 1) = 3
+$$
+
+$$
+\lim_{x \to 2^+} (3x - 2) = 4
+$$
 
 **Tipo:** Salto de magnitud $|4 - 3| = 1$
 
@@ -102,12 +120,19 @@ $$\lim_{x \to 2^+} (3x - 2) = 4$$
 
 La función signo:
 
-$$\text{sgn}(x) = \begin{cases} -1 & \text{si } x < 0 \\ 0 & \text{si } x = 0 \\ 1 & \text{si } x > 0 \end{cases}$$
+$$
+\text{sgn}(x) = \begin{cases} -1 & \text{si } x < 0 \\ 0 & \text{si } x = 0 \\ 1 & \text{si } x > 0 \end{cases}
+$$
 
 En $x = 0$:
 
-$$\lim_{x \to 0^-} \text{sgn}(x) = -1$$
-$$\lim_{x \to 0^+} \text{sgn}(x) = 1$$
+$$
+\lim_{x \to 0^-} \text{sgn}(x) = -1
+$$
+
+$$
+\lim_{x \to 0^+} \text{sgn}(x) = 1
+$$
 
 **Tipo:** Salto de magnitud 2
 
@@ -115,12 +140,19 @@ $$\lim_{x \to 0^+} \text{sgn}(x) = 1$$
 
 ## ⚙️ Ejemplo 4: Discontinuidad infinita
 
-$$h(x) = \frac{1}{x - 3}$$
+$$
+h(x) = \frac{1}{x - 3}
+$$
 
 En $x = 3$:
 
-$$\lim_{x \to 3^+} \frac{1}{x-3} = +\infty$$
-$$\lim_{x \to 3^-} \frac{1}{x-3} = -\infty$$
+$$
+\lim_{x \to 3^+} \frac{1}{x-3} = +\infty
+$$
+
+$$
+\lim_{x \to 3^-} \frac{1}{x-3} = -\infty
+$$
 
 **Tipo:** Infinita (hay asíntota vertical)
 
@@ -128,7 +160,9 @@ $$\lim_{x \to 3^-} \frac{1}{x-3} = -\infty$$
 
 ## ⚙️ Ejemplo 5: Discontinuidad esencial
 
-$$p(x) = \sin\left(\frac{1}{x}\right)$$
+$$
+p(x) = \sin\left(\frac{1}{x}\right)
+$$
 
 En $x = 0$:
 
@@ -174,15 +208,22 @@ El límite no existe (ni finito ni infinito).
 
 ## ⚙️ Ejemplo 6: Clasificación completa
 
-$$f(x) = \frac{|x|}{x}$$
+$$
+f(x) = \frac{|x|}{x}
+$$
 
 En $x = 0$:
 
 Para $x > 0$: $f(x) = \frac{x}{x} = 1$
 Para $x < 0$: $f(x) = \frac{-x}{x} = -1$
 
-$$\lim_{x \to 0^+} f(x) = 1$$
-$$\lim_{x \to 0^-} f(x) = -1$$
+$$
+\lim_{x \to 0^+} f(x) = 1
+$$
+
+$$
+\lim_{x \to 0^-} f(x) = -1
+$$
 
 Límites laterales finitos pero diferentes.
 
@@ -212,7 +253,11 @@ b) $\lim_{x \to 0} \frac{1}{x^2} = +\infty$ (por ambos lados)
 
 **Ejercicio 2:** Clasifica:
 
-$$h(x) = \begin{cases} x^2 & \text{si } x \leq 1 \\ 2x + 1 & \text{si } x > 1 \end{cases}$$ en $x = 1$
+$$
+h(x) = \begin{cases} x^2 & \text{si } x \leq 1 \\ 2x + 1 & \text{si } x > 1 \end{cases}
+$$
+
+en $x = 1$
 
 <details>
 <summary>Ver solución</summary>

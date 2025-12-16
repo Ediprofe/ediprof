@@ -17,15 +17,21 @@ Conocer el error de los métodos numéricos nos permite elegir el número de sub
 
 ### Método del punto medio
 
-$$|E_M| \leq \frac{(b-a)^3}{24n^2} \cdot M_2$$
+$$
+|E_M| \leq \frac{(b-a)^3}{24n^2} \cdot M_2
+$$
 
 ### Método del trapecio
 
-$$|E_T| \leq \frac{(b-a)^3}{12n^2} \cdot M_2$$
+$$
+|E_T| \leq \frac{(b-a)^3}{12n^2} \cdot M_2
+$$
 
 ### Regla de Simpson
 
-$$|E_S| \leq \frac{(b-a)^5}{180n^4} \cdot M_4$$
+$$
+|E_S| \leq \frac{(b-a)^5}{180n^4} \cdot M_4
+$$
 
 donde $M_k = \max_{a \leq x \leq b} |f^{(k)}(x)|$
 
@@ -49,11 +55,13 @@ $f(x) = e^x$, $f''(x) = e^x$
 
 $M_2 = \max_{[0,1]} e^x = e \approx 2.718$
 
-$$|E_T| \leq \frac{1^3}{12(10)^2} \cdot 2.718 = \frac{2.718}{1200} \approx 0.00226$$
+$$
+|E_T| \leq \frac{1^3}{12(10)^2} \cdot 2.718 = \frac{2.718}{1200} \approx 0.00226
+$$
 
 ---
 
-## ⚙️ Ejemplo 2: Determinar $n$ necesario
+## ⚙️ Ejemplo 2: Determinar n necesario
 
 ¿Cuántos subintervalos usar para que el error del trapecio sea menor que $0.0001$ en $\int_1^2 \frac{1}{x}\,dx$?
 
@@ -61,13 +69,21 @@ $f(x) = \frac{1}{x}$, $f''(x) = \frac{2}{x^3}$
 
 $M_2 = \max_{[1,2]} \frac{2}{x^3} = 2$ (en $x = 1$)
 
-$$\frac{(2-1)^3}{12n^2} \cdot 2 < 0.0001$$
+$$
+\frac{(2-1)^3}{12n^2} \cdot 2 < 0.0001
+$$
 
-$$\frac{1}{6n^2} < 0.0001$$
+$$
+\frac{1}{6n^2} < 0.0001
+$$
 
-$$n^2 > \frac{1}{0.0006} \approx 1667$$
+$$
+n^2 > \frac{1}{0.0006} \approx 1667
+$$
 
-$$n > 41$$
+$$
+n > 41
+$$
 
 Se necesitan al menos **42 subintervalos**.
 
@@ -79,11 +95,17 @@ Para la misma integral con Simpson:
 
 $f^{(4)}(x) = \frac{24}{x^5}$, $M_4 = 24$
 
-$$\frac{1^5}{180n^4} \cdot 24 < 0.0001$$
+$$
+\frac{1^5}{180n^4} \cdot 24 < 0.0001
+$$
 
-$$n^4 > \frac{24}{0.018} \approx 1333$$
+$$
+n^4 > \frac{24}{0.018} \approx 1333
+$$
 
-$$n > 6$$
+$$
+n > 6
+$$
 
 ¡Solo se necesitan **8 subintervalos** (par más cercano)!
 
@@ -104,7 +126,9 @@ Simpson es dramáticamente más eficiente para funciones suaves.
 
 Si calculamos $T_{2n}$ y $T_n$, podemos mejorar la estimación:
 
-$$\text{Mejor} \approx T_{2n} + \frac{T_{2n} - T_n}{3}$$
+$$
+\text{Mejor} \approx T_{2n} + \frac{T_{2n} - T_n}{3}
+$$
 
 Este es el fundamento del método de Romberg.
 
@@ -144,11 +168,17 @@ El error se reduce aproximadamente por 4 al duplicar $n$ (como predice la teorí
 
 $f^{(4)}(x) = \sin x$, $M_4 = 1$
 
-$\frac{\pi^5}{180n^4} < 10^{-8}$
+$$
+\frac{\pi^5}{180n^4} < 10^{-8}
+$$
 
-$n^4 > \frac{\pi^5 \cdot 10^8}{180} \approx 1.7 \times 10^6$
+$$
+n^4 > \frac{\pi^5 \cdot 10^8}{180} \approx 1.7 \times 10^6
+$$
 
-$n > 36$
+$$
+n > 36
+$$
 
 $n = 38$ (par más cercano)
 </details>
@@ -160,7 +190,11 @@ $n = 38$ (par más cercano)
 <details>
 <summary>Ver solución</summary>
 
-$\text{Mejor} \approx T_8 + \frac{T_8 - T_4}{3} = 0.7471 + \frac{0.7471 - 0.7828}{3}$
+$$
+\text{Mejor} \approx T_8 + \frac{T_8 - T_4}{3} = 0.7471 + \frac{0.7471 - 0.7828}{3}
+$$
 
-$= 0.7471 - 0.0119 = 0.7352$
+$$
+= 0.7471 - 0.0119 = 0.7352
+$$
 </details>

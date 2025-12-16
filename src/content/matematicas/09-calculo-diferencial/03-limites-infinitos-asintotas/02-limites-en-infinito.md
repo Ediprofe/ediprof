@@ -15,11 +15,15 @@
 
 ## 📖 Definición
 
-$$\lim_{x \to +\infty} f(x) = L$$
+$$
+\lim_{x \to +\infty} f(x) = L
+$$
 
 significa que $f(x)$ se aproxima a $L$ cuando $x$ crece sin límite.
 
-$$\lim_{x \to -\infty} f(x) = L$$
+$$
+\lim_{x \to -\infty} f(x) = L
+$$
 
 significa que $f(x)$ se aproxima a $L$ cuando $x$ decrece sin límite.
 
@@ -27,11 +31,17 @@ significa que $f(x)$ se aproxima a $L$ cuando $x$ decrece sin límite.
 
 ## 📖 Límites básicos
 
-$$\lim_{x \to \infty} \frac{1}{x} = 0$$
+$$
+\lim_{x \to \infty} \frac{1}{x} = 0
+$$
 
-$$\lim_{x \to \infty} \frac{1}{x^n} = 0 \quad (n > 0)$$
+$$
+\lim_{x \to \infty} \frac{1}{x^n} = 0 \quad (n > 0)
+$$
 
-$$\lim_{x \to \infty} c = c \quad \text{(constante)}$$
+$$
+\lim_{x \to \infty} c = c \quad \text{(constante)}
+$$
 
 ---
 
@@ -127,21 +137,33 @@ $$= \lim_{x \to \infty} \frac{1}{\sqrt{1 + \frac{1}{x}} + 1} = \frac{1}{1 + 1} =
 
 ## 📖 Funciones exponenciales
 
-$$\lim_{x \to +\infty} e^x = +\infty$$
+$$
+\lim_{x \to +\infty} e^x = +\infty
+$$
 
-$$\lim_{x \to -\infty} e^x = 0$$
+$$
+\lim_{x \to -\infty} e^x = 0
+$$
 
-$$\lim_{x \to +\infty} e^{-x} = 0$$
+$$
+\lim_{x \to +\infty} e^{-x} = 0
+$$
 
-$$\lim_{x \to -\infty} e^{-x} = +\infty$$
+$$
+\lim_{x \to -\infty} e^{-x} = +\infty
+$$
 
 ---
 
 ## 📖 Funciones logarítmicas
 
-$$\lim_{x \to +\infty} \ln x = +\infty$$
+$$
+\lim_{x \to +\infty} \ln x = +\infty
+$$
 
-$$\lim_{x \to 0^+} \ln x = -\infty$$
+$$
+\lim_{x \to 0^+} \ln x = -\infty
+$$
 
 ---
 
@@ -153,9 +175,13 @@ $$\ln x \ll x^a \ll a^x \ll x! \ll x^x$$
 
 Esto significa que funciones "más rápidas" dominan en cocientes:
 
-$$\lim_{x \to \infty} \frac{x^{100}}{e^x} = 0$$
+$$
+\lim_{x \to \infty} \frac{x^{100}}{e^x} = 0
+$$
 
-$$\lim_{x \to \infty} \frac{\ln x}{x} = 0$$
+$$
+\lim_{x \to \infty} \frac{\ln x}{x} = 0
+$$
 
 ---
 

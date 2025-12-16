@@ -20,7 +20,10 @@ Un punto se describe por:
 - $\theta$ = ángulo desde el eje positivo X
 
 **Conversión a cartesianas:**
-$$x = r\cos\theta, \quad y = r\sin\theta$$
+
+$$
+x = r\cos\theta, \quad y = r\sin\theta
+$$
 
 ---
 
@@ -40,12 +43,21 @@ Una curva polar tiene la forma $r = f(\theta)$.
 
 Dado $r = f(\theta)$:
 
-$$x = r\cos\theta = f(\theta)\cos\theta$$
-$$y = r\sin\theta = f(\theta)\sin\theta$$
+$$
+x = r\cos\theta = f(\theta)\cos\theta
+$$
 
-$$\frac{dx}{d\theta} = \frac{dr}{d\theta}\cos\theta - r\sin\theta$$
+$$
+y = r\sin\theta = f(\theta)\sin\theta
+$$
 
-$$\frac{dy}{d\theta} = \frac{dr}{d\theta}\sin\theta + r\cos\theta$$
+$$
+\frac{dx}{d\theta} = \frac{dr}{d\theta}\cos\theta - r\sin\theta
+$$
+
+$$
+\frac{dy}{d\theta} = \frac{dr}{d\theta}\sin\theta + r\cos\theta
+$$
 
 $$\boxed{\frac{dy}{dx} = \frac{\frac{dr}{d\theta}\sin\theta + r\cos\theta}{\frac{dr}{d\theta}\cos\theta - r\sin\theta}}$$
 
@@ -89,11 +101,15 @@ $$\frac{dy}{dx} = \frac{\sin\theta + \theta\cos\theta}{\cos\theta - \theta\sin\t
 
 **Tangente horizontal:** $\frac{dy}{d\theta} = 0$ (con $\frac{dx}{d\theta} \neq 0$)
 
-$$\frac{dr}{d\theta}\sin\theta + r\cos\theta = 0$$
+$$
+\frac{dr}{d\theta}\sin\theta + r\cos\theta = 0
+$$
 
 **Tangente vertical:** $\frac{dx}{d\theta} = 0$ (con $\frac{dy}{d\theta} \neq 0$)
 
-$$\frac{dr}{d\theta}\cos\theta - r\sin\theta = 0$$
+$$
+\frac{dr}{d\theta}\cos\theta - r\sin\theta = 0
+$$
 
 ---
 

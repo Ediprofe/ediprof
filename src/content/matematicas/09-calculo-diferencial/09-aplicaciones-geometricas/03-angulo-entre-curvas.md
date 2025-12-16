@@ -23,7 +23,9 @@ El **ángulo entre dos curvas** en su punto de intersección es el ángulo entre
 
 Si $m_1$ y $m_2$ son las pendientes de las tangentes:
 
-$$\tan\theta = \left|\frac{m_1 - m_2}{1 + m_1 m_2}\right|$$
+$$
+\tan\theta = \left|\frac{m_1 - m_2}{1 + m_1 m_2}\right|
+$$
 
 donde $\theta$ está entre 0 y $\frac{\pi}{2}$.
 
@@ -73,7 +75,9 @@ Encuentra el ángulo entre $y = x^2$ y $y = -x^2 + 2$.
 
 Dos curvas son **ortogonales** si se cortan en ángulo recto:
 
-$$m_1 \cdot m_2 = -1$$
+$$
+m_1 \cdot m_2 = -1
+$$
 
 ---
 

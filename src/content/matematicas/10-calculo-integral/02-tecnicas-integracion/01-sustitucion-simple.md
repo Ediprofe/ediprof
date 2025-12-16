@@ -17,11 +17,15 @@ La sustitución es la técnica más fundamental de integración. Es la "inversa"
 
 Si reconocemos una integral de la forma:
 
-$$\int f(g(x)) \cdot g'(x)\,dx$$
+$$
+\int f(g(x)) \cdot g'(x)\,dx
+$$
 
 Podemos sustituir $u = g(x)$, $du = g'(x)\,dx$ y obtener:
 
-$$\int f(u)\,du$$
+$$
+\int f(u)\,du
+$$
 
 que suele ser más simple.
 
@@ -39,82 +43,131 @@ que suele ser más simple.
 
 ## ⚙️ Ejemplo 1: Sustitución básica
 
-$$\int 2x(x^2 + 1)^5\,dx$$
+Calcula:
+
+$$
+\int 2x(x^2 + 1)^5\,dx
+$$
 
 **Paso 1:** $u = x^2 + 1$
 
 **Paso 2:** $du = 2x\,dx$ ✓ (¡ya está en la integral!)
 
 **Paso 3:** 
-$$\int u^5\,du$$
+
+$$
+\int u^5\,du
+$$
 
 **Paso 4:** 
-$$= \frac{u^6}{6} + C$$
+
+$$
+= \frac{u^6}{6} + C
+$$
 
 **Paso 5:** 
-$$= \frac{(x^2 + 1)^6}{6} + C$$
+
+$$
+= \frac{(x^2 + 1)^6}{6} + C
+$$
 
 ---
 
 ## ⚙️ Ejemplo 2: Ajustar constantes
 
-$$\int x(x^2 + 3)^4\,dx$$
+Calcula:
 
-$u = x^2 + 3$, $du = 2x\,dx$
+$$
+\int x(x^2 + 3)^4\,dx
+$$
+
+**Solución:** $u = x^2 + 3$, $du = 2x\,dx$
 
 Pero tenemos $x\,dx$, no $2x\,dx$. Ajustamos:
 
-$$x\,dx = \frac{1}{2}\,du$$
+$$
+x\,dx = \frac{1}{2}\,du
+$$
 
-$$\int x(x^2 + 3)^4\,dx = \int u^4 \cdot \frac{1}{2}\,du = \frac{1}{2} \cdot \frac{u^5}{5} + C$$
+$$
+\int x(x^2 + 3)^4\,dx = \int u^4 \cdot \frac{1}{2}\,du = \frac{1}{2} \cdot \frac{u^5}{5} + C
+$$
 
-$$= \frac{(x^2 + 3)^5}{10} + C$$
+$$
+= \frac{(x^2 + 3)^5}{10} + C
+$$
 
 ---
 
 ## ⚙️ Ejemplo 3: Exponencial
 
-$$\int e^{3x}\,dx$$
+Calcula:
 
-$u = 3x$, $du = 3\,dx$ → $dx = \frac{du}{3}$
+$$
+\int e^{3x}\,dx
+$$
 
-$$\int e^u \cdot \frac{du}{3} = \frac{1}{3}e^u + C = \frac{e^{3x}}{3} + C$$
+**Solución:** $u = 3x$, $du = 3\,dx$ → $dx = \frac{du}{3}$
+
+$$
+\int e^u \cdot \frac{du}{3} = \frac{1}{3}e^u + C = \frac{e^{3x}}{3} + C
+$$
 
 ---
 
 ## ⚙️ Ejemplo 4: Con raíz
 
-$$\int \frac{x}{\sqrt{x^2 + 1}}\,dx$$
+Calcula:
 
-$u = x^2 + 1$, $du = 2x\,dx$ → $x\,dx = \frac{du}{2}$
+$$
+\int \frac{x}{\sqrt{x^2 + 1}}\,dx
+$$
 
-$$= \int \frac{1}{\sqrt{u}} \cdot \frac{du}{2} = \frac{1}{2}\int u^{-1/2}\,du$$
+**Solución:** $u = x^2 + 1$, $du = 2x\,dx$ → $x\,dx = \frac{du}{2}$
 
-$$= \frac{1}{2} \cdot 2u^{1/2} + C = \sqrt{x^2 + 1} + C$$
+$$
+= \int \frac{1}{\sqrt{u}} \cdot \frac{du}{2} = \frac{1}{2}\int u^{-1/2}\,du
+$$
+
+$$
+= \frac{1}{2} \cdot 2u^{1/2} + C = \sqrt{x^2 + 1} + C
+$$
 
 ---
 
 ## ⚙️ Ejemplo 5: Trigonométrica
 
-$$\int \cos x \cdot \sin^3 x\,dx$$
+Calcula:
 
-$u = \sin x$, $du = \cos x\,dx$
+$$
+\int \cos x \cdot \sin^3 x\,dx
+$$
 
-$$= \int u^3\,du = \frac{u^4}{4} + C = \frac{\sin^4 x}{4} + C$$
+**Solución:** $u = \sin x$, $du = \cos x\,dx$
+
+$$
+= \int u^3\,du = \frac{u^4}{4} + C = \frac{\sin^4 x}{4} + C
+$$
 
 ---
 
 ## ⚙️ Ejemplo 6: Logaritmo
 
-$$\int \frac{1}{x \ln x}\,dx$$
+Calcula:
 
-$u = \ln x$, $du = \frac{1}{x}\,dx$
+$$
+\int \frac{1}{x \ln x}\,dx
+$$
 
-$$= \int \frac{1}{u}\,du = \ln|u| + C = \ln|\ln x| + C$$
+**Solución:** $u = \ln x$, $du = \frac{1}{x}\,dx$
+
+$$
+= \int \frac{1}{u}\,du = \ln|u| + C = \ln|\ln x| + C
+$$
 
 ---
 
-## 📖 Cómo elegir $u$
+## 📖 Cómo elegir u
 
 | Forma de integral | Buena elección de $u$ |
 |-------------------|----------------------|
@@ -126,13 +179,19 @@ $$= \int \frac{1}{u}\,du = \ln|u| + C = \ln|\ln x| + C$$
 
 ---
 
-## ⚙️ Ejemplo 7: Forma $ax + b$
+## ⚙️ Ejemplo 7: Forma ax + b
 
-$$\int (2x + 5)^7\,dx$$
+Calcula:
 
-$u = 2x + 5$, $du = 2\,dx$ → $dx = \frac{du}{2}$
+$$
+\int (2x + 5)^7\,dx
+$$
 
-$$= \frac{1}{2}\int u^7\,du = \frac{1}{2} \cdot \frac{u^8}{8} + C = \frac{(2x+5)^8}{16} + C$$
+**Solución:** $u = 2x + 5$, $du = 2\,dx$ → $dx = \frac{du}{2}$
+
+$$
+= \frac{1}{2}\int u^7\,du = \frac{1}{2} \cdot \frac{u^8}{8} + C = \frac{(2x+5)^8}{16} + C
+$$
 
 ---
 
@@ -149,29 +208,43 @@ c) $\int \frac{\cos x}{\sin x}\,dx$
 
 a) $u = x^2 - 1$, $du = 2x\,dx$
    
-   $= 2\int u^3\,du = \frac{u^4}{2} + C = \frac{(x^2-1)^4}{2} + C$
+$$
+= 2\int u^3\,du = \frac{u^4}{2} + C = \frac{(x^2-1)^4}{2} + C
+$$
 
 b) $u = -2x$, $du = -2\,dx$
    
-   $= -\frac{1}{2}e^{-2x} + C$
+$$
+= -\frac{1}{2}e^{-2x} + C
+$$
 
 c) $u = \sin x$, $du = \cos x\,dx$
    
-   $= \ln|\sin x| + C$
+$$
+= \ln|\sin x| + C
+$$
+
 </details>
 
 ---
 
 **Ejercicio 2:** Calcula:
 
-$$\int \frac{e^{\sqrt{x}}}{\sqrt{x}}\,dx$$
+$$
+\int \frac{e^{\sqrt{x}}}{\sqrt{x}}\,dx
+$$
 
 <details>
 <summary>Ver solución</summary>
 
 $u = \sqrt{x}$, $du = \frac{1}{2\sqrt{x}}\,dx$
 
-$\frac{dx}{\sqrt{x}} = 2\,du$
+$$
+\frac{dx}{\sqrt{x}} = 2\,du
+$$
 
-$= 2\int e^u\,du = 2e^u + C = 2e^{\sqrt{x}} + C$
+$$
+= 2\int e^u\,du = 2e^u + C = 2e^{\sqrt{x}} + C
+$$
+
 </details>

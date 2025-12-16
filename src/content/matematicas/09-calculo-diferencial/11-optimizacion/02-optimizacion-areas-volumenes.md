@@ -63,7 +63,9 @@ De una lámina cuadrada de 60 cm de lado se cortan cuadrados en las esquinas par
 **Base:** $(60 - 2x) \times (60 - 2x)$
 
 **Volumen:**
-$$V = x(60-2x)^2$$
+$$
+V = x(60-2x)^2
+$$
 
 **Dominio:** $0 < x < 30$
 
@@ -84,12 +86,16 @@ $$V' = 0$$ cuando $x = 30$ (borde) o $x = 10$
 Un cilindro está inscrito en una esfera de radio $R$. ¿Qué dimensiones maximizan el volumen del cilindro?
 
 **Relación geométrica:** Si $r$ es el radio y $h$ la altura del cilindro:
-$$r^2 + \left(\frac{h}{2}\right)^2 = R^2$$
+$$
+r^2 + \left(\frac{h}{2}\right)^2 = R^2
+$$
 
 **Despejamos:** $r^2 = R^2 - \frac{h^2}{4}$
 
 **Volumen:**
-$$V = \pi r^2 h = \pi\left(R^2 - \frac{h^2}{4}\right)h = \pi R^2 h - \frac{\pi h^3}{4}$$
+$$
+V = \pi r^2 h = \pi\left(R^2 - \frac{h^2}{4}\right)h = \pi R^2 h - \frac{\pi h^3}{4}
+$$
 
 $$V' = \pi R^2 - \frac{3\pi h^2}{4} = 0$$
 

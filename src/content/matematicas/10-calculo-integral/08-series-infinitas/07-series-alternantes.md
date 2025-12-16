@@ -17,11 +17,15 @@ Las series alternantes tienen términos que alternan entre positivos y negativos
 
 Una **serie alternante** tiene la forma:
 
-$$\sum_{n=1}^{\infty} (-1)^{n+1} b_n = b_1 - b_2 + b_3 - b_4 + ...$$
+$$
+\sum_{n=1}^{\infty} (-1)^{n+1} b_n = b_1 - b_2 + b_3 - b_4 + ...
+$$
 
 o
 
-$$\sum_{n=1}^{\infty} (-1)^n b_n = -b_1 + b_2 - b_3 + b_4 - ...$$
+$$
+\sum_{n=1}^{\infty} (-1)^n b_n = -b_1 + b_2 - b_3 + b_4 - ...
+$$
 
 donde $b_n > 0$.
 
@@ -38,19 +42,23 @@ La serie alternante $\sum (-1)^{n+1} b_n$ converge si:
 
 ## ⚙️ Ejemplo 1: Serie armónica alternante
 
-$$\sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{n} = 1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + ...$$
+$$
+\sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{n} = 1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + ...
+$$
 
 $b_n = \frac{1}{n}$: decreciente ✓ y $\lim = 0$ ✓
 
 **Converge** (a $\ln 2$).
 
-Nota: La serie armónica normal $\sum \frac{1}{n}$ diverge, pero la alternante converge.
+> 💡 Nota: La serie armónica normal $\sum \frac{1}{n}$ diverge, pero la alternante converge.
 
 ---
 
 ## ⚙️ Ejemplo 2: Otra alternante
 
-$$\sum_{n=1}^{\infty} \frac{(-1)^n n}{n^2+1}$$
+$$
+\sum_{n=1}^{\infty} \frac{(-1)^n n}{n^2+1}
+$$
 
 $b_n = \frac{n}{n^2+1} \to 0$ ✓
 
@@ -64,7 +72,9 @@ $b_n = \frac{n}{n^2+1} \to 0$ ✓
 
 Si $S = \sum (-1)^{n+1} b_n$ y $S_n$ es la suma parcial:
 
-$$|S - S_n| \leq b_{n+1}$$
+$$
+|S - S_n| \leq b_{n+1}
+$$
 
 El error está acotado por el primer término omitido.
 
@@ -82,7 +92,9 @@ Con 100 términos: $|S - S_{100}| \leq \frac{1}{101} \approx 0.0099$
 
 ## ⚙️ Ejemplo 4: Convergencia condicional
 
-$$\sum_{n=1}^{\infty} \frac{(-1)^n}{\sqrt{n}}$$
+$$
+\sum_{n=1}^{\infty} \frac{(-1)^n}{\sqrt{n}}
+$$
 
 Alternante con $b_n = \frac{1}{\sqrt{n}} \to 0$ ✓
 
@@ -96,7 +108,9 @@ Esta serie converge **condicionalmente** (no absolutamente).
 
 ## ⚙️ Ejemplo 5: Fallo del criterio
 
-$$\sum (-1)^n \frac{n}{n+1}$$
+$$
+\sum (-1)^n \frac{n}{n+1}
+$$
 
 $b_n = \frac{n}{n+1} \to 1 \neq 0$
 

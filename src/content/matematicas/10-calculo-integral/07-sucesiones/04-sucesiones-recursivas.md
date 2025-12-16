@@ -17,7 +17,9 @@ Las sucesiones definidas recursivamente calculan cada término a partir de los a
 
 Una **sucesión recursiva de primer orden** tiene la forma:
 
-$$a_{n+1} = f(a_n), \quad a_1 = a_0$$
+$$
+a_{n+1} = f(a_n), \quad a_1 = a_0
+$$
 
 donde $f$ es alguna función.
 
@@ -25,7 +27,9 @@ donde $f$ es alguna función.
 
 ## 📖 Sucesiones recursivas lineales
 
-$$a_{n+1} = ra_n + b$$
+$$
+a_{n+1} = ra_n + b
+$$
 
 **Solución general:**
 - Si $r \neq 1$: $a_n = r^{n-1}(a_1 - L) + L$ donde $L = \frac{b}{1-r}$
@@ -35,11 +39,15 @@ $$a_{n+1} = ra_n + b$$
 
 ## ⚙️ Ejemplo 1: Sucesión lineal
 
-$a_1 = 5$, $a_{n+1} = 2a_n + 3$
+$$
+a_1 = 5, \quad a_{n+1} = 2a_n + 3
+$$
 
 Aquí $r = 2$, $b = 3$, $L = \frac{3}{1-2} = -3$
 
-$$a_n = 2^{n-1}(5 - (-3)) + (-3) = 8 \cdot 2^{n-1} - 3 = 2^{n+2} - 3$$
+$$
+a_n = 2^{n-1}(5 - (-3)) + (-3) = 8 \cdot 2^{n-1} - 3 = 2^{n+2} - 3
+$$
 
 Verificación: $a_1 = 8 - 3 = 5$ ✓, $a_2 = 16 - 3 = 13 = 2(5) + 3$ ✓
 
@@ -47,12 +55,17 @@ Verificación: $a_1 = 8 - 3 = 5$ ✓, $a_2 = 16 - 3 = 13 = 2(5) + 3$ ✓
 
 ## ⚙️ Ejemplo 2: Punto fijo
 
-$a_{n+1} = \frac{1}{2}(a_n + 4)$, $a_1 = 0$
+$$
+a_{n+1} = \frac{1}{2}(a_n + 4), \quad a_1 = 0
+$$
 
 Punto fijo: $L = \frac{1}{2}(L + 4)$ → $L = 4$
 
 Aquí $r = \frac{1}{2}$, así que:
-$$a_n = \left(\frac{1}{2}\right)^{n-1}(0 - 4) + 4 = 4 - \frac{4}{2^{n-1}}$$
+
+$$
+a_n = \left(\frac{1}{2}\right)^{n-1}(0 - 4) + 4 = 4 - \frac{4}{2^{n-1}}
+$$
 
 Como $|r| < 1$, converge al punto fijo 4.
 
@@ -69,7 +82,9 @@ Para $a_{n+1} = f(a_n)$, un punto fijo $L$ satisface $L = f(L)$.
 
 ## ⚙️ Ejemplo 3: Logística
 
-$a_{n+1} = 2a_n(1 - a_n)$, $a_1 = 0.1$
+$$
+a_{n+1} = 2a_n(1 - a_n), \quad a_1 = 0.1
+$$
 
 Puntos fijos: $L = 2L(1-L)$ → $L = 0$ o $L = \frac{1}{2}$
 
@@ -86,7 +101,9 @@ La sucesión converge a $\frac{1}{2}$.
 
 Para encontrar $\sqrt{2}$: resolver $x^2 = 2$
 
-$$a_{n+1} = a_n - \frac{a_n^2 - 2}{2a_n} = \frac{a_n + 2/a_n}{2}$$
+$$
+a_{n+1} = a_n - \frac{a_n^2 - 2}{2a_n} = \frac{a_n + 2/a_n}{2}
+$$
 
 Con $a_1 = 1$:
 - $a_1 = 1$
@@ -100,7 +117,9 @@ Con $a_1 = 1$:
 
 ## 📖 Sucesiones de segundo orden
 
-$$a_{n+2} = f(a_{n+1}, a_n)$$
+$$
+a_{n+2} = f(a_{n+1}, a_n)
+$$
 
 Ejemplo: Fibonacci: $F_{n+2} = F_{n+1} + F_n$
 
@@ -108,10 +127,15 @@ Ejemplo: Fibonacci: $F_{n+2} = F_{n+1} + F_n$
 
 ## ⚙️ Ejemplo 5: Fibonacci
 
-$F_1 = F_2 = 1$, $F_{n+2} = F_{n+1} + F_n$
+$$
+F_1 = F_2 = 1, \quad F_{n+2} = F_{n+1} + F_n
+$$
 
 Fórmula de Binet:
-$$F_n = \frac{1}{\sqrt{5}}\left[\left(\frac{1+\sqrt{5}}{2}\right)^n - \left(\frac{1-\sqrt{5}}{2}\right)^n\right]$$
+
+$$
+F_n = \frac{1}{\sqrt{5}}\left[\left(\frac{1+\sqrt{5}}{2}\right)^n - \left(\frac{1-\sqrt{5}}{2}\right)^n\right]
+$$
 
 ---
 
@@ -124,7 +148,9 @@ $$F_n = \frac{1}{\sqrt{5}}\left[\left(\frac{1+\sqrt{5}}{2}\right)^n - \left(\fra
 
 $r = 3$, $b = -4$, $L = \frac{-4}{1-3} = 2$
 
-$a_n = 3^{n-1}(3 - 2) + 2 = 3^{n-1} + 2$
+$$
+a_n = 3^{n-1}(3 - 2) + 2 = 3^{n-1} + 2
+$$
 </details>
 
 ---

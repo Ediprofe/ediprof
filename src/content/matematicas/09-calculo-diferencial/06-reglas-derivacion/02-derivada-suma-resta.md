@@ -15,7 +15,9 @@ La derivación es una operación lineal: podemos derivar término a término. Es
 
 ## 📖 Regla de la suma
 
-$$\frac{d}{dx}[f(x) + g(x)] = f'(x) + g'(x)$$
+$$
+\frac{d}{dx}[f(x) + g(x)] = f'(x) + g'(x)
+$$
 
 **"La derivada de la suma es la suma de las derivadas."**
 
@@ -23,7 +25,9 @@ $$\frac{d}{dx}[f(x) + g(x)] = f'(x) + g'(x)$$
 
 ## 📖 Regla de la resta
 
-$$\frac{d}{dx}[f(x) - g(x)] = f'(x) - g'(x)$$
+$$
+\frac{d}{dx}[f(x) - g(x)] = f'(x) - g'(x)
+$$
 
 **"La derivada de la diferencia es la diferencia de las derivadas."**
 
@@ -33,7 +37,9 @@ $$\frac{d}{dx}[f(x) - g(x)] = f'(x) - g'(x)$$
 
 Para cualquier combinación lineal:
 
-$$\frac{d}{dx}[af(x) + bg(x)] = af'(x) + bg'(x)$$
+$$
+\frac{d}{dx}[af(x) + bg(x)] = af'(x) + bg'(x)
+$$
 
 donde $a$ y $b$ son constantes.
 
@@ -175,7 +181,9 @@ c) $h'(x) = 2 \cdot \frac{1}{2}x^{-1/2} - 3 \cdot (-\frac{1}{2})x^{-3/2} = \frac
 
 **Ejercicio 2:** Simplifica y deriva:
 
-$$f(x) = \frac{x^4 - x^2 + x}{x}$$
+$$
+f(x) = \frac{x^4 - x^2 + x}{x}
+$$
 
 <details>
 <summary>Ver solución</summary>

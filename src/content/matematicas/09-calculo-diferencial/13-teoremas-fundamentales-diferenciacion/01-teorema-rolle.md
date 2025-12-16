@@ -37,7 +37,9 @@ Imagina una montaña: si empiezas y terminas a la misma altitud, en algún momen
 ## 📖 Las tres condiciones son necesarias
 
 **Sin continuidad:**
-$$f(x) = \begin{cases} 0 & x \in [0, 1) \cup (1, 2] \\ 1 & x = 1 \end{cases}$$
+$$
+f(x) = \begin{cases} 0 & x \in [0, 1) \cup (1, 2] \\ 1 & x = 1 \end{cases}
+$$
 $f(0) = f(2) = 0$, pero $f'(x) = 0$ en todo el dominio (no es ejemplo correcto porque f' existe). Mejor:
 
 Una función con discontinuidad de salto puede no tener punto con tangente horizontal.

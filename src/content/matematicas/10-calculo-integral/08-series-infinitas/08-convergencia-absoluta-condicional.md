@@ -33,7 +33,9 @@ Convergencia absoluta → Convergencia
 
 ## ⚙️ Ejemplo 1: Convergencia absoluta
 
-$$\sum \frac{(-1)^n}{n^2}$$
+$$
+\sum \frac{(-1)^n}{n^2}
+$$
 
 $\sum \left|\frac{(-1)^n}{n^2}\right| = \sum \frac{1}{n^2}$ converge.
 
@@ -43,7 +45,9 @@ $\sum \left|\frac{(-1)^n}{n^2}\right| = \sum \frac{1}{n^2}$ converge.
 
 ## ⚙️ Ejemplo 2: Convergencia condicional
 
-$$\sum \frac{(-1)^{n+1}}{n} = 1 - \frac{1}{2} + \frac{1}{3} - ...$$
+$$
+\sum \frac{(-1)^{n+1}}{n} = 1 - \frac{1}{2} + \frac{1}{3} - ...
+$$
 
 - Por Leibniz: converge ✓
 - Pero $\sum \frac{1}{n}$ diverge ✗
@@ -64,11 +68,15 @@ $$\sum \frac{(-1)^{n+1}}{n} = 1 - \frac{1}{2} + \frac{1}{3} - ...$$
 
 ## ⚙️ Ejemplo 3: Usando razón
 
-$$\sum \frac{(-1)^n 2^n}{n!}$$
+$$
+\sum \frac{(-1)^n 2^n}{n!}
+$$
 
 Con el criterio de razón para $|a_n|$:
 
-$$\frac{|a_{n+1}|}{|a_n|} = \frac{2}{n+1} \to 0 < 1$$
+$$
+\frac{|a_{n+1}|}{|a_n|} = \frac{2}{n+1} \to 0 < 1
+$$
 
 **Converge absolutamente.**
 
@@ -78,7 +86,7 @@ $$\frac{|a_{n+1}|}{|a_n|} = \frac{2}{n+1} \to 0 < 1$$
 
 Una serie que converge condicionalmente puede ser reordenada para:
 - Converger a cualquier número $L$
-- Divergir a $+\infty$ o $-\infty$
+- Diverger a $+\infty$ o $-\infty$
 - Oscilar sin converger
 
 Las series absolutamente convergentes mantienen su suma bajo cualquier reordenamiento.
@@ -87,7 +95,9 @@ Las series absolutamente convergentes mantienen su suma bajo cualquier reordenam
 
 ## ⚙️ Ejemplo 4: Análisis completo
 
-$$\sum_{n=1}^{\infty} \frac{(-1)^n}{\sqrt{n}}$$
+$$
+\sum_{n=1}^{\infty} \frac{(-1)^n}{\sqrt{n}}
+$$
 
 **Convergencia de la serie:**
 Por Leibniz: $\frac{1}{\sqrt{n}} \to 0$ y decrece → converge
@@ -101,7 +111,7 @@ $\sum \frac{1}{\sqrt{n}}$ es serie p con p = 1/2 < 1 → diverge
 
 ## 📊 Resumen
 
-| Tipo | $\sum \|a_n\|$ | $\sum a_n$ | Propiedades |
+| Tipo | $\sum |a_n|$ | $\sum a_n$ | Propiedades |
 |------|--------------|----------|-------------|
 | Absoluta | Converge | Converge | Reordenable |
 | Condicional | Diverge | Converge | No reordenable |
@@ -113,12 +123,16 @@ $\sum \frac{1}{\sqrt{n}}$ es serie p con p = 1/2 < 1 → diverge
 
 **Ejercicio 1:** Clasifica la convergencia:
 
-$$\sum_{n=1}^{\infty} \frac{(-1)^n n}{2^n}$$
+$$
+\sum_{n=1}^{\infty} \frac{(-1)^n n}{2^n}
+$$
 
 <details>
 <summary>Ver solución</summary>
 
-$\frac{|a_{n+1}|}{|a_n|} = \frac{n+1}{2n} \to \frac{1}{2} < 1$
+$$
+\frac{|a_{n+1}|}{|a_n|} = \frac{n+1}{2n} \to \frac{1}{2} < 1
+$$
 
 **Converge absolutamente.**
 </details>
@@ -127,7 +141,9 @@ $\frac{|a_{n+1}|}{|a_n|} = \frac{n+1}{2n} \to \frac{1}{2} < 1$
 
 **Ejercicio 2:** Clasifica:
 
-$$\sum_{n=2}^{\infty} \frac{(-1)^n}{n\ln n}$$
+$$
+\sum_{n=2}^{\infty} \frac{(-1)^n}{n\ln n}
+$$
 
 <details>
 <summary>Ver solución</summary>

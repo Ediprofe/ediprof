@@ -17,9 +17,13 @@ Las series de Taylor representan funciones como sumas infinitas de potencias, pe
 
 La **serie de Taylor** de $f(x)$ centrada en $x = a$ es:
 
-$$\boxed{f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!}(x-a)^n}$$
+$$
+\boxed{f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!}(x-a)^n}
+$$
 
-$$= f(a) + f'(a)(x-a) + \frac{f''(a)}{2!}(x-a)^2 + \frac{f'''(a)}{3!}(x-a)^3 + ...$$
+$$
+= f(a) + f'(a)(x-a) + \frac{f''(a)}{2!}(x-a)^2 + \frac{f'''(a)}{3!}(x-a)^3 + ...
+$$
 
 ---
 
@@ -27,7 +31,9 @@ $$= f(a) + f'(a)(x-a) + \frac{f''(a)}{2!}(x-a)^2 + \frac{f'''(a)}{3!}(x-a)^3 + .
 
 Si $a = 0$, se llama **serie de Maclaurin**:
 
-$$f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(0)}{n!}x^n$$
+$$
+f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(0)}{n!}x^n
+$$
 
 ---
 
@@ -35,7 +41,9 @@ $$f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(0)}{n!}x^n$$
 
 $f(x) = e^x$, $f^{(n)}(x) = e^x$, $f^{(n)}(0) = 1$
 
-$$e^x = \sum_{n=0}^{\infty} \frac{x^n}{n!} = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + ...$$
+$$
+e^x = \sum_{n=0}^{\infty} \frac{x^n}{n!} = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + ...
+$$
 
 Válida para todo $x \in \mathbb{R}$.
 
@@ -47,17 +55,25 @@ $f(x) = \sin x$
 
 $f(0) = 0$, $f'(0) = 1$, $f''(0) = 0$, $f'''(0) = -1$, ...
 
-$$\sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + ...$$
+$$
+\sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + ...
+$$
 
-$$= \sum_{n=0}^{\infty} \frac{(-1)^n x^{2n+1}}{(2n+1)!}$$
+$$
+= \sum_{n=0}^{\infty} \frac{(-1)^n x^{2n+1}}{(2n+1)!}
+$$
 
 ---
 
 ## ⚙️ Ejemplo 3: Coseno
 
-$$\cos x = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + ...$$
+$$
+\cos x = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + ...
+$$
 
-$$= \sum_{n=0}^{\infty} \frac{(-1)^n x^{2n}}{(2n)!}$$
+$$
+= \sum_{n=0}^{\infty} \frac{(-1)^n x^{2n}}{(2n)!}
+$$
 
 Nota: $(\sin x)' = \cos x$ y $(\cos x)' = -\sin x$ ✓
 
@@ -69,9 +85,13 @@ $f(x) = \ln(1 + x)$
 
 $f(0) = 0$, $f^{(n)}(x) = (-1)^{n+1}(n-1)!/x^n$
 
-$$\ln(1+x) = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + ...$$
+$$
+\ln(1+x) = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + ...
+$$
 
-$$= \sum_{n=1}^{\infty} \frac{(-1)^{n+1} x^n}{n}$$
+$$
+= \sum_{n=1}^{\infty} \frac{(-1)^{n+1} x^n}{n}
+$$
 
 Converge para $-1 < x \leq 1$.
 
@@ -93,9 +113,15 @@ Converge para $-1 < x \leq 1$.
 
 Encuentra la serie de $e^{-x^2}$:
 
-$$e^u = \sum \frac{u^n}{n!}$$ con $u = -x^2$:
+$$
+e^u = \sum \frac{u^n}{n!}
+$$
 
-$$e^{-x^2} = \sum_{n=0}^{\infty} \frac{(-x^2)^n}{n!} = \sum_{n=0}^{\infty} \frac{(-1)^n x^{2n}}{n!}$$
+con $u = -x^2$:
+
+$$
+e^{-x^2} = \sum_{n=0}^{\infty} \frac{(-x^2)^n}{n!} = \sum_{n=0}^{\infty} \frac{(-1)^n x^{2n}}{n!}
+$$
 
 ---
 
@@ -108,7 +134,9 @@ $$e^{-x^2} = \sum_{n=0}^{\infty} \frac{(-x^2)^n}{n!} = \sum_{n=0}^{\infty} \frac
 
 $f(0) = 1$, $f'(0) = \frac{1}{2}$, $f''(0) = -\frac{1}{4}$, $f'''(0) = \frac{3}{8}$
 
-$\sqrt{1+x} \approx 1 + \frac{x}{2} - \frac{x^2}{8} + \frac{x^3}{16} - ...$
+$$
+\sqrt{1+x} \approx 1 + \frac{x}{2} - \frac{x^2}{8} + \frac{x^3}{16} - ...
+$$
 </details>
 
 ---
@@ -118,7 +146,9 @@ $\sqrt{1+x} \approx 1 + \frac{x}{2} - \frac{x^2}{8} + \frac{x^3}{16} - ...$
 <details>
 <summary>Ver solución</summary>
 
-$e^x = \sum \frac{x^n}{n!}$
+$$
+e^x = \sum \frac{x^n}{n!}
+$$
 
 En $x = 1$: $e^1 = \sum \frac{1}{n!}$
 

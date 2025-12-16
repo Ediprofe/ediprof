@@ -15,7 +15,9 @@ La integral definida formaliza el concepto de área mediante el límite de sumas
 
 ## 📖 Definición formal
 
-$$\boxed{\int_a^b f(x)\,dx = \lim_{n \to \infty} \sum_{i=1}^{n} f(x_i^*) \Delta x}$$
+$$
+\boxed{\int_a^b f(x)\,dx = \lim_{n \to \infty} \sum_{i=1}^{n} f(x_i^*) \Delta x}
+$$
 
 cuando el límite existe y es el mismo para cualquier elección de puntos $x_i^*$.
 
@@ -49,7 +51,9 @@ cuando el límite existe y es el mismo para cualquier elección de puntos $x_i^*
 
 La integral definida representa el **área neta** entre la curva y el eje $x$:
 
-$$\int_a^b f(x)\,dx = \text{(área arriba del eje)} - \text{(área abajo del eje)}$$
+$$
+\int_a^b f(x)\,dx = \text{(área arriba del eje)} - \text{(área abajo del eje)}
+$$
 
 - Si $f(x) \geq 0$: área positiva
 - Si $f(x) \leq 0$: área negativa
@@ -59,17 +63,23 @@ $$\int_a^b f(x)\,dx = \text{(área arriba del eje)} - \text{(área abajo del eje
 
 ## ⚙️ Ejemplo 1: Área positiva
 
-$$\int_0^2 x\,dx$$
+$$
+\int_0^2 x\,dx
+$$
 
 representa el área del triángulo con vértices $(0,0)$, $(2,0)$, $(2,2)$.
 
-Área $= \frac{1}{2} \cdot 2 \cdot 2 = 2$
+$$
+\text{Área} = \frac{1}{2} \cdot 2 \cdot 2 = 2
+$$
 
 ---
 
 ## ⚙️ Ejemplo 2: Área bajo el eje
 
-$$\int_0^1 (-x)\,dx$$
+$$
+\int_0^1 (-x)\,dx
+$$
 
 El triángulo está debajo del eje $x$.
 
@@ -79,7 +89,9 @@ El triángulo está debajo del eje $x$.
 
 ## ⚙️ Ejemplo 3: Área mixta
 
-$$\int_{-1}^{1} x\,dx$$
+$$
+\int_{-1}^{1} x\,dx
+$$
 
 De $-1$ a $0$: área negativa $= -\frac{1}{2}$
 De $0$ a $1$: área positiva $= \frac{1}{2}$
@@ -110,19 +122,29 @@ Usando la definición, calcular $\int_0^3 (2x + 1)\,dx$.
 
 $\Delta x = \frac{3}{n}$, $x_i = \frac{3i}{n}$
 
-$$R_n = \sum_{i=1}^{n}\left(\frac{6i}{n} + 1\right)\frac{3}{n}$$
+$$
+R_n = \sum_{i=1}^{n}\left(\frac{6i}{n} + 1\right)\frac{3}{n}
+$$
 
-$$= \frac{18}{n^2}\sum i + \frac{3}{n}\sum 1 = \frac{18}{n^2} \cdot \frac{n(n+1)}{2} + 3$$
+$$
+= \frac{18}{n^2}\sum i + \frac{3}{n}\sum 1 = \frac{18}{n^2} \cdot \frac{n(n+1)}{2} + 3
+$$
 
-$$= \frac{9(n+1)}{n} + 3 = 9 + \frac{9}{n} + 3$$
+$$
+= \frac{9(n+1)}{n} + 3 = 9 + \frac{9}{n} + 3
+$$
 
-$$\lim_{n \to \infty} R_n = 12$$
+$$
+\lim_{n \to \infty} R_n = 12
+$$
 
 ---
 
 ## 📖 Notación alternativa
 
-$$\int_a^b f(x)\,dx = \int_a^b f(t)\,dt = \int_a^b f(u)\,du$$
+$$
+\int_a^b f(x)\,dx = \int_a^b f(t)\,dt = \int_a^b f(u)\,du
+$$
 
 La variable de integración es una **variable muda**.
 
@@ -132,7 +154,9 @@ La variable de integración es una **variable muda**.
 
 **Ejercicio 1:** Interpreta geométricamente:
 
-$$\int_0^4 (2 - x)\,dx$$
+$$
+\int_0^4 (2 - x)\,dx
+$$
 
 <details>
 <summary>Ver solución</summary>

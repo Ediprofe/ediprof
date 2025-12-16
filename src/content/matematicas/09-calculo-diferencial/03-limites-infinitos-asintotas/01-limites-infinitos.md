@@ -17,11 +17,15 @@
 
 Decimos que:
 
-$$\lim_{x \to a} f(x) = +\infty$$
+$$
+\lim_{x \to a} f(x) = +\infty
+$$
 
 si $f(x)$ puede hacerse arbitrariamente grande (positivo) cuando $x$ se acerca a $a$.
 
-$$\lim_{x \to a} f(x) = -\infty$$
+$$
+\lim_{x \to a} f(x) = -\infty
+$$
 
 si $f(x)$ puede hacerse arbitrariamente grande en valor absoluto (negativo) cuando $x$ se acerca a $a$.
 
@@ -48,10 +52,16 @@ $$f(x) = \frac{1}{x}$$
 En $x = 0$:
 
 **Por la derecha ($x > 0$):**
-$$\lim_{x \to 0^+} \frac{1}{x} = +\infty$$
+
+$$
+\lim_{x \to 0^+} \frac{1}{x} = +\infty
+$$
 
 **Por la izquierda ($x < 0$):**
-$$\lim_{x \to 0^-} \frac{1}{x} = -\infty$$
+
+$$
+\lim_{x \to 0^-} \frac{1}{x} = -\infty
+$$
 
 ---
 
@@ -113,7 +123,9 @@ $$\lim_{x \to 3} \frac{2x}{(x - 3)^2}$$
 
 Por ambos lados: $\to 0^+$
 
-$$\lim_{x \to 3} \frac{2x}{(x - 3)^2} = \frac{6}{0^+} = +\infty$$
+$$
+\lim_{x \to 3} \frac{2x}{(x - 3)^2} = \frac{6}{0^+} = +\infty
+$$
 
 ---
 
@@ -157,9 +169,13 @@ $$\lim_{x \to 1^+} = +\infty, \quad \lim_{x \to 1^-} = -\infty$$
 
 ## 📖 Funciones trigonométricas
 
-$$\lim_{x \to \pi/2^-} \tan x = +\infty$$
+$$
+\lim_{x \to \pi/2^-} \tan x = +\infty
+$$
 
-$$\lim_{x \to \pi/2^+} \tan x = -\infty$$
+$$
+\lim_{x \to \pi/2^+} \tan x = -\infty
+$$
 
 La tangente tiene asíntotas verticales en $x = \frac{\pi}{2} + n\pi$.
 

@@ -17,10 +17,15 @@ Una serie de potencias es una serie infinita donde cada término es una potencia
 
 Una **serie de potencias** centrada en $c$ tiene la forma:
 
-$$\sum_{n=0}^{\infty} a_n(x-c)^n = a_0 + a_1(x-c) + a_2(x-c)^2 + ...$$
+$$
+\sum_{n=0}^{\infty} a_n(x-c)^n = a_0 + a_1(x-c) + a_2(x-c)^2 + ...
+$$
 
 Si $c = 0$:
-$$\sum_{n=0}^{\infty} a_n x^n = a_0 + a_1 x + a_2 x^2 + ...$$
+
+$$
+\sum_{n=0}^{\infty} a_n x^n = a_0 + a_1 x + a_2 x^2 + ...
+$$
 
 ---
 
@@ -38,19 +43,27 @@ Toda serie de potencias tiene un **radio de convergencia** $R$ tal que:
 
 ## 📖 Cálculo de R usando razón
 
-$$R = \lim_{n \to \infty} \left|\frac{a_n}{a_{n+1}}\right|$$
+$$
+R = \lim_{n \to \infty} \left|\frac{a_n}{a_{n+1}}\right|
+$$
 
 o equivalentemente:
 
-$$\frac{1}{R} = \lim_{n \to \infty} \left|\frac{a_{n+1}}{a_n}\right|$$
+$$
+\frac{1}{R} = \lim_{n \to \infty} \left|\frac{a_{n+1}}{a_n}\right|
+$$
 
 ---
 
 ## ⚙️ Ejemplo 1: Radio de convergencia
 
-$$\sum_{n=0}^{\infty} \frac{x^n}{n!}$$
+$$
+\sum_{n=0}^{\infty} \frac{x^n}{n!}
+$$
 
-$$\frac{1}{R} = \lim \left|\frac{1/(n+1)!}{1/n!}\right| = \lim \frac{1}{n+1} = 0$$
+$$
+\frac{1}{R} = \lim \left|\frac{1/(n+1)!}{1/n!}\right| = \lim \frac{1}{n+1} = 0
+$$
 
 $R = \infty$ (converge para todo $x$)
 
@@ -60,9 +73,13 @@ Esta es la serie de $e^x$.
 
 ## ⚙️ Ejemplo 2: Radio finito
 
-$$\sum_{n=0}^{\infty} n! x^n$$
+$$
+\sum_{n=0}^{\infty} n! x^n
+$$
 
-$$\frac{1}{R} = \lim \left|\frac{(n+1)!}{n!}\right| = \lim (n+1) = \infty$$
+$$
+\frac{1}{R} = \lim \left|\frac{(n+1)!}{n!}\right| = \lim (n+1) = \infty
+$$
 
 $R = 0$ (solo converge en $x = 0$)
 
@@ -70,7 +87,9 @@ $R = 0$ (solo converge en $x = 0$)
 
 ## ⚙️ Ejemplo 3: Serie geométrica
 
-$$\sum_{n=0}^{\infty} x^n = \frac{1}{1-x}$$
+$$
+\sum_{n=0}^{\infty} x^n = \frac{1}{1-x}
+$$
 
 $R = 1$ (todos los coeficientes son 1)
 
@@ -84,7 +103,9 @@ En $x = 1$: $\sum 1$ diverge. En $x = -1$: $\sum (-1)^n$ diverge.
 
 ## ⚙️ Ejemplo 4: Verificar extremos
 
-$$\sum_{n=1}^{\infty} \frac{x^n}{n}$$
+$$
+\sum_{n=1}^{\infty} \frac{x^n}{n}
+$$
 
 $R = 1$ (coeficientes $1/n$)
 
@@ -137,7 +158,9 @@ Intervalo: $[-1, 1]$
 <details>
 <summary>Ver solución</summary>
 
-$\frac{a_{n+1}}{a_n} = \frac{(n+1)!/(n+1)^{n+1}}{n!/n^n} = \frac{n^n}{(n+1)^n} \to \frac{1}{e}$
+$$
+\frac{a_{n+1}}{a_n} = \frac{(n+1)!/(n+1)^{n+1}}{n!/n^n} = \frac{n^n}{(n+1)^n} \to \frac{1}{e}
+$$
 
 $R = e$
 </details>

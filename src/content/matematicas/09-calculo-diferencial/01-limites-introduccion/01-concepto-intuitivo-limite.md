@@ -17,11 +17,15 @@
 
 Considera la función:
 
-$$f(x) = \frac{x^2 - 1}{x - 1}$$
+$$
+f(x) = \frac{x^2 - 1}{x - 1}
+$$
 
 ¿Qué vale $f(1)$?
 
-$$f(1) = \frac{1 - 1}{1 - 1} = \frac{0}{0} \quad \text{¡Indeterminado!}$$
+$$
+f(1) = \frac{1 - 1}{1 - 1} = \frac{0}{0} \quad \text{¡Indeterminado!}
+$$
 
 La función **no está definida** en $x = 1$.
 
@@ -59,7 +63,9 @@ Evaluemos $f(x) = \frac{x^2 - 1}{x - 1}$ para valores cercanos a 1:
 
 ¿Por qué $f(x) \to 2$? Simplifiquemos:
 
-$$f(x) = \frac{x^2 - 1}{x - 1} = \frac{(x-1)(x+1)}{x-1} = x + 1 \quad (x \neq 1)$$
+$$
+f(x) = \frac{x^2 - 1}{x - 1} = \frac{(x-1)(x+1)}{x-1} = x + 1 \quad (x \neq 1)
+$$
 
 Para $x \neq 1$, la función es simplemente $f(x) = x + 1$.
 
@@ -71,7 +77,9 @@ La gráfica es una línea recta $y = x + 1$ con un **hueco** en $(1, 2)$.
 
 ## 📖 Definición intuitiva de límite
 
-$$\lim_{x \to a} f(x) = L$$
+$$
+\lim_{x \to a} f(x) = L
+$$
 
 Se lee: "El límite de $f(x)$ cuando $x$ tiende a $a$ es igual a $L$".
 
@@ -88,19 +96,25 @@ Se lee: "El límite de $f(x)$ cuando $x$ tiende a $a$ es igual a $L$".
 
 ### Límite por la izquierda
 
-$$\lim_{x \to a^-} f(x) = L_1$$
+$$
+\lim_{x \to a^-} f(x) = L_1
+$$
 
 $x$ se acerca a $a$ desde valores **menores** que $a$.
 
 ### Límite por la derecha
 
-$$\lim_{x \to a^+} f(x) = L_2$$
+$$
+\lim_{x \to a^+} f(x) = L_2
+$$
 
 $x$ se acerca a $a$ desde valores **mayores** que $a$.
 
 ### Condición de existencia
 
-$$\lim_{x \to a} f(x) = L \quad \Leftrightarrow \quad \lim_{x \to a^-} f(x) = \lim_{x \to a^+} f(x) = L$$
+$$
+\lim_{x \to a} f(x) = L \quad \Leftrightarrow \quad \lim_{x \to a^-} f(x) = \lim_{x \to a^+} f(x) = L
+$$
 
 El límite (bilateral) existe si y solo si ambos límites laterales existen y son iguales.
 
@@ -108,11 +122,15 @@ El límite (bilateral) existe si y solo si ambos límites laterales existen y so
 
 ## ⚙️ Ejemplo 1: Límite que existe
 
-$$f(x) = \frac{x^2 - 4}{x - 2}$$
+$$
+f(x) = \frac{x^2 - 4}{x - 2}
+$$
 
 Para $x \neq 2$: $f(x) = \frac{(x-2)(x+2)}{x-2} = x + 2$
 
-$$\lim_{x \to 2} f(x) = 2 + 2 = 4$$
+$$
+\lim_{x \to 2} f(x) = 2 + 2 = 4
+$$
 
 Aunque $f(2)$ no existe, el límite es $4$.
 

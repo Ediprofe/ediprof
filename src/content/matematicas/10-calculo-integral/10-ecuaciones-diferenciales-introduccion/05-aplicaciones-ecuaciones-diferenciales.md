@@ -15,7 +15,9 @@ Las ecuaciones diferenciales modelan fenómenos del mundo real: crecimiento pobl
 
 ## 📖 Crecimiento exponencial
 
-$$\frac{dP}{dt} = kP$$
+$$
+\frac{dP}{dt} = kP
+$$
 
 **Solución:** $P(t) = P_0 e^{kt}$
 
@@ -38,7 +40,9 @@ $P(5) = 1000e^{5k} = 1000 \cdot 3^{5/2} = 1000 \cdot 9\sqrt{3} \approx 15{,}588$
 
 ## 📖 Decaimiento radiactivo
 
-$$\frac{dN}{dt} = -\lambda N$$
+$$
+\frac{dN}{dt} = -\lambda N
+$$
 
 **Vida media:** $t_{1/2} = \frac{\ln 2}{\lambda}$
 
@@ -60,7 +64,9 @@ $t = \frac{-\ln(0.2)}{\ln 2/5730} = \frac{5730 \ln 5}{\ln 2} \approx 13{,}300$ a
 
 ## 📖 Ley de enfriamiento de Newton
 
-$$\frac{dT}{dt} = -k(T - T_m)$$
+$$
+\frac{dT}{dt} = -k(T - T_m)
+$$
 
 donde $T_m$ es la temperatura del medio.
 
@@ -90,7 +96,9 @@ $t = \frac{\ln 7}{k} = \frac{5\ln 7}{\ln(7/4)} \approx 17.5$ min
 
 ## 📖 Problemas de mezclas
 
-$$\frac{dQ}{dt} = \text{(tasa entrada)} - \text{(tasa salida)}$$
+$$
+\frac{dQ}{dt} = \text{(tasa entrada)} - \text{(tasa salida)}
+$$
 
 ---
 
@@ -108,13 +116,17 @@ $Q = 200 + Ce^{-t/20}$
 
 $Q(0) = 0$: $C = -200$
 
-$$Q(t) = 200(1 - e^{-t/20})$$
+$$
+Q(t) = 200(1 - e^{-t/20})
+$$
 
 ---
 
 ## 📖 Modelo logístico
 
-$$\frac{dP}{dt} = kP\left(1 - \frac{P}{M}\right)$$
+$$
+\frac{dP}{dt} = kP\left(1 - \frac{P}{M}\right)
+$$
 
 donde $M$ es la capacidad de carga.
 
@@ -130,7 +142,9 @@ $P = \frac{10000}{1 + Ae^{-0.1t}}$
 
 $P(0) = 2000$: $2000 = \frac{10000}{1+A}$ → $A = 4$
 
-$$P(t) = \frac{10000}{1 + 4e^{-0.1t}}$$
+$$
+P(t) = \frac{10000}{1 + 4e^{-0.1t}}
+$$
 
 ---
 

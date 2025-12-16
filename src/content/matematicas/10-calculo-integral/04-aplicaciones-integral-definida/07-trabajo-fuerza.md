@@ -15,7 +15,9 @@ La integral calcula el trabajo realizado por una fuerza variable. Esta es una de
 
 ## 📖 Trabajo con fuerza constante
 
-$$W = F \cdot d$$
+$$
+W = F \cdot d
+$$
 
 - $W$ = trabajo (Joules o ft-lb)
 - $F$ = fuerza (Newtons o libras)
@@ -27,7 +29,9 @@ $$W = F \cdot d$$
 
 Si la fuerza varía con la posición:
 
-$$\boxed{W = \int_a^b F(x)\,dx}$$
+$$
+\boxed{W = \int_a^b F(x)\,dx}
+$$
 
 ---
 
@@ -35,7 +39,9 @@ $$\boxed{W = \int_a^b F(x)\,dx}$$
 
 La fuerza necesaria para estirar un resorte es proporcional al desplazamiento:
 
-$$F(x) = kx$$
+$$
+F(x) = kx
+$$
 
 donde $k$ es la constante del resorte.
 
@@ -45,9 +51,13 @@ donde $k$ es la constante del resorte.
 
 Un resorte tiene constante $k = 50$ N/m. ¿Cuánto trabajo se necesita para estirarlo de 0.1 m a 0.3 m?
 
-$$W = \int_{0.1}^{0.3} 50x\,dx = 50\left[\frac{x^2}{2}\right]_{0.1}^{0.3}$$
+$$
+W = \int_{0.1}^{0.3} 50x\,dx = 50\left[\frac{x^2}{2}\right]_{0.1}^{0.3}
+$$
 
-$$= 25(0.09 - 0.01) = 25(0.08) = 2 \text{ J}$$
+$$
+= 25(0.09 - 0.01) = 25(0.08) = 2 \text{ J}
+$$
 
 ---
 
@@ -55,9 +65,13 @@ $$= 25(0.09 - 0.01) = 25(0.08) = 2 \text{ J}$$
 
 Se requieren 6 J de trabajo para comprimir un resorte de su longitud natural a 0.1 m menos. Encuentra $k$.
 
-$$W = \int_0^{0.1} kx\,dx = k \cdot \frac{(0.1)^2}{2} = 0.005k = 6$$
+$$
+W = \int_0^{0.1} kx\,dx = k \cdot \frac{(0.1)^2}{2} = 0.005k = 6
+$$
 
-$$k = 1200 \text{ N/m}$$
+$$
+k = 1200 \text{ N/m}
+$$
 
 ---
 
@@ -65,11 +79,15 @@ $$k = 1200 \text{ N/m}$$
 
 El trabajo para levantar un objeto de peso $w$ una altura $h$:
 
-$$W = wh$$
+$$
+W = wh
+$$
 
 Para levantar algo con peso variable (como una cadena):
 
-$$W = \int_0^h w(y) \cdot dy$$
+$$
+W = \int_0^h w(y) \cdot dy
+$$
 
 ---
 
@@ -79,9 +97,13 @@ Una cadena de 10 m pesa 3 kg/m. Está colgando de un edificio. ¿Trabajo para su
 
 A distancia $y$ del tope, queda $(10-y)$ metros de cadena, con peso $3(10-y) \cdot 9.8$ N.
 
-$$W = \int_0^{10} 3(10-y) \cdot 9.8\,dy = 29.4\int_0^{10} (10-y)\,dy$$
+$$
+W = \int_0^{10} 3(10-y) \cdot 9.8\,dy = 29.4\int_0^{10} (10-y)\,dy
+$$
 
-$$= 29.4\left[10y - \frac{y^2}{2}\right]_0^{10} = 29.4(100 - 50) = 1470 \text{ J}$$
+$$
+= 29.4\left[10y - \frac{y^2}{2}\right]_0^{10} = 29.4(100 - 50) = 1470 \text{ J}
+$$
 
 ---
 
@@ -89,7 +111,9 @@ $$= 29.4\left[10y - \frac{y^2}{2}\right]_0^{10} = 29.4(100 - 50) = 1470 \text{ J
 
 Para bombear líquido de un tanque:
 
-$$W = \int \rho g \cdot V(y) \cdot d(y)\,dy$$
+$$
+W = \int \rho g \cdot V(y) \cdot d(y)\,dy
+$$
 
 donde:
 - $\rho$ = densidad
@@ -110,11 +134,17 @@ Una capa a altura $y$ (desde el fondo):
 - Peso: $1000 \cdot 9.8 \cdot 4\pi\,dy$ N
 - Distancia a subir: $(5 - y) + 2 = 7 - y$ m
 
-$$W = \int_0^5 9800 \cdot 4\pi(7-y)\,dy$$
+$$
+W = \int_0^5 9800 \cdot 4\pi(7-y)\,dy
+$$
 
-$$= 39200\pi\int_0^5 (7-y)\,dy = 39200\pi\left[7y - \frac{y^2}{2}\right]_0^5$$
+$$
+= 39200\pi\int_0^5 (7-y)\,dy = 39200\pi\left[7y - \frac{y^2}{2}\right]_0^5
+$$
 
-$$= 39200\pi(35 - 12.5) = 39200\pi \cdot 22.5 \approx 2.77 \times 10^6 \text{ J}$$
+$$
+= 39200\pi(35 - 12.5) = 39200\pi \cdot 22.5 \approx 2.77 \times 10^6 \text{ J}
+$$
 
 ---
 
@@ -128,11 +158,17 @@ Por semejanza: $\frac{r}{y} = \frac{3}{6} = \frac{1}{2}$, así $r = \frac{y}{2}$
 
 Distancia: $6 - y$
 
-$$W = \int_0^6 9800 \cdot \frac{\pi y^2}{4}(6-y)\,dy$$
+$$
+W = \int_0^6 9800 \cdot \frac{\pi y^2}{4}(6-y)\,dy
+$$
 
-$$= 2450\pi\int_0^6 (6y^2 - y^3)\,dy = 2450\pi\left[2y^3 - \frac{y^4}{4}\right]_0^6$$
+$$
+= 2450\pi\int_0^6 (6y^2 - y^3)\,dy = 2450\pi\left[2y^3 - \frac{y^4}{4}\right]_0^6
+$$
 
-$$= 2450\pi(432 - 324) = 2450\pi \cdot 108 \approx 831{,}000 \text{ J}$$
+$$
+= 2450\pi(432 - 324) = 2450\pi \cdot 108 \approx 831{,}000 \text{ J}
+$$
 
 ---
 
@@ -145,7 +181,9 @@ $$= 2450\pi(432 - 324) = 2450\pi \cdot 108 \approx 831{,}000 \text{ J}$$
 
 $W = k \cdot \frac{(0.2)^2}{2} = 0.02k = 4$ → $k = 200$ N/m
 
-$W_{0.2 \to 0.4} = \int_{0.2}^{0.4} 200x\,dx = 100[x^2]_{0.2}^{0.4} = 100(0.16 - 0.04) = 12$ J
+$$
+W_{0.2 \to 0.4} = \int_{0.2}^{0.4} 200x\,dx = 100[x^2]_{0.2}^{0.4} = 100(0.16 - 0.04) = 12 \text{ J}
+$$
 </details>
 
 ---
@@ -155,7 +193,11 @@ $W_{0.2 \to 0.4} = \int_{0.2}^{0.4} 200x\,dx = 100[x^2]_{0.2}^{0.4} = 100(0.16 -
 <details>
 <summary>Ver solución</summary>
 
-$W = \int_0^{20} 0.5(20-y)(9.8)\,dy = 4.9\int_0^{20}(20-y)\,dy$
+$$
+W = \int_0^{20} 0.5(20-y)(9.8)\,dy = 4.9\int_0^{20}(20-y)\,dy
+$$
 
-$= 4.9[20y - \frac{y^2}{2}]_0^{20} = 4.9(400 - 200) = 980$ J
+$$
+= 4.9\left[20y - \frac{y^2}{2}\right]_0^{20} = 4.9(400 - 200) = 980 \text{ J}
+$$
 </details>

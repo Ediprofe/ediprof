@@ -17,7 +17,9 @@ Si la derivación responde "¿cuánto cambia?", la antiderivación responde "¿q
 
 Una **antiderivada** (o primitiva) de $f(x)$ es una función $F(x)$ tal que:
 
-$$F'(x) = f(x)$$
+$$
+F'(x) = f(x)
+$$
 
 En palabras: $F$ es antiderivada de $f$ si al derivar $F$ obtenemos $f$.
 
@@ -27,7 +29,11 @@ En palabras: $F$ es antiderivada de $f$ si al derivar $F$ obtenemos $f$.
 
 ¿Es $F(x) = x^3$ una antiderivada de $f(x) = 3x^2$?
 
-**Verificamos:** $F'(x) = 3x^2 = f(x)$ ✓
+**Verificamos:**
+
+$$
+F'(x) = 3x^2 = f(x) \quad \checkmark
+$$
 
 Sí, $x^3$ es una antiderivada de $3x^2$.
 
@@ -37,7 +43,11 @@ Sí, $x^3$ es una antiderivada de $3x^2$.
 
 ¿Es $F(x) = x^3 + 5$ también antiderivada de $f(x) = 3x^2$?
 
-**Verificamos:** $F'(x) = 3x^2 + 0 = 3x^2$ ✓
+**Verificamos:**
+
+$$
+F'(x) = 3x^2 + 0 = 3x^2 \quad \checkmark
+$$
 
 ¡También lo es!
 
@@ -47,7 +57,11 @@ Sí, $x^3$ es una antiderivada de $3x^2$.
 
 Si $F(x)$ es antiderivada de $f(x)$, entonces $F(x) + C$ también lo es para cualquier constante $C$.
 
-**Razón:** $(F(x) + C)' = F'(x) + 0 = f(x)$
+**Razón:**
+
+$$
+(F(x) + C)' = F'(x) + 0 = f(x)
+$$
 
 Las antiderivadas difieren solo en una constante.
 
@@ -57,7 +71,9 @@ Las antiderivadas difieren solo en una constante.
 
 La **familia de antiderivadas** de $f(x)$ se escribe:
 
-$$F(x) + C$$
+$$
+F(x) + C
+$$
 
 donde $C$ es la **constante de integración**.
 
@@ -69,9 +85,15 @@ Encuentra todas las antiderivadas de $f(x) = 2x$.
 
 **Pensamos:** ¿Qué función al derivarla da $2x$?
 
-$\frac{d}{dx}[x^2] = 2x$ ✓
+$$
+\frac{d}{dx}[x^2] = 2x \quad \checkmark
+$$
 
-**Familia de antiderivadas:** $x^2 + C$
+**Familia de antiderivadas:**
+
+$$
+x^2 + C
+$$
 
 ---
 
@@ -81,9 +103,15 @@ Encuentra las antiderivadas de $f(x) = 5$.
 
 **Pensamos:** ¿Qué función da $5$ al derivarla?
 
-$\frac{d}{dx}[5x] = 5$ ✓
+$$
+\frac{d}{dx}[5x] = 5 \quad \checkmark
+$$
 
-**Antiderivadas:** $5x + C$
+**Antiderivadas:**
+
+$$
+5x + C
+$$
 
 ---
 
@@ -91,9 +119,17 @@ $\frac{d}{dx}[5x] = 5$ ✓
 
 Encuentra las antiderivadas de $f(x) = \cos x$.
 
-**Pensamos:** $\frac{d}{dx}[\sin x] = \cos x$ ✓
+**Pensamos:**
 
-**Antiderivadas:** $\sin x + C$
+$$
+\frac{d}{dx}[\sin x] = \cos x \quad \checkmark
+$$
+
+**Antiderivadas:**
+
+$$
+\sin x + C
+$$
 
 ---
 
@@ -101,8 +137,11 @@ Encuentra las antiderivadas de $f(x) = \cos x$.
 
 La antiderivación también se llama **integración**, y usamos el símbolo integral:
 
-$$\int f(x)\,dx = F(x) + C$$
+$$
+\int f(x)\,dx = F(x) + C
+$$
 
+donde:
 - $\int$ = símbolo de integral
 - $f(x)$ = integrando
 - $dx$ = variable de integración
@@ -125,7 +164,9 @@ $$\int f(x)\,dx = F(x) + C$$
 
 Para verificar una antiderivada, derivamos el resultado:
 
-$$\frac{d}{dx}\left[\int f(x)\,dx\right] = f(x)$$
+$$
+\frac{d}{dx}\left[\int f(x)\,dx\right] = f(x)
+$$
 
 ---
 
@@ -133,7 +174,9 @@ $$\frac{d}{dx}\left[\int f(x)\,dx\right] = f(x)$$
 
 Si $\int (3x^2 + 2)\,dx = x^3 + 2x + C$, verificar.
 
-$$\frac{d}{dx}[x^3 + 2x + C] = 3x^2 + 2$$ ✓
+$$
+\frac{d}{dx}[x^3 + 2x + C] = 3x^2 + 2 \quad \checkmark
+$$
 
 ---
 
@@ -148,11 +191,30 @@ c) $f(x) = e^x$
 <details>
 <summary>Ver soluciones</summary>
 
-a) $\frac{x^5}{5} + C$ (verificar: $\frac{d}{dx}[\frac{x^5}{5}] = x^4$ ✓)
+a) 
 
-b) $-\cos x + C$ (verificar: $\frac{d}{dx}[-\cos x] = \sin x$ ✓)
+$$
+\frac{x^5}{5} + C
+$$
 
-c) $e^x + C$ (verificar: $\frac{d}{dx}[e^x] = e^x$ ✓)
+Verificar: $\frac{d}{dx}\left[\frac{x^5}{5}\right] = x^4$ ✓
+
+b) 
+
+$$
+-\cos x + C
+$$
+
+Verificar: $\frac{d}{dx}[-\cos x] = \sin x$ ✓
+
+c) 
+
+$$
+e^x + C
+$$
+
+Verificar: $\frac{d}{dx}[e^x] = e^x$ ✓
+
 </details>
 
 ---
@@ -162,5 +224,8 @@ c) $e^x + C$ (verificar: $\frac{d}{dx}[e^x] = e^x$ ✓)
 <details>
 <summary>Ver solución</summary>
 
-$F'(x) = 2x - 3 = f(x)$ ✓
+$$
+F'(x) = 2x - 3 = f(x) \quad \checkmark
+$$
+
 </details>

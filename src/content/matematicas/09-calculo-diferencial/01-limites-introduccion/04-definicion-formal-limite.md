@@ -15,7 +15,9 @@ La definición épsilon-delta transforma la idea intuitiva de "acercarse" en un 
 
 ## 📖 La definición formal
 
-$$\lim_{x \to a} f(x) = L$$
+$$
+\lim_{x \to a} f(x) = L
+$$
 
 significa que:
 
@@ -23,7 +25,9 @@ significa que:
 
 En símbolos:
 
-$$\forall \varepsilon > 0, \exists \delta > 0 : 0 < |x - a| < \delta \Rightarrow |f(x) - L| < \varepsilon$$
+$$
+\forall \varepsilon > 0, \exists \delta > 0 : 0 < |x - a| < \delta \Rightarrow |f(x) - L| < \varepsilon
+$$
 
 ---
 
@@ -65,12 +69,17 @@ Demuestra que $\lim_{x \to 3} (2x + 1) = 7$
 
 **Queremos probar:** Para todo $\varepsilon > 0$, existe $\delta > 0$ tal que:
 
-$$0 < |x - 3| < \delta \Rightarrow |(2x + 1) - 7| < \varepsilon$$
+$$
+0 < |x - 3| < \delta \Rightarrow |(2x + 1) - 7| < \varepsilon
+$$
 
 **Desarrollo:**
 
 Simplifiquemos $|(2x + 1) - 7|$:
-$$|(2x + 1) - 7| = |2x - 6| = 2|x - 3|$$
+
+$$
+|(2x + 1) - 7| = |2x - 6| = 2|x - 3|
+$$
 
 Queremos: $2|x - 3| < \varepsilon$
 
@@ -82,9 +91,13 @@ Entonces: $|x - 3| < \frac{\varepsilon}{2}$
 
 Si $0 < |x - 3| < \delta = \frac{\varepsilon}{2}$, entonces:
 
-$$|(2x + 1) - 7| = 2|x - 3| < 2 \cdot \frac{\varepsilon}{2} = \varepsilon$$
+$$
+|(2x + 1) - 7| = 2|x - 3| < 2 \cdot \frac{\varepsilon}{2} = \varepsilon
+$$
 
-$$\boxed{\lim_{x \to 3} (2x + 1) = 7 \quad \blacksquare}$$
+$$
+\boxed{\lim_{x \to 3} (2x + 1) = 7 \quad \blacksquare}
+$$
 
 ---
 
@@ -96,7 +109,9 @@ Demuestra que $\lim_{x \to 2} x^2 = 4$
 
 **Desarrollo:**
 
-$$|x^2 - 4| = |x - 2||x + 2|$$
+$$
+|x^2 - 4| = |x - 2||x + 2|
+$$
 
 Necesitamos acotar $|x + 2|$. Si restringimos $|x - 2| < 1$:
 
@@ -159,7 +174,9 @@ No pueden ambos estar a distancia menor que $\frac{1}{2}$ del mismo $L$.
 
 **Ejercicio 1:** Usa la definición para demostrar:
 
-$$\lim_{x \to 4} (3x - 5) = 7$$
+$$
+\lim_{x \to 4} (3x - 5) = 7
+$$
 
 <details>
 <summary>Ver solución</summary>

@@ -17,7 +17,9 @@ Una sucesión es una lista ordenada de números que sigue un patrón. Las sucesi
 
 Una **sucesión** es una función cuyo dominio son los enteros positivos:
 
-$$a: \mathbb{N} \to \mathbb{R}$$
+$$
+a: \mathbb{N} \to \mathbb{R}
+$$
 
 Escribimos $a_n$ en lugar de $a(n)$.
 
@@ -41,7 +43,9 @@ La sucesión es: $\{a_1, a_2, a_3, ...\}$ o $\{a_n\}_{n=1}^{\infty}$
 
 Fórmula directa para el n-ésimo término:
 
-$$a_n = f(n)$$
+$$
+a_n = f(n)
+$$
 
 **Ejemplo:** $a_n = \frac{n}{n+1}$ da $\frac{1}{2}, \frac{2}{3}, \frac{3}{4}, \frac{4}{5}, ...$
 
@@ -51,13 +55,17 @@ $$a_n = f(n)$$
 
 Cada término se define en función de términos anteriores:
 
-$$a_1 = \text{valor inicial}, \quad a_{n+1} = g(a_n)$$
+$$
+a_1 = \text{valor inicial}, \quad a_{n+1} = g(a_n)
+$$
 
 ---
 
 ## ⚙️ Ejemplo 1: Fibonacci
 
-$F_1 = 1, F_2 = 1, F_{n+2} = F_{n+1} + F_n$
+$$
+F_1 = 1, \quad F_2 = 1, \quad F_{n+2} = F_{n+1} + F_n
+$$
 
 Términos: 1, 1, 2, 3, 5, 8, 13, 21, 34, ...
 
@@ -65,7 +73,9 @@ Términos: 1, 1, 2, 3, 5, 8, 13, 21, 34, ...
 
 ## ⚙️ Ejemplo 2: Factorial
 
-$n! = n \cdot (n-1)!$ con $0! = 1$
+$$
+n! = n \cdot (n-1)! \quad \text{con } 0! = 1
+$$
 
 Términos: 1, 1, 2, 6, 24, 120, 720, ...
 
@@ -73,7 +83,9 @@ Términos: 1, 1, 2, 6, 24, 120, 720, ...
 
 ## ⚙️ Ejemplo 3: Geométrica
 
-$a_1 = 3, a_{n+1} = 2a_n$
+$$
+a_1 = 3, \quad a_{n+1} = 2a_n
+$$
 
 Términos: 3, 6, 12, 24, 48, ...
 
@@ -84,10 +96,20 @@ Fórmula explícita: $a_n = 3 \cdot 2^{n-1}$
 ## 📖 Sucesiones especiales
 
 ### Aritmética
-$a_n = a_1 + (n-1)d$, donde $d$ es la diferencia común.
+
+$$
+a_n = a_1 + (n-1)d
+$$
+
+donde $d$ es la diferencia común.
 
 ### Geométrica
-$a_n = a_1 \cdot r^{n-1}$, donde $r$ es la razón común.
+
+$$
+a_n = a_1 \cdot r^{n-1}
+$$
+
+donde $r$ es la razón común.
 
 ---
 
@@ -97,7 +119,9 @@ Sucesión: $\frac{1}{2}, \frac{2}{3}, \frac{3}{4}, \frac{4}{5}, ...$
 
 Patrón: numerador = posición, denominador = posición + 1
 
-Fórmula: $a_n = \frac{n}{n+1}$
+$$
+\text{Fórmula: } a_n = \frac{n}{n+1}
+$$
 
 ---
 
@@ -107,7 +131,9 @@ Sucesión: $-1, \frac{1}{2}, -\frac{1}{3}, \frac{1}{4}, ...$
 
 Patrón: signos alternan, denominador = posición
 
-Fórmula: $a_n = \frac{(-1)^n}{n}$
+$$
+\text{Fórmula: } a_n = \frac{(-1)^n}{n}
+$$
 
 ---
 
@@ -135,5 +161,7 @@ b) $-1, 1, -1, 1, -1$
 
 Es aritmética con $a_1 = 3$ y $d = 4$
 
-$a_n = 3 + (n-1)(4) = 4n - 1$
+$$
+a_n = 3 + (n-1)(4) = 4n - 1
+$$
 </details>

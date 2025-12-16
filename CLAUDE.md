@@ -268,7 +268,7 @@ Para ver el estilo correcto de lecciones, revisar:
 
 ## SOLICITUD CONCRETA
 
-QUIERO QUE POR FAVOR HAGAS EL PAPEL DE PLANEADOR PEDAGÓGICO DE AMERICA LATINA, PARTICULARMENTE COLOMBIA, PARA QUE ORDENES ESTOS TEMAS D EUNA FORMA LÓGICA, SECUENCIAL, NATURALMENTE PROGRESIVA, INTUITIVA...CON TODAS LAS INDICACIONES QUE TE DOY ARRIBA. QUE ESTO SEA DIGNO DE ADMIRACIÓN PEDAGÓGICA EN SU DISEÑO DE ARBOL DE CARPETAS Y TODO EL CAPÍTULO, POR SU EXQUISITO NIVEL PEDAGÓGICO. PUEDES VER CÓMO ESTÁ ESTRUCTURADO POR EJEMPLO EL CAPÍUTLO DE ESTADÍSTICA DESCRIPTIVA O ESTADÍSTICA DESCRIPTIVA, Y ASIMISMO SIGUIENDO ESA LÓGICA VAS A PRESENTAR EL ÁRBOL DE CARPETA SUGERIDO PARA EL CAPÍTULO DE ESTADÍSTICA.
+<!-- QUIERO QUE POR FAVOR HAGAS EL PAPEL DE PLANEADOR PEDAGÓGICO DE AMERICA LATINA, PARTICULARMENTE COLOMBIA, PARA QUE ORDENES ESTOS TEMAS D EUNA FORMA LÓGICA, SECUENCIAL, NATURALMENTE PROGRESIVA, INTUITIVA...CON TODAS LAS INDICACIONES QUE TE DOY ARRIBA. QUE ESTO SEA DIGNO DE ADMIRACIÓN PEDAGÓGICA EN SU DISEÑO DE ARBOL DE CARPETAS Y TODO EL CAPÍTULO, POR SU EXQUISITO NIVEL PEDAGÓGICO. PUEDES VER CÓMO ESTÁ ESTRUCTURADO POR EJEMPLO EL CAPÍUTLO DE ESTADÍSTICA DESCRIPTIVA O ESTADÍSTICA DESCRIPTIVA, Y ASIMISMO SIGUIENDO ESA LÓGICA VAS A PRESENTAR EL ÁRBOL DE CARPETA SUGERIDO PARA EL CAPÍTULO DE ESTADÍSTICA.
 
 ESTA ES LA ESTRUCTURA QUE PROPONE UNVLIBRO QUE TENGO DE REFERENCIA, PERO POR FAVOR, TÚ TÓMALO SOLO COMO ESO, Y EN REALIDAD ANALIZA DE LA MEJOR MANERA POSIBLE CÓMO INTRODUCIR ESTE TEMA COMO QUIERO, Y QUE LUEGO MÁS ADELANTE SE DÉ LA POSIBILIDAD, O NO SÉ CÓMO, TÚ ERES EL EXPERTO Y ME DIRÁS, DE DISEÑAR ESTO...O SI MEJOR DECIR PRIMERO ESTADÍSITICA DESCRIPTIVA Y LUEGO ESTADÍSITCA INFERENCIA...NO SÉ, TÚ ME DIRÁS.
 
@@ -277,110 +277,14 @@ TENGO UN LIBRIO GÚIA, PERO TÚ HARÁS UNA TAREA MUCHO MÁS PROFUNDA Y HARÁS UN
 
 ESTE ES EL CONTENIDO DEL LIBRO QUE TENGO DE GUÍA:
 
-### CÁLCULO DIFERENCIAL:
-![alt text](image-89.png)
 
-
-### **Capítulo 1: Relaciones y funciones**
-Este capítulo establece el lenguaje fundamental del cálculo. Su intención es que el estudiante distinga claramente entre una relación y una función, y aprenda a manipularlas algebraicamente y gráficamente antes de aplicarles límites o derivadas.
-*   **Conceptos básicos:** Definiciones de relación y función, notación funcional ($f(x)$), y clasificación de funciones.
-*   **Propiedades:** Cálculo de dominio, contradominio y rango. Evaluación del valor de una función.
-*   **Tipos de funciones:** Estudio detallado de funciones constantes, lineales, identidad, cuadráticas, racionales, raíz cuadrada, valor absoluto, mayor entero y características.
-*   **Transformaciones gráficas:** Cómo graficar funciones a partir de otras conocidas mediante desplazamientos, alargamientos y reflexiones.
-*   **Clasificación avanzada:** Funciones inyectivas (uno a uno), suprayectivas y biyectivas. Funciones pares e impares.
-*   **Operaciones:** Suma, resta, multiplicación y división de funciones. Función composición ($f \circ g$) y función inversa.
-*   **Funciones trascendentes:** Introducción a funciones exponenciales y trigonométricas como modelos matemáticos.
-
-### **Capítulo 2: Límites**
-Aquí se introduce el concepto central que diferencia al cálculo del álgebra: el paso al límite. Se busca formalizar la noción de aproximación.
-*   **Definiciones:** Definición intuitiva y defi­nición formal ($\epsilon - \delta$) de límite.
-*   **Cálculo de límites:** Teoremas sobre límites y cómo evaluar límites de funciones algebraicas y trigonométricas.
-*   **Comportamiento asintótico:** Límites cuando $x$ tiende al infinito, asíntotas horizontales y oblicuas.
-*   **Límites laterales:** Análisis del comportamiento de la función por la izquierda y por la derecha.
-
-### **Capítulo 3: Continuidad**
-Este capítulo conecta el concepto de límite con la "suavidad" o integridad de una curva. Es el pre-requisito teórico para poder derivar.
-*   **Tipos de continuidad:** Continuidad puntual y continuidad en un intervalo (abierto, cerrado y semiabierto).
-*   **Discontinuidades:** Identificación de puntos de ruptura y el concepto de discontinuidad evitable o removible.
-*   **Teoremas:** Teorema del valor intermedio.
-
-### **Capítulo 4: La derivada**
-Es el núcleo operativo de la sección. El objetivo es que el estudiante domine la técnica de derivación para cualquier tipo de función.
-*   **Definición:** Interpretación geométrica de la derivada (pendiente de la recta tangente) y la "Regla de los cuatro pasos" (derivación por definición).
-*   **Fórmulas de derivación:** Reglas para derivar funciones algebraicas y trascendentes (trigonométricas, logarítmicas, exponenciales).
-*   **Técnicas avanzadas:** Derivada de funciones implícitas y derivadas de orden superior (segunda derivada, tercera, etc.).
-*   **Otros sistemas:** Derivadas de ecuaciones en coordenadas polares y ecuaciones paramétricas.
-
-### **Capítulo 5: Aplicaciones de la derivada**
-Aquí se explota la derivada como herramienta para resolver problemas geométricos, físicos y de optimización.
-*   **Geometría:** Ecuaciones de la recta tangente y normal a una curva. Cálculo del ángulo entre dos curvas. Curvatura y radio de curvatura.
-*   **Análisis de funciones:** Criterios de la primera y segunda derivada para encontrar máximos y mínimos de una función (puntos críticos).
-*   **Optimización:** Resolución de problemas prácticos para maximizar o minimizar recursos (áreas, volúmenes, costos).
-*   **Física (Cinemática):** Aplicaciones al movimiento rectilíneo uniforme, cálculo de velocidad y aceleración media.
-*   **Razón de cambio:** Problemas de razones de cambio relacionadas.
-*   **Economía:** Aplicaciones específicas de la derivada en contextos económicos.
-*   **Teoremas avanzados y cálculo aproximado:** Regla de L'Hôpital (para límites indeterminados), Teorema de Rolle, Teorema del valor medio y el uso de diferenciales para estimaciones.
-
-
-### CÁLCULO INTEGRAL: ![alt text](image-90.png)
-
-### **Capítulo 1: Sumas**
-Este capítulo sirve como fundamento conceptual. Antes de enseñar las reglas de integración, el texto busca que el estudiante entienda la integral como un límite de sumas.
-*   **Conceptos clave:** Definición y propiedades de la notación sigma (sumatoria).
-*   **Aproximación de áreas:** Estudio de las **Sumas de Riemann**, utilizando rectángulos inscritos y circunscritos para aproximar el área bajo una curva,.
-
-### **Capítulo 2: Integrales inmediatas**
-Aquí se formaliza la operación inversa a la derivada. El objetivo es que el estudiante aprenda a manipular algebraicamente las funciones para que encajen en las fórmulas básicas de integración.
-*   **Definición:** Concepto de integral indefinida.
-*   **Técnica fundamental:** Integrales que se resuelven por **cambio de variable** directo (sustitución simple) para llevarlas a una forma inmediata.
-
-### **Capítulo 3: Integrales de diferenciales trigonométricas**
-Este es un capítulo técnico dedicado exclusivamente a la manipulación de potencias de funciones trigonométricas. Es el preámbulo necesario para dominar métodos más avanzados (como la sustitución trigonométrica del siguiente capítulo).
-*   **Casos de estudio:**
-    *   Integrales de la forma $\sin^m v \cdot \cos^n v$ (cuando $m$ y $n$ son pares o impares).
-    *   Integrales con potencias de $\tan^n v$, $\cot^n v$.
-    *   Integrales con potencias de $\sec^n v$, $\csc^n v$ (casos pares).
-    *   Combinaciones de tangentes con secantes y cotangentes con cosecantes.
-    *   Integrales de productos especiales como $\sin(mx) \cdot \cos(nx)$, $\sin(mx) \cdot \sin(nx)$, etc.,.
-
-### **Capítulo 4: Métodos de integración**
-Este es el núcleo "fuerte" del curso. Aquí se presentan las herramientas para resolver integrales que no son directas ni trigonométricas simples. La intención es desarrollar el pensamiento analítico para elegir la estrategia adecuada.
-*   **Sustitución trigonométrica:** Uso de triángulos rectángulos para eliminar raíces cuadradas de la forma $\sqrt{a^2 \pm u^2}$.
-*   **Integración por partes:** Técnica para integrar productos de funciones (fórmula $\int u dv$).
-*   **Fracciones parciales:** Descomposición de funciones racionales para integrar cocientes de polinomios.
-*   **Sustitución diversa:** Integración por sustitución de una nueva variable (cambios especiales para racionalizar integrales).
-*   **Diferenciales binomias:** Integración de expresiones de la forma $x^m (a + bx^n)^p$.
-*   **Transformaciones:** Uso de identidades para simplificar diferenciales trigonométricas complejas.
-
-### **Capítulo 5: Aplicaciones de la integral**
-Una vez dominada la técnica, este capítulo se enfoca en el "para qué" sirve la integral, conectando las matemáticas con la geometría y la economía.
-*   **Conceptos fundamentales:** Significado de la constante de integración e introducción a la **integral definida**.
-*   **Áreas:** Cálculo del área bajo la curva y área entre dos curvas planas (utilizando rectángulos verticales $dx$ u horizontales $dy$).
-*   **Métodos numéricos:** Cálculo aproximado de integrales definidas mediante la **Fórmula de trapecios** y la **Fórmula de Simpson 1/3**.
-*   **Volúmenes:** Cálculo de volúmenes de sólidos de revolución mediante el método de discos, método de las arandelas y método de capas (cascarones).
-*   **Otras aplicaciones:** Cálculo de la longitud de arco. Aplicaciones a la economía (funciones de costos e ingresos),.
-
-### **Capítulo 6: Ecuaciones diferenciales**
-Este capítulo final sirve como una introducción o puente hacia cursos superiores de matemáticas, mostrando cómo la integral resuelve igualdades que involucran derivadas.
-*   **Fundamentos:** Introducción y definición de una ecuación diferencial.
-*   **Métodos de solución:** Resolución de ecuaciones diferenciales de primer orden mediante **variables separables** y resolución de ecuaciones **homogéneas**.
-
-
-ADEMÁS, TE PASO INFORMACIÓN SOBRE LOS TEMAS DE CÁLCULO QUE SE VEN EN UNA PLATAFORMA DE TUTOR.COM, PARA QUE LO TENGAS EN CUENTA YA QUE EN COLOMBIA RECUERDO QUE LA PARTE DE SUMATORIAS Y SERIES LA METEN EN CÁLCULO INTEGRAL, ASÍ COMO LO DE PARAMÉTRICAS Y POLARES...SI MAL NO RECUERDO. AHÍ TE VA EL PLAN DE TUTOR.COM
-
-
-![alt text](image-91.png)
-![alt text](image-92.png)
-![alt text](image-93.png)
-![alt text](image-94.png)
-![alt text](image-95.png)
 
 CON TODO ESTO EN METE, YO LO PREVISUALIZO END DOS CAPÍTULOS (CÁLCULO DIFERENCIAL Y CÁLCULO INTEGRAL), PERO TÚ PUEDES EVALUAR SI CABE UN TERCER CAPÍTULO MÁS, POR EJEMPLO, LLAMADADO PRECÁLCULO (ANTES DE CÁLCULO DE DIFERENCIAL), EN EL CUAL PODRÍAN VERSE, POR EJEMPLO LOS SIGUIENTES CONCEPTOS: DESIGUALDADES Y VALOR ABSOLUTO, INECUACIONES LINEALES, INECUACIONES CUADRÁTICAS, INECUACIONES RACIONALES, VALOR ABSOLUTO, PROPIEDADES, FUNCIONES REALES....
 
 
-PROCEDE CON LA PROPUESTA DE ÁRBOL DE CARPETAS.
+PROCEDE CON LA PROPUESTA DE ÁRBOL DE CARPETAS. -->
 
-### RETROALIMENTACIÓN: 
+<!-- ### RETROALIMENTACIÓN: 
 
 
 http://localhost:4321/matematicas/precalculo/catalogo-funciones/funcion-mayor-entero
@@ -388,5 +292,33 @@ http://localhost:4321/matematicas/precalculo/catalogo-funciones/funcion-mayor-en
 ![alt text](image-96.png) TODO LO QUE TENGA QUE VER CON COSTOS COMO QUE SE RENDERIZA MAL, ASÍ QUE TE PIDO EL FAVOR QUE LO HAGAS CON OTRO SÍMBOLO DE MONEDA, O LA SOLUCIÓN QUE TÚ PREFIERAS.
 
 http://localhost:4321/matematicas/precalculo/catalogo-funciones/funcion-racional
-![alt text](image-97.png)
+![alt text](image-97.png) -->
 
+
+### REESCRITURA ECUACIONES: 
+
+EN EL ÁREA MATEMÁTICAS QUIERO QUE TODAS LAS LECCIONES EN LAS PARTE DONDE HAY FÓRMULAS O EXPRESIONES IMPORTANTES, ASÍ COMO EN LOS LIBROS, LAS PONGAS EN EL BLOQUE DE LATEX, EL QUE ES ALGO ASÍ
+
+$$
+CONTENIDO
+$$
+
+PORQUE ESE BLOQUE GENERA UN ESTILO ESPECIAL, TIPO RESALTADO.
+
+ENTONCES NO VAS A MODIFICAR LA LECCIÓN, SIMPLEEMNTE CAMBIARÍAS POR EJEMPLO LO QUE ESTÁ EN ESTE MODO:
+
+$$ CONTENIDO $$
+
+A ESTE MODO
+
+$$
+CONTENIDO
+$$
+
+O LO QUE ESTÉ INLINE, A:
+
+$$
+CONTENIDO
+$$
+
+PERO NO ES CAMBIAR POR CAMBIAR, ES CAMBIAR LO QUE VEAS QUE DEBERÍA CAMBIARSE, ASÍ COMO LO HARÍA UN LIBRO CON LATO VALOR DIDÁCTICO Y CONCRETO. COMIENZA DESDE DONDE DEJASTE: http://localhost:4321/matematicas/calculo-diferencial/derivadas-funciones-trascendentes/derivacion-logaritmica, yo todo el resto de lecciones del capitulo 9

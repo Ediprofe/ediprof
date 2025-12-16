@@ -54,7 +54,9 @@ Estima $\lim_{x \to 2} \frac{x^3 - 8}{x - 2}$
 
 **Conclusión:** Ambos lados convergen a **12**.
 
-$$\lim_{x \to 2} \frac{x^3 - 8}{x - 2} = 12$$
+$$
+\lim_{x \to 2} \frac{x^3 - 8}{x - 2} = 12
+$$
 
 ---
 
@@ -80,7 +82,9 @@ Estima $\lim_{x \to 0} \frac{1}{x^2}$
 
 **Conclusión:** La función crece sin límite desde ambos lados.
 
-$$\lim_{x \to 0} \frac{1}{x^2} = +\infty$$
+$$
+\lim_{x \to 0} \frac{1}{x^2} = +\infty
+$$
 
 ---
 
@@ -106,7 +110,9 @@ Estima $\lim_{x \to 0} \frac{1}{x}$
 
 **Conclusión:** Los límites laterales son diferentes ($-\infty$ vs $+\infty$).
 
-$$\lim_{x \to 0} \frac{1}{x} \text{ no existe}$$
+$$
+\lim_{x \to 0} \frac{1}{x} \text{ no existe}
+$$
 
 Pero podemos escribir:
 - $\lim_{x \to 0^-} \frac{1}{x} = -\infty$
@@ -145,7 +151,9 @@ La gráfica es una línea recta $y = x + 1$ con un **hueco** en $(1, 2)$.
 - Por la izquierda: la curva se acerca a $y = 2$
 - Por la derecha: la curva se acerca a $y = 2$
 
-$$\lim_{x \to 1} f(x) = 2$$
+$$
+\lim_{x \to 1} f(x) = 2
+$$
 
 Aunque $f(1)$ no existe, el límite sí existe.
 
@@ -159,7 +167,9 @@ $$g(x) = \begin{cases} x^2 & \text{si } x < 1 \\ 3 & \text{si } x = 1 \\ 2x - 1 
 - Por la izquierda: $\lim_{x \to 1^-} x^2 = 1$
 - Por la derecha: $\lim_{x \to 1^+} (2x - 1) = 1$
 
-$$\lim_{x \to 1} g(x) = 1$$
+$$
+\lim_{x \to 1} g(x) = 1
+$$
 
 Nota: $g(1) = 3 \neq 1$, pero el límite es 1.
 
@@ -192,7 +202,9 @@ $$\lim_{x \to 4} \frac{x - 4}{\sqrt{x} - 2}$$
 | $4.01$ | $4.0025...$ |
 | $4.1$ | $4.0249...$ |
 
-$$\lim_{x \to 4} \frac{x - 4}{\sqrt{x} - 2} = 4$$
+$$
+\lim_{x \to 4} \frac{x - 4}{\sqrt{x} - 2} = 4
+$$
 </details>
 
 ---

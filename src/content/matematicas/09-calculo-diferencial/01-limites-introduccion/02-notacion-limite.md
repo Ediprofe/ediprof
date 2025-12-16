@@ -15,7 +15,9 @@ La notación matemática para límites es precisa y expresiva. Dominarla te perm
 
 ## 📖 Notación básica
 
-$$\lim_{x \to a} f(x) = L$$
+$$
+\lim_{x \to a} f(x) = L
+$$
 
 | Símbolo | Significado |
 |---------|-------------|
@@ -34,7 +36,9 @@ $$\lim_{x \to a} f(x) = L$$
 
 ### Por la izquierda
 
-$$\lim_{x \to a^-} f(x) = L$$
+$$
+\lim_{x \to a^-} f(x) = L
+$$
 
 El superíndice $-$ indica que $x$ se acerca desde valores **menores** que $a$.
 
@@ -42,7 +46,9 @@ También se escribe: $\lim_{x \to a^{-}}$ o $\lim_{x \nearrow a}$
 
 ### Por la derecha
 
-$$\lim_{x \to a^+} f(x) = L$$
+$$
+\lim_{x \to a^+} f(x) = L
+$$
 
 El superíndice $+$ indica que $x$ se acerca desde valores **mayores** que $a$.
 
@@ -54,11 +60,15 @@ También se escribe: $\lim_{x \to a^{+}}$ o $\lim_{x \searrow a}$
 
 Cuando la función crece sin cota:
 
-$$\lim_{x \to a} f(x) = +\infty$$
+$$
+\lim_{x \to a} f(x) = +\infty
+$$
 
 "$f(x)$ tiende a infinito positivo cuando $x$ tiende a $a$."
 
-$$\lim_{x \to a} f(x) = -\infty$$
+$$
+\lim_{x \to a} f(x) = -\infty
+$$
 
 "$f(x)$ tiende a infinito negativo cuando $x$ tiende a $a$."
 
@@ -72,11 +82,15 @@ Cuando escribimos $= \infty$, **no** significa que el límite existe en el senti
 
 Cuando $x$ crece sin cota:
 
-$$\lim_{x \to +\infty} f(x) = L$$
+$$
+\lim_{x \to +\infty} f(x) = L
+$$
 
 "Cuando $x$ tiende a infinito (positivo), $f(x)$ se acerca a $L$."
 
-$$\lim_{x \to -\infty} f(x) = L$$
+$$
+\lim_{x \to -\infty} f(x) = L
+$$
 
 "Cuando $x$ tiende a menos infinito, $f(x)$ se acerca a $L$."
 
@@ -86,7 +100,9 @@ $$\lim_{x \to -\infty} f(x) = L$$
 
 "Cuando $x$ se acerca a 5, $f(x) = x^2$ se acerca a 25."
 
-$$\lim_{x \to 5} x^2 = 25$$
+$$
+\lim_{x \to 5} x^2 = 25
+$$
 
 ---
 
@@ -95,10 +111,16 @@ $$\lim_{x \to 5} x^2 = 25$$
 Para $f(x) = \frac{1}{x}$:
 
 **Por la derecha de 0:**
-$$\lim_{x \to 0^+} \frac{1}{x} = +\infty$$
+
+$$
+\lim_{x \to 0^+} \frac{1}{x} = +\infty
+$$
 
 **Por la izquierda de 0:**
-$$\lim_{x \to 0^-} \frac{1}{x} = -\infty$$
+
+$$
+\lim_{x \to 0^-} \frac{1}{x} = -\infty
+$$
 
 ---
 
@@ -106,9 +128,13 @@ $$\lim_{x \to 0^-} \frac{1}{x} = -\infty$$
 
 Para $f(x) = \frac{1}{x}$:
 
-$$\lim_{x \to +\infty} \frac{1}{x} = 0$$
+$$
+\lim_{x \to +\infty} \frac{1}{x} = 0
+$$
 
-$$\lim_{x \to -\infty} \frac{1}{x} = 0$$
+$$
+\lim_{x \to -\infty} \frac{1}{x} = 0
+$$
 
 La función se aproxima a 0 cuando $x$ es muy grande (en valor absoluto).
 
@@ -118,7 +144,9 @@ La función se aproxima a 0 cuando $x$ es muy grande (en valor absoluto).
 
 Cuando un límite no existe, escribimos:
 
-$$\lim_{x \to a} f(x) \text{ no existe}$$
+$$
+\lim_{x \to a} f(x) \text{ no existe}
+$$
 
 O abreviado: $\nexists \lim_{x \to a} f(x)$
 
@@ -133,7 +161,9 @@ O abreviado: $\nexists \lim_{x \to a} f(x)$
 
 Para $f(x) = \sin\left(\frac{1}{x}\right)$ cuando $x \to 0$:
 
-$$\lim_{x \to 0} \sin\left(\frac{1}{x}\right) \text{ no existe}$$
+$$
+\lim_{x \to 0} \sin\left(\frac{1}{x}\right) \text{ no existe}
+$$
 
 La función oscila infinitamente entre $-1$ y $1$ sin acercarse a ningún valor.
 
@@ -157,7 +187,9 @@ La función oscila infinitamente entre $-1$ y $1$ sin acercarse a ningún valor.
 
 El límite bilateral existe si y solo si:
 
-$$\lim_{x \to a} f(x) = L \quad \Leftrightarrow \quad \lim_{x \to a^-} f(x) = \lim_{x \to a^+} f(x) = L$$
+$$
+\lim_{x \to a} f(x) = L \quad \Leftrightarrow \quad \lim_{x \to a^-} f(x) = \lim_{x \to a^+} f(x) = L
+$$
 
 ---
 

@@ -15,7 +15,9 @@ La integral indefinida es la notación formal para representar la familia de ant
 
 ## 📖 Notación de la integral indefinida
 
-$$\int f(x)\,dx = F(x) + C$$
+$$
+\int f(x)\,dx = F(x) + C
+$$
 
 significa que $F'(x) = f(x)$.
 
@@ -37,13 +39,17 @@ significa que $F'(x) = f(x)$.
 
 ### 1. Constante multiplicativa
 
-$$\int k \cdot f(x)\,dx = k \int f(x)\,dx$$
+$$
+\int k \cdot f(x)\,dx = k \int f(x)\,dx
+$$
 
 Las constantes "salen" de la integral.
 
 ### 2. Suma y resta
 
-$$\int [f(x) \pm g(x)]\,dx = \int f(x)\,dx \pm \int g(x)\,dx$$
+$$
+\int [f(x) \pm g(x)]\,dx = \int f(x)\,dx \pm \int g(x)\,dx
+$$
 
 Se integra término a término.
 
@@ -51,9 +57,13 @@ Se integra término a término.
 
 ## ⚠️ Lo que NO se puede hacer
 
-$$\int f(x) \cdot g(x)\,dx \neq \int f(x)\,dx \cdot \int g(x)\,dx$$
+$$
+\int f(x) \cdot g(x)\,dx \neq \int f(x)\,dx \cdot \int g(x)\,dx
+$$
 
-$$\int \frac{f(x)}{g(x)}\,dx \neq \frac{\int f(x)\,dx}{\int g(x)\,dx}$$
+$$
+\int \frac{f(x)}{g(x)}\,dx \neq \frac{\int f(x)\,dx}{\int g(x)\,dx}
+$$
 
 Los productos y cocientes **no** se pueden separar.
 
@@ -61,25 +71,57 @@ Los productos y cocientes **no** se pueden separar.
 
 ## ⚙️ Ejemplo 1: Constante multiplicativa
 
-$$\int 5x^2\,dx = 5 \int x^2\,dx = 5 \cdot \frac{x^3}{3} + C = \frac{5x^3}{3} + C$$
+Calcula:
+
+$$
+\int 5x^2\,dx
+$$
+
+**Solución:**
+
+$$
+= 5 \int x^2\,dx = 5 \cdot \frac{x^3}{3} + C = \frac{5x^3}{3} + C
+$$
 
 ---
 
 ## ⚙️ Ejemplo 2: Suma de términos
 
-$$\int (3x^2 + 2x)\,dx = \int 3x^2\,dx + \int 2x\,dx$$
+Calcula:
 
-$$= 3 \cdot \frac{x^3}{3} + 2 \cdot \frac{x^2}{2} + C = x^3 + x^2 + C$$
+$$
+\int (3x^2 + 2x)\,dx
+$$
+
+**Solución:**
+
+$$
+= \int 3x^2\,dx + \int 2x\,dx
+$$
+
+$$
+= 3 \cdot \frac{x^3}{3} + 2 \cdot \frac{x^2}{2} + C = x^3 + x^2 + C
+$$
 
 ---
 
 ## ⚙️ Ejemplo 3: Combinación
 
-$$\int (4x^3 - 6x^2 + 2)\,dx$$
+Calcula:
 
-$$= 4 \cdot \frac{x^4}{4} - 6 \cdot \frac{x^3}{3} + 2x + C$$
+$$
+\int (4x^3 - 6x^2 + 2)\,dx
+$$
 
-$$= x^4 - 2x^3 + 2x + C$$
+**Solución:**
+
+$$
+= 4 \cdot \frac{x^4}{4} - 6 \cdot \frac{x^3}{3} + 2x + C
+$$
+
+$$
+= x^4 - 2x^3 + 2x + C
+$$
 
 ---
 
@@ -87,7 +129,9 @@ $$= x^4 - 2x^3 + 2x + C$$
 
 A veces se usan otras variables:
 
-$$\int f(t)\,dt, \quad \int g(u)\,du, \quad \int h(\theta)\,d\theta$$
+$$
+\int f(t)\,dt, \quad \int g(u)\,du, \quad \int h(\theta)\,d\theta
+$$
 
 La variable de integración puede ser cualquiera.
 
@@ -95,9 +139,13 @@ La variable de integración puede ser cualquiera.
 
 ## 📖 La integral "deshace" la derivada
 
-$$\frac{d}{dx}\left[\int f(x)\,dx\right] = f(x)$$
+$$
+\frac{d}{dx}\left[\int f(x)\,dx\right] = f(x)
+$$
 
-$$\int f'(x)\,dx = f(x) + C$$
+$$
+\int f'(x)\,dx = f(x) + C
+$$
 
 La derivación y la integración son operaciones inversas (excepto por la constante).
 
@@ -107,7 +155,9 @@ La derivación y la integración son operaciones inversas (excepto por la consta
 
 Si $F(x) = x^3 + 2x$, entonces:
 
-$$\int F'(x)\,dx = \int (3x^2 + 2)\,dx = x^3 + 2x + C$$
+$$
+\int F'(x)\,dx = \int (3x^2 + 2)\,dx = x^3 + 2x + C
+$$
 
 Recuperamos $F(x)$ (más una constante).
 
@@ -126,12 +176,22 @@ Si $F(a) = b$ (un valor específico), podemos encontrar $C$.
 Si $f(x) = 2x$ y $F(0) = 3$, encuentra $F(x)$.
 
 **Paso 1:** Integrar
-$$F(x) = \int 2x\,dx = x^2 + C$$
+
+$$
+F(x) = \int 2x\,dx = x^2 + C
+$$
 
 **Paso 2:** Aplicar condición
-$$F(0) = 0 + C = 3 \Rightarrow C = 3$$
 
-**Respuesta:** $F(x) = x^2 + 3$
+$$
+F(0) = 0 + C = 3 \Rightarrow C = 3
+$$
+
+**Respuesta:**
+
+$$
+F(x) = x^2 + 3
+$$
 
 ---
 
@@ -149,12 +209,17 @@ $$F(0) = 0 + C = 3 \Rightarrow C = 3$$
 
 **Ejercicio 1:** Calcula:
 
-$$\int (6x^2 - 4x + 7)\,dx$$
+$$
+\int (6x^2 - 4x + 7)\,dx
+$$
 
 <details>
 <summary>Ver solución</summary>
 
-$$= 6 \cdot \frac{x^3}{3} - 4 \cdot \frac{x^2}{2} + 7x + C = 2x^3 - 2x^2 + 7x + C$$
+$$
+= 6 \cdot \frac{x^3}{3} - 4 \cdot \frac{x^2}{2} + 7x + C = 2x^3 - 2x^2 + 7x + C
+$$
+
 </details>
 
 ---
@@ -164,9 +229,20 @@ $$= 6 \cdot \frac{x^3}{3} - 4 \cdot \frac{x^2}{2} + 7x + C = 2x^3 - 2x^2 + 7x + 
 <details>
 <summary>Ver solución</summary>
 
-$F(x) = x^3 - x + C$
+$$
+F(x) = x^3 - x + C
+$$
 
-$F(1) = 1 - 1 + C = 2 \Rightarrow C = 2$
+Aplicando la condición:
 
-$F(x) = x^3 - x + 2$
+$$
+F(1) = 1 - 1 + C = 2 \Rightarrow C = 2
+$$
+
+**Respuesta:**
+
+$$
+F(x) = x^3 - x + 2
+$$
+
 </details>

@@ -35,7 +35,9 @@ $$\boxed{\kappa = \frac{|y''|}{(1 + (y')^2)^{3/2}}}$$
 
 El **radio de curvatura** es el recíproco de la curvatura:
 
-$$R = \frac{1}{\kappa} = \frac{(1 + (y')^2)^{3/2}}{|y''|}$$
+$$
+R = \frac{1}{\kappa} = \frac{(1 + (y')^2)^{3/2}}{|y''|}
+$$
 
 Es el radio del círculo que mejor aproxima la curva en ese punto.
 
@@ -102,7 +104,9 @@ Su centro está en la dirección normal a distancia $R$ del punto.
 
 El centro del círculo osculador está en:
 
-$$\left(x - \frac{y'(1 + (y')^2)}{y''}, y + \frac{1 + (y')^2}{y''}\right)$$
+$$
+\left(x - \frac{y'(1 + (y')^2)}{y''}, y + \frac{1 + (y')^2}{y''}\right)
+$$
 
 ---
 
@@ -126,7 +130,9 @@ Radio: $R = \frac{(1 + 4)^{3/2}}{2} = \frac{5\sqrt{5}}{2} \approx 5.59$
 
 Si $x = x(t)$, $y = y(t)$:
 
-$$\kappa = \frac{|x'y'' - y'x''|}{(x'^2 + y'^2)^{3/2}}$$
+$$
+\kappa = \frac{|x'y'' - y'x''|}{(x'^2 + y'^2)^{3/2}}
+$$
 
 ---
 

@@ -17,13 +17,17 @@ Los límites laterales analizan el comportamiento de una función cuando nos ace
 
 ### Límite por la izquierda
 
-$$\lim_{x \to a^-} f(x) = L$$
+$$
+\lim_{x \to a^-} f(x) = L
+$$
 
 $x$ se acerca a $a$ desde valores **menores** ($x < a$).
 
 ### Límite por la derecha
 
-$$\lim_{x \to a^+} f(x) = L$$
+$$
+\lim_{x \to a^+} f(x) = L
+$$
 
 $x$ se acerca a $a$ desde valores **mayores** ($x > a$).
 
@@ -31,7 +35,9 @@ $x$ se acerca a $a$ desde valores **mayores** ($x > a$).
 
 ## 📖 Relación fundamental
 
-$$\lim_{x \to a} f(x) = L \quad \Leftrightarrow \quad \lim_{x \to a^-} f(x) = \lim_{x \to a^+} f(x) = L$$
+$$
+\lim_{x \to a} f(x) = L \quad \Leftrightarrow \quad \lim_{x \to a^-} f(x) = \lim_{x \to a^+} f(x) = L
+$$
 
 El límite bilateral existe si y solo si:
 1. Ambos límites laterales existen
@@ -44,13 +50,22 @@ El límite bilateral existe si y solo si:
 $$f(x) = \begin{cases} x^2 + 1 & \text{si } x < 2 \\ 3x - 1 & \text{si } x \geq 2 \end{cases}$$
 
 **Límite por la izquierda:**
-$$\lim_{x \to 2^-} f(x) = \lim_{x \to 2^-} (x^2 + 1) = 4 + 1 = 5$$
+
+$$
+\lim_{x \to 2^-} f(x) = \lim_{x \to 2^-} (x^2 + 1) = 4 + 1 = 5
+$$
 
 **Límite por la derecha:**
-$$\lim_{x \to 2^+} f(x) = \lim_{x \to 2^+} (3x - 1) = 6 - 1 = 5$$
+
+$$
+\lim_{x \to 2^+} f(x) = \lim_{x \to 2^+} (3x - 1) = 6 - 1 = 5
+$$
 
 Como $5 = 5$:
-$$\lim_{x \to 2} f(x) = 5$$
+
+$$
+\lim_{x \to 2} f(x) = 5
+$$
 
 ---
 
@@ -59,13 +74,22 @@ $$\lim_{x \to 2} f(x) = 5$$
 $$g(x) = \begin{cases} x + 3 & \text{si } x < 1 \\ x^2 & \text{si } x \geq 1 \end{cases}$$
 
 **Límite por la izquierda:**
-$$\lim_{x \to 1^-} g(x) = 1 + 3 = 4$$
+
+$$
+\lim_{x \to 1^-} g(x) = 1 + 3 = 4
+$$
 
 **Límite por la derecha:**
-$$\lim_{x \to 1^+} g(x) = 1^2 = 1$$
+
+$$
+\lim_{x \to 1^+} g(x) = 1^2 = 1
+$$
 
 Como $4 \neq 1$:
-$$\lim_{x \to 1} g(x) \text{ no existe}$$
+
+$$
+\lim_{x \to 1} g(x) \text{ no existe}
+$$
 
 ---
 
@@ -78,8 +102,14 @@ Para $x > 0$: $f(x) = \frac{x}{x} = 1$
 Para $x < 0$: $f(x) = \frac{-x}{x} = -1$
 
 **Límites laterales en $x = 0$:**
-$$\lim_{x \to 0^+} \frac{|x|}{x} = 1$$
-$$\lim_{x \to 0^-} \frac{|x|}{x} = -1$$
+
+$$
+\lim_{x \to 0^+} \frac{|x|}{x} = 1
+$$
+
+$$
+\lim_{x \to 0^-} \frac{|x|}{x} = -1
+$$
 
 El límite en $x = 0$ **no existe**.
 
@@ -123,13 +153,17 @@ En $x = 3$:
 - $x - 3 < 0$ (negativo)
 - $\frac{1}{x-3} \to -\infty$
 
-$$\lim_{x \to 3^-} \frac{1}{x - 3} = -\infty$$
+$$
+\lim_{x \to 3^-} \frac{1}{x - 3} = -\infty
+$$
 
 **Por la derecha ($x > 3$):**
 - $x - 3 > 0$ (positivo)
 - $\frac{1}{x-3} \to +\infty$
 
-$$\lim_{x \to 3^+} \frac{1}{x - 3} = +\infty$$
+$$
+\lim_{x \to 3^+} \frac{1}{x - 3} = +\infty
+$$
 
 ---
 

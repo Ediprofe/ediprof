@@ -17,7 +17,9 @@ Las ecuaciones diferenciales modelan cambios y procesos dinámicos. Son fundamen
 
 Una **ecuación diferencial** es una ecuación que involucra derivadas de una función desconocida.
 
-$$F(x, y, y', y'', ..., y^{(n)}) = 0$$
+$$
+F(x, y, y', y'', ..., y^{(n)}) = 0
+$$
 
 ---
 
@@ -26,12 +28,16 @@ $$F(x, y, y', y'', ..., y^{(n)}) = 0$$
 ### Ecuación Diferencial Ordinaria (EDO)
 La función depende de una sola variable independiente.
 
-$$\frac{dy}{dx} + y = x$$
+$$
+\frac{dy}{dx} + y = x
+$$
 
 ### Ecuación Diferencial Parcial (EDP)
 La función depende de varias variables independientes.
 
-$$\frac{\partial u}{\partial t} = k\frac{\partial^2 u}{\partial x^2}$$
+$$
+\frac{\partial u}{\partial t} = k\frac{\partial^2 u}{\partial x^2}
+$$
 
 ---
 
@@ -63,7 +69,9 @@ El **grado** es la potencia de la derivada de mayor orden (cuando está despejad
 
 Una ED es **lineal** si tiene la forma:
 
-$$a_n(x)y^{(n)} + a_{n-1}(x)y^{(n-1)} + ... + a_1(x)y' + a_0(x)y = g(x)$$
+$$
+a_n(x)y^{(n)} + a_{n-1}(x)y^{(n-1)} + ... + a_1(x)y' + a_0(x)y = g(x)
+$$
 
 **No lineal** si contiene productos $yy'$, potencias $y^2$, funciones $\sin(y)$, etc.
 
@@ -117,7 +125,9 @@ Un PVI consiste en:
 - Una ED
 - Condiciones iniciales
 
-$$y' = f(x, y), \quad y(x_0) = y_0$$
+$$
+y' = f(x, y), \quad y(x_0) = y_0
+$$
 
 ---
 

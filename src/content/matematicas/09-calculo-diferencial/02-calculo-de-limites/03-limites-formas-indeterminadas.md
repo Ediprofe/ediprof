@@ -29,7 +29,9 @@ No todas las indeterminaciones son iguales. Algunas esconden límites finitos, o
 
 No podemos saber el resultado sin más análisis. Por ejemplo:
 
-$$\frac{x}{x} \to 1, \quad \frac{x^2}{x} \to \infty, \quad \frac{x}{x^2} \to 0$$
+$$
+\frac{x}{x} \to 1, \quad \frac{x^2}{x} \to \infty, \quad \frac{x}{x^2} \to 0
+$$
 
 Todas son $\frac{0}{0}$ cuando $x \to 0$, pero dan resultados diferentes.
 
@@ -108,7 +110,9 @@ $$= \lim_{x \to \infty} \frac{2x - \frac{1}{x}}{1 + \frac{1}{x^2}} = \frac{\inft
 
 **Estrategia:** Convertir a forma $\frac{0}{0}$ o $\frac{\infty}{\infty}$.
 
-$$f \cdot g = \frac{f}{1/g} \quad \text{si } g \to \infty$$
+$$
+f \cdot g = \frac{f}{1/g} \quad \text{si } g \to \infty
+$$
 
 ---
 
@@ -155,7 +159,9 @@ Para $f(x)^{g(x)}$:
 
 **Técnica:** Usar logaritmo y la identidad $a^b = e^{b \ln a}$
 
-$$\lim f^g = e^{\lim g \ln f}$$
+$$
+\lim f^g = e^{\lim g \ln f}
+$$
 
 ---
 

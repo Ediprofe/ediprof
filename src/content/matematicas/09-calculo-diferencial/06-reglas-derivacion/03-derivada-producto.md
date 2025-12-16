@@ -15,11 +15,15 @@ La derivada de un producto NO es el producto de las derivadas. La regla del prod
 
 ## 📖 La regla del producto
 
-$$\frac{d}{dx}[f(x) \cdot g(x)] = f'(x) \cdot g(x) + f(x) \cdot g'(x)$$
+$$
+\frac{d}{dx}[f(x) \cdot g(x)] = f'(x) \cdot g(x) + f(x) \cdot g'(x)
+$$
 
 O en notación corta:
 
-$$(fg)' = f' g + f g'$$
+$$
+(fg)' = f' g + f g'
+$$
 
 ---
 
@@ -40,7 +44,11 @@ Contraejemplo: Sea $f(x) = x$ y $g(x) = x$
 - Si fuera $f' \cdot g' = 1 \cdot 1 = 1$ ← Incorrecto
 
 Usando la regla del producto:
-$$(fg)' = 1 \cdot x + x \cdot 1 = 2x$$ ✓
+$$
+(fg)' = 1 \cdot x + x \cdot 1 = 2x
+$$ 
+
+✓
 
 ---
 
@@ -108,7 +116,9 @@ $$= \sin x \cos x + x\cos 2x$$
 
 En notación de Leibniz:
 
-$$\frac{d}{dx}[uv] = v\frac{du}{dx} + u\frac{dv}{dx}$$
+$$
+\frac{d}{dx}[uv] = v\frac{du}{dx} + u\frac{dv}{dx}
+$$
 
 O simplemente: $d(uv) = v\,du + u\,dv$
 

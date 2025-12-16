@@ -17,13 +17,17 @@ La derivada es el concepto central del cálculo diferencial. Formaliza la idea d
 
 La **derivada de $f$ en $x = a$** se define como:
 
-$$f'(a) = \lim_{h \to 0} \frac{f(a + h) - f(a)}{h}$$
+$$
+f'(a) = \lim_{h \to 0} \frac{f(a + h) - f(a)}{h}
+$$
 
 siempre que este límite exista.
 
 ### Definición alternativa
 
-$$f'(a) = \lim_{x \to a} \frac{f(x) - f(a)}{x - a}$$
+$$
+f'(a) = \lim_{x \to a} \frac{f(x) - f(a)}{x - a}
+$$
 
 ---
 
@@ -31,7 +35,9 @@ $$f'(a) = \lim_{x \to a} \frac{f(x) - f(a)}{x - a}$$
 
 La **función derivada** $f'(x)$ se define para todo $x$ donde el límite existe:
 
-$$f'(x) = \lim_{h \to 0} \frac{f(x + h) - f(x)}{h}$$
+$$
+f'(x) = \lim_{h \to 0} \frac{f(x + h) - f(x)}{h}
+$$
 
 $f'$ es una nueva función que da la pendiente de la tangente en cada punto.
 
@@ -63,7 +69,9 @@ $$= \lim_{h \to 0} \frac{2xh + h^2}{h}$$
 
 $$= \lim_{h \to 0} (2x + h) = 2x$$
 
-$$\boxed{f'(x) = 2x}$$
+$$
+\boxed{f'(x) = 2x}
+$$
 
 ---
 
@@ -79,7 +87,9 @@ $$= \lim_{h \to 0} \frac{3x^2h + 3xh^2 + h^3}{h}$$
 
 $$= \lim_{h \to 0} (3x^2 + 3xh + h^2) = 3x^2$$
 
-$$\boxed{f'(x) = 3x^2}$$
+$$
+\boxed{f'(x) = 3x^2}
+$$
 
 ---
 
@@ -95,7 +105,9 @@ $$= \lim_{h \to 0} \frac{-h}{h \cdot x(x+h)}$$
 
 $$= \lim_{h \to 0} \frac{-1}{x(x+h)} = \frac{-1}{x^2}$$
 
-$$\boxed{f'(x) = -\frac{1}{x^2}}$$
+$$
+\boxed{f'(x) = -\frac{1}{x^2}}
+$$
 
 ---
 
@@ -115,7 +127,9 @@ $$= \lim_{h \to 0} \frac{h}{h(\sqrt{x+h} + \sqrt{x})}$$
 
 $$= \lim_{h \to 0} \frac{1}{\sqrt{x+h} + \sqrt{x}} = \frac{1}{2\sqrt{x}}$$
 
-$$\boxed{f'(x) = \frac{1}{2\sqrt{x}}}$$
+$$
+\boxed{f'(x) = \frac{1}{2\sqrt{x}}}
+$$
 
 ---
 

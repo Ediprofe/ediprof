@@ -17,11 +17,15 @@
 
 > **Teorema:** Si $f$ es derivable en $x = a$, entonces $f$ es continua en $x = a$.
 
-$$\text{Derivable} \Rightarrow \text{Continua}$$
+$$
+\text{Derivable} \Rightarrow \text{Continua}
+$$
 
 ### ⚠️ El recíproco es FALSO
 
-$$\text{Continua} \not\Rightarrow \text{Derivable}$$
+$$
+\text{Continua} \not\Rightarrow \text{Derivable}
+$$
 
 Una función puede ser continua pero no derivable.
 
@@ -45,7 +49,9 @@ Por lo tanto, $f$ es continua en $a$. $\square$
 
 Si $f$ no es continua en $a$, entonces $f$ no es derivable en $a$.
 
-$$\text{No continua} \Rightarrow \text{No derivable}$$
+$$
+\text{No continua} \Rightarrow \text{No derivable}
+$$
 
 La continuidad es **necesaria** pero no **suficiente** para la derivabilidad.
 

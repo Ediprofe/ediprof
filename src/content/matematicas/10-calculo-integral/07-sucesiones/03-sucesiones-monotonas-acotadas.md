@@ -27,11 +27,17 @@ Las sucesiones monótonas y acotadas tienen propiedades especiales de convergenc
 
 ## ⚙️ Ejemplo 1: Verificar monotonía
 
-$a_n = \frac{n}{n+1}$
+$$
+a_n = \frac{n}{n+1}
+$$
 
-$$a_{n+1} - a_n = \frac{n+1}{n+2} - \frac{n}{n+1}$$
+$$
+a_{n+1} - a_n = \frac{n+1}{n+2} - \frac{n}{n+1}
+$$
 
-$$= \frac{(n+1)^2 - n(n+2)}{(n+2)(n+1)} = \frac{1}{(n+2)(n+1)} > 0$$
+$$
+= \frac{(n+1)^2 - n(n+2)}{(n+2)(n+1)} = \frac{1}{(n+2)(n+1)} > 0
+$$
 
 Es **estrictamente creciente**.
 
@@ -39,9 +45,13 @@ Es **estrictamente creciente**.
 
 ## ⚙️ Ejemplo 2: Usando razón
 
-$a_n = \frac{2^n}{n!}$
+$$
+a_n = \frac{2^n}{n!}
+$$
 
-$$\frac{a_{n+1}}{a_n} = \frac{2^{n+1}/(n+1)!}{2^n/n!} = \frac{2}{n+1}$$
+$$
+\frac{a_{n+1}}{a_n} = \frac{2^{n+1}/(n+1)!}{2^n/n!} = \frac{2}{n+1}
+$$
 
 Para $n \geq 2$: $\frac{2}{n+1} < 1$, así que es **decreciente** para $n \geq 2$.
 
@@ -68,7 +78,9 @@ Para $n \geq 2$: $\frac{2}{n+1} < 1$, así que es **decreciente** para $n \geq 2
 
 ## ⚙️ Ejemplo 3: Aplicación del teorema
 
-$a_n = \frac{n}{n+1}$
+$$
+a_n = \frac{n}{n+1}
+$$
 
 - Creciente ✓ (ejemplo 1)
 - Acotada: $0 < a_n < 1$ para todo $n$ ✓
@@ -79,7 +91,9 @@ Por el teorema, converge. El límite es el supremo = 1.
 
 ## ⚙️ Ejemplo 4: Sucesión recursiva
 
-$a_1 = 2$, $a_{n+1} = \frac{1}{2}(a_n + 3)$
+$$
+a_1 = 2, \quad a_{n+1} = \frac{1}{2}(a_n + 3)
+$$
 
 **Paso 1:** Calcular primeros términos
 $a_1 = 2$, $a_2 = 2.5$, $a_3 = 2.75$, $a_4 = 2.875$, ...
@@ -97,15 +111,29 @@ Si $L = \lim a_n$, entonces $L = \frac{L + 3}{2}$, así que $L = 3$.
 
 ## ⚙️ Ejemplo 5: Raíz cuadrada iterativa
 
-$a_1 = 1$, $a_{n+1} = \sqrt{2 + a_n}$
+$$
+a_1 = 1, \quad a_{n+1} = \sqrt{2 + a_n}
+$$
 
 Términos: 1, $\sqrt{3}$, $\sqrt{2+\sqrt{3}}$, ...
 
 **Límite:** Si $L = \lim a_n$:
-$$L = \sqrt{2 + L}$$
-$$L^2 = 2 + L$$
-$$L^2 - L - 2 = 0$$
-$$(L-2)(L+1) = 0$$
+
+$$
+L = \sqrt{2 + L}
+$$
+
+$$
+L^2 = 2 + L
+$$
+
+$$
+L^2 - L - 2 = 0
+$$
+
+$$
+(L-2)(L+1) = 0
+$$
 
 Como $a_n > 0$, $L = 2$.
 
@@ -129,9 +157,13 @@ Como $a_n > 0$, $L = 2$.
 <details>
 <summary>Ver solución</summary>
 
-$\frac{a_{n+1}}{a_n} = \frac{(n+1)!/(n+1)^{n+1}}{n!/n^n}$
+$$
+\frac{a_{n+1}}{a_n} = \frac{(n+1)!/(n+1)^{n+1}}{n!/n^n}
+$$
 
-$= \frac{(n+1) \cdot n^n}{(n+1)^{n+1}} = \frac{n^n}{(n+1)^n} = \left(\frac{n}{n+1}\right)^n < 1$
+$$
+= \frac{(n+1) \cdot n^n}{(n+1)^{n+1}} = \frac{n^n}{(n+1)^n} = \left(\frac{n}{n+1}\right)^n < 1
+$$
 
 Es decreciente.
 </details>
