@@ -512,3 +512,7 @@ Para ver el estilo correcto de lecciones, revisar:
 - `src/content/matematicas/01-aritmetica/05-proporcionalidad/03-regla-de-tres-simple.md`
 - `/fisica/cinematica/mrua/lanzamiento-vertical`
 - `/fisica/introduccion-a-la-fisica/introduccion/la-fisica-y-sus-ramas`
+
+# SOLICITUD CONCRETA
+
+La solicitud concreta que te voy a pedir con base en este contexto, está en la raíz de este proyecto, en PETICION.md
