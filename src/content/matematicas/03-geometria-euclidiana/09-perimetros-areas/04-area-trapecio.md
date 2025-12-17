@@ -2,6 +2,66 @@
 
 El trapecio tiene una fórmula especial para su área que involucra las dos bases y la altura.
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <canvas id="roughjs-trapecio" width="700" height="280" style="width: 100%; height: auto; display: block;"></canvas>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof rough !== 'undefined' && document.getElementById('roughjs-trapecio')) {
+    var canvas = document.getElementById('roughjs-trapecio');
+    var rc = rough.canvas(canvas);
+    var ctx = canvas.getContext('2d');
+    
+    ctx.font = 'bold 16px Inter, sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.textAlign = 'center';
+    ctx.fillText('Área del Trapecio', 350, 25);
+    
+    var azul = '#3b82f6';
+    var verde = '#22c55e';
+    var rojo = '#ef4444';
+    var naranja = '#f59e0b';
+    
+    // Trapecio
+    var puntos = [[100, 200], [400, 200], [320, 80], [180, 80]];
+    rc.polygon(puntos, {fill: '#dbeafe', fillStyle: 'solid', stroke: azul, strokeWidth: 2.5, roughness: 0.5});
+    
+    // Base mayor (B)
+    rc.line(100, 200, 400, 200, {stroke: verde, strokeWidth: 4, roughness: 0.3});
+    ctx.font = 'bold 14px Inter, sans-serif';
+    ctx.fillStyle = verde;
+    ctx.fillText('B (base mayor)', 250, 225);
+    
+    // Base menor (b)
+    rc.line(180, 80, 320, 80, {stroke: naranja, strokeWidth: 4, roughness: 0.3});
+    ctx.fillStyle = naranja;
+    ctx.fillText('b (base menor)', 250, 70);
+    
+    // Altura (h)
+    rc.line(250, 200, 250, 80, {stroke: rojo, strokeWidth: 3, roughness: 0.3});
+    rc.rectangle(250, 185, 12, 12, {stroke: rojo, strokeWidth: 1.5, roughness: 0.2});
+    ctx.fillStyle = rojo;
+    ctx.fillText('h', 235, 145);
+    
+    // Fórmula en recuadro
+    rc.rectangle(450, 70, 220, 130, {fill: '#f1f5f9', stroke: '#cbd5e1', roughness: 0.3});
+    ctx.font = 'bold 14px Inter, sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.fillText('Fórmula del Área', 560, 95);
+    ctx.font = '18px Inter, sans-serif';
+    ctx.fillText('A = (B + b) × h', 560, 130);
+    ctx.font = '24px Inter, sans-serif';
+    ctx.fillText('─────────', 560, 145);
+    ctx.font = '18px Inter, sans-serif';
+    ctx.fillText('2', 560, 170);
+    ctx.font = '11px Inter, sans-serif';
+    ctx.fillStyle = '#64748b';
+    ctx.fillText('Promedio de bases × altura', 560, 190);
+  }
+});
+</script>
+
 ---
 
 ## 📖 Elementos del trapecio

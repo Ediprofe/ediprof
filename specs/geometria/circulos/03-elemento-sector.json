@@ -1,0 +1,21 @@
+{
+  "tipo": "elemento-sector",
+  "titulo": "Sector Circular",
+  "titulo_color": "#8b5cf6",
+  "canvas": "simple",
+  "circunferencia": {
+    "centro": [250, 175],
+    "radio": 110
+  },
+  "elemento": {
+    "angulo1": 90,
+    "angulo2": 20,
+    "color": "#8b5cf6",
+    "fill": "#ede9fe"
+  },
+  "leyenda": {
+    "texto": "Región entre dos radios y un arco",
+    "color": "#8b5cf6",
+    "bg_color": "#ede9fe"
+  }
+}

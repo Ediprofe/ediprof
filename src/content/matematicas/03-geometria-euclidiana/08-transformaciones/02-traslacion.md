@@ -2,6 +2,95 @@
 
 La **traslación** es el movimiento más simple: desplazar una figura una cierta distancia en una dirección determinada.
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <canvas id="roughjs-traslacion-1" width="700" height="320" style="width: 100%; height: auto; display: block;"></canvas>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof rough !== 'undefined' && document.getElementById('roughjs-traslacion-1')) {
+    var canvas = document.getElementById('roughjs-traslacion-1');
+    var rc = rough.canvas(canvas);
+    var ctx = canvas.getContext('2d');
+    
+    ctx.font = 'bold 16px Inter, sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.textAlign = 'center';
+    ctx.fillText('Traslación de un Triángulo', 350, 25);
+    
+    var azul = '#3b82f6';
+    var verde = '#22c55e';
+    
+    // Ejes coordenados
+    rc.line(50, 250, 650, 250, {stroke: '#cbd5e1', strokeWidth: 1, roughness: 0.2});
+    rc.line(100, 50, 100, 280, {stroke: '#cbd5e1', strokeWidth: 1, roughness: 0.2});
+    ctx.font = '11px Inter, sans-serif';
+    ctx.fillStyle = '#94a3b8';
+    ctx.textAlign = 'center';
+    ctx.fillText('x', 640, 265);
+    ctx.fillText('y', 90, 60);
+    
+    // Triángulo ORIGINAL (azul)
+    var A = [150, 200];
+    var B = [250, 200];
+    var C = [200, 120];
+    rc.polygon([A, B, C], {fill: '#dbeafe', stroke: azul, strokeWidth: 2.5, roughness: 0.5});
+    
+    // Etiquetas originales
+    ctx.font = 'bold 12px Inter, sans-serif';
+    ctx.fillStyle = azul;
+    ctx.fillText('A', A[0]-12, A[1]+15);
+    ctx.fillText('B', B[0]+10, B[1]+15);
+    ctx.fillText('C', C[0], C[1]-10);
+    
+    // Vector de traslación v = (200, -50)
+    var vx = 200, vy = -50;
+    
+    // Triángulo IMAGEN (verde)
+    var Ap = [A[0]+vx, A[1]+vy];
+    var Bp = [B[0]+vx, B[1]+vy];
+    var Cp = [C[0]+vx, C[1]+vy];
+    rc.polygon([Ap, Bp, Cp], {fill: '#dcfce7', stroke: verde, strokeWidth: 2.5, roughness: 0.5});
+    
+    // Etiquetas imagen
+    ctx.fillStyle = verde;
+    ctx.fillText("A'", Ap[0]-12, Ap[1]+15);
+    ctx.fillText("B'", Bp[0]+10, Bp[1]+15);
+    ctx.fillText("C'", Cp[0], Cp[1]-10);
+    
+    // Vectores de traslación (flechas)
+    rc.line(A[0], A[1], Ap[0], Ap[1], {stroke: '#f59e0b', strokeWidth: 2, roughness: 0.3});
+    rc.line(B[0], B[1], Bp[0], Bp[1], {stroke: '#f59e0b', strokeWidth: 2, roughness: 0.3});
+    rc.line(C[0], C[1], Cp[0], Cp[1], {stroke: '#f59e0b', strokeWidth: 2, roughness: 0.3});
+    
+    // Puntas de flecha (simples)
+    ctx.fillStyle = '#f59e0b';
+    ctx.beginPath();
+    ctx.moveTo(Ap[0], Ap[1]);
+    ctx.lineTo(Ap[0]-10, Ap[1]-5);
+    ctx.lineTo(Ap[0]-10, Ap[1]+5);
+    ctx.fill();
+    
+    // Etiqueta del vector
+    ctx.font = 'bold 14px Inter, sans-serif';
+    ctx.fillStyle = '#f59e0b';
+    ctx.textAlign = 'center';
+    ctx.fillText('v⃗ = (a, b)', 300, 100);
+    
+    // Leyenda
+    rc.rectangle(180, 270, 340, 40, {fill: '#f1f5f9', stroke: '#cbd5e1', roughness: 0.3});
+    ctx.font = '12px Inter, sans-serif';
+    ctx.textAlign = 'left';
+    ctx.fillStyle = azul;
+    ctx.fillText('■ Original', 200, 295);
+    ctx.fillStyle = verde;
+    ctx.fillText('■ Imagen', 300, 295);
+    ctx.fillStyle = '#f59e0b';
+    ctx.fillText('→ Vector v⃗', 400, 295);
+  }
+});
+</script>
+
 ---
 
 ## 📖 Definición

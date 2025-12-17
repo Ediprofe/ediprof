@@ -25,6 +25,10 @@ Cuando el vértice de la parábola **no** está en el origen, trabajamos con par
 
 ## 📖 Parábola Vertical Trasladada
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/geometria/analitica/parabola-trasladada.svg" alt="Parábola trasladada" style="width: 100%; height: auto;" />
+</div>
+
 **Ecuación:**
 $$
 (x - h)^2 = 4p(y - k)

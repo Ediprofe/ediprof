@@ -26,6 +26,10 @@ La pendiente nos da un número, pero ¿qué ángulo forma realmente la recta con
 | $m = -1$ | $\theta = 135°$ |
 | $m \to +\infty$ | $\theta \to 90°$ |
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/geometria/analitica/angulo-inclinacion.svg" alt="Ángulo de inclinación θ de una recta" style="width: 100%; height: auto;" />
+</div>
+
 ---
 
 ## 📖 Definición del Ángulo de Inclinación

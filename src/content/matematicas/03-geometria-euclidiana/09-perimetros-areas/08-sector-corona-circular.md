@@ -2,6 +2,108 @@
 
 El **sector circular** y la **corona circular** son regiones parciales del círculo con fórmulas específicas para su área.
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <canvas id="roughjs-sector-corona" width="700" height="300" style="width: 100%; height: auto; display: block;"></canvas>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof rough !== 'undefined' && document.getElementById('roughjs-sector-corona')) {
+    var canvas = document.getElementById('roughjs-sector-corona');
+    var rc = rough.canvas(canvas);
+    var ctx = canvas.getContext('2d');
+    
+    ctx.font = 'bold 16px Inter, sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.textAlign = 'center';
+    ctx.fillText('Sector Circular y Corona Circular', 350, 25);
+    
+    var azul = '#3b82f6';
+    var verde = '#22c55e';
+    var rojo = '#ef4444';
+    var naranja = '#f59e0b';
+    
+    // === SECTOR CIRCULAR (izquierda) ===
+    ctx.font = 'bold 13px Inter, sans-serif';
+    ctx.fillStyle = azul;
+    ctx.fillText('SECTOR CIRCULAR', 175, 55);
+    
+    var cx1 = 175, cy1 = 175;
+    var r1 = 90;
+    
+    // Dibujar sector (como "rebanada de pizza")
+    ctx.beginPath();
+    ctx.moveTo(cx1, cy1);
+    ctx.arc(cx1, cy1, r1, -Math.PI/3, Math.PI/6);
+    ctx.closePath();
+    ctx.fillStyle = '#dbeafe';
+    ctx.fill();
+    ctx.strokeStyle = azul;
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    
+    // Radios
+    rc.line(cx1, cy1, cx1 + r1*Math.cos(-Math.PI/3), cy1 + r1*Math.sin(-Math.PI/3), {stroke: verde, strokeWidth: 2.5, roughness: 0.3});
+    rc.line(cx1, cy1, cx1 + r1*Math.cos(Math.PI/6), cy1 + r1*Math.sin(Math.PI/6), {stroke: verde, strokeWidth: 2.5, roughness: 0.3});
+    
+    // Centro
+    rc.circle(cx1, cy1, 6, {fill: rojo, stroke: rojo, roughness: 0.3});
+    
+    // Etiquetas
+    ctx.font = '12px Inter, sans-serif';
+    ctx.fillStyle = verde;
+    ctx.fillText('r', cx1+50, cy1-30);
+    ctx.fillStyle = naranja;
+    ctx.fillText('θ', cx1+25, cy1+5);
+    
+    // Arco del ángulo
+    ctx.beginPath();
+    ctx.arc(cx1, cy1, 25, -Math.PI/3, Math.PI/6);
+    ctx.strokeStyle = naranja;
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    
+    // Fórmula
+    ctx.font = '12px Inter, sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.fillText('A = (θ/360°) × πr²', 175, 280);
+    
+    // === CORONA CIRCULAR (derecha) ===
+    ctx.font = 'bold 13px Inter, sans-serif';
+    ctx.fillStyle = rojo;
+    ctx.textAlign = 'center';
+    ctx.fillText('CORONA CIRCULAR', 525, 55);
+    
+    var cx2 = 525, cy2 = 175;
+    var R = 90, r2 = 50;
+    
+    // Círculo grande
+    rc.circle(cx2, cy2, R*2, {fill: '#fecaca', fillStyle: 'solid', stroke: rojo, strokeWidth: 2, roughness: 0.5});
+    // Círculo pequeño (hueco)
+    rc.circle(cx2, cy2, r2*2, {fill: '#f8fafc', fillStyle: 'solid', stroke: rojo, strokeWidth: 2, roughness: 0.5});
+    
+    // Centro
+    rc.circle(cx2, cy2, 6, {fill: rojo, stroke: rojo, roughness: 0.3});
+    
+    // Radios
+    rc.line(cx2, cy2, cx2, cy2-R, {stroke: verde, strokeWidth: 2, roughness: 0.3});
+    rc.line(cx2, cy2, cx2, cy2-r2, {stroke: azul, strokeWidth: 2, roughness: 0.3});
+    
+    // Etiquetas
+    ctx.font = '12px Inter, sans-serif';
+    ctx.fillStyle = verde;
+    ctx.fillText('R', cx2+10, cy2-65);
+    ctx.fillStyle = azul;
+    ctx.fillText('r', cx2+10, cy2-30);
+    
+    // Fórmula
+    ctx.font = '12px Inter, sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.fillText('A = π(R² - r²)', 525, 280);
+  }
+});
+</script>
+
 ---
 
 ## 📖 Sector circular

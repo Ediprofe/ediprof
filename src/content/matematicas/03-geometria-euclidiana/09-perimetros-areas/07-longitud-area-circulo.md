@@ -2,6 +2,95 @@
 
 Consolidamos las fórmulas de la circunferencia y el círculo en el contexto de perímetros y áreas.
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <canvas id="roughjs-circulo-area" width="700" height="300" style="width: 100%; height: auto; display: block;"></canvas>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof rough !== 'undefined' && document.getElementById('roughjs-circulo-area')) {
+    var canvas = document.getElementById('roughjs-circulo-area');
+    var rc = rough.canvas(canvas);
+    var ctx = canvas.getContext('2d');
+    
+    ctx.font = 'bold 16px Inter, sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.textAlign = 'center';
+    ctx.fillText('Longitud y Área del Círculo', 350, 25);
+    
+    var azul = '#3b82f6';
+    var verde = '#22c55e';
+    var rojo = '#ef4444';
+    
+    // Círculo principal
+    var cx = 200, cy = 165;
+    var r = 100;
+    rc.circle(cx, cy, r*2, {fill: '#dbeafe', fillStyle: 'solid', stroke: azul, strokeWidth: 3, roughness: 0.5});
+    
+    // Centro
+    rc.circle(cx, cy, 8, {fill: rojo, stroke: rojo, roughness: 0.3});
+    ctx.font = 'bold 12px Inter, sans-serif';
+    ctx.fillStyle = rojo;
+    ctx.fillText('O', cx-15, cy+5);
+    
+    // Radio
+    rc.line(cx, cy, cx+r, cy, {stroke: verde, strokeWidth: 3, roughness: 0.3});
+    ctx.fillStyle = verde;
+    ctx.fillText('r', cx+50, cy-10);
+    
+    // Diámetro (línea punteada)
+    rc.line(cx-r, cy, cx+r, cy, {stroke: '#94a3b8', strokeWidth: 1.5, roughness: 0.3});
+    ctx.fillStyle = '#64748b';
+    ctx.font = '11px Inter, sans-serif';
+    ctx.fillText('d = 2r', cx, cy+20);
+    
+    // Circunferencia resaltada (arco)
+    ctx.strokeStyle = azul;
+    ctx.lineWidth = 4;
+    ctx.setLineDash([8, 4]);
+    ctx.beginPath();
+    ctx.arc(cx, cy, r, 0, Math.PI * 0.7);
+    ctx.stroke();
+    ctx.setLineDash([]);
+    
+    ctx.fillStyle = azul;
+    ctx.font = 'bold 11px Inter, sans-serif';
+    ctx.fillText('C = 2πr', cx+80, cy-80);
+    
+    // Fórmulas en recuadro
+    rc.rectangle(380, 50, 290, 200, {fill: '#f1f5f9', stroke: '#cbd5e1', roughness: 0.3});
+    ctx.font = 'bold 14px Inter, sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.textAlign = 'center';
+    ctx.fillText('Fórmulas del Círculo', 525, 80);
+    
+    ctx.font = '13px Inter, sans-serif';
+    ctx.textAlign = 'left';
+    
+    // Longitud
+    ctx.fillStyle = azul;
+    ctx.fillText('Longitud (perímetro):', 400, 110);
+    ctx.font = 'bold 16px Inter, sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.fillText('C = 2πr = πd', 400, 135);
+    
+    // Área
+    ctx.font = '13px Inter, sans-serif';
+    ctx.fillStyle = verde;
+    ctx.fillText('Área:', 400, 165);
+    ctx.font = 'bold 16px Inter, sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.fillText('A = πr²', 400, 190);
+    
+    // Valor de pi
+    ctx.font = '11px Inter, sans-serif';
+    ctx.fillStyle = '#64748b';
+    ctx.fillText('π ≈ 3.14159...', 400, 220);
+    ctx.fillText('r = radio, d = diámetro', 400, 240);
+  }
+});
+</script>
+
 ---
 
 ## 📖 Longitud de la circunferencia (perímetro del círculo)

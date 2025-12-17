@@ -23,6 +23,10 @@ Una parábola **horizontal** tiene su eje paralelo al eje X. Cuando el vértice 
 
 ## 📖 Parábola que Abre Hacia la Derecha
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/geometria/analitica/parabola-horizontal-derecha.svg" alt="Parábola horizontal que abre hacia la derecha" style="width: 100%; height: auto;" />
+</div>
+
 **Ecuación:**
 $$
 y^2 = 4px \quad (p > 0)
@@ -61,6 +65,10 @@ $$
 ---
 
 ## 📖 Parábola que Abre Hacia la Izquierda
+
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/geometria/analitica/parabola-horizontal-izquierda.svg" alt="Parábola horizontal que abre hacia la izquierda" style="width: 100%; height: auto;" />
+</div>
 
 **Ecuación:**
 $$

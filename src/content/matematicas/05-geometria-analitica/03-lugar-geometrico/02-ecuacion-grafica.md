@@ -22,6 +22,10 @@ Una ecuación describe un lugar geométrico, pero ¿cómo pasamos de una ecuaci�
 | Elipse | $\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$ | Óvalo |
 | Hipérbola | $\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1$ | Dos ramas separadas |
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/geometria/analitica/parabola-tabulacion.svg" alt="Gráfica de parábola por tabulación" style="width: 100%; height: auto;" />
+</div>
+
 ---
 
 ## 📖 De la Ecuación a la Gráfica

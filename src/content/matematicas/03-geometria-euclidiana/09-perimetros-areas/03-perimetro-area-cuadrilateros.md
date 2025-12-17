@@ -2,6 +2,98 @@
 
 Los cuadriláteros tienen fórmulas específicas para calcular su perímetro y área, dependiendo del tipo.
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <canvas id="roughjs-cuadrilateros" width="750" height="320" style="width: 100%; height: auto; display: block;"></canvas>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof rough !== 'undefined' && document.getElementById('roughjs-cuadrilateros')) {
+    var canvas = document.getElementById('roughjs-cuadrilateros');
+    var rc = rough.canvas(canvas);
+    var ctx = canvas.getContext('2d');
+    
+    ctx.font = 'bold 16px Inter, sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.textAlign = 'center';
+    ctx.fillText('Fórmulas de Área de Cuadriláteros', 375, 25);
+    
+    var azul = '#3b82f6';
+    var verde = '#22c55e';
+    var morado = '#a855f7';
+    var naranja = '#f59e0b';
+    
+    // === CUADRADO ===
+    rc.rectangle(40, 60, 100, 100, {fill: '#dbeafe', fillStyle: 'solid', stroke: azul, strokeWidth: 2, roughness: 0.5});
+    ctx.font = 'bold 12px Inter, sans-serif';
+    ctx.fillStyle = azul;
+    ctx.fillText('CUADRADO', 90, 55);
+    ctx.font = '11px Inter, sans-serif';
+    ctx.fillText('l', 90, 115);
+    ctx.fillText('l', 25, 110);
+    ctx.font = 'bold 13px Inter, sans-serif';
+    ctx.fillText('A = l²', 90, 185);
+    
+    // === RECTÁNGULO ===
+    rc.rectangle(180, 70, 130, 80, {fill: '#dcfce7', fillStyle: 'solid', stroke: verde, strokeWidth: 2, roughness: 0.5});
+    ctx.fillStyle = verde;
+    ctx.font = 'bold 12px Inter, sans-serif';
+    ctx.fillText('RECTÁNGULO', 245, 55);
+    ctx.font = '11px Inter, sans-serif';
+    ctx.fillText('a', 245, 165);
+    ctx.fillText('b', 165, 110);
+    ctx.font = 'bold 13px Inter, sans-serif';
+    ctx.fillText('A = a × b', 245, 185);
+    
+    // === PARALELOGRAMO ===
+    rc.polygon([[360,150], [490,150], [520,70], [390,70]], {fill: '#fef3c7', fillStyle: 'solid', stroke: naranja, strokeWidth: 2, roughness: 0.5});
+    // Altura
+    rc.line(450, 150, 450, 70, {stroke: '#ef4444', strokeWidth: 2, roughness: 0.3});
+    rc.rectangle(450, 135, 10, 10, {stroke: '#ef4444', strokeWidth: 1, roughness: 0.2});
+    ctx.fillStyle = naranja;
+    ctx.font = 'bold 12px Inter, sans-serif';
+    ctx.fillText('PARALELOGRAMO', 440, 55);
+    ctx.font = '11px Inter, sans-serif';
+    ctx.fillText('b', 425, 165);
+    ctx.fillStyle = '#ef4444';
+    ctx.fillText('h', 460, 115);
+    ctx.fillStyle = naranja;
+    ctx.font = 'bold 13px Inter, sans-serif';
+    ctx.fillText('A = b × h', 440, 185);
+    
+    // === ROMBO ===
+    rc.polygon([[640,60], [700,110], [640,160], [580,110]], {fill: '#ede9fe', fillStyle: 'solid', stroke: morado, strokeWidth: 2, roughness: 0.5});
+    // Diagonales
+    rc.line(580, 110, 700, 110, {stroke: morado, strokeWidth: 1.5, roughness: 0.3});
+    rc.line(640, 60, 640, 160, {stroke: morado, strokeWidth: 1.5, roughness: 0.3});
+    ctx.fillStyle = morado;
+    ctx.font = 'bold 12px Inter, sans-serif';
+    ctx.fillText('ROMBO', 640, 50);
+    ctx.font = '11px Inter, sans-serif';
+    ctx.fillText('d₁', 640, 175);
+    ctx.fillText('d₂', 710, 115);
+    ctx.font = 'bold 13px Inter, sans-serif';
+    ctx.fillText('A = d₁×d₂/2', 640, 195);
+    
+    // Leyenda
+    rc.rectangle(200, 220, 350, 80, {fill: '#f1f5f9', stroke: '#cbd5e1', roughness: 0.3});
+    ctx.font = 'bold 13px Inter, sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.fillText('Resumen de Fórmulas', 375, 245);
+    ctx.font = '12px Inter, sans-serif';
+    ctx.textAlign = 'left';
+    ctx.fillStyle = azul;
+    ctx.fillText('Cuadrado: l²', 220, 270);
+    ctx.fillStyle = verde;
+    ctx.fillText('Rectángulo: a×b', 220, 290);
+    ctx.fillStyle = naranja;
+    ctx.fillText('Paralelogramo: b×h', 380, 270);
+    ctx.fillStyle = morado;
+    ctx.fillText('Rombo: d₁×d₂/2', 380, 290);
+  }
+});
+</script>
+
 ---
 
 ## 📖 Cuadrado

@@ -20,6 +20,10 @@
 | Polígono de $n$ vértices (cordón de zapato) | $A = \dfrac{1}{2}\left\|\sum_{i=1}^{n}(x_i y_{i+1} - x_{i+1} y_i)\right\|$ |
 | Puntos colineales | Área = 0 |
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/geometria/analitica/area-triangulo.svg" alt="Área de un triángulo usando coordenadas" style="width: 100%; height: auto;" />
+</div>
+
 ---
 
 ## 📖 Área de un Triángulo

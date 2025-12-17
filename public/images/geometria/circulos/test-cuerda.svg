@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" style="font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;">
+<rect width="500" height="400" fill="#f8fafc"/>
+<text x="250.00" y="30.00" text-anchor="middle" font-size="18" font-weight="bold" fill="#22c55e">Cuerda</text>
+<circle cx="250.00" cy="175.00" r="110" fill="none" stroke="#3b82f6" stroke-width="2"/>
+<circle cx="250.00" cy="175.00" r="3" fill="#ef4444" stroke="#ef4444" stroke-width="2"/>
+<text x="258.00" y="180.00" text-anchor="start" font-size="11" font-weight="normal" fill="#94a3b8">O</text>
+<line x1="195.00" y1="79.74" x2="345.26" y2="120.00" stroke="#22c55e" stroke-width="4"/>
+<circle cx="195.00" cy="79.74" r="5" fill="#22c55e" stroke="#22c55e" stroke-width="2"/>
+<circle cx="345.26" cy="120.00" r="5" fill="#22c55e" stroke="#22c55e" stroke-width="2"/>
+<text x="177.50" y="61.75" text-anchor="start" font-size="14" font-weight="bold" fill="#22c55e">A</text>
+<text x="363.25" y="107.50" text-anchor="start" font-size="14" font-weight="bold" fill="#22c55e">B</text>
+<line x1="250.00" y1="175.00" x2="270.13" y2="99.87" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,3"/>
+<text x="285.13" y="114.87" text-anchor="start" font-size="11" font-weight="normal" fill="#94a3b8">d</text>
+<rect x="90.00" y="305.00" width="320" height="35" rx="8" fill="#dcfce7" stroke="#22c55e"/>
+<text x="250.00" y="326.50" text-anchor="middle" font-size="12" font-weight="normal" fill="#1e293b">Extremos en la circunferencia (no pasa por O)</text>
+</svg>

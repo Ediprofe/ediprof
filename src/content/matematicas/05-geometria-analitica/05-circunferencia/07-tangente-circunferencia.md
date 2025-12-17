@@ -14,6 +14,10 @@ Una **recta tangente** a una circunferencia es aquella que la toca en exactament
 
 ## 📖 Lo Esencial de Tangentes
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/geometria/analitica/tangente-circunferencia.svg" alt="Recta tangente a la circunferencia" style="width: 100%; height: auto;" />
+</div>
+
 | Situación | Fórmula |
 |-----------|---------|
 | Tangente en $(x_0, y_0)$ sobre $x^2 + y^2 = r^2$ | $x_0 x + y_0 y = r^2$ |

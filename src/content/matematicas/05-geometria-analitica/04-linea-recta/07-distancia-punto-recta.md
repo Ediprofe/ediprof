@@ -18,6 +18,10 @@
 |---------|-------------|
 | $d = \dfrac{\|Ax_0 + By_0 + C\|}{\sqrt{A^2 + B^2}}$ | Distancia del punto $(x_0, y_0)$ a la recta $Ax + By + C = 0$ |
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/geometria/analitica/distancia-punto-recta.svg" alt="Distancia de punto a recta" style="width: 100%; height: auto;" />
+</div>
+
 ---
 
 ## 📖 La Fórmula de Distancia

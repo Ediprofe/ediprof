@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 300">
+  <defs></defs>
+  <rect x="0.00" y="0.00" width="700.00" height="300.00" fill="#ffffff" stroke="none" stroke-width="0" rx="0"/>
+  <text x="350.00" y="20.00" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Posiciones entre Circunferencias</text>
+  <circle cx="60.00" cy="140.00" r="30.00" fill="#dbeafe" stroke="#3b82f6" stroke-width="2" fill-opacity="0.3"/>
+  <circle cx="60.00" cy="140.00" r="3.00" fill="#3b82f6" stroke="#3b82f6" stroke-width="2" />
+  <circle cx="150.00" cy="140.00" r="25.00" fill="#dcfce7" stroke="#22c55e" stroke-width="2" fill-opacity="0.3"/>
+  <circle cx="150.00" cy="140.00" r="3.00" fill="#22c55e" stroke="#3b82f6" stroke-width="2" />
+  <text x="105.00" y="250.00" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Externas</text>
+  <circle cx="250.00" cy="140.00" r="30.00" fill="#dbeafe" stroke="#3b82f6" stroke-width="2" fill-opacity="0.3"/>
+  <circle cx="250.00" cy="140.00" r="3.00" fill="#3b82f6" stroke="#3b82f6" stroke-width="2" />
+  <circle cx="305.00" cy="140.00" r="25.00" fill="#dcfce7" stroke="#22c55e" stroke-width="2" fill-opacity="0.3"/>
+  <circle cx="305.00" cy="140.00" r="3.00" fill="#22c55e" stroke="#3b82f6" stroke-width="2" />
+  <text x="277.50" y="250.00" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Tang. Ext.</text>
+  <circle cx="420.00" cy="140.00" r="40.00" fill="#dbeafe" stroke="#3b82f6" stroke-width="2" fill-opacity="0.3"/>
+  <circle cx="420.00" cy="140.00" r="3.00" fill="#3b82f6" stroke="#3b82f6" stroke-width="2" />
+  <circle cx="450.00" cy="140.00" r="25.00" fill="#dcfce7" stroke="#22c55e" stroke-width="2" fill-opacity="0.3"/>
+  <circle cx="450.00" cy="140.00" r="3.00" fill="#22c55e" stroke="#3b82f6" stroke-width="2" />
+  <text x="435.00" y="250.00" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Secantes</text>
+  <circle cx="590.00" cy="140.00" r="50.00" fill="#dbeafe" stroke="#3b82f6" stroke-width="2" fill-opacity="0.3"/>
+  <circle cx="590.00" cy="140.00" r="3.00" fill="#3b82f6" stroke="#3b82f6" stroke-width="2" />
+  <circle cx="600.00" cy="140.00" r="20.00" fill="#dcfce7" stroke="#22c55e" stroke-width="2" fill-opacity="0.3"/>
+  <circle cx="600.00" cy="140.00" r="3.00" fill="#22c55e" stroke="#3b82f6" stroke-width="2" />
+  <text x="595.00" y="250.00" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Internas</text>
+</svg>

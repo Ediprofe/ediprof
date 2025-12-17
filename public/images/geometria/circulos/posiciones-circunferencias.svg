@@ -7,7 +7,7 @@ style="font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;">
 <circle cx="220" cy="140" r="35" fill="#fef3c7" fill-opacity="0.5" stroke="#22c55e" stroke-width="2"/>
 <circle cx="220" cy="140" r="3" fill="#22c55e"/>
 <text x="125.00" y="220.00" text-anchor="middle" font-size="12" font-weight="bold" fill="#22c55e">Exteriores</text>
-<text x="125.00" y="236.00" text-anchor="middle" font-size="10" font-weight="normal" fill="#94a3b8">d > R + r</text>
+<text x="125.00" y="236.00" text-anchor="middle" font-size="10" font-weight="normal" fill="#94a3b8">d &gt; R + r</text>
 <circle cx="375" cy="140" r="50" fill="#dbeafe" fill-opacity="0.3" stroke="#3b82f6" stroke-width="2"/>
 <circle cx="375" cy="140" r="3" fill="#ef4444"/>
 <circle cx="425" cy="140" r="35" fill="#fef3c7" fill-opacity="0.5" stroke="#f97316" stroke-width="2"/>
@@ -19,7 +19,7 @@ style="font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;">
 <circle cx="655" cy="140" r="40" fill="#fef3c7" fill-opacity="0.5" stroke="#14b8a6" stroke-width="2"/>
 <circle cx="655" cy="140" r="3" fill="#14b8a6"/>
 <text x="625.00" y="220.00" text-anchor="middle" font-size="12" font-weight="bold" fill="#14b8a6">Secantes</text>
-<text x="625.00" y="236.00" text-anchor="middle" font-size="10" font-weight="normal" fill="#94a3b8">|R-r| < d < R+r</text>
+<text x="625.00" y="236.00" text-anchor="middle" font-size="10" font-weight="normal" fill="#94a3b8">|R-r| &lt; d &lt; R+r</text>
 <circle cx="200" cy="340" r="60" fill="#dbeafe" fill-opacity="0.3" stroke="#3b82f6" stroke-width="2"/>
 <circle cx="200" cy="340" r="3" fill="#ef4444"/>
 <circle cx="225" cy="340" r="35" fill="#fef3c7" fill-opacity="0.5" stroke="#ec4899" stroke-width="2"/>

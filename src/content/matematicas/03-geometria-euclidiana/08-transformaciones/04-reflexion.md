@@ -2,6 +2,91 @@
 
 La **reflexión** produce la imagen espejo de una figura respecto a una recta llamada eje de simetría.
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <canvas id="roughjs-reflexion-1" width="700" height="320" style="width: 100%; height: auto; display: block;"></canvas>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof rough !== 'undefined' && document.getElementById('roughjs-reflexion-1')) {
+    var canvas = document.getElementById('roughjs-reflexion-1');
+    var rc = rough.canvas(canvas);
+    var ctx = canvas.getContext('2d');
+    
+    ctx.font = 'bold 16px Inter, sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.textAlign = 'center';
+    ctx.fillText('Reflexión respecto al Eje Y', 350, 25);
+    
+    var azul = '#3b82f6';
+    var verde = '#22c55e';
+    var morado = '#a855f7';
+    
+    // Centro de coordenadas
+    var cx = 350, cy = 170;
+    
+    // Ejes coordenados
+    rc.line(100, cy, 600, cy, {stroke: '#e2e8f0', strokeWidth: 1, roughness: 0.2});
+    rc.line(cx, 50, cx, 280, {stroke: morado, strokeWidth: 3, roughness: 0.3}); // Eje Y como eje de reflexión
+    ctx.font = '11px Inter, sans-serif';
+    ctx.fillStyle = '#94a3b8';
+    ctx.fillText('x', 590, cy+15);
+    ctx.fillStyle = morado;
+    ctx.font = 'bold 12px Inter, sans-serif';
+    ctx.fillText('Eje Y', cx+20, 60);
+    ctx.fillStyle = '#94a3b8';
+    ctx.font = '11px Inter, sans-serif';
+    ctx.fillText('O', cx-12, cy+15);
+    
+    // Triángulo ORIGINAL (azul) - a la derecha del eje
+    var A = [cx+60, cy+40];
+    var B = [cx+140, cy+40];
+    var C = [cx+100, cy-40];
+    rc.polygon([A, B, C], {fill: '#dbeafe', stroke: azul, strokeWidth: 2.5, roughness: 0.5});
+    
+    // Etiquetas originales
+    ctx.font = 'bold 12px Inter, sans-serif';
+    ctx.fillStyle = azul;
+    ctx.fillText('A', A[0]-5, A[1]+15);
+    ctx.fillText('B', B[0]+8, B[1]+15);
+    ctx.fillText('C', C[0]+10, C[1]);
+    
+    // Triángulo IMAGEN (verde) - reflejado respecto al eje Y
+    // Reflexión eje Y: (x,y) -> (-x, y) respecto al centro
+    function reflejarY(p) {
+      var dx = p[0] - cx;
+      return [cx - dx, p[1]];
+    }
+    var Ap = reflejarY(A);
+    var Bp = reflejarY(B);
+    var Cp = reflejarY(C);
+    rc.polygon([Ap, Bp, Cp], {fill: '#dcfce7', stroke: verde, strokeWidth: 2.5, roughness: 0.5});
+    
+    // Etiquetas imagen
+    ctx.fillStyle = verde;
+    ctx.fillText("A'", Ap[0], Ap[1]+15);
+    ctx.fillText("B'", Bp[0]-18, Bp[1]+15);
+    ctx.fillText("C'", Cp[0]-18, Cp[1]);
+    
+    // Líneas de correspondencia (punteadas)
+    rc.line(A[0], A[1], Ap[0], Ap[1], {stroke: '#94a3b8', strokeWidth: 1.5, roughness: 0.2});
+    rc.line(B[0], B[1], Bp[0], Bp[1], {stroke: '#94a3b8', strokeWidth: 1.5, roughness: 0.2});
+    rc.line(C[0], C[1], Cp[0], Cp[1], {stroke: '#94a3b8', strokeWidth: 1.5, roughness: 0.2});
+    
+    // Leyenda
+    rc.rectangle(180, 270, 340, 40, {fill: '#f1f5f9', stroke: '#cbd5e1', roughness: 0.3});
+    ctx.font = '12px Inter, sans-serif';
+    ctx.textAlign = 'left';
+    ctx.fillStyle = azul;
+    ctx.fillText('■ Original', 200, 295);
+    ctx.fillStyle = verde;
+    ctx.fillText('■ Imagen', 300, 295);
+    ctx.fillStyle = morado;
+    ctx.fillText('│ Eje de reflexión', 400, 295);
+  }
+});
+</script>
+
 ---
 
 ## 📖 Definición

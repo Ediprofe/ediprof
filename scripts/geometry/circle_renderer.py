@@ -54,9 +54,9 @@ from pathlib import Path
 # Todos los SVGs del mismo tema deben tener tamaños consistentes.
 
 SIZE_SIMPLE = (500, 400)       # 1 concepto: radio, diámetro, cuerda, arco, ángulo
-SIZE_COMPOUND = (600, 420)     # 2-3 elementos: sector+triángulo, teoremas
+SIZE_COMPOUND = (600, 460)     # 2-3 elementos: sector+triángulo, teoremas (altura aumentada para leyendas)
 SIZE_MULTIPLE = (750, 450)     # 4+ elementos: posiciones, comparaciones
-SIZE_HORIZONTAL = (700, 380)   # Operaciones A - B = C, lado a lado
+SIZE_HORIZONTAL = (750, 420)   # Operaciones A - B = C, lado a lado (más espacio)
 
 # Paleta de colores
 COLORS = {
@@ -79,6 +79,21 @@ COLORS = {
     'highlight': '#fbbf24',
     'crown': '#e0e7ff',
 }
+
+
+def escape_svg_text(text):
+    """
+    ⚠️ CRÍTICO: Escapar caracteres especiales XML para texto en SVG.
+    
+    Los caracteres <, >, & son inválidos en XML y causan errores de parsing.
+    SIEMPRE usar esta función para texto que contenga símbolos matemáticos.
+    
+    Ejemplos:
+        "d < r"  → "d &lt; r"
+        "d > R"  → "d &gt; R"
+        "A & B"  → "A &amp; B"
+    """
+    return text.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
 
 
 def point_on_circle(cx, cy, r, angle_deg):
@@ -223,18 +238,27 @@ def svg_footer():
 
 
 def text_element(x, y, text, size=12, weight="normal", color=None, anchor="start"):
-    """Genera elemento de texto SVG."""
+    """
+    Genera elemento de texto SVG con escape automático de caracteres XML.
+    
+    ⚠️ AUTOMÁTICO: Los caracteres <, >, & se escapan automáticamente.
+    No es necesario escapar manualmente en el código que llama a esta función.
+    """
     color = color or COLORS['text']
-    return f'<text x="{x:.2f}" y="{y:.2f}" text-anchor="{anchor}" font-size="{size}" font-weight="{weight}" fill="{color}">{text}</text>'
+    safe_text = escape_svg_text(str(text))
+    return f'<text x="{x:.2f}" y="{y:.2f}" text-anchor="{anchor}" font-size="{size}" font-weight="{weight}" fill="{color}">{safe_text}</text>'
 
 
 def label_box(x, y, width, height, text, bg_color=None, border_color=None, text_color=None):
-    """Genera caja con etiqueta."""
+    """
+    Genera caja con etiqueta y escape automático de caracteres XML.
+    """
     bg = bg_color or "white"
     border = border_color or COLORS['auxiliary']
     txt_color = text_color or COLORS['text']
+    safe_text = escape_svg_text(str(text))
     return f'''<rect x="{x}" y="{y}" width="{width}" height="{height}" rx="8" fill="{bg}" stroke="{border}"/>
-<text x="{x + width/2}" y="{y + height/2 + 4}" text-anchor="middle" font-size="12" fill="{txt_color}">{text}</text>'''
+<text x="{x + width/2}" y="{y + height/2 + 4}" text-anchor="middle" font-size="12" fill="{txt_color}">{safe_text}</text>'''
 
 
 # ============================================================================
@@ -277,7 +301,7 @@ def generate_basic(width=SIZE_SIMPLE[0], height=SIZE_SIMPLE[1]):
 
 def generate_element_radius(width=SIZE_SIMPLE[0], height=SIZE_SIMPLE[1]):
     """Radio: segmento del centro a la circunferencia."""
-    cx, cy, r = 200, 175, 110
+    cx, cy, r = 250, 175, 110  # CENTRADO: cx = width/2
     
     svg = [svg_header(width, height)]
     svg.append(text_element(width/2, 30, "Radio", 18, "bold", COLORS["radius"], "middle"))
@@ -295,8 +319,8 @@ def generate_element_radius(width=SIZE_SIMPLE[0], height=SIZE_SIMPLE[1]):
     svg.append(f'<circle cx="{px:.2f}" cy="{py:.2f}" r="5" fill="{COLORS["radius"]}"/>')
     svg.append(text_element((cx + px)/2 + 12, (cy + py)/2 - 8, "r", 16, "bold", COLORS["radius"]))
     
-    # Definición
-    svg.append(label_box(50, 305, 300, 35, "Segmento del centro a la circunferencia", COLORS["sector_fill"], COLORS["radius"]))
+    # Definición (centrada)
+    svg.append(label_box(100, 305, 300, 35, "Segmento del centro a la circunferencia", COLORS["sector_fill"], COLORS["radius"]))
     
     svg.append(svg_footer())
     return '\n'.join(svg)
@@ -304,7 +328,7 @@ def generate_element_radius(width=SIZE_SIMPLE[0], height=SIZE_SIMPLE[1]):
 
 def generate_element_diameter(width=SIZE_SIMPLE[0], height=SIZE_SIMPLE[1]):
     """Diámetro: segmento que pasa por el centro con extremos en la circunferencia."""
-    cx, cy, r = 200, 175, 110
+    cx, cy, r = 250, 175, 110  # CENTRADO: cx = width/2
     
     svg = [svg_header(width, height)]
     svg.append(text_element(width/2, 30, "Diámetro", 18, "bold", COLORS["diameter"], "middle"))
@@ -326,8 +350,8 @@ def generate_element_diameter(width=SIZE_SIMPLE[0], height=SIZE_SIMPLE[1]):
     svg.append(text_element(p2[0] + 8, p2[1] + 5, "B", 14, "bold", COLORS["diameter"]))
     svg.append(text_element(cx, cy + 25, "d = 2r", 14, "bold", COLORS["diameter"], "middle"))
     
-    # Definición
-    svg.append(label_box(40, 305, 320, 35, "Pasa por el centro. Es la cuerda más larga.", COLORS["crown"], COLORS["diameter"]))
+    # Definición (centrada)
+    svg.append(label_box(90, 305, 320, 35, "Pasa por el centro. Es la cuerda más larga.", COLORS["crown"], COLORS["diameter"]))
     
     svg.append(svg_footer())
     return '\n'.join(svg)
@@ -335,7 +359,7 @@ def generate_element_diameter(width=SIZE_SIMPLE[0], height=SIZE_SIMPLE[1]):
 
 def generate_element_chord(width=SIZE_SIMPLE[0], height=SIZE_SIMPLE[1]):
     """Cuerda: segmento con extremos en la circunferencia."""
-    cx, cy, r = 200, 175, 110
+    cx, cy, r = 250, 175, 110  # CENTRADO: cx = width/2
     
     svg = [svg_header(width, height)]
     svg.append(text_element(width/2, 30, "Cuerda", 18, "bold", COLORS["chord"], "middle"))
@@ -361,8 +385,8 @@ def generate_element_chord(width=SIZE_SIMPLE[0], height=SIZE_SIMPLE[1]):
     svg.append(f'<line x1="{cx}" y1="{cy}" x2="{mid_x:.2f}" y2="{mid_y:.2f}" stroke="{COLORS["auxiliary"]}" stroke-width="1.5" stroke-dasharray="4,3"/>')
     svg.append(text_element(mid_x + 5, mid_y + 15, "d", 11, "normal", COLORS["auxiliary"]))
     
-    # Definición
-    svg.append(label_box(40, 305, 320, 35, "Extremos en la circunferencia (no pasa por O)", COLORS["segment_fill"], COLORS["chord"]))
+    # Definición (centrada)
+    svg.append(label_box(90, 305, 320, 35, "Extremos en la circunferencia (no pasa por O)", COLORS["segment_fill"], COLORS["chord"]))
     
     svg.append(svg_footer())
     return '\n'.join(svg)
@@ -370,7 +394,7 @@ def generate_element_chord(width=SIZE_SIMPLE[0], height=SIZE_SIMPLE[1]):
 
 def generate_element_arc(width=SIZE_SIMPLE[0], height=SIZE_SIMPLE[1]):
     """Arco: porción de la circunferencia."""
-    cx, cy, r = 200, 175, 110
+    cx, cy, r = 250, 175, 110  # CENTRADO: cx = width/2
     
     svg = [svg_header(width, height)]
     svg.append(text_element(width/2, 30, "Arco", 18, "bold", COLORS["arc"], "middle"))
@@ -398,11 +422,12 @@ def generate_element_arc(width=SIZE_SIMPLE[0], height=SIZE_SIMPLE[1]):
     svg.append(text_element(arc_mid[0], arc_mid[1], "⌢AB", 14, "bold", COLORS["arc"], "middle"))
     
     # Leyenda
-    svg.append(f'<rect x="50" y="305" width="130" height="28" rx="6" fill="{COLORS["sector_fill"]}" stroke="{COLORS["arc"]}"/>')
-    svg.append(text_element(115, 323, "Arco menor", 11, "normal", COLORS["text"], "middle"))
+    # Leyendas centradas
+    svg.append(f'<rect x="100" y="305" width="130" height="28" rx="6" fill="{COLORS["sector_fill"]}" stroke="{COLORS["arc"]}"/>')
+    svg.append(text_element(165, 323, "Arco menor", 11, "normal", COLORS["text"], "middle"))
     
-    svg.append(f'<rect x="220" y="305" width="130" height="28" rx="6" fill="{COLORS["background"]}" stroke="{COLORS["auxiliary"]}"/>')
-    svg.append(text_element(285, 323, "Arco mayor", 11, "normal", COLORS["auxiliary"], "middle"))
+    svg.append(f'<rect x="270" y="305" width="130" height="28" rx="6" fill="{COLORS["background"]}" stroke="{COLORS["auxiliary"]}"/>')
+    svg.append(text_element(335, 323, "Arco mayor", 11, "normal", COLORS["auxiliary"], "middle"))
     
     svg.append(svg_footer())
     return '\n'.join(svg)
@@ -410,7 +435,7 @@ def generate_element_arc(width=SIZE_SIMPLE[0], height=SIZE_SIMPLE[1]):
 
 def generate_element_sector(width=SIZE_SIMPLE[0], height=SIZE_SIMPLE[1]):
     """Sector circular: región entre dos radios y un arco (rebanada de pizza)."""
-    cx, cy, r = 200, 180, 110
+    cx, cy, r = 250, 175, 110  # CENTRADO: cx = width/2
     
     svg = [svg_header(width, height)]
     svg.append(text_element(width/2, 30, "Sector Circular", 18, "bold", COLORS["arc"], "middle"))
@@ -443,8 +468,8 @@ def generate_element_sector(width=SIZE_SIMPLE[0], height=SIZE_SIMPLE[1]):
     svg.append(text_element(cx + 30, cy - 50, "Arco", 11, "normal", COLORS["arc"]))
     svg.append(text_element(cx - 50, cy - 40, "Radio", 11, "normal", COLORS["radius"]))
     
-    # Definición
-    svg.append(label_box(30, 320, 340, 50, "Limitado por 2 RADIOS + ARCO", COLORS["sector_fill"], COLORS["arc"]))
+    # Definición (centrada)
+    svg.append(label_box(80, 320, 340, 50, "Limitado por 2 RADIOS + ARCO", COLORS["sector_fill"], COLORS["arc"]))
     svg.append(text_element(width/2, 355, '(Como una "rebanada de pizza")', 10, "normal", COLORS["auxiliary"], "middle"))
     
     svg.append(svg_footer())
@@ -453,7 +478,7 @@ def generate_element_sector(width=SIZE_SIMPLE[0], height=SIZE_SIMPLE[1]):
 
 def generate_element_segment(width=SIZE_SIMPLE[0], height=SIZE_SIMPLE[1]):
     """Segmento circular: región entre una cuerda y su arco."""
-    cx, cy, r = 200, 180, 110
+    cx, cy, r = 250, 175, 110  # CENTRADO: cx = width/2
     
     svg = [svg_header(width, height)]
     svg.append(text_element(width/2, 30, "Segmento Circular", 18, "bold", COLORS["chord"], "middle"))
@@ -488,8 +513,8 @@ def generate_element_segment(width=SIZE_SIMPLE[0], height=SIZE_SIMPLE[1]):
     chord_mid_y = (ca[1] + cb[1])/2
     svg.append(text_element(chord_mid_x, chord_mid_y + 20, "Cuerda", 11, "normal", COLORS["chord"]))
     
-    # Definición
-    svg.append(label_box(30, 320, 340, 50, "Limitado por CUERDA + ARCO", COLORS["segment_fill"], COLORS["chord"]))
+    # Definición (centrada)
+    svg.append(label_box(80, 320, 340, 50, "Limitado por CUERDA + ARCO", COLORS["segment_fill"], COLORS["chord"]))
     svg.append(text_element(width/2, 355, '(NO incluye el centro)', 10, "normal", COLORS["auxiliary"], "middle"))
     
     svg.append(svg_footer())
@@ -498,7 +523,7 @@ def generate_element_segment(width=SIZE_SIMPLE[0], height=SIZE_SIMPLE[1]):
 
 def generate_element_crown(width=SIZE_SIMPLE[0], height=SIZE_SIMPLE[1]):
     """Corona circular: región entre dos circunferencias concéntricas."""
-    cx, cy = 200, 175
+    cx, cy = 250, 175  # CENTRADO: cx = width/2
     R, r = 110, 60  # Radio mayor y menor
     
     svg = [svg_header(width, height)]
@@ -530,10 +555,10 @@ def generate_element_crown(width=SIZE_SIMPLE[0], height=SIZE_SIMPLE[1]):
     svg.append(f'<line x1="{cx}" y1="{cy}" x2="{pr[0]:.2f}" y2="{pr[1]:.2f}" stroke="{COLORS["diameter"]}" stroke-width="2"/>')
     svg.append(text_element((cx + pr[0])/2 - 15, (cy + pr[1])/2 + 5, "r", 14, "bold", COLORS["diameter"]))
     
-    # Fórmula
-    svg.append(label_box(50, 310, 300, 55, "", COLORS["crown"], COLORS["circle_stroke"]))
-    svg.append(text_element(200, 332, "Área = π(R² - r²)", 14, "bold", COLORS["text"], "middle"))
-    svg.append(text_element(200, 352, "Dos circunferencias concéntricas", 11, "normal", COLORS["auxiliary"], "middle"))
+    # Fórmula (centrada)
+    svg.append(label_box(100, 310, 300, 55, "", COLORS["crown"], COLORS["circle_stroke"]))
+    svg.append(text_element(250, 332, "Área = π(R² - r²)", 14, "bold", COLORS["text"], "middle"))
+    svg.append(text_element(250, 352, "Dos circunferencias concéntricas", 11, "normal", COLORS["auxiliary"], "middle"))
     
     svg.append(svg_footer())
     return '\n'.join(svg)
@@ -544,39 +569,50 @@ def generate_element_crown(width=SIZE_SIMPLE[0], height=SIZE_SIMPLE[1]):
 # ============================================================================
 
 def generate_point_positions(width=SIZE_HORIZONTAL[0], height=SIZE_HORIZONTAL[1]):
-    """Posiciones de un punto respecto a la circunferencia."""
+    """
+    Posiciones de un punto respecto a la circunferencia.
+    
+    NOTA: Usa SIZE_HORIZONTAL (750x420) para distribución equidistante.
+    """
     svg = [svg_header(width, height)]
     svg.append(text_element(width/2, 28, "Posiciones de un Punto", 18, "bold", COLORS["text"], "middle"))
     
+    # Distribución equidistante en 750px: 150, 375, 600 (con margen para el punto exterior)
+    circle_y = 190
+    r = 70  # Radio reducido para dar más margen
+    
+    # Los caracteres < y > se escapan AUTOMÁTICAMENTE en text_element()
     positions = [
-        (120, 170, "Interior", "d < r", -40, COLORS["chord"]),
-        (350, 170, "Sobre la circ.", "d = r", 0, COLORS["circle_stroke"]),
-        (580, 170, "Exterior", "d > r", 50, COLORS["tangent"]),
+        (150, circle_y, "Interior", "d < r", "interior", COLORS["chord"]),
+        (375, circle_y, "Sobre la circ.", "d = r", "sobre", COLORS["circle_stroke"]),
+        (600, circle_y, "Exterior", "d > r", "exterior", COLORS["tangent"]),
     ]
     
-    for cx, cy, label, formula, offset, color in positions:
-        r = 70
+    for cx, cy, label, formula, pos_type, color in positions:
         # Circunferencia
         svg.append(f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="{COLORS["circle_fill"]}" fill-opacity="0.3" stroke="{COLORS["circle_stroke"]}" stroke-width="2"/>')
         svg.append(f'<circle cx="{cx}" cy="{cy}" r="3" fill="{COLORS["center"]}"/>')
         
         # Punto P según posición
-        if offset < 0:  # Interior
+        if pos_type == "interior":
             px, py = cx + 25, cy - 15
-        elif offset == 0:  # Sobre
+        elif pos_type == "sobre":
             px, py = point_on_circle(cx, cy, r, 50)
-        else:  # Exterior
-            px, py = cx + r + 30, cy - 20
+        else:  # exterior - hacia la izquierda para no salirse del viewBox
+            px, py = cx + r + 20, cy - 20
+        
+        # Ajustar etiqueta P para que no se salga del viewBox
+        label_offset_x = 10 if px + 25 < width else -20
         
         svg.append(f'<circle cx="{px:.2f}" cy="{py:.2f}" r="6" fill="{color}"/>')
-        svg.append(text_element(px + 10, py - 8, "P", 12, "bold", color))
+        svg.append(text_element(px + label_offset_x, py - 8, "P", 12, "bold", color))
         
         # Distancia d
         svg.append(f'<line x1="{cx}" y1="{cy}" x2="{px:.2f}" y2="{py:.2f}" stroke="{COLORS["auxiliary"]}" stroke-width="1.5" stroke-dasharray="4,3"/>')
         
-        # Etiquetas (dentro del viewBox)
-        svg.append(text_element(cx, cy + r + 30, label, 13, "bold", color, "middle"))
-        svg.append(text_element(cx, cy + r + 48, formula, 11, "normal", COLORS["text"], "middle"))
+        # Etiquetas (dentro del viewBox con margen)
+        svg.append(text_element(cx, cy + r + 35, label, 13, "bold", color, "middle"))
+        svg.append(text_element(cx, cy + r + 55, formula, 11, "normal", COLORS["text"], "middle"))
     
     svg.append(svg_footer())
     return '\n'.join(svg)
@@ -645,7 +681,7 @@ def generate_circle_positions(width=SIZE_MULTIPLE[0], height=SIZE_MULTIPLE[1]):
     svg = [svg_header(width, height)]
     svg.append(text_element(width/2, 28, "Posiciones entre Circunferencias", 18, "bold", COLORS["text"], "middle"))
     
-    # Fila 1
+    # Fila 1 - Los caracteres < y > se escapan AUTOMÁTICAMENTE en text_element()
     positions_row1 = [
         (125, 140, 50, 35, 95, "Exteriores", "d > R + r", COLORS["chord"]),
         (375, 140, 50, 35, 50, "Tang. Ext.", "d = R + r", COLORS["angle"]),
@@ -998,10 +1034,10 @@ def generate_angle_exterior(width=SIZE_COMPOUND[0], height=SIZE_COMPOUND[1]):
     svg.append(f'<rect x="{menor_label_pos[0] - 45}" y="{menor_label_pos[1] - 12}" width="90" height="24" rx="4" fill="{COLORS["highlight"]}" fill-opacity="0.3" stroke="{COLORS["highlight"]}"/>')
     svg.append(text_element(menor_label_pos[0], menor_label_pos[1] + 5, "ARCO MENOR", 10, "bold", COLORS["highlight"], "middle"))
     
-    # Fórmula destacada
-    svg.append(label_box(125, 385, 300, 55, "", "white", COLORS["angle"]))
-    svg.append(text_element(275, 405, "α = (MAYOR - MENOR) / 2", 14, "bold", COLORS["text"], "middle"))
-    svg.append(text_element(275, 425, "El ángulo es la SEMIDIFERENCIA de los arcos", 10, "normal", COLORS["auxiliary"], "middle"))
+    # Fórmula destacada (ajustada para caber en viewBox 600x460)
+    svg.append(label_box(150, 385, 300, 55, "", "white", COLORS["angle"]))
+    svg.append(text_element(300, 405, "α = (MAYOR - MENOR) / 2", 14, "bold", COLORS["text"], "middle"))
+    svg.append(text_element(300, 425, "El ángulo es la SEMIDIFERENCIA de los arcos", 10, "normal", COLORS["auxiliary"], "middle"))
     
     svg.append(svg_footer())
     return '\n'.join(svg)
@@ -1089,10 +1125,10 @@ def generate_theorem_inscribed(width=SIZE_COMPOUND[0], height=SIZE_COMPOUND[1]):
     svg.append(text_element(510, 100, "α = θ / 2", 12, "normal", COLORS["text"], "middle"))
     svg.append(text_element(510, 118, "(vértice en P)", 9, "normal", COLORS["auxiliary"], "middle"))
     
-    # Teorema destacado
-    svg.append(f'<rect x="150" y="395" width="300" height="45" rx="10" fill="{COLORS["highlight"]}" fill-opacity="0.3" stroke="{COLORS["highlight"]}" stroke-width="2"/>')
-    svg.append(text_element(width/2, 415, "INSCRITO = ½ CENTRAL", 15, "bold", COLORS["text"], "middle"))
-    svg.append(text_element(width/2, 432, "α = θ / 2", 12, "normal", COLORS["auxiliary"], "middle"))
+    # Teorema destacado (ajustado para caber en viewBox 600x460)
+    svg.append(f'<rect x="150" y="395" width="300" height="50" rx="10" fill="{COLORS["highlight"]}" fill-opacity="0.3" stroke="{COLORS["highlight"]}" stroke-width="2"/>')
+    svg.append(text_element(width/2, 418, "INSCRITO = ½ CENTRAL", 15, "bold", COLORS["text"], "middle"))
+    svg.append(text_element(width/2, 438, "α = θ / 2", 12, "normal", COLORS["auxiliary"], "middle"))
     
     svg.append(svg_footer())
     return '\n'.join(svg)
@@ -1259,84 +1295,91 @@ def generate_formula_segment_area(width=SIZE_HORIZONTAL[0], height=SIZE_HORIZONT
     - Mostrar claramente: SEGMENTO = SECTOR - TRIÁNGULO
     - Dibujar el triángulo (formado por los dos radios y la cuerda)
     - El segmento es la "media luna" entre cuerda y arco
+    
+    NOTA: Usa SIZE_HORIZONTAL (750x420) para mejor distribución
     """
     
     svg = [svg_header(width, height)]
     svg.append(text_element(width/2, 30, "Área del Segmento Circular", 18, "bold", COLORS["chord"], "middle"))
     
-    # === LADO IZQUIERDO: SECTOR completo ===
-    cx1, cy1, r1 = 120, 200, 80
+    # Distribución horizontal: 3 círculos equidistantes en 750px
+    # Posiciones: 140, 375, 610 (separación de ~235px)
+    circle_y = 185  # Centro vertical de los círculos
+    r = 85  # Radio ligeramente mayor para mejor visibilidad
     angle_start, angle_end = 30, 150
     
+    # === LADO IZQUIERDO: SECTOR completo ===
+    cx1 = 140
+    
     # Sector (área amarilla)
-    sector = sector_path(cx1, cy1, r1, angle_start, angle_end)
+    sector = sector_path(cx1, circle_y, r, angle_start, angle_end)
     svg.append(f'<path d="{sector}" fill="{COLORS["sector_fill"]}" stroke="{COLORS["arc"]}" stroke-width="2"/>')
     
     # Centro
-    svg.append(f'<circle cx="{cx1}" cy="{cy1}" r="4" fill="{COLORS["center"]}"/>')
-    svg.append(text_element(cx1 - 12, cy1 + 5, "O", 11, "bold", COLORS["center"]))
+    svg.append(f'<circle cx="{cx1}" cy="{circle_y}" r="4" fill="{COLORS["center"]}"/>')
+    svg.append(text_element(cx1 - 12, circle_y + 5, "O", 11, "bold", COLORS["center"]))
     
     # Puntos
-    pA1 = point_on_circle(cx1, cy1, r1, angle_end)
-    pB1 = point_on_circle(cx1, cy1, r1, angle_start)
+    pA1 = point_on_circle(cx1, circle_y, r, angle_end)
+    pB1 = point_on_circle(cx1, circle_y, r, angle_start)
     svg.append(f'<circle cx="{pA1[0]:.1f}" cy="{pA1[1]:.1f}" r="3" fill="{COLORS["point"]}"/>')
     svg.append(f'<circle cx="{pB1[0]:.1f}" cy="{pB1[1]:.1f}" r="3" fill="{COLORS["point"]}"/>')
     
-    svg.append(text_element(cx1, cy1 + r1 + 25, "SECTOR", 12, "bold", COLORS["arc"], "middle"))
+    svg.append(text_element(cx1, circle_y + r + 25, "SECTOR", 12, "bold", COLORS["arc"], "middle"))
     
     # === SÍMBOLO MENOS ===
-    svg.append(text_element(210, 200, "−", 30, "bold", COLORS["text"]))
+    svg.append(text_element(245, circle_y + 5, "−", 32, "bold", COLORS["text"]))
     
     # === CENTRO: TRIÁNGULO ===
-    cx2, cy2, r2 = 300, 200, 80
+    cx2 = 375
     
     # Circunferencia tenue
-    svg.append(f'<circle cx="{cx2}" cy="{cy2}" r="{r2}" fill="none" stroke="{COLORS["auxiliary"]}" stroke-width="1" stroke-dasharray="4,4"/>')
+    svg.append(f'<circle cx="{cx2}" cy="{circle_y}" r="{r}" fill="none" stroke="{COLORS["auxiliary"]}" stroke-width="1" stroke-dasharray="4,4"/>')
     
     # Triángulo (formado por O, A, B)
-    pA2 = point_on_circle(cx2, cy2, r2, angle_end)
-    pB2 = point_on_circle(cx2, cy2, r2, angle_start)
+    pA2 = point_on_circle(cx2, circle_y, r, angle_end)
+    pB2 = point_on_circle(cx2, circle_y, r, angle_start)
     
-    svg.append(f'<polygon points="{cx2},{cy2} {pA2[0]:.1f},{pA2[1]:.1f} {pB2[0]:.1f},{pB2[1]:.1f}" fill="{COLORS["radius"]}" fill-opacity="0.2" stroke="{COLORS["radius"]}" stroke-width="2"/>')
+    svg.append(f'<polygon points="{cx2},{circle_y} {pA2[0]:.1f},{pA2[1]:.1f} {pB2[0]:.1f},{pB2[1]:.1f}" fill="{COLORS["radius"]}" fill-opacity="0.2" stroke="{COLORS["radius"]}" stroke-width="2"/>')
     
     # Centro y puntos
-    svg.append(f'<circle cx="{cx2}" cy="{cy2}" r="4" fill="{COLORS["center"]}"/>')
-    svg.append(text_element(cx2 - 12, cy2 + 5, "O", 11, "bold", COLORS["center"]))
+    svg.append(f'<circle cx="{cx2}" cy="{circle_y}" r="4" fill="{COLORS["center"]}"/>')
+    svg.append(text_element(cx2 - 12, circle_y + 5, "O", 11, "bold", COLORS["center"]))
     svg.append(f'<circle cx="{pA2[0]:.1f}" cy="{pA2[1]:.1f}" r="3" fill="{COLORS["point"]}"/>')
     svg.append(f'<circle cx="{pB2[0]:.1f}" cy="{pB2[1]:.1f}" r="3" fill="{COLORS["point"]}"/>')
     svg.append(text_element(pA2[0] - 15, pA2[1] - 5, "A", 11, "bold", COLORS["point"]))
     svg.append(text_element(pB2[0] + 8, pB2[1] - 5, "B", 11, "bold", COLORS["point"]))
     
-    svg.append(text_element(cx2, cy2 + r2 + 25, "TRIÁNGULO OAB", 12, "bold", COLORS["radius"], "middle"))
+    svg.append(text_element(cx2, circle_y + r + 25, "TRIÁNGULO OAB", 12, "bold", COLORS["radius"], "middle"))
     
     # === SÍMBOLO IGUAL ===
-    svg.append(text_element(390, 200, "=", 30, "bold", COLORS["text"]))
+    svg.append(text_element(480, circle_y + 5, "=", 32, "bold", COLORS["text"]))
     
     # === LADO DERECHO: SEGMENTO (resultado) ===
-    cx3, cy3, r3 = 500, 200, 80
+    cx3 = 610
     
     # Circunferencia tenue
-    svg.append(f'<circle cx="{cx3}" cy="{cy3}" r="{r3}" fill="none" stroke="{COLORS["auxiliary"]}" stroke-width="1" stroke-dasharray="4,4"/>')
+    svg.append(f'<circle cx="{cx3}" cy="{circle_y}" r="{r}" fill="none" stroke="{COLORS["auxiliary"]}" stroke-width="1" stroke-dasharray="4,4"/>')
     
     # Segmento (solo el área verde entre cuerda y arco)
-    segment = segment_path(cx3, cy3, r3, angle_start, angle_end)
+    segment = segment_path(cx3, circle_y, r, angle_start, angle_end)
     svg.append(f'<path d="{segment}" fill="{COLORS["segment_fill"]}" stroke="{COLORS["chord"]}" stroke-width="3"/>')
     
     # Cuerda
-    pA3 = point_on_circle(cx3, cy3, r3, angle_end)
-    pB3 = point_on_circle(cx3, cy3, r3, angle_start)
+    pA3 = point_on_circle(cx3, circle_y, r, angle_end)
+    pB3 = point_on_circle(cx3, circle_y, r, angle_start)
     svg.append(f'<line x1="{pA3[0]:.1f}" y1="{pA3[1]:.1f}" x2="{pB3[0]:.1f}" y2="{pB3[1]:.1f}" stroke="{COLORS["chord"]}" stroke-width="2"/>')
     
     # Centro (referencia)
-    svg.append(f'<circle cx="{cx3}" cy="{cy3}" r="3" fill="{COLORS["auxiliary"]}"/>')
+    svg.append(f'<circle cx="{cx3}" cy="{circle_y}" r="3" fill="{COLORS["auxiliary"]}"/>')
     
-    svg.append(text_element(cx3, cy3 + r3 + 25, "SEGMENTO", 12, "bold", COLORS["chord"], "middle"))
+    svg.append(text_element(cx3, circle_y + r + 25, "SEGMENTO", 12, "bold", COLORS["chord"], "middle"))
     
-    # === FÓRMULA DESTACADA ===
-    svg.append(f'<rect x="100" y="330" width="450" height="75" rx="12" fill="white" stroke="{COLORS["chord"]}" stroke-width="2"/>')
-    svg.append(text_element(325, 355, "A(SEGMENTO) = A(SECTOR) − A(TRIÁNGULO)", 14, "bold", COLORS["text"], "middle"))
-    svg.append(text_element(325, 378, "El TRIÁNGULO está formado por los 2 radios (OA, OB) y la cuerda (AB)", 10, "normal", COLORS["auxiliary"], "middle"))
-    svg.append(text_element(325, 395, "A(△) = ½ · r² · sin(θ)", 11, "normal", COLORS["text"], "middle"))
+    # === FÓRMULA DESTACADA (ajustada para viewBox 750x420) ===
+    svg.append(f'<rect x="125" y="320" width="500" height="85" rx="12" fill="white" stroke="{COLORS["chord"]}" stroke-width="2"/>')
+    svg.append(text_element(375, 348, "A(SEGMENTO) = A(SECTOR) − A(TRIÁNGULO)", 15, "bold", COLORS["text"], "middle"))
+    svg.append(text_element(375, 373, "El TRIÁNGULO está formado por los 2 radios (OA, OB) y la cuerda (AB)", 11, "normal", COLORS["auxiliary"], "middle"))
+    svg.append(text_element(375, 395, "A(△) = ½ · r² · sin(θ)", 12, "normal", COLORS["text"], "middle"))
     
     svg.append(svg_footer())
     return '\n'.join(svg)

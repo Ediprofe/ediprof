@@ -213,9 +213,9 @@ Antes de dar por terminada una ilustración, preguntar:
 | Tipo de Ilustración | viewBox | Uso |
 |---------------------|---------|-----|
 | **Simple** (1 concepto) | `0 0 500 400` | Radio, diámetro, cuerda, arco, ángulo simple |
-| **Compuesto** (2-3 elementos) | `0 0 600 420` | Sector+triángulo, teoremas con comparación |
+| **Compuesto** (2-3 elementos) | `0 0 600 460` | Sector+triángulo, teoremas con comparación (altura extra para leyendas) |
 | **Múltiple** (4+ elementos) | `0 0 750 450` | Posiciones de circunferencias, comparaciones múltiples |
-| **Horizontal** (lado a lado) | `0 0 700 350` | Operaciones A - B = C, antes/después |
+| **Horizontal** (lado a lado) | `0 0 750 420` | Operaciones A - B = C, antes/después (ancho extra para 3 elementos) |
 
 ### Regla de Consistencia
 
@@ -228,16 +228,21 @@ el MISMO tamaño de viewBox para verse consistentes en la página.
 - Radio, Diámetro, Cuerda, Arco → Todos `0 0 500 400`
 - Sector, Segmento, Corona → Todos `0 0 500 400`
 
-### Regla de Ancho Mínimo
+### Regla de Centrado
+
+```
+⚠️ CRÍTICO: El contenido debe estar CENTRADO en el viewBox.
+Para un viewBox de 500px de ancho, el centro del círculo debe estar en cx=250.
+```
+
+### Constantes en el Renderer
 
 ```python
-# En cada renderer, definir constantes:
-STANDARD_WIDTH = 500   # Ancho mínimo para ocupar el contenedor
-STANDARD_HEIGHT = 400  # Alto proporcional
-
-# Para ilustraciones compuestas (A - B = C):
-COMPOSITE_WIDTH = 700  # Más ancho para 3 elementos
-COMPOSITE_HEIGHT = 420
+# En circle_renderer.py:
+SIZE_SIMPLE = (500, 400)       # 1 concepto
+SIZE_COMPOUND = (600, 460)     # 2-3 elementos (altura extra para leyendas)
+SIZE_MULTIPLE = (750, 450)     # 4+ elementos
+SIZE_HORIZONTAL = (750, 420)   # Operaciones lado a lado
 ```
 
 ### Verificación de Carga
@@ -247,6 +252,71 @@ Antes de considerar un SVG terminado:
 2. ✅ La ruta en markdown es EXACTA (case-sensitive)
 3. ✅ El SVG tiene contenido válido (no vacío)
 4. ✅ El viewBox está definido correctamente
+
+---
+
+## 🤖 CHECKLIST PARA AGENTE IA: Generación de SVGs
+
+> **INSTRUCCIÓN:** Cuando se pida "genera las ilustraciones para esta lección", seguir este checklist:
+
+### Método RECOMENDADO: CircleSpec (JSON → SVG)
+
+> **Referencia completa:** `.agent/workflows/circle-spec.md`
+
+```
+┌──────────────┐     ┌──────────────┐     ┌──────────────┐
+│  IA genera   │────▶│ Python/SymPy │────▶│    SVG       │
+│ CircleSpec   │     │   calcula    │     │   exacto     │
+│   (JSON)     │     │ y valida     │     │              │
+└──────────────┘     └──────────────┘     └──────────────┘
+```
+
+### Paso 1: Crear spec JSON
+```json
+{
+  "tipo": "elemento-radio",
+  "titulo": "Radio",
+  "canvas": "simple",
+  "elemento": { "angulo": 45, "color": "#ef4444" },
+  "leyenda": { "texto": "Segmento del centro a la circunferencia" }
+}
+```
+
+Guardar en: `specs/geometria/circulos/NOMBRE.json`
+
+### Paso 2: Generar SVG desde spec
+```bash
+python3 scripts/geometry/circle_spec_renderer.py \
+  --spec specs/geometria/circulos/NOMBRE.json \
+  --output public/images/geometria/circulos/NOMBRE.svg
+```
+
+### Paso 3: Verificar el SVG generado
+```
+□ El archivo existe en public/images/...
+□ El SVG tiene contenido (no está vacío)
+□ Abrir directamente en navegador: http://localhost:4321/images/geometria/circulos/NOMBRE.svg
+□ No hay errores de parsing XML
+```
+
+### Paso 4: Insertar en el markdown
+```markdown
+![Descripción](/images/geometria/circulos/nombre.svg)
+```
+
+### Método LEGACY: circle_renderer.py (funciones hardcodeadas)
+
+Para ilustraciones ya existentes:
+```bash
+python3 scripts/geometry/circle_renderer.py --type TIPO --output public/images/geometria/circulos/NOMBRE.svg
+```
+
+### Garantías Automáticas del Renderer
+- ✅ Caracteres `<`, `>`, `&` se escapan automáticamente
+- ✅ Centrado correcto (cx = width/2)
+- ✅ viewBox consistente según tipo de ilustración
+- ✅ Paleta de colores estandarizada
+- ✅ Cálculos exactos con SymPy
 
 ---
 
@@ -346,14 +416,39 @@ Antes de considerar un SVG terminado:
 │         • Plano cartesiano con puntos
 │         📁 Ver: .agent/workflows/echarts.md
 │
-├─── 📐 ¿Es GEOMETRÍA con propiedades exactas?
-│    └─── SÍ → GEOMETRYSPEC (JSON → Python → SVG)
-│         • Triángulos con puntos notables
+├─── ⭕ ¿Es CIRCUNFERENCIA o elementos del círculo?
+│    └─── SÍ → CIRCLESPEC (JSON → Python/SymPy → SVG)
+│         • Radio, diámetro, cuerda, arco, sector, segmento
+│         • Ángulos en la circunferencia
+│         • Posiciones de puntos, tangentes, secantes
+│         • Teoremas de circunferencia
+│         📁 Ver: .agent/workflows/circle-spec.md
+│
+├─── 📐 ¿Es TRIÁNGULO con propiedades exactas?
+│    └─── SÍ → GEOMETRYSPEC (JSON → Python/SymPy → SVG)
+│         • Puntos notables (baricentro, ortocentro, etc.)
 │         • Mediatrices, bisectrices, alturas, medianas
 │         • Circunferencias inscritas/circunscritas
-│         • Paralelismo, perpendicularidad exacta
-│         • ÁNGULOS con arcos correctamente posicionados
+│         • Recta de Euler
 │         📁 Ver: .agent/workflows/geometry-exact.md
+│
+├─── 📍 ¿Es GEOMETRÍA ANALÍTICA (plano cartesiano)?
+│    └─── SÍ → CARTESIANSPEC (JSON → Python → SVG)
+│         • Plano cartesiano con cuadrantes
+│         • Distancia entre puntos
+│         • Punto medio, división de segmentos
+│         • Área de triángulos y polígonos
+│         • Rectas y pendientes
+│         📁 Ver: .agent/workflows/cartesian-spec.md
+│
+├─── 🔄 ¿Es TRANSFORMACIÓN GEOMÉTRICA?
+│    └─── SÍ → ROUGH.JS o SVG MANUAL
+│         • Traslación, rotación, reflexión, homotecia
+│         • Mostrar ANTES/DESPUÉS con correspondencia de puntos
+│         • Usar colores distintos: original (azul), imagen (verde)
+│         • Incluir elementos: vector, centro, eje
+│         📁 Ver: .agent/workflows/roughjs.md
+│         ⚠️ SymPy NO es necesario (fórmulas directas)
 │
 ├─── ✏️ ¿Es un DIAGRAMA ilustrativo/conceptual?
 │    └─── SÍ → ROUGH.JS (inline en .md)
@@ -383,30 +478,79 @@ Antes de considerar un SVG terminado:
 | Necesito... | Uso... | Confianza |
 |-------------|--------|-----------|
 | Gráfica de $f(x) = 2x + 3$ | ECharts | ⭐⭐⭐⭐⭐ 95% |
+| Radio, cuerda, arco de círculo | CircleSpec | ⭐⭐⭐⭐⭐ 99% |
+| Ángulo inscrito/central | CircleSpec | ⭐⭐⭐⭐⭐ 99% |
 | Baricentro de triángulo | GeometrySpec | ⭐⭐⭐⭐⭐ 99% |
-| Histograma de datos | ECharts | ⭐⭐⭐⭐⭐ 95% |
 | Circuncentro exacto | GeometrySpec | ⭐⭐⭐⭐⭐ 99% |
+| **Plano cartesiano con puntos** | **CartesianSpec** | ⭐⭐⭐⭐⭐ 99% |
+| **Distancia entre puntos** | **CartesianSpec** | ⭐⭐⭐⭐⭐ 99% |
+| **Punto medio, división segmento** | **CartesianSpec** | ⭐⭐⭐⭐⭐ 99% |
+| **Área de polígonos (coordenadas)** | **CartesianSpec** | ⭐⭐⭐⭐⭐ 99% |
+| Traslación de figura | Rough.js | ⭐⭐⭐⭐ 90% |
+| Rotación/Reflexión | Rough.js | ⭐⭐⭐⭐ 90% |
+| Homotecia (ampliación) | Rough.js | ⭐⭐⭐⭐ 90% |
 | Bloque en plano inclinado | Rough.js | ⭐⭐⭐⭐ 85% |
 | Modelo atómico de Bohr | Rough.js | ⭐⭐⭐⭐ 85% |
 | Fracción 3/4 visual | Chart.js | ⭐⭐⭐⭐ 90% |
 | Cubo con diagonales | Three.js | ⭐⭐⭐ 70% |
 
+### ⚠️ Cuándo usar SymPy
+
+| Situación | ¿Usar SymPy? | Razón |
+|-----------|--------------|-------|
+| Puntos notables de triángulo | ✅ SÍ | Cálculos de intersección exactos |
+| Tangentes a circunferencia | ✅ SÍ | Cálculos trigonométricos exactos |
+| Traslación de figura | ❌ NO | Fórmula directa: P' = P + v |
+| Rotación de figura | ❌ NO | Fórmula directa con sin/cos |
+| Reflexión | ❌ NO | Fórmula directa |
+| Homotecia | ❌ NO | Fórmula directa: P' = O + k(P - O) |
+
 ---
 
 ## 🚨 Reglas Críticas para Ilustraciones
 
-### Para Geometría Exacta
+### Para Circunferencias (CircleSpec)
 
 ```
-❌ PROHIBIDO:
-   • Escribir JSXGraph con coordenadas "a ojo"
-   • Usar funciones JSXGraph: circumcenter, incircle, incenter, perpendicularbisector
-   • Hardcodear coordenadas sin cálculo matemático
-
 ✅ OBLIGATORIO:
-   • Crear GeometrySpec JSON en specs/geometria/
-   • Ejecutar: python scripts/geometry/renderer.py --spec [archivo] --verify
-   • Enlazar SVG resultante: ![Alt](/images/geometria/...)
+   1. Crear spec JSON en specs/geometria/circulos/
+   2. Ejecutar: python3 scripts/geometry/circle_spec_renderer.py --spec [archivo] --output [svg]
+   3. Enlazar SVG: ![Alt](/images/geometria/circulos/...)
+
+📁 Referencia: .agent/workflows/circle-spec.md
+```
+
+### Para Triángulos (GeometrySpec)
+
+```
+✅ OBLIGATORIO:
+   1. Crear spec JSON en specs/geometria/triangulos/
+   2. Ejecutar: python3 scripts/geometry/renderer.py --spec [archivo] --verify
+   3. Enlazar SVG: ![Alt](/images/geometria/triangulos/...)
+
+📁 Referencia: .agent/workflows/geometry-exact.md
+```
+
+### Para Transformaciones Geométricas
+
+```
+✅ RECOMENDADO: Rough.js inline
+   • Mostrar figura ORIGINAL (azul) e IMAGEN (verde)
+   • Incluir correspondencia de puntos: A → A', B → B'
+   • Mostrar elemento de transformación: vector, centro, eje
+   • SymPy NO es necesario (fórmulas directas)
+
+📁 Referencia: .agent/workflows/roughjs.md
+```
+
+### ❌ PROHIBIDO en Geometría
+
+```
+❌ NUNCA:
+   • Escribir JSXGraph con coordenadas "a ojo"
+   • Usar funciones JSXGraph: circumcenter, incircle, incenter
+   • Hardcodear coordenadas sin cálculo matemático
+   • Generar SVG sin usar los renderers oficiales
 ```
 
 ### Para Ángulos en SVG (CRÍTICO)
@@ -543,17 +687,37 @@ Usar emojis consistentes:
 
 > **REGLA GENERAL:** Todo elemento visual debe verse bien en AMBOS modos.
 
-## Contenedores de Ilustraciones - CENTRADOS
+## Contenedores de Ilustraciones - RESPONSIVOS
 
-> ⚠️ **SIEMPRE centrar** los contenedores de ilustraciones.
+> ⚠️ **REGLA CRÍTICA:** Usar `width: 100%` en lugar de `max-width` fijo para SVGs.
+
+### Por qué NO usar max-width fijo
+
+El problema con `max-width: 500px` es que:
+1. Si el SVG tiene viewBox más ancho (ej: 750px), se comprime y deja espacio en blanco
+2. No se adapta a diferentes tamaños de pantalla
+3. Requiere conocer el tamaño exacto del SVG al escribir el markdown
+
+### Wrapper Correcto (RESPONSIVO)
 
 ```html
-<!-- ✅ CORRECTO: centrado con margin auto -->
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem auto; max-width: 500px;">
+<!-- ✅ CORRECTO: width 100% + box-sizing -->
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
 
-<!-- ❌ INCORRECTO: max-width sin centrar -->
+<!-- ❌ INCORRECTO: max-width fijo que no coincide con el SVG -->
 <div style="background: #f1f5f9; max-width: 500px;">
 ```
+
+### Cuándo usar max-width (casos especiales)
+
+Solo usar `max-width` cuando el SVG es pequeño y no debe crecer demasiado:
+
+| Tipo de SVG | viewBox | Contenedor |
+|-------------|---------|------------|
+| Simple (1 concepto) | 500x400 | `width: 100%` o `max-width: 550px` |
+| Compuesto (2-3 elementos) | 600x460 | `width: 100%` |
+| Horizontal (A - B = C) | 750x420 | `width: 100%` (NUNCA max-width pequeño) |
+| Múltiple (4+ elementos) | 750x450 | `width: 100%` |
 
 ## ✅ USAR (funcionan en ambos modos)
 
@@ -584,19 +748,22 @@ Controlan sus propios colores
 - Colores de texto sin especificar → dependen del tema
 - `border-left` con fondo claro sin color de texto explícito
 
-## Wrapper Estándar para Gráficos (CENTRADO)
+## Wrapper Estándar para Gráficos (RESPONSIVO)
 
 ```html
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem auto; max-width: 500px;">
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem;">
     <span style="font-size: 1rem;">📊</span>
     <strong style="color: #1e293b; font-size: 0.9rem; margin-left: 0.3rem;">Título</strong>
   </div>
-  
-  ![Descripción](/images/ruta/imagen.svg)
-  
+  <img src="/images/ruta/imagen.svg" alt="Descripción" style="width: 100%; height: auto;" />
 </div>
 ```
+
+> ⚠️ **CRÍTICO:** Dentro de bloques HTML (`<div>`), usar `<img>` en lugar de `![]()`
+> 
+> El markdown `![alt](src)` NO se procesa dentro de etiquetas HTML en Astro.
+> Siempre usar: `<img src="..." alt="..." style="width: 100%; height: auto;" />`
 
 ---
 
@@ -632,9 +799,11 @@ Controlan sus propios colores
 | Archivo | Contenido |
 |---------|-----------|
 | `.agent/workflows/content-generation.md` | Flujo de generación de lecciones |
+| `.agent/workflows/circle-spec.md` | **CircleSpec: circunferencias (SymPy)** |
+| `.agent/workflows/geometry-exact.md` | GeometrySpec: triángulos (SymPy) |
+| `.agent/workflows/cartesian-spec.md` | **CartesianSpec: geometría analítica** |
 | `.agent/workflows/echarts.md` | Funciones, datos, estadísticas |
-| `.agent/workflows/geometry-exact.md` | GeometrySpec: geometría exacta |
-| `.agent/workflows/roughjs.md` | Diagramas ilustrativos |
+| `.agent/workflows/roughjs.md` | Diagramas ilustrativos, transformaciones |
 | `.agent/workflows/chartjs.md` | Fracciones |
 | `.agent/workflows/threejs.md` | Geometría 3D |
 | `.agent/workflows/illustration-decision.md` | Árbol de decisión expandido |
@@ -768,6 +937,49 @@ angle_lado2 = math.atan2(P2.y - Vertice.y, P2.x - Vertice.x)
 **Causa:** `max-width` sin `margin: 0 auto`.
 
 **Solución:** Agregar `margin: 1.5rem auto` al estilo.
+
+## Error: SVG comprimido con espacio en blanco
+
+**Síntoma:** El SVG se ve "achatado" horizontalmente con espacio vacío a los lados.
+
+**Causa:** El contenedor tiene `max-width` menor que el viewBox del SVG.
+
+**Solución:** Usar `width: 100%; box-sizing: border-box;` en lugar de `max-width` fijo.
+
+```html
+<!-- ✅ CORRECTO -->
+<div style="... width: 100%; box-sizing: border-box;">
+
+<!-- ❌ INCORRECTO -->
+<div style="... max-width: 500px;">  <!-- Si el SVG tiene viewBox 750px -->
+```
+
+## Error: SVG con caracteres XML inválidos (RESUELTO AUTOMÁTICAMENTE)
+
+**Síntoma:** El SVG muestra error de parsing o solo se renderiza parcialmente.
+
+**Causa:** Caracteres `<`, `>`, `&` sin escapar en el texto del SVG.
+
+**Solución:** ✅ **AUTOMÁTICO** - El renderer escapa automáticamente estos caracteres.
+
+```python
+# En circle_renderer.py, text_element() y label_box() escapan automáticamente:
+# "d < r"      → se convierte a → "d &lt; r"
+# "d > R + r"  → se convierte a → "d &gt; R + r"
+
+# El código puede usar caracteres normales:
+positions = [
+    ("Interior", "d < r"),   # ✅ Funciona automáticamente
+    ("Exterior", "d > r"),   # ✅ Funciona automáticamente
+]
+```
+
+**Función de escape (ya integrada en el renderer):**
+```python
+def escape_svg_text(text):
+    """Escapa caracteres XML inválidos automáticamente."""
+    return text.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
+```
 
 ## Error: Fórmula poco vistosa
 

@@ -2,15 +2,15 @@
 style="font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;">
 <rect width="500" height="400" fill="#f8fafc"/>
 <text x="250.00" y="30.00" text-anchor="middle" font-size="18" font-weight="bold" fill="#8b5cf6">Diámetro</text>
-<circle cx="200" cy="175" r="110" fill="none" stroke="#3b82f6" stroke-width="2"/>
-<circle cx="200" cy="175" r="4" fill="#ef4444"/>
-<text x="208.00" y="167.00" text-anchor="start" font-size="12" font-weight="bold" fill="#ef4444">O</text>
-<line x1="104.74" y1="120.00" x2="295.26" y2="230.00" stroke="#8b5cf6" stroke-width="4"/>
-<circle cx="104.74" cy="120.00" r="5" fill="#8b5cf6"/>
-<circle cx="295.26" cy="230.00" r="5" fill="#8b5cf6"/>
-<text x="89.74" y="112.00" text-anchor="start" font-size="14" font-weight="bold" fill="#8b5cf6">A</text>
-<text x="303.26" y="235.00" text-anchor="start" font-size="14" font-weight="bold" fill="#8b5cf6">B</text>
-<text x="200.00" y="200.00" text-anchor="middle" font-size="14" font-weight="bold" fill="#8b5cf6">d = 2r</text>
-<rect x="40" y="305" width="320" height="35" rx="8" fill="#e0e7ff" stroke="#8b5cf6"/>
-<text x="200.0" y="326.5" text-anchor="middle" font-size="12" fill="#1e293b">Pasa por el centro. Es la cuerda más larga.</text>
+<circle cx="250" cy="175" r="110" fill="none" stroke="#3b82f6" stroke-width="2"/>
+<circle cx="250" cy="175" r="4" fill="#ef4444"/>
+<text x="258.00" y="167.00" text-anchor="start" font-size="12" font-weight="bold" fill="#ef4444">O</text>
+<line x1="154.74" y1="120.00" x2="345.26" y2="230.00" stroke="#8b5cf6" stroke-width="4"/>
+<circle cx="154.74" cy="120.00" r="5" fill="#8b5cf6"/>
+<circle cx="345.26" cy="230.00" r="5" fill="#8b5cf6"/>
+<text x="139.74" y="112.00" text-anchor="start" font-size="14" font-weight="bold" fill="#8b5cf6">A</text>
+<text x="353.26" y="235.00" text-anchor="start" font-size="14" font-weight="bold" fill="#8b5cf6">B</text>
+<text x="250.00" y="200.00" text-anchor="middle" font-size="14" font-weight="bold" fill="#8b5cf6">d = 2r</text>
+<rect x="90" y="305" width="320" height="35" rx="8" fill="#e0e7ff" stroke="#8b5cf6"/>
+<text x="250.0" y="326.5" text-anchor="middle" font-size="12" fill="#1e293b">Pasa por el centro. Es la cuerda más larga.</text>
 </svg>

@@ -19,6 +19,10 @@ Si conoces dos puntos por donde pasa una recta, puedes determinar completamente 
 | Primero calcular pendiente | $m = \dfrac{y_2 - y_1}{x_2 - x_1}$, luego usar punto-pendiente |
 | Fórmula directa | $\dfrac{y - y_1}{y_2 - y_1} = \dfrac{x - x_1}{x_2 - x_1}$ |
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/geometria/analitica/recta-dos-puntos.svg" alt="Recta por dos puntos" style="width: 100%; height: auto;" />
+</div>
+
 ---
 
 ## 📖 Método 1: Pendiente + Punto-Pendiente

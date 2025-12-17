@@ -20,6 +20,10 @@ El punto medio divide un segmento en dos partes **iguales**, pero ¿qué pasa si
 | Punto $P$ que divide $\overline{AB}$ en razón $m:n$ | $P = \left(\dfrac{mx_2 + nx_1}{m + n}, \dfrac{my_2 + ny_1}{m + n}\right)$ |
 | Caso especial: Punto medio | Cuando $m = n = 1$, $r = 1:1$ |
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/geometria/analitica/division-segmento.svg" alt="División de un segmento en razón dada" style="width: 100%; height: auto;" />
+</div>
+
 ---
 
 ## 📖 Concepto de Razón

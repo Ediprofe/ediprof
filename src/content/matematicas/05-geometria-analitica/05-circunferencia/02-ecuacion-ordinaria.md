@@ -14,6 +14,10 @@ La **ecuación ordinaria** (o canónica) de la circunferencia es la forma más d
 
 ## 📖 Lo Esencial de Ecuación Ordinaria
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/geometria/analitica/ecuacion-ordinaria-circ.svg" alt="Ecuación ordinaria de la circunferencia" style="width: 100%; height: auto;" />
+</div>
+
 | Situación | Ecuación |
 |-----------|----------|
 | Centro $(h, k)$, radio $r$ | $(x - h)^2 + (y - k)^2 = r^2$ |

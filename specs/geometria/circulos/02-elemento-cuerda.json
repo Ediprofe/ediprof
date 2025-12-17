@@ -1,0 +1,20 @@
+{
+  "tipo": "elemento-cuerda",
+  "titulo": "Cuerda",
+  "titulo_color": "#22c55e",
+  "canvas": "simple",
+  "circunferencia": {
+    "centro": [250, 175],
+    "radio": 110
+  },
+  "elemento": {
+    "angulo1": 120,
+    "angulo2": 30,
+    "color": "#22c55e"
+  },
+  "leyenda": {
+    "texto": "Extremos en la circunferencia (no pasa por O)",
+    "color": "#22c55e",
+    "bg_color": "#dcfce7"
+  }
+}

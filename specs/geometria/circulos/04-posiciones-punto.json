@@ -1,0 +1,25 @@
+{
+  "tipo": "posiciones-punto",
+  "titulo": "Posiciones de un Punto",
+  "canvas": "horizontal",
+  "posiciones": [
+    {
+      "tipo": "interior",
+      "etiqueta": "Interior",
+      "formula": "d < r",
+      "color": "#22c55e"
+    },
+    {
+      "tipo": "sobre",
+      "etiqueta": "Sobre la circ.",
+      "formula": "d = r",
+      "color": "#3b82f6"
+    },
+    {
+      "tipo": "exterior",
+      "etiqueta": "Exterior",
+      "formula": "d > r",
+      "color": "#ec4899"
+    }
+  ]
+}

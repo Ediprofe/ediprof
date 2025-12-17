@@ -2,6 +2,92 @@
 
 El **perímetro** y el **área** son dos medidas fundamentales de las figuras geométricas. Aunque pueden confundirse, miden cosas muy diferentes.
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <canvas id="roughjs-perimetro-area" width="700" height="300" style="width: 100%; height: auto; display: block;"></canvas>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof rough !== 'undefined' && document.getElementById('roughjs-perimetro-area')) {
+    var canvas = document.getElementById('roughjs-perimetro-area');
+    var rc = rough.canvas(canvas);
+    var ctx = canvas.getContext('2d');
+    
+    ctx.font = 'bold 16px Inter, sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.textAlign = 'center';
+    ctx.fillText('Perímetro vs Área', 350, 25);
+    
+    var azul = '#3b82f6';
+    var verde = '#22c55e';
+    
+    // === PERÍMETRO (izquierda) ===
+    ctx.font = 'bold 14px Inter, sans-serif';
+    ctx.fillStyle = azul;
+    ctx.fillText('PERÍMETRO', 175, 55);
+    ctx.font = '12px Inter, sans-serif';
+    ctx.fillStyle = '#64748b';
+    ctx.fillText('= Longitud del contorno', 175, 72);
+    
+    // Rectángulo con borde grueso (perímetro)
+    rc.rectangle(75, 90, 200, 120, {fill: 'transparent', stroke: azul, strokeWidth: 6, roughness: 0.5});
+    
+    // Etiquetas de lados
+    ctx.font = 'bold 12px Inter, sans-serif';
+    ctx.fillStyle = azul;
+    ctx.fillText('5 m', 175, 85);
+    ctx.fillText('5 m', 175, 225);
+    ctx.fillText('3 m', 60, 150);
+    ctx.fillText('3 m', 290, 150);
+    
+    // Fórmula
+    ctx.font = '13px Inter, sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.fillText('P = 5 + 3 + 5 + 3 = 16 m', 175, 255);
+    
+    // Analogía
+    ctx.font = '11px Inter, sans-serif';
+    ctx.fillStyle = '#64748b';
+    ctx.fillText('📏 Como la cerca del jardín', 175, 280);
+    
+    // === ÁREA (derecha) ===
+    ctx.font = 'bold 14px Inter, sans-serif';
+    ctx.fillStyle = verde;
+    ctx.textAlign = 'center';
+    ctx.fillText('ÁREA', 525, 55);
+    ctx.font = '12px Inter, sans-serif';
+    ctx.fillStyle = '#64748b';
+    ctx.fillText('= Superficie interior', 525, 72);
+    
+    // Rectángulo relleno (área)
+    rc.rectangle(425, 90, 200, 120, {fill: '#dcfce7', fillStyle: 'solid', stroke: verde, strokeWidth: 2, roughness: 0.5});
+    
+    // Cuadrícula interior para mostrar unidades cuadradas
+    for (var i = 0; i < 5; i++) {
+      for (var j = 0; j < 3; j++) {
+        rc.rectangle(425 + i*40, 90 + j*40, 40, 40, {stroke: '#86efac', strokeWidth: 1, roughness: 0.2});
+      }
+    }
+    
+    // Etiquetas
+    ctx.font = 'bold 12px Inter, sans-serif';
+    ctx.fillStyle = verde;
+    ctx.fillText('5 m', 525, 85);
+    ctx.fillText('3 m', 410, 150);
+    
+    // Fórmula
+    ctx.font = '13px Inter, sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.fillText('A = 5 × 3 = 15 m²', 525, 255);
+    
+    // Analogía
+    ctx.font = '11px Inter, sans-serif';
+    ctx.fillStyle = '#64748b';
+    ctx.fillText('🌿 Como el césped del jardín', 525, 280);
+  }
+});
+</script>
+
 ---
 
 ## 📖 ¿Qué es el perímetro?

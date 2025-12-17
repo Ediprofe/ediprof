@@ -20,6 +20,10 @@ Dos rectas en el plano pueden tener relaciones especiales. Las **rectas paralela
 | **Perpendiculares** | Pendientes inversas y opuestas | $m_1 \cdot m_2 = -1$ |
 | **Perpendiculares** (alternativa) | Una es inversa negativa de la otra | $m_2 = -\dfrac{1}{m_1}$ |
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/geometria/analitica/paralelas-perpendiculares.svg" alt="Rectas paralelas y perpendiculares" style="width: 100%; height: auto;" />
+</div>
+
 ---
 
 ## 📖 Rectas Paralelas

@@ -2,6 +2,70 @@
 
 El triángulo es una de las figuras más importantes en geometría. Su área tiene varias fórmulas dependiendo de la información disponible.
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <canvas id="roughjs-triangulo-area" width="700" height="280" style="width: 100%; height: auto; display: block;"></canvas>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof rough !== 'undefined' && document.getElementById('roughjs-triangulo-area')) {
+    var canvas = document.getElementById('roughjs-triangulo-area');
+    var rc = rough.canvas(canvas);
+    var ctx = canvas.getContext('2d');
+    
+    ctx.font = 'bold 16px Inter, sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.textAlign = 'center';
+    ctx.fillText('Área del Triángulo: A = (b × h) / 2', 350, 25);
+    
+    var azul = '#3b82f6';
+    var verde = '#22c55e';
+    var rojo = '#ef4444';
+    
+    // Triángulo
+    var A = [100, 220];
+    var B = [350, 220];
+    var C = [200, 80];
+    rc.polygon([A, B, C], {fill: '#dbeafe', fillStyle: 'solid', stroke: azul, strokeWidth: 2.5, roughness: 0.5});
+    
+    // Base (resaltada)
+    rc.line(A[0], A[1], B[0], B[1], {stroke: verde, strokeWidth: 4, roughness: 0.3});
+    ctx.font = 'bold 14px Inter, sans-serif';
+    ctx.fillStyle = verde;
+    ctx.fillText('b (base)', 225, 245);
+    
+    // Altura (perpendicular)
+    rc.line(200, 220, 200, 80, {stroke: rojo, strokeWidth: 3, roughness: 0.3});
+    // Símbolo de ángulo recto
+    rc.rectangle(200, 205, 15, 15, {stroke: rojo, strokeWidth: 1.5, roughness: 0.2});
+    ctx.fillStyle = rojo;
+    ctx.fillText('h', 185, 150);
+    ctx.font = '11px Inter, sans-serif';
+    ctx.fillText('(altura)', 175, 165);
+    
+    // Etiquetas de vértices
+    ctx.font = 'bold 12px Inter, sans-serif';
+    ctx.fillStyle = azul;
+    ctx.fillText('A', A[0]-15, A[1]+5);
+    ctx.fillText('B', B[0]+15, B[1]+5);
+    ctx.fillText('C', C[0], C[1]-10);
+    
+    // Fórmula en recuadro
+    rc.rectangle(420, 80, 250, 120, {fill: '#f1f5f9', stroke: '#cbd5e1', roughness: 0.3});
+    ctx.font = 'bold 14px Inter, sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.textAlign = 'center';
+    ctx.fillText('Fórmula del Área', 545, 105);
+    ctx.font = '20px Inter, sans-serif';
+    ctx.fillText('A = b × h / 2', 545, 140);
+    ctx.font = '12px Inter, sans-serif';
+    ctx.fillStyle = '#64748b';
+    ctx.fillText('La altura es PERPENDICULAR', 545, 170);
+    ctx.fillText('a la base', 545, 185);
+  }
+});
+</script>
+
 ---
 
 ## 📖 Perímetro del triángulo

@@ -2,6 +2,119 @@
 
 Las **transformaciones geométricas** son operaciones que cambian la posición, tamaño u orientación de las figuras en el plano, preservando ciertas propiedades.
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <canvas id="roughjs-intro-panorama" width="800" height="350" style="width: 100%; height: auto; display: block;"></canvas>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof rough !== 'undefined' && document.getElementById('roughjs-intro-panorama')) {
+    var canvas = document.getElementById('roughjs-intro-panorama');
+    var rc = rough.canvas(canvas);
+    var ctx = canvas.getContext('2d');
+    
+    ctx.font = 'bold 16px Inter, sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.textAlign = 'center';
+    ctx.fillText('Las 4 Transformaciones Principales', 400, 25);
+    
+    // Colores
+    var azul = '#3b82f6';
+    var verde = '#22c55e';
+    var rojo = '#ef4444';
+    var morado = '#a855f7';
+    
+    // 1. TRASLACIÓN (arriba izquierda)
+    ctx.font = 'bold 13px Inter, sans-serif';
+    ctx.fillStyle = azul;
+    ctx.fillText('TRASLACIÓN', 120, 60);
+    
+    // Triángulo original
+    rc.polygon([[60,120], [100,120], [80,80]], {fill: '#dbeafe', stroke: azul, strokeWidth: 2, roughness: 0.5});
+    // Flecha
+    rc.line(110, 100, 150, 100, {stroke: '#64748b', strokeWidth: 2, roughness: 0.3});
+    ctx.font = '12px Inter, sans-serif';
+    ctx.fillStyle = '#64748b';
+    ctx.fillText('→', 155, 104);
+    // Triángulo imagen
+    rc.polygon([[140,120], [180,120], [160,80]], {fill: '#dcfce7', stroke: verde, strokeWidth: 2, roughness: 0.5});
+    ctx.font = '11px Inter, sans-serif';
+    ctx.fillStyle = '#64748b';
+    ctx.textAlign = 'center';
+    ctx.fillText('Misma dirección', 120, 145);
+    ctx.fillText('y distancia', 120, 160);
+    
+    // 2. ROTACIÓN (arriba derecha)
+    ctx.font = 'bold 13px Inter, sans-serif';
+    ctx.fillStyle = rojo;
+    ctx.textAlign = 'center';
+    ctx.fillText('ROTACIÓN', 320, 60);
+    
+    // Triángulo original
+    rc.polygon([[280,120], [320,120], [300,80]], {fill: '#dbeafe', stroke: azul, strokeWidth: 2, roughness: 0.5});
+    // Centro de rotación
+    rc.circle(300, 120, 8, {fill: rojo, stroke: rojo, roughness: 0.3});
+    // Arco de rotación
+    rc.arc(300, 120, 60, 60, -Math.PI/2, 0, false, {stroke: rojo, strokeWidth: 1.5, roughness: 0.3});
+    // Triángulo rotado
+    rc.polygon([[300,100], [300,140], [340,120]], {fill: '#dcfce7', stroke: verde, strokeWidth: 2, roughness: 0.5});
+    ctx.font = '11px Inter, sans-serif';
+    ctx.fillStyle = '#64748b';
+    ctx.fillText('Giro alrededor', 320, 155);
+    ctx.fillText('de un centro', 320, 170);
+    
+    // 3. REFLEXIÓN (abajo izquierda)
+    ctx.font = 'bold 13px Inter, sans-serif';
+    ctx.fillStyle = morado;
+    ctx.fillText('REFLEXIÓN', 520, 60);
+    
+    // Eje de simetría
+    rc.line(520, 70, 520, 150, {stroke: morado, strokeWidth: 2, roughness: 0.3});
+    ctx.font = '10px Inter, sans-serif';
+    ctx.fillStyle = morado;
+    ctx.fillText('eje', 535, 80);
+    // Triángulo original
+    rc.polygon([[470,120], [510,120], [490,80]], {fill: '#dbeafe', stroke: azul, strokeWidth: 2, roughness: 0.5});
+    // Triángulo reflejado
+    rc.polygon([[530,120], [570,120], [550,80]], {fill: '#dcfce7', stroke: verde, strokeWidth: 2, roughness: 0.5});
+    ctx.font = '11px Inter, sans-serif';
+    ctx.fillStyle = '#64748b';
+    ctx.fillText('Imagen espejo', 520, 165);
+    
+    // 4. HOMOTECIA (abajo derecha)
+    ctx.font = 'bold 13px Inter, sans-serif';
+    ctx.fillStyle = '#f59e0b';
+    ctx.fillText('HOMOTECIA', 720, 60);
+    
+    // Centro
+    rc.circle(680, 130, 8, {fill: '#f59e0b', stroke: '#f59e0b', roughness: 0.3});
+    ctx.font = '10px Inter, sans-serif';
+    ctx.fillStyle = '#f59e0b';
+    ctx.fillText('O', 668, 135);
+    // Triángulo pequeño (original)
+    rc.polygon([[700,130], [720,130], [710,110]], {fill: '#dbeafe', stroke: azul, strokeWidth: 2, roughness: 0.5});
+    // Triángulo grande (imagen)
+    rc.polygon([[720,140], [760,140], [740,100]], {fill: '#dcfce7', stroke: verde, strokeWidth: 2, roughness: 0.5});
+    ctx.font = '11px Inter, sans-serif';
+    ctx.fillStyle = '#64748b';
+    ctx.textAlign = 'center';
+    ctx.fillText('Ampliación o', 720, 160);
+    ctx.fillText('reducción', 720, 175);
+    
+    // Leyenda
+    ctx.font = '12px Inter, sans-serif';
+    ctx.textAlign = 'left';
+    rc.rectangle(250, 200, 300, 60, {fill: '#f1f5f9', stroke: '#cbd5e1', roughness: 0.3});
+    ctx.fillStyle = azul;
+    ctx.fillText('■ Original', 270, 225);
+    ctx.fillStyle = verde;
+    ctx.fillText('■ Imagen', 370, 225);
+    ctx.fillStyle = '#64748b';
+    ctx.fillText('Las isometrías conservan tamaño y forma', 270, 245);
+  }
+});
+</script>
+
 ---
 
 ## 📖 ¿Qué es una transformación geométrica?

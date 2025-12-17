@@ -21,6 +21,10 @@ En geometría euclidiana estudiamos las rectas notables de un triángulo (median
 | **Mediatriz** | Perpendicular al lado por su punto medio | Circuncentro (O) |
 | **Bisectriz** | Divide ángulo en dos partes iguales | Incentro (I) |
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/geometria/analitica/rectas-notables.svg" alt="Rectas notables del triángulo" style="width: 100%; height: auto;" />
+</div>
+
 ---
 
 ## 📖 Medianas y Baricentro
@@ -79,6 +83,10 @@ $$
 
 ## 📖 Alturas y Ortocentro
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/geometria/analitica/alturas-ortocentro.svg" alt="Alturas y ortocentro" style="width: 100%; height: auto;" />
+</div>
+
 ### Definición
 Una **altura** es el segmento perpendicular desde un vértice al lado opuesto (o su prolongación).
 
@@ -133,6 +141,10 @@ El **ortocentro** $H$ es la intersección de las tres alturas. Se calcula encont
 ---
 
 ## 📖 Mediatrices y Circuncentro
+
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/geometria/analitica/mediatrices-circuncentro.svg" alt="Mediatrices y circuncentro" style="width: 100%; height: auto;" />
+</div>
 
 ### Definición
 Una **mediatriz** es la recta perpendicular a un lado que pasa por su punto medio.

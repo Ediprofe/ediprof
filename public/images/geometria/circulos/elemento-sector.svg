@@ -2,19 +2,19 @@
 style="font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;">
 <rect width="500" height="400" fill="#f8fafc"/>
 <text x="250.00" y="30.00" text-anchor="middle" font-size="18" font-weight="bold" fill="#f97316">Sector Circular</text>
-<circle cx="200" cy="180" r="110" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4"/>
-<path d="M 200 180 L 303.37 142.38 A 110 110 0 0 0 180.90 71.67 Z" fill="#fef3c7" stroke="#f97316" stroke-width="3"/>
-<circle cx="200" cy="180" r="5" fill="#ef4444"/>
-<text x="182.00" y="185.00" text-anchor="start" font-size="14" font-weight="bold" fill="#ef4444">O</text>
-<circle cx="180.90" cy="71.67" r="4" fill="#1e293b"/>
-<circle cx="303.37" cy="142.38" r="4" fill="#1e293b"/>
-<text x="175.90" y="59.67" text-anchor="start" font-size="12" font-weight="bold" fill="#1e293b">A</text>
-<text x="311.37" y="142.38" text-anchor="start" font-size="12" font-weight="bold" fill="#1e293b">B</text>
-<path d="M 228.19 169.74 A 30 30 0 0 0 194.79 150.46" fill="none" stroke="#f97316" stroke-width="2"/>
-<text x="240.00" y="155.00" text-anchor="start" font-size="14" font-weight="bold" fill="#f97316">θ</text>
-<text x="230.00" y="130.00" text-anchor="start" font-size="11" font-weight="normal" fill="#f97316">Arco</text>
-<text x="150.00" y="140.00" text-anchor="start" font-size="11" font-weight="normal" fill="#ef4444">Radio</text>
-<rect x="30" y="320" width="340" height="50" rx="8" fill="#fef3c7" stroke="#f97316"/>
-<text x="200.0" y="349.0" text-anchor="middle" font-size="12" fill="#1e293b">Limitado por 2 RADIOS + ARCO</text>
+<circle cx="250" cy="175" r="110" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4"/>
+<path d="M 250 175 L 353.37 137.38 A 110 110 0 0 0 230.90 66.67 Z" fill="#fef3c7" stroke="#f97316" stroke-width="3"/>
+<circle cx="250" cy="175" r="5" fill="#ef4444"/>
+<text x="232.00" y="180.00" text-anchor="start" font-size="14" font-weight="bold" fill="#ef4444">O</text>
+<circle cx="230.90" cy="66.67" r="4" fill="#1e293b"/>
+<circle cx="353.37" cy="137.38" r="4" fill="#1e293b"/>
+<text x="225.90" y="54.67" text-anchor="start" font-size="12" font-weight="bold" fill="#1e293b">A</text>
+<text x="361.37" y="137.38" text-anchor="start" font-size="12" font-weight="bold" fill="#1e293b">B</text>
+<path d="M 278.19 164.74 A 30 30 0 0 0 244.79 145.46" fill="none" stroke="#f97316" stroke-width="2"/>
+<text x="290.00" y="150.00" text-anchor="start" font-size="14" font-weight="bold" fill="#f97316">θ</text>
+<text x="280.00" y="125.00" text-anchor="start" font-size="11" font-weight="normal" fill="#f97316">Arco</text>
+<text x="200.00" y="135.00" text-anchor="start" font-size="11" font-weight="normal" fill="#ef4444">Radio</text>
+<rect x="80" y="320" width="340" height="50" rx="8" fill="#fef3c7" stroke="#f97316"/>
+<text x="250.0" y="349.0" text-anchor="middle" font-size="12" fill="#1e293b">Limitado por 2 RADIOS + ARCO</text>
 <text x="250.00" y="355.00" text-anchor="middle" font-size="10" font-weight="normal" fill="#94a3b8">(Como una "rebanada de pizza")</text>
 </svg>

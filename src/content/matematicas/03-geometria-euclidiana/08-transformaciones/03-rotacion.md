@@ -2,6 +2,116 @@
 
 La **rotación** es el movimiento circular alrededor de un punto fijo. Es como girar una figura sobre un eje.
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <canvas id="roughjs-rotacion-1" width="700" height="350" style="width: 100%; height: auto; display: block;"></canvas>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof rough !== 'undefined' && document.getElementById('roughjs-rotacion-1')) {
+    var canvas = document.getElementById('roughjs-rotacion-1');
+    var rc = rough.canvas(canvas);
+    var ctx = canvas.getContext('2d');
+    
+    ctx.font = 'bold 16px Inter, sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.textAlign = 'center';
+    ctx.fillText('Rotación de 90° (antihorario)', 350, 25);
+    
+    var azul = '#3b82f6';
+    var verde = '#22c55e';
+    var rojo = '#ef4444';
+    
+    // Centro de rotación (más visible y central)
+    var cx = 300, cy = 180;
+    
+    // Centro de rotación - MÁS GRANDE Y VISIBLE
+    rc.circle(cx, cy, 16, {fill: rojo, stroke: rojo, roughness: 0.3});
+    ctx.font = 'bold 14px Inter, sans-serif';
+    ctx.fillStyle = '#fff';
+    ctx.textAlign = 'center';
+    ctx.fillText('O', cx, cy+5);
+    
+    // Triángulo ORIGINAL (azul) - CERCA del centro, tocando casi el centro
+    // Un vértice cerca del centro para mostrar claramente la rotación
+    var A = [cx+40, cy+10];
+    var B = [cx+100, cy+10];
+    var C = [cx+70, cy-50];
+    rc.polygon([A, B, C], {fill: '#dbeafe', stroke: azul, strokeWidth: 2.5, roughness: 0.5});
+    
+    // Etiquetas originales
+    ctx.font = 'bold 12px Inter, sans-serif';
+    ctx.fillStyle = azul;
+    ctx.textAlign = 'center';
+    ctx.fillText('A', A[0], A[1]+18);
+    ctx.fillText('B', B[0]+12, B[1]+5);
+    ctx.fillText('C', C[0]+12, C[1]-5);
+    
+    // Rotación 90° antihorario alrededor de O
+    // En SVG (Y hacia abajo): antihorario visual = (dx,dy) -> (dy, -dx)
+    function rotar90(p) {
+      var dx = p[0] - cx;
+      var dy = p[1] - cy;
+      return [cx + dy, cy - dx];
+    }
+    var Ap = rotar90(A);
+    var Bp = rotar90(B);
+    var Cp = rotar90(C);
+    rc.polygon([Ap, Bp, Cp], {fill: '#dcfce7', stroke: verde, strokeWidth: 2.5, roughness: 0.5});
+    
+    // Etiquetas imagen
+    ctx.fillStyle = verde;
+    ctx.fillText("A'", Ap[0]+5, Ap[1]-10);
+    ctx.fillText("B'", Bp[0]+5, Bp[1]-10);
+    ctx.fillText("C'", Cp[0]-15, Cp[1]+5);
+    
+    // Líneas radiales desde O a los vértices (para mostrar que giran alrededor de O)
+    rc.line(cx, cy, A[0], A[1], {stroke: '#94a3b8', strokeWidth: 1, roughness: 0.2});
+    rc.line(cx, cy, Ap[0], Ap[1], {stroke: '#94a3b8', strokeWidth: 1, roughness: 0.2});
+    
+    // Arco de rotación desde A hasta A'
+    var radioA = Math.sqrt(Math.pow(A[0]-cx, 2) + Math.pow(A[1]-cy, 2));
+    var anguloA = Math.atan2(A[1]-cy, A[0]-cx);
+    var anguloAp = Math.atan2(Ap[1]-cy, Ap[0]-cx);
+    rc.arc(cx, cy, radioA*2, radioA*2, anguloAp, anguloA, false, {stroke: rojo, strokeWidth: 2.5, roughness: 0.3});
+    
+    // Flecha en el arco
+    ctx.fillStyle = rojo;
+    ctx.beginPath();
+    ctx.moveTo(Ap[0]-5, Ap[1]+5);
+    ctx.lineTo(Ap[0]+5, Ap[1]);
+    ctx.lineTo(Ap[0]-2, Ap[1]-8);
+    ctx.fill();
+    
+    // Etiqueta del ángulo
+    ctx.font = 'bold 16px Inter, sans-serif';
+    ctx.fillStyle = rojo;
+    ctx.textAlign = 'center';
+    ctx.fillText('90°', cx+60, cy-70);
+    
+    // Nota explicativa
+    ctx.font = '12px Inter, sans-serif';
+    ctx.fillStyle = '#64748b';
+    ctx.textAlign = 'center';
+    ctx.fillText('Cada punto gira 90° alrededor de O', 350, 280);
+    ctx.fillText('manteniendo la misma distancia al centro', 350, 296);
+    
+    // Leyenda
+    rc.rectangle(450, 120, 180, 90, {fill: '#f1f5f9', stroke: '#cbd5e1', roughness: 0.3});
+    ctx.font = '12px Inter, sans-serif';
+    ctx.textAlign = 'left';
+    ctx.fillStyle = azul;
+    ctx.fillText('■ Original', 470, 145);
+    ctx.fillStyle = verde;
+    ctx.fillText('■ Imagen', 470, 165);
+    ctx.fillStyle = rojo;
+    ctx.fillText('● Centro O', 470, 185);
+    ctx.fillStyle = '#64748b';
+    ctx.fillText('↺ Arco 90°', 470, 200);
+  }
+});
+</script>
+
 ---
 
 ## 📖 Definición

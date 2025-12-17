@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 480">
+  <defs>
+        <marker id="arrow-64748b" markerWidth="10" markerHeight="10" 
+                refX="8" refY="5.0" orient="auto">
+            <polygon points="0,0 10,5.0 0,10" fill="#64748b"/>
+        </marker></defs>
+  <rect x="0.00" y="0.00" width="600.00" height="480.00" fill="#ffffff" stroke="none" stroke-width="0" rx="0"/>
+  <text x="300.00" y="25.00" font-family="Inter, sans-serif" font-size="15" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Comparación por Valor Absoluto</text>
+  <line x1="50.00" y1="430.00" x2="50.00" y2="50.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="112.50" y1="430.00" x2="112.50" y2="50.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="175.00" y1="430.00" x2="175.00" y2="50.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="237.50" y1="430.00" x2="237.50" y2="50.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="362.50" y1="430.00" x2="362.50" y2="50.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="425.00" y1="430.00" x2="425.00" y2="50.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="487.50" y1="430.00" x2="487.50" y2="50.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="550.00" y1="430.00" x2="550.00" y2="50.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="50.00" y1="430.00" x2="550.00" y2="430.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="50.00" y1="392.00" x2="550.00" y2="392.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="50.00" y1="354.00" x2="550.00" y2="354.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="50.00" y1="316.00" x2="550.00" y2="316.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="50.00" y1="278.00" x2="550.00" y2="278.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="50.00" y1="202.00" x2="550.00" y2="202.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="50.00" y1="164.00" x2="550.00" y2="164.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="50.00" y1="126.00" x2="550.00" y2="126.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="50.00" y1="88.00" x2="550.00" y2="88.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="50.00" y1="50.00" x2="550.00" y2="50.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="50.00" y1="240.00" x2="550.00" y2="240.00" stroke="#64748b" stroke-width="2"  marker-end="url(#arrow-64748b)"/>
+  <line x1="300.00" y1="430.00" x2="300.00" y2="50.00" stroke="#64748b" stroke-width="2"  marker-end="url(#arrow-64748b)"/>
+  <text x="545.00" y="260.00" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#64748b" text-anchor="middle" dominant-baseline="middle">x</text>
+  <text x="280.00" y="60.00" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#64748b" text-anchor="middle" dominant-baseline="middle">y</text>
+  <line x1="50.00" y1="235.00" x2="50.00" y2="245.00" stroke="#64748b" stroke-width="1"  />
+  <text x="50.00" y="258.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">-4</text>
+  <line x1="112.50" y1="235.00" x2="112.50" y2="245.00" stroke="#64748b" stroke-width="1"  />
+  <text x="112.50" y="258.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">-3</text>
+  <line x1="175.00" y1="235.00" x2="175.00" y2="245.00" stroke="#64748b" stroke-width="1"  />
+  <text x="175.00" y="258.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">-2</text>
+  <line x1="237.50" y1="235.00" x2="237.50" y2="245.00" stroke="#64748b" stroke-width="1"  />
+  <text x="237.50" y="258.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">-1</text>
+  <line x1="362.50" y1="235.00" x2="362.50" y2="245.00" stroke="#64748b" stroke-width="1"  />
+  <text x="362.50" y="258.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">1</text>
+  <line x1="425.00" y1="235.00" x2="425.00" y2="245.00" stroke="#64748b" stroke-width="1"  />
+  <text x="425.00" y="258.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">2</text>
+  <line x1="487.50" y1="235.00" x2="487.50" y2="245.00" stroke="#64748b" stroke-width="1"  />
+  <text x="487.50" y="258.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">3</text>
+  <line x1="550.00" y1="235.00" x2="550.00" y2="245.00" stroke="#64748b" stroke-width="1"  />
+  <text x="550.00" y="258.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">4</text>
+  <line x1="295.00" y1="430.00" x2="305.00" y2="430.00" stroke="#64748b" stroke-width="1"  />
+  <text x="285.00" y="430.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="end" dominant-baseline="middle">-5</text>
+  <line x1="295.00" y1="392.00" x2="305.00" y2="392.00" stroke="#64748b" stroke-width="1"  />
+  <text x="285.00" y="392.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="end" dominant-baseline="middle">-4</text>
+  <line x1="295.00" y1="354.00" x2="305.00" y2="354.00" stroke="#64748b" stroke-width="1"  />
+  <text x="285.00" y="354.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="end" dominant-baseline="middle">-3</text>
+  <line x1="295.00" y1="316.00" x2="305.00" y2="316.00" stroke="#64748b" stroke-width="1"  />
+  <text x="285.00" y="316.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="end" dominant-baseline="middle">-2</text>
+  <line x1="295.00" y1="278.00" x2="305.00" y2="278.00" stroke="#64748b" stroke-width="1"  />
+  <text x="285.00" y="278.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="end" dominant-baseline="middle">-1</text>
+  <line x1="295.00" y1="202.00" x2="305.00" y2="202.00" stroke="#64748b" stroke-width="1"  />
+  <text x="285.00" y="202.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="end" dominant-baseline="middle">1</text>
+  <line x1="295.00" y1="164.00" x2="305.00" y2="164.00" stroke="#64748b" stroke-width="1"  />
+  <text x="285.00" y="164.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="end" dominant-baseline="middle">2</text>
+  <line x1="295.00" y1="126.00" x2="305.00" y2="126.00" stroke="#64748b" stroke-width="1"  />
+  <text x="285.00" y="126.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="end" dominant-baseline="middle">3</text>
+  <line x1="295.00" y1="88.00" x2="305.00" y2="88.00" stroke="#64748b" stroke-width="1"  />
+  <text x="285.00" y="88.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="end" dominant-baseline="middle">4</text>
+  <line x1="295.00" y1="50.00" x2="305.00" y2="50.00" stroke="#64748b" stroke-width="1"  />
+  <text x="285.00" y="50.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="end" dominant-baseline="middle">5</text>
+  <text x="288.00" y="255.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">O</text>
+  <line x1="50.00" y1="285.60" x2="550.00" y2="194.40" stroke="#22c55e" stroke-width="2.5"  />
+  <text x="492.50" y="195.80" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#22c55e" text-anchor="start" dominant-baseline="middle">|m| = 0.3 (suave)</text>
+  <line x1="50.00" y1="392.00" x2="550.00" y2="88.00" stroke="#f59e0b" stroke-width="2.5"  />
+  <text x="523.75" y="97.00" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#f59e0b" text-anchor="start" dominant-baseline="middle">|m| = 1 (45°)</text>
+  <line x1="206.25" y1="411.00" x2="393.75" y2="69.00" stroke="#ef4444" stroke-width="2.5"  />
+  <text x="380.00" y="93.20" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#ef4444" text-anchor="start" dominant-baseline="middle">|m| = 3 (empinada)</text>
+  <rect x="20.00" y="400.00" width="200.00" height="65.00" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0" rx="8"/>
+  <text x="120.00" y="420.00" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Mayor |m| = más empinada</text>
+  <line x1="30.00" y1="440.00" x2="60.00" y2="440.00" stroke="#22c55e" stroke-width="3"  />
+  <text x="70.00" y="440.00" font-family="Inter, sans-serif" font-size="10" font-weight="normal" fill="#22c55e" text-anchor="start" dominant-baseline="middle">Suave</text>
+  <line x1="110.00" y1="440.00" x2="140.00" y2="440.00" stroke="#f59e0b" stroke-width="3"  />
+  <text x="150.00" y="440.00" font-family="Inter, sans-serif" font-size="10" font-weight="normal" fill="#f59e0b" text-anchor="start" dominant-baseline="middle">45°</text>
+  <line x1="30.00" y1="455.00" x2="60.00" y2="455.00" stroke="#ef4444" stroke-width="3"  />
+  <text x="70.00" y="455.00" font-family="Inter, sans-serif" font-size="10" font-weight="normal" fill="#ef4444" text-anchor="start" dominant-baseline="middle">Empinada</text>
+</svg>

@@ -21,6 +21,10 @@ En geometría analítica, queremos describir figuras geométricas usando ecuacio
 | Puntos a distancia fija de una recta | Rectas paralelas | — |
 | Puntos a igual distancia de los ejes | Bisectrices | $y = x$ o $y = -x$ |
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/geometria/analitica/lugar-circunferencia.svg" alt="Circunferencia como lugar geométrico" style="width: 100%; height: auto;" />
+</div>
+
 ---
 
 ## 📖 Definición de Lugar Geométrico

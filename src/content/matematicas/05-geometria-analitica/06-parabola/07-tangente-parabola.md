@@ -14,6 +14,10 @@ La tangente a una parábola en un punto tiene propiedades especiales relacionada
 
 ## 📖 Lo Esencial
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/geometria/analitica/tangente-parabola.svg" alt="Tangente a la parábola" style="width: 100%; height: auto;" />
+</div>
+
 | Parábola | Tangente en $(x_0, y_0)$ |
 |----------|-------------------------|
 | $x^2 = 4py$ | $x_0 x = 2p(y + y_0)$ |

@@ -22,6 +22,10 @@ Hasta ahora hemos aprendido a analizar ecuaciones dadas. Pero, ¿cómo construim
 | 4 | Simplifica hasta obtener la forma estándar |
 | 5 | Verifica con puntos conocidos |
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/geometria/analitica/mediatriz.svg" alt="Mediatriz como lugar geométrico" style="width: 100%; height: auto;" />
+</div>
+
 ---
 
 ## 📖 El Método General

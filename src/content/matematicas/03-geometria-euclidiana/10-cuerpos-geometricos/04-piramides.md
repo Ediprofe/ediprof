@@ -2,6 +2,97 @@
 
 Una **pirámide** es un poliedro con una base poligonal y caras laterales triangulares que convergen en un vértice llamado **cúspide** o **ápice**.
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <canvas id="roughjs-piramide" width="700" height="280" style="width: 100%; height: auto; display: block;"></canvas>
+  <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 0.75rem; font-size: 0.9rem; flex-wrap: wrap;">
+    <span><strong style="color: #ef4444;">h</strong> = altura (perpendicular a la base)</span>
+    <span><strong style="color: #f59e0b;">aₚ</strong> = apotema de la pirámide (altura de cara lateral)</span>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof rough !== 'undefined' && document.getElementById('roughjs-piramide')) {
+    var canvas = document.getElementById('roughjs-piramide');
+    var rc = rough.canvas(canvas);
+    var ctx = canvas.getContext('2d');
+    
+    ctx.font = 'bold 16px Inter, sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.textAlign = 'center';
+    ctx.fillText('Pirámide Cuadrangular: Elementos', 350, 25);
+    
+    var azul = '#3b82f6';
+    var verde = '#22c55e';
+    var rojo = '#ef4444';
+    var naranja = '#f59e0b';
+    
+    // Pirámide cuadrangular
+    // Base (cuadrado en perspectiva)
+    var b1 = [120, 230], b2 = [260, 250], b3 = [300, 200], b4 = [160, 180];
+    // Cúspide
+    var apex = [210, 70];
+    
+    // Base
+    rc.polygon([b1, b2, b3, b4], {fill: '#dbeafe', stroke: azul, strokeWidth: 2, roughness: 0.5});
+    
+    // Caras laterales
+    rc.polygon([b1, b2, apex], {fill: '#bfdbfe', stroke: azul, strokeWidth: 2, roughness: 0.5});
+    rc.polygon([b2, b3, apex], {fill: '#93c5fd', stroke: azul, strokeWidth: 2, roughness: 0.5});
+    rc.polygon([b3, b4, apex], {fill: '#dbeafe', stroke: azul, strokeWidth: 2, roughness: 0.5});
+    rc.polygon([b4, b1, apex], {fill: '#bfdbfe', stroke: azul, strokeWidth: 2, roughness: 0.5});
+    
+    // Centro de la base
+    var centroX = (b1[0] + b2[0] + b3[0] + b4[0]) / 4;
+    var centroY = (b1[1] + b2[1] + b3[1] + b4[1]) / 4;
+    
+    // Altura (línea vertical desde centro de base a cúspide)
+    rc.line(centroX, centroY, apex[0], apex[1], {stroke: rojo, strokeWidth: 2.5, roughness: 0.3});
+    ctx.font = 'bold 12px Inter, sans-serif';
+    ctx.fillStyle = rojo;
+    ctx.fillText('h', centroX + 15, 150);
+    
+    // Apotema de la pirámide (altura de cara lateral)
+    var midBase = [(b1[0] + b2[0])/2, (b1[1] + b2[1])/2];
+    rc.line(midBase[0], midBase[1], apex[0], apex[1], {stroke: naranja, strokeWidth: 2, roughness: 0.3});
+    ctx.fillStyle = naranja;
+    ctx.fillText('aₚ', midBase[0] - 20, midBase[1] - 40);
+    
+    // Cúspide
+    rc.circle(apex[0], apex[1], 8, {fill: verde, stroke: verde, roughness: 0.3});
+    ctx.font = '11px Inter, sans-serif';
+    ctx.fillStyle = verde;
+    ctx.fillText('Cúspide', apex[0] + 20, apex[1]);
+    
+    // Fórmulas
+    rc.rectangle(380, 60, 290, 200, {fill: '#f1f5f9', stroke: '#cbd5e1', roughness: 0.3});
+    ctx.font = 'bold 14px Inter, sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.textAlign = 'center';
+    ctx.fillText('Fórmulas de la Pirámide', 525, 90);
+    
+    ctx.font = '13px Inter, sans-serif';
+    ctx.textAlign = 'left';
+    
+    ctx.fillStyle = naranja;
+    ctx.fillText('Área lateral:', 400, 120);
+    ctx.fillStyle = '#1e293b';
+    ctx.fillText('A_L = (P × aₚ) / 2', 400, 140);
+    
+    ctx.fillStyle = azul;
+    ctx.fillText('Área total:', 400, 170);
+    ctx.fillStyle = '#1e293b';
+    ctx.fillText('A_T = A_L + A_base', 400, 190);
+    
+    ctx.fillStyle = rojo;
+    ctx.fillText('Volumen:', 400, 220);
+    ctx.fillStyle = '#1e293b';
+    ctx.font = 'bold 14px Inter, sans-serif';
+    ctx.fillText('V = (A_base × h) / 3', 400, 245);
+  }
+});
+</script>
+
 ---
 
 ## 📖 Definición

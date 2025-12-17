@@ -2,6 +2,85 @@
 
 Las **figuras compuestas** son aquellas formadas por la unión o diferencia de figuras simples. Para calcular su área, las descomponemos en partes conocidas.
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <canvas id="roughjs-figuras-compuestas" width="700" height="300" style="width: 100%; height: auto; display: block;"></canvas>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof rough !== 'undefined' && document.getElementById('roughjs-figuras-compuestas')) {
+    var canvas = document.getElementById('roughjs-figuras-compuestas');
+    var rc = rough.canvas(canvas);
+    var ctx = canvas.getContext('2d');
+    
+    ctx.font = 'bold 16px Inter, sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.textAlign = 'center';
+    ctx.fillText('Figuras Compuestas: Suma y Resta de Áreas', 350, 25);
+    
+    var azul = '#3b82f6';
+    var verde = '#22c55e';
+    var rojo = '#ef4444';
+    
+    // === FIGURA EN L (SUMA) - izquierda ===
+    ctx.font = 'bold 13px Inter, sans-serif';
+    ctx.fillStyle = verde;
+    ctx.fillText('SUMA DE ÁREAS', 150, 55);
+    
+    // Rectángulo vertical
+    rc.rectangle(80, 70, 60, 150, {fill: '#dcfce7', fillStyle: 'solid', stroke: verde, strokeWidth: 2, roughness: 0.5});
+    // Rectángulo horizontal
+    rc.rectangle(80, 160, 140, 60, {fill: '#bbf7d0', fillStyle: 'solid', stroke: verde, strokeWidth: 2, roughness: 0.5});
+    
+    // Etiquetas
+    ctx.font = '11px Inter, sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.fillText('A₁', 110, 115);
+    ctx.fillText('A₂', 180, 195);
+    
+    ctx.font = '12px Inter, sans-serif';
+    ctx.fillStyle = verde;
+    ctx.fillText('A = A₁ + A₂', 150, 255);
+    
+    // === CORONA CIRCULAR (RESTA) - derecha ===
+    ctx.font = 'bold 13px Inter, sans-serif';
+    ctx.fillStyle = rojo;
+    ctx.textAlign = 'center';
+    ctx.fillText('RESTA DE ÁREAS', 530, 55);
+    
+    // Círculo grande
+    rc.circle(530, 160, 140, {fill: '#fecaca', fillStyle: 'solid', stroke: rojo, strokeWidth: 2, roughness: 0.5});
+    // Círculo pequeño (hueco) - simulado con blanco
+    rc.circle(530, 160, 70, {fill: '#f8fafc', fillStyle: 'solid', stroke: rojo, strokeWidth: 2, roughness: 0.5});
+    
+    // Etiquetas
+    ctx.font = '11px Inter, sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.fillText('R', 530, 100);
+    ctx.fillText('r', 530, 140);
+    
+    // Líneas de radio
+    rc.line(530, 160, 530, 90, {stroke: rojo, strokeWidth: 1.5, roughness: 0.3});
+    rc.line(530, 160, 530, 125, {stroke: '#64748b', strokeWidth: 1.5, roughness: 0.3});
+    
+    ctx.font = '12px Inter, sans-serif';
+    ctx.fillStyle = rojo;
+    ctx.fillText('A = πR² - πr²', 530, 255);
+    
+    // === Fórmula central ===
+    rc.rectangle(280, 100, 140, 80, {fill: '#f1f5f9', stroke: '#cbd5e1', roughness: 0.3});
+    ctx.font = 'bold 12px Inter, sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.fillText('Estrategia', 350, 125);
+    ctx.font = '11px Inter, sans-serif';
+    ctx.fillStyle = verde;
+    ctx.fillText('Unión → SUMAR', 350, 150);
+    ctx.fillStyle = rojo;
+    ctx.fillText('Hueco → RESTAR', 350, 170);
+  }
+});
+</script>
+
 ---
 
 ## 📖 ¿Qué es una figura compuesta?

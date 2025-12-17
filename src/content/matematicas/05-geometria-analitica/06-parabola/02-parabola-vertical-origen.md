@@ -23,6 +23,10 @@ Una parábola **vertical** tiene su eje paralelo al eje Y. Cuando el vértice es
 
 ## 📖 Parábola que Abre Hacia Arriba
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/geometria/analitica/parabola-vertical-arriba.svg" alt="Parábola vertical que abre hacia arriba" style="width: 100%; height: auto;" />
+</div>
+
 **Ecuación:**
 $$
 x^2 = 4py \quad (p > 0)
@@ -61,6 +65,10 @@ $$
 ---
 
 ## 📖 Parábola que Abre Hacia Abajo
+
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/geometria/analitica/parabola-vertical-abajo.svg" alt="Parábola vertical que abre hacia abajo" style="width: 100%; height: auto;" />
+</div>
 
 **Ecuación:**
 $$

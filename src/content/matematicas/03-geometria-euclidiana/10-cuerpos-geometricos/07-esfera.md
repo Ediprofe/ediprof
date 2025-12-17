@@ -2,6 +2,110 @@
 
 La **esfera** es el cuerpo geométrico más simétrico. Todos sus puntos superficiales están a la misma distancia del centro.
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <canvas id="roughjs-esfera" width="700" height="280" style="width: 100%; height: auto; display: block;"></canvas>
+  <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 0.75rem; font-size: 0.9rem; flex-wrap: wrap;">
+    <span><strong style="color: #ef4444;">O</strong> = centro de la esfera</span>
+    <span><strong style="color: #22c55e;">r</strong> = radio</span>
+    <span><strong style="color: #64748b;">d</strong> = diámetro = 2r</span>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof rough !== 'undefined' && document.getElementById('roughjs-esfera')) {
+    var canvas = document.getElementById('roughjs-esfera');
+    var rc = rough.canvas(canvas);
+    var ctx = canvas.getContext('2d');
+    
+    ctx.font = 'bold 16px Inter, sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.textAlign = 'center';
+    ctx.fillText('Esfera: Elementos y Fórmulas', 350, 25);
+    
+    var azul = '#3b82f6';
+    var verde = '#22c55e';
+    var rojo = '#ef4444';
+    
+    // Esfera
+    var cx = 180, cy = 160;
+    var r = 100;
+    
+    // Círculo principal
+    rc.circle(cx, cy, r * 2, {fill: '#dbeafe', stroke: azul, strokeWidth: 2.5, roughness: 0.5});
+    
+    // Ecuador (elipse horizontal)
+    rc.ellipse(cx, cy, r * 2, 40, {stroke: azul, strokeWidth: 1.5, roughness: 0.3});
+    
+    // Meridiano (elipse vertical - parte visible)
+    ctx.strokeStyle = azul;
+    ctx.lineWidth = 1.5;
+    ctx.setLineDash([5, 5]);
+    ctx.beginPath();
+    ctx.ellipse(cx, cy, 30, r, 0, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.setLineDash([]);
+    
+    // Centro
+    rc.circle(cx, cy, 8, {fill: rojo, stroke: rojo, roughness: 0.3});
+    ctx.font = 'bold 12px Inter, sans-serif';
+    ctx.fillStyle = rojo;
+    ctx.fillText('O', cx - 15, cy + 5);
+    
+    // Radio
+    rc.line(cx, cy, cx + r, cy, {stroke: verde, strokeWidth: 3, roughness: 0.3});
+    ctx.fillStyle = verde;
+    ctx.fillText('r', cx + r/2, cy - 10);
+    
+    // Diámetro (punteado)
+    ctx.setLineDash([5, 5]);
+    ctx.strokeStyle = '#64748b';
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    ctx.moveTo(cx - r, cy);
+    ctx.lineTo(cx + r, cy);
+    ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.font = '11px Inter, sans-serif';
+    ctx.fillStyle = '#64748b';
+    ctx.fillText('d = 2r', cx, cy + 25);
+    
+    // Fórmulas
+    rc.rectangle(380, 50, 290, 220, {fill: '#f1f5f9', stroke: '#cbd5e1', roughness: 0.3});
+    ctx.font = 'bold 14px Inter, sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.textAlign = 'center';
+    ctx.fillText('Fórmulas de la Esfera', 525, 80);
+    
+    ctx.font = '13px Inter, sans-serif';
+    ctx.textAlign = 'left';
+    
+    ctx.fillStyle = verde;
+    ctx.fillText('Radio:', 400, 110);
+    ctx.fillStyle = '#1e293b';
+    ctx.fillText('r', 480, 110);
+    
+    ctx.fillStyle = azul;
+    ctx.fillText('Área superficial:', 400, 145);
+    ctx.fillStyle = '#1e293b';
+    ctx.font = 'bold 14px Inter, sans-serif';
+    ctx.fillText('A = 4πr²', 400, 170);
+    
+    ctx.font = '13px Inter, sans-serif';
+    ctx.fillStyle = rojo;
+    ctx.fillText('Volumen:', 400, 205);
+    ctx.fillStyle = '#1e293b';
+    ctx.font = 'bold 14px Inter, sans-serif';
+    ctx.fillText('V = (4/3)πr³', 400, 230);
+    
+    ctx.font = '11px Inter, sans-serif';
+    ctx.fillStyle = '#64748b';
+    ctx.fillText('El área es 4 veces el área', 400, 255);
+    ctx.fillText('del círculo máximo', 400, 270);
+  }
+});
+</script>
+
 ---
 
 ## 📖 Definición

@@ -20,6 +20,10 @@ La forma más común de escribir la ecuación de una recta es la **forma pendien
 | Ordenada al origen | $b$ | Donde cruza el eje Y |
 | Forma completa | $y = mx + b$ | Ecuación explícita |
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/geometria/analitica/pendiente-ordenada.svg" alt="Forma pendiente-ordenada" style="width: 100%; height: auto;" />
+</div>
+
 ---
 
 ## 📖 La Forma Pendiente-Ordenada
@@ -75,6 +79,10 @@ Para $y = -\frac{2}{5}x + 4$:
 ---
 
 ## 📖 Graficar Usando Pendiente-Ordenada
+
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/geometria/analitica/graficar-pendiente-ordenada.svg" alt="Graficar con pendiente-ordenada" style="width: 100%; height: auto;" />
+</div>
 
 **Método rápido para graficar:**
 

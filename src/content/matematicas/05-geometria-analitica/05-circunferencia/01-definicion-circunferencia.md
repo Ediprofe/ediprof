@@ -14,6 +14,10 @@ La circunferencia es una de las figuras geométricas más perfectas y fascinante
 
 ## 📖 Lo Esencial de la Circunferencia
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/geometria/analitica/elementos-circunferencia.svg" alt="Elementos de la circunferencia" style="width: 100%; height: auto;" />
+</div>
+
 | Elemento | Símbolo | Descripción |
 |----------|---------|-------------|
 | Centro | $C(h, k)$ | Punto equidistante de todos los puntos de la circunferencia |
@@ -145,6 +149,10 @@ $$
 ---
 
 ## 📖 Interior, Exterior y Frontera
+
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/geometria/analitica/interior-exterior-circ.svg" alt="Interior, exterior y frontera" style="width: 100%; height: auto;" />
+</div>
 
 Para una circunferencia $(x - h)^2 + (y - k)^2 = r^2$:
 

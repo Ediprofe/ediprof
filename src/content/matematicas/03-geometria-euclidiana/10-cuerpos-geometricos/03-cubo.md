@@ -2,6 +2,110 @@
 
 El **cubo** es el prisma más simétrico: todas sus caras son cuadrados iguales. Es uno de los cinco **sólidos platónicos**.
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <canvas id="roughjs-cubo" width="700" height="280" style="width: 100%; height: auto; display: block;"></canvas>
+  <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 0.75rem; font-size: 0.9rem; flex-wrap: wrap;">
+    <span><strong style="color: #22c55e;">a</strong> = arista (lado)</span>
+    <span><strong style="color: #a855f7;">D</strong> = diagonal espacial = a√3</span>
+    <span><strong style="color: #64748b;">d</strong> = diagonal de cara = a√2</span>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof rough !== 'undefined' && document.getElementById('roughjs-cubo')) {
+    var canvas = document.getElementById('roughjs-cubo');
+    var rc = rough.canvas(canvas);
+    var ctx = canvas.getContext('2d');
+    
+    ctx.font = 'bold 16px Inter, sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.textAlign = 'center';
+    ctx.fillText('El Cubo: Elementos y Fórmulas', 350, 25);
+    
+    var azul = '#3b82f6';
+    var verde = '#22c55e';
+    var rojo = '#ef4444';
+    var morado = '#a855f7';
+    
+    // Cubo isométrico grande
+    var cx = 150, cy = 150;
+    var a = 100; // arista
+    var dx = a * 0.5, dy = a * 0.3; // desplazamiento isométrico
+    
+    // Vértices
+    var v1 = [cx, cy];
+    var v2 = [cx + a, cy];
+    var v3 = [cx + a, cy + a];
+    var v4 = [cx, cy + a];
+    var v5 = [cx + dx, cy - dy];
+    var v6 = [cx + a + dx, cy - dy];
+    var v7 = [cx + a + dx, cy + a - dy];
+    var v8 = [cx + dx, cy + a - dy];
+    
+    // Cara frontal
+    rc.polygon([v1, v2, v3, v4], {fill: '#dbeafe', stroke: azul, strokeWidth: 2, roughness: 0.5});
+    // Cara superior
+    rc.polygon([v1, v5, v6, v2], {fill: '#bfdbfe', stroke: azul, strokeWidth: 2, roughness: 0.5});
+    // Cara lateral derecha
+    rc.polygon([v2, v6, v7, v3], {fill: '#93c5fd', stroke: azul, strokeWidth: 2, roughness: 0.5});
+    
+    // Arista etiquetada
+    rc.line(v1[0], v1[1], v2[0], v2[1], {stroke: verde, strokeWidth: 3, roughness: 0.3});
+    ctx.font = 'bold 14px Inter, sans-serif';
+    ctx.fillStyle = verde;
+    ctx.fillText('a', cx + a/2, cy + 20);
+    
+    // Diagonal espacial (punteada)
+    ctx.setLineDash([5, 5]);
+    ctx.strokeStyle = morado;
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(v4[0], v4[1]);
+    ctx.lineTo(v6[0], v6[1]);
+    ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.fillStyle = morado;
+    ctx.font = '12px Inter, sans-serif';
+    ctx.fillText('D = a√3', cx + a + 30, cy + 30);
+    
+    // Fórmulas
+    rc.rectangle(380, 60, 290, 200, {fill: '#f1f5f9', stroke: '#cbd5e1', roughness: 0.3});
+    ctx.font = 'bold 14px Inter, sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.fillText('Fórmulas del Cubo', 525, 90);
+    
+    ctx.font = '13px Inter, sans-serif';
+    ctx.textAlign = 'left';
+    
+    ctx.fillStyle = verde;
+    ctx.fillText('Arista:', 400, 120);
+    ctx.fillStyle = '#1e293b';
+    ctx.fillText('a', 480, 120);
+    
+    ctx.fillStyle = azul;
+    ctx.fillText('Área total:', 400, 150);
+    ctx.fillStyle = '#1e293b';
+    ctx.fillText('A = 6a²', 480, 150);
+    
+    ctx.fillStyle = rojo;
+    ctx.fillText('Volumen:', 400, 180);
+    ctx.fillStyle = '#1e293b';
+    ctx.fillText('V = a³', 480, 180);
+    
+    ctx.fillStyle = morado;
+    ctx.fillText('Diagonal espacial:', 400, 210);
+    ctx.fillStyle = '#1e293b';
+    ctx.fillText('D = a√3', 530, 210);
+    
+    ctx.fillStyle = '#64748b';
+    ctx.fillText('Diagonal de cara:', 400, 240);
+    ctx.fillStyle = '#1e293b';
+    ctx.fillText('d = a√2', 530, 240);
+  }
+});
+</script>
+
 ---
 
 ## 📖 Definición

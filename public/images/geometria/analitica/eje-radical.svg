@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+  <defs>
+        <marker id="arrow-64748b" markerWidth="10" markerHeight="10" 
+                refX="8" refY="5.0" orient="auto">
+            <polygon points="0,0 10,5.0 0,10" fill="#64748b"/>
+        </marker></defs>
+  <rect x="0.00" y="0.00" width="600.00" height="600.00" fill="#ffffff" stroke="none" stroke-width="0" rx="0"/>
+  <text x="300.00" y="25.00" font-family="Inter, sans-serif" font-size="15" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Eje Radical</text>
+  <line x1="50.00" y1="550.00" x2="50.00" y2="50.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="100.00" y1="550.00" x2="100.00" y2="50.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="200.00" y1="550.00" x2="200.00" y2="50.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="250.00" y1="550.00" x2="250.00" y2="50.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="300.00" y1="550.00" x2="300.00" y2="50.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="350.00" y1="550.00" x2="350.00" y2="50.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="400.00" y1="550.00" x2="400.00" y2="50.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="450.00" y1="550.00" x2="450.00" y2="50.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="500.00" y1="550.00" x2="500.00" y2="50.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="550.00" y1="550.00" x2="550.00" y2="50.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="50.00" y1="550.00" x2="550.00" y2="550.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="50.00" y1="500.00" x2="550.00" y2="500.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="50.00" y1="400.00" x2="550.00" y2="400.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="50.00" y1="350.00" x2="550.00" y2="350.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="50.00" y1="300.00" x2="550.00" y2="300.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="50.00" y1="250.00" x2="550.00" y2="250.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="50.00" y1="200.00" x2="550.00" y2="200.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="50.00" y1="150.00" x2="550.00" y2="150.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="50.00" y1="100.00" x2="550.00" y2="100.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="50.00" y1="50.00" x2="550.00" y2="50.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="50.00" y1="450.00" x2="550.00" y2="450.00" stroke="#64748b" stroke-width="2"  marker-end="url(#arrow-64748b)"/>
+  <line x1="150.00" y1="550.00" x2="150.00" y2="50.00" stroke="#64748b" stroke-width="2"  marker-end="url(#arrow-64748b)"/>
+  <text x="545.00" y="470.00" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#64748b" text-anchor="middle" dominant-baseline="middle">x</text>
+  <text x="130.00" y="60.00" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#64748b" text-anchor="middle" dominant-baseline="middle">y</text>
+  <line x1="50.00" y1="445.00" x2="50.00" y2="455.00" stroke="#64748b" stroke-width="1"  />
+  <text x="50.00" y="468.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">-2</text>
+  <line x1="250.00" y1="445.00" x2="250.00" y2="455.00" stroke="#64748b" stroke-width="1"  />
+  <text x="250.00" y="468.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">2</text>
+  <line x1="350.00" y1="445.00" x2="350.00" y2="455.00" stroke="#64748b" stroke-width="1"  />
+  <text x="350.00" y="468.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">4</text>
+  <line x1="450.00" y1="445.00" x2="450.00" y2="455.00" stroke="#64748b" stroke-width="1"  />
+  <text x="450.00" y="468.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">6</text>
+  <line x1="550.00" y1="445.00" x2="550.00" y2="455.00" stroke="#64748b" stroke-width="1"  />
+  <text x="550.00" y="468.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">8</text>
+  <line x1="145.00" y1="550.00" x2="155.00" y2="550.00" stroke="#64748b" stroke-width="1"  />
+  <text x="135.00" y="550.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="end" dominant-baseline="middle">-2</text>
+  <line x1="145.00" y1="350.00" x2="155.00" y2="350.00" stroke="#64748b" stroke-width="1"  />
+  <text x="135.00" y="350.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="end" dominant-baseline="middle">2</text>
+  <line x1="145.00" y1="250.00" x2="155.00" y2="250.00" stroke="#64748b" stroke-width="1"  />
+  <text x="135.00" y="250.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="end" dominant-baseline="middle">4</text>
+  <line x1="145.00" y1="150.00" x2="155.00" y2="150.00" stroke="#64748b" stroke-width="1"  />
+  <text x="135.00" y="150.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="end" dominant-baseline="middle">6</text>
+  <line x1="145.00" y1="50.00" x2="155.00" y2="50.00" stroke="#64748b" stroke-width="1"  />
+  <text x="135.00" y="50.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="end" dominant-baseline="middle">8</text>
+  <text x="138.00" y="465.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">O</text>
+  <circle cx="250.00" cy="300.00" r="100.00" fill="#dbeafe" stroke="#3b82f6" stroke-width="2" fill-opacity="0.3"/>
+  <circle cx="400.00" cy="300.00" r="125.00" fill="#dcfce7" stroke="#22c55e" stroke-width="2" fill-opacity="0.3"/>
+  <line x1="306.25" y1="500.00" x2="306.25" y2="100.00" stroke="#ef4444" stroke-width="2"  />
+  <text x="321.25" y="150.00" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#ef4444" text-anchor="middle" dominant-baseline="middle">Eje radical</text>
+  <circle cx="250.00" cy="300.00" r="4" fill="#3b82f6" />
+  <text x="260.00" y="290.00" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#3b82f6" text-anchor="start" dominant-baseline="middle">C₁(2, 3)</text>
+  <circle cx="400.00" cy="300.00" r="4" fill="#22c55e" />
+  <text x="410.00" y="290.00" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#22c55e" text-anchor="start" dominant-baseline="middle">C₂(5, 3)</text>
+  <line x1="250.00" y1="300.00" x2="400.00" y2="300.00" stroke="#64748b" stroke-width="1" stroke-dasharray="5,5" />
+  <rect x="167.97" y="554.30" width="264.05" height="31.40" fill="#fef3c7" stroke="#f97316" stroke-width="1" rx="6"/>
+  <text x="300.00" y="570.00" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">C₁ - C₂ = 0  |  Puntos con igual potencia</text>
+</svg>

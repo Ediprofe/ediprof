@@ -20,6 +20,10 @@ Si tienes que encontrarte con un amigo que está a cierta distancia de ti, ¿cu�
 | Coordenada $x$ del punto medio | $x_M = \dfrac{x_1 + x_2}{2}$ |
 | Coordenada $y$ del punto medio | $y_M = \dfrac{y_1 + y_2}{2}$ |
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/geometria/analitica/punto-medio.svg" alt="Punto medio de un segmento" style="width: 100%; height: auto;" />
+</div>
+
 ---
 
 ## 📖 Concepto de Punto Medio

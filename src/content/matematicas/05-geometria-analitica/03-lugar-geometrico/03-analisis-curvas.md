@@ -23,6 +23,10 @@ Cuando te dan una ecuación, ¿cómo la analizas sistemáticamente para entender
 | 5. Puntos clave | ¿Dónde están los máximos, mínimos, vértices? |
 | 6. Comportamiento | ¿Qué pasa cuando $x \to \pm\infty$? |
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/geometria/analitica/analisis-curva.svg" alt="Análisis de curva con interceptos y simetría" style="width: 100%; height: auto;" />
+</div>
+
 ---
 
 ## 📖 Método de Análisis

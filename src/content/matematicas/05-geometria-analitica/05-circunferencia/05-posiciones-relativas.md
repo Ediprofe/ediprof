@@ -14,6 +14,10 @@
 
 ## 📖 Lo Esencial de Posiciones Relativas
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/geometria/analitica/posiciones-recta-circ.svg" alt="Posiciones recta-circunferencia" style="width: 100%; height: auto;" />
+</div>
+
 ### Recta y Circunferencia
 
 | Posición | Condición (distancia $d$ del centro a la recta) |
@@ -145,6 +149,10 @@ $x = -2$ o $x = 1$
 ---
 
 ## 📖 Dos Circunferencias
+
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/geometria/analitica/posiciones-dos-circ.svg" alt="Posiciones entre dos circunferencias" style="width: 100%; height: auto;" />
+</div>
 
 Sean dos circunferencias con centros $C_1$, $C_2$ y radios $r_1$, $r_2$.
 

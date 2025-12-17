@@ -24,6 +24,10 @@ Cuando dos rectas se intersectan, forman ángulos. ¿Cómo calculamos el ángulo
 | $m_1 = m_2$ | $\phi = 0°$ (paralelas) |
 | $m_1 \cdot m_2 = -1$ | $\phi = 90°$ (perpendiculares) |
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/geometria/analitica/angulo-entre-rectas.svg" alt="Ángulo φ entre dos rectas" style="width: 100%; height: auto;" />
+</div>
+
 ---
 
 ## 📖 El Problema

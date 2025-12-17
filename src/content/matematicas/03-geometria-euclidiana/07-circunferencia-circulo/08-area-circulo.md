@@ -111,7 +111,7 @@ $$
 
 Un **segmento circular** es la región entre una cuerda y su arco.
 
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem auto; max-width: 500px;">
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem;">
     <span style="font-size: 1rem;">📊</span>
     <strong style="color: #1e293b; font-size: 0.9rem; margin-left: 0.3rem;">Área del Segmento</strong>

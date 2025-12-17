@@ -28,6 +28,10 @@ Gracias a esta idea, podemos convertir la geometría en álgebra, y viceversa. �
 | Cuadrante III | $x < 0, y < 0$ | Abajo a la izquierda |
 | Cuadrante IV | $x > 0, y < 0$ | Abajo a la derecha |
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/geometria/analitica/plano-cartesiano.svg" alt="El Plano Cartesiano con los 4 cuadrantes" style="width: 100%; height: auto;" />
+</div>
+
 ---
 
 ## 📖 La Historia de René Descartes

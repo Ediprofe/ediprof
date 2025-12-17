@@ -21,6 +21,10 @@ La **forma normal** (o forma polar normalizada) es una representación especial 
 | Ángulo del vector normal | $\omega$ |
 | Normalización | Dividir entre $\sqrt{A^2 + B^2}$ |
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/geometria/analitica/forma-normal.svg" alt="Forma normal de la recta" style="width: 100%; height: auto;" />
+</div>
+
 ---
 
 ## 📖 Concepto de Forma Normal

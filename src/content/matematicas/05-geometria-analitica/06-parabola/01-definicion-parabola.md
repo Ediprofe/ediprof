@@ -14,6 +14,10 @@ La parábola es una de las **cónicas** más importantes. Aparece en la trayecto
 
 ## 📖 Lo Esencial de la Parábola
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/geometria/analitica/elementos-parabola.svg" alt="Elementos de la parábola" style="width: 100%; height: auto;" />
+</div>
+
 | Elemento | Símbolo | Descripción |
 |----------|---------|-------------|
 | Foco | $F$ | Punto fijo |
@@ -102,6 +106,10 @@ Esta es la **ecuación canónica** de la parábola vertical con vértice en el o
 ---
 
 ## 📖 Las Cuatro Orientaciones
+
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/geometria/analitica/cuatro-orientaciones-parabola.svg" alt="Las cuatro orientaciones de la parábola" style="width: 100%; height: auto;" />
+</div>
 
 Dependiendo de hacia dónde "abre" la parábola:
 

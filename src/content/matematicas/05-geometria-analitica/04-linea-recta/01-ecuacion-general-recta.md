@@ -23,6 +23,10 @@ La recta es el lugar geométrico más simple y fundamental. En esta lección est
 | Recta horizontal | $A = 0$: $By + C = 0$ |
 | Recta vertical | $B = 0$: $Ax + C = 0$ |
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/geometria/analitica/ecuacion-general.svg" alt="Ecuación general de la recta" style="width: 100%; height: auto;" />
+</div>
+
 ---
 
 ## 📖 La Forma General
@@ -141,6 +145,10 @@ $$
 ---
 
 ## 📖 Casos Especiales
+
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/geometria/analitica/rectas-h-v.svg" alt="Rectas horizontales y verticales" style="width: 100%; height: auto;" />
+</div>
 
 ### Recta horizontal
 

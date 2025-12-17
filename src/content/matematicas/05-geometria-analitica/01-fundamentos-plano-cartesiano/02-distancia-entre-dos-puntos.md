@@ -20,6 +20,10 @@
 | $d = \|x_2 - x_1\|$ | Distancia horizontal (si $y_1 = y_2$) |
 | $d = \|y_2 - y_1\|$ | Distancia vertical (si $x_1 = x_2$) |
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/geometria/analitica/distancia-puntos.svg" alt="Distancia entre dos puntos usando el Teorema de Pitágoras" style="width: 100%; height: auto;" />
+</div>
+
 ---
 
 ## 📖 La Idea Detrás de la Fórmula

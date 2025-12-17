@@ -2,6 +2,96 @@
 
 En esta lección resolvemos problemas que combinan diferentes cuerpos geométricos y aplican los conceptos aprendidos a situaciones del mundo real.
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <canvas id="roughjs-helado" width="700" height="260" style="width: 100%; height: auto; display: block;"></canvas>
+  <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 0.75rem; font-size: 0.9rem; flex-wrap: wrap;">
+    <span><strong style="color: #22c55e;">r</strong> = radio (común al cono y semiesfera)</span>
+    <span><strong style="color: #ef4444;">h</strong> = altura del cono</span>
+    <span><strong>V</strong> = V_cono + V_semiesfera</span>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof rough !== 'undefined' && document.getElementById('roughjs-helado')) {
+    var canvas = document.getElementById('roughjs-helado');
+    var rc = rough.canvas(canvas);
+    var ctx = canvas.getContext('2d');
+    
+    ctx.font = 'bold 16px Inter, sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.textAlign = 'center';
+    ctx.fillText('Problema Clásico: Cono de Helado con Semiesfera', 350, 25);
+    
+    var azul = '#3b82f6';
+    var verde = '#22c55e';
+    var rojo = '#ef4444';
+    var rosa = '#ec4899';
+    
+    // Cono de helado
+    var cx = 200, cy = 240;
+    var r = 50;
+    var h = 120;
+    
+    // Cono (barquillo)
+    rc.polygon([[cx - r, cy - h + 50], [cx, cy], [cx + r, cy - h + 50]], {fill: '#fef3c7', stroke: '#f59e0b', strokeWidth: 2, roughness: 0.5});
+    
+    // Semiesfera de helado
+    ctx.beginPath();
+    ctx.arc(cx, cy - h + 50, r, Math.PI, 0);
+    ctx.fillStyle = '#fce7f3';
+    ctx.fill();
+    ctx.strokeStyle = rosa;
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    
+    // Base de la semiesfera (elipse)
+    rc.ellipse(cx, cy - h + 50, r * 2, 20, {fill: '#fbcfe8', stroke: rosa, strokeWidth: 2, roughness: 0.5});
+    
+    // Etiquetas
+    ctx.font = 'bold 12px Inter, sans-serif';
+    ctx.fillStyle = verde;
+    rc.line(cx, cy - h + 50, cx + r, cy - h + 50, {stroke: verde, strokeWidth: 2, roughness: 0.3});
+    ctx.fillText('r', cx + r/2, cy - h + 40);
+    
+    ctx.fillStyle = rojo;
+    rc.line(cx + r + 15, cy - h + 50, cx + r + 15, cy, {stroke: rojo, strokeWidth: 2, roughness: 0.3});
+    ctx.fillText('h', cx + r + 30, cy - h/2 + 25);
+    
+    // Fórmulas
+    rc.rectangle(350, 60, 320, 190, {fill: '#f1f5f9', stroke: '#cbd5e1', roughness: 0.3});
+    ctx.font = 'bold 14px Inter, sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.textAlign = 'center';
+    ctx.fillText('Volumen Total del Helado', 510, 90);
+    
+    ctx.font = '13px Inter, sans-serif';
+    ctx.textAlign = 'left';
+    
+    ctx.fillStyle = '#f59e0b';
+    ctx.fillText('Cono:', 370, 120);
+    ctx.fillStyle = '#1e293b';
+    ctx.fillText('V_cono = πr²h / 3', 430, 120);
+    
+    ctx.fillStyle = rosa;
+    ctx.fillText('Semiesfera:', 370, 150);
+    ctx.fillStyle = '#1e293b';
+    ctx.fillText('V_semi = (2/3)πr³', 460, 150);
+    
+    ctx.fillStyle = azul;
+    ctx.font = 'bold 13px Inter, sans-serif';
+    ctx.fillText('Total:', 370, 185);
+    ctx.fillStyle = '#1e293b';
+    ctx.fillText('V = πr²h/3 + (2/3)πr³', 420, 185);
+    
+    ctx.font = '11px Inter, sans-serif';
+    ctx.fillStyle = '#64748b';
+    ctx.fillText('Ejemplo: r=3cm, h=10cm', 370, 215);
+    ctx.fillText('V = 30π + 18π = 48π ≈ 150.8 cm³', 370, 235);
+  }
+});
+</script>
+
 ---
 
 ## 📖 Estrategia general para problemas

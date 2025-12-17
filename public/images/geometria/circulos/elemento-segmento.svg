@@ -2,18 +2,18 @@
 style="font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;">
 <rect width="500" height="400" fill="#f8fafc"/>
 <text x="250.00" y="30.00" text-anchor="middle" font-size="18" font-weight="bold" fill="#22c55e">Segmento Circular</text>
-<circle cx="200" cy="180" r="110" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4"/>
-<path d="M 295.26 125.00 A 110 110 0 0 0 104.74 125.00 Z" fill="#dcfce7" stroke="#22c55e" stroke-width="3"/>
-<line x1="104.74" y1="125.00" x2="295.26" y2="125.00" stroke="#22c55e" stroke-width="3"/>
-<circle cx="200" cy="180" r="3" fill="#94a3b8"/>
-<text x="208.00" y="185.00" text-anchor="start" font-size="10" font-weight="normal" fill="#94a3b8">O</text>
-<circle cx="104.74" cy="125.00" r="4" fill="#22c55e"/>
-<circle cx="295.26" cy="125.00" r="4" fill="#22c55e"/>
-<text x="86.74" y="125.00" text-anchor="start" font-size="12" font-weight="bold" fill="#22c55e">A</text>
-<text x="303.26" y="125.00" text-anchor="start" font-size="12" font-weight="bold" fill="#22c55e">B</text>
-<text x="200.00" y="50.00" text-anchor="start" font-size="11" font-weight="normal" fill="#f97316">Arco</text>
-<text x="200.00" y="145.00" text-anchor="start" font-size="11" font-weight="normal" fill="#22c55e">Cuerda</text>
-<rect x="30" y="320" width="340" height="50" rx="8" fill="#dcfce7" stroke="#22c55e"/>
-<text x="200.0" y="349.0" text-anchor="middle" font-size="12" fill="#1e293b">Limitado por CUERDA + ARCO</text>
+<circle cx="250" cy="175" r="110" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4"/>
+<path d="M 345.26 120.00 A 110 110 0 0 0 154.74 120.00 Z" fill="#dcfce7" stroke="#22c55e" stroke-width="3"/>
+<line x1="154.74" y1="120.00" x2="345.26" y2="120.00" stroke="#22c55e" stroke-width="3"/>
+<circle cx="250" cy="175" r="3" fill="#94a3b8"/>
+<text x="258.00" y="180.00" text-anchor="start" font-size="10" font-weight="normal" fill="#94a3b8">O</text>
+<circle cx="154.74" cy="120.00" r="4" fill="#22c55e"/>
+<circle cx="345.26" cy="120.00" r="4" fill="#22c55e"/>
+<text x="136.74" y="120.00" text-anchor="start" font-size="12" font-weight="bold" fill="#22c55e">A</text>
+<text x="353.26" y="120.00" text-anchor="start" font-size="12" font-weight="bold" fill="#22c55e">B</text>
+<text x="250.00" y="45.00" text-anchor="start" font-size="11" font-weight="normal" fill="#f97316">Arco</text>
+<text x="250.00" y="140.00" text-anchor="start" font-size="11" font-weight="normal" fill="#22c55e">Cuerda</text>
+<rect x="80" y="320" width="340" height="50" rx="8" fill="#dcfce7" stroke="#22c55e"/>
+<text x="250.0" y="349.0" text-anchor="middle" font-size="12" fill="#1e293b">Limitado por CUERDA + ARCO</text>
 <text x="250.00" y="355.00" text-anchor="middle" font-size="10" font-weight="normal" fill="#94a3b8">(NO incluye el centro)</text>
 </svg>

@@ -2,6 +2,93 @@
 
 Los polígonos regulares tienen fórmulas específicas que involucran el número de lados, el lado y el apotema.
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <canvas id="roughjs-poligono-regular" width="700" height="300" style="width: 100%; height: auto; display: block;"></canvas>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof rough !== 'undefined' && document.getElementById('roughjs-poligono-regular')) {
+    var canvas = document.getElementById('roughjs-poligono-regular');
+    var rc = rough.canvas(canvas);
+    var ctx = canvas.getContext('2d');
+    
+    ctx.font = 'bold 16px Inter, sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.textAlign = 'center';
+    ctx.fillText('Hexágono Regular: Elementos y Área', 350, 25);
+    
+    var azul = '#3b82f6';
+    var verde = '#22c55e';
+    var rojo = '#ef4444';
+    var morado = '#a855f7';
+    
+    // Centro del hexágono
+    var cx = 200, cy = 165;
+    var R = 100; // Radio
+    
+    // Calcular vértices del hexágono
+    var vertices = [];
+    for (var i = 0; i < 6; i++) {
+      var angulo = (Math.PI / 3) * i - Math.PI / 2;
+      vertices.push([cx + R * Math.cos(angulo), cy + R * Math.sin(angulo)]);
+    }
+    
+    // Dibujar hexágono
+    rc.polygon(vertices, {fill: '#dbeafe', fillStyle: 'solid', stroke: azul, strokeWidth: 2.5, roughness: 0.5});
+    
+    // Centro
+    rc.circle(cx, cy, 8, {fill: rojo, stroke: rojo, roughness: 0.3});
+    ctx.font = 'bold 12px Inter, sans-serif';
+    ctx.fillStyle = rojo;
+    ctx.fillText('O', cx-15, cy+5);
+    
+    // Radio (R) - del centro a un vértice
+    rc.line(cx, cy, vertices[0][0], vertices[0][1], {stroke: morado, strokeWidth: 2.5, roughness: 0.3});
+    ctx.fillStyle = morado;
+    ctx.fillText('R', cx+25, cy-60);
+    
+    // Apotema (a) - del centro al punto medio de un lado
+    var midX = (vertices[0][0] + vertices[1][0]) / 2;
+    var midY = (vertices[0][1] + vertices[1][1]) / 2;
+    rc.line(cx, cy, midX, midY, {stroke: verde, strokeWidth: 2.5, roughness: 0.3});
+    ctx.fillStyle = verde;
+    ctx.fillText('a', cx+50, cy-25);
+    
+    // Lado (l)
+    rc.line(vertices[0][0], vertices[0][1], vertices[1][0], vertices[1][1], {stroke: azul, strokeWidth: 4, roughness: 0.3});
+    ctx.fillStyle = azul;
+    ctx.fillText('l', vertices[0][0]+35, vertices[0][1]+25);
+    
+    // Fórmulas en recuadro
+    rc.rectangle(380, 50, 290, 200, {fill: '#f1f5f9', stroke: '#cbd5e1', roughness: 0.3});
+    ctx.font = 'bold 14px Inter, sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.fillText('Fórmulas', 525, 75);
+    
+    ctx.font = '13px Inter, sans-serif';
+    ctx.textAlign = 'left';
+    ctx.fillStyle = azul;
+    ctx.fillText('Perímetro:', 400, 105);
+    ctx.fillStyle = '#1e293b';
+    ctx.fillText('P = n × l', 490, 105);
+    
+    ctx.fillStyle = verde;
+    ctx.fillText('Área:', 400, 135);
+    ctx.fillStyle = '#1e293b';
+    ctx.fillText('A = (P × a) / 2', 490, 135);
+    
+    ctx.fillStyle = '#64748b';
+    ctx.font = '11px Inter, sans-serif';
+    ctx.fillText('Donde:', 400, 165);
+    ctx.fillText('n = número de lados', 420, 185);
+    ctx.fillText('l = longitud del lado', 420, 205);
+    ctx.fillText('a = apotema', 420, 225);
+    ctx.fillText('R = radio', 420, 245);
+  }
+});
+</script>
+
 ---
 
 ## 📖 Elementos de un polígono regular

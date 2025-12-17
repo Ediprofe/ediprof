@@ -18,6 +18,10 @@ Si conoces un punto por donde pasa una recta y su pendiente, tienes toda la info
 |-------|---------|
 | Punto $(x_1, y_1)$ y pendiente $m$ | $y - y_1 = m(x - x_1)$ |
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/geometria/analitica/punto-pendiente.svg" alt="Forma punto-pendiente" style="width: 100%; height: auto;" />
+</div>
+
 ---
 
 ## 📖 La Fórmula Punto-Pendiente
@@ -165,6 +169,10 @@ $$
 ---
 
 ## 📖 Recta Paralela Pasando por un Punto
+
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/geometria/analitica/paralela-perpendicular-punto.svg" alt="Paralela y perpendicular por un punto" style="width: 100%; height: auto;" />
+</div>
 
 Para encontrar la recta paralela a una dada que pasa por un punto:
 1. Identifica la pendiente de la recta dada

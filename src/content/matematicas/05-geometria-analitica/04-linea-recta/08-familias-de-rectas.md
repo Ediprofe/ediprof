@@ -20,9 +20,17 @@ Una **familia de rectas** es un conjunto de rectas que comparten alguna propieda
 | Rectas por un punto $(a, b)$ | $y - b = m(x - a)$ | $m$ varía |
 | Haz por intersección | $L_1 + \lambda L_2 = 0$ | $\lambda$ varía |
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/geometria/analitica/familias-rectas.svg" alt="Familia de rectas (haz)" style="width: 100%; height: auto;" />
+</div>
+
 ---
 
 ## 📖 Familia de Rectas Paralelas
+
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/geometria/analitica/rectas-paralelas-familia.svg" alt="Familia de rectas paralelas" style="width: 100%; height: auto;" />
+</div>
 
 Todas las rectas con la **misma pendiente** forman una familia de rectas paralelas.
 

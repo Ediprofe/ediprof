@@ -19,6 +19,10 @@ Ahora que entiendes qué es la pendiente, es momento de aprender a **calcularla*
 | $m = \dfrac{y_2 - y_1}{x_2 - x_1}$ | Pendiente dados dos puntos |
 | $m = \dfrac{\Delta y}{\Delta x}$ | Cambio en $y$ sobre cambio en $x$ |
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/geometria/analitica/calculo-pendiente.svg" alt="Cálculo de la pendiente con Δx y Δy" style="width: 100%; height: auto;" />
+</div>
+
 ---
 
 ## 📖 Fórmula de la Pendiente

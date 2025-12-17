@@ -1,0 +1,20 @@
+{
+  "tipo": "elemento-radio",
+  "titulo": "Radio",
+  "titulo_color": "#ef4444",
+  "canvas": "simple",
+  "circunferencia": {
+    "centro": [250, 175],
+    "radio": 110
+  },
+  "elemento": {
+    "angulo": 45,
+    "color": "#ef4444",
+    "etiqueta": "r"
+  },
+  "leyenda": {
+    "texto": "Segmento del centro a la circunferencia",
+    "color": "#ef4444",
+    "bg_color": "#fee2e2"
+  }
+}

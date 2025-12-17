@@ -2,6 +2,102 @@
 
 Un **tronco** es la porción de una pirámide o cono que queda al cortarlo con un plano paralelo a la base.
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <canvas id="roughjs-tronco" width="700" height="280" style="width: 100%; height: auto; display: block;"></canvas>
+  <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 0.75rem; font-size: 0.9rem; flex-wrap: wrap;">
+    <span><strong style="color: #22c55e;">R</strong> = radio mayor</span>
+    <span><strong style="color: #22c55e;">r</strong> = radio menor</span>
+    <span><strong style="color: #ef4444;">h</strong> = altura</span>
+    <span><strong style="color: #a855f7;">g</strong> = generatriz = √[h² + (R−r)²]</span>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof rough !== 'undefined' && document.getElementById('roughjs-tronco')) {
+    var canvas = document.getElementById('roughjs-tronco');
+    var rc = rough.canvas(canvas);
+    var ctx = canvas.getContext('2d');
+    
+    ctx.font = 'bold 16px Inter, sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.textAlign = 'center';
+    ctx.fillText('Tronco de Cono: Elementos', 350, 25);
+    
+    var azul = '#3b82f6';
+    var verde = '#22c55e';
+    var rojo = '#ef4444';
+    var morado = '#a855f7';
+    
+    // Tronco de cono
+    var cx = 200, cy = 250;
+    var R = 80; // radio mayor
+    var r = 40; // radio menor
+    var h = 140; // altura
+    
+    // Cuerpo del tronco (trapecio)
+    rc.polygon([[cx - R, cy], [cx - r, cy - h], [cx + r, cy - h], [cx + R, cy]], {fill: '#dbeafe', stroke: azul, strokeWidth: 2, roughness: 0.5});
+    
+    // Base mayor (elipse)
+    rc.ellipse(cx, cy, R * 2, 35, {fill: '#bfdbfe', stroke: azul, strokeWidth: 2, roughness: 0.5});
+    
+    // Base menor (elipse)
+    rc.ellipse(cx, cy - h, r * 2, 20, {fill: '#dbeafe', stroke: azul, strokeWidth: 2, roughness: 0.5});
+    
+    // Radio mayor R
+    rc.line(cx, cy, cx + R, cy, {stroke: verde, strokeWidth: 3, roughness: 0.3});
+    ctx.font = 'bold 12px Inter, sans-serif';
+    ctx.fillStyle = verde;
+    ctx.fillText('R', cx + R/2, cy + 25);
+    
+    // Radio menor r
+    rc.line(cx, cy - h, cx + r, cy - h, {stroke: verde, strokeWidth: 2.5, roughness: 0.3});
+    ctx.fillText('r', cx + r/2, cy - h - 10);
+    
+    // Altura h
+    rc.line(cx + R + 20, cy, cx + R + 20, cy - h, {stroke: rojo, strokeWidth: 2.5, roughness: 0.3});
+    ctx.fillStyle = rojo;
+    ctx.fillText('h', cx + R + 35, cy - h/2);
+    
+    // Generatriz g
+    rc.line(cx + R, cy, cx + r, cy - h, {stroke: morado, strokeWidth: 2.5, roughness: 0.3});
+    ctx.fillStyle = morado;
+    ctx.fillText('g', cx + R - 10, cy - h/2 - 20);
+    
+    // Fórmulas
+    rc.rectangle(380, 50, 290, 220, {fill: '#f1f5f9', stroke: '#cbd5e1', roughness: 0.3});
+    ctx.font = 'bold 14px Inter, sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.textAlign = 'center';
+    ctx.fillText('Fórmulas del Tronco de Cono', 525, 80);
+    
+    ctx.font = '12px Inter, sans-serif';
+    ctx.textAlign = 'left';
+    
+    ctx.fillStyle = morado;
+    ctx.fillText('Generatriz:', 400, 110);
+    ctx.fillStyle = '#1e293b';
+    ctx.fillText('g = √[h² + (R-r)²]', 400, 130);
+    
+    ctx.fillStyle = azul;
+    ctx.fillText('Área lateral:', 400, 155);
+    ctx.fillStyle = '#1e293b';
+    ctx.fillText('A_L = π(R + r)g', 400, 175);
+    
+    ctx.fillStyle = rojo;
+    ctx.fillText('Volumen:', 400, 200);
+    ctx.fillStyle = '#1e293b';
+    ctx.font = '11px Inter, sans-serif';
+    ctx.fillText('V = (πh/3)(R² + r² + Rr)', 400, 220);
+    
+    ctx.font = '10px Inter, sans-serif';
+    ctx.fillStyle = '#64748b';
+    ctx.fillText('R = radio mayor', 400, 250);
+    ctx.fillText('r = radio menor', 400, 265);
+  }
+});
+</script>
+
 ---
 
 ## 📖 ¿Qué es un tronco?

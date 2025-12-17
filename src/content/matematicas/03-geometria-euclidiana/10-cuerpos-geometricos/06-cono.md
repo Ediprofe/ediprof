@@ -2,6 +2,100 @@
 
 El **cono** es un cuerpo de revolución con una base circular y un vértice (cúspide) en el extremo opuesto.
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <canvas id="roughjs-cono" width="700" height="280" style="width: 100%; height: auto; display: block;"></canvas>
+  <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 0.75rem; font-size: 0.9rem; flex-wrap: wrap;">
+    <span><strong style="color: #22c55e;">r</strong> = radio de la base</span>
+    <span><strong style="color: #ef4444;">h</strong> = altura (perpendicular)</span>
+    <span><strong style="color: #a855f7;">g</strong> = generatriz = √(r² + h²)</span>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof rough !== 'undefined' && document.getElementById('roughjs-cono')) {
+    var canvas = document.getElementById('roughjs-cono');
+    var rc = rough.canvas(canvas);
+    var ctx = canvas.getContext('2d');
+    
+    ctx.font = 'bold 16px Inter, sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.textAlign = 'center';
+    ctx.fillText('Cono: Elementos y Fórmulas', 350, 25);
+    
+    var azul = '#3b82f6';
+    var verde = '#22c55e';
+    var rojo = '#ef4444';
+    var morado = '#a855f7';
+    
+    // Cono
+    var cx = 180, cy = 250;
+    var r = 70;
+    var h = 170;
+    var apex = [cx, cy - h];
+    
+    // Cuerpo del cono (triángulo)
+    rc.polygon([[cx - r, cy], apex, [cx + r, cy]], {fill: '#dbeafe', stroke: azul, strokeWidth: 2, roughness: 0.5});
+    
+    // Base elíptica
+    rc.ellipse(cx, cy, r * 2, 40, {fill: '#bfdbfe', stroke: azul, strokeWidth: 2, roughness: 0.5});
+    
+    // Vértice
+    rc.circle(apex[0], apex[1], 8, {fill: verde, stroke: verde, roughness: 0.3});
+    ctx.font = '11px Inter, sans-serif';
+    ctx.fillStyle = verde;
+    ctx.fillText('Vértice', apex[0] + 15, apex[1]);
+    
+    // Radio
+    rc.line(cx, cy, cx + r, cy, {stroke: verde, strokeWidth: 3, roughness: 0.3});
+    ctx.font = 'bold 12px Inter, sans-serif';
+    ctx.fillStyle = verde;
+    ctx.fillText('r', cx + r/2, cy + 20);
+    
+    // Altura
+    rc.line(cx, cy, cx, apex[1], {stroke: rojo, strokeWidth: 2.5, roughness: 0.3});
+    ctx.fillStyle = rojo;
+    ctx.fillText('h', cx - 15, cy - h/2);
+    
+    // Generatriz
+    rc.line(cx + r, cy, apex[0], apex[1], {stroke: morado, strokeWidth: 2.5, roughness: 0.3});
+    ctx.fillStyle = morado;
+    ctx.fillText('g', cx + r/2 + 20, cy - h/2 - 10);
+    
+    // Fórmulas
+    rc.rectangle(380, 50, 290, 220, {fill: '#f1f5f9', stroke: '#cbd5e1', roughness: 0.3});
+    ctx.font = 'bold 14px Inter, sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.textAlign = 'center';
+    ctx.fillText('Fórmulas del Cono', 525, 80);
+    
+    ctx.font = '13px Inter, sans-serif';
+    ctx.textAlign = 'left';
+    
+    ctx.fillStyle = morado;
+    ctx.fillText('Generatriz:', 400, 110);
+    ctx.fillStyle = '#1e293b';
+    ctx.fillText('g = √(r² + h²)', 400, 130);
+    
+    ctx.fillStyle = azul;
+    ctx.fillText('Área lateral:', 400, 160);
+    ctx.fillStyle = '#1e293b';
+    ctx.fillText('A_L = πrg', 400, 180);
+    
+    ctx.fillStyle = '#64748b';
+    ctx.fillText('Área total:', 400, 210);
+    ctx.fillStyle = '#1e293b';
+    ctx.fillText('A_T = πr(g + r)', 400, 230);
+    
+    ctx.fillStyle = rojo;
+    ctx.fillText('Volumen:', 400, 260);
+    ctx.fillStyle = '#1e293b';
+    ctx.font = 'bold 14px Inter, sans-serif';
+    ctx.fillText('V = πr²h / 3', 480, 260);
+  }
+});
+</script>
+
 ---
 
 ## 📖 Definición

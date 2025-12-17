@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 280">
+  <defs></defs>
+  <rect x="0.00" y="0.00" width="700.00" height="280.00" fill="#ffffff" stroke="none" stroke-width="0" rx="0"/>
+  <text x="350.00" y="20.00" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Posiciones Recta-Circunferencia</text>
+  <circle cx="100.00" cy="130.00" r="50.00" fill="#dbeafe" stroke="#3b82f6" stroke-width="2" fill-opacity="0.3"/>
+  <circle cx="100.00" cy="130.00" r="4.00" fill="#ef4444" stroke="#3b82f6" stroke-width="2" />
+  <line x1="20.00" y1="180.00" x2="180.00" y2="180.00" stroke="#ef4444" stroke-width="2"  />
+  <line x1="100.00" y1="130.00" x2="100.00" y2="180.00" stroke="#64748b" stroke-width="1" stroke-dasharray="5,5" />
+  <text x="108.00" y="155.00" font-family="Inter, sans-serif" font-size="10" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">d</text>
+  <text x="100.00" y="250.00" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#ef4444" text-anchor="middle" dominant-baseline="middle">Exterior (d &gt; r)</text>
+  <circle cx="350.00" cy="130.00" r="50.00" fill="#dbeafe" stroke="#3b82f6" stroke-width="2" fill-opacity="0.3"/>
+  <circle cx="350.00" cy="130.00" r="4.00" fill="#ef4444" stroke="#3b82f6" stroke-width="2" />
+  <line x1="270.00" y1="130.00" x2="430.00" y2="130.00" stroke="#22c55e" stroke-width="2"  />
+  <line x1="350.00" y1="130.00" x2="350.00" y2="130.00" stroke="#64748b" stroke-width="1" stroke-dasharray="5,5" />
+  <text x="358.00" y="130.00" font-family="Inter, sans-serif" font-size="10" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">d</text>
+  <text x="350.00" y="250.00" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#22c55e" text-anchor="middle" dominant-baseline="middle">Tangente (d = r)</text>
+  <circle cx="600.00" cy="130.00" r="50.00" fill="#dbeafe" stroke="#3b82f6" stroke-width="2" fill-opacity="0.3"/>
+  <circle cx="600.00" cy="130.00" r="4.00" fill="#ef4444" stroke="#3b82f6" stroke-width="2" />
+  <line x1="520.00" y1="100.00" x2="680.00" y2="100.00" stroke="#3b82f6" stroke-width="2"  />
+  <line x1="600.00" y1="130.00" x2="600.00" y2="100.00" stroke="#64748b" stroke-width="1" stroke-dasharray="5,5" />
+  <text x="608.00" y="115.00" font-family="Inter, sans-serif" font-size="10" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">d</text>
+  <text x="600.00" y="250.00" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#3b82f6" text-anchor="middle" dominant-baseline="middle">Secante (d &lt; r)</text>
+</svg>

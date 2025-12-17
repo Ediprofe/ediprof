@@ -2,6 +2,94 @@
 
 La **homotecia** es una transformación que amplía o reduce una figura desde un punto fijo, manteniendo su forma pero cambiando su tamaño.
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <canvas id="roughjs-homotecia-1" width="700" height="350" style="width: 100%; height: auto; display: block;"></canvas>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof rough !== 'undefined' && document.getElementById('roughjs-homotecia-1')) {
+    var canvas = document.getElementById('roughjs-homotecia-1');
+    var rc = rough.canvas(canvas);
+    var ctx = canvas.getContext('2d');
+    
+    ctx.font = 'bold 16px Inter, sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.textAlign = 'center';
+    ctx.fillText('Homotecia con k = 2 (ampliación)', 350, 25);
+    
+    var azul = '#3b82f6';
+    var verde = '#22c55e';
+    var naranja = '#f59e0b';
+    
+    // Centro de homotecia
+    var O = [150, 200];
+    rc.circle(O[0], O[1], 12, {fill: naranja, stroke: naranja, roughness: 0.3});
+    ctx.font = 'bold 14px Inter, sans-serif';
+    ctx.fillStyle = naranja;
+    ctx.fillText('O', O[0]-20, O[1]+5);
+    ctx.font = '11px Inter, sans-serif';
+    ctx.fillText('(centro)', O[0]-25, O[1]+20);
+    
+    // Triángulo ORIGINAL (azul) - pequeño, cerca del centro
+    var A = [220, 220];
+    var B = [280, 220];
+    var C = [250, 170];
+    rc.polygon([A, B, C], {fill: '#dbeafe', stroke: azul, strokeWidth: 2.5, roughness: 0.5});
+    
+    // Etiquetas originales
+    ctx.font = 'bold 12px Inter, sans-serif';
+    ctx.fillStyle = azul;
+    ctx.fillText('A', A[0]-5, A[1]+15);
+    ctx.fillText('B', B[0]+8, B[1]+15);
+    ctx.fillText('C', C[0], C[1]-8);
+    
+    // Homotecia con k = 2
+    var k = 2;
+    function homotecia(p) {
+      return [O[0] + k * (p[0] - O[0]), O[1] + k * (p[1] - O[1])];
+    }
+    var Ap = homotecia(A);
+    var Bp = homotecia(B);
+    var Cp = homotecia(C);
+    
+    // Triángulo IMAGEN (verde) - grande, más lejos del centro
+    rc.polygon([Ap, Bp, Cp], {fill: '#dcfce7', stroke: verde, strokeWidth: 2.5, roughness: 0.5});
+    
+    // Etiquetas imagen
+    ctx.fillStyle = verde;
+    ctx.fillText("A'", Ap[0]-5, Ap[1]+15);
+    ctx.fillText("B'", Bp[0]+8, Bp[1]+15);
+    ctx.fillText("C'", Cp[0], Cp[1]-8);
+    
+    // Rayos desde el centro (líneas punteadas)
+    rc.line(O[0], O[1], Ap[0]+20, Ap[1]+10, {stroke: '#94a3b8', strokeWidth: 1, roughness: 0.2});
+    rc.line(O[0], O[1], Bp[0]+20, Bp[1]+10, {stroke: '#94a3b8', strokeWidth: 1, roughness: 0.2});
+    rc.line(O[0], O[1], Cp[0]+10, Cp[1]-20, {stroke: '#94a3b8', strokeWidth: 1, roughness: 0.2});
+    
+    // Indicar k = 2
+    ctx.font = 'bold 14px Inter, sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.textAlign = 'center';
+    ctx.fillText('k = 2', 350, 300);
+    ctx.font = '12px Inter, sans-serif';
+    ctx.fillStyle = '#64748b';
+    ctx.fillText('La imagen es el DOBLE de grande', 350, 320);
+    
+    // Leyenda
+    rc.rectangle(450, 150, 200, 80, {fill: '#f1f5f9', stroke: '#cbd5e1', roughness: 0.3});
+    ctx.font = '12px Inter, sans-serif';
+    ctx.textAlign = 'left';
+    ctx.fillStyle = azul;
+    ctx.fillText('■ Original', 470, 175);
+    ctx.fillStyle = verde;
+    ctx.fillText('■ Imagen (×2)', 470, 195);
+    ctx.fillStyle = naranja;
+    ctx.fillText('● Centro O', 470, 215);
+  }
+});
+</script>
+
 ---
 
 ## 📖 Definición

@@ -25,6 +25,10 @@ Así como estudiamos familias de rectas, también existen **familias de circunfe
 
 ## 📖 Circunferencias Concéntricas
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/geometria/analitica/circunferencias-concentricas.svg" alt="Circunferencias concéntricas" style="width: 100%; height: auto;" />
+</div>
+
 Las **circunferencias concéntricas** tienen el mismo centro pero diferentes radios.
 
 **Familia:** 
@@ -47,6 +51,10 @@ Para $r = 1, 2, 3, ...$: círculos cada vez más grandes, todos con centro $(2, 
 ---
 
 ## 📖 Circunferencias por un Punto Fijo
+
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/geometria/analitica/circ-por-punto-fijo.svg" alt="Circunferencias por un punto fijo" style="width: 100%; height: auto;" />
+</div>
 
 Todas las circunferencias que pasan por un punto fijo $(a, b)$.
 
@@ -78,6 +86,10 @@ donde $h$ es el parámetro.
 
 ## 📖 Circunferencias Tangentes a una Recta en un Punto
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/geometria/analitica/circ-tangentes-recta.svg" alt="Circunferencias tangentes a una recta" style="width: 100%; height: auto;" />
+</div>
+
 Las circunferencias tangentes a una recta en el punto $(a, b)$ tienen su centro sobre la recta perpendicular a la tangente que pasa por $(a, b)$.
 
 ### ⚙️ Ejemplo 3: Tangente al eje X
@@ -97,6 +109,10 @@ donde $k \neq 0$ es el parámetro.
 ---
 
 ## 📖 Haz de Circunferencias
+
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/geometria/analitica/haz-circunferencias.svg" alt="Haz de circunferencias" style="width: 100%; height: auto;" />
+</div>
 
 Dadas dos circunferencias:
 - $C_1: x^2 + y^2 + D_1x + E_1y + F_1 = 0$
@@ -133,6 +149,10 @@ Para $\lambda = -1$: obtenemos la **cuerda común** (eje radical).
 
 ## 📖 Eje Radical
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/geometria/analitica/eje-radical.svg" alt="Eje radical" style="width: 100%; height: auto;" />
+</div>
+
 El **eje radical** de dos circunferencias es el lugar geométrico de los puntos con igual potencia respecto a ambas circunferencias.
 
 Para $C_1$ y $C_2$, el eje radical es:
@@ -164,6 +184,10 @@ $$
 ---
 
 ## 📖 Circunferencias Ortogonales
+
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/geometria/analitica/circ-ortogonales.svg" alt="Circunferencias ortogonales" style="width: 100%; height: auto;" />
+</div>
 
 Dos circunferencias son **ortogonales** si se cortan formando ángulos rectos.
 

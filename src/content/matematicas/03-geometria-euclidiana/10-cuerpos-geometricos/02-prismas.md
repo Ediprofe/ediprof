@@ -2,6 +2,85 @@
 
 Un **prisma** es un poliedro formado por dos bases paralelas e iguales, unidas por caras laterales rectangulares.
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <canvas id="roughjs-prisma" width="700" height="280" style="width: 100%; height: auto; display: block;"></canvas>
+  <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 0.75rem; font-size: 0.9rem; flex-wrap: wrap;">
+    <span><strong style="color: #ef4444;">h</strong> = altura del prisma</span>
+    <span><strong style="color: #3b82f6;">Base</strong> = polígono (triángulo, cuadrado, etc.)</span>
+    <span><strong style="color: #64748b;">P</strong> = perímetro de la base</span>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof rough !== 'undefined' && document.getElementById('roughjs-prisma')) {
+    var canvas = document.getElementById('roughjs-prisma');
+    var rc = rough.canvas(canvas);
+    var ctx = canvas.getContext('2d');
+    
+    ctx.font = 'bold 16px Inter, sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.textAlign = 'center';
+    ctx.fillText('Prisma Triangular: Elementos', 350, 25);
+    
+    var azul = '#3b82f6';
+    var verde = '#22c55e';
+    var rojo = '#ef4444';
+    
+    // Prisma triangular isométrico
+    // Base inferior (triángulo)
+    var b1 = [150, 220], b2 = [280, 240], b3 = [200, 260];
+    // Base superior (triángulo)
+    var t1 = [150, 100], t2 = [280, 120], t3 = [200, 140];
+    
+    // Caras laterales
+    rc.polygon([b1, b2, t2, t1], {fill: '#dbeafe', stroke: azul, strokeWidth: 2, roughness: 0.5});
+    rc.polygon([b2, b3, t3, t2], {fill: '#bfdbfe', stroke: azul, strokeWidth: 2, roughness: 0.5});
+    rc.polygon([b3, b1, t1, t3], {fill: '#93c5fd', stroke: azul, strokeWidth: 2, roughness: 0.5});
+    
+    // Base superior (visible)
+    rc.polygon([t1, t2, t3], {fill: '#dbeafe', stroke: azul, strokeWidth: 2.5, roughness: 0.5});
+    
+    // Altura (línea vertical)
+    rc.line(215, 250, 215, 130, {stroke: rojo, strokeWidth: 2.5, roughness: 0.3});
+    ctx.font = 'bold 12px Inter, sans-serif';
+    ctx.fillStyle = rojo;
+    ctx.fillText('h', 230, 190);
+    
+    // Etiquetas
+    ctx.font = '11px Inter, sans-serif';
+    ctx.fillStyle = azul;
+    ctx.fillText('Base', 215, 280);
+    ctx.fillText('superior', 215, 90);
+    ctx.fillStyle = '#64748b';
+    ctx.fillText('Cara lateral', 300, 180);
+    
+    // Fórmulas
+    rc.rectangle(400, 80, 270, 180, {fill: '#f1f5f9', stroke: '#cbd5e1', roughness: 0.3});
+    ctx.font = 'bold 14px Inter, sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.fillText('Fórmulas del Prisma', 535, 110);
+    
+    ctx.font = '13px Inter, sans-serif';
+    ctx.textAlign = 'left';
+    ctx.fillStyle = verde;
+    ctx.fillText('Área lateral:', 420, 140);
+    ctx.fillStyle = '#1e293b';
+    ctx.fillText('A_L = Perímetro_base × h', 420, 160);
+    
+    ctx.fillStyle = azul;
+    ctx.fillText('Área total:', 420, 190);
+    ctx.fillStyle = '#1e293b';
+    ctx.fillText('A_T = A_L + 2 × A_base', 420, 210);
+    
+    ctx.fillStyle = rojo;
+    ctx.fillText('Volumen:', 420, 240);
+    ctx.fillStyle = '#1e293b';
+    ctx.fillText('V = A_base × h', 420, 260);
+  }
+});
+</script>
+
 ---
 
 ## 📖 Definición
