@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 380" 
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" 
 style="font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;">
-<rect width="400" height="380" fill="#f8fafc"/>
-<text x="200.00" y="30.00" text-anchor="middle" font-size="18" font-weight="bold" fill="#3b82f6">Corona Circular</text>
+<rect width="500" height="400" fill="#f8fafc"/>
+<text x="250.00" y="30.00" text-anchor="middle" font-size="18" font-weight="bold" fill="#3b82f6">Corona Circular</text>
 <defs>
       <clipPath id="corona-clip">
         <circle cx="200" cy="175" r="110"/>

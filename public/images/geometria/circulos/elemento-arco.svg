@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 350" 
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" 
 style="font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;">
-<rect width="400" height="350" fill="#f8fafc"/>
-<text x="200.00" y="30.00" text-anchor="middle" font-size="18" font-weight="bold" fill="#f97316">Arco</text>
+<rect width="500" height="400" fill="#f8fafc"/>
+<text x="250.00" y="30.00" text-anchor="middle" font-size="18" font-weight="bold" fill="#f97316">Arco</text>
 <circle cx="200" cy="175" r="110" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4"/>
 <circle cx="200" cy="175" r="3" fill="#ef4444"/>
 <path d="M 303.37 137.38 A 110 110 0 0 0 115.74 104.29" fill="none" stroke="#f97316" stroke-width="5"/>

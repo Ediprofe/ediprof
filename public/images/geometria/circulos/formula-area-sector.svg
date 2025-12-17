@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 380" 
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" 
 style="font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;">
-<rect width="450" height="380" fill="#f8fafc"/>
-<text x="225.00" y="30.00" text-anchor="middle" font-size="18" font-weight="bold" fill="#f97316">Área del Sector</text>
+<rect width="500" height="400" fill="#f8fafc"/>
+<text x="250.00" y="30.00" text-anchor="middle" font-size="18" font-weight="bold" fill="#f97316">Área del Sector</text>
 <circle cx="180" cy="180" r="100" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4"/>
 <path d="M 180 180 L 273.97 145.80 A 100 100 0 0 0 145.80 86.03 Z" fill="#fef3c7" stroke="#f97316" stroke-width="2.5"/>
 <circle cx="180" cy="180" r="4" fill="#ef4444"/>

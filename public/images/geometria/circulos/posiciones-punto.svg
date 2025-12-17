@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 320" 
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 380" 
 style="font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;">
-<rect width="700" height="320" fill="#f8fafc"/>
+<rect width="700" height="380" fill="#f8fafc"/>
 <text x="350.00" y="28.00" text-anchor="middle" font-size="18" font-weight="bold" fill="#1e293b">Posiciones de un Punto</text>
 <circle cx="120" cy="170" r="70" fill="#dbeafe" fill-opacity="0.3" stroke="#3b82f6" stroke-width="2"/>
 <circle cx="120" cy="170" r="3" fill="#ef4444"/>

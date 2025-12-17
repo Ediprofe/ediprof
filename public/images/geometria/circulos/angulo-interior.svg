@@ -1,12 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 400" 
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" 
 style="font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;">
-<rect width="450" height="400" fill="#f8fafc"/>
-<text x="225.00" y="30.00" text-anchor="middle" font-size="18" font-weight="bold" fill="#f97316">Ángulo Interior</text>
+<rect width="500" height="400" fill="#f8fafc"/>
+<text x="250.00" y="30.00" text-anchor="middle" font-size="18" font-weight="bold" fill="#f97316">Ángulo Interior</text>
 <circle cx="225" cy="200" r="110" fill="none" stroke="#3b82f6" stroke-width="2"/>
 <line x1="140.74" y1="129.29" x2="328.37" y2="237.62" stroke="#22c55e" stroke-width="2"/>
 <line x1="262.62" y1="96.63" x2="140.74" y2="270.71" stroke="#14b8a6" stroke-width="2"/>
-<circle cx="240" cy="190" r="6" fill="#f97316"/>
-<text x="252.00" y="195.00" text-anchor="start" font-size="14" font-weight="bold" fill="#f97316">P</text>
 <circle cx="140.74" cy="129.29" r="4" fill="#1e293b"/>
 <circle cx="262.62" cy="96.63" r="4" fill="#1e293b"/>
 <circle cx="328.37" cy="237.62" r="4" fill="#1e293b"/>
@@ -18,6 +16,10 @@ style="font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;">
 <path d="M 262.62 96.63 A 110 110 0 0 0 140.74 129.29" fill="none" stroke="#f97316" stroke-width="4"/>
 <path d="M 140.74 270.71 A 110 110 0 0 0 328.37 237.62" fill="none" stroke="#fbbf24" stroke-width="4"/>
 <circle cx="225" cy="200" r="3" fill="#94a3b8"/>
+<path d="M 189.60 157.50 A 25 25 0 0 1 225.59 149.53" fill="none" stroke="#f97316" stroke-width="2.5"/>
+<text x="202.59" y="130.95" text-anchor="start" font-size="14" font-weight="bold" fill="#f97316">α</text>
+<circle cx="211.25" cy="170.00" r="6" fill="#f97316"/>
+<text x="223.25" y="175.00" text-anchor="start" font-size="14" font-weight="bold" fill="#f97316">P</text>
 <rect x="75" y="340" width="300" height="50" rx="8" fill="white" stroke="#f97316"/>
 <text x="225.0" y="369.0" text-anchor="middle" font-size="12" fill="#1e293b"></text>
 <text x="225.00" y="360.00" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e293b">α = (arco₁ + arco₂) / 2</text>

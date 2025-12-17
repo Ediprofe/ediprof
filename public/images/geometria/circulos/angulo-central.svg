@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 400" 
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" 
 style="font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;">
-<rect width="450" height="400" fill="#f8fafc"/>
-<text x="225.00" y="30.00" text-anchor="middle" font-size="18" font-weight="bold" fill="#f97316">Ángulo Central</text>
+<rect width="500" height="400" fill="#f8fafc"/>
+<text x="250.00" y="30.00" text-anchor="middle" font-size="18" font-weight="bold" fill="#f97316">Ángulo Central</text>
 <circle cx="225" cy="200" r="120" fill="none" stroke="#3b82f6" stroke-width="2"/>
 <circle cx="147.87" cy="108.07" r="5" fill="#1e293b"/>
 <circle cx="316.93" cy="122.87" r="5" fill="#1e293b"/>
@@ -11,8 +11,8 @@ style="font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;">
 <line x1="225" y1="200" x2="316.93" y2="122.87" stroke="#ef4444" stroke-width="2.5"/>
 <circle cx="225" cy="200" r="6" fill="#ef4444"/>
 <text x="205.00" y="220.00" text-anchor="start" font-size="14" font-weight="bold" fill="#ef4444">O</text>
-<path d="M 251.81 177.50 A 35 35 0 0 0 202.50 173.19" fill="none" stroke="#f97316" stroke-width="2.5"/>
-<text x="273.00" y="178.00" text-anchor="start" font-size="16" font-weight="bold" fill="#f97316">θ</text>
+<path d="M 202.50 173.19 A 35 35 0 0 1 251.81 177.50" fill="none" stroke="#f97316" stroke-width="2.5"/>
+<text x="229.36" y="150.19" text-anchor="start" font-size="16" font-weight="bold" fill="#f97316">θ</text>
 <path d="M 316.93 122.87 A 120 120 0 0 0 147.87 108.07" fill="none" stroke="#f97316" stroke-width="5"/>
 <rect x="100" y="350" width="250" height="40" rx="8" fill="white" stroke="#f97316"/>
 <text x="225.0" y="374.0" text-anchor="middle" font-size="12" fill="#1e293b">θ = arco AB</text>

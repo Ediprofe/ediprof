@@ -39,7 +39,7 @@ Además del centro, radio y diámetro, la circunferencia tiene otros elementos i
 
 > **Definición:** Una cuerda es un segmento cuyos **extremos están en la circunferencia**.
 
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; max-width: 450px;">
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem auto; max-width: 450px;">
   <div style="margin-bottom: 0.5rem;">
     <span style="font-size: 1rem;">📊</span>
     <strong style="color: #1e293b; font-size: 0.9rem; margin-left: 0.3rem;">Cuerda</strong>
@@ -73,7 +73,7 @@ $$
 
 > **Definición:** Un arco es una **porción de la circunferencia** comprendida entre dos puntos.
 
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; max-width: 450px;">
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem auto; max-width: 450px;">
   <div style="margin-bottom: 0.5rem;">
     <span style="font-size: 1rem;">📊</span>
     <strong style="color: #1e293b; font-size: 0.9rem; margin-left: 0.3rem;">Arco</strong>
@@ -142,7 +142,7 @@ $$
 
 Es como una "rebanada de pizza".
 
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; max-width: 450px;">
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem auto; max-width: 450px;">
   <div style="margin-bottom: 0.5rem;">
     <span style="font-size: 1rem;">📊</span>
     <strong style="color: #1e293b; font-size: 0.9rem; margin-left: 0.3rem;">Sector Circular</strong>
@@ -166,7 +166,7 @@ $$
 
 > **Definición:** Un segmento circular es la región limitada por **una cuerda y su arco**.
 
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; max-width: 450px;">
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem auto; max-width: 450px;">
   <div style="margin-bottom: 0.5rem;">
     <span style="font-size: 1rem;">📊</span>
     <strong style="color: #1e293b; font-size: 0.9rem; margin-left: 0.3rem;">Segmento Circular</strong>
@@ -188,7 +188,7 @@ $$
 
 > **Definición:** Una corona circular es la región entre **dos circunferencias concéntricas** (mismo centro, radios diferentes).
 
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; max-width: 450px;">
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem auto; max-width: 450px;">
   <div style="margin-bottom: 0.5rem;">
     <span style="font-size: 1rem;">📊</span>
     <strong style="color: #1e293b; font-size: 0.9rem; margin-left: 0.3rem;">Corona Circular</strong>

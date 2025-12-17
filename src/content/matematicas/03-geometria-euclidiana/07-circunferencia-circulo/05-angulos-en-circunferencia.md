@@ -20,7 +20,7 @@ Los ángulos asociados a la circunferencia tienen propiedades especiales según 
 
 > **Definición:** Un ángulo central tiene su **vértice en el centro** de la circunferencia y sus lados son radios.
 
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; max-width: 500px;">
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem auto; max-width: 500px;">
   <div style="margin-bottom: 0.5rem;">
     <span style="font-size: 1rem;">📊</span>
     <strong style="color: #1e293b; font-size: 0.9rem; margin-left: 0.3rem;">Ángulo Central</strong>
@@ -48,7 +48,7 @@ Si el ángulo central mide 60°, el arco que abarca también mide 60°.
 
 > **Definición:** Un ángulo inscrito tiene su **vértice en la circunferencia** y sus lados son cuerdas.
 
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; max-width: 500px;">
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem auto; max-width: 500px;">
   <div style="margin-bottom: 0.5rem;">
     <span style="font-size: 1rem;">📊</span>
     <strong style="color: #1e293b; font-size: 0.9rem; margin-left: 0.3rem;">Ángulo Inscrito</strong>
@@ -102,7 +102,7 @@ $$
 
 > **Definición:** Un ángulo semi-inscrito tiene su vértice en la circunferencia, un lado es una **cuerda** y el otro es una **tangente**.
 
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; max-width: 500px;">
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem auto; max-width: 500px;">
   <div style="margin-bottom: 0.5rem;">
     <span style="font-size: 1rem;">📊</span>
     <strong style="color: #1e293b; font-size: 0.9rem; margin-left: 0.3rem;">Ángulo Semi-inscrito</strong>
@@ -128,7 +128,7 @@ $$
 
 > **Definición:** Un ángulo interior tiene su vértice **dentro** de la circunferencia (pero no en el centro).
 
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; max-width: 500px;">
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem auto; max-width: 500px;">
   <div style="margin-bottom: 0.5rem;">
     <span style="font-size: 1rem;">📊</span>
     <strong style="color: #1e293b; font-size: 0.9rem; margin-left: 0.3rem;">Ángulo Interior</strong>
@@ -160,7 +160,7 @@ $$
 
 > **Definición:** Un ángulo exterior tiene su vértice **fuera** de la circunferencia.
 
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; max-width: 550px;">
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem auto; max-width: 550px;">
   <div style="margin-bottom: 0.5rem;">
     <span style="font-size: 1rem;">📊</span>
     <strong style="color: #1e293b; font-size: 0.9rem; margin-left: 0.3rem;">Ángulo Exterior</strong>

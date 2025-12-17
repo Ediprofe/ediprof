@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 380" 
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 380" 
 style="font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;">
-<rect width="650" height="380" fill="#f8fafc"/>
-<text x="325.00" y="28.00" text-anchor="middle" font-size="18" font-weight="bold" fill="#1e293b">Tangente y Secante</text>
+<rect width="700" height="380" fill="#f8fafc"/>
+<text x="350.00" y="28.00" text-anchor="middle" font-size="18" font-weight="bold" fill="#1e293b">Tangente y Secante</text>
 <circle cx="170" cy="190" r="90" fill="none" stroke="#3b82f6" stroke-width="2"/>
 <circle cx="170" cy="190" r="3" fill="#ef4444"/>
 <circle cx="170.00" cy="100.00" r="5" fill="#ec4899"/>

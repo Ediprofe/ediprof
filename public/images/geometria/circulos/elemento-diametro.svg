@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 350" 
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" 
 style="font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;">
-<rect width="400" height="350" fill="#f8fafc"/>
-<text x="200.00" y="30.00" text-anchor="middle" font-size="18" font-weight="bold" fill="#8b5cf6">Diámetro</text>
+<rect width="500" height="400" fill="#f8fafc"/>
+<text x="250.00" y="30.00" text-anchor="middle" font-size="18" font-weight="bold" fill="#8b5cf6">Diámetro</text>
 <circle cx="200" cy="175" r="110" fill="none" stroke="#3b82f6" stroke-width="2"/>
 <circle cx="200" cy="175" r="4" fill="#ef4444"/>
 <text x="208.00" y="167.00" text-anchor="start" font-size="12" font-weight="bold" fill="#ef4444">O</text>

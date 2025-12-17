@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 380" 
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" 
 style="font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;">
-<rect width="500" height="380" fill="#f8fafc"/>
+<rect width="500" height="400" fill="#f8fafc"/>
 <text x="250.00" y="30.00" text-anchor="middle" font-size="18" font-weight="bold" fill="#1e293b">Longitud de la Circunferencia</text>
 <circle cx="180" cy="190" r="100" fill="none" stroke="#3b82f6" stroke-width="3"/>
 <circle cx="180" cy="190" r="4" fill="#ef4444"/>

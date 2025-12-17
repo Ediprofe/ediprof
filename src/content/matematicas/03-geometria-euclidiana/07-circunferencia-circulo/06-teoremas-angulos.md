@@ -8,7 +8,7 @@ En esta lección profundizamos en los teoremas más importantes relacionados con
 
 > **Teorema:** El ángulo inscrito es igual a la **mitad del ángulo central** que abarca el mismo arco.
 
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; max-width: 650px;">
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem auto; max-width: 650px;">
   <div style="margin-bottom: 0.5rem;">
     <span style="font-size: 1rem;">📊</span>
     <strong style="color: #1e293b; font-size: 0.9rem; margin-left: 0.3rem;">Teorema: Inscrito = ½ Central</strong>
@@ -44,7 +44,7 @@ Si varios puntos están en la circunferencia y todos "miran" al mismo arco, form
 
 > **Teorema:** Todo ángulo inscrito en una semicircunferencia es un **ángulo recto** (90°).
 
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; max-width: 500px;">
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem auto; max-width: 500px;">
   <div style="margin-bottom: 0.5rem;">
     <span style="font-size: 1rem;">📊</span>
     <strong style="color: #1e293b; font-size: 0.9rem; margin-left: 0.3rem;">Teorema de Tales</strong>

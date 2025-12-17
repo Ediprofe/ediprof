@@ -8,7 +8,7 @@ La longitud de la circunferencia es el "perímetro" de esta figura curva. La rel
     <strong style="color: #1e293b; font-size: 0.95rem; margin-left: 0.3rem;">Longitud: L = 2πr = πd</strong>
   </div>
 
-![Longitud de la circunferencia](/images/geometria/circulos/longitud-formula.svg)
+![Longitud de la circunferencia](/images/geometria/circulos/formula-longitud.svg)
 
 </div>
 

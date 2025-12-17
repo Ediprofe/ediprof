@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 480" 
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 450" 
 style="font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;">
-<rect width="750" height="480" fill="#f8fafc"/>
+<rect width="750" height="450" fill="#f8fafc"/>
 <text x="375.00" y="28.00" text-anchor="middle" font-size="18" font-weight="bold" fill="#1e293b">Posiciones entre Circunferencias</text>
 <circle cx="125" cy="140" r="50" fill="#dbeafe" fill-opacity="0.3" stroke="#3b82f6" stroke-width="2"/>
 <circle cx="125" cy="140" r="3" fill="#ef4444"/>

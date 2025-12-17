@@ -31,14 +31,11 @@ ediprofe/
 │   └── utils/
 ├── public/
 │   └── images/
-│       ├── geometria/              # SVGs de GeometrySpec
-│       └── funciones/              # SVGs de GraphSpec
+│       └── geometria/
 ├── scripts/
-│   ├── geometry/                   # Renderer de geometría exacta
-│   └── functions/                  # Renderer de GraphSpec (unificado)
+│   └── geometry/
 ├── specs/
-│   ├── geometria/                  # Specs de geometría
-│   └── funciones/                  # Specs de GraphSpec (gráficas)
+│   └── geometria/
 ├── .agent/
 │   └── workflows/
 └── CLAUDE.md
@@ -97,7 +94,7 @@ CAPÍTULO: [Nombre]
 
 **Reglas:**
 - Una lección por archivo .md
-- Estructura: Intro motivadora → Conceptos + ejemplos + ilustraciones → Práctica
+- Estructura: Intro motivadora → Conceptos con ejemplos → Práctica
 - **SIN gráficos complejos** (se agregan en Etapa 3)
 - Tablas y LaTeX SÍ permitidos
 - Usar marcadores: `<!-- ILUSTRACIÓN: descripción -->`
@@ -130,28 +127,8 @@ CAPÍTULO: [Nombre]
 | Progresión | ¿Simple → complejo? |
 | Ejemplos | ¿Suficientes y paso a paso? |
 | Visuales | ¿Hay mínimo 1 ilustración por concepto? |
-| **Ilustraciones Dicentes** | ¿Cada gráfico tiene leyenda y anotaciones explicativas? |
 | Motivación | ¿El estudiante sabe POR QUÉ? |
-
-> 🚨 **CRÍTICO: Ilustraciones Auto-Explicativas**
->
-> Todo gráfico DEBE ser **auto-explicativo** sin necesidad de leer el texto alrededor:
-> - **Leyendas:** Cuando hay múltiples curvas/elementos, cada uno debe estar etiquetado con su fórmula/nombre y color
-> - **Anotaciones:** Flechas indicando dirección de transformaciones, líneas de referencia con etiquetas
-> - **Colores consistentes:** La función base en gris (`#94a3b8`), transformaciones en colores vivos
-> - **Texto contextual:** Notas breves dentro del gráfico explicando el "¿por qué?"
-
-> 🚨 **CRÍTICO: Verificación Matemática de Puntos Críticos**
->
-> Cuando se marcan puntos en gráficos de funciones transformadas, **VERIFICAR matemáticamente** las coordenadas:
->
-> Para `y = A·sin(Bx - C) + D`, el **máximo** (donde sin = 1) ocurre cuando:
-> - `Bx - C = π/2` → `x = (π/2 + C) / B`
->
-> **Ejemplo:** `y = 3sin(2x - π) + 1`
-> - Máximo: `2x - π = π/2` → `x = 3π/4` (NO π/2)
->
-> **NUNCA asumir** que el máximo está en π/2 sin calcular.
+| **Auto-explicativo** | ¿La ilustración se entiende SIN leer el texto? |
 
 ### 3.3 Proponer Mejoras
 
@@ -176,12 +153,109 @@ Cada lección debe ser un **LIBRETO LITERAL** que el mejor profesor del colegio 
 
 ---
 
+## 🎨 CRITERIOS PEDAGÓGICOS PARA ILUSTRACIONES
+
+> **Principio:** Cada ilustración debe ser como la que haría el mejor profesor del colegio en el pizarrón: clara, auto-explicativa y con alto valor didáctico.
+
+### Regla de Oro: AUTO-EXPLICATIVA
+
+Una ilustración es correcta si un estudiante puede entenderla **SIN leer el texto alrededor**.
+
+| ✅ CORRECTO | ❌ INCORRECTO |
+|-------------|---------------|
+| Etiquetas claras: "ARCO MAYOR", "ARCO MENOR" | Solo colores sin explicación |
+| Leyendas completas con fórmulas | "Ver texto para más detalles" |
+| El ángulo α visible con su arco | Solo el símbolo α flotando |
+| Fórmula destacada dentro del SVG | Fórmula solo en el markdown |
+
+### Reglas Específicas por Tipo
+
+#### Para Ángulos:
+```
+✅ El arco del ángulo (α, θ, β) SIEMPRE visible dentro de la abertura
+✅ Etiqueta del ángulo pegada al arco, dentro de la abertura
+✅ Si hay varios ángulos, usar colores distintos con leyenda
+```
+
+#### Para Fórmulas de Área:
+```
+✅ Si la fórmula tiene componentes (ej: Segmento = Sector - Triángulo),
+   mostrar VISUALMENTE cada componente
+✅ El triángulo debe ser visible cuando se menciona "área del triángulo"
+✅ Usar colores para diferenciar: sector (amarillo), triángulo (rojo), resultado (verde)
+```
+
+#### Para Arcos:
+```
+✅ Si se menciona "arco mayor" y "arco menor", AMBOS deben tener etiquetas
+✅ Usar colores distintos para mayor (naranja) y menor (amarillo)
+✅ Las etiquetas deben ser cajas visibles, no solo texto pequeño
+```
+
+### Ejemplo de Verificación
+
+Antes de dar por terminada una ilustración, preguntar:
+
+1. ¿Un estudiante de 15 años entendería esto sin explicación adicional?
+2. ¿Todos los elementos mencionados en la fórmula están dibujados?
+3. ¿Las etiquetas son legibles y están bien posicionadas?
+4. ¿Los colores distinguen claramente cada elemento?
+5. ¿El ángulo/arco/área que quiero mostrar es el protagonista visual?
+
+---
+
+## 📐 ESTÁNDARES TÉCNICOS PARA SVGs
+
+> **Principio:** Todos los SVGs deben tener tamaños consistentes para una experiencia visual uniforme.
+
+### Tamaños Estándar de viewBox
+
+| Tipo de Ilustración | viewBox | Uso |
+|---------------------|---------|-----|
+| **Simple** (1 concepto) | `0 0 500 400` | Radio, diámetro, cuerda, arco, ángulo simple |
+| **Compuesto** (2-3 elementos) | `0 0 600 420` | Sector+triángulo, teoremas con comparación |
+| **Múltiple** (4+ elementos) | `0 0 750 450` | Posiciones de circunferencias, comparaciones múltiples |
+| **Horizontal** (lado a lado) | `0 0 700 350` | Operaciones A - B = C, antes/después |
+
+### Regla de Consistencia
+
+```
+⚠️ CRÍTICO: Todas las ilustraciones de un mismo tema deben usar 
+el MISMO tamaño de viewBox para verse consistentes en la página.
+```
+
+**Ejemplo para Elementos de la Circunferencia:**
+- Radio, Diámetro, Cuerda, Arco → Todos `0 0 500 400`
+- Sector, Segmento, Corona → Todos `0 0 500 400`
+
+### Regla de Ancho Mínimo
+
+```python
+# En cada renderer, definir constantes:
+STANDARD_WIDTH = 500   # Ancho mínimo para ocupar el contenedor
+STANDARD_HEIGHT = 400  # Alto proporcional
+
+# Para ilustraciones compuestas (A - B = C):
+COMPOSITE_WIDTH = 700  # Más ancho para 3 elementos
+COMPOSITE_HEIGHT = 420
+```
+
+### Verificación de Carga
+
+Antes de considerar un SVG terminado:
+1. ✅ El archivo existe en `public/images/...`
+2. ✅ La ruta en markdown es EXACTA (case-sensitive)
+3. ✅ El SVG tiene contenido válido (no vacío)
+4. ✅ El viewBox está definido correctamente
+
+---
+
 ## Filosofía Anti-Abrumamiento
 
 > **PRINCIPIO:** El estudiante no debe ver mucho texto antes de entender visualmente qué va a aprender.
 
 ### Reglas:
-1. **Cheat Sheet (Llamarle "Lo escencial" o de una manera que no sea confusa en américa latina) + Ilustración JUNTOS al inicio:** Tabla resumen + gráfico visual = combo ganador
+1. **Cheat Sheet + Ilustración JUNTOS al inicio:** Tabla resumen + gráfico visual = combo ganador
 2. **Motivación rápida en 10 segundos:** El estudiante debe ver inmediatamente QUÉ va a obtener
 3. **Síntesis antes de detalle:** Primero el resumen visual, luego la explicación
 4. **NUNCA cheat sheet solo sin ilustración:** La tabla sin el gráfico NO tiene sentido
@@ -259,32 +333,39 @@ Cada lección debe ser un **LIBRETO LITERAL** que el mejor profesor del colegio 
 
 ---
 
-## 🌳 Árbol de Decisión SIMPLIFICADO
+## 🌳 Árbol de Decisión
 
 ```
 ¿QUÉ TIPO DE ILUSTRACIÓN NECESITO?
 │
-├─── 📈 ¿Es una GRÁFICA (funciones, datos, estadísticas)?
-│    └─── SÍ → GRAPHSPEC (JSON → Python → SVG animado) ⭐ RECOMENDADO
-│         • Funciones: sin(x), cos(x), lineales, cuadráticas
-│         • Datos: histogramas, barras, scatter plots
-│         • Fracciones: pie charts
-│         • Animaciones CSS automáticas
-│         📁 Ver: .agent/workflows/graphspec.md
+├─── 📊 ¿Es una GRÁFICA de funciones o datos?
+│    └─── SÍ → ECHARTS (inline en .md)
+│         • Funciones: f(x), parábolas, exponenciales
+│         • Series de datos, estadísticas
+│         • Histogramas, barras, líneas
+│         • Plano cartesiano con puntos
+│         📁 Ver: .agent/workflows/echarts.md
 │
 ├─── 📐 ¿Es GEOMETRÍA con propiedades exactas?
 │    └─── SÍ → GEOMETRYSPEC (JSON → Python → SVG)
 │         • Triángulos con puntos notables
 │         • Mediatrices, bisectrices, alturas, medianas
 │         • Circunferencias inscritas/circunscritas
+│         • Paralelismo, perpendicularidad exacta
+│         • ÁNGULOS con arcos correctamente posicionados
 │         📁 Ver: .agent/workflows/geometry-exact.md
 │
 ├─── ✏️ ¿Es un DIAGRAMA ilustrativo/conceptual?
 │    └─── SÍ → ROUGH.JS (inline en .md)
 │         • Situaciones físicas (bloques, poleas)
-│         • Modelos atómicos, equipos de laboratorio
-│         • Mapas conceptuales
+│         • Modelos atómicos, partículas
+│         • Equipos de laboratorio
+│         • Mapas conceptuales, organigramas
 │         📁 Ver: .agent/workflows/roughjs.md
+│
+├─── 🥧 ¿Es una representación de FRACCIONES?
+│    └─── SÍ → CHART.JS (pie charts, inline)
+│         📁 Ver: .agent/workflows/chartjs.md
 │
 ├─── 🎲 ¿Es GEOMETRÍA 3D?
 │    └─── SÍ → THREE.JS (inline en .md)
@@ -295,49 +376,26 @@ Cada lección debe ser un **LIBRETO LITERAL** que el mejor profesor del colegio 
           • $inline$ o $$bloque$$
 ```
 
-> **NOTA:** GraphSpec unifica lo que antes eran FunctionSpec, ECharts y Chart.js en un solo sistema optimizado.
-
 ---
 
 ## Matriz de Decisión Rápida
 
-| Necesito... | Uso... | Tipo GraphSpec |
-|-------------|--------|----------------|
-| Gráfica de $\sin x$, $\cos x$, $\tan x$ | **GraphSpec** | `function` |
-| Onda con amplitud/período/fase | **GraphSpec** | `function` |
-| Gráfica lineal $f(x) = 2x + 3$ | **GraphSpec** | `function` |
-| Histograma de frecuencias | **GraphSpec** | `histogram` |
-| Gráfico de barras | **GraphSpec** | `bar` |
-| Scatter plot (dispersión) | **GraphSpec** | `scatter` |
-| Fracción 3/4 como pastel | **GraphSpec** | `pie` |
-| Baricentro de triángulo | GeometrySpec | - |
-| Circuncentro exacto | GeometrySpec | - |
-| Bloque en plano inclinado | Rough.js | - |
-| Modelo atómico de Bohr | Rough.js | - |
-| Cubo con diagonales 3D | Three.js | - |
+| Necesito... | Uso... | Confianza |
+|-------------|--------|-----------|
+| Gráfica de $f(x) = 2x + 3$ | ECharts | ⭐⭐⭐⭐⭐ 95% |
+| Baricentro de triángulo | GeometrySpec | ⭐⭐⭐⭐⭐ 99% |
+| Histograma de datos | ECharts | ⭐⭐⭐⭐⭐ 95% |
+| Circuncentro exacto | GeometrySpec | ⭐⭐⭐⭐⭐ 99% |
+| Bloque en plano inclinado | Rough.js | ⭐⭐⭐⭐ 85% |
+| Modelo atómico de Bohr | Rough.js | ⭐⭐⭐⭐ 85% |
+| Fracción 3/4 visual | Chart.js | ⭐⭐⭐⭐ 90% |
+| Cubo con diagonales | Three.js | ⭐⭐⭐ 70% |
 
 ---
 
 ## 🚨 Reglas Críticas para Ilustraciones
 
-### Para Gráficas de Funciones y Datos (GraphSpec)
-
-```
-✅ OBLIGATORIO:
-   • Crear GraphSpec JSON en specs/funciones/
-   • Especificar "type": "function" | "bar" | "histogram" | "pie" | "scatter"
-   • Ejecutar: python scripts/functions/renderer.py --spec [archivo]
-   • Enlazar SVG resultante: ![Alt](/images/funciones/...)
-
-TIPOS DISPONIBLES:
-   • "function" → Funciones matemáticas (sin, cos, lineales, etc.)
-   • "bar" → Gráficos de barras
-   • "histogram" → Histogramas de frecuencias
-   • "pie" → Gráficos de pastel (fracciones)
-   • "scatter" → Gráficos de dispersión
-```
-
-### Para Geometría Exacta (GeometrySpec)
+### Para Geometría Exacta
 
 ```
 ❌ PROHIBIDO:
@@ -351,65 +409,118 @@ TIPOS DISPONIBLES:
    • Enlazar SVG resultante: ![Alt](/images/geometria/...)
 ```
 
-### Reutilización Inteligente de Specs
+### Para Ángulos en SVG (CRÍTICO)
+
+> ⚠️ **PROBLEMA COMÚN:** Los arcos de ángulos quedan mal posicionados.
+
+**Reglas para dibujar ángulos correctamente:**
+
+1. **El arco del ángulo debe estar ENTRE los dos lados**, no fuera de ellos
+2. **Calcular matemáticamente** los puntos de inicio y fin del arco:
+   - El arco inicia en la dirección del primer lado
+   - El arco termina en la dirección del segundo lado
+   - El radio del arco es pequeño (20-40px típicamente)
+
+3. **La etiqueta (θ, α, β) debe estar:**
+   - DENTRO de la abertura del ángulo
+   - A una distancia ligeramente mayor que el arco
+   - Centrada en la bisectriz del ángulo
+
+**Ejemplo de cálculo correcto:**
+```python
+# Para un ángulo en el punto O con lados hacia A y B:
+import math
+
+# Ángulos de los lados respecto al eje X
+angle_OA = math.atan2(A.y - O.y, A.x - O.x)
+angle_OB = math.atan2(B.y - O.y, B.x - O.x)
+
+# Puntos del arco (radio = 30)
+arc_start_x = O.x + 30 * math.cos(angle_OA)
+arc_start_y = O.y + 30 * math.sin(angle_OA)
+arc_end_x = O.x + 30 * math.cos(angle_OB)
+arc_end_y = O.y + 30 * math.sin(angle_OB)
+
+# Etiqueta en la bisectriz (radio = 45)
+bisector_angle = (angle_OA + angle_OB) / 2
+label_x = O.x + 45 * math.cos(bisector_angle)
+label_y = O.y + 45 * math.sin(bisector_angle)
+```
+
+4. **Verificar visualmente** que:
+   - El arco está en la "abertura" del ángulo
+   - La etiqueta es legible y no se superpone con otros elementos
+   - El ángulo se ve como lo dibujaría un profesor en el pizarrón
+
+### Para Todos los Gráficos
 
 ```
-ANTES de crear un nuevo spec:
+✅ SIEMPRE:
+   • Envolver en DOMContentLoaded
+   • Verificar disponibilidad: if (typeof echarts !== 'undefined')
+   • Usar wrapper con fondo y bordes redondeados
+   • ID únicos: tipo-leccion-numero
+   • CENTRAR contenedores: margin: 0 auto
 
-1. BUSCAR si ya existe uno similar:
-   • Funciones trig → specs/funciones/trigonometria/
-   • Geometría → specs/geometria/triangulos/
-
-2. SI EXISTE similar:
-   • Duplicar y modificar parámetros
-   • Mantener nomenclatura consistente
-
-3. SI NO EXISTE:
-   • Crear nuevo con nombre descriptivo
-
-CONVENCIÓN DE NOMBRES:
-   • descripcion-concisa.json
-   • Ejemplos: seno-principal.json, histograma-edades.json
+❌ NUNCA:
+   • Interactividad por defecto (fixed: true en todos los puntos)
+   • Zoom, pan, o elementos arrastrables sin solicitud explícita
+   • Contenedores con max-width sin centrar
 ```
 
 ---
 
 # 📝 FORMATO TÉCNICO
 
-## LaTeX
+## LaTeX - Reglas de Formato Visual
 
+### Fórmulas Importantes = Bloque con Espacio
+
+> **REGLA:** Las expresiones matemáticas importantes deben lucir BONITAS y destacadas.
+
+**✅ CORRECTO (vistoso, con espacio):**
 ```markdown
-# Bloque (centrado):
+La fórmula del área es:
+
 $$
-x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+A = \pi r^2
 $$
 
-# Inline:
-La fórmula es $a^2 + b^2 = c^2$
-
-# En tablas:
-| Operación | Fórmula |
-|-----------|---------|
-| Área del círculo | $A = \pi r^2$ |
+Donde $r$ es el radio.
 ```
 
-### ⚠️ Restricciones de LaTeX
+**❌ INCORRECTO (comprimido, poco vistoso):**
+```markdown
+La fórmula del área es: $$A = \pi r^2$$ donde $r$ es el radio.
+```
+
+### Cuándo Usar Bloque vs Inline
+
+| Situación | Usar | Ejemplo |
+|-----------|------|---------|
+| Fórmula principal del concepto | Bloque `$$` con líneas vacías | Teoremas, definiciones |
+| Resultado final de un ejemplo | Bloque con `\boxed{}` | `$$\boxed{x = 5}$$` |
+| Variable mencionada en texto | Inline `$` | "donde $x$ es..." |
+| Fórmula secundaria/auxiliar | Inline `$` | "sabemos que $a + b = c$" |
+
+### Resultados con Recuadro
+
+```markdown
+Resultado:
+
+$$
+\boxed{x = 5}
+$$
+```
+
+### Restricciones de LaTeX
 
 | ❌ NO hacer | ✅ Alternativa |
 |-------------|----------------|
 | LaTeX en títulos de secciones | Usar texto plano o Unicode |
 | `\[...\]` o `\(...\)` | Usar `$$...$$` o `$...$` |
-| Símbolos de moneda `$` solos | Usar `USD`, `COP`, o escapar |
-
-> 🚨 **CRÍTICO: NUNCA usar LaTeX en títulos Markdown**
-> 
-> Los títulos `## Sección` aparecen en la tabla de contenidos. Si tienen `$x^2$`, se verá como código crudo: `$x^2$`
-> 
-> | ❌ MAL | ✅ BIEN |
-> |--------|---------|
-> | `## Función $f(x) = x^2$` | `## Función cuadrática f(x) = x²` |
-> | `## El seno $\sin\theta$` | `## El seno (sin θ)` |
-> | `## Derivada $\frac{dy}{dx}$` | `## La derivada dy/dx` |
+| Símbolos de moneda `$` solos | Usar `USD`, `COP`, o `\$` |
+| `$$formula$$` en una línea | Dejar línea vacía antes y después |
 
 ---
 
@@ -431,6 +542,18 @@ Usar emojis consistentes:
 # 🎨 ESTILO VISUAL (MODO CLARO/OSCURO)
 
 > **REGLA GENERAL:** Todo elemento visual debe verse bien en AMBOS modos.
+
+## Contenedores de Ilustraciones - CENTRADOS
+
+> ⚠️ **SIEMPRE centrar** los contenedores de ilustraciones.
+
+```html
+<!-- ✅ CORRECTO: centrado con margin auto -->
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem auto; max-width: 500px;">
+
+<!-- ❌ INCORRECTO: max-width sin centrar -->
+<div style="background: #f1f5f9; max-width: 500px;">
+```
 
 ## ✅ USAR (funcionan en ambos modos)
 
@@ -461,12 +584,17 @@ Controlan sus propios colores
 - Colores de texto sin especificar → dependen del tema
 - `border-left` con fondo claro sin color de texto explícito
 
-## Wrapper Estándar para Gráficos
+## Wrapper Estándar para Gráficos (CENTRADO)
 
 ```html
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
-  <span style="font-size: 1.1rem;">📊</span>
-  <div id="grafico-id" style="width: 100%; height: 400px;"></div>
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem auto; max-width: 500px;">
+  <div style="margin-bottom: 0.5rem;">
+    <span style="font-size: 1rem;">📊</span>
+    <strong style="color: #1e293b; font-size: 0.9rem; margin-left: 0.3rem;">Título</strong>
+  </div>
+  
+  ![Descripción](/images/ruta/imagen.svg)
+  
 </div>
 ```
 
@@ -486,6 +614,7 @@ Controlan sus propios colores
 | Vértices | Gris oscuro | `#1e293b` |
 | Auxiliares | Gris | `#94a3b8` |
 | Circunferencias | Azul | `#3b82f6` |
+| Arcos de ángulos | Naranja | `#f97316` |
 
 ## Por Materia
 
@@ -503,223 +632,12 @@ Controlan sus propios colores
 | Archivo | Contenido |
 |---------|-----------|
 | `.agent/workflows/content-generation.md` | Flujo de generación de lecciones |
-| `.agent/workflows/graphspec.md` | **GraphSpec: sistema unificado de gráficas** ⭐ PRINCIPAL |
+| `.agent/workflows/echarts.md` | Funciones, datos, estadísticas |
 | `.agent/workflows/geometry-exact.md` | GeometrySpec: geometría exacta |
 | `.agent/workflows/roughjs.md` | Diagramas ilustrativos |
+| `.agent/workflows/chartjs.md` | Fracciones |
 | `.agent/workflows/threejs.md` | Geometría 3D |
-| `.agent/workflows/illustration-decision.md` | Árbol de decisión simplificado |
-
-> **NOTA:** GraphSpec reemplaza a ECharts, Chart.js y FunctionSpec para todas las gráficas.
-
----
-
-# 🔧 SISTEMA DE RENDERERS ESPECIALIZADOS
-
-Además de los renderers principales (GraphSpec, GeometrySpec), existen renderers especializados por tema:
-
-## Renderers Disponibles
-
-| Renderer | Ubicación | Propósito |
-|----------|-----------|-----------|
-| `renderer.py` | `scripts/functions/` | GraphSpec: funciones, barras, pie, scatter |
-| `renderer.py` | `scripts/geometry/` | GeometrySpec: geometría exacta |
-| `trigonometry_renderer.py` | `scripts/geometry/` | Triángulos trigonométricos con etiquetas |
-| `unit_circle_renderer.py` | `scripts/geometry/` | Círculo unitario, cuadrantes, signos |
-| `identity_renderer.py` | `scripts/geometry/` | Identidades trig, fórmulas, estrategias |
-| `oblique_triangle_renderer.py` | `scripts/geometry/` | Triángulos oblicuángulos, leyes de senos/cosenos |
-| `circle_renderer.py` | `scripts/geometry/` | Circunferencia, círculo, elementos, ángulos, teoremas |
-
-## Uso de Renderers Especializados
-
-```bash
-# Círculo unitario
-python3 scripts/geometry/unit_circle_renderer.py --type basic --output archivo.svg
-# Tipos: basic, point, quadrants, reference, negative, quadrantal, cofunctions
-
-# Identidades trigonométricas  
-python3 scripts/geometry/identity_renderer.py --type map --output archivo.svg
-# Tipos: map, pythagorean, double, half, proof, equations
-
-# Triángulos trigonométricos
-python3 scripts/geometry/trigonometry_renderer.py --spec archivo.json --output archivo.svg
-
-# Triángulos oblicuángulos
-python3 scripts/geometry/oblique_triangle_renderer.py --type types --output archivo.svg
-# Tipos: types, sines, cosines, cases, navigation
-
-# Circunferencia y círculo (v2.0 - una ilustración por concepto)
-python3 scripts/geometry/circle_renderer.py --type TYPE --output archivo.svg
-
-# === BÁSICOS ===
-#   basic              → Circunferencia con centro y radio
-
-# === ELEMENTOS (uno por concepto) ===
-#   element_radius     → Solo el radio
-#   element_diameter   → Solo el diámetro
-#   element_chord      → Solo la cuerda
-#   element_arc        → Solo el arco
-#   element_sector     → Sector circular (2 radios + arco, "rebanada de pizza")
-#   element_segment    → Segmento circular (cuerda + arco, "media luna")
-#   element_crown      → Corona circular (2 circunferencias concéntricas)
-
-# === POSICIONES ===
-#   point_positions    → Punto interior/sobre/exterior
-#   tangent_secant     → Recta tangente vs secante
-#   circle_positions   → Exteriores, tangentes, secantes, concéntricas
-
-# === ÁNGULOS (uno por tipo) ===
-#   angle_central      → Ángulo central (vértice en centro)
-#   angle_inscribed    → Ángulo inscrito (vértice en circunferencia)
-#   angle_semi_inscribed → Ángulo semi-inscrito (un lado tangente)
-#   angle_interior     → Ángulo interior (vértice dentro)
-#   angle_exterior     → Ángulo exterior (vértice fuera)
-
-# === TEOREMAS ===
-#   theorem_inscribed  → Teorema: inscrito = ½ central
-#   theorem_tales      → Teorema de Tales (semicircunferencia = 90°)
-
-# === FÓRMULAS ===
-#   formula_length     → Longitud L = 2πr
-#   formula_area       → Área A = πr²
-#   formula_sector_area → Área del sector
-#   formula_segment_area → Área del segmento
-```
-
-## Organización de Salidas SVG
-
-```
-public/images/
-├── funciones/           # GraphSpec (gráficas de funciones)
-│   └── trigonometria/   # sin, cos, tan, inversas, etc.
-├── geometria/           # GeometrySpec (construcciones geométricas)
-│   └── triangulos/      # Puntos notables, etc.
-├── trigonometria/       # Renderers especializados
-│   ├── circulo-unitario/  # unit_circle_renderer.py
-│   ├── identidades/       # identity_renderer.py
-│   └── triangulos-oblicuangulos/  # oblique_triangle_renderer.py
-└── geometria/
-    └── circulos/          # circle_renderer.py
-```
-
----
-
-# 📊 MANTENIBILIDAD DEL SISTEMA DE SPECS
-
-## Principio de Organización
-
-> **REGLA:** Cada tipo de ilustración tiene su lugar predefinido.
-> El agente NO debe crear nuevas carpetas sin justificación.
-
-## Estructura de Specs
-
-```
-specs/
-├── geometria/
-│   ├── triangulos/      # GeometrySpec de triángulos
-│   ├── cuadrilateros/   # GeometrySpec de cuadriláteros
-│   ├── circulos/        # GeometrySpec de círculos
-│   └── trigonometria/   # Specs de triángulos trig (OAH)
-└── funciones/
-    ├── trigonometria/   # GraphSpec de sin, cos, tan
-    ├── estadistica/     # GraphSpec de histogramas, barras
-    └── fracciones/      # GraphSpec de pie charts
-```
-
-## ¿Qué Renderer Usar por Tema?
-
-| Tema de la Lección | Renderer | Carpeta Output |
-|--------------------|----------|----------------|
-| Gráficas de funciones trig | `scripts/functions/renderer.py` | `public/images/funciones/trigonometria/` |
-| Círculo unitario | `scripts/geometry/unit_circle_renderer.py` | `public/images/trigonometria/circulo-unitario/` |
-| Identidades trig | `scripts/geometry/identity_renderer.py` | `public/images/trigonometria/identidades/` |
-| Triángulos rectángulos | `scripts/geometry/trigonometry_renderer.py` | `public/images/geometria/trigonometria/` |
-| Triángulos oblicuángulos | `scripts/geometry/oblique_triangle_renderer.py` | `public/images/trigonometria/triangulos-oblicuangulos/` |
-| **Circunferencia y círculo** | `scripts/geometry/circle_renderer.py` | `public/images/geometria/circulos/` |
-| Puntos notables | `scripts/geometry/renderer.py` | `public/images/geometria/triangulos/` |
-| Histogramas/barras | `scripts/functions/renderer.py` | `public/images/funciones/estadistica/` |
-
-## Checklist para Nuevos Renderers
-
-Antes de crear un nuevo renderer, verificar:
-
-1. [ ] ¿Existe ya un renderer que cubra este caso?
-2. [ ] ¿Se puede extender un renderer existente?
-3. [ ] Si es nuevo: documentar en esta tabla y en `.agent/workflows/`
-4. [ ] Crear carpeta de output en `public/images/` correspondiente
-
----
-
-# 🔒 REGLAS DE RIGUROSIDAD PARA SVGs (TODAS LAS ILUSTRACIONES)
-
-> **PRINCIPIO:** Todo SVG generado debe ser 100% fiel a la descripción matemática. No hay margen para "aproximaciones visuales".
-
-## 1. Validación Matemática de Coordenadas
-
-```
-ANTES DE GENERAR:
-1. ¿Se calcularon TODAS las coordenadas con fórmulas matemáticas?
-2. ¿Se usaron funciones trigonométricas exactas (cos, sin, etc.)?
-3. ¿Se verificó que los puntos están donde deben estar?
-
-NUNCA:
-- Hardcodear coordenadas "a ojo"
-- Copiar coordenadas de un ejemplo sin recalcular
-- Asumir que x=π/2 es siempre el máximo de una función transformada
-```
-
-## 2. Verificación de Visibilidad del Texto
-
-```
-REGLA: Todo texto/etiqueta debe ser 100% visible.
-
-CHECKLIST:
-- [ ] ¿El texto cabe dentro del viewBox?
-- [ ] ¿No hay texto cortado en los bordes?
-- [ ] ¿El texto no se superpone con otros elementos?
-- [ ] ¿El tamaño de fuente es legible (mínimo 10px)?
-
-SOLUCIÓN: Calcular posición del texto DESPUÉS de definir el viewBox.
-Si el texto no cabe, ajustar viewBox o reubicar el texto.
-```
-
-## 3. Fidelidad Visual de Figuras Geométricas
-
-```
-REGLA: Cada figura debe ser EXACTAMENTE lo que representa.
-
-SECTOR CIRCULAR ≠ SEGMENTO CIRCULAR:
-- SECTOR: Región limitada por 2 radios y un arco (triángulo curvo)
-- SEGMENTO: Región limitada por 1 cuerda y un arco (media luna)
-
-VERIFICACIÓN: Antes de renderizar, preguntar:
-"¿Esta figura se ve EXACTAMENTE como la definición matemática?"
-```
-
-## 4. Consistencia de Escala y Proporciones
-
-```
-REGLA: Los elementos relacionados deben mantener proporciones coherentes.
-
-EJEMPLOS:
-- Radio menor < Radio mayor (siempre)
-- Ángulo de 30° debe verse como 30° (no como 60°)
-- Circunferencias concéntricas deben compartir el mismo centro
-```
-
-## 5. Control de Calidad en Arcos y Curvas
-
-```
-REGLA: Arcos y curvas deben ser suaves y matemáticamente correctos.
-
-CHECKLIST:
-- [ ] ¿Los arcos usan SVG path con A (arc) correctamente?
-- [ ] ¿El sweep-flag y large-arc-flag son correctos?
-- [ ] ¿Los ángulos de inicio y fin son precisos?
-
-FÓRMULA para punto en circunferencia:
-x = cx + r * cos(θ)
-y = cy - r * sin(θ)  ← NOTA: "-" porque Y en SVG crece hacia abajo
-```
+| `.agent/workflows/illustration-decision.md` | Árbol de decisión expandido |
 
 ---
 
@@ -733,18 +651,57 @@ y = cy - r * sin(θ)  ← NOTA: "-" porque Y en SVG crece hacia abajo
 - [ ] ¿Hay transiciones claras entre conceptos?
 - [ ] ¿Los títulos NO tienen LaTeX?
 - [ ] ¿Hay ejercicios de práctica al final con `<details>`?
+- [ ] ¿Las fórmulas importantes están en bloque `$$` con líneas vacías?
 
 ## Ilustraciones (Etapa 3)
 - [ ] ¿Mínimo 1 ilustración por concepto (excepto ejercicios)?
 - [ ] ¿Tecnología correcta según árbol de decisión?
 - [ ] ¿Las tarjetas HTML funcionan en modo oscuro?
 - [ ] ¿Las ilustraciones son claras como un dibujo de pizarra?
-- [ ] **¿Gráficos auto-explicativos?** (leyendas, flechas, anotaciones cuando hay múltiples elementos)
-- [ ] **¿Puntos marcados verificados matemáticamente?** (máximos, mínimos, intersecciones calculados correctamente)
-- [ ] **¿Texto 100% visible?** (no cortado, no superpuesto)
-- [ ] **¿Figuras geométricas fieles a su definición?** (sector ≠ segmento, etc.)
 - [ ] ¿IDs únicos en todos los gráficos?
-- [ ] ¿Wrapper estándar con fondo y bordes?
+- [ ] ¿Contenedores CENTRADOS con `margin: 0 auto`?
+- [ ] ¿Los ángulos tienen arcos BIEN POSICIONADOS (dentro de la abertura)?
+- [ ] ¿Las etiquetas de ángulos (α, θ, β) están DENTRO del ángulo?
+
+## 🎯 Validación de Ángulos en SVGs (CRÍTICO)
+
+> **Regla de Oro:** El arco de un ángulo SIEMPRE debe estar ENTRE los dos lados del ángulo, en la abertura.
+
+### Metodología Correcta: `get_angle_arc_svg()`
+
+```python
+# CORRECTO: Usar las posiciones REALES de los puntos
+arc_data = get_angle_arc_svg(
+    vertex=(px, py),     # El vértice del ángulo
+    point1=(ax, ay),     # Punto que define un lado
+    point2=(bx, by),     # Punto que define el otro lado
+    radius=30            # Radio del arco
+)
+
+# La función calcula automáticamente:
+# 1. Los ángulos reales respecto al vértice
+# 2. El camino más corto (ángulo menor)
+# 3. La posición óptima de la etiqueta
+```
+
+### Checklist de Validación
+
+| Verificar | Descripción |
+|-----------|-------------|
+| ✅ Arco dentro de abertura | El arco debe curvarse HACIA ADENTRO del ángulo |
+| ✅ Radio pequeño | 25-40px para que sea visible pero no intrusivo |
+| ✅ Etiqueta visible | α, θ, β dentro del ángulo, sin superposiciones |
+| ✅ Dirección correcta | El arco debe ir del lado 1 al lado 2 por el camino corto |
+
+### ❌ Error Común: Usar ángulos abstractos
+
+```python
+# INCORRECTO: Ángulos hardcodeados que no corresponden a los puntos
+arc = angle_arc_path(cx, cy, 35, 90, 180)  # ¿Por qué 90° y 180°?
+
+# CORRECTO: Calcular desde las posiciones reales
+arc_data = get_angle_arc_svg(vertex, point1, point2, 35)
+```
 
 ---
 
@@ -757,23 +714,8 @@ npm run dev
 # Build de producción
 npm run build
 
-# === GraphSpec (gráficas de funciones y datos) ===
-# Generar SVG de función
-python3 scripts/functions/renderer.py \
-  --spec specs/funciones/trigonometria/seno-principal.json \
-  --output public/images/funciones/trigonometria/seno-principal.svg
-
-# Generar con preview en navegador
-python3 scripts/functions/renderer.py \
-  --spec specs/funciones/ejemplo.json \
-  --output public/images/funciones/ejemplo.svg \
-  --preview
-
-# === GeometrySpec (geometría exacta) ===
-python3 scripts/geometry/renderer.py \
-  --spec specs/geometria/triangulos/baricentro.json \
-  --output public/images/geometria/ \
-  --verify
+# Generar SVG de geometría
+python scripts/geometry/renderer.py --spec specs/geometria/triangulos/baricentro.json --output public/images/geometria/ --verify
 
 # Crear nueva lección
 node scripts/new-lesson.js
@@ -791,58 +733,56 @@ node scripts/new-lesson.js
 6. **Validar geometría exacta** con `--verify` antes de enlazar SVG
 7. **IDs únicos** para evitar colisiones en gráficos inline
 8. **Anti-abrumamiento:** Cheat Sheet + Ilustración JUNTOS al inicio
-9. **NUNCA usar LaTeX en títulos Markdown** (se ve mal en tabla de contenidos)
-10. **Consultar tabla de renderers** para saber qué usar por tema
+9. **Fórmulas bonitas:** Bloques `$$` con líneas vacías antes y después
+10. **Centrar siempre** los contenedores de ilustraciones
+11. **Verificar ángulos:** Arco DENTRO de la abertura, etiqueta visible
 
 ---
 
-# 🎯 FLUJO DE EVALUACIÓN PEDAGÓGICA E ILUSTRACIONES
+# 🐛 ERRORES CONOCIDOS Y SOLUCIONES
 
-> Cuando el usuario pide "evaluación pedagógica e ilustraciones" para un tema, seguir este flujo:
+## Error: Ángulo mal posicionado en SVG
 
-## Paso 1: Leer las lecciones del tema
-```bash
-# Listar archivos del tema
-ls src/content/matematicas/XX-capitulo/YY-tema/
-# Leer cada .md para evaluar
+**Síntoma:** El arco del ángulo aparece fuera de la abertura entre los lados.
+
+**Causa:** Los puntos de inicio/fin del arco no están calculados sobre las direcciones de los lados.
+
+**Solución:** Calcular matemáticamente usando atan2:
+```python
+angle_lado1 = math.atan2(P1.y - Vertice.y, P1.x - Vertice.x)
+angle_lado2 = math.atan2(P2.y - Vertice.y, P2.x - Vertice.x)
 ```
 
-## Paso 2: Evaluar pedagógicamente
-| Aspecto | Verificar |
-|---------|-----------|
-| Ilustraciones | ¿Tiene al menos 1 por concepto? |
-| Cheat Sheet | ¿Tabla resumen + ilustración juntos al inicio? |
-| Títulos | ¿Sin LaTeX? |
-| Progresión | ¿Simple → complejo? |
-| Ejercicios | ¿Con soluciones en `<details>`? |
+## Error: Etiqueta de ángulo invisible
 
-## Paso 3: Identificar renderer correcto
-Consultar la **tabla "¿Qué Renderer Usar por Tema?"** más arriba.
+**Síntoma:** La letra α, θ, β no aparece o está fuera del área visible.
 
-## Paso 4: Generar specs e ilustraciones
-```bash
-# 1. Crear specs (si aplica) o usar renderer directo
-# 2. Ejecutar renderer
-# 3. Guardar en carpeta correcta de public/images/
-```
+**Causa:** La posición de la etiqueta no está en la bisectriz del ángulo.
 
-## Paso 5: Actualizar archivos .md
+**Solución:** Posicionar en la bisectriz a una distancia mayor que el arco.
+
+## Error: Contenedor no centrado
+
+**Síntoma:** La ilustración está pegada a la izquierda.
+
+**Causa:** `max-width` sin `margin: 0 auto`.
+
+**Solución:** Agregar `margin: 1.5rem auto` al estilo.
+
+## Error: Fórmula poco vistosa
+
+**Síntoma:** La ecuación se ve comprimida o poco destacada.
+
+**Causa:** `$$formula$$` en una sola línea sin espacios.
+
+**Solución:** 
 ```markdown
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
-  <div style="margin-bottom: 0.5rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-    <strong style="color: #1e293b;">Título de la ilustración</strong>
-  </div>
 
-![Alt text](/images/carpeta/archivo.svg)
+$$
+formula
+$$
 
-</div>
 ```
-
-## Paso 6: Reportar resultados
-- Número de ilustraciones creadas
-- Archivos actualizados
-- Mejoras pedagógicas aplicadas
 
 ---
 
@@ -851,8 +791,4 @@ Consultar la **tabla "¿Qué Renderer Usar por Tema?"** más arriba.
 Para ver el estilo correcto de lecciones, revisar:
 - `src/content/matematicas/01-aritmetica/05-proporcionalidad/03-regla-de-tres-simple.md`
 - `/fisica/cinematica/mrua/lanzamiento-vertical`
-- `/fisica/introduccion-a-la-fisica/introduccion/la-fisica-y-sus-ramas`
-
-# SOLICITUD CONCRETA
-
-La solicitud concreta que te voy a pedir con base en este contexto, está en la raíz de este proyecto, en PETICION.md
+- `/fisica/introduccion-a-la-fisica/introduccion/la-fisica-y-sus-ramas`|
