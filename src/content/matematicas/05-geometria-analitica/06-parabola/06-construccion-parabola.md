@@ -33,6 +33,10 @@ Vértice $V(2, 3)$ y foco $F(2, 5)$.
 
 **Ecuación:** $(x - 2)^2 = 8(y - 3)$
 
+<div class="svg-container">
+  <img src="/images/geometria/analitica/construccion-parabola-caso1.svg" alt="Construcción caso 1: Vértice y Foco" />
+</div>
+
 ---
 
 ## 📖 Caso 2: Vértice y Directriz
@@ -45,6 +49,10 @@ Vértice $V(0, 2)$ y directriz $y = 5$.
 - $p = 3$
 
 **Ecuación:** $x^2 = -12(y - 2)$
+
+<div class="svg-container">
+  <img src="/images/geometria/analitica/construccion-parabola-caso2.svg" alt="Construcción caso 2: Vértice y Directriz" />
+</div>
 
 ---
 
@@ -59,6 +67,10 @@ Foco $F(3, 4)$ y directriz $y = -2$.
 
 **Ecuación:** $(x - 3)^2 = 12(y - 1)$
 
+<div class="svg-container">
+  <img src="/images/geometria/analitica/construccion-parabola-caso3.svg" alt="Construcción caso 3: Foco y Directriz" />
+</div>
+
 ---
 
 ## 📖 Caso 4: Vértice y Punto
@@ -72,6 +84,10 @@ $(x - 1)^2 = 4p(y - 2)$
 Sustituyendo: $4 = 16p → p = 1/4$
 
 **Ecuación:** $(x - 1)^2 = (y - 2)$
+
+<div class="svg-container">
+  <img src="/images/geometria/analitica/construccion-parabola-caso4.svg" alt="Construcción caso 4: Vértice y Punto" />
+</div>
 
 ---
 

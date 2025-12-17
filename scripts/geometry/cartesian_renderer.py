@@ -2627,11 +2627,11 @@ def render_elementos_parabola(output_path: str, title: str = "Elementos de la Pa
     
     # Vértice V(0, 0)
     V = Point(0, 0)
-    coord.draw_point(builder, V, label='V(0, 0)', color=COLORS['accent'], radius=5, label_offset=(10, 15))
+    coord.draw_point(builder, V, label='V(0, 0)', color=COLORS['accent'], radius=5, label_offset=(10, 15), show_coords=False)
     
     # Foco F(0, p) = F(0, 2)
     F = Point(0, p)
-    coord.draw_point(builder, F, label='F(0, 2)', color='#ef4444', radius=5, label_offset=(10, -10))
+    coord.draw_point(builder, F, label='F(0, 2)', color='#ef4444', radius=5, label_offset=(10, -10), show_coords=False)
     
     # Directriz y = -p = -2
     coord.draw_segment(builder, Point(-7, -p), Point(7, -p), color='#22c55e', width=2)
@@ -2708,8 +2708,8 @@ def render_parabola_vertical_arriba(output_path: str, title: str = "Parábola Ve
     V = Point(0, 0)
     F = Point(0, p)
     
-    coord.draw_point(builder, V, label='V', color=COLORS['accent'], radius=5)
-    coord.draw_point(builder, F, label='F(0, 3)', color='#ef4444', radius=5, label_offset=(10, 0))
+    coord.draw_point(builder, V, label='V(0, 0)', color=COLORS['accent'], radius=5, show_coords=False)
+    coord.draw_point(builder, F, label='F(0, 3)', color='#ef4444', radius=5, label_offset=(10, 0), show_coords=False)
     
     # Directriz
     coord.draw_segment(builder, Point(-9, -p), Point(9, -p), color='#22c55e', width=2)
@@ -2771,8 +2771,8 @@ def render_parabola_vertical_abajo(output_path: str, title: str = "Parábola Ver
     V = Point(0, 0)
     F = Point(0, -p)
     
-    coord.draw_point(builder, V, label='V', color=COLORS['accent'], radius=5)
-    coord.draw_point(builder, F, label='F(0, -3)', color='#ef4444', radius=5, label_offset=(10, 0))
+    coord.draw_point(builder, V, label='V(0, 0)', color=COLORS['accent'], radius=5, show_coords=False)
+    coord.draw_point(builder, F, label='F(0, -3)', color='#ef4444', radius=5, label_offset=(10, 0), show_coords=False)
     
     # Directriz y = p = 3
     coord.draw_segment(builder, Point(-9, p), Point(9, p), color='#22c55e', width=2)
@@ -2839,8 +2839,8 @@ def render_parabola_horizontal_derecha(output_path: str, title: str = "Parábola
     V = Point(0, 0)
     F = Point(p, 0)
     
-    coord.draw_point(builder, V, label='V', color=COLORS['accent'], radius=5)
-    coord.draw_point(builder, F, label='F(2, 0)', color='#ef4444', radius=5, label_offset=(0, -15))
+    coord.draw_point(builder, V, label='V(0, 0)', color=COLORS['accent'], radius=5, show_coords=False)
+    coord.draw_point(builder, F, label='F(2, 0)', color='#ef4444', radius=5, label_offset=(0, -15), show_coords=False)
     
     # Directriz x = -p = -2
     coord.draw_segment(builder, Point(-p, -7), Point(-p, 7), color='#22c55e', width=2)
@@ -2906,8 +2906,8 @@ def render_parabola_horizontal_izquierda(output_path: str, title: str = "Parábo
     V = Point(0, 0)
     F = Point(-p, 0)
     
-    coord.draw_point(builder, V, label='V', color=COLORS['accent'], radius=5)
-    coord.draw_point(builder, F, label='F(-2, 0)', color='#ef4444', radius=5, label_offset=(0, -15))
+    coord.draw_point(builder, V, label='V(0, 0)', color=COLORS['accent'], radius=5, show_coords=False)
+    coord.draw_point(builder, F, label='F(-2, 0)', color='#ef4444', radius=5, label_offset=(0, -15), show_coords=False)
     
     # Directriz x = p = 2
     coord.draw_segment(builder, Point(p, -7), Point(p, 7), color='#22c55e', width=2)
@@ -2970,8 +2970,8 @@ def render_parabola_trasladada(output_path: str, title: str = "Parábola Traslad
     V = Point(h, k)
     F = Point(h, k + p)
     
-    coord.draw_point(builder, V, label='V(2, -1)', color=COLORS['accent'], radius=5, label_offset=(10, 15))
-    coord.draw_point(builder, F, label='F(2, 1)', color='#ef4444', radius=5, label_offset=(10, -10))
+    coord.draw_point(builder, V, label='V(2, -1)', color=COLORS['accent'], radius=5, label_offset=(10, 15), show_coords=False)
+    coord.draw_point(builder, F, label='F(2, 1)', color='#ef4444', radius=5, label_offset=(10, -10), show_coords=False)
     
     # Directriz y = k - p = -3
     coord.draw_segment(builder, Point(-5, k - p), Point(9, k - p), color='#22c55e', width=2)
@@ -3109,7 +3109,7 @@ def render_tangente_parabola(output_path: str, title: str = "Tangente a la Pará
     
     # Punto de tangencia P(4, 2)
     P = Point(4, 2)
-    coord.draw_point(builder, P, label='P(4, 2)', color=COLORS['accent'], radius=5, label_offset=(10, -10))
+    coord.draw_point(builder, P, label='P(4, 2)', color=COLORS['accent'], radius=5, label_offset=(10, -10), show_coords=False)
     
     # Tangente: x = y + 2 → y = x - 2
     # Puntos: (-2, -4) a (8, 6)
@@ -3128,6 +3128,311 @@ def render_tangente_parabola(output_path: str, title: str = "Tangente a la Pará
     coord.draw_point(builder, V, label='V', color='#64748b', radius=4)
     
     builder.formula_box('x² = 8y | Tangente en P(4,2): x₀x = 2p(y + y₀)', Point(svg_width/2, svg_height - 30), font_size=10)
+    
+    builder.save(output_path)
+    return True
+
+
+# ============================================================================
+# CONSTRUCCIÓN DE PARÁBOLAS - 4 CASOS (SymPy)
+# ============================================================================
+
+def render_construccion_caso1_vertice_foco(output_path: str, title: str = "Caso 1: Vértice y Foco"):
+    """Construcción: V(2, 3) y F(2, 5) → (x-2)² = 8(y-3).
+    
+    SymPy:
+    - p = |5 - 3| = 2
+    - Foco arriba → abre arriba → (x-h)² = 4p(y-k)
+    - 4p = 8
+    """
+    from sympy import Rational, sqrt, Abs
+    
+    svg_width = 600
+    svg_height = 600
+    padding = 50
+    
+    coord = CoordinateSystem(
+        svg_width=svg_width, svg_height=svg_height,
+        x_range=(-4, 8), y_range=(-1, 11),
+        padding=padding
+    )
+    
+    builder = SVGBuilder(svg_width, svg_height)
+    builder.rect(0, 0, svg_width, svg_height, fill='#ffffff')
+    builder.text(title, Point(svg_width/2, 25), font_size=15, font_weight='bold')
+    
+    coord.draw_grid(builder, step=1)
+    coord.draw_axes(builder, show_arrows=True)
+    coord.draw_ticks(builder, step=2, show_labels=True)
+    
+    # Datos con SymPy
+    h, k = 2, 3  # Vértice
+    f_y = 5      # Foco y-coord
+    p = Rational(f_y - k)  # p = 2
+    coef_4p = 4 * p  # 4p = 8
+    
+    # Parábola: (x-2)² = 8(y-3) → y = (x-2)²/8 + 3
+    parabola_points = []
+    for x_val in range(-30, 70):
+        x = x_val / 10
+        y = ((x - h)**2) / float(coef_4p) + k
+        if -1 <= y <= 11:
+            parabola_points.append(coord.to_svg(Point(x, y)))
+    
+    if len(parabola_points) > 1:
+        points_str = ' '.join(f'{pt.x:.2f},{pt.y:.2f}' for pt in parabola_points)
+        builder.elements.append(
+            f'<polyline points="{points_str}" fill="none" stroke="{COLORS["primary"]}" stroke-width="2.5"/>'
+        )
+    
+    # Vértice V(2, 3)
+    V = Point(h, k)
+    coord.draw_point(builder, V, label='V(2, 3)', color=COLORS['accent'], radius=5, label_offset=(-50, 10), show_coords=False)
+    
+    # Foco F(2, 5)
+    F = Point(h, f_y)
+    coord.draw_point(builder, F, label='F(2, 5)', color='#ef4444', radius=5, label_offset=(10, -10), show_coords=False)
+    
+    # Directriz y = k - p = 1
+    dir_y = k - int(p)
+    coord.draw_segment(builder, Point(-3, dir_y), Point(7, dir_y), color='#22c55e', width=2)
+    svg_dir = coord.to_svg(Point(5, dir_y))
+    builder.text('y = 1', Point(svg_dir.x, svg_dir.y + 15), font_size=10, fill='#22c55e')
+    
+    # Distancia p entre V y F
+    coord.draw_segment(builder, V, F, color='#a855f7', width=1.5, dashed=True)
+    svg_mid = coord.to_svg(Point(h + 0.5, (k + f_y) / 2))
+    builder.text('p = 2', Point(svg_mid.x + 10, svg_mid.y), font_size=10, fill='#a855f7', font_weight='bold')
+    
+    builder.formula_box('(x - 2)² = 8(y - 3) | p = 2, 4p = 8', Point(svg_width/2, svg_height - 30), font_size=11)
+    
+    builder.save(output_path)
+    return True
+
+
+def render_construccion_caso2_vertice_directriz(output_path: str, title: str = "Caso 2: Vértice y Directriz"):
+    """Construcción: V(0, 2) y directriz y = 5 → x² = -12(y-2).
+    
+    SymPy:
+    - Directriz arriba del vértice → abre abajo
+    - p = |5 - 2| = 3
+    - Ecuación: x² = -4p(y - k) = -12(y - 2)
+    """
+    from sympy import Rational
+    
+    svg_width = 600
+    svg_height = 600
+    padding = 50
+    
+    coord = CoordinateSystem(
+        svg_width=svg_width, svg_height=svg_height,
+        x_range=(-8, 8), y_range=(-6, 8),
+        padding=padding
+    )
+    
+    builder = SVGBuilder(svg_width, svg_height)
+    builder.rect(0, 0, svg_width, svg_height, fill='#ffffff')
+    builder.text(title, Point(svg_width/2, 25), font_size=15, font_weight='bold')
+    
+    coord.draw_grid(builder, step=1)
+    coord.draw_axes(builder, show_arrows=True)
+    coord.draw_ticks(builder, step=2, show_labels=True)
+    
+    # Datos con SymPy
+    h, k = 0, 2      # Vértice
+    dir_y = 5        # Directriz
+    p = Rational(abs(dir_y - k))  # p = 3
+    coef_4p = -4 * p  # -12 (negativo porque abre abajo)
+    
+    # Parábola: x² = -12(y-2) → y = -x²/12 + 2
+    parabola_points = []
+    for x_val in range(-80, 81):
+        x = x_val / 10
+        y = -(x**2) / 12 + k
+        if -6 <= y <= 8:
+            parabola_points.append(coord.to_svg(Point(x, y)))
+    
+    if len(parabola_points) > 1:
+        points_str = ' '.join(f'{pt.x:.2f},{pt.y:.2f}' for pt in parabola_points)
+        builder.elements.append(
+            f'<polyline points="{points_str}" fill="none" stroke="{COLORS["primary"]}" stroke-width="2.5"/>'
+        )
+    
+    # Vértice V(0, 2)
+    V = Point(h, k)
+    coord.draw_point(builder, V, label='V(0, 2)', color=COLORS['accent'], radius=5, label_offset=(10, 10), show_coords=False)
+    
+    # Foco F(0, -1) = (0, k - p)
+    f_y = k - int(p)
+    F = Point(h, f_y)
+    coord.draw_point(builder, F, label='F(0, -1)', color='#ef4444', radius=5, label_offset=(10, 10), show_coords=False)
+    
+    # Directriz y = 5
+    coord.draw_segment(builder, Point(-7, dir_y), Point(7, dir_y), color='#22c55e', width=2)
+    svg_dir = coord.to_svg(Point(5, dir_y))
+    builder.text('y = 5 (directriz)', Point(svg_dir.x, svg_dir.y - 10), font_size=10, fill='#22c55e')
+    
+    # Distancia p entre V y directriz
+    coord.draw_segment(builder, V, Point(h, dir_y), color='#a855f7', width=1.5, dashed=True)
+    svg_mid = coord.to_svg(Point(h + 0.5, (k + dir_y) / 2))
+    builder.text('p = 3', Point(svg_mid.x + 10, svg_mid.y), font_size=10, fill='#a855f7', font_weight='bold')
+    
+    builder.formula_box('x² = -12(y - 2) | p = 3, abre abajo', Point(svg_width/2, svg_height - 30), font_size=11)
+    
+    builder.save(output_path)
+    return True
+
+
+def render_construccion_caso3_foco_directriz(output_path: str, title: str = "Caso 3: Foco y Directriz"):
+    """Construcción: F(3, 4) y directriz y = -2 → (x-3)² = 12(y-1).
+    
+    SymPy:
+    - Vértice = punto medio entre foco y directriz
+    - V = (3, (4 + (-2))/2) = (3, 1)
+    - p = |4 - 1| = 3
+    - Ecuación: (x - 3)² = 12(y - 1)
+    """
+    from sympy import Rational
+    
+    svg_width = 600
+    svg_height = 600
+    padding = 50
+    
+    coord = CoordinateSystem(
+        svg_width=svg_width, svg_height=svg_height,
+        x_range=(-4, 10), y_range=(-4, 10),
+        padding=padding
+    )
+    
+    builder = SVGBuilder(svg_width, svg_height)
+    builder.rect(0, 0, svg_width, svg_height, fill='#ffffff')
+    builder.text(title, Point(svg_width/2, 25), font_size=15, font_weight='bold')
+    
+    coord.draw_grid(builder, step=1)
+    coord.draw_axes(builder, show_arrows=True)
+    coord.draw_ticks(builder, step=2, show_labels=True)
+    
+    # Datos con SymPy
+    f_x, f_y = 3, 4   # Foco
+    dir_y = -2        # Directriz
+    
+    # Vértice = punto medio
+    h = f_x
+    k = Rational(f_y + dir_y, 2)  # k = (4 + (-2))/2 = 1
+    p = Rational(f_y - int(k))    # p = 4 - 1 = 3
+    coef_4p = 4 * p  # 12
+    
+    # Parábola: (x-3)² = 12(y-1) → y = (x-3)²/12 + 1
+    parabola_points = []
+    for x_val in range(-30, 90):
+        x = x_val / 10
+        y = ((x - h)**2) / float(coef_4p) + float(k)
+        if -4 <= y <= 10:
+            parabola_points.append(coord.to_svg(Point(x, y)))
+    
+    if len(parabola_points) > 1:
+        points_str = ' '.join(f'{pt.x:.2f},{pt.y:.2f}' for pt in parabola_points)
+        builder.elements.append(
+            f'<polyline points="{points_str}" fill="none" stroke="{COLORS["primary"]}" stroke-width="2.5"/>'
+        )
+    
+    # Foco F(3, 4)
+    F = Point(f_x, f_y)
+    coord.draw_point(builder, F, label='F(3, 4)', color='#ef4444', radius=5, label_offset=(10, -10), show_coords=False)
+    
+    # Vértice V(3, 1)
+    V = Point(h, int(k))
+    coord.draw_point(builder, V, label='V(3, 1)', color=COLORS['accent'], radius=5, label_offset=(10, 10), show_coords=False)
+    
+    # Directriz y = -2
+    coord.draw_segment(builder, Point(-3, dir_y), Point(9, dir_y), color='#22c55e', width=2)
+    svg_dir = coord.to_svg(Point(6, dir_y))
+    builder.text('y = -2 (directriz)', Point(svg_dir.x, svg_dir.y + 15), font_size=10, fill='#22c55e')
+    
+    # Línea punteada F → directriz (mostrando punto medio = V)
+    coord.draw_segment(builder, F, Point(f_x, dir_y), color='#a855f7', width=1.5, dashed=True)
+    svg_mid = coord.to_svg(Point(f_x - 0.5, (f_y + dir_y) / 2))
+    builder.text('V = punto medio', Point(svg_mid.x - 80, svg_mid.y), font_size=9, fill='#a855f7')
+    
+    builder.formula_box('(x - 3)² = 12(y - 1) | V = punto medio, p = 3', Point(svg_width/2, svg_height - 30), font_size=11)
+    
+    builder.save(output_path)
+    return True
+
+
+def render_construccion_caso4_vertice_punto(output_path: str, title: str = "Caso 4: Vértice y Punto"):
+    """Construcción: V(1, 2), pasa por P(3, 6) → (x-1)² = (y-2).
+    
+    SymPy:
+    - (x - 1)² = 4p(y - 2)
+    - Sustituir P(3, 6): (3-1)² = 4p(6-2)
+    - 4 = 16p → p = 1/4
+    - 4p = 1
+    - Ecuación: (x - 1)² = (y - 2)
+    """
+    from sympy import Rational, symbols, solve
+    
+    svg_width = 600
+    svg_height = 600
+    padding = 50
+    
+    coord = CoordinateSystem(
+        svg_width=svg_width, svg_height=svg_height,
+        x_range=(-3, 7), y_range=(-1, 9),
+        padding=padding
+    )
+    
+    builder = SVGBuilder(svg_width, svg_height)
+    builder.rect(0, 0, svg_width, svg_height, fill='#ffffff')
+    builder.text(title, Point(svg_width/2, 25), font_size=15, font_weight='bold')
+    
+    coord.draw_grid(builder, step=1)
+    coord.draw_axes(builder, show_arrows=True)
+    coord.draw_ticks(builder, step=2, show_labels=True)
+    
+    # Datos con SymPy
+    h, k = 1, 2      # Vértice
+    px, py = 3, 6    # Punto conocido
+    
+    # Calcular p: (px - h)² = 4p(py - k)
+    p_sym = symbols('p')
+    ecuacion = (px - h)**2 - 4*p_sym*(py - k)
+    p_val = solve(ecuacion, p_sym)[0]  # p = 1/4
+    coef_4p = 4 * p_val  # 4p = 1
+    
+    # Parábola: (x-1)² = (y-2) → y = (x-1)² + 2
+    parabola_points = []
+    for x_val in range(-25, 55):
+        x = x_val / 10
+        y = (x - h)**2 + k
+        if -1 <= y <= 9:
+            parabola_points.append(coord.to_svg(Point(x, y)))
+    
+    if len(parabola_points) > 1:
+        points_str = ' '.join(f'{pt.x:.2f},{pt.y:.2f}' for pt in parabola_points)
+        builder.elements.append(
+            f'<polyline points="{points_str}" fill="none" stroke="{COLORS["primary"]}" stroke-width="2.5"/>'
+        )
+    
+    # Vértice V(1, 2)
+    V = Point(h, k)
+    coord.draw_point(builder, V, label='V(1, 2)', color=COLORS['accent'], radius=5, label_offset=(-50, 10), show_coords=False)
+    
+    # Punto P(3, 6)
+    P = Point(px, py)
+    coord.draw_point(builder, P, label='P(3, 6)', color='#22c55e', radius=5, label_offset=(10, -10), show_coords=False)
+    
+    # Foco F(1, 2 + p) = F(1, 2.25)
+    f_y = k + float(p_val)
+    F = Point(h, f_y)
+    coord.draw_point(builder, F, label='F(1, 2.25)', color='#ef4444', radius=4, label_offset=(10, 0), show_coords=False)
+    
+    # Mostrar cálculo
+    svg_calc = coord.to_svg(Point(-2, 7))
+    builder.text('(3-1)² = 4p(6-2)', Point(svg_calc.x, svg_calc.y), font_size=9, fill='#64748b')
+    builder.text('4 = 16p → p = ¼', Point(svg_calc.x, svg_calc.y + 15), font_size=9, fill='#64748b')
+    
+    builder.formula_box('(x - 1)² = (y - 2) | p = ¼, 4p = 1', Point(svg_width/2, svg_height - 30), font_size=11)
     
     builder.save(output_path)
     return True

@@ -72,7 +72,7 @@
   <circle cx="300.00" cy="438.89" r="5" fill="#ef4444" />
   <text x="310.00" y="428.89" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#ef4444" text-anchor="start" dominant-baseline="middle">V(0, 0)</text>
   <circle cx="300.00" cy="355.56" r="5" fill="#ef4444" />
-  <text x="310.00" y="355.56" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#ef4444" text-anchor="start" dominant-baseline="middle">F(0, 3)(0, 3)</text>
+  <text x="310.00" y="355.56" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#ef4444" text-anchor="start" dominant-baseline="middle">F(0, 3)</text>
   <line x1="75.00" y1="522.22" x2="525.00" y2="522.22" stroke="#22c55e" stroke-width="2"  />
   <text x="450.00" y="537.22" font-family="Inter, sans-serif" font-size="10" font-weight="normal" fill="#22c55e" text-anchor="middle" dominant-baseline="middle">y = -3</text>
   <line x1="150.00" y1="355.56" x2="450.00" y2="355.56" stroke="#a855f7" stroke-width="1.5"  />

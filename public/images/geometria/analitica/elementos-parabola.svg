@@ -58,9 +58,9 @@
   <text x="288.00" y="422.14" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">O</text>
   <polyline points="81.25,188.39 112.50,246.43 143.75,295.54 175.00,335.71 206.25,366.96 237.50,389.29 268.75,402.68 300.00,407.14 331.25,402.68 362.50,389.29 393.75,366.96 425.00,335.71 456.25,295.54 487.50,246.43 518.75,188.39" fill="none" stroke="#3b82f6" stroke-width="2.5"/>
   <circle cx="300.00" cy="407.14" r="5" fill="#ef4444" />
-  <text x="310.00" y="422.14" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#ef4444" text-anchor="start" dominant-baseline="middle">V(0, 0)(0, 0)</text>
+  <text x="310.00" y="422.14" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#ef4444" text-anchor="start" dominant-baseline="middle">V(0, 0)</text>
   <circle cx="300.00" cy="335.71" r="5" fill="#ef4444" />
-  <text x="310.00" y="325.71" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#ef4444" text-anchor="start" dominant-baseline="middle">F(0, 2)(0, 2)</text>
+  <text x="310.00" y="325.71" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#ef4444" text-anchor="start" dominant-baseline="middle">F(0, 2)</text>
   <line x1="81.25" y1="478.57" x2="518.75" y2="478.57" stroke="#22c55e" stroke-width="2"  />
   <text x="456.25" y="493.57" font-family="Inter, sans-serif" font-size="10" font-weight="normal" fill="#22c55e" text-anchor="middle" dominant-baseline="middle">directriz: y = -2</text>
   <line x1="300.00" y1="514.29" x2="300.00" y2="85.71" stroke="#64748b" stroke-width="1" stroke-dasharray="5,5" />
