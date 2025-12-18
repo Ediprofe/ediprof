@@ -1,0 +1,330 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 420">
+  <!-- Fondo -->
+  <rect width="700" height="420" fill="#f8fafc"/>
+  
+  <!-- Título -->
+  <text x="350" y="22" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="middle">Tabla Periódica: Metales, No Metales y Metaloides</text>
+  
+  <!-- Definiciones -->
+  <defs>
+    <!-- Metales: azul -->
+    <linearGradient id="metalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#dbeafe"/>
+      <stop offset="100%" style="stop-color:#bfdbfe"/>
+    </linearGradient>
+    <!-- No metales: verde -->
+    <linearGradient id="noMetalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#dcfce7"/>
+      <stop offset="100%" style="stop-color:#bbf7d0"/>
+    </linearGradient>
+    <!-- Metaloides: morado -->
+    <linearGradient id="metaloidGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f3e8ff"/>
+      <stop offset="100%" style="stop-color:#e9d5ff"/>
+    </linearGradient>
+    <!-- Gases nobles: amarillo -->
+    <linearGradient id="nobleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fef9c3"/>
+      <stop offset="100%" style="stop-color:#fef08a"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Constantes: celda 32x32, gap 2 -->
+  <!-- startX = 20, startY = 40 -->
+  
+  <!-- ===== PERÍODO 1 ===== -->
+  <!-- H - No metal (especial) -->
+  <rect x="20" y="40" width="32" height="32" rx="3" fill="url(#noMetalGrad)" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="36" y="52" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">1</text>
+  <text x="36" y="64" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#15803d" text-anchor="middle">H</text>
+  
+  <!-- He - Gas noble -->
+  <rect x="598" y="40" width="32" height="32" rx="3" fill="url(#nobleGrad)" stroke="#eab308" stroke-width="1.5"/>
+  <text x="614" y="52" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">2</text>
+  <text x="614" y="64" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#a16207" text-anchor="middle">He</text>
+  
+  <!-- ===== PERÍODO 2 ===== -->
+  <!-- Li, Be - Metales -->
+  <rect x="20" y="76" width="32" height="32" rx="3" fill="url(#metalGrad)" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="36" y="88" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">3</text>
+  <text x="36" y="100" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e40af" text-anchor="middle">Li</text>
+  
+  <rect x="54" y="76" width="32" height="32" rx="3" fill="url(#metalGrad)" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="70" y="88" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">4</text>
+  <text x="70" y="100" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e40af" text-anchor="middle">Be</text>
+  
+  <!-- B - Metaloide -->
+  <rect x="428" y="76" width="32" height="32" rx="3" fill="url(#metaloidGrad)" stroke="#a855f7" stroke-width="1.5"/>
+  <text x="444" y="88" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">5</text>
+  <text x="444" y="100" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#7c3aed" text-anchor="middle">B</text>
+  
+  <!-- C, N, O, F - No metales -->
+  <rect x="462" y="76" width="32" height="32" rx="3" fill="url(#noMetalGrad)" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="478" y="88" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">6</text>
+  <text x="478" y="100" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#15803d" text-anchor="middle">C</text>
+  
+  <rect x="496" y="76" width="32" height="32" rx="3" fill="url(#noMetalGrad)" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="512" y="88" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">7</text>
+  <text x="512" y="100" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#15803d" text-anchor="middle">N</text>
+  
+  <rect x="530" y="76" width="32" height="32" rx="3" fill="url(#noMetalGrad)" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="546" y="88" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">8</text>
+  <text x="546" y="100" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#15803d" text-anchor="middle">O</text>
+  
+  <rect x="564" y="76" width="32" height="32" rx="3" fill="url(#noMetalGrad)" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="580" y="88" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">9</text>
+  <text x="580" y="100" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#15803d" text-anchor="middle">F</text>
+  
+  <!-- Ne - Gas noble -->
+  <rect x="598" y="76" width="32" height="32" rx="3" fill="url(#nobleGrad)" stroke="#eab308" stroke-width="1.5"/>
+  <text x="614" y="88" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">10</text>
+  <text x="614" y="100" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#a16207" text-anchor="middle">Ne</text>
+  
+  <!-- ===== PERÍODO 3 ===== -->
+  <!-- Na, Mg - Metales -->
+  <rect x="20" y="112" width="32" height="32" rx="3" fill="url(#metalGrad)" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="36" y="124" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">11</text>
+  <text x="36" y="136" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e40af" text-anchor="middle">Na</text>
+  
+  <rect x="54" y="112" width="32" height="32" rx="3" fill="url(#metalGrad)" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="70" y="124" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">12</text>
+  <text x="70" y="136" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e40af" text-anchor="middle">Mg</text>
+  
+  <!-- Al - Metal -->
+  <rect x="428" y="112" width="32" height="32" rx="3" fill="url(#metalGrad)" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="444" y="124" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">13</text>
+  <text x="444" y="136" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e40af" text-anchor="middle">Al</text>
+  
+  <!-- Si - Metaloide -->
+  <rect x="462" y="112" width="32" height="32" rx="3" fill="url(#metaloidGrad)" stroke="#a855f7" stroke-width="1.5"/>
+  <text x="478" y="124" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">14</text>
+  <text x="478" y="136" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#7c3aed" text-anchor="middle">Si</text>
+  
+  <!-- P, S, Cl - No metales -->
+  <rect x="496" y="112" width="32" height="32" rx="3" fill="url(#noMetalGrad)" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="512" y="124" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">15</text>
+  <text x="512" y="136" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#15803d" text-anchor="middle">P</text>
+  
+  <rect x="530" y="112" width="32" height="32" rx="3" fill="url(#noMetalGrad)" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="546" y="124" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">16</text>
+  <text x="546" y="136" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#15803d" text-anchor="middle">S</text>
+  
+  <rect x="564" y="112" width="32" height="32" rx="3" fill="url(#noMetalGrad)" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="580" y="124" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">17</text>
+  <text x="580" y="136" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#15803d" text-anchor="middle">Cl</text>
+  
+  <!-- Ar - Gas noble -->
+  <rect x="598" y="112" width="32" height="32" rx="3" fill="url(#nobleGrad)" stroke="#eab308" stroke-width="1.5"/>
+  <text x="614" y="124" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">18</text>
+  <text x="614" y="136" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#a16207" text-anchor="middle">Ar</text>
+  
+  <!-- ===== PERÍODO 4 ===== -->
+  <!-- K, Ca - Metales -->
+  <rect x="20" y="148" width="32" height="32" rx="3" fill="url(#metalGrad)" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="36" y="160" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">19</text>
+  <text x="36" y="172" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e40af" text-anchor="middle">K</text>
+  
+  <rect x="54" y="148" width="32" height="32" rx="3" fill="url(#metalGrad)" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="70" y="160" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">20</text>
+  <text x="70" y="172" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e40af" text-anchor="middle">Ca</text>
+  
+  <!-- Metales de transición: Sc-Zn -->
+  <rect x="88" y="148" width="32" height="32" rx="3" fill="url(#metalGrad)" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="104" y="160" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">21</text>
+  <text x="104" y="172" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e40af" text-anchor="middle">Sc</text>
+  
+  <rect x="122" y="148" width="32" height="32" rx="3" fill="url(#metalGrad)" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="138" y="160" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">22</text>
+  <text x="138" y="172" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e40af" text-anchor="middle">Ti</text>
+  
+  <rect x="156" y="148" width="32" height="32" rx="3" fill="url(#metalGrad)" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="172" y="160" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">23</text>
+  <text x="172" y="172" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e40af" text-anchor="middle">V</text>
+  
+  <rect x="190" y="148" width="32" height="32" rx="3" fill="url(#metalGrad)" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="206" y="160" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">24</text>
+  <text x="206" y="172" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e40af" text-anchor="middle">Cr</text>
+  
+  <rect x="224" y="148" width="32" height="32" rx="3" fill="url(#metalGrad)" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="240" y="160" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">25</text>
+  <text x="240" y="172" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e40af" text-anchor="middle">Mn</text>
+  
+  <rect x="258" y="148" width="32" height="32" rx="3" fill="url(#metalGrad)" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="274" y="160" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">26</text>
+  <text x="274" y="172" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e40af" text-anchor="middle">Fe</text>
+  
+  <rect x="292" y="148" width="32" height="32" rx="3" fill="url(#metalGrad)" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="308" y="160" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">27</text>
+  <text x="308" y="172" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e40af" text-anchor="middle">Co</text>
+  
+  <rect x="326" y="148" width="32" height="32" rx="3" fill="url(#metalGrad)" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="342" y="160" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">28</text>
+  <text x="342" y="172" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e40af" text-anchor="middle">Ni</text>
+  
+  <rect x="360" y="148" width="32" height="32" rx="3" fill="url(#metalGrad)" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="376" y="160" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">29</text>
+  <text x="376" y="172" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e40af" text-anchor="middle">Cu</text>
+  
+  <rect x="394" y="148" width="32" height="32" rx="3" fill="url(#metalGrad)" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="410" y="160" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">30</text>
+  <text x="410" y="172" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e40af" text-anchor="middle">Zn</text>
+  
+  <!-- Ga - Metal -->
+  <rect x="428" y="148" width="32" height="32" rx="3" fill="url(#metalGrad)" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="444" y="160" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">31</text>
+  <text x="444" y="172" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e40af" text-anchor="middle">Ga</text>
+  
+  <!-- Ge - Metaloide -->
+  <rect x="462" y="148" width="32" height="32" rx="3" fill="url(#metaloidGrad)" stroke="#a855f7" stroke-width="1.5"/>
+  <text x="478" y="160" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">32</text>
+  <text x="478" y="172" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#7c3aed" text-anchor="middle">Ge</text>
+  
+  <!-- As - Metaloide -->
+  <rect x="496" y="148" width="32" height="32" rx="3" fill="url(#metaloidGrad)" stroke="#a855f7" stroke-width="1.5"/>
+  <text x="512" y="160" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">33</text>
+  <text x="512" y="172" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#7c3aed" text-anchor="middle">As</text>
+  
+  <!-- Se - No metal -->
+  <rect x="530" y="148" width="32" height="32" rx="3" fill="url(#noMetalGrad)" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="546" y="160" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">34</text>
+  <text x="546" y="172" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#15803d" text-anchor="middle">Se</text>
+  
+  <!-- Br - No metal -->
+  <rect x="564" y="148" width="32" height="32" rx="3" fill="url(#noMetalGrad)" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="580" y="160" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">35</text>
+  <text x="580" y="172" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#15803d" text-anchor="middle">Br</text>
+  
+  <!-- Kr - Gas noble -->
+  <rect x="598" y="148" width="32" height="32" rx="3" fill="url(#nobleGrad)" stroke="#eab308" stroke-width="1.5"/>
+  <text x="614" y="160" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">36</text>
+  <text x="614" y="172" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#a16207" text-anchor="middle">Kr</text>
+  
+  <!-- ===== PERÍODO 5 (simplificado) ===== -->
+  <!-- Rb, Sr - Metales -->
+  <rect x="20" y="184" width="32" height="32" rx="3" fill="url(#metalGrad)" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="36" y="196" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">37</text>
+  <text x="36" y="208" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e40af" text-anchor="middle">Rb</text>
+  
+  <rect x="54" y="184" width="32" height="32" rx="3" fill="url(#metalGrad)" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="70" y="196" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">38</text>
+  <text x="70" y="208" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e40af" text-anchor="middle">Sr</text>
+  
+  <!-- Metales de transición Y-Cd (simplificado) -->
+  <rect x="88" y="184" width="306" height="32" rx="3" fill="url(#metalGrad)" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="241" y="204" font-family="Inter, sans-serif" font-size="10" fill="#1e40af" text-anchor="middle">Y - Cd (Metales de transición)</text>
+  
+  <!-- In, Sn - Metales -->
+  <rect x="428" y="184" width="32" height="32" rx="3" fill="url(#metalGrad)" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="444" y="196" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">49</text>
+  <text x="444" y="208" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e40af" text-anchor="middle">In</text>
+  
+  <rect x="462" y="184" width="32" height="32" rx="3" fill="url(#metalGrad)" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="478" y="196" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">50</text>
+  <text x="478" y="208" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e40af" text-anchor="middle">Sn</text>
+  
+  <!-- Sb - Metaloide -->
+  <rect x="496" y="184" width="32" height="32" rx="3" fill="url(#metaloidGrad)" stroke="#a855f7" stroke-width="1.5"/>
+  <text x="512" y="196" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">51</text>
+  <text x="512" y="208" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#7c3aed" text-anchor="middle">Sb</text>
+  
+  <!-- Te - Metaloide -->
+  <rect x="530" y="184" width="32" height="32" rx="3" fill="url(#metaloidGrad)" stroke="#a855f7" stroke-width="1.5"/>
+  <text x="546" y="196" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">52</text>
+  <text x="546" y="208" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#7c3aed" text-anchor="middle">Te</text>
+  
+  <!-- I - No metal -->
+  <rect x="564" y="184" width="32" height="32" rx="3" fill="url(#noMetalGrad)" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="580" y="196" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">53</text>
+  <text x="580" y="208" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#15803d" text-anchor="middle">I</text>
+  
+  <!-- Xe - Gas noble -->
+  <rect x="598" y="184" width="32" height="32" rx="3" fill="url(#nobleGrad)" stroke="#eab308" stroke-width="1.5"/>
+  <text x="614" y="196" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">54</text>
+  <text x="614" y="208" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#a16207" text-anchor="middle">Xe</text>
+  
+  <!-- ===== PERÍODO 6 (simplificado) ===== -->
+  <rect x="20" y="220" width="32" height="32" rx="3" fill="url(#metalGrad)" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="36" y="232" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">55</text>
+  <text x="36" y="244" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e40af" text-anchor="middle">Cs</text>
+  
+  <rect x="54" y="220" width="32" height="32" rx="3" fill="url(#metalGrad)" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="70" y="232" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">56</text>
+  <text x="70" y="244" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e40af" text-anchor="middle">Ba</text>
+  
+  <!-- La-Lu, Hf-Hg (metales) -->
+  <rect x="88" y="220" width="306" height="32" rx="3" fill="url(#metalGrad)" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="241" y="240" font-family="Inter, sans-serif" font-size="10" fill="#1e40af" text-anchor="middle">La-Lu, Hf-Hg (Metales)</text>
+  
+  <!-- Tl, Pb, Bi - Metales -->
+  <rect x="428" y="220" width="32" height="32" rx="3" fill="url(#metalGrad)" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="444" y="232" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">81</text>
+  <text x="444" y="244" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e40af" text-anchor="middle">Tl</text>
+  
+  <rect x="462" y="220" width="32" height="32" rx="3" fill="url(#metalGrad)" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="478" y="232" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">82</text>
+  <text x="478" y="244" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e40af" text-anchor="middle">Pb</text>
+  
+  <rect x="496" y="220" width="32" height="32" rx="3" fill="url(#metalGrad)" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="512" y="232" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">83</text>
+  <text x="512" y="244" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e40af" text-anchor="middle">Bi</text>
+  
+  <!-- Po - Metaloide -->
+  <rect x="530" y="220" width="32" height="32" rx="3" fill="url(#metaloidGrad)" stroke="#a855f7" stroke-width="1.5"/>
+  <text x="546" y="232" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">84</text>
+  <text x="546" y="244" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#7c3aed" text-anchor="middle">Po</text>
+  
+  <!-- At - No metal (halógeno) -->
+  <rect x="564" y="220" width="32" height="32" rx="3" fill="url(#noMetalGrad)" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="580" y="232" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">85</text>
+  <text x="580" y="244" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#15803d" text-anchor="middle">At</text>
+  
+  <!-- Rn - Gas noble -->
+  <rect x="598" y="220" width="32" height="32" rx="3" fill="url(#nobleGrad)" stroke="#eab308" stroke-width="1.5"/>
+  <text x="614" y="232" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">86</text>
+  <text x="614" y="244" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#a16207" text-anchor="middle">Rn</text>
+  
+  <!-- ===== PERÍODO 7 (simplificado) ===== -->
+  <rect x="20" y="256" width="32" height="32" rx="3" fill="url(#metalGrad)" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="36" y="268" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">87</text>
+  <text x="36" y="280" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e40af" text-anchor="middle">Fr</text>
+  
+  <rect x="54" y="256" width="32" height="32" rx="3" fill="url(#metalGrad)" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="70" y="268" font-family="Inter, sans-serif" font-size="6" fill="#64748b" text-anchor="middle">88</text>
+  <text x="70" y="280" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e40af" text-anchor="middle">Ra</text>
+  
+  <!-- Ac-Lr, Rf-Og (metales) -->
+  <rect x="88" y="256" width="542" height="32" rx="3" fill="url(#metalGrad)" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="359" y="276" font-family="Inter, sans-serif" font-size="10" fill="#1e40af" text-anchor="middle">Ac-Lr, Rf-Og (Metales - elementos sintéticos)</text>
+  
+  <!-- ===== LA ESCALERA DE LOS METALOIDES ===== -->
+  <path d="M 445,75 L 490,111 L 490,147 L 524,147 L 524,183 L 558,183 L 558,219" 
+        stroke="#a855f7" stroke-width="3" fill="none" stroke-dasharray="8,4"/>
+  
+  <!-- ===== LEYENDA ===== -->
+  <rect x="20" y="310" width="200" height="100" rx="8" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="120" y="330" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle">Leyenda</text>
+  
+  <!-- Metal -->
+  <rect x="30" y="345" width="20" height="16" rx="3" fill="url(#metalGrad)" stroke="#3b82f6" stroke-width="1"/>
+  <text x="60" y="357" font-family="Inter, sans-serif" font-size="10" fill="#1e40af">Metales (~80%)</text>
+  
+  <!-- No metal -->
+  <rect x="30" y="368" width="20" height="16" rx="3" fill="url(#noMetalGrad)" stroke="#22c55e" stroke-width="1"/>
+  <text x="60" y="380" font-family="Inter, sans-serif" font-size="10" fill="#15803d">No Metales</text>
+  
+  <!-- Metaloide -->
+  <rect x="130" y="345" width="20" height="16" rx="3" fill="url(#metaloidGrad)" stroke="#a855f7" stroke-width="1"/>
+  <text x="160" y="357" font-family="Inter, sans-serif" font-size="10" fill="#7c3aed">Metaloides</text>
+  
+  <!-- Gas noble -->
+  <rect x="130" y="368" width="20" height="16" rx="3" fill="url(#nobleGrad)" stroke="#eab308" stroke-width="1"/>
+  <text x="160" y="380" font-family="Inter, sans-serif" font-size="10" fill="#a16207">Gases Nobles</text>
+  
+  <!-- Nota sobre la escalera -->
+  <rect x="240" y="310" width="390" height="100" rx="8" fill="#faf5ff" stroke="#a855f7" stroke-width="1"/>
+  <text x="435" y="330" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#7c3aed" text-anchor="middle">La "Escalera" de los Metaloides</text>
+  <text x="250" y="352" font-family="Inter, sans-serif" font-size="10" fill="#1e293b">• Los metaloides (B, Si, Ge, As, Sb, Te, Po) forman una</text>
+  <text x="250" y="368" font-family="Inter, sans-serif" font-size="10" fill="#1e293b">  línea diagonal que separa metales de no metales</text>
+  <text x="250" y="384" font-family="Inter, sans-serif" font-size="10" fill="#1e293b">• Son semiconductores (conductividad intermedia)</text>
+  <text x="250" y="400" font-family="Inter, sans-serif" font-size="10" fill="#1e293b">• El silicio (Si) es la base de la electrónica moderna</text>
+</svg>

@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 200">
+  <!-- Fondo -->
+  <rect width="550" height="200" fill="#f8fafc"/>
+  
+  <!-- Título -->
+  <text x="275" y="18" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle">Ejemplos: C, N, O y Fe (Regla de Hund)</text>
+  
+  <!-- Carbono (Z=6) -->
+  <g transform="translate(10, 35)">
+    <text x="62" y="0" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#1e293b" text-anchor="middle">C (Z=6)</text>
+    
+    <!-- 1s -->
+    <text x="18" y="18" font-family="Inter, sans-serif" font-size="7" fill="#64748b" text-anchor="middle">1s</text>
+    <rect x="5" y="22" width="26" height="22" rx="2" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5"/>
+    <text x="12" y="38" font-family="Inter, sans-serif" font-size="11" fill="#15803d" text-anchor="middle">↑</text>
+    <text x="24" y="38" font-family="Inter, sans-serif" font-size="11" fill="#15803d" text-anchor="middle">↓</text>
+    
+    <!-- 2s -->
+    <text x="48" y="18" font-family="Inter, sans-serif" font-size="7" fill="#64748b" text-anchor="middle">2s</text>
+    <rect x="35" y="22" width="26" height="22" rx="2" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5"/>
+    <text x="42" y="38" font-family="Inter, sans-serif" font-size="11" fill="#15803d" text-anchor="middle">↑</text>
+    <text x="54" y="38" font-family="Inter, sans-serif" font-size="11" fill="#15803d" text-anchor="middle">↓</text>
+    
+    <!-- 2p -->
+    <text x="93" y="18" font-family="Inter, sans-serif" font-size="7" fill="#64748b" text-anchor="middle">2p</text>
+    <rect x="65" y="22" width="22" height="22" rx="2" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="76" y="38" font-family="Inter, sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">↑</text>
+    <rect x="89" y="22" width="22" height="22" rx="2" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="100" y="38" font-family="Inter, sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">↑</text>
+    <rect x="113" y="22" width="22" height="22" rx="2" fill="white" stroke="#94a3b8" stroke-width="1"/>
+    
+    <text x="70" y="60" font-family="Inter, sans-serif" font-size="8" fill="#3b82f6" text-anchor="middle">2 desapareados</text>
+  </g>
+  
+  <!-- Nitrógeno (Z=7) -->
+  <g transform="translate(145, 35)">
+    <text x="62" y="0" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#1e293b" text-anchor="middle">N (Z=7)</text>
+    
+    <!-- 1s -->
+    <text x="18" y="18" font-family="Inter, sans-serif" font-size="7" fill="#64748b" text-anchor="middle">1s</text>
+    <rect x="5" y="22" width="26" height="22" rx="2" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5"/>
+    <text x="12" y="38" font-family="Inter, sans-serif" font-size="11" fill="#15803d" text-anchor="middle">↑</text>
+    <text x="24" y="38" font-family="Inter, sans-serif" font-size="11" fill="#15803d" text-anchor="middle">↓</text>
+    
+    <!-- 2s -->
+    <text x="48" y="18" font-family="Inter, sans-serif" font-size="7" fill="#64748b" text-anchor="middle">2s</text>
+    <rect x="35" y="22" width="26" height="22" rx="2" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5"/>
+    <text x="42" y="38" font-family="Inter, sans-serif" font-size="11" fill="#15803d" text-anchor="middle">↑</text>
+    <text x="54" y="38" font-family="Inter, sans-serif" font-size="11" fill="#15803d" text-anchor="middle">↓</text>
+    
+    <!-- 2p (semilleno) -->
+    <text x="93" y="18" font-family="Inter, sans-serif" font-size="7" fill="#64748b" text-anchor="middle">2p</text>
+    <rect x="65" y="22" width="22" height="22" rx="2" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5"/>
+    <text x="76" y="38" font-family="Inter, sans-serif" font-size="11" fill="#15803d" text-anchor="middle">↑</text>
+    <rect x="89" y="22" width="22" height="22" rx="2" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5"/>
+    <text x="100" y="38" font-family="Inter, sans-serif" font-size="11" fill="#15803d" text-anchor="middle">↑</text>
+    <rect x="113" y="22" width="22" height="22" rx="2" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5"/>
+    <text x="124" y="38" font-family="Inter, sans-serif" font-size="11" fill="#15803d" text-anchor="middle">↑</text>
+    
+    <text x="70" y="60" font-family="Inter, sans-serif" font-size="8" fill="#22c55e" text-anchor="middle">3 desapareados ★</text>
+  </g>
+  
+  <!-- Oxígeno (Z=8) -->
+  <g transform="translate(280, 35)">
+    <text x="62" y="0" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#1e293b" text-anchor="middle">O (Z=8)</text>
+    
+    <!-- 1s -->
+    <text x="18" y="18" font-family="Inter, sans-serif" font-size="7" fill="#64748b" text-anchor="middle">1s</text>
+    <rect x="5" y="22" width="26" height="22" rx="2" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5"/>
+    <text x="12" y="38" font-family="Inter, sans-serif" font-size="11" fill="#15803d" text-anchor="middle">↑</text>
+    <text x="24" y="38" font-family="Inter, sans-serif" font-size="11" fill="#15803d" text-anchor="middle">↓</text>
+    
+    <!-- 2s -->
+    <text x="48" y="18" font-family="Inter, sans-serif" font-size="7" fill="#64748b" text-anchor="middle">2s</text>
+    <rect x="35" y="22" width="26" height="22" rx="2" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5"/>
+    <text x="42" y="38" font-family="Inter, sans-serif" font-size="11" fill="#15803d" text-anchor="middle">↑</text>
+    <text x="54" y="38" font-family="Inter, sans-serif" font-size="11" fill="#15803d" text-anchor="middle">↓</text>
+    
+    <!-- 2p -->
+    <text x="93" y="18" font-family="Inter, sans-serif" font-size="7" fill="#64748b" text-anchor="middle">2p</text>
+    <rect x="65" y="22" width="22" height="22" rx="2" fill="#f5f3ff" stroke="#a855f7" stroke-width="1.5"/>
+    <text x="72" y="38" font-family="Inter, sans-serif" font-size="10" fill="#7c3aed" text-anchor="middle">↑</text>
+    <text x="82" y="38" font-family="Inter, sans-serif" font-size="10" fill="#7c3aed" text-anchor="middle">↓</text>
+    <rect x="89" y="22" width="22" height="22" rx="2" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="100" y="38" font-family="Inter, sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">↑</text>
+    <rect x="113" y="22" width="22" height="22" rx="2" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="124" y="38" font-family="Inter, sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">↑</text>
+    
+    <text x="70" y="60" font-family="Inter, sans-serif" font-size="8" fill="#a855f7" text-anchor="middle">2 desapareados</text>
+  </g>
+  
+  <!-- Hierro (Z=26) -->
+  <g transform="translate(410, 35)">
+    <text x="68" y="0" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#1e293b" text-anchor="middle">Fe (Z=26)</text>
+    
+    <!-- [Ar] -->
+    <text x="15" y="25" font-family="Inter, sans-serif" font-size="8" fill="#64748b" text-anchor="middle">[Ar]</text>
+    
+    <!-- 4s -->
+    <text x="38" y="18" font-family="Inter, sans-serif" font-size="7" fill="#64748b" text-anchor="middle">4s</text>
+    <rect x="25" y="22" width="26" height="22" rx="2" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5"/>
+    <text x="32" y="38" font-family="Inter, sans-serif" font-size="11" fill="#15803d" text-anchor="middle">↑</text>
+    <text x="44" y="38" font-family="Inter, sans-serif" font-size="11" fill="#15803d" text-anchor="middle">↓</text>
+    
+    <!-- 3d -->
+    <text x="93" y="18" font-family="Inter, sans-serif" font-size="7" fill="#64748b" text-anchor="middle">3d</text>
+    <rect x="55" y="22" width="18" height="22" rx="2" fill="#f5f3ff" stroke="#a855f7" stroke-width="1.5"/>
+    <text x="60" y="38" font-family="Inter, sans-serif" font-size="9" fill="#7c3aed" text-anchor="middle">↑</text>
+    <text x="69" y="38" font-family="Inter, sans-serif" font-size="9" fill="#7c3aed" text-anchor="middle">↓</text>
+    <rect x="75" y="22" width="18" height="22" rx="2" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="84" y="38" font-family="Inter, sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">↑</text>
+    <rect x="95" y="22" width="18" height="22" rx="2" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="104" y="38" font-family="Inter, sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">↑</text>
+    <rect x="115" y="22" width="18" height="22" rx="2" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="124" y="38" font-family="Inter, sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">↑</text>
+    <rect x="135" y="22" width="18" height="22" rx="2" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="144" y="38" font-family="Inter, sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">↑</text>
+    
+    <text x="83" y="60" font-family="Inter, sans-serif" font-size="8" fill="#dc2626" text-anchor="middle">4 desapareados</text>
+  </g>
+  
+  <!-- Leyenda magnetismo -->
+  <rect x="30" y="115" width="490" height="75" rx="6" fill="#fff7ed" stroke="#f97316" stroke-width="1"/>
+  <text x="275" y="135" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#c2410c" text-anchor="middle">Relación con el Magnetismo</text>
+  
+  <text x="50" y="158" font-family="Inter, sans-serif" font-size="9" fill="#1e293b">• Electrones desapareados = Paramagnético (atraído por imanes)</text>
+  <text x="50" y="175" font-family="Inter, sans-serif" font-size="9" fill="#1e293b">• Sin electrones desapareados = Diamagnético (repelido por imanes)</text>
+  
+  <circle cx="400" cy="155" r="3" fill="#3b82f6"/>
+  <text x="410" y="158" font-family="Inter, sans-serif" font-size="8" fill="#64748b">Desapareado (↑)</text>
+  <circle cx="400" cy="172" r="3" fill="#a855f7"/>
+  <text x="410" y="175" font-family="Inter, sans-serif" font-size="8" fill="#64748b">Apareado (↑↓)</text>
+</svg>

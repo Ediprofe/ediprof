@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300">
+  <!-- Fondo -->
+  <rect width="600" height="300" fill="#f8fafc"/>
+  
+  <!-- Título -->
+  <text x="300" y="18" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#1e293b" text-anchor="middle">Bloques s, p, d, f de la Tabla Periódica</text>
+  
+  <!-- Bloque s -->
+  <rect x="20" y="35" width="70" height="140" rx="5" fill="#fef2f2" stroke="#ef4444" stroke-width="2"/>
+  <text x="55" y="50" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#b91c1c" text-anchor="middle">BLOQUE s</text>
+  <text x="55" y="65" font-family="Inter, sans-serif" font-size="8" fill="#64748b" text-anchor="middle">Grupos 1-2</text>
+  
+  <!-- Elementos bloque s -->
+  <rect x="25" y="75" width="28" height="22" rx="3" fill="white" stroke="#ef4444"/>
+  <text x="39" y="90" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#b91c1c" text-anchor="middle">H</text>
+  
+  <rect x="25" y="100" width="28" height="22" rx="3" fill="white" stroke="#ef4444"/>
+  <text x="39" y="115" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#b91c1c" text-anchor="middle">Li</text>
+  <rect x="55" y="100" width="28" height="22" rx="3" fill="white" stroke="#ef4444"/>
+  <text x="69" y="115" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#b91c1c" text-anchor="middle">Be</text>
+  
+  <rect x="25" y="125" width="28" height="22" rx="3" fill="white" stroke="#ef4444"/>
+  <text x="39" y="140" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#b91c1c" text-anchor="middle">Na</text>
+  <rect x="55" y="125" width="28" height="22" rx="3" fill="white" stroke="#ef4444"/>
+  <text x="69" y="140" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#b91c1c" text-anchor="middle">Mg</text>
+  
+  <text x="55" y="162" font-family="Inter, monospace" font-size="8" fill="#b91c1c" text-anchor="middle">ns¹⁻²</text>
+  
+  <!-- Bloque d -->
+  <rect x="100" y="85" width="280" height="90" rx="5" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+  <text x="240" y="100" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#1e40af" text-anchor="middle">BLOQUE d (Metales de Transición)</text>
+  <text x="240" y="115" font-family="Inter, sans-serif" font-size="8" fill="#64748b" text-anchor="middle">Grupos 3-12</text>
+  
+  <!-- Elementos bloque d -->
+  <g transform="translate(110, 125)">
+    <rect x="0" y="0" width="24" height="20" rx="2" fill="white" stroke="#3b82f6"/>
+    <text x="12" y="14" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="#1e40af" text-anchor="middle">Sc</text>
+    <rect x="26" y="0" width="24" height="20" rx="2" fill="white" stroke="#3b82f6"/>
+    <text x="38" y="14" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="#1e40af" text-anchor="middle">Ti</text>
+    <rect x="52" y="0" width="24" height="20" rx="2" fill="white" stroke="#3b82f6"/>
+    <text x="64" y="14" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="#1e40af" text-anchor="middle">V</text>
+    <rect x="78" y="0" width="24" height="20" rx="2" fill="white" stroke="#3b82f6"/>
+    <text x="90" y="14" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="#1e40af" text-anchor="middle">Cr</text>
+    <rect x="104" y="0" width="24" height="20" rx="2" fill="white" stroke="#3b82f6"/>
+    <text x="116" y="14" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="#1e40af" text-anchor="middle">Mn</text>
+    <rect x="130" y="0" width="24" height="20" rx="2" fill="white" stroke="#3b82f6"/>
+    <text x="142" y="14" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="#1e40af" text-anchor="middle">Fe</text>
+    <rect x="156" y="0" width="24" height="20" rx="2" fill="white" stroke="#3b82f6"/>
+    <text x="168" y="14" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="#1e40af" text-anchor="middle">Co</text>
+    <rect x="182" y="0" width="24" height="20" rx="2" fill="white" stroke="#3b82f6"/>
+    <text x="194" y="14" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="#1e40af" text-anchor="middle">Ni</text>
+    <rect x="208" y="0" width="24" height="20" rx="2" fill="white" stroke="#3b82f6"/>
+    <text x="220" y="14" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="#1e40af" text-anchor="middle">Cu</text>
+    <rect x="234" y="0" width="24" height="20" rx="2" fill="white" stroke="#3b82f6"/>
+    <text x="246" y="14" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="#1e40af" text-anchor="middle">Zn</text>
+  </g>
+  <text x="240" y="162" font-family="Inter, monospace" font-size="8" fill="#1e40af" text-anchor="middle">(n-1)d¹⁻¹⁰</text>
+  
+  <!-- Bloque p -->
+  <rect x="390" y="35" width="190" height="140" rx="5" fill="#dcfce7" stroke="#22c55e" stroke-width="2"/>
+  <text x="485" y="50" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#15803d" text-anchor="middle">BLOQUE p</text>
+  <text x="485" y="65" font-family="Inter, sans-serif" font-size="8" fill="#64748b" text-anchor="middle">Grupos 13-18</text>
+  
+  <!-- Elementos bloque p -->
+  <g transform="translate(400, 75)">
+    <rect x="145" y="0" width="28" height="22" rx="3" fill="white" stroke="#22c55e"/>
+    <text x="159" y="15" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#15803d" text-anchor="middle">He</text>
+  </g>
+  <g transform="translate(400, 100)">
+    <rect x="0" y="0" width="28" height="22" rx="3" fill="white" stroke="#22c55e"/>
+    <text x="14" y="15" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#15803d" text-anchor="middle">B</text>
+    <rect x="29" y="0" width="28" height="22" rx="3" fill="white" stroke="#22c55e"/>
+    <text x="43" y="15" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#15803d" text-anchor="middle">C</text>
+    <rect x="58" y="0" width="28" height="22" rx="3" fill="white" stroke="#22c55e"/>
+    <text x="72" y="15" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#15803d" text-anchor="middle">N</text>
+    <rect x="87" y="0" width="28" height="22" rx="3" fill="white" stroke="#22c55e"/>
+    <text x="101" y="15" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#15803d" text-anchor="middle">O</text>
+    <rect x="116" y="0" width="28" height="22" rx="3" fill="white" stroke="#22c55e"/>
+    <text x="130" y="15" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#15803d" text-anchor="middle">F</text>
+    <rect x="145" y="0" width="28" height="22" rx="3" fill="white" stroke="#22c55e"/>
+    <text x="159" y="15" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#15803d" text-anchor="middle">Ne</text>
+  </g>
+  <text x="485" y="162" font-family="Inter, monospace" font-size="8" fill="#15803d" text-anchor="middle">np¹⁻⁶</text>
+  
+  <!-- Bloque f -->
+  <rect x="100" y="190" width="400" height="95" rx="5" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="300" y="205" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#7c3aed" text-anchor="middle">BLOQUE f (Lantánidos y Actínidos)</text>
+  
+  <!-- Lantánidos -->
+  <text x="115" y="225" font-family="Inter, sans-serif" font-size="8" fill="#64748b">Lantánidos:</text>
+  <g transform="translate(110, 230)">
+    <rect x="0" y="0" width="22" height="18" rx="2" fill="white" stroke="#8b5cf6"/>
+    <text x="11" y="12" font-family="Inter, sans-serif" font-size="8" font-weight="bold" fill="#7c3aed" text-anchor="middle">La</text>
+    <rect x="24" y="0" width="22" height="18" rx="2" fill="white" stroke="#8b5cf6"/>
+    <text x="35" y="12" font-family="Inter, sans-serif" font-size="8" font-weight="bold" fill="#7c3aed" text-anchor="middle">Ce</text>
+    <rect x="48" y="0" width="22" height="18" rx="2" fill="white" stroke="#8b5cf6"/>
+    <text x="59" y="12" font-family="Inter, sans-serif" font-size="8" font-weight="bold" fill="#7c3aed" text-anchor="middle">Pr</text>
+    <text x="78" y="12" font-family="Inter, sans-serif" font-size="10" fill="#64748b">...</text>
+    <rect x="95" y="0" width="22" height="18" rx="2" fill="white" stroke="#8b5cf6"/>
+    <text x="106" y="12" font-family="Inter, sans-serif" font-size="8" font-weight="bold" fill="#7c3aed" text-anchor="middle">Lu</text>
+  </g>
+  
+  <!-- Actínidos -->
+  <text x="260" y="225" font-family="Inter, sans-serif" font-size="8" fill="#64748b">Actínidos:</text>
+  <g transform="translate(255, 230)">
+    <rect x="0" y="0" width="22" height="18" rx="2" fill="white" stroke="#8b5cf6"/>
+    <text x="11" y="12" font-family="Inter, sans-serif" font-size="8" font-weight="bold" fill="#7c3aed" text-anchor="middle">Ac</text>
+    <rect x="24" y="0" width="22" height="18" rx="2" fill="white" stroke="#8b5cf6"/>
+    <text x="35" y="12" font-family="Inter, sans-serif" font-size="8" font-weight="bold" fill="#7c3aed" text-anchor="middle">Th</text>
+    <rect x="48" y="0" width="22" height="18" rx="2" fill="white" stroke="#8b5cf6"/>
+    <text x="59" y="12" font-family="Inter, sans-serif" font-size="8" font-weight="bold" fill="#7c3aed" text-anchor="middle">U</text>
+    <text x="78" y="12" font-family="Inter, sans-serif" font-size="10" fill="#64748b">...</text>
+    <rect x="95" y="0" width="22" height="18" rx="2" fill="white" stroke="#8b5cf6"/>
+    <text x="106" y="12" font-family="Inter, sans-serif" font-size="8" font-weight="bold" fill="#7c3aed" text-anchor="middle">Lr</text>
+  </g>
+  <text x="300" y="278" font-family="Inter, monospace" font-size="8" fill="#7c3aed" text-anchor="middle">(n-2)f¹⁻¹⁴</text>
+  
+  <!-- Leyenda -->
+  <g transform="translate(410, 260)">
+    <rect x="0" y="0" width="12" height="10" fill="#fef2f2" stroke="#ef4444"/>
+    <text x="18" y="8" font-family="Inter, sans-serif" font-size="7" fill="#64748b">s</text>
+    <rect x="35" y="0" width="12" height="10" fill="#dcfce7" stroke="#22c55e"/>
+    <text x="53" y="8" font-family="Inter, sans-serif" font-size="7" fill="#64748b">p</text>
+    <rect x="70" y="0" width="12" height="10" fill="#dbeafe" stroke="#3b82f6"/>
+    <text x="88" y="8" font-family="Inter, sans-serif" font-size="7" fill="#64748b">d</text>
+    <rect x="105" y="0" width="12" height="10" fill="#f5f3ff" stroke="#8b5cf6"/>
+    <text x="123" y="8" font-family="Inter, sans-serif" font-size="7" fill="#64748b">f</text>
+  </g>
+</svg>

@@ -96,7 +96,19 @@ MATERIA (matematicas, fisica, quimica, ciencias)
 
 ---
 
-# 🔄 FLUJO DE TRABAJO EN 3 ETAPAS
+# 🔄 FLUJO DE TRABAJO EN 5 ETAPAS
+
+> **Referencia completa:** `.agent/workflows/content-generation.md`
+
+| Etapa | Nombre | Responsable | Entregable |
+|-------|--------|-------------|------------|
+| 1 | Planeador Docente | Agente IA | Árbol de carpetas aprobado |
+| 2 | Generador de Lecciones | Agente IA | Lecciones con **ASCII art** para ilustraciones |
+| 3 | Generador de Ilustraciones | Agente IA | SVGs/Rough.js a partir del ASCII art |
+| 4 | Evaluador Pedagógico | Agente IA | Lecciones corregidas + ilustraciones ajustadas |
+| 5 | Evaluación Final | Humano | Aprobación definitiva |
+
+---
 
 ## ETAPA 1: PLANEADOR DOCENTE 📋
 
@@ -134,31 +146,37 @@ CAPÍTULO: [Nombre]
 **Reglas:**
 - Una lección por archivo .md
 - Estructura: Intro motivadora → Conceptos con ejemplos → Práctica
-- **SIN gráficos complejos** (se agregan en Etapa 3)
+- **SIN gráficos SVG/Rough.js** (se agregan en Etapa 3)
+- **Las ilustraciones se describen en ASCII art**
 - Tablas y LaTeX SÍ permitidos
-- Usar marcadores: `<!-- ILUSTRACIÓN: descripción -->`
+
+> 💡 **¿Por qué ASCII art?** Separa la creación de contenido pedagógico de la generación técnica de SVGs. Permite revisión rápida y facilita el trabajo de modelos menos avanzados.
 
 ---
 
-## ETAPA 3: DISEÑADOR Y EVALUADOR PEDAGÓGICO 🎨
+## ETAPA 3: GENERADOR DE ILUSTRACIONES 🎨
 
-**Objetivo:** Enriquecer con gráficos y evaluar mejoras pedagógicas.
+**Objetivo:** Convertir ASCII art en SVGs/Rough.js de alta calidad.
 
 **Qué hacer:**
-
-### 3.1 Agregar Gráficos
+1. Identificar todo ASCII art en las lecciones
+2. Consultar el Árbol de Decisión para elegir tecnología
+3. Generar specs JSON y ejecutar renderers
+4. Reemplazar ASCII art con enlaces a SVG
 
 > ⚠️ **REGLA OBLIGATORIA: MÍNIMO UNA ILUSTRACIÓN POR CONCEPTO**
 > 
-> Un "concepto" = cada sección que inicia con título Markdown (##, ###)
+> Concepto = cada sección con título Markdown (##, ###)
 > 
-> **EXCEPCIÓN:** La sección de "Ejercicios de Práctica" NO requiere ilustraciones
+> **EXCEPCIÓN:** Sección de "Ejercicios de Práctica"
 
-- Usar el **Árbol de Decisión** para elegir tecnología
-- Seguir `.agent/workflows/` para cada librería
-- Gráficos claros como dibujos de pizarra
+---
 
-### 3.2 Evaluar Pedagógicamente
+## ETAPA 4: EVALUADOR PEDAGÓGICO 🎓
+
+**Objetivo:** Revisar con mentalidad del **mejor profesor** y corregir.
+
+**Criterios de evaluación:**
 
 | Aspecto | Pregunta clave |
 |---------|----------------|
@@ -169,9 +187,25 @@ CAPÍTULO: [Nombre]
 | Motivación | ¿El estudiante sabe POR QUÉ? |
 | **Auto-explicativo** | ¿La ilustración se entiende SIN leer el texto? |
 
-### 3.3 Proponer Mejoras
+**Acciones correctivas:**
+- Reorganizar lecciones si el orden no es lógico
+- Reescribir secciones poco claras
+- Agregar ejemplos faltantes
+- Corregir errores de contenido
+- Ajustar/generar ilustraciones faltantes
 
-Si detecta oportunidades de mejora pedagógica, proponerlas.
+---
+
+## ETAPA 5: EVALUACIÓN FINAL DEL HUMANO ✅
+
+**Objetivo:** Aprobación definitiva antes de publicar.
+
+**El humano revisa:**
+1. Precisión del contenido
+2. Calidad pedagógica
+3. Claridad visual
+4. Experiencia de usuario
+5. **APROBACIÓN para publicar**
 
 ---
 
@@ -930,14 +964,13 @@ Controla sus propios colores
 
 | Archivo | Contenido |
 |---------|-----------|
-| `.agent/workflows/content-generation.md` | Flujo de generación de lecciones |
-| `.agent/workflows/circle-spec.md` | **CircleSpec: circunferencias (SymPy)** |
+| `.agent/workflows/content-generation.md` | **Flujo de 5 etapas para lecciones** |
+| `.agent/workflows/circle-spec.md` | CircleSpec: circunferencias (SymPy) |
 | `.agent/workflows/geometry-exact.md` | GeometrySpec: triángulos (SymPy) |
-| `.agent/workflows/cartesian-spec.md` | **CartesianSpec: geometría analítica** |
-| `.agent/workflows/echarts.md` | Funciones, datos, estadísticas |
+| `.agent/workflows/cartesian-spec.md` | CartesianSpec: geometría analítica |
+| `.agent/workflows/chemistry-spec.md` | **ChemistrySpec: tabla periódica, tendencias** |
+| `.agent/workflows/graphspec.md` | Gráficas de funciones |
 | `.agent/workflows/roughjs.md` | Diagramas ilustrativos, transformaciones |
-| `.agent/workflows/chartjs.md` | Fracciones |
-| `.agent/workflows/threejs.md` | Geometría 3D |
 | `.agent/workflows/illustration-decision.md` | Árbol de decisión expandido |
 
 ---
@@ -1347,6 +1380,75 @@ render_distancia('distancia.svg', p1=(1, 2), p2=(4, 6))
 
 ---
 
+# 🧪 MÓDULO CHEMISTRY - Química
+
+> **Ubicación:** `scripts/chemistry/`
+> 
+> **Workflow:** `.agent/workflows/chemistry-spec.md`
+
+## Estructura del Módulo
+
+```
+scripts/chemistry/
+├── periodic_table_renderer.py   # Tabla periódica desde spec JSON
+└── trend_renderer.py            # Tendencias periódicas (4 tipos)
+
+specs/quimica/
+├── elementos/                   # Tabla periódica
+│   ├── tabla-periodica-simple.json
+│   └── tabla-periodica-completa.json
+├── tendencias/                  # Propiedades periódicas
+│   └── radio-atomico-tendencia.json
+├── configuracion/               # (Por crear) Configuración electrónica
+└── enlaces/                     # (Por crear) Enlace químico
+
+public/images/quimica/
+├── tabla-periodica-simple.svg
+├── tabla-periodica-completa.svg
+├── tendencias/
+│   ├── radio-atomico.svg
+│   ├── energia-ionizacion.svg
+│   ├── afinidad-electronica.svg
+│   └── electronegatividad.svg
+```
+
+## Uso
+
+### Tabla Periódica
+
+```bash
+python3 scripts/chemistry/periodic_table_renderer.py \
+    --spec specs/quimica/elementos/tabla-periodica-simple.json \
+    --output public/images/quimica/tabla-periodica-simple.svg
+```
+
+### Tendencias Periódicas
+
+```bash
+python3 scripts/chemistry/trend_renderer.py \
+    --type radio_atomico \
+    --output public/images/quimica/tendencias/radio-atomico.svg
+```
+
+**Tipos disponibles:**
+- `radio_atomico` - Radio atómico (↓ horizontal, ↑ vertical)
+- `energia_ionizacion` - EI (↑ horizontal, ↓ vertical)
+- `afinidad_electronica` - AE (↑ horizontal, ↓ vertical)
+- `electronegatividad` - EN (↑ horizontal, ↓ vertical)
+
+## Cuándo Usar Química vs Rough.js
+
+| Tipo de ilustración | Tecnología |
+|---------------------|------------|
+| Tabla periódica | **ChemistrySpec** |
+| Tendencias periódicas | **ChemistrySpec** |
+| Niveles de energía | **ChemistrySpec** (crear renderer) |
+| Estructuras de Lewis | **Rough.js** |
+| Diagramas de procesos | **Rough.js** |
+| Enlace iónico/covalente | **Rough.js** |
+
+---
+
 # 🚀 GUÍA: CREAR NUEVO TIPO DE ILUSTRACIÓN
 
 > **Para agentes que necesitan agregar soporte para un nuevo tipo de ilustración que NO existe.**
@@ -1359,7 +1461,9 @@ PREGUNTA: ¿El tipo de ilustración que necesito ya tiene renderer?
 ├── Circunferencias → circle_spec_renderer.py ✅
 ├── Triángulos → renderer.py ✅
 ├── Geometría analítica → cartesian/ ✅
-├── Gráficas de funciones → ECharts (inline) ✅
+├── Tabla periódica → chemistry/periodic_table_renderer.py ✅
+├── Tendencias periódicas → chemistry/trend_renderer.py ✅
+├── Gráficas de funciones → GraphSpec (inline) ✅
 ├── Diagramas conceptuales → Rough.js (inline) ✅
 │
 └── ¿NO existe? → Seguir esta guía para CREAR uno nuevo

@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 180">
+  <!-- Fondo -->
+  <rect width="500" height="180" fill="#f8fafc"/>
+  
+  <!-- Título -->
+  <text x="250" y="18" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle">Estructura de Subniveles en un Nivel (Ejemplo: Nivel 3)</text>
+  
+  <!-- Nivel principal -->
+  <rect x="30" y="35" width="440" height="130" rx="10" fill="#f0f9ff" stroke="#0ea5e9" stroke-width="2"/>
+  <text x="50" y="55" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#0369a1">Nivel 3</text>
+  
+  <!-- Subnivel 3s -->
+  <g transform="translate(60, 70)">
+    <rect x="0" y="0" width="100" height="80" rx="6" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+    <text x="50" y="18" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e40af" text-anchor="middle">Subnivel 3s</text>
+    
+    <!-- Orbital esférico -->
+    <circle cx="50" cy="50" r="22" fill="#93c5fd" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="50" y="55" font-family="Inter, sans-serif" font-size="8" fill="#1e40af" text-anchor="middle">esférico</text>
+    
+    <text x="50" y="75" font-family="Inter, sans-serif" font-size="9" fill="#64748b" text-anchor="middle">1 orbital = 2 e⁻</text>
+  </g>
+  
+  <!-- Subnivel 3p -->
+  <g transform="translate(180, 70)">
+    <rect x="0" y="0" width="130" height="80" rx="6" fill="#dcfce7" stroke="#22c55e" stroke-width="2"/>
+    <text x="65" y="18" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#15803d" text-anchor="middle">Subnivel 3p</text>
+    
+    <!-- 3 orbitales p -->
+    <ellipse cx="30" cy="50" rx="8" ry="20" fill="#86efac" stroke="#22c55e" stroke-width="1"/>
+    <text x="30" y="53" font-family="Inter, sans-serif" font-size="7" fill="#15803d" text-anchor="middle">px</text>
+    
+    <ellipse cx="65" cy="50" rx="20" ry="8" fill="#86efac" stroke="#22c55e" stroke-width="1"/>
+    <text x="65" y="53" font-family="Inter, sans-serif" font-size="7" fill="#15803d" text-anchor="middle">py</text>
+    
+    <circle cx="100" cy="50" r="12" fill="#86efac" stroke="#22c55e" stroke-width="1"/>
+    <line x1="100" y1="38" x2="100" y2="62" stroke="#22c55e" stroke-width="1.5"/>
+    <text x="100" y="53" font-family="Inter, sans-serif" font-size="7" fill="#15803d" text-anchor="middle">pz</text>
+    
+    <text x="65" y="75" font-family="Inter, sans-serif" font-size="9" fill="#64748b" text-anchor="middle">3 orbitales = 6 e⁻</text>
+  </g>
+  
+  <!-- Subnivel 3d -->
+  <g transform="translate(330, 70)">
+    <rect x="0" y="0" width="120" height="80" rx="6" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="60" y="18" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#7c3aed" text-anchor="middle">Subnivel 3d</text>
+    
+    <!-- 5 orbitales d (simplificados) -->
+    <g transform="translate(10, 35)">
+      <ellipse cx="12" cy="15" rx="6" ry="12" fill="#c4b5fd" stroke="#8b5cf6" stroke-width="1"/>
+      <ellipse cx="32" cy="15" rx="6" ry="12" fill="#c4b5fd" stroke="#8b5cf6" stroke-width="1"/>
+      <ellipse cx="52" cy="15" rx="6" ry="12" fill="#c4b5fd" stroke="#8b5cf6" stroke-width="1"/>
+      <ellipse cx="72" cy="15" rx="6" ry="12" fill="#c4b5fd" stroke="#8b5cf6" stroke-width="1"/>
+      <ellipse cx="92" cy="15" rx="6" ry="12" fill="#c4b5fd" stroke="#8b5cf6" stroke-width="1"/>
+    </g>
+    
+    <text x="60" y="75" font-family="Inter, sans-serif" font-size="9" fill="#64748b" text-anchor="middle">5 orbitales = 10 e⁻</text>
+  </g>
+  
+  <!-- Total -->
+  <text x="250" y="165" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#0369a1" text-anchor="middle">Total Nivel 3: 2 + 6 + 10 = 18 electrones máximo</text>
+</svg>

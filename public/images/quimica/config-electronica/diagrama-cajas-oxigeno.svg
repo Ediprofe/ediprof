@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 150">
+  <!-- Fondo -->
+  <rect width="450" height="150" fill="#f8fafc"/>
+  
+  <!-- Título -->
+  <text x="225" y="18" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#1e293b" text-anchor="middle">Diagrama de Cajas: Oxígeno (O, Z=8)</text>
+  
+  <!-- 1s -->
+  <g transform="translate(40, 40)">
+    <text x="30" y="0" font-family="Inter, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">1s</text>
+    <rect x="0" y="8" width="60" height="40" rx="5" fill="#dcfce7" stroke="#22c55e" stroke-width="2"/>
+    <text x="20" y="38" font-family="Inter, sans-serif" font-size="18" fill="#15803d" text-anchor="middle">↑</text>
+    <text x="40" y="38" font-family="Inter, sans-serif" font-size="18" fill="#15803d" text-anchor="middle">↓</text>
+    <text x="30" y="62" font-family="Inter, sans-serif" font-size="10" fill="#22c55e" text-anchor="middle" font-weight="bold">2</text>
+  </g>
+  
+  <!-- 2s -->
+  <g transform="translate(130, 40)">
+    <text x="30" y="0" font-family="Inter, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">2s</text>
+    <rect x="0" y="8" width="60" height="40" rx="5" fill="#dcfce7" stroke="#22c55e" stroke-width="2"/>
+    <text x="20" y="38" font-family="Inter, sans-serif" font-size="18" fill="#15803d" text-anchor="middle">↑</text>
+    <text x="40" y="38" font-family="Inter, sans-serif" font-size="18" fill="#15803d" text-anchor="middle">↓</text>
+    <text x="30" y="62" font-family="Inter, sans-serif" font-size="10" fill="#22c55e" text-anchor="middle" font-weight="bold">2</text>
+  </g>
+  
+  <!-- 2p -->
+  <g transform="translate(220, 40)">
+    <text x="75" y="0" font-family="Inter, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">2p</text>
+    <!-- Orbital 1: apareado -->
+    <rect x="0" y="8" width="50" height="40" rx="5" fill="#f5f3ff" stroke="#a855f7" stroke-width="2"/>
+    <text x="17" y="38" font-family="Inter, sans-serif" font-size="16" fill="#7c3aed" text-anchor="middle">↑</text>
+    <text x="33" y="38" font-family="Inter, sans-serif" font-size="16" fill="#7c3aed" text-anchor="middle">↓</text>
+    <!-- Orbital 2: 1 electrón -->
+    <rect x="55" y="8" width="50" height="40" rx="5" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+    <text x="80" y="38" font-family="Inter, sans-serif" font-size="18" fill="#1e40af" text-anchor="middle">↑</text>
+    <!-- Orbital 3: 1 electrón -->
+    <rect x="110" y="8" width="50" height="40" rx="5" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+    <text x="135" y="38" font-family="Inter, sans-serif" font-size="18" fill="#1e40af" text-anchor="middle">↑</text>
+    
+    <text x="80" y="62" font-family="Inter, sans-serif" font-size="10" fill="#a855f7" text-anchor="middle" font-weight="bold">4</text>
+  </g>
+  
+  <!-- Total -->
+  <rect x="380" y="45" width="55" height="40" rx="5" fill="#fff7ed" stroke="#f97316" stroke-width="1.5"/>
+  <text x="407" y="62" font-family="Inter, sans-serif" font-size="9" fill="#c2410c" text-anchor="middle" font-weight="bold">Total:</text>
+  <text x="407" y="78" font-family="Inter, sans-serif" font-size="11" fill="#ea580c" text-anchor="middle" font-weight="bold">8 e⁻ ✓</text>
+  
+  <!-- Configuración -->
+  <text x="225" y="115" font-family="Inter, monospace" font-size="11" fill="#3b82f6" text-anchor="middle" font-weight="bold">1s² 2s² 2p⁴</text>
+  
+  <!-- Electrones desapareados -->
+  <text x="225" y="135" font-family="Inter, sans-serif" font-size="9" fill="#64748b" text-anchor="middle" font-style="italic">2 electrones desapareados en 2p → paramagnético</text>
+</svg>

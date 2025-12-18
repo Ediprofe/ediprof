@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 220">
+  <!-- Fondo -->
+  <rect width="520" height="220" fill="#f8fafc"/>
+  
+  <!-- Título -->
+  <text x="260" y="20" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#1e293b" text-anchor="middle">Regla de Hund: Llenado Correcto vs Incorrecto</text>
+  
+  <!-- Ejemplo CORRECTO -->
+  <g transform="translate(25, 40)">
+    <rect x="0" y="0" width="220" height="80" rx="6" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5"/>
+    <text x="110" y="18" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#16a34a" text-anchor="middle">✓ CORRECTO (2p³)</text>
+    
+    <text x="60" y="38" font-family="Inter, sans-serif" font-size="9" fill="#64748b" text-anchor="middle">Subnivel 2p</text>
+    
+    <!-- 3 orbitales con 1 electrón cada uno -->
+    <rect x="20" y="45" width="45" height="28" rx="3" fill="white" stroke="#22c55e" stroke-width="2"/>
+    <text x="42" y="65" font-family="Inter, sans-serif" font-size="16" fill="#15803d" text-anchor="middle">↑</text>
+    
+    <rect x="75" y="45" width="45" height="28" rx="3" fill="white" stroke="#22c55e" stroke-width="2"/>
+    <text x="97" y="65" font-family="Inter, sans-serif" font-size="16" fill="#15803d" text-anchor="middle">↑</text>
+    
+    <rect x="130" y="45" width="45" height="28" rx="3" fill="white" stroke="#22c55e" stroke-width="2"/>
+    <text x="152" y="65" font-family="Inter, sans-serif" font-size="16" fill="#15803d" text-anchor="middle">↑</text>
+    
+    <text x="195" y="62" font-family="Inter, sans-serif" font-size="20" fill="#22c55e">✓</text>
+  </g>
+  
+  <!-- Ejemplo INCORRECTO -->
+  <g transform="translate(270, 40)">
+    <rect x="0" y="0" width="225" height="80" rx="6" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5"/>
+    <text x="112" y="18" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#dc2626" text-anchor="middle">✗ INCORRECTO (2p³)</text>
+    
+    <text x="65" y="38" font-family="Inter, sans-serif" font-size="9" fill="#64748b" text-anchor="middle">Subnivel 2p</text>
+    
+    <!-- Electrones mal distribuidos -->
+    <rect x="20" y="45" width="45" height="28" rx="3" fill="white" stroke="#dc2626" stroke-width="2"/>
+    <text x="32" y="65" font-family="Inter, sans-serif" font-size="14" fill="#dc2626" text-anchor="middle">↑</text>
+    <text x="52" y="65" font-family="Inter, sans-serif" font-size="14" fill="#dc2626" text-anchor="middle">↓</text>
+    
+    <rect x="75" y="45" width="45" height="28" rx="3" fill="white" stroke="#dc2626" stroke-width="2"/>
+    <text x="97" y="65" font-family="Inter, sans-serif" font-size="16" fill="#dc2626" text-anchor="middle">↑</text>
+    
+    <rect x="130" y="45" width="45" height="28" rx="3" fill="white" stroke="#94a3b8" stroke-width="1.5"/>
+    
+    <text x="195" y="62" font-family="Inter, sans-serif" font-size="20" fill="#dc2626">✗</text>
+  </g>
+  
+  <!-- Secuencia de llenado -->
+  <text x="260" y="140" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle">Secuencia de llenado del subnivel 2p</text>
+  
+  <!-- 2p¹ -->
+  <g transform="translate(18, 150)">
+    <text x="40" y="12" font-family="Inter, sans-serif" font-size="9" fill="#3b82f6" text-anchor="middle" font-weight="bold">2p¹</text>
+    <rect x="8" y="18" width="24" height="22" rx="2" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="20" y="35" font-family="Inter, sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">↑</text>
+    <rect x="34" y="18" width="24" height="22" rx="2" fill="white" stroke="#94a3b8" stroke-width="1"/>
+    <rect x="60" y="18" width="24" height="22" rx="2" fill="white" stroke="#94a3b8" stroke-width="1"/>
+  </g>
+  
+  <!-- 2p² -->
+  <g transform="translate(105, 150)">
+    <text x="40" y="12" font-family="Inter, sans-serif" font-size="9" fill="#3b82f6" text-anchor="middle" font-weight="bold">2p²</text>
+    <rect x="8" y="18" width="24" height="22" rx="2" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="20" y="35" font-family="Inter, sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">↑</text>
+    <rect x="34" y="18" width="24" height="22" rx="2" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="46" y="35" font-family="Inter, sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">↑</text>
+    <rect x="60" y="18" width="24" height="22" rx="2" fill="white" stroke="#94a3b8" stroke-width="1"/>
+  </g>
+  
+  <!-- 2p³ -->
+  <g transform="translate(192, 150)">
+    <text x="40" y="12" font-family="Inter, sans-serif" font-size="9" fill="#22c55e" text-anchor="middle" font-weight="bold">2p³</text>
+    <rect x="8" y="18" width="24" height="22" rx="2" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5"/>
+    <text x="20" y="35" font-family="Inter, sans-serif" font-size="13" fill="#15803d" text-anchor="middle">↑</text>
+    <rect x="34" y="18" width="24" height="22" rx="2" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5"/>
+    <text x="46" y="35" font-family="Inter, sans-serif" font-size="13" fill="#15803d" text-anchor="middle">↑</text>
+    <rect x="60" y="18" width="24" height="22" rx="2" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5"/>
+    <text x="72" y="35" font-family="Inter, sans-serif" font-size="13" fill="#15803d" text-anchor="middle">↑</text>
+  </g>
+  
+  <!-- 2p⁴ -->
+  <g transform="translate(279, 150)">
+    <text x="40" y="12" font-family="Inter, sans-serif" font-size="9" fill="#a855f7" text-anchor="middle" font-weight="bold">2p⁴</text>
+    <rect x="8" y="18" width="24" height="22" rx="2" fill="#f5f3ff" stroke="#a855f7" stroke-width="1.5"/>
+    <text x="14" y="35" font-family="Inter, sans-serif" font-size="11" fill="#7c3aed" text-anchor="middle">↑</text>
+    <text x="26" y="35" font-family="Inter, sans-serif" font-size="11" fill="#7c3aed" text-anchor="middle">↓</text>
+    <rect x="34" y="18" width="24" height="22" rx="2" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="46" y="35" font-family="Inter, sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">↑</text>
+    <rect x="60" y="18" width="24" height="22" rx="2" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="72" y="35" font-family="Inter, sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">↑</text>
+  </g>
+  
+  <!-- 2p⁵ -->
+  <g transform="translate(366, 150)">
+    <text x="40" y="12" font-family="Inter, sans-serif" font-size="9" fill="#a855f7" text-anchor="middle" font-weight="bold">2p⁵</text>
+    <rect x="8" y="18" width="24" height="22" rx="2" fill="#f5f3ff" stroke="#a855f7" stroke-width="1.5"/>
+    <text x="14" y="35" font-family="Inter, sans-serif" font-size="11" fill="#7c3aed" text-anchor="middle">↑</text>
+    <text x="26" y="35" font-family="Inter, sans-serif" font-size="11" fill="#7c3aed" text-anchor="middle">↓</text>
+    <rect x="34" y="18" width="24" height="22" rx="2" fill="#f5f3ff" stroke="#a855f7" stroke-width="1.5"/>
+    <text x="40" y="35" font-family="Inter, sans-serif" font-size="11" fill="#7c3aed" text-anchor="middle">↑</text>
+    <text x="52" y="35" font-family="Inter, sans-serif" font-size="11" fill="#7c3aed" text-anchor="middle">↓</text>
+    <rect x="60" y="18" width="24" height="22" rx="2" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="72" y="35" font-family="Inter, sans-serif" font-size="13" fill="#1e40af" text-anchor="middle">↑</text>
+  </g>
+  
+  <!-- 2p⁶ -->
+  <g transform="translate(453, 150)">
+    <text x="35" y="12" font-family="Inter, sans-serif" font-size="9" fill="#22c55e" text-anchor="middle" font-weight="bold">2p⁶</text>
+    <rect x="3" y="18" width="22" height="22" rx="2" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5"/>
+    <text x="9" y="34" font-family="Inter, sans-serif" font-size="10" fill="#15803d" text-anchor="middle">↑</text>
+    <text x="19" y="34" font-family="Inter, sans-serif" font-size="10" fill="#15803d" text-anchor="middle">↓</text>
+    <rect x="27" y="18" width="22" height="22" rx="2" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5"/>
+    <text x="33" y="34" font-family="Inter, sans-serif" font-size="10" fill="#15803d" text-anchor="middle">↑</text>
+    <text x="43" y="34" font-family="Inter, sans-serif" font-size="10" fill="#15803d" text-anchor="middle">↓</text>
+    <rect x="51" y="18" width="22" height="22" rx="2" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5"/>
+    <text x="57" y="34" font-family="Inter, sans-serif" font-size="10" fill="#15803d" text-anchor="middle">↑</text>
+    <text x="67" y="34" font-family="Inter, sans-serif" font-size="10" fill="#15803d" text-anchor="middle">↓</text>
+  </g>
+  
+  <!-- Nota -->
+  <text x="260" y="210" font-family="Inter, sans-serif" font-size="9" fill="#64748b" text-anchor="middle" font-style="italic">Primero un electrón en cada orbital (↑ ↑ ↑), luego se aparean (↑↓)</text>
+</svg>

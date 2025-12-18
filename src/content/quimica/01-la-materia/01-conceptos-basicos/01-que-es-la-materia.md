@@ -1,0 +1,118 @@
+# ¿Qué es la Materia?
+
+La **materia** es todo lo que **tiene masa** y **ocupa un lugar en el espacio**. Es el concepto fundamental de la química.
+
+---
+
+## 🎯 ¿Qué vas a aprender?
+
+- La definición de materia
+- Las tres fases principales
+- Los cambios de fase
+
+---
+
+## 📖 Definición
+
+> **Materia** → todo lo que tiene **masa** y **ocupa un lugar en el espacio**.
+
+### 💡 Características:
+
+- Tiene **masa** (cantidad de material)
+- Ocupa un **volumen** (espacio)
+- Se presenta en diferentes **fases**
+
+---
+
+## 📖 Fases de la Materia
+
+### 💠 Sólido
+- Forma **definida**
+- Volumen **definido**
+- Ejemplos: hielo, madera, metal
+
+### 💧 Líquido
+- Forma **variable** (adopta la del recipiente)
+- Volumen **definido**
+- Ejemplos: agua, aceite, leche
+
+### 🌫️ Gas
+- Sin forma **definida**
+- Sin volumen **definido** (ocupa todo el espacio disponible)
+- Ejemplos: aire, vapor de agua, oxígeno
+
+---
+
+## 📖 Cambios de Fase
+
+Los cambios de fase son **procesos físicos reversibles**:
+
+| Estado inicial | Estado final | Nombre del cambio |
+|----------------|--------------|-------------------|
+| Sólido | Líquido | 🧊 **Fusión** |
+| Líquido | Sólido | ❄️ **Solidificación** |
+| Líquido | Gas | 💨 **Ebullición** |
+| Gas | Líquido | 🌧️ **Condensación** |
+| Sólido | Gas | 🔺 **Sublimación** |
+| Gas | Sólido | 🔻 **Sublimación inversa** |
+
+### 💡 Ejemplos:
+
+- **Fusión:** hielo → agua
+- **Ebullición:** agua → vapor
+- **Sublimación:** hielo seco → gas
+
+---
+
+## 🔑 Resumen
+
+| Concepto | Descripción |
+|----------|-------------|
+| **Materia** | Masa + espacio ocupado |
+| **Sólido** | Forma y volumen definidos |
+| **Líquido** | Volumen definido, forma variable |
+| **Gas** | Sin forma ni volumen definidos |
+| **Cambio de fase** | Proceso físico reversible |
+
+---
+
+## 📝 Ejercicios de Práctica
+
+### Ejercicio 1
+¿Por qué el vapor de agua es materia?
+
+<details>
+<summary>Ver solución</summary>
+
+El vapor de agua es materia porque:
+- Tiene **masa** (aunque sea pequeña)
+- Ocupa un **lugar en el espacio**
+
+Solo que está en fase gaseosa.
+
+</details>
+
+### Ejercicio 2
+¿Qué cambio de fase ocurre cuando se forma rocío en las plantas?
+
+<details>
+<summary>Ver solución</summary>
+
+Ocurre la **condensación**:
+- El vapor de agua (gas) en el aire
+- Se enfría durante la noche
+- Se convierte en gotas de agua (líquido)
+
+</details>
+
+### Ejercicio 3
+¿La naftalina (bolitas antipolillas) se sublima o se evapora?
+
+<details>
+<summary>Ver solución</summary>
+
+La naftalina pasa directamente de **sólido a gas** → esto es **sublimación**.
+
+No pasa por el estado líquido.
+
+</details>

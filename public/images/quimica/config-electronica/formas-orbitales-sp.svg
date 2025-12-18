@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 180">
+  <!-- Fondo -->
+  <rect width="450" height="180" fill="#f8fafc"/>
+  
+  <!-- Título -->
+  <text x="225" y="18" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle">Formas de los Orbitales s y p</text>
+  
+  <!-- Subnivel s -->
+  <g transform="translate(40, 35)">
+    <rect x="0" y="0" width="160" height="130" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="80" y="18" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e40af" text-anchor="middle">Orbital s (esférico)</text>
+    
+    <!-- Esfera con gradiente -->
+    <circle cx="80" cy="75" r="40" fill="#93c5fd"/>
+    <circle cx="70" cy="65" r="10" fill="#bfdbfe"/>
+    <circle cx="80" cy="75" r="5" fill="#1e40af"/>
+    
+    <text x="80" y="125" font-family="Inter, sans-serif" font-size="9" fill="#64748b" text-anchor="middle">1 orbital por subnivel</text>
+  </g>
+  
+  <!-- Subnivel p -->
+  <g transform="translate(220, 35)">
+    <rect x="0" y="0" width="200" height="130" rx="8" fill="#dcfce7" stroke="#22c55e" stroke-width="1.5"/>
+    <text x="100" y="18" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#15803d" text-anchor="middle">Orbitales p (3 orientaciones)</text>
+    
+    <!-- px - horizontal -->
+    <g transform="translate(30, 45)">
+      <ellipse cx="0" cy="25" rx="8" ry="20" fill="#86efac" stroke="#22c55e" stroke-width="1.5"/>
+      <ellipse cx="30" cy="25" rx="8" ry="20" fill="#86efac" stroke="#22c55e" stroke-width="1.5"/>
+      <circle cx="15" cy="25" r="4" fill="#15803d"/>
+      <text x="15" y="60" font-family="Inter, sans-serif" font-size="9" fill="#15803d" text-anchor="middle">px</text>
+    </g>
+    
+    <!-- py - vertical -->
+    <g transform="translate(85, 45)">
+      <ellipse cx="15" cy="10" rx="20" ry="8" fill="#86efac" stroke="#22c55e" stroke-width="1.5"/>
+      <ellipse cx="15" cy="40" rx="20" ry="8" fill="#86efac" stroke="#22c55e" stroke-width="1.5"/>
+      <circle cx="15" cy="25" r="4" fill="#15803d"/>
+      <text x="15" y="60" font-family="Inter, sans-serif" font-size="9" fill="#15803d" text-anchor="middle">py</text>
+    </g>
+    
+    <!-- pz - profundidad (representado como círculo) -->
+    <g transform="translate(145, 45)">
+      <circle cx="15" cy="25" r="18" fill="#86efac" stroke="#22c55e" stroke-width="1.5"/>
+      <circle cx="15" cy="25" r="4" fill="#15803d"/>
+      <line x1="15" y1="3" x2="15" y2="47" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="3,2"/>
+      <text x="15" y="60" font-family="Inter, sans-serif" font-size="9" fill="#15803d" text-anchor="middle">pz</text>
+    </g>
+    
+    <text x="100" y="120" font-family="Inter, sans-serif" font-size="9" fill="#64748b" text-anchor="middle">3 orbitales perpendiculares (x, y, z)</text>
+  </g>
+</svg>

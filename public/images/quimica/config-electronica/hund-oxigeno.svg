@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 130">
+  <!-- Fondo -->
+  <rect width="350" height="130" fill="#f8fafc"/>
+  
+  <!-- Título -->
+  <text x="175" y="18" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#1e293b" text-anchor="middle">Oxígeno (O, Z=8) - Regla de Hund</text>
+  
+  <!-- 1s -->
+  <text x="40" y="42" font-family="Inter, sans-serif" font-size="9" fill="#64748b" text-anchor="middle">1s</text>
+  <rect x="15" y="48" width="50" height="35" rx="4" fill="#dcfce7" stroke="#22c55e" stroke-width="2"/>
+  <text x="30" y="72" font-family="Inter, sans-serif" font-size="16" fill="#15803d" text-anchor="middle">↑</text>
+  <text x="50" y="72" font-family="Inter, sans-serif" font-size="16" fill="#15803d" text-anchor="middle">↓</text>
+  
+  <!-- 2s -->
+  <text x="100" y="42" font-family="Inter, sans-serif" font-size="9" fill="#64748b" text-anchor="middle">2s</text>
+  <rect x="75" y="48" width="50" height="35" rx="4" fill="#dcfce7" stroke="#22c55e" stroke-width="2"/>
+  <text x="90" y="72" font-family="Inter, sans-serif" font-size="16" fill="#15803d" text-anchor="middle">↑</text>
+  <text x="110" y="72" font-family="Inter, sans-serif" font-size="16" fill="#15803d" text-anchor="middle">↓</text>
+  
+  <!-- 2p -->
+  <text x="215" y="42" font-family="Inter, sans-serif" font-size="9" fill="#64748b" text-anchor="middle">2p</text>
+  <rect x="140" y="48" width="40" height="35" rx="4" fill="#f5f3ff" stroke="#a855f7" stroke-width="2"/>
+  <text x="152" y="72" font-family="Inter, sans-serif" font-size="14" fill="#7c3aed" text-anchor="middle">↑</text>
+  <text x="168" y="72" font-family="Inter, sans-serif" font-size="14" fill="#7c3aed" text-anchor="middle">↓</text>
+  <rect x="185" y="48" width="40" height="35" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+  <text x="205" y="72" font-family="Inter, sans-serif" font-size="16" fill="#1e40af" text-anchor="middle">↑</text>
+  <rect x="230" y="48" width="40" height="35" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+  <text x="250" y="72" font-family="Inter, sans-serif" font-size="16" fill="#1e40af" text-anchor="middle">↑</text>
+  
+  <!-- Configuración -->
+  <text x="310" y="60" font-family="Inter, monospace" font-size="10" fill="#3b82f6" text-anchor="middle" font-weight="bold">1s² 2s² 2p⁴</text>
+  
+  <!-- Electrones desapareados -->
+  <rect x="285" y="70" width="50" height="20" rx="3" fill="#fff7ed" stroke="#f97316" stroke-width="1"/>
+  <text x="310" y="84" font-family="Inter, sans-serif" font-size="8" fill="#c2410c" text-anchor="middle" font-weight="bold">2 desap.</text>
+  
+  <!-- Contadores -->
+  <text x="40" y="98" font-family="Inter, sans-serif" font-size="9" fill="#64748b" text-anchor="middle">2</text>
+  <text x="100" y="98" font-family="Inter, sans-serif" font-size="9" fill="#64748b" text-anchor="middle">2</text>
+  <text x="205" y="98" font-family="Inter, sans-serif" font-size="9" fill="#64748b" text-anchor="middle">4</text>
+  
+  <!-- Nota -->
+  <text x="175" y="118" font-family="Inter, sans-serif" font-size="9" fill="#64748b" text-anchor="middle" font-style="italic">Un orbital apareado (↑↓) y dos con 1 electrón (↑ ↑)</text>
+</svg>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 200">
+  <!-- Fondo -->
+  <rect width="450" height="200" fill="#f8fafc"/>
+  
+  <!-- Título -->
+  <text x="225" y="18" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#1e293b" text-anchor="middle">Niveles de Energía (Modelo del Edificio)</text>
+  
+  <!-- Eje de energía -->
+  <line x1="40" y1="175" x2="40" y2="35" stroke="#64748b" stroke-width="2"/>
+  <polygon points="40,35 35,45 45,45" fill="#64748b"/>
+  <text x="28" y="95" font-family="Inter, sans-serif" font-size="10" fill="#64748b" text-anchor="middle" transform="rotate(-90, 28, 95)">Energía</text>
+  
+  <!-- Núcleo -->
+  <circle cx="225" cy="175" r="15" fill="#f97316" stroke="#ea580c" stroke-width="2"/>
+  <text x="225" y="179" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="white" text-anchor="middle">⊕</text>
+  <text x="280" y="180" font-family="Inter, sans-serif" font-size="9" fill="#f97316">Núcleo</text>
+  
+  <!-- Nivel 1 (K) - más cerca -->
+  <line x1="80" y1="150" x2="370" y2="150" stroke="#3b82f6" stroke-width="3"/>
+  <text x="65" y="154" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#3b82f6" text-anchor="end">n=1</text>
+  <text x="385" y="154" font-family="Inter, sans-serif" font-size="9" fill="#64748b">(K) - 2 e⁻ máx</text>
+  
+  <!-- Nivel 2 (L) -->
+  <line x1="80" y1="120" x2="370" y2="120" stroke="#22c55e" stroke-width="3"/>
+  <text x="65" y="124" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#22c55e" text-anchor="end">n=2</text>
+  <text x="385" y="124" font-family="Inter, sans-serif" font-size="9" fill="#64748b">(L) - 8 e⁻ máx</text>
+  
+  <!-- Nivel 3 (M) -->
+  <line x1="80" y1="90" x2="370" y2="90" stroke="#a855f7" stroke-width="3"/>
+  <text x="65" y="94" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#a855f7" text-anchor="end">n=3</text>
+  <text x="385" y="94" font-family="Inter, sans-serif" font-size="9" fill="#64748b">(M) - 18 e⁻ máx</text>
+  
+  <!-- Nivel 4 (N) - más lejos -->
+  <line x1="80" y1="60" x2="370" y2="60" stroke="#ef4444" stroke-width="3"/>
+  <text x="65" y="64" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#ef4444" text-anchor="end">n=4</text>
+  <text x="385" y="64" font-family="Inter, sans-serif" font-size="9" fill="#64748b">(N) - 32 e⁻ máx</text>
+  
+  <!-- Anotaciones -->
+  <text x="225" y="50" font-family="Inter, sans-serif" font-size="8" fill="#dc2626" text-anchor="middle" font-style="italic">↑ Más lejos del núcleo, mayor energía</text>
+  <text x="225" y="190" font-family="Inter, sans-serif" font-size="8" fill="#3b82f6" text-anchor="middle" font-style="italic">↓ Más cerca del núcleo, menor energía</text>
+</svg>
