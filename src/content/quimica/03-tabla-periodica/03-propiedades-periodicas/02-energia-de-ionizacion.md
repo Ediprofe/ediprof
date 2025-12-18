@@ -168,26 +168,7 @@ Los gases nobles tienen las **EI más altas** de cada período porque:
 
 ## 📖 Diagrama de Tendencias
 
-```
-                  Energía de Ionización AUMENTA →
-    ┌─────────────────────────────────────────────┐
-    │                                         He  │
-    │                                          ↑  │
-    │  Li                                  Ne     │
-  E │   ↓                                   ↑     │
-  I │  Na                              Ar         │
-    │   ↓                               ↑         │
-  D │   K                          Kr             │
-  I │   ↓                           ↑             │
-  S │  Rb                      Xe                 │
-  M │   ↓                       ↑                 │
-  I │  Cs                  Rn                     │
-  N │   ↓                                         │
-  U │                                             │
-  Y │  Valores BAJOS          Valores ALTOS       │
-  E │  (metales)              (no metales)        │
-    └─────────────────────────────────────────────┘
-```
+![Tendencia de la Energía de Ionización](/images/quimica/tendencias/energia-ionizacion.svg)
 
 ---
 

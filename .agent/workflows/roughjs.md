@@ -24,23 +24,61 @@ Rough.js crea diagramas con un estilo **"dibujado a mano"** que es perfecto para
 
 ### ❌ NO usar Rough.js para:
 
-- Geometría con propiedades exactas → GeometrySpec
-- Gráficas de funciones → ECharts
-- Geometría 3D → Three.js
+- Geometría con propiedades exactas → **SVG** (GeometrySpec, CircleSpec)
+- Gráficas de funciones matemáticas → **SVG** (CartesianSpec, GraphSpec)
 
 ---
 
-## 🎨 Plantilla Estándar
+## 🎨 Plantilla Estándar (ES Module - RECOMENDADA)
+
+> **ESCALABILIDAD:** Este patrón ES module es auto-contenido. La librería solo se descarga cuando esta página específica se carga. Perfecto para escalar a miles de lecciones.
 
 ```html
 <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <canvas id="roughjs-[LECCION]-[NUMERO]" width="800" height="400" style="width: 100%; height: auto; display: block;"></canvas>
+  <canvas id="rough-[LECCION]-[NUMERO]" width="800" height="400" style="width: 100%; height: auto; display: block;"></canvas>
+</div>
+
+<script type="module">
+import rough from 'https://cdn.jsdelivr.net/npm/roughjs@4.6.6/bundled/rough.esm.js';
+
+const canvas = document.getElementById('rough-[LECCION]-[NUMERO]');
+if (canvas) {
+  const rc = rough.canvas(canvas);
+  const ctx = canvas.getContext('2d');
+  
+  // Título (opcional)
+  ctx.font = 'bold 14px Inter, sans-serif';
+  ctx.fillStyle = '#1e293b';
+  ctx.textAlign = 'center';
+  ctx.fillText('Título del diagrama', 400, 25);
+  
+  // Dibujar elementos con rc...
+  
+}
+</script>
+```
+
+### Ventajas del patrón ES Module:
+- ✅ **Auto-contenido**: No depende de carga global
+- ✅ **Escalable**: Solo descarga ~50KB en páginas que lo usan
+- ✅ **Confiable**: Sin problemas de timing
+- ✅ **Moderno**: Sintaxis más limpia
+
+---
+
+## 🎨 Plantilla Alternativa (Global - Legacy)
+
+> Solo usar si necesitas compatibilidad con scripts existentes que usan `typeof rough`.
+
+```html
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <canvas id="rough-[LECCION]-[NUMERO]" width="800" height="400" style="width: 100%; height: auto; display: block;"></canvas>
 </div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  if (typeof rough !== 'undefined' && document.getElementById('roughjs-[LECCION]-[NUMERO]')) {
-    var canvas = document.getElementById('roughjs-[LECCION]-[NUMERO]');
+  if (typeof rough !== 'undefined' && document.getElementById('rough-[LECCION]-[NUMERO]')) {
+    var canvas = document.getElementById('rough-[LECCION]-[NUMERO]');
     var rc = rough.canvas(canvas);
     var ctx = canvas.getContext('2d');
     

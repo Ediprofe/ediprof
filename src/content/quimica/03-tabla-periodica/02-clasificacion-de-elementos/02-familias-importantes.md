@@ -220,22 +220,12 @@ Los demás elementos buscan alcanzar la configuración de gas noble:
 
 ## 📖 Comparación de Familias
 
-```
-Grupo 1      Grupo 2         Grupo 17      Grupo 18
-Alcalinos    Alcalinotérreos Halógenos     Gases Nobles
-
-   Li           Be              F              He
-   Na           Mg              Cl             Ne
-   K            Ca              Br             Ar
-   Rb           Sr              I              Kr
-   Cs           Ba              At             Xe
-   Fr           Ra                             Rn
-   
-  +1            +2             -1              0
-(pierden)    (pierden)       (ganan)       (estables)
-   MUY          Alta           MUY            MUY
- reactivos                   reactivos      estables
-```
+| Grupo | Nombre | Elementos | Ion típico | Reactividad |
+|-------|--------|-----------|------------|-------------|
+| 1 | Alcalinos | Li, Na, K, Rb, Cs, Fr | +1 | MUY reactivos |
+| 2 | Alcalinotérreos | Be, Mg, Ca, Sr, Ba, Ra | +2 | Alta |
+| 17 | Halógenos | F, Cl, Br, I, At | -1 | MUY reactivos |
+| 18 | Gases Nobles | He, Ne, Ar, Kr, Xe, Rn | (ninguno) | MUY estables |
 
 ---
 

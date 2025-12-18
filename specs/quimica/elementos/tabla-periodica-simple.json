@@ -1,0 +1,309 @@
+{
+    "version": "1.0",
+    "title": "Tabla Periódica Simplificada",
+    "description": "Versión esquemática para la lección de historia de la tabla periódica",
+    "layout": {
+        "columns": 18,
+        "rows": 4,
+        "cell_width": 38,
+        "cell_height": 38,
+        "gap": 2,
+        "padding": 20
+    },
+    "elements": [
+        {
+            "symbol": "H",
+            "Z": 1,
+            "group": 1,
+            "period": 1,
+            "category": "nonmetal"
+        },
+        {
+            "symbol": "He",
+            "Z": 2,
+            "group": 18,
+            "period": 1,
+            "category": "noble_gas"
+        },
+        {
+            "symbol": "Li",
+            "Z": 3,
+            "group": 1,
+            "period": 2,
+            "category": "alkali_metal"
+        },
+        {
+            "symbol": "Be",
+            "Z": 4,
+            "group": 2,
+            "period": 2,
+            "category": "alkaline_earth"
+        },
+        {
+            "symbol": "B",
+            "Z": 5,
+            "group": 13,
+            "period": 2,
+            "category": "metalloid"
+        },
+        {
+            "symbol": "C",
+            "Z": 6,
+            "group": 14,
+            "period": 2,
+            "category": "nonmetal"
+        },
+        {
+            "symbol": "N",
+            "Z": 7,
+            "group": 15,
+            "period": 2,
+            "category": "nonmetal"
+        },
+        {
+            "symbol": "O",
+            "Z": 8,
+            "group": 16,
+            "period": 2,
+            "category": "nonmetal"
+        },
+        {
+            "symbol": "F",
+            "Z": 9,
+            "group": 17,
+            "period": 2,
+            "category": "halogen"
+        },
+        {
+            "symbol": "Ne",
+            "Z": 10,
+            "group": 18,
+            "period": 2,
+            "category": "noble_gas"
+        },
+        {
+            "symbol": "Na",
+            "Z": 11,
+            "group": 1,
+            "period": 3,
+            "category": "alkali_metal"
+        },
+        {
+            "symbol": "Mg",
+            "Z": 12,
+            "group": 2,
+            "period": 3,
+            "category": "alkaline_earth"
+        },
+        {
+            "symbol": "Al",
+            "Z": 13,
+            "group": 13,
+            "period": 3,
+            "category": "post_transition"
+        },
+        {
+            "symbol": "Si",
+            "Z": 14,
+            "group": 14,
+            "period": 3,
+            "category": "metalloid"
+        },
+        {
+            "symbol": "P",
+            "Z": 15,
+            "group": 15,
+            "period": 3,
+            "category": "nonmetal"
+        },
+        {
+            "symbol": "S",
+            "Z": 16,
+            "group": 16,
+            "period": 3,
+            "category": "nonmetal"
+        },
+        {
+            "symbol": "Cl",
+            "Z": 17,
+            "group": 17,
+            "period": 3,
+            "category": "halogen"
+        },
+        {
+            "symbol": "Ar",
+            "Z": 18,
+            "group": 18,
+            "period": 3,
+            "category": "noble_gas"
+        },
+        {
+            "symbol": "K",
+            "Z": 19,
+            "group": 1,
+            "period": 4,
+            "category": "alkali_metal"
+        },
+        {
+            "symbol": "Ca",
+            "Z": 20,
+            "group": 2,
+            "period": 4,
+            "category": "alkaline_earth"
+        },
+        {
+            "symbol": "Sc",
+            "Z": 21,
+            "group": 3,
+            "period": 4,
+            "category": "transition_metal"
+        },
+        {
+            "symbol": "Ti",
+            "Z": 22,
+            "group": 4,
+            "period": 4,
+            "category": "transition_metal"
+        },
+        {
+            "symbol": "V",
+            "Z": 23,
+            "group": 5,
+            "period": 4,
+            "category": "transition_metal"
+        },
+        {
+            "symbol": "Cr",
+            "Z": 24,
+            "group": 6,
+            "period": 4,
+            "category": "transition_metal"
+        },
+        {
+            "symbol": "Mn",
+            "Z": 25,
+            "group": 7,
+            "period": 4,
+            "category": "transition_metal"
+        },
+        {
+            "symbol": "Fe",
+            "Z": 26,
+            "group": 8,
+            "period": 4,
+            "category": "transition_metal"
+        },
+        {
+            "symbol": "Co",
+            "Z": 27,
+            "group": 9,
+            "period": 4,
+            "category": "transition_metal"
+        },
+        {
+            "symbol": "Ni",
+            "Z": 28,
+            "group": 10,
+            "period": 4,
+            "category": "transition_metal"
+        },
+        {
+            "symbol": "Cu",
+            "Z": 29,
+            "group": 11,
+            "period": 4,
+            "category": "transition_metal"
+        },
+        {
+            "symbol": "Zn",
+            "Z": 30,
+            "group": 12,
+            "period": 4,
+            "category": "transition_metal"
+        },
+        {
+            "symbol": "Ga",
+            "Z": 31,
+            "group": 13,
+            "period": 4,
+            "category": "post_transition"
+        },
+        {
+            "symbol": "Ge",
+            "Z": 32,
+            "group": 14,
+            "period": 4,
+            "category": "metalloid"
+        },
+        {
+            "symbol": "As",
+            "Z": 33,
+            "group": 15,
+            "period": 4,
+            "category": "metalloid"
+        },
+        {
+            "symbol": "Se",
+            "Z": 34,
+            "group": 16,
+            "period": 4,
+            "category": "nonmetal"
+        },
+        {
+            "symbol": "Br",
+            "Z": 35,
+            "group": 17,
+            "period": 4,
+            "category": "halogen"
+        },
+        {
+            "symbol": "Kr",
+            "Z": 36,
+            "group": 18,
+            "period": 4,
+            "category": "noble_gas"
+        }
+    ],
+    "categories": {
+        "alkali_metal": {
+            "name": "Metales Alcalinos",
+            "color": "#ef4444",
+            "fill": "#fef2f2"
+        },
+        "alkaline_earth": {
+            "name": "Alcalinotérreos",
+            "color": "#f97316",
+            "fill": "#fff7ed"
+        },
+        "transition_metal": {
+            "name": "Metales de Transición",
+            "color": "#3b82f6",
+            "fill": "#eff6ff"
+        },
+        "post_transition": {
+            "name": "Metales Post-transición",
+            "color": "#6366f1",
+            "fill": "#eef2ff"
+        },
+        "metalloid": {
+            "name": "Metaloides",
+            "color": "#8b5cf6",
+            "fill": "#f5f3ff"
+        },
+        "nonmetal": {
+            "name": "No Metales",
+            "color": "#22c55e",
+            "fill": "#f0fdf4"
+        },
+        "halogen": {
+            "name": "Halógenos",
+            "color": "#14b8a6",
+            "fill": "#f0fdfa"
+        },
+        "noble_gas": {
+            "name": "Gases Nobles",
+            "color": "#a855f7",
+            "fill": "#faf5ff"
+        }
+    }
+}

@@ -5,7 +5,9 @@ Este módulo proporciona una API fluida para construir SVGs de geometría.
 """
 
 from typing import List, Tuple, Optional
-from .base import Point, COLORS, escape_xml
+from .base import Point
+from .colors import COLORS
+from .primitives import escape_xml
 
 
 class SVGBuilder:

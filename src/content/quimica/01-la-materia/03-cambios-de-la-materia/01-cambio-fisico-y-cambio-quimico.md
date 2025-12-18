@@ -23,6 +23,113 @@ Cuando rompes un papel, ¿sigue siendo papel? Sí. Cuando quemas un papel, ¿sig
 | **¿Hay reacción química?** | No | Sí |
 | **Ejemplos** | Fundir, cortar, disolver | Quemar, oxidar, fermentar |
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <canvas id="roughjs-cambios-comparacion" width="700" height="300" style="width: 100%; height: auto; display: block;"></canvas>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof rough !== 'undefined' && document.getElementById('roughjs-cambios-comparacion')) {
+    var canvas = document.getElementById('roughjs-cambios-comparacion');
+    var rc = rough.canvas(canvas);
+    var ctx = canvas.getContext('2d');
+    
+    // Título
+    ctx.font = 'bold 15px Inter, sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.textAlign = 'center';
+    ctx.fillText('Cambio Físico vs Cambio Químico', 350, 22);
+    
+    // === CAMBIO FÍSICO (Hielo → Agua) ===
+    var x1 = 175;
+    
+    // Cubo de hielo (antes)
+    rc.rectangle(x1-80, 70, 50, 50, { fill: '#dbeafe', fillStyle: 'solid', stroke: '#3b82f6', strokeWidth: 2, roughness: 0.5 });
+    ctx.font = '10px Inter, sans-serif';
+    ctx.fillStyle = '#3b82f6';
+    ctx.fillText('Hielo', x1-55, 135);
+    ctx.fillText('H₂O', x1-55, 148);
+    
+    // Flecha
+    rc.line(x1-20, 95, x1+20, 95, { stroke: '#22c55e', strokeWidth: 2, roughness: 0.3 });
+    rc.line(x1+20, 95, x1+12, 88, { stroke: '#22c55e', strokeWidth: 2, roughness: 0.3 });
+    rc.line(x1+20, 95, x1+12, 102, { stroke: '#22c55e', strokeWidth: 2, roughness: 0.3 });
+    ctx.font = '9px Inter, sans-serif';
+    ctx.fillStyle = '#22c55e';
+    ctx.fillText('+calor', x1, 85);
+    
+    // Charco de agua (después)
+    rc.ellipse(x1+55, 105, 60, 30, { fill: '#dbeafe', fillStyle: 'solid', stroke: '#3b82f6', strokeWidth: 2, roughness: 0.5 });
+    ctx.font = '10px Inter, sans-serif';
+    ctx.fillStyle = '#3b82f6';
+    ctx.fillText('Agua', x1+55, 135);
+    ctx.fillText('H₂O', x1+55, 148);
+    
+    // Etiqueta
+    ctx.font = 'bold 13px Inter, sans-serif';
+    ctx.fillStyle = '#22c55e';
+    ctx.fillText('CAMBIO FÍSICO', x1, 175);
+    ctx.font = '11px Inter, sans-serif';
+    ctx.fillStyle = '#64748b';
+    ctx.fillText('Misma sustancia', x1, 195);
+    ctx.fillText('Solo cambia el estado', x1, 210);
+    
+    // Check verde
+    ctx.font = 'bold 12px Inter, sans-serif';
+    ctx.fillStyle = '#22c55e';
+    ctx.fillText('✓ Reversible', x1, 235);
+    
+    // Línea divisoria
+    rc.line(350, 50, 350, 270, { stroke: '#cbd5e1', strokeWidth: 1, roughness: 0.3 });
+    
+    // === CAMBIO QUÍMICO (Papel → Ceniza) ===
+    var x2 = 525;
+    
+    // Papel (antes)
+    rc.rectangle(x2-80, 65, 45, 60, { fill: '#fef3c7', fillStyle: 'solid', stroke: '#f59e0b', strokeWidth: 2, roughness: 0.5 });
+    // Líneas de texto en el papel
+    rc.line(x2-75, 80, x2-45, 80, { stroke: '#d97706', strokeWidth: 1, roughness: 0.3 });
+    rc.line(x2-75, 90, x2-45, 90, { stroke: '#d97706', strokeWidth: 1, roughness: 0.3 });
+    rc.line(x2-75, 100, x2-45, 100, { stroke: '#d97706', strokeWidth: 1, roughness: 0.3 });
+    ctx.font = '10px Inter, sans-serif';
+    ctx.fillStyle = '#f59e0b';
+    ctx.fillText('Papel', x2-57, 140);
+    
+    // Flecha con fuego
+    rc.line(x2-25, 95, x2+15, 95, { stroke: '#ef4444', strokeWidth: 2, roughness: 0.3 });
+    rc.line(x2+15, 95, x2+7, 88, { stroke: '#ef4444', strokeWidth: 2, roughness: 0.3 });
+    rc.line(x2+15, 95, x2+7, 102, { stroke: '#ef4444', strokeWidth: 2, roughness: 0.3 });
+    ctx.font = '9px Inter, sans-serif';
+    ctx.fillStyle = '#ef4444';
+    ctx.fillText('🔥', x2-5, 85);
+    
+    // Ceniza + humo (después)
+    rc.ellipse(x2+55, 115, 50, 20, { fill: '#94a3b8', fillStyle: 'solid', stroke: '#64748b', strokeWidth: 2, roughness: 0.5 });
+    // Humo
+    ctx.font = '16px Inter, sans-serif';
+    ctx.fillStyle = '#94a3b8';
+    ctx.fillText('〰️', x2+55, 80);
+    ctx.font = '10px Inter, sans-serif';
+    ctx.fillStyle = '#64748b';
+    ctx.fillText('Ceniza + CO₂', x2+55, 145);
+    
+    // Etiqueta
+    ctx.font = 'bold 13px Inter, sans-serif';
+    ctx.fillStyle = '#ef4444';
+    ctx.fillText('CAMBIO QUÍMICO', x2, 175);
+    ctx.font = '11px Inter, sans-serif';
+    ctx.fillStyle = '#64748b';
+    ctx.fillText('Nueva sustancia', x2, 195);
+    ctx.fillText('Reacción química', x2, 210);
+    
+    // X roja
+    ctx.font = 'bold 12px Inter, sans-serif';
+    ctx.fillStyle = '#ef4444';
+    ctx.fillText('✗ Irreversible', x2, 235);
+  }
+});
+</script>
+
 ---
 
 ## 📖 Cambio Físico

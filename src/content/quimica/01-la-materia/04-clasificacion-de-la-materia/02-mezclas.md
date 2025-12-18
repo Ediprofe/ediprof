@@ -53,6 +53,99 @@ Las mezclas se clasifican en dos tipos según su apariencia:
 | **Homogénea** | Uniforme | No se distinguen | Agua salada |
 | **Heterogénea** | No uniforme | Se distinguen | Ensalada |
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <canvas id="roughjs-mezclas-tipos" width="700" height="320" style="width: 100%; height: auto; display: block;"></canvas>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof rough !== 'undefined' && document.getElementById('roughjs-mezclas-tipos')) {
+    var canvas = document.getElementById('roughjs-mezclas-tipos');
+    var rc = rough.canvas(canvas);
+    var ctx = canvas.getContext('2d');
+    
+    // Título
+    ctx.font = 'bold 15px Inter, sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.textAlign = 'center';
+    ctx.fillText('Tipos de Mezclas', 350, 22);
+    
+    // === MEZCLA HOMOGÉNEA ===
+    var x1 = 180;
+    var yBase = 150;
+    
+    // Vaso
+    rc.path('M ' + (x1-60) + ' 70 L ' + (x1-50) + ' 250 L ' + (x1+50) + ' 250 L ' + (x1+60) + ' 70 Z', 
+      { stroke: '#64748b', strokeWidth: 2, fill: '#dbeafe', fillStyle: 'solid', roughness: 0.5 });
+    
+    // Partículas uniformemente distribuidas (sal en agua)
+    var homoPos = [];
+    for (var i = 0; i < 25; i++) {
+      homoPos.push([x1 - 40 + Math.random() * 80, 90 + Math.random() * 140]);
+    }
+    homoPos.forEach(function(p) {
+      rc.circle(p[0], p[1], 8, { fill: '#3b82f6', fillStyle: 'solid', stroke: '#1e40af', roughness: 0.3 });
+    });
+    
+    ctx.font = 'bold 14px Inter, sans-serif';
+    ctx.fillStyle = '#3b82f6';
+    ctx.fillText('HOMOGÉNEA', x1, 275);
+    ctx.font = '11px Inter, sans-serif';
+    ctx.fillStyle = '#64748b';
+    ctx.fillText('Agua salada', x1, 295);
+    ctx.font = '10px Inter, sans-serif';
+    ctx.fillText('Se ve uniforme', x1, 310);
+    
+    // Etiqueta
+    ctx.font = '10px Inter, sans-serif';
+    ctx.fillStyle = '#22c55e';
+    ctx.fillText('✓ No se distinguen', x1, 55);
+    ctx.fillText('los componentes', x1, 67);
+    
+    // === MEZCLA HETEROGÉNEA ===
+    var x2 = 520;
+    
+    // Vaso
+    rc.path('M ' + (x2-60) + ' 70 L ' + (x2-50) + ' 250 L ' + (x2+50) + ' 250 L ' + (x2+60) + ' 70 Z', 
+      { stroke: '#64748b', strokeWidth: 2, fill: 'none', roughness: 0.5 });
+    
+    // Capa de aceite (arriba)
+    rc.rectangle(x2-55, 75, 110, 60, { fill: '#fef3c7', fillStyle: 'solid', stroke: 'none', roughness: 0 });
+    ctx.font = '10px Inter, sans-serif';
+    ctx.fillStyle = '#f59e0b';
+    ctx.fillText('Aceite', x2, 110);
+    
+    // Línea de separación
+    rc.line(x2-55, 135, x2+55, 135, { stroke: '#94a3b8', strokeWidth: 1, roughness: 0.3 });
+    
+    // Capa de agua (abajo)
+    rc.rectangle(x2-52, 135, 104, 110, { fill: '#dbeafe', fillStyle: 'solid', stroke: 'none', roughness: 0 });
+    ctx.fillStyle = '#3b82f6';
+    ctx.fillText('Agua', x2, 195);
+    
+    ctx.font = 'bold 14px Inter, sans-serif';
+    ctx.fillStyle = '#f59e0b';
+    ctx.fillText('HETEROGÉNEA', x2, 275);
+    ctx.font = '11px Inter, sans-serif';
+    ctx.fillStyle = '#64748b';
+    ctx.fillText('Agua + Aceite', x2, 295);
+    ctx.font = '10px Inter, sans-serif';
+    ctx.fillText('Se ven las capas', x2, 310);
+    
+    // Etiqueta
+    ctx.font = '10px Inter, sans-serif';
+    ctx.fillStyle = '#ef4444';
+    ctx.fillText('✗ Se distinguen', x2, 55);
+    ctx.fillText('los componentes', x2, 67);
+    
+    // Flecha VS
+    ctx.font = 'bold 20px Inter, sans-serif';
+    ctx.fillStyle = '#94a3b8';
+    ctx.fillText('vs', 350, 165);
+  }
+});
+</script>
+
 ---
 
 ## 📖 Mezclas Homogéneas (Soluciones)
@@ -125,34 +218,6 @@ Aunque tiene varios componentes, no los distingues: el aire se ve y se siente un
 | **Suspensión** | Partículas sólidas que sedimentan | Arena en agua |
 | **Coloide** | Partículas pequeñas que no sedimentan | Leche, gelatina |
 | **Emulsión** | Líquido disperso en otro líquido | Mayonesa |
-
----
-
-## 📖 Diagramas Comparativos
-
-### Mezcla homogénea (nivel molecular)
-
-```
-[ • ○ • ○ • ○ • ○ ]
-[ ○ • ○ • ○ • ○ • ]
-[ • ○ • ○ • ○ • ○ ]
-
-• = Partículas de agua
-○ = Partículas de sal
-→ Distribución uniforme
-```
-
-### Mezcla heterogénea (nivel visible)
-
-```
-┌─────────────────┐
-│  ○○○ Aceite ○○○ │
-├─────────────────┤
-│  ••• Agua ••••  │
-└─────────────────┘
-
-→ Dos capas distinguibles
-```
 
 ---
 

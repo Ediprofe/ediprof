@@ -110,6 +110,88 @@ $$
 
 > Un objeto **flota** en un líquido si su densidad es **menor** que la del líquido.
 
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <canvas id="roughjs-densidad-flotabilidad" width="700" height="300" style="width: 100%; height: auto; display: block;"></canvas>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof rough !== 'undefined' && document.getElementById('roughjs-densidad-flotabilidad')) {
+    var canvas = document.getElementById('roughjs-densidad-flotabilidad');
+    var rc = rough.canvas(canvas);
+    var ctx = canvas.getContext('2d');
+    
+    // Título
+    ctx.font = 'bold 15px Inter, sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.textAlign = 'center';
+    ctx.fillText('Flotabilidad: Densidad vs Agua (1.0 g/cm³)', 350, 22);
+    
+    // Recipiente con agua
+    var waterTop = 100;
+    var waterBottom = 240;
+    rc.rectangle(80, 50, 540, 210, { stroke: '#64748b', strokeWidth: 2, roughness: 0.5 });
+    rc.rectangle(80, waterTop, 540, waterBottom - waterTop, { fill: '#dbeafe', fillStyle: 'solid', stroke: 'none', roughness: 0 });
+    
+    // Línea de nivel del agua
+    rc.line(80, waterTop, 620, waterTop, { stroke: '#3b82f6', strokeWidth: 2, roughness: 0.3 });
+    ctx.font = '10px Inter, sans-serif';
+    ctx.fillStyle = '#3b82f6';
+    ctx.textAlign = 'left';
+    ctx.fillText('Nivel del agua', 625, waterTop + 4);
+    
+    // === CORCHO (flota mucho) ===
+    var x1 = 150;
+    rc.rectangle(x1-25, waterTop-30, 50, 50, { fill: '#fef3c7', fillStyle: 'solid', stroke: '#f59e0b', strokeWidth: 2, roughness: 0.5 });
+    ctx.font = 'bold 11px Inter, sans-serif';
+    ctx.fillStyle = '#f59e0b';
+    ctx.textAlign = 'center';
+    ctx.fillText('Corcho', x1, waterTop-40);
+    ctx.font = '10px Inter, sans-serif';
+    ctx.fillStyle = '#64748b';
+    ctx.fillText('0.24 g/cm³', x1, 275);
+    ctx.fillText('FLOTA', x1, 290);
+    
+    // === MADERA (flota parcial) ===
+    var x2 = 270;
+    rc.rectangle(x2-25, waterTop-10, 50, 50, { fill: '#d4a574', fillStyle: 'solid', stroke: '#92400e', strokeWidth: 2, roughness: 0.5 });
+    ctx.font = 'bold 11px Inter, sans-serif';
+    ctx.fillStyle = '#92400e';
+    ctx.fillText('Madera', x2, waterTop-20);
+    ctx.font = '10px Inter, sans-serif';
+    ctx.fillStyle = '#64748b';
+    ctx.fillText('0.5 g/cm³', x2, 275);
+    ctx.fillText('FLOTA', x2, 290);
+    
+    // === PLÁSTICO (se hunde poco) ===
+    var x3 = 390;
+    rc.rectangle(x3-25, waterTop+20, 50, 50, { fill: '#e2e8f0', fillStyle: 'solid', stroke: '#64748b', strokeWidth: 2, roughness: 0.5 });
+    ctx.font = 'bold 11px Inter, sans-serif';
+    ctx.fillStyle = '#64748b';
+    ctx.fillText('Plástico', x3, waterTop+10);
+    ctx.font = '10px Inter, sans-serif';
+    ctx.fillText('1.3 g/cm³', x3, 275);
+    ctx.fillText('SE HUNDE', x3, 290);
+    
+    // === HIERRO (se hunde mucho) ===
+    var x4 = 510;
+    rc.rectangle(x4-25, waterBottom-60, 50, 50, { fill: '#94a3b8', fillStyle: 'solid', stroke: '#475569', strokeWidth: 2, roughness: 0.5 });
+    ctx.font = 'bold 11px Inter, sans-serif';
+    ctx.fillStyle = '#475569';
+    ctx.fillText('Hierro', x4, waterBottom-70);
+    ctx.font = '10px Inter, sans-serif';
+    ctx.fillStyle = '#64748b';
+    ctx.fillText('7.9 g/cm³', x4, 275);
+    ctx.fillText('SE HUNDE', x4, 290);
+    
+    // Etiqueta del agua
+    ctx.font = '11px Inter, sans-serif';
+    ctx.fillStyle = '#3b82f6';
+    ctx.fillText('Agua: 1.0 g/cm³', 350, waterTop + 30);
+  }
+});
+</script>
+
 ### 💡 Regla de flotabilidad
 
 | Si... | Entonces el objeto... |

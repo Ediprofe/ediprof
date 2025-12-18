@@ -166,25 +166,7 @@ Ambas son altas para los halógenos, pero por diferentes razones.
 
 ## 📖 Diagrama de Tendencias
 
-```
-           Afinidad Electrónica más NEGATIVA →
-    ┌─────────────────────────────────────────────┐
-    │                                             │
-    │  Li                              F    He ~0 │
-  A │   ↓                              ↑          │
-  E │  Na                          Cl             │
-    │   ↓                          ↑              │
-  M │   K                      Br                 │
-  E │   ↓                      ↑                  │
-  N │  Rb                  I                      │
-  O │   ↓                  ↑                      │
-  S │  Cs              At                         │
-    │                                             │
-  N │  Valores           Valores                  │
-  E │  cercanos          muy                      │
-  G │  a cero           negativos                 │
-    └─────────────────────────────────────────────┘
-```
+![Tendencia de la Afinidad Electrónica](/images/quimica/tendencias/afinidad-electronica.svg)
 
 ---
 

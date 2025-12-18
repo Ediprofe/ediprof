@@ -1,0 +1,67 @@
+{
+    "version": "1.0",
+    "title": "Tendencias en la Tabla Periódica",
+    "description": "Esquema de tabla periódica con flechas de tendencia",
+    "layout": {
+        "columns": 18,
+        "rows": 4,
+        "cell_width": 28,
+        "cell_height": 28,
+        "gap": 2,
+        "padding": 30
+    },
+    "trend": {
+        "name": "radio_atomico",
+        "title": "Radio Atómico",
+        "horizontal": {
+            "direction": "decrease",
+            "label": "Radio atómico DISMINUYE →"
+        },
+        "vertical": {
+            "direction": "increase",
+            "label": "Radio ↑ AUMENTA"
+        },
+        "color_scale": {
+            "min_color": "#dcfce7",
+            "max_color": "#166534"
+        }
+    },
+    "highlight_elements": [
+        {
+            "symbol": "Li",
+            "group": 1,
+            "period": 2,
+            "size": "large"
+        },
+        {
+            "symbol": "F",
+            "group": 17,
+            "period": 2,
+            "size": "small"
+        },
+        {
+            "symbol": "Cs",
+            "group": 1,
+            "period": 4,
+            "size": "largest"
+        },
+        {
+            "symbol": "He",
+            "group": 18,
+            "period": 1,
+            "size": "smallest"
+        }
+    ],
+    "annotations": [
+        {
+            "text": "Cs: más grande",
+            "x": 50,
+            "y": 180
+        },
+        {
+            "text": "He: más pequeño",
+            "x": 480,
+            "y": 40
+        }
+    ]
+}

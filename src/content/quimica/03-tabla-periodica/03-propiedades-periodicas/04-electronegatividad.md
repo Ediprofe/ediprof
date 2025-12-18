@@ -113,29 +113,7 @@ Linus Pauling desarrolló la escala más usada de electronegatividad:
 
 ## 📖 Diagrama de Electronegatividad
 
-```
-        Electronegatividad AUMENTA →
-    ┌─────────────────────────────────────┐
-    │                                 F   │
-    │  Li                            4.0  │
-  E │  1.0                    O           │
-  N │   ↓                    3.5          │
-    │  Na                   Cl            │
-  D │  0.9             N    3.0           │
-  I │   ↓             3.0                 │
-  S │   K                                 │
-  M │  0.8        C                       │
-  I │   ↓        2.5                      │
-  N │  Rb                                 │
-  U │  0.8                                │
-  Y │   ↓                                 │
-  E │  Cs                                 │
-    │  0.7                                │
-    └─────────────────────────────────────┘
-      ↑                               ↑
-   METALES                        NO METALES
-   (baja EN)                      (alta EN)
-```
+![Tendencia de la Electronegatividad](/images/quimica/tendencias/electronegatividad.svg)
 
 ---
 

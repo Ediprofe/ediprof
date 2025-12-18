@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 638 258">
+  <rect width="638" height="258" fill="#f8fafc"/>
+  <text x="319.0" y="18" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#1e293b" text-anchor="middle">Tendencia de la Afinidad Electrónica</text>
+  <text x="319.0" y="45" font-family="Inter, sans-serif" font-size="9" fill="#ef4444" text-anchor="middle">AE más negativa →</text>
+  <line x1="100" y1="35" x2="538" y2="35" stroke="#ef4444" stroke-width="2"/>
+  <polygon points="538,35 528,30 528,40" fill="#ef4444"/>
+  <text x="25" y="110.0" font-family="Inter, sans-serif" font-size="9" fill="#22c55e" text-anchor="middle" transform="rotate(-90, 25, 110.0)">↓ AE menos negativa</text>
+  <line x1="40" y1="70" x2="40" y2="140" stroke="#22c55e" stroke-width="2"/>
+  <polygon points="40,140 35,130 45,130" fill="#22c55e"/>
+  <rect x="50" y="50" width="28" height="28" fill="#7ec8be" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="560" y="50" width="28" height="28" fill="#f0fdf4" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="50" y="80" width="28" height="28" fill="#58b7ac" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="80" y="80" width="28" height="28" fill="#5fbaaf" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="410" y="80" width="28" height="28" fill="#a8dcd2" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="440" y="80" width="28" height="28" fill="#afdfd5" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="470" y="80" width="28" height="28" fill="#b6e2d8" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="500" y="80" width="28" height="28" fill="#bce5db" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="530" y="80" width="28" height="28" fill="#c3e8de" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="560" y="80" width="28" height="28" fill="#caebe2" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="50" y="110" width="28" height="28" fill="#32a59a" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="80" y="110" width="28" height="28" fill="#39a89d" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="410" y="110" width="28" height="28" fill="#82cac0" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="440" y="110" width="28" height="28" fill="#89cdc3" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="470" y="110" width="28" height="28" fill="#90d0c6" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="500" y="110" width="28" height="28" fill="#96d3c9" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="530" y="110" width="28" height="28" fill="#9dd6cc" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="560" y="110" width="28" height="28" fill="#a4dad0" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="50" y="140" width="28" height="28" fill="#0d9488" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="80" y="140" width="28" height="28" fill="#13978b" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="110" y="140" width="28" height="28" fill="#1a9a8e" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="140" y="140" width="28" height="28" fill="#219d91" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="170" y="140" width="28" height="28" fill="#27a094" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="200" y="140" width="28" height="28" fill="#2ea397" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="230" y="140" width="28" height="28" fill="#35a69b" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="260" y="140" width="28" height="28" fill="#3ba99e" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="290" y="140" width="28" height="28" fill="#42aca1" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="320" y="140" width="28" height="28" fill="#49afa4" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="350" y="140" width="28" height="28" fill="#4fb2a7" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="380" y="140" width="28" height="28" fill="#56b5aa" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="410" y="140" width="28" height="28" fill="#5db9ae" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="440" y="140" width="28" height="28" fill="#63bcb1" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="470" y="140" width="28" height="28" fill="#6abfb4" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="500" y="140" width="28" height="28" fill="#71c2b7" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="530" y="140" width="28" height="28" fill="#77c5ba" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="560" y="140" width="28" height="28" fill="#7ec8be" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <text x="60" y="248" font-family="Inter, sans-serif" font-size="8" fill="#22c55e">Alta AE (Cl)</text>
+  <text x="578" y="248" font-family="Inter, sans-serif" font-size="8" fill="#ef4444" text-anchor="end">Baja AE (Cs)</text>
+</svg>

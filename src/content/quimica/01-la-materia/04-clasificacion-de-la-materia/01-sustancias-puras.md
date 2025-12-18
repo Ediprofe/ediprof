@@ -13,7 +13,160 @@
 
 ---
 
-## 📊 Clasificación de Sustancias Puras
+## 📊 Mapa Conceptual: Clasificación de la Materia
+
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <canvas id="roughjs-mapa-materia" width="800" height="520" style="width: 100%; height: auto; display: block;"></canvas>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof rough !== 'undefined' && document.getElementById('roughjs-mapa-materia')) {
+    var canvas = document.getElementById('roughjs-mapa-materia');
+    var rc = rough.canvas(canvas);
+    var ctx = canvas.getContext('2d');
+    
+    // Función para dibujar caja con texto
+    function drawBox(x, y, w, h, fill, stroke, title, subtitle) {
+      rc.rectangle(x - w/2, y - h/2, w, h, { fill: fill, fillStyle: 'solid', stroke: stroke, strokeWidth: 2, roughness: 0.5 });
+      ctx.font = 'bold 12px Inter, sans-serif';
+      ctx.fillStyle = stroke;
+      ctx.textAlign = 'center';
+      ctx.fillText(title, x, y - 2);
+      if (subtitle) {
+        ctx.font = '10px Inter, sans-serif';
+        ctx.fillStyle = '#64748b';
+        ctx.fillText(subtitle, x, y + 12);
+      }
+    }
+    
+    // Función para dibujar línea conectora
+    function drawLine(x1, y1, x2, y2) {
+      rc.line(x1, y1, x2, y2, { stroke: '#94a3b8', strokeWidth: 2, roughness: 0.3 });
+    }
+    
+    // Título
+    ctx.font = 'bold 16px Inter, sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.textAlign = 'center';
+    ctx.fillText('Clasificación de la Materia', 400, 25);
+    
+    // === NIVEL 1: MATERIA ===
+    drawBox(400, 60, 120, 40, '#e0e7ff', '#6366f1', 'MATERIA', '');
+    
+    // Líneas de MATERIA a nivel 2
+    drawLine(400, 80, 400, 100);
+    drawLine(200, 100, 600, 100);
+    drawLine(200, 100, 200, 120);
+    drawLine(600, 100, 600, 120);
+    
+    // === NIVEL 2: SUSTANCIAS PURAS y MEZCLAS ===
+    drawBox(200, 145, 150, 50, '#dbeafe', '#3b82f6', 'SUSTANCIAS PURAS', '(composición fija)');
+    drawBox(600, 145, 150, 50, '#dcfce7', '#22c55e', 'MEZCLAS', '(composición variable)');
+    
+    // Líneas de SUSTANCIAS PURAS a nivel 3
+    drawLine(200, 170, 200, 195);
+    drawLine(120, 195, 280, 195);
+    drawLine(120, 195, 120, 215);
+    drawLine(280, 195, 280, 215);
+    
+    // Líneas de MEZCLAS a nivel 3
+    drawLine(600, 170, 600, 195);
+    drawLine(500, 195, 700, 195);
+    drawLine(500, 195, 500, 215);
+    drawLine(700, 195, 700, 215);
+    
+    // === NIVEL 3: ELEMENTOS, COMPUESTOS, HOMOGÉNEAS, HETEROGÉNEAS ===
+    drawBox(120, 250, 110, 55, '#fef3c7', '#f59e0b', 'ELEMENTOS', '(1 tipo de átomo)');
+    drawBox(280, 250, 110, 55, '#fee2e2', '#ef4444', 'COMPUESTOS', '(2+ elementos)');
+    drawBox(500, 250, 120, 55, '#d1fae5', '#10b981', 'HOMOGÉNEAS', '(uniformes)');
+    drawBox(700, 250, 120, 55, '#fce7f3', '#ec4899', 'HETEROGÉNEAS', '(no uniformes)');
+    
+    // Líneas a nivel 4 (ejemplos)
+    drawLine(120, 278, 120, 305);
+    drawLine(280, 278, 280, 305);
+    drawLine(500, 278, 500, 305);
+    drawLine(700, 278, 700, 305);
+    
+    // === NIVEL 4: EJEMPLOS ===
+    // Elementos - ejemplos
+    rc.rectangle(60, 310, 120, 70, { fill: '#fffbeb', fillStyle: 'solid', stroke: '#f59e0b', strokeWidth: 1.5, roughness: 0.4 });
+    ctx.font = 'bold 10px Inter, sans-serif';
+    ctx.fillStyle = '#f59e0b';
+    ctx.fillText('Ejemplos:', 120, 325);
+    ctx.font = '10px Inter, sans-serif';
+    ctx.fillStyle = '#64748b';
+    ctx.fillText('Fe (hierro)', 120, 342);
+    ctx.fillText('Au (oro)', 120, 356);
+    ctx.fillText('O₂, N₂', 120, 370);
+    
+    // Compuestos - ejemplos
+    rc.rectangle(220, 310, 120, 70, { fill: '#fef2f2', fillStyle: 'solid', stroke: '#ef4444', strokeWidth: 1.5, roughness: 0.4 });
+    ctx.font = 'bold 10px Inter, sans-serif';
+    ctx.fillStyle = '#ef4444';
+    ctx.fillText('Ejemplos:', 280, 325);
+    ctx.font = '10px Inter, sans-serif';
+    ctx.fillStyle = '#64748b';
+    ctx.fillText('H₂O (agua)', 280, 342);
+    ctx.fillText('NaCl (sal)', 280, 356);
+    ctx.fillText('CO₂, NH₃', 280, 370);
+    
+    // Homogéneas - subtipos
+    rc.rectangle(435, 310, 130, 90, { fill: '#ecfdf5', fillStyle: 'solid', stroke: '#10b981', strokeWidth: 1.5, roughness: 0.4 });
+    ctx.font = 'bold 10px Inter, sans-serif';
+    ctx.fillStyle = '#10b981';
+    ctx.fillText('Subtipos:', 500, 325);
+    ctx.font = '10px Inter, sans-serif';
+    ctx.fillStyle = '#64748b';
+    ctx.fillText('• Soluciones', 500, 342);
+    ctx.fillText('  (agua salada)', 500, 355);
+    ctx.fillText('• Aleaciones', 500, 372);
+    ctx.fillText('  (bronce, acero)', 500, 385);
+    
+    // Heterogéneas - subtipos
+    rc.rectangle(635, 310, 130, 90, { fill: '#fdf2f8', fillStyle: 'solid', stroke: '#ec4899', strokeWidth: 1.5, roughness: 0.4 });
+    ctx.font = 'bold 10px Inter, sans-serif';
+    ctx.fillStyle = '#ec4899';
+    ctx.fillText('Subtipos:', 700, 325);
+    ctx.font = '10px Inter, sans-serif';
+    ctx.fillStyle = '#64748b';
+    ctx.fillText('• Suspensiones', 700, 342);
+    ctx.fillText('  (arena en agua)', 700, 355);
+    ctx.fillText('• Coloides (leche)', 700, 372);
+    ctx.fillText('• Emulsiones', 700, 385);
+    
+    // === LEYENDA DE SEPARACIÓN ===
+    ctx.font = 'bold 11px Inter, sans-serif';
+    ctx.fillStyle = '#1e293b';
+    ctx.textAlign = 'left';
+    ctx.fillText('¿Cómo se separan?', 50, 430);
+    
+    // Sustancias puras
+    rc.rectangle(50, 440, 180, 35, { fill: '#dbeafe', fillStyle: 'solid', stroke: '#3b82f6', strokeWidth: 1.5, roughness: 0.4 });
+    ctx.font = '10px Inter, sans-serif';
+    ctx.fillStyle = '#3b82f6';
+    ctx.fillText('Sustancias Puras:', 70, 455);
+    ctx.fillStyle = '#64748b';
+    ctx.fillText('Métodos químicos', 70, 468);
+    
+    // Mezclas
+    rc.rectangle(250, 440, 180, 35, { fill: '#dcfce7', fillStyle: 'solid', stroke: '#22c55e', strokeWidth: 1.5, roughness: 0.4 });
+    ctx.font = '10px Inter, sans-serif';
+    ctx.fillStyle = '#22c55e';
+    ctx.fillText('Mezclas:', 270, 455);
+    ctx.fillStyle = '#64748b';
+    ctx.fillText('Métodos físicos', 270, 468);
+    
+    // Nota importante
+    ctx.font = 'italic 10px Inter, sans-serif';
+    ctx.fillStyle = '#64748b';
+    ctx.textAlign = 'center';
+    ctx.fillText('💡 Los elementos NO se pueden descomponer. Los compuestos SÍ (por reacción química).', 400, 505);
+  }
+});
+</script>
+
+### 📋 Tabla Resumen
 
 | Tipo | Definición | ¿Se puede descomponer? | Ejemplos |
 |------|------------|------------------------|----------|

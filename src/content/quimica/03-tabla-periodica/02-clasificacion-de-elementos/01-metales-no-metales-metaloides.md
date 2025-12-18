@@ -64,17 +64,7 @@ La tabla periódica se divide en tres grandes categorías según las propiedades
 
 ### 💡 Ubicación en la tabla:
 
-```
-   Grupos 1-2 y 3-12 son metales
-   ┌────────────────────────────────────┐
-   │▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░░░░│
-   │▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░░░░│
-   │▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░░│
-   │▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░│
-   └────────────────────────────────────┘
-   ▓ = Metales (izquierda y centro)
-   ░ = No metales (derecha)
-```
+Los metales ocupan la mayor parte de la tabla periódica: grupos 1-2 (izquierda) y grupos 3-12 (centro). Los no metales se encuentran en la parte superior derecha (grupos 14-18).
 
 ---
 
@@ -149,26 +139,15 @@ La propiedad más importante de los metaloides es que son **semiconductores**:
 - Su conductividad **aumenta** con la temperatura
 - Base de la electrónica moderna (chips de silicio)
 
-```
-Conductor      Semiconductor      Aislante
-(metales)      (metaloides)       (no metales)
-    Cu      →       Si        →       S
-  Alta           Media            Muy baja
-conductividad  conductividad    conductividad
-```
+| Tipo | Ejemplo | Conductividad |
+|------|---------|---------------|
+| Conductor (metales) | Cu | Alta |
+| Semiconductor (metaloides) | Si | Media |
+| Aislante (no metales) | S | Muy baja |
 
 ### 💡 Ubicación: La "escalera" de los metaloides
 
-```
-                           B
-                        Al Si
-                     Ga Ge As
-                  Sn Sb Te
-               Pb Bi Po
-                     ↑
-              Los metaloides forman
-              una línea diagonal
-```
+Los metaloides (B, Si, Ge, As, Sb, Te, Po) forman una línea diagonal que separa los metales (izquierda) de los no metales (derecha) en la tabla periódica.
 
 ---
 

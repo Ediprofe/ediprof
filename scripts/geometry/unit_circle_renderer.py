@@ -18,46 +18,16 @@ import math
 from pathlib import Path
 from typing import List, Tuple
 
+# Importar desde core unificado
+from core import COLORS, format_angle
+
 # Constantes
 PI = math.pi
 
-# Paleta de colores
-COLORS = {
-    'background': '#f8fafc',
-    'axis': '#374151',
-    'grid': '#e2e8f0',
-    'circle': '#3b82f6',
-    'point': '#ef4444',
-    'angle': '#8b5cf6',
-    'text': '#1e293b',
-    'quadrant_I': '#22c55e',
-    'quadrant_II': '#3b82f6',
-    'quadrant_III': '#f97316',
-    'quadrant_IV': '#ec4899',
-    'cos_color': '#3b82f6',
-    'sin_color': '#ef4444',
-}
 
 def format_angle_label(degrees: float) -> str:
     """Formatea un ángulo en grados para mostrar."""
-    if degrees == 0:
-        return "0°"
-    elif degrees == 90:
-        return "90°"
-    elif degrees == 180:
-        return "180°"
-    elif degrees == 270:
-        return "270°"
-    elif degrees == 360:
-        return "360°"
-    elif degrees == 30:
-        return "30°"
-    elif degrees == 45:
-        return "45°"
-    elif degrees == 60:
-        return "60°"
-    else:
-        return f"{int(degrees)}°"
+    return format_angle(degrees)
 
 def generate_basic_unit_circle(width=600, height=500) -> str:
     """Genera el círculo unitario básico con ejes y puntos cuadrantales."""

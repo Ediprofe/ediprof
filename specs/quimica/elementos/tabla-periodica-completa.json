@@ -1,0 +1,954 @@
+{
+    "version": "2.0",
+    "title": "Tabla Periódica Completa",
+    "description": "Tabla periódica con los 118 elementos, 7 períodos, lantánidos y actínidos",
+    "layout": {
+        "columns": 18,
+        "rows": 7,
+        "cell_width": 32,
+        "cell_height": 32,
+        "gap": 1,
+        "padding": 15,
+        "lanthanide_gap": 20
+    },
+    "elements": [
+        {
+            "symbol": "H",
+            "Z": 1,
+            "group": 1,
+            "period": 1,
+            "category": "nonmetal"
+        },
+        {
+            "symbol": "He",
+            "Z": 2,
+            "group": 18,
+            "period": 1,
+            "category": "noble_gas"
+        },
+        {
+            "symbol": "Li",
+            "Z": 3,
+            "group": 1,
+            "period": 2,
+            "category": "alkali_metal"
+        },
+        {
+            "symbol": "Be",
+            "Z": 4,
+            "group": 2,
+            "period": 2,
+            "category": "alkaline_earth"
+        },
+        {
+            "symbol": "B",
+            "Z": 5,
+            "group": 13,
+            "period": 2,
+            "category": "metalloid"
+        },
+        {
+            "symbol": "C",
+            "Z": 6,
+            "group": 14,
+            "period": 2,
+            "category": "nonmetal"
+        },
+        {
+            "symbol": "N",
+            "Z": 7,
+            "group": 15,
+            "period": 2,
+            "category": "nonmetal"
+        },
+        {
+            "symbol": "O",
+            "Z": 8,
+            "group": 16,
+            "period": 2,
+            "category": "nonmetal"
+        },
+        {
+            "symbol": "F",
+            "Z": 9,
+            "group": 17,
+            "period": 2,
+            "category": "halogen"
+        },
+        {
+            "symbol": "Ne",
+            "Z": 10,
+            "group": 18,
+            "period": 2,
+            "category": "noble_gas"
+        },
+        {
+            "symbol": "Na",
+            "Z": 11,
+            "group": 1,
+            "period": 3,
+            "category": "alkali_metal"
+        },
+        {
+            "symbol": "Mg",
+            "Z": 12,
+            "group": 2,
+            "period": 3,
+            "category": "alkaline_earth"
+        },
+        {
+            "symbol": "Al",
+            "Z": 13,
+            "group": 13,
+            "period": 3,
+            "category": "post_transition"
+        },
+        {
+            "symbol": "Si",
+            "Z": 14,
+            "group": 14,
+            "period": 3,
+            "category": "metalloid"
+        },
+        {
+            "symbol": "P",
+            "Z": 15,
+            "group": 15,
+            "period": 3,
+            "category": "nonmetal"
+        },
+        {
+            "symbol": "S",
+            "Z": 16,
+            "group": 16,
+            "period": 3,
+            "category": "nonmetal"
+        },
+        {
+            "symbol": "Cl",
+            "Z": 17,
+            "group": 17,
+            "period": 3,
+            "category": "halogen"
+        },
+        {
+            "symbol": "Ar",
+            "Z": 18,
+            "group": 18,
+            "period": 3,
+            "category": "noble_gas"
+        },
+        {
+            "symbol": "K",
+            "Z": 19,
+            "group": 1,
+            "period": 4,
+            "category": "alkali_metal"
+        },
+        {
+            "symbol": "Ca",
+            "Z": 20,
+            "group": 2,
+            "period": 4,
+            "category": "alkaline_earth"
+        },
+        {
+            "symbol": "Sc",
+            "Z": 21,
+            "group": 3,
+            "period": 4,
+            "category": "transition_metal"
+        },
+        {
+            "symbol": "Ti",
+            "Z": 22,
+            "group": 4,
+            "period": 4,
+            "category": "transition_metal"
+        },
+        {
+            "symbol": "V",
+            "Z": 23,
+            "group": 5,
+            "period": 4,
+            "category": "transition_metal"
+        },
+        {
+            "symbol": "Cr",
+            "Z": 24,
+            "group": 6,
+            "period": 4,
+            "category": "transition_metal"
+        },
+        {
+            "symbol": "Mn",
+            "Z": 25,
+            "group": 7,
+            "period": 4,
+            "category": "transition_metal"
+        },
+        {
+            "symbol": "Fe",
+            "Z": 26,
+            "group": 8,
+            "period": 4,
+            "category": "transition_metal"
+        },
+        {
+            "symbol": "Co",
+            "Z": 27,
+            "group": 9,
+            "period": 4,
+            "category": "transition_metal"
+        },
+        {
+            "symbol": "Ni",
+            "Z": 28,
+            "group": 10,
+            "period": 4,
+            "category": "transition_metal"
+        },
+        {
+            "symbol": "Cu",
+            "Z": 29,
+            "group": 11,
+            "period": 4,
+            "category": "transition_metal"
+        },
+        {
+            "symbol": "Zn",
+            "Z": 30,
+            "group": 12,
+            "period": 4,
+            "category": "transition_metal"
+        },
+        {
+            "symbol": "Ga",
+            "Z": 31,
+            "group": 13,
+            "period": 4,
+            "category": "post_transition"
+        },
+        {
+            "symbol": "Ge",
+            "Z": 32,
+            "group": 14,
+            "period": 4,
+            "category": "metalloid"
+        },
+        {
+            "symbol": "As",
+            "Z": 33,
+            "group": 15,
+            "period": 4,
+            "category": "metalloid"
+        },
+        {
+            "symbol": "Se",
+            "Z": 34,
+            "group": 16,
+            "period": 4,
+            "category": "nonmetal"
+        },
+        {
+            "symbol": "Br",
+            "Z": 35,
+            "group": 17,
+            "period": 4,
+            "category": "halogen"
+        },
+        {
+            "symbol": "Kr",
+            "Z": 36,
+            "group": 18,
+            "period": 4,
+            "category": "noble_gas"
+        },
+        {
+            "symbol": "Rb",
+            "Z": 37,
+            "group": 1,
+            "period": 5,
+            "category": "alkali_metal"
+        },
+        {
+            "symbol": "Sr",
+            "Z": 38,
+            "group": 2,
+            "period": 5,
+            "category": "alkaline_earth"
+        },
+        {
+            "symbol": "Y",
+            "Z": 39,
+            "group": 3,
+            "period": 5,
+            "category": "transition_metal"
+        },
+        {
+            "symbol": "Zr",
+            "Z": 40,
+            "group": 4,
+            "period": 5,
+            "category": "transition_metal"
+        },
+        {
+            "symbol": "Nb",
+            "Z": 41,
+            "group": 5,
+            "period": 5,
+            "category": "transition_metal"
+        },
+        {
+            "symbol": "Mo",
+            "Z": 42,
+            "group": 6,
+            "period": 5,
+            "category": "transition_metal"
+        },
+        {
+            "symbol": "Tc",
+            "Z": 43,
+            "group": 7,
+            "period": 5,
+            "category": "transition_metal"
+        },
+        {
+            "symbol": "Ru",
+            "Z": 44,
+            "group": 8,
+            "period": 5,
+            "category": "transition_metal"
+        },
+        {
+            "symbol": "Rh",
+            "Z": 45,
+            "group": 9,
+            "period": 5,
+            "category": "transition_metal"
+        },
+        {
+            "symbol": "Pd",
+            "Z": 46,
+            "group": 10,
+            "period": 5,
+            "category": "transition_metal"
+        },
+        {
+            "symbol": "Ag",
+            "Z": 47,
+            "group": 11,
+            "period": 5,
+            "category": "transition_metal"
+        },
+        {
+            "symbol": "Cd",
+            "Z": 48,
+            "group": 12,
+            "period": 5,
+            "category": "transition_metal"
+        },
+        {
+            "symbol": "In",
+            "Z": 49,
+            "group": 13,
+            "period": 5,
+            "category": "post_transition"
+        },
+        {
+            "symbol": "Sn",
+            "Z": 50,
+            "group": 14,
+            "period": 5,
+            "category": "post_transition"
+        },
+        {
+            "symbol": "Sb",
+            "Z": 51,
+            "group": 15,
+            "period": 5,
+            "category": "metalloid"
+        },
+        {
+            "symbol": "Te",
+            "Z": 52,
+            "group": 16,
+            "period": 5,
+            "category": "metalloid"
+        },
+        {
+            "symbol": "I",
+            "Z": 53,
+            "group": 17,
+            "period": 5,
+            "category": "halogen"
+        },
+        {
+            "symbol": "Xe",
+            "Z": 54,
+            "group": 18,
+            "period": 5,
+            "category": "noble_gas"
+        },
+        {
+            "symbol": "Cs",
+            "Z": 55,
+            "group": 1,
+            "period": 6,
+            "category": "alkali_metal"
+        },
+        {
+            "symbol": "Ba",
+            "Z": 56,
+            "group": 2,
+            "period": 6,
+            "category": "alkaline_earth"
+        },
+        {
+            "symbol": "La",
+            "Z": 57,
+            "group": 3,
+            "period": 6,
+            "category": "lanthanide",
+            "series": "lanthanide",
+            "series_pos": 1
+        },
+        {
+            "symbol": "Ce",
+            "Z": 58,
+            "group": 3,
+            "period": 6,
+            "category": "lanthanide",
+            "series": "lanthanide",
+            "series_pos": 2
+        },
+        {
+            "symbol": "Pr",
+            "Z": 59,
+            "group": 3,
+            "period": 6,
+            "category": "lanthanide",
+            "series": "lanthanide",
+            "series_pos": 3
+        },
+        {
+            "symbol": "Nd",
+            "Z": 60,
+            "group": 3,
+            "period": 6,
+            "category": "lanthanide",
+            "series": "lanthanide",
+            "series_pos": 4
+        },
+        {
+            "symbol": "Pm",
+            "Z": 61,
+            "group": 3,
+            "period": 6,
+            "category": "lanthanide",
+            "series": "lanthanide",
+            "series_pos": 5
+        },
+        {
+            "symbol": "Sm",
+            "Z": 62,
+            "group": 3,
+            "period": 6,
+            "category": "lanthanide",
+            "series": "lanthanide",
+            "series_pos": 6
+        },
+        {
+            "symbol": "Eu",
+            "Z": 63,
+            "group": 3,
+            "period": 6,
+            "category": "lanthanide",
+            "series": "lanthanide",
+            "series_pos": 7
+        },
+        {
+            "symbol": "Gd",
+            "Z": 64,
+            "group": 3,
+            "period": 6,
+            "category": "lanthanide",
+            "series": "lanthanide",
+            "series_pos": 8
+        },
+        {
+            "symbol": "Tb",
+            "Z": 65,
+            "group": 3,
+            "period": 6,
+            "category": "lanthanide",
+            "series": "lanthanide",
+            "series_pos": 9
+        },
+        {
+            "symbol": "Dy",
+            "Z": 66,
+            "group": 3,
+            "period": 6,
+            "category": "lanthanide",
+            "series": "lanthanide",
+            "series_pos": 10
+        },
+        {
+            "symbol": "Ho",
+            "Z": 67,
+            "group": 3,
+            "period": 6,
+            "category": "lanthanide",
+            "series": "lanthanide",
+            "series_pos": 11
+        },
+        {
+            "symbol": "Er",
+            "Z": 68,
+            "group": 3,
+            "period": 6,
+            "category": "lanthanide",
+            "series": "lanthanide",
+            "series_pos": 12
+        },
+        {
+            "symbol": "Tm",
+            "Z": 69,
+            "group": 3,
+            "period": 6,
+            "category": "lanthanide",
+            "series": "lanthanide",
+            "series_pos": 13
+        },
+        {
+            "symbol": "Yb",
+            "Z": 70,
+            "group": 3,
+            "period": 6,
+            "category": "lanthanide",
+            "series": "lanthanide",
+            "series_pos": 14
+        },
+        {
+            "symbol": "Lu",
+            "Z": 71,
+            "group": 3,
+            "period": 6,
+            "category": "lanthanide",
+            "series": "lanthanide",
+            "series_pos": 15
+        },
+        {
+            "symbol": "Hf",
+            "Z": 72,
+            "group": 4,
+            "period": 6,
+            "category": "transition_metal"
+        },
+        {
+            "symbol": "Ta",
+            "Z": 73,
+            "group": 5,
+            "period": 6,
+            "category": "transition_metal"
+        },
+        {
+            "symbol": "W",
+            "Z": 74,
+            "group": 6,
+            "period": 6,
+            "category": "transition_metal"
+        },
+        {
+            "symbol": "Re",
+            "Z": 75,
+            "group": 7,
+            "period": 6,
+            "category": "transition_metal"
+        },
+        {
+            "symbol": "Os",
+            "Z": 76,
+            "group": 8,
+            "period": 6,
+            "category": "transition_metal"
+        },
+        {
+            "symbol": "Ir",
+            "Z": 77,
+            "group": 9,
+            "period": 6,
+            "category": "transition_metal"
+        },
+        {
+            "symbol": "Pt",
+            "Z": 78,
+            "group": 10,
+            "period": 6,
+            "category": "transition_metal"
+        },
+        {
+            "symbol": "Au",
+            "Z": 79,
+            "group": 11,
+            "period": 6,
+            "category": "transition_metal"
+        },
+        {
+            "symbol": "Hg",
+            "Z": 80,
+            "group": 12,
+            "period": 6,
+            "category": "transition_metal"
+        },
+        {
+            "symbol": "Tl",
+            "Z": 81,
+            "group": 13,
+            "period": 6,
+            "category": "post_transition"
+        },
+        {
+            "symbol": "Pb",
+            "Z": 82,
+            "group": 14,
+            "period": 6,
+            "category": "post_transition"
+        },
+        {
+            "symbol": "Bi",
+            "Z": 83,
+            "group": 15,
+            "period": 6,
+            "category": "post_transition"
+        },
+        {
+            "symbol": "Po",
+            "Z": 84,
+            "group": 16,
+            "period": 6,
+            "category": "metalloid"
+        },
+        {
+            "symbol": "At",
+            "Z": 85,
+            "group": 17,
+            "period": 6,
+            "category": "halogen"
+        },
+        {
+            "symbol": "Rn",
+            "Z": 86,
+            "group": 18,
+            "period": 6,
+            "category": "noble_gas"
+        },
+        {
+            "symbol": "Fr",
+            "Z": 87,
+            "group": 1,
+            "period": 7,
+            "category": "alkali_metal"
+        },
+        {
+            "symbol": "Ra",
+            "Z": 88,
+            "group": 2,
+            "period": 7,
+            "category": "alkaline_earth"
+        },
+        {
+            "symbol": "Ac",
+            "Z": 89,
+            "group": 3,
+            "period": 7,
+            "category": "actinide",
+            "series": "actinide",
+            "series_pos": 1
+        },
+        {
+            "symbol": "Th",
+            "Z": 90,
+            "group": 3,
+            "period": 7,
+            "category": "actinide",
+            "series": "actinide",
+            "series_pos": 2
+        },
+        {
+            "symbol": "Pa",
+            "Z": 91,
+            "group": 3,
+            "period": 7,
+            "category": "actinide",
+            "series": "actinide",
+            "series_pos": 3
+        },
+        {
+            "symbol": "U",
+            "Z": 92,
+            "group": 3,
+            "period": 7,
+            "category": "actinide",
+            "series": "actinide",
+            "series_pos": 4
+        },
+        {
+            "symbol": "Np",
+            "Z": 93,
+            "group": 3,
+            "period": 7,
+            "category": "actinide",
+            "series": "actinide",
+            "series_pos": 5
+        },
+        {
+            "symbol": "Pu",
+            "Z": 94,
+            "group": 3,
+            "period": 7,
+            "category": "actinide",
+            "series": "actinide",
+            "series_pos": 6
+        },
+        {
+            "symbol": "Am",
+            "Z": 95,
+            "group": 3,
+            "period": 7,
+            "category": "actinide",
+            "series": "actinide",
+            "series_pos": 7
+        },
+        {
+            "symbol": "Cm",
+            "Z": 96,
+            "group": 3,
+            "period": 7,
+            "category": "actinide",
+            "series": "actinide",
+            "series_pos": 8
+        },
+        {
+            "symbol": "Bk",
+            "Z": 97,
+            "group": 3,
+            "period": 7,
+            "category": "actinide",
+            "series": "actinide",
+            "series_pos": 9
+        },
+        {
+            "symbol": "Cf",
+            "Z": 98,
+            "group": 3,
+            "period": 7,
+            "category": "actinide",
+            "series": "actinide",
+            "series_pos": 10
+        },
+        {
+            "symbol": "Es",
+            "Z": 99,
+            "group": 3,
+            "period": 7,
+            "category": "actinide",
+            "series": "actinide",
+            "series_pos": 11
+        },
+        {
+            "symbol": "Fm",
+            "Z": 100,
+            "group": 3,
+            "period": 7,
+            "category": "actinide",
+            "series": "actinide",
+            "series_pos": 12
+        },
+        {
+            "symbol": "Md",
+            "Z": 101,
+            "group": 3,
+            "period": 7,
+            "category": "actinide",
+            "series": "actinide",
+            "series_pos": 13
+        },
+        {
+            "symbol": "No",
+            "Z": 102,
+            "group": 3,
+            "period": 7,
+            "category": "actinide",
+            "series": "actinide",
+            "series_pos": 14
+        },
+        {
+            "symbol": "Lr",
+            "Z": 103,
+            "group": 3,
+            "period": 7,
+            "category": "actinide",
+            "series": "actinide",
+            "series_pos": 15
+        },
+        {
+            "symbol": "Rf",
+            "Z": 104,
+            "group": 4,
+            "period": 7,
+            "category": "transition_metal"
+        },
+        {
+            "symbol": "Db",
+            "Z": 105,
+            "group": 5,
+            "period": 7,
+            "category": "transition_metal"
+        },
+        {
+            "symbol": "Sg",
+            "Z": 106,
+            "group": 6,
+            "period": 7,
+            "category": "transition_metal"
+        },
+        {
+            "symbol": "Bh",
+            "Z": 107,
+            "group": 7,
+            "period": 7,
+            "category": "transition_metal"
+        },
+        {
+            "symbol": "Hs",
+            "Z": 108,
+            "group": 8,
+            "period": 7,
+            "category": "transition_metal"
+        },
+        {
+            "symbol": "Mt",
+            "Z": 109,
+            "group": 9,
+            "period": 7,
+            "category": "transition_metal"
+        },
+        {
+            "symbol": "Ds",
+            "Z": 110,
+            "group": 10,
+            "period": 7,
+            "category": "transition_metal"
+        },
+        {
+            "symbol": "Rg",
+            "Z": 111,
+            "group": 11,
+            "period": 7,
+            "category": "transition_metal"
+        },
+        {
+            "symbol": "Cn",
+            "Z": 112,
+            "group": 12,
+            "period": 7,
+            "category": "transition_metal"
+        },
+        {
+            "symbol": "Nh",
+            "Z": 113,
+            "group": 13,
+            "period": 7,
+            "category": "post_transition"
+        },
+        {
+            "symbol": "Fl",
+            "Z": 114,
+            "group": 14,
+            "period": 7,
+            "category": "post_transition"
+        },
+        {
+            "symbol": "Mc",
+            "Z": 115,
+            "group": 15,
+            "period": 7,
+            "category": "post_transition"
+        },
+        {
+            "symbol": "Lv",
+            "Z": 116,
+            "group": 16,
+            "period": 7,
+            "category": "post_transition"
+        },
+        {
+            "symbol": "Ts",
+            "Z": 117,
+            "group": 17,
+            "period": 7,
+            "category": "halogen"
+        },
+        {
+            "symbol": "Og",
+            "Z": 118,
+            "group": 18,
+            "period": 7,
+            "category": "noble_gas"
+        }
+    ],
+    "categories": {
+        "alkali_metal": {
+            "name": "Alcalinos",
+            "color": "#dc2626",
+            "fill": "#fef2f2"
+        },
+        "alkaline_earth": {
+            "name": "Alcalinotérreos",
+            "color": "#ea580c",
+            "fill": "#fff7ed"
+        },
+        "transition_metal": {
+            "name": "Transición",
+            "color": "#2563eb",
+            "fill": "#eff6ff"
+        },
+        "post_transition": {
+            "name": "Post-transición",
+            "color": "#4f46e5",
+            "fill": "#eef2ff"
+        },
+        "metalloid": {
+            "name": "Metaloides",
+            "color": "#7c3aed",
+            "fill": "#f5f3ff"
+        },
+        "nonmetal": {
+            "name": "No Metales",
+            "color": "#16a34a",
+            "fill": "#f0fdf4"
+        },
+        "halogen": {
+            "name": "Halógenos",
+            "color": "#0d9488",
+            "fill": "#f0fdfa"
+        },
+        "noble_gas": {
+            "name": "Gases Nobles",
+            "color": "#9333ea",
+            "fill": "#faf5ff"
+        },
+        "lanthanide": {
+            "name": "Lantánidos",
+            "color": "#db2777",
+            "fill": "#fdf2f8"
+        },
+        "actinide": {
+            "name": "Actínidos",
+            "color": "#be185d",
+            "fill": "#fdf2f8"
+        }
+    }
+}

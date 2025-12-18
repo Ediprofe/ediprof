@@ -2,6 +2,45 @@
 
 > **Plataforma de contenido educativo para matemáticas y ciencias, generada con IA y validada pedagógicamente.**
 
+---
+
+## 🚨 LECTURA OBLIGATORIA PARA AGENTES NUEVOS
+
+**Si eres un agente que llega por primera vez, lee esto:**
+
+### 1. Sistema de Ilustraciones (Spec-First)
+- **La IA NO dibuja directamente** → genera specs JSON
+- **Python/SymPy renderiza** → cálculos exactos, SVG perfecto
+- **Ver sección:** [🏛️ ARQUITECTURA DEL SISTEMA](#-arquitectura-del-sistema-crítico-para-agentes-nuevos)
+
+### 2. Código Compartido (DRY)
+- **NUNCA duplicar** colores, helpers, o constantes
+- **SIEMPRE importar** de `scripts/geometry/core/`
+- **Ver sección:** [🔧 MÓDULO CORE](#-módulo-core---utilidades-compartidas-para-renderers)
+
+### 3. Extensibilidad
+- **Nuevas funciones** → agregar a módulos existentes
+- **Nuevos tipos** → crear spec + renderer
+- **Nuevos dominios** → crear carpeta en `scripts/`
+- **Ver sección:** [🚀 GUÍA: CREAR NUEVO TIPO DE ILUSTRACIÓN](#-guía-crear-nuevo-tipo-de-ilustración)
+
+### 4. Documentación
+- **TODO va en CLAUDE.md** → no crear READMEs separados
+- **Workflows en** `.agent/workflows/` → para sistemas Spec
+
+### Índice Rápido de Secciones Técnicas
+
+| Sección | Línea | Contenido |
+|---------|-------|-----------|
+| Arquitectura del Sistema | ~406 | Diagrama de flujo, principios de diseño |
+| Árbol de Decisión | ~507 | Qué tecnología usar para cada tipo |
+| Módulo Core | ~1110 | Colores, canvas, primitivas, SVGBuilder |
+| Módulo Cartesian | ~1226 | 30 funciones de geometría analítica |
+| Guía Nuevo Tipo | ~1320 | Paso a paso para extender el sistema |
+| Reglas Críticas | ~1564 | NUNCA/SIEMPRE para extensibilidad |
+
+---
+
 ## 📋 Resumen del Proyecto
 
 | Aspecto | Detalle |
@@ -403,107 +442,199 @@ python3 scripts/geometry/circle_renderer.py --type TIPO --output public/images/g
 
 ---
 
+## �️ ARQUITECTURA DEL SISTEMA (CRÍTICO PARA AGENTES NUEVOS)
+
+```
+┌─────────────────────────────────────────────────────────────────────────┐
+│                        FLUJO DE GENERACIÓN DE SVG                       │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│   ┌──────────────┐     ┌──────────────┐     ┌──────────────┐           │
+│   │   AGENTE IA  │────▶│    SPEC      │────▶│   RENDERER   │           │
+│   │  (describe)  │     │   (JSON)     │     │   (Python)   │           │
+│   └──────────────┘     └──────────────┘     └──────────────┘           │
+│          │                    │                    │                    │
+│          │                    │                    ▼                    │
+│          │                    │            ┌──────────────┐             │
+│          │                    │            │     SVG      │             │
+│          │                    │            │   (output)   │             │
+│          │                    │            └──────────────┘             │
+│          │                    │                    │                    │
+│          │                    ▼                    │                    │
+│          │         specs/geometria/...             │                    │
+│          │         specs/fisica/...                │                    │
+│          │         specs/quimica/...               │                    │
+│          │                                         ▼                    │
+│          │                              public/images/...               │
+│          │                                                              │
+│          ▼                                                              │
+│   ┌──────────────────────────────────────────────────────────────┐     │
+│   │                    MÓDULOS COMPARTIDOS                        │     │
+│   │  ┌─────────────────────────────────────────────────────────┐ │     │
+│   │  │ scripts/geometry/core/                                   │ │     │
+│   │  │   ├── colors.py      ← PALETA ÚNICA (NUNCA duplicar)    │ │     │
+│   │  │   ├── canvas.py      ← TAMAÑOS ESTÁNDAR                 │ │     │
+│   │  │   ├── primitives.py  ← HELPERS (escape_xml, etc.)       │ │     │
+│   │  │   ├── svg_builder.py ← API FLUIDA PARA SVG              │ │     │
+│   │  │   └── coordinate_system.py ← TRANSFORMACIÓN COORDS      │ │     │
+│   │  └─────────────────────────────────────────────────────────┘ │     │
+│   └──────────────────────────────────────────────────────────────┘     │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+```
+
+### Principios de Diseño (OBLIGATORIOS)
+
+| Principio | Descripción | Ejemplo |
+|-----------|-------------|---------|
+| **Spec-First** | La IA genera JSON, el renderer dibuja | `specs/geometria/circulos/radio.json` |
+| **DRY** | No duplicar código, usar `core/` | `from core import COLORS` |
+| **Modular** | Archivos ≤ 300 líneas | `cartesian/points.py`, `cartesian/lines.py` |
+| **Extensible** | Nuevos tipos = nuevos módulos | `scripts/chemistry/` para química |
+| **Documentado** | Todo en `CLAUDE.md`, no READMEs separados | Esta sección |
+
+### Estructura de Carpetas para Ilustraciones
+
+```
+scripts/
+├── geometry/                    # ← DOMINIO: Geometría
+│   ├── core/                    # Utilidades compartidas (NUNCA duplicar)
+│   │   ├── colors.py
+│   │   ├── canvas.py
+│   │   ├── primitives.py
+│   │   ├── svg_builder.py
+│   │   └── coordinate_system.py
+│   ├── cartesian/               # Submódulo: Geometría analítica
+│   │   ├── points.py
+│   │   ├── slopes.py
+│   │   ├── lines.py
+│   │   ├── circles.py
+│   │   └── parabolas.py
+│   ├── circle_renderer.py       # Renderer para circunferencias
+│   ├── circle_spec_renderer.py  # Renderer basado en specs
+│   └── renderer.py              # Renderer para triángulos
+│
+├── physics/                     # ← DOMINIO FUTURO: Física
+│   ├── core/                    # (puede importar de geometry/core)
+│   ├── mechanics/               # Cinemática, dinámica
+│   └── waves/                   # Ondas, óptica
+│
+└── chemistry/                   # ← DOMINIO FUTURO: Química
+    ├── core/
+    ├── atoms/                   # Modelos atómicos
+    └── molecules/               # Estructuras moleculares
+
+specs/
+├── geometria/
+│   ├── circulos/                # Specs para circunferencias
+│   ├── triangulos/              # Specs para triángulos
+│   └── analitica/               # Specs para geometría analítica
+├── fisica/                      # ← FUTURO
+└── quimica/                     # ← FUTURO
+
+public/images/
+├── geometria/
+│   ├── circulos/                # SVGs generados
+│   ├── triangulos/
+│   └── analitica/
+├── fisica/                      # ← FUTURO
+└── quimica/                     # ← FUTURO
+```
+
+---
+
 ## 🌳 Árbol de Decisión
+
+> ⚠️ **TRES TECNOLOGÍAS PARA ILUSTRACIONES: SVG, Rough.js y JSXGraph**
 
 ```
 ¿QUÉ TIPO DE ILUSTRACIÓN NECESITO?
 │
-├─── 📊 ¿Es una GRÁFICA de funciones o datos?
-│    └─── SÍ → ECHARTS (inline en .md)
-│         • Funciones: f(x), parábolas, exponenciales
-│         • Series de datos, estadísticas
-│         • Histogramas, barras, líneas
-│         • Plano cartesiano con puntos
-│         📁 Ver: .agent/workflows/echarts.md
-│
-├─── ⭕ ¿Es CIRCUNFERENCIA o elementos del círculo?
-│    └─── SÍ → CIRCLESPEC (JSON → Python/SymPy → SVG)
-│         • Radio, diámetro, cuerda, arco, sector, segmento
-│         • Ángulos en la circunferencia
-│         • Posiciones de puntos, tangentes, secantes
-│         • Teoremas de circunferencia
+├─── 📐 ¿Es GEOMETRÍA con propiedades exactas?
+│    │   (circunferencias, triángulos, geometría analítica)
+│    │
+│    └─── SÍ → SVG ESTÁTICO (Python/SymPy → SVG)
+│         • Circunferencias: radio, cuerda, arco, sector
+│         • Triángulos: puntos notables, alturas, medianas
+│         • Geometría analítica: plano cartesiano, rectas
+│         • Gráficas de funciones: parábolas, rectas, exponenciales
 │         📁 Ver: .agent/workflows/circle-spec.md
-│
-├─── 📐 ¿Es TRIÁNGULO con propiedades exactas?
-│    └─── SÍ → GEOMETRYSPEC (JSON → Python/SymPy → SVG)
-│         • Puntos notables (baricentro, ortocentro, etc.)
-│         • Mediatrices, bisectrices, alturas, medianas
-│         • Circunferencias inscritas/circunscritas
-│         • Recta de Euler
 │         📁 Ver: .agent/workflows/geometry-exact.md
-│
-├─── 📍 ¿Es GEOMETRÍA ANALÍTICA (plano cartesiano)?
-│    └─── SÍ → CARTESIANSPEC (JSON → Python → SVG)
-│         • Plano cartesiano con cuadrantes
-│         • Distancia entre puntos
-│         • Punto medio, división de segmentos
-│         • Área de triángulos y polígonos
-│         • Rectas y pendientes
 │         📁 Ver: .agent/workflows/cartesian-spec.md
 │
-├─── 🔄 ¿Es TRANSFORMACIÓN GEOMÉTRICA?
-│    └─── SÍ → ROUGH.JS o SVG MANUAL
-│         • Traslación, rotación, reflexión, homotecia
-│         • Mostrar ANTES/DESPUÉS con correspondencia de puntos
-│         • Usar colores distintos: original (azul), imagen (verde)
-│         • Incluir elementos: vector, centro, eje
-│         📁 Ver: .agent/workflows/roughjs.md
-│         ⚠️ SymPy NO es necesario (fórmulas directas)
+├─── 🎮 ¿Necesita INTERACTIVIDAD (arrastrar, animar)?
+│    │   (simulaciones, demostraciones manipulables)
+│    │
+│    └─── SÍ → JSXGRAPH (inline en .md)
+│         • Vectores interactivos (arrastrar para ver cambios)
+│         • Simulaciones de física (MRU, MRUA, caída libre)
+│         • Geometría dinámica (mover puntos, ver propiedades)
+│         • Demostraciones de teoremas
+│         📁 Ver: documentación JSXGraph
 │
 ├─── ✏️ ¿Es un DIAGRAMA ilustrativo/conceptual?
+│    │   (situaciones físicas estáticas, modelos, procesos)
+│    │
 │    └─── SÍ → ROUGH.JS (inline en .md)
-│         • Situaciones físicas (bloques, poleas)
-│         • Modelos atómicos, partículas
-│         • Equipos de laboratorio
-│         • Mapas conceptuales, organigramas
+│         • Situaciones físicas (bloques, poleas, planos)
+│         • Modelos atómicos, partículas, estados de materia
+│         • Equipos de laboratorio, procesos químicos
+│         • Mapas conceptuales, organigramas, ciclos
+│         • Transformaciones geométricas (traslación, rotación)
+│         • Fracciones visuales (círculos divididos)
 │         📁 Ver: .agent/workflows/roughjs.md
-│
-├─── 🥧 ¿Es una representación de FRACCIONES?
-│    └─── SÍ → CHART.JS (pie charts, inline)
-│         📁 Ver: .agent/workflows/chartjs.md
-│
-├─── 🎲 ¿Es GEOMETRÍA 3D?
-│    └─── SÍ → THREE.JS (inline en .md)
-│         📁 Ver: .agent/workflows/threejs.md
 │
 └─── 📝 ¿Es solo una FÓRMULA?
      └─── SÍ → LATEX (inline en .md)
           • $inline$ o $$bloque$$
 ```
 
+### Resumen de Tecnologías
+
+| Tecnología | Uso | Tamaño JS |
+|------------|-----|-----------|
+| **SVG estático** | Geometría exacta, gráficas | **0 KB** ⭐ |
+| **Rough.js** | Diagramas conceptuales | ~50KB |
+| **JSXGraph** | Simulaciones interactivas | ~600KB |
+| ~~ECharts~~ | ❌ ELIMINADO | ~~1MB~~ |
+| ~~Chart.js~~ | ❌ ELIMINADO | ~~200KB~~ |
+| ~~Three.js~~ | ❌ ELIMINADO | ~~500KB~~ |
+
 ---
 
 ## Matriz de Decisión Rápida
 
-| Necesito... | Uso... | Confianza |
-|-------------|--------|-----------|
-| Gráfica de $f(x) = 2x + 3$ | ECharts | ⭐⭐⭐⭐⭐ 95% |
-| Radio, cuerda, arco de círculo | CircleSpec | ⭐⭐⭐⭐⭐ 99% |
-| Ángulo inscrito/central | CircleSpec | ⭐⭐⭐⭐⭐ 99% |
-| Baricentro de triángulo | GeometrySpec | ⭐⭐⭐⭐⭐ 99% |
-| Circuncentro exacto | GeometrySpec | ⭐⭐⭐⭐⭐ 99% |
-| **Plano cartesiano con puntos** | **CartesianSpec** | ⭐⭐⭐⭐⭐ 99% |
-| **Distancia entre puntos** | **CartesianSpec** | ⭐⭐⭐⭐⭐ 99% |
-| **Punto medio, división segmento** | **CartesianSpec** | ⭐⭐⭐⭐⭐ 99% |
-| **Área de polígonos (coordenadas)** | **CartesianSpec** | ⭐⭐⭐⭐⭐ 99% |
-| Traslación de figura | Rough.js | ⭐⭐⭐⭐ 90% |
-| Rotación/Reflexión | Rough.js | ⭐⭐⭐⭐ 90% |
-| Homotecia (ampliación) | Rough.js | ⭐⭐⭐⭐ 90% |
-| Bloque en plano inclinado | Rough.js | ⭐⭐⭐⭐ 85% |
-| Modelo atómico de Bohr | Rough.js | ⭐⭐⭐⭐ 85% |
-| Fracción 3/4 visual | Chart.js | ⭐⭐⭐⭐ 90% |
-| Cubo con diagonales | Three.js | ⭐⭐⭐ 70% |
+| Necesito... | Uso... | Tipo |
+|-------------|--------|------|
+| Gráfica de función $f(x)$ | **SVG** (CartesianSpec) | Estático |
+| Radio, cuerda, arco de círculo | **SVG** (CircleSpec) | Estático |
+| Ángulo inscrito/central | **SVG** (CircleSpec) | Estático |
+| Baricentro de triángulo | **SVG** (GeometrySpec) | Estático |
+| Circuncentro exacto | **SVG** (GeometrySpec) | Estático |
+| Plano cartesiano con puntos | **SVG** (CartesianSpec) | Estático |
+| Distancia entre puntos | **SVG** (CartesianSpec) | Estático |
+| Punto medio, división segmento | **SVG** (CartesianSpec) | Estático |
+| Área de polígonos (coordenadas) | **SVG** (CartesianSpec) | Estático |
+| Traslación de figura | **Rough.js** | Dinámico |
+| Rotación/Reflexión | **Rough.js** | Dinámico |
+| Homotecia (ampliación) | **Rough.js** | Dinámico |
+| Bloque en plano inclinado | **Rough.js** | Dinámico |
+| Modelo atómico de Bohr | **Rough.js** | Dinámico |
+| Fracción 3/4 visual | **Rough.js** | Dinámico |
+| Estados de la materia | **Rough.js** | Dinámico |
+| Equipos de laboratorio | **Rough.js** | Dinámico |
 
-### ⚠️ Cuándo usar SymPy
+### ⚠️ Cuándo usar SymPy (para SVGs)
 
 | Situación | ¿Usar SymPy? | Razón |
 |-----------|--------------|-------|
 | Puntos notables de triángulo | ✅ SÍ | Cálculos de intersección exactos |
 | Tangentes a circunferencia | ✅ SÍ | Cálculos trigonométricos exactos |
-| Traslación de figura | ❌ NO | Fórmula directa: P' = P + v |
-| Rotación de figura | ❌ NO | Fórmula directa con sin/cos |
-| Reflexión | ❌ NO | Fórmula directa |
-| Homotecia | ❌ NO | Fórmula directa: P' = O + k(P - O) |
+| Gráficas de funciones | ✅ SÍ | Curvas matemáticamente exactas |
+| Traslación de figura | ❌ NO | Fórmula directa → Rough.js |
+| Rotación de figura | ❌ NO | Fórmula directa → Rough.js |
+| Reflexión | ❌ NO | Fórmula directa → Rough.js |
+| Homotecia | ❌ NO | Fórmula directa → Rough.js |
 
 ---
 
@@ -596,21 +727,22 @@ label_y = O.y + 45 * math.sin(bisector_angle)
    - La etiqueta es legible y no se superpone con otros elementos
    - El ángulo se ve como lo dibujaría un profesor en el pizarrón
 
-### Para Todos los Gráficos
+### Para Rough.js (Diagramas Conceptuales)
 
 ```
 ✅ SIEMPRE:
-   • Envolver en DOMContentLoaded
-   • Verificar disponibilidad: if (typeof echarts !== 'undefined')
+   • Usar patrón ES module: import rough from 'https://...'
    • Usar wrapper con fondo y bordes redondeados
-   • ID únicos: tipo-leccion-numero
+   • ID únicos: rough-leccion-numero
    • CENTRAR contenedores: margin: 0 auto
+   • Canvas responsive: width="800" + style="width: 100%"
 
 ❌ NUNCA:
-   • Interactividad por defecto (fixed: true en todos los puntos)
-   • Zoom, pan, o elementos arrastrables sin solicitud explícita
+   • Usar Rough.js para geometría que requiere exactitud matemática
    • Contenedores con max-width sin centrar
 ```
+
+📁 Referencia: .agent/workflows/roughjs.md
 
 ---
 
@@ -724,8 +856,8 @@ Solo usar `max-width` cuando el SVG es pequeño y no debe crecer demasiado:
 ### 1. Markdown Nativo
 Blockquotes (`>`), tablas, listas, LaTeX, enlaces
 
-### 2. Canvas (Rough.js/JSXGraph/ECharts)
-Controlan sus propios colores
+### 2. Canvas (Rough.js)
+Controla sus propios colores
 
 ### 3. Tarjetas con Fondos OSCUROS
 ```html
@@ -1003,4 +1135,500 @@ $$
 Para ver el estilo correcto de lecciones, revisar:
 - `src/content/matematicas/01-aritmetica/05-proporcionalidad/03-regla-de-tres-simple.md`
 - `/fisica/cinematica/mrua/lanzamiento-vertical`
-- `/fisica/introduccion-a-la-fisica/introduccion/la-fisica-y-sus-ramas`|
+- `/fisica/introduccion-a-la-fisica/introduccion/la-fisica-y-sus-ramas`
+
+---
+
+# 🔧 MÓDULO CORE - Utilidades Compartidas para Renderers
+
+> **Ubicación:** `scripts/geometry/core/`
+> 
+> **Principio:** Un solo lugar para colores, tamaños y helpers. NUNCA duplicar en renderers.
+
+## Estructura del Módulo
+
+```
+scripts/geometry/core/
+├── __init__.py          # Exporta todo (usar: from core import ...)
+├── base.py              # Point, ValidationResult
+├── colors.py            # COLORS (paleta unificada) ← FUENTE ÚNICA
+├── canvas.py            # SIZE_SIMPLE, SIZE_COMPOUND, etc.
+├── primitives.py        # escape_xml, point_on_circle, format_number
+├── svg_builder.py       # SVGBuilder (API fluida para SVG)
+└── coordinate_system.py # CoordinateSystem (transformación math↔SVG)
+```
+
+## Uso Básico
+
+```python
+# Importar todo lo necesario desde core
+from core import (
+    COLORS,                    # Paleta de colores
+    SIZE_SIMPLE,               # Tamaños de canvas
+    Point, SVGBuilder,         # Clases
+    escape_xml, point_on_circle_svg  # Helpers
+)
+
+# Crear un SVG
+builder = SVGBuilder(500, 400)
+builder.rect(0, 0, 500, 400, fill=COLORS['background'])
+builder.circle(Point(250, 200), 100, stroke=COLORS['primary'])
+builder.save('output.svg')
+```
+
+## Colores (core/colors.py)
+
+**FUENTE ÚNICA DE VERDAD.** NO definir colores en otros archivos.
+
+```python
+from core import COLORS
+
+COLORS['primary']      # #3b82f6 - Azul (figuras principales)
+COLORS['secondary']    # #22c55e - Verde (elementos secundarios)
+COLORS['accent']       # #ef4444 - Rojo (puntos notables)
+COLORS['highlight']    # #f97316 - Naranja (destacados)
+COLORS['purple']       # #8b5cf6 - Púrpura (diámetros, bisectrices)
+COLORS['pink']         # #ec4899 - Rosa (tangentes, mediatrices)
+```
+
+## Tamaños de Canvas (core/canvas.py)
+
+```python
+from core import SIZE_SIMPLE, SIZE_COMPOUND, get_canvas_config
+
+SIZE_SIMPLE    # (500, 400) - 1 concepto
+SIZE_COMPOUND  # (600, 460) - 2-3 elementos
+SIZE_MULTIPLE  # (750, 450) - 4+ elementos
+SIZE_CARTESIAN # (600, 500) - Plano cartesiano
+
+config = get_canvas_config('simple')
+# {'width': 500, 'height': 400, 'padding': 40}
+```
+
+## Primitivas (core/primitives.py)
+
+```python
+from core import escape_xml, point_on_circle_svg, format_number
+
+# Escapar texto para SVG (CRÍTICO para <, >, &)
+escape_xml("x < 5")  # "x &lt; 5"
+
+# Punto en circunferencia (coordenadas SVG, Y invertido)
+point_on_circle_svg(cx=100, cy=100, r=50, angle_deg=45)
+
+# Formatear números (elimina decimales innecesarios)
+format_number(3.0)      # "3"
+format_number(3.14159)  # "3.14"
+```
+
+## Reglas para Nuevos Renderers
+
+| ✅ HACER | ❌ NO HACER |
+|----------|-------------|
+| `from core import COLORS` | Definir `COLORS = {...}` localmente |
+| `from core import SIZE_SIMPLE` | Definir `SIZE_SIMPLE = (500, 400)` |
+| `from core import escape_xml` | Crear `escape_svg_text()` local |
+| Usar `SVGBuilder` | Generar SVG con strings manuales |
+
+## Agregar Nuevos Colores
+
+Si necesitas un color nuevo, agregarlo **SOLO** en `core/colors.py`:
+
+```python
+# En core/colors.py
+COLORS = {
+    ...
+    'mi_nuevo_color': '#hexcode',  # ← Agregar aquí
+}
+```
+
+Luego exportarlo en `core/__init__.py` si es necesario.
+
+## Agregar Nuevos Helpers
+
+Si necesitas una función compartida:
+
+1. Agregarla a `core/primitives.py`
+2. Exportarla en `core/__init__.py`
+3. Documentar su uso aquí en CLAUDE.md
+
+---
+
+# 📐 MÓDULO CARTESIAN - Geometría Analítica Modular
+
+> **Ubicación:** `scripts/geometry/cartesian/`
+> 
+> **Principio:** Funciones de renderizado organizadas por tema. Cada archivo ≤ 300 líneas.
+
+## Estructura del Módulo
+
+```
+scripts/geometry/cartesian/
+├── __init__.py    # Exporta 30 funciones
+├── points.py      # Plano básico, distancia, punto medio, división, áreas (5)
+├── slopes.py      # Pendientes, inclinación, paralelas/perpendiculares (5)
+├── lines.py       # Ecuaciones de rectas (8)
+├── circles.py     # Circunferencias en el plano cartesiano (6)
+└── parabolas.py   # Parábolas (6)
+```
+
+## Uso
+
+```python
+# Importar funciones específicas
+from cartesian import render_plano_basico, render_distancia
+
+# O importar todo
+from cartesian import *
+
+# Generar SVG
+render_plano_basico('output.svg', title='Mi Plano')
+render_distancia('distancia.svg', p1=(1, 2), p2=(4, 6))
+```
+
+## Funciones Disponibles (30 funciones)
+
+### points.py - Puntos y Segmentos (5)
+| Función | Descripción |
+|---------|-------------|
+| `render_plano_basico` | Plano cartesiano con 4 cuadrantes |
+| `render_distancia` | Distancia entre dos puntos con triángulo |
+| `render_punto_medio` | Punto medio de un segmento |
+| `render_division_segmento` | División en razón m:n |
+| `render_area_triangulo` | Área con fórmula del determinante |
+
+### slopes.py - Pendientes (5)
+| Función | Descripción |
+|---------|-------------|
+| `render_tipos_pendiente` | Positiva, negativa, horizontal |
+| `render_concepto_pendiente` | Triángulo Δx, Δy |
+| `render_calculo_pendiente` | Cálculo con dos puntos |
+| `render_angulo_inclinacion` | Ángulo θ respecto al eje X |
+| `render_paralelas_perpendiculares` | Relación entre pendientes |
+
+### lines.py - Ecuaciones de Rectas (8)
+| Función | Descripción |
+|---------|-------------|
+| `render_ecuacion_general` | Forma Ax + By + C = 0 |
+| `render_punto_pendiente` | Forma y - y₁ = m(x - x₁) |
+| `render_pendiente_ordenada` | Forma y = mx + b |
+| `render_recta_dos_puntos` | Recta por dos puntos |
+| `render_forma_simetrica` | Forma x/a + y/b = 1 |
+| `render_forma_normal` | Forma x·cos(ω) + y·sin(ω) = p |
+| `render_distancia_punto_recta` | Distancia de punto a recta |
+| `render_familias_rectas` | Haz de rectas por un punto |
+
+### circles.py - Circunferencias (6)
+| Función | Descripción |
+|---------|-------------|
+| `render_elementos_circunferencia` | Centro, radio, diámetro, cuerda |
+| `render_ecuacion_ordinaria_circ` | Forma (x-h)² + (y-k)² = r² |
+| `render_posiciones_recta_circ` | Exterior, tangente, secante |
+| `render_posiciones_dos_circ` | Posiciones entre circunferencias |
+| `render_circunferencias_concentricas` | Familia concéntrica |
+| `render_tangente_circunferencia` | Recta tangente |
+
+### parabolas.py - Parábolas (6)
+| Función | Descripción |
+|---------|-------------|
+| `render_elementos_parabola` | Foco, directriz, vértice, lado recto |
+| `render_parabola_vertical_arriba` | x² = 4py (p > 0) |
+| `render_parabola_vertical_abajo` | x² = -4py |
+| `render_parabola_horizontal_derecha` | y² = 4px (p > 0) |
+| `render_parabola_horizontal_izquierda` | y² = -4px |
+| `render_cuatro_orientaciones_parabola` | Las 4 orientaciones |
+
+## Agregar Nuevas Funciones a Módulos Existentes
+
+1. Identificar el módulo correcto (points, slopes, lines, circles, parabolas)
+2. Agregar la función al módulo
+3. Exportarla en `cartesian/__init__.py`
+4. Documentar aquí en CLAUDE.md
+
+---
+
+# 🚀 GUÍA: CREAR NUEVO TIPO DE ILUSTRACIÓN
+
+> **Para agentes que necesitan agregar soporte para un nuevo tipo de ilustración que NO existe.**
+
+## Paso 1: Evaluar si ya existe soporte
+
+```
+PREGUNTA: ¿El tipo de ilustración que necesito ya tiene renderer?
+
+├── Circunferencias → circle_spec_renderer.py ✅
+├── Triángulos → renderer.py ✅
+├── Geometría analítica → cartesian/ ✅
+├── Gráficas de funciones → ECharts (inline) ✅
+├── Diagramas conceptuales → Rough.js (inline) ✅
+│
+└── ¿NO existe? → Seguir esta guía para CREAR uno nuevo
+```
+
+## Paso 2: Decidir el enfoque
+
+| Situación | Enfoque | Ejemplo |
+|-----------|---------|---------|
+| Ilustración simple, pocas variantes | Función directa en módulo existente | `render_nuevo_concepto()` |
+| Muchas variantes del mismo tipo | Sistema Spec (JSON → Renderer) | `specs/nuevo_tipo/` |
+| Nuevo dominio completo | Nuevo módulo con estructura completa | `scripts/physics/` |
+
+## Paso 3: Crear nuevo módulo (si es necesario)
+
+### 3.1 Estructura mínima para nuevo submódulo
+
+```python
+# scripts/geometry/nuevo_modulo.py
+"""
+📐 NuevoModulo - Descripción breve
+
+Incluye:
+- Función 1
+- Función 2
+"""
+
+import math
+import sys
+from pathlib import Path
+
+# OBLIGATORIO: Importar desde core (NUNCA duplicar)
+sys.path.insert(0, str(Path(__file__).parent))
+from core import Point, COLORS, SVGBuilder, CoordinateSystem
+
+
+def render_mi_ilustracion(output_path: str, title: str = "Título"):
+    """
+    Descripción de qué renderiza.
+    Para: XX-nombre-leccion.md
+    """
+    # Usar tamaños estándar
+    width, height = 600, 500
+    
+    # Crear builder
+    builder = SVGBuilder(width, height)
+    builder.rect(0, 0, width, height, fill='#ffffff')
+    builder.text(title, Point(width/2, 25), font_size=16, font_weight='bold')
+    
+    # ... lógica de renderizado ...
+    
+    builder.save(output_path)
+    return True
+```
+
+### 3.2 Estructura para nuevo dominio (ej: Física)
+
+```
+scripts/physics/
+├── __init__.py              # Exporta todo
+├── core/                    # Puede importar de geometry/core
+│   └── __init__.py
+├── mechanics/
+│   ├── __init__.py
+│   ├── kinematics.py        # MRU, MRUA, caída libre
+│   └── dynamics.py          # Fuerzas, planos inclinados
+└── waves/
+    ├── __init__.py
+    └── simple_harmonic.py   # MAS, ondas
+```
+
+### 3.3 Ejemplo: Crear módulo de Física - Cinemática
+
+```python
+# scripts/physics/mechanics/kinematics.py
+"""
+🚀 Kinematics - Ilustraciones de cinemática
+
+Incluye:
+- MRU (Movimiento Rectilíneo Uniforme)
+- MRUA (Movimiento Rectilíneo Uniformemente Acelerado)
+- Caída libre
+"""
+
+import sys
+from pathlib import Path
+
+# Importar core de geometry (reutilizar)
+sys.path.insert(0, str(Path(__file__).parent.parent.parent / 'geometry'))
+from core import Point, COLORS, SVGBuilder, CoordinateSystem
+
+
+def render_mru_grafica(output_path: str, v: float = 5, t_max: float = 10):
+    """
+    Gráfica posición vs tiempo para MRU.
+    x = v·t
+    """
+    coord = CoordinateSystem(
+        svg_width=600, svg_height=500,
+        x_range=(0, t_max), y_range=(0, v * t_max),
+        padding=60
+    )
+    
+    builder = SVGBuilder(600, 500)
+    builder.rect(0, 0, 600, 500, fill='#ffffff')
+    builder.text(f'MRU: x = {v}t', Point(300, 25), font_size=16, font_weight='bold')
+    
+    coord.draw_grid(builder, step=1)
+    coord.draw_axes(builder, show_arrows=True)
+    
+    # Dibujar recta x = vt
+    p1 = Point(0, 0)
+    p2 = Point(t_max, v * t_max)
+    coord.draw_segment(builder, p1, p2, color=COLORS['primary'], width=2.5)
+    
+    # Etiquetas de ejes
+    builder.text('t (s)', Point(550, 480), font_size=12)
+    builder.text('x (m)', Point(30, 30), font_size=12)
+    
+    builder.save(output_path)
+    return True
+```
+
+## Paso 4: Sistema Spec (para tipos con muchas variantes)
+
+### 4.1 Definir esquema del spec
+
+```json
+// specs/fisica/cinematica/mru-ejemplo.json
+{
+  "tipo": "mru",
+  "titulo": "MRU: Velocidad 5 m/s",
+  "parametros": {
+    "velocidad": 5,
+    "tiempo_max": 10,
+    "posicion_inicial": 0
+  },
+  "canvas": "cartesian",
+  "mostrar": {
+    "grafica_x_t": true,
+    "grafica_v_t": true,
+    "ecuacion": true
+  }
+}
+```
+
+### 4.2 Crear renderer para specs
+
+```python
+# scripts/physics/mechanics/kinematics_spec_renderer.py
+"""
+Renderer basado en specs para cinemática.
+"""
+
+import json
+import argparse
+from pathlib import Path
+
+def render_from_spec(spec_path: str, output_path: str):
+    """Renderiza desde un spec JSON."""
+    with open(spec_path) as f:
+        spec = json.load(f)
+    
+    tipo = spec.get('tipo')
+    
+    if tipo == 'mru':
+        return render_mru_from_spec(spec, output_path)
+    elif tipo == 'mrua':
+        return render_mrua_from_spec(spec, output_path)
+    else:
+        raise ValueError(f"Tipo desconocido: {tipo}")
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--spec', required=True)
+    parser.add_argument('--output', required=True)
+    args = parser.parse_args()
+    
+    render_from_spec(args.spec, args.output)
+
+
+if __name__ == '__main__':
+    main()
+```
+
+## Paso 5: Documentar en CLAUDE.md
+
+### 5.1 Agregar al Árbol de Decisión
+
+```markdown
+├─── 🚀 ¿Es CINEMÁTICA (MRU, MRUA, caída libre)?
+│    └─── SÍ → KINEMATICSSPEC (JSON → Python → SVG)
+│         • Gráficas x-t, v-t, a-t
+│         • Vectores de velocidad y aceleración
+│         📁 Ver: .agent/workflows/kinematics-spec.md
+```
+
+### 5.2 Agregar sección de módulo
+
+```markdown
+# 🚀 MÓDULO PHYSICS - Física
+
+> **Ubicación:** `scripts/physics/`
+
+## Estructura
+...
+
+## Funciones Disponibles
+...
+```
+
+## Paso 6: Crear workflow en .agent/workflows/
+
+```markdown
+<!-- .agent/workflows/kinematics-spec.md -->
+# Workflow: Cinemática (KinematicsSpec)
+
+## Cuándo usar
+- Gráficas de MRU, MRUA, caída libre
+- Vectores de velocidad y aceleración
+
+## Paso 1: Crear spec
+...
+
+## Paso 2: Generar SVG
+...
+```
+
+---
+
+# ⚠️ REGLAS CRÍTICAS PARA EXTENSIBILIDAD
+
+## ❌ NUNCA hacer
+
+```python
+# ❌ NUNCA duplicar colores
+COLORS = {'primary': '#3b82f6', ...}  # NO! Ya existe en core/colors.py
+
+# ❌ NUNCA duplicar helpers
+def escape_xml(text):  # NO! Ya existe en core/primitives.py
+    return text.replace('&', '&amp;')...
+
+# ❌ NUNCA crear archivos > 300 líneas
+# Si el archivo crece, dividirlo en submódulos
+```
+
+## ✅ SIEMPRE hacer
+
+```python
+# ✅ SIEMPRE importar de core
+from core import COLORS, escape_xml, SVGBuilder
+
+# ✅ SIEMPRE usar tamaños estándar
+from core import SIZE_SIMPLE, SIZE_COMPOUND
+
+# ✅ SIEMPRE documentar en CLAUDE.md
+# No crear READMEs separados
+
+# ✅ SIEMPRE seguir el patrón Spec → Renderer → SVG
+# para tipos con muchas variantes
+```
+
+## Checklist antes de crear nuevo módulo
+
+- [ ] ¿Revisé que no existe ya soporte para este tipo?
+- [ ] ¿Importo de `core/` en lugar de duplicar?
+- [ ] ¿El archivo tiene ≤ 300 líneas?
+- [ ] ¿Documenté en CLAUDE.md?
+- [ ] ¿Creé workflow en `.agent/workflows/` si es sistema Spec?
+- [ ] ¿Agregué al Árbol de Decisión?
+- [ ] ¿Los colores usan `COLORS['nombre']` de core?

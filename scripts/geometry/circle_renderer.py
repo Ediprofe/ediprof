@@ -48,60 +48,17 @@ import argparse
 import math
 from pathlib import Path
 
-# ==============================================================================
-# ESTÁNDARES DE TAMAÑO (Documentado en CLAUDE.md)
-# ==============================================================================
-# Todos los SVGs del mismo tema deben tener tamaños consistentes.
-
-SIZE_SIMPLE = (500, 400)       # 1 concepto: radio, diámetro, cuerda, arco, ángulo
-SIZE_COMPOUND = (600, 460)     # 2-3 elementos: sector+triángulo, teoremas (altura aumentada para leyendas)
-SIZE_MULTIPLE = (750, 450)     # 4+ elementos: posiciones, comparaciones
-SIZE_HORIZONTAL = (750, 420)   # Operaciones A - B = C, lado a lado (más espacio)
-
-# Paleta de colores
-COLORS = {
-    'background': '#f8fafc',
-    'circle_stroke': '#3b82f6',
-    'circle_fill': '#dbeafe',
-    'radius': '#ef4444',
-    'diameter': '#8b5cf6',
-    'chord': '#22c55e',
-    'arc': '#f97316',
-    'sector_fill': '#fef3c7',
-    'segment_fill': '#dcfce7',
-    'tangent': '#ec4899',
-    'secant': '#14b8a6',
-    'angle': '#f97316',
-    'point': '#1e293b',
-    'center': '#ef4444',
-    'text': '#1e293b',
-    'auxiliary': '#94a3b8',
-    'highlight': '#fbbf24',
-    'crown': '#e0e7ff',
-}
-
-
-def escape_svg_text(text):
-    """
-    ⚠️ CRÍTICO: Escapar caracteres especiales XML para texto en SVG.
-    
-    Los caracteres <, >, & son inválidos en XML y causan errores de parsing.
-    SIEMPRE usar esta función para texto que contenga símbolos matemáticos.
-    
-    Ejemplos:
-        "d < r"  → "d &lt; r"
-        "d > R"  → "d &gt; R"
-        "A & B"  → "A &amp; B"
-    """
-    return text.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
+# Importar desde core unificado
+from core import (
+    COLORS,
+    SIZE_SIMPLE, SIZE_COMPOUND, SIZE_MULTIPLE, SIZE_HORIZONTAL,
+    escape_svg_text, point_on_circle_svg
+)
 
 
 def point_on_circle(cx, cy, r, angle_deg):
-    """Calcula punto en la circunferencia dado ángulo en grados.
-    NOTA: En SVG, Y crece hacia abajo, por eso usamos -sin()
-    """
-    angle_rad = math.radians(angle_deg)
-    return (cx + r * math.cos(angle_rad), cy - r * math.sin(angle_rad))
+    """Wrapper para compatibilidad - usa point_on_circle_svg de core."""
+    return point_on_circle_svg(cx, cy, r, angle_deg)
 
 
 def arc_path(cx, cy, r, start_deg, end_deg):

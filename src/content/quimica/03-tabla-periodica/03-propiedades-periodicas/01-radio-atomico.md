@@ -20,26 +20,7 @@
 | **→ (izq. a der.)** | Disminuye | Mayor carga nuclear, mismos niveles |
 | **↓ (arriba a abajo)** | Aumenta | Más niveles de energía |
 
-```
-          Radio atómico DISMINUYE →
-    ┌─────────────────────────────────────┐
-    │  Li  Be              B   C   N   O  │
-    │  ●   ●               ●   ●   ●   ●  │
-  R │  ↓                   ↓   ↓   ↓   ↓  │
-  a │  Na Mg              Al  Si   P   S  │
-  d │  ●● ●●              ●●  ●●  ●●  ●●  │
-  i │  ↓                                   │
-  o │  K  Ca              Ga  Ge  As  Se  │
-    │ ●●● ●●●            ●●● ●●● ●●● ●●●  │
-  A │                                      │
-  U │  Grande ←───────────────→ Pequeño   │
-  M │                                      │
-  E │  ↓                                   │
-  N │  Mayor hacia abajo                   │
-  T │                                      │
-  A │                                      │
-    └─────────────────────────────────────┘
-```
+![Tendencia del Radio Atómico](/images/quimica/tendencias/radio-atomico.svg)
 
 ---
 
@@ -129,13 +110,7 @@ El cesio es casi el **doble** del tamaño del litio.
 
 Los electrones internos "protegen" a los externos del núcleo:
 
-```
-    Núcleo: +19           Electrones externos
-        ↓                       ↓
-       (+) ← atracción ← [electrones internos] ← e⁻ externo
-                              ↑
-                     "Apantallan" la carga
-```
+El efecto de apantallamiento ocurre cuando los electrones internos "protegen" a los externos del núcleo, reduciendo la atracción efectiva.
 
 ---
 
