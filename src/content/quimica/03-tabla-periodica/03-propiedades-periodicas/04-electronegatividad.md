@@ -15,10 +15,10 @@
 
 ## 📊 Tendencias de la Electronegatividad
 
-| Dirección | Tendencia | Razón |
-|-----------|-----------|-------|
-| **→ (izq. a der.)** | Aumenta | Mayor atracción por electrones |
-| **↓ (arriba a abajo)** | Disminuye | Electrones de valencia más lejos |
+| Dirección | Tendencia |
+|-----------|-----------|
+| **→ (izq. a der.)** | Aumenta |
+| **↑ (abajo a arriba)** | Aumenta |
 
 ---
 
@@ -158,13 +158,7 @@ $$
 
 En un enlace polar, el átomo más electronegativo tiene una carga parcial negativa (δ-) y el menos electronegativo tiene carga parcial positiva (δ+):
 
-```
-       δ+     δ-
-       H ─── Cl
-       
-    El Cl atrae más los electrones
-    (EN: Cl = 3.0, H = 2.2)
-```
+![Enlace Polar HCl](/images/quimica/enlace-polar-hcl.svg)
 
 ---
 
@@ -274,11 +268,7 @@ $$\Delta\text{EN} = 3.5 - 2.2 = 1.3$$
 
 El oxígeno es más electronegativo, así que atrae los electrones compartidos hacia sí mismo.
 
-**Resultado:**
-```
-        δ+       δ-       δ+
-        H   ──   O   ──   H
-```
+![Molécula Polar: Agua (H₂O)](/images/quimica/molecula-polar-agua.svg)
 
 El O tiene carga parcial negativa (δ-) y los H tienen carga parcial positiva (δ+).
 

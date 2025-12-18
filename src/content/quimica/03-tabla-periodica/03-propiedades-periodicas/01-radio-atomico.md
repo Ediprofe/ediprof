@@ -15,10 +15,10 @@
 
 ## 📊 Tendencias del Radio Atómico
 
-| Dirección | Tendencia | Razón |
-|-----------|-----------|-------|
-| **→ (izq. a der.)** | Disminuye | Mayor carga nuclear, mismos niveles |
-| **↓ (arriba a abajo)** | Aumenta | Más niveles de energía |
+| Dirección | Tendencia |
+|-----------|-----------|
+| **← (der. a izq.)** | Aumenta |
+| **↓ (arriba a abajo)** | Aumenta |
 
 ![Tendencia del Radio Atómico](/images/quimica/tendencias/radio-atomico.svg)
 
@@ -146,18 +146,7 @@ $$
 | Cl (neutro) | 99 |
 | Cl⁻ | 181 |
 
-### 📊 Comparación visual:
-
-```
-      Na       →      Na⁺         Cl       →      Cl⁻
-      
-     ●●●                ●        ●●●              ●●●●
-    ●●●●●             ●●●       ●●●●●            ●●●●●●
-    ●●●●●            (más     ●●●●●             ●●●●●●
-     ●●●           pequeño)     ●●●            (más grande)
-     
-   186 pm           102 pm      99 pm            181 pm
-```
+![Comparación de Radios Iónicos: Na → Na⁺ y Cl → Cl⁻](/images/quimica/radios/radio-ionico-comparacion.svg)
 
 ---
 

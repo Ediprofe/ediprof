@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 180">
+  <!-- Fondo -->
+  <rect width="500" height="180" fill="#f8fafc"/>
+  
+  <!-- Título -->
+  <text x="250" y="20" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#1e293b" text-anchor="middle">Energías de Ionización Sucesivas del Sodio</text>
+  
+  <!-- Na átomo -->
+  <rect x="20" y="45" width="130" height="55" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="85" y="65" font-family="Inter, monospace" font-size="12" font-weight="bold" fill="#1e40af" text-anchor="middle">Na: [Ne] 3s¹</text>
+  <text x="85" y="85" font-family="Inter, sans-serif" font-size="9" fill="#475569" text-anchor="middle">11 electrones</text>
+  
+  <!-- Flecha 1 -->
+  <line x1="155" y1="72" x2="195" y2="72" stroke="#3b82f6" stroke-width="2"/>
+  <polygon points="195,72 185,67 185,77" fill="#3b82f6"/>
+  <text x="175" y="55" font-family="Inter, sans-serif" font-size="8" fill="#3b82f6" text-anchor="middle">−1e⁻</text>
+  <text x="175" y="95" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="#3b82f6" text-anchor="middle">EI₁</text>
+  <text x="175" y="108" font-family="Inter, sans-serif" font-size="8" fill="#64748b" text-anchor="middle">496 kJ/mol</text>
+  
+  <!-- Na⁺ ion -->
+  <rect x="200" y="45" width="100" height="55" rx="8" fill="#bbf7d0" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="250" y="65" font-family="Inter, monospace" font-size="11" font-weight="bold" fill="#15803d" text-anchor="middle">Na⁺: [Ne]</text>
+  <text x="250" y="80" font-family="Inter, sans-serif" font-size="8" fill="#166534" text-anchor="middle">Capa completa</text>
+  <text x="250" y="92" font-family="Inter, sans-serif" font-size="8" fill="#166534" text-anchor="middle">¡Muy estable!</text>
+  
+  <!-- Flecha 2 (grande, roja) -->
+  <line x1="305" y1="72" x2="355" y2="72" stroke="#dc2626" stroke-width="3"/>
+  <polygon points="355,72 342,65 342,79" fill="#dc2626"/>
+  <text x="330" y="55" font-family="Inter, sans-serif" font-size="8" fill="#dc2626" text-anchor="middle">−1e⁻</text>
+  <text x="330" y="95" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="#dc2626" text-anchor="middle">EI₂</text>
+  <text x="330" y="108" font-family="Inter, sans-serif" font-size="8" fill="#dc2626" text-anchor="middle">4,562 kJ/mol</text>
+  
+  <!-- Na²⁺ -->
+  <rect x="360" y="45" width="120" height="55" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="420" y="65" font-family="Inter, monospace" font-size="11" font-weight="bold" fill="#b91c1c" text-anchor="middle">Na²⁺: [He] 2s² 2p⁵</text>
+  <text x="420" y="80" font-family="Inter, sans-serif" font-size="8" fill="#b91c1c" text-anchor="middle">Capa incompleta</text>
+  <text x="420" y="92" font-family="Inter, sans-serif" font-size="8" fill="#b91c1c" text-anchor="middle">¡Muy inestable!</text>
+  
+  <!-- Barra de comparación -->
+  <text x="250" y="135" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#1e293b" text-anchor="middle">Comparación de Energías</text>
+  
+  <!-- Barra EI₁ -->
+  <rect x="50" y="145" width="60" height="15" rx="3" fill="#3b82f6"/>
+  <text x="110" y="157" font-family="Inter, sans-serif" font-size="8" fill="#64748b">EI₁ = 496</text>
+  
+  <!-- Barra EI₂ (mucho más larga) -->
+  <rect x="200" y="145" width="250" height="15" rx="3" fill="#dc2626"/>
+  <text x="200" y="170" font-family="Inter, sans-serif" font-size="8" fill="#b91c1c">EI₂ = 4,562 (¡9× mayor!)</text>
+</svg>

@@ -48,12 +48,7 @@ $$
 
 John Newlands ordenó los elementos por masa atómica y notó que las propiedades se repetían cada 8 elementos, como las notas musicales.
 
-```
-Li Be B  C  N  O  F
-Na Mg Al Si P  S  Cl
-    ↓  ↓  ↓  ↓  ↓  ↓
-(propiedades similares en columnas)
-```
+![Ley de las Octavas de Newlands](/images/quimica/ley-octavas-newlands.svg)
 
 **Problema:** Solo funcionaba para los primeros 20 elementos.
 

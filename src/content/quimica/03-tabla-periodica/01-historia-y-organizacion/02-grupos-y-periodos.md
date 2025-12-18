@@ -42,12 +42,7 @@ La tabla periódica está organizada en filas y columnas que no son arbitrarias:
 
 Los elementos del mismo período tienen el **mismo número de capas electrónicas**:
 
-```
-Período 2:  Li  Be  B   C   N   O   F   Ne
-            ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓
-Electrones: 3   4   5   6   7   8   9   10
-Capas:      2   2   2   2   2   2   2   2
-```
+![Período 2: Mismas Capas Electrónicas](/images/quimica/periodo-2-capas.svg)
 
 ### ⚙️ Ejemplo: Elementos del período 3
 
@@ -137,7 +132,7 @@ Por eso todos reaccionan de manera similar: forman cationes +1, reaccionan viole
 
 ## 📖 Representación Visual
 
-![Tabla Periódica Completa (118 elementos)](/images/quimica/tabla-periodica-completa.svg)
+![Tabla Periódica de los Elementos](/images/quimica/tabla-periodica-completa.svg)
 
 ---
 

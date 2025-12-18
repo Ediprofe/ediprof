@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200">
+  <!-- Fondo -->
+  <rect width="600" height="200" fill="#f8fafc"/>
+  
+  <!-- Título -->
+  <text x="300" y="20" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="middle">Cambio de Tamaño: Átomo → Ion</text>
+  
+  <!-- CATIÓN (Na → Na⁺) - Lado izquierdo -->
+  <text x="150" y="45" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#3b82f6" text-anchor="middle">Formación de Catión</text>
+  
+  <!-- Na átomo (grande) -->
+  <circle cx="80" cy="100" r="40" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+  <text x="80" y="105" font-family="Inter, sans-serif" font-size="16" font-weight="bold" fill="#1e40af" text-anchor="middle">Na</text>
+  <text x="80" y="155" font-family="Inter, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">186 pm</text>
+  
+  <!-- Flecha -->
+  <line x1="130" y1="100" x2="170" y2="100" stroke="#64748b" stroke-width="2"/>
+  <polygon points="170,100 160,95 160,105" fill="#64748b"/>
+  <text x="150" y="90" font-family="Inter, sans-serif" font-size="9" fill="#64748b" text-anchor="middle">−1e⁻</text>
+  
+  <!-- Na⁺ ion (pequeño) -->
+  <circle cx="220" cy="100" r="22" fill="#bfdbfe" stroke="#2563eb" stroke-width="2"/>
+  <text x="220" y="105" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#1e40af" text-anchor="middle">Na⁺</text>
+  <text x="220" y="155" font-family="Inter, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">102 pm</text>
+  
+  <!-- Etiqueta catión -->
+  <text x="150" y="175" font-family="Inter, sans-serif" font-size="9" fill="#3b82f6" text-anchor="middle" font-style="italic">Pierde e⁻ → más pequeño</text>
+  
+  <!-- Línea divisoria -->
+  <line x1="300" y1="35" x2="300" y2="180" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4,4"/>
+  
+  <!-- ANIÓN (Cl → Cl⁻) - Lado derecho -->
+  <text x="450" y="45" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#16a34a" text-anchor="middle">Formación de Anión</text>
+  
+  <!-- Cl átomo (mediano) -->
+  <circle cx="380" cy="100" r="28" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="380" y="105" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#15803d" text-anchor="middle">Cl</text>
+  <text x="380" y="155" font-family="Inter, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">99 pm</text>
+  
+  <!-- Flecha -->
+  <line x1="420" y1="100" x2="460" y2="100" stroke="#64748b" stroke-width="2"/>
+  <polygon points="460,100 450,95 450,105" fill="#64748b"/>
+  <text x="440" y="90" font-family="Inter, sans-serif" font-size="9" fill="#64748b" text-anchor="middle">+1e⁻</text>
+  
+  <!-- Cl⁻ ion (grande) -->
+  <circle cx="520" cy="100" r="50" fill="#bbf7d0" stroke="#22c55e" stroke-width="2"/>
+  <text x="520" y="105" font-family="Inter, sans-serif" font-size="16" font-weight="bold" fill="#15803d" text-anchor="middle">Cl⁻</text>
+  <text x="520" y="155" font-family="Inter, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">181 pm</text>
+  
+  <!-- Etiqueta anión -->
+  <text x="450" y="175" font-family="Inter, sans-serif" font-size="9" fill="#16a34a" text-anchor="middle" font-style="italic">Gana e⁻ → más grande</text>
+</svg>

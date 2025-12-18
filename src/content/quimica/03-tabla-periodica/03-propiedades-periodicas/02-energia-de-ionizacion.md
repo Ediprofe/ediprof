@@ -15,10 +15,10 @@
 
 ## 📊 Tendencias de la Energía de Ionización
 
-| Dirección | Tendencia | Razón |
-|-----------|-----------|-------|
-| **→ (izq. a der.)** | Aumenta | Mayor carga nuclear, electrones más atraídos |
-| **↓ (arriba a abajo)** | Disminuye | Electrones más lejos del núcleo |
+| Dirección | Tendencia |
+|-----------|-----------|
+| **→ (izq. a der.)** | Aumenta |
+| **↑ (abajo a arriba)** | Aumenta |
 
 ---
 
@@ -66,15 +66,7 @@ Puedes quitar más de un electrón, pero cada vez cuesta más:
 
 Cuando quitas un electrón de una **capa completa**, la energía sube drásticamente:
 
-```
-Na: [Ne] 3s¹
-    
-    ← EI₁ = 496 kJ/mol (quita el 3s¹)
-    
-Na⁺: [Ne] ← capa completa, muy estable
-    
-    ← EI₂ = 4,562 kJ/mol (rompe la capa [Ne])
-```
+![Salto en las Energías de Ionización del Sodio](/images/quimica/ei-salto-sodio.svg)
 
 ---
 

@@ -27,55 +27,47 @@ from core.primitives import escape_xml
 TRENDS = {
     'radio_atomico': {
         'title': 'Tendencia del Radio Atómico',
-        'h_arrow': 'left',  # Disminuye hacia la derecha
-        'v_arrow': 'down',  # Aumenta hacia abajo
-        'h_label': 'Radio atómico DISMINUYE →',
-        'v_label': '↓ Radio AUMENTA',
-        'min_label': 'Pequeño (He)',
-        'max_label': 'Grande (Cs)',
-        'min_pos': (18, 1),
-        'max_pos': (1, 4),
-        'color_min': '#dcfce7',
-        'color_max': '#166534'
+        'h_direction': 'increase_left',  # Aumenta hacia la izquierda
+        'v_direction': 'increase_down',  # Aumenta hacia abajo
+        'h_label': '← Radio atómico AUMENTA',
+        'v_label': 'Radio AUMENTA ↓',
+        'max_element': 'Cs (más grande)',
+        'max_pos': (1, 4),  # Cesio: abajo izquierda
+        'color_min': '#dcfce7',  # Pequeño
+        'color_max': '#166534'   # Grande
     },
     'energia_ionizacion': {
         'title': 'Tendencia de la Energía de Ionización',
-        'h_arrow': 'right',  # Aumenta hacia la derecha
-        'v_arrow': 'up',     # Disminuye hacia abajo
+        'h_direction': 'increase_right',  # Aumenta hacia la derecha
+        'v_direction': 'increase_up',     # Aumenta hacia arriba
         'h_label': 'EI AUMENTA →',
-        'v_label': '↓ EI DISMINUYE',
-        'min_label': 'Baja EI (Cs)',
-        'max_label': 'Alta EI (He)',
-        'min_pos': (1, 4),
-        'max_pos': (18, 1),
-        'color_min': '#fef2f2',
-        'color_max': '#991b1b'
+        'v_label': '↑ EI AUMENTA',
+        'max_element': 'He (EI más alta)',
+        'max_pos': (18, 1),  # Helio: arriba derecha
+        'color_min': '#fef2f2',  # Baja EI
+        'color_max': '#991b1b'   # Alta EI
     },
     'afinidad_electronica': {
         'title': 'Tendencia de la Afinidad Electrónica',
-        'h_arrow': 'right',
-        'v_arrow': 'up',
-        'h_label': 'AE más negativa →',
-        'v_label': '↓ AE menos negativa',
-        'min_label': 'Baja AE (Cs)',
-        'max_label': 'Alta AE (Cl)',
-        'min_pos': (1, 4),
-        'max_pos': (17, 3),
-        'color_min': '#f0fdf4',
-        'color_max': '#0d9488'
+        'h_direction': 'increase_right',  # Aumenta hacia la derecha
+        'v_direction': 'increase_up',     # Aumenta hacia arriba
+        'h_label': 'AE AUMENTA →',
+        'v_label': '↑ AE AUMENTA',
+        'max_element': 'Cl (AE más alta)',
+        'max_pos': (17, 3),  # Cloro
+        'color_min': '#f0fdf4',  # Baja AE
+        'color_max': '#0d9488'   # Alta AE
     },
     'electronegatividad': {
         'title': 'Tendencia de la Electronegatividad',
-        'h_arrow': 'right',
-        'v_arrow': 'up',
+        'h_direction': 'increase_right',  # Aumenta hacia la derecha
+        'v_direction': 'increase_up',     # Aumenta hacia arriba
         'h_label': 'EN AUMENTA →',
-        'v_label': '↓ EN DISMINUYE',
-        'min_label': 'Baja EN (Cs = 0.7)',
-        'max_label': 'Alta EN (F = 4.0)',
-        'min_pos': (1, 4),
-        'max_pos': (17, 2),
-        'color_min': '#eff6ff',
-        'color_max': '#1d4ed8'
+        'v_label': '↑ EN AUMENTA',
+        'max_element': 'F (EN = 4.0, más alta)',
+        'max_pos': (17, 2),  # Flúor
+        'color_min': '#eff6ff',  # Baja EN
+        'color_max': '#1d4ed8'   # Alta EN
     }
 }
 
@@ -102,13 +94,20 @@ def render_trend(trend_type: str) -> str:
     # Título
     svg.append(f'  <text x="{width/2}" y="18" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="{COLORS["text"]}" text-anchor="middle">{escape_xml(trend["title"])}</text>')
     
+    # Determinar direcciones
+    h_increases_right = trend['h_direction'] == 'increase_right'
+    v_increases_down = trend['v_direction'] == 'increase_down'
+    
     # Etiqueta flecha horizontal (arriba)
     svg.append(f'  <text x="{width/2}" y="{padding - 5}" font-family="Inter, sans-serif" font-size="9" fill="{COLORS["accent"]}" text-anchor="middle">{escape_xml(trend["h_label"])}</text>')
     
     # Flecha horizontal
     arrow_y = padding - 15
     svg.append(f'  <line x1="{padding + 50}" y1="{arrow_y}" x2="{width - padding - 50}" y2="{arrow_y}" stroke="{COLORS["accent"]}" stroke-width="2"/>')
-    svg.append(f'  <polygon points="{width - padding - 50},{arrow_y} {width - padding - 60},{arrow_y - 5} {width - padding - 60},{arrow_y + 5}" fill="{COLORS["accent"]}"/>')
+    if h_increases_right:
+        svg.append(f'  <polygon points="{width - padding - 50},{arrow_y} {width - padding - 60},{arrow_y - 5} {width - padding - 60},{arrow_y + 5}" fill="{COLORS["accent"]}"/>')
+    else:
+        svg.append(f'  <polygon points="{padding + 50},{arrow_y} {padding + 60},{arrow_y - 5} {padding + 60},{arrow_y + 5}" fill="{COLORS["accent"]}"/>')
     
     # Etiqueta flecha vertical (izquierda)
     v_label_x = padding - 25
@@ -118,17 +117,22 @@ def render_trend(trend_type: str) -> str:
     # Flecha vertical
     arrow_x = padding - 10
     svg.append(f'  <line x1="{arrow_x}" y1="{padding + 20}" x2="{arrow_x}" y2="{padding + rows * (cell_h + gap) - 30}" stroke="{COLORS["secondary"]}" stroke-width="2"/>')
-    svg.append(f'  <polygon points="{arrow_x},{padding + rows * (cell_h + gap) - 30} {arrow_x - 5},{padding + rows * (cell_h + gap) - 40} {arrow_x + 5},{padding + rows * (cell_h + gap) - 40}" fill="{COLORS["secondary"]}"/>')
+    if v_increases_down:
+        svg.append(f'  <polygon points="{arrow_x},{padding + rows * (cell_h + gap) - 30} {arrow_x - 5},{padding + rows * (cell_h + gap) - 40} {arrow_x + 5},{padding + rows * (cell_h + gap) - 40}" fill="{COLORS["secondary"]}"/>')
+    else:
+        svg.append(f'  <polygon points="{arrow_x},{padding + 20} {arrow_x - 5},{padding + 30} {arrow_x + 5},{padding + 30}" fill="{COLORS["secondary"]}"/>')
     
     # Dibujar cuadrícula simplificada con gradiente de color
     for period in range(1, rows + 1):
         for group in range(1, cols + 1):
-            # Calcular intensidad de color basada en posición
-            # Para radio atómico: más grande abajo-izquierda, más pequeño arriba-derecha
-            if trend['h_arrow'] == 'left' and trend['v_arrow'] == 'down':
-                intensity = ((group - 1) / (cols - 1) + (1 - (period - 1) / (rows - 1))) / 2
-            else:
-                intensity = ((1 - (group - 1) / (cols - 1)) + (period - 1) / (rows - 1)) / 2
+            # Calcular intensidad basada en dirección de aumento
+            h_norm = (group - 1) / (cols - 1)
+            v_norm = (period - 1) / (rows - 1)
+            
+            h_intensity = h_norm if h_increases_right else (1 - h_norm)
+            v_intensity = v_norm if v_increases_down else (1 - v_norm)
+            
+            intensity = (h_intensity + v_intensity) / 2
             
             # Interpolación de color simple
             r1, g1, b1 = int(trend['color_min'][1:3], 16), int(trend['color_min'][3:5], 16), int(trend['color_min'][5:7], 16)
@@ -151,14 +155,8 @@ def render_trend(trend_type: str) -> str:
             if not skip:
                 svg.append(f'  <rect x="{x}" y="{y}" width="{cell_w}" height="{cell_h}" fill="{fill_color}" stroke="#94a3b8" stroke-width="0.5" rx="3"/>')
     
-    # Etiquetas de extremos
-    min_x = padding + (trend['min_pos'][0] - 1) * (cell_w + gap) + cell_w / 2
-    min_y = padding + rows * (cell_h + gap) + 15
-    max_x = padding + (trend['max_pos'][0] - 1) * (cell_w + gap) + cell_w / 2
-    max_y = padding - 25
-    
-    svg.append(f'  <text x="{padding + 10}" y="{height - 10}" font-family="Inter, sans-serif" font-size="8" fill="{COLORS["secondary"]}">{escape_xml(trend["max_label"])}</text>')
-    svg.append(f'  <text x="{width - padding - 10}" y="{height - 10}" font-family="Inter, sans-serif" font-size="8" fill="{COLORS["accent"]}" text-anchor="end">{escape_xml(trend["min_label"])}</text>')
+    # Etiqueta del elemento con valor máximo (abajo, centrado)
+    svg.append(f'  <text x="{width/2}" y="{height - 10}" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="{COLORS["primary"]}" text-anchor="middle">{escape_xml(trend["max_element"])}</text>')
     
     svg.append('</svg>')
     return '\n'.join(svg)

@@ -4,45 +4,44 @@
   <text x="319.0" y="45" font-family="Inter, sans-serif" font-size="9" fill="#ef4444" text-anchor="middle">EN AUMENTA →</text>
   <line x1="100" y1="35" x2="538" y2="35" stroke="#ef4444" stroke-width="2"/>
   <polygon points="538,35 528,30 528,40" fill="#ef4444"/>
-  <text x="25" y="110.0" font-family="Inter, sans-serif" font-size="9" fill="#22c55e" text-anchor="middle" transform="rotate(-90, 25, 110.0)">↓ EN DISMINUYE</text>
+  <text x="25" y="110.0" font-family="Inter, sans-serif" font-size="9" fill="#22c55e" text-anchor="middle" transform="rotate(-90, 25, 110.0)">↑ EN AUMENTA</text>
   <line x1="40" y1="70" x2="40" y2="140" stroke="#22c55e" stroke-width="2"/>
-  <polygon points="40,140 35,130 45,130" fill="#22c55e"/>
+  <polygon points="40,70 35,80 45,80" fill="#22c55e"/>
   <rect x="50" y="50" width="28" height="28" fill="#86a2eb" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
-  <rect x="560" y="50" width="28" height="28" fill="#eff6ff" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
-  <rect x="50" y="80" width="28" height="28" fill="#6386e5" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
-  <rect x="80" y="80" width="28" height="28" fill="#698ae6" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
-  <rect x="410" y="80" width="28" height="28" fill="#adc1f2" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
-  <rect x="440" y="80" width="28" height="28" fill="#b3c6f3" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
-  <rect x="470" y="80" width="28" height="28" fill="#b9cbf5" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
-  <rect x="500" y="80" width="28" height="28" fill="#bfd0f6" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
-  <rect x="530" y="80" width="28" height="28" fill="#c5d5f7" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
-  <rect x="560" y="80" width="28" height="28" fill="#ccdaf8" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
-  <rect x="50" y="110" width="28" height="28" fill="#406ade" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
-  <rect x="80" y="110" width="28" height="28" fill="#466edf" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
-  <rect x="410" y="110" width="28" height="28" fill="#8aa5ec" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
-  <rect x="440" y="110" width="28" height="28" fill="#90aaed" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
-  <rect x="470" y="110" width="28" height="28" fill="#96afee" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
-  <rect x="500" y="110" width="28" height="28" fill="#9cb4ef" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
-  <rect x="530" y="110" width="28" height="28" fill="#a2b9f0" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
-  <rect x="560" y="110" width="28" height="28" fill="#a9bef2" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
-  <rect x="50" y="140" width="28" height="28" fill="#1d4ed8" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
-  <rect x="80" y="140" width="28" height="28" fill="#2352d9" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
-  <rect x="110" y="140" width="28" height="28" fill="#2957da" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
-  <rect x="140" y="140" width="28" height="28" fill="#2f5cdb" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
-  <rect x="170" y="140" width="28" height="28" fill="#3561dc" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
-  <rect x="200" y="140" width="28" height="28" fill="#3b66dd" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
-  <rect x="230" y="140" width="28" height="28" fill="#426bde" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
-  <rect x="260" y="140" width="28" height="28" fill="#4870e0" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
-  <rect x="290" y="140" width="28" height="28" fill="#4e75e1" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
-  <rect x="320" y="140" width="28" height="28" fill="#547ae2" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
-  <rect x="350" y="140" width="28" height="28" fill="#5a7fe3" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
-  <rect x="380" y="140" width="28" height="28" fill="#6084e4" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
-  <rect x="410" y="140" width="28" height="28" fill="#6789e5" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
-  <rect x="440" y="140" width="28" height="28" fill="#6d8ee6" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
-  <rect x="470" y="140" width="28" height="28" fill="#7393e8" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
-  <rect x="500" y="140" width="28" height="28" fill="#7998e9" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
-  <rect x="530" y="140" width="28" height="28" fill="#7f9dea" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="560" y="50" width="28" height="28" fill="#1d4ed8" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="50" y="80" width="28" height="28" fill="#a9bef2" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="80" y="80" width="28" height="28" fill="#a2b9f0" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="410" y="80" width="28" height="28" fill="#5e82e4" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="440" y="80" width="28" height="28" fill="#587de3" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="470" y="80" width="28" height="28" fill="#5278e1" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="500" y="80" width="28" height="28" fill="#4c73e0" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="530" y="80" width="28" height="28" fill="#466edf" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="560" y="80" width="28" height="28" fill="#406ade" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="50" y="110" width="28" height="28" fill="#ccdaf8" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="80" y="110" width="28" height="28" fill="#c5d5f7" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="410" y="110" width="28" height="28" fill="#819eea" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="440" y="110" width="28" height="28" fill="#7b99e9" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="470" y="110" width="28" height="28" fill="#7594e8" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="500" y="110" width="28" height="28" fill="#6f8fe7" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="530" y="110" width="28" height="28" fill="#698ae6" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="560" y="110" width="28" height="28" fill="#6286e5" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="50" y="140" width="28" height="28" fill="#eff6ff" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="80" y="140" width="28" height="28" fill="#e8f1fd" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="110" y="140" width="28" height="28" fill="#e2ecfc" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="140" y="140" width="28" height="28" fill="#dce7fb" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="170" y="140" width="28" height="28" fill="#d6e2fa" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="200" y="140" width="28" height="28" fill="#d0ddf9" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="230" y="140" width="28" height="28" fill="#c9d8f8" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="260" y="140" width="28" height="28" fill="#c3d3f6" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="290" y="140" width="28" height="28" fill="#bdcef5" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="320" y="140" width="28" height="28" fill="#b7c9f4" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="350" y="140" width="28" height="28" fill="#b1c4f3" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="380" y="140" width="28" height="28" fill="#abbff2" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="410" y="140" width="28" height="28" fill="#a4baf1" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="440" y="140" width="28" height="28" fill="#9eb5f0" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="470" y="140" width="28" height="28" fill="#98b0ee" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="500" y="140" width="28" height="28" fill="#92abed" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
+  <rect x="530" y="140" width="28" height="28" fill="#8ca6ec" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
   <rect x="560" y="140" width="28" height="28" fill="#86a2eb" stroke="#94a3b8" stroke-width="0.5" rx="3"/>
-  <text x="60" y="248" font-family="Inter, sans-serif" font-size="8" fill="#22c55e">Alta EN (F = 4.0)</text>
-  <text x="578" y="248" font-family="Inter, sans-serif" font-size="8" fill="#ef4444" text-anchor="end">Baja EN (Cs = 0.7)</text>
+  <text x="319.0" y="248" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="#3b82f6" text-anchor="middle">F (EN = 4.0, más alta)</text>
 </svg>

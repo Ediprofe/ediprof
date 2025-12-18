@@ -15,10 +15,10 @@ Si la energía de ionización mide qué tan difícil es **quitar** un electrón,
 
 ## 📊 Tendencias de la Afinidad Electrónica
 
-| Dirección | Tendencia general | Razón |
-|-----------|-------------------|-------|
-| **→ (izq. a der.)** | Se hace más negativa | Mayor atracción por electrones |
-| **↓ (arriba a abajo)** | Se hace menos negativa | Electrón agregado más lejos |
+| Dirección | Tendencia (se hace más negativa) |
+|-----------|----------------------------------|
+| **→ (izq. a der.)** | Aumenta |
+| **↑ (abajo a arriba)** | Aumenta |
 
 ---
 

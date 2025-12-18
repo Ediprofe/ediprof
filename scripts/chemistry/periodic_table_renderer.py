@@ -81,10 +81,27 @@ def render_periodic_table(spec: dict) -> str:
     # Offset vertical para el contenido (después del título)
     title_offset = 18
     
-    # Etiquetas de grupos (1-18)
+    # Mapeo de notación moderna a antigua
+    old_notation = {
+        1: 'IA', 2: 'IIA',
+        13: 'IIIA', 14: 'IVA', 15: 'VA', 16: 'VIA', 17: 'VIIA', 18: 'VIIIA',
+        3: 'IIIB', 4: 'IVB', 5: 'VB', 6: 'VIB', 7: 'VIIB', 8: 'VIIIB', 9: 'VIIIB', 10: 'VIIIB', 11: 'IB', 12: 'IIB'
+    }
+    
+    # Etiquetas de grupos (1-18) con notación antigua
     for g in range(1, 19):
         x = padding + (g - 1) * (cell_w + gap) + cell_w / 2
-        svg_parts.append(f'  <text x="{x}" y="{padding + title_offset - 2}" font-family="Inter, sans-serif" font-size="7" fill="{COLORS["text_light"]}" text-anchor="middle">{g}</text>')
+        # Número del grupo
+        svg_parts.append(f'  <text x="{x}" y="{padding + title_offset - 9}\" font-family="Inter, sans-serif" font-size="7" fill="{COLORS["text_light"]}" text-anchor="middle">{g}</text>')
+        # Notación antigua (si existe)
+        if g in old_notation:
+            old_label = old_notation[g]
+            svg_parts.append(f'  <text x="{x}" y="{padding + title_offset - 2}\" font-family="Inter, sans-serif" font-size="5.5" fill="{COLORS["text_light"]}" text-anchor="middle">({old_label})</text>')
+    
+    # Etiquetas de periodos (1-7) en el lado izquierdo
+    for p in range(1, main_rows + 1):
+        y = padding + title_offset + (p - 1) * (cell_h + gap) + cell_h / 2
+        svg_parts.append(f'  <text x="{padding - 8}" y="{y + 3}" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="{COLORS["primary"]}" text-anchor="end">{p}</text>')
     
     # Renderizar elementos principales (no series)
     for elem in elements:
