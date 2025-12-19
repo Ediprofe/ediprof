@@ -73,6 +73,48 @@ def add_borders_to_tables(input_path, output_path):
         # También en propiedades de párrafo con justificación
         content = re.sub(r'w:val="both"', 'w:val="left"', content)
         
+        # =============================================
+        # 3. AJUSTAR TAMAÑO DE IMÁGENES AL ANCHO DE PÁGINA
+        # =============================================
+        # El ancho de página típico es ~6 pulgadas = 5486400 EMUs (English Metric Units)
+        # 1 pulgada = 914400 EMUs
+        PAGE_WIDTH_EMU = 5486400  # ~6 pulgadas de ancho de contenido
+        
+        # Namespace para DrawingML
+        a_ns = 'http://schemas.openxmlformats.org/drawingml/2006/main'
+        wp_ns = 'http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing'
+        
+        # Buscar todas las imágenes y ajustar su tamaño
+        # Patrón para encontrar el extent (tamaño) de las imágenes
+        def adjust_image_size(match):
+            extent_tag = match.group(0)
+            # Extraer cx (ancho) y cy (alto) actuales
+            cx_match = re.search(r'cx="(\d+)"', extent_tag)
+            cy_match = re.search(r'cy="(\d+)"', extent_tag)
+            
+            if cx_match and cy_match:
+                original_cx = int(cx_match.group(1))
+                original_cy = int(cy_match.group(1))
+                
+                # Solo ajustar si la imagen es muy grande o muy pequeña
+                if original_cx > 0:
+                    # Calcular nuevo alto manteniendo proporción
+                    scale = PAGE_WIDTH_EMU / original_cx
+                    new_cy = int(original_cy * scale)
+                    
+                    # Reemplazar con nuevo tamaño
+                    new_extent = f'cx="{PAGE_WIDTH_EMU}" cy="{new_cy}"'
+                    extent_tag = re.sub(r'cx="\d+" cy="\d+"', new_extent, extent_tag)
+            
+            return extent_tag
+        
+        # Ajustar wp:extent (tamaño del contenedor)
+        content = re.sub(r'<wp:extent[^>]*cx="\d+"[^>]*cy="\d+"[^>]*/>', adjust_image_size, content)
+        content = re.sub(r'<wp:extent[^>]*cy="\d+"[^>]*cx="\d+"[^>]*/>', adjust_image_size, content)
+        
+        # Ajustar a:ext (tamaño interno de la imagen)
+        content = re.sub(r'<a:ext[^>]*cx="\d+"[^>]*cy="\d+"[^>]*/>', adjust_image_size, content)
+        
         with open(doc_path, 'w', encoding='utf-8') as f:
             f.write(content)
         
@@ -99,7 +141,7 @@ def add_borders_to_tables(input_path, output_path):
                     arc_name = os.path.relpath(file_path, temp_dir)
                     z.write(file_path, arc_name)
         
-        print(f"✅ Documento corregido: bordes + alineación izquierda")
+        print(f"✅ Documento corregido: bordes + alineación izquierda + imágenes ajustadas")
         
     finally:
         shutil.rmtree(temp_dir, ignore_errors=True)
