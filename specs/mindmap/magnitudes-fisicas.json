@@ -1,0 +1,36 @@
+{
+    "tipo": "mindmap",
+    "estilo": "elegante",
+    "nodo_central": {
+        "texto": "MAGNITUDES FÍSICAS",
+        "icono": "📐"
+    },
+    "ramas": [
+        {
+            "texto": "Fundamentales",
+            "icono": "🔹",
+            "color": "#3b82f6",
+            "hijos": [
+                "Longitud (m)",
+                "Masa (kg)",
+                "Tiempo (s)",
+                "Temperatura (K)",
+                "Corriente (A)",
+                "Cantidad sustancia (mol)",
+                "Intensidad luminosa (cd)"
+            ]
+        },
+        {
+            "texto": "Derivadas",
+            "icono": "🔸",
+            "color": "#f59e0b",
+            "hijos": [
+                "Velocidad (m/s)",
+                "Densidad (kg/m³)",
+                "Fuerza (N)",
+                "Área (m²)",
+                "Volumen (m³)"
+            ]
+        }
+    ]
+}

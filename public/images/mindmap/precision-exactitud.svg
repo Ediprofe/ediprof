@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 200">
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fafc"/>
+      <stop offset="100%" style="stop-color:#e2e8f0"/>
+    </linearGradient>
+  </defs>
+  
+  <style>
+    .label { font-family: 'Inter', system-ui, sans-serif; font-size: 11px; font-weight: 600; }
+    .dart { stroke-width: 2.5; stroke-linecap: round; }
+  </style>
+  
+  <rect width="100%" height="100%" fill="url(#bg-grad)" rx="12"/>
+  
+  <!-- Target 1: Exacto y Preciso -->
+  <g transform="translate(80, 85)">
+    <!-- Circles -->
+    <circle r="55" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+    <circle r="40" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1"/>
+    <circle r="25" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1"/>
+    <circle r="12" fill="#ef4444" stroke="#dc2626" stroke-width="1"/>
+    <!-- Darts - clustered at center -->
+    <g class="dart" stroke="#15803d">
+      <line x1="-4" y1="-4" x2="4" y2="4"/><line x1="4" y1="-4" x2="-4" y2="4"/>
+      <line x1="6" y1="2" x2="14" y2="10"/><line x1="14" y1="2" x2="6" y2="10"/>
+      <line x1="-8" y1="-2" x2="0" y2="6"/><line x1="0" y1="-2" x2="-8" y2="6"/>
+      <line x1="2" y1="-8" x2="10" y2="0"/><line x1="10" y1="-8" x2="2" y2="0"/>
+      <line x1="-6" y1="4" x2="2" y2="12"/><line x1="2" y1="4" x2="-6" y2="12"/>
+    </g>
+  </g>
+  <text x="80" y="175" text-anchor="middle" class="label" fill="#22c55e">✓ Exacto y Preciso</text>
+  
+  <!-- Target 2: Preciso, no Exacto -->
+  <g transform="translate(230, 85)">
+    <circle r="55" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+    <circle r="40" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1"/>
+    <circle r="25" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1"/>
+    <circle r="12" fill="#ef4444" stroke="#dc2626" stroke-width="1"/>
+    <!-- Darts - clustered but off-center (top-left) -->
+    <g class="dart" stroke="#b45309" transform="translate(-35, -35)">
+      <line x1="-4" y1="-4" x2="4" y2="4"/><line x1="4" y1="-4" x2="-4" y2="4"/>
+      <line x1="6" y1="2" x2="14" y2="10"/><line x1="14" y1="2" x2="6" y2="10"/>
+      <line x1="-8" y1="4" x2="0" y2="12"/><line x1="0" y1="4" x2="-8" y2="12"/>
+      <line x1="2" y1="-8" x2="10" y2="0"/><line x1="10" y1="-8" x2="2" y2="0"/>
+      <line x1="-2" y1="10" x2="6" y2="18"/><line x1="6" y1="10" x2="-2" y2="18"/>
+    </g>
+  </g>
+  <text x="230" y="175" text-anchor="middle" class="label" fill="#f59e0b">Preciso, no Exacto</text>
+  
+  <!-- Target 3: Exacto, no Preciso -->
+  <g transform="translate(380, 85)">
+    <circle r="55" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+    <circle r="40" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1"/>
+    <circle r="25" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1"/>
+    <circle r="12" fill="#ef4444" stroke="#dc2626" stroke-width="1"/>
+    <!-- Darts - scattered around center -->
+    <g class="dart" stroke="#1d4ed8">
+      <g transform="translate(30, 30)"><line x1="-4" y1="-4" x2="4" y2="4"/><line x1="4" y1="-4" x2="-4" y2="4"/></g>
+      <g transform="translate(-28, -32)"><line x1="-4" y1="-4" x2="4" y2="4"/><line x1="4" y1="-4" x2="-4" y2="4"/></g>
+      <g transform="translate(25, -28)"><line x1="-4" y1="-4" x2="4" y2="4"/><line x1="4" y1="-4" x2="-4" y2="4"/></g>
+      <g transform="translate(-30, 25)"><line x1="-4" y1="-4" x2="4" y2="4"/><line x1="4" y1="-4" x2="-4" y2="4"/></g>
+      <g transform="translate(0, 0)"><line x1="-4" y1="-4" x2="4" y2="4"/><line x1="4" y1="-4" x2="-4" y2="4"/></g>
+    </g>
+  </g>
+  <text x="380" y="175" text-anchor="middle" class="label" fill="#3b82f6">Exacto, no Preciso</text>
+  
+  <!-- Target 4: Ni Exacto ni Preciso -->
+  <g transform="translate(530, 85)">
+    <circle r="55" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+    <circle r="40" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1"/>
+    <circle r="25" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1"/>
+    <circle r="12" fill="#ef4444" stroke="#dc2626" stroke-width="1"/>
+    <!-- Darts - scattered and off-center -->
+    <g class="dart" stroke="#b91c1c">
+      <g transform="translate(40, -40)"><line x1="-4" y1="-4" x2="4" y2="4"/><line x1="4" y1="-4" x2="-4" y2="4"/></g>
+      <g transform="translate(-35, 15)"><line x1="-4" y1="-4" x2="4" y2="4"/><line x1="4" y1="-4" x2="-4" y2="4"/></g>
+      <g transform="translate(20, 42)"><line x1="-4" y1="-4" x2="4" y2="4"/><line x1="4" y1="-4" x2="-4" y2="4"/></g>
+      <g transform="translate(-40, -38)"><line x1="-4" y1="-4" x2="4" y2="4"/><line x1="4" y1="-4" x2="-4" y2="4"/></g>
+      <g transform="translate(8, -48)"><line x1="-4" y1="-4" x2="4" y2="4"/><line x1="4" y1="-4" x2="-4" y2="4"/></g>
+    </g>
+  </g>
+  <text x="530" y="175" text-anchor="middle" class="label" fill="#ef4444">✗ Ni Exacto ni Preciso</text>
+</svg>

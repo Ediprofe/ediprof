@@ -72,6 +72,12 @@ $$
 1s → 2s → 2p → 3s → 3p → 4s → 3d → 4p → 5s → 4d → 5p → 6s → 4f → 5d → 6p → 7s → 5f → 6d → 7p
 $$
 
+### 📊 Diagrama de Moeller
+
+![Diagrama de Moeller - Regla de las Diagonales](/images/quimica/diagrama-moeller.svg)
+
+> **Cómo usarlo:** Sigue las flechas diagonales desde arriba-derecha hacia abajo-izquierda. Cada flecha te indica el orden en que debes llenar los subniveles.
+
 ---
 
 ## 📖 Niveles donde aparecen los orbitales

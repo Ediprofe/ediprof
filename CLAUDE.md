@@ -28,12 +28,18 @@
 - **TODO va en CLAUDE.md** → no crear READMEs separados
 - **Workflows en** `.agent/workflows/` → para sistemas Spec
 
+### 5. Protocolo de Clarificación (CRÍTICO)
+- **Cuando NO tengas certeza** de lo que vas a hacer → **CONFIRMAR ANTES**
+- **Para diagramas técnicos/visuales** → describir el plan y esperar aprobación
+- **Ver sección:** [🔄 PROTOCOLO DE CLARIFICACIÓN](#-protocolo-de-clarificación-antes-de-ejecutar)
+
 ### Índice Rápido de Secciones Técnicas
 
 | Sección | Línea | Contenido |
 |---------|-------|-----------|
 | Arquitectura del Sistema | ~406 | Diagrama de flujo, principios de diseño |
 | Árbol de Decisión | ~507 | Qué tecnología usar para cada tipo |
+| **Protocolo de Clarificación** | ~788 | Cuándo confirmar antes de ejecutar |
 | Módulo Core | ~1110 | Colores, canvas, primitivas, SVGBuilder |
 | Módulo Cartesian | ~1226 | 30 funciones de geometría analítica |
 | Guía Nuevo Tipo | ~1320 | Paso a paso para extender el sistema |
@@ -223,6 +229,76 @@ Cada lección debe ser un **LIBRETO LITERAL** que el mejor profesor del colegio 
 | **MOTIVADOR** | Engancha al estudiante con preguntas y contexto real |
 | **INDUCTIVO** | Va de lo particular a lo general, de ejemplos a teoría |
 | **PROGRESIVO** | Una idea a la vez, sin saltos |
+
+---
+
+## 📝 ESTRUCTURA ESTÁNDAR DE LECCIONES
+
+> **OBLIGATORIO:** Toda lección debe seguir esta estructura para mantener consistencia.
+
+### Plantilla de Lección
+
+```markdown
+# **Título de la Lección**
+
+Breve párrafo introductorio (1-2 oraciones) que contextualiza el tema.
+
+---
+
+## 🎯 ¿Qué vas a aprender?
+
+- Punto 1 (concepto principal)
+- Punto 2
+- Punto 3
+- (máximo 4-5 puntos)
+
+---
+
+## 📖 Contenido Principal
+
+(Secciones de contenido con ## y ###)
+
+---
+
+## 📝 Ejercicios de Práctica
+
+### Ejercicio 1
+**Pregunta del ejercicio**
+
+<details>
+<summary>Ver solución</summary>
+
+Respuesta detallada con explicación.
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Concepto | Descripción |
+|----------|-------------|
+| **Concepto 1** | Descripción breve |
+| **Concepto 2** | Descripción breve |
+
+> Conclusión breve destacando lo más importante.
+
+---
+```
+
+### Reglas
+
+| Sección | Obligatoria | Posición |
+|---------|-------------|----------|
+| 🎯 ¿Qué vas a aprender? | ✅ SÍ | Después del título e intro |
+| 📝 Ejercicios de Práctica | ⚠️ Recomendado | Antes del resumen |
+| 🔑 Resumen | ✅ SÍ | Al final (después de ejercicios) |
+
+### Lecciones de Referencia
+
+- [que-es-la-materia.mdx](file:///Users/edilbertosuarez/Documents/EDIPROFE.COM/ediprof/src/content/quimica/01-la-materia/01-conceptos-basicos/01-que-es-la-materia.mdx)
+- [la-fisica-y-sus-ramas.md](file:///Users/edilbertosuarez/Documents/EDIPROFE.COM/ediprof/src/content/fisica/01-introduccion-a-la-fisica/01-introduccion/01-la-fisica-y-sus-ramas.md)
+- [metodo-cientifico.md](file:///Users/edilbertosuarez/Documents/EDIPROFE.COM/ediprof/src/content/fisica/01-introduccion-a-la-fisica/01-introduccion/02-metodo-cientifico.md)
 
 ---
 
@@ -575,6 +651,179 @@ public/images/
 └── quimica/                     # ← FUTURO
 ```
 
+### 🏷️ Convención de Prefijos para Imágenes
+
+> **Regla:** Usar prefijos en los nombres de archivo para identificar el origen de la imagen.
+
+| Origen | Prefijo | Formato | Ejemplo |
+|--------|---------|---------|---------|
+| **Tablet** (dibujos manuales) | `t-` | PNG/WebP | `t-cambios-de-fase.png` |
+| **SVG generado** (renderers) | (sin prefijo) | SVG | `diagrama-moeller.svg` |
+| **3D renders** | `3d-` | PNG | `3d-orbital-s.png` |
+
+#### Reglas Específicas
+
+```
+✅ TABLET (prefijo t-):
+   • Ilustraciones dibujadas manualmente en tablet
+   • Formato: PNG (original) o WebP (optimizado)
+   • Ruta: public/images/{materia}/t-nombre.png
+   • Ejemplo: /images/quimica/t-ciclo-agua.png
+
+✅ SVG GENERADO (sin prefijo):
+   • SVGs creados por renderers Python
+   • Mantiene la convención existente
+   • Ejemplo: /images/geometria/circulos/radio.svg
+
+✅ 3D RENDERS (prefijo 3d-):
+   • Imágenes 3D pre-renderizadas
+   • Formato: PNG con transparencia
+   • Ejemplo: /images/quimica/3d-orbital-p.png
+```
+
+### 📱 Workflow: Imágenes de Tablet (MDX + Astro Image)
+
+> **Optimización automática:** Astro convierte PNG → WebP (~75% reducción) al hacer build.
+
+#### Flujo de Trabajo Paso a Paso
+
+```
+┌─────────────────────────────────────────────────────────────────────────┐
+│                    FLUJO: IMAGEN DE TABLET → WEB                        │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│  1️⃣ DIBUJAR                                                            │
+│     └─→ En tu tablet, creas la ilustración                             │
+│                                                                         │
+│  2️⃣ EXPORTAR                                                           │
+│     └─→ Guardas como PNG                                               │
+│                                                                         │
+│  3️⃣ NOMBRAR CON PREFIJO                                                │
+│     └─→ t-nombre-descriptivo.png                                       │
+│         Ejemplo: t-cambios-de-fase.png                                 │
+│                                                                         │
+│  4️⃣ UBICAR EN CARPETA                                                  │
+│     └─→ public/images/{materia}/t-nombre.png                           │
+│         Ejemplo: public/images/quimica/t-cambios-de-fase.png           │
+│                                                                         │
+│  5️⃣ CONVERTIR ARCHIVO A MDX                                            │
+│     └─→ Renombrar: leccion.md → leccion.mdx                            │
+│                                                                         │
+│  6️⃣ AGREGAR IMPORTS AL INICIO                                          │
+│     └─→ import { Image } from 'astro:assets';                          │
+│         import nombreVar from '/public/images/.../t-nombre.png';       │
+│                                                                         │
+│  7️⃣ USAR COMPONENTE IMAGE                                              │
+│     └─→ <Image src={nombreVar} alt="..." format="webp" />              │
+│                                                                         │
+│  8️⃣ BUILD/DEPLOY                                                       │
+│     └─→ Astro optimiza automáticamente: PNG → WebP                     │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+```
+
+#### Cuándo usar `.md` vs `.mdx`
+
+| Contenido del archivo | Formato |
+|-----------------------|---------|
+| Solo texto, LaTeX, tablas, SVGs | `.md` |
+| Tiene al menos 1 imagen de tablet | `.mdx` |
+
+#### Ejemplo Completo de Archivo `.mdx`
+
+```mdx
+import { Image } from 'astro:assets';
+import cambiosFase from '/public/images/quimica/t-cambios-de-fase.png';
+import estadosMateria from '/public/images/quimica/t-estados-materia.png';
+
+# Título de la Lección
+
+Contenido normal en markdown...
+
+## Sección con imagen
+
+<Image src={cambiosFase} alt="Diagrama de cambios de fase" format="webp" />
+
+## Otra sección
+
+Más contenido...
+
+<Image src={estadosMateria} alt="Estados de la materia" format="webp" />
+```
+
+#### Reglas
+
+| ✅ SIEMPRE | ❌ NUNCA |
+|-----------|----------|
+| Archivo `.mdx` si tiene imagen de tablet | Usar `![alt](url)` para imágenes de tablet |
+| Import al inicio, antes del contenido | Olvidar `format="webp"` |
+| Prefijo `t-` en el nombre del PNG | Mezclar rutas hardcodeadas con imports |
+| Nombre de variable en camelCase | Usar mayúsculas en nombres de archivo |
+| Alt text descriptivo | |
+
+#### IDE: Extensión requerida
+
+Para syntax highlighting de archivos `.mdx` en VS Code:
+```bash
+code --install-extension unifiedjs.vscode-mdx
+```
+
+---
+
+### 🗺️ Sistema MindMap Spec (Mapas Conceptuales)
+
+> **Mapas conceptuales como SVG estático** - 0 JS, 100% responsive.
+
+#### Arquitectura
+
+```
+specs/mindmap/*.json  →  Python Renderer  →  public/images/mindmap/*.svg
+```
+
+#### Comando de generación
+
+```bash
+python3 scripts/mindmap/mindmap_renderer.py \
+  --spec specs/mindmap/nombre.json \
+  --output public/images/mindmap/nombre.svg
+```
+
+#### Formato de Spec JSON
+
+```json
+{
+  "tipo": "mindmap",
+  "estilo": "profesional-dark",
+  "nodo_central": {
+    "texto": "TEMA PRINCIPAL",
+    "icono": "🔬"
+  },
+  "ramas": [
+    {
+      "texto": "Rama 1",
+      "icono": "🏛️",
+      "color": "#3b82f6",
+      "hijos": ["Hijo 1", "Hijo 2", "Hijo 3"]
+    }
+  ]
+}
+```
+
+#### Estilos disponibles
+
+| Estilo | Descripción |
+|--------|-------------|
+| `profesional-dark` | Fondo oscuro, nodos con bordes (default) |
+| `profesional-light` | Fondo blanco, sombras sutiles |
+| `pizarra` | Estilo dibujado a mano |
+| `minimalista` | Líneas y texto simple |
+
+#### En el markdown
+
+```markdown
+![Mapa conceptual](/images/mindmap/nombre.svg)
+```
+
 ---
 
 ## 🌳 Árbol de Decisión
@@ -777,6 +1026,80 @@ label_y = O.y + 45 * math.sin(bisector_angle)
 ```
 
 📁 Referencia: .agent/workflows/roughjs.md
+
+---
+
+# 🔄 PROTOCOLO DE CLARIFICACIÓN (ANTES DE EJECUTAR)
+
+> **REGLA CRÍTICA:** Cuando NO tengas certeza absoluta sobre qué vas a hacer, **CONFIRMA ANTES de ejecutar**.
+
+## ⚠️ Situaciones que Requieren Clarificación
+
+| Situación | Acción Requerida |
+|-----------|------------------|
+| El usuario da una **referencia visual** (imagen) | Describir lo que ves y confirmar interpretación |
+| Solicitud de **diagrama técnico/científico** | Proponer estructura y esperar aprobación |
+| Solicitud **ambigua** o con múltiples interpretaciones | Hacer preguntas específicas |
+| **Primera vez** que haces algo de ese tipo | Proponer plan y esperar confirmación |
+| Hay **coordenadas, medidas o geometría exacta** | Explicar cálculos antes de ejecutar |
+
+## 📋 Protocolo de 3 Pasos para Diagramas Técnicos
+
+### Paso 1: ANALIZAR la referencia
+```
+"Veo en tu imagen:
+- [Descripción elemento 1]
+- [Descripción elemento 2]
+- [Descripción posicionamiento/relaciones]
+
+¿Es correcta mi interpretación?"
+```
+
+### Paso 2: PROPONER estructura
+```
+"Mi plan es:
+1. [Acción 1 con coordenadas específicas si aplica]
+2. [Acción 2]
+3. [Acción 3]
+
+¿Procedo?"
+```
+
+### Paso 3: EJECUTAR solo con aprobación
+- Solo ejecutar después de confirmación
+- Una sola iteración = éxito
+
+## 🚫 Errores a Evitar (Aprendidos de Experiencia)
+
+| ❌ Error | ✅ Correcto |
+|---------|-------------|
+| Empezar a codificar basándose en mi interpretación | Describir interpretación y pedir confirmación |
+| "Las flechas van diagonalmente" (vago) | "Flecha 1 entra en (x1,y1), sale en (x2,y2), atravesando bloques A, B, C" |
+| Iterar 4+ veces hasta acertar | Confirmar 1 vez, ejecutar 1 vez |
+| Usar `generate_image` para diagramas técnicos | Usar SVG manual o Python/Matplotlib |
+
+## 💡 Frases Útiles para Clarificación
+
+```
+"Antes de proceder, quiero confirmar mi entendimiento..."
+"¿Podrías verificar si mi interpretación es correcta?"
+"Mi plan detallado es... ¿Procedo?"
+"¿Hay algo que deba ajustar antes de ejecutar?"
+```
+
+## 📊 Caso de Estudio: Diagrama de Moeller
+
+**Problema:** Se iteró 4 veces para un diagrama que debió hacerse bien la primera vez.
+
+**Causa raíz:** El agente interpretó "flechas diagonales" sin confirmar:
+- Las flechas atraviesan bloques específicos
+- Cada flecha va de vértice superior-derecho a inferior-izquierdo
+- Las coordenadas son críticas
+
+**Solución correcta:** Antes de escribir código:
+1. "Veo flechas que atraviesan los bloques 1s, 2s, 2p→3s, etc."
+2. "Cada flecha entra por esquina superior-derecha y sale por inferior-izquierda"
+3. "¿Es correcta mi interpretación? ¿Procedo?"
 
 ---
 

@@ -1,10 +1,19 @@
 # 🎯 **Precisión y Exactitud**
 
+En toda medición pueden presentarse errores, por lo que es esencial distinguir entre dos cualidades fundamentales: exactitud y precisión.
+
+---
+
+## 🎯 ¿Qué vas a aprender?
+
+- Qué es la exactitud y qué es la precisión
+- La diferencia entre ambos conceptos
+- La analogía del tiro al blanco
+- Cómo aplicar estos conceptos en mediciones
+
 ---
 
 ## ⚙️ **Conceptos básicos**
-
-En toda medición pueden presentarse **errores**, por lo que es esencial distinguir entre dos cualidades fundamentales:
 
 > **Exactitud** → cercanía al valor real  
 > **Precisión** → consistencia entre mediciones repetidas
@@ -51,85 +60,91 @@ las mediciones son **precisas**, ya que presentan poca variación entre sí.
 
 Imagina que lanzas dardos hacia el centro de una diana. El **centro** representa el **valor real** y los **dardos** representan tus **mediciones**:
 
-<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem auto; max-width: 700px;">
-  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
-    <!-- Exacto y Preciso -->
-    <div style="text-align: center;">
-      <canvas id="rough-exacto-preciso" width="140" height="140"></canvas>
-      <p style="font-size: 11px; color: #22c55e; font-weight: bold; margin-top: 5px;">✓ Exacto y Preciso</p>
-    </div>
-    <!-- Preciso, no Exacto -->
-    <div style="text-align: center;">
-      <canvas id="rough-preciso-no-exacto" width="140" height="140"></canvas>
-      <p style="font-size: 11px; color: #f59e0b; font-weight: bold; margin-top: 5px;">Preciso, no Exacto</p>
-    </div>
-    <!-- Exacto, no Preciso -->
-    <div style="text-align: center;">
-      <canvas id="rough-exacto-no-preciso" width="140" height="140"></canvas>
-      <p style="font-size: 11px; color: #3b82f6; font-weight: bold; margin-top: 5px;">Exacto, no Preciso</p>
-    </div>
-    <!-- Ni Exacto ni Preciso -->
-    <div style="text-align: center;">
-      <canvas id="rough-ni-ni" width="140" height="140"></canvas>
-      <p style="font-size: 11px; color: #ef4444; font-weight: bold; margin-top: 5px;">✗ Ni Exacto ni Preciso</p>
-    </div>
-  </div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof rough !== 'undefined') {
-    
-    function drawTarget(canvasId, darts, dartColor) {
-      if (!document.getElementById(canvasId)) return;
-      var canvas = document.getElementById(canvasId);
-      var rc = rough.canvas(canvas);
-      var ctx = canvas.getContext('2d');
-      var cx = canvas.width / 2;
-      var cy = canvas.height / 2;
-      
-      // Diana
-      rc.circle(cx, cy, 120, { stroke: '#475569', strokeWidth: 1.5, fill: '#f8fafc', fillStyle: 'solid', roughness: 0.5 });
-      rc.circle(cx, cy, 90, { stroke: '#475569', strokeWidth: 1, fill: '#f1f5f9', fillStyle: 'solid', roughness: 0.5 });
-      rc.circle(cx, cy, 60, { stroke: '#475569', strokeWidth: 1, fill: '#e2e8f0', fillStyle: 'solid', roughness: 0.5 });
-      rc.circle(cx, cy, 30, { stroke: '#ef4444', strokeWidth: 1, fill: '#ef4444', fillStyle: 'solid', roughness: 0.5 }); // Centro rojo
-      
-      // Dardos
-      darts.forEach(function(pos) {
-        // Ajustar coordenadas relativas a absolutas del canvas
-        // Suponemos pos en rango [-1, 1] desde el centro
-        var dx = cx + pos[0] * 50; 
-        var dy = cy + pos[1] * 50;
-        
-        // Dibujar dardo (x)
-        rc.line(dx-3, dy-3, dx+3, dy+3, { stroke: dartColor, strokeWidth: 2, roughness: 0.5 });
-        rc.line(dx+3, dy-3, dx-3, dy+3, { stroke: dartColor, strokeWidth: 2, roughness: 0.5 });
-      });
-    }
-
-    // Exacto y Preciso: Centro
-    drawTarget('rough-exacto-preciso', [[0,0], [0.1, 0.1], [-0.1, -0.05], [0.05, -0.1], [-0.05, 0.05]], '#15803d'); // Verde oscuro
-    
-    // Preciso, no Exacto: Agrupados arriba izquierda
-    drawTarget('rough-preciso-no-exacto', [[-0.8, -0.8], [-0.75, -0.85], [-0.7, -0.75], [-0.85, -0.8], [-0.8, -0.7]], '#b45309'); // Ámbar oscuro
-    
-    // Exacto, no Preciso: Dispersos alrededor del centro
-    drawTarget('rough-exacto-no-preciso', [[0.6, 0.6], [-0.5, -0.6], [0.5, -0.5], [-0.6, 0.5], [0, 0]], '#1d4ed8'); // Azul oscuro
-    
-    // Ni Exacto ni Preciso: Muy dispersos y lejos
-    drawTarget('rough-ni-ni', [[0.9, -0.9], [-0.8, 0.2], [0.5, 0.9], [-0.9, -0.8], [0.2, -1]], '#b91c1c'); // Rojo oscuro
-  }
-});
-</script>
+![Diagrama de precisión y exactitud con blancos](/images/mindmap/precision-exactitud.svg)
 
 > 💡 **El centro rojo** representa el **valor real**. Los dardos agrupados = **precisión**. Dardos cerca del centro = **exactitud**.
 
 ---
 
-## 💬 **Conclusión**
+## 📝 Ejercicios de Práctica
 
-- La **exactitud** mide qué tan **correcto** es un resultado.  
-- La **precisión** mide qué tan **repetible** es.  
-- En física, se busca que las mediciones sean **precisas y exactas** para garantizar resultados **confiables y verificables**.
+### Ejercicio 1
+**Un estudiante mide la masa de un objeto 5 veces y obtiene: 45.2 g, 45.3 g, 45.2 g, 45.1 g, 45.2 g. Si el valor real es 47.0 g, ¿las mediciones son precisas, exactas, ambas o ninguna?**
 
-> 🔎 **Recordatorio:** toda medición implica un **margen de error**, pero aplicar buenas prácticas experimentales permite reducirlo significativamente.
+<details>
+<summary>Ver solución</summary>
+
+Las mediciones son **precisas pero NO exactas**.
+
+- **Precisas:** porque los valores están muy cercanos entre sí (varían solo 0.2 g).
+- **No exactas:** porque el promedio (~45.2 g) está lejos del valor real (47.0 g).
+
+Esto indica un **error sistemático** en el instrumento o método.
+
+</details>
+
+---
+
+### Ejercicio 2
+**Otro estudiante obtiene: 46.5 g, 47.8 g, 46.2 g, 47.5 g, 46.9 g. Si el valor real es 47.0 g, ¿las mediciones son precisas, exactas, ambas o ninguna?**
+
+<details>
+<summary>Ver solución</summary>
+
+Las mediciones son **exactas pero NO muy precisas**.
+
+- **Exactas:** el promedio (~46.98 g) está muy cerca del valor real (47.0 g).
+- **No precisas:** los valores individuales varían bastante (de 46.2 a 47.8 g).
+
+Esto indica **errores aleatorios** pero sin error sistemático.
+
+</details>
+
+---
+
+### Ejercicio 3
+**¿Qué tipo de error produce cada situación?**
+
+a) Una balanza mal calibrada que siempre marca 5 g de más.  
+b) Pequeñas vibraciones en el laboratorio durante la medición.  
+c) Un cronómetro que se activa 0.2 s después de presionar el botón.  
+
+<details>
+<summary>Ver solución</summary>
+
+a) **Error sistemático** → afecta la exactitud (siempre en la misma dirección)  
+b) **Error aleatorio** → afecta la precisión (causa variación impredecible)  
+c) **Error sistemático** → afecta la exactitud (siempre retrasa la medición)
+
+</details>
+
+---
+
+### Ejercicio 4
+**Si tus mediciones son precisas pero no exactas, ¿qué deberías revisar primero: el instrumento o tu técnica de medición?**
+
+<details>
+<summary>Ver solución</summary>
+
+Deberías revisar primero **el instrumento** (calibración).
+
+Si las mediciones son precisas (consistentes), tu técnica es buena. Pero si están alejadas del valor real, el problema es un **error sistemático**, típicamente causado por un instrumento mal calibrado o un factor no considerado en el método.
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Concepto | Descripción |
+|----------|-------------|
+| **Exactitud** | Qué tan cerca está la medición del valor real |
+| **Precisión** | Qué tan consistentes son las mediciones repetidas |
+| **Ideal** | Mediciones que sean precisas Y exactas |
+| **Objetivo** | Minimizar el margen de error |
+
+> - La **exactitud** mide qué tan **correcto** es un resultado.  
+> - La **precisión** mide qué tan **repetible** es.  
+> - En física, se busca que las mediciones sean **precisas y exactas** para garantizar resultados **confiables y verificables**.
+
+---

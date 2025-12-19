@@ -1,11 +1,27 @@
 # **Medición y Cantidades Físicas**
 
+La medición es el proceso fundamental para cuantificar las propiedades del mundo físico con precisión y rigor científico.
+
+---
+
+## 🎯 ¿Qué vas a aprender?
+
+- Qué significa medir
+- Qué es una cantidad física (magnitud física)
+- Las 7 magnitudes fundamentales del SI
+- Las magnitudes derivadas
+- El proceso de medición y sus instrumentos
+
+---
+
 ## ⚙️ **¿Qué es medir?**
 
 **Medir** consiste en comparar una propiedad de un objeto con una **unidad de referencia** para determinar **cuántas veces** dicha unidad está contenida en el objeto.
 
 > **Ejemplo:**  
-> Al decir que una mesa mide $2\,\mathrm{m}$, estamos comparando su longitud con la unidad “metro”.
+> Al decir que una mesa mide $2\,\mathrm{m}$, estamos comparando su longitud con la unidad "metro".
+
+---
 
 ## 📐 **¿Qué es una cantidad física (magnitud física)?**
 
@@ -25,13 +41,15 @@ $$
 
 ---
 
-## 🧮 **Magnitudes físicas**
+## 🧮 **Clasificación de las Magnitudes Físicas**
 
 Las magnitudes se clasifican en dos tipos principales:
 
+![Mapa conceptual de magnitudes físicas: fundamentales y derivadas](/images/mindmap/magnitudes-fisicas.svg)
+
 ---
 
-### 🔹 **Magnitudes básicas**
+### 🔹 **Magnitudes Fundamentales**
 
 No dependen de otras; son las fundamentales del **Sistema Internacional de Unidades (SI)**.
 
@@ -47,9 +65,9 @@ No dependen de otras; son las fundamentales del **Sistema Internacional de Unida
 
 ---
 
-### 🔹 **Magnitudes derivadas**
+### 🔸 **Magnitudes Derivadas**
 
-Surgen de combinar magnitudes básicas mediante operaciones matemáticas.
+Surgen de combinar magnitudes fundamentales mediante operaciones matemáticas.
 
 | **Magnitud derivada** | **Expresión** | **Unidad SI** | **Ejemplo** |
 |:------------------------|:---------------:|:---------------|:-------------|
@@ -87,8 +105,92 @@ Surgen de combinar magnitudes básicas mediante operaciones matemáticas.
 
 ---
 
-## 💡 **Conclusión**
+## 📝 Ejercicios de Práctica
+
+### Ejercicio 1
+**Clasifica las siguientes magnitudes como fundamentales (F) o derivadas (D):**
+
+a) Velocidad  
+b) Masa  
+c) Área  
+d) Tiempo  
+e) Densidad  
+
+<details>
+<summary>Ver solución</summary>
+
+a) **D** - Velocidad = longitud / tiempo  
+b) **F** - Magnitud fundamental del SI  
+c) **D** - Área = longitud × longitud  
+d) **F** - Magnitud fundamental del SI  
+e) **D** - Densidad = masa / volumen
+
+</details>
+
+---
+
+### Ejercicio 2
+**Un estudiante mide la longitud de una mesa y obtiene $1.25\,\mathrm{m}$. ¿Qué instrumento probablemente usó y por qué?**
+
+<details>
+<summary>Ver solución</summary>
+
+Probablemente usó una **cinta métrica** o **regla de un metro**, ya que el resultado tiene precisión de centímetros (dos decimales en metros). Un calibrador daría más decimales, y una regla de 30 cm requeriría múltiples mediciones.
+
+</details>
+
+---
+
+### Ejercicio 3
+**Expresa las siguientes magnitudes derivadas en términos de las magnitudes fundamentales (m, kg, s):**
+
+a) Velocidad  
+b) Aceleración  
+c) Fuerza  
+
+<details>
+<summary>Ver solución</summary>
+
+a) **Velocidad** = $\dfrac{\mathrm{m}}{\mathrm{s}}$ = m·s⁻¹  
+
+b) **Aceleración** = $\dfrac{\mathrm{m}}{\mathrm{s}^2}$ = m·s⁻²  
+
+c) **Fuerza** = masa × aceleración = $\mathrm{kg} \cdot \dfrac{\mathrm{m}}{\mathrm{s}^2}$ = kg·m·s⁻²
+
+</details>
+
+---
+
+### Ejercicio 4
+**¿Cuántas magnitudes fundamentales hay en el SI? Nómbralas.**
+
+<details>
+<summary>Ver solución</summary>
+
+Son **7 magnitudes fundamentales**:
+
+1. Longitud (metro)
+2. Masa (kilogramo)
+3. Tiempo (segundo)
+4. Temperatura (kelvin)
+5. Corriente eléctrica (amperio)
+6. Cantidad de sustancia (mol)
+7. Intensidad luminosa (candela)
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Concepto | Descripción |
+|----------|-------------|
+| **Medir** | Comparar con una unidad de referencia |
+| **Magnitud física** | Propiedad medible = número + unidad |
+| **Fundamentales (7)** | Longitud, masa, tiempo, temperatura, corriente, mol, candela |
+| **Derivadas** | Surgen de combinar las fundamentales (velocidad, densidad, fuerza...) |
 
 > Medir es **cuantificar propiedades del mundo físico** con base en **unidades estandarizadas**,  
 > lo que permite **comparar, analizar y reproducir** los fenómenos con rigor científico.
 
+---

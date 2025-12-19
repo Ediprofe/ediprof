@@ -1,0 +1,43 @@
+{
+    "tipo": "flowchart",
+    "estilo": "elegante",
+    "layout": "ciclo",
+    "titulo": "El Ciclo del Método Científico",
+    "pasos": [
+        {
+            "texto": "1. Observación",
+            "color": "#f59e0b",
+            "icono": "👁️"
+        },
+        {
+            "texto": "2. Pregunta",
+            "color": "#ef4444",
+            "icono": "❓"
+        },
+        {
+            "texto": "3. Hipótesis",
+            "color": "#a855f7",
+            "icono": "💡"
+        },
+        {
+            "texto": "4. Experimento",
+            "color": "#3b82f6",
+            "icono": "🧪"
+        },
+        {
+            "texto": "5. Análisis",
+            "color": "#10b981",
+            "icono": "📊"
+        },
+        {
+            "texto": "6. Conclusión",
+            "color": "#6366f1",
+            "icono": "✅"
+        },
+        {
+            "texto": "7. Comunicación",
+            "color": "#ec4899",
+            "icono": "📢"
+        }
+    ]
+}

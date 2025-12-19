@@ -1,0 +1,34 @@
+{
+    "tipo": "mindmap",
+    "estilo": "elegante",
+    "nodo_central": {
+        "texto": "FÍSICA",
+        "icono": "🔬"
+    },
+    "ramas": [
+        {
+            "texto": "Clásica",
+            "icono": "🏛️",
+            "color": "#3b82f6",
+            "hijos": [
+                "Mecánica",
+                "Termodinámica",
+                "Óptica",
+                "Acústica",
+                "Electromagnetismo"
+            ]
+        },
+        {
+            "texto": "Moderna",
+            "icono": "🚀",
+            "color": "#db2777",
+            "hijos": [
+                "Relatividad",
+                "Mecánica Cuántica",
+                "Atómica/Nuclear",
+                "Partículas",
+                "Cosmología"
+            ]
+        }
+    ]
+}
