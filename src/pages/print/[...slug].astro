@@ -1,0 +1,275 @@
+---
+/**
+ * /print/[...slug].astro
+ * 
+ * Página de impresión para generar PDFs profesionales.
+ * Renderiza el contenido de una lección o tema completo con estilos optimizados para PDF.
+ * 
+ * USO:
+ *   /print/fisica/introduccion-a-la-fisica/introduccion/la-fisica-y-sus-ramas
+ */
+import { getCollection } from 'astro:content';
+import { cleanSlug } from '../../utils/navigation-generator.js';
+
+export async function getStaticPaths() {
+  const allLessons: Array<{ lesson: any; materia: string; cleanFullSlug: string }> = [];
+  
+  const addLessons = (lessons: any[], materiaName: string) => {
+    lessons.forEach(lesson => {
+      const cleanFullSlug = `${materiaName}/${cleanSlug(lesson.slug)}`;
+      allLessons.push({ lesson, materia: materiaName, cleanFullSlug });
+    });
+  };
+  
+  try { addLessons(await getCollection('matematicas'), 'matematicas'); } catch (e) {}
+  try { addLessons(await getCollection('fisica'), 'fisica'); } catch (e) {}
+  try { addLessons(await getCollection('quimica'), 'quimica'); } catch (e) {}
+  try { addLessons(await getCollection('ciencias'), 'ciencias'); } catch (e) {}
+  
+  return allLessons.map(item => ({
+    params: { slug: item.cleanFullSlug },
+    props: { lesson: item.lesson, materia: item.materia }
+  }));
+}
+
+interface Props {
+  lesson: any;
+  materia: string;
+}
+
+const { lesson, materia } = Astro.props;
+const { Content, headings } = await lesson.render();
+
+// Extraer título
+const firstH1 = headings.find((h: any) => h.depth === 1);
+const title = lesson.data?.title || firstH1?.text?.replace(/\*\*/g, '').trim() || 'Lección';
+
+// Colores por materia
+const colors: Record<string, { primary: string; accent: string }> = {
+  matematicas: { primary: '#1e40af', accent: '#3b82f6' },
+  fisica: { primary: '#0f766e', accent: '#14b8a6' },
+  quimica: { primary: '#9333ea', accent: '#a855f7' },
+  ciencias: { primary: '#166534', accent: '#22c55e' }
+};
+const color = colors[materia] || colors.matematicas;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title} - Ediprofe</title>
+  
+  <!-- KaTeX para matemáticas -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false}
+      ]
+    });"></script>
+  
+  <style define:vars={{ primaryColor: color.primary, accentColor: color.accent }}>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    @page {
+      size: letter;
+      margin: 0.75in;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 11pt;
+      line-height: 1.6;
+      color: #1e293b;
+      background: white;
+      padding: 0;
+    }
+    
+    /* Header de página */
+    .print-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--primaryColor);
+      margin-bottom: 24px;
+    }
+    
+    .print-header .logo {
+      font-size: 14pt;
+      font-weight: 600;
+      color: var(--primaryColor);
+    }
+    
+    .print-header .materia {
+      font-size: 11pt;
+      color: #64748b;
+      text-transform: capitalize;
+    }
+    
+    /* Contenido principal */
+    .print-content {
+      max-width: 100%;
+    }
+    
+    /* Títulos */
+    .print-content :global(h1) {
+      font-size: 22pt;
+      font-weight: 700;
+      color: var(--primaryColor);
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 3px solid var(--accentColor);
+    }
+    
+    .print-content :global(h2) {
+      font-size: 16pt;
+      font-weight: 600;
+      color: var(--primaryColor);
+      margin-top: 24px;
+      margin-bottom: 12px;
+    }
+    
+    .print-content :global(h3) {
+      font-size: 13pt;
+      font-weight: 600;
+      color: #334155;
+      margin-top: 16px;
+      margin-bottom: 8px;
+    }
+    
+    /* Párrafos */
+    .print-content :global(p) {
+      margin-bottom: 12px;
+      text-align: justify;
+    }
+    
+    /* Listas */
+    .print-content :global(ul),
+    .print-content :global(ol) {
+      margin-left: 24px;
+      margin-bottom: 12px;
+    }
+    
+    .print-content :global(li) {
+      margin-bottom: 6px;
+    }
+    
+    /* Imágenes */
+    .print-content :global(img) {
+      max-width: 100%;
+      height: auto;
+      margin: 16px auto;
+      display: block;
+    }
+    
+    /* Tablas */
+    .print-content :global(table) {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 10pt;
+    }
+    
+    .print-content :global(th),
+    .print-content :global(td) {
+      border: 1px solid #cbd5e1;
+      padding: 8px 10px;
+      text-align: left;
+    }
+    
+    .print-content :global(th) {
+      background: #f1f5f9;
+      font-weight: 600;
+    }
+    
+    /* Blockquotes */
+    .print-content :global(blockquote) {
+      background: #f8fafc;
+      border-left: 4px solid var(--accentColor);
+      padding: 12px 16px;
+      margin: 16px 0;
+      font-style: italic;
+    }
+    
+    /* Código */
+    .print-content :global(code) {
+      background: #f1f5f9;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: 'Fira Code', monospace;
+      font-size: 10pt;
+    }
+    
+    .print-content :global(pre) {
+      background: #1e293b;
+      color: #e2e8f0;
+      padding: 12px 16px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 16px 0;
+      font-size: 9pt;
+    }
+    
+    .print-content :global(pre code) {
+      background: none;
+      padding: 0;
+      color: inherit;
+    }
+    
+    /* Líneas horizontales */
+    .print-content :global(hr) {
+      border: none;
+      border-top: 1px solid #e2e8f0;
+      margin: 24px 0;
+    }
+    
+    /* Footer */
+    .print-footer {
+      margin-top: 32px;
+      padding-top: 12px;
+      border-top: 1px solid #e2e8f0;
+      text-align: center;
+      font-size: 9pt;
+      color: #64748b;
+    }
+    
+    /* Ocultar elementos interactivos */
+    .print-content :global(details),
+    .print-content :global(.interactive),
+    .print-content :global(button) {
+      display: none !important;
+    }
+    
+    /* Math blocks */
+    .print-content :global(.katex-display) {
+      margin: 16px 0;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <header class="print-header">
+    <div class="logo">📚 Ediprofe.com</div>
+    <div class="materia">{materia}</div>
+  </header>
+  
+  <main class="print-content">
+    <Content />
+  </main>
+  
+  <footer class="print-footer">
+    Ediprofe.com - Educación de calidad para todos
+  </footer>
+</body>
+</html>

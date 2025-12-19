@@ -1,0 +1,342 @@
+---
+/**
+ * /print-tema/[...slug].astro
+ * 
+ * Página que combina TODAS las lecciones de un tema en una sola página para PDF.
+ * Incluye portada, índice y cada lección separada.
+ * 
+ * USO:
+ *   /print-tema/fisica/introduccion-a-la-fisica/introduccion
+ */
+import { getCollection } from 'astro:content';
+import { cleanSlug } from '../../utils/navigation-generator.js';
+
+export async function getStaticPaths() {
+  const temas = new Map<string, { lessons: any[], materia: string, cleanTemaSlug: string }>();
+  
+  const processCollection = async (materiaName: string) => {
+    try {
+      const lessons = await getCollection(materiaName);
+      
+      lessons.forEach(lesson => {
+        const parts = lesson.slug.split('/');
+        if (parts.length >= 3) {
+          const temaSlug = `${materiaName}/${parts[0]}/${parts[1]}`;
+          const cleanTemaSlug = `${materiaName}/${cleanSlug(parts[0])}/${cleanSlug(parts[1])}`;
+          
+          if (!temas.has(cleanTemaSlug)) {
+            temas.set(cleanTemaSlug, { 
+              lessons: [], 
+              materia: materiaName,
+              cleanTemaSlug 
+            });
+          }
+          temas.get(cleanTemaSlug)!.lessons.push(lesson);
+        }
+      });
+    } catch (e) {}
+  };
+  
+  await processCollection('matematicas');
+  await processCollection('fisica');
+  await processCollection('quimica');
+  await processCollection('ciencias');
+  
+  // Ordenar lecciones dentro de cada tema
+  temas.forEach(tema => {
+    tema.lessons.sort((a, b) => a.slug.localeCompare(b.slug));
+  });
+  
+  return Array.from(temas.entries()).map(([slug, data]) => ({
+    params: { slug },
+    props: { 
+      lessons: data.lessons, 
+      materia: data.materia,
+      temaSlug: slug
+    }
+  }));
+}
+
+interface Props {
+  lessons: any[];
+  materia: string;
+  temaSlug: string;
+}
+
+const { lessons, materia, temaSlug } = Astro.props;
+
+// Renderizar todas las lecciones
+const renderedLessons = await Promise.all(
+  lessons.map(async (lesson) => {
+    const { Content, headings } = await lesson.render();
+    const firstH1 = headings.find((h: any) => h.depth === 1);
+    const title = lesson.data?.title || firstH1?.text?.replace(/\*\*/g, '').trim() || 'Lección';
+    return { lesson, Content, title, headings };
+  })
+);
+
+// Extraer nombre del tema
+const temaParts = temaSlug.split('/');
+const temaName = temaParts[temaParts.length - 1]
+  .split('-')
+  .map(w => w.charAt(0).toUpperCase() + w.slice(1))
+  .join(' ');
+
+const materiaName = materia.charAt(0).toUpperCase() + materia.slice(1);
+
+// Colores por materia
+const colors: Record<string, { primary: string; accent: string; light: string }> = {
+  matematicas: { primary: '#1e40af', accent: '#3b82f6', light: '#dbeafe' },
+  fisica: { primary: '#0f766e', accent: '#14b8a6', light: '#ccfbf1' },
+  quimica: { primary: '#9333ea', accent: '#a855f7', light: '#f3e8ff' },
+  ciencias: { primary: '#166534', accent: '#22c55e', light: '#dcfce7' }
+};
+const color = colors[materia] || colors.matematicas;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{temaName} - Ediprofe</title>
+  
+  <!-- KaTeX -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false}
+      ]
+    });"></script>
+  
+  <style define:vars={{ 
+    primaryColor: color.primary, 
+    accentColor: color.accent,
+    lightColor: color.light 
+  }}>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    @page { size: letter; margin: 0.6in; }
+    
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 10pt;
+      line-height: 1.5;
+      color: #1e293b;
+      background: white;
+    }
+    
+    /* ═══════════════════════════════════════════════════════ */
+    /* PORTADA */
+    /* ═══════════════════════════════════════════════════════ */
+    .cover {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, var(--primaryColor) 0%, var(--accentColor) 100%);
+      color: white;
+      page-break-after: always;
+    }
+    
+    .cover .logo { font-size: 18pt; margin-bottom: 40px; opacity: 0.9; }
+    .cover h1 { font-size: 36pt; font-weight: 700; margin-bottom: 16px; }
+    .cover .materia { font-size: 16pt; opacity: 0.9; margin-bottom: 60px; }
+    .cover .footer { position: absolute; bottom: 40px; font-size: 11pt; opacity: 0.8; }
+    
+    /* ═══════════════════════════════════════════════════════ */
+    /* ÍNDICE */
+    /* ═══════════════════════════════════════════════════════ */
+    .toc {
+      page-break-after: always;
+      padding: 40px 20px;
+    }
+    
+    .toc h2 {
+      font-size: 20pt;
+      color: var(--primaryColor);
+      margin-bottom: 24px;
+      padding-bottom: 8px;
+      border-bottom: 3px solid var(--accentColor);
+    }
+    
+    .toc-list {
+      list-style: none;
+      counter-reset: toc-counter;
+    }
+    
+    .toc-list li {
+      counter-increment: toc-counter;
+      padding: 12px 0;
+      border-bottom: 1px solid #e2e8f0;
+      font-size: 12pt;
+    }
+    
+    .toc-list li::before {
+      content: counter(toc-counter) ". ";
+      font-weight: 600;
+      color: var(--primaryColor);
+    }
+    
+    /* ═══════════════════════════════════════════════════════ */
+    /* LECCIONES */
+    /* ═══════════════════════════════════════════════════════ */
+    .lesson {
+      page-break-before: always;
+      padding: 20px 0;
+    }
+    
+    .lesson-header {
+      background: var(--lightColor);
+      padding: 16px 20px;
+      margin: -20px -20px 24px -20px;
+      border-bottom: 3px solid var(--accentColor);
+    }
+    
+    .lesson-header .lesson-number {
+      font-size: 11pt;
+      color: var(--primaryColor);
+      font-weight: 500;
+    }
+    
+    .lesson-content :global(h1) {
+      font-size: 18pt;
+      font-weight: 700;
+      color: var(--primaryColor);
+      margin-bottom: 16px;
+    }
+    
+    .lesson-content :global(h2) {
+      font-size: 14pt;
+      font-weight: 600;
+      color: var(--primaryColor);
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+    
+    .lesson-content :global(h3) {
+      font-size: 12pt;
+      font-weight: 600;
+      color: #334155;
+      margin-top: 14px;
+      margin-bottom: 8px;
+    }
+    
+    .lesson-content :global(p) {
+      margin-bottom: 10px;
+      text-align: justify;
+    }
+    
+    .lesson-content :global(ul),
+    .lesson-content :global(ol) {
+      margin-left: 20px;
+      margin-bottom: 10px;
+    }
+    
+    .lesson-content :global(li) { margin-bottom: 4px; }
+    
+    .lesson-content :global(img) {
+      max-width: 100%;
+      height: auto;
+      margin: 12px auto;
+      display: block;
+    }
+    
+    .lesson-content :global(table) {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0;
+      font-size: 9pt;
+    }
+    
+    .lesson-content :global(th),
+    .lesson-content :global(td) {
+      border: 1px solid #cbd5e1;
+      padding: 6px 8px;
+      text-align: left;
+    }
+    
+    .lesson-content :global(th) {
+      background: #f1f5f9;
+      font-weight: 600;
+    }
+    
+    .lesson-content :global(blockquote) {
+      background: #f8fafc;
+      border-left: 3px solid var(--accentColor);
+      padding: 10px 14px;
+      margin: 12px 0;
+      font-style: italic;
+    }
+    
+    .lesson-content :global(code) {
+      background: #f1f5f9;
+      padding: 1px 4px;
+      border-radius: 3px;
+      font-size: 9pt;
+    }
+    
+    .lesson-content :global(hr) {
+      border: none;
+      border-top: 1px solid #e2e8f0;
+      margin: 16px 0;
+    }
+    
+    /* Ocultar elementos interactivos */
+    .lesson-content :global(details),
+    .lesson-content :global(.interactive) {
+      display: none !important;
+    }
+    
+    /* Footer de página */
+    .page-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 8pt;
+      color: #94a3b8;
+      padding: 8px;
+    }
+  </style>
+</head>
+<body>
+  <!-- PORTADA -->
+  <div class="cover">
+    <div class="logo">📚 Ediprofe.com</div>
+    <h1>{temaName}</h1>
+    <div class="materia">{materiaName}</div>
+    <div class="footer">Guía Didáctica • {renderedLessons.length} lecciones</div>
+  </div>
+  
+  <!-- ÍNDICE -->
+  <div class="toc">
+    <h2>📋 Contenido</h2>
+    <ol class="toc-list">
+      {renderedLessons.map(({ title }) => (
+        <li>{title}</li>
+      ))}
+    </ol>
+  </div>
+  
+  <!-- LECCIONES -->
+  {renderedLessons.map(({ Content, title }, index) => (
+    <article class="lesson">
+      <div class="lesson-header">
+        <span class="lesson-number">Lección {index + 1} de {renderedLessons.length}</span>
+      </div>
+      <div class="lesson-content">
+        <Content />
+      </div>
+    </article>
+  ))}
+</body>
+</html>

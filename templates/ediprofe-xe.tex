@@ -1,0 +1,92 @@
+\documentclass[11pt,letterpaper]{article}
+
+% ═══════════════════════════════════════════════════════════════════
+% EDIPROFE - Template para XeLaTeX (UTF-8 nativo)
+% ═══════════════════════════════════════════════════════════════════
+
+% Fuentes y codificación UTF-8 nativo
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\setmonofont{Courier New}
+
+% Idioma
+\usepackage{polyglossia}
+\setmainlanguage{spanish}
+
+% Geometría de página
+\usepackage[
+    top=1in,
+    bottom=1in,
+    left=1in,
+    right=1in
+]{geometry}
+
+% Colores
+\usepackage{xcolor}
+\definecolor{primary}{HTML}{1e40af}
+\definecolor{secondary}{HTML}{3b82f6}
+\definecolor{muted}{HTML}{64748b}
+
+% Matemáticas
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{unicode-math}
+
+% Gráficos
+\usepackage{graphicx}
+\usepackage{float}
+
+% Tablas
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+
+% Links
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primary,
+    urlcolor=secondary
+}
+
+% Headers y footers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\color{muted}Ediprofe.com}
+\fancyhead[R]{\small\color{muted}Guía Didáctica}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.5pt}
+
+% Títulos
+\usepackage{titlesec}
+\titleformat{\section}{\Large\bfseries\color{primary}}{\thesection.}{0.5em}{}
+\titleformat{\subsection}{\large\bfseries\color{primary}}{\thesubsection.}{0.5em}{}
+
+% Espaciado
+\usepackage{parskip}
+\setlength{\parskip}{0.5em}
+\setlength{\parindent}{0pt}
+
+% Listas
+\usepackage{enumitem}
+\setlist{itemsep=0.3em}
+
+% ═══════════════════════════════════════════════════════════════════
+
+$if(title)$
+\title{\vspace{-1cm}{\Huge\bfseries\color{primary}$title$}\vspace{0.3cm}}
+$endif$
+\author{}
+\date{}
+
+\begin{document}
+
+$if(title)$
+\maketitle
+\thispagestyle{fancy}
+$endif$
+
+$body$
+
+\end{document}
