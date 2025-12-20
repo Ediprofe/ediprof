@@ -29,7 +29,7 @@ LEE: CLAUDE.md (secciones relevantes según el tipo de tarea)
 | Triángulos | `.agent/workflows/geometry-exact.md` |
 | Geometría analítica | `.agent/workflows/cartesian-spec.md` |
 | Gráficas de funciones | `.agent/workflows/graphspec.md` |
-| Diagramas conceptuales | `.agent/workflows/roughjs.md` |
+| Diagramas conceptuales | PNG de tablet (ver CLAUDE.md) |
 | Química (tabla periódica) | `.agent/workflows/chemistry-spec.md` |
 | Contenido educativo | `.agent/workflows/content-generation.md` |
 

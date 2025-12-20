@@ -14,7 +14,7 @@ Este documento define el proceso completo para generar lecciones educativas de a
 |-------|--------|-------------|------------|
 | 1 | Planeador Docente | Agente IA | Árbol de carpetas aprobado |
 | 2 | Generador de Lecciones | Agente IA | Lecciones con ASCII art para ilustraciones |
-| 3 | Generador de Ilustraciones | Agente IA | SVGs/Rough.js a partir del ASCII art |
+| 3 | Generador de Ilustraciones | Agente IA | SVGs a partir del ASCII art |
 | 4 | Evaluador Pedagógico | Agente IA | Lecciones corregidas + ilustraciones ajustadas |
 | 5 | Evaluación Final | Humano | Aprobación definitiva |
 
@@ -77,7 +77,7 @@ Generar MASIVAMENTE todas las lecciones del árbol aprobado.
 
 - Una lección por archivo .md
 - Cada lección = **LIBRETO completo** para el mejor profesor
-- **SIN gráficos SVG/Rough.js** (se agregan en Etapa 3)
+- **SIN gráficos SVG** (se agregan en Etapa 3)
 - **Las ilustraciones se describen en ASCII art** para que el agente de Etapa 3 las convierta
 - Tablas y LaTeX SÍ permitidos
 

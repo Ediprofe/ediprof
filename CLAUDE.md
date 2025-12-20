@@ -110,7 +110,7 @@ MATERIA (matematicas, fisica, quimica, ciencias)
 |-------|--------|-------------|------------|
 | 1 | Planeador Docente | Agente IA | Árbol de carpetas aprobado |
 | 2 | Generador de Lecciones | Agente IA | Lecciones con **ASCII art** para ilustraciones |
-| 3 | Generador de Ilustraciones | Agente IA | SVGs/Rough.js a partir del ASCII art |
+| 3 | Generador de Ilustraciones | Agente IA | SVGs a partir del ASCII art |
 | 4 | Evaluador Pedagógico | Agente IA | Lecciones corregidas + ilustraciones ajustadas |
 | 5 | Evaluación Final | Humano | Aprobación definitiva |
 
@@ -152,7 +152,7 @@ CAPÍTULO: [Nombre]
 **Reglas:**
 - Una lección por archivo .md
 - Estructura: Intro motivadora → Conceptos con ejemplos → Práctica
-- **SIN gráficos SVG/Rough.js** (se agregan en Etapa 3)
+- **SIN gráficos SVG** (se agregan en Etapa 3)
 - **Las ilustraciones se describen en ASCII art**
 - Tablas y LaTeX SÍ permitidos
 
@@ -162,7 +162,7 @@ CAPÍTULO: [Nombre]
 
 ## ETAPA 3: GENERADOR DE ILUSTRACIONES 🎨
 
-**Objetivo:** Convertir ASCII art en SVGs/Rough.js de alta calidad.
+**Objetivo:** Convertir ASCII art en SVGs de alta calidad.
 
 **Qué hacer:**
 1. Identificar todo ASCII art en las lecciones
@@ -828,44 +828,34 @@ python3 scripts/mindmap/mindmap_renderer.py \
 
 ## 🌳 Árbol de Decisión
 
-> ⚠️ **TRES TECNOLOGÍAS PARA ILUSTRACIONES: SVG, Rough.js y JSXGraph**
+> ⚠️ **DOS TIPOS DE ILUSTRACIONES: SVG generado + PNG de tablet**
 
 ```
 ¿QUÉ TIPO DE ILUSTRACIÓN NECESITO?
 │
-├─── 📐 ¿Es GEOMETRÍA con propiedades exactas?
-│    │   (circunferencias, triángulos, geometría analítica)
+├─── 📐 ¿Es GEOMETRÍA o GRÁFICA con propiedades exactas?
+│    │   (circunferencias, triángulos, geometría analítica, funciones)
 │    │
-│    └─── SÍ → SVG ESTÁTICO (Python/SymPy → SVG)
+│    └─── SÍ → SVG GENERADO (Python/SymPy → SVG)
 │         • Circunferencias: radio, cuerda, arco, sector
 │         • Triángulos: puntos notables, alturas, medianas
 │         • Geometría analítica: plano cartesiano, rectas
 │         • Gráficas de funciones: parábolas, rectas, exponenciales
+│         • Química: tabla periódica, tendencias
 │         📁 Ver: .agent/workflows/circle-spec.md
 │         📁 Ver: .agent/workflows/geometry-exact.md
 │         📁 Ver: .agent/workflows/cartesian-spec.md
 │
-├─── 🎮 ¿Necesita INTERACTIVIDAD (arrastrar, animar)?
-│    │   (simulaciones, demostraciones manipulables)
-│    │
-│    └─── SÍ → JSXGRAPH (inline en .md)
-│         • Vectores interactivos (arrastrar para ver cambios)
-│         • Simulaciones de física (MRU, MRUA, caída libre)
-│         • Geometría dinámica (mover puntos, ver propiedades)
-│         • Demostraciones de teoremas
-│         📁 Ver: documentación JSXGraph
-│
 ├─── ✏️ ¿Es un DIAGRAMA ilustrativo/conceptual?
-│    │   (situaciones físicas estáticas, modelos, procesos)
+│    │   (situaciones físicas, modelos, procesos, diagramas)
 │    │
-│    └─── SÍ → ROUGH.JS (inline en .md)
+│    └─── SÍ → PNG DE TABLET (dibujo manual → .mdx)
 │         • Situaciones físicas (bloques, poleas, planos)
 │         • Modelos atómicos, partículas, estados de materia
 │         • Equipos de laboratorio, procesos químicos
 │         • Mapas conceptuales, organigramas, ciclos
-│         • Transformaciones geométricas (traslación, rotación)
-│         • Fracciones visuales (círculos divididos)
-│         📁 Ver: .agent/workflows/roughjs.md
+│         • Transformaciones geométricas ilustrativas
+│         📁 Ver: Sección "Workflow: Imágenes de Tablet"
 │
 └─── 📝 ¿Es solo una FÓRMULA?
      └─── SÍ → LATEX (inline en .md)
@@ -876,36 +866,35 @@ python3 scripts/mindmap/mindmap_renderer.py \
 
 | Tecnología | Uso | Tamaño JS |
 |------------|-----|-----------|
-| **SVG estático** | Geometría exacta, gráficas | **0 KB** ⭐ |
-| **Rough.js** | Diagramas conceptuales | ~50KB |
-| **JSXGraph** | Simulaciones interactivas | ~600KB |
+| **SVG generado** | Geometría exacta, gráficas, química | **0 KB** ⭐ |
+| **PNG de tablet** | Diagramas conceptuales, ilustraciones | **0 KB** ⭐ |
+| ~~Rough.js~~ | ❌ ELIMINADO | ~~50KB~~ |
+| ~~JSXGraph~~ | ❌ ELIMINADO | ~~600KB~~ |
 | ~~ECharts~~ | ❌ ELIMINADO | ~~1MB~~ |
-| ~~Chart.js~~ | ❌ ELIMINADO | ~~200KB~~ |
-| ~~Three.js~~ | ❌ ELIMINADO | ~~500KB~~ |
 
 ---
 
 ## Matriz de Decisión Rápida
 
-| Necesito... | Uso... | Tipo |
-|-------------|--------|------|
-| Gráfica de función $f(x)$ | **SVG** (CartesianSpec) | Estático |
-| Radio, cuerda, arco de círculo | **SVG** (CircleSpec) | Estático |
-| Ángulo inscrito/central | **SVG** (CircleSpec) | Estático |
-| Baricentro de triángulo | **SVG** (GeometrySpec) | Estático |
-| Circuncentro exacto | **SVG** (GeometrySpec) | Estático |
-| Plano cartesiano con puntos | **SVG** (CartesianSpec) | Estático |
-| Distancia entre puntos | **SVG** (CartesianSpec) | Estático |
-| Punto medio, división segmento | **SVG** (CartesianSpec) | Estático |
-| Área de polígonos (coordenadas) | **SVG** (CartesianSpec) | Estático |
-| Traslación de figura | **Rough.js** | Dinámico |
-| Rotación/Reflexión | **Rough.js** | Dinámico |
-| Homotecia (ampliación) | **Rough.js** | Dinámico |
-| Bloque en plano inclinado | **Rough.js** | Dinámico |
-| Modelo atómico de Bohr | **Rough.js** | Dinámico |
-| Fracción 3/4 visual | **Rough.js** | Dinámico |
-| Estados de la materia | **Rough.js** | Dinámico |
-| Equipos de laboratorio | **Rough.js** | Dinámico |
+| Necesito... | Uso... |
+|-------------|--------|
+| Gráfica de función $f(x)$ | **SVG** (CartesianSpec) |
+| Radio, cuerda, arco de círculo | **SVG** (CircleSpec) |
+| Ángulo inscrito/central | **SVG** (CircleSpec) |
+| Baricentro de triángulo | **SVG** (GeometrySpec) |
+| Circuncentro exacto | **SVG** (GeometrySpec) |
+| Plano cartesiano con puntos | **SVG** (CartesianSpec) |
+| Distancia entre puntos | **SVG** (CartesianSpec) |
+| Punto medio, división segmento | **SVG** (CartesianSpec) |
+| Área de polígonos (coordenadas) | **SVG** (CartesianSpec) |
+| Tabla periódica | **SVG** (ChemistrySpec) |
+| Tendencias periódicas | **SVG** (ChemistrySpec) |
+| Traslación de figura | **PNG tablet** |
+| Rotación/Reflexión | **PNG tablet** |
+| Bloque en plano inclinado | **PNG tablet** |
+| Modelo atómico de Bohr | **PNG tablet** |
+| Estados de la materia | **PNG tablet** |
+| Equipos de laboratorio | **PNG tablet** |
 
 ### ⚠️ Cuándo usar SymPy (para SVGs)
 
@@ -914,10 +903,7 @@ python3 scripts/mindmap/mindmap_renderer.py \
 | Puntos notables de triángulo | ✅ SÍ | Cálculos de intersección exactos |
 | Tangentes a circunferencia | ✅ SÍ | Cálculos trigonométricos exactos |
 | Gráficas de funciones | ✅ SÍ | Curvas matemáticamente exactas |
-| Traslación de figura | ❌ NO | Fórmula directa → Rough.js |
-| Rotación de figura | ❌ NO | Fórmula directa → Rough.js |
-| Reflexión | ❌ NO | Fórmula directa → Rough.js |
-| Homotecia | ❌ NO | Fórmula directa → Rough.js |
+| Diagramas conceptuales | ❌ NO | Usar PNG de tablet |
 
 ---
 
@@ -948,13 +934,13 @@ python3 scripts/mindmap/mindmap_renderer.py \
 ### Para Transformaciones Geométricas
 
 ```
-✅ RECOMENDADO: Rough.js inline
-   • Mostrar figura ORIGINAL (azul) e IMAGEN (verde)
+✅ RECOMENDADO: PNG de tablet
+   • Dibujar figura ORIGINAL (azul) e IMAGEN (verde)
    • Incluir correspondencia de puntos: A → A', B → B'
    • Mostrar elemento de transformación: vector, centro, eje
-   • SymPy NO es necesario (fórmulas directas)
+   • Guardar como t-nombre.png en public/images/
 
-📁 Referencia: .agent/workflows/roughjs.md
+📁 Referencia: Sección "Workflow: Imágenes de Tablet"
 ```
 
 ### ❌ PROHIBIDO en Geometría
@@ -1010,22 +996,22 @@ label_y = O.y + 45 * math.sin(bisector_angle)
    - La etiqueta es legible y no se superpone con otros elementos
    - El ángulo se ve como lo dibujaría un profesor en el pizarrón
 
-### Para Rough.js (Diagramas Conceptuales)
+### Para Diagramas Conceptuales (PNG de Tablet)
 
 ```
 ✅ SIEMPRE:
-   • Usar patrón ES module: import rough from 'https://...'
-   • Usar wrapper con fondo y bordes redondeados
-   • ID únicos: rough-leccion-numero
-   • CENTRAR contenedores: margin: 0 auto
-   • Canvas responsive: width="800" + style="width: 100%"
+   • Dibujar en tablet y exportar como PNG
+   • Nombrar con prefijo t-: t-nombre-descriptivo.png
+   • Guardar en: public/images/{materia}/t-nombre.png
+   • Convertir archivo .md → .mdx
+   • Usar componente <Image> de Astro
 
 ❌ NUNCA:
-   • Usar Rough.js para geometría que requiere exactitud matemática
-   • Contenedores con max-width sin centrar
+   • Usar código inline para diagramas conceptuales
+   • Olvidar format="webp" en el componente Image
 ```
 
-📁 Referencia: .agent/workflows/roughjs.md
+📁 Referencia: Sección "Workflow: Imágenes de Tablet"
 
 ---
 
@@ -1213,8 +1199,8 @@ Solo usar `max-width` cuando el SVG es pequeño y no debe crecer demasiado:
 ### 1. Markdown Nativo
 Blockquotes (`>`), tablas, listas, LaTeX, enlaces
 
-### 2. Canvas (Rough.js)
-Controla sus propios colores
+### 2. Imágenes de Tablet (PNG/WebP)
+Se optimizan automáticamente con Astro Image
 
 ### 3. Tarjetas con Fondos OSCUROS
 ```html
@@ -1320,7 +1306,6 @@ bash scripts/verify-svg-rendering.sh
 | `.agent/workflows/cartesian-spec.md` | CartesianSpec: geometría analítica |
 | `.agent/workflows/chemistry-spec.md` | **ChemistrySpec: tabla periódica, tendencias** |
 | `.agent/workflows/graphspec.md` | Gráficas de funciones |
-| `.agent/workflows/roughjs.md` | Diagramas ilustrativos, transformaciones |
 | `.agent/workflows/illustration-decision.md` | Árbol de decisión expandido |
 
 ---
@@ -1833,16 +1818,16 @@ python3 scripts/chemistry/trend_renderer.py \
 - `afinidad_electronica` - AE (↑ horizontal, ↓ vertical)
 - `electronegatividad` - EN (↑ horizontal, ↓ vertical)
 
-## Cuándo Usar Química vs Rough.js
+## Cuándo Usar SVG vs PNG de Tablet
 
 | Tipo de ilustración | Tecnología |
 |---------------------|------------|
-| Tabla periódica | **ChemistrySpec** |
-| Tendencias periódicas | **ChemistrySpec** |
-| Niveles de energía | **ChemistrySpec** (crear renderer) |
-| Estructuras de Lewis | **Rough.js** |
-| Diagramas de procesos | **Rough.js** |
-| Enlace iónico/covalente | **Rough.js** |
+| Tabla periódica | **SVG** (ChemistrySpec) |
+| Tendencias periódicas | **SVG** (ChemistrySpec) |
+| Niveles de energía | **SVG** (crear renderer) |
+| Estructuras de Lewis | **PNG tablet** |
+| Diagramas de procesos | **PNG tablet** |
+| Enlace iónico/covalente | **PNG tablet** |
 
 ---
 
@@ -1861,7 +1846,7 @@ PREGUNTA: ¿El tipo de ilustración que necesito ya tiene renderer?
 ├── Tabla periódica → chemistry/periodic_table_renderer.py ✅
 ├── Tendencias periódicas → chemistry/trend_renderer.py ✅
 ├── Gráficas de funciones → GraphSpec (inline) ✅
-├── Diagramas conceptuales → Rough.js (inline) ✅
+├── Diagramas conceptuales → PNG de tablet (.mdx) ✅
 │
 └── ¿NO existe? → Seguir esta guía para CREAR uno nuevo
 ```

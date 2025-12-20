@@ -1,11 +1,11 @@
 ---
-description: Árbol de decisión para elegir tecnología de ilustración (SOLO Rough.js y SVG)
+description: Árbol de decisión para elegir tecnología de ilustración (SVG generado + PNG de tablet)
 globs: ["src/content/**/*.md"]
 ---
 
 # 🌳 Workflow: Decisión de Ilustraciones
 
-> ⚠️ **SOLO DOS TECNOLOGÍAS: SVG estático y Rough.js**
+> ⚠️ **DOS TIPOS DE ILUSTRACIONES: SVG generado + PNG de tablet**
 
 Este documento ayuda a elegir la **tecnología correcta** para cada tipo de ilustración.
 
@@ -15,8 +15,8 @@ Este documento ayuda a elegir la **tecnología correcta** para cada tipo de ilus
 
 | Tecnología | Uso | JS |
 |------------|-----|-----|
-| **SVG estático** | Geometría exacta, gráficas de funciones | **0 KB** ⭐ |
-| **Rough.js** | Diagramas conceptuales, situaciones físicas | ~50KB |
+| **SVG generado** | Geometría exacta, gráficas de funciones, química | **0 KB** ⭐ |
+| **PNG de tablet** | Diagramas conceptuales, situaciones físicas | **0 KB** ⭐ |
 
 ---
 
@@ -28,7 +28,7 @@ Este documento ayuda a elegir la **tecnología correcta** para cada tipo de ilus
 ├─── 📐 ¿Es GEOMETRÍA con propiedades exactas?
 │    │   (circunferencias, triángulos, geometría analítica)
 │    │
-│    └─── SÍ → SVG ESTÁTICO (Python/SymPy → SVG)
+│    └─── SÍ → SVG GENERADO (Python/SymPy → SVG)
 │         • Circunferencias: radio, cuerda, arco, sector
 │         • Triángulos: puntos notables, alturas, medianas
 │         • Geometría analítica: plano cartesiano, rectas
@@ -37,23 +37,29 @@ Este documento ayuda a elegir la **tecnología correcta** para cada tipo de ilus
 ├─── 📈 ¿Es una GRÁFICA de funciones?
 │    │   (sin, cos, parábolas, exponenciales, rectas)
 │    │
-│    └─── SÍ → SVG ESTÁTICO (Python/SymPy → SVG)
+│    └─── SÍ → SVG GENERADO (Python/SymPy → SVG)
 │         • Funciones trigonométricas
 │         • Funciones lineales y cuadráticas
 │         • Funciones exponenciales y logarítmicas
 │         📁 Ver: cartesian-spec.md, graphspec.md
 │
+├─── ⚗️ ¿Es QUÍMICA (tabla periódica, tendencias)?
+│    │
+│    └─── SÍ → SVG GENERADO (ChemistrySpec → SVG)
+│         • Tabla periódica
+│         • Tendencias periódicas
+│         📁 Ver: chemistry-spec.md
+│
 ├─── ✏️ ¿Es un DIAGRAMA ilustrativo/conceptual?
 │    │   (situaciones físicas, modelos, procesos)
 │    │
-│    └─── SÍ → ROUGH.JS (inline en .md)
+│    └─── SÍ → PNG DE TABLET (dibujo manual → .mdx)
 │         • Situaciones físicas (bloques, poleas, planos)
 │         • Modelos atómicos, partículas, estados de materia
 │         • Equipos de laboratorio, procesos químicos
 │         • Mapas conceptuales, organigramas, ciclos
-│         • Transformaciones geométricas (traslación, rotación)
-│         • Fracciones visuales (círculos divididos)
-│         📁 Ver: roughjs.md
+│         • Transformaciones geométricas ilustrativas
+│         📁 Ver: CLAUDE.md sección "Workflow: Imágenes de Tablet"
 │
 └─── 📝 ¿Es solo una FÓRMULA?
      └─── SÍ → LATEX (inline en .md)
@@ -73,9 +79,9 @@ Este documento ayuda a elegir la **tecnología correcta** para cada tipo de ilus
 | Gráfica de parábola $y = x^2$ | **SVG** (CartesianSpec) |
 | Baricentro de triángulo | **SVG** (GeometrySpec) |
 | Circuncentro exacto | **SVG** (CircleSpec) |
-| Fracción 3/4 visual | **Rough.js** |
-| Mapa conceptual de tipos de números | **Rough.js** |
-| Transformación geométrica | **Rough.js** |
+| Fracción 3/4 visual | **PNG tablet** |
+| Mapa conceptual de tipos de números | **PNG tablet** |
+| Transformación geométrica | **PNG tablet** |
 
 ### 🚀 FÍSICA
 
@@ -83,29 +89,30 @@ Este documento ayuda a elegir la **tecnología correcta** para cada tipo de ilus
 |-----------|------------|
 | Gráfica posición vs tiempo | **SVG** (CartesianSpec) |
 | Gráfica velocidad vs tiempo | **SVG** (CartesianSpec) |
-| Bloque en plano inclinado | **Rough.js** |
-| Diagrama de fuerzas | **Rough.js** |
-| Circuito eléctrico | **Rough.js** |
-| Tiro parabólico (diagrama) | **Rough.js** |
+| Bloque en plano inclinado | **PNG tablet** |
+| Diagrama de fuerzas | **PNG tablet** |
+| Circuito eléctrico | **PNG tablet** |
+| Tiro parabólico (diagrama) | **PNG tablet** |
 
 ### ⚛️ QUÍMICA
 
 | Necesidad | Tecnología |
 |-----------|------------|
-| Modelo atómico de Bohr | **Rough.js** |
-| Enlace covalente/iónico | **Rough.js** |
-| Estados de la materia | **Rough.js** |
-| Equipos de laboratorio | **Rough.js** |
-| Tabla periódica (elementos) | **SVG** estático |
+| Tabla periódica | **SVG** (ChemistrySpec) |
+| Tendencias periódicas | **SVG** (ChemistrySpec) |
+| Modelo atómico de Bohr | **PNG tablet** |
+| Enlace covalente/iónico | **PNG tablet** |
+| Estados de la materia | **PNG tablet** |
+| Equipos de laboratorio | **PNG tablet** |
 
 ### 🌍 CIENCIAS
 
 | Necesidad | Tecnología |
 |-----------|------------|
-| Ciclo del agua | **Rough.js** |
-| Cadena alimenticia | **Rough.js** |
-| Célula (diagrama) | **Rough.js** |
-| Sistema digestivo | **Rough.js** |
+| Ciclo del agua | **PNG tablet** |
+| Cadena alimenticia | **PNG tablet** |
+| Célula (diagrama) | **PNG tablet** |
+| Sistema digestivo | **PNG tablet** |
 
 ---
 
@@ -136,37 +143,21 @@ python3 scripts/geometry/cartesian_renderer.py \
   --output public/images/geometria/analitica/distancia-puntos.svg
 ```
 
-### Rough.js (inline en markdown)
+### PNG de Tablet (en .mdx)
 
-```html
-<script type="module">
-import rough from 'https://cdn.jsdelivr.net/npm/roughjs@4.6.6/bundled/rough.esm.js';
+```mdx
+import { Image } from 'astro:assets';
+import miDiagrama from '/public/images/fisica/t-plano-inclinado.png';
 
-const canvas = document.getElementById('rough-mi-diagrama');
-if (canvas) {
-  const rc = rough.canvas(canvas);
-  // Dibujar elementos...
-}
-</script>
+<Image src={miDiagrama} alt="Bloque en plano inclinado" format="webp" />
 ```
 
 ---
 
-## ❌ TECNOLOGÍAS ELIMINADAS
+## ✅ Checklist
 
-| Tecnología | Estado | Razón |
-|------------|--------|-------|
-| ECharts | ❌ ELIMINADO | 1MB de JS, reemplazado por SVG |
-| Chart.js | ❌ ELIMINADO | 200KB de JS, reemplazado por Rough.js |
-| Three.js | ❌ ELIMINADO | 500KB de JS, no necesario |
-| JSXGraph | ⚠️ Solo condicional | 600KB, solo si hay `.jxgbox` |
-
----
-
-## 🔗 Workflows Detallados
-
-- [Rough.js](./roughjs.md) - Diagramas ilustrativos ⭐
-- [GeometrySpec](./geometry-exact.md) - Triángulos exactos
-- [CircleSpec](./circle-spec.md) - Circunferencias
-- [CartesianSpec](./cartesian-spec.md) - Geometría analítica
-- [GraphSpec](./graphspec.md) - Gráficas de funciones
+- [ ] ¿Elegí la tecnología correcta según el árbol de decisión?
+- [ ] ¿Los SVGs usan los renderers oficiales?
+- [ ] ¿Los PNG de tablet tienen prefijo `t-`?
+- [ ] ¿Los archivos con PNG de tablet son `.mdx`?
+- [ ] ¿Incluí `format="webp"` en el componente Image?
