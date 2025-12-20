@@ -26,6 +26,12 @@ from dataclasses import dataclass, field
 from typing import List, Dict, Tuple, Optional, Any
 from enum import Enum
 
+# Importar paleta de colores centralizada
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent))
+from core.colors import COLORS
+
 # ============================================================================
 # SYMPY PARA CÁLCULOS EXACTOS
 # ============================================================================
@@ -96,26 +102,8 @@ CANVAS_CONFIGS = {
     }
 }
 
-# Paleta de colores estándar
-COLORS = {
-    'background': '#f8fafc',
-    'circle_stroke': '#3b82f6',
-    'circle_fill': '#dbeafe',
-    'radius': '#ef4444',
-    'diameter': '#8b5cf6',
-    'chord': '#22c55e',
-    'arc': '#f97316',
-    'sector_fill': '#dcfce7',
-    'segment_fill': '#fef3c7',
-    'tangent': '#ec4899',
-    'secant': '#14b8a6',
-    'angle': '#f97316',
-    'point': '#1e293b',
-    'center': '#ef4444',
-    'text': '#1e293b',
-    'auxiliary': '#94a3b8',
-    'highlight': '#fbbf24',
-}
+# Paleta de colores importada de core.colors (fuente única de verdad)
+# Ver scripts/geometry/core/colors.py para modificar colores
 
 
 # ============================================================================

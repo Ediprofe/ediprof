@@ -15,19 +15,24 @@ Uso:
 
 import argparse
 import math
+import sys
 from pathlib import Path
 
-# Paleta de colores
+# Importar paleta de colores centralizada
+sys.path.insert(0, str(Path(__file__).parent))
+from core.colors import COLORS as BASE_COLORS
+
+# Paleta de colores (basada en core.colors)
 COLORS = {
-    'background': '#f8fafc',
-    'text': '#1e293b',
-    'primary': '#3b82f6',
-    'secondary': '#ef4444',
-    'tertiary': '#22c55e',
-    'quaternary': '#8b5cf6',
-    'accent': '#f97316',
-    'muted': '#94a3b8',
-    'box_bg': '#f1f5f9',
+    'background': BASE_COLORS['background'],
+    'text': BASE_COLORS['text'],
+    'primary': BASE_COLORS['primary'],
+    'secondary': BASE_COLORS['accent'],
+    'tertiary': BASE_COLORS['secondary'],
+    'quaternary': BASE_COLORS['purple'],
+    'accent': BASE_COLORS['highlight'],
+    'muted': BASE_COLORS['auxiliary'],
+    'box_bg': BASE_COLORS['grid'],
     'box_border': '#e2e8f0',
 }
 

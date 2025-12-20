@@ -15,22 +15,27 @@ Uso:
 
 import argparse
 import math
+import sys
 from pathlib import Path
 
-# Paleta de colores
+# Importar paleta de colores centralizada
+sys.path.insert(0, str(Path(__file__).parent))
+from core.colors import COLORS as BASE_COLORS
+
+# Paleta de colores (basada en core.colors)
 COLORS = {
-    'background': '#f8fafc',
-    'text': '#1e293b',
-    'side_a': '#ef4444',    # Rojo
-    'side_b': '#3b82f6',    # Azul  
-    'side_c': '#22c55e',    # Verde
-    'angle_A': '#ef4444',   # Rojo (opuesto a 'a')
-    'angle_B': '#3b82f6',   # Azul (opuesto a 'b')
-    'angle_C': '#22c55e',   # Verde (opuesto a 'c')
-    'vertex': '#1e293b',
-    'auxiliary': '#94a3b8',
-    'highlight': '#f97316',
-    'box_bg': '#f1f5f9',
+    'background': BASE_COLORS['background'],
+    'text': BASE_COLORS['text'],
+    'side_a': BASE_COLORS['accent'],     # Rojo
+    'side_b': BASE_COLORS['primary'],    # Azul  
+    'side_c': BASE_COLORS['secondary'],  # Verde
+    'angle_A': BASE_COLORS['accent'],    # Rojo (opuesto a 'a')
+    'angle_B': BASE_COLORS['primary'],   # Azul (opuesto a 'b')
+    'angle_C': BASE_COLORS['secondary'], # Verde (opuesto a 'c')
+    'vertex': BASE_COLORS['text'],
+    'auxiliary': BASE_COLORS['auxiliary'],
+    'highlight': BASE_COLORS['highlight'],
+    'box_bg': BASE_COLORS['grid'],
     'box_border': '#e2e8f0',
 }
 

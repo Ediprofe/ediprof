@@ -28,6 +28,10 @@ COLORS = {
     'pink': '#ec4899',           # Rosa - tangentes, mediatrices
     'teal': '#14b8a6',           # Verde azulado - secantes
     'yellow': '#fbbf24',         # Amarillo - resaltados
+    'amber': '#f59e0b',          # Ámbar - pendientes 45°
+    'yellow_dark': '#eab308',    # Amarillo oscuro
+    'cyan': '#06b6d4',           # Cyan - variante
+    'white': '#ffffff',          # Blanco puro
     
     # === CIRCUNFERENCIAS ===
     'circle_stroke': '#3b82f6',

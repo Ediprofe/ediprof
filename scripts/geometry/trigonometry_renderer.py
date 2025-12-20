@@ -23,6 +23,10 @@ from pathlib import Path
 from dataclasses import dataclass
 from typing import List, Dict, Tuple, Optional
 
+# Importar paleta de colores centralizada
+sys.path.insert(0, str(Path(__file__).parent))
+from core.colors import COLORS as BASE_COLORS
+
 # ============================================================================
 # ESTRUCTURAS DE DATOS
 # ============================================================================
@@ -139,19 +143,19 @@ def get_right_angle_symbol(vertex: Point, p1: Point, p2: Point, size: float = 15
 class TrigonometryRenderer:
     """Renderizador de triángulos para trigonometría."""
     
-    # Paleta de colores
+    # Paleta de colores (basada en core.colors + alias específicos)
     COLORS = {
-        'hipotenusa': '#3b82f6',      # Azul
-        'opuesto': '#ef4444',          # Rojo
-        'adyacente': '#22c55e',        # Verde
-        'angulo': '#8b5cf6',           # Violeta
-        'angulo_recto': '#64748b',     # Gris
-        'triangulo_fill': '#f8fafc',   # Fondo claro
-        'triangulo_stroke': '#1e293b', # Borde oscuro
-        'text': '#1e293b',             # Texto
-        'background': '#ffffff',       # Fondo etiqueta
-        'info_bg': '#f1f5f9',          # Fondo cuadro info
-        'info_border': '#e2e8f0'       # Borde cuadro info
+        'hipotenusa': BASE_COLORS['primary'],       # Azul
+        'opuesto': BASE_COLORS['accent'],           # Rojo
+        'adyacente': BASE_COLORS['secondary'],      # Verde
+        'angulo': BASE_COLORS['purple'],            # Violeta
+        'angulo_recto': BASE_COLORS['text_light'],  # Gris
+        'triangulo_fill': BASE_COLORS['background'],# Fondo claro
+        'triangulo_stroke': BASE_COLORS['text'],   # Borde oscuro
+        'text': BASE_COLORS['text'],               # Texto
+        'background': '#ffffff',                    # Fondo etiqueta
+        'info_bg': BASE_COLORS['grid'],            # Fondo cuadro info
+        'info_border': '#e2e8f0'                   # Borde cuadro info
     }
     
     def __init__(self, spec: dict):

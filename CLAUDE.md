@@ -1260,6 +1260,8 @@ Controla sus propios colores
 
 ## Por Elemento Geométrico
 
+> **Fuente de verdad:** `scripts/geometry/core/colors.py`
+
 | Elemento | Color | Hex |
 |----------|-------|-----|
 | Medianas | Verde | `#22c55e` |
@@ -1271,6 +1273,29 @@ Controla sus propios colores
 | Auxiliares | Gris | `#94a3b8` |
 | Circunferencias | Azul | `#3b82f6` |
 | Arcos de ángulos | Naranja | `#f97316` |
+
+### ⚠️ Patrón Obligatorio para Renderers
+
+**NUNCA hardcodear colores en los renderers.** Siempre importar de `core.colors`:
+
+```python
+# ✅ CORRECTO
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent))
+from core.colors import COLORS
+
+stroke = COLORS['primary']
+fill = COLORS['background']
+
+# ❌ INCORRECTO
+stroke = '#3b82f6'  # NO hardcodear
+```
+
+**Verificar renderers:**
+```bash
+bash scripts/verify-svg-rendering.sh
+```
 
 ## Por Materia
 

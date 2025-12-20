@@ -47,7 +47,7 @@ def render_plano_basico(output_path: str, title: str = "El Plano Cartesiano"):
     builder = SVGBuilder(600, 500)
     
     # Fondo
-    builder.rect(0, 0, 600, 500, fill='#ffffff')
+    builder.rect(0, 0, 600, 500, fill=COLORS['white'])
     
     # Título
     builder.text(title, Point(300, 25), font_size=16, font_weight='bold')
@@ -84,7 +84,7 @@ def render_plano_basico(output_path: str, title: str = "El Plano Cartesiano"):
         coord.draw_point(builder, p, label=label, show_coords=True, color=color)
     
     # Leyenda
-    builder.rect(400, 420, 180, 70, fill='#f8fafc', stroke='#e2e8f0', rx=8)
+    builder.rect(400, 420, 180, 70, fill=COLORS['background'], stroke=COLORS['grid'], rx=8)
     builder.text("Puntos de ejemplo:", Point(490, 438), font_size=11, 
                  font_weight='bold', fill=COLORS['text'])
     
@@ -131,7 +131,7 @@ def render_distancia(output_path: str,
     )
     
     builder = SVGBuilder(600, 480)
-    builder.rect(0, 0, 600, 480, fill='#ffffff')
+    builder.rect(0, 0, 600, 480, fill=COLORS['white'])
     builder.text(title, Point(300, 25), font_size=16, font_weight='bold')
     
     # Cuadrícula y ejes
@@ -144,7 +144,7 @@ def render_distancia(output_path: str,
     P2 = Point(p2[0], p2[1])
     
     # Triángulo rectángulo auxiliar
-    coord.draw_right_triangle(builder, P1, P2, color=COLORS['auxiliary'], fill='#fef3c7')
+    coord.draw_right_triangle(builder, P1, P2, color=COLORS['auxiliary'], fill=COLORS['segment_fill'])
     coord.draw_distance_labels(builder, P1, P2, 
                                dx_label=f'Δx = {abs(p2[0]-p1[0])}',
                                dy_label=f'Δy = {abs(p2[1]-p1[1])}')
@@ -192,7 +192,7 @@ def render_punto_medio(output_path: str,
     )
     
     builder = SVGBuilder(600, 480)
-    builder.rect(0, 0, 600, 480, fill='#ffffff')
+    builder.rect(0, 0, 600, 480, fill=COLORS['white'])
     builder.text(title, Point(300, 25), font_size=16, font_weight='bold')
     
     coord.draw_grid(builder, step=1)
@@ -271,7 +271,7 @@ def render_division_segmento(output_path: str,
     )
     
     builder = SVGBuilder(600, 480)
-    builder.rect(0, 0, 600, 480, fill='#ffffff')
+    builder.rect(0, 0, 600, 480, fill=COLORS['white'])
     builder.text(f'{title} en razón {m}:{n}', Point(300, 25), font_size=16, font_weight='bold')
     
     coord.draw_grid(builder, step=1)
@@ -346,7 +346,7 @@ def render_area_triangulo(output_path: str,
     )
     
     builder = SVGBuilder(600, 500)
-    builder.rect(0, 0, 600, 500, fill='#ffffff')
+    builder.rect(0, 0, 600, 500, fill=COLORS['white'])
     builder.text(title, Point(300, 25), font_size=16, font_weight='bold')
     
     coord.draw_grid(builder, step=1)
@@ -355,7 +355,7 @@ def render_area_triangulo(output_path: str,
     
     # Triángulo
     points = [Point(v[0], v[1]) for v in vertices]
-    coord.draw_polygon(builder, points, fill='#dbeafe', stroke=COLORS['primary'])
+    coord.draw_polygon(builder, points, fill=COLORS['circle_fill'], stroke=COLORS['primary'])
     
     # Vértices
     labels = ['A', 'B', 'C']
@@ -406,7 +406,7 @@ def render_tipos_pendiente(output_path: str, title: str = "Tipos de Pendiente"):
     )
     
     builder = SVGBuilder(600, 480)
-    builder.rect(0, 0, 600, 480, fill='#ffffff')
+    builder.rect(0, 0, 600, 480, fill=COLORS['white'])
     builder.text(title, Point(300, 25), font_size=16, font_weight='bold')
     
     coord.draw_grid(builder, step=1)
@@ -416,36 +416,36 @@ def render_tipos_pendiente(output_path: str, title: str = "Tipos de Pendiente"):
     # Recta positiva (m = 2): y = 2x
     p1_pos = Point(-3, -6)
     p2_pos = Point(3, 6)
-    coord.draw_segment(builder, p1_pos, p2_pos, color='#22c55e', width=2.5)
+    coord.draw_segment(builder, p1_pos, p2_pos, color=COLORS['secondary'], width=2.5)
     svg_label_pos = coord.to_svg(Point(2.5, 5))
     builder.text('m = 2 (↗)', Point(svg_label_pos.x + 10, svg_label_pos.y), 
-                 font_size=12, font_weight='bold', fill='#22c55e', anchor='start')
+                 font_size=12, font_weight='bold', fill=COLORS['secondary'], anchor='start')
     
     # Recta negativa (m = -1.5): y = -1.5x
     p1_neg = Point(-4, 6)
     p2_neg = Point(4, -6)
-    coord.draw_segment(builder, p1_neg, p2_neg, color='#ef4444', width=2.5)
+    coord.draw_segment(builder, p1_neg, p2_neg, color=COLORS['accent'], width=2.5)
     svg_label_neg = coord.to_svg(Point(3, -4.5))
     builder.text('m = -1.5 (↘)', Point(svg_label_neg.x + 10, svg_label_neg.y), 
-                 font_size=12, font_weight='bold', fill='#ef4444', anchor='start')
+                 font_size=12, font_weight='bold', fill=COLORS['accent'], anchor='start')
     
     # Recta horizontal (m = 0): y = 2
     p1_hor = Point(-4, 2)
     p2_hor = Point(4, 2)
-    coord.draw_segment(builder, p1_hor, p2_hor, color='#3b82f6', width=2.5)
+    coord.draw_segment(builder, p1_hor, p2_hor, color=COLORS['primary'], width=2.5)
     svg_label_hor = coord.to_svg(Point(3.5, 2))
     builder.text('m = 0 (→)', Point(svg_label_hor.x + 10, svg_label_hor.y - 15), 
-                 font_size=12, font_weight='bold', fill='#3b82f6', anchor='start')
+                 font_size=12, font_weight='bold', fill=COLORS['primary'], anchor='start')
     
     # Leyenda
-    builder.rect(420, 400, 160, 65, fill='#f8fafc', stroke='#e2e8f0', rx=8)
+    builder.rect(420, 400, 160, 65, fill=COLORS['background'], stroke=COLORS['grid'], rx=8)
     builder.text('Leyenda:', Point(500, 415), font_size=11, font_weight='bold')
-    builder.line(Point(430, 430), Point(460, 430), stroke='#22c55e', stroke_width=3)
-    builder.text('Positiva (sube)', Point(470, 430), font_size=10, fill='#22c55e', anchor='start')
-    builder.line(Point(430, 445), Point(460, 445), stroke='#ef4444', stroke_width=3)
-    builder.text('Negativa (baja)', Point(470, 445), font_size=10, fill='#ef4444', anchor='start')
-    builder.line(Point(430, 460), Point(460, 460), stroke='#3b82f6', stroke_width=3)
-    builder.text('Horizontal', Point(470, 460), font_size=10, fill='#3b82f6', anchor='start')
+    builder.line(Point(430, 430), Point(460, 430), stroke=COLORS['secondary'], stroke_width=3)
+    builder.text('Positiva (sube)', Point(470, 430), font_size=10, fill=COLORS['secondary'], anchor='start')
+    builder.line(Point(430, 445), Point(460, 445), stroke=COLORS['accent'], stroke_width=3)
+    builder.text('Negativa (baja)', Point(470, 445), font_size=10, fill=COLORS['accent'], anchor='start')
+    builder.line(Point(430, 460), Point(460, 460), stroke=COLORS['primary'], stroke_width=3)
+    builder.text('Horizontal', Point(470, 460), font_size=10, fill=COLORS['primary'], anchor='start')
     
     builder.save(output_path)
     return True
@@ -463,7 +463,7 @@ def render_concepto_pendiente(output_path: str, title: str = "Concepto de Pendie
     )
     
     builder = SVGBuilder(600, 480)
-    builder.rect(0, 0, 600, 480, fill='#ffffff')
+    builder.rect(0, 0, 600, 480, fill=COLORS['white'])
     builder.text(title, Point(300, 25), font_size=15, font_weight='bold')
     
     coord.draw_grid(builder, step=1)
@@ -471,7 +471,7 @@ def render_concepto_pendiente(output_path: str, title: str = "Concepto de Pendie
     coord.draw_ticks(builder, step=1, show_labels=True)
     
     # Recta y = 2x
-    coord.draw_segment(builder, Point(-0.5, -1), Point(4.5, 9), color='#3b82f6', width=2.5)
+    coord.draw_segment(builder, Point(-0.5, -1), Point(4.5, 9), color=COLORS['primary'], width=2.5)
     
     # Puntos sobre la recta
     P1 = Point(1, 2)
@@ -479,7 +479,7 @@ def render_concepto_pendiente(output_path: str, title: str = "Concepto de Pendie
     P3 = Point(3, 6)
     
     # Triángulo auxiliar entre P1 y P2
-    coord.draw_right_triangle(builder, P1, P2, color='#94a3b8', fill='#fef3c7')
+    coord.draw_right_triangle(builder, P1, P2, color=COLORS['auxiliary'], fill=COLORS['segment_fill'])
     
     # Etiquetas Δx y Δy
     svg_p1 = coord.to_svg(P1)
@@ -490,22 +490,22 @@ def render_concepto_pendiente(output_path: str, title: str = "Concepto de Pendie
     mid_y = svg_aux.midpoint(svg_p2)
     
     builder.text('Δx = 1', Point(mid_x.x, mid_x.y + 20), 
-                 font_size=13, font_weight='bold', fill='#22c55e')
+                 font_size=13, font_weight='bold', fill=COLORS['secondary'])
     builder.text('Δy = 2', Point(mid_y.x + 20, mid_y.y), 
-                 font_size=13, font_weight='bold', fill='#f97316')
+                 font_size=13, font_weight='bold', fill=COLORS['highlight'])
     
     # Puntos
-    coord.draw_point(builder, P1, label='', color='#ef4444', radius=6)
-    coord.draw_point(builder, P2, label='', color='#ef4444', radius=6)
-    coord.draw_point(builder, P3, label='', color='#ef4444', radius=6)
+    coord.draw_point(builder, P1, label='', color=COLORS['accent'], radius=6)
+    coord.draw_point(builder, P2, label='', color=COLORS['accent'], radius=6)
+    coord.draw_point(builder, P3, label='', color=COLORS['accent'], radius=6)
     
     # Etiquetas de puntos
     builder.text('(1, 2)', Point(coord.to_svg(P1).x - 10, coord.to_svg(P1).y - 15), 
-                 font_size=11, font_weight='bold', fill='#1e293b')
+                 font_size=11, font_weight='bold', fill=COLORS['text'])
     builder.text('(2, 4)', Point(coord.to_svg(P2).x + 10, coord.to_svg(P2).y - 10), 
-                 font_size=11, font_weight='bold', fill='#1e293b')
+                 font_size=11, font_weight='bold', fill=COLORS['text'])
     builder.text('(3, 6)', Point(coord.to_svg(P3).x + 10, coord.to_svg(P3).y - 10), 
-                 font_size=11, font_weight='bold', fill='#1e293b')
+                 font_size=11, font_weight='bold', fill=COLORS['text'])
     
     # Fórmula
     builder.formula_box('m = Δy/Δx = 2/1 = 2', Point(300, 450), font_size=14)
@@ -526,7 +526,7 @@ def render_pendiente_absoluto(output_path: str, title: str = "Comparación por V
     )
     
     builder = SVGBuilder(600, 480)
-    builder.rect(0, 0, 600, 480, fill='#ffffff')
+    builder.rect(0, 0, 600, 480, fill=COLORS['white'])
     builder.text(title, Point(300, 25), font_size=15, font_weight='bold')
     
     coord.draw_grid(builder, step=1)
@@ -534,32 +534,32 @@ def render_pendiente_absoluto(output_path: str, title: str = "Comparación por V
     coord.draw_ticks(builder, step=1, show_labels=True)
     
     # Recta suave (m = 0.3)
-    coord.draw_segment(builder, Point(-4, -1.2), Point(4, 1.2), color='#22c55e', width=2.5)
+    coord.draw_segment(builder, Point(-4, -1.2), Point(4, 1.2), color=COLORS['secondary'], width=2.5)
     svg_l1 = coord.to_svg(Point(3, 0.9))
     builder.text('|m| = 0.3 (suave)', Point(svg_l1.x + 5, svg_l1.y - 10), 
-                 font_size=11, font_weight='bold', fill='#22c55e', anchor='start')
+                 font_size=11, font_weight='bold', fill=COLORS['secondary'], anchor='start')
     
     # Recta 45° (m = 1)
-    coord.draw_segment(builder, Point(-4, -4), Point(4, 4), color='#f59e0b', width=2.5)
+    coord.draw_segment(builder, Point(-4, -4), Point(4, 4), color=COLORS['amber'], width=2.5)
     svg_l2 = coord.to_svg(Point(3.5, 3.5))
     builder.text('|m| = 1 (45°)', Point(svg_l2.x + 5, svg_l2.y - 10), 
-                 font_size=11, font_weight='bold', fill='#f59e0b', anchor='start')
+                 font_size=11, font_weight='bold', fill=COLORS['amber'], anchor='start')
     
     # Recta empinada (m = 3)
-    coord.draw_segment(builder, Point(-1.5, -4.5), Point(1.5, 4.5), color='#ef4444', width=2.5)
+    coord.draw_segment(builder, Point(-1.5, -4.5), Point(1.5, 4.5), color=COLORS['accent'], width=2.5)
     svg_l3 = coord.to_svg(Point(1.2, 3.6))
     builder.text('|m| = 3 (empinada)', Point(svg_l3.x + 5, svg_l3.y - 10), 
-                 font_size=11, font_weight='bold', fill='#ef4444', anchor='start')
+                 font_size=11, font_weight='bold', fill=COLORS['accent'], anchor='start')
     
     # Leyenda
-    builder.rect(20, 400, 200, 65, fill='#f8fafc', stroke='#e2e8f0', rx=8)
+    builder.rect(20, 400, 200, 65, fill=COLORS['background'], stroke=COLORS['grid'], rx=8)
     builder.text('Mayor |m| = más empinada', Point(120, 420), font_size=11, font_weight='bold')
-    builder.line(Point(30, 440), Point(60, 440), stroke='#22c55e', stroke_width=3)
-    builder.text('Suave', Point(70, 440), font_size=10, fill='#22c55e', anchor='start')
-    builder.line(Point(110, 440), Point(140, 440), stroke='#f59e0b', stroke_width=3)
-    builder.text('45°', Point(150, 440), font_size=10, fill='#f59e0b', anchor='start')
-    builder.line(Point(30, 455), Point(60, 455), stroke='#ef4444', stroke_width=3)
-    builder.text('Empinada', Point(70, 455), font_size=10, fill='#ef4444', anchor='start')
+    builder.line(Point(30, 440), Point(60, 440), stroke=COLORS['secondary'], stroke_width=3)
+    builder.text('Suave', Point(70, 440), font_size=10, fill=COLORS['secondary'], anchor='start')
+    builder.line(Point(110, 440), Point(140, 440), stroke=COLORS['amber'], stroke_width=3)
+    builder.text('45°', Point(150, 440), font_size=10, fill=COLORS['amber'], anchor='start')
+    builder.line(Point(30, 455), Point(60, 455), stroke=COLORS['accent'], stroke_width=3)
+    builder.text('Empinada', Point(70, 455), font_size=10, fill=COLORS['accent'], anchor='start')
     
     builder.save(output_path)
     return True
@@ -577,7 +577,7 @@ def render_rectas_especiales(output_path: str, title: str = "Rectas Horizontales
     )
     
     builder = SVGBuilder(600, 480)
-    builder.rect(0, 0, 600, 480, fill='#ffffff')
+    builder.rect(0, 0, 600, 480, fill=COLORS['white'])
     builder.text(title, Point(300, 25), font_size=15, font_weight='bold')
     
     coord.draw_grid(builder, step=1)
@@ -585,33 +585,33 @@ def render_rectas_especiales(output_path: str, title: str = "Rectas Horizontales
     coord.draw_ticks(builder, step=1, show_labels=True)
     
     # Rectas horizontales
-    coord.draw_segment(builder, Point(-5, 3), Point(5, 3), color='#3b82f6', width=2.5)
+    coord.draw_segment(builder, Point(-5, 3), Point(5, 3), color=COLORS['primary'], width=2.5)
     svg_h1 = coord.to_svg(Point(4, 3))
     builder.text('y = 3 (m = 0)', Point(svg_h1.x, svg_h1.y - 12), 
-                 font_size=10, font_weight='bold', fill='#3b82f6')
+                 font_size=10, font_weight='bold', fill=COLORS['primary'])
     
-    coord.draw_segment(builder, Point(-5, -2), Point(5, -2), color='#f59e0b', width=2.5)
+    coord.draw_segment(builder, Point(-5, -2), Point(5, -2), color=COLORS['amber'], width=2.5)
     svg_h2 = coord.to_svg(Point(4, -2))
     builder.text('y = -2 (m = 0)', Point(svg_h2.x, svg_h2.y + 18), 
-                 font_size=10, font_weight='bold', fill='#f59e0b')
+                 font_size=10, font_weight='bold', fill=COLORS['amber'])
     
     # Rectas verticales
-    coord.draw_segment(builder, Point(2, -4), Point(2, 5), color='#ef4444', width=2.5)
+    coord.draw_segment(builder, Point(2, -4), Point(2, 5), color=COLORS['accent'], width=2.5)
     svg_v1 = coord.to_svg(Point(2, 4.5))
     builder.text('x = 2', Point(svg_v1.x + 10, svg_v1.y), 
-                 font_size=10, font_weight='bold', fill='#ef4444')
+                 font_size=10, font_weight='bold', fill=COLORS['accent'])
     
-    coord.draw_segment(builder, Point(-3, -4), Point(-3, 5), color='#a855f7', width=2.5)
+    coord.draw_segment(builder, Point(-3, -4), Point(-3, 5), color=COLORS['purple'], width=2.5)
     svg_v2 = coord.to_svg(Point(-3, 4.5))
     builder.text('x = -3', Point(svg_v2.x - 40, svg_v2.y), 
-                 font_size=10, font_weight='bold', fill='#a855f7')
+                 font_size=10, font_weight='bold', fill=COLORS['purple'])
     
     # Leyenda
-    builder.rect(400, 390, 180, 75, fill='#f8fafc', stroke='#e2e8f0', rx=8)
+    builder.rect(400, 390, 180, 75, fill=COLORS['background'], stroke=COLORS['grid'], rx=8)
     builder.text('Casos especiales:', Point(490, 405), font_size=11, font_weight='bold')
-    builder.text('Horizontales: m = 0', Point(415, 425), font_size=10, fill='#3b82f6', anchor='start')
-    builder.text('Verticales: m indefinida', Point(415, 445), font_size=10, fill='#ef4444', anchor='start')
-    builder.text('(no se puede dividir ÷ 0)', Point(415, 460), font_size=9, fill='#64748b', anchor='start')
+    builder.text('Horizontales: m = 0', Point(415, 425), font_size=10, fill=COLORS['primary'], anchor='start')
+    builder.text('Verticales: m indefinida', Point(415, 445), font_size=10, fill=COLORS['accent'], anchor='start')
+    builder.text('(no se puede dividir ÷ 0)', Point(415, 460), font_size=9, fill=COLORS['text_light'], anchor='start')
     
     builder.save(output_path)
     return True
@@ -639,7 +639,7 @@ def render_calculo_pendiente(output_path: str,
     )
     
     builder = SVGBuilder(600, 480)
-    builder.rect(0, 0, 600, 480, fill='#ffffff')
+    builder.rect(0, 0, 600, 480, fill=COLORS['white'])
     builder.text(title, Point(300, 25), font_size=16, font_weight='bold')
     
     coord.draw_grid(builder, step=1)
@@ -651,7 +651,7 @@ def render_calculo_pendiente(output_path: str,
     P3 = Point(p2[0], p1[1])  # Punto auxiliar
     
     # Triángulo auxiliar
-    coord.draw_right_triangle(builder, P1, P2, color=COLORS['auxiliary'], fill='#fef3c7')
+    coord.draw_right_triangle(builder, P1, P2, color=COLORS['auxiliary'], fill=COLORS['segment_fill'])
     
     # Recta principal
     coord.draw_segment(builder, P1, P2, color=COLORS['primary'], width=2.5)
@@ -705,7 +705,7 @@ def render_angulo_inclinacion(output_path: str,
     )
     
     builder = SVGBuilder(600, 480)
-    builder.rect(0, 0, 600, 480, fill='#ffffff')
+    builder.rect(0, 0, 600, 480, fill=COLORS['white'])
     builder.text(title, Point(300, 25), font_size=16, font_weight='bold')
     
     coord.draw_grid(builder, step=1)
@@ -773,7 +773,7 @@ def render_paralelas_perpendiculares(output_path: str,
     )
     
     builder = SVGBuilder(650, 480)
-    builder.rect(0, 0, 650, 480, fill='#ffffff')
+    builder.rect(0, 0, 650, 480, fill=COLORS['white'])
     builder.text(title, Point(325, 25), font_size=16, font_weight='bold')
     
     coord.draw_grid(builder, step=1)
@@ -782,46 +782,46 @@ def render_paralelas_perpendiculares(output_path: str,
     
     # Rectas paralelas (m = 1)
     # L1: y = x + 2
-    coord.draw_segment(builder, Point(-4, -2), Point(3, 5), color='#22c55e', width=2.5)
+    coord.draw_segment(builder, Point(-4, -2), Point(3, 5), color=COLORS['secondary'], width=2.5)
     svg_l1 = coord.to_svg(Point(2, 4))
     builder.text('L₁: m = 1', Point(svg_l1.x + 5, svg_l1.y - 10), 
-                 font_size=11, font_weight='bold', fill='#22c55e', anchor='start')
+                 font_size=11, font_weight='bold', fill=COLORS['secondary'], anchor='start')
     
     # L2: y = x - 2
-    coord.draw_segment(builder, Point(-2, -4), Point(6, 4), color='#22c55e', width=2.5)
+    coord.draw_segment(builder, Point(-2, -4), Point(6, 4), color=COLORS['secondary'], width=2.5)
     svg_l2 = coord.to_svg(Point(5, 3))
     builder.text('L₂: m = 1', Point(svg_l2.x + 5, svg_l2.y + 15), 
-                 font_size=11, font_weight='bold', fill='#22c55e', anchor='start')
+                 font_size=11, font_weight='bold', fill=COLORS['secondary'], anchor='start')
     
     # Símbolo paralelas
     svg_mid = coord.to_svg(Point(0, 1))
-    builder.text('∥', Point(svg_mid.x - 30, svg_mid.y), font_size=20, fill='#22c55e')
+    builder.text('∥', Point(svg_mid.x - 30, svg_mid.y), font_size=20, fill=COLORS['secondary'])
     
     # Rectas perpendiculares
     # L3: y = 2x - 3
-    coord.draw_segment(builder, Point(-1, -5), Point(4, 5), color='#ef4444', width=2.5)
+    coord.draw_segment(builder, Point(-1, -5), Point(4, 5), color=COLORS['accent'], width=2.5)
     svg_l3 = coord.to_svg(Point(3.5, 4))
     builder.text('L₃: m = 2', Point(svg_l3.x + 5, svg_l3.y - 5), 
-                 font_size=11, font_weight='bold', fill='#ef4444', anchor='start')
+                 font_size=11, font_weight='bold', fill=COLORS['accent'], anchor='start')
     
     # L4: y = -0.5x + 1 (perpendicular a L3)
-    coord.draw_segment(builder, Point(-4, 3), Point(6, -2), color='#3b82f6', width=2.5)
+    coord.draw_segment(builder, Point(-4, 3), Point(6, -2), color=COLORS['primary'], width=2.5)
     svg_l4 = coord.to_svg(Point(5, -1.5))
     builder.text('L₄: m = -½', Point(svg_l4.x + 5, svg_l4.y + 15), 
-                 font_size=11, font_weight='bold', fill='#3b82f6', anchor='start')
+                 font_size=11, font_weight='bold', fill=COLORS['primary'], anchor='start')
     
     # Símbolo perpendicular
     svg_perp = coord.to_svg(Point(1.5, -0.5))
-    builder.text('⊥', Point(svg_perp.x + 20, svg_perp.y - 10), font_size=18, fill='#ef4444')
+    builder.text('⊥', Point(svg_perp.x + 20, svg_perp.y - 10), font_size=18, fill=COLORS['accent'])
     
     # Leyenda
-    builder.rect(480, 380, 150, 85, fill='#f8fafc', stroke='#e2e8f0', rx=8)
+    builder.rect(480, 380, 150, 85, fill=COLORS['background'], stroke=COLORS['grid'], rx=8)
     builder.text('Condiciones:', Point(555, 395), font_size=11, font_weight='bold')
-    builder.text('Paralelas:', Point(495, 415), font_size=10, fill='#22c55e', anchor='start')
-    builder.text('m₁ = m₂', Point(560, 415), font_size=10, fill='#1e293b', anchor='start')
-    builder.text('Perpendic.:', Point(495, 435), font_size=10, fill='#ef4444', anchor='start')
-    builder.text('m₁·m₂ = -1', Point(560, 435), font_size=10, fill='#1e293b', anchor='start')
-    builder.text('2 × (-½) = -1 ✓', Point(520, 455), font_size=10, fill='#64748b')
+    builder.text('Paralelas:', Point(495, 415), font_size=10, fill=COLORS['secondary'], anchor='start')
+    builder.text('m₁ = m₂', Point(560, 415), font_size=10, fill=COLORS['text'], anchor='start')
+    builder.text('Perpendic.:', Point(495, 435), font_size=10, fill=COLORS['accent'], anchor='start')
+    builder.text('m₁·m₂ = -1', Point(560, 435), font_size=10, fill=COLORS['text'], anchor='start')
+    builder.text('2 × (-½) = -1 ✓', Point(520, 455), font_size=10, fill=COLORS['text_light'])
     
     builder.save(output_path)
     return True
@@ -843,7 +843,7 @@ def render_angulo_entre_rectas(output_path: str,
     )
     
     builder = SVGBuilder(600, 480)
-    builder.rect(0, 0, 600, 480, fill='#ffffff')
+    builder.rect(0, 0, 600, 480, fill=COLORS['white'])
     builder.text(title, Point(300, 25), font_size=16, font_weight='bold')
     
     coord.draw_grid(builder, step=1)
@@ -863,20 +863,20 @@ def render_angulo_entre_rectas(output_path: str,
     coord.draw_segment(builder, 
                        Point(x1_start, m1 * x1_start), 
                        Point(x1_end, m1 * x1_end), 
-                       color='#3b82f6', width=2.5)
+                       color=COLORS['primary'], width=2.5)
     svg_l1 = coord.to_svg(Point(2.5, m1 * 2.5))
     builder.text(f'L₁: m₁ = {m1}', Point(svg_l1.x + 5, svg_l1.y - 10), 
-                 font_size=11, font_weight='bold', fill='#3b82f6', anchor='start')
+                 font_size=11, font_weight='bold', fill=COLORS['primary'], anchor='start')
     
     # Recta 2: y = m2 * x + 1
     x2_start, x2_end = -2, 5
     coord.draw_segment(builder, 
                        Point(x2_start, m2 * x2_start + 1), 
                        Point(x2_end, m2 * x2_end + 1), 
-                       color='#22c55e', width=2.5)
+                       color=COLORS['secondary'], width=2.5)
     svg_l2 = coord.to_svg(Point(4, m2 * 4 + 1))
     builder.text(f'L₂: m₂ = {m2}', Point(svg_l2.x + 5, svg_l2.y + 15), 
-                 font_size=11, font_weight='bold', fill='#22c55e', anchor='start')
+                 font_size=11, font_weight='bold', fill=COLORS['secondary'], anchor='start')
     
     # Punto de intersección
     coord.draw_point(builder, Point(x_int, y_int), label='', color=COLORS['accent'], radius=4)
@@ -942,7 +942,7 @@ def render_lugar_circunferencia(output_path: str,
     )
     
     builder = SVGBuilder(600, 520)
-    builder.rect(0, 0, 600, 520, fill='#ffffff')
+    builder.rect(0, 0, 600, 520, fill=COLORS['white'])
     builder.text(title, Point(300, 25), font_size=15, font_weight='bold')
     
     coord.draw_grid(builder, step=1)
@@ -997,7 +997,7 @@ def render_parabola_tabulacion(output_path: str, title: str = "Gráfica por Tabu
     )
     
     builder = SVGBuilder(600, 500)
-    builder.rect(0, 0, 600, 500, fill='#ffffff')
+    builder.rect(0, 0, 600, 500, fill=COLORS['white'])
     builder.text(title, Point(300, 25), font_size=15, font_weight='bold')
     
     coord.draw_grid(builder, step=1)
@@ -1054,7 +1054,7 @@ def render_analisis_curva(output_path: str, title: str = "Análisis de Curva: In
     )
     
     builder = SVGBuilder(600, 500)
-    builder.rect(0, 0, 600, 500, fill='#ffffff')
+    builder.rect(0, 0, 600, 500, fill=COLORS['white'])
     builder.text(title, Point(300, 25), font_size=15, font_weight='bold')
     
     coord.draw_grid(builder, step=1)
@@ -1074,20 +1074,20 @@ def render_analisis_curva(output_path: str, title: str = "Análisis de Curva: In
         builder.line(svg_p1, svg_p2, stroke=COLORS['primary'], stroke_width=2.5)
     
     # Intercepto Y
-    coord.draw_point(builder, Point(0, 3), label='', color='#22c55e', radius=6)
+    coord.draw_point(builder, Point(0, 3), label='', color=COLORS['secondary'], radius=6)
     svg_iy = coord.to_svg(Point(0, 3))
     builder.text('Int. Y: (0, 3)', Point(svg_iy.x + 10, svg_iy.y - 5), 
-                 font_size=10, font_weight='bold', fill='#22c55e', anchor='start')
+                 font_size=10, font_weight='bold', fill=COLORS['secondary'], anchor='start')
     
     # Interceptos X
-    coord.draw_point(builder, Point(1, 0), label='', color='#ef4444', radius=6)
-    coord.draw_point(builder, Point(3, 0), label='', color='#ef4444', radius=6)
+    coord.draw_point(builder, Point(1, 0), label='', color=COLORS['accent'], radius=6)
+    coord.draw_point(builder, Point(3, 0), label='', color=COLORS['accent'], radius=6)
     svg_ix1 = coord.to_svg(Point(1, 0))
     svg_ix2 = coord.to_svg(Point(3, 0))
     builder.text('(1, 0)', Point(svg_ix1.x, svg_ix1.y + 18), 
-                 font_size=10, font_weight='bold', fill='#ef4444')
+                 font_size=10, font_weight='bold', fill=COLORS['accent'])
     builder.text('(3, 0)', Point(svg_ix2.x, svg_ix2.y + 18), 
-                 font_size=10, font_weight='bold', fill='#ef4444')
+                 font_size=10, font_weight='bold', fill=COLORS['accent'])
     
     # Vértice
     coord.draw_point(builder, Point(2, -1), label='V', color=COLORS['accent'], radius=6)
@@ -1098,9 +1098,9 @@ def render_analisis_curva(output_path: str, title: str = "Análisis de Curva: In
     # Eje de simetría
     svg_eje_top = coord.to_svg(Point(2, 5))
     svg_eje_bot = coord.to_svg(Point(2, -2))
-    builder.line(svg_eje_top, svg_eje_bot, stroke='#a855f7', stroke_width=1.5, dashed=True)
+    builder.line(svg_eje_top, svg_eje_bot, stroke=COLORS['purple'], stroke_width=1.5, dashed=True)
     builder.text('x = 2', Point(svg_eje_top.x + 10, svg_eje_top.y + 15), 
-                 font_size=10, fill='#a855f7')
+                 font_size=10, fill=COLORS['purple'])
     
     # Fórmula
     builder.formula_box('y = x² - 4x + 3 = (x-1)(x-3)', Point(300, 470), font_size=12)
@@ -1132,7 +1132,7 @@ def render_mediatriz(output_path: str,
     )
     
     builder = SVGBuilder(600, 500)
-    builder.rect(0, 0, 600, 500, fill='#ffffff')
+    builder.rect(0, 0, 600, 500, fill=COLORS['white'])
     builder.text(title, Point(300, 25), font_size=15, font_weight='bold')
     
     coord.draw_grid(builder, step=1)
@@ -1165,8 +1165,8 @@ def render_mediatriz(output_path: str,
                           color=COLORS['primary'], width=2.5)
     
     # Puntos A y B
-    coord.draw_point(builder, Point(ax, ay), label='A', show_coords=True, color='#ef4444')
-    coord.draw_point(builder, Point(bx, by), label='B', show_coords=True, color='#ef4444',
+    coord.draw_point(builder, Point(ax, ay), label='A', show_coords=True, color=COLORS['accent'])
+    coord.draw_point(builder, Point(bx, by), label='B', show_coords=True, color=COLORS['accent'],
                      label_offset=(-50, -10))
     
     # Punto medio M
@@ -1181,8 +1181,8 @@ def render_mediatriz(output_path: str,
     svg_p = coord.to_svg(Point(px, py))
     svg_a = coord.to_svg(Point(ax, ay))
     svg_b = coord.to_svg(Point(bx, by))
-    builder.line(svg_p, svg_a, stroke='#22c55e', stroke_width=1.5, dashed=True)
-    builder.line(svg_p, svg_b, stroke='#22c55e', stroke_width=1.5, dashed=True)
+    builder.line(svg_p, svg_a, stroke=COLORS['secondary'], stroke_width=1.5, dashed=True)
+    builder.line(svg_p, svg_b, stroke=COLORS['secondary'], stroke_width=1.5, dashed=True)
     
     # Distancias
     da = math.sqrt((px - ax)**2 + (py - ay)**2)
@@ -1212,7 +1212,7 @@ def render_ecuacion_general(output_path: str, title: str = "Ecuación General: A
     )
     
     builder = SVGBuilder(600, 480)
-    builder.rect(0, 0, 600, 480, fill='#ffffff')
+    builder.rect(0, 0, 600, 480, fill=COLORS['white'])
     builder.text(title, Point(300, 25), font_size=14, font_weight='bold')
     
     coord.draw_grid(builder, step=1)
@@ -1223,16 +1223,16 @@ def render_ecuacion_general(output_path: str, title: str = "Ecuación General: A
     coord.draw_segment(builder, Point(-0.5, 2.33), Point(5, -1.33), color=COLORS['primary'], width=2.5)
     
     # Interceptos
-    coord.draw_point(builder, Point(3, 0), label='', color='#ef4444', radius=6)
-    coord.draw_point(builder, Point(0, 2), label='', color='#22c55e', radius=6)
+    coord.draw_point(builder, Point(3, 0), label='', color=COLORS['accent'], radius=6)
+    coord.draw_point(builder, Point(0, 2), label='', color=COLORS['secondary'], radius=6)
     
     svg_ix = coord.to_svg(Point(3, 0))
     svg_iy = coord.to_svg(Point(0, 2))
     
     builder.text('Int. X: (3, 0)', Point(svg_ix.x + 10, svg_ix.y + 18), 
-                 font_size=10, font_weight='bold', fill='#ef4444', anchor='start')
+                 font_size=10, font_weight='bold', fill=COLORS['accent'], anchor='start')
     builder.text('Int. Y: (0, 2)', Point(svg_iy.x + 10, svg_iy.y - 5), 
-                 font_size=10, font_weight='bold', fill='#22c55e', anchor='start')
+                 font_size=10, font_weight='bold', fill=COLORS['secondary'], anchor='start')
     
     # Etiqueta de la recta
     svg_label = coord.to_svg(Point(4, 0.67))
@@ -1257,7 +1257,7 @@ def render_punto_pendiente(output_path: str, title: str = "Forma Punto-Pendiente
     )
     
     builder = SVGBuilder(600, 480)
-    builder.rect(0, 0, 600, 480, fill='#ffffff')
+    builder.rect(0, 0, 600, 480, fill=COLORS['white'])
     builder.text(title, Point(300, 25), font_size=15, font_weight='bold')
     
     coord.draw_grid(builder, step=1)
@@ -1280,16 +1280,16 @@ def render_punto_pendiente(output_path: str, title: str = "Forma Punto-Pendiente
     
     # Triángulo de pendiente
     p2 = Point(5, 3)
-    coord.draw_right_triangle(builder, p1, p2, color=COLORS['auxiliary'], fill='#fef3c7')
+    coord.draw_right_triangle(builder, p1, p2, color=COLORS['auxiliary'], fill=COLORS['segment_fill'])
     
     svg_p1 = coord.to_svg(p1)
     svg_p2 = coord.to_svg(p2)
     svg_aux = coord.to_svg(Point(5, 1))
     
     builder.text('Δx = 3', Point(svg_p1.midpoint(svg_aux).x, svg_p1.midpoint(svg_aux).y + 18), 
-                 font_size=11, font_weight='bold', fill='#22c55e')
+                 font_size=11, font_weight='bold', fill=COLORS['secondary'])
     builder.text('Δy = 2', Point(svg_aux.midpoint(svg_p2).x + 15, svg_aux.midpoint(svg_p2).y), 
-                 font_size=11, font_weight='bold', fill='#f97316')
+                 font_size=11, font_weight='bold', fill=COLORS['highlight'])
     
     builder.formula_box('y - y₁ = m(x - x₁)  →  y - 1 = ⅔(x - 2)', Point(300, 450), font_size=11)
     
@@ -1309,7 +1309,7 @@ def render_pendiente_ordenada(output_path: str, title: str = "Forma Pendiente-Or
     )
     
     builder = SVGBuilder(600, 480)
-    builder.rect(0, 0, 600, 480, fill='#ffffff')
+    builder.rect(0, 0, 600, 480, fill=COLORS['white'])
     builder.text(title, Point(300, 25), font_size=15, font_weight='bold')
     
     coord.draw_grid(builder, step=1)
@@ -1320,14 +1320,14 @@ def render_pendiente_ordenada(output_path: str, title: str = "Forma Pendiente-Or
     coord.draw_segment(builder, Point(-1.5, -0.5), Point(4, 5), color=COLORS['primary'], width=2.5)
     
     # Intercepto Y (b)
-    coord.draw_point(builder, Point(0, 1), label='b', color='#22c55e', radius=6)
+    coord.draw_point(builder, Point(0, 1), label='b', color=COLORS['secondary'], radius=6)
     svg_b = coord.to_svg(Point(0, 1))
-    builder.text('b = 1', Point(svg_b.x + 15, svg_b.y), font_size=11, font_weight='bold', fill='#22c55e', anchor='start')
+    builder.text('b = 1', Point(svg_b.x + 15, svg_b.y), font_size=11, font_weight='bold', fill=COLORS['secondary'], anchor='start')
     
     # Triángulo de pendiente
-    coord.draw_right_triangle(builder, Point(1, 2), Point(2, 3), color=COLORS['auxiliary'], fill='#fef3c7')
+    coord.draw_right_triangle(builder, Point(1, 2), Point(2, 3), color=COLORS['auxiliary'], fill=COLORS['segment_fill'])
     svg_m = coord.to_svg(Point(2, 2.5))
-    builder.text('m = 1', Point(svg_m.x + 10, svg_m.y), font_size=11, font_weight='bold', fill='#f97316', anchor='start')
+    builder.text('m = 1', Point(svg_m.x + 10, svg_m.y), font_size=11, font_weight='bold', fill=COLORS['highlight'], anchor='start')
     
     builder.formula_box('y = mx + b  →  y = 1·x + 1  →  y = x + 1', Point(300, 450), font_size=11)
     
@@ -1347,7 +1347,7 @@ def render_recta_dos_puntos(output_path: str, title: str = "Recta por Dos Puntos
     )
     
     builder = SVGBuilder(600, 480)
-    builder.rect(0, 0, 600, 480, fill='#ffffff')
+    builder.rect(0, 0, 600, 480, fill=COLORS['white'])
     builder.text(title, Point(300, 25), font_size=15, font_weight='bold')
     
     coord.draw_grid(builder, step=1)
@@ -1388,7 +1388,7 @@ def render_forma_simetrica(output_path: str, title: str = "Forma Simétrica: x/a
     )
     
     builder = SVGBuilder(600, 480)
-    builder.rect(0, 0, 600, 480, fill='#ffffff')
+    builder.rect(0, 0, 600, 480, fill=COLORS['white'])
     builder.text(title, Point(300, 25), font_size=15, font_weight='bold')
     
     coord.draw_grid(builder, step=1)
@@ -1402,14 +1402,14 @@ def render_forma_simetrica(output_path: str, title: str = "Forma Simétrica: x/a
     coord.draw_segment(builder, Point(0, 3), Point(4, 0), color=COLORS['primary'], width=2.5)
     
     # Interceptos
-    coord.draw_point(builder, Point(4, 0), label='', color='#ef4444', radius=6)
-    coord.draw_point(builder, Point(0, 3), label='', color='#22c55e', radius=6)
+    coord.draw_point(builder, Point(4, 0), label='', color=COLORS['accent'], radius=6)
+    coord.draw_point(builder, Point(0, 3), label='', color=COLORS['secondary'], radius=6)
     
     svg_a = coord.to_svg(Point(4, 0))
     svg_b = coord.to_svg(Point(0, 3))
     
-    builder.text('a = 4', Point(svg_a.x, svg_a.y + 20), font_size=12, font_weight='bold', fill='#ef4444')
-    builder.text('b = 3', Point(svg_b.x + 15, svg_b.y), font_size=12, font_weight='bold', fill='#22c55e', anchor='start')
+    builder.text('a = 4', Point(svg_a.x, svg_a.y + 20), font_size=12, font_weight='bold', fill=COLORS['accent'])
+    builder.text('b = 3', Point(svg_b.x + 15, svg_b.y), font_size=12, font_weight='bold', fill=COLORS['secondary'], anchor='start')
     
     builder.formula_box('x/a + y/b = 1  →  x/4 + y/3 = 1', Point(300, 450), font_size=12)
     
@@ -1431,7 +1431,7 @@ def render_forma_normal(output_path: str, title: str = "Forma Normal de la Recta
     )
     
     builder = SVGBuilder(600, 480)
-    builder.rect(0, 0, 600, 480, fill='#ffffff')
+    builder.rect(0, 0, 600, 480, fill=COLORS['white'])
     builder.text(title, Point(300, 25), font_size=15, font_weight='bold')
     
     coord.draw_grid(builder, step=1)
@@ -1493,7 +1493,7 @@ def render_distancia_punto_recta(output_path: str, title: str = "Distancia de Pu
     )
     
     builder = SVGBuilder(600, 480)
-    builder.rect(0, 0, 600, 480, fill='#ffffff')
+    builder.rect(0, 0, 600, 480, fill=COLORS['white'])
     builder.text(title, Point(300, 25), font_size=15, font_weight='bold')
     
     coord.draw_grid(builder, step=1)
@@ -1545,7 +1545,7 @@ def render_familias_rectas(output_path: str, title: str = "Familia de Rectas (Ha
     )
     
     builder = SVGBuilder(600, 480)
-    builder.rect(0, 0, 600, 480, fill='#ffffff')
+    builder.rect(0, 0, 600, 480, fill=COLORS['white'])
     builder.text(title, Point(300, 25), font_size=15, font_weight='bold')
     
     coord.draw_grid(builder, step=1)
@@ -1557,7 +1557,7 @@ def render_familias_rectas(output_path: str, title: str = "Familia de Rectas (Ha
     
     # Varias rectas pasando por el punto
     pendientes = [-2, -1, -0.5, 0, 0.5, 1, 2]
-    colores = ['#ef4444', '#f97316', '#eab308', '#22c55e', '#06b6d4', '#3b82f6', '#8b5cf6']
+    colores = [COLORS['accent'], COLORS['highlight'], COLORS['yellow_dark'], COLORS['secondary'], COLORS['cyan'], COLORS['primary'], COLORS['purple']]
     
     for m, color in zip(pendientes, colores):
         x1, x2 = -2.5, 4.5
@@ -1566,7 +1566,7 @@ def render_familias_rectas(output_path: str, title: str = "Familia de Rectas (Ha
         coord.draw_segment(builder, Point(x1, y1), Point(x2, y2), color=color, width=1.5)
     
     # Punto común destacado
-    coord.draw_point(builder, centro, label='P₀', show_coords=True, color='#1e293b', radius=7)
+    coord.draw_point(builder, centro, label='P₀', show_coords=True, color=COLORS['text'], radius=7)
     
     builder.formula_box('Todas pasan por P₀(1, 2) con diferentes pendientes', Point(300, 450), font_size=11)
     
@@ -1586,7 +1586,7 @@ def render_rectas_notables(output_path: str, title: str = "Rectas Notables del T
     )
     
     builder = SVGBuilder(600, 500)
-    builder.rect(0, 0, 600, 500, fill='#ffffff')
+    builder.rect(0, 0, 600, 500, fill=COLORS['white'])
     builder.text(title, Point(300, 25), font_size=15, font_weight='bold')
     
     coord.draw_grid(builder, step=1)
@@ -1598,7 +1598,7 @@ def render_rectas_notables(output_path: str, title: str = "Rectas Notables del T
     B = Point(6, 1)
     C = Point(3, 5)
     
-    coord.draw_polygon(builder, [A, B, C], fill='#dbeafe', stroke=COLORS['primary'])
+    coord.draw_polygon(builder, [A, B, C], fill=COLORS['circle_fill'], stroke=COLORS['primary'])
     
     # Puntos medios
     M_ab = A.midpoint(B)
@@ -1606,9 +1606,9 @@ def render_rectas_notables(output_path: str, title: str = "Rectas Notables del T
     M_ca = C.midpoint(A)
     
     # Medianas
-    coord.draw_segment(builder, A, M_bc, color='#ef4444', width=1.5)
-    coord.draw_segment(builder, B, M_ca, color='#22c55e', width=1.5)
-    coord.draw_segment(builder, C, M_ab, color='#3b82f6', width=1.5)
+    coord.draw_segment(builder, A, M_bc, color=COLORS['accent'], width=1.5)
+    coord.draw_segment(builder, B, M_ca, color=COLORS['secondary'], width=1.5)
+    coord.draw_segment(builder, C, M_ab, color=COLORS['primary'], width=1.5)
     
     # Baricentro
     G = Point((A.x + B.x + C.x) / 3, (A.y + B.y + C.y) / 3)
@@ -1638,7 +1638,7 @@ def render_rectas_horizontales_verticales(output_path: str, title: str = "Rectas
     )
     
     builder = SVGBuilder(600, 480)
-    builder.rect(0, 0, 600, 480, fill='#ffffff')
+    builder.rect(0, 0, 600, 480, fill=COLORS['white'])
     builder.text(title, Point(300, 25), font_size=15, font_weight='bold')
     
     coord.draw_grid(builder, step=1)
@@ -1646,28 +1646,28 @@ def render_rectas_horizontales_verticales(output_path: str, title: str = "Rectas
     coord.draw_ticks(builder, step=1, show_labels=True)
     
     # Rectas horizontales
-    coord.draw_segment(builder, Point(-5, 2), Point(5, 2), color='#3b82f6', width=2.5)
-    coord.draw_segment(builder, Point(-5, -1), Point(5, -1), color='#22c55e', width=2.5)
+    coord.draw_segment(builder, Point(-5, 2), Point(5, 2), color=COLORS['primary'], width=2.5)
+    coord.draw_segment(builder, Point(-5, -1), Point(5, -1), color=COLORS['secondary'], width=2.5)
     
     svg_h1 = coord.to_svg(Point(4, 2))
     svg_h2 = coord.to_svg(Point(4, -1))
-    builder.text('y = 2 (A=0)', Point(svg_h1.x, svg_h1.y - 12), font_size=10, font_weight='bold', fill='#3b82f6')
-    builder.text('y = -1 (A=0)', Point(svg_h2.x, svg_h2.y + 15), font_size=10, font_weight='bold', fill='#22c55e')
+    builder.text('y = 2 (A=0)', Point(svg_h1.x, svg_h1.y - 12), font_size=10, font_weight='bold', fill=COLORS['primary'])
+    builder.text('y = -1 (A=0)', Point(svg_h2.x, svg_h2.y + 15), font_size=10, font_weight='bold', fill=COLORS['secondary'])
     
     # Rectas verticales
-    coord.draw_segment(builder, Point(3, -4), Point(3, 4), color='#ef4444', width=2.5)
-    coord.draw_segment(builder, Point(-2, -4), Point(-2, 4), color='#f97316', width=2.5)
+    coord.draw_segment(builder, Point(3, -4), Point(3, 4), color=COLORS['accent'], width=2.5)
+    coord.draw_segment(builder, Point(-2, -4), Point(-2, 4), color=COLORS['highlight'], width=2.5)
     
     svg_v1 = coord.to_svg(Point(3, 3.5))
     svg_v2 = coord.to_svg(Point(-2, 3.5))
-    builder.text('x = 3 (B=0)', Point(svg_v1.x + 8, svg_v1.y), font_size=10, font_weight='bold', fill='#ef4444', anchor='start')
-    builder.text('x = -2 (B=0)', Point(svg_v2.x - 60, svg_v2.y), font_size=10, font_weight='bold', fill='#f97316')
+    builder.text('x = 3 (B=0)', Point(svg_v1.x + 8, svg_v1.y), font_size=10, font_weight='bold', fill=COLORS['accent'], anchor='start')
+    builder.text('x = -2 (B=0)', Point(svg_v2.x - 60, svg_v2.y), font_size=10, font_weight='bold', fill=COLORS['highlight'])
     
     # Leyenda
-    builder.rect(420, 390, 160, 75, fill='#f8fafc', stroke='#e2e8f0', rx=8)
+    builder.rect(420, 390, 160, 75, fill=COLORS['background'], stroke=COLORS['grid'], rx=8)
     builder.text('En Ax + By + C = 0:', Point(500, 408), font_size=10, font_weight='bold')
-    builder.text('A = 0 → Horizontal', Point(435, 428), font_size=10, fill='#3b82f6', anchor='start')
-    builder.text('B = 0 → Vertical', Point(435, 448), font_size=10, fill='#ef4444', anchor='start')
+    builder.text('A = 0 → Horizontal', Point(435, 428), font_size=10, fill=COLORS['primary'], anchor='start')
+    builder.text('B = 0 → Vertical', Point(435, 448), font_size=10, fill=COLORS['accent'], anchor='start')
     
     builder.save(output_path)
     return True
@@ -1682,7 +1682,7 @@ def render_paralela_perpendicular_punto(output_path: str, title: str = "Paralela
     )
     
     builder = SVGBuilder(600, 480)
-    builder.rect(0, 0, 600, 480, fill='#ffffff')
+    builder.rect(0, 0, 600, 480, fill=COLORS['white'])
     builder.text(title, Point(300, 25), font_size=14, font_weight='bold')
     
     coord.draw_grid(builder, step=1)
@@ -1690,27 +1690,27 @@ def render_paralela_perpendicular_punto(output_path: str, title: str = "Paralela
     coord.draw_ticks(builder, step=1, show_labels=True)
     
     # Recta original L: y = x (m = 1)
-    coord.draw_segment(builder, Point(-1, -1), Point(6, 6), color='#64748b', width=2)
+    coord.draw_segment(builder, Point(-1, -1), Point(6, 6), color=COLORS['text_light'], width=2)
     svg_l = coord.to_svg(Point(5, 5))
-    builder.text('L: m = 1', Point(svg_l.x + 5, svg_l.y - 10), font_size=10, fill='#64748b', anchor='start')
+    builder.text('L: m = 1', Point(svg_l.x + 5, svg_l.y - 10), font_size=10, fill=COLORS['text_light'], anchor='start')
     
     # Punto P
     P = Point(2, 4)
     coord.draw_point(builder, P, label='P', show_coords=True, color=COLORS['accent'], radius=6)
     
     # Paralela por P: y - 4 = 1(x - 2) → y = x + 2
-    coord.draw_segment(builder, Point(-1, 1), Point(4, 6), color='#22c55e', width=2.5)
+    coord.draw_segment(builder, Point(-1, 1), Point(4, 6), color=COLORS['secondary'], width=2.5)
     svg_par = coord.to_svg(Point(3.5, 5.5))
-    builder.text('Paralela: m = 1', Point(svg_par.x - 80, svg_par.y - 10), font_size=10, font_weight='bold', fill='#22c55e')
+    builder.text('Paralela: m = 1', Point(svg_par.x - 80, svg_par.y - 10), font_size=10, font_weight='bold', fill=COLORS['secondary'])
     
     # Perpendicular por P: y - 4 = -1(x - 2) → y = -x + 6
-    coord.draw_segment(builder, Point(0, 6), Point(6, 0), color='#ef4444', width=2.5)
+    coord.draw_segment(builder, Point(0, 6), Point(6, 0), color=COLORS['accent'], width=2.5)
     svg_perp = coord.to_svg(Point(5, 1))
-    builder.text('Perpendicular: m = -1', Point(svg_perp.x - 10, svg_perp.y + 18), font_size=10, font_weight='bold', fill='#ef4444')
+    builder.text('Perpendicular: m = -1', Point(svg_perp.x - 10, svg_perp.y + 18), font_size=10, font_weight='bold', fill=COLORS['accent'])
     
     # Símbolo perpendicular
     svg_int = coord.to_svg(Point(3, 3))
-    builder.text('⊥', Point(svg_int.x + 10, svg_int.y - 10), font_size=14, fill='#ef4444')
+    builder.text('⊥', Point(svg_int.x + 10, svg_int.y - 10), font_size=14, fill=COLORS['accent'])
     
     builder.formula_box('Paralela: m₁ = m  |  Perpendicular: m₂ = -1/m', Point(300, 450), font_size=11)
     
@@ -1727,7 +1727,7 @@ def render_graficar_pendiente_ordenada(output_path: str, title: str = "Graficar 
     )
     
     builder = SVGBuilder(600, 480)
-    builder.rect(0, 0, 600, 480, fill='#ffffff')
+    builder.rect(0, 0, 600, 480, fill=COLORS['white'])
     builder.text(title, Point(300, 25), font_size=15, font_weight='bold')
     
     coord.draw_grid(builder, step=1)
@@ -1740,22 +1740,22 @@ def render_graficar_pendiente_ordenada(output_path: str, title: str = "Graficar 
     coord.draw_segment(builder, Point(-1.5, b + m*(-1.5)), Point(5.5, b + m*5.5), color=COLORS['primary'], width=2.5)
     
     # Paso 1: Marcar b en eje Y
-    coord.draw_point(builder, Point(0, 1), label='', color='#22c55e', radius=7)
+    coord.draw_point(builder, Point(0, 1), label='', color=COLORS['secondary'], radius=7)
     svg_b = coord.to_svg(Point(0, 1))
-    builder.text('① b = 1', Point(svg_b.x + 15, svg_b.y), font_size=11, font_weight='bold', fill='#22c55e', anchor='start')
+    builder.text('① b = 1', Point(svg_b.x + 15, svg_b.y), font_size=11, font_weight='bold', fill=COLORS['secondary'], anchor='start')
     
     # Paso 2: Desde b, usar pendiente (avanzar 3, subir 2)
-    coord.draw_right_triangle(builder, Point(0, 1), Point(3, 3), color='#f97316', fill='#fef3c7')
+    coord.draw_right_triangle(builder, Point(0, 1), Point(3, 3), color=COLORS['highlight'], fill=COLORS['segment_fill'])
     
     svg_dx = coord.to_svg(Point(1.5, 1))
     svg_dy = coord.to_svg(Point(3, 2))
-    builder.text('② Δx=3', Point(svg_dx.x, svg_dx.y + 18), font_size=10, font_weight='bold', fill='#f97316')
-    builder.text('Δy=2', Point(svg_dy.x + 12, svg_dy.y), font_size=10, font_weight='bold', fill='#f97316')
+    builder.text('② Δx=3', Point(svg_dx.x, svg_dx.y + 18), font_size=10, font_weight='bold', fill=COLORS['highlight'])
+    builder.text('Δy=2', Point(svg_dy.x + 12, svg_dy.y), font_size=10, font_weight='bold', fill=COLORS['highlight'])
     
     # Segundo punto
-    coord.draw_point(builder, Point(3, 3), label='', color='#ef4444', radius=6)
+    coord.draw_point(builder, Point(3, 3), label='', color=COLORS['accent'], radius=6)
     svg_p2 = coord.to_svg(Point(3, 3))
-    builder.text('③ (3, 3)', Point(svg_p2.x + 10, svg_p2.y - 10), font_size=10, font_weight='bold', fill='#ef4444', anchor='start')
+    builder.text('③ (3, 3)', Point(svg_p2.x + 10, svg_p2.y - 10), font_size=10, font_weight='bold', fill=COLORS['accent'], anchor='start')
     
     builder.formula_box('y = ⅔x + 1  |  m = ⅔ = Δy/Δx  |  b = 1', Point(300, 450), font_size=11)
     
@@ -1772,7 +1772,7 @@ def render_rectas_paralelas_familia(output_path: str, title: str = "Familia de R
     )
     
     builder = SVGBuilder(600, 480)
-    builder.rect(0, 0, 600, 480, fill='#ffffff')
+    builder.rect(0, 0, 600, 480, fill=COLORS['white'])
     builder.text(title, Point(300, 25), font_size=15, font_weight='bold')
     
     coord.draw_grid(builder, step=1)
@@ -1781,7 +1781,7 @@ def render_rectas_paralelas_familia(output_path: str, title: str = "Familia de R
     
     # Familia y = x + k con diferentes k
     ks = [-3, -1.5, 0, 1.5, 3]
-    colores = ['#ef4444', '#f97316', '#22c55e', '#3b82f6', '#8b5cf6']
+    colores = [COLORS['accent'], COLORS['highlight'], COLORS['secondary'], COLORS['primary'], COLORS['purple']]
     
     for k, color in zip(ks, colores):
         x1, x2 = -3.5, 3.5
@@ -1809,7 +1809,7 @@ def render_alturas_ortocentro(output_path: str, title: str = "Alturas y Ortocent
     )
     
     builder = SVGBuilder(600, 500)
-    builder.rect(0, 0, 600, 500, fill='#ffffff')
+    builder.rect(0, 0, 600, 500, fill=COLORS['white'])
     builder.text(title, Point(300, 25), font_size=15, font_weight='bold')
     
     coord.draw_grid(builder, step=1)
@@ -1821,15 +1821,15 @@ def render_alturas_ortocentro(output_path: str, title: str = "Alturas y Ortocent
     B = Point(6, 1)
     C = Point(3, 5)
     
-    coord.draw_polygon(builder, [A, B, C], fill='#dbeafe', stroke=COLORS['primary'])
+    coord.draw_polygon(builder, [A, B, C], fill=COLORS['circle_fill'], stroke=COLORS['primary'])
     
     # Alturas calculadas exactamente con SymPy
     # Altura desde A a BC: pie en (4.2, 3.4)
-    coord.draw_segment(builder, A, Point(4.2, 3.4), color='#ef4444', width=1.5)
+    coord.draw_segment(builder, A, Point(4.2, 3.4), color=COLORS['accent'], width=1.5)
     # Altura desde B a AC: pie en (2, 3)
-    coord.draw_segment(builder, B, Point(2, 3), color='#22c55e', width=1.5)
+    coord.draw_segment(builder, B, Point(2, 3), color=COLORS['secondary'], width=1.5)
     # Altura desde C a AB: pie en (3, 1)
-    coord.draw_segment(builder, C, Point(3, 1), color='#3b82f6', width=1.5)
+    coord.draw_segment(builder, C, Point(3, 1), color=COLORS['primary'], width=1.5)
     
     # Ortocentro H(3, 2.5)
     H = Point(3, 2.5)
@@ -1842,7 +1842,7 @@ def render_alturas_ortocentro(output_path: str, title: str = "Alturas y Ortocent
     
     # Símbolos perpendicular en los pies
     svg_pie_c = coord.to_svg(Point(3, 1))
-    builder.text('⊥', Point(svg_pie_c.x + 8, svg_pie_c.y - 8), font_size=10, fill='#3b82f6')
+    builder.text('⊥', Point(svg_pie_c.x + 8, svg_pie_c.y - 8), font_size=10, fill=COLORS['primary'])
     
     builder.formula_box('Alturas: perpendiculares desde vértice al lado opuesto | H = ortocentro', Point(300, 470), font_size=10)
     
@@ -1872,7 +1872,7 @@ def render_mediatrices_circuncentro(output_path: str, title: str = "Mediatrices 
     )
     
     builder = SVGBuilder(svg_width, svg_height)
-    builder.rect(0, 0, svg_width, svg_height, fill='#ffffff')
+    builder.rect(0, 0, svg_width, svg_height, fill=COLORS['white'])
     builder.text(title, Point(svg_width/2, 25), font_size=15, font_weight='bold')
     
     coord.draw_grid(builder, step=1)
@@ -1884,7 +1884,7 @@ def render_mediatrices_circuncentro(output_path: str, title: str = "Mediatrices 
     B = Point(6, 1)
     C = Point(3, 5)
     
-    coord.draw_polygon(builder, [A, B, C], fill='#dbeafe', stroke=COLORS['primary'])
+    coord.draw_polygon(builder, [A, B, C], fill=COLORS['circle_fill'], stroke=COLORS['primary'])
     
     # Puntos medios calculados
     M_ab = Point(3.5, 1)   # Punto medio AB
@@ -1901,28 +1901,28 @@ def render_mediatrices_circuncentro(output_path: str, title: str = "Mediatrices 
     svg_o = coord.to_svg(O)
     # Con escala uniforme, podemos usar cualquier eje para el radio
     svg_r = r * coord.scale_x  # scale_x == scale_y cuando es uniforme
-    builder.circle(svg_o, svg_r, fill='none', stroke='#a855f7', stroke_width=1.5)
+    builder.circle(svg_o, svg_r, fill='none', stroke=COLORS['purple'], stroke_width=1.5)
     
     # Mediatrices (pasan por punto medio, perpendiculares al lado)
     # Todas deben extenderse uniformemente más allá de la circunferencia
     
     # Mediatriz de AB: vertical x = 3.5 (desde y=-1 hasta y=6)
-    coord.draw_segment(builder, Point(3.5, -1), Point(3.5, 6), color='#ef4444', width=1.5)
+    coord.draw_segment(builder, Point(3.5, -1), Point(3.5, 6), color=COLORS['accent'], width=1.5)
     
     # Mediatriz de BC: pasa por (4.5, 3) con pendiente 3/4
     # Extender desde x=0.5 hasta x=7 (fuera de la circunferencia en ambos lados)
     # y - 3 = (3/4)(x - 4.5) → y = 0.75x + (-3.375 + 3) = 0.75x - 0.375
-    coord.draw_segment(builder, Point(0.5, 0), Point(7, 4.875), color='#22c55e', width=1.5)
+    coord.draw_segment(builder, Point(0.5, 0), Point(7, 4.875), color=COLORS['secondary'], width=1.5)
     
     # Mediatriz de CA: pasa por (2, 3) con pendiente -1/2
     # y - 3 = (-1/2)(x - 2) → y = -0.5x + 4
     # Extender desde x=-1 hasta x=7
-    coord.draw_segment(builder, Point(-1, 4.5), Point(7, 0.5), color='#3b82f6', width=1.5)
+    coord.draw_segment(builder, Point(-1, 4.5), Point(7, 0.5), color=COLORS['primary'], width=1.5)
     
     # Puntos medios
-    coord.draw_point(builder, M_ab, label='', color='#64748b', radius=4)
-    coord.draw_point(builder, M_bc, label='', color='#64748b', radius=4)
-    coord.draw_point(builder, M_ca, label='', color='#64748b', radius=4)
+    coord.draw_point(builder, M_ab, label='', color=COLORS['text_light'], radius=4)
+    coord.draw_point(builder, M_bc, label='', color=COLORS['text_light'], radius=4)
+    coord.draw_point(builder, M_ca, label='', color=COLORS['text_light'], radius=4)
     
     # Circuncentro
     coord.draw_point(builder, O, label='O', color=COLORS['accent'], radius=5)
@@ -1958,7 +1958,7 @@ def render_elementos_circunferencia(output_path: str, title: str = "Elementos de
     )
     
     builder = SVGBuilder(svg_width, svg_height)
-    builder.rect(0, 0, svg_width, svg_height, fill='#ffffff')
+    builder.rect(0, 0, svg_width, svg_height, fill=COLORS['white'])
     builder.text(title, Point(svg_width/2, 25), font_size=15, font_weight='bold')
     
     coord.draw_grid(builder, step=1)
@@ -1972,7 +1972,7 @@ def render_elementos_circunferencia(output_path: str, title: str = "Elementos de
     # Dibujar circunferencia
     svg_c = coord.to_svg(C)
     svg_r = r * coord.scale_x
-    builder.circle(svg_c, svg_r, fill='#dbeafe', fill_opacity=0.3, stroke=COLORS['primary'], stroke_width=2)
+    builder.circle(svg_c, svg_r, fill=COLORS['circle_fill'], fill_opacity=0.3, stroke=COLORS['primary'], stroke_width=2)
     
     # Radio: desde centro a punto (1+4, 1) = (5, 1)
     P_radio = Point(5, 1)
@@ -1984,27 +1984,27 @@ def render_elementos_circunferencia(output_path: str, title: str = "Elementos de
     # Diámetro: de (-3, 1) a (5, 1)
     P_diam1 = Point(-3, 1)
     P_diam2 = Point(5, 1)
-    coord.draw_segment(builder, P_diam1, P_diam2, color='#22c55e', width=2, dashed=True)
+    coord.draw_segment(builder, P_diam1, P_diam2, color=COLORS['secondary'], width=2, dashed=True)
     svg_diam = coord.to_svg(Point(1, 1.5))
-    builder.text('d = 2r = 8', Point(svg_diam.x, svg_diam.y - 25), font_size=10, fill='#22c55e')
+    builder.text('d = 2r = 8', Point(svg_diam.x, svg_diam.y - 25), font_size=10, fill=COLORS['secondary'])
     
     # Cuerda: de (1-4*cos(60°), 1+4*sin(60°)) a (1+4*cos(60°), 1+4*sin(60°))
     # Usando ángulo 60° = π/3
     angle = math.pi / 3
     P_cuerda1 = Point(1 - 4*math.cos(angle), 1 + 4*math.sin(angle))
     P_cuerda2 = Point(1 + 4*math.cos(angle), 1 + 4*math.sin(angle))
-    coord.draw_segment(builder, P_cuerda1, P_cuerda2, color='#a855f7', width=2)
+    coord.draw_segment(builder, P_cuerda1, P_cuerda2, color=COLORS['purple'], width=2)
     svg_cuerda = coord.to_svg(Point(1, 1 + 4*math.sin(angle) + 0.3))
-    builder.text('cuerda', Point(svg_cuerda.x, svg_cuerda.y - 10), font_size=10, fill='#a855f7')
+    builder.text('cuerda', Point(svg_cuerda.x, svg_cuerda.y - 10), font_size=10, fill=COLORS['purple'])
     
     # Centro
     coord.draw_point(builder, C, label='C', show_coords=True, color=COLORS['accent'], radius=5)
     
     # Puntos en la circunferencia
     coord.draw_point(builder, P_radio, label='P', color=COLORS['primary'], radius=4)
-    coord.draw_point(builder, P_diam1, label='', color='#22c55e', radius=4)
-    coord.draw_point(builder, P_cuerda1, label='', color='#a855f7', radius=4)
-    coord.draw_point(builder, P_cuerda2, label='', color='#a855f7', radius=4)
+    coord.draw_point(builder, P_diam1, label='', color=COLORS['secondary'], radius=4)
+    coord.draw_point(builder, P_cuerda1, label='', color=COLORS['purple'], radius=4)
+    coord.draw_point(builder, P_cuerda2, label='', color=COLORS['purple'], radius=4)
     
     builder.formula_box('Centro C(h,k) | Radio r | Diámetro d=2r | Cuerda', Point(svg_width/2, svg_height - 30), font_size=10)
     
@@ -2027,7 +2027,7 @@ def render_ecuacion_ordinaria_circ(output_path: str, title: str = "Ecuación Ord
     )
     
     builder = SVGBuilder(svg_width, svg_height)
-    builder.rect(0, 0, svg_width, svg_height, fill='#ffffff')
+    builder.rect(0, 0, svg_width, svg_height, fill=COLORS['white'])
     builder.text(title, Point(svg_width/2, 25), font_size=15, font_weight='bold')
     
     coord.draw_grid(builder, step=1)
@@ -2040,7 +2040,7 @@ def render_ecuacion_ordinaria_circ(output_path: str, title: str = "Ecuación Ord
     
     svg_c = coord.to_svg(C)
     svg_r = r * coord.scale_x
-    builder.circle(svg_c, svg_r, fill='#dbeafe', fill_opacity=0.3, stroke=COLORS['primary'], stroke_width=2)
+    builder.circle(svg_c, svg_r, fill=COLORS['circle_fill'], fill_opacity=0.3, stroke=COLORS['primary'], stroke_width=2)
     
     # Punto P(x,y) genérico en la circunferencia (en ángulo 45°)
     angle = math.pi / 4
@@ -2050,15 +2050,15 @@ def render_ecuacion_ordinaria_circ(output_path: str, title: str = "Ecuación Ord
     coord.draw_segment(builder, C, P, color=COLORS['accent'], width=2)
     
     # Líneas punteadas para mostrar (x-h) y (y-k)
-    coord.draw_segment(builder, C, Point(P.x, C.y), color='#64748b', width=1, dashed=True)
-    coord.draw_segment(builder, Point(P.x, C.y), P, color='#64748b', width=1, dashed=True)
+    coord.draw_segment(builder, C, Point(P.x, C.y), color=COLORS['text_light'], width=1, dashed=True)
+    coord.draw_segment(builder, Point(P.x, C.y), P, color=COLORS['text_light'], width=1, dashed=True)
     
     # Etiquetas
     svg_xh = coord.to_svg(Point((C.x + P.x)/2, C.y - 0.3))
-    builder.text('x - h', Point(svg_xh.x, svg_xh.y + 15), font_size=10, fill='#64748b')
+    builder.text('x - h', Point(svg_xh.x, svg_xh.y + 15), font_size=10, fill=COLORS['text_light'])
     
     svg_yk = coord.to_svg(Point(P.x + 0.3, (C.y + P.y)/2))
-    builder.text('y - k', Point(svg_yk.x + 10, svg_yk.y), font_size=10, fill='#64748b')
+    builder.text('y - k', Point(svg_yk.x + 10, svg_yk.y), font_size=10, fill=COLORS['text_light'])
     
     svg_r_label = coord.to_svg(Point((C.x + P.x)/2 - 0.3, (C.y + P.y)/2 + 0.3))
     builder.text('r', Point(svg_r_label.x - 10, svg_r_label.y), font_size=12, fill=COLORS['accent'], font_weight='bold')
@@ -2081,21 +2081,21 @@ def render_posiciones_recta_circ(output_path: str, title: str = "Posiciones Rect
     svg_height = 280
     
     builder = SVGBuilder(svg_width, svg_height)
-    builder.rect(0, 0, svg_width, svg_height, fill='#ffffff')
+    builder.rect(0, 0, svg_width, svg_height, fill=COLORS['white'])
     builder.text(title, Point(svg_width/2, 20), font_size=14, font_weight='bold')
     
     # Tres mini-diagramas
     configs = [
-        {'cx': 100, 'label': 'Exterior (d > r)', 'line_y': 180, 'color': '#ef4444'},
-        {'cx': 350, 'label': 'Tangente (d = r)', 'line_y': 130, 'color': '#22c55e'},
-        {'cx': 600, 'label': 'Secante (d < r)', 'line_y': 100, 'color': '#3b82f6'},
+        {'cx': 100, 'label': 'Exterior (d > r)', 'line_y': 180, 'color': COLORS['accent']},
+        {'cx': 350, 'label': 'Tangente (d = r)', 'line_y': 130, 'color': COLORS['secondary']},
+        {'cx': 600, 'label': 'Secante (d < r)', 'line_y': 100, 'color': COLORS['primary']},
     ]
     
     for cfg in configs:
         cx, cy, r = cfg['cx'], 130, 50
         
         # Circunferencia
-        builder.circle(Point(cx, cy), r, fill='#dbeafe', fill_opacity=0.3, stroke=COLORS['primary'], stroke_width=2)
+        builder.circle(Point(cx, cy), r, fill=COLORS['circle_fill'], fill_opacity=0.3, stroke=COLORS['primary'], stroke_width=2)
         
         # Centro
         builder.circle(Point(cx, cy), 4, fill=COLORS['accent'])
@@ -2106,8 +2106,8 @@ def render_posiciones_recta_circ(output_path: str, title: str = "Posiciones Rect
         
         # Distancia d (línea punteada vertical)
         builder.line(Point(cx, cy), Point(cx, cfg['line_y']), 
-                    stroke='#64748b', stroke_width=1, dashed=True)
-        builder.text('d', Point(cx + 8, (cy + cfg['line_y'])/2), font_size=10, fill='#64748b')
+                    stroke=COLORS['text_light'], stroke_width=1, dashed=True)
+        builder.text('d', Point(cx + 8, (cy + cfg['line_y'])/2), font_size=10, fill=COLORS['text_light'])
         
         # Etiqueta
         builder.text(cfg['label'], Point(cx, 250), font_size=11, fill=cfg['color'], font_weight='bold')
@@ -2124,7 +2124,7 @@ def render_posiciones_dos_circ(output_path: str, title: str = "Posiciones entre 
     svg_height = 300
     
     builder = SVGBuilder(svg_width, svg_height)
-    builder.rect(0, 0, svg_width, svg_height, fill='#ffffff')
+    builder.rect(0, 0, svg_width, svg_height, fill=COLORS['white'])
     builder.text(title, Point(svg_width/2, 20), font_size=14, font_weight='bold')
     
     # Cuatro configuraciones
@@ -2136,16 +2136,16 @@ def render_posiciones_dos_circ(output_path: str, title: str = "Posiciones entre 
     ]
     
     cy = 140
-    colors = ['#3b82f6', '#22c55e']
+    colors = [COLORS['primary'], COLORS['secondary']]
     
     for cfg in configs:
         # Circunferencia 1
-        builder.circle(Point(cfg['cx1'], cy), cfg['r1'], fill='#dbeafe', fill_opacity=0.3, 
+        builder.circle(Point(cfg['cx1'], cy), cfg['r1'], fill=COLORS['circle_fill'], fill_opacity=0.3, 
                       stroke=colors[0], stroke_width=2)
         builder.circle(Point(cfg['cx1'], cy), 3, fill=colors[0])
         
         # Circunferencia 2
-        builder.circle(Point(cfg['cx2'], cy), cfg['r2'], fill='#dcfce7', fill_opacity=0.3, 
+        builder.circle(Point(cfg['cx2'], cy), cfg['r2'], fill=COLORS['sector_fill'], fill_opacity=0.3, 
                       stroke=colors[1], stroke_width=2)
         builder.circle(Point(cfg['cx2'], cy), 3, fill=colors[1])
         
@@ -2172,7 +2172,7 @@ def render_circunferencias_concentricas(output_path: str, title: str = "Circunfe
     )
     
     builder = SVGBuilder(svg_width, svg_height)
-    builder.rect(0, 0, svg_width, svg_height, fill='#ffffff')
+    builder.rect(0, 0, svg_width, svg_height, fill=COLORS['white'])
     builder.text(title, Point(svg_width/2, 25), font_size=15, font_weight='bold')
     
     coord.draw_grid(builder, step=1)
@@ -2199,7 +2199,7 @@ def render_circunferencias_concentricas(output_path: str, title: str = "Circunfe
     # Etiquetas de radios
     for r in radii:
         svg_label = coord.to_svg(Point(r + 0.2, 0.3))
-        builder.text(f'r={r}', Point(svg_label.x, svg_label.y), font_size=9, fill='#64748b')
+        builder.text(f'r={r}', Point(svg_label.x, svg_label.y), font_size=9, fill=COLORS['text_light'])
     
     builder.formula_box('x² + y² = r²  |  Mismo centro, diferentes radios', Point(svg_width/2, svg_height - 30), font_size=11)
     
@@ -2230,7 +2230,7 @@ def render_tangente_circunferencia(output_path: str, title: str = "Recta Tangent
     )
     
     builder = SVGBuilder(svg_width, svg_height)
-    builder.rect(0, 0, svg_width, svg_height, fill='#ffffff')
+    builder.rect(0, 0, svg_width, svg_height, fill=COLORS['white'])
     builder.text(title, Point(svg_width/2, 25), font_size=15, font_weight='bold')
     
     coord.draw_grid(builder, step=1)
@@ -2243,7 +2243,7 @@ def render_tangente_circunferencia(output_path: str, title: str = "Recta Tangent
     
     svg_c = coord.to_svg(C)
     svg_r = r * coord.scale_x
-    builder.circle(svg_c, svg_r, fill='#dbeafe', fill_opacity=0.3, stroke=COLORS['primary'], stroke_width=2)
+    builder.circle(svg_c, svg_r, fill=COLORS['circle_fill'], fill_opacity=0.3, stroke=COLORS['primary'], stroke_width=2)
     
     # Punto de tangencia P(3, √7) calculado con SymPy
     # 3² + (√7)² = 9 + 7 = 16 ✓
@@ -2260,11 +2260,11 @@ def render_tangente_circunferencia(output_path: str, title: str = "Recta Tangent
     # x = 6: y ≈ -0.7559
     y_at_minus2 = (16 - 3*(-2)) / sqrt7  # ≈ 8.3152
     y_at_6 = (16 - 3*6) / sqrt7  # ≈ -0.7559
-    coord.draw_segment(builder, Point(-2, y_at_minus2), Point(6, y_at_6), color='#22c55e', width=2)
+    coord.draw_segment(builder, Point(-2, y_at_minus2), Point(6, y_at_6), color=COLORS['secondary'], width=2)
     
     # Símbolo de perpendicular
     svg_p = coord.to_svg(P)
-    builder.text('⊥', Point(svg_p.x + 15, svg_p.y - 5), font_size=12, fill='#22c55e')
+    builder.text('⊥', Point(svg_p.x + 15, svg_p.y - 5), font_size=12, fill=COLORS['secondary'])
     
     # Puntos
     coord.draw_point(builder, C, label='C(0, 0)', color=COLORS['accent'], radius=5)
@@ -2272,7 +2272,7 @@ def render_tangente_circunferencia(output_path: str, title: str = "Recta Tangent
     
     # Etiqueta tangente
     svg_tang = coord.to_svg(Point(4.5, 0.5))
-    builder.text('3x + √7y = 16', Point(svg_tang.x, svg_tang.y), font_size=10, fill='#22c55e', font_weight='bold')
+    builder.text('3x + √7y = 16', Point(svg_tang.x, svg_tang.y), font_size=10, fill=COLORS['secondary'], font_weight='bold')
     
     builder.formula_box('Tangente ⊥ radio | Ecuación: x₀x + y₀y = r²', Point(svg_width/2, svg_height - 30), font_size=10)
     
@@ -2295,7 +2295,7 @@ def render_circ_por_punto_fijo(output_path: str, title: str = "Circunferencias p
     )
     
     builder = SVGBuilder(svg_width, svg_height)
-    builder.rect(0, 0, svg_width, svg_height, fill='#ffffff')
+    builder.rect(0, 0, svg_width, svg_height, fill=COLORS['white'])
     builder.text(title, Point(svg_width/2, 25), font_size=15, font_weight='bold')
     
     coord.draw_grid(builder, step=1)
@@ -2304,7 +2304,7 @@ def render_circ_por_punto_fijo(output_path: str, title: str = "Circunferencias p
     
     # Familia: circunferencias que pasan por origen con centro en eje X
     # Centro (h, 0), radio = h, ecuación: (x-h)² + y² = h²
-    colors = ['#ef4444', '#f97316', '#eab308', '#22c55e', '#3b82f6']
+    colors = [COLORS['accent'], COLORS['highlight'], COLORS['yellow_dark'], COLORS['secondary'], COLORS['primary']]
     h_values = [1, 2, 3, 4, 5]
     
     for i, h in enumerate(h_values):
@@ -2339,7 +2339,7 @@ def render_circ_tangentes_recta(output_path: str, title: str = "Circunferencias 
     )
     
     builder = SVGBuilder(svg_width, svg_height)
-    builder.rect(0, 0, svg_width, svg_height, fill='#ffffff')
+    builder.rect(0, 0, svg_width, svg_height, fill=COLORS['white'])
     builder.text(title, Point(svg_width/2, 25), font_size=15, font_weight='bold')
     
     coord.draw_grid(builder, step=1)
@@ -2348,7 +2348,7 @@ def render_circ_tangentes_recta(output_path: str, title: str = "Circunferencias 
     
     # Familia: tangentes al eje X en (3, 0)
     # Centro (3, k), radio = |k|
-    colors = ['#3b82f6', '#22c55e', '#eab308', '#f97316']
+    colors = [COLORS['primary'], COLORS['secondary'], COLORS['yellow_dark'], COLORS['highlight']]
     k_values = [1, 2, 3, 4]
     
     for i, k in enumerate(k_values):
@@ -2363,9 +2363,9 @@ def render_circ_tangentes_recta(output_path: str, title: str = "Circunferencias 
     coord.draw_point(builder, Point(3, 0), label='(3, 0)', color=COLORS['accent'], radius=5, label_offset=(10, 15))
     
     # Línea vertical x = 3 (lugar de centros)
-    coord.draw_segment(builder, Point(3, 0.5), Point(3, 8), color='#64748b', width=1, dashed=True)
+    coord.draw_segment(builder, Point(3, 0.5), Point(3, 8), color=COLORS['text_light'], width=1, dashed=True)
     svg_label = coord.to_svg(Point(3.3, 7))
-    builder.text('x = 3', Point(svg_label.x, svg_label.y), font_size=10, fill='#64748b')
+    builder.text('x = 3', Point(svg_label.x, svg_label.y), font_size=10, fill=COLORS['text_light'])
     
     builder.formula_box('(x - 3)² + (y - k)² = k²  |  Tangentes en (3, 0)', Point(svg_width/2, svg_height - 30), font_size=11)
     
@@ -2389,7 +2389,7 @@ def render_haz_circunferencias(output_path: str, title: str = "Haz de Circunfere
     )
     
     builder = SVGBuilder(svg_width, svg_height)
-    builder.rect(0, 0, svg_width, svg_height, fill='#ffffff')
+    builder.rect(0, 0, svg_width, svg_height, fill=COLORS['white'])
     builder.text(title, Point(svg_width/2, 25), font_size=15, font_weight='bold')
     
     coord.draw_grid(builder, step=1)
@@ -2402,12 +2402,12 @@ def render_haz_circunferencias(output_path: str, title: str = "Haz de Circunfere
     # C1
     svg_c1 = coord.to_svg(Point(0, 0))
     svg_r1 = 2 * coord.scale_x
-    builder.circle(svg_c1, svg_r1, fill='none', stroke='#3b82f6', stroke_width=2)
+    builder.circle(svg_c1, svg_r1, fill='none', stroke=COLORS['primary'], stroke_width=2)
     
     # C2
     svg_c2 = coord.to_svg(Point(1, 1))
     svg_r2 = math.sqrt(2) * coord.scale_x
-    builder.circle(svg_c2, svg_r2, fill='none', stroke='#22c55e', stroke_width=2)
+    builder.circle(svg_c2, svg_r2, fill='none', stroke=COLORS['secondary'], stroke_width=2)
     
     # Puntos de intersección (calculados con SymPy)
     # x² + y² = 4 y x² + y² - 2x - 2y = 0
@@ -2428,17 +2428,17 @@ def render_haz_circunferencias(output_path: str, title: str = "Haz de Circunfere
     svg_c3 = coord.to_svg(Point(1/3, 1/3))
     # Radio: sqrt((1/3)² + (1/3)² + 4/1.5) ≈ 1.76
     svg_r3 = 1.76 * coord.scale_x
-    builder.circle(svg_c3, svg_r3, fill='none', stroke='#a855f7', stroke_width=1.5, fill_opacity=0.1)
+    builder.circle(svg_c3, svg_r3, fill='none', stroke=COLORS['purple'], stroke_width=1.5, fill_opacity=0.1)
     
     # Etiquetas
     svg_label1 = coord.to_svg(Point(-1.5, 1.5))
-    builder.text('C₁', Point(svg_label1.x, svg_label1.y), font_size=11, fill='#3b82f6', font_weight='bold')
+    builder.text('C₁', Point(svg_label1.x, svg_label1.y), font_size=11, fill=COLORS['primary'], font_weight='bold')
     svg_label2 = coord.to_svg(Point(2, 2))
-    builder.text('C₂', Point(svg_label2.x, svg_label2.y), font_size=11, fill='#22c55e', font_weight='bold')
+    builder.text('C₂', Point(svg_label2.x, svg_label2.y), font_size=11, fill=COLORS['secondary'], font_weight='bold')
     
     # Centros
-    coord.draw_point(builder, Point(0, 0), label='', color='#3b82f6', radius=3)
-    coord.draw_point(builder, Point(1, 1), label='', color='#22c55e', radius=3)
+    coord.draw_point(builder, Point(0, 0), label='', color=COLORS['primary'], radius=3)
+    coord.draw_point(builder, Point(1, 1), label='', color=COLORS['secondary'], radius=3)
     
     builder.formula_box('C₁ + λC₂ = 0  |  Todas pasan por P₁ y P₂', Point(svg_width/2, svg_height - 30), font_size=11)
     
@@ -2461,7 +2461,7 @@ def render_eje_radical(output_path: str, title: str = "Eje Radical"):
     )
     
     builder = SVGBuilder(svg_width, svg_height)
-    builder.rect(0, 0, svg_width, svg_height, fill='#ffffff')
+    builder.rect(0, 0, svg_width, svg_height, fill=COLORS['white'])
     builder.text(title, Point(svg_width/2, 25), font_size=15, font_weight='bold')
     
     coord.draw_grid(builder, step=1)
@@ -2477,29 +2477,29 @@ def render_eje_radical(output_path: str, title: str = "Eje Radical"):
     
     svg_c1 = coord.to_svg(C1)
     svg_r1 = r1 * coord.scale_x
-    builder.circle(svg_c1, svg_r1, fill='#dbeafe', fill_opacity=0.3, stroke='#3b82f6', stroke_width=2)
+    builder.circle(svg_c1, svg_r1, fill=COLORS['circle_fill'], fill_opacity=0.3, stroke=COLORS['primary'], stroke_width=2)
     
     svg_c2 = coord.to_svg(C2)
     svg_r2 = r2 * coord.scale_x
-    builder.circle(svg_c2, svg_r2, fill='#dcfce7', fill_opacity=0.3, stroke='#22c55e', stroke_width=2)
+    builder.circle(svg_c2, svg_r2, fill=COLORS['sector_fill'], fill_opacity=0.3, stroke=COLORS['secondary'], stroke_width=2)
     
     # Eje radical: recta perpendicular a la línea de centros
     # Para estas circunferencias, el eje radical es vertical en x ≈ 3.375
     # Calculado: (r1² - r2² + d²) / (2d) donde d = 3
     # x = 2 + (4 - 6.25 + 9) / 6 = 2 + 6.75/6 = 2 + 1.125 = 3.125
     x_radical = 3.125
-    coord.draw_segment(builder, Point(x_radical, -1), Point(x_radical, 7), color='#ef4444', width=2)
+    coord.draw_segment(builder, Point(x_radical, -1), Point(x_radical, 7), color=COLORS['accent'], width=2)
     
     # Etiqueta
     svg_label = coord.to_svg(Point(x_radical + 0.3, 6))
-    builder.text('Eje radical', Point(svg_label.x, svg_label.y), font_size=10, fill='#ef4444', font_weight='bold')
+    builder.text('Eje radical', Point(svg_label.x, svg_label.y), font_size=10, fill=COLORS['accent'], font_weight='bold')
     
     # Centros
-    coord.draw_point(builder, C1, label='C₁', color='#3b82f6', radius=4)
-    coord.draw_point(builder, C2, label='C₂', color='#22c55e', radius=4)
+    coord.draw_point(builder, C1, label='C₁', color=COLORS['primary'], radius=4)
+    coord.draw_point(builder, C2, label='C₂', color=COLORS['secondary'], radius=4)
     
     # Línea entre centros
-    coord.draw_segment(builder, C1, C2, color='#64748b', width=1, dashed=True)
+    coord.draw_segment(builder, C1, C2, color=COLORS['text_light'], width=1, dashed=True)
     
     builder.formula_box('C₁ - C₂ = 0  |  Puntos con igual potencia', Point(svg_width/2, svg_height - 30), font_size=11)
     
@@ -2522,7 +2522,7 @@ def render_circ_ortogonales(output_path: str, title: str = "Circunferencias Orto
     )
     
     builder = SVGBuilder(svg_width, svg_height)
-    builder.rect(0, 0, svg_width, svg_height, fill='#ffffff')
+    builder.rect(0, 0, svg_width, svg_height, fill=COLORS['white'])
     builder.text(title, Point(svg_width/2, 25), font_size=15, font_weight='bold')
     
     coord.draw_grid(builder, step=1)
@@ -2540,11 +2540,11 @@ def render_circ_ortogonales(output_path: str, title: str = "Circunferencias Orto
     
     svg_c1 = coord.to_svg(C1)
     svg_r1 = r1 * coord.scale_x
-    builder.circle(svg_c1, svg_r1, fill='#dbeafe', fill_opacity=0.3, stroke='#3b82f6', stroke_width=2)
+    builder.circle(svg_c1, svg_r1, fill=COLORS['circle_fill'], fill_opacity=0.3, stroke=COLORS['primary'], stroke_width=2)
     
     svg_c2 = coord.to_svg(C2)
     svg_r2 = r2 * coord.scale_x
-    builder.circle(svg_c2, svg_r2, fill='#dcfce7', fill_opacity=0.3, stroke='#22c55e', stroke_width=2)
+    builder.circle(svg_c2, svg_r2, fill=COLORS['sector_fill'], fill_opacity=0.3, stroke=COLORS['secondary'], stroke_width=2)
     
     # Punto de intersección (calculado)
     # x² + y² = 9 y (x-5)² + y² = 16
@@ -2555,16 +2555,16 @@ def render_circ_ortogonales(output_path: str, title: str = "Circunferencias Orto
     coord.draw_point(builder, P, label='P', color=COLORS['accent'], radius=5)
     
     # Radios al punto de intersección
-    coord.draw_segment(builder, C1, P, color='#3b82f6', width=1.5)
-    coord.draw_segment(builder, C2, P, color='#22c55e', width=1.5)
+    coord.draw_segment(builder, C1, P, color=COLORS['primary'], width=1.5)
+    coord.draw_segment(builder, C2, P, color=COLORS['secondary'], width=1.5)
     
     # Símbolo de ángulo recto
     svg_p = coord.to_svg(P)
     builder.text('90°', Point(svg_p.x + 10, svg_p.y - 10), font_size=10, fill=COLORS['accent'], font_weight='bold')
     
     # Centros
-    coord.draw_point(builder, C1, label='C₁', color='#3b82f6', radius=4)
-    coord.draw_point(builder, C2, label='C₂', color='#22c55e', radius=4)
+    coord.draw_point(builder, C1, label='C₁', color=COLORS['primary'], radius=4)
+    coord.draw_point(builder, C2, label='C₂', color=COLORS['secondary'], radius=4)
     
     builder.formula_box('d² = r₁² + r₂²  |  Se cortan en ángulo recto', Point(svg_width/2, svg_height - 30), font_size=11)
     
@@ -2600,7 +2600,7 @@ def render_elementos_parabola(output_path: str, title: str = "Elementos de la Pa
     )
     
     builder = SVGBuilder(svg_width, svg_height)
-    builder.rect(0, 0, svg_width, svg_height, fill='#ffffff')
+    builder.rect(0, 0, svg_width, svg_height, fill=COLORS['white'])
     builder.text(title, Point(svg_width/2, 25), font_size=15, font_weight='bold')
     
     coord.draw_grid(builder, step=2)
@@ -2631,29 +2631,29 @@ def render_elementos_parabola(output_path: str, title: str = "Elementos de la Pa
     
     # Foco F(0, p) = F(0, 2)
     F = Point(0, p)
-    coord.draw_point(builder, F, label='F(0, 2)', color='#ef4444', radius=5, label_offset=(10, -10), show_coords=False)
+    coord.draw_point(builder, F, label='F(0, 2)', color=COLORS['accent'], radius=5, label_offset=(10, -10), show_coords=False)
     
     # Directriz y = -p = -2
-    coord.draw_segment(builder, Point(-7, -p), Point(7, -p), color='#22c55e', width=2)
+    coord.draw_segment(builder, Point(-7, -p), Point(7, -p), color=COLORS['secondary'], width=2)
     svg_dir = coord.to_svg(Point(5, -p))
-    builder.text('directriz: y = -2', Point(svg_dir.x, svg_dir.y + 15), font_size=10, fill='#22c55e')
+    builder.text('directriz: y = -2', Point(svg_dir.x, svg_dir.y + 15), font_size=10, fill=COLORS['secondary'])
     
     # Eje (eje Y)
-    coord.draw_segment(builder, Point(0, -3), Point(0, 9), color='#64748b', width=1, dashed=True)
+    coord.draw_segment(builder, Point(0, -3), Point(0, 9), color=COLORS['text_light'], width=1, dashed=True)
     
     # Lado recto: extremos (-4, 2) y (4, 2)
     LR1 = Point(-4, p)
     LR2 = Point(4, p)
-    coord.draw_segment(builder, LR1, LR2, color='#a855f7', width=2)
-    coord.draw_point(builder, LR1, label='', color='#a855f7', radius=4)
-    coord.draw_point(builder, LR2, label='', color='#a855f7', radius=4)
+    coord.draw_segment(builder, LR1, LR2, color=COLORS['purple'], width=2)
+    coord.draw_point(builder, LR1, label='', color=COLORS['purple'], radius=4)
+    coord.draw_point(builder, LR2, label='', color=COLORS['purple'], radius=4)
     svg_lr = coord.to_svg(Point(0, p + 0.5))
-    builder.text('LR = 4p = 8', Point(svg_lr.x, svg_lr.y - 15), font_size=10, fill='#a855f7')
+    builder.text('LR = 4p = 8', Point(svg_lr.x, svg_lr.y - 15), font_size=10, fill=COLORS['purple'])
     
     # Distancia d(P, F) = d(P, ℓ) para un punto P
     P_ejemplo = Point(4, 2)
     # Distancia a directriz
-    coord.draw_segment(builder, P_ejemplo, Point(4, -p), color='#64748b', width=1, dashed=True)
+    coord.draw_segment(builder, P_ejemplo, Point(4, -p), color=COLORS['text_light'], width=1, dashed=True)
     
     builder.formula_box('x² = 4py | d(P, F) = d(P, directriz)', Point(svg_width/2, svg_height - 30), font_size=11)
     
@@ -2680,7 +2680,7 @@ def render_parabola_vertical_arriba(output_path: str, title: str = "Parábola Ve
     )
     
     builder = SVGBuilder(svg_width, svg_height)
-    builder.rect(0, 0, svg_width, svg_height, fill='#ffffff')
+    builder.rect(0, 0, svg_width, svg_height, fill=COLORS['white'])
     builder.text(title, Point(svg_width/2, 25), font_size=15, font_weight='bold')
     
     coord.draw_grid(builder, step=2)
@@ -2709,15 +2709,15 @@ def render_parabola_vertical_arriba(output_path: str, title: str = "Parábola Ve
     F = Point(0, p)
     
     coord.draw_point(builder, V, label='V(0, 0)', color=COLORS['accent'], radius=5, show_coords=False)
-    coord.draw_point(builder, F, label='F(0, 3)', color='#ef4444', radius=5, label_offset=(10, 0), show_coords=False)
+    coord.draw_point(builder, F, label='F(0, 3)', color=COLORS['accent'], radius=5, label_offset=(10, 0), show_coords=False)
     
     # Directriz
-    coord.draw_segment(builder, Point(-9, -p), Point(9, -p), color='#22c55e', width=2)
+    coord.draw_segment(builder, Point(-9, -p), Point(9, -p), color=COLORS['secondary'], width=2)
     svg_dir = coord.to_svg(Point(6, -p))
-    builder.text('y = -3', Point(svg_dir.x, svg_dir.y + 15), font_size=10, fill='#22c55e')
+    builder.text('y = -3', Point(svg_dir.x, svg_dir.y + 15), font_size=10, fill=COLORS['secondary'])
     
     # Lado recto
-    coord.draw_segment(builder, Point(-6, p), Point(6, p), color='#a855f7', width=1.5)
+    coord.draw_segment(builder, Point(-6, p), Point(6, p), color=COLORS['purple'], width=1.5)
     
     builder.formula_box('x² = 12y | p = 3 | Abre hacia arriba', Point(svg_width/2, svg_height - 30), font_size=11)
     
@@ -2743,7 +2743,7 @@ def render_parabola_vertical_abajo(output_path: str, title: str = "Parábola Ver
     )
     
     builder = SVGBuilder(svg_width, svg_height)
-    builder.rect(0, 0, svg_width, svg_height, fill='#ffffff')
+    builder.rect(0, 0, svg_width, svg_height, fill=COLORS['white'])
     builder.text(title, Point(svg_width/2, 25), font_size=15, font_weight='bold')
     
     coord.draw_grid(builder, step=2)
@@ -2772,15 +2772,15 @@ def render_parabola_vertical_abajo(output_path: str, title: str = "Parábola Ver
     F = Point(0, -p)
     
     coord.draw_point(builder, V, label='V(0, 0)', color=COLORS['accent'], radius=5, show_coords=False)
-    coord.draw_point(builder, F, label='F(0, -3)', color='#ef4444', radius=5, label_offset=(10, 0), show_coords=False)
+    coord.draw_point(builder, F, label='F(0, -3)', color=COLORS['accent'], radius=5, label_offset=(10, 0), show_coords=False)
     
     # Directriz y = p = 3
-    coord.draw_segment(builder, Point(-9, p), Point(9, p), color='#22c55e', width=2)
+    coord.draw_segment(builder, Point(-9, p), Point(9, p), color=COLORS['secondary'], width=2)
     svg_dir = coord.to_svg(Point(6, p))
-    builder.text('y = 3', Point(svg_dir.x, svg_dir.y - 10), font_size=10, fill='#22c55e')
+    builder.text('y = 3', Point(svg_dir.x, svg_dir.y - 10), font_size=10, fill=COLORS['secondary'])
     
     # Lado recto
-    coord.draw_segment(builder, Point(-6, -p), Point(6, -p), color='#a855f7', width=1.5)
+    coord.draw_segment(builder, Point(-6, -p), Point(6, -p), color=COLORS['purple'], width=1.5)
     
     builder.formula_box('x² = -12y | p = 3 | Abre hacia abajo', Point(svg_width/2, svg_height - 30), font_size=11)
     
@@ -2806,7 +2806,7 @@ def render_parabola_horizontal_derecha(output_path: str, title: str = "Parábola
     )
     
     builder = SVGBuilder(svg_width, svg_height)
-    builder.rect(0, 0, svg_width, svg_height, fill='#ffffff')
+    builder.rect(0, 0, svg_width, svg_height, fill=COLORS['white'])
     builder.text(title, Point(svg_width/2, 25), font_size=15, font_weight='bold')
     
     coord.draw_grid(builder, step=2)
@@ -2840,15 +2840,15 @@ def render_parabola_horizontal_derecha(output_path: str, title: str = "Parábola
     F = Point(p, 0)
     
     coord.draw_point(builder, V, label='V(0, 0)', color=COLORS['accent'], radius=5, show_coords=False)
-    coord.draw_point(builder, F, label='F(2, 0)', color='#ef4444', radius=5, label_offset=(0, -15), show_coords=False)
+    coord.draw_point(builder, F, label='F(2, 0)', color=COLORS['accent'], radius=5, label_offset=(0, -15), show_coords=False)
     
     # Directriz x = -p = -2
-    coord.draw_segment(builder, Point(-p, -7), Point(-p, 7), color='#22c55e', width=2)
+    coord.draw_segment(builder, Point(-p, -7), Point(-p, 7), color=COLORS['secondary'], width=2)
     svg_dir = coord.to_svg(Point(-p, 5))
-    builder.text('x = -2', Point(svg_dir.x - 30, svg_dir.y), font_size=10, fill='#22c55e')
+    builder.text('x = -2', Point(svg_dir.x - 30, svg_dir.y), font_size=10, fill=COLORS['secondary'])
     
     # Lado recto
-    coord.draw_segment(builder, Point(p, -4), Point(p, 4), color='#a855f7', width=1.5)
+    coord.draw_segment(builder, Point(p, -4), Point(p, 4), color=COLORS['purple'], width=1.5)
     
     builder.formula_box('y² = 8x | p = 2 | Abre hacia la derecha', Point(svg_width/2, svg_height - 30), font_size=11)
     
@@ -2874,7 +2874,7 @@ def render_parabola_horizontal_izquierda(output_path: str, title: str = "Parábo
     )
     
     builder = SVGBuilder(svg_width, svg_height)
-    builder.rect(0, 0, svg_width, svg_height, fill='#ffffff')
+    builder.rect(0, 0, svg_width, svg_height, fill=COLORS['white'])
     builder.text(title, Point(svg_width/2, 25), font_size=15, font_weight='bold')
     
     coord.draw_grid(builder, step=2)
@@ -2907,15 +2907,15 @@ def render_parabola_horizontal_izquierda(output_path: str, title: str = "Parábo
     F = Point(-p, 0)
     
     coord.draw_point(builder, V, label='V(0, 0)', color=COLORS['accent'], radius=5, show_coords=False)
-    coord.draw_point(builder, F, label='F(-2, 0)', color='#ef4444', radius=5, label_offset=(0, -15), show_coords=False)
+    coord.draw_point(builder, F, label='F(-2, 0)', color=COLORS['accent'], radius=5, label_offset=(0, -15), show_coords=False)
     
     # Directriz x = p = 2
-    coord.draw_segment(builder, Point(p, -7), Point(p, 7), color='#22c55e', width=2)
+    coord.draw_segment(builder, Point(p, -7), Point(p, 7), color=COLORS['secondary'], width=2)
     svg_dir = coord.to_svg(Point(p, 5))
-    builder.text('x = 2', Point(svg_dir.x + 5, svg_dir.y), font_size=10, fill='#22c55e')
+    builder.text('x = 2', Point(svg_dir.x + 5, svg_dir.y), font_size=10, fill=COLORS['secondary'])
     
     # Lado recto
-    coord.draw_segment(builder, Point(-p, -4), Point(-p, 4), color='#a855f7', width=1.5)
+    coord.draw_segment(builder, Point(-p, -4), Point(-p, 4), color=COLORS['purple'], width=1.5)
     
     builder.formula_box('y² = -8x | p = 2 | Abre hacia la izquierda', Point(svg_width/2, svg_height - 30), font_size=11)
     
@@ -2941,7 +2941,7 @@ def render_parabola_trasladada(output_path: str, title: str = "Parábola Traslad
     )
     
     builder = SVGBuilder(svg_width, svg_height)
-    builder.rect(0, 0, svg_width, svg_height, fill='#ffffff')
+    builder.rect(0, 0, svg_width, svg_height, fill=COLORS['white'])
     builder.text(title, Point(svg_width/2, 25), font_size=15, font_weight='bold')
     
     coord.draw_grid(builder, step=2)
@@ -2971,15 +2971,15 @@ def render_parabola_trasladada(output_path: str, title: str = "Parábola Traslad
     F = Point(h, k + p)
     
     coord.draw_point(builder, V, label='V(2, -1)', color=COLORS['accent'], radius=5, label_offset=(10, 15), show_coords=False)
-    coord.draw_point(builder, F, label='F(2, 1)', color='#ef4444', radius=5, label_offset=(10, -10), show_coords=False)
+    coord.draw_point(builder, F, label='F(2, 1)', color=COLORS['accent'], radius=5, label_offset=(10, -10), show_coords=False)
     
     # Directriz y = k - p = -3
-    coord.draw_segment(builder, Point(-5, k - p), Point(9, k - p), color='#22c55e', width=2)
+    coord.draw_segment(builder, Point(-5, k - p), Point(9, k - p), color=COLORS['secondary'], width=2)
     svg_dir = coord.to_svg(Point(6, k - p))
-    builder.text('y = -3', Point(svg_dir.x, svg_dir.y + 15), font_size=10, fill='#22c55e')
+    builder.text('y = -3', Point(svg_dir.x, svg_dir.y + 15), font_size=10, fill=COLORS['secondary'])
     
     # Eje x = h = 2
-    coord.draw_segment(builder, Point(h, k - 2), Point(h, 8), color='#64748b', width=1, dashed=True)
+    coord.draw_segment(builder, Point(h, k - 2), Point(h, 8), color=COLORS['text_light'], width=1, dashed=True)
     
     builder.formula_box('(x - 2)² = 8(y + 1) | V(2, -1), F(2, 1)', Point(svg_width/2, svg_height - 30), font_size=11)
     
@@ -2995,7 +2995,7 @@ def render_cuatro_orientaciones_parabola(output_path: str, title: str = "Las Cua
     svg_height = 350
     
     builder = SVGBuilder(svg_width, svg_height)
-    builder.rect(0, 0, svg_width, svg_height, fill='#ffffff')
+    builder.rect(0, 0, svg_width, svg_height, fill=COLORS['white'])
     builder.text(title, Point(svg_width/2, 20), font_size=14, font_weight='bold')
     
     # 4 mini-diagramas
@@ -3010,8 +3010,8 @@ def render_cuatro_orientaciones_parabola(output_path: str, title: str = "Las Cua
         cx, cy = cfg['cx'], cfg['cy']
         
         # Ejes pequeños
-        builder.line(Point(cx - 50, cy), Point(cx + 50, cy), stroke='#94a3b8', stroke_width=1)
-        builder.line(Point(cx, cy - 60), Point(cx, cy + 60), stroke='#94a3b8', stroke_width=1)
+        builder.line(Point(cx - 50, cy), Point(cx + 50, cy), stroke=COLORS['auxiliary'], stroke_width=1)
+        builder.line(Point(cx, cy - 60), Point(cx, cy + 60), stroke=COLORS['auxiliary'], stroke_width=1)
         
         # Parábola simplificada
         points = []
@@ -3043,20 +3043,20 @@ def render_cuatro_orientaciones_parabola(output_path: str, title: str = "Las Cua
         
         # Foco (punto rojo)
         if cfg['dir'] == 'arriba':
-            builder.circle(Point(cx, cy - 15), 4, fill='#ef4444')
+            builder.circle(Point(cx, cy - 15), 4, fill=COLORS['accent'])
         elif cfg['dir'] == 'abajo':
-            builder.circle(Point(cx, cy + 15), 4, fill='#ef4444')
+            builder.circle(Point(cx, cy + 15), 4, fill=COLORS['accent'])
         elif cfg['dir'] == 'derecha':
-            builder.circle(Point(cx + 15, cy), 4, fill='#ef4444')
+            builder.circle(Point(cx + 15, cy), 4, fill=COLORS['accent'])
         elif cfg['dir'] == 'izquierda':
-            builder.circle(Point(cx - 15, cy), 4, fill='#ef4444')
+            builder.circle(Point(cx - 15, cy), 4, fill=COLORS['accent'])
         
         # Vértice
         builder.circle(Point(cx, cy), 4, fill=COLORS['accent'])
         
         # Etiquetas
         builder.text(cfg['eq'], Point(cx, cy + 85), font_size=10, font_weight='bold')
-        builder.text(cfg['dir'], Point(cx, cy + 100), font_size=9, fill='#64748b')
+        builder.text(cfg['dir'], Point(cx, cy + 100), font_size=9, fill=COLORS['text_light'])
     
     builder.save(output_path)
     return True
@@ -3083,7 +3083,7 @@ def render_tangente_parabola(output_path: str, title: str = "Tangente a la Pará
     )
     
     builder = SVGBuilder(svg_width, svg_height)
-    builder.rect(0, 0, svg_width, svg_height, fill='#ffffff')
+    builder.rect(0, 0, svg_width, svg_height, fill=COLORS['white'])
     builder.text(title, Point(svg_width/2, 25), font_size=15, font_weight='bold')
     
     coord.draw_grid(builder, step=2)
@@ -3113,19 +3113,19 @@ def render_tangente_parabola(output_path: str, title: str = "Tangente a la Pará
     
     # Tangente: x = y + 2 → y = x - 2
     # Puntos: (-2, -4) a (8, 6)
-    coord.draw_segment(builder, Point(-2, -4), Point(8, 6), color='#22c55e', width=2)
+    coord.draw_segment(builder, Point(-2, -4), Point(8, 6), color=COLORS['secondary'], width=2)
     
     # Etiqueta tangente
     svg_tang = coord.to_svg(Point(6, 4.5))
-    builder.text('x = y + 2', Point(svg_tang.x, svg_tang.y - 10), font_size=10, fill='#22c55e', font_weight='bold')
+    builder.text('x = y + 2', Point(svg_tang.x, svg_tang.y - 10), font_size=10, fill=COLORS['secondary'], font_weight='bold')
     
     # Foco
     F = Point(0, p)
-    coord.draw_point(builder, F, label='F', color='#ef4444', radius=4)
+    coord.draw_point(builder, F, label='F', color=COLORS['accent'], radius=4)
     
     # Vértice
     V = Point(0, 0)
-    coord.draw_point(builder, V, label='V', color='#64748b', radius=4)
+    coord.draw_point(builder, V, label='V', color=COLORS['text_light'], radius=4)
     
     builder.formula_box('x² = 8y | Tangente en P(4,2): x₀x = 2p(y + y₀)', Point(svg_width/2, svg_height - 30), font_size=10)
     
@@ -3158,7 +3158,7 @@ def render_construccion_caso1_vertice_foco(output_path: str, title: str = "Caso 
     )
     
     builder = SVGBuilder(svg_width, svg_height)
-    builder.rect(0, 0, svg_width, svg_height, fill='#ffffff')
+    builder.rect(0, 0, svg_width, svg_height, fill=COLORS['white'])
     builder.text(title, Point(svg_width/2, 25), font_size=15, font_weight='bold')
     
     coord.draw_grid(builder, step=1)
@@ -3191,18 +3191,18 @@ def render_construccion_caso1_vertice_foco(output_path: str, title: str = "Caso 
     
     # Foco F(2, 5)
     F = Point(h, f_y)
-    coord.draw_point(builder, F, label='F(2, 5)', color='#ef4444', radius=5, label_offset=(10, -10), show_coords=False)
+    coord.draw_point(builder, F, label='F(2, 5)', color=COLORS['accent'], radius=5, label_offset=(10, -10), show_coords=False)
     
     # Directriz y = k - p = 1
     dir_y = k - int(p)
-    coord.draw_segment(builder, Point(-3, dir_y), Point(7, dir_y), color='#22c55e', width=2)
+    coord.draw_segment(builder, Point(-3, dir_y), Point(7, dir_y), color=COLORS['secondary'], width=2)
     svg_dir = coord.to_svg(Point(5, dir_y))
-    builder.text('y = 1', Point(svg_dir.x, svg_dir.y + 15), font_size=10, fill='#22c55e')
+    builder.text('y = 1', Point(svg_dir.x, svg_dir.y + 15), font_size=10, fill=COLORS['secondary'])
     
     # Distancia p entre V y F
-    coord.draw_segment(builder, V, F, color='#a855f7', width=1.5, dashed=True)
+    coord.draw_segment(builder, V, F, color=COLORS['purple'], width=1.5, dashed=True)
     svg_mid = coord.to_svg(Point(h + 0.5, (k + f_y) / 2))
-    builder.text('p = 2', Point(svg_mid.x + 10, svg_mid.y), font_size=10, fill='#a855f7', font_weight='bold')
+    builder.text('p = 2', Point(svg_mid.x + 10, svg_mid.y), font_size=10, fill=COLORS['purple'], font_weight='bold')
     
     builder.formula_box('(x - 2)² = 8(y - 3) | p = 2, 4p = 8', Point(svg_width/2, svg_height - 30), font_size=11)
     
@@ -3231,7 +3231,7 @@ def render_construccion_caso2_vertice_directriz(output_path: str, title: str = "
     )
     
     builder = SVGBuilder(svg_width, svg_height)
-    builder.rect(0, 0, svg_width, svg_height, fill='#ffffff')
+    builder.rect(0, 0, svg_width, svg_height, fill=COLORS['white'])
     builder.text(title, Point(svg_width/2, 25), font_size=15, font_weight='bold')
     
     coord.draw_grid(builder, step=1)
@@ -3265,17 +3265,17 @@ def render_construccion_caso2_vertice_directriz(output_path: str, title: str = "
     # Foco F(0, -1) = (0, k - p)
     f_y = k - int(p)
     F = Point(h, f_y)
-    coord.draw_point(builder, F, label='F(0, -1)', color='#ef4444', radius=5, label_offset=(10, 10), show_coords=False)
+    coord.draw_point(builder, F, label='F(0, -1)', color=COLORS['accent'], radius=5, label_offset=(10, 10), show_coords=False)
     
     # Directriz y = 5
-    coord.draw_segment(builder, Point(-7, dir_y), Point(7, dir_y), color='#22c55e', width=2)
+    coord.draw_segment(builder, Point(-7, dir_y), Point(7, dir_y), color=COLORS['secondary'], width=2)
     svg_dir = coord.to_svg(Point(5, dir_y))
-    builder.text('y = 5 (directriz)', Point(svg_dir.x, svg_dir.y - 10), font_size=10, fill='#22c55e')
+    builder.text('y = 5 (directriz)', Point(svg_dir.x, svg_dir.y - 10), font_size=10, fill=COLORS['secondary'])
     
     # Distancia p entre V y directriz
-    coord.draw_segment(builder, V, Point(h, dir_y), color='#a855f7', width=1.5, dashed=True)
+    coord.draw_segment(builder, V, Point(h, dir_y), color=COLORS['purple'], width=1.5, dashed=True)
     svg_mid = coord.to_svg(Point(h + 0.5, (k + dir_y) / 2))
-    builder.text('p = 3', Point(svg_mid.x + 10, svg_mid.y), font_size=10, fill='#a855f7', font_weight='bold')
+    builder.text('p = 3', Point(svg_mid.x + 10, svg_mid.y), font_size=10, fill=COLORS['purple'], font_weight='bold')
     
     builder.formula_box('x² = -12(y - 2) | p = 3, abre abajo', Point(svg_width/2, svg_height - 30), font_size=11)
     
@@ -3305,7 +3305,7 @@ def render_construccion_caso3_foco_directriz(output_path: str, title: str = "Cas
     )
     
     builder = SVGBuilder(svg_width, svg_height)
-    builder.rect(0, 0, svg_width, svg_height, fill='#ffffff')
+    builder.rect(0, 0, svg_width, svg_height, fill=COLORS['white'])
     builder.text(title, Point(svg_width/2, 25), font_size=15, font_weight='bold')
     
     coord.draw_grid(builder, step=1)
@@ -3338,21 +3338,21 @@ def render_construccion_caso3_foco_directriz(output_path: str, title: str = "Cas
     
     # Foco F(3, 4)
     F = Point(f_x, f_y)
-    coord.draw_point(builder, F, label='F(3, 4)', color='#ef4444', radius=5, label_offset=(10, -10), show_coords=False)
+    coord.draw_point(builder, F, label='F(3, 4)', color=COLORS['accent'], radius=5, label_offset=(10, -10), show_coords=False)
     
     # Vértice V(3, 1)
     V = Point(h, int(k))
     coord.draw_point(builder, V, label='V(3, 1)', color=COLORS['accent'], radius=5, label_offset=(10, 10), show_coords=False)
     
     # Directriz y = -2
-    coord.draw_segment(builder, Point(-3, dir_y), Point(9, dir_y), color='#22c55e', width=2)
+    coord.draw_segment(builder, Point(-3, dir_y), Point(9, dir_y), color=COLORS['secondary'], width=2)
     svg_dir = coord.to_svg(Point(6, dir_y))
-    builder.text('y = -2 (directriz)', Point(svg_dir.x, svg_dir.y + 15), font_size=10, fill='#22c55e')
+    builder.text('y = -2 (directriz)', Point(svg_dir.x, svg_dir.y + 15), font_size=10, fill=COLORS['secondary'])
     
     # Línea punteada F → directriz (mostrando punto medio = V)
-    coord.draw_segment(builder, F, Point(f_x, dir_y), color='#a855f7', width=1.5, dashed=True)
+    coord.draw_segment(builder, F, Point(f_x, dir_y), color=COLORS['purple'], width=1.5, dashed=True)
     svg_mid = coord.to_svg(Point(f_x - 0.5, (f_y + dir_y) / 2))
-    builder.text('V = punto medio', Point(svg_mid.x - 80, svg_mid.y), font_size=9, fill='#a855f7')
+    builder.text('V = punto medio', Point(svg_mid.x - 80, svg_mid.y), font_size=9, fill=COLORS['purple'])
     
     builder.formula_box('(x - 3)² = 12(y - 1) | V = punto medio, p = 3', Point(svg_width/2, svg_height - 30), font_size=11)
     
@@ -3383,7 +3383,7 @@ def render_construccion_caso4_vertice_punto(output_path: str, title: str = "Caso
     )
     
     builder = SVGBuilder(svg_width, svg_height)
-    builder.rect(0, 0, svg_width, svg_height, fill='#ffffff')
+    builder.rect(0, 0, svg_width, svg_height, fill=COLORS['white'])
     builder.text(title, Point(svg_width/2, 25), font_size=15, font_weight='bold')
     
     coord.draw_grid(builder, step=1)
@@ -3420,17 +3420,17 @@ def render_construccion_caso4_vertice_punto(output_path: str, title: str = "Caso
     
     # Punto P(3, 6)
     P = Point(px, py)
-    coord.draw_point(builder, P, label='P(3, 6)', color='#22c55e', radius=5, label_offset=(10, -10), show_coords=False)
+    coord.draw_point(builder, P, label='P(3, 6)', color=COLORS['secondary'], radius=5, label_offset=(10, -10), show_coords=False)
     
     # Foco F(1, 2 + p) = F(1, 2.25)
     f_y = k + float(p_val)
     F = Point(h, f_y)
-    coord.draw_point(builder, F, label='F(1, 2.25)', color='#ef4444', radius=4, label_offset=(10, 0), show_coords=False)
+    coord.draw_point(builder, F, label='F(1, 2.25)', color=COLORS['accent'], radius=4, label_offset=(10, 0), show_coords=False)
     
     # Mostrar cálculo
     svg_calc = coord.to_svg(Point(-2, 7))
-    builder.text('(3-1)² = 4p(6-2)', Point(svg_calc.x, svg_calc.y), font_size=9, fill='#64748b')
-    builder.text('4 = 16p → p = ¼', Point(svg_calc.x, svg_calc.y + 15), font_size=9, fill='#64748b')
+    builder.text('(3-1)² = 4p(6-2)', Point(svg_calc.x, svg_calc.y), font_size=9, fill=COLORS['text_light'])
+    builder.text('4 = 16p → p = ¼', Point(svg_calc.x, svg_calc.y + 15), font_size=9, fill=COLORS['text_light'])
     
     builder.formula_box('(x - 1)² = (y - 2) | p = ¼, 4p = 1', Point(svg_width/2, svg_height - 30), font_size=11)
     
@@ -3453,7 +3453,7 @@ def render_interior_exterior_circ(output_path: str, title: str = "Interior, Exte
     )
     
     builder = SVGBuilder(svg_width, svg_height)
-    builder.rect(0, 0, svg_width, svg_height, fill='#ffffff')
+    builder.rect(0, 0, svg_width, svg_height, fill=COLORS['white'])
     builder.text(title, Point(svg_width/2, 25), font_size=15, font_weight='bold')
     
     coord.draw_grid(builder, step=1)
@@ -3466,11 +3466,11 @@ def render_interior_exterior_circ(output_path: str, title: str = "Interior, Exte
     
     svg_c = coord.to_svg(C)
     svg_r = r * coord.scale_x
-    builder.circle(svg_c, svg_r, fill='#dbeafe', fill_opacity=0.2, stroke=COLORS['primary'], stroke_width=2)
+    builder.circle(svg_c, svg_r, fill=COLORS['circle_fill'], fill_opacity=0.2, stroke=COLORS['primary'], stroke_width=2)
     
     # Punto interior: (1, 1) → 1 + 1 = 2 < 16
     P_int = Point(1, 1)
-    coord.draw_point(builder, P_int, label='Interior', color='#22c55e', radius=5, label_offset=(10, 15))
+    coord.draw_point(builder, P_int, label='Interior', color=COLORS['secondary'], radius=5, label_offset=(10, 15))
     
     # Punto sobre la circunferencia: (0, 4) → 0 + 16 = 16
     P_sobre = Point(0, 4)
@@ -3478,7 +3478,7 @@ def render_interior_exterior_circ(output_path: str, title: str = "Interior, Exte
     
     # Punto exterior: (4, 3) → 16 + 9 = 25 > 16
     P_ext = Point(4, 3)
-    coord.draw_point(builder, P_ext, label='Exterior', color='#ef4444', radius=5, label_offset=(10, 0))
+    coord.draw_point(builder, P_ext, label='Exterior', color=COLORS['accent'], radius=5, label_offset=(10, 0))
     
     # Centro
     coord.draw_point(builder, C, label='C', color=COLORS['accent'], radius=4)

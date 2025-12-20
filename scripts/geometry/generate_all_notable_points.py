@@ -3,7 +3,13 @@ import svgwrite
 from sympy import Point, Line, Triangle, Segment, Circle
 from sympy.geometry import intersection
 import os
+import sys
 import math
+from pathlib import Path
+
+# Importar paleta de colores centralizada
+sys.path.insert(0, str(Path(__file__).parent))
+from core.colors import COLORS as BASE_COLORS
 
 class GeometryPlotter:
     def __init__(self, filename, width=500, height=400, padding=40):
@@ -12,19 +18,19 @@ class GeometryPlotter:
         self.height = height
         self.dwg = svgwrite.Drawing(filename, size=(width, height))
         # No grid - Clean background
-        self.dwg.add(self.dwg.rect(insert=(0,0), size=('100%','100%'), fill='#f8fafc'))
+        self.dwg.add(self.dwg.rect(insert=(0,0), size=('100%','100%'), fill=BASE_COLORS['background']))
         
-        # DEFINICIÓN DE ESTILOS (Estilo MODERNO DIGITAL - Clean & Vibrant)
+        # DEFINICIÓN DE ESTILOS (basado en core.colors)
         self.colors = {
-            'vertex': '#0f172a',      # Slate 900
-            'side': '#334155',        # Slate 700
-            'median': '#10b981',      # Emerald 500 (Vibrant Green)
-            'altitude': '#f97316',    # Orange 500 (Vibrant Orange)
-            'bisector': '#8b5cf6',    # Violet 500 (Vibrant Purple)
-            'bisector_perp': '#ec4899', # Pink 500 (Vibrant Pink)
-            'point_main': '#ef4444',  # Red 500
-            'aux': '#94a3b8',         # Slate 400
-            'fill': '#f1f5f9'         # Very light slate
+            'vertex': BASE_COLORS['text'],
+            'side': BASE_COLORS['triangle_stroke'],
+            'median': BASE_COLORS['medianas'],
+            'altitude': BASE_COLORS['alturas'],
+            'bisector': BASE_COLORS['bisectrices'],
+            'bisector_perp': BASE_COLORS['mediatrices'],
+            'point_main': BASE_COLORS['punto_notable'],
+            'aux': BASE_COLORS['auxiliary'],
+            'fill': BASE_COLORS['grid']
         }
 
         self.styles = {
