@@ -115,6 +115,66 @@ def add_borders_to_tables(input_path, output_path):
         # Ajustar a:ext (tamaño interno de la imagen)
         content = re.sub(r'<a:ext[^>]*cx="\d+"[^>]*cy="\d+"[^>]*/>', adjust_image_size, content)
         
+        # =============================================
+        # 4. CENTRAR PÁRRAFOS QUE CONTIENEN IMÁGENES
+        # =============================================
+        # En Word, las imágenes están dentro de <w:drawing> dentro de <w:p> (párrafos)
+        # Necesitamos agregar <w:jc w:val="center"/> a los <w:pPr> de esos párrafos
+        
+        # Patrón para encontrar párrafos con imágenes
+        # Estructura: <w:p>...<w:pPr>...</w:pPr>...<w:drawing>...</w:drawing>...</w:p>
+        
+        def center_paragraph_with_image(match):
+            """Agrega centrado al párrafo que contiene la imagen"""
+            paragraph = match.group(0)
+            
+            # Si ya tiene propiedades de párrafo (w:pPr), agregar centrado dentro
+            if '<w:pPr>' in paragraph:
+                # Si ya está centrado, no hacer nada
+                if 'w:jc w:val="center"' in paragraph or "w:jc w:val='center'" in paragraph:
+                    return paragraph
+                # Agregar centrado después de <w:pPr>
+                center_tag = '<w:jc w:val="center"/>'
+                paragraph = re.sub(
+                    r'(<w:pPr[^>]*>)',
+                    r'\1' + center_tag,
+                    paragraph,
+                    count=1
+                )
+            else:
+                # Si no tiene w:pPr, agregar uno con centrado después de <w:p>
+                ppr_with_center = '<w:pPr><w:jc w:val="center"/></w:pPr>'
+                paragraph = re.sub(
+                    r'(<w:p[^>]*>)',
+                    r'\1' + ppr_with_center,
+                    paragraph,
+                    count=1
+                )
+            
+            return paragraph
+        
+        # Buscar párrafos que contienen w:drawing y centrarlos
+        # El patrón busca <w:p>...</w:p> que contenga w:drawing
+        content = re.sub(
+            r'<w:p[^>]*>(?:(?!</w:p>).)*<w:drawing>(?:(?!</w:p>).)*</w:p>',
+            center_paragraph_with_image,
+            content,
+            flags=re.DOTALL
+        )
+        
+        # =============================================
+        # 5. ELIMINAR ESTILO CaptionedFigure
+        # =============================================
+        # Pandoc usa CaptionedFigure que añade un marco/borde innecesario
+        # Esto elimina la referencia al estilo, dejando la imagen sin marco
+        content = re.sub(r'<w:pStyle w:val="CaptionedFigure"[^/]*/>', '', content)
+        content = re.sub(r'<w:pStyle w:val="CaptionedFigure"/>', '', content)
+        content = re.sub(r"<w:pStyle w:val='CaptionedFigure'[^/]*/>", '', content)
+        
+        # También eliminar el estilo Figure si existe
+        content = re.sub(r'<w:pStyle w:val="Figure"[^/]*/>', '', content)
+        content = re.sub(r'<w:pStyle w:val="Figure"/>', '', content)
+        
         with open(doc_path, 'w', encoding='utf-8') as f:
             f.write(content)
         

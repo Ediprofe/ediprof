@@ -2,7 +2,7 @@
 # ============================================================
 # export-to-docx.sh
 # Exporta múltiples lecciones Markdown a un único documento Word
-# con LaTeX renderizado, imágenes SVG en alta resolución (Playwright)
+# con LaTeX renderizado, imágenes SVG convertidas a PNG (Playwright)
 # ============================================================
 
 # Colores para output
@@ -47,41 +47,6 @@ parse_args() {
     [ -z "$OUTPUT_FILE" ] && OUTPUT_FILE="guia_exportada.docx"
 }
 
-# Procesar un archivo markdown
-process_markdown_file() {
-    local input_file="$1"
-    local temp_images_dir="$2"
-    local project_root="$3"
-    local output_md="$4"
-    
-    # Leer contenido
-    local content=$(cat "$input_file")
-    
-    # Procesar cada línea - reemplazar imágenes con placeholders
-    while IFS= read -r line; do
-        # Verificar si la línea contiene una imagen
-        if echo "$line" | grep -q '!\[.*\](/images/'; then
-            # Extraer el texto alternativo (descripción de la imagen)
-            alt_text=$(echo "$line" | sed -E 's/!\[([^\]]*)\].*/\1/')
-            
-            # Generar URL usando la lógica existente del proyecto (cleanSlug)
-            lesson_url=$(node "${project_root}/scripts/get-lesson-url.mjs" "$input_file" 2>/dev/null)
-            full_url="https://ediprofe.com/${lesson_url}"
-            
-            # Crear placeholder vistoso para el docente
-            echo "" >> "$output_md"
-            echo "> **📷 INSERTAR IMAGEN AQUÍ**" >> "$output_md"
-            echo ">" >> "$output_md"
-            echo "> *${alt_text}*" >> "$output_md"
-            echo ">" >> "$output_md"
-            echo "> 🔗 [Ver imagen en la web](${full_url})" >> "$output_md"
-            echo "" >> "$output_md"
-        else
-            echo "$line" >> "$output_md"
-        fi
-    done <<< "$content"
-}
-
 main() {
     parse_args "$@"
     
@@ -92,6 +57,14 @@ main() {
     
     echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
     echo -e "${GREEN}📚 Exportando ${#INPUT_FILES[@]} lecciones...${NC}"
+    
+    if [ "$NO_IMAGES" = true ]; then
+        echo -e "${YELLOW}   (Modo sin imágenes - placeholders)${NC}"
+        NO_IMAGES_FLAG="--no-images"
+    else
+        echo -e "${GREEN}   (Con imágenes incluidas)${NC}"
+        NO_IMAGES_FLAG=""
+    fi
     
     TEMP_DIR=$(mktemp -d)
     TEMP_IMG_DIR="${TEMP_DIR}/converted_images"
@@ -104,7 +77,12 @@ main() {
         FILE="${INPUT_FILES[$i]}"
         echo -e "  📄 Procesando: $(basename "$FILE")"
         
-        process_markdown_file "$FILE" "$TEMP_IMG_DIR" "$PROJECT_ROOT" "$COMBINED_MD"
+        # Preprocesar con Node.js (más confiable que bash para regex)
+        PROCESSED_MD="${TEMP_DIR}/processed_${i}.md"
+        node "$SCRIPT_DIR/preprocess-markdown.mjs" "$FILE" "$PROCESSED_MD" "$TEMP_IMG_DIR" $NO_IMAGES_FLAG
+        
+        # Agregar al archivo combinado
+        cat "$PROCESSED_MD" >> "$COMBINED_MD"
         
         if [ $i -lt $((${#INPUT_FILES[@]} - 1)) ]; then
             echo -e "\n\n\\newpage\n\n" >> "$COMBINED_MD"
@@ -113,9 +91,12 @@ main() {
     
     echo -e "${GREEN}📝 Generando Word...${NC}"
     
+    # Mostrar contenido para debug
+    # echo "=== MARKDOWN COMBINADO ===" && head -50 "$COMBINED_MD"
+    
     PANDOC_CMD="pandoc \"$COMBINED_MD\" --from markdown+tex_math_dollars --to docx --standalone"
     
-    # Filtro de correcciones (tablas, alineación)
+    # Filtro de correcciones
     if [ -f "$SCRIPT_DIR/filters/docx-fixes.lua" ]; then
         PANDOC_CMD="$PANDOC_CMD --lua-filter=\"$SCRIPT_DIR/filters/docx-fixes.lua\""
     fi
@@ -128,7 +109,7 @@ main() {
     PANDOC_CMD="$PANDOC_CMD -o \"$OUTPUT_FILE\""
     eval $PANDOC_CMD
     
-    # Post-procesar tablas (bordes y alineación)
+    # Post-procesar (bordes, alineación, centrado de imágenes)
     if [ -f "$SCRIPT_DIR/fix-docx-tables.py" ]; then
         python3 "$SCRIPT_DIR/fix-docx-tables.py" "$OUTPUT_FILE" "$OUTPUT_FILE"
     fi

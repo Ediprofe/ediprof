@@ -33,7 +33,14 @@ async function svgToPng(svgPath, outputPath, scale = 1.5) {
         }
     }
 
-    // HTML que renderiza el SVG centrado con fondo blanco puro
+    // ==========================================================
+    // CONFIGURACIÓN CENTRALIZADA DE FONDO PARA EXPORTACIÓN
+    // ==========================================================
+    // Los SVGs del proyecto usan un fondo gris degradado (#f8fafc → #e2e8f0)
+    // que debe preservarse para que los títulos con texto blanco sean legibles.
+    // NO forzar fondo blanco - el SVG ya tiene su propio fondo integrado.
+    // ==========================================================
+
     const html = `
 <!DOCTYPE html>
 <html>
@@ -42,33 +49,30 @@ async function svgToPng(svgPath, outputPath, scale = 1.5) {
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html, body {
-            width: ${width}px;
-            height: ${height}px;
-            background: #ffffff;
-            overflow: hidden;
+            /* Fondo transparente para no interferir con el SVG */
+            background: transparent;
         }
-        #container {
+        #svg-container {
+            display: inline-block;
+            /* El SVG tiene su propio fondo gris degradado integrado */
+            background: transparent;
             width: ${width}px;
             height: ${height}px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
         svg {
-            max-width: 100%;
-            max-height: 100%;
             display: block;
+            width: ${width}px;
+            height: ${height}px;
         }
-        /* Forzar fondo blanco en el SVG */
-        svg rect[fill*="gradient"], 
-        svg rect[fill*="#f8fafc"],
-        svg rect[fill*="#e2e8f0"] {
-            fill: #ffffff !important;
-        }
+        /* 
+         * NOTA: NO forzar fondo blanco aquí.
+         * Los SVGs de Ediprofe tienen fondo gris degradado que debe preservarse
+         * para mantener la legibilidad del texto blanco en títulos.
+         */
     </style>
 </head>
 <body>
-<div id="container">
+<div id="svg-container">
 ${svgContent}
 </div>
 </body>
@@ -83,8 +87,8 @@ ${svgContent}
     const browser = await chromium.launch({ headless: true });
     const context = await browser.newContext({
         viewport: {
-            width: Math.ceil(width * scale),
-            height: Math.ceil(height * scale)
+            width: Math.ceil(width * scale) + 100,
+            height: Math.ceil(height * scale) + 100
         },
         deviceScaleFactor: scale
     });
@@ -93,14 +97,31 @@ ${svgContent}
     await page.setContent(html, { waitUntil: 'load' });
     await page.waitForTimeout(500);
 
-    // Capturar la pantalla completa
-    await page.screenshot({
-        path: outputPath,
-        type: 'png'
-    });
+    // Capturar solo el contenedor del SVG (sin bordes extra)
+    const container = await page.$('#svg-container');
+    if (container) {
+        const box = await container.boundingBox();
+        await page.screenshot({
+            path: outputPath,
+            type: 'png',
+            clip: {
+                x: box.x,
+                y: box.y,
+                width: box.width,
+                height: box.height
+            }
+        });
+        console.log(`✅ PNG: ${outputPath} (${Math.round(box.width)}x${Math.round(box.height)})`);
+    } else {
+        // Fallback: captura completa
+        await page.screenshot({
+            path: outputPath,
+            type: 'png'
+        });
+        console.log(`✅ PNG: ${outputPath} (${Math.round(width * scale)}x${Math.round(height * scale)})`);
+    }
 
     await browser.close();
-    console.log(`✅ PNG: ${outputPath} (${Math.round(width * scale)}x${Math.round(height * scale)})`);
 }
 
 const args = process.argv.slice(2);
