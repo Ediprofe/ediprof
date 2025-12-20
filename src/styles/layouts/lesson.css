@@ -547,10 +547,36 @@
   border-radius: 12px;
   margin: 1.5rem 0;
   box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  /* Display block para centrar automáticamente */
+  display: block;
 }
 
 :global(html.dark .content-body img) {
   box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+
+/* ========================================
+   IMÁGENES EN MODO OSCURO - FONDO CLARO
+   Para ilustraciones PNG con fondo transparente
+   ======================================== */
+
+/*
+ * En modo oscuro, las imágenes de contenido (especialmente las hechas 
+ * en tablet con texto negro) necesitan un fondo claro para ser legibles.
+ * Este estilo aplica un fondo sutil tipo tarjeta.
+ */
+:global(html.dark .content-body img:not([src*=".svg"])) {
+  background: linear-gradient(135deg, #f5f7fa 0%, #e2e8f0 100%);
+  padding: 1rem;
+  border-radius: 16px;
+  box-shadow: 
+    0 4px 20px rgba(0,0,0,0.15),
+    inset 0 0 0 1px rgba(255,255,255,0.05);
+}
+
+/* SVGs ya tienen su propio fondo integrado, solo mejoramos la sombra */
+:global(html.dark .content-body img[src*=".svg"]) {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
 }
 
 /* ========================================
