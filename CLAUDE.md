@@ -1274,12 +1274,14 @@ Controla sus propios colores
 
 ## Por Materia
 
+> **Fuente de verdad:** `src/config/materias.ts`
+
 | Materia | Color | Hex |
 |---------|-------|-----|
-| Matemáticas | Azul | `#3b82f6` |
-| Física | Naranja | `#f97316` |
-| Química | Verde | `#22c55e` |
-| Ciencias | Morado | `#a855f7` |
+| Matemáticas | Rojo | `#ef4444` |
+| Física | Azul | `#3b82f6` |
+| Química | Naranja | `#ea580c` |
+| Ciencias | Verde | `#22c55e` |
 
 ---
 
@@ -1377,6 +1379,53 @@ python scripts/geometry/renderer.py --spec specs/geometria/triangulos/baricentro
 # Crear nueva lección
 node scripts/new-lesson.js
 ```
+
+## 📄 Exportar a Word (DOCX)
+
+```bash
+# Una lección individual
+bash scripts/export-to-docx.sh \
+  src/content/fisica/01-introduccion-a-la-fisica/01-introduccion/01-la-fisica-y-sus-ramas.md \
+  -o ~/Desktop/leccion.docx
+
+# Múltiples lecciones en un solo documento
+bash scripts/export-to-docx.sh \
+  src/content/fisica/01-introduccion-a-la-fisica/01-introduccion/01-la-fisica-y-sus-ramas.md \
+  src/content/fisica/01-introduccion-a-la-fisica/01-introduccion/02-metodo-cientifico.md \
+  src/content/fisica/01-introduccion-a-la-fisica/01-introduccion/03-medicion-y-cantidades-fisicas.md \
+  -o ~/Desktop/guia-completa.docx
+
+# Sin imágenes (solo texto)
+bash scripts/export-to-docx.sh archivo.md -o salida.docx --no-images
+```
+
+## 📕 Exportar a PDF
+
+> **Requisito:** El servidor de desarrollo debe estar corriendo (`npm run dev`)
+
+```bash
+# PDF de una lección individual
+node scripts/export-to-pdf.mjs \
+  --lesson fisica/introduccion-a-la-fisica/introduccion/la-fisica-y-sus-ramas \
+  --output ~/Desktop/leccion.pdf
+
+# PDF de un tema completo (todas las lecciones combinadas)
+node scripts/export-to-pdf.mjs \
+  --tema fisica/introduccion-a-la-fisica/introduccion \
+  --output ~/Desktop/guia-introduccion-fisica.pdf
+
+# Si el servidor corre en otro puerto (ej: 4322)
+BASE_URL=http://localhost:4322 node scripts/export-to-pdf.mjs \
+  --tema fisica/introduccion-a-la-fisica/introduccion \
+  --output ~/Desktop/guia.pdf
+```
+
+### Rutas de impresión
+
+| Tipo | Ruta | Descripción |
+|------|------|-------------|
+| Lección | `/print/{materia}/{slug-leccion}` | Una lección con encabezado |
+| Tema | `/print-tema/{materia}/{unidad}/{tema}` | Tema completo con portada e índice |
 
 ---
 

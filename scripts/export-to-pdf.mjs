@@ -30,7 +30,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 // Configuración
-const BASE_URL = 'http://localhost:4321';
+const BASE_URL = process.env.BASE_URL || 'http://localhost:4321';
 
 function parseArgs() {
     const args = process.argv.slice(2);

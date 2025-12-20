@@ -14,23 +14,18 @@
  */
 import { getCollection } from 'astro:content';
 import { cleanSlug, formatName } from '../../utils/navigation-generator.js';
+import { materiaConfig, type MateriaSlug, SITE_CONFIG } from '../../config/materias';
 
-// =========================================
-// COLORES POR MATERIA
-// =========================================
-const MATERIA_COLORS: Record<string, { primary: string; accent: string; light: string; dark: string }> = {
-  fisica: { primary: '#2563eb', accent: '#3b82f6', light: '#dbeafe', dark: '#1e40af' },
-  matematicas: { primary: '#dc2626', accent: '#ef4444', light: '#fee2e2', dark: '#991b1b' },
-  quimica: { primary: '#ea580c', accent: '#f97316', light: '#ffedd5', dark: '#c2410c' },
-  ciencias: { primary: '#16a34a', accent: '#22c55e', light: '#dcfce7', dark: '#166534' }
-};
-
-const MATERIA_NAMES: Record<string, string> = {
-  matematicas: 'Matemáticas',
-  fisica: 'Física',
-  quimica: 'Química',
-  ciencias: 'Ciencias'
-};
+// Extraer colores de la configuración centralizada
+function getMateriaColors(materia: string) {
+  const config = materiaConfig[materia as MateriaSlug] || materiaConfig.fisica;
+  return {
+    primary: config.color,
+    accent: config.color,
+    light: config.lightSolid,
+    dark: config.dark
+  };
+}
 
 export async function getStaticPaths() {
   const temas = new Map<string, { lessons: any[], materia: string, unidadSlug: string, temaSlug: string, cleanTemaSlug: string }>();
@@ -80,22 +75,22 @@ interface Props {
 }
 
 const { lessons, materia, unidadSlug, temaSlug, cleanTemaSlug } = Astro.props;
-const colors = MATERIA_COLORS[materia] || MATERIA_COLORS.fisica;
+const colors = getMateriaColors(materia);
 
 const renderedLessons = await Promise.all(
   lessons.map(async (lesson) => {
     const { Content, headings } = await lesson.render();
     const firstH1 = headings.find((h: any) => h.depth === 1);
     const title = lesson.data?.title || firstH1?.text?.replace(/\*\*/g, '').trim() || 'Lección';
-    const lessonUrl = `https://ediprofe.com/${materia}/${cleanSlug(lesson.slug)}`;
+    const lessonUrl = `${SITE_CONFIG.url}/${materia}/${cleanSlug(lesson.slug)}`;
     return { lesson, Content, title, headings, lessonUrl };
   })
 );
 
 const unidadName = formatName(unidadSlug);
 const temaName = formatName(temaSlug);
-const materiaName = MATERIA_NAMES[materia] || materia.charAt(0).toUpperCase() + materia.slice(1);
-const temaUrl = `https://ediprofe.com/${cleanTemaSlug}`;
+const materiaName = materiaConfig[materia as MateriaSlug]?.name || materia.charAt(0).toUpperCase() + materia.slice(1);
+const temaUrl = `${SITE_CONFIG.url}/${cleanTemaSlug}`;
 ---
 
 <!DOCTYPE html>
@@ -571,15 +566,15 @@ const temaUrl = `https://ediprofe.com/${cleanTemaSlug}`;
     
     <div class="cover-footer">
       <div class="cover-social">
-        <a href="https://ediprofe.com" class="cover-social-link">
+        <a href={SITE_CONFIG.url} class="cover-social-link">
           <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-          ediprofe.com
+          {SITE_CONFIG.name.toLowerCase()}.com
         </a>
-        <a href="https://www.youtube.com/PROFEEDI" class="cover-social-link">
+        <a href={SITE_CONFIG.social.youtube.url} class="cover-social-link">
           <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
           YouTube
         </a>
-        <a href="https://www.tiktok.com/@EDIPROFE" class="cover-social-link">
+        <a href={SITE_CONFIG.social.tiktok.url} class="cover-social-link">
           <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
           TikTok
         </a>
@@ -647,21 +642,21 @@ const temaUrl = `https://ediprofe.com/${cleanTemaSlug}`;
     <div class="final-tagline">Educación de calidad para todos</div>
     
     <div class="final-social">
-      <a href="https://ediprofe.com" class="final-social-link">
+      <a href={SITE_CONFIG.url} class="final-social-link">
         <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-        ediprofe.com
+        {SITE_CONFIG.name.toLowerCase()}.com
       </a>
-      <a href="https://www.youtube.com/PROFEEDI" class="final-social-link">
+      <a href={SITE_CONFIG.social.youtube.url} class="final-social-link">
         <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-        @PROFEEDI
+        {SITE_CONFIG.social.youtube.handle}
       </a>
-      <a href="https://www.tiktok.com/@EDIPROFE" class="final-social-link">
+      <a href={SITE_CONFIG.social.tiktok.url} class="final-social-link">
         <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
-        @EDIPROFE
+        {SITE_CONFIG.social.tiktok.handle}
       </a>
     </div>
     
-    <a href="https://ediprofe.com" class="final-url">ediprofe.com</a>
+    <a href={SITE_CONFIG.url} class="final-url">{SITE_CONFIG.name.toLowerCase()}.com</a>
   </div>
 </body>
 </html>

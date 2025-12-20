@@ -17,8 +17,23 @@ export interface MateriaConfig {
   color: string;
   gradient: string;
   lightBg: string;
+  lightSolid: string;  // Color light sólido para impresión (no rgba)
+  dark: string;        // Color oscuro para títulos en impresión
   description: string;
 }
+
+// =========================================
+// CONSTANTES DEL SITIO (URLs, redes sociales)
+// =========================================
+export const SITE_CONFIG = {
+  url: 'https://ediprofe.com',
+  name: 'Ediprofe',
+  tagline: 'Educación de calidad para todos',
+  social: {
+    youtube: { url: 'https://www.youtube.com/PROFEEDI', handle: '@PROFEEDI' },
+    tiktok: { url: 'https://www.tiktok.com/@EDIPROFE', handle: '@EDIPROFE' },
+  }
+} as const;
 
 export const MATERIAS_SLUGS = ['matematicas', 'fisica', 'quimica', 'ciencias'] as const;
 export type MateriaSlug = typeof MATERIAS_SLUGS[number];
@@ -30,6 +45,8 @@ export const materiaConfig: Record<MateriaSlug, MateriaConfig> = {
     color: '#ef4444',
     gradient: 'linear-gradient(135deg, #ef4444, #dc2626)',
     lightBg: 'rgba(239, 68, 68, 0.1)',
+    lightSolid: '#fee2e2',
+    dark: '#991b1b',
     description: 'Álgebra, geometría, cálculo y más'
   },
   fisica: {
@@ -38,6 +55,8 @@ export const materiaConfig: Record<MateriaSlug, MateriaConfig> = {
     color: '#3b82f6',
     gradient: 'linear-gradient(135deg, #3b82f6, #2563eb)',
     lightBg: 'rgba(59, 130, 246, 0.1)',
+    lightSolid: '#dbeafe',
+    dark: '#1e40af',
     description: 'Mecánica, ondas, termodinámica'
   },
   quimica: {
@@ -46,6 +65,8 @@ export const materiaConfig: Record<MateriaSlug, MateriaConfig> = {
     color: '#ea580c',
     gradient: 'linear-gradient(135deg, #f97316, #ea580c)',
     lightBg: 'rgba(249, 115, 22, 0.1)',
+    lightSolid: '#ffedd5',
+    dark: '#c2410c',
     description: 'Química general y orgánica'
   },
   ciencias: {
@@ -54,6 +75,8 @@ export const materiaConfig: Record<MateriaSlug, MateriaConfig> = {
     color: '#22c55e',
     gradient: 'linear-gradient(135deg, #22c55e, #16a34a)',
     lightBg: 'rgba(34, 197, 94, 0.1)',
+    lightSolid: '#dcfce7',
+    dark: '#166534',
     description: 'Biología y ciencias naturales'
   }
 };

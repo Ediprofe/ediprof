@@ -13,24 +13,7 @@
  */
 import { getCollection } from 'astro:content';
 import { cleanSlug, formatName } from '../../utils/navigation-generator.js';
-
-// =========================================
-// COLORES POR MATERIA (Fuente única de verdad)
-// =========================================
-const MATERIA_COLORS: Record<string, { primary: string; accent: string; light: string }> = {
-  fisica: { primary: '#2563eb', accent: '#3b82f6', light: '#dbeafe' },       // Azul
-  matematicas: { primary: '#dc2626', accent: '#ef4444', light: '#fee2e2' },  // Rojo
-  quimica: { primary: '#ea580c', accent: '#f97316', light: '#ffedd5' },      // Naranja
-  ciencias: { primary: '#16a34a', accent: '#22c55e', light: '#dcfce7' }      // Verde
-};
-
-// Nombres de materias con tildes
-const MATERIA_NAMES: Record<string, string> = {
-  matematicas: 'Matemáticas',
-  fisica: 'Física',
-  quimica: 'Química',
-  ciencias: 'Ciencias'
-};
+import { materiaConfig, type MateriaSlug, SITE_CONFIG } from '../../config/materias';
 
 export async function getStaticPaths() {
   const allLessons: Array<{ lesson: any; materia: string; cleanFullSlug: string }> = [];
@@ -61,8 +44,13 @@ interface Props {
 const { lesson, materia } = Astro.props;
 const { Content, headings } = await lesson.render();
 
-// Colores de la materia
-const colors = MATERIA_COLORS[materia] || MATERIA_COLORS.fisica;
+// Colores de la materia (desde config centralizada)
+const config = materiaConfig[materia as MateriaSlug] || materiaConfig.fisica;
+const colors = {
+  primary: config.color,
+  accent: config.color,
+  light: config.lightSolid
+};
 
 // Extraer título de la lección
 const firstH1 = headings.find((h: any) => h.depth === 1);
@@ -81,11 +69,11 @@ if (slugParts.length >= 2) {
   temaName = formatName(slugParts[1]);
 }
 
-// Nombre de materia con tilde
-const materiaName = MATERIA_NAMES[materia] || materia.charAt(0).toUpperCase() + materia.slice(1);
+// Nombre de materia con tilde (desde config centralizada)
+const materiaName = config.name;
 
 // URL de la lección en la web (usando cleanSlug)
-const lessonUrl = `https://ediprofe.com/${materia}/${cleanSlug(lesson.slug)}`;
+const lessonUrl = `${SITE_CONFIG.url}/${materia}/${cleanSlug(lesson.slug)}`;
 ---
 
 <!DOCTYPE html>
