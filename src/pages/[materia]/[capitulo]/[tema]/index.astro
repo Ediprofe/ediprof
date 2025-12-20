@@ -2,7 +2,7 @@
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
 import Footer from '../../../../components/Layout/Footer.astro';
 import { formatName, formatBlockName, extractTitleFromContent, cleanSegment, cleanSlug } from '../../../../utils/navigation-generator.js';
-import { getMetaName as getMetaNameFromStore } from '../../../../utils/load-meta';
+import { getMetaName as getMetaNameFromStore, getMetaPdf } from '../../../../utils/load-meta';
 import CollapsibleSidebar from '../../../../components/Navigation/CollapsibleSidebar.astro';
 import MobileMenu from '../../../../components/Navigation/MobileMenu.astro';
 import StickyHeader from '../../../../components/Layout/StickyHeader.astro';
@@ -78,6 +78,9 @@ const capituloIndex = allCapitulos.indexOf(capitulo);
 
 const temasDelCapitulo = getUniqueTemas(allLessons, capitulo);
 const temaIndex = temasDelCapitulo.indexOf(tema);
+
+// Obtener URL de PDF (si existe)
+const pdfUrl = getMetaPdf(temaKey);
 ---
 
 <BaseLayout title={`${temaName} - ${capituloName} - ${materiaName}`} showTopBar={false}>
@@ -135,6 +138,21 @@ const temaIndex = temasDelCapitulo.indexOf(tema);
             <span class="crumb-current">{temaName}</span>
           </div>
         </div>
+        
+        {/* Link de PDF discreto al pie del header */}
+        {pdfUrl && (
+          <div class="pdf-footer">
+            <a href={pdfUrl} target="_blank" rel="noopener noreferrer" class="pdf-link-subtle">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+              </svg>
+              <span>Ver tema en PDF</span>
+            </a>
+          </div>
+        )}
       </header>
 
       <!-- Lista de Lecciones -->

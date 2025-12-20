@@ -143,7 +143,7 @@ En este capítulo aprenderemos tres sistemas:
 
 ---
 
-## 📖 Lo que Aprenderás en Este Capítulo
+## 📖 Lo que Aprenderás en Esta Unidad
 
 1. **Compuestos binarios:**
    - Óxidos

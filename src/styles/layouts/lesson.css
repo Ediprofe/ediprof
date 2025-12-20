@@ -28,8 +28,8 @@
   background: var(--bg-secondary);
   border-radius: 24px;
   padding: 2.5rem 3rem;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-  border: 1px solid var(--border-color, rgba(0,0,0,0.06));
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--border-color, rgba(0, 0, 0, 0.06));
   animation: fadeIn 0.4s ease-out;
   position: relative;
   overflow: hidden;
@@ -40,7 +40,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background-image: 
+  background-image:
     linear-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
   background-size: 24px 24px;
@@ -49,24 +49,31 @@
   mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 20%, transparent 70%);
 }
 
-.content-article > * {
+.content-article>* {
   position: relative;
   z-index: 1;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 :global(html.dark) .content-article {
   background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-  border-color: rgba(255,255,255,0.06);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.06);
 }
 
 :global(html.dark) .content-article::before {
-  background-image: 
+  background-image:
     linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
 }
@@ -93,12 +100,15 @@
 .lesson-header-matematicas {
   background: linear-gradient(135deg, #0a0f1a 0%, #1f1315 30%, #7f1d1d 70%, #dc2626 100%);
 }
+
 .lesson-header-fisica {
   background: linear-gradient(135deg, #0a0f1a 0%, #0f172a 30%, #1e3a5f 70%, #2563eb 100%);
 }
+
 .lesson-header-quimica {
   background: linear-gradient(135deg, #0a0f1a 0%, #1a0f0a 30%, #7c2d12 70%, #ea580c 100%);
 }
+
 .lesson-header-ciencias {
   background: linear-gradient(135deg, #0a0f1a 0%, #0f1a14 30%, #14532d 70%, #16a34a 100%);
 }
@@ -135,9 +145,9 @@
 .lesson-header .header-grid {
   position: absolute;
   inset: 0;
-  background-image: 
-    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
   background-size: 40px 40px;
   mask-image: radial-gradient(ellipse 100% 100% at 50% 0%, black 30%, transparent 70%);
 }
@@ -175,10 +185,10 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255, 255, 255, 0.5);
   margin-bottom: 0.5rem;
   padding: 0.25rem 0.75rem;
-  background: rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.08);
   border-radius: 100px;
 }
 
@@ -197,7 +207,7 @@
 }
 
 .lesson-header .header-desc {
-  color: rgba(255,255,255,0.7);
+  color: rgba(255, 255, 255, 0.7);
   font-size: 1rem;
   margin: 0;
   line-height: 1.5;
@@ -210,10 +220,10 @@
   gap: 0.5rem;
   flex-wrap: wrap;
   padding: 0.875rem 1.25rem;
-  background: rgba(255,255,255,0.06);
+  background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(8px);
   border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 /* Ocultar breadcrumb del header (ya está en StickyHeader fijo) */
@@ -225,7 +235,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.375rem;
-  color: rgba(255,255,255,0.8);
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
   font-size: 0.8125rem;
   font-weight: 500;
@@ -235,7 +245,7 @@
 }
 
 .crumb-link:hover {
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   color: white;
   text-decoration: none;
 }
@@ -245,7 +255,7 @@
 }
 
 .crumb-sep {
-  color: rgba(255,255,255,0.3);
+  color: rgba(255, 255, 255, 0.3);
   font-size: 0.875rem;
 }
 
@@ -353,13 +363,13 @@
   margin: 2rem 0;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   width: 100%;
   border: 1px solid var(--border-color, #e2e8f0);
 }
 
 :global(html.dark .content-body table) {
-  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
   border-color: #334155;
 }
 
@@ -377,12 +387,15 @@
 :global(.content-article-matematicas) {
   --table-header-bg: linear-gradient(135deg, #ef4444, #dc2626);
 }
+
 :global(.content-article-fisica) {
   --table-header-bg: linear-gradient(135deg, #3b82f6, #2563eb);
 }
+
 :global(.content-article-quimica) {
   --table-header-bg: linear-gradient(135deg, #f97316, #ea580c);
 }
+
 :global(.content-article-ciencias) {
   --table-header-bg: linear-gradient(135deg, #22c55e, #16a34a);
 }
@@ -432,12 +445,15 @@
 :global(.content-article-matematicas .content-body tr:hover td) {
   --table-hover-bg: rgba(239, 68, 68, 0.08);
 }
+
 :global(.content-article-fisica .content-body tr:hover td) {
   --table-hover-bg: rgba(59, 130, 246, 0.08);
 }
+
 :global(.content-article-quimica .content-body tr:hover td) {
   --table-hover-bg: rgba(249, 115, 22, 0.08);
 }
+
 :global(.content-article-ciencias .content-body tr:hover td) {
   --table-hover-bg: rgba(34, 197, 94, 0.08);
 }
@@ -450,11 +466,11 @@
   overflow: hidden;
   margin: 2rem 0;
   border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 :global(html.dark .video-container) {
-  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
 :global(.video-container iframe) {
@@ -464,6 +480,60 @@
   width: 100%;
   height: 100%;
   border: none;
+}
+
+/* Sección de video (contenedor para blockquotes con 🎬) */
+:global(.video-section) {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.04), rgba(220, 38, 38, 0.02));
+  border-radius: 16px;
+  border: 1px solid rgba(239, 68, 68, 0.1);
+}
+
+:global(html.dark .video-section) {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.08), rgba(220, 38, 38, 0.04));
+  border-color: rgba(239, 68, 68, 0.15);
+}
+
+:global(.video-section .video-container) {
+  margin: 0 0 1rem 0;
+}
+
+:global(.video-section .video-container:last-child) {
+  margin-bottom: 0;
+}
+
+/* Link de video secundario (TikTok, etc.) */
+:global(.video-link) {
+  margin: 0.75rem 0 0 0;
+  padding: 0;
+}
+
+:global(.video-link a) {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color, rgba(0, 0, 0, 0.08));
+  border-radius: 8px;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+:global(.video-link a:hover) {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+:global(html.dark .video-link a) {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 /* KaTeX - ecuaciones mejoradas */
@@ -546,13 +616,13 @@
   height: auto;
   border-radius: 12px;
   margin: 1.5rem 0;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   /* Display block para centrar automáticamente */
   display: block;
 }
 
 :global(html.dark .content-body img) {
-  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 }
 
 /* ========================================
@@ -569,14 +639,14 @@
   background: linear-gradient(135deg, #f5f7fa 0%, #e2e8f0 100%);
   padding: 1rem;
   border-radius: 16px;
-  box-shadow: 
-    0 4px 20px rgba(0,0,0,0.15),
-    inset 0 0 0 1px rgba(255,255,255,0.05);
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.15),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
 }
 
 /* SVGs ya tienen su propio fondo integrado, solo mejoramos la sombra */
 :global(html.dark .content-body img[src*=".svg"]) {
-  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
 }
 
 /* ========================================
@@ -588,12 +658,12 @@
   justify-content: space-between;
   margin-top: 3.5rem;
   padding-top: 2.5rem;
-  border-top: 1px solid var(--border-color, rgba(0,0,0,0.08));
+  border-top: 1px solid var(--border-color, rgba(0, 0, 0, 0.08));
   gap: 1.5rem;
 }
 
 :global(html.dark) .lesson-navigation {
-  border-top-color: rgba(255,255,255,0.08);
+  border-top-color: rgba(255, 255, 255, 0.08);
 }
 
 .nav-placeholder {
@@ -606,7 +676,7 @@
   gap: 1rem;
   padding: 1.25rem 1.5rem;
   background: var(--bg-secondary);
-  border: 1px solid var(--border-color, rgba(0,0,0,0.06));
+  border: 1px solid var(--border-color, rgba(0, 0, 0, 0.06));
   color: var(--text-primary);
   text-decoration: none;
   border-radius: 16px;
@@ -631,7 +701,7 @@
 
 :global(html.dark) .nav-card {
   background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-  border-color: rgba(255,255,255,0.06);
+  border-color: rgba(255, 255, 255, 0.06);
 }
 
 .nav-card:hover {

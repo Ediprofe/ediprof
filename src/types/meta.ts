@@ -9,6 +9,8 @@ export interface MetaEntry {
   description?: string;
   order?: number;
   icon?: string;
+  playlist?: string;  // URL de playlist de YouTube (para unidades)
+  pdf?: string;       // URL de PDF del tema
 }
 
 // Tipo para el objeto allMeta que contiene todos los metadatos

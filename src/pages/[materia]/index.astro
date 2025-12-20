@@ -90,7 +90,7 @@ const totalTemas = Object.values(grouped).reduce((acc, temas) => acc + Object.ke
           <div class="header-stats">
             <div class="stat-item">
               <span class="stat-number">{Object.keys(grouped).length}</span>
-              <span class="stat-label">{Object.keys(grouped).length === 1 ? 'Capítulo' : 'Capítulos'}</span>
+              <span class="stat-label">{Object.keys(grouped).length === 1 ? 'Unidad' : 'Unidades'}</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
@@ -124,7 +124,7 @@ const totalTemas = Object.values(grouped).reduce((acc, temas) => acc + Object.ke
                         <span>{capituloIndex + 1}</span>
                       </div>
                       <div class="capitulo-info">
-                        <span class="capitulo-label">Capítulo {capituloIndex + 1}</span>
+                        <span class="capitulo-label">Unidad {capituloIndex + 1}</span>
                         <h3 class="capitulo-name">{getMetaName(capitulo)}</h3>
                         <div class="capitulo-stats">
                           <span class="capitulo-stat">{temasCount} {temasCount === 1 ? 'tema' : 'temas'}</span>

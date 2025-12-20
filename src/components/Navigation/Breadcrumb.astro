@@ -5,7 +5,7 @@ import { getMateriaConfig } from '../../config/materias';
 
 interface Props {
   materia: string;
-  unidad: string;  // Capítulo en la nueva nomenclatura
+  unidad: string;  // Unidad (antes Capítulo)
   bloque: string;  // Tema en la nueva nomenclatura
 }
 
@@ -32,9 +32,9 @@ const temaName = (allMeta as any)[temaKey]?.name || formatBlockName(bloque);
     
     <span class="breadcrumb-sep">›</span>
     
-    <!-- Capítulo -->
+    <!-- Unidad -->
     <div class="breadcrumb-item">
-      <span class="breadcrumb-label">Capítulo</span>
+      <span class="breadcrumb-label">Unidad</span>
       <a href={`/${materia}/${unidad}`} class="breadcrumb-link">
         {capituloName}
       </a>

@@ -2,7 +2,7 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Footer from '../../../components/Layout/Footer.astro';
 import { formatName, formatBlockName, cleanSegment } from '../../../utils/navigation-generator.js';
-import { getMetaName as getMetaNameFromStore } from '../../../utils/load-meta';
+import { getMetaName as getMetaNameFromStore, getMetaPlaylist } from '../../../utils/load-meta';
 import CollapsibleSidebar from '../../../components/Navigation/CollapsibleSidebar.astro';
 import MobileMenu from '../../../components/Navigation/MobileMenu.astro';
 import StickyHeader from '../../../components/Layout/StickyHeader.astro';
@@ -81,6 +81,9 @@ const capituloIndex = allCapitulos.indexOf(capitulo);
 // Calcular totales
 const totalTemas = Object.keys(temas).length;
 const totalLecciones = Object.values(temas).reduce((acc, arr) => acc + arr.length, 0);
+
+// Obtener URL de playlist de YouTube (si existe)
+const playlistUrl = getMetaPlaylist(capituloKey);
 ---
 
 <BaseLayout title={`${capituloName} - ${materiaName}`} showTopBar={false}>
@@ -112,9 +115,9 @@ const totalLecciones = Object.values(temas).reduce((acc, arr) => acc + arr.lengt
               <span class="header-number">{capituloIndex + 1}</span>
             </div>
             <div class="header-text">
-              <span class="header-label">Capítulo {capituloIndex + 1}</span>
+              <span class="header-label">Unidad {capituloIndex + 1}</span>
               <h1 class="header-title">{capituloName}</h1>
-              <p class="header-desc">Explora los temas y lecciones de este capítulo</p>
+              <p class="header-desc">Explora los temas y lecciones de esta unidad</p>
             </div>
           </div>
           
@@ -129,6 +132,20 @@ const totalLecciones = Object.values(temas).reduce((acc, arr) => acc + arr.lengt
               <span class="stat-label">{totalLecciones === 1 ? 'Lección' : 'Lecciones'}</span>
             </div>
           </div>
+          
+          {playlistUrl && (
+            <div class="playlist-wrapper">
+              <a href={playlistUrl} target="_blank" rel="noopener noreferrer" class="playlist-link">
+                <span class="playlist-icon">🎬</span>
+                <span>Ver Playlist en YouTube</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+            </div>
+          )}
           
           <!-- Breadcrumb integrado -->
           <div class="header-breadcrumb">

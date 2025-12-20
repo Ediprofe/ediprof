@@ -1,5 +1,5 @@
 /**
- * Estilos de la página de Capítulo
+ * Estilos de la página de Unidad
  * Diseño Premium consistente con página de Materia
  */
 
@@ -38,12 +38,15 @@
 .page-header-matematicas {
   background: linear-gradient(135deg, #0a0f1a 0%, #1f1315 30%, #7f1d1d 70%, #dc2626 100%);
 }
+
 .page-header-fisica {
   background: linear-gradient(135deg, #0a0f1a 0%, #0f172a 30%, #1e3a5f 70%, #2563eb 100%);
 }
+
 .page-header-quimica {
   background: linear-gradient(135deg, #0a0f1a 0%, #1a0f0a 30%, #7c2d12 70%, #ea580c 100%);
 }
+
 .page-header-ciencias {
   background: linear-gradient(135deg, #0a0f1a 0%, #0f1a14 30%, #14532d 70%, #16a34a 100%);
 }
@@ -80,9 +83,9 @@
 .header-grid {
   position: absolute;
   inset: 0;
-  background-image: 
-    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
   background-size: 40px 40px;
   mask-image: radial-gradient(ellipse 100% 100% at 50% 0%, black 30%, transparent 70%);
 }
@@ -126,7 +129,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: rgba(255,255,255,0.6);
+  color: rgba(255, 255, 255, 0.6);
   margin-bottom: 0.25rem;
 }
 
@@ -143,7 +146,7 @@
 }
 
 .header-desc {
-  color: rgba(255,255,255,0.75);
+  color: rgba(255, 255, 255, 0.75);
   font-size: 1rem;
   margin: 0;
   line-height: 1.5;
@@ -155,11 +158,11 @@
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  background: rgba(255,255,255,0.06);
+  background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(12px);
   padding: 1.5rem 3rem;
   border-radius: 16px;
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   margin-top: 0.5rem;
 }
 
@@ -172,7 +175,7 @@
   display: block;
   font-size: 2.5rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.85) 100%);
+  background: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.85) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -182,7 +185,7 @@
 
 .stat-label {
   font-size: 0.8125rem;
-  color: rgba(255,255,255,0.7);
+  color: rgba(255, 255, 255, 0.7);
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-weight: 500;
@@ -191,7 +194,58 @@
 .stat-divider {
   width: 1px;
   height: 48px;
-  background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.25), transparent);
+  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.25), transparent);
+}
+
+/* Contenedor para centrar el link de Playlist */
+.playlist-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+/* Link de Playlist de YouTube */
+.playlist-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  margin-top: 1.25rem;
+  padding: 0.75rem 1.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 100px;
+  color: white;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  /* Centrado */
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.playlist-link:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.playlist-icon {
+  font-size: 1.125rem;
+}
+
+.playlist-link svg {
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.playlist-link:hover svg {
+  opacity: 1;
 }
 
 /* Breadcrumb integrado en header */
@@ -201,10 +255,10 @@
   gap: 0.5rem;
   flex-wrap: wrap;
   padding: 0.875rem 1.25rem;
-  background: rgba(255,255,255,0.06);
+  background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(8px);
   border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   margin-top: 1rem;
 }
 
@@ -217,7 +271,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.375rem;
-  color: rgba(255,255,255,0.8);
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
   font-size: 0.8125rem;
   font-weight: 500;
@@ -227,7 +281,7 @@
 }
 
 .crumb-link:hover {
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   color: white;
   text-decoration: none;
 }
@@ -237,7 +291,7 @@
 }
 
 .crumb-sep {
-  color: rgba(255,255,255,0.3);
+  color: rgba(255, 255, 255, 0.3);
   font-size: 0.875rem;
 }
 
@@ -246,7 +300,7 @@
   font-weight: 600;
   color: white;
   padding: 0.25rem 0.625rem;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 6px;
 }
 
@@ -256,13 +310,14 @@
   padding: 0.75rem 1rem;
   background: var(--bg-secondary);
   border-radius: 12px;
-  border: 1px solid var(--border-color, rgba(0,0,0,0.06));
-  display: none; /* Ocultar el antiguo */
+  border: 1px solid var(--border-color, rgba(0, 0, 0, 0.06));
+  display: none;
+  /* Ocultar el antiguo */
 }
 
 :global(html.dark) .breadcrumb {
-  background: rgba(255,255,255,0.03);
-  border-color: rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.08);
 }
 
 .breadcrumb-inner {
@@ -292,7 +347,7 @@
   gap: 0.375rem;
   padding: 0.25rem 0.625rem 0.25rem 0.25rem;
   background: var(--bg-primary);
-  border: 1px solid var(--border-color, rgba(0,0,0,0.08));
+  border: 1px solid var(--border-color, rgba(0, 0, 0, 0.08));
   border-radius: 100px;
   text-decoration: none;
   font-size: 0.8125rem;
@@ -330,7 +385,7 @@
   background: var(--bg-primary);
   padding: 0.25rem 0.625rem;
   border-radius: 6px;
-  border: 1px solid var(--border-color, rgba(0,0,0,0.08));
+  border: 1px solid var(--border-color, rgba(0, 0, 0, 0.08));
 }
 
 /* Temas */
@@ -349,15 +404,15 @@
   background: var(--bg-secondary);
   border-radius: 14px;
   padding: 1.25rem;
-  border: 1px solid var(--border-color, rgba(0,0,0,0.06));
+  border: 1px solid var(--border-color, rgba(0, 0, 0, 0.06));
   text-decoration: none;
   transition: all 0.25s ease;
   animation: fadeInUp 0.5s ease-out calc(var(--delay, 0s)) backwards;
 }
 
 :global(html.dark) .tema-card-link {
-  background: rgba(255,255,255,0.03);
-  border-color: rgba(255,255,255,0.06);
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.06);
 }
 
 .tema-card-link:hover {
@@ -417,8 +472,15 @@
 }
 
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ========================================

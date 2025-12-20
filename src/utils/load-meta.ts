@@ -73,6 +73,22 @@ export function hasMetaEntry(key: string): boolean {
 }
 
 /**
+ * Obtiene la URL de playlist de YouTube de un metadato
+ * @param key - Clave del metadato (ej: "quimica/la-materia")
+ */
+export function getMetaPlaylist(key: string): string | undefined {
+  return allMeta[key]?.playlist;
+}
+
+/**
+ * Obtiene la URL del PDF de un metadato
+ * @param key - Clave del metadato (ej: "fisica/cinematica/mru")
+ */
+export function getMetaPdf(key: string): string | undefined {
+  return allMeta[key]?.pdf;
+}
+
+/**
  * Verifica si un metadato tiene el campo 'name' definido (no vacío)
  * @param key - Clave del metadato (ej: "fisica/cinematica")
  */

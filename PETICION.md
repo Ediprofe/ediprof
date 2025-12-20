@@ -161,35 +161,19 @@ Situaciones que requieren confirmación:
 
 # 📝 PETICIÓN DEL USUARIO
 
-> **Escribe tu petición aquí abajo. El agente leerá las instrucciones anteriores antes de procesarla.**
+1. Quiero por favor que esta sintaxis:
 
-```
-[ESCRIBE TU PETICIÓN AQUÍ]
-```
+> 🎬 **Video:**
+> [Ver en YouTube](https://youtu.be/kYNxFuNMGoI?si=RsyfOnN57TlmexjW)
+> [Ver en TikTok](https://vt.tiktok.com/ZSBp743qq/)
 
----
+en archivos mdx, como por ejemplo este @src/content/quimica/01-la-materia/01-conceptos-basicos/01-que-es-la-materia.mdx, produzca el youtube como un embebido que ocupe todo el ancho del contendor, y el link de tiktok se vuelva un hipervínculo normal, así como cualquier otro link. Es decir, el trato especial lo quiero es con el link de youtube.
 
-## 💡 EJEMPLOS DE PETICIONES
+2. Para un determinado tema de un CAPÍTULO, QIERO QUE CAMBIES LA NOTACIÓN EN TODA EL PROYECTO Y LUGARES E LA INTERFAZ, PARA QUE YA NO SE LLAME "CAPÍTULO" SINO "UNIDAD".
 
-### Crear contenido:
-```
-Genera el capítulo de "Ecuaciones Cuadráticas" para matemáticas.
-Incluye 3 temas: introducción, métodos de resolución, y aplicaciones.
-```
+3. CADA UNIDAD VA A TENER UN LINK CON LA PLAYLIST DE LA UNIDAD EN YOUTUBE, QUIERO QUE ESE LINK DE LA PLAYLIST SE PUEDA INSERTAR EN EL _meta.json, y se pueda desplegar un hipervínculo en la tarjeta de presentación de la unidad, por ejemplo acá: http://localhost:4322/quimica/la-materia, ![alt text](image-1.png), como rediseñar la tarjeta o la página de unidad (antigua capitulo) para que tenga ese link de la playlist disponible, que se va a sacar desde el _meta.json de la unidad. 
 
-### Generar ilustraciones:
-```
-Crea las ilustraciones para la lección de "Parábola con vértice en el origen".
-Usa SVG con el renderer de geometría analítica.
-```
+Quiero también que cuando se visite la página dentro de un tema, en una unidad específica, por ejemplo este tema:http://localhost:4322/fisica/introduccion-a-la-fisica/introduccion, se dé un espacio en el _meta.json para poner el link al pdf del tema, rediseñando la tarjeta o la página de tema, como tú veas que quede más bonito.
 
-### Modificar código:
-```
-Agrega una nueva función al módulo cartesian para graficar hipérbolas.
-```
-
-### Corregir contenido:
-```
-Revisa y mejora la lección src/content/fisica/02-cinematica/01-introduccion/01-la-cinematica.md
-```
+YA YO HICE EL EJERCICIO DE INSERTAR UN LINK DE PLAYLIST DE YOUTUBE AL _meta.json de esta unidad: http://localhost:4322/quimica/la-materia, y un link de pdf al _meta.json de este tema: http://localhost:4322/fisica/introduccion-a-la-fisica/introduccion, Para que pongas a prueba la imlementación con datos reales que ya tengo a la mano.
 
