@@ -36,9 +36,10 @@ def add_borders_to_tables(input_path, output_path):
             content = f.read()
         
         # =============================================
-        # 1. AGREGAR BORDES A TABLAS
+        # 1. AGREGAR BORDES, CENTRADO Y ANCHO COMPLETO A TABLAS
         # =============================================
-        borders_xml = '''<w:tblBorders xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+        # Propiedades de tabla: bordes + centrado + ancho 100%
+        table_props_xml = '''<w:tblBorders xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
             <w:top w:val="single" w:sz="4" w:space="0" w:color="000000"/>
             <w:left w:val="single" w:sz="4" w:space="0" w:color="000000"/>
             <w:bottom w:val="single" w:sz="4" w:space="0" w:color="000000"/>
@@ -47,20 +48,35 @@ def add_borders_to_tables(input_path, output_path):
             <w:insideV w:val="single" w:sz="4" w:space="0" w:color="000000"/>
         </w:tblBorders>'''
         
+        # Ancho completo (5000 = 100% en porcentaje)
+        table_width_xml = '<w:tblW xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" w:w="5000" w:type="pct"/>'
+        
+        # Centrado de tabla
+        table_center_xml = '<w:jc xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" w:val="center"/>'
+        
         pattern_no_borders = r'(<w:tblPr[^>]*>)((?:(?!</w:tblPr>).)*?)(</w:tblPr>)'
         
-        def add_borders(match):
+        def add_table_props(match):
             start = match.group(1)
             middle = match.group(2)
             end = match.group(3)
-            if 'w:tblBorders' in middle:
-                return match.group(0)
-            return start + middle + borders_xml + end
+            # Agregar bordes si no existen
+            if 'w:tblBorders' not in middle:
+                middle = middle + table_props_xml
+            # Agregar ancho completo si no existe
+            if 'w:tblW' not in middle:
+                middle = table_width_xml + middle
+            # Agregar centrado si no existe
+            if 'w:jc' not in middle or 'val="center"' not in middle:
+                middle = table_center_xml + middle
+            return start + middle + end
         
-        content = re.sub(pattern_no_borders, add_borders, content, flags=re.DOTALL)
+        content = re.sub(pattern_no_borders, add_table_props, content, flags=re.DOTALL)
         
+        # Para tablas sin w:tblPr, agregar uno con todas las propiedades
+        table_full_props = f'<w:tblPr>{table_width_xml}{table_center_xml}{table_props_xml}</w:tblPr>'
         pattern_table_no_pr = r'(<w:tbl[^>]*>)(?!\s*<w:tblPr)'
-        replacement_with_pr = r'\1<w:tblPr>' + borders_xml + '</w:tblPr>'
+        replacement_with_pr = r'\1' + table_full_props
         content = re.sub(pattern_table_no_pr, replacement_with_pr, content)
         
         # =============================================
@@ -201,7 +217,7 @@ def add_borders_to_tables(input_path, output_path):
                     arc_name = os.path.relpath(file_path, temp_dir)
                     z.write(file_path, arc_name)
         
-        print(f"✅ Documento corregido: bordes + alineación izquierda + imágenes ajustadas")
+        print(f"✅ Documento corregido: tablas centradas (100% ancho) + bordes + imágenes ajustadas")
         
     finally:
         shutil.rmtree(temp_dir, ignore_errors=True)

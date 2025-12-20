@@ -84,8 +84,10 @@ main() {
         # Agregar al archivo combinado
         cat "$PROCESSED_MD" >> "$COMBINED_MD"
         
+        # Agregar separación entre lecciones
+        # La línea horizontal (---) rompe la continuidad de listas ordenadas en Pandoc
         if [ $i -lt $((${#INPUT_FILES[@]} - 1)) ]; then
-            echo -e "\n\n\\newpage\n\n" >> "$COMBINED_MD"
+            echo -e "\n\n---\n\n" >> "$COMBINED_MD"
         fi
     done
     

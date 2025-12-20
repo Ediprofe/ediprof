@@ -37,9 +37,26 @@ npm run preview
 
 ---
 
-## 📄 EXPORTAR A PDF
+## 📤 EXPORTAR LECCIONES (PDF / Word)
 
-> **Requisito:** El servidor de desarrollo debe estar corriendo (`npm run dev`)
+### ⭐ Forma fácil (menú interactivo)
+```bash
+npm run export
+```
+
+Te guiará paso a paso:
+1. ¿PDF o Word?
+2. ¿Qué materia?
+3. ¿Qué unidad?
+4. ¿Qué tema?
+5. ¿Todo el tema o lecciones específicas?
+6. ¿Nombre del archivo?
+
+> **Nota:** Para PDF, el servidor debe estar corriendo (`npm run dev`)
+
+---
+
+## 📄 COMANDOS AVANZADOS (PDF)
 
 ### PDF de una lección individual
 ```bash
@@ -48,30 +65,16 @@ node scripts/export-to-pdf.mjs \
   --output ~/Desktop/leccion.pdf
 ```
 
-### PDF de un tema completo (todas las lecciones combinadas)
+### PDF de un tema completo
 ```bash
 node scripts/export-to-pdf.mjs \
   --tema fisica/introduccion-a-la-fisica/introduccion \
   --output ~/Desktop/guia-introduccion-fisica.pdf
 ```
 
-### Si el servidor corre en otro puerto
-```bash
-BASE_URL=http://localhost:4322 node scripts/export-to-pdf.mjs \
-  --tema fisica/introduccion-a-la-fisica/introduccion \
-  --output ~/Desktop/guia.pdf
-```
-
-### Ver en navegador antes de exportar
-
-| Tipo | URL |
-|------|-----|
-| Lección | `http://localhost:4321/print/fisica/introduccion-a-la-fisica/introduccion/la-fisica-y-sus-ramas` |
-| Tema completo | `http://localhost:4321/print-tema/fisica/introduccion-a-la-fisica/introduccion` |
-
 ---
 
-## 📝 EXPORTAR A WORD (DOCX)
+## 📝 COMANDOS AVANZADOS (Word)
 
 ### Una lección individual
 ```bash
@@ -85,13 +88,7 @@ bash scripts/export-to-docx.sh \
 bash scripts/export-to-docx.sh \
   src/content/fisica/01-introduccion-a-la-fisica/01-introduccion/01-la-fisica-y-sus-ramas.md \
   src/content/fisica/01-introduccion-a-la-fisica/01-introduccion/02-metodo-cientifico.md \
-  src/content/fisica/01-introduccion-a-la-fisica/01-introduccion/03-medicion-y-cantidades-fisicas.md \
   -o ~/Desktop/guia-completa.docx
-```
-
-### Sin imágenes (solo texto)
-```bash
-bash scripts/export-to-docx.sh archivo.md -o salida.docx --no-images
 ```
 
 ---

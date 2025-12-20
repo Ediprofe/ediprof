@@ -9,12 +9,14 @@
     "preview": "astro preview",
     "validate": "node scripts/validate-latex.js",
     "new:lesson": "node scripts/new-lesson.js",
+    "export": "node scripts/export-menu.js",
     "astro": "astro"
   },
   "dependencies": {
     "@astrojs/mdx": "^2.0.0",
     "@astrojs/sitemap": "^3.0.0",
     "astro": "^4.0.0",
+    "inquirer": "13.1.0",
     "katex": "^0.16.9",
     "rehype-external-links": "3.0.0",
     "rehype-katex": "^7.0.0",

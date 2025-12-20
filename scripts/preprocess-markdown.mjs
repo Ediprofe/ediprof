@@ -151,6 +151,29 @@ function preprocessMarkdown(inputPath, outputPath, tempImagesDir, includeImages 
         content = content.replace(original, replacement);
     }
 
+    // ===========================================
+    // 4. ESCAPAR LISTAS ALFABÉTICAS PARA QUE SEAN TEXTO PLANO
+    // ===========================================
+    // Esto evita que Pandoc las convierta a listas de Word
+    // que luego Google Docs no interpreta bien
+    // Agregamos un caracter invisible (backslash) para romper el patrón de lista
+    const lines = content.split('\n');
+
+    content = lines.map(line => {
+        // Detectar lista alfabética al inicio de línea: "a) ", "b) ", "A) ", "B) "
+        // Agregamos un espacio después de la letra para que no sea lista
+        const alphabeticMatch = line.match(/^(\s*)([a-zA-Z])(\)\s)/);
+
+        if (alphabeticMatch) {
+            const indent = alphabeticMatch[1];
+            const letter = alphabeticMatch[2];
+            const rest = line.substring(alphabeticMatch[0].length);
+            // Usar texto con espacio no-breaking para evitar interpretación como lista
+            return `${indent}**${letter})** ${rest}`;
+        }
+        return line;
+    }).join('\n');
+
     writeFileSync(outputPath, content);
     console.log(`📝 Markdown procesado: ${outputPath}`);
     return outputPath;
