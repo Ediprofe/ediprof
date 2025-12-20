@@ -85,75 +85,189 @@ Esto genera SVGs de prueba y verifica que no haya errores.
 
 ---
 
-# 📋 PETICIÓN DE REVISIÓN: Exportar a Word y PDF
+## 🏷️ CONFIGURACIÓN DE MATERIAS: USAR CENTRALIZADA
 
-## Contexto
+**Fuente de verdad:** `src/config/materias.ts`
 
-Te cuento que otro agente me ayudó con la implementación de exportar a Word y exportar a PDF las lecciones. En el caso de exportar a Word tengo prioridad con exportar lecciones o grupos de lecciones combinadas en un solo documento, algo que ya el agente implementó. En el caso de exportar a PDF, mi intención prioritaria es exportar por tema, aunque también está la opción de imprimir por lección.
+```typescript
+// ❌ PROHIBIDO - Definir colores/config de materia en cada archivo
+const materiaColor = '#ef4444';
+const materiaName = 'Matemáticas';
 
-## Lo que se implementó
-
-### Exportar a Word (DOCX)
-- **Script principal:** `scripts/export-to-docx.sh`
-- **Preprocesador:** `scripts/preprocess-markdown.mjs` - Convierte sintaxis de Astro `<Image>` a Markdown estándar
-- **Post-procesador:** `scripts/fix-docx-tables.py` - Agrega bordes a tablas, centra imágenes, ajusta tamaños
-- **Conversor SVG→PNG:** `scripts/svg-to-png.mjs` - Usa Playwright para renderizar SVGs a PNG
-
-**Funcionalidades:**
-- Combina múltiples lecciones en un solo documento
-- Convierte imágenes SVG a PNG automáticamente
-- Mantiene el fondo de los SVGs (degradado gris para legibilidad)
-- Opción `--no-images` para generar sin imágenes
-
-### Exportar a PDF
-- **Script principal:** `scripts/export-to-pdf.mjs` - Usa Playwright para capturar páginas HTML como PDF
-- **Página de impresión por lección:** `src/pages/print/[...slug].astro`
-- **Página de impresión por tema:** `src/pages/print-tema/[...slug].astro`
-
-**Funcionalidades del PDF por tema:**
-- Portada profesional con logo SVG que cambia de color según la materia
-- Colores por materia: Física=azul, Matemáticas=rojo, Química=naranja, Ciencias=verde
-- Índice de lecciones con numeración
-- Cada lección empieza en nueva página
-- Redes sociales con íconos (YouTube, TikTok, Web)
-- Paginación en el footer (página X / total)
-- Página final con branding
-
-**Archivos de branding creados:** `public/images/brand/`
-- `logo-ediprofe.svg` - Logo del libro abierto (usa currentColor)
-- `youtube.svg`, `tiktok.svg`, `web.svg` - Íconos de redes sociales
-
-## Qué revisar
-
-Por favor revisa que la implementación siga las buenas prácticas y el protocolo de `CLAUDE.md`:
-
-1. **Colores de materia** - ¿Son consistentes con lo definido en CLAUDE.md?
-2. **Generación de ilustraciones** - ¿Se sigue el protocolo de `/illustration-decision` para elegir la tecnología?
-3. **Estructura de archivos** - ¿Los scripts y páginas están en ubicaciones correctas?
-4. **Manejo de SVG** - ¿El conversor mantiene la calidad y legibilidad?
-5. **URLs generadas** - ¿Se usa correctamente `cleanSlug` de `navigation-generator.js`?
-6. **Accesibilidad** - ¿Los PDFs tienen buena legibilidad y contraste?
-
-## Archivos clave a revisar
-
-```
-scripts/
-├── export-to-docx.sh      # Script principal Word
-├── export-to-pdf.mjs      # Script principal PDF
-├── preprocess-markdown.mjs # Preprocesador Markdown
-├── fix-docx-tables.py     # Post-procesador DOCX
-└── svg-to-png.mjs         # Conversor SVG a PNG
-
-src/pages/
-├── print/[...slug].astro      # Página print por lección
-└── print-tema/[...slug].astro # Página print por tema
-
-public/images/brand/
-├── logo-ediprofe.svg
-├── youtube.svg
-├── tiktok.svg
-└── web.svg
+// ✅ OBLIGATORIO - Importar de la config centralizada
+import { getMateriaConfig, getMateriaName, getMateriaColor } from '../config/materias';
+const config = getMateriaConfig('matematicas');
+const name = getMateriaName('matematicas');
+const color = getMateriaColor('matematicas');
 ```
 
-Necesito que por favor revises el proyecto a nivel de arquitectura, que no haya archivos tan grandes, que se mantenga fácilmente mantenible y escalable. ADELANTE.
+### Qué contiene materiaConfig:
+| Propiedad | Ejemplo | Uso |
+|-----------|---------|-----|
+| `name` | `'Matemáticas'` | Nombre con tilde para mostrar |
+| `icon` | `'🧮'` | Emoji de la materia |
+| `color` | `'#ef4444'` | Color principal |
+| `gradient` | `'linear-gradient(...)'` | Gradiente para headers |
+| `lightBg` | `'rgba(239,68,68,0.1)'` | Fondo claro |
+| `lightSolid` | `'#fee2e2'` | Fondo para impresión (sin rgba) |
+| `dark` | `'#991b1b'` | Color oscuro para títulos |
+
+### Constantes del sitio:
+```typescript
+import { SITE_CONFIG } from '../config/materias';
+SITE_CONFIG.url        // 'https://ediprofe.com'
+SITE_CONFIG.social.youtube.url  // URL de YouTube
+```
+
+---
+
+## 🔗 URLs Y SLUGS: USAR HELPERS
+
+**Fuente de verdad:** `src/utils/navigation-generator.js`
+
+```javascript
+// ❌ PROHIBIDO - Manipular slugs manualmente
+const url = `/matematicas/01-aritmetica/02-tema/03-leccion`;
+
+// ✅ OBLIGATORIO - Usar cleanSlug para URLs limpias
+import { cleanSlug, cleanSegment } from '../utils/navigation-generator.js';
+const url = `/${materia}/${cleanSlug(lesson.slug)}`;
+// Resultado: /matematicas/aritmetica/tema/leccion
+```
+
+### Funciones disponibles:
+| Función | Input | Output |
+|---------|-------|--------|
+| `cleanSlug(slug)` | `'01-intro/02-tema/03-leccion'` | `'intro/tema/leccion'` |
+| `cleanSegment(seg)` | `'01-introduccion'` | `'introduccion'` |
+| `formatName(slug)` | `'numeros-naturales'` | `'Numeros Naturales'` |
+| `extractOrder(file)` | `'03-leccion.md'` | `3` |
+
+---
+
+## 📝 TIPOS: USAR TIPOS EXISTENTES
+
+**Fuente de verdad:** `src/types/content.ts`
+
+```typescript
+// ❌ PROHIBIDO - Definir tipos ad-hoc
+type Materia = 'matematicas' | 'fisica';
+
+// ✅ OBLIGATORIO - Importar tipos existentes
+import { MateriaSlug, MATERIA_SLUGS, isMateriaSlug } from '../types/content';
+
+// Validar si un string es materia válida
+if (isMateriaSlug(slug)) {
+  // TypeScript sabe que slug es MateriaSlug
+}
+```
+
+---
+
+## 🖼️ CONTENEDORES DE SVG: RESPONSIVOS
+
+```html
+<!-- ❌ PROHIBIDO - max-width fijo que no coincide con el SVG -->
+<div style="max-width: 500px;">
+  <img src="/images/grafico.svg" />
+</div>
+
+<!-- ✅ OBLIGATORIO - width 100% + box-sizing -->
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/grafico.svg" alt="Descripción" style="width: 100%; height: auto;" />
+</div>
+```
+
+### Reglas:
+1. **Siempre** `width: 100%` en el contenedor
+2. **Siempre** `style="width: 100%; height: auto;"` en el `<img>`
+3. **Dentro de HTML**, usar `<img>` NO `![]()`  (markdown no funciona dentro de `<div>`)
+4. **Siempre** incluir `alt` descriptivo
+
+---
+
+## 📁 METADATOS: _meta.json OBLIGATORIO
+
+Cada carpeta de tema DEBE tener un `_meta.json`:
+
+```json
+{
+  "name": "Números Naturales",
+  "description": "Conceptos básicos de números naturales"
+}
+```
+
+### ¿Por qué?
+- Sin `_meta.json` → la carpeta NO aparece en navegación
+- El `name` se usa para mostrar títulos con tildes
+- Las lecciones sin capítulo/tema válido son filtradas
+
+---
+
+## 📐 LaTeX: FORMATO CORRECTO
+
+```markdown
+<!-- ❌ PROHIBIDO - Fórmula comprimida en una línea -->
+La fórmula es: $$A = \pi r^2$$ donde $r$ es el radio.
+
+<!-- ✅ OBLIGATORIO - Bloque con líneas vacías -->
+La fórmula es:
+
+$$
+A = \pi r^2
+$$
+
+Donde $r$ es el radio.
+```
+
+### Reglas:
+| Situación | Usar | Ejemplo |
+|-----------|------|---------|
+| Fórmula principal | Bloque `$$` con líneas vacías | Teoremas, definiciones |
+| Resultado final | `$$\boxed{x = 5}$$` | Respuestas destacadas |
+| Variable en texto | Inline `$x$` | "donde $x$ es..." |
+| **NUNCA** en títulos | Texto plano | `## Área del círculo` no `## $A = \pi r^2$` |
+
+---
+
+## 🎨 ESTILOS CSS: SINCRONIZACIÓN
+
+Si cambias colores en `src/config/materias.ts`, **DEBES** actualizar estos archivos CSS:
+
+```
+src/styles/layouts/lesson.css      # Comentario: SINCRONIZAR con materias.ts
+src/styles/pages/materia.css       # Comentario: SINCRONIZAR con materias.ts
+src/styles/pages/capitulo.css      # Comentario: SINCRONIZAR con materias.ts
+src/styles/pages/tema.css          # Comentario: SINCRONIZAR con materias.ts
+```
+
+Busca el comentario `SINCRONIZAR` en estos archivos para saber qué actualizar.
+
+---
+
+## 🚫 ANTI-PATRONES DETECTADOS (NO REPETIR)
+
+| Anti-patrón | Consecuencia | Solución |
+|-------------|--------------|----------|
+| Hardcodear colores hex | Refactorización masiva | Usar `COLORS` de core |
+| Hardcodear URLs de redes sociales | Inconsistencia | Usar `SITE_CONFIG` |
+| `max-width` fijo en SVG | SVG cortado o espacio en blanco | Usar `width: 100%` |
+| Definir `MateriaSlug` localmente | Duplicación, errores de tipo | Importar de `types/content` |
+| Crear `_meta.json` sin `name` | Carpeta no aparece en nav | Siempre incluir `name` |
+| LaTeX en títulos de sección | Error de renderizado | Usar texto plano |
+| `![](img)` dentro de `<div>` | Imagen no renderiza | Usar `<img src="">` |
+
+---
+
+## 📋 CHECKLIST ANTES DE HACER PR
+
+- [ ] ¿Usé `COLORS` de `core/colors.py` en renderers Python?
+- [ ] ¿Usé `getMateriaConfig()` para colores de materia en Astro/TS?
+- [ ] ¿Usé `cleanSlug()` para URLs?
+- [ ] ¿Los contenedores de SVG tienen `width: 100%`?
+- [ ] ¿Los `_meta.json` tienen el campo `name`?
+- [ ] ¿El LaTeX está en bloques separados con líneas vacías?
+- [ ] ¿Ejecuté `bash scripts/verify-svg-rendering.sh`?
+
+---
 
