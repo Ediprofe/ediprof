@@ -4,6 +4,87 @@ LEE CLAUDE.md y sus documentos citados ahí para que obtengas el contexto genera
 
 ---
 
+# ⚠️ REGLAS CRÍTICAS ANTES DE ESCRIBIR CÓDIGO
+
+> **LÉEME PRIMERO.** Estas reglas existen porque otro agente cometió errores que requirieron una refactorización masiva. NO las ignores.
+
+## 🎨 COLORES: NUNCA HARDCODEAR
+
+**El error más común:** escribir colores hexadecimales directamente en el código.
+
+```python
+# ❌ PROHIBIDO - Esto causó la refactorización de 314+ líneas
+color='#3b82f6'
+fill='#ffffff'
+stroke='#ef4444'
+
+# ✅ OBLIGATORIO - Siempre usar la paleta centralizada
+from core.colors import COLORS
+color=COLORS['primary']
+fill=COLORS['white']
+stroke=COLORS['accent']
+```
+
+### Paleta centralizada: `scripts/geometry/core/colors.py`
+
+| Clave | Hex | Uso |
+|-------|-----|-----|
+| `'primary'` | `#3b82f6` | Azul - figuras principales |
+| `'secondary'` | `#22c55e` | Verde - elementos secundarios |
+| `'accent'` | `#ef4444` | Rojo - puntos notables |
+| `'highlight'` | `#f97316` | Naranja - énfasis |
+| `'purple'` | `#8b5cf6` | Púrpura - diámetros |
+| `'white'` | `#ffffff` | Fondos blancos |
+| `'background'` | `#f8fafc` | Fondos claros |
+| `'text'` | `#1e293b` | Texto oscuro |
+| `'text_light'` | `#64748b` | Texto secundario |
+| `'auxiliary'` | `#94a3b8` | Líneas auxiliares |
+| `'grid'` | `#e2e8f0` | Cuadrícula |
+
+### ¿Por qué importa?
+
+1. **Consistencia visual** - Todas las ilustraciones usan la misma paleta
+2. **Mantenibilidad** - Cambiar un color se hace en UN solo lugar
+3. **Escalabilidad** - Nuevos renderers heredan la paleta automáticamente
+4. **Evita deuda técnica** - No se acumulan valores mágicos
+
+### Cómo importar en cualquier renderer
+
+```python
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent))
+from core.colors import COLORS
+
+# Usar así:
+builder.rect(0, 0, 600, 500, fill=COLORS['white'])
+coord.draw_point(builder, P, color=COLORS['accent'])
+```
+
+## 📐 ILUSTRACIONES: SEGUIR EL PROTOCOLO
+
+Antes de crear cualquier ilustración, consulta:
+- `CLAUDE.md` sección "Generación de Ilustraciones"
+- Workflow: `.agent/workflows/geometry-exact.md`
+
+**Pregúntate:**
+1. ¿Existe ya un spec JSON para esto? → Usa el renderer existente
+2. ¿Es geometría exacta? → Usa SymPy + renderer Python
+3. ¿Es diagrama conceptual? → Usa Rough.js inline
+4. ¿Requiere animación? → Usa SVG + CSS
+
+## ✅ VERIFICACIÓN OBLIGATORIA
+
+Después de modificar cualquier renderer, ejecuta:
+
+```bash
+bash scripts/verify-svg-rendering.sh
+```
+
+Esto genera SVGs de prueba y verifica que no haya errores.
+
+---
+
 # 📋 PETICIÓN DE REVISIÓN: Exportar a Word y PDF
 
 ## Contexto
