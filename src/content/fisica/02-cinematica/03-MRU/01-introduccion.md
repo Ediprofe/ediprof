@@ -25,7 +25,7 @@ Piensa en un tren que viaja a **60 km/h** de manera constante:
 
 ¿Ves el patrón? **Siempre avanza lo mismo en cada unidad de tiempo.**
 
-<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem auto; max-width: 550px;">
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
   <canvas id="rough-tren-mru" width="500" height="150" style="width: 100%; height: auto;"></canvas>
 </div>
 
@@ -100,7 +100,7 @@ Significa que **por cada segundo**, el robot avanza exactamente **4 metros**:
 | $t = 2\,\mathrm{s}$ | $+4\,\mathrm{m}$ | $8\,\mathrm{m}$ |
 | $t = 3\,\mathrm{s}$ | $+4\,\mathrm{m}$ | $12\,\mathrm{m}$ |
 
-<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem auto; max-width: 550px;">
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
   <canvas id="rough-robot" width="500" height="120" style="width: 100%; height: auto;"></canvas>
 </div>
 
@@ -252,7 +252,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 Un corredor recorre **$20\,\mathrm{m}$** en **$4\,\mathrm{s}$**. ¿Cuál es su velocidad?
 
-<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem auto; max-width: 550px;">
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
   <canvas id="rough-corredor" width="500" height="100" style="width: 100%; height: auto;"></canvas>
 </div>
 

@@ -20,7 +20,7 @@ $$
 
 Visualmente: combinamos las partes de ambas fracciones:
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1rem auto; max-width: 340px;">
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1rem auto; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>

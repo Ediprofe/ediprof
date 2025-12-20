@@ -14,7 +14,7 @@ $$
 
 ### Ejemplo 1: Múltiplos de 3
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 550px;">
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
@@ -55,7 +55,7 @@ $$
 
 ### Ejemplo 2: Múltiplos de 7
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 550px;">
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
@@ -102,7 +102,7 @@ Un **divisor** de un número es aquel que lo divide exactamente (residuo cero).
 
 Los divisores de 12 son aquellos números que permiten dividir 12 unidades en grupos iguales:
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 700px;">
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
@@ -151,7 +151,7 @@ $$
 
 ### Ejemplo 2: Divisores de 18
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 700px;">
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
@@ -208,7 +208,7 @@ $$
 
 Si $a$ es múltiplo de $b$, entonces $b$ es divisor de $a$.
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 450px;">
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>

@@ -13,7 +13,7 @@ Imagina que estás nadando en un río. Nadas hacia la orilla opuesta a $2\,\text
 
 ¿Hacia dónde te mueves realmente? ¿A qué velocidad?
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 450px;">
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
@@ -67,7 +67,7 @@ Empecemos con el caso más fácil: vectores que apuntan en la **misma dirección
 
 Si dos vectores apuntan en el **mismo sentido**, el resultante es la **suma de las magnitudes**:
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 450px;">
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
@@ -109,7 +109,7 @@ $$
 
 Si apuntan en **sentidos opuestos**, el resultante es la **diferencia de magnitudes**:
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 450px;">
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
@@ -157,7 +157,7 @@ Cuando los vectores **no están en línea**, usamos métodos gráficos. Uno de e
 2. Desde la **punta de A**, dibuja el vector $\vec{B}$
 3. El resultante $\vec{R}$ va desde el **origen** hasta la **punta de B**
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 500px;">
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
@@ -233,7 +233,7 @@ Otra forma de sumar vectores es usar el **método del paralelogramo**:
 2. Completa el **paralelogramo** usando los vectores como lados
 3. La **diagonal** desde el origen es el vector resultante
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 500px;">
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
@@ -297,7 +297,7 @@ $$
 |\vec{R}| = \sqrt{3^2 + 4^2} = \sqrt{9 + 16} = \sqrt{25} = 5
 $$
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 350px;">
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
@@ -373,7 +373,7 @@ $$
 \theta = \tan^{-1}\left(\frac{8}{8}\right) = 45°
 $$
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 450px;">
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
@@ -430,7 +430,7 @@ $$
 
 El vector $-\vec{B}$ tiene la **misma magnitud** que $\vec{B}$ pero **sentido contrario**.
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 500px;">
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
@@ -490,7 +490,7 @@ Ahora podemos resolver el problema del inicio:
 - Velocidad del nadador: $\vec{v}_n = 2\,\hat{j}$ (hacia arriba)
 - Velocidad de corriente: $\vec{v}_c = 3\,\hat{i}$ (hacia la derecha)
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 450px;">
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>

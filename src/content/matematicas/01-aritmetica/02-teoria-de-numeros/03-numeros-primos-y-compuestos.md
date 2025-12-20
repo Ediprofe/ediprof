@@ -10,7 +10,7 @@ Un **número primo** es aquel que solo tiene dos divisores: el $1$ y él mismo.
 
 ### Ejemplo 1: El número 7 es primo
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 350px;">
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
@@ -44,7 +44,7 @@ $$
 
 ### Ejemplo 2: El número 13 es primo
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 500px;">
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
@@ -78,7 +78,7 @@ Un **número compuesto** tiene más de dos divisores.
 
 ### Ejemplo 1: El número 12 es compuesto
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 700px;">
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
@@ -126,7 +126,7 @@ $$
 
 ### Ejemplo 2: El número 15 es compuesto
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 600px;">
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
@@ -172,7 +172,7 @@ $$
 
 ## 📖 Primeros números primos
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 700px;">
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>

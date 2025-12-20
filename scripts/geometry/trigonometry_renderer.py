@@ -153,9 +153,9 @@ class TrigonometryRenderer:
         'triangulo_fill': BASE_COLORS['background'],# Fondo claro
         'triangulo_stroke': BASE_COLORS['text'],   # Borde oscuro
         'text': BASE_COLORS['text'],               # Texto
-        'background': '#ffffff',                    # Fondo etiqueta
+        'background': BASE_COLORS['white'],          # Fondo etiqueta
         'info_bg': BASE_COLORS['grid'],            # Fondo cuadro info
-        'info_border': '#e2e8f0'                   # Borde cuadro info
+        'info_border': BASE_COLORS['grid']         # Borde cuadro info
     }
     
     def __init__(self, spec: dict):

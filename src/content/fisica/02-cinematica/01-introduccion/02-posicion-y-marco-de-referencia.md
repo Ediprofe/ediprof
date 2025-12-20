@@ -16,7 +16,7 @@ El movimiento es **relativo**. Para describir la posición de una partícula, ne
 
 El siguiente diagrama muestra un marco de referencia con una partícula ubicada en la posición $(x, y)$:
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 400px;">
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 El origen del marco de referencia **no tiene que estar en un lugar "especial"**. Podemos elegirlo donde sea más conveniente. Observa cómo la **misma partícula** tiene coordenadas diferentes según dónde coloquemos el origen:
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 500px;">
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
@@ -133,7 +133,7 @@ $$
 **1. Marco de Referencia: Origen en la Rectoría ($x=0$)**
 Ubicamos el cero en el extremo izquierdo. Todo lo demás queda a la derecha (positivo).
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 500px;">
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', function() {
 **2. Marco de Referencia: Origen en el Salón A ($x=0$)**
 Ubicamos el cero en el medio.
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 500px;">
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
@@ -197,7 +197,7 @@ document.addEventListener('DOMContentLoaded', function() {
 **3. Marco de Referencia: Origen en el Salón B ($x=0$)**
 Ubicamos el cero en el extremo derecho. Todo lo demás queda a la izquierda (negativo).
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 500px;">
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
@@ -250,7 +250,7 @@ $$
 **1. Marco de Referencia: Origen en el Atleta 2 ($x=0$)**
 El observador está en el centro.
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 450px;">
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
@@ -282,7 +282,7 @@ document.addEventListener('DOMContentLoaded', function() {
 **2. Marco de Referencia: Origen en el Atleta 1 ($x=0$)**
 El observador está en el extremo izquierdo. Todos los demás están a su derecha (positivos).
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 450px;">
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
@@ -322,7 +322,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 Un dron sobrevuela un parque. En un sistema de coordenadas donde el **kiosko** está en el origen $(0,0)$, el dron se encuentra en la posición $(4, 3)$ metros.
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 400px;">
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
@@ -372,7 +372,7 @@ Tres amigos están en una plaza:
 - **Beto** está en $(3, 4)$
 - **Carlos** está en $(6, 0)$
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 450px;">
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
@@ -425,7 +425,7 @@ Restamos las coordenadas de Carlos a cada punto:
 * **Posición de Carlos:**
   $$\vec{r}_C = (0, 0) \quad \text{(es el nuevo origen)}$$
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 450px;">
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>

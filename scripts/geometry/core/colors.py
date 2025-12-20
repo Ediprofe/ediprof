@@ -83,6 +83,13 @@ COLORS = {
     'quadrant_IV': '#ec4899',
     'cos_color': '#3b82f6',
     'sin_color': '#ef4444',
+    
+    # === RELLENOS SUAVES (para familias de figuras) ===
+    'fill_red_light': '#fecaca',
+    'fill_orange_light': '#fed7aa',
+    'fill_yellow_light': '#fef08a',
+    'fill_green_light': '#bbf7d0',
+    'fill_blue_light': '#bfdbfe',
 }
 
 

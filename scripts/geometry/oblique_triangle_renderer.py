@@ -36,7 +36,7 @@ COLORS = {
     'auxiliary': BASE_COLORS['auxiliary'],
     'highlight': BASE_COLORS['highlight'],
     'box_bg': BASE_COLORS['grid'],
-    'box_border': '#e2e8f0',
+    'box_border': BASE_COLORS['grid'],
 }
 
 

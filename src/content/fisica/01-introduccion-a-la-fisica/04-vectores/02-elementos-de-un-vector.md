@@ -5,7 +5,7 @@ Un **vector** es una magnitud que tiene **módulo (magnitud)**, **dirección** y
 Se representa mediante una **flecha**.
 La longitud de la flecha indica la magnitud, la inclinación muestra la dirección y la punta señala el sentido.
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 500px;">
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
@@ -112,7 +112,7 @@ Por ejemplo, si un vector forma un ángulo de $30^\circ$ con el eje $x$, decimos
 El **sentido** señala **hacia dónde apunta el vector** a lo largo de su dirección.
 Por ejemplo, un vector velocidad hacia el norte y otro hacia el sur tienen la misma dirección (vertical), pero **sentidos opuestos**.
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 450px;">
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>

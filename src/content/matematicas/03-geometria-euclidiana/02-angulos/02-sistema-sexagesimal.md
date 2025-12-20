@@ -29,7 +29,7 @@ Los **babilonios** (hace más de 4000 años) inventaron este sistema porque:
 **📊 Ilustración: Cómo se subdivide un grado**
 
 <div style="background: #f8fafc; border: 2px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
-  <canvas id="roughjs-grado-subdivision" width="600" height="320" style="width: 100%; max-width: 600px; height: auto; display: block; margin: 0 auto;"></canvas>
+  <canvas id="roughjs-grado-subdivision" width="600" height="320" style="width: 100%; width: 100%; box-sizing: border-box; height: auto; display: block; margin: 0 auto;"></canvas>
 </div>
 
 <script>
@@ -146,7 +146,7 @@ $$
 **📐 Ilustración: Un ángulo de 1° subdividido en minutos**
 
 <div style="background: #f8fafc; border: 2px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
-  <canvas id="roughjs-angulo-subdiv" width="500" height="320" style="width: 100%; max-width: 500px; height: auto; display: block; margin: 0 auto;"></canvas>
+  <canvas id="roughjs-angulo-subdiv" width="500" height="320" style="width: 100%; width: 100%; box-sizing: border-box; height: auto; display: block; margin: 0 auto;"></canvas>
 </div>
 
 <script>
@@ -250,7 +250,7 @@ $$
 **Lectura:** "Noventa grados exactos"
 
 <div style="background: #f8fafc; border: 2px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1rem 0;">
-  <canvas id="roughjs-angulo-90" width="300" height="200" style="width: 100%; max-width: 300px; height: auto; display: block; margin: 0 auto;"></canvas>
+  <canvas id="roughjs-angulo-90" width="300" height="200" style="width: 100%; width: 100%; box-sizing: border-box; height: auto; display: block; margin: 0 auto;"></canvas>
 </div>
 
 <script>
@@ -302,7 +302,7 @@ $$
 **Lectura:** "Cuarenta y cinco grados y treinta minutos"
 
 <div style="background: #f8fafc; border: 2px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1rem 0;">
-  <canvas id="roughjs-angulo-45-30" width="300" height="200" style="width: 100%; max-width: 300px; height: auto; display: block; margin: 0 auto;"></canvas>
+  <canvas id="roughjs-angulo-45-30" width="300" height="200" style="width: 100%; width: 100%; box-sizing: border-box; height: auto; display: block; margin: 0 auto;"></canvas>
 </div>
 
 <script>
@@ -703,7 +703,7 @@ document.addEventListener('DOMContentLoaded', function() {
 **📍 Visualización: Bogotá en el Globo Terráqueo**
 
 <div style="background: linear-gradient(135deg, #0f172a, #1e293b); border: 2px solid #475569; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
-  <canvas id="roughjs-globo-bogota" width="500" height="450" style="width: 100%; max-width: 500px; height: auto; display: block; margin: 0 auto;"></canvas>
+  <canvas id="roughjs-globo-bogota" width="500" height="450" style="width: 100%; width: 100%; box-sizing: border-box; height: auto; display: block; margin: 0 auto;"></canvas>
 </div>
 
 <script>

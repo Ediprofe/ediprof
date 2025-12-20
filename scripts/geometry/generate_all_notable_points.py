@@ -34,7 +34,7 @@ class GeometryPlotter:
         }
 
         self.styles = {
-            'point': {'r': 4.5, 'fill': '#1e293b', 'stroke': 'white', 'stroke_width': 2},
+            'point': {'r': 4.5, 'fill': BASE_COLORS['text'], 'stroke': 'white', 'stroke_width': 2},
             'highlight_point': {'r': 7, 'fill': self.colors['point_main'], 'stroke': 'white', 'stroke_width': 2.5},
             'midpoint': {'r': 3.5, 'fill': 'white', 'stroke': self.colors['aux'], 'stroke_width': 2},
             
@@ -44,13 +44,13 @@ class GeometryPlotter:
             'altitude_line': {'stroke': self.colors['altitude'], 'stroke_width': 2.5, 'stroke_dasharray': '5,4'},
             'bisector_line': {'stroke': self.colors['bisector'], 'stroke_width': 2.5, 'stroke_dasharray': '5,4'},
             'mediator_line': {'stroke': self.colors['bisector_perp'], 'stroke_width': 2.5}, 
-            'euler_line': {'stroke': '#6b7280', 'stroke_width': 4, 'stroke_opacity': 0.4},
+            'euler_line': {'stroke': BASE_COLORS['auxiliary'], 'stroke_width': 4, 'stroke_opacity': 0.4},
             
-            'circle_main': {'fill': 'none', 'stroke': '#3b82f6', 'stroke_width': 2.5},
-            'circle_fill': {'fill': '#3b82f6', 'fill_opacity': 0.08},
+            'circle_main': {'fill': 'none', 'stroke': BASE_COLORS['primary'], 'stroke_width': 2.5},
+            'circle_fill': {'fill': BASE_COLORS['primary'], 'fill_opacity': 0.08},
             
-            'text': {'font_family': 'Arial, Helvetica, sans-serif', 'font_size': 16, 'fill': '#0f172a', 'font_weight': 'bold'}, 
-            'text_sub': {'font_family': 'Arial, Helvetica, sans-serif', 'font_size': 13, 'fill': '#64748b', 'font_weight': 'normal'}
+            'text': {'font_family': 'Arial, Helvetica, sans-serif', 'font_size': 16, 'fill': BASE_COLORS['text'], 'font_weight': 'bold'}, 
+            'text_sub': {'font_family': 'Arial, Helvetica, sans-serif', 'font_size': 13, 'fill': BASE_COLORS['text_light'], 'font_weight': 'normal'}
         }
         
     def to_svg(self, p):
@@ -322,9 +322,9 @@ def generate_points():
     plot.point(B, "B", **plot.styles['point'])
     plot.point(C, "C", **plot.styles['point'])
     
-    plot.point(O, "O", off=(-15,-10), fill='#3b82f6', r=5)
-    plot.point(G, "G", off=(5,15), fill='#22c55e', r=5)
-    plot.point(H, "H", off=(5,15), fill='#ef4444', r=5)
+    plot.point(O, "O", off=(-15,-10), fill=BASE_COLORS['primary'], r=5)
+    plot.point(G, "G", off=(5,15), fill=BASE_COLORS['secondary'], r=5)
+    plot.point(H, "H", off=(5,15), fill=BASE_COLORS['accent'], r=5)
     
     plot.dwg.add(plot.dwg.text("O, G y H siempre alineados", insert=(250, 380), text_anchor="middle", **plot.styles['text_sub']))
     plot.save()

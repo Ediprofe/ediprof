@@ -2184,7 +2184,7 @@ def render_circunferencias_concentricas(output_path: str, title: str = "Circunfe
     svg_c = coord.to_svg(C)
     
     # Familia de circunferencias con radios 1, 2, 3, 4, 5
-    colors = ['#fecaca', '#fed7aa', '#fef08a', '#bbf7d0', '#bfdbfe']
+    colors = [COLORS['fill_red_light'], COLORS['fill_orange_light'], COLORS['fill_yellow_light'], COLORS['fill_green_light'], COLORS['fill_blue_light']]
     radii = [1, 2, 3, 4, 5]
     
     for i, r in enumerate(reversed(radii)):  # Dibujar de mayor a menor

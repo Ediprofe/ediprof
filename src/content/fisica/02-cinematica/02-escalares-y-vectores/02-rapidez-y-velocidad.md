@@ -325,7 +325,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 Un ciclista da una vuelta completa a un velódromo circular de $500\,\mathrm{m}$ en $50\,\mathrm{s}$.
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 250px;">
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>
@@ -362,7 +362,7 @@ $$
 
 Un robot se mueve $3\,\mathrm{m}$ al Norte en $2\,\mathrm{s}$, luego $4\,\mathrm{m}$ al Este en $3\,\mathrm{s}$.
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; max-width: 300px;">
+<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
   </div>

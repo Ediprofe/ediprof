@@ -28,7 +28,7 @@ Se centra en las **fuerzas** y la **masa**, es decir, las interacciones que prov
 
 > **En el ejemplo del auto:** La dinámica estudia la fuerza de fricción entre los neumáticos y el asfalto que provoca que el auto se detenga.
 
-<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem auto; max-width: 650px;">
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
   <canvas id="rough-cinem-vs-dinam" width="600" height="280" style="width: 100%; height: auto;"></canvas>
 </div>
 
@@ -168,7 +168,7 @@ $$
 \text{Cuerpo real} \rightarrow \text{Punto másico} \, (x, y, z)
 $$
 
-<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem auto; max-width: 500px;">
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
   <canvas id="rough-particula" width="460" height="150" style="width: 100%; height: auto;"></canvas>
 </div>
 

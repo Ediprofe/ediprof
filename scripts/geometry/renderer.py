@@ -22,6 +22,10 @@ import json
 import sys
 from pathlib import Path
 
+# Importar paleta de colores centralizada
+sys.path.insert(0, str(Path(__file__).parent))
+from core.colors import COLORS as BASE_COLORS
+
 try:
     from sympy import Point, Line, Circle, Segment, Triangle
     from sympy import sqrt, Rational
@@ -111,16 +115,16 @@ def render_svg(spec, output_path):
     construction = spec.get('construction', {})
     show = construction.get('show', {})
     
-    # Colores por defecto
+    # Colores por defecto (basado en core.colors)
     COLORS = {
-        'triangle_fill': '#f8fafc',
-        'triangle_stroke': '#1e293b',
-        'medianas': '#22c55e',
-        'alturas': '#f97316',
-        'bisectrices': '#8b5cf6',
-        'mediatrices': '#ec4899',
-        'punto_notable': '#ef4444',
-        'vertices': '#1e293b'
+        'triangle_fill': BASE_COLORS['triangle_fill'],
+        'triangle_stroke': BASE_COLORS['triangle_stroke'],
+        'medianas': BASE_COLORS['medianas'],
+        'alturas': BASE_COLORS['alturas'],
+        'bisectrices': BASE_COLORS['bisectrices'],
+        'mediatrices': BASE_COLORS['mediatrices'],
+        'punto_notable': BASE_COLORS['punto_notable'],
+        'vertices': BASE_COLORS['vertices']
     }
     
     svg_elements = []

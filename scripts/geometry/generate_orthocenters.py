@@ -3,6 +3,12 @@ import svgwrite
 from sympy import Point, Line, Triangle, Segment
 from sympy.geometry import intersection
 import os
+import sys
+from pathlib import Path
+
+# Importar paleta de colores centralizada
+sys.path.insert(0, str(Path(__file__).parent))
+from core.colors import COLORS as BASE_COLORS
 
 class GeometryPlotter:
     def __init__(self, filename, width=400, height=320, padding=40):
@@ -12,17 +18,17 @@ class GeometryPlotter:
         self.padding = padding
         self.dwg = svgwrite.Drawing(filename, size=(width, height))
         
-        # Style definitions
+        # Style definitions (basado en core.colors)
         self.styles = {
-            'point': {'r': 4, 'fill': '#1e293b', 'stroke': 'none'},
-            'highlight_point': {'r': 6, 'fill': '#ef4444', 'stroke': 'none'},
-            'triangle_fill': {'fill': '#dcfce7', 'fill_opacity': 0.3, 'stroke': '#22c55e', 'stroke_width': 2},
-            'triangle_fill_obtuse': {'fill': '#fef3c7', 'fill_opacity': 0.3, 'stroke': '#f59e0b', 'stroke_width': 2},
-            'triangle_fill_right': {'fill': '#dbeafe', 'fill_opacity': 0.3, 'stroke': '#3b82f6', 'stroke_width': 2},
-            'dashed_line': {'stroke': '#3b82f6', 'stroke_width': 1.5, 'stroke_dasharray': '6,4'},
-            'helper_line': {'stroke': '#94a3b8', 'stroke_width': 1, 'stroke_dasharray': '4,4'},
-            'orthocenter_lines': {'stroke': '#ef4444', 'stroke_width': 1.5, 'stroke_dasharray': '6,4'},
-            'text': {'font_family': 'Inter, sans-serif', 'font_size': 14, 'fill': '#1e293b', 'font_weight': 'bold'}
+            'point': {'r': 4, 'fill': BASE_COLORS['text'], 'stroke': 'none'},
+            'highlight_point': {'r': 6, 'fill': BASE_COLORS['accent'], 'stroke': 'none'},
+            'triangle_fill': {'fill': BASE_COLORS['fill_green_light'], 'fill_opacity': 0.3, 'stroke': BASE_COLORS['secondary'], 'stroke_width': 2},
+            'triangle_fill_obtuse': {'fill': BASE_COLORS['segment_fill'], 'fill_opacity': 0.3, 'stroke': BASE_COLORS['amber'], 'stroke_width': 2},
+            'triangle_fill_right': {'fill': BASE_COLORS['circle_fill'], 'fill_opacity': 0.3, 'stroke': BASE_COLORS['primary'], 'stroke_width': 2},
+            'dashed_line': {'stroke': BASE_COLORS['primary'], 'stroke_width': 1.5, 'stroke_dasharray': '6,4'},
+            'helper_line': {'stroke': BASE_COLORS['auxiliary'], 'stroke_width': 1, 'stroke_dasharray': '4,4'},
+            'orthocenter_lines': {'stroke': BASE_COLORS['accent'], 'stroke_width': 1.5, 'stroke_dasharray': '6,4'},
+            'text': {'font_family': 'Inter, sans-serif', 'font_size': 14, 'fill': BASE_COLORS['text'], 'font_weight': 'bold'}
         }
         
     def to_svg_coords(self, point):
@@ -86,7 +92,7 @@ def generate_orthocenters():
          foot = side.projection(vertex)
          plot.draw_segment(vertex, foot, **plot.styles['dashed_line'])
          # Draw foot point
-         plot.draw_point(foot, **{'r': 3, 'fill': '#3b82f6'})
+         plot.draw_point(foot, **{'r': 3, 'fill': BASE_COLORS['primary']})
 
     # Draw Vertices and Labels
     plot.draw_point(A, "A", **plot.styles['point'])
@@ -115,7 +121,7 @@ def generate_orthocenters():
     # Draw Right Angle Symbol
     size = 20
     plot.dwg.add(plot.dwg.path(d=f"M {float(A.x)} {float(A.y)-size} L {float(A.x)+size} {float(A.y)-size} L {float(A.x)+size} {float(A.y)}",
-                               fill="none", stroke="#3b82f6", stroke_width=2))
+                               fill="none", stroke=BASE_COLORS['primary'], stroke_width=2))
 
     # Altitudes
     # 1. C to AB (is CA itself) -> drawn as part of triangle, maybe highlight?
@@ -123,7 +129,7 @@ def generate_orthocenters():
     # 3. A to BC (calculated)
     foot_A = T.sides[0].projection(A) # BC is side 0 because opposite A
     plot.draw_segment(A, foot_A, **plot.styles['dashed_line'])
-    plot.draw_point(foot_A, **{'r': 3, 'fill': '#3b82f6'})
+    plot.draw_point(foot_A, **{'r': 3, 'fill': BASE_COLORS['primary']})
     
     # Draw Vertices
     plot.draw_point(A, "A=H", **plot.styles['highlight_point'])
