@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" fill="currentColor">
+  <!-- Ícono de libro abierto estilizado -->
+  <g transform="translate(0, 5)">
+    <!-- Página izquierda -->
+    <path d="M5 8 L5 38 Q22 35 22 20 L22 5 Q5 5 5 8" opacity="0.8"/>
+    <!-- Página derecha -->
+    <path d="M25 5 L25 20 Q25 35 42 38 L42 8 Q42 5 25 5"/>
+    <!-- Lomo del libro -->
+    <rect x="22" y="3" width="3" height="37" rx="1"/>
+    <!-- Líneas de texto simuladas -->
+    <line x1="9" y1="15" x2="18" y2="14" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="9" y1="22" x2="16" y2="21" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="29" y1="14" x2="38" y2="15" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="29" y1="21" x2="36" y2="22" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Texto "ediprofe" -->
+  <text x="52" y="35" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="-1">
+    ediprofe
+  </text>
+</svg>
