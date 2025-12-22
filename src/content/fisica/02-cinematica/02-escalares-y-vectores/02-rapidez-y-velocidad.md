@@ -4,6 +4,14 @@ Al igual que ocurre con la distancia y el desplazamiento, en el lenguaje cotidia
 
 ---
 
+## 🎯 ¿Qué vas a aprender?
+
+- La diferencia fundamental entre rapidez (escalar) y velocidad (vectorial).
+- Cómo calcular la rapidez media y la velocidad media en diferentes situaciones.
+- Por qué es posible tener rapidez alta pero velocidad cero.
+
+---
+
 ## ⚡ **Rapidez**
 
 Es una magnitud **escalar** que indica qué tan deprisa se recorrió una **distancia** total. No tiene en cuenta la dirección.
@@ -36,7 +44,7 @@ $$
 
 ---
 
-## ⚙️ **Ejercicio 1 — Carrera de 100 metros**
+## ⚙️ **Ejemplo 1 — Carrera de 100 metros**
 
 Un atleta olímpico corre en una pista recta. Inicia en la línea de salida y cruza la meta ubicada a $100\,\mathrm{m}$ de distancia en un tiempo de $10\,\mathrm{s}$.
 
@@ -171,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ---
 
-## ⚙️ **Ejercicio 2 — Caminata de ida y vuelta**
+## ⚙️ **Ejemplo 2 — Caminata de ida y vuelta**
 
 Una persona camina $60\,\mathrm{m}$ hacia el este, luego retrocede $20\,\mathrm{m}$ hacia el oeste. Tiempo total: $40\,\mathrm{s}$.
 
@@ -358,7 +366,7 @@ $$
 
 ---
 
-## ⚙️ **Ejercicio 4 — Movimiento en "L"**
+## ⚙️ **Ejemplo 4 — Movimiento en "L"**
 
 Un robot se mueve $3\,\mathrm{m}$ al Norte en $2\,\mathrm{s}$, luego $4\,\mathrm{m}$ al Este en $3\,\mathrm{s}$.
 
@@ -402,3 +410,45 @@ $$
 $$
 
 > 💡 El robot recorrió más distancia de la que avanzó en línea recta.
+
+---
+
+## 📝 Ejercicios de Práctica
+
+### Ejercicio 1
+**Un nadador recorre una piscina olímpica de $50\,\mathrm{m}$ y regresa inmediatamente al punto de partida. Todo el recorrido le toma $50\,\mathrm{s}$. Calcula su rapidez media y su velocidad media.**
+
+<details>
+<summary>Ver solución</summary>
+
+1. **Distancia total:** $d = 50\,\mathrm{m} + 50\,\mathrm{m} = 100\,\mathrm{m}$
+2. **Desplazamiento:** $\Delta x = 0\,\mathrm{m}$ (regresó al inicio)
+3. **Tiempo:** $t = 50\,\mathrm{s}$
+
+**Resultados:**
+- **Rapidez media:** $v = \frac{100\,\mathrm{m}}{50\,\mathrm{s}} = 2\,\mathrm{m/s}$
+- **Velocidad media:** $\vec{v} = \frac{0\,\mathrm{m}}{50\,\mathrm{s}} = 0\,\mathrm{m/s}$
+</details>
+
+### Ejercicio 2
+**Un automóvil viaja $120\,\mathrm{km}$ al Norte en 2 horas, y luego regresa $40\,\mathrm{km}$ al Sur en 1 hora.**
+
+<details>
+<summary>Ver solución</summary>
+
+1. **Distancia:** $d = 120 + 40 = 160\,\mathrm{km}$
+2. **Desplazamiento:** $\Delta x = 120 - 40 = +80\,\mathrm{km}$ (hacia el Norte)
+3. **Tiempo total:** $t = 2 + 1 = 3\,\mathrm{h}$
+
+**Resultados:**
+- **Rapidez media:** $v = \frac{160}{3} \approx 53.3\,\mathrm{km/h}$
+- **Velocidad media:** $\vec{v} = \frac{80}{3} \approx +26.7\,\mathrm{km/h}$ (al Norte)
+</details>
+
+---
+
+## 🔑 Resumen
+
+- **Rapidez ($v$):** Magnitud escalar. Relaciona la **distancia** recorrida con el tiempo. Siempre es positiva.
+- **Velocidad ($\vec{v}$):** Magnitud vectorial. Relaciona el **desplazamiento** con el tiempo. Indica qué tan rápido se cambia de posición y en qué dirección.
+- En un viaje de ida y vuelta al mismo punto, la **velocidad media es cero**, pero la rapidez media es positiva.

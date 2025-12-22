@@ -164,4 +164,7 @@ Situaciones que requieren confirmación:
 
 # 📝 PETICIÓN DEL USUARIO
 
-<!-- Escribe aquí tu siguiente petición -->
+http://localhost:4321/fisica/cinematica/introduccion/posicion-y-marco-de-referencia
+
+
+por favor agrega las ilustraciones correspondientes a esta lección, reemplazando las qu están con jsxgraph, por lecciones que se generen a través de la metodología que mejor corresponda según la documentación, puede ser con svg, con specs y demás, o con mathrender, creo que se llama así....por favor lee el contexto completo del proyecto y procede

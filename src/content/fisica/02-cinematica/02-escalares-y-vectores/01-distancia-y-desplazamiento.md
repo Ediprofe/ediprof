@@ -4,6 +4,14 @@ Aunque en la vida diaria usamos estas palabras indistintamente, en física repre
 
 ---
 
+## 🎯 ¿Qué vas a aprender?
+
+- La diferencia entre distancia (escalar) y desplazamiento (vectorial).
+- Cómo calcular ambos en 1D y 2D.
+- Por qué la distancia nunca puede ser menor que la magnitud del desplazamiento.
+
+---
+
 ## 👣 Distancia
 
 Es una magnitud **escalar** que mide la **longitud total del camino recorrido**.
@@ -32,7 +40,7 @@ $$
 
 ---
 
-## ⚙️ Ejercicio 1 — El Tenista
+## ⚙️ Ejemplo 1 — El Tenista
 
 Un tenista comienza en la línea de fondo ($x=0$ m), corre hasta la red ubicada a 12 m, y luego retrocede hasta la línea de saque, ubicada a 6 m.
 
@@ -74,7 +82,7 @@ $$\Delta x = 6 - 0 = +6\ \text{m}$$
 
 ---
 
-## ⚙️ Ejercicio 2 — El Ascensor
+## ⚙️ Ejemplo 2 — El Ascensor
 
 El ascensor sube de 0 m a 20 m, luego baja hasta -4 m.
 
@@ -116,7 +124,7 @@ $$\Delta x = -4 - 0 = -4\ \text{m}$$
 
 ---
 
-## ⚙️ Ejercicio 3 — Vuelta a la Manzana
+## ⚙️ Ejemplo 3 — Vuelta a la Manzana
 
 Una persona recorre una pista circular de 400 m y termina en el mismo punto.
 
@@ -155,7 +163,7 @@ $$\Delta x = 0$$ (regresó al punto de partida)
 
 ---
 
-## ⚙️ Ejercicio 4 — Caminata en Dos Dimensiones
+## ⚙️ Ejemplo 4 — Caminata en Dos Dimensiones
 
 Camina 30 m al norte y luego 40 m al este.
 
@@ -197,3 +205,41 @@ $$d = 30 + 40 = 70\ \text{m}$$
 $$\Delta x = \sqrt{30^2 + 40^2} = \sqrt{900 + 1600} = \sqrt{2500} = 50\ \text{m}$$
 
 > 💡 **Observa:** La distancia recorrida (70 m) es **mayor** que el desplazamiento (50 m). El desplazamiento es siempre la **ruta más corta**.
+
+---
+
+## 📝 Ejercicios de Práctica
+
+### Ejercicio 1
+**Caminas 10 metros al norte y luego 5 metros al sur. Calcula:**
+a) La distancia total recorrida.
+b) El desplazamiento desde el punto de inicio.
+
+<details>
+<summary>Ver solución</summary>
+
+a) **Distancia:** $d = 10 + 5 = 15\,\mathrm{m}$.
+b) **Desplazamiento:** $\Delta x = 10 - 5 = +5\,\mathrm{m}$ (hacia el norte).
+
+</details>
+
+---
+
+### Ejercicio 2
+**¿Puede la distancia ser negativa? ¿Y el desplazamiento?**
+
+<details>
+<summary>Ver solución</summary>
+
+- La **distancia** NUNCA es negativa, ya que suma longitudes recorridas.
+- El **desplazamiento** SÍ puede ser negativo, indicando que el movimiento fue en sentido contrario al eje positivo.
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+- **Distancia ($d$):** Magnitud escalar. Suma de todo el camino recorrido. Siempre positiva.
+- **Desplazamiento ($\Delta x$):** Magnitud vectorial. Cambio de posición ($x_f - x_i$). Puede ser positivo, negativo o cero.
+- La distancia siempre es mayor o igual que la magnitud del desplazamiento ($d \geq |\Delta x|$).

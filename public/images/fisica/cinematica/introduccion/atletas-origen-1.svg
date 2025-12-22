@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 180">
+  <defs>
+        <marker id="arrow-64748b-10" markerWidth="10" markerHeight="10" 
+                refX="9.0" refY="5.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 10,5.0 0,10" fill="#64748b"/>
+        </marker></defs>
+  <rect x="0.00" y="0.00" width="600.00" height="180.00" fill="#f8fafc" stroke="none" stroke-width="0" rx="0"/>
+  <text x="300.00" y="25.00" font-family="Inter, sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Posición en 1D</text>
+  <line x1="40.00" y1="90.00" x2="560.00" y2="90.00" stroke="#64748b" stroke-width="2"  />
+  <line x1="550.00" y1="90.00" x2="560.00" y2="90.00" stroke="#64748b" stroke-width="2"  marker-end="url(#arrow-64748b-10)"/>
+  <line x1="40.00" y1="85.00" x2="40.00" y2="95.00" stroke="#64748b" stroke-width="1"  />
+  <text x="40.00" y="110.00" font-family="Inter, sans-serif" font-size="10" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">-5</text>
+  <line x1="105.00" y1="85.00" x2="105.00" y2="95.00" stroke="#64748b" stroke-width="1"  />
+  <text x="105.00" y="110.00" font-family="Inter, sans-serif" font-size="10" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">0</text>
+  <line x1="170.00" y1="85.00" x2="170.00" y2="95.00" stroke="#64748b" stroke-width="1"  />
+  <text x="170.00" y="110.00" font-family="Inter, sans-serif" font-size="10" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">5</text>
+  <line x1="235.00" y1="85.00" x2="235.00" y2="95.00" stroke="#64748b" stroke-width="1"  />
+  <text x="235.00" y="110.00" font-family="Inter, sans-serif" font-size="10" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">10</text>
+  <line x1="300.00" y1="85.00" x2="300.00" y2="95.00" stroke="#64748b" stroke-width="1"  />
+  <text x="300.00" y="110.00" font-family="Inter, sans-serif" font-size="10" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">15</text>
+  <line x1="365.00" y1="85.00" x2="365.00" y2="95.00" stroke="#64748b" stroke-width="1"  />
+  <text x="365.00" y="110.00" font-family="Inter, sans-serif" font-size="10" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">20</text>
+  <line x1="430.00" y1="85.00" x2="430.00" y2="95.00" stroke="#64748b" stroke-width="1"  />
+  <text x="430.00" y="110.00" font-family="Inter, sans-serif" font-size="10" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">25</text>
+  <line x1="495.00" y1="85.00" x2="495.00" y2="95.00" stroke="#64748b" stroke-width="1"  />
+  <text x="495.00" y="110.00" font-family="Inter, sans-serif" font-size="10" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">30</text>
+  <line x1="560.00" y1="85.00" x2="560.00" y2="95.00" stroke="#64748b" stroke-width="1"  />
+  <text x="560.00" y="110.00" font-family="Inter, sans-serif" font-size="10" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">35</text>
+  <circle cx="105.00" cy="90.00" r="5.00" fill="#22c55e" stroke="#3b82f6" stroke-width="2" />
+  <text x="105.00" y="75.00" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#22c55e" text-anchor="middle" dominant-baseline="middle">Atleta 1</text>
+  <text x="105.00" y="125.00" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#22c55e" text-anchor="middle" dominant-baseline="middle">x=0</text>
+  <circle cx="300.00" cy="90.00" r="5.00" fill="#3b82f6" stroke="#3b82f6" stroke-width="2" />
+  <text x="300.00" y="75.00" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#3b82f6" text-anchor="middle" dominant-baseline="middle">Atleta 2</text>
+  <text x="300.00" y="125.00" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#3b82f6" text-anchor="middle" dominant-baseline="middle">x=+15</text>
+  <circle cx="495.00" cy="90.00" r="5.00" fill="#ef4444" stroke="#3b82f6" stroke-width="2" />
+  <text x="495.00" y="75.00" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#ef4444" text-anchor="middle" dominant-baseline="middle">Atleta 3</text>
+  <text x="495.00" y="125.00" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#ef4444" text-anchor="middle" dominant-baseline="middle">x=+30</text>
+</svg>
