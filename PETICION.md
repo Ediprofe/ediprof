@@ -161,6 +161,6 @@ Situaciones que requieren confirmación:
 
 # 📝 PETICIÓN DEL USUARIO
 
-http://localhost:4321/fisica/introduccion-a-la-fisica/vectores/representacion-de-vectores-en-el-plano
+4d39527 desde este commit, en adelante se implementaron más funciones, pero hay algo que quiero que revises. Primeramente si el agente de ahí en más cumplió las buenas prácitcas en PETICION.md y archivos derivados. Y segundo, que ahora cuando exporto en word, no aparecen las imágenes svg.
 
-A ese lección le falta como que el ejemplo que se usa para resolver y mostrar conceptos, sea el mismo de la gráfica, me entiendes? que sea esa progresión natural y economía de pensamiento. 
+procede

@@ -78,7 +78,22 @@ function preprocessMarkdown(inputPath, outputPath, tempImagesDir, includeImages 
         (match, alt, src) => `![${alt}](${src})`);
 
     // ===========================================
-    // 3. PROCESAR IMÁGENES MARKDOWN
+    // 3. PROCESAR IMÁGENES HTML (<img src="...">)
+    // ===========================================
+    // Las imágenes dentro de <div><img src="..." alt="..."></div> no son detectadas
+    // por el regex de markdown. Primero convertimos <img> a sintaxis markdown.
+    const imgTagRegex = /<img\s+[^>]*src=["']([^"']+)["'][^>]*alt=["']([^"']+)["'][^>]*\/?>/gi;
+    const imgTagRegex2 = /<img\s+[^>]*alt=["']([^"']+)["'][^>]*src=["']([^"']+)["'][^>]*\/?>/gi;
+    
+    // Convertir <img src="..." alt="..."> a ![alt](src)
+    content = content.replace(imgTagRegex, (match, src, alt) => `![${alt}](${src})`);
+    content = content.replace(imgTagRegex2, (match, alt, src) => `![${alt}](${src})`);
+    
+    // Limpiar divs contenedores vacíos que quedaron
+    content = content.replace(/<div[^>]*>\s*(\!\[[^\]]*\]\([^)]+\))\s*<\/div>/gi, '\n$1\n');
+
+    // ===========================================
+    // 4. PROCESAR IMÁGENES MARKDOWN
     // ===========================================
     const imageRegex = /!\[([^\]]*)\]\(([^)]+)\)/g;
     let match;
@@ -152,7 +167,7 @@ function preprocessMarkdown(inputPath, outputPath, tempImagesDir, includeImages 
     }
 
     // ===========================================
-    // 4. ESCAPAR LISTAS ALFABÉTICAS PARA QUE SEAN TEXTO PLANO
+    // 5. ESCAPAR LISTAS ALFABÉTICAS PARA QUE SEAN TEXTO PLANO
     // ===========================================
     // Esto evita que Pandoc las convierta a listas de Word
     // que luego Google Docs no interpreta bien
