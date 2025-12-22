@@ -79,6 +79,8 @@ Para cada clase:
 
 A diferencia del diagrama de barras, **no hay espacio** entre las barras del histograma. Esto refleja que los datos son continuos.
 
+![Histograma de Pesos](/images/funciones/estadistica/histograma-pesos.svg)
+
 ---
 
 ## 📖 Interpretación del Histograma
@@ -87,12 +89,7 @@ Un histograma nos cuenta una historia sobre los datos. Miremos qué formas puede
 
 ### 💡 Distribución Simétrica (Campana)
 
-```
-      ▄▄▄
-    ▄█████▄
-  ▄█████████▄
-▄███████████████▄
-```
+![Distribución Simétrica](/images/funciones/estadistica/distribucion-simetrica.svg)
 
 **Características:**
 - Los datos se concentran en el centro
@@ -102,12 +99,7 @@ Un histograma nos cuenta una historia sobre los datos. Miremos qué formas puede
 
 ### 💡 Distribución Sesgada a la Derecha (Positiva)
 
-```
-█▄
-██▄
-████▄
-██████▄▄▄▄
-```
+![Distribución Sesgada a la Derecha](/images/funciones/estadistica/distribucion-sesgada-derecha.svg)
 
 **Características:**
 - La mayoría de los datos están a la izquierda
@@ -117,12 +109,7 @@ Un histograma nos cuenta una historia sobre los datos. Miremos qué formas puede
 
 ### 💡 Distribución Sesgada a la Izquierda (Negativa)
 
-```
-         ▄█
-        ▄██
-       ▄████
-▄▄▄▄▄▄██████
-```
+![Distribución Sesgada a la Izquierda](/images/funciones/estadistica/distribucion-sesgada-izquierda.svg)
 
 **Características:**
 - La mayoría de los datos están a la derecha
@@ -132,9 +119,7 @@ Un histograma nos cuenta una historia sobre los datos. Miremos qué formas puede
 
 ### 💡 Distribución Uniforme
 
-```
-████████████████████
-```
+![Distribución Uniforme](/images/funciones/estadistica/distribucion-uniforme.svg)
 
 **Características:**
 - Todas las barras tienen aproximadamente la misma altura
@@ -143,11 +128,7 @@ Un histograma nos cuenta una historia sobre los datos. Miremos qué formas puede
 
 ### 💡 Distribución Bimodal
 
-```
-  ▄▄▄         ▄▄▄
- █████       █████
-███████     ███████
-```
+![Distribución Bimodal](/images/funciones/estadistica/distribucion-bimodal.svg)
 
 **Características:**
 - Hay **dos picos** en el histograma

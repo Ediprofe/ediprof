@@ -29,6 +29,8 @@ LEE: CLAUDE.md (secciones relevantes según el tipo de tarea)
 | Triángulos | `.agent/workflows/geometry-exact.md` |
 | Geometría analítica | `.agent/workflows/cartesian-spec.md` |
 | Gráficas de funciones | `.agent/workflows/graphspec.md` |
+| **Estadística (histogramas, barras)** | `.agent/workflows/mathplotter-spec.md` |
+| **Sistemas de ecuaciones** | `.agent/workflows/mathplotter-spec.md` |
 | Diagramas conceptuales | PNG de tablet (ver CLAUDE.md) |
 | Química (tabla periódica) | `.agent/workflows/chemistry-spec.md` |
 | Contenido educativo | `.agent/workflows/content-generation.md` |
@@ -118,6 +120,7 @@ bash scripts/verify-svg-rendering.sh
 | Qué | Dónde | Importar |
 |-----|-------|----------|
 | Colores SVG | `scripts/geometry/core/colors.py` | `from core.colors import COLORS` |
+| MathPlotter | `scripts/geometry/core/plotter.py` | `from scripts.geometry.core.plotter import MathPlotter` |
 | Config materias | `src/config/materias.ts` | `getMateriaConfig()` |
 | Tipos TypeScript | `src/types/content.ts` | `MateriaSlug`, `isMateriaSlug` |
 | Helpers de URL | `src/utils/navigation-generator.js` | `cleanSlug()`, `cleanSegment()` |
@@ -161,6 +164,4 @@ Situaciones que requieren confirmación:
 
 # 📝 PETICIÓN DEL USUARIO
 
-4d39527 desde este commit, en adelante se implementaron más funciones, pero hay algo que quiero que revises. Primeramente si el agente de ahí en más cumplió las buenas prácitcas en PETICION.md y archivos derivados. Y segundo, que ahora cuando exporto en word, no aparecen las imágenes svg.
-
-procede
+<!-- Escribe aquí tu siguiente petición -->

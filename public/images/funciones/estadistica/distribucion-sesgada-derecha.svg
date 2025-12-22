@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <defs>
+        <marker id="arrow-64748b-10" markerWidth="10" markerHeight="10" 
+                refX="9.0" refY="5.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 10,5.0 0,10" fill="#64748b"/>
+        </marker>
+
+        <marker id="arrow-64748b-10" markerWidth="10" markerHeight="10" 
+                refX="9.0" refY="5.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 10,5.0 0,10" fill="#64748b"/>
+        </marker></defs>
+  <rect x="0.00" y="0.00" width="400.00" height="300.00" fill="white" stroke="none" stroke-width="0" rx="0"/>
+  <text x="200.00" y="30.00" font-family="Inter, sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Sesgada a la Derecha</text>
+  <line x1="60.00" y1="240.00" x2="340.00" y2="240.00" stroke="#64748b" stroke-width="2"  marker-end="url(#arrow-64748b-10)"/>
+  <line x1="60.00" y1="240.00" x2="60.00" y2="60.00" stroke="#64748b" stroke-width="2"  marker-end="url(#arrow-64748b-10)"/>
+  <text x="335.00" y="260.00" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#64748b" text-anchor="middle" dominant-baseline="middle">x</text>
+  <text x="40.00" y="70.00" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#64748b" text-anchor="middle" dominant-baseline="middle">y</text>
+  <rect x="95.00" y="82.50" width="35.00" height="157.50" fill="#ef4444" stroke="#ffffff" stroke-width="1" rx="0"/>
+  <rect x="130.00" y="127.50" width="35.00" height="112.50" fill="#ef4444" stroke="#ffffff" stroke-width="1" rx="0"/>
+  <rect x="165.00" y="172.50" width="35.00" height="67.50" fill="#ef4444" stroke="#ffffff" stroke-width="1" rx="0"/>
+  <rect x="200.00" y="195.00" width="35.00" height="45.00" fill="#ef4444" stroke="#ffffff" stroke-width="1" rx="0"/>
+  <rect x="235.00" y="217.50" width="35.00" height="22.50" fill="#ef4444" stroke="#ffffff" stroke-width="1" rx="0"/>
+  <rect x="270.00" y="228.75" width="35.00" height="11.25" fill="#ef4444" stroke="#ffffff" stroke-width="1" rx="0"/>
+</svg>

@@ -96,18 +96,27 @@ class CoordinateSystem:
     def draw_grid(self, builder: SVGBuilder,
                   step: float = 1,
                   grid_color: str = COLORS['grid'],
-                  grid_width: float = 0.5) -> SVGBuilder:
+                  grid_width: float = 0.5,
+                  custom_x_ticks: List[float] = None) -> SVGBuilder:
         """Dibuja la cuadrícula."""
-        # Líneas verticales
-        x = math.ceil(self.x_min / step) * step
-        while x <= self.x_max:
+        
+        # Líneas verticales (X)
+        if custom_x_ticks:
+            x_values = custom_x_ticks
+        else:
+            x_values = []
+            x = math.ceil(self.x_min / step) * step
+            while x <= self.x_max:
+                x_values.append(x)
+                x += step
+                
+        for x in x_values:
             if x != 0:  # No dibujar sobre el eje Y
                 p1 = self.to_svg(Point(x, self.y_min))
                 p2 = self.to_svg(Point(x, self.y_max))
                 builder.line(p1, p2, stroke=grid_color, stroke_width=grid_width)
-            x += step
         
-        # Líneas horizontales
+        # Líneas horizontales (Y)
         y = math.ceil(self.y_min / step) * step
         while y <= self.y_max:
             if y != 0:  # No dibujar sobre el eje X
@@ -123,14 +132,23 @@ class CoordinateSystem:
                    tick_size: float = 5,
                    show_labels: bool = True,
                    tick_color: str = COLORS['axis'],
-                   label_color: str = COLORS['text_light']) -> SVGBuilder:
+                   label_color: str = COLORS['text_light'],
+                   custom_x_ticks: List[float] = None) -> SVGBuilder:
         """Dibuja las marcas y etiquetas en los ejes."""
         origin = self.origin_svg
         
         # Marcas en eje X
-        x = math.ceil(self.x_min / step) * step
-        while x <= self.x_max:
-            if x != 0:
+        if custom_x_ticks:
+            x_values = custom_x_ticks
+        else:
+            x_values = []
+            x = math.ceil(self.x_min / step) * step
+            while x <= self.x_max:
+                x_values.append(x)
+                x += step
+                
+        for x in x_values:
+            if x != 0 or custom_x_ticks:
                 p = self.to_svg(Point(x, 0))
                 builder.line(
                     Point(p.x, origin.y - tick_size),
@@ -141,7 +159,6 @@ class CoordinateSystem:
                     label = str(int(x)) if x == int(x) else f'{x:.1f}'
                     builder.text(label, Point(p.x, origin.y + 18),
                                  font_size=11, fill=label_color)
-            x += step
         
         # Marcas en eje Y
         y = math.ceil(self.y_min / step) * step
@@ -271,3 +288,51 @@ class CoordinateSystem:
                      font_size=12, fill=color, font_weight='bold')
         
         return builder
+
+    def draw_function(self, builder: SVGBuilder,
+                      func: callable,
+                      x_range: Tuple[float, float] = None,
+                      samples: int = 100,
+                      color: str = COLORS['primary'],
+                      width: float = 2.5,
+                      dashed: bool = False) -> SVGBuilder:
+        """Dibuja una función y = f(x)."""
+        if x_range is None:
+            x_range = (self.x_min, self.x_max)
+        
+        x_start, x_end = x_range
+        step = (x_end - x_start) / (samples - 1)
+        
+        points = []
+        for i in range(samples):
+            x = x_start + i * step
+            try:
+                y = func(x)
+                # Verificar si el punto está dentro del rango Y visible (con un margen generoso)
+                if self.y_min - 5 <= y <= self.y_max + 5:
+                    points.append(self.to_svg(Point(x, y)))
+                else:
+                    # Si salimos del rango, dibujamos lo acumulado y cortamos
+                    if len(points) >= 2:
+                        self._draw_polyline_segment(builder, points, color, width, dashed)
+                    points = []
+            except (ValueError, ZeroDivisionError, OverflowError):
+                if len(points) >= 2:
+                    self._draw_polyline_segment(builder, points, color, width, dashed)
+                points = []
+        
+        if len(points) >= 2:
+            self._draw_polyline_segment(builder, points, color, width, dashed)
+            
+        return builder
+
+    def _draw_polyline_segment(self, builder: SVGBuilder, points: List[Point], 
+                               color: str, width: float, dashed: bool):
+        """Helper para dibujar un segmento de polilínea."""
+        style = 'stroke-dasharray="6,4"' if dashed else ''
+        points_str = ' '.join(f'{p.x:.2f},{p.y:.2f}' for p in points)
+        builder.elements.append(
+            f'<polyline points="{points_str}" '
+            f'fill="none" stroke="{color}" stroke-width="{width}" '
+            f'{style} stroke-linecap="round" stroke-linejoin="round"/>'
+        )

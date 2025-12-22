@@ -846,6 +846,17 @@ python3 scripts/mindmap/mindmap_renderer.py \
 │         📁 Ver: .agent/workflows/geometry-exact.md
 │         📁 Ver: .agent/workflows/cartesian-spec.md
 │
+├─── 📊 ¿Es ESTADÍSTICA o FUNCIONES simples para mostrar conceptos?
+│    │   (histogramas, barras, sistemas de ecuaciones, funciones y=mx+b)
+│    │
+│    └─── SÍ → MathPlotter (API Fluent → SVG Nativo)
+│         • Histogramas con intervalos didácticos
+│         • Gráficos de barras categóricos
+│         • Sistemas de ecuaciones lineales (2 rectas)
+│         • Funciones simples con intersecciones
+│         📁 Ver: .agent/workflows/mathplotter-spec.md
+│         📁 Módulo: scripts/geometry/core/plotter.py
+│
 ├─── ✏️ ¿Es un DIAGRAMA ilustrativo/conceptual?
 │    │   (situaciones físicas, modelos, procesos, diagramas)
 │    │
@@ -867,10 +878,12 @@ python3 scripts/mindmap/mindmap_renderer.py \
 | Tecnología | Uso | Tamaño JS |
 |------------|-----|-----------|
 | **SVG generado** | Geometría exacta, gráficas, química | **0 KB** ⭐ |
+| **MathPlotter** | Funciones, estadística, histogramas | **0 KB** ⭐ |
 | **PNG de tablet** | Diagramas conceptuales, ilustraciones | **0 KB** ⭐ |
 | ~~Rough.js~~ | ❌ ELIMINADO | ~~50KB~~ |
 | ~~JSXGraph~~ | ❌ ELIMINADO | ~~600KB~~ |
 | ~~ECharts~~ | ❌ ELIMINADO | ~~1MB~~ |
+| ~~Matplotlib~~ | ❌ NO USAR (estilo no compatible) | N/A |
 
 ---
 
@@ -889,6 +902,11 @@ python3 scripts/mindmap/mindmap_renderer.py \
 | Área de polígonos (coordenadas) | **SVG** (CartesianSpec) |
 | Tabla periódica | **SVG** (ChemistrySpec) |
 | Tendencias periódicas | **SVG** (ChemistrySpec) |
+| **Sistema de ecuaciones** | **MathPlotter** |
+| **Histogramas** | **MathPlotter** |
+| **Gráfico de barras** | **MathPlotter** |
+| **Distribuciones estadísticas** | **MathPlotter** |
+| **Funciones lineales simples** | **MathPlotter** |
 | Traslación de figura | **PNG tablet** |
 | Rotación/Reflexión | **PNG tablet** |
 | Bloque en plano inclinado | **PNG tablet** |
@@ -1828,6 +1846,183 @@ python3 scripts/chemistry/trend_renderer.py \
 | Estructuras de Lewis | **PNG tablet** |
 | Diagramas de procesos | **PNG tablet** |
 | Enlace iónico/covalente | **PNG tablet** |
+
+---
+
+# 📈 MÓDULO MATHPLOTTER - Gráficos Matemáticos y Estadísticos
+
+> **Ubicación:** `scripts/geometry/core/plotter.py`
+> 
+> **Principio:** API fluida (estilo Matplotlib) que genera SVG con el estilo visual de Ediprofe. Sin dependencias externas, sin JavaScript.
+
+## ¿Cuándo usar MathPlotter?
+
+| Usar MathPlotter ✅ | NO usar MathPlotter ❌ |
+|---------------------|------------------------|
+| Histogramas didácticos | Geometría exacta (usar GeometrySpec) |
+| Gráficos de barras | Circunferencias (usar CircleSpec) |
+| Sistemas de ecuaciones | Puntos notables de triángulos |
+| Funciones lineales simples | Plano cartesiano con mediciones exactas |
+| Distribuciones estadísticas | Big Data (miles de puntos) |
+| Cualquier gráfico donde importa la *visualización conceptual* | Gráficos que requieren *precisión matemática al píxel* |
+
+## Estructura de Carpetas
+
+```
+scripts/geometry/core/
+└── plotter.py              # Clase MathPlotter
+
+scripts/plots/               # Scripts de generación por tema
+├── sistemas_ecuaciones.py   # Método gráfico (álgebra)
+├── ejemplo_histograma.py    # Histogramas y distribuciones
+└── demo_estadistica_nativa.py
+
+public/images/
+├── matematicas/sistemas/    # SVGs de sistemas de ecuaciones
+└── funciones/estadistica/   # SVGs de estadística
+```
+
+## API de MathPlotter
+
+### Constructor
+
+```python
+from scripts.geometry.core.plotter import MathPlotter
+
+plot = MathPlotter(
+    width=600,               # Ancho en px
+    height=400,              # Alto en px
+    x_range=(0, 10),         # Rango eje X (matemático)
+    y_range=(0, 12),         # Rango eje Y (matemático)
+    title="Mi Gráfico",      # Título (opcional)
+    show_grid=True,          # Mostrar cuadrícula
+    show_axes=True,          # Mostrar ejes
+    grid_step=1,             # Paso de la cuadrícula
+    custom_x_ticks=[1,2,3]   # Ticks personalizados eje X (opcional)
+)
+```
+
+### Métodos Disponibles (API Fluida)
+
+| Método | Descripción | Ejemplo |
+|--------|-------------|---------|
+| `.plot(func, label, color, dashed)` | Dibuja función $y=f(x)$ | `plot.plot(lambda x: 2*x + 1, "y=2x+1", "primary")` |
+| `.scatter(x, y, label, color)` | Punto con etiqueta | `plot.scatter(2, 5, "(2,5)", "accent")` |
+| `.bar(categories, values, color)` | Barras categóricas | `plot.bar(["A","B"], [10, 20])` |
+| `.histogram(intervals, freqs, show_values)` | Histograma didáctico | `plot.histogram([(0,5),(5,10)], [3,7], show_values=True)` |
+| `.add_legend()` | Leyenda automática | `plot.add_legend()` |
+| `.save(path)` | Guardar SVG | `plot.save("output.svg")` |
+
+### Colores Disponibles
+
+```python
+# Usar nombres en lugar de hex
+color='primary'    # #3b82f6 - Azul
+color='secondary'  # #22c55e - Verde
+color='accent'     # #ef4444 - Rojo
+color='highlight'  # #f97316 - Naranja
+color='purple'     # #8b5cf6 - Púrpura
+```
+
+## Ejemplos de Uso
+
+### Ejemplo 1: Sistema de Ecuaciones
+
+```python
+from scripts.geometry.core.plotter import MathPlotter
+
+plot = MathPlotter(
+    x_range=(-1, 6), y_range=(-1, 6),
+    title="Sistema: x + y = 4 y 2x - y = 2"
+)
+
+# Dibujar las dos rectas
+plot.plot(lambda x: 4 - x, "x + y = 4", "primary")
+plot.plot(lambda x: 2*x - 2, "2x - y = 2", "secondary", dashed=True)
+
+# Marcar la solución
+plot.scatter(2, 2, "(2, 2)", "accent")
+plot.add_legend()
+
+plot.save("public/images/matematicas/sistemas/ejemplo.svg")
+```
+
+### Ejemplo 2: Histograma Didáctico
+
+```python
+from scripts.geometry.core.plotter import MathPlotter
+
+# Definir límites de clase exactos
+intervals = [(52, 59), (59, 66), (66, 73), (73, 80)]
+freqs = [7, 8, 9, 8]
+ticks = [52, 59, 66, 73, 80]
+
+plot = MathPlotter(
+    x_range=(50, 82), y_range=(0, 12),
+    title="Distribución de Pesos",
+    custom_x_ticks=ticks  # ← Mostrar límites de clase
+)
+
+plot.histogram(intervals, freqs, show_values=True)
+plot.save("public/images/funciones/estadistica/histograma.svg")
+```
+
+### Ejemplo 3: Gráfico de Barras
+
+```python
+plot = MathPlotter(
+    x_range=(0, 5), y_range=(0, 30),
+    title="Ventas por Mes",
+    show_grid=False
+)
+
+plot.bar(["Ene", "Feb", "Mar", "Abr"], [12, 19, 15, 25], color='secondary')
+plot.save("ventas.svg")
+```
+
+## Reglas para Scripts de Generación
+
+### Ubicación de Scripts
+
+| Tema | Ubicación del Script | Ubicación de SVGs |
+|------|---------------------|-------------------|
+| Sistemas de ecuaciones | `scripts/plots/sistemas_ecuaciones.py` | `public/images/matematicas/sistemas/` |
+| Estadística | `scripts/plots/ejemplo_histograma.py` | `public/images/funciones/estadistica/` |
+| Nuevo tema | `scripts/plots/{tema}.py` | `public/images/{materia}/{subtema}/` |
+
+### Estructura de un Script
+
+```python
+import sys, os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
+
+from scripts.geometry.core.plotter import MathPlotter
+
+OUTPUT_DIR = "public/images/{materia}/{subtema}"
+os.makedirs(OUTPUT_DIR, exist_ok=True)
+
+def generar_grafico_1():
+    plot = MathPlotter(...)
+    plot.save(f"{OUTPUT_DIR}/nombre.svg")
+
+if __name__ == "__main__":
+    generar_grafico_1()
+```
+
+### Ejecutar Scripts
+
+```bash
+# Desde la raíz del proyecto
+.venv/bin/python scripts/plots/ejemplo_histograma.py
+```
+
+## ❌ Errores Comunes
+
+| Error | Causa | Solución |
+|-------|-------|----------|
+| Números amontonados en eje X | `grid_step` muy pequeño para el rango | Usar `custom_x_ticks` o aumentar `grid_step` |
+| Barras fuera del gráfico | `y_range` no cubre los valores | Ajustar `y_range` al máximo de los datos |
+| Import error | Path no configurado | Agregar `sys.path.append(...)` al inicio |
 
 ---
 
