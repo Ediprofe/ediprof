@@ -199,17 +199,24 @@ class SVGBuilder:
     def arrow(self, start: Point, end: Point,
               stroke: str = COLORS['primary'],
               stroke_width: float = 2,
-              head_size: float = 10) -> 'SVGBuilder':
-        """Dibuja una flecha."""
-        # Definir marcador de flecha si no existe
-        marker_id = f'arrow-{stroke.replace("#", "")}'
+              head_size: float = None) -> 'SVGBuilder':
+        """Dibuja una flecha con punta triangular escalada al grosor de línea."""
+        # Escalar head_size automáticamente si no se especifica
+        if head_size is None:
+            head_size = max(10, stroke_width * 3)
+        
+        # ID único para el marcador basado en color y tamaño
+        marker_id = f'arrow-{stroke.replace("#", "")}-{int(head_size)}'
+        
+        # Marcador con userSpaceOnUse para mejor renderizado
         marker_def = f'''
         <marker id="{marker_id}" markerWidth="{head_size}" markerHeight="{head_size}" 
-                refX="{head_size-2}" refY="{head_size/2}" orient="auto">
+                refX="{head_size * 0.9}" refY="{head_size / 2}" orient="auto"
+                markerUnits="userSpaceOnUse">
             <polygon points="0,0 {head_size},{head_size/2} 0,{head_size}" fill="{stroke}"/>
         </marker>'''
         
-        if marker_def not in self.defs:
+        if marker_id not in [d for d in self.defs if marker_id in d]:
             self.defs.append(marker_def)
         
         self.line(start, end, stroke=stroke, stroke_width=stroke_width, marker_end=marker_id)

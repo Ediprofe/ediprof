@@ -160,3 +160,7 @@ Situaciones que requieren confirmación:
 ---
 
 # 📝 PETICIÓN DEL USUARIO
+
+http://localhost:4321/fisica/introduccion-a-la-fisica/vectores/representacion-de-vectores-en-el-plano
+
+A ese lección le falta como que el ejemplo que se usa para resolver y mostrar conceptos, sea el mismo de la gráfica, me entiendes? que sea esa progresión natural y economía de pensamiento. 

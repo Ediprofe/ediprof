@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450">
+  <defs>
+        <marker id="arrow-64748b-10" markerWidth="10" markerHeight="10" 
+                refX="9.0" refY="5.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 10,5.0 0,10" fill="#64748b"/>
+        </marker>
+
+        <marker id="arrow-64748b-10" markerWidth="10" markerHeight="10" 
+                refX="9.0" refY="5.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 10,5.0 0,10" fill="#64748b"/>
+        </marker>
+
+        <marker id="arrow-3b82f6-12" markerWidth="12" markerHeight="12" 
+                refX="10.8" refY="6.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 12,6.0 0,12" fill="#3b82f6"/>
+        </marker>
+
+        <marker id="arrow-22c55e-10" markerWidth="10" markerHeight="10" 
+                refX="9.0" refY="5.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 10,5.0 0,10" fill="#22c55e"/>
+        </marker></defs>
+  <rect x="0.00" y="0.00" width="600.00" height="450.00" fill="#f8fafc" stroke="none" stroke-width="0" rx="0"/>
+  <line x1="77.78" y1="357.14" x2="502.22" y2="357.14" stroke="#64748b" stroke-width="2"  marker-end="url(#arrow-64748b-10)"/>
+  <line x1="97.78" y1="377.14" x2="97.78" y2="92.86" stroke="#64748b" stroke-width="2"  marker-end="url(#arrow-64748b-10)"/>
+  <text x="517.22" y="357.14" font-family="Inter, sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">x</text>
+  <text x="97.78" y="77.86" font-family="Inter, sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">y</text>
+  <line x1="155.56" y1="304.29" x2="444.44" y2="145.71" stroke="#3b82f6" stroke-width="4"  marker-end="url(#arrow-3b82f6-12)"/>
+  <circle cx="155.56" cy="304.29" r="5" fill="#22c55e" />
+  <text x="115.56" y="309.29" font-family="Inter, sans-serif" font-size="12" font-weight="normal" fill="#22c55e" text-anchor="end" dominant-baseline="middle">Origen</text>
+  <circle cx="444.44" cy="145.71" r="5" fill="#3b82f6" />
+  <text x="454.44" y="135.71" font-family="Inter, sans-serif" font-size="12" font-weight="normal" fill="#3b82f6" text-anchor="start" dominant-baseline="middle">Extremo</text>
+  <text x="290.00" y="200.00" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#3b82f6" text-anchor="middle" dominant-baseline="middle">Magnitud</text>
+  <line x1="155.56" y1="304.29" x2="328.89" y2="304.29" stroke="#64748b" stroke-width="1" stroke-dasharray="5,5" />
+  <path d="M 195.55555555555554 304.2857142857143 A 40 40 0 0 0 189.8552725840573 283.7058840686132" fill="none" stroke="#ef4444" stroke-width="2"/>
+  <text x="205.56" y="294.29" font-family="Inter, sans-serif" font-size="16" font-weight="bold" fill="#ef4444" text-anchor="middle" dominant-baseline="middle">θ</text>
+  <text x="250.56" y="299.29" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#ef4444" text-anchor="middle" dominant-baseline="middle">(Dirección)</text>
+  <text x="394.44" y="100.71" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#22c55e" text-anchor="middle" dominant-baseline="middle">Sentido</text>
+  <text x="394.44" y="115.71" font-family="Inter, sans-serif" font-size="10" font-weight="normal" fill="#22c55e" text-anchor="middle" dominant-baseline="middle">(hacia aquí)</text>
+  <line x1="414.44" y1="120.71" x2="439.44" y2="140.71" stroke="#22c55e" stroke-width="2"  marker-end="url(#arrow-22c55e-10)"/>
+  <text x="300.00" y="25.00" font-family="Inter, sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Elementos de un Vector</text>
+</svg>

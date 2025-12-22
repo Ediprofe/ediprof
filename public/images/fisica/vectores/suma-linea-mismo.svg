@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 250">
+  <defs>
+        <marker id="arrow-3b82f6-12" markerWidth="12" markerHeight="12" 
+                refX="10.8" refY="6.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 12,6.0 0,12" fill="#3b82f6"/>
+        </marker>
+
+        <marker id="arrow-ef4444-12" markerWidth="12" markerHeight="12" 
+                refX="10.8" refY="6.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 12,6.0 0,12" fill="#ef4444"/>
+        </marker>
+
+        <marker id="arrow-22c55e-12" markerWidth="12" markerHeight="12" 
+                refX="10.8" refY="6.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 12,6.0 0,12" fill="#22c55e"/>
+        </marker></defs>
+  <rect x="0.00" y="0.00" width="600.00" height="250.00" fill="#f8fafc" stroke="none" stroke-width="0" rx="0"/>
+  <line x1="80.00" y1="80.00" x2="230.00" y2="80.00" stroke="#3b82f6" stroke-width="4"  marker-end="url(#arrow-3b82f6-12)"/>
+  <text x="155.00" y="65.00" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#3b82f6" text-anchor="middle" dominant-baseline="middle">A = 3</text>
+  <line x1="230.00" y1="80.00" x2="330.00" y2="80.00" stroke="#ef4444" stroke-width="4"  marker-end="url(#arrow-ef4444-12)"/>
+  <text x="280.00" y="65.00" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#ef4444" text-anchor="middle" dominant-baseline="middle">B = 2</text>
+  <line x1="80.00" y1="180.00" x2="330.00" y2="180.00" stroke="#22c55e" stroke-width="4"  marker-end="url(#arrow-22c55e-12)"/>
+  <text x="205.00" y="205.00" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#22c55e" text-anchor="middle" dominant-baseline="middle">R = 3 + 2 = 5</text>
+  <text x="300.00" y="30.00" font-family="Inter, sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Suma: Mismo Sentido</text>
+</svg>

@@ -1,107 +1,176 @@
 # Escalares y vectores
 
-En física, las magnitudes se dividen en **escalares** y **vectoriales**, según la información necesaria para describirlas por completo.
+En física, las magnitudes se clasifican en **escalares** y **vectoriales** según la información que necesitan para quedar completamente definidas.
 
 ---
 
-## Magnitudes escalares
+## 🎯 ¿Qué vas a aprender?
 
-Las **magnitudes escalares** se definen únicamente por **un número y una unidad de medida**. No necesitan dirección ni sentido.
-
-Por ejemplo:
-
-* **Tiempo:** $t = 5\,\mathrm{s}$
-* **Masa:** $m = 2\,\mathrm{kg}$
-* **Temperatura:** $T = 25\,^\circ\mathrm{C}$
-
-En estos casos, basta con conocer el valor numérico y la unidad. No tiene sentido decir que la masa o el tiempo "apuntan" hacia algún lugar.
+- La diferencia entre magnitudes escalares y vectoriales
+- Ejemplos cotidianos de cada tipo
+- Cómo se representan los vectores gráficamente
 
 ---
 
-## Magnitudes vectoriales
+## 📊 **¿Qué es una magnitud física?**
 
-Las **magnitudes vectoriales**, además del número y la unidad, requieren **dirección y sentido** para quedar completamente definidas.
+Una **magnitud física** es cualquier propiedad que puede **medirse y expresarse con un número y una unidad**.
 
-Por ejemplo:
+Por ejemplo: la longitud de una mesa, la masa de un libro, la velocidad de un auto.
 
-* **Desplazamiento:** indica *cuánto* y *hacia dónde* se mueve un objeto. Si una persona camina 10 metros hacia el norte, su desplazamiento es:
-
-$$
-\vec{d} = 10\,\mathrm{m}\text{ (norte)}
-$$
-
-* **Velocidad:** indica *qué tan rápido* y *en qué dirección* se mueve un cuerpo. Si un auto viaja a $60\,\mathrm{km/h}$ hacia el este, su velocidad es:
-
-$$
-\vec{v} = 60\,\mathrm{km/h}\text{ (este)}
-$$
-
-En cambio, la **distancia** y la **rapidez** son escalares, porque solo expresan *cuánto* se recorrió o *qué tan rápido* se mueve algo, sin importar la dirección.
-
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="jsxgraph-comparacion" class="jsxgraph-container" style="width: 100%; height: 250px; border-radius: 8px; overflow: hidden;"></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-comparacion')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-comparacion', {
-      boundingbox: [0, 5, 10, 0],
-      axis: false,
-      showCopyright: false,
-      showNavigation: false,
-      pan: { enabled: false },
-      zoom: { enabled: false }
-    });
-    
-    // === LADO ESCALAR (izquierda) ===
-    board.create('text', [1.5, 4.3, 'ESCALAR'], {fontSize: 15, strokeColor: '#64748b', cssStyle: 'font-weight: bold;', fixed: true});
-    board.create('text', [1.2, 2.8, '5 kg'], {fontSize: 28, strokeColor: '#374151', cssStyle: 'font-weight: bold;', fixed: true});
-    board.create('text', [0.8, 1.5, 'Solo número + unidad'], {fontSize: 11, strokeColor: '#64748b', cssStyle: 'font-style: italic;', fixed: true});
-    
-    // Línea divisoria vertical
-    board.create('segment', [[5, 0.5], [5, 4.5]], {strokeColor: '#cbd5e1', strokeWidth: 2, dash: 2, fixed: true});
-    
-    // === LADO VECTOR (derecha) ===
-    board.create('text', [7.3, 4.3, 'VECTOR'], {fontSize: 15, strokeColor: '#3b82f6', cssStyle: 'font-weight: bold;', fixed: true});
-    
-    // Línea punteada verde para mostrar la DIRECCIÓN (horizontal extendida)
-    board.create('segment', [[5.2, 2.5], [9.8, 2.5]], {strokeColor: '#22c55e', strokeWidth: 2, dash: 3, fixed: true});
-    board.create('text', [5.3, 2.9, 'Dirección'], {fontSize: 9, strokeColor: '#22c55e', cssStyle: 'font-weight: bold;', fixed: true});
-    
-    // Flecha del vector (encima de la línea punteada)
-    board.create('arrow', [[5.5, 2.5], [9.2, 2.5]], {strokeColor: '#3b82f6', strokeWidth: 5, fixed: true});
-    
-    // Etiqueta de magnitud
-    board.create('text', [6.6, 3.5, '10 m/s'], {fontSize: 14, strokeColor: '#3b82f6', cssStyle: 'font-weight: bold;', fixed: true});
-    board.create('text', [6.6, 3.1, '(magnitud)'], {fontSize: 9, strokeColor: '#3b82f6', fixed: true});
-    
-    // Señalar el SENTIDO (la punta de la flecha)
-    board.create('text', [8.8, 1.8, 'Sentido'], {fontSize: 9, strokeColor: '#f97316', cssStyle: 'font-weight: bold;', fixed: true});
-    board.create('text', [8.8, 1.4, '(hacia el Este)'], {fontSize: 9, strokeColor: '#f97316', fixed: true});
-    // Flecha pequeña señalando la punta
-    board.create('arrow', [[9.1, 1.7], [9.1, 2.3]], {strokeColor: '#f97316', strokeWidth: 2, fixed: true});
-    
-    board.unsuspendUpdate();
-  }
-});
-</script>
-
-> 💡 Observa la diferencia: el **escalar** solo tiene un valor numérico, mientras que el **vector** tiene valor, dirección y sentido (representado por la flecha).
+Pero... ¿basta con el número y la unidad para describir cualquier magnitud? **No siempre.**
 
 ---
 
-## Comparación entre escalares y vectores
+## 📐 **Magnitudes escalares**
 
-| Tipo de magnitud | Qué necesita para definirse         | Ejemplos                                       | Representación                            |
-| ---------------- | ----------------------------------- | ---------------------------------------------- | ----------------------------------------- |
-| Escalar          | Número y unidad                     | tiempo, masa, temperatura, distancia, rapidez  | $5\,\mathrm{s}$, $2\,\mathrm{kg}$           |
-| Vectorial        | Número, unidad, dirección y sentido | desplazamiento, velocidad, fuerza, aceleración | $\vec{v}$, flecha con dirección y sentido |
+Las **magnitudes escalares** quedan completamente definidas con **un número y una unidad**. No necesitan dirección ni sentido.
 
-> 💡 **Recuerda:**
-> Las magnitudes vectoriales se representan con una flecha encima del símbolo, como $\vec{v}$, y gráficamente con un vector que indica su dirección y sentido.
+### Ejemplos:
+
+| Magnitud | Valor | Interpretación |
+| :--- | :--- | :--- |
+| Tiempo | $5\,\mathrm{s}$ | Han pasado 5 segundos |
+| Masa | $2\,\mathrm{kg}$ | El objeto pesa 2 kilogramos |
+| Temperatura | $25\,^{\circ}\mathrm{C}$ | Hace 25 grados Celsius |
+| Distancia | $100\,\mathrm{m}$ | Se recorrieron 100 metros |
+
+> 💡 **Observa:** No tiene sentido decir que la masa "apunta hacia el norte" o que el tiempo "va hacia la derecha". Son solo números con unidades.
 
 ---
+
+## ➡️ **Magnitudes vectoriales**
+
+Las **magnitudes vectoriales** necesitan, además del número y la unidad, **dirección y sentido** para quedar completamente definidas.
+
+### Ejemplos:
+
+| Magnitud | Valor | Dirección y sentido |
+| :--- | :--- | :--- |
+| Desplazamiento | $10\,\mathrm{m}$ | hacia el norte |
+| Velocidad | $60\,\mathrm{km/h}$ | hacia el este |
+| Fuerza | $50\,\mathrm{N}$ | hacia abajo |
+| Aceleración | $9.8\,\mathrm{m/s^2}$ | hacia el centro de la Tierra |
+
+> 💡 **Observa:** Decir "$60\,\mathrm{km/h}$" no es suficiente. ¿Hacia dónde? La **velocidad** requiere dirección y sentido.
+
+### Notación vectorial
+
+Los vectores se escriben con una **flecha sobre la letra** o en **negrita**:
+
+$$
+\vec{v} = 60\,\mathrm{km/h}\text{ (hacia el este)}
+$$
+
+$$
+\vec{F} = 50\,\mathrm{N}\text{ (hacia abajo)}
+$$
+
+---
+
+## 🔄 **Distancia vs. Desplazamiento**
+
+Esta distinción es clave para entender la diferencia entre escalar y vector:
+
+| Concepto | Tipo | ¿Qué mide? |
+| :--- | :--- | :--- |
+| **Distancia** | Escalar | *Cuánto* se recorrió en total |
+| **Desplazamiento** | Vector | *Cuánto* y *hacia dónde* cambió la posición |
+
+### Ejemplo:
+
+Si caminas 3 metros hacia el este y luego 3 metros hacia el oeste:
+
+- **Distancia recorrida:** $6\,\mathrm{m}$ (escalar)
+- **Desplazamiento:** $0\,\mathrm{m}$ (vector, porque volviste al punto de partida)
+
+> 🔁 La distancia **siempre suma**, pero el desplazamiento **considera la dirección**.
+
+---
+
+## ⚡ **Rapidez vs. Velocidad**
+
+Otro par importante:
+
+| Concepto | Tipo | ¿Qué mide? |
+| :--- | :--- | :--- |
+| **Rapidez** | Escalar | *Qué tan rápido* se mueve algo |
+| **Velocidad** | Vector | *Qué tan rápido* y *hacia dónde* se mueve |
+
+### Ejemplo:
+
+Un auto da una vuelta completa en una pista circular a $100\,\mathrm{km/h}$.
+
+- **Rapidez promedio:** $100\,\mathrm{km/h}$
+- **Velocidad promedio:** $0$ (porque vuelve al punto de partida)
+
+---
+
+## 📝 Ejercicios de Práctica
+
+### Ejercicio 1
+**Clasifica las siguientes magnitudes como escalares (E) o vectoriales (V):**
+
+a) La temperatura del agua: $80\,^{\circ}\mathrm{C}$  
+b) El peso de un objeto: $100\,\mathrm{N}$ hacia abajo  
+c) El tiempo de una carrera: $9.58\,\mathrm{s}$  
+d) La velocidad del viento: $30\,\mathrm{km/h}$ hacia el sur  
+
+<details>
+<summary>Ver solución</summary>
+
+a) **E** (Escalar) — solo número y unidad  
+b) **V** (Vectorial) — tiene dirección y sentido  
+c) **E** (Escalar) — solo número y unidad  
+d) **V** (Vectorial) — tiene dirección y sentido
+
+</details>
+
+---
+
+### Ejercicio 2
+**Un corredor da 4 vueltas completas a una pista circular de 400 metros. ¿Cuál es la distancia recorrida y cuál es el desplazamiento?**
+
+<details>
+<summary>Ver solución</summary>
+
+**Distancia recorrida:**
+
+$$
+4 \times 400\,\mathrm{m} = 1600\,\mathrm{m}
+$$
+
+**Desplazamiento:**
+
+$$
+0\,\mathrm{m}
+$$
+
+Porque el corredor regresa al punto de partida después de cada vuelta.
+
+</details>
+
+---
+
+### Ejercicio 3
+**¿Por qué la fuerza es una magnitud vectorial y no escalar?**
+
+<details>
+<summary>Ver solución</summary>
+
+La **fuerza** es vectorial porque no basta con saber *cuánto* empujas; también importa *hacia dónde* empujas.
+
+Una fuerza de $10\,\mathrm{N}$ hacia arriba tiene un efecto muy diferente a una fuerza de $10\,\mathrm{N}$ hacia abajo.
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Tipo de magnitud | Qué necesita | Ejemplos |
+| :--- | :--- | :--- |
+| **Escalar** | Número + unidad | tiempo, masa, temperatura, distancia, rapidez |
+| **Vectorial** | Número + unidad + dirección + sentido | desplazamiento, velocidad, fuerza, aceleración |
+
+> **Recuerda:** Las magnitudes vectoriales se representan con una flecha sobre el símbolo ($\vec{v}$) y gráficamente con una flecha que indica su magnitud, dirección y sentido.

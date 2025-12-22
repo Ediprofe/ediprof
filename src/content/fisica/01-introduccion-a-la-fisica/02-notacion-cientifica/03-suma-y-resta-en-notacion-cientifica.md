@@ -1,110 +1,174 @@
-# ➕ **Suma y resta en notación científica**
+# Suma y resta en notación científica
 
-En notación científica, **no se pueden sumar o restar directamente** números si sus potencias de 10 son diferentes.  
-Primero es necesario que ambos números tengan **el mismo exponente**.
+> **🎯 ¿Qué vas a aprender?**
+>
+> - A sumar y restar números expresados en notación científica.
+> - A igualar exponentes antes de operar.
+> - A ajustar el resultado para mantener la forma estándar.
 
 ---
 
-### ⚙️ **Regla general**
+## ⚙️ Regla general
 
-Para sumar o restar:
+En notación científica, **no se pueden sumar o restar directamente** números si sus potencias de 10 son diferentes. Primero es necesario que ambos números tengan **el mismo exponente**.
 
-1. **Igualar los exponentes** de 10 (ajustando uno de los números).  
-2. **Operar los números base** (sumar o restar).  
-3. **Ajustar el resultado final** para que el número base quede entre 1 y 9.  
+**Para sumar o restar:**
+
+1. **Igualar los exponentes** de 10 (ajustando uno de los números).
+2. **Operar los números base** (sumar o restar).
+3. **Ajustar el resultado final** para que el número base quede entre 1 y 9.
 4. **Conservar el exponente común** (modificado si el ajuste lo requiere).
 
-$$
-(a\times10^n) + (b\times10^n) = (a+b)\times10^n
-$$
+### Fórmulas
+
+**Suma:**
 
 $$
-(a\times10^n) - (b\times10^n) = (a-b)\times10^n
+(a \times 10^n) + (b \times 10^n) = (a + b) \times 10^n
+$$
+
+**Resta:**
+
+$$
+(a \times 10^n) - (b \times 10^n) = (a - b) \times 10^n
 $$
 
 ---
 
-### ✏️ **Ejemplo 1: Suma con exponentes distintos**
+## ✏️ Ejemplo 1: Suma con exponentes distintos
 
 Suma los siguientes números:
 
 $$
-(3.2\times10^5) + (4.8\times10^4)
+(3.2 \times 10^5) + (4.8 \times 10^4)
 $$
 
 **Solución paso a paso:**
 
-1. Los exponentes son diferentes ($5$ y $4$).  
-   Igualamos los exponentes expresando ambos con $10^5$:
+1. Los exponentes son diferentes ($5$ y $4$). Igualamos expresando ambos con $10^5$:
 
-   $$
-   4.8\times10^4 = 0.48\times10^5
-   $$
+$$
+4.8 \times 10^4 = 0.48 \times 10^5
+$$
 
 2. Sumamos los números base:
 
-   $$
-   3.2\times10^5 + 0.48\times10^5 = (3.68)\times10^5
-   $$
+$$
+3.2 \times 10^5 + 0.48 \times 10^5 = (3.2 + 0.48) \times 10^5 = 3.68 \times 10^5
+$$
 
-3. El número base $3.68$ ya está entre 1 y 9,  
-   así que el resultado final es:
+3. El número base $3.68$ ya está entre 1 y 9, así que el resultado final es:
 
-   $$
-   \boxed{3.68\times10^5}
-   $$
+$$
+\boxed{3.68 \times 10^5}
+$$
 
 ---
 
-### ✏️ **Ejemplo 2: Resta con números pequeños**
+## ✏️ Ejemplo 2: Resta con números pequeños
 
 Resta los siguientes números:
 
 $$
-(2.3\times10^{-3}) - (1.1\times10^{-2})
+(2.3 \times 10^{-3}) - (1.1 \times 10^{-2})
 $$
 
 **Solución paso a paso:**
 
-1. Igualamos los exponentes.  
-   Ambos deben tener $10^{-2}$, así que reescribimos:
+1. Igualamos los exponentes. Expresamos ambos con $10^{-2}$:
 
-   $$
-   2.3\times10^{-3} = 0.23\times10^{-2}
-   $$
+$$
+2.3 \times 10^{-3} = 0.23 \times 10^{-2}
+$$
 
 2. Restamos los números base:
 
-   $$
-   (0.23 - 1.1)\times10^{-2} = (-0.87)\times10^{-2}
-   $$
+$$
+(0.23 - 1.1) \times 10^{-2} = -0.87 \times 10^{-2}
+$$
 
-3. Ajustamos el número base para que quede entre 1 y 9:  
-   movemos el punto una posición a la derecha y reducimos el exponente en 1.
+3. Ajustamos el número base para que quede entre 1 y 9 (movemos el punto una posición a la derecha y reducimos el exponente en 1):
 
-   $$
-   (-0.87)\times10^{-2} = (-8.7)\times10^{-3}
-   $$
+$$
+-0.87 \times 10^{-2} = -8.7 \times 10^{-3}
+$$
 
 4. Resultado final:
 
-   $$
-   \boxed{-8.7\times10^{-3}}
-   $$
+$$
+\boxed{-8.7 \times 10^{-3}}
+$$
 
 ---
 
-### 💡 **Resumen visual**
+## 📝 Ejercicios de Práctica
 
-| **Caso** | **Qué se hace** | **Ejemplo simplificado** | **Resultado** |
-|:----------|:----------------|:--------------------------|:--------------|
-| Exponentes iguales | Se suman o restan directamente | $(5.2+1.3)\times10^4$ | $6.5\times10^4$ |
-| Exponentes distintos | Se ajusta uno de los números | $(3.2\times10^5)+(4.8\times10^4)$ | $3.68\times10^5$ |
-| Resultado menor que 1 | Se ajusta exponente y base | $(-0.87)\times10^{-2}$ | $-8.7\times10^{-3}$ |
+### Ejercicio 1
+**Calcula la siguiente suma:**
+
+$$
+(5.4 \times 10^6) + (2.3 \times 10^5)
+$$
+
+<details>
+<summary>Ver solución</summary>
+
+Igualamos exponentes: $2.3 \times 10^5 = 0.23 \times 10^6$
+
+$$
+5.4 \times 10^6 + 0.23 \times 10^6 = 5.63 \times 10^6
+$$
+
+</details>
 
 ---
 
-> 📘 **En resumen:**  
-> Para sumar o restar en notación científica, **igualar los exponentes es esencial**.  
-> Luego, se realiza la operación con los números base y se ajusta el resultado  
-> para que el número base quede entre **1 y 9**, manteniendo la coherencia con la notación científica.
+### Ejercicio 2
+**Calcula la siguiente resta:**
+
+$$
+(7.5 \times 10^4) - (3.2 \times 10^4)
+$$
+
+<details>
+<summary>Ver solución</summary>
+
+Los exponentes ya son iguales:
+
+$$
+(7.5 - 3.2) \times 10^4 = 4.3 \times 10^4
+$$
+
+</details>
+
+---
+
+### Ejercicio 3
+**Calcula:**
+
+$$
+(1.2 \times 10^{-5}) + (8.0 \times 10^{-6})
+$$
+
+<details>
+<summary>Ver solución</summary>
+
+Igualamos exponentes: $8.0 \times 10^{-6} = 0.80 \times 10^{-5}$
+
+$$
+1.2 \times 10^{-5} + 0.80 \times 10^{-5} = 2.0 \times 10^{-5}
+$$
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Caso | Qué se hace | Ejemplo | Resultado |
+| :--- | :--- | :--- | :--- |
+| **Exponentes iguales** | Se suman o restan directamente | $(5.2 + 1.3) \times 10^4$ | $6.5 \times 10^4$ |
+| **Exponentes distintos** | Se ajusta uno de los números | $(3.2 \times 10^5) + (4.8 \times 10^4)$ | $3.68 \times 10^5$ |
+| **Resultado menor que 1** | Se ajusta exponente y base | $-0.87 \times 10^{-2}$ | $-8.7 \times 10^{-3}$ |
+
+> **Recuerda:** Para sumar o restar en notación científica, **igualar los exponentes es esencial**. Luego, se realiza la operación con los números base y se ajusta el resultado para que el número base quede entre **1 y 9**.

@@ -1,119 +1,52 @@
 # Representación de vectores en el plano
 
-Los vectores pueden representarse **gráficamente** en un **plano cartesiano**, lo que permite visualizar su magnitud, dirección y sentido de manera precisa.
+Los vectores pueden representarse en un **plano cartesiano**, lo que permite visualizar su magnitud, dirección y sentido de manera precisa, y realizar operaciones matemáticas con ellos.
 
-Un vector en el plano se puede ubicar a partir de dos puntos:
+---
 
-* **Punto de origen (cola):** donde empieza el vector.
-* **Punta o extremo (cabeza):** hacia donde apunta.
+## 📘 Idea intuitiva: ¿qué muestra un vector?
 
-Por ejemplo, si un vector $\vec{A}$ parte del punto $O(0,0)$ y llega hasta el punto $P(4,3)$, puede representarse así:
+Un vector se visualiza como una flecha que resume tres elementos: **magnitud**, **dirección** y **sentido**. En adelante usaremos el mismo ejemplo en todas las secciones para mantener la progresión natural.
+
+---
+
+## 🎯 ¿Qué vas a aprender?
+
+- Cómo representar un vector en el plano cartesiano
+- Qué son las componentes de un vector ($A_x$ y $A_y$)
+- Cómo calcular la magnitud usando el teorema de Pitágoras
+- Cómo encontrar las componentes a partir del ángulo
+
+---
+
+## 📊 **Vector en el plano cartesiano**
+
+Un vector en el plano se puede ubicar con dos puntos:
+
+- **Origen (cola):** donde empieza el vector
+- **Extremo (punta):** donde termina el vector
+
+### Ejemplo:
+
+Si un vector $\vec{A}$ parte del origen $O(0,0)$ y llega al punto $P(4,3)$:
 
 $$
 \vec{A} = \overrightarrow{OP}
 $$
 
-Esto significa que el vector va desde el origen hasta el punto $(4,3)$.
+Esto significa que el vector "va desde $(0,0)$ hasta $(4,3)$".
 
----
-
-## 1. Representación gráfica
-
-En el plano cartesiano, el vector $\vec{A}$ se dibuja como una **flecha** desde $(0,0)$ hasta $(4,3)$:
-
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="jsxgraph-plano" class="jsxgraph-container" style="width: 100%; height: 380px; border-radius: 8px; overflow: hidden;"></div>
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/fisica/vectores/vector-plano.svg" alt="Vector en el plano cartesiano" style="width: 100%; height: auto;" />
 </div>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined') {
-    var isDark = document.documentElement.classList.contains('dark');
-    var axisColor = isDark ? '#94a3b8' : '#888888';
-    
-    var board = JXG.JSXGraph.initBoard('jsxgraph-plano', {
-      boundingbox: [-1, 7, 8, -1.5],
-      axis: true,
-      showCopyright: false,
-      showNavigation: false,
-      pan: { enabled: false },
-      zoom: { enabled: false },
-      defaultAxes: {
-        x: {strokeColor: axisColor, ticks: {strokeColor: axisColor}},
-        y: {strokeColor: axisColor, ticks: {strokeColor: axisColor}}
-      }
-    });
-    
-    // Punto origen (fijo)
-    var O = board.create('point', [0, 0], {name: 'O', size: 4, fixed: true, color: '#64748b', label: {offset: [-15, -15]}});
-    
-    // Punto final del vector (ARRASTRABLE - esto SÍ aporta)
-    var P = board.create('point', [4, 3], {name: 'P', size: 4, color: '#3b82f6', label: {offset: [8, 8]}});
-    
-    // Vector A
-    var vecA = board.create('arrow', [O, P], {strokeColor: '#3b82f6', strokeWidth: 3});
-    
-    // Etiqueta A - posición dinámica ARRIBA del vector
-    board.create('text', [function() { return P.X()/2 - 0.5; }, function() { return P.Y()/2 + 0.8; }, 'A'], 
-      {fontSize: 18, color: '#3b82f6', cssStyle: 'font-weight: bold; font-style: italic;', fixed: true});
-    
-    // Proyección sobre eje X (componente Ax)
-    var projX = board.create('point', [function() { return P.X(); }, 0], {visible: false, fixed: true});
-    board.create('segment', [P, projX], {strokeColor: '#ef4444', strokeWidth: 2, dash: 2});
-    
-    // Proyección sobre eje Y (componente Ay)  
-    var projY = board.create('point', [0, function() { return P.Y(); }], {visible: false, fixed: true});
-    board.create('segment', [P, projY], {strokeColor: '#22c55e', strokeWidth: 2, dash: 2});
-    
-    // Etiquetas de componentes - posiciones que no se superponen
-    board.create('text', [function() { return P.X()/2; }, -0.8, function() { return 'Ax = ' + P.X().toFixed(1); }], 
-      {fontSize: 12, color: '#ef4444', cssStyle: 'font-weight: bold;', fixed: true});
-    board.create('text', [-0.9, function() { return P.Y()/2; }, function() { return 'Ay = ' + P.Y().toFixed(1); }], 
-      {fontSize: 12, color: '#22c55e', cssStyle: 'font-weight: bold;', fixed: true});
-    
-    // Ángulo
-    board.create('angle', [projX, O, P], {
-      radius: 0.7,
-      name: 'θ',
-      color: '#8b5cf6',
-      fillColor: 'rgba(139, 92, 246, 0.2)'
-    });
-    
-    // Magnitud (mostrar cálculo) - arriba a la derecha
-    board.create('text', [5.5, 6, function() { 
-      var mag = Math.sqrt(P.X()*P.X() + P.Y()*P.Y());
-      return '|A| = ' + mag.toFixed(2); 
-    }], {fontSize: 13, color: '#3b82f6', cssStyle: 'font-weight: bold;', fixed: true});
-    
-    // Etiquetas de ejes
-    board.create('text', [7.5, -0.5, 'x'], {fontSize: 14, strokeColor: '#374151', cssStyle: 'font-weight: bold;', fixed: true});
-    board.create('text', [-0.5, 6.5, 'y'], {fontSize: 14, strokeColor: '#374151', cssStyle: 'font-weight: bold;', fixed: true});
-    
-    board.unsuspendUpdate();
-  }
-});
-</script>
+> Observa la **magnitud** (longitud), la **dirección** (ángulo θ) y el **sentido** (punta) resaltados en la ilustración.
 
-> 💡 **¡Interactivo!** Arrastra el punto **P** para ver cómo cambian las componentes $A_x$ (rojo) y $A_y$ (verde), así como la magnitud del vector.
-
-* La **longitud de la flecha** representa la **magnitud**.
-* La **inclinación** con respecto al eje $x$ muestra la **dirección**.
-* La **punta** indica el **sentido**.
-
-La magnitud del vector se calcula con el **teorema de Pitágoras**:
-
-$$
-|\vec{A}| = \sqrt{A_x^2 + A_y^2}
-$$
-
-donde $A_x$ y $A_y$ son las **componentes** del vector en los ejes $x$ y $y$.
+> 💡 La **longitud de la flecha** representa la magnitud, la **inclinación** muestra la dirección, y la **punta** indica el sentido.
 
 ---
 
-## 2. Componentes de un vector
+## 📐 **Componentes de un vector**
 
 Todo vector en el plano puede descomponerse en dos **componentes perpendiculares**:
 
@@ -121,118 +54,192 @@ $$
 \vec{A} = A_x\,\hat{i} + A_y\,\hat{j}
 $$
 
-donde:
+Donde:
+- $A_x$ = **componente horizontal** (proyección sobre el eje $x$)
+- $A_y$ = **componente vertical** (proyección sobre el eje $y$)
+- $\hat{i}$ y $\hat{j}$ = **vectores unitarios** en las direcciones $x$ y $y$
 
-* $A_x$ es la **proyección del vector sobre el eje $x$**,
-* $A_y$ es la **proyección del vector sobre el eje $y$**,
-* $\hat{i}$ y $\hat{j}$ son los **vectores unitarios** en las direcciones de los ejes $x$ y $y$ respectivamente.
+### Visualización:
 
-Si el vector forma un ángulo $\theta$ con el eje $x$, entonces:
-
-$$
-A_x = |\vec{A}|\cos{\theta}
-$$
-
-$$
-A_y = |\vec{A}|\sin{\theta}
-$$
-
----
-
-## 3. Ejemplo
-
-Un vector $\vec{B}$ tiene una magnitud de $10\,\mathrm{m}$ y forma un ángulo de $37^\circ$ con el eje $x$.
-Sus componentes son:
-
-$$
-B_x = 10\cos{37^\circ} = 8\,\mathrm{m}
-$$
-
-$$
-B_y = 10\sin{37^\circ} = 6\,\mathrm{m}
-$$
-
-Por lo tanto:
-
-$$
-\vec{B} = 8\,\hat{i} + 6\,\hat{j}
-$$
-
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="jsxgraph-ejemplo" class="jsxgraph-container" style="width: 100%; height: 350px; border-radius: 8px; overflow: hidden;"></div>
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/fisica/vectores/componentes-vector.svg" alt="Componentes de un vector" style="width: 100%; height: auto;" />
 </div>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined') {
-    var isDark = document.documentElement.classList.contains('dark');
-    var axisColor = isDark ? '#94a3b8' : '#888888';
-    
-    var board2 = JXG.JSXGraph.initBoard('jsxgraph-ejemplo', {
-      boundingbox: [-1, 8, 10, -1.5],
-      axis: true,
-      showCopyright: false,
-      showNavigation: false,
-      pan: { enabled: false },
-      zoom: { enabled: false },
-      defaultAxes: {
-        x: {strokeColor: axisColor},
-        y: {strokeColor: axisColor}
-      }
-    });
-    
-    // Punto origen (fijo)
-    var O = board2.create('point', [0, 0], {name: 'O', size: 3, fixed: true, color: '#64748b', label: {offset: [-12, -12]}});
-    
-    // Vector B (8, 6) - punto FIJO, no interactivo
-    var B = board2.create('point', [8, 6], {name: '', size: 3, fixed: true, color: '#3b82f6'});
-    board2.create('arrow', [O, B], {strokeColor: '#3b82f6', strokeWidth: 3, fixed: true});
-    
-    // Etiqueta B - ARRIBA del vector para no superponerse
-    board2.create('text', [3.2, 4.2, 'B = 10 m'], {fontSize: 13, color: '#3b82f6', cssStyle: 'font-weight: bold; font-style: italic;', fixed: true});
-    
-    // Componente X - flecha roja
-    var Bx = board2.create('point', [8, 0], {visible: false, fixed: true});
-    board2.create('arrow', [O, Bx], {strokeColor: '#ef4444', strokeWidth: 2, fixed: true});
-    board2.create('text', [4, -0.8, 'Bx = 8 m'], {fontSize: 12, color: '#ef4444', cssStyle: 'font-weight: bold;', fixed: true});
-    
-    // Componente Y - flecha verde (desde Bx hacia B)
-    board2.create('arrow', [Bx, B], {strokeColor: '#22c55e', strokeWidth: 2, fixed: true});
-    board2.create('text', [8.5, 3, 'By = 6 m'], {fontSize: 12, color: '#22c55e', cssStyle: 'font-weight: bold;', fixed: true});
-    
-    // Ángulo de 37°
-    board2.create('angle', [Bx, O, B], {
-      radius: 1.2,
-      name: '37°',
-      color: '#8b5cf6',
-      fillColor: 'rgba(139, 92, 246, 0.2)',
-      fixed: true
-    });
-    
-    // Etiquetas de ejes
-    board2.create('text', [9.5, -0.5, 'x'], {fontSize: 14, strokeColor: '#374151', cssStyle: 'font-weight: bold;', fixed: true});
-    board2.create('text', [-0.5, 7.5, 'y'], {fontSize: 14, strokeColor: '#374151', cssStyle: 'font-weight: bold;', fixed: true});
-    
-    board2.unsuspendUpdate();
-  }
-});
-</script>
-
-Este vector puede representarse gráficamente con una flecha que parte del origen $(0,0)$ y llega al punto $(8,6)$.
+> 💡 Las componentes $A_x$ y $A_y$ forman un **triángulo rectángulo** con el vector $\vec{A}$.
 
 ---
 
-## 4. Observaciones importantes
+## 📏 **Magnitud del vector**
 
-* Un vector **puede trasladarse** paralelamente sin cambiar su valor (solo importa su magnitud, dirección y sentido).
-* Los vectores se **suman o restan** gráficamente utilizando sus componentes o con métodos geométricos (esto se estudiará en la siguiente sección).
-* El sistema cartesiano facilita comparar, sumar y proyectar vectores con precisión.
+La **magnitud** del vector se calcula con el **teorema de Pitágoras**:
+
+$$
+|\vec{A}| = \sqrt{A_x^2 + A_y^2}
+$$
+
+### Ejemplo:
+
+Si $\vec{A} = 4\,\hat{i} + 3\,\hat{j}$, entonces:
+
+$$
+|\vec{A}| = \sqrt{4^2 + 3^2} = \sqrt{16 + 9} = \sqrt{25} = 5
+$$
 
 ---
 
-> 📘 **En resumen:**
-> En el plano, un vector se describe mediante sus componentes $(A_x, A_y)$ o mediante su magnitud y ángulo $(|\vec{A}|, \theta)$.
-> Ambas formas representan la misma información: *cuánto mide, hacia dónde apunta y en qué dirección actúa*.
+## 🔄 **Componentes a partir del ángulo**
+
+Si conoces la **magnitud** $|\vec{A}|$ y el **ángulo** $\theta$ que forma con el eje $x$:
+
+$$
+A_x = |\vec{A}| \cos\theta
+$$
+
+$$
+A_y = |\vec{A}| \sin\theta
+$$
+
+### Ejemplo (mismo vector del plano):
+
+Para $\vec{A}$ que va de $O(0,0)$ a $P(4,3)$, su magnitud es $|\vec{A}| = 5$ y su ángulo es $\theta = \tan^{-1}(3/4) \approx 36.87°$.
+
+**Componentes:**
+
+$$
+A_x = |\vec{A}|\cos\theta = 5\cdot\frac{4}{5} = 4
+$$
+
+$$
+A_y = |\vec{A}|\sin\theta = 5\cdot\frac{3}{5} = 3
+$$
+
+**Representación:**
+
+$$
+\vec{A} = 4\,\hat{i} + 3\,\hat{j}
+$$
+
+> 💡 **Relación útil:** para este vector, $\cos\theta = 4/5$ y $\sin\theta = 3/5$.
+
+---
+
+## 📐 **Ángulo a partir de las componentes**
+
+Si conoces las componentes y quieres encontrar el ángulo:
+
+$$
+\theta = \tan^{-1}\left(\frac{A_y}{A_x}\right)
+$$
+
+### Ejemplo (mismo vector del plano):
+
+Si $\vec{A} = 4\,\hat{i} + 3\,\hat{j}$:
+
+$$
+\theta = \tan^{-1}\left(\frac{3}{4}\right) \approx 36.87°
+$$
+
+---
+
+## 📋 **Tabla resumen: Dos formas de expresar un vector**
+
+| Forma | Notación | Información |
+| :--- | :--- | :--- |
+| **Por componentes** | $\vec{A} = A_x\,\hat{i} + A_y\,\hat{j}$ | Componentes en $x$ y $y$ |
+| **Por magnitud y ángulo** | $(|\vec{A}|, \theta)$ | Magnitud y dirección |
+
+> 🔄 Ambas formas representan el **mismo vector**. Puedes convertir de una a otra usando las fórmulas anteriores.
+
+---
+
+## 📝 Ejercicios de Práctica
+
+### Ejercicio 1
+**Un vector tiene componentes $A_x = 6$ y $A_y = 8$. Calcula su magnitud.**
+
+<details>
+<summary>Ver solución</summary>
+
+$$
+|\vec{A}| = \sqrt{6^2 + 8^2} = \sqrt{36 + 64} = \sqrt{100} = 10
+$$
+
+</details>
+
+---
+
+### Ejercicio 2
+**Un vector tiene magnitud $|\vec{B}| = 13\,\mathrm{m}$ y forma un ángulo de $53°$ con el eje $x$. Encuentra sus componentes.**
+
+*Datos útiles:* $\cos 53° \approx 0.6$, $\sin 53° \approx 0.8$
+
+<details>
+<summary>Ver solución</summary>
+
+$$
+B_x = 13 \times 0.6 = 7.8\,\mathrm{m}
+$$
+
+$$
+B_y = 13 \times 0.8 = 10.4\,\mathrm{m}
+$$
+
+$$
+\vec{B} = 7.8\,\hat{i} + 10.4\,\hat{j}
+$$
+
+</details>
+
+---
+
+### Ejercicio 3
+**Un vector es $\vec{C} = 5\,\hat{i} + 5\,\hat{j}$. Calcula su magnitud y el ángulo que forma con el eje $x$.**
+
+<details>
+<summary>Ver solución</summary>
+
+**Magnitud:**
+
+$$
+|\vec{C}| = \sqrt{5^2 + 5^2} = \sqrt{50} = 5\sqrt{2} \approx 7.07
+$$
+
+**Ángulo:**
+
+$$
+\theta = \tan^{-1}\left(\frac{5}{5}\right) = \tan^{-1}(1) = 45°
+$$
+
+</details>
+
+---
+
+### Ejercicio 4
+**¿Por qué es útil expresar un vector por sus componentes en lugar de solo dar su magnitud y dirección?**
+
+<details>
+<summary>Ver solución</summary>
+
+Porque las **componentes facilitan las operaciones matemáticas**:
+
+- Para **sumar vectores**, simplemente sumamos las componentes correspondientes
+- Para **restar vectores**, restamos las componentes
+- Para calcular el **trabajo** de una fuerza, multiplicamos la componente paralela por la distancia
+
+Además, muchos problemas de física involucran movimiento en ejes perpendiculares (horizontal y vertical), y trabajar con componentes permite analizar cada dirección por separado.
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Concepto | Fórmula |
+| :--- | :--- |
+| **Componentes** | $\vec{A} = A_x\,\hat{i} + A_y\,\hat{j}$ |
+| **Magnitud** | $\vert\vec{A}\vert = \sqrt{A_x^2 + A_y^2}$ |
+| **Componente X** | $A_x = \vert\vec{A}\vert \cos\theta$ |
+| **Componente Y** | $A_y = \vert\vec{A}\vert \sin\theta$ |
+| **Ángulo** | $\theta = \tan^{-1}(A_y / A_x)$ |
+
+> **Recuerda:** Un vector en el plano puede expresarse como **componentes** $(A_x, A_y)$ o como **magnitud y ángulo** $(|\vec{A}|, \theta)$. Ambas formas contienen la misma información.

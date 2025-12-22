@@ -1,34 +1,94 @@
-# 🧪 **Factores de conversión: qué son y cómo usarlos**
+# Factores de conversión
 
-Los **factores de conversión** son **relaciones de equivalencia entre dos unidades que representan la misma magnitud física**, por ejemplo:
-
-$$
-1\,\mathrm{lb} = 0.45359237\,\mathrm{kg}
-$$
-
-Estas relaciones permiten **expresar una cantidad en diferentes unidades sin alterar su valor físico**, solo cambiando la forma en que se describe numéricamente.
-
-Aplicar un factor de conversión consiste en **multiplicar la cantidad original por una relación de unidades equivalente**, dispuesta de tal forma que la unidad inicial **se cancele** y la unidad deseada **permanezca**.  
-De este modo, las unidades se comportan como variables algebraicas, garantizando coherencia y corrección en el resultado final.
+> **🎯 ¿Qué vas a aprender?**
+>
+> - Qué son los factores de conversión y por qué son iguales a 1.
+> - Cómo escribir un factor de conversión en sus dos formas.
+> - A elegir la forma correcta para cancelar unidades.
 
 ---
 
-## ⚙️ **Ejercicio 1 — Masa**
+## ⚙️ ¿Qué es un factor de conversión?
+
+Un **factor de conversión** es una **fracción igual a 1** que se construye a partir de una **equivalencia entre unidades**.
+
+Por ejemplo, si sabemos que:
+
+$$
+1\,\mathrm{ft} = 12\,\mathrm{in}
+$$
+
+Podemos escribir **dos fracciones equivalentes a 1**:
+
+$$
+\dfrac{1\,\mathrm{ft}}{12\,\mathrm{in}} = 1 \qquad \text{y} \qquad \dfrac{12\,\mathrm{in}}{1\,\mathrm{ft}} = 1
+$$
+
+> **💡 Nota:** Como estas fracciones son iguales a 1, al multiplicar cualquier cantidad por ellas **no cambiamos su valor**, solo cambiamos las **unidades** en que se expresa.
+
+---
+
+## 🔄 ¿Cómo elegir la forma correcta?
+
+La clave está en **colocar la unidad que quieres cancelar en el lado opuesto** de donde aparece en el dato original.
+
+| Si quieres convertir de... | Coloca esa unidad en... | Para que se cancele con... |
+| :---: | :---: | :---: |
+| **ft** a **in** | el denominador | los ft del dato |
+| **in** a **ft** | el denominador | los in del dato |
+
+---
+
+## ✏️ Ejemplo 1: Longitud (pies a pulgadas)
+
+Convertir $3\,\mathrm{ft}$ a $\mathrm{in}$.
+
+**Equivalencia:**
+
+$$
+1\,\mathrm{ft} = 12\,\mathrm{in}
+$$
+
+**Factor de conversión (se elige para cancelar ft):**
+
+$$
+\dfrac{12\,\mathrm{in}}{1\,\mathrm{ft}}
+$$
+
+**Operación:**
+
+$$
+3\,\mathrm{ft} \times \dfrac{12\,\mathrm{in}}{1\,\mathrm{ft}} = 3 \times 12\,\mathrm{in} = 36\,\mathrm{in}
+$$
+
+$$
+\boxed{36\,\mathrm{in}}
+$$
+
+> Observa cómo la unidad **ft** aparece arriba en el dato y abajo en el factor, permitiendo que **se cancele**.
+
+---
+
+## ✏️ Ejemplo 2: Masa (libras a kilogramos)
 
 Convertir $12.5\,\mathrm{lb}$ a $\mathrm{kg}$.
 
-$$
-1\,\mathrm{lb} = 0.45359237\,\mathrm{kg}
-$$
-
-**Paso a paso:**
-
-1️⃣ **Dato:** $12.5\,\mathrm{lb}$  
-2️⃣ **Factor de conversión:** $\dfrac{0.45359237\,\mathrm{kg}}{1\,\mathrm{lb}}$  
-3️⃣ **Multiplicamos y cancelamos unidades:**
+**Equivalencia:**
 
 $$
-12.5\,\mathrm{lb} \times \dfrac{0.45359237\,\mathrm{kg}}{1\,\mathrm{lb}} = 5.669904625\,\mathrm{kg}
+1\,\mathrm{lb} = 0.4536\,\mathrm{kg}
+$$
+
+**Factor de conversión (se elige para cancelar lb):**
+
+$$
+\dfrac{0.4536\,\mathrm{kg}}{1\,\mathrm{lb}}
+$$
+
+**Operación:**
+
+$$
+12.5\,\mathrm{lb} \times \dfrac{0.4536\,\mathrm{kg}}{1\,\mathrm{lb}} = 12.5 \times 0.4536\,\mathrm{kg} = 5.67\,\mathrm{kg}
 $$
 
 $$
@@ -37,54 +97,95 @@ $$
 
 ---
 
-## ⚙️ **Ejercicio 2 — Tiempo**
+## ✏️ Ejemplo 3: Tiempo (horas a segundos)
 
-Convertir $3.6\,\mathrm{h}$ a $\mathrm{s}$.
+Convertir $2\,\mathrm{h}$ a $\mathrm{s}$.
 
-$$
-1\,\mathrm{h} = 3600\,\mathrm{s}
-$$
-
-**Paso a paso:**
-
-1️⃣ **Dato:** $3.6\,\mathrm{h}$  
-2️⃣ **Factor de conversión:** $\dfrac{3600\,\mathrm{s}}{1\,\mathrm{h}}$  
-3️⃣ **Multiplicamos y cancelamos unidades:**
+**Equivalencias (conversión en dos pasos):**
 
 $$
-3.6\,\mathrm{h} \times \dfrac{3600\,\mathrm{s}}{1\,\mathrm{h}} = 12960\,\mathrm{s}
+1\,\mathrm{h} = 60\,\mathrm{min} \qquad \text{y} \qquad 1\,\mathrm{min} = 60\,\mathrm{s}
+$$
+
+**Factores de conversión en cadena:**
+
+$$
+2\,\mathrm{h} \times \dfrac{60\,\mathrm{min}}{1\,\mathrm{h}} \times \dfrac{60\,\mathrm{s}}{1\,\mathrm{min}}
+$$
+
+**Operación:**
+
+$$
+2 \times 60 \times 60\,\mathrm{s} = 7200\,\mathrm{s}
 $$
 
 $$
-\boxed{1.296\times10^{4}\,\mathrm{s}}
+\boxed{7200\,\mathrm{s}}
 $$
+
+> **Tip:** Puedes encadenar varios factores de conversión para conversiones que requieran más de un paso.
 
 ---
 
-## ⚙️ **Ejercicio 3 — Volumen**
+## 📝 Ejercicios de Práctica
 
-Convertir $750\,\mathrm{L}$ a $\mathrm{m^3}$.
+### Ejercicio 1
+**Convierte 8 kilogramos a libras.**
 
-$$
-1000\,\mathrm{L} = 1\,\mathrm{m^3}
-$$
+Equivalencia: $1\,\mathrm{kg} = 2.205\,\mathrm{lb}$
 
-**Paso a paso:**
-
-1️⃣ **Dato:** $750\,\mathrm{L}$  
-2️⃣ **Factor de conversión:** $\dfrac{1\,\mathrm{m^3}}{1000\,\mathrm{L}}$  
-3️⃣ **Multiplicamos y cancelamos unidades:**
+<details>
+<summary>Ver solución</summary>
 
 $$
-750\,\mathrm{L} \times \dfrac{1\,\mathrm{m^3}}{1000\,\mathrm{L}} = 0.75\,\mathrm{m^3}
+8\,\mathrm{kg} \times \dfrac{2.205\,\mathrm{lb}}{1\,\mathrm{kg}} = 17.64\,\mathrm{lb}
 $$
 
-$$
-\boxed{0.75\,\mathrm{m^3}}
-$$
+</details>
 
 ---
 
-> 💡 **Conclusión:**  
-> Los factores de conversión permiten cambiar unidades sin alterar el valor físico de una magnitud.  
-> Basta multiplicar por una **razón de equivalencia** y cancelar las unidades correctamente.
+### Ejercicio 2
+**Convierte 36 pulgadas a pies.**
+
+Equivalencia: $1\,\mathrm{ft} = 12\,\mathrm{in}$
+
+<details>
+<summary>Ver solución</summary>
+
+$$
+36\,\mathrm{in} \times \dfrac{1\,\mathrm{ft}}{12\,\mathrm{in}} = 3\,\mathrm{ft}
+$$
+
+</details>
+
+---
+
+### Ejercicio 3
+**Convierte 500 mililitros a litros.**
+
+Equivalencia: $1\,\mathrm{L} = 1000\,\mathrm{mL}$
+
+<details>
+<summary>Ver solución</summary>
+
+$$
+500\,\mathrm{mL} \times \dfrac{1\,\mathrm{L}}{1000\,\mathrm{mL}} = 0.5\,\mathrm{L}
+$$
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Concepto | Descripción |
+| :--- | :--- |
+| **Equivalencia** | Relación entre dos unidades (ej: $1\,\mathrm{ft} = 12\,\mathrm{in}$) |
+| **Factor de conversión** | Fracción igual a 1 construida con la equivalencia |
+| **Dos formas** | Toda equivalencia genera 2 factores inversos |
+| **Elegir la forma** | La unidad a cancelar va en el lado opuesto al dato |
+
+![Factores de conversión](/images/fisica/introduccion/t-factores-de-conversion.png)
+
+> **Recuerda:** El factor de conversión se elige de tal manera que la unidad inicial quede en posición de **cancelarse**, dejando solo la unidad deseada en el resultado.

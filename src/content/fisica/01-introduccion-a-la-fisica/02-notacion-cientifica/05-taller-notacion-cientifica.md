@@ -127,12 +127,3 @@ Divide los números base y **resta los exponentes**.
 > y verifica que el número base siempre quede **entre 1 y 10**.
 
 ---
-
-## 📘 **Conclusión del taller**
-
-- La notación científica permite manejar **números extremos** de forma compacta y ordenada.  
-- En las operaciones:
-  - se **suman exponentes** al multiplicar,  
-  - se **restan exponentes** al dividir,  
-  - y se **igualan exponentes** al sumar o restar.  
-- Siempre verifica que el número base quede **entre 1 y 9**.

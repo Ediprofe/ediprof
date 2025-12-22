@@ -1,203 +1,232 @@
-
 # Elementos de un vector
 
-Un **vector** es una magnitud que tiene **módulo (magnitud)**, **dirección** y **sentido**.
-Se representa mediante una **flecha**.
-La longitud de la flecha indica la magnitud, la inclinación muestra la dirección y la punta señala el sentido.
+Un **vector** es una cantidad que tiene **magnitud**, **dirección** y **sentido**. Se representa gráficamente como una **flecha**.
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="jsxgraph-elementos" class="jsxgraph-container" style="width: 100%; height: 320px; border-radius: 8px; overflow: hidden;"></div>
+---
+
+## 🎯 ¿Qué vas a aprender?
+
+- Los tres elementos fundamentales de un vector
+- Cómo se representa un vector gráficamente
+- La diferencia entre dirección y sentido
+- La notación para vectores
+
+---
+
+## 📊 **Visión general: El vector y sus partes**
+
+Antes de entrar en detalles, observa cómo se ve un vector con todos sus elementos:
+
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/fisica/vectores/elementos-vector.svg" alt="Elementos de un vector" style="width: 100%; height: auto;" />
 </div>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined') {
-    var isDark = document.documentElement.classList.contains('dark');
-    var axisColor = isDark ? '#94a3b8' : '#ccc';
-    
-    var board = JXG.JSXGraph.initBoard('jsxgraph-elementos', {
-      boundingbox: [-0.5, 5.5, 8, -0.5],
-      axis: false,
-      showCopyright: false,
-      showNavigation: false,
-      pan: { enabled: false },
-      zoom: { enabled: false }
-    });
-    
-    // Ejes manuales para control de color
-    board.create('axis', [[0, 0], [1, 0]], {
-      ticks: {visible: false},
-      strokeColor: axisColor
-    });
-    board.create('axis', [[0, 0], [0, 1]], {
-      ticks: {visible: false},
-      strokeColor: axisColor
-    });
-    
-    // Puntos del vector (ocultos y fijos - NO interactivo)
-    var O = board.create('point', [1, 1], {visible: false, fixed: true});
-    var P = board.create('point', [6, 4], {visible: false, fixed: true});
-    
-    // Vector principal
-    var vec = board.create('arrow', [O, P], {strokeColor: '#3b82f6', strokeWidth: 4, fixed: true});
-    
-    // Punto visible en origen (sin arrastrar)
-    board.create('point', [1, 1], {name: '', size: 4, color: '#64748b', fixed: true});
-    
-    // Punto visible en extremo (sin arrastrar)  
-    board.create('point', [6, 4], {name: '', size: 4, color: '#3b82f6', fixed: true});
-    
-    // Etiquetas posicionadas para NO superponerse
-    board.create('text', [0.3, 0.5, 'Origen'], {fontSize: 11, color: '#64748b', fixed: true});
-    board.create('text', [6.2, 4.3, 'Extremo'], {fontSize: 11, color: '#3b82f6', fixed: true});
-    
-    // Magnitud - etiqueta ARRIBA del vector
-    board.create('text', [3, 3.5, 'Magnitud'], {fontSize: 13, color: '#3b82f6', cssStyle: 'font-weight: bold;', fixed: true});
-    
-    // Flecha pequeña indicando sentido
-    board.create('text', [5.5, 5, 'Sentido'], {fontSize: 11, color: '#22c55e', cssStyle: 'font-weight: bold;', fixed: true});
-    board.create('arrow', [[5.2, 4.6], [5.8, 4.2]], {strokeColor: '#22c55e', strokeWidth: 1, fixed: true});
-    
-    // Ángulo theta
-    var puntoEjeX = board.create('point', [3, 1], {visible: false, fixed: true});
-    board.create('angle', [puntoEjeX, O, P], {
-      radius: 0.8,
-      name: 'θ',
-      color: '#8b5cf6',
-      fillColor: 'rgba(139, 92, 246, 0.2)',
-      fixed: true
-    });
-    
-    // Dirección - etiqueta a la derecha
-    board.create('text', [7, 2.5, 'Direccion'], {fontSize: 11, color: '#8b5cf6', cssStyle: 'font-style: italic;', fixed: true});
-    
-    // Etiquetas de ejes
-    board.create('text', [7.5, -0.3, 'x'], {fontSize: 14, strokeColor: '#374151', cssStyle: 'font-weight: bold;', fixed: true});
-    board.create('text', [-0.3, 5, 'y'], {fontSize: 14, strokeColor: '#374151', cssStyle: 'font-weight: bold;', fixed: true});
-    
-    board.unsuspendUpdate();
-  }
-});
-</script>
+Un vector se dibuja como una **flecha**. Cada parte de la flecha representa algo:
 
-> 💡 El gráfico muestra los elementos de un vector: **magnitud** (longitud), **dirección** (ángulo θ) y **sentido** (hacia dónde apunta la flecha).
+| Parte de la flecha | Nombre técnico | ¿Qué representa? |
+| :--- | :--- | :--- |
+| 🔵 Inicio | **Origen** o **cola** | Punto donde comienza el vector |
+| 🔴 Final | **Extremo** o **punta** | Punto donde termina el vector |
+| ↔️ Largo | **Longitud** | Proporcional a la **magnitud** |
+| ↗️ Inclinación | **Ángulo** | Indica la **dirección** |
+| ➡️ Punta | **Flecha** | Indica el **sentido** |
 
-## 1. Magnitud (o módulo)
-
-La **magnitud** de un vector es el valor numérico que indica *cuánto mide* la cantidad física que representa.
-Por ejemplo, si un objeto se desplaza 5 metros, la magnitud del vector desplazamiento es:
-
-$$
-|\vec{d}| = \text{5 m}
-$$
-
-La magnitud **siempre es positiva** y **se mide con la unidad correspondiente** (metros, newtons, metros por segundo, etc.).
+> 💡 **Observa los tres elementos clave:** la **magnitud** (longitud de la flecha), la **dirección** (ángulo θ) y el **sentido** (hacia dónde apunta la punta).
 
 ---
 
-## 2. Dirección
+## 📋 **Los tres elementos de un vector**
 
-La **dirección** indica la **línea sobre la que actúa el vector**.
-Puede describirse mediante un ángulo, una orientación en el plano (por ejemplo, "norte-sur", "este-oeste") o con respecto a un eje de referencia.
+Todo vector queda completamente definido por tres características:
 
-Por ejemplo, si un vector forma un ángulo de $30^\circ$ con el eje $x$, decimos que su dirección es de $30^\circ$ respecto a dicho eje.
+| Elemento | ¿Qué responde? | ¿Cómo se ve en la flecha? |
+| :--- | :--- | :--- |
+| **Magnitud** (o módulo) | *¿Cuánto?* | La **longitud** de la flecha |
+| **Dirección** | *¿En qué línea?* | La **inclinación** de la flecha |
+| **Sentido** | *¿Hacia dónde?* | La **punta** de la flecha |
+
+> 💡 **Piensa así:** La magnitud responde a *¿cuánto?*, la dirección a *¿en qué línea?*, y el sentido a *¿hacia dónde?*
+
+Ahora veamos cada elemento en detalle.
 
 ---
 
-## 3. Sentido
+## 📏 **1. Magnitud (módulo)**
 
-El **sentido** señala **hacia dónde apunta el vector** a lo largo de su dirección.
-Por ejemplo, un vector velocidad hacia el norte y otro hacia el sur tienen la misma dirección (vertical), pero **sentidos opuestos**.
+La **magnitud** de un vector es el **valor numérico** que indica cuánto mide la cantidad física que representa.
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="jsxgraph-sentido" class="jsxgraph-container" style="width: 100%; height: 280px; border-radius: 8px; overflow: hidden;"></div>
+### Ejemplos:
+
+- Si un objeto se desplaza 5 metros: $|\vec{d}| = 5\,\mathrm{m}$
+- Si una fuerza mide 20 newtons: $|\vec{F}| = 20\,\mathrm{N}$
+- Si la velocidad es 30 km/h: $|\vec{v}| = 30\,\mathrm{km/h}$
+
+> 📐 La magnitud **siempre es positiva** y se expresa con la **unidad correspondiente**.
+
+### Notación:
+
+La magnitud de un vector $\vec{A}$ se escribe como:
+- $|\vec{A}|$ (con barras de valor absoluto)
+- $A$ (solo la letra, sin flecha)
+
+---
+
+## 🧭 **2. Dirección**
+
+La **dirección** indica la **línea sobre la cual actúa el vector**. Piensa en ella como la "calle" por donde viaja el vector.
+
+Se puede describir de varias formas:
+
+| Forma | Ejemplo |
+| :--- | :--- |
+| Con un **ángulo** | "Línea inclinada $30°$ respecto al eje $x$" |
+| Con **puntos cardinales** | "línea norte-sur", "línea este-oeste" |
+| Con una **referencia** | "línea horizontal", "línea vertical", "diagonal" |
+
+> 💡 **Importante:** Dos vectores pueden tener la **misma dirección** (misma línea) pero **diferente sentido** (apuntan hacia lados opuestos de esa línea).
+
+---
+
+## ↔️ **3. Sentido**
+
+El **sentido** señala **hacia dónde apunta el vector** a lo largo de su dirección. Es el "destino" dentro de esa línea.
+
+### Ejemplo con vectores verticales:
+
+Considera dos vectores sobre la **misma línea vertical** (misma dirección):
+- $\vec{v}_1$: apunta **hacia arriba** (sentido positivo)
+- $\vec{v}_2$: apunta **hacia abajo** (sentido negativo)
+
+Tienen la **misma dirección** (vertical), pero **sentidos opuestos**.
+
+> 🔄 Los vectores con igual magnitud y dirección pero sentido opuesto se llaman **vectores opuestos**.
+
+---
+
+## 🔍 **Diferencia entre dirección y sentido: Ejemplos visuales**
+
+Este concepto es clave. Observa estos tres ejemplos donde los vectores $\vec{v}_1$ (azul) y $\vec{v}_2$ (rojo) comparten la **misma dirección** pero tienen **sentidos opuestos**:
+
+### Dirección vertical
+
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/fisica/vectores/sentido-vertical.svg" alt="Vectores verticales con sentidos opuestos" style="width: 100%; height: auto; max-width: 400px; display: block; margin: 0 auto;" />
 </div>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined') {
-    var isDark = document.documentElement.classList.contains('dark');
-    var textColor = isDark ? '#e2e8f0' : '#64748b';
-    
-    var board2 = JXG.JSXGraph.initBoard('jsxgraph-sentido', {
-      boundingbox: [-4, 4, 4, -4],
-      axis: false,
-      showCopyright: false,
-      showNavigation: false,
-      pan: { enabled: false },
-      zoom: { enabled: false }
-    });
-    
-    // Título
-    board2.create('text', [-2.5, 3.5, 'Misma direccion, sentidos opuestos'], {fontSize: 12, color: textColor, cssStyle: 'font-style: italic;', fixed: true});
-    
-    // Línea de referencia (dirección vertical)
-    board2.create('line', [[0, -3], [0, 3]], {strokeColor: '#cbd5e1', strokeWidth: 1, dash: 2, straightFirst: false, straightLast: false, fixed: true});
-    
-    // Vector hacia arriba (norte) - puntos ocultos
-    var O1 = board2.create('point', [-1.5, 0], {visible: false, fixed: true});
-    var P1 = board2.create('point', [-1.5, 2.5], {visible: false, fixed: true});
-    board2.create('arrow', [O1, P1], {strokeColor: '#3b82f6', strokeWidth: 4, fixed: true});
-    board2.create('text', [-2.3, 1.2, 'Norte'], {fontSize: 14, color: '#3b82f6', cssStyle: 'font-weight: bold;', fixed: true});
-    
-    // Vector hacia abajo (sur) - puntos ocultos
-    var O2 = board2.create('point', [1.5, 0], {visible: false, fixed: true});
-    var P2 = board2.create('point', [1.5, -2.5], {visible: false, fixed: true});
-    board2.create('arrow', [O2, P2], {strokeColor: '#ef4444', strokeWidth: 4, fixed: true});
-    board2.create('text', [1.8, -1.2, 'Sur'], {fontSize: 14, color: '#ef4444', cssStyle: 'font-weight: bold;', fixed: true});
-    
-    board2.unsuspendUpdate();
-  }
-});
-</script>
+> Ambos vectores están sobre la **línea vertical** (eje $y$), pero $\vec{v}_1$ apunta hacia **arriba** y $\vec{v}_2$ apunta hacia **abajo**.
+
+### Dirección horizontal
+
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/fisica/vectores/sentido-horizontal.svg" alt="Vectores horizontales con sentidos opuestos" style="width: 100%; height: auto; max-width: 400px; display: block; margin: 0 auto;" />
+</div>
+
+> Ambos vectores están sobre la **línea horizontal** (eje $x$), pero $\vec{v}_1$ apunta hacia la **derecha** y $\vec{v}_2$ apunta hacia la **izquierda**.
+
+### Dirección diagonal (45°)
+
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <img src="/images/fisica/vectores/sentido-diagonal.svg" alt="Vectores diagonales con sentidos opuestos: 45° y 225°" style="width: 100%; height: auto; max-width: 400px; display: block; margin: 0 auto;" />
+</div>
+
+> Ambos vectores están sobre la **misma línea diagonal** (la línea punteada). El vector a $45°$ apunta hacia el **primer cuadrante** (noreste), mientras que el vector a $225°$ apunta hacia el **tercer cuadrante** (suroeste).
+
+### 💡 El truco del ángulo completo
+
+Cuando en problemas de física damos un ángulo como "$45°$" o "$225°$", ese ángulo ya incluye **tanto la dirección como el sentido** juntos:
+
+| Ángulo | Dirección | Sentido |
+| :--- | :--- | :--- |
+| $45°$ | Diagonal (pendiente 1) | Hacia el primer cuadrante (noreste) |
+| $225°$ | Diagonal (pendiente 1) | Hacia el tercer cuadrante (suroeste) |
+
+> 🎯 **Para recordar:** El ángulo completo (de $0°$ a $360°$) es como un "código" que empaqueta la dirección (la línea) y el sentido (hacia dónde) en un solo número.
 
 ---
 
-## 4. Representación simbólica
+## 🔤 **Notación de vectores**
 
-Los vectores se representan con una **letra y una flecha encima**, como $\vec{v}$ o $\vec{F}$.
-A veces también se escriben con una letra en **negrita**, por ejemplo **v** o **F**, especialmente en textos impresos.
+Los vectores se pueden escribir de diferentes formas:
 
-> 💡 **Ejemplo:**
-> Si un cuerpo se desplaza 8 metros hacia el este, su vector desplazamiento puede expresarse como:
+| Notación | Ejemplo | Uso |
+| :--- | :--- | :--- |
+| Flecha sobre la letra | $\vec{v}$, $\vec{F}$, $\vec{a}$ | Más común en textos |
+| Letra en negrita | **v**, **F**, **a** | Común en libros impresos |
+| Con magnitud y dirección | $5\,\mathrm{m}$ hacia el norte | Descripción verbal |
+
+### Ejemplo completo:
+
+> Si un cuerpo se desplaza 8 metros hacia el este:
 >
 > $$
-> \vec{d} = \text{8 m (este)}
+> \vec{d} = 8\,\mathrm{m}\text{ (hacia el este)}
 > $$
 >
-> Aquí, *8 m* es la magnitud, la "línea este-oeste" es la dirección y "hacia el este" es el sentido.
+> - **Magnitud:** $8\,\mathrm{m}$
+> - **Dirección:** línea este-oeste
+> - **Sentido:** hacia el este
 
 ---
 
-## 5. Flecha representativa
+## 📝 Ejercicios de Práctica
 
-Gráficamente, un vector se dibuja como una **flecha**:
+### Ejercicio 1
+**Identifica la magnitud, dirección y sentido de los siguientes vectores:**
 
-* El **origen** (cola) indica el punto donde actúa la magnitud.
-* La **punta** (cabeza) indica hacia dónde se dirige.
-* La **longitud** es proporcional a la magnitud.
-* La **orientación** muestra su dirección y sentido.
+a) Una fuerza de $50\,\mathrm{N}$ hacia arriba  
+b) Una velocidad de $20\,\mathrm{m/s}$ formando $30°$ con el eje $x$  
+c) Un desplazamiento de $100\,\mathrm{km}$ hacia el sur  
 
----
+<details>
+<summary>Ver solución</summary>
 
-| Elemento  | Qué indica                     | Cómo se representa     |
-| --------- | ------------------------------ | ---------------------- |
-| Magnitud  | Tamaño o valor numérico        | Longitud de la flecha  |
-| Dirección | Línea o ángulo de acción       | Inclinación del vector |
-| Sentido   | Hacia dónde apunta             | Punta de la flecha     |
-| Origen    | Punto donde comienza el vector | Cola del vector        |
+a) Magnitud: $50\,\mathrm{N}$ | Dirección: vertical | Sentido: hacia arriba
 
----
+b) Magnitud: $20\,\mathrm{m/s}$ | Dirección: $30°$ respecto al eje $x$ | Sentido: según el cuadrante indicado
 
-> 📘 **En resumen:**
-> Un vector combina *cuánto*, *en qué línea* y *hacia dónde*.
-> Por eso se diferencia de una magnitud escalar, que solo indica *cuánto*.
+c) Magnitud: $100\,\mathrm{km}$ | Dirección: norte-sur | Sentido: hacia el sur
+
+</details>
 
 ---
 
+### Ejercicio 2
+**¿Cuál es la diferencia entre dirección y sentido? Da un ejemplo.**
+
+<details>
+<summary>Ver solución</summary>
+
+- **Dirección:** indica la *línea* sobre la que actúa el vector (horizontal, vertical, a $45°$, etc.)
+- **Sentido:** indica *hacia dónde* apunta el vector sobre esa línea
+
+**Ejemplo:** En una calle que va de norte a sur (dirección norte-sur), un auto puede ir hacia el norte (un sentido) o hacia el sur (sentido opuesto).
+
+</details>
+
+---
+
+### Ejercicio 3
+**Dos vectores tienen la misma magnitud ($10\,\mathrm{N}$) y la misma dirección (horizontal). ¿Pueden ser diferentes? ¿Por qué?**
+
+<details>
+<summary>Ver solución</summary>
+
+**Sí**, pueden ser diferentes si tienen **sentidos opuestos**.
+
+Un vector de $10\,\mathrm{N}$ hacia la derecha es diferente de uno de $10\,\mathrm{N}$ hacia la izquierda, aunque tengan la misma magnitud y dirección.
+
+En ese caso, son **vectores opuestos**.
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Elemento | ¿Qué responde? | Representación gráfica |
+| :--- | :--- | :--- |
+| **Magnitud** | ¿Cuánto? | Longitud de la flecha |
+| **Dirección** | ¿En qué línea? | Inclinación (ángulo) |
+| **Sentido** | ¿Hacia dónde? | Punta de la flecha |
+
+> **Recuerda:** Un vector queda completamente definido cuando conoces su **magnitud** (tamaño), **dirección** (línea de acción) y **sentido** (hacia dónde apunta).

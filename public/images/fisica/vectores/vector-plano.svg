@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450">
+  <defs>
+        <marker id="arrow-64748b-10" markerWidth="10" markerHeight="10" 
+                refX="9.0" refY="5.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 10,5.0 0,10" fill="#64748b"/>
+        </marker>
+
+        <marker id="arrow-64748b-10" markerWidth="10" markerHeight="10" 
+                refX="9.0" refY="5.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 10,5.0 0,10" fill="#64748b"/>
+        </marker>
+
+        <marker id="arrow-3b82f6-12" markerWidth="12" markerHeight="12" 
+                refX="10.8" refY="6.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 12,6.0 0,12" fill="#3b82f6"/>
+        </marker></defs>
+  <rect x="0.00" y="0.00" width="600.00" height="450.00" fill="#f8fafc" stroke="none" stroke-width="0" rx="0"/>
+  <line x1="50.00" y1="400.00" x2="50.00" y2="50.00" stroke="#e2e8f0" stroke-width="1"  />
+  <line x1="121.43" y1="400.00" x2="121.43" y2="50.00" stroke="#e2e8f0" stroke-width="1"  />
+  <line x1="192.86" y1="400.00" x2="192.86" y2="50.00" stroke="#e2e8f0" stroke-width="1"  />
+  <line x1="264.29" y1="400.00" x2="264.29" y2="50.00" stroke="#e2e8f0" stroke-width="1"  />
+  <line x1="335.71" y1="400.00" x2="335.71" y2="50.00" stroke="#e2e8f0" stroke-width="1"  />
+  <line x1="407.14" y1="400.00" x2="407.14" y2="50.00" stroke="#e2e8f0" stroke-width="1"  />
+  <line x1="478.57" y1="400.00" x2="478.57" y2="50.00" stroke="#e2e8f0" stroke-width="1"  />
+  <line x1="550.00" y1="400.00" x2="550.00" y2="50.00" stroke="#e2e8f0" stroke-width="1"  />
+  <line x1="50.00" y1="400.00" x2="550.00" y2="400.00" stroke="#e2e8f0" stroke-width="1"  />
+  <line x1="50.00" y1="341.67" x2="550.00" y2="341.67" stroke="#e2e8f0" stroke-width="1"  />
+  <line x1="50.00" y1="283.33" x2="550.00" y2="283.33" stroke="#e2e8f0" stroke-width="1"  />
+  <line x1="50.00" y1="225.00" x2="550.00" y2="225.00" stroke="#e2e8f0" stroke-width="1"  />
+  <line x1="50.00" y1="166.67" x2="550.00" y2="166.67" stroke="#e2e8f0" stroke-width="1"  />
+  <line x1="50.00" y1="108.33" x2="550.00" y2="108.33" stroke="#e2e8f0" stroke-width="1"  />
+  <line x1="50.00" y1="50.00" x2="550.00" y2="50.00" stroke="#e2e8f0" stroke-width="1"  />
+  <line x1="101.43" y1="341.67" x2="528.57" y2="341.67" stroke="#64748b" stroke-width="2"  marker-end="url(#arrow-64748b-10)"/>
+  <line x1="121.43" y1="361.67" x2="121.43" y2="67.50" stroke="#64748b" stroke-width="2"  marker-end="url(#arrow-64748b-10)"/>
+  <text x="543.57" y="341.67" font-family="Inter, sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">x</text>
+  <text x="121.43" y="52.50" font-family="Inter, sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">y</text>
+  <line x1="121.43" y1="341.67" x2="407.14" y2="166.67" stroke="#3b82f6" stroke-width="4"  marker-end="url(#arrow-3b82f6-12)"/>
+  <circle cx="121.43" cy="341.67" r="4" fill="#22c55e" />
+  <text x="106.43" y="356.67" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#22c55e" text-anchor="middle" dominant-baseline="middle">O</text>
+  <circle cx="407.14" cy="166.67" r="5" fill="#3b82f6" />
+  <text x="417.14" y="156.67" font-family="Inter, sans-serif" font-size="13" font-weight="bold" fill="#3b82f6" text-anchor="start" dominant-baseline="middle">P(4,3)</text>
+  <text x="239.29" y="239.17" font-family="Inter, sans-serif" font-size="20" font-weight="bold" fill="#3b82f6" text-anchor="middle" dominant-baseline="middle">A</text>
+  <text x="300.00" y="25.00" font-family="Inter, sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Vector en el Plano Cartesiano</text>
+</svg>
