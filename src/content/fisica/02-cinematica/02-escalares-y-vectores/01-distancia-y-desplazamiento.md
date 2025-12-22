@@ -44,31 +44,7 @@ $$
 
 Un tenista comienza en la línea de fondo ($x=0$ m), corre hasta la red ubicada a 12 m, y luego retrocede hasta la línea de saque, ubicada a 6 m.
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="jsxgraph-tenista" class="jsxgraph-container" style="width: 100%; height: 150px; border-radius: 8px; overflow: hidden;"></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-tenista')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-tenista', {
-      boundingbox: [-1, 4, 14, -1], axis: false, showCopyright: false, showNavigation: false, pan: {enabled: false}, zoom: {enabled: false}
-    });
-    board.create('segment', [[0, 1], [12, 1]], {strokeWidth: 2, strokeColor: '#374151', fixed: true});
-    board.create('point', [0, 1], {name: 'Fondo (0m)', size: 4, fixed: true, color: '#22c55e', label: {offset: [0, -25], strokeColor: '#22c55e'}});
-    board.create('point', [12, 1], {name: 'Red (12m)', size: 4, fixed: true, color: '#3b82f6', label: {offset: [0, -25], strokeColor: '#3b82f6'}});
-    board.create('point', [6, 1], {name: 'Saque (6m)', size: 4, fixed: true, color: '#ef4444', label: {offset: [0, -25], strokeColor: '#ef4444'}});
-    board.create('arrow', [[0, 2.5], [12, 2.5]], {strokeColor: '#3b82f6', strokeWidth: 2, fixed: true});
-    board.create('arrow', [[12, 2.2], [6, 2.2]], {strokeColor: '#ef4444', strokeWidth: 2, fixed: true});
-    board.create('text', [6, 3.2, '12 m →'], {fontSize: 11, strokeColor: '#3b82f6', fixed: true, anchorX: 'middle'});
-    board.create('text', [9, 1.7, '← 6 m'], {fontSize: 11, strokeColor: '#ef4444', fixed: true, anchorX: 'middle'});
-    board.unsuspendUpdate();
-  }
-});
-</script>
+![Movimiento del Tenista](/images/fisica/cinematica/escalares-y-vectores/tenista.svg)
 
 ### ✅ Solución
 
@@ -86,31 +62,7 @@ $$\Delta x = 6 - 0 = +6\ \text{m}$$
 
 El ascensor sube de 0 m a 20 m, luego baja hasta -4 m.
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="jsxgraph-ascensor" class="jsxgraph-container" style="width: 100%; height: 280px; border-radius: 8px; overflow: hidden;"></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-ascensor')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-ascensor', {
-      boundingbox: [-3, 25, 5, -8], axis: false, showCopyright: false, showNavigation: false, pan: {enabled: false}, zoom: {enabled: false}
-    });
-    board.create('segment', [[0, -4], [0, 20]], {strokeWidth: 3, strokeColor: '#374151', fixed: true});
-    board.create('point', [0, 0], {name: 'Inicio (0m)', size: 4, fixed: true, color: '#22c55e', label: {offset: [10, 0], strokeColor: '#22c55e'}});
-    board.create('point', [0, 20], {name: '20m', size: 4, fixed: true, color: '#3b82f6', label: {offset: [10, 0], strokeColor: '#3b82f6'}});
-    board.create('point', [0, -4], {name: '-4m', size: 4, fixed: true, color: '#ef4444', label: {offset: [10, 0], strokeColor: '#ef4444'}});
-    board.create('arrow', [[-1.5, 0], [-1.5, 20]], {strokeColor: '#3b82f6', strokeWidth: 2, fixed: true});
-    board.create('arrow', [[-2.2, 20], [-2.2, -4]], {strokeColor: '#ef4444', strokeWidth: 2, fixed: true});
-    board.create('text', [-2.5, 10, '20m ↑'], {fontSize: 10, strokeColor: '#3b82f6', fixed: true, anchorX: 'right'});
-    board.create('text', [-3, 8, '24m ↓'], {fontSize: 10, strokeColor: '#ef4444', fixed: true, anchorX: 'right'});
-    board.unsuspendUpdate();
-  }
-});
-</script>
+![alt text](/public/images/fisica/cinematica/escalares-y-vectores/ascensor.png)
 
 ### ✅ Solución
 
@@ -128,28 +80,7 @@ $$\Delta x = -4 - 0 = -4\ \text{m}$$
 
 Una persona recorre una pista circular de 400 m y termina en el mismo punto.
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="jsxgraph-circular" class="jsxgraph-container" style="width: 100%; height: 250px; border-radius: 8px; overflow: hidden;"></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-circular')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-circular', {
-      boundingbox: [-4, 4, 4, -4], axis: false, showCopyright: false, showNavigation: false, pan: {enabled: false}, zoom: {enabled: false}
-    });
-    board.create('circle', [[0, 0], 2.5], {strokeColor: '#3b82f6', strokeWidth: 3, fillColor: 'transparent', fixed: true});
-    board.create('point', [2.5, 0], {name: 'Inicio/Fin', size: 5, fixed: true, color: '#22c55e', label: {offset: [10, 0], strokeColor: '#22c55e'}});
-    board.create('arrow', [[0, 2.5], [1.5, 2]], {strokeColor: '#f59e0b', strokeWidth: 2, fixed: true});
-    board.create('text', [0, 3.2, '400 m recorridos'], {fontSize: 11, strokeColor: '#3b82f6', fixed: true, anchorX: 'middle'});
-    board.create('text', [0, -3.2, 'Desplazamiento = 0'], {fontSize: 11, strokeColor: '#ef4444', fixed: true, anchorX: 'middle'});
-    board.unsuspendUpdate();
-  }
-});
-</script>
+![Vuelta a la Manzana](/images/fisica/cinematica/escalares-y-vectores/vuelta-manzana.svg)
 
 ### ✅ Solución
 
@@ -167,32 +98,7 @@ $$\Delta x = 0$$ (regresó al punto de partida)
 
 Camina 30 m al norte y luego 40 m al este.
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="jsxgraph-2d" class="jsxgraph-container" style="width: 100%; height: 300px; border-radius: 8px; overflow: hidden;"></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-2d')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-2d', {
-      boundingbox: [-10, 38, 48, -5], axis: true, showCopyright: false, showNavigation: false, pan: {enabled: false}, zoom: {enabled: false}
-    });
-    var A = board.create('point', [0, 0], {name: 'Inicio', size: 4, fixed: true, color: '#22c55e', label: {offset: [-15, -15], strokeColor: '#22c55e'}});
-    var B = board.create('point', [0, 30], {name: '', size: 3, fixed: true, color: '#3b82f6'});
-    var C = board.create('point', [40, 30], {name: 'Fin', size: 4, fixed: true, color: '#ef4444', label: {offset: [10, 0], strokeColor: '#ef4444'}});
-    board.create('arrow', [A, B], {strokeColor: '#3b82f6', strokeWidth: 3, fixed: true});
-    board.create('arrow', [B, C], {strokeColor: '#3b82f6', strokeWidth: 3, fixed: true});
-    board.create('arrow', [A, C], {strokeColor: '#22c55e', strokeWidth: 3, dash: 2, fixed: true});
-    board.create('text', [-9, 15, '30m ↑'], {fontSize: 12, strokeColor: '#3b82f6', fixed: true});
-    board.create('text', [20, 33, '40m →'], {fontSize: 12, strokeColor: '#3b82f6', fixed: true});
-    board.create('text', [22, 12, 'Δx = 50m'], {fontSize: 12, strokeColor: '#22c55e', cssStyle: 'font-weight: bold;', fixed: true});
-    board.unsuspendUpdate();
-  }
-});
-</script>
+![Caminata en 2D](/images/fisica/cinematica/escalares-y-vectores/caminata-2d.svg)
 
 ### ✅ Solución
 
@@ -238,8 +144,66 @@ b) **Desplazamiento:** $\Delta x = 10 - 5 = +5\,\mathrm{m}$ (hacia el norte).
 
 ---
 
+### Ejercicio 3
+**Un corredor recorre media vuelta en una pista circular de radio 50 m. Calcula:**
+a) La distancia recorrida (la longitud del arco).
+b) La magnitud del desplazamiento (línea recta inicio-fin).
+
+<details>
+<summary>Ver solución</summary>
+
+a) **Distancia:** La mitad del perímetro del círculo.
+$$d = \frac{2\pi r}{2} = \pi(50) \approx 157\,\mathrm{m}$$
+
+b) **Desplazamiento:** El diámetro del círculo.
+$$|\Delta x| = 2r = 2(50) = 100\,\mathrm{m}$$
+
+</details>
+
+---
+
+### Ejercicio 4
+**Una partícula se mueve en el eje X: inicia en $x_i = 5$ m, va hasta $x = 12$ m y finalmente se detiene en $x_f = 2$ m.**
+a) Calcula la distancia total recorrida.
+b) Calcula el desplazamiento total.
+
+<details>
+<summary>Ver solución</summary>
+
+a) **Distancia:**
+- Tramo 1 (5 a 12): $|12 - 5| = 7\,\mathrm{m}$
+- Tramo 2 (12 a 2): $|2 - 12| = |-10| = 10\,\mathrm{m}$
+- Total: $d = 7 + 10 = 17\,\mathrm{m}$
+
+b) **Desplazamiento:**
+$$\Delta x = x_f - x_i = 2 - 5 = -3\,\mathrm{m}$$
+
+</details>
+
+---
+
+### Ejercicio 5
+**Un barco navega 8 km al Norte y luego 6 km al Oeste. Calcula:**
+a) La distancia total recorrida.
+b) La magnitud del desplazamiento resultante.
+
+<details>
+<summary>Ver solución</summary>
+
+a) **Distancia:**
+$$d = 8 + 6 = 14\,\mathrm{km}$$
+
+b) **Desplazamiento:** Hipotenusa del triángulo rectángulo.
+$$|\Delta x| = \sqrt{8^2 + 6^2} = \sqrt{64 + 36} = \sqrt{100} = 10\,\mathrm{km}$$
+
+</details>
+
+---
+
 ## 🔑 Resumen
 
 - **Distancia ($d$):** Magnitud escalar. Suma de todo el camino recorrido. Siempre positiva.
 - **Desplazamiento ($\Delta x$):** Magnitud vectorial. Cambio de posición ($x_f - x_i$). Puede ser positivo, negativo o cero.
 - La distancia siempre es mayor o igual que la magnitud del desplazamiento ($d \geq |\Delta x|$).
+
+![alt text](/public/images/fisica/cinematica/escalares-y-vectores/distancia-y-desplazamiento.png)

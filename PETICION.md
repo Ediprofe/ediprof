@@ -164,7 +164,10 @@ Situaciones que requieren confirmación:
 
 # 📝 PETICIÓN DEL USUARIO
 
-http://localhost:4321/fisica/cinematica/introduccion/posicion-y-marco-de-referencia
+http://localhost:4321/fisica/cinematica/escalares-y-vectores/rapidez-y-velocidad
 
+En esta lección por favor agrega las ilustraciones correspondientes, reemplazando las que ya están, por el formato svg con spec, renderers y todo eso o bueno lo que sea necesario.
 
-por favor agrega las ilustraciones correspondientes a esta lección, reemplazando las qu están con jsxgraph, por lecciones que se generen a través de la metodología que mejor corresponda según la documentación, puede ser con svg, con specs y demás, o con mathrender, creo que se llama así....por favor lee el contexto completo del proyecto y procede
+En la parte de los ejercicios de práctica, por favor que sean 5 ejercicios de práctica.
+
+Las ilustraciones agrégalas con el mismo estilo del proyecto, no es a replicar a las que ya están con hechas con una librería de javascript, es a mantener el estilo del proyecto. Toma esta lección de referencia, http://localhost:4321/fisica/cinematica/introduccion/posicion-y-marco-de-referencia

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <defs>
+        <marker id="arrow-3b82f6-10" markerWidth="10" markerHeight="10" 
+                refX="9.0" refY="5.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 10,5.0 0,10" fill="#3b82f6"/>
+        </marker></defs>
+  <rect x="0.00" y="0.00" width="500.00" height="500.00" fill="#f8fafc" stroke="none" stroke-width="0" rx="0"/>
+  <text x="250.00" y="30.00" font-family="Inter, sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Vuelta a la Manzana</text>
+  <circle cx="250.00" cy="250.00" r="150.00" fill="none" stroke="#3b82f6" stroke-width="3"  stroke-dasharray="5,5"/>
+  <line x1="230.00" y1="100.00" x2="270.00" y2="100.00" stroke="#3b82f6" stroke-width="3"  marker-end="url(#arrow-3b82f6-10)"/>
+  <text x="250.00" y="80.00" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#3b82f6" text-anchor="middle" dominant-baseline="middle">400 m recorridos</text>
+  <circle cx="400.00" cy="250.00" r="6.00" fill="#22c55e" stroke="#3b82f6" stroke-width="2"  />
+  <text x="415.00" y="250.00" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#22c55e" text-anchor="start" dominant-baseline="middle">Inicio / Fin</text>
+  <text x="250.00" y="250.00" font-family="Inter, sans-serif" font-size="16" font-weight="bold" fill="#ef4444" text-anchor="middle" dominant-baseline="middle">Desplazamiento = 0</text>
+</svg>

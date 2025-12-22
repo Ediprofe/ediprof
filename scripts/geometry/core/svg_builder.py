@@ -43,12 +43,14 @@ class SVGBuilder:
                fill: str = 'none',
                stroke: str = COLORS['primary'],
                stroke_width: float = 2,
-               fill_opacity: float = 1.0) -> 'SVGBuilder':
+               fill_opacity: float = 1.0,
+               dashed: bool = False) -> 'SVGBuilder':
         """Dibuja un círculo."""
         opacity_attr = f'fill-opacity="{fill_opacity}"' if fill_opacity < 1.0 else ''
+        style = f'stroke-dasharray="5,5"' if dashed else ''
         self.elements.append(
             f'<circle cx="{center.x:.2f}" cy="{center.y:.2f}" r="{radius:.2f}" '
-            f'fill="{fill}" stroke="{stroke}" stroke-width="{stroke_width}" {opacity_attr}/>'
+            f'fill="{fill}" stroke="{stroke}" stroke-width="{stroke_width}" {opacity_attr} {style}/>'
         )
         return self
     
@@ -199,7 +201,8 @@ class SVGBuilder:
     def arrow(self, start: Point, end: Point,
               stroke: str = COLORS['primary'],
               stroke_width: float = 2,
-              head_size: float = None) -> 'SVGBuilder':
+              head_size: float = None,
+              dashed: bool = False) -> 'SVGBuilder':
         """Dibuja una flecha con punta triangular escalada al grosor de línea."""
         # Escalar head_size automáticamente si no se especifica
         if head_size is None:
@@ -219,7 +222,7 @@ class SVGBuilder:
         if marker_id not in [d for d in self.defs if marker_id in d]:
             self.defs.append(marker_def)
         
-        self.line(start, end, stroke=stroke, stroke_width=stroke_width, marker_end=marker_id)
+        self.line(start, end, stroke=stroke, stroke_width=stroke_width, dashed=dashed, marker_end=marker_id)
         return self
     
     def right_angle_mark(self, vertex: Point, p1: Point, p2: Point,

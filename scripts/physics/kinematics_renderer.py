@@ -305,6 +305,445 @@ def render_plaza_carlos(output_path: str):
     svg.save(output_path)
     print(f"✅ SVG generado: {output_path}")
 
+def render_tenista(output_path: str):
+    """
+    Renderiza el ejemplo del tenista (1D horizontal).
+    0 -> 12 -> 6
+    """
+    width, height = 600, 250
+    
+    cs = CoordinateSystem(
+        svg_width=width, svg_height=height,
+        x_range=(-2, 14), y_range=(-2, 4),
+        padding=40
+    )
+    
+    svg = SVGBuilder(width, height)
+    svg.rect(0, 0, width, height, fill=COLORS['background'])
+    
+    # Título
+    svg.text("Movimiento del Tenista", Point(width/2, 25), 
+             font_size=18, font_weight="bold", fill=COLORS['text'])
+    
+    # Eje X
+    cs.draw_grid(svg, step=1)
+    cs.draw_axes(svg, show_arrows=True)
+    cs.draw_ticks(svg, step=2, show_labels=True)
+    
+    # Puntos clave
+    p_start = Point(0, 0)
+    p_net = Point(12, 0)
+    p_end = Point(6, 0)
+    
+    svg_start = cs.to_svg(p_start)
+    svg_net = cs.to_svg(p_net)
+    svg_end = cs.to_svg(p_end)
+    
+    # Trayectoria 1: 0 -> 12 (arriba del eje)
+    y_offset_1 = -30 # En SVG y crece hacia abajo, así que negativo es arriba visualmente? No, to_svg invierte Y.
+    # CoordinateSystem.to_svg: svg_y = padding + (y_max - p.y) * scale_y
+    # Si p.y aumenta, svg_y disminuye (sube).
+    # Queremos dibujar flechas desplazadas verticalmente para que no se solapen.
+    
+    # Usaremos coordenadas matemáticas para los puntos de las flechas y luego convertimos
+    p_start_arrow1 = Point(0, 0.5)
+    p_net_arrow1 = Point(12, 0.5)
+    
+    svg_start_arrow1 = cs.to_svg(p_start_arrow1)
+    svg_net_arrow1 = cs.to_svg(p_net_arrow1)
+    
+    svg.arrow(svg_start_arrow1, svg_net_arrow1, stroke=COLORS['primary'], stroke_width=3)
+    svg.text("1. Avanza 12m", Point((svg_start_arrow1.x + svg_net_arrow1.x)/2, svg_start_arrow1.y - 15),
+             font_size=12, fill=COLORS['primary'], font_weight="bold")
+    
+    # Trayectoria 2: 12 -> 6 (más arriba)
+    p_net_arrow2 = Point(12, 1.5)
+    p_end_arrow2 = Point(6, 1.5)
+    
+    svg_net_arrow2 = cs.to_svg(p_net_arrow2)
+    svg_end_arrow2 = cs.to_svg(p_end_arrow2)
+    
+    svg.arrow(svg_net_arrow2, svg_end_arrow2, stroke=COLORS['accent'], stroke_width=3)
+    svg.text("2. Retrocede 6m", Point((svg_net_arrow2.x + svg_end_arrow2.x)/2, svg_net_arrow2.y - 15),
+             font_size=12, fill=COLORS['accent'], font_weight="bold")
+    
+    # Puntos en el eje
+    cs.draw_point(svg, p_start, label="Inicio (0)", color=COLORS['secondary'], show_coords=False, label_offset=(-10, -20))
+    cs.draw_point(svg, p_net, label="Red (12)", color=COLORS['primary'], show_coords=False, label_offset=(-10, -20))
+    cs.draw_point(svg, p_end, label="Fin (6)", color=COLORS['accent'], show_coords=False, label_offset=(-10, -20))
+    
+    svg.save(output_path)
+    print(f"✅ SVG generado: {output_path}")
+
+def render_ascensor(output_path: str):
+    """
+    Renderiza el ejemplo del ascensor (1D vertical).
+    0 -> 20 -> -4
+    """
+    width, height = 350, 600
+    
+    cs = CoordinateSystem(
+        svg_width=width, svg_height=height,
+        x_range=(-4, 6), y_range=(-10, 25),
+        padding=40
+    )
+    
+    svg = SVGBuilder(width, height)
+    svg.rect(0, 0, width, height, fill=COLORS['background'])
+    
+    # Título
+    svg.text("Movimiento del Ascensor", Point(width/2, 25), 
+             font_size=18, font_weight="bold", fill=COLORS['text'])
+    
+    # Eje Y (dibujamos grid solo horizontal)
+    cs.draw_grid(svg, step=5)
+    cs.draw_axes(svg, show_arrows=True)
+    cs.draw_ticks(svg, step=5, show_labels=True)
+    
+    # Trayectoria 1: 0 -> 20 (desplazada a la derecha)
+    p_start = Point(1, 0)
+    p_top = Point(1, 20)
+    
+    svg_start = cs.to_svg(p_start)
+    svg_top = cs.to_svg(p_top)
+    
+    svg.arrow(svg_start, svg_top, stroke=COLORS['primary'], stroke_width=3)
+    svg.text("1. Sube 20m", Point(svg_start.x + 40, (svg_start.y + svg_top.y)/2),
+             font_size=12, fill=COLORS['primary'], font_weight="bold", anchor="start")
+    
+    # Trayectoria 2: 20 -> -4 (desplazada más a la derecha)
+    p_top_2 = Point(2.5, 20)
+    p_end = Point(2.5, -4)
+    
+    svg_top_2 = cs.to_svg(p_top_2)
+    svg_end = cs.to_svg(p_end)
+    
+    svg.arrow(svg_top_2, svg_end, stroke=COLORS['accent'], stroke_width=3)
+    svg.text("2. Baja 24m", Point(svg_top_2.x + 10, (svg_top_2.y + svg_end.y)/2),
+             font_size=12, fill=COLORS['accent'], font_weight="bold", anchor="start")
+    
+    # Puntos clave en el eje
+    cs.draw_point(svg, Point(0, 0), label="Inicio (0)", color=COLORS['secondary'], show_coords=False, label_offset=(-60, 5))
+    cs.draw_point(svg, Point(0, 20), label="Piso 20", color=COLORS['primary'], show_coords=False, label_offset=(-60, 5))
+    cs.draw_point(svg, Point(0, -4), label="Sótano (-4)", color=COLORS['accent'], show_coords=False, label_offset=(-70, 5))
+    
+    svg.save(output_path)
+    print(f"✅ SVG generado: {output_path}")
+
+def render_vuelta_manzana(output_path: str):
+    """
+    Renderiza trayectoria circular.
+    """
+    width, height = 500, 500
+    
+    svg = SVGBuilder(width, height)
+    svg.rect(0, 0, width, height, fill=COLORS['background'])
+    
+    # Título
+    svg.text("Vuelta a la Manzana", Point(width/2, 30), 
+             font_size=18, font_weight="bold", fill=COLORS['text'])
+    
+    center = Point(width/2, height/2)
+    radius = 150
+    
+    # Círculo trayectoria
+    svg.circle(center, radius, stroke=COLORS['primary'], stroke_width=3, fill="none", dashed=True)
+    
+    # Flecha indicando dirección (curva aproximada o simple flecha tangente)
+    # Dibujamos un arco o flechas en el círculo
+    top_point = Point(center.x, center.y - radius)
+    right_point = Point(center.x + radius, center.y)
+    
+    # Flecha curva (simulada con path)
+    # Move to top, arc to right
+    path_d = f"M {center.x} {center.y - radius} A {radius} {radius} 0 0 1 {center.x + radius} {center.y}"
+    # Esto es SVG path manual, SVGBuilder necesita soporte para 'path' o 'arc'
+    # Como SVGBuilder es básico, usaremos líneas o 'arrow' rectas cortas para indicar dirección
+    
+    svg.arrow(Point(center.x - 20, center.y - radius), Point(center.x + 20, center.y - radius), 
+              stroke=COLORS['primary'], stroke_width=3)
+    
+    # Texto
+    svg.text("400 m recorridos", Point(center.x, center.y - radius - 20), 
+             font_size=14, fill=COLORS['primary'], font_weight="bold")
+    
+    # Punto Inicio/Fin
+    start_point = Point(center.x + radius, center.y)
+    svg.circle(start_point, 6, fill=COLORS['success'])
+    svg.text("Inicio / Fin", Point(start_point.x + 15, start_point.y), 
+             font_size=14, fill=COLORS['success'], font_weight="bold", anchor="start")
+    
+    # Etiqueta central
+    svg.text("Desplazamiento = 0", Point(center.x, center.y), 
+             font_size=16, fill=COLORS['danger'], font_weight="bold")
+    
+    svg.save(output_path)
+    print(f"✅ SVG generado: {output_path}")
+
+def render_caminata_2d(output_path: str):
+    """
+    Renderiza caminata 2D: 30m Norte, 40m Este.
+    """
+    width, height = 600, 500
+    
+    # Rango: x(0-50), y(0-40)
+    cs = CoordinateSystem(
+        svg_width=width, svg_height=height,
+        x_range=(-10, 60), y_range=(-10, 50),
+        padding=40
+    )
+    
+    svg = SVGBuilder(width, height)
+    svg.rect(0, 0, width, height, fill=COLORS['background'])
+    
+    # Título
+    svg.text("Caminata en 2D", Point(width/2, 25), 
+             font_size=18, font_weight="bold", fill=COLORS['text'])
+    
+    # Ejes
+    cs.draw_grid(svg, step=10)
+    cs.draw_axes(svg, show_arrows=True)
+    cs.draw_ticks(svg, step=10, show_labels=True)
+    
+    # Puntos
+    p_start = Point(0, 0)
+    p_mid = Point(0, 30)
+    p_end = Point(40, 30)
+    
+    svg_start = cs.to_svg(p_start)
+    svg_mid = cs.to_svg(p_mid)
+    svg_end = cs.to_svg(p_end)
+    
+    # Vectores trayectoria
+    svg.arrow(svg_start, svg_mid, stroke=COLORS['primary'], stroke_width=3)
+    svg.text("30m N", Point(svg_start.x - 30, (svg_start.y + svg_mid.y)/2), 
+             font_size=12, fill=COLORS['primary'], font_weight="bold")
+    
+    svg.arrow(svg_mid, svg_end, stroke=COLORS['primary'], stroke_width=3)
+    svg.text("40m E", Point((svg_mid.x + svg_end.x)/2, svg_mid.y - 15), 
+             font_size=12, fill=COLORS['primary'], font_weight="bold")
+    
+    # Vector desplazamiento
+    svg.arrow(svg_start, svg_end, stroke=COLORS['success'], stroke_width=3, dashed=True)
+    mid_disp = Point((svg_start.x + svg_end.x)/2, (svg_start.y + svg_end.y)/2)
+    svg.text("Δx = 50m", Point(mid_disp.x + 10, mid_disp.y + 20), 
+             font_size=14, fill=COLORS['success'], font_weight="bold")
+    
+    # Puntos
+    cs.draw_point(svg, p_start, label="Inicio", color=COLORS['secondary'], show_coords=True, label_offset=(-20, 20))
+    cs.draw_point(svg, p_end, label="Fin", color=COLORS['danger'], show_coords=True, label_offset=(10, -10))
+    
+    # Triángulo rectángulo auxiliar (para Pitágoras)
+    # Ya está implícito con los ejes, pero podemos resaltarlo si queremos
+    
+    svg.save(output_path)
+    print(f"✅ SVG generado: {output_path}")
+
+def render_atleta_100m(output_path: str):
+    """
+    Renderiza carrera de 100m.
+    """
+    width, height = 600, 200
+    
+    cs = CoordinateSystem(
+        svg_width=width, svg_height=height,
+        x_range=(-10, 110), y_range=(-1, 2),
+        padding=40
+    )
+    
+    svg = SVGBuilder(width, height)
+    svg.rect(0, 0, width, height, fill=COLORS['background'])
+    
+    # Título
+    svg.text("Carrera de 100 metros", Point(width/2, 25), 
+             font_size=18, font_weight="bold", fill=COLORS['text'])
+    
+    # Eje X
+    cs.draw_grid(svg, step=10)
+    cs.draw_axes(svg, show_arrows=True)
+    cs.draw_ticks(svg, step=10, show_labels=True)
+    
+    # Puntos
+    p_start = Point(0, 0)
+    p_end = Point(100, 0)
+    
+    svg_start = cs.to_svg(p_start)
+    svg_end = cs.to_svg(p_end)
+    
+    # Flecha trayectoria
+    p_arrow_start = Point(0, 0.5)
+    p_arrow_end = Point(100, 0.5)
+    
+    svg_arrow_start = cs.to_svg(p_arrow_start)
+    svg_arrow_end = cs.to_svg(p_arrow_end)
+    
+    svg.arrow(svg_arrow_start, svg_arrow_end, stroke=COLORS['primary'], stroke_width=3)
+    svg.text("d = 100 m", Point((svg_arrow_start.x + svg_arrow_end.x)/2, svg_arrow_start.y - 15),
+             font_size=12, fill=COLORS['primary'], font_weight="bold")
+    
+    # Puntos
+    cs.draw_point(svg, p_start, label="Salida", color=COLORS['success'], show_coords=True, label_offset=(-10, -20))
+    cs.draw_point(svg, p_end, label="Meta", color=COLORS['danger'], show_coords=True, label_offset=(-10, -20))
+    
+    svg.save(output_path)
+    print(f"✅ SVG generado: {output_path}")
+
+def render_caminata_ida_vuelta(output_path: str):
+    """
+    Renderiza caminata ida (60m) y vuelta (20m).
+    """
+    width, height = 600, 250
+    
+    cs = CoordinateSystem(
+        svg_width=width, svg_height=height,
+        x_range=(-10, 70), y_range=(-2, 4),
+        padding=40
+    )
+    
+    svg = SVGBuilder(width, height)
+    svg.rect(0, 0, width, height, fill=COLORS['background'])
+    
+    # Título
+    svg.text("Caminata de Ida y Vuelta", Point(width/2, 25), 
+             font_size=18, font_weight="bold", fill=COLORS['text'])
+    
+    # Eje X
+    cs.draw_grid(svg, step=10)
+    cs.draw_axes(svg, show_arrows=True)
+    cs.draw_ticks(svg, step=10, show_labels=True)
+    
+    # Puntos
+    p_start = Point(0, 0)
+    p_turn = Point(60, 0)
+    p_end = Point(40, 0)
+    
+    # Trayectoria 1: Ida (0 -> 60)
+    p_arrow1_start = Point(0, 0.5)
+    p_arrow1_end = Point(60, 0.5)
+    svg_arrow1_start = cs.to_svg(p_arrow1_start)
+    svg_arrow1_end = cs.to_svg(p_arrow1_end)
+    
+    svg.arrow(svg_arrow1_start, svg_arrow1_end, stroke=COLORS['primary'], stroke_width=3)
+    svg.text("1. Ida: 60m (Este)", Point((svg_arrow1_start.x + svg_arrow1_end.x)/2, svg_arrow1_start.y - 15),
+             font_size=12, fill=COLORS['primary'], font_weight="bold")
+    
+    # Trayectoria 2: Vuelta (60 -> 40)
+    p_arrow2_start = Point(60, 1.5)
+    p_arrow2_end = Point(40, 1.5)
+    svg_arrow2_start = cs.to_svg(p_arrow2_start)
+    svg_arrow2_end = cs.to_svg(p_arrow2_end)
+    
+    svg.arrow(svg_arrow2_start, svg_arrow2_end, stroke=COLORS['danger'], stroke_width=3)
+    svg.text("2. Vuelta: 20m (Oeste)", Point((svg_arrow2_start.x + svg_arrow2_end.x)/2, svg_arrow2_start.y - 15),
+             font_size=12, fill=COLORS['danger'], font_weight="bold")
+    
+    # Puntos
+    cs.draw_point(svg, p_start, label="Inicio", color=COLORS['success'], show_coords=True, label_offset=(-10, -20))
+    cs.draw_point(svg, p_turn, label="Giro", color=COLORS['primary'], show_coords=True, label_offset=(-10, -20))
+    cs.draw_point(svg, p_end, label="Fin", color=COLORS['danger'], show_coords=True, label_offset=(-10, -20))
+    
+    svg.save(output_path)
+    print(f"✅ SVG generado: {output_path}")
+
+def render_velodromo(output_path: str):
+    """
+    Renderiza vuelta al velódromo (500m).
+    """
+    width, height = 500, 500
+    
+    svg = SVGBuilder(width, height)
+    svg.rect(0, 0, width, height, fill=COLORS['background'])
+    
+    # Título
+    svg.text("Vuelta al Velódromo", Point(width/2, 30), 
+             font_size=18, font_weight="bold", fill=COLORS['text'])
+    
+    center = Point(width/2, height/2)
+    radius = 150
+    
+    # Círculo trayectoria
+    svg.circle(center, radius, stroke=COLORS['primary'], stroke_width=3, fill="none", dashed=True)
+    
+    # Flechas indicando dirección
+    svg.arrow(Point(center.x - 20, center.y - radius), Point(center.x + 20, center.y - radius), 
+              stroke=COLORS['primary'], stroke_width=3)
+    svg.arrow(Point(center.x + 20, center.y + radius), Point(center.x - 20, center.y + radius), 
+              stroke=COLORS['primary'], stroke_width=3)
+    
+    # Texto
+    svg.text("d = 500 m", Point(center.x, center.y - radius - 20), 
+             font_size=14, fill=COLORS['primary'], font_weight="bold")
+    
+    # Punto Inicio/Fin
+    start_point = Point(center.x + radius, center.y)
+    svg.circle(start_point, 6, fill=COLORS['success'])
+    svg.text("Inicio / Fin", Point(start_point.x + 15, start_point.y), 
+             font_size=14, fill=COLORS['success'], font_weight="bold", anchor="start")
+    
+    # Etiqueta central
+    svg.text("Desplazamiento = 0", Point(center.x, center.y), 
+             font_size=16, fill=COLORS['danger'], font_weight="bold")
+    
+    svg.save(output_path)
+    print(f"✅ SVG generado: {output_path}")
+
+def render_robot_L(output_path: str):
+    """
+    Renderiza movimiento en L del robot (3m N, 4m E).
+    """
+    width, height = 600, 500
+    
+    cs = CoordinateSystem(
+        svg_width=width, svg_height=height,
+        x_range=(-1, 6), y_range=(-1, 5),
+        padding=40
+    )
+    
+    svg = SVGBuilder(width, height)
+    svg.rect(0, 0, width, height, fill=COLORS['background'])
+    
+    # Título
+    svg.text("Movimiento del Robot", Point(width/2, 25), 
+             font_size=18, font_weight="bold", fill=COLORS['text'])
+    
+    # Ejes
+    cs.draw_grid(svg, step=1)
+    cs.draw_axes(svg, show_arrows=True)
+    cs.draw_ticks(svg, step=1, show_labels=True)
+    
+    # Puntos
+    p_start = Point(0, 0)
+    p_mid = Point(0, 3)
+    p_end = Point(4, 3)
+    
+    svg_start = cs.to_svg(p_start)
+    svg_mid = cs.to_svg(p_mid)
+    svg_end = cs.to_svg(p_end)
+    
+    # Vectores trayectoria
+    # 1. Norte (0,0) -> (0,3)
+    svg.arrow(svg_start, svg_mid, stroke=COLORS['primary'], stroke_width=3)
+    svg.text("3m N", Point(svg_start.x - 20, (svg_start.y + svg_mid.y)/2), 
+             font_size=12, fill=COLORS['primary'], font_weight="bold", anchor="end")
+    
+    # 2. Este (0,3) -> (4,3)
+    svg.arrow(svg_mid, svg_end, stroke=COLORS['primary'], stroke_width=3)
+    svg.text("4m E", Point((svg_mid.x + svg_end.x)/2, svg_mid.y - 15), 
+             font_size=12, fill=COLORS['primary'], font_weight="bold")
+    
+    # Vector desplazamiento
+    svg.arrow(svg_start, svg_end, stroke=COLORS['success'], stroke_width=3, dashed=True)
+    mid_disp = Point((svg_start.x + svg_end.x)/2, (svg_start.y + svg_end.y)/2)
+    svg.text("Δx = 5m", Point(mid_disp.x + 10, mid_disp.y + 20), 
+             font_size=14, fill=COLORS['success'], font_weight="bold")
+    
+    # Puntos
+    cs.draw_point(svg, p_start, label="Inicio", color=COLORS['secondary'], show_coords=True, label_offset=(-10, 20))
+    cs.draw_point(svg, p_end, label="Fin", color=COLORS['danger'], show_coords=True, label_offset=(10, -10))
+    
+    svg.save(output_path)
+    print(f"✅ SVG generado: {output_path}")
+
 if __name__ == "__main__":
     import argparse
     
@@ -354,5 +793,21 @@ if __name__ == "__main__":
         render_plaza_ana(args.output)
     elif args.type == "plaza_carlos":
         render_plaza_carlos(args.output)
+    elif args.type == "tenista":
+        render_tenista(args.output)
+    elif args.type == "ascensor":
+        render_ascensor(args.output)
+    elif args.type == "vuelta_manzana":
+        render_vuelta_manzana(args.output)
+    elif args.type == "caminata_2d":
+        render_caminata_2d(args.output)
+    elif args.type == "atleta_100m":
+        render_atleta_100m(args.output)
+    elif args.type == "caminata_ida_vuelta":
+        render_caminata_ida_vuelta(args.output)
+    elif args.type == "velodromo":
+        render_velodromo(args.output)
+    elif args.type == "robot_L":
+        render_robot_L(args.output)
     else:
         print(f"Tipo desconocido: {args.type}")

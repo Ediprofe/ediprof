@@ -90,6 +90,10 @@ COLORS = {
     'fill_yellow_light': '#fef08a',
     'fill_green_light': '#bbf7d0',
     'fill_blue_light': '#bfdbfe',
+    
+    # === ALIAS SEMÁNTICOS ADICIONALES ===
+    'success': '#22c55e',
+    'danger': '#ef4444',
 }
 
 
