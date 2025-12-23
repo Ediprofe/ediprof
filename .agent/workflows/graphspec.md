@@ -471,3 +471,4 @@ proyecto/
 - [GeometrySpec](./geometry-exact.md) - Para geometría exacta
 - [Rough.js](./roughjs.md) - Para diagramas ilustrativos
 
+

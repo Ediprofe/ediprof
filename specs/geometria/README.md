@@ -27,3 +27,4 @@ python scripts/geometry/renderer.py \
 
 Ver `.agent/workflows/geometry-exact.md` para documentación completa del formato.
 
+
