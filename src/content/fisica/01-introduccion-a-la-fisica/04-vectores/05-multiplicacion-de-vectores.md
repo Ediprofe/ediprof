@@ -44,9 +44,7 @@ El nuevo vector $\vec{B}$:
 
 ### Visualización:
 
-<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <img src="/images/fisica/vectores/escalado-vector.svg" alt="Multiplicación de vector por escalar" style="width: 100%; height: auto;" />
-</div>
+![alt text](/public/images/fisica/vectores/vector-por-escalar.png)
 
 > 💡 Observa cómo el vector **2A⃗** es el doble de largo, **0.5A⃗** es la mitad, y **-A⃗** tiene sentido opuesto.
 

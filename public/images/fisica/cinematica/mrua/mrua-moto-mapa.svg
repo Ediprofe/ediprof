@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 250">
+  <defs>
+        <marker id="arrow-ef4444-10" markerWidth="10" markerHeight="10" 
+                refX="9.0" refY="5.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 10,5.0 0,10" fill="#ef4444"/>
+        </marker>
+
+        <marker id="arrow-22c55e-10" markerWidth="10" markerHeight="10" 
+                refX="9.0" refY="5.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 10,5.0 0,10" fill="#22c55e"/>
+        </marker>
+
+        <marker id="arrow-ef4444-10" markerWidth="10" markerHeight="10" 
+                refX="9.0" refY="5.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 10,5.0 0,10" fill="#ef4444"/>
+        </marker>
+
+        <marker id="arrow-22c55e-10" markerWidth="10" markerHeight="10" 
+                refX="9.0" refY="5.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 10,5.0 0,10" fill="#22c55e"/>
+        </marker>
+
+        <marker id="arrow-ef4444-10" markerWidth="10" markerHeight="10" 
+                refX="9.0" refY="5.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 10,5.0 0,10" fill="#ef4444"/>
+        </marker>
+
+        <marker id="arrow-22c55e-10" markerWidth="10" markerHeight="10" 
+                refX="9.0" refY="5.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 10,5.0 0,10" fill="#22c55e"/>
+        </marker>
+
+        <marker id="arrow-ef4444-10" markerWidth="10" markerHeight="10" 
+                refX="9.0" refY="5.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 10,5.0 0,10" fill="#ef4444"/>
+        </marker></defs>
+  <rect x="0.00" y="0.00" width="700.00" height="250.00" fill="#f8fafc" stroke="none" stroke-width="0" rx="0"/>
+  <text x="350.00" y="25.00" font-family="Inter, sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Mapa de Movimiento (a = 2 m/s²)</text>
+  <line x1="40.00" y1="176.00" x2="660.00" y2="176.00" stroke="#64748b" stroke-width="1"  />
+  <circle cx="91.67" cy="176.00" r="5" fill="#3b82f6" />
+  <text x="91.67" y="136.00" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#64748b" text-anchor="middle" dominant-baseline="middle">t=0s</text>
+  <text x="91.67" y="201.00" font-family="Inter, sans-serif" font-size="12" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">x=0m</text>
+  <line x1="91.67" y1="221.00" x2="143.33" y2="221.00" stroke="#ef4444" stroke-width="2"  marker-end="url(#arrow-ef4444-10)"/>
+  <text x="117.50" y="236.00" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#ef4444" text-anchor="middle" dominant-baseline="middle">a=2</text>
+  <circle cx="143.33" cy="176.00" r="5" fill="#3b82f6" />
+  <text x="143.33" y="136.00" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#64748b" text-anchor="middle" dominant-baseline="middle">t=1s</text>
+  <text x="143.33" y="201.00" font-family="Inter, sans-serif" font-size="12" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">x=1m</text>
+  <line x1="143.33" y1="161.00" x2="195.00" y2="161.00" stroke="#22c55e" stroke-width="3"  marker-end="url(#arrow-22c55e-10)"/>
+  <text x="169.17" y="151.00" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#22c55e" text-anchor="middle" dominant-baseline="middle">v=2</text>
+  <line x1="143.33" y1="221.00" x2="195.00" y2="221.00" stroke="#ef4444" stroke-width="2"  marker-end="url(#arrow-ef4444-10)"/>
+  <text x="169.17" y="236.00" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#ef4444" text-anchor="middle" dominant-baseline="middle">a=2</text>
+  <circle cx="298.33" cy="176.00" r="5" fill="#3b82f6" />
+  <text x="298.33" y="136.00" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#64748b" text-anchor="middle" dominant-baseline="middle">t=2s</text>
+  <text x="298.33" y="201.00" font-family="Inter, sans-serif" font-size="12" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">x=4m</text>
+  <line x1="298.33" y1="161.00" x2="401.67" y2="161.00" stroke="#22c55e" stroke-width="3"  marker-end="url(#arrow-22c55e-10)"/>
+  <text x="350.00" y="151.00" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#22c55e" text-anchor="middle" dominant-baseline="middle">v=4</text>
+  <line x1="298.33" y1="221.00" x2="350.00" y2="221.00" stroke="#ef4444" stroke-width="2"  marker-end="url(#arrow-ef4444-10)"/>
+  <text x="324.17" y="236.00" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#ef4444" text-anchor="middle" dominant-baseline="middle">a=2</text>
+  <circle cx="556.67" cy="176.00" r="5" fill="#3b82f6" />
+  <text x="556.67" y="136.00" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#64748b" text-anchor="middle" dominant-baseline="middle">t=3s</text>
+  <text x="556.67" y="201.00" font-family="Inter, sans-serif" font-size="12" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">x=9m</text>
+  <line x1="556.67" y1="161.00" x2="711.67" y2="161.00" stroke="#22c55e" stroke-width="3"  marker-end="url(#arrow-22c55e-10)"/>
+  <text x="634.17" y="151.00" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#22c55e" text-anchor="middle" dominant-baseline="middle">v=6</text>
+  <line x1="556.67" y1="221.00" x2="608.33" y2="221.00" stroke="#ef4444" stroke-width="2"  marker-end="url(#arrow-ef4444-10)"/>
+  <text x="582.50" y="236.00" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#ef4444" text-anchor="middle" dominant-baseline="middle">a=2</text>
+</svg>

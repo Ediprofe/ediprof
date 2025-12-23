@@ -164,16 +164,17 @@ ediprof/
 
 1. Nombrar con prefijo `t-`: `t-mi-dibujo.png`
 2. Guardar en: `public/images/{materia}/t-mi-dibujo.png`
-3. Convertir archivo a `.mdx` (renombrar de `.md` a `.mdx`)
-4. Agregar imports al inicio:
+3. Insertar con sintaxis estándar Markdown:
 
-```mdx
-import { Image } from 'astro:assets';
-import miDibujo from '/public/images/quimica/t-mi-dibujo.png';
+```markdown
+![Descripción](/images/quimica/t-mi-dibujo.png)
+```
 
-# Título de la lección
-
-<Image src={miDibujo} alt="Descripción" format="webp" />
+Opcional: Para centrado y estilos, usar HTML dentro del Markdown:
+```html
+<div class="image-card">
+  <img src="/images/quimica/t-mi-dibujo.png" alt="Descripción" />
+</div>
 ```
 
 ---
@@ -246,7 +247,7 @@ npm run dev
 ### Una imagen no carga
 1. Verificar que la ruta sea correcta (case-sensitive)
 2. Verificar que el archivo exista en `public/images/...`
-3. Si es `.mdx`, verificar que el import esté correcto
+3. Verificar que la extensión del archivo sea correcta (.png, .jpg)
 
 ### LaTeX no renderiza
 - Verificar que uses `$...$` (inline) o `$$...$$` (bloque)
@@ -275,7 +276,7 @@ Configuradas en `src/config/materias.ts`:
 1. **Para pedir contenido nuevo:** Escribe en `PETICION.md` y comparte con el agente
 2. **Para revisar antes de publicar:** Usa las URLs de `/print/` y `/print-tema/`
 3. **Para exportar guías completas:** Usa el script de PDF con `--tema`
-4. **Para agregar dibujos de tablet:** Siempre usa `.mdx` con `<Image>` para optimización automática
+4. **Para agregar dibujos de tablet:** Usa sintaxis estándar Markdown
 
 ---
 

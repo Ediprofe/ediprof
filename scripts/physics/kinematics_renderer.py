@@ -744,6 +744,164 @@ def render_robot_L(output_path: str):
     svg.save(output_path)
     print(f"✅ SVG generado: {output_path}")
 
+def render_mru_posicion_tiempo(output_path: str):
+    """
+    Renderiza gráfico Posición vs Tiempo para MRU (robot).
+    t: 0, 1, 2, 3
+    x: 0, 4, 8, 12
+    """
+    width, height = 600, 400
+    
+    # Rango t (0-4), x (0-14)
+    cs = CoordinateSystem(
+        svg_width=width, svg_height=height,
+        x_range=(-0.5, 4.5), y_range=(-2, 14),
+        padding=50
+    )
+    
+    svg = SVGBuilder(width, height)
+    svg.rect(0, 0, width, height, fill=COLORS['background'])
+    
+    # Título
+    svg.text("Posición del robot vs Tiempo", Point(width/2, 25), 
+             font_size=18, font_weight="bold", fill=COLORS['text'])
+    
+    # Ejes
+    cs.draw_grid(svg, step=1)
+    
+    # Eje X - Tiempo
+    x_axis_end = cs.to_svg(Point(4.5, 0))
+    y_axis_end = cs.to_svg(Point(0, 14))
+    
+    cs.draw_axes(svg, show_arrows=True)
+    
+    # Etiquetas ejes
+    svg.text("Tiempo (s)", Point(x_axis_end.x - 40, x_axis_end.y + 35), 
+             font_size=14, font_weight="bold", fill=COLORS['text'])
+    svg.text("Posición (m)", Point(y_axis_end.x, y_axis_end.y - 20), 
+             font_size=14, font_weight="bold", fill=COLORS['text'])
+    
+    # Ticks customizados
+    # X: 0, 1, 2, 3, 4
+    for t in range(5):
+        pt = cs.to_svg(Point(t, 0))
+        svg.line(Point(pt.x, pt.y-5), Point(pt.x, pt.y+5), stroke=COLORS['axis'], stroke_width=1)
+        svg.text(str(t), Point(pt.x, pt.y+20), font_size=12, fill=COLORS['text_light'])
+        
+    # Y: 0, 2, 4, 6, 8, 10, 12, 14
+    for x in range(0, 15, 2):
+        if x == 0: continue
+        pt = cs.to_svg(Point(0, x))
+        svg.line(Point(pt.x-5, pt.y), Point(pt.x+5, pt.y), stroke=COLORS['axis'], stroke_width=1)
+        svg.text(str(x), Point(pt.x-20, pt.y+5), font_size=12, fill=COLORS['text_light'], anchor="end")
+
+    # Datos
+    points = [
+        (0, 0),
+        (1, 4),
+        (2, 8),
+        (3, 12)
+    ]
+    
+    # Línea
+    svg_points = [cs.to_svg(Point(t, x)) for t, x in points]
+    for i in range(len(svg_points) - 1):
+        svg.line(svg_points[i], svg_points[i+1], stroke=COLORS['primary'], stroke_width=3)
+        
+    # Puntos
+    for i, (t, x) in enumerate(points):
+        pt = svg_points[i]
+        cs.draw_point(svg, Point(t, x), color=COLORS['primary'], show_coords=False)
+        # Etiqueta valor
+        svg.text(f"{x}m", Point(pt.x, pt.y - 15), font_size=12, fill=COLORS['primary'], font_weight="bold")
+
+    svg.save(output_path)
+    print(f"✅ SVG generado: {output_path}")
+
+def render_mrua_moto(output_path: str):
+    """
+    Renderiza mapa de movimiento para MRUA (a=2 m/s^2).
+    t=0 (0m), t=1 (1m), t=2 (4m), t=3 (9m)
+    """
+    width, height = 700, 250
+    
+    # Rango x: 0 a 10m.
+    cs = CoordinateSystem(
+        svg_width=width, svg_height=height,
+        x_range=(-1, 11), y_range=(-1, 4),
+        padding=40
+    )
+    
+    svg = SVGBuilder(width, height)
+    svg.rect(0, 0, width, height, fill=COLORS['background'])
+    
+    # Título
+    svg.text("Mapa de Movimiento (a = 2 m/s²)", Point(width/2, 25), 
+             font_size=18, font_weight="bold", fill=COLORS['text'])
+    
+    # Eje X (Suelo)
+    # Usamos coordinate system para dibujar el eje
+    start_line = cs.to_svg(Point(0, 0))
+    end_line = cs.to_svg(Point(10, 0))
+    # Extendemos un poco visualmente
+    svg.line(Point(40, start_line.y), Point(width-40, start_line.y), stroke=COLORS['axis'], stroke_width=1)
+    
+    # Datos
+    # t, x, v
+    data = [
+        (0, 0, 0),
+        (1, 1, 2),
+        (2, 4, 4),
+        (3, 9, 6)
+    ]
+    
+    # Dibujar cada instante
+    for t, x, v in data:
+        # Posición en SVG
+        pt = cs.to_svg(Point(x, 0))
+        
+        # Dibujar Moto (Punto)
+        cs.draw_point(svg, Point(x, 0), color=COLORS['primary'], show_coords=False)
+        
+        # Etiqueta Tiempo (Arriba)
+        svg.text(f"t={t}s", Point(pt.x, pt.y - 40), font_size=12, fill=COLORS['text_light'], font_weight="bold")
+        
+        # Etiqueta Posición (Abajo del eje)
+        svg.text(f"x={x}m", Point(pt.x, pt.y + 25), font_size=12, fill=COLORS['text_light'])
+        
+        # Vector Velocidad (Verde) - Escala visual
+        if v > 0:
+            v_len = v * 0.5 # Factor de escala
+            # Calculamos punto final en unidades SVG directamente para controlar longitud visual
+            # 1 unidad de coord system = scale_x pixeles
+            scale_x = cs.scale_x
+            pixel_len = v_len * scale_x
+            
+            arrow_y_offset = -15 
+            p_start = Point(pt.x, pt.y + arrow_y_offset)
+            p_end = Point(pt.x + pixel_len, pt.y + arrow_y_offset)
+            
+            svg.arrow(p_start, p_end, stroke=COLORS['success'], stroke_width=3)
+            svg.text(f"v={v}", Point((p_start.x + p_end.x)/2, p_start.y - 10), 
+                     font_size=10, fill=COLORS['success'], font_weight="bold")
+            
+        # Vector Aceleración (Naranja) - Constante
+        # Dibujar debajo de la posición
+        a_len = 2 * 0.5
+        scale_x = cs.scale_x
+        pixel_len_a = a_len * scale_x
+        
+        arrow_y_offset_a = 45
+        p_start_a = Point(pt.x, pt.y + arrow_y_offset_a)
+        p_end_a = Point(pt.x + pixel_len_a, pt.y + arrow_y_offset_a)
+        
+        svg.arrow(p_start_a, p_end_a, stroke=COLORS['danger'], stroke_width=2)
+        svg.text("a=2", Point((p_start_a.x + p_end_a.x)/2, p_start_a.y + 15), 
+                 font_size=10, fill=COLORS['danger'], font_weight="bold")
+
+    svg.save(output_path)
+    print(f"✅ SVG generado: {output_path}")
+
 if __name__ == "__main__":
     import argparse
     
@@ -809,5 +967,9 @@ if __name__ == "__main__":
         render_velodromo(args.output)
     elif args.type == "robot_L":
         render_robot_L(args.output)
+    elif args.type == "mru_posicion_tiempo":
+        render_mru_posicion_tiempo(args.output)
+    elif args.type == "mrua_moto":
+        render_mrua_moto(args.output)
     else:
         print(f"Tipo desconocido: {args.type}")

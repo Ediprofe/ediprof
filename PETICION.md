@@ -135,7 +135,7 @@ bash scripts/verify-svg-rendering.sh
 | Hardcodear colores hex | Usar `COLORS` de core |
 | `max-width` fijo en SVG | Usar `width: 100%` |
 | LaTeX en títulos | Usar texto plano |
-| `![](img)` dentro de `<div>` | Usar `<img src="">` |
+| Usar tags HTML/JSX para imágenes | Usar Markdown `![alt](path)` |
 | Crear `_meta.json` sin `name` | Siempre incluir `name` |
 | Definir tipos localmente | Importar de `types/content` |
 
@@ -164,10 +164,65 @@ Situaciones que requieren confirmación:
 
 # 📝 PETICIÓN DEL USUARIO
 
-http://localhost:4321/fisica/cinematica/escalares-y-vectores/rapidez-y-velocidad
+http://localhost:4321/fisica/cinematica/mrua/introduccion
 
-En esta lección por favor agrega las ilustraciones correspondientes, reemplazando las que ya están, por el formato svg con spec, renderers y todo eso o bueno lo que sea necesario.
+quiero que para esta lección tengas en cuenta un análisis por ejemplo en el caso de a = 2m/s2, que se encuentre la posición, durante los primeros tres egundos por ejemplo, y que muestre un análsisi muy pedagógico efectivo, que considere esto:
+Entendido, vamos a calcular la posición paso a paso para un móvil que parte del reposo () con una aceleración constante de  durante los primeros 2 segundos.
 
-En la parte de los ejercicios de práctica, por favor que sean 5 ejercicios de práctica.
+### 1. Razonamiento por intervalos (Método Inductivo)
 
-Las ilustraciones agrégalas con el mismo estilo del proyecto, no es a replicar a las que ya están con hechas con una librería de javascript, es a mantener el estilo del proyecto. Toma esta lección de referencia, http://localhost:4321/fisica/cinematica/introduccion/posicion-y-marco-de-referencia
+En el **MRUA**, la velocidad cambia uniformemente, lo que hace que la distancia recorrida en cada segundo sea distinta.
+
+* **Segundo 1 (de  a ):**
+* La velocidad inicial es  y la final es  (aumentó  unidades por la aceleración).
+* La velocidad promedio en este intervalo es .
+* En 1 segundo a  promedio, recorre ****.
+* **Posición a :** .
+
+
+* **Segundo 2 (de  a ):**
+* Empieza el segundo a  y termina a  (sumamos otros  de aceleración).
+* La velocidad promedio en este intervalo es .
+* En este segundo recorre ****.
+* **Posición a :** Posición anterior () + tramo nuevo () = ****.
+
+
+
+---
+
+### 2. Comprobación con la Fórmula
+
+La fórmula de posición para objetos que parten del origen y del reposo () es:
+
+Sustituimos :
+
+* **Para :**
+
+
+* **Para :**
+
+
+
+---
+
+### 🔑 Resumen de Resultados (Cheat Sheet)
+
+| Tiempo () | Velocidad () | Razonamiento (Tramo) | Posición Final () |
+| --- | --- | --- | --- |
+| **** |  | Inicio | **** |
+| **** |  |  | **** |
+| **** |  |  | **** |
+
+```markdown
+      t = 0s       t = 1s             t = 2s
+        ●────────────●──────────────────●
+       0m           1m                 4m
+        [  1 metro  ] [   3 metros     ]
+
+```
+
+> 💡 **Tip del Profe:** Nota que las distancias recorridas en cada segundo consecutivo () siempre siguen la secuencia de los **números impares** cuando la aceleración es constante y se parte del reposo.
+
+¿Te gustaría que grafiquemos esto para ver cómo se forma la curva (parábola) en el plano cartesiano?
+
+y puedes hacerlo al ginal, o de la manera que más progresiva lo consideres tú. ADELANTE. LUEGO CUANDO TENGAMOS LA LECCIÓN COMPLETA, NOS ENCARGAMOS DE LAS IMÁGENES.

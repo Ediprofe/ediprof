@@ -681,92 +681,62 @@ public/images/
    • Ejemplo: /images/quimica/3d-orbital-p.png
 ```
 
-### 📱 Workflow: Imágenes de Tablet (MDX + Astro Image)
+### 📱 Workflow: Imágenes de Tablet (PNG/WebP)
 
-> **Optimización automática:** Astro convierte PNG → WebP (~75% reducción) al hacer build.
+> **Nota:** Usamos sintaxis estándar de Markdown para todas las imágenes estáticas (PNG, WebP, SVG).
 
 #### Flujo de Trabajo Paso a Paso
 
-```
-┌─────────────────────────────────────────────────────────────────────────┐
-│                    FLUJO: IMAGEN DE TABLET → WEB                        │
-├─────────────────────────────────────────────────────────────────────────┤
-│                                                                         │
-│  1️⃣ DIBUJAR                                                            │
-│     └─→ En tu tablet, creas la ilustración                             │
-│                                                                         │
-│  2️⃣ EXPORTAR                                                           │
-│     └─→ Guardas como PNG                                               │
-│                                                                         │
-│  3️⃣ NOMBRAR CON PREFIJO                                                │
-│     └─→ t-nombre-descriptivo.png                                       │
-│         Ejemplo: t-cambios-de-fase.png                                 │
-│                                                                         │
-│  4️⃣ UBICAR EN CARPETA                                                  │
-│     └─→ public/images/{materia}/t-nombre.png                           │
-│         Ejemplo: public/images/quimica/t-cambios-de-fase.png           │
-│                                                                         │
-│  5️⃣ CONVERTIR ARCHIVO A MDX                                            │
-│     └─→ Renombrar: leccion.md → leccion.mdx                            │
-│                                                                         │
-│  6️⃣ AGREGAR IMPORTS AL INICIO                                          │
-│     └─→ import { Image } from 'astro:assets';                          │
-│         import nombreVar from '/public/images/.../t-nombre.png';       │
-│                                                                         │
-│  7️⃣ USAR COMPONENTE IMAGE                                              │
-│     └─→ <Image src={nombreVar} alt="..." format="webp" />              │
-│                                                                         │
-│  8️⃣ BUILD/DEPLOY                                                       │
-│     └─→ Astro optimiza automáticamente: PNG → WebP                     │
-│                                                                         │
-└─────────────────────────────────────────────────────────────────────────┘
+```mermaid
+graph TD
+    A[Dibujar en Tablet] -->|Exportar| B(Archivo PNG)
+    B -->|Renombrar| C{Convención}
+    C -->|t-nombre.png| D[Carpeta public]
+    D -->|Markdown estándar| E[Lección .md]
 ```
 
-#### Cuándo usar `.md` vs `.mdx`
+1. **DIBUJAR**:
+   - Usar fondo blanco o transparente
+   - Exportar como **PNG** (calidad alta)
 
-| Contenido del archivo | Formato |
-|-----------------------|---------|
-| Solo texto, LaTeX, tablas, SVGs | `.md` |
-| Tiene al menos 1 imagen de tablet | `.mdx` |
+2. **RENOMBRAR**:
+   - Prefijo `t-` (tablet)
+   - Kebab-case (minúsculas y guiones)
+   - Ejemplo: `t-ciclo-agua.png`
 
-#### Ejemplo Completo de Archivo `.mdx`
+3. **UBICAR EN CARPETA**:
+   - Ruta: `public/images/{materia}/t-nombre.png`
+   - Ejemplo: `public/images/quimica/t-cambios-de-fase.png`
 
-```mdx
-import { Image } from 'astro:assets';
-import cambiosFase from '/public/images/quimica/t-cambios-de-fase.png';
-import estadosMateria from '/public/images/quimica/t-estados-materia.png';
+4. **INSERTAR EN MARKDOWN**:
+   - Usar sintaxis estándar de Markdown
+   - Ruta absoluta desde la raíz del sitio (sin `/public`)
+   - **Sintaxis:** `![Descripción detallada](/images/quimica/t-cambios-de-fase.png)`
 
+#### Ejemplo Completo
+
+```markdown
 # Título de la Lección
 
 Contenido normal en markdown...
 
 ## Sección con imagen
 
-<Image src={cambiosFase} alt="Diagrama de cambios de fase" format="webp" />
+<div class="image-card">
+  <img src="/images/quimica/t-cambios-de-fase.png" alt="Diagrama de cambios de fase" />
+</div>
 
-## Otra sección
-
-Más contenido...
-
-<Image src={estadosMateria} alt="Estados de la materia" format="webp" />
+> **Nota:** Para mejor control de estilos (centrado, bordes, modo oscuro), recomendamos envolver la imagen en un `<div class="image-card">` con una etiqueta `<img>`, pero la sintaxis estándar `![alt](/path)` también es válida si no se requieren estilos especiales.
 ```
 
 #### Reglas
 
 | ✅ SIEMPRE | ❌ NUNCA |
 |-----------|----------|
-| Archivo `.mdx` si tiene imagen de tablet | Usar `![alt](url)` para imágenes de tablet |
-| Import al inicio, antes del contenido | Olvidar `format="webp"` |
-| Prefijo `t-` en el nombre del PNG | Mezclar rutas hardcodeadas con imports |
-| Nombre de variable en camelCase | Usar mayúsculas en nombres de archivo |
-| Alt text descriptivo | |
-
-#### IDE: Extensión requerida
-
-Para syntax highlighting de archivos `.mdx` en VS Code:
-```bash
-code --install-extension unifiedjs.vscode-mdx
-```
+| Archivo `.md` (Markdown estándar) | Convertir a `.mdx` solo por una imagen |
+| Ruta relativa a web root (`/images/...`) | Ruta de sistema (`/public/images/...`) en el src |
+| Prefijo `t-` en el nombre del PNG | Importar imágenes como variables JS |
+| Alt text descriptivo | Usar componente `<Image />` de Astro |
 
 ---
 
@@ -860,7 +830,7 @@ python3 scripts/mindmap/mindmap_renderer.py \
 ├─── ✏️ ¿Es un DIAGRAMA ilustrativo/conceptual?
 │    │   (situaciones físicas, modelos, procesos, diagramas)
 │    │
-│    └─── SÍ → PNG DE TABLET (dibujo manual → .mdx)
+│    └─── SÍ → PNG DE TABLET (dibujo manual → .md)
 │         • Situaciones físicas (bloques, poleas, planos)
 │         • Modelos atómicos, partículas, estados de materia
 │         • Equipos de laboratorio, procesos químicos
@@ -1021,12 +991,11 @@ label_y = O.y + 45 * math.sin(bisector_angle)
    • Dibujar en tablet y exportar como PNG
    • Nombrar con prefijo t-: t-nombre-descriptivo.png
    • Guardar en: public/images/{materia}/t-nombre.png
-   • Convertir archivo .md → .mdx
-   • Usar componente <Image> de Astro
+   • Usar markdown estándar: `![alt](/images/...)`
 
 ❌ NUNCA:
    • Usar código inline para diagramas conceptuales
-   • Olvidar format="webp" en el componente Image
+   • Convertir a .mdx solo para usar una imagen
 ```
 
 📁 Referencia: Sección "Workflow: Imágenes de Tablet"
@@ -2041,7 +2010,7 @@ PREGUNTA: ¿El tipo de ilustración que necesito ya tiene renderer?
 ├── Tabla periódica → chemistry/periodic_table_renderer.py ✅
 ├── Tendencias periódicas → chemistry/trend_renderer.py ✅
 ├── Gráficas de funciones → GraphSpec (inline) ✅
-├── Diagramas conceptuales → PNG de tablet (.mdx) ✅
+├── Diagramas conceptuales → PNG de tablet (.md) ✅
 │
 └── ¿NO existe? → Seguir esta guía para CREAR uno nuevo
 ```

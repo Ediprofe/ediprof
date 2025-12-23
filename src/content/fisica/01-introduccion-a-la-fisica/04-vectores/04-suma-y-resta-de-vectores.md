@@ -27,25 +27,21 @@ Para responder, necesitas **sumar los vectores** de velocidad. ¡Eso es lo que a
 
 ## ➡️ **Caso 1: Vectores en la misma línea**
 
-### a) Mismo sentido
+### a) Mismo sentido (suma)
 
 Si dos vectores apuntan en el **mismo sentido**, la magnitud del resultante es la **suma**:
 
-<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <img src="/images/fisica/vectores/suma-linea-mismo.svg" alt="Suma de vectores en el mismo sentido" style="width: 100%; height: auto;" />
-</div>
+![alt text](/public/images/fisica/vectores/suma.png)
 
 $$
 |\vec{R}| = |\vec{A}| + |\vec{B}| = 3 + 2 = 5
 $$
 
-### b) Sentidos opuestos
+### b) Sentidos opuestos (resta)
 
 Si apuntan en **sentidos opuestos**, la magnitud del resultante es la **diferencia**:
 
-<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <img src="/images/fisica/vectores/suma-linea-opuesto.svg" alt="Suma de vectores en sentidos opuestos" style="width: 100%; height: auto;" />
-</div>
+![alt text](/public/images/fisica/vectores/resta.png)
 
 $$
 |\vec{R}| = |\vec{A}| - |\vec{B}| = 5 - 2 = 3
@@ -64,12 +60,12 @@ Cuando los vectores **no están en línea**, usamos métodos gráficos.
 1. Dibuja el vector $\vec{A}$ desde el origen
 2. Desde la **punta de A**, dibuja el vector $\vec{B}$
 3. El resultante $\vec{R}$ va desde el **origen** hasta la **punta de B**
-
-<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <img src="/images/fisica/vectores/suma-triangulo.svg" alt="Método del triángulo para suma de vectores" style="width: 100%; height: auto;" />
-</div>
-
-> 💡 **Analogía:** Es como caminar. Primero caminas en dirección A, luego en dirección B. El resultante es el camino directo desde donde empezaste hasta donde terminaste.
+ 
+ <div class="image-card">
+   <img src="/images/fisica/vectores/suma-triangulo.svg" alt="Método del triángulo para suma de vectores" />
+ </div>
+ 
+ > 💡 **Analogía:** Es como caminar. Primero caminas en dirección A, luego en dirección B. El resultante es el camino directo desde donde empezaste hasta donde terminaste.
 
 ---
 
@@ -83,8 +79,8 @@ Otra forma de sumar vectores:
 2. Completa el **paralelogramo** usando los vectores como lados
 3. La **diagonal** desde el origen es el vector resultante
 
-<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <img src="/images/fisica/vectores/suma-paralelogramo.svg" alt="Método del paralelogramo para suma de vectores" style="width: 100%; height: auto;" />
+<div class="image-card">
+  <img src="/images/fisica/vectores/suma-paralelogramo.svg" alt="Método del paralelogramo para suma de vectores" />
 </div>
 
 > 💡 Ambos métodos (triángulo y paralelogramo) dan el **mismo resultado**.
