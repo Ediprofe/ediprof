@@ -112,7 +112,7 @@ Cuando dejas caer algo, su velocidad aumenta constantemente porque la Tierra lo 
 En el mundo real, esta aceleración es de aproximadamente $9.8\,\mathrm{m/s^2}$. Sin embargo, para que puedas hacer los cálculos **mentalmente** y entender la lógica sin distraerte con decimales, en este ejemplo vamos a redondearla.
 
 **Asumiremos:** $g \approx 10\,\mathrm{m/s^2}$.
-*(Esto significa que cada segundo que pasa, el objeto gana $10\,\mathrm{m/s}$ de velocidad).*
+*(Esto significa que cada segundo que pasa mientras cae, el objeto gana $10\,\mathrm{m/s}$ de velocidad).*
 
 **El Reto:** Calcular cuánto ha caído la piedra en los primeros 3 segundos, **sin usar fórmulas de memoria**, solo usando la lógica inductiva.
 
@@ -138,6 +138,16 @@ La clave es entender que **Distancia = Velocidad Promedio $\times$ Tiempo**.
     *   Distancia recorrida: $25\,\mathrm{m/s} \times 1\,\mathrm{s} = \mathbf{25\,m}$.
     *   **Posición Total:** $20 \text{ (acumulado)} + 25 \text{ (nuevo)} = \boxed{45\,\mathrm{m}}$.
 
+#### **Resumen Visual del Movimiento**
+
+| Tiempo ($t$) | Velocidad ($v$) | Velocidad Promedio (Tramo) | Distancia Recorrida (Tramo) | Posición Total ($y$) |
+| :--- | :--- | :--- | :--- | :--- |
+| **0 s** | $0\,\mathrm{m/s}$ | — | — | **0 m** |
+| **1 s** | $10\,\mathrm{m/s}$ | $5\,\mathrm{m/s}$ | $5\,\mathrm{m}$ | **5 m** |
+| **2 s** | $20\,\mathrm{m/s}$ | $15\,\mathrm{m/s}$ | $15\,\mathrm{m}$ | **20 m** |
+| **3 s** | $30\,\mathrm{m/s}$ | $25\,\mathrm{m/s}$ | $25\,\mathrm{m}$ | **45 m** |
+
+![Análisis - MRUA en caída libre](/public/images/fisica/cinematica/mrua/mrua-analisis-edificio.png)
 ---
 
 #### **2. El "Secreto" de la Fórmula ($d = \frac{1}{2}at^2$)**
