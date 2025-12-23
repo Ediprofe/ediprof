@@ -1,6 +1,3 @@
-import { Image } from 'astro:assets';
-import fisicaRamas from '/public/images/fisica/introduccion/t-ramas-de-la-fisica.png';
-
 # **La física y sus ramas**
 
 La **física** es la ciencia que estudia la materia, la energía y las interacciones que ocurren entre ellas.
@@ -141,7 +138,8 @@ d) **M** - Mecánica cuántica (emisión estimulada)
 
 ## 🔑 Resumen
 
-<Image src={fisicaRamas} alt="Las ramas de la física" format="webp" />
+
+![La física y sus ramas](/images/fisica/introduccion/ramas-de-la-fisica.png)
 
 > La física es una **ciencia fundamental** que nos permite comprender las reglas del universo,
 > desde el movimiento de una pelota hasta el comportamiento de las estrellas y partículas subatómicas.

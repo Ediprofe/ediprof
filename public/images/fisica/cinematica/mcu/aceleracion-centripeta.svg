@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400">
+  <defs>
+        <marker id="arrow-22c55e-10" markerWidth="10" markerHeight="10" 
+                refX="9.0" refY="5.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 10,5.0 0,10" fill="#22c55e"/>
+        </marker>
+
+        <marker id="arrow-ef4444-10" markerWidth="10" markerHeight="10" 
+                refX="9.0" refY="5.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 10,5.0 0,10" fill="#ef4444"/>
+        </marker>
+
+        <marker id="arrow-22c55e-10" markerWidth="10" markerHeight="10" 
+                refX="9.0" refY="5.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 10,5.0 0,10" fill="#22c55e"/>
+        </marker>
+
+        <marker id="arrow-ef4444-10" markerWidth="10" markerHeight="10" 
+                refX="9.0" refY="5.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 10,5.0 0,10" fill="#ef4444"/>
+        </marker></defs>
+  <rect x="0.00" y="0.00" width="500.00" height="400.00" fill="#f8fafc" stroke="none" stroke-width="0" rx="0"/>
+  <text x="250.00" y="30.00" font-family="Inter, sans-serif" font-size="20" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Aceleración Centrípeta</text>
+  <circle cx="250.00" cy="220.00" r="130.00" fill="none" stroke="#3b82f6" stroke-width="2" />
+  <circle cx="250.00" cy="220.00" r="4" fill="#1e293b" />
+  <circle cx="349.59" cy="136.44" r="10" fill="#3b82f6" />
+  <line x1="349.59" y1="136.44" x2="311.02" y2="90.47" stroke="#22c55e" stroke-width="3"  marker-end="url(#arrow-22c55e-10)"/>
+  <text x="301.02" y="85.47" font-family="Inter, sans-serif" font-size="16" font-weight="bold" fill="#22c55e" text-anchor="middle" dominant-baseline="middle">v</text>
+  <line x1="349.59" y1="136.44" x2="311.28" y2="168.58" stroke="#ef4444" stroke-width="3"  marker-end="url(#arrow-ef4444-10)"/>
+  <text x="321.28" y="183.58" font-family="Inter, sans-serif" font-size="16" font-weight="bold" fill="#ef4444" text-anchor="middle" dominant-baseline="middle">ac</text>
+  <circle cx="349.59" cy="303.56" r="10" fill="#3b82f6" />
+  <line x1="349.59" y1="303.56" x2="388.15" y2="257.60" stroke="#22c55e" stroke-width="3"  marker-end="url(#arrow-22c55e-10)"/>
+  <text x="398.15" y="252.60" font-family="Inter, sans-serif" font-size="16" font-weight="bold" fill="#22c55e" text-anchor="middle" dominant-baseline="middle">v</text>
+  <line x1="349.59" y1="303.56" x2="311.28" y2="271.42" stroke="#ef4444" stroke-width="3"  marker-end="url(#arrow-ef4444-10)"/>
+  <text x="301.28" y="286.42" font-family="Inter, sans-serif" font-size="16" font-weight="bold" fill="#ef4444" text-anchor="middle" dominant-baseline="middle">ac</text>
+  <text x="250.00" y="360.00" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">La velocidad cambia de dirección</text>
+  <text x="250.00" y="380.00" font-family="Inter, sans-serif" font-size="14" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">La aceleración apunta siempre al centro</text>
+</svg>

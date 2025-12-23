@@ -1,7 +1,3 @@
-
-import { Image } from 'astro:assets';
-import metodoCientifico from '/public/images/fisica/introduccion/t-metodo-cientifico.png';
-
 # **Método Científico**
 
 El **método científico** es un proceso ordenado que permite investigar fenómenos naturales y obtener conocimiento confiable.
@@ -132,6 +128,6 @@ c) "El agua hierve a menor temperatura en altitudes mayores."
 
 ## 🔑 Resumen
 
-<Image src={metodoCientifico} alt="Método científico" format="webp" />
+![Resumen - Método científico](/images/fisica/cinematica/introduccion/resumen-metodo-cientifico.png)
 
 ---
