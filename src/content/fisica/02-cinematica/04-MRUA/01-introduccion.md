@@ -252,6 +252,119 @@ Una pelota se lanza hacia arriba con una velocidad inicial de $30\,\mathrm{m/s}$
 
 ---
 
+### **Ejercicio 5: Frenado de emergencia**
+
+Un conductor pisa el freno y su auto desacelera a $8\,\mathrm{m/s^2}$ desde una velocidad inicial de $40\,\mathrm{m/s}$. ¿Cuánto tiempo tarda en detenerse completamente?
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** $v_i = 40\,\mathrm{m/s}$, $a = -8\,\mathrm{m/s^2}$, $v_f = 0$ (se detiene).
+
+**Análisis:** Cada segundo reduce su velocidad en 8 m/s.
+
+- 0s: 40 m/s
+- 1s: 32 m/s
+- 2s: 24 m/s
+- 3s: 16 m/s
+- 4s: 8 m/s
+- 5s: 0 m/s
+
+**Respuesta:** Tarda **5 segundos** en detenerse.
+
+</details>
+
+---
+
+### **Ejercicio 6: Aceleración de un tren**
+
+Un tren parte del reposo y acelera uniformemente. Después de 12 segundos alcanza una velocidad de $60\,\mathrm{m/s}$. ¿Cuál es su aceleración?
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** $v_i = 0$ (parte del reposo), $v_f = 60\,\mathrm{m/s}$, $t = 12\,\mathrm{s}$.
+
+**Cálculo:**
+$$a = \frac{\Delta v}{t} = \frac{60 - 0}{12} = 5\,\mathrm{m/s^2}$$
+
+**Respuesta:** La aceleración es de **5 m/s²**.
+
+</details>
+
+---
+
+### **Ejercicio 7: Velocidad después de cierto tiempo**
+
+Un ciclista comienza a pedalear con una aceleración de $2\,\mathrm{m/s^2}$. ¿Qué velocidad tiene después de 8 segundos?
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** $v_i = 0$, $a = 2\,\mathrm{m/s^2}$, $t = 8\,\mathrm{s}$.
+
+**Cálculo:** Cada segundo aumenta 2 m/s.
+$$v_f = 0 + 2(8) = 16\,\mathrm{m/s}$$
+
+**Respuesta:** Alcanza una velocidad de **16 m/s**.
+
+</details>
+
+---
+
+### **Ejercicio 8: Cambio de velocidad en caída libre**
+
+Un objeto cae durante 5 segundos. Si partió del reposo y la gravedad es $g = 10\,\mathrm{m/s^2}$, ¿qué velocidad tiene al final?
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** $v_i = 0$, $a = g = 10\,\mathrm{m/s^2}$, $t = 5\,\mathrm{s}$.
+
+**Cálculo:**
+$$v_f = 0 + 10(5) = 50\,\mathrm{m/s}$$
+
+**Respuesta:** Su velocidad final es de **50 m/s**.
+
+</details>
+
+---
+
+### **Ejercicio 9: Análisis de gráfica de velocidad**
+
+Una moto acelera uniformemente desde 0 a 25 m/s en 5 segundos. ¿Cuál es su aceleración?
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** $v_i = 0\,\mathrm{m/s}$, $v_f = 25\,\mathrm{m/s}$, $t = 5\,\mathrm{s}$.
+
+**Cálculo:**
+$$a = \frac{25 - 0}{5} = 5\,\mathrm{m/s^2}$$
+
+**Respuesta:** Su aceleración es de **5 m/s²**.
+
+</details>
+
+---
+
+### **Ejercicio 10: Comparación de aceleraciones**
+
+Dos autos aceleran: Auto A de 0 a 30 m/s en 6 segundos, Auto B de 0 a 40 m/s en 8 segundos. ¿Cuál tiene mayor aceleración?
+
+<details>
+<summary>Ver solución</summary>
+
+**Auto A:** $a_A = \frac{30}{6} = 5\,\mathrm{m/s^2}$
+
+**Auto B:** $a_B = \frac{40}{8} = 5\,\mathrm{m/s^2}$
+
+**Respuesta:** Ambos tienen la misma aceleración de **5 m/s²**, aunque B alcance mayor velocidad final.
+
+</details>
+
+---
+
 ## 🔑 Resumen
 
 - **Aceleración ($a$):** Es el cambio de velocidad por unidad de tiempo.
