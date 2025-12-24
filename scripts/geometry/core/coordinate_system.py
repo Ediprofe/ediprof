@@ -68,7 +68,9 @@ class CoordinateSystem:
     def draw_axes(self, builder: SVGBuilder,
                   show_arrows: bool = True,
                   axis_color: str = COLORS['axis'],
-                  axis_width: float = 2) -> SVGBuilder:
+                  axis_width: float = 2,
+                  x_label: str = 'x',
+                  y_label: str = 'y') -> SVGBuilder:
         """Dibuja los ejes X e Y."""
         # Eje X
         x_start = self.to_svg(Point(self.x_min, 0))
@@ -86,9 +88,9 @@ class CoordinateSystem:
             builder.line(y_start, y_end, stroke=axis_color, stroke_width=axis_width)
         
         # Etiquetas de ejes
-        builder.text('x', Point(x_end.x - 5, x_end.y + 20), 
+        builder.text(x_label, Point(x_end.x - 5, x_end.y + 20), 
                      font_size=14, font_weight='bold', fill=axis_color)
-        builder.text('y', Point(y_end.x - 20, y_end.y + 10), 
+        builder.text(y_label, Point(y_end.x - 20, y_end.y + 10), 
                      font_size=14, font_weight='bold', fill=axis_color)
         
         return builder

@@ -28,7 +28,9 @@ class MathPlotter:
                  show_grid: bool = True,
                  show_axes: bool = True,
                  grid_step: float = 1,
-                 custom_x_ticks: List[float] = None):
+                 custom_x_ticks: List[float] = None,
+                 x_label: str = 'x',
+                 y_label: str = 'y'):
         
         self.width = width
         self.height = height
@@ -49,7 +51,7 @@ class MathPlotter:
             self.coord.draw_grid(self.builder, step=grid_step, custom_x_ticks=custom_x_ticks)
         
         if show_axes:
-            self.coord.draw_axes(self.builder, show_arrows=True)
+            self.coord.draw_axes(self.builder, show_arrows=True, x_label=x_label, y_label=y_label)
             # Los ticks numéricos solo si es un gráfico matemático estándar
             if show_grid: 
                 self.coord.draw_ticks(self.builder, step=grid_step, custom_x_ticks=custom_x_ticks)
@@ -174,7 +176,7 @@ class MathPlotter:
                             
         return self
 
-    def add_legend(self) -> 'MathPlotter':
+    def add_legend(self, x: int = None, y: int = None) -> 'MathPlotter':
         """Dibuja la leyenda automáticamente basada en los plots."""
         if not self.legend_items:
             return self
@@ -185,8 +187,11 @@ class MathPlotter:
         box_width = 160
         box_height = padding * 2 + len(self.legend_items) * item_height
         
-        x = self.width - box_width - 20
-        y = 60
+        # Posición por defecto (top-right)
+        if x is None:
+            x = self.width - box_width - 20
+        if y is None:
+            y = 60
         
         # Fondo semitransparente (simulado con blanco sólido por ahora)
         self.builder.rect(x, y, box_width, box_height, 

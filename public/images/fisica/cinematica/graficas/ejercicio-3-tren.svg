@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300">
+  <defs>
+        <marker id="arrow-64748b-10" markerWidth="10" markerHeight="10" 
+                refX="9.0" refY="5.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 10,5.0 0,10" fill="#64748b"/>
+        </marker>
+
+        <marker id="arrow-64748b-10" markerWidth="10" markerHeight="10" 
+                refX="9.0" refY="5.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 10,5.0 0,10" fill="#64748b"/>
+        </marker></defs>
+  <rect x="0.00" y="0.00" width="600.00" height="300.00" fill="white" stroke="none" stroke-width="0" rx="0"/>
+  <text x="300.00" y="30.00" font-family="Inter, sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Ejercicio 3: Tren frenando</text>
+  <line x1="278.18" y1="240.00" x2="278.18" y2="60.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="496.36" y1="240.00" x2="496.36" y2="60.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="60.00" y1="204.00" x2="540.00" y2="204.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="60.00" y1="168.00" x2="540.00" y2="168.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="60.00" y1="132.00" x2="540.00" y2="132.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="60.00" y1="96.00" x2="540.00" y2="96.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="60.00" y1="60.00" x2="540.00" y2="60.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="60.00" y1="240.00" x2="540.00" y2="240.00" stroke="#64748b" stroke-width="2"  marker-end="url(#arrow-64748b-10)"/>
+  <line x1="60.00" y1="240.00" x2="60.00" y2="60.00" stroke="#64748b" stroke-width="2"  marker-end="url(#arrow-64748b-10)"/>
+  <text x="535.00" y="260.00" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#64748b" text-anchor="middle" dominant-baseline="middle">t (s)</text>
+  <text x="40.00" y="70.00" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#64748b" text-anchor="middle" dominant-baseline="middle">v (m/s)</text>
+  <line x1="278.18" y1="235.00" x2="278.18" y2="245.00" stroke="#64748b" stroke-width="1"  />
+  <text x="278.18" y="258.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">5</text>
+  <line x1="496.36" y1="235.00" x2="496.36" y2="245.00" stroke="#64748b" stroke-width="1"  />
+  <text x="496.36" y="258.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">10</text>
+  <line x1="55.00" y1="204.00" x2="65.00" y2="204.00" stroke="#64748b" stroke-width="1"  />
+  <text x="45.00" y="204.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="end" dominant-baseline="middle">5</text>
+  <line x1="55.00" y1="168.00" x2="65.00" y2="168.00" stroke="#64748b" stroke-width="1"  />
+  <text x="45.00" y="168.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="end" dominant-baseline="middle">10</text>
+  <line x1="55.00" y1="132.00" x2="65.00" y2="132.00" stroke="#64748b" stroke-width="1"  />
+  <text x="45.00" y="132.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="end" dominant-baseline="middle">15</text>
+  <line x1="55.00" y1="96.00" x2="65.00" y2="96.00" stroke="#64748b" stroke-width="1"  />
+  <text x="45.00" y="96.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="end" dominant-baseline="middle">20</text>
+  <line x1="55.00" y1="60.00" x2="65.00" y2="60.00" stroke="#64748b" stroke-width="1"  />
+  <text x="45.00" y="60.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="end" dominant-baseline="middle">25</text>
+  <text x="48.00" y="255.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">O</text>
+  <polygon points="60.00,240.00 496.36,240.00 60.00,96.00" fill="#22c55e" stroke="none" stroke-width="2" fill-opacity="0.2"/>
+  <polyline points="60.00,96.00 64.85,97.60 69.70,99.20 74.55,100.80 79.39,102.40 84.24,104.00 89.09,105.60 93.94,107.20 98.79,108.80 103.64,110.40 108.48,112.00 113.33,113.60 118.18,115.20 123.03,116.80 127.88,118.40 132.73,120.00 137.58,121.60 142.42,123.20 147.27,124.80 152.12,126.40 156.97,128.00 161.82,129.60 166.67,131.20 171.52,132.80 176.36,134.40 181.21,136.00 186.06,137.60 190.91,139.20 195.76,140.80 200.61,142.40 205.45,144.00 210.30,145.60 215.15,147.20 220.00,148.80 224.85,150.40 229.70,152.00 234.55,153.60 239.39,155.20 244.24,156.80 249.09,158.40 253.94,160.00 258.79,161.60 263.64,163.20 268.48,164.80 273.33,166.40 278.18,168.00 283.03,169.60 287.88,171.20 292.73,172.80 297.58,174.40 302.42,176.00 307.27,177.60 312.12,179.20 316.97,180.80 321.82,182.40 326.67,184.00 331.52,185.60 336.36,187.20 341.21,188.80 346.06,190.40 350.91,192.00 355.76,193.60 360.61,195.20 365.45,196.80 370.30,198.40 375.15,200.00 380.00,201.60 384.85,203.20 389.70,204.80 394.55,206.40 399.39,208.00 404.24,209.60 409.09,211.20 413.94,212.80 418.79,214.40 423.64,216.00 428.48,217.60 433.33,219.20 438.18,220.80 443.03,222.40 447.88,224.00 452.73,225.60 457.58,227.20 462.42,228.80 467.27,230.40 472.12,232.00 476.97,233.60 481.82,235.20 486.67,236.80 491.52,238.40 496.36,240.00 501.21,241.60 506.06,243.20 510.91,244.80 515.76,246.40 520.61,248.00 525.45,249.60 530.30,251.20 535.15,252.80 540.00,254.40" fill="none" stroke="#22c55e" stroke-width="3"  stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

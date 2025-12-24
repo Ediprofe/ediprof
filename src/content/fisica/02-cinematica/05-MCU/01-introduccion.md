@@ -170,7 +170,7 @@ $$ \omega = \frac{6.28}{20} \approx 0.314\,\mathrm{rad/s} $$
 
 ---
 
-## 🔑 **Resumen Rápido**
+## 🔑 **Resumen**
 
 ![MCU-Resumen](/images/fisica/cinematica/mcu/mcu-resumen.png)
 

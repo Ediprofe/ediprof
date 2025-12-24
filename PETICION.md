@@ -163,14 +163,8 @@ Situaciones que requieren confirmación:
 ---
 
 # 📝 PETICIÓN DEL USUARIO
-http://localhost:4321/fisica/cinematica/mcu/introduccion
 
-a esta lección por favor dale una mejora pedagógica, sin inventar nombres raros en lo títulos, ya los títulos están bien. Lo que quiero es que seas más progresivo natrual, que se entienda mejor, recuerda que es una introducción al tema, y no se deben dar po sentado conocmientos. Hazlo más cercano a la experiencia cotidiana, inductivo algo así...toma como referencia estas lecciones si te sirve de algo:
-
-http://localhost:4321/fisica/cinematica/mrua/introduccion
-
-http://localhost:4321/fisica/cinematica/mrua/caida-libre
+http://localhost:4321/fisica/cinematica/graficas/graficas-de-movimiento
 
 
-
-ya yo agrugé algunas imágenes para mejorar, pero siento que aun le falta. PROCEDE.
+POR FAVOR TE PIDO QUE PARA TODAS LAS GRÁFICAS MANEJES EN EL EJE HORIZONTAL Y EN EL EJE VERTICAL LA ETIQUETA QUE MAS SENTIDO TENGA, NO SIMPLEMENTE "x" o "y". POR FAVOR CORRIGE.
