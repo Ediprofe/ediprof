@@ -1,6 +1,13 @@
 # Dependencies
 node_modules/
 
+# Inbox de imágenes (temporales, no commitear)
+inbox/*.png
+inbox/*.jpg
+inbox/*.jpeg
+inbox/*.webp
+inbox/temp-*
+
 # Build output
 dist/
 .astro/

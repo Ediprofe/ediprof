@@ -155,27 +155,85 @@ ediprof/
 
 ## 🖼️ AGREGAR IMÁGENES
 
+### ⭐ Imágenes PNG/JPG (Sistema Automático R2)
+
+Las imágenes PNG y JPG se almacenan en **Cloudflare R2** con optimización automática.
+
+#### Paso 1: Guardar imagen en inbox
+```bash
+# Copia tu imagen a la carpeta inbox/
+cp ~/Downloads/mi-imagen.png inbox/
+```
+
+#### Paso 2: Subir con el comando
+```bash
+npm run img mi-imagen.png -- --materia fisica
+```
+
+**Materias válidas:** `fisica`, `matematicas`, `quimica`, `ciencias`
+
+#### Paso 3: Pegar el markdown
+El comando copia automáticamente el markdown al clipboard. Solo haz **Cmd+V** en tu archivo `.md`:
+
+```markdown
+![mi-imagen](https://cdn.ediprofe.com/img/fisica/a1b2-mi-imagen.webp)
+```
+
+#### ¿Qué hace el comando?
+1. **Optimiza** la imagen PNG → WebP (reduce ~60-80%)
+2. **Genera ID único** (4 caracteres) para evitar colisiones
+3. **Sube a R2** en la carpeta correcta
+4. **Copia markdown** al clipboard listo para pegar
+
+#### Comandos adicionales
+```bash
+# Listar todas las imágenes subidas
+npm run img -- --list
+
+# Listar solo imágenes de física
+npm run img -- --list fisica
+
+# Buscar imagen por nombre
+npm run img -- --search velocidad
+```
+
+#### Estructura en R2
+```
+Bucket: ediprofe (cdn.ediprofe.com)
+├── img/
+│   ├── fisica/
+│   │   └── a1b2-mi-imagen.webp
+│   ├── matematicas/
+│   ├── quimica/
+│   └── ciencias/
+└── pdf/
+    └── (PDFs de temas)
+```
+
+#### Índice local
+El archivo `images-index.json` mantiene un registro de todas las imágenes subidas para búsqueda rápida.
+
+---
+
 ### SVGs generados (geometría, gráficas)
+
+Los SVGs se guardan **localmente** en `public/images/` (no en R2):
+
 ```markdown
 ![Descripción](/images/geometria/circulos/radio.svg)
 ```
 
+---
+
 ### Imágenes de tablet (dibujos manuales)
 
 1. Nombrar con prefijo `t-`: `t-mi-dibujo.png`
-2. Guardar en: `public/images/{materia}/t-mi-dibujo.png`
-3. Insertar con sintaxis estándar Markdown:
-
-```markdown
-![Descripción](/images/quimica/t-mi-dibujo.png)
-```
-
-Opcional: Para centrado y estilos, usar HTML dentro del Markdown:
-```html
-<div class="image-card">
-  <img src="/images/quimica/t-mi-dibujo.png" alt="Descripción" />
-</div>
-```
+2. **Opción A (R2):** Usar el sistema automático:
+   ```bash
+   cp t-mi-dibujo.png inbox/
+   npm run img t-mi-dibujo.png -- --materia quimica
+   ```
+3. **Opción B (local):** Guardar en `public/images/{materia}/`
 
 ---
 

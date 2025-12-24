@@ -12,6 +12,7 @@
     "validate": "node scripts/validate-latex.js",
     "new:lesson": "node scripts/new-lesson.js",
     "export": "node scripts/export-menu.js",
+    "img": "node scripts/upload-to-r2.mjs",
     "astro": "astro"
   },
   "dependencies": {

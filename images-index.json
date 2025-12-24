@@ -1,0 +1,32 @@
+{
+  "images": [
+    {
+      "id": "dixh",
+      "name": "test-mru.webp",
+      "materia": "fisica",
+      "date": "2025-12-24",
+      "size": "99KB",
+      "url": "https://cdn.ediprofe.com/images/fisica/dixh-test-mru.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "lhnm",
+      "name": "ramas-de-la-fisica.webp",
+      "materia": "fisica",
+      "date": "2025-12-24",
+      "size": "71KB",
+      "url": "https://cdn.ediprofe.com/images/fisica/lhnm-ramas-de-la-fisica.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "niyw",
+      "name": "ramas-de-la-fisica.webp",
+      "materia": "fisica",
+      "date": "2025-12-24",
+      "size": "71KB",
+      "url": "https://cdn.ediprofe.com/img/fisica/niyw-ramas-de-la-fisica.webp",
+      "status": "uploaded"
+    }
+  ],
+  "lastUpdated": "2025-12-24T23:04:08.052Z"
+}

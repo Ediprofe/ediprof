@@ -139,7 +139,7 @@ d) **M** - Mecánica cuántica (emisión estimulada)
 ## 🔑 Resumen
 
 
-![La física y sus ramas](/images/fisica/introduccion/ramas-de-la-fisica.png)
+![La física y sus ramas](https://cdn.ediprofe.com/img/fisica/niyw-ramas-de-la-fisica.webp)
 
 > La física es una **ciencia fundamental** que nos permite comprender las reglas del universo,
 > desde el movimiento de una pelota hasta el comportamiento de las estrellas y partículas subatómicas.
