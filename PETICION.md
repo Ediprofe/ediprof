@@ -125,6 +125,7 @@ bash scripts/verify-svg-rendering.sh
 | Tipos TypeScript | `src/types/content.ts` | `MateriaSlug`, `isMateriaSlug` |
 | Helpers de URL | `src/utils/navigation-generator.js` | `cleanSlug()`, `cleanSegment()` |
 | Tamaños canvas | `scripts/geometry/core/canvas.py` | `SIZE_SIMPLE`, `SIZE_COMPOUND` |
+| **Navegación contextual** | `src/utils/navigation-loader.ts` | `loadContextualNavigation()`, `MATERIAS_LIST` |
 
 ---
 
@@ -163,5 +164,4 @@ Situaciones que requieren confirmación:
 ---
 
 # 📝 PETICIÓN DEL USUARIO
-
-QUIERO QUE LEAS EL CONTEXTO DE ESTE PROYECTO, Y CON BASE EN ÉL, ME AYUDES A TOMAR UNA DECISIÓN CON RESPECTO A LA ISSUE PRESENTADA EN EL ARCHIVO ISSUES.md. EN ELLA TE DOY CONTEXTO ESPECÍFICO DE LA ISSUE, Y TAMBIÉN LA POSICIÓN DE ALGUNAS IA. TOMA LA MEJOR DECISIÓN, PIENSA, Y COMUNÍCAME, PARA ANTES DE AJUSTAR LA ISSUE, YO APROBAR CUÁL ES EL PASO A SEGUIR CON BASE EN TU CONCEPTO Y MIS NECESIDADES.
+QUIERO QUE DOCUMENTES COMO EES DEBIDO, EN CLAUDE.md, que quede muy claro, y en archivos derivados, donde consideres por favor. ISSUES.md es solo un archivo temporal para reportarte la issue, pero ahora quiero que esa dinámica la tengas clara y la documentes oficialmente donde corresponda. QUIERO TAMBIÉN QUE VERIFIQUES SI YA ESTAMOS LISTOS PARA HACER UN BUIDL A CLAOUDFLARE Y QUÉ ME NOS TOCA HACER. ESTOY LISTO PARA RECIBIR INDICACIONES Y NAVEGAR EN CLOADUFLARE.

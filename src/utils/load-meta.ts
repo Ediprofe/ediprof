@@ -139,10 +139,26 @@ export function isValidTema(materia: string, capitulo: string, tema: string): bo
 }
 
 /**
- * Verifica si una lección es válida:
+ * Verifica si un tema está marcado como borrador (draft: true en _meta.json)
+ */
+export function isTemaDraft(materia: string, capitulo: string, tema: string): boolean {
+  const key = `${materia}/${cleanSegment(capitulo)}/${cleanSegment(tema)}`;
+  return allMeta[key]?.draft === true;
+}
+
+/**
+ * Verifica si un tema está publicado (válido y NO es draft)
+ */
+export function isTemaPublished(materia: string, capitulo: string, tema: string): boolean {
+  return isValidTema(materia, capitulo, tema) && !isTemaDraft(materia, capitulo, tema);
+}
+
+/**
+ * Verifica si una lección es válida Y publicable:
  * - Tiene al menos un H1
  * - Su capítulo tiene _meta.json con name
  * - Su tema tiene _meta.json con name
+ * - Su tema NO está marcado como draft
  * @param lesson - Objeto de lección con slug/id y body
  * @param materia - Slug de la materia
  */
@@ -153,7 +169,8 @@ export function isValidLesson(lesson: { slug?: string; id?: string; body?: strin
   
   const [capitulo, tema] = parts;
   
+  // Verificar H1, capítulo válido, tema válido Y tema no es draft
   return hasValidH1(lesson.body) && 
          isValidCapitulo(materia, capitulo) && 
-         isValidTema(materia, capitulo, tema);
+         isTemaPublished(materia, capitulo, tema);
 }

@@ -1,9 +1,9 @@
 # PARTE 1: Registro de Problemas y Mejoras Técnicas
 
-## 🚨 Optimización del Build y Peso del Sitio
+## ✅ Optimización del Build y Peso del Sitio
 
 **Fecha de reporte:** 23 de diciembre de 2025
-**Estado:** Pendiente
+**Estado:** ✅ RESUELTO (24 de diciembre de 2025)
 **Prioridad:** Media/Alta (para escalabilidad futura)
 
 ### 📝 Descripción del Problema
@@ -127,3 +127,59 @@ Dado que eres docente y buscas que el sitio sea un referente, la **Navegación C
 1. **No rompe el SEO:** Google sigue indexando cada materia perfectamente.
 2. **Mantiene la velocidad:** Al ser menos HTML, el navegador parsea la página mucho más rápido (mejorando el *Largest Contentful Paint*).
 3. **Sigue siendo 100% Gratis:** No necesitas servidores ni funciones dinámicas.
+
+---
+
+# PARTE 3: Solución Implementada
+
+## ✅ Navegación Contextual Colapsada (24 dic 2025)
+
+### Estrategia
+Se implementó **navegación colapsada por nivel** que:
+1. Solo carga en detalle la **materia actual** (no las 4)
+2. Muestra todas las materias con stats (enlaces a índice)
+3. Expande automáticamente el capítulo/tema/lección activa
+4. Permite expandir/colapsar manualmente otros niveles
+
+### Archivos Modificados
+| Archivo | Función |
+|---------|---------|
+| `src/utils/navigation-loader.ts` | **NUEVO** - Lógica centralizada (evita duplicación) |
+| `src/components/Navigation/CollapsibleSidebar.astro` | Usa `loadContextualNavigation()` |
+| `src/components/Navigation/MobileMenu.astro` | Usa `loadContextualNavigation()` |
+| `src/styles/components/sidebar.css` | Estilos para enlaces compactos |
+
+### Resultados
+
+| Métrica | ANTES | DESPUÉS | Reducción |
+|---------|-------|---------|-----------|
+| **Peso dist/** | 781 MB | 517 MB | **34%** |
+| **HTML por página** | 680 KB | ~400 KB | **41%** |
+| **SEO** | ✅ | ✅ | Sin impacto |
+| **Infraestructura** | SSG | SSG | Sin cambios |
+
+### Cómo Funciona
+
+```
+URL: /fisica/introduccion-a-la-fisica/notacion-cientifica/notacion-cientifica
+
+Sidebar muestra:
+├── 📐 Matemáticas (enlace compacto, 495 lecciones)
+├── 🔬 Física ▼ (expandido)
+│   ├── Introducción a la física ▼ (expandido)
+│   │   ├── Notación Científica ▼ (expandido)
+│   │   │   └── ● Notación científica (activa)
+│   │   └── [otros temas colapsados]
+│   └── Cinemática (colapsado)
+└── ⚗️ Química (enlace compacto, 179 lecciones)
+```
+
+### Función Reutilizable
+
+```typescript
+// src/utils/navigation-loader.ts
+import { loadContextualNavigation, MATERIAS_LIST } from '../../utils/navigation-loader';
+
+const { navigation, materiaStats, isMateriaActive, isUnidadActive, isBloqueActive } = 
+  await loadContextualNavigation(currentPath);
+```

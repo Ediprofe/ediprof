@@ -99,7 +99,18 @@ function hasValidMetaName(metaData, key) {
 }
 
 /**
- * Verifica si una lección es válida (H1 + capítulo válido + tema válido)
+ * Verifica si un tema está marcado como draft en su _meta.json
+ */
+function isBloqueDraft(metaData, bloqueKey) {
+  return metaData[bloqueKey]?.draft === true;
+}
+
+/**
+ * Verifica si una lección es válida Y publicable:
+ * - H1 presente
+ * - Capítulo válido (tiene _meta.json con name)
+ * - Tema válido (tiene _meta.json con name)
+ * - Tema NO es draft
  */
 function isLessonValid(lesson, collectionName, metaData) {
   // Verificar H1
@@ -112,7 +123,10 @@ function isLessonValid(lesson, collectionName, metaData) {
   const unidadKey = `${collectionName}/${cleanSegment(unidad).toLowerCase()}`;
   const bloqueKey = `${collectionName}/${cleanSegment(unidad).toLowerCase()}/${cleanSegment(bloque).toLowerCase()}`;
   
-  return hasValidMetaName(metaData, unidadKey) && hasValidMetaName(metaData, bloqueKey);
+  // Verificar que capítulo y tema sean válidos Y que el tema no sea draft
+  return hasValidMetaName(metaData, unidadKey) && 
+         hasValidMetaName(metaData, bloqueKey) &&
+         !isBloqueDraft(metaData, bloqueKey);
 }
 
 export function buildNavigationFromLessonsWithCollection(lessons, collectionName, metaData = {}) {

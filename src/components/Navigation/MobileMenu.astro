@@ -1,9 +1,6 @@
 ---
-import { getCollection } from 'astro:content';
-import { buildNavigationFromLessonsWithCollection, mergeNavigations } from '../../utils/navigation-generator.js';
-import { allMeta } from '../../utils/load-meta';
 import { getMateriaConfig } from '../../config/materias';
-import { MATERIA_SLUGS } from '../../types/content';
+import { loadContextualNavigation, MATERIAS_LIST } from '../../utils/navigation-loader';
 
 interface Props {
   currentPath: string;
@@ -11,46 +8,14 @@ interface Props {
 
 const { currentPath } = Astro.props;
 
-// Obtener navegación de cada colección
-let navigation: any = {};
-
-try {
-  const matematicas = await getCollection('matematicas');
-  const navMat = buildNavigationFromLessonsWithCollection(matematicas, 'matematicas', allMeta);
-  navigation = mergeNavigations(navigation, navMat);
-} catch (e) {}
-
-try {
-  const fisica = await getCollection('fisica');
-  const navFis = buildNavigationFromLessonsWithCollection(fisica, 'fisica', allMeta);
-  navigation = mergeNavigations(navigation, navFis);
-} catch (e) {}
-
-try {
-  const quimica = await getCollection('quimica');
-  const navQui = buildNavigationFromLessonsWithCollection(quimica, 'quimica', allMeta);
-  navigation = mergeNavigations(navigation, navQui);
-} catch (e) {}
-
-try {
-  const ciencias = await getCollection('ciencias');
-  const navCie = buildNavigationFromLessonsWithCollection(ciencias, 'ciencias', allMeta);
-  navigation = mergeNavigations(navigation, navCie);
-} catch (e) {}
-
-// materiaConfig importado desde config/materias.ts
-
-// Función para contar lecciones de una materia
-const countLessons = (materia: any) => {
-  return Object.values(materia.unidades).reduce((acc: number, unidad: any) => {
-    return acc + Object.values(unidad.bloques).reduce((acc2: number, bloque: any) => acc2 + bloque.lecciones.length, 0);
-  }, 0);
-};
-
-// Filtrar materias que tienen al menos 1 lección
-const filteredNavigation = Object.fromEntries(
-  Object.entries(navigation).filter(([_, materia]: [string, any]) => countLessons(materia) > 0)
-);
+// Cargar navegación contextual (lógica centralizada en navigation-loader.ts)
+const {
+  navigation,
+  materiaStats,
+  isMateriaActive,
+  isUnidadActive,
+  isBloqueActive,
+} = await loadContextualNavigation(currentPath);
 ---
 
 <div class="mobile-menu-container">
@@ -88,87 +53,108 @@ const filteredNavigation = Object.fromEntries(
     <div class="mobile-menu-content">
       <div class="nav-label">Materias</div>
       
-      {Object.entries(filteredNavigation).map(([materiaKey, materia]: [string, any]) => {
+      {/* Navegación Colapsada */}
+      {MATERIAS_LIST.map((materiaKey) => {
+        const stats = materiaStats[materiaKey];
+        if (!stats) return null;
+        
         const config = getMateriaConfig(materiaKey);
-        const isMateriaActive = currentPath.startsWith(`/${materiaKey}`);
-        const lessonCount = Object.values(materia.unidades).reduce((acc: number, unidad: any) => {
-          return acc + Object.values(unidad.bloques).reduce((acc2: number, bloque: any) => acc2 + bloque.lecciones.length, 0);
-        }, 0);
+        const isActive = isMateriaActive(materiaKey);
+        const materia = navigation[materiaKey];
         
         return (
-          <details class={`nav-details materia-details materia-${materiaKey}`} open={isMateriaActive}>
-            <summary class={`nav-materia-summary ${isMateriaActive ? 'active' : ''}`}>
-              <div class="materia-icon" style={`background: ${config.gradient}`}>{config.icon}</div>
-              <div class="materia-info">
-                <span class="materia-name">{materia.name}</span>
-                <span class="materia-count">{lessonCount} lecciones</span>
-              </div>
-              <span class="nav-chevron">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="9 18 15 12 9 6"/>
-                </svg>
-              </span>
-            </summary>
-            
-            <div class="nav-children">
-              {Object.entries(materia.unidades).map(([unidadKey, unidad]: [string, any], unidadIndex: number) => {
-                const isUnidadActive = currentPath.includes(`/${unidadKey}`);
+          <div class={`nav-section nav-section-${materiaKey}`}>
+            {/* Materia NO activa: enlace compacto */}
+            {!isActive ? (
+              <a href={`/${materiaKey}`} class="nav-materia-link">
+                <div class="materia-icon" style={`background: ${config.gradient}`}>{config.icon}</div>
+                <div class="materia-info">
+                  <span class="materia-name">{stats.name}</span>
+                  <span class="materia-count">{stats.count} lecciones</span>
+                </div>
+                <span class="nav-chevron">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"/>
+                  </svg>
+                </span>
+              </a>
+            ) : (
+              /* Materia ACTIVA: estructura colapsada */
+              <details open class="nav-details materia-details">
+                <summary class="nav-materia-summary active">
+                  <div class="materia-icon" style={`background: ${config.gradient}`}>{config.icon}</div>
+                  <div class="materia-info">
+                    <span class="materia-name">{materia?.name || stats.name}</span>
+                    <span class="materia-count">{stats.count} lecciones</span>
+                  </div>
+                  <span class="nav-chevron">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="9 18 15 12 9 6"/>
+                    </svg>
+                  </span>
+                </summary>
                 
-                return (
-                  <details class="nav-details unidad-details" open={isUnidadActive}>
-                    <summary class={`nav-unidad-summary ${isUnidadActive ? 'active' : ''}`}>
-                      <span class="unidad-number" style={`background: ${config.gradient}`}>{unidadIndex + 1}</span>
-                      <span class="unidad-name">{unidad.name}</span>
-                      <span class="nav-chevron-small">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                          <polyline points="9 18 15 12 9 6"/>
-                        </svg>
-                      </span>
-                    </summary>
+                <div class="nav-children">
+                  {materia && Object.entries(materia.unidades).map(([unidadKey, unidad]: [string, any], unidadIndex: number) => {
+                    const unidadActive = isUnidadActive(unidadKey);
                     
-                    <div class="nav-children-inner">
-                      {Object.entries(unidad.bloques).map(([bloqueKey, bloque]: [string, any]) => {
-                        const isBloqueActive = currentPath.includes(`/${bloqueKey}`);
+                    return (
+                      <details open={unidadActive} class="nav-details unidad-details">
+                        <summary class={`nav-unidad-summary ${unidadActive ? 'active' : ''}`}>
+                          <span class="unidad-number" style={`background: ${config.gradient}`}>{unidadIndex + 1}</span>
+                          <span class="unidad-name">{unidad.name}</span>
+                          <span class="nav-chevron-small">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                              <polyline points="9 18 15 12 9 6"/>
+                            </svg>
+                          </span>
+                        </summary>
                         
-                        return (
-                          <details class="nav-details bloque-details">
-                            <summary class={`nav-bloque-summary ${isBloqueActive ? 'active' : ''}`}>
-                              <span class="bloque-indicator" style={`background: ${config.color}`}></span>
-                              <span class="bloque-name">{bloque.name}</span>
-                              <span class="bloque-count">{bloque.lecciones.length}</span>
-                            </summary>
+                        <div class="nav-children-inner">
+                          {Object.entries(unidad.bloques).map(([bloqueKey, bloque]: [string, any]) => {
+                            const bloqueActive = isBloqueActive(bloqueKey);
                             
-                            <ul class="nav-lessons">
-                              {bloque.lecciones.map((leccion: any, leccionIndex: number) => {
-                                const isActive = currentPath === `/${leccion.slug}` || currentPath.endsWith(leccion.slug);
-                                return (
-                                  <li>
-                                    <a 
-                                      href={`/${leccion.slug}`}
-                                      class:list={['nav-lesson', { active: isActive }]}
-                                      style={isActive ? `--accent-color: ${config.color}` : ''}
-                                    >
-                                      <span class="lesson-number">{leccionIndex + 1}</span>
-                                      <span class="lesson-title">{leccion.title}</span>
-                                      {isActive && <span class="lesson-active-dot" style={`background: ${config.color}`}></span>}
-                                    </a>
-                                  </li>
-                                );
-                              })}
-                            </ul>
-                          </details>
-                        );
-                      })}
-                    </div>
-                  </details>
-                );
-              })}
-            </div>
-          </details>
+                            return (
+                              <details open={bloqueActive} class="nav-details bloque-details">
+                                <summary class={`nav-bloque-summary ${bloqueActive ? 'active' : ''}`}>
+                                  <span class="bloque-indicator" style={`background: ${config.color}`}></span>
+                                  <span class="bloque-name">{bloque.name}</span>
+                                  <span class="bloque-count">{bloque.lecciones.length}</span>
+                                </summary>
+                                
+                                <ul class="nav-lessons">
+                                  {bloque.lecciones.map((leccion: any, leccionIndex: number) => {
+                                    const isLessonActive = currentPath === `/${leccion.slug}` || currentPath.endsWith(leccion.slug);
+                                    return (
+                                      <li>
+                                        <a 
+                                          href={`/${leccion.slug}`}
+                                          class:list={['nav-lesson', { active: isLessonActive }]}
+                                          style={isLessonActive ? `--accent-color: ${config.color}` : ''}
+                                        >
+                                          <span class="lesson-number">{leccionIndex + 1}</span>
+                                          <span class="lesson-title">{leccion.title}</span>
+                                          {isLessonActive && <span class="lesson-active-dot" style={`background: ${config.color}`}></span>}
+                                        </a>
+                                      </li>
+                                    );
+                                  })}
+                                </ul>
+                              </details>
+                            );
+                          })}
+                        </div>
+                      </details>
+                    );
+                  })}
+                </div>
+              </details>
+            )}
+          </div>
         );
       })}
       
-      {Object.keys(filteredNavigation).length === 0 && (
+      {Object.keys(materiaStats).length === 0 && (
         <div class="mobile-nav-empty">
           <div class="empty-icon">📚</div>
           <p>No hay contenido disponible</p>

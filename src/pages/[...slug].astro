@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import LessonLayout from '../layouts/LessonLayout.astro';
 import { cleanSlug } from '../utils/navigation-generator.js';
+import { isValidLesson } from '../utils/load-meta';
 
 export async function getStaticPaths() {
   // Helper para extraer título del primer H1 del markdown
@@ -22,9 +23,12 @@ export async function getStaticPaths() {
   // Obtener todas las lecciones de todas las colecciones
   const allLessons: Array<{ lesson: any; materia: string; fullSlug: string; cleanFullSlug: string }> = [];
   
-  // Función helper para agregar lecciones con su materia
+  // Función helper para agregar lecciones con su materia (filtra drafts)
   const addLessons = (lessons: any[], materiaName: string) => {
     lessons.forEach(lesson => {
+      // Filtrar lecciones de temas marcados como draft
+      if (!isValidLesson(lesson, materiaName)) return;
+      
       const fullSlug = `${materiaName}/${lesson.slug}`;
       const cleanFullSlug = `${materiaName}/${cleanSlug(lesson.slug)}`;
       allLessons.push({ lesson, materia: materiaName, fullSlug, cleanFullSlug });

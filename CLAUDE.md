@@ -100,6 +100,73 @@ MATERIA (matematicas, fisica, quimica, ciencias)
 - Archivos: `XX-titulo-leccion.md`
 - Todo en **minúsculas**, sin tildes, guiones en lugar de espacios
 
+### Sistema de Publicación (Drafts)
+
+El contenido se publica **por tema**. Cada tema tiene un `_meta.json` que controla si está publicado o en borrador.
+
+```json
+// src/content/matematicas/01-aritmetica/03-fracciones/_meta.json
+{
+  "name": "Fracciones",
+  "draft": true    // ← No se publica (borrador)
+}
+```
+
+**Reglas de visibilidad:**
+- `draft: true` → Tema NO se genera ni aparece en navegación
+- `draft: false` o sin campo → Tema SE publica
+- Si todos los temas de un capítulo son draft → Capítulo no aparece
+- Si todos los capítulos de una materia son draft → Materia no aparece
+
+**Para publicar un tema:**
+1. Revisar todas las lecciones del tema
+2. Editar `_meta.json` → quitar `"draft": true` o poner `"draft": false`
+3. `git push` → Build automático solo con contenido publicado
+
+---
+
+# 📡 NAVEGACIÓN CONTEXTUAL
+
+> **Archivo central:** `src/utils/navigation-loader.ts`
+
+El sidebar solo carga en detalle la **materia actual** para optimizar el peso del HTML.
+
+### Cómo funciona
+
+```
+URL: /fisica/cinematica/mru/velocidad
+
+Sidebar muestra:
+├── Matemáticas (enlace compacto, 495 lecciones)
+├── Física ▼ (expandido - materia actual)
+│   ├── Introducción ▼
+│   ├── Cinemática ▼ (expandido - capítulo actual)
+│   │   ├── MRU ▼ (expandido - tema actual)
+│   │   │   └── ● Velocidad (activa)
+│   │   └── MRUA
+│   └── ...
+└── Química (enlace compacto, 179 lecciones)
+```
+
+### Archivos involucrados
+
+| Archivo | Función |
+|---------|---------|
+| `src/utils/navigation-loader.ts` | Carga navegación contextual |
+| `src/utils/navigation-generator.js` | Genera estructura + filtra drafts |
+| `src/components/Navigation/CollapsibleSidebar.astro` | Sidebar desktop |
+| `src/components/Navigation/MobileMenu.astro` | Menú móvil |
+
+### Funciones clave
+
+```typescript
+// Importar en componentes Astro
+import { loadContextualNavigation, MATERIAS_LIST } from '../../utils/navigation-loader';
+
+const { navigation, materiaStats, isMateriaActive, isUnidadActive, isBloqueActive } = 
+  await loadContextualNavigation(currentPath);
+```
+
 ---
 
 # 🔄 FLUJO DE TRABAJO EN 5 ETAPAS

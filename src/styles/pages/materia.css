@@ -806,3 +806,55 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ========================================
+   COMING SOON STATE
+   ======================================== */
+
+.coming-soon-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  padding: 2rem;
+}
+
+.coming-soon-card {
+  text-align: center;
+  max-width: 400px;
+}
+
+.coming-soon-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin: 0 auto 1rem;
+}
+
+.coming-soon-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 0.5rem;
+}
+
+.coming-soon-desc {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin: 0 0 1.5rem;
+}
+
+.coming-soon-btn {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.coming-soon-btn:hover {
+  color: var(--text-primary);
+}

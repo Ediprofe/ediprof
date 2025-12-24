@@ -153,15 +153,16 @@ const totalTemas = Object.values(grouped).reduce((acc, temas) => acc + Object.ke
           </section>
         </div>
       ) : (
-        <div class="empty-state">
-          <div class="empty-icon-wrapper" style={`background: ${config.lightBg}`}>
-            <span class="empty-icon">{icon}</span>
-          </div>
-          <h2>Sin contenido aún</h2>
-          <p>No hay temas disponibles en {materiaName}.</p>
-          <div class="empty-hint">
-            <p>Para agregar contenido, crea archivos en:</p>
-            <code>src/content/{materia}/</code>
+        <div class="coming-soon-state">
+          <div class="coming-soon-card">
+            <div class="coming-soon-icon" style={`background: ${config.gradient}`}>
+              <span>{icon}</span>
+            </div>
+            <h2 class="coming-soon-title">{materiaName}</h2>
+            <p class="coming-soon-desc">Contenido en preparación</p>
+            <a href="/" class="coming-soon-btn">
+              ← Volver al inicio
+            </a>
           </div>
         </div>
       )}

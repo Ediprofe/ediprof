@@ -11,6 +11,7 @@ export interface MetaEntry {
   icon?: string;
   playlist?: string;  // URL de playlist de YouTube (para unidades)
   pdf?: string;       // URL de PDF del tema
+  draft?: boolean;    // true = tema en borrador, no se publica
 }
 
 // Tipo para el objeto allMeta que contiene todos los metadatos
