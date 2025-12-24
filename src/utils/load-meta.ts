@@ -140,8 +140,13 @@ export function isValidTema(materia: string, capitulo: string, tema: string): bo
 
 /**
  * Verifica si un tema está marcado como borrador (draft: true en _meta.json)
+ * Si SHOW_DRAFTS=true, siempre devuelve false (muestra todo)
  */
 export function isTemaDraft(materia: string, capitulo: string, tema: string): boolean {
+  // Si SHOW_DRAFTS=true, ignorar drafts y mostrar todo
+  // Usamos PUBLIC_ prefix para que Vite lo exponga
+  if (import.meta.env.PUBLIC_SHOW_DRAFTS === 'true') return false;
+  
   const key = `${materia}/${cleanSegment(capitulo)}/${cleanSegment(tema)}`;
   return allMeta[key]?.draft === true;
 }

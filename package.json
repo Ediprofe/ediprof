@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
+    "dev:all": "PUBLIC_SHOW_DRAFTS=true astro dev",
     "start": "astro dev",
     "optimize-images": "node scripts/optimize-images.mjs",
     "build": "npm run optimize-images && astro build",

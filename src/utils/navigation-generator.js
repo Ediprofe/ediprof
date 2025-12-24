@@ -100,8 +100,12 @@ function hasValidMetaName(metaData, key) {
 
 /**
  * Verifica si un tema está marcado como draft en su _meta.json
+ * Si PUBLIC_SHOW_DRAFTS=true, siempre devuelve false (muestra todo)
  */
 function isBloqueDraft(metaData, bloqueKey) {
+  // Si PUBLIC_SHOW_DRAFTS=true, ignorar drafts y mostrar todo
+  if (import.meta.env.PUBLIC_SHOW_DRAFTS === 'true') return false;
+  
   return metaData[bloqueKey]?.draft === true;
 }
 
