@@ -1,131 +1,150 @@
 # 🎡 **Movimiento Circular Uniforme (MCU)**
 
-¿Has visto la rueda de la fortuna girar? ¿O las manecillas de un reloj moviéndose? Estos son ejemplos perfectos del **Movimiento Circular Uniforme**.
+Imagina que atas una piedra a una cuerda y empiezas a girarla sobre tu cabeza. Sientes la tensión en la cuerda, ¿verdad? Si soltaras la cuerda de repente, la piedra saldría disparada en línea recta.
+
+Ese esfuerzo que haces para mantener la piedra girando es la clave para entender el **Movimiento Circular Uniforme (MCU)**.
 
 ---
 
-## 🎯 ¿Qué vas a aprender?
+## 🎯 **¿Qué vas a aprender?**
 
-- Qué es el Movimiento Circular Uniforme (MCU).
-- La diferencia entre período ($T$) y frecuencia ($f$).
-- Cómo se relacionan la velocidad angular ($\omega$) y la velocidad tangencial ($v$).
-- Por qué existe aceleración (centrípeta) aunque la rapidez sea constante.
-
----
-
-## 🔄 **¿Qué es el MCU?**
-
-El **Movimiento Circular Uniforme (MCU)** es aquel donde un objeto se mueve en una **trayectoria circular** manteniendo una **rapidez constante**.
-
-Aunque la rapidez (el valor numérico) no cambia, la **dirección** de la velocidad sí cambia constantemente instante a instante para seguir la curva. Por eso decimos que existe una aceleración especial llamada **aceleración centrípeta**.
-
-### **Características Principales:**
-
-| Característica | Descripción |
-| :--- | :--- |
-| **Trayectoria** | Un círculo perfecto. |
-| **Rapidez** | Constante (siempre va a la misma marcha). |
-| **Dirección** | Cambia continuamente (siempre tangente al círculo). |
-| **Aceleración** | Apunta siempre hacia el centro (centrípeta). |
+*   Por qué un objeto puede acelerar aunque su rapidez no cambie.
+*   La diferencia entre qué tan rápido *giras* y qué tan rápido *te mueves*.
+*   Cómo predecir el movimiento de cosas que giran (ruedas, planetas, ventiladores).
 
 ---
 
-## 📐 **Conceptos Fundamentales**
+## 🔄 **El Concepto: Girar a ritmo constante**
 
-Para entender el MCU, necesitamos definir nuevas variables que no usábamos en el movimiento rectilíneo.
+El **MCU** es el movimiento de un objeto que viaja en círculos manteniendo siempre el mismo ritmo.
 
-### **1. Período ($T$)**
-Es el **tiempo** que tarda el objeto en dar **una vuelta completa**.
-* **Unidad:** Segundos ($s$).
-* **Ejemplo:** La Tierra da una vuelta al Sol en 365 días.
+*   **Uniforme:** Significa que no se frena ni se acelera en su giro. Tarda siempre lo mismo en dar una vuelta.
+*   **Circular:** Su camino es un círculo perfecto.
 
-### **2. Frecuencia ($f$)**
-Es el **número de vueltas** que da el objeto en **un segundo**.
-* **Unidad:** Hertz ($Hz$) o $s^{-1}$.
-* **Relación con el período:** Son inversos.
-  $$f = \frac{1}{T}$$
+### **La Paradoja de la Aceleración**
 
-### **3. Velocidad Angular ($\omega$)**
-Mide qué tan rápido **gira** el ángulo. Es el ángulo recorrido por unidad de tiempo.
-* **Unidad:** Radianes por segundo ($rad/s$).
-* **Fórmula:**
-  $$\omega = \frac{2\pi}{T} = 2\pi f$$
+Aquí viene lo interesante. En física, **Velocidad** y **Rapidez** no son lo mismo:
 
-### **4. Velocidad Tangencial ($v$)**
-Es la velocidad "real" en metros por segundo. Representa la distancia recorrida en el borde del círculo.
-* **Unidad:** Metros por segundo ($m/s$).
-* **Fórmula:**
-  $$v = \omega \cdot r$$
-  *(Donde $r$ es el radio del círculo)*
+1.  **Rapidez:** Es solo el número (ej. $20\,\mathrm{km/h}$). En el MCU, **es constante**.
+2.  **Velocidad:** Es el número + la **dirección**.
+
+En un círculo, aunque vayas siempre a $20\,\mathrm{km/h}$, tu dirección cambia en cada instante (primero vas al norte, luego al oeste, luego al sur...).
+
+> 💡 **Conclusión:** Como la **dirección** cambia, la **velocidad** cambia. Y si la velocidad cambia, **¡existe aceleración!**
+
+Esta aceleración se llama **Centrípeta** (busca el centro) porque es la fuerza que "jala" al objeto hacia adentro para que no se escape en línea recta.
+
+![MCU - Intro](/images/fisica/cinematica/mcu/mcu-intro.png)
 
 ---
 
-## ⚡ **Aceleración Centrípeta**
+## ⏱️ **Paso 1: El Ritmo del Giro (Período y Frecuencia)**
 
-Podría parecer extraño hablar de aceleración si la rapidez no cambia. Pero recuerda: **la velocidad es un vector** (tiene magnitud y dirección).
+Para describir algo que gira, lo primero que preguntamos es: "¿Qué tan rápido da las vueltas?". Tenemos dos formas de medirlo:
 
-En el MCU:
-1. La **magnitud** de la velocidad no cambia.
-2. La **dirección** cambia todo el tiempo.
+### **1. El Período ($T$): "Tiempo por vuelta"**
+Es el tiempo que tardas en completar **un ciclo completo**.
+*   *Ejemplo:* La Tierra tarda 365 días en dar una vuelta al Sol. $T = 365\,\text{días}$.
+*   **Fórmula:** 
+$$
+T = \frac{\text{Tiempo total}}{\text{Número de vueltas}}
+$$
 
-Ese cambio de dirección es causado por una fuerza (y por tanto una aceleración) que "jala" al objeto hacia el centro, evitando que salga disparado en línea recta.
+### **2. La Frecuencia ($f$): "Vueltas por tiempo"**
+Es al revés. Cuántas vueltas logras dar en **un segundo**.
+*   *Ejemplo:* Un ventilador rápido da 10 vueltas en un segundo. $f = 10\,\mathrm{Hz}$.
+*   **Fórmula:** 
+$$
+f = \frac{\text{Número de vueltas}}{\text{Tiempo total}}
+$$
 
-$$a_c = \frac{v^2}{r} = \omega^2 \cdot r$$
+> 🔄 **Son inversos:** Si tardas mucho en dar una vuelta (Período grande), das pocas vueltas por segundo (Frecuencia pequeña).
+> $$T = \frac{1}{f} \quad \text{y} \quad f = \frac{1}{T}$$
 
 ---
 
-## ⚙️ **Ejemplos Resueltos**
+## 🏎️ **Paso 2: Las Dos Velocidades**
+
+Imagina un carrusel. Tú te sientas en el borde (el caballo exterior) y tu amigo se sienta cerca del centro. Ambos completan una vuelta al mismo tiempo, pero tú recorres mucha más distancia que él.
+
+### **1. Velocidad Angular ($\omega$): "¿Qué tan rápido giramos?"**
+Mide el **ángulo** que barres por segundo.
+*   En el carrusel, tú y tu amigo tienen la **misma** velocidad angular (ambos dan 1 vuelta en el mismo tiempo).
+*   Se mide en **radianes por segundo ($rad/s$)**.
+*   **Fórmula:** Una vuelta completa son $2\pi$ radianes.
+    $$
+    \omega = \frac{2\pi}{T} = 2\pi f 
+    $$
+
+### **2. Velocidad Tangencial ($v$): "¿Qué tan rápido nos movemos?"**
+Mide los **metros** que recorres por segundo.
+*   En el carrusel, tú vas **más rápido** que tu amigo porque estás más lejos del centro y tienes que recorrer un círculo más grande en el mismo tiempo.
+*   Se mide en **metros por segundo ($m/s$)**.
+*   **Fórmula:** Depende del radio ($r$).
+    $$
+    v = \omega \cdot r 
+    $$
+
+![Amigos en carrusel - MCU](/images/fisica/cinematica/mcu/carrusel-mcu.png)
+
+---
+
+## ⚙️ **Ejemplos de la Vida Real**
 
 ### **Ejemplo 1: La Rueda de Bicicleta**
 
-Una rueda de radio $0.35\,\mathrm{m}$ da **2 vueltas por segundo**. Calcula su período y velocidad tangencial.
+Una rueda de radio $0.35\,\mathrm{m}$ gira rápidamente dando **2 vueltas cada segundo**. Queremos saber qué tan rápido se mueve un punto en el borde de la llanta.
 
-**1. Identificar datos:**
-* $r = 0.35\,\mathrm{m}$
-* $f = 2\,\mathrm{Hz}$ (2 vueltas/s)
+![MCU - Rueda a 2 vueltas/s](/images/fisica/cinematica/mcu/rueda-2hz.png)
 
-**2. Calcular Período ($T$):**
-$$T = \frac{1}{f} = \frac{1}{2} = 0.5\,\mathrm{s}$$
+**Paso 1: Entender los datos**
+*   Radio ($r$) = $0.35\,\mathrm{m}$.
+*   Frecuencia ($f$) = $2\,\mathrm{Hz}$ (2 vueltas por segundo).
 
-**3. Calcular Velocidad Angular ($\omega$):**
-$$\omega = 2\pi f = 2\pi(2) = 4\pi \approx 12.57\,\mathrm{rad/s}$$
+**Paso 2: Calcular la velocidad de giro ($\omega$)**
+Cada vuelta son $2\pi$ radianes. Si da 2 vueltas:
+$$ \omega = 2\pi \cdot 2 = 4\pi \approx 12.57\,\mathrm{rad/s} $$
 
-**4. Calcular Velocidad Tangencial ($v$):**
-$$v = \omega \cdot r = 12.57 \cdot 0.35 \approx 4.4\,\mathrm{m/s}$$
+**Paso 3: Calcular la velocidad real ($v$)**
+Ahora multiplicamos el giro por el radio:
+$$ v = 12.57 \cdot 0.35 \approx 4.4\,\mathrm{m/s} $$
 
-> **Resultado:** La rueda gira a **4.4 m/s**.
+> **Resultado:** El borde de la rueda viaja a **4.4 m/s** (unos 16 km/h).
 
 ---
 
 ### **Ejemplo 2: El Auto en la Curva**
 
-Un auto toma una curva de radio $50\,\mathrm{m}$ a una velocidad de $20\,\mathrm{m/s}$ ($72\,\mathrm{km/h}$). ¿Cuál es su aceleración centrípeta?
+Un auto entra a una rotonda de $50\,\mathrm{m}$ de radio a una velocidad de $20\,\mathrm{m/s}$. ¿Qué tan fuerte es la aceleración que siente hacia el centro?
 
-**1. Datos:**
-* $r = 50\,\mathrm{m}$
-* $v = 20\,\mathrm{m/s}$
+![Auto en la curva](/images/fisica/cinematica/mcu/carro-en-mcu.png)
 
-**2. Fórmula:**
-$$a_c = \frac{v^2}{r}$$
+**Análisis:**
+Aunque el velocímetro marque siempre 20, el auto está girando. Necesita una aceleración centrípeta ($a_c$) para no salirse de la curva.
 
-**3. Cálculo:**
-$$a_c = \frac{20^2}{50} = \frac{400}{50} = 8\,\mathrm{m/s^2}$$
+**Fórmula:**
+$$ a_c = \frac{v^2}{r} $$
 
-> **Resultado:** La aceleración hacia el centro es de **$8\,\mathrm{m/s^2}$**.
+**Cálculo:**
+$$ a_c = \frac{20^2}{50} = \frac{400}{50} = 8\,\mathrm{m/s^2} $$
+
+> **Interpretación:** Siente una aceleración lateral de $8\,\mathrm{m/s^2}$, casi tan fuerte como la gravedad ($9.8\,\mathrm{m/s^2}$). ¡Es una curva cerrada tomada a alta velocidad!
 
 ---
 
-## 📝 **Ejercicios de Práctica**
+## 📝 **Ponte a Prueba**
 
 ### **Ejercicio 1: El Ventilador**
 
-Un ventilador gira a **120 RPM** (revoluciones por minuto). ¿Cuál es su frecuencia en Hz?
+Un ventilador gira a **120 RPM** (revoluciones por minuto). ¿Cuál es su frecuencia en Hz (vueltas por segundo)?
 
 <details>
 <summary>Ver solución</summary>
 
-Convertimos minutos a segundos:
-$$f = \frac{120\,\text{vueltas}}{60\,\text{segundos}} = 2\,\mathrm{Hz}$$
+**Razonamiento:**
+Si da 120 vueltas en 60 segundos (1 minuto), ¿cuántas da en 1 segundo?
+
+$$ f = \frac{120}{60} = 2\,\mathrm{Hz} $$
 
 **Respuesta:** **2 Hz**.
 
@@ -133,15 +152,17 @@ $$f = \frac{120\,\text{vueltas}}{60\,\text{segundos}} = 2\,\mathrm{Hz}$$
 
 ---
 
-### **Ejercicio 2: Velocidad Angular**
+### **Ejercicio 2: El Carrusel**
 
-Un carrusel tarda **20 segundos** en dar una vuelta. ¿Cuál es su velocidad angular?
+Un carrusel tarda **20 segundos** en dar una vuelta completa. ¿Cuál es su velocidad angular?
 
 <details>
 <summary>Ver solución</summary>
 
-$$T = 20\,\mathrm{s}$$
-$$\omega = \frac{2\pi}{T} = \frac{2\pi}{20} = \frac{\pi}{10} \approx 0.314\,\mathrm{rad/s}$$
+**Datos:** $T = 20\,\mathrm{s}$.
+**Fórmula:** $\omega = \frac{2\pi}{T}$
+
+$$ \omega = \frac{6.28}{20} \approx 0.314\,\mathrm{rad/s} $$
 
 **Respuesta:** **0.314 rad/s**.
 
@@ -149,28 +170,14 @@ $$\omega = \frac{2\pi}{T} = \frac{2\pi}{20} = \frac{\pi}{10} \approx 0.314\,\mat
 
 ---
 
-### **Ejercicio 3: El CD**
+## 🔑 **Resumen Rápido**
 
-Un punto en el borde de un CD ($r = 0.06\,\mathrm{m}$) gira con una velocidad tangencial de $3\,\mathrm{m/s}$. ¿Cuál es su velocidad angular?
+![MCU-Resumen](/images/fisica/cinematica/mcu/mcu-resumen.png)
 
-<details>
-<summary>Ver solución</summary>
-
-Sabemos que $v = \omega \cdot r$, entonces despejamos $\omega$:
-$$\omega = \frac{v}{r} = \frac{3}{0.06} = 50\,\mathrm{rad/s}$$
-
-**Respuesta:** **50 rad/s**.
-
-</details>
-
----
-
-## 🔑 Resumen
-
-| Concepto | Símbolo | Fórmula | Significado |
-| :--- | :---: | :--- | :--- |
-| **Período** | $T$ | $1/f$ | Tiempo de una vuelta. |
-| **Frecuencia** | $f$ | $1/T$ | Vueltas por segundo. |
-| **Vel. Angular** | $\omega$ | $2\pi f$ | Velocidad de giro (rad/s). |
-| **Vel. Tangencial** | $v$ | $\omega \cdot r$ | Velocidad lineal (m/s). |
-| **Acel. Centrípeta** | $a_c$ | $v^2/r$ | Aceleración hacia el centro. |
+| Si quieres saber... | Usa esta variable | Fórmula Clave |
+| :--- | :---: | :--- |
+| ¿Cuánto tarda una vuelta? | **Período ($T$)** | $T = 1/f$ |
+| ¿Cuántas vueltas por segundo? | **Frecuencia ($f$)** | $f = 1/T$ |
+| ¿Qué tan rápido *gira*? | **Vel. Angular ($\omega$)** | $\omega = 2\pi f$ |
+| ¿Qué tan rápido *avanza*? | **Vel. Tangencial ($v$)** | $v = \omega \cdot r$ |
+| ¿Cuánto *jala* hacia el centro? | **Acel. Centrípeta ($a_c$)** | $a_c = v^2/r$ |
