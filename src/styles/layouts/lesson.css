@@ -323,49 +323,28 @@
   background: linear-gradient(90deg, transparent, #334155, transparent);
 }
 
-/* Tablas - diseño mejorado con scroll horizontal */
+/* Tablas - scroll horizontal estilo GitHub */
 :global(.content-body .table-wrapper),
 :global(.content-body .table-scroll-wrapper) {
+  display: block;
+  width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   margin: 2rem 0;
-  width: 100%;
-  /* Evitar que el scroll afecte el layout de la página */
   overscroll-behavior-x: contain;
-}
-
-/* Indicador visual de scroll en móvil */
-:global(.content-body .table-scroll-wrapper) {
-  position: relative;
-}
-
-:global(.content-body .table-scroll-wrapper)::after {
-  content: '← Desliza →';
-  display: none;
-  position: absolute;
-  bottom: -1.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 0.75rem;
-  color: var(--text-secondary);
-  opacity: 0.7;
-}
-
-@media (max-width: 768px) {
-  :global(.content-body .table-scroll-wrapper)::after {
-    display: block;
-  }
 }
 
 :global(.content-body table) {
   border-collapse: separate;
   border-spacing: 0;
-  margin: 2rem 0;
-  border-radius: 12px;
+  margin: 0;
+  border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-  width: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   border: 1px solid var(--border-color, #e2e8f0);
+  /* Clave: min-width permite que la tabla sea más ancha que el contenedor */
+  min-width: 100%;
+  width: max-content;
 }
 
 :global(html.dark .content-body table) {
