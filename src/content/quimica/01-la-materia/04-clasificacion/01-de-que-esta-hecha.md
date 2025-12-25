@@ -73,15 +73,6 @@ Existen diferentes tipos de átomos llamados **elementos**.
 
 > Los compuestos forman la **mayoría de las sustancias de la naturaleza**.
 
----
-
-## 🔑 Resumen
-
-| Concepto | Descripción |
-|----------|-------------|
-| **Átomo** | Unidad básica de la materia |
-| **Elemento** | Tipo de átomo (H, O, Fe) |
-| **Compuesto** | Combinación de elementos (H₂O) |
 
 ---
 
@@ -123,3 +114,15 @@ Es un **compuesto** porque:
 El óxido tiene propiedades diferentes: es quebradizo, rojizo, no conduce bien la electricidad.
 
 </details>
+
+---
+
+## 🔑 Resumen
+
+| Concepto | Descripción |
+|----------|-------------|
+| **Átomo** | Unidad básica de la materia |
+| **Elemento** | Tipo de átomo (H, O, Fe) |
+| **Compuesto** | Combinación de elementos (H₂O) |
+
+![de-que-esta-hecha-la-materia](https://cdn.ediprofe.com/img/quimica/f59q-de-que-esta-hecha-la-materia.webp)

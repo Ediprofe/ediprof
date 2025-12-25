@@ -125,3 +125,6 @@ Porque el hierro tiene un **punto de fusión mucho más alto** (1538°C vs 0°C)
 Los enlaces entre átomos de hierro son mucho más fuertes que los enlaces en el hielo.
 
 </details>
+
+![resumen-temperatura](https://cdn.ediprofe.com/img/quimica/elgh-resumen-temperatura.webp)
+

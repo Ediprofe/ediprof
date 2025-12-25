@@ -73,14 +73,6 @@ Las propiedades de la materia se clasifican según cómo se describen: con **pal
 | **¿Cómo se obtiene?** | Observación | Medición |
 | **Ejemplo** | "Es azul" | "Mide 5 cm" |
 
----
-
-## 🔑 Resumen
-
-| Tipo | Descripción | Ejemplo |
-|------|-------------|---------|
-| **Cualitativa** | Cualidad sin número | Color azul |
-| **Cuantitativa** | Cantidad con número y unidad | 25 g |
 
 ---
 
@@ -123,3 +115,18 @@ Es **cualitativa** porque:
 - No tiene número ni unidad
 
 </details>
+
+
+---
+
+## 🔑 Resumen
+
+| Tipo | Descripción | Ejemplo |
+|------|-------------|---------|
+| **Cualitativa** | Cualidad sin número | Color azul |
+| **Cuantitativa** | Cantidad con número y unidad | 25 g |
+
+![propiedades-cualitativas-y-cuantitativas](https://cdn.ediprofe.com/img/quimica/2928-propiedades-cualitativas-y-cuantitativas.webp)
+
+
+

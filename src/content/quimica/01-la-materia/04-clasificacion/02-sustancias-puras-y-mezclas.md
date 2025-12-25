@@ -97,16 +97,6 @@ Se forman al **combinar sustancias sin reaccionar químicamente**.
 | Formación de mezclas | Físico | ❌ No |
 | Formación de compuestos | Químico | ✅ Sí |
 
----
-
-## 🔑 Resumen
-
-| Clasificación | Descripción | Ejemplo |
-|---------------|-------------|---------|
-| **Elemento** | Un solo tipo de átomo | O₂ |
-| **Compuesto** | Varios elementos, una fórmula | H₂O |
-| **Mezcla homogénea** | No se distinguen componentes | Aire |
-| **Mezcla heterogénea** | Se distinguen componentes | Ensalada |
 
 ---
 
@@ -152,3 +142,17 @@ Porque:
 En una mezcla, los componentes pueden variar en proporción.
 
 </details>
+
+---
+
+## 🔑 Resumen
+
+![sustancias-puras-y-mezclas](https://cdn.ediprofe.com/img/quimica/qwgf-sustancias-puras-y-mezclas.webp)
+
+
+| Clasificación | Descripción | Ejemplo |
+|---------------|-------------|---------|
+| **Elemento** | Un solo tipo de átomo | O₂ |
+| **Compuesto** | Varios elementos, una fórmula | H₂O |
+| **Mezcla homogénea** | No se distinguen componentes | Aire |
+| **Mezcla heterogénea** | Se distinguen componentes | Ensalada |

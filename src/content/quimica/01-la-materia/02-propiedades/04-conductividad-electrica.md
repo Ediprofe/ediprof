@@ -120,3 +120,5 @@ Estos iones **transportan la carga eléctrica**, aumentando la conductividad.
 El agua de lluvia tiene muy pocos iones.
 
 </details>
+
+![resumen-conductividad-eléctrica](https://cdn.ediprofe.com/img/quimica/p9uq-resumen-conductividad.webp)

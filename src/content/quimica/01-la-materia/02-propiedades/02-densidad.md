@@ -125,3 +125,6 @@ Si cortas un trozo de hierro por la mitad, ¿cambia su densidad?
 El trozo pequeño tiene la **misma densidad** que el grande: 7.87 g/mL.
 
 </details>
+
+![resumen-densidad](https://cdn.ediprofe.com/img/quimica/oa8i-resumen-densidad.webp)
+

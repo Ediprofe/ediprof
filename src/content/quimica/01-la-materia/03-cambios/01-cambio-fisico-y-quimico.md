@@ -69,14 +69,7 @@ Los cambios en la materia pueden ser de dos tipos: **físicos** (no aparecen nue
 | **¿Reversible?** | Generalmente sí | Generalmente no |
 | **Ejemplo** | Hielo → Agua | Papel → Ceniza |
 
----
 
-## 🔑 Resumen
-
-| Tipo | Descripción | Ejemplo |
-|------|-------------|---------|
-| **Físico** | No hay nuevas sustancias | Derretir hielo |
-| **Químico** | Aparecen nuevas sustancias | Oxidar metal |
 
 ---
 
@@ -121,3 +114,14 @@ Porque las **proteínas del huevo cambian** su estructura:
 Las propiedades cambian y no se puede revertir.
 
 </details>
+
+---
+
+## 🔑 Resumen
+
+| Tipo | Descripción | Ejemplo |
+|------|-------------|---------|
+| **Físico** | No hay nuevas sustancias | Derretir hielo |
+| **Químico** | Aparecen nuevas sustancias | Oxidar metal |
+
+![cambio-fisico-y-quimico](https://cdn.ediprofe.com/img/quimica/qws2-cambio-fisico-y-quimico.webp)

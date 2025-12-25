@@ -131,3 +131,8 @@ Porque la **masa** mide la cantidad de materia, no el espacio ocupado.
 El agua tiene más **partículas** (moléculas) por unidad de volumen que el aire.
 
 </details>
+
+## Resumen
+
+![resumen-masa-y-volumen](https://cdn.ediprofe.com/img/quimica/22e2-resumen-masa-y-volumen.webp)
+

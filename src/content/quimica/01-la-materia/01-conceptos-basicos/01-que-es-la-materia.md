@@ -1,6 +1,3 @@
-import { Image } from 'astro:assets';
-import cambiosDeFase from '/images/quimica/t-cambios-de-fase.png';
-
 # ¿Qué es la Materia?
 
 La **materia** es todo lo que **tiene masa** y **ocupa un lugar en el espacio**. Es el concepto fundamental de la química.
@@ -130,6 +127,7 @@ No pasa por el estado líquido.
 
 ### Diagrama de Cambios de Fase
 
-<Image src={cambiosDeFase} alt="Cambios de fase de la materia: sólido, líquido y gas" format="webp" />
+![Cambios de fase](https://cdn.ediprofe.com/img/quimica/zu9o-cambios-de-fase.png)
+
 
 ---

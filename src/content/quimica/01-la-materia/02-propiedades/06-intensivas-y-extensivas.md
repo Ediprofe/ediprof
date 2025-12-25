@@ -73,14 +73,7 @@ Las propiedades de la materia también se clasifican según si **dependen o no**
 | **Cambio al aumentar materia** | Aumenta | Se mantiene |
 | **Ejemplos** | Masa, volumen | Densidad, temperatura |
 
----
 
-## 🔑 Resumen
-
-| Tipo | Característica | Ejemplos |
-|------|----------------|----------|
-| **Extensivas** | Dependen de la cantidad | Masa, volumen |
-| **Intensivas** | No dependen de la cantidad | Densidad, temperatura |
 
 ---
 
@@ -125,3 +118,14 @@ Porque no cambia con la cantidad:
 La temperatura **no depende** de cuánta agua haya.
 
 </details>
+
+---
+
+## 🔑 Resumen
+
+| Tipo | Característica | Ejemplos |
+|------|----------------|----------|
+| **Extensivas** | Dependen de la cantidad | Masa, volumen |
+| **Intensivas** | No dependen de la cantidad | Densidad, temperatura |
+
+![propiedades-intensivas-y-extensivas](https://cdn.ediprofe.com/img/quimica/sk2e-propiedades-intensivas-y-extensivas.webp)
