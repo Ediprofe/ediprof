@@ -159,18 +159,20 @@ ediprof/
 
 Las imágenes PNG y JPG se almacenan en **Cloudflare R2** con optimización automática.
 
-#### Paso 1: Guardar imagen en inbox
+#### Forma fácil (menú interactivo)
 ```bash
-# Copia tu imagen a la carpeta inbox/
+# 1. Copia tu imagen a inbox/
 cp ~/Downloads/mi-imagen.png inbox/
+
+# 2. Ejecuta el comando (sin argumentos)
+npm run img
 ```
 
-#### Paso 2: Subir con el comando
-```bash
-npm run img mi-imagen.png -- --materia fisica
-```
-
-**Materias válidas:** `fisica`, `matematicas`, `quimica`, `ciencias`
+El menú te guiará:
+1. **Selecciona la imagen** (muestra todas las del inbox)
+2. **Selecciona la materia** (Física, Matemáticas, Química, Ciencias)
+3. **¿Eliminar original?** (limpia el inbox automáticamente)
+4. **¿Subir otra?** (si hay más imágenes)
 
 #### Paso 3: Pegar el markdown
 El comando copia automáticamente el markdown al clipboard. Solo haz **Cmd+V** en tu archivo `.md`:

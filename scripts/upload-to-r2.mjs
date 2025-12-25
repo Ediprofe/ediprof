@@ -3,15 +3,15 @@
  * Script para optimizar imágenes PNG → WebP y subirlas a Cloudflare R2
  * 
  * Uso:
+ *   npm run img                                  # Menú interactivo (recomendado)
  *   npm run img <archivo.png> --materia <materia>
- *   npm run img grafica-velocidad.png --materia fisica
  *   npm run img --list fisica                    # Lista imágenes de física
  *   npm run img --search velocidad               # Busca imágenes por nombre
  * 
  * El script:
  *   1. Genera un ID único de 4 caracteres
  *   2. Optimiza PNG → WebP (reduce ~80%)
- *   3. Sube a R2 en la estructura: images/{materia}/{id}-{nombre}.webp
+ *   3. Sube a R2 en la estructura: img/{materia}/{id}-{nombre}.webp
  *   4. Copia el markdown al clipboard
  *   5. Actualiza el índice local
  */
@@ -20,6 +20,7 @@ import fs from 'fs';
 import path from 'path';
 import { execSync } from 'child_process';
 import sharp from 'sharp';
+import { select, confirm, search } from '@inquirer/prompts';
 
 // Configuración
 const CONFIG = {
@@ -391,11 +392,114 @@ ${colors.yellow}Flujo:${colors.reset}
 `);
 }
 
+// Obtener archivos de imagen en inbox
+function getInboxFiles() {
+  const validExtensions = ['.png', '.jpg', '.jpeg', '.webp', '.gif'];
+  
+  if (!fs.existsSync(CONFIG.inboxDir)) {
+    return [];
+  }
+  
+  return fs.readdirSync(CONFIG.inboxDir)
+    .filter(file => {
+      const ext = path.extname(file).toLowerCase();
+      return validExtensions.includes(ext) && !file.startsWith('temp-') && !file.startsWith('.');
+    })
+    .sort();
+}
+
+// Menú interactivo
+async function interactiveMode() {
+  console.log('');
+  log('📸', 'Subir imagen a R2', 'blue');
+  console.log('');
+  
+  // Obtener archivos del inbox
+  const inboxFiles = getInboxFiles();
+  
+  if (inboxFiles.length === 0) {
+    log('📭', 'No hay imágenes en la carpeta inbox/', 'yellow');
+    log('💡', 'Copia una imagen a inbox/ y vuelve a ejecutar:', 'gray');
+    console.log(`   cp ~/Downloads/mi-imagen.png inbox/`);
+    console.log('');
+    return;
+  }
+  
+  // Preparar choices con tamaño
+  const fileChoices = inboxFiles.map(file => {
+    const stats = fs.statSync(path.join(CONFIG.inboxDir, file));
+    const sizeKB = Math.round(stats.size / 1024);
+    return {
+      name: `${file} (${sizeKB}KB)`,
+      value: file
+    };
+  });
+  
+  // Seleccionar archivo con búsqueda/filtrado
+  const selectedFile = await search({
+    message: 'Busca y selecciona la imagen (escribe para filtrar):',
+    source: async (input) => {
+      if (!input) return fileChoices;
+      const lower = input.toLowerCase();
+      return fileChoices.filter(c => c.name.toLowerCase().includes(lower));
+    }
+  });
+  
+  // Seleccionar materia con flechas
+  const selectedMateria = await select({
+    message: 'Selecciona la materia (↑↓ para navegar):',
+    choices: [
+      { name: '1. ⚡ Física', value: 'fisica' },
+      { name: '2. 🧮 Matemáticas', value: 'matematicas' },
+      { name: '3. 🧪 Química', value: 'quimica' },
+      { name: '4. 🌿 Ciencias', value: 'ciencias' }
+    ]
+  });
+  
+  console.log('');
+  
+  // Subir la imagen
+  await uploadImage(selectedFile, selectedMateria);
+  
+  // Preguntar si eliminar el original
+  const deleteOriginal = await confirm({
+    message: '¿Eliminar la imagen original del inbox?',
+    default: true
+  });
+  
+  if (deleteOriginal) {
+    const originalPath = path.join(CONFIG.inboxDir, selectedFile);
+    if (fs.existsSync(originalPath)) {
+      fs.unlinkSync(originalPath);
+      log('🗑️', 'Imagen original eliminada', 'gray');
+    }
+  }
+  
+  // Preguntar si subir otra
+  const remainingFiles = getInboxFiles();
+  if (remainingFiles.length > 0) {
+    const uploadAnother = await confirm({
+      message: `¿Subir otra imagen? (${remainingFiles.length} restantes)`,
+      default: false
+    });
+    
+    if (uploadAnother) {
+      await interactiveMode();
+    }
+  }
+}
+
 // Main
 async function main() {
   const args = process.argv.slice(2);
   
-  if (args.length === 0 || args.includes('--help') || args.includes('-h')) {
+  // Si no hay argumentos, modo interactivo
+  if (args.length === 0) {
+    await interactiveMode();
+    return;
+  }
+  
+  if (args.includes('--help') || args.includes('-h')) {
     showHelp();
     return;
   }
@@ -422,13 +526,22 @@ async function main() {
     return;
   }
 
-  // Subir imagen
+  // Subir imagen (modo directo)
   const fileName = args[0];
   const materiaIndex = args.indexOf('--materia');
   
   if (materiaIndex === -1 || !args[materiaIndex + 1]) {
-    log('❌', 'Debes especificar la materia con --materia', 'red');
-    log('💡', `Ejemplo: npm run img ${fileName} --materia fisica`, 'yellow');
+    // Sin materia, preguntar interactivamente
+    const selectedMateria = await select({
+      message: 'Selecciona la materia (↑↓ para navegar):',
+      choices: [
+        { name: '1. ⚡ Física', value: 'fisica' },
+        { name: '2. 🧮 Matemáticas', value: 'matematicas' },
+        { name: '3. 🧪 Química', value: 'quimica' },
+        { name: '4. 🌿 Ciencias', value: 'ciencias' }
+      ]
+    });
+    await uploadImage(fileName, selectedMateria);
     return;
   }
 

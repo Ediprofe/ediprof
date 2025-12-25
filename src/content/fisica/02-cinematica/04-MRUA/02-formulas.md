@@ -265,4 +265,4 @@ Todo problema de MRUA involucra 5 variables. Normalmente conoces 3 y buscas 1.
 
 ### 4. Resumen visual
 
-![Fórmulas MRUA](/images/fisica/cinematica/mrua/formulas-mrua.png)
+![formulas-mrua](https://cdn.ediprofe.com/img/fisica/8m24-formulas-mrua.webp)

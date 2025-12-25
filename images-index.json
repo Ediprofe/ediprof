@@ -26,7 +26,34 @@
       "size": "71KB",
       "url": "https://cdn.ediprofe.com/img/fisica/niyw-ramas-de-la-fisica.webp",
       "status": "uploaded"
+    },
+    {
+      "id": "yssw",
+      "name": "resumen-metodo-cientifico.webp",
+      "materia": "fisica",
+      "date": "2025-12-24",
+      "size": "77KB",
+      "url": "https://cdn.ediprofe.com/img/fisica/yssw-resumen-metodo-cientifico.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "8m24",
+      "name": "formulas-mrua.webp",
+      "materia": "fisica",
+      "date": "2025-12-24",
+      "size": "55KB",
+      "url": "https://cdn.ediprofe.com/img/fisica/8m24-formulas-mrua.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "ijop",
+      "name": "test-mru.png",
+      "materia": "matematicas",
+      "date": "2025-12-24",
+      "size": "41KB",
+      "url": "https://cdn.ediprofe.com/img/matematicas/ijop-test-mru.png",
+      "status": "uploaded"
     }
   ],
-  "lastUpdated": "2025-12-24T23:04:08.052Z"
+  "lastUpdated": "2025-12-24T23:59:23.653Z"
 }

@@ -128,6 +128,6 @@ c) "El agua hierve a menor temperatura en altitudes mayores."
 
 ## 🔑 Resumen
 
-![Resumen - Método científico](/images/fisica/cinematica/introduccion/resumen-metodo-cientifico.png)
+![resumen-metodo-cientifico](https://cdn.ediprofe.com/img/fisica/yssw-resumen-metodo-cientifico.webp)
 
 ---

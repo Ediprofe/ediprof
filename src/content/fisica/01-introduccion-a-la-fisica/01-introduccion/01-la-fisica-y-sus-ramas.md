@@ -86,7 +86,7 @@ Surge a comienzos del siglo XX para explicar fenómenos que la física clásica 
 | **Química**                 | Explica las interacciones y la energía entre átomos y moléculas.                          |
 | **Biología**                | Describe procesos vitales mediante principios físicos (movimiento, respiración, energía). |
 | **Matemáticas**             | Proporcionan el lenguaje para expresar leyes y modelos físicos.                           |
-| **Tecnología e ingeniería** | Aplican principios físicos para crear herramientas, máquinas y sistemas.                  |
+| **Tecnología e ingeniería** | Aplican principios físicos para crear herramientas, máquinas y sistemas.                  | -->
 
 ---
 

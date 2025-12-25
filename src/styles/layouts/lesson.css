@@ -18,6 +18,8 @@
   padding: 3.5rem 2.5rem 1.5rem 2rem;
   width: 100%;
   flex: 1;
+  min-width: 0; /* Permite que flexbox reduzca el ancho */
+  overflow-x: hidden;
 }
 
 /* ========================================
@@ -33,6 +35,7 @@
   animation: fadeIn 0.4s ease-out;
   position: relative;
   overflow: hidden;
+  max-width: 100%;
 }
 
 /* Fondo cuadrícula sutil tipo editorial */
@@ -264,7 +267,6 @@
   line-height: 1.8;
   color: var(--text-primary);
   letter-spacing: -0.008em;
-  /* Evitar desbordamiento horizontal */
   overflow-x: hidden;
   max-width: 100%;
 }
@@ -324,27 +326,39 @@
 }
 
 /* Tablas - scroll horizontal estilo GitHub */
-:global(.content-body .table-wrapper),
 :global(.content-body .table-scroll-wrapper) {
   display: block;
   width: 100%;
+  max-width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   margin: 2rem 0;
   overscroll-behavior-x: contain;
 }
 
-:global(.content-body table) {
+:global(.content-body .table-scroll-wrapper table) {
   border-collapse: separate;
   border-spacing: 0;
   margin: 0;
   border-radius: 8px;
-  overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   border: 1px solid var(--border-color, #e2e8f0);
-  /* Clave: min-width permite que la tabla sea más ancha que el contenedor */
   min-width: 100%;
   width: max-content;
+}
+
+/* Fallback para tablas sin wrapper (no debería ocurrir) */
+:global(.content-body > table) {
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 2rem 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--border-color, #e2e8f0);
+  max-width: 100%;
 }
 
 :global(html.dark .content-body table) {
