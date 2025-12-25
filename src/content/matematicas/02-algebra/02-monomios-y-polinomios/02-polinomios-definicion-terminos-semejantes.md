@@ -1,323 +1,265 @@
-# 📚 Polinomios: Definición y Términos Semejantes
+# **Polinomios y Términos Semejantes**
 
-En esta lección aprenderemos qué es un polinomio, cómo identificar términos semejantes y cómo reducir expresiones polinómicas combinando dichos términos.
-
----
-
-## 📖 ¿Qué es un polinomio?
-
-Un **polinomio** es una expresión algebraica formada por uno o más términos (monomios) conectados por signos de suma o resta.
-
-### Ejemplos de polinomios
-
-| Polinomio | Número de términos | Nombre especial |
-|:---------:|:------------------:|:---------------:|
-| $5x$ | 1 | Monomio |
-| $3x + 2$ | 2 | Binomio |
-| $x^2 - 4x + 7$ | 3 | Trinomio |
-| $2x^3 - x^2 + 5x - 1$ | 4 | Polinomio |
-
-### Ejemplo 1
-
-El polinomio $4x^3 - 2x^2 + 7x - 5$ tiene los siguientes términos:
-
-- $4x^3$ (término cúbico)
-- $-2x^2$ (término cuadrático)
-- $7x$ (término lineal)
-- $-5$ (término independiente)
+Imagina que trabajas en una tienda y necesitas organizar el inventario. Si tienes 5 latas de sopa, 3 cajas de galletas y luego te llegan 2 latas más y 4 cajas más, lo más lógico es sumar "sopa con sopa" y "galletas con galletas". En álgebra, este proceso de agrupar cosas que son iguales es lo que llamamos **reducción de términos semejantes**, y el conjunto de todos estos elementos es un **polinomio**.
 
 ---
 
-## 📖 Grado de un polinomio
+## 🎯 ¿Qué vas a aprender?
 
-El **grado de un polinomio** es el mayor de los grados de sus términos.
-
-### Ejemplo 2
-
-Determina el grado del polinomio $5x^4 - 3x^2 + 2x - 7$:
-
-| Término | Grado |
-|:-------:|:-----:|
-| $5x^4$ | 4 |
-| $-3x^2$ | 2 |
-| $2x$ | 1 |
-| $-7$ | 0 |
-
-$$
-\text{Grado del polinomio} = 4
-$$
-
-### Ejemplo 3
-
-Determina el grado del polinomio $3a^2b^3 - 5ab^2 + 2a^3$:
-
-| Término | Grado |
-|:-------:|:-----:|
-| $3a^2b^3$ | $2 + 3 = 5$ |
-| $-5ab^2$ | $1 + 2 = 3$ |
-| $2a^3$ | $3$ |
-
-$$
-\text{Grado del polinomio} = 5
-$$
+- A identificar qué es un polinomio y cómo se compone.
+- El secreto para reconocer términos semejantes (las "cantidades iguales").
+- Cómo simplificar expresiones largas mediante la reducción de términos.
+- A determinar el grado de un polinomio para conocer su nivel de importancia.
 
 ---
 
-## 📖 Polinomio ordenado
+## 🧱 **¿Qué es un Polinomio?**
 
-Un polinomio está **ordenado** cuando sus términos se escriben de mayor a menor grado (orden descendente) o de menor a mayor grado (orden ascendente).
+Si un monomio era un "paquete único" (como $5x$), un **polinomio** es una cadena de varios monomios unidos por sumas o restas. 
 
-### Ejemplo 4
-
-Ordena el polinomio $3x - 5 + 2x^3 - x^2$ en orden descendente:
-
-**Paso 1:** Identificar los grados de cada término:
-- $3x$ → grado 1
-- $-5$ → grado 0
-- $2x^3$ → grado 3
-- $-x^2$ → grado 2
-
-**Paso 2:** Ordenar de mayor a menor:
+Es como un tren donde cada vagón es un término diferente:
 
 $$
-2x^3 - x^2 + 3x - 5
+4x^2 - 3x + 8
 $$
 
-### Ejemplo 5
+En este tren tenemos:
+1. **$4x^2$**: El vagón de mayor grado (término cuadrático).
+2. **$-3x$**: El vagón del medio (término lineal).
+3. **$8$**: El vagón final que no tiene letras (término independiente).
 
-Ordena el polinomio $7 - 4x^2 + x^4 + 2x$ en orden ascendente:
+> **Nota:** Dependiendo de cuántos términos tiene, le damos nombres especiales: **Binomio** (2 términos) o **Trinomio** (3 términos). Si tiene más, simplemente lo llamamos polinomio.
 
-$$
-7 + 2x - 4x^2 + x^4
-$$
 
 ---
 
-## 📖 Términos semejantes
+## 👯 **Términos Semejantes: "Manzanas con manzanas"**
 
-Dos o más términos son **semejantes** cuando tienen exactamente la misma parte literal, es decir:
-- Las mismas variables
-- Con los mismos exponentes
+Esta es la regla más importante del álgebra comercial: **solo puedes sumar o restar cosas que tengan la misma "apellido"**. 
 
-### Ejemplo 6
+Dos términos son **semejantes** si tienen exactamente la misma **parte literal** (mismas letras con los mismos exponentes).
 
-Identifica los términos semejantes:
+| ¿Son semejantes? | Términos | Razón |
+| :--- | :--- | :--- |
+| **SÍ** ✅ | $5x^2$ y $-2x^2$ | Ambos terminan en $x^2$. |
+| **NO** ❌ | $4ab$ y $4a^2b$ | Los exponentes de $a$ son diferentes. |
+| **SÍ** ✅ | $3xy$ y $y \cdot x$ | El orden de las letras no altera el producto. |
 
-$$
-5x^2, \quad 3xy, \quad -2x^2, \quad 7xy, \quad x^2
-$$
-
-**Grupo 1 (semejantes):** $5x^2$, $-2x^2$, $x^2$ → parte literal $x^2$
-
-**Grupo 2 (semejantes):** $3xy$, $7xy$ → parte literal $xy$
-
-### Ejemplo 7
-
-¿Son semejantes $4a^2b$ y $4ab^2$?
-
-| Término | Parte literal |
-|:-------:|:-------------:|
-| $4a^2b$ | $a^2b$ |
-| $4ab^2$ | $ab^2$ |
-
-**No son semejantes** porque sus partes literales son diferentes.
-
-### Ejemplo 8
-
-Del polinomio $3x^2 + 5x - 2x^2 + 7 - 3x + 1$, identifica los términos semejantes:
-
-| Grupo | Términos semejantes |
-|:-----:|:-------------------|
-| Términos en $x^2$ | $3x^2$ y $-2x^2$ |
-| Términos en $x$ | $5x$ y $-3x$ |
-| Términos independientes | $7$ y $1$ |
 
 ---
 
-## 📖 Reducción de términos semejantes
+## 📉 **Reducción de Términos Semejantes**
 
-**Reducir términos semejantes** significa sumarlos o restarlos para simplificar el polinomio. Para hacerlo:
+Reducir es el arte de simplificar. Si tienes una expresión muy larga, buscas los "equipos" de términos semejantes y los combinas en uno solo.
 
-1. Se suman o restan los coeficientes
-2. Se mantiene la misma parte literal
+**La Regla:**
+1. Sumas o restas los **coeficientes** (los números grandes).
+2. Dejas la **parte literal** exactamente igual (¡no toques los exponentes!).
 
-### Ejemplo 9
-
-Reduce: $5x + 3x$
-
-$$
-5x + 3x = (5 + 3)x = 8x
-$$
+### **Ejemplo Inductivo**
+Si tenemos: $3x^2 + 7x^2$, piensa: "Tengo 3 objetos tipo $x^2$ y me dan otros 7". 
 
 $$
-\boxed{8x}
+(3 + 7)x^2 = 10x^2
 $$
 
-### Ejemplo 10
+**Resultado:** $\boxed{10x^2}$
 
-Reduce: $7a^2 - 2a^2$
-
-$$
-7a^2 - 2a^2 = (7 - 2)a^2 = 5a^2
-$$
-
-$$
-\boxed{5a^2}
-$$
-
-### Ejemplo 11
-
-Reduce: $4xy - 9xy + 2xy$
-
-$$
-4xy - 9xy + 2xy = (4 - 9 + 2)xy = -3xy
-$$
-
-$$
-\boxed{-3xy}
-$$
-
-### Ejemplo 12
-
-Reduce el polinomio $3x^2 + 5x - 2x^2 + 7 - 3x + 1$:
-
-**Paso 1:** Agrupar términos semejantes:
-
-$$
-(3x^2 - 2x^2) + (5x - 3x) + (7 + 1)
-$$
-
-**Paso 2:** Reducir cada grupo:
-
-$$
-x^2 + 2x + 8
-$$
-
-$$
-\boxed{x^2 + 2x + 8}
-$$
-
-### Ejemplo 13
-
-Reduce el polinomio $4a^2b - 3ab + 2a^2b + 5ab - a^2b$:
-
-**Paso 1:** Agrupar términos semejantes:
-
-$$
-(4a^2b + 2a^2b - a^2b) + (-3ab + 5ab)
-$$
-
-**Paso 2:** Reducir cada grupo:
-
-$$
-5a^2b + 2ab
-$$
-
-$$
-\boxed{5a^2b + 2ab}
-$$
-
-### Ejemplo 14
-
-Reduce: $\frac{2}{3}x + \frac{1}{2}x$
-
-$$
-\frac{2}{3}x + \frac{1}{2}x = \left(\frac{2}{3} + \frac{1}{2}\right)x = \left(\frac{4}{6} + \frac{3}{6}\right)x = \frac{7}{6}x
-$$
-
-$$
-\boxed{\frac{7}{6}x}
-$$
 
 ---
 
-## 📖 Polinomio en forma reducida
+## 🎓 **El Grado de un Polinomio**
 
-Un polinomio está en **forma reducida** cuando no tiene términos semejantes que puedan combinarse.
+El grado es como el "nivel de poder" de la expresión. Para encontrarlo, solo tienes que buscar el término que tenga el grado más alto. Ése manda sobre todo el polinomio.
 
-### Ejemplo 15
+**Ejemplo:** En $2x - 5x^3 + 7x^2$:
+- El término $2x$ es de grado $1$.
+- El término $-5x^3$ es de grado **$3$**.
+- El término $7x^2$ es de grado $2$.
 
-¿Está reducido el polinomio $3x^2 + 5x - 2$?
-
-**Sí**, porque no hay términos semejantes.
-
-### Ejemplo 16
-
-¿Está reducido el polinomio $4y - 2y^2 + 3y$?
-
-**No**, porque $4y$ y $3y$ son semejantes.
-
-Forma reducida:
-
-$$
--2y^2 + 7y
-$$
+**Conclusión:** El polinomio es de **grado 3**.
 
 ---
 
-## 📝 Ejercicios de práctica
+## ⚙️ **Ejemplos Resueltos**
 
-### Identificación de términos semejantes
+### **Ejemplo 1: Simplificación de un Trinomio**
+Reduce la siguiente expresión: $5a + 3b - 2a + 4b$.
 
-**Ejercicio 1:** Identifica los grupos de términos semejantes:
-$$5a^2, \quad 3ab, \quad -2a^2, \quad 7b^2, \quad 4ab, \quad -a^2$$
+**Datos:** Tenemos términos con "a" y términos con "b".
 
-**Ejercicio 2:** ¿Son semejantes $6x^3y^2$ y $-4x^2y^3$? Justifica tu respuesta.
+**Razonamiento:**
+1. Agrupamos los términos con la letra $a$: $5a - 2a$.
+2. Agrupamos los términos con la letra $b$: $3b + 4b$.
+3. Resolvemos cada equipo por separado.
 
----
+**Cálculo:**
+$$ (5 - 2)a = 3a $$
+$$ (3 + 4)b = 7b $$
 
-### Reducción de términos semejantes
+**Resultado:** $\boxed{3a + 7b}$
 
-**Ejercicio 3:** Reduce: $8m + 3m - 5m$
-
-**Ejercicio 4:** Reduce: $6x^2 - 9x^2 + 2x^2$
-
-**Ejercicio 5:** Reduce el polinomio: $5x^3 - 2x^2 + 3x - x^3 + 4x^2 - 7$
-
-**Ejercicio 6:** Reduce el polinomio: $2ab - 3a + 5ab + a - 2ab$
 
 ---
 
-### Ordenar y reducir
+### **Ejemplo 2: Cuidado con los exponentes**
+Simplifica: $x^2 + 5x + 3x^2 - 2x + 8$.
 
-**Ejercicio 7:** Ordena en forma descendente y reduce: $3 - 2x + x^2 + 5x - 4$
+**Datos:** Hay términos cuadráticos ($x^2$), términos lineales ($x$) y un número solo.
 
-**Ejercicio 8:** Reduce y determina el grado: $4y^4 - 3y^2 + 2y^4 + y - 5y^2 + 3$
+**Razonamiento:**
+1. Equipo $x^2$: $1x^2 + 3x^2 = 4x^2$.
+2. Equipo $x$: $5x - 2x = 3x$.
+3. El $8$ se queda igual porque no tiene pareja.
+
+**Resultado:** $\boxed{4x^2 + 3x + 8}$
+
 
 ---
 
-## ✅ Soluciones
+## 📝 **Ejercicios de Práctica**
 
-### Ejercicios 1-2
+### **Ejercicio 1**
+Reduce: $10x + 5x - 2x$.
 
-**Ejercicio 1:**
-- Grupo 1: $5a^2$, $-2a^2$, $-a^2$ (parte literal $a^2$)
-- Grupo 2: $3ab$, $4ab$ (parte literal $ab$)
-- Grupo 3: $7b^2$ (único con parte literal $b^2$)
+<details>
+<summary>Ver solución</summary>
 
-**Ejercicio 2:** No son semejantes. El primero tiene parte literal $x^3y^2$ y el segundo $x^2y^3$. Los exponentes de $x$ e $y$ son diferentes.
+**Datos:** Todos los términos son semejantes (tienen $x$).
+**Razonamiento:** Sumamos y restamos los coeficientes: $10 + 5 - 2$.
+**Resultado:** $\boxed{13x}$
 
-### Ejercicios 3-6
+</details>
 
-| Ejercicio | Desarrollo | Respuesta |
-|:---------:|:-----------|:---------:|
-| 3 | $(8 + 3 - 5)m$ | $6m$ |
-| 4 | $(6 - 9 + 2)x^2$ | $-x^2$ |
-| 5 | $(5 - 1)x^3 + (-2 + 4)x^2 + 3x - 7$ | $4x^3 + 2x^2 + 3x - 7$ |
-| 6 | $(2 + 5 - 2)ab + (-3 + 1)a$ | $5ab - 2a$ |
+### **Ejercicio 2**
+¿Son semejantes $4x^2y$ y $7xy^2$? Explica por qué.
 
-### Ejercicios 7-8
+<details>
+<summary>Ver solución</summary>
 
-**Ejercicio 7:**
+**Análisis:**
+- Término 1: $x$ está al cuadrado, $y$ a la 1.
+- Término 2: $x$ está a la 1, $y$ al cuadrado.
+**Razonamiento:** Aunque tienen las mismas letras, los exponentes no coinciden en las mismas letras.
+**Resultado:** $\boxed{\text{No son semejantes}}$
 
-Reducción: $(1)x^2 + (-2 + 5)x + (3 - 4) = x^2 + 3x - 1$
+</details>
 
-Ordenado descendente: $x^2 + 3x - 1$
+### **Ejercicio 3**
+Simplifica: $5a - 8b + 2a - b$.
 
-**Ejercicio 8:**
+<details>
+<summary>Ver solución</summary>
 
-Reducción: $(4 + 2)y^4 + (-3 - 5)y^2 + y + 3 = 6y^4 - 8y^2 + y + 3$
+**Razonamiento:**
+- Equipo $a$: $5a + 2a = 7a$.
+- Equipo $b$: $-8b - 1b = -9b$.
+**Resultado:** $\boxed{7a - 9b}$
 
-Grado del polinomio: $4$
+</details>
+
+### **Ejercicio 4**
+Determina el grado del polinomio: $x^2 + 5x^4 - 3$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Análisis:**
+- Grados de los términos: $2, 4, 0$.
+**Razonamiento:** El grado más alto de todos los términos es el que define al polinomio.
+**Resultado:** $\boxed{4}$
+
+</details>
+
+### **Ejercicio 5**
+Reduce: $3m^2 + m - 2m^2 + 4m$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+- Equipo $m^2$: $3m^2 - 2m^2 = 1m^2$.
+- Equipo $m$: $1m + 4m = 5m$.
+**Resultado:** $\boxed{m^2 + 5m}$
+
+</details>
+
+### **Ejercicio 6**
+Simplifica: $12 - 5x + 3 - 2x$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+- Números solos: $12 + 3 = 15$.
+- Equipo $x$: $-5x - 2x = -7x$.
+**Resultado:** $\boxed{15 - 7x}$
+
+</details>
+
+### **Ejercicio 7**
+¿Cuál es el término independiente en $4x^3 - 2x + 7$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** Es el término que no tiene variables.
+**Resultado:** $\boxed{7}$
+
+</details>
+
+### **Ejercicio 8**
+Reduce: $\frac{1}{2}x + \frac{3}{2}x$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** Sumamos las fracciones: $1/2 + 3/2 = 4/2 = 2$.
+**Resultado:** $\boxed{2x}$
+
+</details>
+
+### **Ejercicio 9**
+Simplifica: $a^2 + b^2 + 2a^2 - 3b^2$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+- Equipo $a^2$: $1a^2 + 2a^2 = 3a^2$.
+- Equipo $b^2$: $1b^2 - 3b^2 = -2b^2$.
+**Resultado:** $\boxed{3a^2 - 2b^2}$
+
+</details>
+
+### **Ejercicio 10**
+Reduce un polinomio que tiene $5$ manzanas ($m$), le quitan $2$, y luego le dan $3$ peras ($p$).
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+- Equipo $m$: $5m - 2m = 3m$.
+- Equipo $p$: $3p$ (no cambia).
+**Resultado:** $\boxed{3m + 3p}$
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+![polinomio-y-terminos-semejantes](https://cdn.ediprofe.com/img/matematicas/gzx3-polinomio-y-terminos-semejantes.webp)
+
+
+
+| Concepto | Definición | Ejemplo |
+| :--- | :--- | :--- |
+| **Polinomio** | Suma o resta de varios monomios. | $x^2 - 4x + 1$ |
+| **Términos Semejantes** | Tienen mismas letras y mismos exponentes. | $3xy$ y $-5xy$ |
+| **Reducción** | Sumar/restar coeficientes de términos semejantes. | $2a + a = 3a$ |
+| **Grado** | El mayor exponente de todo el polinomio. | $x^5 + x \to \text{Grado } 5$ |
+
+> **Conclusión:** Dominar los términos semejantes es como aprender a clasificar objetos: una vez que sabes qué cosas "se parecen", puedes simplificar cualquier expresión matemática por muy larga que sea. 
 
 ---

@@ -1,320 +1,271 @@
-# 🔢 Monomios: Estructura, Grado y Valor Numérico
+# **Monomios: Estructura, Grado y Valor**
 
-En esta lección estudiaremos en detalle los monomios: su definición, estructura, cómo determinar su grado y cómo calcular su valor numérico.
-
----
-
-## 📖 ¿Qué es un monomio?
-
-Un **monomio** es una expresión algebraica que consta de un solo término. Está formado por un coeficiente numérico y una parte literal (variables con sus exponentes), unidos por multiplicación.
-
-### Ejemplos de monomios
-
-$$
-5x \quad \quad -3a^2b \quad \quad 7 \quad \quad x^3y^2 \quad \quad \frac{2}{3}m^4
-$$
-
-### ¿Qué NO es un monomio?
-
-Las siguientes expresiones **no son monomios**:
-
-| Expresión | Razón |
-|:---------:|:------|
-| $3x + 2$ | Tiene dos términos (es un binomio) |
-| $\frac{5}{x}$ | La variable está en el denominador |
-| $\sqrt{x}$ | Tiene un exponente fraccionario ($x^{1/2}$) |
-| $x^{-2}$ | Tiene exponente negativo |
-
-> **Regla:** En un monomio, los exponentes de las variables deben ser números enteros no negativos (0, 1, 2, 3, ...).
+¿Te has fijado que en el supermercado algunos productos vienen en paquetes individuales? Una lata de refresco o una caja de cereal son unidades únicas. En álgebra, un **monomio** es exactamente eso: un "paquete único" de números y letras que se multiplican entre sí para representar una sola cantidad.
 
 ---
 
-## 📖 Estructura de un monomio
+## 🎯 ¿Qué vas a aprender?
 
-Todo monomio tiene tres componentes principales:
-
-### 1. Signo
-
-Indica si el monomio es positivo ($+$) o negativo ($-$).
-
-### 2. Coeficiente
-
-Es el factor numérico que multiplica a la parte literal. Si no aparece ningún número, el coeficiente es $1$.
-
-### 3. Parte literal
-
-Es el conjunto de variables (letras) con sus respectivos exponentes.
-
-### Ejemplo 1
-
-Identifica la estructura del monomio $-7x^3y^2$:
-
-$$
-\underbrace{-}_{\text{signo}} \underbrace{7}_{\text{coeficiente}} \underbrace{x^3y^2}_{\text{parte literal}}
-$$
-
-| Componente | Valor |
-|:----------:|:-----:|
-| Signo | $-$ |
-| Coeficiente | $7$ |
-| Parte literal | $x^3y^2$ |
-
-### Ejemplo 2
-
-Identifica la estructura del monomio $ab^2c$:
-
-| Componente | Valor |
-|:----------:|:-----:|
-| Signo | $+$ (implícito) |
-| Coeficiente | $1$ (implícito) |
-| Parte literal | $ab^2c$ |
-
-### Ejemplo 3
-
-Identifica la estructura del monomio $-\frac{3}{4}m^5$:
-
-| Componente | Valor |
-|:----------:|:-----:|
-| Signo | $-$ |
-| Coeficiente | $\frac{3}{4}$ |
-| Parte literal | $m^5$ |
+- A identificar qué es un monomio y qué no lo es.
+- A desmontar un monomio en sus piezas básicas (signo, coeficiente, letras).
+- Cómo calcular el "grado" o tamaño de un monomio.
+- El secreto para calcular su valor real dándole números a las letras.
 
 ---
 
-## 📖 Grado de un monomio
+## 📦 **¿Qué es un Monomio?**
 
-El **grado** de un monomio indica el "tamaño" o "complejidad" de la parte literal. Se calcula de dos formas:
+Un monomio es la expresión más simple del álgebra. Es un solo término donde los números y las letras están "pegados" por una multiplicación.
 
-### Grado absoluto (o total)
-
-Es la suma de todos los exponentes de las variables.
-
-### Grado relativo (respecto a una variable)
-
-Es el exponente de esa variable específica dentro del monomio.
-
-### Ejemplo 4
-
-Calcula el grado del monomio $5x^3$:
+Imagina que $x$ representa el precio de una manzana. Si compras 5 manzanas, lo escribes como $5x$. ¡Eso es un monomio!
 
 $$
-\text{Grado absoluto} = 3
+5x \quad, \quad -3a^2 \quad, \quad \frac{1}{2}xy
 $$
 
-$$
-\text{Grado relativo a } x = 3
-$$
-
-### Ejemplo 5
-
-Calcula el grado del monomio $-2a^4b^2c$:
-
-**Grado absoluto:**
-
-$$
-4 + 2 + 1 = 7
-$$
-
-**Grados relativos:**
-
-| Variable | Grado relativo |
-|:--------:|:--------------:|
-| $a$ | $4$ |
-| $b$ | $2$ |
-| $c$ | $1$ |
-
-### Ejemplo 6
-
-Calcula el grado del monomio $8x^2y^3z^5$:
-
-**Grado absoluto:**
-
-$$
-2 + 3 + 5 = 10
-$$
-
-**Grados relativos:**
-
-- Grado en $x$: $2$
-- Grado en $y$: $3$
-- Grado en $z$: $5$
-
-### Ejemplo 7
-
-Calcula el grado del monomio $-12$:
-
-El número $-12$ es un monomio **constante** (sin parte literal).
-
-$$
-\text{Grado absoluto} = 0
-$$
-
-### Ejemplo 8
-
-Calcula el grado del monomio $7xy$:
-
-Recordemos que $xy = x^1y^1$
-
-**Grado absoluto:**
-
-$$
-1 + 1 = 2
-$$
+> **Regla de Oro:** Un monomio es "uno solo". Si ves un signo de más ($+$) o menos ($-$) separando dos grupos (como en $3x + 2$), ya no es un monomio, es un binomio.
 
 ---
 
-## 📖 Valor numérico de un monomio
+## 🏗️ **Anatomía de un Monomio**
 
-El **valor numérico** de un monomio se obtiene sustituyendo las variables por valores numéricos dados y realizando las operaciones.
+Para entender un monomio, debemos ver qué hay dentro. Todo monomio completo tiene tres partes fundamentales:
 
-### Ejemplo 9
+1.  **Signo:** Si es positivo ($+$) o negativo ($-$).
+2.  **Coeficiente:** El número que nos dice "cuántas veces" está la letra.
+3.  **Parte Literal:** Las letras con sus exponentes.
 
-Calcula el valor numérico de $4x^2$ cuando $x = 3$:
+### **Ejemplo: Analizando $-7x^3$**
 
-$$
-4(3)^2 = 4 \times 9 = 36
-$$
+- **Signo:** Negativo ($-$).
+- **Coeficiente:** El número $7$.
+- **Parte Literal:** La letra $x$ elevada a la $3$.
 
-$$
-\boxed{36}
-$$
+Si ves un monomio como $x^2$, recuerda que su signo es $+$ y su coeficiente es $1$ (aunque no se escriban, ¡ahí están!).
 
-### Ejemplo 10
-
-Calcula el valor numérico de $-2a^3b$ cuando $a = 2$ y $b = 5$:
-
-$$
--2(2)^3(5) = -2 \times 8 \times 5 = -80
-$$
-
-$$
-\boxed{-80}
-$$
-
-### Ejemplo 11
-
-Calcula el valor numérico de $\frac{3}{2}x^2y^3$ cuando $x = 4$ y $y = -1$:
-
-$$
-\frac{3}{2}(4)^2(-1)^3 = \frac{3}{2} \times 16 \times (-1)
-$$
-
-$$
-= \frac{48}{2} \times (-1) = 24 \times (-1) = -24
-$$
-
-$$
-\boxed{-24}
-$$
-
-### Ejemplo 12
-
-Calcula el valor numérico de $5m^2n^2$ cuando $m = -2$ y $n = 3$:
-
-$$
-5(-2)^2(3)^2 = 5 \times 4 \times 9 = 180
-$$
-
-$$
-\boxed{180}
-$$
 
 ---
 
-## 📖 Monomios semejantes
+## 📏 **El Grado: ¿Qué tan "grande" es?**
 
-Dos o más monomios son **semejantes** cuando tienen la misma parte literal, es decir, las mismas variables con los mismos exponentes.
+El grado es como la "jerarquía" o el nivel de complejidad de un monomio. Existen dos formas de medirlo:
 
-### Ejemplo 13
+### **1. Grado Absoluto (El total)**
+Es simplemente la suma de todos los exponentes de las letras.
+- En $5x^4$, el grado es $\boxed{4}$.
+- En $3x^2y^3$, sumamos $2 + 3$, por lo que el grado es $\boxed{5}$.
 
-¿Son semejantes $3x^2y$ y $-5x^2y$?
-
-**Sí**, porque ambos tienen la misma parte literal: $x^2y$
-
-### Ejemplo 14
-
-¿Son semejantes $4a^2b$ y $4ab^2$?
-
-**No**, porque las partes literales son diferentes:
-- Primer monomio: $a^2b$ (grado 2 en $a$, grado 1 en $b$)
-- Segundo monomio: $ab^2$ (grado 1 en $a$, grado 2 en $b$)
-
-### Ejemplo 15
-
-Identifica los monomios semejantes: $2x^3$, $-x^3$, $5x^2$, $7x^3$
-
-Los monomios semejantes son: $2x^3$, $-x^3$ y $7x^3$ (todos tienen parte literal $x^3$)
-
-El monomio $5x^2$ no es semejante a los demás.
+### **2. Grado Relativo (Respecto a una letra)**
+Es el exponente de una letra en específico.
+- En $8a^2b^5$, el grado relativo a $a$ es $2$, y el grado relativo a $b$ es $5$.
 
 ---
 
-## 📝 Ejercicios de práctica
+## 🔢 **Valor Numérico**
 
-### Estructura del monomio
+El valor numérico de un monomio es el resultado final que obtienes cuando reemplazas las letras por números reales y haces la multiplicación.
 
-**Ejercicio 1:** Identifica el signo, coeficiente y parte literal del monomio $-9p^4q$.
+### **Ejemplo Paso a Paso**
+Calcula el valor de $4x^2$ si $x = 3$.
 
-**Ejercicio 2:** Identifica el signo, coeficiente y parte literal del monomio $xyz^3$.
+**Razonamiento:**
+1. Donde está la $x$, ponemos un $3$.
+2. Primero resolvemos la potencia ($3^2$).
+3. Al final multiplicamos por el coeficiente $4$.
 
----
+**Cálculo:**
+$$
+4 \cdot (3)^2 = 4 \cdot 9 = 36
+$$
 
-### Grado del monomio
+**Resultado:** $\boxed{36}$
 
-**Ejercicio 3:** Calcula el grado absoluto del monomio $6a^3b^2c^4$.
-
-**Ejercicio 4:** Calcula el grado relativo a cada variable del monomio $-5x^4y^2z$.
-
-**Ejercicio 5:** Ordena de menor a mayor grado: $3x$, $7x^3$, $-2x^2$, $5$.
-
----
-
-### Valor numérico
-
-**Ejercicio 6:** Calcula el valor numérico de $3x^3$ cuando $x = 2$.
-
-**Ejercicio 7:** Calcula el valor numérico de $-4ab^2$ cuando $a = 3$ y $b = -2$.
-
-**Ejercicio 8:** Calcula el valor numérico de $\frac{1}{2}m^2n$ cuando $m = 6$ y $n = 4$.
-
----
-
-### Monomios semejantes
-
-**Ejercicio 9:** ¿Son semejantes $8a^2b^3$ y $-2a^2b^3$? Justifica tu respuesta.
-
-**Ejercicio 10:** Del siguiente grupo, identifica los monomios semejantes: $4xy^2$, $-xy^2$, $3x^2y$, $7xy^2$
+<!-- PROPUESTA DE IMAGEN: maquina-monomio-valor
+Descripción: Una máquina donde dejas caer el valor "x=3" por un embudo, pasa por un engranaje con forma de monomio "4x^2" y sale el número "36".
+Elementos:
+- Entrada de valores.
+- Transformación interna.
+- Salida de resultado.
+Estilo: Isométrico digital
+-->
 
 ---
 
-## ✅ Soluciones
+## ⚙️ **Ejemplos Resueltos**
 
-### Ejercicios 1-2
+### **Ejemplo 1: Grado de un monomio complejo**
+Determina el grado absoluto de $-2a^3b^2c$.
 
-**Ejercicio 1:** Signo: $-$, Coeficiente: $9$, Parte literal: $p^4q$
+**Datos:**
+- Exponente de $a$: $3$
+- Exponente de $b$: $2$
+- Exponente de $c$: $1$ (cuando no tiene número, es $1$)
 
-**Ejercicio 2:** Signo: $+$, Coeficiente: $1$, Parte literal: $xyz^3$
+**Razonamiento:** Sumamos todos los exponentes de la parte literal.
 
-### Ejercicios 3-5
+**Cálculo:**
+$$
+3 + 2 + 1 = 6
+$$
 
-**Ejercicio 3:** Grado absoluto $= 3 + 2 + 4 = 9$
-
-**Ejercicio 4:** Grado en $x = 4$, Grado en $y = 2$, Grado en $z = 1$
-
-**Ejercicio 5:** $5$ (grado 0), $3x$ (grado 1), $-2x^2$ (grado 2), $7x^3$ (grado 3)
-
-### Ejercicios 6-8
-
-| Ejercicio | Desarrollo | Respuesta |
-|:---------:|:-----------|:---------:|
-| 6 | $3(2)^3 = 3 \times 8$ | $24$ |
-| 7 | $-4(3)(-2)^2 = -4 \times 3 \times 4$ | $-48$ |
-| 8 | $\frac{1}{2}(6)^2(4) = \frac{1}{2} \times 36 \times 4$ | $72$ |
-
-### Ejercicios 9-10
-
-**Ejercicio 9:** Sí, son semejantes porque ambos tienen la misma parte literal $a^2b^3$.
-
-**Ejercicio 10:** Los semejantes son: $4xy^2$, $-xy^2$ y $7xy^2$ (todos con parte literal $xy^2$). El monomio $3x^2y$ no es semejante.
+**Resultado:** $\boxed{6}$
 
 ---
+
+### **Ejemplo 2: Valor numérico con negativos**
+Calcula $-3xy^2$ si $x = 2$ e $y = -1$.
+
+**Datos:** $x=2, y=-1$.
+**Razonamiento:** Al elevar un número negativo al cuadrado, el resultado es positivo: $(-1)^2 = 1$.
+
+**Cálculo:**
+$$
+-3 \cdot (2) \cdot (-1)^2
+$$
+$$
+-3 \cdot 2 \cdot 1 = -6
+$$
+
+**Resultado:** $\boxed{-6}$
+
+---
+
+## 📝 **Ejercicios de Práctica**
+
+Pon a prueba lo que has aprendido. Intenta resolverlos antes de ver la solución.
+
+### **Ejercicio 1**
+Identifica el coeficiente de: $-5x^2y$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** El monomio es $-5x^2y$.
+**Razonamiento:** El coeficiente es el número que acompaña a las letras, incluyendo su signo.
+**Resultado:** $\boxed{-5}$
+
+</details>
+
+### **Ejercicio 2**
+¿Cuál es la parte literal de $8abc^3$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** El monomio es $8abc^3$.
+**Razonamiento:** La parte literal son todas las letras con sus exponentes.
+**Resultado:** $\boxed{abc^3}$
+
+</details>
+
+### **Ejercicio 3**
+Calcula el grado absoluto de $7x^4y^2z$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** Exponentes: $x \to 4, y \to 2, z \to 1$.
+**Razonamiento:** Sumamos todos los exponentes: $4 + 2 + 1$.
+**Resultado:** $\boxed{7}$
+
+</details>
+
+### **Ejercicio 4**
+Determina el grado relativo respecto a la variable $y$ en: $10x^3y^5$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** El monomio es $10x^3y^5$.
+**Razonamiento:** Buscamos específicamente el exponente de la letra $y$.
+**Resultado:** $\boxed{5}$
+
+</details>
+
+### **Ejercicio 5**
+Calcula el valor numérico de $5x$ cuando $x = -4$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** Coeficiente $5$, variable $x = -4$.
+**Razonamiento:** Multiplicamos el número por el valor dado: $5 \cdot (-4)$.
+**Resultado:** $\boxed{-20}$
+
+</details>
+
+### **Ejercicio 6**
+Calcula el valor numérico de $x^2y$ si $x = 3$ e $y = 2$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** $x=3, y=2$.
+**Razonamiento:** Sustituimos y resolvemos la potencia primero: $(3)^2 \cdot 2$.
+**Resultado:** $9 \cdot 2 = \boxed{18}$
+
+</details>
+
+### **Ejercicio 7**
+¿Cuál es el grado de un término independiente (un número solo) como el $9$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** El número es $9$.
+**Razonamiento:** Como no tiene letras, no hay exponentes que sumar.
+**Resultado:** $\boxed{0}$
+
+</details>
+
+### **Ejercicio 8**
+Si el monomio es $-ab$, ¿cuál es su coeficiente?
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** Monomio $-ab$.
+**Razonamiento:** El signo $-$ indica que hay un $1$ negativo invisible multiplicando.
+**Resultado:** $\boxed{-1}$
+
+</details>
+
+### **Ejercicio 9**
+Halla el valor de $\frac{1}{2}x^2$ cuando $x = 6$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** Fracción $1/2$ y valor $x=6$.
+**Razonamiento:** $(6)^2 = 36$. Luego calculamos la mitad: $36 / 2$.
+**Resultado:** $\boxed{18}$
+
+</details>
+
+### **Ejercicio 10**
+Suma los grados relativos de $x$ y $z$ en el monomio $4x^2yz^5$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** Grado de $x$ es $2$, grado de $z$ es $5$.
+**Razonamiento:** Sumamos específicamente esos dos valores: $2 + 5$.
+**Resultado:** $\boxed{7}$
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+![resumen-monomios](https://cdn.ediprofe.com/img/matematicas/j7re-resumen-monomios.webp)
+
+
+| Concepto | Definición | Ejemplo |
+| :--- | :--- | :--- |
+| **Monomio** | Expresión de un solo término (sin sumas). | $-4x^2$ |
+| **Coeficiente** | El número que multiplica a las letras. | $-4$ |
+| **Grado Absoluto** | Suma de todos los exponentes de las letras. | $x^2y^3 \to \text{Grado } 5$ |
+| **Valor Numérico** | Resultado al cambiar letras por números. | Si $x=2, 3x = 6$ |
+
+> **Conclusión:** Los monomios son los ladrillos básicos del álgebra. Entender su estructura y cómo se miden es fundamental para poder construir expresiones más grandes como los polinomios.

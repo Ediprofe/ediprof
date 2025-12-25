@@ -1,608 +1,241 @@
-# ➗ División de Polinomios
+# **División de Polinomios**
 
-En esta lección aprenderemos a dividir polinomios y a utilizar la Regla de Ruffini como método simplificado para divisiones específicas.
+Dividir un polinomio es como repartir una herencia o un gran cargamento de suministros entre varias personas. Si tienes un total de recursos (el dividendo) y quieres saber cuánto le toca a cada uno (el cociente) y cuánto sobra (el resto), la división de polinomios es tu herramienta ideal. En esta lección, aprenderemos desde el reparto más simple hasta el método de Ruffini, un "atajo" matemático sorprendente.
 
 ---
 
-## 📖 División de un polinomio entre un monomio
+## 🎯 **¿Qué vas a aprender?**
 
-Para dividir un polinomio entre un monomio, se divide cada término del polinomio entre el monomio.
+*   A dividir un polinomio entre un monomio simplificando término a término.
+*   El método de la "casita" para realizar divisiones largas de polinomios.
+*   Cómo usar la **Regla de Ruffini** para dividir más rápido.
+*   A predecir el sobrante de una división usando el Teorema del Resto.
 
-### Ejemplo 1
+---
 
+## 📦 **División entre un Monomio**
+
+Esta es la forma más sencilla de dividir. Imagina que tienes un paquete con varios artículos y quieres repartirlos entre un grupo único.
+
+**La Regla:** Divide cada término del polinomio entre el monomio de abajo por separado.
+1.  Divide los coeficientes (números).
+2.  Resta los exponentes de las letras iguales.
+
+### **Ejemplo: El Reparto Simple**
 Calcula: $\frac{6x^3 + 9x^2 - 3x}{3x}$
 
-$$
-= \frac{6x^3}{3x} + \frac{9x^2}{3x} - \frac{3x}{3x}
-$$
+**Paso a paso:**
+1.  $\frac{6x^3}{3x} = 2x^2$
+2.  $\frac{9x^2}{3x} = 3x$
+3.  $\frac{-3x}{3x} = -1$
 
-$$
-= 2x^2 + 3x - 1
-$$
-
-$$
-\boxed{2x^2 + 3x - 1}
-$$
-
-### Ejemplo 2
-
-Calcula: $\frac{12a^4b^2 - 8a^3b + 4a^2b^3}{4a^2b}$
-
-$$
-= \frac{12a^4b^2}{4a^2b} - \frac{8a^3b}{4a^2b} + \frac{4a^2b^3}{4a^2b}
-$$
-
-$$
-= 3a^2b - 2a + b^2
-$$
-
-$$
-\boxed{3a^2b - 2a + b^2}
-$$
-
-### Ejemplo 3
-
-Calcula: $\frac{15x^5 - 10x^4 + 20x^3}{5x^2}$
-
-$$
-= \frac{15x^5}{5x^2} - \frac{10x^4}{5x^2} + \frac{20x^3}{5x^2}
-$$
-
-$$
-= 3x^3 - 2x^2 + 4x
-$$
-
-$$
-\boxed{3x^3 - 2x^2 + 4x}
-$$
-
-### Ejemplo 4
-
-Calcula: $\frac{24m^3n^2 - 18m^2n^3 + 12mn^4}{6mn^2}$
-
-$$
-= \frac{24m^3n^2}{6mn^2} - \frac{18m^2n^3}{6mn^2} + \frac{12mn^4}{6mn^2}
-$$
-
-$$
-= 4m^2 - 3mn + 2n^2
-$$
-
-$$
-\boxed{4m^2 - 3mn + 2n^2}
-$$
-
-### Ejemplo 5
-
-Calcula: $\frac{8x^6 - 4x^4 + 16x^3 - 2x^2}{2x^2}$
-
-$$
-= \frac{8x^6}{2x^2} - \frac{4x^4}{2x^2} + \frac{16x^3}{2x^2} - \frac{2x^2}{2x^2}
-$$
-
-$$
-= 4x^4 - 2x^2 + 8x - 1
-$$
-
-$$
-\boxed{4x^4 - 2x^2 + 8x - 1}
-$$
+**Resultado:** $\boxed{2x^2 + 3x - 1}$
 
 ---
 
-## 📖 División de polinomios (método clásico)
-
-La división de polinomios es similar a la división larga de números. Se busca un cociente y un resto tal que:
-
-$$
-\text{Dividendo} = \text{Divisor} \times \text{Cociente} + \text{Resto}
-$$
-
-### Procedimiento
-
-1. Ordenar ambos polinomios en forma descendente
-2. Dividir el primer término del dividendo entre el primer término del divisor
-3. Multiplicar el resultado por todo el divisor
-4. Restar del dividendo
-5. Repetir con el nuevo polinomio hasta que el grado del resto sea menor que el del divisor
-
-### Ejemplo 6
-
-Divide: $(x^2 + 5x + 6) \div (x + 2)$
-
-**Paso 1:** $\frac{x^2}{x} = x$ → primer término del cociente
-
-**Paso 2:** $x \cdot (x + 2) = x^2 + 2x$
-
-**Paso 3:** $(x^2 + 5x + 6) - (x^2 + 2x) = 3x + 6$
-
-**Paso 4:** $\frac{3x}{x} = 3$ → segundo término del cociente
-
-**Paso 5:** $3 \cdot (x + 2) = 3x + 6$
-
-**Paso 6:** $(3x + 6) - (3x + 6) = 0$ → resto
-
-$$
-\boxed{\text{Cociente} = x + 3, \quad \text{Resto} = 0}
-$$
-
-### Ejemplo 7
-
-Divide: $(2x^3 - 5x^2 + 3x - 4) \div (x - 2)$
-
-**Paso 1:** $\frac{2x^3}{x} = 2x^2$
-
-**Paso 2:** $2x^2 \cdot (x - 2) = 2x^3 - 4x^2$
-
-**Paso 3:** $(2x^3 - 5x^2) - (2x^3 - 4x^2) = -x^2$
-
-Bajamos el siguiente término: $-x^2 + 3x$
-
-**Paso 4:** $\frac{-x^2}{x} = -x$
-
-**Paso 5:** $-x \cdot (x - 2) = -x^2 + 2x$
-
-**Paso 6:** $(-x^2 + 3x) - (-x^2 + 2x) = x$
-
-Bajamos el siguiente término: $x - 4$
-
-**Paso 7:** $\frac{x}{x} = 1$
-
-**Paso 8:** $1 \cdot (x - 2) = x - 2$
-
-**Paso 9:** $(x - 4) - (x - 2) = -2$
-
-$$
-\boxed{\text{Cociente} = 2x^2 - x + 1, \quad \text{Resto} = -2}
-$$
-
-### Ejemplo 8
-
-Divide: $(x^3 - 8) \div (x - 2)$
-
-> **Nota:** El dividendo tiene términos "faltantes". Debemos completarlos con coeficiente cero: $x^3 + 0x^2 + 0x - 8$
-
-**Paso 1:** $\frac{x^3}{x} = x^2$
-
-**Paso 2:** $x^2 \cdot (x - 2) = x^3 - 2x^2$
-
-**Paso 3:** $(x^3 + 0x^2) - (x^3 - 2x^2) = 2x^2$
-
-Bajamos: $2x^2 + 0x$
-
-**Paso 4:** $\frac{2x^2}{x} = 2x$
-
-**Paso 5:** $2x \cdot (x - 2) = 2x^2 - 4x$
-
-**Paso 6:** $(2x^2 + 0x) - (2x^2 - 4x) = 4x$
-
-Bajamos: $4x - 8$
-
-**Paso 7:** $\frac{4x}{x} = 4$
-
-**Paso 8:** $4 \cdot (x - 2) = 4x - 8$
-
-**Paso 9:** $(4x - 8) - (4x - 8) = 0$
-
-$$
-\boxed{\text{Cociente} = x^2 + 2x + 4, \quad \text{Resto} = 0}
-$$
-
-### Ejemplo 9
-
-Divide: $(3x^3 + 2x^2 - 7x + 2) \div (x + 2)$
-
-**Paso 1:** $\frac{3x^3}{x} = 3x^2$
-
-**Paso 2:** $3x^2 \cdot (x + 2) = 3x^3 + 6x^2$
-
-**Paso 3:** $(3x^3 + 2x^2) - (3x^3 + 6x^2) = -4x^2$
-
-Bajamos: $-4x^2 - 7x$
-
-**Paso 4:** $\frac{-4x^2}{x} = -4x$
-
-**Paso 5:** $-4x \cdot (x + 2) = -4x^2 - 8x$
-
-**Paso 6:** $(-4x^2 - 7x) - (-4x^2 - 8x) = x$
-
-Bajamos: $x + 2$
-
-**Paso 7:** $\frac{x}{x} = 1$
-
-**Paso 8:** $1 \cdot (x + 2) = x + 2$
-
-**Paso 9:** $(x + 2) - (x + 2) = 0$
-
-$$
-\boxed{\text{Cociente} = 3x^2 - 4x + 1, \quad \text{Resto} = 0}
-$$
-
-### Ejemplo 10
-
-Divide: $(4x^4 - 2x^3 + 6x^2 - 3x + 1) \div (2x - 1)$
-
-**Paso 1:** $\frac{4x^4}{2x} = 2x^3$
-
-**Paso 2:** $2x^3 \cdot (2x - 1) = 4x^4 - 2x^3$
-
-**Paso 3:** $(4x^4 - 2x^3) - (4x^4 - 2x^3) = 0$
-
-Bajamos: $6x^2$
-
-**Paso 4:** $\frac{6x^2}{2x} = 3x$
-
-**Paso 5:** $3x \cdot (2x - 1) = 6x^2 - 3x$
-
-**Paso 6:** $(6x^2 - 3x) - (6x^2 - 3x) = 0$
-
-Bajamos: $1$
-
-**Paso 7:** $\frac{1}{2x}$ → No es posible (el grado del resto es menor que el del divisor)
-
-$$
-\boxed{\text{Cociente} = 2x^3 + 3x, \quad \text{Resto} = 1}
-$$
+## 🏚️ **División Larga (Método de la Casita)**
+
+Cuando el divisor tiene más de un término (como $x+2$), usamos un proceso similar al que aprendiste en primaria con números grandes.
+
+**Los Pasos Clave:**
+1.  **Dividir:** El primer término de adentro entre el primero de afuera.
+2.  **Multiplicar:** Ese resultado por todo el divisor.
+3.  **Restar:** Cambia los signos del resultado y súmalo abajo.
+4.  **Repetir:** Baja el siguiente término y vuelve a empezar.
+
+### **Ejemplo: División Paso a Paso**
+Divide $(x^2 + 5x + 6)$ entre $(x + 2)$.
+
+**Razonamiento:**
+¿Qué le falta a $x$ para ser $x^2$? Le falta otra $x$.
+1.  Multiplicamos $x \cdot (x + 2) = x^2 + 2x$.
+2.  Restamos (cambiamos signos): $-x^2 - 2x$.
+3.  Al sumar queda $3x + 6$.
+4.  ¿Qué le falta a $x$ para ser $3x$? Un $+3$.
+5.  Multiplicamos $3 \cdot (x + 2) = 3x + 6$, restamos y el residuo es $0$.
+
+**Resultado:** $\boxed{\text{Cociente: } x + 3}$
 
 ---
 
-## 📖 Regla de Ruffini
+## ⚡ **Regla de Ruffini: El Atajo**
 
-La **Regla de Ruffini** es un método abreviado para dividir un polinomio entre un binomio de la forma $(x - a)$.
+Ruffini es un método "mágico" que solo usa los números (coeficientes) para dividir cuando el divisor es algo simple como $(x - 2)$ o $(x + 3)$.
 
-### Condiciones para usar Ruffini
+**Condición:** El divisor debe ser de la forma $(x \pm a)$.
 
-1. El divisor debe ser de la forma $(x - a)$
-2. El coeficiente de $x$ en el divisor debe ser $1$
+### **Ejemplo: Usando Ruffini**
+Divide $(x^2 - 5x + 6)$ por $(x - 3)$.
 
-### Procedimiento
+**Esquema de Ruffini:**
+1. Escribimos los coeficientes: $1, -5, 6$.
+2. A la izquierda ponemos el $3$ (signo cambiado del divisor).
+3. Bajamos el $1$.
+4. $1 \cdot 3 = 3$. Lo sumamos al $-5 \to -2$.
+5. $-2 \cdot 3 = -6$. Lo sumamos al $6 \to 0$.
 
-1. Escribir los coeficientes del dividendo (incluyendo ceros para términos faltantes)
-2. Escribir el valor de $a$ (con signo contrario al del divisor)
-3. Bajar el primer coeficiente
-4. Multiplicar por $a$ y sumar con el siguiente coeficiente
-5. Repetir hasta terminar
-6. El último número es el resto; los demás son los coeficientes del cociente
+**Interpretación:** El resultado es $1x - 2$ y el resto es $0$.
 
-### Ejemplo 11
+**Resultado:** $\boxed{x - 2}$
 
-Divide: $(x^3 - 2x^2 - 5x + 6) \div (x - 3)$
+---
 
-**Divisor:** $x - 3$ → $a = 3$
+## ⚙️ **Ejemplos Resueltos**
 
-**Coeficientes del dividendo:** $1, -2, -5, 6$
+### **Ejemplo 1: Completando Huecos**
+Divide $(x^3 - 8)$ entre $(x - 2)$.
 
+**Datos:** El dividendo no tiene términos de $x^2$ ni de $x$.
+**Razonamiento:** Para que la división funcione, debemos rellenar con ceros: $x^3 + 0x^2 + 0x - 8$.
+
+**Cálculo (Ruffini):**
 $$
-\begin{array}{c|cccc}
-3 & 1 & -2 & -5 & 6 \\
-  &   & 3 & 3 & -6 \\
+\begin{array}{c|rrrr}
+2 & 1 & 0 & 0 & -8 \\
+  &   & 2 & 4 & 8 \\
 \hline
-  & 1 & 1 & -2 & 0 \\
+  & 1 & 2 & 4 & \boxed{0}
 \end{array}
 $$
 
-**Proceso:**
-- Bajamos el $1$
-- $1 \times 3 = 3$, luego $-2 + 3 = 1$
-- $1 \times 3 = 3$, luego $-5 + 3 = -2$
-- $-2 \times 3 = -6$, luego $6 + (-6) = 0$
-
-$$
-\boxed{\text{Cociente} = x^2 + x - 2, \quad \text{Resto} = 0}
-$$
-
-### Ejemplo 12
-
-Divide: $(2x^4 - 3x^3 + 5x - 1) \div (x - 1)$
-
-**Divisor:** $x - 1$ → $a = 1$
-
-**Coeficientes:** $2, -3, 0, 5, -1$ (nota: agregamos $0$ para el término $x^2$ faltante)
-
-$$
-\begin{array}{c|ccccc}
-1 & 2 & -3 & 0 & 5 & -1 \\
-  &   & 2 & -1 & -1 & 4 \\
-\hline
-  & 2 & -1 & -1 & 4 & 3 \\
-\end{array}
-$$
-
-$$
-\boxed{\text{Cociente} = 2x^3 - x^2 - x + 4, \quad \text{Resto} = 3}
-$$
-
-### Ejemplo 13
-
-Divide: $(x^3 + 8) \div (x + 2)$
-
-**Divisor:** $x + 2 = x - (-2)$ → $a = -2$
-
-**Coeficientes:** $1, 0, 0, 8$
-
-$$
-\begin{array}{c|cccc}
--2 & 1 & 0 & 0 & 8 \\
-   &   & -2 & 4 & -8 \\
-\hline
-   & 1 & -2 & 4 & 0 \\
-\end{array}
-$$
-
-$$
-\boxed{\text{Cociente} = x^2 - 2x + 4, \quad \text{Resto} = 0}
-$$
-
-### Ejemplo 14
-
-Divide: $(3x^3 - 7x^2 + 2x + 5) \div (x + 1)$
-
-**Divisor:** $x + 1 = x - (-1)$ → $a = -1$
-
-**Coeficientes:** $3, -7, 2, 5$
-
-$$
-\begin{array}{c|cccc}
--1 & 3 & -7 & 2 & 5 \\
-   &   & -3 & 10 & -12 \\
-\hline
-   & 3 & -10 & 12 & -7 \\
-\end{array}
-$$
-
-$$
-\boxed{\text{Cociente} = 3x^2 - 10x + 12, \quad \text{Resto} = -7}
-$$
-
-### Ejemplo 15
-
-Divide: $(x^4 - 5x^3 + 8x^2 - 4x + 1) \div (x - 2)$
-
-**Divisor:** $x - 2$ → $a = 2$
-
-**Coeficientes:** $1, -5, 8, -4, 1$
-
-$$
-\begin{array}{c|ccccc}
-2 & 1 & -5 & 8 & -4 & 1 \\
-  &   & 2 & -6 & 4 & 0 \\
-\hline
-  & 1 & -3 & 2 & 0 & 1 \\
-\end{array}
-$$
-
-$$
-\boxed{\text{Cociente} = x^3 - 3x^2 + 2x, \quad \text{Resto} = 1}
-$$
+**Resultado:** $\boxed{x^2 + 2x + 4}$
 
 ---
 
-## 📖 Teorema del Resto
+### **Ejemplo 2: Teorema del Resto**
+Calcula el resto de $(x^3 - 2x + 5) \div (x - 2)$ sin dividir.
 
-Si dividimos un polinomio $P(x)$ entre $(x - a)$, el resto es igual a $P(a)$.
+**Razonamiento:** El resto es igual a evaluar el polinomio en el número del divisor con signo cambiado ($a=2$).
 
-### Ejemplo 16
+**Cálculo:**
+$$ P(2) = (2)^3 - 2(2) + 5 = 8 - 4 + 5 = 9 $$
 
-Sin realizar la división, encuentra el resto de dividir $P(x) = x^3 - 2x^2 + 3x - 1$ entre $(x - 2)$.
-
-$$
-P(2) = (2)^3 - 2(2)^2 + 3(2) - 1
-$$
-
-$$
-= 8 - 8 + 6 - 1 = 5
-$$
-
-$$
-\boxed{\text{Resto} = 5}
-$$
-
-### Ejemplo 17
-
-Sin realizar la división, encuentra el resto de dividir $P(x) = 2x^4 - 3x^2 + x - 5$ entre $(x + 1)$.
-
-**Divisor:** $x + 1 = x - (-1)$ → evaluamos en $a = -1$
-
-$$
-P(-1) = 2(-1)^4 - 3(-1)^2 + (-1) - 5
-$$
-
-$$
-= 2(1) - 3(1) - 1 - 5 = 2 - 3 - 1 - 5 = -7
-$$
-
-$$
-\boxed{\text{Resto} = -7}
-$$
-
-### Ejemplo 18
-
-Sin realizar la división, encuentra el resto de dividir $P(x) = x^5 - 32$ entre $(x - 2)$.
-
-$$
-P(2) = (2)^5 - 32 = 32 - 32 = 0
-$$
-
-$$
-\boxed{\text{Resto} = 0}
-$$
-
-> **Nota:** Un resto de cero indica que $(x - 2)$ es un factor de $x^5 - 32$.
-
-### Ejemplo 19
-
-Sin realizar la división, encuentra el resto de dividir $P(x) = 3x^3 + 2x^2 - 5x + 7$ entre $(x - 1)$.
-
-$$
-P(1) = 3(1)^3 + 2(1)^2 - 5(1) + 7
-$$
-
-$$
-= 3 + 2 - 5 + 7 = 7
-$$
-
-$$
-\boxed{\text{Resto} = 7}
-$$
+**Resultado:** $\boxed{\text{Resto} = 9}$
 
 ---
 
-## 📝 Ejercicios de práctica
+## 📝 **Ponte a Prueba**
 
-### División entre un monomio
+### **Ejercicio 1**
+Divide: $\frac{10x^4 - 20x^2}{5x}$.
 
-**Ejercicio 1:** $\frac{10x^4 - 15x^3 + 5x^2}{5x^2}$
+<details>
+<summary>Ver solución</summary>
 
-**Ejercicio 2:** $\frac{18a^3b^2 - 12a^2b^3 + 6ab}{6ab}$
+**Datos:** Polinomio entre monomio.
+**Razonamiento:** Dividimos cada parte: $10/5 = 2$, $x^{4-1}=3$. Luego $-20/5=-4$, $x^{2-1}=1$.
+**Resultado:** $\boxed{2x^3 - 4x}$
 
-**Ejercicio 3:** $\frac{21m^5 - 14m^4 + 7m^3}{7m^2}$
+</details>
 
-**Ejercicio 4:** $\frac{24x^4y^3 - 16x^3y^2 + 8x^2y}{8x^2y}$
+### **Ejercicio 2**
+¿Cuál es el cociente de $(x^2 + 7x + 10) \div (x + 2)$?
 
-**Ejercicio 5:** $\frac{30a^6 - 20a^4 + 10a^2}{10a^2}$
+<details>
+<summary>Ver solución</summary>
 
----
+**Razonamiento:** Usando Ruffini con $a = -2$: Coeficientes $(1, 7, 10)$. Bajamos $1 \to 1(-2)=-2 \to 7-2=5 \to 5(-2)=-10 \to 10-10=0$.
+**Resultado:** $\boxed{x + 5}$
 
-### División de polinomios
+</details>
 
-**Ejercicio 6:** $(x^2 + 7x + 12) \div (x + 3)$
+### **Ejercicio 3**
+Si dividimos $P(x)$ entre $(x - a)$, ¿cómo se llama el valor $P(a)$?
 
-**Ejercicio 7:** $(2x^3 - 3x^2 + 4x - 5) \div (x - 1)$
+<details>
+<summary>Ver solución</summary>
 
-**Ejercicio 8:** $(x^3 + 27) \div (x + 3)$
+**Razonamiento:** Según el Teorema del Resto, el valor numérico del polinomio evaluado en $a$ es igual al residuo de la división.
+**Resultado:** $\boxed{\text{Resto o Residuo}}$
 
-**Ejercicio 9:** $(4x^3 - 6x^2 + 2x - 1) \div (2x - 1)$
+</details>
 
-**Ejercicio 10:** $(x^4 - 16) \div (x - 2)$
+### **Ejercicio 4**
+Calcula el resto de $(x^{10} - 1) \div (x - 1)$ usando el Teorema del Resto.
 
----
+<details>
+<summary>Ver solución</summary>
 
-### Regla de Ruffini
+**Razonamiento:** Sustituimos $x=1$ en el polinomio: $(1)^{10} - 1 = 1 - 1 = 0$.
+**Resultado:** $\boxed{0}$
 
-**Ejercicio 11:** $(x^3 - 6x^2 + 11x - 6) \div (x - 2)$
+</details>
 
-**Ejercicio 12:** $(x^4 - 1) \div (x - 1)$
+### **Ejercicio 5**
+Divide usando Ruffini: $(x^2 - x - 6) \div (x + 2)$.
 
-**Ejercicio 13:** $(2x^3 + 5x^2 - 4x - 3) \div (x + 3)$
+<details>
+<summary>Ver solución</summary>
 
-**Ejercicio 14:** $(x^4 + 2x^3 - x^2 - 2x) \div (x + 1)$
+**Razonamiento:** Usamos $a = -2$. Coeficientes $(1, -1, -6)$. Bajamos $1 \to 1(-2)=-2 \to -1-2=-3 \to -3(-2)=6 \to -6+6=0$.
+**Resultado:** $\boxed{x - 3}$
 
-**Ejercicio 15:** $(3x^3 - 2x^2 + x - 4) \div (x - 2)$
+</details>
 
----
+### **Ejercicio 6**
+Simplifica: $\frac{4a^3b^2 - 2a^2b^2}{2a^2b}$.
 
-### Teorema del resto
+<details>
+<summary>Ver solución</summary>
 
-**Ejercicio 16:** Sin dividir, calcula el resto de $(x^3 - 4x + 2) \div (x - 3)$
+**Razonamiento:** Dividimos términos: $(4/2)a(3-2)b(2-1) = 2ab$. Luego $-(2/2)a(2-2)b(2-1) = -b$.
+**Resultado:** $\boxed{2ab - b}$
 
-**Ejercicio 17:** Sin dividir, calcula el resto de $(2x^4 + x^3 - 3x + 1) \div (x + 2)$
+</details>
 
-**Ejercicio 18:** Sin dividir, calcula el resto de $(x^5 + x^4 - x - 1) \div (x - 1)$
+### **Ejercicio 7**
+En una división larga, ¿cuándo dejamos de dividir?
 
-**Ejercicio 19:** Sin dividir, calcula el resto de $(4x^3 - 2x^2 + x - 3) \div (x - 1)$
+<details>
+<summary>Ver solución</summary>
 
-**Ejercicio 20:** Sin dividir, calcula el resto de $(x^4 - 81) \div (x + 3)$
+**Razonamiento:** El proceso se detiene cuando el grado del resto es estrictamente menor que el grado del divisor.
+**Resultado:** $\boxed{\text{Grado del Resto } < \text{ Grado del Divisor}}$
 
----
+</details>
 
-## ✅ Soluciones
+### **Ejercicio 8**
+Completa el dividendo para Ruffini si es $x^3 + 5$.
 
-### División entre un monomio
+<details>
+<summary>Ver solución</summary>
 
-**Ejercicio 1:**
-$$
-\frac{10x^4}{5x^2} - \frac{15x^3}{5x^2} + \frac{5x^2}{5x^2} = 2x^2 - 3x + 1
-$$
+**Razonamiento:** Debemos poner ceros en los términos de $x^2$ y $x$.
+**Resultado:** $\boxed{x^3 + 0x^2 + 0x + 5}$
 
-**Ejercicio 2:**
-$$
-\frac{18a^3b^2}{6ab} - \frac{12a^2b^3}{6ab} + \frac{6ab}{6ab} = 3a^2b - 2ab^2 + 1
-$$
+</details>
 
-**Ejercicio 3:**
-$$
-\frac{21m^5}{7m^2} - \frac{14m^4}{7m^2} + \frac{7m^3}{7m^2} = 3m^3 - 2m^2 + m
-$$
+### **Ejercicio 9**
+Calcula el cociente de $(2x^2 - 8) \div (x - 2)$.
 
-**Ejercicio 4:**
-$$
-\frac{24x^4y^3}{8x^2y} - \frac{16x^3y^2}{8x^2y} + \frac{8x^2y}{8x^2y} = 3x^2y^2 - 2xy + 1
-$$
+<details>
+<summary>Ver solución</summary>
 
-**Ejercicio 5:**
-$$
-\frac{30a^6}{10a^2} - \frac{20a^4}{10a^2} + \frac{10a^2}{10a^2} = 3a^4 - 2a^2 + 1
-$$
+**Razonamiento:** Ruffini con $a=2$: Coeficientes $(2, 0, -8)$. Bajamos $2 \to 2(2)=4 \to 0+4=4 \to 4(2)=8 \to -8+8=0$.
+**Resultado:** $\boxed{2x + 4}$
 
-### División de polinomios
+</details>
 
-**Ejercicio 6:**
-$$
-\text{Cociente} = x + 4, \quad \text{Resto} = 0
-$$
+### **Ejercicio 10**
+Si el resto de una división es $0$, ¿qué podemos decir del divisor?
 
-**Ejercicio 7:**
-$$
-\text{Cociente} = 2x^2 - x + 3, \quad \text{Resto} = -2
-$$
+<details>
+<summary>Ver solución</summary>
 
-**Ejercicio 8:**
-$$
-\text{Cociente} = x^2 - 3x + 9, \quad \text{Resto} = 0
-$$
+**Razonamiento:** Una división con resto cero significa que la operación es exacta.
+**Resultado:** $\boxed{\text{Es un factor o divisor exacto}}$
 
-**Ejercicio 9:**
-$$
-\text{Cociente} = 2x^2 - 2x, \quad \text{Resto} = -1
-$$
-
-**Ejercicio 10:**
-$$
-\text{Cociente} = x^3 + 2x^2 + 4x + 8, \quad \text{Resto} = 0
-$$
-
-### Regla de Ruffini
-
-**Ejercicio 11:**
-Cociente: $x^2 - 4x + 3$, Resto: $0$
-
-**Ejercicio 12:**
-Cociente: $x^3 + x^2 + x + 1$, Resto: $0$
-
-**Ejercicio 13:**
-Cociente: $2x^2 - x - 1$, Resto: $0$
-
-**Ejercicio 14:**
-Cociente: $x^3 + x^2 - 2x$, Resto: $0$
-
-**Ejercicio 15:**
-Cociente: $3x^2 + 4x + 9$, Resto: $14$
-
-### Teorema del resto
-
-**Ejercicio 16:**
-$$
-P(3) = (3)^3 - 4(3) + 2 = 27 - 12 + 2 = 17
-$$
-
-**Ejercicio 17:**
-$$
-P(-2) = 2(-2)^4 + (-2)^3 - 3(-2) + 1 = 32 - 8 + 6 + 1 = 31
-$$
-
-**Ejercicio 18:**
-$$
-P(1) = (1)^5 + (1)^4 - (1) - 1 = 1 + 1 - 1 - 1 = 0
-$$
-
-**Ejercicio 19:**
-$$
-P(1) = 4(1)^3 - 2(1)^2 + (1) - 3 = 4 - 2 + 1 - 3 = 0
-$$
-
-**Ejercicio 20:**
-$$
-P(-3) = (-3)^4 - 81 = 81 - 81 = 0
-$$
+</details>
 
 ---
+
+## 🔑 **Resumen**
+
+| Método | Cuándo usarlo | Ventaja |
+| :--- | :--- | :--- |
+| **Por Monomio** | Divisor de un solo término ($3x^2$). | Rápido y directo. |
+| **Casita** | Cualquier división entre polinomios. | Universal (sirve para todo). |
+| **Ruffini** | Divisor tipo $(x \pm a)$. | No requiere variables, solo números. |
+| **T. del Resto** | Solo si quieres saber el sobrante. | Evita hacer toda la división. |
+
+> 💡 **Conclusión:** La división de polinomios nos permite simplificar estructuras matemáticas complejas. Ya sea usando el método largo o el atajo de Ruffini, lo importante es mantener el orden de los grados para que cada pieza encaje en su lugar.

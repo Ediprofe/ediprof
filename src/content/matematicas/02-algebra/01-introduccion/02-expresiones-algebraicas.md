@@ -1,312 +1,276 @@
-# 📝 Expresiones Algebraicas
+# **Expresiones Algebraicas**
 
-En esta lección aprenderemos qué son las expresiones algebraicas, cómo identificar sus componentes y cómo calcular su valor numérico.
-
----
-
-## 📖 ¿Qué es una expresión algebraica?
-
-Una **expresión algebraica** es una combinación de números, letras (variables) y signos de operaciones matemáticas como suma, resta, multiplicación, división y potenciación.
-
-### Diferencia entre expresión escrita y expresión algebraica
-
-| Expresión escrita | Expresión algebraica |
-|:-----------------|:--------------------|
-| El doble de un número | $2x$ |
-| La suma de dos números | $a + b$ |
-| El cuadrado de un número menos tres | $x^2 - 3$ |
-| El producto de un número por su antecesor | $x(x - 1)$ |
-
-### Ejemplo 1
-
-**Expresión escrita:** "El triple de un número aumentado en cinco"
-
-**Expresión algebraica:**
-
-$$
-3x + 5
-$$
-
-### Ejemplo 2
-
-**Expresión escrita:** "La mitad de la suma de dos números"
-
-**Expresión algebraica:**
-
-$$
-\frac{a + b}{2}
-$$
+Imagina que vas al supermercado y compras "dos manzanas y tres plátanos". En lugar de escribir toda la frase, podrías anotar r $2m + 3p$. ¡Eso es una expresión algebraica! Es simplemente una forma de traducir situaciones de la vida real a un lenguaje de símbolos y números que podemos calcular.
 
 ---
 
-## 📖 Términos de una expresión algebraica
+## 🎯 ¿Qué vas a aprender?
 
-Un **término** es cada sumando que forma parte de una expresión algebraica. Los términos están separados por signos de suma ($+$) o resta ($-$).
-
-### Ejemplo 3
-
-En la expresión $3x^2 + 5x - 7$:
-
-| Término | Valor |
-|:-------:|:-----:|
-| Primer término | $3x^2$ |
-| Segundo término | $5x$ |
-| Tercer término | $-7$ |
-
-> **Nota:** El signo que precede a cada término es parte del mismo.
-
-### Ejemplo 4
-
-En la expresión $4a - 2b + ab - 1$:
-
-- **Primer término:** $4a$
-- **Segundo término:** $-2b$
-- **Tercer término:** $ab$
-- **Cuarto término:** $-1$
-
-$$
-\text{Esta expresión tiene } 4 \text{ términos}
-$$
+- Qué compone exactamente una expresión algebraica (términos, coeficientes, variables).
+- Cómo se clasifican según su tamaño (monomios, binomios, polinomios).
+- El "valor numérico": cómo transformar esas letras en resultados reales.
+- Cómo identificar el grado de una expresión.
 
 ---
 
-## 📖 Factores de un término
+## 🏗️ **Anatomía de una Expresión**
 
-Los **factores** son los elementos que se multiplican dentro de un término.
-
-### Ejemplo 5
-
-En el término $5xy$:
+Una expresión algebraica es como un rompecabezas formado por piezas más pequeñas llamadas **términos**. Miremos esta expresión con lupa:
 
 $$
-5xy = 5 \times x \times y
+-5x^2 + 3y - 7
 $$
 
-Los factores son: $5$, $x$ e $y$
+¿Qué partes la forman? Vamos a desmontarla:
 
-### Ejemplo 6
-
-En el término $-3a^2b$:
-
-$$
--3a^2b = -3 \times a \times a \times b
-$$
-
-Los factores son: $-3$, $a$, $a$ y $b$ (o bien $-3$, $a^2$ y $b$)
-
-### Ejemplo 7
-
-Identifica los términos y factores de la expresión $2x^3 - 4xy + 7$:
-
-| Término | Factores |
-|:-------:|:---------|
-| $2x^3$ | $2$, $x$, $x$, $x$ |
-| $-4xy$ | $-4$, $x$, $y$ |
-| $7$ | $7$ (término independiente) |
+1.  **Términos:** Son los "bloques" separados por signos de suma ($+$) o resta ($-$). Aquí hay tres: $-5x^2$, $+3y$ y $-7$.
+2.  **Coeficientes:** Son los números grandes que multiplican a las letras. En $-5x^2$, el coeficiente es **$-5$**.
+3.  **Variables (parte literal):** Son las letras. En $-5x^2$, es $x^2$.
+4.  **Constante:** Es el número que va solo, sin letra. Aquí es **$-7$**.
 
 ---
 
-## 📖 Partes de un término algebraico
+## 📏 **Clasificación: ¿Cómo se llaman?**
 
-Cada término algebraico tiene tres partes principales:
+Dependiendo de cuántos "bloques" o términos tenga la expresión, recibe un nombre diferente. Es muy fácil de recordar si piensas en prefijos griegos:
 
-### 1. Signo
+| Nombre | Prefijo | Significado | Ejemplo |
+| :--- | :--- | :--- | :--- |
+| **Monomio** | *Mono-* | Uno | $3x^2$ |
+| **Binomio** | *Bi-* | Dos | $2a + 5$ |
+| **Trinomio** | *Tri-* | Tres | $x^2 - 4x + 4$ |
+| **Polinomio** | *Poli-* | Muchos | $x^4 + 3x^3 - 2x + 1$ |
 
-Es el símbolo $+$ o $-$ que precede al término. Si no hay signo visible, se entiende que es positivo.
-
-### 2. Coeficiente
-
-Es el factor numérico del término (el número que multiplica a las variables).
-
-### 3. Parte literal
-
-Es el conjunto de letras (variables) con sus exponentes.
-
-### Ejemplo 8
-
-Identifica las partes del término $-7x^2y^3$:
-
-| Parte | Valor |
-|:-----:|:-----:|
-| Signo | $-$ |
-| Coeficiente | $7$ |
-| Parte literal | $x^2y^3$ |
-
-### Ejemplo 9
-
-Identifica las partes de cada término en $5a^3 - 2ab + b^2$:
-
-| Término | Signo | Coeficiente | Parte literal |
-|:-------:|:-----:|:-----------:|:-------------:|
-| $5a^3$ | $+$ | $5$ | $a^3$ |
-| $-2ab$ | $-$ | $2$ | $ab$ |
-| $b^2$ | $+$ | $1$ | $b^2$ |
-
-> **Nota:** Cuando no hay coeficiente visible, se entiende que es $1$.
+> **Ojo:** Un **Polinomio** es el nombre general para cualquier expresión con más de un término (así que binomios y trinomios también son polinomios).
 
 ---
 
-## 📖 Valor numérico de una expresión algebraica
+## 🔢 **Valor Numérico: Dándole valor a las letras**
 
-El **valor numérico** de una expresión algebraica es el resultado que se obtiene al sustituir las variables por valores numéricos específicos y realizar las operaciones indicadas.
+Las letras en álgebra son solo espacios vacíos esperando un número. Calcular el **valor numérico** significa sustituir esas letras por números específicos y hacer la cuenta.
 
-### Pasos para calcular el valor numérico
+Es como una receta que dice "harina x 2". Si la "harina" es 100g, entonces usas 200g.
 
-1. Sustituir cada variable por su valor numérico
-2. Realizar las operaciones respetando la jerarquía
-3. Obtener el resultado final
+### **Ejemplo 1: Sustitución simple**
 
-### Ejemplo 10
+Calcula el valor de $3x - 2$ si $x = 5$.
 
-Calcula el valor numérico de $3x + 5$ cuando $x = 4$:
+**Razonamiento:**
+1.  Donde veas una $x$, pon un $5$. (Usa paréntesis para evitar errores).
+2.  Multiplica primero, luego resta.
+
+**Paso a paso:**
+$$
+3(5) - 2
+$$
+$$
+15 - 2 = 13
+$$
+
+**Resultado:** $\boxed{13}$
+
+
+---
+
+## ⚙️ **Ejemplos Resueltos (Nivel Avanzado)**
+
+Vamos a subir el nivel con más variables y potencias.
+
+### **Ejemplo 2: Múltiples variables**
+
+Encuentra el valor de $2a^2 - 3b$ cuando $a = -3$ y $b = 4$.
+
+**Razonamiento:**
+El signo negativo de $a$ es peligroso. Al elevarlo al cuadrado, recuerda que $(-3) \cdot (-3) = +9$.
 
 **Sustitución:**
-
 $$
-3(4) + 5 = 12 + 5 = 17
-$$
-
-$$
-\boxed{17}
+2(-3)^2 - 3(4)
 $$
 
-### Ejemplo 11
+**Operaciones:**
+1.  Potencia primero: $(-3)^2 = 9$.
+    $$ 2(9) - 3(4) $$
+2.  Multiplicaciones:
+    $$ 18 - 12 $$
+3.  Resta final:
+    $$ 6 $$
 
-Calcula el valor numérico de $x^2 - 2x + 1$ cuando $x = 3$:
+**Resultado:** $\boxed{6}$
+
+---
+
+### **Ejemplo 3: Fracciones algebraicas**
+
+Calcula el valor numérico de $\frac{x + y}{2}$ si $x=10$ e $y=4$.
+
+**Razonamiento:**
+Esta expresión representa el **promedio** de dos números. Primero sumamos lo de arriba y al final dividimos.
 
 **Sustitución:**
-
 $$
-(3)^2 - 2(3) + 1 = 9 - 6 + 1 = 4
-$$
-
-$$
-\boxed{4}
+\frac{10 + 4}{2}
 $$
 
-### Ejemplo 12
-
-Calcula el valor numérico de $2a + 3b - ab$ cuando $a = 2$ y $b = -1$:
-
-**Sustitución:**
-
+**Operaciones:**
 $$
-2(2) + 3(-1) - (2)(-1)
+\frac{14}{2} = 7
 $$
 
-$$
-= 4 - 3 - (-2)
-$$
-
-$$
-= 4 - 3 + 2 = 3
-$$
-
-$$
-\boxed{3}
-$$
-
-### Ejemplo 13
-
-Calcula el valor numérico de $\frac{x + y}{x - y}$ cuando $x = 5$ y $y = 3$:
-
-**Sustitución:**
-
-$$
-\frac{5 + 3}{5 - 3} = \frac{8}{2} = 4
-$$
-
-$$
-\boxed{4}
-$$
-
-### Ejemplo 14
-
-Calcula el valor numérico de $a^3 - 3a^2b + 3ab^2 - b^3$ cuando $a = 2$ y $b = 1$:
-
-**Sustitución:**
-
-$$
-(2)^3 - 3(2)^2(1) + 3(2)(1)^2 - (1)^3
-$$
-
-$$
-= 8 - 3(4)(1) + 3(2)(1) - 1
-$$
-
-$$
-= 8 - 12 + 6 - 1 = 1
-$$
-
-$$
-\boxed{1}
-$$
+**Resultado:** $\boxed{7}$
 
 ---
 
-## 📖 Clasificación de expresiones algebraicas
+## 📝 **Ejercicios de Práctica**
 
-Las expresiones algebraicas se clasifican según el número de términos:
+Intenta resolverlos antes de abrir la solución. Presta atención a los signos negativos.
 
-| Nombre | Número de términos | Ejemplo |
-|:------:|:-----------------:|:-------:|
-| Monomio | 1 | $5x^2$ |
-| Binomio | 2 | $3x + 2$ |
-| Trinomio | 3 | $x^2 + 2x + 1$ |
-| Polinomio | 2 o más | $x^3 - 2x^2 + x - 5$ |
+### **Ejercicio 1**
+Identifica los coeficientes y variables de: $-8m^3$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Análisis:**
+- El número que multiplica es $-8$.
+- La letra con su exponente es $m^3$.
+
+**Resultado:** Coeficiente $\boxed{-8}$, Variable $\boxed{m^3}$.
+
+</details>
+
+### **Ejercicio 2**
+Clasifica la expresión: $4x^2 - 9$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Análisis:**
+Tiene dos términos separados por un signo menos.
+
+**Resultado:** Es un $\boxed{\text{Binomio}}$.
+
+</details>
+
+### **Ejercicio 3**
+Calcula el valor de $5n + 3$ si $n = 4$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Sustitución:** $5(4) + 3$
+**Cálculo:** $20 + 3 = 23$
+
+**Resultado:** $\boxed{23}$
+
+</details>
+
+### **Ejercicio 4**
+Calcula el valor de $x^2 - 5$ si $x = -3$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Sustitución:** $(-3)^2 - 5$
+**Cálculo:** $9 - 5 = 4$
+*(Recuerda: menos por menos es más)*
+
+**Resultado:** $\boxed{4}$
+
+</details>
+
+### **Ejercicio 5**
+Calcula el valor de $2(a + b)$ si $a=5, b=2$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Sustitución:** $2(5 + 2)$
+**Cálculo:** Primero el paréntesis $\to 2(7) = 14$
+
+**Resultado:** $\boxed{14}$
+
+</details>
+
+### **Ejercicio 6**
+Clasifica la expresión: $a + b + c - d$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Análisis:**
+Contamos los términos separados por signos: $a$, $b$, $c$, $-d$. Son 4.
+
+**Resultado:** Es un $\boxed{\text{Polinomio}}$.
+
+</details>
+
+### **Ejercicio 7**
+Determina el valor de $\frac{m}{n} + 1$ si $m=10, n=2$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Sustitución:** $\frac{10}{2} + 1$
+**Cálculo:** $5 + 1 = 6$
+
+**Resultado:** $\boxed{6}$
+
+</details>
+
+### **Ejercicio 8**
+Calcula $b^2 - 4ac$ (el discriminante) si $a=1, b=5, c=6$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Sustitución:** $(5)^2 - 4(1)(6)$
+**Cálculo:** $25 - 24 = 1$
+
+**Resultado:** $\boxed{1}$
+
+</details>
+
+### **Ejercicio 9**
+Identifica el término constante en: $3x^2 + 2x - 9$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Análisis:**
+Buscamos el número que no tiene ninguna letra acompañándolo.
+
+**Resultado:** $\boxed{-9}$ (¡El signo cuenta!).
+
+</details>
+
+### **Ejercicio 10**
+Calcula el valor de $3x^2y$ si $x=2, y=5$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Sustitución:** $3(2)^2(5)$
+**Orden:** Primero potencia, luego multiplicaciones.
+$3(4)(5) \to 12(5) = 60$
+
+**Resultado:** $\boxed{60}$
+
+</details>
 
 ---
 
-## 📝 Ejercicios de práctica
+## 🔑 Resumen
 
-### Identificación de términos y factores
+![expresiones-algebraicas](https://cdn.ediprofe.com/img/matematicas/4hyl-expresiones-algebraicas.webp)
 
-**Ejercicio 1:** Identifica los términos de la expresión $4x^2 - 3xy + 2y - 5$.
 
-**Ejercicio 2:** Identifica los factores del término $-6a^2bc^3$.
+| Concepto | Definición | Ejemplo |
+| :--- | :--- | :--- |
+| **Término** | Bloque básico (coeficiente + variable). | $-5x^2$ |
+| **Coeficiente** | El número que multiplica. | $-5$ |
+| **Monomio** | Expresión de un solo término. | $3xy$ |
+| **Polinomio** | Suma o resta de varios términos. | $2x + 1$ |
+| **Valor Numérico** | Resultado al reemplazar letras por números. | Si $x=2$, $x+1=3$ |
 
-**Ejercicio 3:** Para cada término de $7m^3 - 2mn + n^2$, identifica el signo, coeficiente y parte literal.
-
----
-
-### Valor numérico
-
-**Ejercicio 4:** Calcula el valor numérico de $2x - 7$ cuando $x = 5$.
-
-**Ejercicio 5:** Calcula el valor numérico de $x^2 + 4x - 3$ cuando $x = -2$.
-
-**Ejercicio 6:** Calcula el valor numérico de $3a - 2b + ab$ cuando $a = 3$ y $b = 2$.
-
-**Ejercicio 7:** Calcula el valor numérico de $\frac{a^2 - b^2}{a + b}$ cuando $a = 4$ y $b = 2$.
-
-**Ejercicio 8:** Calcula el valor numérico de $x^3 + y^3$ cuando $x = 2$ y $y = -1$.
-
----
-
-## ✅ Soluciones
-
-### Ejercicios 1-3
-
-**Ejercicio 1:** Los términos son: $4x^2$, $-3xy$, $2y$, $-5$
-
-**Ejercicio 2:** Los factores son: $-6$, $a$, $a$, $b$, $c$, $c$, $c$ (o bien $-6$, $a^2$, $b$, $c^3$)
-
-**Ejercicio 3:**
-
-| Término | Signo | Coeficiente | Parte literal |
-|:-------:|:-----:|:-----------:|:-------------:|
-| $7m^3$ | $+$ | $7$ | $m^3$ |
-| $-2mn$ | $-$ | $2$ | $mn$ |
-| $n^2$ | $+$ | $1$ | $n^2$ |
-
-### Ejercicios 4-8
-
-| Ejercicio | Desarrollo | Respuesta |
-|:---------:|:-----------|:---------:|
-| 4 | $2(5) - 7 = 10 - 7$ | $3$ |
-| 5 | $(-2)^2 + 4(-2) - 3 = 4 - 8 - 3$ | $-7$ |
-| 6 | $3(3) - 2(2) + (3)(2) = 9 - 4 + 6$ | $11$ |
-| 7 | $\frac{16 - 4}{4 + 2} = \frac{12}{6}$ | $2$ |
-| 8 | $(2)^3 + (-1)^3 = 8 - 1$ | $7$ |
-
----
+> **Conclusión:** Las expresiones algebraicas son solo "recetas" matemáticas. No intentamos resolverlas eliminando las letras (eso son ecuaciones), sino entender qué representan y calcular su valor cuando nos dan los ingredientes (los números).

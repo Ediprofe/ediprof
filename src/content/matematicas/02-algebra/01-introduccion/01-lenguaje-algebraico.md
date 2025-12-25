@@ -1,296 +1,272 @@
-# 🔤 Lenguaje Algebraico
+# **Lenguaje Algebraico**
 
-El álgebra es una rama de las matemáticas que utiliza letras y símbolos para representar cantidades y expresar relaciones. En esta lección aprenderemos qué es el lenguaje algebraico y cómo traducir del lenguaje común al lenguaje matemático.
-
----
-
-## 📖 ¿Qué es el lenguaje algebraico?
-
-El **lenguaje algebraico** es una forma de expresar ideas matemáticas usando símbolos, letras y números. Es como un idioma universal que nos permite escribir de manera breve y precisa enunciados que en palabras serían largos o ambiguos.
-
-### ¿Por qué usamos letras?
-
-En matemáticas, las letras representan **cantidades desconocidas** o **valores que pueden variar**. Por ejemplo:
-
-- $x$ puede representar la edad de una persona
-- $n$ puede representar un número cualquiera
-- $a$, $b$, $c$ pueden representar las medidas de un triángulo
+¿Alguna vez has usado emojis o abreviaturas para escribir más rápido en un chat? El álgebra funciona de manera muy similar: es un "idioma" que usan los matemáticos para escribir ideas complejas de forma corta y precisa, usando letras y símbolos en lugar de palabras largas.
 
 ---
 
-## 📖 Del lenguaje común al lenguaje algebraico
+## 🎯 ¿Qué vas a aprender?
 
-La clave está en identificar las **palabras clave** que indican operaciones matemáticas.
-
-### Palabras clave para la suma (+)
-
-| Expresión en palabras | Expresión algebraica |
-|:---------------------|:--------------------|
-| La suma de un número y $5$ | $x + 5$ |
-| Un número aumentado en $3$ | $x + 3$ |
-| Un número más $7$ | $x + 7$ |
-| $4$ agregado a un número | $x + 4$ |
-| Un número excedido en $2$ | $x + 2$ |
-
-### Ejemplo 1
-
-**Enunciado:** "Un número aumentado en ocho"
-
-**Traducción:** Si llamamos $x$ al número desconocido, entonces:
-
-$$
-x + 8
-$$
-
-### Ejemplo 2
-
-**Enunciado:** "La suma de dos números consecutivos"
-
-**Traducción:** Si el primer número es $n$, el siguiente consecutivo es $n + 1$:
-
-$$
-n + (n + 1) = 2n + 1
-$$
+- Qué es el lenguaje algebraico y para qué sirve.
+- Cómo traducir frases cotidianas a expresiones matemáticas.
+- A identificar las palabras clave para cada operación (suma, resta, multiplicación, etc.).
+- Cómo leer símbolos matemáticos y expresarlos en lenguaje común.
 
 ---
 
-### Palabras clave para la resta (−)
+## 🗣️ **¿Qué es el lenguaje algebraico?**
 
-| Expresión en palabras | Expresión algebraica |
-|:---------------------|:--------------------|
-| La diferencia entre un número y $4$ | $x - 4$ |
-| Un número disminuido en $6$ | $x - 6$ |
-| Un número menos $5$ | $x - 5$ |
-| $3$ restado de un número | $x - 3$ |
-| $7$ sustraído de un número | $x - 7$ |
+Imagina que quieres escribir: "El precio de dos hamburguesas más un refresco es igual a diez dólares". En lugar de escribir toda esa oración, podrías usar letras:
 
-### Ejemplo 3
+$$
+2h + r = 10
+$$
 
-**Enunciado:** "Un número disminuido en quince"
+El **lenguaje algebraico** es simplemente eso: utilizar **letras** para representar números que no conocemos (incógnitas) o que pueden variar (variables), combinadas con números y signos de operación.
+
+![de-palabras-a-simbolos](https://cdn.ediprofe.com/img/matematicas/yzql-de-palabras-a-simbolos.webp)
+
+---
+
+## 🔄 **Traducción paso a paso**
+
+Para traducir del español al "matemático", la clave está en identificar las **palabras clave**. Vamos a verlo operación por operación.
+
+### **1. Suma y Resta**
+
+Cuando agregamos o quitamos cantidades, usamos palabras muy específicas.
+
+| Si lees... | Operación | Ejemplo ($x$ es el número) |
+| :--- | :--- | :--- |
+| Aumentado, más, suma, agregar | **Suma (+)** | "Un número aumentado en 2" $\to x+2$ |
+| Disminuido, menos, diferencia, restar | **Resta (-)** | "Un número disminuido en 5" $\to x-5$ |
+
+### **2. Multiplicación y División**
+
+Aquí es donde el lenguaje se vuelve más interesante. Recuerda que en álgebra, $2x$ significa "$2$ por $x$".
+
+| Si lees... | Operación | Ejemplo |
+| :--- | :--- | :--- |
+| Doble, triple, producto, veces | **Multiplicación (·)** | "El triple de un número" $\to 3x$ |
+| Mitad, tercio, cociente, entre | **División (÷)** | "La mitad de un número" $\to \frac{x}{2}$ |
+
+![traduccion-visual-de-operaciones](https://cdn.ediprofe.com/img/matematicas/8a1t-traduccion-visual-de-operaciones.webp)
+
+
+---
+
+## ⚙️ **Ejemplos Resueltos**
+
+Vamos a traducir situaciones completas paso a paso, razonando cada parte de la oración.
+
+### **Ejemplo 1: Combinando operaciones**
+
+**Enunciado:** "El doble de un número aumentado en tres".
+
+**Razonamiento:**
+1.  Identificamos "un número": Lo llamaremos $x$.
+2.  "El doble de...": Significa multiplicar por 2. ($\to 2x$)
+3.  "...aumentado en tres": Significa sumar 3 al resultado anterior.
 
 **Traducción:**
-
 $$
-x - 15
+2x + 3
 $$
 
-### Ejemplo 4
-
-**Enunciado:** "La diferencia de un número y su mitad"
-
-**Traducción:** Si el número es $x$, su mitad es $\frac{x}{2}$:
-
-$$
-x - \frac{x}{2} = \frac{x}{2}
-$$
+**Resultado:** La expresión es $\boxed{2x + 3}$.
 
 ---
 
-### Palabras clave para la multiplicación (×)
+### **Ejemplo 2: El orden importa (Paréntesis)**
 
-| Expresión en palabras | Expresión algebraica |
-|:---------------------|:--------------------|
-| El doble de un número | $2x$ |
-| El triple de un número | $3x$ |
-| El cuádruple de un número | $4x$ |
-| Un número multiplicado por $5$ | $5x$ |
-| El producto de $3$ y un número | $3x$ |
-| Dos tercios de un número | $\frac{2}{3}x$ |
+**Enunciado:** "El doble de la suma de un número y tres".
 
-### Ejemplo 5
-
-**Enunciado:** "El triple de un número aumentado en cuatro"
+**Razonamiento:**
+1.  Observa que dice "el doble de **la suma**". Esto nos dice que *primero* hacemos la suma y *luego* duplicamos el resultado total.
+2.  "La suma de un número y tres": $(x + 3)$.
+3.  "El doble de" todo eso: Ponemos el 2 afuera multiplicando.
 
 **Traducción:**
-
 $$
-3x + 4
+2(x + 3)
 $$
 
-### Ejemplo 6
+**Resultado:** La expresión es $\boxed{2(x+3)}$.
 
-**Enunciado:** "El doble de la suma de un número y siete"
+![la-importancia-de-los-parentesis](https://cdn.ediprofe.com/img/matematicas/fy5u-la-importancia-de-los-parentesis.webp)
 
-**Traducción:** Primero formamos la suma $(x + 7)$, luego multiplicamos por $2$:
-
-$$
-2(x + 7)
-$$
 
 ---
 
-### Palabras clave para la división (÷)
+### **Ejemplo 3: Potencias**
 
-| Expresión en palabras | Expresión algebraica |
-|:---------------------|:--------------------|
-| Un número dividido entre $3$ | $\frac{x}{3}$ |
-| La mitad de un número | $\frac{x}{2}$ |
-| La tercera parte de un número | $\frac{x}{3}$ |
-| El cociente de un número y $5$ | $\frac{x}{5}$ |
-| Un cuarto de un número | $\frac{x}{4}$ |
+**Enunciado:** "La diferencia entre el cuadrado de un número y su mitad".
 
-### Ejemplo 7
-
-**Enunciado:** "La mitad de un número disminuida en tres"
+**Razonamiento:**
+1.  "Un número": $n$.
+2.  "El cuadrado de un número": $n^2$.
+3.  "Su mitad": $\frac{n}{2}$.
+4.  "La diferencia entre...": Significa restar el primero menos el segundo.
 
 **Traducción:**
-
 $$
-\frac{x}{2} - 3
+n^2 - \frac{n}{2}
 $$
 
-### Ejemplo 8
-
-**Enunciado:** "El cociente de un número y su consecutivo"
-
-**Traducción:** Si el número es $n$, su consecutivo es $n + 1$:
-
-$$
-\frac{n}{n + 1}
-$$
+**Resultado:** La expresión es $\boxed{n^2 - \frac{n}{2}}$.
 
 ---
 
-### Palabras clave para la potenciación
+## 📝 **Ejercicios de Práctica**
 
-| Expresión en palabras | Expresión algebraica |
-|:---------------------|:--------------------|
-| El cuadrado de un número | $x^2$ |
-| El cubo de un número | $x^3$ |
-| Un número elevado a la quinta | $x^5$ |
+Pon a prueba tu habilidad de traducción. Intenta resolverlos antes de ver la solución.
 
-### Ejemplo 9
+### **Ejercicio 1**
+**Enunciado:** Un número aumentado en diez.
 
-**Enunciado:** "El cuadrado de un número aumentado en uno"
+<details>
+<summary>Ver solución</summary>
 
-**Traducción:**
+**Datos:** Número = $x$, Aumentado = $+$, Diez = $10$.
 
-$$
-x^2 + 1
-$$
+**Razonamiento:** Simplemente sumamos 10 a la incógnita.
 
-### Ejemplo 10
+**Resultado:** $\boxed{x + 10}$
 
-**Enunciado:** "El cuadrado de la suma de dos números"
+</details>
 
-**Traducción:** Si los números son $a$ y $b$:
+### **Ejercicio 2**
+**Enunciado:** El triple de un número.
 
-$$
-(a + b)^2
-$$
+<details>
+<summary>Ver solución</summary>
 
----
+**Datos:** Número = $y$, Triple = multiplicar por 3.
 
-## 📖 Expresiones más complejas
+**Razonamiento:** Multiplicamos la variable por 3.
 
-Al combinar varias operaciones, debemos prestar atención al orden y uso de paréntesis.
+**Resultado:** $\boxed{3y}$
 
-### Ejemplo 11
+</details>
 
-**Enunciado:** "El doble de un número menos el triple de otro"
+### **Ejercicio 3**
+**Enunciado:** La cuarta parte de un número.
 
-**Traducción:** Si los números son $x$ e $y$:
+<details>
+<summary>Ver solución</summary>
 
-$$
-2x - 3y
-$$
+**Datos:** Número = $m$, Cuarta parte = dividir por 4.
 
-### Ejemplo 12
+**Razonamiento:** Escribimos la división como una fracción.
 
-**Enunciado:** "La suma de los cuadrados de dos números"
+**Resultado:** $\boxed{\frac{m}{4}}$
 
-**Traducción:**
+</details>
 
-$$
-x^2 + y^2
-$$
+### **Ejercicio 4**
+**Enunciado:** Un número disminuido en su mitad.
 
-### Ejemplo 13
+<details>
+<summary>Ver solución</summary>
 
-**Enunciado:** "La mitad del producto de dos números consecutivos"
+**Datos:** Número = $x$, Su mitad = $\frac{x}{2}$, Disminuido = resta.
 
-**Traducción:** Si el primer número es $n$, el consecutivo es $n + 1$:
+**Razonamiento:** Al número original le restamos su propia mitad.
 
-$$
-\frac{n(n + 1)}{2}
-$$
+**Resultado:** $\boxed{x - \frac{x}{2}}$
 
----
+</details>
 
-## 📖 Del lenguaje algebraico al lenguaje común
+### **Ejercicio 5**
+**Enunciado:** El cuadrado de la suma de dos números.
 
-También es importante poder interpretar expresiones algebraicas y expresarlas en palabras.
+<details>
+<summary>Ver solución</summary>
 
-### Ejemplo 14
+**Datos:** Números: $a$ y $b$.
+**Razonamiento:** Primero sumamos $(a+b)$ y luego elevamos todo al cuadrado. Necesitamos paréntesis.
 
-**Expresión:** $5x - 2$
+**Resultado:** $\boxed{(a + b)^2}$
 
-**Interpretación:** "El quíntuple de un número disminuido en dos"
+</details>
 
-### Ejemplo 15
+### **Ejercicio 6**
+**Enunciado:** La suma de los cuadrados de dos números.
 
-**Expresión:** $\frac{x + y}{2}$
+<details>
+<summary>Ver solución</summary>
 
-**Interpretación:** "La mitad de la suma de dos números" o "El promedio de dos números"
+**Datos:** Números: $x$ e $y$.
+**Razonamiento:** Primero elevamos cada uno al cuadrado ($x^2$, $y^2$) y luego los sumamos.
 
-### Ejemplo 16
+**Resultado:** $\boxed{x^2 + y^2}$
 
-**Expresión:** $(x - 3)^2$
+</details>
 
-**Interpretación:** "El cuadrado de la diferencia de un número y tres"
+### **Ejercicio 7**
+**Enunciado:** El producto de un número y su siguiente consecutivo.
 
----
+<details>
+<summary>Ver solución</summary>
 
-## 📝 Ejercicios de práctica
+**Datos:** Número = $n$. Su consecutivo es el número que sigue = $n+1$.
+**Razonamiento:** Multiplicamos $n$ por todo el bloque $(n+1)$.
 
-### Traducir del lenguaje común al algebraico
+**Resultado:** $\boxed{n(n + 1)}$
 
-**Ejercicio 1:** Un número aumentado en su doble.
+</details>
 
-**Ejercicio 2:** La diferencia entre el cuadrado de un número y el número mismo.
+### **Ejercicio 8**
+**Enunciado:** Traduce a lenguaje común: $2x - 5$.
 
-**Ejercicio 3:** El producto de tres números consecutivos.
+<details>
+<summary>Ver solución</summary>
 
-**Ejercicio 4:** La cuarta parte de un número aumentada en cinco.
+**Análisis:** Vemos una multiplicación por 2 (doble) y una resta de 5.
 
-**Ejercicio 5:** El triple de la diferencia de dos números.
+**Resultado:** "El doble de un número disminuido en cinco".
 
-**Ejercicio 6:** La suma de un número y su recíproco.
+</details>
 
----
+### **Ejercicio 9**
+**Enunciado:** Traduce a lenguaje común: $\frac{x + 1}{3}$.
 
-### Traducir del lenguaje algebraico al común
+<details>
+<summary>Ver solución</summary>
 
-**Ejercicio 7:** $4x + 7$
+**Análisis:** Vemos una suma en el numerador y una división por 3 de todo eso.
 
-**Ejercicio 8:** $\frac{x^2}{3}$
+**Resultado:** "La tercera parte de un número aumentado en uno".
 
-**Ejercicio 9:** $2(a - b)$
+</details>
 
-**Ejercicio 10:** $x^3 - x$
+### **Ejercicio 10**
+**Enunciado:** El cubo de un número más el mismo número.
 
----
+<details>
+<summary>Ver solución</summary>
 
-## ✅ Soluciones
+**Datos:** Número = $x$. Cubo = potencia 3 ($x^3$).
+**Razonamiento:** Sumamos el cubo y el número original.
 
-### Ejercicios 1-6
+**Resultado:** $\boxed{x^3 + x}$
 
-| Ejercicio | Solución |
-|:---------:|:---------|
-| 1 | $x + 2x = 3x$ |
-| 2 | $x^2 - x$ |
-| 3 | $n(n+1)(n+2)$ |
-| 4 | $\frac{x}{4} + 5$ |
-| 5 | $3(x - y)$ |
-| 6 | $x + \frac{1}{x}$ |
-
-### Ejercicios 7-10
-
-| Ejercicio | Solución |
-|:---------:|:---------|
-| 7 | El cuádruple de un número aumentado en siete |
-| 8 | La tercera parte del cuadrado de un número |
-| 9 | El doble de la diferencia de dos números |
-| 10 | El cubo de un número menos el número mismo |
+</details>
 
 ---
+
+## 🔑 Resumen
+
+![resumen-lenguaje-algebraico](https://cdn.ediprofe.com/img/matematicas/68xp-resumen-lenguaje-algebraico.webp)
+
+El lenguaje algebraico es la herramienta que nos permite modelar la realidad numéricamente.
+
+| Concepto | Representación Típica |
+| :--- | :--- |
+| **Incógnita** | Letras como $x, y, n, a, b$. |
+| **Suma** | Palabras: Aumentado, más, agregar. ($+$) |
+| **Resta** | Palabras: Diferencia, disminuido, menos. ($-$) |
+| **Multiplicación** | Palabras: Producto, doble, veces. (Junto a la letra: $2x$) |
+| **División** | Palabras: Cociente, razón, parte. (Fracción: $\frac{x}{2}$) |
+
+> **Conclusión:** No trates de memorizar frases, intenta entender la "historia" que cuenta la oración y tradúcela símbolo por símbolo. El orden de las palabras y el uso de paréntesis pueden cambiar totalmente el significado.
+

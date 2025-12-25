@@ -88,31 +88,8 @@
 | Párrafos largos (5+ líneas) | Máximo 3 líneas por párrafo |
 | Ejercicios sin razonamiento | Siempre incluir el "por qué" |
 | LaTeX inline en títulos | Solo texto plano en títulos |
-| Lección sin imágenes | Mínimo 1 por concepto + 1 de resumen |
 
 ---
-
-## 🖼️ Propuesta de Imágenes
-
-Al reescribir una lección, incluir propuestas de imágenes como comentarios HTML:
-
-```html
-<!-- PROPUESTA DE IMAGEN: nombre-descriptivo
-Descripción: [Qué debe comunicar visualmente]
-Elementos:
-- [Lista de elementos a incluir]
-- [Datos, flechas, etiquetas]
-Estilo: Diagrama | Ilustración | Gráfica | Resumen visual
--->
-```
-
-### Ubicaciones obligatorias
-
-| Ubicación | Propósito |
-|-----------|-----------|
-| Después de cada concepto | Reforzar visualmente la explicación |
-| Antes de cada ejemplo | Contextualizar la situación |
-| En sección 🔑 Resumen | Diagrama visual de todo el tema |
 
 ### Ejemplos de las lecciones modelo
 

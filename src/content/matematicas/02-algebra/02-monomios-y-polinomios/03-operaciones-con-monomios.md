@@ -1,373 +1,224 @@
-# ➕ Operaciones con Monomios
+# **Operaciones con Monomios**
 
-En esta lección aprenderemos a realizar las operaciones básicas con monomios: suma, resta, multiplicación y división.
-
----
-
-## 📖 Suma y resta de monomios
-
-**Regla fundamental:** Solo se pueden sumar o restar monomios **semejantes**, es decir, aquellos que tienen la misma parte literal.
-
-### Procedimiento
-
-1. Verificar que los monomios sean semejantes
-2. Sumar o restar los coeficientes
-3. Conservar la parte literal
-
-### Ejemplo 1: Suma de monomios semejantes
-
-Calcula: $5x + 3x$
-
-$$
-5x + 3x = (5 + 3)x = 8x
-$$
-
-$$
-\boxed{8x}
-$$
-
-### Ejemplo 2: Resta de monomios semejantes
-
-Calcula: $7a^2 - 4a^2$
-
-$$
-7a^2 - 4a^2 = (7 - 4)a^2 = 3a^2
-$$
-
-$$
-\boxed{3a^2}
-$$
-
-### Ejemplo 3: Suma con signos diferentes
-
-Calcula: $-6xy + 10xy$
-
-$$
--6xy + 10xy = (-6 + 10)xy = 4xy
-$$
-
-$$
-\boxed{4xy}
-$$
-
-### Ejemplo 4: Resta con signos diferentes
-
-Calcula: $-3m^2n - 5m^2n$
-
-$$
--3m^2n - 5m^2n = (-3 - 5)m^2n = -8m^2n
-$$
-
-$$
-\boxed{-8m^2n}
-$$
-
-### Ejemplo 5: Varios monomios
-
-Calcula: $4x^2 - 7x^2 + 2x^2 - x^2$
-
-$$
-4x^2 - 7x^2 + 2x^2 - x^2 = (4 - 7 + 2 - 1)x^2 = -2x^2
-$$
-
-$$
-\boxed{-2x^2}
-$$
-
-### Ejemplo 6: Con coeficientes fraccionarios
-
-Calcula: $\frac{2}{3}ab + \frac{1}{4}ab$
-
-$$
-\frac{2}{3}ab + \frac{1}{4}ab = \left(\frac{2}{3} + \frac{1}{4}\right)ab
-$$
-
-$$
-= \left(\frac{8}{12} + \frac{3}{12}\right)ab = \frac{11}{12}ab
-$$
-
-$$
-\boxed{\frac{11}{12}ab}
-$$
+¿Alguna vez has organizado cajas en un almacén? Si tienes 3 cajas de manzanas y te llegan otras 2, simplemente sumas las cantidades porque son el mismo producto. Pero si te llegan 2 cajas de peras, no puedes decir que tienes 5 "cajas de algo". El álgebra funciona igual: para sumar o restar, los productos deben ser idénticos.
 
 ---
 
-## 📖 Multiplicación de monomios
+## 🎯 **¿Qué vas a aprender?**
 
-Para multiplicar monomios, aplicamos las siguientes reglas:
-
-### Reglas
-
-1. **Signos:** Se multiplican los signos (igual signo: positivo; diferente signo: negativo)
-2. **Coeficientes:** Se multiplican los coeficientes
-3. **Parte literal:** Se multiplican las variables sumando los exponentes de las que son iguales
-
-> **Recuerda la ley de exponentes:** $a^m \cdot a^n = a^{m+n}$
-
-### Ejemplo 7
-
-Calcula: $3x \cdot 4x$
-
-$$
-3x \cdot 4x = (3 \cdot 4)(x \cdot x) = 12x^{1+1} = 12x^2
-$$
-
-$$
-\boxed{12x^2}
-$$
-
-### Ejemplo 8
-
-Calcula: $(-2a^3) \cdot (5a^2)$
-
-**Signos:** $(-) \cdot (+) = (-)$
-
-**Coeficientes:** $2 \cdot 5 = 10$
-
-**Parte literal:** $a^3 \cdot a^2 = a^{3+2} = a^5$
-
-$$
-(-2a^3) \cdot (5a^2) = -10a^5
-$$
-
-$$
-\boxed{-10a^5}
-$$
-
-### Ejemplo 9
-
-Calcula: $(4x^2y) \cdot (3xy^3)$
-
-**Coeficientes:** $4 \cdot 3 = 12$
-
-**Parte literal:** $x^2 \cdot x = x^{2+1} = x^3$ y $y \cdot y^3 = y^{1+3} = y^4$
-
-$$
-(4x^2y) \cdot (3xy^3) = 12x^3y^4
-$$
-
-$$
-\boxed{12x^3y^4}
-$$
-
-### Ejemplo 10
-
-Calcula: $(-6a^2b^3) \cdot (-2a^4b)$
-
-**Signos:** $(-) \cdot (-) = (+)$
-
-**Coeficientes:** $6 \cdot 2 = 12$
-
-**Parte literal:** $a^2 \cdot a^4 = a^6$ y $b^3 \cdot b = b^4$
-
-$$
-(-6a^2b^3) \cdot (-2a^4b) = 12a^6b^4
-$$
-
-$$
-\boxed{12a^6b^4}
-$$
-
-### Ejemplo 11
-
-Calcula: $(2x^3) \cdot (4y^2) \cdot (3xy)$
-
-$$
-= (2 \cdot 4 \cdot 3)(x^3 \cdot x)(y^2 \cdot y) = 24x^4y^3
-$$
-
-$$
-\boxed{24x^4y^3}
-$$
-
-### Ejemplo 12
-
-Calcula: $\left(\frac{3}{4}m^2\right) \cdot \left(\frac{2}{5}m^3n\right)$
-
-**Coeficientes:** $\frac{3}{4} \cdot \frac{2}{5} = \frac{6}{20} = \frac{3}{10}$
-
-**Parte literal:** $m^2 \cdot m^3 = m^5$ y $n$
-
-$$
-\left(\frac{3}{4}m^2\right) \cdot \left(\frac{2}{5}m^3n\right) = \frac{3}{10}m^5n
-$$
-
-$$
-\boxed{\frac{3}{10}m^5n}
-$$
+*   La regla de oro para sumar y restar monomios semejantes.
+*   Cómo multiplicar monomios usando las leyes de los exponentes.
+*   El proceso para dividir monomios y simplificar expresiones.
+*   A resolver operaciones combinadas siguiendo el orden lógico.
 
 ---
 
-## 📖 División de monomios
+## ➕ **Suma y Resta: Solo entre Semejantes**
 
-Para dividir monomios, aplicamos las siguientes reglas:
+Para sumar o restar monomios, la condición es innegociable: deben tener la **misma parte literal** (mismas letras con mismos exponentes).
 
-### Reglas
+1.  **Coeficientes:** Sumas o restas los números grandes.
+2.  **Parte Literal:** La dejas exactamente igual (¡no toques las letras!).
 
-1. **Signos:** Se dividen los signos (igual signo: positivo; diferente signo: negativo)
-2. **Coeficientes:** Se dividen los coeficientes
-3. **Parte literal:** Se dividen las variables restando los exponentes de las que son iguales
+### **Ejemplo: El Almacén de Frutas**
+Si $x$ representa una caja de naranjas:
+$$ 5x + 3x = (5 + 3)x = 8x $$
 
-> **Recuerda la ley de exponentes:** $\frac{a^m}{a^n} = a^{m-n}$
+Pero si intentas sumar $5x + 3y$, la expresión se queda igual porque son productos diferentes.
 
-### Ejemplo 13
-
-Calcula: $\frac{12x^5}{4x^2}$
-
-**Coeficientes:** $\frac{12}{4} = 3$
-
-**Parte literal:** $\frac{x^5}{x^2} = x^{5-2} = x^3$
-
-$$
-\frac{12x^5}{4x^2} = 3x^3
-$$
-
-$$
-\boxed{3x^3}
-$$
-
-### Ejemplo 14
-
-Calcula: $\frac{-20a^4b^3}{5a^2b}$
-
-**Signos:** $\frac{(-)}{(+)} = (-)$
-
-**Coeficientes:** $\frac{20}{5} = 4$
-
-**Parte literal:** $\frac{a^4}{a^2} = a^2$ y $\frac{b^3}{b} = b^2$
-
-$$
-\frac{-20a^4b^3}{5a^2b} = -4a^2b^2
-$$
-
-$$
-\boxed{-4a^2b^2}
-$$
-
-### Ejemplo 15
-
-Calcula: $\frac{36x^3y^4z^2}{-9x^2y^3z^2}$
-
-**Signos:** $\frac{(+)}{(-)} = (-)$
-
-**Coeficientes:** $\frac{36}{9} = 4$
-
-**Parte literal:** $\frac{x^3}{x^2} = x$, $\frac{y^4}{y^3} = y$, $\frac{z^2}{z^2} = z^0 = 1$
-
-$$
-\frac{36x^3y^4z^2}{-9x^2y^3z^2} = -4xy
-$$
-
-$$
-\boxed{-4xy}
-$$
-
-### Ejemplo 16
-
-Calcula: $\frac{-15m^6n^2}{-3m^4n^2}$
-
-**Signos:** $\frac{(-)}{(-)} = (+)$
-
-**Coeficientes:** $\frac{15}{3} = 5$
-
-**Parte literal:** $\frac{m^6}{m^4} = m^2$ y $\frac{n^2}{n^2} = 1$
-
-$$
-\frac{-15m^6n^2}{-3m^4n^2} = 5m^2
-$$
-
-$$
-\boxed{5m^2}
-$$
-
-### Ejemplo 17
-
-Calcula: $\frac{18a^2b^5}{6ab^3}$
-
-**Coeficientes:** $\frac{18}{6} = 3$
-
-**Parte literal:** $\frac{a^2}{a} = a$ y $\frac{b^5}{b^3} = b^2$
-
-$$
-\frac{18a^2b^5}{6ab^3} = 3ab^2
-$$
-
-$$
-\boxed{3ab^2}
-$$
+> ⚠️ **Error Común:** Nunca sumes los exponentes al sumar monomios. $x^2 + x^2$ es $2x^2$, **no** $x^4$.
 
 ---
 
-## 📝 Ejercicios de práctica
+## ✖️ **Multiplicación: ¡Aquí todo se vale!**
 
-### Suma y resta de monomios
+A diferencia de la suma, para multiplicar **no necesitas** que sean semejantes. Puedes multiplicar cualquier monomio con cualquier otro.
 
-**Ejercicio 1:** Calcula: $9x^2 + 5x^2$
+1.  **Multiplicas los coeficientes:** (Números con números).
+2.  **Sumas los exponentes:** De las letras que son iguales (Ley de exponentes: $a^m \cdot a^n = a^{m+n}$).
 
-**Ejercicio 2:** Calcula: $-4ab - 7ab$
-
-**Ejercicio 3:** Calcula: $8m^3 - 12m^3 + 3m^3$
-
----
-
-### Multiplicación de monomios
-
-**Ejercicio 4:** Calcula: $(5x^2)(3x^4)$
-
-**Ejercicio 5:** Calcula: $(-4a^3b)(6a^2b^4)$
-
-**Ejercicio 6:** Calcula: $(2xy^2)(-3x^3y)(4x^2y^3)$
+### **Ejemplo: Cálculo de Área**
+Si un rectángulo mide $3x$ de base y $2x$ de altura:
+$$ (3x) \cdot (2x) = (3 \cdot 2) \cdot (x^{1+1}) = 6x^2 $$
 
 ---
 
-### División de monomios
+## ➗ **División: Repartir y Restar**
 
-**Ejercicio 7:** Calcula: $\frac{24m^6}{8m^2}$
+Dividir monomios es el proceso inverso. Aquí también puedes dividir cualquier par de monomios.
 
-**Ejercicio 8:** Calcula: $\frac{-45x^4y^5}{9x^2y^3}$
+1.  **Divides los coeficientes:** (Números entre números).
+2.  **Restas los exponentes:** De las letras iguales (Ley de exponentes: $\frac{a^m}{a^n} = a^{m-n}$).
 
-**Ejercicio 9:** Calcula: $\frac{56a^3b^2c^4}{-7abc^2}$
-
----
-
-### Operaciones combinadas
-
-**Ejercicio 10:** Calcula: $(3x^2) \cdot (4x) - (2x^3)$
+### **Ejemplo: Reparto de Recursos**
+Si repartes $12x^5$ entre $4x^2$ partes:
+$$ \frac{12x^5}{4x^2} = (12 \div 4) \cdot x^{5-2} = 3x^3 $$
 
 ---
 
-## ✅ Soluciones
+## ⚙️ **Ejemplos Resueltos**
 
-### Suma y resta
+### **Ejemplo 1: Multiplicación Compleja**
+Calcula el producto de $(-2a^3b)$ por $(5a^2b^4)$.
 
-| Ejercicio | Desarrollo | Respuesta |
-|:---------:|:-----------|:---------:|
-| 1 | $(9 + 5)x^2$ | $14x^2$ |
-| 2 | $(-4 - 7)ab$ | $-11ab$ |
-| 3 | $(8 - 12 + 3)m^3$ | $-m^3$ |
+**Paso 1: Multiplicar signos y números**
+$$ -2 \cdot 5 = -10 $$
 
-### Multiplicación
+**Paso 2: Sumar exponentes de letras iguales**
+*   Para $a$: $3 + 2 = 5$
+*   Para $b$: $1 + 4 = 5$
 
-| Ejercicio | Desarrollo | Respuesta |
-|:---------:|:-----------|:---------:|
-| 4 | $(5 \cdot 3)(x^{2+4})$ | $15x^6$ |
-| 5 | $(-4 \cdot 6)(a^{3+2})(b^{1+4})$ | $-24a^5b^5$ |
-| 6 | $(2 \cdot (-3) \cdot 4)(x^{1+3+2})(y^{2+1+3})$ | $-24x^6y^6$ |
-
-### División
-
-| Ejercicio | Desarrollo | Respuesta |
-|:---------:|:-----------|:---------:|
-| 7 | $\frac{24}{8} \cdot m^{6-2}$ | $3m^4$ |
-| 8 | $\frac{-45}{9} \cdot x^{4-2} \cdot y^{5-3}$ | $-5x^2y^2$ |
-| 9 | $\frac{56}{-7} \cdot a^{3-1} \cdot b^{2-1} \cdot c^{4-2}$ | $-8a^2bc^2$ |
-
-### Operaciones combinadas
-
-**Ejercicio 10:**
-
-$$
-(3x^2)(4x) - 2x^3 = 12x^3 - 2x^3 = 10x^3
-$$
+**Resultado:** $\boxed{-10a^5b^5}$
 
 ---
+
+### **Ejemplo 2: División y Simplificación**
+Calcula: $\frac{-20x^4y^3}{5xy^2}$.
+
+**Análisis:**
+El coeficiente de abajo para $x$ tiene un exponente invisible de $1$.
+
+**Cálculo:**
+1.  Signos y Números: $-20 \div 5 = -4$.
+2.  Exponente de $x$: $4 - 1 = 3$.
+3.  Exponente de $y$: $3 - 2 = 1$.
+
+**Resultado:** $\boxed{-4x^3y}$
+
+---
+
+## 📝 **Ponte a Prueba**
+
+### **Ejercicio 1**
+Suma: $12x^2 + 5x^2 - 3x^2$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** Todos son semejantes ($x^2$). Sumamos los números: $12 + 5 - 3 = 14$.
+
+**Resultado:** $\boxed{14x^2}$
+
+</details>
+
+### **Ejercicio 2**
+Multiplica: $(4a^3) \cdot (2a^5)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** Multiplicamos $4 \cdot 2 = 8$ y sumamos exponentes $3 + 5 = 8$.
+
+**Resultado:** $\boxed{8a^8}$
+
+</details>
+
+### **Ejercicio 3**
+Divide: $\frac{15x^6}{3x^2}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** Dividimos $15 \div 3 = 5$ y restamos exponentes $6 - 2 = 4$.
+
+**Resultado:** $\boxed{5x^4}$
+
+</details>
+
+### **Ejercicio 4**
+Calcula: $(-3xy) \cdot (-4x^2y^3)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** Menos por menos es más. $3 \cdot 4 = 12$. Exponentes: $x(1+2)=3$, $y(1+3)=4$.
+
+**Resultado:** $\boxed{12x^3y^4}$
+
+</details>
+
+### **Ejercicio 5**
+Simplifica: $8ab - 2ab + 5ab$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** Son semejantes. $8 - 2 + 5 = 11$.
+
+**Resultado:** $\boxed{11ab}$
+
+</details>
+
+### **Ejercicio 6**
+Divide: $\frac{-24m^5n^2}{6m^2n^2}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** $-24 \div 6 = -4$. Exponentes: $m(5-2)=3$, $n(2-2)=0$. Recuerda que $n^0 = 1$.
+
+**Resultado:** $\boxed{-4m^3}$
+
+</details>
+
+### **Ejercicio 7**
+Calcula: $(2x^2)^3$. (Potencia de un monomio)
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** Elevamos el coeficiente $2^3 = 8$ y multiplicamos los exponentes $2 \cdot 3 = 6$.
+
+**Resultado:** $\boxed{8x^6}$
+
+</details>
+
+### **Ejercicio 8**
+Multiplica: $(\frac{1}{2}x) \cdot (4x^3)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** $(\frac{1}{2} \cdot 4) = 2$. Sumamos exponentes $1 + 3 = 4$.
+
+**Resultado:** $\boxed{2x^4}$
+
+</details>
+
+### **Ejercicio 9**
+Simplifica: $5x^2 - 3x + 2x^2 + 8x$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** Agrupamos semejantes. $x^2: 5+2=7$. $x: -3+8=5$.
+
+**Resultado:** $\boxed{7x^2 + 5x}$
+
+</details>
+
+### **Ejercicio 10**
+Calcula: $\frac{(4x^2) \cdot (3x^3)}{6x}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** Primero multiplicamos arriba: $12x^5$. Luego dividimos: $12x^5 \div 6x = 2x^4$.
+
+**Resultado:** $\boxed{2x^4}$
+
+</details>
+
+---
+
+## 🔑 **Resumen**
+
+![resumen-operaciones-monomios](https://cdn.ediprofe.com/img/matematicas/jrew-resumen-operaciones-monomios.webp)
+
+| Operación | ¿Qué hacer con los Números? | ¿Qué hacer con los Exponentes? | Condición |
+| :--- | :--- | :--- | :--- |
+| **Suma / Resta** | Sumar o Restar | No se cambian | Deben ser **Semejantes** |
+| **Multiplicación** | Multiplicar | Se suman ($+$) | No requiere condición |
+| **División** | Dividir | Se restan ($-$) | No requiere condición |
+
+> 💡 **Conclusión:** Operar con monomios es como seguir una receta: si respetas las reglas de los exponentes y los coeficientes, puedes simplificar cualquier expresión por compleja que parezca.

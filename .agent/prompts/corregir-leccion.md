@@ -7,7 +7,7 @@
 ## Prompt
 
 ```
-Corrige esta lección siguiendo el estilo Ediprofe.
+Corrige esta lección siguiendo el estilo Ediprofe, bajo el modelo 2.
 
 **Lección:** [RUTA]
 
@@ -16,8 +16,7 @@ Corrige esta lección siguiendo el estilo Ediprofe.
 ## PASO 1: LEE las referencias
 
 1. `.agent/prompts/estilo-ediprofe.md` (estilo completo)
-2. `src/content/fisica/02-cinematica/04-MRUA/01-introduccion.md` (modelo)
-
+http://localhost:4321/fisica/cinematica/mcu/introduccion (modelo de lección)
 ---
 
 ## PASO 2: VERIFICA estas secciones obligatorias
@@ -26,9 +25,8 @@ Corrige esta lección siguiendo el estilo Ediprofe.
 □ Párrafo intro (1-2 oraciones, conecta con vida real)
 □ `## 🎯 ¿Qué vas a aprender?` (4-5 puntos)
 □ Contenido con ejemplos PASO A PASO
-□ **Imágenes**: mínimo 1 por concepto + 1 por ejemplo + 1 de resumen
 □ `## 📝 Ejercicios de Práctica` (exactamente 10, con `<details>`)
-□ `## 🔑 Resumen` (tabla + conclusión + imagen de resumen)
+□ `## 🔑 Resumen` (tabla + conclusión)
 
 ---
 
@@ -50,7 +48,7 @@ No hagas sugerencias, **implementa los cambios directamente**.
 ### Estructura objetivo:
 
 ```markdown
-# **[Título]**
+# [Título]
 
 [1-2 oraciones conectando con vida real o lección anterior]
 
@@ -69,13 +67,6 @@ No hagas sugerencias, **implementa los cambios directamente**.
 
 [Explicación clara, ejemplos paso a paso]
 
-<!-- PROPUESTA DE IMAGEN: concepto-nombre
-Descripción: [Qué debe mostrar la imagen]
-Elementos:
-- [Elemento 1]
-- [Elemento 2]
-Estilo: Diagrama/Ilustración/Gráfica
--->
 
 ---
 
@@ -90,13 +81,6 @@ Estilo: Diagrama/Ilustración/Gráfica
 ### Ejemplo 1: [Título descriptivo]
 
 [Situación contextualizada]
-
-<!-- PROPUESTA DE IMAGEN: ejemplo1-nombre
-Descripción: [Qué situación ilustrar]
-Elementos:
-- [Objeto principal]
-- [Datos visibles: valores, flechas, etc.]
--->
 
 **Datos:**
 - ...
@@ -128,13 +112,6 @@ Elementos:
 
 ## 🔑 Resumen
 
-<!-- PROPUESTA DE IMAGEN: resumen-tema
-Descripción: Diagrama resumen con los conceptos clave
-Elementos:
-- [Fórmulas principales]
-- [Relaciones entre conceptos]
--->
-
 | Concepto | Descripción |
 |----------|-------------|
 | **X** | ... |
@@ -151,27 +128,3 @@ Elementos:
 2. Lista los cambios realizados
 
 ---
-
-## Formato de Propuesta de Imagen
-
-Usar comentarios HTML con este formato:
-
-```html
-<!-- PROPUESTA DE IMAGEN: nombre-descriptivo
-Descripción: [Qué debe comunicar visualmente]
-Elementos:
-- [Lista de elementos a incluir]
-- [Datos, flechas, etiquetas]
-Estilo: Diagrama | Ilustración | Gráfica | Resumen visual
--->
-```
-
----
-
-## Ejemplo de Uso
-
-```
-Corrige esta lección siguiendo el estilo Ediprofe.
-
-**Lección:** src/content/matematicas/02-algebra/01-introduccion/01-lenguaje-algebraico.md
-```

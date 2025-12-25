@@ -1,451 +1,251 @@
-# ➕ Operaciones con Polinomios
+# **Operaciones con Polinomios**
 
-En esta lección aprenderemos a realizar las operaciones fundamentales con polinomios: suma, resta, multiplicación y potenciación.
-
----
-
-## 📖 Suma de polinomios
-
-Para sumar polinomios, se agrupan y reducen los términos semejantes.
-
-### Procedimiento
-
-1. Eliminar los paréntesis (si los hay)
-2. Agrupar términos semejantes
-3. Reducir cada grupo
-
-### Ejemplo 1
-
-Suma: $(3x^2 + 5x - 2) + (2x^2 - 3x + 7)$
-
-**Paso 1:** Eliminar paréntesis:
-
-$$
-3x^2 + 5x - 2 + 2x^2 - 3x + 7
-$$
-
-**Paso 2:** Agrupar términos semejantes:
-
-$$
-(3x^2 + 2x^2) + (5x - 3x) + (-2 + 7)
-$$
-
-**Paso 3:** Reducir:
-
-$$
-5x^2 + 2x + 5
-$$
-
-$$
-\boxed{5x^2 + 2x + 5}
-$$
-
-### Ejemplo 2
-
-Suma: $(4a^2b - 3ab + 2) + (ab - 5a^2b + 4)$
-
-$$
-= 4a^2b - 3ab + 2 + ab - 5a^2b + 4
-$$
-
-$$
-= (4a^2b - 5a^2b) + (-3ab + ab) + (2 + 4)
-$$
-
-$$
-= -a^2b - 2ab + 6
-$$
-
-$$
-\boxed{-a^2b - 2ab + 6}
-$$
-
-### Ejemplo 3: Suma vertical
-
-Suma: $(5x^3 - 2x^2 + x - 1) + (3x^2 - 4x + 6)$
-
-Organizamos en columnas según la parte literal:
-
-$$
-\begin{array}{r}
-5x^3 - 2x^2 + x - 1 \\
-+ \quad 3x^2 - 4x + 6 \\
-\hline
-5x^3 + x^2 - 3x + 5
-\end{array}
-$$
-
-$$
-\boxed{5x^3 + x^2 - 3x + 5}
-$$
+Si un monomio era un paquete individual en un almacén, un polinomio es como un pedido completo que incluye varios tipos de paquetes. Para manejar estos pedidos, necesitamos aprender a sumarlos, restarlos y multiplicarlos de forma ordenada, asegurándonos de que cada "producto" se combine correctamente con su similar.
 
 ---
 
-## 📖 Resta de polinomios
+## 🎯 **¿Qué vas a aprender?**
 
-Para restar polinomios, se cambia el signo de cada término del segundo polinomio y luego se suma.
-
-### Regla importante
-
-$$
-A - B = A + (-B)
-$$
-
-Al restar, se cambian todos los signos del polinomio que se resta.
-
-### Ejemplo 4
-
-Resta: $(5x^2 + 3x - 4) - (2x^2 - x + 1)$
-
-**Paso 1:** Cambiar signos del segundo polinomio:
-
-$$
-5x^2 + 3x - 4 - 2x^2 + x - 1
-$$
-
-**Paso 2:** Agrupar y reducir:
-
-$$
-(5x^2 - 2x^2) + (3x + x) + (-4 - 1)
-$$
-
-$$
-= 3x^2 + 4x - 5
-$$
-
-$$
-\boxed{3x^2 + 4x - 5}
-$$
-
-### Ejemplo 5
-
-Resta: $(7a - 4b + 3c) - (2a + 5b - c)$
-
-$$
-= 7a - 4b + 3c - 2a - 5b + c
-$$
-
-$$
-= (7a - 2a) + (-4b - 5b) + (3c + c)
-$$
-
-$$
-= 5a - 9b + 4c
-$$
-
-$$
-\boxed{5a - 9b + 4c}
-$$
-
-### Ejemplo 6: Resta vertical
-
-Resta: $(4x^3 + 2x^2 - 5x + 3) - (x^3 - 3x^2 + 2x - 1)$
-
-$$
-\begin{array}{r}
-4x^3 + 2x^2 - 5x + 3 \\
-- (x^3 - 3x^2 + 2x - 1) \\
-\hline
-3x^3 + 5x^2 - 7x + 4
-\end{array}
-$$
-
-$$
-\boxed{3x^3 + 5x^2 - 7x + 4}
-$$
+*   A sumar polinomios agrupando sus términos según su "familia".
+*   El truco de los signos para restar polinomios sin cometer errores.
+*   Cómo multiplicar polinomios usando la propiedad distributiva.
+*   El razonamiento detrás de elevar un polinomio al cuadrado.
 
 ---
 
-## 📖 Multiplicación de polinomios
+## ➕ **Suma: El Arte de Agrupar**
 
-Para multiplicar polinomios, cada término del primer polinomio se multiplica por cada término del segundo, y luego se reducen los términos semejantes.
+Sumar polinomios es simplemente juntar todos los términos y reducir aquellos que sean semejantes. 
 
-### Multiplicación de un monomio por un polinomio
+Para hacerlo de forma segura, sigue estos pasos:
+1.  **Quita los paréntesis:** Escribe todos los términos seguidos.
+2.  **Identifica los equipos:** Busca los términos que tienen las mismas letras y exponentes.
+3.  **Reduce:** Suma los coeficientes de cada equipo.
 
-Se aplica la propiedad distributiva.
+### **Ejemplo: El Pedido Combinado**
+Calcula: $(3x^2 + 5x - 2) + (2x^2 - 3x + 7)$
 
-### Ejemplo 7
+**Paso 1: Quitar paréntesis**
+$$ 3x^2 + 5x - 2 + 2x^2 - 3x + 7 $$
 
+**Paso 2: Agrupar por equipos**
+*   Equipo $x^2$: $3 + 2 = 5$ $\to 5x^2$
+*   Equipo $x$: $5 - 3 = 2$ $\to 2x$
+*   Equipo Números: $-2 + 7 = 5$
+
+**Resultado:** $\boxed{5x^2 + 2x + 5}$
+
+---
+
+## ➖ **Resta: El Cambio de Signo**
+
+La resta tiene una trampa: el signo menos ($-$) delante de un paréntesis **cambia el signo de todos los términos** que están adentro. Es como si el signo menos fuera un interruptor que invierte todo.
+
+### **Ejemplo: El Ajuste de Inventario**
+Calcula: $(5x^2 + 3x - 4) - (2x^2 - x + 1)$
+
+**Paso 1: Aplicar el cambio de signo**
+El primer paréntesis se queda igual, el segundo cambia todo:
+$$ 5x^2 + 3x - 4 \quad \mathbf{- 2x^2 + x - 1} $$
+
+**Paso 2: Reducir como en la suma**
+*   Equipo $x^2$: $5 - 2 = 3$ $\to 3x^2$
+*   Equipo $x$: $3 + 1 = 4$ $\to 4x$
+*   Equipo Números: $-4 - 1 = -5$
+
+**Resultado:** $\boxed{3x^2 + 4x - 5}$
+
+---
+
+## ✖️ **Multiplicación: Todos contra Todos**
+
+Para multiplicar polinomios usamos la **propiedad distributiva**. Esto significa que cada término del primer polinomio debe multiplicar a **cada uno** de los términos del segundo.
+
+### **Ejemplo: El Área de un Terreno**
+Calcula: $(x + 3)(x + 2)$
+
+**Razonamiento:**
+Imagina un terreno dividido en 4 partes. Multiplicamos la primera $x$ por todo el segundo bloque, y luego el $3$ por todo el segundo bloque.
+
+**Paso a paso:**
+1.  $x \cdot x = x^2$
+2.  $x \cdot 2 = 2x$
+3.  $3 \cdot x = 3x$
+4.  $3 \cdot 2 = 6$
+
+**Unir y reducir:**
+$$ x^2 + 2x + 3x + 6 = x^2 + 5x + 6 $$
+
+**Resultado:** $\boxed{x^2 + 5x + 6}$
+
+---
+
+## ⚙️ **Ejemplos Resueltos**
+
+### **Ejemplo 1: Multiplicación de Monomio por Polinomio**
 Calcula: $3x(2x^2 - 5x + 4)$
 
-$$
-3x \cdot 2x^2 + 3x \cdot (-5x) + 3x \cdot 4
-$$
+**Razonamiento:**
+El $3x$ de afuera "distribuye" su valor multiplicando a los tres de adentro.
 
-$$
-= 6x^3 - 15x^2 + 12x
-$$
+**Cálculo:**
+*   $3x \cdot 2x^2 = 6x^3$
+*   $3x \cdot (-5x) = -15x^2$
+*   $3x \cdot 4 = 12x$
 
-$$
-\boxed{6x^3 - 15x^2 + 12x}
-$$
-
-### Ejemplo 8
-
-Calcula: $-2a^2(4a^3 - 3a + 1)$
-
-$$
-= -2a^2 \cdot 4a^3 + (-2a^2) \cdot (-3a) + (-2a^2) \cdot 1
-$$
-
-$$
-= -8a^5 + 6a^3 - 2a^2
-$$
-
-$$
-\boxed{-8a^5 + 6a^3 - 2a^2}
-$$
-
-### Multiplicación de dos polinomios
-
-Cada término del primer polinomio multiplica a todos los términos del segundo.
-
-### Ejemplo 9
-
-Calcula: $(x + 3)(x - 2)$
-
-$$
-= x \cdot x + x \cdot (-2) + 3 \cdot x + 3 \cdot (-2)
-$$
-
-$$
-= x^2 - 2x + 3x - 6
-$$
-
-$$
-= x^2 + x - 6
-$$
-
-$$
-\boxed{x^2 + x - 6}
-$$
-
-### Ejemplo 10
-
-Calcula: $(2x - 1)(3x + 4)$
-
-$$
-= 2x \cdot 3x + 2x \cdot 4 + (-1) \cdot 3x + (-1) \cdot 4
-$$
-
-$$
-= 6x^2 + 8x - 3x - 4
-$$
-
-$$
-= 6x^2 + 5x - 4
-$$
-
-$$
-\boxed{6x^2 + 5x - 4}
-$$
-
-### Ejemplo 11
-
-Calcula: $(x + 2)(x^2 - 3x + 1)$
-
-$$
-= x(x^2 - 3x + 1) + 2(x^2 - 3x + 1)
-$$
-
-$$
-= x^3 - 3x^2 + x + 2x^2 - 6x + 2
-$$
-
-$$
-= x^3 - x^2 - 5x + 2
-$$
-
-$$
-\boxed{x^3 - x^2 - 5x + 2}
-$$
-
-### Ejemplo 12
-
-Calcula: $(2x^2 - x + 3)(x + 4)$
-
-Multiplicamos cada término del primer polinomio por cada término del segundo:
-
-$$
-= 2x^2(x + 4) - x(x + 4) + 3(x + 4)
-$$
-
-$$
-= 2x^3 + 8x^2 - x^2 - 4x + 3x + 12
-$$
-
-Agrupamos términos semejantes:
-
-$$
-= 2x^3 + (8x^2 - x^2) + (-4x + 3x) + 12
-$$
-
-$$
-= 2x^3 + 7x^2 - x + 12
-$$
-
-$$
-\boxed{2x^3 + 7x^2 - x + 12}
-$$
+**Resultado:** $\boxed{6x^3 - 15x^2 + 12x}$
 
 ---
 
-## 📖 Potencia de un polinomio
+### **Ejemplo 2: Cuadrado de un Binomio**
+Calcula: $(x + 4)^2$
 
-Para elevar un polinomio a una potencia, debemos multiplicar el polinomio por sí mismo tantas veces como indique el exponente.
+**Razonamiento:**
+Elevar al cuadrado significa multiplicar la base por sí misma: $(x + 4)(x + 4)$.
 
-### Ejemplo 13: Cuadrado de un binomio
+**Cálculo:**
+$$ x(x) + x(4) + 4(x) + 4(4) $$
+$$ x^2 + 4x + 4x + 16 $$
+$$ x^2 + 8x + 16 $$
 
-Calcula: $(x + 2)^2$
-
-$$
-(x + 2)^2 = (x + 2)(x + 2)
-$$
-
-$$
-= x^2 + 2x + 2x + 4
-$$
-
-$$
-= x^2 + 4x + 4
-$$
-
-$$
-\boxed{x^2 + 4x + 4}
-$$
-
-### Ejemplo 14
-
-Calcula: $(2a - 3)^2$
-
-$$
-(2a - 3)^2 = (2a - 3)(2a - 3)
-$$
-
-$$
-= 4a^2 - 6a - 6a + 9
-$$
-
-$$
-= 4a^2 - 12a + 9
-$$
-
-$$
-\boxed{4a^2 - 12a + 9}
-$$
-
-### Ejemplo 15: Cubo de un binomio
-
-Calcula: $(x + 1)^3$
-
-$$
-(x + 1)^3 = (x + 1)(x + 1)(x + 1)
-$$
-
-Primero calculamos $(x + 1)^2 = x^2 + 2x + 1$
-
-Luego multiplicamos por $(x + 1)$:
-
-$$
-= (x^2 + 2x + 1)(x + 1)
-$$
-
-$$
-= x^3 + x^2 + 2x^2 + 2x + x + 1
-$$
-
-$$
-= x^3 + 3x^2 + 3x + 1
-$$
-
-$$
-\boxed{x^3 + 3x^2 + 3x + 1}
-$$
+**Resultado:** $\boxed{x^2 + 8x + 16}$
 
 ---
 
-## 📝 Ejercicios de práctica
+## 📝 **Ponte a Prueba**
 
-### Suma de polinomios
+### **Ejercicio 1**
+Suma: $(5x^2 - 2x + 4) + (x^2 + 3x - 1)$.
 
-**Ejercicio 1:** $(4x^2 - 3x + 1) + (2x^2 + 5x - 6)$
+<details>
+<summary>Ver solución</summary>
 
-**Ejercicio 2:** $(5a^3 - 2a + 4) + (3a^2 - a^3 + 7)$
+**Razonamiento:** Agrupamos. $x^2(5+1)=6$, $x(-2+3)=1$, Números$(4-1)=3$.
+
+**Resultado:** $\boxed{6x^2 + x + 3}$
+
+</details>
+
+### **Ejercicio 2**
+Resta: $(8a - 3b) - (2a + 5b)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** Cambiamos signos al segundo: $8a - 3b - 2a - 5b$. Agrupamos: $(8-2)a = 6a$ y $(-3-5)b = -8b$.
+
+**Resultado:** $\boxed{6a - 8b}$
+
+</details>
+
+### **Ejercicio 3**
+Multiplica: $2x^2(3x - 4)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** Distribuimos el $2x^2$. $(2x^2 \cdot 3x) = 6x^3$, $(2x^2 \cdot -4) = -8x^2$.
+
+**Resultado:** $\boxed{6x^3 - 8x^2}$
+
+</details>
+
+### **Ejercicio 4**
+Calcula: $(x + 5)(x - 2)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** Distribuimos: $x^2 - 2x + 5x - 10$. Reducimos: $-2x+5x=3x$.
+
+**Resultado:** $\boxed{x^2 + 3x - 10}$
+
+</details>
+
+### **Ejercicio 5**
+Suma: $(x^3 + x^2) + (x^2 + x)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** Agrupamos. $x^3$ está solo. $x^2(1+1)=2$. $x$ está solo.
+
+**Resultado:** $\boxed{x^3 + 2x^2 + x}$
+
+</details>
+
+### **Ejercicio 6**
+Resta: $(10x^2 + 5) - (4x^2 - 3)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** Cambiamos signos: $10x^2 + 5 - 4x^2 + 3$. Reducimos: $(10-4)x^2 = 6x^2$ y $5+3=8$.
+
+**Resultado:** $\boxed{6x^2 + 8}$
+
+</details>
+
+### **Ejercicio 7**
+Calcula: $(2x + 1)(x + 3)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** Distribuimos: $2x^2 + 6x + x + 3$. Reducimos $6x+x=7x$.
+
+**Resultado:** $\boxed{2x^2 + 7x + 3}$
+
+</details>
+
+### **Ejercicio 8**
+Multiplica: $-3a(a^2 - 4a + 2)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** Distribuimos el $-3a$. $-3a^3$, $+12a^2$, $-6a$.
+
+**Resultado:** $\boxed{-3a^3 + 12a^2 - 6a}$
+
+</details>
+
+### **Ejercicio 9**
+Calcula: $(x - 3)^2$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** $(x-3)(x-3) = x^2 - 3x - 3x + 9$. Reducimos $-3x-3x=-6x$.
+
+**Resultado:** $\boxed{x^2 - 6x + 9}$
+
+</details>
+
+### **Ejercicio 10**
+Simplifica: $(x+1)(x-1) + x^2$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** $(x+1)(x-1) = x^2 - x + x - 1 = x^2 - 1$. Luego sumamos $x^2$: $x^2 - 1 + x^2 = 2x^2 - 1$.
+
+**Resultado:** $\boxed{2x^2 - 1}$
+
+</details>
 
 ---
 
-### Resta de polinomios
+## 🔑 **Resumen**
 
-**Ejercicio 3:** $(6x^2 + 2x - 5) - (4x^2 - 3x + 2)$
+![operaciones-con-polinomios](https://cdn.ediprofe.com/img/matematicas/9eqg-operaciones-con-polinomios.webp)
 
-**Ejercicio 4:** $(3m^3 - 4m^2 + m) - (2m^3 + m^2 - 3m + 1)$
 
----
+| Operación | Clave del Proceso | ¡Cuidado con! |
+| :--- | :--- | :--- |
+| **Suma** | Agrupar por equipos (semejantes). | No confundir $x^2$ con $x$. |
+| **Resta** | Invertir signos del segundo polinomio. | Olvidar cambiar UN signo. |
+| **Multiplicación** | Propiedad distributiva (todos con todos). | No sumar bien los exponentes. |
+| **Potencia** | Multiplicar el polinomio por sí mismo. | Pensar que $(x+a)^2 = x^2 + a^2$. |
 
-### Multiplicación de polinomios
-
-**Ejercicio 5:** $4x(3x^2 - 2x + 5)$
-
-**Ejercicio 6:** $(x + 5)(x - 3)$
-
-**Ejercicio 7:** $(2x - 3)(x^2 + 4x - 1)$
-
----
-
-### Potencia de un polinomio
-
-**Ejercicio 8:** $(3x - 2)^2$
-
----
-
-## ✅ Soluciones
-
-### Suma de polinomios
-
-**Ejercicio 1:**
-$$
-(4x^2 + 2x^2) + (-3x + 5x) + (1 - 6) = 6x^2 + 2x - 5
-$$
-
-**Ejercicio 2:**
-$$
-(5a^3 - a^3) + 3a^2 + (-2a - a) + (4 + 7) = 4a^3 + 3a^2 - 3a + 11
-$$
-
-### Resta de polinomios
-
-**Ejercicio 3:**
-$$
-6x^2 + 2x - 5 - 4x^2 + 3x - 2 = 2x^2 + 5x - 7
-$$
-
-**Ejercicio 4:**
-$$
-3m^3 - 4m^2 + m - 2m^3 - m^2 + 3m - 1 = m^3 - 5m^2 + 4m - 1
-$$
-
-### Multiplicación de polinomios
-
-**Ejercicio 5:**
-$$
-4x \cdot 3x^2 - 4x \cdot 2x + 4x \cdot 5 = 12x^3 - 8x^2 + 20x
-$$
-
-**Ejercicio 6:**
-$$
-x^2 - 3x + 5x - 15 = x^2 + 2x - 15
-$$
-
-**Ejercicio 7:**
-$$
-2x^3 + 8x^2 - 2x - 3x^2 - 12x + 3 = 2x^3 + 5x^2 - 14x + 3
-$$
-
-### Potencia de un polinomio
-
-**Ejercicio 8:**
-$$
-(3x)^2 - 2(3x)(2) + 2^2 = 9x^2 - 12x + 4
-$$
-
----
+> 💡 **Conclusión:** Las operaciones con polinomios son la base para resolver casi cualquier problema de ingeniería y ciencia. Dominar el orden y los signos te ahorrará el 90% de los errores matemáticos comunes.
