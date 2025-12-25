@@ -165,10 +165,7 @@ Situaciones que requieren confirmación:
 
 # 📝 PETICIÓN DEL USUARIO
 
-POR FAVOR QUIERO QUE DEJES BIEN DOCUMENTADO ESTE PROCESO DE GENERAR IMÁGENES EN USUARIO.md
+![alt text](image-8.png)
+![alt text](image-9.png)
 
-
-QUIERO TAMBIÉN QUE QUEDE DEBIDAMENTE DOCUMENTADO EN CLAUDE.md y docuemntos que así lo requieran.
-
-
-De otro lado....
+observa cómo se ve en la web y cómo se e ahora en el word....qué opinas? cuál es la solución aquí para que esto se vea bien? simple, efectiva, poderosa por favor, reflexiona y toma la mejor decisión.

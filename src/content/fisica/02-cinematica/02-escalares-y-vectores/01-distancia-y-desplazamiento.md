@@ -62,7 +62,7 @@ $$\Delta x = 6 - 0 = +6\ \text{m}$$
 
 El ascensor sube de 0 m a 20 m, luego baja hasta -4 m.
 
-![alt text](/public/images/fisica/cinematica/escalares-y-vectores/ascensor.png)
+![alt text](/images/fisica/cinematica/escalares-y-vectores/ascensor.png)
 
 ### ✅ Solución
 
@@ -206,4 +206,4 @@ $$|\Delta x| = \sqrt{8^2 + 6^2} = \sqrt{64 + 36} = \sqrt{100} = 10\,\mathrm{km}$
 - **Desplazamiento ($\Delta x$):** Magnitud vectorial. Cambio de posición ($x_f - x_i$). Puede ser positivo, negativo o cero.
 - La distancia siempre es mayor o igual que la magnitud del desplazamiento ($d \geq |\Delta x|$).
 
-![alt text](/public/images/fisica/cinematica/escalares-y-vectores/distancia-y-desplazamiento.png)
+![alt text](/images/fisica/cinematica/escalares-y-vectores/distancia-y-desplazamiento.png)

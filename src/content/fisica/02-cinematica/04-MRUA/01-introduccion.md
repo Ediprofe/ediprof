@@ -33,7 +33,7 @@ $$
 > **La Regla de Oro:**
 > Si un objeto tiene una aceleración de **$2\,\mathrm{m/s^2}$**, significa que su velocidad **aumenta en $2\,\mathrm{m/s}$ por cada segundo que pasa.**
 
-![MRUA](../../../../../public/images/fisica/cinematica/mrua/mrua.png)
+![MRUA](/images/fisica/cinematica/mrua/mrua.png)
 
 ---
 
@@ -101,7 +101,7 @@ Sustituimos $a = 2$:
 | **3 s** | $6\,\mathrm{m/s}$ | Avanzó 5m más | **9 m** |
 
 
-![Mapa de movimiento MRUA](/public/images/fisica/cinematica/mrua/mapa-moviiento-mrua.png)
+![Mapa de movimiento MRUA](/images/fisica/cinematica/mrua/mapa-moviiento-mrua.png)
 
 ---
 
@@ -147,7 +147,7 @@ La clave es entender que **Distancia = Velocidad Promedio $\times$ Tiempo**.
 | **2 s** | $20\,\mathrm{m/s}$ | $15\,\mathrm{m/s}$ | $15\,\mathrm{m}$ | **20 m** |
 | **3 s** | $30\,\mathrm{m/s}$ | $25\,\mathrm{m/s}$ | $25\,\mathrm{m}$ | **45 m** |
 
-![Análisis - MRUA en caída libre](/public/images/fisica/cinematica/mrua/mrua-analisis-edificio.png)
+![Análisis - MRUA en caída libre](/images/fisica/cinematica/mrua/mrua-analisis-edificio.png)
 ---
 
 #### **2. El "Secreto" de la Fórmula ($d = \frac{1}{2}at^2$)**

@@ -21,7 +21,7 @@ En esta lección y las siguientes, nos adentraremos en la primera de estas ramas
 
 Aunque ambas estudian el movimiento, se enfocan en variables distintas. Imaginemos un automóvil frenando ante un semáforo.
 
-![alt text](/public/images/fisica/cinematica/cinematica.png)
+![alt text](/images/fisica/cinematica/cinematica.png)
 
 ### **1. El enfoque de la Cinemática**
 Se centra en la descripción geométrica y matemática del movimiento. Sus variables principales son:
@@ -64,7 +64,7 @@ $$
 \text{Cuerpo real} \rightarrow \text{Punto másico} \, (x, y, z)
 $$
 
-![alt text](/public/images/fisica/cinematica/modelo-de-particula.png)
+![alt text](/images/fisica/cinematica/modelo-de-particula.png)
 
 > ⚠️ **Nota:** Este modelo es válido cuando las dimensiones del objeto son despreciables comparadas con la distancia que recorre (ej: un avión viajando entre continentes se puede tratar como una partícula).
 
@@ -98,7 +98,7 @@ $$
 
 ## 🔑 Resumen
 
-![alt text](/public/images/fisica/cinematica/mapa-mecanica.png)
+![alt text](/images/fisica/cinematica/mapa-mecanica.png)
 
 ---
 

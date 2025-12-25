@@ -31,7 +31,7 @@ Para responder, necesitas **sumar los vectores** de velocidad. ¡Eso es lo que a
 
 Si dos vectores apuntan en el **mismo sentido**, la magnitud del resultante es la **suma**:
 
-![alt text](/public/images/fisica/vectores/suma.png)
+![alt text](/images/fisica/vectores/suma.png)
 
 $$
 |\vec{R}| = |\vec{A}| + |\vec{B}| = 3 + 2 = 5
@@ -41,7 +41,7 @@ $$
 
 Si apuntan en **sentidos opuestos**, la magnitud del resultante es la **diferencia**:
 
-![alt text](/public/images/fisica/vectores/resta.png)
+![alt text](/images/fisica/vectores/resta.png)
 
 $$
 |\vec{R}| = |\vec{A}| - |\vec{B}| = 5 - 2 = 3

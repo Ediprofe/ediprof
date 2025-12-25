@@ -20,7 +20,7 @@ Un objeto está en MRU cuando cumple **dos condiciones fundamentales**:
 1.  **Trayectoria Rectilínea:** Se mueve en línea recta (no cambia de dirección).
 2.  **Velocidad Constante:** Mantiene su rapidez y dirección inalterables (no acelera ni frena).
 
-![MRU](/public/images/fisica/cinematica/mru/mru.png)
+![MRU](/images/fisica/cinematica/mru/mru.png)
 
 > 💡 **Dato Clave:** Si la velocidad es constante, significa que la **aceleración es cero** ($a = 0$).
 
@@ -35,7 +35,7 @@ Imagina un tren que viaja a **60 km/h** de manera constante. Esto significa lite
 - En la **3ª hora** recorre otros **60 km** más.
 
 
-![Tren MRU](/public/images/fisica/cinematica/mru/tren-mru.png)
+![Tren MRU](/images/fisica/cinematica/mru/tren-mru.png)
 
 ¿Ves el patrón? **Siempre avanza la misma distancia en cada unidad de tiempo.**
 
@@ -50,7 +50,7 @@ Un robot se mueve con una velocidad constante de **$4\,\mathrm{m/s}$**.
 ### **¿Qué significa esto?**
 Significa que **por cada segundo que pasa**, el robot avanza exactamente **4 metros**.
 
-![Robot en MRU](/public/images/fisica/cinematica/mru/robot-camina.png) 
+![Robot en MRU](/images/fisica/cinematica/mru/robot-camina.png) 
 
 Veamos su avance paso a paso:
 
@@ -99,7 +99,7 @@ Si graficamos los datos del robot anterior (tiempo en el eje horizontal, posici�
 
 Un corredor recorre **$20\,\mathrm{m}$** en **$4\,\mathrm{s}$** manteniendo un ritmo constante. ¿Cuál es su velocidad?
 
-![Corredor recorre 20m en 4s](/public/images/fisica/cinematica/mru/20m-en-4s.png)
+![Corredor recorre 20m en 4s](/images/fisica/cinematica/mru/20m-en-4s.png)
 
 ### **Análisis paso a paso**
 

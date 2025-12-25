@@ -70,7 +70,7 @@ Un estudiante suelta una piedra desde lo alto de un puente. La piedra cae librem
 
 ### 📝 **Solución Paso a Paso**
 
-![Piedra soltada desde el puente](/public/images/fisica/cinematica/mrua/piedra-del-puente.png)
+![Piedra soltada desde el puente](/images/fisica/cinematica/mrua/piedra-del-puente.png)
 
 **Datos:**
 *   $v_i = 0$ (se suelta)
@@ -93,7 +93,7 @@ $$v_f = 0 + 10 \cdot 3 = 30\,\mathrm{m/s}$$
 Un paracaidista salta desde un avión y cae en caída libre durante **4 segundos** antes de abrir el paracaídas. ¿Qué distancia recorrió?
 
 ### 📝 **Solución Paso a Paso**
-![Paracaidista](/public/images/fisica/cinematica/mrua/paracaidista.png)
+![Paracaidista](/images/fisica/cinematica/mrua/paracaidista.png)
 
 **Datos:**
 *   $v_i = 0$
@@ -120,7 +120,7 @@ Una moneda se deja caer desde un edificio de **45 metros** de altura. ¿Cuánto 
 
 ### 📝 **Solución Paso a Paso**
 
-![Moneda desde el edificio](/public/images/fisica/cinematica/mrua/moneda-cayendo.png)
+![Moneda desde el edificio](/images/fisica/cinematica/mrua/moneda-cayendo.png)
 
 **Datos:**
 *   $v_i = 0$

@@ -125,6 +125,87 @@ El contenido se publica **por tema**. Cada tema tiene un `_meta.json` que contro
 
 ---
 
+### 🔀 Flujo de Trabajo con Ramas (dev → main)
+
+> **Estrategia:** Desarrollar en `dev` con todos los drafts visibles, publicar a producción desde `main`.
+
+#### Comandos de Desarrollo
+
+| Comando | Rama | Comportamiento |
+|---------|------|----------------|
+| `npm run dev` | cualquiera | Solo muestra temas **publicados** (`draft: false` o sin `draft`) |
+| `npm run dev:all` | `dev` | Muestra **TODOS** los temas (incluso `draft: true`) |
+| `npm run build` | `main` | Build de producción: solo contenido aprobado |
+
+```bash
+# En rama dev - Ver todo el contenido en desarrollo
+git checkout dev
+npm run dev:all    # ← Ve todos los temas, incluso borradores
+
+# En rama main - Simular producción
+git checkout main
+npm run dev        # ← Solo ve contenido publicado
+```
+
+#### Ciclo de Vida de una Lección
+
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                    CICLO DE VIDA DEL CONTENIDO                       │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                      │
+│   📝 CREACIÓN           🔍 REVISIÓN           ✅ PUBLICACIÓN         │
+│   (rama dev)            (rama dev)            (merge a main)         │
+│                                                                      │
+│   ┌──────────┐         ┌──────────┐         ┌──────────┐            │
+│   │ Generar  │────────▶│ Evaluar  │────────▶│ Aprobar  │            │
+│   │ lección  │         │ + Pulir  │         │ tema     │            │
+│   └──────────┘         └──────────┘         └──────────┘            │
+│        │                    │                    │                   │
+│        ▼                    ▼                    ▼                   │
+│   draft: true          draft: true          draft: false            │
+│   (invisible en        (visible con         (visible en             │
+│    producción)          dev:all)             producción)            │
+│                                                                      │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+#### Workflow de Aprobación
+
+```bash
+# 1. Trabajar en dev
+git checkout dev
+npm run dev:all          # Ver todos los borradores
+
+# 2. Cuando un tema está listo para producción:
+#    - Editar _meta.json del tema
+#    - Cambiar "draft": true → "draft": false (o eliminar la línea)
+
+# 3. Commit en dev
+git add src/content/materia/capitulo/tema/_meta.json
+git commit -m "✅ Aprobar tema X para producción"
+
+# 4. Merge a main
+git checkout main
+git merge dev
+git push origin main     # ← Dispara build de producción en Vercel
+
+# 5. Volver a dev para seguir trabajando
+git checkout dev
+```
+
+#### Estados del `_meta.json`
+
+| Estado | Archivo `_meta.json` | Visible en `dev:all` | Visible en `build` |
+|--------|---------------------|----------------------|--------------------|
+| **Borrador** | `{ "name": "X", "draft": true }` | ✅ Sí | ❌ No |
+| **Publicado** | `{ "name": "X", "draft": false }` | ✅ Sí | ✅ Sí |
+| **Publicado** | `{ "name": "X" }` (sin draft) | ✅ Sí | ✅ Sí |
+
+> **💡 Tip:** Cuando trabajes en desarrollo, usa siempre `npm run dev:all` para ver todo el contenido. Reserva `npm run dev` para simular cómo se ve en producción.
+
+---
+
 # 📡 NAVEGACIÓN CONTEXTUAL
 
 > **Archivo central:** `src/utils/navigation-loader.ts`
@@ -249,6 +330,8 @@ CAPÍTULO: [Nombre]
 
 **Objetivo:** Revisar con mentalidad del **mejor profesor** y corregir.
 
+> 📋 **Prompts predefinidos:** `.agent/prompts/` contiene prompts listos para evaluar y reescribir lecciones.
+
 **Criterios de evaluación:**
 
 | Aspecto | Pregunta clave |
@@ -266,6 +349,19 @@ CAPÍTULO: [Nombre]
 - Agregar ejemplos faltantes
 - Corregir errores de contenido
 - Ajustar/generar ilustraciones faltantes
+
+**Prompts disponibles en `.agent/prompts/`:**
+
+| Archivo | Función |
+|---------|---------|
+| `corregir-leccion.md` | Prompt único que evalúa Y corrige de una vez |
+| `estilo-ediprofe.md` | Referencia del estilo Ediprofe |
+
+**Uso:**
+```
+Corrige esta lección siguiendo el estilo Ediprofe.
+**Lección:** [RUTA_DE_LA_LECCION]
+```
 
 ---
 
@@ -353,19 +449,35 @@ Respuesta detallada con explicación.
 ---
 ```
 
-### Reglas
+### Reglas de Estructura
 
 | Sección | Obligatoria | Posición |
 |---------|-------------|----------|
+| `# **Título**` | ✅ SÍ | Inicio (SIN emoji) |
 | 🎯 ¿Qué vas a aprender? | ✅ SÍ | Después del título e intro |
-| 📝 Ejercicios de Práctica | ⚠️ Recomendado | Antes del resumen |
-| 🔑 Resumen | ✅ SÍ | Al final (después de ejercicios) |
+| 📝 Ejercicios de Práctica | ✅ SÍ | Antes del resumen (10 ejercicios) |
+| 🔑 Resumen | ✅ SÍ | Al final (tabla + conclusión) |
 
-### Lecciones de Referencia
+> ⚠️ **CRÍTICO:** El título H1 **NO puede llevar emoji**. Solo `# **Título**`.
 
-- [que-es-la-materia.mdx](file:///Users/edilbertosuarez/Documents/EDIPROFE.COM/ediprof/src/content/quimica/01-la-materia/01-conceptos-basicos/01-que-es-la-materia.mdx)
-- [la-fisica-y-sus-ramas.md](file:///Users/edilbertosuarez/Documents/EDIPROFE.COM/ediprof/src/content/fisica/01-introduccion-a-la-fisica/01-introduccion/01-la-fisica-y-sus-ramas.md)
-- [metodo-cientifico.md](file:///Users/edilbertosuarez/Documents/EDIPROFE.COM/ediprof/src/content/fisica/01-introduccion-a-la-fisica/01-introduccion/02-metodo-cientifico.md)
+### Lección Modelo (Referencia Principal)
+
+- `src/content/fisica/02-cinematica/04-MRUA/01-introduccion.md` ⭐
+
+### Sistema de Prompts para Corrección
+
+> **Carpeta:** `.agent/prompts/`
+
+| Archivo | Función |
+|---------|---------|
+| `corregir-leccion.md` | Prompt único que evalúa Y corrige de una vez |
+| `estilo-ediprofe.md` | Referencia del estilo Ediprofe |
+
+**Uso:**
+```
+Corrige esta lección siguiendo el estilo Ediprofe.
+**Lección:** [RUTA_DE_LA_LECCION]
+```
 
 ---
 
@@ -722,11 +834,107 @@ public/images/
 
 > **Regla:** Usar prefijos en los nombres de archivo para identificar el origen de la imagen.
 
-| Origen | Prefijo | Formato | Ejemplo |
-|--------|---------|---------|---------|
-| **Tablet** (dibujos manuales) | `t-` | PNG/WebP | `t-cambios-de-fase.png` |
-| **SVG generado** (renderers) | (sin prefijo) | SVG | `diagrama-moeller.svg` |
-| **3D renders** | `3d-` | PNG | `3d-orbital-s.png` |
+| Origen | Prefijo | Formato | Almacenamiento | Ejemplo |
+|--------|---------|---------|----------------|---------|
+| **Tablet** (dibujos manuales) | `t-` | PNG/WebP | R2 (CDN) | `t-cambios-de-fase.png` |
+| **SVG generado** (renderers) | (sin prefijo) | SVG | Local | `diagrama-moeller.svg` |
+| **3D renders** | `3d-` | PNG | R2 (CDN) | `3d-orbital-s.png` |
+| **Fotos/capturas** | (descriptivo) | PNG/WebP | R2 (CDN) | `grafica-velocidad.webp` |
+
+---
+
+### ☁️ Sistema Cloudflare R2 (Imágenes PNG/JPG/WebP)
+
+> **Las imágenes rasterizadas (PNG, JPG, WebP) se almacenan en Cloudflare R2, NO en el repositorio.**
+
+#### Arquitectura
+
+```
+┌─────────────┐     ┌─────────────┐     ┌─────────────┐     ┌─────────────┐
+│   inbox/    │────▶│  upload-to  │────▶│ Cloudflare  │────▶│    CDN      │
+│  (local)    │     │   -r2.mjs   │     │     R2      │     │   global    │
+└─────────────┘     └─────────────┘     └─────────────┘     └─────────────┘
+                           │
+                           ▼
+                    ┌─────────────┐
+                    │ images-     │
+                    │ index.json  │
+                    └─────────────┘
+```
+
+#### Configuración
+
+| Variable | Valor |
+|----------|-------|
+| **Bucket** | `ediprofe` |
+| **Dominio CDN** | `cdn.ediprofe.com` |
+| **Prefijo imágenes** | `img/` |
+| **Prefijo PDFs** | `pdf/` |
+| **Script** | `scripts/upload-to-r2.mjs` |
+| **Comando** | `npm run img` |
+
+#### Formato de URL
+
+```
+https://cdn.ediprofe.com/img/{materia}/{id}-{nombre}.webp
+                              │         │     │
+                              │         │     └── Nombre descriptivo
+                              │         └── ID único 4 chars (ej: x7k9)
+                              └── fisica | matematicas | quimica | ciencias
+```
+
+#### ¿Por qué ID único?
+
+El sistema genera un ID de 4 caracteres alfanuméricos para cada imagen:
+
+| Beneficio | Explicación |
+|-----------|-------------|
+| **Unicidad** | Dos imágenes con mismo nombre tienen IDs diferentes |
+| **Independencia** | URL no depende de estructura de carpetas del proyecto |
+| **Flexibilidad** | Reorganizar lecciones no rompe enlaces |
+| **Trazabilidad** | `images-index.json` guarda historial completo |
+
+#### Cuándo usar R2 vs Local
+
+| Tipo de imagen | Almacenamiento | Razón |
+|----------------|----------------|-------|
+| PNG/JPG (fotos, dibujos) | **R2** | Pesadas, necesitan CDN |
+| Dibujos de tablet (`t-`) | **R2** | Pesadas, necesitan CDN |
+| SVGs generados | **Local** | Pequeños (~5-20KB), versionados en Git |
+| SVGs specs | **Local** | Generados por renderers |
+
+#### Índice local (`images-index.json`)
+
+Mantiene registro de todas las imágenes subidas:
+
+```json
+{
+  "images": [
+    {
+      "id": "x7k9",
+      "name": "grafica-velocidad.webp",
+      "originalName": "grafica-velocidad.png",
+      "materia": "fisica",
+      "url": "https://cdn.ediprofe.com/img/fisica/x7k9-grafica-velocidad.webp",
+      "uploadedAt": "2024-12-24T..."
+    }
+  ],
+  "lastUpdated": "2024-12-24T..."
+}
+```
+
+#### Para agentes: Cómo referenciar imágenes
+
+```markdown
+<!-- ✅ Imagen en R2 (PNG/JPG optimizado) -->
+![descripción](https://cdn.ediprofe.com/img/fisica/x7k9-nombre.webp)
+
+<!-- ✅ SVG local (generado por renderer) -->
+![descripción](/images/geometria/circulos/radio.svg)
+
+<!-- ❌ NUNCA subir PNG/JPG al repo -->
+![descripción](/images/fisica/foto-grande.png)
+```
 
 #### Reglas Específicas
 

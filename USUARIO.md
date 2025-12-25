@@ -18,21 +18,86 @@
 
 ## 🚀 DESARROLLO LOCAL
 
-### Iniciar servidor de desarrollo
+### Comandos principales
+
+| Comando | Qué muestra |
+|---------|-------------|
+| `npm run dev` | Solo contenido **publicado** (simula producción) |
+| `npm run dev:all` | **TODO** el contenido (incluso borradores) |
+| `npm run build` | Build de producción |
+
 ```bash
 cd ~/Documents/EDIPROFE.COM/ediprof
+
+# Para desarrollo normal (ver borradores)
+npm run dev:all
+
+# Para simular producción
 npm run dev
 ```
+
 El sitio estará en: **http://localhost:4321** (o 4322 si el puerto está ocupado)
 
-### Build de producción
-```bash
-npm run build
+---
+
+## 🔀 FLUJO DE TRABAJO (dev → main)
+
+### Ramas
+- **`dev`** → Trabajo en desarrollo (usa `npm run dev:all`)
+- **`main`** → Producción (solo contenido aprobado)
+
+### Sistema de borradores
+
+Cada tema tiene un `_meta.json` que controla si se publica:
+
+```json
+// Borrador (NO se publica)
+{ "name": "Fracciones", "draft": true }
+
+// Publicado
+{ "name": "Fracciones", "draft": false }
+// O simplemente:
+{ "name": "Fracciones" }
 ```
 
-### Preview del build
+### Aprobar un tema para producción
+
 ```bash
-npm run preview
+# 1. Editar _meta.json del tema
+#    Cambiar "draft": true → "draft": false
+
+# 2. Commit en dev
+git add src/content/materia/capitulo/tema/_meta.json
+git commit -m "✅ Aprobar tema X"
+
+# 3. Merge a main y push
+git checkout main
+git merge dev
+git push origin main
+```
+
+---
+
+## 📝 CORREGIR LECCIONES (con agente IA)
+
+### Prompt rápido
+```
+Corrige esta lección siguiendo el estilo Ediprofe.
+**Lección:** src/content/matematicas/02-algebra/01-introduccion/01-lenguaje-algebraico.md
+```
+
+### Archivos de referencia
+- `.agent/prompts/corregir-leccion.md` → Prompt completo
+- `.agent/prompts/estilo-ediprofe.md` → Referencia de estilo
+
+### Estructura obligatoria de toda lección
+```
+□ # **Título** (SIN emoji en H1)
+□ Párrafo intro (1-2 oraciones)
+□ ## 🎯 ¿Qué vas a aprender? (4-5 puntos)
+□ Contenido con ejemplos paso a paso
+□ ## 📝 Ejercicios de Práctica (10 ejercicios con <details>)
+□ ## 🔑 Resumen (tabla + conclusión)
 ```
 
 ---
@@ -155,40 +220,71 @@ ediprof/
 
 ## 🖼️ AGREGAR IMÁGENES
 
-### ⭐ Imágenes PNG/JPG (Sistema Automático R2)
+Ediprofe maneja **3 tipos de imágenes** con estrategias diferentes:
 
-Las imágenes PNG y JPG se almacenan en **Cloudflare R2** con optimización automática.
+| Tipo | Almacenamiento | Ejemplo |
+|------|----------------|---------|
+| **PNG/JPG/WebP** (fotos, dibujos) | Cloudflare R2 (CDN) | `https://cdn.ediprofe.com/img/fisica/a1b2-nombre.webp` |
+| **SVG generados** (geometría, gráficas) | Local (`public/images/`) | `/images/geometria/circulos/radio.svg` |
+| **Tablet** (dibujos manuales) | R2 o local | Prefijo `t-` |
 
-#### Forma fácil (menú interactivo)
+---
+
+### ⭐ Sistema R2 para PNG/JPG (RECOMENDADO)
+
+Las imágenes PNG y JPG se almacenan en **Cloudflare R2** con:
+- ✅ **Optimización automática** (PNG → WebP, reduce ~60-80%)
+- ✅ **CDN global** (carga rápida en todo el mundo)
+- ✅ **URLs independientes** (no se rompen si reorganizas carpetas)
+- ✅ **ID único** (evita colisiones de nombres)
+
+#### Flujo de trabajo
+
+```
+┌─────────────┐     ┌─────────────┐     ┌─────────────┐     ┌─────────────┐
+│  1. Copiar  │────▶│ 2. npm run  │────▶│ 3. Selects  │────▶│ 4. Cmd+V   │
+│  a inbox/   │     │    img      │     │   materia   │     │  en .md    │
+└─────────────┘     └─────────────┘     └─────────────┘     └─────────────┘
+```
+
+#### Paso 1: Copiar imagen al inbox
 ```bash
-# 1. Copia tu imagen a inbox/
-cp ~/Downloads/mi-imagen.png inbox/
+cp ~/Downloads/grafica-velocidad.png inbox/
+```
 
-# 2. Ejecuta el comando (sin argumentos)
+#### Paso 2: Ejecutar el menú interactivo
+```bash
 npm run img
 ```
 
-El menú te guiará:
-1. **Selecciona la imagen** (muestra todas las del inbox)
-2. **Selecciona la materia** (Física, Matemáticas, Química, Ciencias)
-3. **¿Eliminar original?** (limpia el inbox automáticamente)
-4. **¿Subir otra?** (si hay más imágenes)
+El menú te guía:
+1. **Busca la imagen** → escribe para filtrar (autocompletado)
+2. **Selecciona materia** → usa flechas ↑↓
+3. **¿Eliminar original?** → limpia inbox automáticamente
+4. **¿Subir otra?** → si hay más imágenes
 
-#### Paso 3: Pegar el markdown
-El comando copia automáticamente el markdown al clipboard. Solo haz **Cmd+V** en tu archivo `.md`:
+#### Paso 3: Pegar en tu markdown
+El comando copia automáticamente el markdown. Solo haz **Cmd+V**:
 
 ```markdown
-![mi-imagen](https://cdn.ediprofe.com/img/fisica/a1b2-mi-imagen.webp)
+![grafica-velocidad](https://cdn.ediprofe.com/img/fisica/x7k9-grafica-velocidad.webp)
 ```
 
-#### ¿Qué hace el comando?
-1. **Optimiza** la imagen PNG → WebP (reduce ~60-80%)
-2. **Genera ID único** (4 caracteres) para evitar colisiones
-3. **Sube a R2** en la carpeta correcta
-4. **Copia markdown** al clipboard listo para pegar
+#### ¿Qué hace el sistema?
 
-#### Comandos adicionales
+| Paso | Acción | Resultado |
+|------|--------|-----------|
+| 1 | Genera ID único | `x7k9` (4 chars alfanuméricos) |
+| 2 | Optimiza imagen | PNG 500KB → WebP 80KB |
+| 3 | Sube a R2 | `img/fisica/x7k9-grafica-velocidad.webp` |
+| 4 | Actualiza índice | `images-index.json` |
+| 5 | Copia markdown | Al clipboard, listo para pegar |
+
+#### Comandos útiles
 ```bash
+# Menú interactivo (recomendado)
+npm run img
+
 # Listar todas las imágenes subidas
 npm run img -- --list
 
@@ -201,41 +297,75 @@ npm run img -- --search velocidad
 
 #### Estructura en R2
 ```
-Bucket: ediprofe (cdn.ediprofe.com)
+Bucket: ediprofe
+Domain: cdn.ediprofe.com
 ├── img/
 │   ├── fisica/
-│   │   └── a1b2-mi-imagen.webp
+│   │   ├── x7k9-grafica-velocidad.webp
+│   │   └── a2b3-diagrama-mru.webp
 │   ├── matematicas/
 │   ├── quimica/
 │   └── ciencias/
 └── pdf/
-    └── (PDFs de temas)
+    └── (PDFs de temas - manual)
 ```
 
-#### Índice local
-El archivo `images-index.json` mantiene un registro de todas las imágenes subidas para búsqueda rápida.
+#### ¿Por qué ID único?
+
+El ID de 4 caracteres (`x7k9`, `a2b3`, etc.) garantiza:
+
+1. **Unicidad**: Aunque subas dos `velocidad.png`, tendrán IDs diferentes
+2. **Independencia**: La URL no depende de la estructura de carpetas del proyecto
+3. **Flexibilidad**: Puedes reorganizar lecciones sin romper enlaces
+4. **Trazabilidad**: `images-index.json` guarda el historial completo
+
+#### Índice local (`images-index.json`)
+```json
+{
+  "images": [
+    {
+      "id": "x7k9",
+      "name": "grafica-velocidad.webp",
+      "originalName": "grafica-velocidad.png",
+      "materia": "fisica",
+      "url": "https://cdn.ediprofe.com/img/fisica/x7k9-grafica-velocidad.webp",
+      "uploadedAt": "2024-12-24T..."
+    }
+  ]
+}
+```
 
 ---
 
 ### SVGs generados (geometría, gráficas)
 
-Los SVGs se guardan **localmente** en `public/images/` (no en R2):
+Los SVGs se generan con **Python/SymPy** y se guardan **localmente** (no en R2):
 
 ```markdown
-![Descripción](/images/geometria/circulos/radio.svg)
+![Radio de circunferencia](/images/geometria/circulos/radio.svg)
 ```
+
+**¿Por qué local?**
+- Los SVGs son pequeños (~5-20KB)
+- Se generan automáticamente con renderers
+- Están versionados en Git
+- No necesitan optimización
+
+**Ubicación:** `public/images/geometria/`, `public/images/analitica/`, etc.
 
 ---
 
 ### Imágenes de tablet (dibujos manuales)
 
-1. Nombrar con prefijo `t-`: `t-mi-dibujo.png`
-2. **Opción A (R2):** Usar el sistema automático:
+Para dibujos hechos a mano en tablet:
+
+1. **Nombrar con prefijo `t-`**: `t-diagrama-fuerzas.png`
+2. **Subir a R2** (recomendado):
    ```bash
-   cp t-mi-dibujo.png inbox/
-   npm run img t-mi-dibujo.png -- --materia quimica
+   cp t-diagrama-fuerzas.png inbox/
+   npm run img
    ```
-3. **Opción B (local):** Guardar en `public/images/{materia}/`
+3. **O guardar local** en `public/images/{materia}/t-nombre.png`
 
 ---
 

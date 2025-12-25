@@ -46,7 +46,7 @@ El origen del marco de referencia **no tiene que estar en un lugar "especial"**.
 * Si el objeto está en el sentido positivo del eje (generalmente a la derecha), su posición es **positiva** ($+$).
 * Si el objeto está en el sentido negativo (generalmente a la izquierda), su posición es **negativa** ($-$).
 
-![alt text](/public/images/fisica/cinematica/posicion-positiva-y-negativa.png)
+![alt text](/images/fisica/cinematica/posicion-positiva-y-negativa.png)
 
 > **Regla de oro:** La posición física de un objeto **no es fija**; cambia si cambiamos el lugar desde donde lo miramos (el origen).
 

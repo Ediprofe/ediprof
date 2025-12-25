@@ -98,27 +98,47 @@ function preprocessMarkdown(inputPath, outputPath, tempImagesDir, includeImages 
     const imageRegex = /!\[([^\]]*)\]\(([^)]+)\)/g;
     let match;
     const replacements = [];
+    const inputDir = dirname(inputPath);
 
     // Resetear el regex para buscar desde el inicio
     while ((match = imageRegex.exec(content)) !== null) {
         const fullMatch = match[0];
         const altText = match[1];
         let imagePath = match[2];
+        let absPath = null;
 
-        // Normalizar ruta (quitar /public si existe)
-        if (imagePath.startsWith('/public/')) {
-            imagePath = imagePath.substring(7);
-        }
+        // Manejar rutas relativas con ../
+        if (imagePath.includes('../')) {
+            // Resolver ruta relativa desde el archivo de entrada
+            const resolvedPath = resolve(inputDir, imagePath);
+            // Normalizar: si contiene /public/, extraer la parte de /images/
+            if (resolvedPath.includes('/public/')) {
+                const publicIndex = resolvedPath.indexOf('/public/');
+                imagePath = resolvedPath.substring(publicIndex + 7); // quitar /public
+                absPath = resolve(PROJECT_ROOT, 'public', imagePath.startsWith('/') ? imagePath.substring(1) : imagePath);
+            } else {
+                absPath = resolvedPath;
+                imagePath = '/' + basename(resolvedPath);
+            }
+        } else {
+            // Normalizar ruta (quitar /public si existe)
+            if (imagePath.startsWith('/public/')) {
+                imagePath = imagePath.substring(7);
+            }
 
-        // Asegurar que empiece con /
-        if (!imagePath.startsWith('/') && !imagePath.startsWith('http')) {
-            imagePath = '/' + imagePath;
+            // Asegurar que empiece con /
+            if (!imagePath.startsWith('/') && !imagePath.startsWith('http')) {
+                imagePath = '/' + imagePath;
+            }
         }
 
         // Solo procesar imágenes locales (no URLs)
-        if (imagePath.startsWith('/images/') || imagePath.startsWith('images/')) {
-            const cleanPath = imagePath.startsWith('/') ? imagePath.substring(1) : imagePath;
-            const absPath = resolve(PROJECT_ROOT, 'public', cleanPath);
+        if (imagePath.startsWith('/images/') || imagePath.startsWith('images/') || absPath) {
+            // Si no tenemos absPath de ruta relativa, calcularla
+            if (!absPath) {
+                const cleanPath = imagePath.startsWith('/') ? imagePath.substring(1) : imagePath;
+                absPath = resolve(PROJECT_ROOT, 'public', cleanPath);
+            }
 
             if (existsSync(absPath)) {
                 if (includeImages) {
@@ -167,7 +187,36 @@ function preprocessMarkdown(inputPath, outputPath, tempImagesDir, includeImages 
     }
 
     // ===========================================
-    // 5. ESCAPAR LISTAS ALFABÉTICAS PARA QUE SEAN TEXTO PLANO
+    // 5. CONVERTIR LISTAS DE DATOS A LINE BLOCKS
+    // ===========================================
+    // Las listas con `*   $latex$` se rompen en Word
+    // Convertimos a LineBlock (| línea) que Pandoc preserva correctamente
+    // Esto solo aplica a listas que siguen a "**Datos:**"
+    
+    // Buscar bloques de "Datos:" seguidos de listas con asterisco
+    content = content.replace(
+        /(\*\*Datos:\*\*)\n((?:\*   .+\n?)+)/g,
+        (match, header, listBlock) => {
+            // Convertir cada línea de lista a formato LineBlock
+            const lines = listBlock
+                .split('\n')
+                .filter(line => line.trim())
+                .map(line => {
+                    // Quitar el asterisco y espacios iniciales
+                    const content = line.replace(/^\*\s+/, '').trim();
+                    return `| • ${content}`;
+                })
+                .join('\n');
+            return `${header}\n\n${lines}`;
+        }
+    );
+    
+    // También convertir listas sueltas con asterisco (no solo después de Datos:)
+    // Solo si están en contexto de solución (después de <summary>)
+    content = content.replace(/^\*   /gm, '- ');
+    
+    // ===========================================
+    // 6. ESCAPAR LISTAS ALFABÉTICAS PARA QUE SEAN TEXTO PLANO
     // ===========================================
     // Esto evita que Pandoc las convierta a listas de Word
     // que luego Google Docs no interpreta bien
