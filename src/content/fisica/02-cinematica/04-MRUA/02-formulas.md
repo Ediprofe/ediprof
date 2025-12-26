@@ -110,6 +110,133 @@ Necesita 600 metros de pista.
 
 ---
 
+### **Ejemplo 2: Cálculo de Velocidad Final**
+
+Un ciclista parte del reposo y acelera a **$2\,\mathrm{m/s^2}$** durante **6 segundos**. ¿Qué velocidad alcanza?
+
+**Datos:**
+- $v_i = 0$
+- $a = 2\,\mathrm{m/s^2}$
+- $t = 6\,\mathrm{s}$
+
+**Razonamiento:**
+No nos piden distancia. Usamos la **Ecuación 1 (Velocidad)**.
+
+$$
+v_f = v_i + a \cdot t
+$$
+
+**Cálculo:**
+
+$$
+v_f = 0 + 2 \times 6
+$$
+
+**Resultado:**
+
+$$
+\boxed{12\,\mathrm{m/s}}
+$$
+
+---
+
+### **Ejemplo 3: Cálculo de Distancia**
+
+Un tren viaja a **$15\,\mathrm{m/s}$** y acelera a **$1\,\mathrm{m/s^2}$** durante **10 segundos**. ¿Qué distancia recorre en ese tiempo?
+
+**Datos:**
+- $v_i = 15\,\mathrm{m/s}$
+- $a = 1\,\mathrm{m/s^2}$
+- $t = 10\,\mathrm{s}$
+
+**Razonamiento:**
+Necesitamos distancia y tenemos tiempo. Usamos la **Ecuación 2 (Posición)**.
+
+$$
+\Delta x = v_i \cdot t + \frac{1}{2} a \cdot t^2
+$$
+
+**Cálculo:**
+
+$$
+\Delta x = 15 \cdot 10 + \frac{1}{2}(1)(10^2)
+$$
+
+$$
+\Delta x = 150 + 50
+$$
+
+**Resultado:**
+
+$$
+\boxed{200\,\mathrm{m}}
+$$
+
+---
+
+### **Ejemplo 4: Desaceleración (Frenado)**
+
+Un auto viaja a **$25\,\mathrm{m/s}$** y frena hasta detenerse en **$62.5\,\mathrm{m}$**. ¿Cuál fue su desaceleración?
+
+**Datos:**
+- $v_i = 25\,\mathrm{m/s}$
+- $v_f = 0$ (se detiene)
+- $\Delta x = 62.5\,\mathrm{m}$
+- **No tenemos tiempo**
+
+**Razonamiento:**
+Sin tiempo. Usamos **Ecuación 3** y despejamos $a$.
+
+$$
+v_f^2 = v_i^2 + 2a\Delta x \rightarrow a = \frac{v_f^2 - v_i^2}{2\Delta x}
+$$
+
+**Cálculo:**
+
+$$
+a = \frac{0 - 25^2}{2 \cdot 62.5} = \frac{-625}{125}
+$$
+
+**Resultado:**
+
+$$
+\boxed{-5\,\mathrm{m/s^2}}
+$$
+
+(Negativo porque frena).
+
+---
+
+### **Ejemplo 5: Calculando el Tiempo**
+
+Un cohete acelera a **$5\,\mathrm{m/s^2}$** desde el reposo hasta alcanzar **$40\,\mathrm{m/s}$**. ¿Cuánto tiempo tardó?
+
+**Datos:**
+- $v_i = 0$
+- $v_f = 40\,\mathrm{m/s}$
+- $a = 5\,\mathrm{m/s^2}$
+
+**Razonamiento:**
+Despejamos el tiempo de la Ecuación 1.
+
+$$
+v_f = v_i + a \cdot t \rightarrow t = \frac{v_f - v_i}{a}
+$$
+
+**Cálculo:**
+
+$$
+t = \frac{40 - 0}{5}
+$$
+
+**Resultado:**
+
+$$
+\boxed{8\,\mathrm{s}}
+$$
+
+---
+
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1

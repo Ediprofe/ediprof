@@ -96,6 +96,90 @@ $$
 
 ---
 
+### **Ejemplo 3: Velocidad con Inicio No Nulo**
+
+Un tren viaja a **$15\,\mathrm{m/s}$** y acelera a **$2\,\mathrm{m/s^2}$** durante 5 segundos. ¿Cuál es su velocidad final?
+
+**Datos:**
+- $v_i = 15\,\mathrm{m/s}$
+- $a = 2\,\mathrm{m/s^2}$
+- $t = 5\,\mathrm{s}$
+
+**Razonamiento:**
+Ya tiene velocidad, solo le sumamos lo que gana.
+
+$$
+v_f = v_i + a \cdot t
+$$
+
+**Cálculo:**
+
+$$
+v_f = 15 + (2 \times 5) = 15 + 10
+$$
+
+**Resultado:**
+
+$$
+\boxed{25\,\mathrm{m/s}}
+$$
+
+---
+
+### **Ejemplo 4: Frenado (Desaceleración)**
+
+Un ciclista viaja a **$12\,\mathrm{m/s}$** y frena con una desaceleración de **$4\,\mathrm{m/s^2}$**. ¿Cuánto tarda en detenerse?
+
+**Datos:**
+- $v_i = 12\,\mathrm{m/s}$
+- $v_f = 0$ (se detiene)
+- $a = -4\,\mathrm{m/s^2}$ (negativo porque frena)
+
+**Razonamiento:**
+Cada segundo pierde 4 m/s. Contamos cuántos segundos tarda en perder todo.
+
+$$
+t = \frac{v_i}{|a|} = \frac{12}{4}
+$$
+
+**Resultado:**
+
+$$
+\boxed{3\,\mathrm{s}}
+$$
+
+---
+
+### **Ejemplo 5: Calculando la Aceleración**
+
+Un auto pasa de **$10\,\mathrm{m/s}$** a **$30\,\mathrm{m/s}$** en **4 segundos**. ¿Cuál fue su aceleración?
+
+**Datos:**
+- $v_i = 10\,\mathrm{m/s}$
+- $v_f = 30\,\mathrm{m/s}$
+- $t = 4\,\mathrm{s}$
+
+**Razonamiento:**
+La aceleración es el cambio de velocidad dividido por el tiempo.
+
+$$
+a = \frac{v_f - v_i}{t}
+$$
+
+**Cálculo:**
+
+$$
+a = \frac{30 - 10}{4} = \frac{20}{4}
+$$
+
+**Resultado:**
+
+$$
+\boxed{5\,\mathrm{m/s^2}}
+$$
+
+---
+
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1

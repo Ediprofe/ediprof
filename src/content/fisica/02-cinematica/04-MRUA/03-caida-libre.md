@@ -121,6 +121,102 @@ $$
 
 ---
 
+### **Ejemplo 3: Tiempo de Caída desde una Altura Conocida**
+
+Una moneda se deja caer desde un edificio de **$80\,\mathrm{m}$** de altura. ¿Cuánto tiempo tarda en llegar al suelo?
+
+**Datos:**
+- $h = 80\,\mathrm{m}$
+- $g = 10\,\mathrm{m/s^2}$
+
+**Razonamiento:**
+Debemos despejar el tiempo de la fórmula de altura.
+
+$$
+h = \frac{1}{2} g \cdot t^2 \rightarrow t = \sqrt{\frac{2h}{g}}
+$$
+
+**Cálculo:**
+
+$$
+t = \sqrt{\frac{2(80)}{10}} = \sqrt{16}
+$$
+
+**Resultado:**
+
+$$
+\boxed{4\,\mathrm{s}}
+$$
+
+---
+
+### **Ejemplo 4: Altura desde la Velocidad de Impacto**
+
+Un objeto golpea el suelo a **$50\,\mathrm{m/s}$**. ¿Desde qué altura cayó?
+
+**Datos:**
+- $v_f = 50\,\mathrm{m/s}$
+- $g = 10\,\mathrm{m/s^2}$
+
+**Razonamiento:**
+Usamos la fórmula sin tiempo y despejamos la altura.
+
+$$
+v_f^2 = 2gh \rightarrow h = \frac{v_f^2}{2g}
+$$
+
+**Cálculo:**
+
+$$
+h = \frac{50^2}{20} = \frac{2500}{20}
+$$
+
+**Resultado:**
+
+$$
+\boxed{125\,\mathrm{m}}
+$$
+
+---
+
+### **Ejemplo 5: Distancia en el Tercer Segundo**
+
+¿Qué distancia recorre un objeto en caída libre **SOLO durante el tercer segundo** (entre $t=2$ y $t=3$)?
+
+**Datos:**
+- $g = 10\,\mathrm{m/s^2}$
+
+**Razonamiento:**
+Calculamos la posición a $t=2$ y a $t=3$, luego restamos.
+
+**Altura a $t=2$:**
+
+$$
+h_2 = \frac{1}{2}(10)(2^2) = 20\,\mathrm{m}
+$$
+
+**Altura a $t=3$:**
+
+$$
+h_3 = \frac{1}{2}(10)(3^2) = 45\,\mathrm{m}
+$$
+
+**Distancia en ese intervalo:**
+
+$$
+\Delta h = 45 - 20
+$$
+
+**Resultado:**
+
+$$
+\boxed{25\,\mathrm{m}}
+$$
+
+(Nota: en MRUA, la distancia recorrida **no es igual** cada segundo).
+
+---
+
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1

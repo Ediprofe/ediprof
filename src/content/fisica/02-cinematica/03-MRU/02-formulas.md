@@ -130,6 +130,93 @@ $$
 
 ---
 
+### **Ejemplo 3: Cálculo de Velocidad**
+
+Un tren recorre **$450\,\mathrm{km}$** en **$3\,\mathrm{h}$**. ¿Cuál es su velocidad promedio?
+
+**Datos:**
+- Distancia ($x$) = $450\,\mathrm{km}$
+- Tiempo ($t$) = $3\,\mathrm{h}$
+- Velocidad ($v$) = ?
+
+**Razonamiento:**
+Dividimos la distancia entre el tiempo.
+
+$$
+v = \frac{x}{t}
+$$
+
+**Cálculo:**
+
+$$
+v = \frac{450}{3}
+$$
+
+**Resultado:**
+
+$$
+\boxed{150\,\mathrm{km/h}}
+$$
+
+---
+
+### **Ejemplo 4: Conversión de Unidades**
+
+Un corredor mantiene una velocidad de **$5\,\mathrm{m/s}$**. ¿Cuántos kilómetros recorre en **2 horas**?
+
+**Datos:**
+- $v = 5\,\mathrm{m/s}$
+- $t = 2\,\mathrm{h} = 7200\,\mathrm{s}$
+
+**Paso 1:** Calculamos metros recorridos.
+
+$$
+x = 5 \times 7200 = 36000\,\mathrm{m}
+$$
+
+**Paso 2:** Convertimos a kilómetros.
+
+$$
+x = \frac{36000}{1000}
+$$
+
+**Resultado:**
+
+$$
+\boxed{36\,\mathrm{km}}
+$$
+
+---
+
+### **Ejemplo 5: Encuentro de Dos Móviles**
+
+Dos coches parten de ciudades a **$300\,\mathrm{km}$** de distancia, viajando uno hacia el otro. El coche A va a **$60\,\mathrm{km/h}$** y el B a **$40\,\mathrm{km/h}$**. ¿En cuánto tiempo se encuentran?
+
+**Datos:**
+- Distancia = $300\,\mathrm{km}$
+- Velocidades opuestas
+
+**Razonamiento:**
+Como viajan uno hacia el otro, sus velocidades **se suman** para reducir la distancia.
+
+$$
+v_{relativa} = 60 + 40 = 100\,\mathrm{km/h}
+$$
+
+**Cálculo:**
+
+$$
+t = \frac{300}{100}
+$$
+
+**Resultado:**
+
+$$
+\boxed{3\,\mathrm{h}}
+$$
+
+---
+
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1

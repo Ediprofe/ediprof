@@ -108,6 +108,99 @@ $$
 
 ---
 
+### **Ejemplo 3: Tiempo Total de Vuelo**
+
+Lanzas una piedra hacia arriba a **$30\,\mathrm{m/s}$**. ¿Cuánto tiempo tardará en regresar a tu mano?
+
+**Datos:**
+- $v_i = 30\,\mathrm{m/s}$
+- $g = 10\,\mathrm{m/s^2}$
+
+**Razonamiento:**
+Tarda cierto tiempo en subir (hasta que $v=0$) y lo mismo en bajar. Por simetría, el tiempo total es el doble del tiempo de subida.
+
+**Paso 1:** Tiempo de subida.
+
+$$
+t_{subida} = \frac{v_i}{g} = \frac{30}{10} = 3\,\mathrm{s}
+$$
+
+**Paso 2:** Tiempo total.
+
+$$
+t_{total} = 2 \times 3
+$$
+
+**Resultado:**
+
+$$
+\boxed{6\,\mathrm{s}}
+$$
+
+---
+
+### **Ejemplo 4: Velocidad en un Instante (Bajando)**
+
+Si lanzas algo a **$20\,\mathrm{m/s}$**, ¿qué velocidad tiene a los **3 segundos**?
+
+**Datos:**
+- $v_i = 20\,\mathrm{m/s}$
+- $t = 3\,\mathrm{s}$
+- $g = 10\,\mathrm{m/s^2}$
+
+**Razonamiento:**
+Usamos la ecuación de velocidad. Atención al signo del resultado.
+
+$$
+v_f = v_i - g \cdot t
+$$
+
+**Cálculo:**
+
+$$
+v_f = 20 - 10(3) = 20 - 30
+$$
+
+**Resultado:**
+
+$$
+\boxed{-10\,\mathrm{m/s}}
+$$
+
+El signo negativo indica que ya pasó la cima y está **bajando** a $10\,\mathrm{m/s}$.
+
+---
+
+### **Ejemplo 5: Altura en un Instante Dado**
+
+Una pelota se lanza hacia arriba con $v_i = 25\,\mathrm{m/s}$. ¿A qué altura está después de **2 segundos**?
+
+**Datos:**
+- $v_i = 25\,\mathrm{m/s}$
+- $t = 2\,\mathrm{s}$
+- $g = 10\,\mathrm{m/s^2}$
+
+**Razonamiento:**
+Usamos la ecuación de altura.
+
+$$
+h = v_i \cdot t - \frac{1}{2} g \cdot t^2
+$$
+
+**Cálculo:**
+
+$$
+h = 25(2) - 5(2^2) = 50 - 20
+$$
+
+**Resultado:**
+
+$$
+\boxed{30\,\mathrm{m}}
+$$
+
+---
+
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1
