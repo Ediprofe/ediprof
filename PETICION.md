@@ -166,23 +166,127 @@ Situaciones que requieren confirmación:
 # 📝 PETICIÓN DEL USUARIO
 
 
-Estoy estancado con la generación de un resumen en forma de imagen en tablero de tiza, así como las que tienen las siguientes lecciones:
-http://localhost:4321/matematicas/algebra/introduccion/lenguaje-algebraico
-http://localhost:4321/matematicas/algebra/introduccion/expresiones-algebraicas
-http://localhost:4321/matematicas/algebra/monomios-y-polinomios/monomios-estructura-grado-valor
 
-En particular, es porque me toca iterar mucho en ciertas lecciones como estas:
+Corrige las 6 lecciones pertenecientes a este tema, al estilo Ediprofe.
 
-http://localhost:4321/matematicas/algebra/monomios-y-polinomios/polinomios-definicion-terminos-semejantes (un poco con el tema de los trenes)
+http://localhost:4321/matematicas/algebra/productos-notables
 
-http://localhost:4321/matematicas/algebra/monomios-y-polinomios/operaciones-con-monomios (las flechas no son muy dicientes o son imprecisas, conectando términos que no van relacionados.)
+---
 
-http://localhost:4321/matematicas/algebra/monomios-y-polinomios/operaciones-con-polinomios (mucha iteración para que diera correctamente, tocando casi que eliminar las felchas)
+## PASO 1: LEE las referencias
 
-http://localhost:4321/matematicas/algebra/monomios-y-polinomios/division-de-polinomios (aquí he iterado mucho y no he podido obtener el resultado deseado)
+1. `.agent/prompts/estilo-ediprofe.md` (estilo completo)
 
-PERO MIRA POR EJEMPLO QUE EN FÍSICA CON BOSQUEJOS DE EJERCICIOS EN SU PLANTEAMIENTO INICIAL O EN QUÍMICA DONDE ES ALGO COMO MÁS CONCEPTUAL NO ME TOCA ITERAR CASI QUE NADA.
+2. http://localhost:4321/fisica/cinematica/mcu/introduccion
 
-MI PREGUNTA ES, CÓMO MANEJO ESTO CON GEMINI? QUÉ HAGO CON EL GEM? CÓMO LO CONFIGURO? ANALIZA Y REFLEXIONA QUÉ SERÍA LO MEJOR AQUÍ PARA NO PERDER MUCHO TIEMPO PORQUE ESTA ESTA SIENDO LA PARTE CUELLO DE BOTELLA EN MI FLUJO DE TRABAJO DIARIO PARA SACAR LECCIONES ÁGILMENTE.
+---
 
-PIENSA INTELIGENTEMENTE Y SOCIALIZA TU PLAN PARA SOLUCIONAR ESTO. NO EJECUTES NADA, SOLO QUIERO PROPUESTAS Y YA YO VERÉ SI APROBAMOS O QUÉ HACEMOS
+## PASO 2: VERIFICA estas secciones obligatorias
+
+□ Título en negrita (SIN emoji): `# **Título**`
+□ Párrafo intro (1-2 oraciones, conecta con vida real)
+□ `## 🎯 ¿Qué vas a aprender?` (4-5 puntos)
+□ Contenido con ejemplos PASO A PASO
+□ `## 📝 Ejercicios de Práctica` (exactamente 10, con `<details>`)
+□ `## 🔑 Resumen` (tabla + conclusión)
+
+---
+
+## PASO 3: VERIFICA el estilo pedagógico
+
+□ Razonamiento inductivo: ejemplo → regla (NO fórmula → ejemplo)
+□ Conexión cotidiana desde la primera oración
+□ Paso a paso detallado (no dar saltos lógicos)
+□ Resultados importantes con `\boxed{}`
+□ LaTeX en bloques con líneas vacías antes/después
+
+---
+
+## PASO 4: CORRIGE
+
+Si falta algo o está mal → **reescribe la lección completa**.
+No hagas sugerencias, **implementa los cambios directamente**.
+
+### Estructura objetivo:
+
+```markdown
+# [Título]
+
+[1-2 oraciones conectando con vida real o lección anterior]
+
+---
+
+## 🎯 ¿Qué vas a aprender?
+
+- [Concepto 1]
+- [Concepto 2]
+- [Concepto 3]
+- [Concepto 4]
+
+---
+
+## [Sección de contenido 1]
+
+[Explicación clara, ejemplos paso a paso]
+
+
+---
+
+## [Sección de contenido 2]
+
+[Más contenido...]
+
+---
+
+## ⚙️ Ejemplos Resueltos
+
+### Ejemplo 1: [Título descriptivo]
+
+[Situación contextualizada]
+
+**Datos:**
+- ...
+
+**Razonamiento:**
+[Paso a paso]
+
+**Resultado:** $\boxed{...}$
+
+---
+
+## 📝 Ejercicios de Práctica
+
+### Ejercicio 1
+**[Enunciado]**
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** ...
+**Razonamiento:** ...
+**Resultado:** $\boxed{...}$
+
+</details>
+
+[Repetir hasta Ejercicio 10]
+
+---
+
+## 🔑 Resumen
+
+| Concepto | Descripción |
+|----------|-------------|
+| **X** | ... |
+| **Y** | ... |
+
+> [Conclusión de 1-2 oraciones]
+```
+
+---
+
+## PASO 5: ENTREGA
+
+1. Muestra la lección corregida completa
+2. Lista los cambios realizados
+
+---

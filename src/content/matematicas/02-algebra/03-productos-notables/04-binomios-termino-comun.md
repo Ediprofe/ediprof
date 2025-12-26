@@ -1,410 +1,209 @@
-# 🔗 Binomios con Término Común
+# **Binomios con Término Común**
 
-En esta lección aprenderemos a multiplicar dos binomios que comparten un término común, utilizando un producto notable que simplifica el cálculo.
 
----
+## 🎯 ¿Qué vas a aprender?
 
-## 📖 ¿Qué son los binomios con término común?
-
-Dos binomios tienen **término común** cuando comparten uno de sus términos.
-
-### Ejemplos
-
-| Primer binomio | Segundo binomio | Término común |
-|:--------------:|:---------------:|:-------------:|
-| $x + 3$ | $x + 5$ | $x$ |
-| $a - 2$ | $a + 7$ | $a$ |
-| $2y + 1$ | $2y - 4$ | $2y$ |
+- A identificar binomios que comparten un término idéntico.
+- La regla de la "suma y el producto" para resolverlos mentalmente.
+- Cómo manejar los signos positivos y negativos sin confundirse.
+- A aplicar la fórmula cuando el término común tiene coeficientes o exponentes.
 
 ---
 
-## 📖 Fórmula del producto
+## 🔭 El Patrón de la Suma y el Producto
 
-La fórmula para multiplicar binomios con término común es:
+Imagina que multiplicas $(x + 3)$ por $(x + 2)$. Si lo haces paso a paso:
+$(x \cdot x) + (x \cdot 2) + (3 \cdot x) + (3 \cdot 2) = x^2 + 2x + 3x + 6$.
 
-$$
-(x + a)(x + b) = x^2 + (a + b)x + ab
-$$
+Si sumamos los términos del medio, obtenemos: $x^2 + 5x + 6$. 
 
-**En palabras:**
-1. El cuadrado del término común
-2. Más el producto del término común por la suma de los otros términos
-3. Más el producto de los otros términos
+Fíjate en estos dos números curiosos:
+- El **5** es la **suma** de 3 y 2.
+- El **6** es el **producto** de 3 y 2.
 
----
-
-## 📖 Demostración
-
-$$
-(x + a)(x + b)
-$$
-
-Aplicamos la propiedad distributiva:
-
-$$
-= x \cdot x + x \cdot b + a \cdot x + a \cdot b
-$$
-
-$$
-= x^2 + bx + ax + ab
-$$
-
-$$
-= x^2 + (a + b)x + ab
-$$
+¡Este patrón se repite siempre que el término inicial sea el mismo!
 
 ---
 
-## 📖 Ejemplos con ambos términos positivos
+## 📏 La Regla General
 
-### Ejemplo 1
-
-Calcula: $(x + 3)(x + 5)$
-
-Identificamos: término común = $x$, $a = 3$, $b = 5$
+Para multiplicar $(x + a)(x + b)$, seguimos este orden:
 
 $$
-(x + 3)(x + 5) = x^2 + (3 + 5)x + (3)(5)
+\boxed{(x + a)(x + b) = x^2 + (a + b)x + ab}
 $$
 
-$$
-= x^2 + 8x + 15
-$$
-
-$$
-\boxed{x^2 + 8x + 15}
-$$
-
-### Ejemplo 2
-
-Calcula: $(y + 2)(y + 7)$
-
-$$
-= y^2 + (2 + 7)y + (2)(7)
-$$
-
-$$
-= y^2 + 9y + 14
-$$
-
-$$
-\boxed{y^2 + 9y + 14}
-$$
-
-### Ejemplo 3
-
-Calcula: $(m + 1)(m + 10)$
-
-$$
-= m^2 + (1 + 10)m + (1)(10)
-$$
-
-$$
-= m^2 + 11m + 10
-$$
-
-$$
-\boxed{m^2 + 11m + 10}
-$$
+> **Regla de oro:** El común al cuadrado, luego la suma de los diferentes por el común, y al final el producto de los diferentes.
 
 ---
 
-## 📖 Ejemplos con ambos términos negativos
+## ⚙️ Ejemplos Resueltos
 
-### Ejemplo 4
-
-Calcula: $(x - 2)(x - 6)$
-
-Reescribimos: $(x + (-2))(x + (-6))$
-
-$$
-= x^2 + ((-2) + (-6))x + ((-2))((-6))
-$$
-
-$$
-= x^2 + (-8)x + 12
-$$
-
-$$
-= x^2 - 8x + 12
-$$
-
-$$
-\boxed{x^2 - 8x + 12}
-$$
-
-### Ejemplo 5
-
-Calcula: $(a - 3)(a - 5)$
-
-$$
-= a^2 + ((-3) + (-5))a + ((-3))(-5)
-$$
-
-$$
-= a^2 - 8a + 15
-$$
-
-$$
-\boxed{a^2 - 8a + 15}
-$$
-
-### Ejemplo 6
-
-Calcula: $(n - 4)(n - 9)$
-
-$$
-= n^2 + (-4 - 9)n + (-4)(-9)
-$$
-
-$$
-= n^2 - 13n + 36
-$$
-
-$$
-\boxed{n^2 - 13n + 36}
-$$
-
----
-
-## 📖 Ejemplos con signos diferentes
-
-### Ejemplo 7
+### Ejemplo 1: Con signos diferentes
 
 Calcula: $(x + 5)(x - 2)$
 
-$$
-= x^2 + (5 + (-2))x + (5)(-2)
-$$
+**Datos:**
+- Término común: $x$
+- Los diferentes: $+5$ y $-2$
 
-$$
-= x^2 + 3x - 10
-$$
+**Razonamiento:**
+1. Cuadrado del común: $x^2$.
+2. **Suma** de los diferentes: $5 + (-2) = 3$. Multiplicamos por el común: $3x$.
+3. **Producto** de los diferentes: $5 \cdot (-2) = -10$.
 
-$$
-\boxed{x^2 + 3x - 10}
-$$
-
-### Ejemplo 8
-
-Calcula: $(x - 4)(x + 7)$
-
-$$
-= x^2 + ((-4) + 7)x + (-4)(7)
-$$
-
-$$
-= x^2 + 3x - 28
-$$
-
-$$
-\boxed{x^2 + 3x - 28}
-$$
-
-### Ejemplo 9
-
-Calcula: $(y + 8)(y - 3)$
-
-$$
-= y^2 + (8 - 3)y + (8)(-3)
-$$
-
-$$
-= y^2 + 5y - 24
-$$
-
-$$
-\boxed{y^2 + 5y - 24}
-$$
-
-### Ejemplo 10
-
-Calcula: $(m - 6)(m + 2)$
-
-$$
-= m^2 + (-6 + 2)m + (-6)(2)
-$$
-
-$$
-= m^2 - 4m - 12
-$$
-
-$$
-\boxed{m^2 - 4m - 12}
-$$
+**Resultado:** $\boxed{x^2 + 3x - 10}$
 
 ---
 
-## 📖 Ejemplos con término común compuesto
+### Ejemplo 2: Término común con coeficiente
 
-### Ejemplo 11
+Calcula: $(2m + 1)(2m + 4)$
 
-Calcula: $(2x + 3)(2x + 5)$
+**Datos:**
+- Término común: $2m$
+- Los diferentes: $1$ y $4$
 
-Término común: $2x$
+**Razonamiento:**
+1. Cuadrado del común: $(2m)^2 = 4m^2$.
+2. Suma de los diferentes por el común: $(1 + 4) \cdot (2m) = 5 \cdot 2m = 10m$.
+3. Producto de los diferentes: $1 \cdot 4 = 4$.
 
-$$
-= (2x)^2 + (3 + 5)(2x) + (3)(5)
-$$
-
-$$
-= 4x^2 + 8(2x) + 15
-$$
-
-$$
-= 4x^2 + 16x + 15
-$$
-
-$$
-\boxed{4x^2 + 16x + 15}
-$$
-
-### Ejemplo 12
-
-Calcula: $(3a - 2)(3a + 7)$
-
-Término común: $3a$
-
-$$
-= (3a)^2 + ((-2) + 7)(3a) + (-2)(7)
-$$
-
-$$
-= 9a^2 + 5(3a) - 14
-$$
-
-$$
-= 9a^2 + 15a - 14
-$$
-
-$$
-\boxed{9a^2 + 15a - 14}
-$$
-
-### Ejemplo 13
-
-Calcula: $(5m - 1)(5m - 4)$
-
-$$
-= (5m)^2 + ((-1) + (-4))(5m) + (-1)(-4)
-$$
-
-$$
-= 25m^2 - 5(5m) + 4
-$$
-
-$$
-= 25m^2 - 25m + 4
-$$
-
-$$
-\boxed{25m^2 - 25m + 4}
-$$
+**Resultado:** $\boxed{4m^2 + 10m + 4}$
 
 ---
 
-## 📖 Casos especiales
+## 📝 Ejercicios de Práctica
 
-### Cuando los términos suman cero
+### Ejercicio 1
+Resuelve: $(x + 6)(x + 4)$
 
-Si $a + b = 0$ (es decir, $b = -a$), obtenemos binomios conjugados:
+<details>
+<summary>Ver solución</summary>
 
-$$
-(x + a)(x - a) = x^2 + 0 \cdot x + (-a^2) = x^2 - a^2
-$$
+**Datos:** $a = 6, b = 4$.
+**Razonamiento:** Suma: $6+4=10$. Producto: $6 \cdot 4 = 24$.
+**Resultado:** $\boxed{x^2 + 10x + 24}$
 
-### Ejemplo 14
+</details>
 
-Calcula: $(x + 4)(x - 4)$
+### Ejercicio 2
+Desarrolla: $(a - 3)(a - 7)$
 
-Aquí $a = 4$ y $b = -4$, así que $a + b = 0$
+<details>
+<summary>Ver solución</summary>
 
-$$
-= x^2 + 0 - 16 = x^2 - 16
-$$
+**Datos:** $a = -3, b = -7$.
+**Razonamiento:** Suma: $-3 + (-7) = -10$. Producto: $(-3)(-7) = 21$.
+**Resultado:** $\boxed{a^2 - 10a + 21}$
 
-$$
-\boxed{x^2 - 16}
-$$
+</details>
 
-> Esto confirma que el producto de conjugados es un caso particular del producto de binomios con término común.
+### Ejercicio 3
+Calcula: $(x + 8)(x - 3)$
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** $a = 8, b = -3$.
+**Razonamiento:** Suma: $8 - 3 = 5$. Producto: $8 \cdot (-3) = -24$.
+**Resultado:** $\boxed{x^2 + 5x - 24}$
+
+</details>
+
+### Ejercicio 4
+Multiplica: $(m - 5)(m + 2)$
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** $a = -5, b = 2$.
+**Razonamiento:** Suma: $-5 + 2 = -3$. Producto: $-5 \cdot 2 = -10$.
+**Resultado:** $\boxed{m^2 - 3m - 10}$
+
+</details>
+
+### Ejercicio 5
+Resuelve: $(y + 10)(y - 10)$
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** ¡Caso especial! Son conjugados.
+**Razonamiento:** Suma: $10 - 10 = 0$. Producto: $10 \cdot (-10) = -100$. El término central desaparece.
+**Resultado:** $\boxed{y^2 - 100}$
+
+</details>
+
+### Ejercicio 6
+Desarrolla: $(3x + 2)(3x + 5)$
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** Término común $3x$.
+**Razonamiento:** $(3x)^2 + (2+5)(3x) + (2 \cdot 5) = 9x^2 + 7(3x) + 10$.
+**Resultado:** $\boxed{9x^2 + 21x + 10}$
+
+</details>
+
+### Ejercicio 7
+Calcula: $(x^2 + 1)(x^2 + 6)$
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** Término común con exponente.
+**Razonamiento:** $(x^2)^2 + (1+6)x^2 + (1 \cdot 6) = x^4 + 7x^2 + 6$.
+**Resultado:** $\boxed{x^4 + 7x^2 + 6}$
+
+</details>
+
+### Ejercicio 8
+Multiplica: $(a - \frac{1}{2})(a + 2)$
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** Fracción y entero.
+**Razonamiento:** Suma: $-\frac{1}{2} + 2 = \frac{3}{2}$. Producto: $-\frac{1}{2} \cdot 2 = -1$.
+**Resultado:** $\boxed{a^2 + \frac{3}{2}a - 1}$
+
+</details>
+
+### Ejercicio 9
+Simplifica: $(x + 3)(x + 2) - 5x$
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** Desarrollo seguido de una resta.
+**Razonamiento:** $(x^2 + 5x + 6) - 5x$. El término $5x$ se cancela.
+**Resultado:** $\boxed{x^2 + 6}$
+
+</details>
+
+### Ejercicio 10
+Resuelve: $(2a - 3)(2a - 5)$
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** Común $2a$, diferentes $-3$ y $-5$.
+**Razonamiento:** $(2a)^2 + (-3-5)(2a) + (-3)(-5) = 4a^2 - 8(2a) + 15 = 4a^2 - 16a + 15$.
+**Resultado:** $\boxed{4a^2 - 16a + 15}$
+
+</details>
 
 ---
 
-## 📖 Resumen de patrones
+## 🔑 Resumen
 
-| Forma | Resultado | Ejemplo |
-|:-----:|:----------|:--------|
-| $(x+a)(x+b)$ con $a, b > 0$ | $x^2 + (a+b)x + ab$ | $(x+2)(x+3) = x^2 + 5x + 6$ |
-| $(x-a)(x-b)$ con $a, b > 0$ | $x^2 - (a+b)x + ab$ | $(x-2)(x-3) = x^2 - 5x + 6$ |
-| $(x+a)(x-b)$ con $a > b$ | $x^2 + (a-b)x - ab$ | $(x+5)(x-2) = x^2 + 3x - 10$ |
-| $(x-a)(x+b)$ con $b > a$ | $x^2 + (b-a)x - ab$ | $(x-2)(x+5) = x^2 + 3x - 10$ |
+| Concepto | Regla / Patrón | Ejemplo |
+|----------|---------------|---------|
+| **Identificación** | Solo un término es igual en ambos binomios. | $(x+3)$ y $(x+7)$ |
+| **Primer Término** | Siempre es el cuadrado del común. | $x \cdot x = x^2$ |
+| **Término Central** | Suma de los diferentes multiplicada por el común. | $(3+7)x = 10x$ |
+| **Último Término** | Producto de los dos números diferentes. | $3 \cdot 7 = 21$ |
 
----
-
-## 📝 Ejercicios de práctica
-
-### Ambos términos positivos
-
-**Ejercicio 1:** $(x + 4)(x + 6)$
-
-**Ejercicio 2:** $(y + 2)(y + 9)$
-
----
-
-### Ambos términos negativos
-
-**Ejercicio 3:** $(x - 3)(x - 7)$
-
-**Ejercicio 4:** $(m - 5)(m - 8)$
-
----
-
-### Signos diferentes
-
-**Ejercicio 5:** $(x + 6)(x - 2)$
-
-**Ejercicio 6:** $(a - 4)(a + 9)$
-
-**Ejercicio 7:** $(n + 10)(n - 3)$
-
----
-
-### Término común compuesto
-
-**Ejercicio 8:** $(2x + 1)(2x + 5)$
-
-**Ejercicio 9:** $(3y - 2)(3y + 4)$
-
-**Ejercicio 10:** $(4a - 3)(4a - 7)$
-
----
-
-## ✅ Soluciones
-
-### Ejercicios 1-4
-
-| Ejercicio | Desarrollo | Solución |
-|:---------:|:-----------|:---------|
-| 1 | $x^2 + (4+6)x + (4)(6)$ | $x^2 + 10x + 24$ |
-| 2 | $y^2 + (2+9)y + (2)(9)$ | $y^2 + 11y + 18$ |
-| 3 | $x^2 + (-3-7)x + (-3)(-7)$ | $x^2 - 10x + 21$ |
-| 4 | $m^2 + (-5-8)m + (-5)(-8)$ | $m^2 - 13m + 40$ |
-
-### Ejercicios 5-7
-
-| Ejercicio | Desarrollo | Solución |
-|:---------:|:-----------|:---------|
-| 5 | $x^2 + (6-2)x + (6)(-2)$ | $x^2 + 4x - 12$ |
-| 6 | $a^2 + (-4+9)a + (-4)(9)$ | $a^2 + 5a - 36$ |
-| 7 | $n^2 + (10-3)n + (10)(-3)$ | $n^2 + 7n - 30$ |
-
-### Ejercicios 8-10
-
-| Ejercicio | Desarrollo | Solución |
-|:---------:|:-----------|:---------|
-| 8 | $(2x)^2 + (1+5)(2x) + (1)(5)$ | $4x^2 + 12x + 5$ |
-| 9 | $(3y)^2 + (-2+4)(3y) + (-2)(4)$ | $9y^2 + 6y - 8$ |
-| 10 | $(4a)^2 + (-3-7)(4a) + (-3)(-7)$ | $16a^2 - 40a + 21$ |
-
----
+> Recordar este patrón de "Suma y Producto" es la base fundamental para aprender a factorizar trinomios más adelante. ¡Es una herramienta doble!

@@ -1,340 +1,236 @@
-# 📐 Cuadrado de un Trinomio
-
-En esta lección aprenderemos a calcular el cuadrado de un trinomio, extendiendo el concepto del cuadrado de un binomio.
+# **Cuadrado de un Trinomio**
 
 ---
 
-## 📖 Fórmula del cuadrado de un trinomio
+## 🎯 ¿Qué vas a aprender?
 
-El cuadrado de un trinomio $(a + b + c)^2$ sigue la fórmula:
-
-$$
-(a + b + c)^2 = a^2 + b^2 + c^2 + 2ab + 2ac + 2bc
-$$
-
-**En palabras:** El cuadrado de un trinomio es igual a la suma de los cuadrados de cada término, más el doble de cada uno de los productos de los términos tomados de dos en dos.
+- A extender la regla del binomio a expresiones de tres términos.
+- El truco para recordar los "dobles productos" sin que falte ninguno.
+- Cómo manejar los signos negativos dentro de un trinomio al cuadrado.
+- A aplicar esta fórmula en problemas de simplificación algebraica.
 
 ---
 
-## 📖 Demostración
+## 🏗️ Extendiendo el Cuadrado
 
-Podemos demostrar esta fórmula agrupando términos:
+Si ya sabemos que $(a+b)^2 = a^2 + 2ab + b^2$, el **cuadrado de un trinomio** $(a+b+c)^2$ sigue una lógica muy similar. La clave está en elevar cada término al cuadrado y luego combinar todos los términos posibles de dos en dos.
 
-$$
-(a + b + c)^2 = [(a + b) + c]^2
-$$
+### **Ejemplo: La estructura básica**
 
-Aplicamos el cuadrado de un binomio:
+Calcula: $(x + y + z)^2$
 
-$$
-= (a + b)^2 + 2(a + b)(c) + c^2
-$$
+**Razonamiento:**
+1.  Elevamos cada uno al cuadrado: $x^2$, $y^2$, $z^2$.
+2.  Multiplicamos el **doble** de cada pareja posible:
+    - Doble del 1ero por el 2do: $2xy$
+    - Doble del 1ero por el 3ro: $2xz$
+    - Doble del 2do por el 3ro: $2yz$
+3.  Sumamos todo.
 
-$$
-= a^2 + 2ab + b^2 + 2ac + 2bc + c^2
-$$
-
-Reagrupando:
-
-$$
-= a^2 + b^2 + c^2 + 2ab + 2ac + 2bc
-$$
+**Resultado:** $\boxed{x^2 + y^2 + z^2 + 2xy + 2xz + 2yz}$
 
 ---
 
-## 📖 Regla práctica
+## 📏 La Regla General
 
-Para calcular $(a + b + c)^2$:
+Para cualquier trinomio $(a+b+c)$, su cuadrado siempre será:
 
-1. **Cuadrados:** Eleva al cuadrado cada término → $a^2$, $b^2$, $c^2$
-2. **Dobles productos:** Calcula el doble de cada producto entre pares de términos → $2ab$, $2ac$, $2bc$
-3. **Suma todo**
+$$
+\boxed{(a + b + c)^2 = a^2 + b^2 + c^2 + 2ab + 2ac + 2bc}
+$$
 
-### Diagrama visual
-
-Los productos a calcular son:
-
-| | $a$ | $b$ | $c$ |
-|:--:|:--:|:--:|:--:|
-| $a$ | $a^2$ | $2ab$ | $2ac$ |
-| $b$ | — | $b^2$ | $2bc$ |
-| $c$ | — | — | $c^2$ |
+> **Regla de oro:** Primero los tres cuadrados (siempre positivos), luego los tres dobles productos (atención a los signos).
 
 ---
 
-## 📖 Ejemplos con suma de términos
+## ⚠️ El Manejo de los Signos
 
-### Ejemplo 1
+Cuando un trinomio tiene signos negativos, los cuadrados siguen siendo positivos (porque elevar al cuadrado siempre da positivo), pero los productos dobles heredarán el signo resultante de la multiplicación.
 
-Desarrolla: $(x + y + z)^2$
+### **Ejemplo: Un término negativo**
 
-**Cuadrados:** $x^2$, $y^2$, $z^2$
+Calcula: $(x + y - 2)^2$
 
-**Dobles productos:** $2xy$, $2xz$, $2yz$
+**Razonamiento:**
+1.  **Cuadrados:** $x^2$, $y^2$, $(-2)^2 = 4$.
+2.  **Dobles productos:**
+    - $2 \cdot x \cdot y = 2xy$
+    - $2 \cdot x \cdot (-2) = -4x$
+    - $2 \cdot y \cdot (-2) = -4y$
 
-$$
-(x + y + z)^2 = x^2 + y^2 + z^2 + 2xy + 2xz + 2yz
-$$
-
-$$
-\boxed{x^2 + y^2 + z^2 + 2xy + 2xz + 2yz}
-$$
-
-### Ejemplo 2
-
-Desarrolla: $(x + 2y + 3)^2$
-
-Identificamos: $a = x$, $b = 2y$, $c = 3$
-
-**Cuadrados:**
-- $x^2$
-- $(2y)^2 = 4y^2$
-- $3^2 = 9$
-
-**Dobles productos:**
-- $2(x)(2y) = 4xy$
-- $2(x)(3) = 6x$
-- $2(2y)(3) = 12y$
-
-$$
-(x + 2y + 3)^2 = x^2 + 4y^2 + 9 + 4xy + 6x + 12y
-$$
-
-$$
-\boxed{x^2 + 4y^2 + 4xy + 6x + 12y + 9}
-$$
-
-### Ejemplo 3
-
-Desarrolla: $(2a + 3b + c)^2$
-
-**Cuadrados:**
-- $(2a)^2 = 4a^2$
-- $(3b)^2 = 9b^2$
-- $c^2$
-
-**Dobles productos:**
-- $2(2a)(3b) = 12ab$
-- $2(2a)(c) = 4ac$
-- $2(3b)(c) = 6bc$
-
-$$
-(2a + 3b + c)^2 = 4a^2 + 9b^2 + c^2 + 12ab + 4ac + 6bc
-$$
-
-$$
-\boxed{4a^2 + 9b^2 + c^2 + 12ab + 4ac + 6bc}
-$$
+**Resultado:** $\boxed{x^2 + y^2 + 4 + 2xy - 4x - 4y}$
 
 ---
 
-## 📖 Ejemplos con signos negativos
+## ⚙️ Ejemplos Resueltos
 
-Cuando algún término es negativo, debemos tener cuidado con los signos en los dobles productos.
+### Ejemplo 1: Con coeficientes
 
-### Ejemplo 4
+Desarrolla: $(2a + b + 5)^2$
 
-Desarrolla: $(x - y + z)^2$
+**Datos:**
+- Términos: $2a$, $b$, $5$.
 
-Identificamos: $a = x$, $b = -y$, $c = z$
+**Razonamiento:**
+1. Cuadrados: $(2a)^2 = 4a^2$, $b^2$, $5^2 = 25$.
+2. Dobles productos:
+   - $2 \cdot (2a) \cdot b = 4ab$
+   - $2 \cdot (2a) \cdot 5 = 20a$
+   - $2 \cdot b \cdot 5 = 10b$
 
-**Cuadrados:**
-- $x^2$
-- $(-y)^2 = y^2$
-- $z^2$
-
-**Dobles productos:**
-- $2(x)(-y) = -2xy$
-- $2(x)(z) = 2xz$
-- $2(-y)(z) = -2yz$
-
-$$
-(x - y + z)^2 = x^2 + y^2 + z^2 - 2xy + 2xz - 2yz
-$$
-
-$$
-\boxed{x^2 + y^2 + z^2 - 2xy + 2xz - 2yz}
-$$
-
-### Ejemplo 5
-
-Desarrolla: $(a - b - c)^2$
-
-Identificamos: $a = a$, $b = -b$, $c = -c$
-
-**Cuadrados:**
-- $a^2$
-- $(-b)^2 = b^2$
-- $(-c)^2 = c^2$
-
-**Dobles productos:**
-- $2(a)(-b) = -2ab$
-- $2(a)(-c) = -2ac$
-- $2(-b)(-c) = 2bc$
-
-$$
-(a - b - c)^2 = a^2 + b^2 + c^2 - 2ab - 2ac + 2bc
-$$
-
-$$
-\boxed{a^2 + b^2 + c^2 - 2ab - 2ac + 2bc}
-$$
-
-### Ejemplo 6
-
-Desarrolla: $(2x - 3y - 1)^2$
-
-**Cuadrados:**
-- $(2x)^2 = 4x^2$
-- $(-3y)^2 = 9y^2$
-- $(-1)^2 = 1$
-
-**Dobles productos:**
-- $2(2x)(-3y) = -12xy$
-- $2(2x)(-1) = -4x$
-- $2(-3y)(-1) = 6y$
-
-$$
-(2x - 3y - 1)^2 = 4x^2 + 9y^2 + 1 - 12xy - 4x + 6y
-$$
-
-$$
-\boxed{4x^2 + 9y^2 - 12xy - 4x + 6y + 1}
-$$
-
-### Ejemplo 7
-
-Desarrolla: $(x + y - 2z)^2$
-
-**Cuadrados:**
-- $x^2$
-- $y^2$
-- $(-2z)^2 = 4z^2$
-
-**Dobles productos:**
-- $2(x)(y) = 2xy$
-- $2(x)(-2z) = -4xz$
-- $2(y)(-2z) = -4yz$
-
-$$
-(x + y - 2z)^2 = x^2 + y^2 + 4z^2 + 2xy - 4xz - 4yz
-$$
-
-$$
-\boxed{x^2 + y^2 + 4z^2 + 2xy - 4xz - 4yz}
-$$
+**Resultado:** $\boxed{4a^2 + b^2 + 25 + 4ab + 20a + 10b}$
 
 ---
 
-## 📖 Casos especiales
+### Ejemplo 2: Todo negativo
 
-### Ejemplo 8: Con fracciones
+Calcula: $(a - b - c)^2$
 
-Desarrolla: $\left(x + \frac{1}{2} + y\right)^2$
+**Datos:**
+- $a$ positivo, $b$ y $c$ negativos.
 
-**Cuadrados:**
-- $x^2$
-- $\left(\frac{1}{2}\right)^2 = \frac{1}{4}$
-- $y^2$
+**Razonamiento:**
+1. Cuadrados: $a^2 + b^2 + c^2$ (siempre positivos).
+2. Dobles productos:
+   - $2 \cdot a \cdot (-b) = -2ab$
+   - $2 \cdot a \cdot (-c) = -2ac$
+   - $2 \cdot (-b) \cdot (-c) = 2bc$ (menos por menos es más).
 
-**Dobles productos:**
-- $2(x)\left(\frac{1}{2}\right) = x$
-- $2(x)(y) = 2xy$
-- $2\left(\frac{1}{2}\right)(y) = y$
-
-$$
-\left(x + \frac{1}{2} + y\right)^2 = x^2 + y^2 + \frac{1}{4} + x + 2xy + y
-$$
-
-$$
-\boxed{x^2 + y^2 + 2xy + x + y + \frac{1}{4}}
-$$
+**Resultado:** $\boxed{a^2 + b^2 + c^2 - 2ab - 2ac + 2bc}$
 
 ---
 
-## 📖 Generalización: Cuadrado de un polinomio
+## 📝 Ejercicios de Práctica
 
-La fórmula se puede extender a cualquier número de términos:
+### Ejercicio 1
+Desarrolla el trinomio: $(m + n + p)^2$
 
-$$(a_1 + a_2 + ... + a_n)^2 = \sum_{i=1}^{n} a_i^2 + 2\sum_{i<j} a_i a_j$$
+<details>
+<summary>Ver solución</summary>
 
-Es decir:
-- La suma de los cuadrados de todos los términos
-- Más el doble de todos los productos posibles entre pares diferentes
+**Datos:** Tres variables positivas.
+**Razonamiento:** Elevamos cada una al cuadrado y sumamos los dobles de cada par: $m^2+n^2+p^2+2mn+2mp+2np$.
+**Resultado:** $\boxed{m^2 + n^2 + p^2 + 2mn + 2mp + 2np}$
+
+</details>
+
+### Ejercicio 2
+Resuelve: $(x + y + 2)^2$
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** Dos letras y un número.
+**Razonamiento:** $x^2 + y^2 + 2^2 + 2(x)(y) + 2(x)(2) + 2(y)(2) = x^2 + y^2 + 4 + 2xy + 4x + 4y$.
+**Resultado:** $\boxed{x^2 + y^2 + 2xy + 4x + 4y + 4}$
+
+</details>
+
+### Ejercicio 3
+Calcula: $(a + 2b + c)^2$
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** Término central con coeficiente.
+**Razonamiento:** $a^2 + (2b)^2 + c^2 + 2(a)(2b) + 2(a)(c) + 2(2b)(c) = a^2 + 4b^2 + c^2 + 4ab + 2ac + 4bc$.
+**Resultado:** $\boxed{a^2 + 4b^2 + c^2 + 4ab + 2ac + 4bc}$
+
+</details>
+
+### Ejercicio 4
+Desarrolla: $(x - y + 1)^2$
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** Cuidado con el signo de $y$.
+**Razonamiento:** $x^2 + (-y)^2 + 1^2 + 2(x)(-y) + 2(x)(1) + 2(-y)(1) = x^2 + y^2 + 1 - 2xy + 2x - 2y$.
+**Resultado:** $\boxed{x^2 + y^2 - 2xy + 2x - 2y + 1}$
+
+</details>
+
+### Ejercicio 5
+Calcula: $(3a + b + 2)^2$
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** Primer y tercer término con números.
+**Razonamiento:** $(3a)^2 + b^2 + 2^2 + 2(3a)(b) + 2(3a)(2) + 2(b)(2) = 9a^2 + b^2 + 4 + 6ab + 12a + 4b$.
+**Resultado:** $\boxed{9a^2 + b^2 + 6ab + 12a + 4b + 4}$
+
+</details>
+
+### Ejercicio 6
+Resuelve: $(2x - y - z)^2$
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** Dos signos negativos.
+**Razonamiento:** $(2x)^2 + y^2 + z^2 + 2(2x)(-y) + 2(2x)(-z) + 2(-y)(-z) = 4x^2 + y^2 + z^2 - 4xy - 4xz + 2yz$.
+**Resultado:** $\boxed{4x^2 + y^2 + z^2 - 4xy - 4xz + 2yz}$
+
+</details>
+
+### Ejercicio 7
+Desarrolla: $(a + b - 3c)^2$
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** Tercer término con coeficiente y signo.
+**Razonamiento:** $a^2 + b^2 + (-3c)^2 + 2(a)(b) + 2(a)(-3c) + 2(b)(-3c) = a^2 + b^2 + 9c^2 + 2ab - 6ac - 6bc$.
+**Resultado:** $\boxed{a^2 + b^2 + 9c^2 + 2ab - 6ac - 6bc}$
+
+</details>
+
+### Ejercicio 8
+Calcula: $(x + \frac{1}{2} + y)^2$
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** Fracción en el medio.
+**Razonamiento:** $x^2 + (\frac{1}{2})^2 + y^2 + 2(x)(\frac{1}{2}) + 2(x)(y) + 2(\frac{1}{2})(y) = x^2 + \frac{1}{4} + y^2 + x + 2xy + y$.
+**Resultado:** $\boxed{x^2 + y^2 + 2xy + x + y + \frac{1}{4}}$
+
+</details>
+
+### Ejercicio 9
+Simplifica: $(a + b + 1)^2 - 2ab$
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** Desarrollo y resta.
+**Razonamiento:** $(a^2+b^2+1+2ab+2a+2b) - 2ab$. Vemos que el término $2ab$ se cancela.
+**Resultado:** $\boxed{a^2 + b^2 + 2a + 2b + 1}$
+
+</details>
+
+### Ejercicio 10
+Si $x+y+z=5$ y $x^2+y^2+z^2=9$, ¿cuánto vale $xy+xz+yz$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** Usamos la fórmula $(x+y+z)^2 = x^2+y^2+z^2+2(xy+xz+yz)$.
+**Razonamiento:** $5^2 = 9 + 2(xy+xz+yz) \to 25 - 9 = 2(\text{suma}) \to 16 = 2(\text{suma})$.
+**Resultado:** $\boxed{8}$
+
+</details>
 
 ---
 
-## 📝 Ejercicios de práctica
+## 🔑 Resumen
 
-### Desarrollar el cuadrado
+| Concepto | Fórmula / Descripción |
+|----------|-----------------------|
+| **Trinomio al Cuadrado** | $(a+b+c)^2 = a^2 + b^2 + c^2 + 2ab + 2ac + 2bc$ |
+| **Los Cuadrados** | Siempre son positivos: $a^2, b^2, c^2$. |
+| **Dobles Productos** | Son 3: el 1ero con 2do, 1ero con 3ro, y 2do con 3ro. |
+| **Signos** | Si multiplicas términos con signo distinto, el doble producto será negativo. |
 
-**Ejercicio 1:** $(a + b + c)^2$
-
-**Ejercicio 2:** $(x + y + 1)^2$
-
-**Ejercicio 3:** $(2a + b + 3c)^2$
-
-**Ejercicio 4:** $(x - y + z)^2$
-
-**Ejercicio 5:** $(a - 2b - 3)^2$
-
-**Ejercicio 6:** $(3x - y + 2z)^2$
-
----
-
-### Ejercicios de aplicación
-
-**Ejercicio 7:** Desarrolla y simplifica: $(x + y + z)^2 - (x^2 + y^2 + z^2)$
-
-**Ejercicio 8:** Si $x + y + z = 10$ y $xy + xz + yz = 25$, calcula $x^2 + y^2 + z^2$.
-
----
-
-## ✅ Soluciones
-
-### Ejercicios 1-6
-
-| Ejercicio | Solución |
-|:---------:|:---------|
-| 1 | $a^2 + b^2 + c^2 + 2ab + 2ac + 2bc$ |
-| 2 | $x^2 + y^2 + 1 + 2xy + 2x + 2y$ |
-| 3 | $4a^2 + b^2 + 9c^2 + 4ab + 12ac + 6bc$ |
-| 4 | $x^2 + y^2 + z^2 - 2xy + 2xz - 2yz$ |
-| 5 | $a^2 + 4b^2 + 9 - 4ab - 6a + 12b$ |
-| 6 | $9x^2 + y^2 + 4z^2 - 6xy + 12xz - 4yz$ |
-
-### Ejercicios de aplicación
-
-**Ejercicio 7:**
-
-$$
-(x + y + z)^2 - (x^2 + y^2 + z^2)
-$$
-
-$$
-= x^2 + y^2 + z^2 + 2xy + 2xz + 2yz - x^2 - y^2 - z^2
-$$
-
-$$
-= 2xy + 2xz + 2yz = 2(xy + xz + yz)
-$$
-
-**Ejercicio 8:**
-
-Sabemos que: $(x + y + z)^2 = x^2 + y^2 + z^2 + 2(xy + xz + yz)$
-
-Sustituyendo:
-
-$$
-10^2 = x^2 + y^2 + z^2 + 2(25)
-$$
-
-$$
-100 = x^2 + y^2 + z^2 + 50
-$$
-
-$$
-x^2 + y^2 + z^2 = 50
-$$
-
----
+> El cuadrado de un trinomio es la suma de los tres cuadrados más el doble de todos los productos posibles. ¡Mantenlo ordenado y no fallarás!
