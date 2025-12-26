@@ -1,410 +1,266 @@
-# 🔢 Mínimo Común Múltiplo (MCM)
+# **Mínimo Común Múltiplo (MCM)**
 
-En esta lección aprenderemos a encontrar el mínimo común múltiplo de expresiones algebraicas, una herramienta esencial para sumar y restar fracciones algebraicas con diferentes denominadores.
-
----
-
-## 📖 Recordatorio: MCM de números
-
-El **Mínimo Común Múltiplo (MCM)** de dos o más números es el menor número positivo que es múltiplo de todos ellos.
-
-### Ejemplo con números
-
-Encontrar el MCM de $12$ y $18$:
-
-**Paso 1:** Descomponemos en factores primos:
-
-$$
-12 = 2^2 \times 3
-$$
-
-$$
-18 = 2 \times 3^2
-$$
-
-**Paso 2:** Tomamos todos los factores con su **mayor exponente**:
-
-- Factor $2$: el mayor exponente es $2$
-- Factor $3$: el mayor exponente es $2$
-
-$$
-\text{MCM}(12, 18) = 2^2 \times 3^2 = 4 \times 9 = 36
-$$
+Imagina que dos corredores parten al mismo tiempo en una pista circular. Uno tarda 4 minutos en dar la vuelta y el otro 6 minutos. ¿Cuándo volverán a encontrarse en la línea de salida? ¡En el minuto 12! Eso es el Mínimo Común Múltiplo: el primer punto de encuentro. En álgebra, sirve para encontrar un denominador común que contenga a todos los demás.
 
 ---
 
-## 📖 Diferencia entre MCD y MCM
+## 🎯 ¿Qué vas a aprender?
 
-| Concepto | MCD | MCM |
-|:---------|:---:|:---:|
-| Significado | Mayor divisor común | Menor múltiplo común |
-| Exponentes | Se toman los **menores** | Se toman los **mayores** |
-| Variables | Solo las **comunes** | **Todas** las variables |
-
----
-
-## 📖 MCM de monomios
-
-Para encontrar el **MCM de monomios**, seguimos estas reglas:
-
-### Regla para el MCM de monomios
-
-1. **Coeficientes:** Encontrar el MCM de los coeficientes numéricos
-2. **Variables:** Tomar **todas** las variables con su **mayor exponente**
+- El concepto de MCM como "contenedor universal".
+- A calcular el MCM de coeficientes numéricos.
+- La regla de los exponentes para el MCM (¡al revés que el MCD!).
+- A encontrar el MCM de polinomios usando factorización.
 
 ---
 
-### Ejemplo 1
+## 🔍 Reglas Fundamentales
 
-Encontrar el MCM de $12x^3y^2$ y $18x^2y^4$.
+A diferencia del MCD que es selectivo, el MCM es **inclusivo**: quiere tenerlo todo.
 
-**Solución:**
-
-**Coeficientes:** $\text{MCM}(12, 18) = 36$
-
-**Variables:**
-- Variable $x$: mayor exponente es $3$ → tomamos $x^3$
-- Variable $y$: mayor exponente es $4$ → tomamos $y^4$
-
-$$
-\boxed{\text{MCM}(12x^3y^2, 18x^2y^4) = 36x^3y^4}
-$$
+1.  **Coeficientes (Números):** Calculamos el MCM aritmético (el número más pequeño que es múltiplo de todos).
+2.  **Variables (Letras):** Elegimos **todas** las letras (comunes y no comunes), con su **mayor exponente**.
+3.  **Polinomios:** Primero **factorizamos** todo. Luego tomamos **todos** los factores diferentes, cada uno con su **mayor exponente**.
 
 ---
 
-### Ejemplo 2
+## ⚙️ Ejemplos Resueltos
 
-Encontrar el MCM de $8a^4b^3$ y $20a^2b^5$.
+### Ejemplo 1: MCM de Monomios
 
-**Solución:**
+Encuentra el MCM de $12x^3y^2$ y $18x^2y^4$.
 
-**Coeficientes:** $\text{MCM}(8, 20) = 40$
+**Datos:**
+- Expresión 1: $12x^3y^2$
+- Expresión 2: $18x^2y^4$
 
-**Variables:**
-- Variable $a$: mayor exponente es $4$ → tomamos $a^4$
-- Variable $b$: mayor exponente es $5$ → tomamos $b^5$
+**Razonamiento:**
+1.  **Números:** MCM de 12 y 18.
+    *   Múltiplos de 12: 12, 24, 36, 48...
+    *   Múltiplos de 18: 18, 36, 54...
+    *   El primero en coincidir es **36**.
+2.  **Letras:** Tomamos todas con el exponente más alto.
+    *   $x$: Exponentes 3 y 2. Gana $x^3$.
+    *   $y$: Exponentes 2 y 4. Gana $y^4$.
 
-$$
-\boxed{\text{MCM}(8a^4b^3, 20a^2b^5) = 40a^4b^5}
-$$
-
----
-
-### Ejemplo 3
-
-Encontrar el MCM de $6xy^2$ y $9x^3z$.
-
-**Solución:**
-
-**Coeficientes:** $\text{MCM}(6, 9) = 18$
-
-**Variables:**
-- Variable $x$: mayor exponente es $3$ → tomamos $x^3$
-- Variable $y$: solo aparece en el primero con exponente $2$ → tomamos $y^2$
-- Variable $z$: solo aparece en el segundo con exponente $1$ → tomamos $z$
-
-$$
-\boxed{\text{MCM}(6xy^2, 9x^3z) = 18x^3y^2z}
-$$
+**Resultado:** $\boxed{36x^3y^4}$
 
 ---
 
-### Ejemplo 4
+### Ejemplo 2: Monomios con letras diferentes
 
-Encontrar el MCM de $15x^2yz^3$, $25xy^2z$ y $35xyz^2$.
+Calcula el MCM de $8a^2b$ y $12bc^3$.
 
-**Solución:**
+**Datos:**
+- Monomio 1: tiene $a$ y $b$.
+- Monomio 2: tiene $b$ y $c$.
 
-**Coeficientes:** $\text{MCM}(15, 25, 35) = 525$
+**Razonamiento:**
+1.  **Números:** MCM(8, 12) = 24.
+2.  **Letras:**
+    *   $a$: Solo está en el primero ($a^2$). ¡La incluimos!
+    *   $b$: Está en ambos ($b^1$). Tomamos $b$.
+    *   $c$: Solo está en el segundo ($c^3$). ¡La incluimos!
 
-**Variables:**
-- Variable $x$: mayor exponente es $2$
-- Variable $y$: mayor exponente es $2$
-- Variable $z$: mayor exponente es $3$
-
-$$
-\boxed{\text{MCM}(15x^2yz^3, 25xy^2z, 35xyz^2) = 525x^2y^2z^3}
-$$
-
----
-
-## 📖 MCM de polinomios
-
-Para encontrar el **MCM de polinomios**, debemos factorizar cada polinomio y luego tomar todos los factores con su mayor exponente.
-
-### Regla para el MCM de polinomios
-
-1. **Factorizar** completamente cada polinomio
-2. **Tomar todos** los factores (comunes y no comunes)
-3. **Usar** cada factor con su **mayor exponente**
+**Resultado:** $\boxed{24a^2bc^3}$
 
 ---
 
-### Ejemplo 5
+### Ejemplo 3: Polinomios factorizados
 
-Encontrar el MCM de $x^2 - 4$ y $x^2 + 4x + 4$.
+Halla el MCM de $6(x-1)$ y $9(x-1)^2$.
 
-**Paso 1:** Factorizamos cada polinomio:
+**Datos:**
+- Factores numéricos y binomios.
 
-$$
-x^2 - 4 = (x + 2)(x - 2)
-$$
+**Razonamiento:**
+1.  **Coeficientes:** MCM(6, 9) = 18.
+2.  **Factor $(x-1)$:** Aparece como $(x-1)^1$ y $(x-1)^2$.
+3.  Elegimos el de **mayor exponente**: $(x-1)^2$.
 
-$$
-x^2 + 4x + 4 = (x + 2)^2
-$$
-
-**Paso 2:** Tomamos todos los factores con su mayor exponente:
-
-- $(x + 2)$: mayor exponente es $2$ → tomamos $(x + 2)^2$
-- $(x - 2)$: solo aparece en el primero → tomamos $(x - 2)$
-
-$$
-\boxed{\text{MCM}(x^2 - 4, x^2 + 4x + 4) = (x + 2)^2(x - 2)}
-$$
+**Resultado:** $\boxed{18(x-1)^2}$
 
 ---
 
-### Ejemplo 6
+### Ejemplo 4: Polinomios que requieren factorización
 
-Encontrar el MCM de $6x^2 + 12x$ y $9x^3 + 18x^2$.
+Encuentra el MCM de $x^2 - 4$ y $x^2 - 4x + 4$.
 
-**Paso 1:** Factorizamos cada polinomio:
+**Datos:**
+- Polinomio 1: Diferencia de cuadrados.
+- Polinomio 2: Trinomio Cuadrado Perfecto.
 
-$$
-6x^2 + 12x = 6x(x + 2)
-$$
+**Razonamiento:**
+1.  Factorizamos primero:
+    *   $x^2 - 4 = (x+2)(x-2)$
+    *   $x^2 - 4x + 4 = (x-2)^2$
+2.  Hacemos la lista de factores únicos: $(x+2)$ y $(x-2)$.
+3.  Elegimos el mayor exponente para cada uno:
+    *   $(x+2)$: Solo aparece a la 1. $\to (x+2)$
+    *   $(x-2)$: Aparece a la 1 y a la 2. Gana la 2. $\to (x-2)^2$
 
-$$
-9x^3 + 18x^2 = 9x^2(x + 2)
-$$
-
-**Paso 2:** Tomamos todos los factores:
-
-- Factor numérico: $\text{MCM}(6, 9) = 18$
-- Factor $x$: mayor exponente es $2$ → tomamos $x^2$
-- Factor $(x + 2)$: aparece en ambos con exponente $1$
-
-$$
-\boxed{\text{MCM}(6x^2 + 12x, 9x^3 + 18x^2) = 18x^2(x + 2)}
-$$
+**Resultado:** $\boxed{(x+2)(x-2)^2}$
 
 ---
 
-### Ejemplo 7
+### Ejemplo 5: Tres polinomios distintos
 
-Encontrar el MCM de $x^3 - x^2$ y $x^2 - 1$.
+Calcula el MCM de $2x$, $x^2+x$ y $x^2-1$.
 
-**Paso 1:** Factorizamos cada polinomio:
+**Datos:**
+- Monomio, binomio y binomio.
 
-$$
-x^3 - x^2 = x^2(x - 1)
-$$
+**Razonamiento:**
+1.  Factorizamos todo:
+    *   $2x$ (ya está).
+    *   $x^2+x = x(x+1)$.
+    *   $x^2-1 = (x+1)(x-1)$.
+2.  Recopilamos factores: $2$, $x$, $(x+1)$, $(x-1)$.
+3.  Multiplicamos todos (todos tienen exponente 1).
 
-$$
-x^2 - 1 = (x + 1)(x - 1)
-$$
-
-**Paso 2:** Tomamos todos los factores:
-
-- Factor $x^2$: solo aparece en el primero
-- Factor $(x - 1)$: aparece en ambos
-- Factor $(x + 1)$: solo aparece en el segundo
-
-$$
-\boxed{\text{MCM}(x^3 - x^2, x^2 - 1) = x^2(x + 1)(x - 1)}
-$$
+**Resultado:** $\boxed{2x(x+1)(x-1)}$
 
 ---
 
-### Ejemplo 8
+## 📝 Ejercicios de Práctica
 
-Encontrar el MCM de $4x^2 - 16$ y $2x^2 - 8x + 8$.
-
-**Paso 1:** Factorizamos cada polinomio:
-
-$$
-4x^2 - 16 = 4(x^2 - 4) = 4(x + 2)(x - 2)
-$$
-
-$$
-2x^2 - 8x + 8 = 2(x^2 - 4x + 4) = 2(x - 2)^2
-$$
-
-**Paso 2:** Tomamos todos los factores con su mayor exponente:
-
-- Factor numérico: $\text{MCM}(4, 2) = 4$
-- Factor $(x + 2)$: solo en el primero
-- Factor $(x - 2)$: mayor exponente es $2$
-
-$$
-\boxed{\text{MCM}(4x^2 - 16, 2x^2 - 8x + 8) = 4(x + 2)(x - 2)^2}
-$$
-
----
-
-## 📖 Aplicación: Denominador común
-
-El MCM es fundamental para encontrar el **denominador común** cuando sumamos o restamos fracciones algebraicas.
-
-### Ejemplo 9
-
-Para sumar $\dfrac{1}{x+2} + \dfrac{1}{x-2}$, el denominador común será:
-
-$$
-\text{MCM}(x+2, x-2) = (x+2)(x-2)
-$$
-
----
-
-## 📋 Resumen comparativo
-
-| Expresiones | MCD | MCM |
-|:------------|:---:|:---:|
-| $12x^3y^2$ y $18x^2y^4$ | $6x^2y^2$ | $36x^3y^4$ |
-| $x^2 - 4$ y $(x + 2)^2$ | $(x + 2)$ | $(x + 2)^2(x - 2)$ |
-| $6x(x + 2)$ y $9x^2(x + 2)$ | $3x(x + 2)$ | $18x^2(x + 2)$ |
-
----
-
-## 📝 Ejercicios de práctica
-
-### MCM de monomios
-
-**Ejercicio 1:** Encuentra el MCM de $24a^3b^2$ y $36a^2b^4$.
+### Ejercicio 1
+Encuentra el MCM de $15a^2b$ y $10ab^3$.
 
 <details>
 <summary>Ver solución</summary>
 
-**Coeficientes:** $\text{MCM}(24, 36) = 72$
+**Datos:** Números 15 y 10. Letras a, b.
+**Razonamiento:** MCM(15, 10) = 30. Mayores exponentes: $a^2$ y $b^3$.
+**Resultado:** $\boxed{30a^2b^3}$
 
-**Variables:**
-- $a$: mayor exponente es $3$
-- $b$: mayor exponente es $4$
+</details>
 
-$$
-\text{MCM} = 72a^3b^4
-$$
+### Ejercicio 2
+Encuentra el MCM de $x^2y$ y $xy^2z$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** Variables x, y, z.
+**Razonamiento:** Tomamos todas con mayor exponente: $x^2$, $y^2$, $z$.
+**Resultado:** $\boxed{x^2y^2z}$
+
+</details>
+
+### Ejercicio 3
+Calcula el MCM de $4m^2$ y $6m^3$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** Coeficientes 4, 6. Variable m.
+**Razonamiento:** MCM(4,6) = 12. Mayor var: $m^3$.
+**Resultado:** $\boxed{12m^3}$
+
+</details>
+
+### Ejercicio 4
+Halla el MCM de $2(a+1)$ y $3(a+1)^2$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** MCM(2,3)=6. Factor $(a+1)$.
+**Razonamiento:** Mayor exponente del paréntesis es 2.
+**Resultado:** $\boxed{6(a+1)^2}$
+
+</details>
+
+### Ejercicio 5
+Encuentra el MCM de $x^2 - 1$ y $x+1$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+1. $x^2 - 1 = (x+1)(x-1)$
+2. $x+1$ es irreducible.
+3. Factores: $(x+1)$ y $(x-1)$.
+**Resultado:** $\boxed{(x+1)(x-1)}$
+
+</details>
+
+### Ejercicio 6
+Calcula el MCM de $x^2 + 2x + 1$ y $x^2 - 1$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+1. $(x+1)^2$
+2. $(x+1)(x-1)$
+3. Tomamos $(x+1)^2$ y $(x-1)$.
+**Resultado:** $\boxed{(x+1)^2(x-1)}$
+
+</details>
+
+### Ejercicio 7
+Encuentra el MCM de $3x^2$ y $9x(x-2)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+1. $3x^2$
+2. $9x(x-2)$
+Coeficiente: 9. Variable $x$: $x^2$ (mayor). Factor $(x-2)$.
+**Resultado:** $\boxed{9x^2(x-2)}$
+
+</details>
+
+### Ejercicio 8
+Halla el MCM de $x^3 - x$ y $x^2 - x$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+1. $x(x^2-1) = x(x+1)(x-1)$
+2. $x(x-1)$
+MCM incluye todo lo del primero que ya cubre al segundo.
+**Resultado:** $\boxed{x(x+1)(x-1)}$
+
+</details>
+
+### Ejercicio 9
+Calcula el MCM de $m-1$, $m^2-1$ y $m+1$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$m^2-1 = (m+1)(m-1)$. Este término ya contiene a los otros dos.
+**Resultado:** $\boxed{(m+1)(m-1)}$ o $\boxed{m^2-1}$
+
+</details>
+
+### Ejercicio 10
+Halla el MCM de $x^2-25$ y $x^2-10x+25$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+1. $(x+5)(x-5)$
+2. $(x-5)^2$
+Tomamos $(x+5)$ y $(x-5)^2$.
+**Resultado:** $\boxed{(x+5)(x-5)^2}$
 
 </details>
 
 ---
 
-**Ejercicio 2:** Encuentra el MCM de $10x^4y^3z$ y $15x^2y^5z^2$.
+## 🔑 Resumen
 
-<details>
-<summary>Ver solución</summary>
+| MCD (Divisor) | MCM (Múltiplo) |
+| :--- | :--- |
+| El más **pequeño** posible | El más **grande** (completo) posible |
+| Solo factores **comunes** | **Todos** los factores |
+| **Menor** exponente | **Mayor** exponente |
 
-**Coeficientes:** $\text{MCM}(10, 15) = 30$
-
-**Variables:**
-- $x$: mayor exponente es $4$
-- $y$: mayor exponente es $5$
-- $z$: mayor exponente es $2$
-
-$$
-\text{MCM} = 30x^4y^5z^2
-$$
-
-</details>
-
----
-
-### MCM de polinomios
-
-**Ejercicio 3:** Encuentra el MCM de $x^2 - 9$ y $x^2 + 6x + 9$.
-
-<details>
-<summary>Ver solución</summary>
-
-**Factorizamos:**
-
-$$
-x^2 - 9 = (x + 3)(x - 3)
-$$
-
-$$
-x^2 + 6x + 9 = (x + 3)^2
-$$
-
-**Tomamos todos los factores con mayor exponente:**
-
-$$
-\text{MCM} = (x + 3)^2(x - 3)
-$$
-
-</details>
-
----
-
-**Ejercicio 4:** Encuentra el MCM de $2x^2 + 6x$ y $4x^3 + 12x^2$.
-
-<details>
-<summary>Ver solución</summary>
-
-**Factorizamos:**
-
-$$
-2x^2 + 6x = 2x(x + 3)
-$$
-
-$$
-4x^3 + 12x^2 = 4x^2(x + 3)
-$$
-
-**Tomamos todos los factores:**
-- Numérico: $\text{MCM}(2, 4) = 4$
-- $x$: mayor exponente es $2$
-- $(x + 3)$: exponente $1$
-
-$$
-\text{MCM} = 4x^2(x + 3)
-$$
-
-</details>
-
----
-
-**Ejercicio 5:** Encuentra el MCM de $x^2 - 4x + 4$ y $x^2 - 4$.
-
-<details>
-<summary>Ver solución</summary>
-
-**Factorizamos:**
-
-$$
-x^2 - 4x + 4 = (x - 2)^2
-$$
-
-$$
-x^2 - 4 = (x + 2)(x - 2)
-$$
-
-**Tomamos todos los factores con mayor exponente:**
-
-$$
-\text{MCM} = (x + 2)(x - 2)^2
-$$
-
-</details>
-
----
-
-**Ejercicio 6:** Encuentra el MCM de $18m^3n^2$, $24m^2n^4$ y $30m^4n$.
-
-<details>
-<summary>Ver solución</summary>
-
-**Coeficientes:** $\text{MCM}(18, 24, 30) = 360$
-
-**Variables:**
-- $m$: mayor exponente es $4$
-- $n$: mayor exponente es $4$
-
-$$
-\text{MCM} = 360m^4n^4
-$$
-
-</details>
-
----
+> El MCM es como una maleta de viaje: debes asegurarte de que quepa todo lo que llevan los polinomios originales, sin dejar nada fuera.

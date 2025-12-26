@@ -74,8 +74,36 @@
 |----------|---------|
 | **Título** | `# **Título**` (SIN emoji) |
 | **Fórmula importante** | Bloque `$$...$$` con líneas vacías antes/después |
+| **TODAS las ecuaciones** | Formato de bloque para legibilidad (ver abajo) |
 | **Resultado** | `$\boxed{...}$` |
 | **Soluciones** | Dentro de `<details><summary>Ver solución</summary>...</details>` |
+
+### ⚠️ Regla Crítica: Ecuaciones en Bloque
+
+**TODAS** las ecuaciones en ejemplos y razonamientos deben estar en formato de bloque, NO inline. Esto mejora la legibilidad y evita errores de renderizado.
+
+**✅ Correcto:**
+```markdown
+**Razonamiento:**
+
+$$
+a^{-5 + 2}
+$$
+
+Debo 5 y pago 2, quedo debiendo 3.
+
+$$
+a^{-3}
+$$
+```
+
+**❌ Incorrecto:**
+```markdown
+**Razonamiento:**
+$$a^{-5 + 2}$$
+Debo $5 y pago 2$ → Quedo debiendo 3.
+$$= a^{-3}$$
+```
 
 ---
 

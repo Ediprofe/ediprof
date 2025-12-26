@@ -166,18 +166,17 @@ Situaciones que requieren confirmación:
 # 📝 PETICIÓN DEL USUARIO
 
 
-Corrige las siguientes lecciones del tema de factorización, al estilo Ediprofe.
+Corrige las siguientes lecciones al estilo Ediprofe.
 
 
-http://localhost:4321/matematicas/algebra/factorizacion/suma-diferencia-cubos
+http://localhost:4321/matematicas/algebra/fracciones-algebraicas/multiplicacion-de-fracciones
 
-http://localhost:4321/matematicas/algebra/factorizacion suma-diferencia-potencias-impares
+http://localhost:4321/matematicas/algebra/fracciones-algebraicas/division-de-fracciones
 
-http://localhost:4321/matematicas/algebra/factorizacion/completando-cuadrado
+http://localhost:4321/matematicas/algebra/fracciones-algebraicas/combinacion-de-operaciones
 
-http://localhost:4321/matematicas/algebra/factorizacion/resumen-casos-factorizacion
+http://localhost:4321/matematicas/algebra/fracciones-algebraicas/fracciones-complejas
 
-http://localhost:4321/matematicas/algebra/factorizacion/casos-especiales
 
 
 ---

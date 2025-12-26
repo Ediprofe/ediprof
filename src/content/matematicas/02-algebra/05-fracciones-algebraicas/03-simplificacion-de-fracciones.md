@@ -1,392 +1,263 @@
-# ✂️ Simplificación de Fracciones Algebraicas
+# **Simplificación de Fracciones Algebraicas**
 
-En esta lección aprenderemos a simplificar fracciones algebraicas, reduciendo las expresiones a su forma más simple mediante la cancelación de factores comunes.
-
----
-
-## 📖 ¿Qué es una fracción algebraica?
-
-Una **fracción algebraica** es el cociente de dos expresiones algebraicas (polinomios), donde el denominador no puede ser cero.
-
-$$
-\frac{P(x)}{Q(x)} \quad \text{donde } Q(x) \neq 0
-$$
-
-### Ejemplos de fracciones algebraicas
-
-| Fracción | Numerador | Denominador |
-|:--------:|:---------:|:-----------:|
-| $\dfrac{3x}{x+1}$ | $3x$ | $x+1$ |
-| $\dfrac{x^2-4}{x-2}$ | $x^2-4$ | $x-2$ |
-| $\dfrac{2a+6}{a^2-9}$ | $2a+6$ | $a^2-9$ |
+Simplificar una fracción algebraica es como reducir una fracción numérica: el objetivo es hacerla más sencilla dividiendo arriba y abajo por lo mismo. Si sabes que $\frac{4}{8}$ es lo mismo que $\frac{1}{2}$, ¡ya entiendes el concepto básico!
 
 ---
 
-## 📖 Principio fundamental de las fracciones
+## 🎯 ¿Qué vas a aprender?
 
-Podemos **multiplicar** o **dividir** el numerador y el denominador por una misma expresión (distinta de cero) sin cambiar el valor de la fracción:
-
-$$
-\frac{a}{b} = \frac{a \cdot c}{b \cdot c} = \frac{a \div c}{b \div c}
-$$
-
-Este principio nos permite **simplificar** fracciones.
+- El principio fundamental: solo se simplifican factores (multiplicaciones), no términos (sumas).
+- A simplificar coeficientes y variables usando leyes de exponentes.
+- A usar la factorización para reducir polinomios complejos.
+- A evitar el error número 1 de los estudiantes: cancelar sumas.
 
 ---
 
-## 📖 Simplificación de fracciones algebraicas
+## 🔍 La regla de oro
 
-**Simplificar** una fracción algebraica significa reducirla a su expresión más simple, cancelando los factores comunes entre el numerador y el denominador.
+> **"Solo puedes cancelar lo que está multiplicando a todo el bloque."**
 
-### Pasos para simplificar
-
-1. **Factorizar** completamente el numerador
-2. **Factorizar** completamente el denominador
-3. **Cancelar** los factores comunes
-4. **Escribir** la fracción simplificada
+Si tienes una suma o resta, **¡PROHIBIDO CANCELAR!** Primero debes factorizar para convertir esas sumas en multiplicaciones.
 
 ---
 
-## 📖 Simplificación con monomios
+## ⚙️ Ejemplos Resueltos
 
-### Ejemplo 1
+### Ejemplo 1: Simplificación de monomios
 
-Simplificar $\dfrac{12x^3y^2}{18x^2y^4}$.
+Simplifica: $\dfrac{15x^3y^2}{25x^2y^4}$
 
-**Solución:**
+**Datos:**
+- Coeficientes: 15 y 25.
+- Variables: $x$ y $y$.
 
-**Paso 1:** Simplificamos coeficientes: $\dfrac{12}{18} = \dfrac{2}{3}$
+**Razonamiento:**
+1.  **Números:** Simplificamos $\frac{15}{25}$ dividiendo por 5 $\to \frac{3}{5}$.
+2.  **Letras:** Restamos exponentes (el mayor "gana" y se queda en su lugar).
+    *   $x$: Arriba 3, abajo 2. Gana arriba por 1. $\to x^1$ arriba.
+    *   $y$: Arriba 2, abajo 4. Gana abajo por 2. $\to y^2$ abajo.
 
-**Paso 2:** Simplificamos variables usando las propiedades de exponentes:
-
-$$
-\frac{x^3}{x^2} = x^{3-2} = x
-$$
-
-$$
-\frac{y^2}{y^4} = y^{2-4} = y^{-2} = \frac{1}{y^2}
-$$
-
-**Resultado:**
-
-$$
-\boxed{\frac{12x^3y^2}{18x^2y^4} = \frac{2x}{3y^2}}
-$$
+**Resultado:** $\boxed{\frac{3x}{5y^2}}$
 
 ---
 
-### Ejemplo 2
+### Ejemplo 2: Polinomio entre Monomio
 
-Simplificar $\dfrac{15a^4b^3}{25a^2b^5}$.
+Simplifica: $\dfrac{4x^2 + 8x}{2x}$
 
-**Solución:**
+**Datos:**
+- Arriba hay una suma. **¡No cancelar el $2x$ de arriba con el de abajo directamente!**
 
-$$
-\frac{15}{25} = \frac{3}{5}, \quad \frac{a^4}{a^2} = a^2, \quad \frac{b^3}{b^5} = \frac{1}{b^2}
-$$
+**Razonamiento:**
+1.  Factorizamos el numerador (Factor común $4x$):
+    $$4x^2 + 8x = 4x(x+2)$$
+2.  Reescribimos la fracción:
+    $$\frac{4x(x+2)}{2x}$$
+3.  Ahora sí, $4x$ y $2x$ están multiplicando.
+    *   $\frac{4}{2} = 2$.
+    *   $\frac{x}{x} = 1$ (se van).
 
-$$
-\boxed{\frac{15a^4b^3}{25a^2b^5} = \frac{3a^2}{5b^2}}
-$$
-
----
-
-### Ejemplo 3
-
-Simplificar $\dfrac{8x^2y^3z}{4xy^2z^3}$.
-
-**Solución:**
-
-$$
-\frac{8}{4} = 2, \quad \frac{x^2}{x} = x, \quad \frac{y^3}{y^2} = y, \quad \frac{z}{z^3} = \frac{1}{z^2}
-$$
-
-$$
-\boxed{\frac{8x^2y^3z}{4xy^2z^3} = \frac{2xy}{z^2}}
-$$
+**Resultado:** $\boxed{2(x+2)}$
 
 ---
 
-## 📖 Simplificación con factor común
+### Ejemplo 3: Diferencia de Cuadrados
 
-### Ejemplo 4
+Simplifica: $\dfrac{x^2 - 9}{x + 3}$
 
-Simplificar $\dfrac{6x + 12}{3x + 6}$.
+**Datos:**
+- Numerador: $x^2 - 9$ (Diferencia de cuadrados).
+- Denominador: $x + 3$.
 
-**Paso 1:** Factorizamos numerador y denominador:
+**Razonamiento:**
+1.  Factorizamos arriba:
+    $$x^2 - 9 = (x - 3)(x + 3)$$
+2.  Sustituimos:
+    $$\frac{(x-3)(x+3)}{x+3}$$
+3.  Cancelamos el bloque completo $(x+3)$.
 
-$$
-\frac{6x + 12}{3x + 6} = \frac{6(x + 2)}{3(x + 2)}
-$$
-
-**Paso 2:** Cancelamos el factor común $(x + 2)$:
-
-$$
-= \frac{6}{3} = 2
-$$
-
-$$
-\boxed{\frac{6x + 12}{3x + 6} = 2}
-$$
+**Resultado:** $\boxed{x - 3}$
 
 ---
 
-### Ejemplo 5
+### Ejemplo 4: Trinomios
 
-Simplificar $\dfrac{4x^2 + 8x}{2x}$.
+Simplifica: $\dfrac{x^2 + 2x - 15}{x^2 - 9}$
 
-**Paso 1:** Factorizamos el numerador:
+**Datos:**
+- Numerador: Trinomio de la forma $x^2+bx+c$.
+- Denominador: Diferencia de cuadrados.
 
-$$
-\frac{4x^2 + 8x}{2x} = \frac{4x(x + 2)}{2x}
-$$
+**Razonamiento:**
+1.  Factorizamos numerador:
+    *   Multiplican -15, suman 2: $(5, -3)$.
+    *   $(x+5)(x-3)$.
+2.  Factorizamos denominador:
+    *   $(x+3)(x-3)$.
+3.  Reescribimos:
+    $$\frac{(x+5)(x-3)}{(x+3)(x-3)}$$
+4.  Cancelamos $(x-3)$.
 
-**Paso 2:** Cancelamos el factor común $2x$:
-
-$$
-= \frac{2(x + 2)}{1} = 2(x + 2) = 2x + 4
-$$
-
-$$
-\boxed{\frac{4x^2 + 8x}{2x} = 2x + 4}
-$$
-
----
-
-### Ejemplo 6
-
-Simplificar $\dfrac{x^3 - x^2}{x^2 - x}$.
-
-**Paso 1:** Factorizamos:
-
-$$
-\frac{x^3 - x^2}{x^2 - x} = \frac{x^2(x - 1)}{x(x - 1)}
-$$
-
-**Paso 2:** Cancelamos los factores comunes $x$ y $(x - 1)$:
-
-$$
-= \frac{x^2}{x} = x
-$$
-
-$$
-\boxed{\frac{x^3 - x^2}{x^2 - x} = x}
-$$
+**Resultado:** $\boxed{\frac{x+5}{x+3}}$
 
 ---
 
-## 📖 Simplificación con productos notables
+### Ejemplo 5: Factorización de signo negativo (Truco avanzado)
 
-### Ejemplo 7
+Simplifica: $\dfrac{a - b}{b - a}$
 
-Simplificar $\dfrac{x^2 - 4}{x + 2}$.
+**Datos:**
+- Los términos son iguales pero con signos opuestos.
 
-**Paso 1:** Reconocemos la diferencia de cuadrados en el numerador:
+**Razonamiento:**
+1.  Factorizamos un signo negativo en el denominador para invertirlo:
+    $$b - a = -(-b + a) = -(a - b)$$
+2.  Sustituimos:
+    $$\frac{a - b}{-(a - b)}$$
+3.  Cancelamos el bloque $(a-b)$.
+4.  Queda: $\frac{1}{-1} = -1$.
 
-$$
-\frac{x^2 - 4}{x + 2} = \frac{(x + 2)(x - 2)}{x + 2}
-$$
-
-**Paso 2:** Cancelamos $(x + 2)$:
-
-$$
-= x - 2
-$$
-
-$$
-\boxed{\frac{x^2 - 4}{x + 2} = x - 2}
-$$
+**Resultado:** $\boxed{-1}$
 
 ---
 
-### Ejemplo 8
+## 📝 Ejercicios de Práctica
 
-Simplificar $\dfrac{x^2 - 9}{x^2 + 6x + 9}$.
-
-**Paso 1:** Factorizamos:
-
-$$
-x^2 - 9 = (x + 3)(x - 3)
-$$
-
-$$
-x^2 + 6x + 9 = (x + 3)^2
-$$
-
-**Paso 2:** Escribimos y cancelamos:
-
-$$
-\frac{(x + 3)(x - 3)}{(x + 3)^2} = \frac{x - 3}{x + 3}
-$$
-
-$$
-\boxed{\frac{x^2 - 9}{x^2 + 6x + 9} = \frac{x - 3}{x + 3}}
-$$
-
----
-
-### Ejemplo 9
-
-Simplificar $\dfrac{x^2 - 4x + 4}{x^2 - 4}$.
-
-**Paso 1:** Factorizamos:
-
-$$
-x^2 - 4x + 4 = (x - 2)^2
-$$
-
-$$
-x^2 - 4 = (x + 2)(x - 2)
-$$
-
-**Paso 2:** Cancelamos $(x - 2)$:
-
-$$
-\frac{(x - 2)^2}{(x + 2)(x - 2)} = \frac{x - 2}{x + 2}
-$$
-
-$$
-\boxed{\frac{x^2 - 4x + 4}{x^2 - 4} = \frac{x - 2}{x + 2}}
-$$
-
----
-
-### Ejemplo 10
-
-Simplificar $\dfrac{x^2 + 5x + 6}{x^2 + 4x + 4}$.
-
-**Paso 1:** Factorizamos:
-
-$$
-x^2 + 5x + 6 = (x + 2)(x + 3)
-$$
-
-$$
-x^2 + 4x + 4 = (x + 2)^2
-$$
-
-**Paso 2:** Cancelamos $(x + 2)$:
-
-$$
-\frac{(x + 2)(x + 3)}{(x + 2)^2} = \frac{x + 3}{x + 2}
-$$
-
-$$
-\boxed{\frac{x^2 + 5x + 6}{x^2 + 4x + 4} = \frac{x + 3}{x + 2}}
-$$
-
----
-
-## ⚠️ Errores comunes a evitar
-
-### Error 1: Cancelar términos en lugar de factores
-
-❌ **Incorrecto:**
-$$
-\frac{x + 2}{x + 3} \neq \frac{2}{3}
-$$
-
-No se pueden cancelar los términos $x$ porque no son factores.
-
-✅ **Solo se cancelan FACTORES, no términos.**
-
----
-
-### Error 2: Cancelar sin verificar que es factor
-
-❌ **Incorrecto:**
-$$
-\frac{x^2 + 4}{x + 2} \neq x + 2
-$$
-
-El numerador $x^2 + 4$ **no se puede factorizar** como $(x+2)(\text{algo})$.
-
----
-
-## 📝 Ejercicios de práctica
-
-### Simplificación de monomios
-
-**Ejercicio 1:** Simplifica $\dfrac{24a^3b^2}{36a^2b^4}$.
+### Ejercicio 1
+Simplifica $\dfrac{14a^2}{21a}$.
 
 <details>
 <summary>Ver solución</summary>
 
-$$
-\frac{24}{36} = \frac{2}{3}, \quad \frac{a^3}{a^2} = a, \quad \frac{b^2}{b^4} = \frac{1}{b^2}
-$$
+**Datos:** Simplificar 14/21 y $a^2/a$.
+**Razonamiento:** 14/21 = 2/3. $a^2/a = a$.
+**Resultado:** $\boxed{\frac{2a}{3}}$
 
-$$
-\frac{24a^3b^2}{36a^2b^4} = \frac{2a}{3b^2}
-$$
+</details>
+
+### Ejercicio 2
+Simplifica $\dfrac{3x + 12}{3}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** Factor común 3 arriba.
+**Razonamiento:** $\frac{3(x+4)}{3}$. Se van los 3.
+**Resultado:** $\boxed{x+4}$
+
+</details>
+
+### Ejercicio 3
+Simplifica $\dfrac{x^2 - x}{xy}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** Factor común x arriba.
+**Razonamiento:** $\frac{x(x-1)}{xy}$. Cancelamos x.
+**Resultado:** $\boxed{\frac{x-1}{y}}$
+
+</details>
+
+### Ejercicio 4
+Simplifica $\dfrac{5x - 5y}{x - y}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** Factor común 5.
+**Razonamiento:** $\frac{5(x-y)}{x-y} = 5$.
+**Resultado:** $\boxed{5}$
+
+</details>
+
+### Ejercicio 5
+Simplifica $\dfrac{x^2 - 16}{x - 4}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** Dif. cuadrados.
+**Razonamiento:** $\frac{(x+4)(x-4)}{x-4}$.
+**Resultado:** $\boxed{x+4}$
+
+</details>
+
+### Ejercicio 6
+Simplifica $\dfrac{x^2 + 5x + 6}{x + 2}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** Trinomio.
+**Razonamiento:** Num: $(x+3)(x+2)$. Den: $(x+2)$.
+**Resultado:** $\boxed{x+3}$
+
+</details>
+
+### Ejercicio 7
+Simplifica $\dfrac{2x - 4}{x^2 - 4}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Num: $2(x-2)$.
+Den: $(x+2)(x-2)$.
+Cancelamos $(x-2)$.
+**Resultado:** $\boxed{\frac{2}{x+2}}$
+
+</details>
+
+### Ejercicio 8
+Simplifica $\dfrac{a^2 - 2ab + b^2}{a^2 - b^2}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Num: $(a-b)^2$.
+Den: $(a+b)(a-b)$.
+Cancelamos un $(a-b)$.
+**Resultado:** $\boxed{\frac{a-b}{a+b}}$
+
+</details>
+
+### Ejercicio 9
+Simplifica $\dfrac{3x - 6}{5x - 10}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Num: $3(x-2)$.
+Den: $5(x-2)$.
+**Resultado:** $\boxed{\frac{3}{5}}$
+
+</details>
+
+### Ejercicio 10
+Simplifica $\dfrac{x^2 - 5x + 6}{x^2 - 4x + 4}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Num: $(x-3)(x-2)$.
+Den: $(x-2)^2$.
+Cancelamos un $(x-2)$.
+**Resultado:** $\boxed{\frac{x-3}{x-2}}$
 
 </details>
 
 ---
 
-**Ejercicio 2:** Simplifica $\dfrac{9x^2 + 18x}{3x}$.
+## 🔑 Resumen
 
-<details>
-<summary>Ver solución</summary>
+| Paso | Acción |
+| :--- | :--- |
+| **1. Factorizar** | Convierte TODAS las sumas en multiplicaciones. |
+| **2. Cancelar** | Elimina los bloques idénticos arriba y abajo. |
+| **3. Resultado** | Escribe lo que quedó. |
 
-$$
-\frac{9x^2 + 18x}{3x} = \frac{9x(x + 2)}{3x} = 3(x + 2) = 3x + 6
-$$
-
-</details>
-
----
-
-### Simplificación con productos notables
-
-**Ejercicio 3:** Simplifica $\dfrac{x^2 - 16}{x + 4}$.
-
-<details>
-<summary>Ver solución</summary>
-
-$$
-\frac{x^2 - 16}{x + 4} = \frac{(x + 4)(x - 4)}{x + 4} = x - 4
-$$
-
-</details>
-
----
-
-**Ejercicio 4:** Simplifica $\dfrac{x^2 - 6x + 9}{x^2 - 9}$.
-
-<details>
-<summary>Ver solución</summary>
-
-$$
-\frac{x^2 - 6x + 9}{x^2 - 9} = \frac{(x - 3)^2}{(x + 3)(x - 3)} = \frac{x - 3}{x + 3}
-$$
-
-</details>
-
----
-
-**Ejercicio 5:** Simplifica $\dfrac{x^2 + 7x + 12}{x^2 + 6x + 9}$.
-
-<details>
-<summary>Ver solución</summary>
-
-$$
-\frac{x^2 + 7x + 12}{x^2 + 6x + 9} = \frac{(x + 3)(x + 4)}{(x + 3)^2} = \frac{x + 4}{x + 3}
-$$
-
-</details>
-
----
-
-**Ejercicio 6:** Simplifica $\dfrac{2x^2 - 8}{x^2 + 4x + 4}$.
-
-<details>
-<summary>Ver solución</summary>
-
-$$
-\frac{2x^2 - 8}{x^2 + 4x + 4} = \frac{2(x^2 - 4)}{(x + 2)^2} = \frac{2(x + 2)(x - 2)}{(x + 2)^2} = \frac{2(x - 2)}{x + 2}
-$$
-
-</details>
-
----
+> **Recuerda:** $\frac{x+5}{5}$ **NO** es $x+1$. El 5 divide a *todo*, no solo al 5.

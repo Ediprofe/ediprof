@@ -1,365 +1,256 @@
-# ➗ División de Fracciones Algebraicas
+# **División de Fracciones Algebraicas**
 
-En esta lección aprenderemos a dividir fracciones algebraicas, una operación que se reduce a una multiplicación por el recíproco.
-
----
-
-## 📖 Regla de división
-
-Para dividir fracciones, se multiplica la primera por el **recíproco** (o inverso) de la segunda:
-
-$$
-\frac{a}{b} \div \frac{c}{d} = \frac{a}{b} \times \frac{d}{c} = \frac{ad}{bc}
-$$
-
-En otras palabras: **invertimos la segunda fracción y multiplicamos**.
+¿Sabías que la división no existe realmente en el mundo de las fracciones? Todo es un truco de magia: convertimos la división en una multiplicación dándole la vuelta a la segunda fracción. Es como hacer judo con los números: usas la fuerza del oponente (la fracción divisora) invirtiéndola a tu favor.
 
 ---
 
-## 📖 División de monomios
+## 🎯 ¿Qué vas a aprender?
 
-### Ejemplo 1
-
-Resolver $\dfrac{6x^3}{5y^2} \div \dfrac{3x}{10y}$.
-
-**Paso 1:** Invertimos la segunda fracción:
-
-$$
-\frac{6x^3}{5y^2} \times \frac{10y}{3x}
-$$
-
-**Paso 2:** Multiplicamos y simplificamos:
-
-$$
-= \frac{6x^3 \cdot 10y}{5y^2 \cdot 3x} = \frac{60x^3y}{15xy^2} = \frac{4x^2}{y}
-$$
-
-$$
-\boxed{\frac{6x^3}{5y^2} \div \frac{3x}{10y} = \frac{4x^2}{y}}
-$$
+- La regla del "inverso multiplicativo" (dar vuelta a la tortilla).
+- Cómo transformar cualquier división en una multiplicación sencilla.
+- A simplificar divisiones complejas con polinomios.
+- El orden correcto para no equivocarse nunca.
 
 ---
 
-### Ejemplo 2
+## 🔍 La Técnica del "Giro"
 
-Resolver $\dfrac{12a^2b^3}{7c} \div \dfrac{4ab^2}{21c^2}$.
-
-**Solución:**
+Para dividir dos fracciones, simplemente **invertimos** la segunda fracción (el divisor) y cambiamos el signo $\div$ por $\times$.
 
 $$
-\frac{12a^2b^3}{7c} \times \frac{21c^2}{4ab^2} = \frac{12a^2b^3 \cdot 21c^2}{7c \cdot 4ab^2}
+\frac{A}{B} \div \frac{C}{D} = \frac{A}{B} \cdot \frac{D}{C}
 $$
 
-$$
-= \frac{252a^2b^3c^2}{28abc} = \frac{9abc}{1} = 9abc
-$$
-
-$$
-\boxed{\frac{12a^2b^3}{7c} \div \frac{4ab^2}{21c^2} = 9abc}
-$$
+> **Regla vital:** Solo se invierte la fracción que está **después** del signo de división.
 
 ---
 
-### Ejemplo 3
+## ⚙️ Ejemplos Resueltos
 
-Resolver $\dfrac{15x^4y}{8z^2} \div \dfrac{5x^2y^3}{4z}$.
+### Ejemplo 1: División de Monomios
 
-**Solución:**
+Divide: $\dfrac{4x^2}{3y} \div \dfrac{2x}{9y^2}$
 
-$$
-\frac{15x^4y}{8z^2} \times \frac{4z}{5x^2y^3} = \frac{15x^4y \cdot 4z}{8z^2 \cdot 5x^2y^3}
-$$
+**Datos:**
+- Operación: División.
+- Segunda fracción: $2x / 9y^2$.
 
-$$
-= \frac{60x^4yz}{40x^2y^3z^2} = \frac{3x^2}{2y^2z}
-$$
+**Razonamiento:**
+1.  **Invertimos** la segunda fracción: $\frac{9y^2}{2x}$.
+2.  **Multiplicamos** normalmente:
+    $$\frac{4x^2}{3y} \cdot \frac{9y^2}{2x}$$
+3.  **Simplificamos** (Números con números, letras con letras):
+    *   $4/2 = 2$ y $9/3 = 3$. $\to 2 \cdot 3 = 6$.
+    *   $x^2/x = x$.
+    *   $y^2/y = y$.
 
-$$
-\boxed{\frac{15x^4y}{8z^2} \div \frac{5x^2y^3}{4z} = \frac{3x^2}{2y^2z}}
-$$
-
----
-
-## 📖 División con polinomios
-
-### Ejemplo 4
-
-Resolver $\dfrac{x+3}{4} \div \dfrac{x+3}{8}$.
-
-**Solución:**
-
-$$
-\frac{x+3}{4} \times \frac{8}{x+3} = \frac{(x+3) \cdot 8}{4 \cdot (x+3)} = \frac{8}{4} = 2
-$$
-
-$$
-\boxed{\frac{x+3}{4} \div \frac{x+3}{8} = 2}
-$$
+**Resultado:** $\boxed{6xy}$
 
 ---
 
-### Ejemplo 5
+### Ejemplo 2: Polinomios Simples
 
-Resolver $\dfrac{x^2-4}{x+1} \div \dfrac{x-2}{x+1}$.
+Divide: $\dfrac{2x+6}{5} \div \dfrac{x+3}{10}$
 
-**Paso 1:** Invertimos y escribimos:
+**Datos:**
+- Numerador factorizable: $2x+6$.
 
-$$
-\frac{x^2-4}{x+1} \times \frac{x+1}{x-2}
-$$
+**Razonamiento:**
+1.  **Invertimos** la segunda: $\frac{10}{x+3}$.
+2.  Factorizamos la primera:
+    $$\frac{2(x+3)}{5} \cdot \frac{10}{x+3}$$
+3.  **Cancelamos** cruzado:
+    *   $(x+3)$ se va con $(x+3)$.
+    *   $10/5 = 2$.
+    *   Queda $2 \cdot 2 = 4$.
 
-**Paso 2:** Factorizamos $x^2-4 = (x+2)(x-2)$:
-
-$$
-= \frac{(x+2)(x-2)}{x+1} \times \frac{x+1}{x-2}
-$$
-
-**Paso 3:** Cancelamos $(x+1)$ y $(x-2)$:
-
-$$
-= \frac{(x+2)\cancel{(x-2)}}{\cancel{x+1}} \times \frac{\cancel{x+1}}{\cancel{x-2}} = x + 2
-$$
-
-$$
-\boxed{\frac{x^2-4}{x+1} \div \frac{x-2}{x+1} = x + 2}
-$$
+**Resultado:** $\boxed{4}$
 
 ---
 
-### Ejemplo 6
+### Ejemplo 3: Diferencia de Cuadrados
 
-Resolver $\dfrac{x^2-9}{x^2+4x+4} \div \dfrac{x-3}{x+2}$.
+Divide: $\dfrac{x^2-16}{x+2} \div \dfrac{x-4}{x+2}$
 
-**Paso 1:** Invertimos:
+**Datos:**
+- $x^2-16 = (x+4)(x-4)$.
 
-$$
-\frac{x^2-9}{x^2+4x+4} \times \frac{x+2}{x-3}
-$$
+**Razonamiento:**
+1.  Convertimos a multiplicación:
+    $$\frac{x^2-16}{x+2} \cdot \frac{x+2}{x-4}$$
+2.  Factorizamos:
+    $$\frac{(x+4)(x-4)}{x+2} \cdot \frac{x+2}{x-4}$$
+3.  Cancelamos todo lo repetido (arriba-abajo):
+    *   $(x-4)$ con $(x-4)$.
+    *   $(x+2)$ con $(x+2)$.
+4.  Solo sobrevive $(x+4)$.
 
-**Paso 2:** Factorizamos:
-
-$$
-x^2-9 = (x+3)(x-3), \quad x^2+4x+4 = (x+2)^2
-$$
-
-**Paso 3:** Cancelamos:
-
-$$
-\frac{(x+3)(x-3)}{(x+2)^2} \times \frac{x+2}{x-3} = \frac{(x+3)\cancel{(x-3)}}{(x+2)^{\cancel{2}}} \times \frac{\cancel{x+2}}{\cancel{x-3}}
-$$
-
-$$
-= \frac{x+3}{x+2}
-$$
-
-$$
-\boxed{\frac{x^2-9}{x^2+4x+4} \div \frac{x-3}{x+2} = \frac{x+3}{x+2}}
-$$
+**Resultado:** $\boxed{x+4}$
 
 ---
 
-### Ejemplo 7
+### Ejemplo 4: Trinomios (¡El clásico de examen!)
 
-Resolver $\dfrac{x^2+5x+6}{x^2-1} \div \dfrac{x+3}{x-1}$.
+Divide: $\dfrac{x^2+5x+6}{x-3} \div \dfrac{x+2}{x-3}$
 
-**Paso 1:** Invertimos:
+**Datos:**
+- $x^2+5x+6 = (x+3)(x+2)$.
 
-$$
-\frac{x^2+5x+6}{x^2-1} \times \frac{x-1}{x+3}
-$$
+**Razonamiento:**
+1.  Invertimos y escribimos como producto:
+    $$\frac{x^2+5x+6}{x-3} \cdot \frac{x-3}{x+2}$$
+2.  Factorizamos el trinomio:
+    $$\frac{(x+3)(x+2)}{x-3} \cdot \frac{x-3}{x+2}$$
+3.  Cancelación masiva:
+    *   $(x+2)$ con $(x+2)$.
+    *   $(x-3)$ con $(x-3)$.
 
-**Paso 2:** Factorizamos:
-
-$$
-x^2+5x+6 = (x+2)(x+3), \quad x^2-1 = (x+1)(x-1)
-$$
-
-**Paso 3:** Cancelamos:
-
-$$
-\frac{(x+2)(x+3)}{(x+1)(x-1)} \times \frac{x-1}{x+3} = \frac{(x+2)\cancel{(x+3)}}{(x+1)\cancel{(x-1)}} \times \frac{\cancel{x-1}}{\cancel{x+3}}
-$$
-
-$$
-= \frac{x+2}{x+1}
-$$
-
-$$
-\boxed{\frac{x^2+5x+6}{x^2-1} \div \frac{x+3}{x-1} = \frac{x+2}{x+1}}
-$$
+**Resultado:** $\boxed{x+3}$
 
 ---
 
-### Ejemplo 8
+### Ejemplo 5: División de entero por fracción
 
-Resolver $\dfrac{3x+6}{x^2-16} \div \dfrac{x+2}{x-4}$.
+Divide: $(x^2 - 9) \div \dfrac{x+3}{2}$
 
-**Paso 1:** Invertimos:
+**Datos:**
+- El primero parece un entero, pero es una fracción sobre 1: $\frac{x^2-9}{1}$.
 
-$$
-\frac{3x+6}{x^2-16} \times \frac{x-4}{x+2}
-$$
+**Razonamiento:**
+1.  Reescribimos e invertimos:
+    $$\frac{x^2-9}{1} \cdot \frac{2}{x+3}$$
+2.  Factorizamos:
+    $$\frac{(x+3)(x-3)}{1} \cdot \frac{2}{x+3}$$
+3.  Cancelamos $(x+3)$.
+4.  Queda: $2(x-3)$.
 
-**Paso 2:** Factorizamos:
-
-$$
-3x+6 = 3(x+2), \quad x^2-16 = (x+4)(x-4)
-$$
-
-**Paso 3:** Cancelamos:
-
-$$
-\frac{3(x+2)}{(x+4)(x-4)} \times \frac{x-4}{x+2} = \frac{3\cancel{(x+2)}}{(x+4)\cancel{(x-4)}} \times \frac{\cancel{x-4}}{\cancel{x+2}}
-$$
-
-$$
-= \frac{3}{x+4}
-$$
-
-$$
-\boxed{\frac{3x+6}{x^2-16} \div \frac{x+2}{x-4} = \frac{3}{x+4}}
-$$
+**Resultado:** $\boxed{2(x-3)}$
 
 ---
 
-### Ejemplo 9
+## 📝 Ejercicios de Práctica
 
-Resolver $\dfrac{x^2-4x+4}{x^2+3x} \div \dfrac{x-2}{x^2-9}$.
-
-**Paso 1:** Invertimos:
-
-$$
-\frac{x^2-4x+4}{x^2+3x} \times \frac{x^2-9}{x-2}
-$$
-
-**Paso 2:** Factorizamos todo:
-
-$$
-x^2-4x+4 = (x-2)^2, \quad x^2+3x = x(x+3), \quad x^2-9 = (x+3)(x-3)
-$$
-
-**Paso 3:** Simplificamos:
-
-$$
-\frac{(x-2)^2}{x(x+3)} \times \frac{(x+3)(x-3)}{x-2}
-$$
-
-$$
-= \frac{(x-2)^{\cancel{2}}}{x\cancel{(x+3)}} \times \frac{\cancel{(x+3)}(x-3)}{\cancel{x-2}} = \frac{(x-2)(x-3)}{x}
-$$
-
-$$
-\boxed{\frac{x^2-4x+4}{x^2+3x} \div \frac{x-2}{x^2-9} = \frac{(x-2)(x-3)}{x}}
-$$
-
----
-
-### Ejemplo 10
-
-Resolver $(x^2 - 25) \div \dfrac{x+5}{3}$.
-
-**Paso 1:** Escribimos $x^2-25$ como fracción:
-
-$$
-\frac{x^2-25}{1} \div \frac{x+5}{3} = \frac{x^2-25}{1} \times \frac{3}{x+5}
-$$
-
-**Paso 2:** Factorizamos y simplificamos:
-
-$$
-= \frac{(x+5)(x-5)}{1} \times \frac{3}{x+5} = 3(x-5)
-$$
-
-$$
-\boxed{(x^2-25) \div \frac{x+5}{3} = 3(x-5)}
-$$
-
----
-
-## 📝 Ejercicios de práctica
-
-### División de monomios
-
-**Ejercicio 1:** Resuelve $\dfrac{8x^4}{3y^2} \div \dfrac{2x^2}{9y}$.
+### Ejercicio 1
+Divide $\dfrac{10a^2}{3b} \div \dfrac{5a}{6b}$.
 
 <details>
 <summary>Ver solución</summary>
 
-$$
-\frac{8x^4}{3y^2} \times \frac{9y}{2x^2} = \frac{72x^4y}{6x^2y^2} = \frac{12x^2}{y}
-$$
+**Razonamiento:** Invierte $\to \frac{6b}{5a}$.
+Simplifica: $10/5=2$, $6/3=2 \to 4$. $a^2/a=a$, $b/b=1$.
+**Resultado:** $\boxed{4a}$
+
+</details>
+
+### Ejercicio 2
+Divide $\dfrac{3x}{y} \div 6x$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** $6x$ se invierte a $\frac{1}{6x}$.
+**Razonamiento:** $\frac{3x}{y} \cdot \frac{1}{6x} = \frac{3x}{6xy} = \frac{1}{2y}$.
+**Resultado:** $\boxed{\frac{1}{2y}}$
+
+</details>
+
+### Ejercicio 3
+Divide $\dfrac{x+5}{x-1} \div \dfrac{x+5}{2}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** $\frac{x+5}{x-1} \cdot \frac{2}{x+5}$. Se van los $(x+5)$.
+**Resultado:** $\boxed{\frac{2}{x-1}}$
+
+</details>
+
+### Ejercicio 4
+Divide $\dfrac{x^2-1}{x} \div \dfrac{x+1}{x}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** $\frac{(x+1)(x-1)}{x} \cdot \frac{x}{x+1}$. Queda $x-1$.
+**Resultado:** $\boxed{x-1}$
+
+</details>
+
+### Ejercicio 5
+Divide $\dfrac{4x-8}{3} \div \dfrac{x-2}{6}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** $\frac{4(x-2)}{3} \cdot \frac{6}{x-2}$. Cancelamos $(x-2)$. $4 \cdot 2 = 8$.
+**Resultado:** $\boxed{8}$
+
+</details>
+
+### Ejercicio 6
+Divide $\dfrac{x^2-2x+1}{x^2+x} \div \dfrac{x-1}{x}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** $\frac{(x-1)^2}{x(x+1)} \cdot \frac{x}{x-1}$.
+Se va un $(x-1)$ y la $x$.
+**Resultado:** $\boxed{\frac{x-1}{x+1}}$
+
+</details>
+
+### Ejercicio 7
+Divide $\dfrac{a^2-b^2}{2} \div (a+b)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** $\frac{(a+b)(a-b)}{2} \cdot \frac{1}{a+b}$.
+**Resultado:** $\boxed{\frac{a-b}{2}}$
+
+</details>
+
+### Ejercicio 8
+Divide $\dfrac{1}{x^2-9} \div \dfrac{1}{x-3}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** $\frac{1}{(x+3)(x-3)} \cdot \frac{x-3}{1}$.
+**Resultado:** $\boxed{\frac{1}{x+3}}$
+
+</details>
+
+### Ejercicio 9
+Divide $\dfrac{x^2+7x+12}{x} \div \dfrac{x+4}{2x}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** $\frac{(x+4)(x+3)}{x} \cdot \frac{2x}{x+4}$.
+Cancelamos $(x+4)$ y $x$. Queda $2(x+3)$.
+**Resultado:** $\boxed{2x+6}$
+
+</details>
+
+### Ejercicio 10
+Divide $\dfrac{x^3}{y^2} \div \dfrac{x^2}{y^3}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** $\frac{x^3}{y^2} \cdot \frac{y^3}{x^2} = x \cdot y$.
+**Resultado:** $\boxed{xy}$
 
 </details>
 
 ---
 
-**Ejercicio 2:** Resuelve $\dfrac{15a^3b}{4c^2} \div \dfrac{5ab^2}{8c}$.
+## 🔑 Resumen
 
-<details>
-<summary>Ver solución</summary>
+| Operación | Acción Clave |
+| :--- | :--- |
+| **Multiplicación** | Directo ($\to$) |
+| **División** | Invertir el segundo y multiplicar ($\times \leftrightarrow$) |
 
-$$
-\frac{15a^3b}{4c^2} \times \frac{8c}{5ab^2} = \frac{120a^3bc}{20ab^2c^2} = \frac{6a^2}{bc}
-$$
-
-</details>
-
----
-
-### División con factorización
-
-**Ejercicio 3:** Resuelve $\dfrac{x^2-9}{x+4} \div \dfrac{x+3}{x+4}$.
-
-<details>
-<summary>Ver solución</summary>
-
-$$
-\frac{x^2-9}{x+4} \times \frac{x+4}{x+3} = \frac{(x+3)(x-3)}{x+4} \times \frac{x+4}{x+3} = x - 3
-$$
-
-</details>
-
----
-
-**Ejercicio 4:** Resuelve $\dfrac{x^2+4x+3}{x^2-4} \div \dfrac{x+1}{x-2}$.
-
-<details>
-<summary>Ver solución</summary>
-
-$x^2+4x+3 = (x+1)(x+3)$ y $x^2-4 = (x+2)(x-2)$:
-
-$$
-\frac{(x+1)(x+3)}{(x+2)(x-2)} \times \frac{x-2}{x+1} = \frac{x+3}{x+2}
-$$
-
-</details>
-
----
-
-**Ejercicio 5:** Resuelve $\dfrac{2x-8}{x^2-1} \div \dfrac{x-4}{x+1}$.
-
-<details>
-<summary>Ver solución</summary>
-
-$2x-8 = 2(x-4)$ y $x^2-1 = (x+1)(x-1)$:
-
-$$
-\frac{2(x-4)}{(x+1)(x-1)} \times \frac{x+1}{x-4} = \frac{2}{x-1}
-$$
-
-</details>
-
----
-
-**Ejercicio 6:** Resuelve $(x^2 - 16) \div \dfrac{x-4}{5}$.
-
-<details>
-<summary>Ver solución</summary>
-
-$$
-\frac{x^2-16}{1} \times \frac{5}{x-4} = \frac{(x+4)(x-4)}{1} \times \frac{5}{x-4} = 5(x+4)
-$$
-
-</details>
-
----
+> Recuerda: Divide y vencerás... ¡pero invirtiendo primero!

@@ -43,23 +43,34 @@ Esta aceleración se llama **Centrípeta** (busca el centro) porque es la fuerza
 Para describir algo que gira, lo primero que preguntamos es: "¿Qué tan rápido da las vueltas?". Tenemos dos formas de medirlo:
 
 ### **1. El Período ($T$): "Tiempo por vuelta"**
+
 Es el tiempo que tardas en completar **un ciclo completo**.
+
 *   *Ejemplo:* La Tierra tarda 365 días en dar una vuelta al Sol. $T = 365\,\text{días}$.
-*   **Fórmula:** 
+
+**Fórmula:**
+
 $$
 T = \frac{\text{Tiempo total}}{\text{Número de vueltas}}
 $$
 
 ### **2. La Frecuencia ($f$): "Vueltas por tiempo"**
+
 Es al revés. Cuántas vueltas logras dar en **un segundo**.
+
 *   *Ejemplo:* Un ventilador rápido da 10 vueltas en un segundo. $f = 10\,\mathrm{Hz}$.
-*   **Fórmula:** 
+
+**Fórmula:**
+
 $$
 f = \frac{\text{Número de vueltas}}{\text{Tiempo total}}
 $$
 
 > 🔄 **Son inversos:** Si tardas mucho en dar una vuelta (Período grande), das pocas vueltas por segundo (Frecuencia pequeña).
-> $$T = \frac{1}{f} \quad \text{y} \quad f = \frac{1}{T}$$
+
+$$
+T = \frac{1}{f} \quad \text{y} \quad f = \frac{1}{T}
+$$
 
 ---
 
@@ -68,22 +79,30 @@ $$
 Imagina un carrusel. Tú te sientas en el borde (el caballo exterior) y tu amigo se sienta cerca del centro. Ambos completan una vuelta al mismo tiempo, pero tú recorres mucha más distancia que él.
 
 ### **1. Velocidad Angular ($\omega$): "¿Qué tan rápido giramos?"**
+
 Mide el **ángulo** que barres por segundo.
+
 *   En el carrusel, tú y tu amigo tienen la **misma** velocidad angular (ambos dan 1 vuelta en el mismo tiempo).
 *   Se mide en **radianes por segundo ($rad/s$)**.
-*   **Fórmula:** Una vuelta completa son $2\pi$ radianes.
-    $$
-    \omega = \frac{2\pi}{T} = 2\pi f 
-    $$
+
+**Fórmula:** Una vuelta completa son $2\pi$ radianes.
+
+$$
+\omega = \frac{2\pi}{T} = 2\pi f
+$$
 
 ### **2. Velocidad Tangencial ($v$): "¿Qué tan rápido nos movemos?"**
+
 Mide los **metros** que recorres por segundo.
+
 *   En el carrusel, tú vas **más rápido** que tu amigo porque estás más lejos del centro y tienes que recorrer un círculo más grande en el mismo tiempo.
 *   Se mide en **metros por segundo ($m/s$)**.
-*   **Fórmula:** Depende del radio ($r$).
-    $$
-    v = \omega \cdot r 
-    $$
+
+**Fórmula:** Depende del radio ($r$).
+
+$$
+v = \omega \cdot r
+$$
 
 ![Amigos en carrusel - MCU](/images/fisica/cinematica/mcu/carrusel-mcu.png)
 
@@ -98,16 +117,25 @@ Una rueda de radio $0.35\,\mathrm{m}$ gira rápidamente dando **2 vueltas cada s
 ![MCU - Rueda a 2 vueltas/s](/images/fisica/cinematica/mcu/rueda-2hz.png)
 
 **Paso 1: Entender los datos**
+
 *   Radio ($r$) = $0.35\,\mathrm{m}$.
 *   Frecuencia ($f$) = $2\,\mathrm{Hz}$ (2 vueltas por segundo).
 
 **Paso 2: Calcular la velocidad de giro ($\omega$)**
+
 Cada vuelta son $2\pi$ radianes. Si da 2 vueltas:
-$$ \omega = 2\pi \cdot 2 = 4\pi \approx 12.57\,\mathrm{rad/s} $$
+
+$$
+\omega = 2\pi \cdot 2 = 4\pi \approx 12.57\,\mathrm{rad/s}
+$$
 
 **Paso 3: Calcular la velocidad real ($v$)**
+
 Ahora multiplicamos el giro por el radio:
-$$ v = 12.57 \cdot 0.35 \approx 4.4\,\mathrm{m/s} $$
+
+$$
+v = 12.57 \cdot 0.35 \approx 4.4\,\mathrm{m/s}
+$$
 
 > **Resultado:** El borde de la rueda viaja a **4.4 m/s** (unos 16 km/h).
 
@@ -120,13 +148,28 @@ Un auto entra a una rotonda de $50\,\mathrm{m}$ de radio a una velocidad de $20\
 ![Auto en la curva](/images/fisica/cinematica/mcu/carro-en-mcu.png)
 
 **Análisis:**
+
 Aunque el velocímetro marque siempre 20, el auto está girando. Necesita una aceleración centrípeta ($a_c$) para no salirse de la curva.
 
 **Fórmula:**
-$$ a_c = \frac{v^2}{r} $$
+
+$$
+a_c = \frac{v^2}{r}
+$$
 
 **Cálculo:**
-$$ a_c = \frac{20^2}{50} = \frac{400}{50} = 8\,\mathrm{m/s^2} $$
+
+$$
+a_c = \frac{20^2}{50}
+$$
+
+$$
+= \frac{400}{50}
+$$
+
+$$
+= 8\,\mathrm{m/s^2}
+$$
 
 > **Interpretación:** Siente una aceleración lateral de $8\,\mathrm{m/s^2}$, casi tan fuerte como la gravedad ($9.8\,\mathrm{m/s^2}$). ¡Es una curva cerrada tomada a alta velocidad!
 
@@ -142,11 +185,14 @@ Un ventilador gira a **120 RPM** (revoluciones por minuto). ¿Cuál es su frecue
 <summary>Ver solución</summary>
 
 **Razonamiento:**
+
 Si da 120 vueltas en 60 segundos (1 minuto), ¿cuántas da en 1 segundo?
 
-$$ f = \frac{120}{60} = 2\,\mathrm{Hz} $$
+$$
+f = \frac{120}{60} = 2\,\mathrm{Hz}
+$$
 
-**Respuesta:** **2 Hz**.
+**Respuesta:** $\boxed{2\,\mathrm{Hz}}$
 
 </details>
 
@@ -160,11 +206,20 @@ Un carrusel tarda **20 segundos** en dar una vuelta completa. ¿Cuál es su velo
 <summary>Ver solución</summary>
 
 **Datos:** $T = 20\,\mathrm{s}$.
-**Fórmula:** $\omega = \frac{2\pi}{T}$
 
-$$ \omega = \frac{6.28}{20} \approx 0.314\,\mathrm{rad/s} $$
+**Fórmula:**
 
-**Respuesta:** **0.314 rad/s**.
+$$
+\omega = \frac{2\pi}{T}
+$$
+
+**Cálculo:**
+
+$$
+\omega = \frac{6.28}{20} \approx 0.314\,\mathrm{rad/s}
+$$
+
+**Respuesta:** $\boxed{0.314\,\mathrm{rad/s}}$
 
 </details>
 

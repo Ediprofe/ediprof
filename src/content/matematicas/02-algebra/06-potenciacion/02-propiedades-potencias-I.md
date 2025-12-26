@@ -1,328 +1,369 @@
-# ⚡ Propiedades de las Potencias (I)
+# **Propiedades de las Potencias (I)**
 
-En esta lección estudiaremos las primeras propiedades fundamentales de las potencias: el producto de potencias con la misma base y el cociente de potencias con la misma base.
-
----
-
-## 📖 Producto de potencias con la misma base
-
-Cuando multiplicamos potencias que tienen la **misma base**, se conserva la base y se **suman los exponentes**:
-
-$$
-a^m \times a^n = a^{m+n}
-$$
-
-### Demostración
-
-$$
-a^m \times a^n = \underbrace{(a \times a \times \cdots \times a)}_{m \text{ veces}} \times \underbrace{(a \times a \times \cdots \times a)}_{n \text{ veces}} = \underbrace{a \times a \times \cdots \times a}_{m+n \text{ veces}} = a^{m+n}
-$$
+Imagina que estás multiplicando bacterias en un laboratorio. Cada hora se duplican. Si comienzas con $2^5$ bacterias y luego las multiplicas por otro grupo de $2^3$, ¿cómo calculas rápidamente el total? No necesitas hacer la cuenta larga cada vez. Las matemáticas tienen "atajos" llamados propiedades que nos permiten operar con exponentes a la velocidad de la luz.
 
 ---
 
-### Ejemplo 1
+## 🎯 ¿Qué vas a aprender?
 
-Simplificar $x^3 \times x^5$.
-
-$$
-x^3 \times x^5 = x^{3+5} = x^8
-$$
-
-$$
-\boxed{x^3 \times x^5 = x^8}
-$$
+- El comportamiento de las potencias cuando se multiplican (Producto de bases iguales).
+- Qué sucede cuando se dividen (Cociente de bases iguales).
+- La demostración visual de por qué "sumamos" o "restamos" los exponentes.
+- Cómo manejar exponentes negativos en medio de estas operaciones.
 
 ---
 
-### Ejemplo 2
+## 🔍 Reglas de Juego para la Misma Base
 
-Simplificar $2^4 \times 2^3$.
+Estas reglas **SOLO** funcionan si la base es idéntica (ej. $x$ con $x$, $2$ con $2$). Si tienes $x^2 \cdot y^3$, ¡no inventes reglas!
+
+### 1. Producto (Multiplicación)
+
+Si multiplicas bases iguales, los exponentes se **SUMAN**.
 
 $$
-2^4 \times 2^3 = 2^{4+3} = 2^7 = 128
+a^m \cdot a^n = a^{m+n}
 $$
 
+### 2. Cociente (División)
+
+Si divides bases iguales, los exponentes se **RESTAN** (el de arriba menos el de abajo).
+
 $$
-\boxed{2^4 \times 2^3 = 128}
+\frac{a^m}{a^n} = a^{m-n}
 $$
 
 ---
 
-### Ejemplo 3
+## ⚙️ Ejemplos Resueltos
 
-Simplificar $a^2 \times a \times a^5$.
+### Ejemplo 1: Multiplicación básica
+
+Simplifica $x^3 \cdot x^4$.
+
+**Datos:**
+- Misma base: $x$.
+- Exponentes: 3 y 4.
+- Operación: Multiplicación → Suma.
+
+**Razonamiento:**
 
 $$
-a^2 \times a^1 \times a^5 = a^{2+1+5} = a^8
+x^3 \cdot x^4 = (x \cdot x \cdot x) \cdot (x \cdot x \cdot x \cdot x)
+$$
+
+En total hay 7 equis multiplicándose.
+
+$$
+= x^{3+4}
 $$
 
 $$
-\boxed{a^2 \times a \times a^5 = a^8}
+= x^7
 $$
+
+**Resultado:** $\boxed{x^7}$
 
 ---
 
-### Ejemplo 4
+### Ejemplo 2: División básica
 
-Simplificar $x^{-2} \times x^5$.
+Simplifica $\dfrac{y^8}{y^3}$.
+
+**Datos:**
+- Operación: División → Resta.
+
+**Razonamiento:**
 
 $$
-x^{-2} \times x^5 = x^{-2+5} = x^3
+y^{8-3}
 $$
 
 $$
-\boxed{x^{-2} \times x^5 = x^3}
+= y^5
 $$
+
+(Es como si canceláramos 3 íes de arriba con las 3 de abajo).
+
+**Resultado:** $\boxed{y^5}$
 
 ---
 
-### Ejemplo 5
+### Ejemplo 3: Multiplicación con negativos
 
-Simplificar $y^{-3} \times y^{-4}$.
+Simplifica $a^{-5} \cdot a^2$.
+
+**Datos:**
+- Sumar exponentes con distintos signos.
+
+**Razonamiento:**
 
 $$
-y^{-3} \times y^{-4} = y^{-3+(-4)} = y^{-7} = \frac{1}{y^7}
+a^{-5 + 2}
 $$
 
+Debo 5 y pago 2, quedo debiendo 3.
+
 $$
-\boxed{y^{-3} \times y^{-4} = y^{-7}}
+= a^{-3}
 $$
+
+Para dejarlo elegante (con exponente positivo):
+
+$$
+= \frac{1}{a^3}
+$$
+
+**Resultado:** $\boxed{\frac{1}{a^3}}$
 
 ---
 
-## 📖 Cociente de potencias con la misma base
+### Ejemplo 4: El "sándwich" de potencias
 
-Cuando dividimos potencias que tienen la **misma base**, se conserva la base y se **restan los exponentes**:
+Simplifica $\dfrac{x^5 \cdot x^2}{x^4}$.
+
+**Datos:**
+- Combinación de multiplicar (arriba) y dividir.
+
+**Razonamiento:**
+
+1. **Arriba:**
 
 $$
-\frac{a^m}{a^n} = a^{m-n} \quad \text{(para } a \neq 0\text{)}
+x^5 \cdot x^2 = x^{5+2} = x^7
 $$
 
-### Demostración
+2. **División:**
 
 $$
-\frac{a^m}{a^n} = a^m \times a^{-n} = a^{m+(-n)} = a^{m-n}
+\frac{x^7}{x^4}
 $$
+
+3. **Resta:**
+
+$$
+x^{7-4} = x^3
+$$
+
+**Resultado:** $\boxed{x^3}$
 
 ---
 
-### Ejemplo 6
+### Ejemplo 5: División "trampa" (Resta de negativos)
 
-Simplificar $\dfrac{x^7}{x^3}$.
+Simplifica $\dfrac{m^2}{m^{-3}}$.
+
+**Datos:**
+- El exponente de abajo es negativo.
+- La regla dice: Restar el de abajo.
+
+**Razonamiento:**
 
 $$
-\frac{x^7}{x^3} = x^{7-3} = x^4
+m^{2 - (-3)}
+$$
+
+Menos por menos es más ('El enemigo de mi enemigo es mi amigo').
+
+$$
+m^{2 + 3}
 $$
 
 $$
-\boxed{\frac{x^7}{x^3} = x^4}
+= m^5
 $$
+
+**Resultado:** $\boxed{m^5}$
 
 ---
 
-### Ejemplo 7
+## 📝 Ejercicios de Práctica
 
-Simplificar $\dfrac{5^8}{5^5}$.
-
-$$
-\frac{5^8}{5^5} = 5^{8-5} = 5^3 = 125
-$$
-
-$$
-\boxed{\frac{5^8}{5^5} = 125}
-$$
-
----
-
-### Ejemplo 8
-
-Simplificar $\dfrac{a^3}{a^7}$.
-
-$$
-\frac{a^3}{a^7} = a^{3-7} = a^{-4} = \frac{1}{a^4}
-$$
-
-$$
-\boxed{\frac{a^3}{a^7} = \frac{1}{a^4}}
-$$
-
----
-
-### Ejemplo 9
-
-Simplificar $\dfrac{m^{-2}}{m^3}$.
-
-$$
-\frac{m^{-2}}{m^3} = m^{-2-3} = m^{-5} = \frac{1}{m^5}
-$$
-
-$$
-\boxed{\frac{m^{-2}}{m^3} = \frac{1}{m^5}}
-$$
-
----
-
-### Ejemplo 10
-
-Simplificar $\dfrac{x^{-4}}{x^{-6}}$.
-
-$$
-\frac{x^{-4}}{x^{-6}} = x^{-4-(-6)} = x^{-4+6} = x^2
-$$
-
-$$
-\boxed{\frac{x^{-4}}{x^{-6}} = x^2}
-$$
-
----
-
-## 📖 Combinando ambas propiedades
-
-### Ejemplo 11
-
-Simplificar $\dfrac{x^5 \times x^3}{x^4}$.
-
-**Paso 1:** Primero el numerador:
-
-$$
-x^5 \times x^3 = x^8
-$$
-
-**Paso 2:** Ahora dividimos:
-
-$$
-\frac{x^8}{x^4} = x^{8-4} = x^4
-$$
-
-$$
-\boxed{\frac{x^5 \times x^3}{x^4} = x^4}
-$$
-
----
-
-### Ejemplo 12
-
-Simplificar $\dfrac{a^3 \times a^{-2}}{a^4 \times a^{-3}}$.
-
-**Numerador:** $a^3 \times a^{-2} = a^{3-2} = a^1 = a$
-
-**Denominador:** $a^4 \times a^{-3} = a^{4-3} = a^1 = a$
-
-$$
-\frac{a}{a} = 1
-$$
-
-$$
-\boxed{\frac{a^3 \times a^{-2}}{a^4 \times a^{-3}} = 1}
-$$
-
----
-
-## ⚠️ Importante
-
-Estas propiedades **solo aplican cuando las bases son iguales**:
-
-❌ $x^3 \times y^5 \neq (xy)^8$ (bases diferentes, no se puede sumar)
-
-✅ $x^3 \times x^5 = x^8$ (misma base, se suman exponentes)
-
----
-
-## 📋 Resumen
-
-| Propiedad | Fórmula |
-|:----------|:-------:|
-| Producto de potencias (misma base) | $a^m \times a^n = a^{m+n}$ |
-| Cociente de potencias (misma base) | $\dfrac{a^m}{a^n} = a^{m-n}$ |
-
----
-
-## 📝 Ejercicios de práctica
-
-### Producto de potencias
-
-**Ejercicio 1:** Simplifica $x^4 \times x^6$.
+### Ejercicio 1
+Simplifica $x^5 \cdot x^5$.
 
 <details>
 <summary>Ver solución</summary>
 
+**Razonamiento:**
+
 $$
-x^4 \times x^6 = x^{10}
+5 + 5 = 10
 $$
+
+**Resultado:** $\boxed{x^{10}}$
+
+</details>
+
+### Ejercicio 2
+Simplifica $\dfrac{a^{10}}{a^2}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+
+$$
+10 - 2 = 8
+$$
+
+**Resultado:** $\boxed{a^8}$
+
+</details>
+
+### Ejercicio 3
+Simplifica $2^3 \cdot 2^2$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+
+$$
+2^{3+2} = 2^5 = 32
+$$
+
+**Resultado:** $\boxed{32}$
+
+</details>
+
+### Ejercicio 4
+Simplifica $y \cdot y^6$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+
+La primera y tiene un 1 invisible.
+
+$$
+1 + 6 = 7
+$$
+
+**Resultado:** $\boxed{y^7}$
+
+</details>
+
+### Ejercicio 5
+Simplifica $\dfrac{x^5}{x^5}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+
+$$
+5 - 5 = 0
+$$
+
+Todo $x^0 = 1$.
+
+**Resultado:** $\boxed{1}$
+
+</details>
+
+### Ejercicio 6
+Simplifica $b^{-2} \cdot b^{-3}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+
+$$
+-2 + (-3) = -5
+$$
+
+**Resultado:** $\boxed{\frac{1}{b^5}}$
+
+</details>
+
+### Ejercicio 7
+Simplifica $\dfrac{x^3}{x^{-2}}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+
+$$
+3 - (-2) = 3 + 2 = 5
+$$
+
+**Resultado:** $\boxed{x^5}$
+
+</details>
+
+### Ejercicio 8
+Simplifica $a^3 \cdot a^2 \cdot a^4$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+
+$$
+3 + 2 + 4 = 9
+$$
+
+**Resultado:** $\boxed{a^9}$
+
+</details>
+
+### Ejercicio 9
+Simplifica $\dfrac{10^7}{10^4}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+
+$$
+10^{7-4} = 10^3 = 1000
+$$
+
+**Resultado:** $\boxed{1000}$
+
+</details>
+
+### Ejercicio 10
+Simplifica $\dfrac{x^2 \cdot x^4}{x^3 \cdot x}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+
+Numerador:
+
+$$
+x^6
+$$
+
+Denominador:
+
+$$
+x^3 \cdot x^1 = x^4
+$$
+
+División:
+
+$$
+6 - 4 = 2
+$$
+
+**Resultado:** $\boxed{x^2}$
 
 </details>
 
 ---
 
-**Ejercicio 2:** Simplifica $3^2 \times 3^4 \times 3$.
+## 🔑 Resumen
 
-<details>
-<summary>Ver solución</summary>
+| Operación | Clave | Ejemplo |
+| :--- | :--- | :--- |
+| **Multiplicación** ($\cdot$) | **Suma** exponentes | $x^2 \cdot x^3 = x^5$ |
+| **División** ($\div$) | **Resta** exponentes | $x^5 / x^2 = x^3$ |
 
-$$
-3^2 \times 3^4 \times 3^1 = 3^{2+4+1} = 3^7 = 2187
-$$
-
-</details>
-
----
-
-**Ejercicio 3:** Simplifica $a^{-3} \times a^7$.
-
-<details>
-<summary>Ver solución</summary>
-
-$$
-a^{-3} \times a^7 = a^{-3+7} = a^4
-$$
-
-</details>
-
----
-
-### Cociente de potencias
-
-**Ejercicio 4:** Simplifica $\dfrac{y^9}{y^4}$.
-
-<details>
-<summary>Ver solución</summary>
-
-$$
-\frac{y^9}{y^4} = y^{9-4} = y^5
-$$
-
-</details>
-
----
-
-**Ejercicio 5:** Simplifica $\dfrac{b^2}{b^8}$.
-
-<details>
-<summary>Ver solución</summary>
-
-$$
-\frac{b^2}{b^8} = b^{2-8} = b^{-6} = \frac{1}{b^6}
-$$
-
-</details>
-
----
-
-### Combinadas
-
-**Ejercicio 6:** Simplifica $\dfrac{m^3 \times m^5}{m^2 \times m^4}$.
-
-<details>
-<summary>Ver solución</summary>
-
-Numerador: $m^3 \times m^5 = m^8$
-
-Denominador: $m^2 \times m^4 = m^6$
-
-$$
-\frac{m^8}{m^6} = m^2
-$$
-
-</details>
-
----
+> Recuerda: La base se queda quieta, ¡solo se mueven los exponentes!

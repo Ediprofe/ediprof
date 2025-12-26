@@ -1,365 +1,261 @@
-# ✖️ Multiplicación de Fracciones Algebraicas
+# **Multiplicación de Fracciones Algebraicas**
 
-En esta lección aprenderemos a multiplicar fracciones algebraicas, una operación más sencilla que la suma y la resta porque no requiere buscar denominador común.
-
----
-
-## 📖 Regla de multiplicación
-
-Para multiplicar fracciones, se multiplican los numeradores entre sí y los denominadores entre sí:
-
-$$
-\frac{a}{b} \times \frac{c}{d} = \frac{a \times c}{b \times d}
-$$
+¿Recuerdas cómo se multiplican las fracciones normales? ¡Directo! Numerador con numerador y denominador con denominador. En álgebra es igual de sencillo, pero tenemos una regla de oro que te ahorrará muchísimo trabajo: **primero simplifica, luego multiplica**.
 
 ---
 
-## 📖 Método eficiente
+## 🎯 ¿Qué vas a aprender?
 
-Es recomendable **simplificar antes de multiplicar** para evitar trabajar con expresiones grandes:
-
-1. **Factorizar** todos los numeradores y denominadores
-2. **Cancelar** los factores comunes entre cualquier numerador y denominador
-3. **Multiplicar** los factores restantes
+- La regla básica: multiplicar en línea recta.
+- El secreto del éxito: factorizar y cancelar ANTES de multiplicar.
+- Cómo manejar potencias y leyes de exponentes.
+- A multiplicar polinomios complejos sin perder la cabeza.
 
 ---
 
-## 📖 Multiplicación de monomios
+## 🔍 La Estrategia Inteligente
 
-### Ejemplo 1
+Si multiplicas todo de golpe, obtendrás expresiones gigantescas imposibles de manejar. Sigue estos pasos:
 
-Resolver $\dfrac{3x^2}{4y} \times \dfrac{8y^2}{9x}$.
-
-**Solución directa:**
-
-$$
-\frac{3x^2 \times 8y^2}{4y \times 9x} = \frac{24x^2y^2}{36xy}
-$$
-
-Simplificamos:
+1.  **Factoriza TODO:** Numeradores y denominadores.
+2.  **Cancela:** Elimina factores iguales que estén uno arriba y otro abajo (incluso en diagonal).
+3.  **Multiplica:** Junta lo que sobrevivió.
 
 $$
-= \frac{24}{36} \cdot \frac{x^2}{x} \cdot \frac{y^2}{y} = \frac{2}{3} \cdot x \cdot y = \frac{2xy}{3}
-$$
-
-$$
-\boxed{\frac{3x^2}{4y} \times \frac{8y^2}{9x} = \frac{2xy}{3}}
+\frac{A}{B} \cdot \frac{C}{D} = \frac{A \cdot C}{B \cdot D}
 $$
 
 ---
 
-### Ejemplo 2
+## ⚙️ Ejemplos Resueltos
 
-Resolver $\dfrac{15a^3b}{10ab^2} \times \dfrac{4a^2b^3}{9a^4}$.
+### Ejemplo 1: Multiplicación de Monomios
 
-**Paso 1:** Simplificamos antes de multiplicar:
+Multiplica: $\dfrac{2x^2}{3y} \cdot \dfrac{9y^2}{4x}$
 
-$$
-\frac{15a^3b}{10ab^2} = \frac{3a^2}{2b}
-$$
+**Datos:**
+- Solo multiplicaciones y divisiones.
 
-$$
-\frac{4a^2b^3}{9a^4} = \frac{4b^3}{9a^2}
-$$
+**Razonamiento:**
+1.  Multiplicamos coeficientes:
+    $$\frac{2 \cdot 9}{3 \cdot 4} = \frac{18}{12}$$
+    Simplificamos por 6: $\frac{3}{2}$.
+2.  Multiplicamos variables:
+    *   $x$: Arriba $x^2$, abajo $x$. Queda $x$ arriba.
+    *   $y$: Arriba $y^2$, abajo $y$. Queda $y$ arriba.
+3.  Juntamos todo:
 
-**Paso 2:** Multiplicamos:
-
-$$
-\frac{3a^2}{2b} \times \frac{4b^3}{9a^2} = \frac{3a^2 \cdot 4b^3}{2b \cdot 9a^2} = \frac{12a^2b^3}{18a^2b} = \frac{2b^2}{3}
-$$
-
-$$
-\boxed{\frac{15a^3b}{10ab^2} \times \frac{4a^2b^3}{9a^4} = \frac{2b^2}{3}}
-$$
+**Resultado:** $\boxed{\frac{3xy}{2}}$
 
 ---
 
-## 📖 Multiplicación con polinomios
+### Ejemplo 2: Cancelación cruzada (Monomios)
 
-### Ejemplo 3
+Multiplica: $\dfrac{5a^3}{7b} \cdot \dfrac{14b^4}{10a^2}$
 
-Resolver $\dfrac{x+2}{3} \times \dfrac{6}{x-1}$.
+**Datos:**
+- Podemos simplificar cruzado antes de operar.
 
-**Solución:**
+**Razonamiento:**
+1.  **Números:**
+    *   5 y 10 $\to$ 1 y 2.
+    *   14 y 7 $\to$ 2 y 1.
+    *   Queda $\frac{1 \cdot 2}{1 \cdot 2} = 1$.
+2.  **Letras:**
+    *   $a^3 / a^2 \to a$.
+    *   $b^4 / b \to b^3$.
 
-$$
-\frac{(x+2) \times 6}{3 \times (x-1)} = \frac{6(x+2)}{3(x-1)} = \frac{2(x+2)}{x-1}
-$$
-
-$$
-\boxed{\frac{x+2}{3} \times \frac{6}{x-1} = \frac{2(x+2)}{x-1}}
-$$
-
----
-
-### Ejemplo 4
-
-Resolver $\dfrac{x^2-4}{x+3} \times \dfrac{x+3}{x-2}$.
-
-**Paso 1:** Factorizamos $x^2-4 = (x+2)(x-2)$:
-
-$$
-\frac{(x+2)(x-2)}{x+3} \times \frac{x+3}{x-2}
-$$
-
-**Paso 2:** Cancelamos $(x+3)$ y $(x-2)$:
-
-$$
-= \frac{(x+2)\cancel{(x-2)}}{\cancel{x+3}} \times \frac{\cancel{x+3}}{\cancel{x-2}} = x + 2
-$$
-
-$$
-\boxed{\frac{x^2-4}{x+3} \times \frac{x+3}{x-2} = x + 2}
-$$
+**Resultado:** $\boxed{ab^3}$
 
 ---
 
-### Ejemplo 5
+### Ejemplo 3: Polinomios simples
 
-Resolver $\dfrac{x^2-9}{x^2+4x+4} \times \dfrac{x+2}{x-3}$.
+Multiplica: $\dfrac{3x+3}{5} \cdot \dfrac{10}{x+1}$
 
-**Paso 1:** Factorizamos:
+**Datos:**
+- Numerador factorizable: $3x+3$.
 
-$$
-x^2 - 9 = (x+3)(x-3)
-$$
+**Razonamiento:**
+1.  Factorizamos:
+    $$\frac{3(x+1)}{5} \cdot \frac{10}{x+1}$$
+2.  Cancelamos:
+    *   $(x+1)$ con $(x+1)$.
+    *   10 con 5 $\to$ queda 2 arriba.
+3.  Multiplicamos lo que queda: $3 \cdot 2 = 6$.
 
-$$
-x^2 + 4x + 4 = (x+2)^2
-$$
-
-**Paso 2:** Escribimos y cancelamos:
-
-$$
-\frac{(x+3)(x-3)}{(x+2)^2} \times \frac{x+2}{x-3} = \frac{(x+3)\cancel{(x-3)}}{(x+2)^{\cancel{2}}} \times \frac{\cancel{x+2}}{\cancel{x-3}}
-$$
-
-$$
-= \frac{x+3}{x+2}
-$$
-
-$$
-\boxed{\frac{x^2-9}{x^2+4x+4} \times \frac{x+2}{x-3} = \frac{x+3}{x+2}}
-$$
+**Resultado:** $\boxed{6}$
 
 ---
 
-### Ejemplo 6
+### Ejemplo 4: Diferencia de Cuadrados
 
-Resolver $\dfrac{x^2+5x+6}{x^2-1} \times \dfrac{x-1}{x+2}$.
+Multiplica: $\dfrac{x^2-4}{x+3} \cdot \dfrac{x^2+3x}{x-2}$
 
-**Paso 1:** Factorizamos:
+**Datos:**
+- $x^2-4 = (x+2)(x-2)$.
+- $x^2+3x = x(x+3)$.
 
-$$
-x^2 + 5x + 6 = (x+2)(x+3)
-$$
+**Razonamiento:**
+1.  Escribimos todo factorizado:
+    $$\frac{(x+2)(x-2)}{x+3} \cdot \frac{x(x+3)}{x-2}$$
+2.  Cancelamos factores iguales (uno arriba, otro abajo):
+    *   $(x-2)$ con $(x-2)$.
+    *   $(x+3)$ con $(x+3)$.
+3.  Sobrevivientes: $(x+2)$ y $x$.
 
-$$
-x^2 - 1 = (x+1)(x-1)
-$$
-
-**Paso 2:** Cancelamos:
-
-$$
-\frac{(x+2)(x+3)}{(x+1)(x-1)} \times \frac{x-1}{x+2} = \frac{\cancel{(x+2)}(x+3)}{(x+1)\cancel{(x-1)}} \times \frac{\cancel{x-1}}{\cancel{x+2}}
-$$
-
-$$
-= \frac{x+3}{x+1}
-$$
-
-$$
-\boxed{\frac{x^2+5x+6}{x^2-1} \times \frac{x-1}{x+2} = \frac{x+3}{x+1}}
-$$
+**Resultado:** $\boxed{x(x+2)}$
 
 ---
 
-### Ejemplo 7
+### Ejemplo 5: Trinomios y simplificación masiva
 
-Resolver $\dfrac{2x}{x^2-4} \times \dfrac{x+2}{6}$.
+Multiplica: $\dfrac{x^2+5x+6}{x^2+x-2} \cdot \dfrac{x-1}{x+3}$
 
-**Paso 1:** Factorizamos $x^2-4 = (x+2)(x-2)$:
+**Datos:**
+- Trinomio 1: $(x+3)(x+2)$.
+- Trinomio 2: $(x+2)(x-1)$.
 
-$$
-\frac{2x}{(x+2)(x-2)} \times \frac{x+2}{6}
-$$
+**Razonamiento:**
+1.  Factorizamos todo:
+    $$\frac{(x+3)(x+2)}{(x+2)(x-1)} \cdot \frac{x-1}{x+3}$$
+2.  Cancelamos:
+    *   $(x+3)$ con $(x+3)$.
+    *   $(x+2)$ con $(x+2)$.
+    *   $(x-1)$ con $(x-1)$.
+3.  ¡Se canceló todo! Cuando todo se cancela multiplicando, el resultado es 1.
 
-**Paso 2:** Cancelamos $(x+2)$:
-
-$$
-= \frac{2x}{(x-2) \cdot 6} = \frac{2x}{6(x-2)} = \frac{x}{3(x-2)}
-$$
-
-$$
-\boxed{\frac{2x}{x^2-4} \times \frac{x+2}{6} = \frac{x}{3(x-2)}}
-$$
-
----
-
-### Ejemplo 8
-
-Resolver $\dfrac{x^2-6x+9}{x^2+x-12} \times \dfrac{x+4}{x-3}$.
-
-**Paso 1:** Factorizamos:
-
-$$
-x^2 - 6x + 9 = (x-3)^2
-$$
-
-$$
-x^2 + x - 12 = (x+4)(x-3)
-$$
-
-**Paso 2:** Cancelamos:
-
-$$
-\frac{(x-3)^2}{(x+4)(x-3)} \times \frac{x+4}{x-3} = \frac{(x-3)^{\cancel{2}}}{\cancel{(x+4)}(x-3)} \times \frac{\cancel{x+4}}{\cancel{x-3}}
-$$
-
-$$
-= \frac{x-3}{x-3} = 1
-$$
-
-$$
-\boxed{\frac{x^2-6x+9}{x^2+x-12} \times \frac{x+4}{x-3} = 1}
-$$
+**Resultado:** $\boxed{1}$
 
 ---
 
-## 📖 Multiplicación de más de dos fracciones
+## 📝 Ejercicios de Práctica
 
-### Ejemplo 9
-
-Resolver $\dfrac{x}{x+1} \times \dfrac{x+1}{x+2} \times \dfrac{x+2}{x+3}$.
-
-**Solución:**
-
-Cancelamos los factores comunes sucesivamente:
-
-$$
-\frac{x}{\cancel{x+1}} \times \frac{\cancel{x+1}}{\cancel{x+2}} \times \frac{\cancel{x+2}}{x+3} = \frac{x}{x+3}
-$$
-
-$$
-\boxed{\frac{x}{x+1} \times \frac{x+1}{x+2} \times \frac{x+2}{x+3} = \frac{x}{x+3}}
-$$
-
----
-
-### Ejemplo 10
-
-Resolver $\dfrac{x^2-1}{x^2-4} \times \dfrac{x+2}{x+1} \times \dfrac{x-2}{x-1}$.
-
-**Paso 1:** Factorizamos:
-
-$$
-x^2 - 1 = (x+1)(x-1), \quad x^2 - 4 = (x+2)(x-2)
-$$
-
-**Paso 2:** Escribimos todo:
-
-$$
-\frac{(x+1)(x-1)}{(x+2)(x-2)} \times \frac{x+2}{x+1} \times \frac{x-2}{x-1}
-$$
-
-**Paso 3:** Cancelamos todos los factores:
-
-$$
-= \frac{\cancel{(x+1)}\cancel{(x-1)}}{\cancel{(x+2)}\cancel{(x-2)}} \times \frac{\cancel{x+2}}{\cancel{x+1}} \times \frac{\cancel{x-2}}{\cancel{x-1}} = 1
-$$
-
-$$
-\boxed{\frac{x^2-1}{x^2-4} \times \frac{x+2}{x+1} \times \frac{x-2}{x-1} = 1}
-$$
-
----
-
-## 📝 Ejercicios de práctica
-
-### Multiplicación de monomios
-
-**Ejercicio 1:** Resuelve $\dfrac{6x^2}{5y^3} \times \dfrac{10y^2}{3x}$.
+### Ejercicio 1
+Multiplica $\dfrac{3a}{b} \cdot \dfrac{b^2}{6a}$.
 
 <details>
 <summary>Ver solución</summary>
 
-$$
-\frac{6x^2 \cdot 10y^2}{5y^3 \cdot 3x} = \frac{60x^2y^2}{15xy^3} = \frac{4x}{y}
-$$
+**Datos:** Simplificación cruzada.
+**Razonamiento:** 3/6 = 1/2. $a/a = 1$. $b^2/b = b$.
+**Resultado:** $\boxed{\frac{b}{2}}$
+
+</details>
+
+### Ejercicio 2
+Multiplica $\dfrac{x+2}{4} \cdot \dfrac{8}{x+2}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** Se cancela $(x+2)$. 8/4 = 2.
+**Resultado:** $\boxed{2}$
+
+</details>
+
+### Ejercicio 3
+Multiplica $\dfrac{x-1}{3} \cdot \dfrac{9}{x^2-1}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** $x^2-1 = (x+1)(x-1)$.
+**Razonamiento:** Cancelamos $(x-1)$ y 9/3=3.
+**Resultado:** $\boxed{\frac{3}{x+1}}$
+
+</details>
+
+### Ejercicio 4
+Multiplica $\dfrac{5x}{x+1} \cdot \dfrac{x^2+x}{10}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** $x^2+x = x(x+1)$.
+**Razonamiento:** Cancelamos $(x+1)$ y 5/10 = 1/2.
+**Resultado:** $\boxed{\frac{x^2}{2}}$
+
+</details>
+
+### Ejercicio 5
+Multiplica $\dfrac{x^2-9}{x-3} \cdot \dfrac{1}{x+3}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** $(x+3)(x-3)$. Todo se cancela.
+**Resultado:** $\boxed{1}$
+
+</details>
+
+### Ejercicio 6
+Multiplica $\dfrac{a^2-b^2}{a} \cdot \dfrac{a}{a+b}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** $(a+b)(a-b)$. Cancelamos $a$ y $(a+b)$.
+**Resultado:** $\boxed{a-b}$
+
+</details>
+
+### Ejercicio 7
+Multiplica $\dfrac{2x+2}{x-2} \cdot \dfrac{x^2-4}{x+1}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** $2(x+1)$ y $(x+2)(x-2)$.
+Cancelamos $(x+1)$ y $(x-2)$.
+**Resultado:** $\boxed{2(x+2)}$
+
+</details>
+
+### Ejercicio 8
+Multiplica $\dfrac{x^2+2x+1}{x} \cdot \dfrac{x^2}{x+1}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** $(x+1)^2$. Cancelamos un $(x+1)$ y una $x$.
+**Resultado:** $\boxed{x(x+1)}$
+
+</details>
+
+### Ejercicio 9
+Multiplica $\dfrac{xy}{z} \cdot \dfrac{z^2}{x} \cdot \dfrac{1}{y}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** Se van $x$, $y$. Queda $z^2/z = z$.
+**Resultado:** $\boxed{z}$
+
+</details>
+
+### Ejercicio 10
+Multiplica $\dfrac{x^2-5x+6}{x^2-4} \cdot \dfrac{x+2}{x-3}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Num 1: $(x-3)(x-2)$.
+Den 1: $(x+2)(x-2)$.
+Cancelamos $(x-3)$, $(x-2)$, $(x+2)$.
+**Resultado:** $\boxed{1}$
 
 </details>
 
 ---
 
-**Ejercicio 2:** Resuelve $\dfrac{8a^2b}{9c} \times \dfrac{3c^2}{4ab^2}$.
+## 🔑 Resumen
 
-<details>
-<summary>Ver solución</summary>
+| Paso | Acción |
+| :--- | :--- |
+| **1.** | **Factorizar** completamente numeradores y denominadores. |
+| **2.** | **Cancelar** factores iguales (arriba-abajo o diagonal). |
+| **3.** | **Multiplicar** lo que quedó (ya simplificado). |
 
-$$
-\frac{8a^2b \cdot 3c^2}{9c \cdot 4ab^2} = \frac{24a^2bc^2}{36ab^2c} = \frac{2ac}{3b}
-$$
-
-</details>
-
----
-
-### Multiplicación con factorización
-
-**Ejercicio 3:** Resuelve $\dfrac{x^2-16}{x+5} \times \dfrac{x+5}{x+4}$.
-
-<details>
-<summary>Ver solución</summary>
-
-$$
-\frac{(x+4)(x-4)}{x+5} \times \frac{x+5}{x+4} = x - 4
-$$
-
-</details>
-
----
-
-**Ejercicio 4:** Resuelve $\dfrac{x^2+7x+12}{x^2-9} \times \dfrac{x-3}{x+4}$.
-
-<details>
-<summary>Ver solución</summary>
-
-$x^2+7x+12 = (x+3)(x+4)$ y $x^2-9 = (x+3)(x-3)$:
-
-$$
-\frac{(x+3)(x+4)}{(x+3)(x-3)} \times \frac{x-3}{x+4} = 1
-$$
-
-</details>
-
----
-
-**Ejercicio 5:** Resuelve $\dfrac{x^2-4x+4}{x^2+2x} \times \dfrac{x}{x-2}$.
-
-<details>
-<summary>Ver solución</summary>
-
-$x^2-4x+4 = (x-2)^2$ y $x^2+2x = x(x+2)$:
-
-$$
-\frac{(x-2)^2}{x(x+2)} \times \frac{x}{x-2} = \frac{x-2}{x+2}
-$$
-
-</details>
-
----
-
-**Ejercicio 6:** Resuelve $\dfrac{2x+6}{x^2-25} \times \dfrac{x-5}{x+3}$.
-
-<details>
-<summary>Ver solución</summary>
-
-$2x+6 = 2(x+3)$ y $x^2-25 = (x+5)(x-5)$:
-
-$$
-\frac{2(x+3)}{(x+5)(x-5)} \times \frac{x-5}{x+3} = \frac{2}{x+5}
-$$
-
-</details>
-
----
+> Recuerda: En la multiplicación, ¡todos los numeradores son un equipo y todos los denominadores son el equipo contrario!

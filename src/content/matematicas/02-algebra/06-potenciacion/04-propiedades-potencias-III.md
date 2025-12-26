@@ -1,325 +1,402 @@
-# ⚡ Propiedades de las Potencias (III)
+# **Propiedades de las Potencias (III)**
 
-En esta lección estudiaremos la potencia de un cociente y los exponentes fraccionarios (radicales).
-
----
-
-## 📖 Potencia de un cociente
-
-La potencia de un cociente es igual al cociente de las potencias:
-
-$$
-\left(\frac{a}{b}\right)^n = \frac{a^n}{b^n} \quad \text{(para } b \neq 0\text{)}
-$$
-
-### Demostración
-
-$$
-\left(\frac{a}{b}\right)^n = \underbrace{\frac{a}{b} \cdot \frac{a}{b} \cdots \frac{a}{b}}_{n \text{ veces}} = \frac{a \cdot a \cdots a}{b \cdot b \cdots b} = \frac{a^n}{b^n}
-$$
+Hasta ahora hemos operado con enteros, pero ¿qué sucede cuando tienes una fracción dentro de una potencia? ¿Y si el exponente mismo es una fracción? En esta lección derribaremos la barrera entre potencias y raíces, descubriendo que son dos caras de la misma moneda.
 
 ---
 
-### Ejemplo 1
+## 🎯 ¿Qué vas a aprender?
 
-Simplificar $\left(\dfrac{x}{y}\right)^4$.
-
-$$
-\left(\frac{x}{y}\right)^4 = \frac{x^4}{y^4}
-$$
-
-$$
-\boxed{\left(\frac{x}{y}\right)^4 = \frac{x^4}{y^4}}
-$$
+- La regla de "Potencia de un Cociente" (Repartir el exponente en la división).
+- Cómo un exponente negativo puede "voltear" una fracción.
+- El secreto de los exponentes fraccionarios (¡Son raíces disfrazadas!).
+- Cómo calcular mentalmente cosas como $27^{2/3}$.
 
 ---
 
-### Ejemplo 2
+## 🔍 Reglas Avanzadas
 
-Simplificar $\left(\dfrac{2}{3}\right)^3$.
+### 1. Potencia de un Cociente
 
-$$
-\left(\frac{2}{3}\right)^3 = \frac{2^3}{3^3} = \frac{8}{27}
-$$
+Similar a la multiplicación, el exponente se reparte arriba y abajo.
 
 $$
-\boxed{\left(\frac{2}{3}\right)^3 = \frac{8}{27}}
+\left( \frac{a}{b} \right)^n = \frac{a^n}{b^n}
 $$
+
+### 2. Exponente Negativo en Fracciones
+
+Si elevas una fracción a un negativo, **invierte** la fracción y el exponente se vuelve positivo.
+
+$$
+\left( \frac{a}{b} \right)^{-n} = \left( \frac{b}{a} \right)^n
+$$
+
+### 3. Exponente Fraccionario
+
+El numerador es la potencia, el denominador es la raíz.
+
+$$
+a^{\frac{m}{n}} = \sqrt[n]{a^m}
+$$
+
+> Truco para recordar: En la flor (fracción), la raíz está abajo (como las raíces de una planta) y el poder (potencia) está arriba.
 
 ---
 
-### Ejemplo 3
+## ⚙️ Ejemplos Resueltos
 
-Simplificar $\left(\dfrac{3a}{2b}\right)^2$.
+### Ejemplo 1: Repartir el exponente
+
+Simplifica $\left( \dfrac{2x}{3y} \right)^3$.
+
+**Datos:**
+- Numerador: $2x$.
+- Denominador: $3y$.
+- Exponente: 3.
+
+**Razonamiento:**
+
+Elevamos todo al cubo.
+
+1. **Arriba:**
 
 $$
-\left(\frac{3a}{2b}\right)^2 = \frac{(3a)^2}{(2b)^2} = \frac{9a^2}{4b^2}
+(2x)^3 = 8x^3
 $$
 
+2. **Abajo:**
+
 $$
-\boxed{\left(\frac{3a}{2b}\right)^2 = \frac{9a^2}{4b^2}}
+(3y)^3 = 27y^3
 $$
+
+3. **Juntamos:**
+
+$$
+\frac{8x^3}{27y^3}
+$$
+
+**Resultado:** $\boxed{\frac{8x^3}{27y^3}}$
 
 ---
 
-### Ejemplo 4
+### Ejemplo 2: El "Volantín" (Exponente negativo)
 
-Simplificar $\left(\dfrac{x^2}{y^3}\right)^4$.
+Simplifica $\left( \dfrac{2}{5} \right)^{-2}$.
+
+**Datos:**
+- Exponente negativo invierte la base.
+
+**Razonamiento:**
+
+1. Damos vuelta la fracción:
 
 $$
-\left(\frac{x^2}{y^3}\right)^4 = \frac{(x^2)^4}{(y^3)^4} = \frac{x^8}{y^{12}}
+\frac{2}{5} \to \frac{5}{2}
 $$
 
+2. Cambiamos el signo del exponente: $-2 \to 2$.
+
+3. Operamos:
+
 $$
-\boxed{\left(\frac{x^2}{y^3}\right)^4 = \frac{x^8}{y^{12}}}
+\left(\frac{5}{2}\right)^2 = \frac{25}{4}
 $$
+
+**Resultado:** $\boxed{\frac{25}{4}}$
 
 ---
 
-### Ejemplo 5
+### Ejemplo 3: Potencia fraccionaria (De fracción a raíz)
 
-Simplificar $\left(\dfrac{a}{b}\right)^{-3}$.
+Escribe $x^{3/4}$ como raíz.
+
+**Datos:**
+- Numerador (Potencia): 3.
+- Denominador (Raíz): 4.
+
+**Razonamiento:**
+
+1. La raíz es cuarta: $\sqrt[4]{ \quad }$.
+
+2. La potencia es cúbica: $x^3$.
+
+3. Combinamos:
 
 $$
-\left(\frac{a}{b}\right)^{-3} = \frac{a^{-3}}{b^{-3}} = \frac{b^3}{a^3} = \left(\frac{b}{a}\right)^3
+\sqrt[4]{x^3}
 $$
 
-$$
-\boxed{\left(\frac{a}{b}\right)^{-3} = \frac{b^3}{a^3}}
-$$
-
-> **Regla:** Un exponente negativo en un cociente "invierte" la fracción.
+**Resultado:** $\boxed{\sqrt[4]{x^3}}$
 
 ---
 
-## 📖 Exponentes fraccionarios
+### Ejemplo 4: Calculando valores extraños
 
-Los exponentes fraccionarios representan radicales:
+Calcula $8^{2/3}$.
+
+**Datos:**
+- Base 8. Potencia 2. Raíz 3.
+
+**Razonamiento:**
+
+Es mejor hacer la raíz primero (para trabajar con números chicos).
+
+1. Raíz cúbica de 8:
 
 $$
-a^{\frac{1}{n}} = \sqrt[n]{a}
+\sqrt[3]{8} = 2
 $$
 
+2. Ahora elevamos al cuadrado:
+
 $$
-a^{\frac{m}{n}} = \sqrt[n]{a^m} = \left(\sqrt[n]{a}\right)^m
+2^2 = 4
 $$
+
+Si lo hubiéramos hecho al revés ($8^2=64$, luego $\sqrt[3]{64}=4$) habríamos sufrido más.
+
+**Resultado:** $\boxed{4}$
 
 ---
 
-### Ejemplo 6
+### Ejemplo 5: Fracciones dentro de raíces
 
-Expresar $x^{\frac{1}{2}}$ como radical.
+Simplifica $\left( \dfrac{16}{81} \right)^{1/4}$.
+
+**Datos:**
+- Exponente 1/4 significa raíz cuarta.
+
+**Razonamiento:**
+
+1. Raíz cuarta de 16:
 
 $$
-x^{\frac{1}{2}} = \sqrt{x}
+\sqrt[4]{16} = 2
 $$
 
+(¿Qué número multiplicado 4 veces da 16? → 2)
+
+2. Raíz cuarta de 81:
+
 $$
-\boxed{x^{\frac{1}{2}} = \sqrt{x}}
+\sqrt[4]{81} = 3
 $$
+
+(¿Qué número multiplicado 4 veces da 81? → 3)
+
+3. Respuesta:
+
+$$
+\frac{2}{3}
+$$
+
+**Resultado:** $\boxed{\frac{2}{3}}$
 
 ---
 
-### Ejemplo 7
+## 📝 Ejercicios de Práctica
 
-Expresar $a^{\frac{1}{3}}$ como radical.
-
-$$
-a^{\frac{1}{3}} = \sqrt[3]{a}
-$$
-
-$$
-\boxed{a^{\frac{1}{3}} = \sqrt[3]{a}}
-$$
-
----
-
-### Ejemplo 8
-
-Expresar $x^{\frac{2}{3}}$ como radical.
-
-$$
-x^{\frac{2}{3}} = \sqrt[3]{x^2}
-$$
-
-$$
-\boxed{x^{\frac{2}{3}} = \sqrt[3]{x^2}}
-$$
-
----
-
-### Ejemplo 9
-
-Expresar $\sqrt[4]{x^3}$ como potencia.
-
-$$
-\sqrt[4]{x^3} = x^{\frac{3}{4}}
-$$
-
-$$
-\boxed{\sqrt[4]{x^3} = x^{\frac{3}{4}}}
-$$
-
----
-
-### Ejemplo 10
-
-Simplificar $8^{\frac{2}{3}}$.
-
-**Método 1:** Primero raíz, luego potencia:
-
-$$
-8^{\frac{2}{3}} = \left(\sqrt[3]{8}\right)^2 = 2^2 = 4
-$$
-
-**Método 2:** Primero potencia, luego raíz:
-
-$$
-8^{\frac{2}{3}} = \sqrt[3]{8^2} = \sqrt[3]{64} = 4
-$$
-
-$$
-\boxed{8^{\frac{2}{3}} = 4}
-$$
-
----
-
-## 📖 Operaciones con exponentes fraccionarios
-
-Las propiedades de las potencias aplican también a exponentes fraccionarios.
-
-### Ejemplo 11
-
-Simplificar $x^{\frac{1}{2}} \cdot x^{\frac{1}{3}}$.
-
-$$
-x^{\frac{1}{2}} \cdot x^{\frac{1}{3}} = x^{\frac{1}{2} + \frac{1}{3}} = x^{\frac{3+2}{6}} = x^{\frac{5}{6}}
-$$
-
-$$
-\boxed{x^{\frac{1}{2}} \cdot x^{\frac{1}{3}} = x^{\frac{5}{6}}}
-$$
-
----
-
-### Ejemplo 12
-
-Simplificar $\dfrac{a^{\frac{3}{4}}}{a^{\frac{1}{2}}}$.
-
-$$
-\frac{a^{\frac{3}{4}}}{a^{\frac{1}{2}}} = a^{\frac{3}{4} - \frac{1}{2}} = a^{\frac{3}{4} - \frac{2}{4}} = a^{\frac{1}{4}}
-$$
-
-$$
-\boxed{\frac{a^{\frac{3}{4}}}{a^{\frac{1}{2}}} = a^{\frac{1}{4}}}
-$$
-
----
-
-### Ejemplo 13
-
-Simplificar $(y^{\frac{2}{3}})^6$.
-
-$$
-(y^{\frac{2}{3}})^6 = y^{\frac{2}{3} \times 6} = y^4
-$$
-
-$$
-\boxed{(y^{\frac{2}{3}})^6 = y^4}
-$$
-
----
-
-## 📋 Resumen
-
-| Propiedad | Fórmula |
-|:----------|:-------:|
-| Potencia de un cociente | $\left(\dfrac{a}{b}\right)^n = \dfrac{a^n}{b^n}$ |
-| Exponente fraccionario (raíz) | $a^{\frac{1}{n}} = \sqrt[n]{a}$ |
-| Exponente fraccionario (general) | $a^{\frac{m}{n}} = \sqrt[n]{a^m}$ |
-
----
-
-## 📝 Ejercicios de práctica
-
-### Potencia de un cociente
-
-**Ejercicio 1:** Simplifica $\left(\dfrac{a}{b}\right)^5$.
+### Ejercicio 1
+Simplifica $\left( \dfrac{a}{b} \right)^4$.
 
 <details>
 <summary>Ver solución</summary>
 
+**Razonamiento:**
+
 $$
-\left(\frac{a}{b}\right)^5 = \frac{a^5}{b^5}
+\frac{a^4}{b^4}
 $$
+
+**Resultado:** $\boxed{\frac{a^4}{b^4}}$
+
+</details>
+
+### Ejercicio 2
+Simplifica $\left( \dfrac{x^2}{y^3} \right)^2$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+
+$$
+x^{2 \cdot 2} / y^{3 \cdot 2}
+$$
+
+$$
+= \frac{x^4}{y^6}
+$$
+
+**Resultado:** $\boxed{\frac{x^4}{y^6}}$
+
+</details>
+
+### Ejercicio 3
+Calcula $\left( \dfrac{1}{3} \right)^{-2}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+
+Volteamos:
+
+$$
+\left(\frac{3}{1}\right)^2 = 3^2 = 9
+$$
+
+**Resultado:** $\boxed{9}$
+
+</details>
+
+### Ejercicio 4
+Escribe como raíz: $5^{1/2}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+
+Raíz cuadrada (el 2 no se suele escribir en el índice).
+
+$$
+\sqrt{5}
+$$
+
+**Resultado:** $\boxed{\sqrt{5}}$
+
+</details>
+
+### Ejercicio 5
+Escribe como raíz: $y^{2/5}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+
+Raíz 5, Potencia 2.
+
+$$
+\sqrt[5]{y^2}
+$$
+
+**Resultado:** $\boxed{\sqrt[5]{y^2}}$
+
+</details>
+
+### Ejercicio 6
+Calcula $25^{1/2}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+
+$$
+\sqrt{25} = 5
+$$
+
+**Resultado:** $\boxed{5}$
+
+</details>
+
+### Ejercicio 7
+Calcula $27^{1/3}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+
+$$
+\sqrt[3]{27} = 3
+$$
+
+**Resultado:** $\boxed{3}$
+
+</details>
+
+### Ejercicio 8
+Calcula $16^{3/4}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+
+$$
+\sqrt[4]{16} = 2
+$$
+
+Luego:
+
+$$
+2^3 = 8
+$$
+
+**Resultado:** $\boxed{8}$
+
+</details>
+
+### Ejercicio 9
+Simplifica $\left( \dfrac{a^{-2}}{b^{-3}} \right)^{-1}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+
+Volteamos todo:
+
+$$
+\frac{b^{-3}}{a^{-2}}
+$$
+
+Ahora movemos los negativos internos:
+
+$$
+\frac{a^2}{b^3}
+$$
+
+**Resultado:** $\boxed{\frac{a^2}{b^3}}$
+
+</details>
+
+### Ejercicio 10
+Simplifica $\left( \dfrac{3x}{2} \right)^{-3}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+
+Invierte:
+
+$$
+\left(\frac{2}{3x}\right)^3
+$$
+
+Eleva:
+
+$$
+\frac{2^3}{3^3 x^3} = \frac{8}{27x^3}
+$$
+
+**Resultado:** $\boxed{\frac{8}{27x^3}}$
 
 </details>
 
 ---
 
-**Ejercicio 2:** Simplifica $\left(\dfrac{2x}{3y}\right)^3$.
+## 🔑 Resumen
 
-<details>
-<summary>Ver solución</summary>
+| Símbolo | Significado | Ejemplo |
+| :--- | :--- | :--- |
+| **Paréntesis** $(\dots)^n$ | Repartir a todos | $(x/y)^2 = x^2/y^2$ |
+| **Signo Menos** $(\dots)^{-n}$ | Voltear fracción | $(a/b)^{-1} = b/a$ |
+| **Fracción** $x^{a/b}$ | Raíz (den) y Potencia (num) | $x^{2/3} = \sqrt[3]{x^2}$ |
 
-$$
-\left(\frac{2x}{3y}\right)^3 = \frac{8x^3}{27y^3}
-$$
-
-</details>
-
----
-
-**Ejercicio 3:** Simplifica $\left(\dfrac{m^3}{n^2}\right)^{-2}$.
-
-<details>
-<summary>Ver solución</summary>
-
-$$
-\left(\frac{m^3}{n^2}\right)^{-2} = \frac{m^{-6}}{n^{-4}} = \frac{n^4}{m^6}
-$$
-
-</details>
-
----
-
-### Exponentes fraccionarios
-
-**Ejercicio 4:** Expresa $a^{\frac{3}{5}}$ como radical.
-
-<details>
-<summary>Ver solución</summary>
-
-$$
-a^{\frac{3}{5}} = \sqrt[5]{a^3}
-$$
-
-</details>
-
----
-
-**Ejercicio 5:** Calcula $27^{\frac{2}{3}}$.
-
-<details>
-<summary>Ver solución</summary>
-
-$$
-27^{\frac{2}{3}} = (\sqrt[3]{27})^2 = 3^2 = 9
-$$
-
-</details>
-
----
-
-**Ejercicio 6:** Simplifica $x^{\frac{2}{5}} \cdot x^{\frac{3}{5}}$.
-
-<details>
-<summary>Ver solución</summary>
-
-$$
-x^{\frac{2}{5}} \cdot x^{\frac{3}{5}} = x^{\frac{2+3}{5}} = x^1 = x
-$$
-
-</details>
-
----
+> Una potencia fraccionaria es solo una forma sofisticada de escribir una raíz. ¡No dejes que te intimide!

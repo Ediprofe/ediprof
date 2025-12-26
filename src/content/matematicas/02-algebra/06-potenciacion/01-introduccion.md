@@ -1,334 +1,346 @@
-# ⚡ Introducción a la Potenciación
+# **Introducción a la Potenciación**
 
-En esta lección introduciremos el concepto de potencia en el contexto del álgebra, recordando las ideas básicas y preparándonos para las propiedades que estudiaremos en las siguientes lecciones.
-
----
-
-## 📖 ¿Qué es una potencia?
-
-Una **potencia** es una operación matemática que expresa la multiplicación repetida de un número o expresión por sí mismo.
-
-$$
-a^n = \underbrace{a \times a \times a \times \cdots \times a}_{n \text{ veces}}
-$$
-
-### Elementos de una potencia
-
-| Elemento | Nombre | Significado |
-|:--------:|:------:|:------------|
-| $a$ | Base | Número que se multiplica |
-| $n$ | Exponente | Cantidad de veces que se multiplica |
-| $a^n$ | Potencia | Resultado de la operación |
+¿Alguna vez te has preguntado cuántos ancestros tienes si retrocedes 10 generaciones? Tienes 2 padres, 4 abuelos, 8 bisabuelos... ¡esa lista crece rapidísimo! Para expresar estas multiplicaciones repetidas de forma compacta, los matemáticos inventaron la **potenciación**. Es la forma de escribir números gigantes (o minúsculos) sin gastar toda la tinta del bolígrafo.
 
 ---
 
-## 📖 Ejemplos numéricos
+## 🎯 ¿Qué vas a aprender?
 
-### Ejemplo 1
+- Qué es una potencia y cuáles son sus partes (base y exponente).
+- Cómo leer y escribir potencias correctamente.
+- El comportamiento de los signos (¿cuándo da negativo?).
+- La diferencia crítica entre $-3^2$ y $(-3)^2$.
 
-Calcular $2^5$.
+---
+
+## 🔍 Concepto Básico
+
+Una potencia es simplemente una abreviatura para una multiplicación repetida.
 
 $$
-2^5 = 2 \times 2 \times 2 \times 2 \times 2 = 32
+\text{Base}^{\text{Exponente}}
 $$
 
+*   **La Base:** Es el número que se multiplica.
+*   **El Exponente:** Es el "jefe" que ordena cuántas veces se multiplica la base por sí misma.
+
 $$
-\boxed{2^5 = 32}
+a^n = \underbrace{a \cdot a \cdot a \cdot \dots \cdot a}_{n \text{ veces}}
 $$
 
 ---
 
-### Ejemplo 2
+## ⚙️ Ejemplos Resueltos
 
-Calcular $(-3)^4$.
+### Ejemplo 1: Potencia básica
+
+Calcula $2^5$.
+
+**Datos:**
+- Base: 2
+- Exponente: 5
+
+**Razonamiento:**
+
+Multiplicamos el 2 por sí mismo 5 veces.
 
 $$
-(-3)^4 = (-3) \times (-3) \times (-3) \times (-3) = 9 \times 9 = 81
+2^5 = 2 \cdot 2 \cdot 2 \cdot 2 \cdot 2
 $$
 
 $$
-\boxed{(-3)^4 = 81}
+= 4 \cdot 2 = 8
 $$
 
-> **Nota:** Cuando la base es negativa y el exponente es par, el resultado es positivo.
+$$
+= 8 \cdot 2 = 16
+$$
+
+$$
+= 16 \cdot 2 = 32
+$$
+
+**Resultado:** $\boxed{32}$
 
 ---
 
-### Ejemplo 3
+### Ejemplo 2: Base negativa con exponente par
 
-Calcular $(-2)^3$.
+Calcula $(-3)^4$.
+
+**Datos:**
+- Base: -3 (el paréntesis incluye el signo).
+- Exponente: 4 (número par).
+
+**Razonamiento:**
 
 $$
-(-2)^3 = (-2) \times (-2) \times (-2) = 4 \times (-2) = -8
+(-3)^4 = (-3) \cdot (-3) \cdot (-3) \cdot (-3)
 $$
 
 $$
-\boxed{(-2)^3 = -8}
+= 9 \cdot (-3)
 $$
 
-> **Nota:** Cuando la base es negativa y el exponente es impar, el resultado es negativo.
+$$
+= -27 \cdot (-3)
+$$
+
+$$
+= 81
+$$
+
+> **Regla:** Base negativa + Exponente par = Resultado **Positivo**.
+
+**Resultado:** $\boxed{81}$
 
 ---
 
-## 📖 Casos especiales
+### Ejemplo 3: Base negativa con exponente impar
 
-### Exponente 0
+Calcula $(-2)^3$.
 
-Cualquier número distinto de cero elevado a la potencia cero es igual a $1$:
+**Datos:**
+- Base: -2.
+- Exponente: 3 (número impar).
 
-$$
-a^0 = 1 \quad \text{(para } a \neq 0\text{)}
-$$
-
-### Ejemplos
+**Razonamiento:**
 
 $$
-5^0 = 1, \quad (-7)^0 = 1, \quad (x+1)^0 = 1
+(-2)^3 = (-2) \cdot (-2) \cdot (-2)
 $$
+
+$$
+= 4 \cdot (-2)
+$$
+
+$$
+= -8
+$$
+
+> **Regla:** Base negativa + Exponente impar = Resultado **Negativo**.
+
+**Resultado:** $\boxed{-8}$
 
 ---
 
-### Exponente 1
+### Ejemplo 4: El error más común (Signo fuera)
 
-Cualquier número elevado a la potencia $1$ es igual a sí mismo:
+Calcula $-5^2$.
+
+**Datos:**
+- Base: 5 (¡OJO! El signo menos NO está en la base porque no hay paréntesis).
+- Exponente: 2.
+
+**Razonamiento:**
+
+La operación es "el negativo de $5^2$". Primero hacemos la potencia, luego ponemos el menos.
 
 $$
-a^1 = a
+-5^2 = -(5 \cdot 5) = -25
 $$
 
-### Ejemplos
+Si fuera $(-5)^2$ daría 25. ¡El paréntesis lo cambia todo!
 
-$$
-8^1 = 8, \quad x^1 = x, \quad (a+b)^1 = a + b
-$$
+**Resultado:** $\boxed{-25}$
 
 ---
 
-### Exponente negativo
+### Ejemplo 5: Potencias con variables
 
-Un exponente negativo indica el recíproco de la potencia con exponente positivo:
+Expresa $x^2 \cdot x^3$ como una sola potencia.
 
-$$
-a^{-n} = \frac{1}{a^n} \quad \text{(para } a \neq 0\text{)}
-$$
+**Datos:**
+- $x^2 = x \cdot x$
+- $x^3 = x \cdot x \cdot x$
 
-### Ejemplo 4
+**Razonamiento:**
 
-Simplificar $2^{-3}$.
-
-$$
-2^{-3} = \frac{1}{2^3} = \frac{1}{8}
-$$
+Si multiplicamos todo junto:
 
 $$
-\boxed{2^{-3} = \frac{1}{8}}
+(x \cdot x) \cdot (x \cdot x \cdot x) = x \cdot x \cdot x \cdot x \cdot x
 $$
+
+Contamos las x: son 5.
+
+$$
+x^5
+$$
+
+**Resultado:** $\boxed{x^5}$
 
 ---
 
-### Ejemplo 5
+## 📝 Ejercicios de Práctica
 
-Simplificar $x^{-2}$.
-
-$$
-x^{-2} = \frac{1}{x^2}
-$$
-
-$$
-\boxed{x^{-2} = \frac{1}{x^2}}
-$$
-
----
-
-### Ejemplo 6
-
-Simplificar $\dfrac{1}{a^{-4}}$.
-
-$$
-\frac{1}{a^{-4}} = a^4
-$$
-
-$$
-\boxed{\frac{1}{a^{-4}} = a^4}
-$$
-
----
-
-## 📖 Potencias con base algebraica
-
-En álgebra, la base puede ser una variable o una expresión algebraica.
-
-### Ejemplo 7
-
-Expandir $x^3$.
-
-$$
-x^3 = x \cdot x \cdot x
-$$
-
-$$
-\boxed{x^3 = x \cdot x \cdot x}
-$$
-
----
-
-### Ejemplo 8
-
-Expandir $(2a)^3$.
-
-$$
-(2a)^3 = (2a)(2a)(2a) = 8a^3
-$$
-
-$$
-\boxed{(2a)^3 = 8a^3}
-$$
-
----
-
-### Ejemplo 9
-
-Expandir $(ab)^4$.
-
-$$
-(ab)^4 = (ab)(ab)(ab)(ab) = a^4b^4
-$$
-
-$$
-\boxed{(ab)^4 = a^4b^4}
-$$
-
----
-
-### Ejemplo 10
-
-Simplificar $(-x)^4$ y $(-x)^5$.
-
-Para $(-x)^4$:
-$$
-(-x)^4 = (-x)(-x)(-x)(-x) = x^4
-$$
-
-Para $(-x)^5$:
-$$
-(-x)^5 = (-x)(-x)(-x)(-x)(-x) = -x^5
-$$
-
-$$
-\boxed{(-x)^4 = x^4, \quad (-x)^5 = -x^5}
-$$
-
----
-
-## ⚠️ Diferencia importante
-
-Es fundamental distinguir entre:
-
-| Expresión | Significado | Resultado |
-|:---------:|:-----------:|:---------:|
-| $-3^2$ | $-(3^2)$ | $-9$ |
-| $(-3)^2$ | $(-3) \times (-3)$ | $9$ |
-
-**Sin paréntesis**, el signo negativo NO es parte de la base.
-
----
-
-## 📋 Resumen de casos especiales
-
-| Propiedad | Expresión |
-|:----------|:---------:|
-| Exponente cero | $a^0 = 1$ |
-| Exponente uno | $a^1 = a$ |
-| Exponente negativo | $a^{-n} = \dfrac{1}{a^n}$ |
-| Base negativa, exponente par | Resultado positivo |
-| Base negativa, exponente impar | Resultado negativo |
-
----
-
-## 📝 Ejercicios de práctica
-
-**Ejercicio 1:** Calcula $3^4$.
+### Ejercicio 1
+Calcula $3^4$.
 
 <details>
 <summary>Ver solución</summary>
 
+**Razonamiento:**
+
 $$
-3^4 = 3 \times 3 \times 3 \times 3 = 81
+3 \cdot 3 \cdot 3 \cdot 3 = 81
 $$
+
+**Resultado:** $\boxed{81}$
+
+</details>
+
+### Ejercicio 2
+Calcula $(-4)^2$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+
+$$
+(-4) \cdot (-4) = 16
+$$
+
+(Menos por menos es más).
+
+**Resultado:** $\boxed{16}$
+
+</details>
+
+### Ejercicio 3
+Calcula $(-2)^5$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+
+Exponente impar conserva el signo negativo. 
+
+$$
+2^5 = 32
+$$
+
+**Resultado:** $\boxed{-32}$
+
+</details>
+
+### Ejercicio 4
+Calcula $-6^2$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+
+El menos está fuera.
+
+$$
+-(6 \cdot 6) = -36
+$$
+
+**Resultado:** $\boxed{-36}$
+
+</details>
+
+### Ejercicio 5
+Calcula $1^{100}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+
+El 1 multiplicado por sí mismo cualquier cantidad de veces sigue siendo 1.
+
+**Resultado:** $\boxed{1}$
+
+</details>
+
+### Ejercicio 6
+Calcula $(-1)^{53}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+
+Base -1 con exponente impar da -1.
+
+**Resultado:** $\boxed{-1}$
+
+</details>
+
+### Ejercicio 7
+Escribe como potencia: $7 \cdot 7 \cdot 7 \cdot 7 \cdot 7 \cdot 7$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+
+El 7 se repite 6 veces.
+
+**Resultado:** $\boxed{7^6}$
+
+</details>
+
+### Ejercicio 8
+Calcula $10^3$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+
+Un 1 seguido de tres ceros.
+
+**Resultado:** $\boxed{1000}$
+
+</details>
+
+### Ejercicio 9
+Calcula $\left(\frac{2}{3}\right)^2$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+
+$$
+\frac{2}{3} \cdot \frac{2}{3} = \frac{4}{9}
+$$
+
+**Resultado:** $\boxed{\frac{4}{9}}$
+
+</details>
+
+### Ejercicio 10
+Calcula $0^5$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+
+$$
+0 \cdot 0 \cdot 0 \cdot 0 \cdot 0 = 0
+$$
+
+**Resultado:** $\boxed{0}$
 
 </details>
 
 ---
 
-**Ejercicio 2:** Calcula $(-2)^6$.
+## 🔑 Resumen
 
-<details>
-<summary>Ver solución</summary>
+| Caso | Regla | Ejemplo |
+| :--- | :--- | :--- |
+| **Paréntesis** | El signo es parte de la base | $(-3)^2 = 9$ |
+| **Sin Paréntesis** | El signo espera fuera | $-3^2 = -9$ |
+| **Base Negativa** | Exp. Par → Positivo | $(-2)^2 = 4$ |
+|  | Exp. Impar → Negativo | $(-2)^3 = -8$ |
 
-$$
-(-2)^6 = 64
-$$
-
-(Base negativa con exponente par = resultado positivo)
-
-</details>
-
----
-
-**Ejercicio 3:** Calcula $(-5)^3$.
-
-<details>
-<summary>Ver solución</summary>
-
-$$
-(-5)^3 = -125
-$$
-
-(Base negativa con exponente impar = resultado negativo)
-
-</details>
-
----
-
-**Ejercicio 4:** Simplifica $4^{-2}$.
-
-<details>
-<summary>Ver solución</summary>
-
-$$
-4^{-2} = \frac{1}{4^2} = \frac{1}{16}
-$$
-
-</details>
-
----
-
-**Ejercicio 5:** Simplifica $(3x)^2$.
-
-<details>
-<summary>Ver solución</summary>
-
-$$
-(3x)^2 = 9x^2
-$$
-
-</details>
-
----
-
-**Ejercicio 6:** ¿Cuál es la diferencia entre $-5^2$ y $(-5)^2$?
-
-<details>
-<summary>Ver solución</summary>
-
-$$
--5^2 = -(5^2) = -25
-$$
-
-$$
-(-5)^2 = (-5)(-5) = 25
-$$
-
-</details>
-
----
+> Recuerda: El exponente solo manda sobre lo que tiene inmediatamente a su izquierda. Si quieres que mande sobre el signo menos, ¡enciérralo en un paréntesis!

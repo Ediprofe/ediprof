@@ -1,413 +1,267 @@
-# 🔀 Combinación de Operaciones
+# **Combinación de Operaciones**
 
-En esta lección aprenderemos a resolver ejercicios que combinan suma, resta, multiplicación y división de fracciones algebraicas.
-
----
-
-## 📖 Orden de las operaciones
-
-Al combinar operaciones con fracciones algebraicas, debemos seguir la **jerarquía de operaciones**:
-
-1. **Paréntesis** primero
-2. **Multiplicación y división** (de izquierda a derecha)
-3. **Suma y resta** (de izquierda a derecha)
+En el mundo real, los problemas no vienen etiquetados como "solo suma" o "solo multiplicación". ¡Vienen todos juntos! En esta lección aprenderemos a ser los directores de orquesta que ponen orden en el caos de las operaciones combinadas, respetando la jerarquía para llegar al resultado correcto.
 
 ---
 
-## 📖 Multiplicación y división combinadas
+## 🎯 ¿Qué vas a aprender?
 
-### Ejemplo 1
-
-Resolver $\dfrac{x^2-4}{x+1} \times \dfrac{x+1}{x+2} \div \dfrac{x-2}{3}$.
-
-**Paso 1:** Convertimos la división en multiplicación:
-
-$$
-\frac{x^2-4}{x+1} \times \frac{x+1}{x+2} \times \frac{3}{x-2}
-$$
-
-**Paso 2:** Factorizamos $x^2-4 = (x+2)(x-2)$:
-
-$$
-\frac{(x+2)(x-2)}{x+1} \times \frac{x+1}{x+2} \times \frac{3}{x-2}
-$$
-
-**Paso 3:** Cancelamos:
-
-$$
-= \frac{\cancel{(x+2)}\cancel{(x-2)}}{\cancel{x+1}} \times \frac{\cancel{x+1}}{\cancel{x+2}} \times \frac{3}{\cancel{x-2}} = 3
-$$
-
-$$
-\boxed{\frac{x^2-4}{x+1} \times \frac{x+1}{x+2} \div \frac{x-2}{3} = 3}
-$$
+- La jerarquía de operaciones (PEMDAS/PAPOMUDAS) aplicada a fracciones.
+- Cómo manejar signos de agrupación (paréntesis, corchetes).
+- Estrategias para no perder el hilo en ejercicios largos.
+- Cómo simplificar expresiones complejas paso a paso.
 
 ---
 
-### Ejemplo 2
+## 🔍 La Jerarquía Sagrada
 
-Resolver $\dfrac{x+3}{x-2} \div \dfrac{x+3}{x+2} \times \dfrac{x-2}{x+2}$.
+Si no respetas este orden, el resultado será incorrecto. ¡Tatúalo en tu mente!
 
-**Paso 1:** Resolvemos de izquierda a derecha. Primero la división:
-
-$$
-\frac{x+3}{x-2} \times \frac{x+2}{x+3} = \frac{x+2}{x-2}
-$$
-
-**Paso 2:** Ahora multiplicamos:
-
-$$
-\frac{x+2}{x-2} \times \frac{x-2}{x+2} = 1
-$$
-
-$$
-\boxed{\frac{x+3}{x-2} \div \frac{x+3}{x+2} \times \frac{x-2}{x+2} = 1}
-$$
+1.  **Paréntesis:** Resuelve primero lo que está dentro de signos de agrupación.
+2.  **Multiplicación y División:** De izquierda a derecha.
+3.  **Suma y Resta:** Al final, de izquierda a derecha.
 
 ---
 
-## 📖 Suma y resta combinadas
+## ⚙️ Ejemplos Resueltos
 
-### Ejemplo 3
+### Ejemplo 1: Multiplicación y División
 
-Resolver $\dfrac{2}{x} + \dfrac{3}{x+1} - \dfrac{1}{x}$.
+Calcula: $\dfrac{4a^2}{3b} \cdot \dfrac{5b^2}{2a} \div \dfrac{10ab}{9}$
 
-**Paso 1:** Agrupamos las fracciones con denominador $x$:
+**Datos:**
+- Tres fracciones. Multiplicación y División.
 
-$$
-\left(\frac{2}{x} - \frac{1}{x}\right) + \frac{3}{x+1} = \frac{1}{x} + \frac{3}{x+1}
-$$
+**Razonamiento:**
+1.  **De izquierda a derecha**. Primero la multiplicación:
+    $$\frac{4a^2}{3b} \cdot \frac{5b^2}{2a} = \frac{20a^2b^2}{6ab} = \frac{10ab}{3}$$
+2.  Ahora la división (invertimos la segunda):
+    $$\frac{10ab}{3} \cdot \frac{9}{10ab}$$
+3.  **Cancelamos:**
+    *   $10ab$ con $10ab$.
+    *   $9/3 = 3$.
 
-**Paso 2:** El MCM de $x$ y $x+1$ es $x(x+1)$:
-
-$$
-\frac{x+1}{x(x+1)} + \frac{3x}{x(x+1)} = \frac{x + 1 + 3x}{x(x+1)} = \frac{4x + 1}{x(x+1)}
-$$
-
-$$
-\boxed{\frac{2}{x} + \frac{3}{x+1} - \frac{1}{x} = \frac{4x + 1}{x(x+1)}}
-$$
+**Resultado:** $\boxed{3}$
 
 ---
 
-### Ejemplo 4
+### Ejemplo 2: Suma con Paréntesis y Multiplicación
 
-Resolver $\dfrac{1}{x-1} - \dfrac{2}{x+1} + \dfrac{1}{x^2-1}$.
+Calcula: $\left( \dfrac{1}{x} + \dfrac{1}{y} \right) \cdot \dfrac{xy}{x+y}$
 
-**Paso 1:** Factorizamos $x^2-1 = (x+1)(x-1)$, que es el MCM.
+**Datos:**
+- Primero el paréntesis.
 
-**Paso 2:** Convertimos todas las fracciones:
+**Razonamiento:**
+1.  **Paréntesis:** Sumamos $\frac{1}{x} + \frac{1}{y}$ con MCM $xy$.
+    $$\frac{y + x}{xy}$$
+2.  **Multiplicación:** Ahora operamos con el término de fuera.
+    $$\frac{x+y}{xy} \cdot \frac{xy}{x+y}$$
+3.  **Simplificación:**
+    *   $(x+y)$ con $(x+y)$.
+    *   $xy$ con $xy$.
+    *   Todo se cancela $\to 1$.
 
-$$
-\frac{x+1}{(x-1)(x+1)} - \frac{2(x-1)}{(x-1)(x+1)} + \frac{1}{(x-1)(x+1)}
-$$
-
-**Paso 3:** Operamos:
-
-$$
-= \frac{(x+1) - 2(x-1) + 1}{(x-1)(x+1)} = \frac{x + 1 - 2x + 2 + 1}{x^2-1}
-$$
-
-$$
-= \frac{-x + 4}{x^2-1} = \frac{4 - x}{x^2-1}
-$$
-
-$$
-\boxed{\frac{1}{x-1} - \frac{2}{x+1} + \frac{1}{x^2-1} = \frac{4-x}{x^2-1}}
-$$
+**Resultado:** $\boxed{1}$
 
 ---
 
-## 📖 Las cuatro operaciones
+### Ejemplo 3: División y Resta (¡Cuidado con el orden!)
 
-### Ejemplo 5
+Calcula: $\dfrac{x^2-1}{x} \div \dfrac{x+1}{2} - \dfrac{x-2}{x}$
 
-Resolver $\dfrac{x+2}{x-1} + \dfrac{x-2}{x-1} \times \dfrac{x-1}{x+2}$.
+**Datos:**
+- Primero la división, luego la resta.
 
-**Paso 1:** Por jerarquía, primero resolvemos la multiplicación:
+**Razonamiento:**
+1.  **División:**
+    $$\frac{(x+1)(x-1)}{x} \cdot \frac{2}{x+1}$$
+    Cancelamos $(x+1) \to \frac{2(x-1)}{x} = \frac{2x-2}{x}$.
+2.  **Sustitución y Resta:**
+    $$\frac{2x-2}{x} - \frac{x-2}{x}$$
+3.  **Operamos:**
+    $$\frac{(2x-2) - (x-2)}{x} = \frac{2x-2-x+2}{x}$$
+4.  Reducimos:
+    $$\frac{x}{x} = 1$$
 
-$$
-\frac{x-2}{x-1} \times \frac{x-1}{x+2} = \frac{x-2}{x+2}
-$$
-
-**Paso 2:** Ahora sumamos:
-
-$$
-\frac{x+2}{x-1} + \frac{x-2}{x+2}
-$$
-
-**Paso 3:** El MCM es $(x-1)(x+2)$:
-
-$$
-\frac{(x+2)^2}{(x-1)(x+2)} + \frac{(x-2)(x-1)}{(x-1)(x+2)}
-$$
-
-$$
-= \frac{(x+2)^2 + (x-2)(x-1)}{(x-1)(x+2)}
-$$
-
-**Paso 4:** Expandimos:
-
-$$
-(x+2)^2 = x^2 + 4x + 4
-$$
-
-$$
-(x-2)(x-1) = x^2 - 3x + 2
-$$
-
-$$
-= \frac{x^2 + 4x + 4 + x^2 - 3x + 2}{(x-1)(x+2)} = \frac{2x^2 + x + 6}{(x-1)(x+2)}
-$$
-
-$$
-\boxed{\frac{x+2}{x-1} + \frac{x-2}{x-1} \times \frac{x-1}{x+2} = \frac{2x^2 + x + 6}{(x-1)(x+2)}}
-$$
+**Resultado:** $\boxed{1}$
 
 ---
 
-### Ejemplo 6
+### Ejemplo 4: Suma, Resta y Paréntesis anidados
 
-Resolver $\dfrac{x^2-9}{x} \div \dfrac{x+3}{2} - \dfrac{x-3}{1}$.
+Calcula: $\left( \dfrac{x+1}{x-1} - \dfrac{x-1}{x+1} \right) \div \dfrac{4x}{x+1}$
 
-**Paso 1:** Primero resolvemos la división:
+**Datos:**
+- Paréntesis con denominadores diferentes.
 
-$$
-\frac{x^2-9}{x} \times \frac{2}{x+3} = \frac{(x+3)(x-3)}{x} \times \frac{2}{x+3} = \frac{2(x-3)}{x}
-$$
+**Razonamiento:**
+1.  **Paréntesis (Resta):** MCM es $(x-1)(x+1)$.
+    $$\frac{(x+1)^2 - (x-1)^2}{(x-1)(x+1)}$$
+2.  Expandimos los cuadrados:
+    $$\frac{(x^2+2x+1) - (x^2-2x+1)}{(x-1)(x+1)}$$
+    $$\frac{4x}{(x-1)(x+1)}$$
+3.  **División:**
+    $$\frac{4x}{(x-1)(x+1)} \cdot \frac{x+1}{4x}$$
+4.  **Cancelación:**
+    *   $4x$ con $4x$.
+    *   $(x+1)$ con $(x+1)$.
+    *   Queda $\frac{1}{x-1}$.
 
-**Paso 2:** Ahora restamos:
-
-$$
-\frac{2(x-3)}{x} - (x-3) = \frac{2(x-3)}{x} - \frac{x(x-3)}{x}
-$$
-
-$$
-= \frac{2(x-3) - x(x-3)}{x} = \frac{(x-3)(2-x)}{x}
-$$
-
-$$
-\boxed{\frac{x^2-9}{x} \div \frac{x+3}{2} - (x-3) = \frac{(x-3)(2-x)}{x}}
-$$
+**Resultado:** $\boxed{\frac{1}{x-1}}$
 
 ---
 
-### Ejemplo 7
+### Ejemplo 5: El "Castillo" de Fracciones
 
-Resolver $\left(\dfrac{1}{x} + \dfrac{1}{y}\right) \times xy$.
+Calcula: $\dfrac{1 - \frac{1}{x}}{1 + \frac{1}{x}}$
 
-**Paso 1:** Resolvemos primero el paréntesis:
+**Datos:**
+- Operaciones en numerador y denominador por separado.
 
-$$
-\frac{1}{x} + \frac{1}{y} = \frac{y + x}{xy}
-$$
+**Razonamiento:**
+1.  **Numerador:** $1 - \frac{1}{x} = \frac{x-1}{x}$.
+2.  **Denominador:** $1 + \frac{1}{x} = \frac{x+1}{x}$.
+3.  **División:**
+    $$\frac{x-1}{x} \div \frac{x+1}{x}$$
+    $$\frac{x-1}{x} \cdot \frac{x}{x+1}$$
+4.  Cancelamos $x$.
 
-**Paso 2:** Multiplicamos:
-
-$$
-\frac{x + y}{xy} \times xy = x + y
-$$
-
-$$
-\boxed{\left(\frac{1}{x} + \frac{1}{y}\right) \times xy = x + y}
-$$
+**Resultado:** $\boxed{\frac{x-1}{x+1}}$
 
 ---
 
-### Ejemplo 8
+## 📝 Ejercicios de Práctica
 
-Resolver $\left(\dfrac{x+1}{x-1} - \dfrac{x-1}{x+1}\right) \div \dfrac{4x}{x^2-1}$.
-
-**Paso 1:** Resolvemos el paréntesis con MCM $(x-1)(x+1)$:
-
-$$
-\frac{(x+1)^2 - (x-1)^2}{(x-1)(x+1)}
-$$
-
-Expandimos:
-
-$$
-(x+1)^2 = x^2 + 2x + 1
-$$
-
-$$
-(x-1)^2 = x^2 - 2x + 1
-$$
-
-$$
-= \frac{x^2 + 2x + 1 - x^2 + 2x - 1}{x^2-1} = \frac{4x}{x^2-1}
-$$
-
-**Paso 2:** Dividimos:
-
-$$
-\frac{4x}{x^2-1} \div \frac{4x}{x^2-1} = 1
-$$
-
-$$
-\boxed{\left(\frac{x+1}{x-1} - \frac{x-1}{x+1}\right) \div \frac{4x}{x^2-1} = 1}
-$$
-
----
-
-## 📖 Con tres o más términos
-
-### Ejemplo 9
-
-Resolver $\dfrac{a}{a+b} + \dfrac{b}{a-b} - \dfrac{2ab}{a^2-b^2}$.
-
-**Paso 1:** El MCM es $a^2-b^2 = (a+b)(a-b)$.
-
-**Paso 2:** Convertimos:
-
-$$
-\frac{a(a-b)}{(a+b)(a-b)} + \frac{b(a+b)}{(a+b)(a-b)} - \frac{2ab}{(a+b)(a-b)}
-$$
-
-**Paso 3:** Operamos el numerador:
-
-$$
-= \frac{a(a-b) + b(a+b) - 2ab}{a^2-b^2}
-$$
-
-$$
-= \frac{a^2 - ab + ab + b^2 - 2ab}{a^2-b^2} = \frac{a^2 - 2ab + b^2}{a^2-b^2}
-$$
-
-$$
-= \frac{(a-b)^2}{(a+b)(a-b)} = \frac{a-b}{a+b}
-$$
-
-$$
-\boxed{\frac{a}{a+b} + \frac{b}{a-b} - \frac{2ab}{a^2-b^2} = \frac{a-b}{a+b}}
-$$
-
----
-
-### Ejemplo 10
-
-Resolver $\dfrac{1}{x} \times \dfrac{x}{x+1} + \dfrac{1}{x+1} \times \dfrac{x+1}{x+2}$.
-
-**Paso 1:** Resolvemos cada multiplicación:
-
-$$
-\frac{1}{x} \times \frac{x}{x+1} = \frac{1}{x+1}
-$$
-
-$$
-\frac{1}{x+1} \times \frac{x+1}{x+2} = \frac{1}{x+2}
-$$
-
-**Paso 2:** Sumamos:
-
-$$
-\frac{1}{x+1} + \frac{1}{x+2} = \frac{(x+2) + (x+1)}{(x+1)(x+2)} = \frac{2x + 3}{(x+1)(x+2)}
-$$
-
-$$
-\boxed{\frac{1}{x} \times \frac{x}{x+1} + \frac{1}{x+1} \times \frac{x+1}{x+2} = \frac{2x+3}{(x+1)(x+2)}}
-$$
-
----
-
-## 📝 Ejercicios de práctica
-
-**Ejercicio 1:** Resuelve $\dfrac{x+1}{x} \times \dfrac{x}{x-1} \div \dfrac{x+1}{x-1}$.
+### Ejercicio 1
+Calcula $\dfrac{2}{3} \cdot \dfrac{3}{4} + \dfrac{1}{2}$.
 
 <details>
 <summary>Ver solución</summary>
 
-$$
-\frac{x+1}{x} \times \frac{x}{x-1} \times \frac{x-1}{x+1} = 1
-$$
+**Razonamiento:** Mult: 6/12 = 1/2. Suma: 1/2 + 1/2 = 1.
+**Resultado:** $\boxed{1}$
+
+</details>
+
+### Ejercicio 2
+Calcula $\dfrac{1}{x} \div \dfrac{1}{x^2} - x$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** Div: $x$. Resta: $x - x = 0$.
+**Resultado:** $\boxed{0}$
+
+</details>
+
+### Ejercicio 3
+Calcula $\left(\dfrac{a}{b} + \dfrac{b}{a}\right) \cdot ab$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** $(\frac{a^2+b^2}{ab}) \cdot ab = a^2+b^2$.
+**Resultado:** $\boxed{a^2+b^2}$
+
+</details>
+
+### Ejercicio 4
+Calcula $\dfrac{x-2}{x} \cdot \dfrac{x}{x^2-4} + \dfrac{1}{x+2}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Mult: $\frac{1}{x+2}$.
+Suma: $\frac{1}{x+2} + \frac{1}{x+2} = \frac{2}{x+2}$.
+**Resultado:** $\boxed{\frac{2}{x+2}}$
+
+</details>
+
+### Ejercicio 5
+Calcula $\left(1 + \dfrac{1}{x}\right) \div (x+1)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** $\frac{x+1}{x} \cdot \frac{1}{x+1} = \frac{1}{x}$.
+**Resultado:** $\boxed{\frac{1}{x}}$
+
+</details>
+
+### Ejercicio 6
+Calcula $\dfrac{a}{a+1} \div \dfrac{a^2}{a^2-1} \cdot a$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Div: $\frac{a}{a+1} \cdot \frac{(a+1)(a-1)}{a^2} = \frac{a-1}{a}$.
+Mult: $\frac{a-1}{a} \cdot a = a-1$.
+**Resultado:** $\boxed{a-1}$
+
+</details>
+
+### Ejercicio 7
+Calcula $\dfrac{x^2}{y^2} \cdot \dfrac{y}{x} \div \dfrac{x}{y}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Mult: $\frac{x}{y}$.
+Div: $\frac{x}{y} \cdot \frac{y}{x} = 1$.
+**Resultado:** $\boxed{1}$
+
+</details>
+
+### Ejercicio 8
+Calcula $\left(\dfrac{1}{a} - \dfrac{1}{b}\right) \div \dfrac{b-a}{ab}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Paréntesis: $\frac{b-a}{ab}$.
+Div: Una cosa entre la misma cosa = 1.
+**Resultado:** $\boxed{1}$
+
+</details>
+
+### Ejercicio 9
+Calcula $\dfrac{3}{x+1} - \dfrac{2}{x+1} \cdot \dfrac{x+1}{2}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** Primero Mult: $\frac{2}{x+1} \cdot \frac{x+1}{2} = 1$.
+Resta: $\frac{3}{x+1} - 1 = \frac{3 - (x+1)}{x+1} = \frac{2-x}{x+1}$.
+**Resultado:** $\boxed{\frac{2-x}{x+1}}$
+
+</details>
+
+### Ejercicio 10
+Calcula $\dfrac{x+1}{x} \cdot \left( x - \dfrac{x^2}{x+1} \right)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Paréntesis: $\frac{x(x+1) - x^2}{x+1} = \frac{x}{x+1}$.
+Mult: $\frac{x+1}{x} \cdot \frac{x}{x+1} = 1$.
+**Resultado:** $\boxed{1}$
 
 </details>
 
 ---
 
-**Ejercicio 2:** Resuelve $\dfrac{3}{x-2} + \dfrac{2}{x+2} - \dfrac{5x}{x^2-4}$.
+## 🔑 Resumen
 
-<details>
-<summary>Ver solución</summary>
+| Prioridad | Operación |
+| :--- | :--- |
+| **1** | **(  )** Paréntesis y agrupaciones |
+| **2** | **$\times$ y $\div$** De izquierda a derecha |
+| **3** | **$+$ y $-$** De izquierda a derecha |
 
-MCM = $(x-2)(x+2)$:
-
-$$
-\frac{3(x+2) + 2(x-2) - 5x}{x^2-4} = \frac{3x + 6 + 2x - 4 - 5x}{x^2-4} = \frac{2}{x^2-4}
-$$
-
-</details>
-
----
-
-**Ejercicio 3:** Resuelve $\left(\dfrac{2}{x} - \dfrac{1}{x+1}\right) \times x(x+1)$.
-
-<details>
-<summary>Ver solución</summary>
-
-Primero el paréntesis:
-
-$$
-\frac{2(x+1) - x}{x(x+1)} = \frac{2x + 2 - x}{x(x+1)} = \frac{x + 2}{x(x+1)}
-$$
-
-Multiplicamos: $\dfrac{x+2}{x(x+1)} \times x(x+1) = x + 2$
-
-</details>
-
----
-
-**Ejercicio 4:** Resuelve $\dfrac{x^2-1}{x} \div \dfrac{x-1}{2} + \dfrac{x+1}{x}$.
-
-<details>
-<summary>Ver solución</summary>
-
-Primero la división:
-
-$$
-\frac{(x+1)(x-1)}{x} \times \frac{2}{x-1} = \frac{2(x+1)}{x}
-$$
-
-Sumamos:
-
-$$
-\frac{2(x+1)}{x} + \frac{x+1}{x} = \frac{3(x+1)}{x}
-$$
-
-</details>
-
----
-
-**Ejercicio 5:** Resuelve $\dfrac{a+b}{a} \times \dfrac{a}{a-b} - \dfrac{2b}{a-b}$.
-
-<details>
-<summary>Ver solución</summary>
-
-$$
-\frac{a+b}{a-b} - \frac{2b}{a-b} = \frac{a + b - 2b}{a-b} = \frac{a - b}{a-b} = 1
-$$
-
-</details>
-
----
-
-**Ejercicio 6:** Resuelve $\left(\dfrac{x}{x+2} + \dfrac{x}{x-2}\right) \div \dfrac{2x^2}{x^2-4}$.
-
-<details>
-<summary>Ver solución</summary>
-
-Paréntesis:
-
-$$
-\frac{x(x-2) + x(x+2)}{x^2-4} = \frac{x^2 - 2x + x^2 + 2x}{x^2-4} = \frac{2x^2}{x^2-4}
-$$
-
-División:
-
-$$
-\frac{2x^2}{x^2-4} \div \frac{2x^2}{x^2-4} = 1
-$$
-
-</details>
-
----
+> El orden lo es todo: altera el orden y alterarás el resultado. ¡Siempre respeta la jerarquía!
