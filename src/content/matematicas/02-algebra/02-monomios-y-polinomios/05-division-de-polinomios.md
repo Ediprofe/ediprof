@@ -13,6 +13,32 @@ Dividir un polinomio es como repartir una herencia o un gran cargamento de sumin
 
 ---
 
+## 🔄 **La Fórmula de Verificación**
+
+¿Recuerdas la división de números que aprendiste en primaria? Por ejemplo, si divides $17 \div 5$:
+
+| Dividendo | Divisor | Cociente | Resto |
+| :---: | :---: | :---: | :---: |
+| 17 | 5 | 3 | 2 |
+
+Y la prueba era: $5 \times 3 + 2 = 17$ ✓
+
+**¡Con polinomios funciona exactamente igual!** La fórmula de verificación es:
+
+$$
+\boxed{P(x) = D(x) \cdot C(x) + R(x)}
+$$
+
+Donde:
+- $P(x)$ = **Dividendo** (el polinomio que dividimos)
+- $D(x)$ = **Divisor** (el polinomio entre el que dividimos)
+- $C(x)$ = **Cociente** (el resultado)
+- $R(x)$ = **Resto** o residuo (lo que sobra)
+
+> 💡 **Tip:** Siempre puedes verificar tu división multiplicando $D(x) \cdot C(x)$ y sumándole $R(x)$. Si obtienes $P(x)$, ¡tu división está correcta!
+
+---
+
 ## 📦 **División entre un Monomio**
 
 Esta es la forma más sencilla de dividir. Imagina que tienes un paquete con varios artículos y quieres repartirlos entre un grupo único.
@@ -421,11 +447,26 @@ En la división $P(x) \div D(x)$, si el residuo no es cero, ¿cuál es su grado 
 
 ## 🔑 **Resumen**
 
-| Método | Cuándo usarlo | Ventaja |
+### ¿Qué método uso?
+
+| Si el divisor es... | Usa este método | ¿Por qué? |
 | :--- | :--- | :--- |
-| **Por Monomio** | Divisor de un solo término ($3x^2$). | Rápido y directo. |
-| **División Larga** | Cualquier división entre polinomios. | Universal (sirve para todo). |
-| **Ruffini** | Divisor tipo $(x \pm a)$. | No requiere variables, solo números. |
-| **T. del Resto** | Solo si quieres saber el sobrante. | Evita hacer toda la división. |
+| Un **monomio** ($3x$, $5x^2$) | División por monomio | ⚡ Divide término a término |
+| De la forma $(x \pm a)$ | **Ruffini** | 🔢 Solo trabajas con números |
+| Cualquier otro polinomio | División larga | 📐 Funciona siempre |
+| Solo necesitas el **resto** | Teorema del resto | 🎯 Evalúa $P(a)$ sin dividir |
+
+### Fórmula de verificación
+
+$$
+\boxed{P(x) = D(x) \cdot C(x) + R(x)}
+$$
+
+### Tips importantes
+
+- El **cociente** $C(x)$ siempre tiene un grado **menor** que el dividendo $P(x)$.
+- Si el **resto = 0**, el divisor es un **factor** del dividendo.
+- En Ruffini: si el divisor es $(x - 3)$, usa $+3$; si es $(x + 2)$, usa $-2$.
+- Ordena siempre el polinomio de **mayor a menor grado** antes de dividir.
 
 > 💡 **Conclusión:** La división de polinomios nos permite simplificar estructuras matemáticas complejas. Ya sea usando el método largo o el atajo de Ruffini, lo importante es mantener el orden de los grados para que cada pieza encaje en su lugar.
