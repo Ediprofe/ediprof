@@ -296,7 +296,34 @@
       "size": "216KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/4rd3-ejemplo-ruffini.webp",
       "status": "uploaded"
+    },
+    {
+      "id": "d74f",
+      "name": "el-tren-de-los-terminos.webp",
+      "materia": "matematicas",
+      "date": "2025-12-26",
+      "size": "49KB",
+      "url": "https://cdn.ediprofe.com/img/matematicas/d74f-el-tren-de-los-terminos.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "q1ss",
+      "name": "factorizar-y-multiplicar.webp",
+      "materia": "matematicas",
+      "date": "2025-12-26",
+      "size": "65KB",
+      "url": "https://cdn.ediprofe.com/img/matematicas/q1ss-factorizar-y-multiplicar.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "w3rh",
+      "name": "factor-comun.webp",
+      "materia": "matematicas",
+      "date": "2025-12-26",
+      "size": "40KB",
+      "url": "https://cdn.ediprofe.com/img/matematicas/w3rh-factor-comun.webp",
+      "status": "uploaded"
     }
   ],
-  "lastUpdated": "2025-12-26T02:35:42.975Z"
+  "lastUpdated": "2025-12-26T18:35:13.207Z"
 }

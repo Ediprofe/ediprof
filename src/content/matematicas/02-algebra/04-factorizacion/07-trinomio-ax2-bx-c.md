@@ -1,472 +1,277 @@
-# 🔢 Trinomio de la Forma ax² + bx + c
+# **Trinomio de la forma ax² + bx + c**
 
-En esta lección aprenderemos a factorizar trinomios donde el coeficiente del término cuadrático es diferente de 1.
-
----
-
-## 📖 Forma general
-
-El trinomio de la forma:
-
-$$
-ax^2 + bx + c \quad \text{donde } a \neq 1
-$$
-
-Es más complejo de factorizar. Existen varios métodos para hacerlo.
+En lecciones anteriores aprendimos a factorizar trinomios donde el coeficiente de $x^2$ es 1. Ahora veremos qué hacer cuando ese coeficiente es diferente de 1. Existen dos métodos principales para resolver este tipo de trinomios.
 
 ---
 
-## 📖 Método 1: Descomposición del término medio
+## 🎯 ¿Qué vas a aprender?
 
-Este método consiste en reescribir el término medio $bx$ como la suma de dos términos, para luego factorizar por agrupación.
+- A identificar trinomios con coeficiente principal distinto de 1.
+- El **Método de Agrupación** para factorizar paso a paso.
+- El **Método de Tanteo** para factorizar de forma rápida.
+- A elegir el mejor método según el problema.
 
-### Pasos
+---
 
-1. Calcular $a \times c$
-2. Buscar dos números $m$ y $n$ tales que:
-   - $m + n = b$
-   - $m \times n = a \times c$
-3. Reescribir $bx$ como $mx + nx$
-4. Factorizar por agrupación
+## 🏗️ Método 1: Agrupación
 
-### Ejemplo 1
+Este es el método más ordenado y confiable. Consiste en convertir el trinomio de 3 términos en un polinomio de 4 términos para poder aplicar factor común por agrupación.
+
+### Pasos del Método de Agrupación
+
+1. Multiplica el primer coeficiente ($a$) por el último ($c$). A esto le llamamos "Producto AC".
+2. Busca dos números que **multiplicados** den el Producto AC y **sumados** den $b$.
+3. Reescribe el trinomio abriendo el término central con esos dos números.
+4. Factoriza por agrupación (factor común por parejas).
+
+---
+
+### Ejemplo 1: Agrupación básica
 
 Factoriza: $2x^2 + 7x + 3$
 
-**Paso 1:** $a \times c = 2 \times 3 = 6$
+**Datos:**
+- $a = 2$, $b = 7$, $c = 3$
+- Producto AC = $2 \times 3 = 6$
 
-**Paso 2:** Buscamos $m + n = 7$ y $m \times n = 6$
+**Razonamiento:**
+1. Buscamos números que multipliquen 6 y sumen 7. Son **6** y **1**.
+2. Abrimos el centro: $2x^2 + 6x + x + 3$.
+3. Agrupamos: $(2x^2 + 6x) + (x + 3)$.
+4. Factor común: $2x(x + 3) + 1(x + 3)$.
+5. El bloque $(x + 3)$ es común.
 
-Los números son $1$ y $6$: $\quad 1 + 6 = 7$, $\quad 1 \times 6 = 6$
-
-**Paso 3:** Reescribimos: $2x^2 + x + 6x + 3$
-
-**Paso 4:** Agrupamos:
-
-$$
-(2x^2 + x) + (6x + 3)
-$$
-
-$$
-= x(2x + 1) + 3(2x + 1)
-$$
-
-$$
-= (2x + 1)(x + 3)
-$$
-
-$$
-\boxed{(2x + 1)(x + 3)}
-$$
-
-### Ejemplo 2
-
-Factoriza: $3x^2 + 10x + 8$
-
-**Paso 1:** $a \times c = 3 \times 8 = 24$
-
-**Paso 2:** $m + n = 10$, $m \times n = 24$
-
-Los números son $4$ y $6$: $\quad 4 + 6 = 10$, $\quad 4 \times 6 = 24$
-
-**Paso 3:** $3x^2 + 4x + 6x + 8$
-
-**Paso 4:**
-
-$$
-(3x^2 + 4x) + (6x + 8)
-$$
-
-$$
-= x(3x + 4) + 2(3x + 4)
-$$
-
-$$
-= (3x + 4)(x + 2)
-$$
-
-$$
-\boxed{(3x + 4)(x + 2)}
-$$
-
-### Ejemplo 3
-
-Factoriza: $6x^2 - 11x + 4$
-
-**Paso 1:** $a \times c = 6 \times 4 = 24$
-
-**Paso 2:** $m + n = -11$, $m \times n = 24$ (positivo)
-
-Ambos negativos: $-3$ y $-8$: $\quad (-3) + (-8) = -11$, $\quad (-3) \times (-8) = 24$
-
-**Paso 3:** $6x^2 - 3x - 8x + 4$
-
-**Paso 4:**
-
-$$
-(6x^2 - 3x) + (-8x + 4)
-$$
-
-$$
-= 3x(2x - 1) - 4(2x - 1)
-$$
-
-$$
-= (2x - 1)(3x - 4)
-$$
-
-$$
-\boxed{(2x - 1)(3x - 4)}
-$$
+**Resultado:** $\boxed{(x + 3)(2x + 1)}$
 
 ---
 
-## 📖 Método 2: Tanteo o prueba y error
+### Ejemplo 2: Agrupación con signos negativos
 
-Este método consiste en probar combinaciones de factores hasta encontrar la correcta.
+Factoriza: $3x^2 - 10x + 8$
 
-### Pasos
+**Datos:**
+- Producto AC = $3 \times 8 = 24$
+- Necesitamos que sumen $-10$ y multipliquen $+24$
 
-1. Factorizar $a$ (coeficiente de $x^2$)
-2. Factorizar $c$ (término independiente)
-3. Probar combinaciones hasta que el término medio sea correcto
+**Razonamiento:**
+1. Ambos números deben ser negativos: **-6** y **-4**.
+2. Abrimos: $3x^2 - 6x - 4x + 8$.
+3. Agrupamos: $3x(x - 2) - 4(x - 2)$.
+4. Al sacar el -4, el signo interno cambia.
 
-### Ejemplo 4
+**Resultado:** $\boxed{(x - 2)(3x - 4)}$
+
+---
+
+### Ejemplo 3: Agrupación con término negativo al final
+
+Factoriza: $2x^2 + 3x - 2$
+
+**Datos:**
+- Producto AC = $2 \times (-2) = -4$
+- Necesitamos que sumen $+3$ y multipliquen $-4$
+
+**Razonamiento:**
+1. Números con signos diferentes: **+4** y **-1**.
+2. Abrimos: $2x^2 + 4x - x - 2$.
+3. Agrupamos: $2x(x + 2) - 1(x + 2)$.
+
+**Resultado:** $\boxed{(x + 2)(2x - 1)}$
+
+---
+
+## 🏗️ Método 2: Tanteo
+
+Este método consiste en probar combinaciones de factores hasta encontrar la correcta. Es más rápido cuando los coeficientes son pequeños.
+
+### Pasos del Método de Tanteo
+
+1. Descompón el primer término ($ax^2$) en dos factores.
+2. Descompón el último término ($c$) en dos factores.
+3. Prueba combinaciones multiplicando en cruz.
+4. Si la suma de los productos cruzados da el término central, encontraste los factores.
+
+---
+
+### Ejemplo 4: Tanteo básico
 
 Factoriza: $2x^2 + 5x + 2$
 
-**Factores de 2 (coef. de $x^2$):** $1 \times 2$ o $2 \times 1$
+**Datos:**
+- Factores de $2x^2$: $(2x)$ y $(x)$
+- Factores de $2$: $(1)$ y $(2)$
 
-**Factores de 2 (término indep.):** $1 \times 2$ o $2 \times 1$
+**Razonamiento:**
+1. Probamos: $(2x + 1)(x + 2)$.
+2. Verificamos en cruz: $2x \cdot 2 = 4x$ y $x \cdot 1 = x$.
+3. Suma: $4x + x = 5x$. ¡Coincide con el centro!
 
-**Probamos:** $(2x + 1)(x + 2)$
-
-Verificamos el término medio:
-
-$$
-2x \cdot 2 + 1 \cdot x = 4x + x = 5x \quad ✓
-$$
-
-$$
-2x^2 + 5x + 2 = (2x + 1)(x + 2)
-$$
-
-$$
-\boxed{(2x + 1)(x + 2)}
-$$
-
-### Ejemplo 5
-
-Factoriza: $3x^2 - 7x + 2$
-
-**Factores de 3:** $1 \times 3$
-
-**Factores de 2:** $1 \times 2$ (negativos porque $c > 0$ y $b < 0$)
-
-**Probamos:** $(3x - 1)(x - 2)$
-
-Verificamos:
-
-$$
-3x \cdot (-2) + (-1) \cdot x = -6x - x = -7x \quad ✓
-$$
-
-$$
-3x^2 - 7x + 2 = (3x - 1)(x - 2)
-$$
-
-$$
-\boxed{(3x - 1)(x - 2)}
-$$
+**Resultado:** $\boxed{(2x + 1)(x + 2)}$
 
 ---
 
-## 📖 Ejemplos con c negativo
+### Ejemplo 5: Tanteo con signos diferentes
 
-### Ejemplo 6
+Factoriza: $3x^2 - 5x - 2$
 
-Factoriza: $2x^2 + 3x - 5$
+**Datos:**
+- Factores de $3x^2$: $(3x)$ y $(x)$
+- Factores de $-2$: $(1)$ y $(-2)$ o $(-1)$ y $(2)$
 
-**Método de descomposición:**
+**Razonamiento:**
+1. Probamos: $(3x + 1)(x - 2)$.
+2. Verificamos: $3x \cdot (-2) = -6x$ y $x \cdot 1 = x$.
+3. Suma: $-6x + x = -5x$. ¡Correcto!
 
-$a \times c = 2 \times (-5) = -10$
-
-Buscamos: $m + n = 3$, $m \times n = -10$
-
-Los números son $5$ y $-2$: $\quad 5 + (-2) = 3$, $\quad 5 \times (-2) = -10$
-
-$$
-2x^2 + 5x - 2x - 5
-$$
-
-$$
-= x(2x + 5) - 1(2x + 5)
-$$
-
-$$
-= (2x + 5)(x - 1)
-$$
-
-$$
-\boxed{(2x + 5)(x - 1)}
-$$
-
-### Ejemplo 7
-
-Factoriza: $4x^2 - 4x - 3$
-
-$a \times c = 4 \times (-3) = -12$
-
-Buscamos: $m + n = -4$, $m \times n = -12$
-
-Los números son $-6$ y $2$: $\quad (-6) + 2 = -4$, $\quad (-6) \times 2 = -12$
-
-$$
-4x^2 - 6x + 2x - 3
-$$
-
-$$
-= 2x(2x - 3) + 1(2x - 3)
-$$
-
-$$
-= (2x - 3)(2x + 1)
-$$
-
-$$
-\boxed{(2x - 3)(2x + 1)}
-$$
-
-### Ejemplo 8
-
-Factoriza: $5x^2 + 13x - 6$
-
-$a \times c = 5 \times (-6) = -30$
-
-Buscamos: $m + n = 13$, $m \times n = -30$
-
-Los números son $15$ y $-2$: $\quad 15 + (-2) = 13$, $\quad 15 \times (-2) = -30$
-
-$$
-5x^2 + 15x - 2x - 6
-$$
-
-$$
-= 5x(x + 3) - 2(x + 3)
-$$
-
-$$
-= (x + 3)(5x - 2)
-$$
-
-$$
-\boxed{(x + 3)(5x - 2)}
-$$
+**Resultado:** $\boxed{(3x + 1)(x - 2)}$
 
 ---
 
-## 📖 Con factor común
+### Ejemplo 6: Combinando con factor común
 
-Siempre busca factor común primero.
+Factoriza completamente: $6x^2 + 15x + 9$
 
-### Ejemplo 9
+**Datos:**
+- Todos los coeficientes (6, 15, 9) son divisibles por 3.
 
-Factoriza: $6x^2 + 15x + 6$
+**Razonamiento:**
+1. Sacamos factor común 3: $3(2x^2 + 5x + 3)$.
+2. Factorizamos el trinomio interno por tanteo o agrupación.
+3. Probamos: $(2x + 3)(x + 1)$. Verificación: $2x + 3x = 5x$. ✓
 
-**Paso 1:** Factor común $3$:
-
-$$
-6x^2 + 15x + 6 = 3(2x^2 + 5x + 2)
-$$
-
-**Paso 2:** Factorizamos $2x^2 + 5x + 2$:
-
-$a \times c = 2 \times 2 = 4$
-
-$m + n = 5$, $m \times n = 4$ → $4$ y $1$
-
-$$
-3(2x^2 + 4x + x + 2) = 3[2x(x + 2) + 1(x + 2)]
-$$
-
-$$
-= 3(x + 2)(2x + 1)
-$$
-
-$$
-\boxed{3(x + 2)(2x + 1)}
-$$
-
-### Ejemplo 10
-
-Factoriza: $12x^3 - 10x^2 - 8x$
-
-**Paso 1:** Factor común $2x$:
-
-$$
-12x^3 - 10x^2 - 8x = 2x(6x^2 - 5x - 4)
-$$
-
-**Paso 2:** Factorizamos $6x^2 - 5x - 4$:
-
-$a \times c = 6 \times (-4) = -24$
-
-$m + n = -5$, $m \times n = -24$ → $-8$ y $3$
-
-$$
-2x(6x^2 - 8x + 3x - 4) = 2x[2x(3x - 4) + 1(3x - 4)]
-$$
-
-$$
-= 2x(3x - 4)(2x + 1)
-$$
-
-$$
-\boxed{2x(3x - 4)(2x + 1)}
-$$
+**Resultado:** $\boxed{3(2x + 3)(x + 1)}$
 
 ---
 
-## 📖 Ejemplos con coeficientes grandes
+## 📝 Ejercicios de Práctica
 
-### Ejemplo 11
+### Ejercicio 1
+Factoriza usando Agrupación: $2x^2 + 9x + 4$
 
-Factoriza: $6x^2 + 17x + 12$
+<details>
+<summary>Ver solución</summary>
 
-$a \times c = 6 \times 12 = 72$
+**Datos:** AC = 8. Números: 8 y 1.
+**Razonamiento:** $2x^2 + 8x + x + 4 = 2x(x+4) + 1(x+4)$.
+**Resultado:** $\boxed{(x + 4)(2x + 1)}$
 
-Buscamos: $m + n = 17$, $m \times n = 72$
+</details>
 
-Los números son $8$ y $9$: $\quad 8 + 9 = 17$, $\quad 8 \times 9 = 72$
+### Ejercicio 2
+Factoriza usando Tanteo: $3x^2 + 7x + 2$
 
-$$
-6x^2 + 8x + 9x + 12
-$$
+<details>
+<summary>Ver solución</summary>
 
-$$
-= 2x(3x + 4) + 3(3x + 4)
-$$
+**Datos:** Factores $(3x, x)$ y $(1, 2)$.
+**Razonamiento:** $3x(2) + x(1) = 7x$. Coincide.
+**Resultado:** $\boxed{(3x + 1)(x + 2)}$
 
-$$
-= (3x + 4)(2x + 3)
-$$
+</details>
 
-$$
-\boxed{(3x + 4)(2x + 3)}
-$$
+### Ejercicio 3
+Factoriza: $2x^2 + 11x + 5$
 
-### Ejemplo 12
+<details>
+<summary>Ver solución</summary>
 
-Factoriza: $10x^2 - 19x + 6$
+**Datos:** AC = 10. Números: 10 y 1.
+**Razonamiento:** $2x(x+5) + 1(x+5)$.
+**Resultado:** $\boxed{(x + 5)(2x + 1)}$
 
-$a \times c = 10 \times 6 = 60$
+</details>
 
-Buscamos: $m + n = -19$, $m \times n = 60$
+### Ejercicio 4
+Factoriza: $6x^2 - 7x + 2$
 
-Los números son $-4$ y $-15$
+<details>
+<summary>Ver solución</summary>
 
-$$
-10x^2 - 4x - 15x + 6
-$$
+**Datos:** AC = 12. Números: -4 y -3.
+**Razonamiento:** $6x^2 - 4x - 3x + 2 = 2x(3x-2) - 1(3x-2)$.
+**Resultado:** $\boxed{(3x - 2)(2x - 1)}$
 
-$$
-= 2x(5x - 2) - 3(5x - 2)
-$$
+</details>
 
-$$
-= (5x - 2)(2x - 3)
-$$
+### Ejercicio 5
+Factoriza: $5x^2 + 7x + 2$
 
-$$
-\boxed{(5x - 2)(2x - 3)}
-$$
+<details>
+<summary>Ver solución</summary>
 
----
+**Datos:** AC = 10. Números: 5 y 2.
+**Razonamiento:** $5x(x+1) + 2(x+1)$.
+**Resultado:** $\boxed{(x + 1)(5x + 2)}$
 
-## 📖 Resumen de métodos
+</details>
 
-| Método | Cuándo usarlo |
-|:-------|:--------------|
-| Descomposición | Siempre funciona, más sistemático |
-| Tanteo | Coeficientes pequeños, más rápido con práctica |
+### Ejercicio 6
+Factoriza: $4x^2 - 15x - 4$
 
----
+<details>
+<summary>Ver solución</summary>
 
-## 📝 Ejercicios de práctica
+**Datos:** Tanteo: $(4x, x)$ y $(1, -4)$.
+**Razonamiento:** $4x(-4) + x(1) = -15x$.
+**Resultado:** $\boxed{(4x + 1)(x - 4)}$
 
-### Método de descomposición
+</details>
 
-**Ejercicio 1:** $2x^2 + 9x + 4$
+### Ejercicio 7
+Factoriza: $3x^2 - 14x - 5$
 
-**Ejercicio 2:** $3x^2 + 11x + 10$
+<details>
+<summary>Ver solución</summary>
 
-**Ejercicio 3:** $4x^2 - 8x + 3$
+**Datos:** AC = -15. Números: -15 y 1.
+**Razonamiento:** $3x(x-5) + 1(x-5)$.
+**Resultado:** $\boxed{(x - 5)(3x + 1)}$
 
----
+</details>
 
-### Con c negativo
+### Ejercicio 8
+Factoriza: $2x^2 - 5x - 3$
 
-**Ejercicio 4:** $2x^2 + x - 6$
+<details>
+<summary>Ver solución</summary>
 
-**Ejercicio 5:** $3x^2 - 2x - 5$
+**Datos:** Tanteo: $(2x, x)$ y $(1, -3)$.
+**Razonamiento:** $2x(-3) + x(1) = -5x$.
+**Resultado:** $\boxed{(2x + 1)(x - 3)}$
 
-**Ejercicio 6:** $5x^2 + 7x - 6$
+</details>
 
----
+### Ejercicio 9
+Factoriza: $6x^2 + x - 2$
 
-### Con factor común
+<details>
+<summary>Ver solución</summary>
 
-**Ejercicio 7:** $4x^2 + 10x + 4$
+**Datos:** AC = -12. Números: 4 y -3.
+**Razonamiento:** $2x(3x+2) - 1(3x+2)$.
+**Resultado:** $\boxed{(3x + 2)(2x - 1)}$
 
-**Ejercicio 8:** $6x^3 + 7x^2 - 3x$
+</details>
 
----
+### Ejercicio 10
+Factoriza sacando primero factor común: $4x^2 + 18x + 8$
 
-### Coeficientes grandes
+<details>
+<summary>Ver solución</summary>
 
-**Ejercicio 9:** $8x^2 + 14x + 3$
+**Datos:** Factor común 2.
+**Razonamiento:** $2(2x^2 + 9x + 4)$. Adentro: $(2x+1)(x+4)$.
+**Resultado:** $\boxed{2(2x + 1)(x + 4)}$
 
-**Ejercicio 10:** $12x^2 - 17x + 6$
-
----
-
-## ✅ Soluciones
-
-### Método de descomposición
-
-| Ejercicio | $a \times c$ | Números | Solución |
-|:---------:|:------------:|:-------:|:---------|
-| 1 | $8$ | $1, 8$ | $(2x + 1)(x + 4)$ |
-| 2 | $30$ | $5, 6$ | $(3x + 5)(x + 2)$ |
-| 3 | $12$ | $-2, -6$ | $(2x - 1)(2x - 3)$ |
-
-### Con c negativo
-
-| Ejercicio | $a \times c$ | Números | Solución |
-|:---------:|:------------:|:-------:|:---------|
-| 4 | $-12$ | $4, -3$ | $(2x - 3)(x + 2)$ |
-| 5 | $-15$ | $-5, 3$ | $(3x - 5)(x + 1)$ |
-| 6 | $-30$ | $10, -3$ | $(5x - 3)(x + 2)$ |
-
-### Con factor común
-
-**Ejercicio 7:**
-
-$$
-4x^2 + 10x + 4 = 2(2x^2 + 5x + 2) = 2(2x + 1)(x + 2)
-$$
-
-**Ejercicio 8:**
-
-$$
-6x^3 + 7x^2 - 3x = x(6x^2 + 7x - 3) = x(3x - 1)(2x + 3)
-$$
-
-### Coeficientes grandes
-
-| Ejercicio | Números | Solución |
-|:---------:|:-------:|:---------|
-| 9 | $2, 12$ | $(4x + 1)(2x + 3)$ |
-| 10 | $-8, -9$ | $(4x - 3)(3x - 2)$ |
+</details>
 
 ---
+
+## 🔑 Resumen
+
+| Método | Cuándo usarlo | Ventaja |
+| :--- | :--- | :--- |
+| **Agrupación** | Cuando los números son grandes o no ves la respuesta rápido | Siempre funciona |
+| **Tanteo** | Cuando los coeficientes son pequeños | Más rápido |
+
+> Ambos métodos dan el mismo resultado. Elige el que te resulte más cómodo según el problema. Lo importante es verificar siempre multiplicando los factores.

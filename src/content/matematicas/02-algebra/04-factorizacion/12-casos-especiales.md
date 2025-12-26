@@ -1,549 +1,239 @@
-# 🌟 Casos Especiales de Factorización
+# **Casos Especiales de Factorización**
 
-En esta lección final estudiaremos casos especiales de factorización que combinan varios métodos o presentan formas particulares.
-
----
-
-## 📖 Estrategia general de factorización
-
-Antes de ver los casos especiales, repasemos el orden recomendado para factorizar cualquier expresión:
-
-### Orden de factorización
-
-1. **¿Hay factor común?** — Siempre es el primer paso
-2. **¿Cuántos términos tiene?**
-   - **2 términos:** Diferencia de cuadrados, suma/diferencia de cubos
-   - **3 términos:** TCP, trinomio $x^2 + bx + c$ o $ax^2 + bx + c$
-   - **4+ términos:** Agrupación
-3. **¿Se puede factorizar más?** — Revisa cada factor
+Esta lección cubre situaciones donde se combinan varios métodos de factorización o donde se necesitan técnicas más avanzadas.
 
 ---
 
-## 📖 Caso 1: Factor común seguido de otro caso
+## 🎯 ¿Qué vas a aprender?
 
-### Ejemplo 1
+- A combinar factor común con otros métodos.
+- A factorizar diferencias de cuadrados con binomios dentro.
+- A usar sustitución para simplificar expresiones complejas.
+- A factorizar expresiones de forma iterada.
+
+---
+
+## 🔍 Casos Principales
+
+| Caso | Descripción |
+| :--- | :--- |
+| **1** | Factor común seguido de otro método |
+| **2** | Diferencia de cuadrados con binomios |
+| **3** | TCP o trinomio con sustitución |
+| **4** | Agrupación creativa |
+| **5** | Factorización iterada |
+
+---
+
+## ⚙️ Ejemplos Resueltos
+
+### Ejemplo 1: Factor común + diferencia de cuadrados
 
 Factoriza: $3x^3 - 12x$
 
-**Paso 1:** Factor común $3x$:
+**Datos:**
+- Hay factor común $3x$.
 
-$$
-3x^3 - 12x = 3x(x^2 - 4)
-$$
+**Razonamiento:**
+1. Sacamos $3x$: $3x(x^2 - 4)$.
+2. Adentro es diferencia de cuadrados: $3x(x + 2)(x - 2)$.
 
-**Paso 2:** Diferencia de cuadrados:
-
-$$
-= 3x(x + 2)(x - 2)
-$$
-
-$$
-\boxed{3x(x + 2)(x - 2)}
-$$
-
-### Ejemplo 2
-
-Factoriza: $2x^4 - 32$
-
-**Paso 1:** Factor común $2$:
-
-$$
-2x^4 - 32 = 2(x^4 - 16)
-$$
-
-**Paso 2:** $x^4 - 16 = (x^2)^2 - 4^2$ → diferencia de cuadrados:
-
-$$
-= 2(x^2 + 4)(x^2 - 4)
-$$
-
-**Paso 3:** $x^2 - 4$ → diferencia de cuadrados:
-
-$$
-= 2(x^2 + 4)(x + 2)(x - 2)
-$$
-
-$$
-\boxed{2(x^2 + 4)(x + 2)(x - 2)}
-$$
+**Resultado:** $\boxed{3x(x + 2)(x - 2)}$
 
 ---
 
-## 📖 Caso 2: Diferencia de cuadrados con binomios
-
-### Ejemplo 3
+### Ejemplo 2: Diferencia de cuadrados con binomio
 
 Factoriza: $(x + 1)^2 - 9$
 
-Reconocemos: $a = (x + 1)$, $b = 3$
+**Datos:**
+- Identificamos $a = (x + 1)$ y $b = 3$.
 
-$$
-(x + 1)^2 - 9 = [(x + 1) + 3][(x + 1) - 3]
-$$
+**Razonamiento:**
+1. Aplicamos la fórmula: $[(x + 1) + 3][(x + 1) - 3]$.
+2. Simplificamos: $(x + 4)(x - 2)$.
 
-$$
-= (x + 4)(x - 2)
-$$
-
-$$
-\boxed{(x + 4)(x - 2)}
-$$
-
-### Ejemplo 4
-
-Factoriza: $(2x - 3)^2 - (x + 1)^2$
-
-Diferencia de cuadrados con $a = (2x - 3)$ y $b = (x + 1)$:
-
-$$
-= [(2x - 3) + (x + 1)][(2x - 3) - (x + 1)]
-$$
-
-$$
-= (2x - 3 + x + 1)(2x - 3 - x - 1)
-$$
-
-$$
-= (3x - 2)(x - 4)
-$$
-
-$$
-\boxed{(3x - 2)(x - 4)}
-$$
-
-### Ejemplo 5
-
-Factoriza: $4(a + b)^2 - 9(a - b)^2$
-
-$$
-= [2(a + b)]^2 - [3(a - b)]^2
-$$
-
-$$
-= [2(a + b) + 3(a - b)][2(a + b) - 3(a - b)]
-$$
-
-$$
-= (2a + 2b + 3a - 3b)(2a + 2b - 3a + 3b)
-$$
-
-$$
-= (5a - b)(-a + 5b)
-$$
-
-$$
-\boxed{(5a - b)(5b - a)}
-$$
+**Resultado:** $\boxed{(x + 4)(x - 2)}$
 
 ---
 
-## 📖 Caso 3: TCP con binomios
+### Ejemplo 3: Trinomio con sustitución
 
-### Ejemplo 6
+Factoriza: $(x + 2)^2 + 5(x + 2) + 6$
 
-Factoriza: $(x + 2)^2 + 6(x + 2) + 9$
+**Datos:**
+- Hacemos $u = (x + 2)$.
 
-Sea $u = (x + 2)$:
+**Razonamiento:**
+1. Con la sustitución: $u^2 + 5u + 6 = (u + 2)(u + 3)$.
+2. Reemplazamos: $[(x + 2) + 2][(x + 2) + 3] = (x + 4)(x + 5)$.
 
-$$
-u^2 + 6u + 9 = (u + 3)^2
-$$
-
-Sustituyendo de vuelta:
-
-$$
-= [(x + 2) + 3]^2 = (x + 5)^2
-$$
-
-$$
-\boxed{(x + 5)^2}
-$$
-
-### Ejemplo 7
-
-Factoriza: $(a - 1)^2 - 4(a - 1) + 4$
-
-Sea $u = (a - 1)$:
-
-$$
-u^2 - 4u + 4 = (u - 2)^2
-$$
-
-$$
-= [(a - 1) - 2]^2 = (a - 3)^2
-$$
-
-$$
-\boxed{(a - 3)^2}
-$$
+**Resultado:** $\boxed{(x + 4)(x + 5)}$
 
 ---
 
-## 📖 Caso 4: Trinomios con binomios
-
-### Ejemplo 8
-
-Factoriza: $(x + 1)^2 + 5(x + 1) + 6$
-
-Sea $u = (x + 1)$:
-
-$$
-u^2 + 5u + 6 = (u + 2)(u + 3)
-$$
-
-Sustituyendo:
-
-$$
-= [(x + 1) + 2][(x + 1) + 3] = (x + 3)(x + 4)
-$$
-
-$$
-\boxed{(x + 3)(x + 4)}
-$$
-
-### Ejemplo 9
-
-Factoriza: $(2x - 1)^2 - (2x - 1) - 6$
-
-Sea $u = (2x - 1)$:
-
-$$
-u^2 - u - 6 = (u - 3)(u + 2)
-$$
-
-$$
-= [(2x - 1) - 3][(2x - 1) + 2]
-$$
-
-$$
-= (2x - 4)(2x + 1) = 2(x - 2)(2x + 1)
-$$
-
-$$
-\boxed{2(x - 2)(2x + 1)}
-$$
-
----
-
-## 📖 Caso 5: Suma de cuadrados (casos especiales)
-
-Aunque $a^2 + b^2$ generalmente no se factoriza, hay casos donde sí es posible.
-
-### Ejemplo 10: Añadiendo y restando un término
-
-Factoriza: $x^4 + 4$
-
-**Truco:** Añadimos y restamos $4x^2$:
-
-$$
-x^4 + 4 = x^4 + 4x^2 + 4 - 4x^2
-$$
-
-$$
-= (x^2 + 2)^2 - (2x)^2
-$$
-
-$$
-= [(x^2 + 2) + 2x][(x^2 + 2) - 2x]
-$$
-
-$$
-= (x^2 + 2x + 2)(x^2 - 2x + 2)
-$$
-
-$$
-\boxed{(x^2 + 2x + 2)(x^2 - 2x + 2)}
-$$
-
-### Ejemplo 11
-
-Factoriza: $a^4 + 4b^4$
-
-$$
-= a^4 + 4a^2b^2 + 4b^4 - 4a^2b^2
-$$
-
-$$
-= (a^2 + 2b^2)^2 - (2ab)^2
-$$
-
-$$
-= (a^2 + 2ab + 2b^2)(a^2 - 2ab + 2b^2)
-$$
-
-$$
-\boxed{(a^2 + 2ab + 2b^2)(a^2 - 2ab + 2b^2)}
-$$
-
----
-
-## 📖 Caso 6: Agrupación creativa
-
-### Ejemplo 12
+### Ejemplo 4: Agrupación creativa (TCP - cuadrado)
 
 Factoriza: $x^2 + 2xy + y^2 - z^2$
 
-**Reconocemos TCP:** $x^2 + 2xy + y^2 = (x + y)^2$
+**Datos:**
+- Los primeros tres términos forman un TCP.
 
-$$
-= (x + y)^2 - z^2
-$$
+**Razonamiento:**
+1. Reconocemos: $(x + y)^2 - z^2$.
+2. Diferencia de cuadrados: $(x + y + z)(x + y - z)$.
 
-**Diferencia de cuadrados:**
-
-$$
-= [(x + y) + z][(x + y) - z]
-$$
-
-$$
-= (x + y + z)(x + y - z)
-$$
-
-$$
-\boxed{(x + y + z)(x + y - z)}
-$$
-
-### Ejemplo 13
-
-Factoriza: $a^2 - 4ab + 4b^2 - 9c^2$
-
-$$
-= (a - 2b)^2 - (3c)^2
-$$
-
-$$
-= (a - 2b + 3c)(a - 2b - 3c)
-$$
-
-$$
-\boxed{(a - 2b + 3c)(a - 2b - 3c)}
-$$
-
-### Ejemplo 14
-
-Factoriza: $x^2 - y^2 + x - y$
-
-**Agrupamos:**
-
-$$
-= (x^2 - y^2) + (x - y)
-$$
-
-$$
-= (x + y)(x - y) + 1(x - y)
-$$
-
-$$
-= (x - y)(x + y + 1)
-$$
-
-$$
-\boxed{(x - y)(x + y + 1)}
-$$
+**Resultado:** $\boxed{(x + y + z)(x + y - z)}$
 
 ---
 
-## 📖 Caso 7: Expresiones cíclicas
+### Ejemplo 5: Factorización iterada
 
-### Ejemplo 15
+Factoriza completamente: $x^4 - 81$
 
-Factoriza: $a^2(b - c) + b^2(c - a) + c^2(a - b)$
+**Datos:**
+- Es diferencia de cuadrados.
 
-Expandimos y agrupamos:
+**Razonamiento:**
+1. Primera vuelta: $(x^2)^2 - 9^2 = (x^2 + 9)(x^2 - 9)$.
+2. El segundo factor se puede factorizar más: $(x^2 - 9) = (x + 3)(x - 3)$.
+3. El primero no se factoriza (suma de cuadrados).
 
-$$
-= a^2b - a^2c + b^2c - ab^2 + ac^2 - bc^2
-$$
-
-Agrupamos de forma conveniente:
-
-$$
-= a^2b - ab^2 + b^2c - bc^2 + ac^2 - a^2c
-$$
-
-$$
-= ab(a - b) + bc(b - c) + c(a + c)(a - c)... 
-$$
-
-**Forma factorizada (resultado conocido):**
-
-$$
-= -(a - b)(b - c)(c - a)
-$$
-
-$$
-\boxed{-(a - b)(b - c)(c - a)}
-$$
+**Resultado:** $\boxed{(x^2 + 9)(x + 3)(x - 3)}$
 
 ---
 
-## 📖 Caso 8: Factorización iterada
+## 📝 Ejercicios de Práctica
 
-### Ejemplo 16
+### Ejercicio 1
+Factoriza: $5x^3 - 20x$
 
-Factoriza completamente: $x^8 - 1$
+<details>
+<summary>Ver solución</summary>
 
-**Paso 1:** Diferencia de cuadrados:
+**Datos:** Factor común $5x$.
+**Razonamiento:** $5x(x^2 - 4) = 5x(x + 2)(x - 2)$
+**Resultado:** $\boxed{5x(x + 2)(x - 2)}$
 
-$$
-x^8 - 1 = (x^4 + 1)(x^4 - 1)
-$$
+</details>
 
-**Paso 2:** $x^4 - 1$ → diferencia de cuadrados:
+### Ejercicio 2
+Factoriza: $2a^4 - 32$
 
-$$
-= (x^4 + 1)(x^2 + 1)(x^2 - 1)
-$$
+<details>
+<summary>Ver solución</summary>
 
-**Paso 3:** $x^2 - 1$ → diferencia de cuadrados:
+**Datos:** Factor común 2.
+**Razonamiento:** $2(a^4 - 16) = 2(a^2 + 4)(a + 2)(a - 2)$
+**Resultado:** $\boxed{2(a^2 + 4)(a + 2)(a - 2)}$
 
-$$
-= (x^4 + 1)(x^2 + 1)(x + 1)(x - 1)
-$$
+</details>
 
-$$
-\boxed{(x^4 + 1)(x^2 + 1)(x + 1)(x - 1)}
-$$
+### Ejercicio 3
+Factoriza: $(x + 3)^2 - 16$
 
-### Ejemplo 17
+<details>
+<summary>Ver solución</summary>
 
-Factoriza completamente: $x^6 - y^6$
+**Datos:** $a = (x + 3)$, $b = 4$.
+**Razonamiento:** $(x + 3 + 4)(x + 3 - 4) = (x + 7)(x - 1)$
+**Resultado:** $\boxed{(x + 7)(x - 1)}$
 
-**Opción 1:** Como diferencia de cuadrados:
+</details>
 
-$$
-x^6 - y^6 = (x^3)^2 - (y^3)^2 = (x^3 + y^3)(x^3 - y^3)
-$$
+### Ejercicio 4
+Factoriza: $(2x - 1)^2 - (x + 2)^2$
 
-Luego aplicamos suma y diferencia de cubos:
+<details>
+<summary>Ver solución</summary>
 
-$$
-= (x + y)(x^2 - xy + y^2)(x - y)(x^2 + xy + y^2)
-$$
+**Datos:** Diferencia de cuadrados.
+**Razonamiento:** $(2x - 1 + x + 2)(2x - 1 - x - 2) = (3x + 1)(x - 3)$
+**Resultado:** $\boxed{(3x + 1)(x - 3)}$
 
-$$
-\boxed{(x + y)(x - y)(x^2 - xy + y^2)(x^2 + xy + y^2)}
-$$
+</details>
 
----
+### Ejercicio 5
+Factoriza usando sustitución: $(x - 2)^2 + 7(x - 2) + 12$
 
-## 📖 Resumen de casos especiales
+<details>
+<summary>Ver solución</summary>
 
-| Caso | Forma | Técnica |
-|:----:|:------|:--------|
-| 1 | Factor común + otro | Secuencial |
-| 2 | $(A)^2 - (B)^2$ | Diferencia de cuadrados con expresiones |
-| 3 | $(u)^2 \pm 2(u) + 1$ | TCP con sustitución |
-| 4 | $(u)^2 + b(u) + c$ | Trinomio con sustitución |
-| 5 | $a^4 + 4b^4$ | Añadir/restar término |
-| 6 | TCP $- z^2$ | Agrupar y diferencia |
-| 7 | Expresiones simétricas | Patrones conocidos |
-| 8 | Potencias altas | Factorización iterada |
+**Datos:** Sea $u = (x - 2)$.
+**Razonamiento:** $u^2 + 7u + 12 = (u + 3)(u + 4) = (x + 1)(x + 2)$
+**Resultado:** $\boxed{(x + 1)(x + 2)}$
 
----
+</details>
 
-## 📝 Ejercicios de práctica
+### Ejercicio 6
+Factoriza: $(a + 1)^2 - 2(a + 1) - 15$
 
-### Factor común + otro caso
+<details>
+<summary>Ver solución</summary>
 
-**Ejercicio 1:** $5x^3 - 20x$
+**Datos:** Sea $u = (a + 1)$.
+**Razonamiento:** $u^2 - 2u - 15 = (u - 5)(u + 3) = (a - 4)(a + 4)$
+**Resultado:** $\boxed{(a - 4)(a + 4)}$
 
-**Ejercicio 2:** $3a^4 - 48$
+</details>
 
----
+### Ejercicio 7
+Factoriza: $x^2 - 6x + 9 - 4y^2$
 
-### Diferencia de cuadrados con binomios
+<details>
+<summary>Ver solución</summary>
 
-**Ejercicio 3:** $(x + 3)^2 - 16$
+**Datos:** TCP menos cuadrado.
+**Razonamiento:** $(x - 3)^2 - (2y)^2 = (x - 3 + 2y)(x - 3 - 2y)$
+**Resultado:** $\boxed{(x - 3 + 2y)(x - 3 - 2y)}$
 
-**Ejercicio 4:** $(3x - 1)^2 - (2x + 1)^2$
+</details>
 
----
+### Ejercicio 8
+Factoriza: $a^2 - b^2 + a + b$
 
-### Trinomios con sustitución
+<details>
+<summary>Ver solución</summary>
 
-**Ejercicio 5:** $(x - 2)^2 + 7(x - 2) + 12$
+**Datos:** Agrupamos.
+**Razonamiento:** $(a + b)(a - b) + (a + b) = (a + b)(a - b + 1)$
+**Resultado:** $\boxed{(a + b)(a - b + 1)}$
 
-**Ejercicio 6:** $(a + 1)^2 - 2(a + 1) - 15$
+</details>
 
----
+### Ejercicio 9
+Factoriza completamente: $x^6 - 1$
 
-### Agrupación creativa
+<details>
+<summary>Ver solución</summary>
 
-**Ejercicio 7:** $x^2 - 6x + 9 - 4y^2$
+**Datos:** Diferencia de cuadrados + cubos.
+**Razonamiento:** $(x^3 + 1)(x^3 - 1)$. Luego cada uno es suma/diferencia de cubos.
+**Resultado:** $\boxed{(x + 1)(x^2 - x + 1)(x - 1)(x^2 + x + 1)}$
 
-**Ejercicio 8:** $a^2 - b^2 + a + b$
+</details>
 
----
+### Ejercicio 10
+Factoriza: $a^6 - 64$
 
-### Factorización iterada
+<details>
+<summary>Ver solución</summary>
 
-**Ejercicio 9:** $x^4 - 81$
+**Datos:** $64 = 4^3 = 2^6$.
+**Razonamiento:** $(a^3 + 8)(a^3 - 8) = (a + 2)(a^2 - 2a + 4)(a - 2)(a^2 + 2a + 4)$
+**Resultado:** $\boxed{(a + 2)(a - 2)(a^2 - 2a + 4)(a^2 + 2a + 4)}$
 
-**Ejercicio 10:** $a^6 - 64$
-
----
-
-## ✅ Soluciones
-
-### Factor común + otro caso
-
-**Ejercicio 1:**
-$$
-5x^3 - 20x = 5x(x^2 - 4) = 5x(x + 2)(x - 2)
-$$
-
-**Ejercicio 2:**
-$$
-3a^4 - 48 = 3(a^4 - 16) = 3(a^2 + 4)(a + 2)(a - 2)
-$$
-
-### Diferencia de cuadrados con binomios
-
-**Ejercicio 3:**
-$$
-(x + 3)^2 - 16 = (x + 3 + 4)(x + 3 - 4) = (x + 7)(x - 1)
-$$
-
-**Ejercicio 4:**
-$$
-= (3x - 1 + 2x + 1)(3x - 1 - 2x - 1) = (5x)(x - 2) = 5x(x - 2)
-$$
-
-### Trinomios con sustitución
-
-**Ejercicio 5:** Sea $u = (x - 2)$:
-$$
-u^2 + 7u + 12 = (u + 3)(u + 4) = (x + 1)(x + 2)
-$$
-
-**Ejercicio 6:** Sea $u = (a + 1)$:
-$$
-u^2 - 2u - 15 = (u - 5)(u + 3) = (a - 4)(a + 4)
-$$
-
-### Agrupación creativa
-
-**Ejercicio 7:**
-$$
-(x - 3)^2 - (2y)^2 = (x - 3 + 2y)(x - 3 - 2y)
-$$
-
-**Ejercicio 8:**
-$$
-(a + b)(a - b) + (a + b) = (a + b)(a - b + 1)
-$$
-
-### Factorización iterada
-
-**Ejercicio 9:**
-$$
-x^4 - 81 = (x^2 + 9)(x^2 - 9) = (x^2 + 9)(x + 3)(x - 3)
-$$
-
-**Ejercicio 10:**
-$$
-a^6 - 64 = (a^3 + 8)(a^3 - 8) = (a + 2)(a^2 - 2a + 4)(a - 2)(a^2 + 2a + 4)
-$$
+</details>
 
 ---
+
+## 🔑 Resumen
+
+| Técnica | Cuándo usarla |
+| :--- | :--- |
+| **Factor común primero** | Siempre es el primer paso |
+| **Sustitución** | Cuando hay binomios repetidos |
+| **Agrupación TCP** | Cuando hay un TCP seguido de un cuadrado |
+| **Iteración** | Cuando un factor se puede factorizar más |
+
+> Dominar estos casos especiales te permite resolver cualquier problema de factorización, sin importar qué tan complicado parezca al principio.

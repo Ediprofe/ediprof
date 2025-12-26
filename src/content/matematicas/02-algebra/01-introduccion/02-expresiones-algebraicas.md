@@ -72,7 +72,7 @@ $$
 
 ---
 
-## ⚙️ **Ejemplos Resueltos (Nivel Avanzado)**
+## ⚙️ **Ejemplos Resueltos**
 
 Vamos a subir el nivel con más variables y potencias.
 

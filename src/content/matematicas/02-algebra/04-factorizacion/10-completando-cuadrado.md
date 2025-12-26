@@ -1,503 +1,245 @@
-# 🔲 Trinomio Cuadrado Perfecto Completando el Cuadrado
+# **Completar el Cuadrado**
 
-En esta lección aprenderemos la técnica de **completar el cuadrado**, que nos permite convertir cualquier trinomio en un trinomio cuadrado perfecto más una constante.
-
----
-
-## 📖 ¿Qué es completar el cuadrado?
-
-**Completar el cuadrado** es una técnica algebraica que transforma una expresión de la forma:
-
-$$
-x^2 + bx
-$$
-
-En un trinomio cuadrado perfecto menos una constante.
+Esta técnica permite transformar cualquier trinomio en un binomio al cuadrado más (o menos) una constante. Es muy útil para resolver ecuaciones cuadráticas y encontrar vértices de parábolas.
 
 ---
 
-## 📖 La idea fundamental
+## 🎯 ¿Qué vas a aprender?
 
-Recordemos que un trinomio cuadrado perfecto tiene la forma:
-
-$$
-x^2 + 2kx + k^2 = (x + k)^2
-$$
-
-Si tenemos solo $x^2 + 2kx$, nos falta el término $k^2$ para completar el cuadrado.
-
-### Fórmula clave
-
-Para completar el cuadrado en $x^2 + bx$:
-
-1. Tomamos la mitad de $b$: $\frac{b}{2}$
-2. Lo elevamos al cuadrado: $\left(\frac{b}{2}\right)^2$
-3. Sumamos y restamos este valor
-
-$$
-x^2 + bx = x^2 + bx + \left(\frac{b}{2}\right)^2 - \left(\frac{b}{2}\right)^2 = \left(x + \frac{b}{2}\right)^2 - \left(\frac{b}{2}\right)^2
-$$
+- A completar el cuadrado en expresiones de la forma $x^2 + bx$.
+- A aplicar esta técnica en trinomios completos.
+- A factorizar usando diferencia de cuadrados después de completar.
+- A resolver ecuaciones cuadráticas con este método.
 
 ---
 
-## 📖 Ejemplos paso a paso
+## 🔍 La Idea Principal
 
-### Ejemplo 1
+Si tenemos $x^2 + bx$, podemos convertirlo en un cuadrado perfecto sumando y restando el mismo valor:
+
+$$
+\boxed{x^2 + bx = \left(x + \frac{b}{2}\right)^2 - \left(\frac{b}{2}\right)^2}
+$$
+
+**Pasos:**
+1. Toma la mitad del coeficiente de $x$: $\frac{b}{2}$.
+2. Elévalo al cuadrado: $\left(\frac{b}{2}\right)^2$.
+3. Suma y resta ese valor.
+
+---
+
+## ⚙️ Ejemplos Resueltos
+
+### Ejemplo 1: Completar el cuadrado básico
 
 Completa el cuadrado: $x^2 + 6x$
 
-**Paso 1:** Identificamos $b = 6$
+**Datos:**
+- Coeficiente de $x$: $b = 6$
 
-**Paso 2:** Calculamos $\frac{b}{2} = \frac{6}{2} = 3$
+**Razonamiento:**
+1. Mitad de 6: $\frac{6}{2} = 3$.
+2. Al cuadrado: $3^2 = 9$.
+3. Sumamos y restamos: $x^2 + 6x + 9 - 9$.
 
-**Paso 3:** Calculamos $\left(\frac{b}{2}\right)^2 = 3^2 = 9$
+**Resultado:** $\boxed{(x + 3)^2 - 9}$
 
-**Paso 4:** Sumamos y restamos $9$:
+---
 
-$$
-x^2 + 6x + 9 - 9 = (x + 3)^2 - 9
-$$
-
-$$
-\boxed{(x + 3)^2 - 9}
-$$
-
-### Ejemplo 2
+### Ejemplo 2: Con signo negativo
 
 Completa el cuadrado: $x^2 - 8x$
 
-**Paso 1:** $b = -8$
+**Datos:**
+- Coeficiente de $x$: $b = -8$
 
-**Paso 2:** $\frac{b}{2} = \frac{-8}{2} = -4$
+**Razonamiento:**
+1. Mitad de -8: $\frac{-8}{2} = -4$.
+2. Al cuadrado: $(-4)^2 = 16$.
+3. El resultado: $(x - 4)^2 - 16$.
 
-**Paso 3:** $\left(\frac{b}{2}\right)^2 = (-4)^2 = 16$
-
-**Paso 4:**
-
-$$
-x^2 - 8x + 16 - 16 = (x - 4)^2 - 16
-$$
-
-$$
-\boxed{(x - 4)^2 - 16}
-$$
-
-### Ejemplo 3
-
-Completa el cuadrado: $x^2 + 10x$
-
-$$
-\frac{10}{2} = 5 \quad \Rightarrow \quad 5^2 = 25
-$$
-
-$$
-x^2 + 10x = (x + 5)^2 - 25
-$$
-
-$$
-\boxed{(x + 5)^2 - 25}
-$$
+**Resultado:** $\boxed{(x - 4)^2 - 16}$
 
 ---
 
-## 📖 Completar el cuadrado en trinomios
-
-### Ejemplo 4
+### Ejemplo 3: En un trinomio completo
 
 Escribe en forma de cuadrado: $x^2 + 6x + 5$
 
-**Paso 1:** Completamos el cuadrado en $x^2 + 6x$:
+**Datos:**
+- Ya sabemos que $x^2 + 6x = (x + 3)^2 - 9$.
 
-$$
-x^2 + 6x = (x + 3)^2 - 9
-$$
+**Razonamiento:**
+1. Completamos: $(x + 3)^2 - 9$.
+2. Sumamos la constante: $(x + 3)^2 - 9 + 5 = (x + 3)^2 - 4$.
 
-**Paso 2:** Agregamos el término constante:
-
-$$
-x^2 + 6x + 5 = (x + 3)^2 - 9 + 5 = (x + 3)^2 - 4
-$$
-
-$$
-\boxed{(x + 3)^2 - 4}
-$$
-
-### Ejemplo 5
-
-Escribe en forma de cuadrado: $x^2 - 4x + 7$
-
-$$
-x^2 - 4x = (x - 2)^2 - 4
-$$
-
-$$
-x^2 - 4x + 7 = (x - 2)^2 - 4 + 7 = (x - 2)^2 + 3
-$$
-
-$$
-\boxed{(x - 2)^2 + 3}
-$$
-
-### Ejemplo 6
-
-Escribe en forma de cuadrado: $x^2 + 8x + 10$
-
-$$
-x^2 + 8x = (x + 4)^2 - 16
-$$
-
-$$
-x^2 + 8x + 10 = (x + 4)^2 - 16 + 10 = (x + 4)^2 - 6
-$$
-
-$$
-\boxed{(x + 4)^2 - 6}
-$$
+**Resultado:** $\boxed{(x + 3)^2 - 4}$
 
 ---
 
-## 📖 Factorización usando completar el cuadrado
-
-Cuando el resultado es una **diferencia de cuadrados**, podemos factorizar.
-
-### Ejemplo 7
+### Ejemplo 4: Factorizando después
 
 Factoriza: $x^2 + 6x + 5$
 
-**Paso 1:** Completamos el cuadrado:
+**Datos:**
+- Del ejemplo anterior: $(x + 3)^2 - 4$.
 
-$$
-x^2 + 6x + 5 = (x + 3)^2 - 4
-$$
+**Razonamiento:**
+1. Reconocemos diferencia de cuadrados: $(x + 3)^2 - 2^2$.
+2. Factorizamos: $[(x + 3) + 2][(x + 3) - 2]$.
+3. Simplificamos: $(x + 5)(x + 1)$.
 
-**Paso 2:** Reconocemos diferencia de cuadrados:
-
-$$
-= (x + 3)^2 - 2^2
-$$
-
-**Paso 3:** Factorizamos:
-
-$$
-= [(x + 3) + 2][(x + 3) - 2]
-$$
-
-$$
-= (x + 5)(x + 1)
-$$
-
-$$
-\boxed{(x + 5)(x + 1)}
-$$
-
-### Ejemplo 8
-
-Factoriza: $x^2 - 2x - 8$
-
-**Paso 1:** Completamos el cuadrado:
-
-$$
-x^2 - 2x = (x - 1)^2 - 1
-$$
-
-$$
-x^2 - 2x - 8 = (x - 1)^2 - 1 - 8 = (x - 1)^2 - 9
-$$
-
-**Paso 2:** Diferencia de cuadrados:
-
-$$
-= (x - 1)^2 - 3^2 = [(x - 1) + 3][(x - 1) - 3]
-$$
-
-$$
-= (x + 2)(x - 4)
-$$
-
-$$
-\boxed{(x + 2)(x - 4)}
-$$
-
-### Ejemplo 9
-
-Factoriza: $x^2 + 4x - 12$
-
-$$
-x^2 + 4x = (x + 2)^2 - 4
-$$
-
-$$
-x^2 + 4x - 12 = (x + 2)^2 - 4 - 12 = (x + 2)^2 - 16
-$$
-
-$$
-= (x + 2)^2 - 4^2 = (x + 2 + 4)(x + 2 - 4)
-$$
-
-$$
-= (x + 6)(x - 2)
-$$
-
-$$
-\boxed{(x + 6)(x - 2)}
-$$
+**Resultado:** $\boxed{(x + 5)(x + 1)}$
 
 ---
 
-## 📖 Con coeficiente diferente de 1
+### Ejemplo 5: Resolviendo una ecuación
 
-Cuando el coeficiente de $x^2$ no es 1, primero lo factorizamos.
+Resuelve: $x^2 - 4x - 5 = 0$
 
-### Ejemplo 10
+**Datos:**
+- Primero completamos el cuadrado.
 
-Completa el cuadrado: $2x^2 + 12x + 10$
+**Razonamiento:**
+1. $x^2 - 4x = (x - 2)^2 - 4$.
+2. Entonces: $(x - 2)^2 - 4 - 5 = 0 \Rightarrow (x - 2)^2 = 9$.
+3. Sacamos raíz: $x - 2 = \pm 3$.
+4. Despejamos: $x = 2 + 3 = 5$ o $x = 2 - 3 = -1$.
 
-**Paso 1:** Factorizamos el coeficiente de $x^2$:
-
-$$
-2x^2 + 12x + 10 = 2(x^2 + 6x + 5)
-$$
-
-**Paso 2:** Completamos el cuadrado dentro del paréntesis:
-
-$$
-= 2[(x + 3)^2 - 9 + 5]
-$$
-
-$$
-= 2[(x + 3)^2 - 4]
-$$
-
-$$
-= 2(x + 3)^2 - 8
-$$
-
-$$
-\boxed{2(x + 3)^2 - 8}
-$$
-
-### Ejemplo 11
-
-Factoriza: $3x^2 - 6x - 24$
-
-**Paso 1:** Factor común $3$:
-
-$$
-3x^2 - 6x - 24 = 3(x^2 - 2x - 8)
-$$
-
-**Paso 2:** Completamos el cuadrado:
-
-$$
-x^2 - 2x = (x - 1)^2 - 1
-$$
-
-$$
-x^2 - 2x - 8 = (x - 1)^2 - 9
-$$
-
-**Paso 3:** Diferencia de cuadrados:
-
-$$
-= [(x - 1) + 3][(x - 1) - 3] = (x + 2)(x - 4)
-$$
-
-**Resultado:**
-
-$$
-3x^2 - 6x - 24 = 3(x + 2)(x - 4)
-$$
-
-$$
-\boxed{3(x + 2)(x - 4)}
-$$
+**Resultado:** $\boxed{x = 5 \text{ o } x = -1}$
 
 ---
 
-## 📖 Aplicaciones
+## 📝 Ejercicios de Práctica
 
-### Resolver ecuaciones cuadráticas
+### Ejercicio 1
+Completa el cuadrado: $x^2 + 4x$
 
-Completar el cuadrado es útil para resolver ecuaciones.
+<details>
+<summary>Ver solución</summary>
 
-### Ejemplo 12
+**Datos:** Mitad de 4 es 2. Al cuadrado: 4.
+**Razonamiento:** $x^2 + 4x + 4 - 4 = (x + 2)^2 - 4$
+**Resultado:** $\boxed{(x + 2)^2 - 4}$
 
-Resuelve: $x^2 + 6x + 5 = 0$
+</details>
 
-**Paso 1:** Completamos el cuadrado:
+### Ejercicio 2
+Completa el cuadrado: $x^2 - 10x$
 
-$$
-(x + 3)^2 - 4 = 0
-$$
+<details>
+<summary>Ver solución</summary>
 
-**Paso 2:** Despejamos:
+**Datos:** Mitad de -10 es -5. Al cuadrado: 25.
+**Razonamiento:** $(x - 5)^2 - 25$
+**Resultado:** $\boxed{(x - 5)^2 - 25}$
 
-$$
-(x + 3)^2 = 4
-$$
+</details>
 
-$$
-x + 3 = \pm 2
-$$
+### Ejercicio 3
+Escribe en forma de cuadrado: $x^2 + 8x + 12$
 
-$$
-x = -3 + 2 = -1 \quad \text{o} \quad x = -3 - 2 = -5
-$$
+<details>
+<summary>Ver solución</summary>
 
-$$
-\boxed{x = -1 \text{ o } x = -5}
-$$
+**Datos:** $x^2 + 8x = (x + 4)^2 - 16$
+**Razonamiento:** $(x + 4)^2 - 16 + 12 = (x + 4)^2 - 4$
+**Resultado:** $\boxed{(x + 4)^2 - 4}$
 
-### Encontrar el vértice de una parábola
+</details>
 
-La forma $(x - h)^2 + k$ nos da el vértice $(h, -k)$ de la parábola.
+### Ejercicio 4
+Escribe en forma de cuadrado: $x^2 - 6x + 2$
 
-### Ejemplo 13
+<details>
+<summary>Ver solución</summary>
 
-Encuentra el vértice de $y = x^2 - 4x + 7$
+**Datos:** $x^2 - 6x = (x - 3)^2 - 9$
+**Razonamiento:** $(x - 3)^2 - 9 + 2 = (x - 3)^2 - 7$
+**Resultado:** $\boxed{(x - 3)^2 - 7}$
 
-$$
-y = (x - 2)^2 - 4 + 7 = (x - 2)^2 + 3
-$$
+</details>
 
-**Vértice:** $(2, 3)$
+### Ejercicio 5
+Factoriza completando el cuadrado: $x^2 + 2x - 3$
 
----
+<details>
+<summary>Ver solución</summary>
 
-## 📖 Con fracciones
+**Datos:** $(x + 1)^2 - 1 - 3 = (x + 1)^2 - 4$
+**Razonamiento:** Diferencia de cuadrados: $(x + 3)(x - 1)$
+**Resultado:** $\boxed{(x + 3)(x - 1)}$
 
-### Ejemplo 14
+</details>
 
-Completa el cuadrado: $x^2 + 5x$
+### Ejercicio 6
+Factoriza: $x^2 - 8x + 15$
 
-$$
-\frac{5}{2} = 2.5 \quad \Rightarrow \quad \left(\frac{5}{2}\right)^2 = \frac{25}{4}
-$$
+<details>
+<summary>Ver solución</summary>
 
-$$
-x^2 + 5x = \left(x + \frac{5}{2}\right)^2 - \frac{25}{4}
-$$
+**Datos:** $(x - 4)^2 - 16 + 15 = (x - 4)^2 - 1$
+**Razonamiento:** Diferencia de cuadrados: $(x - 5)(x - 3)$
+**Resultado:** $\boxed{(x - 5)(x - 3)}$
 
-$$
-\boxed{\left(x + \frac{5}{2}\right)^2 - \frac{25}{4}}
-$$
+</details>
 
-### Ejemplo 15
+### Ejercicio 7
+Factoriza: $x^2 + 10x + 9$
 
-Factoriza: $x^2 + 3x - 4$
+<details>
+<summary>Ver solución</summary>
 
-$$
-x^2 + 3x = \left(x + \frac{3}{2}\right)^2 - \frac{9}{4}
-$$
+**Datos:** $(x + 5)^2 - 25 + 9 = (x + 5)^2 - 16$
+**Razonamiento:** $(x + 9)(x + 1)$
+**Resultado:** $\boxed{(x + 9)(x + 1)}$
 
-$$
-x^2 + 3x - 4 = \left(x + \frac{3}{2}\right)^2 - \frac{9}{4} - 4 = \left(x + \frac{3}{2}\right)^2 - \frac{25}{4}
-$$
+</details>
 
-$$
-= \left(x + \frac{3}{2}\right)^2 - \left(\frac{5}{2}\right)^2
-$$
+### Ejercicio 8
+Resuelve: $x^2 + 4x - 5 = 0$
 
-$$
-= \left(x + \frac{3}{2} + \frac{5}{2}\right)\left(x + \frac{3}{2} - \frac{5}{2}\right)
-$$
+<details>
+<summary>Ver solución</summary>
 
-$$
-= (x + 4)(x - 1)
-$$
+**Datos:** $(x + 2)^2 - 4 - 5 = 0 \Rightarrow (x + 2)^2 = 9$
+**Razonamiento:** $x + 2 = \pm 3 \Rightarrow x = 1$ o $x = -5$
+**Resultado:** $\boxed{x = 1 \text{ o } x = -5}$
 
-$$
-\boxed{(x + 4)(x - 1)}
-$$
+</details>
 
----
+### Ejercicio 9
+Resuelve: $x^2 - 6x + 5 = 0$
 
-## 📝 Ejercicios de práctica
+<details>
+<summary>Ver solución</summary>
 
-### Completar el cuadrado
+**Datos:** $(x - 3)^2 - 9 + 5 = 0 \Rightarrow (x - 3)^2 = 4$
+**Razonamiento:** $x - 3 = \pm 2 \Rightarrow x = 5$ o $x = 1$
+**Resultado:** $\boxed{x = 5 \text{ o } x = 1}$
 
-**Ejercicio 1:** $x^2 + 4x$
+</details>
 
-**Ejercicio 2:** $x^2 - 12x$
+### Ejercicio 10
+Completa el cuadrado con coeficiente: $2x^2 + 8x - 10$
 
-**Ejercicio 3:** $x^2 + 2x + 5$
+<details>
+<summary>Ver solución</summary>
 
-**Ejercicio 4:** $x^2 - 6x + 2$
+**Datos:** Sacamos factor 2: $2(x^2 + 4x - 5)$
+**Razonamiento:** Adentro: $(x + 2)^2 - 9$. Total: $2[(x + 2)^2 - 9] = 2(x + 2)^2 - 18$
+**Resultado:** $\boxed{2(x + 2)^2 - 18}$
 
----
-
-### Factorizar completando el cuadrado
-
-**Ejercicio 5:** $x^2 + 2x - 3$
-
-**Ejercicio 6:** $x^2 - 8x + 15$
-
-**Ejercicio 7:** $x^2 + 10x + 9$
-
----
-
-### Con coeficiente diferente de 1
-
-**Ejercicio 8:** $2x^2 + 8x - 10$
-
-**Ejercicio 9:** $4x^2 - 16x + 12$
+</details>
 
 ---
 
-### Resolver ecuaciones
+## 🔑 Resumen
 
-**Ejercicio 10:** Resuelve $x^2 - 6x + 5 = 0$ completando el cuadrado.
+| Paso | Operación | Resultado |
+| :--- | :--- | :--- |
+| **1. Mitad** | $\frac{b}{2}$ | El valor que va en el binomio |
+| **2. Cuadrado** | $\left(\frac{b}{2}\right)^2$ | Lo que se resta afuera |
+| **3. Escribir** | $(x + \frac{b}{2})^2 - \left(\frac{b}{2}\right)^2$ | Forma final |
 
----
-
-## ✅ Soluciones
-
-### Completar el cuadrado
-
-| Ejercicio | Proceso | Solución |
-|:---------:|:--------|:---------|
-| 1 | $(\frac{4}{2})^2 = 4$ | $(x + 2)^2 - 4$ |
-| 2 | $(\frac{-12}{2})^2 = 36$ | $(x - 6)^2 - 36$ |
-| 3 | $(x + 1)^2 - 1 + 5$ | $(x + 1)^2 + 4$ |
-| 4 | $(x - 3)^2 - 9 + 2$ | $(x - 3)^2 - 7$ |
-
-### Factorizar
-
-**Ejercicio 5:**
-$$
-x^2 + 2x - 3 = (x + 1)^2 - 1 - 3 = (x + 1)^2 - 4 = (x + 3)(x - 1)
-$$
-
-**Ejercicio 6:**
-$$
-x^2 - 8x + 15 = (x - 4)^2 - 16 + 15 = (x - 4)^2 - 1 = (x - 3)(x - 5)
-$$
-
-**Ejercicio 7:**
-$$
-x^2 + 10x + 9 = (x + 5)^2 - 25 + 9 = (x + 5)^2 - 16 = (x + 9)(x + 1)
-$$
-
-### Con coeficiente diferente de 1
-
-**Ejercicio 8:**
-$$
-2x^2 + 8x - 10 = 2(x^2 + 4x - 5) = 2[(x + 2)^2 - 9] = 2(x + 5)(x - 1)
-$$
-
-**Ejercicio 9:**
-$$
-4x^2 - 16x + 12 = 4(x^2 - 4x + 3) = 4(x - 3)(x - 1)
-$$
-
-### Resolver ecuaciones
-
-**Ejercicio 10:**
-$$
-x^2 - 6x + 5 = 0 \Rightarrow (x - 3)^2 - 4 = 0 \Rightarrow (x - 3)^2 = 4
-$$
-$$
-x - 3 = \pm 2 \Rightarrow x = 5 \text{ o } x = 1
-$$
-
----
+> Completar el cuadrado transforma cualquier trinomio en un cuadrado perfecto más una constante. Si esa constante es negativa, puedes seguir factorizando como diferencia de cuadrados.

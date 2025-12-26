@@ -1,412 +1,241 @@
-# 🔢 Trinomio de la Forma x² + bx + c
+# **Trinomio de la forma x² + bx + c**
 
-En esta lección aprenderemos a factorizar trinomios donde el coeficiente del término cuadrático es 1.
-
----
-
-## 📖 Forma general
-
-El trinomio de la forma:
-
-$$
-x^2 + bx + c
-$$
-
-Se factoriza como:
-
-$$
-x^2 + bx + c = (x + m)(x + n)
-$$
-
-Donde $m$ y $n$ son dos números que cumplen:
-
-$$
-m + n = b \quad \text{(suman } b \text{)}
-$$
-
-$$
-m \times n = c \quad \text{(multiplican } c \text{)}
-$$
+Cuando el coeficiente de $x^2$ es 1, factorizar el trinomio se reduce a encontrar dos números que cumplan dos condiciones simples: que multiplicados den el último término y sumados den el del medio.
 
 ---
 
-## 📖 Procedimiento
+## 🎯 ¿Qué vas a aprender?
 
-### Pasos
-
-1. Identificar los valores de $b$ (coeficiente de $x$) y $c$ (término independiente)
-2. Buscar dos números $m$ y $n$ tales que:
-   - $m + n = b$
-   - $m \times n = c$
-3. Escribir la factorización: $(x + m)(x + n)$
+- A identificar trinomios donde el coeficiente de $x^2$ es 1.
+- A encontrar dos números que cumplan la regla de suma y producto.
+- A determinar los signos correctos según el trinomio.
+- A factorizar estos trinomios de forma rápida.
 
 ---
 
-## 📖 Ejemplos con c positivo y b positivo
+## 🔍 ¿Cómo factorizar este trinomio?
 
-Cuando $c > 0$ y $b > 0$, ambos números $m$ y $n$ son **positivos**.
+Para factorizar un trinomio como $x^2 + bx + c$, buscamos dos números (llamémoslos $m$ y $n$) que cumplan dos reglas:
 
-### Ejemplo 1
+1.  **Multiplicados** deben dar el último número ($c$).
+2.  **Sumados** deben dar el número del medio ($b$).
 
-Factoriza: $x^2 + 7x + 12$
+### **Ejemplo: Buscando la pareja**
 
-**Identificamos:** $b = 7$, $c = 12$
+Factoriza: $x^2 + 5x + 6$
+- Buscamos dos números que **multipliquen 6** y **sumen 5**.
+- Parejas que multiplican 6: $(1, 6)$ y $(2, 3)$.
+- ¿Cuál de esas suma 5? ¡La pareja **$(2, 3)$**!
 
-**Buscamos:** Dos números que sumen $7$ y multipliquen $12$
-
-| $m$ | $n$ | $m + n$ | $m \times n$ |
-|:---:|:---:|:-------:|:------------:|
-| $3$ | $4$ | $7$ ✓ | $12$ ✓ |
-
-$$
-x^2 + 7x + 12 = (x + 3)(x + 4)
-$$
-
-$$
-\boxed{(x + 3)(x + 4)}
-$$
-
-### Ejemplo 2
-
-Factoriza: $x^2 + 10x + 21$
-
-**Buscamos:** Suman $10$, multiplican $21$
-
-Los números son $3$ y $7$: $\quad 3 + 7 = 10$, $\quad 3 \times 7 = 21$
-
-$$
-x^2 + 10x + 21 = (x + 3)(x + 7)
-$$
-
-$$
-\boxed{(x + 3)(x + 7)}
-$$
-
-### Ejemplo 3
-
-Factoriza: $a^2 + 9a + 20$
-
-Los números son $4$ y $5$: $\quad 4 + 5 = 9$, $\quad 4 \times 5 = 20$
-
-$$
-a^2 + 9a + 20 = (a + 4)(a + 5)
-$$
-
-$$
-\boxed{(a + 4)(a + 5)}
-$$
+**Resultado:** $\boxed{(x + 2)(x + 3)}$
 
 ---
 
-## 📖 Ejemplos con c positivo y b negativo
+## 📏 La Regla de los Signos
 
-Cuando $c > 0$ y $b < 0$, ambos números $m$ y $n$ son **negativos**.
+Para no perder tiempo probando, sigue esta guía:
 
-### Ejemplo 4
-
-Factoriza: $x^2 - 8x + 15$
-
-**Identificamos:** $b = -8$, $c = 15$
-
-**Buscamos:** Suman $-8$, multiplican $15$ (positivo)
-
-Como el producto es positivo y la suma negativa, ambos son negativos.
-
-Los números son $-3$ y $-5$: $\quad (-3) + (-5) = -8$, $\quad (-3) \times (-5) = 15$
-
-$$
-x^2 - 8x + 15 = (x - 3)(x - 5)
-$$
-
-$$
-\boxed{(x - 3)(x - 5)}
-$$
-
-### Ejemplo 5
-
-Factoriza: $y^2 - 11y + 28$
-
-Los números son $-4$ y $-7$: $\quad (-4) + (-7) = -11$, $\quad (-4) \times (-7) = 28$
-
-$$
-y^2 - 11y + 28 = (y - 4)(y - 7)
-$$
-
-$$
-\boxed{(y - 4)(y - 7)}
-$$
-
-### Ejemplo 6
-
-Factoriza: $m^2 - 9m + 18$
-
-Los números son $-3$ y $-6$: $\quad (-3) + (-6) = -9$, $\quad (-3) \times (-6) = 18$
-
-$$
-m^2 - 9m + 18 = (m - 3)(m - 6)
-$$
-
-$$
-\boxed{(m - 3)(m - 6)}
-$$
+| Si el último ($c$) es... | Y el medio ($b$) es... | Los signos serán... |
+| :--- | :--- | :--- |
+| Positivo ($+$) | Positivo ($+$) | Ambos positivos: $(x + m)(x + n)$ |
+| Positivo ($+$) | Negativo ($-$) | Ambos negativos: $(x - m)(x - n)$ |
+| Negativo ($-$) | Cualquiera | Signos diferentes: $(x + m)(x - n)$ |
 
 ---
 
-## 📖 Ejemplos con c negativo
+## ⚙️ Ejemplos Resueltos
 
-Cuando $c < 0$, los números $m$ y $n$ tienen **signos diferentes** (uno positivo y uno negativo).
+### Ejemplo 1: Con signos negativos
 
-### Ejemplo 7
+Factoriza: $x^2 - 7x + 10$
 
-Factoriza: $x^2 + 3x - 10$
+**Razonamiento:**
+1. Producto $= 10$ (positivo), Suma $= -7$ (negativo).
+2. Según la regla, ambos números deben ser negativos.
+3. Parejas de 10: $(-1, -10)$ y $(-2, -5)$.
+4. ¿Cuál suma -7? La pareja **$(-2, -5)$**.
 
-**Identificamos:** $b = 3$, $c = -10$
-
-**Buscamos:** Suman $3$, multiplican $-10$
-
-Los números son $5$ y $-2$: $\quad 5 + (-2) = 3$, $\quad 5 \times (-2) = -10$
-
-$$
-x^2 + 3x - 10 = (x + 5)(x - 2)
-$$
-
-$$
-\boxed{(x + 5)(x - 2)}
-$$
-
-### Ejemplo 8
-
-Factoriza: $x^2 - 2x - 15$
-
-**Buscamos:** Suman $-2$, multiplican $-15$
-
-Los números son $-5$ y $3$: $\quad (-5) + 3 = -2$, $\quad (-5) \times 3 = -15$
-
-$$
-x^2 - 2x - 15 = (x - 5)(x + 3)
-$$
-
-$$
-\boxed{(x - 5)(x + 3)}
-$$
-
-### Ejemplo 9
-
-Factoriza: $a^2 + 4a - 21$
-
-Los números son $7$ y $-3$: $\quad 7 + (-3) = 4$, $\quad 7 \times (-3) = -21$
-
-$$
-a^2 + 4a - 21 = (a + 7)(a - 3)
-$$
-
-$$
-\boxed{(a + 7)(a - 3)}
-$$
-
-### Ejemplo 10
-
-Factoriza: $n^2 - 5n - 24$
-
-Los números son $-8$ y $3$: $\quad (-8) + 3 = -5$, $\quad (-8) \times 3 = -24$
-
-$$
-n^2 - 5n - 24 = (n - 8)(n + 3)
-$$
-
-$$
-\boxed{(n - 8)(n + 3)}
-$$
+**Resultado:** $\boxed{(x - 2)(x - 5)}$
 
 ---
 
-## 📖 Resumen de signos
+### Ejemplo 2: El reto del signo diferente
 
-| $c$ | $b$ | Signos de $m$ y $n$ |
-|:---:|:---:|:-------------------|
-| $+$ | $+$ | Ambos positivos |
-| $+$ | $-$ | Ambos negativos |
-| $-$ | $+$ | Diferentes (el mayor es positivo) |
-| $-$ | $-$ | Diferentes (el mayor es negativo) |
+Factoriza: $x^2 + 2x - 8$
 
----
+**Razonamiento:**
+1. Producto $= -8$ (negativo). Esto significa signos diferentes ($+$, $-$).
+2. Suma $= +2$. El número más grande debe ser el positivo.
+3. Parejas de 8: $(8, 1)$ y $(4, 2)$.
+4. Probamos con signos: $+4$ y $-2$. Su suma es $+2$. ¡Correcto!
 
-## 📖 Ejemplos con otras variables
-
-### Ejemplo 11
-
-Factoriza: $p^2 + 6p + 8$
-
-Los números son $2$ y $4$: $\quad 2 + 4 = 6$, $\quad 2 \times 4 = 8$
-
-$$
-p^2 + 6p + 8 = (p + 2)(p + 4)
-$$
-
-$$
-\boxed{(p + 2)(p + 4)}
-$$
-
-### Ejemplo 12
-
-Factoriza: $t^2 - t - 12$
-
-Los números son $-4$ y $3$: $\quad (-4) + 3 = -1$, $\quad (-4) \times 3 = -12$
-
-$$
-t^2 - t - 12 = (t - 4)(t + 3)
-$$
-
-$$
-\boxed{(t - 4)(t + 3)}
-$$
+**Resultado:** $\boxed{(x + 4)(x - 2)}$
 
 ---
 
-## 📖 Con factor común
+### Ejemplo 3: El número más grande es negativo
 
-### Ejemplo 13
+Factoriza: $x^2 - x - 12$
 
-Factoriza: $2x^2 + 14x + 24$
+**Razonamiento:**
+1. **Producto:** $-12$. Signos diferentes ($+$, $-$).
+2. **Suma:** $-1$. El mayor valor absoluto debe ser negativo.
+3. Buscamos factores de 12 cuya resta sea 1: $(4, 3)$.
+4. Asignamos signos: $-4$ y $+3$. Suma: $-1$. Producto: $-12$. ¡Perfecto!
 
-**Paso 1:** Factor común $2$:
-
-$$
-2x^2 + 14x + 24 = 2(x^2 + 7x + 12)
-$$
-
-**Paso 2:** Factorizamos el trinomio:
-
-Los números son $3$ y $4$
-
-$$
-= 2(x + 3)(x + 4)
-$$
-
-$$
-\boxed{2(x + 3)(x + 4)}
-$$
-
-### Ejemplo 14
-
-Factoriza: $3a^3 - 15a^2 + 18a$
-
-**Paso 1:** Factor común $3a$:
-
-$$
-3a^3 - 15a^2 + 18a = 3a(a^2 - 5a + 6)
-$$
-
-**Paso 2:** Factorizamos: números que suman $-5$ y multiplican $6$
-
-Los números son $-2$ y $-3$
-
-$$
-= 3a(a - 2)(a - 3)
-$$
-
-$$
-\boxed{3a(a - 2)(a - 3)}
-$$
+**Resultado:** $\boxed{(x - 4)(x + 3)}$
 
 ---
 
-## 📖 Cuando no es factorizable
+### Ejemplo 4: Coeficiente "1" invisible
 
-A veces no existen números enteros que cumplan las condiciones.
+Factoriza: $a^2 + 11a + 18$
 
-### Ejemplo 15
+**Razonamiento:**
+1. **Producto:** $+18$. Signos iguales ($+$, $+$ o $-$, $-$).
+2. **Suma:** $+11$. Ambos positivos.
+3. Factores de 18: $(1, 18), (2, 9), (3, 6)$.
+4. La pareja $(2, 9)$ suma exactly 11.
 
-¿Es factorizable $x^2 + 3x + 5$?
-
-**Buscamos:** Números que sumen $3$ y multipliquen $5$
-
-| Pares que multiplican 5 | Suma |
-|:-----------------------:|:----:|
-| $1$ y $5$ | $6$ ≠ $3$ |
-| $-1$ y $-5$ | $-6$ ≠ $3$ |
-
-**No hay números enteros que funcionen.** El trinomio es **primo** (no factorizable con enteros).
+**Resultado:** $\boxed{(a + 2)(a + 9)}$
 
 ---
 
-## 📝 Ejercicios de práctica
+### Ejemplo 5: Factor común primero
 
-### c positivo, b positivo
+Factoriza: $2x^3 + 8x^2 - 42x$
 
-**Ejercicio 1:** $x^2 + 8x + 15$
+**Razonamiento:**
+1. **Factor común:** Notamos que todos dividen por $2x$. Extraemos: $2x(x^2 + 4x - 21)$.
+2. **Trinomio:** Ahora factorizamos el bloque $x^2 + 4x - 21$.
+3. Buscamos números que multipliquen $-21$ y sumen $+4$.
+4. Pareja: $+7$ y $-3$.
+5. Resultado final: Unimos el factor común con los binomios.
 
-**Ejercicio 2:** $a^2 + 11a + 24$
-
----
-
-### c positivo, b negativo
-
-**Ejercicio 3:** $x^2 - 7x + 10$
-
-**Ejercicio 4:** $m^2 - 12m + 35$
+**Resultado:** $\boxed{2x(x + 7)(x - 3)}$
 
 ---
 
-### c negativo
+## 📝 Ejercicios de Práctica
 
-**Ejercicio 5:** $x^2 + 2x - 8$
+### Ejercicio 1
+Encuentra dos números que multipliquen 12 y sumen 7.
 
-**Ejercicio 6:** $y^2 - 4y - 21$
+<details>
+<summary>Ver solución</summary>
 
-**Ejercicio 7:** $n^2 + n - 30$
+**Razonamiento:** Factores de 12: (1,12), (2,6), (3,4). La pareja (3,4) suma 7.
+**Resultado:** $\boxed{3 \text{ y } 4}$
 
-**Ejercicio 8:** $p^2 - 6p - 27$
+</details>
+
+### Ejercicio 2
+Factoriza: $x^2 + 8x + 15$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** Números que multiplican 15 (3, 5) y suman 8.
+**Resultado:** $\boxed{(x + 3)(x + 5)}$
+
+</details>
+
+### Ejercicio 3
+Factoriza: $a^2 - 9a + 20$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** Multiplican +20 y suman -9. Ambos son negativos: -4 y -5.
+**Resultado:** $\boxed{(a - 4)(a - 5)}$
+
+</details>
+
+### Ejercicio 4
+Encuentra la pareja para $m^2 - m - 6$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** Multiplican -6 y suman -1. Signos diferentes: -3 y +2.
+**Resultado:** $\boxed{(m - 3)(m + 2)}$
+
+</details>
+
+### Ejercicio 5
+Resuelve: $y^2 + y - 12$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** Multiplican -12 y suman +1. Pareja: +4 y -3.
+**Resultado:** $\boxed{(y + 4)(y - 3)}$
+
+</details>
+
+### Ejercicio 6
+Factoriza: $x^2 - 11x + 18$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** Multiplican +18 y suman -11. Pareja: -9 y -2.
+**Resultado:** $\boxed{(x - 9)(x - 2)}$
+
+</details>
+
+### Ejercicio 7
+Factoriza: $x^2 + 10x + 21$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** Multiplican 21 y suman 10. Pareja: 7 y 3.
+**Resultado:** $\boxed{(x + 7)(x + 3)}$
+
+</details>
+
+### Ejercicio 8
+Factoriza: $x^2 - 2x - 15$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** Multiplican -15 y suman -2. Pareja: -5 y +3.
+**Resultado:** $\boxed{(x - 5)(x + 3)}$
+
+</details>
+
+### Ejercicio 9
+¿Es posible factorizar $x^2 + 2x + 5$ con números enteros?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** Buscamos números que multipliquen 5 (solo 1 y 5). Su suma es 6, no 2.
+**Resultado:** $\boxed{\text{No es factorizable con enteros}}$
+
+</details>
+
+### Ejercicio 10
+Simplifica usando factorización: $\frac{x^2 - 5x + 6}{x - 2}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** Factorizamos arriba: $(x-3)(x-2)$. Cancelamos el $(x-2)$.
+**Resultado:** $\boxed{x - 3}$
+
+</details>
 
 ---
 
-### Con factor común
+## 🔑 Resumen
 
-**Ejercicio 9:** $3x^2 + 18x + 27$
+| Condición | Fórmula | Requisitos |
+| :--- | :--- | :--- |
+| **General** | $x^2 + bx + c$ | $(x + m)(x + n)$ |
+| **Suma ($\Sigma$)** | $m + n = b$ | Coincidir con el medio |
+| **Producto ($\Pi$)** | $m \cdot n = c$ | Coincidir con el final |
 
-**Ejercicio 10:** $2a^2 - 6a - 20$
-
----
-
-## ✅ Soluciones
-
-### c positivo, b positivo
-
-| Ejercicio | Números | Solución |
-|:---------:|:-------:|:---------|
-| 1 | $3, 5$ | $(x + 3)(x + 5)$ |
-| 2 | $3, 8$ | $(a + 3)(a + 8)$ |
-
-### c positivo, b negativo
-
-| Ejercicio | Números | Solución |
-|:---------:|:-------:|:---------|
-| 3 | $-2, -5$ | $(x - 2)(x - 5)$ |
-| 4 | $-5, -7$ | $(m - 5)(m - 7)$ |
-
-### c negativo
-
-| Ejercicio | Números | Solución |
-|:---------:|:-------:|:---------|
-| 5 | $4, -2$ | $(x + 4)(x - 2)$ |
-| 6 | $-7, 3$ | $(y - 7)(y + 3)$ |
-| 7 | $6, -5$ | $(n + 6)(n - 5)$ |
-| 8 | $-9, 3$ | $(p - 9)(p + 3)$ |
-
-### Con factor común
-
-**Ejercicio 9:**
-
-$$
-3x^2 + 18x + 27 = 3(x^2 + 6x + 9) = 3(x + 3)^2
-$$
-
-> Nota: $x^2 + 6x + 9$ es un TCP
-
-**Ejercicio 10:**
-
-$$
-2a^2 - 6a - 20 = 2(a^2 - 3a - 10) = 2(a - 5)(a + 2)
-$$
-
----
+> Factorizar trinomios es como ser un detective de números: una vez que encuentras la pareja que cumple las dos pistas (suma y producto), el caso está resuelto.

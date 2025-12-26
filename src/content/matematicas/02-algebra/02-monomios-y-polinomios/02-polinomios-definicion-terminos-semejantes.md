@@ -23,6 +23,9 @@ $$
 4x^2 - 3x + 8
 $$
 
+![el-tren-de-los-terminos](https://cdn.ediprofe.com/img/matematicas/d74f-el-tren-de-los-terminos.webp)
+
+
 En este tren tenemos:
 1. **$4x^2$**: El vagón de mayor grado (término cuadrático).
 2. **$-3x$**: El vagón del medio (término lineal).

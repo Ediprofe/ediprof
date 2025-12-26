@@ -166,10 +166,19 @@ Situaciones que requieren confirmación:
 # 📝 PETICIÓN DEL USUARIO
 
 
+Corrige las siguientes lecciones del tema de factorización, al estilo Ediprofe.
 
-Corrige las 6 lecciones pertenecientes a este tema, al estilo Ediprofe.
 
-http://localhost:4321/matematicas/algebra/productos-notables
+http://localhost:4321/matematicas/algebra/factorizacion/suma-diferencia-cubos
+
+http://localhost:4321/matematicas/algebra/factorizacion suma-diferencia-potencias-impares
+
+http://localhost:4321/matematicas/algebra/factorizacion/completando-cuadrado
+
+http://localhost:4321/matematicas/algebra/factorizacion/resumen-casos-factorizacion
+
+http://localhost:4321/matematicas/algebra/factorizacion/casos-especiales
+
 
 ---
 
@@ -178,6 +187,10 @@ http://localhost:4321/matematicas/algebra/productos-notables
 1. `.agent/prompts/estilo-ediprofe.md` (estilo completo)
 
 2. http://localhost:4321/fisica/cinematica/mcu/introduccion
+
+3. http://localhost:4321/matematicas/algebra/productos-notables/introduccion-cuadrado-binomio (de desarrollo)
+
+Nota como hay lecciones que por su naturaleza no cabe hablando de más antes del título "¿Qué vas a aprender?". Si hay una conexión muy pertienente, entonces se puede hacer ese párrafo pequeño introductorio.
 
 ---
 
@@ -199,6 +212,7 @@ http://localhost:4321/matematicas/algebra/productos-notables
 □ Paso a paso detallado (no dar saltos lógicos)
 □ Resultados importantes con `\boxed{}`
 □ LaTeX en bloques con líneas vacías antes/después
+□ Usar nombres propios para una enseñanza en latinoamerica, sin spanglish ni nombres de métodos rebuscados o cosas así, a menos que sea algo ya conocido de verdad así.
 
 ---
 

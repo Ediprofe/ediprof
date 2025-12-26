@@ -1,418 +1,238 @@
-# 🔲 Trinomio Cuadrado Perfecto
+# **Trinomio Cuadrado Perfecto**
 
-En esta lección aprenderemos a identificar y factorizar trinomios cuadrados perfectos.
-
----
-
-## 📖 ¿Qué es un trinomio cuadrado perfecto?
-
-Un **trinomio cuadrado perfecto (TCP)** es un trinomio que resulta del cuadrado de un binomio:
-
-$$
-(a + b)^2 = a^2 + 2ab + b^2
-$$
-
-$$
-(a - b)^2 = a^2 - 2ab + b^2
-$$
-
-Por lo tanto:
-
-$$
-a^2 + 2ab + b^2 = (a + b)^2
-$$
-
-$$
-a^2 - 2ab + b^2 = (a - b)^2
-$$
+Un trinomio cuadrado perfecto es un trinomio que proviene del cuadrado de un binomio. Si lo identificas correctamente, puedes factorizarlo de forma rápida y directa.
 
 ---
 
-## 📖 ¿Cómo identificar un TCP?
+## 🎯 ¿Qué vas a aprender?
 
-Un trinomio es cuadrado perfecto si cumple **tres condiciones**:
-
-### Pasos para verificar
-
-1. **El primer término es un cuadrado perfecto:** $a^2$
-2. **El tercer término es un cuadrado perfecto:** $b^2$
-3. **El segundo término es el doble producto:** $\pm 2ab$
-
-### Verificación del segundo término
-
-$$
-\text{¿Es } |segundo\ término| = 2 \times \sqrt{primero} \times \sqrt{tercero}?
-$$
+- A identificar las tres condiciones de un trinomio cuadrado perfecto.
+- A verificar con el "doble producto" si el trinomio es perfecto.
+- A escribir el resultado como un binomio al cuadrado.
+- A aplicar este método con coeficientes y fracciones.
 
 ---
 
-## 📖 Ejemplos básicos
+## 🔍 ¿Cómo reconocer un TCP?
 
-### Ejemplo 1
+No todos los trinomios son "perfectos". Para que lo sea, debe pasar tres pruebas rigurosas:
 
-Factoriza: $x^2 + 6x + 9$
+1.  **Extremos al cuadrado:** El primero y el último término deben ser cuadrados perfectos (tener raíz cuadrada exacta).
+2.  **Signo final positivo:** El tercer término siempre debe ser positivo ($+$).
+3.  **La Prueba del Doble:** Si multiplicas las raíces de los extremos y luego las multiplicas por **2**, debes obtener exactamente el término del medio.
 
-**Verificación:**
+### **Ejemplo: La Verificación**
 
-1. $x^2 = (x)^2$ ✓ cuadrado perfecto
-2. $9 = (3)^2$ ✓ cuadrado perfecto
-3. $6x = 2(x)(3)$ ✓ doble producto
+Observa: $x^2 + 10x + 25$
+- Raíz del primero ($x^2$): **$x$**.
+- Raíz del tercero (25): **$5$**.
+- Prueba: $2 \cdot x \cdot 5 = 10x$. 
+- Como dio igual al del medio, ¡es un TCP!
 
-**Es TCP.** Como el término medio es positivo:
+---
 
-$$
-x^2 + 6x + 9 = (x + 3)^2
-$$
+## 📏 La Regla General
 
-$$
-\boxed{(x + 3)^2}
-$$
-
-### Ejemplo 2
-
-Factoriza: $x^2 - 10x + 25$
-
-**Verificación:**
-
-1. $x^2 = (x)^2$ ✓
-2. $25 = (5)^2$ ✓
-3. $|-10x| = 10x = 2(x)(5)$ ✓
-
-**Es TCP.** El término medio es negativo:
+Si el trinomio pasa las pruebas, su factorización se escribe como un binomio al cuadrado usando el signo del término central:
 
 $$
-x^2 - 10x + 25 = (x - 5)^2
+\boxed{a^2 + 2ab + b^2 = (a + b)^2}
 $$
-
 $$
-\boxed{(x - 5)^2}
-$$
-
-### Ejemplo 3
-
-Factoriza: $a^2 + 14a + 49$
-
-**Verificación:**
-
-1. $a^2 = (a)^2$ ✓
-2. $49 = (7)^2$ ✓
-3. $14a = 2(a)(7)$ ✓
-
-$$
-a^2 + 14a + 49 = (a + 7)^2
-$$
-
-$$
-\boxed{(a + 7)^2}
-$$
-
-### Ejemplo 4
-
-Factoriza: $m^2 - 8m + 16$
-
-**Verificación:**
-
-1. $m^2 = (m)^2$ ✓
-2. $16 = (4)^2$ ✓
-3. $8m = 2(m)(4)$ ✓
-
-$$
-m^2 - 8m + 16 = (m - 4)^2
-$$
-
-$$
-\boxed{(m - 4)^2}
+\boxed{a^2 - 2ab + b^2 = (a - b)^2}
 $$
 
 ---
 
-## 📖 Ejemplos con coeficientes
+## ⚙️ Ejemplos Resueltos
 
-### Ejemplo 5
+### Ejemplo 1: Con signo negativo
 
-Factoriza: $4x^2 + 12x + 9$
+Factoriza: $x^2 - 12x + 36$
 
-**Verificación:**
+**Razonamiento:**
+1. Raíces de los extremos: $x$ y $6$.
+2. Verificación: $2 \cdot x \cdot 6 = 12x$. ¡Correcto!
+3. Signo central: Es negativo ($-$).
+4. Armamos el binomio: $(x - 6)^2$.
 
-1. $4x^2 = (2x)^2$ ✓
-2. $9 = (3)^2$ ✓
-3. $12x = 2(2x)(3)$ ✓
-
-$$
-4x^2 + 12x + 9 = (2x + 3)^2
-$$
-
-$$
-\boxed{(2x + 3)^2}
-$$
-
-### Ejemplo 6
-
-Factoriza: $9a^2 - 24a + 16$
-
-**Verificación:**
-
-1. $9a^2 = (3a)^2$ ✓
-2. $16 = (4)^2$ ✓
-3. $24a = 2(3a)(4)$ ✓
-
-$$
-9a^2 - 24a + 16 = (3a - 4)^2
-$$
-
-$$
-\boxed{(3a - 4)^2}
-$$
-
-### Ejemplo 7
-
-Factoriza: $25m^2 + 30mn + 9n^2$
-
-**Verificación:**
-
-1. $25m^2 = (5m)^2$ ✓
-2. $9n^2 = (3n)^2$ ✓
-3. $30mn = 2(5m)(3n)$ ✓
-
-$$
-25m^2 + 30mn + 9n^2 = (5m + 3n)^2
-$$
-
-$$
-\boxed{(5m + 3n)^2}
-$$
-
-### Ejemplo 8
-
-Factoriza: $16x^2 - 40xy + 25y^2$
-
-**Verificación:**
-
-1. $16x^2 = (4x)^2$ ✓
-2. $25y^2 = (5y)^2$ ✓
-3. $40xy = 2(4x)(5y)$ ✓
-
-$$
-16x^2 - 40xy + 25y^2 = (4x - 5y)^2
-$$
-
-$$
-\boxed{(4x - 5y)^2}
-$$
+**Resultado:** $\boxed{(x - 6)^2}$
 
 ---
 
-## 📖 Ejemplos con fracciones
+### Ejemplo 2: Con coeficientes mayores
 
-### Ejemplo 9
+Factoriza: $4x^2 + 20x + 25$
+
+**Razonamiento:**
+1. Raíz de $4x^2$ es $2x$.
+2. Raíz de $25$ es $5$.
+3. Verificación: $2 \cdot (2x) \cdot 5 = 20x$. ¡Perfecto!
+4. Resultado: Binomio suma al cuadrado.
+
+**Resultado:** $\boxed{(2x + 5)^2}$
+
+---
+
+### Ejemplo 3: Con varias variables
+
+Factoriza: $9a^2 - 30ab + 25b^2$
+
+**Razonamiento:**
+1. **Raíces:** $\sqrt{9a^2} = 3a$ y $\sqrt{25b^2} = 5b$.
+2. **Verificación:** $2 \cdot (3a) \cdot (5b) = 30ab$. ¡Coincide con el centro!
+3. **Signo:** El término central es negativo.
+4. **Binomio:** $(3a - 5b)^2$.
+
+**Resultado:** $\boxed{(3a - 5b)^2}$
+
+---
+
+### Ejemplo 4: El caso de las fracciones
 
 Factoriza: $x^2 + x + \frac{1}{4}$
 
-**Verificación:**
+**Razonamiento:**
+1. **Raíces:** $\sqrt{x^2} = x$ y $\sqrt{1/4} = 1/2$.
+2. **Verificación:** $2 \cdot x \cdot (1/2) = x$. ¡Coincide con el centro!
+3. **Binomio:** $(x + 1/2)^2$.
 
-1. $x^2 = (x)^2$ ✓
-2. $\frac{1}{4} = \left(\frac{1}{2}\right)^2$ ✓
-3. $x = 2(x)\left(\frac{1}{2}\right) = x$ ✓
-
-$$
-x^2 + x + \frac{1}{4} = \left(x + \frac{1}{2}\right)^2
-$$
-
-$$
-\boxed{\left(x + \frac{1}{2}\right)^2}
-$$
-
-### Ejemplo 10
-
-Factoriza: $\frac{a^2}{4} - a + 1$
-
-**Verificación:**
-
-1. $\frac{a^2}{4} = \left(\frac{a}{2}\right)^2$ ✓
-2. $1 = (1)^2$ ✓
-3. $a = 2\left(\frac{a}{2}\right)(1)$ ✓
-
-$$
-\frac{a^2}{4} - a + 1 = \left(\frac{a}{2} - 1\right)^2
-$$
-
-$$
-\boxed{\left(\frac{a}{2} - 1\right)^2}
-$$
+**Resultado:** $\boxed{(x + \frac{1}{2})^2}$
 
 ---
 
-## 📖 TCP con factor común
+### Ejemplo 5: Potencias altas
 
-Siempre busca factor común primero.
+Factoriza: $y^4 + 2y^2 + 1$
 
-### Ejemplo 11
+**Razonamiento:**
+1. **Raíces:** $\sqrt{y^4} = y^2$ y $\sqrt{1} = 1$.
+2. **Verificación:** $2 \cdot y^2 \cdot 1 = 2y^2$. ¡Coincide con el centro!
+3. **Binomio:** El resultado es la suma de las raíces al cuadrado.
 
-Factoriza: $3x^2 + 12x + 12$
-
-**Paso 1:** Factor común $3$:
-
-$$
-3x^2 + 12x + 12 = 3(x^2 + 4x + 4)
-$$
-
-**Paso 2:** Verificamos si $x^2 + 4x + 4$ es TCP:
-
-1. $x^2 = (x)^2$ ✓
-2. $4 = (2)^2$ ✓
-3. $4x = 2(x)(2)$ ✓
-
-$$
-= 3(x + 2)^2
-$$
-
-$$
-\boxed{3(x + 2)^2}
-$$
-
-### Ejemplo 12
-
-Factoriza: $2a^3 - 8a^2 + 8a$
-
-**Paso 1:** Factor común $2a$:
-
-$$
-2a^3 - 8a^2 + 8a = 2a(a^2 - 4a + 4)
-$$
-
-**Paso 2:** Verificamos TCP:
-
-$$
-= 2a(a - 2)^2
-$$
-
-$$
-\boxed{2a(a - 2)^2}
-$$
+**Resultado:** $\boxed{(y^2 + 1)^2}$
 
 ---
 
-## 📖 Cuando NO es TCP
+## 📝 Ejercicios de Práctica
 
-### Ejemplo 13
+### Ejercicio 1
+Identifica las raíces de los extremos en $a^2 + 8a + 16$.
 
-¿Es $x^2 + 5x + 9$ un TCP?
+<details>
+<summary>Ver solución</summary>
 
-**Verificación:**
+**Razonamiento:** El primer término es $a^2$ (raíz $a$) y el tercero es 16 (raíz 4).
+**Resultado:** $\boxed{a \text{ y } 4}$
 
-1. $x^2 = (x)^2$ ✓
-2. $9 = (3)^2$ ✓
-3. $5x \neq 2(x)(3) = 6x$ ✗
+</details>
 
-**No es TCP.** Se factoriza por otro método o no es factorizable.
+### Ejercicio 2
+Realiza la "prueba del doble" para el trinomio $x^2 + 14x + 49$.
 
-### Ejemplo 14
+<details>
+<summary>Ver solución</summary>
 
-¿Es $4x^2 + 10x + 9$ un TCP?
+**Razonamiento:** Multiplicamos las raíces (x, 7) por dos: $2 \cdot x \cdot 7 = 14x$.
+**Resultado:** $\boxed{14x \text{ (Sí coincide)}}$
 
-**Verificación:**
+</details>
 
-1. $4x^2 = (2x)^2$ ✓
-2. $9 = (3)^2$ ✓
-3. $10x \neq 2(2x)(3) = 12x$ ✗
+### Ejercicio 3
+Factoriza: $x^2 + 4x + 4$.
 
-**No es TCP.**
+<details>
+<summary>Ver solución</summary>
 
----
+**Razonamiento:** Raíces 2 y $x$. Prueba $2 \cdot 2 \cdot x = 4x$.
+**Resultado:** $\boxed{(x + 2)^2}$
 
-## 📖 Resumen: Pasos para factorizar TCP
+</details>
 
-| Paso | Acción |
-|:----:|:-------|
-| 1 | Verificar si hay factor común |
-| 2 | Identificar las raíces: $a = \sqrt{1^{er} término}$, $b = \sqrt{3^{er} término}$ |
-| 3 | Verificar: $|2^{do} término| = 2ab$ |
-| 4 | Si el $2^{do}$ término es $+$: $(a + b)^2$ |
-| 5 | Si el $2^{do}$ término es $-$: $(a - b)^2$ |
+### Ejercicio 4
+Resuelve: $m^2 - 20m + 100$.
 
----
+<details>
+<summary>Ver solución</summary>
 
-## 📝 Ejercicios de práctica
+**Razonamiento:** Raíces $m$ y 10. Signo central negativo.
+**Resultado:** $\boxed{(m - 10)^2}$
 
-### Identificar TCP
+</details>
 
-**Ejercicio 1:** ¿Es $x^2 + 12x + 36$ un TCP? Justifica.
+### Ejercicio 5
+¿Es $x^2 + 5x + 25$ un TCP?
 
-**Ejercicio 2:** ¿Es $a^2 - 6a + 8$ un TCP? Justifica.
+<details>
+<summary>Ver solución</summary>
 
----
+**Razonamiento:** Raíces $x$ y 5. El doble producto sería $2 \cdot 5 \cdot x = 10x$. Pero el medio dice $5x$. No coincide.
+**Resultado:** $\boxed{\text{No es TCP}}$
 
-### Factorizar TCP
+</details>
 
-**Ejercicio 3:** $x^2 + 16x + 64$
+### Ejercicio 6
+Factoriza: $9x^2 + 6x + 1$.
 
-**Ejercicio 4:** $y^2 - 18y + 81$
+<details>
+<summary>Ver solución</summary>
 
-**Ejercicio 5:** $4m^2 + 20m + 25$
+**Razonamiento:** Raíces $3x$ y 1. Prueba: $2 \cdot 3x \cdot 1 = 6x$.
+**Resultado:** $\boxed{(3x + 1)^2}$
 
-**Ejercicio 6:** $9x^2 - 42xy + 49y^2$
+</details>
 
----
+### Ejercicio 7
+Factoriza: $a^2 - 2ab + b^2$.
 
-### TCP con factor común
+<details>
+<summary>Ver solución</summary>
 
-**Ejercicio 7:** $2x^2 + 8x + 8$
+**Razonamiento:** Es la forma clásica de la diferencia de binomio al cuadrado.
+**Resultado:** $\boxed{(a - b)^2}$
 
-**Ejercicio 8:** $5a^3 - 30a^2 + 45a$
+</details>
 
----
+### Ejercicio 8
+¿Cuál es el tercer término necesario para que $x^2 + 6x + \_\_$ sea un TCP?
 
-### TCP con fracciones
+<details>
+<summary>Ver solución</summary>
 
-**Ejercicio 9:** $x^2 + 2x + 1$
+**Razonamiento:** El medio es $2 \cdot x \cdot \text{raíz}$. Entonces $6 = 2 \cdot \text{raíz} \to \text{raíz} = 3$. El tercer término es $3^2 = 9$.
+**Resultado:** $\boxed{9}$
 
-**Ejercicio 10:** $\frac{m^2}{9} + \frac{2m}{3} + 1$
+</details>
 
----
+### Ejercicio 9
+Factoriza: $25x^2 - 40x + 16$.
 
-## ✅ Soluciones
+<details>
+<summary>Ver solución</summary>
 
-### Identificar TCP
+**Razonamiento:** Raíces $5x$ y $4$. Prueba: $2 \cdot 5x \cdot 4 = 40x$.
+**Resultado:** $\boxed{(5x - 4)^2}$
 
-**Ejercicio 1:** Sí. $x^2 = (x)^2$, $36 = (6)^2$, $12x = 2(x)(6)$ ✓
+</details>
 
-**Ejercicio 2:** No. $8 \neq (?)^2$ (no es cuadrado perfecto).
+### Ejercicio 10
+Simplifica usando TCP: $\frac{x^2 + 2x + 1}{x + 1}$.
 
-### Factorizar TCP
+<details>
+<summary>Ver solución</summary>
 
-| Ejercicio | Verificación del término medio | Solución |
-|:---------:|:-------------------------------|:---------|
-| 3 | $16x = 2(x)(8)$ ✓ | $(x + 8)^2$ |
-| 4 | $18y = 2(y)(9)$ ✓ | $(y - 9)^2$ |
-| 5 | $20m = 2(2m)(5)$ ✓ | $(2m + 5)^2$ |
-| 6 | $42xy = 2(3x)(7y)$ ✓ | $(3x - 7y)^2$ |
+**Razonamiento:** Arriba es un TCP: $(x+1)^2$. Al dividir entre $(x+1)$, queda un bloque simple.
+**Resultado:** $\boxed{x + 1}$
 
-### TCP con factor común
-
-**Ejercicio 7:**
-
-$$
-2x^2 + 8x + 8 = 2(x^2 + 4x + 4) = 2(x + 2)^2
-$$
-
-**Ejercicio 8:**
-
-$$
-5a^3 - 30a^2 + 45a = 5a(a^2 - 6a + 9) = 5a(a - 3)^2
-$$
-
-### TCP con fracciones
-
-**Ejercicio 9:**
-
-$$
-x^2 + 2x + 1 = (x + 1)^2
-$$
-
-**Ejercicio 10:**
-
-$$
-\frac{m^2}{9} + \frac{2m}{3} + 1 = \left(\frac{m}{3}\right)^2 + 2\left(\frac{m}{3}\right)(1) + 1^2 = \left(\frac{m}{3} + 1\right)^2
-$$
+</details>
 
 ---
+
+## 🔑 Resumen
+
+| Caso | Trinomio | Binomio |
+| :--- | :--- | :--- |
+| **Suma ($+$)** | $a^2 + 2ab + b^2$ | $(a + b)^2$ |
+| **Resta ($-$)** | $a^2 - 2ab + b^2$ | $(a - b)^2$ |
+
+> Un Trinomio Cuadrado Perfecto es la armonía del álgebra: cuando los extremos y el centro encajan, la expresión se simplifica en una forma elegante y compacta.

@@ -1,388 +1,284 @@
-# 🔗 Factor Común
+# **Factor Común**
 
-En esta lección aprenderemos a extraer el factor común de una expresión algebraica, que es el primer paso en todo proceso de factorización.
-
----
-
-## 📖 ¿Qué es el factor común?
-
-El **factor común** es el factor que está presente en todos los términos de una expresión algebraica. Puede ser:
-
-- Un **número** (el MCD de los coeficientes)
-- Una **variable** (con el menor exponente)
-- Una **combinación** de ambos
+El factor común es el primer caso de factorización y el más básico. Consiste en identificar qué número, letra o expresión se repite en todos los términos y sacarlo afuera del paréntesis.
 
 ---
 
-## 📖 Procedimiento para extraer factor común
+## 🎯 ¿Qué vas a aprender?
 
-### Pasos
-
-1. **Identificar el MCD de los coeficientes**
-2. **Identificar las variables comunes** con el menor exponente
-3. **Formar el factor común** (MCD × variables comunes)
-4. **Dividir cada término** entre el factor común
-5. **Escribir el resultado** como producto
+- A identificar el Máximo Común Divisor (MCD) de los coeficientes.
+- A elegir la variable común con el exponente correcto.
+- Los pasos para extraer el factor común correctamente.
+- Cómo manejar signos negativos al factorizar.
 
 ---
 
-## 📖 Factor común numérico
+## 🔍 ¿Qué es un Factor Común?
 
-### Ejemplo 1
+Es un número, una letra o un bloque que divide exactamente a todos los términos de una suma o resta. Es como un "ingrediente compartido".
 
-Factoriza: $6x + 12$
+### **Ejemplo: El ingrediente repetido**
 
-**Paso 1:** MCD de coeficientes: $\text{MCD}(6, 12) = 6$
+Observa la expresión: $6x + 9y$
+- ¿Hay algún número que divida al 6 y al 9 al mismo tiempo? Sí, el **3**.
+- ¿Hay alguna letra que se repita? No.
+- Entonces, el factor común es **3**.
 
-**Paso 2:** No hay variable común a ambos términos
+$$ 3(2x + 3y) $$
 
-**Paso 3:** Factor común: $6$
+![factor-comun](https://cdn.ediprofe.com/img/matematicas/w3rh-factor-comun.webp)
 
-**Paso 4:** Dividimos cada término:
-- $\frac{6x}{6} = x$
-- $\frac{12}{6} = 2$
-
-**Resultado:**
-
-$$
-6x + 12 = 6(x + 2)
-$$
-
-$$
-\boxed{6(x + 2)}
-$$
-
-### Ejemplo 2
-
-Factoriza: $15a - 25b + 10$
-
-**MCD:** $\text{MCD}(15, 25, 10) = 5$
-
-$$
-15a - 25b + 10 = 5(3a - 5b + 2)
-$$
-
-$$
-\boxed{5(3a - 5b + 2)}
-$$
 
 ---
 
-## 📖 Factor común con variables
+## 🏗️ Cómo extraer el Factor Común
 
-### Ejemplo 3
+Para no cometer errores, sigue este orden lógico:
 
-Factoriza: $x^3 + x^2$
+1.  **Números:** Busca el número más grande que divida a todos (MCD).
+2.  **Letras:** Toma la letra que esté en **todos** los términos con su **menor exponente**.
+3.  **Dividir:** Divide cada término original entre ese factor común para ver qué queda dentro del paréntesis.
 
-**Paso 1:** MCD de coeficientes: $\text{MCD}(1, 1) = 1$
+### **Ejemplo Paso a Paso**
 
-**Paso 2:** Variable común: $x$ con menor exponente $2$
+Factoriza: $4x^3 + 8x^2$
 
-**Paso 3:** Factor común: $x^2$
+**Razonamiento:**
+- **MCD de 4 y 8:** Es 4.
+- **Letra común:** La $x$ aparece en ambos. El menor exponente es 2. Factor: $x^2$.
+- **Factor Común Total:** $\boxed{4x^2}$.
+- **Dividimos:**
+  - $4x^3 \div 4x^2 = x$
+  - $8x^2 \div 4x^2 = 2$
 
-**Resultado:**
-
-$$
-x^3 + x^2 = x^2(x + 1)
-$$
-
-$$
-\boxed{x^2(x + 1)}
-$$
-
-### Ejemplo 4
-
-Factoriza: $4a^4 - 2a^3 + 6a^2$
-
-**MCD de coeficientes:** $\text{MCD}(4, 2, 6) = 2$
-
-**Variable común:** $a^2$ (menor exponente)
-
-**Factor común:** $2a^2$
-
-$$
-\frac{4a^4}{2a^2} = 2a^2 \quad \quad \frac{-2a^3}{2a^2} = -a \quad \quad \frac{6a^2}{2a^2} = 3
-$$
-
-$$
-4a^4 - 2a^3 + 6a^2 = 2a^2(2a^2 - a + 3)
-$$
-
-$$
-\boxed{2a^2(2a^2 - a + 3)}
-$$
-
-### Ejemplo 5
-
-Factoriza: $9x^5 - 6x^3 + 12x^2$
-
-**MCD:** $\text{MCD}(9, 6, 12) = 3$
-
-**Variable común:** $x^2$
-
-**Factor común:** $3x^2$
-
-$$
-9x^5 - 6x^3 + 12x^2 = 3x^2(3x^3 - 2x + 4)
-$$
-
-$$
-\boxed{3x^2(3x^3 - 2x + 4)}
-$$
+**Resultado:** $\boxed{4x^2(x + 2)}$
 
 ---
 
-## 📖 Factor común con varias variables
+## ⚠️ Factor Común Negativo
 
-### Ejemplo 6
+Si el primer término es negativo, a veces conviene sacar el signo menos como parte del factor común. ¡Recuerda que esto cambiará todos los signos de adentro!
 
-Factoriza: $6x^2y + 9xy^2$
+### **Ejemplo: El Cambio de Interruptor**
 
-**MCD de coeficientes:** $\text{MCD}(6, 9) = 3$
+Factoriza: $-5a^2 + 10a$
 
-**Variables comunes:** $x$ (menor exponente $1$) e $y$ (menor exponente $1$)
+**Razonamiento:**
+- Sacamos $-5a$ como factor.
+- $(-5a^2) \div (-5a) = a$.
+- $(+10a) \div (-5a) = -2$.
 
-**Factor común:** $3xy$
-
-$$
-\frac{6x^2y}{3xy} = 2x \quad \quad \frac{9xy^2}{3xy} = 3y
-$$
-
-$$
-6x^2y + 9xy^2 = 3xy(2x + 3y)
-$$
-
-$$
-\boxed{3xy(2x + 3y)}
-$$
-
-### Ejemplo 7
-
-Factoriza: $12a^3b^2 - 8a^2b^3 + 4ab$
-
-**MCD:** $\text{MCD}(12, 8, 4) = 4$
-
-**Variables comunes:** $a$ (menor exp. $1$), $b$ (menor exp. $1$)
-
-**Factor común:** $4ab$
-
-$$
-12a^3b^2 - 8a^2b^3 + 4ab = 4ab(3a^2b - 2ab^2 + 1)
-$$
-
-$$
-\boxed{4ab(3a^2b - 2ab^2 + 1)}
-$$
-
-### Ejemplo 8
-
-Factoriza: $15x^4y^3z^2 - 10x^3y^2z + 5x^2yz^3$
-
-**MCD:** $\text{MCD}(15, 10, 5) = 5$
-
-**Variables comunes:** $x^2$, $y$, $z$
-
-**Factor común:** $5x^2yz$
-
-$$
-= 5x^2yz(3x^2y^2z - 2xy + z^2)
-$$
-
-$$
-\boxed{5x^2yz(3x^2y^2z - 2xy + z^2)}
-$$
+**Resultado:** $\boxed{-5a(a - 2)}$
 
 ---
 
-## 📖 Factor común con signos negativos
+## ⚙️ Ejemplos Resueltos
 
-A veces conviene extraer un factor común negativo para que el primer término del paréntesis quede positivo.
+### Ejemplo 1: Varias letras
 
-### Ejemplo 9
+Factoriza: $12a^2b - 8ab^2$
 
-Factoriza: $-6x^2 + 12x$
+**Datos:** Coeficientes 12, 8. Letras $a, b$.
 
-**Opción 1:** Factor común positivo $6x$
+**Razonamiento:**
+1. MCD de 12 y 8: **4**.
+2. Menor exponente de $a$: $a^1$.
+3. Menor exponente de $b$: $b^1$.
+4. Factor común: $4ab$.
+5. Dividimos: $3a - 2b$.
 
-$$
--6x^2 + 12x = 6x(-x + 2)
-$$
-
-**Opción 2:** Factor común negativo $-6x$
-
-$$
--6x^2 + 12x = -6x(x - 2)
-$$
-
-Ambas son correctas, pero la opción 2 es preferible porque el primer término queda positivo.
-
-$$
-\boxed{-6x(x - 2)}
-$$
-
-### Ejemplo 10
-
-Factoriza: $-4a^3 - 8a^2 + 2a$
-
-**Factor común:** $-2a$
-
-$$
--4a^3 - 8a^2 + 2a = -2a(2a^2 + 4a - 1)
-$$
-
-$$
-\boxed{-2a(2a^2 + 4a - 1)}
-$$
+**Resultado:** $\boxed{4ab(3a - 2b)}$
 
 ---
 
-## 📖 Factor común con fracciones
+### Ejemplo 2: El término "fantasma"
 
-### Ejemplo 11
+Factoriza: $x^2 + x$
 
-Factoriza: $\frac{1}{2}x^2 + \frac{3}{2}x$
+**Datos:** La $x$ se repite.
 
-**Factor común:** $\frac{1}{2}x$
+**Razonamiento:**
+- Factor común: $x$.
+- $x^2 \div x = x$.
+- $x \div x = 1$ (¡NUNCA pongas cero!).
 
-$$
-\frac{1}{2}x^2 + \frac{3}{2}x = \frac{1}{2}x(x + 3)
-$$
-
-$$
-\boxed{\frac{1}{2}x(x + 3)}
-$$
-
-### Ejemplo 12
-
-Factoriza: $\frac{2}{3}a^3 - \frac{4}{3}a^2 + \frac{2}{3}a$
-
-**Factor común:** $\frac{2}{3}a$
-
-$$
-= \frac{2}{3}a(a^2 - 2a + 1)
-$$
-
-$$
-\boxed{\frac{2}{3}a(a^2 - 2a + 1)}
-$$
+**Resultado:** $\boxed{x(x + 1)}$
 
 ---
 
-## 📖 Verificación
+### Ejemplo 3: Solo números
 
-Siempre verifica tu factorización multiplicando.
+Factoriza: $15a + 20b - 30$
 
-### Ejemplo 13
+**Razonamiento:**
+1. Buscamos el MCD de 15, 20 y 30. El divisor más grande es **5**.
+2. No hay letras comunes en los tres términos.
+3. Dividimos cada término entre 5:
+   - $15a \div 5 = 3a$
+   - $20b \div 5 = 4b$
+   - $-30 \div 5 = -6$
 
-Verifica: $8x^3 - 12x^2 = 4x^2(2x - 3)$
-
-$$
-4x^2(2x - 3) = 4x^2 \cdot 2x - 4x^2 \cdot 3 = 8x^3 - 12x^2 \quad ✓
-$$
-
----
-
-## 📖 Cuándo NO hay factor común
-
-Una expresión **no tiene factor común** cuando el MCD de los coeficientes es 1 y no hay variables presentes en todos los términos.
-
-### Ejemplo 14
-
-¿Tiene factor común $3x + 5y$?
-
-- $\text{MCD}(3, 5) = 1$
-- No hay variable común
-
-**No tiene factor común distinto de 1.**
-
-### Ejemplo 15
-
-¿Tiene factor común $x^2 + 3x + 2$?
-
-- $\text{MCD}(1, 3, 2) = 1$
-- No hay variable en el término $2$
-
-**No tiene factor común.** (Se factoriza por otro método)
+**Resultado:** $\boxed{5(3a + 4b - 6)}$
 
 ---
 
-## 📝 Ejercicios de práctica
+### Ejemplo 4: Exponentes variados
 
-### Factor común numérico
+Factoriza: $m^5 - m^3 + m^2$
 
-**Ejercicio 1:** $8a + 16$
+**Razonamiento:**
+1. La letra $m$ se repite en todos.
+2. Elegimos el menor exponente: **2**.
+3. Factor común: $m^2$.
+4. Dividimos restando exponentes:
+   - $m^5 \div m^2 = m^3$
+   - $m^3 \div m^2 = m^1$
+   - $m^2 \div m^2 = 1$
 
-**Ejercicio 2:** $12x - 18y + 6$
-
----
-
-### Factor común con variables
-
-**Ejercicio 3:** $x^4 - x^3 + x^2$
-
-**Ejercicio 4:** $5m^3 + 10m^2 - 15m$
-
----
-
-### Factor común con varias variables
-
-**Ejercicio 5:** $8a^2b - 12ab^2$
-
-**Ejercicio 6:** $18x^3y^2 - 12x^2y^3 + 6xy$
+**Resultado:** $\boxed{m^2(m^3 - m + 1)}$
 
 ---
 
-### Factor común negativo
+### Ejemplo 5: El caso completo
 
-**Ejercicio 7:** $-9x^2 + 27x$
+Factoriza: $18x^2y^3 - 12x^3y^2$
 
-**Ejercicio 8:** $-4a^2b + 8ab - 2b$
+**Razonamiento:**
+1. MCD de 18 y 12: **6**.
+2. Menor exponente de $x$: $x^2$.
+3. Menor exponente de $y$: $y^2$.
+4. Factor común total: **$6x^2y^2$**.
+5. Dividimos:
+   - $18x^2y^3 \div 6x^2y^2 = 3y$
+   - $12x^3y^2 \div 6x^2y^2 = 2x$
+
+**Resultado:** $\boxed{6x^2y^2(3y - 2x)}$
+
+---
+
+## 📝 Ejercicios de Práctica
+
+### Ejercicio 1
+Identifica el factor común numérico de $15, 20 \text{ y } 30$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** Buscamos el divisor más grande de los tres números.
+**Resultado:** $\boxed{5}$
+
+</details>
+
+### Ejercicio 2
+Factoriza la expresión: $6a + 12$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** MCD de 6 y 12 es 6.
+**Razonamiento:** $6(a) + 6(2)$.
+**Resultado:** $\boxed{6(a + 2)}$
+
+</details>
+
+### Ejercicio 3
+¿Cuál es la variable común en $x^4, x^3 \text{ y } x^5$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** Tomamos la letra con el exponente más pequeño.
+**Resultado:** $\boxed{x^3}$
+
+</details>
+
+### Ejercicio 4
+Factoriza: $m^2 - m$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** Extraemos $m$: $m(m) - m(1)$.
+**Resultado:** $\boxed{m(m - 1)}$
+
+</details>
+
+### Ejercicio 5
+Resuelve: $10x^2y + 15xy^2$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** MCD: 5. Letras comunes: $x, y$.
+**Razonamiento:** $5xy(2x + 3y)$.
+**Resultado:** $\boxed{5xy(2x + 3y)}$
+
+</details>
+
+### Ejercicio 6
+Factoriza usando un término negativo: $-3x - 9$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** Sacamos el $-3$. Esto vuelve positivos a los términos internos.
+**Resultado:** $\boxed{-3(x + 3)}$
+
+</details>
+
+### Ejercicio 7
+Factoriza: $2a^3 + 4a^2 + 6a$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** MCD: 2. Letra: $a$.
+**Razonamiento:** Dividimos cada uno: $a^2, 2a, 3$.
+**Resultado:** $\boxed{2a(a^2 + 2a + 3)}$
+
+</details>
+
+### Ejercicio 8
+¿Cuál es el factor común en $abc + abd$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** Las letras que se repiten en ambos bloques son $a$ y $b$.
+**Resultado:** $\boxed{ab}$
+
+</details>
+
+### Ejercicio 9
+Factoriza: $\frac{1}{2}x^2 + \frac{1}{2}x$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** Sacamos la fracción y la letra: $\frac{1}{2}x(x + 1)$.
+**Resultado:** $\boxed{\frac{1}{2}x(x + 1)}$
+
+</details>
+
+### Ejercicio 10
+Verifica si $x^2(x - 5)$ es la factorización de $x^3 - 5x^2$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** Multiplicamos $x^2 \cdot x = x^3$ y $x^2 \cdot (-5) = -5x^2$.
+**Resultado:** $\boxed{\text{Sí, es correcta}}$
+
+</details>
 
 ---
 
-### Identificar si hay factor común
+## 🔑 Resumen
 
-**Ejercicio 9:** ¿Tiene factor común $5x + 7$?
+| Tipo | Estructura | Ejemplo |
+| :--- | :--- | :--- |
+| **Numérico** | $ka + kb = k(a + b)$ | $6x + 9 = 3(2x + 3)$ |
+| **Variable** | $x^n + x^{n+k} = x^n(1 + x^k)$ | $x^5 + x^3 = x^3(x^2 + 1)$ |
+| **Compuesto** | $k \cdot x^n + k \cdot x^{n+k} = kx^n(\dots)$ | $4x^2 + 8x = 4x(x + 2)$ |
 
-**Ejercicio 10:** ¿Tiene factor común $6a^2 + 9a$?
-
----
-
-## ✅ Soluciones
-
-### Factor común numérico
-
-| Ejercicio | Solución |
-|:---------:|:---------|
-| 1 | $8(a + 2)$ |
-| 2 | $6(2x - 3y + 1)$ |
-
-### Factor común con variables
-
-| Ejercicio | Solución |
-|:---------:|:---------|
-| 3 | $x^2(x^2 - x + 1)$ |
-| 4 | $5m(m^2 + 2m - 3)$ |
-
-### Factor común con varias variables
-
-| Ejercicio | Solución |
-|:---------:|:---------|
-| 5 | $4ab(2a - 3b)$ |
-| 6 | $6xy(3x^2y - 2xy^2 + 1)$ |
-
-### Factor común negativo
-
-| Ejercicio | Solución |
-|:---------:|:---------|
-| 7 | $-9x(x - 3)$ |
-| 8 | $-2b(2a^2 - 4a + 1)$ |
-
-### Identificar si hay factor común
-
-| Ejercicio | Respuesta |
-|:---------:|:----------|
-| 9 | No, porque $\text{MCD}(5, 7) = 1$ y no hay variable común |
-| 10 | Sí: $3a(2a + 3)$ |
-
----
+> El factor común es la base de todo el álgebra superior. Si dominas este "agrupamiento" inteligente, el resto de los casos de factorización serán mucho más sencillos.

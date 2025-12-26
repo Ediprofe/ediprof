@@ -1,238 +1,261 @@
-# 📋 Resumen de Casos de Factorización
+# **Resumen de Casos de Factorización**
 
-En esta lección presentamos un resumen completo de todos los casos de factorización estudiados, con sus fórmulas y ejemplos representativos.
-
----
-
-## 📖 Tabla resumen de casos
-
-| Caso | Nombre | Forma general | Factorización |
-|:----:|:-------|:--------------|:--------------|
-| 1 | Factor común | $ab + ac$ | $a(b + c)$ |
-| 2 | Agrupación de términos | $ax + ay + bx + by$ | $(a+b)(x+y)$ |
-| 3 | Diferencia de cuadrados | $a^2 - b^2$ | $(a+b)(a-b)$ |
-| 4 | Trinomio cuadrado perfecto | $a^2 \pm 2ab + b^2$ | $(a \pm b)^2$ |
-| 5 | Trinomio $x^2 + bx + c$ | $x^2 + bx + c$ | $(x + m)(x + n)$ |
-| 6 | Trinomio $ax^2 + bx + c$ | $ax^2 + bx + c$ | Descomposición |
-| 7 | Suma de cubos | $a^3 + b^3$ | $(a+b)(a^2 - ab + b^2)$ |
-| 8 | Diferencia de cubos | $a^3 - b^3$ | $(a-b)(a^2 + ab + b^2)$ |
-| 9 | Potencias impares | $a^n \pm b^n$ | Ver fórmulas abajo |
-| 10 | Completar el cuadrado | $x^2 + bx + c$ | $(x + \frac{b}{2})^2 - k$ |
+Esta lección es un repaso general de todos los métodos de factorización que hemos estudiado. Es útil para identificar rápidamente qué método aplicar en cada situación.
 
 ---
 
-## 📖 Caso 1: Factor común
+## 🎯 ¿Qué vas a aprender?
 
-**Fórmula:**
-
-$$
-ab + ac = a(b + c)
-$$
-
-**Ejemplo:** $6x^2 + 9x = 3x(2x + 3)$
-
-**Cuándo usarlo:** Cuando todos los términos comparten un factor común.
+- A identificar el tipo de expresión que tienes.
+- A elegir el método de factorización correcto.
+- El orden lógico para factorizar cualquier expresión.
+- A verificar tus resultados multiplicando.
 
 ---
 
-## 📖 Caso 2: Agrupación de términos
+## 📐 Tabla de Fórmulas
 
-**Fórmula:**
-
-$$
-ax + ay + bx + by = a(x + y) + b(x + y) = (a + b)(x + y)
-$$
-
-**Ejemplo:** $x^3 + x^2 + x + 1 = x^2(x + 1) + 1(x + 1) = (x + 1)(x^2 + 1)$
-
-**Cuándo usarlo:** Con 4 o más términos sin factor común general.
-
----
-
-## 📖 Caso 3: Diferencia de cuadrados
-
-**Fórmula:**
-
-$$
-a^2 - b^2 = (a + b)(a - b)
-$$
-
-**Ejemplo:** $x^2 - 16 = (x + 4)(x - 4)$
-
-**Cuándo usarlo:** Cuando tienes dos términos que son cuadrados perfectos separados por resta.
-
-> ⚠️ **Nota:** La suma de cuadrados $a^2 + b^2$ NO se factoriza con números reales.
+| Caso | Forma | Factorización |
+| :--- | :--- | :--- |
+| **Factor Común** | $ab + ac$ | $a(b + c)$ |
+| **Agrupación** | $ax + ay + bx + by$ | $(a + b)(x + y)$ |
+| **Diferencia de Cuadrados** | $a^2 - b^2$ | $(a + b)(a - b)$ |
+| **TCP (+)** | $a^2 + 2ab + b^2$ | $(a + b)^2$ |
+| **TCP (-)** | $a^2 - 2ab + b^2$ | $(a - b)^2$ |
+| **Trinomio Simple** | $x^2 + bx + c$ | $(x + m)(x + n)$ |
+| **Trinomio General** | $ax^2 + bx + c$ | Por agrupación o tanteo |
+| **Suma de Cubos** | $a^3 + b^3$ | $(a + b)(a^2 - ab + b^2)$ |
+| **Diferencia de Cubos** | $a^3 - b^3$ | $(a - b)(a^2 + ab + b^2)$ |
 
 ---
 
-## 📖 Caso 4: Trinomio cuadrado perfecto
+## 🔍 Estrategia de Factorización
 
-**Fórmulas:**
+Sigue este orden cuando tengas que factorizar:
 
-$$
-a^2 + 2ab + b^2 = (a + b)^2
-$$
+**Paso 1:** ¿Hay factor común? → Siempre es lo primero.
 
-$$
-a^2 - 2ab + b^2 = (a - b)^2
-$$
+**Paso 2:** ¿Cuántos términos tiene?
+- **2 términos:** Diferencia de cuadrados, suma o diferencia de cubos.
+- **3 términos:** TCP, trinomio simple ($x^2 + bx + c$) o trinomio general ($ax^2 + bx + c$).
+- **4 o más:** Agrupación.
 
-**Ejemplo:** $x^2 + 6x + 9 = (x + 3)^2$
+**Paso 3:** ¿Se puede factorizar más?
 
-**Cómo verificar:** El término medio debe ser $2 \times \sqrt{primero} \times \sqrt{tercero}$
-
----
-
-## 📖 Caso 5: Trinomio $x^2 + bx + c$
-
-**Fórmula:**
-
-$$
-x^2 + bx + c = (x + m)(x + n)
-$$
-
-donde $m + n = b$ y $m \times n = c$
-
-**Ejemplo:** $x^2 + 7x + 12 = (x + 3)(x + 4)$ porque $3 + 4 = 7$ y $3 \times 4 = 12$
-
-**Regla de signos:**
-
-| $c$ | $b$ | Signos de $m$ y $n$ |
-|:---:|:---:|:-------------------|
-| $+$ | $+$ | Ambos positivos |
-| $+$ | $-$ | Ambos negativos |
-| $-$ | cualquiera | Signos diferentes |
+**Paso 4:** Verifica multiplicando.
 
 ---
 
-## 📖 Caso 6: Trinomio $ax^2 + bx + c$
+## ⚙️ Ejemplos Resueltos
 
-**Método de descomposición:**
+### Ejemplo 1: Factor común primero
 
-1. Calcular $a \times c$
-2. Buscar $m$ y $n$ tales que $m + n = b$ y $m \times n = ac$
-3. Reescribir el término medio: $ax^2 + mx + nx + c$
-4. Factorizar por agrupación
+Factoriza: $6x^3 - 12x^2 + 18x$
 
-**Ejemplo:** $2x^2 + 7x + 3$
+**Datos:**
+- Todos los términos tienen factor común $6x$.
 
-- $a \times c = 2 \times 3 = 6$
-- $m = 1$, $n = 6$ (suman $7$, multiplican $6$)
-- $2x^2 + x + 6x + 3 = x(2x + 1) + 3(2x + 1) = (2x + 1)(x + 3)$
+**Razonamiento:**
+1. Sacamos $6x$: $6x(x^2 - 2x + 3)$.
+2. Verificamos si el trinomio se factoriza más: No es TCP ni tiene factores enteros.
 
----
-
-## 📖 Caso 7: Suma de cubos
-
-**Fórmula:**
-
-$$
-a^3 + b^3 = (a + b)(a^2 - ab + b^2)
-$$
-
-**Ejemplo:** $x^3 + 8 = (x + 2)(x^2 - 2x + 4)$
-
-**Regla SOAP:** **S**ame, **O**pposite, **A**lways **P**ositive
+**Resultado:** $\boxed{6x(x^2 - 2x + 3)}$
 
 ---
 
-## 📖 Caso 8: Diferencia de cubos
+### Ejemplo 2: Diferencia de cuadrados iterada
 
-**Fórmula:**
+Factoriza: $x^4 - 81$
 
-$$
-a^3 - b^3 = (a - b)(a^2 + ab + b^2)
-$$
+**Datos:**
+- Es diferencia de cuadrados: $(x^2)^2 - 9^2$.
 
-**Ejemplo:** $x^3 - 27 = (x - 3)(x^2 + 3x + 9)$
+**Razonamiento:**
+1. Primera factorización: $(x^2 + 9)(x^2 - 9)$.
+2. El segundo factor es otra diferencia de cuadrados: $(x^2 - 9) = (x + 3)(x - 3)$.
+3. El primero no se factoriza (suma de cuadrados).
 
----
-
-## 📖 Caso 9: Suma y diferencia de potencias impares
-
-**Diferencia de potencias (para todo $n$):**
-
-$$
-a^n - b^n = (a - b)(a^{n-1} + a^{n-2}b + a^{n-3}b^2 + ... + b^{n-1})
-$$
-
-**Suma de potencias impares:**
-
-$$
-a^n + b^n = (a + b)(a^{n-1} - a^{n-2}b + a^{n-3}b^2 - ... + b^{n-1})
-$$
-
-**Ejemplo:** $x^5 - 32 = (x - 2)(x^4 + 2x^3 + 4x^2 + 8x + 16)$
+**Resultado:** $\boxed{(x^2 + 9)(x + 3)(x - 3)}$
 
 ---
 
-## 📖 Caso 10: Completar el cuadrado
+### Ejemplo 3: Trinomio simple
 
-**Fórmula:**
+Factoriza: $x^2 - 5x + 6$
 
-$$
-x^2 + bx + c = \left(x + \frac{b}{2}\right)^2 - \left(\frac{b}{2}\right)^2 + c
-$$
+**Datos:**
+- Coeficiente de $x^2$ es 1.
+- Buscamos números que multipliquen 6 y sumen -5.
 
-**Ejemplo:** $x^2 + 6x + 5 = (x + 3)^2 - 4 = (x + 5)(x + 1)$
+**Razonamiento:**
+1. Números: $-2$ y $-3$.
+2. Verificación: $(-2) + (-3) = -5$, $(-2) \times (-3) = 6$.
 
-**Cuándo usarlo:** Para factorizar o resolver ecuaciones cuadráticas.
-
----
-
-## 📖 Estrategia general de factorización
-
-### Orden recomendado
-
-1. **¿Hay factor común?** — Siempre es el primer paso
-2. **¿Cuántos términos tiene?**
-   - **2 términos:** Diferencia de cuadrados o suma/diferencia de cubos
-   - **3 términos:** TCP, trinomio $x^2 + bx + c$, o trinomio $ax^2 + bx + c$
-   - **4+ términos:** Agrupación
-3. **¿Se puede factorizar más?**
-4. **Verificar multiplicando**
+**Resultado:** $\boxed{(x - 2)(x - 3)}$
 
 ---
 
-## 📝 Ejercicios de práctica
+### Ejemplo 4: Suma de cubos
 
-Identifica el caso y factoriza:
+Factoriza: $8a^3 + 27$
 
-**Ejercicio 1:** $5x^3 - 10x^2 + 15x$
+**Datos:**
+- $8a^3 = (2a)^3$ y $27 = 3^3$.
 
-**Ejercicio 2:** $x^2 - 49$
+**Razonamiento:**
+1. Aplicamos fórmula de suma de cubos.
+2. Primer factor: $(2a + 3)$.
+3. Segundo factor: $(2a)^2 - (2a)(3) + 3^2 = 4a^2 - 6a + 9$.
 
-**Ejercicio 3:** $x^2 + 10x + 25$
-
-**Ejercicio 4:** $x^2 - 5x + 6$
-
-**Ejercicio 5:** $3x^2 + 11x + 10$
-
-**Ejercicio 6:** $x^3 + 125$
-
-**Ejercicio 7:** $8a^3 - 27b^3$
-
-**Ejercicio 8:** $x^2 + 4x - 5$
-
-**Ejercicio 9:** $ax + ay - bx - by$
-
-**Ejercicio 10:** $x^4 - 81$
+**Resultado:** $\boxed{(2a + 3)(4a^2 - 6a + 9)}$
 
 ---
 
-## ✅ Soluciones
+### Ejemplo 5: Combinación de métodos
 
-| Ejercicio | Caso | Solución |
-|:---------:|:----:|:---------|
-| 1 | Factor común | $5x(x^2 - 2x + 3)$ |
-| 2 | Diferencia de cuadrados | $(x + 7)(x - 7)$ |
-| 3 | TCP | $(x + 5)^2$ |
-| 4 | Trinomio $x^2 + bx + c$ | $(x - 2)(x - 3)$ |
-| 5 | Trinomio $ax^2 + bx + c$ | $(3x + 5)(x + 2)$ |
-| 6 | Suma de cubos | $(x + 5)(x^2 - 5x + 25)$ |
-| 7 | Diferencia de cubos | $(2a - 3b)(4a^2 + 6ab + 9b^2)$ |
-| 8 | Trinomio $x^2 + bx + c$ | $(x + 5)(x - 1)$ |
-| 9 | Agrupación | $(x + y)(a - b)$ |
-| 10 | Diferencia de cuadrados (iterada) | $(x^2 + 9)(x + 3)(x - 3)$ |
+Factoriza: $2x^3 - 8x$
+
+**Datos:**
+- Hay factor común $2x$.
+
+**Razonamiento:**
+1. Sacamos $2x$: $2x(x^2 - 4)$.
+2. Adentro es diferencia de cuadrados: $2x(x + 2)(x - 2)$.
+
+**Resultado:** $\boxed{2x(x + 2)(x - 2)}$
 
 ---
+
+## 📝 Ejercicios de Práctica
+
+### Ejercicio 1
+Identifica el caso y factoriza: $5x^2 - 20$
+
+<details>
+<summary>Ver solución</summary>
+
+**Caso:** Factor común + diferencia de cuadrados.
+**Razonamiento:** $5(x^2 - 4) = 5(x + 2)(x - 2)$
+**Resultado:** $\boxed{5(x + 2)(x - 2)}$
+
+</details>
+
+### Ejercicio 2
+Factoriza: $x^2 - 49$
+
+<details>
+<summary>Ver solución</summary>
+
+**Caso:** Diferencia de cuadrados.
+**Razonamiento:** $x^2 - 7^2 = (x + 7)(x - 7)$
+**Resultado:** $\boxed{(x + 7)(x - 7)}$
+
+</details>
+
+### Ejercicio 3
+Factoriza: $x^2 + 10x + 25$
+
+<details>
+<summary>Ver solución</summary>
+
+**Caso:** Trinomio cuadrado perfecto.
+**Razonamiento:** $(x + 5)^2$
+**Resultado:** $\boxed{(x + 5)^2}$
+
+</details>
+
+### Ejercicio 4
+Factoriza: $x^2 + 3x - 10$
+
+<details>
+<summary>Ver solución</summary>
+
+**Caso:** Trinomio simple.
+**Razonamiento:** Números que multiplican -10 y suman 3: 5 y -2.
+**Resultado:** $\boxed{(x + 5)(x - 2)}$
+
+</details>
+
+### Ejercicio 5
+Factoriza: $2x^2 + 5x + 2$
+
+<details>
+<summary>Ver solución</summary>
+
+**Caso:** Trinomio general.
+**Razonamiento:** $(2x + 1)(x + 2)$
+**Resultado:** $\boxed{(2x + 1)(x + 2)}$
+
+</details>
+
+### Ejercicio 6
+Factoriza: $x^3 + 125$
+
+<details>
+<summary>Ver solución</summary>
+
+**Caso:** Suma de cubos.
+**Razonamiento:** $(x + 5)(x^2 - 5x + 25)$
+**Resultado:** $\boxed{(x + 5)(x^2 - 5x + 25)}$
+
+</details>
+
+### Ejercicio 7
+Factoriza: $27a^3 - 64b^3$
+
+<details>
+<summary>Ver solución</summary>
+
+**Caso:** Diferencia de cubos.
+**Razonamiento:** $(3a - 4b)(9a^2 + 12ab + 16b^2)$
+**Resultado:** $\boxed{(3a - 4b)(9a^2 + 12ab + 16b^2)}$
+
+</details>
+
+### Ejercicio 8
+Factoriza: $ax + ay - bx - by$
+
+<details>
+<summary>Ver solución</summary>
+
+**Caso:** Agrupación.
+**Razonamiento:** $a(x + y) - b(x + y) = (x + y)(a - b)$
+**Resultado:** $\boxed{(x + y)(a - b)}$
+
+</details>
+
+### Ejercicio 9
+Factoriza: $x^6 - 1$
+
+<details>
+<summary>Ver solución</summary>
+
+**Caso:** Diferencia de cuadrados + cubos.
+**Razonamiento:** $(x^3 + 1)(x^3 - 1) = (x + 1)(x^2 - x + 1)(x - 1)(x^2 + x + 1)$
+**Resultado:** $\boxed{(x + 1)(x - 1)(x^2 - x + 1)(x^2 + x + 1)}$
+
+</details>
+
+### Ejercicio 10
+Factoriza: $3x^3 + 6x^2 - 9x$
+
+<details>
+<summary>Ver solución</summary>
+
+**Caso:** Factor común + trinomio.
+**Razonamiento:** $3x(x^2 + 2x - 3) = 3x(x + 3)(x - 1)$
+**Resultado:** $\boxed{3x(x + 3)(x - 1)}$
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Términos | Posibles Casos |
+| :--- | :--- |
+| **2 términos** | Diferencia de cuadrados, suma/diferencia de cubos |
+| **3 términos** | TCP, trinomio simple, trinomio general |
+| **4+ términos** | Agrupación |
+
+> Siempre empieza buscando factor común. Luego cuenta los términos para decidir qué método usar. Y al final, verifica multiplicando.

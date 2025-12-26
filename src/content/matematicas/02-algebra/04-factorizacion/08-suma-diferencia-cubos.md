@@ -1,430 +1,272 @@
-# 🧊 Suma y Diferencia de Cubos
+# **Suma y Diferencia de Cubos**
 
-En esta lección aprenderemos a factorizar expresiones que son suma o diferencia de dos cubos perfectos.
-
----
-
-## 📖 Fórmulas fundamentales
-
-### Suma de cubos
-
-$$
-a^3 + b^3 = (a + b)(a^2 - ab + b^2)
-$$
-
-### Diferencia de cubos
-
-$$
-a^3 - b^3 = (a - b)(a^2 + ab + b^2)
-$$
+Este caso de factorización se aplica cuando tienes exactamente dos términos que son cubos perfectos, ya sea sumados o restados.
 
 ---
 
-## 📖 Cómo recordar las fórmulas
+## 🎯 ¿Qué vas a aprender?
 
-La clave está en observar el patrón entre los signos:
-
-### Para suma de cubos ($a^3 + b^3$):
-
-| Factor | Contenido |
-|:------:|:----------|
-| **1er factor** | $(a + b)$ — suma de las raíces cúbicas |
-| **2do factor** | $a^2 - ab + b^2$ — cuadrado, producto con signo opuesto, cuadrado |
-
-### Para diferencia de cubos ($a^3 - b^3$):
-
-| Factor | Contenido |
-|:------:|:----------|
-| **1er factor** | $(a - b)$ — diferencia de las raíces cúbicas |
-| **2do factor** | $a^2 + ab + b^2$ — cuadrado, producto con signo opuesto, cuadrado |
-
-> 💡 **Truco para recordar:**
-> - El **primer factor** tiene el **mismo signo** que la expresión original
-> - En el **segundo factor**, el término del medio tiene **signo contrario**
-> - El **último término** siempre es **positivo** ($+b^2$)
+- A identificar cubos perfectos en números y variables.
+- A aplicar la fórmula de suma de cubos.
+- A aplicar la fórmula de diferencia de cubos.
+- A factorizar expresiones con coeficientes y variables elevadas.
 
 ---
 
-## 📖 Cubos perfectos comunes
+## 🔍 ¿Qué es un cubo perfecto?
 
-| Número | Cubo perfecto |
-|:------:|:-------------:|
-| $1$ | $1^3$ |
-| $8$ | $2^3$ |
-| $27$ | $3^3$ |
-| $64$ | $4^3$ |
-| $125$ | $5^3$ |
-| $216$ | $6^3$ |
-| $343$ | $7^3$ |
-| $512$ | $8^3$ |
-| $729$ | $9^3$ |
-| $1000$ | $10^3$ |
+Un cubo perfecto es un número o expresión que tiene raíz cúbica exacta.
+
+| Número | Cubo | Raíz cúbica |
+| :---: | :---: | :---: |
+| 1 | $1^3$ | 1 |
+| 8 | $2^3$ | 2 |
+| 27 | $3^3$ | 3 |
+| 64 | $4^3$ | 4 |
+| 125 | $5^3$ | 5 |
+
+Para variables: $x^3$ tiene raíz $x$, $x^6$ tiene raíz $x^2$, $x^9$ tiene raíz $x^3$.
 
 ---
 
-## 📖 Ejemplos de suma de cubos
+## 📐 Las Fórmulas
 
-### Ejemplo 1
+**Suma de cubos:**
+
+$$
+\boxed{a^3 + b^3 = (a + b)(a^2 - ab + b^2)}
+$$
+
+**Diferencia de cubos:**
+
+$$
+\boxed{a^3 - b^3 = (a - b)(a^2 + ab + b^2)}
+$$
+
+**Cómo recordarlas:**
+- El primer paréntesis tiene el **mismo signo** que la expresión original.
+- El término del medio del segundo paréntesis tiene el **signo contrario**.
+- El último término siempre es **positivo**.
+
+---
+
+## ⚙️ Ejemplos Resueltos
+
+### Ejemplo 1: Suma de cubos básica
 
 Factoriza: $x^3 + 8$
 
-**Identificamos los cubos:**
-- $x^3 = (x)^3$ ✓
-- $8 = (2)^3$ ✓
+**Datos:**
+- $x^3 = (x)^3$
+- $8 = (2)^3$
 
-Aplicamos la fórmula con $a = x$ y $b = 2$:
+**Razonamiento:**
+1. Identificamos $a = x$ y $b = 2$.
+2. Aplicamos la fórmula de suma.
+3. Primer factor: $(x + 2)$.
+4. Segundo factor: $x^2 - x \cdot 2 + 2^2 = x^2 - 2x + 4$.
 
-$$
-x^3 + 8 = (x + 2)(x^2 - x \cdot 2 + 2^2)
-$$
-
-$$
-= (x + 2)(x^2 - 2x + 4)
-$$
-
-$$
-\boxed{(x + 2)(x^2 - 2x + 4)}
-$$
-
-### Ejemplo 2
-
-Factoriza: $a^3 + 27$
-
-- $a^3 = (a)^3$
-- $27 = (3)^3$
-
-$$
-a^3 + 27 = (a + 3)(a^2 - 3a + 9)
-$$
-
-$$
-\boxed{(a + 3)(a^2 - 3a + 9)}
-$$
-
-### Ejemplo 3
-
-Factoriza: $m^3 + 1$
-
-- $m^3 = (m)^3$
-- $1 = (1)^3$
-
-$$
-m^3 + 1 = (m + 1)(m^2 - m + 1)
-$$
-
-$$
-\boxed{(m + 1)(m^2 - m + 1)}
-$$
-
-### Ejemplo 4
-
-Factoriza: $y^3 + 125$
-
-- $125 = 5^3$
-
-$$
-y^3 + 125 = (y + 5)(y^2 - 5y + 25)
-$$
-
-$$
-\boxed{(y + 5)(y^2 - 5y + 25)}
-$$
+**Resultado:** $\boxed{(x + 2)(x^2 - 2x + 4)}$
 
 ---
 
-## 📖 Ejemplos de diferencia de cubos
-
-### Ejemplo 5
+### Ejemplo 2: Diferencia de cubos básica
 
 Factoriza: $x^3 - 27$
 
-**Identificamos:**
+**Datos:**
 - $x^3 = (x)^3$
 - $27 = (3)^3$
 
-$$
-x^3 - 27 = (x - 3)(x^2 + 3x + 9)
-$$
+**Razonamiento:**
+1. Identificamos $a = x$ y $b = 3$.
+2. Aplicamos la fórmula de diferencia.
+3. Primer factor: $(x - 3)$.
+4. Segundo factor: $x^2 + 3x + 9$.
 
-$$
-\boxed{(x - 3)(x^2 + 3x + 9)}
-$$
-
-### Ejemplo 6
-
-Factoriza: $a^3 - 64$
-
-- $64 = 4^3$
-
-$$
-a^3 - 64 = (a - 4)(a^2 + 4a + 16)
-$$
-
-$$
-\boxed{(a - 4)(a^2 + 4a + 16)}
-$$
-
-### Ejemplo 7
-
-Factoriza: $n^3 - 1$
-
-$$
-n^3 - 1 = (n - 1)(n^2 + n + 1)
-$$
-
-$$
-\boxed{(n - 1)(n^2 + n + 1)}
-$$
-
-### Ejemplo 8
-
-Factoriza: $p^3 - 216$
-
-- $216 = 6^3$
-
-$$
-p^3 - 216 = (p - 6)(p^2 + 6p + 36)
-$$
-
-$$
-\boxed{(p - 6)(p^2 + 6p + 36)}
-$$
+**Resultado:** $\boxed{(x - 3)(x^2 + 3x + 9)}$
 
 ---
 
-## 📖 Ejemplos con coeficientes
-
-### Ejemplo 9
+### Ejemplo 3: Suma con coeficientes
 
 Factoriza: $8x^3 + 27$
 
-**Identificamos:**
-- $8x^3 = (2x)^3$ ✓
-- $27 = (3)^3$ ✓
-
-$$
-8x^3 + 27 = (2x + 3)((2x)^2 - (2x)(3) + 3^2)
-$$
-
-$$
-= (2x + 3)(4x^2 - 6x + 9)
-$$
-
-$$
-\boxed{(2x + 3)(4x^2 - 6x + 9)}
-$$
-
-### Ejemplo 10
-
-Factoriza: $27a^3 - 8$
-
-- $27a^3 = (3a)^3$
-- $8 = (2)^3$
-
-$$
-27a^3 - 8 = (3a - 2)((3a)^2 + (3a)(2) + 2^2)
-$$
-
-$$
-= (3a - 2)(9a^2 + 6a + 4)
-$$
-
-$$
-\boxed{(3a - 2)(9a^2 + 6a + 4)}
-$$
-
-### Ejemplo 11
-
-Factoriza: $64m^3 + 125n^3$
-
-- $64m^3 = (4m)^3$
-- $125n^3 = (5n)^3$
-
-$$
-64m^3 + 125n^3 = (4m + 5n)(16m^2 - 20mn + 25n^2)
-$$
-
-$$
-\boxed{(4m + 5n)(16m^2 - 20mn + 25n^2)}
-$$
-
-### Ejemplo 12
-
-Factoriza: $8x^3 - 27y^3$
-
+**Datos:**
 - $8x^3 = (2x)^3$
-- $27y^3 = (3y)^3$
+- $27 = (3)^3$
 
-$$
-8x^3 - 27y^3 = (2x - 3y)(4x^2 + 6xy + 9y^2)
-$$
+**Razonamiento:**
+1. Aquí $a = 2x$ y $b = 3$.
+2. Primer factor: $(2x + 3)$.
+3. Segundo factor: $(2x)^2 - (2x)(3) + (3)^2 = 4x^2 - 6x + 9$.
 
-$$
-\boxed{(2x - 3y)(4x^2 + 6xy + 9y^2)}
-$$
+**Resultado:** $\boxed{(2x + 3)(4x^2 - 6x + 9)}$
 
 ---
 
-## 📖 Con factor común
+### Ejemplo 4: Diferencia con dos variables
 
-### Ejemplo 13
+Factoriza: $27a^3 - 64b^3$
+
+**Datos:**
+- $27a^3 = (3a)^3$
+- $64b^3 = (4b)^3$
+
+**Razonamiento:**
+1. Aquí $a = 3a$ y $b = 4b$.
+2. Primer factor: $(3a - 4b)$.
+3. Segundo factor: $(3a)^2 + (3a)(4b) + (4b)^2 = 9a^2 + 12ab + 16b^2$.
+
+**Resultado:** $\boxed{(3a - 4b)(9a^2 + 12ab + 16b^2)}$
+
+---
+
+### Ejemplo 5: Con factor común
 
 Factoriza: $2x^3 + 16$
 
-**Paso 1:** Factor común $2$:
+**Datos:**
+- Hay factor común 2.
 
-$$
-2x^3 + 16 = 2(x^3 + 8)
-$$
+**Razonamiento:**
+1. Sacamos el factor común: $2(x^3 + 8)$.
+2. Adentro es suma de cubos: $x^3 + 2^3$.
+3. Factorizamos: $2(x + 2)(x^2 - 2x + 4)$.
 
-**Paso 2:** Suma de cubos:
-
-$$
-= 2(x + 2)(x^2 - 2x + 4)
-$$
-
-$$
-\boxed{2(x + 2)(x^2 - 2x + 4)}
-$$
-
-### Ejemplo 14
-
-Factoriza: $3a^4 - 24a$
-
-**Paso 1:** Factor común $3a$:
-
-$$
-3a^4 - 24a = 3a(a^3 - 8)
-$$
-
-**Paso 2:** Diferencia de cubos:
-
-$$
-= 3a(a - 2)(a^2 + 2a + 4)
-$$
-
-$$
-\boxed{3a(a - 2)(a^2 + 2a + 4)}
-$$
-
-### Ejemplo 15
-
-Factoriza: $5x^6 + 40x^3$
-
-**Paso 1:** Factor común $5x^3$:
-
-$$
-5x^6 + 40x^3 = 5x^3(x^3 + 8)
-$$
-
-**Paso 2:** Suma de cubos:
-
-$$
-= 5x^3(x + 2)(x^2 - 2x + 4)
-$$
-
-$$
-\boxed{5x^3(x + 2)(x^2 - 2x + 4)}
-$$
+**Resultado:** $\boxed{2(x + 2)(x^2 - 2x + 4)}$
 
 ---
 
-## 📖 Verificación
+## 📝 Ejercicios de Práctica
 
-Verifica siempre multiplicando los factores.
+### Ejercicio 1
+Factoriza: $x^3 + 64$
 
-### Ejemplo de verificación
+<details>
+<summary>Ver solución</summary>
 
-Verifiquemos que $x^3 + 8 = (x + 2)(x^2 - 2x + 4)$:
+**Datos:** $64 = 4^3$
+**Razonamiento:** $(x + 4)(x^2 - 4x + 16)$
+**Resultado:** $\boxed{(x + 4)(x^2 - 4x + 16)}$
 
-$$
-(x + 2)(x^2 - 2x + 4)
-$$
+</details>
 
-$$
-= x^3 - 2x^2 + 4x + 2x^2 - 4x + 8
-$$
+### Ejercicio 2
+Factoriza: $a^3 - 125$
 
-$$
-= x^3 + 8 \quad ✓
-$$
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** $125 = 5^3$
+**Razonamiento:** $(a - 5)(a^2 + 5a + 25)$
+**Resultado:** $\boxed{(a - 5)(a^2 + 5a + 25)}$
+
+</details>
+
+### Ejercicio 3
+Factoriza: $m^3 + 1$
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** $1 = 1^3$
+**Razonamiento:** $(m + 1)(m^2 - m + 1)$
+**Resultado:** $\boxed{(m + 1)(m^2 - m + 1)}$
+
+</details>
+
+### Ejercicio 4
+Factoriza: $n^3 - 1$
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** $1 = 1^3$
+**Razonamiento:** $(n - 1)(n^2 + n + 1)$
+**Resultado:** $\boxed{(n - 1)(n^2 + n + 1)}$
+
+</details>
+
+### Ejercicio 5
+Factoriza: $8x^3 + 1$
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** $8x^3 = (2x)^3$
+**Razonamiento:** $(2x + 1)(4x^2 - 2x + 1)$
+**Resultado:** $\boxed{(2x + 1)(4x^2 - 2x + 1)}$
+
+</details>
+
+### Ejercicio 6
+Factoriza: $27a^3 - 8$
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** $27a^3 = (3a)^3$, $8 = 2^3$
+**Razonamiento:** $(3a - 2)(9a^2 + 6a + 4)$
+**Resultado:** $\boxed{(3a - 2)(9a^2 + 6a + 4)}$
+
+</details>
+
+### Ejercicio 7
+Factoriza: $64m^3 + 125n^3$
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** $(4m)^3$ y $(5n)^3$
+**Razonamiento:** $(4m + 5n)(16m^2 - 20mn + 25n^2)$
+**Resultado:** $\boxed{(4m + 5n)(16m^2 - 20mn + 25n^2)}$
+
+</details>
+
+### Ejercicio 8
+Factoriza: $x^6 - y^6$
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** $(x^2)^3$ y $(y^2)^3$
+**Razonamiento:** $(x^2 - y^2)(x^4 + x^2y^2 + y^4)$. Nota: el primer factor se puede factorizar más.
+**Resultado:** $\boxed{(x^2 - y^2)(x^4 + x^2y^2 + y^4)}$
+
+</details>
+
+### Ejercicio 9
+Factoriza sacando primero factor común: $3x^3 + 24$
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** Factor común 3: $3(x^3 + 8)$
+**Razonamiento:** $3(x + 2)(x^2 - 2x + 4)$
+**Resultado:** $\boxed{3(x + 2)(x^2 - 2x + 4)}$
+
+</details>
+
+### Ejercicio 10
+Factoriza: $2a^4 - 54a$
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** Factor común $2a$: $2a(a^3 - 27)$
+**Razonamiento:** $2a(a - 3)(a^2 + 3a + 9)$
+**Resultado:** $\boxed{2a(a - 3)(a^2 + 3a + 9)}$
+
+</details>
 
 ---
 
-## 📖 El trinomio resultante NO se factoriza
+## 🔑 Resumen
 
-Es importante notar que los trinomios $a^2 - ab + b^2$ y $a^2 + ab + b^2$ **no son cuadrados perfectos** y **no se pueden factorizar** con números reales.
+| Caso | Fórmula | Resultado |
+| :--- | :--- | :--- |
+| **Suma** | $a^3 + b^3$ | $(a + b)(a^2 - ab + b^2)$ |
+| **Diferencia** | $a^3 - b^3$ | $(a - b)(a^2 + ab + b^2)$ |
 
-Por ejemplo, $x^2 - 2x + 4$ no es igual a $(x - 2)^2 = x^2 - 4x + 4$.
-
----
-
-## 📝 Ejercicios de práctica
-
-### Suma de cubos
-
-**Ejercicio 1:** $x^3 + 64$
-
-**Ejercicio 2:** $a^3 + 1000$
-
-**Ejercicio 3:** $27m^3 + 8$
-
-**Ejercicio 4:** $125x^3 + 64y^3$
-
----
-
-### Diferencia de cubos
-
-**Ejercicio 5:** $x^3 - 125$
-
-**Ejercicio 6:** $a^3 - 343$
-
-**Ejercicio 7:** $8n^3 - 1$
-
-**Ejercicio 8:** $27a^3 - 64b^3$
-
----
-
-### Con factor común
-
-**Ejercicio 9:** $4x^3 + 32$
-
-**Ejercicio 10:** $2a^4 - 54a$
-
----
-
-## ✅ Soluciones
-
-### Suma de cubos
-
-| Ejercicio | Identificación | Solución |
-|:---------:|:---------------|:---------|
-| 1 | $64 = 4^3$ | $(x + 4)(x^2 - 4x + 16)$ |
-| 2 | $1000 = 10^3$ | $(a + 10)(a^2 - 10a + 100)$ |
-| 3 | $27m^3 = (3m)^3$ | $(3m + 2)(9m^2 - 6m + 4)$ |
-| 4 | $(5x)^3$, $(4y)^3$ | $(5x + 4y)(25x^2 - 20xy + 16y^2)$ |
-
-### Diferencia de cubos
-
-| Ejercicio | Identificación | Solución |
-|:---------:|:---------------|:---------|
-| 5 | $125 = 5^3$ | $(x - 5)(x^2 + 5x + 25)$ |
-| 6 | $343 = 7^3$ | $(a - 7)(a^2 + 7a + 49)$ |
-| 7 | $8n^3 = (2n)^3$ | $(2n - 1)(4n^2 + 2n + 1)$ |
-| 8 | $(3a)^3$, $(4b)^3$ | $(3a - 4b)(9a^2 + 12ab + 16b^2)$ |
-
-### Con factor común
-
-**Ejercicio 9:**
-
-$$
-4x^3 + 32 = 4(x^3 + 8) = 4(x + 2)(x^2 - 2x + 4)
-$$
-
-**Ejercicio 10:**
-
-$$
-2a^4 - 54a = 2a(a^3 - 27) = 2a(a - 3)(a^2 + 3a + 9)
-$$
-
----
+> El trinomio del segundo factor ($a^2 \pm ab + b^2$) no se puede factorizar más con números reales.
