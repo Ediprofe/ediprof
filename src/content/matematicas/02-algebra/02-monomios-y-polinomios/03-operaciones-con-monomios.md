@@ -1,6 +1,6 @@
 # **Operaciones con Monomios**
 
-¿Alguna vez has organizado cajas en un almacén? Si tienes 3 cajas de manzanas y te llegan otras 2, simplemente sumas las cantidades porque son el mismo producto. Pero si te llegan 2 cajas de peras, no puedes decir que tienes 5 "cajas de algo". El álgebra funciona igual: para sumar o restar, los productos deben ser idénticos.
+¿Alguna vez has organizado cajas en un almacén? Si tienes 3 cajas de manzanas y te llegan otras 2, simplemente sumas las cantidades porque son el mismo producto. Pero si te llegan 2 cajas de peras, no puedes decir que tienes 5 "cajas de algo". El álgebra funciona igual: para sumar o restar, los productos deben ser semejantes.
 
 ---
 

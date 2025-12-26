@@ -269,7 +269,34 @@
       "size": "67KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/9eqg-operaciones-con-polinomios.webp",
       "status": "uploaded"
+    },
+    {
+      "id": "5cb2",
+      "name": "division-de-polinomio-tradicional.webp",
+      "materia": "matematicas",
+      "date": "2025-12-26",
+      "size": "211KB",
+      "url": "https://cdn.ediprofe.com/img/matematicas/5cb2-division-de-polinomio-tradicional.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "bcwq",
+      "name": "division-tradicional-de-polinomios.webp",
+      "materia": "matematicas",
+      "date": "2025-12-26",
+      "size": "281KB",
+      "url": "https://cdn.ediprofe.com/img/matematicas/bcwq-division-tradicional-de-polinomios.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "4rd3",
+      "name": "ejemplo-ruffini.webp",
+      "materia": "matematicas",
+      "date": "2025-12-26",
+      "size": "216KB",
+      "url": "https://cdn.ediprofe.com/img/matematicas/4rd3-ejemplo-ruffini.webp",
+      "status": "uploaded"
     }
   ],
-  "lastUpdated": "2025-12-25T23:11:05.921Z"
+  "lastUpdated": "2025-12-26T02:35:42.975Z"
 }

@@ -7,7 +7,7 @@
 ## Prompt
 
 ```
-Corrige esta lección siguiendo el estilo Ediprofe, bajo el modelo 2.
+Corrige esta lección siguiendo el estilo Ediprofe.
 
 **Lección:** [RUTA]
 
@@ -16,7 +16,9 @@ Corrige esta lección siguiendo el estilo Ediprofe, bajo el modelo 2.
 ## PASO 1: LEE las referencias
 
 1. `.agent/prompts/estilo-ediprofe.md` (estilo completo)
-http://localhost:4321/fisica/cinematica/mcu/introduccion (modelo de lección)
+
+2. http://localhost:4321/fisica/cinematica/mcu/introduccion
+
 ---
 
 ## PASO 2: VERIFICA estas secciones obligatorias
