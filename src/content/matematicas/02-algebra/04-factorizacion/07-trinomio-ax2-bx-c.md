@@ -35,10 +35,27 @@ Factoriza: $2x^2 + 7x + 3$
 - Producto AC = $2 \times 3 = 6$
 
 **Razonamiento:**
+
 1. Buscamos números que multipliquen 6 y sumen 7. Son **6** y **1**.
-2. Abrimos el centro: $2x^2 + 6x + x + 3$.
-3. Agrupamos: $(2x^2 + 6x) + (x + 3)$.
-4. Factor común: $2x(x + 3) + 1(x + 3)$.
+
+2. Abrimos el centro: 
+
+$$
+2x^2 + 6x + x + 3
+$$
+
+3. Agrupamos: 
+
+$$
+(2x^2 + 6x) + (x + 3)
+$$
+
+4. Factor común: 
+
+$$
+2x(x + 3) + 1(x + 3)
+$$
+
 5. El bloque $(x + 3)$ es común.
 
 **Resultado:** $\boxed{(x + 3)(2x + 1)}$
@@ -54,9 +71,21 @@ Factoriza: $3x^2 - 10x + 8$
 - Necesitamos que sumen $-10$ y multipliquen $+24$
 
 **Razonamiento:**
+
 1. Ambos números deben ser negativos: **-6** y **-4**.
-2. Abrimos: $3x^2 - 6x - 4x + 8$.
-3. Agrupamos: $3x(x - 2) - 4(x - 2)$.
+
+2. Abrimos: 
+
+$$
+3x^2 - 6x - 4x + 8
+$$
+
+3. Agrupamos: 
+
+$$
+3x(x - 2) - 4(x - 2)
+$$
+
 4. Al sacar el -4, el signo interno cambia.
 
 **Resultado:** $\boxed{(x - 2)(3x - 4)}$
@@ -72,9 +101,20 @@ Factoriza: $2x^2 + 3x - 2$
 - Necesitamos que sumen $+3$ y multipliquen $-4$
 
 **Razonamiento:**
+
 1. Números con signos diferentes: **+4** y **-1**.
-2. Abrimos: $2x^2 + 4x - x - 2$.
-3. Agrupamos: $2x(x + 2) - 1(x + 2)$.
+
+2. Abrimos: 
+
+$$
+2x^2 + 4x - x - 2
+$$
+
+3. Agrupamos: 
+
+$$
+2x(x + 2) - 1(x + 2)
+$$
 
 **Resultado:** $\boxed{(x + 2)(2x - 1)}$
 
@@ -102,9 +142,26 @@ Factoriza: $2x^2 + 5x + 2$
 - Factores de $2$: $(1)$ y $(2)$
 
 **Razonamiento:**
-1. Probamos: $(2x + 1)(x + 2)$.
-2. Verificamos en cruz: $2x \cdot 2 = 4x$ y $x \cdot 1 = x$.
-3. Suma: $4x + x = 5x$. ¡Coincide con el centro!
+
+1. Probamos: 
+
+$$
+(2x + 1)(x + 2)
+$$
+
+2. Verificamos en cruz: 
+
+$$
+2x \cdot 2 = 4x \quad \text{y} \quad x \cdot 1 = x
+$$
+
+3. Suma: 
+
+$$
+4x + x = 5x
+$$
+
+¡Coincide con el centro!
 
 **Resultado:** $\boxed{(2x + 1)(x + 2)}$
 
@@ -119,9 +176,26 @@ Factoriza: $3x^2 - 5x - 2$
 - Factores de $-2$: $(1)$ y $(-2)$ o $(-1)$ y $(2)$
 
 **Razonamiento:**
-1. Probamos: $(3x + 1)(x - 2)$.
-2. Verificamos: $3x \cdot (-2) = -6x$ y $x \cdot 1 = x$.
-3. Suma: $-6x + x = -5x$. ¡Correcto!
+
+1. Probamos: 
+
+$$
+(3x + 1)(x - 2)
+$$
+
+2. Verificamos: 
+
+$$
+3x \cdot (-2) = -6x \quad \text{y} \quad x \cdot 1 = x
+$$
+
+3. Suma: 
+
+$$
+-6x + x = -5x
+$$
+
+¡Correcto!
 
 **Resultado:** $\boxed{(3x + 1)(x - 2)}$
 
@@ -135,9 +209,26 @@ Factoriza completamente: $6x^2 + 15x + 9$
 - Todos los coeficientes (6, 15, 9) son divisibles por 3.
 
 **Razonamiento:**
-1. Sacamos factor común 3: $3(2x^2 + 5x + 3)$.
+
+1. Sacamos factor común 3: 
+
+$$
+3(2x^2 + 5x + 3)
+$$
+
 2. Factorizamos el trinomio interno por tanteo o agrupación.
-3. Probamos: $(2x + 3)(x + 1)$. Verificación: $2x + 3x = 5x$. ✓
+
+3. Probamos: 
+
+$$
+(2x + 3)(x + 1)
+$$
+
+Verificación: 
+
+$$
+2x + 3x = 5x \quad \checkmark
+$$
 
 **Resultado:** $\boxed{3(2x + 3)(x + 1)}$
 
@@ -152,7 +243,11 @@ Factoriza usando Agrupación: $2x^2 + 9x + 4$
 <summary>Ver solución</summary>
 
 **Datos:** AC = 8. Números: 8 y 1.
-**Razonamiento:** $2x^2 + 8x + x + 4 = 2x(x+4) + 1(x+4)$.
+**Razonamiento:** 
+
+$$
+2x^2 + 8x + x + 4 = 2x(x+4) + 1(x+4)
+$$
 **Resultado:** $\boxed{(x + 4)(2x + 1)}$
 
 </details>
@@ -164,7 +259,13 @@ Factoriza usando Tanteo: $3x^2 + 7x + 2$
 <summary>Ver solución</summary>
 
 **Datos:** Factores $(3x, x)$ y $(1, 2)$.
-**Razonamiento:** $3x(2) + x(1) = 7x$. Coincide.
+**Razonamiento:** 
+
+$$
+3x(2) + x(1) = 7x
+$$
+
+Coincide.
 **Resultado:** $\boxed{(3x + 1)(x + 2)}$
 
 </details>
@@ -176,7 +277,11 @@ Factoriza: $2x^2 + 11x + 5$
 <summary>Ver solución</summary>
 
 **Datos:** AC = 10. Números: 10 y 1.
-**Razonamiento:** $2x(x+5) + 1(x+5)$.
+**Razonamiento:** 
+
+$$
+2x(x+5) + 1(x+5)
+$$
 **Resultado:** $\boxed{(x + 5)(2x + 1)}$
 
 </details>
@@ -188,7 +293,11 @@ Factoriza: $6x^2 - 7x + 2$
 <summary>Ver solución</summary>
 
 **Datos:** AC = 12. Números: -4 y -3.
-**Razonamiento:** $6x^2 - 4x - 3x + 2 = 2x(3x-2) - 1(3x-2)$.
+**Razonamiento:** 
+
+$$
+6x^2 - 4x - 3x + 2 = 2x(3x-2) - 1(3x-2)
+$$
 **Resultado:** $\boxed{(3x - 2)(2x - 1)}$
 
 </details>
@@ -200,7 +309,11 @@ Factoriza: $5x^2 + 7x + 2$
 <summary>Ver solución</summary>
 
 **Datos:** AC = 10. Números: 5 y 2.
-**Razonamiento:** $5x(x+1) + 2(x+1)$.
+**Razonamiento:** 
+
+$$
+5x(x+1) + 2(x+1)
+$$
 **Resultado:** $\boxed{(x + 1)(5x + 2)}$
 
 </details>
@@ -212,7 +325,11 @@ Factoriza: $4x^2 - 15x - 4$
 <summary>Ver solución</summary>
 
 **Datos:** Tanteo: $(4x, x)$ y $(1, -4)$.
-**Razonamiento:** $4x(-4) + x(1) = -15x$.
+**Razonamiento:** 
+
+$$
+4x(-4) + x(1) = -15x
+$$
 **Resultado:** $\boxed{(4x + 1)(x - 4)}$
 
 </details>
@@ -224,7 +341,11 @@ Factoriza: $3x^2 - 14x - 5$
 <summary>Ver solución</summary>
 
 **Datos:** AC = -15. Números: -15 y 1.
-**Razonamiento:** $3x(x-5) + 1(x-5)$.
+**Razonamiento:** 
+
+$$
+3x(x-5) + 1(x-5)
+$$
 **Resultado:** $\boxed{(x - 5)(3x + 1)}$
 
 </details>
@@ -236,7 +357,11 @@ Factoriza: $2x^2 - 5x - 3$
 <summary>Ver solución</summary>
 
 **Datos:** Tanteo: $(2x, x)$ y $(1, -3)$.
-**Razonamiento:** $2x(-3) + x(1) = -5x$.
+**Razonamiento:** 
+
+$$
+2x(-3) + x(1) = -5x
+$$
 **Resultado:** $\boxed{(2x + 1)(x - 3)}$
 
 </details>
@@ -248,7 +373,11 @@ Factoriza: $6x^2 + x - 2$
 <summary>Ver solución</summary>
 
 **Datos:** AC = -12. Números: 4 y -3.
-**Razonamiento:** $2x(3x+2) - 1(3x+2)$.
+**Razonamiento:** 
+
+$$
+2x(3x+2) - 1(3x+2)
+$$
 **Resultado:** $\boxed{(3x + 2)(2x - 1)}$
 
 </details>
@@ -260,7 +389,17 @@ Factoriza sacando primero factor común: $4x^2 + 18x + 8$
 <summary>Ver solución</summary>
 
 **Datos:** Factor común 2.
-**Razonamiento:** $2(2x^2 + 9x + 4)$. Adentro: $(2x+1)(x+4)$.
+**Razonamiento:** 
+
+$$
+2(2x^2 + 9x + 4)
+$$
+
+Adentro: 
+
+$$
+(2x+1)(x+4)
+$$
 **Resultado:** $\boxed{2(2x + 1)(x + 4)}$
 
 </details>

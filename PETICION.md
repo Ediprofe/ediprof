@@ -163,21 +163,34 @@ Situaciones que requieren confirmación:
 
 ---
 
-# 📝 PETICIÓN DEL USUARIO
+# 📝 PETICIÓN ESPECÍFICA.
 
+# ✏️ Prompt: Corregir Lección (Evaluar + Reescribir)
+
+> **Un solo prompt que evalúa y corrige de una vez.**
+
+---
+
+## Prompt
 
 Corrige las siguientes lecciones al estilo Ediprofe.
 
 
-http://localhost:4321/matematicas/algebra/fracciones-algebraicas/multiplicacion-de-fracciones
+http://localhost:4321/fisica/cinematica/mru/introduccion
 
-http://localhost:4321/matematicas/algebra/fracciones-algebraicas/division-de-fracciones
+http://localhost:4321/fisica/cinematica/mru/formulas
 
-http://localhost:4321/matematicas/algebra/fracciones-algebraicas/combinacion-de-operaciones
+http://localhost:4321/fisica/cinematica/mrua/introduccion
 
-http://localhost:4321/matematicas/algebra/fracciones-algebraicas/fracciones-complejas
+http://localhost:4321/fisica/cinematica/mrua/formulas
 
+http://localhost:4321/fisica/cinematica/mrua/caida-libre
 
+http://localhost:4321/fisica/cinematica/mrua/lanzamiento-vertical
+
+http://localhost:4321/fisica/cinematica/mrua/movimiento-parabolico
+
+ELLAS YA ESTÁN CORREGIDAS CASI AL 100, LO QUE QUEIRO QUE ENFOQUES ES EN LA PARTE DE LA ECUACIONES EN BLOQUE, Y QUE HAYAN 10 EJERCICIOS DE PRÁCTICA.
 
 ---
 
@@ -185,9 +198,8 @@ http://localhost:4321/matematicas/algebra/fracciones-algebraicas/fracciones-comp
 
 1. `.agent/prompts/estilo-ediprofe.md` (estilo completo)
 
-2. http://localhost:4321/fisica/cinematica/mcu/introduccion
+2. http://localhost:4321/fisica/cinematica/mcu/introduccion (modelo de lección)
 
-3. http://localhost:4321/matematicas/algebra/productos-notables/introduccion-cuadrado-binomio (de desarrollo)
 
 Nota como hay lecciones que por su naturaleza no cabe hablando de más antes del título "¿Qué vas a aprender?". Si hay una conexión muy pertienente, entonces se puede hacer ese párrafo pequeño introductorio.
 
@@ -212,6 +224,27 @@ Nota como hay lecciones que por su naturaleza no cabe hablando de más antes del
 □ Resultados importantes con `\boxed{}`
 □ LaTeX en bloques con líneas vacías antes/después
 □ Usar nombres propios para una enseñanza en latinoamerica, sin spanglish ni nombres de métodos rebuscados o cosas así, a menos que sea algo ya conocido de verdad así.
+□ **⚠️ TODAS LAS ECUACIONES EN BLOQUE:** 
+   - Propiedades, fórmulas Y pasos de razonamiento deben estar en LaTeX de bloque.
+   - Cada ecuación en su propio bloque `$$..$$` separado por líneas vacías.
+   - Esto mejora la legibilidad y evita errores de renderizado.
+   
+   **Ejemplo correcto:**
+   ```markdown
+   **Razonamiento:**
+   
+   $$
+   a^{-5 + 2}
+   $$
+   
+   Debo 5 y pago 2, quedo debiendo 3.
+   
+   $$
+   a^{-3}
+   $$
+   ```
+   
+   **Incorrecto:** `$$a^{-5+2}$$ Debo $5...` (inline y sin separación).
 
 ---
 
@@ -303,3 +336,4 @@ No hagas sugerencias, **implementa los cambios directamente**.
 2. Lista los cambios realizados
 
 ---
+

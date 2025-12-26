@@ -27,7 +27,9 @@ Observa: $ax + ay + bx + by$
 - Pero si tomamos los dos primeros $(ax+ay)$, el factor común es **$a$**.
 - Si tomamos los dos últimos $(bx+by)$, el factor común es **$b$**.
 
-$$ a(x + y) + b(x + y) $$
+$$
+a(x + y) + b(x + y)
+$$
 
 ¡Y ahora el bloque $(x+y)$ es el nuevo factor común!
 
@@ -44,11 +46,32 @@ $$ a(x + y) + b(x + y) $$
 Factoriza: $x^2 + 5x + 2x + 10$
 
 **Razonamiento:**
-- **Agrupamos:** $(x^2 + 5x)$ y $(2x + 10)$.
-- **Factorizamos grupo 1:** $x(x + 5)$.
-- **Factorizamos grupo 2:** $2(x + 5)$.
-- **Resultado parcial:** $x(x + 5) + 2(x + 5)$.
-- **Factor común final:** El bloque $(x+5)$ se repite.
+
+1. Agrupamos: 
+
+$$
+(x^2 + 5x) \quad \text{y} \quad (2x + 10)
+$$
+
+2. Factorizamos el grupo 1: 
+
+$$
+x(x + 5)
+$$
+
+3. Factorizamos el grupo 2: 
+
+$$
+2(x + 5)
+$$
+
+4. Resultado parcial: 
+
+$$
+x(x + 5) + 2(x + 5)
+$$
+
+5. Factor común final: El bloque $(x+5)$ se repite.
 
 **Resultado:** $\boxed{(x + 5)(x + 2)}$
 
@@ -63,10 +86,30 @@ Factoriza: $3x - 3y - ax + ay$
 **Datos:** Hay signos negativos que pueden confundir.
 
 **Razonamiento:**
-1. Agrupamos: $(3x - 3y) + (-ax + ay)$.
-2. Factor común del 1ero: $3(x - y)$.
-3. Factor común del 2do: Sacamos $-a$ para que el signo de adentro cambie y coincida: $-a(x - y)$.
-4. Unimos: $3(x - y) - a(x - y)$.
+
+1. Agrupamos: 
+
+$$
+(3x - 3y) + (-ax + ay)
+$$
+
+2. Factor común del 1ero: 
+
+$$
+3(x - y)
+$$
+
+3. Factor común del 2do: Sacamos $-a$ para que el signo de adentro cambie y coincida: 
+
+$$
+-a(x - y)
+$$
+
+4. Unimos: 
+
+$$
+3(x - y) - a(x - y)
+$$
 
 **Resultado:** $\boxed{(x - y)(3 - a)}$
 
@@ -79,9 +122,24 @@ Factoriza: $2x^3 - 4x^2 + 3x - 6$
 **Datos:** Exponentes y coeficientes.
 
 **Razonamiento:**
-1. Pareja 1: $(2x^3 - 4x^2) = 2x^2(x - 2)$.
-2. Pareja 2: $(3x - 6) = 3(x - 2)$.
-3. Factor común binomial: $(x - 2)$.
+
+1. Pareja 1: 
+
+$$
+(2x^3 - 4x^2) = 2x^2(x - 2)
+$$
+
+2. Pareja 2: 
+
+$$
+(3x - 6) = 3(x - 2)
+$$
+
+3. Factor común binomial: 
+
+$$
+(x - 2)
+$$
 
 **Resultado:** $\boxed{(x - 2)(2x^2 + 3)}$
 
@@ -92,8 +150,19 @@ Factoriza: $2x^3 - 4x^2 + 3x - 6$
 Factoriza: $ax + bx + ay + by + az + bz$
 
 **Razonamiento:**
-1. Agrupamos por letras del frente: $(ax + bx) + (ay + by) + (az + bz)$.
-2. Extraemos el común de cada par: $x(a + b) + y(a + b) + z(a + b)$.
+
+1. Agrupamos por letras del frente: 
+
+$$
+(ax + bx) + (ay + by) + (az + bz)
+$$
+
+2. Extraemos el común de cada par: 
+
+$$
+x(a + b) + y(a + b) + z(a + b)
+$$
+
 3. El bloque $(a+b)$ se repite en los tres. Lo sacamos como factor final.
 
 **Resultado:** $\boxed{(a + b)(x + y + z)}$
@@ -105,10 +174,27 @@ Factoriza: $ax + bx + ay + by + az + bz$
 Factoriza: $x^2 + ab + ax + bx$
 
 **Razonamiento:**
+
 1. Si agrupamos como están $(x^2+ab)$ no tienen nada en común. Reordenamos.
-2. Nuevo orden: $(x^2 + ax) + (bx + ab)$.
-3. Factorizamos el primer par: $x(x + a)$.
-4. Factorizamos el segundo par: $b(x + a)$.
+
+2. Nuevo orden: 
+
+$$
+(x^2 + ax) + (bx + ab)
+$$
+
+3. Factorizamos el primer par: 
+
+$$
+x(x + a)
+$$
+
+4. Factorizamos el segundo par: 
+
+$$
+b(x + a)
+$$
+
 5. Unimos los bloques.
 
 **Resultado:** $\boxed{(x + a)(x + b)}$
@@ -120,10 +206,31 @@ Factoriza: $x^2 + ab + ax + bx$
 Factoriza: $m^5 + m^4 + m^3 + m^2$
 
 **Razonamiento:**
-1. Dividimos en dos grupos: $(m^5 + m^4) + (m^3 + m^2)$.
-2. Factor común del 1er grupo: $m^4(m + 1)$.
-3. Factor común del 2do grupo: $m^2(m + 1)$.
-4. Tenemos: $m^4(m+1) + m^2(m+1) = (m+1)(m^4 + m^2)$.
+
+1. Dividimos en dos grupos: 
+
+$$
+(m^5 + m^4) + (m^3 + m^2)
+$$
+
+2. Factor común del 1er grupo: 
+
+$$
+m^4(m + 1)
+$$
+
+3. Factor común del 2do grupo: 
+
+$$
+m^2(m + 1)
+$$
+
+4. Tenemos: 
+
+$$
+m^4(m+1) + m^2(m+1) = (m+1)(m^4 + m^2)
+$$
+
 5. *Nota:* Se podría factorizar más sacando $m^2$ del segundo paréntesis.
 
 **Resultado:** $\boxed{(m + 1)(m^4 + m^2)}$
@@ -149,7 +256,12 @@ Factoriza por grupos: $ay + az + by + bz$.
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** $a(y+z) + b(y+z)$.
+**Razonamiento:** 
+
+$$
+a(y+z) + b(y+z)
+$$
+
 **Resultado:** $\boxed{(y+z)(a+b)}$
 
 </details>
@@ -160,7 +272,12 @@ Factoriza: $x^2 + 2x + 3x + 6$.
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** $x(x+2) + 3(x+2)$.
+**Razonamiento:** 
+
+$$
+x(x+2) + 3(x+2)
+$$
+
 **Resultado:** $\boxed{(x+2)(x+3)}$
 
 </details>
@@ -182,7 +299,12 @@ Factoriza: $am - bm + an - bn$.
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** $m(a-b) + n(a-b)$.
+**Razonamiento:** 
+
+$$
+m(a-b) + n(a-b)
+$$
+
 **Resultado:** $\boxed{(a-b)(m+n)}$
 
 </details>
@@ -193,7 +315,12 @@ Factoriza con cuidado los signos: $x^2 - xy + 4x - 4y$.
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** $x(x-y) + 4(x-y)$.
+**Razonamiento:** 
+
+$$
+x(x-y) + 4(x-y)
+$$
+
 **Resultado:** $\boxed{(x-y)(x+4)}$
 
 </details>
@@ -204,7 +331,12 @@ Resuelve: $2a^2 + 4ab + 3a + 6b$.
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** $2a(a+2b) + 3(a+2b)$.
+**Razonamiento:** 
+
+$$
+2a(a+2b) + 3(a+2b)
+$$
+
 **Resultado:** $\boxed{(a+2b)(2a+3)}$
 
 </details>
@@ -215,7 +347,14 @@ Factoriza: $x^3 + x^2 + x + 1$.
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** $x^2(x+1) + 1(x+1)$. Nota que el segundo grupo tiene un "1" invisible.
+**Razonamiento:** 
+
+$$
+x^2(x+1) + 1(x+1)
+$$
+
+Nota que el segundo grupo tiene un "1" invisible.
+
 **Resultado:** $\boxed{(x+1)(x^2+1)}$
 
 </details>
@@ -237,7 +376,12 @@ Factoriza: $6ab - 4a + 15b - 10$.
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** $2a(3b-2) + 5(3b-2)$.
+**Razonamiento:** 
+
+$$
+2a(3b-2) + 5(3b-2)
+$$
+
 **Resultado:** $\boxed{(3b-2)(2a+5)}$
 
 </details>

@@ -34,9 +34,17 @@ $$
 
 **Solución paso a paso:**
 
-1. Multiplicamos los números base: $2.5 \times 4.0 = 10.0$
+1. Multiplicamos los números base: 
 
-2. Sumamos los exponentes: $3 + 2 = 5$
+$$
+2.5 \times 4.0 = 10.0
+$$
+
+2. Sumamos los exponentes: 
+
+$$
+3 + 2 = 5
+$$
 
 3. El número base $10.0$ no está entre 1 y 9, así que movemos el punto una posición a la izquierda y aumentamos el exponente en 1:
 
@@ -76,9 +84,17 @@ $$
 
 **Solución paso a paso:**
 
-1. Dividimos los números base: $6.0 \div 3.0 = 2.0$
+1. Dividimos los números base: 
 
-2. Restamos los exponentes: $8 - 4 = 4$
+$$
+6.0 \div 3.0 = 2.0
+$$
+
+2. Restamos los exponentes: 
+
+$$
+8 - 4 = 4
+$$
 
 3. El número base $2.0$ ya está entre 1 y 9, por lo tanto el resultado es:
 
@@ -98,9 +114,17 @@ $$
 
 **Solución paso a paso:**
 
-1. Multiplicamos los números base: $8.0 \times 5.0 = 40.0$
+1. Multiplicamos los números base: 
 
-2. Sumamos los exponentes: $5 + 3 = 8$
+$$
+8.0 \times 5.0 = 40.0
+$$
+
+2. Sumamos los exponentes: 
+
+$$
+5 + 3 = 8
+$$
 
 3. El número base $40.0$ no está entre 1 y 9. Ajustamos:
 
@@ -128,11 +152,24 @@ $$
 <details>
 <summary>Ver solución</summary>
 
-1. Multiplicamos bases: $3.0 \times 2.0 = 6.0$
-2. Sumamos exponentes: $4 + 5 = 9$
+**Razonamiento:**
+
+1. Multiplicamos bases: 
 
 $$
-6.0 \times 10^{9}
+3.0 \times 2.0 = 6.0
+$$
+
+2. Sumamos exponentes: 
+
+$$
+4 + 5 = 9
+$$
+
+**Resultado:**
+
+$$
+\boxed{6.0 \times 10^{9}}
 $$
 
 </details>
@@ -149,11 +186,24 @@ $$
 <details>
 <summary>Ver solución</summary>
 
-1. Dividimos bases: $9.0 \div 3.0 = 3.0$
-2. Restamos exponentes: $7 - 2 = 5$
+**Razonamiento:**
+
+1. Dividimos bases: 
 
 $$
-3.0 \times 10^{5}
+9.0 \div 3.0 = 3.0
+$$
+
+2. Restamos exponentes: 
+
+$$
+7 - 2 = 5
+$$
+
+**Resultado:**
+
+$$
+\boxed{3.0 \times 10^{5}}
 $$
 
 </details>
@@ -170,11 +220,24 @@ $$
 <details>
 <summary>Ver solución</summary>
 
-1. Multiplicamos bases: $4.5 \times 2.0 = 9.0$
-2. Sumamos exponentes: $-3 + 6 = 3$
+**Razonamiento:**
+
+1. Multiplicamos bases: 
 
 $$
-9.0 \times 10^{3}
+4.5 \times 2.0 = 9.0
+$$
+
+2. Sumamos exponentes: 
+
+$$
+-3 + 6 = 3
+$$
+
+**Resultado:**
+
+$$
+\boxed{9.0 \times 10^{3}}
 $$
 
 </details>
@@ -191,11 +254,30 @@ $$
 <details>
 <summary>Ver solución</summary>
 
-1. Dividimos bases: $2.4 \div 8.0 = 0.3$
-2. Restamos exponentes: $-2 - (-5) = -2 + 5 = 3$
+**Razonamiento:**
+
+1. Dividimos bases: 
+
+$$
+2.4 \div 8.0 = 0.3
+$$
+
+2. Restamos exponentes: 
+
+$$
+-2 - (-5) = -2 + 5 = 3
+$$
+
+**Ajuste:**
 
 $$
 0.3 \times 10^{3} = 3.0 \times 10^{2}
+$$
+
+**Resultado:**
+
+$$
+\boxed{3.0 \times 10^{2}}
 $$
 
 </details>

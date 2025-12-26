@@ -32,10 +32,16 @@ Simplifica: $\dfrac{15x^3y^2}{25x^2y^4}$
 - Variables: $x$ y $y$.
 
 **Razonamiento:**
-1.  **Números:** Simplificamos $\frac{15}{25}$ dividiendo por 5 $\to \frac{3}{5}$.
-2.  **Letras:** Restamos exponentes (el mayor "gana" y se queda en su lugar).
-    *   $x$: Arriba 3, abajo 2. Gana arriba por 1. $\to x^1$ arriba.
-    *   $y$: Arriba 2, abajo 4. Gana abajo por 2. $\to y^2$ abajo.
+
+1. **Números:** Simplificamos $\frac{15}{25}$ dividiendo por 5: 
+
+$$
+\frac{3}{5}
+$$
+
+2. **Letras:** Restamos exponentes (el mayor "gana" y se queda en su lugar).
+   - $x$: Arriba 3, abajo 2. Gana arriba por 1. $\to x^1$ arriba.
+   - $y$: Arriba 2, abajo 4. Gana abajo por 2. $\to y^2$ abajo.
 
 **Resultado:** $\boxed{\frac{3x}{5y^2}}$
 
@@ -49,13 +55,22 @@ Simplifica: $\dfrac{4x^2 + 8x}{2x}$
 - Arriba hay una suma. **¡No cancelar el $2x$ de arriba con el de abajo directamente!**
 
 **Razonamiento:**
-1.  Factorizamos el numerador (Factor común $4x$):
-    $$4x^2 + 8x = 4x(x+2)$$
-2.  Reescribimos la fracción:
-    $$\frac{4x(x+2)}{2x}$$
-3.  Ahora sí, $4x$ y $2x$ están multiplicando.
-    *   $\frac{4}{2} = 2$.
-    *   $\frac{x}{x} = 1$ (se van).
+
+1. Factorizamos el numerador (Factor común $4x$):
+
+$$
+4x^2 + 8x = 4x(x+2)
+$$
+
+2. Reescribimos la fracción:
+
+$$
+\frac{4x(x+2)}{2x}
+$$
+
+3. Ahora sí, $4x$ y $2x$ están multiplicando.
+   - $\frac{4}{2} = 2$.
+   - $\frac{x}{x} = 1$ (se van).
 
 **Resultado:** $\boxed{2(x+2)}$
 
@@ -70,11 +85,20 @@ Simplifica: $\dfrac{x^2 - 9}{x + 3}$
 - Denominador: $x + 3$.
 
 **Razonamiento:**
-1.  Factorizamos arriba:
-    $$x^2 - 9 = (x - 3)(x + 3)$$
-2.  Sustituimos:
-    $$\frac{(x-3)(x+3)}{x+3}$$
-3.  Cancelamos el bloque completo $(x+3)$.
+
+1. Factorizamos arriba:
+
+$$
+x^2 - 9 = (x - 3)(x + 3)
+$$
+
+2. Sustituimos:
+
+$$
+\frac{(x-3)(x+3)}{x+3}
+$$
+
+3. Cancelamos el bloque completo $(x+3)$.
 
 **Resultado:** $\boxed{x - 3}$
 
@@ -89,14 +113,21 @@ Simplifica: $\dfrac{x^2 + 2x - 15}{x^2 - 9}$
 - Denominador: Diferencia de cuadrados.
 
 **Razonamiento:**
-1.  Factorizamos numerador:
-    *   Multiplican -15, suman 2: $(5, -3)$.
-    *   $(x+5)(x-3)$.
-2.  Factorizamos denominador:
-    *   $(x+3)(x-3)$.
-3.  Reescribimos:
-    $$\frac{(x+5)(x-3)}{(x+3)(x-3)}$$
-4.  Cancelamos $(x-3)$.
+
+1. Factorizamos numerador:
+   - Multiplican -15, suman 2: $(5, -3)$.
+   - $(x+5)(x-3)$.
+
+2. Factorizamos denominador:
+   - $(x+3)(x-3)$.
+
+3. Reescribimos:
+
+$$
+\frac{(x+5)(x-3)}{(x+3)(x-3)}
+$$
+
+4. Cancelamos $(x-3)$.
 
 **Resultado:** $\boxed{\frac{x+5}{x+3}}$
 
@@ -110,12 +141,26 @@ Simplifica: $\dfrac{a - b}{b - a}$
 - Los términos son iguales pero con signos opuestos.
 
 **Razonamiento:**
-1.  Factorizamos un signo negativo en el denominador para invertirlo:
-    $$b - a = -(-b + a) = -(a - b)$$
-2.  Sustituimos:
-    $$\frac{a - b}{-(a - b)}$$
-3.  Cancelamos el bloque $(a-b)$.
-4.  Queda: $\frac{1}{-1} = -1$.
+
+1. Factorizamos un signo negativo en el denominador para invertirlo:
+
+$$
+b - a = -(-b + a) = -(a - b)
+$$
+
+2. Sustituimos:
+
+$$
+\frac{a - b}{-(a - b)}
+$$
+
+3. Cancelamos el bloque $(a-b)$.
+
+4. Queda: 
+
+$$
+\frac{1}{-1} = -1
+$$
 
 **Resultado:** $\boxed{-1}$
 
@@ -142,7 +187,14 @@ Simplifica $\dfrac{3x + 12}{3}$.
 <summary>Ver solución</summary>
 
 **Datos:** Factor común 3 arriba.
-**Razonamiento:** $\frac{3(x+4)}{3}$. Se van los 3.
+**Razonamiento:** 
+
+$$
+\frac{3(x+4)}{3}
+$$
+
+Se van los 3.
+
 **Resultado:** $\boxed{x+4}$
 
 </details>
@@ -154,7 +206,14 @@ Simplifica $\dfrac{x^2 - x}{xy}$.
 <summary>Ver solución</summary>
 
 **Datos:** Factor común x arriba.
-**Razonamiento:** $\frac{x(x-1)}{xy}$. Cancelamos x.
+**Razonamiento:** 
+
+$$
+\frac{x(x-1)}{xy}
+$$
+
+Cancelamos $x$.
+
 **Resultado:** $\boxed{\frac{x-1}{y}}$
 
 </details>
@@ -166,7 +225,12 @@ Simplifica $\dfrac{5x - 5y}{x - y}$.
 <summary>Ver solución</summary>
 
 **Datos:** Factor común 5.
-**Razonamiento:** $\frac{5(x-y)}{x-y} = 5$.
+**Razonamiento:** 
+
+$$
+\frac{5(x-y)}{x-y} = 5
+$$
+
 **Resultado:** $\boxed{5}$
 
 </details>
@@ -178,7 +242,12 @@ Simplifica $\dfrac{x^2 - 16}{x - 4}$.
 <summary>Ver solución</summary>
 
 **Datos:** Dif. cuadrados.
-**Razonamiento:** $\frac{(x+4)(x-4)}{x-4}$.
+**Razonamiento:** 
+
+$$
+\frac{(x+4)(x-4)}{x-4}
+$$
+
 **Resultado:** $\boxed{x+4}$
 
 </details>
@@ -190,7 +259,12 @@ Simplifica $\dfrac{x^2 + 5x + 6}{x + 2}$.
 <summary>Ver solución</summary>
 
 **Datos:** Trinomio.
-**Razonamiento:** Num: $(x+3)(x+2)$. Den: $(x+2)$.
+**Razonamiento:** 
+
+Numerador: $(x+3)(x+2)$. 
+
+Denominador: $(x+2)$.
+
 **Resultado:** $\boxed{x+3}$
 
 </details>
@@ -202,9 +276,13 @@ Simplifica $\dfrac{2x - 4}{x^2 - 4}$.
 <summary>Ver solución</summary>
 
 **Razonamiento:**
-Num: $2(x-2)$.
-Den: $(x+2)(x-2)$.
+
+Numerador: $2(x-2)$.
+
+Denominador: $(x+2)(x-2)$.
+
 Cancelamos $(x-2)$.
+
 **Resultado:** $\boxed{\frac{2}{x+2}}$
 
 </details>
@@ -216,9 +294,13 @@ Simplifica $\dfrac{a^2 - 2ab + b^2}{a^2 - b^2}$.
 <summary>Ver solución</summary>
 
 **Razonamiento:**
-Num: $(a-b)^2$.
-Den: $(a+b)(a-b)$.
+
+Numerador: $(a-b)^2$.
+
+Denominador: $(a+b)(a-b)$.
+
 Cancelamos un $(a-b)$.
+
 **Resultado:** $\boxed{\frac{a-b}{a+b}}$
 
 </details>
@@ -230,8 +312,11 @@ Simplifica $\dfrac{3x - 6}{5x - 10}$.
 <summary>Ver solución</summary>
 
 **Razonamiento:**
-Num: $3(x-2)$.
-Den: $5(x-2)$.
+
+Numerador: $3(x-2)$.
+
+Denominador: $5(x-2)$.
+
 **Resultado:** $\boxed{\frac{3}{5}}$
 
 </details>
@@ -243,9 +328,13 @@ Simplifica $\dfrac{x^2 - 5x + 6}{x^2 - 4x + 4}$.
 <summary>Ver solución</summary>
 
 **Razonamiento:**
-Num: $(x-3)(x-2)$.
-Den: $(x-2)^2$.
+
+Numerador: $(x-3)(x-2)$.
+
+Denominador: $(x-2)^2$.
+
 Cancelamos un $(x-2)$.
+
 **Resultado:** $\boxed{\frac{x-3}{x-2}}$
 
 </details>

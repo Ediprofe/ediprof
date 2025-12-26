@@ -61,10 +61,22 @@ Factoriza: $x^3 + 8$
 - $8 = (2)^3$
 
 **Razonamiento:**
+
 1. Identificamos $a = x$ y $b = 2$.
+
 2. Aplicamos la fórmula de suma.
-3. Primer factor: $(x + 2)$.
-4. Segundo factor: $x^2 - x \cdot 2 + 2^2 = x^2 - 2x + 4$.
+
+3. Primer factor: 
+
+$$
+(x + 2)
+$$
+
+4. Segundo factor: 
+
+$$
+x^2 - x \cdot 2 + 2^2 = x^2 - 2x + 4
+$$
 
 **Resultado:** $\boxed{(x + 2)(x^2 - 2x + 4)}$
 
@@ -79,10 +91,22 @@ Factoriza: $x^3 - 27$
 - $27 = (3)^3$
 
 **Razonamiento:**
+
 1. Identificamos $a = x$ y $b = 3$.
+
 2. Aplicamos la fórmula de diferencia.
-3. Primer factor: $(x - 3)$.
-4. Segundo factor: $x^2 + 3x + 9$.
+
+3. Primer factor: 
+
+$$
+(x - 3)
+$$
+
+4. Segundo factor: 
+
+$$
+x^2 + 3x + 9
+$$
 
 **Resultado:** $\boxed{(x - 3)(x^2 + 3x + 9)}$
 
@@ -97,9 +121,20 @@ Factoriza: $8x^3 + 27$
 - $27 = (3)^3$
 
 **Razonamiento:**
+
 1. Aquí $a = 2x$ y $b = 3$.
-2. Primer factor: $(2x + 3)$.
-3. Segundo factor: $(2x)^2 - (2x)(3) + (3)^2 = 4x^2 - 6x + 9$.
+
+2. Primer factor: 
+
+$$
+(2x + 3)
+$$
+
+3. Segundo factor: 
+
+$$
+(2x)^2 - (2x)(3) + (3)^2 = 4x^2 - 6x + 9
+$$
 
 **Resultado:** $\boxed{(2x + 3)(4x^2 - 6x + 9)}$
 
@@ -114,9 +149,20 @@ Factoriza: $27a^3 - 64b^3$
 - $64b^3 = (4b)^3$
 
 **Razonamiento:**
+
 1. Aquí $a = 3a$ y $b = 4b$.
-2. Primer factor: $(3a - 4b)$.
-3. Segundo factor: $(3a)^2 + (3a)(4b) + (4b)^2 = 9a^2 + 12ab + 16b^2$.
+
+2. Primer factor: 
+
+$$
+(3a - 4b)
+$$
+
+3. Segundo factor: 
+
+$$
+(3a)^2 + (3a)(4b) + (4b)^2 = 9a^2 + 12ab + 16b^2
+$$
 
 **Resultado:** $\boxed{(3a - 4b)(9a^2 + 12ab + 16b^2)}$
 
@@ -130,9 +176,24 @@ Factoriza: $2x^3 + 16$
 - Hay factor común 2.
 
 **Razonamiento:**
-1. Sacamos el factor común: $2(x^3 + 8)$.
-2. Adentro es suma de cubos: $x^3 + 2^3$.
-3. Factorizamos: $2(x + 2)(x^2 - 2x + 4)$.
+
+1. Sacamos el factor común: 
+
+$$
+2(x^3 + 8)
+$$
+
+2. Adentro es suma de cubos: 
+
+$$
+x^3 + 2^3
+$$
+
+3. Factorizamos: 
+
+$$
+2(x + 2)(x^2 - 2x + 4)
+$$
 
 **Resultado:** $\boxed{2(x + 2)(x^2 - 2x + 4)}$
 
@@ -147,7 +208,12 @@ Factoriza: $x^3 + 64$
 <summary>Ver solución</summary>
 
 **Datos:** $64 = 4^3$
-**Razonamiento:** $(x + 4)(x^2 - 4x + 16)$
+**Razonamiento:** 
+
+$$
+(x + 4)(x^2 - 4x + 16)
+$$
+
 **Resultado:** $\boxed{(x + 4)(x^2 - 4x + 16)}$
 
 </details>
@@ -159,7 +225,12 @@ Factoriza: $a^3 - 125$
 <summary>Ver solución</summary>
 
 **Datos:** $125 = 5^3$
-**Razonamiento:** $(a - 5)(a^2 + 5a + 25)$
+**Razonamiento:** 
+
+$$
+(a - 5)(a^2 + 5a + 25)
+$$
+
 **Resultado:** $\boxed{(a - 5)(a^2 + 5a + 25)}$
 
 </details>
@@ -171,7 +242,12 @@ Factoriza: $m^3 + 1$
 <summary>Ver solución</summary>
 
 **Datos:** $1 = 1^3$
-**Razonamiento:** $(m + 1)(m^2 - m + 1)$
+**Razonamiento:** 
+
+$$
+(m + 1)(m^2 - m + 1)
+$$
+
 **Resultado:** $\boxed{(m + 1)(m^2 - m + 1)}$
 
 </details>
@@ -183,7 +259,12 @@ Factoriza: $n^3 - 1$
 <summary>Ver solución</summary>
 
 **Datos:** $1 = 1^3$
-**Razonamiento:** $(n - 1)(n^2 + n + 1)$
+**Razonamiento:** 
+
+$$
+(n - 1)(n^2 + n + 1)
+$$
+
 **Resultado:** $\boxed{(n - 1)(n^2 + n + 1)}$
 
 </details>
@@ -195,7 +276,12 @@ Factoriza: $8x^3 + 1$
 <summary>Ver solución</summary>
 
 **Datos:** $8x^3 = (2x)^3$
-**Razonamiento:** $(2x + 1)(4x^2 - 2x + 1)$
+**Razonamiento:** 
+
+$$
+(2x + 1)(4x^2 - 2x + 1)
+$$
+
 **Resultado:** $\boxed{(2x + 1)(4x^2 - 2x + 1)}$
 
 </details>
@@ -207,7 +293,12 @@ Factoriza: $27a^3 - 8$
 <summary>Ver solución</summary>
 
 **Datos:** $27a^3 = (3a)^3$, $8 = 2^3$
-**Razonamiento:** $(3a - 2)(9a^2 + 6a + 4)$
+**Razonamiento:** 
+
+$$
+(3a - 2)(9a^2 + 6a + 4)
+$$
+
 **Resultado:** $\boxed{(3a - 2)(9a^2 + 6a + 4)}$
 
 </details>
@@ -219,7 +310,12 @@ Factoriza: $64m^3 + 125n^3$
 <summary>Ver solución</summary>
 
 **Datos:** $(4m)^3$ y $(5n)^3$
-**Razonamiento:** $(4m + 5n)(16m^2 - 20mn + 25n^2)$
+**Razonamiento:** 
+
+$$
+(4m + 5n)(16m^2 - 20mn + 25n^2)
+$$
+
 **Resultado:** $\boxed{(4m + 5n)(16m^2 - 20mn + 25n^2)}$
 
 </details>
@@ -231,7 +327,14 @@ Factoriza: $x^6 - y^6$
 <summary>Ver solución</summary>
 
 **Datos:** $(x^2)^3$ y $(y^2)^3$
-**Razonamiento:** $(x^2 - y^2)(x^4 + x^2y^2 + y^4)$. Nota: el primer factor se puede factorizar más.
+**Razonamiento:** 
+
+$$
+(x^2 - y^2)(x^4 + x^2y^2 + y^4)
+$$
+
+Nota: el primer factor se puede factorizar más.
+
 **Resultado:** $\boxed{(x^2 - y^2)(x^4 + x^2y^2 + y^4)}$
 
 </details>
@@ -243,7 +346,12 @@ Factoriza sacando primero factor común: $3x^3 + 24$
 <summary>Ver solución</summary>
 
 **Datos:** Factor común 3: $3(x^3 + 8)$
-**Razonamiento:** $3(x + 2)(x^2 - 2x + 4)$
+**Razonamiento:** 
+
+$$
+3(x + 2)(x^2 - 2x + 4)
+$$
+
 **Resultado:** $\boxed{3(x + 2)(x^2 - 2x + 4)}$
 
 </details>
@@ -255,7 +363,12 @@ Factoriza: $2a^4 - 54a$
 <summary>Ver solución</summary>
 
 **Datos:** Factor común $2a$: $2a(a^3 - 27)$
-**Razonamiento:** $2a(a - 3)(a^2 + 3a + 9)$
+**Razonamiento:** 
+
+$$
+2a(a - 3)(a^2 + 3a + 9)
+$$
+
 **Resultado:** $\boxed{2a(a - 3)(a^2 + 3a + 9)}$
 
 </details>

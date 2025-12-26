@@ -35,8 +35,18 @@ Factoriza: $3x^3 - 12x$
 - Hay factor común $3x$.
 
 **Razonamiento:**
-1. Sacamos $3x$: $3x(x^2 - 4)$.
-2. Adentro es diferencia de cuadrados: $3x(x + 2)(x - 2)$.
+
+1. Sacamos $3x$: 
+
+$$
+3x(x^2 - 4)
+$$
+
+2. Adentro es diferencia de cuadrados: 
+
+$$
+3x(x + 2)(x - 2)
+$$
 
 **Resultado:** $\boxed{3x(x + 2)(x - 2)}$
 
@@ -50,8 +60,18 @@ Factoriza: $(x + 1)^2 - 9$
 - Identificamos $a = (x + 1)$ y $b = 3$.
 
 **Razonamiento:**
-1. Aplicamos la fórmula: $[(x + 1) + 3][(x + 1) - 3]$.
-2. Simplificamos: $(x + 4)(x - 2)$.
+
+1. Aplicamos la fórmula: 
+
+$$
+[(x + 1) + 3][(x + 1) - 3]
+$$
+
+2. Simplificamos: 
+
+$$
+(x + 4)(x - 2)
+$$
 
 **Resultado:** $\boxed{(x + 4)(x - 2)}$
 
@@ -65,8 +85,18 @@ Factoriza: $(x + 2)^2 + 5(x + 2) + 6$
 - Hacemos $u = (x + 2)$.
 
 **Razonamiento:**
-1. Con la sustitución: $u^2 + 5u + 6 = (u + 2)(u + 3)$.
-2. Reemplazamos: $[(x + 2) + 2][(x + 2) + 3] = (x + 4)(x + 5)$.
+
+1. Con la sustitución: 
+
+$$
+u^2 + 5u + 6 = (u + 2)(u + 3)
+$$
+
+2. Reemplazamos: 
+
+$$
+[(x + 2) + 2][(x + 2) + 3] = (x + 4)(x + 5)
+$$
 
 **Resultado:** $\boxed{(x + 4)(x + 5)}$
 
@@ -80,8 +110,18 @@ Factoriza: $x^2 + 2xy + y^2 - z^2$
 - Los primeros tres términos forman un TCP.
 
 **Razonamiento:**
-1. Reconocemos: $(x + y)^2 - z^2$.
-2. Diferencia de cuadrados: $(x + y + z)(x + y - z)$.
+
+1. Reconocemos: 
+
+$$
+(x + y)^2 - z^2
+$$
+
+2. Diferencia de cuadrados: 
+
+$$
+(x + y + z)(x + y - z)
+$$
 
 **Resultado:** $\boxed{(x + y + z)(x + y - z)}$
 
@@ -95,8 +135,19 @@ Factoriza completamente: $x^4 - 81$
 - Es diferencia de cuadrados.
 
 **Razonamiento:**
-1. Primera vuelta: $(x^2)^2 - 9^2 = (x^2 + 9)(x^2 - 9)$.
-2. El segundo factor se puede factorizar más: $(x^2 - 9) = (x + 3)(x - 3)$.
+
+1. Primera vuelta: 
+
+$$
+(x^2)^2 - 9^2 = (x^2 + 9)(x^2 - 9)
+$$
+
+2. El segundo factor se puede factorizar más: 
+
+$$
+(x^2 - 9) = (x + 3)(x - 3)
+$$
+
 3. El primero no se factoriza (suma de cuadrados).
 
 **Resultado:** $\boxed{(x^2 + 9)(x + 3)(x - 3)}$
@@ -112,7 +163,12 @@ Factoriza: $5x^3 - 20x$
 <summary>Ver solución</summary>
 
 **Datos:** Factor común $5x$.
-**Razonamiento:** $5x(x^2 - 4) = 5x(x + 2)(x - 2)$
+**Razonamiento:** 
+
+$$
+5x(x^2 - 4) = 5x(x + 2)(x - 2)
+$$
+
 **Resultado:** $\boxed{5x(x + 2)(x - 2)}$
 
 </details>
@@ -124,7 +180,12 @@ Factoriza: $2a^4 - 32$
 <summary>Ver solución</summary>
 
 **Datos:** Factor común 2.
-**Razonamiento:** $2(a^4 - 16) = 2(a^2 + 4)(a + 2)(a - 2)$
+**Razonamiento:** 
+
+$$
+2(a^4 - 16) = 2(a^2 + 4)(a + 2)(a - 2)
+$$
+
 **Resultado:** $\boxed{2(a^2 + 4)(a + 2)(a - 2)}$
 
 </details>
@@ -136,7 +197,12 @@ Factoriza: $(x + 3)^2 - 16$
 <summary>Ver solución</summary>
 
 **Datos:** $a = (x + 3)$, $b = 4$.
-**Razonamiento:** $(x + 3 + 4)(x + 3 - 4) = (x + 7)(x - 1)$
+**Razonamiento:** 
+
+$$
+(x + 3 + 4)(x + 3 - 4) = (x + 7)(x - 1)
+$$
+
 **Resultado:** $\boxed{(x + 7)(x - 1)}$
 
 </details>
@@ -148,7 +214,12 @@ Factoriza: $(2x - 1)^2 - (x + 2)^2$
 <summary>Ver solución</summary>
 
 **Datos:** Diferencia de cuadrados.
-**Razonamiento:** $(2x - 1 + x + 2)(2x - 1 - x - 2) = (3x + 1)(x - 3)$
+**Razonamiento:** 
+
+$$
+(2x - 1 + x + 2)(2x - 1 - x - 2) = (3x + 1)(x - 3)
+$$
+
 **Resultado:** $\boxed{(3x + 1)(x - 3)}$
 
 </details>
@@ -160,7 +231,12 @@ Factoriza usando sustitución: $(x - 2)^2 + 7(x - 2) + 12$
 <summary>Ver solución</summary>
 
 **Datos:** Sea $u = (x - 2)$.
-**Razonamiento:** $u^2 + 7u + 12 = (u + 3)(u + 4) = (x + 1)(x + 2)$
+**Razonamiento:** 
+
+$$
+u^2 + 7u + 12 = (u + 3)(u + 4) = (x + 1)(x + 2)
+$$
+
 **Resultado:** $\boxed{(x + 1)(x + 2)}$
 
 </details>
@@ -172,7 +248,12 @@ Factoriza: $(a + 1)^2 - 2(a + 1) - 15$
 <summary>Ver solución</summary>
 
 **Datos:** Sea $u = (a + 1)$.
-**Razonamiento:** $u^2 - 2u - 15 = (u - 5)(u + 3) = (a - 4)(a + 4)$
+**Razonamiento:** 
+
+$$
+u^2 - 2u - 15 = (u - 5)(u + 3) = (a - 4)(a + 4)
+$$
+
 **Resultado:** $\boxed{(a - 4)(a + 4)}$
 
 </details>
@@ -184,7 +265,12 @@ Factoriza: $x^2 - 6x + 9 - 4y^2$
 <summary>Ver solución</summary>
 
 **Datos:** TCP menos cuadrado.
-**Razonamiento:** $(x - 3)^2 - (2y)^2 = (x - 3 + 2y)(x - 3 - 2y)$
+**Razonamiento:** 
+
+$$
+(x - 3)^2 - (2y)^2 = (x - 3 + 2y)(x - 3 - 2y)
+$$
+
 **Resultado:** $\boxed{(x - 3 + 2y)(x - 3 - 2y)}$
 
 </details>
@@ -196,7 +282,12 @@ Factoriza: $a^2 - b^2 + a + b$
 <summary>Ver solución</summary>
 
 **Datos:** Agrupamos.
-**Razonamiento:** $(a + b)(a - b) + (a + b) = (a + b)(a - b + 1)$
+**Razonamiento:** 
+
+$$
+(a + b)(a - b) + (a + b) = (a + b)(a - b + 1)
+$$
+
 **Resultado:** $\boxed{(a + b)(a - b + 1)}$
 
 </details>
@@ -208,7 +299,12 @@ Factoriza completamente: $x^6 - 1$
 <summary>Ver solución</summary>
 
 **Datos:** Diferencia de cuadrados + cubos.
-**Razonamiento:** $(x^3 + 1)(x^3 - 1)$. Luego cada uno es suma/diferencia de cubos.
+**Razonamiento:** 
+
+$$
+(x^3 + 1)(x^3 - 1) = (x + 1)(x^2 - x + 1)(x - 1)(x^2 + x + 1)
+$$
+
 **Resultado:** $\boxed{(x + 1)(x^2 - x + 1)(x - 1)(x^2 + x + 1)}$
 
 </details>
@@ -220,7 +316,12 @@ Factoriza: $a^6 - 64$
 <summary>Ver solución</summary>
 
 **Datos:** $64 = 4^3 = 2^6$.
-**Razonamiento:** $(a^3 + 8)(a^3 - 8) = (a + 2)(a^2 - 2a + 4)(a - 2)(a^2 + 2a + 4)$
+**Razonamiento:** 
+
+$$
+(a^3 + 8)(a^3 - 8) = (a + 2)(a^2 - 2a + 4)(a - 2)(a^2 + 2a + 4)
+$$
+
 **Resultado:** $\boxed{(a + 2)(a - 2)(a^2 - 2a + 4)(a^2 + 2a + 4)}$
 
 </details>

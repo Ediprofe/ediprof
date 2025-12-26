@@ -56,7 +56,13 @@ Factoriza: $6x^3 - 12x^2 + 18x$
 - Todos los términos tienen factor común $6x$.
 
 **Razonamiento:**
-1. Sacamos $6x$: $6x(x^2 - 2x + 3)$.
+
+1. Sacamos $6x$: 
+
+$$
+6x(x^2 - 2x + 3)
+$$
+
 2. Verificamos si el trinomio se factoriza más: No es TCP ni tiene factores enteros.
 
 **Resultado:** $\boxed{6x(x^2 - 2x + 3)}$
@@ -71,8 +77,19 @@ Factoriza: $x^4 - 81$
 - Es diferencia de cuadrados: $(x^2)^2 - 9^2$.
 
 **Razonamiento:**
-1. Primera factorización: $(x^2 + 9)(x^2 - 9)$.
-2. El segundo factor es otra diferencia de cuadrados: $(x^2 - 9) = (x + 3)(x - 3)$.
+
+1. Primera factorización: 
+
+$$
+(x^2 + 9)(x^2 - 9)
+$$
+
+2. El segundo factor es otra diferencia de cuadrados: 
+
+$$
+(x^2 - 9) = (x + 3)(x - 3)
+$$
+
 3. El primero no se factoriza (suma de cuadrados).
 
 **Resultado:** $\boxed{(x^2 + 9)(x + 3)(x - 3)}$
@@ -88,8 +105,22 @@ Factoriza: $x^2 - 5x + 6$
 - Buscamos números que multipliquen 6 y sumen -5.
 
 **Razonamiento:**
-1. Números: $-2$ y $-3$.
-2. Verificación: $(-2) + (-3) = -5$, $(-2) \times (-3) = 6$.
+
+1. Números: 
+
+$$
+-2 \quad \text{y} \quad -3
+$$
+
+2. Verificación: 
+
+$$
+(-2) + (-3) = -5
+$$
+
+$$
+(-2) \times (-3) = 6
+$$
 
 **Resultado:** $\boxed{(x - 2)(x - 3)}$
 
@@ -103,9 +134,20 @@ Factoriza: $8a^3 + 27$
 - $8a^3 = (2a)^3$ y $27 = 3^3$.
 
 **Razonamiento:**
+
 1. Aplicamos fórmula de suma de cubos.
-2. Primer factor: $(2a + 3)$.
-3. Segundo factor: $(2a)^2 - (2a)(3) + 3^2 = 4a^2 - 6a + 9$.
+
+2. Primer factor: 
+
+$$
+(2a + 3)
+$$
+
+3. Segundo factor: 
+
+$$
+(2a)^2 - (2a)(3) + 3^2 = 4a^2 - 6a + 9
+$$
 
 **Resultado:** $\boxed{(2a + 3)(4a^2 - 6a + 9)}$
 
@@ -119,8 +161,18 @@ Factoriza: $2x^3 - 8x$
 - Hay factor común $2x$.
 
 **Razonamiento:**
-1. Sacamos $2x$: $2x(x^2 - 4)$.
-2. Adentro es diferencia de cuadrados: $2x(x + 2)(x - 2)$.
+
+1. Sacamos $2x$: 
+
+$$
+2x(x^2 - 4)
+$$
+
+2. Adentro es diferencia de cuadrados: 
+
+$$
+2x(x + 2)(x - 2)
+$$
 
 **Resultado:** $\boxed{2x(x + 2)(x - 2)}$
 
@@ -135,7 +187,12 @@ Identifica el caso y factoriza: $5x^2 - 20$
 <summary>Ver solución</summary>
 
 **Caso:** Factor común + diferencia de cuadrados.
-**Razonamiento:** $5(x^2 - 4) = 5(x + 2)(x - 2)$
+**Razonamiento:** 
+
+$$
+5(x^2 - 4) = 5(x + 2)(x - 2)
+$$
+
 **Resultado:** $\boxed{5(x + 2)(x - 2)}$
 
 </details>
@@ -147,7 +204,12 @@ Factoriza: $x^2 - 49$
 <summary>Ver solución</summary>
 
 **Caso:** Diferencia de cuadrados.
-**Razonamiento:** $x^2 - 7^2 = (x + 7)(x - 7)$
+**Razonamiento:** 
+
+$$
+x^2 - 7^2 = (x + 7)(x - 7)
+$$
+
 **Resultado:** $\boxed{(x + 7)(x - 7)}$
 
 </details>
@@ -171,7 +233,12 @@ Factoriza: $x^2 + 3x - 10$
 <summary>Ver solución</summary>
 
 **Caso:** Trinomio simple.
-**Razonamiento:** Números que multiplican -10 y suman 3: 5 y -2.
+**Razonamiento:** 
+
+$$
+(x + 5)(x - 2)
+$$
+
 **Resultado:** $\boxed{(x + 5)(x - 2)}$
 
 </details>
@@ -195,7 +262,12 @@ Factoriza: $x^3 + 125$
 <summary>Ver solución</summary>
 
 **Caso:** Suma de cubos.
-**Razonamiento:** $(x + 5)(x^2 - 5x + 25)$
+**Razonamiento:** 
+
+$$
+(x + 5)(x^2 - 5x + 25)
+$$
+
 **Resultado:** $\boxed{(x + 5)(x^2 - 5x + 25)}$
 
 </details>
@@ -207,7 +279,12 @@ Factoriza: $27a^3 - 64b^3$
 <summary>Ver solución</summary>
 
 **Caso:** Diferencia de cubos.
-**Razonamiento:** $(3a - 4b)(9a^2 + 12ab + 16b^2)$
+**Razonamiento:** 
+
+$$
+(3a - 4b)(9a^2 + 12ab + 16b^2)
+$$
+
 **Resultado:** $\boxed{(3a - 4b)(9a^2 + 12ab + 16b^2)}$
 
 </details>
@@ -219,7 +296,12 @@ Factoriza: $ax + ay - bx - by$
 <summary>Ver solución</summary>
 
 **Caso:** Agrupación.
-**Razonamiento:** $a(x + y) - b(x + y) = (x + y)(a - b)$
+**Razonamiento:** 
+
+$$
+a(x + y) - b(x + y) = (x + y)(a - b)
+$$
+
 **Resultado:** $\boxed{(x + y)(a - b)}$
 
 </details>
@@ -231,7 +313,12 @@ Factoriza: $x^6 - 1$
 <summary>Ver solución</summary>
 
 **Caso:** Diferencia de cuadrados + cubos.
-**Razonamiento:** $(x^3 + 1)(x^3 - 1) = (x + 1)(x^2 - x + 1)(x - 1)(x^2 + x + 1)$
+**Razonamiento:** 
+
+$$
+(x^3 + 1)(x^3 - 1) = (x + 1)(x^2 - x + 1)(x - 1)(x^2 + x + 1)
+$$
+
 **Resultado:** $\boxed{(x + 1)(x - 1)(x^2 - x + 1)(x^2 + x + 1)}$
 
 </details>
@@ -243,7 +330,12 @@ Factoriza: $3x^3 + 6x^2 - 9x$
 <summary>Ver solución</summary>
 
 **Caso:** Factor común + trinomio.
-**Razonamiento:** $3x(x^2 + 2x - 3) = 3x(x + 3)(x - 1)$
+**Razonamiento:** 
+
+$$
+3x(x^2 + 2x - 3) = 3x(x + 3)(x - 1)
+$$
+
 **Resultado:** $\boxed{3x(x + 3)(x - 1)}$
 
 </details>

@@ -1,365 +1,321 @@
-# 🚀 **Movimiento Rectilíneo Uniformemente Acelerado (MRUA)**
+# **Movimiento Rectilíneo Uniformemente Acelerado (MRUA)**
 
-Hasta ahora habíamos estudiado movimientos donde la velocidad nunca cambiaba (MRU). Pero en la vida real, lo más común es que los objetos arranquen, frenen o aumenten su rapidez.
+Hasta ahora estudiamos objetos con velocidad fija, como un tren en marcha crucero. Pero la realidad es más emocionante: los coches aceleran al arrancar, las manzanas caen ganando velocidad y los frenos nos detienen a tiempo.
 
-El **MRUA** es aquel movimiento en línea recta donde la **velocidad cambia** de manera uniforme.
+El **MRUA** explica cómo cambia la velocidad paso a paso.
 
 ---
 
 ## 🎯 ¿Qué vas a aprender?
 
-- El concepto intuitivo y matemático de la aceleración.
-- Qué significa realmente la unidad $m/s^2$.
-- Las características clave que definen al MRUA.
+- Qué es realmente la aceleración y cómo se diferencia de la velocidad.
+- Por qué la unidad de aceleración es "metros por segundo al cuadrado".
+- Cómo predecir la velocidad futura de un objeto.
 - Cómo la gravedad es simplemente una aceleración natural.
 
 ---
 
 ## ⚡ **El Concepto de Aceleración**
 
-La **Aceleración** nos dice **qué tan rápido cambia la velocidad** de un objeto.
+La **Aceleración** no es "ir rápido". Es **cambiar** de velocidad.
 
-* Si la velocidad se mantiene igual, la aceleración es **cero** ($a=0$).
-* Si la velocidad aumenta o disminuye, existe una **aceleración** ($a \neq 0$).
+- Si pasas de $0$ a $100\,\mathrm{km/h}$, aceleraste.
+- Si frenas ante un semáforo, desaceleraste (aceleración negativa).
+- Si mantienes $100\,\mathrm{km/h}$ fijos, **tu aceleración es cero**.
 
-### **¿Qué significa la unidad m/s²?**
+> **Regla de Oro:** Aceleración = Cambio de Ritmo.
 
-La unidad de medida es **metros por segundo al cuadrado**. Aunque suena complejo, su significado es muy lógico si lo leemos así: **"Metros por segundo, cada segundo"**.
+---
 
-$$
-a = \frac{\Delta v}{t} = \frac{\mathrm{m/s}}{\mathrm{s}} = \mathrm{m/s^2}
-$$
+## 📏 **La Unidad Extraña: $m/s^2$**
 
-> **La Regla de Oro:**
-> Si un objeto tiene una aceleración de **$2\,\mathrm{m/s^2}$**, significa que su velocidad **aumenta en $2\,\mathrm{m/s}$ por cada segundo que pasa.**
+La unidad **metros por segundo al cuadrado** ($m/s^2$) suele confundir, pero tiene un sentido muy lógico si la lees así:
+
+**"Metros por segundo, cada segundo"**
+
+Si tu aceleración es **$2\,\mathrm{m/s^2}$**, significa que:
+- Cada segundo que pasa, tu velocidad aumenta en **$2\,\mathrm{m/s}$**.
 
 ![MRUA](/images/fisica/cinematica/mrua/mrua.png)
 
 ---
 
-## ✨ **Características del MRUA**
-
-1.  **Trayectoria Rectilínea:** El objeto se mueve siempre en línea recta.
-2.  **Velocidad Variable:** La velocidad no es fija; cambia instante a instante.
-3.  **Aceleración Constante:** El ritmo al que cambia la velocidad es siempre el mismo (no cambia de golpe).
-
----
-
 ## ⚙️ **Ejemplos Resueltos**
 
-### **Ejemplo 1: Análisis Detallado (Paso a Paso)**
+### **Ejemplo 1: Arrancando el Auto**
 
-Vamos a calcular la posición paso a paso para un móvil que parte del reposo ($v_0=0$) con una aceleración constante de $a = 2\,\mathrm{m/s^2}$ durante los primeros 3 segundos.
+Un auto está quieto y acelera a **$3\,\mathrm{m/s^2}$** durante 4 segundos. ¿Qué tan rápido va al final?
 
-#### **1. Razonamiento por intervalos (Método Inductivo)**
+**Datos:**
+- Velocidad Inicial ($v_i$) = $0$
+- Aceleración ($a$) = $3\,\mathrm{m/s^2}$
+- Tiempo ($t$) = $4\,\mathrm{s}$
 
-En el **MRUA**, la velocidad cambia uniformemente, lo que hace que la distancia recorrida en cada segundo sea distinta.
+**Razonamiento Inductivo (Paso a Paso):**
+- **Inicio:** $0\,\mathrm{m/s}$.
+- **Segundo 1:** Gana 3. Va a $3\,\mathrm{m/s}$.
+- **Segundo 2:** Gana otros 3. Va a $6\,\mathrm{m/s}$.
+- **Segundo 3:** Gana otros 3. Va a $9\,\mathrm{m/s}$.
+- **Segundo 4:** Gana otros 3. Va a $12\,\mathrm{m/s}$.
 
-* **Segundo 1 (de $t=0$ a $t=1$):**
-    * La velocidad inicial es $0$ y la final es $2\,\mathrm{m/s}$ (aumentó $2$ unidades por la aceleración).
-    * La velocidad promedio en este intervalo es $\frac{0+2}{2} = 1\,\mathrm{m/s}$.
-    * En 1 segundo a $1\,\mathrm{m/s}$ promedio, recorre **1 metro**.
-    * **Posición a $t=1$:** $0 + 1 = \boxed{1\,\mathrm{m}}$.
+**Cálculo Directo:**
 
-* **Segundo 2 (de $t=1$ a $t=2$):**
-    * Empieza el segundo a $2\,\mathrm{m/s}$ y termina a $4\,\mathrm{m/s}$ (sumamos otros $2$ de aceleración).
-    * La velocidad promedio en este intervalo es $\frac{2+4}{2} = 3\,\mathrm{m/s}$.
-    * En este segundo recorre **3 metros**.
-    * **Posición a $t=2$:** Posición anterior ($1$) + tramo nuevo ($3$) = $\boxed{4\,\mathrm{m}}$.
+$$
+v_f = 3 \times 4
+$$
 
-* **Segundo 3 (de $t=2$ a $t=3$):**
-    * Empieza el segundo a $4\,\mathrm{m/s}$ y termina a $6\,\mathrm{m/s}$.
-    * La velocidad promedio es $\frac{4+6}{2} = 5\,\mathrm{m/s}$.
-    * En este segundo recorre **5 metros**.
-    * **Posición a $t=3$:** Posición anterior ($4$) + tramo nuevo ($5$) = $\boxed{9\,\mathrm{m}}$.
+**Resultado:**
+
+$$
+\boxed{12\,\mathrm{m/s}}
+$$
 
 ---
 
-#### **2. Comprobación con la Fórmula**
+### **Ejemplo 2: La Gravedad**
 
-La fórmula de posición para objetos que parten del origen y del reposo ($v_0=0, x_0=0$) es:
+La gravedad es una aceleración constante de aprox. **$10\,\mathrm{m/s^2}$** (redondeado para facilidad). Si dejas caer una piedra, ¿cuál es su velocidad a los 3 segundos?
+
+**Datos:**
+- $v_i = 0$
+- $a = 10\,\mathrm{m/s^2}$
+- $t = 3\,\mathrm{s}$
+
+**Razonamiento:**
+Cada segundo gana $10\,\mathrm{m/s}$. En 3 segundos habrá ganado 3 veces 10.
 
 $$
-x = \frac{1}{2} a t^2
+v_f = 10 \times 3
 $$
 
-Sustituimos $a = 2$:
+**Resultado:**
 
-* **Para $t=1$:** $x = 0.5 \cdot 2 \cdot (1)^2 = \boxed{1\,\mathrm{m}}$
-* **Para $t=2$:** $x = 0.5 \cdot 2 \cdot (2)^2 = \boxed{4\,\mathrm{m}}$
-* **Para $t=3$:** $x = 0.5 \cdot 2 \cdot (3)^2 = \boxed{9\,\mathrm{m}}$
+$$
+\boxed{30\,\mathrm{m/s}}
+$$
 
 ---
 
-#### **Resumen de Resultados**
+## 📝 Ejercicios de Práctica
 
-| Tiempo ($t$) | Velocidad ($v$) | Razonamiento (Tramo) | Posición Final ($x$) |
-| :--- | :--- | :--- | :--- |
-| **0 s** | $0\,\mathrm{m/s}$ | Inicio | **0 m** |
-| **1 s** | $2\,\mathrm{m/s}$ | Avanzó 1m | **1 m** |
-| **2 s** | $4\,\mathrm{m/s}$ | Avanzó 3m más | **4 m** |
-| **3 s** | $6\,\mathrm{m/s}$ | Avanzó 5m más | **9 m** |
-
-
-![Mapa de movimiento MRUA](/images/fisica/cinematica/mrua/mapa-moviiento-mrua.png)
-
----
-
-### **Ejemplo 2: Caída Libre (La Gravedad)**
-
-Cuando dejas caer algo, su velocidad aumenta constantemente porque la Tierra lo atrae. A esa aceleración natural la llamamos **gravedad** ($g$).
-
-En el mundo real, esta aceleración es de aproximadamente $9.8\,\mathrm{m/s^2}$. Sin embargo, para que puedas hacer los cálculos **mentalmente** y entender la lógica sin distraerte con decimales, en este ejemplo vamos a redondearla.
-
-**Asumiremos:** $g \approx 10\,\mathrm{m/s^2}$.
-*(Esto significa que cada segundo que pasa mientras cae, el objeto gana $10\,\mathrm{m/s}$ de velocidad).*
-
-**El Reto:** Calcular cuánto ha caído la piedra en los primeros 3 segundos, **sin usar fórmulas de memoria**, solo usando la lógica inductiva.
-
-#### **1. Razonamiento Lógico (Paso a Paso)**
-
-La clave es entender que **Distancia = Velocidad Promedio $\times$ Tiempo**.
-
-*   **Primer Segundo ($0 \to 1$s):**
-    *   Velocidad: Pasa de $0$ a $10\,\mathrm{m/s}$.
-    *   **Velocidad Promedio:** $5\,\mathrm{m/s}$ (la mitad de 10).
-    *   Distancia recorrida: $5\,\mathrm{m/s} \times 1\,\mathrm{s} = \mathbf{5\,m}$.
-    *   **Posición Total:** $\boxed{5\,\mathrm{m}}$.
-
-*   **Segundo Segundo ($1 \to 2$s):**
-    *   Velocidad: Pasa de $10$ a $20\,\mathrm{m/s}$.
-    *   **Velocidad Promedio:** $15\,\mathrm{m/s}$ (punto medio entre 10 y 20).
-    *   Distancia recorrida: $15\,\mathrm{m/s} \times 1\,\mathrm{s} = \mathbf{15\,m}$.
-    *   **Posición Total:** $5 \text{ (acumulado)} + 15 \text{ (nuevo)} = \boxed{20\,\mathrm{m}}$.
-
-*   **Tercer Segundo ($2 \to 3$s):**
-    *   Velocidad: Pasa de $20$ a $30\,\mathrm{m/s}$.
-    *   **Velocidad Promedio:** $25\,\mathrm{m/s}$.
-    *   Distancia recorrida: $25\,\mathrm{m/s} \times 1\,\mathrm{s} = \mathbf{25\,m}$.
-    *   **Posición Total:** $20 \text{ (acumulado)} + 25 \text{ (nuevo)} = \boxed{45\,\mathrm{m}}$.
-
-#### **Resumen Visual del Movimiento**
-
-| Tiempo ($t$) | Velocidad ($v$) | Velocidad Promedio (Tramo) | Distancia Recorrida (Tramo) | Posición Total ($y$) |
-| :--- | :--- | :--- | :--- | :--- |
-| **0 s** | $0\,\mathrm{m/s}$ | — | — | **0 m** |
-| **1 s** | $10\,\mathrm{m/s}$ | $5\,\mathrm{m/s}$ | $5\,\mathrm{m}$ | **5 m** |
-| **2 s** | $20\,\mathrm{m/s}$ | $15\,\mathrm{m/s}$ | $15\,\mathrm{m}$ | **20 m** |
-| **3 s** | $30\,\mathrm{m/s}$ | $25\,\mathrm{m/s}$ | $25\,\mathrm{m}$ | **45 m** |
-
-![Análisis - MRUA en caída libre](/images/fisica/cinematica/mrua/mrua-analisis-edificio.png)
----
-
-#### **2. El "Secreto" de la Fórmula ($d = \frac{1}{2}at^2$)**
-
-¿Por qué la fórmula es $\frac{1}{2}at^2$? ¡Míralo con los números del ejemplo anterior!
-
-Si quieres calcular la distancia total a los **3 segundos** de un solo golpe:
-1.  La velocidad final es $30\,\mathrm{m/s}$ (porque $v = a \cdot t = 10 \cdot 3$).
-2.  La **Velocidad Promedio** de todo el viaje (desde que arrancó hasta el final) es **la mitad** de esa velocidad final: $15\,\mathrm{m/s}$.
-3.  **Distancia** = Vel. Promedio $\times$ Tiempo Total = $15 \times 3 = \mathbf{45\,m}$.
-
-**Matemáticamente es lo mismo:**
-$$
-\text{Distancia} = \underbrace{\left( \frac{a \cdot t}{2} \right)}_{\text{Vel. Promedio}} \cdot t = \frac{1}{2} a t^2
-$$
-
-Comprobemos con la fórmula clásica:
-$$
-d = \frac{1}{2} (10) (3)^2 = 5 \cdot 9 = \mathbf{45\,m}
-$$
-
-> **Conclusión:** La fórmula $\frac{1}{2}at^2$ no es magia. Simplemente calcula la **velocidad promedio** del trayecto ($\frac{1}{2}at$) y la multiplica por el tiempo.
-
----
-
-## 📝 **Ejercicios de Práctica**
-
-### **Ejercicio 1: Auto deportivo**
-
-Un auto deportivo parte del reposo y acelera a $8\,\mathrm{m/s^2}$ durante $5$ segundos. ¿Cuál es su velocidad final?
+### Ejercicio 1
+**Un corredor parte del reposo y acelera a $2\,\mathrm{m/s^2}$ por 5 segundos. ¿Su velocidad final?**
 
 <details>
 <summary>Ver solución</summary>
 
 **Datos:**
-- $v_0 = 0\,\mathrm{m/s}$
-- $a = 8\,\mathrm{m/s^2}$
+- $v_i = 0$
+- $a = 2\,\mathrm{m/s^2}$
 - $t = 5\,\mathrm{s}$
 
-**Cálculo:**
-$$v = a \cdot t = 8 \times 5 = \boxed{40\,\mathrm{m/s}}$$
+**Razonamiento:**
+$v_f = \text{Aceleración} \times \text{Tiempo}$.
 
-> El auto alcanza **40 m/s** (144 km/h).
+$$
+v_f = 2 \times 5
+$$
+
+**Resultado:**
+
+$$
+\boxed{10\,\mathrm{m/s}}
+$$
 
 </details>
 
----
-
-### **Ejercicio 2: Bicicleta frenando**
-
-Un ciclista viaja a $12\,\mathrm{m/s}$ y frena con una desaceleración de $3\,\mathrm{m/s^2}$. ¿Cuántos segundos tarda en detenerse?
+### Ejercicio 2
+**Un auto viaja a $20\,\mathrm{m/s}$ y frena (desacelera) a $5\,\mathrm{m/s^2}$. ¿Cuánto tarda en detenerse?**
 
 <details>
 <summary>Ver solución</summary>
 
-**Análisis:** Cada segundo pierde 3 m/s.
+**Datos:**
+- $v_i = 20\,\mathrm{m/s}$
+- Pierde $5\,\mathrm{m/s}$ cada segundo.
 
-- Inicio: 12 m/s
-- 1s: 9 m/s
-- 2s: 6 m/s
-- 3s: 3 m/s
-- 4s: 0 m/s
+**Razonamiento:**
+Dividimos la velocidad que tiene entre lo que pierde por segundo.
 
-**Respuesta:** Tarda **4 segundos** en detenerse.
+$$
+t = \frac{20}{5}
+$$
+
+**Resultado:**
+
+$$
+\boxed{4\,\mathrm{s}}
+$$
 
 </details>
 
----
-
-### **Ejercicio 3: Cohete despegando**
-
-Un cohete modelo despega con una aceleración de $15\,\mathrm{m/s^2}$. ¿Qué velocidad tendrá después de 6 segundos?
+### Ejercicio 3
+**Si aceleras de $0$ a $30\,\mathrm{m/s}$ en 3 segundos, ¿cuál fue tu aceleración?**
 
 <details>
 <summary>Ver solución</summary>
 
-$$v = a \cdot t = 15\,\mathrm{m/s^2} \times 6\,\mathrm{s} = \boxed{90\,\mathrm{m/s}}$$
+**Datos:**
+- Cambio velocidad = $30\,\mathrm{m/s}$
+- Tiempo = $3\,\mathrm{s}$
 
-> El cohete viajará a **90 m/s**.
+**Razonamiento:**
+$a = \text{Cambio} / \text{Tiempo}$.
+
+$$
+a = \frac{30}{3}
+$$
+
+**Resultado:**
+
+$$
+\boxed{10\,\mathrm{m/s^2}}
+$$
 
 </details>
 
----
-
-### **Ejercicio 4: Lanzamiento vertical**
-
-Una pelota se lanza hacia arriba con una velocidad inicial de $30\,\mathrm{m/s}$. Si la gravedad la desacelera a $10\,\mathrm{m/s^2}$ (aproximado), ¿cuántos segundos tarda en detenerse en el aire?
+### Ejercicio 4
+**Una piedra cae durante 2 segundos ($g=10\,\mathrm{m/s^2}$). ¿A qué velocidad va?**
 
 <details>
 <summary>Ver solución</summary>
 
-**Análisis:** Cada segundo pierde 10 m/s.
+**Datos:**
+- $a = 10\,\mathrm{m/s^2}$
+- $t = 2\,\mathrm{s}$
 
-- Inicio: 30 m/s
-- 1s: 20 m/s
-- 2s: 10 m/s
-- 3s: 0 m/s
+**Razonamiento:**
+Velocidad = $10 \times 2$.
 
-**Respuesta:** Tarda **3 segundos** en alcanzar su punto más alto.
+$$
+v_f = 20\,\mathrm{m/s}
+$$
+
+**Resultado:**
+
+$$
+\boxed{20\,\mathrm{m/s}}
+$$
 
 </details>
 
----
-
-### **Ejercicio 5: Frenado de emergencia**
-
-Un conductor pisa el freno y su auto desacelera a $8\,\mathrm{m/s^2}$ desde una velocidad inicial de $40\,\mathrm{m/s}$. ¿Cuánto tiempo tarda en detenerse completamente?
+### Ejercicio 5
+**Un cohete acelera a $20\,\mathrm{m/s^2}$. ¿Qué velocidad tiene a los 2 segundos?**
 
 <details>
 <summary>Ver solución</summary>
 
-**Datos:** $v_i = 40\,\mathrm{m/s}$, $a = -8\,\mathrm{m/s^2}$, $v_f = 0$ (se detiene).
+**Razonamiento:**
+Gana 20 por segundo. En 2 segundos gana 40.
 
-**Análisis:** Cada segundo reduce su velocidad en 8 m/s.
+$$
+v_f = 20 \times 2
+$$
 
-- 0s: 40 m/s
-- 1s: 32 m/s
-- 2s: 24 m/s
-- 3s: 16 m/s
-- 4s: 8 m/s
-- 5s: 0 m/s
+**Resultado:**
 
-**Respuesta:** Tarda **5 segundos** en detenerse.
+$$
+\boxed{40\,\mathrm{m/s}}
+$$
 
 </details>
 
----
-
-### **Ejercicio 6: Aceleración de un tren**
-
-Un tren parte del reposo y acelera uniformemente. Después de 12 segundos alcanza una velocidad de $60\,\mathrm{m/s}$. ¿Cuál es su aceleración?
+### Ejercicio 6
+**Un tren va a $10\,\mathrm{m/s}$ y acelera a $1\,\mathrm{m/s^2}$ por 10 segundos. ¿Velocidad final?**
 
 <details>
 <summary>Ver solución</summary>
 
-**Datos:** $v_i = 0$ (parte del reposo), $v_f = 60\,\mathrm{m/s}$, $t = 12\,\mathrm{s}$.
+**Datos:**
+- $v_i = 10\,\mathrm{m/s}$
+- Gana $1\,\mathrm{m/s}$ cada segundo por 10s (Total ganado: 10).
 
-**Cálculo:**
-$$a = \frac{\Delta v}{t} = \frac{60 - 0}{12} = 5\,\mathrm{m/s^2}$$
+**Razonamiento:**
+$v_f = \text{Inicio} + \text{Ganancia}$.
 
-**Respuesta:** La aceleración es de **5 m/s²**.
+$$
+v_f = 10 + (1 \times 10)
+$$
+
+**Resultado:**
+
+$$
+\boxed{20\,\mathrm{m/s}}
+$$
 
 </details>
 
----
-
-### **Ejercicio 7: Velocidad después de cierto tiempo**
-
-Un ciclista comienza a pedalear con una aceleración de $2\,\mathrm{m/s^2}$. ¿Qué velocidad tiene después de 8 segundos?
+### Ejercicio 7
+**¿Qué significa una aceleración de $0\,\mathrm{m/s^2}$?**
 
 <details>
 <summary>Ver solución</summary>
 
-**Datos:** $v_i = 0$, $a = 2\,\mathrm{m/s^2}$, $t = 8\,\mathrm{s}$.
+**Razonamiento:**
+Significa que la velocidad no cambia.
 
-**Cálculo:** Cada segundo aumenta 2 m/s.
-$$v_f = 0 + 2(8) = 16\,\mathrm{m/s}$$
-
-**Respuesta:** Alcanza una velocidad de **16 m/s**.
+**Resultado:**
+Es un **Movimiento Rectilíneo Uniforme (MRU)**.
 
 </details>
 
----
-
-### **Ejercicio 8: Cambio de velocidad en caída libre**
-
-Un objeto cae durante 5 segundos. Si partió del reposo y la gravedad es $g = 10\,\mathrm{m/s^2}$, ¿qué velocidad tiene al final?
+### Ejercicio 8
+**Un objeto pasa de $10\,\mathrm{m/s}$ a $20\,\mathrm{m/s}$ en 2 segundos. ¿Aceleración?**
 
 <details>
 <summary>Ver solución</summary>
 
-**Datos:** $v_i = 0$, $a = g = 10\,\mathrm{m/s^2}$, $t = 5\,\mathrm{s}$.
+**Datos:**
+- Aumento = $10\,\mathrm{m/s}$ (de 10 a 20)
+- Tiempo = $2\,\mathrm{s}$
 
-**Cálculo:**
-$$v_f = 0 + 10(5) = 50\,\mathrm{m/s}$$
+**Razonamiento:**
+$a = 10 / 2$.
 
-**Respuesta:** Su velocidad final es de **50 m/s**.
+$$
+a = 5\,\mathrm{m/s^2}
+$$
+
+**Resultado:**
+
+$$
+\boxed{5\,\mathrm{m/s^2}}
+$$
 
 </details>
 
----
-
-### **Ejercicio 9: Análisis de gráfica de velocidad**
-
-Una moto acelera uniformemente desde 0 a 25 m/s en 5 segundos. ¿Cuál es su aceleración?
+### Ejercicio 9
+**¿Puede un objeto tener velocidad cero y aceleración distinta de cero?**
 
 <details>
 <summary>Ver solución</summary>
 
-**Datos:** $v_i = 0\,\mathrm{m/s}$, $v_f = 25\,\mathrm{m/s}$, $t = 5\,\mathrm{s}$.
+**Razonamiento:**
+Sí. Por ejemplo, cuando lanzas una pelota hacia arriba, en el punto más alto su velocidad es cero por un instante, pero la gravedad ($10\,\mathrm{m/s^2}$) sigue actuando para bajarla.
 
-**Cálculo:**
-$$a = \frac{25 - 0}{5} = 5\,\mathrm{m/s^2}$$
-
-**Respuesta:** Su aceleración es de **5 m/s²**.
+**Resultado:**
+**Sí.**
 
 </details>
 
----
-
-### **Ejercicio 10: Comparación de aceleraciones**
-
-Dos autos aceleran: Auto A de 0 a 30 m/s en 6 segundos, Auto B de 0 a 40 m/s en 8 segundos. ¿Cuál tiene mayor aceleración?
+### Ejercicio 10
+**Un auto frena a $-4\,\mathrm{m/s^2}$. Si iba a $12\,\mathrm{m/s}$, ¿cuánto tarda en parar?**
 
 <details>
 <summary>Ver solución</summary>
 
-**Auto A:** $a_A = \frac{30}{6} = 5\,\mathrm{m/s^2}$
+**Razonamiento:**
+Pierde 4 cada segundo.
 
-**Auto B:** $a_B = \frac{40}{8} = 5\,\mathrm{m/s^2}$
+$$
+t = \frac{12}{4}
+$$
 
-**Respuesta:** Ambos tienen la misma aceleración de **5 m/s²**, aunque B alcance mayor velocidad final.
+**Resultado:**
+
+$$
+\boxed{3\,\mathrm{s}}
+$$
 
 </details>
 
@@ -367,7 +323,11 @@ Dos autos aceleran: Auto A de 0 a 30 m/s en 6 segundos, Auto B de 0 a 40 m/s en 
 
 ## 🔑 Resumen
 
-- **Aceleración ($a$):** Es el cambio de velocidad por unidad de tiempo.
-- **Unidad ($m/s^2$):** Significa cuántos "metros por segundo" aumenta o disminuye la velocidad cada segundo.
-- **Gravedad ($g$):** Es una aceleración constante de aprox. $9.8\,\mathrm{m/s^2}$ que atrae los objetos hacia la Tierra.
-- **MRUA:** Movimiento Rectilíneo Uniformemente Acelerado (trayectoria recta, aceleración constante).
+| Concepto | Descripción |
+|----------|-------------|
+| **MRUA** | Movimiento con aceleración constante. |
+| **Aceleración ($a$)** | Cambio de velocidad por segundo. |
+| **$m/s^2$** | Unidad de aceleración (metros/segundo, cada segundo). |
+| **Velocidad Cero** | No implica aceleración cero (ej. inicio de carrera o punto más alto de vuelo). |
+
+> Recuerda: La velocidad te dice **dónde vas** y qué tan rápido. La aceleración te dice **cómo cambia** esa rapidez.

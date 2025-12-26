@@ -1,411 +1,385 @@
-# 🏀 **Movimiento Parabólico**
+# **Movimiento Parabólico**
 
-## 🎯 **¿Qué vas a aprender?**
-
-En esta lección aprenderás a:
-
-*   **Entender** el movimiento parabólico como la suma de dos movimientos independientes (horizontal y vertical).
-*   **Descomponer** vectores de velocidad usando funciones trigonométricas.
-*   **Calcular** variables clave como altura máxima, tiempo de vuelo y alcance horizontal.
-*   **Resolver** problemas prácticos de proyectiles en deportes y situaciones cotidianas.
+Cuando un futbolista cobra un tiro libre o un tenista hace un globo, la pelota no viaja en línea recta. Sube y baja describiendo una curva perfecta: una parábola. Es el baile sincronizado entre avanzar y caer al mismo tiempo.
 
 ---
 
-## 🎯 **¿Qué es el Movimiento Parabólico?**
+## 🎯 ¿Qué vas a aprender?
 
-El **Movimiento Parabólico** (también llamado *Tiro Oblicuo*) ocurre cuando un objeto es lanzado con un ángulo respecto al suelo, describiendo una trayectoria curva en forma de parábola.
+- Cómo descomponer un lanzamiento diagonal en dos movimientos simples.
+- Por qué la velocidad horizontal nunca cambia (si ignoramos el aire).
+- Cómo calcular dónde caerá un proyectil conociendo su ángulo y velocidad.
+- El secreto del ángulo de 45 grados.
 
-La clave para entenderlo es que son **dos movimientos independientes que ocurren al mismo tiempo**:
+---
 
-| Dirección | Tipo de movimiento | ¿Por qué? |
+## 🏹 **Dos Movimientos en Uno**
+
+El truco para entender este movimiento es dividirlo. Imagina que son dos películas reproduciéndose a la vez:
+
+### 1. Película Horizontal (Eje X)
+Es un **MRU**. No hay nada que frene ni empuje al objeto horizontalmente. Viaja a velocidad constante.
+
+### 2. Película Vertical (Eje Y)
+Es un **Lanzamiento Vertical (MRUA)**. La gravedad lo frena al subir y lo acelera al bajar.
+
+> **Regla de Oro:** El tiempo es el mismo para ambos. Lo que tarda en subir y bajar (Y) es el tiempo que tiene para avanzar (X).
+
+---
+
+## 📐 **Las Fórmulas Descompuestas**
+
+Primero, separamos la velocidad inicial ($v_o$) usando el ángulo ($\theta$):
+
+$$
+v_x = v_o \cdot \cos(\theta)
+$$
+
+$$
+v_y = v_o \cdot \sin(\theta)
+$$
+
+Luego aplicamos las reglas de cada movimiento:
+
+| Eje | Velocidad | Posición |
 | :--- | :--- | :--- |
-| **Horizontal (x)** | **MRU** (velocidad constante) | No hay fuerza horizontal (despreciando el aire) |
-| **Vertical (y)** | **Caída libre** (MRUA) | La gravedad actúa hacia abajo |
-
-> 💡 **Principio de independencia:** Lo que pasa en $x$ no afecta a $y$, y viceversa. El tiempo es la única variable que comparten.
+| **X (MRU)** | $v_x = \text{constante}$ | $x = v_x \cdot t$ |
+| **Y (MRUA)** | $v_{yf} = v_y - g \cdot t$ | $y = v_y \cdot t - \frac{1}{2}g \cdot t^2$ |
 
 ---
 
-## 🔗 **Conexión con MRU y MRUA: Deducción de las Fórmulas**
+## ⚙️ **Ejemplos Resueltos**
 
-El movimiento parabólico **no es un movimiento nuevo**, es simplemente la **combinación** de dos movimientos que ya conocemos.
+### **Ejemplo 1: Tiro de Cañón**
 
-### **Paso 1: Descomponer la velocidad inicial**
-
-Al lanzar con ángulo $\theta$, usamos **trigonometría** para descomponer la velocidad inicial $v_0$:
-
-$$
-v_x = v_0 \cdot \cos\theta \qquad v_y = v_0 \cdot \sin\theta
-$$
-
-### **Paso 2: Aplicar MRU en la dirección horizontal**
-
-No hay aceleración horizontal ($a_x = 0$), por lo tanto la velocidad horizontal es constante.
-
-| Fórmula MRU | Resultado |
-| :--- | :--- |
-| $x = v \cdot t$ | $$x = (v_0 \cos\theta) \cdot t$$ |
-| $v_x = \text{constante}$ | $$v_x = v_0 \cos\theta$$ |
-
-### **Paso 3: Aplicar MRUA (caída libre) en la dirección vertical**
-
-La gravedad actúa hacia abajo ($a_y = -g$).
-
-| Fórmula MRUA | Con $a = -g$ | Fórmula para y |
-| :--- | :--- | :--- |
-| $v_f = v_i + at$ | $v_{yf} = v_{yi} - gt$ | $$v_{yf} = v_0\sin\theta - gt$$ |
-| $y = v_i t + \frac{1}{2}at^2$ | $y = v_{yi}t - \frac{1}{2}gt^2$ | $$y = (v_0\sin\theta)t - \frac{1}{2}gt^2$$ |
-
-### **Paso 4: Deducir fórmulas especiales**
-
-**Altura máxima** (cuando $v_y = 0$):
-
-$$
-h_{\max} = \frac{(v_0\sin\theta)^2}{2g}
-$$
-
-**Tiempo de vuelo** (sube + baja):
-
-$$
-t_{total} = \frac{2v_0\sin\theta}{g}
-$$
-
-**Alcance horizontal máximo** (distancia en x al volver al suelo):
-
-$$
-x_{\max} = \frac{v_0^2 \sin(2\theta)}{g}
-$$
-
----
-
-## ⚙️ **Ejemplo 1 — Tiro libre de fútbol**
-
-Un jugador patea un balón con velocidad de **$20\,\mathrm{m/s}$** a un ángulo de **$30°$**. Calcular las componentes de velocidad, el tiempo de vuelo y el alcance.
-
-![Tiro parabólico - Ejemplo 1](/images/fisica/cinematica/mrua/tiro-parabolico-ejemplo1.png)
-
-### 📝 **Solución Paso a Paso**
-
-**Concepto clave:** Dividimos el problema en dos: movimiento horizontal (MRU) y vertical (caída libre).
+Un cañón dispara a **$100\,\mathrm{m/s}$** con un ángulo de **$30^\circ$**. ¿Cuál es su alcance horizontal?
 
 **Datos:**
-*   $v_0 = 20\,\mathrm{m/s}$
-*   $\theta = 30°$
-*   $g = 10\,\mathrm{m/s^2}$
-*   $\cos(30°) \approx 0.866$ y $\sin(30°) = 0.5$
+- $v_o = 100\,\mathrm{m/s}$
+- $\theta = 30^\circ$
+- $\sin(30^\circ) = 0.5$
+- $\cos(30^\circ) = 0.87$
+- $g = 10\,\mathrm{m/s^2}$
 
-**Paso 1: Descomponer la velocidad inicial en sus componentes**
+**Paso 1: Descomponer Velocidad**
 
-Usamos trigonometría:
-$$v_x = v_0 \cdot \cos(30°) = 20 \times 0.866 = 17.3\,\mathrm{m/s}$$
-$$v_y = v_0 \cdot \sin(30°) = 20 \times 0.5 = 10\,\mathrm{m/s}$$
+$$
+v_x = 100 \cdot 0.87 = 87\,\mathrm{m/s}
+$$
 
-**Paso 2: Calcular el tiempo de vuelo (solo depende de $v_y$)**
+$$
+v_y = 100 \cdot 0.5 = 50\,\mathrm{m/s}
+$$
 
-El tiempo de subida es:
-$$t_{\text{subida}} = \frac{v_y}{g} = \frac{10}{10} = 1\,\mathrm{s}$$
+**Paso 2: Calcular Tiempo de Vuelo (usando Y)**
+Sube con 50 m/s. La gravedad le quita 10 cada segundo. Tarda 5s en subir. Por lo tanto, el vuelo total es **10 segundos**.
 
-El tiempo total (por simetría):
-$$t_{\text{total}} = 2 \times 1 = 2\,\mathrm{s}$$
+$$
+t_{total} = \frac{2 \cdot v_y}{g} = \frac{100}{10} = 10\,\mathrm{s}
+$$
 
-**Paso 3: Calcular el alcance horizontal (MRU en x)**
+**Paso 3: Calcular Alcance (usando X)**
+Viaja a 87 m/s durante 10 segundos.
 
-Como en x no hay aceleración, usamos:
-$$x = v_x \cdot t_{\text{total}} = 17.3 \times 2 = 34.6\,\mathrm{m}$$
+$$
+x = 87 \cdot 10
+$$
 
-> ✅ El balón vuela durante **2 segundos** y alcanza **34.6 metros** de distancia horizontal.
+**Resultado:**
+
+$$
+\boxed{870\,\mathrm{m}}
+$$
 
 ---
 
-## ⚙️ **Ejemplo 2 — Cañón de confeti**
+### **Ejemplo 2: Saque de Voleibol**
 
-Un cañón de confeti dispara a **$30°$** con velocidad de **$25\,\mathrm{m/s}$**. ¿Qué altura máxima alcanza?
-
-![Tiro parabólico - Ejemplo 2](/images/fisica/cinematica/mrua/tiro-parabolico-ejemplo2.png)
-
-### 📝 **Solución Paso a Paso**
-
-**Concepto clave:** La altura máxima solo depende de la componente vertical de la velocidad. Es como un lanzamiento vertical puro.
+Un jugador golpea el balón con una velocidad de **$14\,\mathrm{m/s}$** en un ángulo de **$45^\circ$**. ¿Qué altura máxima alcanza?
 
 **Datos:**
-*   $v_0 = 25\,\mathrm{m/s}$
-*   $\theta = 30°$
-*   $g = 10\,\mathrm{m/s^2}$
-*   $\sin(30°) = 0.5$
+- $v_o = 14\,\mathrm{m/s}$
+- $\theta = 45^\circ$
+- $\sin(45^\circ) \approx 0.70$
+- $g = 10\,\mathrm{m/s^2}$
 
-**Paso 1: Extraer la componente vertical**
+**Paso 1: Componente Vertical**
+Solo la velocidad vertical importa para la altura.
 
-Solo nos importa $v_y$ porque solo eso afecta a la altura:
-$$v_y = v_0 \cdot \sin(30°) = 25 \times 0.5 = 12.5\,\mathrm{m/s}$$
+$$
+v_y = 14 \cdot 0.70 = 9.8\,\mathrm{m/s}
+$$
 
-**Paso 2: Aplicar la fórmula de altura máxima**
+**Paso 2: Calcular Altura**
+En el punto más alto, la velocidad vertical se agota.
 
-Esta es la misma fórmula que en lanzamiento vertical, pero con $v_y$ en lugar de $v_0$:
-$$h_{\text{max}} = \frac{v_y^2}{2g}$$
+$$
+h_{max} = \frac{v_y^2}{2g}
+$$
 
-**Paso 3: Sustituir y calcular**
+**Cálculo:**
 
-$$h_{\text{max}} = \frac{(12.5)^2}{2 \times 10} = \frac{156.25}{20} = 7.8\,\mathrm{m}$$
+$$
+h_{max} = \frac{(9.8)^2}{20} = \frac{96.04}{20}
+$$
 
-> ✅ El confeti alcanza una altura máxima de **7.8 metros**.
+**Resultado:**
+
+$$
+\boxed{4.8\,\mathrm{m}}
+$$
 
 ---
 
-## ⚙️ **Ejemplo 3 — Baloncesto: Tiro al aro**
+### **Ejemplo 3: Salto de Motocross**
 
-Un jugador lanza un balón con **$v_0 = 15\,\mathrm{m/s}$** a **$45°$**. ¿A qué distancia horizontal cae el balón?
-
-![Tiro parabólico - Ejemplo 3](/images/fisica/cinematica/mrua/tiro-parabolico-ejemplo3.png)
-
-### 📝 **Solución Paso a Paso**
-
-**Concepto clave:** El ángulo de $45°$ es especial porque hace que $v_x = v_y$, maximizando el alcance horizontal.
+Una moto salta una rampa a **$20\,\mathrm{m/s}$** con un ángulo de **$30^\circ$**. ¿Cuánto tiempo permanece en el aire antes de tocar el suelo?
 
 **Datos:**
-*   $v_0 = 15\,\mathrm{m/s}$
-*   $\theta = 45°$
-*   $g = 10\,\mathrm{m/s^2}$
-*   $\sin(45°) = \cos(45°) \approx 0.707$
+- $v_o = 20\,\mathrm{m/s}$
+- $\theta = 30^\circ$ ($\sin(30^\circ) = 0.5$)
 
-**Paso 1: Descomponer en componentes**
+**Paso 1: Velocidad de Subida**
+La gravedad lo frena. ¿Con qué velocidad sube?
 
-Con $45°$, ambas componentes son iguales:
-$$v_x = v_y = 15 \times 0.707 = 10.6\,\mathrm{m/s}$$
+$$
+v_y = 20 \cdot 0.5 = 10\,\mathrm{m/s}
+$$
 
-**Paso 2: Calcular tiempo de vuelo**
+**Paso 2: Calcular Tiempo**
+La gravedad le quita $10\,\mathrm{m/s}$ cada segundo.
+- Tarda 1 segundo en subir (hasta que $v_y=0$).
+- Tarda lo mismo en bajar.
 
-De la componente vertical:
-$$t_{\text{total}} = \frac{2v_y}{g} = \frac{2 \times 10.6}{10} = 2.12\,\mathrm{s}$$
+$$
+t_{total} = \frac{2 \cdot v_y}{g} = \frac{20}{10}
+$$
 
-**Paso 3: Calcular alcance (MRU en x)**
+**Resultado:**
 
-Como en x no hay aceleración:
-$$x = v_x \cdot t_{\text{total}} = 10.6 \times 2.12 = 22.5\,\mathrm{m}$$
-
-> ✅ El balón cae a **22.5 metros** del punto de lanzamiento.
-
-> 💡 **Dato curioso:** Con $\theta = 45°$ se obtiene el **alcance máximo** posible para una misma velocidad inicial.
+$$
+\boxed{2\,\mathrm{s}}
+$$
 
 ---
 
-## 📝 **Ejercicios de Práctica**
+### **Ejemplo 4: Lanzamiento Horizontal (Avión de Rescate)**
 
-### **Ejercicio 1**
+Un avión vuela horizontalmente a **$50\,\mathrm{m/s}$** y deja caer un paquete desde una altura de **$80\,\mathrm{m}$**. ¿A qué distancia horizontal del punto de lanzamiento cae el paquete?
 
-Un proyectil es lanzado con una velocidad de **$40\,\mathrm{m/s}$** y un ángulo de **$30°$**. ¿Cuál es su velocidad horizontal ($v_x$)?
+**Datos:**
+- $v_x = 50\,\mathrm{m/s}$ (Horizontal pura)
+- $v_{y0} = 0\,\mathrm{m/s}$ (Caída libre vertical)
+- $h = 80\,\mathrm{m}$
+
+**Paso 1: Calcular Tiempo de Caída**
+Es una caída libre desde $80\,\mathrm{m}$.
+
+$$
+h = \frac{1}{2} g t^2 \rightarrow 80 = 5 t^2
+$$
+
+$$
+t^2 = 16 \rightarrow t = 4\,\mathrm{s}
+$$
+
+**Paso 2: Calcular Distancia Horizontal**
+Durante esos 4 segundos, el paquete avanzó hacia adelante.
+
+$$
+x = v_x \cdot t = 50 \cdot 4
+$$
+
+**Resultado:**
+
+$$
+\boxed{200\,\mathrm{m}}
+$$
+
+---
+
+### **Ejemplo 5: El Golpe de Golf (Ángulo Máximo)**
+
+Un golfista golpea la bola a **$40\,\mathrm{m/s}$** buscando la máxima distancia posible (usa $45^\circ$). ¿Cuán lejos llega?
+
+**Datos:**
+- $v_o = 40\,\mathrm{m/s}$
+- $\theta = 45^\circ$ ($\sin 45^\circ \approx 0.707$)
+
+**Paso 1: Componentes**
+Al ser $45^\circ$, $v_x$ y $v_y$ valen lo mismo.
+
+$$
+v_x = v_y = 40 \cdot 0.707 = 28.28\,\mathrm{m/s}
+$$
+
+**Paso 2: Tiempo de Vuelo**
+Sube con $28.28\,\mathrm{m/s}$. Tarda $2.8\,\mathrm{s}$ en subir y $2.8\,\mathrm{s}$ en bajar. Tiempo total $\approx 5.6\,\mathrm{s}$.
+
+$$
+t = \frac{2 \cdot 28.28}{10} = 5.656\,\mathrm{s}
+$$
+
+**Paso 3: Alcance**
+
+$$
+x = 28.28 \cdot 5.656
+$$
+
+**Resultado:**
+
+$$
+\boxed{160\,\mathrm{m}}
+$$
+(Redondeado)
+
+---
+
+
+## 📝 Ejercicios de Práctica
+
+### Ejercicio 1
+**Lanzas algo a $20\,\mathrm{m/s}$ con ángulo de $60^\circ$ ($\sin 60 = 0.87$). ¿Velocidad vertical inicial?**
 
 <details>
-<summary><strong>Ver solución</strong></summary>
-
-**Datos:** $v_0 = 40\,\mathrm{m/s}$, $\theta = 30°$.
-
-**Fórmula:** $v_x = v_0 \cdot \cos\theta$
+<summary>Ver solución</summary>
 
 **Cálculo:**
-$$v_x = 40 \cdot \cos(30°) = 40 \cdot 0.866 = 34.64\,\mathrm{m/s}$$
-
-> La velocidad horizontal es **34.64 m/s** y se mantiene constante.
-
-</details>
-
-### **Ejercicio 2**
-
-Se dispara una bala de cañón con $v_0 = 100\,\mathrm{m/s}$ a un ángulo de $53°$ ($\sin 53° \approx 0.8$). ¿Cuánto tiempo tarda en llegar al punto más alto?
-
-<details>
-<summary><strong>Ver solución</strong></summary>
-
-**Datos:** $v_0 = 100\,\mathrm{m/s}$, $\theta = 53°$, $g=10\,\mathrm{m/s^2}$.
-
-**1. Velocidad vertical inicial:**
-$$v_{yi} = 100 \cdot 0.8 = 80\,\mathrm{m/s}$$
-
-**2. Tiempo de subida:**
-$$t_{\text{subida}} = \frac{v_{yi}}{g} = \frac{80}{10} = 8\,\mathrm{s}$$
-
-> Tarda **8 segundos** en subir.
+$$v_y = 20 \cdot 0.87$$
+**Resultado:**
+$$\boxed{17.4\,\mathrm{m/s}}$$
 
 </details>
 
-### **Ejercicio 3**
-
-¿Cuál es el alcance horizontal de una piedra lanzada a $20\,\mathrm{m/s}$ con un ángulo de $45°$?
+### Ejercicio 2
+**Con los datos anteriores ($\cos 60 = 0.5$), ¿velocidad horizontal?**
 
 <details>
-<summary><strong>Ver solución</strong></summary>
-
-**Datos:** $v_0 = 20\,\mathrm{m/s}$, $\theta = 45°$, $g=10\,\mathrm{m/s^2}$.
-Sabemos que $\sin(2\theta) = \sin(90°) = 1$.
-
-**Fórmula de alcance:**
-$$x = \frac{v_0^2 \sin(2\theta)}{g}$$
+<summary>Ver solución</summary>
 
 **Cálculo:**
-$$x = \frac{20^2 \cdot 1}{10} = \frac{400}{10} = 40\,\mathrm{m}$$
-
-> El alcance es de **40 metros**.
+$$v_x = 20 \cdot 0.5$$
+**Resultado:**
+$$\boxed{10\,\mathrm{m/s}}$$
 
 </details>
 
----
-
-### **Ejercicio 4: Velocidad Vertical**
-
-Un proyectil se dispara a $30\,\mathrm{m/s}$ con un ángulo de $60°$. ¿Cuál es su velocidad vertical inicial? ($\sin 60° \approx 0.866$)
+### Ejercicio 3
+**Si $v_y = 30\,\mathrm{m/s}$, ¿cuánto tarda en llegar a la cima?**
 
 <details>
-<summary><strong>Ver solución</strong></summary>
+<summary>Ver solución</summary>
 
-**Datos:** $v_0 = 30\,\mathrm{m/s}$, $\theta = 60°$.
+**Razonamiento:**
+Gana/pierde 10 por segundo.
+**Resultado:**
+$$\boxed{3\,\mathrm{s}}$$
 
-**Fórmula:** $v_y = v_0 \cdot \sin\theta$
+</details>
 
+### Ejercicio 4
+**Un proyectil vuela por 6 segundos. Su $v_x$ es $40\,\mathrm{m/s}$. ¿Alcance?**
+
+<details>
+<summary>Ver solución</summary>
+
+**Fórmula:** $x = v_x \cdot t$.
 **Cálculo:**
-$$v_y = 30 \times 0.866 = 25.98 \approx 26\,\mathrm{m/s}$$
-
-> La velocidad vertical inicial es aproximadamente **26 m/s**.
-
-</details>
-
----
-
-### **Ejercicio 5: Tiempo de Vuelo en Ángulo de 30°**
-
-Se lanza un objeto con $v_0 = 40\,\mathrm{m/s}$ a un ángulo de $30°$. ¿Cuánto tiempo permanece en el aire?
-
-<details>
-<summary><strong>Ver solución</strong></summary>
-
-**Datos:** $v_0 = 40\,\mathrm{m/s}$, $\theta = 30°$, $\sin 30° = 0.5$.
-
-**Paso 1:** Calcular velocidad vertical:
-$$v_y = 40 \times 0.5 = 20\,\mathrm{m/s}$$
-
-**Paso 2:** Tiempo total de vuelo:
-$$t_{\text{total}} = \frac{2v_y}{g} = \frac{2(20)}{10} = 4\,\mathrm{s}$$
-
-> El objeto permanece **4 segundos** en el aire.
+$$x = 40 \cdot 6$$
+**Resultado:**
+$$\boxed{240\,\mathrm{m}}$$
 
 </details>
 
----
-
-### **Ejercicio 6: Comparación de Ángulos**
-
-¿Cuál ángulo produce mayor alcance: $30°$ o $60°$ si ambos se disparan con la misma velocidad inicial?
+### Ejercicio 5
+**¿Qué ángulo logra el mayor alcance posible?**
 
 <details>
-<summary><strong>Ver solución</strong></summary>
+<summary>Ver solución</summary>
 
-**Concepto:** El alcance depende de $\sin(2\theta)$.
-
-Para $30°$: $\sin(60°) = 0.866$
-Para $60°$: $\sin(120°) = 0.866$
-
-**Respuesta:** Ambos ángulos producen el **mismo alcance** porque $\sin(2 \times 30°) = \sin(2 \times 60°)$.
-
-> **Dato importante:** Los ángulos complementarios (30° y 60°) producen el mismo alcance.
+**Respuesta:**
+$$\boxed{45^\circ}$$
+Es el equilibrio perfecto entre avanzar y subir.
 
 </details>
 
----
-
-### **Ejercicio 7: Altura Máxima en Tiro Vertical**
-
-¿Cuál es la altura máxima de un proyectil lanzado a $50\,\mathrm{m/s}$ y $60°$? ($\sin 60° \approx 0.866$)
+### Ejercicio 6
+**Disparas horizontalmente desde un acantilado a $10\,\mathrm{m/s}$. ¿Cuál es su $v_y$ inicial?**
 
 <details>
-<summary><strong>Ver solución</strong></summary>
+<summary>Ver solución</summary>
 
-**Datos:** $v_0 = 50\,\mathrm{m/s}$, $\theta = 60°$, $g = 10\,\mathrm{m/s^2}$.
-
-**Paso 1:** Velocidad vertical:
-$$v_y = 50 \times 0.866 = 43.3\,\mathrm{m/s}$$
-
-**Paso 2:** Altura máxima:
-$$h_{\text{max}} = \frac{v_y^2}{2g} = \frac{(43.3)^2}{20} = \frac{1874.89}{20} \approx 93.7\,\mathrm{m}$$
-
-> La altura máxima es aproximadamente **93.7 metros**.
+**Razonamiento:**
+Al ser horizontal, no sube ni baja al inicio.
+**Resultado:**
+$$\boxed{0\,\mathrm{m/s}}$$
 
 </details>
 
----
-
-### **Ejercicio 8: Velocidad Horizontal Constante**
-
-En un tiro parabólico con $v_0 = 35\,\mathrm{m/s}$ y $\theta = 40°$, ¿cuál es la velocidad horizontal durante todo el vuelo? ($\cos 40° \approx 0.766$)
+### Ejercicio 7
+**Un balón es pateado. En el punto más alto, ¿su velocidad es cero?**
 
 <details>
-<summary><strong>Ver solución</strong></summary>
+<summary>Ver solución</summary>
 
-**Datos:** $v_0 = 35\,\mathrm{m/s}$, $\theta = 40°$.
+**Razonamiento:**
+No. Su velocidad vertical es cero, pero **sigue avanzando horizontalmente** con $v_x$.
+**Resultado:**
+**No.**
 
-**Fórmula:** $v_x = v_0 \cdot \cos\theta$
+</details>
 
+### Ejercicio 8
+**Calcula la altura máxima si $v_y = 20\,\mathrm{m/s}$.**
+
+<details>
+<summary>Ver solución</summary>
+
+**Fórmula:** $h = v_y^2 / 2g$.
 **Cálculo:**
-$$v_x = 35 \times 0.766 = 26.81\,\mathrm{m/s}$$
-
-**Concepto:** La velocidad horizontal es constante (no hay fricción).
-
-> La velocidad horizontal es **26.81 m/s** durante todo el vuelo.
+$$h = \frac{20^2}{20} = \frac{400}{20}$$
+**Resultado:**
+$$\boxed{20\,\mathrm{m}}$$
 
 </details>
 
----
-
-### **Ejercicio 9: Alcance en Tiro a Ángulo Pequeño**
-
-¿Cuál es el alcance de un proyectil lanzado a $25\,\mathrm{m/s}$ y $15°$? (Usa la fórmula de alcance)
+### Ejercicio 9
+**¿Dos proyectiles de distinta masa (sin aire) siguen la misma parábola si se lanzan igual?**
 
 <details>
-<summary><strong>Ver solución</strong></summary>
+<summary>Ver solución</summary>
 
-**Datos:** $v_0 = 25\,\mathrm{m/s}$, $\theta = 15°$, $\sin(30°) = 0.5$.
-
-**Fórmula:**
-$$x = \frac{v_0^2 \sin(2\theta)}{g}$$
-
-**Cálculo:**
-$$x = \frac{25^2 \times 0.5}{10} = \frac{625 \times 0.5}{10} = \frac{312.5}{10} = 31.25\,\mathrm{m}$$
-
-> El alcance es aproximadamente **31.25 metros**.
+**Respuesta:**
+**Sí.** La gravedad acelera a todos los objetos por igual.
 
 </details>
 
----
-
-### **Ejercicio 10: Análisis de Trayectoria**
-
-Un objeto se lanza a $v_0 = 20\,\mathrm{m/s}$ con $\theta = 45°$. ¿Cuál es su alcance máximo?
+### Ejercicio 10
+**Si $v_x = 10\,\mathrm{m/s}$ y $v_y = 10\,\mathrm{m/s}$ en un instante, ¿a qué velocidad real va?**
 
 <details>
-<summary><strong>Ver solución</strong></summary>
+<summary>Ver solución</summary>
 
-**Datos:** $v_0 = 20\,\mathrm{m/s}$, $\theta = 45°$, $\sin(90°) = 1$.
-
-**Fórmula:**
-$$x_{\text{max}} = \frac{v_0^2 \sin(2\theta)}{g} = \frac{v_0^2 \sin(90°)}{g} = \frac{v_0^2}{g}$$
-
-**Cálculo:**
-$$x_{\text{max}} = \frac{20^2}{10} = \frac{400}{10} = 40\,\mathrm{m}$$
-
-> El alcance máximo es **40 metros** (alcance óptimo con $45°$).
+**Razonamiento:**
+Pitágoras.
+$$v = \sqrt{10^2 + 10^2} = \sqrt{200}$$
+**Resultado:**
+$$\boxed{14.1\,\mathrm{m/s}}$$
 
 </details>
 
 ---
 
-## 🎓 **Resumen**
+## 🔑 Resumen
 
-![Resumen - Tiro parabólco](/images/fisica/cinematica/mrua/resumen-tiro-parabolico.png)
+![resumen-tiro-parabolico](https://cdn.ediprofe.com/img/fisica/tpbn-resumen-tiro-parabolico.webp)
 
-*   El **Movimiento Parabólico** combina **MRU** en horizontal y **Caída Libre** en vertical.
-*   Las componentes son independientes:
-    *   $x$ depende de $v_x = v_0 \cos\theta$ (constante).
-    *   $y$ depende de $v_y = v_0 \sin\theta - gt$ (variable).
-*   El **tiempo de vuelo** depende únicamente de la componente vertical de la velocidad.
-*   El **alcance máximo** se logra con un ángulo de **45°**.
-*   **Fórmulas Clave:**
-    *   $x = (v_0 \cos\theta) \cdot t$
-    *   $y = (v_0 \sin\theta) \cdot t - \frac{1}{2} g \cdot t^2$
 
+| Componente | Ecuación Clave | Comportamiento |
+|------------|----------------|----------------|
+| **V. Horizontal** | $$v_x = v_o \cos\theta$$ | Nunca cambia. |
+| **V. Vertical** | $$v_y = v_o \sin\theta$$ | Cambia con la gravedad (sube y baja). |
+| **Alcance** | $$x = v_x \cdot t_{total}$$ | Depende del tiempo de vuelo. |
+| **Tiempo** | $$t_{total} = \frac{2 v_y}{g}$$ | Determinado por la altura y gravedad. |
+
+> Todo tiro parabólico es simplemente una caída libre que "se mueve hacia el lado".

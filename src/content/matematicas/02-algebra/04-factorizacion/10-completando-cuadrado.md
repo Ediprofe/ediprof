@@ -38,9 +38,24 @@ Completa el cuadrado: $x^2 + 6x$
 - Coeficiente de $x$: $b = 6$
 
 **Razonamiento:**
-1. Mitad de 6: $\frac{6}{2} = 3$.
-2. Al cuadrado: $3^2 = 9$.
-3. Sumamos y restamos: $x^2 + 6x + 9 - 9$.
+
+1. Mitad de 6: 
+
+$$
+\frac{6}{2} = 3
+$$
+
+2. Al cuadrado: 
+
+$$
+3^2 = 9
+$$
+
+3. Sumamos y restamos: 
+
+$$
+x^2 + 6x + 9 - 9
+$$
 
 **Resultado:** $\boxed{(x + 3)^2 - 9}$
 
@@ -54,9 +69,24 @@ Completa el cuadrado: $x^2 - 8x$
 - Coeficiente de $x$: $b = -8$
 
 **Razonamiento:**
-1. Mitad de -8: $\frac{-8}{2} = -4$.
-2. Al cuadrado: $(-4)^2 = 16$.
-3. El resultado: $(x - 4)^2 - 16$.
+
+1. Mitad de -8: 
+
+$$
+\frac{-8}{2} = -4
+$$
+
+2. Al cuadrado: 
+
+$$
+(-4)^2 = 16
+$$
+
+3. El resultado: 
+
+$$
+(x - 4)^2 - 16
+$$
 
 **Resultado:** $\boxed{(x - 4)^2 - 16}$
 
@@ -70,8 +100,18 @@ Escribe en forma de cuadrado: $x^2 + 6x + 5$
 - Ya sabemos que $x^2 + 6x = (x + 3)^2 - 9$.
 
 **Razonamiento:**
-1. Completamos: $(x + 3)^2 - 9$.
-2. Sumamos la constante: $(x + 3)^2 - 9 + 5 = (x + 3)^2 - 4$.
+
+1. Completamos: 
+
+$$
+(x + 3)^2 - 9
+$$
+
+2. Sumamos la constante: 
+
+$$
+(x + 3)^2 - 9 + 5 = (x + 3)^2 - 4
+$$
 
 **Resultado:** $\boxed{(x + 3)^2 - 4}$
 
@@ -85,9 +125,24 @@ Factoriza: $x^2 + 6x + 5$
 - Del ejemplo anterior: $(x + 3)^2 - 4$.
 
 **Razonamiento:**
-1. Reconocemos diferencia de cuadrados: $(x + 3)^2 - 2^2$.
-2. Factorizamos: $[(x + 3) + 2][(x + 3) - 2]$.
-3. Simplificamos: $(x + 5)(x + 1)$.
+
+1. Reconocemos diferencia de cuadrados: 
+
+$$
+(x + 3)^2 - 2^2
+$$
+
+2. Factorizamos: 
+
+$$
+[(x + 3) + 2][(x + 3) - 2]
+$$
+
+3. Simplificamos: 
+
+$$
+(x + 5)(x + 1)
+$$
 
 **Resultado:** $\boxed{(x + 5)(x + 1)}$
 
@@ -101,10 +156,29 @@ Resuelve: $x^2 - 4x - 5 = 0$
 - Primero completamos el cuadrado.
 
 **Razonamiento:**
-1. $x^2 - 4x = (x - 2)^2 - 4$.
-2. Entonces: $(x - 2)^2 - 4 - 5 = 0 \Rightarrow (x - 2)^2 = 9$.
-3. Sacamos raíz: $x - 2 = \pm 3$.
-4. Despejamos: $x = 2 + 3 = 5$ o $x = 2 - 3 = -1$.
+
+1. 
+$$
+x^2 - 4x = (x - 2)^2 - 4
+$$
+
+2. Entonces: 
+
+$$
+(x - 2)^2 - 4 - 5 = 0 \Rightarrow (x - 2)^2 = 9
+$$
+
+3. Sacamos raíz: 
+
+$$
+x - 2 = \pm 3
+$$
+
+4. Despejamos: 
+
+$$
+x = 2 + 3 = 5 \quad \text{o} \quad x = 2 - 3 = -1
+$$
 
 **Resultado:** $\boxed{x = 5 \text{ o } x = -1}$
 
@@ -119,7 +193,12 @@ Completa el cuadrado: $x^2 + 4x$
 <summary>Ver solución</summary>
 
 **Datos:** Mitad de 4 es 2. Al cuadrado: 4.
-**Razonamiento:** $x^2 + 4x + 4 - 4 = (x + 2)^2 - 4$
+**Razonamiento:** 
+
+$$
+x^2 + 4x + 4 - 4 = (x + 2)^2 - 4
+$$
+
 **Resultado:** $\boxed{(x + 2)^2 - 4}$
 
 </details>
@@ -131,7 +210,12 @@ Completa el cuadrado: $x^2 - 10x$
 <summary>Ver solución</summary>
 
 **Datos:** Mitad de -10 es -5. Al cuadrado: 25.
-**Razonamiento:** $(x - 5)^2 - 25$
+**Razonamiento:** 
+
+$$
+(x - 5)^2 - 25
+$$
+
 **Resultado:** $\boxed{(x - 5)^2 - 25}$
 
 </details>
@@ -143,7 +227,12 @@ Escribe en forma de cuadrado: $x^2 + 8x + 12$
 <summary>Ver solución</summary>
 
 **Datos:** $x^2 + 8x = (x + 4)^2 - 16$
-**Razonamiento:** $(x + 4)^2 - 16 + 12 = (x + 4)^2 - 4$
+**Razonamiento:** 
+
+$$
+(x + 4)^2 - 16 + 12 = (x + 4)^2 - 4
+$$
+
 **Resultado:** $\boxed{(x + 4)^2 - 4}$
 
 </details>
@@ -155,7 +244,12 @@ Escribe en forma de cuadrado: $x^2 - 6x + 2$
 <summary>Ver solución</summary>
 
 **Datos:** $x^2 - 6x = (x - 3)^2 - 9$
-**Razonamiento:** $(x - 3)^2 - 9 + 2 = (x - 3)^2 - 7$
+**Razonamiento:** 
+
+$$
+(x - 3)^2 - 9 + 2 = (x - 3)^2 - 7
+$$
+
 **Resultado:** $\boxed{(x - 3)^2 - 7}$
 
 </details>
@@ -167,7 +261,14 @@ Factoriza completando el cuadrado: $x^2 + 2x - 3$
 <summary>Ver solución</summary>
 
 **Datos:** $(x + 1)^2 - 1 - 3 = (x + 1)^2 - 4$
-**Razonamiento:** Diferencia de cuadrados: $(x + 3)(x - 1)$
+**Razonamiento:** 
+
+Diferencia de cuadrados: 
+
+$$
+(x + 3)(x - 1)
+$$
+
 **Resultado:** $\boxed{(x + 3)(x - 1)}$
 
 </details>
@@ -179,7 +280,14 @@ Factoriza: $x^2 - 8x + 15$
 <summary>Ver solución</summary>
 
 **Datos:** $(x - 4)^2 - 16 + 15 = (x - 4)^2 - 1$
-**Razonamiento:** Diferencia de cuadrados: $(x - 5)(x - 3)$
+**Razonamiento:** 
+
+Diferencia de cuadrados: 
+
+$$
+(x - 5)(x - 3)
+$$
+
 **Resultado:** $\boxed{(x - 5)(x - 3)}$
 
 </details>
@@ -191,7 +299,12 @@ Factoriza: $x^2 + 10x + 9$
 <summary>Ver solución</summary>
 
 **Datos:** $(x + 5)^2 - 25 + 9 = (x + 5)^2 - 16$
-**Razonamiento:** $(x + 9)(x + 1)$
+**Razonamiento:** 
+
+$$
+(x + 9)(x + 1)
+$$
+
 **Resultado:** $\boxed{(x + 9)(x + 1)}$
 
 </details>
@@ -203,7 +316,12 @@ Resuelve: $x^2 + 4x - 5 = 0$
 <summary>Ver solución</summary>
 
 **Datos:** $(x + 2)^2 - 4 - 5 = 0 \Rightarrow (x + 2)^2 = 9$
-**Razonamiento:** $x + 2 = \pm 3 \Rightarrow x = 1$ o $x = -5$
+**Razonamiento:** 
+
+$$
+x + 2 = \pm 3 \Rightarrow x = 1 \quad \text{o} \quad x = -5
+$$
+
 **Resultado:** $\boxed{x = 1 \text{ o } x = -5}$
 
 </details>
@@ -215,7 +333,12 @@ Resuelve: $x^2 - 6x + 5 = 0$
 <summary>Ver solución</summary>
 
 **Datos:** $(x - 3)^2 - 9 + 5 = 0 \Rightarrow (x - 3)^2 = 4$
-**Razonamiento:** $x - 3 = \pm 2 \Rightarrow x = 5$ o $x = 1$
+**Razonamiento:** 
+
+$$
+x - 3 = \pm 2 \Rightarrow x = 5 \quad \text{o} \quad x = 1
+$$
+
 **Resultado:** $\boxed{x = 5 \text{ o } x = 1}$
 
 </details>
@@ -227,7 +350,20 @@ Completa el cuadrado con coeficiente: $2x^2 + 8x - 10$
 <summary>Ver solución</summary>
 
 **Datos:** Sacamos factor 2: $2(x^2 + 4x - 5)$
-**Razonamiento:** Adentro: $(x + 2)^2 - 9$. Total: $2[(x + 2)^2 - 9] = 2(x + 2)^2 - 18$
+**Razonamiento:** 
+
+Adentro: 
+
+$$
+(x + 2)^2 - 9
+$$
+
+Total: 
+
+$$
+2[(x + 2)^2 - 9] = 2(x + 2)^2 - 18
+$$
+
 **Resultado:** $\boxed{2(x + 2)^2 - 18}$
 
 </details>

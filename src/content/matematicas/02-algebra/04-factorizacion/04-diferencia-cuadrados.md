@@ -59,8 +59,21 @@ Un error muy común es intentar factorizar $x^2 + 25$ como $(x+5)(x-5)$.
 Factoriza: $9a^2 - 25$
 
 **Razonamiento:**
-1. Raíz de $9a^2$: $\sqrt{9} = 3$ y $\sqrt{a^2} = a$. Raíz total = $3a$.
-2. Raíz de $25$: $\sqrt{25} = 5$.
+
+1. Raíz de $9a^2$: 
+
+$$
+\sqrt{9} = 3 \quad \text{y} \quad \sqrt{a^2} = a
+$$
+
+Raíz total = $3a$.
+
+2. Raíz de $25$: 
+
+$$
+\sqrt{25} = 5
+$$
+
 3. Aplicamos la regla: un paréntesis suma y otro resta.
 
 **Resultado:** $\boxed{(3a + 5)(3a - 5)}$
@@ -72,9 +85,23 @@ Factoriza: $9a^2 - 25$
 Factoriza completamente: $x^4 - 1$
 
 **Razonamiento:**
-1. Primera vuelta: Las raíces son $x^2$ y $1$. Resultado: $(x^2 + 1)(x^2 - 1)$.
+
+1. Primera vuelta: Las raíces son $x^2$ y $1$. 
+
+Resultado: 
+
+$$
+(x^2 + 1)(x^2 - 1)
+$$
+
 2. Analizamos: El bloque $(x^2 - 1)$ ¡vuelve a ser una diferencia de cuadrados!
-3. Segunda vuelta: $(x^2 - 1)$ se convierte en $(x + 1)(x - 1)$.
+
+3. Segunda vuelta: $(x^2 - 1)$ se convierte en:
+
+$$
+(x + 1)(x - 1)
+$$
+
 4. El bloque $(x^2 + 1)$ se queda igual porque es una suma.
 
 **Resultado:** $\boxed{(x^2 + 1)(x + 1)(x - 1)}$
@@ -86,9 +113,28 @@ Factoriza completamente: $x^4 - 1$
 Factoriza: $100a^2 - 49b^2c^4$
 
 **Razonamiento:**
-1. Raíz de $100a^2$: $\sqrt{100}=10$ y $\sqrt{a^2}=a$. Raíz total: $10a$.
-2. Raíz de $49b^2c^4$: $\sqrt{49}=7$, $\sqrt{b^2}=b$, $\sqrt{c^4}=c^2$. Raíz total: $7bc^2$.
-3. Aplicamos la regla: $(10a + 7bc^2)(10a - 7bc^2)$.
+
+1. Raíz de $100a^2$: 
+
+$$
+\sqrt{100}=10 \quad \text{y} \quad \sqrt{a^2}=a
+$$
+
+Raíz total: $10a$.
+
+2. Raíz de $49b^2c^4$: 
+
+$$
+\sqrt{49}=7, \quad \sqrt{b^2}=b, \quad \sqrt{c^4}=c^2
+$$
+
+Raíz total: $7bc^2$.
+
+3. Aplicamos la regla: 
+
+$$
+(10a + 7bc^2)(10a - 7bc^2)
+$$
 
 **Resultado:** $\boxed{(10a + 7bc^2)(10a - 7bc^2)}$
 
@@ -99,9 +145,20 @@ Factoriza: $100a^2 - 49b^2c^4$
 Factoriza: $2x^3 - 50x$
 
 **Razonamiento:**
-1. **Paso 1:** Notamos que hay un factor común $2x$. Lo extraemos: $2x(x^2 - 25)$.
+
+1. **Paso 1:** Notamos que hay un factor común $2x$. Lo extraemos: 
+
+$$
+2x(x^2 - 25)
+$$
+
 2. **Paso 2:** El bloque $(x^2 - 25)$ es una diferencia de cuadrados. Raíces: $x$ y $5$.
-3. Escribimos todo junto: $2x(x+5)(x-5)$.
+
+3. Escribimos todo junto: 
+
+$$
+2x(x+5)(x-5)
+$$
 
 **Resultado:** $\boxed{2x(x + 5)(x - 5)}$
 
@@ -112,8 +169,19 @@ Factoriza: $2x^3 - 50x$
 Factoriza: $\frac{1}{64} - \frac{y^2}{49}$
 
 **Razonamiento:**
-1. Raíz del primer término: $\sqrt{1/64} = 1/8$.
-2. Raíz del segundo término: $\sqrt{y^2/49} = y/7$.
+
+1. Raíz del primer término: 
+
+$$
+\sqrt{1/64} = 1/8
+$$
+
+2. Raíz del segundo término: 
+
+$$
+\sqrt{y^2/49} = y/7
+$$
+
 3. Aplicamos binomios conjugados.
 
 **Resultado:** $\boxed{(\frac{1}{8} + \frac{y}{7})(\frac{1}{8} - \frac{y}{7})}$
@@ -128,7 +196,14 @@ Identifica la raíz cuadrada de $49x^2$.
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** Sacamos la raíz del número y de la letra. $\sqrt{49} = 7$ y $\sqrt{x^2} = x$.
+**Razonamiento:** 
+
+Sacamos la raíz del número y de la letra: 
+
+$$
+\sqrt{49} = 7 \quad \text{y} \quad \sqrt{x^2} = x
+$$
+
 **Resultado:** $\boxed{7x}$
 
 </details>
@@ -140,7 +215,14 @@ Factoriza: $m^2 - 36$.
 <summary>Ver solución</summary>
 
 **Datos:** Raíces son $m$ y $6$.
-**Razonamiento:** Colocamos las raíces en suma y resta.
+**Razonamiento:** 
+
+Colocamos las raíces en suma y resta:
+
+$$
+(m + 6)(m - 6)
+$$
+
 **Resultado:** $\boxed{(m + 6)(m - 6)}$
 
 </details>
@@ -163,7 +245,14 @@ Resuelve: $4a^2 - 81b^2$.
 <summary>Ver solución</summary>
 
 **Datos:** Raíz del primero $2a$, raíz del segundo $9b$.
-**Razonamiento:** Aplicamos la fórmula $(2a+9b)(2a-9b)$.
+**Razonamiento:** 
+
+Aplicamos la fórmula: 
+
+$$
+(2a+9b)(2a-9b)
+$$
+
 **Resultado:** $\boxed{(2a + 9b)(2a - 9b)}$
 
 </details>
@@ -174,7 +263,14 @@ Factoriza: $1 - x^2$.
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** La raíz de 1 es 1. La raíz de $x^2$ es $x$.
+**Razonamiento:** 
+
+La raíz de 1 es 1. La raíz de $x^2$ es $x$:
+
+$$
+(1 + x)(1 - x)
+$$
+
 **Resultado:** $\boxed{(1 + x)(1 - x)}$
 
 </details>
@@ -185,7 +281,14 @@ Factoriza: $x^6 - y^6$.
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** Dividimos los exponentes entre 2 para hallar la raíz: $x^3, y^3$.
+**Razonamiento:** 
+
+Dividimos los exponentes entre 2 para hallar la raíz: 
+
+$$
+x^3, \quad y^3
+$$
+
 **Resultado:** $\boxed{(x^3 + y^3)(x^3 - y^3)}$
 
 </details>
@@ -196,7 +299,14 @@ Factoriza: $\frac{x^2}{4} - 9$.
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** Raíz de la fracción: $\frac{x}{2}$. Raíz de 9: 3.
+**Razonamiento:** 
+
+Raíz de la fracción: $\frac{x}{2}$. Raíz de 9: 3.
+
+$$
+(\frac{x}{2} + 3)(\frac{x}{2} - 3)
+$$
+
 **Resultado:** $\boxed{(\frac{x}{2} + 3)(\frac{x}{2} - 3)}$
 
 </details>
@@ -207,7 +317,14 @@ Factoriza: $100 - m^4$.
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** Raíz de 100 es 10. Raíz de $m^4$ es $m^2$.
+**Razonamiento:** 
+
+Raíz de 100 es 10. Raíz de $m^4$ es $m^2$.
+
+$$
+(10 + m^2)(10 - m^2)
+$$
+
 **Resultado:** $\boxed{(10 + m^2)(10 - m^2)}$
 
 </details>
@@ -218,7 +335,14 @@ Resuelve: $25x^2 - 1$.
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** Raíces: $5x$ y $1$.
+**Razonamiento:** 
+
+Raíces: $5x$ y $1$.
+
+$$
+(5x + 1)(5x - 1)
+$$
+
 **Resultado:** $\boxed{(5x + 1)(5x - 1)}$
 
 </details>
@@ -229,7 +353,16 @@ Simplifica usando factorización: $\frac{x^2 - 4}{x + 2}$.
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** Factorizamos arriba: $(x+2)(x-2)$. Tachamos el $(x+2)$ con el de abajo.
+**Razonamiento:** 
+
+Factorizamos arriba: 
+
+$$
+(x+2)(x-2)
+$$
+
+Tachamos el $(x+2)$ con el de abajo.
+
 **Resultado:** $\boxed{x - 2}$
 
 </details>

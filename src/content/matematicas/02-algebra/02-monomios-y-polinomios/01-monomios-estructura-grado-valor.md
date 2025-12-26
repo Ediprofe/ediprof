@@ -17,7 +17,13 @@
 
 Un monomio es la expresión más simple del álgebra. Es un solo término donde los números y las letras están "pegados" por una multiplicación.
 
-Imagina que $x$ representa el precio de una manzana. Si compras 5 manzanas, lo escribes como $5x$. ¡Eso es un monomio!
+Imagina que $x$ representa el precio de una manzana. Si compras 5 manzanas, lo escribes como:
+
+$$
+5x
+$$
+
+¡Eso es un monomio!
 
 $$
 5x \quad, \quad -3a^2 \quad, \quad \frac{1}{2}xy
@@ -41,7 +47,13 @@ Para entender un monomio, debemos ver qué hay dentro. Todo monomio completo tie
 - **Coeficiente:** El número $7$.
 - **Parte Literal:** La letra $x$ elevada a la $3$.
 
-Si ves un monomio como $x^2$, recuerda que su signo es $+$ y su coeficiente es $1$ (aunque no se escriban, ¡ahí están!).
+Si ves un monomio como:
+
+$$
+x^2
+$$
+
+Recuerda que su signo es $+$ y su coeficiente es $1$ (aunque no se escriban, ¡ahí están!).
 
 
 ---
@@ -53,7 +65,13 @@ El grado es como la "jerarquía" o el nivel de complejidad de un monomio. Existe
 ### **1. Grado Absoluto (El total)**
 Es simplemente la suma de todos los exponentes de las letras.
 - En $5x^4$, el grado es $\boxed{4}$.
-- En $3x^2y^3$, sumamos $2 + 3$, por lo que el grado es $\boxed{5}$.
+- En $3x^2y^3$, sumamos los exponentes:
+
+$$
+2 + 3 = 5
+$$
+
+Por lo que el grado es $\boxed{5}$.
 
 ### **2. Grado Relativo (Respecto a una letra)**
 Es el exponente de una letra en específico.
@@ -74,6 +92,7 @@ Calcula el valor de $4x^2$ si $x = 3$.
 3. Al final multiplicamos por el coeficiente $4$.
 
 **Cálculo:**
+
 $$
 4 \cdot (3)^2 = 4 \cdot 9 = 36
 $$
@@ -104,6 +123,7 @@ Determina el grado absoluto de $-2a^3b^2c$.
 **Razonamiento:** Sumamos todos los exponentes de la parte literal.
 
 **Cálculo:**
+
 $$
 3 + 2 + 1 = 6
 $$
@@ -115,13 +135,18 @@ $$
 ### **Ejemplo 2: Valor numérico con negativos**
 Calcula $-3xy^2$ si $x = 2$ e $y = -1$.
 
-**Datos:** $x=2, y=-1$.
+**Datos:**
+- $x=2$
+- $y=-1$
+
 **Razonamiento:** Al elevar un número negativo al cuadrado, el resultado es positivo: $(-1)^2 = 1$.
 
 **Cálculo:**
+
 $$
 -3 \cdot (2) \cdot (-1)^2
 $$
+
 $$
 -3 \cdot 2 \cdot 1 = -6
 $$
@@ -140,8 +165,12 @@ Identifica el coeficiente de: $-5x^2y$.
 <details>
 <summary>Ver solución</summary>
 
-**Datos:** El monomio es $-5x^2y$.
-**Razonamiento:** El coeficiente es el número que acompaña a las letras, incluyendo su signo.
+**Datos:**
+El monomio es $-5x^2y$.
+
+**Razonamiento:**
+El coeficiente es el número que acompaña a las letras, incluyendo su signo.
+
 **Resultado:** $\boxed{-5}$
 
 </details>
@@ -152,8 +181,12 @@ Identifica el coeficiente de: $-5x^2y$.
 <details>
 <summary>Ver solución</summary>
 
-**Datos:** El monomio es $8abc^3$.
-**Razonamiento:** La parte literal son todas las letras con sus exponentes.
+**Datos:**
+El monomio es $8abc^3$.
+
+**Razonamiento:**
+La parte literal son todas las letras con sus exponentes.
+
 **Resultado:** $\boxed{abc^3}$
 
 </details>
@@ -164,8 +197,16 @@ Calcula el grado absoluto de $7x^4y^2z$.
 <details>
 <summary>Ver solución</summary>
 
-**Datos:** Exponentes: $x \to 4, y \to 2, z \to 1$.
-**Razonamiento:** Sumamos todos los exponentes: $4 + 2 + 1$.
+**Datos:**
+Exponentes: $x \to 4, y \to 2, z \to 1$.
+
+**Razonamiento:**
+Sumamos todos los exponentes:
+
+$$
+4 + 2 + 1
+$$
+
 **Resultado:** $\boxed{7}$
 
 </details>
@@ -176,8 +217,12 @@ Determina el grado relativo respecto a la variable $y$ en: $10x^3y^5$.
 <details>
 <summary>Ver solución</summary>
 
-**Datos:** El monomio es $10x^3y^5$.
-**Razonamiento:** Buscamos específicamente el exponente de la letra $y$.
+**Datos:**
+El monomio es $10x^3y^5$.
+
+**Razonamiento:**
+Buscamos específicamente el exponente de la letra $y$.
+
 **Resultado:** $\boxed{5}$
 
 </details>
@@ -188,8 +233,16 @@ Calcula el valor numérico de $5x$ cuando $x = -4$.
 <details>
 <summary>Ver solución</summary>
 
-**Datos:** Coeficiente $5$, variable $x = -4$.
-**Razonamiento:** Multiplicamos el número por el valor dado: $5 \cdot (-4)$.
+**Datos:**
+Coeficiente $5$, variable $x = -4$.
+
+**Razonamiento:**
+Multiplicamos el número por el valor dado:
+
+$$
+5 \cdot (-4)
+$$
+
 **Resultado:** $\boxed{-20}$
 
 </details>
@@ -200,8 +253,16 @@ Calcula el valor numérico de $x^2y$ si $x = 3$ e $y = 2$.
 <details>
 <summary>Ver solución</summary>
 
-**Datos:** $x=3, y=2$.
-**Razonamiento:** Sustituimos y resolvemos la potencia primero: $(3)^2 \cdot 2$.
+**Datos:**
+$x=3, y=2$.
+
+**Razonamiento:**
+Sustituimos y resolvemos la potencia primero:
+
+$$
+(3)^2 \cdot 2
+$$
+
 **Resultado:** $9 \cdot 2 = \boxed{18}$
 
 </details>
@@ -212,8 +273,12 @@ Calcula el valor numérico de $x^2y$ si $x = 3$ e $y = 2$.
 <details>
 <summary>Ver solución</summary>
 
-**Datos:** El número es $9$.
-**Razonamiento:** Como no tiene letras, no hay exponentes que sumar.
+**Datos:**
+El número es $9$.
+
+**Razonamiento:**
+Como no tiene letras, no hay exponentes que sumar.
+
 **Resultado:** $\boxed{0}$
 
 </details>
@@ -224,8 +289,12 @@ Si el monomio es $-ab$, ¿cuál es su coeficiente?
 <details>
 <summary>Ver solución</summary>
 
-**Datos:** Monomio $-ab$.
-**Razonamiento:** El signo $-$ indica que hay un $1$ negativo invisible multiplicando.
+**Datos:**
+Monomio $-ab$.
+
+**Razonamiento:**
+El signo $-$ indica que hay un $1$ negativo invisible multiplicando.
+
 **Resultado:** $\boxed{-1}$
 
 </details>
@@ -236,8 +305,21 @@ Halla el valor de $\frac{1}{2}x^2$ cuando $x = 6$.
 <details>
 <summary>Ver solución</summary>
 
-**Datos:** Fracción $1/2$ y valor $x=6$.
-**Razonamiento:** $(6)^2 = 36$. Luego calculamos la mitad: $36 / 2$.
+**Datos:**
+Fracción $1/2$ y valor $x=6$.
+
+**Razonamiento:**
+
+$$
+(6)^2 = 36
+$$
+
+Luego calculamos la mitad:
+
+$$
+36 / 2
+$$
+
 **Resultado:** $\boxed{18}$
 
 </details>
@@ -248,8 +330,16 @@ Suma los grados relativos de $x$ y $z$ en el monomio $4x^2yz^5$.
 <details>
 <summary>Ver solución</summary>
 
-**Datos:** Grado de $x$ es $2$, grado de $z$ es $5$.
-**Razonamiento:** Sumamos específicamente esos dos valores: $2 + 5$.
+**Datos:**
+Grado de $x$ es $2$, grado de $z$ es $5$.
+
+**Razonamiento:**
+Sumamos específicamente esos dos valores:
+
+$$
+2 + 5
+$$
+
 **Resultado:** $\boxed{7}$
 
 </details>

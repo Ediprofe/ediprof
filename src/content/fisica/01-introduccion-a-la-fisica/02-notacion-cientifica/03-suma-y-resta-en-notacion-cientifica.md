@@ -113,10 +113,24 @@ $$
 <details>
 <summary>Ver solución</summary>
 
-Igualamos exponentes: $2.3 \times 10^5 = 0.23 \times 10^6$
+**Razonamiento:**
+
+Igualamos exponentes:
+
+$$
+2.3 \times 10^5 = 0.23 \times 10^6
+$$
+
+Realizamos la suma:
 
 $$
 5.4 \times 10^6 + 0.23 \times 10^6 = 5.63 \times 10^6
+$$
+
+**Resultado:**
+
+$$
+\boxed{5.63 \times 10^6}
 $$
 
 </details>
@@ -133,10 +147,18 @@ $$
 <details>
 <summary>Ver solución</summary>
 
+**Razonamiento:**
+
 Los exponentes ya son iguales:
 
 $$
 (7.5 - 3.2) \times 10^4 = 4.3 \times 10^4
+$$
+
+**Resultado:**
+
+$$
+\boxed{4.3 \times 10^4}
 $$
 
 </details>
@@ -153,10 +175,24 @@ $$
 <details>
 <summary>Ver solución</summary>
 
-Igualamos exponentes: $8.0 \times 10^{-6} = 0.80 \times 10^{-5}$
+**Razonamiento:**
+
+Igualamos exponentes:
+
+$$
+8.0 \times 10^{-6} = 0.80 \times 10^{-5}
+$$
+
+Realizamos la suma:
 
 $$
 1.2 \times 10^{-5} + 0.80 \times 10^{-5} = 2.0 \times 10^{-5}
+$$
+
+**Resultado:**
+
+$$
+\boxed{2.0 \times 10^{-5}}
 $$
 
 </details>

@@ -282,4 +282,4 @@ $$
 - **Velocidad ($\vec{v}$):** Magnitud vectorial. Relaciona el **desplazamiento** con el tiempo. Indica qué tan rápido se cambia de posición y en qué dirección.
 - En un viaje de ida y vuelta al mismo punto, la **velocidad media es cero**, pero la rapidez media es positiva.
 
-![alt text](/images/fisica/cinematica/escalares-y-vectores/mapa-rapidez-y-velocidad.png)
+![resumen-rapidez-velocidad](https://cdn.ediprofe.com/img/fisica/oszg-resumen-rapidez-velocidad.webp)

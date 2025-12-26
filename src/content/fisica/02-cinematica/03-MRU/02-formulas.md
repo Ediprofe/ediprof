@@ -1,177 +1,388 @@
-# 📐 **Fórmulas del Movimiento Rectilíneo Uniforme (MRU)**
+# **Fórmulas del MRU**
 
-El MRU se rige por una relación matemática simple pero poderosa entre tres variables: posición, velocidad y tiempo. Dominar estas fórmulas es el primer paso para resolver problemas de cinemática.
+Cuando algo se mueve con velocidad constante, las matemáticas se vuelven muy sencillas. Solo necesitas manejar tres conceptos clave: dónde está, qué tan rápido va y cuánto tiempo ha pasado.
 
 ---
 
 ## 🎯 ¿Qué vas a aprender?
 
-- Las tres fórmulas fundamentales del MRU.
-- La diferencia entre desplazamiento ($x$) y cambio de posición ($\Delta x$).
-- Cómo resolver problemas paso a paso identificando los datos.
-- Cómo aplicar estas fórmulas en situaciones reales (trenes, atletas, sonido).
+- La fórmula maestra que conecta posición, velocidad y tiempo.
+- Cómo despejar esta fórmula para encontrar cualquier dato que te falte.
+- Cómo manejar la "Posición Inicial" cuando no empiezas desde cero.
+- Cómo resolver problemas de encuentro y persecución.
 
 ---
 
-## 🧮 **Las Fórmulas Maestras**
+## 📐 **La Ecuación Fundamental**
 
-Para describir matemáticamente el movimiento, usaremos la letra **$x$** para representar el **Desplazamiento** o **Posición**.
+En el Movimiento Rectilíneo Uniforme, todo se reduce a una sola lógica: **La distancia crece uniformemente con el tiempo**.
 
-### **1. El Caso Simple (Partiendo de Cero)**
+La fórmula base es:
 
-Imaginemos la situación más común: encendemos el cronómetro justo cuando el objeto arranca desde el punto de inicio ($0$).
+$$
+x = v \cdot t
+$$
 
-| Magnitud | Fórmula | ¿Cuándo usarla? |
+Donde:
+- **$x$**: Distancia o Desplazamiento ($\mathrm{m}, \mathrm{km}$)
+- **$v$**: Velocidad constante ($\mathrm{m/s}, \mathrm{km/h}$)
+- **$t$**: Tiempo transcurrido ($\mathrm{s}, \mathrm{h}$)
+
+> **Nota:** Esta fórmula asume que partes del origen ($0$).
+
+---
+
+## 🔄 **El Triángulo del Despeje**
+
+Dependiendo de qué dato tengas y cuál busques, puedes reorganizar la fórmula. Una técnica visual muy útil es el **Triángulo de Fórmulas**:
+
+1. Tapas la letra que buscas.
+2. Las letras restantes te indican la operación matemática.
+
+![despeje-mru](https://cdn.ediprofe.com/img/fisica/llj9-despeje-mru.webp)
+
+
+| ¿Qué buscas? | Fórmula | Lógica |
 | :--- | :--- | :--- |
-| **Desplazamiento** | $$x = v \cdot t$$ | Cuando buscas qué distancia recorrió. |
-| **Velocidad** | $$v = \frac{x}{t}$$ | Cuando buscas qué tan rápido iba. |
-| **Tiempo** | $$t = \frac{x}{v}$$ | Cuando buscas cuánto tardó. |
-
-> **Nota:** Estas fórmulas asumen que el objeto parte desde el origen ($x_i = 0$).
+| **Distancia ($x$)** | $$x = v \cdot t$$ | Velocidad por Tiempo |
+| **Velocidad ($v$)** | $$v = \frac{x}{t}$$ | Distancia entre Tiempo |
+| **Tiempo ($t$)** | $$t = \frac{x}{v}$$ | Distancia entre Velocidad |
 
 ---
 
-### **2. El Caso General (Con Posición Inicial)**
+## ⚙️ **El Caso General: Posición Inicial ($x_i$)**
 
-En la realidad, no siempre empezamos a contar desde cero. A veces el objeto ya se encuentra en una **Posición Inicial ($x_i$)** y termina en una **Posición Final ($x_f$)**.
+En la vida real, no siempre empezamos a contar desde la línea de partida. A veces el objeto ya está adelantado.
 
-El desplazamiento real es la diferencia: $\Delta x = x_f - x_i$.
-
-La ecuación de posición evoluciona a:
+Para saber la **Posición Final ($x_f$)**, tomamos la posición donde empezamos y le sumamos lo que recorrimos:
 
 $$
 x_f = x_i + v \cdot t
 $$
 
-**Donde:**
-* $x_f$: **Posición Final** (Ubicación de llegada).
-* $x_i$: **Posición Inicial** (Ubicación de partida).
-* $v \cdot t$: **Desplazamiento** (Lo que recorrió).
+- **$x_f$**: Posición Final (¿Dónde terminó?)
+- **$x_i$**: Posición Inicial (¿Dónde empezó?)
+- **$v \cdot t$**: Lo que avanzó.
 
 ---
 
 ## ⚙️ **Ejemplos Resueltos**
 
-### **Ejemplo 1: Hallar la Velocidad**
+### **Ejemplo 1: Cálculo de Tiempo**
 
-Un atleta corre un desplazamiento de $100\,\mathrm{m}$ partiendo desde la línea de salida. Si tarda $10\,\mathrm{s}$ en llegar a la meta, ¿cuál fue su velocidad?
+Un sonido viaja por el agua a **$1500\,\mathrm{m/s}$**. ¿Cuánto tarda en recorrer **3000 metros**?
 
-**1. Identifica los datos:**
-* $x = 100\,\mathrm{m}$
-* $t = 10\,\mathrm{s}$
-* $v = ?$
+**Datos:**
+- Velocidad ($v$) = $1500\,\mathrm{m/s}$
+- Distancia ($x$) = $3000\,\mathrm{m}$
+- Tiempo ($t$) = ?
 
-**2. Selecciona la fórmula:**
+**Razonamiento:**
+Necesitamos el tiempo. Usamos la fórmula de despeje correspondiente.
+
 $$
-v = \frac{x}{t}
+t = \frac{x}{v}
 $$
 
-**3. Sustituye y calcula:**
-$$v = \frac{100\,\mathrm{m}}{10\,\mathrm{s}} = 10\,\mathrm{m/s}$$
+**Cálculo:**
 
-> **Respuesta:** El atleta corrió a **$10\,\mathrm{m/s}$**.
+$$
+t = \frac{3000}{1500}
+$$
+
+**Resultado:**
+
+$$
+\boxed{2\,\mathrm{s}}
+$$
 
 ---
 
-### **Ejemplo 2: Hallar el Desplazamiento**
+### **Ejemplo 2: Posición con Inicio Adelantado**
 
-El sonido viaja a una velocidad constante de $340\,\mathrm{m/s}$. Si un trueno se escucha $3\,\mathrm{s}$ después del relámpago, ¿a qué distancia cayó?
+Un ciclista está en el kilómetro 10 de una carretera ($x_i = 10$). Avanza a **$20\,\mathrm{km/h}$** durante **3 horas**. ¿En qué kilómetro termina?
 
-**1. Identifica los datos:**
-* $v = 340\,\mathrm{m/s}$
-* $t = 3\,\mathrm{s}$
-* $x = ?$
+**Datos:**
+- Inicio ($x_i$) = $10\,\mathrm{km}$
+- Velocidad ($v$) = $20\,\mathrm{km/h}$
+- Tiempo ($t$) = $3\,\mathrm{h}$
 
-**2. Selecciona la fórmula:**
+**Razonamiento:**
+Su posición final es donde estaba más lo que avanzó.
+
 $$
-x = v \cdot t
+x_f = 10 + (20 \times 3)
 $$
 
-**3. Sustituye y calcula:**
-$$x = 340\,\mathrm{m/s} \times 3\,\mathrm{s} = 1020\,\mathrm{m}$$
+**Cálculo:**
 
-> **Respuesta:** El rayo cayó a **$1020$ metros** (aprox. 1 km).
+$$
+x_f = 10 + 60
+$$
+
+**Resultado:**
+
+$$
+\boxed{70\,\mathrm{km}}
+$$
+
+(Termina en el kilómetro 70).
 
 ---
 
-### **Ejemplo 3: Posición Final (Caso General)**
+## 📝 Ejercicios de Práctica
 
-Un ciclista se encuentra en el **Kilómetro 10**. Continúa pedaleando a **$20\,\mathrm{km/h}$** durante **2 horas**. ¿En qué kilómetro estará?
-
-**1. Identifica los datos:**
-* $x_i = 10\,\mathrm{km}$ (Posición inicial)
-* $v = 20\,\mathrm{km/h}$
-* $t = 2\,\mathrm{h}$
-* $x_f = ?$
-
-**2. Selecciona la fórmula:**
-$$
-x_f = x_i + v \cdot t
-$$
-
-**3. Sustituye y calcula:**
-$$x_f = 10 + (20 \times 2) = 10 + 40 = 50\,\mathrm{km}$$
-
-> **Respuesta:** El ciclista terminará en el **kilómetro 50**.
-
----
-
-## 📝 **Ejercicios de Práctica**
-
-### **Ejercicio 1: El Tren Viajero**
-
-Un tren sale de una ciudad en el **km 200** y viaja hacia otra en el **km 500** a una velocidad de **$100\,\mathrm{km/h}$**. ¿Cuánto tiempo tardará en llegar?
+### Ejercicio 1
+**Un avión vuela a $800\,\mathrm{km/h}$. ¿Qué distancia recorre en 0.5 horas?**
 
 <details>
 <summary>Ver solución</summary>
 
-**1. Calcular desplazamiento:**
-$$\Delta x = 500 - 200 = 300\,\mathrm{km}$$
+**Datos:**
+- $v = 800\,\mathrm{km/h}$
+- $t = 0.5\,\mathrm{h}$
 
-**2. Calcular tiempo:**
-$$t = \frac{\Delta x}{v} = \frac{300\,\mathrm{km}}{100\,\mathrm{km/h}} = 3\,\mathrm{h}$$
+**Razonamiento:**
+Distancia = Velocidad $\times$ Tiempo.
 
-**Respuesta:** Tardará **3 horas**.
+$$
+x = 800 \times 0.5
+$$
+
+**Resultado:**
+
+$$
+\boxed{400\,\mathrm{km}}
+$$
 
 </details>
 
----
-
-### **Ejercicio 2: Encuentro de Autos**
-
-Dos autos parten simultáneamente en sentidos contrarios:
-- Auto A desde Medellín (km 0) a **$80\,\mathrm{km/h}$**.
-- Auto B desde Bogotá (km 420) a **$60\,\mathrm{km/h}$**.
-
-¿En cuánto tiempo se encuentran?
+### Ejercicio 2
+**Un atleta corre 200 metros en 25 segundos. ¿Cuál es su velocidad media?**
 
 <details>
 <summary>Ver solución</summary>
 
-Al ir en sentidos contrarios, las velocidades se suman:
-$$v_{relativa} = 80 + 60 = 140\,\mathrm{km/h}$$
+**Datos:**
+- $x = 200\,\mathrm{m}$
+- $t = 25\,\mathrm{s}$
 
-$$t = \frac{\text{Distancia}}{v_{relativa}} = \frac{420}{140} = 3\,\mathrm{h}$$
+**Razonamiento:**
+Velocidad = Distancia / Tiempo.
 
-**Respuesta:** Se encuentran en **3 horas**.
+$$
+v = \frac{200}{25}
+$$
+
+**Resultado:**
+
+$$
+\boxed{8\,\mathrm{m/s}}
+$$
 
 </details>
 
----
-
-### **Ejercicio 3: Vuelo Comercial**
-
-Un avión viaja a **$800\,\mathrm{km/h}$**. Si su destino está a **$650\,\mathrm{km}$**, ¿cuántos minutos dura el vuelo?
+### Ejercicio 3
+**¿Cuánto tiempo tarda un coche a $20\,\mathrm{m/s}$ en recorrer 1000 metros?**
 
 <details>
 <summary>Ver solución</summary>
 
-$$t = \frac{650}{800} = 0.8125\,\mathrm{h}$$
+**Datos:**
+- $v = 20\,\mathrm{m/s}$
+- $x = 1000\,\mathrm{m}$
 
-Convertimos a minutos multiplicando por 60:
-$$0.8125 \times 60 = 48.75\,\mathrm{min}$$
+**Razonamiento:**
+Tiempo = Distancia / Velocidad.
 
-**Respuesta:** Aprox. **49 minutos**.
+$$
+t = \frac{1000}{20}
+$$
+
+**Resultado:**
+
+$$
+\boxed{50\,\mathrm{s}}
+$$
+
+</details>
+
+### Ejercicio 4
+**Un tren parte del km 50 y avanza 100 km. ¿Cuál es su posición final?**
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:**
+- $x_i = 50\,\mathrm{km}$
+- Avanza = $100\,\mathrm{km}$
+
+**Razonamiento:**
+Se suma el avance a la posición inicial.
+
+$$
+x_f = 50 + 100
+$$
+
+**Resultado:**
+
+$$
+\boxed{150\,\mathrm{km}}
+$$
+
+</details>
+
+### Ejercicio 5
+**Dos autos salen de ciudades separadas por 500 km y van uno hacia el otro a $50\,\mathrm{km/h}$ cada uno. ¿En cuánto tiempo se encuentran?**
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:**
+- Distancia total = $500\,\mathrm{km}$
+- Velocidad combinada (se acercan) = $50 + 50 = 100\,\mathrm{km/h}$
+
+**Razonamiento:**
+El tiempo es la distancia dividido entre la velocidad de acercamiento.
+
+$$
+t = \frac{500}{100}
+$$
+
+**Resultado:**
+
+$$
+\boxed{5\,\mathrm{h}}
+$$
+
+</details>
+
+### Ejercicio 6
+**La luz viaja a $300\,000\,\mathrm{km/s}$. El Sol está a $150\,000\,000\,\mathrm{km}$. ¿Cuánto tarda la luz en llegar?**
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:**
+- $v = 300\,000\,\mathrm{km/s}$
+- $x = 150\,000\,000\,\mathrm{km}$
+
+**Razonamiento:**
+$t = x / v$.
+
+$$
+t = \frac{150\,000\,000}{300\,000} = \frac{1500}{3}
+$$
+
+**Resultado:**
+
+$$
+\boxed{500\,\mathrm{s}}
+$$
+(8 minutos y 20 segundos).
+
+</details>
+
+### Ejercicio 7
+**Un caracol avanza a $5\,\mathrm{mm/s}$. ¿Cuántos milímetros recorre en un minuto?**
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:**
+- $v = 5\,\mathrm{mm/s}$
+- $t = 1\,\mathrm{min} = 60\,\mathrm{s}$
+
+**Razonamiento:**
+Usamos segundos para que coincidan las unidades.
+
+$$
+x = 5 \times 60
+$$
+
+**Resultado:**
+
+$$
+\boxed{300\,\mathrm{mm}}
+$$
+
+</details>
+
+### Ejercicio 8
+**Un corredor está en la marca de 50m y corre hacia atrás (hacia el origen) a $5\,\mathrm{m/s}$ por 4 segundos. ¿Dónde termina?**
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:**
+- $x_i = 50\,\mathrm{m}$
+- $v = -5\,\mathrm{m/s}$ (negativo porque retrocede)
+- $t = 4\,\mathrm{s}$
+
+**Razonamiento:**
+$x_f = x_i + v \cdot t$.
+
+$$
+x_f = 50 + (-5 \times 4) = 50 - 20
+$$
+
+**Resultado:**
+
+$$
+\boxed{30\,\mathrm{m}}
+$$
+
+</details>
+
+### Ejercicio 9
+**¿A qué velocidad debes ir para recorrer 10 km en 10 minutos?**
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:**
+- $x = 10\,\mathrm{km}$
+- $t = 10\,\mathrm{min} = \frac{1}{6}\,\mathrm{h}$
+
+**Razonamiento:**
+$v = x / t$.
+
+$$
+v = \frac{10}{1/6} = 10 \times 6
+$$
+
+**Resultado:**
+
+$$
+\boxed{60\,\mathrm{km/h}}
+$$
+
+</details>
+
+### Ejercicio 10
+**Un coche A viaja a $60\,\mathrm{km/h}$ y un coche B a $90\,\mathrm{km/h}$ en la misma dirección. ¿Cuánto se aleja B de A en una hora?**
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+La velocidad relativa de alejamiento es la diferencia.
+
+$$
+v_{dif} = 90 - 60 = 30\,\mathrm{km/h}
+$$
+
+En 1 hora, se alejan:
+
+$$
+x = 30 \times 1
+$$
+
+**Resultado:**
+
+$$
+\boxed{30\,\mathrm{km}}
+$$
 
 </details>
 
@@ -179,7 +390,11 @@ $$0.8125 \times 60 = 48.75\,\mathrm{min}$$
 
 ## 🔑 Resumen
 
-- **Velocidad ($v$):** Es la relación entre espacio y tiempo ($v = x/t$).
-- **Desplazamiento ($x$):** Es el producto de velocidad por tiempo ($x = v \cdot t$).
-- **Posición Final ($x_f$):** Si no partes de cero, debes sumar la posición inicial ($x_f = x_i + v \cdot t$).
-- **Unidades:** Siempre verifica que las unidades coincidan (km con horas, metros con segundos).
+| Variable | Descripción | Fórmula Clave |
+|----------|-------------|---------------|
+| **Posición ($x$)** | Distancia recorrida o ubicación. | $$x = v \cdot t$$ |
+| **Velocidad ($v$)** | Rapidez constante. | $$v = \frac{x}{t}$$ |
+| **Tiempo ($t$)** | Duración del movimiento. | $$t = \frac{x}{v}$$ |
+| **Posición Final ($x_f$)** | Ubicación final considerando inicio. | $$x_f = x_i + v \cdot t$$ |
+
+> Estas tres fórmulas son solo una misma ecuación reorganizada. Si sabes una, ¡sabes todas! Lo importante es identificar qué dato tienes y cuál te falta.

@@ -20,7 +20,11 @@ Para convertir un número común en notación científica:
 2. Cuenta **cuántos lugares se movió el punto**:
    - Si se movió **a la izquierda**, el exponente de 10 es **positivo**.
    - Si se movió **a la derecha**, el exponente de 10 es **negativo**.
-3. Escribe el número en la forma $a \times 10^n$.
+3. Escribe el número en la forma:
+
+$$
+a \times 10^n
+$$
 
 ---
 
@@ -72,7 +76,7 @@ Convierte $3.25 \times 10^4$ a forma estándar.
 **Solución paso a paso:**
 
 1. El exponente $n=4$ indica que se mueve el punto **4 lugares a la derecha**.
-2. Desplazamos el punto: $3.25 \rightarrow 32\,500$
+2. Desplazamos el punto: $3.25 \to 32\,500$
 
 $$
 3.25 \times 10^4 = 32\,500
@@ -87,7 +91,7 @@ Convierte $6.5 \times 10^{-3}$ a forma estándar.
 **Solución paso a paso:**
 
 1. El exponente $n=-3$ indica que se mueve el punto **3 lugares a la izquierda**.
-2. Colocamos el punto: $6.5 \rightarrow 0.0065$
+2. Colocamos el punto: $6.5 \to 0.0065$
 
 $$
 6.5 \times 10^{-3} = 0.0065
@@ -100,16 +104,34 @@ $$
 ### Ejercicio 1
 **Expresa los siguientes números en notación científica:**
 
-a) 72 000 000  
-b) 0.000 045  
-c) 930 000 000 000  
+a) $72\,000\,000$
+
+b) $0.000045$
+
+c) $930\,000\,000\,000$
 
 <details>
 <summary>Ver solución</summary>
 
-a) $72\,000\,000 = 7.2 \times 10^7$  
-b) $0.000\,045 = 4.5 \times 10^{-5}$  
-c) $930\,000\,000\,000 = 9.3 \times 10^{11}$
+**Razonamiento:**
+
+a) 
+
+$$
+7.2 \times 10^7
+$$
+
+b) 
+
+$$
+4.5 \times 10^{-5}
+$$
+
+c) 
+
+$$
+9.3 \times 10^{11}
+$$
 
 </details>
 
@@ -118,16 +140,34 @@ c) $930\,000\,000\,000 = 9.3 \times 10^{11}$
 ### Ejercicio 2
 **Convierte los siguientes números de notación científica a forma estándar:**
 
-a) $5.1 \times 10^5$  
-b) $2.8 \times 10^{-6}$  
-c) $9.07 \times 10^3$  
+a) $5.1 \times 10^5$
+
+b) $2.8 \times 10^{-6}$
+
+c) $9.07 \times 10^3$
 
 <details>
 <summary>Ver solución</summary>
 
-a) $5.1 \times 10^5 = 510\,000$  
-b) $2.8 \times 10^{-6} = 0.000\,002\,8$  
-c) $9.07 \times 10^3 = 9\,070$
+**Razonamiento:**
+
+a) 
+
+$$
+510\,000
+$$
+
+b) 
+
+$$
+0.0000028
+$$
+
+c) 
+
+$$
+9\,070
+$$
 
 </details>
 
@@ -139,8 +179,10 @@ c) $9.07 \times 10^3 = 9\,070$
 <details>
 <summary>Ver solución</summary>
 
+**Razonamiento:**
+
 $$
-225\,000\,000\,\text{km} = 2.25 \times 10^8\,\text{km}
+225\,000\,000\,\mathrm{km} = 2.25 \times 10^8\,\mathrm{km}
 $$
 
 Se movió el punto 8 lugares a la izquierda, por lo tanto $n = 8$.
@@ -155,8 +197,10 @@ Se movió el punto 8 lugares a la izquierda, por lo tanto $n = 8$.
 <details>
 <summary>Ver solución</summary>
 
+**Razonamiento:**
+
 $$
-1.2 \times 10^{-10}\,\text{m} = 0.000\,000\,000\,12\,\text{m}
+1.2 \times 10^{-10}\,\mathrm{m} = 0.00000000012\,\mathrm{m}
 $$
 
 El exponente $-10$ indica que el punto se mueve 10 lugares a la izquierda.
@@ -177,6 +221,3 @@ La notación científica permite expresar cualquier número como el producto de 
 | **Notación → Estándar** | $n$ negativo: a la izquierda | $6.5 \times 10^{-3} = 0.0065$ |
 
 > **Recuerda:** Un exponente positivo indica un número grande (como miles o millones), mientras que un exponente negativo indica un número pequeño (decimales menores a 1).
-
-
-

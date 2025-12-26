@@ -22,11 +22,24 @@ Para sumar o restar monomios, la condición es innegociable: deben tener la **mi
 
 ### **Ejemplo: El Almacén de Frutas**
 Si $x$ representa una caja de naranjas:
-$$ 5x + 3x = (5 + 3)x = 8x $$
+
+$$
+5x + 3x = (5 + 3)x = 8x
+$$
 
 Pero si intentas sumar $5x + 3y$, la expresión se queda igual porque son productos diferentes.
 
-> ⚠️ **Error Común:** Nunca sumes los exponentes al sumar monomios. $x^2 + x^2$ es $2x^2$, **no** $x^4$.
+> ⚠️ **Error Común:** Nunca sumes los exponentes al sumar monomios.
+
+$$
+x^2 + x^2 = 2x^2
+$$
+
+No:
+
+$$
+x^4
+$$
 
 ---
 
@@ -35,11 +48,20 @@ Pero si intentas sumar $5x + 3y$, la expresión se queda igual porque son produc
 A diferencia de la suma, para multiplicar **no necesitas** que sean semejantes. Puedes multiplicar cualquier monomio con cualquier otro.
 
 1.  **Multiplicas los coeficientes:** (Números con números).
-2.  **Sumas los exponentes:** De las letras que son iguales (Ley de exponentes: $a^m \cdot a^n = a^{m+n}$).
+2.  **Sumas los exponentes:** De las letras que son iguales.
+
+**Ley de exponentes:**
+
+$$
+a^m \cdot a^n = a^{m+n}
+$$
 
 ### **Ejemplo: Cálculo de Área**
 Si un rectángulo mide $3x$ de base y $2x$ de altura:
-$$ (3x) \cdot (2x) = (3 \cdot 2) \cdot (x^{1+1}) = 6x^2 $$
+
+$$
+(3x) \cdot (2x) = (3 \cdot 2) \cdot (x^{1+1}) = 6x^2
+$$
 
 ---
 
@@ -48,11 +70,20 @@ $$ (3x) \cdot (2x) = (3 \cdot 2) \cdot (x^{1+1}) = 6x^2 $$
 Dividir monomios es el proceso inverso. Aquí también puedes dividir cualquier par de monomios.
 
 1.  **Divides los coeficientes:** (Números entre números).
-2.  **Restas los exponentes:** De las letras iguales (Ley de exponentes: $\frac{a^m}{a^n} = a^{m-n}$).
+2.  **Restas los exponentes:** De las letras iguales.
+
+**Ley de exponentes:**
+
+$$
+\frac{a^m}{a^n} = a^{m-n}
+$$
 
 ### **Ejemplo: Reparto de Recursos**
 Si repartes $12x^5$ entre $4x^2$ partes:
-$$ \frac{12x^5}{4x^2} = (12 \div 4) \cdot x^{5-2} = 3x^3 $$
+
+$$
+\frac{12x^5}{4x^2} = (12 \div 4) \cdot x^{5-2} = 3x^3
+$$
 
 ---
 
@@ -62,7 +93,10 @@ $$ \frac{12x^5}{4x^2} = (12 \div 4) \cdot x^{5-2} = 3x^3 $$
 Calcula el producto de $(-2a^3b)$ por $(5a^2b^4)$.
 
 **Paso 1: Multiplicar signos y números**
-$$ -2 \cdot 5 = -10 $$
+
+$$
+-2 \cdot 5 = -10
+$$
 
 **Paso 2: Sumar exponentes de letras iguales**
 *   Para $a$: $3 + 2 = 5$
@@ -79,9 +113,23 @@ Calcula: $\frac{-20x^4y^3}{5xy^2}$.
 El coeficiente de abajo para $x$ tiene un exponente invisible de $1$.
 
 **Cálculo:**
-1.  Signos y Números: $-20 \div 5 = -4$.
-2.  Exponente de $x$: $4 - 1 = 3$.
-3.  Exponente de $y$: $3 - 2 = 1$.
+1.  Signos y Números:
+
+$$
+-20 \div 5 = -4
+$$
+
+2.  Exponente de $x$:
+
+$$
+4 - 1 = 3
+$$
+
+3.  Exponente de $y$:
+
+$$
+3 - 2 = 1
+$$
 
 **Resultado:** $\boxed{-4x^3y}$
 
@@ -95,7 +143,12 @@ Suma: $12x^2 + 5x^2 - 3x^2$.
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** Todos son semejantes ($x^2$). Sumamos los números: $12 + 5 - 3 = 14$.
+**Razonamiento:**
+Todos son semejantes ($x^2$). Sumamos los números:
+
+$$
+12 + 5 - 3 = 14
+$$
 
 **Resultado:** $\boxed{14x^2}$
 
@@ -107,7 +160,18 @@ Multiplica: $(4a^3) \cdot (2a^5)$.
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** Multiplicamos $4 \cdot 2 = 8$ y sumamos exponentes $3 + 5 = 8$.
+**Razonamiento:**
+Multiplicamos los coeficientes:
+
+$$
+4 \cdot 2 = 8
+$$
+
+Y sumamos los exponentes:
+
+$$
+3 + 5 = 8
+$$
 
 **Resultado:** $\boxed{8a^8}$
 
@@ -119,7 +183,18 @@ Divide: $\frac{15x^6}{3x^2}$.
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** Dividimos $15 \div 3 = 5$ y restamos exponentes $6 - 2 = 4$.
+**Razonamiento:**
+Dividimos los coeficientes:
+
+$$
+15 \div 3 = 5
+$$
+
+Y restamos los exponentes:
+
+$$
+6 - 2 = 4
+$$
 
 **Resultado:** $\boxed{5x^4}$
 
@@ -131,7 +206,22 @@ Calcula: $(-3xy) \cdot (-4x^2y^3)$.
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** Menos por menos es más. $3 \cdot 4 = 12$. Exponentes: $x(1+2)=3$, $y(1+3)=4$.
+**Razonamiento:**
+Menos por menos es más.
+
+$$
+3 \cdot 4 = 12
+$$
+
+Sumamos los exponentes:
+
+$$
+x(1+2)=3
+$$
+
+$$
+y(1+3)=4
+$$
 
 **Resultado:** $\boxed{12x^3y^4}$
 
@@ -143,7 +233,12 @@ Simplifica: $8ab - 2ab + 5ab$.
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** Son semejantes. $8 - 2 + 5 = 11$.
+**Razonamiento:**
+Son semejantes. Sumamos y restamos los coeficientes:
+
+$$
+8 - 2 + 5 = 11
+$$
 
 **Resultado:** $\boxed{11ab}$
 
@@ -155,7 +250,18 @@ Divide: $\frac{-24m^5n^2}{6m^2n^2}$.
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** $-24 \div 6 = -4$. Exponentes: $m(5-2)=3$, $n(2-2)=0$. Recuerda que $n^0 = 1$.
+**Razonamiento:**
+$-24 \div 6 = -4$. Exponentes:
+
+$$
+m(5-2)=3
+$$
+
+$$
+n(2-2)=0
+$$
+
+Recuerda que $n^0 = 1$.
 
 **Resultado:** $\boxed{-4m^3}$
 
@@ -167,7 +273,12 @@ Calcula: $(2x^2)^3$. (Potencia de un monomio)
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** Elevamos el coeficiente $2^3 = 8$ y multiplicamos los exponentes $2 \cdot 3 = 6$.
+**Razonamiento:**
+Elevamos el coeficiente $2^3 = 8$ y multiplicamos los exponentes:
+
+$$
+2 \cdot 3 = 6
+$$
 
 **Resultado:** $\boxed{8x^6}$
 
@@ -179,7 +290,17 @@ Multiplica: $(\frac{1}{2}x) \cdot (4x^3)$.
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** $(\frac{1}{2} \cdot 4) = 2$. Sumamos exponentes $1 + 3 = 4$.
+**Razonamiento:**
+
+$$
+(\frac{1}{2} \cdot 4) = 2
+$$
+
+Sumamos exponentes:
+
+$$
+1 + 3 = 4
+$$
 
 **Resultado:** $\boxed{2x^4}$
 
@@ -191,7 +312,11 @@ Simplifica: $5x^2 - 3x + 2x^2 + 8x$.
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** Agrupamos semejantes. $x^2: 5+2=7$. $x: -3+8=5$.
+**Razonamiento:**
+Agrupamos semejantes.
+
+- $x^2$: $5+2=7$
+- $x$: $-3+8=5$
 
 **Resultado:** $\boxed{7x^2 + 5x}$
 
@@ -203,7 +328,18 @@ Calcula: $\frac{(4x^2) \cdot (3x^3)}{6x}$.
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** Primero multiplicamos arriba: $12x^5$. Luego dividimos: $12x^5 \div 6x = 2x^4$.
+**Razonamiento:**
+Primero multiplicamos arriba:
+
+$$
+12x^5
+$$
+
+Luego dividimos:
+
+$$
+12x^5 \div 6x = 2x^4
+$$
 
 **Resultado:** $\boxed{2x^4}$
 

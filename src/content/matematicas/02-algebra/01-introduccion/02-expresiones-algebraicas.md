@@ -23,10 +23,29 @@ $$
 
 ¿Qué partes la forman? Vamos a desmontarla:
 
-1.  **Términos:** Son los "bloques" separados por signos de suma ($+$) o resta ($-$). Aquí hay tres: $-5x^2$, $+3y$ y $-7$.
-2.  **Coeficientes:** Son los números grandes que multiplican a las letras. En $-5x^2$, el coeficiente es **$-5$**.
-3.  **Variables (parte literal):** Son las letras. En $-5x^2$, es $x^2$.
-4.  **Constante:** Es el número que va solo, sin letra. Aquí es **$-7$**.
+1.  **Términos:** Son los "bloques" separados por signos de suma ($+$) o resta ($-$). Aquí hay tres:
+
+$$
+-5x^2, \quad +3y, \quad -7
+$$
+
+2.  **Coeficientes:** Son los números grandes que multiplican a las letras. En $-5x^2$, el coeficiente es:
+
+$$
+-5
+$$
+
+3.  **Variables (parte literal):** Son las letras. En $-5x^2$, es:
+
+$$
+x^2
+$$
+
+4.  **Constante:** Es el número que va solo, sin letra. Aquí es:
+
+$$
+-7
+$$
 
 ---
 
@@ -36,10 +55,10 @@ Dependiendo de cuántos "bloques" o términos tenga la expresión, recibe un nom
 
 | Nombre | Prefijo | Significado | Ejemplo |
 | :--- | :--- | :--- | :--- |
-| **Monomio** | *Mono-* | Uno | $3x^2$ |
-| **Binomio** | *Bi-* | Dos | $2a + 5$ |
-| **Trinomio** | *Tri-* | Tres | $x^2 - 4x + 4$ |
-| **Polinomio** | *Poli-* | Muchos | $x^4 + 3x^3 - 2x + 1$ |
+| **Monomio** | *Mono-* | Uno | $$3x^2$$ |
+| **Binomio** | *Bi-* | Dos | $$2a + 5$$ |
+| **Trinomio** | *Tri-* | Tres | $$x^2 - 4x + 4$$ |
+| **Polinomio** | *Poli-* | Muchos | $$x^4 + 3x^3 - 2x + 1$$ |
 
 > **Ojo:** Un **Polinomio** es el nombre general para cualquier expresión con más de un término (así que binomios y trinomios también son polinomios).
 
@@ -60,9 +79,11 @@ Calcula el valor de $3x - 2$ si $x = 5$.
 2.  Multiplica primero, luego resta.
 
 **Paso a paso:**
+
 $$
 3(5) - 2
 $$
+
 $$
 15 - 2 = 13
 $$
@@ -84,17 +105,29 @@ Encuentra el valor de $2a^2 - 3b$ cuando $a = -3$ y $b = 4$.
 El signo negativo de $a$ es peligroso. Al elevarlo al cuadrado, recuerda que $(-3) \cdot (-3) = +9$.
 
 **Sustitución:**
+
 $$
 2(-3)^2 - 3(4)
 $$
 
 **Operaciones:**
 1.  Potencia primero: $(-3)^2 = 9$.
-    $$ 2(9) - 3(4) $$
+
+$$
+2(9) - 3(4)
+$$
+
 2.  Multiplicaciones:
-    $$ 18 - 12 $$
+
+$$
+18 - 12
+$$
+
 3.  Resta final:
-    $$ 6 $$
+
+$$
+6
+$$
 
 **Resultado:** $\boxed{6}$
 
@@ -108,11 +141,13 @@ Calcula el valor numérico de $\frac{x + y}{2}$ si $x=10$ e $y=4$.
 Esta expresión representa el **promedio** de dos números. Primero sumamos lo de arriba y al final dividimos.
 
 **Sustitución:**
+
 $$
 \frac{10 + 4}{2}
 $$
 
 **Operaciones:**
+
 $$
 \frac{14}{2} = 7
 $$
@@ -158,8 +193,17 @@ Calcula el valor de $5n + 3$ si $n = 4$.
 <details>
 <summary>Ver solución</summary>
 
-**Sustitución:** $5(4) + 3$
-**Cálculo:** $20 + 3 = 23$
+**Sustitución:**
+
+$$
+5(4) + 3
+$$
+
+**Cálculo:**
+
+$$
+20 + 3 = 23
+$$
 
 **Resultado:** $\boxed{23}$
 
@@ -171,8 +215,18 @@ Calcula el valor de $x^2 - 5$ si $x = -3$.
 <details>
 <summary>Ver solución</summary>
 
-**Sustitución:** $(-3)^2 - 5$
-**Cálculo:** $9 - 5 = 4$
+**Sustitución:**
+
+$$
+(-3)^2 - 5
+$$
+
+**Cálculo:**
+
+$$
+9 - 5 = 4
+$$
+
 *(Recuerda: menos por menos es más)*
 
 **Resultado:** $\boxed{4}$
@@ -185,8 +239,18 @@ Calcula el valor de $2(a + b)$ si $a=5, b=2$.
 <details>
 <summary>Ver solución</summary>
 
-**Sustitución:** $2(5 + 2)$
-**Cálculo:** Primero el paréntesis $\to 2(7) = 14$
+**Sustitución:**
+
+$$
+2(5 + 2)
+$$
+
+**Cálculo:**
+Primero el paréntesis:
+
+$$
+2(7) = 14
+$$
 
 **Resultado:** $\boxed{14}$
 
@@ -211,8 +275,17 @@ Determina el valor de $\frac{m}{n} + 1$ si $m=10, n=2$.
 <details>
 <summary>Ver solución</summary>
 
-**Sustitución:** $\frac{10}{2} + 1$
-**Cálculo:** $5 + 1 = 6$
+**Sustitución:**
+
+$$
+\frac{10}{2} + 1
+$$
+
+**Cálculo:**
+
+$$
+5 + 1 = 6
+$$
 
 **Resultado:** $\boxed{6}$
 
@@ -224,8 +297,17 @@ Calcula $b^2 - 4ac$ (el discriminante) si $a=1, b=5, c=6$.
 <details>
 <summary>Ver solución</summary>
 
-**Sustitución:** $(5)^2 - 4(1)(6)$
-**Cálculo:** $25 - 24 = 1$
+**Sustitución:**
+
+$$
+(5)^2 - 4(1)(6)
+$$
+
+**Cálculo:**
+
+$$
+25 - 24 = 1
+$$
 
 **Resultado:** $\boxed{1}$
 
@@ -250,9 +332,18 @@ Calcula el valor de $3x^2y$ si $x=2, y=5$.
 <details>
 <summary>Ver solución</summary>
 
-**Sustitución:** $3(2)^2(5)$
-**Orden:** Primero potencia, luego multiplicaciones.
-$3(4)(5) \to 12(5) = 60$
+**Sustitución:**
+
+$$
+3(2)^2(5)
+$$
+
+**Orden:**
+Primero potencia, luego multiplicaciones.
+
+$$
+3(4)(5) \to 12(5) = 60
+$$
 
 **Resultado:** $\boxed{60}$
 

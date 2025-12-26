@@ -55,9 +55,19 @@ Factoriza: $x^5 - 32$
 - $32 = (2)^5$
 
 **Razonamiento:**
-1. Primer factor: $(x - 2)$.
+
+1. Primer factor: 
+
+$$
+(x - 2)
+$$
+
 2. Segundo factor: 5 términos con signos positivos.
-3. $x^4 + x^3 \cdot 2 + x^2 \cdot 4 + x \cdot 8 + 16$.
+
+3.
+$$
+x^4 + x^3 \cdot 2 + x^2 \cdot 4 + x \cdot 8 + 16
+$$
 
 **Resultado:** $\boxed{(x - 2)(x^4 + 2x^3 + 4x^2 + 8x + 16)}$
 
@@ -72,9 +82,19 @@ Factoriza: $x^5 + 32$
 - $32 = (2)^5$
 
 **Razonamiento:**
-1. Primer factor: $(x + 2)$.
+
+1. Primer factor: 
+
+$$
+(x + 2)
+$$
+
 2. Segundo factor: 5 términos con signos alternados.
-3. $x^4 - 2x^3 + 4x^2 - 8x + 16$.
+
+3.
+$$
+x^4 - 2x^3 + 4x^2 - 8x + 16
+$$
 
 **Resultado:** $\boxed{(x + 2)(x^4 - 2x^3 + 4x^2 - 8x + 16)}$
 
@@ -89,9 +109,24 @@ Factoriza: $32m^5 - 243$
 - $243 = (3)^5$
 
 **Razonamiento:**
-1. Primer factor: $(2m - 3)$.
-2. Segundo factor: $(2m)^4 + (2m)^3(3) + (2m)^2(9) + (2m)(27) + 81$.
-3. Simplificamos: $16m^4 + 24m^3 + 36m^2 + 54m + 81$.
+
+1. Primer factor: 
+
+$$
+(2m - 3)
+$$
+
+2. Segundo factor: 
+
+$$
+(2m)^4 + (2m)^3(3) + (2m)^2(9) + (2m)(27) + 81
+$$
+
+3. Simplificamos: 
+
+$$
+16m^4 + 24m^3 + 36m^2 + 54m + 81
+$$
 
 **Resultado:** $\boxed{(2m - 3)(16m^4 + 24m^3 + 36m^2 + 54m + 81)}$
 
@@ -105,7 +140,13 @@ Factoriza: $x^7 - y^7$
 - Ambos términos a la séptima potencia.
 
 **Razonamiento:**
-1. Primer factor: $(x - y)$.
+
+1. Primer factor: 
+
+$$
+(x - y)
+$$
+
 2. Segundo factor: 7 términos con signos positivos.
 
 **Resultado:** $\boxed{(x - y)(x^6 + x^5y + x^4y^2 + x^3y^3 + x^2y^4 + xy^5 + y^6)}$
@@ -120,8 +161,18 @@ Factoriza: $2x^5 + 64$
 - Factor común 2.
 
 **Razonamiento:**
-1. Sacamos el 2: $2(x^5 + 32)$.
-2. Adentro es suma de quintas: $2(x + 2)(x^4 - 2x^3 + 4x^2 - 8x + 16)$.
+
+1. Sacamos el 2: 
+
+$$
+2(x^5 + 32)
+$$
+
+2. Adentro es suma de quintas: 
+
+$$
+2(x + 2)(x^4 - 2x^3 + 4x^2 - 8x + 16)
+$$
 
 **Resultado:** $\boxed{2(x + 2)(x^4 - 2x^3 + 4x^2 - 8x + 16)}$
 
@@ -136,7 +187,12 @@ Factoriza: $x^5 - 1$
 <summary>Ver solución</summary>
 
 **Datos:** $1 = 1^5$
-**Razonamiento:** $(x - 1)(x^4 + x^3 + x^2 + x + 1)$
+**Razonamiento:** 
+
+$$
+(x - 1)(x^4 + x^3 + x^2 + x + 1)
+$$
+
 **Resultado:** $\boxed{(x - 1)(x^4 + x^3 + x^2 + x + 1)}$
 
 </details>
@@ -148,7 +204,12 @@ Factoriza: $a^5 + 1$
 <summary>Ver solución</summary>
 
 **Datos:** $1 = 1^5$
-**Razonamiento:** $(a + 1)(a^4 - a^3 + a^2 - a + 1)$
+**Razonamiento:** 
+
+$$
+(a + 1)(a^4 - a^3 + a^2 - a + 1)
+$$
+
 **Resultado:** $\boxed{(a + 1)(a^4 - a^3 + a^2 - a + 1)}$
 
 </details>
@@ -160,7 +221,12 @@ Factoriza: $a^5 - 243$
 <summary>Ver solución</summary>
 
 **Datos:** $243 = 3^5$
-**Razonamiento:** $(a - 3)(a^4 + 3a^3 + 9a^2 + 27a + 81)$
+**Razonamiento:** 
+
+$$
+(a - 3)(a^4 + 3a^3 + 9a^2 + 27a + 81)
+$$
+
 **Resultado:** $\boxed{(a - 3)(a^4 + 3a^3 + 9a^2 + 27a + 81)}$
 
 </details>
@@ -172,7 +238,12 @@ Factoriza: $a^5 + 32$
 <summary>Ver solución</summary>
 
 **Datos:** $32 = 2^5$
-**Razonamiento:** $(a + 2)(a^4 - 2a^3 + 4a^2 - 8a + 16)$
+**Razonamiento:** 
+
+$$
+(a + 2)(a^4 - 2a^3 + 4a^2 - 8a + 16)
+$$
+
 **Resultado:** $\boxed{(a + 2)(a^4 - 2a^3 + 4a^2 - 8a + 16)}$
 
 </details>
@@ -184,7 +255,12 @@ Factoriza: $32x^5 - 1$
 <summary>Ver solución</summary>
 
 **Datos:** $32x^5 = (2x)^5$
-**Razonamiento:** $(2x - 1)(16x^4 + 8x^3 + 4x^2 + 2x + 1)$
+**Razonamiento:** 
+
+$$
+(2x - 1)(16x^4 + 8x^3 + 4x^2 + 2x + 1)
+$$
+
 **Resultado:** $\boxed{(2x - 1)(16x^4 + 8x^3 + 4x^2 + 2x + 1)}$
 
 </details>
@@ -196,7 +272,12 @@ Factoriza: $243m^5 + 32n^5$
 <summary>Ver solución</summary>
 
 **Datos:** $(3m)^5$ y $(2n)^5$
-**Razonamiento:** $(3m + 2n)(81m^4 - 54m^3n + 36m^2n^2 - 24mn^3 + 16n^4)$
+**Razonamiento:** 
+
+$$
+(3m + 2n)(81m^4 - 54m^3n + 36m^2n^2 - 24mn^3 + 16n^4)
+$$
+
 **Resultado:** $\boxed{(3m + 2n)(81m^4 - 54m^3n + 36m^2n^2 - 24mn^3 + 16n^4)}$
 
 </details>
@@ -208,7 +289,12 @@ Factoriza: $x^7 + y^7$
 <summary>Ver solución</summary>
 
 **Datos:** Potencia 7 (impar).
-**Razonamiento:** $(x + y)(x^6 - x^5y + x^4y^2 - x^3y^3 + x^2y^4 - xy^5 + y^6)$
+**Razonamiento:** 
+
+$$
+(x + y)(x^6 - x^5y + x^4y^2 - x^3y^3 + x^2y^4 - xy^5 + y^6)
+$$
+
 **Resultado:** $\boxed{(x + y)(x^6 - x^5y + x^4y^2 - x^3y^3 + x^2y^4 - xy^5 + y^6)}$
 
 </details>
@@ -220,7 +306,14 @@ Factoriza: $x^6 - 1$ (usar diferencia de cuadrados primero)
 <summary>Ver solución</summary>
 
 **Datos:** $x^6 - 1 = (x^3)^2 - 1^2$
-**Razonamiento:** $(x^3 + 1)(x^3 - 1)$. Luego cada uno es suma/diferencia de cubos.
+**Razonamiento:** 
+
+$$
+(x^3 + 1)(x^3 - 1)
+$$
+
+Luego cada uno es suma/diferencia de cubos.
+
 **Resultado:** $\boxed{(x + 1)(x^2 - x + 1)(x - 1)(x^2 + x + 1)}$
 
 </details>
@@ -232,7 +325,12 @@ Factoriza: $2x^5 - 2$
 <summary>Ver solución</summary>
 
 **Datos:** Factor común 2.
-**Razonamiento:** $2(x^5 - 1) = 2(x - 1)(x^4 + x^3 + x^2 + x + 1)$
+**Razonamiento:** 
+
+$$
+2(x^5 - 1) = 2(x - 1)(x^4 + x^3 + x^2 + x + 1)
+$$
+
 **Resultado:** $\boxed{2(x - 1)(x^4 + x^3 + x^2 + x + 1)}$
 
 </details>
@@ -244,7 +342,12 @@ Factoriza: $5a^7 + 5$
 <summary>Ver solución</summary>
 
 **Datos:** Factor común 5.
-**Razonamiento:** $5(a^7 + 1) = 5(a + 1)(a^6 - a^5 + a^4 - a^3 + a^2 - a + 1)$
+**Razonamiento:** 
+
+$$
+5(a^7 + 1) = 5(a + 1)(a^6 - a^5 + a^4 - a^3 + a^2 - a + 1)
+$$
+
 **Resultado:** $\boxed{5(a + 1)(a^6 - a^5 + a^4 - a^3 + a^2 - a + 1)}$
 
 </details>

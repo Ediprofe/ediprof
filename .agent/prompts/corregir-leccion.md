@@ -25,9 +25,8 @@ http://localhost:4321/matematicas/algebra/potenciacion/propiedades-potencias-ii
 
 1. `.agent/prompts/estilo-ediprofe.md` (estilo completo)
 
-2. http://localhost:4321/fisica/cinematica/mcu/introduccion
+2. http://localhost:4321/fisica/cinematica/mcu/introduccion (modelo de lección)
 
-3. http://localhost:4321/matematicas/algebra/productos-notables/introduccion-cuadrado-binomio (de desarrollo)
 
 Nota como hay lecciones que por su naturaleza no cabe hablando de más antes del título "¿Qué vas a aprender?". Si hay una conexión muy pertienente, entonces se puede hacer ese párrafo pequeño introductorio.
 

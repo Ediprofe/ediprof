@@ -20,10 +20,13 @@ más **uno adicional estimado** que indica la **precisión del instrumento** uti
 
 > En otras palabras, son los **números que realmente aportan información** sobre la medición.
 
-**Ejemplo:**  
-Si una regla graduada en milímetros marca $12.34\,\mathrm{cm}$,  
-las cifras significativas son **1, 2, 3 y 4**,  
-porque el último dígito (4) es una **estimación**.
+Si una regla graduada en milímetros marca:
+
+$$
+12.34\,\mathrm{cm}
+$$
+
+Las cifras significativas son **1, 2, 3 y 4**, porque el último dígito (4) es una **estimación**.
 
 ---
 
@@ -38,20 +41,41 @@ porque el último dígito (4) es una **estimación**.
 ## 🧩 **Reglas para identificar cifras significativas**
 
 1. **Todos los dígitos distintos de cero** son significativos.  
-   ↳ Ejemplo: $245$ → **3 cifras significativas**
+   ↳ Ejemplo: 
+   
+$$
+245 \to \text{3 cifras significativas}
+$$
 
 2. **Los ceros entre dígitos distintos de cero** también son significativos.  
-   ↳ Ejemplo: $2003$ → **4 cifras significativas**
+   ↳ Ejemplo: 
+   
+$$
+2003 \to \text{4 cifras significativas}
+$$
 
 3. **Los ceros a la izquierda** del primer número distinto de cero **no cuentan**.  
-   ↳ Ejemplo: $0.0045$ → **2 cifras significativas**
+   ↳ Ejemplo: 
+   
+$$
+0.0045 \to \text{2 cifras significativas}
+$$
 
 4. **Los ceros a la derecha del número decimal** son significativos.  
-   ↳ Ejemplo: $3.200$ → **4 cifras significativas**
+   ↳ Ejemplo: 
+   
+$$
+3.200 \to \text{4 cifras significativas}
+$$
 
 5. **Los ceros al final sin punto decimal** pueden o no ser significativos.  
-   ↳ Ejemplo: $1500$ → puede tener **2, 3 o 4** cifras significativas  
-   (depende del instrumento o si se expresa como $1.50\times10^3$).
+   ↳ Ejemplo: 
+   
+$$
+1500 \to \text{puede tener 2, 3 o 4 cifras significativas}
+$$
+
+(depende del instrumento o si se expresa como $1.50\times10^3$).
 
 ---
 
@@ -96,9 +120,18 @@ $$
 Al limitar cifras en un resultado:
 
 - Si el primer dígito que se elimina es **menor que 5**, el último se deja igual.  
-  ↳ $3.243 \rightarrow 3.24$  
+  ↳ 
+  
+$$
+3.243 \to 3.24
+$$
+
 - Si es **mayor o igual que 5**, el último se incrementa en uno.  
-  ↳ $3.246 \rightarrow 3.25$
+  ↳ 
+  
+$$
+3.246 \to 3.25
+$$
 
 ---
 
@@ -115,18 +148,26 @@ Al limitar cifras en un resultado:
 ### Ejercicio 1
 **¿Cuántas cifras significativas tienen los siguientes números?**
 
-a) $0.00560$  
-b) $4050$  
-c) $7.00$  
-d) $123.45$  
+a) $0.00560$
+
+b) $4050$
+
+c) $7.00$
+
+d) $123.45$
 
 <details>
 <summary>Ver solución</summary>
 
-a) **3** cifras significativas (5, 6, 0 al final es significativo)  
-b) **3** cifras significativas (el 0 al final es ambiguo, pero mínimo son 4, 0, 5)  
-c) **3** cifras significativas (7, 0, 0)  
-d) **5** cifras significativas (1, 2, 3, 4, 5)
+**Razonamiento:**
+
+a) **3** cifras significativas ($5, 6, 0$ al final es significativo).
+
+b) **3** cifras significativas (el $0$ al final es ambiguo, pero mínimo son $4, 0, 5$).
+
+c) **3** cifras significativas ($7, 0, 0$).
+
+d) **5** cifras significativas ($1, 2, 3, 4, 5$).
 
 </details>
 
@@ -142,7 +183,11 @@ $$
 <details>
 <summary>Ver solución</summary>
 
-$4.52 \times 2.1 = 9.492$
+**Razonamiento:**
+
+$$
+4.52 \times 2.1 = 9.492
+$$
 
 Pero como $2.1$ tiene **2 cifras significativas**, el resultado debe tener 2:
 
@@ -164,7 +209,11 @@ $$
 <details>
 <summary>Ver solución</summary>
 
-$15.23 + 0.7 = 15.93$
+**Razonamiento:**
+
+$$
+15.23 + 0.7 = 15.93
+$$
 
 Pero como $0.7$ tiene **1 decimal**, el resultado debe tener 1 decimal:
 
@@ -182,6 +231,8 @@ $$
 <details>
 <summary>Ver solución</summary>
 
+**Razonamiento:**
+
 Es incorrecto porque una regla graduada en centímetros solo puede estimar hasta **décimas de centímetro** (milímetros). El valor correcto debería ser como máximo **12.3 cm** o **12.35 cm** si se estima el último dígito.
 
 Reportar 12.345 cm implica una precisión de **centésimas de milímetro**, que es imposible de obtener con una regla común.
@@ -193,16 +244,36 @@ Reportar 12.345 cm implica una precisión de **centésimas de milímetro**, que 
 ### Ejercicio 5
 **Redondea los siguientes números a 3 cifras significativas:**
 
-a) $0.0045678$  
-b) $12345$  
-c) $9.9951$  
+a) $0.0045678$
+
+b) $12345$
+
+c) $9.9951$
 
 <details>
 <summary>Ver solución</summary>
 
-a) $0.00457$ → $4.57 \times 10^{-3}$  
-b) $12300$ → $1.23 \times 10^{4}$  
-c) $10.0$ → (el 9.9951 se redondea a 10.0)
+**Razonamiento:**
+
+a) 
+
+$$
+0.00457 \to 4.57 \times 10^{-3}
+$$
+
+b) 
+
+$$
+12300 \to 1.23 \times 10^{4}
+$$
+
+c) 
+
+$$
+10.0
+$$
+
+(el $9.9951$ se redondea a $10.0$).
 
 </details>
 

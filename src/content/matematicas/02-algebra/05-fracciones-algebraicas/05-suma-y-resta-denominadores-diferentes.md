@@ -33,12 +33,31 @@ Suma: $\dfrac{2}{3x} + \dfrac{5}{4x^2}$
 - Denominadores: $3x$ y $4x^2$.
 
 **Razonamiento:**
-1.  **MCM:** De 3 y 4 es 12. De $x$ y $x^2$ es $x^2$. $\to 12x^2$.
-2.  **Ajuste:**
-    *   Al primero ($3x$) le falta multiplicar por $4x$ para ser $12x^2$. $\to 2 \cdot (4x) = 8x$.
-    *   Al segundo ($4x^2$) le falta multiplicar por $3$. $\to 5 \cdot 3 = 15$.
-3.  **Suma:**
-    $$\frac{8x + 15}{12x^2}$$
+
+1. **MCM:** De 3 y 4 es 12. De $x$ y $x^2$ es: 
+
+$$
+x^2 \quad \to \quad 12x^2
+$$
+
+2. **Ajuste:**
+   - Al primero ($3x$) le falta multiplicar por $4x$ para ser $12x^2$. 
+   
+$$
+2 \cdot (4x) = 8x
+$$
+
+   - Al segundo ($4x^2$) le falta multiplicar por $3$. 
+   
+$$
+5 \cdot 3 = 15
+$$
+
+3. **Suma:**
+
+$$
+\frac{8x + 15}{12x^2}
+$$
 
 **Resultado:** $\boxed{\frac{8x + 15}{12x^2}}$
 
@@ -52,14 +71,30 @@ Resta: $\dfrac{3}{x+1} - \dfrac{2}{x-1}$
 - Denominadores primos entre sí: $(x+1)$ y $(x-1)$.
 
 **Razonamiento:**
-1.  **MCM:** $(x+1)(x-1)$.
-2.  **Ajuste:** Multiplicamos cruzado (truco rápido para dos fracciones):
-    *   $3 \cdot (x-1)$
-    *   $-2 \cdot (x+1)$
-3.  **Operación:**
-    $$\frac{3(x-1) - 2(x+1)}{(x+1)(x-1)}$$
-    $$= \frac{3x - 3 - 2x - 2}{(x+1)(x-1)}$$
-    $$= \frac{x - 5}{(x+1)(x-1)}$$
+
+1. **MCM:** 
+
+$$
+(x+1)(x-1)
+$$
+
+2. **Ajuste:** Multiplicamos cruzado (truco rápido para dos fracciones):
+   - $3 \cdot (x-1)$
+   - $-2 \cdot (x+1)$
+
+3. **Operación:**
+
+$$
+\frac{3(x-1) - 2(x+1)}{(x+1)(x-1)}
+$$
+
+$$
+= \frac{3x - 3 - 2x - 2}{(x+1)(x-1)}
+$$
+
+$$
+= \frac{x - 5}{(x+1)(x-1)}
+$$
 
 **Resultado:** $\boxed{\frac{x - 5}{x^2 - 1}}$
 
@@ -74,12 +109,22 @@ Suma: $\dfrac{x}{x^2-9} + \dfrac{1}{x+3}$
 - $x^2-9$ es diferencia de cuadrados: $(x+3)(x-3)$.
 
 **Razonamiento:**
-1.  **MCM:** $(x+3)(x-3)$. *Nota: El primer denominador YA es el MCM, contiene a ambos.*
-2.  **Ajuste:**
-    *   Primera fracción (su denominador es el MCM): Se queda igual $\to x$.
-    *   Segunda fracción ($x+3$): Le falta $(x-3)$. $\to 1 \cdot (x-3)$.
-3.  **Suma:**
-    $$\frac{x + (x-3)}{(x+3)(x-3)} = \frac{2x - 3}{x^2-9}$$
+
+1. **MCM:** $(x+3)(x-3)$. *Nota: El primer denominador YA es el MCM, contiene a ambos.*
+
+2. **Ajuste:**
+   - Primera fracción (su denominador es el MCM): Se queda igual $\to x$.
+   - Segunda fracción ($x+3$): Le falta $(x-3)$. 
+   
+$$
+1 \cdot (x-3)
+$$
+
+3. **Suma:**
+
+$$
+\frac{x + (x-3)}{(x+3)(x-3)} = \frac{2x - 3}{x^2-9}
+$$
 
 **Resultado:** $\boxed{\frac{2x - 3}{x^2 - 9}}$
 
@@ -94,14 +139,25 @@ Resta: $\dfrac{4}{x-2} - \dfrac{8}{x^2 - 4x + 4}$
 - MCM de $(x-2)$ y $(x-2)^2$ es $(x-2)^2$.
 
 **Razonamiento:**
-1.  **Ajuste:**
-    *   Al primero le falta un $(x-2)$. $\to 4(x-2) = 4x - 8$.
-    *   El segundo está completo. $\to 8$.
-2.  **Resta:**
-    $$\frac{(4x - 8) - 8}{(x-2)^2} = \frac{4x - 16}{(x-2)^2}$$
-3.  **Simplificación:**
-    *   Num: $4(x-4)$.
-    *   No se cancela nada con $(x-2)^2$.
+
+1. **Ajuste:**
+   - Al primero le falta un $(x-2)$. 
+   
+$$
+4(x-2) = 4x - 8
+$$
+
+   - El segundo está completo. $\to 8$.
+
+2. **Resta:**
+
+$$
+\frac{(4x - 8) - 8}{(x-2)^2} = \frac{4x - 16}{(x-2)^2}
+$$
+
+3. **Simplificación:**
+   - Numerador: $4(x-4)$.
+   - No se cancela nada con $(x-2)^2$.
 
 **Resultado:** $\boxed{\frac{4(x-4)}{(x-2)^2}}$
 
@@ -116,11 +172,16 @@ Suma: $\dfrac{1}{x^2+x} + \dfrac{1}{x}$
 - MCM: $x(x+1)$.
 
 **Razonamiento:**
-1.  **Ajuste:**
-    *   1ra: Completa $\to 1$.
-    *   2da: Le falta $(x+1) \to 1 \cdot (x+1)$.
-2.  **Suma:**
-    $$\frac{1 + x + 1}{x(x+1)} = \frac{x + 2}{x(x+1)}$$
+
+1. **Ajuste:**
+   - 1ra: Completa $\to 1$.
+   - 2da: Le falta $(x+1) \to 1 \cdot (x+1)$.
+
+2. **Suma:**
+
+$$
+\frac{1 + x + 1}{x(x+1)} = \frac{x + 2}{x(x+1)}
+$$
     
 **Resultado:** $\boxed{\frac{x+2}{x(x+1)}}$
 
@@ -135,7 +196,12 @@ Calcula $\dfrac{1}{2x} + \dfrac{1}{3x}$.
 <summary>Ver solución</summary>
 
 **Datos:** MCM(2x, 3x) = 6x.
-**Razonamiento:** $\frac{3 + 2}{6x}$.
+**Razonamiento:** 
+
+$$
+\frac{3 + 2}{6x}
+$$
+
 **Resultado:** $\boxed{\frac{5}{6x}}$
 
 </details>
@@ -147,7 +213,12 @@ Resta $\dfrac{5}{a} - \dfrac{2}{a^2}$.
 <summary>Ver solución</summary>
 
 **Datos:** MCM = $a^2$.
-**Razonamiento:** $\frac{5a - 2}{a^2}$.
+**Razonamiento:** 
+
+$$
+\frac{5a - 2}{a^2}
+$$
+
 **Resultado:** $\boxed{\frac{5a - 2}{a^2}}$
 
 </details>
@@ -159,7 +230,12 @@ Suma $\dfrac{2}{x+2} + \dfrac{3}{x-2}$.
 <summary>Ver solución</summary>
 
 **Datos:** MCM = $x^2-4$.
-**Razonamiento:** $2(x-2) + 3(x+2) = 2x - 4 + 3x + 6 = 5x + 2$.
+**Razonamiento:** 
+
+$$
+2(x-2) + 3(x+2) = 2x - 4 + 3x + 6 = 5x + 2
+$$
+
 **Resultado:** $\boxed{\frac{5x+2}{x^2-4}}$
 
 </details>
@@ -170,7 +246,12 @@ Calcula $\dfrac{x}{x-1} - \dfrac{1}{x}$.
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** $\frac{x(x) - 1(x-1)}{x(x-1)} = \frac{x^2 - x + 1}{x(x-1)}$.
+**Razonamiento:** 
+
+$$
+\frac{x(x) - 1(x-1)}{x(x-1)} = \frac{x^2 - x + 1}{x(x-1)}
+$$
+
 **Resultado:** $\boxed{\frac{x^2-x+1}{x(x-1)}}$
 
 </details>
@@ -182,7 +263,12 @@ Suma $\dfrac{4}{x-3} + \dfrac{5}{(x-3)^2}$.
 <summary>Ver solución</summary>
 
 **Datos:** MCM = $(x-3)^2$.
-**Razonamiento:** $\frac{4(x-3) + 5}{(x-3)^2} = \frac{4x - 12 + 5}{(x-3)^2}$.
+**Razonamiento:** 
+
+$$
+\frac{4(x-3) + 5}{(x-3)^2} = \frac{4x - 12 + 5}{(x-3)^2}
+$$
+
 **Resultado:** $\boxed{\frac{4x-7}{(x-3)^2}}$
 
 </details>
@@ -194,7 +280,12 @@ Calcula $\dfrac{3}{x^2-1} + \dfrac{1}{x-1}$.
 <summary>Ver solución</summary>
 
 **Datos:** MCM = $(x+1)(x-1)$.
-**Razonamiento:** $\frac{3 + 1(x+1)}{x^2-1} = \frac{x+4}{x^2-1}$.
+**Razonamiento:** 
+
+$$
+\frac{3 + 1(x+1)}{x^2-1} = \frac{x+4}{x^2-1}
+$$
+
 **Resultado:** $\boxed{\frac{x+4}{x^2-1}}$
 
 </details>
@@ -206,8 +297,18 @@ Resta $\dfrac{2x}{x^2-9} - \dfrac{1}{x+3}$.
 <summary>Ver solución</summary>
 
 **Datos:** MCM = $(x+3)(x-3)$.
-**Razonamiento:** $2x - 1(x-3) = 2x - x + 3 = x + 3$.
-**Simplificación:** $\frac{x+3}{(x+3)(x-3)} = \frac{1}{x-3}$.
+**Razonamiento:** 
+
+$$
+2x - 1(x-3) = 2x - x + 3 = x + 3
+$$
+
+**Simplificación:** 
+
+$$
+\frac{x+3}{(x+3)(x-3)} = \frac{1}{x-3}
+$$
+
 **Resultado:** $\boxed{\frac{1}{x-3}}$
 
 </details>
@@ -219,7 +320,12 @@ Suma $\dfrac{1}{a} + \dfrac{1}{b} + \dfrac{1}{c}$.
 <summary>Ver solución</summary>
 
 **Datos:** MCM = $abc$.
-**Razonamiento:** $\frac{bc + ac + ab}{abc}$.
+**Razonamiento:** 
+
+$$
+\frac{bc + ac + ab}{abc}
+$$
+
 **Resultado:** $\boxed{\frac{ab+bc+ac}{abc}}$
 
 </details>
@@ -231,7 +337,12 @@ Calcula $\dfrac{2}{x^2+3x} - \dfrac{1}{x}$.
 <summary>Ver solución</summary>
 
 **Datos:** $x(x+3)$. MCM = $x(x+3)$.
-**Razonamiento:** $\frac{2 - 1(x+3)}{x(x+3)} = \frac{2 - x - 3}{x(x+3)} = \frac{-x - 1}{x(x+3)}$.
+**Razonamiento:** 
+
+$$
+\frac{2 - 1(x+3)}{x(x+3)} = \frac{2 - x - 3}{x(x+3)} = \frac{-x - 1}{x(x+3)}
+$$
+
 **Resultado:** $\boxed{\frac{-(x+1)}{x(x+3)}}$
 
 </details>
@@ -242,7 +353,12 @@ Suma $\dfrac{x+1}{x-1} + \dfrac{x-1}{x+1}$.
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** $\frac{(x+1)^2 + (x-1)^2}{x^2-1} = \frac{x^2+2x+1 + x^2-2x+1}{x^2-1} = \frac{2x^2+2}{x^2-1}$.
+**Razonamiento:** 
+
+$$
+\frac{(x+1)^2 + (x-1)^2}{x^2-1} = \frac{x^2+2x+1 + x^2-2x+1}{x^2-1} = \frac{2x^2+2}{x^2-1}
+$$
+
 **Resultado:** $\boxed{\frac{2(x^2+1)}{x^2-1}}$
 
 </details>

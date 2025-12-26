@@ -51,13 +51,26 @@ Resta: $\dfrac{5x + 4}{x-3} - \dfrac{2x - 1}{x-3}$
 - Restamos un binomio: $(2x - 1)$.
 
 **Razonamiento:**
-1.  Unimos con el denominador común.
-2.  Aplicamos el menos al segundo numerador, usando paréntesis:
-    $$5x + 4 - (2x - 1)$$
-3.  Distribuimos el signo:
-    $$5x + 4 - 2x + 1$$
-4.  Reducimos términos semejantes:
-    $$3x + 5$$
+
+1. Unimos con el denominador común.
+
+2. Aplicamos el menos al segundo numerador, usando paréntesis: 
+
+$$
+5x + 4 - (2x - 1)
+$$
+
+3. Distribuimos el signo: 
+
+$$
+5x + 4 - 2x + 1
+$$
+
+4. Reducimos términos semejantes: 
+
+$$
+3x + 5
+$$
 
 **Resultado:** $\boxed{\frac{3x + 5}{x-3}}$
 
@@ -71,14 +84,30 @@ Suma: $\dfrac{x^2}{x+3} + \dfrac{5x + 6}{x+3}$
 - Denominador: $x+3$.
 
 **Razonamiento:**
-1.  Sumamos numeradores:
-    $$x^2 + 5x + 6$$
-2.  La fracción queda:
-    $$\frac{x^2 + 5x + 6}{x+3}$$
-3.  **¡Espera!** El numerador se puede factorizar (trinomio):
-    $$x^2 + 5x + 6 = (x+3)(x+2)$$
-4.  Simplificamos la fracción:
-    $$\frac{(x+3)(x+2)}{x+3} = x+2$$
+
+1. Sumamos numeradores:
+
+$$
+x^2 + 5x + 6
+$$
+
+2. La fracción queda:
+
+$$
+\frac{x^2 + 5x + 6}{x+3}
+$$
+
+3. **¡Espera!** El numerador se puede factorizar (trinomio):
+
+$$
+x^2 + 5x + 6 = (x+3)(x+2)
+$$
+
+4. Simplificamos la fracción:
+
+$$
+\frac{(x+3)(x+2)}{x+3} = x+2
+$$
 
 **Resultado:** $\boxed{x + 2}$
 
@@ -110,14 +139,34 @@ Calcula: $\dfrac{4x}{2x-1} + \dfrac{x+3}{2x-1} - \dfrac{x-2}{2x-1}$
 - Tres fracciones, mismo denominador.
 
 **Razonamiento:**
-1.  Numerador gigante:
-    $$4x + (x+3) - (x-2)$$
-2.  Quitamos paréntesis (cuidado con el menos del final):
-    $$4x + x + 3 - x + 2$$
-3.  Reducimos:
-    $$4x + x - x = 4x$$
-    $$3 + 2 = 5$$
-4.  Numerador final: $4x + 5$.
+
+1. Numerador gigante:
+
+$$
+4x + (x+3) - (x-2)
+$$
+
+2. Quitamos paréntesis (cuidado con el menos del final):
+
+$$
+4x + x + 3 - x + 2
+$$
+
+3. Reducimos:
+
+$$
+4x + x - x = 4x
+$$
+
+$$
+3 + 2 = 5
+$$
+
+4. Numerador final: 
+
+$$
+4x + 5
+$$
 
 **Resultado:** $\boxed{\frac{4x + 5}{2x-1}}$
 
@@ -132,7 +181,12 @@ Suma $\dfrac{2a}{5} + \dfrac{3a}{5}$.
 <summary>Ver solución</summary>
 
 **Datos:** Denom 5.
-**Razonamiento:** $2a + 3a = 5a$. $\frac{5a}{5} = a$.
+**Razonamiento:** 
+
+$$
+2a + 3a = 5a \quad \to \quad \frac{5a}{5} = a
+$$
+
 **Resultado:** $\boxed{a}$
 
 </details>
@@ -144,7 +198,12 @@ Resta $\dfrac{7x}{x+1} - \dfrac{3x}{x+1}$.
 <summary>Ver solución</summary>
 
 **Datos:** Denom x+1.
-**Razonamiento:** $7x - 3x = 4x$.
+**Razonamiento:** 
+
+$$
+7x - 3x = 4x
+$$
+
 **Resultado:** $\boxed{\frac{4x}{x+1}}$
 
 </details>
@@ -155,7 +214,12 @@ Suma $\dfrac{x}{x+y} + \dfrac{y}{x+y}$.
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** $\frac{x+y}{x+y} = 1$.
+**Razonamiento:** 
+
+$$
+\frac{x+y}{x+y} = 1
+$$
+
 **Resultado:** $\boxed{1}$
 
 </details>
@@ -167,8 +231,15 @@ Resta $\dfrac{5x+2}{3} - \dfrac{2x-4}{3}$.
 <summary>Ver solución</summary>
 
 **Razonamiento:**
-$5x + 2 - (2x - 4) = 5x + 2 - 2x + 4 = 3x + 6$.
-$\frac{3x+6}{3} = \frac{3(x+2)}{3}$.
+
+$$
+5x + 2 - (2x - 4) = 5x + 2 - 2x + 4 = 3x + 6
+$$
+
+$$
+\frac{3x+6}{3} = \frac{3(x+2)}{3}
+$$
+
 **Resultado:** $\boxed{x+2}$
 
 </details>
@@ -180,7 +251,11 @@ Calcula $\dfrac{x^2}{x-2} - \dfrac{4}{x-2}$.
 <summary>Ver solución</summary>
 
 **Razonamiento:**
-$\frac{x^2 - 4}{x-2} = \frac{(x+2)(x-2)}{x-2}$.
+
+$$
+\frac{x^2 - 4}{x-2} = \frac{(x+2)(x-2)}{x-2}
+$$
+
 **Resultado:** $\boxed{x+2}$
 
 </details>
@@ -192,7 +267,19 @@ Suma $\dfrac{3x}{x^2+2x} + \dfrac{6}{x^2+2x}$.
 <summary>Ver solución</summary>
 
 **Razonamiento:**
-$\frac{3x+6}{x^2+2x}$. Factorizamos: $\frac{3(x+2)}{x(x+2)}$. Cancelamos.
+
+$$
+\frac{3x+6}{x^2+2x}
+$$
+
+Factorizamos: 
+
+$$
+\frac{3(x+2)}{x(x+2)}
+$$
+
+Cancelamos.
+
 **Resultado:** $\boxed{\frac{3}{x}}$
 
 </details>
@@ -203,8 +290,12 @@ Resta $\dfrac{2a+b}{a+b} - \dfrac{a}{a+b}$.
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** $2a + b - a = a + b$.
-$\frac{a+b}{a+b} = 1$.
+**Razonamiento:** 
+
+$$
+2a + b - a = a + b \quad \to \quad \frac{a+b}{a+b} = 1
+$$
+
 **Resultado:** $\boxed{1}$
 
 </details>
@@ -215,7 +306,14 @@ Suma $\dfrac{x^2 - x}{x+1} + \dfrac{2x + 2}{x+1}$ (Nota: Esta era trampa, verifi
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** $\frac{x^2 + x + 2}{x+1}$. El numerador no factoriza fácil con enteros reales simples.
+**Razonamiento:** 
+
+$$
+\frac{x^2 + x + 2}{x+1}
+$$
+
+El numerador no factoriza fácil con enteros reales simples.
+
 **Resultado:** $\boxed{\frac{x^2 + x + 2}{x+1}}$
 
 </details>
@@ -226,8 +324,12 @@ Calcula $\dfrac{x+1}{2x} + \dfrac{x-1}{2x}$.
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** $x + 1 + x - 1 = 2x$.
-$\frac{2x}{2x} = 1$.
+**Razonamiento:** 
+
+$$
+x + 1 + x - 1 = 2x \quad \to \quad \frac{2x}{2x} = 1
+$$
+
 **Resultado:** $\boxed{1}$
 
 </details>
@@ -238,7 +340,12 @@ Resta $\dfrac{a^2}{a-b} - \dfrac{b^2}{a-b}$.
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** $\frac{a^2 - b^2}{a-b} = \frac{(a+b)(a-b)}{a-b}$.
+**Razonamiento:** 
+
+$$
+\frac{a^2 - b^2}{a-b} = \frac{(a+b)(a-b)}{a-b}
+$$
+
 **Resultado:** $\boxed{a+b}$
 
 </details>

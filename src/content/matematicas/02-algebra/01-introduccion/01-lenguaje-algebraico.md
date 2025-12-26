@@ -37,8 +37,8 @@ Cuando agregamos o quitamos cantidades, usamos palabras muy específicas.
 
 | Si lees... | Operación | Ejemplo ($x$ es el número) |
 | :--- | :--- | :--- |
-| Aumentado, más, suma, agregar | **Suma (+)** | "Un número aumentado en 2" $\to x+2$ |
-| Disminuido, menos, diferencia, restar | **Resta (-)** | "Un número disminuido en 5" $\to x-5$ |
+| Aumentado, más, suma, agregar | **Suma (+)** | "Un número aumentado en 2" $\to$ $$x+2$$ |
+| Disminuido, menos, diferencia, restar | **Resta (-)** | "Un número disminuido en 5" $\to$ $$x-5$$ |
 
 ### **2. Multiplicación y División**
 
@@ -46,8 +46,8 @@ Aquí es donde el lenguaje se vuelve más interesante. Recuerda que en álgebra,
 
 | Si lees... | Operación | Ejemplo |
 | :--- | :--- | :--- |
-| Doble, triple, producto, veces | **Multiplicación (·)** | "El triple de un número" $\to 3x$ |
-| Mitad, tercio, cociente, entre | **División (÷)** | "La mitad de un número" $\to \frac{x}{2}$ |
+| Doble, triple, producto, veces | **Multiplicación (·)** | "El triple de un número" $\to$ $$3x$$ |
+| Mitad, tercio, cociente, entre | **División (÷)** | "La mitad de un número" $\to$ $$\frac{x}{2}$$ |
 
 ![traduccion-visual-de-operaciones](https://cdn.ediprofe.com/img/matematicas/8a1t-traduccion-visual-de-operaciones.webp)
 
@@ -64,10 +64,16 @@ Vamos a traducir situaciones completas paso a paso, razonando cada parte de la o
 
 **Razonamiento:**
 1.  Identificamos "un número": Lo llamaremos $x$.
-2.  "El doble de...": Significa multiplicar por 2. ($\to 2x$)
+2.  "El doble de...": Significa multiplicar por 2.
+
+$$
+2x
+$$
+
 3.  "...aumentado en tres": Significa sumar 3 al resultado anterior.
 
 **Traducción:**
+
 $$
 2x + 3
 $$
@@ -82,10 +88,16 @@ $$
 
 **Razonamiento:**
 1.  Observa que dice "el doble de **la suma**". Esto nos dice que *primero* hacemos la suma y *luego* duplicamos el resultado total.
-2.  "La suma de un número y tres": $(x + 3)$.
+2.  "La suma de un número y tres":
+
+$$
+(x + 3)
+$$
+
 3.  "El doble de" todo eso: Ponemos el 2 afuera multiplicando.
 
 **Traducción:**
+
 $$
 2(x + 3)
 $$
@@ -103,11 +115,22 @@ $$
 
 **Razonamiento:**
 1.  "Un número": $n$.
-2.  "El cuadrado de un número": $n^2$.
-3.  "Su mitad": $\frac{n}{2}$.
+2.  "El cuadrado de un número":
+
+$$
+n^2
+$$
+
+3.  "Su mitad":
+
+$$
+\frac{n}{2}
+$$
+
 4.  "La diferencia entre...": Significa restar el primero menos el segundo.
 
 **Traducción:**
+
 $$
 n^2 - \frac{n}{2}
 $$
@@ -126,9 +149,17 @@ Pon a prueba tu habilidad de traducción. Intenta resolverlos antes de ver la so
 <details>
 <summary>Ver solución</summary>
 
-**Datos:** Número = $x$, Aumentado = $+$, Diez = $10$.
+**Datos:**
+- Número = $x$
+- Aumentado = $+$
+- Diez = $10$
 
-**Razonamiento:** Simplemente sumamos 10 a la incógnita.
+**Razonamiento:**
+Simplemente sumamos 10 a la incógnita.
+
+$$
+x + 10
+$$
 
 **Resultado:** $\boxed{x + 10}$
 
@@ -140,9 +171,16 @@ Pon a prueba tu habilidad de traducción. Intenta resolverlos antes de ver la so
 <details>
 <summary>Ver solución</summary>
 
-**Datos:** Número = $y$, Triple = multiplicar por 3.
+**Datos:**
+- Número = $y$
+- Triple = multiplicar por 3
 
-**Razonamiento:** Multiplicamos la variable por 3.
+**Razonamiento:**
+Multiplicamos la variable por 3.
+
+$$
+3y
+$$
 
 **Resultado:** $\boxed{3y}$
 
@@ -154,9 +192,16 @@ Pon a prueba tu habilidad de traducción. Intenta resolverlos antes de ver la so
 <details>
 <summary>Ver solución</summary>
 
-**Datos:** Número = $m$, Cuarta parte = dividir por 4.
+**Datos:**
+- Número = $m$
+- Cuarta parte = dividir por 4
 
-**Razonamiento:** Escribimos la división como una fracción.
+**Razonamiento:**
+Escribimos la división como una fracción.
+
+$$
+\frac{m}{4}
+$$
 
 **Resultado:** $\boxed{\frac{m}{4}}$
 
@@ -168,9 +213,17 @@ Pon a prueba tu habilidad de traducción. Intenta resolverlos antes de ver la so
 <details>
 <summary>Ver solución</summary>
 
-**Datos:** Número = $x$, Su mitad = $\frac{x}{2}$, Disminuido = resta.
+**Datos:**
+- Número = $x$
+- Su mitad = $\frac{x}{2}$
+- Disminuido = resta
 
-**Razonamiento:** Al número original le restamos su propia mitad.
+**Razonamiento:**
+Al número original le restamos su propia mitad.
+
+$$
+x - \frac{x}{2}
+$$
 
 **Resultado:** $\boxed{x - \frac{x}{2}}$
 
@@ -182,8 +235,15 @@ Pon a prueba tu habilidad de traducción. Intenta resolverlos antes de ver la so
 <details>
 <summary>Ver solución</summary>
 
-**Datos:** Números: $a$ y $b$.
-**Razonamiento:** Primero sumamos $(a+b)$ y luego elevamos todo al cuadrado. Necesitamos paréntesis.
+**Datos:**
+- Números: $a$ y $b$
+
+**Razonamiento:**
+Primero sumamos $(a+b)$ y luego elevamos todo al cuadrado. Necesitamos paréntesis.
+
+$$
+(a + b)^2
+$$
 
 **Resultado:** $\boxed{(a + b)^2}$
 
@@ -195,8 +255,15 @@ Pon a prueba tu habilidad de traducción. Intenta resolverlos antes de ver la so
 <details>
 <summary>Ver solución</summary>
 
-**Datos:** Números: $x$ e $y$.
-**Razonamiento:** Primero elevamos cada uno al cuadrado ($x^2$, $y^2$) y luego los sumamos.
+**Datos:**
+- Números: $x$ e $y$
+
+**Razonamiento:**
+Primero elevamos cada uno al cuadrado ($x^2$, $y^2$) y luego los sumamos.
+
+$$
+x^2 + y^2
+$$
 
 **Resultado:** $\boxed{x^2 + y^2}$
 
@@ -208,8 +275,16 @@ Pon a prueba tu habilidad de traducción. Intenta resolverlos antes de ver la so
 <details>
 <summary>Ver solución</summary>
 
-**Datos:** Número = $n$. Su consecutivo es el número que sigue = $n+1$.
-**Razonamiento:** Multiplicamos $n$ por todo el bloque $(n+1)$.
+**Datos:**
+- Número = $n$
+- Su consecutivo = $n+1$
+
+**Razonamiento:**
+Multiplicamos $n$ por todo el bloque $(n+1)$.
+
+$$
+n(n + 1)
+$$
 
 **Resultado:** $\boxed{n(n + 1)}$
 
@@ -221,7 +296,8 @@ Pon a prueba tu habilidad de traducción. Intenta resolverlos antes de ver la so
 <details>
 <summary>Ver solución</summary>
 
-**Análisis:** Vemos una multiplicación por 2 (doble) y una resta de 5.
+**Análisis:**
+Vemos una multiplicación por 2 (doble) y una resta de 5.
 
 **Resultado:** "El doble de un número disminuido en cinco".
 
@@ -233,7 +309,8 @@ Pon a prueba tu habilidad de traducción. Intenta resolverlos antes de ver la so
 <details>
 <summary>Ver solución</summary>
 
-**Análisis:** Vemos una suma en el numerador y una división por 3 de todo eso.
+**Análisis:**
+Vemos una suma en el numerador y una división por 3 de todo eso.
 
 **Resultado:** "La tercera parte de un número aumentado en uno".
 
@@ -245,8 +322,16 @@ Pon a prueba tu habilidad de traducción. Intenta resolverlos antes de ver la so
 <details>
 <summary>Ver solución</summary>
 
-**Datos:** Número = $x$. Cubo = potencia 3 ($x^3$).
-**Razonamiento:** Sumamos el cubo y el número original.
+**Datos:**
+- Número = $x$
+- Cubo = potencia 3 ($x^3$)
+
+**Razonamiento:**
+Sumamos el cubo y el número original.
+
+$$
+x^3 + x
+$$
 
 **Resultado:** $\boxed{x^3 + x}$
 

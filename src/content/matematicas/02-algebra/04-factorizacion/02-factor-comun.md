@@ -24,7 +24,9 @@ Observa la expresión: $6x + 9y$
 - ¿Hay alguna letra que se repita? No.
 - Entonces, el factor común es **3**.
 
-$$ 3(2x + 3y) $$
+$$
+3(2x + 3y)
+$$
 
 ![factor-comun](https://cdn.ediprofe.com/img/matematicas/w3rh-factor-comun.webp)
 
@@ -44,12 +46,20 @@ Para no cometer errores, sigue este orden lógico:
 Factoriza: $4x^3 + 8x^2$
 
 **Razonamiento:**
+
 - **MCD de 4 y 8:** Es 4.
 - **Letra común:** La $x$ aparece en ambos. El menor exponente es 2. Factor: $x^2$.
 - **Factor Común Total:** $\boxed{4x^2}$.
-- **Dividimos:**
-  - $4x^3 \div 4x^2 = x$
-  - $8x^2 \div 4x^2 = 2$
+
+**Dividimos:**
+
+$$
+4x^3 \div 4x^2 = x
+$$
+
+$$
+8x^2 \div 4x^2 = 2
+$$
 
 **Resultado:** $\boxed{4x^2(x + 2)}$
 
@@ -64,9 +74,18 @@ Si el primer término es negativo, a veces conviene sacar el signo menos como pa
 Factoriza: $-5a^2 + 10a$
 
 **Razonamiento:**
-- Sacamos $-5a$ como factor.
-- $(-5a^2) \div (-5a) = a$.
-- $(+10a) \div (-5a) = -2$.
+
+1. Sacamos $-5a$ como factor.
+
+2. Dividimos:
+
+$$
+(-5a^2) \div (-5a) = a
+$$
+
+$$
+(+10a) \div (-5a) = -2
+$$
 
 **Resultado:** $\boxed{-5a(a - 2)}$
 
@@ -98,9 +117,20 @@ Factoriza: $x^2 + x$
 **Datos:** La $x$ se repite.
 
 **Razonamiento:**
-- Factor común: $x$.
-- $x^2 \div x = x$.
-- $x \div x = 1$ (¡NUNCA pongas cero!).
+
+1. Factor común: $x$.
+
+2. Dividimos:
+
+$$
+x^2 \div x = x
+$$
+
+$$
+x \div x = 1
+$$
+
+(¡NUNCA pongas cero!).
 
 **Resultado:** $\boxed{x(x + 1)}$
 
@@ -111,12 +141,24 @@ Factoriza: $x^2 + x$
 Factoriza: $15a + 20b - 30$
 
 **Razonamiento:**
+
 1. Buscamos el MCD de 15, 20 y 30. El divisor más grande es **5**.
+
 2. No hay letras comunes en los tres términos.
+
 3. Dividimos cada término entre 5:
-   - $15a \div 5 = 3a$
-   - $20b \div 5 = 4b$
-   - $-30 \div 5 = -6$
+
+$$
+15a \div 5 = 3a
+$$
+
+$$
+20b \div 5 = 4b
+$$
+
+$$
+-30 \div 5 = -6
+$$
 
 **Resultado:** $\boxed{5(3a + 4b - 6)}$
 
@@ -127,13 +169,26 @@ Factoriza: $15a + 20b - 30$
 Factoriza: $m^5 - m^3 + m^2$
 
 **Razonamiento:**
+
 1. La letra $m$ se repite en todos.
+
 2. Elegimos el menor exponente: **2**.
+
 3. Factor común: $m^2$.
+
 4. Dividimos restando exponentes:
-   - $m^5 \div m^2 = m^3$
-   - $m^3 \div m^2 = m^1$
-   - $m^2 \div m^2 = 1$
+
+$$
+m^5 \div m^2 = m^3
+$$
+
+$$
+m^3 \div m^2 = m^1
+$$
+
+$$
+m^2 \div m^2 = 1
+$$
 
 **Resultado:** $\boxed{m^2(m^3 - m + 1)}$
 
@@ -144,13 +199,24 @@ Factoriza: $m^5 - m^3 + m^2$
 Factoriza: $18x^2y^3 - 12x^3y^2$
 
 **Razonamiento:**
+
 1. MCD de 18 y 12: **6**.
+
 2. Menor exponente de $x$: $x^2$.
+
 3. Menor exponente de $y$: $y^2$.
+
 4. Factor común total: **$6x^2y^2$**.
+
 5. Dividimos:
-   - $18x^2y^3 \div 6x^2y^2 = 3y$
-   - $12x^3y^2 \div 6x^2y^2 = 2x$
+
+$$
+18x^2y^3 \div 6x^2y^2 = 3y
+$$
+
+$$
+12x^3y^2 \div 6x^2y^2 = 2x
+$$
 
 **Resultado:** $\boxed{6x^2y^2(3y - 2x)}$
 
@@ -176,7 +242,13 @@ Factoriza la expresión: $6a + 12$.
 <summary>Ver solución</summary>
 
 **Datos:** MCD de 6 y 12 es 6.
-**Razonamiento:** $6(a) + 6(2)$.
+
+**Razonamiento:** 
+
+$$
+6(a) + 6(2)
+$$
+
 **Resultado:** $\boxed{6(a + 2)}$
 
 </details>
@@ -198,7 +270,14 @@ Factoriza: $m^2 - m$.
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** Extraemos $m$: $m(m) - m(1)$.
+**Razonamiento:** 
+
+Extraemos $m$: 
+
+$$
+m(m) - m(1)
+$$
+
 **Resultado:** $\boxed{m(m - 1)}$
 
 </details>
@@ -210,7 +289,13 @@ Resuelve: $10x^2y + 15xy^2$.
 <summary>Ver solución</summary>
 
 **Datos:** MCD: 5. Letras comunes: $x, y$.
-**Razonamiento:** $5xy(2x + 3y)$.
+
+**Razonamiento:** 
+
+$$
+5xy(2x + 3y)
+$$
+
 **Resultado:** $\boxed{5xy(2x + 3y)}$
 
 </details>
@@ -221,7 +306,14 @@ Factoriza usando un término negativo: $-3x - 9$.
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** Sacamos el $-3$. Esto vuelve positivos a los términos internos.
+**Razonamiento:** 
+
+Sacamos el $-3$. Esto vuelve positivos a los términos internos:
+
+$$
+-3(x + 3)
+$$
+
 **Resultado:** $\boxed{-3(x + 3)}$
 
 </details>
@@ -233,7 +325,15 @@ Factoriza: $2a^3 + 4a^2 + 6a$.
 <summary>Ver solución</summary>
 
 **Datos:** MCD: 2. Letra: $a$.
-**Razonamiento:** Dividimos cada uno: $a^2, 2a, 3$.
+
+**Razonamiento:** 
+
+Dividimos cada uno: 
+
+$$
+a^2, \quad 2a, \quad 3
+$$
+
 **Resultado:** $\boxed{2a(a^2 + 2a + 3)}$
 
 </details>
@@ -255,7 +355,14 @@ Factoriza: $\frac{1}{2}x^2 + \frac{1}{2}x$.
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** Sacamos la fracción y la letra: $\frac{1}{2}x(x + 1)$.
+**Razonamiento:** 
+
+Sacamos la fracción y la letra: 
+
+$$
+\frac{1}{2}x(x + 1)
+$$
+
 **Resultado:** $\boxed{\frac{1}{2}x(x + 1)}$
 
 </details>
@@ -266,7 +373,18 @@ Verifica si $x^2(x - 5)$ es la factorización de $x^3 - 5x^2$.
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** Multiplicamos $x^2 \cdot x = x^3$ y $x^2 \cdot (-5) = -5x^2$.
+**Razonamiento:** 
+
+Multiplicamos:
+
+$$
+x^2 \cdot x = x^3
+$$
+
+$$
+x^2 \cdot (-5) = -5x^2
+$$
+
 **Resultado:** $\boxed{\text{Sí, es correcta}}$
 
 </details>

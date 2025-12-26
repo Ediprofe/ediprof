@@ -323,7 +323,106 @@
       "size": "40KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/w3rh-factor-comun.webp",
       "status": "uploaded"
+    },
+    {
+      "id": "wp5n",
+      "name": "ascensor.webp",
+      "materia": "fisica",
+      "date": "2025-12-26",
+      "size": "53KB",
+      "url": "https://cdn.ediprofe.com/img/fisica/wp5n-ascensor.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "8y72",
+      "name": "resumen-distancia-desplazamiento.webp",
+      "materia": "fisica",
+      "date": "2025-12-26",
+      "size": "40KB",
+      "url": "https://cdn.ediprofe.com/img/fisica/8y72-resumen-distancia-desplazamiento.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "oszg",
+      "name": "resumen-rapidez-velocidad.webp",
+      "materia": "fisica",
+      "date": "2025-12-26",
+      "size": "81KB",
+      "url": "https://cdn.ediprofe.com/img/fisica/oszg-resumen-rapidez-velocidad.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "llj9",
+      "name": "despeje-mru.webp",
+      "materia": "fisica",
+      "date": "2025-12-26",
+      "size": "37KB",
+      "url": "https://cdn.ediprofe.com/img/fisica/llj9-despeje-mru.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "w8j3",
+      "name": "resumen-caida-libre.webp",
+      "materia": "fisica",
+      "date": "2025-12-26",
+      "size": "37KB",
+      "url": "https://cdn.ediprofe.com/img/fisica/w8j3-resumen-caida-libre.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "zj93",
+      "name": "piedra-del-puente.webp",
+      "materia": "fisica",
+      "date": "2025-12-26",
+      "size": "32KB",
+      "url": "https://cdn.ediprofe.com/img/fisica/zj93-piedra-del-puente.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "89oh",
+      "name": "altura-de-la-piedra.webp",
+      "materia": "fisica",
+      "date": "2025-12-26",
+      "size": "24KB",
+      "url": "https://cdn.ediprofe.com/img/fisica/89oh-altura-de-la-piedra.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "rh5n",
+      "name": "despegue-del-avion.webp",
+      "materia": "fisica",
+      "date": "2025-12-26",
+      "size": "41KB",
+      "url": "https://cdn.ediprofe.com/img/fisica/rh5n-despegue-del-avion.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "8bj6",
+      "name": "flecha-hacia-arriba.webp",
+      "materia": "fisica",
+      "date": "2025-12-26",
+      "size": "36KB",
+      "url": "https://cdn.ediprofe.com/img/fisica/8bj6-flecha-hacia-arriba.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "w5ef",
+      "name": "resumen-lanzamiento-vertical.webp",
+      "materia": "fisica",
+      "date": "2025-12-26",
+      "size": "60KB",
+      "url": "https://cdn.ediprofe.com/img/fisica/w5ef-resumen-lanzamiento-vertical.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "tpbn",
+      "name": "resumen-tiro-parabolico.webp",
+      "materia": "fisica",
+      "date": "2025-12-26",
+      "size": "64KB",
+      "url": "https://cdn.ediprofe.com/img/fisica/tpbn-resumen-tiro-parabolico.webp",
+      "status": "uploaded"
     }
   ],
-  "lastUpdated": "2025-12-26T18:35:13.207Z"
+  "lastUpdated": "2025-12-26T21:58:19.764Z"
 }

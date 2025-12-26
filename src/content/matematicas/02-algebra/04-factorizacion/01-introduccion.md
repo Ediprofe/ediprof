@@ -40,9 +40,18 @@ La gran ventaja de la factorización es que siempre puedes comprobar tu resultad
 ### **Ejemplo de Verificación**
 
 Si factorizaste $6x + 9$ como $3(2x + 3)$, verifica así:
-$$ 3 \cdot 2x = 6x $$
-$$ 3 \cdot 3 = 9 $$
-$$ 6x + 9 = 6x + 9 \quad \checkmark $$
+
+$$
+3 \cdot 2x = 6x
+$$
+
+$$
+3 \cdot 3 = 9
+$$
+
+$$
+6x + 9 = 6x + 9 \quad \checkmark
+$$
 
 ---
 
@@ -64,9 +73,20 @@ Dado que la factorización es deshacer la multiplicación, los factores son simp
 Simplifica la expresión $\frac{x^2-9}{x-3}$ sabiendo que $x^2-9 = (x+3)(x-3)$.
 
 **Razonamiento:**
-1. Reemplazamos el numerador por sus factores.
+
+1. Reemplazamos el numerador por sus factores:
+   
+$$
+\frac{(x+3)(x-3)}{x-3}
+$$
+
 2. Notamos que el factor $(x-3)$ aparece arriba y abajo.
-3. Lo cancelamos (dividimos algo entre sí mismo da 1).
+
+3. Lo cancelamos (dividimos algo entre sí mismo da 1):
+
+$$
+x+3
+$$
 
 **Resultado:** $\boxed{x+3}$
 
@@ -77,10 +97,30 @@ Simplifica la expresión $\frac{x^2-9}{x-3}$ sabiendo que $x^2-9 = (x+3)(x-3)$.
 Expresa el número $60$ como un producto de sus factores primos.
 
 **Razonamiento:**
-1. Dividimos por el primer primo (2): $60 = 2 \cdot 30$.
-2. Seguimos con el 30: $30 = 2 \cdot 15$.
-3. Seguimos con el 15: $15 = 3 \cdot 5$.
-4. Unimos todos: $2 \cdot 2 \cdot 3 \cdot 5$.
+
+1. Dividimos por el primer primo (2):
+   
+$$
+60 = 2 \cdot 30
+$$
+
+2. Seguimos con el 30:
+
+$$
+30 = 2 \cdot 15
+$$
+
+3. Seguimos con el 15:
+
+$$
+15 = 3 \cdot 5
+$$
+
+4. Unimos todos:
+
+$$
+2 \cdot 2 \cdot 3 \cdot 5
+$$
 
 **Resultado:** $\boxed{2^2 \cdot 3 \cdot 5}$
 
@@ -102,12 +142,34 @@ Observamos cada término de la suma. El número **5** es el único elemento que 
 Comprueba si $(x - 4)(x + 4)$ es la factorización de $x^2 - 16$.
 
 **Razonamiento:**
+
 Multiplicamos los factores usando propiedad distributiva:
-1. $x \cdot x = x^2$
-2. $x \cdot 4 = 4x$
-3. $-4 \cdot x = -4x$
-4. $-4 \cdot 4 = -16$
-5. Sumamos: $x^2 + 4x - 4x - 16 = x^2 - 16$.
+
+1.
+$$
+x \cdot x = x^2
+$$
+
+2.
+$$
+x \cdot 4 = 4x
+$$
+
+3.
+$$
+-4 \cdot x = -4x
+$$
+
+4.
+$$
+-4 \cdot 4 = -16
+$$
+
+5. Sumamos:
+
+$$
+x^2 + 4x - 4x - 16 = x^2 - 16
+$$
 
 **Resultado:** $\boxed{\text{Sí, es correcta}}$
 
@@ -122,7 +184,15 @@ Si $2 \times 3 \times x = 6x$, ¿cuáles son los factores de $6x$?
 <summary>Ver solución</summary>
 
 **Datos:** La multiplicación es $2 \cdot 3 \cdot x$.
-**Razonamiento:** Los factores son cada uno de los elementos que se multiplican.
+
+**Razonamiento:** 
+
+Los factores son cada uno de los elementos que se multiplican:
+
+$$
+2, \quad 3, \quad x
+$$
+
 **Resultado:** $\boxed{2, 3 \text{ y } x}$
 
 </details>
@@ -134,7 +204,23 @@ Verifica si $2(x + 4)$ es la factorización correcta de $2x + 8$.
 <summary>Ver solución</summary>
 
 **Datos:** Aplicamos propiedad distributiva.
-**Razonamiento:** $2 \cdot x = 2x$ y $2 \cdot 4 = 8$. La suma da $2x + 8$.
+
+**Razonamiento:** 
+
+$$
+2 \cdot x = 2x
+$$
+
+$$
+2 \cdot 4 = 8
+$$
+
+La suma da:
+
+$$
+2x + 8
+$$
+
 **Resultado:** $\boxed{\text{Sí, es correcta}}$
 
 </details>
@@ -167,7 +253,22 @@ Factoriza el número 42 en sus factores primos.
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** $42 = 2 \cdot 21 = 2 \cdot 3 \cdot 7$.
+**Razonamiento:** 
+
+$$
+42 = 2 \cdot 21
+$$
+
+$$
+21 = 3 \cdot 7
+$$
+
+Por lo tanto:
+
+$$
+42 = 2 \cdot 3 \cdot 7
+$$
+
 **Resultado:** $\boxed{2 \cdot 3 \cdot 7}$
 
 </details>
@@ -211,7 +312,22 @@ Si factorizamos $10x^2$ como $(2x)(5x)$, ¿es correcta la verificación?
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** $2 \cdot 5 = 10$ y $x \cdot x = x^2$. El resultado es $10x^2$.
+**Razonamiento:** 
+
+$$
+2 \cdot 5 = 10
+$$
+
+$$
+x \cdot x = x^2
+$$
+
+El resultado es:
+
+$$
+10x^2
+$$
+
 **Resultado:** $\boxed{\text{Sí, es correcta}}$
 
 </details>

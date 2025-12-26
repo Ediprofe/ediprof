@@ -65,8 +65,8 @@ $$
 
 donde:
 
-- $a$ → número base tal que $1 \leq a \leq 9$ (una sola cifra antes del punto)
-- $n$ → exponente entero (positivo si el número es grande, negativo si es pequeño)
+- $a \to$ número base tal que $1 \leq a \leq 9$ (una sola cifra antes del punto)
+- $n \to$ exponente entero (positivo si el número es grande, negativo si es pequeño)
 
 ### 💡 ¿Qué significa el exponente?
 
@@ -116,7 +116,7 @@ $$
 | **Cantidad** | **Forma estándar** | **Notación científica** |
 |:-------------|:-------------------|:-----------------------:|
 | Velocidad de la luz | 300 000 000 m/s | $3 \times 10^8\,\mathrm{m/s}$ |
-| Masa de un átomo de hidrógeno | 0.00000000000000000000000000167 kg | $1.67 \times 10^{-27}\,\mathrm{kg}$ |
+| Masa de un átomo de hidrógeno | 0.0000... kg | $1.67 \times 10^{-27}\,\mathrm{kg}$ |
 | Distancia a la Luna | 384 400 000 m | $3.844 \times 10^8\,\mathrm{m}$ |
 | Radio de un átomo | 0.0000000001 m | $1 \times 10^{-10}\,\mathrm{m}$ |
 
@@ -138,18 +138,42 @@ $$
 ### Ejercicio 1
 **Expresa los siguientes números en notación científica:**
 
-a) 4 500 000 000  
-b) 0.00000072  
-c) 12 340 000 000 000  
-d) 0.000000000056  
+a) $4\,500\,000\,000$
+
+b) $0.00000072$
+
+c) $12\,340\,000\,000\,000$
+
+d) $0.000000000056$
 
 <details>
 <summary>Ver solución</summary>
 
-a) $4.5 \times 10^9$  
-b) $7.2 \times 10^{-7}$  
-c) $1.234 \times 10^{13}$  
-d) $5.6 \times 10^{-11}$
+**Razonamiento:**
+
+a) 
+
+$$
+4.5 \times 10^9
+$$
+
+b) 
+
+$$
+7.2 \times 10^{-7}
+$$
+
+c) 
+
+$$
+1.234 \times 10^{13}
+$$
+
+d) 
+
+$$
+5.6 \times 10^{-11}
+$$
 
 </details>
 
@@ -158,16 +182,36 @@ d) $5.6 \times 10^{-11}$
 ### Ejercicio 2
 **Convierte a forma decimal:**
 
-a) $3.2 \times 10^5$  
-b) $8.1 \times 10^{-4}$  
-c) $6.022 \times 10^{23}$  
+a) $3.2 \times 10^5$
+
+b) $8.1 \times 10^{-4}$
+
+c) $6.022 \times 10^{23}$
 
 <details>
 <summary>Ver solución</summary>
 
-a) 320 000  
-b) 0.00081  
-c) 602 200 000 000 000 000 000 000 (¡el número de Avogadro!)
+**Razonamiento:**
+
+a) 
+
+$$
+320\,000
+$$
+
+b) 
+
+$$
+0.00081
+$$
+
+c) 
+
+$$
+602\,200\,000\,000\,000\,000\,000\,000
+$$
+
+(¡El número de Avogadro!)
 
 </details>
 
@@ -176,14 +220,18 @@ c) 602 200 000 000 000 000 000 000 (¡el número de Avogadro!)
 ### Ejercicio 3
 **¿Cuál número es más grande?**
 
-a) $5 \times 10^{12}$ o $9 \times 10^{11}$  
-b) $2 \times 10^{-5}$ o $8 \times 10^{-6}$  
+a) $5 \times 10^{12}$ o $9 \times 10^{11}$
+
+b) $2 \times 10^{-5}$ o $8 \times 10^{-6}$
 
 <details>
 <summary>Ver solución</summary>
 
-a) $5 \times 10^{12}$ es más grande (10¹² > 10¹¹, el exponente domina)  
-b) $2 \times 10^{-5}$ es más grande (-5 > -6, menos negativo = más grande)
+**Razonamiento:**
+
+a) **$5 \times 10^{12}$** es más grande. El exponente domina ($10^{12} > 10^{11}$).
+
+b) **$2 \times 10^{-5}$** es más grande. Un exponente menos negativo es mayor ($-5 > -6$).
 
 </details>
 
@@ -196,11 +244,13 @@ b) $2 \times 10^{-5}$ es más grande (-5 > -6, menos negativo = más grande)
 <summary>Ver solución</summary>
 
 **Masa del Sol:**
+
 $$
 1\,989\,000\,000\,000\,000\,000\,000\,000\,000\,000\,\mathrm{kg}
 $$
 
 **Carga del electrón:**
+
 $$
 0.0000000000000000001602\,\mathrm{C}
 $$

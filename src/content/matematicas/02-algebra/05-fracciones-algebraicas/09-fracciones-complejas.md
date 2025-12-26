@@ -32,9 +32,20 @@ Simplifica: $\dfrac{\frac{3}{4}}{\frac{5}{7}}$
 - Medios: 4 y 5.
 
 **Razonamiento:**
-1.  Multiplicamos extremos (van arriba): $3 \cdot 7 = 21$.
-2.  Multiplicamos medios (van abajo): $4 \cdot 5 = 20$.
-3.  ¿Se puede simplificar? No.
+
+1. Multiplicamos extremos (van arriba): 
+
+$$
+3 \cdot 7 = 21
+$$
+
+2. Multiplicamos medios (van abajo): 
+
+$$
+4 \cdot 5 = 20
+$$
+
+3. ¿Se puede simplificar? No.
 
 **Resultado:** $\boxed{\frac{21}{20}}$
 
@@ -49,13 +60,23 @@ Simplifica: $\dfrac{\frac{2x}{y^2}}{\frac{6x^2}{y}}$
 - Medios: $y^2$ y $6x^2$.
 
 **Razonamiento:**
-1.  Aplicamos la regla:
-    $$\frac{2x \cdot y}{y^2 \cdot 6x^2}$$
-2.  Simplificamos:
-    *   Números: $2/6 = 1/3$.
-    *   $x$: $x/x^2 = 1/x$.
-    *   $y$: $y/y^2 = 1/y$.
-3.  Juntamos: $\frac{1}{3xy}$.
+
+1. Aplicamos la regla:
+
+$$
+\frac{2x \cdot y}{y^2 \cdot 6x^2}
+$$
+
+2. Simplificamos:
+   - Números: $2/6 = 1/3$.
+   - $x$: $x/x^2 = 1/x$.
+   - $y$: $y/y^2 = 1/y$.
+
+3. Juntamos: 
+
+$$
+\frac{1}{3xy}
+$$
 
 **Resultado:** $\boxed{\frac{1}{3xy}}$
 
@@ -69,13 +90,22 @@ Simplifica: $\dfrac{1 + \frac{1}{x}}{1 - \frac{1}{x}}$
 - Denominador pequeño: $x$. MCM = $x$.
 
 **Razonamiento:**
-1.  Multiplicamos TODO (arriba y abajo) por $x$:
-    $$\frac{x(1) + x(\frac{1}{x})}{x(1) - x(\frac{1}{x})}$$
-2.  Operamos:
-    *   $x \cdot 1 = x$.
-    *   $x \cdot \frac{1}{x} = 1$.
-3.  Queda:
-    $$\frac{x+1}{x-1}$$
+
+1. Multiplicamos TODO (arriba y abajo) por $x$:
+
+$$
+\frac{x(1) + x(\frac{1}{x})}{x(1) - x(\frac{1}{x})}
+$$
+
+2. Operamos:
+   - $x \cdot 1 = x$.
+   - $x \cdot \frac{1}{x} = 1$.
+
+3. Queda:
+
+$$
+\frac{x+1}{x-1}
+$$
 
 **Resultado:** $\boxed{\frac{x+1}{x-1}}$
 
@@ -90,16 +120,30 @@ Simplifica: $\dfrac{\frac{1}{a} + \frac{1}{b}}{\frac{a}{b} - \frac{b}{a}}$
 - MCM de todos: $ab$.
 
 **Razonamiento:**
-1.  Multiplicamos todo por $ab$:
-    $$\frac{ab(\frac{1}{a}) + ab(\frac{1}{b})}{ab(\frac{a}{b}) - ab(\frac{b}{a})}$$
-2.  Simplificamos cada término:
-    *   Numerador: $b + a$.
-    *   Denominador: $a^2 - b^2$.
-3.  Queda:
-    $$\frac{a+b}{a^2-b^2}$$
-4.  Factorizamos el denominador (Diferencia de cuadrados):
-    $$\frac{a+b}{(a+b)(a-b)}$$
-5.  Cancelamos $(a+b)$.
+
+1. Multiplicamos todo por $ab$:
+
+$$
+\frac{ab(\frac{1}{a}) + ab(\frac{1}{b})}{ab(\frac{a}{b}) - ab(\frac{b}{a})}
+$$
+
+2. Simplificamos cada término:
+   - Numerador: $b + a$.
+   - Denominador: $a^2 - b^2$.
+
+3. Queda:
+
+$$
+\frac{a+b}{a^2-b^2}
+$$
+
+4. Factorizamos el denominador (Diferencia de cuadrados):
+
+$$
+\frac{a+b}{(a+b)(a-b)}
+$$
+
+5. Cancelamos $(a+b)$.
 
 **Resultado:** $\boxed{\frac{1}{a-b}}$
 
@@ -113,13 +157,30 @@ Simplifica: $1 + \dfrac{1}{1 + \dfrac{1}{x}}$
 - Resolvemos de abajo hacia arriba.
 
 **Razonamiento:**
-1.  **Paso 1 (Abajo):** $1 + \frac{1}{x} = \frac{x+1}{x}$.
-2.  **Sustituimos:**
-    $$1 + \frac{1}{\frac{x+1}{x}}$$
-3.  **Paso 2 (Invertir):** Uno sobre una fracción es la fracción invertida.
-    $$1 + \frac{x}{x+1}$$
-4.  **Paso 3 (Suma final):**
-    $$\frac{x+1 + x}{x+1} = \frac{2x+1}{x+1}$$
+
+1. **Paso 1 (Abajo):** 
+
+$$
+1 + \frac{1}{x} = \frac{x+1}{x}
+$$
+
+2. **Sustituimos:**
+
+$$
+1 + \frac{1}{\frac{x+1}{x}}
+$$
+
+3. **Paso 2 (Invertir):** Uno sobre una fracción es la fracción invertida: 
+
+$$
+1 + \frac{x}{x+1}
+$$
+
+4. **Paso 3 (Suma final):**
+
+$$
+\frac{x+1 + x}{x+1} = \frac{2x+1}{x+1}
+$$
 
 **Resultado:** $\boxed{\frac{2x+1}{x+1}}$
 
@@ -133,7 +194,13 @@ Simplifica $\dfrac{\frac{a}{b}}{\frac{c}{d}}$.
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** Extremos $ad$, medios $bc$.
+**Razonamiento:** 
+
+Extremos $ad$, medios $bc$:
+
+$$
+\frac{a}{b} \div \frac{c}{d} = \frac{ad}{bc}
+$$
 **Resultado:** $\boxed{\frac{ad}{bc}}$
 
 </details>
@@ -143,7 +210,12 @@ Simplifica $\dfrac{\frac{x}{2}}{\frac{x}{3}}$.
 
 <details>
 <summary>Ver solución</summary>
-**Razonamiento:** $\frac{3x}{2x} = \frac{3}{2}$.
+
+**Razonamiento:** 
+
+$$
+\frac{3x}{2x} = \frac{3}{2}
+$$
 **Resultado:** $\boxed{\frac{3}{2}}$
 </details>
 
@@ -153,7 +225,11 @@ Simplifica $\dfrac{1 - \frac{1}{2}}{3}$.
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** $1 - 1/2 = 1/2$. $\frac{1/2}{3} = \frac{1}{6}$.
+**Razonamiento:** 
+
+$$
+1 - 1/2 = 1/2 \quad \to \quad \frac{1/2}{3} = \frac{1}{6}
+$$
 **Resultado:** $\boxed{\frac{1}{6}}$
 
 </details>
@@ -163,8 +239,14 @@ Simplifica $\dfrac{\frac{1}{x} + 1}{\frac{1}{x}}$.
 
 <details>
 <summary>Ver solución</summary>
-**Razonamiento:** Mult todo por $x$.
-$(1 + x) / 1$.
+
+**Razonamiento:** 
+
+Multiplicar todo por $x$:
+
+$$
+\frac{(1 + x)}{1} = x + 1
+$$
 **Resultado:** $\boxed{x+1}$
 </details>
 
@@ -174,8 +256,19 @@ Simplifica $\dfrac{\frac{1}{x} - \frac{1}{y}}{x-y}$.
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** Num: $\frac{y-x}{xy}$.
-Div: $\frac{y-x}{xy(x-y)} = \frac{-(x-y)}{xy(x-y)}$.
+**Razonamiento:** 
+
+Numerador: 
+
+$$
+\frac{1}{x} - \frac{1}{y} = \frac{y-x}{xy}
+$$
+
+División: 
+
+$$
+\frac{y-x}{xy(x-y)} = \frac{-(x-y)}{xy(x-y)} = -\frac{1}{xy}
+$$
 **Resultado:** $\boxed{-\frac{1}{xy}}$
 
 </details>
@@ -186,17 +279,22 @@ Simplifica $\dfrac{x + \frac{x}{y}}{y + \frac{y}{x}}$.
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** Mult todo por $xy$.
-Num: $xy^2 + x^2y = xy(y+x)$.
-Den: $xy^2 + y^2$ (espera, al multiplicar por $xy$: $xy(y) + xy(y/x) = xy^2 + y^2$. Error en cálculo rápido, hagámoslo lento.
-MCM $xy$.
-Num: $x(xy) + x(x) = x^2y + x^2$? No, $x(xy)$ sumado.
-Mejor por partes:
-Num $\frac{xy+x}{y}$. Den $\frac{xy+y}{x}$.
-Prod: $\frac{x(xy+x)}{y(xy+y)} = \frac{x^2(y+1)}{y^2(x+1)}$. No se ve simple.
-Probemos MCM $xy$:
-Num: $x(xy) + x(x) = x^2y + x^2 = x^2(y+1)$.
-Den: $y(xy) + y(y) = xy^2 + y^2 = y^2(x+1)$.
+**Razonamiento:** 
+
+Utilizando el MCM $xy$:
+
+Numerador: 
+
+$$
+x(xy) + x(x) = x^2y + x^2 = x^2(y+1)
+$$
+
+Denominador: 
+
+$$
+y(xy) + y(y) = xy^2 + y^2 = y^2(x+1)
+$$
+
 **Resultado:** $\boxed{\frac{x^2(y+1)}{y^2(x+1)}}$
 
 </details>
@@ -207,9 +305,24 @@ Simplifica $2 - \dfrac{3}{1 - \frac{1}{x}}$.
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** $1 - 1/x = \frac{x-1}{x}$.
-Invierte: $\frac{3x}{x-1}$.
-Resta: $2 - \frac{3x}{x-1} = \frac{2x-2-3x}{x-1} = \frac{-x-2}{x-1}$.
+**Razonamiento:** 
+
+$$
+1 - 1/x = \frac{x-1}{x}
+$$
+
+Invierte: 
+
+$$
+\frac{3x}{x-1}
+$$
+
+Resta: 
+
+$$
+2 - \frac{3x}{x-1} = \frac{2x-2-3x}{x-1} = \frac{-x-2}{x-1}
+$$
+
 **Resultado:** $\boxed{\frac{-(x+2)}{x-1}}$
 
 </details>
@@ -219,9 +332,18 @@ Simplifica $\dfrac{\frac{x^2}{y^2} - 1}{\frac{x}{y} + 1}$.
 
 <details>
 <summary>Ver solución</summary>
-**Razonamiento:** Mult por $y^2$.
-Num: $x^2 - y^2$. Den: $xy + y^2 = y(x+y)$.
-$\frac{(x+y)(x-y)}{y(x+y)}$.
+
+**Razonamiento:** 
+
+Multiplicar por $y^2$:
+
+Numerador: $x^2 - y^2$. 
+
+Denominador: $xy + y^2 = y(x+y)$.
+
+$$
+\frac{(x+y)(x-y)}{y(x+y)} = \frac{x-y}{y}
+$$
 **Resultado:** $\boxed{\frac{x-y}{y}}$
 </details>
 
@@ -231,8 +353,16 @@ Simplifica $\dfrac{\frac{1}{x+h} - \frac{1}{x}}{h}$.
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** Num: $\frac{x - (x+h)}{x(x+h)} = \frac{-h}{x(x+h)}$.
+**Razonamiento:** 
+
+Numerador: 
+
+$$
+\frac{x - (x+h)}{x(x+h)} = \frac{-h}{x(x+h)}
+$$
+
 Div por $h$: Se va la $h$.
+
 **Resultado:** $\boxed{\frac{-1}{x(x+h)}}$
 
 </details>
@@ -244,9 +374,17 @@ Simplifica $\dfrac{x^{-1} + y^{-1}}{x^{-1}y^{-1}}$.
 <summary>Ver solución</summary>
 
 **Razonamiento:**
-$\frac{1/x + 1/y}{1/xy}$.
-Mult por $xy$.
-Num: $y + x$. Den: $1$.
+
+$$
+\frac{1/x + 1/y}{1/xy}
+$$
+
+Multiplicar por $xy$:
+
+Numerador: $y + x$. 
+
+Denominador: $1$.
+
 **Resultado:** $\boxed{x+y}$
 
 </details>

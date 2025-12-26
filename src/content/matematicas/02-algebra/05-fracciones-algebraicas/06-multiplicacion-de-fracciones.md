@@ -37,13 +37,24 @@ Multiplica: $\dfrac{2x^2}{3y} \cdot \dfrac{9y^2}{4x}$
 - Solo multiplicaciones y divisiones.
 
 **Razonamiento:**
-1.  Multiplicamos coeficientes:
-    $$\frac{2 \cdot 9}{3 \cdot 4} = \frac{18}{12}$$
-    Simplificamos por 6: $\frac{3}{2}$.
-2.  Multiplicamos variables:
-    *   $x$: Arriba $x^2$, abajo $x$. Queda $x$ arriba.
-    *   $y$: Arriba $y^2$, abajo $y$. Queda $y$ arriba.
-3.  Juntamos todo:
+
+1. Multiplicamos coeficientes:
+
+$$
+\frac{2 \cdot 9}{3 \cdot 4} = \frac{18}{12}
+$$
+
+Simplificamos por 6: 
+
+$$
+\frac{3}{2}
+$$
+
+2. Multiplicamos variables:
+   - $x$: Arriba $x^2$, abajo $x$. Queda $x$ arriba.
+   - $y$: Arriba $y^2$, abajo $y$. Queda $y$ arriba.
+
+3. Juntamos todo:
 
 **Resultado:** $\boxed{\frac{3xy}{2}}$
 
@@ -57,13 +68,19 @@ Multiplica: $\dfrac{5a^3}{7b} \cdot \dfrac{14b^4}{10a^2}$
 - Podemos simplificar cruzado antes de operar.
 
 **Razonamiento:**
-1.  **Números:**
-    *   5 y 10 $\to$ 1 y 2.
-    *   14 y 7 $\to$ 2 y 1.
-    *   Queda $\frac{1 \cdot 2}{1 \cdot 2} = 1$.
-2.  **Letras:**
-    *   $a^3 / a^2 \to a$.
-    *   $b^4 / b \to b^3$.
+
+1. **Números:**
+   - 5 y 10 $\to$ 1 y 2.
+   - 14 y 7 $\to$ 2 y 1.
+   - Queda: 
+   
+$$
+\frac{1 \cdot 2}{1 \cdot 2} = 1
+$$
+
+2. **Letras:**
+   - $a^3 / a^2 \to a$.
+   - $b^4 / b \to b^3$.
 
 **Resultado:** $\boxed{ab^3}$
 
@@ -77,12 +94,22 @@ Multiplica: $\dfrac{3x+3}{5} \cdot \dfrac{10}{x+1}$
 - Numerador factorizable: $3x+3$.
 
 **Razonamiento:**
-1.  Factorizamos:
-    $$\frac{3(x+1)}{5} \cdot \frac{10}{x+1}$$
-2.  Cancelamos:
-    *   $(x+1)$ con $(x+1)$.
-    *   10 con 5 $\to$ queda 2 arriba.
-3.  Multiplicamos lo que queda: $3 \cdot 2 = 6$.
+
+1. Factorizamos:
+
+$$
+\frac{3(x+1)}{5} \cdot \frac{10}{x+1}
+$$
+
+2. Cancelamos:
+   - $(x+1)$ con $(x+1)$.
+   - 10 con 5 $\to$ queda 2 arriba.
+
+3. Multiplicamos lo que queda: 
+
+$$
+3 \cdot 2 = 6
+$$
 
 **Resultado:** $\boxed{6}$
 
@@ -97,12 +124,22 @@ Multiplica: $\dfrac{x^2-4}{x+3} \cdot \dfrac{x^2+3x}{x-2}$
 - $x^2+3x = x(x+3)$.
 
 **Razonamiento:**
-1.  Escribimos todo factorizado:
-    $$\frac{(x+2)(x-2)}{x+3} \cdot \frac{x(x+3)}{x-2}$$
-2.  Cancelamos factores iguales (uno arriba, otro abajo):
-    *   $(x-2)$ con $(x-2)$.
-    *   $(x+3)$ con $(x+3)$.
-3.  Sobrevivientes: $(x+2)$ y $x$.
+
+1. Escribimos todo factorizado:
+
+$$
+\frac{(x+2)(x-2)}{x+3} \cdot \frac{x(x+3)}{x-2}
+$$
+
+2. Cancelamos factores iguales (uno arriba, otro abajo):
+   - $(x-2)$ con $(x-2)$.
+   - $(x+3)$ con $(x+3)$.
+
+3. Sobrevivientes: 
+
+$$
+(x+2) \quad \text{y} \quad x
+$$
 
 **Resultado:** $\boxed{x(x+2)}$
 
@@ -117,13 +154,19 @@ Multiplica: $\dfrac{x^2+5x+6}{x^2+x-2} \cdot \dfrac{x-1}{x+3}$
 - Trinomio 2: $(x+2)(x-1)$.
 
 **Razonamiento:**
-1.  Factorizamos todo:
-    $$\frac{(x+3)(x+2)}{(x+2)(x-1)} \cdot \frac{x-1}{x+3}$$
-2.  Cancelamos:
-    *   $(x+3)$ con $(x+3)$.
-    *   $(x+2)$ con $(x+2)$.
-    *   $(x-1)$ con $(x-1)$.
-3.  ¡Se canceló todo! Cuando todo se cancela multiplicando, el resultado es 1.
+
+1. Factorizamos todo:
+
+$$
+\frac{(x+3)(x+2)}{(x+2)(x-1)} \cdot \frac{x-1}{x+3}
+$$
+
+2. Cancelamos:
+   - $(x+3)$ con $(x+3)$.
+   - $(x+2)$ con $(x+2)$.
+   - $(x-1)$ con $(x-1)$.
+
+3. ¡Se canceló todo! Cuando todo se cancela multiplicando, el resultado es 1.
 
 **Resultado:** $\boxed{1}$
 
@@ -138,7 +181,12 @@ Multiplica $\dfrac{3a}{b} \cdot \dfrac{b^2}{6a}$.
 <summary>Ver solución</summary>
 
 **Datos:** Simplificación cruzada.
-**Razonamiento:** 3/6 = 1/2. $a/a = 1$. $b^2/b = b$.
+**Razonamiento:** 
+
+$$
+\frac{3}{6} = \frac{1}{2} \quad , \quad \frac{a}{a} = 1 \quad , \quad \frac{b^2}{b} = b
+$$
+
 **Resultado:** $\boxed{\frac{b}{2}}$
 
 </details>
@@ -149,7 +197,14 @@ Multiplica $\dfrac{x+2}{4} \cdot \dfrac{8}{x+2}$.
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** Se cancela $(x+2)$. 8/4 = 2.
+**Razonamiento:** 
+
+Se cancela $(x+2)$. 
+
+$$
+\frac{8}{4} = 2
+$$
+
 **Resultado:** $\boxed{2}$
 
 </details>
@@ -161,7 +216,14 @@ Multiplica $\dfrac{x-1}{3} \cdot \dfrac{9}{x^2-1}$.
 <summary>Ver solución</summary>
 
 **Datos:** $x^2-1 = (x+1)(x-1)$.
-**Razonamiento:** Cancelamos $(x-1)$ y 9/3=3.
+**Razonamiento:** 
+
+Cancelamos $(x-1)$ y: 
+
+$$
+\frac{9}{3} = 3
+$$
+
 **Resultado:** $\boxed{\frac{3}{x+1}}$
 
 </details>
@@ -173,7 +235,12 @@ Multiplica $\dfrac{5x}{x+1} \cdot \dfrac{x^2+x}{10}$.
 <summary>Ver solución</summary>
 
 **Datos:** $x^2+x = x(x+1)$.
-**Razonamiento:** Cancelamos $(x+1)$ y 5/10 = 1/2.
+**Razonamiento:** Cancelamos $(x+1)$ y: 
+
+$$
+\frac{5}{10} = \frac{1}{2}
+$$
+
 **Resultado:** $\boxed{\frac{x^2}{2}}$
 
 </details>
@@ -184,7 +251,14 @@ Multiplica $\dfrac{x^2-9}{x-3} \cdot \dfrac{1}{x+3}$.
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** $(x+3)(x-3)$. Todo se cancela.
+**Razonamiento:** 
+
+$$
+(x+3)(x-3)
+$$
+
+Todo se cancela.
+
 **Resultado:** $\boxed{1}$
 
 </details>
@@ -195,7 +269,14 @@ Multiplica $\dfrac{a^2-b^2}{a} \cdot \dfrac{a}{a+b}$.
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** $(a+b)(a-b)$. Cancelamos $a$ y $(a+b)$.
+**Razonamiento:** 
+
+$$
+(a+b)(a-b)
+$$
+
+Cancelamos $a$ y $(a+b)$.
+
 **Resultado:** $\boxed{a-b}$
 
 </details>
@@ -206,8 +287,14 @@ Multiplica $\dfrac{2x+2}{x-2} \cdot \dfrac{x^2-4}{x+1}$.
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** $2(x+1)$ y $(x+2)(x-2)$.
+**Razonamiento:** 
+
+$$
+2(x+1) \quad \text{y} \quad (x+2)(x-2)
+$$
+
 Cancelamos $(x+1)$ y $(x-2)$.
+
 **Resultado:** $\boxed{2(x+2)}$
 
 </details>
@@ -218,7 +305,14 @@ Multiplica $\dfrac{x^2+2x+1}{x} \cdot \dfrac{x^2}{x+1}$.
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** $(x+1)^2$. Cancelamos un $(x+1)$ y una $x$.
+**Razonamiento:** 
+
+$$
+(x+1)^2
+$$
+
+Cancelamos un $(x+1)$ y una $x$.
+
 **Resultado:** $\boxed{x(x+1)}$
 
 </details>
@@ -229,7 +323,14 @@ Multiplica $\dfrac{xy}{z} \cdot \dfrac{z^2}{x} \cdot \dfrac{1}{y}$.
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** Se van $x$, $y$. Queda $z^2/z = z$.
+**Razonamiento:** 
+
+Se van $x$, $y$. Queda: 
+
+$$
+\frac{z^2}{z} = z
+$$
+
 **Resultado:** $\boxed{z}$
 
 </details>
@@ -241,9 +342,13 @@ Multiplica $\dfrac{x^2-5x+6}{x^2-4} \cdot \dfrac{x+2}{x-3}$.
 <summary>Ver solución</summary>
 
 **Razonamiento:**
-Num 1: $(x-3)(x-2)$.
-Den 1: $(x+2)(x-2)$.
+
+Numerador 1: $(x-3)(x-2)$.
+
+Denominador 1: $(x+2)(x-2)$.
+
 Cancelamos $(x-3)$, $(x-2)$, $(x+2)$.
+
 **Resultado:** $\boxed{1}$
 
 </details>
