@@ -1,6 +1,6 @@
 # **Cuadrado de un Trinomio**
 
----
+
 
 ## 🎯 ¿Qué vas a aprender?
 

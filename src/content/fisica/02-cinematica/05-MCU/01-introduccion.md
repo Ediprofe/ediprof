@@ -42,7 +42,7 @@ Esta aceleración se llama **Centrípeta** (busca el centro) porque es la fuerza
 
 Para describir algo que gira, lo primero que preguntamos es: "¿Qué tan rápido da las vueltas?". Tenemos dos formas de medirlo:
 
-### **1. El Período ($T$): "Tiempo por vuelta"**
+### **1. El Período: "Tiempo por vuelta"**
 
 Es el tiempo que tardas en completar **un ciclo completo**.
 
@@ -54,7 +54,7 @@ $$
 T = \frac{\text{Tiempo total}}{\text{Número de vueltas}}
 $$
 
-### **2. La Frecuencia ($f$): "Vueltas por tiempo"**
+### **2. La Frecuencia: "Vueltas por tiempo"**
 
 Es al revés. Cuántas vueltas logras dar en **un segundo**.
 
@@ -78,7 +78,7 @@ $$
 
 Imagina un carrusel. Tú te sientas en el borde (el caballo exterior) y tu amigo se sienta cerca del centro. Ambos completan una vuelta al mismo tiempo, pero tú recorres mucha más distancia que él.
 
-### **1. Velocidad Angular ($\omega$): "¿Qué tan rápido giramos?"**
+### **1. Velocidad Angular: "¿Qué tan rápido giramos?"**
 
 Mide el **ángulo** que barres por segundo.
 
@@ -91,7 +91,7 @@ $$
 \omega = \frac{2\pi}{T} = 2\pi f
 $$
 
-### **2. Velocidad Tangencial ($v$): "¿Qué tan rápido nos movemos?"**
+### **2. Velocidad Tangencial: "¿Qué tan rápido nos movemos?"**
 
 Mide los **metros** que recorres por segundo.
 

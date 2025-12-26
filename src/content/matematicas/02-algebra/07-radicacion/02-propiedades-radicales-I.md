@@ -1,312 +1,298 @@
-# √ Propiedades de los Radicales (I)
+# **Propiedades de los Radicales (I)**
 
-En esta lección estudiaremos las primeras propiedades fundamentales de los radicales: la raíz de un producto y la raíz de un cociente.
+A veces nos encontramos con raíces de números gigantes o expresiones complicadas que parecen imposibles de resolver mentalmente. ¿Te imaginas calcular $\sqrt{900}$ sin calculadora?
+
+Las propiedades de los radicales son como trucos de magia que nos permiten romper problemas grandes en pedazos pequeños y manejables.
 
 ---
 
-## 📖 Raíz de un producto
+## 🎯 ¿Qué vas a aprender?
 
-La raíz de un producto es igual al producto de las raíces:
+- Cómo separar la raíz de una multiplicación en dos raíces más simples.
+- Cómo dividir raíces gigantes en fracciones pequeñas.
+- Cuándo es mejor unir dos raíces separadas para poder resolverlas.
+- El error número 1 que cometen los estudiantes en los exámenes (¡y cómo evitarlo!).
+
+---
+
+## ⚡ Propiedad 1: Raíz de un Producto
+
+**"La raíz de una multiplicación es la multiplicación de las raíces".**
+
+Si tienes números multiplicándose dentro de una casa (raíz), puedes darles a cada uno su propia casa.
 
 $$
 \sqrt[n]{a \cdot b} = \sqrt[n]{a} \cdot \sqrt[n]{b}
 $$
 
-### Demostración
+### ¿Para qué sirve?
+Para simplificar.
+$\sqrt{900}$ parece difícil. Pero $900 = 9 \times 100$.
+$$
+\sqrt{9 \times 100} = \sqrt{9} \times \sqrt{100} = 3 \times 10 = 30
+$$
+¡Mucho más fácil!
 
-Usando exponentes fraccionarios:
+---
+
+## ⚡ Propiedad 2: Raíz de un Cociente
+
+**"La raíz de una división es la división de las raíces".**
+
+Lo mismo pasa con las fracciones. Puedes separar el numerador (arriba) y el denominador (abajo).
 
 $$
-\sqrt[n]{a \cdot b} = (ab)^{\frac{1}{n}} = a^{\frac{1}{n}} \cdot b^{\frac{1}{n}} = \sqrt[n]{a} \cdot \sqrt[n]{b}
+\sqrt[n]{\frac{a}{b}} = \frac{\sqrt[n]{a}}{\sqrt[n]{b}}
 $$
 
 ---
 
-### Ejemplo 1
+## ⚠️ ¡ALERTA DE ERROR COMÚN!
 
-Simplificar $\sqrt{36 \cdot 25}$.
-
-$$
-\sqrt{36 \cdot 25} = \sqrt{36} \cdot \sqrt{25} = 6 \cdot 5 = 30
-$$
+Las propiedades funcionan para **multiplicación** y **división**.
+**NUNCA** funcionan para suma o resta.
 
 $$
-\boxed{\sqrt{36 \cdot 25} = 30}
+\sqrt{a + b} \neq \sqrt{a} + \sqrt{b}
+$$
+
+**Prueba:**
+$\sqrt{9 + 16} = \sqrt{25} = 5$
+$\sqrt{9} + \sqrt{16} = 3 + 4 = 7$
+¡$5$ no es igual a $7$! **No caigas en la trampa.**
+
+---
+
+## ⚙️ Ejemplos Resueltos
+
+### Ejemplo 1: Separar para vencer
+
+Calcula $\sqrt{144 \times 25}$.
+
+**Razonamiento:**
+Multiplicar $144 \times 25$ da un número enorme. Mejor separamos.
+
+$$
+\sqrt{144} \times \sqrt{25}
+$$
+
+$$
+12 \times 5
+$$
+
+**Resultado:**
+
+$$
+\boxed{60}
+$$
+
+### Ejemplo 2: Unir para resolver
+
+Calcula $\sqrt{2} \cdot \sqrt{8}$.
+
+**Razonamiento:**
+$\sqrt{2}$ es decimal infinito. $\sqrt{8}$ también.
+Pero si usamos la propiedad al revés (unirlos):
+
+$$
+\sqrt{2 \cdot 8} = \sqrt{16}
+$$
+
+**Resultado:**
+
+$$
+\boxed{4}
+$$
+
+### Ejemplo 3: División simplificada
+
+Calcula $\sqrt{\frac{36}{49}}$.
+
+**Razonamiento:**
+Aplicamos la raíz arriba y abajo.
+
+$$
+\frac{\sqrt{36}}{\sqrt{49}}
+$$
+
+**Resultado:**
+
+$$
+\boxed{\frac{6}{7}}
 $$
 
 ---
 
-### Ejemplo 2
+## 📝 Ejercicios de Práctica
 
-Simplificar $\sqrt[3]{8 \cdot 27}$.
+### Ejercicio 1
+Calcula $\sqrt{4 \times 9}$.
 
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$\sqrt{4} \times \sqrt{9} = 2 \times 3$.
+
+**Resultado:**
 $$
-\sqrt[3]{8 \cdot 27} = \sqrt[3]{8} \cdot \sqrt[3]{27} = 2 \cdot 3 = 6
+\boxed{6}
 $$
 
+</details>
+
+### Ejercicio 2
+Calcula $\sqrt{\frac{100}{25}}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$\frac{\sqrt{100}}{\sqrt{25}} = \frac{10}{5} = 2$.
+
+**Resultado:**
 $$
-\boxed{\sqrt[3]{8 \cdot 27} = 6}
+\boxed{2}
 $$
+
+</details>
+
+### Ejercicio 3
+Calcula $\sqrt{3} \cdot \sqrt{12}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Unimos: $\sqrt{3 \times 12} = \sqrt{36}$.
+
+**Resultado:**
+$$
+\boxed{6}
+$$
+
+</details>
+
+### Ejercicio 4
+Simplifica $\sqrt{x^4 \cdot y^2}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$\sqrt{x^4} \cdot \sqrt{y^2} = x^2 \cdot y$.
+
+**Resultado:**
+$$
+\boxed{x^2y}
+$$
+
+</details>
+
+### Ejercicio 5
+Calcula $\sqrt[3]{8 \times 27}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$\sqrt[3]{8} \times \sqrt[3]{27} = 2 \times 3$.
+
+**Resultado:**
+$$
+\boxed{6}
+$$
+
+</details>
+
+### Ejercicio 6
+Calcula $\frac{\sqrt{50}}{\sqrt{2}}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Unimos en división: $\sqrt{\frac{50}{2}} = \sqrt{25}$.
+
+**Resultado:**
+$$
+\boxed{5}
+$$
+
+</details>
+
+### Ejercicio 7
+¿Es cierto que $\sqrt{100 - 36} = 10 - 6$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$\sqrt{64} = 8$. Pero $10-6=4$. No es cierto.
+
+**Resultado:**
+$$
+\boxed{\text{Falso}}
+$$
+
+</details>
+
+### Ejercicio 8
+Simplifica $\sqrt{\frac{a^2}{b^4}}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$\frac{\sqrt{a^2}}{\sqrt{b^4}} = \frac{a}{b^2}$.
+
+**Resultado:**
+$$
+\boxed{\frac{a}{b^2}}
+$$
+
+</details>
+
+### Ejercicio 9
+Calcula $\sqrt{2} \cdot \sqrt{32}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$\sqrt{64} = 8$.
+
+**Resultado:**
+$$
+\boxed{8}
+$$
+
+</details>
+
+### Ejercicio 10
+Calcula $\sqrt[3]{\frac{-27}{8}}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$\frac{\sqrt[3]{-27}}{\sqrt[3]{8}} = \frac{-3}{2}$.
+
+**Resultado:**
+$$
+\boxed{-\frac{3}{2}}
+$$
+
+</details>
 
 ---
 
-### Ejemplo 3
-
-Simplificar $\sqrt{x^2y^4}$.
-
-$$
-\sqrt{x^2y^4} = \sqrt{x^2} \cdot \sqrt{y^4} = |x| \cdot y^2
-$$
-
-> **Nota:** $\sqrt{x^2} = |x|$ porque la raíz cuadrada siempre es positiva.
-
-$$
-\boxed{\sqrt{x^2y^4} = |x|y^2}
-$$
-
----
-
-### Ejemplo 4
-
-Simplificar $\sqrt[3]{a^3b^6}$.
-
-$$
-\sqrt[3]{a^3b^6} = \sqrt[3]{a^3} \cdot \sqrt[3]{b^6} = a \cdot b^2 = ab^2
-$$
-
-$$
-\boxed{\sqrt[3]{a^3b^6} = ab^2}
-$$
-
----
-
-### Ejemplo 5
-
-Simplificar $\sqrt{4x^2y^2}$.
-
-$$
-\sqrt{4x^2y^2} = \sqrt{4} \cdot \sqrt{x^2} \cdot \sqrt{y^2} = 2|x||y|
-$$
-
-$$
-\boxed{\sqrt{4x^2y^2} = 2|xy|}
-$$
-
----
-
-## 📖 Raíz de un cociente
-
-La raíz de un cociente es igual al cociente de las raíces:
-
-$$
-\sqrt[n]{\frac{a}{b}} = \frac{\sqrt[n]{a}}{\sqrt[n]{b}} \quad \text{(para } b \neq 0\text{)}
-$$
-
-### Demostración
-
-$$
-\sqrt[n]{\frac{a}{b}} = \left(\frac{a}{b}\right)^{\frac{1}{n}} = \frac{a^{\frac{1}{n}}}{b^{\frac{1}{n}}} = \frac{\sqrt[n]{a}}{\sqrt[n]{b}}
-$$
-
----
-
-### Ejemplo 6
-
-Simplificar $\sqrt{\dfrac{49}{16}}$.
-
-$$
-\sqrt{\frac{49}{16}} = \frac{\sqrt{49}}{\sqrt{16}} = \frac{7}{4}
-$$
-
-$$
-\boxed{\sqrt{\frac{49}{16}} = \frac{7}{4}}
-$$
-
----
-
-### Ejemplo 7
-
-Simplificar $\sqrt[3]{\dfrac{27}{8}}$.
-
-$$
-\sqrt[3]{\frac{27}{8}} = \frac{\sqrt[3]{27}}{\sqrt[3]{8}} = \frac{3}{2}
-$$
-
-$$
-\boxed{\sqrt[3]{\frac{27}{8}} = \frac{3}{2}}
-$$
-
----
-
-### Ejemplo 8
-
-Simplificar $\sqrt{\dfrac{x^6}{y^4}}$.
-
-$$
-\sqrt{\frac{x^6}{y^4}} = \frac{\sqrt{x^6}}{\sqrt{y^4}} = \frac{x^3}{y^2}
-$$
-
-$$
-\boxed{\sqrt{\frac{x^6}{y^4}} = \frac{x^3}{y^2}}
-$$
-
-(Asumiendo $x, y > 0$)
-
----
-
-### Ejemplo 9
-
-Simplificar $\sqrt[4]{\dfrac{16a^8}{81b^{12}}}$.
-
-$$
-\sqrt[4]{\frac{16a^8}{81b^{12}}} = \frac{\sqrt[4]{16a^8}}{\sqrt[4]{81b^{12}}} = \frac{\sqrt[4]{16} \cdot \sqrt[4]{a^8}}{\sqrt[4]{81} \cdot \sqrt[4]{b^{12}}}
-$$
-
-$$
-= \frac{2a^2}{3b^3}
-$$
-
-$$
-\boxed{\sqrt[4]{\frac{16a^8}{81b^{12}}} = \frac{2a^2}{3b^3}}
-$$
-
----
-
-### Ejemplo 10
-
-Simplificar $\sqrt{\dfrac{50}{2}}$.
-
-$$
-\sqrt{\frac{50}{2}} = \sqrt{25} = 5
-$$
-
-También podemos hacer:
-
-$$
-\sqrt{\frac{50}{2}} = \frac{\sqrt{50}}{\sqrt{2}} = \frac{\sqrt{25 \cdot 2}}{\sqrt{2}} = \frac{5\sqrt{2}}{\sqrt{2}} = 5
-$$
-
-$$
-\boxed{\sqrt{\frac{50}{2}} = 5}
-$$
-
----
-
-## 📖 Aplicación: Uniendo radicales
-
-### Ejemplo 11
-
-Escribir $\sqrt{3} \cdot \sqrt{5}$ como un solo radical.
-
-$$
-\sqrt{3} \cdot \sqrt{5} = \sqrt{3 \cdot 5} = \sqrt{15}
-$$
-
-$$
-\boxed{\sqrt{3} \cdot \sqrt{5} = \sqrt{15}}
-$$
-
----
-
-### Ejemplo 12
-
-Escribir $\dfrac{\sqrt{18}}{\sqrt{2}}$ como un solo radical.
-
-$$
-\frac{\sqrt{18}}{\sqrt{2}} = \sqrt{\frac{18}{2}} = \sqrt{9} = 3
-$$
-
-$$
-\boxed{\frac{\sqrt{18}}{\sqrt{2}} = 3}
-$$
-
----
-
-## 📋 Resumen
+## 🔑 Resumen
 
 | Propiedad | Fórmula |
-|:----------|:-------:|
-| Raíz de un producto | $\sqrt[n]{ab} = \sqrt[n]{a} \cdot \sqrt[n]{b}$ |
-| Raíz de un cociente | $\sqrt[n]{\dfrac{a}{b}} = \dfrac{\sqrt[n]{a}}{\sqrt[n]{b}}$ |
+|----------|---------|
+| **Producto** | $\sqrt{a \cdot b} = \sqrt{a} \cdot \sqrt{b}$ |
+| **Cociente** | $\sqrt{\frac{a}{b}} = \frac{\sqrt{a}}{\sqrt{b}}$ |
+| **Suma/Resta** | ❌ ¡PROHIBIDO SEPARAR! |
 
----
-
-## 📝 Ejercicios de práctica
-
-**Ejercicio 1:** Simplifica $\sqrt{9 \cdot 16}$.
-
-<details>
-<summary>Ver solución</summary>
-
-$$
-\sqrt{9 \cdot 16} = \sqrt{9} \cdot \sqrt{16} = 3 \cdot 4 = 12
-$$
-
-</details>
-
----
-
-**Ejercicio 2:** Simplifica $\sqrt[3]{64 \cdot 125}$.
-
-<details>
-<summary>Ver solución</summary>
-
-$$
-\sqrt[3]{64} \cdot \sqrt[3]{125} = 4 \cdot 5 = 20
-$$
-
-</details>
-
----
-
-**Ejercicio 3:** Simplifica $\sqrt{\dfrac{81}{25}}$.
-
-<details>
-<summary>Ver solución</summary>
-
-$$
-\frac{\sqrt{81}}{\sqrt{25}} = \frac{9}{5}
-$$
-
-</details>
-
----
-
-**Ejercicio 4:** Simplifica $\sqrt{a^4b^2}$ (asumiendo $a, b > 0$).
-
-<details>
-<summary>Ver solución</summary>
-
-$$
-\sqrt{a^4} \cdot \sqrt{b^2} = a^2 \cdot b = a^2b
-$$
-
-</details>
-
----
-
-**Ejercicio 5:** Escribe $\sqrt{7} \cdot \sqrt{11}$ como un solo radical.
-
-<details>
-<summary>Ver solución</summary>
-
-$$
-\sqrt{7 \cdot 11} = \sqrt{77}
-$$
-
-</details>
-
----
-
-**Ejercicio 6:** Simplifica $\dfrac{\sqrt{50}}{\sqrt{2}}$.
-
-<details>
-<summary>Ver solución</summary>
-
-$$
-\sqrt{\frac{50}{2}} = \sqrt{25} = 5
-$$
-
-</details>
-
----
+> Recuerda: Las propiedades son herramientas de doble vía. A veces sirve separar, a veces sirve unir.

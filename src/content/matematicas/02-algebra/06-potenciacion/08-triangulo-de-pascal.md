@@ -1,354 +1,361 @@
-# 🔺 Triángulo de Pascal
+# **Triángulo de Pascal**
 
-En esta lección aprenderemos sobre el Triángulo de Pascal, una herramienta visual que nos permite obtener rápidamente los coeficientes binomiales para la expansión del Binomio de Newton.
+En la lección anterior aprendimos a usar la fórmula de combinaciones $\binom{n}{k}$ para hallar los coeficientes del binomio. Pero seamos honestos: calcular factoriales una y otra vez es lento y aburrido.
 
----
-
-## 📖 ¿Qué es el Triángulo de Pascal?
-
-El **Triángulo de Pascal** es un arreglo triangular de números donde cada número es la suma de los dos números que están directamente encima de él.
-
-```
-              1                 (n = 0)
-            1   1               (n = 1)
-          1   2   1             (n = 2)
-        1   3   3   1           (n = 3)
-      1   4   6   4   1         (n = 4)
-    1   5  10  10   5   1       (n = 5)
-  1   6  15  20  15   6   1     (n = 6)
-1   7  21  35  35  21   7   1   (n = 7)
-```
+Blaise Pascal popularizó una pirámide numérica mágica que nos regala todos esos coeficientes sin hacer ni una sola multiplicación.
 
 ---
 
-## 📖 Construcción del triángulo
+## 🎯 ¿Qué vas a aprender?
 
-### Reglas de construcción
-
-1. El primer y último número de cada fila es siempre $1$
-2. Cada número interior es la suma de los dos números de arriba
-
-### Ejemplo visual
-
-```
-        1
-       ↙ ↘
-      1   1
-     ↙ ↘ ↙ ↘
-    1   2   1      (2 = 1 + 1)
-   ↙ ↘ ↙ ↘ ↙ ↘
-  1   3   3   1    (3 = 1 + 2, 3 = 2 + 1)
-```
+- Cómo construir el Triángulo de Pascal desde cero sumando números.
+- Cómo obtener los coeficientes de $(a+b)^n$ en segundos.
+- Por qué la suma de cada fila es una potencia de 2.
+- La simetría oculta en los números combinatorios.
 
 ---
 
-## 📖 Relación con los coeficientes binomiales
+## 🏗️ Construyendo la Pirámide
 
-Cada fila $n$ del triángulo contiene los coeficientes binomiales $\binom{n}{k}$ para $k = 0, 1, 2, \ldots, n$.
+El triángulo se construye con una regla de oro: **"Cada número es la suma de los dos que tiene arriba"**.
 
-| Fila | Coeficientes | Binomio |
-|:----:|:------------:|:--------|
-| 0 | $1$ | $(a+b)^0 = 1$ |
-| 1 | $1, 1$ | $(a+b)^1 = a + b$ |
-| 2 | $1, 2, 1$ | $(a+b)^2 = a^2 + 2ab + b^2$ |
-| 3 | $1, 3, 3, 1$ | $(a+b)^3 = a^3 + 3a^2b + 3ab^2 + b^3$ |
-| 4 | $1, 4, 6, 4, 1$ | $(a+b)^4 = \ldots$ |
+Empezamos con un 1 en la cima. Los bordes siempre son 1.
+
+### Paso a Paso:
+
+**Fila 0:** (Solo el 1)
+$$
+1
+$$
+
+**Fila 1:** (Bordes 1)
+$$
+1 \quad 1
+$$
+
+**Fila 2:** (1+1=2 en el centro)
+$$
+1 \quad 2 \quad 1
+$$
+
+**Fila 3:** (1+2=3 y 2+1=3)
+$$
+1 \quad 3 \quad 3 \quad 1
+$$
+
+**Fila 4:** (1+3=4, 3+3=6, 3+1=4)
+$$
+1 \quad 4 \quad 6 \quad 4 \quad 1
+$$
+
+> 💡 **Dato:** Cada fila $n$ corresponde a los coeficientes de la potencia $(a+b)^n$.
 
 ---
 
-## 📖 Usando el triángulo para expandir binomios
+## ⚡ Propiedades Asombrosas
 
-### Ejemplo 1
+### 1. Simetría de Espejo
+Si cortas el triángulo por la mitad verticalmente, el lado izquierdo es idéntico al derecho.
+Ejemplo Fila 4: $1, 4, 6, 4, 1$.
+Esto significa que $\binom{n}{k} = \binom{n}{n-k}$.
 
-Expandir $(x + y)^4$ usando el Triángulo de Pascal.
+### 2. La Suma de las Filas
+¡Suma los números de cada fila y verás potencias de 2!
 
-**Paso 1:** La fila 4 es: $1, 4, 6, 4, 1$
+![Triángulo de pascal](https://cdn.ediprofe.com/img/matematicas/mwgi-triangulo-de-pascal.webp)
 
-**Paso 2:** Escribimos la expansión:
-
-$$
-(x+y)^4 = 1 \cdot x^4 + 4 \cdot x^3y + 6 \cdot x^2y^2 + 4 \cdot xy^3 + 1 \cdot y^4
-$$
-
-$$
-\boxed{(x+y)^4 = x^4 + 4x^3y + 6x^2y^2 + 4xy^3 + y^4}
-$$
-
----
-
-### Ejemplo 2
-
-Expandir $(a + b)^6$ usando el Triángulo de Pascal.
-
-**Paso 1:** La fila 6 es: $1, 6, 15, 20, 15, 6, 1$
-
-**Paso 2:** Escribimos:
-
-$$
-(a+b)^6 = a^6 + 6a^5b + 15a^4b^2 + 20a^3b^3 + 15a^2b^4 + 6ab^5 + b^6
-$$
-
-$$
-\boxed{(a+b)^6 = a^6 + 6a^5b + 15a^4b^2 + 20a^3b^3 + 15a^2b^4 + 6ab^5 + b^6}
-$$
+- Fila 0: $1 = 2^0$
+- Fila 1: $1+1 = 2 = 2^1$
+- Fila 2: $1+2+1 = 4 = 2^2$
+- Fila 3: $1+3+3+1 = 8 = 2^3$
 
 ---
 
-### Ejemplo 3
+## ⚙️ Ejemplos Resueltos
 
-Expandir $(x + 2)^5$ usando el Triángulo de Pascal.
+### Ejemplo 1: Construir la Fila 5
 
-**Paso 1:** La fila 5 es: $1, 5, 10, 10, 5, 1$
+Queremos los coeficientes para $(a+b)^5$. Usamos la Fila 4 ($1, 4, 6, 4, 1$).
 
-**Paso 2:** Sustituimos $a = x$, $b = 2$:
+**Razonamiento:**
+Sumamos los vecinos:
+- $1$ (borde)
+- $1+4 = 5$
+- $4+6 = 10$
+- $6+4 = 10$
+- $4+1 = 5$
+- $1$ (borde)
+
+**Resultado:**
 
 $$
-(x+2)^5 = 1 \cdot x^5 + 5 \cdot x^4 \cdot 2 + 10 \cdot x^3 \cdot 4 + 10 \cdot x^2 \cdot 8 + 5 \cdot x \cdot 16 + 1 \cdot 32
-$$
-
-$$
-= x^5 + 10x^4 + 40x^3 + 80x^2 + 80x + 32
-$$
-
-$$
-\boxed{(x+2)^5 = x^5 + 10x^4 + 40x^3 + 80x^2 + 80x + 32}
+\boxed{1, 5, 10, 10, 5, 1}
 $$
 
 ---
 
-### Ejemplo 4
+### Ejemplo 2: Expansión rápida
 
-Expandir $(2a - b)^4$ usando el Triángulo de Pascal.
+Expande $(x + y)^3$ usando el triángulo.
 
-**Paso 1:** La fila 4 es: $1, 4, 6, 4, 1$
-
-**Paso 2:** Como es una resta, alternamos signos:
-
-$$
-(2a-b)^4 = (2a)^4 - 4(2a)^3b + 6(2a)^2b^2 - 4(2a)b^3 + b^4
-$$
+**Razonamiento:**
+Buscamos la Fila 3: $1, 3, 3, 1$.
+Estos son los coeficientes directos.
 
 $$
-= 16a^4 - 4(8a^3)b + 6(4a^2)b^2 - 4(2a)b^3 + b^4
+1x^3 + 3x^2y + 3xy^2 + 1y^3
 $$
 
-$$
-= 16a^4 - 32a^3b + 24a^2b^2 - 8ab^3 + b^4
-$$
+**Resultado:**
 
 $$
-\boxed{(2a-b)^4 = 16a^4 - 32a^3b + 24a^2b^2 - 8ab^3 + b^4}
+\boxed{x^3 + 3x^2y + 3xy^2 + y^3}
 $$
 
 ---
 
-### Ejemplo 5
+### Ejemplo 3: Coeficientes con resta
 
-Expandir $(3x + y)^3$ usando el Triángulo de Pascal.
+Expande $(2a - 1)^4$.
 
-**Paso 1:** La fila 3 es: $1, 3, 3, 1$
+**Datos:**
+- Fila 4: $1, 4, 6, 4, 1$.
+- Signos: Alternados ($+, -, +, -, +$).
+- Términos: $a=2a$, $b=1$.
 
-**Paso 2:**
-
-$$
-(3x+y)^3 = (3x)^3 + 3(3x)^2y + 3(3x)y^2 + y^3
-$$
-
-$$
-= 27x^3 + 27x^2y + 9xy^2 + y^3
-$$
+**Razonamiento:**
 
 $$
-\boxed{(3x+y)^3 = 27x^3 + 27x^2y + 9xy^2 + y^3}
+1(2a)^4 - 4(2a)^3(1) + 6(2a)^2(1)^2 - 4(2a)(1)^3 + 1(1)^4
 $$
 
----
-
-## 📖 Propiedades del Triángulo de Pascal
-
-### Simetría
-
-El triángulo es simétrico respecto a su eje vertical central:
+Calculamos potencias:
 
 $$
-\binom{n}{k} = \binom{n}{n-k}
+16a^4 - 4(8a^3) + 6(4a^2) - 8a + 1
 $$
 
-### Suma de una fila
+$$
+16a^4 - 32a^3 + 24a^2 - 8a + 1
+$$
 
-La suma de todos los números en la fila $n$ es $2^n$:
-
-| Fila | Suma | $2^n$ |
-|:----:|:----:|:-----:|
-| 0 | $1$ | $2^0 = 1$ |
-| 1 | $1 + 1 = 2$ | $2^1 = 2$ |
-| 2 | $1 + 2 + 1 = 4$ | $2^2 = 4$ |
-| 3 | $1 + 3 + 3 + 1 = 8$ | $2^3 = 8$ |
-| 4 | $1 + 4 + 6 + 4 + 1 = 16$ | $2^4 = 16$ |
-
----
-
-### Ejemplo 6
-
-Verificar que la suma de la fila 5 es $2^5 = 32$.
+**Resultado:**
 
 $$
-1 + 5 + 10 + 10 + 5 + 1 = 32 \quad ✓
+\boxed{16a^4 - 32a^3 + 24a^2 - 8a + 1}
 $$
 
 ---
 
-## 📖 Identidad de Pascal
+## 📝 Ejercicios de Práctica
 
-La regla de construcción del triángulo se expresa como:
-
-$$
-\binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k}
-$$
-
-### Ejemplo 7
-
-Verificar que $\binom{5}{2} = \binom{4}{1} + \binom{4}{2}$.
-
-$$
-\binom{5}{2} = 10
-$$
-
-$$
-\binom{4}{1} + \binom{4}{2} = 4 + 6 = 10 \quad ✓
-$$
-
----
-
-## 📖 Construyendo más filas
-
-### Ejemplo 8
-
-Construir la fila 8 del Triángulo de Pascal.
-
-Partimos de la fila 7: $1, 7, 21, 35, 35, 21, 7, 1$
-
-Fila 8:
-$$
-1, (1+7), (7+21), (21+35), (35+35), (35+21), (21+7), (7+1), 1
-$$
-
-$$
-= 1, 8, 28, 56, 70, 56, 28, 8, 1
-$$
-
-$$
-\boxed{\text{Fila 8: } 1, 8, 28, 56, 70, 56, 28, 8, 1}
-$$
-
----
-
-## 📋 Triángulo de Pascal completo hasta la fila 10
-
-| $n$ | Coeficientes |
-|:---:|:-------------|
-| 0 | 1 |
-| 1 | 1, 1 |
-| 2 | 1, 2, 1 |
-| 3 | 1, 3, 3, 1 |
-| 4 | 1, 4, 6, 4, 1 |
-| 5 | 1, 5, 10, 10, 5, 1 |
-| 6 | 1, 6, 15, 20, 15, 6, 1 |
-| 7 | 1, 7, 21, 35, 35, 21, 7, 1 |
-| 8 | 1, 8, 28, 56, 70, 56, 28, 8, 1 |
-| 9 | 1, 9, 36, 84, 126, 126, 84, 36, 9, 1 |
-| 10 | 1, 10, 45, 120, 210, 252, 210, 120, 45, 10, 1 |
-
----
-
-## 📝 Ejercicios de práctica
-
-**Ejercicio 1:** Construye la fila 9 del Triángulo de Pascal.
+### Ejercicio 1
+Escribe la Fila 6 del Triángulo de Pascal.
 
 <details>
 <summary>Ver solución</summary>
 
-Partiendo de la fila 8: $1, 8, 28, 56, 70, 56, 28, 8, 1$
+**Razonamiento:**
+Usamos la Fila 5 ($1, 5, 10, 10, 5, 1$).
+Sumamos: $1+5=6$, $5+10=15$, $10+10=20$...
 
-Fila 9: $1, 9, 36, 84, 126, 126, 84, 36, 9, 1$
+**Resultado:**
+$$
+\boxed{1, 6, 15, 20, 15, 6, 1}
+$$
+
+</details>
+
+### Ejercicio 2
+¿Cuál es la suma de los números de la Fila 6?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+La suma es $2^n$. Aquí $n=6$.
+
+$$
+2^6 = 64
+$$
+
+**Resultado:**
+$$
+\boxed{64}
+$$
+
+</details>
+
+### Ejercicio 3
+Expande $(m + n)^5$ usando los coeficientes.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Fila 5: $1, 5, 10, 10, 5, 1$.
+
+$$
+m^5 + 5m^4n + 10m^3n^2 + 10m^2n^3 + 5mn^4 + n^5
+$$
+
+**Resultado:**
+$$
+\boxed{m^5 + 5m^4n + 10m^3n^2 + 10m^2n^3 + 5mn^4 + n^5}
+$$
+
+</details>
+
+### Ejercicio 4
+Encuentra el coeficiente del término $x^2y^2$ en $(x+y)^4$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+En la Fila 4 ($1, 4, 6, 4, 1$), el término central corresponde a $x^2y^2$.
+
+**Resultado:**
+$$
+\boxed{6}
+$$
+
+</details>
+
+### Ejercicio 5
+Expande $(x - 2)^3$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Fila 3: $1, 3, 3, 1$. Signos alternados.
+
+$$
+x^3 - 3x^2(2) + 3x(2^2) - 2^3
+$$
+
+$$
+x^3 - 6x^2 + 12x - 8
+$$
+
+**Resultado:**
+$$
+\boxed{x^3 - 6x^2 + 12x - 8}
+$$
+
+</details>
+
+### Ejercicio 6
+¿Cuántos números hay en la Fila 10?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+La fila $n$ tiene $n+1$ números.
+
+$$
+10 + 1 = 11
+$$
+
+**Resultado:**
+$$
+\boxed{11}
+$$
+
+</details>
+
+### Ejercicio 7
+Calcula $\binom{7}{0} + \binom{7}{1} + \dots + \binom{7}{7}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Es la suma de toda la Fila 7.
+
+$$
+2^7 = 128
+$$
+
+**Resultado:**
+$$
+\boxed{128}
+$$
+
+</details>
+
+### Ejercicio 8
+Expande $(1 + x)^4$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Fila 4: $1, 4, 6, 4, 1$.
+
+$$
+1 + 4x + 6x^2 + 4x^3 + x^4
+$$
+
+**Resultado:**
+$$
+\boxed{1 + 4x + 6x^2 + 4x^3 + x^4}
+$$
+
+</details>
+
+### Ejercicio 9
+Si la suma de una fila es 256, ¿qué fila es?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Buscamos $n$ tal que $2^n = 256$.
+
+$$
+2^8 = 256
+$$
+
+**Resultado:**
+$$
+\boxed{\text{Fila } 8}
+$$
+
+</details>
+
+### Ejercicio 10
+Expande $(a - b)^2$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Fila 2: $1, 2, 1$. Signos alternados.
+
+$$
+a^2 - 2ab + b^2
+$$
+
+**Resultado:**
+$$
+\boxed{a^2 - 2ab + b^2}
+$$
 
 </details>
 
 ---
 
-**Ejercicio 2:** Expande $(a + b)^7$ usando el Triángulo de Pascal.
+## 🔑 Resumen
 
-<details>
-<summary>Ver solución</summary>
 
-Fila 7: $1, 7, 21, 35, 35, 21, 7, 1$
+| Concepto | Descripción |
+|----------|-------------|
+| **Construcción** | Sumar los dos números de arriba. |
+| **Fila $n$** | Coeficientes de $(a+b)^n$. |
+| **Suma Fila** | Siempre es $2^n$. |
+| **Simetría** | Se lee igual de izquierda a derecha. |
 
-$$
-a^7 + 7a^6b + 21a^5b^2 + 35a^4b^3 + 35a^3b^4 + 21a^2b^5 + 7ab^6 + b^7
-$$
-
-</details>
-
----
-
-**Ejercicio 3:** Expande $(x - 1)^6$ usando el Triángulo de Pascal.
-
-<details>
-<summary>Ver solución</summary>
-
-Fila 6: $1, 6, 15, 20, 15, 6, 1$ con signos alternados:
-
-$$
-x^6 - 6x^5 + 15x^4 - 20x^3 + 15x^2 - 6x + 1
-$$
-
-</details>
-
----
-
-**Ejercicio 4:** Verifica que la suma de la fila 7 es $2^7$.
-
-<details>
-<summary>Ver solución</summary>
-
-$$
-1 + 7 + 21 + 35 + 35 + 21 + 7 + 1 = 128 = 2^7 \quad ✓
-$$
-
-</details>
-
----
-
-**Ejercicio 5:** Expande $(2x + 1)^4$ usando el Triángulo de Pascal.
-
-<details>
-<summary>Ver solución</summary>
-
-Fila 4: $1, 4, 6, 4, 1$
-
-$$
-(2x)^4 + 4(2x)^3 + 6(2x)^2 + 4(2x) + 1
-$$
-
-$$
-= 16x^4 + 32x^3 + 24x^2 + 8x + 1
-$$
-
-</details>
-
----
-
-**Ejercicio 6:** Usando $\binom{6}{2} = 15$ y $\binom{6}{3} = 20$, encuentra $\binom{7}{3}$.
-
-<details>
-<summary>Ver solución</summary>
-
-Por la identidad de Pascal:
-
-$$
-\binom{7}{3} = \binom{6}{2} + \binom{6}{3} = 15 + 20 = 35
-$$
-
-</details>
-
----
+> Usa el triángulo de Pascal siempre que necesites expandir binomios rápidamente.

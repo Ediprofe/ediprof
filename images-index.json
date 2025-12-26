@@ -422,7 +422,16 @@
       "size": "64KB",
       "url": "https://cdn.ediprofe.com/img/fisica/tpbn-resumen-tiro-parabolico.webp",
       "status": "uploaded"
+    },
+    {
+      "id": "mwgi",
+      "name": "triangulo-de-pascal.webp",
+      "materia": "matematicas",
+      "date": "2025-12-26",
+      "size": "60KB",
+      "url": "https://cdn.ediprofe.com/img/matematicas/mwgi-triangulo-de-pascal.webp",
+      "status": "uploaded"
     }
   ],
-  "lastUpdated": "2025-12-26T21:58:19.764Z"
+  "lastUpdated": "2025-12-26T23:28:44.663Z"
 }

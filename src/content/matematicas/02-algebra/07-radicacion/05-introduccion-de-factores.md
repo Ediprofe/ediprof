@@ -1,333 +1,290 @@
-# ➡️ Introducción de Factores
+# **Introducción de Factores en el Radical**
 
-En esta lección aprenderemos la operación inversa a la simplificación: introducir factores dentro del radical.
+Imagina que tienes un espía que necesita infiltrarse en una base secreta. Para entrar, debe ponerse el uniforme de los guardias. Si no lo hace, no entra.
 
----
-
-## 📖 ¿Qué significa introducir factores?
-
-**Introducir factores** en un radical es el proceso inverso de simplificar. Consiste en "meter" un factor que está fuera del radical, dentro de él, elevándolo al índice del radical.
-
-$$
-a\sqrt[n]{b} = \sqrt[n]{a^n \cdot b}
-$$
+Introducir factores en un radical es el proceso inverso a simplificar. Para que un número "entre" a la raíz, debe "ponerse el uniforme", es decir, elevarse al índice de la raíz.
 
 ---
 
-## 📖 Regla general
+## 🎯 ¿Qué vas a aprender?
 
-Para introducir un factor $a$ dentro de un radical de índice $n$:
-
-$$
-a \cdot \sqrt[n]{b} = \sqrt[n]{a^n \cdot b}
-$$
-
-### Demostración
-
-$$
-a \cdot \sqrt[n]{b} = a^1 \cdot b^{\frac{1}{n}} = a^{\frac{n}{n}} \cdot b^{\frac{1}{n}} = (a^n)^{\frac{1}{n}} \cdot b^{\frac{1}{n}} = (a^n \cdot b)^{\frac{1}{n}} = \sqrt[n]{a^n \cdot b}
-$$
+- Cómo meter números dentro de una raíz cuadrada, cúbica, etc.
+- Por qué $2\sqrt{3}$ es lo mismo que $\sqrt{12}$.
+- Cómo introducir variables con exponentes dentro de un radical.
 
 ---
 
-## 📖 Ejemplos con raíces cuadradas
+## 🚪 La Regla de Entrada
 
-### Ejemplo 1
+Para que un factor externo entre en el radical, debes **elevarlo al índice del radical**.
 
-Introducir el factor en $3\sqrt{2}$.
+- Si entra a una raíz cuadrada ($\sqrt{}$), se eleva al **cuadrado**.
+- Si entra a una raíz cúbica ($\sqrt[3]{}$), se eleva al **cubo**.
 
+**Fórmula General:**
 $$
-3\sqrt{2} = \sqrt{3^2 \cdot 2} = \sqrt{9 \cdot 2} = \sqrt{18}
-$$
-
-$$
-\boxed{3\sqrt{2} = \sqrt{18}}
+a \sqrt[n]{b} = \sqrt[n]{a^n \cdot b}
 $$
 
 ---
 
-### Ejemplo 2
+## ⚙️ Ejemplos Resueltos
 
-Introducir el factor en $5\sqrt{3}$.
+### Ejemplo 1: Introduciendo un número
 
-$$
-5\sqrt{3} = \sqrt{5^2 \cdot 3} = \sqrt{25 \cdot 3} = \sqrt{75}
-$$
+Introduce el 3 dentro de la raíz: $3\sqrt{2}$.
 
-$$
-\boxed{5\sqrt{3} = \sqrt{75}}
-$$
+**Paso 1: Identificar el índice**
+Es una raíz cuadrada (índice 2).
 
----
-
-### Ejemplo 3
-
-Introducir el factor en $2\sqrt{7}$.
+**Paso 2: Elevar el factor externo**
+El 3 entra como $3^2$.
 
 $$
-2\sqrt{7} = \sqrt{4 \cdot 7} = \sqrt{28}
+\sqrt{3^2 \cdot 2}
 $$
 
-$$
-\boxed{2\sqrt{7} = \sqrt{28}}
-$$
+**Paso 3: Operar**
+$3^2 = 9$.
+$9 \cdot 2 = 18$.
 
----
-
-### Ejemplo 4
-
-Introducir el factor en $x\sqrt{x}$.
+**Resultado:**
 
 $$
-x\sqrt{x} = \sqrt{x^2 \cdot x} = \sqrt{x^3}
+\boxed{\sqrt{18}}
 $$
 
-$$
-\boxed{x\sqrt{x} = \sqrt{x^3}}
-$$
+### Ejemplo 2: Introduciendo variables
 
----
+Introduce $x^2$ en $\sqrt[3]{x}$.
 
-### Ejemplo 5
+**Paso 1: Identificar el índice**
+Es índice 3.
 
-Introducir los factores en $2x\sqrt{3y}$.
-
-$$
-2x\sqrt{3y} = \sqrt{(2x)^2 \cdot 3y} = \sqrt{4x^2 \cdot 3y} = \sqrt{12x^2y}
-$$
+**Paso 2: Elevar el factor**
+$(x^2)$ entra elevado a la 3: $(x^2)^3 = x^{2 \cdot 3} = x^6$.
 
 $$
-\boxed{2x\sqrt{3y} = \sqrt{12x^2y}}
+\sqrt[3]{x^6 \cdot x}
 $$
 
----
+**Paso 3: Sumar exponentes**
+$x^6 \cdot x^1 = x^7$.
 
-## 📖 Ejemplos con raíces cúbicas
-
-### Ejemplo 6
-
-Introducir el factor en $2\sqrt[3]{5}$.
+**Resultado:**
 
 $$
-2\sqrt[3]{5} = \sqrt[3]{2^3 \cdot 5} = \sqrt[3]{8 \cdot 5} = \sqrt[3]{40}
+\boxed{\sqrt[3]{x^7}}
 $$
 
-$$
-\boxed{2\sqrt[3]{5} = \sqrt[3]{40}}
-$$
+### Ejemplo 3: Coeficiente y variable
 
----
+Introduce todo en el radical: $2a \sqrt{5a}$.
 
-### Ejemplo 7
-
-Introducir el factor en $3\sqrt[3]{4}$.
+**Razonamiento:**
+El $2$ entra como $2^2 = 4$.
+La $a$ entra como $a^2$.
 
 $$
-3\sqrt[3]{4} = \sqrt[3]{3^3 \cdot 4} = \sqrt[3]{27 \cdot 4} = \sqrt[3]{108}
+\sqrt{4a^2 \cdot 5a}
 $$
 
+**Operando:**
+$4 \cdot 5 = 20$.
+$a^2 \cdot a = a^3$.
+
+**Resultado:**
+
 $$
-\boxed{3\sqrt[3]{4} = \sqrt[3]{108}}
+\boxed{\sqrt{20a^3}}
 $$
 
 ---
 
-### Ejemplo 8
+## 📝 Ejercicios de Práctica
 
-Introducir el factor en $a\sqrt[3]{ab}$.
-
-$$
-a\sqrt[3]{ab} = \sqrt[3]{a^3 \cdot ab} = \sqrt[3]{a^4b}
-$$
-
-$$
-\boxed{a\sqrt[3]{ab} = \sqrt[3]{a^4b}}
-$$
-
----
-
-## 📖 Ejemplos con otros índices
-
-### Ejemplo 9
-
-Introducir el factor en $2\sqrt[4]{3}$.
-
-$$
-2\sqrt[4]{3} = \sqrt[4]{2^4 \cdot 3} = \sqrt[4]{16 \cdot 3} = \sqrt[4]{48}
-$$
-
-$$
-\boxed{2\sqrt[4]{3} = \sqrt[4]{48}}
-$$
-
----
-
-### Ejemplo 10
-
-Introducir el factor en $x^2\sqrt[5]{x^3}$.
-
-$$
-x^2\sqrt[5]{x^3} = \sqrt[5]{(x^2)^5 \cdot x^3} = \sqrt[5]{x^{10} \cdot x^3} = \sqrt[5]{x^{13}}
-$$
-
-$$
-\boxed{x^2\sqrt[5]{x^3} = \sqrt[5]{x^{13}}}
-$$
-
----
-
-## 📖 Aplicación: Comparar radicales
-
-Introducir factores es útil para **comparar** radicales que tienen diferentes coeficientes.
-
-### Ejemplo 11
-
-¿Cuál es mayor: $3\sqrt{2}$ o $2\sqrt{5}$?
-
-**Paso 1:** Introducimos los factores:
-
-$$
-3\sqrt{2} = \sqrt{9 \cdot 2} = \sqrt{18}
-$$
-
-$$
-2\sqrt{5} = \sqrt{4 \cdot 5} = \sqrt{20}
-$$
-
-**Paso 2:** Comparamos:
-
-$$
-\sqrt{18} < \sqrt{20}
-$$
-
-**Respuesta:** $2\sqrt{5}$ es mayor.
-
-$$
-\boxed{3\sqrt{2} < 2\sqrt{5}}
-$$
-
----
-
-### Ejemplo 12
-
-Ordenar de menor a mayor: $2\sqrt{7}$, $3\sqrt{3}$, $4\sqrt{2}$.
-
-**Introducimos factores:**
-
-$$
-2\sqrt{7} = \sqrt{28}
-$$
-
-$$
-3\sqrt{3} = \sqrt{27}
-$$
-
-$$
-4\sqrt{2} = \sqrt{32}
-$$
-
-**Orden:** $\sqrt{27} < \sqrt{28} < \sqrt{32}$
-
-$$
-\boxed{3\sqrt{3} < 2\sqrt{7} < 4\sqrt{2}}
-$$
-
----
-
-## 📋 Resumen
-
-| Índice | Fórmula |
-|:------:|:-------:|
-| 2 (cuadrada) | $a\sqrt{b} = \sqrt{a^2b}$ |
-| 3 (cúbica) | $a\sqrt[3]{b} = \sqrt[3]{a^3b}$ |
-| n (general) | $a\sqrt[n]{b} = \sqrt[n]{a^nb}$ |
-
----
-
-## 📝 Ejercicios de práctica
-
-**Ejercicio 1:** Introduce el factor en $4\sqrt{5}$.
+### Ejercicio 1
+Introduce el factor en el radical: $2\sqrt{5}$.
 
 <details>
 <summary>Ver solución</summary>
 
+**Razonamiento:**
+$2$ entra como $2^2 = 4$.
+$4 \cdot 5 = 20$.
+
+**Resultado:**
 $$
-4\sqrt{5} = \sqrt{16 \cdot 5} = \sqrt{80}
+\boxed{\sqrt{20}}
+$$
+
+</details>
+
+### Ejercicio 2
+Introduce el factor: $3\sqrt{3}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$3$ entra como $3^2 = 9$.
+$9 \cdot 3 = 27$.
+
+**Resultado:**
+$$
+\boxed{\sqrt{27}}
+$$
+
+</details>
+
+### Ejercicio 3
+Introduce el factor: $5\sqrt{2}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$5$ entra como $5^2 = 25$.
+$25 \cdot 2 = 50$.
+
+**Resultado:**
+$$
+\boxed{\sqrt{50}}
+$$
+
+</details>
+
+### Ejercicio 4
+Introduce el factor: $2\sqrt[3]{4}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$2$ entra como $2^3 = 8$.
+$8 \cdot 4 = 32$.
+
+**Resultado:**
+$$
+\boxed{\sqrt[3]{32}}
+$$
+
+</details>
+
+### Ejercicio 5
+Introduce el factor: $x\sqrt{x}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$x$ entra como $x^2$.
+$x^2 \cdot x = x^3$.
+
+**Resultado:**
+$$
+\boxed{\sqrt{x^3}}
+$$
+
+</details>
+
+### Ejercicio 6
+Introduce el factor: $3x^2 \sqrt{2}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$3 \to 3^2 = 9$.
+$x^2 \to (x^2)^2 = x^4$.
+$9x^4 \cdot 2 = 18x^4$.
+
+**Resultado:**
+$$
+\boxed{\sqrt{18x^4}}
+$$
+
+</details>
+
+### Ejercicio 7
+Introduce el factor: $a^3 \sqrt[4]{a}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$a^3$ entra como $(a^3)^4 = a^{12}$.
+$a^{12} \cdot a = a^{13}$.
+
+**Resultado:**
+$$
+\boxed{\sqrt[4]{a^{13}}}
+$$
+
+</details>
+
+### Ejercicio 8
+Introduce el factor: $\frac{1}{2}\sqrt{8}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$\frac{1}{2}$ entra como $(\frac{1}{2})^2 = \frac{1}{4}$.
+$\frac{1}{4} \cdot 8 = 2$.
+
+**Resultado:**
+$$
+\boxed{\sqrt{2}}
+$$
+
+</details>
+
+### Ejercicio 9
+Introduce el factor: $4\sqrt{10}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$4 \to 16$.
+$16 \cdot 10 = 160$.
+
+**Resultado:**
+$$
+\boxed{\sqrt{160}}
+$$
+
+</details>
+
+### Ejercicio 10
+Introduce el factor: $2ab \sqrt[3]{a^2}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$2 \to 2^3 = 8$.
+$a \to a^3$.
+$b \to b^3$.
+$8a^3b^3 \cdot a^2 = 8a^5b^3$.
+
+**Resultado:**
+$$
+\boxed{\sqrt[3]{8a^5b^3}}
 $$
 
 </details>
 
 ---
 
-**Ejercicio 2:** Introduce el factor en $6\sqrt{2}$.
+## 🔑 Resumen
 
-<details>
-<summary>Ver solución</summary>
+| Acción | Procedimiento |
+|--------|---------------|
+| **Entrar a $\sqrt{}$** | Elevar al cuadrado ($x^2$). |
+| **Entrar a $\sqrt[3]{}$** | Elevar al cubo ($x^3$). |
+| **Entrar a $\sqrt[n]{}$** | Elevar a la $n$ ($x^n$). |
+| **Dentro de la raíz** | Multiplicar lo que entró por lo que ya estaba. |
 
-$$
-6\sqrt{2} = \sqrt{36 \cdot 2} = \sqrt{72}
-$$
-
-</details>
-
----
-
-**Ejercicio 3:** Introduce el factor en $3\sqrt[3]{2}$.
-
-<details>
-<summary>Ver solución</summary>
-
-$$
-3\sqrt[3]{2} = \sqrt[3]{27 \cdot 2} = \sqrt[3]{54}
-$$
-
-</details>
-
----
-
-**Ejercicio 4:** Introduce el factor en $ab\sqrt{ab}$.
-
-<details>
-<summary>Ver solución</summary>
-
-$$
-ab\sqrt{ab} = \sqrt{(ab)^2 \cdot ab} = \sqrt{a^2b^2 \cdot ab} = \sqrt{a^3b^3}
-$$
-
-</details>
-
----
-
-**Ejercicio 5:** ¿Cuál es mayor: $5\sqrt{2}$ o $3\sqrt{6}$?
-
-<details>
-<summary>Ver solución</summary>
-
-$$
-5\sqrt{2} = \sqrt{50}, \quad 3\sqrt{6} = \sqrt{54}
-$$
-
-Como $50 < 54$, entonces $5\sqrt{2} < 3\sqrt{6}$
-
-</details>
-
----
-
-**Ejercicio 6:** Ordena de menor a mayor: $2\sqrt{10}$, $5\sqrt{2}$, $3\sqrt{5}$.
-
-<details>
-<summary>Ver solución</summary>
-
-$$
-2\sqrt{10} = \sqrt{40}, \quad 5\sqrt{2} = \sqrt{50}, \quad 3\sqrt{5} = \sqrt{45}
-$$
-
-Orden: $\sqrt{40} < \sqrt{45} < \sqrt{50}$
-
-$$
-2\sqrt{10} < 3\sqrt{5} < 5\sqrt{2}
-$$
-
-</details>
-
----
+> Esta técnica es muy útil para comparar radicales (saber cuál es más grande) o para unificarlos en una sola raíz.

@@ -165,34 +165,19 @@ Situaciones que requieren confirmación:
 
 # 📝 PETICIÓN ESPECÍFICA.
 
-# ✏️ Prompt: Corregir Lección (Evaluar + Reescribir)
 
-> **Un solo prompt que evalúa y corrige de una vez.**
-
----
-
-## Prompt
 
 Corrige las siguientes lecciones al estilo Ediprofe.
 
+http://localhost:4321/matematicas/algebra/radicacion/propiedades-radicales-ii
 
-http://localhost:4321/fisica/cinematica/mru/introduccion
+http://localhost:4321/matematicas/algebra/radicacion/simplificacion-de-radicales
 
-http://localhost:4321/fisica/cinematica/mru/formulas
+http://localhost:4321/matematicas/algebra/radicacion/introduccion-de-factores
 
-http://localhost:4321/fisica/cinematica/mrua/introduccion
+http://localhost:4321/matematicas/algebra/radicacion/suma-y-resta-de-radicales
 
-http://localhost:4321/fisica/cinematica/mrua/formulas
-
-http://localhost:4321/fisica/cinematica/mrua/caida-libre
-
-http://localhost:4321/fisica/cinematica/mrua/lanzamiento-vertical
-
-http://localhost:4321/fisica/cinematica/mrua/movimiento-parabolico
-
-ELLAS YA ESTÁN CORREGIDAS CASI AL 100, LO QUE QUEIRO QUE ENFOQUES ES EN LA PARTE DE LA ECUACIONES EN BLOQUE, Y QUE HAYAN 10 EJERCICIOS DE PRÁCTICA.
-
----
+http://localhost:4321/matematicas/algebra/radicacion/multiplicacion-de-radicales
 
 ## PASO 1: LEE las referencias
 
@@ -202,6 +187,8 @@ ELLAS YA ESTÁN CORREGIDAS CASI AL 100, LO QUE QUEIRO QUE ENFOQUES ES EN LA PART
 
 
 Nota como hay lecciones que por su naturaleza no cabe hablando de más antes del título "¿Qué vas a aprender?". Si hay una conexión muy pertienente, entonces se puede hacer ese párrafo pequeño introductorio.
+
+Ten en cuenta también que los títulos markdown de la lección no pueden tener expresiones latex, ya que se daña como se ve en eo índice de la página y en la barra lateral de navegación.
 
 ---
 
