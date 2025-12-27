@@ -1,287 +1,412 @@
-# 🔧 Problemas de Aplicación con Sistemas
+# **Problemas de Aplicación**
 
-En esta lección resolveremos problemas del mundo real que requieren sistemas de ecuaciones.
-
----
-
-## 📖 Estrategia general
-
-1. **Leer** cuidadosamente el problema
-2. **Identificar** las incógnitas y asignarles variables
-3. **Plantear** las ecuaciones basándose en las condiciones
-4. **Resolver** el sistema
-5. **Verificar** e interpretar la respuesta
+Las matemáticas no son solo números flotando en una pizarra; están en tu billetera, en tu velocidad al correr y en la mezcla de tu café. Los sistemas de ecuaciones son la herramienta perfecta para resolver acertijos donde tienes varias piezas de información conectadas.
 
 ---
 
-## 📖 Problemas de números
+## 🎯 ¿Qué vas a aprender?
 
-### Ejemplo 1
+- Cómo traducir palabras a ecuaciones matemáticas ("Lenguaje Algebraico").
+- Resolver problemas de mezclas y costos.
+- Calcular velocidades con viento a favor o en contra.
+- Descifrar edades según pistas del pasado y el presente.
 
-La suma de dos números es 25 y su diferencia es 7. Encuentra los números.
+---
 
-**Variables:**
-- $x$ = número mayor
-- $y$ = número menor
+## 🧠 La Estrategia de Traducción
 
-**Ecuaciones:**
+Para no perderte en el texto, sigue este protocolo:
+
+1.  **Bautizar:** Asigna una letra a cada cosa que no sepas (ej: $x=$ precio de la manzana, $y=$ precio de la pera).
+2.  **Traducir:** Convierte cada frase en una ecuación.
+    - "Suman 10" $\rightarrow x + y = 10$
+    - "El doble de uno es el otro" $\rightarrow 2x = y$
+3.  **Resolver:** Usa cualquier método (sustitución, reducción, igualación) para hallar $x$ e $y$.
+4.  **Verificar:** ¿Tiene sentido que la edad sea negativa o que el coche vaya a 10000 km/h? Usa el sentido común.
+
+---
+
+## ⚙️ Ejemplos Resueltos
+
+### Ejemplo 1: El Acertijo de los Números
+La suma de dos números es 25 y su diferencia es 7. ¿Cuáles son?
+
+**Paso 1: Bautizar**
+- $x$: Número mayor
+- $y$: Número menor
+
+**Paso 2: Traducir**
+1.  "Suma es 25": $x + y = 25$
+2.  "Diferencia es 7": $x - y = 7$
+
+**Paso 3: Resolver (Reducción)**
+Sumamos las ecuaciones:
 $$
-\begin{cases}
-x + y = 25 \\
-x - y = 7
-\end{cases}
+2x = 32 \implies x = 16
+$$
+Hallamos $y$:
+$$
+16 + y = 25 \implies y = 9
 $$
 
-**Solución:** Sumamos las ecuaciones:
-$$
-2x = 32 \quad \Rightarrow \quad x = 16
-$$
-$$
-y = 25 - 16 = 9
-$$
-
+**Resultado:**
 $$
 \boxed{\text{Los números son 16 y 9}}
 $$
 
 ---
 
-### Ejemplo 2
-
-Un número es el triple de otro. Si la suma de ambos es 48, ¿cuáles son?
-
-$$
-\begin{cases}
-x = 3y \\
-x + y = 48
-\end{cases}
-$$
-
-Sustituyendo:
-$$
-3y + y = 48 \quad \Rightarrow \quad y = 12, \quad x = 36
-$$
-
-$$
-\boxed{\text{Los números son 36 y 12}}
-$$
-
----
-
-## 📖 Problemas de edades
-
-### Ejemplo 3
-
-Juan tiene el doble de la edad de María. Hace 5 años, Juan tenía el triple de la edad de María. ¿Cuántos años tiene cada uno?
-
-**Variables:**
-- $j$ = edad actual de Juan
-- $m$ = edad actual de María
+### Ejemplo 2: Cine y Palomitas
+Ayer, 2 entradas y 1 palomita costaron 200 pesos. Hoy, 1 entrada y 3 palomitas costaron 250 pesos. ¿Cuánto cuesta cada cosa?
 
 **Ecuaciones:**
 $$
-\begin{cases}
-j = 2m \\
-j - 5 = 3(m - 5)
-\end{cases}
+\left\{
+\begin{array}{ll}
+2e + p = 200 \\
+e + 3p = 250
+\end{array}
+\right.
 $$
 
-Sustituimos en la segunda:
+**Resolver (Sustitución):**
+De la 2ª: $e = 250 - 3p$.
+En la 1ª:
 $$
-2m - 5 = 3m - 15
+2(250 - 3p) + p = 200
 $$
 $$
-10 = m
+500 - 6p + p = 200
 $$
 $$
-j = 20
+-5p = -300 \implies p = 60
+$$
+Hallamos $e$:
+$$
+e = 250 - 3(60) = 250 - 180 = 70
 $$
 
+**Resultado:**
 $$
-\boxed{\text{Juan tiene 20 años, María tiene 10 años}}
+\boxed{\text{Entrada: } 70 \text{ pesos, Palomita: } 60 \text{ pesos}}
 $$
 
 ---
 
-## 📖 Problemas de mezclas
-
-### Ejemplo 4
-
-Un comerciante mezcla café de 8 pesos/kg con café de 12 pesos/kg para obtener 50 kg de mezcla a 9 pesos/kg. ¿Cuántos kg de cada tipo necesita?
+### Ejemplo 3: Edades en el Tiempo
+Juan tiene el doble de la edad de Ana. Hace 10 años, la suma de sus edades era igual a la edad actual de Juan.
 
 **Variables:**
-- $x$ = kg de café a 8 pesos
-- $y$ = kg de café a 12 pesos
+- $J$: Edad actual de Juan
+- $A$: Edad actual de Ana
 
-**Ecuaciones:**
-$$
-\begin{cases}
-x + y = 50 \\
-8x + 12y = 9(50)
-\end{cases}
-$$
+**Traducción:**
+1.  "Juan tiene el doble de Ana": $J = 2A$.
+2.  "Hace 10 años": $(J-10)$ y $(A-10)$.
+3.  "La suma era igual a Juan hoy": $(J-10) + (A-10) = J$.
 
-De la primera: $y = 50 - x$
-
+**Resolver:**
 $$
-8x + 12(50 - x) = 450
+J + A - 20 = J
 $$
+Cancelamos $J$ de ambos lados:
 $$
-8x + 600 - 12x = 450
+A - 20 = 0 \implies A = 20
 $$
+Como $J = 2A$:
 $$
--4x = -150
-$$
-$$
-x = 37.5, \quad y = 12.5
+J = 2(20) = 40
 $$
 
+**Resultado:**
 $$
-\boxed{37.5 \text{ kg a 8 pesos y } 12.5 \text{ kg a 12 pesos}}
+\boxed{\text{Juan: 40 años, Ana: 20 años}}
 $$
 
 ---
 
-## 📖 Problemas de movimiento
-
-### Ejemplo 5
-
-Un bote viaja 30 km río abajo en 2 horas y 30 km río arriba en 3 horas. Encuentra la velocidad del bote en agua quieta y la velocidad de la corriente.
+### Ejemplo 4: El Barista Matemático
+Tienes café de 80 pesos/kg y café premium de 120 pesos/kg. Quieres hacer una mezcla de 20 kg que cueste 90 pesos/kg. ¿Cuánto pones de cada uno?
 
 **Variables:**
-- $b$ = velocidad del bote
-- $c$ = velocidad de la corriente
+- $x$: kg de café barato
+- $y$: kg de café caro
 
-**Ecuaciones:**
-- Río abajo: velocidad = $b + c$, entonces $(b + c) \cdot 2 = 30$
-- Río arriba: velocidad = $b - c$, entonces $(b - c) \cdot 3 = 30$
+**Sistema:**
+1.  **Cantidad:** $x + y = 20$ (Total de kilos)
+2.  **Valor:** $80x + 120y = 90(20)$ (Valor total de la mezcla)
 
+Simplificamos la 2ª ($80x + 120y = 1800$). Dividimos por 40:
 $$
-\begin{cases}
-b + c = 15 \\
-b - c = 10
-\end{cases}
+2x + 3y = 45
 $$
-
-Sumando:
+Sistema:
 $$
-2b = 25 \quad \Rightarrow \quad b = 12.5 \text{ km/h}
-$$
-$$
-c = 2.5 \text{ km/h}
-$$
-
-$$
-\boxed{b = 12.5 \text{ km/h}, \quad c = 2.5 \text{ km/h}}
+\left\{
+\begin{array}{ll}
+x + y = 20 \\
+2x + 3y = 45
+\end{array}
+\right.
 $$
 
----
-
-## 📖 Problemas de dinero
-
-### Ejemplo 6
-
-María tiene 25 monedas de 1 peso y de 5 pesos. El total es 65 pesos. ¿Cuántas monedas de cada tipo tiene?
-
+**Resolver:**
+Multiplicamos la 1ª por -2:
 $$
-\begin{cases}
-x + y = 25 \\
-1x + 5y = 65
-\end{cases}
+-2x - 2y = -40
 $$
-
-De la primera: $x = 25 - y$
-
+Sumamos con la 2ª:
 $$
-(25 - y) + 5y = 65
+y = 5
 $$
+Hallamos $x$:
 $$
-4y = 40
-$$
-$$
-y = 10, \quad x = 15
+x + 5 = 20 \implies x = 15
 $$
 
+**Resultado:**
 $$
-\boxed{15 \text{ monedas de 1 peso y } 10 \text{ monedas de 5 pesos}}
+\boxed{15 \text{ kg barato y } 5 \text{ kg caro}}
 $$
 
 ---
 
-### Ejemplo 7
+### Ejemplo 5: Viento a Favor
+Un avión vuela a 600 km/h con viento a favor, pero solo a 500 km/h cuando vuelve contra el viento. Halla la velocidad del avión ($a$) y la del viento ($v$).
 
-Se invirtieron 10,000 pesos en dos cuentas: una al 5% anual y otra al 8% anual. El interés total anual fue 650 pesos. ¿Cuánto se invirtió en cada cuenta?
-
+**Sistema:**
 $$
-\begin{cases}
-x + y = 10000 \\
-0.05x + 0.08y = 650
-\end{cases}
-$$
-
-Multiplicamos la segunda por 100:
-$$
-5x + 8y = 65000
+\left\{
+\begin{array}{ll}
+a + v = 600 & (\text{Ayuda}) \\
+a - v = 500 & (\text{Frena})
+\end{array}
+\right.
 $$
 
-De la primera: $x = 10000 - y$
-
+**Resolver (Reducción):**
+Sumamos:
 $$
-5(10000 - y) + 8y = 65000
+2a = 1100 \implies a = 550
 $$
+Hallamos $v$:
 $$
-50000 - 5y + 8y = 65000
-$$
-$$
-3y = 15000
-$$
-$$
-y = 5000, \quad x = 5000
+550 + v = 600 \implies v = 50
 $$
 
+**Resultado:**
 $$
-\boxed{5000 \text{ pesos al } 5\% \text{ y } 5000 \text{ pesos al } 8\%}
+\boxed{\text{Avión: } 550 \text{ km/h, Viento: } 50 \text{ km/h}}
 $$
 
 ---
 
-## 📝 Ejercicios de práctica
+### Ejemplo 6: Conteo de Dinero
+En una alcancía hay 30 monedas, solo de 5 y 10 pesos. En total hay 200 pesos. ¿Cuántas hay de cada una?
 
-**Ejercicio 1:** La suma de dos números es 50 y uno es 4 veces el otro. Encuéntralos.
+**Variables:**
+- $c$: monedas de cinco ($5$)
+- $d$: monedas de diez ($10$)
+
+**Sistema:**
+1.  **Cantidad:** $c + d = 30$
+2.  **Valor:** $5c + 10d = 200$
+
+**Resolver:**
+De la 1ª: $c = 30 - d$.
+$$
+5(30 - d) + 10d = 200
+$$
+$$
+150 - 5d + 10d = 200
+$$
+$$
+5d = 50 \implies d = 10
+$$
+Hallamos $c$:
+$$
+c = 30 - 10 = 20
+$$
+
+**Resultado:**
+$$
+\boxed{20 \text{ monedas de 5 y } 10 \text{ monedas de 10}}
+$$
+
+---
+
+## 📝 Ejercicios de Práctica
+
+### Ejercicio 1
+En un corral hay gallinas y conejos. Hay 10 cabezas y 28 patas. ¿Cuántos animales hay de cada tipo?
 
 <details>
 <summary>Ver solución</summary>
 
-$x + y = 50$, $x = 4y$
-
-$5y = 50$, $y = 10$, $x = 40$
+$g+c=10$.
+$2g+4c=28$.
+Resolviendo: $g=6, c=4$.
+**Resultado:** $\boxed{6 \text{ gallinas, } 4 \text{ conejos}}$
 
 </details>
 
 ---
 
-**Ejercicio 2:** Pedro tiene el triple de la edad de Ana. La suma de sus edades es 32. ¿Cuántos años tiene cada uno?
+### Ejercicio 2
+La suma de dos números es 100 y el mayor excede al menor en 12.
 
 <details>
 <summary>Ver solución</summary>
 
-$p = 3a$, $p + a = 32$
-
-$4a = 32$, $a = 8$, $p = 24$
+$x+y=100$.
+$x-y=12$.
+$2x = 112 \implies x=56$.
+$y=44$.
+**Resultado:** $\boxed{56 \text{ y } 44}$
 
 </details>
 
 ---
 
-**Ejercicio 3:** Un avión vuela 600 km a favor del viento en 2 horas y 600 km en contra del viento en 3 horas. Encuentra la velocidad del avión y del viento.
+### Ejercicio 3
+Dos hamburguesas y un refresco cuestan 150 pesos. Una hamburguesa y dos refrescos cuestan 120 pesos. Precio de cada uno.
 
 <details>
 <summary>Ver solución</summary>
 
-$a + v = 300$, $a - v = 200$
-
-$a = 250$ km/h, $v = 50$ km/h
+$2h+r=150$.
+$h+2r=120$.
+Multiplicar 2ª por -2 $\implies -2h-4r=-240$.
+$-3r = -90 \implies r=30$.
+$h=60$.
+**Resultado:** $\boxed{\text{H: 60, R: 30}}$
 
 </details>
 
 ---
+
+### Ejercicio 4
+Un padre tiene el triple de edad que su hijo. En 12 años solo tendrá el doble.
+
+<details>
+<summary>Ver solución</summary>
+
+$P = 3H$.
+$P+12 = 2(H+12)$.
+$3H + 12 = 2H + 24 \implies H = 12$.
+$P = 36$.
+**Resultado:** $\boxed{\text{Padre 36, Hijo 12}}$
+
+</details>
+
+---
+
+### Ejercicio 5
+Un barco recorre 40 km ría abajo en 2 horas, y regresa (río arriba) en 4 horas. Velocidad del barco y corriente.
+
+<details>
+<summary>Ver solución</summary>
+
+Velocidad abajo: $40/2 = 20$. Velocidad arriba: $40/4 = 10$.
+$b+c=20$.
+$b-c=10$.
+$2b=30 \implies b=15$.
+$c=5$.
+**Resultado:** $\boxed{\text{Barco 15, Corriente 5}}$
+
+</details>
+
+---
+
+### Ejercicio 6
+Tienes 5000 pesos en billetes de 200 y 500. Si tienes 16 billetes en total, ¿cuántos de cada uno?
+
+<details>
+<summary>Ver solución</summary>
+
+$x+y=16$.
+$200x + 500y = 5000$.
+Simplificando 2ª: $2x+5y=50$.
+Multiplico 1ª por -2: $-2x-2y=-32$.
+$3y=18 \implies y=6$.
+$x=10$.
+**Resultado:** $\boxed{10 \text{ de 200, } 6 \text{ de 500}}$
+
+</details>
+
+---
+
+### Ejercicio 7
+El perímetro de un rectángulo es 40 cm. La base es 4 cm más larga que la altura.
+
+<details>
+<summary>Ver solución</summary>
+
+$2b + 2h = 40 \implies b+h=20$.
+$b = h+4$.
+$(h+4)+h=20 \implies 2h=16 \implies h=8$.
+$b=12$.
+**Resultado:** $\boxed{12 \times 8 \text{ cm}}$
+
+</details>
+
+---
+
+### Ejercicio 8
+Una solución salina al 10% se mezcla con una al 20% para obtener 10 litros al 14%.
+
+<details>
+<summary>Ver solución</summary>
+
+$x+y=10$.
+$0.1x + 0.2y = 0.14(10) = 1.4$.
+$x + 2y = 14$.
+Restando las ec: $y=4$.
+$x=6$.
+**Resultado:** $\boxed{6 \text{ litros al 10\%, } 4 \text{ litros al 20\%}}$
+
+</details>
+
+---
+
+### Ejercicio 9
+La diferencia de dos números es 10. Si al mayor le restas el doble del menor, obtienes -5.
+
+<details>
+<summary>Ver solución</summary>
+
+$x-y=10 \implies x=y+10$.
+$x-2y=-5$.
+$(y+10)-2y=-5 \implies -y=-15 \implies y=15$.
+$x=25$.
+**Resultado:** $\boxed{25 \text{ y } 15}$
+
+</details>
+
+---
+
+### Ejercicio 10
+Dos ángulos son suplementarios (suman 180°). Uno es 30° mayor que el otro.
+
+<details>
+<summary>Ver solución</summary>
+
+$x+y=180$.
+$x = y+30$.
+$2y+30=180 \implies 2y=150 \implies y=75$.
+$x=105$.
+**Resultado:** $\boxed{105^\circ \text{ y } 75^\circ}$
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Tipo de Problema | Clave |
+|:--- |:--- |
+| **Mezclas** | Una ecuación es para la cantidad total (kg, litros), la otra para el valor/concentración. |
+| **Movimiento** | A favor sumas velocidades ($v_{objeto} + v_{medio}$), en contra restas. |
+| **Dígitos/Números** | Lee con cuidado "excede", "diferencia", "suma". |
+
+> **Conclusión:** El mundo no te da ecuaciones listas, te da problemas. Tu superpoder matemático es convertirlos en $x$ e $y$ para encontrar las respuestas.

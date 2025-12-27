@@ -1,60 +1,51 @@
-# 📊 Método Gráfico
+# **Método Gráfico**
 
-En esta lección aprenderemos a resolver sistemas de ecuaciones lineales mediante la representación gráfica de las rectas.
-
----
-
-## 📖 ¿En qué consiste el método?
-
-1. **Expresar** cada ecuación en forma $y = mx + b$
-2. **Graficar** ambas rectas en el mismo plano
-3. **Identificar** el punto de intersección
-4. **Leer** las coordenadas de la solución
+A veces una imagen vale más que mil cálculos. El método gráfico consiste en dibujar las dos rectas en el plano cartesiano y ver exactamente dónde se cruzan. Aunque es menos preciso que el álgebra pura, es excelente para entender qué está pasando realmente.
 
 ---
 
-## 📖 Pasos detallados
+## 🎯 ¿Qué vas a aprender?
 
-### Paso 1: Convertir a forma pendiente-intercepto
-
-Cada ecuación debe expresarse como:
-$$
-y = mx + b
-$$
-
-### Paso 2: Graficar cada recta
-
-Usar los métodos aprendidos:
-- Tabla de valores
-- Pendiente e intercepto
-- Interceptos con los ejes
-
-### Paso 3: Encontrar la intersección
-
-El punto donde las rectas se cruzan es la solución.
+- Cómo transformar ecuaciones para poder graficarlas fácilmente.
+- Hallar la solución visual (`intersección`) de un sistema.
+- Identificar rectas paralelas o coincidentes visualmente.
+- Las limitaciones de precisión de este método.
 
 ---
 
-## 📖 Ejemplos
+## 🎨 Pasos del Método Gráfico
 
-### Ejemplo 1
+Para resolver un sistema visualmente:
+
+1.  **Despejar $y$:** Dejar ambas ecuaciones en la forma `y = mx + b`.
+2.  **Graficar:** Dibujar cada recta usando la pendiente `m` y el intercepto `b`.
+3.  **Localizar:** Encontrar el punto $(x, y)$ donde se cortan.
+4.  **Verificar:** Probar ese punto en las ecuaciones originales.
+
+---
+
+## ⚙️ Ejemplos Resueltos
+
+### Ejemplo 1: Solución Entera
 
 Resolver gráficamente:
 $$
-\begin{cases}
+\left\{
+\begin{array}{ll}
 x + y = 4 \\
 x - y = 2
-\end{cases}
+\end{array}
+\right.
 $$
 
-**Convertimos a forma pendiente-intercepto:**
+**Paso 1: Despejar $y$**
+- Ecuación 1: $y = -x + 4$ (Empieza en 4, baja 1 por cada 1 a la derecha).
+- Ecuación 2: $y = x - 2$ (Empieza en -2, sube 1 por cada 1 a la derecha).
 
-Primera: $y = -x + 4$ (pendiente $-1$, intercepto $4$)
+**Paso 2: Graficar y buscar el cruce**
+Al dibujar ambas líneas, vemos que se cruzan exactamente en:
 
-Segunda: $y = x - 2$ (pendiente $1$, intercepto $-2$)
-
-**Las rectas se cruzan en $(3, 1)$.**
-
+**Resultado:**
 $$
 \boxed{x = 3, \quad y = 1}
 $$
@@ -63,24 +54,26 @@ $$
 
 ---
 
-### Ejemplo 2
+### Ejemplo 2: Intersección en el Primer Cuadrante
 
-Resolver gráficamente:
+Resolver:
 $$
-\begin{cases}
+\left\{
+\begin{array}{ll}
 2x + y = 6 \\
 x - y = 0
-\end{cases}
+\end{array}
+\right.
 $$
 
-**Convertimos:**
+**Paso 1: Despejar $y$**
+- Ecuación 1: $y = -2x + 6$
+- Ecuación 2: $y = x$ (Pasa por el origen).
 
-Primera: $y = -2x + 6$
+**Paso 2: Análisis Visual**
+La primera recta baja rápido desde 6. La segunda sube en diagonal perfecta. Se encuentran en:
 
-Segunda: $y = x$
-
-**Punto de intersección: $(2, 2)$**
-
+**Resultado:**
 $$
 \boxed{x = 2, \quad y = 2}
 $$
@@ -89,20 +82,24 @@ $$
 
 ---
 
-### Ejemplo 3
+### Ejemplo 3: Rectas Ya Despejadas
 
-Resolver gráficamente:
+Resolver:
 $$
-\begin{cases}
+\left\{
+\begin{array}{ll}
 y = 2x - 1 \\
 y = -x + 5
-\end{cases}
+\end{array}
+\right.
 $$
 
-Ya están en forma pendiente-intercepto.
+**Razonamiento:**
+Ya están listas para graficar.
+- Recta 1: Sube empinada ($m=2$).
+- Recta 2: Baja suave ($m=-1$).
 
-**Punto de intersección: $(2, 3)$**
-
+**Resultado:**
 $$
 \boxed{x = 2, \quad y = 3}
 $$
@@ -111,44 +108,54 @@ $$
 
 ---
 
-### Ejemplo 4 (Rectas paralelas)
+### Ejemplo 4: El Caso de las Paralelas
 
+Resolver:
 $$
-\begin{cases}
+\left\{
+\begin{array}{ll}
 y = 2x + 1 \\
 y = 2x - 3
-\end{cases}
+\end{array}
+\right.
 $$
 
-Ambas rectas tienen pendiente $m = 2$ pero diferentes interceptos.
+**Razonamiento:**
+Observamos que ambas tienen $m=2$.
+- Recta 1: Sube con pendiente 2.
+- Recta 2: También sube con pendiente 2, pero más abajo.
 
-**Las rectas son paralelas** → No se cruzan → **Sin solución**
+Como son rieles de tren, nunca se tocarán.
 
+**Resultado:**
 $$
-\boxed{\text{Sin solución (sistema incompatible)}}
+\boxed{\text{Sin solución (Sistema Incompatible)}}
 $$
 
 ![Gráfica de sistema incompatible](/images/matematicas/algebra/sistemas-ecuaciones/ejemplo4-incompatible.svg)
 
 ---
 
-### Ejemplo 5 (Rectas coincidentes)
+### Ejemplo 5: El Caso del Camuflaje
 
+Resolver:
 $$
-\begin{cases}
+\left\{
+\begin{array}{ll}
 x + y = 3 \\
 2x + 2y = 6
-\end{cases}
+\end{array}
+\right.
 $$
 
-**Convertimos:**
+**Razonamiento:**
+Si despejamos ambas:
+- Ecuación 1: $y = -x + 3$
+- Ecuación 2: $2y = -2x + 6 \implies y = -x + 3$
 
-Primera: $y = -x + 3$
+¡Son la misma ecuación! Al graficar, pintarás una línea encima de la otra.
 
-Segunda: $y = -x + 3$
-
-**Son la misma recta** → **Infinitas soluciones**
-
+**Resultado:**
 $$
 \boxed{\text{Infinitas soluciones}}
 $$
@@ -157,79 +164,150 @@ $$
 
 ---
 
-## 📖 Interpretación gráfica de los tipos de sistemas
+## ⚖️ Pros y Contras del Método
 
-| Tipo | Gráfica | Solución |
-|:-----|:--------|:---------|
-| Compatible determinado | Rectas secantes | Un punto |
-| Compatible indeterminado | Rectas coincidentes | Infinitos puntos |
-| Incompatible | Rectas paralelas | Ningún punto |
-
----
-
-## 📖 Ventajas y desventajas
-
-### Ventajas
-- Visual e intuitivo
-- Permite ver la relación entre las ecuaciones
-- Útil para estimar soluciones
-
-### Desventajas
-- Impreciso si la solución no son enteros
-- Difícil con números grandes o fracciones
-- Requiere papel cuadriculado o software
+| Ventajas | Desventajas |
+|:--- |:--- |
+| **Visual:** Entiendes qué significa la solución. | **Impreciso:** Difícil ver si la respuesta es $2.1$ o $2.05$. |
+| **Rápido:** Para verificar si hay solución. | **Lento:** Dibujar toma tiempo si no hay software. |
+| **Intuitivo:** Detecta paralelas al instante. | **Limitado:** Solo práctico en 2D (2 incógnitas). |
 
 ---
 
-## 📝 Ejercicios de práctica
+## 📝 Ejercicios de Práctica
 
-**Ejercicio 1:** Grafica y resuelve: $\begin{cases} x + y = 5 \\ x - y = 1 \end{cases}$
+### Ejercicio 1
+En el sistema $\begin{cases} y = x \\ y = -x + 2 \end{cases}$, ¿dónde se cruzan?
 
 <details>
 <summary>Ver solución</summary>
 
-$y = -x + 5$ y $y = x - 1$
-
-Intersección en $(3, 2)$
+Cruzan en $(1, 1)$. Si subes 1 y bajas 1 desde 2, llegas al mismo sitio.
+**Resultado:** $\boxed{(1, 1)}$
 
 </details>
 
 ---
 
-**Ejercicio 2:** ¿Qué tipo de sistema es si ambas rectas tienen pendiente $m = 3$?
+### Ejercicio 2
+Si graficas dos rectas y ves que son perfectamente verticales y distintas (ej. $x=2$ y $x=5$), ¿cuál es la solución?
 
 <details>
 <summary>Ver solución</summary>
 
-- Si tienen el mismo intercepto: infinitas soluciones
-- Si tienen diferente intercepto: sin solución
+Son paralelas verticales.
+**Resultado:** $\boxed{\text{Sin solución}}$
 
 </details>
 
 ---
 
-**Ejercicio 3:** Grafica y resuelve: $\begin{cases} y = x + 2 \\ y = -x + 4 \end{cases}$
+### Ejercicio 3
+¿Cuál es la pendiente de $y = 3x - 2$?
 
 <details>
 <summary>Ver solución</summary>
 
-Igualando: $x + 2 = -x + 4$, $x = 1$, $y = 3$
-
-Intersección en $(1, 3)$
+**Resultado:** $\boxed{m = 3}$
 
 </details>
 
 ---
 
-**Ejercicio 4:** ¿Cuántas soluciones tiene $\begin{cases} 4x - 2y = 6 \\ 2x - y = 3 \end{cases}$?
+### Ejercicio 4
+Si el punto de intersección es $(3, 0)$, ¿cuánto vale $y$?
 
 <details>
 <summary>Ver solución</summary>
 
-Segunda × 2 = Primera → Son la misma recta
-
-Infinitas soluciones.
+**Resultado:** $\boxed{0}$
 
 </details>
 
 ---
+
+### Ejercicio 5
+Grafica mentalmente: $y=2$ y $x=3$. ¿Dónde se cruzan?
+
+<details>
+<summary>Ver solución</summary>
+
+Una es horizontal a altura 2, la otra vertical en 3.
+**Resultado:** $\boxed{(3, 2)}$
+
+</details>
+
+---
+
+### Ejercicio 6
+Para graficar $2x + 3y = 6$ usando interceptos, si $x=0$, ¿cuánto vale $y$?
+
+<details>
+<summary>Ver solución</summary>
+
+$3y = 6 \implies y = 2$
+**Resultado:** $\boxed{2}$
+
+</details>
+
+---
+
+### Ejercicio 7
+¿Por qué el método gráfico no es bueno para resolver $\begin{cases} y = 100x \\ y = 100x + 0.1 \end{cases}$?
+
+<details>
+<summary>Ver solución</summary>
+
+Porque las líneas estarían demasiado juntas para distinguirlas a ojo y requerirían una escala gigante.
+
+</details>
+
+---
+
+### Ejercicio 8
+Si las rectas se cruzan en el tercer cuadrante, ¿cómo son los signos de la solución?
+
+<details>
+<summary>Ver solución</summary>
+
+**Resultado:** $\boxed{(-, -)}$
+
+</details>
+
+---
+
+### Ejercicio 9
+Transforma $x - y = 0$ a la forma pendiente-intercepto.
+
+<details>
+<summary>Ver solución</summary>
+
+$-y = -x \implies y = x$
+**Resultado:** $\boxed{y = x}$
+
+</details>
+
+---
+
+### Ejercicio 10
+Si obtienes las rectas $y = x + 1$ y $y = x + 2$, ¿qué concluyes?
+
+<details>
+<summary>Ver solución</summary>
+
+Pendientes iguales ($m=1$) e interceptos distintos.
+**Resultado:** $\boxed{\text{Incompatible (Sin solución)}}$
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Paso | Acción |
+|:--- |:--- |
+| **1. Despejar** | Aislar $y$ en ambas ecuaciones. |
+| **2. Graficar** | Dibujar las líneas (usando $m$ y $b$ o tabla). |
+| **3. Mirar** | El punto de cruce es el tesoro. |
+
+> **Conclusión:** El método gráfico es tu brújula. Quizás no te dé las coordenadas con 10 decimales, pero siempre te dirá hacia dónde está el norte (o si el norte existe).

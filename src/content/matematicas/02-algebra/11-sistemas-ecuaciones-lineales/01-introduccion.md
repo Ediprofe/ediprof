@@ -1,339 +1,416 @@
-# 🔗 Introducción a los Sistemas de Ecuaciones
+# **Introducción a los Sistemas de Ecuaciones**
 
-En esta lección introduciremos los sistemas de ecuaciones lineales y su interpretación gráfica.
+Imagina que estás en una tienda y sabes que 2 manzanas y 1 pera cuestan 5 pesos, pero 1 manzana y 3 peras cuestan 10 pesos. Con esa información, podrías averiguar el precio exacto de cada fruta. Eso es un sistema de ecuaciones: usar múltiples pistas para descubrir varios valores desconocidos al mismo tiempo.
 
 ---
 
-## 📖 ¿Qué es un sistema de ecuaciones?
+## 🎯 ¿Qué vas a aprender?
 
-Un **sistema de ecuaciones** es un conjunto de dos o más ecuaciones que deben satisfacerse simultáneamente.
+- Qué es un sistema de ecuaciones lineales 2×2.
+- Cómo saber si un sistema tiene solución, no tiene, o tiene infinitas.
+- La interpretación geométrica: rectas que se cruzan.
+- Cómo clasificar sistemas sin necesidad de resolverlos.
 
-### Sistema de 2×2
+---
 
-Un sistema de dos ecuaciones con dos incógnitas:
+## 🔗 ¿Qué es un Sistema 2×2?
+
+Un sistema de 2×2 es un conjunto de **dos ecuaciones** con **dos incógnitas** (generalmente $x$ y $y$) que deben cumplirse a la vez.
 
 $$
-\begin{cases}
+\left\{
+\begin{array}{ll}
 a_1x + b_1y = c_1 \\
 a_2x + b_2y = c_2
-\end{cases}
+\end{array}
+\right.
 $$
 
-**Resolver** el sistema significa encontrar los valores de $x$ e $y$ que satisfacen **ambas** ecuaciones al mismo tiempo.
+Resolverlo significa encontrar un par de números $(x, y)$ que hagan verdaderas a **ambas** igualdades simultáneamente.
 
----
+### Ejemplo de Verificación
 
-## 📖 Ejemplo de sistema
+Verificar si $x = 3$ y $y = 2$ es solución del sistema:
 
 $$
-\begin{cases}
+\left\{
+\begin{array}{ll}
 x + y = 5 \\
 2x - y = 4
-\end{cases}
+\end{array}
+\right.
 $$
 
-Buscamos valores de $x$ e $y$ que cumplan las dos ecuaciones.
+**Paso 1: Probar en la primera ecuación**
+$$
+3 + 2 = 5 \quad \text{(Verdadero)}
+$$
 
-**Solución:** $x = 3$, $y = 2$
+**Paso 2: Probar en la segunda ecuación**
+$$
+2(3) - 2 = 6 - 2 = 4 \quad \text{(Verdadero)}
+$$
 
-**Verificación:**
-- Primera: $3 + 2 = 5$ ✓
-- Segunda: $2(3) - 2 = 6 - 2 = 4$ ✓
+Como funciona en ambas, **sí es la solución**.
 
 ---
 
-## 📖 Interpretación gráfica
+## 📍 Interpretación Gráfica
 
-Cada ecuación lineal representa una **recta** en el plano. La solución del sistema es el **punto de intersección** de ambas rectas.
+Cada ecuación lineal representa una **línea recta** en el plano cartesiano. La solución del sistema es el punto exacto donde esas dos líneas se cortan (se intersectan).
 
----
+Dependiendo de cómo sean las rectas, tenemos tres casos:
 
-## 📖 Tipos de sistemas
+### 1. Sistema Compatible Determinado (Una Solución)
+Las rectas se **cruzan en un único punto**. Es el caso más común.
+- Significa que hay un único valor para $x$ y $y$.
 
-### Sistema compatible determinado
+### 2. Sistema Incompatible (Sin Solución)
+Las rectas son **paralelas** y nunca se tocan.
+- No existe ningún par de números que cumpla ambas ecuaciones.
 
-Las rectas se **cruzan en un punto**. Hay **una única solución**.
-
-$$
-\begin{cases}
-x + y = 4 \\
-x - y = 2
-\end{cases}
-$$
-
-Solución: $(3, 1)$
-
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem 0;">
-  <div id="echarts-compatible-determinado" style="width: 100%; height: 320px; border-radius: 8px;"></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof echarts !== 'undefined' && document.getElementById('echarts-compatible-determinado')) {
-    var chart = echarts.init(document.getElementById('echarts-compatible-determinado'));
-    var option = {
-      title: { text: 'Compatible determinado: Una solución', left: 'center', textStyle: { fontSize: 14, fontWeight: 'bold', color: '#1e293b' } },
-      legend: { data: ['x + y = 4', 'x - y = 2'], top: 30, textStyle: { fontSize: 11 } },
-      grid: { left: '12%', right: '8%', top: '20%', bottom: '12%', show: true, borderColor: '#94a3b8' },
-      xAxis: { type: 'value', name: 'x', nameLocation: 'middle', nameGap: 25, min: 0, max: 5, axisLine: { onZero: true, lineStyle: { color: '#374151', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', type: 'dashed' } } },
-      yAxis: { type: 'value', name: 'y', nameLocation: 'middle', nameGap: 30, min: -1, max: 5, axisLine: { onZero: true, lineStyle: { color: '#374151', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', type: 'dashed' } } },
-      series: [
-        { name: 'x + y = 4', type: 'line', symbol: 'none', lineStyle: { width: 3, color: '#3b82f6' }, data: [[0, 4], [4, 0]] },
-        { name: 'x - y = 2', type: 'line', symbol: 'none', lineStyle: { width: 3, color: '#22c55e' }, data: [[0, -2], [5, 3]] },
-        { type: 'scatter', symbolSize: 16, symbol: 'diamond', itemStyle: { color: '#ef4444', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: '(3, 1)', position: 'top', fontSize: 11, fontWeight: 'bold', color: '#ef4444' }, data: [[3, 1]] }
-      ]
-    };
-    chart.setOption(option);
-    window.addEventListener('resize', function() { chart.resize(); });
-  }
-});
-</script>
+### 3. Sistema Compatible Indeterminado (Infinitas Soluciones)
+Las rectas son **coincidentes** (una está encima de la otra).
+- Cualquier punto de la recta sirve como solución.
 
 ---
 
-### Sistema compatible indeterminado
+## 🔮 Cómo Clasificarlo a Simple Vista
 
-Las rectas **coinciden** (son la misma). Hay **infinitas soluciones**.
+No necesitas resolver o graficar para saber qué tipo de sistema tienes. Solo compara los coeficientes (los números que acompañan a las letras).
+
+Dado el sistema:
+$$
+\left\{
+\begin{array}{ll}
+Ax + By = C \\
+Dx + Ey = F
+\end{array}
+\right.
+$$
+
+Calculamos las razones: $\frac{A}{D}$, $\frac{B}{E}$ y $\frac{C}{F}$.
+
+| Comparación | Tipo de Sistema | Interpretación |
+|:--- |:--- |:--- |
+| $\frac{A}{D} \neq \frac{B}{E}$ | **Compatible Determinado** | Rectas con distinta inclinación. Se cruzan. |
+| $\frac{A}{D} = \frac{B}{E} \neq \frac{C}{F}$ | **Incompatible** | Rectas paralelas (misma inclinación) pero a distinta altura. No se tocan. |
+| $\frac{A}{D} = \frac{B}{E} = \frac{C}{F}$ | **Compatible Indeterminado** | Es la misma recta disfrazada (una es múltiplo de la otra). |
+
+---
+
+## ⚙️ Ejemplos Resueltos
+
+### Ejemplo 1: Clasificación Rápida
+Clasifica el siguiente sistema:
 
 $$
-\begin{cases}
+\left\{
+\begin{array}{ll}
+2x + 3y = 7 \\
+4x + 5y = 9
+\end{array}
+\right.
+$$
+
+**Razonamiento:**
+Comparamos los coeficientes de $x$ y $y$:
+
+$$
+\frac{2}{4} \quad \text{vs} \quad \frac{3}{5}
+$$
+
+Simplificando $\frac{2}{4}$ obtenemos $\frac{1}{2}$ ($0.5$).
+$\frac{3}{5}$ es $0.6$.
+
+Como $0.5 \neq 0.6$, las pendientes son distintas.
+
+**Resultado:**
+$$
+\boxed{\text{Compatible Determinado (Una solución)}}
+$$
+
+### Ejemplo 2: Detectando Paralelas
+Clasifica:
+
+$$
+\left\{
+\begin{array}{ll}
+x - 2y = 4 \\
+3x - 6y = 5
+\end{array}
+\right.
+$$
+
+**Razonamiento:**
+Comparamos $x$ y $y$:
+
+$$
+\frac{1}{3} \quad \text{vs} \quad \frac{-2}{-6}
+$$
+
+$$
+\frac{-2}{-6} = \frac{1}{3}
+$$
+
+Son iguales, así que las rectas son paralelas. Ahora miramos los términos independientes ($C$ y $F$):
+
+$$
+\frac{4}{5}
+$$
+
+Como $\frac{1}{3} \neq \frac{4}{5}$, son paralelas separadas.
+
+**Resultado:**
+$$
+\boxed{\text{Incompatible (Sin solución)}}
+$$
+
+### Ejemplo 3: La misma recta
+Clasifica:
+
+$$
+\left\{
+\begin{array}{ll}
 x + y = 3 \\
 2x + 2y = 6
-\end{cases}
+\end{array}
+\right.
 $$
 
-La segunda ecuación es el doble de la primera.
+**Razonamiento:**
+$$
+\frac{1}{2} = \frac{1}{2} = \frac{3}{6}
+$$
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem 0;">
-  <div id="echarts-compatible-indeterminado" style="width: 100%; height: 320px; border-radius: 8px;"></div>
-</div>
+Todo da $\frac{1}{2}$. La segunda ecuación es simplemente la primera multiplicada por 2. No aporta información nueva.
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof echarts !== 'undefined' && document.getElementById('echarts-compatible-indeterminado')) {
-    var chart = echarts.init(document.getElementById('echarts-compatible-indeterminado'));
-    var option = {
-      title: { text: 'Compatible indeterminado: Infinitas soluciones', left: 'center', textStyle: { fontSize: 14, fontWeight: 'bold', color: '#1e293b' } },
-      legend: { data: ['x + y = 3', '2x + 2y = 6 (misma)'], top: 30, textStyle: { fontSize: 11 } },
-      grid: { left: '12%', right: '8%', top: '20%', bottom: '12%', show: true, borderColor: '#94a3b8' },
-      xAxis: { type: 'value', name: 'x', nameLocation: 'middle', nameGap: 25, min: -1, max: 5, axisLine: { onZero: true, lineStyle: { color: '#374151', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', type: 'dashed' } } },
-      yAxis: { type: 'value', name: 'y', nameLocation: 'middle', nameGap: 30, min: -1, max: 5, axisLine: { onZero: true, lineStyle: { color: '#374151', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', type: 'dashed' } } },
-      series: [
-        { name: 'x + y = 3', type: 'line', symbol: 'none', lineStyle: { width: 4, color: '#22c55e' }, data: [[0, 3], [3, 0]] },
-        { name: '2x + 2y = 6 (misma)', type: 'line', symbol: 'none', lineStyle: { width: 2, color: '#86efac', type: 'dashed' }, data: [[0, 3], [3, 0]] },
-        { type: 'scatter', symbolSize: 10, itemStyle: { color: '#22c55e', borderColor: '#fff', borderWidth: 1 }, data: [[0, 3], [1, 2], [2, 1], [3, 0]] }
-      ]
-    };
-    chart.setOption(option);
-    window.addEventListener('resize', function() { chart.resize(); });
-  }
-});
-</script>
+**Resultado:**
+$$
+\boxed{\text{Compatible Indeterminado (Infinitas soluciones)}}
+$$
 
 ---
 
-### Sistema incompatible
+## 📝 Ejercicios de Práctica
 
-Las rectas son **paralelas** (no se cruzan). **No hay solución**.
-
+### Ejercicio 1
+Verifica si $(2, 5)$ es solución de:
 $$
-\begin{cases}
-x + y = 3 \\
-x + y = 5
-\end{cases}
+\left\{
+\begin{array}{ll}
+x + y = 7 \\
+2x - y = -1
+\end{array}
+\right.
 $$
-
-Las rectas tienen la misma pendiente pero diferente intercepto.
-
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem 0;">
-  <div id="echarts-incompatible" style="width: 100%; height: 320px; border-radius: 8px;"></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof echarts !== 'undefined' && document.getElementById('echarts-incompatible')) {
-    var chart = echarts.init(document.getElementById('echarts-incompatible'));
-    var option = {
-      title: { text: 'Incompatible: Sin solución', left: 'center', textStyle: { fontSize: 14, fontWeight: 'bold', color: '#1e293b' } },
-      legend: { data: ['x + y = 3', 'x + y = 5'], top: 30, textStyle: { fontSize: 11 } },
-      grid: { left: '12%', right: '8%', top: '20%', bottom: '12%', show: true, borderColor: '#94a3b8' },
-      xAxis: { type: 'value', name: 'x', nameLocation: 'middle', nameGap: 25, min: -1, max: 6, axisLine: { onZero: true, lineStyle: { color: '#374151', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', type: 'dashed' } } },
-      yAxis: { type: 'value', name: 'y', nameLocation: 'middle', nameGap: 30, min: -1, max: 7, axisLine: { onZero: true, lineStyle: { color: '#374151', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', type: 'dashed' } } },
-      series: [
-        { name: 'x + y = 3', type: 'line', symbol: 'none', lineStyle: { width: 3, color: '#ef4444' }, data: [[-1, 4], [4, -1]] },
-        { name: 'x + y = 5', type: 'line', symbol: 'none', lineStyle: { width: 3, color: '#f87171', type: 'dashed' }, data: [[-1, 6], [6, -1]] }
-      ]
-    };
-    chart.setOption(option);
-    window.addEventListener('resize', function() { chart.resize(); });
-  }
-});
-</script>
-
----
-
----
-
-
-## 📖 Clasificación por relación de coeficientes
-
-Para el sistema:
-$$
-\begin{cases}
-a_1x + b_1y = c_1 \\
-a_2x + b_2y = c_2
-\end{cases}
-$$
-
-| Condición | Tipo | Soluciones |
-|:----------|:-----|:-----------|
-| $\frac{a_1}{a_2} \neq \frac{b_1}{b_2}$ | Compatible determinado | Una |
-| $\frac{a_1}{a_2} = \frac{b_1}{b_2} = \frac{c_1}{c_2}$ | Compatible indeterminado | Infinitas |
-| $\frac{a_1}{a_2} = \frac{b_1}{b_2} \neq \frac{c_1}{c_2}$ | Incompatible | Ninguna |
-
----
-
-### Ejemplo 1
-
-Clasificar el sistema:
-$$
-\begin{cases}
-2x + 3y = 6 \\
-4x + 6y = 12
-\end{cases}
-$$
-
-$$
-\frac{2}{4} = \frac{3}{6} = \frac{6}{12} = \frac{1}{2}
-$$
-
-Las tres razones son iguales → **Compatible indeterminado** (infinitas soluciones).
-
----
-
-### Ejemplo 2
-
-Clasificar el sistema:
-$$
-\begin{cases}
-x + 2y = 5 \\
-3x + 4y = 11
-\end{cases}
-$$
-
-$$
-\frac{1}{3} \neq \frac{2}{4} = \frac{1}{2}
-$$
-
-Las razones son diferentes → **Compatible determinado** (una solución).
-
----
-
-### Ejemplo 3
-
-Clasificar el sistema:
-$$
-\begin{cases}
-2x - y = 4 \\
-4x - 2y = 3
-\end{cases}
-$$
-
-$$
-\frac{2}{4} = \frac{-1}{-2} = \frac{1}{2}, \quad \text{pero } \frac{4}{3} \neq \frac{1}{2}
-$$
-
-**Incompatible** (sin solución).
-
----
-
-## 📖 Métodos de resolución
-
-En las siguientes lecciones aprenderemos diferentes métodos:
-
-1. **Sustitución**: Despejar una variable y sustituir
-2. **Igualación**: Igualar las expresiones de una misma variable
-3. **Reducción (eliminación)**: Sumar o restar ecuaciones
-4. **Gráfico**: Dibujar las rectas y encontrar la intersección
-5. **Cramer**: Usar determinantes
-6. **Gauss-Jordan**: Usar matrices
-
----
-
-## 📝 Ejercicios de práctica
-
-**Ejercicio 1:** ¿Es $(2, 3)$ solución de $\begin{cases} x + y = 5 \\ 2x - y = 1 \end{cases}$?
 
 <details>
 <summary>Ver solución</summary>
 
-$2 + 3 = 5$ ✓
+$$
+2 + 5 = 7 \quad (Sí)
+$$
+$$
+2(2) - 5 = 4 - 5 = -1 \quad (Sí)
+$$
 
-$2(2) - 3 = 4 - 3 = 1$ ✓
-
-Sí, es solución.
+**Resultado:** $\boxed{\text{Sí es solución}}$
 
 </details>
 
 ---
 
-**Ejercicio 2:** Clasifica: $\begin{cases} 3x + 6y = 9 \\ x + 2y = 3 \end{cases}$
+### Ejercicio 2
+Clasifica el sistema:
+$$
+\left\{
+\begin{array}{ll}
+3x+2y=8 \\
+6x+4y=10
+\end{array}
+\right.
+$$
 
 <details>
 <summary>Ver solución</summary>
 
-$\frac{3}{1} = \frac{6}{2} = \frac{9}{3} = 3$
+$$
+\frac{3}{6} = \frac{2}{4} = \frac{1}{2}
+$$
+$$
+\frac{8}{10} = \frac{4}{5}
+$$
+Como $\frac{1}{2} \neq \frac{4}{5}$, son paralelas.
 
-Compatible indeterminado (infinitas soluciones).
+**Resultado:** $\boxed{\text{Incompatible}}$
 
 </details>
 
 ---
 
-**Ejercicio 3:** Clasifica: $\begin{cases} x - y = 2 \\ 2x - 2y = 5 \end{cases}$
+### Ejercicio 3
+Clasifica el sistema:
+$$
+\left\{
+\begin{array}{ll}
+x+y=10 \\
+x-y=2
+\end{array}
+\right.
+$$
 
 <details>
 <summary>Ver solución</summary>
 
-$\frac{1}{2} = \frac{-1}{-2}$, pero $\frac{2}{5} \neq \frac{1}{2}$
+$$
+\frac{1}{1} \neq \frac{1}{-1}
+$$
+Se cruzan.
 
-Incompatible (sin solución).
+**Resultado:** $\boxed{\text{Compatible Determinado}}$
 
 </details>
 
 ---
 
-**Ejercicio 4:** Clasifica: $\begin{cases} 2x + y = 7 \\ x - 3y = -4 \end{cases}$
+### Ejercicio 4
+¿Es $(0, 0)$ solución del sistema?
+$$
+\left\{
+\begin{array}{ll}
+3x+5y=0 \\
+x-2y=1
+\end{array}
+\right.
+$$
 
 <details>
 <summary>Ver solución</summary>
 
-$\frac{2}{1} = 2 \neq \frac{1}{-3}$
+Primera: $0=0$ (Bien).
+Segunda: $0 - 0 = 0 \neq 1$.
 
-Compatible determinado (una solución).
+**Resultado:** $\boxed{\text{No}}$
 
 </details>
 
 ---
 
-**Ejercicio 5:** ¿Cuántas soluciones tiene un sistema de rectas paralelas?
+### Ejercicio 5
+Si dos rectas se cortan en el punto $(4, -1)$, ¿cuál es la solución del sistema?
 
 <details>
 <summary>Ver solución</summary>
 
-Ninguna (sistema incompatible).
+**Resultado:** $\boxed{x=4, y=-1}$
 
 </details>
 
 ---
 
-**Ejercicio 6:** ¿Qué representa geométricamente la solución de un sistema 2×2?
+### Ejercicio 6
+Clasifica:
+$$
+\left\{
+\begin{array}{ll}
+-x+y=3 \\
+x-y=-3
+\end{array}
+\right.
+$$
 
 <details>
 <summary>Ver solución</summary>
 
-El punto de intersección de las dos rectas.
+$$
+\frac{-1}{1} = -1, \quad \frac{1}{-1} = -1, \quad \frac{3}{-3} = -1
+$$
+Todo igual.
+
+**Resultado:** $\boxed{\text{Compatible Indeterminado}}$
 
 </details>
 
 ---
+
+### Ejercicio 7
+Escribe un sistema que tenga como solución $(1, 1)$.
+
+<details>
+<summary>Ver solución</summary>
+
+Ejemplo:
+$$
+\left\{
+\begin{array}{ll}
+x+y=2 \\
+x-y=0
+\end{array}
+\right.
+$$
+
+</details>
+
+---
+
+### Ejercicio 8
+¿Cuántas soluciones tiene el sistema formado por las rectas $y = 2x + 1$ y $y = 2x + 5$?
+
+<details>
+<summary>Ver solución</summary>
+
+Tienen la misma pendiente ($m=2$) pero diferente intercepto. Son paralelas.
+
+**Resultado:** $\boxed{\text{Cero soluciones}}$
+
+</details>
+
+---
+
+### Ejercicio 9
+Determina $k$ para que el sistema sea incompatible:
+$$
+\left\{
+\begin{array}{ll}
+2x+3y=5 \\
+4x+ky=8
+\end{array}
+\right.
+$$
+
+<details>
+<summary>Ver solución</summary>
+
+Necesitamos $\frac{2}{4} = \frac{3}{k}$.
+$$
+\frac{1}{2} = \frac{3}{k} \implies k=6
+$$
+
+**Resultado:** $\boxed{k=6}$
+
+</details>
+
+---
+
+### Ejercicio 10
+Si graficas un sistema y obtienes una sola línea recta (una encima de la otra), ¿qué tipo de sistema es?
+
+<details>
+<summary>Ver solución</summary>
+
+**Resultado:** $\boxed{\text{Compatible Indeterminado}}$
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Tipo de Sistema | Relación de Rectas | Número de Soluciones | Pista Visual |
+|:--- |:--- |:--- |:--- |
+| **Determinado** | Se cruzan (X) | Una única $(x, y)$ | Pendientes diferentes. |
+| **Incompatible** | Paralelas (\|\|) | Cero | Misma pendiente, distinta altura. |
+| **Indeterminado** | Coincidentes (=) | Infinitas | Misma pendiente y altura. |
+
+> **Conclusión:** Antes de lanzarte a calcular a ciegas, dale un vistazo a los coeficientes. A veces el sistema te grita "¡no tengo solución!" o "¡soy una trampa duplicada!" antes de que escribas el primer número.
