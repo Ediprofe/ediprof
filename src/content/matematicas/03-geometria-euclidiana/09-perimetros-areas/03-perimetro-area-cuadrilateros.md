@@ -1,367 +1,315 @@
-# Perímetro y Área de Cuadriláteros
+# **Perímetro y Área de Cuadriláteros**
 
-Los cuadriláteros tienen fórmulas específicas para calcular su perímetro y área, dependiendo del tipo.
-
-<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <canvas id="roughjs-cuadrilateros" width="750" height="320" style="width: 100%; height: auto; display: block;"></canvas>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof rough !== 'undefined' && document.getElementById('roughjs-cuadrilateros')) {
-    var canvas = document.getElementById('roughjs-cuadrilateros');
-    var rc = rough.canvas(canvas);
-    var ctx = canvas.getContext('2d');
-    
-    ctx.font = 'bold 16px Inter, sans-serif';
-    ctx.fillStyle = '#1e293b';
-    ctx.textAlign = 'center';
-    ctx.fillText('Fórmulas de Área de Cuadriláteros', 375, 25);
-    
-    var azul = '#3b82f6';
-    var verde = '#22c55e';
-    var morado = '#a855f7';
-    var naranja = '#f59e0b';
-    
-    // === CUADRADO ===
-    rc.rectangle(40, 60, 100, 100, {fill: '#dbeafe', fillStyle: 'solid', stroke: azul, strokeWidth: 2, roughness: 0.5});
-    ctx.font = 'bold 12px Inter, sans-serif';
-    ctx.fillStyle = azul;
-    ctx.fillText('CUADRADO', 90, 55);
-    ctx.font = '11px Inter, sans-serif';
-    ctx.fillText('l', 90, 115);
-    ctx.fillText('l', 25, 110);
-    ctx.font = 'bold 13px Inter, sans-serif';
-    ctx.fillText('A = l²', 90, 185);
-    
-    // === RECTÁNGULO ===
-    rc.rectangle(180, 70, 130, 80, {fill: '#dcfce7', fillStyle: 'solid', stroke: verde, strokeWidth: 2, roughness: 0.5});
-    ctx.fillStyle = verde;
-    ctx.font = 'bold 12px Inter, sans-serif';
-    ctx.fillText('RECTÁNGULO', 245, 55);
-    ctx.font = '11px Inter, sans-serif';
-    ctx.fillText('a', 245, 165);
-    ctx.fillText('b', 165, 110);
-    ctx.font = 'bold 13px Inter, sans-serif';
-    ctx.fillText('A = a × b', 245, 185);
-    
-    // === PARALELOGRAMO ===
-    rc.polygon([[360,150], [490,150], [520,70], [390,70]], {fill: '#fef3c7', fillStyle: 'solid', stroke: naranja, strokeWidth: 2, roughness: 0.5});
-    // Altura
-    rc.line(450, 150, 450, 70, {stroke: '#ef4444', strokeWidth: 2, roughness: 0.3});
-    rc.rectangle(450, 135, 10, 10, {stroke: '#ef4444', strokeWidth: 1, roughness: 0.2});
-    ctx.fillStyle = naranja;
-    ctx.font = 'bold 12px Inter, sans-serif';
-    ctx.fillText('PARALELOGRAMO', 440, 55);
-    ctx.font = '11px Inter, sans-serif';
-    ctx.fillText('b', 425, 165);
-    ctx.fillStyle = '#ef4444';
-    ctx.fillText('h', 460, 115);
-    ctx.fillStyle = naranja;
-    ctx.font = 'bold 13px Inter, sans-serif';
-    ctx.fillText('A = b × h', 440, 185);
-    
-    // === ROMBO ===
-    rc.polygon([[640,60], [700,110], [640,160], [580,110]], {fill: '#ede9fe', fillStyle: 'solid', stroke: morado, strokeWidth: 2, roughness: 0.5});
-    // Diagonales
-    rc.line(580, 110, 700, 110, {stroke: morado, strokeWidth: 1.5, roughness: 0.3});
-    rc.line(640, 60, 640, 160, {stroke: morado, strokeWidth: 1.5, roughness: 0.3});
-    ctx.fillStyle = morado;
-    ctx.font = 'bold 12px Inter, sans-serif';
-    ctx.fillText('ROMBO', 640, 50);
-    ctx.font = '11px Inter, sans-serif';
-    ctx.fillText('d₁', 640, 175);
-    ctx.fillText('d₂', 710, 115);
-    ctx.font = 'bold 13px Inter, sans-serif';
-    ctx.fillText('A = d₁×d₂/2', 640, 195);
-    
-    // Leyenda
-    rc.rectangle(200, 220, 350, 80, {fill: '#f1f5f9', stroke: '#cbd5e1', roughness: 0.3});
-    ctx.font = 'bold 13px Inter, sans-serif';
-    ctx.fillStyle = '#1e293b';
-    ctx.fillText('Resumen de Fórmulas', 375, 245);
-    ctx.font = '12px Inter, sans-serif';
-    ctx.textAlign = 'left';
-    ctx.fillStyle = azul;
-    ctx.fillText('Cuadrado: l²', 220, 270);
-    ctx.fillStyle = verde;
-    ctx.fillText('Rectángulo: a×b', 220, 290);
-    ctx.fillStyle = naranja;
-    ctx.fillText('Paralelogramo: b×h', 380, 270);
-    ctx.fillStyle = morado;
-    ctx.fillText('Rombo: d₁×d₂/2', 380, 290);
-  }
-});
-</script>
+Desde la pantalla de tu celular (rectángulo) hasta las baldosas del piso (cuadrado), los cuadriláteros están en todas partes. Aquí aprenderás a medir su contorno y su superficie.
 
 ---
 
-## 📖 Cuadrado
+## 🎯 ¿Qué vas a aprender?
 
-### Perímetro
+- Calcular perímetro y área del **Cuadrado** y **Rectángulo**.
+- Entender la fórmula del **Paralelogramo** (¡es un rectángulo disfrazado!).
+- Calcular el área del **Rombo** usando sus diagonales.
+- Resolver problemas inversos (hallar el lado si tienes el área).
+
+---
+
+## 🟥 Cuadrado
+
+Es el polígono perfecto: 4 lados iguales y 4 ángulos rectos.
+
+### Perímetro ($P$)
+Suma de los 4 lados.
 
 $$
-P = 4l
+P = 4 \cdot l
 $$
 
-### Área
+### Área ($A$)
+Lado por lado.
 
 $$
 A = l^2
 $$
 
-### Ejemplo
+---
 
-Cuadrado de lado 5 cm:
+## ▭ Rectángulo
+
+Tiene lados iguales dos a dos. La base ($b$) y la altura ($h$).
+
+### Perímetro ($P$)
+Dos veces la base más dos veces la altura.
 
 $$
-P = 4 \times 5 = 20 \text{ cm}
+P = 2b + 2h
 $$
 
+### Área ($A$)
+Multiplicamos sus dimensiones.
+
 $$
-A = 5^2 = 25 \text{ cm}^2
+A = b \cdot h
 $$
 
 ---
 
-## 📖 Rectángulo
+## ▱ Paralelogramo
 
-### Perímetro
+Es como un rectángulo "empujado" o inclinado. Su área se calcula igual que la del rectángulo, pero... ¡Cuidado! La altura NO es el lado inclinado.
 
-$$
-P = 2(a + b)
-$$
-
-### Área
+### Perímetro ($P$)
+Suma de sus 4 lados (dos bases y dos lados inclinados).
 
 $$
-A = a \times b
+P = 2b + 2l
 $$
 
-(largo × ancho)
-
-### Ejemplo
-
-Rectángulo de 8 cm × 5 cm:
+### Área ($A$)
+Base por Altura (perpendicular).
 
 $$
-P = 2(8 + 5) = 2 \times 13 = 26 \text{ cm}
-$$
-
-$$
-A = 8 \times 5 = 40 \text{ cm}^2
+A = b \cdot h
 $$
 
 ---
 
-## 📖 Paralelogramo
+## 🔶 Rombo
 
-### Perímetro
+Tiene 4 lados iguales (como el cuadrado) pero está "achatado". Se caracteriza por sus dos diagonales: Mayor ($D$) y Menor ($d$).
 
-$$
-P = 2(a + b)
-$$
-
-(suma de lados diferentes, multiplicada por 2)
-
-### Área
+### Perímetro ($P$)
+Suma de los 4 lados iguales.
 
 $$
-A = b \times h
+P = 4 \cdot l
 $$
 
-(base × altura perpendicular)
-
-### Ejemplo
-
-Paralelogramo con base 10 cm, altura 6 cm, lados 10 y 7 cm:
+### Área ($A$)
+Es la mitad del producto de sus diagonales. (Imagina que las diagonales forman un rectángulo grande por fuera, el rombo ocupa la mitad).
 
 $$
-P = 2(10 + 7) = 34 \text{ cm}
-$$
-
-$$
-A = 10 \times 6 = 60 \text{ cm}^2
+A = \frac{D \cdot d}{2}
 $$
 
 ---
 
-## 📖 Rombo
+## ⚙️ Ejemplos Resueltos
 
-### Perímetro
+### Ejemplo 1: Cuadrado
 
+Un cuadrado de lado 5 cm.
+
+**Razonamiento:**
+$P = 4 \times 5 = 20$.
+$A = 5^2 = 25$.
+
+**Resultado:**
 $$
-P = 4l
-$$
-
-(cuatro lados iguales)
-
-### Área
-
-$$
-A = \frac{d_1 \times d_2}{2}
-$$
-
-(producto de diagonales dividido entre 2)
-
-### Ejemplo
-
-Rombo con lado 5 cm, diagonales 6 y 8 cm:
-
-$$
-P = 4 \times 5 = 20 \text{ cm}
+\boxed{P = 20 \text{ cm}, A = 25 \text{ cm}^2}
 $$
 
+### Ejemplo 2: Paralelogramo
+
+Base $b=10$ cm, altura $h=4$ cm, lado inclinado $l=5$ cm.
+
+**Razonamiento:**
+*Perímetro:* Usamos el lado inclinado. $P = 2(10) + 2(5) = 30$.
+*Área:* Usamos la altura. $A = 10 \times 4 = 40$.
+
+**Resultado:**
 $$
-A = \frac{6 \times 8}{2} = 24 \text{ cm}^2
-$$
-
----
-
-## 📖 Tabla resumen
-
-| Cuadrilátero | Perímetro | Área |
-|--------------|-----------|------|
-| Cuadrado | $4l$ | $l^2$ |
-| Rectángulo | $2(a+b)$ | $a \times b$ |
-| Paralelogramo | $2(a+b)$ | $b \times h$ |
-| Rombo | $4l$ | $\frac{d_1 \times d_2}{2}$ |
-
----
-
-## 📖 Diagonal del cuadrado
-
-$$
-d = l\sqrt{2}
+\boxed{P = 30 \text{ cm}, A = 40 \text{ cm}^2}
 $$
 
-### Área a partir de la diagonal
+### Ejemplo 3: Rombo
 
+Diagonales de 8 m y 6 m. Lado de 5 m.
+
+**Razonamiento:**
+*Perímetro:* $4 \times 5 = 20$.
+*Área:* $(8 \times 6) / 2 = 24$.
+
+**Resultado:**
 $$
-A = \frac{d^2}{2}
-$$
-
-### Ejemplo
-
-Si la diagonal mide 10 cm:
-
-$$
-A = \frac{10^2}{2} = \frac{100}{2} = 50 \text{ cm}^2
+\boxed{P = 20 \text{ m}, A = 24 \text{ m}^2}
 $$
 
 ---
 
-## 📖 Diagonal del rectángulo
+## 📝 Ejercicios de Práctica
 
-$$
-d = \sqrt{a^2 + b^2}
-$$
-
-(Teorema de Pitágoras)
-
-### Ejemplo
-
-Rectángulo de 3 × 4:
-
-$$
-d = \sqrt{9 + 16} = \sqrt{25} = 5
-$$
-
----
-
-## 📝 Ejercicios de práctica
-
-### Ejercicio 1: Cuadrado
-
-Un cuadrado tiene lado 9 cm. Calcula:
-
-1. Perímetro
-2. Área
-3. Diagonal
+### Ejercicio 1
+Calcula el área de un rectángulo de 8x3.
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. $P = 4 \times 9 = 36$ cm
-2. $A = 9^2 = 81$ cm²
-3. $d = 9\sqrt{2} \approx 12.73$ cm
+**Razonamiento:**
+$8 \times 3$.
+
+**Resultado:**
+$$
+\boxed{24}
+$$
+
+</details>
+
+### Ejercicio 2
+Perímetro de un cuadrado de área 36.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$l^2 = 36 \Rightarrow l=6$.
+$P = 4 \times 6 = 24$.
+
+**Resultado:**
+$$
+\boxed{24}
+$$
+
+</details>
+
+### Ejercicio 3
+Área de un rombo con diagonales 10 y 20.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$\frac{10 \cdot 20}{2} = \frac{200}{2}$.
+
+**Resultado:**
+$$
+\boxed{100}
+$$
+
+</details>
+
+### Ejercicio 4
+Un paralelogramo tiene área 50 y base 10. ¿Cuál es su altura?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$50 = 10 \cdot h \Rightarrow h=5$.
+
+**Resultado:**
+$$
+\boxed{5}
+$$
+
+</details>
+
+### Ejercicio 5
+Calcula el perímetro de un rectángulo de lados 4 y 7.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$2(4+7) = 2(11)$.
+
+**Resultado:**
+$$
+\boxed{22}
+$$
+
+</details>
+
+### Ejercicio 6
+Verdadero o Falso: El área del rombo es $D \times d$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Falso. Es dividido entre 2.
+
+**Resultado:**
+$$
+\boxed{\text{Falso}}
+$$
+
+</details>
+
+### Ejercicio 7
+Si duplicas el lado de un cuadrado, ¿su área se duplica?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+No, se cuadriplica ($2^2=4$).
+
+**Resultado:**
+$$
+\boxed{\text{No, se multiplica por 4}}
+$$
+
+</details>
+
+### Ejercicio 8
+¿Cuál es el área de un cuadrado de diagonal 10?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+El cuadrado es también un rombo con $D=d=10$.
+$A = \frac{10 \cdot 10}{2} = 50$.
+
+**Resultado:**
+$$
+\boxed{50}
+$$
+
+</details>
+
+### Ejercicio 9
+Perímetro de un rombo de lado 3.5.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$4 \times 3.5$.
+
+**Resultado:**
+$$
+\boxed{14}
+$$
+
+</details>
+
+### Ejercicio 10
+Un rectángulo tiene perímetro 20 y base 6. Halla su área.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$P = 2b + 2h \Rightarrow 20 = 12 + 2h \Rightarrow 2h = 8 \Rightarrow h=4$.
+$A = 6 \times 4$.
+
+**Resultado:**
+$$
+\boxed{24}
+$$
 
 </details>
 
 ---
 
-### Ejercicio 2: Rectángulo
+## 🔑 Resumen
 
-Un rectángulo mide 12 cm × 5 cm. Calcula:
+| Figura | Área ($A$) |
+| :--- | :--- |
+| **Cuadrado** | $l^2$ |
+| **Rectángulo** | $b \cdot h$ |
+| **Paralelogramo** | $b \cdot h$ (¡h perpendicular!) |
+| **Rombo** | $\frac{D \cdot d}{2}$ |
 
-1. Perímetro
-2. Área
-3. Diagonal
-
-<details>
-<summary><strong>Ver respuestas</strong></summary>
-
-1. $P = 2(12 + 5) = 34$ cm
-2. $A = 12 \times 5 = 60$ cm²
-3. $d = \sqrt{144 + 25} = \sqrt{169} = 13$ cm
-
-</details>
-
----
-
-### Ejercicio 3: Paralelogramo
-
-Paralelogramo con lados 8 y 6 cm, altura 5 cm (sobre el lado de 8 cm). Calcula perímetro y área.
-
-<details>
-<summary><strong>Ver respuestas</strong></summary>
-
-$$
-P = 2(8 + 6) = 28 \text{ cm}
-$$
-
-$$
-A = 8 \times 5 = 40 \text{ cm}^2
-$$
-
-</details>
-
----
-
-### Ejercicio 4: Rombo
-
-Un rombo tiene diagonales de 10 y 24 cm. La relación de Pitágoras da lado = 13 cm. Calcula perímetro y área.
-
-<details>
-<summary><strong>Ver respuestas</strong></summary>
-
-$$
-P = 4 \times 13 = 52 \text{ cm}
-$$
-
-$$
-A = \frac{10 \times 24}{2} = 120 \text{ cm}^2
-$$
-
-</details>
-
----
-
-### Ejercicio 5: Problema inverso
-
-El área de un rectángulo es 72 cm² y un lado mide 8 cm. ¿Cuánto mide el otro lado y el perímetro?
-
-<details>
-<summary><strong>Ver respuestas</strong></summary>
-
-$$
-\text{Otro lado} = \frac{72}{8} = 9 \text{ cm}
-$$
-
-$$
-P = 2(8 + 9) = 34 \text{ cm}
-$$
-
-</details>
-
----
+> El área mide rectángulos. Incluso el triángulo y el rombo son "la mitad" de un rectángulo imaginario.

@@ -1,288 +1,265 @@
-# Prismas
+# **Prismas**
 
-Un **prisma** es un poliedro formado por dos bases paralelas e iguales, unidas por caras laterales rectangulares.
-
-<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <canvas id="roughjs-prisma" width="700" height="280" style="width: 100%; height: auto; display: block;"></canvas>
-  <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 0.75rem; font-size: 0.9rem; flex-wrap: wrap;">
-    <span><strong style="color: #ef4444;">h</strong> = altura del prisma</span>
-    <span><strong style="color: #3b82f6;">Base</strong> = polígono (triángulo, cuadrado, etc.)</span>
-    <span><strong style="color: #64748b;">P</strong> = perímetro de la base</span>
-  </div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof rough !== 'undefined' && document.getElementById('roughjs-prisma')) {
-    var canvas = document.getElementById('roughjs-prisma');
-    var rc = rough.canvas(canvas);
-    var ctx = canvas.getContext('2d');
-    
-    ctx.font = 'bold 16px Inter, sans-serif';
-    ctx.fillStyle = '#1e293b';
-    ctx.textAlign = 'center';
-    ctx.fillText('Prisma Triangular: Elementos', 350, 25);
-    
-    var azul = '#3b82f6';
-    var verde = '#22c55e';
-    var rojo = '#ef4444';
-    
-    // Prisma triangular isométrico
-    // Base inferior (triángulo)
-    var b1 = [150, 220], b2 = [280, 240], b3 = [200, 260];
-    // Base superior (triángulo)
-    var t1 = [150, 100], t2 = [280, 120], t3 = [200, 140];
-    
-    // Caras laterales
-    rc.polygon([b1, b2, t2, t1], {fill: '#dbeafe', stroke: azul, strokeWidth: 2, roughness: 0.5});
-    rc.polygon([b2, b3, t3, t2], {fill: '#bfdbfe', stroke: azul, strokeWidth: 2, roughness: 0.5});
-    rc.polygon([b3, b1, t1, t3], {fill: '#93c5fd', stroke: azul, strokeWidth: 2, roughness: 0.5});
-    
-    // Base superior (visible)
-    rc.polygon([t1, t2, t3], {fill: '#dbeafe', stroke: azul, strokeWidth: 2.5, roughness: 0.5});
-    
-    // Altura (línea vertical)
-    rc.line(215, 250, 215, 130, {stroke: rojo, strokeWidth: 2.5, roughness: 0.3});
-    ctx.font = 'bold 12px Inter, sans-serif';
-    ctx.fillStyle = rojo;
-    ctx.fillText('h', 230, 190);
-    
-    // Etiquetas
-    ctx.font = '11px Inter, sans-serif';
-    ctx.fillStyle = azul;
-    ctx.fillText('Base', 215, 280);
-    ctx.fillText('superior', 215, 90);
-    ctx.fillStyle = '#64748b';
-    ctx.fillText('Cara lateral', 300, 180);
-    
-    // Fórmulas
-    rc.rectangle(400, 80, 270, 180, {fill: '#f1f5f9', stroke: '#cbd5e1', roughness: 0.3});
-    ctx.font = 'bold 14px Inter, sans-serif';
-    ctx.fillStyle = '#1e293b';
-    ctx.fillText('Fórmulas del Prisma', 535, 110);
-    
-    ctx.font = '13px Inter, sans-serif';
-    ctx.textAlign = 'left';
-    ctx.fillStyle = verde;
-    ctx.fillText('Área lateral:', 420, 140);
-    ctx.fillStyle = '#1e293b';
-    ctx.fillText('A_L = Perímetro_base × h', 420, 160);
-    
-    ctx.fillStyle = azul;
-    ctx.fillText('Área total:', 420, 190);
-    ctx.fillStyle = '#1e293b';
-    ctx.fillText('A_T = A_L + 2 × A_base', 420, 210);
-    
-    ctx.fillStyle = rojo;
-    ctx.fillText('Volumen:', 420, 240);
-    ctx.fillStyle = '#1e293b';
-    ctx.fillText('V = A_base × h', 420, 260);
-  }
-});
-</script>
+Piensa en los edificios de una ciudad, en una caja de cereal o en un bloque de madera. Todos son prismas: cuerpos que "crecen" hacia arriba manteniendo la misma forma de su base.
 
 ---
 
-## 📖 Definición
+## 🎯 ¿Qué vas a aprender?
 
-> **Definición:** Un prisma es un poliedro con dos **bases congruentes y paralelas** unidas por caras laterales que son **paralelogramos** (generalmente rectángulos).
-
----
-
-## 📖 Elementos del prisma
-
-| Elemento | Descripción |
-|----------|-------------|
-| Bases | Las dos caras iguales y paralelas |
-| Caras laterales | Rectángulos que unen las bases |
-| Aristas básicas | Lados de las bases |
-| Aristas laterales | Unen las bases (son todas iguales y paralelas) |
-| Altura ($h$) | Distancia entre las bases |
+- Identificar un prisma por su base (triangular, cuadrangular, hexagonal).
+- Calcular el **Área Lateral** (paredes) y el **Área Total** (paredes + tapas).
+- Calcular el **Volumen** usando la fórmula general ($V = A_b \cdot h$).
+- Relacionar el perímetro de la base con el área lateral.
 
 ---
 
-## 📖 Clasificación de prismas
+## 🏗️ Partes de un Prisma
 
-### Por el polígono de la base
+1.  **Bases (2):** Son los "pisos" y "techos". Son polígonos iguales y paralelos.
+2.  **Caras Laterales:** Son las "paredes". Siempre son rectángulos (en prismas rectos).
+3.  **Altura ($h$):** La distancia entre las dos bases.
 
-| Base | Nombre del prisma | Caras laterales |
-|------|-------------------|-----------------|
-| Triángulo | Prisma triangular | 3 |
-| Cuadrado | Prisma cuadrangular | 4 |
-| Pentágono | Prisma pentagonal | 5 |
-| Hexágono | Prisma hexagonal | 6 |
-
-### Por la posición de las aristas laterales
-
-| Tipo | Descripción |
-|------|-------------|
-| Prisma recto | Aristas laterales perpendiculares a las bases |
-| Prisma oblicuo | Aristas laterales inclinadas |
+> El nombre del prisma depende de su base. Si la base es un hexágono, es un "Prisma Hexagonal".
 
 ---
 
-## 📖 Área del prisma
+## 📏 Fórmulas Fundamentales
 
-### Área lateral
+### 1. Volumen ($V$)
+Es el espacio que ocupa. Imagina apilar muchas capas de la base una encima de otra.
 
 $$
-A_L = P_{base} \times h
+V = A_{\text{base}} \times h
 $$
 
-(Perímetro de la base × altura)
-
-### Área total
+### 2. Área Lateral ($A_L$)
+Es la suma de todas las caras laterales (las paredes).
 
 $$
-A_T = A_L + 2 \times A_{base} = P_{base} \times h + 2 \times A_{base}
+A_L = P_{\text{base}} \times h
+$$
+
+*   $P_{\text{base}}$: Perímetro de la base.
+
+### 3. Área Total ($A_T$)
+Es la superficie de todo el cuerpo (paredes + las dos bases).
+
+$$
+A_T = A_L + 2 \times A_{\text{base}}
 $$
 
 ---
 
-## 📖 Volumen del prisma
+## ⚙️ Ejemplos Resueltos
 
+### Ejemplo 1: Prisma Cuadrangular
+
+Un prisma con base cuadrada de lado 4 cm y altura 10 cm.
+
+**Razonamiento:**
+1.  **Base:** Cuadrado de lado 4.
+    *   Área Base ($A_b$) = $4^2 = 16$.
+    *   Perímetro Base ($P_b$) = $4 \times 4 = 16$.
+2.  **Volumen:**
+    *   $V = 16 \times 10 = 160$ cm³.
+3.  **Área Total:**
+    *   $A_L = 16 \times 10 = 160$.
+    *   $A_T = 160 + 2(16) = 160 + 32 = 192$ cm².
+
+**Resultado:**
 $$
-V = A_{base} \times h
+\boxed{V = 160 \text{ cm}^3, A_T = 192 \text{ cm}^2}
 $$
 
-> El volumen de cualquier prisma es el **área de la base por la altura**.
+### Ejemplo 2: Prisma Triangular
+
+Base triángulo rectángulo con catetos 3 y 4 cm. Altura prisma = 8 cm.
+
+**Razonamiento:**
+1.  **Base:** Triángulo (3, 4, 5 - hipotenusa por Pitágoras).
+    *   $A_b = (3 \times 4) / 2 = 6$.
+    *   $P_b = 3 + 4 + 5 = 12$.
+2.  **Volumen:** $6 \times 8 = 48$ cm³.
+3.  **Área Lateral:** $12 \times 8 = 96$ cm².
+
+**Resultado:**
+$$
+\boxed{V = 48 \text{ cm}^3, A_L = 96 \text{ cm}^2}
+$$
 
 ---
 
-## 📖 Ejemplos
+## 📝 Ejercicios de Práctica
 
-### Ejemplo 1: Prisma triangular
-
-Base: triángulo de base 6 cm y altura 4 cm. Altura del prisma: 10 cm.
-
-$$
-A_{base} = \frac{6 \times 4}{2} = 12 \text{ cm}^2
-$$
-
-$$
-V = 12 \times 10 = 120 \text{ cm}^3
-$$
-
-### Ejemplo 2: Prisma rectangular (ortoedro)
-
-Dimensiones: 5 × 3 × 8 cm.
-
-$$
-A_{base} = 5 \times 3 = 15 \text{ cm}^2
-$$
-
-$$
-V = 15 \times 8 = 120 \text{ cm}^3
-$$
-
-Alternativamente: $V = 5 \times 3 \times 8 = 120$ cm³
-
----
-
-## 📖 Elementos por tipo de prisma
-
-| Prisma | Caras | Aristas | Vértices |
-|--------|-------|---------|----------|
-| Triangular | 5 | 9 | 6 |
-| Cuadrangular | 6 | 12 | 8 |
-| Pentagonal | 7 | 15 | 10 |
-| Hexagonal | 8 | 18 | 12 |
-
-### Fórmulas generales (para base de n lados)
-
-- Caras: $n + 2$
-- Aristas: $3n$
-- Vértices: $2n$
-
----
-
-## 📝 Ejercicios de práctica
-
-### Ejercicio 1: Volumen
-
-Calcula el volumen de prismas con:
-
-1. Base cuadrada de 4 cm, altura del prisma 10 cm
-2. Base triangular (área = 15 cm²), altura del prisma 8 cm
+### Ejercicio 1
+Volumen de un prisma cuya base tiene área 20 y altura 5.
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. $A_{base} = 16$ cm², $V = 16 \times 10 = 160$ cm³
-2. $V = 15 \times 8 = 120$ cm³
+**Razonamiento:**
+$V = 20 \times 5$.
 
-</details>
-
----
-
-### Ejercicio 2: Área total
-
-Un prisma rectangular mide 6 × 4 × 5 cm. Calcula:
-
-1. Área de las bases
-2. Área lateral
-3. Área total
-
-<details>
-<summary><strong>Ver respuestas</strong></summary>
-
-1. $A_{base} = 6 \times 4 = 24$ cm², dos bases = 48 cm²
-2. $P_{base} = 2(6+4) = 20$ cm, $A_L = 20 \times 5 = 100$ cm²
-3. $A_T = 100 + 48 = 148$ cm²
-
-</details>
-
----
-
-### Ejercicio 3: Problema inverso
-
-El volumen de un prisma de base cuadrada es 180 cm³. Si la altura es 5 cm, ¿cuánto mide el lado de la base?
-
-<details>
-<summary><strong>Ver respuesta</strong></summary>
-
+**Resultado:**
 $$
-A_{base} = \frac{180}{5} = 36 \text{ cm}^2
-$$
-
-$$
-\text{Lado} = \sqrt{36} = 6 \text{ cm}
+\boxed{100}
 $$
 
 </details>
 
----
-
-### Ejercicio 4: Prisma hexagonal regular
-
-Un prisma tiene base hexagonal regular con lado 4 cm y apotema ≈ 3.46 cm. Altura del prisma: 12 cm.
+### Ejercicio 2
+Área lateral de un prisma de base cuadrada (lado 3) y altura 6.
 
 <details>
-<summary><strong>Ver respuesta</strong></summary>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$P_b = 4 \times 3 = 12$.
+$A_L = 12 \times 6$.
+
+**Resultado:**
+$$
+\boxed{72}
+$$
+
+</details>
+
+### Ejercicio 3
+Si el volumen es 200 y la altura 10, ¿cuál es el área de la base?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$200 = A_b \times 10 \Rightarrow A_b = 20$.
+
+**Resultado:**
+$$
+\boxed{20}
+$$
+
+</details>
+
+### Ejercicio 4
+Prisma hexagonal regular: $A_{\text{base}} = 40$, Altura = 10. Volumen:
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$V = 40 \times 10$.
+
+**Resultado:**
+$$
+\boxed{400}
+$$
+
+</details>
+
+### Ejercicio 5
+Un prisma tiene 5 caras laterales. ¿Qué forma tiene su base?
+
+<details>
+<summary>Ver solución</summary>
+
+**Respuesta:**
 
 $$
-A_{base} = \frac{P \times a}{2} = \frac{24 \times 3.46}{2} \approx 41.5 \text{ cm}^2
+\text{Pentágono (Prisma Pentagonal)}
 $$
 
+</details>
+
+### Ejercicio 6
+Calcula el Área Total si $A_L = 100$ y $A_{\text{base}} = 25$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$A_T = 100 + 2(25) = 100 + 50$.
+
+**Resultado:**
 $$
-V \approx 41.5 \times 12 = 498 \text{ cm}^3
+\boxed{150}
+$$
+
+</details>
+
+### Ejercicio 7
+Una columna rectangular de 3x4 metros y 20 m de alto. Volumen:
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$A_b = 3 \times 4 = 12$.
+$V = 12 \times 20$.
+
+**Resultado:**
+$$
+\boxed{240 \text{ m}^3}
+$$
+
+</details>
+
+### Ejercicio 8
+¿Cuántos vértices tiene un prisma triangular?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+3 arriba + 3 abajo.
+
+**Resultado:**
+$$
+\boxed{6}
+$$
+
+</details>
+
+### Ejercicio 9
+Si duplicas la altura del prisma, ¿qué pasa con el volumen?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$V' = A_b \times 2h = 2(A_b h)$.
+
+**Resultado:**
+$$
+\boxed{\text{Se duplica}}
+$$
+
+</details>
+
+### Ejercicio 10
+Piscina con forma de prisma. Largo 10, ancho 5, profundidad 2. Litros de agua (1 m³ = 1000 L).
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$V = 10 \times 5 \times 2 = 100 \text{ m}^3$.
+$100 \times 1000$.
+
+**Resultado:**
+$$
+\boxed{100,000 \text{ Litros}}
 $$
 
 </details>
 
 ---
 
-### Ejercicio 5: Elementos
+## 🔑 Resumen
 
-¿Cuántas caras, aristas y vértices tiene un prisma pentagonal?
+| Concepto | Fórmula |
+| :--- | :--- |
+| **Volumen** | $A_{\text{base}} \times h$ |
+| **Área Lateral** | $P_{\text{base}} \times h$ |
+| **Área Total** | $A_L + 2A_{\text{base}}$ |
 
-<details>
-<summary><strong>Ver respuesta</strong></summary>
-
-- Caras: $5 + 2 = 7$
-- Aristas: $3 \times 5 = 15$
-- Vértices: $2 \times 5 = 10$
-
-</details>
-
----
+> El secreto es analizar bien la **base**. Si dominas la base, dominas el prisma.

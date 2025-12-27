@@ -1,307 +1,261 @@
-# Traslación
+# **Traslación**
 
-La **traslación** es el movimiento más simple: desplazar una figura una cierta distancia en una dirección determinada.
-
-<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <canvas id="roughjs-traslacion-1" width="700" height="320" style="width: 100%; height: auto; display: block;"></canvas>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof rough !== 'undefined' && document.getElementById('roughjs-traslacion-1')) {
-    var canvas = document.getElementById('roughjs-traslacion-1');
-    var rc = rough.canvas(canvas);
-    var ctx = canvas.getContext('2d');
-    
-    ctx.font = 'bold 16px Inter, sans-serif';
-    ctx.fillStyle = '#1e293b';
-    ctx.textAlign = 'center';
-    ctx.fillText('Traslación de un Triángulo', 350, 25);
-    
-    var azul = '#3b82f6';
-    var verde = '#22c55e';
-    
-    // Ejes coordenados
-    rc.line(50, 250, 650, 250, {stroke: '#cbd5e1', strokeWidth: 1, roughness: 0.2});
-    rc.line(100, 50, 100, 280, {stroke: '#cbd5e1', strokeWidth: 1, roughness: 0.2});
-    ctx.font = '11px Inter, sans-serif';
-    ctx.fillStyle = '#94a3b8';
-    ctx.textAlign = 'center';
-    ctx.fillText('x', 640, 265);
-    ctx.fillText('y', 90, 60);
-    
-    // Triángulo ORIGINAL (azul)
-    var A = [150, 200];
-    var B = [250, 200];
-    var C = [200, 120];
-    rc.polygon([A, B, C], {fill: '#dbeafe', stroke: azul, strokeWidth: 2.5, roughness: 0.5});
-    
-    // Etiquetas originales
-    ctx.font = 'bold 12px Inter, sans-serif';
-    ctx.fillStyle = azul;
-    ctx.fillText('A', A[0]-12, A[1]+15);
-    ctx.fillText('B', B[0]+10, B[1]+15);
-    ctx.fillText('C', C[0], C[1]-10);
-    
-    // Vector de traslación v = (200, -50)
-    var vx = 200, vy = -50;
-    
-    // Triángulo IMAGEN (verde)
-    var Ap = [A[0]+vx, A[1]+vy];
-    var Bp = [B[0]+vx, B[1]+vy];
-    var Cp = [C[0]+vx, C[1]+vy];
-    rc.polygon([Ap, Bp, Cp], {fill: '#dcfce7', stroke: verde, strokeWidth: 2.5, roughness: 0.5});
-    
-    // Etiquetas imagen
-    ctx.fillStyle = verde;
-    ctx.fillText("A'", Ap[0]-12, Ap[1]+15);
-    ctx.fillText("B'", Bp[0]+10, Bp[1]+15);
-    ctx.fillText("C'", Cp[0], Cp[1]-10);
-    
-    // Vectores de traslación (flechas)
-    rc.line(A[0], A[1], Ap[0], Ap[1], {stroke: '#f59e0b', strokeWidth: 2, roughness: 0.3});
-    rc.line(B[0], B[1], Bp[0], Bp[1], {stroke: '#f59e0b', strokeWidth: 2, roughness: 0.3});
-    rc.line(C[0], C[1], Cp[0], Cp[1], {stroke: '#f59e0b', strokeWidth: 2, roughness: 0.3});
-    
-    // Puntas de flecha (simples)
-    ctx.fillStyle = '#f59e0b';
-    ctx.beginPath();
-    ctx.moveTo(Ap[0], Ap[1]);
-    ctx.lineTo(Ap[0]-10, Ap[1]-5);
-    ctx.lineTo(Ap[0]-10, Ap[1]+5);
-    ctx.fill();
-    
-    // Etiqueta del vector
-    ctx.font = 'bold 14px Inter, sans-serif';
-    ctx.fillStyle = '#f59e0b';
-    ctx.textAlign = 'center';
-    ctx.fillText('v⃗ = (a, b)', 300, 100);
-    
-    // Leyenda
-    rc.rectangle(180, 270, 340, 40, {fill: '#f1f5f9', stroke: '#cbd5e1', roughness: 0.3});
-    ctx.font = '12px Inter, sans-serif';
-    ctx.textAlign = 'left';
-    ctx.fillStyle = azul;
-    ctx.fillText('■ Original', 200, 295);
-    ctx.fillStyle = verde;
-    ctx.fillText('■ Imagen', 300, 295);
-    ctx.fillStyle = '#f59e0b';
-    ctx.fillText('→ Vector v⃗', 400, 295);
-  }
-});
-</script>
+Imagínate moviendo una pieza de ajedrez en línea recta, o deslizando un icono en tu pantalla táctil. Eso es una traslación: mover algo de un lugar a otro sin girarlo, ni reflejarlo, ni cambiarlo de tamaño.
 
 ---
 
-## 📖 Definición
+## 🎯 ¿Qué vas a aprender?
 
-> **Definición:** Una traslación mueve todos los puntos de una figura la **misma distancia** y en la **misma dirección**.
-
-### Vector de traslación
-
-La traslación se define mediante un **vector** $\vec{v}$:
-
-$$
-\vec{v} = (a, b)
-$$
-
-- $a$ = desplazamiento horizontal
-- $b$ = desplazamiento vertical
+- Definir una traslación usando un vector.
+- Mover puntos y figuras en el plano cartesiano usando coordenadas.
+- Comprender que una traslación es una isometría (no deforma la figura).
+- Calcular el vector de traslación si conoces el punto inicial y el final.
 
 ---
 
-## 📖 Fórmula de traslación
+## 📏 El Vector de Traslación
 
-Si el punto $P(x, y)$ se traslada con vector $\vec{v} = (a, b)$, la imagen es:
+Para describir una traslación, necesitamos un **vector** $\vec{v} = (a, b)$.
+Este vector nos dice dos cosas:
+1.  **Cuánto movernos en $x$ ($a$):** Derecha (positivo) o Izquierda (negativo).
+2.  **Cuánto movernos en $y$ ($b$):** Arriba (positivo) o Abajo (negativo).
 
-$$
-P'(x', y') = (x + a, y + b)
-$$
-
-### Ejemplo 1
-
-Trasladar $P(3, 5)$ con vector $\vec{v} = (4, -2)$:
+Si aplicamos este vector a un punto original $P(x, y)$, obtenemos su imagen $P'(x', y')$ sumando las coordenadas.
 
 $$
-P' = (3 + 4, 5 + (-2)) = (7, 3)
-$$
-
-### Ejemplo 2
-
-Trasladar $Q(-1, 2)$ con vector $\vec{v} = (5, 3)$:
-
-$$
-Q' = (-1 + 5, 2 + 3) = (4, 5)
+P'(x', y') = (x + a, \quad y + b)
 $$
 
 ---
 
-## 📖 Propiedades de la traslación
+## ⚙️ Propiedades Clave
 
-| Propiedad | ¿Se conserva? |
-|-----------|---------------|
-| Distancias | Sí |
-| Ángulos | Sí |
-| Paralelismo | Sí |
-| Orientación | Sí |
-| Área | Sí |
-
-### La traslación es una isometría
-
-Todas las distancias y ángulos se conservan.
-
-### No hay puntos fijos
-
-Ningún punto queda en su lugar (excepto si $\vec{v} = (0, 0)$).
-
-### Los segmentos son paralelos
-
-Si $\overline{AB}$ se traslada a $\overline{A'B'}$:
-- $AA' \parallel BB'$
-- $AA' = BB' = |\vec{v}|$
-- $AB = A'B'$
+1.  **Isometría:** La figura resultante es idéntica a la original. Los lados miden lo mismo y los ángulos también.
+2.  **Paralelismo:** Los segmentos que unen cada punto original con su imagen ($PP'$, $AA'$, etc.) son paralelos entre sí y tienen la misma longitud.
+3.  **Sin Rotación:** La orientación de la figura no cambia (si el triángulo apuntaba hacia arriba, sigue apuntando hacia arriba).
 
 ---
 
-## 📖 Traslación de figuras
+## ⚙️ Ejemplos Resueltos
 
-Para trasladar una figura, trasladamos **cada vértice** con el mismo vector.
+### Ejemplo 1: Trasladar un Punto
 
-### Ejemplo
+Mueve el punto $A(2, 3)$ según el vector $\vec{v} = (4, -5)$.
 
-Trasladar el triángulo $ABC$ con vértices $A(1, 2)$, $B(4, 2)$, $C(2, 5)$ usando $\vec{v} = (3, -1)$:
+**Razonamiento:**
+Sumamos la componente $x$ del vector a la $x$ del punto, y la $y$ a la $y$.
+$x' = 2 + 4 = 6$
+$y' = 3 + (-5) = -2$
 
+**Resultado:**
 $$
-A' = (1 + 3, 2 - 1) = (4, 1)
-$$
-
-$$
-B' = (4 + 3, 2 - 1) = (7, 1)
-$$
-
-$$
-C' = (2 + 3, 5 - 1) = (5, 4)
+A'(6, -2)
 $$
 
-El triángulo $A'B'C'$ es la imagen.
+### Ejemplo 2: Hallar el Vector
 
----
+Un punto $B(1, 5)$ se trasladó hasta $B'(7, 9)$. ¿Cuál fue el vector de traslación?
 
-## 📖 Composición de traslaciones
+**Razonamiento:**
+El vector es la diferencia entre el punto final y el inicial ($\text{Final} - \text{Inicial}$).
+$a = 7 - 1 = 6$
+$b = 9 - 5 = 4$
 
-Dos traslaciones consecutivas equivalen a una sola traslación cuyo vector es la **suma de los vectores**:
-
+**Resultado:**
 $$
-\vec{v}_1 + \vec{v}_2 = \vec{v}_{total}
+\vec{v} = (6, 4)
 $$
 
-### Ejemplo
+### Ejemplo 3: Trasladar una Figura
 
-Si $\vec{v}_1 = (3, 2)$ y $\vec{v}_2 = (1, 5)$:
+Traslada el triángulo con vértices $A(0,0)$, $B(3,0)$ y $C(0,4)$ usando el vector $\vec{v}=(2, 1)$.
 
+**Razonamiento:**
+Aplicamos la suma a cada vértice:
+$A(0,0) \to (0+2, 0+1) \to A'(2, 1)$
+$B(3,0) \to (3+2, 0+1) \to B'(5, 1)$
+$C(0,4) \to (0+2, 4+1) \to C'(2, 5)$
+
+**Resultado:**
 $$
-\vec{v}_{total} = (3 + 1, 2 + 5) = (4, 7)
+\text{Vértices: } A'(2, 1), B'(5, 1), C'(2, 5)
 $$
 
 ---
 
-## 📖 Traslación inversa
+## 📝 Ejercicios de Práctica
 
-La traslación inversa tiene el **vector opuesto**:
-
-$$
-\vec{v}^{-1} = -\vec{v} = (-a, -b)
-$$
-
-Aplicar la traslación y luego su inversa devuelve el punto original.
-
----
-
-## 📝 Ejercicios de práctica
-
-### Ejercicio 1: Aplicar traslación
-
-Traslada los puntos con el vector dado:
-
-1. $P(2, 3)$ con $\vec{v} = (4, 5)$
-2. $Q(-1, 4)$ con $\vec{v} = (3, -2)$
-3. $R(0, 0)$ con $\vec{v} = (-2, 6)$
+### Ejercicio 1
+Traslada el punto $P(-2, 4)$ con el vector $\vec{v} = (5, 3)$.
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. $P' = (2 + 4, 3 + 5) = (6, 8)$
-2. $Q' = (-1 + 3, 4 - 2) = (2, 2)$
-3. $R' = (0 - 2, 0 + 6) = (-2, 6)$
+**Razonamiento:**
+$(-2+5, 4+3)$
 
-</details>
-
----
-
-### Ejercicio 2: Encontrar el vector
-
-¿Qué vector traslada $A(1, 2)$ a $A'(5, 7)$?
-
-<details>
-<summary><strong>Ver respuesta</strong></summary>
-
+**Resultado:**
 $$
-\vec{v} = (5 - 1, 7 - 2) = (4, 5)
+\boxed{P'(3, 7)}
 $$
 
 </details>
 
----
-
-### Ejercicio 3: Trasladar un triángulo
-
-Triángulo con vértices $A(0, 0)$, $B(4, 0)$, $C(2, 3)$. Traslada con $\vec{v} = (-1, 2)$.
+### Ejercicio 2
+Si $Q(10, 10)$ se mueve a $Q'(8, 12)$, halla el vector de traslación.
 
 <details>
-<summary><strong>Ver respuesta</strong></summary>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$a = 8 - 10 = -2$
+$b = 12 - 10 = 2$
+
+**Resultado:**
+$$
+\boxed{\vec{v} = (-2, 2)}
+$$
+
+</details>
+
+### Ejercicio 3
+Una traslación mueve el origen $(0,0)$ al punto $(3, -4)$. ¿Cuál es el vector?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+El desplazamiento desde el origen es el mismo vector.
+
+**Resultado:**
+$$
+\boxed{\vec{v} = (3, -4)}
+$$
+
+</details>
+
+### Ejercicio 4
+Si aplicas una traslación $\vec{v}=(2, 0)$, ¿cómo se mueve la figura?
+
+<details>
+<summary>Ver solución</summary>
+
+**Respuesta:**
 
 $$
-A' = (-1, 2)
+\text{2 unidades a la derecha (horizontalmente)}
 $$
 
+</details>
+
+### Ejercicio 5
+Traslada el segmento $A(1, 1)$ a $B(2, 2)$ con vector $\vec{v}=(-1, -1)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$A' = (1-1, 1-1) = (0, 0)$
+$B' = (2-1, 2-1) = (1, 1)$
+
+**Resultado:**
 $$
-B' = (3, 2)
+\text{Segmento } A'(0,0) \text{ a } B'(1,1)
 $$
 
+</details>
+
+### Ejercicio 6
+Verdadero o Falso: Trasladar una figura cambia sus ángulos internos.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Falso. Es una isometría (rígida).
+
+**Resultado:**
 $$
-C' = (1, 5)
+\boxed{\text{Falso}}
+$$
+
+</details>
+
+### Ejercicio 7
+¿Qué vector necesitas para "deshacer" una traslación de $\vec{v}=(3, 5)$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+El vector inverso (negativo).
+$(-3, -5)$.
+
+**Resultado:**
+$$
+\boxed{\vec{u} = (-3, -5)}
+$$
+
+</details>
+
+### Ejercicio 8
+Si trasladas un círculo de radio 5 con $\vec{v}=(100, 100)$, ¿cuál es el nuevo radio?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+El tamaño no cambia.
+
+**Resultado:**
+$$
+\boxed{5}
+$$
+
+</details>
+
+### Ejercicio 9
+Calcula la distancia que se ha movido un punto trasladado con $\vec{v}=(3, 4)$.
+*(Pista: Es la magnitud del vector)*.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Pitágoras con las componentes del vector.
+$d = \sqrt{3^2 + 4^2} = \sqrt{9+16} = 5$.
+
+**Resultado:**
+$$
+\boxed{5 \text{ unidades}}
+$$
+
+</details>
+
+### Ejercicio 10
+Tienes el punto $M(5, 5)$. Le aplicas $\vec{v}=(2, 0)$ y luego $\vec{u}=(0, 3)$. ¿Dónde termina?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$5+2+0 = 7$.
+$5+0+3 = 8$.
+
+**Resultado:**
+$$
+\boxed{M''(7, 8)}
 $$
 
 </details>
 
 ---
 
-### Ejercicio 4: Composición
+## 🔑 Resumen
 
-Se aplican dos traslaciones: $\vec{v}_1 = (2, -3)$ y $\vec{v}_2 = (-5, 1)$. ¿Cuál es el vector resultante?
+| Operación | Componente $x$ | Componente $y$ |
+| :--- | :--- | :--- |
+| **Traslación (+)** | $x + a$ | $y + b$ |
+| **Hallar Vector** | $x_{\text{final}} - x_{\text{inicial}}$ | $y_{\text{final}} - y_{\text{inicial}}$ |
 
-<details>
-<summary><strong>Ver respuesta</strong></summary>
-
-$$
-\vec{v}_{total} = (2 - 5, -3 + 1) = (-3, -2)
-$$
-
-</details>
-
----
-
-### Ejercicio 5: Traslación inversa
-
-Si $\vec{v} = (7, -4)$, ¿cuál es el vector de la traslación inversa?
-
-<details>
-<summary><strong>Ver respuesta</strong></summary>
-
-$$
-\vec{v}^{-1} = (-7, 4)
-$$
-
-</details>
-
----
+> La traslación es la "suma" de la geometría. Simplemente sumas el vector a cada punto.

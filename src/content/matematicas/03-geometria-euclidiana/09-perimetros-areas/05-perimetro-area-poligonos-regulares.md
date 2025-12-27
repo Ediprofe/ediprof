@@ -1,318 +1,262 @@
-# Perímetro y Área de Polígonos Regulares
+# **Perímetro y Área de Polígonos Regulares**
 
-Los polígonos regulares tienen fórmulas específicas que involucran el número de lados, el lado y el apotema.
-
-<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <canvas id="roughjs-poligono-regular" width="700" height="300" style="width: 100%; height: auto; display: block;"></canvas>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof rough !== 'undefined' && document.getElementById('roughjs-poligono-regular')) {
-    var canvas = document.getElementById('roughjs-poligono-regular');
-    var rc = rough.canvas(canvas);
-    var ctx = canvas.getContext('2d');
-    
-    ctx.font = 'bold 16px Inter, sans-serif';
-    ctx.fillStyle = '#1e293b';
-    ctx.textAlign = 'center';
-    ctx.fillText('Hexágono Regular: Elementos y Área', 350, 25);
-    
-    var azul = '#3b82f6';
-    var verde = '#22c55e';
-    var rojo = '#ef4444';
-    var morado = '#a855f7';
-    
-    // Centro del hexágono
-    var cx = 200, cy = 165;
-    var R = 100; // Radio
-    
-    // Calcular vértices del hexágono
-    var vertices = [];
-    for (var i = 0; i < 6; i++) {
-      var angulo = (Math.PI / 3) * i - Math.PI / 2;
-      vertices.push([cx + R * Math.cos(angulo), cy + R * Math.sin(angulo)]);
-    }
-    
-    // Dibujar hexágono
-    rc.polygon(vertices, {fill: '#dbeafe', fillStyle: 'solid', stroke: azul, strokeWidth: 2.5, roughness: 0.5});
-    
-    // Centro
-    rc.circle(cx, cy, 8, {fill: rojo, stroke: rojo, roughness: 0.3});
-    ctx.font = 'bold 12px Inter, sans-serif';
-    ctx.fillStyle = rojo;
-    ctx.fillText('O', cx-15, cy+5);
-    
-    // Radio (R) - del centro a un vértice
-    rc.line(cx, cy, vertices[0][0], vertices[0][1], {stroke: morado, strokeWidth: 2.5, roughness: 0.3});
-    ctx.fillStyle = morado;
-    ctx.fillText('R', cx+25, cy-60);
-    
-    // Apotema (a) - del centro al punto medio de un lado
-    var midX = (vertices[0][0] + vertices[1][0]) / 2;
-    var midY = (vertices[0][1] + vertices[1][1]) / 2;
-    rc.line(cx, cy, midX, midY, {stroke: verde, strokeWidth: 2.5, roughness: 0.3});
-    ctx.fillStyle = verde;
-    ctx.fillText('a', cx+50, cy-25);
-    
-    // Lado (l)
-    rc.line(vertices[0][0], vertices[0][1], vertices[1][0], vertices[1][1], {stroke: azul, strokeWidth: 4, roughness: 0.3});
-    ctx.fillStyle = azul;
-    ctx.fillText('l', vertices[0][0]+35, vertices[0][1]+25);
-    
-    // Fórmulas en recuadro
-    rc.rectangle(380, 50, 290, 200, {fill: '#f1f5f9', stroke: '#cbd5e1', roughness: 0.3});
-    ctx.font = 'bold 14px Inter, sans-serif';
-    ctx.fillStyle = '#1e293b';
-    ctx.fillText('Fórmulas', 525, 75);
-    
-    ctx.font = '13px Inter, sans-serif';
-    ctx.textAlign = 'left';
-    ctx.fillStyle = azul;
-    ctx.fillText('Perímetro:', 400, 105);
-    ctx.fillStyle = '#1e293b';
-    ctx.fillText('P = n × l', 490, 105);
-    
-    ctx.fillStyle = verde;
-    ctx.fillText('Área:', 400, 135);
-    ctx.fillStyle = '#1e293b';
-    ctx.fillText('A = (P × a) / 2', 490, 135);
-    
-    ctx.fillStyle = '#64748b';
-    ctx.font = '11px Inter, sans-serif';
-    ctx.fillText('Donde:', 400, 165);
-    ctx.fillText('n = número de lados', 420, 185);
-    ctx.fillText('l = longitud del lado', 420, 205);
-    ctx.fillText('a = apotema', 420, 225);
-    ctx.fillText('R = radio', 420, 245);
-  }
-});
-</script>
+Cuando un polígono tiene todos sus lados y ángulos iguales, se llama regular. Su simetría hace que calcular su área sea mucho más fácil, usando un elemento clave llamado **apotema**.
 
 ---
 
-## 📖 Elementos de un polígono regular
+## 🎯 ¿Qué vas a aprender?
 
-| Elemento | Símbolo | Descripción |
-|----------|---------|-------------|
-| Número de lados | $n$ | Cantidad de lados iguales |
-| Longitud del lado | $l$ | Medida de cada lado |
-| Apotema | $a$ | Distancia del centro al punto medio de un lado |
-| Radio | $R$ | Distancia del centro a un vértice |
+- Calcular el perímetro multiplicando el número de lados por la longitud de uno.
+- Entender qué es la **apotema** (del centro a la mitad del lado).
+- Aplicar la fórmula general de área: $\frac{P \cdot a}{2}$.
+- Resolver problemas de pentágonos, hexágonos y octógonos.
 
 ---
 
-## 📖 Perímetro
+## 📏 Perímetro ($P$)
 
-El perímetro es la suma de todos los lados:
+Como todos los lados son iguales, solo necesitas multiplicar.
 
 $$
 P = n \times l
 $$
 
+*   $n$: Número de lados.
+*   $l$: Longitud de cada lado.
+
 ### Ejemplos
-
-| Polígono | n | Lado | Perímetro |
-|----------|---|------|-----------|
-| Hexágono | 6 | 5 cm | 30 cm |
-| Octágono | 8 | 4 cm | 32 cm |
-| Decágono | 10 | 3 cm | 30 cm |
+*   Pentágono ($n=5$) de lado 3: $P = 5 \times 3 = 15$.
+*   Hexágono ($n=6$) de lado 2: $P = 6 \times 2 = 12$.
 
 ---
 
-## 📖 Área
+## 📐 Área ($A$)
 
-> **Fórmula general:** El área de un polígono regular es:
+El área de cualquier polígono regular se calcula con su perímetro y su apotema.
 
 $$
-A = \frac{P \times a}{2} = \frac{n \times l \times a}{2}
+A = \frac{P \times a}{2}
 $$
 
-### Interpretación
+**¿Qué es la apotema ($a$)?**
+Es la distancia desde el **centro** del polígono hasta el **punto medio** de cualquiera de sus lados. Funciona como la "altura" de los triángulos que forman el polígono.
 
-El polígono se puede dividir en $n$ triángulos iguales, cada uno con:
-- Base = lado $l$
-- Altura = apotema $a$
-- Área de cada triángulo = $\frac{l \times a}{2}$
-- Área total = $n \times \frac{l \times a}{2} = \frac{n \times l \times a}{2}$
+### ¿Por qué funciona la fórmula?
+Si divides el polígono en $n$ triángulos iguales, cada uno tiene base $l$ y altura $a$.
+Área triángulo = $\frac{l \cdot a}{2}$.
+Área total = $n \times \frac{l \cdot a}{2} = \frac{(n \cdot l) \cdot a}{2} = \frac{P \cdot a}{2}$.
 
 ---
 
-## 📖 Relaciones entre elementos
+## ⚙️ Ejemplos Resueltos
 
-### Apotema en función del lado
+### Ejemplo 1: Pentágono Regular
 
-$$
-a = \frac{l}{2 \tan\left(\frac{180°}{n}\right)}
-$$
+Lado = 6 cm, Apotema = 4 cm.
 
-### Radio en función del lado
-
-$$
-R = \frac{l}{2 \sin\left(\frac{180°}{n}\right)}
-$$
-
----
-
-## 📖 Polígonos regulares comunes
-
-### Triángulo equilátero (n = 3)
+**Razonamiento:**
+1.  Calculamos Perímetro: $P = 5 \times 6 = 30 \text{ cm}$.
+2.  Calculamos Área:
 
 $$
-A = \frac{l^2\sqrt{3}}{4}
+A = \frac{30 \times 4}{2} = \frac{120}{2}
 $$
 
+**Resultado:**
 $$
-a = \frac{l\sqrt{3}}{6}
-$$
-
-### Cuadrado (n = 4)
-
-$$
-A = l^2
+\boxed{60 \text{ cm}^2}
 $$
 
-$$
-a = \frac{l}{2}
-$$
+### Ejemplo 2: Hexágono Regular
 
-### Hexágono regular (n = 6)
+Lado = 4 m, Apotema = 3.5 m.
 
-$$
-A = \frac{3l^2\sqrt{3}}{2}
-$$
+**Razonamiento:**
+1.  Perímetro ($n=6$): $P = 6 \times 4 = 24 \text{ m}$.
+2.  Área:
 
 $$
-a = \frac{l\sqrt{3}}{2}
+A = \frac{24 \times 3.5}{2} = \frac{84}{2}
+$$
+
+**Resultado:**
+$$
+\boxed{42 \text{ m}^2}
 $$
 
 ---
 
-## 📖 Tabla de valores aproximados
+## 📝 Ejercicios de Práctica
 
-Para un lado $l = 1$:
-
-| Polígono | n | Apotema | Área |
-|----------|---|---------|------|
-| Triángulo equilátero | 3 | 0.289 | 0.433 |
-| Cuadrado | 4 | 0.500 | 1.000 |
-| Pentágono | 5 | 0.688 | 1.720 |
-| Hexágono | 6 | 0.866 | 2.598 |
-| Octágono | 8 | 1.207 | 4.828 |
-
----
-
-## 📖 Ejemplos
-
-### Ejemplo 1
-
-Hexágono regular con lado 4 cm y apotema ≈ 3.46 cm:
-
-$$
-P = 6 \times 4 = 24 \text{ cm}
-$$
-
-$$
-A = \frac{24 \times 3.46}{2} \approx 41.5 \text{ cm}^2
-$$
-
-### Ejemplo 2
-
-Octágono regular con lado 5 cm y apotema ≈ 6.04 cm:
-
-$$
-P = 8 \times 5 = 40 \text{ cm}
-$$
-
-$$
-A = \frac{40 \times 6.04}{2} \approx 120.8 \text{ cm}^2
-$$
-
----
-
-## 📝 Ejercicios de práctica
-
-### Ejercicio 1: Perímetros
-
-Calcula el perímetro de:
-
-1. Pentágono regular, lado = 6 cm
-2. Heptágono regular, lado = 4 cm
-3. Dodecágono regular, lado = 3 cm
+### Ejercicio 1
+Perímetro de un octógono regular de lado 5 cm.
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. $P = 5 \times 6 = 30$ cm
-2. $P = 7 \times 4 = 28$ cm
-3. $P = 12 \times 3 = 36$ cm
+**Razonamiento:**
+$n=8$.
+$P = 8 \times 5$.
+
+**Resultado:**
+$$
+\boxed{40 \text{ cm}}
+$$
+
+</details>
+
+### Ejercicio 2
+Área de un pentágono con perímetro 20 y apotema 3.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$\frac{20 \cdot 3}{2} = \frac{60}{2}$.
+
+**Resultado:**
+$$
+\boxed{30}
+$$
+
+</details>
+
+### Ejercicio 3
+Calcula el área de un hexágono regular de lado 10 y apotema 8.7.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$P = 6 \times 10 = 60$.
+$A = \frac{60 \cdot 8.7}{2}$.
+
+**Resultado:**
+$$
+\boxed{261}
+$$
+
+</details>
+
+### Ejercicio 4
+Si el área es 100 y el perímetro 40, ¿cuánto mide la apotema?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$100 = \frac{40 \cdot a}{2} \Rightarrow 100 = 20a \Rightarrow a=5$.
+
+**Resultado:**
+$$
+\boxed{5}
+$$
+
+</details>
+
+### Ejercicio 5
+Decágono regular ($n=10$) de lado 2. Perímetro:
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$10 \times 2$.
+
+**Resultado:**
+$$
+\boxed{20}
+$$
+
+</details>
+
+### Ejercicio 6
+Verdadero o Falso: La apotema es lo mismo que el radio del polígono.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Falso. El radio va al vértice; la apotema va al centro del lado (es más corta).
+
+**Resultado:**
+$$
+\boxed{\text{Falso}}
+$$
+
+</details>
+
+### Ejercicio 7
+Un cuadrado es un polígono regular ($n=4$). Si lado=4, apotema=2. Comprueba la fórmula.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$P = 16$.
+$A = \frac{16 \cdot 2}{2} = 16$.
+Coincide con $l^2 = 4^2 = 16$.
+
+**Resultado:**
+$$
+\boxed{16}
+$$
+
+</details>
+
+### Ejercicio 8
+Perímetro de un heptágono ($n=7$) de lado 3.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$7 \times 3$.
+
+**Resultado:**
+$$
+\boxed{21}
+$$
+
+</details>
+
+### Ejercicio 9
+Si el lado se duplica, ¿qué pasa con el perímetro?
+
+<details>
+<summary>Ver solución</summary>
+
+**Respuesta:**
+
+$$
+\text{Se duplica}
+$$
+
+</details>
+
+### Ejercicio 10
+Área de un triángulo equilátero ($n=3$) con lado 10 y apotema 2.9 (aprox).
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$P = 30$.
+$A = \frac{30 \cdot 2.9}{2} = \frac{87}{2}$.
+
+**Resultado:**
+$$
+\boxed{43.5}
+$$
 
 </details>
 
 ---
 
-### Ejercicio 2: Áreas
+## 🔑 Resumen
 
-Calcula el área de polígonos regulares con:
+| Figura | Fórmula General |
+| :--- | :--- |
+| **Polígono Regular** | $\frac{P \cdot a}{2}$ |
 
-1. Perímetro = 30 cm, apotema = 4 cm
-2. Perímetro = 48 cm, apotema = 6 cm
-3. 6 lados, lado = 5 cm, apotema ≈ 4.33 cm
-
-<details>
-<summary><strong>Ver respuestas</strong></summary>
-
-1. $A = \frac{30 \times 4}{2} = 60$ cm²
-2. $A = \frac{48 \times 6}{2} = 144$ cm²
-3. $P = 30$ cm, $A = \frac{30 \times 4.33}{2} \approx 65$ cm²
-
-</details>
-
----
-
-### Ejercicio 3: Encontrar el apotema
-
-El área de un hexágono regular es 93.6 cm² y el perímetro es 36 cm. ¿Cuánto mide el apotema?
-
-<details>
-<summary><strong>Ver respuesta</strong></summary>
-
-$$
-a = \frac{2A}{P} = \frac{2 \times 93.6}{36} = 5.2 \text{ cm}
-$$
-
-</details>
-
----
-
-### Ejercicio 4: Encontrar el lado
-
-Un octágono regular tiene perímetro de 56 cm. ¿Cuánto mide cada lado?
-
-<details>
-<summary><strong>Ver respuesta</strong></summary>
-
-$$
-l = \frac{P}{n} = \frac{56}{8} = 7 \text{ cm}
-$$
-
-</details>
-
----
-
-### Ejercicio 5: Cuadrado vs Hexágono
-
-Compara el área de un cuadrado de lado 6 cm con un hexágono regular de lado 4 cm (apotema ≈ 3.46 cm).
-
-<details>
-<summary><strong>Ver respuesta</strong></summary>
-
-Cuadrado: $A = 6^2 = 36$ cm²
-
-Hexágono: $P = 24$ cm, $A = \frac{24 \times 3.46}{2} \approx 41.5$ cm²
-
-El **hexágono** tiene mayor área.
-
-</details>
-
----
+> No confundas **Apotema** (al lado) con **Radio** (al vértice). La apotema es la que necesitas para el área.

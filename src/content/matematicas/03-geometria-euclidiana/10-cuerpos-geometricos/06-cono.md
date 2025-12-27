@@ -1,318 +1,265 @@
-# Cono
+# **Cono**
 
-El **cono** es un cuerpo de revolución con una base circular y un vértice (cúspide) en el extremo opuesto.
-
-<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <canvas id="roughjs-cono" width="700" height="280" style="width: 100%; height: auto; display: block;"></canvas>
-  <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 0.75rem; font-size: 0.9rem; flex-wrap: wrap;">
-    <span><strong style="color: #22c55e;">r</strong> = radio de la base</span>
-    <span><strong style="color: #ef4444;">h</strong> = altura (perpendicular)</span>
-    <span><strong style="color: #a855f7;">g</strong> = generatriz = √(r² + h²)</span>
-  </div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof rough !== 'undefined' && document.getElementById('roughjs-cono')) {
-    var canvas = document.getElementById('roughjs-cono');
-    var rc = rough.canvas(canvas);
-    var ctx = canvas.getContext('2d');
-    
-    ctx.font = 'bold 16px Inter, sans-serif';
-    ctx.fillStyle = '#1e293b';
-    ctx.textAlign = 'center';
-    ctx.fillText('Cono: Elementos y Fórmulas', 350, 25);
-    
-    var azul = '#3b82f6';
-    var verde = '#22c55e';
-    var rojo = '#ef4444';
-    var morado = '#a855f7';
-    
-    // Cono
-    var cx = 180, cy = 250;
-    var r = 70;
-    var h = 170;
-    var apex = [cx, cy - h];
-    
-    // Cuerpo del cono (triángulo)
-    rc.polygon([[cx - r, cy], apex, [cx + r, cy]], {fill: '#dbeafe', stroke: azul, strokeWidth: 2, roughness: 0.5});
-    
-    // Base elíptica
-    rc.ellipse(cx, cy, r * 2, 40, {fill: '#bfdbfe', stroke: azul, strokeWidth: 2, roughness: 0.5});
-    
-    // Vértice
-    rc.circle(apex[0], apex[1], 8, {fill: verde, stroke: verde, roughness: 0.3});
-    ctx.font = '11px Inter, sans-serif';
-    ctx.fillStyle = verde;
-    ctx.fillText('Vértice', apex[0] + 15, apex[1]);
-    
-    // Radio
-    rc.line(cx, cy, cx + r, cy, {stroke: verde, strokeWidth: 3, roughness: 0.3});
-    ctx.font = 'bold 12px Inter, sans-serif';
-    ctx.fillStyle = verde;
-    ctx.fillText('r', cx + r/2, cy + 20);
-    
-    // Altura
-    rc.line(cx, cy, cx, apex[1], {stroke: rojo, strokeWidth: 2.5, roughness: 0.3});
-    ctx.fillStyle = rojo;
-    ctx.fillText('h', cx - 15, cy - h/2);
-    
-    // Generatriz
-    rc.line(cx + r, cy, apex[0], apex[1], {stroke: morado, strokeWidth: 2.5, roughness: 0.3});
-    ctx.fillStyle = morado;
-    ctx.fillText('g', cx + r/2 + 20, cy - h/2 - 10);
-    
-    // Fórmulas
-    rc.rectangle(380, 50, 290, 220, {fill: '#f1f5f9', stroke: '#cbd5e1', roughness: 0.3});
-    ctx.font = 'bold 14px Inter, sans-serif';
-    ctx.fillStyle = '#1e293b';
-    ctx.textAlign = 'center';
-    ctx.fillText('Fórmulas del Cono', 525, 80);
-    
-    ctx.font = '13px Inter, sans-serif';
-    ctx.textAlign = 'left';
-    
-    ctx.fillStyle = morado;
-    ctx.fillText('Generatriz:', 400, 110);
-    ctx.fillStyle = '#1e293b';
-    ctx.fillText('g = √(r² + h²)', 400, 130);
-    
-    ctx.fillStyle = azul;
-    ctx.fillText('Área lateral:', 400, 160);
-    ctx.fillStyle = '#1e293b';
-    ctx.fillText('A_L = πrg', 400, 180);
-    
-    ctx.fillStyle = '#64748b';
-    ctx.fillText('Área total:', 400, 210);
-    ctx.fillStyle = '#1e293b';
-    ctx.fillText('A_T = πr(g + r)', 400, 230);
-    
-    ctx.fillStyle = rojo;
-    ctx.fillText('Volumen:', 400, 260);
-    ctx.fillStyle = '#1e293b';
-    ctx.font = 'bold 14px Inter, sans-serif';
-    ctx.fillText('V = πr²h / 3', 480, 260);
-  }
-});
-</script>
+Un cono es como una pirámide, pero con una base circular. Es el cuerpo geométrico de los helados, los gorros de fiesta y los conos de tráfico.
 
 ---
 
-## 📖 Definición
+## 🎯 ¿Qué vas a aprender?
 
-> **Definición:** Un cono recto es un cuerpo geométrico limitado por una **base circular** y una **superficie lateral curva** que se estrecha hasta un punto llamado **vértice** o **cúspide**.
-
----
-
-## 📖 Elementos del cono
-
-| Elemento | Símbolo | Descripción |
-|----------|---------|-------------|
-| Base | --- | Círculo en la parte inferior |
-| Radio | $r$ | Radio de la base |
-| Altura | $h$ | Distancia perpendicular de la base al vértice |
-| Generatriz | $g$ | Segmento desde el borde de la base al vértice |
-| Vértice | --- | Punto donde converge la superficie lateral |
+- Calcular la **Generatriz** usando el Teorema de Pitágoras.
+- Calcular el **Área Lateral** (el envoltorio del cono) y el **Área Total**.
+- Calcular el **Volumen** ($V = \pi r^2 h / 3$).
+- Entender la relación de "un tercio" con el cilindro.
 
 ---
 
-## 📖 Relación entre elementos
+## 🍦 Elementos del Cono
 
-La altura, el radio y la generatriz forman un triángulo rectángulo:
+1.  **Base:** Un círculo de radio $r$.
+2.  **Altura ($h$):** Distancia perpendicular desde el centro de la base hasta la punta.
+3.  **Generatriz ($g$):** Es la hipotenusa del triángulo formado por la altura y el radio. Es la distancia por el borde desde la base hasta la punta.
+4.  **Vértice (Cúspide):** El punto más alto.
+
+---
+
+## 📏 Fórmulas Fundamentales
+
+### 1. Generatriz ($g$)
+Usamos Pitágoras.
 
 $$
-g^2 = r^2 + h^2
+g^2 = h^2 + r^2 \Rightarrow g = \sqrt{h^2 + r^2}
 $$
 
+### 2. Volumen ($V$)
+Es la tercera parte de un cilindro con la misma base y altura.
+
 $$
-g = \sqrt{r^2 + h^2}
+V = \frac{\pi r^2 h}{3}
+$$
+
+### 3. Área Lateral ($A_L$)
+Es el área de la superficie curva.
+
+$$
+A_L = \pi \cdot r \cdot g
+$$
+
+### 4. Área Total ($A_T$)
+Área lateral más el área de la base.
+
+$$
+A_T = \pi r g + \pi r^2 = \pi r (g+r)
 $$
 
 ---
 
-## 📖 Desarrollo plano
+## ⚙️ Ejemplos Resueltos
 
-Al "desenrollar" un cono se obtiene:
-- Un **sector circular** (la superficie lateral)
-- Un **círculo** (la base)
+### Ejemplo 1: Cálculo de Generatriz
 
-El sector tiene:
-- Radio = generatriz $g$
-- Longitud de arco = circunferencia de la base = $2\pi r$
+Un cono tiene radio 3 cm y altura 4 cm.
 
----
+**Razonamiento:**
+Pitágoras: $g^2 = 3^2 + 4^2 = 9 + 16 = 25$.
+$g = \sqrt{25}$.
 
-## 📖 Área del cono
-
-### Área lateral
-
+**Resultado:**
 $$
-A_L = \pi r g
+\boxed{5 \text{ cm}}
 $$
 
-### Área de la base
+### Ejemplo 2: Volumen y Área
 
-$$
-A_{base} = \pi r^2
-$$
+Del cono anterior ($r=3, h=4, g=5$).
 
-### Área total
+**Razonamiento:**
+*   **Volumen:** $\frac{\pi(3^2)(4)}{3} = \frac{36\pi}{3} = 12\pi$.
+*   **Área Lateral:** $\pi(3)(5) = 15\pi$.
+*   **Área Total:** $15\pi + \pi(3^2) = 15\pi + 9\pi = 24\pi$.
 
+**Resultado:**
 $$
-A_T = \pi r g + \pi r^2 = \pi r(g + r)
+\boxed{V = 12\pi \text{ cm}^3, A_T = 24\pi \text{ cm}^2}
 $$
 
 ---
 
-## 📖 Volumen del cono
+## 📝 Ejercicios de Práctica
 
-$$
-V = \frac{\pi r^2 h}{3} = \frac{A_{base} \times h}{3}
-$$
-
-> El volumen del cono es **un tercio** del volumen de un cilindro con la misma base y altura.
-
----
-
-## 📖 Ejemplos
-
-### Ejemplo 1
-
-Cono con radio 3 cm y altura 4 cm:
-
-$$
-g = \sqrt{9 + 16} = \sqrt{25} = 5 \text{ cm}
-$$
-
-$$
-A_L = \pi(3)(5) = 15\pi \approx 47.12 \text{ cm}^2
-$$
-
-$$
-A_T = \pi(3)(8) = 24\pi \approx 75.4 \text{ cm}^2
-$$
-
-$$
-V = \frac{\pi(9)(4)}{3} = 12\pi \approx 37.7 \text{ cm}^3
-$$
-
-### Ejemplo 2
-
-Cono con radio 6 cm y generatriz 10 cm:
-
-$$
-h = \sqrt{100 - 36} = \sqrt{64} = 8 \text{ cm}
-$$
-
-$$
-V = \frac{\pi(36)(8)}{3} = 96\pi \approx 301.6 \text{ cm}^3
-$$
-
----
-
-## 📖 Relación con el cilindro
-
-$$
-V_{cono} = \frac{1}{3} V_{cilindro}
-$$
-
-(Con la misma base y altura)
-
-Esto significa que **3 conos** llenan un cilindro de igual base y altura.
-
----
-
-## 📝 Ejercicios de práctica
-
-### Ejercicio 1: Generatriz
-
-Calcula la generatriz de conos con:
-
-1. Radio = 6 cm, altura = 8 cm
-2. Radio = 5 cm, altura = 12 cm
+### Ejercicio 1
+Volumen de un cono con $r=2$ m y $h=3$ m.
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. $g = \sqrt{36 + 64} = \sqrt{100} = 10$ cm
-2. $g = \sqrt{25 + 144} = \sqrt{169} = 13$ cm
+**Razonamiento:**
+$V = \frac{\pi(4)(3)}{3} = 4\pi$.
+
+**Resultado:**
+$$
+\boxed{4\pi \approx 12.57 \text{ m}^3}
+$$
 
 </details>
 
----
-
-### Ejercicio 2: Área y volumen
-
-Cono con radio 4 cm y altura 3 cm. Calcula:
-
-1. Generatriz
-2. Área lateral
-3. Área total
-4. Volumen
+### Ejercicio 2
+Calcula la generatriz si $r=5$ y $h=12$.
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. $g = \sqrt{16 + 9} = 5$ cm
-2. $A_L = \pi(4)(5) = 20\pi \approx 62.83$ cm²
-3. $A_T = \pi(4)(9) = 36\pi \approx 113.1$ cm²
-4. $V = \frac{\pi(16)(3)}{3} = 16\pi \approx 50.27$ cm³
+**Razonamiento:**
+$g = \sqrt{25 + 144} = \sqrt{169}$.
+
+**Resultado:**
+$$
+\boxed{13}
+$$
 
 </details>
 
----
-
-### Ejercicio 3: Encontrar la altura
-
-Un cono tiene radio 5 cm y generatriz 13 cm. ¿Cuál es la altura?
+### Ejercicio 3
+Área lateral de un cono con $r=6$ y $g=10$.
 
 <details>
-<summary><strong>Ver respuesta</strong></summary>
+<summary>Ver solución</summary>
 
+**Razonamiento:**
+$A_L = \pi(6)(10)$.
+
+**Resultado:**
 $$
-h = \sqrt{169 - 25} = \sqrt{144} = 12 \text{ cm}
+\boxed{60\pi}
+$$
+
+</details>
+
+### Ejercicio 4
+Si el volumen es $30\pi$ y el área de la base es $9\pi$, halla la altura.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$A_b = 9\pi \Rightarrow r=3$.
+$30\pi = \frac{9\pi \cdot h}{3} \Rightarrow 30\pi = 3\pi h \Rightarrow h=10$.
+
+**Resultado:**
+$$
+\boxed{10}
+$$
+
+</details>
+
+### Ejercicio 5
+Calcula el Área Total si $r=4$ y $g=6$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$A_T = \pi(4)(6) + \pi(4^2) = 24\pi + 16\pi$.
+
+**Resultado:**
+$$
+\boxed{40\pi}
+$$
+
+</details>
+
+### Ejercicio 6
+Un cono tiene altura igual a su radio ($h=r$). Si $r=3$, calcula $V$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$V = \frac{\pi(9)(3)}{3} = 9\pi$.
+
+**Resultado:**
+$$
+\boxed{9\pi}
+$$
+
+</details>
+
+### Ejercicio 7
+Si duplicas la altura de un cono, ¿qué pasa con el volumen?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$V' = \frac{\pi r^2 (2h)}{3} = 2V$.
+
+**Resultado:**
+$$
+\boxed{Se duplica}
+$$
+
+</details>
+
+### Ejercicio 8
+Área lateral de un cono equilátero (el corte es un triángulo equilátero, $g = 2r$). Si $r=5$, calcula $A_L$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$g = 10$.
+$A_L = \pi(5)(10)$.
+
+**Resultado:**
+$$
+\boxed{50\pi}
+$$
+
+</details>
+
+### Ejercicio 9
+Diferencia de volumen entre un cilindro y un cono de igual base ($r=3$) y altura ($h=10$).
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Cilindro: $90\pi$.
+Cono: $30\pi$.
+Diferencia: $60\pi$.
+
+**Resultado:**
+$$
+\boxed{60\pi}
+$$
+
+</details>
+
+### Ejercicio 10
+Cantidad de papel para un gorro de fiesta ($r=10, h=24$). (Sin base).
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Necesitamos $g$. $\sqrt{100+576} = \sqrt{676} = 26$.
+Área Lateral = $\pi(10)(26)$.
+
+**Resultado:**
+$$
+\boxed{260\pi \approx 816.8 \text{ cm}^2}
 $$
 
 </details>
 
 ---
 
-### Ejercicio 4: Problema inverso
+## 🔑 Resumen
 
-El volumen de un cono es 100π cm³ y la altura es 12 cm. ¿Cuál es el radio?
+| Concepto | Fórmula |
+| :--- | :--- |
+| **Volumen** | $\frac{\pi r^2 h}{3}$ |
+| **Generatriz ($g$)** | $\sqrt{h^2+r^2}$ |
+| **Área Lateral** | $\pi r g$ |
 
-<details>
-<summary><strong>Ver respuesta</strong></summary>
-
-$$
-100\pi = \frac{\pi r^2 \times 12}{3}
-$$
-
-$$
-100 = 4r^2
-$$
-
-$$
-r = 5 \text{ cm}
-$$
-
-</details>
-
----
-
-### Ejercicio 5: Comparación cono-cilindro
-
-¿Cuántos conos de helado (radio 3 cm, altura 10 cm) se necesitan para llenar un vaso cilíndrico (radio 3 cm, altura 10 cm)?
-
-<details>
-<summary><strong>Ver respuesta</strong></summary>
-
-$$
-\frac{V_{cilindro}}{V_{cono}} = \frac{\pi r^2 h}{\frac{\pi r^2 h}{3}} = 3
-$$
-
-Se necesitan **3 conos**.
-
-</details>
-
----
+> **Truco:** Siempre dibuja el triángulo rectángulo interno formado por $h$, $r$ y $g$. Ahí está la clave.

@@ -1,299 +1,254 @@
-# Introducción a los Cuerpos Geométricos
+# **Introducción a los Cuerpos Geométricos**
 
-Los **cuerpos geométricos** son figuras tridimensionales (3D). A diferencia de las figuras planas que tienen largo y ancho, los cuerpos tienen también **profundidad** (o altura).
-
-<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <canvas id="roughjs-cuerpos-intro" width="700" height="280" style="width: 100%; height: auto; display: block;"></canvas>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof rough !== 'undefined' && document.getElementById('roughjs-cuerpos-intro')) {
-    var canvas = document.getElementById('roughjs-cuerpos-intro');
-    var rc = rough.canvas(canvas);
-    var ctx = canvas.getContext('2d');
-    
-    ctx.font = 'bold 16px Inter, sans-serif';
-    ctx.fillStyle = '#1e293b';
-    ctx.textAlign = 'center';
-    ctx.fillText('Poliedros vs Cuerpos Redondos', 350, 25);
-    
-    var azul = '#3b82f6';
-    var verde = '#22c55e';
-    
-    // === POLIEDROS (izquierda) ===
-    ctx.font = 'bold 13px Inter, sans-serif';
-    ctx.fillStyle = azul;
-    ctx.fillText('POLIEDROS', 175, 55);
-    ctx.font = '11px Inter, sans-serif';
-    ctx.fillStyle = '#64748b';
-    ctx.fillText('(caras planas)', 175, 70);
-    
-    // Cubo isométrico (3 caras visibles)
-    var cx = 100, cy = 130;
-    var s = 55;
-    var dx = 25, dy = 15; // desplazamiento isométrico
-    
-    // Vértices del cubo
-    var v1 = [cx, cy];           // frontal izq arriba
-    var v2 = [cx + s, cy];       // frontal der arriba
-    var v3 = [cx + s, cy + s];   // frontal der abajo
-    var v4 = [cx, cy + s];       // frontal izq abajo
-    var v5 = [cx + dx, cy - dy];         // trasero izq arriba
-    var v6 = [cx + s + dx, cy - dy];     // trasero der arriba
-    var v7 = [cx + s + dx, cy + s - dy]; // trasero der abajo
-    
-    // Cara frontal
-    rc.polygon([v1, v2, v3, v4], {fill: '#dbeafe', stroke: azul, strokeWidth: 2, roughness: 0.5});
-    // Cara superior
-    rc.polygon([v1, v5, v6, v2], {fill: '#bfdbfe', stroke: azul, strokeWidth: 2, roughness: 0.5});
-    // Cara lateral derecha
-    rc.polygon([v2, v6, v7, v3], {fill: '#93c5fd', stroke: azul, strokeWidth: 2, roughness: 0.5});
-    
-    ctx.font = '11px Inter, sans-serif';
-    ctx.fillStyle = azul;
-    ctx.fillText('Cubo', 130, 235);
-    
-    // Pirámide isométrica
-    var px = 230, py = 200;
-    // Base
-    rc.polygon([[px, py], [px+40, py-15], [px+60, py+10], [px+20, py+25]], {fill: '#dbeafe', stroke: azul, strokeWidth: 2, roughness: 0.5});
-    // Caras laterales
-    rc.polygon([[px, py], [px+30, py-60], [px+40, py-15]], {fill: '#bfdbfe', stroke: azul, strokeWidth: 2, roughness: 0.5});
-    rc.polygon([[px+40, py-15], [px+30, py-60], [px+60, py+10]], {fill: '#93c5fd', stroke: azul, strokeWidth: 2, roughness: 0.5});
-    rc.polygon([[px+60, py+10], [px+30, py-60], [px+20, py+25]], {fill: '#dbeafe', stroke: azul, strokeWidth: 2, roughness: 0.5});
-    ctx.fillText('Pirámide', 250, 235);
-    
-    // === CUERPOS REDONDOS (derecha) ===
-    ctx.font = 'bold 13px Inter, sans-serif';
-    ctx.fillStyle = verde;
-    ctx.fillText('CUERPOS REDONDOS', 525, 55);
-    ctx.font = '11px Inter, sans-serif';
-    ctx.fillStyle = '#64748b';
-    ctx.fillText('(superficies curvas)', 525, 70);
-    
-    // Cilindro
-    var clx = 420, cly = 150;
-    // Cuerpo
-    rc.rectangle(clx, cly, 60, 80, {fill: '#dcfce7', stroke: verde, strokeWidth: 2, roughness: 0.5});
-    // Tapa superior (elipse)
-    rc.ellipse(clx+30, cly, 60, 20, {fill: '#bbf7d0', stroke: verde, strokeWidth: 2, roughness: 0.5});
-    // Tapa inferior (elipse)
-    rc.ellipse(clx+30, cly+80, 60, 20, {fill: '#dcfce7', stroke: verde, strokeWidth: 2, roughness: 0.5});
-    ctx.font = '11px Inter, sans-serif';
-    ctx.fillStyle = verde;
-    ctx.fillText('Cilindro', 450, 255);
-    
-    // Esfera
-    rc.circle(570, 170, 80, {fill: '#dcfce7', stroke: verde, strokeWidth: 2, roughness: 0.5});
-    // Línea ecuatorial
-    rc.ellipse(570, 170, 80, 25, {stroke: verde, strokeWidth: 1, roughness: 0.3});
-    ctx.fillText('Esfera', 570, 255);
-    
-    // Cono
-    var cox = 630, coy = 200;
-    // Cuerpo del cono
-    rc.polygon([[cox, coy], [cox+30, coy-80], [cox+60, coy]], {fill: '#dcfce7', stroke: verde, strokeWidth: 2, roughness: 0.5});
-    // Base elíptica
-    rc.ellipse(cox+30, coy, 60, 18, {fill: '#bbf7d0', stroke: verde, strokeWidth: 2, roughness: 0.5});
-    ctx.fillText('Cono', 660, 255);
-  }
-});
-</script>
+Hasta ahora hemos estudiado figuras planas (2D) como cuadrados y círculos. Pero el mundo real tiene profundidad: una caja, una pelota, una lata de refresco. Estas figuras con volumen son los **cuerpos geométricos**.
 
 ---
 
-## 📖 ¿Qué es un cuerpo geométrico?
+## 🎯 ¿Qué vas a aprender?
 
-> **Definición:** Un cuerpo geométrico es una figura que ocupa un lugar en el espacio y tiene tres dimensiones: **largo**, **ancho** y **alto** (o profundidad).
-
-### Diferencia con figuras planas
-
-| Característica | Figura plana | Cuerpo geométrico |
-|----------------|--------------|-------------------|
-| Dimensiones | 2 (largo, ancho) | 3 (largo, ancho, alto) |
-| Medidas | Perímetro, área | Área superficial, volumen |
-| Ejemplos | Cuadrado, círculo | Cubo, esfera |
+- Diferenciar entre **Poliedros** (caras planas) y **Cuerpos Redondos** (curvas).
+- Identificar los elementos clave: Caras, Aristas y Vértices.
+- Aplicar la famosa **Fórmula de Euler** ($C + V = A + 2$).
+- Reconocer los cuerpos geométricos más comunes en la vida diaria.
 
 ---
 
-## 📖 Clasificación de cuerpos geométricos
+## 📦 Poliedros (Caras Planas)
 
-### Poliedros
+Son cuerpos limitados exclusivamente por polígonos planos. No ruedan si los empujas suavemente.
 
-Cuerpos limitados por **superficies planas** (caras poligonales).
+1.  **Prismas:** Tienen dos bases iguales y caras laterales rectangulares (ej. caja de zapatos).
+2.  **Pirámides:** Tienen una base y terminan en punta (ej. pirámides de Egipto).
+3.  **Poliedros Regulares:** Todas sus caras son iguales (ej. dado/cubo).
 
-- Caras: polígonos
-- Aristas: segmentos donde se unen las caras
-- Vértices: puntos donde se unen las aristas
-
-**Ejemplos:** cubo, pirámide, prisma
-
-### Cuerpos redondos (o de revolución)
-
-Cuerpos que tienen **superficies curvas**.
-
-**Ejemplos:** esfera, cilindro, cono
+### Elementos de un Poliedro
+*   **Caras ($C$):** Las superficies planas que lo forman.
+*   **Aristas ($A$):** Las líneas donde se unen dos caras.
+*   **Vértices ($V$):** Los puntos (esquinas) donde se unen tres o más aristas.
 
 ---
 
-## 📖 Elementos de los cuerpos geométricos
+## ⚽ Cuerpos Redondos (Superficies Curvas)
 
-| Elemento | Descripción |
-|----------|-------------|
-| Caras | Superficies que limitan el cuerpo |
-| Aristas | Líneas donde se unen dos caras |
-| Vértices | Puntos donde se unen tres o más aristas |
-| Base | Cara(s) sobre la(s) que se apoya el cuerpo |
-| Altura | Distancia perpendicular entre bases o desde la base al vértice |
+Tienen al menos una cara curva. Pueden rodar.
+
+1.  **Cilindro:** Dos bases circulares y una superficie curva (ej. lata).
+2.  **Cono:** Una base circular y un vértice (ej. helado).
+3.  **Esfera:** Completamente curva (ej. balón).
 
 ---
 
-## 📖 Fórmula de Euler para poliedros
+## 🧮 La Fórmula de Euler
 
-Para cualquier poliedro convexo:
+Para cualquier poliedro convexo (sin huecos), siempre se cumple una relación mágica entre sus elementos:
 
 $$
-V - A + C = 2
+C + V = A + 2
 $$
 
-Donde:
-- $V$ = número de vértices
-- $A$ = número de aristas
-- $C$ = número de caras
+> "Caras más Vértices es igual a Aristas más dos".
 
-### Ejemplo: Cubo
+---
 
-- Vértices: 8
-- Aristas: 12
-- Caras: 6
+## ⚙️ Ejemplos Resueltos
 
+### Ejemplo 1: El Cubo
+
+Analicemos un dado (cubo).
+*   **Caras ($C$):** 6 (cuadrados).
+*   **Vértices ($V$):** 8 (esquinas).
+*   **Aristas ($A$):** 12 (bordes).
+
+**Comprobación de Euler:**
 $$
-8 - 12 + 6 = 2 \quad ✓
+6 + 8 = 14
+$$
+$$
+12 + 2 = 14
+$$
+¡Funciona!
+
+### Ejemplo 2: Pirámide Cuadrangular
+
+Base cuadrada y 4 triángulos.
+*   **Caras:** 5 (1 base + 4 laterales).
+*   **Vértices:** 5 (4 en la base + 1 punta).
+*   **Aristas:** 8 (4 en la base + 4 laterales).
+
+**Comprobación de Euler:**
+$$
+5 + 5 = 10
+$$
+$$
+8 + 2 = 10
 $$
 
 ---
 
-## 📖 Medidas de los cuerpos geométricos
+## 📝 Ejercicios de Práctica
 
-### Área superficial
-
-La **superficie total** del cuerpo (la "piel" que lo recubre).
-
-$$
-\text{Área superficial} = \text{suma de las áreas de todas las caras}
-$$
-
-### Volumen
-
-El **espacio interior** que ocupa el cuerpo.
-
-Se mide en unidades cúbicas: cm³, m³, etc.
-
----
-
-## 📖 Cuerpos geométricos comunes
-
-| Cuerpo | Tipo | Características |
-|--------|------|-----------------|
-| Cubo | Poliedro | 6 caras cuadradas iguales |
-| Prisma | Poliedro | 2 bases iguales, caras laterales rectangulares |
-| Pirámide | Poliedro | 1 base, caras laterales triangulares |
-| Cilindro | Redondo | 2 bases circulares |
-| Cono | Redondo | 1 base circular, vértice |
-| Esfera | Redondo | Superficie curva uniforme |
-
----
-
-## 📖 Desarrollos planos
-
-El **desarrollo** de un cuerpo es la figura plana que se obtiene al "abrirlo" o "desplegarlo".
-
-### Ejemplo: Cubo
-
-El desarrollo de un cubo son 6 cuadrados dispuestos en forma de cruz (u otra configuración equivalente).
-
-### Utilidad
-
-- Calcular el área superficial
-- Construir maquetas
-
----
-
-## 📝 Ejercicios de práctica
-
-### Ejercicio 1: Clasificar
-
-Clasifica cada cuerpo como poliedro o cuerpo redondo:
-
-1. Pirámide
-2. Esfera
-3. Prisma hexagonal
-4. Cono
-5. Cubo
+### Ejercicio 1
+¿Un balón de fútbol es un poliedro?
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. **Poliedro**
-2. **Cuerpo redondo**
-3. **Poliedro**
-4. **Cuerpo redondo**
-5. **Poliedro**
+**Razonamiento:**
+Aunque tiene parches hexagonales, se infla y se vuelve esférico (curvo). Geométricamente idealizado es una esfera. Si lo ves como parches planos cosidos, sería un icosaedro truncado (poliedro). Pero en el contexto escolar común:
+
+**Resultado:**
+$$
+\boxed{\text{Cuerpo Redondo (Esfera)}}
+$$
+
+</details>
+
+### Ejercicio 2
+Cuenta las caras de un prisma triangular (caja de Toblerone).
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+2 bases triangulares + 3 caras rectangulares laterales.
+
+**Resultado:**
+$$
+\boxed{5 \text{ caras}}
+$$
+
+</details>
+
+### Ejercicio 3
+Si un poliedro tiene 4 caras y 4 vértices, ¿cuántas aristas tiene?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Euler: $C + V = A + 2$.
+$4 + 4 = A + 2 \Rightarrow 8 = A + 2 \Rightarrow A=6$.
+
+**Resultado:**
+$$
+\boxed{6 \text{ aristas}}
+$$
+
+</details>
+
+### Ejercicio 4
+Clasifica: Una lata de atún.
+
+<details>
+<summary>Ver solución</summary>
+
+**Respuesta:**
+
+$$
+\text{Cilindro (Cuerpo Redondo)}
+$$
+
+</details>
+
+### Ejercicio 5
+¿Qué cuerpo tiene 1 sola cara curva y ninguna arista ni vértice?
+
+<details>
+<summary>Ver solución</summary>
+
+**Respuesta:**
+
+$$
+\text{La Esfera}
+$$
+
+</details>
+
+### Ejercicio 6
+Un prisma rectangular (caja de cereal). Elementos:
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Igual que el cubo.
+
+**Resultado:**
+$$
+\boxed{C=6, V=8, A=12}
+$$
+
+</details>
+
+### Ejercicio 7
+¿El cono cumple la fórmula de Euler?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+No, porque Euler es para **poliedros** (caras planas). El cono tiene superficie curva.
+
+**Resultado:**
+$$
+\boxed{\text{No necesariamente}}
+$$
+
+</details>
+
+### Ejercicio 8
+Diferencia principal entre un prisma y una pirámide.
+
+<details>
+<summary>Ver solución</summary>
+
+**Respuesta:**
+
+$$
+\text{El prisma tiene 2 bases, la pirámide solo 1.}
+$$
+
+</details>
+
+### Ejercicio 9
+Si despliegas un cilindro, ¿qué figuras planas obtienes?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Dos círculos (tapas) y un rectángulo (el cuerpo desenrollado).
+
+**Resultado:**
+$$
+\boxed{2 \text{ círculos y } 1 \text{ rectángulo}}
+$$
+
+</details>
+
+### Ejercicio 10
+Un dado de 20 caras (Icosaedro) tiene 12 vértices. ¿Cuántas aristas tiene?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$20 + 12 = A + 2 \Rightarrow 32 = A + 2 \Rightarrow A=30$.
+
+**Resultado:**
+$$
+\boxed{30}
+$$
 
 </details>
 
 ---
 
-### Ejercicio 2: Fórmula de Euler
+## 🔑 Resumen
 
-Verifica la fórmula de Euler para:
+| Tipo | Característica | Ejemplos |
+| :--- | :--- | :--- |
+| **Poliedro** | Caras Planas | Cubo, Prisma, Pirámide |
+| **Cuerpo Redondo** | Caras Curvas | Cilindro, Cono, Esfera |
 
-1. Tetraedro (4 caras, 6 aristas, 4 vértices)
-2. Pirámide cuadrada (5 caras, 8 aristas, 5 vértices)
-
-<details>
-<summary><strong>Ver respuestas</strong></summary>
-
-1. $V - A + C = 4 - 6 + 4 = 2$ ✓
-2. $V - A + C = 5 - 8 + 5 = 2$ ✓
-
-</details>
-
----
-
-### Ejercicio 3: Identificar elementos
-
-¿Cuántas caras, aristas y vértices tiene un prisma triangular?
-
-<details>
-<summary><strong>Ver respuesta</strong></summary>
-
-- **Caras:** 5 (2 triángulos + 3 rectángulos)
-- **Aristas:** 9
-- **Vértices:** 6
-
-Verificación: $6 - 9 + 5 = 2$ ✓
-
-</details>
-
----
-
-### Ejercicio 4: Verdadero o Falso
-
-1. El cilindro es un poliedro.
-2. El cubo tiene 8 vértices.
-3. La esfera no tiene vértices ni aristas.
-4. La pirámide tiene dos bases.
-
-<details>
-<summary><strong>Ver respuestas</strong></summary>
-
-1. **Falso** - Es un cuerpo redondo
-2. **Verdadero**
-3. **Verdadero** - Es completamente curva
-4. **Falso** - Tiene una sola base
-
-</details>
-
----
+> **Euler:** Caras + Vértices = Aristas + 2.

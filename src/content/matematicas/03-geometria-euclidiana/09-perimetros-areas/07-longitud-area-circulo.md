@@ -1,318 +1,260 @@
-# Longitud y Área del Círculo
+# **Longitud y Área del Círculo**
 
-Consolidamos las fórmulas de la circunferencia y el círculo en el contexto de perímetros y áreas.
-
-<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <canvas id="roughjs-circulo-area" width="700" height="300" style="width: 100%; height: auto; display: block;"></canvas>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof rough !== 'undefined' && document.getElementById('roughjs-circulo-area')) {
-    var canvas = document.getElementById('roughjs-circulo-area');
-    var rc = rough.canvas(canvas);
-    var ctx = canvas.getContext('2d');
-    
-    ctx.font = 'bold 16px Inter, sans-serif';
-    ctx.fillStyle = '#1e293b';
-    ctx.textAlign = 'center';
-    ctx.fillText('Longitud y Área del Círculo', 350, 25);
-    
-    var azul = '#3b82f6';
-    var verde = '#22c55e';
-    var rojo = '#ef4444';
-    
-    // Círculo principal
-    var cx = 200, cy = 165;
-    var r = 100;
-    rc.circle(cx, cy, r*2, {fill: '#dbeafe', fillStyle: 'solid', stroke: azul, strokeWidth: 3, roughness: 0.5});
-    
-    // Centro
-    rc.circle(cx, cy, 8, {fill: rojo, stroke: rojo, roughness: 0.3});
-    ctx.font = 'bold 12px Inter, sans-serif';
-    ctx.fillStyle = rojo;
-    ctx.fillText('O', cx-15, cy+5);
-    
-    // Radio
-    rc.line(cx, cy, cx+r, cy, {stroke: verde, strokeWidth: 3, roughness: 0.3});
-    ctx.fillStyle = verde;
-    ctx.fillText('r', cx+50, cy-10);
-    
-    // Diámetro (línea punteada)
-    rc.line(cx-r, cy, cx+r, cy, {stroke: '#94a3b8', strokeWidth: 1.5, roughness: 0.3});
-    ctx.fillStyle = '#64748b';
-    ctx.font = '11px Inter, sans-serif';
-    ctx.fillText('d = 2r', cx, cy+20);
-    
-    // Circunferencia resaltada (arco)
-    ctx.strokeStyle = azul;
-    ctx.lineWidth = 4;
-    ctx.setLineDash([8, 4]);
-    ctx.beginPath();
-    ctx.arc(cx, cy, r, 0, Math.PI * 0.7);
-    ctx.stroke();
-    ctx.setLineDash([]);
-    
-    ctx.fillStyle = azul;
-    ctx.font = 'bold 11px Inter, sans-serif';
-    ctx.fillText('C = 2πr', cx+80, cy-80);
-    
-    // Fórmulas en recuadro
-    rc.rectangle(380, 50, 290, 200, {fill: '#f1f5f9', stroke: '#cbd5e1', roughness: 0.3});
-    ctx.font = 'bold 14px Inter, sans-serif';
-    ctx.fillStyle = '#1e293b';
-    ctx.textAlign = 'center';
-    ctx.fillText('Fórmulas del Círculo', 525, 80);
-    
-    ctx.font = '13px Inter, sans-serif';
-    ctx.textAlign = 'left';
-    
-    // Longitud
-    ctx.fillStyle = azul;
-    ctx.fillText('Longitud (perímetro):', 400, 110);
-    ctx.font = 'bold 16px Inter, sans-serif';
-    ctx.fillStyle = '#1e293b';
-    ctx.fillText('C = 2πr = πd', 400, 135);
-    
-    // Área
-    ctx.font = '13px Inter, sans-serif';
-    ctx.fillStyle = verde;
-    ctx.fillText('Área:', 400, 165);
-    ctx.font = 'bold 16px Inter, sans-serif';
-    ctx.fillStyle = '#1e293b';
-    ctx.fillText('A = πr²', 400, 190);
-    
-    // Valor de pi
-    ctx.font = '11px Inter, sans-serif';
-    ctx.fillStyle = '#64748b';
-    ctx.fillText('π ≈ 3.14159...', 400, 220);
-    ctx.fillText('r = radio, d = diámetro', 400, 240);
-  }
-});
-</script>
+El círculo es la única figura geométrica que no tiene lados rectos. Su perímetro tiene un nombre especial: **Circunferencia**. Aquí la estrella es el número $\pi$ (pi).
 
 ---
 
-## 📖 Longitud de la circunferencia (perímetro del círculo)
+## 🎯 ¿Qué vas a aprender?
 
-La longitud de la circunferencia es el "perímetro" del círculo:
-
-$$
-C = 2\pi r = \pi d
-$$
-
-Donde:
-- $r$ = radio
-- $d$ = diámetro ($d = 2r$)
-- $\pi \approx 3.14159...$
-
-### Ejemplos
-
-| Radio | Diámetro | Longitud |
-|-------|----------|----------|
-| 5 cm | 10 cm | $10\pi \approx 31.42$ cm |
-| 7 cm | 14 cm | $14\pi \approx 43.98$ cm |
-| 10 cm | 20 cm | $20\pi \approx 62.83$ cm |
+- Diferenciar entre círculo (superficie) y circunferencia (borde).
+- Calcular la longitud de la circunferencia ($C = 2\pi r$).
+- Calcular el área del círculo ($A = \pi r^2$).
+- Resolver problemas de "radio vs. diámetro".
 
 ---
 
-## 📖 Área del círculo
+## ⭕ Circunferencia vs. Círculo
 
-$$
-A = \pi r^2
-$$
-
-### Ejemplos
-
-| Radio | Área |
-|-------|------|
-| 3 cm | $9\pi \approx 28.27$ cm² |
-| 5 cm | $25\pi \approx 78.54$ cm² |
-| 10 cm | $100\pi \approx 314.16$ cm² |
+*   **Circunferencia:** Es el borde (como un anillo). Se mide en unidades lineales (cm, m).
+*   **Círculo:** Es todo lo de adentro (como una pizza). Se mide en unidades cuadradas (cm², m²).
 
 ---
 
-## 📖 Relación entre longitud y área
+## 📏 Longitud de la Circunferencia ($C$)
 
-Si conocemos la longitud $C$:
-
-$$
-r = \frac{C}{2\pi}
-$$
+Es el perímetro del círculo.
 
 $$
-A = \pi \left(\frac{C}{2\pi}\right)^2 = \frac{C^2}{4\pi}
+C = 2 \cdot \pi \cdot r
+$$
+
+O usando el diámetro ($d=2r$):
+
+$$
+C = \pi \cdot d
+$$
+
+*   $\pi \approx 3.1416$.
+
+---
+
+## 📐 Área del Círculo ($A$)
+
+Es la superficie que ocupa.
+
+$$
+A = \pi \cdot r^2
+$$
+
+> **¡Cuidado!** No confundas las fórmulas.
+> *   Perímetro $\to$ $r$ lineal ("dos pi erre").
+> *   Área $\to$ $r$ cuadrado ("pi erre cuadrado").
+
+---
+
+## ⚙️ Ejemplos Resueltos
+
+### Ejemplo 1: Cálculo Básico
+
+Un círculo tiene un radio de 5 cm.
+
+**Razonamiento:**
+1.  *Longitud:* $C = 2 \cdot \pi \cdot 5 = 10\pi$ cm.
+2.  *Área:* $A = \pi \cdot 5^2 = 25\pi$ cm².
+
+**Resultado:**
+$$
+\boxed{C \approx 31.42 \text{ cm}, A \approx 78.54 \text{ cm}^2}
+$$
+
+### Ejemplo 2: Usando el Diámetro
+
+Si el diámetro es 10 cm, calcula el área.
+
+**Razonamiento:**
+Primero hallamos el radio. $r = d/2 = 10/2 = 5$ cm.
+Ahora el área: $A = \pi \cdot 5^2 = 25\pi$.
+
+**Resultado:**
+$$
+\boxed{A \approx 78.54 \text{ cm}^2}
 $$
 
 ---
 
-## 📖 Semicírculo
+## 📝 Ejercicios de Práctica
 
-### Perímetro del semicírculo
-
-$$
-P = \pi r + 2r = r(\pi + 2)
-$$
-
-(Mitad de la circunferencia + diámetro)
-
-### Área del semicírculo
-
-$$
-A = \frac{\pi r^2}{2}
-$$
-
-### Ejemplo
-
-Semicírculo de radio 6 cm:
-
-$$
-P = 6(\pi + 2) \approx 6(5.14) = 30.85 \text{ cm}
-$$
-
-$$
-A = \frac{\pi \times 36}{2} = 18\pi \approx 56.55 \text{ cm}^2
-$$
-
----
-
-## 📖 Cuadrante (cuarto de círculo)
-
-### Perímetro
-
-$$
-P = \frac{2\pi r}{4} + 2r = \frac{\pi r}{2} + 2r
-$$
-
-### Área
-
-$$
-A = \frac{\pi r^2}{4}
-$$
-
----
-
-## 📖 Encontrar elementos desconocidos
-
-### Conociendo el área
-
-$$
-r = \sqrt{\frac{A}{\pi}}
-$$
-
-### Conociendo la longitud
-
-$$
-r = \frac{C}{2\pi}
-$$
-
----
-
-## 📖 Comparación: Cuadrado vs Círculo
-
-Para un cuadrado **inscrito** en un círculo de radio $r$:
-
-$$
-\text{Lado del cuadrado} = r\sqrt{2}
-$$
-
-$$
-\text{Área del cuadrado} = 2r^2
-$$
-
-La razón de áreas:
-
-$$
-\frac{A_{círculo}}{A_{cuadrado inscrito}} = \frac{\pi r^2}{2r^2} = \frac{\pi}{2} \approx 1.57
-$$
-
----
-
-## 📝 Ejercicios de práctica
-
-### Ejercicio 1: Longitud y área
-
-Calcula la longitud de la circunferencia y el área del círculo:
-
-1. Radio = 4 cm
-2. Radio = 9 cm
-3. Diámetro = 16 cm
+### Ejercicio 1
+Calcula la longitud de una circunferencia de radio 3 m.
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. $C = 8\pi \approx 25.13$ cm, $A = 16\pi \approx 50.27$ cm²
-2. $C = 18\pi \approx 56.55$ cm, $A = 81\pi \approx 254.47$ cm²
-3. $r = 8$, $C = 16\pi \approx 50.27$ cm, $A = 64\pi \approx 201.06$ cm²
+**Razonamiento:**
+$C = 2 \cdot \pi \cdot 3 = 6\pi$.
+
+**Resultado:**
+$$
+\boxed{6\pi \approx 18.85 \text{ m}}
+$$
 
 </details>
 
----
-
-### Ejercicio 2: Semicírculo
-
-Calcula el perímetro y área de un semicírculo de radio 10 cm.
+### Ejercicio 2
+Calcula el área de un círculo de radio 4 m.
 
 <details>
-<summary><strong>Ver respuesta</strong></summary>
+<summary>Ver solución</summary>
 
+**Razonamiento:**
+$A = \pi \cdot 4^2 = 16\pi$.
+
+**Resultado:**
 $$
-P = 10\pi + 20 = 10\pi + 20 \approx 51.42 \text{ cm}
+\boxed{16\pi \approx 50.27 \text{ m}^2}
 $$
 
+</details>
+
+### Ejercicio 3
+Si el diámetro es 20, ¿cuál es el perímetro?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$C = \pi \cdot d = 20\pi$.
+
+**Resultado:**
 $$
-A = \frac{\pi \times 100}{2} = 50\pi \approx 157.08 \text{ cm}^2
+\boxed{20\pi \approx 62.83}
+$$
+
+</details>
+
+### Ejercicio 4
+Si el área es $100\pi$, ¿cuánto mide el radio?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$100\pi = \pi r^2 \Rightarrow r^2 = 100 \Rightarrow r=10$.
+
+**Resultado:**
+$$
+\boxed{10}
+$$
+
+</details>
+
+### Ejercicio 5
+Calcula el área de un semicírculo de radio 10.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Área círculo completo = $100\pi$.
+Semicírculo = $100\pi / 2 = 50\pi$.
+
+**Resultado:**
+$$
+\boxed{50\pi \approx 157.08}
+$$
+
+</details>
+
+### Ejercicio 6
+Perímetro de un semicírculo de radio 10. (Cuidado: incluye el diámetro).
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Arco curvo = $20\pi / 2 = 10\pi$.
+Diámetro recto = $20$.
+Total = $10\pi + 20$.
+
+**Resultado:**
+$$
+\boxed{31.42 + 20 = 51.42}
+$$
+
+</details>
+
+### Ejercicio 7
+Si duplicas el radio, ¿el área se duplica?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$(2r)^2 = 4r^2$. Se cuadriplica.
+
+**Resultado:**
+$$
+\boxed{\text{No, se multiplica por 4}}
+$$
+
+</details>
+
+### Ejercicio 8
+¿Cuántas vueltas da una rueda de radio 0.5 m para recorrer $10\pi$ metros?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Perímetro rueda = $2 \cdot \pi \cdot 0.5 = \pi$.
+Número de vueltas = Distancia / Perímetro = $10\pi / \pi = 10$.
+
+**Resultado:**
+$$
+\boxed{10 \text{ vueltas}}
+$$
+
+</details>
+
+### Ejercicio 9
+Área de un cuadrante (cuarto de círculo) de radio 8.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$A = \frac{\pi \cdot 8^2}{4} = \frac{64\pi}{4} = 16\pi$.
+
+**Resultado:**
+$$
+\boxed{16\pi}
+$$
+
+</details>
+
+### Ejercicio 10
+Diferencia entre el área de un círculo de radio 5 y uno de radio 3.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$25\pi - 9\pi = 16\pi$.
+
+**Resultado:**
+$$
+\boxed{16\pi}
 $$
 
 </details>
 
 ---
 
-### Ejercicio 3: Encontrar el radio
+## 🔑 Resumen
 
-1. El área de un círculo es 154 cm². ¿Cuál es el radio? (usa $\pi = \frac{22}{7}$)
-2. La longitud de una circunferencia es 31.4 cm. ¿Cuál es el radio?
+| Concepto | Fórmula |
+| :--- | :--- |
+| **Longitud ($C$)** | $2\pi r$ |
+| **Área ($A$)** | $\pi r^2$ |
 
-<details>
-<summary><strong>Ver respuestas</strong></summary>
-
-1. $r = \sqrt{\frac{154 \times 7}{22}} = \sqrt{49} = 7$ cm
-2. $r = \frac{31.4}{2\pi} = \frac{31.4}{6.28} = 5$ cm
-
-</details>
-
----
-
-### Ejercicio 4: Problema aplicado
-
-Una pizza circular tiene diámetro de 40 cm. Calcula:
-
-1. El área total de la pizza
-2. El área de una porción si se corta en 8 partes iguales
-
-<details>
-<summary><strong>Ver respuestas</strong></summary>
-
-1. $r = 20$ cm, $A = \pi(20)^2 = 400\pi \approx 1256.64$ cm²
-2. Cada porción = $\frac{400\pi}{8} = 50\pi \approx 157.08$ cm²
-
-</details>
-
----
-
-### Ejercicio 5: Comparación
-
-¿Qué tiene mayor área: un cuadrado de lado 10 cm o un círculo de diámetro 10 cm?
-
-<details>
-<summary><strong>Ver respuesta</strong></summary>
-
-Cuadrado: $A = 100$ cm²
-
-Círculo: $r = 5$, $A = 25\pi \approx 78.54$ cm²
-
-El **cuadrado** tiene mayor área.
-
-</details>
-
----
+> $\pi$ es la relación mágica entre el borde y el ancho del círculo.

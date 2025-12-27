@@ -1,262 +1,244 @@
-# Área del Trapecio
+# **Área del Trapecio**
 
-El trapecio tiene una fórmula especial para su área que involucra las dos bases y la altura.
-
-<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <canvas id="roughjs-trapecio" width="700" height="280" style="width: 100%; height: auto; display: block;"></canvas>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof rough !== 'undefined' && document.getElementById('roughjs-trapecio')) {
-    var canvas = document.getElementById('roughjs-trapecio');
-    var rc = rough.canvas(canvas);
-    var ctx = canvas.getContext('2d');
-    
-    ctx.font = 'bold 16px Inter, sans-serif';
-    ctx.fillStyle = '#1e293b';
-    ctx.textAlign = 'center';
-    ctx.fillText('Área del Trapecio', 350, 25);
-    
-    var azul = '#3b82f6';
-    var verde = '#22c55e';
-    var rojo = '#ef4444';
-    var naranja = '#f59e0b';
-    
-    // Trapecio
-    var puntos = [[100, 200], [400, 200], [320, 80], [180, 80]];
-    rc.polygon(puntos, {fill: '#dbeafe', fillStyle: 'solid', stroke: azul, strokeWidth: 2.5, roughness: 0.5});
-    
-    // Base mayor (B)
-    rc.line(100, 200, 400, 200, {stroke: verde, strokeWidth: 4, roughness: 0.3});
-    ctx.font = 'bold 14px Inter, sans-serif';
-    ctx.fillStyle = verde;
-    ctx.fillText('B (base mayor)', 250, 225);
-    
-    // Base menor (b)
-    rc.line(180, 80, 320, 80, {stroke: naranja, strokeWidth: 4, roughness: 0.3});
-    ctx.fillStyle = naranja;
-    ctx.fillText('b (base menor)', 250, 70);
-    
-    // Altura (h)
-    rc.line(250, 200, 250, 80, {stroke: rojo, strokeWidth: 3, roughness: 0.3});
-    rc.rectangle(250, 185, 12, 12, {stroke: rojo, strokeWidth: 1.5, roughness: 0.2});
-    ctx.fillStyle = rojo;
-    ctx.fillText('h', 235, 145);
-    
-    // Fórmula en recuadro
-    rc.rectangle(450, 70, 220, 130, {fill: '#f1f5f9', stroke: '#cbd5e1', roughness: 0.3});
-    ctx.font = 'bold 14px Inter, sans-serif';
-    ctx.fillStyle = '#1e293b';
-    ctx.fillText('Fórmula del Área', 560, 95);
-    ctx.font = '18px Inter, sans-serif';
-    ctx.fillText('A = (B + b) × h', 560, 130);
-    ctx.font = '24px Inter, sans-serif';
-    ctx.fillText('─────────', 560, 145);
-    ctx.font = '18px Inter, sans-serif';
-    ctx.fillText('2', 560, 170);
-    ctx.font = '11px Inter, sans-serif';
-    ctx.fillStyle = '#64748b';
-    ctx.fillText('Promedio de bases × altura', 560, 190);
-  }
-});
-</script>
+El trapecio es interesante porque puede verse como un rectángulo al que le cortaron triángulos en los lados, o como un promedio entre dos rectángulos. Su fórmula es única.
 
 ---
 
-## 📖 Elementos del trapecio
+## 🎯 ¿Qué vas a aprender?
 
-| Elemento | Símbolo | Descripción |
-|----------|---------|-------------|
-| Base mayor | $B$ | El lado paralelo más largo |
-| Base menor | $b$ | El lado paralelo más corto |
-| Altura | $h$ | Distancia perpendicular entre las bases |
-| Lados | $l_1, l_2$ | Los lados no paralelos |
+- Calcular el área usando el promedio de las bases.
+- Aplicar la fórmula: $A = \frac{(B+b) \cdot h}{2}$.
+- Despejar la altura ($h$) o las bases ($B, b$) de la fórmula original.
+- Calcular la altura de un trapecio isósceles usando Pitágoras.
 
 ---
 
-## 📖 Perímetro del trapecio
+## 📐 Fórmula del Área
+
+El área se calcula multiplicando el **promedio de las bases** por la altura.
 
 $$
-P = B + b + l_1 + l_2
+A = \frac{B + b}{2} \cdot h
 $$
 
-### Trapecio isósceles
+*   $B$: Base mayor.
+*   $b$: Base menor.
+*   $h$: Altura (Distancia perpendicular entre bases).
 
-Si $l_1 = l_2 = l$:
+> **Intuición:** Si conviertes el trapecio en un rectángulo usando la "base media" ($\frac{B+b}{2}$), tendrán la misma área.
 
+---
+
+## 📏 Elementos Importantes
+
+1.  **Bases ($B, b$):** Son los dos lados paralelos.
+2.  **Lados No Paralelos:** Pueden ser iguales (isósceles) o diferentes (escaleno).
+3.  **Altura ($h$):** Siempre perpendicular a las bases. No es lo mismo que el lado inclinado.
+
+---
+
+## ⚙️ Ejemplos Resueltos
+
+### Ejemplo 1: Cálculo Directo
+
+Calcula el área de un trapecio con bases de 10 m y 6 m, y altura de 4 m.
+
+**Razonamiento:**
+$B=10, b=6, h=4$.
+Promedio bases = $(10+6)/2 = 8$.
+Área = $8 \times 4$.
+
+**Resultado:**
 $$
-P = B + b + 2l
+\boxed{32 \text{ m}^2}
+$$
+
+### Ejemplo 2: Hallar la Altura
+
+Un trapecio tiene área $50 \text{ cm}^2$ y bases de 12 y 8 cm. ¿Cuál es su altura?
+
+**Razonamiento:**
+$50 = \frac{12+8}{2} \cdot h$.
+$50 = 10 \cdot h$.
+$h = 5$.
+
+**Resultado:**
+$$
+\boxed{5 \text{ cm}}
 $$
 
 ---
 
-## 📖 Área del trapecio
+## 📝 Ejercicios de Práctica
 
-> **Fórmula:** El área del trapecio es el promedio de las bases multiplicado por la altura.
-
-$$
-A = \frac{(B + b) \times h}{2}
-$$
-
-### Otra forma
-
-$$
-A = \frac{B + b}{2} \times h = m \times h
-$$
-
-Donde $m$ es la **base media**.
-
----
-
-## 📖 ¿Por qué funciona la fórmula?
-
-El trapecio puede verse como:
-- Dos triángulos (uno grande y uno pequeño) donde se resta
-- O como un rectángulo con triángulos en los extremos
-
-La fórmula promedia las bases porque el trapecio es "intermedio" entre un rectángulo de base $B$ y uno de base $b$.
-
----
-
-## 📖 Ejemplos
-
-### Ejemplo 1
-
-Trapecio con $B = 12$ cm, $b = 8$ cm, $h = 5$ cm:
-
-$$
-A = \frac{(12 + 8) \times 5}{2} = \frac{20 \times 5}{2} = \frac{100}{2} = 50 \text{ cm}^2
-$$
-
-### Ejemplo 2
-
-Trapecio con $B = 15$ cm, $b = 9$ cm, $h = 6$ cm:
-
-$$
-A = \frac{(15 + 9) \times 6}{2} = \frac{24 \times 6}{2} = \frac{144}{2} = 72 \text{ cm}^2
-$$
-
----
-
-## 📖 Encontrar elementos desconocidos
-
-### Encontrar la altura
-
-$$
-h = \frac{2A}{B + b}
-$$
-
-### Encontrar una base
-
-$$
-B = \frac{2A}{h} - b
-$$
-
-$$
-b = \frac{2A}{h} - B
-$$
-
----
-
-## 📖 Altura del trapecio isósceles
-
-Si conocemos las bases y los lados:
-
-$$
-h = \sqrt{l^2 - \left(\frac{B-b}{2}\right)^2}
-$$
-
-### Ejemplo
-
-Trapecio isósceles con $B = 16$ cm, $b = 10$ cm, $l = 5$ cm:
-
-$$
-h = \sqrt{5^2 - \left(\frac{16-10}{2}\right)^2} = \sqrt{25 - 9} = \sqrt{16} = 4 \text{ cm}
-$$
-
----
-
-## 📝 Ejercicios de práctica
-
-### Ejercicio 1: Calcular área
-
-Encuentra el área de cada trapecio:
-
-1. $B = 10$ cm, $b = 6$ cm, $h = 4$ cm
-2. $B = 14$ cm, $b = 8$ cm, $h = 5$ cm
-3. $B = 20$ cm, $b = 12$ cm, $h = 7$ cm
+### Ejercicio 1
+Calcula el área si $B=15, b=5, h=10$.
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. $A = \frac{(10+6) \times 4}{2} = 32$ cm²
-2. $A = \frac{(14+8) \times 5}{2} = 55$ cm²
-3. $A = \frac{(20+12) \times 7}{2} = 112$ cm²
+**Razonamiento:**
+$\frac{15+5}{2} \cdot 10 = 10 \cdot 10$.
 
-</details>
-
----
-
-### Ejercicio 2: Encontrar la altura
-
-El área de un trapecio es 60 cm². Si $B = 14$ cm y $b = 6$ cm, ¿cuál es la altura?
-
-<details>
-<summary><strong>Ver respuesta</strong></summary>
-
+**Resultado:**
 $$
-h = \frac{2 \times 60}{14 + 6} = \frac{120}{20} = 6 \text{ cm}
+\boxed{100}
 $$
 
 </details>
 
----
-
-### Ejercicio 3: Encontrar una base
-
-Un trapecio tiene área 84 cm², altura 7 cm y base mayor 16 cm. ¿Cuánto mide la base menor?
+### Ejercicio 2
+Si la suma de las bases es 20 y la altura es 5, ¿cuál es el área?
 
 <details>
-<summary><strong>Ver respuesta</strong></summary>
+<summary>Ver solución</summary>
 
+**Razonamiento:**
+$\frac{20}{2} \cdot 5 = 10 \cdot 5$.
+
+**Resultado:**
 $$
-b = \frac{2 \times 84}{7} - 16 = 24 - 16 = 8 \text{ cm}
+\boxed{50}
 $$
 
 </details>
 
----
-
-### Ejercicio 4: Perímetro
-
-Trapecio con $B = 12$ cm, $b = 8$ cm y lados no paralelos de 4 y 5 cm. Calcula el perímetro.
+### Ejercicio 3
+Trapecio rectángulo con bases 8 y 4, y el lado perpendicular mide 3. Calcula el área.
 
 <details>
-<summary><strong>Ver respuesta</strong></summary>
+<summary>Ver solución</summary>
 
+**Razonamiento:**
+El lado perpendicular ES la altura. $h=3$.
+$\frac{8+4}{2} \cdot 3 = 6 \cdot 3$.
+
+**Resultado:**
 $$
-P = 12 + 8 + 4 + 5 = 29 \text{ cm}
+\boxed{18}
+$$
+
+</details>
+
+### Ejercicio 4
+Si el área es 30 y las bases son 4 y 6, halla la altura.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$30 = \frac{4+6}{2} \cdot h \Rightarrow 30 = 5h \Rightarrow h=6$.
+
+**Resultado:**
+$$
+\boxed{6}
+$$
+
+</details>
+
+### Ejercicio 5
+Calcula el perímetro de un trapecio isósceles con bases 10 y 4, y lados oblicuos 5.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$P = 10 + 4 + 5 + 5$.
+
+**Resultado:**
+$$
+\boxed{24}
+$$
+
+</details>
+
+### Ejercicio 6
+Verdadero o Falso: La altura es siempre igual a uno de los lados.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Falso. Solo en el trapecio rectángulo.
+
+**Resultado:**
+$$
+\boxed{\text{Falso}}
+$$
+
+</details>
+
+### Ejercicio 7
+Halla el área si la base media mide 8 y la altura 4.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Fórmula alternativa: $A = \text{Media} \times h = 8 \times 4$.
+
+**Resultado:**
+$$
+\boxed{32}
+$$
+
+</details>
+
+### Ejercicio 8
+Trapecio con bases 20 y 10, área 150. ¿Altura?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$150 = \frac{30}{2}h = 15h \Rightarrow h=10$.
+
+**Resultado:**
+$$
+\boxed{10}
+$$
+
+</details>
+
+### Ejercicio 9
+Calcula la altura de un trapecio isósceles con bases 10 y 4, y lado oblicuo 5.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Diferencia bases = $10-4=6$. Cada "triangulito" de la base tiene cateto $6/2=3$.
+Pitágoras: $5^2 = h^2 + 3^2 \Rightarrow 25 = h^2 + 9 \Rightarrow h=4$.
+
+**Resultado:**
+$$
+\boxed{4}
+$$
+
+</details>
+
+### Ejercicio 10
+Si duplicas la altura de un trapecio manteniendo las bases, ¿qué pasa con el área?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$A' = \frac{B+b}{2}(2h) = 2 \cdot A$.
+
+**Resultado:**
+$$
+\boxed{\text{Se duplica}}
 $$
 
 </details>
 
 ---
 
-### Ejercicio 5: Trapecio isósceles
+## 🔑 Resumen
 
-Un trapecio isósceles tiene $B = 18$ cm, $b = 10$ cm y lados laterales de 5 cm. Calcula:
+| Figura | Fórmula ($A$) |
+| :--- | :--- |
+| **Trapecio** | $\frac{B+b}{2} \cdot h$ |
 
-1. La altura
-2. El área
-
-<details>
-<summary><strong>Ver respuestas</strong></summary>
-
-1. $h = \sqrt{5^2 - \left(\frac{18-10}{2}\right)^2} = \sqrt{25 - 16} = \sqrt{9} = 3$ cm
-
-2. $A = \frac{(18+10) \times 3}{2} = 42$ cm²
-
-</details>
-
----
+> "El promedio de las bases por la altura". Esa es la clave.

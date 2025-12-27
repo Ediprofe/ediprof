@@ -167,15 +167,15 @@ Situaciones que requieren confirmación:
 
 Corrige las siguientes lecciones al estilo Ediprofe.
 
-http://localhost:4321/matematicas/geometria-euclidiana/transformaciones/introduccion-transformaciones
+http://localhost:4321/matematicas/geometria-euclidiana/cuerpos-geometricos/cono
 
-http://localhost:4321/matematicas/geometria-euclidiana/transformaciones/traslacion
+http://localhost:4321/matematicas/geometria-euclidiana/cuerpos-geometricos/esfera
 
-http://localhost:4321/matematicas/geometria-euclidiana/transformaciones/rotacion
+http://localhost:4321/matematicas/geometria-euclidiana/cuerpos-geometricos/troncos
 
-http://localhost:4321/matematicas/geometria-euclidiana/transformaciones/reflexion
+http://localhost:4321/matematicas/geometria-euclidiana/cuerpos-geometricos/poliedros-regulares
 
-http://localhost:4321/matematicas/geometria-euclidiana/transformaciones/homotecia
+http://localhost:4321/matematicas/geometria-euclidiana/cuerpos-geometricos/problemas-aplicados
 
 
 

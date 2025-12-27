@@ -1,317 +1,259 @@
-# Reflexión (Simetría Axial)
+# **Reflexión (Simetría Axial)**
 
-La **reflexión** produce la imagen espejo de una figura respecto a una recta llamada eje de simetría.
-
-<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <canvas id="roughjs-reflexion-1" width="700" height="320" style="width: 100%; height: auto; display: block;"></canvas>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof rough !== 'undefined' && document.getElementById('roughjs-reflexion-1')) {
-    var canvas = document.getElementById('roughjs-reflexion-1');
-    var rc = rough.canvas(canvas);
-    var ctx = canvas.getContext('2d');
-    
-    ctx.font = 'bold 16px Inter, sans-serif';
-    ctx.fillStyle = '#1e293b';
-    ctx.textAlign = 'center';
-    ctx.fillText('Reflexión respecto al Eje Y', 350, 25);
-    
-    var azul = '#3b82f6';
-    var verde = '#22c55e';
-    var morado = '#a855f7';
-    
-    // Centro de coordenadas
-    var cx = 350, cy = 170;
-    
-    // Ejes coordenados
-    rc.line(100, cy, 600, cy, {stroke: '#e2e8f0', strokeWidth: 1, roughness: 0.2});
-    rc.line(cx, 50, cx, 280, {stroke: morado, strokeWidth: 3, roughness: 0.3}); // Eje Y como eje de reflexión
-    ctx.font = '11px Inter, sans-serif';
-    ctx.fillStyle = '#94a3b8';
-    ctx.fillText('x', 590, cy+15);
-    ctx.fillStyle = morado;
-    ctx.font = 'bold 12px Inter, sans-serif';
-    ctx.fillText('Eje Y', cx+20, 60);
-    ctx.fillStyle = '#94a3b8';
-    ctx.font = '11px Inter, sans-serif';
-    ctx.fillText('O', cx-12, cy+15);
-    
-    // Triángulo ORIGINAL (azul) - a la derecha del eje
-    var A = [cx+60, cy+40];
-    var B = [cx+140, cy+40];
-    var C = [cx+100, cy-40];
-    rc.polygon([A, B, C], {fill: '#dbeafe', stroke: azul, strokeWidth: 2.5, roughness: 0.5});
-    
-    // Etiquetas originales
-    ctx.font = 'bold 12px Inter, sans-serif';
-    ctx.fillStyle = azul;
-    ctx.fillText('A', A[0]-5, A[1]+15);
-    ctx.fillText('B', B[0]+8, B[1]+15);
-    ctx.fillText('C', C[0]+10, C[1]);
-    
-    // Triángulo IMAGEN (verde) - reflejado respecto al eje Y
-    // Reflexión eje Y: (x,y) -> (-x, y) respecto al centro
-    function reflejarY(p) {
-      var dx = p[0] - cx;
-      return [cx - dx, p[1]];
-    }
-    var Ap = reflejarY(A);
-    var Bp = reflejarY(B);
-    var Cp = reflejarY(C);
-    rc.polygon([Ap, Bp, Cp], {fill: '#dcfce7', stroke: verde, strokeWidth: 2.5, roughness: 0.5});
-    
-    // Etiquetas imagen
-    ctx.fillStyle = verde;
-    ctx.fillText("A'", Ap[0], Ap[1]+15);
-    ctx.fillText("B'", Bp[0]-18, Bp[1]+15);
-    ctx.fillText("C'", Cp[0]-18, Cp[1]);
-    
-    // Líneas de correspondencia (punteadas)
-    rc.line(A[0], A[1], Ap[0], Ap[1], {stroke: '#94a3b8', strokeWidth: 1.5, roughness: 0.2});
-    rc.line(B[0], B[1], Bp[0], Bp[1], {stroke: '#94a3b8', strokeWidth: 1.5, roughness: 0.2});
-    rc.line(C[0], C[1], Cp[0], Cp[1], {stroke: '#94a3b8', strokeWidth: 1.5, roughness: 0.2});
-    
-    // Leyenda
-    rc.rectangle(180, 270, 340, 40, {fill: '#f1f5f9', stroke: '#cbd5e1', roughness: 0.3});
-    ctx.font = '12px Inter, sans-serif';
-    ctx.textAlign = 'left';
-    ctx.fillStyle = azul;
-    ctx.fillText('■ Original', 200, 295);
-    ctx.fillStyle = verde;
-    ctx.fillText('■ Imagen', 300, 295);
-    ctx.fillStyle = morado;
-    ctx.fillText('│ Eje de reflexión', 400, 295);
-  }
-});
-</script>
+Es como mirarse en un espejo. La reflexión invierte la imagen de lado a lado. Si levantas la mano derecha, tu reflejo levanta la izquierda.
 
 ---
 
-## 📖 Definición
+## 🎯 ¿Qué vas a aprender?
 
-> **Definición:** Una reflexión transforma cada punto $P$ en su imagen $P'$ tal que el **eje de simetría** es la **mediatriz** del segmento $\overline{PP'}$.
-
-### Propiedades del punto y su imagen
-
-- $P$ y $P'$ están a la **misma distancia** del eje
-- El segmento $\overline{PP'}$ es **perpendicular** al eje
-- El eje pasa por el **punto medio** de $\overline{PP'}$
+- Definir la reflexión respecto a un **eje de simetría**.
+- Reflejar puntos en el plano cartesiano (Eje $X$, Eje $Y$, Origen).
+- Comprender qué propiedad cambia en una reflexión (la **orientación**).
 
 ---
 
-## 📖 Tipos de reflexión según el eje
+## 📏 El Eje de Reflexión
 
-### Reflexión respecto al eje X
+La reflexión se hace siempre respecto a una línea recta que actúa como **espejo**. Cada punto original y su imagen están a la misma distancia del espejo, pero en lados opuestos.
 
-$$
-P(x, y) \to P'(x, -y)
-$$
+> **Propiedad Clave:** El segmento que une un punto con su imagen ($PP'$) es **perpendicular** al eje de reflexión.
 
-La coordenada $y$ cambia de signo.
+---
 
-### Reflexión respecto al eje Y
+## 📐 Fórmulas de Reflexión
 
-$$
-P(x, y) \to P'(-x, y)
-$$
+Las transformaciones más comunes ocurren respecto a los ejes coordenados:
 
-La coordenada $x$ cambia de signo.
-
-### Reflexión respecto al origen
+### 1. Reflexión respecto al Eje $X$ (Horizontal)
+El espejo es el suelo. Lo que estaba arriba pasa abajo (y viceversa). La $x$ no cambia, la $y$ se invierte.
 
 $$
-P(x, y) \to P'(-x, -y)
+P(x, y) \rightarrow P'(x, -y)
 $$
 
-Ambas coordenadas cambian de signo. (Equivale a rotación de 180°)
-
-### Reflexión respecto a la recta y = x
+### 2. Reflexión respecto al Eje $Y$ (Vertical)
+El espejo es una pared vertical. Lo de la izquierda pasa a la derecha. La $y$ no cambia, la $x$ se invierte.
 
 $$
-P(x, y) \to P'(y, x)
+P(x, y) \rightarrow P'(-x, y)
 $$
 
+### 3. Reflexión respecto al Origen (Simetría Central)
+Equivale a una rotación de $180^\circ$. Ambos signos cambian.
+
+$$
+P(x, y) \rightarrow P'(-x, -y)
+$$
+
+### 4. Reflexión respecto a la recta $y=x$ (Diagonal)
 Se intercambian las coordenadas.
 
----
-
-## 📖 Ejemplos
-
-### Ejemplo 1: Reflexión respecto al eje X
-
-Reflejar $P(3, 5)$ respecto al eje X:
-
 $$
-P' = (3, -5)
-$$
-
-### Ejemplo 2: Reflexión respecto al eje Y
-
-Reflejar $Q(-2, 4)$ respecto al eje Y:
-
-$$
-Q' = (2, 4)
-$$
-
-### Ejemplo 3: Reflexión respecto a y = x
-
-Reflejar $R(1, 7)$ respecto a la recta $y = x$:
-
-$$
-R' = (7, 1)
+P(x, y) \rightarrow P'(y, x)
 $$
 
 ---
 
-## 📖 Propiedades de la reflexión
+## ⚙️ Ejemplos Resueltos
 
-| Propiedad | ¿Se conserva? |
-|-----------|---------------|
-| Distancias | Sí |
-| Ángulos | Sí |
-| Área | Sí |
-| Forma | Sí |
-| Orientación | **No** (se invierte) |
+### Ejemplo 1: Eje $X$
 
-### La reflexión es una isometría
+Refleja el punto $A(2, 5)$ respecto al eje $X$.
 
-Conserva distancias y ángulos, pero **invierte la orientación** (como en un espejo).
+**Razonamiento:**
+El eje $X$ invierte la coordenada $y$.
+$y = 5 \to -5$.
+$x$ se queda igual.
 
-### Puntos fijos
+**Resultado:**
+$$
+\boxed{A'(2, -5)}
+$$
 
-Todos los puntos **sobre el eje** son fijos.
+### Ejemplo 2: Eje $Y$
 
----
+Refleja el punto $B(-3, 4)$ respecto al eje $Y$.
 
-## 📖 Reflexión respecto a una recta general
+**Razonamiento:**
+El eje $Y$ invierte la coordenada $x$.
+$x = -3 \to 3$.
+$y$ se queda igual.
 
-Para reflejar respecto a una recta $y = mx + b$:
-
-1. Encontrar la perpendicular desde $P$ hasta la recta
-2. Encontrar el punto de intersección $M$
-3. $P'$ está a la misma distancia de $M$ que $P$, pero al otro lado
-
----
-
-## 📖 Composición de reflexiones
-
-### Dos reflexiones sobre ejes paralelos
-
-Equivalen a una **traslación**.
-
-### Dos reflexiones sobre ejes que se cortan
-
-Equivalen a una **rotación** con ángulo igual al doble del ángulo entre los ejes.
+**Resultado:**
+$$
+\boxed{B'(3, 4)}
+$$
 
 ---
 
-## 📖 Figuras con simetría axial
+## 📝 Ejercicios de Práctica
 
-Una figura tiene **simetría axial** si existe una recta (eje) que la divide en dos partes que son imagen espejo.
-
-### Ejemplos
-
-| Figura | Ejes de simetría |
-|--------|-----------------|
-| Cuadrado | 4 |
-| Rectángulo | 2 |
-| Triángulo equilátero | 3 |
-| Triángulo isósceles | 1 |
-| Círculo | Infinitos |
-
----
-
-## 📝 Ejercicios de práctica
-
-### Ejercicio 1: Reflexión respecto a ejes
-
-Encuentra la imagen de $P(4, -3)$:
-
-1. Reflexión respecto al eje X
-2. Reflexión respecto al eje Y
-3. Reflexión respecto al origen
+### Ejercicio 1
+Refleja $P(4, 7)$ respecto al eje $X$.
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. $P' = (4, 3)$
-2. $P' = (-4, -3)$
-3. $P' = (-4, 3)$
+**Razonamiento:**
+$(x, -y) \to (4, -7)$.
+
+**Resultado:**
+$$
+\boxed{P'(4, -7)}
+$$
+
+</details>
+
+### Ejercicio 2
+Refleja $Q(5, -2)$ respecto al eje $Y$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$(-x, y) \to (-5, -2)$.
+
+**Resultado:**
+$$
+\boxed{Q'(-5, -2)}
+$$
+
+</details>
+
+### Ejercicio 3
+Refleja $R(-3, -3)$ respecto al origen.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Cambia ambos signos.
+
+**Resultado:**
+$$
+\boxed{3, 3}
+$$
+
+</details>
+
+### Ejercicio 4
+Si reflejas una letra "R" en un espejo vertical, ¿cómo se ve?
+
+<details>
+<summary>Ver solución</summary>
+
+**Respuesta:**
+
+$$
+\text{Invertida lateralmente (orientación cambiada)}
+$$
+
+</details>
+
+### Ejercicio 5
+Refleja el punto $(2, 8)$ respecto a la recta diagonal $y=x$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Intercambia coordenadas. $(y, x)$.
+
+**Resultado:**
+$$
+\boxed{(8, 2)}
+$$
+
+</details>
+
+### Ejercicio 6
+Verdadero o Falso: La reflexión es una transformación rígida (isometría).
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Verdadero. No deforma la figura, solo la voltea.
+
+**Resultado:**
+$$
+\boxed{\text{Verdadero}}
+$$
+
+</details>
+
+### Ejercicio 7
+¿Qué punto no cambia al reflejar respecto al eje $X$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Cualquier punto que ya esté en el eje $X$ (donde $y=0$). Por ejemplo $(5,0)$.
+
+**Resultado:**
+$$
+\boxed{\text{Los puntos sobre el eje X}}
+$$
+
+</details>
+
+### Ejercicio 8
+Refleja el triángulo $A(1,1), B(3,1), C(2,4)$ respecto al eje $X$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Cambia signo de $y$.
+$A'(1, -1), B'(3, -1), C'(2, -4)$.
+
+**Resultado:**
+$$
+A'(1, -1), B'(3, -1), C'(2, -4)
+$$
+
+</details>
+
+### Ejercicio 9
+Si reflejas dos veces respecto al mismo eje, ¿qué pasa?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Volteas y vuelves a voltear. Quedas igual.
+
+**Resultado:**
+$$
+\boxed{\text{Vuelves a la posición original}}
+$$
+
+</details>
+
+### Ejercicio 10
+Simetría de una mariposa. El eje pasa por...
+
+<details>
+<summary>Ver solución</summary>
+
+**Respuesta:**
+
+$$
+\text{El cuerpo (el centro vertical)}
+$$
 
 </details>
 
 ---
 
-### Ejercicio 2: Reflexión respecto a y = x
+## 🔑 Resumen
 
-Reflejar los puntos respecto a la recta $y = x$:
+| Eje de Reflexión | Regla |
+| :--- | :--- |
+| **Eje $X$** | $(x, -y)$ |
+| **Eje $Y$** | $(-x, y)$ |
+| **Origen** | $(-x, -y)$ |
+| **Recta $y=x$** | $(y, x)$ |
 
-1. $A(2, 5)$
-2. $B(-1, 3)$
-
-<details>
-<summary><strong>Ver respuestas</strong></summary>
-
-1. $A' = (5, 2)$
-2. $B' = (3, -1)$
-
-</details>
-
----
-
-### Ejercicio 3: Identificar el eje
-
-El punto $A(3, 7)$ se refleja en $A'(3, -7)$. ¿Cuál es el eje de reflexión?
-
-<details>
-<summary><strong>Ver respuesta</strong></summary>
-
-Solo la coordenada $y$ cambió de signo, entonces el eje es el **eje X**.
-
-</details>
-
----
-
-### Ejercicio 4: Triángulo
-
-Refleja el triángulo con vértices $A(1, 2)$, $B(4, 2)$, $C(2, 5)$ respecto al eje Y.
-
-<details>
-<summary><strong>Ver respuesta</strong></summary>
-
-$$
-A' = (-1, 2)
-$$
-
-$$
-B' = (-4, 2)
-$$
-
-$$
-C' = (-2, 5)
-$$
-
-</details>
-
----
-
-### Ejercicio 5: Ejes de simetría
-
-¿Cuántos ejes de simetría tiene cada figura?
-
-1. Cuadrado
-2. Rombo
-3. Hexágono regular
-
-<details>
-<summary><strong>Ver respuestas</strong></summary>
-
-1. **4** ejes
-2. **2** ejes (las diagonales)
-3. **6** ejes
-
-</details>
-
----
+> En la reflexión, el eje actúa como un espejo. Lo que toca el espejo se queda quieto; lo demás se invierte.

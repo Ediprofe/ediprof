@@ -1,160 +1,53 @@
-# El Cubo
+# **El Cubo**
 
-El **cubo** es el prisma más simétrico: todas sus caras son cuadrados iguales. Es uno de los cinco **sólidos platónicos**.
-
-<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <canvas id="roughjs-cubo" width="700" height="280" style="width: 100%; height: auto; display: block;"></canvas>
-  <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 0.75rem; font-size: 0.9rem; flex-wrap: wrap;">
-    <span><strong style="color: #22c55e;">a</strong> = arista (lado)</span>
-    <span><strong style="color: #a855f7;">D</strong> = diagonal espacial = a√3</span>
-    <span><strong style="color: #64748b;">d</strong> = diagonal de cara = a√2</span>
-  </div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof rough !== 'undefined' && document.getElementById('roughjs-cubo')) {
-    var canvas = document.getElementById('roughjs-cubo');
-    var rc = rough.canvas(canvas);
-    var ctx = canvas.getContext('2d');
-    
-    ctx.font = 'bold 16px Inter, sans-serif';
-    ctx.fillStyle = '#1e293b';
-    ctx.textAlign = 'center';
-    ctx.fillText('El Cubo: Elementos y Fórmulas', 350, 25);
-    
-    var azul = '#3b82f6';
-    var verde = '#22c55e';
-    var rojo = '#ef4444';
-    var morado = '#a855f7';
-    
-    // Cubo isométrico grande
-    var cx = 150, cy = 150;
-    var a = 100; // arista
-    var dx = a * 0.5, dy = a * 0.3; // desplazamiento isométrico
-    
-    // Vértices
-    var v1 = [cx, cy];
-    var v2 = [cx + a, cy];
-    var v3 = [cx + a, cy + a];
-    var v4 = [cx, cy + a];
-    var v5 = [cx + dx, cy - dy];
-    var v6 = [cx + a + dx, cy - dy];
-    var v7 = [cx + a + dx, cy + a - dy];
-    var v8 = [cx + dx, cy + a - dy];
-    
-    // Cara frontal
-    rc.polygon([v1, v2, v3, v4], {fill: '#dbeafe', stroke: azul, strokeWidth: 2, roughness: 0.5});
-    // Cara superior
-    rc.polygon([v1, v5, v6, v2], {fill: '#bfdbfe', stroke: azul, strokeWidth: 2, roughness: 0.5});
-    // Cara lateral derecha
-    rc.polygon([v2, v6, v7, v3], {fill: '#93c5fd', stroke: azul, strokeWidth: 2, roughness: 0.5});
-    
-    // Arista etiquetada
-    rc.line(v1[0], v1[1], v2[0], v2[1], {stroke: verde, strokeWidth: 3, roughness: 0.3});
-    ctx.font = 'bold 14px Inter, sans-serif';
-    ctx.fillStyle = verde;
-    ctx.fillText('a', cx + a/2, cy + 20);
-    
-    // Diagonal espacial (punteada)
-    ctx.setLineDash([5, 5]);
-    ctx.strokeStyle = morado;
-    ctx.lineWidth = 2;
-    ctx.beginPath();
-    ctx.moveTo(v4[0], v4[1]);
-    ctx.lineTo(v6[0], v6[1]);
-    ctx.stroke();
-    ctx.setLineDash([]);
-    ctx.fillStyle = morado;
-    ctx.font = '12px Inter, sans-serif';
-    ctx.fillText('D = a√3', cx + a + 30, cy + 30);
-    
-    // Fórmulas
-    rc.rectangle(380, 60, 290, 200, {fill: '#f1f5f9', stroke: '#cbd5e1', roughness: 0.3});
-    ctx.font = 'bold 14px Inter, sans-serif';
-    ctx.fillStyle = '#1e293b';
-    ctx.fillText('Fórmulas del Cubo', 525, 90);
-    
-    ctx.font = '13px Inter, sans-serif';
-    ctx.textAlign = 'left';
-    
-    ctx.fillStyle = verde;
-    ctx.fillText('Arista:', 400, 120);
-    ctx.fillStyle = '#1e293b';
-    ctx.fillText('a', 480, 120);
-    
-    ctx.fillStyle = azul;
-    ctx.fillText('Área total:', 400, 150);
-    ctx.fillStyle = '#1e293b';
-    ctx.fillText('A = 6a²', 480, 150);
-    
-    ctx.fillStyle = rojo;
-    ctx.fillText('Volumen:', 400, 180);
-    ctx.fillStyle = '#1e293b';
-    ctx.fillText('V = a³', 480, 180);
-    
-    ctx.fillStyle = morado;
-    ctx.fillText('Diagonal espacial:', 400, 210);
-    ctx.fillStyle = '#1e293b';
-    ctx.fillText('D = a√3', 530, 210);
-    
-    ctx.fillStyle = '#64748b';
-    ctx.fillText('Diagonal de cara:', 400, 240);
-    ctx.fillStyle = '#1e293b';
-    ctx.fillText('d = a√2', 530, 240);
-  }
-});
-</script>
+Es el cuerpo geométrico perfecto. Un pariente 3D del cuadrado que tiene el mismo ancho, largo y alto. Desde un dado hasta un bloque de Minecraft, el cubo está en todas partes.
 
 ---
 
-## 📖 Definición
+## 🎯 ¿Qué vas a aprender?
 
-> **Definición:** Un cubo (o hexaedro regular) es un poliedro con **6 caras cuadradas iguales**, **12 aristas iguales** y **8 vértices**.
-
----
-
-## 📖 Elementos del cubo
-
-| Elemento | Cantidad | Descripción |
-|----------|----------|-------------|
-| Caras | 6 | Cuadrados iguales |
-| Aristas | 12 | Todas de igual longitud |
-| Vértices | 8 | Donde se unen 3 aristas |
-| Diagonales de cara | 12 | 2 por cada cara |
-| Diagonales espaciales | 4 | Unen vértices opuestos |
+- Identificar los elementos del cubo (6 caras cuadradas iguales).
+- Calcular su **Área Total** ($6a^2$) y **Volumen** ($a^3$).
+- Calcular la **Diagonal Espacial** ($a\sqrt{3}$).
+- Entender cómo crece el volumen si aumentas la arista.
 
 ---
 
-## 📖 Fórmulas del cubo
+## 🧊 Elementos del Cubo (Hexaedro)
 
-Sea $a$ el lado del cubo:
+Es un prisma especial donde todas sus dimensiones son iguales a la arista ($a$).
 
-### Área de una cara
+*   **Caras:** 6 cuadrados idénticos.
+*   **Aristas:** 12 iguales.
+*   **Vértices:** 8.
 
-$$
-A_{cara} = a^2
-$$
+---
 
-### Área total (superficie)
+## 📏 Fórmulas Principales
 
-$$
-A_T = 6a^2
-$$
-
-### Volumen
+### 1. Volumen ($V$)
+Arista por arista por arista.
 
 $$
-V = a^3
+V = a \cdot a \cdot a = a^3
 $$
 
-### Diagonal de una cara
+### 2. Área Total ($A_T$)
+Suma de las áreas de las 6 caras cuadradas.
 
 $$
-d_{cara} = a\sqrt{2}
+A_T = 6 \cdot a^2
 $$
 
-### Diagonal espacial
+### 3. Diagonal de una Cara ($d$)
+Como la diagonal de un cuadrado.
+
+$$
+d = a\sqrt{2}
+$$
+
+### 4. Diagonal Espacial ($D$)
+Atraviesa el cubo desde una esquina inferior hasta la esquina superior opuesta.
 
 $$
 D = a\sqrt{3}
@@ -162,165 +55,210 @@ $$
 
 ---
 
-## 📖 Ejemplos
+## ⚙️ Ejemplos Resueltos
 
-### Ejemplo 1
+### Ejemplo 1: Cubo de Rubik
 
-Cubo de arista 5 cm:
+Un cubo tiene arista de 5 cm.
 
-$$
-A_T = 6 \times 5^2 = 6 \times 25 = 150 \text{ cm}^2
-$$
+**Razonamiento:**
+*   **Volumen:** $5^3 = 125$ cm³.
+*   **Área Total:** $6 \times 5^2 = 6 \times 25 = 150$ cm².
 
+**Resultado:**
 $$
-V = 5^3 = 125 \text{ cm}^3
-$$
-
-$$
-D = 5\sqrt{3} \approx 8.66 \text{ cm}
+\boxed{V = 125 \text{ cm}^3, A_T = 150 \text{ cm}^2}
 $$
 
-### Ejemplo 2
+### Ejemplo 2: Problema Inverso
 
-Cubo de arista 10 cm:
+Si el volumen de un cubo es 1000 m³, ¿cuánto mide su arista?
 
-$$
-A_T = 6 \times 100 = 600 \text{ cm}^2
-$$
+**Razonamiento:**
+$a^3 = 1000$.
+Aplicamos raíz cúbica: $a = \sqrt[3]{1000} = 10$.
 
+**Resultado:**
 $$
-V = 1000 \text{ cm}^3 = 1 \text{ litro}
+\boxed{10 \text{ m}}
 $$
 
 ---
 
-## 📖 Encontrar la arista
+## 📝 Ejercicios de Práctica
 
-### Conociendo el volumen
-
-$$
-a = \sqrt[3]{V}
-$$
-
-### Conociendo el área total
-
-$$
-a = \sqrt{\frac{A_T}{6}}
-$$
-
----
-
-## 📖 Propiedades especiales
-
-### Simetría
-
-El cubo tiene:
-- 9 planos de simetría
-- 13 ejes de simetría
-- Es un poliedro regular (sólido platónico)
-
-### Desarrollo plano
-
-El cubo se puede desplegar en 11 formas diferentes (redes del cubo).
-
-### Relación con el ortoedro
-
-El cubo es un caso especial de ortoedro (prisma rectangular) donde todas las dimensiones son iguales.
-
----
-
-## 📖 Aplicaciones
-
-| Objeto | Uso del cubo |
-|--------|--------------|
-| Dados | Juegos |
-| Cajas | Embalaje |
-| Cubos de Rubik | Puzzles |
-| Edificios | Arquitectura moderna |
-
----
-
-## 📝 Ejercicios de práctica
-
-### Ejercicio 1: Área y volumen
-
-Calcula el área total y el volumen de cubos con arista:
-
-1. 3 cm
-2. 7 cm
-3. 12 cm
+### Ejercicio 1
+Volumen de un cubo de arista 3.
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. $A_T = 6 \times 9 = 54$ cm², $V = 27$ cm³
-2. $A_T = 6 \times 49 = 294$ cm², $V = 343$ cm³
-3. $A_T = 6 \times 144 = 864$ cm², $V = 1728$ cm³
+**Razonamiento:**
+$3^3 = 27$.
+
+**Resultado:**
+$$
+\boxed{27}
+$$
+
+</details>
+
+### Ejercicio 2
+Área Total de un cubo de arista 10.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$A_T = 6 \times 10^2 = 600$.
+
+**Resultado:**
+$$
+\boxed{600}
+$$
+
+</details>
+
+### Ejercicio 3
+Calcula la diagonal espacial ($D$) si la arista es 2.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$D = 2\sqrt{3} \approx 3.46$.
+
+**Resultado:**
+$$
+\boxed{3.46}
+$$
+
+</details>
+
+### Ejercicio 4
+Si el área total es 54, ¿cuánto mide la arista?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$6a^2 = 54 \Rightarrow a^2 = 9 \Rightarrow a=3$.
+
+**Resultado:**
+$$
+\boxed{3}
+$$
+
+</details>
+
+### Ejercicio 5
+Calcula el área lateral (solo las 4 paredes, sin tapas) de un cubo de lado 5.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Son 4 caras. $4 \times 5^2 = 4 \times 25$.
+
+**Resultado:**
+$$
+\boxed{100}
+$$
+
+</details>
+
+### Ejercicio 6
+Un tanque cúbico tiene 2 m de lado. Litros de agua (1 m³ = 1000 L).
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$V = 2^3 = 8$ m³.
+$8 \times 1000$.
+
+**Resultado:**
+$$
+\boxed{8000 \text{ L}}
+$$
+
+</details>
+
+### Ejercicio 7
+Si duplicas la arista, ¿el volumen se duplica?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$(2a)^3 = 8a^3$. Se multiplica por 8.
+
+**Resultado:**
+$$
+\boxed{\text{Se multiplica por 8}}
+$$
+
+</details>
+
+### Ejercicio 8
+Suma de todas las aristas de un cubo de lado 6.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Tiene 12 aristas. $12 \times 6$.
+
+**Resultado:**
+$$
+\boxed{72}
+$$
+
+</details>
+
+### Ejercicio 9
+Diferencia entre la diagonal de la cara y la diagonal espacial (si $a=10$).
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$D = 10\sqrt{3} \approx 17.32$.
+$d = 10\sqrt{2} \approx 14.14$.
+Resta: $3.18$.
+
+**Resultado:**
+$$
+\boxed{\approx 3.18}
+$$
+
+</details>
+
+### Ejercicio 10
+Volumen de un cubo cuya área total es 96.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$6a^2 = 96 \Rightarrow a^2 = 16 \Rightarrow a=4$.
+$V = 4^3 = 64$.
+
+**Resultado:**
+$$
+\boxed{64}
+$$
 
 </details>
 
 ---
 
-### Ejercicio 2: Diagonal espacial
+## 🔑 Resumen
 
-Calcula la diagonal espacial de cubos con arista:
+| Métrica | Fórmula |
+| :--- | :--- |
+| **Volumen** | $a^3$ |
+| **Área Total** | $6a^2$ |
+| **Diag. Espacial** | $a\sqrt{3}$ |
 
-1. 4 cm
-2. 6 cm
-
-<details>
-<summary><strong>Ver respuestas</strong></summary>
-
-1. $D = 4\sqrt{3} \approx 6.93$ cm
-2. $D = 6\sqrt{3} \approx 10.39$ cm
-
-</details>
-
----
-
-### Ejercicio 3: Encontrar la arista
-
-1. El volumen de un cubo es 64 cm³. ¿Cuál es la arista?
-2. El área total de un cubo es 150 cm². ¿Cuál es la arista?
-
-<details>
-<summary><strong>Ver respuestas</strong></summary>
-
-1. $a = \sqrt[3]{64} = 4$ cm
-2. $a = \sqrt{\frac{150}{6}} = \sqrt{25} = 5$ cm
-
-</details>
-
----
-
-### Ejercicio 4: Problema aplicado
-
-Un tanque cúbico tiene arista de 2 m. ¿Cuántos litros de agua puede contener? (1 m³ = 1000 litros)
-
-<details>
-<summary><strong>Ver respuesta</strong></summary>
-
-$$
-V = 2^3 = 8 \text{ m}^3 = 8 \times 1000 = 8000 \text{ litros}
-$$
-
-</details>
-
----
-
-### Ejercicio 5: Comparación
-
-Si duplicamos la arista de un cubo, ¿en cuánto se multiplica el volumen?
-
-<details>
-<summary><strong>Ver respuesta</strong></summary>
-
-Arista original: $a$, Volumen: $a^3$
-
-Arista doble: $2a$, Volumen: $(2a)^3 = 8a^3$
-
-El volumen se multiplica por **8**.
-
-</details>
-
----
+> El cubo es el único poliedro regular que puedes apilar perfectamente sin dejar huecos en el espacio.
