@@ -1,280 +1,222 @@
-# Posiciones Relativas entre Circunferencias y Rectas
+# **Posiciones Relativas entre Circunferencias y Rectas**
 
-¿Cómo puede una recta relacionarse con una circunferencia? Puede estar fuera, tocarla en un punto (tangente) o cortarla en dos puntos (secante). Estudiaremos estas posiciones y cómo determinarlas algebraicamente.
+En el billar, una bola (circunferencia) puede rodar libremente, rozar la banda (recta tangente) o chocar contra ella (recta secante). Estas son las tres posiciones relativas. Hoy aprenderemos a predecir qué va a pasar usando ecuaciones.
 
 ---
 
 ## 🎯 ¿Qué vas a aprender?
 
-- Las tres posiciones relativas de una recta respecto a una circunferencia
-- Cómo determinar la posición usando distancia
-- Las posiciones relativas entre dos circunferencias
+- Las tres interacciones posibles entre una recta y una circunferencia: Exterior, Tangente, Secante.
+- Cómo usar la distancia para diagnosticar la posición.
+- Cómo interactúan dos circunferencias entre sí (el eclipse solar).
 
 ---
 
-## 📖 Lo Esencial de Posiciones Relativas
+## 🎱 Recta vs. Circunferencia
+
+Imagina que la circunferencia es una fortaleza con un muro a distancia $r$ del centro. Una recta enemiga se acerca.
+Calculamos $d$, la distancia del Centro a la Recta.
+
+| Caso | Comparación | Interpretación | Puntos de Contacto |
+| :--- | :--- | :--- | :--- |
+| **Exterior** | $d > r$ | La recta pasa lejos. | 0 |
+| **Tangente** | $d = r$ | La recta besa el borde. | 1 |
+| **Secante** | $d < r$ | La recta atraviesa el interior. | 2 |
 
 <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+    <strong style="color: #1e293b; font-size: 0.95rem; margin-left: 0.3rem;">Posiciones Relativas</strong>
+  </div>
   <img src="/images/geometria/analitica/posiciones-recta-circ.svg" alt="Posiciones recta-circunferencia" style="width: 100%; height: auto;" />
 </div>
 
-### Recta y Circunferencia
+---
 
-| Posición | Condición (distancia $d$ del centro a la recta) |
-|----------|------------------------------------------------|
-| Exterior | $d > r$ |
-| Tangente | $d = r$ |
-| Secante | $d < r$ |
+## 🔵 Circunferencia vs. Circunferencia
 
-### Dos Circunferencias
+Sean dos circunferencias con radios $R$ y $r$, y distancia entre centros $d$.
 
-| Posición | Condición ($d$ = distancia entre centros) |
-|----------|-------------------------------------------|
-| Externas | $d > r_1 + r_2$ |
-| Tangentes externas | $d = r_1 + r_2$ |
-| Secantes | $\|r_1 - r_2\| < d < r_1 + r_2$ |
-| Tangentes internas | $d = \|r_1 - r_2\|$ |
-| Una dentro de otra | $d < \|r_1 - r_2\|$ |
-| Concéntricas | $d = 0$ |
+1.  **Exteriores:** $d > R+r$. (Lejos).
+2.  **Tangentes Exteriores:** $d = R+r$. (Se tocan por fuera, como un "8").
+3.  **Secantes:** $R-r < d < R+r$. (Se cruzan en dos puntos, como un diagrama de Venn).
+4.  **Tangentes Interiores:** $d = R-r$. (Una dentro de otra, tocándose en un punto).
+5.  **Interiores:** $d < R-r$. (Una flota dentro de la otra).
+6.  **Concéntricas:** $d = 0$. (Mismo centro).
 
 ---
 
-## 📖 Recta y Circunferencia
+## ⚙️ Ejemplos Resueltos
 
-Sea una circunferencia con centro $C$ y radio $r$, y una recta $\ell$.
+### Ejemplo 1: Diagnóstico Recta
+Circunferencia $x^2 + y^2 = 25$ ($C(0,0), r=5$). Recta $x=6$.
+1.  Distancia del centro $(0,0)$ a la recta vertical $x=6$ es $d=6$.
+2.  Comparar: $d=6, r=5$.
+3.  $6 > 5$.
+    **Resultado:** Recta Exterior.
 
-La **distancia $d$** del centro a la recta determina la posición:
+### Ejemplo 2: Diagnóstico Circunferencias
+$C_1$ radio 5, $C_2$ radio 3. Distancia entre centros $d=2$.
+1.  Suma radios: $5+3=8$.
+2.  Resta radios: $5-3=2$.
+3.  Comparar $d=2$ con la resta.
+    **Resultado:** Tangentes Interiores. (El pequeño está justo tocando el borde interno del grande).
 
-### Recta Exterior ($d > r$)
-
-La recta no toca la circunferencia. No hay puntos de intersección.
-
-### Recta Tangente ($d = r$)
-
-La recta toca la circunferencia en exactamente **un punto**. Este punto se llama **punto de tangencia**.
-
-### Recta Secante ($d < r$)
-
-La recta corta la circunferencia en **dos puntos**.
-
----
-
-## 📖 Ejemplos de Recta-Circunferencia
-
-### ⚙️ Ejemplo 1: Determinar posición
-
-Determina la posición de la recta $3x + 4y - 20 = 0$ respecto a la circunferencia $x^2 + y^2 = 9$.
-
-**Datos:**
-- Centro: $(0, 0)$
-- Radio: $r = 3$
-- Recta: $3x + 4y - 20 = 0$
-
-**Distancia del centro a la recta:**
-$$
-d = \frac{|3(0) + 4(0) - 20|}{\sqrt{9 + 16}} = \frac{20}{5} = 4
-$$
-
-**Comparación:** $d = 4 > r = 3$
-
-**Respuesta:** La recta es **exterior** a la circunferencia.
-
-### ⚙️ Ejemplo 2: Recta tangente
-
-Verifica que $y = x + \sqrt{2}$ es tangente a $x^2 + y^2 = 1$.
-
-**Centro:** $(0, 0)$, **Radio:** $r = 1$
-
-**Recta en forma general:** $x - y + \sqrt{2} = 0$
-
-**Distancia:**
-$$
-d = \frac{|0 - 0 + \sqrt{2}|}{\sqrt{1 + 1}} = \frac{\sqrt{2}}{\sqrt{2}} = 1
-$$
-
-Como $d = r = 1$, la recta es **tangente**.
-
-### ⚙️ Ejemplo 3: Recta secante
-
-Determina la posición de $y = x$ respecto a $(x-3)^2 + (y-2)^2 = 25$.
-
-**Centro:** $(3, 2)$, **Radio:** $r = 5$
-
-**Recta:** $x - y = 0$
-
-**Distancia:**
-$$
-d = \frac{|3 - 2 + 0|}{\sqrt{2}} = \frac{1}{\sqrt{2}} \approx 0.71
-$$
-
-Como $d \approx 0.71 < r = 5$, la recta es **secante**.
-
----
-
-## 📖 Puntos de Intersección
-
-Para encontrar los puntos de intersección entre una recta y una circunferencia:
-
-1. Despeja una variable de la ecuación de la recta
-2. Sustituye en la ecuación de la circunferencia
-3. Resuelve la ecuación cuadrática resultante
-
-### ⚙️ Ejemplo 4: Encontrar intersecciones
-
-Encuentra los puntos de intersección de $y = x + 1$ con $x^2 + y^2 = 5$.
-
-**Sustituyendo:**
-$$
-x^2 + (x + 1)^2 = 5
-$$
-$$
-x^2 + x^2 + 2x + 1 = 5
-$$
-$$
-2x^2 + 2x - 4 = 0
-$$
-$$
-x^2 + x - 2 = 0
-$$
-$$
-(x + 2)(x - 1) = 0
-$$
-
-$x = -2$ o $x = 1$
-
-**Puntos:**
-- $x = -2$: $y = -2 + 1 = -1$ → $(-2, -1)$
-- $x = 1$: $y = 1 + 1 = 2$ → $(1, 2)$
-
----
-
-## 📖 Dos Circunferencias
-
-<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <img src="/images/geometria/analitica/posiciones-dos-circ.svg" alt="Posiciones entre dos circunferencias" style="width: 100%; height: auto;" />
-</div>
-
-Sean dos circunferencias con centros $C_1$, $C_2$ y radios $r_1$, $r_2$.
-
-La **distancia entre centros** $d = d(C_1, C_2)$ determina la posición.
-
-### ⚙️ Ejemplo 5: Circunferencias externas
-
-Circunferencia 1: Centro $(0, 0)$, radio $3$
-Circunferencia 2: Centro $(10, 0)$, radio $4$
-
-**Distancia:** $d = 10$
-
-**Suma de radios:** $r_1 + r_2 = 7$
-
-Como $d = 10 > 7$, son **externas** (no se tocan).
-
-### ⚙️ Ejemplo 6: Tangentes externas
-
-Circunferencia 1: Centro $(0, 0)$, radio $3$
-Circunferencia 2: Centro $(8, 0)$, radio $5$
-
-**Distancia:** $d = 8$
-
-**Suma:** $r_1 + r_2 = 8$
-
-Como $d = r_1 + r_2$, son **tangentes externas**.
-
-### ⚙️ Ejemplo 7: Secantes
-
-Circunferencia 1: Centro $(0, 0)$, radio $5$
-Circunferencia 2: Centro $(4, 0)$, radio $3$
-
-**Distancia:** $d = 4$
-
-$|r_1 - r_2| = 2$ y $r_1 + r_2 = 8$
-
-Como $2 < 4 < 8$, son **secantes** (se cortan en dos puntos).
-
----
-
-## 🔑 Resumen
-
-| Posición Recta-Circunferencia | Puntos de intersección |
-|------------------------------|------------------------|
-| Exterior | 0 |
-| Tangente | 1 |
-| Secante | 2 |
+### Ejemplo 3: Cálculo Algebraico (Intersección)
+Intersección de $x^2+y^2=1$ y recta $y=2$.
+Sustituir: $x^2 + (2)^2 = 1 \Rightarrow x^2 + 4 = 1 \Rightarrow x^2 = -3$.
+No hay solución real para $x$.
+**Resultado:** No se tocan (Exterior).
 
 ---
 
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1
-Determina la posición de $x + y = 10$ respecto a $x^2 + y^2 = 32$.
+Posición de la recta $y=5$ respecto a $x^2+y^2=9$ ($r=3$).
 
 <details>
 <summary>Ver solución</summary>
 
-Centro: $(0, 0)$, Radio: $r = \sqrt{32} \approx 5.66$
+**Razonamiento:**
+Distancia al centro $(0,0)$ es 5. Radio 3. $5 > 3$.
 
-Distancia: $d = \frac{|0 + 0 - 10|}{\sqrt{2}} = \frac{10}{\sqrt{2}} = 5\sqrt{2} \approx 7.07$
-
-Como $d > r$, la recta es **exterior**.
-
+**Respuesta:** **Exterior**
 </details>
+
+---
 
 ### Ejercicio 2
-¿La recta $4x - 3y = 0$ es tangente a $(x-4)^2 + (y-3)^2 = 25$?
+Posición de $y=3$ respecto a $x^2+y^2=9$.
 
 <details>
 <summary>Ver solución</summary>
 
-Centro: $(4, 3)$, Radio: $r = 5$
+**Razonamiento:**
+Distancia 3. Radio 3. $d=r$.
 
-Distancia: $d = \frac{|4(4) - 3(3) - 0|}{5} = \frac{|16 - 9|}{5} = \frac{7}{5} = 1.4$
-
-Como $d = 1.4 < r = 5$, es **secante** (no tangente).
-
+**Respuesta:** **Tangente**
 </details>
+
+---
 
 ### Ejercicio 3
-Encuentra los puntos de intersección de $y = 2$ con $x^2 + y^2 = 13$.
+Dos circunferencias con radios 10 y 2, distancia 15.
 
 <details>
 <summary>Ver solución</summary>
 
-$x^2 + 4 = 13$
-$x^2 = 9$
-$x = \pm 3$
+**Razonamiento:**
+$10+2=12$. Distancia $15 > 12$.
 
-Puntos: $(3, 2)$ y $(-3, 2)$
-
+**Respuesta:** **Exteriores**
 </details>
+
+---
 
 ### Ejercicio 4
-Determina la posición entre las circunferencias con centros $(0, 0)$, $(5, 0)$ y radios $3$ y $4$.
+Dos circunferencias con radios 5 y 5, distancia 0.
 
 <details>
 <summary>Ver solución</summary>
 
-$d = 5$
-$r_1 + r_2 = 7$
-$|r_1 - r_2| = 1$
+**Razonamiento:**
+Mismo centro, mismo radio.
 
-Como $1 < 5 < 7$, son **secantes**.
-
+**Respuesta:** **Coincidentes (La misma)**
 </details>
+
+---
 
 ### Ejercicio 5
-¿Para qué valor de $k$ la recta $y = x + k$ es tangente a $x^2 + y^2 = 8$?
+Recta $3x+4y=0$ y círculo $x^2+y^2=25$ ($r=5$).
 
 <details>
 <summary>Ver solución</summary>
 
-Recta: $x - y + k = 0$
+**Razonamiento:**
+Recta pasa por el origen (centro).
 
-Para ser tangente: $d = r$
-
-$\frac{|k|}{\sqrt{2}} = \sqrt{8} = 2\sqrt{2}$
-
-$|k| = 2\sqrt{2} \cdot \sqrt{2} = 4$
-
-$k = 4$ o $k = -4$
-
+**Respuesta:** **Secante (Diámetro)**
 </details>
+
+---
+
+### Ejercicio 6
+Circunferencias tangentes exteriormente, radios 4 y 6. ¿Distancia?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$d = R+r = 4+6$.
+
+**Respuesta:** $\boxed{10}$
+</details>
+
+---
+
+### Ejercicio 7
+Si el discriminante de la ecuación de intersección es positivo, ¿posición?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Dos soluciones reales $\to$ dos puntos.
+
+**Respuesta:** **Secante**
+</details>
+
+---
+
+### Ejercicio 8
+Recta $y=x$ y círculo unitario. ¿Corta?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Pasa por el centro. Corta en 2 puntos.
+
+**Respuesta:** **Sí, Secante**
+</details>
+
+---
+
+### Ejercicio 9
+Círculo dentro de otro sin tocarse.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$d < R-r$.
+
+**Respuesta:** **Interiores**
+</details>
+
+---
+
+### Ejercicio 10
+Posición de $x=10$ con $x^2+y^2=1$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$d=10, r=1$. Muy lejos.
+
+**Respuesta:** **Exterior**
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Método | Herramienta |
+| :--- | :--- |
+| **Geométrico** | Comparar distancia $d$ con radio $r$. (Más rápido). |
+| **Algebraico** | Resolver el sistema de ecuaciones. (Más preciso, da los puntos exactos). |
+
+> **Conclusión:** Antes de resolver ecuaciones complejas, calcula siempre la distancia $d$. A menudo te ahorra mucho trabajo saber de antemano si la recta ni siquiera toca al círculo.

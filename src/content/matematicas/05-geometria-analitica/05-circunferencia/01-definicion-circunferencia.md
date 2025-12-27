@@ -1,267 +1,219 @@
-# Definición de la Circunferencia
+# **Definición de la Circunferencia**
 
-La circunferencia es una de las figuras geométricas más perfectas y fascinantes. Desde las ruedas hasta las órbitas de los planetas, los círculos están en todas partes. En geometría analítica, estudiaremos cómo representar una circunferencia mediante una ecuación.
+Todos sabemos qué es un círculo ("una redonda"), pero en matemáticas necesitamos ser más precisos. ¿Cómo le explicas a una computadora qué es un círculo sin dibujarlo? Usando una "regla sagrada" sobre la distancia.
 
 ---
 
 ## 🎯 ¿Qué vas a aprender?
 
-- La definición de circunferencia como lugar geométrico
-- Sus elementos fundamentales
-- Cómo construir la ecuación a partir de la definición
+- La diferencia entre Círculo (relleno) y Circunferencia (borde).
+- La definición oficial: "Equidistancia a un centro".
+- Cómo traducir esa definición a la fórmula matemática $\sqrt{(x-h)^2 + (y-k)^2} = r$.
+- Los elementos clave: Radio, Diámetro, Cuerda y Arco.
 
 ---
 
-## 📖 Lo Esencial de la Circunferencia
+## ⭕ El Club Exclusivo
+
+Una circunferencia es un club muy estricto.
+*   **El Portero (Centro):** El punto fijo $C(h, k)$.
+*   **La Regla de Entrada (Radio):** "Solo entras si estás exactamente a $r$ metros de mí".
+*   **Los Miembros:** El conjunto de puntos $P(x, y)$ que cumplen la regla.
 
 <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+    <strong style="color: #1e293b; font-size: 0.95rem; margin-left: 0.3rem;">Elementos de la Circunferencia</strong>
+  </div>
   <img src="/images/geometria/analitica/elementos-circunferencia.svg" alt="Elementos de la circunferencia" style="width: 100%; height: auto;" />
 </div>
 
-| Elemento | Símbolo | Descripción |
-|----------|---------|-------------|
-| Centro | $C(h, k)$ | Punto equidistante de todos los puntos de la circunferencia |
-| Radio | $r$ | Distancia del centro a cualquier punto de la circunferencia |
-| Diámetro | $d = 2r$ | Segmento que pasa por el centro uniendo dos puntos |
-| Cuerda | — | Segmento que une dos puntos de la circunferencia |
+> **Ojo:** La circunferencia es la línea (el anillo). El círculo es la línea MÁS lo de adentro (la moneda).
 
 ---
 
-## 📖 Definición como Lugar Geométrico
+## 📐 De la Definición a la Ecuación
 
-> Una **circunferencia** es el lugar geométrico de todos los puntos del plano que están a una **distancia fija** (radio $r$) de un punto fijo (centro $C$).
+Si la distancia entre $P(x,y)$ y el Centro $C(h,k)$ debe ser $r$:
+$$ d(P, C) = r $$
 
-Matemáticamente, si el centro es $C(h, k)$ y el radio es $r$:
+Usando la fórmula de distancia entre dos puntos:
+$$ \sqrt{(x - h)^2 + (y - k)^2} = r $$
 
-$$
-\text{Circunferencia} = \{P(x, y) : d(P, C) = r\}
-$$
+Para quitar la raíz fea, elevamos al cuadrado:
+$$ (x - h)^2 + (y - k)^2 = r^2 $$
 
-Es decir, un punto $P(x, y)$ pertenece a la circunferencia si y solo si:
-
-$$
-\sqrt{(x - h)^2 + (y - k)^2} = r
-$$
+¡Y esa es la ecuación de la circunferencia!
 
 ---
 
-## 📖 Construcción de la Ecuación
+## ⚙️ Ejemplos Resueltos
 
-A partir de la definición de distancia:
+### Ejemplo 1: Escribir la Ecuación
+Centro en $(2, 3)$ y radio 5.
+$$ (x - 2)^2 + (y - 3)^2 = 5^2 $$
+$$ (x - 2)^2 + (y - 3)^2 = 25 $$
 
-$$
-\sqrt{(x - h)^2 + (y - k)^2} = r
-$$
+### Ejemplo 2: Centro en el Origen
+Centro $(0, 0)$ y radio 4.
+$$ (x - 0)^2 + (y - 0)^2 = 4^2 $$
+$$ x^2 + y^2 = 16 $$
 
-Elevando al cuadrado ambos lados:
-
-$$
-(x - h)^2 + (y - k)^2 = r^2
-$$
-
-Esta es la **ecuación canónica** (u ordinaria) de la circunferencia.
-
-### Caso especial: Centro en el origen
-
-Si el centro está en el origen $C(0, 0)$:
-
-$$
-x^2 + y^2 = r^2
-$$
-
----
-
-## 📖 Elementos de la Circunferencia
-
-### Centro
-El **centro** $C(h, k)$ es el punto desde el cual todos los puntos de la circunferencia están a igual distancia.
-
-### Radio
-El **radio** $r$ es la distancia constante del centro a cualquier punto de la circunferencia. Siempre es positivo: $r > 0$.
-
-### Diámetro
-El **diámetro** es el segmento que pasa por el centro y tiene sus extremos en la circunferencia. Su longitud es $d = 2r$.
-
-### Cuerda
-Una **cuerda** es un segmento cuyos extremos están sobre la circunferencia. El diámetro es la cuerda de mayor longitud.
-
----
-
-## 📖 Ejemplos Resueltos
-
-### ⚙️ Ejemplo 1: Circunferencia con centro en el origen
-
-Escribe la ecuación de la circunferencia con centro en $(0, 0)$ y radio 4.
-
-$$
-x^2 + y^2 = 16
-$$
-
-### ⚙️ Ejemplo 2: Circunferencia con centro desplazado
-
-Escribe la ecuación de la circunferencia con centro en $(3, -2)$ y radio 5.
-
-$$
-(x - 3)^2 + (y - (-2))^2 = 25
-$$
-
-$$
-(x - 3)^2 + (y + 2)^2 = 25
-$$
-
-### ⚙️ Ejemplo 3: Identificar centro y radio
-
-Identifica el centro y radio de $(x + 1)^2 + (y - 4)^2 = 9$.
-
-**Centro:** Comparamos con $(x - h)^2 + (y - k)^2 = r^2$
-
-- $(x + 1) = (x - (-1))$ → $h = -1$
-- $(y - 4)$ → $k = 4$
-- $r^2 = 9$ → $r = 3$
-
-**Respuesta:** Centro $C(-1, 4)$, radio $r = 3$.
-
-### ⚙️ Ejemplo 4: Verificar si un punto pertenece
-
-¿El punto $(3, 4)$ está sobre la circunferencia $x^2 + y^2 = 25$?
-
-**Verificamos:**
-$$
-3^2 + 4^2 = 9 + 16 = 25 ✓
-$$
-
-Sí, el punto está sobre la circunferencia.
-
-### ⚙️ Ejemplo 5: Circunferencia dado centro y un punto
-
-Encuentra la ecuación de la circunferencia con centro en $(2, 1)$ que pasa por $(5, 5)$.
-
-**Paso 1:** Calcular el radio (distancia del centro al punto):
-$$
-r = \sqrt{(5-2)^2 + (5-1)^2} = \sqrt{9 + 16} = 5
-$$
-
-**Paso 2:** Escribir la ecuación:
-$$
-(x - 2)^2 + (y - 1)^2 = 25
-$$
-
----
-
-## 📖 Interior, Exterior y Frontera
-
-<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <img src="/images/geometria/analitica/interior-exterior-circ.svg" alt="Interior, exterior y frontera" style="width: 100%; height: auto;" />
-</div>
-
-Para una circunferencia $(x - h)^2 + (y - k)^2 = r^2$:
-
-| Ubicación del punto $P(x_0, y_0)$ | Condición |
-|----------------------------------|-----------|
-| Sobre la circunferencia | $(x_0 - h)^2 + (y_0 - k)^2 = r^2$ |
-| Interior | $(x_0 - h)^2 + (y_0 - k)^2 < r^2$ |
-| Exterior | $(x_0 - h)^2 + (y_0 - k)^2 > r^2$ |
-
-### ⚙️ Ejemplo 6: Clasificar puntos
-
-Para la circunferencia $x^2 + y^2 = 25$, clasifica los puntos $(0, 0)$, $(3, 4)$ y $(4, 4)$.
-
-**Punto $(0, 0)$:** $0 + 0 = 0 < 25$ → **Interior**
-
-**Punto $(3, 4)$:** $9 + 16 = 25$ → **Sobre la circunferencia**
-
-**Punto $(4, 4)$:** $16 + 16 = 32 > 25$ → **Exterior**
-
----
-
-## 🔑 Resumen
-
-| Concepto | Descripción |
-|----------|-------------|
-| Definición | Puntos a distancia $r$ de un centro $C$ |
-| Ecuación canónica | $(x - h)^2 + (y - k)^2 = r^2$ |
-| Centro en origen | $x^2 + y^2 = r^2$ |
-| Radio | $r = \sqrt{(x_0-h)^2 + (y_0-k)^2}$ para punto conocido |
+### Ejemplo 3: Identificar Elementos
+Dada $(x + 1)^2 + (y - 4)^2 = 9$.
+*   El centro es $(-1, 4)$. (Cambia los signos de lo que ves).
+*   El radio es $\sqrt{9} = 3$.
 
 ---
 
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1
-Escribe la ecuación de la circunferencia con centro $(-4, 3)$ y radio 6.
+Ecuación con centro $(0,0)$ y radio 1.
 
 <details>
 <summary>Ver solución</summary>
 
-$$
-(x + 4)^2 + (y - 3)^2 = 36
-$$
+**Razonamiento:**
+$x^2 + y^2 = 1^1$.
 
+**Respuesta:** $\boxed{x^2 + y^2 = 1}$
 </details>
+
+---
 
 ### Ejercicio 2
-Identifica el centro y radio de $(x - 5)^2 + (y + 2)^2 = 49$.
+Radio de $x^2 + y^2 = 100$.
 
 <details>
 <summary>Ver solución</summary>
 
-Centro: $(5, -2)$
-Radio: $r = 7$
+**Razonamiento:**
+$r^2 = 100 \Rightarrow r = 10$.
 
+**Respuesta:** $\boxed{10}$
 </details>
+
+---
 
 ### Ejercicio 3
-¿El punto $(1, 1)$ está dentro, fuera o sobre la circunferencia $(x-2)^2 + (y-2)^2 = 4$?
+Centro de $(x-5)^2 + (y+2)^2 = 4$.
 
 <details>
 <summary>Ver solución</summary>
 
-$(1-2)^2 + (1-2)^2 = 1 + 1 = 2$
+**Razonamiento:**
+Cambia signos: $h=5, k=-2$.
 
-Como $2 < 4$, el punto está en el **interior**.
-
+**Respuesta:** $\boxed{(5, -2)}$
 </details>
+
+---
 
 ### Ejercicio 4
-Encuentra la ecuación de la circunferencia con centro en $(0, 3)$ que pasa por el origen.
+Si el diámetro es 10, ¿cuál es el radio?
 
 <details>
 <summary>Ver solución</summary>
 
-Radio = distancia de $(0, 3)$ al origen:
-$$
-r = \sqrt{0 + 9} = 3
-$$
+**Razonamiento:**
+$r = D/2 = 5$.
 
-Ecuación:
-$$
-x^2 + (y - 3)^2 = 9
-$$
-
+**Respuesta:** $\boxed{5}$
 </details>
+
+---
 
 ### Ejercicio 5
-Una circunferencia tiene como diámetro el segmento de $A(1, 2)$ a $B(7, 10)$. Encuentra su ecuación.
+Distancia máxima entre dos puntos de una circunferencia de radio 3.
 
 <details>
 <summary>Ver solución</summary>
 
-**Centro** (punto medio del diámetro):
-$$
-C = \left(\frac{1+7}{2}, \frac{2+10}{2}\right) = (4, 6)
-$$
+**Razonamiento:**
+Es el diámetro. $2 \times 3 = 6$.
 
-**Radio** (mitad del diámetro):
-$$
-d = \sqrt{(7-1)^2 + (10-2)^2} = \sqrt{36 + 64} = 10
-$$
-$$
-r = 5
-$$
-
-**Ecuación:**
-$$
-(x - 4)^2 + (y - 6)^2 = 25
-$$
-
+**Respuesta:** $\boxed{6}$
 </details>
+
+---
+
+### Ejercicio 6
+Ecuación si el centro es $(3,0)$ y radio 2.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$(x-3)^2 + y^2 = 4$.
+
+**Respuesta:** $\boxed{(x-3)^2 + y^2 = 4}$
+</details>
+
+---
+
+### Ejercicio 7
+¿El punto $(3,4)$ está en $x^2+y^2=25$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$3^2 + 4^2 = 9 + 16 = 25$. Sí cumple.
+
+**Respuesta:** **Sí**
+</details>
+
+---
+
+### Ejercicio 8
+¿Cuántos puntos tiene una circunferencia?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Es una línea continua cerrada.
+
+**Respuesta:** **Infinitos**
+</details>
+
+---
+
+### Ejercicio 9
+Diferencia entre $(x-1)^2$ y $x^2-1$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$(x-1)^2$ es un binomio (circunferencia desplazada). $x^2-1$ es una resta. No confundir.
+
+**Respuesta:** **Son distintos**
+</details>
+
+---
+
+### Ejercicio 10
+Ecuación de la circunferencia unitaria.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Centro $(0,0)$, radio 1.
+
+**Respuesta:** $\boxed{x^2 + y^2 = 1}$
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Elemento | En la Ecuación | Función |
+| :--- | :--- | :--- |
+| **Centro $(h,k)$** | Aparece restando: $(x-h), (y-k)$. | Ubica el círculo en el mapa. |
+| **Radio $r$** | Aparece al cuadrado $r^2$. | Define el tamaño. |
+| **Fórmula** | $(x-h)^2 + (y-k)^2 = r^2$ | El ADN de la circunferencia. |
+
+> **Conclusión:** La circunferencia no es más que una aplicación directa del Teorema de Pitágoras. Cada punto forma un triángulo rectángulo con el radio como hipotenusa.

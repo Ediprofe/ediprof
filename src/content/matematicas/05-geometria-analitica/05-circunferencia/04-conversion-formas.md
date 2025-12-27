@@ -1,279 +1,217 @@
-# Conversión Entre Formas de la Circunferencia
+# **Conversión Entre Formas de la Circunferencia**
 
-Dominar la conversión entre la forma ordinaria y la forma general de la circunferencia es una habilidad fundamental. En esta lección practicaremos sistemáticamente estas conversiones.
+Eres bilingüe: hablas "Ordinaria" y "General". Pero a veces necesitas traducir. Si quieres graficar rápido, traduces a Ordinaria. Si quieres programar o resolver sistemas, traduces a General. Hoy practicaremos la traducción fluida.
 
 ---
 
 ## 🎯 ¿Qué vas a aprender?
 
-- Técnicas para convertir entre formas
-- Cómo verificar resultados
-- Casos especiales y errores comunes
+- De Ordinaria a General: El arte de Expandir (Álgebra fácil).
+- De General a Ordinaria: El arte de Completar Cuadrados (El truco ninja).
+- Cómo verificar que no rompiste las matemáticas en el proceso.
 
 ---
 
-## 📖 Lo Esencial de Conversiones
+## ➡️ De Ordinaria a General (Expandir)
 
-| De → A | Técnica |
-|--------|---------|
-| Ordinaria → General | Expandir binomios y simplificar |
-| General → Ordinaria | Completar el cuadrado |
+Solo necesitas saber desarrollar binomios al cuadrado: $(a+b)^2 = a^2 + 2ab + b^2$.
 
----
+**Algoritmo:**
+1.  Expande los paréntesis $(x-h)^2$ y $(y-k)^2$.
+2.  Mueve el $r^2$ a la izquierda.
+3.  Ordena: Primero cuadrados ($x^2, y^2$), luego lineales ($x, y$), al final el número solo.
 
-## 📖 De Ordinaria a General
-
-### Procedimiento
-
-1. Expande $(x - h)^2 = x^2 - 2hx + h^2$
-2. Expande $(y - k)^2 = y^2 - 2ky + k^2$
-3. Pasa $r^2$ al lado izquierdo
-4. Identifica $D$, $E$, $F$
-
-### ⚙️ Ejemplo 1: Conversión básica
-
-Convierte $(x - 2)^2 + (y - 5)^2 = 9$ a forma general.
-
-$$
-x^2 - 4x + 4 + y^2 - 10y + 25 = 9
-$$
-
-$$
-x^2 + y^2 - 4x - 10y + 29 - 9 = 0
-$$
-
-$$
-x^2 + y^2 - 4x - 10y + 20 = 0
-$$
-
-### ⚙️ Ejemplo 2: Con signos negativos
-
-Convierte $(x + 3)^2 + (y - 1)^2 = 16$ a forma general.
-
-Recordamos: $(x + 3)^2 = x^2 + 6x + 9$
-
-$$
-x^2 + 6x + 9 + y^2 - 2y + 1 = 16
-$$
-
-$$
-x^2 + y^2 + 6x - 2y + 10 - 16 = 0
-$$
-
-$$
-x^2 + y^2 + 6x - 2y - 6 = 0
-$$
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+    <strong style="color: #1e293b; font-size: 0.95rem; margin-left: 0.3rem;">El Proceso de Conversión</strong>
+  </div>
+  <img src="/images/geometria/analitica/conversion-formas-circ.svg" alt="Conversión entre formas" style="width: 100%; height: auto;" />
+</div>
 
 ---
 
-## 📖 De General a Ordinaria
+## ⬅️ De General a Ordinaria (Completar Cuadrados)
 
-### Procedimiento: Completar el Cuadrado
+Esta dirección es más técnica. Tienes $x^2 + 6x$ y quieres volver a $(x+3)^2$.
 
-Para $x^2 + bx$: suma y resta $\left(\frac{b}{2}\right)^2$
-
-**Fórmula:**
-$$
-x^2 + bx = \left(x + \frac{b}{2}\right)^2 - \frac{b^2}{4}
-$$
-
-### ⚙️ Ejemplo 3: Paso a paso
-
-Convierte $x^2 + y^2 - 8x + 6y - 11 = 0$ a forma ordinaria.
-
-**Paso 1:** Reorganiza:
-$$
-(x^2 - 8x) + (y^2 + 6y) = 11
-$$
-
-**Paso 2:** Completa el cuadrado para $x$:
-- Coeficiente de $x$: $-8$
-- Mitad: $-4$
-- Cuadrado: $16$
-- $x^2 - 8x + 16 = (x - 4)^2$
-
-**Paso 3:** Completa el cuadrado para $y$:
-- Coeficiente de $y$: $6$
-- Mitad: $3$
-- Cuadrado: $9$
-- $y^2 + 6y + 9 = (y + 3)^2$
-
-**Paso 4:** Añade los mismos valores al lado derecho:
-$$
-(x - 4)^2 + (y + 3)^2 = 11 + 16 + 9 = 36
-$$
-
-**Resultado:** Centro $(4, -3)$, radio $6$
-
-### ⚙️ Ejemplo 4: Otro ejemplo completo
-
-Convierte $x^2 + y^2 + 2x - 10y + 17 = 0$.
-
-$$
-(x^2 + 2x) + (y^2 - 10y) = -17
-$$
-
-Para $x$: $x^2 + 2x + 1 = (x + 1)^2$
-
-Para $y$: $y^2 - 10y + 25 = (y - 5)^2$
-
-$$
-(x + 1)^2 + (y - 5)^2 = -17 + 1 + 25 = 9
-$$
-
-**Resultado:** Centro $(-1, 5)$, radio $3$
+**Algoritmo:**
+1.  Agrupa las $x$ con $x$, las $y$ con $y$.
+2.  Mueve el número suelto ($F$) a la derecha (cambia signo).
+3.  **El Truco:** Toma el número que acompaña a la $x$, divídelo por 2, elévalo al cuadrado y SÚMALO a ambos lados. Repite para $y$.
+4.  Factoriza los trinomios perfectos.
 
 ---
 
-## 📖 Verificación de Resultados
+## ⚙️ Ejemplos Resueltos
 
-Siempre verifica tu conversión:
+### Ejemplo 1: Ordinaria $\to$ General
+Convertir $(x - 3)^2 + (y + 4)^2 = 25$.
+1.  $x^2 - 6x + 9 + y^2 + 8y + 16 = 25$.
+2.  Agrupar: $x^2 + y^2 - 6x + 8y + (9 + 16 - 25) = 0$.
+3.  $x^2 + y^2 - 6x + 8y = 0$. (Pasa por el origen).
 
-1. **De ordinaria a general:** Expande nuevamente y compara
-2. **De general a ordinaria:** Sustituye centro y radio en fórmulas
-
-### ⚙️ Ejemplo 5: Verificación
-
-Verificar que $(x-3)^2 + (y+2)^2 = 25$ da $x^2 + y^2 - 6x + 4y - 12 = 0$.
-
-**Usando fórmulas directas:**
-
-De la forma general $D = -6$, $E = 4$, $F = -12$:
-
-- Centro: $\left(\frac{6}{2}, \frac{-4}{2}\right) = (3, -2)$ ✓
-- Radio: $\frac{1}{2}\sqrt{36 + 16 + 48} = \frac{1}{2}\sqrt{100} = 5$ ✓
-
----
-
-## 📖 Casos Especiales
-
-### Circunferencia centrada en el origen
-
-$$
-x^2 + y^2 = r^2 \iff x^2 + y^2 - r^2 = 0
-$$
-
-En este caso: $D = 0$, $E = 0$, $F = -r^2$
-
-### ⚙️ Ejemplo 6: Centro en origen
-
-$x^2 + y^2 = 49$
-
-Forma general: $x^2 + y^2 - 49 = 0$
-
-### Circunferencia con centro en un eje
-
-Si el centro está sobre el eje X: $C(h, 0)$
-
-$$
-(x - h)^2 + y^2 = r^2
-$$
-
-### ⚙️ Ejemplo 7: Centro sobre eje X
-
-$(x - 4)^2 + y^2 = 9$
-
-Forma general: $x^2 - 8x + 16 + y^2 - 9 = 0$
-
-$$
-x^2 + y^2 - 8x + 7 = 0
-$$
-
----
-
-## 📖 Errores Comunes
-
-| Error | Corrección |
-|-------|-----------|
-| Olvidar sumar al lado derecho | Al completar el cuadrado, lo que sumas a la izquierda también va a la derecha |
-| Confundir signos del centro | $(x + 3) = (x - (-3))$ significa $h = -3$ |
-| Olvidar que $r^2$ está en la ecuación | El número es $r^2$, no $r$ |
-
----
-
-## 🔑 Resumen
-
-| Proceso | Pasos clave |
-|---------|-------------|
-| Ordinaria → General | Expandir, reorganizar, simplificar |
-| General → Ordinaria | Agrupar, completar cuadrado, sumar a ambos lados |
-| Centro de forma general | $\left(-\frac{D}{2}, -\frac{E}{2}\right)$ |
-| Radio de forma general | $\frac{1}{2}\sqrt{D^2 + E^2 - 4F}$ |
+### Ejemplo 2: General $\to$ Ordinaria
+Convertir $x^2 + y^2 + 10x - 2y + 10 = 0$.
+1.  Agrupar: $(x^2 + 10x) + (y^2 - 2y) = -10$.
+2.  **Completar:**
+    *   $x$: Mitad de 10 es 5. Cuadrado es 25. Sumo 25.
+    *   $y$: Mitad de -2 es -1. Cuadrado es 1. Sumo 1.
+    *   Ecuación: $(x^2 + 10x + \mathbf{25}) + (y^2 - 2y + \mathbf{1}) = -10 + \mathbf{25} + \mathbf{1}$.
+3.  Factorizar: $(x + 5)^2 + (y - 1)^2 = 16$.
+    *   Centro $(-5, 1)$, Radio 4.
 
 ---
 
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1
-Convierte $(x + 5)^2 + (y - 2)^2 = 36$ a forma general.
+Expande $(x+1)^2 + (y-1)^2 = 4$.
 
 <details>
 <summary>Ver solución</summary>
 
-$x^2 + 10x + 25 + y^2 - 4y + 4 = 36$
+**Razonamiento:**
+$x^2 + 2x + 1 + y^2 - 2y + 1 - 4 = 0$.
 
-$x^2 + y^2 + 10x - 4y - 7 = 0$
-
+**Respuesta:** $\boxed{x^2 + y^2 + 2x - 2y - 2 = 0}$
 </details>
+
+---
 
 ### Ejercicio 2
-Convierte $x^2 + y^2 - 12x + 4y + 15 = 0$ a forma ordinaria.
+Completa cuadrado para $x^2 - 8x$.
 
 <details>
 <summary>Ver solución</summary>
 
-$(x^2 - 12x + 36) + (y^2 + 4y + 4) = -15 + 36 + 4$
+**Razonamiento:**
+Mitad de -8 es -4. Cuadrado 16.
 
-$(x - 6)^2 + (y + 2)^2 = 25$
-
-Centro: $(6, -2)$, Radio: $5$
-
+**Respuesta:** $\boxed{(x-4)^2 - 16}$
 </details>
+
+---
 
 ### Ejercicio 3
-Encuentra centro y radio de $x^2 + y^2 + 6x = 0$.
+Convierte $x^2 + y^2 - 4x = 0$ a Ordinaria.
 
 <details>
 <summary>Ver solución</summary>
 
-$D = 6$, $E = 0$, $F = 0$
+**Razonamiento:**
+$(x^2 - 4x + 4) + y^2 = 4 \Rightarrow (x-2)^2 + y^2 = 4$.
 
-Centro: $(-3, 0)$
-
-Radio: $\frac{1}{2}\sqrt{36 + 0 - 0} = 3$
-
-O completando cuadrado:
-$(x + 3)^2 - 9 + y^2 = 0$
-$(x + 3)^2 + y^2 = 9$
-
+**Respuesta:** $\boxed{(x-2)^2 + y^2 = 4}$
 </details>
+
+---
 
 ### Ejercicio 4
-Convierte $(x - 1)^2 + (y + 4)^2 = 1$ a forma general.
+Expande $(x-5)^2 + y^2 = 25$.
 
 <details>
 <summary>Ver solución</summary>
 
-$x^2 - 2x + 1 + y^2 + 8y + 16 = 1$
+**Razonamiento:**
+$x^2 - 10x + 25 + y^2 - 25 = 0$.
 
-$x^2 + y^2 - 2x + 8y + 16 = 0$
-
+**Respuesta:** $\boxed{x^2 + y^2 - 10x = 0}$
 </details>
+
+---
 
 ### Ejercicio 5
-Verifica convirtiendo en ambas direcciones: ¿$(x-2)^2+(y-3)^2=4$ es equivalente a $x^2+y^2-4x-6y+9=0$?
+Halla el radio de $x^2 + y^2 + 6y = 0$.
 
 <details>
 <summary>Ver solución</summary>
 
-**Expandiendo la forma ordinaria:**
+**Razonamiento:**
+$x^2 + (y^2 + 6y + 9) = 9 \Rightarrow x^2 + (y+3)^2 = 9$.
 
-$x^2 - 4x + 4 + y^2 - 6y + 9 = 4$
-
-$x^2 + y^2 - 4x - 6y + 13 - 4 = 0$
-
-$x^2 + y^2 - 4x - 6y + 9 = 0$ ✓
-
-**Sí son equivalentes.**
-
+**Respuesta:** $\boxed{3}$
 </details>
+
+---
+
+### Ejercicio 6
+Convierte $x^2 + y^2 + 2x + 2y + 2 = 0$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$(x^2+2x+1) + (y^2+2y+1) = -2+1+1 = 0$.
+$(x+1)^2 + (y+1)^2 = 0$.
+
+**Respuesta:** **Es un punto (-1, -1)**
+</details>
+
+---
+
+### Ejercicio 7
+¿Qué sumas a ambos lados para completar $y^2 - 5y$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$(5/2)^2 = 25/4$.
+
+**Respuesta:** $\boxed{6.25 \text{ o } 25/4}$
+</details>
+
+---
+
+### Ejercicio 8
+Expande $(x-0.5)^2 + y^2 = 0.25$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$x^2 - x + 0.25 + y^2 = 0.25$.
+
+**Respuesta:** $\boxed{x^2 + y^2 - x = 0}$
+</details>
+
+---
+
+### Ejercicio 9
+Convierte $2x^2 + 2y^2 - 8x = 0$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Divide por 2 primero. $x^2 + y^2 - 4x = 0$.
+$(x-2)^2 + y^2 = 4$.
+
+**Respuesta:** $\boxed{(x-2)^2 + y^2 = 4}$
+</details>
+
+---
+
+### Ejercicio 10
+Si al completar cuadrados obtienes $= -5$, ¿qué significa?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Radio al cuadrado negativo imposibles.
+
+**Respuesta:** **Circunferencia Imaginaria**
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Dirección | Acción Clave | Cuidado con... |
+| :--- | :--- | :--- |
+| **Ord $\to$ Gen** | Binomio $(a-b)^2 = a^2 - 2ab + b^2$. | Sumar bien los números sueltos. |
+| **Gen $\to$ Ord** | Mitad y Cuadrado. | Sumar lo mismo al lado derecho. |
+
+> **Conclusión:** Completar el cuadrado es una técnica de nivel "Jefe Final". Si la dominas, dominas la geometría analítica completa (elipses, parábolas, todo).

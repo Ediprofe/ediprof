@@ -1,304 +1,214 @@
-# Familias de Circunferencias
+# **Familias de Circunferencias**
 
-Así como estudiamos familias de rectas, también existen **familias de circunferencias** que comparten ciertas propiedades. Estas familias son útiles para resolver problemas donde hay infinitas soluciones posibles.
+Una familia es un grupo con rasgos compartidos. En el mundo de los círculos, una familia puede compartir el centro (como las ondas en un estanque), o compartir dos puntos por donde pasan. Estos grupos nos permiten modelar fenómenos como ondas, campos magnéticos y mapas topográficos.
 
 ---
 
 ## 🎯 ¿Qué vas a aprender?
 
-- Familias de circunferencias con centro fijo
-- Circunferencias concéntricas
-- Haz de circunferencias (radical axis)
+- La Familia Concéntrica: Mismo centro, distinto radio.
+- El Haz de Circunferencias: Todas pasan por la intersección de dos círculos base.
+- El Eje Radical: La línea recta mágica donde los "poderes" se equilibran.
 
 ---
 
-## 📖 Lo Esencial de Familias
+## 🎯 Tipos de Familias
 
-| Familia | Característica | Parámetro |
-|---------|---------------|-----------|
-| Centro fijo | Mismo centro, radios variables | $r$ |
-| Radio fijo | Diferentes centros, mismo radio | Centro |
-| Concéntricas | Mismo centro | $r$ |
-| Por un punto fijo | Pasan por un punto dado | Centro o radio |
+### 1. Concéntricas (El Blanco de Tiro)
+Comparten el centro $(h, k)$. Solo cambia $r$.
+$$ (x-h)^2 + (y-k)^2 = k^2 $$
+(Aquí $k$ es el parámetro variable, no la coordenada Y).
 
----
-
-## 📖 Circunferencias Concéntricas
+### 2. Haz de Circunferencias (Intersección)
+Si tienes dos círculos $C_1 = 0$ y $C_2 = 0$ que se cruzan, puedes generar infinitos círculos que pasen por esos mismos dos puntos usando esta fórmula:
+$$ C_1 + \lambda C_2 = 0 $$
+Donde $\lambda$ (lambda) es un número que tú eliges.
 
 <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <img src="/images/geometria/analitica/circunferencias-concentricas.svg" alt="Circunferencias concéntricas" style="width: 100%; height: auto;" />
-</div>
-
-Las **circunferencias concéntricas** tienen el mismo centro pero diferentes radios.
-
-**Familia:** 
-$$
-(x - h)^2 + (y - k)^2 = r^2
-$$
-
-donde $(h, k)$ es fijo y $r$ varía.
-
-### ⚙️ Ejemplo 1: Familia concéntrica
-
-La familia de circunferencias con centro en $(2, 3)$:
-
-$$
-(x - 2)^2 + (y - 3)^2 = r^2
-$$
-
-Para $r = 1, 2, 3, ...$: círculos cada vez más grandes, todos con centro $(2, 3)$.
-
----
-
-## 📖 Circunferencias por un Punto Fijo
-
-<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <img src="/images/geometria/analitica/circ-por-punto-fijo.svg" alt="Circunferencias por un punto fijo" style="width: 100%; height: auto;" />
-</div>
-
-Todas las circunferencias que pasan por un punto fijo $(a, b)$.
-
-Si el centro es $(h, k)$, el radio debe satisfacer:
-
-$$
-r = \sqrt{(a - h)^2 + (b - k)^2}
-$$
-
-### ⚙️ Ejemplo 2: Circunferencias por el origen
-
-La familia de circunferencias que pasan por el origen con centro en el eje X:
-
-Centro: $(h, 0)$, pasa por $(0, 0)$, entonces $r = h$.
-
-$$
-(x - h)^2 + y^2 = h^2
-$$
-
-Expandiendo: $x^2 - 2hx + h^2 + y^2 = h^2$
-
-$$
-x^2 + y^2 - 2hx = 0
-$$
-
-donde $h$ es el parámetro.
-
----
-
-## 📖 Circunferencias Tangentes a una Recta en un Punto
-
-<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <img src="/images/geometria/analitica/circ-tangentes-recta.svg" alt="Circunferencias tangentes a una recta" style="width: 100%; height: auto;" />
-</div>
-
-Las circunferencias tangentes a una recta en el punto $(a, b)$ tienen su centro sobre la recta perpendicular a la tangente que pasa por $(a, b)$.
-
-### ⚙️ Ejemplo 3: Tangente al eje X
-
-Circunferencias tangentes al eje X en el punto $(3, 0)$:
-
-El centro está en la recta vertical $x = 3$: Centro = $(3, k)$
-
-Como es tangente al eje X, $r = |k|$.
-
-$$
-(x - 3)^2 + (y - k)^2 = k^2
-$$
-
-donde $k \neq 0$ es el parámetro.
-
----
-
-## 📖 Haz de Circunferencias
-
-<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+    <strong style="color: #1e293b; font-size: 0.95rem; margin-left: 0.3rem;">Haz de Circunferencias</strong>
+  </div>
   <img src="/images/geometria/analitica/haz-circunferencias.svg" alt="Haz de circunferencias" style="width: 100%; height: auto;" />
 </div>
 
-Dadas dos circunferencias:
-- $C_1: x^2 + y^2 + D_1x + E_1y + F_1 = 0$
-- $C_2: x^2 + y^2 + D_2x + E_2y + F_2 = 0$
+---
 
-El **haz de circunferencias** que pasan por sus puntos de intersección es:
+## ⚡ El Eje Radical
 
-$$
-C_1 + \lambda C_2 = 0
-$$
-
-O más explícitamente:
-
-$$
-(x^2 + y^2 + D_1x + E_1y + F_1) + \lambda(x^2 + y^2 + D_2x + E_2y + F_2) = 0
-$$
-
-### ⚙️ Ejemplo 4: Haz de circunferencias
-
-Las circunferencias $x^2 + y^2 - 4 = 0$ y $x^2 + y^2 - 2x - 2y = 0$ se intersectan.
-
-**Haz:**
-$$
-(x^2 + y^2 - 4) + \lambda(x^2 + y^2 - 2x - 2y) = 0
-$$
-
-$$
-(1 + \lambda)(x^2 + y^2) - 2\lambda x - 2\lambda y - 4 = 0
-$$
-
-Para $\lambda = -1$: obtenemos la **cuerda común** (eje radical).
+Es un caso especial del Haz. Si restas las ecuaciones de dos circunferencias ($C_1 - C_2 = 0$), los términos cuadráticos ($x^2, y^2$) se cancelan. ¡Lo que queda es una **Recta**!
+Esta recta (Eje Radical) pasa por los puntos de intersección de los dos círculos.
 
 ---
 
-## 📖 Eje Radical
+## ⚙️ Ejemplos Resueltos
 
-<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <img src="/images/geometria/analitica/eje-radical.svg" alt="Eje radical" style="width: 100%; height: auto;" />
-</div>
+### Ejemplo 1: Familia Concéntrica
+Halla la familia con centro $(2, 3)$.
+$$ (x-2)^2 + (y-3)^2 = R^2 $$
+Si quiero el miembro que pasa por $(5, 7)$, sustituyo:
+$(5-2)^2 + (7-3)^2 = R^2 \Rightarrow 3^2 + 4^2 = R^2 \Rightarrow 25 = R^2$.
+Ecuación: $(x-2)^2 + (y-3)^2 = 25$.
 
-El **eje radical** de dos circunferencias es el lugar geométrico de los puntos con igual potencia respecto a ambas circunferencias.
-
-Para $C_1$ y $C_2$, el eje radical es:
-
-$$
-C_1 - C_2 = 0
-$$
-
-Esto da una **recta**.
-
-### ⚙️ Ejemplo 5: Eje radical
-
-Encuentra el eje radical de:
-- $C_1: x^2 + y^2 - 4x - 6y + 9 = 0$
-- $C_2: x^2 + y^2 - 2x - 4y + 1 = 0$
-
-$$
-C_1 - C_2 = (-4x + 2x) + (-6y + 4y) + (9 - 1) = 0
-$$
-
-$$
--2x - 2y + 8 = 0
-$$
-
-$$
-x + y - 4 = 0
-$$
-
----
-
-## 📖 Circunferencias Ortogonales
-
-<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <img src="/images/geometria/analitica/circ-ortogonales.svg" alt="Circunferencias ortogonales" style="width: 100%; height: auto;" />
-</div>
-
-Dos circunferencias son **ortogonales** si se cortan formando ángulos rectos.
-
-**Condición:** Si $C_1$ tiene centro $O_1$, radio $r_1$ y $C_2$ tiene centro $O_2$, radio $r_2$:
-
-$$
-d^2 = r_1^2 + r_2^2
-$$
-
-donde $d$ es la distancia entre centros.
-
-### ⚙️ Ejemplo 6: Verificar ortogonalidad
-
-¿Son ortogonales $x^2 + y^2 = 4$ y $(x-2)^2 + y^2 = 4$?
-
-- $C_1$: Centro $(0, 0)$, $r_1 = 2$
-- $C_2$: Centro $(2, 0)$, $r_2 = 2$
-- Distancia: $d = 2$
-
-Verificamos: $d^2 = 4$, $r_1^2 + r_2^2 = 8$
-
-Como $4 \neq 8$, **no son ortogonales**.
-
----
-
-## 🔑 Resumen
-
-| Familia | Ecuación |
-|---------|----------|
-| Concéntricas | $(x-h)^2 + (y-k)^2 = r^2$, $r$ variable |
-| Haz por intersección | $C_1 + \lambda C_2 = 0$ |
-| Eje radical | $C_1 - C_2 = 0$ |
+### Ejemplo 2: El Eje Radical
+$C_1: x^2 + y^2 = 4$
+$C_2: x^2 + y^2 - 4x = 0$
+Resta ($C_1 - C_2$):
+$(x^2+y^2-4) - (x^2+y^2-4x) = 0$
+$4x - 4 = 0 \Rightarrow x = 1$.
+El eje radical es la recta vertical $x=1$.
 
 ---
 
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1
-Escribe la familia de circunferencias concéntricas con centro en $(-1, 4)$.
+Escribe la familia de círculos con centro en el origen.
 
 <details>
 <summary>Ver solución</summary>
 
-$$
-(x + 1)^2 + (y - 4)^2 = r^2
-$$
+**Razonamiento:**
+$x^2 + y^2 = R^2$.
 
-donde $r > 0$ es el parámetro.
-
+**Respuesta:** $\boxed{x^2 + y^2 = R^2}$
 </details>
+
+---
 
 ### Ejercicio 2
-De la familia de circunferencias que pasan por el origen y tienen centro en el eje Y, encuentra la que también pasa por $(0, 6)$.
+Halla el eje radical de $x^2+y^2=1$ y $x^2+y^2 - 2y = 0$.
 
 <details>
 <summary>Ver solución</summary>
 
-Centro en $(0, k)$, pasa por el origen: $r = k$
+**Razonamiento:**
+Resta: $-1 - (-2y) = 0 \Rightarrow 2y - 1 = 0$.
 
-$$
-x^2 + (y - k)^2 = k^2
-$$
-
-Pasa por $(0, 6)$: $(6 - k)^2 = k^2$
-
-$36 - 12k + k^2 = k^2$
-
-$k = 3$
-
-**Circunferencia:** $x^2 + (y - 3)^2 = 9$
-
+**Respuesta:** $\boxed{y = 0.5}$
 </details>
+
+---
 
 ### Ejercicio 3
-Encuentra el eje radical de $x^2 + y^2 = 25$ y $x^2 + y^2 - 10x = 0$.
+¿Qué forma tienen los círculos $x^2+y^2+Dx=0$?
 
 <details>
 <summary>Ver solución</summary>
 
-$C_1 - C_2$: $(x^2 + y^2 - 25) - (x^2 + y^2 - 10x) = 0$
+**Razonamiento:**
+Sus centros están en el eje X ($E=0$) y pasan por el origen ($F=0$).
 
-$-25 + 10x = 0$
-
-$x = 2.5$
-
+**Respuesta:** **Centros en Eje X, pasan por (0,0)**
 </details>
+
+---
 
 ### Ejercicio 4
-Escribe el haz de circunferencias determinado por $x^2 + y^2 - 2 = 0$ y $x^2 + y^2 - 4x = 0$.
+Si $\lambda = -1$ en el haz, ¿qué obtienes?
 
 <details>
 <summary>Ver solución</summary>
 
-$(x^2 + y^2 - 2) + \lambda(x^2 + y^2 - 4x) = 0$
+**Razonamiento:**
+$C_1 - C_2 = 0$. Se van los cuadrados.
 
-$(1 + \lambda)(x^2 + y^2) - 4\lambda x - 2 = 0$
-
+**Respuesta:** **El Eje Radical (Recta)**
 </details>
+
+---
 
 ### Ejercicio 5
-¿Cuál es la condición para que dos circunferencias con centros $(0, 0)$ y $(5, 0)$ y radios $r_1$ y $r_2$ sean ortogonales?
+Familia de círculos de radio 5 con centro en $y=x$.
 
 <details>
 <summary>Ver solución</summary>
 
-Distancia entre centros: $d = 5$
+**Razonamiento:**
+Centro $(h, h)$. Radio 5.
 
-Condición de ortogonalidad: $d^2 = r_1^2 + r_2^2$
-
-$$
-25 = r_1^2 + r_2^2
-$$
-
+**Respuesta:** $\boxed{(x-h)^2 + (y-h)^2 = 25}$
 </details>
+
+---
+
+### Ejercicio 6
+Dos círculos concéntricos se pueden tocar?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Solo si tienen el mismo radio (son el mismo). Si no, jamás.
+
+**Respuesta:** **No (salvo si son idénticos)**
+</details>
+
+---
+
+### Ejercicio 7
+Ecuación del círculo más pequeño de una familia concéntrica.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Radio 0 (El punto centro).
+
+**Respuesta:** **El punto centro**
+</details>
+
+---
+
+### Ejercicio 8
+¿El eje radical es perpendicular a la línea de los centros?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Propiedad fundamental. Siempre lo es.
+
+**Respuesta:** **Sí, siempre**
+</details>
+
+---
+
+### Ejercicio 9
+Escribe la familia tangente al eje X en el origen.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Centro en el eje Y $(0, k)$. Radio $k$.
+$x^2 + (y-k)^2 = k^2 \Rightarrow x^2 + y^2 - 2ky = 0$.
+
+**Respuesta:** $\boxed{x^2 + y^2 + Ey = 0}$
+</details>
+
+---
+
+### Ejercicio 10
+¿Cuántos círculos pasan por 3 puntos no alineados?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Solo uno. (El circuncentro del triángulo).
+
+**Respuesta:** **Exactamente uno**
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Concepto | Fórmula |
+| :--- | :--- |
+| **Concéntricas** | $(x-h)^2 + (y-k)^2 = \text{Variable}$. |
+| **Haz** | $C_1 + \lambda C_2 = 0$. |
+| **Eje Radical** | $C_1 - C_2 = 0$ (Recta). |
+
+> **Conclusión:** Las familias nos permiten generalizar. En lugar de resolver un problema para un solo círculo, lo resolvemos para infinitos círculos a la vez.

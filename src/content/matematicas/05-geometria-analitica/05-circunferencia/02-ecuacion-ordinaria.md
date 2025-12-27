@@ -1,269 +1,220 @@
-# Ecuación Ordinaria de la Circunferencia
+# **Ecuación Ordinaria**
 
-La **ecuación ordinaria** (o canónica) de la circunferencia es la forma más directa de escribir su ecuación, ya que muestra explícitamente el centro y el radio.
+La ecuación ordinaria (o canónica) es la forma "amable" de la circunferencia. Es como una etiqueta que te dice claramente: "Hola, mi centro es este y mi tamaño es aquel". Aprender a leerla te permite visualizar el círculo instantáneamente sin hacer cálculos difíciles.
 
 ---
 
 ## 🎯 ¿Qué vas a aprender?
 
-- La forma ordinaria de la ecuación
-- Cómo extraer información del centro y radio
-- Cómo construir la ecuación en diferentes situaciones
+- La estructura $(x - h)^2 + (y - k)^2 = r^2$.
+- Cómo extraer el centro y el radio solo mirando la ecuación.
+- Cómo escribir la ecuación si te dan el dibujo o los datos.
+- El truco de los signos (el error más común).
 
 ---
 
-## 📖 Lo Esencial de Ecuación Ordinaria
+## 📖 La Tarjeta de Identidad
+
+$$ (x - h)^2 + (y - k)^2 = r^2 $$
+
+*   **$h$:** Coordenada X del centro. (Ojo: va con signo cambiado).
+*   **$k$:** Coordenada Y del centro. (Ojo: va con signo cambiado).
+*   **$r^2$:** El radio al cuadrado. (Debes sacar raíz para saber el tamaño real).
 
 <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+    <strong style="color: #1e293b; font-size: 0.95rem; margin-left: 0.3rem;">De la Ecuación a la Gráfica</strong>
+  </div>
   <img src="/images/geometria/analitica/ecuacion-ordinaria-circ.svg" alt="Ecuación ordinaria de la circunferencia" style="width: 100%; height: auto;" />
 </div>
 
-| Situación | Ecuación |
-|-----------|----------|
-| Centro $(h, k)$, radio $r$ | $(x - h)^2 + (y - k)^2 = r^2$ |
-| Centro en el origen | $x^2 + y^2 = r^2$ |
+---
+
+## ⚠️ El Peligro de los Signos
+
+Si la fórmula dice $(x - 5)^2$, el centro es **+5**.
+Si la fórmula dice $(x + 3)^2$, el centro es **-3**.
+¿Por qué? Porque la fórmula original tiene un menos ($x - h$).
+*   $x - (5) = x - 5$.
+*   $x - (-3) = x + 3$.
+
+> **Regla de Oro:** Lo que ves en el paréntesis, cámbiale el signo para obtener el centro.
 
 ---
 
-## 📖 La Forma Ordinaria
+## ⚙️ Ejemplos Resueltos
 
-La **ecuación ordinaria** de una circunferencia con centro $C(h, k)$ y radio $r$ es:
+### Ejemplo 1: Leyendo la Ecuación
+Dada $(x - 4)^2 + (y + 2)^2 = 36$.
+1.  **Centro X:** Veo -4 $\to$ Es **4**.
+2.  **Centro Y:** Veo +2 $\to$ Es **-2**.
+3.  **Radio:** Veo 36 $\to$ La raíz es **6**.
+    *   C(4, -2), r=6.
 
-$$
-(x - h)^2 + (y - k)^2 = r^2
-$$
+### Ejemplo 2: Escribiendo la Ecuación
+Centro $(-1, 5)$ y Radio 3.
+1.  $h = -1 \to (x - (-1))^2 = (x + 1)^2$.
+2.  $k = 5 \to (y - 5)^2$.
+3.  $r = 3 \to r^2 = 9$.
+    *   **Ecuación:** $(x + 1)^2 + (y - 5)^2 = 9$.
 
-**Características:**
-- Los términos $(x - h)$ y $(y - k)$ son binomios al cuadrado
-- El lado derecho es $r^2$, no $r$
-- El centro se lee directamente: $(h, k)$
-- El radio se obtiene: $r = \sqrt{\text{lado derecho}}$
-
----
-
-## 📖 Lectura de Centro y Radio
-
-Para leer el centro y radio de una ecuación ordinaria:
-
-| De la ecuación | Se obtiene |
-|----------------|-----------|
-| $(x - h)$ | $h$ (coordenada x del centro) |
-| $(y - k)$ | $k$ (coordenada y del centro) |
-| Número del lado derecho | $r^2$ (radio al cuadrado) |
-
-### ⚙️ Ejemplo 1: Lectura directa
-
-De $(x - 3)^2 + (y - 5)^2 = 16$:
-
-- $h = 3$, $k = 5$ → Centro: $(3, 5)$
-- $r^2 = 16$ → $r = 4$
-
-### ⚙️ Ejemplo 2: Con signos negativos
-
-De $(x + 2)^2 + (y - 4)^2 = 25$:
-
-- $(x + 2) = (x - (-2))$ → $h = -2$
-- $(y - 4)$ → $k = 4$
-- Centro: $(-2, 4)$
-- $r = 5$
-
-### ⚙️ Ejemplo 3: Centro en origen
-
-De $x^2 + y^2 = 9$:
-
-Esto es $(x - 0)^2 + (y - 0)^2 = 9$
-
-- Centro: $(0, 0)$
-- $r = 3$
-
----
-
-## 📖 Construcción de la Ecuación
-
-### Dado centro y radio
-
-### ⚙️ Ejemplo 4: Centro y radio dados
-
-Centro $(4, -1)$, radio $7$.
-
-$$
-(x - 4)^2 + (y - (-1))^2 = 49
-$$
-
-$$
-(x - 4)^2 + (y + 1)^2 = 49
-$$
-
-### Dado centro y un punto de la circunferencia
-
-Primero calculamos el radio como la distancia del centro al punto.
-
-### ⚙️ Ejemplo 5: Centro y punto
-
-Centro $(1, 2)$ y pasa por $(4, 6)$.
-
-**Paso 1:** Calcular radio:
-$$
-r = \sqrt{(4-1)^2 + (6-2)^2} = \sqrt{9 + 16} = 5
-$$
-
-**Paso 2:** Ecuación:
-$$
-(x - 1)^2 + (y - 2)^2 = 25
-$$
-
-### Dados los extremos del diámetro
-
-El centro es el punto medio del diámetro, y el radio es la mitad de la longitud del diámetro.
-
-### ⚙️ Ejemplo 6: Extremos del diámetro
-
-Extremos del diámetro en $A(2, 3)$ y $B(8, 11)$.
-
-**Paso 1:** Centro (punto medio):
-$$
-C = \left(\frac{2+8}{2}, \frac{3+11}{2}\right) = (5, 7)
-$$
-
-**Paso 2:** Diámetro:
-$$
-d = \sqrt{(8-2)^2 + (11-3)^2} = \sqrt{36 + 64} = 10
-$$
-
-**Paso 3:** Radio: $r = \frac{d}{2} = 5$
-
-**Paso 4:** Ecuación:
-$$
-(x - 5)^2 + (y - 7)^2 = 25
-$$
-
----
-
-## 📖 Dado el Centro y Tangente a un Eje
-
-Si la circunferencia es **tangente** a un eje, el radio es la distancia del centro al eje.
-
-### ⚙️ Ejemplo 7: Tangente al eje X
-
-Centro $(3, 4)$, tangente al eje X.
-
-La distancia del centro $(3, 4)$ al eje X es $|4| = 4$.
-
-Por lo tanto, $r = 4$.
-
-$$
-(x - 3)^2 + (y - 4)^2 = 16
-$$
-
-### ⚙️ Ejemplo 8: Tangente al eje Y
-
-Centro $(-5, 2)$, tangente al eje Y.
-
-La distancia del centro al eje Y es $|-5| = 5$.
-
-Por lo tanto, $r = 5$.
-
-$$
-(x + 5)^2 + (y - 2)^2 = 25
-$$
-
----
-
-## 📖 Dado el Centro y Tangente a una Recta
-
-El radio es la distancia del centro a la recta tangente.
-
-### ⚙️ Ejemplo 9: Tangente a una recta
-
-Centro $(4, 1)$, tangente a la recta $3x + 4y - 20 = 0$.
-
-**Radio = distancia punto-recta:**
-$$
-r = \frac{|3(4) + 4(1) - 20|}{\sqrt{9 + 16}} = \frac{|12 + 4 - 20|}{5} = \frac{4}{5}
-$$
-
-**Ecuación:**
-$$
-(x - 4)^2 + (y - 1)^2 = \frac{16}{25}
-$$
-
----
-
-## 🔑 Resumen
-
-| Datos conocidos | Procedimiento |
-|-----------------|---------------|
-| Centro y radio | Sustituir directamente |
-| Centro y punto | Calcular radio con distancia |
-| Extremos del diámetro | Centro = punto medio, radio = d/2 |
-| Centro y tangente a eje | Radio = distancia al eje |
-| Centro y tangente a recta | Radio = distancia punto-recta |
+### Ejemplo 3: Centro en el Origen
+Centro $(0, 0)$ y Radio 10.
+$(x - 0)^2 + (y - 0)^2 = 100 \Rightarrow x^2 + y^2 = 100$.
 
 ---
 
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1
-Escribe la ecuación de la circunferencia con centro $(-3, 5)$ y radio 4.
+Centro y radio de $(x-2)^2 + (y-3)^2 = 16$.
 
 <details>
 <summary>Ver solución</summary>
 
-$$
-(x + 3)^2 + (y - 5)^2 = 16
-$$
+**Razonamiento:**
+Signos contrarios para centro, raíz para radio.
 
+**Respuesta:** $\boxed{C(2, 3), r=4}$
 </details>
+
+---
 
 ### Ejercicio 2
-Identifica centro y radio de $(x + 4)^2 + (y + 1)^2 = 81$.
+Ecuación para $C(0, -4)$ y $r=5$.
 
 <details>
 <summary>Ver solución</summary>
 
-Centro: $(-4, -1)$
-Radio: $r = 9$
+**Razonamiento:**
+$x^2 + (y+4)^2 = 25$.
 
+**Respuesta:** $\boxed{x^2 + (y+4)^2 = 25}$
 </details>
+
+---
 
 ### Ejercicio 3
-Encuentra la ecuación de la circunferencia con centro en $(2, -3)$ que pasa por $(5, 1)$.
+Radio de $x^2 + y^2 = 7$.
 
 <details>
 <summary>Ver solución</summary>
 
-$$
-r = \sqrt{(5-2)^2 + (1-(-3))^2} = \sqrt{9 + 16} = 5
-$$
+**Razonamiento:**
+$\sqrt{7} \approx 2.64$.
 
-Ecuación: $(x - 2)^2 + (y + 3)^2 = 25$
-
+**Respuesta:** $\boxed{\sqrt{7}}$
 </details>
+
+---
 
 ### Ejercicio 4
-Una circunferencia tiene centro en $(0, 5)$ y es tangente al eje X. Encuentra su ecuación.
+Centro de $(x+1)^2 + (y+1)^2 = 1$.
 
 <details>
 <summary>Ver solución</summary>
 
-Radio = distancia al eje X = $|5| = 5$
+**Razonamiento:**
+Cambiar signos.
 
-Ecuación: $x^2 + (y - 5)^2 = 25$
-
+**Respuesta:** $\boxed{(-1, -1)}$
 </details>
+
+---
 
 ### Ejercicio 5
-Encuentra la ecuación de la circunferencia cuyo diámetro tiene extremos en $(1, 1)$ y $(7, 9)$.
+Ecuación si diámetro AB tiene extremos $(0,0)$ y $(10,0)$.
 
 <details>
 <summary>Ver solución</summary>
 
-Centro: $(4, 5)$
+**Razonamiento:**
+Centro (punto medio) = $(5,0)$. Radio = 5.
 
-Diámetro: $\sqrt{36 + 64} = 10$
-
-Radio: $r = 5$
-
-Ecuación: $(x - 4)^2 + (y - 5)^2 = 25$
-
+**Respuesta:** $\boxed{(x-5)^2 + y^2 = 25}$
 </details>
+
+---
+
+### Ejercicio 6
+Conversión rápida: ¿Qué significa $(x-h)^2$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Distancia horizontal al centro al cuadrado.
+
+**Respuesta:** **Cuadrado de la distancia en X**
+</details>
+
+---
+
+### Ejercicio 7
+Ecuación tangente al eje X con centro $(3, 4)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Si toca el eje X, la altura es el radio. $r=4$.
+$(x-3)^2 + (y-4)^2 = 16$.
+
+**Respuesta:** $\boxed{(x-3)^2 + (y-4)^2 = 16}$
+</details>
+
+---
+
+### Ejercicio 8
+Centro de $x^2 + (y-10)^2 = 100$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$(0, 10)$.
+
+**Respuesta:** $\boxed{(0, 10)}$
+</details>
+
+---
+
+### Ejercicio 9
+Si el radio es 0.5, ¿qué va a la derecha de la ecuación?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$0.5^2 = 0.25$.
+
+**Respuesta:** $\boxed{0.25}$
+</details>
+
+---
+
+### Ejercicio 10
+Ecuación con centro $(-2, -3)$ y radio $\sqrt{5}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$(x+2)^2 + (y+3)^2 = 5$.
+
+**Respuesta:** $\boxed{(x+2)^2 + (y+3)^2 = 5}$
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Si ves... | Significa... |
+| :--- | :--- |
+| **$(x - 3)$** | El centro está en $x = 3$. |
+| **$(x + 3)$** | El centro está en $x = -3$. |
+| **$= 25$** | El radio es 5. |
+| **$x^2$ solo** | El centro X es 0. |
+
+> **Conclusión:** La ecuación ordinaria es tu amiga visual. Úsala siempre que necesites dibujar o entender la circunferencia rápidamente.

@@ -1,273 +1,238 @@
-# Ecuación General de la Circunferencia
+# **Ecuación General de la Circunferencia**
 
-La **ecuación general** de la circunferencia es una forma expandida que no muestra directamente el centro y radio, pero es útil para ciertos cálculos y análisis.
+Si desarrollas los cuadrados de la ecuación ordinaria y mueves todo a la izquierda, obtienes la **Ecuación General**. Es menos intuitiva (no ves el centro a simple vista), pero es la forma estándar en que las computadoras y los libros avanzados presentan las cónicas.
 
 ---
 
 ## 🎯 ¿Qué vas a aprender?
 
-- La forma general de la circunferencia
-- Cómo identificar si una ecuación es una circunferencia
-- Condiciones para que represente una circunferencia real
+- La forma $x^2 + y^2 + Dx + Ey + F = 0$.
+- Cómo recuperar el centro y el radio desde esta "sopa de letras".
+- Cómo saber si la ecuación es una circunferencia real, un punto o nada (imaginaria).
 
 ---
 
-## 📖 Lo Esencial de Ecuación General
+## 🧩 La Fórmula Expandida
 
-| Forma | Ecuación |
-|-------|----------|
-| General | $x^2 + y^2 + Dx + Ey + F = 0$ |
-| Centro | $\left(-\frac{D}{2}, -\frac{E}{2}\right)$ |
-| Radio | $r = \sqrt{\frac{D^2}{4} + \frac{E^2}{4} - F}$ |
-| Condición | $\frac{D^2 + E^2}{4} > F$ para circunferencia real |
+Partiendo de $(x - h)^2 + (y - k)^2 = r^2$, si expandimos:
+$x^2 - 2hx + h^2 + y^2 - 2ky + k^2 - r^2 = 0$.
 
----
+Reorganizando y renombrando constantes:
+$$ x^2 + y^2 + Dx + Ey + F = 0 $$
 
-## 📖 Forma General
+Donde:
+*   $D = -2h$
+*   $E = -2k$
+*   $F = h^2 + k^2 - r^2$
 
-La **ecuación general** de la circunferencia es:
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+    <strong style="color: #1e293b; font-size: 0.95rem; margin-left: 0.3rem;">De General a Gráfica</strong>
+  </div>
+  <img src="/images/geometria/analitica/ecuacion-general-conicas.svg" alt="Ecuación general de la circunferencia" style="width: 100%; height: auto;" />
+</div>
 
-$$
-x^2 + y^2 + Dx + Ey + F = 0
-$$
-
-**Características:**
-- Los coeficientes de $x^2$ y $y^2$ son **iguales** (ambos 1)
-- No hay término $xy$
-- $D$, $E$ y $F$ son constantes reales
-
----
-
-## 📖 De Forma Ordinaria a Forma General
-
-Para convertir $(x - h)^2 + (y - k)^2 = r^2$ a forma general:
-
-1. Expande los binomios al cuadrado
-2. Pasa todo al lado izquierdo
-3. Simplifica
-
-### ⚙️ Ejemplo 1: Expansión
-
-Convertir $(x - 3)^2 + (y + 2)^2 = 25$ a forma general.
-
-**Paso 1:** Expandir:
-$$
-x^2 - 6x + 9 + y^2 + 4y + 4 = 25
-$$
-
-**Paso 2:** Simplificar:
-$$
-x^2 + y^2 - 6x + 4y + 9 + 4 - 25 = 0
-$$
-
-$$
-x^2 + y^2 - 6x + 4y - 12 = 0
-$$
-
-**Forma general:** $D = -6$, $E = 4$, $F = -12$
+> **Truco Detective:** Para que sea circunferencia, $x^2$ y $y^2$ deben tener el **mismo coeficiente** (usualmente 1). Si son distintos, es una elipse o hipérbola.
 
 ---
 
-## 📖 De Forma General a Forma Ordinaria
+## 🔍 Recuperando el Centro y Radio
 
-Para convertir $x^2 + y^2 + Dx + Ey + F = 0$ a forma ordinaria:
+Si te dan $x^2 + y^2 + Dx + Ey + F = 0$:
 
-1. Agrupa los términos en $x$ y los términos en $y$
-2. Completa el cuadrado para cada grupo
-3. Pasa el término constante al lado derecho
+1.  **Centro $(h, k)$:**
+    $$ h = -D/2 $$
+    $$ k = -E/2 $$
+    *(Solo divide D y E por -2)*.
 
-### El Método de Completar el Cuadrado
-
-Para completar el cuadrado en $x^2 + Dx$:
-$$
-x^2 + Dx = \left(x + \frac{D}{2}\right)^2 - \frac{D^2}{4}
-$$
-
-### ⚙️ Ejemplo 2: Completar cuadrado
-
-Convertir $x^2 + y^2 - 4x + 6y - 12 = 0$ a forma ordinaria.
-
-**Paso 1:** Agrupar:
-$$
-(x^2 - 4x) + (y^2 + 6y) = 12
-$$
-
-**Paso 2:** Completar cuadrados:
-- Para $x$: $x^2 - 4x = (x - 2)^2 - 4$
-- Para $y$: $y^2 + 6y = (y + 3)^2 - 9$
-
-**Paso 3:** Sustituir:
-$$
-(x - 2)^2 - 4 + (y + 3)^2 - 9 = 12
-$$
-
-$$
-(x - 2)^2 + (y + 3)^2 = 12 + 4 + 9 = 25
-$$
-
-**Resultado:** Centro $(2, -3)$, radio $r = 5$
-
-### ⚙️ Ejemplo 3: Otro ejemplo
-
-Convertir $x^2 + y^2 + 8x - 2y - 8 = 0$ a forma ordinaria.
-
-**Agrupamos y completamos:**
-$$
-(x^2 + 8x) + (y^2 - 2y) = 8
-$$
-
-$$
-(x + 4)^2 - 16 + (y - 1)^2 - 1 = 8
-$$
-
-$$
-(x + 4)^2 + (y - 1)^2 = 25
-$$
-
-Centro: $(-4, 1)$, Radio: $5$
+2.  **Radio $r$:**
+    $$ r = \sqrt{h^2 + k^2 - F} $$
+    *(Usa el centro que acabas de hallar)*.
 
 ---
 
-## 📖 Fórmulas Directas
+## ⚖️ El Discriminante (¿Existe?)
 
-De la ecuación $x^2 + y^2 + Dx + Ey + F = 0$:
-
-**Centro:**
-$$
-C = \left(-\frac{D}{2}, -\frac{E}{2}\right)
-$$
-
-**Radio:**
-$$
-r = \sqrt{\frac{D^2}{4} + \frac{E^2}{4} - F} = \frac{1}{2}\sqrt{D^2 + E^2 - 4F}
-$$
-
-### ⚙️ Ejemplo 4: Fórmulas directas
-
-Para $x^2 + y^2 - 6x + 4y - 12 = 0$:
-
-- $D = -6$, $E = 4$, $F = -12$
-
-**Centro:**
-$$
-C = \left(-\frac{-6}{2}, -\frac{4}{2}\right) = (3, -2)
-$$
-
-**Radio:**
-$$
-r = \frac{1}{2}\sqrt{36 + 16 + 48} = \frac{1}{2}\sqrt{100} = 5
-$$
+Lo que está dentro de la raíz ($h^2 + k^2 - F$) decide el destino:
+*   **Positivo (>0):** Circunferencia Real.
+*   **Cero (=0):** Es un Punto (Radio 0).
+*   **Negativo (<0):** Circunferencia Imaginaria (No existe en el plano real).
 
 ---
 
-## 📖 Condiciones de Existencia
+## ⚙️ Ejemplos Resueltos
 
-Para que la ecuación represente una **circunferencia real**:
+### Ejemplo 1: Análisis Completo
+Dada $x^2 + y^2 - 6x + 4y - 12 = 0$.
+1.  **Identificar:** $D=-6, E=4, F=-12$.
+2.  **Centro:**
+    $h = -(-6)/2 = 3$.
+    $k = -4/2 = -2$.
+    **C(3, -2)**.
+3.  **Radio:**
+    $r = \sqrt{3^2 + (-2)^2 - (-12)}$.
+    $r = \sqrt{9 + 4 + 12} = \sqrt{25} = 5$.
 
-$$
-\frac{D^2 + E^2}{4} - F > 0
-$$
-
-O equivalentemente: $D^2 + E^2 - 4F > 0$
-
-| Condición | Resultado |
-|-----------|-----------|
-| $D^2 + E^2 - 4F > 0$ | Circunferencia real |
-| $D^2 + E^2 - 4F = 0$ | Circunferencia puntual (radio 0) |
-| $D^2 + E^2 - 4F < 0$ | Circunferencia imaginaria (no existe) |
-
-### ⚙️ Ejemplo 5: Verificar existencia
-
-¿$x^2 + y^2 - 2x + 4y + 10 = 0$ es una circunferencia real?
-
-- $D = -2$, $E = 4$, $F = 10$
-- $D^2 + E^2 - 4F = 4 + 16 - 40 = -20 < 0$
-
-**No es una circunferencia real** (el radio sería imaginario).
-
----
-
-## 🔑 Resumen
-
-| Conversión | Método |
-|------------|--------|
-| Ordinaria → General | Expandir y simplificar |
-| General → Ordinaria | Completar el cuadrado |
-| Centro directo | $\left(-\frac{D}{2}, -\frac{E}{2}\right)$ |
-| Radio directo | $\frac{1}{2}\sqrt{D^2 + E^2 - 4F}$ |
+### Ejemplo 2: ¿Es Real?
+Dada $x^2 + y^2 + 2x + 2y + 10 = 0$.
+1.  Centro: $(-1, -1)$.
+2.  Radio: $\sqrt{(-1)^2 + (-1)^2 - 10} = \sqrt{1 + 1 - 10} = \sqrt{-8}$.
+    **¡Error!** Raíz negativa. Es una circunferencia **Imaginaria**.
 
 ---
 
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1
-Convierte $(x + 1)^2 + (y - 3)^2 = 16$ a forma general.
+Halla el centro de $x^2 + y^2 - 10x + 6y - 2 = 0$.
 
 <details>
 <summary>Ver solución</summary>
 
-$$
-x^2 + 2x + 1 + y^2 - 6y + 9 = 16
-$$
+**Razonamiento:**
+$h = -(-10)/2 = 5$.
+$k = -6/2 = -3$.
 
-$$
-x^2 + y^2 + 2x - 6y - 6 = 0
-$$
-
+**Respuesta:** $\boxed{(5, -3)}$
 </details>
+
+---
 
 ### Ejercicio 2
-Encuentra el centro y radio de $x^2 + y^2 + 10x - 4y - 7 = 0$.
+Halla el radio de la anterior ($C(5, -3), F=-2$).
 
 <details>
 <summary>Ver solución</summary>
 
-$D = 10$, $E = -4$, $F = -7$
+**Razonamiento:**
+$r = \sqrt{25 + 9 - (-2)} = \sqrt{36} = 6$.
 
-Centro: $\left(-5, 2\right)$
-
-Radio: $r = \frac{1}{2}\sqrt{100 + 16 + 28} = \frac{1}{2}\sqrt{144} = 6$
-
+**Respuesta:** $\boxed{6}$
 </details>
+
+---
 
 ### Ejercicio 3
-Convierte $x^2 + y^2 - 6x + 2y + 1 = 0$ a forma ordinaria.
+Convierte $(x-1)^2 + y^2 = 4$ a General.
 
 <details>
 <summary>Ver solución</summary>
 
-$(x^2 - 6x + 9) + (y^2 + 2y + 1) = -1 + 9 + 1$
+**Razonamiento:**
+$x^2 - 2x + 1 + y^2 - 4 = 0$.
 
-$(x - 3)^2 + (y + 1)^2 = 9$
-
-Centro: $(3, -1)$, Radio: $3$
-
+**Respuesta:** $\boxed{x^2 + y^2 - 2x - 3 = 0}$
 </details>
+
+---
 
 ### Ejercicio 4
-¿Representa $x^2 + y^2 + 4x - 6y + 15 = 0$ una circunferencia real?
+Si $D=0$ y $E=0$, ¿dónde está el centro?
 
 <details>
 <summary>Ver solución</summary>
 
-$D^2 + E^2 - 4F = 16 + 36 - 60 = -8 < 0$
+**Razonamiento:**
+$h=0, k=0$.
 
-**No**, es una circunferencia imaginaria.
-
+**Respuesta:** **En el Origen**
 </details>
+
+---
 
 ### Ejercicio 5
-Encuentra los valores de $k$ para que $x^2 + y^2 - 4x + 2y + k = 0$ sea una circunferencia real.
+Analiza $x^2 + y^2 + 4 = 0$.
 
 <details>
 <summary>Ver solución</summary>
 
-Condición: $D^2 + E^2 - 4F > 0$
+**Razonamiento:**
+$x^2+y^2 = -4$. Suma de cuadrados no puede ser negativa.
 
-$16 + 4 - 4k > 0$
-
-$20 > 4k$
-
-$k < 5$
-
+**Respuesta:** **Imaginaria**
 </details>
+
+---
+
+### Ejercicio 6
+Centro de $2x^2 + 2y^2 - 8x = 0$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Primero divide todo por 2: $x^2 + y^2 - 4x = 0$.
+$D=-4 \implies h=2, k=0$.
+
+**Respuesta:** $\boxed{(2, 0)}$
+</details>
+
+---
+
+### Ejercicio 7
+¿Qué representa $x^2 + y^2 - 2x - 2y + 2 = 0$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$C(1, 1)$. $r = \sqrt{1+1-2} = \sqrt{0}$.
+
+**Respuesta:** **Un Punto (1, 1)**
+</details>
+
+---
+
+### Ejercicio 8
+Expande $(x+3)^2 + (y-2)^2 = 9$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$x^2 + 6x + 9 + y^2 - 4y + 4 - 9 = 0$.
+
+**Respuesta:** $\boxed{x^2 + y^2 + 6x - 4y + 4 = 0}$
+</details>
+
+---
+
+### Ejercicio 9
+Si $F=0$, ¿por dónde pasa la circunferencia?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Si $(0,0)$ cumple la ecuación ($0+0+0+0+0=0$).
+
+**Respuesta:** **Por el Origen**
+</details>
+
+---
+
+### Ejercicio 10
+Halla $k$ para que $x^2 + y^2 + 4x - 6y + k = 0$ sea un punto.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Radio debe ser 0. $C(-2, 3)$.
+$(-2)^2 + 3^2 - k = 0 \implies 4+9=k$.
+
+**Respuesta:** $\boxed{13}$
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Dato | Fórmula rápida |
+| :--- | :--- |
+| **Centro X** | Cambio signo de D y mitad. |
+| **Centro Y** | Cambio signo de E y mitad. |
+| **Radio** | Pitágoras con centro ($h, k$) menos F. |
+
+> **Conclusión:** La ecuación general es "fea" pero útil. Solo recuerda limpiar los coeficientes de $x^2$ (dividiendo si es necesario) antes de aplicar las fórmulas de $D$ y $E$.
