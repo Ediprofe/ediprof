@@ -1,317 +1,216 @@
-# Ecuación y Gráfica de un Lugar Geométrico
+# **Ecuación y Gráfica**
 
-Una ecuación describe un lugar geométrico, pero ¿cómo pasamos de una ecuación a su gráfica, y viceversa? Esta lección explora la relación fundamental entre ecuaciones algebraicas y sus representaciones gráficas.
+Una ecuación algebraica ($y = x^2$) y una curva dibujada en un papel son la misma cosa vista desde dos ángulos distintos. Si tienes la ecuación, puedes dibujar la gráfica. Si tienes la gráfica, puedes deducir la ecuación. Hoy aprenderemos a viajar entre estos dos mundos.
 
 ---
 
 ## 🎯 ¿Qué vas a aprender?
 
-- Cómo graficar una ecuación usando tabulación
-- Cómo interpretar una gráfica para deducir su ecuación
-- Propiedades de simetría y características de curvas
+- Cómo graficar cualquier ecuación usando **tabulación**.
+- Cómo encontrar los **interceptos** (cortes con los ejes).
+- Cómo detectar **simetrías** para ahorrar trabajo.
+- Cómo deducir la ecuación viendo el dibujo.
 
 ---
 
-## 📖 Lo Esencial de Ecuación y Gráfica
+## 📉 De la Ecuación a la Gráfica
 
-| Tipo de curva | Forma general | Característica visual |
-|---------------|---------------|----------------------|
-| Recta | $ax + by + c = 0$ | Línea sin curvatura |
-| Circunferencia | $x^2 + y^2 = r^2$ | Curva cerrada, todos los puntos equidistantes del centro |
-| Parábola | $y = ax^2$ o $x = ay^2$ | Curva abierta en U |
-| Elipse | $\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$ | Óvalo |
-| Hipérbola | $\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1$ | Dos ramas separadas |
+El método infalible (aunque lento) es la **Tabulación**. Haces una tabla "x vs y", calculas puntos y los unes.
 
 <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+    <strong style="color: #1e293b; font-size: 0.95rem; margin-left: 0.3rem;">Tabulación de una Parábola</strong>
+  </div>
   <img src="/images/geometria/analitica/parabola-tabulacion.svg" alt="Gráfica de parábola por tabulación" style="width: 100%; height: auto;" />
 </div>
 
----
-
-## 📖 De la Ecuación a la Gráfica
-
-El método más básico para graficar una ecuación es la **tabulación**: elegir valores de $x$, calcular los correspondientes valores de $y$, y marcar los puntos.
-
-### ⚙️ Ejemplo 1: Graficar una recta
-
-Grafica la ecuación $y = 2x - 1$.
-
-**Tabulación:**
-
-| $x$ | $y = 2x - 1$ |
-|-----|--------------|
-| $-2$ | $-5$ |
-| $-1$ | $-3$ |
-| $0$ | $-1$ |
-| $1$ | $1$ |
-| $2$ | $3$ |
-
-Marcamos los puntos $(-2, -5)$, $(-1, -3)$, $(0, -1)$, $(1, 1)$, $(2, 3)$ y trazamos la recta.
-
-### ⚙️ Ejemplo 2: Graficar una parábola
-
-Grafica la ecuación $y = x^2 - 4$.
-
-**Tabulación:**
-
-| $x$ | $y = x^2 - 4$ |
-|-----|---------------|
-| $-3$ | $5$ |
-| $-2$ | $0$ |
-| $-1$ | $-3$ |
-| $0$ | $-4$ |
-| $1$ | $-3$ |
-| $2$ | $0$ |
-| $3$ | $5$ |
-
-El vértice está en $(0, -4)$ y la parábola abre hacia arriba.
+### Los Atajos: Interceptos
+En lugar de calcular mil puntos, busca los más importantes:
+1.  **Corte con X:** Haz $y=0$ y despeja $x$.
+2.  **Corte con Y:** Haz $x=0$ y despeja $y$.
 
 ---
 
-## 📖 Interceptos con los Ejes
+## 🪞 El Poder de la Simetría
 
-Los **interceptos** son puntos muy útiles para graficar:
+Si sabes que una mariposa es simétrica, solo necesitas dibujar el lado izquierdo y copiarlo al derecho. En matemáticas es igual.
 
-### Intercepto con el eje Y
-Punto donde la curva cruza el eje Y (cuando $x = 0$).
-
-Para encontrarlo: sustituye $x = 0$ y resuelve para $y$.
-
-### Intercepto con el eje X
-Punto(s) donde la curva cruza el eje X (cuando $y = 0$).
-
-Para encontrarlo: sustituye $y = 0$ y resuelve para $x$.
-
-### ⚙️ Ejemplo 3: Encontrar interceptos
-
-Encuentra los interceptos de $y = x^2 - 4x + 3$.
-
-**Intercepto Y:** ($x = 0$)
-$$
-y = 0 - 0 + 3 = 3
-$$
-Intercepto: $(0, 3)$
-
-**Interceptos X:** ($y = 0$)
-$$
-x^2 - 4x + 3 = 0
-$$
-$$
-(x - 1)(x - 3) = 0
-$$
-$$
-x = 1 \text{ o } x = 3
-$$
-Interceptos: $(1, 0)$ y $(3, 0)$
+| Tipo | Prueba Matemática | Ejemplo Visual |
+| :--- | :--- | :--- |
+| **Simetría Eje Y** | Si cambias $x \to -x$, la ecuación NO cambia. | Una parábola $y=x^2$. |
+| **Simetría Eje X** | Si cambias $y \to -y$, la ecuación NO cambia. | Una parábola acostada $x=y^2$. |
+| **Simetría Origen** | Si cambias ambos signos, NO cambia. | Una cúbica $y=x^3$. |
 
 ---
 
-## 📖 Simetrías
+## ⚙️ Ejemplos Resueltos
 
-Una curva puede tener diferentes tipos de **simetría**:
+### Ejemplo 1: Graficar una Recta
+Ecuación: $y = 2x - 4$.
+1.  **Intercepto Y ($x=0$):** $y = 2(0) - 4 = -4$. Punto $(0, -4)$.
+2.  **Intercepto X ($y=0$):** $0 = 2x - 4 \Rightarrow 2x = 4 \Rightarrow x=2$. Punto $(2, 0)$.
+Unes los dos puntos y extiendes la línea. ¡Listo!
 
-| Tipo de simetría | Prueba | Significado |
-|------------------|--------|-------------|
-| Respecto al eje Y | $f(-x) = f(x)$ | Función par |
-| Respecto al eje X | Si $(x, y)$ está, también $(-x, y)$ | — |
-| Respecto al origen | $f(-x) = -f(x)$ | Función impar |
-
-### ⚙️ Ejemplo 4: Determinar simetrías
-
-Determina las simetrías de $y = x^2$.
-
-**Prueba de simetría respecto al eje Y:**
-
-Sustituimos $x$ por $-x$:
-$$
-y = (-x)^2 = x^2
-$$
-
-La ecuación no cambia, así que **tiene simetría respecto al eje Y**.
-
-### ⚙️ Ejemplo 5: Simetría respecto al origen
-
-Determina las simetrías de $y = x^3$.
-
-Sustituimos $x$ por $-x$ y $y$ por $-y$:
-$$
--y = (-x)^3 = -x^3
-$$
-$$
-y = x^3
-$$
-
-La ecuación se mantiene, así que **tiene simetría respecto al origen**.
-
----
-
-## 📖 De la Gráfica a la Ecuación
-
-Si conocemos características de una gráfica, podemos deducir su ecuación:
-
-### ⚙️ Ejemplo 6: Deducir ecuación de una circunferencia
-
-Una circunferencia tiene centro en $(2, -1)$ y pasa por el punto $(5, 3)$.
-
-**Paso 1:** Calcular el radio
-$$
-r = \sqrt{(5-2)^2 + (3-(-1))^2} = \sqrt{9 + 16} = 5
-$$
-
-**Paso 2:** Escribir la ecuación
-$$
-(x - 2)^2 + (y + 1)^2 = 25
-$$
-
-### ⚙️ Ejemplo 7: Deducir ecuación de una recta
-
-Una recta pasa por $(1, 3)$ y $(4, 9)$.
-
-**Paso 1:** Calcular la pendiente
-$$
-m = \frac{9 - 3}{4 - 1} = \frac{6}{3} = 2
-$$
-
-**Paso 2:** Usar punto-pendiente
-$$
-y - 3 = 2(x - 1)
-$$
-$$
-y = 2x + 1
-$$
-
----
-
-## 📖 Dominio y Rango
-
-El **dominio** son los valores de $x$ para los que existe la curva.
-
-El **rango** son los valores de $y$ que toma la curva.
-
-### ⚙️ Ejemplo 8: Dominio y rango de una circunferencia
-
-Para $x^2 + y^2 = 9$:
-
-- **Dominio:** $-3 \leq x \leq 3$
-- **Rango:** $-3 \leq y \leq 3$
-
-### ⚙️ Ejemplo 9: Dominio y rango de una parábola
-
-Para $y = x^2$:
-
-- **Dominio:** Todos los reales $(-\infty, \infty)$
-- **Rango:** $y \geq 0$ o $[0, \infty)$
-
----
-
-## 🔑 Resumen
-
-| Concepto | Descripción |
-|----------|-------------|
-| Tabulación | Método básico para graficar |
-| Interceptos | Puntos donde la curva cruza los ejes |
-| Simetría | Propiedades de reflexión de la curva |
-| Dominio | Valores válidos de $x$ |
-| Rango | Valores que toma $y$ |
+### Ejemplo 2: Simetría de una Circunferencia
+Ecuación: $x^2 + y^2 = 25$.
+*   Cambio $x \to -x$: $(-x)^2 + y^2 = 25 \Rightarrow x^2 + y^2 = 25$. (¡Igual!) -> Simetría Eje Y.
+*   Cambio $y \to -y$: $x^2 + (-y)^2 = 25 \Rightarrow x^2 + y^2 = 25$. (¡Igual!) -> Simetría Eje X.
+*   Tiene simetría total (como un círculo debe tener).
 
 ---
 
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1
-Encuentra los interceptos de la ecuación $y = x^2 - 9$.
+Encuentra el intercepto Y de $y = x^2 + 5x + 6$.
 
 <details>
 <summary>Ver solución</summary>
 
-**Intercepto Y:** ($x = 0$)
-$$
-y = 0 - 9 = -9
-$$
-Intercepto: $(0, -9)$
+**Razonamiento:**
+Haz $x=0$.
+$y = 0 + 0 + 6 = 6$.
 
-**Interceptos X:** ($y = 0$)
-$$
-x^2 - 9 = 0
-$$
-$$
-x = \pm 3
-$$
-Interceptos: $(3, 0)$ y $(-3, 0)$
-
+**Respuesta:** $\boxed{(0, 6)}$
 </details>
+
+---
 
 ### Ejercicio 2
-Determina si la curva $y = \frac{1}{x}$ tiene simetría respecto al origen.
+Encuentra los interceptos X de $y = x^2 - 9$.
 
 <details>
 <summary>Ver solución</summary>
 
-Sustituimos $x$ por $-x$ y $y$ por $-y$:
+**Razonamiento:**
+Haz $y=0$.
+$x^2 - 9 = 0 \Rightarrow x^2 = 9 \Rightarrow x = \pm 3$.
 
-$$
--y = \frac{1}{-x} = -\frac{1}{x}
-$$
-
-$$
-y = \frac{1}{x}
-$$
-
-La ecuación se mantiene, así que **sí tiene simetría respecto al origen**.
-
+**Respuesta:** $\boxed{(3,0) \text{ y } (-3,0)}$
 </details>
+
+---
 
 ### Ejercicio 3
-¿Cuál es el dominio y rango de $(x-1)^2 + (y+2)^2 = 16$?
+¿La función $y = x^4$ es simétrica respecto al eje Y?
 
 <details>
 <summary>Ver solución</summary>
+<br>
+**Razonamiento:**
+$(-x)^4 = x^4$. La ecuación no cambia.
 
-Es una circunferencia con centro $(1, -2)$ y radio $4$.
-
-**Dominio:** $1 - 4 \leq x \leq 1 + 4$ → $-3 \leq x \leq 5$
-
-**Rango:** $-2 - 4 \leq y \leq -2 + 4$ → $-6 \leq y \leq 2$
-
+**Respuesta:** **Sí**
 </details>
+
+---
 
 ### Ejercicio 4
-Una parábola tiene vértice en $(2, 3)$ y pasa por $(4, 7)$. Encuentra su ecuación.
+Si una gráfica pasa por $(2, 3)$ y es simétrica al eje X, ¿por qué otro punto pasa obligatoriamente?
 
 <details>
 <summary>Ver solución</summary>
 
-Forma con vértice: $y = a(x - 2)^2 + 3$
+**Razonamiento:**
+Reflejo vertical. Mantén $x$, invierte $y$.
 
-Usamos el punto $(4, 7)$:
-$$
-7 = a(4 - 2)^2 + 3
-$$
-$$
-7 = 4a + 3
-$$
-$$
-a = 1
-$$
-
-**Ecuación:** $y = (x - 2)^2 + 3$
-
+**Respuesta:** $\boxed{(2, -3)}$
 </details>
+
+---
 
 ### Ejercicio 5
-Grafica mentalmente la ecuación $y = |x|$. ¿Cuáles son sus interceptos y qué simetría tiene?
+Halla el intercepto Y de $3x + 4y = 12$.
 
 <details>
 <summary>Ver solución</summary>
 
-**Interceptos:**
-- Intercepto Y: $(0, 0)$
-- Intercepto X: $(0, 0)$
+**Razonamiento:**
+$x=0 \Rightarrow 4y = 12 \Rightarrow y = 3$.
 
-(Solo un intercepto, en el origen)
-
-**Simetría:** $|{-x}| = |x|$, así que tiene **simetría respecto al eje Y**.
-
-**Forma:** Es una "V" con vértice en el origen, abriendo hacia arriba.
-
+**Respuesta:** $\boxed{(0, 3)}$
 </details>
+
+---
+
+### Ejercicio 6
+Grafica mentalmente $y = |x|$. ¿Tiene simetría?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Es una V. Es idéntica a izquierda y derecha del eje Y.
+
+**Respuesta:** **Simetría respecto al Eje Y**
+</details>
+
+---
+
+### Ejercicio 7
+¿Cuántos interceptos tiene $x^2 + y^2 = 1$ con los ejes?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Corte X: $x^2=1 \Rightarrow \pm 1$. Corte Y: $y^2=1 \Rightarrow \pm 1$.
+Total 4 puntos: $(1,0), (-1,0), (0,1), (0,-1)$.
+
+**Respuesta:** $\boxed{4}$
+</details>
+
+---
+
+### Ejercicio 8
+Deduce la ecuación si la gráfica es una recta horizontal que pasa por $y=5$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$y$ siempre es 5, sin importar $x$.
+
+**Respuesta:** $\boxed{y = 5}$
+</details>
+
+---
+
+### Ejercicio 9
+Determina si $y = x^3$ pasa por el origen.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Si $x=0$, $y=0^3=0$. Sí pasa.
+
+**Respuesta:** **Sí**
+</details>
+
+---
+
+### Ejercicio 10
+Si una ecuación no cambia al reemplazar $x \leftrightarrow y$ (como $x+y=1$), ¿qué simetría tiene?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Simetría respecto a la recta $y=x$ (diagonal a 45°).
+
+**Respuesta:** **Simetría diagonal**
+</details>
+
+---
+
+## 🔑 Resumen
+
+| ¿Qué buscas? | ¿Qué haces? |
+| :--- | :--- |
+| **Corte con el Eje de pie (Y)** | Matas a la $x$ ($x=0$). |
+| **Corte con el Eje acostado (X)** | Matas a la $y$ ($y=0$). |
+| **Simetría de Espejo** | Pruebas cambiando signos. |
+
+> **Conclusión:** No grafiques a ciegas. Busca los puntos clave (interceptos) y usa la simetría para trabajar la mitad. "Trabaja inteligentemente, no duramente".

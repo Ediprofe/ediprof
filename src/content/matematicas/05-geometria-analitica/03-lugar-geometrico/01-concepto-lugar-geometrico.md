@@ -1,338 +1,244 @@
-# Concepto de Lugar Geométrico
+# **Concepto de Lugar Geométrico**
 
-En geometría analítica, queremos describir figuras geométricas usando ecuaciones. Pero, ¿cómo pasamos de una descripción verbal ("todos los puntos a distancia 5 del origen") a una ecuación matemática? La respuesta está en el concepto de **lugar geométrico**.
+Si te digo "todos los puntos que están a 5 metros de este poste", tu cerebro dibuja automáticamente un círculo. Si te digo "todos los puntos que están a la misma distancia de dos paredes", tu cerebro dibuja una línea diagonal. Eso es un **Lugar Geométrico**: una figura creada por una regla simple.
 
 ---
 
 ## 🎯 ¿Qué vas a aprender?
 
-- Qué es un lugar geométrico
-- Cómo identificar lugares geométricos comunes
-- La conexión entre geometría y álgebra
+- Qué significa "Lugar Geométrico" (LG).
+- Cómo traducir una frase en español a una ecuación matemática.
+- Los LG más famosos: Circunferencia, Mediatriz, Bisectriz y Parábola.
+- Cómo encontrar la ecuación de una figura misteriosa paso a paso.
 
 ---
 
-## 📖 Lo Esencial de Lugares Geométricos
+## 📍 ¿Qué es un Lugar Geométrico?
 
-| Descripción verbal | Lugar geométrico | Ecuación |
-|-------------------|------------------|----------|
-| Puntos a distancia $r$ del origen | Circunferencia | $x^2 + y^2 = r^2$ |
-| Puntos equidistantes de dos puntos fijos | Mediatriz | Línea recta |
-| Puntos a distancia fija de una recta | Rectas paralelas | — |
-| Puntos a igual distancia de los ejes | Bisectrices | $y = x$ o $y = -x$ |
+Es el conjunto de **todos** los puntos $(x, y)$ que cumplen una condición específica. Ni uno más, ni uno menos.
+
+Imagínalo como un club exclusivo.
+*   **La Regla del Club:** "Solo entran los puntos cuya distancia al origen es 5".
+*   **Los Miembros:** $(3,4), (5,0), (0,5), (-3,4)...$
+*   **La Figura:** Si dibujas todos los miembros, obtienes una **Circunferencia**.
 
 <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+    <strong style="color: #1e293b; font-size: 0.95rem; margin-left: 0.3rem;">De la Condición a la Gráfica</strong>
+  </div>
   <img src="/images/geometria/analitica/lugar-circunferencia.svg" alt="Circunferencia como lugar geométrico" style="width: 100%; height: auto;" />
 </div>
 
 ---
 
-## 📖 Definición de Lugar Geométrico
+## 📝 Traduciendo Español a Matemáticas
 
-> Un **lugar geométrico** es el conjunto de todos los puntos que satisfacen una condición geométrica específica.
+Para hallar la ecuación de un LG, seguimos estos pasos:
+1.  Tomamos un punto genérico $P(x, y)$.
+2.  Escribimos la condición en fórmula matemática.
+3.  Simplificamos.
 
-En otras palabras:
-- Se nos da una **condición** (por ejemplo, "estar a distancia 3 del punto A")
-- El lugar geométrico es la **figura** formada por todos los puntos que cumplen esa condición
-- Podemos expresar esa figura con una **ecuación**
+### Ejemplo 1: La Circunferencia
+**Condición:** "La distancia de $P(x,y)$ al origen $(0,0)$ es siempre 3".
 
-### La Gran Idea
+**Traducción:**
+$$ \sqrt{(x-0)^2 + (y-0)^2} = 3 $$
+$$ \sqrt{x^2 + y^2} = 3 $$
 
-La geometría analítica conecta:
+Elevamos al cuadrado para quitar la raíz fea:
+$$ x^2 + y^2 = 9 $$
 
-| Geometría | Álgebra |
-|-----------|---------|
-| Punto | Par ordenado $(x, y)$ |
-| Curva o figura | Ecuación $f(x, y) = 0$ |
-| Condición geométrica | Relación algebraica |
+### Ejemplo 2: La Mediatriz
+**Condición:** "Puntos que están a la misma distancia de $A(0,0)$ y $B(4,0)$".
 
----
+**Traducción:**
+$$ d(P, A) = d(P, B) $$
+$$ \sqrt{x^2 + y^2} = \sqrt{(x-4)^2 + y^2} $$
 
-## 📖 Ejemplos de Lugares Geométricos
+Simplificando (elevamos al cuadrado):
+$$ x^2 + y^2 = x^2 - 8x + 16 + y^2 $$
+Cancelamos $x^2$ y $y^2$:
+$$ 0 = -8x + 16 $$
+$$ 8x = 16 \Rightarrow x = 2 $$
 
-### ⚙️ Ejemplo 1: Circunferencia
-
-**Condición:** "Todos los puntos que están a distancia 5 del origen"
-
-**Análisis:** Si un punto $P(x, y)$ está a distancia 5 del origen $O(0, 0)$:
-
-$$
-\sqrt{x^2 + y^2} = 5
-$$
-
-Elevando al cuadrado:
-
-$$
-x^2 + y^2 = 25
-$$
-
-**Lugar geométrico:** Una **circunferencia** de radio 5 centrada en el origen.
-
-### ⚙️ Ejemplo 2: Mediatriz
-
-**Condición:** "Todos los puntos equidistantes de $A(0, 0)$ y $B(6, 0)$"
-
-**Análisis:** Si $P(x, y)$ está a igual distancia de $A$ y $B$:
-
-$$
-\sqrt{x^2 + y^2} = \sqrt{(x-6)^2 + y^2}
-$$
-
-Elevando al cuadrado:
-
-$$
-x^2 + y^2 = (x-6)^2 + y^2
-$$
-
-$$
-x^2 = x^2 - 12x + 36
-$$
-
-$$
-0 = -12x + 36
-$$
-
-$$
-x = 3
-$$
-
-**Lugar geométrico:** La **recta vertical** $x = 3$ (la mediatriz del segmento $\overline{AB}$).
-
-### ⚙️ Ejemplo 3: Bisectriz
-
-**Condición:** "Todos los puntos equidistantes del eje X y del eje Y"
-
-**Análisis:** La distancia de $P(x, y)$ al eje X es $|y|$, y al eje Y es $|x|$.
-
-$$
-|y| = |x|
-$$
-
-Esto da dos soluciones:
-- $y = x$
-- $y = -x$
-
-**Lugar geométrico:** Las dos **bisectrices** de los ejes coordenados.
-
-### ⚙️ Ejemplo 4: Parábola
-
-**Condición:** "Todos los puntos equidistantes del punto $F(0, 1)$ y la recta $y = -1$"
-
-**Análisis:** 
-- Distancia al punto $F(0, 1)$: $\sqrt{x^2 + (y-1)^2}$
-- Distancia a la recta $y = -1$: $|y + 1|$
-
-Igualando:
-
-$$
-\sqrt{x^2 + (y-1)^2} = |y + 1|
-$$
-
-Elevando al cuadrado (para $y \geq -1$):
-
-$$
-x^2 + (y-1)^2 = (y+1)^2
-$$
-
-$$
-x^2 + y^2 - 2y + 1 = y^2 + 2y + 1
-$$
-
-$$
-x^2 = 4y
-$$
-
-**Lugar geométrico:** Una **parábola** con vértice en el origen.
+**Interpretación:** Es una recta vertical que pasa por $x=2$ (justo a la mitad de 0 y 4).
 
 ---
 
-## 📖 El Proceso General
+## ⚙️ Ejemplos Resueltos
 
-Para encontrar la ecuación de un lugar geométrico:
+### Ejemplo 3: Bisectriz (Equidistante a los ejes)
+**Condición:** La distancia al eje X es igual a la distancia al eje Y.
+*   Distancia a eje X: $|y|$
+*   Distancia a eje Y: $|x|$
 
-1. **Lee la condición** y tradúcela a lenguaje matemático
-2. **Usa las fórmulas** de distancia, punto medio, etc.
-3. **Simplifica** la ecuación resultante
-4. **Identifica** la curva (recta, circunferencia, parábola, etc.)
+**Ecuación:**
+$$ |x| = |y| $$
+Esto nos da dos rectas: $y = x$ y $y = -x$.
 
-### ⚙️ Ejemplo 5: Proceso completo
-
-**Condición:** Encontrar el lugar geométrico de los puntos cuya distancia al punto $A(3, 0)$ es el doble de su distancia al origen.
-
-**Paso 1:** Sea $P(x, y)$ un punto del lugar geométrico.
-
-**Paso 2:** Escribimos la condición:
-$$
-\text{distancia de } P \text{ a } A = 2 \times \text{distancia de } P \text{ al origen}
-$$
-
-$$
-\sqrt{(x-3)^2 + y^2} = 2\sqrt{x^2 + y^2}
-$$
-
-**Paso 3:** Elevamos al cuadrado:
-$$
-(x-3)^2 + y^2 = 4(x^2 + y^2)
-$$
-
-$$
-x^2 - 6x + 9 + y^2 = 4x^2 + 4y^2
-$$
-
-$$
--3x^2 - 6x + 9 - 3y^2 = 0
-$$
-
-$$
-x^2 + 2x - 3 + y^2 = 0
-$$
-
-**Paso 4:** Completamos el cuadrado:
-$$
-(x^2 + 2x + 1) + y^2 = 3 + 1
-$$
-
-$$
-(x + 1)^2 + y^2 = 4
-$$
-
-**Lugar geométrico:** Una **circunferencia** de radio 2 centrada en $(-1, 0)$.
-
----
-
-## 🔑 Resumen
-
-| Elemento | Descripción |
-|----------|-------------|
-| Lugar geométrico | Conjunto de puntos que cumplen una condición |
-| Ecuación | Expresión algebraica que describe el lugar |
-| Proceso | Traducir condición → aplicar fórmulas → simplificar → identificar |
+### Ejemplo 4: Suma de Distancias (Elipse)
+**Condición:** La suma de distancias a $(-3,0)$ y $(3,0)$ es 10.
+$$ \sqrt{(x+3)^2 + y^2} + \sqrt{(x-3)^2 + y^2} = 10 $$
+(Esta ecuación, al simplificarse, da la ecuación de una elipse).
 
 ---
 
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1
-Encuentra la ecuación del lugar geométrico de los puntos que están a distancia 4 del punto $(2, 3)$.
+Halla la ecuación de los puntos a distancia 5 del origen.
 
 <details>
 <summary>Ver solución</summary>
 
-$$
-\sqrt{(x-2)^2 + (y-3)^2} = 4
-$$
+**Razonamiento:**
+$x^2 + y^2 = 5^2$.
 
-Elevando al cuadrado:
-
-$$
-(x-2)^2 + (y-3)^2 = 16
-$$
-
-**Respuesta:** Es una circunferencia de radio 4 centrada en $(2, 3)$.
-
+**Respuesta:** $\boxed{x^2 + y^2 = 25}$
 </details>
+
+---
 
 ### Ejercicio 2
-Encuentra el lugar geométrico de los puntos equidistantes de $A(-2, 0)$ y $B(4, 0)$.
+Halla el LG de los puntos con abscisa 4.
 
 <details>
 <summary>Ver solución</summary>
 
-$$
-\sqrt{(x+2)^2 + y^2} = \sqrt{(x-4)^2 + y^2}
-$$
+**Razonamiento:**
+"Abscisa es 4" significa $x = 4$. Es una recta vertical.
 
-Elevando al cuadrado:
-$$
-(x+2)^2 = (x-4)^2
-$$
-
-$$
-x^2 + 4x + 4 = x^2 - 8x + 16
-$$
-
-$$
-12x = 12
-$$
-
-$$
-x = 1
-$$
-
-**Respuesta:** Es la recta vertical $x = 1$ (la mediatriz de $\overline{AB}$).
-
+**Respuesta:** $\boxed{x = 4}$
 </details>
+
+---
 
 ### Ejercicio 3
-Encuentra el lugar geométrico de los puntos cuya suma de distancias al eje X y al eje Y es igual a 6.
+Halla el LG de los puntos cuya ordenada es el doble de su abscisa.
 
 <details>
 <summary>Ver solución</summary>
 
-$$
-|x| + |y| = 6
-$$
+**Razonamiento:**
+$y = 2x$. Una recta que pasa por el origen.
 
-Esta ecuación define un **rombo** (o cuadrado rotado) con vértices en:
-- $(6, 0)$
-- $(-6, 0)$
-- $(0, 6)$
-- $(0, -6)$
-
-En el primer cuadrante: $x + y = 6$
-
-**Respuesta:** Es un rombo centrado en el origen con vértices a distancia 6 de él en cada eje.
-
+**Respuesta:** $\boxed{y = 2x}$
 </details>
+
+---
 
 ### Ejercicio 4
-Encuentra la ecuación del lugar geométrico de los puntos $(x, y)$ tales que su distancia al punto $(4, 0)$ es igual a su distancia a la recta $x = -4$.
+Halla el LG de puntos equidistantes de $y=2$ y $y=-2$.
 
 <details>
 <summary>Ver solución</summary>
+<br>
+**Razonamiento:**
+El punto medio entre 2 y -2 es 0.
+Recta horizontal $y=0$ (Eje X).
 
-Distancia al punto $(4, 0)$: $\sqrt{(x-4)^2 + y^2}$
-
-Distancia a la recta $x = -4$: $|x + 4|$
-
-$$
-\sqrt{(x-4)^2 + y^2} = |x + 4|
-$$
-
-Para $x \geq -4$, elevamos al cuadrado:
-
-$$
-(x-4)^2 + y^2 = (x+4)^2
-$$
-
-$$
-x^2 - 8x + 16 + y^2 = x^2 + 8x + 16
-$$
-
-$$
-y^2 = 16x
-$$
-
-**Respuesta:** Es una parábola con ecuación $y^2 = 16x$.
-
+**Respuesta:** $\boxed{y = 0}$
 </details>
+
+---
 
 ### Ejercicio 5
-Describe el lugar geométrico de los puntos que están a distancia 3 tanto del eje X como del eje Y.
+Describe el LG dado por $x^2 + y^2 = 0$.
 
 <details>
 <summary>Ver solución</summary>
 
-La distancia al eje X es $|y| = 3$, entonces $y = 3$ o $y = -3$.
+**Razonamiento:**
+La única forma de sumar dos cuadrados y que dé 0 es si ambos son 0.
+Es un solo punto: el origen $(0,0)$.
 
-La distancia al eje Y es $|x| = 3$, entonces $x = 3$ o $x = -3$.
-
-Para cumplir **ambas** condiciones simultáneamente, el lugar geométrico son los **cuatro puntos**:
-- $(3, 3)$
-- $(3, -3)$
-- $(-3, 3)$
-- $(-3, -3)$
-
-**Respuesta:** Cuatro puntos que forman los vértices de un cuadrado.
-
+**Respuesta:** **El punto (0,0)**
 </details>
+
+---
+
+### Ejercicio 6
+Halla el LG de puntos a distancia 2 del punto $(1,1)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Circunferencia desplazada.
+$(x-1)^2 + (y-1)^2 = 2^2$.
+
+**Respuesta:** $\boxed{(x-1)^2 + (y-1)^2 = 4}$
+</details>
+
+---
+
+### Ejercicio 7
+Halla el LG de puntos donde el producto de coordenadas es 1.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$xy = 1$ o $y = 1/x$.
+Es una hipérbola.
+
+**Respuesta:** $\boxed{xy = 1}$
+</details>
+
+---
+
+### Ejercicio 8
+¿Cuál es la ecuación del Eje Y?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+En el eje vertical, no te mueves horizontalmente. $x$ siempre es 0.
+
+**Respuesta:** $\boxed{x = 0}$
+</details>
+
+---
+
+### Ejercicio 9
+Halla el LG de los puntos cuya distancia al eje X es 3.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$|y| = 3$. Son dos rectas horizontales: $y=3$ y $y=-3$.
+
+**Respuesta:** $\boxed{y = \pm 3}$
+</details>
+
+---
+
+### Ejercicio 10
+Halla el LG de los puntos equidistantes de $(0,0)$ y $(10, 10)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Es la mediatriz. Pasa por el punto medio $(5, 5)$ y tiene pendiente perpendicular.
+$m_{AB} = 1$, así que $m_{\perp} = -1$.
+$y - 5 = -1(x - 5) \Rightarrow y = -x + 10$.
+
+**Respuesta:** $\boxed{x + y = 10}$
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Figura | Condición Geométrica Típica |
+| :--- | :--- |
+| **Circunferencia** | Equidista de un punto (centro). |
+| **Mediatriz** | Equidista de dos puntos. |
+| **Paralela Media** | Equidista de dos rectas paralelas. |
+| **Bisectriz** | Equidista de dos rectas que se cruzan. |
+
+> **Conclusión:** Un lugar geométrico es la "huella" que deja un punto al moverse siguiendo una regla estricta. La ecuación es solo la forma de escribir esa regla en idioma álgebra.

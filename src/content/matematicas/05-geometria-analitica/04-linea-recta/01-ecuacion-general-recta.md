@@ -1,287 +1,231 @@
-# Ecuación General de la Recta
+# **Ecuación General de la Recta**
 
-La recta es el lugar geométrico más simple y fundamental. En esta lección estudiaremos su forma más general: una ecuación que puede representar **cualquier** recta en el plano, incluyendo verticales y horizontales.
+Hasta ahora hemos visto rectas como $y = 3x+2$ (Forma Pendiente-Intersección). Pero, ¿qué pasa con las rectas verticales como $x=5$? No encajan ahí. Para tener una fórmula universal que cubra **todas** las rectas posibles, los matemáticos inventaron la **Ecuación General**.
 
 ---
 
 ## 🎯 ¿Qué vas a aprender?
 
-- La forma general de la ecuación de una recta
-- Cómo identificar sus características
-- Cómo convertir entre formas
+- La forma estándar $Ax + By + C = 0$.
+- Cómo extraer la pendiente y los cortes si te dan la ecuación desordenada.
+- Cómo transformar cualquier ecuación a esta forma "elegante".
+- El truco para identificar rectas horizontales y verticales al ojo.
 
 ---
 
-## 📖 Lo Esencial de la Ecuación General
-
-| Concepto | Expresión |
-|----------|-----------|
-| Ecuación general | $Ax + By + C = 0$ |
-| Pendiente | $m = -\dfrac{A}{B}$ (si $B \neq 0$) |
-| Intercepto Y | $b = -\dfrac{C}{B}$ (si $B \neq 0$) |
-| Intercepto X | $a = -\dfrac{C}{A}$ (si $A \neq 0$) |
-| Recta horizontal | $A = 0$: $By + C = 0$ |
-| Recta vertical | $B = 0$: $Ax + C = 0$ |
-
-<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <img src="/images/geometria/analitica/ecuacion-general.svg" alt="Ecuación general de la recta" style="width: 100%; height: auto;" />
-</div>
-
----
-
-## 📖 La Forma General
-
-La **ecuación general** de una recta es:
+## 🎩 La Fórmula Universal
 
 $$
 Ax + By + C = 0
 $$
 
-donde $A$, $B$ y $C$ son constantes reales, y **al menos uno** de $A$ o $B$ es diferente de cero.
-
-> 💡 Esta forma es la más versátil porque puede representar **cualquier recta**, incluso las verticales (que no se pueden escribir en forma $y = mx + b$).
-
-### Condiciones:
-- Si $B \neq 0$: La recta no es vertical y tiene pendiente $m = -\frac{A}{B}$
-- Si $B = 0$: La recta es vertical (ecuación $x = k$)
-- Si $A = 0$: La recta es horizontal (ecuación $y = k$)
-
----
-
-## 📖 Ejemplos de la Forma General
-
-### ⚙️ Ejemplo 1: Identificar los coeficientes
-
-Para la recta $3x - 2y + 6 = 0$, identifica $A$, $B$ y $C$.
-
-**Respuesta:**
-- $A = 3$
-- $B = -2$
-- $C = 6$
-
-### ⚙️ Ejemplo 2: Calcular la pendiente desde la forma general
-
-Encuentra la pendiente de $3x - 2y + 6 = 0$.
-
-**Fórmula:** $m = -\frac{A}{B}$
-
-$$
-m = -\frac{3}{-2} = \frac{3}{2}
-$$
-
-**Respuesta:** La pendiente es $\frac{3}{2}$.
-
-### ⚙️ Ejemplo 3: Encontrar los interceptos
-
-Encuentra los interceptos de $2x + 4y - 8 = 0$.
-
-**Intercepto Y** (cuando $x = 0$):
-$$
-4y - 8 = 0 \Rightarrow y = 2
-$$
-Intercepto: $(0, 2)$
-
-**Intercepto X** (cuando $y = 0$):
-$$
-2x - 8 = 0 \Rightarrow x = 4
-$$
-Intercepto: $(4, 0)$
-
----
-
-## 📖 Conversión de Formas
-
-### De forma general a forma explícita
-
-Para convertir $Ax + By + C = 0$ a $y = mx + b$:
-
-1. Despeja $y$:
-$$
-By = -Ax - C
-$$
-$$
-y = -\frac{A}{B}x - \frac{C}{B}
-$$
-
-Por lo tanto:
-- Pendiente: $m = -\frac{A}{B}$
-- Intercepto Y: $b = -\frac{C}{B}$
-
-### ⚙️ Ejemplo 4: Convertir a forma explícita
-
-Convierte $3x - 6y + 12 = 0$ a forma $y = mx + b$.
-
-**Despejamos $y$:**
-$$
--6y = -3x - 12
-$$
-$$
-y = \frac{-3x - 12}{-6} = \frac{1}{2}x + 2
-$$
-
-**Respuesta:** $y = \frac{1}{2}x + 2$
-
-### De forma explícita a forma general
-
-Para convertir $y = mx + b$ a $Ax + By + C = 0$:
-
-$$
-y = mx + b
-$$
-$$
-mx - y + b = 0
-$$
-
-### ⚙️ Ejemplo 5: Convertir a forma general
-
-Convierte $y = -3x + 5$ a forma general.
-
-$$
-3x + y - 5 = 0
-$$
-
-**Respuesta:** $3x + y - 5 = 0$
-
----
-
-## 📖 Casos Especiales
+Donde $A, B, C$ son números enteros (preferiblemente).
+*   **A y B** no pueden ser ambos cero (si no, no hay recta).
+*   **A** debe ser positivo (por convención de elegancia).
 
 <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <img src="/images/geometria/analitica/rectas-h-v.svg" alt="Rectas horizontales y verticales" style="width: 100%; height: auto;" />
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+    <strong style="color: #1e293b; font-size: 0.95rem; margin-left: 0.3rem;">La Recta General</strong>
+  </div>
+  <img src="/images/geometria/analitica/ecuacion-general.svg" alt="Ecuación general de la recta" style="width: 100%; height: auto;" />
 </div>
 
-### Recta horizontal
+---
 
-Una recta horizontal tiene ecuación $y = k$ o en forma general:
+## 🔍 Extrayendo Información (Hacking)
 
-$$
-0 \cdot x + 1 \cdot y - k = 0
-$$
+Si te dan $2x + 3y - 6 = 0$, ¿cómo sabes su pendiente o dónde corta?
+Solo despeja la $y$:
+$$ 3y = -2x + 6 $$
+$$ y = -\frac{2}{3}x + 2 $$
 
-Es decir: $y - k = 0$
+¡Ajá!
+*   **Pendiente ($m$):** $-2/3$ (Lo que acompaña a $x$).
+*   **Corte Y ($b$):** $2$ (El número solo).
 
-**Ejemplo:** $y = 3$ → $y - 3 = 0$ o $0x + y - 3 = 0$
-
-### Recta vertical
-
-Una recta vertical tiene ecuación $x = k$ o en forma general:
-
-$$
-1 \cdot x + 0 \cdot y - k = 0
-$$
-
-Es decir: $x - k = 0$
-
-**Ejemplo:** $x = -2$ → $x + 2 = 0$ o $x + 0y + 2 = 0$
+**Fórmulas Directas:**
+*   $m = -A/B$
+*   $b = -C/B$
+*   $a = -C/A$ (Corte con X)
 
 ---
 
-## 📖 Multiplicación por una Constante
+## ⚙️ Ejemplos Resueltos
 
-Si multiplicamos toda la ecuación por una constante $k \neq 0$, obtenemos la **misma recta**:
+### Ejemplo 1: Convertir a General
+Convierte $y = \frac{1}{2}x - 3$ a la forma general.
+1.  Eliminar fracciones: Multiplica todo por 2.
+    $2y = x - 6$.
+2.  Mover todo a un lado (preferible $x$ positiva).
+    $0 = x - 2y - 6$.
+    **Resultado:** $\boxed{x - 2y - 6 = 0}$.
 
-$$
-Ax + By + C = 0 \iff kAx + kBy + kC = 0
-$$
+### Ejemplo 2: Hacking de la Ecuación
+Dada $4x - 2y + 8 = 0$, halla $m$ y los cortes.
+*   **Pendiente:** $m = -A/B = -4 / (-2) = 2$.
+*   **Corte Y:** Si $x=0$, $-2y+8=0 \Rightarrow 2y=8 \Rightarrow y=4$.
+*   **Corte X:** Si $y=0$, $4x+8=0 \Rightarrow 4x=-8 \Rightarrow x=-2$.
 
-### ⚙️ Ejemplo 6: Ecuaciones equivalentes
-
-Las siguientes ecuaciones representan la misma recta:
-- $2x + 4y - 6 = 0$
-- $x + 2y - 3 = 0$ (dividida por 2)
-- $4x + 8y - 12 = 0$ (multiplicada por 2)
-
----
-
-## 🔑 Resumen
-
-| Forma | Características |
-|-------|----------------|
-| General: $Ax + By + C = 0$ | Representa cualquier recta |
-| Explícita: $y = mx + b$ | No incluye rectas verticales |
-| Pendiente | $m = -\frac{A}{B}$ |
-| Intercepto Y | $b = -\frac{C}{B}$ |
-| Intercepto X | $a = -\frac{C}{A}$ |
+### Ejemplo 3: Rectas Especiales
+*   $3x - 12 = 0 \Rightarrow 3x = 12 \Rightarrow x = 4$. (**Vertical**).
+*   $2y + 10 = 0 \Rightarrow 2y = -10 \Rightarrow y = -5$. (**Horizontal**).
 
 ---
 
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1
-Encuentra la pendiente y los interceptos de $4x - 2y + 8 = 0$.
+Escribe la ecuación general si $A=2, B=3, C=-6$.
 
 <details>
 <summary>Ver solución</summary>
 
-**Pendiente:** $m = -\frac{4}{-2} = 2$
+**Razonamiento:**
+Sustituir en $Ax+By+C=0$.
 
-**Intercepto Y:** $b = -\frac{8}{-2} = 4$ → $(0, 4)$
-
-**Intercepto X:** ($y = 0$) $4x + 8 = 0$ → $x = -2$ → $(-2, 0)$
-
+**Respuesta:** $\boxed{2x + 3y - 6 = 0}$
 </details>
+
+---
 
 ### Ejercicio 2
-Convierte $5x + 3y - 15 = 0$ a forma explícita.
+Convierte $y = 3x + 1$ a general.
 
 <details>
 <summary>Ver solución</summary>
 
-$$
-3y = -5x + 15
-$$
-$$
-y = -\frac{5}{3}x + 5
-$$
+**Razonamiento:**
+$0 = 3x - y + 1$.
 
+**Respuesta:** $\boxed{3x - y + 1 = 0}$
 </details>
+
+---
 
 ### Ejercicio 3
-Escribe la ecuación $y = \frac{2}{3}x - 4$ en forma general con coeficientes enteros.
+Halla la pendiente de $5x + 10y - 20 = 0$.
 
 <details>
 <summary>Ver solución</summary>
 
-$$
-y = \frac{2}{3}x - 4
-$$
-$$
-3y = 2x - 12
-$$
-$$
-2x - 3y - 12 = 0
-$$
+**Razonamiento:**
+$m = -A/B = -5/10 = -1/2$.
 
+**Respuesta:** $\boxed{-0.5}$
 </details>
+
+---
 
 ### Ejercicio 4
-¿Cuál es la ecuación general de la recta horizontal que pasa por $(5, -3)$?
+Halla el corte con el eje X de $x - y + 5 = 0$.
 
 <details>
 <summary>Ver solución</summary>
 
-Una recta horizontal tiene $y = k$ constante.
+**Razonamiento:**
+Haz $y=0$. $x+5=0 \Rightarrow x=-5$.
 
-Como pasa por $(5, -3)$, entonces $k = -3$.
-
-**Forma explícita:** $y = -3$
-
-**Forma general:** $y + 3 = 0$ o $0x + y + 3 = 0$
-
+**Respuesta:** $\boxed{(-5, 0)}$
 </details>
+
+---
 
 ### Ejercicio 5
-Verifica si el punto $(2, 3)$ pertenece a la recta $5x - 2y - 4 = 0$.
+¿La recta $0x + 2y - 8 = 0$ es horizontal o vertical?
 
 <details>
 <summary>Ver solución</summary>
 
-Sustituimos $(x, y) = (2, 3)$:
+**Razonamiento:**
+$A=0$. Queda $2y=8 \Rightarrow y=4$.
 
-$$
-5(2) - 2(3) - 4 = 10 - 6 - 4 = 0
-$$
-
-Como el resultado es 0, el punto **sí pertenece** a la recta.
-
+**Respuesta:** **Horizontal**
 </details>
+
+---
+
+### Ejercicio 6
+Convierte $y = -\frac{2}{5}x$ a general.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Multiplica por 5: $5y = -2x$.
+Pasa $2x$ a sumar: $2x + 5y = 0$.
+
+**Respuesta:** $\boxed{2x + 5y = 0}$
+</details>
+
+---
+
+### Ejercicio 7
+Si $C=0$, ¿por dónde pasa obligatoriamente la recta?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Si $x=0$ y $y=0$, $A(0)+B(0)=0$. Cumple la ecuación.
+
+**Respuesta:** **Por el Origen (0,0)**
+</details>
+
+---
+
+### Ejercicio 8
+Halla $k$ para que $kx + 3y - 9 = 0$ tenga pendiente $-2$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$m = -A/B = -k/3$.
+$-k/3 = -2 \Rightarrow -k = -6 \Rightarrow k=6$.
+
+**Respuesta:** $\boxed{6}$
+</details>
+
+---
+
+### Ejercicio 9
+Escribe la ecuación general de la recta vertical que pasa por $(3, 5)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Vertical en $x=3$.
+$x - 3 = 0$.
+
+**Respuesta:** $\boxed{x - 3 = 0}$
+</details>
+
+---
+
+### Ejercicio 10
+Convierte $x/2 + y/3 = 1$ a general.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Multiplica por 6 (MCM).
+$3x + 2y = 6 \Rightarrow 3x + 2y - 6 = 0$.
+
+**Respuesta:** $\boxed{3x + 2y - 6 = 0}$
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Si falta... | La Ecuación es... | La Recta es... |
+| :--- | :--- | :--- |
+| **A ($Ax$)** | $By + C = 0$ | Horizontal ($y=k$). |
+| **B ($By$)** | $Ax + C = 0$ | Vertical ($x=k$). |
+| **C ($C$)** | $Ax + By = 0$ | Pasa por el Origen. |
+| **Nada** | $Ax + By + C = 0$ | Oblicua (Normal). |
+
+> **Conclusión:** La ecuación general es como el "traje de etiqueta" de la recta. Siempre igualamos a cero y dejamos todo limpio, sin fracciones. Es la forma más profesional de presentar tu respuesta.
