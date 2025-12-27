@@ -169,17 +169,9 @@ Situaciones que requieren confirmación:
 
 Corrige las siguientes lecciones al estilo Ediprofe.
 
-http://localhost:4321/matematicas/geometria-euclidiana/angulos/clasificacion-angulos-medida
+http://localhost:4321/matematicas/geometria-euclidiana/rectas-perpendiculares-paralelas/propiedades-angulos-paralelas
 
-http://localhost:4321/matematicas/geometria-euclidiana/angulos/angulos-complementarios-suplementarios
 
-http://localhost:4321/matematicas/geometria-euclidiana/angulos/angulos-entre-rectas
-
-http://localhost:4321/matematicas/geometria-euclidiana/rectas-perpendiculares-paralelas/rectas-perpendiculares
-
-http://localhost:4321/matematicas/geometria-euclidiana/rectas-perpendiculares-paralelas/rectas-paralelas
-
-http://localhost:4321/matematicas/geometria-euclidiana/rectas-perpendiculares-paralelas/angulos-entre-paralelas-secante
 
 MUCHOS EJEMPLOS RECUERDA, MÍNIMO 3 EJEMPLOS POR CEONCEPTO EXPLICADO.
 

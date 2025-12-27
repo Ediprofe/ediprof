@@ -1,334 +1,262 @@
-# Propiedades de Ángulos en Paralelas
+# **Propiedades de Ángulos en Paralelas**
 
-En la lección anterior identificamos los tipos de ángulos. Ahora aprenderás **las propiedades** que te permiten calcularlos.
-
-### 🎯 Cheat Sheet: Propiedades clave
-
-| Tipo de ángulos | Propiedad | Pares |
-|-----------------|-----------|-------|
-| Correspondientes | **=** IGUALES | (1,5), (2,6), (3,7), (4,8) |
-| Alternos internos | **=** IGUALES | (3,5), (4,6) |
-| Alternos externos | **=** IGUALES | (1,7), (2,8) |
-| Conjugados internos | **+** SUMAN 180° | (3,6), (4,5) |
-| Conjugados externos | **+** SUMAN 180° | (1,8), (2,7) |
-
-### 📊 Referencia visual de los 8 ángulos:
-
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
-  <div id="jsxgraph-propiedades-angulos" style="width: 100%; height: 320px;"></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-propiedades-angulos')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-propiedades-angulos', {
-      boundingbox: [-7, 6, 7, -6],
-      axis: false,
-      showCopyright: false,
-      showNavigation: false,
-      pan: { enabled: false },
-      zoom: { enabled: false }
-    });
-    
-    // Paralelas horizontales
-    board.create('line', [[-6, 2], [6, 2]], {strokeColor: '#3b82f6', strokeWidth: 3, fixed: true});
-    board.create('line', [[-6, -2], [6, -2]], {strokeColor: '#3b82f6', strokeWidth: 3, fixed: true});
-    
-    // Transversal
-    board.create('line', [[-3, -5], [3, 5]], {strokeColor: '#ef4444', strokeWidth: 3, fixed: true});
-    
-    // En P1 (intersección superior): ángulos 1,2,3,4
-    board.create('text', [2.3, 3.2, '1'], {fontSize: 16, color: '#22c55e', fixed: true});
-    board.create('text', [1, 3.2, '2'], {fontSize: 16, color: '#22c55e', fixed: true});
-    board.create('text', [0, 1, '3'], {fontSize: 16, color: '#f59e0b', fixed: true});
-    board.create('text', [1.3, 0.8, '4'], {fontSize: 16, color: '#f59e0b', fixed: true});
-    
-    // En P2 (intersección inferior): ángulos 5,6,7,8
-    board.create('text', [-0.2, -1.2, '5'], {fontSize: 16, color: '#f59e0b', fixed: true});
-    board.create('text', [-1.8, -1.2, '6'], {fontSize: 16, color: '#f59e0b', fixed: true});
-    board.create('text', [-2.5, -3.2, '7'], {fontSize: 16, color: '#22c55e', fixed: true});
-    board.create('text', [-1, -3.2, '8'], {fontSize: 16, color: '#22c55e', fixed: true});
-    
-    // Puntos de intersección
-    board.create('point', [1.2, 2], {size: 4, color: '#1e293b', fixed: true, name: '', withLabel: false});
-    board.create('point', [-1.2, -2], {size: 4, color: '#1e293b', fixed: true, name: '', withLabel: false});
-    
-    // Etiquetas
-    board.create('text', [6.2, 2, 'l₁'], {fontSize: 14, color: '#3b82f6', fixed: true});
-    board.create('text', [6.2, -2, 'l₂'], {fontSize: 14, color: '#3b82f6', fixed: true});
-    board.create('text', [3.3, 5, 't'], {fontSize: 14, color: '#ef4444', fixed: true});
-  }
-});
-</script>
-
-> 💡 **Truco para recordar:**
-> - **Alternos/Correspondientes** = IGUALES (posición cruzada o misma)
-> - **Conjugados** = SUPLEMENTARIOS (mismo lado)
-
-## 📖 Propiedad de los ángulos correspondientes
-
-> **Propiedad:** Si dos rectas paralelas son cortadas por una transversal, los ángulos correspondientes son **iguales**.
-
-### Ejemplo
-
-Si $l \parallel m$ y la transversal las corta:
-
-Los ángulos $\angle 1$ y $\angle 5$ son correspondientes, por lo tanto:
-
-$$
-\angle 1 = \angle 5
-$$
-
-### Aplicación
-
-Si $\angle 1 = 70°$, entonces $\angle 5 = 70°$
+Ya sabes identificar los ángulos que se forman entre paralelas (la Z, la F, la C). Ahora vamos a usar esas formas para resolver problemas numéricos. Es como un juego de dominó: si cae una ficha (conoces un ángulo), caen todas las demás (conoces los otros 7).
 
 ---
 
-## 📖 Propiedad de los ángulos alternos internos
+## 🎯 ¿Qué vas a aprender?
 
-> **Propiedad:** Si dos rectas paralelas son cortadas por una transversal, los ángulos alternos internos son **iguales**.
-
-### Ejemplo
-
-Los ángulos $\angle 3$ y $\angle 6$ son alternos internos, por lo tanto:
-
-$$
-\angle 3 = \angle 6
-$$
-
-### Aplicación
-
-Si $\angle 4 = 110°$, entonces $\angle 5 = 110°$ (son alternos internos)
+- Que los ángulos "gemelos" (Alternos y Correspondientes) miden exactamente lo mismo.
+- Que los ángulos "vecinos de celda" (Conjugados) siempre suman $180^\circ$.
+- Cómo averiguar si dos líneas son paralelas usando solo una regla y un transportador.
 
 ---
 
-## 📖 Propiedad de los ángulos alternos externos
+## ⚖️ El Principio de Igualdad
 
-> **Propiedad:** Si dos rectas paralelas son cortadas por una transversal, los ángulos alternos externos son **iguales**.
+La regla más fácil de recordar: **Si parece igual, es igual**.
+En el cruce de paralelas, solo hay dos tipos de relaciones fuertes de igualdad.
 
-### Ejemplo
-
-Los ángulos $\angle 1$ y $\angle 8$ son alternos externos, por lo tanto:
-
+### 1. Correspondientes ("El Ascensor")
+Si subes o bajas por la transversal, los ángulos en la misma posición son idénticos.
 $$
-\angle 1 = \angle 8
-$$
-
-### Aplicación
-
-Si $\angle 2 = 65°$, entonces $\angle 7 = 65°$
-
----
-
-## 📖 Propiedad de los ángulos conjugados internos
-
-> **Propiedad:** Si dos rectas paralelas son cortadas por una transversal, los ángulos conjugados internos son **suplementarios** (suman 180°).
-
-Es decir, suman $180°$.
-
-### Ejemplo
-
-Los ángulos $\angle 3$ y $\angle 5$ son conjugados internos, por lo tanto:
-
-$$
-\angle 3 + \angle 5 = 180°
+\text{Ángulo Arriba} = \text{Ángulo Abajo}
 $$
 
-### Aplicación
-
-Si $\angle 3 = 75°$, entonces:
-
+### 2. Alternos ("El Cruce")
+Si cruzas la línea (formando una Z o una X extendida), el ángulo se mantiene.
 $$
-\angle 5 = 180° - 75° = 105°
+\text{Ángulo Izquierda} = \text{Ángulo Derecha}
 $$
 
 ---
 
-## 📖 Propiedad de los ángulos conjugados externos
+## ➕ El Principio de Suma
 
-> **Propiedad:** Si dos rectas paralelas son cortadas por una transversal, los ángulos conjugados externos son **suplementarios** (suman 180°).
+La única vez que los ángulos **no** son iguales es cuando están "encerrados" del mismo lado.
 
-### Ejemplo
-
-Los ángulos $\angle 1$ y $\angle 7$ son conjugados externos, por lo tanto:
-
+### Conjugados ("La C")
+Si están del mismo lado de la transversal (ambos a la derecha o ambos a la izquierda) y entre las paralelas.
 $$
-\angle 1 + \angle 7 = 180°
+\text{Ángulo Arriba} + \text{Ángulo Abajo} = 180^\circ
 $$
 
 ---
 
-## 📖 Resumen de propiedades
+## ⚙️ Ejemplos Resueltos
 
-| Tipo de ángulos | Relación | Fórmula |
-|-----------------|----------|---------|
-| Correspondientes | Iguales | $\angle 1 = \angle 5$ |
-| Alternos internos | Iguales | $\angle 3 = \angle 6$ |
-| Alternos externos | Iguales | $\angle 1 = \angle 8$ |
-| Conjugados internos | Suplementarios | $\angle 3 + \angle 5 = 180°$ |
-| Conjugados externos | Suplementarios | $\angle 1 + \angle 7 = 180°$ |
+### Ejemplo 1: Correspondientes Básicos
+Si un ángulo superior derecho mide $110^\circ$, ¿cuánto mide el inferior derecho?
 
-### Regla mnemotécnica
+**Razonamiento:**
+Están en la misma posición (arriba-derecha y abajo-derecha). Son correspondientes.
+**Resultado:** $110^\circ$.
 
-- **Alternos** (posición cruzada) → **Iguales**
-- **Correspondientes** (misma posición) → **Iguales**
-- **Conjugados** (mismo lado) → **Suplementarios**
+### Ejemplo 2: Alternos Internos con Ecuación
+Dos ángulos alternos internos miden $2x$ y $80^\circ$. Halla $x$.
+
+**Razonamiento:**
+La Z nos dice que son iguales.
+$$
+2x = 80^\circ
+$$
+$$
+x = 40^\circ
+$$
+
+### Ejemplo 3: Conjugados y Suplemento
+Dos ángulos conjugados internos miden $x$ y $x+20$. Halla $x$.
+
+**Razonamiento:**
+Forman una "C". Suman 180.
+$$
+x + (x + 20) = 180
+$$
+$$
+2x = 160
+$$
+$$
+x = 80^\circ
+$$
+Los ángulos son $80^\circ$ y $100^\circ$.
+
+### Ejemplo 4: Alternos Externos
+Si un ángulo fuera de las paralelas (arriba izquierda) mide $150^\circ$, ¿cuánto mide el de abajo derecha (también fuera)?
+
+**Razonamiento:**
+Son alternos externos. Cruzan la transversal y están fuera. Son iguales.
+**Resultado:** $150^\circ$.
+
+### Ejemplo 5: ¿Son paralelas?
+Un ingeniero mide dos ángulos correspondientes en una estructura. Uno mide $70^\circ$ y el otro $71^\circ$. ¿Son las vigas paralelas?
+
+**Razonamiento:**
+Para ser paralelas estrictas, los ángulos correspondientes deben ser **exactamente iguales**.
+**Resultado:** No, las vigas no son paralelas (aunque están cerca).
+
+### Ejemplo 6: El Zig-Zag (Propiedad M)
+Imagina una línea quebrada entre dos paralelas que forma una "M" acostada. El ángulo del medio que apunta a la derecha es igual a la suma de los dos ángulos de las puntas que apuntan a la izquierda.
+Si los ángulos de las puntas son $30^\circ$ y $40^\circ$, ¿cuánto mide el ángulo del quiebre central?
+
+**Razonamiento:**
+Propiedad de la M: $\text{Centro} = \text{Arriba} + \text{Abajo}$.
+$$
+x = 30 + 40 = 70^\circ.
+$$
+**Resultado:** $70^\circ$.
+
+### Ejemplo 7: Ecuación Compleja
+Dos ángulos correspondientes son $5x - 20$ y $3x + 40$.
+
+**Razonamiento:**
+Son iguales.
+$$
+5x - 20 = 3x + 40
+$$
+$$
+2x = 60
+$$
+$$
+x = 30^\circ
+$$
+El ángulo mide $5(30) - 20 = 130^\circ$.
 
 ---
 
-## 📖 El recíproco: Demostrar que son paralelas
+## 📝 Ejercicios de Práctica
 
-Estas propiedades también funcionan "al revés". Si se cumple alguna de estas condiciones, las rectas son paralelas:
-
-- Si ángulos correspondientes son iguales → las rectas son paralelas
-- Si ángulos alternos internos son iguales → las rectas son paralelas
-- Si ángulos conjugados internos son suplementarios → las rectas son paralelas
-
----
-
-## 📖 Ejemplo completo
-
-Dos rectas paralelas $a$ y $b$ son cortadas por una transversal $t$. Si uno de los ángulos mide $50°$, calcula todos los demás.
-
-### Solución
-
-Llamemos $\angle 1 = 50°$ (ángulo exterior, izquierda, arriba de $a$)
-
-**Ángulos iguales a 50°:**
-- $\angle 5$ (correspondiente a $\angle 1$) = $50°$
-- $\angle 4$ (opuesto por el vértice a $\angle 1$) = $50°$
-- $\angle 8$ (alterno externo a $\angle 1$) = $50°$
-
-**Ángulos suplementarios (= 130°):**
-- $\angle 2$ (adyacente a $\angle 1$) = $180° - 50° = 130°$
-- $\angle 3$ (opuesto por el vértice a $\angle 2$) = $130°$
-- $\angle 6$ (correspondiente a $\angle 2$) = $130°$
-- $\angle 7$ (opuesto por el vértice a $\angle 6$) = $130°$
-
-**Resultado:** Los 8 ángulos son: 50°, 130°, 130°, 50°, 50°, 130°, 130°, 50°
-
----
-
-## 📝 Ejercicios de práctica
-
-### Ejercicio 1: Calcular ángulos
-
-Dos rectas paralelas son cortadas por una transversal. Si $\angle 1 = 65°$, encuentra:
-
-1. $\angle 5$ (correspondiente)
-2. $\angle 4$ (opuesto por el vértice)
-3. $\angle 8$ (alterno externo)
-4. $\angle 2$ (adyacente)
-5. $\angle 3$ (conjugado interno de $\angle 5$)
+### Ejercicio 1
+Si el ángulo $\angle 1 = 120^\circ$, ¿cuánto mide su correspondiente $\angle 5$?
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. $\angle 5 = 65°$ (correspondientes son iguales)
-2. $\angle 4 = 65°$ (opuestos por el vértice son iguales)
-3. $\angle 8 = 65°$ (alternos externos son iguales)
-4. $\angle 2 = 115°$ (adyacentes son suplementarios)
-5. $\angle 3 = 115°$ (conjugados internos son suplementarios: $180° - 65° = 115°$)
+Son iguales.
+**Resultado:** $\boxed{120^\circ}$
 
 </details>
 
 ---
 
-### Ejercicio 2: Verificar paralelismo
-
-Una transversal corta a dos rectas. Los ángulos correspondientes miden $72°$ y $72°$. ¿Las rectas son paralelas?
+### Ejercicio 2
+Si dos ángulos conjugados internos miden $100^\circ$ y $y$, halla $y$.
 
 <details>
-<summary><strong>Ver respuesta</strong></summary>
+<summary>Ver solución</summary>
 
-**Sí**, las rectas son paralelas.
-
-Cuando los ángulos correspondientes son iguales, las rectas cortadas por la transversal son paralelas.
+$100 + y = 180$.
+**Resultado:** $\boxed{80^\circ}$
 
 </details>
 
 ---
 
-### Ejercicio 3: Problema con ecuación
-
-Dos rectas paralelas son cortadas por una transversal. Dos ángulos alternos internos miden $3x + 10°$ y $5x - 20°$. Encuentra el valor de $x$ y la medida de los ángulos.
+### Ejercicio 3
+Si dos ángulos alternos externos miden $50^\circ$ y $z$, halla $z$.
 
 <details>
-<summary><strong>Ver respuesta</strong></summary>
+<summary>Ver solución</summary>
 
-Los alternos internos son iguales:
-
-$$
-3x + 10° = 5x - 20°
-$$
-
-$$
-10° + 20° = 5x - 3x
-$$
-
-$$
-30° = 2x
-$$
-
-$$
-x = 15°
-$$
-
-Cada ángulo mide: $3(15°) + 10° = 45° + 10° = 55°$
-
-Verificación: $5(15°) - 20° = 75° - 20° = 55°$ ✓
+Son iguales.
+**Resultado:** $\boxed{50^\circ}$
 
 </details>
 
 ---
 
-### Ejercicio 4: Problema con conjugados
-
-Dos ángulos conjugados internos miden $(2x)°$ y $(3x + 30)°$. Encuentra $x$ y las medidas de los ángulos.
+### Ejercicio 4
+Determina si $l \parallel m$ si los ángulos alternos internos miden $45^\circ$ y $46^\circ$.
 
 <details>
-<summary><strong>Ver respuesta</strong></summary>
+<summary>Ver solución</summary>
 
-Los conjugados internos son suplementarios:
-
-$$
-2x + 3x + 30° = 180°
-$$
-
-$$
-5x = 150°
-$$
-
-$$
-x = 30°
-$$
-
-Los ángulos miden:
-- Primer ángulo: $2(30°) = 60°$
-- Segundo ángulo: $3(30°) + 30° = 120°$
-
-Verificación: $60° + 120° = 180°$ ✓
+No son paralelas porque los ángulos son diferentes.
 
 </details>
 
 ---
 
-### Ejercicio 5: Verdadero o Falso
-
-1. Los ángulos correspondientes de paralelas cortadas por transversal son siempre iguales.
-2. Los ángulos alternos internos son suplementarios.
-3. Si los ángulos conjugados internos suman 180°, las rectas son paralelas.
-4. Todos los ángulos formados por paralelas y transversal son iguales.
+### Ejercicio 5
+Calcula $x$ si los correspondientes son $3x$ y $120^\circ$.
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. **Verdadero**
-2. **Falso** - Son iguales, no suplementarios
-3. **Verdadero** - Es el recíproco de la propiedad
-4. **Falso** - Hay dos grupos: unos de una medida y otros de su suplemento
+$3x = 120 \to x=40$.
+**Resultado:** $\boxed{40}$
 
 </details>
 
 ---
+
+### Ejercicio 6
+Calcula $x$ si los conjugados internos son $x$ y $2x$.
+
+<details>
+<summary>Ver solución</summary>
+
+$3x = 180 \to x=60$.
+**Resultado:** $\boxed{60^\circ \text{ y } 120^\circ}$
+
+</details>
+
+---
+
+### Ejercicio 7
+En una escalera, los peldaños son paralelos. Si la baranda corta al primer peldaño con $30^\circ$, ¿con qué ángulo corta al último?
+
+<details>
+<summary>Ver solución</summary>
+
+Con el mismo ángulo (correspondientes).
+**Resultado:** $\boxed{30^\circ}$
+
+</details>
+
+---
+
+### Ejercicio 8
+Si $\angle A$ y $\angle B$ son colaterales (constituyen par lineal) en la transversal, ¿suman 180?
+
+<details>
+<summary>Ver solución</summary>
+
+Sí, por definición de par lineal suplementario.
+
+</details>
+
+---
+
+### Ejercicio 9
+Si $\angle 2 = 80^\circ$, halla $\angle 7$ (su alterno externo).
+
+<details>
+<summary>Ver solución</summary>
+
+Son iguales.
+**Resultado:** $\boxed{80^\circ}$
+
+</details>
+
+---
+
+### Ejercicio 10
+Verdadero o Falso: Si los ángulos correspondientes son iguales, las rectas pueden no ser paralelas.
+
+<details>
+<summary>Ver solución</summary>
+
+Falso. Si son iguales, **obligatoriamente** son paralelas.
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Relación | Operación | ¿Cuándo ocurre? |
+|:--- |:--- |:--- |
+| **Alternos / Correspondientes** | Iguales ($a = b$) | Cruzando la línea o misma posición. |
+| **Conjugados** | Suman 180 ($a+b=180$) | Encerrados del mismo lado. |
+
+> **Conclusión:** Ante la duda, mira el dibujo. Si uno es agudo y el otro obtuso, suman 180. Si ambos se ven iguales (ambos agudos o ambos obtusos), entonces son iguales. Así de simple.
