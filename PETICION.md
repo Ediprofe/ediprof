@@ -167,15 +167,15 @@ Situaciones que requieren confirmación:
 
 Corrige las siguientes lecciones al estilo Ediprofe.
 
-http://localhost:4321/matematicas/geometria-euclidiana/cuerpos-geometricos/cono
+http://localhost:4321/matematicas/trigonometria/trigonometria-triangulo-rectangulo/introduccion-trigonometria
 
-http://localhost:4321/matematicas/geometria-euclidiana/cuerpos-geometricos/esfera
+http://localhost:4321/matematicas/trigonometria/trigonometria-triangulo-rectangulo/razones-trigonometricas
 
-http://localhost:4321/matematicas/geometria-euclidiana/cuerpos-geometricos/troncos
+http://localhost:4321/matematicas/trigonometria/trigonometria-triangulo-rectangulo/seno-coseno-tangente
 
-http://localhost:4321/matematicas/geometria-euclidiana/cuerpos-geometricos/poliedros-regulares
 
-http://localhost:4321/matematicas/geometria-euclidiana/cuerpos-geometricos/problemas-aplicados
+
+
 
 
 

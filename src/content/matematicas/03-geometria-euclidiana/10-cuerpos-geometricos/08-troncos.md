@@ -1,288 +1,275 @@
-# Troncos de Pirámide y Cono
+# **Troncos de Pirámide y Cono**
 
-Un **tronco** es la porción de una pirámide o cono que queda al cortarlo con un plano paralelo a la base.
-
-<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <canvas id="roughjs-tronco" width="700" height="280" style="width: 100%; height: auto; display: block;"></canvas>
-  <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 0.75rem; font-size: 0.9rem; flex-wrap: wrap;">
-    <span><strong style="color: #22c55e;">R</strong> = radio mayor</span>
-    <span><strong style="color: #22c55e;">r</strong> = radio menor</span>
-    <span><strong style="color: #ef4444;">h</strong> = altura</span>
-    <span><strong style="color: #a855f7;">g</strong> = generatriz = √[h² + (R−r)²]</span>
-  </div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof rough !== 'undefined' && document.getElementById('roughjs-tronco')) {
-    var canvas = document.getElementById('roughjs-tronco');
-    var rc = rough.canvas(canvas);
-    var ctx = canvas.getContext('2d');
-    
-    ctx.font = 'bold 16px Inter, sans-serif';
-    ctx.fillStyle = '#1e293b';
-    ctx.textAlign = 'center';
-    ctx.fillText('Tronco de Cono: Elementos', 350, 25);
-    
-    var azul = '#3b82f6';
-    var verde = '#22c55e';
-    var rojo = '#ef4444';
-    var morado = '#a855f7';
-    
-    // Tronco de cono
-    var cx = 200, cy = 250;
-    var R = 80; // radio mayor
-    var r = 40; // radio menor
-    var h = 140; // altura
-    
-    // Cuerpo del tronco (trapecio)
-    rc.polygon([[cx - R, cy], [cx - r, cy - h], [cx + r, cy - h], [cx + R, cy]], {fill: '#dbeafe', stroke: azul, strokeWidth: 2, roughness: 0.5});
-    
-    // Base mayor (elipse)
-    rc.ellipse(cx, cy, R * 2, 35, {fill: '#bfdbfe', stroke: azul, strokeWidth: 2, roughness: 0.5});
-    
-    // Base menor (elipse)
-    rc.ellipse(cx, cy - h, r * 2, 20, {fill: '#dbeafe', stroke: azul, strokeWidth: 2, roughness: 0.5});
-    
-    // Radio mayor R
-    rc.line(cx, cy, cx + R, cy, {stroke: verde, strokeWidth: 3, roughness: 0.3});
-    ctx.font = 'bold 12px Inter, sans-serif';
-    ctx.fillStyle = verde;
-    ctx.fillText('R', cx + R/2, cy + 25);
-    
-    // Radio menor r
-    rc.line(cx, cy - h, cx + r, cy - h, {stroke: verde, strokeWidth: 2.5, roughness: 0.3});
-    ctx.fillText('r', cx + r/2, cy - h - 10);
-    
-    // Altura h
-    rc.line(cx + R + 20, cy, cx + R + 20, cy - h, {stroke: rojo, strokeWidth: 2.5, roughness: 0.3});
-    ctx.fillStyle = rojo;
-    ctx.fillText('h', cx + R + 35, cy - h/2);
-    
-    // Generatriz g
-    rc.line(cx + R, cy, cx + r, cy - h, {stroke: morado, strokeWidth: 2.5, roughness: 0.3});
-    ctx.fillStyle = morado;
-    ctx.fillText('g', cx + R - 10, cy - h/2 - 20);
-    
-    // Fórmulas
-    rc.rectangle(380, 50, 290, 220, {fill: '#f1f5f9', stroke: '#cbd5e1', roughness: 0.3});
-    ctx.font = 'bold 14px Inter, sans-serif';
-    ctx.fillStyle = '#1e293b';
-    ctx.textAlign = 'center';
-    ctx.fillText('Fórmulas del Tronco de Cono', 525, 80);
-    
-    ctx.font = '12px Inter, sans-serif';
-    ctx.textAlign = 'left';
-    
-    ctx.fillStyle = morado;
-    ctx.fillText('Generatriz:', 400, 110);
-    ctx.fillStyle = '#1e293b';
-    ctx.fillText('g = √[h² + (R-r)²]', 400, 130);
-    
-    ctx.fillStyle = azul;
-    ctx.fillText('Área lateral:', 400, 155);
-    ctx.fillStyle = '#1e293b';
-    ctx.fillText('A_L = π(R + r)g', 400, 175);
-    
-    ctx.fillStyle = rojo;
-    ctx.fillText('Volumen:', 400, 200);
-    ctx.fillStyle = '#1e293b';
-    ctx.font = '11px Inter, sans-serif';
-    ctx.fillText('V = (πh/3)(R² + r² + Rr)', 400, 220);
-    
-    ctx.font = '10px Inter, sans-serif';
-    ctx.fillStyle = '#64748b';
-    ctx.fillText('R = radio mayor', 400, 250);
-    ctx.fillText('r = radio menor', 400, 265);
-  }
-});
-</script>
+Si tomas una pirámide o un cono y le cortas la punta con una espada láser, lo que te queda es un **tronco**. Es como un vaso, una maceta o el cubo de la fregona. Tienen dos bases (la grande y la chica).
 
 ---
 
-## 📖 ¿Qué es un tronco?
+## 🎯 ¿Qué vas a aprender?
 
-> **Definición:** Un tronco (o frustum) es el cuerpo geométrico que resulta al cortar una pirámide o cono con un **plano paralelo a la base**, eliminando la parte superior.
-
-El tronco tiene **dos bases paralelas** de diferente tamaño.
-
----
-
-## 📖 Elementos del tronco
-
-| Elemento | Descripción |
-|----------|-------------|
-| Base mayor ($B$ o $R$) | La base original de la pirámide/cono |
-| Base menor ($b$ o $r$) | La sección del corte |
-| Altura ($h$) | Distancia perpendicular entre las bases |
-| Apotema ($a_p$) | Altura de las caras laterales (en troncos regulares) |
+- Calcular la **Generatriz/Apotema** de un tronco usando Pitágoras.
+- Calcular el **Área Lateral** y **Total** de estos cuerpos truncados.
+- Calcular el **Volumen** usando la fórmula "media heroniana" modificada.
+- Resolver problemas de vasos, macetas y cubos.
 
 ---
 
-## 📖 Tronco de pirámide
+## 🥤 Tronco de Cono
 
-### Área lateral
-
-Para un tronco de pirámide regular:
-
-$$
-A_L = \frac{(P_B + P_b) \times a_p}{2}
-$$
-
-Donde $P_B$ y $P_b$ son los perímetros de las bases.
-
-### Área total
+### 1. Generatriz ($g$)
+Es la hipotenusa de un triángulo rectángulo formado por la altura y la **diferencia de radios**.
 
 $$
-A_T = A_L + A_B + A_b
+g = \sqrt{h^2 + (R - r)^2}
 $$
 
-### Volumen
+### 2. Área Lateral ($A_L$)
+Es similar al área del cono, pero usando el promedio de los radios.
 
 $$
-V = \frac{h}{3}(A_B + A_b + \sqrt{A_B \times A_b})
+A_L = \pi (R + r) g
+$$
+
+### 3. Volumen ($V$)
+Es una fórmula un poco larga, pero simétrica.
+
+$$
+V = \frac{\pi h}{3}(R^2 + r^2 + R \cdot r)
 $$
 
 ---
 
-## 📖 Tronco de cono
+## 🏗️ Tronco de Pirámide
 
-### Área lateral
-
-$$
-A_L = \pi(R + r) \times g
-$$
-
-Donde $g$ es la generatriz del tronco:
+### 1. Área Lateral ($A_L$)
+Suma de las áreas de las caras laterales, que ahora son **trapecios isósceles**.
 
 $$
-g = \sqrt{h^2 + (R-r)^2}
+A_L = \frac{(P_B + P_b) \cdot Ap}{2}
 $$
 
-### Área total
+*   $P_B$: Perímetro base grande.
+*   $P_b$: Perímetro base chica.
+*   $Ap$: Apotema del tronco.
+
+### 2. Volumen ($V$)
+Similar al cono, pero con áreas.
 
 $$
-A_T = \pi(R + r)g + \pi R^2 + \pi r^2
-$$
-
-### Volumen
-
-$$
-V = \frac{\pi h}{3}(R^2 + r^2 + Rr)
+V = \frac{h}{3}(A_B + A_b + \sqrt{A_B \cdot A_b})
 $$
 
 ---
 
-## 📖 Ejemplo: Tronco de cono
+## ⚙️ Ejemplos Resueltos
 
-Tronco con $R = 6$ cm, $r = 3$ cm, $h = 4$ cm:
+### Ejemplo 1: Vaso de Café (Tronco de Cono)
 
-### Generatriz
+Radio arriba $R=4$, radio abajo $r=2$, altura $h=6$.
 
+**Razonamiento:**
+*   **Volumen:**
+    $$
+    V = \frac{\pi(6)}{3}(4^2 + 2^2 + 4 \cdot 2) = 2\pi(16 + 4 + 8) = 2\pi(28) = 56\pi
+    $$
+
+**Resultado:**
 $$
-g = \sqrt{16 + 9} = 5 \text{ cm}
-$$
-
-### Área lateral
-
-$$
-A_L = \pi(6 + 3)(5) = 45\pi \approx 141.37 \text{ cm}^2
-$$
-
-### Volumen
-
-$$
-V = \frac{\pi \times 4}{3}(36 + 9 + 18) = \frac{4\pi \times 63}{3} = 84\pi \approx 263.89 \text{ cm}^3
+\boxed{56\pi \approx 176 \text{ cm}^3}
 $$
 
----
+### Ejemplo 2: Maceta Cuadrada (Tronco de Pirámide)
 
-## 📖 Ejemplo: Tronco de pirámide cuadrada
+Bases cuadradas de lado 10 y 6. Altura 6.
 
-Tronco con bases cuadradas de lados 10 cm y 6 cm, altura 8 cm:
+**Razonamiento:**
+*   **Áreas:** $A_B = 100, A_b = 36$.
+*   **Volumen:**
+    $$
+    V = \frac{6}{3}(100 + 36 + \sqrt{100 \cdot 36}) = 2(136 + 60) = 2(196)
+    $$
 
-### Áreas de las bases
-
+**Resultado:**
 $$
-A_B = 100 \text{ cm}^2, \quad A_b = 36 \text{ cm}^2
-$$
-
-### Volumen
-
-$$
-V = \frac{8}{3}(100 + 36 + \sqrt{100 \times 36})
-$$
-
-$$
-= \frac{8}{3}(100 + 36 + 60) = \frac{8 \times 196}{3} \approx 522.67 \text{ cm}^3
+\boxed{392 \text{ cm}^3}
 $$
 
 ---
 
-## 📝 Ejercicios de práctica
+## 📝 Ejercicios de Práctica
 
-### Ejercicio 1: Tronco de cono
-
-Tronco con $R = 8$ cm, $r = 4$ cm, $h = 6$ cm. Calcula:
-
-1. Generatriz
-2. Volumen
+### Ejercicio 1
+Calcula la generatriz de un tronco de cono si $h=4, R=5, r=2$.
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. $g = \sqrt{36 + 16} = \sqrt{52} \approx 7.21$ cm
-2. $V = \frac{\pi \times 6}{3}(64 + 16 + 32) = 2\pi \times 112 = 224\pi \approx 703.72$ cm³
+**Razonamiento:**
+Diferencia radios = 3.
+$g = \sqrt{4^2 + 3^2} = 5$.
 
-</details>
-
----
-
-### Ejercicio 2: Tronco de pirámide
-
-Tronco de pirámide cuadrada con bases de lados 12 cm y 8 cm, altura 9 cm. Calcula el volumen.
-
-<details>
-<summary><strong>Ver respuesta</strong></summary>
-
-$A_B = 144$ cm², $A_b = 64$ cm²
-
+**Resultado:**
 $$
-V = \frac{9}{3}(144 + 64 + \sqrt{144 \times 64}) = 3(144 + 64 + 96) = 3 \times 304 = 912 \text{ cm}^3
+\boxed{5}
 $$
 
 </details>
 
----
-
-### Ejercicio 3: Generatriz
-
-En un tronco de cono, $R = 5$ cm, $r = 2$ cm y $h = 4$ cm. ¿Cuánto mide la generatriz?
+### Ejercicio 2
+Volumen de un tronco de cono con $R=3, r=1, h=3$.
 
 <details>
-<summary><strong>Ver respuesta</strong></summary>
+<summary>Ver solución</summary>
 
+**Razonamiento:**
+$V = \frac{3\pi}{3}(9 + 1 + 3) = 13\pi$.
+
+**Resultado:**
 $$
-g = \sqrt{4^2 + (5-2)^2} = \sqrt{16 + 9} = \sqrt{25} = 5 \text{ cm}
+\boxed{13\pi}
+$$
+
+</details>
+
+### Ejercicio 3
+Área lateral de un tronco de cono con $R=5, r=3, g=10$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$A_L = \pi(5+3)(10) = 80\pi$.
+
+**Resultado:**
+$$
+\boxed{80\pi}
+$$
+
+</details>
+
+### Ejercicio 4
+Si $A_B = 16$ y $A_b = 4$ en un tronco de pirámide de $h=3$. Calcula el volumen.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$V = \frac{3}{3}(16 + 4 + \sqrt{64}) = 20 + 8 = 28$.
+
+**Resultado:**
+$$
+\boxed{28}
+$$
+
+</details>
+
+### Ejercicio 5
+Calcula el área lateral de un tronco de pirámide cuadrada. Lados base: 10 y 6. Apotema = 5.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$P_B = 40, P_b = 24$.
+$A_L = \frac{40+24}{2} \cdot 5 = 32 \cdot 5 = 160$.
+
+**Resultado:**
+$$
+\boxed{160}
+$$
+
+</details>
+
+### Ejercicio 6
+Un balde tiene forma de tronco de cono. $R=15, r=10, h=30$. ¿Caben 15 litros?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$V \approx 14,922$ cm³ $\approx 14.9$ L.
+
+**Resultado:**
+$$
+\boxed{\text{Casi (14.9 L)}}
+$$
+
+</details>
+
+### Ejercicio 7
+Si $R=r$, ¿en qué se convierte el tronco de cono?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Si los radios son iguales, las paredes son rectas.
+
+**Resultado:**
+$$
+\boxed{\text{Cilindro}}
+$$
+
+</details>
+
+### Ejercicio 8
+Área Total de un tronco de cono: $R=2, r=1, g=3$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$A_L = \pi(3)(3) = 9\pi$.
+$A_B = 4\pi$.
+$A_b = \pi$.
+Total = $14\pi$.
+
+**Resultado:**
+$$
+\boxed{14\pi}
+$$
+
+</details>
+
+### Ejercicio 9
+Diferencia de radios si $hm=8, g=10$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$10^2 = 8^2 + x^2 \Rightarrow 100 = 64 + x^2 \Rightarrow x=6$.
+
+**Resultado:**
+$$
+\boxed{6}
+$$
+
+</details>
+
+### Ejercicio 10
+Volumen de un tronco de pirámide bases cuadradas 4 y 2, altura 3.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$A_B=16, A_b=4$.
+$V = \frac{3}{3}(16 + 4 + \sqrt{64}) = 28$.
+
+**Resultado:**
+$$
+\boxed{28}
 $$
 
 </details>
 
 ---
 
-### Ejercicio 4: Problema aplicado
+## 🔑 Resumen
 
-Un vaso con forma de tronco de cono tiene radio superior 4 cm, radio inferior 3 cm y altura 10 cm. ¿Cuántos ml caben? (1 cm³ = 1 ml)
+| Cuerpo | Volumen | Área Lateral |
+| :--- | :--- | :--- |
+| **Tronco Cono** | $\frac{\pi h}{3}(R^2+r^2+Rr)$ | $\pi(R+r)g$ |
+| **Tronco Pirámide** | $\frac{h}{3}(A_B+A_b+\sqrt{A_B A_b})$ | Trapecios sumados |
 
-<details>
-<summary><strong>Ver respuesta</strong></summary>
-
-$$
-V = \frac{\pi \times 10}{3}(16 + 9 + 12) = \frac{10\pi \times 37}{3} \approx 387.46 \text{ cm}^3
-$$
-
-Caben aproximadamente **387 ml**.
-
-</details>
-
----
+> El término $Rr$ o $\sqrt{A_B A_b}$ es el "promedio geométrico" que conecta la base grande con la chica.

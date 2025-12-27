@@ -1,329 +1,244 @@
-# Problemas Aplicados de Cuerpos Geométricos
+# **Problemas Aplicados de Cuerpos Geométricos**
 
-En esta lección resolvemos problemas que combinan diferentes cuerpos geométricos y aplican los conceptos aprendidos a situaciones del mundo real.
-
-<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <canvas id="roughjs-helado" width="700" height="260" style="width: 100%; height: auto; display: block;"></canvas>
-  <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 0.75rem; font-size: 0.9rem; flex-wrap: wrap;">
-    <span><strong style="color: #22c55e;">r</strong> = radio (común al cono y semiesfera)</span>
-    <span><strong style="color: #ef4444;">h</strong> = altura del cono</span>
-    <span><strong>V</strong> = V_cono + V_semiesfera</span>
-  </div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof rough !== 'undefined' && document.getElementById('roughjs-helado')) {
-    var canvas = document.getElementById('roughjs-helado');
-    var rc = rough.canvas(canvas);
-    var ctx = canvas.getContext('2d');
-    
-    ctx.font = 'bold 16px Inter, sans-serif';
-    ctx.fillStyle = '#1e293b';
-    ctx.textAlign = 'center';
-    ctx.fillText('Problema Clásico: Cono de Helado con Semiesfera', 350, 25);
-    
-    var azul = '#3b82f6';
-    var verde = '#22c55e';
-    var rojo = '#ef4444';
-    var rosa = '#ec4899';
-    
-    // Cono de helado
-    var cx = 200, cy = 240;
-    var r = 50;
-    var h = 120;
-    
-    // Cono (barquillo)
-    rc.polygon([[cx - r, cy - h + 50], [cx, cy], [cx + r, cy - h + 50]], {fill: '#fef3c7', stroke: '#f59e0b', strokeWidth: 2, roughness: 0.5});
-    
-    // Semiesfera de helado
-    ctx.beginPath();
-    ctx.arc(cx, cy - h + 50, r, Math.PI, 0);
-    ctx.fillStyle = '#fce7f3';
-    ctx.fill();
-    ctx.strokeStyle = rosa;
-    ctx.lineWidth = 2;
-    ctx.stroke();
-    
-    // Base de la semiesfera (elipse)
-    rc.ellipse(cx, cy - h + 50, r * 2, 20, {fill: '#fbcfe8', stroke: rosa, strokeWidth: 2, roughness: 0.5});
-    
-    // Etiquetas
-    ctx.font = 'bold 12px Inter, sans-serif';
-    ctx.fillStyle = verde;
-    rc.line(cx, cy - h + 50, cx + r, cy - h + 50, {stroke: verde, strokeWidth: 2, roughness: 0.3});
-    ctx.fillText('r', cx + r/2, cy - h + 40);
-    
-    ctx.fillStyle = rojo;
-    rc.line(cx + r + 15, cy - h + 50, cx + r + 15, cy, {stroke: rojo, strokeWidth: 2, roughness: 0.3});
-    ctx.fillText('h', cx + r + 30, cy - h/2 + 25);
-    
-    // Fórmulas
-    rc.rectangle(350, 60, 320, 190, {fill: '#f1f5f9', stroke: '#cbd5e1', roughness: 0.3});
-    ctx.font = 'bold 14px Inter, sans-serif';
-    ctx.fillStyle = '#1e293b';
-    ctx.textAlign = 'center';
-    ctx.fillText('Volumen Total del Helado', 510, 90);
-    
-    ctx.font = '13px Inter, sans-serif';
-    ctx.textAlign = 'left';
-    
-    ctx.fillStyle = '#f59e0b';
-    ctx.fillText('Cono:', 370, 120);
-    ctx.fillStyle = '#1e293b';
-    ctx.fillText('V_cono = πr²h / 3', 430, 120);
-    
-    ctx.fillStyle = rosa;
-    ctx.fillText('Semiesfera:', 370, 150);
-    ctx.fillStyle = '#1e293b';
-    ctx.fillText('V_semi = (2/3)πr³', 460, 150);
-    
-    ctx.fillStyle = azul;
-    ctx.font = 'bold 13px Inter, sans-serif';
-    ctx.fillText('Total:', 370, 185);
-    ctx.fillStyle = '#1e293b';
-    ctx.fillText('V = πr²h/3 + (2/3)πr³', 420, 185);
-    
-    ctx.font = '11px Inter, sans-serif';
-    ctx.fillStyle = '#64748b';
-    ctx.fillText('Ejemplo: r=3cm, h=10cm', 370, 215);
-    ctx.fillText('V = 30π + 18π = 48π ≈ 150.8 cm³', 370, 235);
-  }
-});
-</script>
+Aquí es donde todo cobra sentido. ¿Cuánto helado cabe en un cono? ¿Qué volumen tiene un silo? Vamos a resolver problemas del mundo real combinando todo lo que hemos aprendido.
 
 ---
 
-## 📖 Estrategia general para problemas
+## 🎯 ¿Qué vas a aprender?
 
-1. **Identificar** los cuerpos geométricos involucrados
-2. **Extraer** los datos del problema
-3. **Seleccionar** las fórmulas apropiadas
-4. **Calcular** paso a paso
-5. **Verificar** que la respuesta tenga sentido
+- Combinar cuerpos (cilindro + cono, cubo + pirámide) para resolver problemas complejos.
+- Calcular volúmenes de objetos cotidianos (latas, pelotas, silos).
+- Realizar conversiones de unidades (metros cúbicos a litros).
+- Calcular costes basados en volumen o superficie.
 
 ---
 
-## 📖 Problema 1: Tanque cilíndrico
+## 🧩 Estrategia de Resolución
 
-Un tanque cilíndrico tiene diámetro 2 m y altura 3 m. ¿Cuántos litros de agua puede contener?
+1.  **Divide y Vencerás:** Descompón el objeto complejo en cuerpos simples (cilindros, conos, etc.).
+2.  **Identifica la Pregunta:** ¿Te piden "cuánto cabe" (Volumen) o "cuánto material" (Superficie)?
+3.  **Unifica Unidades:** Asegúrate de que todo esté en cm o m antes de calcular. 
+    *   Recuerda: $1 \text{ m}^3 = 1000 \text{ Litros}$.
 
-### Solución
+---
 
-Radio: $r = 1$ m
+## ⚙️ Ejemplos Resueltos
 
+### Ejemplo 1: El Silo de Grano
+
+Un silo está formado por un cilindro de 10 m de alto y un techo cónico de 3 m de alto. El radio es 4 m. ¿Cuál es su volumen total?
+
+**Razonamiento:**
+*   **Cilindro:** $V_c = \pi r^2 h = \pi(16)(10) = 160\pi$.
+*   **Cono:** $V_{cono} = \frac{\pi r^2 h}{3} = \frac{\pi(16)(3)}{3} = 16\pi$.
+*   **Total:** $160\pi + 16\pi = 176\pi$.
+
+**Resultado:**
 $$
-V = \pi r^2 h = \pi(1)^2(3) = 3\pi \approx 9.42 \text{ m}^3
+\boxed{176\pi \approx 552.9 \text{ m}^3}
 $$
 
-Conversión: $1 \text{ m}^3 = 1000 \text{ L}$
+### Ejemplo 2: Pelotas en un Tubo
 
+Tres pelotas de tenis (radio $r$) se venden en un tubo cilíndrico que las contiene exactamente. ¿Qué fracción del volumen del tubo está ocupada por las pelotas?
+
+**Razonamiento:**
+*   **Altura Tubo:** $h = 6r$ (tres diámetros). Base Tubo: $\pi r^2$.
+    *   $V_{tubo} = \pi r^2 (6r) = 6\pi r^3$.
+*   **Volumen Pelotas (3):**
+    *   $3 \times (\frac{4}{3}\pi r^3) = 4\pi r^3$.
+*   **Fracción:** $\frac{4\pi r^3}{6\pi r^3} = \frac{4}{6} = \frac{2}{3}$.
+
+**Resultado:**
 $$
-V = 9420 \text{ litros}
+\boxed{\text{Ocupan } \frac{2}{3} \text{ del volumen (66.6\%)}}
 $$
 
 ---
 
-## 📖 Problema 2: Helado en cono
+## 📝 Ejercicios de Práctica
 
-Un cono de helado tiene radio 3 cm y altura 10 cm. Encima tiene una semiesfera de helado del mismo radio. ¿Cuál es el volumen total de helado?
-
-### Solución
-
-**Volumen del cono:**
-
-$$
-V_{cono} = \frac{\pi(9)(10)}{3} = 30\pi \text{ cm}^3
-$$
-
-**Volumen de la semiesfera:**
-
-$$
-V_{semiesfera} = \frac{1}{2} \times \frac{4}{3}\pi(27) = 18\pi \text{ cm}^3
-$$
-
-**Total:**
-
-$$
-V_{total} = 30\pi + 18\pi = 48\pi \approx 150.8 \text{ cm}^3
-$$
-
----
-
-## 📖 Problema 3: Silo de granos
-
-Un silo tiene forma de cilindro coronado por un hemisferio. El radio es 5 m y la altura del cilindro es 12 m. Calcula su capacidad.
-
-### Solución
-
-**Volumen del cilindro:**
-
-$$
-V_{cil} = \pi(25)(12) = 300\pi \text{ m}^3
-$$
-
-**Volumen del hemisferio:**
-
-$$
-V_{hem} = \frac{2}{3}\pi(125) = \frac{250\pi}{3} \text{ m}^3
-$$
-
-**Total:**
-
-$$
-V = 300\pi + \frac{250\pi}{3} = \frac{900\pi + 250\pi}{3} = \frac{1150\pi}{3} \approx 1204.28 \text{ m}^3
-$$
-
----
-
-## 📖 Problema 4: Pintura
-
-¿Cuánta pintura se necesita para pintar el exterior de un cilindro de radio 2 m y altura 5 m, incluyendo las tapas? (Asume que 1 litro cubre 10 m²)
-
-### Solución
-
-**Área total:**
-
-$$
-A = 2\pi r(h + r) = 2\pi(2)(7) = 28\pi \approx 87.96 \text{ m}^2
-$$
-
-**Pintura necesaria:**
-
-$$
-\frac{87.96}{10} \approx 8.8 \text{ litros}
-$$
-
----
-
-## 📖 Problema 5: Casa con techo piramidal
-
-Una casa tiene base cuadrada de 10 m de lado y paredes de 3 m. El techo es una pirámide de 4 m de altura. Calcula el volumen total del espacio interior.
-
-### Solución
-
-**Volumen del prisma (paredes):**
-
-$$
-V_{prisma} = 100 \times 3 = 300 \text{ m}^3
-$$
-
-**Volumen de la pirámide (techo):**
-
-$$
-V_{pir} = \frac{100 \times 4}{3} = \frac{400}{3} \approx 133.33 \text{ m}^3
-$$
-
-**Total:**
-
-$$
-V = 300 + 133.33 = 433.33 \text{ m}^3
-$$
-
----
-
-## 📝 Problemas de práctica
-
-### Problema 1: Lata de refresco
-
-Una lata cilíndrica tiene diámetro 6.6 cm y altura 12.2 cm. Calcula:
-
-1. Su volumen en cm³
-2. Su capacidad en ml
+### Ejercicio 1
+Volumen de una casa de perro: Cubo de lado 1 m + techo piramidal de 0.5 m de alto.
 
 <details>
-<summary><strong>Ver respuesta</strong></summary>
+<summary>Ver solución</summary>
 
-$r = 3.3$ cm
+**Razonamiento:**
+Cubo: $1^3 = 1$. Pirámide: $\frac{1 \cdot 0.5}{3} = 0.166$.
+Total: $1.166$.
 
+**Resultado:**
 $$
-V = \pi(10.89)(12.2) \approx 417.5 \text{ cm}^3 = 417.5 \text{ ml}
+\boxed{\approx 1.17 \text{ m}^3}
 $$
-
-(Aproximadamente una lata de 330 ml tiene un poco menos de altura real)
 
 </details>
 
----
-
-### Problema 2: Pelota de tenis
-
-Una pelota de tenis tiene diámetro 6.7 cm. Una caja cilíndrica contiene exactamente 3 pelotas apiladas. ¿Cuánto espacio vacío queda en la caja?
+### Ejercicio 2
+Un camión cisterna cilíndrico mide 10 m de largo y tiene un diámetro de 2 m. ¿Cuántos litros carga? ($r=1$).
 
 <details>
-<summary><strong>Ver respuesta</strong></summary>
+<summary>Ver solución</summary>
 
-$r = 3.35$ cm, cada pelota: $V = \frac{4}{3}\pi(3.35)^3 \approx 157.48$ cm³
+**Razonamiento:**
+$V = \pi(1)^2(10) = 10\pi$ m³.
+$10\pi \approx 31.41$ m³.
+En litros ($\times 1000$): 31,416 L.
 
-Caja: $r = 3.35$, $h = 3 \times 6.7 = 20.1$ cm
-
+**Resultado:**
 $$
-V_{caja} = \pi(11.22)(20.1) \approx 708.5 \text{ cm}^3
-$$
-
-$$
-V_{pelotas} = 3 \times 157.48 = 472.44 \text{ cm}^3
+\boxed{\approx 31,416 \text{ Litros}}
 $$
 
+</details>
+
+### Ejercicio 3
+Una bola de helado ($r=3$ cm) se derrite dentro de un cono ($r=3$ cm, $h=10$ cm). ¿Se rebalsará?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Bola: $\frac{4}{3}\pi(27) = 36\pi$.
+Cono: $\frac{\pi(9)(10)}{3} = 30\pi$.
+La bola ($36\pi$) es mayor que el cono ($30\pi$).
+
+**Resultado:**
 $$
-V_{vacío} = 708.5 - 472.44 \approx 236 \text{ cm}^3
+\boxed{\text{Sí, se rebalsará}}
+$$
+
+</details>
+
+### Ejercicio 4
+Cubo de plomo de 10 cm se funde para hacer esferas de 1 cm de radio. ¿Cuántas salen?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Cubo: $1000$ cm³.
+Esfera: $\frac{4}{3}\pi(1) \approx 4.19$ cm³.
+$1000 / 4.19 \approx 238$.
+
+**Resultado:**
+$$
+\boxed{\approx 238 \text{ esferas}}
+$$
+
+</details>
+
+### Ejercicio 5
+Coste de pintar una cúpula semiesférica de radio 5 m a 10€ el m².
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Área: $2\pi(25) = 50\pi \approx 157$ m².
+Coste: $157 \times 10$.
+
+**Resultado:**
+$$
+\boxed{\approx 1,570 \text{ euros}}
+$$
+
+</details>
+
+### Ejercicio 6
+Volumen de un lápiz cilíndrico ($r=0.5, h=10$) con punta cónica ($h=2$).
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Cilindro: $\pi(0.25)(10) = 2.5\pi$.
+Cono: $\frac{\pi(0.25)(2)}{3} \approx 0.16\pi$.
+Total: $2.66\pi$.
+
+**Resultado:**
+$$
+\boxed{2.66\pi \approx 8.35 \text{ cm}^3}
+$$
+
+</details>
+
+### Ejercicio 7
+Un cubo de hielo de 4 cm se mete en un vaso cilíndrico de radio 4 cm. Al derretirse, ¿qué altura sube el agua?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Vol. Hielo: $64$.
+En el cilindro: $64 = \pi(16)h \Rightarrow 4 = \pi h \Rightarrow h = 4/\pi$.
+
+**Resultado:**
+$$
+\boxed{\approx 1.27 \text{ cm}}
+$$
+
+</details>
+
+### Ejercicio 8
+Área de etiqueta de una lata de tomate ($d=10$ cm, $h=10$ cm). ¿Es cuadrada?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Base rectángulo: $2\pi(5) = 10\pi \approx 31.4$ cm. Altura: $10$ cm.
+Es rectangular ($31.4 \times 10$).
+
+**Resultado:**
+$$
+\boxed{\text{No, es rectangular. Area } \approx 314 \text{ cm}^2}
+$$
+
+</details>
+
+### Ejercicio 9
+Diferencia de volumen entre una naranja ($d=10$) y su piel si la piel tiene 0.5 cm de grosor.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Esfera grande ($r=5$), esfera chica ($r=4.5$).
+$V_{piel} = \frac{4}{3}\pi (5^3 - 4.5^3) = \frac{4}{3}\pi (125 - 91.125)$.
+
+**Resultado:**
+$$
+\boxed{\approx 141.9 \text{ cm}^3}
+$$
+
+</details>
+
+### Ejercicio 10
+Si construyes una pirámide con 1 m³ de arena y base cuadrada de 2 m de lado, ¿qué altura alcanzará?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$1 = \frac{(2 \times 2) \cdot h}{3} \Rightarrow 1 = \frac{4h}{3} \Rightarrow 3 = 4h$.
+
+**Resultado:**
+$$
+\boxed{0.75 \text{ m}}
 $$
 
 </details>
 
 ---
 
-### Problema 3: Piscina
+## 🔑 Resumen
 
-Una piscina tiene forma de prisma rectangular de 25 m × 10 m × 2 m. ¿Cuántos litros de agua caben?
+| Objeto | Estrategia |
+| :--- | :--- |
+| **Silo / Cohete** | Cilindro + Cono |
+| **Cápsula** | Cilindro + 2 Semiesferas |
+| **Helado** | Cono + Semiesfera |
 
-<details>
-<summary><strong>Ver respuesta</strong></summary>
-
-$$
-V = 25 \times 10 \times 2 = 500 \text{ m}^3 = 500,000 \text{ litros}
-$$
-
-</details>
-
----
-
-### Problema 4: Vela cónica
-
-Una vela cónica tiene radio 4 cm y altura 15 cm. ¿Cuántas velas se pueden hacer con 2 litros de cera? (1 L = 1000 cm³)
-
-<details>
-<summary><strong>Ver respuesta</strong></summary>
-
-$$
-V_{vela} = \frac{\pi(16)(15)}{3} = 80\pi \approx 251.33 \text{ cm}^3
-$$
-
-$$
-\text{Velas} = \frac{2000}{251.33} \approx 7.96
-$$
-
-Se pueden hacer **7 velas** completas.
-
-</details>
-
----
-
-### Problema 5: Embudo
-
-Un embudo tiene forma de cono con radio 6 cm y altura 10 cm. Se llena de agua y luego se vierte en un cilindro de radio 3 cm. ¿Hasta qué altura llega el agua?
-
-<details>
-<summary><strong>Ver respuesta</strong></summary>
-
-$$
-V_{cono} = \frac{\pi(36)(10)}{3} = 120\pi \text{ cm}^3
-$$
-
-$$
-h_{cilindro} = \frac{V}{\pi r^2} = \frac{120\pi}{\pi(9)} = \frac{120}{9} = 13.33 \text{ cm}
-$$
-
-</details>
-
----
+> Trata cada parte por separado y suma (o resta) al final. ¡Cuidado con las unidades!

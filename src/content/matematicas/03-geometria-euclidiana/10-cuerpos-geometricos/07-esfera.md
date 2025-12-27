@@ -1,305 +1,250 @@
-# Esfera
+# **Esfera**
 
-La **esfera** es el cuerpo geométrico más simétrico. Todos sus puntos superficiales están a la misma distancia del centro.
-
-<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <canvas id="roughjs-esfera" width="700" height="280" style="width: 100%; height: auto; display: block;"></canvas>
-  <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 0.75rem; font-size: 0.9rem; flex-wrap: wrap;">
-    <span><strong style="color: #ef4444;">O</strong> = centro de la esfera</span>
-    <span><strong style="color: #22c55e;">r</strong> = radio</span>
-    <span><strong style="color: #64748b;">d</strong> = diámetro = 2r</span>
-  </div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof rough !== 'undefined' && document.getElementById('roughjs-esfera')) {
-    var canvas = document.getElementById('roughjs-esfera');
-    var rc = rough.canvas(canvas);
-    var ctx = canvas.getContext('2d');
-    
-    ctx.font = 'bold 16px Inter, sans-serif';
-    ctx.fillStyle = '#1e293b';
-    ctx.textAlign = 'center';
-    ctx.fillText('Esfera: Elementos y Fórmulas', 350, 25);
-    
-    var azul = '#3b82f6';
-    var verde = '#22c55e';
-    var rojo = '#ef4444';
-    
-    // Esfera
-    var cx = 180, cy = 160;
-    var r = 100;
-    
-    // Círculo principal
-    rc.circle(cx, cy, r * 2, {fill: '#dbeafe', stroke: azul, strokeWidth: 2.5, roughness: 0.5});
-    
-    // Ecuador (elipse horizontal)
-    rc.ellipse(cx, cy, r * 2, 40, {stroke: azul, strokeWidth: 1.5, roughness: 0.3});
-    
-    // Meridiano (elipse vertical - parte visible)
-    ctx.strokeStyle = azul;
-    ctx.lineWidth = 1.5;
-    ctx.setLineDash([5, 5]);
-    ctx.beginPath();
-    ctx.ellipse(cx, cy, 30, r, 0, 0, Math.PI * 2);
-    ctx.stroke();
-    ctx.setLineDash([]);
-    
-    // Centro
-    rc.circle(cx, cy, 8, {fill: rojo, stroke: rojo, roughness: 0.3});
-    ctx.font = 'bold 12px Inter, sans-serif';
-    ctx.fillStyle = rojo;
-    ctx.fillText('O', cx - 15, cy + 5);
-    
-    // Radio
-    rc.line(cx, cy, cx + r, cy, {stroke: verde, strokeWidth: 3, roughness: 0.3});
-    ctx.fillStyle = verde;
-    ctx.fillText('r', cx + r/2, cy - 10);
-    
-    // Diámetro (punteado)
-    ctx.setLineDash([5, 5]);
-    ctx.strokeStyle = '#64748b';
-    ctx.lineWidth = 1.5;
-    ctx.beginPath();
-    ctx.moveTo(cx - r, cy);
-    ctx.lineTo(cx + r, cy);
-    ctx.stroke();
-    ctx.setLineDash([]);
-    ctx.font = '11px Inter, sans-serif';
-    ctx.fillStyle = '#64748b';
-    ctx.fillText('d = 2r', cx, cy + 25);
-    
-    // Fórmulas
-    rc.rectangle(380, 50, 290, 220, {fill: '#f1f5f9', stroke: '#cbd5e1', roughness: 0.3});
-    ctx.font = 'bold 14px Inter, sans-serif';
-    ctx.fillStyle = '#1e293b';
-    ctx.textAlign = 'center';
-    ctx.fillText('Fórmulas de la Esfera', 525, 80);
-    
-    ctx.font = '13px Inter, sans-serif';
-    ctx.textAlign = 'left';
-    
-    ctx.fillStyle = verde;
-    ctx.fillText('Radio:', 400, 110);
-    ctx.fillStyle = '#1e293b';
-    ctx.fillText('r', 480, 110);
-    
-    ctx.fillStyle = azul;
-    ctx.fillText('Área superficial:', 400, 145);
-    ctx.fillStyle = '#1e293b';
-    ctx.font = 'bold 14px Inter, sans-serif';
-    ctx.fillText('A = 4πr²', 400, 170);
-    
-    ctx.font = '13px Inter, sans-serif';
-    ctx.fillStyle = rojo;
-    ctx.fillText('Volumen:', 400, 205);
-    ctx.fillStyle = '#1e293b';
-    ctx.font = 'bold 14px Inter, sans-serif';
-    ctx.fillText('V = (4/3)πr³', 400, 230);
-    
-    ctx.font = '11px Inter, sans-serif';
-    ctx.fillStyle = '#64748b';
-    ctx.fillText('El área es 4 veces el área', 400, 255);
-    ctx.fillText('del círculo máximo', 400, 270);
-  }
-});
-</script>
+La esfera es la reina de la simetría. No tiene "caras" planas, ni aristas, ni vértices. Es curva en todas partes y es la figura que encierra más volumen con la menor superficie (por eso las burbujas son redondas).
 
 ---
 
-## 📖 Definición
+## 🎯 ¿Qué vas a aprender?
 
-> **Definición:** Una esfera es el conjunto de todos los puntos del espacio que están a la **misma distancia** de un punto fijo llamado **centro**.
-
-La esfera es la versión 3D del círculo.
-
----
-
-## 📖 Elementos de la esfera
-
-| Elemento | Descripción |
-|----------|-------------|
-| Centro | Punto equidistante de toda la superficie |
-| Radio ($r$) | Distancia del centro a cualquier punto de la superficie |
-| Diámetro ($d$) | Mayor distancia entre dos puntos de la esfera ($d = 2r$) |
+- Diferenciar entre esfera (superficie) y bola (sólido).
+- Calcular la **Superficie** (el cuero de un balón).
+- Calcular el **Volumen** (el aire dentro del balón).
+- Entender cómo el radio afecta drásticamente el volumen.
 
 ---
 
-## 📖 Diferencia esfera y bola
+## 🔮 Definición
 
-| Concepto | Descripción |
-|----------|-------------|
-| Esfera | Solo la **superficie** (cáscara) |
-| Bola | La esfera más su **interior** |
+Es el conjunto de todos los puntos que están a una misma distancia ($r$) de un punto central.
 
-Similar a: circunferencia vs círculo
+*   **Superficie Esférica:** La "cáscara". Área = $4\pi r^2$.
+*   **Volumen Esférico:** El relleno. Volumen = $\frac{4}{3} \pi r^3$.
 
 ---
 
-## 📖 Área de la esfera
+## 📏 Fórmulas Fundamentales
+
+### 1. Área Superficial ($A$)
+Es exactamente **4 veces** el área de un círculo central con el mismo radio.
 
 $$
 A = 4\pi r^2
 $$
 
-### ¿Por qué 4πr²?
-
-El área de la esfera es exactamente **4 veces** el área del círculo con el mismo radio.
-
-### Ejemplo
-
-Esfera de radio 5 cm:
+### 2. Volumen ($V$)
+Recuerda que lleva $r^3$ porque es espacio tridimensional.
 
 $$
-A = 4\pi(25) = 100\pi \approx 314.16 \text{ cm}^2
+V = \frac{4}{3} \pi r^3
 $$
 
 ---
 
-## 📖 Volumen de la esfera
+## ⚙️ Ejemplos Resueltos
 
+### Ejemplo 1: Pelota de Tenis
+
+Radio aproximado de 3 cm.
+
+**Razonamiento:**
+*   **Área:** $4\pi (3^2) = 36\pi$ cm².
+*   **Volumen:** $\frac{4}{3}\pi (3^3) = \frac{108\pi}{3} = 36\pi$ cm³.
+*(Curiosamente, si r=3, el valor numérico de área y volumen coincide, aunque las unidades son distintas).*
+
+**Resultado:**
 $$
-V = \frac{4}{3}\pi r^3
-$$
-
-### Ejemplo
-
-Esfera de radio 6 cm:
-
-$$
-V = \frac{4}{3}\pi(216) = 288\pi \approx 904.78 \text{ cm}^3
-$$
-
----
-
-## 📖 Relación con el cilindro circunscrito
-
-Arquímedes descubrió que una esfera inscrita en un cilindro:
-
-- Tiene **2/3 del volumen** del cilindro
-- Tiene **2/3 del área superficial** del cilindro
-
-$$
-\frac{V_{esfera}}{V_{cilindro}} = \frac{\frac{4}{3}\pi r^3}{2\pi r^3} = \frac{2}{3}
+\boxed{A = 36\pi \text{ cm}^2, V = 36\pi \text{ cm}^3}
 $$
 
----
+### Ejemplo 2: Balón de Fútbol
 
-## 📖 Encontrar el radio
+Radio = 11 cm.
 
-### Conociendo el área
+**Razonamiento:**
+*   **Área:** $4\pi (121) = 484\pi$.
+*   **Volumen:** $\frac{4}{3}\pi (1331) = \frac{5324\pi}{3}$.
 
+**Resultado:**
 $$
-r = \sqrt{\frac{A}{4\pi}}
-$$
-
-### Conociendo el volumen
-
-$$
-r = \sqrt[3]{\frac{3V}{4\pi}}
+\boxed{A \approx 1520.5 \text{ cm}^2, V \approx 5575 \text{ cm}^3}
 $$
 
 ---
 
-## 📖 Secciones de la esfera
+## 📝 Ejercicios de Práctica
 
-### Hemisferio
-
-Mitad de la esfera:
-
-$$
-V_{hemisferio} = \frac{2}{3}\pi r^3
-$$
-
-### Casquete esférico
-
-Porción cortada por un plano.
-
-### Zona esférica
-
-Región entre dos planos paralelos.
-
----
-
-## 📝 Ejercicios de práctica
-
-### Ejercicio 1: Área y volumen
-
-Calcula el área y volumen de esferas con radio:
-
-1. 3 cm
-2. 7 cm
-3. 10 cm
+### Ejercicio 1
+Área de una esfera de radio 5.
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. $A = 36\pi \approx 113.1$ cm², $V = 36\pi \approx 113.1$ cm³
-2. $A = 196\pi \approx 615.75$ cm², $V = \frac{1372\pi}{3} \approx 1436.76$ cm³
-3. $A = 400\pi \approx 1256.64$ cm², $V = \frac{4000\pi}{3} \approx 4188.79$ cm³
+**Razonamiento:**
+$4\pi(25) = 100\pi$.
+
+**Resultado:**
+$$
+\boxed{100\pi}
+$$
+
+</details>
+
+### Ejercicio 2
+Volumen de una esfera de radio 1 m.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$\frac{4}{3}\pi(1) = \frac{4}{3}\pi$.
+
+**Resultado:**
+$$
+\boxed{\frac{4}{3}\pi \approx 4.19 \text{ m}^3}
+$$
+
+</details>
+
+### Ejercicio 3
+Si el área es $16\pi$, ¿cuánto es el radio?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$4\pi r^2 = 16\pi \Rightarrow 4r^2 = 16 \Rightarrow r^2=4 \Rightarrow r=2$.
+
+**Resultado:**
+$$
+\boxed{2}
+$$
+
+</details>
+
+### Ejercicio 4
+Volumen de una esfera de diámetro 6 ($r=3$).
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$\frac{4}{3}\pi(27) = 36\pi$.
+
+**Resultado:**
+$$
+\boxed{36\pi}
+$$
+
+</details>
+
+### Ejercicio 5
+Área de un hemisferio (mitad de esfera) de radio 10. (Solo la cúpula, sin la base plana).
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Es la mitad de $4\pi r^2$.
+$2\pi(100) = 200\pi$.
+
+**Resultado:**
+$$
+\boxed{200\pi}
+$$
+
+</details>
+
+### Ejercicio 6
+Si duplicas el radio, ¿qué pasa con el área?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$(2r)^2 = 4r^2$.
+
+**Resultado:**
+$$
+\boxed{\text{Se cuadriplica (x4)}}
+$$
+
+</details>
+
+### Ejercicio 7
+Si triplicas el radio, ¿qué pasa con el volumen?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$(3r)^3 = 27r^3$.
+
+**Resultado:**
+$$
+\boxed{\text{Se multiplica por 27}}
+$$
+
+</details>
+
+### Ejercicio 8
+Una esfera cabe exactamente en un cubo de lado 10. ¿Cuál es el volumen de la esfera?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+El diámetro es 10, así que $r=5$.
+$V = \frac{4}{3}\pi(125).$
+
+**Resultado:**
+$$
+\boxed{\frac{500\pi}{3}}
+$$
+
+</details>
+
+### Ejercicio 9
+Diferencia entre el volumen del cubo ($L=2r$) y la esfera inscrita.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Cubo: $(2r)^3 = 8r^3$.
+Esfera: $1.33 \pi r^3 \approx 4.19 r^3$.
+Diferencia $\approx 3.81 r^3$. (Casi la mitad del cubo es estacio vacío).
+
+**Resultado:**
+$$
+\boxed{8r^3 - \frac{4}{3}\pi r^3}
+$$
+
+</details>
+
+### Ejercicio 10
+Área "Total" de un hemisferio sólido (Cúpula + Base plana circular). Radio 10.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Cúpula ($2\pi r^2$) + Base ($\pi r^2$) = $3\pi r^2$.
+$3\pi(100) = 300\pi$.
+
+**Resultado:**
+$$
+\boxed{300\pi}
+$$
 
 </details>
 
 ---
 
-### Ejercicio 2: Encontrar el radio
+## 🔑 Resumen
 
-1. El área de una esfera es 314 cm². ¿Cuál es el radio? (usa $\pi \approx 3.14$)
-2. El volumen de una esfera es 904.78 cm³. ¿Cuál es el radio?
+| Métrica | Fórmula |
+| :--- | :--- |
+| **Volumen** | $\frac{4}{3}\pi r^3$ |
+| **Superficie** | $4\pi r^2$ |
 
-<details>
-<summary><strong>Ver respuestas</strong></summary>
-
-1. $r = \sqrt{\frac{314}{4 \times 3.14}} = \sqrt{25} = 5$ cm
-2. $r = \sqrt[3]{\frac{3 \times 904.78}{4 \times 3.14}} = \sqrt[3]{216} = 6$ cm
-
-</details>
-
----
-
-### Ejercicio 3: Comparación
-
-Si duplicamos el radio de una esfera, ¿en cuánto se multiplican el área y el volumen?
-
-<details>
-<summary><strong>Ver respuesta</strong></summary>
-
-- Área: Se multiplica por $2^2 = 4$
-- Volumen: Se multiplica por $2^3 = 8$
-
-</details>
-
----
-
-### Ejercicio 4: Hemisferio
-
-Calcula el volumen de un hemisferio de radio 9 cm.
-
-<details>
-<summary><strong>Ver respuesta</strong></summary>
-
-$$
-V = \frac{2}{3}\pi(729) = 486\pi \approx 1526.81 \text{ cm}^3
-$$
-
-</details>
-
----
-
-### Ejercicio 5: Problema aplicado
-
-Una pelota de fútbol tiene diámetro 22 cm. Calcula su área superficial.
-
-<details>
-<summary><strong>Ver respuesta</strong></summary>
-
-$r = 11$ cm
-
-$$
-A = 4\pi(121) = 484\pi \approx 1520.53 \text{ cm}^2
-$$
-
-</details>
-
----
+> **Arquímedes** estaba tan orgulloso de estas fórmulas que pidió que grabaran una esfera dentro de un cilindro en su tumba.
