@@ -169,17 +169,19 @@ Situaciones que requieren confirmación:
 
 Corrige las siguientes lecciones al estilo Ediprofe.
 
-http://localhost:4321/matematicas/algebra/progresiones/progresion-aritmetica
+http://localhost:4321/matematicas/geometria-euclidiana/angulos/definicion-angulo
 
-http://localhost:4321/matematicas/algebra/progresiones/progresion-geometrica
+http://localhost:4321/matematicas/geometria-euclidiana/angulos/sistema-sexagesimal
 
-http://localhost:4321/matematicas/geometria-euclidiana/conceptos-basicos/introduccion-geometria
+http://localhost:4321/matematicas/geometria-euclidiana/angulos/operaciones-sistema-sexagesimal
 
-http://localhost:4321/matematicas/geometria-euclidiana/conceptos-basicos/punto-recta-plano
+http://localhost:4321/matematicas/geometria-euclidiana/angulos/sistema-circular-radianes
 
-http://localhost:4321/matematicas/geometria-euclidiana/conceptos-basicos/segmentos-y-rayos
+http://localhost:4321/matematicas/geometria-euclidiana/angulos/conversion-grados-radianes
 
-http://localhost:4321/matematicas/geometria-euclidiana/conceptos-basicos/posiciones-relativas-rectas
+http://localhost:4321/matematicas/geometria-euclidiana/angulos/clasificacion-angulos-medida
+
+http://localhost:4321/matematicas/geometria-euclidiana/angulos/angulos-complementarios-suplementarios
 
 
 LAS IMAGENES QUE SE GENERAN CON LIBRERÍA DE JAVASCRIPT ELIMINALAS, QUE YO LUEGO LAS REGENERO.

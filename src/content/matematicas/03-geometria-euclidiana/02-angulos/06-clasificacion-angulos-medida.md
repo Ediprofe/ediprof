@@ -1,354 +1,216 @@
-# Clasificación de Ángulos por su Medida
+# **Clasificación de Ángulos por su Medida**
 
-Los ángulos se clasifican según su **amplitud** o **medida**. Esta clasificación es fundamental para identificar y describir ángulos en cualquier contexto geométrico.
-
----
-
-## 📖 Clasificación principal
-
-Existen seis tipos principales de ángulos según su medida:
-
-| Tipo | Medida | Descripción |
-|------|--------|-------------|
-| Nulo | $0°$ | Sin abertura |
-| Agudo | $0° < \alpha < 90°$ | Menor que un recto |
-| Recto | $90°$ | Exactamente un cuarto de vuelta |
-| Obtuso | $90° < \alpha < 180°$ | Mayor que recto, menor que llano |
-| Llano | $180°$ | Exactamente media vuelta |
-| Cóncavo | $180° < \alpha < 360°$ | Mayor que llano (también llamado reflejo) |
-| Perigonal | $360°$ | Vuelta completa |
+No todos los ángulos son iguales. Así como clasificamos a las personas por altura (bajitos, altos, gigantes), clasificamos a los ángulos por cuánto "se abren". Esta clasificación nos ayuda a comunicar rápidamente la forma de las cosas sin tener que medir todo el tiempo.
 
 ---
 
-## 📖 Ángulo Nulo (0°)
+## 🎯 ¿Qué vas a aprender?
 
-Un **ángulo nulo** tiene medida de $0°$. Sus dos lados están superpuestos.
-
-> Es como si el ángulo no existiera porque no hay abertura.
-
-### Ejemplo
-
-Las manecillas del reloj a las **12:00** forman un ángulo nulo.
+- Los nombres oficiales de los ángulos según su tamaño.
+- Identificar un ángulo agudo, recto u obtuso a simple vista.
+- Qué es un ángulo reflejo (o cóncavo).
+- La importancia del ángulo de 90° (recto).
 
 ---
 
-## 📖 Ángulo Agudo
+## 📏 La Escala de Ángulos
 
-Un **ángulo agudo** mide más de $0°$ y menos de $90°$.
+Imagina que abres una puerta. Dependiendo de cuánto la abras, el ángulo cambia de nombre.
 
-$$
-0° < \alpha < 90°
-$$
+### 1. Ángulo Agudo ("Puntiagudo")
+Mide **menos de 90°**.
+- Es cerrado, como la punta de una lanza o una rebanada delgada de pizza.
+- **Rango:** $0^\circ < x < 90^\circ$.
 
-### Características
+### 2. Ángulo Recto ("Esquina perfecta")
+Mide **exactamente 90°**.
+- Es como las esquinas de un cuadrado, una hoja de papel o la letra "L".
+- **Símbolo:** Se marca con un cuadradito en la esquina ($\square$) en lugar de un arco curvo.
 
-- Es "puntiagudo" o "afilado"
-- Es menor que un ángulo recto
+### 3. Ángulo Obtuso ("Abierto")
+Mide **más de 90° pero menos de 180°**.
+- Es una abertura amplia, como un sillón reclinable cómodo.
+- **Rango:** $90^\circ < x < 180^\circ$.
 
-### Ejemplos en la vida real
+### 4. Ángulo Llano ("Plano")
+Mide **exactamente 180°**.
+- Parece una línea recta. Es media vuelta completa.
+- Sus lados apuntan en direcciones opuestas.
 
-| Ejemplo | Ángulo aproximado |
-|---------|-------------------|
-| La punta de una flecha | 30° - 45° |
-| La pendiente de un techo | 25° - 35° |
-| Tijeras poco abiertas | 20° - 40° |
-| Un trozo de pizza | Aproximadamente 45° |
+### 5. Ángulo Cóncavo (o Reflejo)
+Mide **más de 180° pero menos de 360°**.
+- Es el ángulo "exterior" que "da la vuelta" por fuera.
+- Como Pac-Man con la boca muy abierta.
 
-### Ejemplo numérico
-
-Los ángulos de $15°$, $30°$, $45°$, $60°$, $75°$, $89°$ son todos **agudos**.
-
----
-
-## 📖 Ángulo Recto (90°)
-
-Un **ángulo recto** mide exactamente $90°$ (un cuarto de vuelta).
-
-$$
-\alpha = 90°
-$$
-
-### Símbolo especial
-
-Se representa con un pequeño cuadrado en el vértice: ⌐
-
-### Características
-
-- Sus lados son **perpendiculares**
-- Es la base de la perpendicularidad
-- Divide el plano en cuatro partes iguales
-
-### Ejemplos en la vida real
-
-| Ejemplo |
-|---------|
-| Las esquinas de una habitación |
-| Los ángulos de una hoja de papel |
-| El cruce de calles perpendiculares |
-| La letra "L" mayúscula |
-| Las manecillas del reloj a las 3:00 |
+### 6. Ángulo Completo (o Perigonal)
+Mide **exactamente 360°**.
+- Es una vuelta entera. El lado final vuelve al inicio.
 
 ---
 
-## 📖 Ángulo Obtuso
+## ⚙️ Ejemplos Resueltos
 
-Un **ángulo obtuso** mide más de $90°$ y menos de $180°$.
+### Ejemplo 1: Clasificación visual
+Clasifica los siguientes ángulos: $30^\circ$, $91^\circ$, $180^\circ$.
 
-$$
-90° < \alpha < 180°
-$$
+**Razonamiento:**
+- $30^\circ$ es menor que $90^\circ$ $\to$ **Agudo**.
+- $91^\circ$ es mayor que $90^\circ$ (aunque sea por poco) $\to$ **Obtuso**.
+- $180^\circ$ es media vuelta exacta $\to$ **Llano**.
 
-### Características
+### Ejemplo 2: El Reloj
+¿Qué tipo de ángulo forman las agujas a las 3:00?
 
-- Es "abierto" o "ancho"
-- Es mayor que un ángulo recto pero menor que un llano
+**Razonamiento:**
+Una aguja apunta al 12 y la otra al 3. Es una "L" perfecta.
+**Resultado:** **Recto ($90^\circ$)**.
 
-### Ejemplos en la vida real
+### Ejemplo 3: Ángulo Reflejo
+Si un ángulo interior mide $60^\circ$, ¿cuánto mide el ángulo reflejo (el de afuera)?
 
-| Ejemplo | Ángulo aproximado |
-|---------|-------------------|
-| Un libro abierto más de 90° | 120° |
-| Una silla reclinada | 100° - 110° |
-| Las manecillas a las 4:30 | Aproximadamente 135° |
-
-### Ejemplo numérico
-
-Los ángulos de $91°$, $100°$, $120°$, $135°$, $150°$, $179°$ son todos **obtusos**.
-
----
-
-## 📖 Ángulo Llano (180°)
-
-Un **ángulo llano** (o **plano**) mide exactamente $180°$ (media vuelta).
-
-$$
-\alpha = 180°
-$$
-
-### Características
-
-- Sus lados forman una **línea recta**
-- Divide el plano en dos semiplanos
-
-### Ejemplos en la vida real
-
-| Ejemplo |
-|---------|
-| Las manecillas del reloj a las 6:00 |
-| Un abanico completamente abierto |
-| El borde recto de una regla |
+**Razonamiento:**
+Una vuelta completa son $360^\circ$.
+Reflejo = $360^\circ - 60^\circ = 300^\circ$.
+**Resultado:** **$300^\circ$ (Cóncavo)**.
 
 ---
 
-## 📖 Ángulo Cóncavo (Reflejo)
+## 📝 Ejercicios de Práctica
 
-Un **ángulo cóncavo** (o **reflejo**) mide más de $180°$ y menos de $360°$.
-
-$$
-180° < \alpha < 360°
-$$
-
-### Características
-
-- Es la parte "grande" de un ángulo
-- También se llama **ángulo reflejo** o **cóncavo**
-- Es el complemento de un ángulo convexo hasta 360°
-
-### Ejemplo
-
-Si abres un compás más de media vuelta, el ángulo interior es cóncavo.
-
-### Relación con ángulos convexos
-
-Si un ángulo convexo mide $\theta$, su ángulo cóncavo correspondiente mide:
-
-$$
-\text{Ángulo cóncavo} = 360° - \theta
-$$
-
-### Ejemplo numérico
-
-Si el ángulo convexo es de $60°$, el ángulo cóncavo es:
-
-$$
-360° - 60° = 300°
-$$
-
----
-
-## 📖 Ángulo Perigonal (360°)
-
-Un **ángulo perigonal** (o **completo**) mide exactamente $360°$ (vuelta completa).
-
-$$
-\alpha = 360°
-$$
-
-### Características
-
-- Es una **vuelta completa** alrededor del vértice
-- Los dos lados vuelven a coincidir
-
-### Ejemplo
-
-Una rueda que da una vuelta completa gira $360°$.
-
----
-
-## 📖 Resumen Visual
-
-| Ángulo | Rango | Representación |
-|--------|-------|----------------|
-| Nulo | $0°$ | Lados superpuestos |
-| Agudo | $0° - 90°$ | Puntiagudo |
-| Recto | $90°$ | Con cuadradito |
-| Obtuso | $90° - 180°$ | Abierto |
-| Llano | $180°$ | Línea recta |
-| Cóncavo | $180° - 360°$ | Más de media vuelta |
-| Perigonal | $360°$ | Vuelta completa |
-
-**Ángulos: nulo ($0°$), agudo ($0° < \alpha < 90°$), recto ($90°$), obtuso ($90° < \alpha < 180°$), llano ($180°$):**
-
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="jsxgraph-tipos-angulos" style="width: 100%; height: 450px; min-height: 400px; border-radius: 8px;"></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-tipos-angulos')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-tipos-angulos', {
-      boundingbox: [-1, 10, 15, -1],
-      axis: false,
-      showCopyright: false,
-      showNavigation: false,
-      pan: { enabled: false },
-      zoom: { enabled: false }
-    });
-    
-    board.create('text', [7, 9.3, 'Clasificación de Ángulos por su Medida'], {fontSize: 14, fontWeight: 'bold', color: '#1e293b', anchorX: 'middle'});
-    
-    // Función para crear un ángulo con etiqueta
-    function crearAngulo(cx, cy, angGrados, nombre, color) {
-      var rad = angGrados * Math.PI / 180;
-      var r = 1.2;
-      
-      // Lados del ángulo
-      var p1 = board.create('point', [cx + r, cy], {visible: false, fixed: true});
-      var p2 = board.create('point', [cx + r * Math.cos(rad), cy + r * Math.sin(rad)], {visible: false, fixed: true});
-      var v = board.create('point', [cx, cy], {name: '', size: 4, fixed: true, color: color});
-      
-      board.create('segment', [v, p1], {strokeColor: color, strokeWidth: 2});
-      board.create('segment', [v, p2], {strokeColor: color, strokeWidth: 2});
-      
-      // Arco
-      if (angGrados > 0 && angGrados < 360) {
-        board.create('arc', [v, p1, p2], {strokeColor: color, strokeWidth: 2});
-      }
-      
-      // Etiquetas
-      board.create('text', [cx, cy - 1.5, nombre + ' (' + angGrados + '°)'], {fontSize: 10, color: color, anchorX: 'middle'});
-    }
-    
-    // FILA 1: Nulo, Agudo, Recto
-    crearAngulo(2, 6.5, 0, 'NULO', '#94a3b8');
-    crearAngulo(6, 6.5, 45, 'AGUDO', '#22c55e');
-    crearAngulo(10, 6.5, 90, 'RECTO', '#3b82f6');
-    
-    // Cuadradito para ángulo recto
-    board.create('polygon', [[10.3, 6.5], [10.3, 6.8], [10, 6.8]], {
-      fillColor: 'transparent',
-      borders: {strokeColor: '#3b82f6', strokeWidth: 1}
-    });
-    
-    // FILA 2: Obtuso, Llano
-    crearAngulo(4, 2.5, 135, 'OBTUSO', '#f59e0b');
-    crearAngulo(9, 2.5, 180, 'LLANO', '#ef4444');
-    
-    board.unsuspendUpdate();
-  }
-});
-</script>
-
----
-
-## 📝 Ejercicios de práctica
-
-### Ejercicio 1: Clasificar ángulos
-
-Clasifica cada ángulo según su medida:
-
-| Ángulo | Clasificación |
-|--------|---------------|
-| 45° | |
-| 90° | |
-| 135° | |
-| 180° | |
-| 270° | |
-| 360° | |
-| 15° | |
+### Ejercicio 1
+Clasifica un ángulo de $45^\circ$.
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-| Ángulo | Clasificación |
-|--------|---------------|
-| 45° | Agudo |
-| 90° | Recto |
-| 135° | Obtuso |
-| 180° | Llano |
-| 270° | Cóncavo |
-| 360° | Perigonal |
-| 15° | Agudo |
+Menor de 90.
+**Resultado:** $\boxed{\text{Agudo}}$
 
 </details>
 
 ---
 
-### Ejercicio 2: Identificar en el reloj
-
-¿Qué tipo de ángulo forman las manecillas del reloj a cada hora?
-
-| Hora | Tipo de ángulo |
-|------|----------------|
-| 3:00 | |
-| 6:00 | |
-| 12:00 | |
-| 4:00 | |
-| 10:30 | |
+### Ejercicio 2
+Clasifica un ángulo de $135^\circ$.
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-| Hora | Tipo de ángulo |
-|------|----------------|
-| 3:00 | Recto (90°) |
-| 6:00 | Llano (180°) |
-| 12:00 | Nulo (0°) |
-| 4:00 | Obtuso (≈120°) |
-| 10:30 | Obtuso (≈135°) |
+Entre 90 y 180.
+**Resultado:** $\boxed{\text{Obtuso}}$
 
 </details>
 
 ---
 
-### Ejercicio 3: Calcular el ángulo cóncavo
-
-Si el ángulo convexo mide lo indicado, ¿cuánto mide su ángulo cóncavo correspondiente?
-
-1. Convexo = 30°
-2. Convexo = 90°
-3. Convexo = 150°
+### Ejercicio 3
+¿Cómo se llama el ángulo de $180^\circ$?
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. Cóncavo = $360° - 30° = 330°$
-2. Cóncavo = $360° - 90° = 270°$
-3. Cóncavo = $360° - 150° = 210°$
+Llano.
 
 </details>
 
 ---
+
+### Ejercicio 4
+Si partes una pizza en 8 rebanadas iguales, ¿qué tipo de ángulo tiene la punta de cada una?
+
+<details>
+<summary>Ver solución</summary>
+
+$360 / 8 = 45^\circ$.
+**Resultado:** $\boxed{\text{Agudo}}$
+
+</details>
+
+---
+
+### Ejercicio 5
+Verdadero o Falso: Un triángulo puede tener dos ángulos rectos.
+
+<details>
+<summary>Ver solución</summary>
+
+Falso. $90+90=180$, y la suma total debe ser 180, así que el tercer ángulo sería 0, lo cual es imposible.
+
+</details>
+
+---
+
+### Ejercicio 6
+Clasifica un ángulo de $270^\circ$.
+
+<details>
+<summary>Ver solución</summary>
+
+Mayor de 180.
+**Resultado:** $\boxed{\text{Cóncavo/Reflejo}}$
+
+</details>
+
+---
+
+### Ejercicio 7
+¿Qué ángulo forman las agujas del reloj a las 6:00?
+
+<details>
+<summary>Ver solución</summary>
+
+Forman una línea recta.
+**Resultado:** $\boxed{\text{Llano (180$^\circ$)}}$
+
+</details>
+
+---
+
+### Ejercicio 8
+¿Cuál es el ángulo más pequeño posible que no sea nulo?
+
+<details>
+<summary>Ver solución</summary>
+
+Cualquier ángulo mayor que 0. Un ángulo de $0.0001^\circ$ es Agudo.
+
+</details>
+
+---
+
+### Ejercicio 9
+Si sumas dos ángulos agudos de $40^\circ$ y $60^\circ$, ¿qué tipo de ángulo obtienes?
+
+<details>
+<summary>Ver solución</summary>
+
+$100^\circ$.
+**Resultado:** $\boxed{\text{Obtuso}}$
+
+</details>
+
+---
+
+### Ejercicio 10
+El borde de una tarjeta de crédito tiene un ángulo...
+
+<details>
+<summary>Ver solución</summary>
+
+Recto.
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Tipo | Medida ($x$) | Forma visual |
+|:--- |:--- |:--- |
+| **Agudo** | $< 90^\circ$ | Punta afilada |
+| **Recto** | $= 90^\circ$ | Esquina cuadrada |
+| **Obtuso** | $90^\circ < x < 180^\circ$ | Abierto |
+| **Llano** | $= 180^\circ$ | Línea recta |
+| **Cóncavo** | $> 180^\circ$ | Pac-Man |
+
+> **Conclusión:** El 90 y el 180 son los "puntos de control". Todo se define en relación a si eres mayor o menor que una esquina cuadrada o una línea recta.

@@ -1,239 +1,230 @@
-# Sistema Circular y Radianes
+# **Sistema Circular y Radianes**
 
-Además del sistema sexagesimal (grados), existe otro sistema para medir ángulos: el **sistema circular** o **radián**. Este sistema es fundamental en matemáticas avanzadas, física e ingeniería.
-
----
-
-## 📖 ¿Por qué otro sistema de medición?
-
-El sistema sexagesimal (grados) es práctico para la vida cotidiana, pero el **radián** es más natural para las matemáticas porque relaciona directamente el ángulo con la longitud del arco de un círculo.
+Imagina que tienes un hilo del mismo largo que el radio de un círculo. Si colocas ese hilo sobre el borde del círculo (la circunferencia), el ángulo que cubre es exactamente **un radián**. Esta medida es la favorita de los matemáticos y físicos porque no depende de divisiones arbitrarias como 360, sino de la propia geometría del círculo.
 
 ---
 
-## 📖 ¿Qué es un radián?
+## 🎯 ¿Qué vas a aprender?
 
-> **Definición:** Un radián es la medida de un ángulo central cuyo arco tiene la misma longitud que el radio del círculo.
-
-### Explicación paso a paso
-
-1. Imagina un círculo de radio $r$
-2. Toma un trozo de la circunferencia que mida exactamente $r$ (igual al radio)
-3. El ángulo que forma ese arco desde el centro es **1 radián**
-
-### En otras palabras
-
-Si "desenrollamos" el radio sobre la circunferencia, el ángulo que abarca es de 1 radián.
+- Qué es un radián y de dónde sale.
+- Por qué $180^\circ$ es lo mismo que $\pi$ radianes.
+- Cómo pensar en "mitades y tercios de pi" en lugar de memorizar números.
 
 ---
 
-## 📖 Relación con el número π
+## ⭕ ¿Qué es un Radián?
 
-### La circunferencia completa
+Un radián ($\text{rad}$) es el ángulo que se forma cuando la **longitud del arco** es igual al **radio**.
 
-La longitud de una circunferencia es:
+1.  Radio del círculo = $r$.
+2.  Arco recorrido = $r$.
+3.  Ángulo formado = $1 \text{ rad}$.
 
-$$
-C = 2\pi r
-$$
-
-### ¿Cuántos radianes hay en una vuelta completa?
-
-Si un radián corresponde a un arco de longitud $r$, entonces:
-
-$$
-\text{Radianes en una vuelta} = \frac{2\pi r}{r} = 2\pi \text{ radianes}
-$$
-
-### Equivalencia fundamental
-
-$$
-\boxed{360° = 2\pi \text{ rad}}
-$$
-
-O equivalentemente:
-
-$$
-\boxed{180° = \pi \text{ rad}}
-$$
+> **Dato:** Un radián equivale aproximadamente a $57.3^\circ$.
 
 ---
 
-## 📖 Valores importantes
+## 🥧 La Relación con $\pi$
 
-| Ángulo en grados | Ángulo en radianes |
-|-----------------|-------------------|
-| $0°$ | $0$ |
-| $30°$ | $\frac{\pi}{6}$ |
-| $45°$ | $\frac{\pi}{4}$ |
-| $60°$ | $\frac{\pi}{3}$ |
-| $90°$ | $\frac{\pi}{2}$ |
-| $180°$ | $\pi$ |
-| $270°$ | $\frac{3\pi}{2}$ |
-| $360°$ | $2\pi$ |
-
-### ¿Cómo recordar estos valores?
-
-- El denominador indica en cuántas partes se divide $180°$
-- $\frac{\pi}{6}$ = $180°/6 = 30°$
-- $\frac{\pi}{4}$ = $180°/4 = 45°$
-- $\frac{\pi}{3}$ = $180°/3 = 60°$
-- $\frac{\pi}{2}$ = $180°/2 = 90°$
-
----
-
-## 📖 Valor numérico de un radián
-
-Sabemos que $180° = \pi$ radianes.
+Sabemos que la circunferencia completa mide $2\pi r$ (dos veces pi por el radio). Esto significa que en una vuelta completa caben exactamente **$2\pi$ radios**.
 
 Por lo tanto:
-
 $$
-1 \text{ rad} = \frac{180°}{\pi} \approx \frac{180°}{3.1416} \approx 57.3°
-$$
-
-### Aproximación útil
-
-$$
-\boxed{1 \text{ radián} \approx 57.3°}
+1 \text{ vuelta} = 360^\circ = 2\pi \text{ rad}
 $$
 
-Esto significa que 1 radián es un ángulo bastante grande (más de la mitad de un ángulo recto).
+Si dividimos todo por 2, obtenemos la **Regla de Oro**:
+
+$$
+180^\circ = \pi \text{ rad}
+$$
+
+Esta es la clave para todo. Si ves $\pi$, piensa en $180^\circ$ (media vuelta).
 
 ---
 
-## 📖 ¿Por qué se llama "sistema circular"?
+## ⚙️ Ejemplos Mentales
 
-Se llama **sistema circular** porque:
+### Ejemplo 1: El ángulo recto
+¿Cuánto es $90^\circ$ en radianes?
 
-1. La definición de radián se basa en el **círculo**
-2. El número $\pi$ aparece naturalmente (es la relación entre circunferencia y diámetro)
-3. Es el sistema más natural para trabajar con círculos y funciones trigonométricas
-
----
-
-## 📖 Ejemplos de ángulos en radianes
-
-### Ejemplo 1: Cuarto de vuelta
-
-Un cuarto de vuelta (90°) en radianes:
-
+**Razonamiento:**
+$90^\circ$ es la mitad de $180^\circ$.
+Si $180^\circ = \pi$, entonces la mitad es:
 $$
-90° = \frac{180°}{2} = \frac{\pi}{2} \text{ rad}
+\frac{\pi}{2} \text{ rad}
 $$
 
-### Ejemplo 2: Media vuelta
+### Ejemplo 2: $45^\circ$
+¿Cuánto es $45^\circ$ en radianes?
 
-Media vuelta (180°) en radianes:
-
-$$
-180° = \pi \text{ rad}
-$$
-
-### Ejemplo 3: Vuelta completa
-
-Una vuelta completa (360°) en radianes:
-
-$$
-360° = 2\pi \text{ rad}
-$$
-
-### Ejemplo 4: Ángulo recto dividido en tres
-
-$$
-30° = \frac{90°}{3} = \frac{\pi/2}{3} = \frac{\pi}{6} \text{ rad}
-$$
-
----
-
-## 📖 Notación
-
-Los ángulos en radianes se pueden escribir de dos formas:
-
-### Con la palabra "rad"
-
+**Razonamiento:**
+$45^\circ$ es la mitad de $90^\circ$, o sea, la cuarta parte de $180^\circ$.
 $$
 \frac{\pi}{4} \text{ rad}
 $$
 
-### Sin unidad (cuando es obvio)
+### Ejemplo 3: Multiplicando
+¿Cuánto es $270^\circ$?
 
+**Razonamiento:**
+$270^\circ$ son tres veces $90^\circ$ ($90+90+90$).
+Como $90^\circ = \pi/2$, entonces:
 $$
-\frac{\pi}{4}
+3 \times \frac{\pi}{2} = \frac{3\pi}{2} \text{ rad}
 $$
 
-En matemáticas avanzadas, cuando no se indica la unidad se asume que el ángulo está en radianes.
+### Ejemplo 4: Sextos
+¿Cuánto es $30^\circ$?
+
+**Razonamiento:**
+¿Cuántas veces cabe 30 en 180? Cabe 6 veces ($30 \times 6 = 180$).
+Entonces es la sexta parte de $\pi$.
+$$
+\frac{\pi}{6} \text{ rad}
+$$
 
 ---
 
-## 📝 Ejercicios de práctica
+## 📝 Ejercicios de Práctica
 
-### Ejercicio 1: Identificar ángulos
-
-Indica a cuántos grados equivale cada ángulo:
-
-| Radianes | Grados |
-|----------|--------|
-| $\pi$ | |
-| $\frac{\pi}{2}$ | |
-| $\frac{\pi}{4}$ | |
-| $2\pi$ | |
-| $\frac{\pi}{6}$ | |
+### Ejercicio 1
+Expresa $180^\circ$ en radianes.
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-| Radianes | Grados |
-|----------|--------|
-| $\pi$ | 180° |
-| $\frac{\pi}{2}$ | 90° |
-| $\frac{\pi}{4}$ | 45° |
-| $2\pi$ | 360° |
-| $\frac{\pi}{6}$ | 30° |
+Es la equivalencia base.
+**Resultado:** $\boxed{\pi \text{ rad}}$
 
 </details>
 
 ---
 
-### Ejercicio 2: Completar la tabla
-
-Completa los valores que faltan:
-
-| Grados | Radianes |
-|--------|----------|
-| 60° | |
-| | $\frac{3\pi}{2}$ |
-| 120° | |
-| | $\frac{5\pi}{6}$ |
+### Ejercicio 2
+Expresa $360^\circ$ en radianes.
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-| Grados | Radianes |
-|--------|----------|
-| 60° | $\frac{\pi}{3}$ |
-| 270° | $\frac{3\pi}{2}$ |
-| 120° | $\frac{2\pi}{3}$ |
-| 150° | $\frac{5\pi}{6}$ |
+Dos vueltas de $180$, o sea $2\pi$.
+**Resultado:** $\boxed{2\pi \text{ rad}}$
 
 </details>
 
 ---
 
-### Ejercicio 3: Razonamiento
-
-¿Por qué crees que el radián es más utilizado que el grado en matemáticas universitarias y física?
+### Ejercicio 3
+¿A cuántos grados equivale $\pi/3$?
 
 <details>
-<summary><strong>Ver respuesta</strong></summary>
+<summary>Ver solución</summary>
 
-El radián es preferido porque:
-1. Simplifica las fórmulas de física y cálculo
-2. Hace que las derivadas de funciones trigonométricas sean más simples
-3. Relaciona directamente el ángulo con la longitud del arco
-4. El número $\pi$ aparece naturalmente
-
-Por ejemplo, en física la fórmula del movimiento circular uniforme es más simple con radianes.
+$180 / 3 = 60$.
+**Resultado:** $\boxed{60^\circ}$
 
 </details>
 
 ---
+
+### Ejercicio 4
+¿Qué es mayor: $90^\circ$ o $2 \text{ radianes}$?
+
+<details>
+<summary>Ver solución</summary>
+
+$1 \text{ rad} \approx 57^\circ$.
+$2 \text{ rad} \approx 114^\circ$.
+**Resultado:** $2 \text{ rad}$ es mayor.
+
+</details>
+
+---
+
+### Ejercicio 5
+Expresa $0^\circ$ en radianes.
+
+<details>
+<summary>Ver solución</summary>
+
+$0 \text{ rad}$.
+
+</details>
+
+---
+
+### Ejercicio 6
+Convierte mentalmente $60^\circ$ a radianes.
+
+<details>
+<summary>Ver solución</summary>
+
+60 es un tercio de 180.
+**Resultado:** $\boxed{\pi/3 \text{ rad}}$
+
+</details>
+
+---
+
+### Ejercicio 7
+¿Cuántos radianes tiene un cuarto de vuelta?
+
+<details>
+<summary>Ver solución</summary>
+
+$360 / 4 = 90^\circ = \pi/2$.
+**Resultado:** $\boxed{\pi/2 \text{ rad}}$
+
+</details>
+
+---
+
+### Ejercicio 8
+¿A cuántos grados equivale $3\pi$ radianes?
+
+<details>
+<summary>Ver solución</summary>
+
+Son 3 medias vueltas. $180 \times 3 = 540$.
+**Resultado:** $\boxed{540^\circ}$
+
+</details>
+
+---
+
+### Ejercicio 9
+Simplifica la escritura de "3.14159... radianes".
+
+<details>
+<summary>Ver solución</summary>
+
+$\pi \text{ rad}$.
+
+</details>
+
+---
+
+### Ejercicio 10
+Verdadero o Falso: Los radianes son una unidad sin dimensiones físicas.
+
+<details>
+<summary>Ver solución</summary>
+
+Verdadero. Es longitud/longitud.
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Grados ($^\circ$) | Radianes (rad) | Fracción de $\pi$ |
+|:--- |:--- |:--- |
+| **$0^\circ$** | $0$ | $0$ |
+| **$30^\circ$** | $\frac{\pi}{6}$ | Sexto |
+| **$45^\circ$** | $\frac{\pi}{4}$ | Cuarto |
+| **$60^\circ$** | $\frac{\pi}{3}$ | Tercio |
+| **$90^\circ$** | $\frac{\pi}{2}$ | Medio |
+| **$180^\circ$** | $\pi$ | Entero |
+
+> **Conclusión:** Olvídate de la fórmula complicada. Solo recuerda que **$180^\circ$ es $\pi$**. Todo lo demás son fracciones de ese pastel.
