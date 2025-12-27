@@ -1,218 +1,330 @@
-# 🔧 Problemas con Ecuaciones Cuadráticas
+# **Problemas con Ecuaciones Cuadráticas**
 
-En esta lección aplicaremos las ecuaciones cuadráticas a problemas del mundo real.
-
----
-
-## 📖 Problemas de área
-
-### Ejemplo 1
-
-El largo de un rectángulo es 5 m más que su ancho. Si el área es 84 m², encuentra las dimensiones.
-
-**Sea** $x$ = ancho, entonces largo = $x + 5$
-
-$$
-x(x + 5) = 84
-$$
-$$
-x^2 + 5x - 84 = 0
-$$
-$$
-(x + 12)(x - 7) = 0
-$$
-
-Como $x > 0$: $x = 7$
-
-**Ancho = 7 m, Largo = 12 m**
-
-$$
-\boxed{\text{Ancho: 7 m, Largo: 12 m}}
-$$
+La vida no siempre es lineal. A veces, para optimizar el espacio de tu sala, calcular la trayectoria de un lanzamiento o maximizar ganancias, necesitas pensar al cuadrado. Aquí aprenderás a traducir problemas reales al lenguaje de las parábolas.
 
 ---
 
-### Ejemplo 2
+## 🎯 ¿Qué vas a aprender?
 
-Un jardín cuadrado tiene un camino de 2 m de ancho alrededor. Si el área total es 400 m², ¿cuál es el lado del jardín?
+- Cómo plantear ecuaciones cuadráticas a partir de texto.
+- Resolver problemas de áreas de figuras geométricas.
+- Calcular lanzamientos de proyectiles (física básica).
+- Encontrar números mágicos a partir de sus sumas y productos.
 
-**Sea** $x$ = lado del jardín
+---
 
-El área total (jardín + camino) tiene lado $x + 4$:
+## 🏗️ La Física del "Vértice" y las "Raíces"
 
+- **Vértice ($V$):** El punto máximo o mínimo. En problemas, representa la "altura máxima", la "ganancia máxima" o el "costo mínimo".
+- **Raíces ($x$):** Cuando $y=0$. En problemas, representa "cuándo cae al suelo", "cuándo se acaba el dinero" o las medidas físicas de un objeto.
+
+---
+
+## ⚙️ Ejemplos Resueltos
+
+### Ejemplo 1: El Rectángulo Misterioso
+El largo de una cancha es 4 metros más que su ancho. Su área total es de 96 m². ¿Cuánto mide de ancho?
+
+**1. Definir variables:**
+- Ancho: $x$
+- Largo: $x + 4$
+
+**2. Plantear ecuación (Área = base × altura):**
 $$
-(x + 4)^2 = 400
+x(x + 4) = 96
 $$
 $$
-x + 4 = 20
-$$
-$$
-x = 16 \text{ m}
+x^2 + 4x - 96 = 0
 $$
 
+**3. Resolver (Factorización):**
+Buscamos dos números que multiplicados den -96 y sumados 4. Son 12 y -8.
 $$
-\boxed{\text{Lado del jardín: 16 m}}
+(x + 12)(x - 8) = 0
+$$
+- $x = -12$ (Descartado, ¡distancias no son negativas!)
+- $x = 8$
+
+**Resultado:**
+$$
+\boxed{\text{Ancho: } 8 \text{ m, Largo: } 12 \text{ m}}
 $$
 
 ---
 
-## 📖 Problemas de movimiento
+### Ejemplo 2: El Cohete de Juguete
+Se lanza un cohete hacia arriba. Su altura $h$ (en metros) después de $t$ segundos es:
+$$
+h(t) = -5t^2 + 30t
+$$
+¿En qué momento alcanza su altura máxima y cuál es esa altura?
 
-### Ejemplo 3
+**Razonamiento:**
+La "altura máxima" es el **vértice** de la parábola (que abre hacia abajo porque $a=-5$).
 
-Una pelota se lanza hacia arriba con altura $h(t) = -5t^2 + 20t + 1$. ¿Cuándo alcanza su altura máxima y cuál es?
+**1. Calcular tiempo ($x_v$):**
+$$
+t = \frac{-b}{2a} = \frac{-30}{2(-5)} = \frac{-30}{-10} = 3
+$$
+El cohete sube durante 3 segundos.
 
+**2. Calcular altura ($y_v$):**
 $$
-t_{\text{max}} = -\frac{20}{2(-5)} = 2 \text{ segundos}
-$$
-
-$$
-h(2) = -5(4) + 40 + 1 = 21 \text{ metros}
-$$
-
-$$
-\boxed{\text{A los 2 s, altura máxima: 21 m}}
-$$
-
----
-
-### Ejemplo 4
-
-Una pelota cae desde 45 m. Su altura es $h(t) = 45 - 5t^2$. ¿Cuándo toca el suelo?
-
-$$
-0 = 45 - 5t^2
-$$
-$$
-t^2 = 9
-$$
-$$
-t = 3 \text{ segundos}
+h(3) = -5(3)^2 + 30(3) = -45 + 90 = 45
 $$
 
+**Resultado:**
 $$
-\boxed{t = 3 \text{ s}}
+\boxed{\text{Alos 3 segundos, alcanza 45 metros}}
 $$
 
 ---
 
-## 📖 Problemas de números
+### Ejemplo 3: Números Consecutivos
+El producto de dos números enteros positivos consecutivos es 156. ¿Cuáles son?
 
-### Ejemplo 5
+**1. Variables:**
+- Primer número: $n$
+- Segundo número: $n + 1$
 
-El producto de dos números consecutivos es 72. Encuéntralos.
-
+**2. Ecuación:**
 $$
-x(x + 1) = 72
-$$
-$$
-x^2 + x - 72 = 0
+n(n + 1) = 156
 $$
 $$
-(x + 9)(x - 8) = 0
-$$
-
-$x = 8$ o $x = -9$
-
-**Los números son 8 y 9 (o -9 y -8)**
-
-$$
-\boxed{8 \text{ y } 9}
+n^2 + n - 156 = 0
 $$
 
----
+**3. Resolver:**
+Usamos fórmula general o tanteamos factores de 156 ($12 \times 13 = 156$).
+$$
+(n + 13)(n - 12) = 0
+$$
+- $n = -13$ (Descartado, piden positivos)
+- $n = 12$
 
-### Ejemplo 6
-
-La suma de un número y su cuadrado es 42. ¿Cuál es el número?
-
+**Resultado:**
 $$
-x + x^2 = 42
-$$
-$$
-x^2 + x - 42 = 0
-$$
-$$
-(x + 7)(x - 6) = 0
-$$
-
-$$
-\boxed{x = 6 \text{ o } x = -7}
+\boxed{\text{Los números son 12 y 13}}
 $$
 
 ---
 
-## 📖 Problemas de trabajo
+### Ejemplo 4: El Marco de la Foto
+Una foto mide $10 \times 15$ cm. Se le pone un marco de ancho constante $x$. Si el área total (foto + marco) es 266 cm², ¿cuánto mide el ancho del marco?
 
-### Ejemplo 7
+**1. Dimensiones totales:**
+- Nuevo largo: $15 + 2x$ (se suma $x$ a cada lado)
+- Nuevo ancho: $10 + 2x$
 
-Juan tarda 2 horas más que Pedro en completar un trabajo. Juntos lo hacen en 2.4 horas. ¿Cuánto tarda cada uno solo?
-
-**Sea** $x$ = tiempo de Pedro, $x + 2$ = tiempo de Juan
-
+**2. Ecuación:**
 $$
-\frac{1}{x} + \frac{1}{x+2} = \frac{1}{2.4}
-$$
-
-Multiplicando por $2.4x(x+2)$:
-
-$$
-2.4(x + 2) + 2.4x = x(x + 2)
+(15 + 2x)(10 + 2x) = 266
 $$
 $$
-4.8x + 4.8 = x^2 + 2x
+150 + 30x + 20x + 4x^2 = 266
 $$
 $$
-x^2 - 2.8x - 4.8 = 0
+4x^2 + 50x + 150 - 266 = 0
+$$
+$$
+4x^2 + 50x - 116 = 0
 $$
 
-Usando la fórmula: $x = 4$ horas (Pedro), $x + 2 = 6$ horas (Juan)
-
+**3. Simplificar (dividir por 2):**
 $$
-\boxed{\text{Pedro: 4 h, Juan: 6 h}}
+2x^2 + 25x - 58 = 0
+$$
+
+**4. Fórmula General:**
+$$
+x = \frac{-25 \pm \sqrt{625 - 4(2)(-58)}}{4}
+$$
+$$
+x = \frac{-25 \pm \sqrt{625 + 464}}{4} = \frac{-25 \pm \sqrt{1089}}{4} = \frac{-25 \pm 33}{4}
+$$
+- $x = (-25 + 33)/4 = 8/4 = 2$
+- $x = (-25-33)/4$ (Negativo, descartado)
+
+**Resultado:**
+$$
+\boxed{\text{El marco mide 2 cm de ancho}}
 $$
 
 ---
 
-## 📝 Ejercicios de práctica
+### Ejemplo 5: Caída Libre
+Se deja caer una piedra desde un edificio de 80 m. Su altura es $h(t) = 80 - 5t^2$. ¿Cuándo toca el suelo?
 
-**Ejercicio 1:** El largo de un rectángulo es el doble del ancho. Si el área es 50 m², encuentra las dimensiones.
+**Razonamiento:**
+"Tocar el suelo" significa altura cero ($h=0$).
+
+**Ecuación:**
+$$
+80 - 5t^2 = 0
+$$
+$$
+80 = 5t^2 \implies 16 = t^2
+$$
+$$
+t = \pm 4
+$$
+El tiempo negativo no existe en este contexto.
+
+**Resultado:**
+$$
+\boxed{\text{Toca el suelo a los 4 segundos}}
+$$
+
+---
+
+## 📝 Ejercicios de Práctica
+
+### Ejercicio 1
+El cuadrado de un número más el doble del mismo número es 24. ¿Cuál es?
 
 <details>
 <summary>Ver solución</summary>
 
-$x \cdot 2x = 50$, $x^2 = 25$, $x = 5$
-
-Ancho: 5 m, Largo: 10 m
+$x^2 + 2x - 24 = 0 \implies (x+6)(x-4)=0$.
+**Resultado:** $\boxed{4 \text{ o } -6}$
 
 </details>
 
 ---
 
-**Ejercicio 2:** Una pelota sigue $h(t) = -4.9t^2 + 29.4t$. ¿Cuándo cae?
+### Ejercicio 2
+El área de un triángulo es 30 m². La base es 4 metros mayor que la altura. Halla la altura.
 
 <details>
 <summary>Ver solución</summary>
 
-$t(-4.9t + 29.4) = 0$
-
-$t = 0$ (inicio) o $t = 6$ s
+$h(h+4)/2 = 30 \implies h^2 + 4h - 60 = 0$.
+$(h+10)(h-6)=0$. Descartamos negativo.
+**Resultado:** $\boxed{6 \text{ m}}$
 
 </details>
 
 ---
 
-**Ejercicio 3:** Encuentra dos números cuya suma es 15 y producto es 56.
+### Ejercicio 3
+La suma de dos números es 20 y su producto es 96.
 
 <details>
 <summary>Ver solución</summary>
 
-$x + y = 15$, $xy = 56$
-
-$x(15 - x) = 56$, $x^2 - 15x + 56 = 0$
-
-$(x - 7)(x - 8) = 0$ → 7 y 8
+$x(20-x) = 96 \implies x^2 - 20x + 96 = 0$.
+$(x-8)(x-12)=0$.
+**Resultado:** $\boxed{8, 12}$
 
 </details>
 
 ---
+
+### Ejercicio 4
+Un proyectil sigue $h(t) = -5t^2 + 40t$. ¿Cuándo vuelve al suelo?
+
+<details>
+<summary>Ver solución</summary>
+
+$-5t(t-8) = 0$. $t=0$ (inicio) y $t=8$ (fin).
+**Resultado:** $\boxed{8 \text{ s}}$
+
+</details>
+
+---
+
+### Ejercicio 5
+¿Cuál es la altura máxima del proyectil anterior?
+
+<details>
+<summary>Ver solución</summary>
+
+Vértice en $t=4$. $h(4) = -5(16) + 160 = 80$.
+**Resultado:** $\boxed{80 \text{ m}}$
+
+</details>
+
+---
+
+### Ejercicio 6
+Una piscina rectangular de $6 \times 8$ m tiene un borde de ancho $x$. Área total = 80.
+
+<details>
+<summary>Ver solución</summary>
+
+$(6+2x)(8+2x) = 80$. Simplificando: $x^2 + 7x - 8 = 0$.
+$(x+8)(x-1)=0$.
+**Resultado:** $\boxed{1 \text{ m}}$
+
+</details>
+
+---
+
+### Ejercicio 7
+Halla un número tal que su cuadrado sea igual a 5 veces el número.
+
+<details>
+<summary>Ver solución</summary>
+
+$x^2 = 5x \implies x(x-5) = 0$.
+**Resultado:** $\boxed{0, 5}$
+
+</details>
+
+---
+
+### Ejercicio 8
+El triple del cuadrado de un número es 75.
+
+<details>
+<summary>Ver solución</summary>
+
+$3x^2 = 75 \implies x^2 = 25$.
+**Resultado:** $\boxed{5, -5}$
+
+</details>
+
+---
+
+### Ejercicio 9
+Una caja sin tapa se hace cortando esquinas de 4 cm de una lámina cuadrada. Si el volumen es 100 cm³, ¿lado original?
+
+<details>
+<summary>Ver solución</summary>
+
+Base: $(x-8)$, Altura: 4.
+$4(x-8)^2 = 100 \implies (x-8)^2 = 25$.
+$x-8 = 5 \implies x = 13$.
+**Resultado:** $\boxed{13 \text{ cm}}$
+
+</details>
+
+---
+
+### Ejercicio 10
+Dos trenes parten del mismo punto perpendicularmente. Después de una hora, están a 130 km de distancia. Uno va 70 km/h más rápido.
+
+<details>
+<summary>Ver solución</summary>
+
+Pitágoras: $x^2 + (x+70)^2 = 130^2$.
+$2x^2 + 140x + 4900 = 16900$.
+$x^2 + 70x - 6000 = 0$.
+$(x+120)(x-50)=0$.
+Velocidades: 50 y 120.
+**Resultado:** $\boxed{50 \text{ km/h}, 120 \text{ km/h}}$
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Concepto Clave | En problemas significa... |
+|:--- |:--- |
+| **Raíces positivas** | Las respuestas físicas válidas (distancia, tiempo). |
+| **Raíces negativas** | Generalmente se descartan (no hay tiempos negativos). |
+| **Vértice** | El punto óptimo (máximo o mínimo). |
+
+> **Conclusión:** Las ecuaciones cuadráticas son la matemática de la optimización y el movimiento. Si algo sube y baja, o tiene un área, probablemente hay una $x^2$ escondida.

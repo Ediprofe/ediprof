@@ -1,316 +1,317 @@
-# 📈 Introducción a las Funciones Cuadráticas
+# **Funciones Cuadráticas**
 
-En esta lección introduciremos las funciones cuadráticas, su forma general y sus características.
+Desde la trayectoria de un balón de fútbol hasta el diseño de antenas satelitales, las curvas están en todas partes. La "madre" de todas estas curvas en forma de U es la función cuadrática. En esta lección, aprenderás a identificarla y entender su anatomía básica.
 
 ---
 
-## 📖 Definición
+## 🎯 ¿Qué vas a aprender?
 
-Una **función cuadrática** es una función polinómica de segundo grado:
+- Qué es una función cuadrática y cómo se diferencia de una lineal.
+- El papel de los coeficientes $a$, $b$ y $c$.
+- Cómo saber si la parábola sonríe (U) o está triste (n).
+- Calcular el vértice: el punto más importante de la curva.
+
+---
+
+## 🏗️ La Estructura
+
+Una función cuadrática tiene la forma general:
 
 $$
 f(x) = ax^2 + bx + c
 $$
 
-donde $a$, $b$, $c$ son constantes y $a \neq 0$.
+Donde $a \neq 0$.
+Si $a$ fuera cero, el término cuadrado desaparecería y volveríamos a tener una línea recta ($bx+c$). ¡El término $x^2$ es el que crea la curva!
+
+### El Rol de $a$ (El Jefe)
+
+El coeficiente $a$ decide la forma y dirección:
+- **Si $a > 0$:** La parábola abre hacia **arriba** (carita feliz). Tiene un punto mínimo.
+- **Si $a < 0$:** La parábola abre hacia **abajo** (carita triste). Tiene un punto máximo.
+- **Valor absoluto:** Mientras más grande sea $|a|$, más "flaca" y cerrada será la parábola.
 
 ---
 
-## 📖 La parábola
+## 📍 El Vértice: El Corazón de la Parábola
 
-La gráfica de una función cuadrática es una **parábola**, una curva en forma de U (o U invertida).
+El vértice $(h, k)$ es el punto de inflexión donde la curva cambia de dirección.
 
-| Valor de $a$ | Orientación |
-|:------------:|:------------|
-| $a > 0$ | Abre hacia arriba ∪ |
-| $a < 0$ | Abre hacia abajo ∩ |
-
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem 0;">
-  <div id="echarts-efecto-a" style="width: 100%; height: 400px; border-radius: 8px;"></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof echarts !== 'undefined' && document.getElementById('echarts-efecto-a')) {
-    var chart = echarts.init(document.getElementById('echarts-efecto-a'));
-    var xData = [];
-    var y1 = [], y2 = [], y3 = [];
-    for (var i = -3; i <= 3; i += 0.1) {
-      xData.push(i.toFixed(1));
-      y1.push([i, i * i]);
-      y2.push([i, -i * i]);
-      y3.push([i, 0.5 * i * i]);
-    }
-    var option = {
-      title: { text: '📊 Efecto del coeficiente a', left: 'center', textStyle: { fontSize: 15, fontWeight: 'bold', color: '#1e293b' } },
-      tooltip: { trigger: 'axis' },
-      legend: { data: ['a = 1 (arriba)', 'a = -1 (abajo)', 'a = 0.5 (más abierta)'], top: 35, textStyle: { fontSize: 11 } },
-      grid: { left: '10%', right: '8%', top: '22%', bottom: '12%', show: true, borderColor: '#94a3b8' },
-      xAxis: { type: 'value', name: 'x', nameLocation: 'middle', nameGap: 25, min: -3, max: 3, axisLine: { lineStyle: { color: '#374151', width: 2 } }, splitLine: { lineStyle: { color: '#cbd5e1', type: 'dashed' } } },
-      yAxis: { type: 'value', name: 'y', nameLocation: 'middle', nameGap: 30, min: -5, max: 5, axisLine: { lineStyle: { color: '#374151', width: 2 } }, splitLine: { lineStyle: { color: '#cbd5e1', type: 'dashed' } } },
-      series: [
-        { name: 'a = 1 (arriba)', type: 'line', smooth: true, symbol: 'none', lineStyle: { width: 3, color: '#3b82f6' }, itemStyle: { color: '#3b82f6' }, data: y1 },
-        { name: 'a = -1 (abajo)', type: 'line', smooth: true, symbol: 'none', lineStyle: { width: 3, color: '#ef4444' }, itemStyle: { color: '#ef4444' }, data: y2 },
-        { name: 'a = 0.5 (más abierta)', type: 'line', smooth: true, symbol: 'none', lineStyle: { width: 3, color: '#22c55e' }, itemStyle: { color: '#22c55e' }, data: y3 }
-      ]
-    };
-    chart.setOption(option);
-    window.addEventListener('resize', function() { chart.resize(); });
-  }
-});
-</script>
-
----
-
-## 📖 Elementos de la parábola
-
-### Vértice
-
-El punto más bajo (si $a > 0$) o más alto (si $a < 0$) de la parábola.
+Para encontrar la coordenada $x$ del vértice ($x_v$):
 
 $$
-x_v = -\frac{b}{2a}, \quad y_v = f(x_v)
+x_v = \frac{-b}{2a}
 $$
 
-### Eje de simetría
-
-Recta vertical que pasa por el vértice:
+Para encontrar la coordenada $y$ ($y_v$), simplemente evaluamos la función en ese punto:
 
 $$
-x = -\frac{b}{2a}
-$$
-
-### Intercepto Y
-
-Punto donde la parábola cruza el eje Y:
-
-$$
-(0, c)
+y_v = f(x_v)
 $$
 
 ---
 
-## 📖 Ejemplos
+## ⚙️ Ejemplos Resueltos
 
-### Ejemplo 1
+### Ejemplo 1: Identificación Básica
+Analizar la función $f(x) = x^2 - 4x + 3$.
 
-Para $f(x) = x^2 - 4x + 3$, identificar $a$, $b$, $c$.
-
+**1. Identificar coeficientes:**
 $$
 a = 1, \quad b = -4, \quad c = 3
 $$
 
-Como $a > 0$, la parábola abre hacia arriba.
+**2. Orientación:**
+Como $a = 1$ (positivo), la parábola abre hacia **arriba**.
 
-**Vértice:**
+**3. Vértice:**
+Calculamos la coordenada $x$:
 $$
-x_v = -\frac{-4}{2(1)} = 2
-$$
-$$
-y_v = (2)^2 - 4(2) + 3 = 4 - 8 + 3 = -1
+x_v = \frac{-(-4)}{2(1)} = \frac{4}{2} = 2
 $$
 
-Vértice: $(2, -1)$
+Calculamos la altura $y$:
+$$
+f(2) = (2)^2 - 4(2) + 3
+$$
+$$
+f(2) = 4 - 8 + 3 = -1
+$$
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem 0;">
-  <div id="echarts-ejemplo1" style="width: 100%; height: 350px; border-radius: 8px;"></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof echarts !== 'undefined' && document.getElementById('echarts-ejemplo1')) {
-    var chart = echarts.init(document.getElementById('echarts-ejemplo1'));
-    var data = [];
-    for (var x = -1; x <= 5; x += 0.1) { data.push([x, x*x - 4*x + 3]); }
-    var option = {
-      title: { text: '📊 Ejemplo 1: f(x) = x² - 4x + 3', left: 'center', textStyle: { fontSize: 14, fontWeight: 'bold', color: '#1e293b' } },
-      grid: { left: '12%', right: '8%', top: '15%', bottom: '12%', show: true, borderColor: '#94a3b8' },
-      xAxis: { type: 'value', name: 'x', nameLocation: 'middle', nameGap: 25, min: -1, max: 5, axisLine: { lineStyle: { color: '#374151', width: 2 } }, splitLine: { lineStyle: { color: '#cbd5e1', type: 'dashed' } } },
-      yAxis: { type: 'value', name: 'y', nameLocation: 'middle', nameGap: 30, min: -2, max: 8, axisLine: { lineStyle: { color: '#374151', width: 2 } }, splitLine: { lineStyle: { color: '#cbd5e1', type: 'dashed' } } },
-      series: [
-        { type: 'line', smooth: true, symbol: 'none', lineStyle: { width: 3, color: '#8b5cf6' }, data: data },
-        { type: 'scatter', symbolSize: 14, itemStyle: { color: '#ef4444', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: 'V(2,-1)', position: 'bottom', fontSize: 11, fontWeight: 'bold', color: '#ef4444' }, data: [[2, -1]] }
-      ]
-    };
-    chart.setOption(option);
-    window.addEventListener('resize', function() { chart.resize(); });
-  }
-});
-</script>
+**Resultado:**
+$$
+\boxed{\text{Vértice en } (2, -1)}
+$$
 
 ---
 
-### Ejemplo 2
+### Ejemplo 2: Hacia Abajo
+Analizar $g(x) = -2x^2 + 8x - 6$.
 
-Para $f(x) = -2x^2 + 8x - 6$:
-
+**1. Coeficientes:**
 $$
 a = -2, \quad b = 8, \quad c = -6
 $$
 
-Como $a < 0$, la parábola abre hacia abajo.
+**2. Orientación:**
+Como $a = -2$ (negativo), abre hacia **abajo**.
 
-**Vértice:**
+**3. Vértice:**
 $$
-x_v = -\frac{8}{2(-2)} = 2
+x_v = \frac{-8}{2(-2)} = \frac{-8}{-4} = 2
 $$
 $$
-y_v = -2(4) + 16 - 6 = 2
+y_v = -2(2)^2 + 8(2) - 6
+$$
+$$
+y_v = -2(4) + 16 - 6 = -8 + 16 - 6 = 2
 $$
 
-Vértice: $(2, 2)$
-
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem 0;">
-  <div id="echarts-ejemplo2" style="width: 100%; height: 350px; border-radius: 8px;"></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof echarts !== 'undefined' && document.getElementById('echarts-ejemplo2')) {
-    var chart = echarts.init(document.getElementById('echarts-ejemplo2'));
-    var data = [];
-    for (var x = -0.5; x <= 4.5; x += 0.1) { data.push([x, -2*x*x + 8*x - 6]); }
-    var option = {
-      title: { text: '📊 Ejemplo 2: f(x) = -2x² + 8x - 6', left: 'center', textStyle: { fontSize: 14, fontWeight: 'bold', color: '#1e293b' } },
-      grid: { left: '12%', right: '8%', top: '15%', bottom: '12%', show: true, borderColor: '#94a3b8' },
-      xAxis: { type: 'value', name: 'x', nameLocation: 'middle', nameGap: 25, min: -1, max: 5, axisLine: { lineStyle: { color: '#374151', width: 2 } }, splitLine: { lineStyle: { color: '#cbd5e1', type: 'dashed' } } },
-      yAxis: { type: 'value', name: 'y', nameLocation: 'middle', nameGap: 30, min: -7, max: 3, axisLine: { lineStyle: { color: '#374151', width: 2 } }, splitLine: { lineStyle: { color: '#cbd5e1', type: 'dashed' } } },
-      series: [
-        { type: 'line', smooth: true, symbol: 'none', lineStyle: { width: 3, color: '#22c55e' }, data: data },
-        { type: 'scatter', symbolSize: 14, itemStyle: { color: '#ef4444', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: 'V(2,2)', position: 'top', fontSize: 11, fontWeight: 'bold', color: '#ef4444' }, data: [[2, 2]] }
-      ]
-    };
-    chart.setOption(option);
-    window.addEventListener('resize', function() { chart.resize(); });
-  }
-});
-</script>
+**Resultado:**
+$$
+\boxed{\text{Vértice en } (2, 2)}
+$$
 
 ---
 
-### Ejemplo 3
+### Ejemplo 3: Parábola Incompleta
+Analizar $h(x) = 3x^2 + 6x$.
 
-Para $f(x) = 3x^2 + 6x$:
-
+**1. Coeficientes:**
 $$
 a = 3, \quad b = 6, \quad c = 0
 $$
 
-**Vértice:**
+**2. Vértice:**
 $$
-x_v = -\frac{6}{6} = -1
+x_v = \frac{-6}{2(3)} = \frac{-6}{6} = -1
 $$
 $$
-y_v = 3(1) - 6 = -3
+y_v = 3(-1)^2 + 6(-1) = 3(1) - 6 = -3
 $$
 
-Vértice: $(-1, -3)$
-
-Intercepto Y: $(0, 0)$
-
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem 0;">
-  <div id="echarts-ejemplo3" style="width: 100%; height: 350px; border-radius: 8px;"></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof echarts !== 'undefined' && document.getElementById('echarts-ejemplo3')) {
-    var chart = echarts.init(document.getElementById('echarts-ejemplo3'));
-    var data = [];
-    for (var x = -3; x <= 1; x += 0.1) { data.push([x, 3*x*x + 6*x]); }
-    var option = {
-      title: { text: '📊 Ejemplo 3: f(x) = 3x² + 6x', left: 'center', textStyle: { fontSize: 14, fontWeight: 'bold', color: '#1e293b' } },
-      grid: { left: '12%', right: '8%', top: '15%', bottom: '12%', show: true, borderColor: '#94a3b8' },
-      xAxis: { type: 'value', name: 'x', nameLocation: 'middle', nameGap: 25, min: -4, max: 2, axisLine: { lineStyle: { color: '#374151', width: 2 } }, splitLine: { lineStyle: { color: '#cbd5e1', type: 'dashed' } } },
-      yAxis: { type: 'value', name: 'y', nameLocation: 'middle', nameGap: 30, min: -4, max: 10, axisLine: { lineStyle: { color: '#374151', width: 2 } }, splitLine: { lineStyle: { color: '#cbd5e1', type: 'dashed' } } },
-      series: [
-        { type: 'line', smooth: true, symbol: 'none', lineStyle: { width: 3, color: '#f59e0b' }, data: data },
-        { type: 'scatter', symbolSize: 14, itemStyle: { color: '#ef4444', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: 'V(-1,-3)', position: 'top', fontSize: 11, fontWeight: 'bold', color: '#ef4444' }, data: [[-1, -3]] },
-        { type: 'scatter', symbolSize: 10, itemStyle: { color: '#3b82f6', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: '(0,0)', position: 'right', fontSize: 10, color: '#3b82f6' }, data: [[0, 0]] }
-      ]
-    };
-    chart.setOption(option);
-    window.addEventListener('resize', function() { chart.resize(); });
-  }
-});
-</script>
+**Resultado:**
+$$
+\boxed{\text{Vértice en } (-1, -3)}
+$$
 
 ---
 
-## 📖 Evaluando la función
-
-### Ejemplo 4
-
+### Ejemplo 4: Evaluación
 Si $f(x) = x^2 - 5x + 6$, calcular $f(3)$.
 
+**Razonamiento:**
+Sustituimos $x$ por 3.
+
+$$
+f(3) = (3)^2 - 5(3) + 6
+$$
 $$
 f(3) = 9 - 15 + 6 = 0
 $$
 
+**Resultado:**
 $$
 \boxed{f(3) = 0}
 $$
 
 ---
 
-### Ejemplo 5
+### Ejemplo 5: Intercepto con el Eje Y
+¿Dónde corta al eje Y la función $f(x) = -x^2 + 4x + 10$?
 
-Si $f(x) = 2x^2 - 3x + 1$, calcular $f(-2)$.
+**Razonamiento:**
+El corte con Y ocurre cuando $x=0$.
+$$
+f(0) = -(0)^2 + 4(0) + 10 = 10
+$$
+Es decir, es simplemente el valor de $c$.
 
+**Resultado:**
 $$
-f(-2) = 2(4) + 6 + 1 = 15
-$$
-
-$$
-\boxed{f(-2) = 15}
+\boxed{\text{Punto } (0, 10)}
 $$
 
 ---
 
-## 📝 Ejercicios de práctica
+## 📝 Ejercicios de Práctica
 
-**Ejercicio 1:** Identifica $a$, $b$, $c$ en $f(x) = -x^2 + 6x - 5$.
+### Ejercicio 1
+Identifica $a, b, c$ en $f(x) = -x^2 + 6x - 5$.
 
 <details>
 <summary>Ver solución</summary>
 
-$a = -1$, $b = 6$, $c = -5$
+$$
+a = -1, \quad b = 6, \quad c = -5
+$$
 
 </details>
 
 ---
 
-**Ejercicio 2:** ¿La parábola de $f(x) = 4x^2 - 1$ abre hacia arriba o hacia abajo?
+### Ejercicio 2
+¿Hacia dónde abre la función $y = 5 - 3x^2$?
 
 <details>
 <summary>Ver solución</summary>
 
-Hacia arriba ($a = 4 > 0$)
+Ordenando: $y = -3x^2 + 5$. Como $a = -3$, abre hacia **abajo**.
 
 </details>
 
 ---
 
-**Ejercicio 3:** Encuentra el vértice de $f(x) = x^2 + 2x - 3$.
+### Ejercicio 3
+Calcula el vértice de $y = x^2 - 6x + 5$.
 
 <details>
 <summary>Ver solución</summary>
 
-$x_v = -1$, $y_v = 1 - 2 - 3 = -4$
-
-Vértice: $(-1, -4)$
+$x_v = -(-6)/2 = 3$.
+$y_v = 3^2 - 18 + 5 = 9 - 18 + 5 = -4$.
+**Resultado:** $\boxed{(3, -4)}$
 
 </details>
 
 ---
 
-**Ejercicio 4:** Calcula $f(2)$ si $f(x) = x^2 - 4x + 4$.
+### Ejercicio 4
+Evalúa $f(x) = 2x^2 + 3x - 1$ para $x = -1$.
 
 <details>
 <summary>Ver solución</summary>
 
-$f(2) = 4 - 8 + 4 = 0$
+$2(1) - 3 - 1 = -2$.
+**Resultado:** $\boxed{-2}$
 
 </details>
 
 ---
+
+### Ejercicio 5
+¿Cuál es el intercepto $y$ de $f(x) = 4x^2 - 100$?
+
+<details>
+<summary>Ver solución</summary>
+
+Es el término independiente $c$.
+**Resultado:** $\boxed{-100}$
+
+</details>
+
+---
+
+### Ejercicio 6
+Encuentra el eje de simetría de $y = 2x^2 + 8x$.
+
+<details>
+<summary>Ver solución</summary>
+
+$x = -8 / 4 = -2$.
+**Resultado:** $\boxed{x = -2}$
+
+</details>
+
+---
+
+### Ejercicio 7
+Si el vértice está en $(2, 5)$ y abre hacia abajo, ¿el 5 es un máximo o un mínimo?
+
+<details>
+<summary>Ver solución</summary>
+
+Si abre hacia abajo, es el punto más alto.
+**Resultado:** $\boxed{\text{Máximo}}$
+
+</details>
+
+---
+
+### Ejercicio 8
+Escribe una función cuadrática que tenga $a=1, b=0, c=-4$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Resultado:** $\boxed{f(x) = x^2 - 4}$
+
+</details>
+
+---
+
+### Ejercicio 9
+Calcula el vértice de $y = -x^2 + 4$.
+
+<details>
+<summary>Ver solución</summary>
+
+$b=0$, así que $x_v = 0$.
+$y_v = 4$.
+**Resultado:** $\boxed{(0, 4)}$
+
+</details>
+
+---
+
+### Ejercicio 10
+¿Qué efecto tiene cambiar $f(x) = x^2$ a $g(x) = 3x^2$?
+
+<details>
+<summary>Ver solución</summary>
+
+Se hace más estrecha (crece más rápido).
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Elemento | Fórmula/Concepto | Descripción |
+|:--- |:--- |:--- |
+| **$a$** | Coeficiente cuadrático | Define si abre arriba ($+$) o abajo ($-$). |
+| **$c$** | Término independiente | Es el corte con el eje Y. |
+| **Vértice** | $x = -b/2a$ | El punto de retorno de la curva. |
+
+> **Conclusión:** Conocer los coeficientes es conocer el destino de la parábola. Antes de graficar nada, $a$, $b$ y $c$ ya te cuentan la historia completa.

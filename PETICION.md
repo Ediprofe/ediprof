@@ -178,17 +178,20 @@ http://localhost:4321/matematicas/algebra/sistemas-ecuaciones-lineales/metodo-gr
 (conservas las imágenes y haz uso de ellas para la lección)
 
 
-http://localhost:4321/matematicas/algebra/sistemas-ecuaciones-lineales/metodo-sustitucion
+http://localhost:4321/matematicas/algebra/funciones-ecuaciones-cuadraticas/introduccion
 
-http://localhost:4321/matematicas/algebra/sistemas-ecuaciones-lineales/metodo-igualacion
+http://localhost:4321/matematicas/algebra/funciones-ecuaciones-cuadraticas/resolucion-ecuaciones
 
-http://localhost:4321/matematicas/algebra/sistemas-ecuaciones-lineales/metodo-reduccion
+http://localhost:4321/matematicas/algebra/funciones-ecuaciones-cuadraticas/graficas
 
-http://localhost:4321/matematicas/algebra/sistemas-ecuaciones-lineales/metodo-cramer
+http://localhost:4321/matematicas/algebra/funciones-ecuaciones-cuadraticas/problemas
 
-http://localhost:4321/matematicas/algebra/sistemas-ecuaciones-lineales/sistemas-3x3
+http://localhost:4321/matematicas/algebra/funciones-exponenciales-logaritmicas/funciones-exponenciales
 
-http://localhost:4321/matematicas/algebra/sistemas-ecuaciones-lineales/problemas-aplicacion
+http://localhost:4321/matematicas/algebra/funciones-exponenciales-logaritmicas/logaritmos
+
+
+LAS IMAGENES QUE ESTÁN GENERADAS CON JAVASCRIPT EN ESTAS LECCIONES DEBEN SER ELIMINADAS, QUE YO LUEGO LAS REGENERO.
 
 
 
