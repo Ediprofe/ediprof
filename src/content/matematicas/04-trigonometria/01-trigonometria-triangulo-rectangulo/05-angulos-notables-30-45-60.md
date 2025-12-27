@@ -1,245 +1,273 @@
-# Ángulos Notables: 30°, 45° y 60°
+# **Ángulos Notables: 30°, 45° y 60°**
 
-¿Te has dado cuenta de que en los exámenes siempre aparecen los mismos ángulos? Los ángulos de **30°, 45° y 60°** son especiales porque sus razones trigonométricas tienen valores exactos que debemos memorizar. ¡Estos tres ángulos son tus mejores amigos en trigonometría!
+No todos los ángulos son iguales. En trigonometría existen tres ángulos "VIP" (Very Important P_angles) que aparecen una y otra vez en exámenes, arquitectura y diseño. Lo genial es que sus valores son fáciles de memorizar.
 
 ---
 
 ## 🎯 ¿Qué vas a aprender?
 
-- Los triángulos especiales que generan estos ángulos
-- Los valores exactos de seno, coseno y tangente para cada uno
-- Patrones para memorizarlos fácilmente
-- Cómo usar estos valores sin calculadora
+- Los valores exactos de seno, coseno y tangente para 30°, 45° y 60°.
+- El triángulo mágico "mitad de un cuadrado" (45-45-90).
+- El triángulo mágico "mitad de un equilátero" (30-60-90).
+- La técnica de la mano para memorizarlos sin esfuerzo.
 
 ---
 
-## 📋 Lo Esencial: Tabla Maestra
+## 🔲 El Triángulo de 45° (Isósceles)
 
-| Ángulo | $\sin\theta$ | $\cos\theta$ | $\tan\theta$ |
-|--------|--------------|--------------|--------------|
-| **0°** | $0$ | $1$ | $0$ |
-| **30°** | $\dfrac{1}{2}$ | $\dfrac{\sqrt{3}}{2}$ | $\dfrac{\sqrt{3}}{3}$ |
-| **45°** | $\dfrac{\sqrt{2}}{2}$ | $\dfrac{\sqrt{2}}{2}$ | $1$ |
-| **60°** | $\dfrac{\sqrt{3}}{2}$ | $\dfrac{1}{2}$ | $\sqrt{3}$ |
-| **90°** | $1$ | $0$ | $\infty$ |
+Imagina un cuadrado de lado 1. Si lo cortas por la diagonal, obtienes dos triángulos rectángulos donde los catetos son iguales.
 
-**Triángulo 45-45-90 (Isósceles):** Lados en proporción 1 : 1 : √2
+*   **Catetos:** 1 y 1.
+*   **Hipotenusa:** $\sqrt{1^2 + 1^2} = \sqrt{2}$.
 
 ![Triángulo 45-45-90](/images/geometria/trigonometria/04-triangulo-45-45-90.svg)
 
-**Triángulo 30-60-90:** Lados en proporción 1 : √3 : 2
+### Sus Valores
+Como los catetos son iguales, el Seno y el Coseno valen lo mismo.
+
+*   **Seno:** $1 / \sqrt{2} = \frac{\sqrt{2}}{2}$.
+*   **Coseno:** $1 / \sqrt{2} = \frac{\sqrt{2}}{2}$.
+*   **Tangente:** $1 / 1 = 1$.
+
+---
+
+## 📐 El Triángulo de 30° y 60° (Escaleno)
+
+Imagina un triángulo equilátero de lado 2 (todos sus ángulos miden 60°). Si lo cortas por la mitad, obtienes un triángulo rectángulo con ángulos de 30° y 60°.
+
+*   **Hipotenusa:** 2 (lado original).
+*   **Cateto Corto (base):** 1 (mitad del lado original).
+*   **Cateto Largo (altura):** $\sqrt{3}$ (por Pitágoras).
 
 ![Triángulo 30-60-90](/images/geometria/trigonometria/05-triangulo-30-60-90.svg)
 
-> 💡 **Memoriza las proporciones:**
-> - **45-45-90:** Los catetos son iguales (1:1), hipotenusa = √2
-> - **30-60-90:** Cateto menor : Cateto mayor : Hipotenusa = 1 : √3 : 2
+### Valores para 30°
+Estás en la esquina de 30°. El opuesto es el lado pequeño (1).
+*   $\sin(30^{\circ}) = 1/2$. (¡Fácil!).
+*   $\cos(30^{\circ}) = \sqrt{3}/2$.
+
+### Valores para 60°
+Estás en la esquina de 60°. El opuesto es el lado largo ($\sqrt{3}$).
+*   $\sin(60^{\circ}) = \sqrt{3}/2$.
+*   $\cos(60^{\circ}) = 1/2$.
 
 ---
 
-## 📖 Triángulo de 45° (Isósceles Rectángulo)
+## 🖐️ La Regla de la Mano Izquierda (Truco)
 
-Un triángulo rectángulo con dos ángulos de 45° tiene:
-- **Catetos iguales:** $1$ y $1$
-- **Hipotenusa:** $\sqrt{2}$
+No necesitas memorizar la tabla si tienes tu mano.
+1.  Extiende tu mano izquierda. Tu meñique es 0°, anular 30°, medio 45°, índice 60°, pulgar 90°.
+2.  Baja el dedo del ángulo que quieres.
+3.  **Seno:** Dedos a la izquierda (abajo) / 2. (Raíz cuadrada de los dedos).
+4.  **Coseno:** Dedos a la derecha (arriba) / 2. (Raíz cuadrada de los dedos).
 
-### Razones de 45°
-
-$$
-\sin 45° = \frac{1}{\sqrt{2}} = \frac{\sqrt{2}}{2} \approx 0.707
-$$
-
-$$
-\cos 45° = \frac{1}{\sqrt{2}} = \frac{\sqrt{2}}{2} \approx 0.707
-$$
-
-$$
-\tan 45° = \frac{1}{1} = 1
-$$
-
-> 💡 **A 45°, seno y coseno son iguales, y la tangente es exactamente 1.**
+**Ejemplo 30° (dedo anular abajo):**
+*   Dedos abajo: 1 $\rightarrow \sqrt{1}/2 = 1/2$.
+*   Dedos arriba: 3 $\rightarrow \sqrt{3}/2$.
 
 ---
 
-## 📖 Triángulo de 30°-60°-90°
+## ⚙️ Ejemplos Resueltos
 
-Este triángulo surge de cortar un triángulo equilátero por la mitad. Sus lados están en proporción:
+### Ejemplo 1: Calcular sin calculadora
 
+Calcula: $\sin(30^{\circ}) + \cos(60^{\circ})$.
+
+**Razonamiento:**
+Sabemos que $\sin(30) = 0.5$ y $\cos(60) = 0.5$.
+$0.5 + 0.5 = 1$.
+
+**Resultado:**
 $$
-1 : \sqrt{3} : 2
-$$
-
-Donde:
-- **1** = cateto opuesto a 30° (el más corto)
-- **√3** = cateto opuesto a 60°
-- **2** = hipotenusa
-
-### Razones de 30°
-
-$$
-\sin 30° = \frac{1}{2} = 0.5
+\boxed{1}
 $$
 
-$$
-\cos 30° = \frac{\sqrt{3}}{2} \approx 0.866
-$$
+### Ejemplo 2: Tangente de 60°
 
-$$
-\tan 30° = \frac{1}{\sqrt{3}} = \frac{\sqrt{3}}{3} \approx 0.577
-$$
+Calcula $\tan(60^{\circ})$ usando seno y coseno.
 
-### Razones de 60°
+**Razonamiento:**
+$\sin(60) = \sqrt{3}/2$.
+$\cos(60) = 1/2$.
+$\frac{\sqrt{3}/2}{1/2} = \sqrt{3}$.
 
+**Resultado:**
 $$
-\sin 60° = \frac{\sqrt{3}}{2} \approx 0.866
+\boxed{\sqrt{3}}
 $$
-
-$$
-\cos 60° = \frac{1}{2} = 0.5
-$$
-
-$$
-\tan 60° = \frac{\sqrt{3}}{1} = \sqrt{3} \approx 1.732
-$$
-
-### Valores decimales de referencia
-
-| Ángulo | $\sin\theta$ | $\cos\theta$ | $\tan\theta$ |
-|--------|--------------|--------------|--------------|
-| 0° | 0 | 1 | 0 |
-| 30° | 0.5 | 0.866 | 0.577 |
-| 45° | 0.707 | 0.707 | 1 |
-| 60° | 0.866 | 0.5 | 1.732 |
-| 90° | 1 | 0 | ∞ |
-
-> 💡 **Observa:** A medida que el ángulo aumenta de 0° a 90°, el seno aumenta y el coseno disminuye.
 
 ---
 
-## 📖 Patrón para Memorizar los Senos
+## 📝 Ejercicios de Práctica
 
-Hay un patrón increíble para los senos:
+### Ejercicio 1
+¿Cuánto vale $\sin(45^{\circ})$? Racionaliza el resultado.
 
-| Ángulo | Seno | Patrón |
-|--------|------|--------|
-| 0° | 0 | $\frac{\sqrt{0}}{2}$ |
-| 30° | $\frac{1}{2}$ | $\frac{\sqrt{1}}{2}$ |
-| 45° | $\frac{\sqrt{2}}{2}$ | $\frac{\sqrt{2}}{2}$ |
-| 60° | $\frac{\sqrt{3}}{2}$ | $\frac{\sqrt{3}}{2}$ |
-| 90° | 1 | $\frac{\sqrt{4}}{2}$ |
+<details>
+<summary>Ver solución</summary>
 
-**¡Los senos van de $\frac{\sqrt{0}}{2}$ a $\frac{\sqrt{4}}{2}$!**
+**Razonamiento:**
+Originalmente $1/\sqrt{2}$. Multiplicamos por $\sqrt{2}/\sqrt{2}$.
 
-### Y los cosenos van al revés
-
+**Resultado:**
 $$
-\cos\theta = \sin(90° - \theta)
+\boxed{\frac{\sqrt{2}}{2}}
 $$
 
-Por eso:
-- $\cos 30° = \sin 60°$
-- $\cos 60° = \sin 30°$
+</details>
 
----
+### Ejercicio 2
+Si un triángulo isósceles rectángulo tiene catetos de 5 cm, ¿cuánto mide la hipotenusa?
 
-## 📖 Razones Recíprocas de Ángulos Notables
+<details>
+<summary>Ver solución</summary>
 
-| Ángulo | $\csc\theta$ | $\sec\theta$ | $\cot\theta$ |
-|--------|--------------|--------------|--------------|
-| 30° | 2 | $\frac{2\sqrt{3}}{3}$ | $\sqrt{3}$ |
-| 45° | $\sqrt{2}$ | $\sqrt{2}$ | 1 |
-| 60° | $\frac{2\sqrt{3}}{3}$ | 2 | $\frac{\sqrt{3}}{3}$ |
+**Razonamiento:**
+Siempre es $cateto \times \sqrt{2}$.
+
+**Resultado:**
+$$
+\boxed{5\sqrt{2}}
+$$
+
+</details>
+
+### Ejercicio 3
+Calcula $\cos^2(30^{\circ})$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$(\frac{\sqrt{3}}{2})^2 = \frac{3}{4}$.
+
+**Resultado:**
+$$
+\boxed{0.75}
+$$
+
+</details>
+
+### Ejercicio 4
+En un triángulo 30-60-90, la hipotenusa mide 10. ¿Cuánto mide el cateto corto (opuesto a 30°)?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+El opuesto a 30° siempre es la mitad de la hipotenusa.
+
+**Resultado:**
+$$
+\boxed{5}
+$$
+
+</details>
+
+### Ejercicio 5
+Calcula $\tan(45^{\circ})$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Opuesto = Adyacente. $1/1$.
+
+**Resultado:**
+$$
+\boxed{1}
+$$
+
+</details>
+
+### Ejercicio 6
+Calcula $\sin(60^{\circ}) \times 2$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$\frac{\sqrt{3}}{2} \times 2 = \sqrt{3}$.
+
+**Resultado:**
+$$
+\boxed{\sqrt{3}}
+$$
+
+</details>
+
+### Ejercicio 7
+Si $\cos(\theta) = 0.5$, ¿cuánto vale $\theta$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Sabemos que $\cos(60^{\circ}) = 1/2$.
+
+**Resultado:**
+$$
+\boxed{60^{\circ}}
+$$
+
+</details>
+
+### Ejercicio 8
+¿Cuál es mayor: $\sin(30^{\circ})$ o $\sin(60^{\circ})$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$0.5$ vs $0.866$.
+
+**Resultado:**
+$$
+\boxed{\sin(60^{\circ})}
+$$
+
+</details>
+
+### Ejercicio 9
+Calcula $\tan(30^{\circ})$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$\frac{1/2}{\sqrt{3}/2} = \frac{1}{\sqrt{3}} = \frac{\sqrt{3}}{3}$.
+
+**Resultado:**
+$$
+\boxed{\frac{\sqrt{3}}{3}}
+$$
+
+</details>
+
+### Ejercicio 10
+Verifica que $\sin(30^{\circ}) = \cos(60^{\circ})$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Ambos valen 0.5.
+
+**Resultado:**
+$$
+\boxed{\text{Verdadero}}
+$$
+
+</details>
 
 ---
 
 ## 🔑 Resumen
 
 | Ángulo | Sin | Cos | Tan |
-|--------|-----|-----|-----|
-| 30° | $\frac{1}{2}$ | $\frac{\sqrt{3}}{2}$ | $\frac{\sqrt{3}}{3}$ |
-| 45° | $\frac{\sqrt{2}}{2}$ | $\frac{\sqrt{2}}{2}$ | 1 |
-| 60° | $\frac{\sqrt{3}}{2}$ | $\frac{1}{2}$ | $\sqrt{3}$ |
+| :--- | :--- | :--- | :--- |
+| **30°** | $1/2$ | $\sqrt{3}/2$ | $\sqrt{3}/3$ |
+| **45°** | $\sqrt{2}/2$ | $\sqrt{2}/2$ | $1$ |
+| **60°** | $\sqrt{3}/2$ | $1/2$ | $\sqrt{3}$ |
 
-**Triángulos especiales:**
-- 45-45-90: Lados 1 : 1 : √2
-- 30-60-90: Lados 1 : √3 : 2
-
----
-
-## 📝 Ejercicios de Práctica
-
-### Ejercicio 1: Completar valores (sin calculadora)
-
-1. $\sin 30° = $ ___
-2. $\cos 60° = $ ___
-3. $\tan 45° = $ ___
-4. $\sin 60° = $ ___
-
-<details>
-<summary>Ver solución</summary>
-
-1. $\sin 30° = \frac{1}{2}$
-2. $\cos 60° = \frac{1}{2}$
-3. $\tan 45° = 1$
-4. $\sin 60° = \frac{\sqrt{3}}{2}$
-
-</details>
-
----
-
-### Ejercicio 2: Calcular expresiones
-
-Calcula sin calculadora:
-
-1. $\sin 30° + \cos 60°$
-2. $\sin^2 45° + \cos^2 45°$
-3. $\tan 30° \times \tan 60°$
-
-<details>
-<summary>Ver solución</summary>
-
-1. $\frac{1}{2} + \frac{1}{2} = 1$
-2. $\frac{1}{2} + \frac{1}{2} = 1$ (identidad pitagórica)
-3. $\frac{\sqrt{3}}{3} \times \sqrt{3} = \frac{3}{3} = 1$
-
-</details>
-
----
-
-### Ejercicio 3: Aplicación
-
-Un triángulo rectángulo tiene un ángulo de 30° y la hipotenusa mide 10. ¿Cuánto mide el cateto opuesto al ángulo de 30°?
-
-<details>
-<summary>Ver solución</summary>
-
-$$
-\sin 30° = \frac{O}{H}
-$$
-
-$$
-\frac{1}{2} = \frac{O}{10}
-$$
-
-$$
-O = 10 \times \frac{1}{2} = 5
-$$
-
-**Respuesta:** El cateto opuesto mide 5.
-
-</details>
-
----
-
-### Ejercicio 4: ¿Qué ángulo es?
-
-¿Qué ángulo tiene $\sin\theta = \frac{\sqrt{3}}{2}$?
-
-<details>
-<summary>Ver solución</summary>
-
-$\theta = 60°$
-
-(Recuerda que $\sin 60° = \frac{\sqrt{3}}{2}$)
-
-</details>
+> El coseno de uno (30) es el seno de su complemento (60).

@@ -1,227 +1,246 @@
-# Resolución de Triángulos Rectángulos
+# **Resolución de Triángulos Rectángulos**
 
-¿Tienes un triángulo rectángulo pero solo conoces algunos datos? Con las razones trigonométricas puedes encontrar **todos los lados y ángulos** de un triángulo a partir de muy poca información. Esta habilidad es fundamental en arquitectura, navegación, topografía y muchas otras áreas.
-
----
-
-## 🎯 Lo que vas a aprender
-
-- Qué significa "resolver" un triángulo
-- Qué datos mínimos necesitas para resolverlo
-- Cómo elegir la razón trigonométrica adecuada
-- Cómo usar las funciones inversas (arcsen, arccos, arctan)
-- Cómo verificar tus resultados
+En el mundo real, rara vez te dan todos los datos. Un arquitecto puede saber la altura del techo y el ancho de la casa, pero no la longitud de la viga inclinada. "Resolver un triángulo" significa encontrar los 3 lados y los 3 ángulos usando las pistas que tienes.
 
 ---
 
-## 📋 Lo Esencial: Estrategia de Resolución
+## 🎯 ¿Qué vas a aprender?
 
-| Datos que tienes | Qué usar | Fórmula típica |
-|------------------|----------|----------------|
-| 1 lado + 1 ángulo agudo | Razones directas | $\text{lado} = \text{dato} \times \sin/\cos/\tan$ |
-| 2 lados | Función inversa + Pitágoras | $\theta = \arctan(O/A)$ |
-| Hipotenusa + 1 cateto | $\sin$ o $\cos$ inversa | $\theta = \arcsin(O/H)$ |
+- Cómo encontrar lados desconocidos usando SOH-CAH-TOA.
+- Cómo encontrar ángulos desconocidos usando funciones inversas ($\sin^{-1}, \cos^{-1}, \tan^{-1}$).
+- La estrategia paso a paso para resolver cualquier triángulo rectángulo.
 
-> 💡 **Regla de oro:** Con **un lado y un ángulo agudo**, o con **dos lados**, puedes resolver cualquier triángulo rectángulo.
+---
+
+## 🕵️‍♂️ El Arte de ser Detective
+
+Para resolver un triángulo rectángulo, necesitas al menos **dos pistas** (además del ángulo recto):
+1.  Un lado y un ángulo.
+2.  Dos lados.
+
+### Herramienta 1: Encontrar Lados
+Si tienes el ángulo, usas las razones normales ($\sin, \cos, \tan$).
+
+### Herramienta 2: Encontrar Ángulos
+Si buscas el ángulo, usas las funciones **inversas** (Arco-funciones). En tu calculadora aparecen como $\sin^{-1}$, $\cos^{-1}$, $\tan^{-1}$.
+
+> **Nota:** $\sin^{-1}(0.5)$ se lee "el ángulo cuyo seno es 0.5".
 
 ![Resolver un triángulo: θ = 35°, Adyacente = 10](/images/geometria/trigonometria/06-resolver-triangulo.svg)
 
 ---
 
-## 📖 ¿Qué necesitamos para resolver?
+## ⚙️ Ejemplos Resueltos
 
-Para resolver un triángulo rectángulo necesitamos:
-- **Un lado** y **un ángulo agudo**, o
-- **Dos lados**
+### Ejemplo 1: Tengo un lado y un ángulo (Caso Arquitecto)
 
-Con estos datos podemos encontrar todo lo demás.
+Ángulo $\theta = 30^{\circ}$, Hipotenusa = 10. Queremos el cateto opuesto ($x$).
 
----
+**Razonamiento:**
+1.  **Identificar:** Tengo ángulo (30°), quiero Opuesto ($x$), tengo Hipotenusa (10).
+2.  **Elegir:** ¿Qué razón usa O e H? $\rightarrow$ **Seno**.
+3.  **Plantear:** $\sin(30^{\circ}) = \frac{x}{10}$.
+4.  **Despejar:** $x = 10 \cdot \sin(30^{\circ})$.
+5.  **Calcular:** $x = 10 \cdot 0.5 = 5$.
 
-## 📖 Estrategia general
-
-1. **Identificar** qué datos tenemos
-2. **Elegir** la razón trigonométrica adecuada
-3. **Plantear** la ecuación
-4. **Resolver** para el elemento desconocido
-5. **Verificar** (suma de ángulos = 180°, teorema de Pitágoras)
-
----
-
-## 📖 Caso 1: Conocemos un lado y un ángulo agudo
-
-### Ejemplo 1
-
-Triángulo rectángulo con $\theta = 35°$ y el cateto adyacente $= 10$ cm.
-
-**Encontrar el cateto opuesto:**
-
+**Resultado:**
 $$
-\tan 35° = \frac{O}{10}
+\boxed{x = 5}
 $$
 
-$$
-O = 10 \times \tan 35° = 10 \times 0.7002 \approx 7.0 \text{ cm}
-$$
+### Ejemplo 2: Tengo dos lados (Caso Topógrafo)
 
-**Encontrar la hipotenusa:**
+Opuesto = 3, Adyacente = 4. Queremos el ángulo $\theta$.
 
-$$
-\cos 35° = \frac{10}{H}
-$$
+**Razonamiento:**
+1.  **Identificar:** Tengo Opuesto y Adyacente.
+2.  **Elegir:** ¿Qué razón usa O y A? $\rightarrow$ **Tangente**.
+3.  **Plantear:** $\tan(\theta) = \frac{3}{4} = 0.75$.
+4.  **Despejar:** $\theta = \tan^{-1}(0.75)$.
+5.  **Calcular:** $\theta \approx 36.87^{\circ}$.
 
+**Resultado:**
 $$
-H = \frac{10}{\cos 35°} = \frac{10}{0.8192} \approx 12.2 \text{ cm}
+\boxed{\theta \approx 36.87^{\circ}}
 $$
 
 ---
 
-### Ejemplo 2
+## 📝 Ejercicios de Práctica
 
-Triángulo con $\theta = 50°$ e hipotenusa $= 20$ cm.
-
-**Cateto opuesto:**
-
-$$
-\sin 50° = \frac{O}{20}
-$$
-
-$$
-O = 20 \times \sin 50° \approx 20 \times 0.766 \approx 15.3 \text{ cm}
-$$
-
-**Cateto adyacente:**
-
-$$
-\cos 50° = \frac{A}{20}
-$$
-
-$$
-A = 20 \times \cos 50° \approx 20 \times 0.643 \approx 12.9 \text{ cm}
-$$
-
----
-
-## 📖 Caso 2: Conocemos dos lados
-
-Usamos funciones trigonométricas inversas (arcsen, arccos, arctan).
-
-### Ejemplo 3
-
-Cateto opuesto = 6, cateto adyacente = 8.
-
-**Encontrar el ángulo:**
-
-$$
-\tan\theta = \frac{6}{8} = 0.75
-$$
-
-$$
-\theta = \arctan(0.75) \approx 36.87°
-$$
-
-**Encontrar la hipotenusa:**
-
-$$
-H = \sqrt{6^2 + 8^2} = \sqrt{100} = 10
-$$
-
-**El otro ángulo agudo:**
-
-$$
-90° - 36.87° = 53.13°
-$$
-
----
-
-## 📖 Funciones inversas
-
-| Función | Inversa | Símbolo alternativo |
-|---------|---------|---------------------|
-| $\sin$ | $\arcsin$ | $\sin^{-1}$ |
-| $\cos$ | $\arccos$ | $\cos^{-1}$ |
-| $\tan$ | $\arctan$ | $\tan^{-1}$ |
-
-### Uso en calculadora
-
-Para encontrar $\theta$ si $\sin\theta = 0.5$:
-
-$$
-\theta = \arcsin(0.5) = 30°
-$$
-
----
-
-## 📖 Verificación
-
-Siempre verifica tus resultados:
-- Los ángulos agudos deben sumar 90°
-- Aplica Pitágoras: $a^2 + b^2 = c^2$
-
----
-
-## 📝 Ejercicios de práctica
-
-### Ejercicio 1: Un lado y un ángulo
-
-Triángulo rectángulo con $\theta = 40°$ y cateto opuesto = 12 cm.
-Encuentra el cateto adyacente y la hipotenusa.
+### Ejercicio 1
+Encuentra el cateto opuesto si $\theta=45^{\circ}$ y la hipotenusa es $10\sqrt{2}$.
 
 <details>
-<summary><strong>Ver respuesta</strong></summary>
+<summary>Ver solución</summary>
 
+**Razonamiento:**
+$\sin(45) = O / 10\sqrt{2}$.
+$O = 10\sqrt{2} \cdot (\sqrt{2}/2) = 10(2)/2 = 10$.
+
+**Resultado:**
 $$
-\tan 40° = \frac{12}{A} \Rightarrow A = \frac{12}{\tan 40°} \approx \frac{12}{0.839} \approx 14.3 \text{ cm}
+\boxed{10}
 $$
 
+</details>
+
+### Ejercicio 2
+Encuentra $\theta$ si $\sin(\theta) = 0.5$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Sabemos de memoria que $\sin(30)=0.5$.
+
+**Resultado:**
 $$
-\sin 40° = \frac{12}{H} \Rightarrow H = \frac{12}{\sin 40°} \approx \frac{12}{0.643} \approx 18.7 \text{ cm}
+\boxed{30^{\circ}}
+$$
+
+</details>
+
+### Ejercicio 3
+Tienes un triángulo rectángulo. Un ángulo es 20°. ¿Cuánto mide el otro ángulo agudo?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Deben sumar 90°. $90 - 20 = 70$.
+
+**Resultado:**
+$$
+\boxed{70^{\circ}}
+$$
+
+</details>
+
+### Ejercicio 4
+Si $\tan(\theta) = 1$, halla $\theta$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$\tan^{-1}(1) = 45^{\circ}$.
+
+**Resultado:**
+$$
+\boxed{45^{\circ}}
+$$
+
+</details>
+
+### Ejercicio 5
+Calcula la hipotenusa si Adyacente=5 y $\theta=60^{\circ}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$\cos(60) = 5/H$.
+$0.5 = 5/H \Rightarrow H = 5/0.5 = 10$.
+
+**Resultado:**
+$$
+\boxed{10}
+$$
+
+</details>
+
+### Ejercicio 6
+Encuentra $\theta$ si Opuesto=4 e Hipotenusa=5.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$\sin(\theta) = 4/5 = 0.8$.
+$\theta = \sin^{-1}(0.8) \approx 53.13^{\circ}$.
+
+**Resultado:**
+$$
+\boxed{\approx 53.13^{\circ}}
+$$
+
+</details>
+
+### Ejercicio 7
+Una escalera de 6 m se apoya en una pared haciendo un ángulo de 60° con el suelo. ¿A qué altura llega?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Hipotenusa=6, Ángulo=60°, buscamos Opuesto.
+$O = 6 \cdot \sin(60) = 6 \cdot (\sqrt{3}/2) = 3\sqrt{3}$.
+
+**Resultado:**
+$$
+\boxed{3\sqrt{3} \approx 5.2 \text{ m}}
+$$
+
+</details>
+
+### Ejercicio 8
+Si los catetos miden 1 y $\sqrt{3}$, ¿cuánto mide el ángulo opuesto al cateto de 1?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$\tan(\theta) = 1/\sqrt{3} = \sqrt{3}/3$.
+Corresponde a 30°.
+
+**Resultado:**
+$$
+\boxed{30^{\circ}}
+$$
+
+</details>
+
+### Ejercicio 9
+Calcula el cateto adyacente si Opuesto=10 y $\tan(\theta)=2$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$2 = 10/A \Rightarrow A = 10/2 = 5$.
+
+**Resultado:**
+$$
+\boxed{5}
+$$
+
+</details>
+
+### Ejercicio 10
+Si conoces los 3 lados, ¿puedes encontrar los ángulos?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Sí, usando cualquier función inversa ($\sin^{-1}, \cos^{-1}$ o $\tan^{-1}$).
+
+**Resultado:**
+$$
+\boxed{\text{Sí}}
 $$
 
 </details>
 
 ---
 
-### Ejercicio 2: Dos lados
+## 🔑 Resumen
 
-Cateto opuesto = 5, hipotenusa = 13. Encuentra el ángulo $\theta$.
+| ¿Qué buscas? | Herramienta | Ejemplo |
+| :--- | :--- | :--- |
+| **Un Lado** | Razones directas | $x = H \cdot \sin(\theta)$ |
+| **Un Ángulo** | Funciones inversas | $\theta = \tan^{-1}(O/A)$ |
+| **El otro ángulo** | Resta | $90^{\circ} - \text{conocido}$ |
 
-<details>
-<summary><strong>Ver respuesta</strong></summary>
-
-$$
-\sin\theta = \frac{5}{13} \approx 0.385
-$$
-
-$$
-\theta = \arcsin(0.385) \approx 22.6°
-$$
-
-</details>
-
----
-
-### Ejercicio 3: Problema completo
-
-En un triángulo rectángulo, un ángulo agudo mide 55° y la hipotenusa mide 25 m. Resuelve el triángulo completamente.
-
-<details>
-<summary><strong>Ver respuesta</strong></summary>
-
-**Ángulos:** 90°, 55°, 35°
-
-**Cateto opuesto a 55°:**
-$$
-O = 25 \times \sin 55° \approx 25 \times 0.819 \approx 20.5 \text{ m}
-$$
-
-**Cateto adyacente a 55°:**
-$$
-A = 25 \times \cos 55° \approx 25 \times 0.574 \approx 14.3 \text{ m}
-$$
-
-**Verificación:** $20.5^2 + 14.3^2 = 420.25 + 204.49 = 624.74 \approx 25^2 = 625$ ✓
-
-</details>
-
----
+> No olvides comprobar: los lados más grandes deben estar frente a los ángulos más grandes.

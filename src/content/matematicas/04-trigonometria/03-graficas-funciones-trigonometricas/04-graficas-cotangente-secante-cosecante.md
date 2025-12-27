@@ -1,37 +1,28 @@
-# Gráficas de Cotangente, Secante y Cosecante
+# **Gráficas de Cotangente, Secante y Cosecante**
 
-Las **funciones recíprocas** tienen personalidades dramáticas: nunca tocan el cero, tienen asíntotas, y sus formas son espejos invertidos de sus funciones base.
-
----
-
-## 🎯 En esta lección aprenderás
-
-- Las gráficas de cot(x), sec(x) y csc(x)
-- Por qué tienen asíntotas (y dónde)
-- La relación visual con sus funciones base
-- Por qué nunca valen entre -1 y 1 (excepto cot)
+Si ya conoces a los "Tres Grandes" (Seno, Coseno y Tangente), ahora te presentamos a sus contrapartes: las **funciones recíprocas**. Son como los "reversos" de las funciones originales, llenas de curvas en forma de U y asíntotas invisibles.
 
 ---
 
-## 📋 Cheat Sheet General
+## 🎯 ¿Qué vas a aprender?
 
-| Función | Definición | Período | Asíntotas en... | Rango |
-|---------|------------|---------|-----------------|-------|
-| $\cot x$ | $\frac{\cos x}{\sin x}$ | $\pi$ | $k\pi$ | $\mathbb{R}$ |
-| $\sec x$ | $\frac{1}{\cos x}$ | $2\pi$ | $\frac{\pi}{2} + k\pi$ | $(-\infty,-1] \cup [1,\infty)$ |
-| $\csc x$ | $\frac{1}{\sin x}$ | $2\pi$ | $k\pi$ | $(-\infty,-1] \cup [1,\infty)$ |
+- Cómo se ven las gráficas de $\cot(x)$, $\sec(x)$ y $\csc(x)$.
+- Por qué tienen "zonas prohibidas" entre -1 y 1.
+- Cómo usar las gráficas de seno y coseno como "esqueleto" para dibujar estas.
+- Dónde aparecen sus asíntotas verticales.
 
 ---
 
-## 📖 Gráfica de la Cotangente
+## 📉 Gráfica de la Cotangente
 
-### Definición
-
+La cotangente es la inversa multiplicativa de la tangente:
 $$
-\cot x = \frac{\cos x}{\sin x} = \frac{1}{\tan x}
+\cot(x) = \frac{1}{\tan(x)} = \frac{\cos(x)}{\sin(x)}
 $$
 
-> 🔄 Es como la tangente "volteada y reflejada".
+*   **Asíntotas:** Donde $\sin(x) = 0$ (en $0, \pi, 2\pi...$).
+*   **Ceros:** Donde $\cos(x) = 0$ (en $90°, 270°...$).
+*   **Comportamiento:** Al revés de la tangente. Siempre va **bajando** (decreciente).
 
 <div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
@@ -43,30 +34,18 @@ $$
 
 </div>
 
-### Características de la cotangente
-
-| Propiedad | Valor |
-|-----------|-------|
-| Dominio | $x \neq k\pi$ |
-| Rango | Todos los reales |
-| Período | $\pi$ |
-| Asíntotas | Donde $\sin x = 0$ (en $x = k\pi$) |
-| Cruza eje X | Donde $\cos x = 0$ (en $x = \frac{\pi}{2} + k\pi$) |
-| Comportamiento | **Siempre decreciente** en cada período |
-
-> 💡 **Nota clave:** A diferencia de la tangente que siempre crece, la cotangente siempre decrece.
-
 ---
 
-## 📖 Gráfica de la Secante
+## ∪ Gráfica de la Secante
 
-### Definición
-
+La secante es la recíproca del coseno:
 $$
-\sec x = \frac{1}{\cos x}
+\sec(x) = \frac{1}{\cos(x)}
 $$
 
-> 🪞 Es el recíproco del coseno.
+*   **Truco:** Dibuja el coseno suavemente. Donde el coseno es 1, la secante toca la cima y sube. Donde el coseno es -1, la secante toca el fondo y baja.
+*   **Zona Prohibida:** Nunca está entre -1 y 1.
+*   **Asíntotas:** Donde $\cos(x) = 0$ ($90°, 270°...$).
 
 <div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
@@ -78,30 +57,18 @@ $$
 
 </div>
 
-### Características de la secante
-
-| Propiedad | Valor |
-|-----------|-------|
-| Dominio | $x \neq \frac{\pi}{2} + k\pi$ |
-| Rango | $(-\infty, -1] \cup [1, \infty)$ |
-| Período | $2\pi$ |
-| Asíntotas | Donde $\cos x = 0$ |
-| Mínimo local | $\sec x = 1$ cuando $\cos x = 1$ |
-| Máximo local | $\sec x = -1$ cuando $\cos x = -1$ |
-
-> ⚠️ **Nunca vale entre -1 y 1:** Si $|\cos x| \leq 1$, entonces $|\sec x| = \frac{1}{|\cos x|} \geq 1$.
-
 ---
 
-## 📖 Gráfica de la Cosecante
+## ∩ Gráfica de la Cosecante
 
-### Definición
-
+La cosecante es la recíproca del seno:
 $$
-\csc x = \frac{1}{\sin x}
+\csc(x) = \frac{1}{\sin(x)}
 $$
 
-> 🪞 Es el recíproco del seno.
+El patrón es idéntico al de la secante, pero desplazado (igual que el seno está desplazado del coseno).
+*   **Puntos de contacto:** Las "U" tocan las cimas y valles de la onda senoidal.
+*   **Asíntotas:** Donde $\sin(x) = 0$ ($0, \pi, 2\pi...$).
 
 <div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
@@ -113,115 +80,172 @@ $$
 
 </div>
 
-### Características de la cosecante
-
-| Propiedad | Valor |
-|-----------|-------|
-| Dominio | $x \neq k\pi$ |
-| Rango | $(-\infty, -1] \cup [1, \infty)$ |
-| Período | $2\pi$ |
-| Asíntotas | Donde $\sin x = 0$ (en $x = k\pi$) |
-| Mínimo local | $\csc x = 1$ cuando $\sin x = 1$ |
-| Máximo local | $\csc x = -1$ cuando $\sin x = -1$ |
-
 ---
 
-## 📖 Relación entre las funciones
+## 📝 Ejercicios de Práctica
 
-### Regla de oro para las asíntotas
-
-| Función recíproca | Tiene asíntotas donde... |
-|-------------------|-------------------------|
-| $\sec x = \frac{1}{\cos x}$ | $\cos x = 0$ (ceros del coseno) |
-| $\csc x = \frac{1}{\sin x}$ | $\sin x = 0$ (ceros del seno) |
-| $\cot x = \frac{1}{\tan x}$ | $\tan x = 0$ → realmente donde $\sin x = 0$ |
-
-> 💡 **Patrón:** Los ceros de la función base se convierten en asíntotas de la función recíproca.
-
----
-
-## 🧠 Resumen Visual
-
-| Función | Forma de la gráfica | Asíntotas |
-|---------|---------------------|-----------|
-| $\cot x$ | Curvas "S" descendentes | $x = k\pi$ |
-| $\sec x$ | "Parábolas" arriba y abajo | $x = \frac{\pi}{2} + k\pi$ |
-| $\csc x$ | "Parábolas" arriba y abajo | $x = k\pi$ |
-
----
-
-## 📝 Ejercicios de práctica
-
-### Ejercicio 1: Identificar asíntotas
-
-¿Dónde están las asíntotas de cada función (entre 0 y $2\pi$)?
-
-1. $\cot x$
-2. $\sec x$
-3. $\csc x$
+### Ejercicio 1
+¿Cuál es el valor mínimo positivo que puede tomar la función $\sec(x)$?
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. **$\cot x$:** en $x = 0, \pi, 2\pi$ (donde $\sin x = 0$)
-2. **$\sec x$:** en $x = \frac{\pi}{2}, \frac{3\pi}{2}$ (donde $\cos x = 0$)
-3. **$\csc x$:** en $x = 0, \pi, 2\pi$ (donde $\sin x = 0$)
+**Razonamiento:**
+El rango de la secante positiva es $[1, \infty)$.
+El valor más bajo es 1.
 
+**Respuesta:** $\boxed{1}$
 </details>
 
 ---
 
-### Ejercicio 2: Valores especiales
-
-Calcula:
-
-1. $\sec 0$
-2. $\csc \frac{\pi}{2}$
-3. $\cot \frac{\pi}{4}$
+### Ejercicio 2
+Determina dónde tiene asíntotas verticales la función $\csc(x)$.
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. $\sec 0 = \frac{1}{\cos 0} = \frac{1}{1} = 1$
-2. $\csc \frac{\pi}{2} = \frac{1}{\sin \frac{\pi}{2}} = \frac{1}{1} = 1$
-3. $\cot \frac{\pi}{4} = \frac{1}{\tan \frac{\pi}{4}} = \frac{1}{1} = 1$
+**Razonamiento:**
+$\csc(x) = 1/\sin(x)$.
+Indefinida cuando $\sin(x) = 0$.
+Esto ocurre en $k\pi$ ($0, \pi, 2\pi...$).
 
-¡Los tres valen 1 en estos puntos especiales!
-
+**Respuesta:** En los múltiplos enteros de $\pi$.
 </details>
 
 ---
 
-### Ejercicio 3: Rango
-
-¿Es posible que $\sec x = 0.5$?
+### Ejercicio 3
+Calcula $\cot(45°)$.
 
 <details>
-<summary><strong>Ver respuesta</strong></summary>
+<summary>Ver solución</summary>
 
-**No**, porque el rango de $\sec x$ es $(-\infty, -1] \cup [1, \infty)$.
+**Razonamiento:**
+$\cot(45°) = 1/\tan(45°)$.
+$\tan(45°) = 1$.
+$1/1 = 1$.
 
-El valor 0.5 está entre -1 y 1, así que es **imposible**.
-
-Para que $\sec x = 0.5$, necesitaríamos $\cos x = 2$, lo cual nunca ocurre.
-
+**Respuesta:** $\boxed{1}$
 </details>
 
 ---
 
-### Ejercicio 4: Verdadero o Falso
-
-1. $\cot x$ tiene período $2\pi$.
-2. $\csc x$ nunca vale cero.
-3. $\sec x$ tiene las mismas asíntotas que $\tan x$.
+### Ejercicio 4
+¿Es verdad que $\sec(x)$ nunca puede ser cero?
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. **Falso** — El período de $\cot x$ es $\pi$
-2. **Verdadero** — $\csc x = \frac{1}{\sin x}$ nunca puede ser cero
-3. **Verdadero** — Ambas tienen asíntotas donde $\cos x = 0$
+**Razonamiento:**
+Sí. $\sec(x) = 1/\cos(x)$.
+Para que una fracción sea cero, el numerador debe ser cero.
+Aquí el numerador es siempre 1.
 
+**Respuesta:** **Verdadero**
 </details>
 
 ---
+
+### Ejercicio 5
+En el intervalo $(0, \pi)$, ¿dónde es la cotangente igual a cero?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$\cot(x) = \cos(x)/\sin(x)$.
+Es cero cuando $\cos(x) = 0$.
+En ese intervalo, ocurre a 90°.
+
+**Respuesta:** $\boxed{\frac{\pi}{2}}$
+</details>
+
+---
+
+### Ejercicio 6
+Si $\sin(x) = 0.5$, ¿cuánto vale $\csc(x)$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Son recíprocos.
+$\csc(x) = 1/0.5 = 2$.
+
+**Respuesta:** $\boxed{2}$
+</details>
+
+---
+
+### Ejercicio 7
+¿Cuál es el periodo de $\sec(x)$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Depende del coseno.
+El periodo del coseno es $2\pi$.
+Por tanto, la secante también repite su patrón cada $2\pi$.
+
+**Respuesta:** $\boxed{2\pi}$
+</details>
+
+---
+
+### Ejercicio 8
+¿En qué cuadrantes es la cotangente positiva?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Igual que la tangente.
+Positiva donde Seno y Coseno tienen el mismo signo.
+Cuadrantes I y III.
+
+**Respuesta:** **I y III**
+</details>
+
+---
+
+### Ejercicio 9
+Describe el comportamiento de $\csc(x)$ cuando $x$ se acerca a 0 por la derecha.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$x \to 0^+$, seno es positivo muy pequeño.
+$1 / (\text{positivo pequeño}) = \text{infinito positivo}$.
+
+**Respuesta:** **Tiende a $+\infty$**
+</details>
+
+---
+
+### Ejercicio 10
+¿Es $\sec(x)$ una función par o impar?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Hereda la simetría de su recíprococo, el coseno.
+El coseno es par.
+
+**Respuesta:** **Par**
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Función | Recíproca de... | Dominio prohibido | Rango |
+| :--- | :--- | :--- | :--- |
+| **Cotangente** | Tangente | $k\pi$ | $\mathbb{R}$ |
+| **Secante** | Coseno | $\frac{\pi}{2} + k\pi$ | Fuera de $(-1, 1)$ |
+| **Cosecante** | Seno | $k\pi$ | Fuera de $(-1, 1)$ |
+
+> **Conclusión:** Las gráficas recíprocas viven donde sus madres no pueden. Si el seno es pequeño, la cosecante es gigante. Si el seno es cero, la cosecante explota. Son el Yin y el Yang de la magnitud.

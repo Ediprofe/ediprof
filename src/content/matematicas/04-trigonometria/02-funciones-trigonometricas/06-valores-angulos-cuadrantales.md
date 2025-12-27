@@ -1,6 +1,25 @@
-# Valores de Ángulos Cuadrantales
+# **Valores de Ángulos Cuadrantales**
 
-Los **ángulos cuadrantales** son aquellos cuyos lados terminales coinciden con los ejes coordenados: 0°, 90°, 180°, 270° y 360°.
+Los **ángulos cuadrantales** son los reyes del círculo: 0°, 90°, 180° y 270°. Al coincidir exactamente con los ejes X e Y, sus valores son los más fáciles de calcular... ¡pero también los más fáciles de olvidar! Vamos a aprender a deducirlos sin memorizar.
+
+---
+
+## 🎯 ¿Qué vas a aprender?
+
+- Qué son los ángulos cuadrantales y dónde se ubican.
+- Cómo deducir sus valores de seno y coseno usando coordenadas $(x, y)$.
+- Por qué algunas funciones como la tangente o secante se vuelven **indefinidas** (infinito).
+- Un truco simple para recordar el patrón $0, 1, 0, -1$.
+
+---
+
+## 📍 Ubicación en el Círculo
+
+Recuerda: El círculo unitario tiene radio **1**.
+*   **0°** está "todo a la derecha".
+*   **90°** está "todo arriba".
+*   **180°** está "todo a la izquierda".
+*   **270°** está "todo abajo".
 
 <div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
@@ -12,170 +31,208 @@ Los **ángulos cuadrantales** son aquellos cuyos lados terminales coinciden con 
 
 </div>
 
----
-
-## 📖 ¿Qué son los ángulos cuadrantales?
-
-> **Definición:** Los ángulos cuadrantales son múltiplos de 90° (o $\frac{\pi}{2}$ radianes). Sus lados terminales están sobre los ejes X o Y.
-
----
-
-## 📖 Puntos en el círculo unitario
-
-| Ángulo | Radianes | Punto $(x, y)$ |
-|--------|----------|----------------|
-| 0° | 0 | (1, 0) |
-| 90° | $\frac{\pi}{2}$ | (0, 1) |
-| 180° | $\pi$ | (−1, 0) |
-| 270° | $\frac{3\pi}{2}$ | (0, −1) |
-| 360° | $2\pi$ | (1, 0) |
+| Ángulo | Coordenada $(x, y)$ | $\cos$ ($x$) | $\sin$ ($y$) |
+| :---: | :---: | :---: | :---: |
+| **0°** | $(1, 0)$ | $1$ | $0$ |
+| **90°** | $(0, 1)$ | $0$ | $1$ |
+| **180°** | $(-1, 0)$ | $-1$ | $0$ |
+| **270°** | $(0, -1)$ | $0$ | $-1$ |
 
 ---
 
-## 📖 Valores de seno y coseno
+## 🚫 El Misterio de las Indefiniciones
 
-| Ángulo | $\cos\theta$ | $\sin\theta$ |
-|--------|--------------|--------------|
-| 0° | 1 | 0 |
-| 90° | 0 | 1 |
-| 180° | −1 | 0 |
-| 270° | 0 | −1 |
-| 360° | 1 | 0 |
+Algunas funciones implican **dividir**. Y ya sabes la regla de oro de matemáticas: **¡Prohibido dividir por cero!**
 
----
+*   **Tangente** ($\sin/\cos$) falla cuando Coseno es 0 (en 90° y 270°).
+*   **Cotangente** ($\cos/\sin$) falla cuando Seno es 0 (en 0° y 180°).
 
-## 📖 Valores de tangente y cotangente
-
-| Ángulo | $\tan\theta$ | $\cot\theta$ |
-|--------|--------------|--------------|
-| 0° | 0 | Indefinido |
-| 90° | Indefinido | 0 |
-| 180° | 0 | Indefinido |
-| 270° | Indefinido | 0 |
-| 360° | 0 | Indefinido |
-
-### ¿Por qué indefinido?
-
-- $\tan 90°$ es indefinido porque $\cos 90° = 0$ (división por cero)
-- $\cot 0°$ es indefinido porque $\sin 0° = 0$ (división por cero)
+> **Indefinido** significa que el valor se dispara hacia infinito ($\infty$). En la gráfica, esto crea una asíntota vertical.
 
 ---
 
-## 📖 Valores de secante y cosecante
-
-| Ángulo | $\sec\theta$ | $\csc\theta$ |
-|--------|--------------|--------------|
-| 0° | 1 | Indefinido |
-| 90° | Indefinido | 1 |
-| 180° | −1 | Indefinido |
-| 270° | Indefinido | −1 |
-| 360° | 1 | Indefinido |
-
----
-
-## 📖 Tabla maestra de ángulos cuadrantales
+## 📊 Tabla Maestra
 
 | Ángulo | $\sin$ | $\cos$ | $\tan$ | $\csc$ | $\sec$ | $\cot$ |
-|--------|--------|--------|--------|--------|--------|--------|
-| 0° | 0 | 1 | 0 | ∞ | 1 | ∞ |
-| 90° | 1 | 0 | ∞ | 1 | ∞ | 0 |
-| 180° | 0 | −1 | 0 | ∞ | −1 | ∞ |
-| 270° | −1 | 0 | ∞ | −1 | ∞ | 0 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **0°** | 0 | 1 | 0 | 🚫 | 1 | 🚫 |
+| **90°** | 1 | 0 | 🚫 | 1 | 🚫 | 0 |
+| **180°** | 0 | -1 | 0 | 🚫 | -1 | 🚫 |
+| **270°** | -1 | 0 | 🚫 | -1 | 🚫 | 0 |
 
-(∞ significa "indefinido")
-
----
-
-## 📖 Patrón para memorizar
-
-### Seno en cuadrantales
-
-Los valores de seno rotan: $0 \to 1 \to 0 \to -1 \to 0$
-
-### Coseno en cuadrantales
-
-Los valores de coseno rotan: $1 \to 0 \to -1 \to 0 \to 1$
-
-Nota que el coseno "adelanta" 90° al seno.
+*(🚫 = Indefinido)*
 
 ---
 
-## 📝 Ejercicios de práctica
+## 📝 Ejercicios de Práctica
 
-### Ejercicio 1: Completar valores
-
-Sin calculadora, encuentra:
-
-1. $\sin 180°$
-2. $\cos 270°$
-3. $\tan 0°$
-4. $\sin 90°$
+### Ejercicio 1
+Calcula $\sin(180°)$.
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. $\sin 180° = 0$
-2. $\cos 270° = 0$
-3. $\tan 0° = 0$
-4. $\sin 90° = 1$
+**Razonamiento:**
+180° está a la izquierda.
+El punto es $(-1, 0)$.
+El seno es la coordenada $y$, que es 0.
 
+**Respuesta:** $\boxed{0}$
 </details>
 
 ---
 
-### Ejercicio 2: Identificar indefinidos
-
-¿Cuáles de las siguientes están indefinidas?
-
-1. $\tan 180°$
-2. $\cot 90°$
-3. $\sec 90°$
-4. $\csc 180°$
+### Ejercicio 2
+Calcula $\cos(270°)$.
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. $\tan 180° = 0$ (definido)
-2. $\cot 90° = 0$ (definido)
-3. $\sec 90°$ = **Indefinido** ($\cos 90° = 0$)
-4. $\csc 180°$ = **Indefinido** ($\sin 180° = 0$)
+**Razonamiento:**
+270° está abajo.
+El punto es $(0, -1)$.
+El coseno es la coordenada $x$, que es 0.
 
+**Respuesta:** $\boxed{0}$
 </details>
 
 ---
 
-### Ejercicio 3: Ángulos negativos cuadrantales
-
-Calcula:
-
-1. $\sin(-90°)$
-2. $\cos(-180°)$
-3. $\tan(-270°)$
+### Ejercicio 3
+Calcula $\tan(90°)$.
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. $\sin(-90°) = -\sin 90° = -1$
-2. $\cos(-180°) = \cos 180° = -1$
-3. $\tan(-270°) = -\tan 270°$ = Indefinido
+**Razonamiento:**
+$\tan = \sin / \cos$.
+En 90°, $\cos = 0$.
+Dividir por cero es imposible.
 
+**Respuesta:** **Indefinido**
 </details>
 
 ---
 
-### Ejercicio 4: Múltiplos de 360°
-
-Calcula:
-
-1. $\cos 720°$
-2. $\sin 450°$
+### Ejercicio 4
+Calcula $\sec(180°)$.
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. $\cos 720° = \cos(720° - 720°) = \cos 0° = 1$
-2. $\sin 450° = \sin(450° - 360°) = \sin 90° = 1$
+**Razonamiento:**
+$\sec = 1 / \cos$.
+En 180°, $\cos = -1$.
+$1 / (-1) = -1$.
 
+**Respuesta:** $\boxed{-1}$
 </details>
 
 ---
+
+### Ejercicio 5
+Calcula $\sin(-90°)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+-90° es lo mismo que 270° (abajo).
+El punto es $(0, -1)$.
+El seno es $y = -1$.
+
+**Respuesta:** $\boxed{-1}$
+</details>
+
+---
+
+### Ejercicio 6
+Calcula $\csc(90°)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$\csc = 1 / \sin$.
+En 90°, $\sin = 1$.
+$1 / 1 = 1$.
+
+**Respuesta:** $\boxed{1}$
+</details>
+
+---
+
+### Ejercicio 7
+Calcula $\cot(270°)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$\cot = \cos / \sin$.
+En 270°, $\cos=0$ y $\sin=-1$.
+$0 / (-1) = 0$.
+
+**Respuesta:** $\boxed{0}$
+</details>
+
+---
+
+### Ejercicio 8
+Calcula $\cos(720°)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+720° son dos vueltas completas ($360 \times 2$).
+Es equivalente a 0°.
+$\cos(0°) = 1$.
+
+**Respuesta:** $\boxed{1}$
+</details>
+
+---
+
+### Ejercicio 9
+Calcula $\tan(180°)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$\tan = \sin / \cos$.
+$\sin(180°) = 0$, $\cos(180°) = -1$.
+$0 / (-1) = 0$.
+
+**Respuesta:** $\boxed{0}$
+</details>
+
+---
+
+### Ejercicio 10
+Determina si $\sec(90°)$ está definido.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$\sec = 1 / \cos$.
+$\cos(90°) = 0$.
+Dividir por cero es imposible.
+
+**Respuesta:** **No (Indefinido)**
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Ángulo | Seno | Coseno | ¿Por qué? |
+| :---: | :---: | :---: | :--- |
+| **0° / 360°** | **0** | **1** | Todo en X, nada en Y. |
+| **90°** | **1** | **0** | Todo en Y, nada en X. |
+| **180°** | **0** | **-1** | Todo en X (negativo). |
+| **270°** | **-1** | **0** | Todo en Y (negativo). |
+
+> **Conclusión:** Si la coordenada es 0, su función inversa (secante o cosecante) será indefinida. Si la coordenada es $\pm 1$, su inversa también será $\pm 1$.

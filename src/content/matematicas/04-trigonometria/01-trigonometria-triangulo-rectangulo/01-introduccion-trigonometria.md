@@ -1,208 +1,251 @@
-# Introducción a la Trigonometría
+# **Introducción a la Trigonometría**
 
-¿Te has preguntado cómo los arquitectos calculan la altura de un edificio sin subir a él? ¿O cómo los navegantes antiguos determinaban su posición en el océano mirando las estrellas? La respuesta está en una de las ramas más poderosas de las matemáticas: la **trigonometría**.
+Imagina que eres un bombero y necesitas saber si tu escalera llegará a la ventana del 5º piso sin tener que apoyarla y probar. O piensa en un programador de videojuegos que necesita calcular el ángulo exacto para que un personaje salte un obstáculo. Todo esto se resuelve con la trigonometría.
 
 ---
 
 ## 🎯 ¿Qué vas a aprender?
 
-- Qué es la trigonometría y por qué es tan importante
-- Los elementos del triángulo rectángulo
-- La nomenclatura estándar (opuesto, adyacente, hipotenusa)
-- Cómo identificar los lados respecto a un ángulo de referencia
+- Qué es la trigonometría y por qué es fundamental hoy en día.
+- Identificar la **hipotenusa**, el **cateto opuesto** y el **cateto adyacente**.
+- Cómo cambian los nombres de los catetos dependiendo de dónde te pares (ángulo de referencia).
+- Usar el Teorema de Pitágoras como herramienta de apoyo.
 
 ---
 
-## 📋 Lo Esencial
+## 📐 El Triángulo Rectángulo: Nuestro Protagonista
 
-| Concepto | Descripción |
-|----------|-------------|
-| **Trigonometría** | Estudio de las relaciones entre lados y ángulos de triángulos |
-| **Triángulo rectángulo** | Base de toda la trigonometría (tiene un ángulo de 90°) |
-| **Hipotenusa** | El lado más largo, opuesto al ángulo recto |
-| **Catetos** | Los dos lados que forman el ángulo recto |
-| **Opuesto** | El cateto que está "enfrente" del ángulo de referencia |
-| **Adyacente** | El cateto que "toca" el ángulo de referencia |
+La trigonometría básica sucede casi exclusivamente dentro de un **triángulo rectángulo**.
 
-![Elementos del triángulo rectángulo](/images/geometria/trigonometria/01-triangulo-elementos.svg)
+> **Recordatorio:** Un triángulo rectángulo es aquel que tiene una esquina perfecta de 90° (como la esquina de una hoja de papel).
 
-> 💡 **Tip fundamental:** Respecto al ángulo θ: el lado **opuesto** está "enfrente" del ángulo, el **adyacente** "toca" el ángulo (sin ser la hipotenusa), y la **hipotenusa** siempre es el lado más largo.
+### Nombres de los Lados
+A diferencia de otros triángulos, aquí los lados tienen "nombres y apellidos":
 
----
-
-## 📖 ¿Qué es la Trigonometría?
-
-> **Definición:** La trigonometría es la rama de las matemáticas que estudia las **relaciones entre los lados y ángulos** de los triángulos.
-
-El nombre viene del griego:
-- *trigonon* = triángulo
-- *metron* = medida
-
-Es decir, literalmente significa "medición de triángulos".
-
----
-
-## 📖 ¿Para qué sirve?
-
-La trigonometría está en todas partes, aunque no la veas:
-
-| Campo | Aplicación |
-|-------|------------|
-| 🏗️ **Arquitectura** | Calcular alturas, diseñar estructuras |
-| 🚀 **Física** | Proyectiles, ondas, fuerzas |
-| ✈️ **Navegación** | GPS, aviación, náutica |
-| 🎮 **Videojuegos** | Gráficos 3D, movimiento de personajes |
-| 🎵 **Música** | Ondas sonoras, síntesis de audio |
-| 🏥 **Medicina** | Tomografías, ultrasonidos |
-| 📡 **Telecomunicaciones** | Señales, antenas |
-
----
-
-## 📖 El Triángulo Rectángulo
-
-En este capítulo nos enfocaremos en el **triángulo rectángulo** porque es la base de toda la trigonometría.
-
-### ¿Qué lo hace especial?
-
-Un triángulo rectángulo tiene:
-- **Un ángulo de 90°** (el ángulo recto)
-- **Dos ángulos agudos** (menores a 90°) que suman exactamente 90°
-- **Tres lados** con nombres específicos
-
-### Los elementos
-
-| Elemento | Descripción |
-|----------|-------------|
-| **Ángulo recto** | El ángulo de 90°, marcado con un cuadradito |
-| **Catetos** | Los dos lados que forman el ángulo recto |
-| **Hipotenusa** | El lado opuesto al ángulo recto (siempre el más largo) |
+1.  **Hipotenusa:** Es siempre el lado más largo. Está frente al ángulo recto (la esquina de 90°). Es como la rampa inclinada.
+2.  **Catetos:** Son los dos lados más cortos que forman la "L" del ángulo recto.
 
 ![Triángulo 3-4-5](/images/geometria/trigonometria/03-triangulo-345.svg)
 
 ---
 
-## 📖 Lados Relativos al Ángulo de Referencia
+## 👁️ Todo Depende del Punto de Vista (Referencia)
 
-Aquí viene lo más importante: **los nombres "opuesto" y "adyacente" dependen del ángulo que estemos considerando**.
+Aquí es donde muchos se confunden, pero es muy simple. Los dos catetos cambian de "apodo" dependiendo de **en qué ángulo te pares**. Imagina que el triángulo es una habitación y tú estás parado en una esquina (ángulo).
 
-### El ángulo de referencia
+Supongamos que elegimos un ángulo y lo llamamos alfa ($\alpha$).
 
-Cuando trabajamos con trigonometría, elegimos uno de los dos ángulos agudos como nuestro **ángulo de referencia** (lo llamamos θ, alpha, o simplemente "el ángulo").
+| Nombre | Definición Simple |
+| :--- | :--- |
+| **Cateto Opuesto** | El lado que está **enfrente** de ti. Si disparas una flecha desde tu esquina, le darías. No lo puedes tocar. |
+| **Cateto Adyacente** | El lado que **tocas**. Es el suelo (o pared) que forma tu esquina junto con la hipotenusa. |
+| **Hipotenusa** | La rampa inclinada. Nunca cambia de nombre. |
 
-### Los lados cambian según el ángulo
-
-| Respecto al ángulo θ | Definición |
-|---------------------|------------|
-| **Opuesto** | El cateto que está "enfrente" del ángulo |
-| **Adyacente** | El cateto que "toca" el ángulo (que no es la hipotenusa) |
-| **Hipotenusa** | Siempre es el mismo: el lado más largo |
-
-| Si θ está aquí... | Opuesto | Adyacente | Hipotenusa |
-|-------------------|---------|-----------|------------|
-| En la esquina inferior izquierda | El cateto vertical (arriba) | El cateto horizontal (abajo) | El lado inclinado |
-| En la esquina superior | El cateto horizontal | El cateto vertical | El lado inclinado |
-
-> 🔄 **¡Los catetos intercambian nombres según el ángulo!** Solo la hipotenusa siempre se llama igual.
-
-> 💡 **Importante:** La **hipotenusa** nunca cambia de nombre porque siempre es el lado opuesto al ángulo de 90°. ¡Pero los catetos sí intercambian nombres dependiendo de qué ángulo estés mirando!
+![Elementos del triángulo rectángulo](/images/geometria/trigonometria/01-triangulo-elementos.svg)
 
 ---
 
-## 📖 Recuerdo: Teorema de Pitágoras
+## ⚙️ Ejemplos Resueltos
 
-Antes de continuar con trigonometría, recuerda el teorema más famoso:
+### Ejemplo 1: Identificar Lados
 
+Mira un triángulo rectángulo con lados 3, 4 y 5. El ángulo de referencia ($\theta$) está entre el lado 4 y el lado 5.
+
+**Razonamiento:**
+1.  **Hipotenusa:** Es el lado más largo (5).
+2.  **Adyacente:** Es el cateto que toca el ángulo. Como el ángulo está entre 4 y 5, y 5 es hipotenusa, entonces 4 es el adyacente.
+3.  **Opuesto:** Es el que sobra, el que está enfrente (3).
+
+**Resultado:**
 $$
-a^2 + b^2 = c^2
-$$
-
-Donde:
-- $a$ y $b$ son los catetos
-- $c$ es la hipotenusa
-
-### Ejemplo rápido
-
-Si los catetos miden 3 y 4:
-
-$$
-c = \sqrt{3^2 + 4^2} = \sqrt{9 + 16} = \sqrt{25} = 5
+\boxed{\text{Hip}=5, \text{Ady}=4, \text{Op}=3}
 $$
 
----
+### Ejemplo 2: Cambio de Ángulo
 
-## 🔑 Resumen
+En el mismo triángulo, ahora nos paramos en la otra esquina (ángulo $\beta$), la que está entre el lado 3 y el lado 5.
 
-| Concepto | Punto clave |
-|----------|-------------|
-| **Trigonometría** | Estudia relaciones entre lados y ángulos |
-| **Triángulo rectángulo** | Tiene un ángulo de 90° |
-| **Hipotenusa** | Lado más largo, opuesto al ángulo recto |
-| **Cateto opuesto** | Está "enfrente" del ángulo de referencia |
-| **Cateto adyacente** | "Toca" el ángulo de referencia |
+**Razonamiento:**
+1.  **Hipotenusa:** Sigue siendo 5. ¡Nunca cambia!
+2.  **Adyacente:** Ahora el ángulo toca el lado 3. Así que el adyacente es 3.
+3.  **Opuesto:** Ahora el lado que queda lejos es el 4.
+
+**Resultado:**
+$$
+\boxed{\text{Hip}=5, \text{Ady}=3, \text{Op}=4}
+$$
+
+> **Conclusión:** Lo que para un ángulo es "opuesto", para el otro es "adyacente".
 
 ---
 
 ## 📝 Ejercicios de Práctica
 
-### Ejercicio 1: Identificar elementos
-
-En un triángulo rectángulo con catetos 5 y 12:
-
-1. ¿Cuánto mide la hipotenusa?
-2. Si el ángulo θ está opuesto al cateto de 5, ¿cuál es el lado opuesto a θ?
-3. ¿Cuál es el lado adyacente a θ?
+### Ejercicio 1
+En un triángulo rectángulo, ¿cuál es el único lado que nunca cambia de nombre, sin importar qué ángulo agudo elijas?
 
 <details>
 <summary>Ver solución</summary>
 
-1. $c = \sqrt{5^2 + 12^2} = \sqrt{25 + 144} = \sqrt{169} = 13$
-2. El lado **opuesto** es **5** (el cateto que está "enfrente" del ángulo)
-3. El lado **adyacente** es **12** (el cateto que "toca" el ángulo)
+**Respuesta:**
+
+$$
+\text{La Hipotenusa}
+$$
+
+</details>
+
+### Ejercicio 2
+Si estás parado en un ángulo y tienes un gato justo enfrente de ti en el otro lado del triángulo. ¿Ese lado es opuesto o adyacente?
+
+<details>
+<summary>Ver solución</summary>
+
+**Respuesta:**
+
+$$
+\text{Cateto Opuesto}
+$$
+
+</details>
+
+### Ejercicio 3
+Tienes un triángulo de lados 6, 8 y 10. ¿Cuál es la hipotenusa?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+La hipotenusa siempre es el lado más largo.
+
+**Resultado:**
+$$
+\boxed{10}
+$$
+
+</details>
+
+### Ejercicio 4
+En el triángulo anterior (6, 8, 10), elegimos el ángulo formado por los lados 10 y 6. ¿Cuál es el cateto opuesto?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+El ángulo toca al 10 (hipotenusa) y al 6 (adyacente). El que queda libre es el 8.
+
+**Resultado:**
+$$
+\boxed{8}
+$$
+
+</details>
+
+### Ejercicio 5
+¿Puede la hipotenusa ser más pequeña que un cateto?
+
+<details>
+<summary>Ver solución</summary>
+
+**Respuesta:**
+No. En un triángulo rectángulo, la hipotenusa es siempre el lado mayor.
+
+$$
+\boxed{\text{Falso}}
+$$
+
+</details>
+
+### Ejercicio 6
+Si el cateto opuesto mide 5 y el adyacente 12, calcula la hipotenusa.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Pitágoras: $h = \sqrt{5^2 + 12^2} = \sqrt{25+144} = \sqrt{169}$.
+
+**Resultado:**
+$$
+\boxed{13}
+$$
+
+</details>
+
+### Ejercicio 7
+Verdadero o Falso: El cateto adyacente siempre es el lado horizontal (el suelo).
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Falso. Depende de dónde esté el ángulo. Si el ángulo está arriba, el adyacente podría ser vertical.
+
+**Resultado:**
+$$
+\boxed{\text{Falso}}
+$$
+
+</details>
+
+### Ejercicio 8
+Estás apoyando una escalera en una pared.
+1. Escalera
+2. Pared
+3. Suelo
+¿Cuál representa la hipotenusa?
+
+<details>
+<summary>Ver solución</summary>
+
+**Respuesta:**
+
+$$
+\text{La Escalera}
+$$
+
+</details>
+
+### Ejercicio 9
+Del ejercicio anterior (escalera), si el ángulo está entre la escalera y el suelo, ¿qué cateto es "La Pared"?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+La pared está "enfrente" del ángulo del suelo.
+
+**Resultado:**
+$$
+\boxed{\text{Cateto Opuesto}}
+$$
+
+</details>
+
+### Ejercicio 10
+Y si el ángulo es el que está arriba (entre escalera y pared), ¿qué cateto es "La Pared"?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Ahora el ángulo "toca" la pared.
+
+**Resultado:**
+$$
+\boxed{\text{Cateto Adyacente}}
+$$
 
 </details>
 
 ---
 
-### Ejercicio 2: Verdadero o Falso
+## 🔑 Resumen
 
-1. La trigonometría solo se usa en matemáticas.
-2. En un triángulo rectángulo, la hipotenusa es el lado más largo.
-3. Los dos ángulos agudos de un triángulo rectángulo suman 90°.
-4. El cateto adyacente es el que está "enfrente" del ángulo.
-5. La hipotenusa cambia de nombre según el ángulo de referencia.
+| Concepto | Clave para identificarlo |
+| :--- | :--- |
+| **Hipotenusa** | El más largo, frente al cuadrito de 90°. |
+| **Cateto Opuesto** | El que está lejos, enfrente del ojo del observador. |
+| **Cateto Adyacente** | El que está cerca, tocando al observador. |
 
-<details>
-<summary>Ver solución</summary>
-
-1. **Falso** - Se usa en física, ingeniería, navegación, videojuegos, medicina...
-2. **Verdadero** - Siempre es el más largo
-3. **Verdadero** - Porque el ángulo recto es 90° y el total es 180°
-4. **Falso** - El adyacente es el que "toca" el ángulo
-5. **Falso** - La hipotenusa siempre tiene el mismo nombre
-
-</details>
-
----
-
-### Ejercicio 3: Cambio de perspectiva
-
-En un triángulo rectángulo con catetos 8 y 15, e hipotenusa 17:
-- Si θ está opuesto al cateto de 8, identifica opuesto, adyacente e hipotenusa respecto a θ.
-- Si α está opuesto al cateto de 15, identifica opuesto, adyacente e hipotenusa respecto a α.
-
-<details>
-<summary>Ver solución</summary>
-
-**Respecto a θ:**
-- Opuesto = 8
-- Adyacente = 15
-- Hipotenusa = 17
-
-**Respecto a α:**
-- Opuesto = 15
-- Adyacente = 8
-- Hipotenusa = 17
-
-¡Observa cómo los catetos intercambian nombres!
-
-</details>
+> Todo es relativo. Antes de nombrar los catetos, ¡pregunta siempre por el ángulo!

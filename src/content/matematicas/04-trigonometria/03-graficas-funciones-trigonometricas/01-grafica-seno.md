@@ -1,28 +1,21 @@
-# Gráfica de la Función Seno
+# **Gráfica de la Función Seno**
 
-¿Te has preguntado cómo se mueve una ola en el mar, o por qué el sonido viaja en ondas? La función **seno** es la matemática detrás de todo lo que oscila y vibra en el universo.
-
----
-
-## 🎯 En esta lección aprenderás
-
-- Cómo se ve la gráfica de $y = \sin x$
-- Por qué es una "onda" perfecta
-- Los puntos clave que definen su forma
-- Cómo leer información de la gráfica
+¿Te has preguntado cómo se mueve una ola en el mar, o por qué el sonido viaja en ondas? La función **seno** es la matemática detrás de todo lo que oscila y vibra en el universo. Es la madre de todas las ondas.
 
 ---
 
-## 📋 Cheat Sheet + Ilustración
+## 🎯 ¿Qué vas a aprender?
 
-| Propiedad | Valor |
-|-----------|-------|
-| Dominio | $\mathbb{R}$ (todos los reales) |
-| Rango | $[-1, 1]$ |
-| Período | $2\pi$ (o 360°) |
-| Amplitud | 1 |
-| Paridad | Impar: $\sin(-x) = -\sin x$ |
-| Cruza el eje X | En $x = k\pi$ ($k$ entero) |
+- Cómo se ve la gráfica de $y = \sin(x)$ (la onda senoidal).
+- Los puntos clave donde la onda sube, baja y cruza la línea.
+- Por qué se repite una y otra vez (periodicidad).
+- Cómo leer el dominio, rango y amplitud de la gráfica.
+
+---
+
+## 🌊 La Onda Perfecta
+
+La gráfica del seno es suave, continua y repetitiva. Convierte el giro de un círculo (ángulos) en una altura que sube y baja.
 
 <div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
@@ -34,86 +27,38 @@
 
 </div>
 
----
+**Características Vitales:**
 
-## 📖 La función seno básica
-
-$$
-f(x) = \sin x
-$$
-
-> 💡 **Dato clave:** El seno convierte un ángulo en un número entre -1 y 1. Es como un traductor entre rotaciones y alturas.
+1.  **Dominio:** $\mathbb{R}$ (La onda sigue infinitamente a izquierda y derecha).
+2.  **Rango:** $[-1, 1]$ (Nunca sube más de 1 ni baja más de -1).
+3.  **Periodo:** $2\pi$ o $360°$ (La longitud de un ciclo completo).
+4.  **Amplitud:** $1$ (Altura desde el centro hasta la cima).
 
 ---
 
-## 📖 Anatomía de la onda
+## 📍 Anatomía de un Ciclo ($0$ a $2\pi$)
 
-La gráfica del seno tiene una forma característica que se repite. Observa cómo **un ciclo completo** ocurre en el intervalo $[0, 2\pi]$:
+Memoriza estos 5 puntos clave. Son el "ADN" de la onda seno.
 
-| Punto | $x$ (rad) | $x$ (grados) | $\sin x$ | ¿Qué pasa? |
-|-------|-----------|--------------|----------|------------|
-| Inicio | 0 | 0° | 0 | Cruza el eje X |
-| Máximo | $\frac{\pi}{2}$ | 90° | 1 | 📈 Punto más alto |
-| Mitad | $\pi$ | 180° | 0 | Cruza el eje X de nuevo |
-| Mínimo | $\frac{3\pi}{2}$ | 270° | -1 | 📉 Punto más bajo |
-| Fin ciclo | $2\pi$ | 360° | 0 | Vuelve al inicio |
+| Punto | Ángulo $x$ | Valor $y$ | Descripción |
+| :--- | :--- | :--- | :--- |
+| **Inicio** | $0$ | $0$ | Empieza en el origen $(0,0)$. |
+| **Máximo** | $\pi/2$ ($90°$) | $1$ | Sube hasta la cima. |
+| **Centro** | $\pi$ ($180°$) | $0$ | Cruza de nuevo el eje X. |
+| **Mínimo** | $3\pi/2$ ($270°$) | $-1$ | Baja hasta el fondo. |
+| **Fin** | $2\pi$ ($360°$) | $0$ | Termina el ciclo y empieza otro. |
 
----
-
-## 📖 ¿Por qué se llama "onda"?
-
-Piensa en la gráfica como el movimiento de una pelota atada a un resorte:
-
-1. **Sube** desde el equilibrio (0) hasta el máximo (1)
-2. **Baja** pasando por el equilibrio hasta el mínimo (-1)
-3. **Vuelve** al equilibrio
-4. **Repite** eternamente
-
-Este patrón de "arriba-abajo-arriba" es lo que vemos en:
-- 🌊 Olas del mar
-- 🎵 Ondas de sonido
-- 📻 Señales de radio
-- ❤️ Latidos del corazón
+> **Patrón:** CERO $\rightarrow$ MÁX $\rightarrow$ CERO $\rightarrow$ MÍN $\rightarrow$ CERO.
 
 ---
 
-## 📖 Propiedades matemáticas
+## 🪞 Simetría Impar
 
-### 1. Interceptos con el eje X
-
-La función seno vale cero cuando:
-
+La gráfica es simétrica respecto al **origen**. Si giras la gráfica 180°, se ve igual.
+Matemáticamente:
 $$
-\sin x = 0 \quad \Rightarrow \quad x = k\pi \quad (k \in \mathbb{Z})
+\sin(-x) = -\sin(x)
 $$
-
-Es decir, en $x = 0, \pm\pi, \pm 2\pi, \pm 3\pi, \ldots$
-
-### 2. Máximos (donde vale 1)
-
-$$
-\sin x = 1 \quad \Rightarrow \quad x = \frac{\pi}{2} + 2k\pi
-$$
-
-### 3. Mínimos (donde vale -1)
-
-$$
-\sin x = -1 \quad \Rightarrow \quad x = \frac{3\pi}{2} + 2k\pi
-$$
-
----
-
-## 📖 Simetría: función impar
-
-Una propiedad hermosa del seno es que es una **función impar**:
-
-$$
-\sin(-x) = -\sin x
-$$
-
-> 🔄 **¿Qué significa?** Si reflejas la gráfica respecto al origen (rotación de 180°), obtienes la misma gráfica.
-
-**Ejemplo:** $\sin(-30°) = -\sin(30°) = -0.5$
 
 <div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
@@ -127,100 +72,160 @@ $$
 
 ---
 
-## 📖 Intervalos de crecimiento y decrecimiento
+## 📝 Ejercicios de Práctica
 
-### ↗️ Creciente
-
-En los intervalos donde la onda "sube":
-
-$$
-\left[-\frac{\pi}{2} + 2k\pi, \frac{\pi}{2} + 2k\pi\right]
-$$
-
-### ↘️ Decreciente
-
-En los intervalos donde la onda "baja":
-
-$$
-\left[\frac{\pi}{2} + 2k\pi, \frac{3\pi}{2} + 2k\pi\right]
-$$
-
----
-
-## 🧠 Tip para recordar
-
-> **"El seno comienza en CERO, sube al UNO, baja al menos UNO, y regresa."**
-
-Memoriza: **0 → 1 → 0 → -1 → 0** (en un ciclo completo de $2\pi$)
-
----
-
-## 📝 Ejercicios de práctica
-
-### Ejercicio 1: Lectura de la gráfica
-
-Observando la gráfica, responde:
-
-1. ¿Cuál es $\sin 0$?
-2. ¿En qué punto la función alcanza su máximo en $[0, 2\pi]$?
-3. ¿En qué valor de $x$ la función vale -1 por primera vez (para $x > 0$)?
+### Ejercicio 1
+¿Cuál es el valor máximo que puede alcanzar la función $y = \sin(x)$?
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. $\sin 0 = 0$ (la onda empieza en el origen)
-2. En $x = \frac{\pi}{2}$ (90°), donde $\sin x = 1$
-3. En $x = \frac{3\pi}{2}$ (270°)
+**Razonamiento:**
+El rango de la función seno es $[-1, 1]$.
+El valor más alto es 1.
 
+**Respuesta:** $\boxed{1}$
 </details>
 
 ---
 
-### Ejercicio 2: Interceptos
-
-¿En qué valores de $x$ (entre 0 y $4\pi$) cruza $\sin x$ el eje X?
+### Ejercicio 2
+¿En qué valores de $x$ (entre 0 y $2\pi$) la gráfica cruza el eje X?
 
 <details>
-<summary><strong>Ver respuesta</strong></summary>
+<summary>Ver solución</summary>
 
-El seno cruza el eje X cuando $\sin x = 0$, es decir, en múltiplos de $\pi$:
+**Razonamiento:**
+Cruza el eje X cuando $y = 0$.
+Según la tabla de los 5 puntos clave, esto ocurre al inicio, en medio y al final.
 
-$$x = 0, \pi, 2\pi, 3\pi, 4\pi$$
-
-Son **5 puntos** en ese intervalo.
-
+**Respuesta:** $\boxed{0, \pi, 2\pi}$
 </details>
 
 ---
 
-### Ejercicio 3: Desigualdad
-
-¿Para qué valores de $x$ (en $[0, 2\pi]$) es $\sin x > 0$?
+### Ejercicio 3
+Determina el valor de $\sin(\frac{3\pi}{2})$.
 
 <details>
-<summary><strong>Ver respuesta</strong></summary>
+<summary>Ver solución</summary>
 
-El seno es positivo (la onda está "arriba" del eje X) cuando:
+**Razonamiento:**
+$\frac{3\pi}{2}$ equivale a 270°.
+En la gráfica, este es el punto mínimo.
 
-$$x \in (0, \pi)$$
-
-Es decir, entre 0° y 180° (sin incluir los extremos donde vale 0).
-
+**Respuesta:** $\boxed{-1}$
 </details>
 
 ---
 
-### Ejercicio 4: Simetría
-
-Si $\sin 45° = \frac{\sqrt{2}}{2}$, ¿cuánto vale $\sin(-45°)$?
+### Ejercicio 4
+Si la función sigue infinitamente, ¿cuál será el valor de $\sin(3\pi)$?
 
 <details>
-<summary><strong>Ver respuesta</strong></summary>
+<summary>Ver solución</summary>
 
-Por la propiedad de función impar:
+**Razonamiento:**
+La función corta el eje en cada múltiplo entero de $\pi$ ($1\pi, 2\pi, 3\pi...$).
+Por tanto, en $3\pi$ el valor es 0.
 
-$$\sin(-45°) = -\sin(45°) = -\frac{\sqrt{2}}{2}$$
-
+**Respuesta:** $\boxed{0}$
 </details>
 
 ---
+
+### Ejercicio 5
+¿Es la función seno creciente o decreciente en el intervalo $[\frac{\pi}{2}, \frac{3\pi}{2}]$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Desde $\pi/2$ (cima) hasta $3\pi/2$ (fondo), la gráfica va bajando.
+
+**Respuesta:** **Decreciente**
+</details>
+
+---
+
+### Ejercicio 6
+Calcula $\sin(-\frac{\pi}{2})$ usando la simetría de la gráfica.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Simetría impar: $\sin(-x) = -\sin(x)$.
+$\sin(-\frac{\pi}{2}) = -\sin(\frac{\pi}{2}) = -(1)$.
+
+**Respuesta:** $\boxed{-1}$
+</details>
+
+---
+
+### Ejercicio 7
+¿Cuál es la amplitud de la función $y = \sin(x)$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+La amplitud es la distancia desde el eje central (0) hasta el máximo (1).
+
+**Respuesta:** $\boxed{1}$
+</details>
+
+---
+
+### Ejercicio 8
+¿Cuántos ciclos completos de la función seno caben en el intervalo $[0, 4\pi]$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Un ciclo mide $2\pi$.
+$4\pi / 2\pi = 2$.
+
+**Respuesta:** **2 ciclos completos**
+</details>
+
+---
+
+### Ejercicio 9
+Identifica el signo de la función en el intervalo $(\pi, 2\pi)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Entre $\pi$ (180°) y $2\pi$ (360°), la onda está por debajo del eje X (Valle).
+
+**Respuesta:** **Negativo (-)**
+</details>
+
+---
+
+### Ejercicio 10
+¿Para qué valor de $x$ se cumple $\sin(x) = 1$ en el primer ciclo?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+El máximo (1) ocurre a un cuarto del camino.
+$90°$ o $\frac{\pi}{2}$.
+
+**Respuesta:** $\boxed{\frac{\pi}{2}}$
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Intervalo | Comportamiento | Signo |
+| :--- | :--- | :--- |
+| **0 a $\pi$** | La "montaña" (Sube y baja) | **Positivo** |
+| **$\pi$ a $2\pi$** | El "valle" (Baja y sube) | **Negativo** |
+
+> **Conclusión:** La gráfica del seno es la huella digital de la oscilación. Empieza en 0, sube a 1, y oscila eternamente. Si entiendes este dibujo, entiendes el sonido, la luz y la corriente alterna.

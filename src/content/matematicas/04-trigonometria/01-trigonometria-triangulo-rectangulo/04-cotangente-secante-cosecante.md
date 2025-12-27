@@ -1,242 +1,252 @@
-# Cotangente, Secante y Cosecante
+# **Cotangente, Secante y Cosecante**
 
-¿Sabías que para cada razón trigonométrica principal existe una **"hermana gemela"** que trabaja al revés? Las razones **cotangente**, **secante** y **cosecante** son las recíprocas de tangente, coseno y seno respectivamente. Aunque se usan menos en cálculos básicos, son **fundamentales** en identidades trigonométricas y cálculo avanzado.
-
----
-
-## 🎯 Lo que vas a aprender
-
-- Qué significa "razón recíproca"
-- Las fórmulas de cotangente, secante y cosecante
-- Cómo calcularlas a partir de las razones principales
-- Las identidades pitagóricas adicionales
+Así como cada superhéroe tiene un alter ego, las razones trigonométricas tienen sus **razones recíprocas**. Son simplemente las mismas fracciones, pero "patas arriba" (invertidas).
 
 ---
 
-## 📋 Lo Esencial: Razones Recíprocas
+## 🎯 ¿Qué vas a aprender?
 
-| Razón Principal | Su Recíproca | Fórmula |
-|-----------------|--------------|---------|
-| $\sin\theta = \frac{O}{H}$ | $\csc\theta$ (cosecante) | $\csc\theta = \frac{H}{O}$ |
-| $\cos\theta = \frac{A}{H}$ | $\sec\theta$ (secante) | $\sec\theta = \frac{H}{A}$ |
-| $\tan\theta = \frac{O}{A}$ | $\cot\theta$ (cotangente) | $\cot\theta = \frac{A}{O}$ |
+- Calcular las 3 razones recíprocas: **Cotangente**, **Secante** y **Cosecante**.
+- Entender que "inverso" o "recíproco" significa dar la vuelta a la fracción ($\frac{a}{b} \rightarrow \frac{b}{a}$).
+- Nuevas identidades pitagóricas como $1 + \tan^2 = \sec^2$.
 
-> 💡 **Tip para recordar:** El prefijo "co-" indica relación de reciprocidad:
-> - **Co**secante es recíproca del **seno**
-> - **Sec**ante es recíproca del **co**seno  
-> - **Co**tangente es recíproca de la **tan**gente
+---
+
+## 🔄 El Mundo al Revés
+
+Si el Seno es $Opuesto / Hipotenusa$, ¿qué pasa si dividimos $Hipotenusa / Opuesto$? Obtenemos una nueva razón.
+
+### 1. Cosecante ($\csc$)
+Es la inversa del **Seno**.
+
+$$
+\csc(\theta) = \frac{1}{\sin(\theta)} = \frac{\text{Hipotenusa}}{\text{Opuesto}}
+$$
+
+> **Truco:** La **C**osecante va con el **S**eno (**C** con **S**).
+
+### 2. Secante ($\sec$)
+Es la inversa del **Coseno**.
+
+$$
+\sec(\theta) = \frac{1}{\cos(\theta)} = \frac{\text{Hipotenusa}}{\text{Adyacente}}
+$$
+
+> **Truco:** La **S**ecante va con el **C**oseno (**S** con **C**).
+
+### 3. Cotangente ($\cot$)
+Es la inversa de la **Tangente**.
+
+$$
+\cot(\theta) = \frac{1}{\tan(\theta)} = \frac{\text{Adyacente}}{\text{Opuesto}}
+$$
 
 ![Triángulo 3-4-5 con las 6 razones](/images/geometria/trigonometria/03-triangulo-345.svg)
 
 ---
 
-## 📖 Cosecante (csc)
+## ⚙️ Ejemplos Resueltos
 
-> **Definición:** La cosecante es el **recíproco del seno**.
+### Ejemplo 1: Calcular Recíprocas
 
+Si $\sin(\theta) = \frac{3}{5}$, calcula $\csc(\theta)$.
+
+**Razonamiento:**
+Simplemente invertimos la fracción del seno.
+$\frac{3}{5} \rightarrow \frac{5}{3}$.
+
+**Resultado:**
 $$
-\csc\theta = \frac{1}{\sin\theta} = \frac{\text{Hipotenusa}}{\text{Opuesto}} = \frac{H}{O}
-$$
-
-### Características
-
-- Siempre es ≥ 1 (para ángulos agudos)
-- Es el inverso de seno
-- $\csc 90° = 1$
-- $\csc 0°$ no está definida
-
-### Ejemplo
-
-Si $\sin\theta = 0.6$:
-
-$$
-\csc\theta = \frac{1}{0.6} = \frac{5}{3} \approx 1.67
+\boxed{\frac{5}{3} \approx 1.66}
 $$
 
----
+### Ejemplo 2: De Decimal a Recíproca
 
-## 📖 Secante (sec)
+Si $\cos(\theta) = 0.5$, calcula $\sec(\theta)$.
 
-> **Definición:** La secante es el **recíproco del coseno**.
+**Razonamiento:**
+$0.5 = \frac{1}{2}$.
+La inversa de $\frac{1}{2}$ es $\frac{2}{1} = 2$.
 
+**Resultado:**
 $$
-\sec\theta = \frac{1}{\cos\theta} = \frac{\text{Hipotenusa}}{\text{Adyacente}} = \frac{H}{A}
-$$
-
-### Características
-
-- Siempre es ≥ 1 (para ángulos agudos)
-- Es el inverso de coseno
-- $\sec 0° = 1$
-- $\sec 90°$ no está definida
-
-### Ejemplo
-
-Si $\cos\theta = 0.8$:
-
-$$
-\sec\theta = \frac{1}{0.8} = \frac{5}{4} = 1.25
+\boxed{2}
 $$
 
 ---
 
-## 📖 Cotangente (cot)
+## 📝 Ejercicios de Práctica
 
-> **Definición:** La cotangente es el **recíproco de la tangente**.
-
-$$
-\cot\theta = \frac{1}{\tan\theta} = \frac{\text{Adyacente}}{\text{Opuesto}} = \frac{A}{O}
-$$
-
-### Características
-
-- Puede ser cualquier valor positivo (para ángulos agudos)
-- Es el inverso de tangente
-- $\cot 45° = 1$
-- $\cot 0°$ no está definida
-- $\cot 90° = 0$
-
-### Ejemplo
-
-Si $\tan\theta = 0.75$:
-
-$$
-\cot\theta = \frac{1}{0.75} = \frac{4}{3} \approx 1.33
-$$
-
----
-
-## 📖 Tabla resumen de relaciones recíprocas
-
-| Razón | Recíproca | Relación |
-|-------|-----------|----------|
-| $\sin\theta$ | $\csc\theta$ | $\sin\theta \cdot \csc\theta = 1$ |
-| $\cos\theta$ | $\sec\theta$ | $\cos\theta \cdot \sec\theta = 1$ |
-| $\tan\theta$ | $\cot\theta$ | $\tan\theta \cdot \cot\theta = 1$ |
-
----
-
-## 📖 Cotangente como cociente
-
-$$
-\cot\theta = \frac{\cos\theta}{\sin\theta}
-$$
-
-(Así como $\tan\theta = \frac{\sin\theta}{\cos\theta}$)
-
----
-
-## 📖 Ejemplo completo
-
-Triángulo con lados 3, 4, 5 (opuesto = 3, adyacente = 4, hipotenusa = 5):
-
-| Razón | Cálculo | Decimal |
-|-------|---------|---------|
-| $\sin\theta$ | $\frac{3}{5}$ | 0.6 |
-| $\cos\theta$ | $\frac{4}{5}$ | 0.8 |
-| $\tan\theta$ | $\frac{3}{4}$ | 0.75 |
-| $\csc\theta$ | $\frac{5}{3}$ | 1.667 |
-| $\sec\theta$ | $\frac{5}{4}$ | 1.25 |
-| $\cot\theta$ | $\frac{4}{3}$ | 1.333 |
-
----
-
-## 📖 Identidades pitagóricas adicionales
-
-Además de $\sin^2\theta + \cos^2\theta = 1$:
-
-$$
-1 + \tan^2\theta = \sec^2\theta
-$$
-
-$$
-1 + \cot^2\theta = \csc^2\theta
-$$
-
-| Identidad | Fórmula | Derivada de... |
-|-----------|---------|----------------|
-| **Fundamental** | $\sin^2\theta + \cos^2\theta = 1$ | Teorema de Pitágoras |
-| **Con tangente** | $1 + \tan^2\theta = \sec^2\theta$ | Dividiendo entre $\cos^2\theta$ |
-| **Con cotangente** | $1 + \cot^2\theta = \csc^2\theta$ | Dividiendo entre $\sin^2\theta$ |
-
-> 💡 **¿De dónde salen estas identidades?**
-> - Dividiendo $\sin^2\theta + \cos^2\theta = 1$ entre $\cos^2\theta$ → $\tan^2\theta + 1 = \sec^2\theta$
-> - Dividiendo $\sin^2\theta + \cos^2\theta = 1$ entre $\sin^2\theta$ → $1 + \cot^2\theta = \csc^2\theta$
-
----
-
-## 📝 Ejercicios de práctica
-
-### Ejercicio 1: Calcular recíprocas
-
-Si $\sin\theta = \frac{5}{13}$, $\cos\theta = \frac{12}{13}$, $\tan\theta = \frac{5}{12}$, calcula las recíprocas.
+### Ejercicio 1
+Si $\tan(\theta) = 4$, ¿cuánto vale $\cot(\theta)$?
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
+**Razonamiento:**
+$4 = 4/1$. La inversa es $1/4$.
+
+**Resultado:**
 $$
-\csc\theta = \frac{13}{5}
+\boxed{0.25}
 $$
 
+</details>
+
+### Ejercicio 2
+Si el Seno es muy pequeño (p.ej. 0.001), ¿cómo es la Cosecante?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$1 / 0.001 = 1000$. Es muy grande.
+
+**Resultado:**
 $$
-\sec\theta = \frac{13}{12}
+\boxed{\text{Muy grande}}
 $$
 
+</details>
+
+### Ejercicio 3
+Calcula $\sec(60^{\circ})$ sabiendo que $\cos(60^{\circ}) = 0.5$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$\frac{1}{0.5} = 2$.
+
+**Resultado:**
 $$
-\cot\theta = \frac{12}{5}
+\boxed{2}
+$$
+
+</details>
+
+### Ejercicio 4
+En un triángulo con lados 5, 12, 13 ($Op=5$), calcula la Cosecante.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$\text{Seno} = 5/13$. $\text{Cosecante} = 13/5$.
+
+**Resultado:**
+$$
+\boxed{2.6}
+$$
+
+</details>
+
+### Ejercicio 5
+Verdadero o Falso: La Secante siempre es mayor o igual a 1.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Verdadero. Como la Hipotenusa es mayor que el cateto, la fracción $Hip/Ady$ siempre es $>1$.
+
+**Resultado:**
+$$
+\boxed{\text{Verdadero}}
+$$
+
+</details>
+
+### Ejercicio 6
+Calcula $\cot(45^{\circ})$. (Pista: $\tan(45^{\circ}) = 1$).
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$1/1 = 1$.
+
+**Resultado:**
+$$
+\boxed{1}
+$$
+
+</details>
+
+### Ejercicio 7
+Si $\sin(\theta) = \frac{\sqrt{3}}{2}$, calcula $\csc(\theta)$ y racionaliza.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$\frac{2}{\sqrt{3}} \cdot \frac{\sqrt{3}}{\sqrt{3}} = \frac{2\sqrt{3}}{3}$.
+
+**Resultado:**
+$$
+\boxed{\frac{2\sqrt{3}}{3}}
+$$
+
+</details>
+
+### Ejercicio 8
+Usa la identidad $1 + \tan^2 = \sec^2$. Si $\tan=3$, halla $\sec$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$1 + 3^2 = 1+9=10$.
+$\sec^2 = 10 \Rightarrow \sec = \sqrt{10}$.
+
+**Resultado:**
+$$
+\boxed{\sqrt{10}}
+$$
+
+</details>
+
+### Ejercicio 9
+¿Qué razón recíproca no está definida para $0^{\circ}$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$\csc(0) = 1/\sin(0) = 1/0$. No existe.
+$\cot(0) = 1/\tan(0) = 1/0$. No existe.
+
+**Resultado:**
+$$
+\boxed{\text{Cosecante y Cotangente}}
+$$
+
+</details>
+
+### Ejercicio 10
+Si $\sec(\theta) = 1$, ¿cuánto vale el coseno?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$1/1 = 1$.
+
+**Resultado:**
+$$
+\boxed{1}
 $$
 
 </details>
 
 ---
 
-### Ejercicio 2: De una razón a otra
+## 🔑 Resumen
 
-Si $\csc\theta = 2$, ¿cuánto vale $\sin\theta$?
+| Razón | Inversa de... | Fórmula |
+| :--- | :--- | :--- |
+| **Cosecante ($\csc$)** | Seno | $H/O$ |
+| **Secante ($\sec$)** | Coseno | $H/A$ |
+| **Cotangente ($\cot$)** | Tangente | $A/O$ |
 
-<details>
-<summary><strong>Ver respuesta</strong></summary>
-
-$$
-\sin\theta = \frac{1}{\csc\theta} = \frac{1}{2} = 0.5
-$$
-
-</details>
-
----
-
-### Ejercicio 3: Verificar identidad
-
-Si $\tan\theta = \frac{3}{4}$, verifica que $1 + \tan^2\theta = \sec^2\theta$.
-
-<details>
-<summary><strong>Ver respuesta</strong></summary>
-
-$$
-1 + \tan^2\theta = 1 + \frac{9}{16} = \frac{25}{16}
-$$
-
-$$
-\sec\theta = \frac{H}{A} = \frac{5}{4}
-$$
-
-$$
-\sec^2\theta = \frac{25}{16} \quad ✓
-$$
-
-</details>
-
----
-
-### Ejercicio 4: Identificar
-
-¿Cuál razón es $\frac{\text{Hipotenusa}}{\text{Opuesto}}$?
-
-<details>
-<summary><strong>Ver respuesta</strong></summary>
-
-**Cosecante** ($\csc\theta$)
-
-</details>
-
----
+> Recuerda: Solo dales la vuelta "patas arriba".

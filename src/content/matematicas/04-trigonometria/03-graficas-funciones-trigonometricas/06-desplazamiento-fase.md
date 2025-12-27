@@ -1,32 +1,31 @@
-# Desplazamiento de Fase
+# **Desplazamiento de Fase**
 
-Ya dominaste cómo estirar y comprimir las ondas. Ahora aprenderás a **moverlas**: hacia los lados y hacia arriba o abajo. Es como ajustar la posición de un slider en la pantalla.
-
----
-
-## 🎯 En esta lección aprenderás
-
-- Cómo mover la onda horizontalmente (desplazamiento de fase)
-- Cómo mover la onda verticalmente (desplazamiento vertical)
-- La fórmula general completa con los 4 parámetros
-- A identificar todos los parámetros en cualquier función
+Hasta ahora hemos estirado y aplastado las ondas. Ahora vamos a **moverlas** de lugar. Si empujas la gráfica a la derecha, a la izquierda, arriba o abajo, estás aplicando desplazamientos. Es como mover una diapositiva en una presentación.
 
 ---
 
-## 📋 Cheat Sheet
+## 🎯 ¿Qué vas a aprender?
 
-Para la función general:
+- Cómo mover la gráfica horizontalmente (**Desplazamiento de Fase**).
+- Cómo mover la gráfica verticalmente (**Desplazamiento Vertical**).
+- La fórmula maestra que combina los 4 parámetros ($A, B, C, D$).
+- Cómo calcular el rango final de una función desplazada.
+
+---
+
+## ↔️ Desplazamiento de Fase (Horizontal)
+
+Este es el movimiento lateral. Ocurre cuando sumas o restas algo **dentro** del paréntesis, junto a la $x$.
+
+Para $y = \sin(Bx - C)$:
 
 $$
-y = A \sin(B(x - C)) + D \quad \text{o} \quad y = A \sin(Bx - C) + D
+\text{Desplazamiento de Fase} = \frac{C}{B}
 $$
 
-| Parámetro | Nombre | Efecto |
-|-----------|--------|--------|
-| A | Amplitud | Estiramiento vertical |
-| B | Frecuencia | Compresión horizontal |
-| C | Fase | Desplazamiento horizontal |
-| D | Desplazamiento vertical | Subir/bajar toda la onda |
+> **¡Cuidado con el signo!** Funciona al revés de lo que piensas.
+> *   $(x - C)$: Mueve a la **DERECHA**.
+> *   $(x + C)$: Mueve a la **IZQUIERDA**.
 
 <div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
@@ -40,47 +39,16 @@ $$
 
 ---
 
-## 📖 Desplazamiento de fase (horizontal)
+## ↕️ Desplazamiento Vertical
 
-### La regla de oro
+Este es el movimiento hacia arriba o abajo. Ocurre cuando sumas o restas algo **fuera** de la función.
 
-$$
-y = \sin(x - C) \quad \Rightarrow \quad \text{desplaza } C \text{ unidades a la DERECHA}
-$$
+Para $y = \sin(x) + D$:
+*   $D > 0$: Sube.
+*   $D < 0$: Baja.
 
-$$
-y = \sin(x + C) \quad \Rightarrow \quad \text{desplaza } C \text{ unidades a la IZQUIERDA}
-$$
-
-> ⚠️ **¡Contraintuitivo!** Restar mueve a la derecha, sumar mueve a la izquierda.
-
-### Forma general con B
-
-Cuando hay un coeficiente $B$:
-
-$$
-y = \sin(Bx - C) = \sin\left(B\left(x - \frac{C}{B}\right)\right)
-$$
-
-El desplazamiento de fase es:
-
-$$
-\text{Fase} = \frac{C}{B}
-$$
-
-### Ejemplo
-
-$$
-y = \sin(2x - \pi)
-$$
-
-- $B = 2$
-- $C = \pi$
-- Fase $= \frac{\pi}{2}$ a la **derecha**
-
----
-
-## 📖 Desplazamiento vertical
+El nuevo eje central de la onda será $y = D$.
+El nuevo rango será $[D-A, D+A]$.
 
 <div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
@@ -92,28 +60,31 @@ $$
 
 </div>
 
-### La fórmula
+---
+
+## ⚛️ La Fórmula General
+
+Combinando todo, tenemos la ecuación maestra de la trigonometría:
 
 $$
-y = \sin x + D
+y = A \sin(Bx - C) + D
 $$
 
-| Valor de D | Efecto |
-|------------|--------|
-| $D > 0$ | Sube toda la onda |
-| $D < 0$ | Baja toda la onda |
-
-### Nuevo rango
-
-$$
-\text{Rango} = [D - |A|, D + |A|]
-$$
+| Parámetro | Nombre | Efecto |
+| :---: | :---: | :--- |
+| **A** | Amplitud | Estira verticalmente. |
+| **B** | Frecuencia | Estira horizontalmente (fórmula del periodo). |
+| **C/B** | Fase | Mueve horizontalmente (cuidado, divide por B). |
+| **D** | Vertical | Mueve verticalmente. |
 
 ---
 
-## 📖 Ejemplo completo: los 4 parámetros
+## ⚙️ Análisis de Ejemplo
 
-Analicemos $y = 3\sin(2x - \pi) + 1$:
+Analicemos la función:
+$$
+y = 3\sin(2x - \pi) + 1
+$$
 
 <div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
@@ -125,154 +96,170 @@ Analicemos $y = 3\sin(2x - \pi) + 1$:
 
 </div>
 
-### Análisis paso a paso
-
-| Parámetro | Valor | Significado |
-|-----------|-------|-------------|
-| $A$ | 3 | Amplitud = 3 |
-| $B$ | 2 | Período = $\frac{2\pi}{2} = \pi$ |
-| $C$ | $\pi$ | Fase = $\frac{\pi}{2}$ a la derecha |
-| $D$ | 1 | Sube 1 unidad |
-
-### Rango
-
-$$
-\text{Rango} = [D - |A|, D + |A|] = [1 - 3, 1 + 3] = [-2, 4]
-$$
+1.  **Amplitud:** $3$.
+2.  **Periodo:** $2\pi/2 = \pi$.
+3.  **Desplazamiento de Fase:** $C/B = \pi/2$. Como es resta, va a la **derecha**.
+4.  **Desplazamiento Vertical:** $+1$. Sube 1 unidad.
+5.  **Rango:** $[1-3, 1+3] = [-2, 4]$.
 
 ---
 
-## 📖 Forma alternativa (más intuitiva)
+## 📝 Ejercicios de Práctica
 
-A veces se escribe:
-
-$$
-y = A\sin(B(x - h)) + k
-$$
-
-Donde:
-- $h$ = desplazamiento horizontal **directo**
-- $k$ = desplazamiento vertical
-
-> 💡 Esta forma es más fácil de leer: $h$ te dice directamente cuánto se desplaza.
-
----
-
-## 📖 Puntos clave desplazados
-
-Para $y = A\sin(B(x - h)) + k$, los puntos clave se mueven:
-
-| Punto original de sin(x) | Nuevo punto |
-|--------------------------|-------------|
-| $(0, 0)$ | $(h, k)$ |
-| $(\frac{\pi}{2B}, A)$ | $(\frac{\pi}{2B} + h, A + k)$ |
-| $(\frac{\pi}{B}, 0)$ | $(\frac{\pi}{B} + h, k)$ |
-| $(\frac{3\pi}{2B}, -A)$ | $(\frac{3\pi}{2B} + h, -A + k)$ |
-| $(\frac{2\pi}{B}, 0)$ | $(\frac{2\pi}{B} + h, k)$ |
-
----
-
-## 🧠 Resumen de efectos
-
-| Transformación | Fórmula | Efecto |
-|----------------|---------|--------|
-| Estiramiento vertical | $A \cdot f(x)$ | Multiplica altura por $A$ |
-| Compresión horizontal | $f(Bx)$ | Divide período por $B$ |
-| Desplazamiento derecha | $f(x - C)$ | Mueve $C$ a la derecha |
-| Desplazamiento arriba | $f(x) + D$ | Sube $D$ unidades |
-
----
-
-## 📝 Ejercicios de práctica
-
-### Ejercicio 1: Identificar desplazamiento de fase
-
-¿Cuál es el desplazamiento de fase?
-
-1. $y = \sin(x - \pi)$
-2. $y = \cos(x + \frac{\pi}{2})$
-3. $y = \sin(2x - \pi)$
+### Ejercicio 1
+Encuentra el desplazamiento de fase de $y = \sin(x - \pi/2)$.
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. Fase = $\pi$ a la **derecha** (restar = derecha)
-2. Fase = $\frac{\pi}{2}$ a la **izquierda** (sumar = izquierda)
-3. Fase = $\frac{\pi}{2}$ a la **derecha** (porque $\frac{C}{B} = \frac{\pi}{2}$)
+**Razonamiento:**
+$C = \pi/2$, $B = 1$.
+Fase $= C/B = \pi/2$. Signo menos significa derecha.
 
+**Respuesta:** $\boxed{\frac{\pi}{2} \text{ a la derecha}}$
 </details>
 
 ---
 
-### Ejercicio 2: Desplazamiento vertical
-
-Para $y = 2\cos x + 3$, encuentra:
-
-1. Amplitud
-2. Desplazamiento vertical
-3. Rango
+### Ejercicio 2
+¿Cuánto sube o baja la función $y = \cos(x) - 5$?
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. Amplitud = 2
-2. Desplazamiento vertical = 3 hacia arriba
-3. Rango = $[3-2, 3+2] = [1, 5]$
+**Razonamiento:**
+$D = -5$.
 
+**Respuesta:** **Baja 5 unidades**.
 </details>
 
 ---
 
-### Ejercicio 3: Análisis completo
-
-Para $y = 4\sin\left(3x + \frac{\pi}{2}\right) - 2$, determina:
-
-1. Amplitud
-2. Período
-3. Desplazamiento de fase
-4. Desplazamiento vertical
-5. Rango
+### Ejercicio 3
+Calcula el rango de $y = 2\sin(x) + 3$.
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. Amplitud = 4
-2. Período = $\frac{2\pi}{3}$
-3. Fase = $\frac{\pi/2}{3} = \frac{\pi}{6}$ a la **izquierda** (signo positivo)
-4. Desplazamiento vertical = 2 hacia **abajo**
-5. Rango = $[-2-4, -2+4] = [-6, 2]$
+**Razonamiento:**
+Centro en 3. Sube 2 y baja 2.
+Máximo: $3+2=5$. Mínimo: $3-2=1$.
 
+**Respuesta:** $\boxed{[1, 5]}$
 </details>
 
 ---
 
-### Ejercicio 4: Escribir función
-
-Escribe una función coseno con:
-- Amplitud 2
-- Período $4\pi$
-- Desplazamiento $\frac{\pi}{3}$ a la derecha
-- Desplazamiento 5 arriba
+### Ejercicio 4
+Determina el desplazamiento de fase de $y = \sin(2x - \pi)$.
 
 <details>
-<summary><strong>Ver respuesta</strong></summary>
+<summary>Ver solución</summary>
 
-Necesitamos:
-- $A = 2$
-- Período = $4\pi$ → $B = \frac{2\pi}{4\pi} = \frac{1}{2}$
-- Fase = $\frac{\pi}{3}$ derecha
-- $D = 5$
+**Razonamiento:**
+$B=2, C=\pi$.
+Fase $= \pi/2$.
+Signo resta $\rightarrow$ Derecha.
 
-$$
-y = 2\cos\left(\frac{1}{2}\left(x - \frac{\pi}{3}\right)\right) + 5
-$$
-
-O expandiendo:
-
-$$
-y = 2\cos\left(\frac{x}{2} - \frac{\pi}{6}\right) + 5
-$$
-
+**Respuesta:** $\boxed{\frac{\pi}{2} \text{ a la derecha}}$
 </details>
 
 ---
+
+### Ejercicio 5
+Describe la transformación completa de $y = \sin(x+\pi)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Suma $\pi$ dentro del paréntesis.
+
+**Respuesta:** **Desplazamiento $\pi$ a la izquierda**.
+</details>
+
+---
+
+### Ejercicio 6
+Si la función $y = \cos(x)$ se mueve $\pi/2$ a la derecha, ¿con qué otra función coincide?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$\cos(x - \pi/2)$.
+El coseno retrasado 90° es igual al seno.
+
+**Respuesta:** $\boxed{\sin(x)}$
+</details>
+
+---
+
+### Ejercicio 7
+Encuentra el nuevo eje central de $y = 5\sin(3x) - 2$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+El eje central lo determina $D$.
+$D = -2$.
+
+**Respuesta:** $\boxed{y = -2}$
+</details>
+
+---
+
+### Ejercicio 8
+Determina el punto de inicio de un ciclo para $y = \sin(3x + \pi)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Igualamos el interior a 0 para ver dónde "resetea".
+$3x + \pi = 0 \rightarrow 3x = -\pi \rightarrow x = -\pi/3$.
+
+**Respuesta:** $\boxed{x = -\frac{\pi}{3}}$
+</details>
+
+---
+
+### Ejercicio 9
+Escribe la ecuación de un seno desplazado 2 unidades arriba.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$D = +2$.
+
+**Respuesta:** $\boxed{y = \sin(x) + 2}$
+</details>
+
+---
+
+### Ejercicio 10
+Calcula el valor máximo de $y = -\cos(x) + 10$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Amplitud 1, desplazado 10 arriba.
+La onda oscila alrededor de 10.
+Máximo = $10 + 1$.
+
+**Respuesta:** $\boxed{11}$
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Parámetro | Posición en fórmula | Acción |
+| :---: | :---: | :--- |
+| **C** (Fase) | Dentro $(Bx - C)$ | Movimiento lateral (Signo opuesto). |
+| **D** (Vertical) | Fuera $+ D$ | Movimiento vertical (Signo directo). |
+
+> **Conclusión:** Recuerda siempre dividir $C$ entre $B$ para hallar el desplazamiento de fase real. Es la trampa más común ("la trampa de la frecuencia").

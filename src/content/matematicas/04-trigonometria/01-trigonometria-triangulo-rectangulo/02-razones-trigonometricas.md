@@ -1,245 +1,271 @@
-# Razones Trigonométricas
+# **Razones Trigonométricas**
 
-¿Cómo podemos expresar matemáticamente la relación entre un ángulo y los lados de un triángulo? La respuesta son las **razones trigonométricas**: cocientes que nos permiten calcular lados desconocidos y resolver problemas de la vida real.
+Imagina que puedes describir la forma de cualquier rampa, montaña o techo con solo un número. Ese número (una división de dos lados) es una **Razón Trigonométrica**. Son la huella digital del triángulo.
 
 ---
 
 ## 🎯 ¿Qué vas a aprender?
 
-- Qué son las razones trigonométricas
-- Las 6 razones: seno, coseno, tangente y sus recíprocas
-- La regla mnemotécnica SOH-CAH-TOA
-- Cómo calcular las razones dado un triángulo
+- Qué significa realmente una "razón" en trigonometría.
+- Las 3 razones principales: **Seno**, **Coseno**, y **Tangente**.
+- La legendaria regla mnemotécnica: **SOH-CAH-TOA**.
+- Cómo estas razones no cambian aunque el triángulo se haga gigante.
 
 ---
 
-## 📋 Lo Esencial: Las 6 Razones Trigonométricas
+## ➗ ¿Qué es una Razón?
 
-| Razón | Símbolo | Fórmula | Recíproca |
-|-------|---------|---------|-----------|
-| **Seno** | $\sin\theta$ | $\dfrac{\text{Opuesto}}{\text{Hipotenusa}}$ | Cosecante |
-| **Coseno** | $\cos\theta$ | $\dfrac{\text{Adyacente}}{\text{Hipotenusa}}$ | Secante |
-| **Tangente** | $\tan\theta$ | $\dfrac{\text{Opuesto}}{\text{Adyacente}}$ | Cotangente |
-| **Cosecante** | $\csc\theta$ | $\dfrac{\text{Hipotenusa}}{\text{Opuesto}}$ | Seno |
-| **Secante** | $\sec\theta$ | $\dfrac{\text{Hipotenusa}}{\text{Adyacente}}$ | Coseno |
-| **Cotangente** | $\cot\theta$ | $\dfrac{\text{Adyacente}}{\text{Opuesto}}$ | Tangente |
+En matemáticas, una "razón" no es tener la verdad de un argumento, sino una comparación entre dos números mediante una división (como una receta de cocina: "2 de harina por 1 de agua").
+
+En un triángulo rectángulo, comparamos sus lados:
+*   ¿Qué tan grande es el opuesto comparado con la hipotenusa?
+*   ¿Qué tan grande es el opuesto comparado con el adyacente?
 
 ![Triángulo 3-4-5 con razones trigonométricas](/images/geometria/trigonometria/03-triangulo-345.svg)
 
-> 💡 **SOH-CAH-TOA**: La regla mnemotécnica más famosa de la trigonometría.
-> - **S**eno = **O**puesto / **H**ipotenusa
-> - **C**oseno = **A**dyacente / **H**ipotenusa
-> - **T**angente = **O**puesto / **A**dyacente
-
 ---
 
-## 📖 ¿Qué son las Razones Trigonométricas?
+## 🏹 Las 3 Grandes: SOH - CAH - TOA
 
-> **Definición:** Una razón trigonométrica es el **cociente** (división) entre dos lados de un triángulo rectángulo, respecto a un ángulo de referencia.
+Existen nombres específicos para estas divisiones. Apréndetelos, porque los usarás por el resto de tu vida académica (y profesional si eliges ciencias).
 
-Lo increíble de las razones trigonométricas es que **solo dependen del ángulo**, no del tamaño del triángulo. Un triángulo chiquito de 3-4-5 tiene las mismas razones que uno gigante de 30-40-50, porque son semejantes.
-
----
-
-## 📖 Las Tres Razones Principales
-
-### Seno (sin)
+### 1. Seno ($\sin$)
+Compara qué tan alto es el triángulo respecto a su lado más largo.
 
 $$
-\sin\theta = \frac{\text{Opuesto}}{\text{Hipotenusa}} = \frac{O}{H}
+\sin(\theta) = \frac{\text{Opuesto}}{\text{Hipotenusa}}
 $$
 
-**Mnemotecnia:** **S**eno = **O**puesto / **H**ipotenusa → **SOH**
-
-### Coseno (cos)
-
-$$
-\cos\theta = \frac{\text{Adyacente}}{\text{Hipotenusa}} = \frac{A}{H}
-$$
-
-**Mnemotecnia:** **C**oseno = **A**dyacente / **H**ipotenusa → **CAH**
-
-### Tangente (tan)
+### 2. Coseno ($\cos$)
+Compara qué tan ancho es el triángulo respecto a su lado más largo.
 
 $$
-\tan\theta = \frac{\text{Opuesto}}{\text{Adyacente}} = \frac{O}{A}
+\cos(\theta) = \frac{\text{Adyacente}}{\text{Hipotenusa}}
 $$
 
-**Mnemotecnia:** **T**angente = **O**puesto / **A**dyacente → **TOA**
+### 3. Tangente ($\tan$)
+Compara la altura con el ancho (la pendiente).
+
+$$
+\tan(\theta) = \frac{\text{Opuesto}}{\text{Adyacente}}
+$$
 
 ![SOH-CAH-TOA](/images/geometria/trigonometria/07-soh-cah-toa.svg)
 
----
-
-## 📖 Las Tres Razones Recíprocas
-
-Las razones recíprocas son simplemente "dar la vuelta" a las principales:
-
-| Razón principal | Recíproca | Relación |
-|-----------------|-----------|----------|
-| $\sin\theta$ | $\csc\theta = \frac{1}{\sin\theta}$ | $\sin\theta \cdot \csc\theta = 1$ |
-| $\cos\theta$ | $\sec\theta = \frac{1}{\cos\theta}$ | $\cos\theta \cdot \sec\theta = 1$ |
-| $\tan\theta$ | $\cot\theta = \frac{1}{\tan\theta}$ | $\tan\theta \cdot \cot\theta = 1$ |
+> **Regla de Oro:** **SOH** (Seno=Op/Hip) - **CAH** (Cos=Ad/Hip) - **TOA** (Tan=Op/Ad). Repítelo 5 veces.
 
 ---
 
-## 📖 Relación entre Tangente, Seno y Coseno
+## ⚙️ Ejemplos Resueltos
 
-Una propiedad muy útil:
+### Ejemplo 1: Calcular Razones Básicas
 
+Dado un triángulo con Opuesto=3, Adyacente=4, Hipotenusa=5. Calcular $\sin$, $\cos$ y $\tan$.
+
+**Razonamiento:**
+*   **Seno (SOH):** Opuesto / Hipotenusa.
+    $$
+    \sin(\theta) = \frac{3}{5} = 0.6
+    $$
+*   **Coseno (CAH):** Adyacente / Hipotenusa.
+    $$
+    \cos(\theta) = \frac{4}{5} = 0.8
+    $$
+*   **Tangente (TOA):** Opuesto / Adyacente.
+    $$
+    \tan(\theta) = \frac{3}{4} = 0.75
+    $$
+
+**Resultado:**
 $$
-\tan\theta = \frac{\sin\theta}{\cos\theta}
-$$
-
-**¿Por qué funciona?**
-
-$$
-\frac{\sin\theta}{\cos\theta} = \frac{O/H}{A/H} = \frac{O}{H} \times \frac{H}{A} = \frac{O}{A} = \tan\theta \quad ✓
-$$
-
----
-
-## ⚙️ Ejemplo 1: Calcular las 6 razones
-
-Dado un triángulo rectángulo con:
-- Cateto opuesto a θ = 5
-- Cateto adyacente a θ = 12
-- Hipotenusa = 13
-
-Calcula las 6 razones trigonométricas.
-
-**Solución:**
-
-| Razón | Cálculo | Resultado |
-|-------|---------|-----------|
-| $\sin\theta$ | $\frac{5}{13}$ | ≈ 0.385 |
-| $\cos\theta$ | $\frac{12}{13}$ | ≈ 0.923 |
-| $\tan\theta$ | $\frac{5}{12}$ | ≈ 0.417 |
-| $\csc\theta$ | $\frac{13}{5}$ | = 2.6 |
-| $\sec\theta$ | $\frac{13}{12}$ | ≈ 1.083 |
-| $\cot\theta$ | $\frac{12}{5}$ | = 2.4 |
-
----
-
-## ⚙️ Ejemplo 2: Encontrar las razones con Pitágoras
-
-Si sabemos que el cateto opuesto = 8 y la hipotenusa = 17, encuentra todas las razones.
-
-**Paso 1:** Encontrar el cateto adyacente con Pitágoras
-
-$$
-a^2 + 8^2 = 17^2
-$$
-$$
-a^2 = 289 - 64 = 225
-$$
-$$
-a = 15
+\boxed{\sin=0.6, \cos=0.8, \tan=0.75}
 $$
 
-**Paso 2:** Calcular las razones
+### Ejemplo 2: Triángulo Gigante
 
-| Razón | Valor |
-|-------|-------|
-| $\sin\theta$ | $\frac{8}{17}$ |
-| $\cos\theta$ | $\frac{15}{17}$ |
-| $\tan\theta$ | $\frac{8}{15}$ |
+Imagina que duplicamos el triángulo anterior. Ahora Opuesto=6, Adyacente=8, Hipotenusa=10.
 
----
+**Razonamiento:**
+$$
+\sin(\theta) = \frac{6}{10} = 0.6
+$$
 
-## 📖 Propiedad Fundamental
+**Resultado:**
+$$
+\boxed{0.6}
+$$
 
-> Las razones trigonométricas **solo dependen del ángulo**, no del tamaño del triángulo.
-
-Triángulos semejantes (mismo ángulo, diferentes tamaños) tienen exactamente las mismas razones trigonométricas.
-
----
-
-## 🔑 Resumen
-
-| Razón | Fórmula | SOH-CAH-TOA |
-|-------|---------|-------------|
-| Seno | $\frac{O}{H}$ | **S**eno = **O**puesto/**H**ipotenusa |
-| Coseno | $\frac{A}{H}$ | **C**oseno = **A**dyacente/**H**ipotenusa |
-| Tangente | $\frac{O}{A}$ | **T**angente = **O**puesto/**A**dyacente |
-| Cosecante | $\frac{H}{O}$ | Recíproco del seno |
-| Secante | $\frac{H}{A}$ | Recíproco del coseno |
-| Cotangente | $\frac{A}{O}$ | Recíproco de la tangente |
+> **¡Magia!** El resultado es idéntico. Las razones trigonométricas **solo dependen del ángulo**, no del tamaño del triángulo.
 
 ---
 
 ## 📝 Ejercicios de Práctica
 
-### Ejercicio 1: Calcular razones principales
-
-En un triángulo rectángulo con catetos 5 y 12 (hipotenusa = 13), si θ está opuesto al cateto de 5, calcula:
-
-1. $\sin\theta$
-2. $\cos\theta$
-3. $\tan\theta$
+### Ejercicio 1
+En un triángulo, el lado opuesto mide 5 y la hipotenusa 13. ¿Cuánto vale el Seno?
 
 <details>
 <summary>Ver solución</summary>
 
-1. $\sin\theta = \frac{5}{13}$
-2. $\cos\theta = \frac{12}{13}$
-3. $\tan\theta = \frac{5}{12}$
+**Razonamiento:**
+$\text{Seno} = \text{Opuesto} / \text{Hipotenusa}$.
+
+**Resultado:**
+$$
+\boxed{\frac{5}{13} \approx 0.38}
+$$
+
+</details>
+
+### Ejercicio 2
+En el mismo triángulo ($Op=5, Hip=13$), usa Pitágoras para hallar el Adyacente, y luego calcula el Coseno.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$Ady = \sqrt{13^2 - 5^2} = \sqrt{169-25} = \sqrt{144} = 12$.
+$\cos = 12/13$.
+
+**Resultado:**
+$$
+\boxed{\frac{12}{13} \approx 0.92}
+$$
+
+</details>
+
+### Ejercicio 3
+¿Cuál es la fórmula para la Tangente?
+
+<details>
+<summary>Ver solución</summary>
+
+**Resultado:**
+$$
+\boxed{\frac{\text{Opuesto}}{\text{Adyacente}}}
+$$
+
+</details>
+
+### Ejercicio 4
+Si $\tan(\theta) = 1$, ¿qué relación existe entre el lado Opuesto y el Adyacente?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Si $O/A = 1$, entonces $O = A$.
+
+**Resultado:**
+$$
+\boxed{\text{Son iguales}}
+$$
+
+</details>
+
+### Ejercicio 5
+Calcula el Seno de un ángulo si Opuesto=8 e Hipotenusa=10. Simplifica la fracción.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$8/10 = 4/5$.
+
+**Resultado:**
+$$
+\boxed{\frac{4}{5}}
+$$
+
+</details>
+
+### Ejercicio 6
+Verdadero o Falso: El Seno nunca puede ser mayor que 1.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Verdadero. Como la hipotenusa es el lado más largo, la división $Op/Hip$ siempre es menor (o igual) a 1.
+
+**Resultado:**
+$$
+\boxed{\text{Verdadero}}
+$$
+
+</details>
+
+### Ejercicio 7
+Si $\sin(\theta) = 0.5$, ¿cuál es la relación entre el Opuesto y la Hipotenusa?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$0.5$ es la mitad.
+
+**Resultado:**
+$$
+\boxed{\text{El opuesto mide la mitad que la hipotenusa}}
+$$
+
+</details>
+
+### Ejercicio 8
+Completa la frase: "SOH - CAH - ..."
+
+<details>
+<summary>Ver solución</summary>
+
+**Respuesta:**
+
+$$
+\text{TOA}
+$$
+
+</details>
+
+### Ejercicio 9
+Calcula la Tangente si Opuesto=10 y Adyacente=2.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$10/2 = 5$.
+
+**Resultado:**
+$$
+\boxed{5}
+$$
+
+</details>
+
+### Ejercicio 10
+Un triángulo rectángulo isósceles tiene catetos iguales (digamos que miden 1). Calcula su tangente.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$\text{Opuesto}=1, \text{Adyacente}=1$.
+$\tan = 1/1 = 1$.
+
+**Resultado:**
+$$
+\boxed{1}
+$$
 
 </details>
 
 ---
 
-### Ejercicio 2: Razones recíprocas
+## 🔑 Resumen
 
-Con los datos del ejercicio anterior, calcula:
+| Razón | Fórmula | Mnemotecnia |
+| :--- | :--- | :--- |
+| **Seno** | Opuesto / Hipotenusa | **S**OH |
+| **Coseno** | Adyacente / Hipotenusa | **C**AH |
+| **Tangente** | Opuesto / Adyacente | **T**OA |
 
-1. $\csc\theta$
-2. $\sec\theta$
-3. $\cot\theta$
-
-<details>
-<summary>Ver solución</summary>
-
-1. $\csc\theta = \frac{13}{5} = 2.6$
-2. $\sec\theta = \frac{13}{12} \approx 1.083$
-3. $\cot\theta = \frac{12}{5} = 2.4$
-
-</details>
-
----
-
-### Ejercicio 3: Identificar razones
-
-¿Qué razón trigonométrica representa cada cociente?
-
-1. $\frac{\text{Opuesto}}{\text{Hipotenusa}}$
-2. $\frac{\text{Adyacente}}{\text{Opuesto}}$
-3. $\frac{\text{Hipotenusa}}{\text{Adyacente}}$
-
-<details>
-<summary>Ver solución</summary>
-
-1. **Seno** ($\sin\theta$)
-2. **Cotangente** ($\cot\theta$)
-3. **Secante** ($\sec\theta$)
-
-</details>
-
----
-
-### Ejercicio 4: Usar Pitágoras primero
-
-Si $\sin\theta = \frac{3}{5}$, encuentra $\cos\theta$ y $\tan\theta$.
-
-<details>
-<summary>Ver solución</summary>
-
-Si $\sin\theta = \frac{3}{5}$, entonces: Opuesto = 3, Hipotenusa = 5
-
-Usando Pitágoras: $\text{Adyacente} = \sqrt{5^2 - 3^2} = \sqrt{16} = 4$
-
-Por lo tanto:
-- $\cos\theta = \frac{4}{5}$
-- $\tan\theta = \frac{3}{4}$
-
-</details>
+> **SOH-CAH-TOA**. Si recuerdas esto, aprobaste trigonometría.

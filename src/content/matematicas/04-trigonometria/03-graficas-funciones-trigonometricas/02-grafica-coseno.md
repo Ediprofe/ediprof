@@ -1,28 +1,22 @@
-# Gráfica de la Función Coseno
+# **Gráfica de la Función Coseno**
 
-El **coseno** es el "hermano gemelo" del seno. Su gráfica tiene exactamente la misma forma de onda, pero con un pequeño giro: ¡empieza en el máximo en lugar de en cero!
-
----
-
-## 🎯 En esta lección aprenderás
-
-- Cómo se ve la gráfica de $y = \cos x$
-- La relación visual entre seno y coseno
-- Por qué el coseno es una función "par"
-- Cómo identificar máximos, mínimos y ceros
+El **coseno** es el "hermano gemelo" del seno. Son tan parecidos que sus gráficas son idénticas, solo que una está desplazada respecto a la otra. ¿La diferencia visual más rápida? El coseno empieza en la cima de la montaña (1), no en el suelo (0).
 
 ---
 
-## 📋 Cheat Sheet + Ilustración
+## 🎯 ¿Qué vas a aprender?
 
-| Propiedad | Valor |
-|-----------|-------|
-| Dominio | $\mathbb{R}$ (todos los reales) |
-| Rango | $[-1, 1]$ |
-| Período | $2\pi$ (o 360°) |
-| Amplitud | 1 |
-| Paridad | Par: $\cos(-x) = \cos x$ |
-| Cruza el eje X | En $x = \frac{\pi}{2} + k\pi$ |
+- Cómo dibujar la gráfica de $y = \cos(x)$ sin usar tablas.
+- La diferencia visual clave entre seno y coseno.
+- Por qué decimos que el coseno es una función "par" (espejo).
+- Cómo identificar dónde la función se hace cero, máxima o mínima.
+
+---
+
+## 🏔️ La Onda que Empieza Arriba
+
+Mientras que el seno es la altura ($y$) en el círculo unitario, el coseno es la distancia horizontal ($x$).
+Al ángulo 0° (inicio), la distancia horizontal es máxima (el radio completo). Por eso la gráfica empieza en 1.
 
 <div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
@@ -34,39 +28,37 @@ El **coseno** es el "hermano gemelo" del seno. Su gráfica tiene exactamente la 
 
 </div>
 
----
-
-## 📖 La función coseno básica
-
-$$
-f(x) = \cos x
-$$
-
-> 💡 **Diferencia clave con el seno:** El coseno empieza en su valor máximo (1) cuando $x = 0$, mientras que el seno empieza en 0.
+**Propiedades Clave:**
+1.  **Dominio:** $\mathbb{R}$.
+2.  **Rango:** $[-1, 1]$.
+3.  **Periodo:** $2\pi$.
+4.  **Paridad:** Par (Simétrica eje Y).
 
 ---
 
-## 📖 Anatomía de la onda coseno
+## 📍 Anatomía de un Ciclo ($0$ a $2\pi$)
 
-| Punto | $x$ (rad) | $x$ (grados) | $\cos x$ | ¿Qué pasa? |
-|-------|-----------|--------------|----------|------------|
-| Inicio | 0 | 0° | 1 | 📈 Máximo |
-| Primer cero | $\frac{\pi}{2}$ | 90° | 0 | Cruza eje X bajando |
-| Mínimo | $\pi$ | 180° | -1 | 📉 Punto más bajo |
-| Segundo cero | $\frac{3\pi}{2}$ | 270° | 0 | Cruza eje X subiendo |
-| Fin ciclo | $2\pi$ | 360° | 1 | 📈 Vuelve al máximo |
+Observa lo que pasa en una vuelta completa:
+
+| Punto | Ángulo $x$ | Valor $y$ | Descripción |
+| :--- | :--- | :--- | :--- |
+| **Inicio** | $0$ | $1$ | Empieza en el Máximo. |
+| **Cruce** | $\pi/2$ ($90°$) | $0$ | Baja y cruza el eje. |
+| **Mínimo** | $\pi$ ($180°$) | $-1$ | Llega al fondo. |
+| **Cruce** | $3\pi/2$ ($270°$) | $0$ | Sube y cruza el eje. |
+| **Fin** | $2\pi$ ($360°$) | $1$ | Vuelve a la cima. |
+
+> **Patrón:** MÁX $\rightarrow$ CERO $\rightarrow$ MÍN $\rightarrow$ CERO $\rightarrow$ MÁX.
 
 ---
 
-## 📖 Seno vs Coseno: ¡Son la misma onda desplazada!
+## 👯 Gemelos Desplazados
 
-Esta es una de las relaciones más bellas de la trigonometría:
+Si tomas la gráfica del seno y la empujas hacia la izquierda 90° ($\pi/2$), obtienes exactamente la gráfica del coseno.
 
 $$
-\cos x = \sin\left(x + \frac{\pi}{2}\right)
+\cos(x) = \sin\left(x + \frac{\pi}{2}\right)
 $$
-
-> 🔑 **Traducción:** El coseno es el seno "adelantado" 90° (o $\frac{\pi}{2}$ radianes).
 
 <div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
@@ -80,129 +72,171 @@ $$
 
 ---
 
-## 📖 Simetría: función par
+## 🪞 Simetría Par
 
-A diferencia del seno, el coseno es una **función par**:
-
+El coseno funciona como un espejo. Lo que pasa a la izquierda del eje Y es idéntico a lo que pasa a la derecha.
+Matemáticamente:
 $$
-\cos(-x) = \cos x
-$$
-
-> 🪞 **¿Qué significa?** La gráfica es simétrica respecto al eje Y (como mirarse en un espejo vertical).
-
-**Ejemplo:** $\cos(-60°) = \cos(60°) = 0.5$
-
----
-
-## 📖 Tabla comparativa completa
-
-| Propiedad | Seno | Coseno |
-|-----------|------|--------|
-| Valor en $x = 0$ | 0 | **1** |
-| Paridad | Impar | **Par** |
-| Primer máximo | $\frac{\pi}{2}$ | **0** |
-| Primer cero positivo | 0 | **$\frac{\pi}{2}$** |
-| Simetría | Respecto al origen | **Respecto al eje Y** |
-| Fórmula equivalente | $\sin x = \cos(x - \frac{\pi}{2})$ | $\cos x = \sin(x + \frac{\pi}{2})$ |
-
----
-
-## 📖 Propiedades matemáticas
-
-### 1. Interceptos con el eje X
-
-$$
-\cos x = 0 \quad \Rightarrow \quad x = \frac{\pi}{2} + k\pi \quad (k \in \mathbb{Z})
-$$
-
-Es decir, en $x = \frac{\pi}{2}, \frac{3\pi}{2}, -\frac{\pi}{2}, \ldots$
-
-### 2. Máximos (donde vale 1)
-
-$$
-\cos x = 1 \quad \Rightarrow \quad x = 2k\pi
-$$
-
-### 3. Mínimos (donde vale -1)
-
-$$
-\cos x = -1 \quad \Rightarrow \quad x = \pi + 2k\pi
+\cos(-x) = \cos(x)
 $$
 
 ---
 
-## 🧠 Tip para recordar
+## 📝 Ejercicios de Práctica
 
-> **"El coseno empieza en UNO, baja a CERO, llega al menos UNO, sube a CERO, y regresa al UNO."**
-
-Memoriza: **1 → 0 → -1 → 0 → 1** (en un ciclo de $2\pi$)
-
----
-
-## 📝 Ejercicios de práctica
-
-### Ejercicio 1: Lectura de la gráfica
-
-1. ¿Cuál es $\cos 0$?
-2. ¿En qué punto $x$ (en $[0, 2\pi]$) la función vale 0 por primera vez?
-3. ¿Dónde alcanza su mínimo en $[0, 2\pi]$?
+### Ejercicio 1
+¿Cuál es el valor mínimo de la función $y = \cos(x)$?
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. $\cos 0 = 1$ (empieza en el máximo)
-2. En $x = \frac{\pi}{2}$ (90°)
-3. En $x = \pi$ (180°), donde $\cos \pi = -1$
+**Razonamiento:**
+El rango es $[-1, 1]$.
+El mínimo absoluto es -1.
 
+**Respuesta:** $\boxed{-1}$
 </details>
 
 ---
 
-### Ejercicio 2: Interceptos
-
-¿En qué valores de $x$ (entre $-\pi$ y $\pi$) cruza $\cos x$ el eje X?
+### Ejercicio 2
+¿En qué valores de $x$ (entre 0 y $2\pi$) la gráfica cruza el eje X?
 
 <details>
-<summary><strong>Ver respuesta</strong></summary>
+<summary>Ver solución</summary>
 
-El coseno vale 0 cuando $x = \frac{\pi}{2} + k\pi$:
+**Razonamiento:**
+Mirando la tabla de los 5 puntos clave: cruza en $90°$ y $270°$.
 
-$$x = -\frac{\pi}{2} \quad \text{y} \quad x = \frac{\pi}{2}$$
-
+**Respuesta:** $\boxed{\frac{\pi}{2}, \frac{3\pi}{2}}$
 </details>
 
 ---
 
-### Ejercicio 3: Desigualdad
-
-¿Para qué valores de $x$ (en $[0, 2\pi]$) es $\cos x < 0$?
+### Ejercicio 3
+Calcula $\cos(\pi)$ usando la gráfica.
 
 <details>
-<summary><strong>Ver respuesta</strong></summary>
+<summary>Ver solución</summary>
 
-El coseno es negativo (la onda está "debajo" del eje X) cuando:
+**Razonamiento:**
+En $x = \pi$ (mitad del ciclo), la gráfica está en su punto más bajo.
 
-$$x \in \left(\frac{\pi}{2}, \frac{3\pi}{2}\right)$$
-
-Es decir, entre 90° y 270°.
-
+**Respuesta:** $\boxed{-1}$
 </details>
 
 ---
 
-### Ejercicio 4: Usando la simetría
-
-Si $\cos 30° = \frac{\sqrt{3}}{2}$, ¿cuánto vale $\cos(-30°)$?
+### Ejercicio 4
+Determina el signo del coseno en el intervalo $(\frac{\pi}{2}, \frac{3\pi}{2})$.
 
 <details>
-<summary><strong>Ver respuesta</strong></summary>
+<summary>Ver solución</summary>
 
-Como el coseno es función **par**:
+**Razonamiento:**
+Entre 90° y 270°, la gráfica está por debajo del eje X ("bajo el agua").
 
-$$\cos(-30°) = \cos(30°) = \frac{\sqrt{3}}{2}$$
-
-¡Los valores son iguales!
-
+**Respuesta:** **Negativo (-)**
 </details>
 
 ---
+
+### Ejercicio 5
+¿Es la función coseno creciente o decreciente en el intervalo $[0, \pi]$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Empieza en 1 (0°) y baja hasta -1 (180°).
+Va bajando todo el camino.
+
+**Respuesta:** **Decreciente**
+</details>
+
+---
+
+### Ejercicio 6
+Calcula $\cos(-\frac{\pi}{3})$ sabiendo que $\cos(\frac{\pi}{3}) = 0.5$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Simetría par: $\cos(-x) = \cos(x)$.
+Los valores son idénticos.
+
+**Respuesta:** $\boxed{0.5}$
+</details>
+
+---
+
+### Ejercicio 7
+¿Cuántas veces alcanza el coseno su valor máximo en el intervalo $[0, 4\pi]$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Alcanza el máximo al inicio de cada ciclo.
+En $0$, $2\pi$ y $4\pi$.
+
+**Respuesta:** **3 veces**
+</details>
+
+---
+
+### Ejercicio 8
+¿Cuál es la amplitud de la función $y = -3\cos(x)$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+La amplitud es el valor absoluto del coeficiente.
+$|-3| = 3$.
+
+**Respuesta:** $\boxed{3}$
+</details>
+
+---
+
+### Ejercicio 9
+Si desplazas la gráfica del coseno $\frac{\pi}{2}$ a la derecha, ¿qué función obtienes?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+El coseno está "adelantado". Si lo atrasas (mueves a la erecha), coincide con el seno.
+$\cos(x - \pi/2) = \sin(x)$.
+
+**Respuesta:** $\boxed{\sin(x)}$
+</details>
+
+---
+
+### Ejercicio 10
+¿Para qué valores de $x$ en un ciclo se cumple $\cos(x) = 1$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Solo ocurre al principio y al final del intervalo cerrado.
+$0$ y $2\pi$.
+
+**Respuesta:** $\boxed{0, 2\pi}$
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Característica | Seno | Coseno |
+| :--- | :--- | :--- |
+| **Inicio ($x=0$)** | **0** (Centro) | **1** (Cima) |
+| **Primer cruce** | $\pi$ | $\pi/2$ |
+| **Simetría** | Impar (Origen) | Par (Eje Y) |
+
+> **Conclusión:** Si empieza en 0, es Seno. Si empieza en 1, es Coseno. Aparte de eso, ¡son la misma onda viajando por el espacio!

@@ -1,69 +1,40 @@
-# Funciones Trigonométricas Inversas
+# **Funciones Trigonométricas Inversas**
 
-Las funciones trigonométricas convierten ángulos en números. ¿Y si quieres hacer lo contrario? Aquí entran las **funciones inversas**: te dan el ángulo cuando conoces el valor.
-
----
-
-## 🎯 En esta lección aprenderás
-
-- Qué son y para qué sirven las funciones inversas
-- Las gráficas de arcsin, arccos y arctan
-- Por qué tienen dominios y rangos restringidos
-- Cómo calcular valores exactos
+Hasta ahora has aprendido a tomar un ángulo y encontrar su seno, coseno o tangente. Es como ir de tu casa a la escuela. ¿Pero qué pasa si quieres volver? Las **funciones inversas** te permiten tomar un valor y encontrar el ángulo que lo generó.
 
 ---
 
-## 📋 Cheat Sheet
+## 🎯 ¿Qué vas a aprender?
 
-| Función | Símbolo | Dominio | Rango |
-|---------|---------|---------|-------|
-| Arcseno | $\arcsin x$ o $\sin^{-1} x$ | $[-1, 1]$ | $\left[-\frac{\pi}{2}, \frac{\pi}{2}\right]$ |
-| Arccoseno | $\arccos x$ o $\cos^{-1} x$ | $[-1, 1]$ | $[0, \pi]$ |
-| Arctangente | $\arctan x$ o $\tan^{-1} x$ | $\mathbb{R}$ | $\left(-\frac{\pi}{2}, \frac{\pi}{2}\right)$ |
-
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-    <strong style="color: #1e293b; font-size: 0.95rem; margin-left: 0.3rem;">Las tres funciones inversas principales</strong>
-  </div>
-
-![Las tres funciones inversas](/images/funciones/trigonometria/inversas-todas.svg)
-
-</div>
+- Qué son Arcoseno, Arcocoseno y Arcotangente.
+- Por qué $\sin^{-1}(x)$ NO es lo mismo que $1/\sin(x)$.
+- Las gráficas de las funciones inversas y sus rangos "cortados".
+- Cómo usarlas para encontrar ángulos desconocidos en triángulos.
 
 ---
 
-## 📖 ¿Por qué "inversas"?
+## 🔄 El Concepto de "Arco"
 
-### El problema
+Las funciones inversas preguntan: **"¿El arco de qué ángulo me da este valor?"**
 
-Las funciones trigonométricas van de **ángulos → números**:
+*   Si $\sin(30°) = 0.5$
+*   Entonces $\arcsin(0.5) = 30°$
 
-$$
-\sin 30° = 0.5
-$$
+La notación puede ser confusa:
+1.  **Arcseno:** $\arcsin(x)$ o $\sin^{-1}(x)$
+2.  **Arcocoseno:** $\arccos(x)$ o $\cos^{-1}(x)$
+3.  **Arcotangente:** $\arctan(x)$ o $\tan^{-1}(x)$
 
-Pero a veces necesitas ir al revés: **números → ángulos**:
-
-> "Si el seno de un ángulo es 0.5, ¿cuánto es el ángulo?"
-
-### La solución
-
-$$
-\arcsin(0.5) = 30° = \frac{\pi}{6}
-$$
-
-> 💡 **Traducción:** La función inversa "deshace" lo que hizo la función original.
+> ⚠️ **¡Pillada común!** El exponente $-1$ aquí significa **Función Inversa**, NO recíproco.
+> $$ \sin^{-1}(x) \neq \frac{1}{\sin(x)} $$
+> (El recíproco es la **cosecante**).
 
 ---
 
-## 📖 El arcseno (sin⁻¹)
+## 📉 Arcoseno ($\arcsin$)
 
-### Definición
-
-$$
-y = \arcsin x \quad \Leftrightarrow \quad x = \sin y
-$$
+Como el seno se repite infinitamente, no podemos simplemente "inventar" una inversa (daría infinitas respuestas). Tenemos que **restringirla**.
+Solo tomamos el pedazo de la gráfica que va de $-90°$ a $+90°$.
 
 <div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
@@ -75,34 +46,14 @@ $$
 
 </div>
 
-### Características
-
-| Propiedad | Valor |
-|-----------|-------|
-| Dominio | $[-1, 1]$ |
-| Rango | $\left[-\frac{\pi}{2}, \frac{\pi}{2}\right]$ (cuadrantes I y IV) |
-| Pasa por | $(0, 0)$ |
-| Función creciente | Sí |
-
-### Valores especiales
-
-| $x$ | $\arcsin x$ (rad) | $\arcsin x$ (grados) |
-|-----|-------------------|----------------------|
-| 0 | 0 | 0° |
-| $\frac{1}{2}$ | $\frac{\pi}{6}$ | 30° |
-| $\frac{\sqrt{2}}{2}$ | $\frac{\pi}{4}$ | 45° |
-| $\frac{\sqrt{3}}{2}$ | $\frac{\pi}{3}$ | 60° |
-| 1 | $\frac{\pi}{2}$ | 90° |
+*   **Dominio:** $[-1, 1]$ (Solo puedes pedir arcoseno de números entre -1 y 1).
+*   **Rango:** $[-\frac{\pi}{2}, \frac{\pi}{2}]$ (Cuadrantes I y IV).
 
 ---
 
-## 📖 El arccoseno (cos⁻¹)
+## 📈 Arcocoseno ($\arccos$)
 
-### Definición
-
-$$
-y = \arccos x \quad \Leftrightarrow \quad x = \cos y
-$$
+Para el coseno, restringimos la gráfica entre $0$ y $\pi$. Así cubrimos todos los valores posibles de 1 a -1 una sola vez.
 
 <div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
@@ -114,34 +65,15 @@ $$
 
 </div>
 
-### Características
-
-| Propiedad | Valor |
-|-----------|-------|
-| Dominio | $[-1, 1]$ |
-| Rango | $[0, \pi]$ (cuadrantes I y II) |
-| Pasa por | $(1, 0)$ y $(0, \frac{\pi}{2})$ |
-| Función decreciente | Sí |
-
-### Valores especiales
-
-| $x$ | $\arccos x$ (rad) | $\arccos x$ (grados) |
-|-----|-------------------|----------------------|
-| 1 | 0 | 0° |
-| $\frac{\sqrt{3}}{2}$ | $\frac{\pi}{6}$ | 30° |
-| $\frac{\sqrt{2}}{2}$ | $\frac{\pi}{4}$ | 45° |
-| $\frac{1}{2}$ | $\frac{\pi}{3}$ | 60° |
-| 0 | $\frac{\pi}{2}$ | 90° |
+*   **Dominio:** $[-1, 1]$.
+*   **Rango:** $[0, \pi]$ (Cuadrantes I y II).
 
 ---
 
-## 📖 La arctangente (tan⁻¹)
+## 🚀 Arcotangente ($\arctan$)
 
-### Definición
-
-$$
-y = \arctan x \quad \Leftrightarrow \quad x = \tan y
-$$
+Esta es genial porque acepta **cualquier número** como entrada.
+Te devuelve un ángulo entre $-90°$ y $90°$.
 
 <div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
@@ -153,143 +85,172 @@ $$
 
 </div>
 
-### Características
-
-| Propiedad | Valor |
-|-----------|-------|
-| Dominio | $\mathbb{R}$ (todos los reales) |
-| Rango | $\left(-\frac{\pi}{2}, \frac{\pi}{2}\right)$ (sin incluir extremos) |
-| Pasa por | $(0, 0)$ |
-| Función creciente | Sí |
-| Asíntotas horizontales | $y = \pm\frac{\pi}{2}$ |
-
-### Valores especiales
-
-| $x$ | $\arctan x$ (rad) | $\arctan x$ (grados) |
-|-----|-------------------|----------------------|
-| 0 | 0 | 0° |
-| $\frac{\sqrt{3}}{3}$ | $\frac{\pi}{6}$ | 30° |
-| 1 | $\frac{\pi}{4}$ | 45° |
-| $\sqrt{3}$ | $\frac{\pi}{3}$ | 60° |
+*   **Dominio:** $(-\infty, \infty)$.
+*   **Rango:** $(-\frac{\pi}{2}, \frac{\pi}{2})$ (Abierto, porque nunca toca 90°).
 
 ---
 
-## 📖 Notación
+## 📝 Ejercicios de Práctica
 
-Hay dos formas de escribir las funciones inversas:
-
-| Notación "arc" | Notación exponente |
-|----------------|-------------------|
-| $\arcsin x$ | $\sin^{-1} x$ |
-| $\arccos x$ | $\cos^{-1} x$ |
-| $\arctan x$ | $\tan^{-1} x$ |
-
-> ⚠️ **¡Cuidado!** $\sin^{-1} x \neq \frac{1}{\sin x}$. El -1 indica función **inversa**, no recíproco.
-
----
-
-## 📖 Propiedades de composición
-
-### Cuando se "cancelan"
-
-$$
-\sin(\arcsin x) = x \quad \text{para } x \in [-1, 1]
-$$
-
-$$
-\arcsin(\sin x) = x \quad \text{para } x \in \left[-\frac{\pi}{2}, \frac{\pi}{2}\right]
-$$
-
-> 💡 La segunda ecuación solo funciona si $x$ está en el rango del arcseno.
-
----
-
-## 🧠 ¿Por qué restricciones de rango?
-
-Las funciones trigonométricas **no son biyectivas** (muchos ángulos dan el mismo valor).
-
-Por ejemplo: $\sin 30° = \sin 150° = 0.5$
-
-Para que exista una inversa, debemos **restringir** el dominio original:
-
-| Función | Restricción para inversa |
-|---------|-------------------------|
-| $\sin x$ | Solo usamos $\left[-\frac{\pi}{2}, \frac{\pi}{2}\right]$ |
-| $\cos x$ | Solo usamos $[0, \pi]$ |
-| $\tan x$ | Solo usamos $\left(-\frac{\pi}{2}, \frac{\pi}{2}\right)$ |
-
----
-
-## 📝 Ejercicios de práctica
-
-### Ejercicio 1: Calcular valores
-
-Calcula sin calculadora:
-
-1. $\arcsin(1)$
-2. $\arccos(0)$
-3. $\arctan(1)$
+### Ejercicio 1
+Calcula $\arcsin(1)$.
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. $\arcsin(1) = \frac{\pi}{2} = 90°$ (el seno vale 1 en 90°)
-2. $\arccos(0) = \frac{\pi}{2} = 90°$ (el coseno vale 0 en 90°)
-3. $\arctan(1) = \frac{\pi}{4} = 45°$ (la tangente vale 1 en 45°)
+**Razonamiento:**
+¿Qué ángulo (entre -90° y 90°) tiene seno igual a 1?
+El ángulo de 90°.
 
+**Respuesta:** $\boxed{\frac{\pi}{2}}$
 </details>
 
 ---
 
-### Ejercicio 2: Evaluar expresiones
-
-Calcula:
-
-1. $\sin(\arcsin(0.5))$
-2. $\arccos(\cos(\frac{\pi}{4}))$
+### Ejercicio 2
+Calcula $\arccos(0.5)$.
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. $\sin(\arcsin(0.5)) = 0.5$ (se "cancelan")
-2. $\arccos(\cos(\frac{\pi}{4})) = \frac{\pi}{4}$ (porque $\frac{\pi}{4}$ está en el rango $[0, \pi]$)
+**Razonamiento:**
+¿Qué ángulo (entre 0° y 180°) tiene coseno 0.5?
+El ángulo de 60°.
 
+**Respuesta:** $\boxed{\frac{\pi}{3}}$
 </details>
 
 ---
 
-### Ejercicio 3: Dominio
-
-¿Cuál de estos valores está definido?
-
-1. $\arcsin(2)$
-2. $\arccos(-0.5)$
-3. $\arctan(100)$
+### Ejercicio 3
+Calcula $\arctan(1)$.
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. **No definido** — 2 está fuera del dominio $[-1, 1]$
-2. **Definido** — $-0.5 \in [-1, 1]$, resultado: $\frac{2\pi}{3} = 120°$
-3. **Definido** — $\arctan$ acepta cualquier número real, resultado: muy cerca de $\frac{\pi}{2}$
+**Razonamiento:**
+¿Qué ángulo tiene tangente 1?
+Es 45°.
 
+**Respuesta:** $\boxed{\frac{\pi}{4}}$
 </details>
 
 ---
 
-### Ejercicio 4: Encontrar ángulo
-
-Si $\sin\theta = \frac{3}{5}$ y $\theta$ es un ángulo agudo, encuentra $\theta$ usando arcseno.
+### Ejercicio 4
+Calcula $\arcsin(2)$.
 
 <details>
-<summary><strong>Ver respuesta</strong></summary>
+<summary>Ver solución</summary>
 
-$$
-\theta = \arcsin\left(\frac{3}{5}\right) = \arcsin(0.6) \approx 36.87° \approx 0.6435 \text{ rad}
-$$
+**Razonamiento:**
+El dominio del arcoseno es $[-1, 1]$.
+El número 2 está fuera del dominio (no existe ángulo con seno 2).
 
-Como el ángulo es agudo (está en el primer cuadrante), el arcseno nos da directamente la respuesta.
-
+**Respuesta:** **Indefinido**
 </details>
 
 ---
+
+### Ejercicio 5
+Calcula $\arctan(-1)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Tangente es impar. El ángulo será negativo.
+Si $\tan(45°) = 1$, entonces $\tan(-45°) = -1$.
+
+**Respuesta:** $\boxed{-\frac{\pi}{4}}$
+</details>
+
+---
+
+### Ejercicio 6
+Calcula $\sin(\arcsin(0.3))$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Son funciones inversas, se "cancelan" mutuamente si el valor está en el dominio.
+$0.3$ está en $[-1, 1]$.
+
+**Respuesta:** $\boxed{0.3}$
+</details>
+
+---
+
+### Ejercicio 7
+Calcula $\arcsin(\sin(2\pi))$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Ojo: $2\pi$ está fuera del rango del arcoseno.
+1. $\sin(2\pi) = 0$.
+2. $\arcsin(0) = 0$.
+
+**Respuesta:** $\boxed{0}$ (No $2\pi$)
+</details>
+
+---
+
+### Ejercicio 8
+¿En qué cuadrante cae el resultado de $\arccos(-0.8)$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+El rango del arcocoseno es $[0, \pi]$.
+Como el valor es negativo, debe estar en el **segundo cuadrante** (donde el coseno es negativo).
+
+**Respuesta:** **Cuadrante II**
+</details>
+
+---
+
+### Ejercicio 9
+Calcula $\tan(\arcsin(\frac{3}{5}))$ sin calculadora.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Imagina un triángulo donde $\sin = \text{Opuesto}/\text{Hipotenusa} = 3/5$.
+Por Pitágoras, el adyacente es $\sqrt{5^2 - 3^2} = 4$.
+$\tan = \text{Opuesto}/\text{Adyacente} = 3/4$.
+
+**Respuesta:** $\boxed{0.75}$
+</details>
+
+---
+
+### Ejercicio 10
+¿Cuál es el dominio de $\arccos(2x)$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+El argumento $2x$ debe estar entre -1 y 1.
+$-1 \le 2x \le 1$.
+Dividimos por 2: $-0.5 \le x \le 0.5$.
+
+**Respuesta:** $\boxed{[-0.5, 0.5]}$
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Función | Dominio (Entrada) | Rango (Salida) | Cuadrantes |
+| :---: | :---: | :---: | :---: |
+| $\arcsin(x)$ | $[-1, 1]$ | $[-\pi/2, \pi/2]$ | **IV y I** |
+| $\arccos(x)$ | $[-1, 1]$ | $[0, \pi]$ | **I y II** |
+| $\arctan(x)$ | $(-\infty, \infty)$ | $(-\pi/2, \pi/2)$ | **IV y I** |
+
+> **Conclusión:** Las funciones inversas son "tímidas": solo viven en dos cuadrantes. Si buscas un ángulo en otro lugar, tendrás que usar tu ingenio (y ángulos de referencia) para encontrarlo.

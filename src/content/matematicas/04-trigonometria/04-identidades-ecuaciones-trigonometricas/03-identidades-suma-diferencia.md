@@ -1,198 +1,287 @@
-# Identidades de Suma y Diferencia
+# **Identidades de Suma y Diferencia**
 
-Las **identidades de suma y diferencia** permiten calcular funciones trigonométricas de la suma o resta de dos ángulos.
-
-<div style="background: linear-gradient(135deg, #dbeafe 0%, #fce7f3 100%); border: 2px solid #3b82f6; border-radius: 12px; padding: 1.2rem; margin: 1.5rem 0;">
-<div style="font-weight: bold; color: #1e40af; margin-bottom: 0.8rem;">📋 Resumen de Fórmulas</div>
-<div style="display: grid; gap: 0.5rem; font-size: 0.95rem;">
-<div><strong style="color: #3b82f6;">Seno:</strong> sin(α±β) = sin α cos β ± cos α sin β</div>
-<div><strong style="color: #dc2626;">Coseno:</strong> cos(α±β) = cos α cos β ∓ sin α sin β</div>
-<div><strong style="color: #16a34a;">Tangente:</strong> tan(α±β) = (tan α ± tan β)/(1 ∓ tan α tan β)</div>
-</div>
-<div style="margin-top: 0.8rem; font-size: 0.85rem; color: #64748b;">
-💡 Mnemotecnia: En seno los signos son <strong>iguales</strong>, en coseno son <strong>opuestos</strong>
-</div>
-</div>
+¿Cuánto vale $\sin(75°)$? No está en tu tabla de ángulos notables (30°, 45°, 60°), pero 75° es la suma de 30° y 45°. Las **identidades de suma y diferencia** son como llaves que te permiten romper ángulos difíciles en piezas fáciles que ya conoces.
 
 ---
 
-## 📖 Identidades del seno
+## 🎯 ¿Qué vas a aprender?
 
-### Seno de una suma
-
-$$
-\sin(\alpha + \beta) = \sin\alpha\cos\beta + \cos\alpha\sin\beta
-$$
-
-### Seno de una diferencia
-
-$$
-\sin(\alpha - \beta) = \sin\alpha\cos\beta - \cos\alpha\sin\beta
-$$
+- Las fórmulas para calcular senos y cosenos de sumas ($\alpha + \beta$).
+- Las fórmulas para restas ($\alpha - \beta$) y tangentes.
+- Cómo calcular valores exactos como $\cos(15°)$ sin calculadora.
+- Cómo usar estas identidades para demostrar otras propiedades trigonométricas.
 
 ---
 
-## 📖 Identidades del coseno
+## ➕ Identidades del Seno
 
-### Coseno de una suma
+El seno es "amigable": mezcla senos con cosenos y **respeta** el signo.
 
+### Suma
 $$
-\cos(\alpha + \beta) = \cos\alpha\cos\beta - \sin\alpha\sin\beta
+\sin(\alpha + \beta) = \sin\alpha \cos\beta + \cos\alpha \sin\beta
 $$
 
-### Coseno de una diferencia
+### Resta
+$$
+\sin(\alpha - \beta) = \sin\alpha \cos\beta - \cos\alpha \sin\beta
+$$
 
-$$
-\cos(\alpha - \beta) = \cos\alpha\cos\beta + \sin\alpha\sin\beta
-$$
+> **Patrón:** "Seno-Coseno, Coseno-Seno". El signo se mantiene (+ con +, - con -).
 
 ---
 
-## 📖 Identidades de la tangente
+## ➖ Identidades del Coseno
 
-### Tangente de una suma
+El coseno es "egoísta" y "contreras": se junta con su propia clase (coseno con coseno) y **cambia** el signo.
 
+### Suma
 $$
-\tan(\alpha + \beta) = \frac{\tan\alpha + \tan\beta}{1 - \tan\alpha\tan\beta}
+\cos(\alpha + \beta) = \cos\alpha \cos\beta - \sin\alpha \sin\beta
 $$
 
-### Tangente de una diferencia
+### Resta
+$$
+\cos(\alpha - \beta) = \cos\alpha \cos\beta + \sin\alpha \sin\beta
+$$
 
-$$
-\tan(\alpha - \beta) = \frac{\tan\alpha - \tan\beta}{1 + \tan\alpha\tan\beta}
-$$
+> **Patrón:** "Coseno-Coseno, Seno-Seno". El signo se invierte (+ se vuelve -, - se vuelve +).
 
 ---
 
-## 📖 Ejemplo 1: $\sin 75°$
+## 📈 Identidades de la Tangente
 
+### Suma
 $$
-\sin 75° = \sin(45° + 30°)
-$$
-
-$$
-= \sin 45°\cos 30° + \cos 45°\sin 30°
+\tan(\alpha + \beta) = \frac{\tan\alpha + \tan\beta}{1 - \tan\alpha \tan\beta}
 $$
 
+### Resta
 $$
-= \frac{\sqrt{2}}{2} \cdot \frac{\sqrt{3}}{2} + \frac{\sqrt{2}}{2} \cdot \frac{1}{2}
+\tan(\alpha - \beta) = \frac{\tan\alpha - \tan\beta}{1 + \tan\alpha \tan\beta}
 $$
 
-$$
-= \frac{\sqrt{6}}{4} + \frac{\sqrt{2}}{4} = \frac{\sqrt{6} + \sqrt{2}}{4}
-$$
+> **Pista:** El signo de arriba es el mismo que el de la operación. El de abajo es el opuesto.
 
 ---
 
-## 📖 Ejemplo 2: $\cos 15°$
+## ⚙️ Ejemplos Resueltos
+
+### Ejemplo 1: Calcular $\sin(75°)$
+Rompemos 75° en $45° + 30°$.
 
 $$
-\cos 15° = \cos(45° - 30°)
+\sin(45° + 30°) = \sin(45°)\cos(30°) + \cos(45°)\sin(30°)
+$$
+
+Sustituimos valores conocidos:
+$$
+= \left(\frac{\sqrt{2}}{2}\right)\left(\frac{\sqrt{3}}{2}\right) + \left(\frac{\sqrt{2}}{2}\right)\left(\frac{1}{2}\right)
 $$
 
 $$
-= \cos 45°\cos 30° + \sin 45°\sin 30°
+= \frac{\sqrt{6}}{4} + \frac{\sqrt{2}}{4}
 $$
 
-$$
-= \frac{\sqrt{2}}{2} \cdot \frac{\sqrt{3}}{2} + \frac{\sqrt{2}}{2} \cdot \frac{1}{2}
-$$
-
-$$
-= \frac{\sqrt{6} + \sqrt{2}}{4}
-$$
+**Resultado:** $\boxed{\frac{\sqrt{6} + \sqrt{2}}{4}}$
 
 ---
 
-## 📖 Ejemplo 3: $\tan 105°$
+### Ejemplo 2: Calcular $\cos(15°)$
+Rompemos 15° en $45° - 30°$. (O también $60° - 45°$).
 
 $$
-\tan 105° = \tan(60° + 45°) = \frac{\tan 60° + \tan 45°}{1 - \tan 60° \tan 45°}
+\cos(45° - 30°) = \cos(45°)\cos(30°) + \sin(45°)\sin(30°)
 $$
 
 $$
-= \frac{\sqrt{3} + 1}{1 - \sqrt{3} \cdot 1} = \frac{\sqrt{3} + 1}{1 - \sqrt{3}}
+= \left(\frac{\sqrt{2}}{2}\right)\left(\frac{\sqrt{3}}{2}\right) + \left(\frac{\sqrt{2}}{2}\right)\left(\frac{1}{2}\right)
 $$
+
+**Resultado:** $\boxed{\frac{\sqrt{6} + \sqrt{2}}{4}}$
+*(¡Curioso! Es igual al seno de 75° porque son cofunciones).*
 
 ---
 
-## 📖 Mnemotecnia
+### Ejemplo 3: Simplificar $\cos(\pi - x)$
+Usamos la fórmula de resta del coseno.
 
-### Para seno
+$$
+\cos(\pi - x) = \cos(\pi)\cos(x) + \sin(\pi)\sin(x)
+$$
 
-"El seno de una **suma** tiene **diferentes** productos (sin-cos + cos-sin)"
+Sabemos que $\cos(\pi) = -1$ y $\sin(\pi) = 0$.
 
-### Para coseno
+$$
+= (-1)\cos(x) + (0)\sin(x)
+$$
 
-"El coseno de una **suma** tiene **iguales** productos (cos-cos − sin-sin)"
-
-### Signos
-
-| Función | Suma | Diferencia |
-|---------|------|------------|
-| $\sin$ | $+$ en el medio | $-$ en el medio |
-| $\cos$ | $-$ en el medio | $+$ en el medio |
+**Resultado:** $\boxed{-\cos(x)}$
 
 ---
 
-## 📝 Ejercicios de práctica
+## 📝 Ejercicios de Práctica
 
-### Ejercicio 1: Calcular valores exactos
-
-Calcula usando identidades:
-
-1. $\sin 105°$
-2. $\cos 75°$
+### Ejercicio 1
+Usa la fórmula de suma para encontrar $\sin(105°)$ ($60°+45°$).
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. $\sin 105° = \sin(60° + 45°) = \sin 60°\cos 45° + \cos 60°\sin 45°$
+**Razonamiento:**
+$\sin(60°+45°) = \sin 60°\cos 45° + \cos 60°\sin 45°$.
+$(\frac{\sqrt{3}}{2})(\frac{\sqrt{2}}{2}) + (\frac{1}{2})(\frac{\sqrt{2}}{2})$.
 
-   $= \frac{\sqrt{3}}{2} \cdot \frac{\sqrt{2}}{2} + \frac{1}{2} \cdot \frac{\sqrt{2}}{2} = \frac{\sqrt{6} + \sqrt{2}}{4}$
-
-2. $\cos 75° = \cos(45° + 30°) = \cos 45°\cos 30° - \sin 45°\sin 30°$
-
-   $= \frac{\sqrt{2}}{2} \cdot \frac{\sqrt{3}}{2} - \frac{\sqrt{2}}{2} \cdot \frac{1}{2} = \frac{\sqrt{6} - \sqrt{2}}{4}$
-
+**Respuesta:** $\boxed{\frac{\sqrt{6} + \sqrt{2}}{4}}$
 </details>
 
 ---
 
-### Ejercicio 2: Verificar identidad
-
-Verifica que $\cos(90° - \theta) = \sin\theta$ usando la identidad del coseno de diferencia.
+### Ejercicio 2
+Calcula $\cos(105°)$ usando suma.
 
 <details>
-<summary><strong>Ver respuesta</strong></summary>
+<summary>Ver solución</summary>
 
-$$
-\cos(90° - \theta) = \cos 90°\cos\theta + \sin 90°\sin\theta
-$$
+**Razonamiento:**
+$\cos(60°+45°) = \cos 60°\cos 45° - \sin 60°\sin 45°$.
+$(\frac{1}{2})(\frac{\sqrt{2}}{2}) - (\frac{\sqrt{3}}{2})(\frac{\sqrt{2}}{2})$.
 
-$$
-= 0 \cdot \cos\theta + 1 \cdot \sin\theta = \sin\theta \quad ✓
-$$
-
+**Respuesta:** $\boxed{\frac{\sqrt{2} - \sqrt{6}}{4}}$
 </details>
 
 ---
 
-### Ejercicio 3: Simplificar
-
-Simplifica: $\sin(x + \frac{\pi}{2})$
+### Ejercicio 3
+Calcula $\tan(15°)$ usando resta ($45°-30°$).
 
 <details>
-<summary><strong>Ver respuesta</strong></summary>
+<summary>Ver solución</summary>
 
-$$
-\sin(x + \frac{\pi}{2}) = \sin x \cos\frac{\pi}{2} + \cos x \sin\frac{\pi}{2}
-$$
+**Razonamiento:**
+$\tan(45°-30°) = \frac{\tan 45° - \tan 30°}{1 + \tan 45°\tan 30°}$.
+$\frac{1 - \sqrt{3}/3}{1 + 1(\sqrt{3}/3)} = \frac{3-\sqrt{3}}{3+\sqrt{3}}$.
+Racionalizando...
 
-$$
-= \sin x \cdot 0 + \cos x \cdot 1 = \cos x
-$$
-
+**Respuesta:** $\boxed{2 - \sqrt{3}}$
 </details>
 
 ---
+
+### Ejercicio 4
+Verifica la identidad $\sin(x + \pi) = -\sin(x)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$\sin(x)\cos(\pi) + \cos(x)\sin(\pi)$.
+$\sin(x)(-1) + \cos(x)(0)$.
+
+**Respuesta:** $-\sin(x)$
+</details>
+
+---
+
+### Ejercicio 5
+Simplifica $\cos(\frac{\pi}{2} + x)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$\cos(\frac{\pi}{2})\cos(x) - \sin(\frac{\pi}{2})\sin(x)$.
+$0 \cdot \cos(x) - 1 \cdot \sin(x)$.
+
+**Respuesta:** $\boxed{-\sin(x)}$
+</details>
+
+---
+
+### Ejercicio 6
+Halla el valor exacto de $\sin(15°)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$\sin(45°-30°) = \sin 45°\cos 30° - \cos 45°\sin 30°$.
+$(\frac{\sqrt{2}}{2})(\frac{\sqrt{3}}{2}) - (\frac{\sqrt{2}}{2})(\frac{1}{2})$.
+
+**Respuesta:** $\boxed{\frac{\sqrt{6} - \sqrt{2}}{4}}$
+</details>
+
+---
+
+### Ejercicio 7
+Si $\sin A = 3/5$ y $\cos B = 12/13$ (ambos en Q1), halla $\sin(A+B)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$\cos A = 4/5$, $\sin B = 5/13$.
+$\sin(A+B) = (3/5)(12/13) + (4/5)(5/13)$.
+$36/65 + 20/65$.
+
+**Respuesta:** $\boxed{\frac{56}{65}}$
+</details>
+
+---
+
+### Ejercicio 8
+Simplifica $\cos(A+B) + \cos(A-B)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$(\cos A \cos B - \sin A \sin B) + (\cos A \cos B + \sin A \sin B)$.
+Se cancelan los senos.
+
+**Respuesta:** $\boxed{2\cos A \cos B}$
+</details>
+
+---
+
+### Ejercicio 9
+Demuestra que $\tan(x + \pi) = \tan(x)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$\frac{\tan x + \tan \pi}{1 - \tan x \tan \pi}$.
+$\tan \pi = 0$.
+$\frac{\tan x + 0}{1 - 0}$.
+
+**Respuesta:** $\boxed{\tan x}$
+</details>
+
+---
+
+### Ejercicio 10
+Si $\alpha + \beta = 90°$, demuestra que $\sin(\alpha) = \cos(\beta)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$\beta = 90° - \alpha$.
+$\cos(90° - \alpha) = \cos 90° \cos \alpha + \sin 90° \sin \alpha$.
+$0 + 1 \cdot \sin \alpha$.
+
+**Respuesta:** $\boxed{\sin \alpha}$
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Función | Operación ($\pm$) | Fórmula | Signo Resultado |
+| :---: | :---: | :---: | :---: |
+| **Seno** | $\alpha \pm \beta$ | $\sin \cos \pm \cos \sin$ | **Mismo** ($\pm$) |
+| **Coseno** | $\alpha \pm \beta$ | $\cos \cos \mp \sin \sin$ | **Opuesto** ($\mp$) |
+| **Tangente** | $\alpha \pm \beta$ | $\frac{\tan \pm \tan}{1 \mp \tan \tan}$ | Num: Mismo / Den: Opuesto |
+
+> **Conclusión:** ¡El orden importa! Con el seno, mezcla las funciones. Con el coseno, agrupa las iguales. Y no olvides que el coseno siempre lleva la contraria con el signo.

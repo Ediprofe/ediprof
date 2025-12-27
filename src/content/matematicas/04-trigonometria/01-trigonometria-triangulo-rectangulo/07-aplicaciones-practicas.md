@@ -1,15 +1,15 @@
-# Aplicaciones Prácticas de Trigonometría
+# **Aplicaciones Prácticas de Trigonometría**
 
 ¿Cómo calculan los ingenieros la altura de un edificio sin subir a él? ¿Cómo sabe un piloto a qué distancia está del aeropuerto? La trigonometría resuelve estos problemas usando **ángulos de elevación** y **ángulos de depresión**. ¡Vamos a descubrirlo!
 
 ---
 
-## 🎯 Lo que vas a aprender
+## 🎯 ¿Qué vas a aprender?
 
-- Qué es un ángulo de elevación y cuándo usarlo
-- Qué es un ángulo de depresión y cuándo usarlo
-- Cómo resolver problemas de alturas y distancias
-- Estrategias para plantear ecuaciones trigonométricas
+- Qué es un ángulo de elevación y cuándo usarlo.
+- Qué es un ángulo de depresión y cuándo usarlo.
+- Cómo resolver problemas de alturas y distancias inaccesibles.
+- Estrategias para plantear ecuaciones trigonométricas a partir de situaciones reales.
 
 ---
 
@@ -89,8 +89,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-> 🔄 **Igualdad de ángulos:** El ángulo de depresión β = ángulo de elevación desde el barco hacia la torre (ángulos alternos internos).
-
 ---
 
 ## 📖 Ángulo de elevación
@@ -117,7 +115,9 @@ El ángulo de depresión desde un punto A hacia B es **igual** al ángulo de ele
 
 ---
 
-## 📖 Problema tipo: Altura de un edificio
+## ⚙️ Ejemplos Resueltos
+
+### Ejemplo 1: Altura de un edificio
 
 Un observador está a 50 m de la base de un edificio. El ángulo de elevación a la cima es 32°. ¿Cuál es la altura del edificio?
 
@@ -182,35 +182,70 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-### Solución
+**Razonamiento:**
+
+Queremos calcular el cateto opuesto ($h$) y tenemos el cateto adyacente ($50$) y el ángulo ($32°$). La función que relaciona estos datos es la tangente.
 
 $$
-\tan 32° = \frac{h}{50}
+\tan(32°) = \frac{\text{Opuesto}}{\text{Adyacente}} = \frac{h}{50}
 $$
 
+Despejamos $h$:
+
 $$
-h = 50 \times \tan 32° = 50 \times 0.625 \approx 31.2 \text{ m}
+h = 50 \times \tan(32°)
+$$
+
+Calculamos:
+
+$$
+h = 50 \times 0.625 \approx 31.2
+$$
+
+**Resultado:**
+
+$$
+\boxed{31.2 \text{ m}}
 $$
 
 ---
 
-## 📖 Problema tipo: Distancia a un avión
+### Ejemplo 2: Distancia a un avión
 
 Desde el suelo, un observador ve un avión con un ángulo de elevación de 28°. El avión está a 5,000 m de altura. ¿A qué distancia horizontal está?
 
-### Solución
+**Datos:**
+- Ángulo de elevación: $28°$
+- Cateto opuesto (altura): $5000 \text{ m}$
+- Cateto adyacente (distancia horizontal $d$): ¿?
+
+**Razonamiento:**
+
+Usamos nuevamente la tangente, pero esta vez la incógnita está en el denominador.
 
 $$
-\tan 28° = \frac{5000}{d}
+\tan(28°) = \frac{5000}{d}
+$$
+
+Despejamos $d$ intercambiando con la tangente:
+
+$$
+d = \frac{5000}{\tan(28°)}
 $$
 
 $$
-d = \frac{5000}{\tan 28°} = \frac{5000}{0.5317} \approx 9,405 \text{ m}
+d = \frac{5000}{0.5317}
+$$
+
+**Resultado:**
+
+$$
+\boxed{9405 \text{ m}}
 $$
 
 ---
 
-## 📖 Problema tipo: Ángulo de depresión
+### Ejemplo 3: Ángulo de depresión
 
 Desde la cima de un faro de 40 m de altura, el ángulo de depresión hacia un barco es 15°. ¿A qué distancia de la base del faro está el barco?
 
@@ -276,19 +311,26 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-### Solución
+**Razonamiento:**
+El ángulo de depresión es igual al ángulo de elevación desde el barco (alternos internos). Entonces, tenemos un triángulo rectángulo con ángulo de 15°, cateto opuesto de 40 m y buscamos el adyacente.
 
 $$
-\tan 15° = \frac{40}{d}
+\tan(15°) = \frac{40}{d}
 $$
 
 $$
-d = \frac{40}{\tan 15°} = \frac{40}{0.2679} \approx 149.3 \text{ m}
+d = \frac{40}{\tan(15°)} = \frac{40}{0.2679}
+$$
+
+**Resultado:**
+
+$$
+\boxed{149.3 \text{ m}}
 $$
 
 ---
 
-## 📖 Problema tipo: Escalera
+### Ejemplo 4: Escalera apoyada
 
 Una escalera de 6 m se apoya contra una pared formando un ángulo de 70° con el suelo. ¿A qué altura llega?
 
@@ -353,99 +395,290 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-### Solución
+**Razonamiento:**
+Conocemos la hipotenusa (largo de la escalera, 6m) y el ángulo (70°). Queremos la altura (cateto opuesto).
 
 $$
-\sin 70° = \frac{h}{6}
+\sin(70°) = \frac{h}{6}
 $$
 
 $$
-h = 6 \times \sin 70° = 6 \times 0.9397 \approx 5.6 \text{ m}
+h = 6 \times \sin(70°)
+$$
+
+$$
+h = 6 \times 0.9397 \approx 5.64
+$$
+
+**Resultado:**
+
+$$
+\boxed{5.64 \text{ m}}
 $$
 
 ---
 
-## 📝 Ejercicios de práctica
+## 📝 Ejercicios de Práctica
 
-### Ejercicio 1: Árbol
-
+### Ejercicio 1
 Un observador está a 25 m de la base de un árbol. El ángulo de elevación a la cima es 40°. ¿Cuál es la altura del árbol?
 
 <details>
-<summary><strong>Ver respuesta</strong></summary>
+<summary>Ver solución</summary>
+
+**Datos:**
+- Adyacente = 25 m
+- Ángulo = 40°
+- Opuesto (altura) = ?
+
+**Razonamiento:**
+Usamos tangente: $\tan(40°) = h/25 \rightarrow h = 25 \times \tan(40°)$
+
+**Resultado:**
 
 $$
-h = 25 \times \tan 40° = 25 \times 0.839 \approx 21 \text{ m}
+\boxed{21 \text{ m}}
 $$
 
 </details>
 
 ---
 
-### Ejercicio 2: Torre y sombra
-
+### Ejercicio 2
 Una torre proyecta una sombra de 30 m cuando el ángulo de elevación del sol es 55°. ¿Cuál es la altura de la torre?
 
 <details>
-<summary><strong>Ver respuesta</strong></summary>
+<summary>Ver solución</summary>
+
+**Datos:**
+- Adyacente (sombra) = 30 m
+- Ángulo = 55°
+- Opuesto (altura) = ?
+
+**Razonamiento:**
+Usamos tangente: $\tan(55°) = h/30$.
 
 $$
-h = 30 \times \tan 55° = 30 \times 1.428 \approx 42.8 \text{ m}
+h = 30 \times \tan(55°) = 30 \times 1.428
+$$
+
+**Resultado:**
+
+$$
+\boxed{42.8 \text{ m}}
 $$
 
 </details>
 
 ---
 
-### Ejercicio 3: Avión
-
+### Ejercicio 3
 Un avión vuela a 8,000 m de altura. Un observador en tierra lo ve con un ángulo de elevación de 35°. ¿Cuál es la distancia en línea recta del observador al avión?
 
 <details>
-<summary><strong>Ver respuesta</strong></summary>
+<summary>Ver solución</summary>
+
+**Datos:**
+- Opuesto (altura) = 8000 m
+- Ángulo = 35°
+- Hipotenusa (distancia) = ?
+
+**Razonamiento:**
+Usamos seno, porque involucra opuesto e hipotenusa: $\sin(35°) = 8000/d$.
+Despejando d: $d = 8000 / \sin(35°)$.
+
+**Resultado:**
 
 $$
-\sin 35° = \frac{8000}{d}
-$$
-
-$$
-d = \frac{8000}{\sin 35°} = \frac{8000}{0.574} \approx 13,937 \text{ m}
+\boxed{13\,948 \text{ m}}
 $$
 
 </details>
 
 ---
 
-### Ejercicio 4: Faro
-
+### Ejercicio 4
 Desde un faro de 50 m de altura, un guardacostas ve un bote con un ángulo de depresión de 12°. ¿A qué distancia está el bote de la base del faro?
 
 <details>
-<summary><strong>Ver respuesta</strong></summary>
+<summary>Ver solución</summary>
+
+**Datos:**
+- Opuesto = 50 m
+- Ángulo = 12°
+- Adyacente (distancia) = ?
+
+**Razonamiento:**
+Usamos tangente: $\tan(12°) = 50/d$.
+Despejando d: $d = 50 / \tan(12°)$.
+
+**Resultado:**
 
 $$
-d = \frac{50}{\tan 12°} = \frac{50}{0.2126} \approx 235 \text{ m}
+\boxed{235 \text{ m}}
 $$
 
 </details>
 
 ---
 
-### Ejercicio 5: Rampa
-
-Una rampa de acceso debe tener un ángulo de inclinación máximo de 8°. Si la rampa debe subir 60 cm, ¿cuál es la longitud mínima de la rampa?
+### Ejercicio 5
+Una rampa de acceso debe tener un ángulo de inclinación máximo de 8°. Si la rampa debe subir 60 cm, ¿cuál es la longitud mínima de la rampa (hipotenusa)?
 
 <details>
-<summary><strong>Ver respuesta</strong></summary>
+<summary>Ver solución</summary>
+
+**Datos:**
+- Opuesto = 60 cm
+- Ángulo = 8°
+- Hipotenusa = ?
+
+**Razonamiento:**
+Usamos seno: $\sin(8°) = 60/L$.
+Despejando L: $L = 60/ \sin(8°)$.
+
+**Resultado:**
 
 $$
-\sin 8° = \frac{0.6}{L}
-$$
-
-$$
-L = \frac{0.6}{\sin 8°} = \frac{0.6}{0.139} \approx 4.3 \text{ m}
+\boxed{431 \text{ cm}}
 $$
 
 </details>
 
 ---
+
+### Ejercicio 6
+Un niño vuela una cometa soltando 50 m de hilo. Si el hilo está tenso y forma un ángulo de 60° con el suelo, ¿a qué altura está la cometa?
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:**
+- Hipotenusa = 50 m
+- Ángulo = 60°
+- Opuesto (altura) = ?
+
+**Razonamiento:**
+Usamos seno: $\sin(60°) = h/50$.
+$h = 50 \times \sin(60°) = 50 \times 0.866$.
+
+**Resultado:**
+
+$$
+\boxed{43.3 \text{ m}}
+$$
+
+</details>
+
+---
+
+### Ejercicio 7
+Un poste vertical de 5 metros de altura proyecta una sombra de 5 metros. ¿Cuál es el ángulo de elevación del sol?
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:**
+- Opuesto = 5 m
+- Adyacente = 5 m
+- Ángulo = ?
+
+**Razonamiento:**
+$\tan(\alpha) = 5/5 = 1$.
+El ángulo cuya tangente es 1 es 45°.
+
+**Resultado:**
+
+$$
+\boxed{45°}
+$$
+
+</details>
+
+---
+
+### Ejercicio 8
+Una carretera sube de forma constante. Si por cada 100 metros que avanzas horizontalmente subes 10 metros, ¿cuál es el ángulo de inclinación de la carretera?
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:**
+- Opuesto = 10 m
+- Adyacente = 100 m
+- Ángulo = ?
+
+**Razonamiento:**
+$\tan(\alpha) = 10/100 = 0.1$.
+Calculamos arco tangente: $\alpha = \arctan(0.1)$.
+
+**Resultado:**
+
+$$
+\boxed{5.7°}
+$$
+
+</details>
+
+---
+
+### Ejercicio 9
+Una escalera de 10 metros se apoya en una pared. Si el pie de la escalera está a 3 metros de la pared, ¿qué ángulo forma la escalera con el suelo?
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:**
+- Hipotenusa = 10 m
+- Adyacente = 3 m
+- Ángulo = ?
+
+**Razonamiento:**
+Usamos coseno: $\cos(\alpha) = 3/10 = 0.3$.
+Calculamos arco coseno: $\alpha = \arccos(0.3)$.
+
+**Resultado:**
+
+$$
+\boxed{72.5°}
+$$
+
+</details>
+
+---
+
+### Ejercicio 10
+Un tobogán tiene una longitud de 4 metros y la altura desde donde se lanza es de 2 metros. ¿Cuál es el ángulo de inclinación del tobogán con respecto al suelo?
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:**
+- Hipotenusa = 4 m
+- Opuesto = 2 m
+- Ángulo = ?
+
+**Razonamiento:**
+Usamos seno: $\sin(\alpha) = 2/4 = 0.5$.
+El ángulo cuyo seno es 0.5 es 30°.
+
+**Resultado:**
+
+$$
+\boxed{30°}
+$$
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Situación | Datos conocidos | Incógnita | Razón sugerida |
+|-----------|-----------------|-----------|----------------|
+| **Altura, dada la sombra** | Cateto Ady, Ángulo | Cateto Op | **Tangente** |
+| **Sombra, dada la altura** | Cateto Op, Ángulo | Cateto Ady | **Tangente** |
+| **Longitud escalera/rampa** | Altura, Ángulo | Hipotenusa | **Seno** |
+| **Distancia horizontal rampa** | Longitud, Ángulo | Cateto Ady | **Coseno** |
+
+> **Conclusión:** La clave para resolver estos problemas es identificar correctamente el triángulo rectángulo, ubicar qué lado tienes y qué lado buscas, y elegir la razón trigonométrica (SOH-CAH-TOA) que los relacione.

@@ -1,6 +1,23 @@
-# Ángulos Negativos
+# **Ángulos Negativos**
 
-Los **ángulos negativos** se miden en dirección de las manecillas del reloj (sentido horario). Tienen una relación importante con los ángulos positivos.
+Hasta ahora hemos girado siempre en sentido antihorario, como se hace usualmente en matemáticas. Pero, ¿qué pasa si giramos al revés? Los **ángulos negativos** aparecen cuando medimos en sentido horario, y aprender a calcularlos es crucial para no confundirte con signos.
+
+---
+
+## 🎯 ¿Qué vas a aprender?
+
+- Qué significa geométricamente un ángulo negativo.
+- La equivalencia entre ángulos negativos y positivos (coterminales).
+- Las propiedades de paridad: por qué el coseno "se come" el signo menos y el seno no.
+- Cómo calcular rápidamente funciones trigonométricas de valores negativos.
+
+---
+
+## 🔄 El Sentido del Giro
+
+En trigonometría estándar:
+*   **Giro Antihorario (contra reloj):** Ángulos Positivos ($+30°$).
+*   **Giro Horario (a favor del reloj):** Ángulos Negativos ($-30°$).
 
 <div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
@@ -12,189 +29,275 @@ Los **ángulos negativos** se miden en dirección de las manecillas del reloj (s
 
 </div>
 
----
-
-## 📖 Definición
-
-> **Definición:** Un ángulo negativo se mide desde el eje X positivo en sentido **horario** (a favor de las manecillas del reloj).
-
-- Ángulo positivo: sentido antihorario
-- Ángulo negativo: sentido horario
+GEOMÉTRICAMENTE, un ángulo negativo llega al mismo lugar que uno positivo grande.
+> **Regla de oro:** Si sumas $360°$ a cualquier ángulo negativo, obtienes su equivalente positivo.
+> $$-30° + 360° = 330°$$
 
 ---
 
-## 📖 Equivalencia con ángulos positivos
+## 🪞 Identidades de Paridad (Simetría)
 
-Un ángulo negativo es **coterminal** con un ángulo positivo:
+Si observas el círculo unitario, verás una simetría interesante respecto al eje X. Si giras $\theta$ hacia arriba o $-\theta$ hacia abajo:
+1.  La coordenada $x$ (Coseno) es **la misma**.
+2.  La coordenada $y$ (Seno) es **la opuesta** (cambia de signo).
 
-$$
--\theta \text{ es coterminal con } 360° - \theta
-$$
+De ahí nacen las reglas de paridad:
 
-### Ejemplo
-
-$$
--30° \text{ es coterminal con } 360° - 30° = 330°
-$$
-
----
-
-## 📖 Funciones trigonométricas de ángulos negativos
-
-### Seno (función impar)
+### 1. Función Par (Coseno y Secante)
+El signo negativo **desaparece**.
 
 $$
-\sin(-\theta) = -\sin\theta
+\cos(-\theta) = \cos(\theta)
 $$
 
-### Coseno (función par)
-
 $$
-\cos(-\theta) = \cos\theta
+\sec(-\theta) = \sec(\theta)
 $$
 
-### Tangente (función impar)
+### 2. Función Impar (Las demás)
+El signo negativo **sale fuera** de la función.
 
 $$
-\tan(-\theta) = -\tan\theta
+\sin(-\theta) = -\sin(\theta)
+$$
+
+$$
+\tan(-\theta) = -\tan(\theta)
+$$
+
+$$
+\csc(-\theta) = -\csc(\theta)
+$$
+
+$$
+\cot(-\theta) = -\cot(\theta)
 $$
 
 ---
 
-## 📖 Resumen de paridad
+## ⚙️ Ejemplos Resueltos
 
-| Función | Tipo | Regla |
-|---------|------|-------|
-| $\sin$ | Impar | $\sin(-\theta) = -\sin\theta$ |
-| $\cos$ | Par | $\cos(-\theta) = \cos\theta$ |
-| $\tan$ | Impar | $\tan(-\theta) = -\tan\theta$ |
-| $\csc$ | Impar | $\csc(-\theta) = -\csc\theta$ |
-| $\sec$ | Par | $\sec(-\theta) = \sec\theta$ |
-| $\cot$ | Impar | $\cot(-\theta) = -\cot\theta$ |
+### Ejemplo 1: Calcular $\cos(-60°)$
+
+**Método 1: Paridad**
+Como el coseno es par:
+
+$$
+\cos(-60°) = \cos(60°) = 0.5
+$$
+
+**Método 2: Coterminal**
+Sumamos 360°:
+
+$$
+-60° + 360° = 300°
+$$
+
+$$
+\cos(300°) = 0.5 \quad \text{(QIV)}
+$$
+
+**Resultado:** $\boxed{0.5}$
 
 ---
 
-## 📖 Ejemplos
+### Ejemplo 2: Calcular $\sin(-45°)$
 
-### Ejemplo 1: $\sin(-30°)$
-
-$$
-\sin(-30°) = -\sin 30° = -\frac{1}{2}
-$$
-
-### Ejemplo 2: $\cos(-45°)$
+**Método 1: Paridad**
+Como el seno es impar:
 
 $$
-\cos(-45°) = \cos 45° = \frac{\sqrt{2}}{2}
+\sin(-45°) = -\sin(45°) = -\frac{\sqrt{2}}{2}
 $$
 
-### Ejemplo 3: $\tan(-60°)$
-
-$$
-\tan(-60°) = -\tan 60° = -\sqrt{3}
-$$
+**Resultado:** $\boxed{-\frac{\sqrt{2}}{2}}$
 
 ---
 
-## 📖 Ángulos negativos grandes
+### Ejemplo 3: Calcular $\tan(-150°)$
 
-Para ángulos negativos mayores que 360°, primero encontramos el ángulo coterminal.
-
-### Ejemplo
-
-$$
-\sin(-390°) = \sin(-390° + 360°) = \sin(-30°) = -\sin 30° = -\frac{1}{2}
-$$
-
-O directamente:
+**Método 1: Paridad**
+La tangente es impar:
 
 $$
-\sin(-390°) = \sin(-390° + 720°) = \sin 330° = -\frac{1}{2}
+\tan(-150°) = -\tan(150°)
 $$
+
+Sabemos que $\tan(150°) = -\frac{\sqrt{3}}{3}$ (QII, Ref 30°).
+Entonces:
+
+$$
+-(-\frac{\sqrt{3}}{3}) = +\frac{\sqrt{3}}{3}
+$$
+
+**Resultado:** $\boxed{\frac{\sqrt{3}}{3}}$
 
 ---
 
-## 📖 Interpretación geométrica
+## 📝 Ejercicios de Práctica
 
-En el círculo unitario:
-- $\theta$ y $-\theta$ son simétricos respecto al eje X
-- Tienen la misma coordenada $x$ (coseno)
-- Tienen coordenadas $y$ opuestas (seno)
-
----
-
-## 📝 Ejercicios de práctica
-
-### Ejercicio 1: Aplicar paridad
-
-Calcula usando las propiedades de paridad:
-
-1. $\sin(-45°)$
-2. $\cos(-60°)$
-3. $\tan(-30°)$
+### Ejercicio 1
+Calcula el valor de $\sin(-30°)$.
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. $\sin(-45°) = -\sin 45° = -\frac{\sqrt{2}}{2}$
-2. $\cos(-60°) = \cos 60° = \frac{1}{2}$
-3. $\tan(-30°) = -\tan 30° = -\frac{\sqrt{3}}{3}$
+**Razonamiento:**
+$\sin(-30°) = -\sin(30°)$.
+Sabemos que $\sin(30°) = 0.5$.
 
+**Respuesta:** $\boxed{-0.5}$
 </details>
 
 ---
 
-### Ejercicio 2: Ángulos coterminales
-
-Encuentra un ángulo positivo coterminal con:
-
-1. $-50°$
-2. $-120°$
-3. $-200°$
+### Ejercicio 2
+Calcula el valor de $\cos(-30°)$.
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. $-50° + 360° = 310°$
-2. $-120° + 360° = 240°$
-3. $-200° + 360° = 160°$
+**Razonamiento:**
+$\cos(-30°) = \cos(30°)$.
+Sabemos que $\cos(30°) = \frac{\sqrt{3}}{2}$.
 
+**Respuesta:** $\boxed{\frac{\sqrt{3}}{2}}$
 </details>
 
 ---
 
-### Ejercicio 3: Calcular valores
-
-Calcula:
-
-1. $\cos(-90°)$
-2. $\sin(-180°)$
-3. $\tan(-45°)$
+### Ejercicio 3
+Calcula el valor de $\tan(-45°)$.
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. $\cos(-90°) = \cos 90° = 0$
-2. $\sin(-180°) = -\sin 180° = 0$
-3. $\tan(-45°) = -\tan 45° = -1$
+**Razonamiento:**
+$\tan(-45°) = -\tan(45°)$.
+Sabemos que $\tan(45°) = 1$.
 
+**Respuesta:** $\boxed{-1}$
 </details>
 
 ---
 
-### Ejercicio 4: Verdadero o Falso
-
-1. $\sin(-\theta) = \sin\theta$ siempre.
-2. $\cos(-\theta) = \cos\theta$ siempre.
-3. Un ángulo de $-90°$ es lo mismo que $270°$.
+### Ejercicio 4
+Encuentra el ángulo positivo equivalente a $-90°$.
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. **Falso** - El seno es función impar
-2. **Verdadero** - El coseno es función par
-3. **Verdadero** - Son coterminales
+**Razonamiento:**
+$-90° + 360° = 270°$.
 
+**Respuesta:** $\boxed{270°}$
 </details>
 
 ---
+
+### Ejercicio 5
+Calcula $\sec(-60°)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+La secante es par, igual que el coseno.
+$\sec(-60°) = \sec(60°)$.
+$\sec(60°) = 1/\cos(60°) = 1/0.5 = 2$.
+
+**Respuesta:** $\boxed{2}$
+</details>
+
+---
+
+### Ejercicio 6
+Calcula $\csc(-30°)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+La cosecante es impar.
+$\csc(-30°) = -\csc(30°)$.
+$\csc(30°) = 1/\sin(30°) = 1/0.5 = 2$.
+
+**Respuesta:** $\boxed{-2}$
+</details>
+
+---
+
+### Ejercicio 7
+Determina el signo de $\cos(-100°)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$\cos(-100°) = \cos(100°)$.
+100° está en el Cuadrante II.
+El coseno en QII es negativo.
+
+**Respuesta:** **Negativo (-)**
+</details>
+
+---
+
+### Ejercicio 8
+Determina el signo de $\sin(-200°)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$\sin(-200°) = -\sin(200°)$.
+200° está en QIII, donde el seno es negativo (-).
+Entonces: $-(\text{Negativo}) = \text{Positivo}$.
+
+**Alternativa:** $-200° + 360° = 160°$ (QII), donde el seno es positivo.
+
+**Respuesta:** **Positivo (+)**
+</details>
+
+---
+
+### Ejercicio 9
+Calcula $\tan(-180°)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$\tan(-180°) = -\tan(180°)$.
+$\tan(180°) = 0$.
+$-0 = 0$.
+
+**Respuesta:** $\boxed{0}$
+</details>
+
+---
+
+### Ejercicio 10
+Si $\sin(-\theta) = 0.8$, ¿cuánto vale $\sin(\theta)$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Sabemos que $\sin(-\theta) = -\sin(\theta)$.
+Entonces: $-\sin(\theta) = 0.8$.
+Multiplicamos por -1.
+
+**Respuesta:** $\boxed{-0.8}$
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Función | Tipo de Simetría | Regla Matemática |
+| :--- | :--- | :--- |
+| **Coseno / Secante** | **Par** | El signo se ignora: $f(-x) = f(x)$ |
+| **Seno / Tangente** | **Impar** | El signo sale fuera: $f(-x) = -f(x)$ |
+
+> **Conclusión:** Cuando veas un ángulo negativo dentro de un coseno, ignóralo. Si está dentro de un seno o tangente, saca el signo afuera. ¡Así de simple!

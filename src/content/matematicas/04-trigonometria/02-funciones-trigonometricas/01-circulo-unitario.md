@@ -1,6 +1,27 @@
-# El Círculo Unitario
+# **El Círculo Unitario**
 
-El **círculo unitario** es la herramienta fundamental para extender las funciones trigonométricas a cualquier ángulo, no solo los agudos del triángulo rectángulo.
+El **círculo unitario** es la herramienta fundamental para entender la trigonometría más allá de los triángulos. Nos permite definir el seno y el coseno para cualquier ángulo, incluso los negativos o mayores a 360°.
+
+---
+
+## 🎯 ¿Qué vas a aprender?
+
+- Qué es el círculo unitario y por qué es tan importante.
+- Cómo las coordenadas $(x, y)$ se convierten en $(\cos\theta, \sin\theta)$.
+- Cómo identificar los valores de las funciones trigonométricas en los cuatro cuadrantes.
+- El valor del seno y coseno en los ángulos clave ($0°, 90°, 180°, ...$).
+
+---
+
+## 📋 Definición Fundamental
+
+> **Definición:** El círculo unitario es una circunferencia de **radio 1** centrada en el **origen $(0,0)$** del plano cartesiano.
+
+Su ecuación matemática es:
+
+$$
+x^2 + y^2 = 1
+$$
 
 <div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
@@ -14,37 +35,14 @@ El **círculo unitario** es la herramienta fundamental para extender las funcion
 
 ---
 
-## 📖 Definición
+## 🔄 De Coordenadas a Trigonometría
 
-> **Definición:** El círculo unitario es una circunferencia de **radio 1** centrada en el **origen** del plano cartesiano.
+Lo más poderoso del círculo unitario es que conecta la geometría (círculos) con la trigonometría. Si tomamos cualquier punto $P$ en el borde del círculo:
 
-Su ecuación es:
+1.  La coordenada **X** representa el **Coseno**.
+2.  La coordenada **Y** representa el **Seno**.
 
-$$
-x^2 + y^2 = 1
-$$
-
----
-
-## 📖 ¿Por qué radio 1?
-
-Cuando el radio es 1 (hipotenusa = 1):
-
-$$
-\cos\theta = \frac{x}{1} = x
-$$
-
-$$
-\sin\theta = \frac{y}{1} = y
-$$
-
-Así, las coordenadas $(x, y)$ de cualquier punto del círculo son directamente $(\cos\theta, \sin\theta)$.
-
----
-
-## 📖 El punto en el círculo unitario
-
-Para cualquier ángulo $\theta$, el punto correspondiente en el círculo unitario es:
+Para cualquier ángulo $\theta$:
 
 $$
 P = (\cos\theta, \sin\theta)
@@ -60,141 +58,282 @@ $$
 
 </div>
 
-### Los cuatro cuadrantes
+**¿Por qué funciona esto?**
+Imagina un triángulo rectángulo dentro del círculo.
+*   La hipotenusa es el radio = 1.
+*   El cateto adyacente es $x$.
+*   El cateto opuesto es $y$.
 
-| Cuadrante | Ángulo | $\cos\theta$ (x) | $\sin\theta$ (y) |
+Entonces:
+
+$$
+\cos\theta = \frac{\text{Adyacente}}{\text{Hipotenusa}} = \frac{x}{1} = x
+$$
+
+$$
+\sin\theta = \frac{\text{Opuesto}}{\text{Hipotenusa}} = \frac{y}{1} = y
+$$
+
+---
+
+## 📍 Puntos Clave: Los Ejes
+
+Si rotamos el punto a posiciones exactas sobre los ejes, podemos leer el seno y el coseno directamente de las coordenadas.
+
+| Ángulo | Punto $(x, y)$ | $\cos$ (x) | $\sin$ (y) |
+|--------|----------------|------------|------------|
+| **0°** | $(1, 0)$ | $1$ | $0$ |
+| **90°** | $(0, 1)$ | $0$ | $1$ |
+| **180°** | $(-1, 0)$ | $-1$ | $0$ |
+| **270°** | $(0, -1)$ | $0$ | $-1$ |
+| **360°** | $(1, 0)$ | $1$ | $0$ |
+
+---
+
+## 🧭 Los Cuatro Cuadrantes
+
+Dependiendo de dónde esté el punto, las coordenadas $x$ y $y$ cambian de signo. Esto determina el signo de las funciones trigonométricas.
+
+| Cuadrante | Ángulo | $x$ ($\cos\theta$) | $y$ ($\sin\theta$) |
 |-----------|--------|------------------|------------------|
-| I | 0° a 90° | + | + |
-| II | 90° a 180° | − | + |
-| III | 180° a 270° | − | − |
-| IV | 270° a 360° | + | − |
+| **I** | $0° < \theta < 90°$ | **+** | **+** |
+| **II** | $90° < \theta < 180°$ | **−** | **+** |
+| **III** | $180° < \theta < 270°$ | **−** | **−** |
+| **IV** | $270° < \theta < 360°$ | **+** | **−** |
 
 ---
 
-## 📖 Puntos importantes
+## 📐 Ángulos Notables (Cuadrante I)
 
-### Ángulos cuadrantales
+Memorizar estos tres puntos te ayudará a deducir el resto del círculo.
 
-| Ángulo | Punto | $\cos$ | $\sin$ |
-|--------|-------|--------|--------|
-| 0° (0) | (1, 0) | 1 | 0 |
-| 90° ($\frac{\pi}{2}$) | (0, 1) | 0 | 1 |
-| 180° ($\pi$) | (−1, 0) | −1 | 0 |
-| 270° ($\frac{3\pi}{2}$) | (0, −1) | 0 | −1 |
-| 360° (2$\pi$) | (1, 0) | 1 | 0 |
-
----
-
-## 📖 Ángulos notables en el círculo unitario
-
-### Primer cuadrante
-
-| Ángulo | Radianes | Punto ($\cos$, $\sin$) |
+| Ángulo | Radianes | Coordenadas $(\cos, \sin)$ |
 |--------|----------|------------------------|
-| 30° | $\frac{\pi}{6}$ | $(\frac{\sqrt{3}}{2}, \frac{1}{2})$ |
-| 45° | $\frac{\pi}{4}$ | $(\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2})$ |
-| 60° | $\frac{\pi}{3}$ | $(\frac{1}{2}, \frac{\sqrt{3}}{2})$ |
+| **30°** | $\pi/6$ | $(\frac{\sqrt{3}}{2}, \frac{1}{2})$ |
+| **45°** | $\pi/4$ | $(\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2})$ |
+| **60°** | $\pi/3$ | $(\frac{1}{2}, \frac{\sqrt{3}}{2})$ |
 
 ---
 
-## 📖 La tangente en el círculo unitario
+## 🧠 Identidad Fundamental
+
+Como el punto $(x, y)$ está siempre sobre el círculo, siempre debe cumplir la ecuación $x^2 + y^2 = 1$. Sustituyendo $x$ y $y$:
 
 $$
-\tan\theta = \frac{\sin\theta}{\cos\theta} = \frac{y}{x}
+(\cos\theta)^2 + (\sin\theta)^2 = 1
 $$
 
-Geométricamente, es la pendiente de la recta que va del origen al punto $P$.
-
----
-
-## 📖 Identidad fundamental
-
-Para cualquier punto en el círculo unitario:
+Esta es la identidad más famosa de la trigonometría:
 
 $$
 \cos^2\theta + \sin^2\theta = 1
 $$
 
-Esto es simplemente la ecuación del círculo: $x^2 + y^2 = 1$.
-
 ---
 
-## 📖 Medición de ángulos
+## 📝 Ejercicios de Práctica
 
-### En sentido antihorario (positivo)
-
-Los ángulos se miden desde el eje X positivo, girando en sentido contrario a las agujas del reloj.
-
-### En sentido horario (negativo)
-
-Un giro en el sentido de las agujas del reloj se considera negativo.
-
----
-
-## 📝 Ejercicios de práctica
-
-### Ejercicio 1: Identificar coordenadas
-
-¿Cuáles son las coordenadas del punto en el círculo unitario para...?
-
-1. $\theta = 0°$
-2. $\theta = 90°$
-3. $\theta = 180°$
+### Ejercicio 1
+¿Cuáles son las coordenadas del punto en el círculo unitario para $\theta = 0°$?
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. $(1, 0)$
-2. $(0, 1)$
-3. $(-1, 0)$
+**Razonamiento:**
+El ángulo de 0° está sobre el eje X positivo.
+La distancia es el radio, que vale 1.
 
-</details>
-
----
-
-### Ejercicio 2: Encontrar sin y cos
-
-Usando el círculo unitario, encuentra:
-
-1. $\sin 270°$
-2. $\cos 180°$
-3. $\sin 0°$
-
-<details>
-<summary><strong>Ver respuestas</strong></summary>
-
-1. $\sin 270° = -1$
-2. $\cos 180° = -1$
-3. $\sin 0° = 0$
-
-</details>
-
----
-
-### Ejercicio 3: Signos en cuadrantes
-
-¿En qué cuadrante están $\sin\theta$ y $\cos\theta$ ambos negativos?
-
-<details>
-<summary><strong>Ver respuesta</strong></summary>
-
-En el **Cuadrante III** (180° a 270°), ambos son negativos.
-
-</details>
-
----
-
-### Ejercicio 4: Punto en el círculo
-
-Un punto en el círculo unitario tiene coordenadas $(\frac{3}{5}, \frac{4}{5})$. ¿Cuánto valen $\sin\theta$ y $\cos\theta$?
-
-<details>
-<summary><strong>Ver respuesta</strong></summary>
+**Respuesta:**
 
 $$
-\cos\theta = \frac{3}{5}, \quad \sin\theta = \frac{4}{5}
+(1, 0)
 $$
 
 </details>
 
 ---
+
+### Ejercicio 2
+¿Cuáles son las coordenadas para $\theta = 90°$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+El ángulo de 90° apunta verticalmente hacia arriba (eje Y positivo).
+
+**Respuesta:**
+
+$$
+(0, 1)
+$$
+
+</details>
+
+---
+
+### Ejercicio 3
+Encuentra el valor exacto de $\sin(270°)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+270° apunta directamente hacia abajo (eje Y negativo).
+El punto es $(0, -1)$.
+El seno es la coordenada $y$.
+
+**Respuesta:**
+
+$$
+\sin(270°) = -1
+$$
+
+</details>
+
+---
+
+### Ejercicio 4
+Encuentra el valor exacto de $\cos(180°)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+180° apunta a la izquierda (eje X negativo).
+El punto es $(-1, 0)$.
+El coseno es la coordenada $x$.
+
+**Respuesta:**
+
+$$
+\cos(180°) = -1
+$$
+
+</details>
+
+---
+
+### Ejercicio 5
+¿En qué cuadrante están el seno y el coseno ambos negativos?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Necesitamos que $x < 0$ y $y < 0$.
+Esto ocurre abajo a la izquierda.
+
+**Respuesta:**
+**Cuadrante III**.
+
+</details>
+
+---
+
+### Ejercicio 6
+Un punto en el círculo tiene coordenadas $P = (-0.6, 0.8)$. ¿Cuánto valen el seno y el coseno?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Sabemos que $P = (\cos\theta, \sin\theta)$.
+Simplemente leemos las coordenadas.
+
+**Respuesta:**
+
+$$
+\cos\theta = -0.6, \quad \sin\theta = 0.8
+$$
+
+</details>
+
+---
+
+### Ejercicio 7
+Si el ángulo es de 45°, ¿cuáles son sus coordenadas $(x, y)$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Para 45°, los catetos son iguales y la hipotenusa es 1.
+Los valores son $(\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2})$.
+
+**Respuesta:**
+
+$$
+\left(\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}\right)
+$$
+
+</details>
+
+---
+
+### Ejercicio 8
+Determina si el punto $(\frac{1}{2}, \frac{1}{2})$ está sobre el círculo unitario.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Para estar en el círculo, debe cumplir $x^2 + y^2 = 1$.
+$(\frac{1}{2})^2 + (\frac{1}{2})^2 = \frac{1}{4} + \frac{1}{4} = \frac{2}{4} = 0.5$.
+Como $0.5 \neq 1$, no está en el círculo.
+
+**Respuesta:**
+**No**.
+
+</details>
+
+---
+
+### Ejercicio 9
+¿Cuál es el signo de $\cos(300°)$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+300° está en el Cuadrante IV (entre 270° y 360°).
+En este cuadrante, la $x$ es positiva y la $y$ es negativa.
+El coseno es $x$.
+
+**Respuesta:**
+**Positivo (+)**.
+
+</details>
+
+---
+
+### Ejercicio 10
+Si $\sin\theta = 1$, ¿cuánto vale $\cos\theta$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Si $\sin\theta = 1$, estamos en el punto más alto del círculo $(0, 1)$, que corresponde a 90°.
+La coordenada $x$ en ese punto es 0.
+
+**Respuesta:**
+
+$$
+\cos\theta = 0
+$$
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Concepto | Relación | Significado |
+| :--- | :---: | :--- |
+| **Coseno** | Coordenada **X** | Desplazamiento horizontal del punto |
+| **Seno** | Coordenada **Y** | Altura vertical del punto |
+| **Radio** | **1** | La hipotenusa siempre vale 1 |
+| **Ecuación** | $x^2+y^2=1$ | Identidad Pitagórica Fundamental |
+
+> **Conclusión:** No necesitas memorizar tablas infinitas. Si recuerdas que el Coseno es X y el Seno es Y en un círculo de radio 1, puedes deducir el valor de cualquier ángulo visualizando su posición.

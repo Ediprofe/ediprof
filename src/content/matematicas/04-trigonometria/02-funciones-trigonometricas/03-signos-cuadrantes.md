@@ -1,6 +1,24 @@
-# Signos en los Cuadrantes
+# **Signos en los Cuadrantes**
 
-El plano cartesiano se divide en cuatro **cuadrantes**. El signo de cada función trigonométrica depende del cuadrante donde está el ángulo.
+Ya sabemos que las funciones trigonométricas dependen de las coordenadas $(x, y)$. Como estas coordenadas cambian de signo según el cuadrante, ¡el seno, coseno y tangente también lo hacen! Aprender esto es vital para no equivocarse con un signo "menos" en medio de un problema largo.
+
+---
+
+## 🎯 ¿Qué vas a aprender?
+
+- Cómo el signo de las funciones depende de las coordenadas $x$ y $y$.
+- La regla mnemotécnica para recordar los signos rápidamente.
+- Cómo saber en qué cuadrante estás si conoces los signos del seno y coseno.
+- Cómo determinar el signo de ángulos mayores a 360° o negativos.
+
+---
+
+## 🗺️ Los Cuatro Cuadrantes
+
+El plano cartesiano se divide en cuatro zonas. Recuerda que:
+*   $\cos\theta$ sigue el signo de $x$.
+*   $\sin\theta$ sigue el signo de $y$.
+*   $\tan\theta$ es positiva si $x$ e $y$ tienen el **mismo** signo.
 
 <div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
@@ -12,159 +30,213 @@ El plano cartesiano se divide en cuatro **cuadrantes**. El signo de cada funció
 
 </div>
 
----
-
-## 📖 Los cuatro cuadrantes
-
-| Cuadrante | Rango de ángulos | Coordenadas |
-|-----------|------------------|-------------|
-| I | 0° a 90° | (+, +) |
-| II | 90° a 180° | (−, +) |
-| III | 180° a 270° | (−, −) |
-| IV | 270° a 360° | (+, −) |
+| Cuadrante | Ángulos | Signo $x$ (Cos) | Signo $y$ (Sen) | Signo $y/x$ (Tan) |
+|:---:|:---:|:---:|:---:|:---:|
+| **I** | $0°-90°$ | **+** | **+** | **+** |
+| **II** | $90°-180°$ | **−** | **+** | **−** |
+| **III** | $180°-270°$ | **−** | **−** | **+** |
+| **IV** | $270°-360°$ | **+** | **−** | **−** |
 
 ---
 
-## 📖 Signos de seno y coseno
+## 🧠 Mnemotecnia: "Todos Sin TaCos"
 
-Como $\cos\theta = x$ y $\sin\theta = y$:
+Para memorizarlo rápido, usamos una frase donde cada palabra indica qué función es **POSITIVA**.
 
-| Cuadrante | $\cos\theta$ | $\sin\theta$ |
-|-----------|--------------|--------------|
-| I | + | + |
-| II | − | + |
-| III | − | − |
-| IV | + | − |
+1.  **I - TODAS**: En el primer cuadrante, todas son positivas.
+2.  **II - SIN**: En el segundo, solo el **SENO** (y su inversa cosecante).
+3.  **III - TA**: En el tercero, solo la **TANGENTE** (y cotangente).
+4.  **IV - COS**: En el cuarto, solo el **COSENO** (y secante).
 
----
-
-## 📖 Signos de las seis funciones
-
-| Cuadrante | $\sin$ | $\cos$ | $\tan$ | $\csc$ | $\sec$ | $\cot$ |
-|-----------|--------|--------|--------|--------|--------|--------|
-| I | + | + | + | + | + | + |
-| II | + | − | − | + | − | − |
-| III | − | − | + | − | − | + |
-| IV | − | + | − | − | + | − |
+> **Frase clave:** "**TODAS** **SIN** **TA** **COS**"
 
 ---
 
-## 📖 Mnemotecnia: "Todos Saben Tomar Café"
+## 📝 Ejercicios de Práctica
 
-Para recordar qué funciones son **positivas** en cada cuadrante:
-
-| Cuadrante | Palabra | Funciones positivas |
-|-----------|---------|---------------------|
-| I | **T**odos | Todas (+) |
-| II | **S**aben | Seno y Cosecante |
-| III | **T**omar | Tangente y Cotangente |
-| IV | **C**afé | Coseno y Secante |
-
-### En inglés: "ASTC" o "All Students Take Calculus"
-
----
-
-## 📖 Ejemplo 1
-
-¿Cuál es el signo de $\sin 150°$?
-
-**Solución:**
-- 150° está en el Cuadrante II (90° a 180°)
-- En el Cuadrante II, seno es positivo
-- Por lo tanto, $\sin 150° > 0$
-
----
-
-## 📖 Ejemplo 2
-
-¿Cuál es el signo de $\cos 210°$?
-
-**Solución:**
-- 210° está en el Cuadrante III (180° a 270°)
-- En el Cuadrante III, coseno es negativo
-- Por lo tanto, $\cos 210° < 0$
-
----
-
-## 📖 Ejemplo 3
-
-¿Cuál es el signo de $\tan 315°$?
-
-**Solución:**
-- 315° está en el Cuadrante IV (270° a 360°)
-- En el Cuadrante IV, tangente es negativa
-- Por lo tanto, $\tan 315° < 0$
-
----
-
-## 📖 Identificar el cuadrante
-
-Si conocemos los signos, podemos identificar el cuadrante:
-
-| $\sin$ | $\cos$ | Cuadrante |
-|--------|--------|-----------|
-| + | + | I |
-| + | − | II |
-| − | − | III |
-| − | + | IV |
-
----
-
-## 📝 Ejercicios de práctica
-
-### Ejercicio 1: Identificar signo
-
-¿Cuál es el signo? (+) o (−)
-
-1. $\sin 200°$
-2. $\cos 340°$
-3. $\tan 100°$
-4. $\sin 280°$
+### Ejercicio 1
+Determina el signo de $\sin(100°)$.
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. 200° en QIII → $\sin$ es **−**
-2. 340° en QIV → $\cos$ es **+**
-3. 100° en QII → $\tan$ es **−**
-4. 280° en QIV → $\sin$ es **−**
+**Razonamiento:**
+100° está en el Cuadrante II (entre 90° y 180°).
+En el Cuadrante II, el seno es positivo.
+
+**Respuesta:**
+**Positivo (+)**
 
 </details>
 
 ---
 
-### Ejercicio 2: Identificar cuadrante
-
-¿En qué cuadrante está $\theta$ si...?
-
-1. $\sin\theta > 0$ y $\cos\theta < 0$
-2. $\sin\theta < 0$ y $\tan\theta > 0$
-3. $\cos\theta > 0$ y $\tan\theta < 0$
+### Ejercicio 2
+Determina el signo de $\cos(200°)$.
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. Cuadrante **II**
-2. Cuadrante **III**
-3. Cuadrante **IV**
+**Razonamiento:**
+200° está en el Cuadrante III (entre 180° y 270°).
+En el Cuadrante III, el coseno ($x$) es negativo.
+
+**Respuesta:**
+**Negativo (-)**
 
 </details>
 
 ---
 
-### Ejercicio 3: Verdadero o Falso
-
-1. En el cuadrante I, todas las funciones son positivas.
-2. La tangente tiene el mismo signo que el seno.
-3. En el cuadrante III, solo $\tan$ y $\cot$ son positivas.
+### Ejercicio 3
+Determina el signo de $\tan(300°)$.
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. **Verdadero**
-2. **Falso** - Tienen signos diferentes en QII y QIV
-3. **Verdadero**
+**Razonamiento:**
+300° está en el Cuadrante IV.
+Aquí $x$ es (+) y $y$ es (-), así que la división es negativa.
+
+**Respuesta:**
+**Negativo (-)**
 
 </details>
 
 ---
+
+### Ejercicio 4
+Si $\sin\theta > 0$ y $\cos\theta < 0$, ¿en qué cuadrante está $\theta$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Seno positivo = Arriba (I o II).
+Coseno negativo = Izquierda (II o III).
+La coincidencia es el Cuadrante II.
+
+**Respuesta:**
+**Cuadrante II**.
+
+</details>
+
+---
+
+### Ejercicio 5
+Si $\tan\theta > 0$ y $\sin\theta < 0$, ¿en qué cuadrante está $\theta$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Tangente positiva = Cuadrantes I o III.
+Seno negativo = Cuadrantes III o IV.
+Coinciden en el III.
+
+**Respuesta:**
+**Cuadrante III**.
+
+</details>
+
+---
+
+### Ejercicio 6
+Determine si $\sec(150°)$ es positiva o negativa.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+La secante tiene el mismo signo que el coseno.
+150° está en el Cuadrante II, donde el coseno es negativo.
+
+**Respuesta:**
+**Negativa (-)**
+
+</details>
+
+---
+
+### Ejercicio 7
+¿En qué cuadrante cae el ángulo $-45°$ y cuál es el signo de su seno?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+-45° significa girar 45 grados hacia abajo (horario). Cae en el Cuadrante IV.
+En el Cuadrante IV, el seno ($y$) es negativo.
+
+**Respuesta:**
+**Cuadrante IV, signo negativo**.
+
+</details>
+
+---
+
+### Ejercicio 8
+Determina el signo de $\sin(400°)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+400° es más de una vuelta completa.
+Restamos 360°: $400° - 360° = 40°$.
+40° está en el Cuadrante I. Todo es positivo allí.
+
+**Respuesta:**
+**Positivo (+)**
+
+</details>
+
+---
+
+### Ejercicio 9
+Determina el signo del producto $\csc(210°) \cdot \cos(210°)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+210° está en el Cuadrante III.
+*   Coseno en QIII es negativo.
+*   Cosecante en QIII (igual que seno) es negativo.
+*   Producto: $(-) \cdot (-) = (+)$.
+
+**Respuesta:**
+**Positivo (+)**
+
+</details>
+
+---
+
+### Ejercicio 10
+Si $\cos\theta > 0$ y $\tan\theta < 0$, ¿en qué cuadrante está $\theta$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Coseno positivo = Derecha (I o IV).
+Tangente negativa = Signos opuestos (II o IV).
+Coinciden en el IV.
+
+**Respuesta:**
+**Cuadrante IV**.
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Cuadrante | Positivas | Negativas | Mnemotecnia |
+| :---: | :---: | :---: | :---: |
+| **I** | Todas | Ninguna | **T**odas |
+| **II** | Seno, Cosecante | Coseno, Tan... | **S**in |
+| **III** | Tangente, Cotangente | Seno, Coseno... | **Ta** |
+| **IV** | Coseno, Secante | Seno, Tan... | **Cos** |
+
+> **Conclusión:** Antes de calcular el valor numérico, siempre determina primero el signo. ¡Es el error más común en los exámenes!

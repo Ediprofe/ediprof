@@ -167,11 +167,15 @@ Situaciones que requieren confirmación:
 
 Corrige las siguientes lecciones al estilo Ediprofe.
 
-http://localhost:4321/matematicas/trigonometria/trigonometria-triangulo-rectangulo/introduccion-trigonometria
+http://localhost:4321/matematicas/trigonometria/triangulos-oblicuangulos/ley-senos
 
-http://localhost:4321/matematicas/trigonometria/trigonometria-triangulo-rectangulo/razones-trigonometricas
+http://localhost:4321/matematicas/trigonometria/triangulos-oblicuangulos/ley-cosenos
 
-http://localhost:4321/matematicas/trigonometria/trigonometria-triangulo-rectangulo/seno-coseno-tangente
+http://localhost:4321/matematicas/trigonometria/triangulos-oblicuangulos/ley-tangentes
+
+http://localhost:4321/matematicas/trigonometria/triangulos-oblicuangulos/resolucion-casos
+
+http://localhost:4321/matematicas/trigonometria/triangulos-oblicuangulos/aplicaciones
 
 
 
@@ -179,8 +183,8 @@ http://localhost:4321/matematicas/trigonometria/trigonometria-triangulo-rectangu
 
 
 
-LAS IMAGENES QUE YA APARECEN EN CADA LECCIÓN ELIMÍNALAS!
 
+LAS IMAGENES QUE YA APARECEN EN CADA LECCIÓN NO LAS ELIMINES! ÚSALAS PARA MEJORAR LA LECCIÓN.
 Si encuentras un símbolo $ déjalo mejor como "pesos" porque hay un problema para renderizar eso en latex.
 
 ## PASO 1: LEE las referencias

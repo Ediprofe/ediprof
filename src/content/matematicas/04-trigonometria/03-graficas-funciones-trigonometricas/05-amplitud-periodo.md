@@ -1,30 +1,30 @@
-# Amplitud y Período
+# **Amplitud y Período**
 
-¿Qué pasa cuando pones un número delante del seno? ¿Y si multiplicas la $x$? Los parámetros **A** y **B** son como controles de volumen y velocidad de la onda trigonométrica.
-
----
-
-## 🎯 En esta lección aprenderás
-
-- Cómo **A** estira o comprime verticalmente (amplitud)
-- Cómo **B** estira o comprime horizontalmente (período)
-- Las fórmulas para calcular amplitud y período
-- A identificar estos valores en cualquier función
+¿Cómo hacemos que una onda sea más alta o más baja (como subir el volumen)? ¿Cómo hacemos que sea más rápida o más lenta (como acelerar una canción)? Los parámetros **Amplitud** ($A$) y **Período** ($T$) son los controles que nos permiten modificar la forma de las ondas.
 
 ---
 
-## 📋 Cheat Sheet
+## 🎯 ¿Qué vas a aprender?
 
-| Parámetro | Fórmula | Efecto |
-|-----------|---------|--------|
-| **Amplitud** | $\|A\|$ | Altura de la onda |
-| **Período** | $\frac{2\pi}{\|B\|}$ | Longitud de un ciclo |
+- Cómo cambiar la altura de la onda (**Amplitud**).
+- Cómo cambiar la velocidad de la onda (**Período**).
+- Cómo leer estos valores directamente de la ecuación.
+- Cómo escribir la ecuación de una onda si te dan sus características.
 
-Para la función generalizada:
+---
 
+## 🔊 Amplitud (A): El Volumen
+
+La amplitud es la distancia desde la línea central hasta la cima (o hasta el valle). Controla el **estiramiento vertical**.
+
+Para $y = A \sin(x)$:
 $$
-y = A \sin(Bx) \quad \text{o} \quad y = A \cos(Bx)
+\text{Amplitud} = |A|
 $$
+
+*   Si $A > 1$: La onda se hace más alta.
+*   Si $A < 1$: La onda se aplana.
+*   Si $A < 0$: La onda se invierte (efecto espejo), pero la amplitud sigue siendo positiva.
 
 <div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
@@ -38,46 +38,17 @@ $$
 
 ---
 
-## 📖 Amplitud: el "volumen" de la onda
+## ⏱️ Período (T): La Velocidad
 
-### Definición
-
-> **Amplitud** = distancia desde el eje central hasta el máximo (o hasta el mínimo).
-
-$$
-\text{Amplitud} = |A|
-$$
-
-### ¿Qué hace A?
-
-| Valor de A | Efecto visual | Rango resultante |
-|------------|---------------|------------------|
-| $A > 1$ | Estira verticalmente (onda más alta) | $[-A, A]$ |
-| $0 < A < 1$ | Comprime verticalmente (onda más baja) | $[-A, A]$ |
-| $A < 0$ | Refleja respecto al eje X (onda invertida) | $[A, -A]$ |
-
-### Ejemplos concretos
-
-| Función | Amplitud | Rango |
-|---------|----------|-------|
-| $\sin x$ | 1 | $[-1, 1]$ |
-| $2\sin x$ | 2 | $[-2, 2]$ |
-| $0.5\sin x$ | 0.5 | $[-0.5, 0.5]$ |
-| $-3\cos x$ | 3 | $[-3, 3]$ |
-
-> 💡 **Nota:** El signo negativo invierte la onda pero NO cambia la amplitud.
-
----
-
-## 📖 Período: la "longitud" de un ciclo
-
-### Definición
-
-> **Período** = distancia horizontal que recorre la función antes de repetirse.
+El período es la longitud de un ciclo completo. Controla el **estiramiento horizontal**.
+En la ecuación $y = \sin(Bx)$, el número $B$ es la **frecuencia angular** (qué tan rápido gira).
 
 $$
-\text{Período} = \frac{2\pi}{|B|}
+\text{Período no es B, sino:} \quad T = \frac{2\pi}{|B|}
 $$
+
+*   Si $B > 1$: La onda va más rápido y el período se acorta (comprimida).
+*   Si $B < 1$: La onda va más lento y el período se alarga (estirada).
 
 <div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
@@ -89,170 +60,171 @@ $$
 
 </div>
 
-### ¿Qué hace B?
-
-| Valor de B | Efecto | Período resultante |
-|------------|--------|-------------------|
-| $B > 1$ | Comprime horizontalmente (más ciclos) | $< 2\pi$ |
-| $0 < B < 1$ | Estira horizontalmente (menos ciclos) | $> 2\pi$ |
-| $B < 0$ | Refleja respecto al eje Y | $\frac{2\pi}{\|B\|}$ |
-
-### Ejemplos concretos
-
-| Función | B | Período |
-|---------|---|---------|
-| $\sin x$ | 1 | $2\pi$ |
-| $\sin 2x$ | 2 | $\pi$ |
-| $\sin \frac{x}{2}$ | 0.5 | $4\pi$ |
-| $\cos 3x$ | 3 | $\frac{2\pi}{3}$ |
-
----
-
-## 📖 Ejemplo completo
-
-Analicemos $y = 3\sin(2x)$:
-
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-    <strong style="color: #1e293b; font-size: 0.95rem; margin-left: 0.3rem;">y = 3sin(2x): Amplitud 3, Período π</strong>
-  </div>
-
-![Ejemplo: y = 3sin(2x)](/images/funciones/trigonometria/amplitud-periodo-ejemplo.svg)
-
-</div>
-
-### Análisis paso a paso
-
-| Parámetro | Valor | Cálculo |
-|-----------|-------|---------|
-| A | 3 | Amplitud = $\|3\| = 3$ |
-| B | 2 | Período = $\frac{2\pi}{2} = \pi$ |
-| Rango | $[-3, 3]$ | |
-
----
-
-## 📖 Para tangente y cotangente
-
-Las funciones tangente y cotangente tienen período base $\pi$ (no $2\pi$):
-
+**Nota Importante:** Para tangente y cotangente, la fórmula cambia porque su periodo natural es $\pi$.
 $$
-\text{Período de } \tan(Bx) = \frac{\pi}{|B|}
+T_{\tan} = \frac{\pi}{|B|}
 $$
 
-| Función | Período |
-|---------|---------|
-| $\tan x$ | $\pi$ |
-| $\tan 2x$ | $\frac{\pi}{2}$ |
-| $\tan \frac{x}{3}$ | $3\pi$ |
-
-> ⚠️ **No confundir:** $\tan$ y $\cot$ usan $\frac{\pi}{|B|}$, mientras que $\sin$, $\cos$, $\sec$ y $\csc$ usan $\frac{2\pi}{|B|}$.
-
 ---
 
-## 📖 Frecuencia
+## 📝 Ejercicios de Práctica
 
-La **frecuencia** es el recíproco del período:
-
-$$
-\text{Frecuencia} = \frac{1}{\text{Período}} = \frac{|B|}{2\pi}
-$$
-
-> 🔊 Indica cuántos ciclos completos hay en el intervalo $[0, 2\pi]$.
-
-| Función | Frecuencia |
-|---------|------------|
-| $\sin x$ | $\frac{1}{2\pi}$ (≈ 0.16 ciclos por radián) |
-| $\sin 2x$ | $\frac{2}{2\pi} = \frac{1}{\pi}$ (≈ 0.32 ciclos por radián) |
-
----
-
-## 🧠 Receta rápida
-
-Para $y = A\sin(Bx)$ o $y = A\cos(Bx)$:
-
-1. **Amplitud** = $|A|$
-2. **Período** = $\frac{2\pi}{|B|}$
-3. **Rango** = $[-|A|, |A|]$
-4. **Frecuencia** = $\frac{|B|}{2\pi}$
-
----
-
-## 📝 Ejercicios de práctica
-
-### Ejercicio 1: Identificar amplitud
-
-¿Cuál es la amplitud de cada función?
-
-1. $y = 4\sin x$
-2. $y = -2\cos x$
-3. $y = 0.3\sin x$
+### Ejercicio 1
+Encuentra la amplitud de la función $y = -5\sin(x)$.
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. Amplitud = $|4| = 4$
-2. Amplitud = $|-2| = 2$ (el signo negativo no afecta)
-3. Amplitud = $|0.3| = 0.3$
+**Razonamiento:**
+Amplitud = $|A| = |-5| = 5$.
+El signo negativo solo invierte la gráfica, no cambia la altura total.
 
+**Respuesta:** $\boxed{5}$
 </details>
 
 ---
 
-### Ejercicio 2: Calcular período
-
-¿Cuál es el período de cada función?
-
-1. $y = \sin 3x$
-2. $y = \cos \frac{x}{4}$
-3. $y = \tan 2x$
+### Ejercicio 2
+Calcula el período de la función $y = \cos(4x)$.
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. Período = $\frac{2\pi}{3}$
-2. Período = $\frac{2\pi}{1/4} = 8\pi$
-3. Período = $\frac{\pi}{2}$ (¡tangente usa $\frac{\pi}{|B|}$!)
+**Razonamiento:**
+Aquí $B = 4$.
+$T = \frac{2\pi}{B} = \frac{2\pi}{4} = \frac{\pi}{2}$.
 
+**Respuesta:** $\boxed{\frac{\pi}{2}}$
 </details>
 
 ---
 
-### Ejercicio 3: Escribir función
-
-Escribe una función seno con:
-
-1. Amplitud 5, período $2\pi$
-2. Amplitud 2, período $\pi$
+### Ejercicio 3
+Determina la amplitud y el período de $y = 3\sin(2x)$.
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. $y = 5\sin x$ 
-   - (A = 5, B = 1 da período $\frac{2\pi}{1} = 2\pi$)
+**Razonamiento:**
+$A = 3$, así que Amplitud = 3.
+$B = 2$, así que Periodo = $\frac{2\pi}{2} = \pi$.
 
-2. $y = 2\sin(2x)$ 
-   - (A = 2, B = 2 da período $\frac{2\pi}{2} = \pi$)
-
+**Respuesta:** Amplitud **3**, Período **$\pi$**.
 </details>
 
 ---
 
-### Ejercicio 4: Análisis completo
-
-Para $y = 4\cos(3x)$, determina:
-
-1. Amplitud
-2. Período
-3. Rango
+### Ejercicio 4
+¿Cuál es el período de la función $y = \tan(3x)$?
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. Amplitud = $|4| = 4$
-2. Período = $\frac{2\pi}{3}$
-3. Rango = $[-4, 4]$
+**Razonamiento:**
+Ojo: la tangente tiene periodo base $\pi$.
+$T = \frac{\pi}{3}$.
 
+**Respuesta:** $\boxed{\frac{\pi}{3}}$
 </details>
 
 ---
+
+### Ejercicio 5
+Escribe la ecuación de una función seno con amplitud 4 y período $\pi$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$A = 4$.
+Si $T = \pi$, necesitamos encontrar $B$.
+$\pi = \frac{2\pi}{B} \rightarrow B = 2$.
+
+**Respuesta:** $\boxed{y = 4\sin(2x)}$
+</details>
+
+---
+
+### Ejercicio 6
+Calcula la frecuencia (número de ciclos en $2\pi$) de $y = \cos(\frac{x}{2})$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$B = 1/2$. Esto significa que completa medio ciclo en $2\pi$.
+También: $T = \frac{2\pi}{0.5} = 4\pi$.
+
+**Respuesta:** **0.5 ciclos** (o media onda).
+</details>
+
+---
+
+### Ejercicio 7
+¿Cuál es el rango de la función $y = -2\cos(3x)$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+La amplitud es 2.
+La onda oscila entre -2 y 2.
+
+**Respuesta:** $\boxed{[-2, 2]}$
+</details>
+
+---
+
+### Ejercicio 8
+Si duplicas el valor de $B$, ¿qué le pasa al período?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$T$ es inversamente proporcional a $B$.
+Si $B$ se duplica, $T$ se reduce a la mitad.
+
+**Respuesta:** **Se reduce a la mitad**.
+</details>
+
+---
+
+### Ejercicio 9
+Encuentra el período de $y = \sin(\pi x)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$B = \pi$.
+$T = \frac{2\pi}{\pi} = 2$.
+
+**Respuesta:** $\boxed{2}$ (es un número entero, no radianes).
+</details>
+
+---
+
+### Ejercicio 10
+Compara $y = \sin(x)$ con $y = 2\sin(x)$. ¿Qué cambia?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+La amplitud se duplica. La onda es dos veces más alta.
+El período (velocidad) no cambia.
+
+**Respuesta:** **Se estira verticalmente**.
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Parámetro | Nombre | Fórmula | Efecto Visual |
+| :---: | :---: | :---: | :--- |
+| **A** | Amplitud | $\|A\|$ | Estiramiento Vertical (Altura) |
+| **B** | Frecuencia Angular | $T = 2\pi/B$ | Estiramiento Horizontal (Acordeón) |
+
+> **Conclusión:** $A$ controla la altura (Y), $B$ controla la anchura (X). ¡No los mezcles!
