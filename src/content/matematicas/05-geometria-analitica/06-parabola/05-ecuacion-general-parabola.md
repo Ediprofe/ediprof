@@ -1,286 +1,215 @@
-# Ecuación General de la Parábola
+# **Ecuación General de la Parábola**
 
-La **ecuación general** de la parábola es la forma expandida de la ecuación estándar. Es importante saber convertir entre ambas formas.
+Cuando expandes los binomios al cuadrado de la ecuación ordinaria, llegas a la Ecuación General. Es menos amigable visualmente (el vértice se esconde), pero es la forma estándar para representar cualquier parábola sin paréntesis.
 
 ---
 
 ## 🎯 ¿Qué vas a aprender?
 
-- Las formas generales de parábolas verticales y horizontales
-- Cómo identificar si una ecuación es una parábola
-- Conversión completa entre formas
+- Cómo reconocer una parábola general: $Ax^2 + Dy + ...$ o $Cy^2 + Dx + ...$
+- Cómo distinguir si es Vertical u Horizontal al ojo.
+- Cómo convertir de General a Ordinaria completando cuadrados.
 
 ---
 
-## 📖 Lo Esencial
+## 🔍 Identikit de la Parábola
 
-| Tipo | Forma general |
-|------|---------------|
-| Vertical | $x^2 + Dx + Ey + F = 0$ |
-| Horizontal | $y^2 + Dx + Ey + F = 0$ |
+En la ecuación general de las cónicas ($Ax^2 + Cy^2 + Dx + Ey + F = 0$), la parábola es única porque **solo una variable está al cuadrado**.
 
----
+*   **Vertical:** Tiene $x^2$ pero NO $y^2$. ($A \neq 0, C = 0$).
+    $$ Ax^2 + Dx + Ey + F = 0 $$
+*   **Horizontal:** Tiene $y^2$ pero NO $x^2$. ($C \neq 0, A = 0$).
+    $$ Cy^2 + Dx + Ey + F = 0 $$
 
-## 📖 Forma General de Parábola Vertical
-
-$$
-x^2 + Dx + Ey + F = 0
-$$
-
-(con $E \neq 0$)
-
-**Características:**
-- Solo $x$ está elevada al cuadrado
-- Hay un término en $y$ (pero no $y^2$)
-- No hay término $xy$
-
-### Conversión a forma estándar
-
-1. Agrupar términos en $x$
-2. Completar el cuadrado
-3. Despejar $(x - h)^2 = 4p(y - k)$
-
-### ⚙️ Ejemplo 1: Convertir a forma estándar
-
-$x^2 - 4x + 8y + 20 = 0$
-
-**Paso 1:** Agrupar:
-$$
-x^2 - 4x = -8y - 20
-$$
-
-**Paso 2:** Completar cuadrado:
-$$
-(x - 2)^2 - 4 = -8y - 20
-$$
-$$
-(x - 2)^2 = -8y - 16
-$$
-$$
-(x - 2)^2 = -8(y + 2)
-$$
-
-**Elementos:**
-- Vértice: $(2, -2)$
-- $p = 2$
-- Abre hacia abajo
+> **Regla Rápida:**
+> *   ¿Ves $x^2$? $\rightarrow$ Abre Arriba/Abajo.
+> *   ¿Ves $y^2$? $\rightarrow$ Abre Derecha/Izquierda.
 
 ---
 
-## 📖 Forma General de Parábola Horizontal
+## 🔄 De General a Ordinaria (El Retorno)
 
-$$
-y^2 + Dx + Ey + F = 0
-$$
+Para recuperar el vértice y el foco, debemos "empacar" la ecuación de nuevo usando **Completar Cuadrados**.
 
-(con $D \neq 0$)
-
-**Características:**
-- Solo $y$ está elevada al cuadrado
-- Hay un término en $x$ (pero no $x^2$)
-
-### ⚙️ Ejemplo 2: Parábola horizontal
-
-$y^2 - 6y - 4x + 1 = 0$
-
-**Agrupar:**
-$$
-y^2 - 6y = 4x - 1
-$$
-
-**Completar cuadrado:**
-$$
-(y - 3)^2 - 9 = 4x - 1
-$$
-$$
-(y - 3)^2 = 4x + 8
-$$
-$$
-(y - 3)^2 = 4(x + 2)
-$$
-
-**Elementos:**
-- Vértice: $(-2, 3)$
-- $p = 1$
-- Abre hacia la derecha
+**Algoritmo:**
+1.  Deja la variable cuadrática ($x^2, x$) a la izquierda. Pasa todo lo demás a la derecha.
+2.  Divide todo para que el coeficiente del cuadrado sea 1 (si es necesario).
+3.  Suma $(\text{mitad del lineal})^2$ a ambos lados.
+4.  Factoriza el trinomio a la izquierda y simplifica la derecha.
 
 ---
 
-## 📖 Identificar una Parábola
+## ⚙️ Ejemplos Resueltos
 
-Una ecuación de segundo grado representa una parábola si:
+### Ejemplo 1: Vertical Completa
+Convertir $x^2 - 4x - 8y + 12 = 0$.
+1.  **Separar:** $x^2 - 4x = 8y - 12$.
+2.  **Completar:** Mitad de -4 es -2. Cuadrado es 4.
+    $$ x^2 - 4x + \mathbf{4} = 8y - 12 + \mathbf{4} $$
+3.  **Factorizar:**
+    $$ (x - 2)^2 = 8y - 8 $$
+    $$ (x - 2)^2 = 8(y - 1) $$
+    *   Vértice $(2, 1)$, $p=2$ (Arriba).
 
-1. **Solo una variable está al cuadrado** ($x^2$ o $y^2$, pero no ambas)
-2. **No hay término** $xy$
-
-### ⚙️ Ejemplo 3: Identificar
-
-¿Es una parábola?
-
-a) $x^2 + y^2 - 4x + 6 = 0$ → **No** (ambas al cuadrado, es circunferencia)
-
-b) $x^2 - 4y + 3x - 5 = 0$ → **Sí** (solo $x^2$)
-
-c) $y^2 + 2xy - x + 1 = 0$ → **No** (tiene término $xy$)
-
-d) $y^2 - 8x + 4y + 12 = 0$ → **Sí** (solo $y^2$)
-
----
-
-## 📖 Conversión Completa: Ejemplo Detallado
-
-### ⚙️ Ejemplo 4: Análisis completo
-
-Analiza $x^2 + 6x - 4y + 5 = 0$:
-
-**Paso 1:** Identificar tipo → Parábola vertical (solo $x^2$)
-
-**Paso 2:** Agrupar:
-$$
-x^2 + 6x = 4y - 5
-$$
-
-**Paso 3:** Completar cuadrado:
-$$
-(x + 3)^2 - 9 = 4y - 5
-$$
-$$
-(x + 3)^2 = 4y + 4
-$$
-$$
-(x + 3)^2 = 4(y + 1)
-$$
-
-**Paso 4:** Identificar elementos:
-- Forma: $(x + 3)^2 = 4(y + 1)$
-- Vértice: $(-3, -1)$
-- $4p = 4 \Rightarrow p = 1$
-- Abre: hacia arriba
-- Foco: $(-3, 0)$
-- Directriz: $y = -2$
-
----
-
-## 📖 De Forma Estándar a Forma General
-
-El proceso inverso: expandir y simplificar.
-
-### ⚙️ Ejemplo 5: Expansión
-
-$(y - 2)^2 = -12(x + 1)$
-
-$$
-y^2 - 4y + 4 = -12x - 12
-$$
-$$
-y^2 - 4y + 12x + 4 + 12 = 0
-$$
-$$
-y^2 + 12x - 4y + 16 = 0
-$$
-
----
-
-## 📖 Fórmulas Directas
-
-Para $x^2 + Dx + Ey + F = 0$:
-
-- Vértice: $\left(-\frac{D}{2}, \frac{D^2 - 4F}{4E}\right)$
-- Parámetro: $4p = -E$ (si abre arriba/abajo)
-
-Para $y^2 + Dx + Ey + F = 0$:
-
-- Vértice: $\left(\frac{E^2 - 4F}{4D}, -\frac{E}{2}\right)$
-- Parámetro: $4p = -D$ (si abre derecha/izquierda)
-
----
-
-## 🔑 Resumen
-
-| Característica | Parábola vertical | Parábola horizontal |
-|----------------|-------------------|---------------------|
-| Variable al cuadrado | $x$ | $y$ |
-| Forma general | $x^2 + Dx + Ey + F = 0$ | $y^2 + Dx + Ey + F = 0$ |
-| Método | Completar cuadrado en $x$ | Completar cuadrado en $y$ |
+### Ejemplo 2: Horizontal Completa
+Convertir $y^2 + 6y + 8x - 7 = 0$.
+1.  **Separar:** $y^2 + 6y = -8x + 7$.
+2.  **Completar:** Mitad de 6 es 3. Cuadrado es 9.
+    $$ y^2 + 6y + \mathbf{9} = -8x + 7 + \mathbf{9} $$
+3.  **Factorizar:**
+    $$ (y + 3)^2 = -8x + 16 $$
+    $$ (y + 3)^2 = -8(x - 2) $$
+    *   Vértice $(2, -3)$, $p=-2$ (Izquierda).
 
 ---
 
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1
-Convierte $x^2 - 2x + 4y + 9 = 0$ a forma estándar.
+Identifica el tipo de $x^2 + 10y - 5 = 0$.
 
 <details>
 <summary>Ver solución</summary>
 
-$(x - 1)^2 - 1 = -4y - 9$
+**Razonamiento:**
+Solo $x$ al cuadrado.
 
-$(x - 1)^2 = -4y - 8$
-
-$(x - 1)^2 = -4(y + 2)$
-
-Vértice: $(1, -2)$, $p = 1$, abre abajo
-
+**Respuesta:** **Vertical**
 </details>
+
+---
 
 ### Ejercicio 2
-Convierte $y^2 + 8x + 6y - 7 = 0$ a forma estándar.
+Identifica el tipo de $3y^2 - 4x = 0$.
 
 <details>
 <summary>Ver solución</summary>
 
-$(y + 3)^2 - 9 = -8x + 7$
+**Razonamiento:**
+Solo $y$ al cuadrado.
 
-$(y + 3)^2 = -8x + 16$
-
-$(y + 3)^2 = -8(x - 2)$
-
-Vértice: $(2, -3)$, $p = 2$, abre izquierda
-
+**Respuesta:** **Horizontal**
 </details>
+
+---
 
 ### Ejercicio 3
-Encuentra el vértice y foco de $x^2 + 8x - 12y + 4 = 0$.
+Completa cuadrados para $x^2 + 10x$.
 
 <details>
 <summary>Ver solución</summary>
 
-$(x + 4)^2 - 16 = 12y - 4$
+**Razonamiento:**
+Mitad 5, cuadrado 25.
 
-$(x + 4)^2 = 12y + 12$
-
-$(x + 4)^2 = 12(y + 1)$
-
-Vértice: $(-4, -1)$
-
-$p = 3$
-
-Foco: $(-4, 2)$
-
+**Respuesta:** $\boxed{(x+5)^2 - 25}$
 </details>
+
+---
 
 ### Ejercicio 4
-Escribe en forma general: $(x + 2)^2 = 8(y - 3)$.
+Convierte $x^2 - 4y = 0$.
 
 <details>
 <summary>Ver solución</summary>
 
-$x^2 + 4x + 4 = 8y - 24$
+**Razonamiento:**
+$x^2 = 4y$. Vértice origen.
 
-$x^2 + 4x - 8y + 28 = 0$
-
+**Respuesta:** $\boxed{x^2 = 4y}$
 </details>
+
+---
 
 ### Ejercicio 5
-¿Cuál es la orientación de $y^2 - 10x + 4y + 14 = 0$?
+Convierte $y^2 - 2y - 4x + 1 = 0$.
 
 <details>
 <summary>Ver solución</summary>
 
-Es horizontal ($y^2$).
+**Razonamiento:**
+$y^2 - 2y + 1 = 4x \Rightarrow (y-1)^2 = 4x$.
 
-Completando: $(y + 2)^2 = 10x - 10 = 10(x - 1)$
-
-El coeficiente de $x$ es positivo, abre hacia la **derecha**.
-
+**Respuesta:** $\boxed{(y-1)^2 = 4x}$
 </details>
+
+---
+
+### Ejercicio 6
+Vértice de $x^2 + 2x - 4y - 3 = 0$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$(x+1)^2 = 4y + 4 = 4(y+1)$. $V(-1, -1)$.
+
+**Respuesta:** $\boxed{(-1, -1)}$
+</details>
+
+---
+
+### Ejercicio 7
+Si $A=0$ y $C=0$, ¿qué es?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Es una recta ecuación lineal.
+
+**Respuesta:** **Una Recta**
+</details>
+
+---
+
+### Ejercicio 8
+Expande $(x-3)^2 = 4y$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$x^2 - 6x + 9 - 4y = 0$.
+
+**Respuesta:** $\boxed{x^2 - 6x - 4y + 9 = 0}$
+</details>
+
+---
+
+### Ejercicio 9
+Lado recto de $2y^2 + 16x = 0$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Divide por 2: $y^2 = -8x$. LR es el valor absoluto del coenciente lineal.
+
+**Respuesta:** $\boxed{8}$
+</details>
+
+---
+
+### Ejercicio 10
+¿Hacia dónde abre $x^2 + y = 0$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$x^2 = -y$. Vertical hacia abajo.
+
+**Respuesta:** **Abajo**
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Variable Cuadrática | Tipo | Truco Visual |
+| :--- | :--- | :--- |
+| **$x^2$** | Vertical | Como brazos levantados o caídos. |
+| **$y^2$** | Horizontal | Como una C o una C invertida. |
+
+> **Conclusión:** La ecuación general es un rompecabezas desarmado. Tu trabajo es rearmarlo (completar cuadrados) para ver la imagen clara (el vértice).

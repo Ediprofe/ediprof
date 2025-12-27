@@ -1,274 +1,215 @@
-# Traslación de Parábolas
+# **Traslación de Parábolas (Vértice fuera del Origen)**
 
-Cuando el vértice de la parábola **no** está en el origen, trabajamos con parábolas **trasladadas**. Las ecuaciones se modifican para reflejar la posición del nuevo vértice.
+En el mundo real, las cosas no siempre están centradas en el $(0,0)$. Un puente colgante o un proyectil pueden tener su vértice en cualquier punto $(h, k)$. Aquí aprendemos a mover nuestras ecuaciones usando la técnica del "paréntesis trampa".
 
 ---
 
 ## 🎯 ¿Qué vas a aprender?
 
-- Ecuaciones de parábolas trasladadas
-- Cómo identificar el vértice y otros elementos
-- Cómo convertir entre formas
+- Cómo transformar $x^2$ en $(x-h)^2$ y $y^2$ en $(y-k)^2$.
+- Ecuaciones Ordinarias para vértices desplazados.
+- Cómo extraer el Vértice $(h, k)$ sin equivocarte con los signos.
 
 ---
 
-## 📖 Lo Esencial de Parábolas Trasladadas
+## 🚀 La Ecuación Trasladada
 
-| Orientación | Ecuación estándar | Vértice |
-|-------------|-------------------|---------|
-| Vertical arriba | $(x - h)^2 = 4p(y - k)$ | $(h, k)$ |
-| Vertical abajo | $(x - h)^2 = -4p(y - k)$ | $(h, k)$ |
-| Horizontal derecha | $(y - k)^2 = 4p(x - h)$ | $(h, k)$ |
-| Horizontal izquierda | $(y - k)^2 = -4p(x - h)$ | $(h, k)$ |
+Simplemente reemplazamos $x$ por $(x-h)$ y $y$ por $(y-k)$.
+*   **Vértice:** $V(h, k)$.
 
----
+### 1. Vertical (Eje paralelo a Y)
+La $X$ sigue siendo la cuadrática.
+$$ (x - h)^2 = 4p(y - k) $$
 
-## 📖 Parábola Vertical Trasladada
+### 2. Horizontal (Eje paralelo a X)
+La $Y$ sigue siendo la cuadrática.
+$$ (y - k)^2 = 4p(x - h) $$
 
 <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+    <strong style="color: #1e293b; font-size: 0.95rem; margin-left: 0.3rem;">Parábola Trasladada</strong>
+  </div>
   <img src="/images/geometria/analitica/parabola-trasladada.svg" alt="Parábola trasladada" style="width: 100%; height: auto;" />
 </div>
 
-**Ecuación:**
-$$
-(x - h)^2 = 4p(y - k)
-$$
-
-**Elementos:**
-- Vértice: $(h, k)$
-- Foco: $(h, k + p)$ (arriba) o $(h, k - p)$ (abajo)
-- Directriz: $y = k - p$ (arriba) o $y = k + p$ (abajo)
-- Eje: $x = h$
-
-### ⚙️ Ejemplo 1: Identificar elementos
-
-Para $(x - 2)^2 = 8(y + 3)$:
-
-- Vértice: $(2, -3)$
-- $4p = 8 \Rightarrow p = 2$
-- Abre hacia arriba (positivo)
-- Foco: $(2, -3 + 2) = (2, -1)$
-- Directriz: $y = -3 - 2 = -5$
-
-### ⚙️ Ejemplo 2: Construir la ecuación
-
-Vértice en $(1, 4)$, abre hacia abajo, $p = 3$.
-
-$$
-(x - 1)^2 = -4(3)(y - 4)
-$$
-
-$$
-(x - 1)^2 = -12(y - 4)
-$$
+> **¡Alerta de Signo!** Si ves $(x - 5)$, el vértice está en **+5**. Si ves $(y + 3)$, el vértice está en **-3**.
 
 ---
 
-## 📖 Parábola Horizontal Trasladada
+## ⚙️ Ejemplos Resueltos
 
-**Ecuación:**
-$$
-(y - k)^2 = 4p(x - h)
-$$
+### Ejemplo 1: Leyendo la Ecuación Vertical
+Dada $(x - 2)^2 = 12(y - 1)$.
+1.  **Orientación:** $X$ cuadrada $\to$ Vertical. Positivo $\to$ Arriba.
+2.  **Vértice:** $(h, k) = (2, 1)$.
+3.  **Parámetro:** $4p = 12 \Rightarrow p = 3$.
+4.  **Foco:** Desde el vértice, sube 3 unidades en Y.
+    $F = (2, 1+3) = (2, 4)$.
 
-**Elementos:**
-- Vértice: $(h, k)$
-- Foco: $(h + p, k)$ (derecha) o $(h - p, k)$ (izquierda)
-- Directriz: $x = h - p$ (derecha) o $x = h + p$ (izquierda)
-- Eje: $y = k$
+### Ejemplo 2: Leyendo la Ecuación Horizontal
+Dada $(y + 2)^2 = -8(x - 4)$.
+1.  **Orientación:** $Y$ cuadrada $\to$ Horizontal. Negativo $\to$ Izquierda.
+2.  **Vértice:** $(h, k) = (4, -2)$.
+3.  **Parámetro:** $4p = -8 \Rightarrow p = -2$.
+4.  **Foco:** Desde el vértice, muévete 2 a la izquierda en X.
+    $F = (4-2, -2) = (2, -2)$.
 
-### ⚙️ Ejemplo 3: Parábola horizontal trasladada
-
-Para $(y + 1)^2 = 16(x - 5)$:
-
-- Vértice: $(5, -1)$
-- $4p = 16 \Rightarrow p = 4$
-- Abre hacia la derecha
-- Foco: $(5 + 4, -1) = (9, -1)$
-- Directriz: $x = 5 - 4 = 1$
-
-### ⚙️ Ejemplo 4: Construir ecuación horizontal
-
-Vértice en $(-2, 3)$, foco en $(-2 - 5, 3) = (-7, 3)$.
-
-El foco está a la izquierda del vértice, entonces abre hacia la izquierda.
-
-$p = 5$
-
-$$
-(y - 3)^2 = -20(x + 2)
-$$
-
----
-
-## 📖 Conversión de Forma General a Estándar
-
-La forma general de una parábola vertical es:
-$$
-Ax^2 + Bx + Cy + D = 0
-$$
-
-Para convertir a forma estándar, completamos el cuadrado.
-
-### ⚙️ Ejemplo 5: Completar el cuadrado
-
-Convierte $x^2 - 6x - 8y + 1 = 0$ a forma estándar.
-
-**Paso 1:** Agrupar términos en $x$:
-$$
-x^2 - 6x = 8y - 1
-$$
-
-**Paso 2:** Completar el cuadrado:
-$$
-x^2 - 6x + 9 = 8y - 1 + 9
-$$
-$$
-(x - 3)^2 = 8y + 8
-$$
-$$
-(x - 3)^2 = 8(y + 1)
-$$
-
-**Resultado:**
-- Vértice: $(3, -1)$
-- $4p = 8 \Rightarrow p = 2$
-- Foco: $(3, 1)$
-
-### ⚙️ Ejemplo 6: Forma general horizontal
-
-Convierte $y^2 + 4y - 12x + 16 = 0$ a forma estándar.
-
-$$
-y^2 + 4y = 12x - 16
-$$
-$$
-y^2 + 4y + 4 = 12x - 16 + 4
-$$
-$$
-(y + 2)^2 = 12x - 12
-$$
-$$
-(y + 2)^2 = 12(x - 1)
-$$
-
-- Vértice: $(1, -2)$
-- $p = 3$
-- Foco: $(4, -2)$
-
----
-
-## 📖 De Forma Estándar a General
-
-Expande y simplifica.
-
-### ⚙️ Ejemplo 7: Expansión
-
-$(x + 1)^2 = -8(y - 2)$
-
-$$
-x^2 + 2x + 1 = -8y + 16
-$$
-$$
-x^2 + 2x + 8y + 1 - 16 = 0
-$$
-$$
-x^2 + 2x + 8y - 15 = 0
-$$
-
----
-
-## 🔑 Resumen
-
-| Aspecto | Cómo encontrarlo |
-|---------|-----------------|
-| Vértice | Directamente de $(h, k)$ |
-| Parámetro $p$ | De $4p$ en la ecuación |
-| Dirección | Signo y variable al cuadrado |
-| Foco | Vértice + $p$ en dirección de apertura |
+### Ejemplo 3: Escribiendo la Ecuación
+Parábola horizontal, Vértice en $(-3, 5)$, $p=4$ (derecha).
+1.  Forma: $(y - k)^2 = 4p(x - h)$.
+2.  Sustituir: $(y - 5)^2 = 16(x - (-3))$.
+3.  Resultado: $(y - 5)^2 = 16(x + 3)$.
 
 ---
 
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1
-Encuentra vértice, foco y directriz de $(x + 4)^2 = 12(y - 1)$.
+Vértice de $(x-3)^2 = 4(y+5)$.
 
 <details>
 <summary>Ver solución</summary>
 
-Vértice: $(-4, 1)$
+**Razonamiento:**
+Cambiar signos: $h=3, k=-5$.
 
-$p = 3$, abre hacia arriba
-
-Foco: $(-4, 4)$
-
-Directriz: $y = -2$
-
+**Respuesta:** $\boxed{(3, -5)}$
 </details>
+
+---
 
 ### Ejercicio 2
-Escribe la ecuación de la parábola con vértice $(3, 2)$ y foco $(3, 5)$.
+Parámetro $p$ de $(y-1)^2 = -20(x-2)$.
 
 <details>
 <summary>Ver solución</summary>
 
-Foco arriba del vértice → abre hacia arriba
+**Razonamiento:**
+$4p = -20$.
 
-$p = 5 - 2 = 3$
-
-$(x - 3)^2 = 12(y - 2)$
-
+**Respuesta:** $\boxed{-5}$
 </details>
+
+---
 
 ### Ejercicio 3
-Convierte $x^2 + 4x + 12y - 8 = 0$ a forma estándar.
+Ecuación Vertical, Vértice $(0,0)$ desplazado a $(1,1)$, $p=2$.
 
 <details>
 <summary>Ver solución</summary>
 
-$x^2 + 4x = -12y + 8$
+**Razonamiento:**
+$(x-1)^2 = 8(y-1)$.
 
-$(x + 2)^2 - 4 = -12y + 8$
-
-$(x + 2)^2 = -12y + 12$
-
-$(x + 2)^2 = -12(y - 1)$
-
-Vértice: $(-2, 1)$, $p = 3$, abre hacia abajo
-
+**Respuesta:** $\boxed{(x-1)^2 = 8(y-1)}$
 </details>
+
+---
 
 ### Ejercicio 4
-Encuentra los elementos de $(y - 5)^2 = -8(x + 2)$.
+Foco de $(x-2)^2 = 8y$.
 
 <details>
 <summary>Ver solución</summary>
 
-Vértice: $(-2, 5)$
+**Razonamiento:**
+$V(2,0)$, $p=2$ (Arriba). $F(2, 0+2)$.
 
-$p = 2$, abre hacia la izquierda
-
-Foco: $(-4, 5)$
-
-Directriz: $x = 0$
-
+**Respuesta:** $\boxed{(2, 2)}$
 </details>
+
+---
 
 ### Ejercicio 5
-Una parábola tiene directriz $y = 6$ y foco $(2, 2)$. Encuentra su ecuación.
+Directriz de $(y+2)^2 = 12(x-1)$.
 
 <details>
 <summary>Ver solución</summary>
 
-Vértice: punto medio entre foco y directriz
+**Razonamiento:**
+Horizontal Derecha. $V(1, -2)$. $p=3$. Directriz a la izquierda: $x = 1-3$.
 
-$k = \frac{2 + 6}{2} = 4$, $h = 2$
-
-Vértice: $(2, 4)$
-
-$p = 4 - 2 = 2$, abre hacia abajo
-
-$(x - 2)^2 = -8(y - 4)$
-
+**Respuesta:** $\boxed{x = -2}$
 </details>
+
+---
+
+### Ejercicio 6
+Orientación de $(y-3)^2 = -x$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Y cuadrada (Horizontal). Negativo (Izquierda).
+
+**Respuesta:** **Horizontal Izquierda**
+</details>
+
+---
+
+### Ejercicio 7
+Lado Recto de $(x+5)^2 = 10(y-5)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Coeficiente principal.
+
+**Respuesta:** $\boxed{10}$
+</details>
+
+---
+
+### Ejercicio 8
+Si el vértice es $(-2, -3)$, ¿cómo queda el paréntesis de x?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$x - (-2) = x+2$.
+
+**Respuesta:** $\boxed{(x+2)}$
+</details>
+
+---
+
+### Ejercicio 9
+Eje de simetría de $(y-4)^2 = 8(x+2)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Es horizontal, eje "y = constante del vértice".
+
+**Respuesta:** $\boxed{y = 4}$
+</details>
+
+---
+
+### Ejercicio 10
+Distancia focal de $(x-100)^2 = 16(y-200)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Distancia focal es $p$. $4p=16 \Rightarrow p=4$.
+
+**Respuesta:** $\boxed{4}$
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Ecuación | Tipo | Desplazamiento |
+| :--- | :--- | :--- |
+| **$(x-h)^2 = 4p(y-k)$** | Vertical | Foco se mueve en $Y$ |
+| **$(y-k)^2 = 4p(x-h)$** | Horizontal | Foco se mueve en $X$ |
+
+> **Conclusión:** No memorices fórmulas nuevas. Es la misma fórmula de siempre, pero el origen $(0,0)$ se "disfraza" como $(h,k)$.

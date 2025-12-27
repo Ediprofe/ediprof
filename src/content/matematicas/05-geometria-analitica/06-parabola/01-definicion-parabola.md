@@ -1,255 +1,220 @@
-# Definición de la Parábola
+# **Definición de la Parábola**
 
-La parábola es una de las **cónicas** más importantes. Aparece en la trayectoria de proyectiles, en antenas parabólicas, en los faros de automóviles y en muchas más aplicaciones. Estudiaremos su definición como lugar geométrico.
+Seguramente has visto antenas parabólicas o el vuelo de un balón de baloncesto. Esa curva perfecta y simétrica es una parábola. Matemáticamente, nace de una relación de distancias muy estricta, pero increíblemente útil en el mundo real.
 
 ---
 
 ## 🎯 ¿Qué vas a aprender?
 
-- La definición de parábola como lugar geométrico
-- Sus elementos fundamentales
-- La relación entre foco y directriz
+- La definición exacta como lugar geométrico: Distancia Foco = Distancia Directriz.
+- Los elementos clave: Foco, Directriz, Vértice, Eje y Lado Recto.
+- Por qué el "foco" se llama así (propiedad reflectiva).
 
 ---
 
-## 📖 Lo Esencial de la Parábola
+## 📖 El Club de la Equidistancia
+
+Una parábola es como un diplomático que intenta complacer a dos bandos opuestos.
+Sus puntos $P(x,y)$ siempre se mantienen a **la misma distancia** de:
+1.  Un punto fijo llamado **Foco ($F$)**.
+2.  Una recta fija llamada **Directriz ($\ell$)**.
 
 <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+    <strong style="color: #1e293b; font-size: 0.95rem; margin-left: 0.3rem;">Elementos de la Parábola</strong>
+  </div>
   <img src="/images/geometria/analitica/elementos-parabola.svg" alt="Elementos de la parábola" style="width: 100%; height: auto;" />
 </div>
 
-| Elemento | Símbolo | Descripción |
-|----------|---------|-------------|
-| Foco | $F$ | Punto fijo |
-| Directriz | $\ell$ | Recta fija |
-| Vértice | $V$ | Punto medio entre foco y directriz |
-| Eje | — | Recta perpendicular a la directriz que pasa por el foco |
-| Parámetro | $p$ | Distancia del vértice al foco (= del vértice a la directriz) |
-| Lado recto | $LR = 4p$ | Cuerda que pasa por el foco, perpendicular al eje |
+$$
+d(P, F) = d(P, \ell)
+$$
 
 ---
 
-## 📖 Definición como Lugar Geométrico
+## 📐 Elementos Fundamentales
 
-> Una **parábola** es el lugar geométrico de todos los puntos del plano que están a **igual distancia** de un punto fijo (foco) y de una recta fija (directriz).
-
-Matemáticamente, si $F$ es el foco y $\ell$ es la directriz:
-
-$$
-\text{Parábola} = \{P : d(P, F) = d(P, \ell)\}
-$$
-
-Esta propiedad se llama **propiedad focal** de la parábola.
-
----
-
-## 📖 Elementos de la Parábola
-
-### Foco (F)
-El **foco** es el punto fijo que define la parábola junto con la directriz.
-
-### Directriz (ℓ)
-La **directriz** es la recta fija. Todos los puntos de la parábola equidistan del foco y de esta recta.
-
-### Vértice (V)
-El **vértice** es el punto de la parábola más cercano a la directriz. Está exactamente a la mitad entre el foco y la directriz.
-
-### Eje de la parábola
-El **eje** es la recta que pasa por el foco y es perpendicular a la directriz. Es también el eje de simetría de la parábola.
-
-### Parámetro (p)
-El **parámetro** es la distancia del vértice al foco (o del vértice a la directriz). Se denota $p$.
-
-### Lado recto (LR)
-El **lado recto** (o latus rectum) es la cuerda que pasa por el foco y es perpendicular al eje. Su longitud es $LR = 4p$.
+| Elemento | Símbolo | Qué es en palabras sencillas |
+| :--- | :--- | :--- |
+| **Vértice** | $V$ | El punto donde la curva da la vuelta. Está justo a la mitad entre el Foco y la Directriz. |
+| **Foco** | $F$ | El "corazón" de la parábola. Está adentro de la curva. |
+| **Directriz** | $\ell$ | Una línea recta "espalda" de la parábola. La curva siempre le da la espalda. |
+| **Parámetro** | $p$ | La distancia del Vértice al Foco. (Es la unidad de medida clave). |
+| **Lado Recto** | $LR$ | El ancho de la parábola a la altura del foco. Mide exactamente $4p$. |
+| **Eje Focal** | - | La línea que corta la parábola en dos mitades iguales (pasa por V y F). |
 
 ---
 
-## 📖 Construcción de la Ecuación
+## ⚙️ Ejemplos Resueltos
 
-Sea una parábola con vértice en el origen y que abre hacia arriba:
-- Foco: $F(0, p)$
-- Directriz: $y = -p$
+### Ejemplo 1: Verificando la Definición
+Tenemos un Foco en $(0, 2)$ y Directriz $y = -2$.
+El Vértice debe estar en el punto medio: $(0, 0)$.
+La distancia $p$ (Vértice a Foco) es 2.
+El Lado Recto ($4p$) debe medir $4(2) = 8$.
 
-Para un punto $P(x, y)$ de la parábola:
-
-**Distancia al foco:**
-$$
-d(P, F) = \sqrt{x^2 + (y - p)^2}
-$$
-
-**Distancia a la directriz:**
-$$
-d(P, \ell) = |y + p|
-$$
-
-Por la definición:
-$$
-\sqrt{x^2 + (y - p)^2} = |y + p|
-$$
-
-Elevando al cuadrado (para $y \geq -p$):
-$$
-x^2 + (y - p)^2 = (y + p)^2
-$$
-
-$$
-x^2 + y^2 - 2py + p^2 = y^2 + 2py + p^2
-$$
-
-$$
-x^2 = 4py
-$$
-
-Esta es la **ecuación canónica** de la parábola vertical con vértice en el origen que abre hacia arriba.
-
----
-
-## 📖 Las Cuatro Orientaciones
-
-<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <img src="/images/geometria/analitica/cuatro-orientaciones-parabola.svg" alt="Las cuatro orientaciones de la parábola" style="width: 100%; height: auto;" />
-</div>
-
-Dependiendo de hacia dónde "abre" la parábola:
-
-| Orientación | Ecuación | Foco | Directriz |
-|-------------|----------|------|-----------|
-| Arriba | $x^2 = 4py$ | $(0, p)$ | $y = -p$ |
-| Abajo | $x^2 = -4py$ | $(0, -p)$ | $y = p$ |
-| Derecha | $y^2 = 4px$ | $(p, 0)$ | $x = -p$ |
-| Izquierda | $y^2 = -4px$ | $(-p, 0)$ | $x = p$ |
-
----
-
-## 📖 Ejemplos Resueltos
-
-### ⚙️ Ejemplo 1: Identificar elementos
-
-De $x^2 = 12y$, encuentra el foco, la directriz y el lado recto.
-
-**Comparamos con** $x^2 = 4py$:
-$$
-4p = 12 \Rightarrow p = 3
-$$
-
-- **Foco:** $(0, 3)$
-- **Directriz:** $y = -3$
-- **Lado recto:** $LR = 4(3) = 12$
-
-### ⚙️ Ejemplo 2: Parábola horizontal
-
-De $y^2 = 8x$, encuentra los elementos.
-
-**Comparamos con** $y^2 = 4px$:
-$$
-4p = 8 \Rightarrow p = 2
-$$
-
-- **Foco:** $(2, 0)$
-- **Directriz:** $x = -2$
-- **Abre hacia:** la derecha
-
-### ⚙️ Ejemplo 3: Signo negativo
-
-De $y^2 = -16x$, encuentra los elementos.
-
-**Comparamos con** $y^2 = -4px$:
-$$
-4p = 16 \Rightarrow p = 4
-$$
-
-- **Foco:** $(-4, 0)$
-- **Directriz:** $x = 4$
-- **Abre hacia:** la izquierda
-
----
-
-## 📖 Aplicaciones de la Parábola
-
-| Aplicación | Principio |
-|------------|-----------|
-| **Antenas parabólicas** | Los rayos paralelos se reflejan hacia el foco |
-| **Faros de auto** | La luz desde el foco se refleja en rayos paralelos |
-| **Puentes** | La forma parabólica distribuye el peso uniformemente |
-| **Proyectiles** | La trayectoria bajo gravedad es parabólica |
-
----
-
-## 🔑 Resumen
-
-| Concepto | Descripción |
-|----------|-------------|
-| Definición | $d(P, F) = d(P, \ell)$ |
-| Parámetro | $p$ = distancia vértice-foco |
-| Lado recto | $LR = 4p$ |
-| Eje | Línea de simetría |
+### Ejemplo 2: Distancias Iguales
+Considera la parábola $x^2 = 8y$.
+Foco en $(0, 2)$. Directriz $y = -2$.
+Tomemos un punto de la parábola, por ejemplo $(4, 2)$.
+1.  **Distancia al Foco $(0,2)$:**
+    $$ d = \sqrt{(4-0)^2 + (2-2)^2} = \sqrt{16} = 4 $$
+2.  **Distancia a la Directriz ($y=-2$):**
+    La altura del punto es 2. La directriz está en -2.
+    $$ d = |2 - (-2)| = |4| = 4 $$
+    ¡Son iguales! ($4=4$). El punto pertenece a la parábola.
 
 ---
 
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1
-Encuentra el foco y la directriz de $x^2 = 20y$.
+Si el Vértice está en el origen y el Foco es $(0, 3)$, ¿cuánto vale $p$?
 
 <details>
 <summary>Ver solución</summary>
 
-$4p = 20 \Rightarrow p = 5$
+**Razonamiento:**
+$p$ es la distancia $V \to F$.
 
-Foco: $(0, 5)$
-Directriz: $y = -5$
-
+**Respuesta:** $\boxed{3}$
 </details>
+
+---
 
 ### Ejercicio 2
-Encuentra los elementos de $y^2 = -24x$.
+Si $p=5$, ¿cuánto mide el Lado Recto?
 
 <details>
 <summary>Ver solución</summary>
 
-$4p = 24 \Rightarrow p = 6$
+**Razonamiento:**
+$LR = 4p = 4(5)$.
 
-Foco: $(-6, 0)$
-Directriz: $x = 6$
-Abre: hacia la izquierda
-
+**Respuesta:** $\boxed{20}$
 </details>
+
+---
 
 ### Ejercicio 3
-Escribe la ecuación de la parábola con vértice en el origen, eje vertical y foco en $(0, 4)$.
+Define "Directriz" con tus palabras.
 
 <details>
 <summary>Ver solución</summary>
 
-$p = 4$ (abre hacia arriba)
+**Razonamiento:**
+Es la recta fija exterior de la cual escapan los puntos.
 
-$x^2 = 4(4)y = 16y$
-
+**Respuesta:** **Recta fija equidistante a la parábola**
 </details>
+
+---
 
 ### Ejercicio 4
-¿Cuál es el lado recto de $x^2 = 6y$?
+Si el Foco está en $(0, -4)$ y $V(0,0)$, ¿hacia dónde abre la parábola?
 
 <details>
 <summary>Ver solución</summary>
 
-$4p = 6 \Rightarrow p = 1.5$
+**Razonamiento:**
+El foco "jala" a la curva. Si está abajo del vértice, abre abajo.
 
-$LR = 4p = 6$
-
+**Respuesta:** **Hacia abajo**
 </details>
+
+---
 
 ### Ejercicio 5
-Una parábola horizontal tiene directriz $x = 3$ y vértice en el origen. Encuentra su ecuación.
+Calcula la distancia del Vértice a la Directriz si $p=2.5$.
 
 <details>
 <summary>Ver solución</summary>
 
-La directriz está a la derecha del vértice, así que la parábola abre hacia la izquierda.
+**Razonamiento:**
+Es la misma que al foco, $p$.
 
-$p = 3$
-
-$y^2 = -4(3)x = -12x$
-
+**Respuesta:** $\boxed{2.5}$
 </details>
+
+---
+
+### Ejercicio 6
+¿El Foco puede estar sobre la Directriz?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+No, la parábola colapsaría en una recta.
+
+**Respuesta:** **No**
+</details>
+
+---
+
+### Ejercicio 7
+Si el Lado Recto mide 12, halla $p$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$4p = 12 \Rightarrow p = 3$.
+
+**Respuesta:** $\boxed{3}$
+</details>
+
+---
+
+### Ejercicio 8
+¿Cuál es la excentricidad de una parábola?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Por definición es siempre 1. (Distancia Foco / Distancia Directriz = 1).
+
+**Respuesta:** $\boxed{1}$
+</details>
+
+---
+
+### Ejercicio 9
+Si la directriz es vertical $x=-3$, ¿cómo es el eje de la parábola?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+El eje es perpendicular a la directriz.
+
+**Respuesta:** **Horizontal**
+</details>
+
+---
+
+### Ejercicio 10
+Distancia total desde el Foco a un extremo del Lado Recto.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+El Lado Recto total es $4p$. La mitad (del foco al extremo) es $2p$.
+
+**Respuesta:** $\boxed{2p}$
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Elemento | Definición Clave | Fórmula Relacionada |
+| :--- | :--- | :--- |
+| **Definición** | Equidistancia | $d(P,F) = d(P, \ell)$ |
+| **Parámetro $p$** | Unidad base | Distancia $V \to F$ |
+| **Ancho** | Lado Recto | $4p$ |
+
+> **Conclusión:** La parábola no es solo una curva bonita. Es una máquina geométrica perfecta que convierte líneas rectas (directriz) en un punto focal concentrado. Por eso tu antena satelital tiene esa forma.

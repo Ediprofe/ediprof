@@ -1,129 +1,221 @@
-# Definición de la Elipse
+# **Definición de la Elipse**
 
-La elipse es una curva cerrada que tiene dos focos. Aparece en las órbitas de los planetas, en los arcos de estadios y en sistemas ópticos. Es una de las cuatro cónicas fundamentales.
+Si estiras un círculo o aplastas una pelota de goma, obtienes una elipse. Es la ruta que siguen la Tierra alrededor del Sol y la Luna alrededor de la Tierra. A diferencia del círculo (que tiene un centro), la elipse tiene **dos corazones** llamados focos.
 
 ---
 
 ## 🎯 ¿Qué vas a aprender?
 
-- La definición de elipse como lugar geométrico
-- Sus elementos fundamentales
-- La relación entre los parámetros $a$, $b$ y $c$
+- La definición del jardinero: Distancia 1 + Distancia 2 = Constante.
+- Los elementos "sagrados": $a$ (mayor), $b$ (menor), $c$ (focal).
+- La relación pitagórica mágica: $a^2 = b^2 + c^2$.
 
 ---
 
-## 📖 Lo Esencial
+## 🧵 La Definición del Jardinero
 
-| Elemento | Símbolo | Descripción |
-|----------|---------|-------------|
-| Focos | $F_1$, $F_2$ | Dos puntos fijos |
-| Centro | $C$ | Punto medio entre los focos |
-| Eje mayor | $2a$ | El eje más largo |
-| Eje menor | $2b$ | El eje más corto |
-| Distancia focal | $2c$ | Distancia entre focos |
-| Vértices | $V_1, V_2, V_3, V_4$ | Extremos de los ejes |
-| Relación | $a^2 = b^2 + c^2$ | Siempre $a > b > 0$ |
+Imagina que clavas dos estacas en el suelo (los **Focos**), atas una cuerda holgada entre ellas y estiras la cuerda con un lápiz mientras dibujas alrededor. La figura que se forma es una **Elipse**.
+Matemáticamente:
+$$ d(P, F_1) + d(P, F_2) = 2a $$
+La suma de las distancias a los dos focos es siempre igual a la longitud del eje largo ($2a$).
 
----
-
-## 📖 Definición
-
-> Una **elipse** es el lugar geométrico de todos los puntos del plano cuya **suma de distancias a dos puntos fijos** (focos) es constante.
-
-$$
-\text{Elipse} = \{P : d(P, F_1) + d(P, F_2) = 2a\}
-$$
-
-La constante $2a$ es la longitud del **eje mayor**.
+<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+    <strong style="color: #1e293b; font-size: 0.95rem; margin-left: 0.3rem;">Elementos de la Elipse</strong>
+  </div>
+  <img src="/images/geometria/analitica/elementos-elipse.svg" alt="Elementos de la elipse" style="width: 100%; height: auto;" />
+</div>
 
 ---
 
-## 📖 Elementos
+## 📐 El Triángulo Sagrado ($a, b, c$)
 
-### Focos ($F_1$ y $F_2$)
-Los dos puntos fijos que definen la elipse. La distancia entre ellos es $2c$.
+En la elipse, tres longitudes gobiernan todo. Forman un triángulo rectángulo clave:
 
-### Centro ($C$)
-El punto medio entre los focos. Es el centro de simetría de la elipse.
+| Letra | Nombre | Significado | Relación Visual |
+| :--- | :--- | :--- | :--- |
+| **$a$** | Semieje Mayor | La mitad del largo total. | Es la Hipotenusa (la más larga). |
+| **$b$** | Semieje Menor | La mitad del ancho total. | Un cateto. |
+| **$c$** | Semidistancia Focal | Del centro a un foco. | El otro cateto. |
 
-### Eje mayor
-El segmento de longitud $2a$ que pasa por los focos. Sus extremos son los **vértices principales**.
-
-### Eje menor
-El segmento de longitud $2b$ perpendicular al eje mayor que pasa por el centro.
-
-### Relación fundamental
-$$
-a^2 = b^2 + c^2
-$$
-
-o equivalentemente: $c^2 = a^2 - b^2$
-
-> 💡 El eje mayor ($a$) siempre es el más grande. Para elipse, siempre $a > b$.
+**La Fórmula Maestra:**
+$$ a^2 = b^2 + c^2 $$
+*(Ojo: Aquí $a$ es la hipotenusa, a diferencia de Pitágoras estándar donde suele ser $c$. En la elipse, $a$ siempre gana).*
 
 ---
 
-## 📖 Excentricidad
+## ⚙️ Ejemplos Resueltos
 
-La **excentricidad** $e$ mide qué tan "alargada" es la elipse:
+### Ejemplo 1: Hallar $c$
+Una elipse mide 10 de largo ($2a=10$) y 8 de ancho ($2b=8$). ¿Dónde están los focos?
+1.  $a = 5$.
+2.  $b = 4$.
+3.  $c = \sqrt{a^2 - b^2} = \sqrt{25 - 16} = \sqrt{9} = 3$.
+    Los focos están a 3 unidades del centro.
 
-$$
-e = \frac{c}{a}
-$$
+### Ejemplo 2: Excentricidad ($e$)
+Con los datos anteriores ($a=5, c=3$).
+$$ e = \frac{c}{a} = \frac{3}{5} = 0.6 $$
+La excentricidad nos dice qué tan "achatada" está. 0 es círculo, 0.99 es casi una línea.
 
-| Valor de $e$ | Forma |
-|--------------|-------|
-| $e \to 0$ | Casi circular |
-| $e \to 1$ | Muy alargada |
-
-Como $c < a$, siempre $0 < e < 1$.
-
----
-
-## 📖 Ejemplos
-
-### ⚙️ Ejemplo 1
-
-Si $a = 5$ y $b = 3$, encuentra $c$ y la excentricidad.
-
-$$
-c = \sqrt{a^2 - b^2} = \sqrt{25 - 9} = 4
-$$
-
-$$
-e = \frac{4}{5} = 0.8
-$$
-
-### ⚙️ Ejemplo 2
-
-Una elipse tiene focos en $(\pm 4, 0)$ y la suma de distancias a los focos es 10. Encuentra $a$, $b$ y $c$.
-
-- $2c = 8 \Rightarrow c = 4$
-- $2a = 10 \Rightarrow a = 5$
-- $b = \sqrt{25 - 16} = 3$
+### Ejemplo 3: Verificar un Punto
+Si los focos están en $(\pm 3, 0)$ y $2a = 10$. ¿El punto $(0, 4)$ pertenece?
+1.  Distancia $F_1(-3,0)$ a $P(0,4)$: $\sqrt{3^2+4^2}=5$.
+2.  Distancia $F_2(3,0)$ a $P(0,4)$: $\sqrt{(-3)^2+4^2}=5$.
+3.  Suma: $5+5=10$.
+    ¡Sí! La suma es 10, que es igual a $2a$. El punto pertenece.
 
 ---
 
-## 📝 Ejercicios
+## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1
-Si $a = 13$ y $c = 5$, encuentra $b$.
+Si $a=13$ y $c=5$, halla $b$.
 
 <details>
 <summary>Ver solución</summary>
 
-$b = \sqrt{169 - 25} = \sqrt{144} = 12$
+**Razonamiento:**
+$b = \sqrt{169 - 25} = 12$.
 
+**Respuesta:** $\boxed{12}$
 </details>
+
+---
 
 ### Ejercicio 2
-¿Cuál es la excentricidad si $a = 10$ y $b = 6$?
+Si $2a = 20$, ¿cuánto vale la "Cuerda" del jardinero?
 
 <details>
 <summary>Ver solución</summary>
 
-$c = \sqrt{100 - 36} = 8$
+**Razonamiento:**
+La longitud de la cuerda es la constante $2a$.
 
-$e = 8/10 = 0.8$
-
+**Respuesta:** $\boxed{20}$
 </details>
+
+---
+
+### Ejercicio 3
+Excentricidad si $a=b$ (Círculo).
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Si $a=b$, entonces $c=0$. $e = 0/a = 0$.
+
+**Respuesta:** $\boxed{0}$
+</details>
+
+---
+
+### Ejercicio 4
+Eje Menor si $a=10, c=8$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$b=6$. Eje Menor $= 2b = 12$.
+
+**Respuesta:** $\boxed{12}$
+</details>
+
+---
+
+### Ejercicio 5
+¿Puede ser $c > a$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+No, la hipotenusa $a$ siempre es mayor.
+
+**Respuesta:** **No**
+</details>
+
+---
+
+### Ejercicio 6
+Distancia entre focos si $c=4$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$2c = 8$.
+
+**Respuesta:** $\boxed{8}$
+</details>
+
+---
+
+### Ejercicio 7
+Si los vértices están en $\pm 5$ y focos en $\pm 4$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$a=5, c=4 \Rightarrow b=3$.
+
+**Respuesta:** **b = 3**
+</details>
+
+---
+
+### Ejercicio 8
+Área de una elipse con $a=2, b=1$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Fórmula extra: $A = \pi a b$.
+
+**Respuesta:** $\boxed{2\pi}$
+</details>
+
+---
+
+### Ejercicio 9
+Definición de Lado Recto en Elipses.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Cuerda perpendicular al eje mayor que pasa por el foco. $2b^2/a$.
+
+**Respuesta:** $\boxed{2b^2/a}$
+</details>
+
+---
+
+### Ejercicio 10
+Si $e = 1$, ¿qué figura es?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Ya no es elipse, es parábola (o segmento). Límite plano.
+
+**Respuesta:** **Parábola (o degenerada)**
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Letra | Rol Geométrico | Fórmula Maestra |
+| :--- | :--- | :--- |
+| **$a$** | El jefe (Hipotenusa). Distancia Centro $\to$ Vertice lejano. | $a^2 = b^2+c^2$ |
+| **$b$** | El ancho (Cateto). Distancia Centro $\to$ Vertice cercano. | |
+| **$c$** | El foco (Cateto). Distancia Centro $\to$ Foco. | |
+
+> **Conclusión:** La elipse es la madre de las órbitas. Sin esta relación $a, b, c$, no podríamos calcular viajes espaciales ni entender las estaciones del año.

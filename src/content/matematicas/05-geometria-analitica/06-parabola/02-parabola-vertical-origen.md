@@ -1,248 +1,223 @@
-# Parábola Vertical con Vértice en el Origen
+# **Parábola Vertical con Vértice en el Origen**
 
-Una parábola **vertical** tiene su eje paralelo al eje Y. Cuando el vértice está en el origen, las ecuaciones toman su forma más simple.
+Las parábolas verticales son las más familiares: piensa en el chorro de una fuente o en lanzar una piedra al aire. Suben y bajan (o bajan y suben). Cuando su punto más bajo (o alto) está exactamente en el origen $(0,0)$, su matemática se vuelve elegantemente simple.
 
 ---
 
 ## 🎯 ¿Qué vas a aprender?
 
-- Ecuaciones de parábolas verticales con vértice en el origen
-- Cómo identificar si abre hacia arriba o hacia abajo
-- Cómo encontrar todos los elementos
+- Las dos formas: $x^2 = 4py$ (Carita Feliz) y $x^2 = -4py$ (Carita Triste).
+- Cómo encontrar el Foco y la Directriz solo mirando la ecuación.
+- Cómo dibujar la parábola rápidamente usando el Lado Recto.
 
 ---
 
-## 📖 Lo Esencial
+## 🚀 La Ecuación Simplificada
 
-| Dirección | Ecuación | Foco | Directriz | Condición |
-|-----------|----------|------|-----------|-----------|
-| Arriba ↑ | $x^2 = 4py$ | $(0, p)$ | $y = -p$ | $p > 0$ |
-| Abajo ↓ | $x^2 = -4py$ | $(0, -p)$ | $y = p$ | $p > 0$ |
+Si el vértice está en $(0,0)$ y el eje es vertical (Eje Y), la ecuación es:
 
----
+$$ x^2 = 4py $$
 
-## 📖 Parábola que Abre Hacia Arriba
+Aquí, el signo de $p$ decide todo:
+*   **Si $p > 0$:** Abre hacia **ARRIBA** (∪). El foco está en la parte positiva de Y.
+*   **Si $p < 0$:** Abre hacia **ABAJO** (∩). El foco está en la parte negativa de Y.
 
 <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+    <strong style="color: #1e293b; font-size: 0.95rem; margin-left: 0.3rem;">Parábola Vertical</strong>
+  </div>
   <img src="/images/geometria/analitica/parabola-vertical-arriba.svg" alt="Parábola vertical que abre hacia arriba" style="width: 100%; height: auto;" />
 </div>
 
-**Ecuación:**
-$$
-x^2 = 4py \quad (p > 0)
-$$
+---
 
-**Elementos:**
-- Vértice: $(0, 0)$
-- Foco: $(0, p)$
-- Directriz: $y = -p$
-- Eje: el eje Y ($x = 0$)
-- Lado recto: $4p$
+## 🔍 Análisis de Elementos
 
-### ⚙️ Ejemplo 1: Identificar elementos
+Desde la ecuación $x^2 = 4py$:
 
-Para $x^2 = 8y$:
-
-$4p = 8 \Rightarrow p = 2$
-
-- Vértice: $(0, 0)$
-- Foco: $(0, 2)$
-- Directriz: $y = -2$
-- Lado recto: $8$
-
-### ⚙️ Ejemplo 2: Construir la ecuación
-
-Una parábola vertical tiene vértice en el origen y foco en $(0, 5)$.
-
-Como el foco está arriba del vértice, abre hacia arriba.
-
-$p = 5$
-
-$$
-x^2 = 4(5)y = 20y
-$$
+1.  **Vértice:** $(0, 0)$.
+2.  **Foco:** $(0, p)$. (Está sobre el eje Y).
+3.  **Directriz:** $y = -p$. (Recta horizontal opuesta al foco).
+4.  **Lado Recto:** Longitud absoluta $|4p|$.
 
 ---
 
-## 📖 Parábola que Abre Hacia Abajo
+## ⚙️ Ejemplos Resueltos
 
-<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <img src="/images/geometria/analitica/parabola-vertical-abajo.svg" alt="Parábola vertical que abre hacia abajo" style="width: 100%; height: auto;" />
-</div>
+### Ejemplo 1: Hacia Arriba
+Dada la ecuación $x^2 = 12y$.
+1.  **Identificar 4p:** El número que acompaña a la $y$ es 12.
+    $$ 4p = 12 \Rightarrow p = 3 $$
+2.  **Foco:** Como es vertical y $p$ positivo $\to (0, 3)$.
+3.  **Directriz:** $y = -3$.
+4.  **Lado Recto:** 12 unidades.
 
-**Ecuación:**
-$$
-x^2 = -4py \quad (p > 0)
-$$
+### Ejemplo 2: Hacia Abajo
+Dada la ecuación $x^2 = -8y$.
+1.  **Identificar 4p:** El coeficiente es -8.
+    $$ 4p = -8 \Rightarrow p = -2 $$
+2.  **Foco:** $(0, -2)$. (Está abajo).
+3.  **Directriz:** $y = -(-2) \Rightarrow y = 2$.
+4.  **Lado Recto:** $|-8| = 8$ unidades.
 
-**Elementos:**
-- Vértice: $(0, 0)$
-- Foco: $(0, -p)$
-- Directriz: $y = p$
-- Eje: el eje Y
-- Lado recto: $4p$
-
-### ⚙️ Ejemplo 3: Parábola hacia abajo
-
-Para $x^2 = -12y$:
-
-$4p = 12 \Rightarrow p = 3$
-
-- Vértice: $(0, 0)$
-- Foco: $(0, -3)$
-- Directriz: $y = 3$
-
-### ⚙️ Ejemplo 4: Dada la directriz
-
-Una parábola tiene vértice en el origen y directriz $y = 4$.
-
-La directriz está arriba del vértice, entonces la parábola abre hacia abajo.
-
-$p = 4$
-
-$$
-x^2 = -4(4)y = -16y
-$$
-
----
-
-## 📖 Puntos del Lado Recto
-
-Los extremos del lado recto son puntos de la parábola que están sobre la recta horizontal que pasa por el foco.
-
-Para $x^2 = 4py$ (abre hacia arriba):
-- El foco está en $(0, p)$
-- Los puntos del lado recto están en $y = p$
-- Sustituyendo: $x^2 = 4p \cdot p = 4p^2$, entonces $x = \pm 2p$
-
-**Extremos del lado recto:** $(-2p, p)$ y $(2p, p)$
-
-### ⚙️ Ejemplo 5: Lado recto
-
-Para $x^2 = 16y$:
-
-$4p = 16 \Rightarrow p = 4$
-
-- Foco: $(0, 4)$
-- Extremos del lado recto: $(-8, 4)$ y $(8, 4)$
-- Longitud: $16$
-
----
-
-## 📖 De la Ecuación a la Gráfica
-
-**Pasos para graficar:**
-
-1. Identificar $4p$ y calcular $p$
-2. Determinar si abre arriba ($+$) o abajo ($-$)
-3. Marcar vértice, foco y directriz
-4. Marcar los extremos del lado recto
-5. Dibujar la parábola pasando por esos puntos
-
-### ⚙️ Ejemplo 6: Proceso completo
-
-Analiza $x^2 = 6y$:
-
-1. $4p = 6 \Rightarrow p = 1.5$
-2. Coeficiente positivo: abre hacia arriba
-3. Vértice: $(0, 0)$, Foco: $(0, 1.5)$, Directriz: $y = -1.5$
-4. Lado recto en $y = 1.5$: $x = \pm 3$, puntos $(-3, 1.5)$ y $(3, 1.5)$
-
----
-
-## 📖 Verificar si un Punto Pertenece
-
-### ⚙️ Ejemplo 7: Verificación
-
-¿El punto $(4, 2)$ está sobre $x^2 = 8y$?
-
-$4^2 = 16$ y $8(2) = 16$
-
-$16 = 16$ ✓
-
-Sí, el punto pertenece a la parábola.
-
----
-
-## 🔑 Resumen
-
-| Forma | Significado |
-|-------|-------------|
-| $x^2 = 4py$ | Abre arriba, foco en $(0, p)$ |
-| $x^2 = -4py$ | Abre abajo, foco en $(0, -p)$ |
-| $4p$ | Longitud del lado recto |
+### Ejemplo 3: Construcción Inversa
+Halla la ecuación si el Foco es $(0, 5)$.
+1.  Vértice en origen. Foco en $(0, 5) \Rightarrow p = 5$.
+2.  Fórmula: $x^2 = 4(5)y$.
+3.  Resultado: $x^2 = 20y$.
 
 ---
 
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1
-Encuentra los elementos de $x^2 = 24y$.
+Halla el Foco de $x^2 = 16y$.
 
 <details>
 <summary>Ver solución</summary>
 
-$4p = 24 \Rightarrow p = 6$
+**Razonamiento:**
+$4p = 16 \Rightarrow p = 4$.
 
-- Vértice: $(0, 0)$
-- Foco: $(0, 6)$
-- Directriz: $y = -6$
-- Abre: hacia arriba
-
+**Respuesta:** $\boxed{(0, 4)}$
 </details>
+
+---
 
 ### Ejercicio 2
-Escribe la ecuación de la parábola con vértice en el origen y directriz $y = 7$.
+Halla la ecuación de la Directriz de $x^2 = -20y$.
 
 <details>
 <summary>Ver solución</summary>
 
-Directriz arriba del vértice → abre hacia abajo
+**Razonamiento:**
+$4p = -20 \Rightarrow p = -5$. Directriz $y = -p$.
 
-$p = 7$
-
-$x^2 = -28y$
-
+**Respuesta:** $\boxed{y = 5}$
 </details>
+
+---
 
 ### Ejercicio 3
-Encuentra los extremos del lado recto de $x^2 = -20y$.
+Escribe la ecuación si el Foco es $(0, -3)$.
 
 <details>
 <summary>Ver solución</summary>
 
-$p = 5$
+**Razonamiento:**
+$p = -3$. Ecuación $x^2 = 4(-3)y$.
 
-Foco: $(0, -5)$
-
-Lado recto en $y = -5$: $x = \pm 10$
-
-Extremos: $(-10, -5)$ y $(10, -5)$
-
+**Respuesta:** $\boxed{x^2 = -12y}$
 </details>
+
+---
 
 ### Ejercicio 4
-¿Cuál es la longitud del lado recto de $x^2 = 5y$?
+Halla la longitud del Lado Recto de $x^2 = 7y$.
 
 <details>
 <summary>Ver solución</summary>
 
-$LR = 4p = 5$
+**Razonamiento:**
+Es el coeficiente de $y$.
 
+**Respuesta:** $\boxed{7}$
 </details>
+
+---
 
 ### Ejercicio 5
-Una parábola vertical pasa por el punto $(6, 3)$ y tiene vértice en el origen. Encuentra su ecuación.
+¿Hacia dónde abre $x^2 = -y$?
 
 <details>
 <summary>Ver solución</summary>
 
-Sustituyendo en $x^2 = 4py$:
+**Razonamiento:**
+Coeficiente negativo.
 
-$36 = 4p(3) = 12p$
-
-$p = 3$
-
-$x^2 = 12y$
-
+**Respuesta:** **Hacia abajo**
 </details>
+
+---
+
+### Ejercicio 6
+Si la Directriz es $y = 4$, halla la ecuación.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Si directriz es $y=4$ (positiva), el foco debe ser negativo $p=-4$.
+$x^2 = 4(-4)y$.
+
+**Respuesta:** $\boxed{x^2 = -16y}$
+</details>
+
+---
+
+### Ejercicio 7
+Halla el parámetro $p$ de $2x^2 = 16y$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Primero despeja $x^2$: $x^2 = 8y$.
+$4p = 8 \Rightarrow p = 2$.
+
+**Respuesta:** $\boxed{2}$
+</details>
+
+---
+
+### Ejercicio 8
+¿Pasa la parábola $x^2 = 4y$ por el punto $(2, 1)$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Sustituye: $2^2 = 4(1) \Rightarrow 4 = 4$.
+
+**Respuesta:** **Sí**
+</details>
+
+---
+
+### Ejercicio 9
+Coordenadas del vértice de $x^2 - 10y = 0$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Es forma canónica $x^2 = 10y$. Vértice siempre en origen.
+
+**Respuesta:** $\boxed{(0, 0)}$
+</details>
+
+---
+
+### Ejercicio 10
+Si la parábola abre hacia arriba, ¿dónde está la directriz?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Contraria a la apertura.
+
+**Respuesta:** **Abajo del eje X**
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Ecuación | Apertura | Foco | Directriz |
+| :--- | :--- | :--- | :--- |
+| **$x^2 = 4py$** | Arriba ($\cup$) | $(0, p)$ | $y = -p$ |
+| **$x^2 = -4py$** | Abajo ($\cap$) | $(0, -p)$ | $y = p$ |
+
+> **Conclusión:** Si la $X$ está al cuadrado, es una parábola vertical (como las antenas normales). El signo del número te dice si recoge lluvia (positivo) o si te protege de ella (negativo).

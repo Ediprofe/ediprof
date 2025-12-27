@@ -1,257 +1,224 @@
-# Parábola Horizontal con Vértice en el Origen
+# **Parábola Horizontal con Vértice en el Origen**
 
-Una parábola **horizontal** tiene su eje paralelo al eje X. Cuando el vértice está en el origen, la variable al cuadrado es $y$ en lugar de $x$.
+No todas las parábolas apuntan al cielo. Algunas miran a la derecha o a la izquierda, como los faros de un coche o una linterna. Matemáticamente, esto ocurre cuando cambiamos los roles: ahora es la $Y$ la que está al cuadrado.
 
 ---
 
 ## 🎯 ¿Qué vas a aprender?
 
-- Ecuaciones de parábolas horizontales con vértice en el origen
-- Cómo identificar si abre hacia la derecha o izquierda
-- Cómo graficar y encontrar los elementos
+- La ecuación $y^2 = 4px$ (Derecha) y $y^2 = -4px$ (Izquierda).
+- Por qué al elevar $y$ al cuadrado la curva "se acuesta".
+- Cómo hallar Foco y Directriz en este nuevo escenario.
 
 ---
 
-## 📖 Lo Esencial
+## 🚀 El Cambio de Variable
 
-| Dirección | Ecuación | Foco | Directriz | Condición |
-|-----------|----------|------|-----------|-----------|
-| Derecha → | $y^2 = 4px$ | $(p, 0)$ | $x = -p$ | $p > 0$ |
-| Izquierda ← | $y^2 = -4px$ | $(-p, 0)$ | $x = p$ | $p > 0$ |
+Al intercambiar $x$ por $y$, giramos la gráfica 90 grados.
+La ecuación canónica horizontal es:
 
----
+$$ y^2 = 4px $$
 
-## 📖 Parábola que Abre Hacia la Derecha
+Aquí el signo de $p$ determina la dirección horizontal:
+*   **Si $p > 0$:** Abre hacia la **DERECHA** ($\supset$). (Foco en $X$ positivo).
+*   **Si $p < 0$:** Abre hacia la **IZQUIERDA** ($\subset$). (Foco en $X$ negativo).
 
 <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+    <strong style="color: #1e293b; font-size: 0.95rem; margin-left: 0.3rem;">Parábola Horizontal</strong>
+  </div>
   <img src="/images/geometria/analitica/parabola-horizontal-derecha.svg" alt="Parábola horizontal que abre hacia la derecha" style="width: 100%; height: auto;" />
 </div>
 
-**Ecuación:**
-$$
-y^2 = 4px \quad (p > 0)
-$$
+---
 
-**Elementos:**
-- Vértice: $(0, 0)$
-- Foco: $(p, 0)$
-- Directriz: $x = -p$
-- Eje: el eje X ($y = 0$)
-- Lado recto: $4p$
+## 🔍 Análisis de Elementos
 
-### ⚙️ Ejemplo 1: Identificar elementos
+Desde la ecuación $y^2 = 4px$:
 
-Para $y^2 = 12x$:
-
-$4p = 12 \Rightarrow p = 3$
-
-- Vértice: $(0, 0)$
-- Foco: $(3, 0)$
-- Directriz: $x = -3$
-- Lado recto: $12$
-
-### ⚙️ Ejemplo 2: Construir ecuación
-
-Parábola horizontal con vértice en el origen y foco en $(7, 0)$.
-
-Como el foco está a la derecha del vértice, abre hacia la derecha.
-
-$p = 7$
-
-$$
-y^2 = 4(7)x = 28x
-$$
+1.  **Vértice:** $(0, 0)$.
+2.  **Foco:** $(p, 0)$. (Ahora está sobre el eje X).
+3.  **Directriz:** $x = -p$. (Recta vertical).
+4.  **Lado Recto:** Longitud absoluta $|4p|$.
 
 ---
 
-## 📖 Parábola que Abre Hacia la Izquierda
+## ⚙️ Ejemplos Resueltos
 
-<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <img src="/images/geometria/analitica/parabola-horizontal-izquierda.svg" alt="Parábola horizontal que abre hacia la izquierda" style="width: 100%; height: auto;" />
-</div>
+### Ejemplo 1: Hacia la Derecha
+Dada $y^2 = 20x$.
+1.  **Identificar 4p:** $4p = 20 \Rightarrow p = 5$.
+2.  **Foco:** Positivo en X $\to (5, 0)$.
+3.  **Directriz:** Vertical negativa $\to x = -5$.
+4.  **Lado Recto:** 20 unidades.
 
-**Ecuación:**
-$$
-y^2 = -4px \quad (p > 0)
-$$
+### Ejemplo 2: Hacia la Izquierda
+Dada $y^2 = -12x$.
+1.  **Identificar 4p:** $4p = -12 \Rightarrow p = -3$.
+2.  **Foco:** Negativo en X $\to (-3, 0)$.
+3.  **Directriz:** $x = -(-3) \Rightarrow x = 3$.
+4.  **Lado Recto:** 12 unidades.
 
-**Elementos:**
-- Vértice: $(0, 0)$
-- Foco: $(-p, 0)$
-- Directriz: $x = p$
-- Eje: el eje X
-- Lado recto: $4p$
-
-### ⚙️ Ejemplo 3: Parábola hacia la izquierda
-
-Para $y^2 = -20x$:
-
-$4p = 20 \Rightarrow p = 5$
-
-- Vértice: $(0, 0)$
-- Foco: $(-5, 0)$
-- Directriz: $x = 5$
-
-### ⚙️ Ejemplo 4: Dada la directriz
-
-Parábola horizontal con vértice en el origen y directriz $x = 6$.
-
-La directriz está a la derecha del vértice, entonces abre hacia la izquierda.
-
-$p = 6$
-
-$$
-y^2 = -4(6)x = -24x
-$$
-
----
-
-## 📖 Puntos del Lado Recto
-
-Para $y^2 = 4px$ (abre hacia la derecha):
-- El foco está en $(p, 0)$
-- Los puntos del lado recto están en $x = p$
-- Sustituyendo: $y^2 = 4p \cdot p = 4p^2$, entonces $y = \pm 2p$
-
-**Extremos del lado recto:** $(p, 2p)$ y $(p, -2p)$
-
-### ⚙️ Ejemplo 5: Lado recto
-
-Para $y^2 = 8x$:
-
-$4p = 8 \Rightarrow p = 2$
-
-- Foco: $(2, 0)$
-- Extremos del lado recto: $(2, 4)$ y $(2, -4)$
-- Longitud: $8$
-
----
-
-## 📖 Tabla Comparativa: Vertical vs Horizontal
-
-| Aspecto | Vertical | Horizontal |
-|---------|----------|------------|
-| Variable al cuadrado | $x^2$ | $y^2$ |
-| Eje de simetría | Eje Y o $x = h$ | Eje X o $y = k$ |
-| Abre hacia | Arriba/Abajo | Derecha/Izquierda |
-| Foco (origen) | $(0, \pm p)$ | $(\pm p, 0)$ |
-
-
----
-
-## 📖 Ejemplos Completos
-
-### ⚙️ Ejemplo 6: Análisis completo
-
-Analiza $y^2 + 16x = 0$:
-
-**Reescribimos:** $y^2 = -16x$
-
-$4p = 16 \Rightarrow p = 4$
-
-El signo negativo indica que abre hacia la izquierda.
-
-- Vértice: $(0, 0)$
-- Foco: $(-4, 0)$
-- Directriz: $x = 4$
-- Extremos del lado recto: $(-4, 8)$ y $(-4, -8)$
-
-### ⚙️ Ejemplo 7: Encontrar la ecuación
-
-La parábola pasa por $(2, 4)$ y tiene eje horizontal con vértice en el origen.
-
-Forma: $y^2 = 4px$
-
-Sustituyendo $(2, 4)$:
-$$
-16 = 4p(2) = 8p
-$$
-$$
-p = 2
-$$
-
-$$
-y^2 = 8x
-$$
-
----
-
-## 🔑 Resumen
-
-| Forma | Significado |
-|-------|-------------|
-| $y^2 = 4px$ | Abre a la derecha, foco en $(p, 0)$ |
-| $y^2 = -4px$ | Abre a la izquierda, foco en $(-p, 0)$ |
-| Variable al cuadrado | Determina la orientación del eje |
+### Ejemplo 3: Dado el Foco
+Halla la ecuación si el Foco es $(-6, 0)$.
+1.  Foco en X negativo $\Rightarrow$ Horizontal Izquierda.
+2.  $p = -6$.
+3.  Ecuación: $y^2 = 4(-6)x$.
+    $$ y^2 = -24x $$
 
 ---
 
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1
-Encuentra los elementos de $y^2 = 36x$.
+Halla el Foco de $y^2 = 8x$.
 
 <details>
 <summary>Ver solución</summary>
 
-$4p = 36 \Rightarrow p = 9$
+**Razonamiento:**
+$4p = 8 \Rightarrow p = 2$.
 
-- Vértice: $(0, 0)$
-- Foco: $(9, 0)$
-- Directriz: $x = -9$
-
+**Respuesta:** $\boxed{(2, 0)}$
 </details>
+
+---
 
 ### Ejercicio 2
-Escribe la ecuación de la parábola con vértice en el origen, eje horizontal y directriz $x = 3$.
+Halla la ecuación de la Directriz de $y^2 = -4x$.
 
 <details>
 <summary>Ver solución</summary>
 
-Directriz a la derecha → abre hacia la izquierda
+**Razonamiento:**
+$4p = -4 \Rightarrow p = -1$. Directriz $x = -p$. $x = 1$.
 
-$p = 3$
-
-$y^2 = -12x$
-
+**Respuesta:** $\boxed{x = 1}$
 </details>
+
+---
 
 ### Ejercicio 3
-Encuentra los extremos del lado recto de $y^2 = -32x$.
+Ecuación de parábola con Foco $(4, 0)$.
 
 <details>
 <summary>Ver solución</summary>
 
-$p = 8$
+**Razonamiento:**
+$p=4$. $y^2 = 16x$.
 
-Foco: $(-8, 0)$
-
-Extremos: $(-8, 16)$ y $(-8, -16)$
-
+**Respuesta:** $\boxed{y^2 = 16x}$
 </details>
+
+---
 
 ### Ejercicio 4
-Una parábola horizontal pasa por $(3, 6)$ con vértice en el origen. Encuentra su ecuación.
+Halla el parámetro $p$ si el Lado Recto mide 10 y abre a la derecha.
 
 <details>
 <summary>Ver solución</summary>
 
-$36 = 4p(3) = 12p$
+**Razonamiento:**
+$4p = 10 \Rightarrow p = 2.5$.
 
-$p = 3$
-
-$y^2 = 12x$
-
+**Respuesta:** $\boxed{2.5}$
 </details>
+
+---
 
 ### Ejercicio 5
-¿Hacia qué dirección abre $y^2 + 10x = 0$?
+¿Pasa la curva $y^2 = 9x$ por el punto $(1, 3)$?
 
 <details>
 <summary>Ver solución</summary>
 
-$y^2 = -10x$
+**Razonamiento:**
+$3^2 = 9(1) \Rightarrow 9 = 9$.
 
-El coeficiente es negativo, abre hacia la **izquierda**.
-
+**Respuesta:** **Sí**
 </details>
+
+---
+
+### Ejercicio 6
+Si la directriz es $x = -2$, halla la ecuación.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Directriz negativa $\implies$ Foco positivo. $p=2$.
+$y^2 = 4(2)x$.
+
+**Respuesta:** $\boxed{y^2 = 8x}$
+</details>
+
+---
+
+### Ejercicio 7
+Ecuación si el Vértice es $(0,0)$ y pasa por $(-2, 4)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Sustituir $(x,y)$ en $y^2 = 4px$.
+$4^2 = 4p(-2) \Rightarrow 16 = -8p \Rightarrow p = -2$.
+$y^2 = 4(-2)x$.
+
+**Respuesta:** $\boxed{y^2 = -8x}$
+</details>
+
+---
+
+### Ejercicio 8
+¿Hacia qué lado abre $y^2 + 5x = 0$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$y^2 = -5x$. Negativo.
+
+**Respuesta:** **Izquierda**
+</details>
+
+---
+
+### Ejercicio 9
+Coordenadas del vértice de $3y^2 = 12x$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$y^2 = 4x$. Canónica en origen.
+
+**Respuesta:** $\boxed{(0,0)}$
+</details>
+
+---
+
+### Ejercicio 10
+Si $p > 0$, ¿en qué cuadrantes está la gráfica de $y^2 = 4px$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Abre a la derecha. $X$ siempre positiva. $Y$ puede ser pos o neg.
+
+**Respuesta:** **I y IV Cuadrantes**
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Ecuación | Apertura | Foco | Directriz |
+| :--- | :--- | :--- | :--- |
+| **$y^2 = 4px$** | Derecha ($\supset$) | $(p, 0)$ | $x = -p$ |
+| **$y^2 = -4px$** | Izquierda ($\subset$) | $(-p, 0)$ | $x = p$ |
+
+> **Conclusión:** ¿$Y$ al cuadrado? Es Horizontal. ¿Positivo? Derecha. ¿Negativo? Izquierda. Es como leer una brújula matemática.
