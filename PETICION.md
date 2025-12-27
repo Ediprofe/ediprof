@@ -169,29 +169,24 @@ Situaciones que requieren confirmación:
 
 Corrige las siguientes lecciones al estilo Ediprofe.
 
-http://localhost:4321/matematicas/algebra/sistemas-ecuaciones-lineales/introduccion
+http://localhost:4321/matematicas/algebra/progresiones/progresion-aritmetica
 
-(elimina las imágnes de esta lección que fieron generadas con javascript)
+http://localhost:4321/matematicas/algebra/progresiones/progresion-geometrica
 
+http://localhost:4321/matematicas/geometria-euclidiana/conceptos-basicos/introduccion-geometria
 
-http://localhost:4321/matematicas/algebra/sistemas-ecuaciones-lineales/metodo-grafico
-(conservas las imágenes y haz uso de ellas para la lección)
+http://localhost:4321/matematicas/geometria-euclidiana/conceptos-basicos/punto-recta-plano
 
+http://localhost:4321/matematicas/geometria-euclidiana/conceptos-basicos/segmentos-y-rayos
 
-http://localhost:4321/matematicas/algebra/funciones-ecuaciones-cuadraticas/introduccion
-
-http://localhost:4321/matematicas/algebra/funciones-ecuaciones-cuadraticas/resolucion-ecuaciones
-
-http://localhost:4321/matematicas/algebra/funciones-ecuaciones-cuadraticas/graficas
-
-http://localhost:4321/matematicas/algebra/funciones-ecuaciones-cuadraticas/problemas
-
-http://localhost:4321/matematicas/algebra/funciones-exponenciales-logaritmicas/funciones-exponenciales
-
-http://localhost:4321/matematicas/algebra/funciones-exponenciales-logaritmicas/logaritmos
+http://localhost:4321/matematicas/geometria-euclidiana/conceptos-basicos/posiciones-relativas-rectas
 
 
-LAS IMAGENES QUE ESTÁN GENERADAS CON JAVASCRIPT EN ESTAS LECCIONES DEBEN SER ELIMINADAS, QUE YO LUEGO LAS REGENERO.
+LAS IMAGENES QUE SE GENERAN CON LIBRERÍA DE JAVASCRIPT ELIMINALAS, QUE YO LUEGO LAS REGENERO.
+
+
+
+
 
 
 
