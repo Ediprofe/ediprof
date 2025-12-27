@@ -1,314 +1,261 @@
-# Ángulos entre Paralelas y Secante
+# **Ángulos entre Paralelas y Secante**
 
-Cuando una recta corta a dos rectas paralelas, se forman **ocho ángulos** con propiedades muy especiales.
-
-### 🎯 Resumen rápido (lo que vas a aprender)
-
-| Tipo de ángulos | Relación | Pares |
-|-----------------|----------|-------|
-| **Correspondientes** | IGUALES | (1,5), (2,6), (3,7), (4,8) |
-| **Alternos internos** | IGUALES | (3,5), (4,6) |
-| **Alternos externos** | IGUALES | (1,7), (2,8) |
-| **Conjugados internos** | Suman 180° | (3,6), (4,5) |
-| **Conjugados externos** | Suman 180° | (1,8), (2,7) |
-
-### 📊 Mira los 8 ángulos numerados:
-
-### 📊 Ilustración: Los 8 ángulos
-
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
-  <span>📊</span>
-  <div id="jsxgraph-8angulos" style="width: 100%; height: 350px;"></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-8angulos')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-8angulos', {
-      boundingbox: [-6, 6, 6, -6],
-      axis: false,
-      showCopyright: false,
-      showNavigation: false,
-      pan: { enabled: false },
-      zoom: { enabled: false }
-    });
-    
-    // Paralela 1 (arriba)
-    board.create('line', [[-5, 2], [5, 2]], {strokeColor: '#3b82f6', strokeWidth: 3, fixed: true});
-    
-    // Paralela 2 (abajo)
-    board.create('line', [[-5, -2], [5, -2]], {strokeColor: '#3b82f6', strokeWidth: 3, fixed: true});
-    
-    // Transversal
-    board.create('line', [[-3, -5], [3, 5]], {strokeColor: '#ef4444', strokeWidth: 3, fixed: true});
-    
-    // Puntos de intersección
-    var P1 = board.create('point', [1.2, 2], {size: 4, color: '#1e293b', fixed: true, name: ''});
-    var P2 = board.create('point', [-1.2, -2], {size: 4, color: '#1e293b', fixed: true, name: ''});
-    
-    // Etiquetas de ángulos (numerados 1-8)
-    board.create('text', [1.8, 2.8, '1'], {fontSize: 14, color: '#22c55e', fixed: true});
-    board.create('text', [0.3, 2.8, '2'], {fontSize: 14, color: '#22c55e', fixed: true});
-    board.create('text', [0.3, 1.2, '3'], {fontSize: 14, color: '#f59e0b', fixed: true});
-    board.create('text', [1.8, 1.2, '4'], {fontSize: 14, color: '#f59e0b', fixed: true});
-    
-    board.create('text', [-0.6, -1.2, '5'], {fontSize: 14, color: '#f59e0b', fixed: true});
-    board.create('text', [-1.9, -1.2, '6'], {fontSize: 14, color: '#f59e0b', fixed: true});
-    board.create('text', [-1.9, -2.8, '7'], {fontSize: 14, color: '#22c55e', fixed: true});
-    board.create('text', [-0.6, -2.8, '8'], {fontSize: 14, color: '#22c55e', fixed: true});
-    
-    // Etiquetas de rectas
-    board.create('text', [5.2, 2, 'l₁'], {fontSize: 14, color: '#3b82f6', fixed: true});
-    board.create('text', [5.2, -2, 'l₂'], {fontSize: 14, color: '#3b82f6', fixed: true});
-    board.create('text', [3.2, 5, 't'], {fontSize: 14, color: '#ef4444', fixed: true});
-    
-    // Leyenda
-    board.create('text', [0, -5.2, 'Internos: 3,4,5,6 (naranja) | Externos: 1,2,7,8 (verde)'], {fontSize: 11, color: '#64748b', fixed: true, anchorX: 'middle'});
-  }
-});
-</script>
+Cuando una línea atraviesa dos rieles de tren (como un camino rural cruzando las vías), sucede algo interesante: los ángulos que se forman arriba son copias exactas de los de abajo. Esta repetición es la base para resolver casi todos los problemas de geometría con paralelas.
 
 ---
 
-## 📖 La recta secante (o transversal)
+## 🎯 ¿Qué vas a aprender?
 
-Una recta **secante** (también llamada **transversal**) es una recta que corta a otras dos rectas en puntos diferentes.
-
-Cuando la transversal corta a dos rectas paralelas:
-- Se forman **4 ángulos** en cada punto de corte
-- En total: **8 ángulos**
-
----
-
-## 📖 Nomenclatura de los ángulos
-
-Los 8 ángulos se pueden clasificar según su posición:
-
-### Ángulos internos
-
-Son los 4 ángulos que están **entre** las dos paralelas.
-
-### Ángulos externos
-
-Son los 4 ángulos que están **fuera** de las dos paralelas (arriba de la superior y abajo de la inferior).
+- Qué pasa cuando una recta "Secante" corta a dos "Paralelas".
+- Identificar los 8 ángulos que se forman.
+- Las parejas famosas: Alternos Internos, Correspondientes y Conjugados.
+- Cómo calcular todos los ángulos conociendo solo uno.
 
 ---
 
-## 📖 Tipos de ángulos
+## 🗺️ El Mapa de los 8 Ángulos
 
-### 1. Ángulos Correspondientes
+Imagina dos calles paralelas (Avenida Norte y Avenida Sur) cortadas por una diagonal (Calle Transversal).
+Se forman dos cruces: uno arriba y otro abajo.
+En cada cruce hay 4 ángulos. Total: 8 ángulos.
 
-Son ángulos que están en la **misma posición** relativa en cada intersección.
-
-- Uno está arriba de una paralela, el otro arriba de la otra
-- Están del **mismo lado** de la transversal
-
-### Ejemplo de correspondientes
-
-Si numeramos los ángulos del 1 al 8:
-- $\angle 1$ y $\angle 5$ son correspondientes
-- $\angle 2$ y $\angle 6$ son correspondientes
-- $\angle 3$ y $\angle 7$ son correspondientes
-- $\angle 4$ y $\angle 8$ son correspondientes
+### Clasificación por Ubicación
+1.  **Internos:** Están "dentro" del sándwich de paralelas (entre las dos calles).
+2.  **Externos:** Están "fuera" (hacia el norte y hacia el sur).
 
 ---
 
-### 2. Ángulos Alternos Internos
+## 1. Ángulos Alternos Internos ("La Z")
 
-Son ángulos que están:
-- **Entre** las dos paralelas (internos)
-- En **lados opuestos** de la transversal (alternos)
+Son los que están **dentro** de las paralelas pero en lados **opuestos** de la transversal. Forman una figura parecida a una "Z".
 
-### Ejemplo de alternos internos
+- **Propiedad:** Son **IGUALES**.
+- **Ejemplo:** Si el de la izquierda-abajo mide $60^\circ$, el de la derecha-arriba mide $60^\circ$.
 
-- $\angle 3$ y $\angle 5$ son alternos internos
-- $\angle 4$ y $\angle 6$ son alternos internos
+## 2. Ángulos Correspondientes ("El Ascensor")
 
----
+Están en la **misma posición** relativa. Si recortas el cruce de arriba y lo pegas sobre el de abajo, coinciden.
 
-### 3. Ángulos Alternos Externos
+- **Propiedad:** Son **IGUALES**.
+- **Ejemplo:** El ángulo superior-derecho de arriba es igual al superior-derecho de abajo.
 
-Son ángulos que están:
-- **Fuera** de las dos paralelas (externos)
-- En **lados opuestos** de la transversal (alternos)
+## 3. Ángulos Conjugados ("La C")
 
-### Ejemplo de alternos externos
+Son los que están del **mismo lado** de la transversal y ambos **dentro** (o ambos fuera).
 
-- $\angle 1$ y $\angle 7$ son alternos externos
-- $\angle 2$ y $\angle 8$ son alternos externos
+- **Propiedad:** SON **SUPLEMENTARIOS** (Suman $180^\circ$).
+- **Ejemplo:** Los dos que están "encerrados" a la derecha suman $180^\circ$.
 
 ---
 
-### 4. Ángulos Conjugados Internos (o Co-internos)
+## ⚙️ Ejemplos Resueltos
 
-Son ángulos que están:
-- **Entre** las dos paralelas (internos)
-- Del **mismo lado** de la transversal (conjugados)
+### Ejemplo 1: Correspondientes
+Si el ángulo superior derecho mide $100^\circ$, ¿cuánto mide el correspondiente de abajo?
 
-### Ejemplo de conjugados internos
+**Razonamiento:**
+Los correspondientes son gemelos. Ocupan el mismo lugar.
+**Respuesta:** $100^\circ$.
 
-- $\angle 3$ y $\angle 6$ son conjugados internos
-- $\angle 4$ y $\angle 5$ son conjugados internos
+### Ejemplo 2: Alternos Internos (La Z)
+En una figura de "Z", el ángulo de la esquina interna superior es $40^\circ$. ¿Cuánto mide el de la esquina interna inferior?
 
----
+**Razonamiento:**
+Los alternos internos son iguales.
+**Respuesta:** $40^\circ$.
 
-### 5. Ángulos Conjugados Externos (o Co-externos)
+### Ejemplo 3: Alternos Externos
+Si un ángulo externo a la izquierda mide $150^\circ$, ¿cuánto mide el alterno externo (derecha abajo)?
 
-Son ángulos que están:
-- **Fuera** de las dos paralelas (externos)
-- Del **mismo lado** de la transversal (conjugados)
+**Razonamiento:**
+La propiedad "Alterno = Igual" funciona tanto para internos como para externos.
+**Respuesta:** $150^\circ$.
 
-### Ejemplo de conjugados externos
+### Ejemplo 4: Conjugados Internos
+Dos ángulos conjugados internos miden $x$ y $120^\circ$. Halla $x$.
 
-- $\angle 1$ y $\angle 8$ son conjugados externos
-- $\angle 2$ y $\angle 7$ son conjugados externos
+**Razonamiento:**
+Los conjugados (forman una "C") **suman 180**.
+$$
+x + 120 = 180
+$$
+$$
+x = 60^\circ
+$$
 
----
+### Ejemplo 5: Conjugados Externos
+Dos ángulos conjugados externos miden $3x$ y $6x$. Halla los ángulos.
 
-## 📖 Tabla Resumen
+**Razonamiento:**
+Suman 180.
+$$
+3x + 6x = 180
+$$
+$$
+9x = 180 \to x = 20^\circ
+$$
+Los ángulos son $60^\circ$ y $120^\circ$.
 
-| Tipo | Ubicación | Lado de la transversal |
-|------|-----------|------------------------|
-| Correspondientes | Misma posición relativa | Mismo lado |
-| Alternos internos | Entre las paralelas | Lados opuestos |
-| Alternos externos | Fuera de las paralelas | Lados opuestos |
-| Conjugados internos | Entre las paralelas | Mismo lado |
-| Conjugados externos | Fuera de las paralelas | Mismo lado |
+### Ejemplo 6: Cálculo en Cadena
+Tenemos dos paralelas cortadas por una secante. El ángulo 1 (arriba izquierda) mide $70^\circ$. Calcula el ángulo 8 (abajo derecha).
 
----
+**Razonamiento:**
+- Ángulo 1 = $70^\circ$.
+- Ángulo 1 y 8 son **Alternos Externos** (uno arriba-izq, otro abajo-der).
+- Por tanto, son iguales.
+**Respuesta:** $70^\circ$.
 
-## 📖 Ejemplo visual con números
+### Ejemplo 7: El Teorema de la C
+En un trapecio (que tiene dos lados paralelos), dos ángulos consecutivos no-basales miden $80^\circ$ y $y$. Calcula $y$.
 
-### 📊 Ilustración: Los 8 ángulos
+**Razonamiento:**
+Los ángulos entre paralelas consecutivos (conjugados internos) suman 180.
+$$
+80 + y = 180 \implies y = 100^\circ
+$$
 
+### Ejemplo 8: Identificación Visual
+¿Qué relación tienen los ángulos marcados con $\alpha$ y $\beta$ si forman una "F"?
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
-  <span>📊</span>
-  <div id="jsxgraph-8angulos-resumen" style="width: 100%; height: 350px;"></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-8angulos-resumen')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-8angulos-resumen', {
-      boundingbox: [-6, 6, 6, -6],
-      axis: false,
-      showCopyright: false,
-      showNavigation: false,
-      pan: { enabled: false },
-      zoom: { enabled: false }
-    });
-    
-    // Paralela 1 (arriba)
-    board.create('line', [[-5, 2], [5, 2]], {strokeColor: '#3b82f6', strokeWidth: 3, fixed: true});
-    
-    // Paralela 2 (abajo)
-    board.create('line', [[-5, -2], [5, -2]], {strokeColor: '#3b82f6', strokeWidth: 3, fixed: true});
-    
-    // Transversal
-    board.create('line', [[-3, -5], [3, 5]], {strokeColor: '#ef4444', strokeWidth: 3, fixed: true});
-    
-    // Puntos de intersección
-    var P1 = board.create('point', [1.2, 2], {size: 4, color: '#1e293b', fixed: true, name: ''});
-    var P2 = board.create('point', [-1.2, -2], {size: 4, color: '#1e293b', fixed: true, name: ''});
-    
-    // Etiquetas de ángulos (numerados 1-8)
-    board.create('text', [1.8, 2.8, '1'], {fontSize: 14, color: '#22c55e', fixed: true});
-    board.create('text', [0.3, 2.8, '2'], {fontSize: 14, color: '#22c55e', fixed: true});
-    board.create('text', [0.3, 1.2, '3'], {fontSize: 14, color: '#f59e0b', fixed: true});
-    board.create('text', [1.8, 1.2, '4'], {fontSize: 14, color: '#f59e0b', fixed: true});
-    
-    board.create('text', [-0.6, -1.2, '5'], {fontSize: 14, color: '#f59e0b', fixed: true});
-    board.create('text', [-1.9, -1.2, '6'], {fontSize: 14, color: '#f59e0b', fixed: true});
-    board.create('text', [-1.9, -2.8, '7'], {fontSize: 14, color: '#22c55e', fixed: true});
-    board.create('text', [-0.6, -2.8, '8'], {fontSize: 14, color: '#22c55e', fixed: true});
-    
-    // Etiquetas de rectas
-    board.create('text', [5.2, 2, 'l₁'], {fontSize: 14, color: '#3b82f6', fixed: true});
-    board.create('text', [5.2, -2, 'l₂'], {fontSize: 14, color: '#3b82f6', fixed: true});
-    board.create('text', [3.2, 5, 't'], {fontSize: 14, color: '#ef4444', fixed: true});
-    
-    // Leyenda
-    board.create('text', [0, -5.2, 'Internos: 3,4,5,6 (naranja) | Externos: 1,2,7,8 (verde)'], {fontSize: 11, color: '#64748b', fixed: true, anchorX: 'middle'});
-  }
-});
-</script>
-
-| Tipo | Pares de ángulos |
-|------|------------------|
-| Correspondientes | (1,5), (2,6), (3,7), (4,8) |
-| Alternos internos | (3,5), (4,6) |
-| Alternos externos | (1,7), (2,8) |
-| Conjugados internos | (3,6), (4,5) |
-| Conjugados externos | (1,8), (2,7) |
+**Razonamiento:**
+La forma de "F" es típica de los **Correspondientes**.
+**Respuesta:** Correspondientes (son iguales).
 
 ---
 
-## 📝 Ejercicios de práctica
+## 📝 Ejercicios de Práctica
 
-### Ejercicio 1: Identificar tipos
-
-Usando la numeración del diagrama anterior, clasifica cada par de ángulos:
-
-1. $\angle 2$ y $\angle 6$
-2. $\angle 4$ y $\angle 5$
-3. $\angle 3$ y $\angle 5$
-4. $\angle 1$ y $\angle 8$
-5. $\angle 2$ y $\angle 8$
+### Ejercicio 1
+Si dos rectas paralelas son cortadas por una transversal y uno de los ángulos agudos mide $30^\circ$, ¿cuánto miden todos los otros ángulos agudos?
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. Correspondientes
-2. Conjugados internos
-3. Alternos internos
-4. Conjugados externos
-5. Alternos externos
+Todos los agudos son iguales entre sí.
+**Resultado:** $\boxed{30^\circ}$
 
 </details>
 
 ---
 
-### Ejercicio 2: Completar
-
-Indica qué tipo de ángulos forman cada par:
-
-| Par | Tipo |
-|-----|------|
-| $\angle 1$ y $\angle 5$ | |
-| $\angle 3$ y $\angle 6$ | |
-| $\angle 4$ y $\angle 6$ | |
-| $\angle 2$ y $\angle 7$ | |
+### Ejercicio 2
+Y en el problema anterior, ¿cuánto miden los ángulos obtusos?
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-| Par | Tipo |
-|-----|------|
-| $\angle 1$ y $\angle 5$ | Correspondientes |
-| $\angle 3$ y $\angle 6$ | Conjugados internos |
-| $\angle 4$ y $\angle 6$ | Alternos internos |
-| $\angle 2$ y $\angle 7$ | Conjugados externos |
+Son suplementarios de los agudos. $180 - 30 = 150$.
+**Resultado:** $\boxed{150^\circ}$
 
 </details>
 
 ---
 
-### Ejercicio 3: Ubicación
-
-Si $\angle 3$ es un ángulo interno a la derecha de la transversal, indica:
-
-1. ¿Cuál es su alterno interno?
-2. ¿Cuál es su correspondiente?
-3. ¿Cuál es su conjugado interno?
+### Ejercicio 3
+Nombra la relación entre el ángulo interno superior derecho y el interno inferior izquierdo.
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. Alterno interno: $\angle 5$ (interno, lado opuesto)
-2. Correspondiente: $\angle 7$ (misma posición en la otra paralela)
-3. Conjugado interno: $\angle 6$ (interno, mismo lado)
+Alternos Internos.
 
 </details>
 
 ---
+
+### Ejercicio 4
+Si un ángulo mide $90^\circ$ (secante perpendicular), ¿cuánto miden los otros 7 ángulos?
+
+<details>
+<summary>Ver solución</summary>
+
+Todos miden $90^\circ$.
+
+</details>
+
+---
+
+### Ejercicio 5
+Calcula $x$ si dos ángulos alternos internos miden $2x$ y $80^\circ$.
+
+<details>
+<summary>Ver solución</summary>
+
+Iguales: $2x = 80 \to x=40$.
+**Resultado:** $\boxed{x=40}$
+
+</details>
+
+---
+
+### Ejercicio 6
+Calcula $x$ si dos ángulos correspondientes miden $x+10$ y $50^\circ$.
+
+<details>
+<summary>Ver solución</summary>
+
+Iguales: $x+10 = 50 \to x=40$.
+**Resultado:** $\boxed{x=40}$
+
+</details>
+
+---
+
+### Ejercicio 7
+Calcula $x$ si dos ángulos conjugados internos miden $100^\circ$ y $x$.
+
+<details>
+<summary>Ver solución</summary>
+
+Suman 180. $100+x=180 \to x=80$.
+**Resultado:** $\boxed{x=80^\circ}$
+
+</details>
+
+---
+
+### Ejercicio 8
+¿Qué letra se asocia a los ángulos Alternos Internos?
+
+<details>
+<summary>Ver solución</summary>
+
+La letra Z.
+
+</details>
+
+---
+
+### Ejercicio 9
+¿Qué letra se asocia a los ángulos Correspondientes?
+
+<details>
+<summary>Ver solución</summary>
+
+La letra F.
+
+</details>
+
+---
+
+### Ejercicio 10
+¿Qué letra se asocia a los ángulos Conjugados Internos?
+
+<details>
+<summary>Ver solución</summary>
+
+La letra C.
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Tipo | Mnemotecnia visual | Propiedad |
+|:--- |:--- |:--- |
+| **Alternos Internos** | Forma de **Z** | Iguales |
+| **Correspondientes** | Forma de **F** | Iguales |
+| **Conjugados Internos** | Forma de **C** | Suman $180^\circ$ |
+
+> **Conclusión:** Aunque veas 8 ángulos, en realidad solo hay dos medidas distintas (el agudo y el obtuso). Todos los agudos son iguales entre sí, y todos los obtusos son iguales entre sí. Y juntos suman 180. Fácil.

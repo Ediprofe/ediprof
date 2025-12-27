@@ -1,256 +1,223 @@
-# Rectas Paralelas
+# **Rectas Paralelas**
 
-Las **rectas paralelas** son otra relación fundamental en geometría. A diferencia de las perpendiculares, las rectas paralelas nunca se cruzan, sin importar cuánto las extendamos.
+Imagina las vías de un tren infinito. Los dos rieles corren juntos kilómetro tras kilómetro, manteniendo siempre la misma separación, pero nunca se tocan. Esa es la esencia de las **rectas paralelas**. Son compañeras eternas que jamas se encontrarán.
 
 ---
 
-## 📖 ¿Qué son las rectas paralelas?
+## 🎯 ¿Qué vas a aprender?
 
-Dos rectas son **paralelas** cuando están en el mismo plano y **nunca se intersectan**, por más que se prolonguen.
+- Qué define a las rectas paralelas ($\parallel$).
+- Por qué mantienen la misma distancia para siempre.
+- Cómo saber si dos líneas son paralelas usando ángulos o pendientes.
+- La propiedad transitiva: si A es paralela a B, y B a C...
 
+---
+
+## 🛤️ Definición Geométrica
+
+Dos rectas son **paralelas** si:
+1.  Están en el mismo plano (son coplanares).
+2.  **Nunca se cortan**, aunque las extiendas hasta el infinito.
+
+- **Símbolo:** $l \parallel m$.
+- **Distancia:** La separación entre ellas ($d$) es constante en cualquier punto.
+
+> **Regla de Oro:** Si mides la distancia perpendicular hoy, mañana y en un millón de años, será la misma.
+
+---
+
+## 📏 Propiedades Clave
+
+### 1. La Transitividad
+Si tienes tres líneas:
+- La línea 1 es paralela a la 2.
+- La línea 2 es paralela a la 3.
+- **Conclusión:** ¡La línea 1 es paralela a la 3!
+
+### 2. Dos Perpendiculares a una Tercera
+Si dibujas dos líneas verticales (perpendiculares al suelo), esas dos líneas son paralelas entre sí.
 $$
-\boxed{\text{Rectas paralelas} \Leftrightarrow \text{no tienen puntos en común}}
-$$
-
-### Símbolo
-
-Se usa el símbolo $\parallel$ (dos líneas paralelas):
-
-$$
-l \parallel m
-$$
-
-Se lee: "la recta $l$ es paralela a la recta $m$"
-
----
-
-## 📖 Propiedades de las rectas paralelas
-
-### 1. Equidistancia
-
-Las rectas paralelas mantienen **siempre la misma distancia** entre ellas. Esta distancia se mide perpendicularmente.
-
-### 2. Misma dirección
-
-Las rectas paralelas tienen la **misma dirección** o "inclinación". En el plano cartesiano, esto significa que tienen la **misma pendiente**.
-
-### 3. La relación es simétrica y transitiva
-
-- Si $a \parallel b$, entonces $b \parallel a$ (simétrica)
-- Si $a \parallel b$ y $b \parallel c$, entonces $a \parallel c$ (transitiva)
-
-### 📊 Ilustración: Rectas Paralelas
-
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
-  <span>📊</span>
-  <div id="jsxgraph-paralelas" style="width: 100%; height: 300px;"></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-paralelas')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-paralelas', {
-      boundingbox: [-5, 5, 5, -5],
-      axis: false,
-      showCopyright: false,
-      showNavigation: false,
-      pan: { enabled: false },
-      zoom: { enabled: false }
-    });
-    
-    // Recta l (arriba)
-    board.create('line', [[-4, 2], [4, 2]], {strokeColor: '#3b82f6', strokeWidth: 3, fixed: true});
-    
-    // Recta m (abajo) - paralela
-    board.create('line', [[-4, -2], [4, -2]], {strokeColor: '#22c55e', strokeWidth: 3, fixed: true});
-    
-    // Línea de distancia (perpendicular)
-    board.create('segment', [[0, 2], [0, -2]], {strokeColor: '#f59e0b', strokeWidth: 2, dash: 2, fixed: true});
-    board.create('point', [0, 2], {size: 3, color: '#f59e0b', fixed: true, name: ''});
-    board.create('point', [0, -2], {size: 3, color: '#f59e0b', fixed: true, name: ''});
-    
-    // Etiquetas
-    board.create('text', [4.2, 2, 'l'], {fontSize: 16, color: '#3b82f6', fixed: true});
-    board.create('text', [4.2, -2, 'm'], {fontSize: 16, color: '#22c55e', fixed: true});
-    board.create('text', [0.3, 0, 'd'], {fontSize: 14, color: '#f59e0b', fixed: true});
-    board.create('text', [0, -4.2, 'l ∥ m (distancia constante d)'], {fontSize: 13, color: '#1e293b', fixed: true, anchorX: 'middle'});
-  }
-});
-</script>
-
-> 💡 **Observa:** Las rectas $l$ y $m$ **nunca se cruzan** y mantienen la misma distancia $d$ en cualquier punto. La notación $l \parallel m$ significa "l es paralela a m".
-
----
-
-## 📖 El quinto postulado de Euclides
-
-Euclides estableció un postulado fundamental sobre las paralelas:
-
-> **Postulado de las paralelas:** Por un punto exterior a una recta, pasa **una única recta paralela** a ella.
-
-Este postulado es la base de toda la geometría euclidiana.
-
-### Ejemplo
-
-Si tienes una recta $l$ y un punto $P$ que no está en $l$, solo puedes trazar **una** recta que pase por $P$ y sea paralela a $l$.
-
----
-
-## 📖 Ejemplos en la vida real
-
-| Ejemplo | ¿Por qué son paralelas? |
-|---------|------------------------|
-| Rieles del tren | Mantienen siempre la misma separación |
-| Líneas de un cuaderno | Equidistantes y nunca se cruzan |
-| Bordes de una carretera | Paralelos para mantener el ancho constante |
-| Lados opuestos de un rectángulo | Nunca se cruzan |
-| Renglones de un texto | Paralelos para mantener el orden |
-
-### Ejemplo 1: Los rieles del tren
-
-Los rieles del tren son el ejemplo clásico de rectas paralelas. Si no fueran paralelos, el tren descarrilaría porque la distancia entre las ruedas no coincidiría con la separación de los rieles.
-
-### Ejemplo 2: Las líneas de un cuaderno
-
-Todas las líneas horizontales de un cuaderno rayado son paralelas entre sí. Mantienen la misma separación para que puedas escribir de manera ordenada.
-
-### Ejemplo 3: Escaleras mecánicas
-
-Los pasamanos de una escalera mecánica son paralelos. Mantienen la misma distancia a lo largo de todo el recorrido.
-
----
-
-## 📖 Distancia entre rectas paralelas
-
-La **distancia entre dos rectas paralelas** es la longitud del segmento perpendicular que las une.
-
-### Propiedad
-
-Esta distancia es **constante** (la misma en cualquier punto).
-
-### Ejemplo
-
-Si dos rectas paralelas están separadas 5 cm, cualquier perpendicular trazada entre ellas medirá 5 cm.
-
----
-
-## 📖 Cómo trazar una recta paralela
-
-### Método 1: Con escuadra y regla
-
-1. Coloca la regla a lo largo de la recta dada
-2. Desliza la escuadra apoyada en la regla hasta el punto deseado
-3. Traza la línea siguiendo la escuadra
-
-### Método 2: Con compás (equidistancia)
-
-1. Traza dos perpendiculares a la recta desde dos puntos
-2. Marca la misma distancia en ambas perpendiculares
-3. Une los puntos marcados
-
----
-
-## 📖 Rectas paralelas en el plano cartesiano
-
-En geometría analítica, dos rectas son paralelas si tienen **la misma pendiente**:
-
-$$
-l_1 \parallel l_2 \Leftrightarrow m_1 = m_2
+\text{Si } a \perp c \text{ y } b \perp c \implies a \parallel b
 $$
 
-### Ejemplo
+---
 
-Las rectas $y = 2x + 3$ y $y = 2x - 1$ son paralelas porque ambas tienen pendiente $m = 2$.
+## ⚙️ Ejemplos Resueltos
+
+### Ejemplo 1: Identificación
+Identifica las rectas paralelas en una habitación.
+1.  El borde superior de la pared izquierda y el borde superior de la pared derecha.
+2.  El borde del piso y el borde del techo (en la misma pared).
+
+**Razonamiento:**
+Ambos pares mantienen la misma distancia y nunca se cruzan.
+**Resultado:** Son paralelas.
+
+### Ejemplo 2: Distancia Constante
+Tenemos dos rectas paralelas separadas por 5 metros. Si nos movemos 100 km al norte, ¿cuál será la separación?
+
+**Razonamiento:**
+Por definición, la distancia entre paralelas **nunca cambia**.
+**Resultado:** 5 metros.
+
+### Ejemplo 3: Pendientes (Analítica)
+Si la recta A tiene pendiente $m=3$ y la recta B es paralela a A, ¿cuál es la pendiente de B?
+
+**Razonamiento:**
+Para no chocar nunca, deben tener la misma inclinación.
+**Resultado:** $m=3$.
+
+### Ejemplo 4: Construcción Lógica
+Si trazamos renglones en un cuaderno y todos tienen 1 cm de alto. ¿Son las líneas de los renglones paralelas?
+
+**Razonamiento:**
+Al tener una altura fija constante entre línea y línea, se garantiza que no se tocan.
+**Resultado:** Sí, son paralelas.
+
+### Ejemplo 5: Falsas Paralelas
+Imagina las líneas de longitud en un globo terráqueo. Parecen paralelas en el ecuador, pero... ¿lo son?
+
+**Razonamiento:**
+Se juntan en los polos Norte y Sur. Si se juntan, no son paralelas.
+**Resultado:** No son paralelas (en geometría esférica no existen paralelas "reales" como en el plano).
+
+### Ejemplo 6: El rectángulo
+¿Cuántos pares de rectas paralelas forman los lados de un rectángulo?
+
+**Razonamiento:**
+El lado de arriba es paralelo al de abajo. El de la izquierda al de la derecha.
+**Resultado:** 2 pares.
 
 ---
 
-## 📖 Relación entre paralelas y perpendiculares
+## 📝 Ejercicios de Práctica
 
-### Propiedad importante
-
-Si una recta es perpendicular a una de dos paralelas, entonces es perpendicular a la otra también.
-
-$$
-\text{Si } l \parallel m \text{ y } t \perp l, \text{ entonces } t \perp m
-$$
-
-### Ejemplo
-
-Si el piso es paralelo al techo, y una columna es perpendicular al piso, entonces esa columna también es perpendicular al techo.
-
----
-
-## 📝 Ejercicios de práctica
-
-### Ejercicio 1: Identificar paralelas
-
-Indica cuáles son rectas paralelas:
-
-1. Los lados opuestos de un cuadrado
-2. Dos radios de un círculo
-3. Las líneas de la cancha de fútbol (laterales)
-4. Los lados de un triángulo
-5. Los bordes de un libro
+### Ejercicio 1
+¿Cuál es el símbolo matemático para "es paralelo a"?
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. **Sí** - Lados opuestos de un cuadrado son paralelos
-2. **No** - Todos se cruzan en el centro
-3. **Sí** - Las líneas laterales son paralelas
-4. **No** - Los lados del triángulo se cruzan en los vértices
-5. **Sí** - Los bordes opuestos son paralelos
+$\parallel$.
 
 </details>
 
 ---
 
-### Ejercicio 2: Transitividad
-
-Si la recta $a$ es paralela a la recta $b$, y la recta $b$ es paralela a la recta $c$, ¿qué puedes decir de las rectas $a$ y $c$?
+### Ejercicio 2
+Si dos rectas jamás se cruzan pero están en planos diferentes, ¿son paralelas?
 
 <details>
-<summary><strong>Ver respuesta</strong></summary>
+<summary>Ver solución</summary>
 
-Las rectas $a$ y $c$ son **paralelas** entre sí.
-
-Por la propiedad transitiva: Si $a \parallel b$ y $b \parallel c$, entonces $a \parallel c$.
+No. Se llaman rectas **alabeadas** (skew lines). La definición de paralelas exige que estén en el mismo plano.
 
 </details>
 
 ---
 
-### Ejercicio 3: Problema de distancia
-
-Dos rectas paralelas están separadas 8 cm. Si trazamos una perpendicular desde un punto de una recta hasta la otra, ¿cuánto mide esa perpendicular? ¿Y si trazamos otra perpendicular desde otro punto?
+### Ejercicio 3
+La vía del tren tiene un riel dañado que se acerca lentamente al otro. ¿Siguen siendo paralelos?
 
 <details>
-<summary><strong>Ver respuesta</strong></summary>
+<summary>Ver solución</summary>
 
-- La primera perpendicular mide **8 cm**
-- La segunda perpendicular también mide **8 cm**
-
-La distancia entre paralelas es constante, sin importar desde qué punto se trace la perpendicular.
+No. Si la distancia cambia, eventualmente se cruzarán (o se separarán demasiado).
 
 </details>
 
 ---
 
-### Ejercicio 4: Verdadero o Falso
-
-1. Dos rectas paralelas pueden tener un punto en común.
-2. Tres rectas paralelas entre sí tienen la misma dirección.
-3. La distancia entre dos rectas paralelas puede variar.
-4. Si $a \perp c$ y $b \perp c$, entonces $a \parallel b$.
+### Ejercicio 4
+Si $m \parallel n$ y $n \parallel p$, ¿cómo son $m$ y $p$?
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. **Falso** - Si tuvieran un punto en común serían secantes o coincidentes
-2. **Verdadero** - Todas las paralelas tienen la misma dirección
-3. **Falso** - La distancia es siempre constante
-4. **Verdadero** - Dos rectas perpendiculares a una tercera son paralelas entre sí
+Paralelas.
 
 </details>
 
 ---
+
+### Ejercicio 5
+Dos rectas perpendiculares a la misma recta $r$ son...
+
+<details>
+<summary>Ver solución</summary>
+
+Paralelas entre sí.
+
+</details>
+
+---
+
+### Ejercicio 6
+¿Cuántos puntos en común tienen dos rectas paralelas?
+
+<details>
+<summary>Ver solución</summary>
+
+Cero puntos.
+
+</details>
+
+---
+
+### Ejercicio 7
+En un trapecio, ¿cuántos pares de lados son paralelos?
+
+<details>
+<summary>Ver solución</summary>
+
+Exactamente un par (las bases).
+
+</details>
+
+---
+
+### Ejercicio 8
+Si una recta corta a una de dos paralelas, ¿cortará a la otra?
+
+<details>
+<summary>Ver solución</summary>
+
+Sí, obligatoriamente (en geometría plana).
+
+</details>
+
+---
+
+### Ejercicio 9
+¿El eje X y el eje Y son paralelos?
+
+<details>
+<summary>Ver solución</summary>
+
+No, son perpendiculares.
+
+</details>
+
+---
+
+### Ejercicio 10
+Verdadero o Falso: Un cuadrado está formado por dos pares de rectas paralelas.
+
+<details>
+<summary>Ver solución</summary>
+
+Verdadero.
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Concepto | Característica | Símbolo |
+|:--- |:--- |:--- |
+| **Paralelas** | Distancia constante, intersección nula | $l \parallel m$ |
+| **Pendiente** | Tienen la misma inclinación | $m_1 = m_2$ |
+| **Transitividad** | Amigos de mis amigos son mis amigos | Si $A \parallel B$ y $B \parallel C \to A \parallel C$ |
+
+> **Conclusión:** El paralelismo es la geometría de "no tocarse". Es fundamental para que las cosas encajen, se muevan suavemente y mantengan su estructura.
