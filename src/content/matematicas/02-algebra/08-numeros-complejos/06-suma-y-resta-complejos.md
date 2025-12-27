@@ -1,116 +1,30 @@
-# ➕ Suma y Resta de Números Complejos
+# **Suma y Resta de Complejos**
 
-En esta lección aprenderemos a sumar y restar números complejos.
+Sumar números complejos es la operación más intuitiva que existe en este tema: simplemente seguimos la lógica de "peras con peras, manzanas con manzanas". Agrupamos lo real con lo real y lo imaginario con lo imaginario.
 
 ---
 
-## 📖 Regla de suma
+## 🎯 ¿Qué vas a aprender?
 
-Para sumar números complejos, sumamos las partes reales entre sí y las partes imaginarias entre sí:
+- Cómo sumar dos números complejos.
+- Cómo restar números complejos (¡cuidado con los signos!).
+- Cómo simplificar expresiones con paréntesis y signos negativos.
+- Propiedades básicas de la suma y resta de conjugados.
+
+---
+
+## ➕ Regla de Suma y Resta
+
+Para operar complejos, tratamos a la $i$ como si fuera una variable $x$ en álgebra:
+
+1. **Sumas las Partes Reales** entre sí.
+2. **Sumas las Partes Imaginarias** entre sí.
+
+### **Fórmulas**
 
 $$
 (a + bi) + (c + di) = (a + c) + (b + d)i
 $$
-
----
-
-### Ejemplo 1
-
-Calcular $(3 + 2i) + (5 + 4i)$.
-
-$$
-(3 + 2i) + (5 + 4i) = (3 + 5) + (2 + 4)i = 8 + 6i
-$$
-
-$$
-\boxed{(3 + 2i) + (5 + 4i) = 8 + 6i}
-$$
-
-Visualización de la suma (método punta a cola):
-
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="jsxgraph-suma-complejos" class="jsxgraph-container" style="width: 100%; height: 350px; border-radius: 8px; overflow: hidden;"></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined') {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-suma-complejos', {
-      boundingbox: [-1, 8, 10, -1],
-      axis: true,
-      showCopyright: false,
-      showNavigation: false,
-      pan: { enabled: false },
-      zoom: { enabled: false }
-    });
-    
-    // Origen
-    var O = board.create('point', [0, 0], { name: '', size: 3, fixed: true, color: '#64748b' });
-    
-    // PASO 1: z₁ = 3 + 2i (azul, desde el origen)
-    var z1 = board.create('point', [3, 2], { name: '', size: 5, fixed: true, color: '#3b82f6' });
-    board.create('arrow', [O, z1], { strokeColor: '#3b82f6', strokeWidth: 4, fixed: true });
-    board.create('text', [1, 2.3, '① z₁ = 3 + 2i'], { fontSize: 13, strokeColor: '#3b82f6', cssStyle: 'font-weight: bold;', fixed: true });
-    
-    // PASO 2: z₂ = 5 + 4i (verde, desde la PUNTA de z₁)
-    var sum = board.create('point', [8, 6], { name: '', size: 5, fixed: true, color: '#ef4444' });
-    board.create('arrow', [z1, sum], { strokeColor: '#22c55e', strokeWidth: 4, fixed: true });
-    board.create('text', [5.5, 5, '② z₂ = 5 + 4i'], { fontSize: 13, strokeColor: '#22c55e', cssStyle: 'font-weight: bold;', fixed: true });
-    
-    // RESULTADO: z₁ + z₂ = 8 + 6i (rojo, del origen al final)
-    board.create('arrow', [O, sum], { strokeColor: '#ef4444', strokeWidth: 3, dash: 2, fixed: true });
-    board.create('text', [6.5, 7, '③ Resultado = 8 + 6i'], { fontSize: 13, strokeColor: '#ef4444', cssStyle: 'font-weight: bold;', fixed: true });
-    
-    // Etiquetas de ejes
-    board.create('text', [9.3, -0.5, 'Real'], { fontSize: 11, strokeColor: '#374151', cssStyle: 'font-weight: bold;', fixed: true });
-    board.create('text', [-0.7, 7.3, 'Imag'], { fontSize: 11, strokeColor: '#374151', cssStyle: 'font-weight: bold;', fixed: true });
-    
-    board.unsuspendUpdate();
-  }
-});
-</script>
-
-> 💡 **Método punta a cola:**  
-> ① Dibujamos $z_1$ desde el origen (azul).  
-> ② Dibujamos $z_2$ desde la **punta** de $z_1$ (verde).  
-> ③ El **resultado** va del origen a donde terminamos (rojo punteado).
-
----
-
-### Ejemplo 2
-
-Calcular $(4 + 7i) + (-2 + 3i)$.
-
-$$
-(4 + 7i) + (-2 + 3i) = (4 - 2) + (7 + 3)i = 2 + 10i
-$$
-
-$$
-\boxed{(4 + 7i) + (-2 + 3i) = 2 + 10i}
-$$
-
----
-
-### Ejemplo 3
-
-Calcular $(-1 + 5i) + (3 - 2i)$.
-
-$$
-(-1 + 5i) + (3 - 2i) = (-1 + 3) + (5 - 2)i = 2 + 3i
-$$
-
-$$
-\boxed{(-1 + 5i) + (3 - 2i) = 2 + 3i}
-$$
-
----
-
-## 📖 Regla de resta
-
-Para restar números complejos, restamos las partes reales y las partes imaginarias:
 
 $$
 (a + bi) - (c + di) = (a - c) + (b - d)i
@@ -118,198 +32,269 @@ $$
 
 ---
 
-### Ejemplo 4
+## ⚙️ Ejemplos Resueltos
 
-Calcular $(7 + 4i) - (3 + 2i)$.
+### Ejemplo 1: Suma Básica
 
-$$
-(7 + 4i) - (3 + 2i) = (7 - 3) + (4 - 2)i = 4 + 2i
-$$
+Calcula $(3 + 2i) + (5 + 4i)$.
 
-$$
-\boxed{(7 + 4i) - (3 + 2i) = 4 + 2i}
-$$
-
----
-
-### Ejemplo 5
-
-Calcular $(5 + 3i) - (8 - i)$.
+**Razonamiento:**
+Agrupamos reales ($3+5$) y agrupamos imaginarios ($2+4$).
 
 $$
-(5 + 3i) - (8 - i) = (5 - 8) + (3 - (-1))i = -3 + 4i
+(3 + 5) + (2 + 4)i
 $$
 
+**Resultado:**
+
 $$
-\boxed{(5 + 3i) - (8 - i) = -3 + 4i}
+\boxed{8 + 6i}
 $$
 
 ---
 
-### Ejemplo 6
+### Ejemplo 2: Resta (Distribución del Signo)
 
-Calcular $(2 - 6i) - (-4 + 2i)$.
+Calcula $(6 + 5i) - (2 + 3i)$.
 
-$$
-(2 - 6i) - (-4 + 2i) = (2 - (-4)) + (-6 - 2)i = 6 - 8i
-$$
+**Razonamiento:**
+El signo menos afecta a **todo** el paréntesis de la derecha. Es como multiplicar por -1.
+$(6 + 5i) - 2 - 3i$.
 
-$$
-\boxed{(2 - 6i) - (-4 + 2i) = 6 - 8i}
-$$
+Ahora agrupamos:
+- Reales: $6 - 2 = 4$
+- Imaginarios: $5i - 3i = 2i$
 
----
-
-## 📖 Operaciones combinadas
-
-### Ejemplo 7
-
-Calcular $(2 + 3i) + (4 - i) - (1 + 5i)$.
+**Resultado:**
 
 $$
-= (2 + 4 - 1) + (3 - 1 - 5)i = 5 - 3i
-$$
-
-$$
-\boxed{(2 + 3i) + (4 - i) - (1 + 5i) = 5 - 3i}
+\boxed{4 + 2i}
 $$
 
 ---
 
-### Ejemplo 8
+### Ejemplo 3: Resta con Negativos
 
-Calcular $3(2 + i) + 2(1 - 3i)$.
+Calcula $(4 - 2i) - (-3 + 5i)$.
 
-**Paso 1:** Distribuimos:
-
-$$
-3(2 + i) = 6 + 3i
-$$
+**Razonamiento:**
+Cuidado con el doble negativo: $-(-3)$ se vuelve $+3$, y $-(+5i)$ se vuelve $-5i$.
 
 $$
-2(1 - 3i) = 2 - 6i
+4 - 2i + 3 - 5i
 $$
 
-**Paso 2:** Sumamos:
+Agrupamos:
+- Reales: $4 + 3 = 7$.
+- Imaginarios: $-2i - 5i = -7i$.
+
+**Resultado:**
 
 $$
-(6 + 3i) + (2 - 6i) = 8 - 3i
-$$
-
-$$
-\boxed{3(2 + i) + 2(1 - 3i) = 8 - 3i}
+\boxed{7 - 7i}
 $$
 
 ---
 
-### Ejemplo 9
+### Ejemplo 4: Suma con Conjugados
 
-Simplificar $(a + bi) + (a - bi)$.
+Suma $z = 3 + 4i$ con su conjugado $\bar{z} = 3 - 4i$.
 
-$$
-(a + bi) + (a - bi) = 2a + 0i = 2a
-$$
+**Razonamiento:**
 
 $$
-\boxed{(a + bi) + (a - bi) = 2a}
+(3 + 4i) + (3 - 4i)
 $$
 
-> La suma de un complejo con su conjugado da el doble de la parte real.
+Observa que las partes imaginarias ($4i$ y $-4i$) se cancelan.
+
+$$
+3 + 3
+$$
+
+**Resultado:**
+
+$$
+\boxed{6}
+$$
+
+> **Propiedad:** La suma de un complejo y su conjugado siempre es un número **real**.
 
 ---
 
-### Ejemplo 10
+## 📝 Ejercicios de Práctica
 
-Simplificar $(a + bi) - (a - bi)$.
-
-$$
-(a + bi) - (a - bi) = 0 + 2bi = 2bi
-$$
-
-$$
-\boxed{(a + bi) - (a - bi) = 2bi}
-$$
-
-> La diferencia de un complejo con su conjugado da el doble de la parte imaginaria.
-
----
-
-## 📝 Ejercicios de práctica
-
-**Ejercicio 1:** Calcula $(5 + 2i) + (3 + 4i)$.
+### Ejercicio 1
+Suma $(2 + 3i) + (4 + i)$.
 
 <details>
 <summary>Ver solución</summary>
 
 $$
-8 + 6i
+(2+4) + (3+1)i = 6 + 4i
 $$
+
+**Resultado:** $\boxed{6 + 4i}$
 
 </details>
 
 ---
 
-**Ejercicio 2:** Calcula $(6 - 3i) + (-2 + 7i)$.
+### Ejercicio 2
+Resta $(8 + 5i) - (2 + 2i)$.
 
 <details>
 <summary>Ver solución</summary>
 
 $$
-4 + 4i
+(8-2) + (5-2)i = 6 + 3i
 $$
+
+**Resultado:** $\boxed{6 + 3i}$
 
 </details>
 
 ---
 
-**Ejercicio 3:** Calcula $(9 + i) - (4 + 6i)$.
+### Ejercicio 3
+Suma $(-3 + 4i) + (5 - 6i)$.
 
 <details>
 <summary>Ver solución</summary>
 
 $$
-5 - 5i
+(-3+5) + (4-6)i = 2 - 2i
 $$
+
+**Resultado:** $\boxed{2 - 2i}$
 
 </details>
 
 ---
 
-**Ejercicio 4:** Calcula $(-3 + 2i) - (-5 - 4i)$.
+### Ejercicio 4
+Resta $(2 - i) - (5 - 3i)$.
 
 <details>
 <summary>Ver solución</summary>
 
 $$
-2 + 6i
+2 - i - 5 + 3i = -3 + 2i
 $$
+
+**Resultado:** $\boxed{-3 + 2i}$
 
 </details>
 
 ---
 
-**Ejercicio 5:** Calcula $2(3 + 4i) - 3(1 - 2i)$.
+### Ejercicio 5
+Calcula $5 + (2 - 3i)$.
+
+<details>
+<summary>Ver solución</summary>
+
+Solo sumamos la parte real.
+
+$$
+7 - 3i
+$$
+
+**Resultado:** $\boxed{7 - 3i}$
+
+</details>
+
+---
+
+### Ejercicio 6
+Calcula $(4i) - (3 - i)$.
 
 <details>
 <summary>Ver solución</summary>
 
 $$
-(6 + 8i) - (3 - 6i) = 3 + 14i
+4i - 3 + i = -3 + 5i
 $$
+
+**Resultado:** $\boxed{-3 + 5i}$
 
 </details>
 
 ---
 
-**Ejercicio 6:** Calcula $(1 + i) + (2 + 2i) + (3 + 3i)$.
+### Ejercicio 7
+Suma $(1/2 + 2i) + (3/2 - i)$.
 
 <details>
 <summary>Ver solución</summary>
 
-$$
-(1 + 2 + 3) + (1 + 2 + 3)i = 6 + 6i
-$$
+Reales: $1/2 + 3/2 = 4/2 = 2$.
+Imag: $2i - i = i$.
+
+**Resultado:** $\boxed{2 + i}$
 
 </details>
 
 ---
+
+### Ejercicio 8
+Simplifica $(3 + 2i) + (3 - 2i)$.
+
+<details>
+<summary>Ver solución</summary>
+
+Solo la parte real se duplica.
+
+$$
+6
+$$
+
+**Resultado:** $\boxed{6}$
+
+</details>
+
+---
+
+### Ejercicio 9
+Simplifica $(4 + 5i) - (4 - 5i)$.
+
+<details>
+<summary>Ver solución</summary>
+
+Los reales se cancelan. $5i - (-5i) = 10i$.
+
+$$
+10i
+$$
+
+**Resultado:** $\boxed{10i}$
+
+</details>
+
+---
+
+### Ejercicio 10
+Calcula $(2 + \sqrt{-9}) + (3 - \sqrt{-4})$.
+
+<details>
+<summary>Ver solución</summary>
+
+Convertir primero: $(2 + 3i) + (3 - 2i)$.
+Sumar: $(2+3) + (3-2)i$.
+
+**Resultado:** $\boxed{5 + i}$
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Operación | Clave | Ejemplo |
+|:--- |:--- |:--- |
+| **Suma** | Real+Real, Imag+Imag | $(1+i)+(2+i) = 3+2i$ |
+| **Resta** | Distribuir signo y agrupar | $(2+i)-(1+i) = 1$ |
+| **Conjugados (Suma)** | Se anula parte imaginaria | $z + \bar{z} = 2a$ (Real) |
+| **Conjugados (Resta)** | Se anula parte real | $z - \bar{z} = 2bi$ (Imag) |
+
+> **Conclusión:** El error más común en la resta es olvidar que el signo menos cambia **ambos** signos del segundo número. ¡Distribúyelo primero!

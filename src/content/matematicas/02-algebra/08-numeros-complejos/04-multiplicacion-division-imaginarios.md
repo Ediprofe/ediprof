@@ -1,314 +1,350 @@
-# ✖️ Multiplicación y División de Números Imaginarios
+# **Multiplicación y División de Imaginarios**
 
-En esta lección aprenderemos a multiplicar y dividir números imaginarios puros.
-
----
-
-## 📖 Multiplicación de imaginarios
-
-Cuando multiplicamos imaginarios, usamos que $i^2 = -1$:
-
-$$
-(ai)(bi) = ab \cdot i^2 = ab \cdot (-1) = -ab
-$$
-
-> **Importante:** El producto de dos imaginarios puros es un **número real**.
+Hasta ahora hemos sumado y restado números imaginarios como si fueran una variable cualquiera (como $x$). Pero al multiplicar o dividir, sucede algo mágico: la $i$ puede desaparecer o transformarse en un número real negativo. Esto se debe a la propiedad fundamental que define a los números imaginarios: $i^2 = -1$.
 
 ---
 
-### Ejemplo 1
+## 🎯 ¿Qué vas a aprender?
 
-Calcular $(3i)(4i)$.
-
-$$
-(3i)(4i) = 12i^2 = 12(-1) = -12
-$$
-
-$$
-\boxed{(3i)(4i) = -12}
-$$
+- Cómo multiplicar dos números imaginarios puros.
+- Por qué el resultado de multiplicar dos imaginarios es un **número real**.
+- Cómo multiplicar un número real por un imaginario.
+- Cómo dividir números imaginarios.
 
 ---
 
-### Ejemplo 2
+## ✖️ Multiplicación de Imaginarios
 
-Calcular $(5i)(-2i)$.
+Cuando multiplicamos dos números imaginarios, multiplicamos los coeficientes (los números normales) y las $i$ por separado.
 
-$$
-(5i)(-2i) = -10i^2 = -10(-1) = 10
-$$
+### **La Regla de Oro**
 
 $$
-\boxed{(5i)(-2i) = 10}
+(ai) \cdot (bi) = (a \cdot b) \cdot i^2
 $$
+
+Como $i^2 = -1$, el resultado final es:
+
+$$
+-ab
+$$
+
+> **¡Ojo!** El producto de dos números imaginarios puros es un **número real**.
 
 ---
 
-### Ejemplo 3
+## ⚙️ Ejemplos Resueltos
 
-Calcular $(-3i)(-4i)$.
+### Ejemplo 1: Multiplicación Simple
 
-$$
-(-3i)(-4i) = 12i^2 = -12
-$$
+Calcula $(3i)(4i)$.
 
-$$
-\boxed{(-3i)(-4i) = -12}
-$$
-
----
-
-### Ejemplo 4
-
-Calcular $\sqrt{-4} \cdot \sqrt{-9}$.
-
-**Paso 1:** Convertimos a imaginarios primero:
+**Razonamiento:**
+Multiplicamos $3 \times 4$ y $i \times i$.
 
 $$
-\sqrt{-4} = 2i, \quad \sqrt{-9} = 3i
+12 \cdot i^2
 $$
 
-**Paso 2:** Multiplicamos:
+Sustituimos $i^2 = -1$.
 
 $$
-(2i)(3i) = 6i^2 = -6
+12 \cdot (-1)
 $$
 
-$$
-\boxed{\sqrt{-4} \cdot \sqrt{-9} = -6}
-$$
-
-> **Advertencia:** No podemos usar $\sqrt{a} \cdot \sqrt{b} = \sqrt{ab}$ cuando ambos son negativos.
-
----
-
-### Ejemplo 5
-
-Calcular $\sqrt{-3} \cdot \sqrt{-12}$.
+**Resultado:**
 
 $$
-\sqrt{-3} = i\sqrt{3}, \quad \sqrt{-12} = 2i\sqrt{3}
-$$
-
-$$
-(i\sqrt{3})(2i\sqrt{3}) = 2i^2 \cdot 3 = 2(-1)(3) = -6
-$$
-
-$$
-\boxed{\sqrt{-3} \cdot \sqrt{-12} = -6}
+\boxed{-12}
 $$
 
 ---
 
-## 📖 Multiplicación de real por imaginario
+### Ejemplo 2: Con Signos Negativos
 
-Un número real por un imaginario da otro imaginario:
+Calcula $(-5i)(2i)$.
 
-$$
-a \cdot bi = abi
-$$
-
-### Ejemplo 6
-
-Calcular $5 \cdot 3i$.
+**Razonamiento:**
+$(-5) \times 2 = -10$.
 
 $$
-5 \cdot 3i = 15i
+-10 \cdot i^2
 $$
 
 $$
-\boxed{5 \cdot 3i = 15i}
+-10 \cdot (-1)
 $$
 
----
-
-### Ejemplo 7
-
-Calcular $(-4)(2i)$.
+**Resultado:**
 
 $$
-(-4)(2i) = -8i
-$$
-
-$$
-\boxed{(-4)(2i) = -8i}
+\boxed{10}
 $$
 
 ---
 
-## 📖 División de imaginarios
+### Ejemplo 3: Real por Imaginario
 
-Para dividir imaginarios, dividimos los coeficientes:
+Calcula $5 \cdot (3i)$.
 
-$$
-\frac{ai}{bi} = \frac{a}{b}
-$$
-
-### Ejemplo 8
-
-Calcular $\dfrac{12i}{4i}$.
+**Razonamiento:**
+Aquí solo hay una $i$. Multiplicamos los números y dejamos la $i$ quieta.
 
 $$
-\frac{12i}{4i} = \frac{12}{4} = 3
+(5 \cdot 3)i
 $$
 
+**Resultado:**
+
 $$
-\boxed{\frac{12i}{4i} = 3}
+\boxed{15i}
 $$
 
 ---
 
-### Ejemplo 9
+### Ejemplo 4: Multiplicación de Raíces Negativas
 
-Calcular $\dfrac{15i}{-3i}$.
+Calcula $\sqrt{-4} \cdot \sqrt{-9}$.
 
-$$
-\frac{15i}{-3i} = \frac{15}{-3} = -5
-$$
+**Paso Crítico:**
+⚠️ **Nunca** multipliques los radicandos negativos directamente ($\sqrt{(-4)(-9)} \neq \sqrt{36}$).
+Primero convierte a imaginarios.
 
-$$
-\boxed{\frac{15i}{-3i} = -5}
-$$
+**Paso 1: Convertir**
+$\sqrt{-4} = 2i$
+$\sqrt{-9} = 3i$
 
----
-
-## 📖 División de real entre imaginario
-
-Para dividir un real entre un imaginario, multiplicamos numerador y denominador por $i$:
+**Paso 2: Multiplicar**
 
 $$
-\frac{a}{bi} = \frac{a \cdot i}{bi \cdot i} = \frac{ai}{bi^2} = \frac{ai}{-b} = -\frac{a}{b}i
+(2i)(3i) = 6i^2
 $$
 
-### Ejemplo 10
-
-Calcular $\dfrac{6}{2i}$.
+**Resultado:**
 
 $$
-\frac{6}{2i} = \frac{6 \cdot i}{2i \cdot i} = \frac{6i}{2i^2} = \frac{6i}{-2} = -3i
-$$
-
-$$
-\boxed{\frac{6}{2i} = -3i}
+\boxed{-6}
 $$
 
 ---
 
-### Ejemplo 11
+## ➗ División de Imaginarios
 
-Calcular $\dfrac{10}{5i}$.
+Al dividir, las $i$ se pueden cancelar, dejando solo un número real.
 
-$$
-\frac{10}{5i} = \frac{10i}{5i^2} = \frac{10i}{-5} = -2i
-$$
+### Ejemplo 5: División Simple
 
-$$
-\boxed{\frac{10}{5i} = -2i}
-$$
+Calcula $\frac{12i}{4i}$.
 
----
-
-### Ejemplo 12
-
-Calcular $\dfrac{-8}{4i}$.
+**Razonamiento:**
+Dividimos los números y cancelamos las $i$ (porque $i/i = 1$).
 
 $$
-\frac{-8}{4i} = \frac{-8i}{4i^2} = \frac{-8i}{-4} = 2i
+\frac{12}{4} \cdot \frac{i}{i} = 3 \cdot 1
 $$
 
+**Resultado:**
+
 $$
-\boxed{\frac{-8}{4i} = 2i}
+\boxed{3}
 $$
 
 ---
 
-## 📋 Resumen
+### Ejemplo 6: División Real entre Imaginario
 
-| Operación | Resultado |
-|:----------|:----------|
-| $(ai)(bi)$ | $-ab$ (real) |
-| $a \cdot bi$ | $abi$ (imaginario) |
-| $\dfrac{ai}{bi}$ | $\dfrac{a}{b}$ (real) |
-| $\dfrac{a}{bi}$ | $-\dfrac{a}{b}i$ (imaginario) |
+Calcula $\frac{10}{2i}$.
+
+**Razonamiento:**
+Tenemos una $i$ en el denominador. Para quitarla, multiplicamos arriba y abajo por $i$ (racionalización).
+
+$$
+\frac{10}{2i} \cdot \frac{i}{i} = \frac{10i}{2i^2}
+$$
+
+$$
+\frac{10i}{2(-1)} = \frac{10i}{-2}
+$$
+
+**Resultado:**
+
+$$
+\boxed{-5i}
+$$
 
 ---
 
-## 📝 Ejercicios de práctica
+## 📝 Ejercicios de Práctica
 
-**Ejercicio 1:** Calcula $(2i)(7i)$.
+### Ejercicio 1
+Calcula $(2i)(5i)$.
 
 <details>
 <summary>Ver solución</summary>
 
 $$
-14i^2 = -14
+10i^2 = -10
 $$
+
+**Resultado:** $\boxed{-10}$
 
 </details>
 
 ---
 
-**Ejercicio 2:** Calcula $(-5i)(3i)$.
+### Ejercicio 2
+Calcula $(-3i)(4i)$.
 
 <details>
 <summary>Ver solución</summary>
 
 $$
--15i^2 = 15
+-12i^2 = -12(-1) = 12
 $$
+
+**Resultado:** $\boxed{12}$
 
 </details>
 
 ---
 
-**Ejercicio 3:** Calcula $\sqrt{-2} \cdot \sqrt{-8}$.
+### Ejercicio 3
+Calcula $(-6i)(-2i)$.
 
 <details>
 <summary>Ver solución</summary>
 
 $$
-(i\sqrt{2})(2i\sqrt{2}) = 2i^2 \cdot 2 = -4
+12i^2 = -12
 $$
+
+**Resultado:** $\boxed{-12}$
 
 </details>
 
 ---
 
-**Ejercicio 4:** Calcula $\dfrac{20i}{-4i}$.
+### Ejercicio 4
+Calcula $4(3i)$.
 
 <details>
 <summary>Ver solución</summary>
 
 $$
-\frac{20}{-4} = -5
+12i
 $$
+
+**Resultado:** $\boxed{12i}$
 
 </details>
 
 ---
 
-**Ejercicio 5:** Calcula $\dfrac{12}{3i}$.
+### Ejercicio 5
+Calcula $\sqrt{-25} \cdot \sqrt{-4}$.
 
 <details>
 <summary>Ver solución</summary>
 
 $$
-\frac{12i}{3i^2} = \frac{12i}{-3} = -4i
+(5i)(2i) = 10i^2 = -10
 $$
+
+**Resultado:** $\boxed{-10}$
 
 </details>
 
 ---
 
-**Ejercicio 6:** Calcula $(4i)^2$.
+### Ejercicio 6
+Divide $\frac{20i}{5i}$.
+
+<details>
+<summary>Ver solución</summary>
+
+Se cancelan las $i$.
+
+$$
+20 / 5 = 4
+$$
+
+**Resultado:** $\boxed{4}$
+
+</details>
+
+---
+
+### Ejercicio 7
+Divide $\frac{8i}{-2i}$.
 
 <details>
 <summary>Ver solución</summary>
 
 $$
-16i^2 = -16
+8 / -2 = -4
 $$
+
+**Resultado:** $\boxed{-4}$
 
 </details>
 
 ---
+
+### Ejercicio 8
+Divide $\frac{6}{3i}$.
+
+<details>
+<summary>Ver solución</summary>
+
+$$
+\frac{6i}{3i^2} = \frac{6i}{-3} = -2i
+$$
+
+**Resultado:** $\boxed{-2i}$
+
+</details>
+
+---
+
+### Ejercicio 9
+Calcula $(i\sqrt{2})(i\sqrt{8})$.
+
+<details>
+<summary>Ver solución</summary>
+
+$$
+i^2 \sqrt{16} = (-1)(4) = -4
+$$
+
+**Resultado:** $\boxed{-4}$
+
+</details>
+
+---
+
+### Ejercicio 10
+Calcula $(3i)^2$.
+
+<details>
+<summary>Ver solución</summary>
+
+$$
+3^2 \cdot i^2 = 9(-1) = -9
+$$
+
+**Resultado:** $\boxed{-9}$
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Operación | Fórmula | Resultado Típico |
+|:--- |:--- |:--- |
+| **Imag $\times$ Imag** | $(ai)(bi) = ab \cdot i^2$ | Real (signo invertido) |
+| **Real $\times$ Imag** | $a(bi)$ | Imaginario |
+| **Imag / Imag** | $\frac{ai}{bi}$ | Real |
+| **Real / Imag** | $\frac{a}{bi}$ | Imaginario (con signo invertido) |
+
+> **Conclusión:** La clave siempre es recordar que **cada par de $i$ que se multiplican se convierten en un -1**.

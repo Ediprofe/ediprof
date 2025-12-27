@@ -1,363 +1,294 @@
-# 📏 Módulo de un Número Complejo
+# **Módulo de un Número Complejo**
 
-En esta lección aprenderemos a calcular el módulo (o valor absoluto) de un número complejo.
-
----
-
-## 📖 Definición de módulo
-
-El **módulo** de un número complejo $z = a + bi$, denotado $|z|$, es la distancia desde el origen hasta el punto $(a, b)$ en el plano complejo.
-
-$$
-|z| = |a + bi| = \sqrt{a^2 + b^2}
-$$
+El módulo es simplemente una forma elegante de preguntar: "¿Qué tan lejos está este número del cero?". Geométricamente, es la longitud de la flecha que representa al número complejo. Como siempre formamos un triángulo rectángulo con los ejes, ¡Pitágoras viene al rescate!
 
 ---
 
-## 📖 Interpretación geométrica
+## 🎯 ¿Qué vas a aprender?
 
-El módulo es la **longitud** del vector que va del origen al punto que representa el número complejo.
+- Qué representa el módulo ($|z|$) gráficamente.
+- Cómo calcular el módulo usando el **Teorema de Pitágoras**.
+- La relación entre módulo, número y conjugado.
+- Propiedades clave (siempre es positivo).
 
-Por el teorema de Pitágoras:
+---
 
-$$
-|z|^2 = a^2 + b^2
-$$
+## 📏 La Fórmula del Módulo
+
+Para un número complejo $z = a + bi$, el módulo se denota $|z|$ y se calcula como:
 
 $$
 |z| = \sqrt{a^2 + b^2}
 $$
 
+> **Nota:** Tomamos $a$ y $b$ (los números reales). **No incluyas la $i$ dentro de la raíz.**
+
 ---
 
+## ⚙️ Ejemplos Resueltos
+
+### Ejemplo 1: Módulo Estándar
+
+Calcula el módulo de $z = 3 + 4i$.
+
+**Razonamiento:**
+$a = 3$, $b = 4$. Usamos Pitágoras.
+
+$$
+|z| = \sqrt{3^2 + 4^2}
+$$
+
+$$
+\sqrt{9 + 16} = \sqrt{25}
+$$
+
+**Resultado:**
+
+$$
+\boxed{5}
+$$
+
+---
+
+### Ejemplo 2: Módulo con Negativos
+
+Calcula $|5 - 12i|$.
+
+**Razonamiento:**
+$a = 5$, $b = -12$.
+Al elevar al cuadrado, el negativo desaparece ($(-12)^2 = 144$).
+
+$$
+\sqrt{5^2 + (-12)^2}
+$$
+
+$$
+\sqrt{25 + 144} = \sqrt{169}
+$$
+
+**Resultado:**
+
+$$
+\boxed{13}
+$$
+
+---
+
+### Ejemplo 3: Módulo de Imaginario Puro
+
+Calcula $|-3i|$.
+
+**Razonamiento:**
+Es el punto $(0, -3)$. La distancia al cero es simplemente 3.
+Usando fórmula: $a=0, b=-3$.
+
+$$
+\sqrt{0^2 + (-3)^2} = \sqrt{9}
+$$
+
+**Resultado:**
+
+$$
+\boxed{3}
+$$
+
+---
+
+### Ejemplo 4: Módulo con Raíces
+
+Calcula $|1 + i|$.
+
+**Razonamiento:**
+$a=1, b=1$.
+
+$$
+\sqrt{1^2 + 1^2} = \sqrt{1 + 1}
+$$
+
+**Resultado:**
+
+$$
+\boxed{\sqrt{2}}
+$$
+
+---
+
+## 💎 Propiedad Importante
+
+Multiplicar un número por su conjugado nos da el módulo al cuadrado:
+
+$$
+z \cdot \bar{z} = |z|^2
+$$
+
+### Ejemplo 5: Verificación
+
+Para $z = 3 + 4i$, ya vimos que $|z| = 5$, por lo que $|z|^2 = 25$.
+Veamos el producto con el conjugado:
+
+$$
+(3 + 4i)(3 - 4i) = 3^2 + 4^2 = 9 + 16 = 25
+$$
+
+¡Coinciden!
+
+---
+
+## 📝 Ejercicios de Práctica
+
 ### Ejemplo 1
+Calcula $|6 + 8i|$.
 
-Calcular $|3 + 4i|$.
-
-$$
-|3 + 4i| = \sqrt{3^2 + 4^2} = \sqrt{9 + 16} = \sqrt{25} = 5
-$$
+<details>
+<summary>Ver solución</summary>
 
 $$
-\boxed{|3 + 4i| = 5}
+\sqrt{36 + 64} = \sqrt{100} = 10
 $$
 
-Visualización del módulo:
+**Resultado:** $\boxed{10}$
 
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="echarts-modulo" style="width: 100%; height: 380px; border-radius: 8px;"></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof echarts !== 'undefined' && document.getElementById('echarts-modulo')) {
-    var chart = echarts.init(document.getElementById('echarts-modulo'));
-    var option = {
-      title: { text: 'Módulo de z = 3 + 4i', left: 'center', textStyle: { fontSize: 15, fontWeight: 'bold', color: '#1e293b' } },
-      animation: true, animationDuration: 1000,
-      grid: { left: '12%', right: '8%', top: '10%', bottom: '15%', show: true, borderColor: '#cbd5e1' },
-      xAxis: { type: 'value', name: 'Re', nameLocation: 'middle', nameGap: 30, nameTextStyle: { fontSize: 14, fontWeight: 'bold', color: '#374151' }, min: -1, max: 6, interval: 1, axisLine: { lineStyle: { color: '#374151', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } }, axisLabel: { fontSize: 11 } },
-      yAxis: { type: 'value', name: 'Im', nameLocation: 'middle', nameGap: 30, nameTextStyle: { fontSize: 14, fontWeight: 'bold', color: '#374151' }, min: -1, max: 6, interval: 1, axisLine: { lineStyle: { color: '#374151', width: 2 } }, splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } }, axisLabel: { fontSize: 11 } },
-      series: [
-        { name: 'Cateto a (parte real)', type: 'line', lineStyle: { width: 3, color: '#ef4444' }, symbol: 'none', data: [[0, 0], [3, 0]] },
-        { name: 'Cateto b (parte imaginaria)', type: 'line', lineStyle: { width: 3, color: '#22c55e' }, symbol: 'none', data: [[3, 0], [3, 4]] },
-        { name: 'Módulo |z| = 5', type: 'line', lineStyle: { width: 4, color: '#3b82f6' }, symbol: 'none', data: [[0, 0], [3, 4]] },
-        { name: 'z = 3 + 4i', type: 'scatter', symbolSize: 18, itemStyle: { color: '#3b82f6', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: 'z = 3 + 4i', position: 'right', fontSize: 12, fontWeight: 'bold' }, data: [[3, 4]] },
-        { name: 'a = 3', type: 'scatter', symbolSize: 0, label: { show: true, formatter: 'a = 3', fontSize: 12, fontWeight: 'bold', color: '#ef4444' }, data: [[1.5, -0.5]] },
-        { name: 'b = 4', type: 'scatter', symbolSize: 0, label: { show: true, formatter: 'b = 4', fontSize: 12, fontWeight: 'bold', color: '#22c55e' }, data: [[3.5, 2]] },
-        { name: '|z| = 5', type: 'scatter', symbolSize: 0, label: { show: true, formatter: '|z| = 5', fontSize: 14, fontWeight: 'bold', color: '#3b82f6' }, data: [[0.8, 2.5]] }
-      ],
-      tooltip: { trigger: 'item' }
-    };
-    chart.setOption(option);
-    window.addEventListener('resize', function() { chart.resize(); });
-  }
-});
-</script>
-
-> 💡 El **módulo** es la hipotenusa del triángulo rectángulo formado por la parte real (cateto horizontal) y la parte imaginaria (cateto vertical).
+</details>
 
 ---
 
 ### Ejemplo 2
+Calcula $|-2 + 5i|$.
 
-Calcular $|5 - 12i|$.
-
-$$
-|5 - 12i| = \sqrt{5^2 + (-12)^2} = \sqrt{25 + 144} = \sqrt{169} = 13
-$$
+<details>
+<summary>Ver solución</summary>
 
 $$
-\boxed{|5 - 12i| = 13}
+\sqrt{4 + 25} = \sqrt{29}
 $$
+
+**Resultado:** $\boxed{\sqrt{29}}$
+
+</details>
 
 ---
 
 ### Ejemplo 3
+Calcula $|4i|$.
 
-Calcular $|-2 + i|$.
+<details>
+<summary>Ver solución</summary>
 
-$$
-|-2 + i| = \sqrt{(-2)^2 + 1^2} = \sqrt{4 + 1} = \sqrt{5}
-$$
+Distancia directa es 4.
 
-$$
-\boxed{|-2 + i| = \sqrt{5}}
-$$
+**Resultado:** $\boxed{4}$
+
+</details>
 
 ---
 
 ### Ejemplo 4
+Calcula $|-7|$.
 
-Calcular $|4|$ (número real).
+<details>
+<summary>Ver solución</summary>
 
-$$
-|4| = |4 + 0i| = \sqrt{16 + 0} = 4
-$$
+Distancia directa (valor absoluto) es 7.
 
-Para números reales, el módulo coincide con el valor absoluto.
+**Resultado:** $\boxed{7}$
 
-$$
-\boxed{|4| = 4}
-$$
+</details>
 
 ---
 
 ### Ejemplo 5
+Calcula $|3 - 3i|$.
 
-Calcular $|3i|$ (imaginario puro).
-
-$$
-|3i| = |0 + 3i| = \sqrt{0 + 9} = 3
-$$
+<details>
+<summary>Ver solución</summary>
 
 $$
-\boxed{|3i| = 3}
+\sqrt{9 + 9} = \sqrt{18} = 3\sqrt{2}
 $$
+
+**Resultado:** $\boxed{3\sqrt{2}}$
+
+</details>
 
 ---
 
 ### Ejemplo 6
+Calcula $|1 - \sqrt{3}i|$.
 
-Calcular $|1 + i|$.
-
-$$
-|1 + i| = \sqrt{1 + 1} = \sqrt{2}
-$$
+<details>
+<summary>Ver solución</summary>
 
 $$
-\boxed{|1 + i| = \sqrt{2}}
+\sqrt{1 + (-\sqrt{3})^2} = \sqrt{1 + 3} = \sqrt{4} = 2
 $$
+
+**Resultado:** $\boxed{2}$
+
+</details>
 
 ---
-
-## 📖 Propiedades del módulo
-
-### Propiedad 1: Siempre no negativo
-
-$$
-|z| \geq 0
-$$
-
-$|z| = 0$ solo si $z = 0$.
-
----
-
-### Propiedad 2: Módulo del producto
-
-$$
-|z_1 \cdot z_2| = |z_1| \cdot |z_2|
-$$
 
 ### Ejemplo 7
+Calcula el módulo de $z = \frac{3}{5} + \frac{4}{5}i$.
 
-Verificar que $|(3 + 4i)(1 + 2i)| = |3 + 4i| \cdot |1 + 2i|$.
-
-**Lado derecho:**
-
-$$
-|3 + 4i| = 5, \quad |1 + 2i| = \sqrt{5}
-$$
+<details>
+<summary>Ver solución</summary>
 
 $$
-5 \cdot \sqrt{5} = 5\sqrt{5}
+\sqrt{\frac{9}{25} + \frac{16}{25}} = \sqrt{\frac{25}{25}} = 1
 $$
 
-**Lado izquierdo:**
+**Resultado:** $\boxed{1}$
 
-$(3 + 4i)(1 + 2i) = 3 + 6i + 4i + 8i^2 = 3 + 10i - 8 = -5 + 10i$
-
-$$
-|-5 + 10i| = \sqrt{25 + 100} = \sqrt{125} = 5\sqrt{5}
-$$
-
-$$
-\boxed{|-5 + 10i| = 5\sqrt{5} \quad ✓}
-$$
+</details>
 
 ---
-
-### Propiedad 3: Módulo del cociente
-
-$$
-\left|\frac{z_1}{z_2}\right| = \frac{|z_1|}{|z_2|}
-$$
-
----
-
-### Propiedad 4: Módulo del conjugado
-
-$$
-|\bar{z}| = |z|
-$$
 
 ### Ejemplo 8
+Si $|z| = 3$, ¿cuánto vale $|z|^2$?
 
-Si $z = 3 - 4i$, verificar que $|z| = |\bar{z}|$.
+<details>
+<summary>Ver solución</summary>
 
-$$
-|z| = |3 - 4i| = \sqrt{9 + 16} = 5
-$$
+9
 
-$$
-|\bar{z}| = |3 + 4i| = \sqrt{9 + 16} = 5
-$$
-
-$$
-\boxed{|z| = |\bar{z}| = 5 \quad ✓}
-$$
+</details>
 
 ---
 
-### Propiedad 5: Relación con el conjugado
-
-$$
-|z|^2 = z \cdot \bar{z}
-$$
-
 ### Ejemplo 9
+Calcula $|2i - 2|$.
 
-Verificar para $z = 2 + 3i$.
+<details>
+<summary>Ver solución</summary>
 
-$$
-z \cdot \bar{z} = (2 + 3i)(2 - 3i) = 4 + 9 = 13
-$$
+Ordenado es $-2 + 2i$.
+$\sqrt{4+4} = \sqrt{8} = 2\sqrt{2}$.
 
-$$
-|z|^2 = 2^2 + 3^2 = 4 + 9 = 13
-$$
+**Resultado:** $\boxed{2\sqrt{2}}$
 
-$$
-\boxed{|z|^2 = z \cdot \bar{z} = 13 \quad ✓}
-$$
+</details>
 
 ---
 
 ### Ejemplo 10
-
-Calcular $|2 - 5i|^2$ sin calcular la raíz.
-
-$$
-|2 - 5i|^2 = 2^2 + (-5)^2 = 4 + 25 = 29
-$$
-
-$$
-\boxed{|2 - 5i|^2 = 29}
-$$
-
----
-
-## 📋 Resumen
-
-| Propiedad | Fórmula |
-|:----------|:-------:|
-| Definición | $\|z\| = \sqrt{a^2 + b^2}$ |
-| Producto | $\|z_1 z_2\| = \|z_1\| \|z_2\|$ |
-| Cociente | $\left\|\frac{z_1}{z_2}\right\| = \frac{\|z_1\|}{\|z_2\|}$ |
-| Conjugado | $\|\bar{z}\| = \|z\|$ |
-| Con conjugado | $\|z\|^2 = z \bar{z}$ |
-
----
-
-## 📝 Ejercicios de práctica
-
-**Ejercicio 1:** Calcula $|8 + 6i|$.
+¿Es posible que el módulo sea negativo?
 
 <details>
 <summary>Ver solución</summary>
 
-$$
-\sqrt{64 + 36} = \sqrt{100} = 10
-$$
+**No.** Es una distancia, siempre es $\geq 0$.
 
 </details>
 
 ---
 
-**Ejercicio 2:** Calcula $|-4 + 3i|$.
+## 🔑 Resumen
 
-<details>
-<summary>Ver solución</summary>
+| Concepto | Fórmula | Significado |
+|:--- |:--- |:--- |
+| **Módulo** | $|z| = \sqrt{a^2+b^2}$ | Longitud del vector $z$. |
+| **Propiedad** | $|z| \geq 0$ | Siempre es positivo o cero. |
+| **Relación** | $|z|^2 = z \cdot \bar{z}$ | Conecta módulo y conjugado. |
 
-$$
-\sqrt{16 + 9} = \sqrt{25} = 5
-$$
-
-</details>
-
----
-
-**Ejercicio 3:** Calcula $|2 - 2i|$.
-
-<details>
-<summary>Ver solución</summary>
-
-$$
-\sqrt{4 + 4} = \sqrt{8} = 2\sqrt{2}
-$$
-
-</details>
-
----
-
-**Ejercicio 4:** Calcula $|-7i|$.
-
-<details>
-<summary>Ver solución</summary>
-
-$$
-\sqrt{0 + 49} = 7
-$$
-
-</details>
-
----
-
-**Ejercicio 5:** Si $|z| = 5$, ¿cuánto es $|z|^2$?
-
-<details>
-<summary>Ver solución</summary>
-
-$$
-|z|^2 = 25
-$$
-
-</details>
-
----
-
-**Ejercicio 6:** Calcula $|1 - i|^2$ sin calcular la raíz.
-
-<details>
-<summary>Ver solución</summary>
-
-$$
-1^2 + (-1)^2 = 1 + 1 = 2
-$$
-
-</details>
-
----
+> **Conclusión:** El módulo ignora los signos negativos y la $i$; solo le importa la magnitud pura de las componentes.

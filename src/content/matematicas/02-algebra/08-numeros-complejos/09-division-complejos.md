@@ -1,283 +1,286 @@
-# ➗ División de Números Complejos
+# **División de Complejos**
 
-En esta lección aprenderemos a dividir números complejos usando el conjugado del denominador.
-
----
-
-## 📖 Método de división
-
-Para dividir números complejos, multiplicamos numerador y denominador por el **conjugado** del denominador:
-
-$$
-\frac{a + bi}{c + di} = \frac{(a + bi)(c - di)}{(c + di)(c - di)} = \frac{(a + bi)(c - di)}{c^2 + d^2}
-$$
-
-Esto funciona porque $(c + di)(c - di) = c^2 + d^2$, que es un número real.
+Dividir números complejos parece imposible al principio: ¿cómo divides entre algo que tiene una parte imaginaria? El truco no es dividir, sino eliminar la parte imaginaria del denominador usando una herramienta que ya conoces: la **racionalización** con el conjugado.
 
 ---
 
-### Ejemplo 1
+## 🎯 ¿Qué vas a aprender?
 
-Calcular $\dfrac{3 + 2i}{1 + i}$.
+- Cómo eliminar la $i$ del denominador.
+- El uso del **conjugado** para dividir.
+- Cómo dividir entre un imaginario puro.
+- El algoritmo paso a paso para cualquier división.
 
-**Paso 1:** El conjugado de $1 + i$ es $1 - i$.
+---
 
-**Paso 2:** Multiplicamos:
+## ➗ El Método del Conjugado
 
-$$
-\frac{3 + 2i}{1 + i} \cdot \frac{1 - i}{1 - i} = \frac{(3 + 2i)(1 - i)}{(1 + i)(1 - i)}
-$$
+El objetivo es convertir el denominador en un simple número real.
 
-**Paso 3:** Calculamos el numerador:
-
-$$
-(3 + 2i)(1 - i) = 3 - 3i + 2i - 2i^2 = 3 - i + 2 = 5 - i
-$$
-
-**Paso 4:** Calculamos el denominador:
+Si tenemos $\frac{z_1}{z_2}$, multiplicamos arriba y abajo por $\bar{z_2}$ (el conjugado del denominador).
 
 $$
-(1 + i)(1 - i) = 1 + 1 = 2
+\frac{a + bi}{c + di} \cdot \frac{c - di}{c - di}
 $$
 
-**Paso 5:** Dividimos:
+¿Por qué funciona? Porque en el denominador obtenemos una suma de cuadrados ($c^2 + d^2$), que **siempre es real**.
+
+---
+
+## ⚙️ Ejemplos Resueltos
+
+### Ejemplo 1: División Estándar
+
+Calcula:
+
+$$
+\frac{3 + 2i}{1 + i}
+$$
+
+**Paso 1: Identificar el conjugado**
+El denominador es $1 + i$. Su conjugado es $1 - i$.
+
+**Paso 2: Multiplicar**
+
+$$
+\frac{3 + 2i}{1 + i} \cdot \frac{1 - i}{1 - i}
+$$
+
+**Paso 3: Operar**
+- **Numerador (Propiedad distributiva):** $(3+2i)(1-i) = 3 - 3i + 2i - 2i^2 = 3 - i + 2 = 5 - i$.
+- **Denominador (Suma Cuadrados):** $1^2 + 1^2 = 2$.
+
+**Paso 4: Separar**
 
 $$
 \frac{5 - i}{2} = \frac{5}{2} - \frac{1}{2}i
 $$
 
-$$
-\boxed{\frac{3 + 2i}{1 + i} = \frac{5}{2} - \frac{1}{2}i}
-$$
-
----
-
-### Ejemplo 2
-
-Calcular $\dfrac{4 + 3i}{2 - i}$.
+**Resultado:**
 
 $$
-\frac{4 + 3i}{2 - i} \cdot \frac{2 + i}{2 + i} = \frac{(4 + 3i)(2 + i)}{(2 - i)(2 + i)}
-$$
-
-Numerador:
-
-$$
-(4 + 3i)(2 + i) = 8 + 4i + 6i + 3i^2 = 8 + 10i - 3 = 5 + 10i
-$$
-
-Denominador:
-
-$$
-4 + 1 = 5
-$$
-
-$$
-\frac{5 + 10i}{5} = 1 + 2i
-$$
-
-$$
-\boxed{\frac{4 + 3i}{2 - i} = 1 + 2i}
+\boxed{\frac{5}{2} - \frac{1}{2}i}
 $$
 
 ---
 
-### Ejemplo 3
+### Ejemplo 2: Denominador Imaginario Puro
 
-Calcular $\dfrac{5}{2 + 3i}$.
-
-$$
-\frac{5}{2 + 3i} \cdot \frac{2 - 3i}{2 - 3i} = \frac{5(2 - 3i)}{4 + 9} = \frac{10 - 15i}{13}
-$$
+Calcula:
 
 $$
-= \frac{10}{13} - \frac{15}{13}i
+\frac{10}{2i}
 $$
 
-$$
-\boxed{\frac{5}{2 + 3i} = \frac{10}{13} - \frac{15}{13}i}
-$$
-
----
-
-### Ejemplo 4
-
-Calcular $\dfrac{2i}{3 + 4i}$.
+**Razonamiento:**
+Aquí no hace falta todo el conjugado complejo. Basta con multiplicar por $-i$ (o simplemente $i$) para eliminar la $i$.
 
 $$
-\frac{2i}{3 + 4i} \cdot \frac{3 - 4i}{3 - 4i} = \frac{2i(3 - 4i)}{9 + 16} = \frac{6i - 8i^2}{25}
+\frac{10}{2i} \cdot \frac{i}{i} = \frac{10i}{2i^2}
 $$
 
 $$
-= \frac{6i + 8}{25} = \frac{8}{25} + \frac{6}{25}i
+\frac{10i}{-2}
 $$
 
+**Resultado:**
+
 $$
-\boxed{\frac{2i}{3 + 4i} = \frac{8}{25} + \frac{6}{25}i}
+\boxed{-5i}
 $$
 
 ---
 
-### Ejemplo 5
+### Ejemplo 3: División con Resultado Entero
 
-Calcular $\dfrac{1 + i}{1 - i}$.
-
-$$
-\frac{1 + i}{1 - i} \cdot \frac{1 + i}{1 + i} = \frac{(1 + i)^2}{1 + 1} = \frac{1 + 2i + i^2}{2}
-$$
+Calcula:
 
 $$
-= \frac{1 + 2i - 1}{2} = \frac{2i}{2} = i
+\frac{4 + 2i}{1 - i}
 $$
 
-$$
-\boxed{\frac{1 + i}{1 - i} = i}
-$$
+**Paso 1: Conjugado**
+Multiplicar por $1 + i$.
 
----
+**Paso 2: Operar**
+- **Numerador:** $(4+2i)(1+i) = 4 + 4i + 2i + 2i^2 = 4 + 6i - 2 = 2 + 6i$.
+- **Denominador:** $1^2 + 1^2 = 2$.
 
-### Ejemplo 6
-
-Calcular $\dfrac{3 - 4i}{3 + 4i}$.
-
-$$
-\frac{(3 - 4i)^2}{(3 + 4i)(3 - 4i)} = \frac{9 - 24i + 16i^2}{9 + 16}
-$$
+**Paso 3: Simplificar**
 
 $$
-= \frac{9 - 24i - 16}{25} = \frac{-7 - 24i}{25}
+\frac{2 + 6i}{2} = \frac{2}{2} + \frac{6i}{2}
 $$
 
-$$
-= -\frac{7}{25} - \frac{24}{25}i
-$$
+**Resultado:**
 
 $$
-\boxed{\frac{3 - 4i}{3 + 4i} = -\frac{7}{25} - \frac{24}{25}i}
+\boxed{1 + 3i}
 $$
 
 ---
 
-### Ejemplo 7
+## 📝 Ejercicios de Práctica
 
-Calcular $\dfrac{6 + 8i}{2}$.
-
-Cuando el denominador es real, simplemente dividimos cada parte:
-
-$$
-\frac{6 + 8i}{2} = \frac{6}{2} + \frac{8}{2}i = 3 + 4i
-$$
-
-$$
-\boxed{\frac{6 + 8i}{2} = 3 + 4i}
-$$
-
----
-
-### Ejemplo 8
-
-Calcular $\dfrac{10 - 5i}{5i}$.
-
-$$
-\frac{10 - 5i}{5i} \cdot \frac{-i}{-i} = \frac{(10 - 5i)(-i)}{5i(-i)} = \frac{-10i + 5i^2}{-5i^2}
-$$
-
-$$
-= \frac{-10i - 5}{5} = \frac{-5 - 10i}{5} = -1 - 2i
-$$
-
-$$
-\boxed{\frac{10 - 5i}{5i} = -1 - 2i}
-$$
-
----
-
-## 📋 Resumen del método
-
-1. Identificar el conjugado del denominador
-2. Multiplicar numerador y denominador por el conjugado
-3. Simplificar el numerador usando $i^2 = -1$
-4. El denominador se convierte en $c^2 + d^2$
-5. Separar en parte real e imaginaria
-
----
-
-## 📝 Ejercicios de práctica
-
-**Ejercicio 1:** Calcula $\dfrac{5 + 3i}{2 + i}$.
+### Ejercicio 1
+Calcula $\dfrac{2i}{1 + i}$.
 
 <details>
 <summary>Ver solución</summary>
 
 $$
-\frac{(5 + 3i)(2 - i)}{5} = \frac{10 - 5i + 6i - 3i^2}{5} = \frac{13 + i}{5} = \frac{13}{5} + \frac{1}{5}i
+\frac{2i(1-i)}{2} = \frac{2i - 2i^2}{2} = \frac{2 + 2i}{2} = 1 + i
 $$
+
+**Resultado:** $\boxed{1 + i}$
 
 </details>
 
 ---
 
-**Ejercicio 2:** Calcula $\dfrac{4}{1 - 2i}$.
+### Ejercicio 2
+Calcula $\dfrac{5}{2 - i}$.
 
 <details>
 <summary>Ver solución</summary>
 
 $$
-\frac{4(1 + 2i)}{1 + 4} = \frac{4 + 8i}{5} = \frac{4}{5} + \frac{8}{5}i
+\frac{5(2+i)}{4+1} = \frac{10+5i}{5} = 2 + i
 $$
+
+**Resultado:** $\boxed{2 + i}$
 
 </details>
 
 ---
 
-**Ejercicio 3:** Calcula $\dfrac{2 + i}{3 - 2i}$.
+### Ejercicio 3
+Calcula $\dfrac{1 + 3i}{i}$.
 
 <details>
 <summary>Ver solución</summary>
 
 $$
-\frac{(2 + i)(3 + 2i)}{9 + 4} = \frac{6 + 4i + 3i + 2i^2}{13} = \frac{4 + 7i}{13}
+\frac{(1+3i)(-i)}{1} = -i - 3i^2 = 3 - i
 $$
+
+**Resultado:** $\boxed{3 - i}$
 
 </details>
 
 ---
 
-**Ejercicio 4:** Calcula $\dfrac{i}{1 + i}$.
+### Ejercicio 4
+Calcula $\dfrac{2 + 3i}{2 - 3i}$.
+
+<details>
+<summary>Ver solución</summary>
+
+Numerador: $4 + 12i - 9 = -5 + 12i$.
+Denominador: $4 + 9 = 13$.
+
+**Resultado:** $\boxed{-\frac{5}{13} + \frac{12}{13}i}$
+
+</details>
+
+---
+
+### Ejercicio 5
+Calcula $\dfrac{4}{1 + i}$.
 
 <details>
 <summary>Ver solución</summary>
 
 $$
-\frac{i(1 - i)}{2} = \frac{i - i^2}{2} = \frac{i + 1}{2} = \frac{1}{2} + \frac{1}{2}i
+\frac{4(1-i)}{2} = 2(1-i) = 2 - 2i
 $$
+
+**Resultado:** $\boxed{2 - 2i}$
 
 </details>
 
 ---
 
-**Ejercicio 5:** Calcula $\dfrac{2 - 3i}{2 + 3i}$.
+### Ejercicio 6
+Calcula $\dfrac{8 + 6i}{2}$.
+
+<details>
+<summary>Ver solución</summary>
+
+Directamente dividimos entre 2.
+
+**Resultado:** $\boxed{4 + 3i}$
+
+</details>
+
+---
+
+### Ejercicio 7
+Calcula $\dfrac{3 - 4i}{3 + 4i}$.
+
+<details>
+<summary>Ver solución</summary>
+
+Numerador: $(3-4i)^2 = 9 - 24i - 16 = -7 - 24i$.
+Denominador: $25$.
+
+**Resultado:** $\boxed{-\frac{7}{25} - \frac{24}{25}i}$
+
+</details>
+
+---
+
+### Ejercicio 8
+Calcula $\dfrac{10i}{1 + 2i}$.
 
 <details>
 <summary>Ver solución</summary>
 
 $$
-\frac{(2 - 3i)^2}{13} = \frac{4 - 12i + 9i^2}{13} = \frac{-5 - 12i}{13}
+\frac{10i(1-2i)}{5} = \frac{10i + 20}{5} = 4 + 2i
 $$
+
+**Resultado:** $\boxed{4 + 2i}$
 
 </details>
 
 ---
 
-**Ejercicio 6:** Calcula $\dfrac{8 + 6i}{4}$.
+### Ejercicio 9
+Calcula $\dfrac{1}{i}$.
 
 <details>
 <summary>Ver solución</summary>
 
-$$
-2 + \frac{3}{2}i
-$$
+Multiplicar por $-i$.
+
+**Resultado:** $\boxed{-i}$
 
 </details>
 
 ---
+
+### Ejercicio 10
+Calcula $\dfrac{5 - 5i}{5}$.
+
+<details>
+<summary>Ver solución</summary>
+
+Divide todo por 5.
+
+**Resultado:** $\boxed{1 - i}$
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Paso | Acción | ¿Por qué? |
+|:--- |:--- |:--- |
+| **1** | Hallar conjugado de abajo | Para eliminar la parte imaginaria. |
+| **2** | Multiplicar arriba y abajo | Mantener la fracción equilibrada. |
+| **3** | Simplificar denominador | Siempre será $a^2 + b^2$ (Real). |
+| **4** | Separar partes | Dar formato estándar $a+bi$. |
+
+> **Conclusión:** ¡En la división nunca dividimos de verdad! Solo multiplicamos estratégicamente para quitar el problema de abajo.

@@ -1,679 +1,307 @@
-# 📈 Introducción a las Funciones Lineales
+# **Introducción a las Funciones Lineales**
 
-En esta lección introduciremos el concepto de función lineal, su importancia y aplicaciones en la vida cotidiana.
-
----
-
-## 📖 ¿Por qué estudiar funciones lineales?
-
-Las funciones lineales están en todas partes en nuestra vida cotidiana:
-
-- **Salarios**: Si ganas 50 pesos por hora, tu ingreso depende linealmente de las horas trabajadas.
-- **Distancia**: Si un auto viaja a velocidad constante de 80 km/h, la distancia recorrida es proporcional al tiempo.
-- **Costos**: El costo total de un taxi incluye una tarifa base más un costo por kilómetro.
-- **Temperatura**: La conversión entre Celsius y Fahrenheit es una relación lineal.
+¿Te has fijado que muchas cosas en la vida cambian de forma constante? Si caminas a la misma velocidad, entre más tiempo pase, más distancia recorres. Si trabajas por horas con un pago fijo, entre más horas, más ganas. Esa relación "pareja" y constante es lo que llamamos una función lineal.
 
 ---
 
-## 📖 ¿Qué es una función?
+## 🎯 ¿Qué vas a aprender?
 
-Una **función** es una relación entre dos variables donde a cada valor de la variable independiente ($x$) le corresponde un único valor de la variable dependiente ($y$).
+- Qué es una función y cómo se aplica en el mundo real.
+- Cómo identificar una función lineal por su "ritmo" constante.
+- Los elementos básicos: la variable independiente ($x$) y la dependiente ($y$).
+- La diferencia fundamental entre una relación lineal y otros tipos de cambios.
+
+---
+
+## 📖 ¿Qué es una Función?
+
+Imagina una máquina: tú le das una "entrada" (un número) y ella te devuelve una única "salida". En matemáticas, llamamos a la entrada **variable independiente ($x$)** y a la salida **variable dependiente ($y$)**.
+
+Decimos que $y$ es una función de $x$ porque el valor de $y$ "depende" totalmente de lo que pongamos en $x$.
 
 $$
 y = f(x)
 $$
 
-Se lee "$y$ es igual a $f$ de $x$" o "$y$ es función de $x$".
-
 ---
 
-## 📖 Función lineal: Definición
+## ⚙️ Ejemplos Resueltos
 
-Una **función lineal** es aquella cuya gráfica es una **línea recta**. Tiene la forma:
+### Ejemplo 1: El Salario por Hora
 
-$$
-f(x) = mx + b
-$$
+Un estudiante trabaja en una biblioteca y gana 15 pesos por cada hora.
 
-o equivalentemente:
+**Razonamiento:**
+- Si trabaja 1 hora, gana $15 \cdot 1 = 15$ pesos.
+- Si trabaja 2 horas, gana $15 \cdot 2 = 30$ pesos.
+- Si trabaja $x$ horas, gana $15 \cdot x$.
 
-$$
-y = mx + b
-$$
-
-donde:
-- $m$ es la **pendiente** (indica la inclinación de la recta)
-- $b$ es el **intercepto con el eje y** (punto donde la recta cruza el eje vertical)
-
----
-
-## 📖 Ejemplos de funciones lineales
-
-### Ejemplo 1: Salario por horas
-
-Un trabajador gana 15 pesos por hora. Si trabaja $x$ horas, su salario es:
+La relación es:
 
 $$
 f(x) = 15x
 $$
 
-Aquí $m = 15$ (gana 15 por hora) y $b = 0$ (no hay pago base).
-
-| Horas ($x$) | Salario ($y$) |
-|:-----------:|:-------------:|
-| 0 | 0 |
-| 1 | 15 |
-| 5 | 75 |
-| 8 | 120 |
-
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="echarts-salario" style="width: 100%; height: 400px; border-radius: 8px;"></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof echarts !== 'undefined' && document.getElementById('echarts-salario')) {
-    var chart = echarts.init(document.getElementById('echarts-salario'));
-    
-    var option = {
-      title: {
-        text: 'Salario vs Horas trabajadas',
-        left: 'center',
-        textStyle: { fontSize: 16, fontWeight: 'bold', color: '#1e293b' }
-      },
-      animation: true,
-      animationDuration: 1000,
-      grid: { left: '15%', right: '8%', top: '12%', bottom: '18%', show: true, borderColor: '#cbd5e1' },
-      xAxis: {
-        type: 'value',
-        name: 'Horas (x)',
-        nameLocation: 'middle',
-        nameGap: 32,
-        nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#374151' },
-        min: 0,
-        max: 9,
-        axisLine: { lineStyle: { color: '#64748b' } },
-        splitLine: { show: true, lineStyle: { type: 'solid', color: '#94a3b8', width: 1 } }
-      },
-      yAxis: {
-        type: 'value',
-        name: 'Salario ($)',
-        nameLocation: 'middle',
-        nameGap: 50,
-        nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#374151' },
-        min: 0,
-        max: 140,
-        axisLine: { lineStyle: { color: '#64748b' } },
-        splitLine: { show: true, lineStyle: { type: 'solid', color: '#94a3b8', width: 1 } }
-      },
-      series: [
-        {
-          name: 'f(x) = 15x',
-          type: 'line',
-          smooth: true,
-          symbol: 'none',
-          lineStyle: { width: 3, color: '#3b82f6' },
-          areaStyle: {
-            color: {
-              type: 'linear',
-              x: 0, y: 0, x2: 0, y2: 1,
-              colorStops: [
-                { offset: 0, color: 'rgba(59, 130, 246, 0.3)' },
-                { offset: 1, color: 'rgba(59, 130, 246, 0.05)' }
-              ]
-            }
-          },
-          data: [[0, 0], [1, 15], [2, 30], [3, 45], [4, 60], [5, 75], [6, 90], [7, 105], [8, 120]]
-        },
-        {
-          name: 'Puntos',
-          type: 'scatter',
-          symbolSize: 12,
-          itemStyle: { color: '#22c55e', borderColor: '#fff', borderWidth: 2 },
-          label: { show: true, formatter: function(p) { return '(' + p.data[0] + ', ' + p.data[1] + ')'; }, position: 'top', fontSize: 10 },
-          data: [[0, 0], [1, 15], [5, 75], [8, 120]]
-        }
-      ],
-      tooltip: { trigger: 'axis', formatter: 'Horas: {b}<br/>Salario: ${c}' }
-    };
-    
-    chart.setOption(option);
-    window.addEventListener('resize', function() { chart.resize(); });
-  }
-});
-</script>
+Donde $x$ son las horas y $f(x)$ es el dinero total en pesos.
 
 ---
 
-### Ejemplo 2: Servicio de taxi
+### Ejemplo 2: El Costo del Taxi
 
-Un taxi cobra 3 pesos de tarifa base más 2 pesos por kilómetro. El costo de un viaje de $x$ kilómetros es:
+Un taxi cobra 3 pesos solo con subirte (banderazo) y luego 2 pesos por cada kilómetro recorrido.
+
+**Razonamiento:**
+- Al inicio (0 km): 3 pesos.
+- Al recorrer 1 km: $3 + 2 = 5$ pesos.
+- Al recorrer 2 km: $3 + 2(2) = 7$ pesos.
+- Al recorrer $x$ km: $2x + 3$.
+
+La función es:
 
 $$
 f(x) = 2x + 3
 $$
 
-Aquí $m = 2$ (costo por km) y $b = 3$ (tarifa base).
+---
 
-| Kilómetros ($x$) | Costo ($y$) |
-|:----------------:|:-----------:|
-| 0 | 3 |
-| 5 | 13 |
-| 10 | 23 |
+### Ejemplo 3: El Tanque de Agua
 
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="echarts-taxi" style="width: 100%; height: 400px; border-radius: 8px;"></div>
-</div>
+Un tanque tiene 100 litros y se vacía a un ritmo de 5 litros por minuto.
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof echarts !== 'undefined' && document.getElementById('echarts-taxi')) {
-    var chart = echarts.init(document.getElementById('echarts-taxi'));
-    
-    var option = {
-      title: {
-        text: 'Costo del taxi vs Kilómetros',
-        left: 'center',
-        textStyle: { fontSize: 16, fontWeight: 'bold', color: '#1e293b' }
-      },
-      animation: true,
-      animationDuration: 1000,
-      grid: { left: '15%', right: '8%', top: '12%', bottom: '18%', show: true, borderColor: '#cbd5e1' },
-      xAxis: {
-        type: 'value',
-        name: 'Kilómetros (x)',
-        nameLocation: 'middle',
-        nameGap: 32,
-        nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#374151' },
-        min: 0,
-        max: 12,
-        axisLine: { lineStyle: { color: '#64748b' } },
-        splitLine: { show: true, lineStyle: { type: 'solid', color: '#94a3b8', width: 1 } }
-      },
-      yAxis: {
-        type: 'value',
-        name: 'Costo ($)',
-        nameLocation: 'middle',
-        nameGap: 45,
-        nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#374151' },
-        min: 0,
-        max: 28,
-        axisLine: { lineStyle: { color: '#64748b' } },
-        splitLine: { show: true, lineStyle: { type: 'solid', color: '#94a3b8', width: 1 } }
-      },
-      series: [
-        {
-          name: 'f(x) = 2x + 3',
-          type: 'line',
-          smooth: true,
-          symbol: 'none',
-          lineStyle: { width: 3, color: '#ef4444' },
-          areaStyle: {
-            color: {
-              type: 'linear', x: 0, y: 0, x2: 0, y2: 1,
-              colorStops: [
-                { offset: 0, color: 'rgba(239, 68, 68, 0.25)' },
-                { offset: 1, color: 'rgba(239, 68, 68, 0.02)' }
-              ]
-            }
-          },
-          data: [[0, 3], [2, 7], [4, 11], [6, 15], [8, 19], [10, 23]]
-        },
-        {
-          name: 'Puntos',
-          type: 'scatter',
-          symbolSize: 12,
-          itemStyle: { color: '#22c55e', borderColor: '#fff', borderWidth: 2 },
-          label: { show: true, formatter: function(p) { return '(' + p.data[0] + ', ' + p.data[1] + ')'; }, position: 'top', fontSize: 10 },
-          data: [[0, 3], [5, 13], [10, 23]]
-        },
-        {
-          name: 'Intercepto',
-          type: 'scatter',
-          symbolSize: 14,
-          symbol: 'diamond',
-          itemStyle: { color: '#f97316', borderColor: '#fff', borderWidth: 2 },
-          label: { show: true, formatter: 'b = 3', position: 'right', fontSize: 11, fontWeight: 'bold', color: '#f97316' },
-          data: [[0, 3]]
-        }
-      ],
-      tooltip: { trigger: 'axis' }
-    };
-    
-    chart.setOption(option);
-    window.addEventListener('resize', function() { chart.resize(); });
-  }
-});
-</script>
+**Razonamiento:**
+- Inicio: 100 litros.
+- 1 min: $100 - 5 = 95$ litros.
+- $x$ min: $100 - 5x$.
+
+La función es:
+
+$$
+f(x) = -5x + 100
+$$
+
+Observa que aquí el valor disminuye, por eso el número que acompaña a la $x$ es negativo.
 
 ---
 
-### Ejemplo 3: Temperatura
+### Ejemplo 4: Fotocopias en la Papelería
 
-La conversión de Celsius a Fahrenheit es:
+Sacar una fotocopia cuesta 0.20 pesos. ¿Cuánto pagas según la cantidad de hojas?
 
-$$
-F = \frac{9}{5}C + 32
-$$
+**Razonamiento:**
+- Es un cambio constante: cada hoja suma 0.20 al precio final.
+- Si sacas 10 fotocopias: $0.20 \cdot 10 = 2$ pesos.
+- Si sacas $x$ fotocopias: $0.20 \cdot x$.
 
-Aquí $m = \frac{9}{5} = 1.8$ y $b = 32$.
-
-| Celsius | Fahrenheit |
-|:-------:|:----------:|
-| 0 | 32 |
-| 20 | 68 |
-| 100 | 212 |
-
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="echarts-temperatura" style="width: 100%; height: 400px; border-radius: 8px;"></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof echarts !== 'undefined' && document.getElementById('echarts-temperatura')) {
-    var chart = echarts.init(document.getElementById('echarts-temperatura'));
-    
-    var option = {
-      title: {
-        text: 'Conversión Celsius a Fahrenheit',
-        left: 'center',
-        textStyle: { fontSize: 16, fontWeight: 'bold', color: '#1e293b' }
-      },
-      animation: true,
-      animationDuration: 1000,
-      grid: { left: '15%', right: '8%', top: '12%', bottom: '18%', show: true, borderColor: '#94a3b8' },
-      xAxis: {
-        type: 'value',
-        name: 'Celsius (°C)',
-        nameLocation: 'middle',
-        nameGap: 32,
-        nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#374151' },
-        min: -20,
-        max: 110,
-        axisLine: { lineStyle: { color: '#64748b' } },
-        splitLine: { show: true, lineStyle: { type: 'dashed', color: '#94a3b8', width: 1 } }
-      },
-      yAxis: {
-        type: 'value',
-        name: 'Fahrenheit (°F)',
-        nameLocation: 'middle',
-        nameGap: 50,
-        nameTextStyle: { fontSize: 13, fontWeight: 'bold', color: '#374151' },
-        min: 0,
-        max: 230,
-        axisLine: { lineStyle: { color: '#64748b' } },
-        splitLine: { show: true, lineStyle: { type: 'dashed', color: '#94a3b8', width: 1 } }
-      },
-      series: [
-        {
-          name: 'F = 1.8C + 32',
-          type: 'line',
-          smooth: true,
-          symbol: 'none',
-          lineStyle: { width: 3, color: '#a855f7' },
-          areaStyle: {
-            color: {
-              type: 'linear',
-              x: 0, y: 0, x2: 0, y2: 1,
-              colorStops: [
-                { offset: 0, color: 'rgba(168, 85, 247, 0.3)' },
-                { offset: 1, color: 'rgba(168, 85, 247, 0.05)' }
-              ]
-            }
-          },
-          data: [[-20, -4], [0, 32], [20, 68], [37, 98.6], [100, 212]]
-        },
-        {
-          name: 'Puntos clave',
-          type: 'scatter',
-          symbolSize: 14,
-          itemStyle: { color: '#f59e0b', borderColor: '#fff', borderWidth: 2 },
-          label: { show: true, formatter: function(p) { return p.data[0] + '°C = ' + p.data[1] + '°F'; }, position: 'right', fontSize: 10 },
-          data: [[0, 32], [100, 212]]
-        },
-        {
-          name: 'Temperatura corporal',
-          type: 'scatter',
-          symbolSize: 12,
-          symbol: 'diamond',
-          itemStyle: { color: '#ef4444', borderColor: '#fff', borderWidth: 2 },
-          label: { show: true, formatter: '37°C (corporal)', position: 'top', fontSize: 10, color: '#ef4444' },
-          data: [[37, 98.6]]
-        }
-      ],
-      tooltip: { trigger: 'axis', formatter: '{b}°C = {c}°F' }
-    };
-    
-    chart.setOption(option);
-    window.addEventListener('resize', function() { chart.resize(); });
-  }
-});
-</script>
-
----
-
-## 📖 Elementos de una función lineal
-
-### La pendiente (m)
-
-La **pendiente** indica:
-- **Cuánto cambia $y$** cuando $x$ aumenta en una unidad
-- La **inclinación** de la recta
-
-| Valor de $m$ | Tipo de recta |
-|:------------:|:--------------|
-| $m > 0$ | Recta ascendente (sube de izquierda a derecha) |
-| $m < 0$ | Recta descendente (baja de izquierda a derecha) |
-| $m = 0$ | Recta horizontal |
-
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="echarts-pendientes" style="width: 100%; height: 400px; border-radius: 8px;"></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof echarts !== 'undefined' && document.getElementById('echarts-pendientes')) {
-    var chart = echarts.init(document.getElementById('echarts-pendientes'));
-    var option = {
-      title: { text: 'Tipos de pendiente en funciones lineales', left: 'center', textStyle: { fontSize: 15, fontWeight: 'bold', color: '#1e293b' } },
-      animation: true, animationDuration: 1000,
-      legend: { data: ['m > 0 (ascendente)', 'm < 0 (descendente)', 'm = 0 (horizontal)'], bottom: 5, textStyle: { fontSize: 11 } },
-      grid: { left: '5%', right: '5%', top: '10%', bottom: '18%', show: true, borderColor: '#cbd5e1' },
-      xAxis: { 
-        type: 'value', min: -5, max: 5, interval: 1, 
-        axisLine: { onZero: true, lineStyle: { color: '#374151', width: 2 } }, 
-        splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } }, 
-        axisLabel: { show: false },
-        axisTick: { show: true, length: 6 }
-      },
-      yAxis: { 
-        type: 'value', min: -4, max: 6, interval: 1, 
-        axisLine: { onZero: true, lineStyle: { color: '#374151', width: 2 } }, 
-        splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } }, 
-        axisLabel: { show: false },
-        axisTick: { show: true, length: 6 }
-      },
-      series: [
-        // Etiquetas eje X (sobre y=0)
-        { type: 'scatter', symbolSize: 0, label: { show: true, position: 'bottom', fontSize: 9, color: '#374151', formatter: function(p) { return p.data[0] !== 0 ? p.data[0] : ''; } }, data: [[-5,0],[-4,0],[-3,0],[-2,0],[-1,0],[1,0],[2,0],[3,0],[4,0],[5,0]] },
-        // Etiquetas eje Y (sobre x=0)
-        { type: 'scatter', symbolSize: 0, label: { show: true, position: 'left', fontSize: 9, color: '#374151', formatter: function(p) { return p.data[1] !== 0 ? p.data[1] : ''; } }, data: [[0,-4],[0,-3],[0,-2],[0,-1],[0,1],[0,2],[0,3],[0,4],[0,5],[0,6]] },
-        // Etiquetas x, y
-        { type: 'scatter', symbolSize: 0, label: { show: true, formatter: 'x', position: 'right', fontSize: 14, fontWeight: 'bold', color: '#374151' }, data: [[5, 0]] },
-        { type: 'scatter', symbolSize: 0, label: { show: true, formatter: 'y', position: 'top', fontSize: 14, fontWeight: 'bold', color: '#374151' }, data: [[0, 6]] },
-        // Origen
-        { type: 'scatter', symbolSize: 0, label: { show: true, formatter: '0', position: 'bottom', fontSize: 9, color: '#374151', offset: [-10, 0] }, data: [[0, 0]] },
-        // Líneas
-        { name: 'm > 0 (ascendente)', type: 'line', smooth: false, symbol: 'none', lineStyle: { width: 3, color: '#3b82f6' }, data: [[-4, -3], [-2, -1], [0, 1], [2, 3], [4, 5]] },
-        { name: 'm < 0 (descendente)', type: 'line', smooth: false, symbol: 'none', lineStyle: { width: 3, color: '#ef4444' }, data: [[-4, 5], [-2, 3], [0, 1], [2, -1], [4, -3]] },
-        { name: 'm = 0 (horizontal)', type: 'line', smooth: false, symbol: 'none', lineStyle: { width: 3, color: '#22c55e' }, data: [[-4, -2], [0, -2], [4, -2]] }
-      ],
-      tooltip: { trigger: 'item' }
-    };
-    chart.setOption(option);
-    window.addEventListener('resize', function() { chart.resize(); });
-  }
-});
-</script>
-
----
-
-### El intercepto (b)
-
-El **intercepto** $b$ es el valor de $y$ cuando $x = 0$. Es el punto donde la recta cruza el eje $y$.
-
-| Valor de $b$ | Significado |
-|:------------:|:------------|
-| $b > 0$ | Cruza el eje $y$ arriba del origen |
-| $b < 0$ | Cruza el eje $y$ abajo del origen |
-| $b = 0$ | Pasa por el origen |
-
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="echarts-interceptos" style="width: 100%; height: 400px; border-radius: 8px;"></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof echarts !== 'undefined' && document.getElementById('echarts-interceptos')) {
-    var chart = echarts.init(document.getElementById('echarts-interceptos'));
-    var option = {
-      title: { text: 'Casos de intercepto (b) en funciones lineales', left: 'center', textStyle: { fontSize: 15, fontWeight: 'bold', color: '#1e293b' } },
-      animation: true, animationDuration: 1000,
-      legend: { data: ['b > 0 (y = x + 3)', 'b < 0 (y = x - 2)', 'b = 0 (y = x)'], bottom: 5, textStyle: { fontSize: 11 } },
-      grid: { left: '5%', right: '5%', top: '10%', bottom: '18%', show: true, borderColor: '#94a3b8' },
-      xAxis: { 
-        type: 'value', min: -5, max: 5, interval: 1, 
-        axisLine: { onZero: true, lineStyle: { color: '#374151', width: 2 } }, 
-        splitLine: { show: true, lineStyle: { color: '#94a3b8', type: 'dashed', width: 1 } }, 
-        axisLabel: { show: false },
-        axisTick: { show: true, length: 6 }
-      },
-      yAxis: { 
-        type: 'value', min: -4, max: 6, interval: 1, 
-        axisLine: { onZero: true, lineStyle: { color: '#374151', width: 2 } }, 
-        splitLine: { show: true, lineStyle: { color: '#94a3b8', type: 'dashed', width: 1 } }, 
-        axisLabel: { show: false },
-        axisTick: { show: true, length: 6 }
-      },
-      series: [
-        // Etiquetas de ejes
-        { type: 'scatter', symbolSize: 0, label: { show: true, formatter: 'x', position: 'right', fontSize: 14, fontWeight: 'bold', color: '#374151' }, data: [[5, 0]] },
-        { type: 'scatter', symbolSize: 0, label: { show: true, formatter: 'y', position: 'top', fontSize: 14, fontWeight: 'bold', color: '#374151' }, data: [[0, 6]] },
-        // Líneas
-        { name: 'b > 0 (y = x + 3)', type: 'line', smooth: false, symbol: 'none', lineStyle: { width: 3, color: '#3b82f6' }, data: [[-4, -1], [-2, 1], [0, 3], [2, 5]] },
-        { name: 'b < 0 (y = x - 2)', type: 'line', smooth: false, symbol: 'none', lineStyle: { width: 3, color: '#ef4444' }, data: [[-2, -4], [0, -2], [2, 0], [4, 2]] },
-        { name: 'b = 0 (y = x)', type: 'line', smooth: false, symbol: 'none', lineStyle: { width: 3, color: '#22c55e' }, data: [[-4, -4], [0, 0], [4, 4]] },
-        // Interceptos marcados
-        { type: 'scatter', symbolSize: 16, symbol: 'circle', itemStyle: { color: '#3b82f6', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: 'b=3', position: 'right', fontSize: 11, fontWeight: 'bold', color: '#3b82f6' }, data: [[0, 3]] },
-        { type: 'scatter', symbolSize: 16, symbol: 'circle', itemStyle: { color: '#ef4444', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: 'b=-2', position: 'right', fontSize: 11, fontWeight: 'bold', color: '#ef4444' }, data: [[0, -2]] },
-        { type: 'scatter', symbolSize: 16, symbol: 'circle', itemStyle: { color: '#22c55e', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: 'b=0', position: 'right', fontSize: 11, fontWeight: 'bold', color: '#22c55e' }, data: [[0, 0]] }
-      ],
-      tooltip: { trigger: 'item' }
-    };
-    chart.setOption(option);
-    window.addEventListener('resize', function() { chart.resize(); });
-  }
-});
-</script>
-
----
-
-## 📖 Caso especial: Función constante
-
-Cuando $m = 0$, la función se convierte en:
+La función es:
 
 $$
-f(x) = b
-$$
-
-Esta es una **función constante**. Sin importar el valor de $x$, $y$ siempre es igual a $b$.
-
-### Ejemplo 4
-
-$$
-f(x) = 5
-$$
-
-Para cualquier valor de $x$, $f(x) = 5$. La gráfica es una línea horizontal que pasa por $y = 5$.
-
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="echarts-constante" style="width: 100%; height: 350px; border-radius: 8px;"></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof echarts !== 'undefined' && document.getElementById('echarts-constante')) {
-    var chart = echarts.init(document.getElementById('echarts-constante'));
-    var option = {
-      title: { text: 'Función constante: f(x) = 5', left: 'center', textStyle: { fontSize: 15, fontWeight: 'bold', color: '#1e293b' } },
-      animation: true, animationDuration: 1000,
-      grid: { left: '5%', right: '5%', top: '10%', bottom: '12%', show: true, borderColor: '#cbd5e1' },
-      xAxis: { 
-        type: 'value', min: -5, max: 5, interval: 1, 
-        axisLine: { onZero: true, lineStyle: { color: '#374151', width: 2 } }, 
-        splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } }, 
-        axisLabel: { show: false },
-        axisTick: { show: true, length: 6 }
-      },
-      yAxis: { 
-        type: 'value', min: 0, max: 8, interval: 1, 
-        axisLine: { lineStyle: { color: '#374151', width: 2 } }, 
-        splitLine: { show: true, lineStyle: { color: '#94a3b8', width: 1 } }, 
-        axisLabel: { show: false },
-        axisTick: { show: true, length: 6 }
-      },
-      series: [
-        // Etiquetas eje X (sobre y=0)
-        { type: 'scatter', symbolSize: 0, label: { show: true, position: 'bottom', fontSize: 9, color: '#374151', formatter: function(p) { return p.data[0] !== 0 ? p.data[0] : ''; } }, data: [[-5,0],[-4,0],[-3,0],[-2,0],[-1,0],[1,0],[2,0],[3,0],[4,0],[5,0]] },
-        // Etiquetas eje Y (sobre x=0)
-        { type: 'scatter', symbolSize: 0, label: { show: true, position: 'left', fontSize: 9, color: '#374151', formatter: function(p) { return p.data[1]; } }, data: [[0,0],[0,1],[0,2],[0,3],[0,4],[0,5],[0,6],[0,7],[0,8]] },
-        // Etiquetas x, f(x)
-        { type: 'scatter', symbolSize: 0, label: { show: true, formatter: 'x', position: 'right', fontSize: 14, fontWeight: 'bold', color: '#374151' }, data: [[5, 0]] },
-        { type: 'scatter', symbolSize: 0, label: { show: true, formatter: 'f(x)', position: 'top', fontSize: 12, fontWeight: 'bold', color: '#374151' }, data: [[0, 8]] },
-        // Línea y puntos
-        { name: 'f(x) = 5', type: 'line', smooth: false, symbol: 'none', lineStyle: { width: 3, color: '#22c55e' }, data: [[-4.5, 5], [0, 5], [4.5, 5]] },
-        { name: 'Puntos', type: 'scatter', symbolSize: 14, itemStyle: { color: '#3b82f6', borderColor: '#fff', borderWidth: 2 }, label: { show: true, formatter: function(p) { return '(' + p.data[0] + ', 5)'; }, position: 'top', fontSize: 10 }, data: [[-3, 5], [0, 5], [3, 5]] }
-      ],
-      tooltip: { trigger: 'item' }
-    };
-    chart.setOption(option);
-    window.addEventListener('resize', function() { chart.resize(); });
-  }
-});
-</script>
-
----
-
-## 📖 Evaluando funciones lineales
-
-Para evaluar una función, sustituimos el valor de $x$ en la expresión.
-
-### Ejemplo 5
-
-Si $f(x) = 3x - 2$, encontrar $f(4)$.
-
-$$
-f(4) = 3(4) - 2 = 12 - 2 = 10
-$$
-
-$$
-\boxed{f(4) = 10}
+f(x) = 0.20x
 $$
 
 ---
 
-### Ejemplo 6
+### Ejemplo 5: El Ahorro en tu Alcancía
 
-Si $f(x) = -2x + 7$, encontrar $f(-3)$.
+Tienes 500 pesos ahorrados y decides meter 100 pesos cada mes de ahora en adelante.
+
+**Razonamiento:**
+- El valor inicial ($b$) es 500 pesos.
+- El ritmo de crecimiento ($m$) es 100 pesos por mes.
+- En 3 meses tendrás: $500 + 100(3) = 800$ pesos.
+- En $x$ meses tendrás: $100x + 500$.
+
+La función es:
 
 $$
-f(-3) = -2(-3) + 7 = 6 + 7 = 13
-$$
-
-$$
-\boxed{f(-3) = 13}
+f(x) = 100x + 500
 $$
 
 ---
 
-## 📋 Resumen
+### Ejemplo 6: Una Vela que se Consume
 
-| Elemento | Símbolo | Significado |
-|:---------|:-------:|:------------|
-| Pendiente | $m$ | Inclinación de la recta |
-| Intercepto | $b$ | Punto donde cruza el eje $y$ |
-| Forma general | $y = mx + b$ | Ecuación de la recta |
+Prendes una vela que mide 20 cm de alto. Se desgasta 2 cm por cada hora que pasa.
+
+**Razonamiento:**
+- Inicia en 20 cm ($b = 20$).
+- Disminuye 2 cm por hora ($m = -2$).
+- A las 5 horas medirá: $20 - 2(5) = 10$ cm.
+- A las $x$ horas medirá: $-2x + 20$.
+
+La función es:
+
+$$
+f(x) = -2x + 20
+$$
 
 ---
 
-## 📝 Ejercicios de práctica
+## 📈 La Forma General
 
-**Ejercicio 1:** Si $f(x) = 4x + 1$, calcula $f(3)$.
+Todas las funciones lineales siguen este patrón:
+
+$$
+y = mx + b
+$$
+
+Donde:
+- **$m$ (Pendiente):** Es el ritmo de cambio (lo que aumenta o disminuye por cada unidad).
+- **$b$ (Intercepto):** Es el valor inicial (donde empezamos cuando $x=0$).
+
+---
+
+## 📝 Ejercicios de Práctica
+
+### Ejercicio 1
+Si una fotocopia cuesta 0.10 pesos, escribe la función del costo total $y$ para $x$ fotocopias.
 
 <details>
 <summary>Ver solución</summary>
 
-$$
-f(3) = 4(3) + 1 = 13
-$$
+**Razonamiento:** El costo aumenta 0.10 por cada unidad.
+**Resultado:** $\boxed{y = 0.10x}$
 
 </details>
 
 ---
 
-**Ejercicio 2:** Si $f(x) = -x + 5$, calcula $f(-2)$.
+### Ejercicio 2
+Un vendedor gana un sueldo base de 500 pesos más 50 pesos por cada venta realizada. Escribe su función de sueldo mensual.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** Inicia en 500 ($b$) y suma 50 por cada venta ($m$).
+**Resultado:** $\boxed{y = 50x + 500}$
+
+</details>
+
+---
+
+### Ejercicio 3
+Evalúa la función $f(x) = 4x - 2$ cuando $x = 3$.
 
 <details>
 <summary>Ver solución</summary>
 
 $$
-f(-2) = -(-2) + 5 = 2 + 5 = 7
+f(3) = 4(3) - 2
 $$
 
+$$
+12 - 2 = 10
+$$
+
+**Resultado:** $\boxed{10}$
+
 </details>
 
 ---
 
-**Ejercicio 3:** Identifica la pendiente y el intercepto de $f(x) = 2x - 3$.
+### Ejercicio 4
+En la función $y = -3x + 10$, ¿cuál es el valor inicial (cuando $x=0$)?
 
 <details>
 <summary>Ver solución</summary>
 
-$m = 2$ (pendiente), $b = -3$ (intercepto)
+**Razonamiento:** El valor inicial es el intercepto $b$.
+**Resultado:** $\boxed{10}$
 
 </details>
 
 ---
 
-**Ejercicio 4:** Un plan de celular cobra 20 pesos fijos más 0.10 pesos por minuto. Escribe la función de costo.
+### Ejercicio 5
+Un globo está a 200 metros de altura y baja 10 metros por segundo. Escribe la función de su altura $h(t)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** Inicia en 200 y resta 10 por cada segundo $t$.
+**Resultado:** $\boxed{h(t) = -10t + 200}$
+
+</details>
+
+---
+
+### Ejercicio 6
+Identifica la pendiente ($m$) en la función $f(x) = \frac{1}{2}x - 5$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** La pendiente es el coeficiente que acompaña a la $x$.
+**Resultado:** $\boxed{1/2}$
+
+</details>
+
+---
+
+### Ejercicio 7
+Si $y = 2x + 1$, ¿cuánto vale $y$ si $x = -2$?
 
 <details>
 <summary>Ver solución</summary>
 
 $$
-f(x) = 0.10x + 20
+y = 2(-2) + 1
 $$
 
+$$
+-4 + 1 = -3
+$$
+
+**Resultado:** $\boxed{-3}$
+
 </details>
 
 ---
 
-**Ejercicio 5:** Si la pendiente es $0$, ¿qué tipo de recta es?
+### Ejercicio 8
+¿Cuál es la variable dependiente en la relación "Costo de gasolina según los galones comprados"?
 
 <details>
 <summary>Ver solución</summary>
 
-Es una recta horizontal (función constante).
+**Razonamiento:** El costo total depende de cuánta gasolina compres.
+**Resultado:** $\boxed{\text{El Costo}}$
 
 </details>
 
 ---
 
-**Ejercicio 6:** ¿La función $f(x) = 3x - 1$ es ascendente o descendente?
+### Ejercicio 9
+Escribe la función para: "Un número $y$ es el triple de otro número $x$ aumentado en 4".
 
 <details>
 <summary>Ver solución</summary>
 
-Ascendente, porque $m = 3 > 0$.
+**Resultado:** $\boxed{y = 3x + 4}$
 
 </details>
 
 ---
+
+### Ejercicio 10
+Si $f(x) = 10$, ¿cuánto vale $f(5)$ e $f(100)$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** Es una función constante, la salida no depende de $x$.
+**Resultado:** $\boxed{10 \text{ en ambos casos}}$
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Concepto | Definición | Ejemplo |
+|:--- |:--- |:--- |
+| **Función** | Relación donde a cada $x$ le toca un solo $y$. | Entrada $\to$ Proceso $\to$ Salida |
+| **Pendiente ($m$)** | El ritmo constante de aumento o descenso. | Gana 15 pesos por hora. |
+| **Intercepto ($b$)** | El valor de $y$ cuando $x$ es cero. | Pago base del taxi: 3 pesos. |
+| **Forma Lineal** | Ecuación que representa una línea recta. | $y = mx + b$ |
+
+> **Conclusión:** Las funciones lineales describen procesos donde el cambio es siempre el mismo, permitiéndonos predecir resultados futuros con total exactitud.

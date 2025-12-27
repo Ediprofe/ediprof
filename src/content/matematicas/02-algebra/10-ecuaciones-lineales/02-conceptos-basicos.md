@@ -1,171 +1,238 @@
-# 📚 Conceptos Básicos de Ecuaciones
+# **Conceptos Básicos de Ecuaciones**
 
-En esta lección conoceremos los conceptos fundamentales de las ecuaciones lineales.
-
----
-
-## 📖 ¿Qué es una igualdad?
-
-Una **igualdad** es una expresión matemática que indica que dos cantidades tienen el mismo valor, usando el signo $=$.
-
-| Igualdad | ¿Es correcta? |
-|:---------|:-------------:|
-| $3 + 4 = 7$ | ✓ Sí |
-| $5 \times 2 = 10$ | ✓ Sí |
-| $8 - 3 = 4$ | ✗ No |
-| $2 + 2 = 5$ | ✗ No |
+Una ecuación no es más que una adivinanza matemática. Nos dicen el resultado y algunas pistas, y nosotros debemos encontrar el número misterioso (la incógnita) que hace que todo cuadre. Es el lenguaje fundamental para encontrar valores desconocidos en cualquier ciencia.
 
 ---
 
-## 📖 ¿Qué es una ecuación?
+## 🎯 ¿Qué vas a aprender?
 
-Una **ecuación** es una igualdad que contiene una o más **incógnitas** (variables cuyo valor desconocemos).
+- Diferenciar entre una igualdad simple y una ecuación.
+- Identificar los elementos: incógnita, coeficiente y términos.
+- Qué significa realmente "resolver" una ecuación.
+- Reconocer cuándo una ecuación es lineal de primer grado.
+
+---
+
+## ⚖️ Igualdad vs Ecuación
+
+Una **igualdad** simplemente nos dice que dos cosas valen lo mismo.
+- **Cierta:** $2 + 2 = 4$
+- **Falsa:** $5 = 9$
+
+Una **ecuación** es una igualdad con un "hueco" (variable) que debemos llenar para que sea cierta.
 
 $$
 x + 5 = 12
 $$
 
-$$
-2y - 3 = 7
-$$
-
-$$
-3a + 2 = a + 10
-$$
-
-En cada caso, buscamos el valor de la variable que hace verdadera la igualdad.
+Aquí, la igualdad solo es verdadera si $x$ toma el valor de 7.
 
 ---
 
-## 📖 Elementos de una ecuación
+## 🧩 Elementos de una Ecuación
 
-| Elemento | Descripción |
-|:---------|:------------|
-| **Incógnita** | La variable que queremos encontrar ($x$, $y$, $a$, etc.) |
-| **Coeficiente** | Número que multiplica a la incógnita |
-| **Término independiente** | Número sin variable |
-| **Miembros** | Los dos lados de la ecuación |
+Analicemos la anatomía de $3x + 5 = 14$:
 
-### Ejemplo
-
-En la ecuación $3x + 5 = 14$:
-- **Incógnita**: $x$
-- **Coeficiente**: $3$
-- **Términos independientes**: $5$ y $14$
-- **Primer miembro**: $3x + 5$
-- **Segundo miembro**: $14$
+1.  **Incógnita ($x$):** El valor desconocido.
+2.  **Coeficiente ($3$):** El número que multiplica a la incógnita.
+3.  **Término Independiente ($5$ y $14$):** Números que no tienen letra.
+4.  **Miembros:**
+    *   **Primer miembro:** Todo lo que está a la izquierda ($3x + 5$).
+    *   **Segundo miembro:** Todo lo que está a la derecha ($14$).
 
 ---
 
-## 📖 ¿Qué es resolver una ecuación?
+## 📏 ¿Qué es una Ecuación Lineal?
 
-**Resolver** una ecuación significa encontrar el valor de la incógnita que hace verdadera la igualdad.
+Es aquella donde la incógnita tiene exponente 1 (no está elevada al cuadrado ni tiene raíces). Su gráfica siempre sería una línea recta.
 
-### Ejemplo
+**Ejemplos:**
+- **Sí es lineal:** $2x - 3 = 0$
+- **No es lineal:** $x^2 = 4$ (Cuadrática)
+- **No es lineal:** $\frac{1}{x} = 5$ (La $x$ está abajo)
 
-Resolver $x + 3 = 7$.
-
-Buscamos qué número sumado a $3$ da $7$:
-$$
-x = 4
-$$
-
-**Verificación:** $4 + 3 = 7$ ✓
-
----
-
-## 📖 ¿Cuándo una ecuación es lineal?
-
-Una **ecuación lineal** es aquella donde la incógnita aparece con exponente $1$ (sin cuadrados, cubos, etc.).
-
-| Ecuación | ¿Es lineal? | Razón |
-|:---------|:----------:|:------|
-| $2x + 5 = 11$ | ✓ Sí | Exponente 1 |
-| $3y - 7 = y + 1$ | ✓ Sí | Exponente 1 |
-| $x^2 + 3 = 12$ | ✗ No | Tiene $x^2$ |
-| $\frac{1}{x} = 5$ | ✗ No | $x$ en denominador |
-| $\sqrt{x} = 3$ | ✗ No | $\sqrt{x} = x^{1/2}$ |
-
----
-
-## 📖 Forma general de una ecuación lineal
-
-La forma general de una ecuación lineal con una incógnita es:
+La forma general siempre se puede escribir como:
 
 $$
 ax + b = 0
 $$
 
-donde $a \neq 0$.
+---
+
+## ⚙️ Ejemplos Resueltos
+
+### Ejemplo 1: Identificación de Elementos
+
+En la ecuación $10 - 2y = 4$:
+- **Incógnita:** $y$
+- **Coeficiente:** $-2$ (¡ojo con el signo!)
+- **Términos independientes:** $10$ y $4$
+
+### Ejemplo 2: Verificación de Solución
+
+¿Es $x = 3$ la solución de $4x + 2 = 14$?
+
+**Razonamiento:**
+Sustituimos la $x$ por 3:
+
+$$
+4(3) + 2 = 12 + 2 = 14
+$$
+
+Como $14 = 14$, la igualdad se cumple.
+
+**Resultado:**
+$$
+\boxed{\text{Sí es solución}}
+$$
+
+### Ejemplo 3: Ecuación No Lineal
+
+¿Por qué $\sqrt{x} = 9$ no es una ecuación lineal?
+
+**Razonamiento:**
+Porque la variable está dentro de una raíz cuadrada (que equivale a exponente $1/2$), no tiene exponente 1 "limpio".
 
 ---
 
-## 📋 Resumen
+## 📝 Ejercicios de Práctica
 
-| Concepto | Definición |
-|:---------|:-----------|
-| **Igualdad** | Expresión con signo = |
-| **Ecuación** | Igualdad con incógnitas |
-| **Resolver** | Encontrar el valor de la incógnita |
-| **Ecuación lineal** | Incógnita con exponente 1 |
-
----
-
-## 📝 Ejercicios de práctica
-
-**Ejercicio 1:** Identifica la incógnita, coeficiente y término independiente en $5x + 3 = 18$.
+### Ejercicio 1
+Identifica el coeficiente de $x$ en la ecuación $7 - 3x = 12$.
 
 <details>
 <summary>Ver solución</summary>
 
-- Incógnita: $x$
-- Coeficiente: $5$
-- Términos independientes: $3$ y $18$
+**Razonamiento:** Es el número que multiplica a la x, con su signo.
+**Resultado:** $\boxed{-3}$
 
 </details>
 
 ---
 
-**Ejercicio 2:** ¿Es lineal $3x + 2 = 8$?
+### Ejercicio 2
+¿Cuál es la incógnita en la ecuación $5a + 10 = 20$?
 
 <details>
 <summary>Ver solución</summary>
 
-Sí, $x$ tiene exponente 1.
+**Resultado:** $\boxed{a}$
 
 </details>
 
 ---
 
-**Ejercicio 3:** ¿Es lineal $x^2 - 5x = 0$?
+### Ejercicio 3
+Verifica si $x = 5$ es solución de $2x - 3 = 7$.
 
 <details>
 <summary>Ver solución</summary>
 
-No, tiene $x^2$.
+$$
+2(5) - 3 = 10 - 3 = 7
+$$
+**Resultado:** $\boxed{\text{Sí}}$
 
 </details>
 
 ---
 
-**Ejercicio 4:** ¿Es lineal $\frac{x}{4} = 7$?
+### Ejercicio 4
+Determina si $x^2 + x = 6$ es una ecuación lineal.
 
 <details>
 <summary>Ver solución</summary>
 
-Sí, $x$ está en el numerador con exponente 1.
+**Resultado:** $\boxed{\text{No (tiene cuadrado)}}$
 
 </details>
 
 ---
 
-**Ejercicio 5:** Escribe la ecuación $2x - 6 = 0$ en forma general $ax + b = 0$.
+### Ejercicio 5
+¿Cuál es el primer miembro de la ecuación $4y = 8 + 2$?
 
 <details>
 <summary>Ver solución</summary>
 
-Ya está en forma general: $a = 2$, $b = -6$
+**Resultado:** $\boxed{4y}$
 
 </details>
 
 ---
+
+### Ejercicio 6
+Escribe una ecuación lineal simple que tenga solución $x = 10$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Ejemplo:**
+$$
+x - 2 = 8
+$$
+
+</details>
+
+---
+
+### Ejercicio 7
+En la ecuación $m = 15$, ¿cuál es el coeficiente de $m$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** Cuando no hay número escrito, es un 1 invisible.
+**Resultado:** $\boxed{1}$
+
+</details>
+
+---
+
+### Ejercicio 8
+¿Es $3x = \sqrt{16}$ una ecuación lineal?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** Sí, porque la raíz es del número 16, no de la x. $3x=4$.
+**Resultado:** $\boxed{\text{Sí}}$
+
+</details>
+
+---
+
+### Ejercicio 9
+Identifica los términos independientes en $6 + 2x = 18$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Resultado:** $\boxed{6 \text{ y } 18}$
+
+</details>
+
+---
+
+### Ejercicio 10
+Define "Resolver una ecuación" en tus propias palabras.
+
+<details>
+<summary>Ver solución</summary>
+
+**Resultado:** $\boxed{\text{Hallar el número que hace cierta la igualdad}}$
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Concepto | Clave para identificarlo |
+|:--- |:--- |
+| **Incógnita** | La letra ($x, y, z$). |
+| **Coeficiente** | El número pegado a la letra. |
+| **Lineal** | Exponente 1 en la variable. |
+| **Solución** | El valor que convierte la ecuación en una igualdad verdadera. |
+
+> **Conclusión:** Antes de aprender a despejar como un experto, es vital saber nombrar cada parte de la "máquina". Una ecuación lineal es el modelo más simple de relación matemática.

@@ -169,15 +169,35 @@ Situaciones que requieren confirmación:
 
 Corrige las siguientes lecciones al estilo Ediprofe.
 
-http://localhost:4321/matematicas/algebra/radicacion/propiedades-radicales-ii
+http://localhost:4321/matematicas/algebra/sistemas-ecuaciones-lineales/introduccion
 
-http://localhost:4321/matematicas/algebra/radicacion/simplificacion-de-radicales
+(elimina las imágnes de esta lección que fieron generadas con javascript)
 
-http://localhost:4321/matematicas/algebra/radicacion/introduccion-de-factores
 
-http://localhost:4321/matematicas/algebra/radicacion/suma-y-resta-de-radicales
+http://localhost:4321/matematicas/algebra/sistemas-ecuaciones-lineales/metodo-grafico
+(conservas las imágenes y haz uso de ellas para la lección)
 
-http://localhost:4321/matematicas/algebra/radicacion/multiplicacion-de-radicales
+
+http://localhost:4321/matematicas/algebra/sistemas-ecuaciones-lineales/metodo-sustitucion
+
+http://localhost:4321/matematicas/algebra/sistemas-ecuaciones-lineales/metodo-igualacion
+
+http://localhost:4321/matematicas/algebra/sistemas-ecuaciones-lineales/metodo-reduccion
+
+http://localhost:4321/matematicas/algebra/sistemas-ecuaciones-lineales/metodo-cramer
+
+http://localhost:4321/matematicas/algebra/sistemas-ecuaciones-lineales/sistemas-3x3
+
+http://localhost:4321/matematicas/algebra/sistemas-ecuaciones-lineales/problemas-aplicacion
+
+
+
+
+
+
+
+
+El símbolo $ déjalo mejor como "pesos" porque hay un problema para renderizar eso en latex.
 
 ## PASO 1: LEE las referencias
 

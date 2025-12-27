@@ -1,276 +1,285 @@
-# 📏 Distancia y Punto Medio
+# **Distancia y Punto Medio**
 
-En esta lección aprenderemos a calcular la distancia entre dos puntos y a encontrar el punto medio de un segmento en el plano cartesiano.
+Cuando tenemos dos puntos en un mapa, a menudo queremos saber dos cosas: ¿qué tan lejos están el uno del otro? y ¿dónde está exactamente la mitad del camino entre ellos? Para responder esto no necesitamos una regla, sino un par de fórmulas matemáticas muy sencillas basadas en el sentido común y la geometría.
 
 ---
 
-## 📖 Distancia entre dos puntos
+## 🎯 ¿Qué vas a aprender?
 
-La distancia entre dos puntos $P_1(x_1, y_1)$ y $P_2(x_2, y_2)$ se calcula con la **fórmula de la distancia**:
+- Cómo calcular la distancia exacta entre dos puntos usando Pitágoras.
+- Cómo encontrar el punto que divide un segmento justo a la mitad.
+- Por qué las diferencias de coordenadas nos dan la clave de la distancia.
+- Aplicaciones prácticas de estas medidas en el plano.
+
+---
+
+## 📏 Distancia entre dos Puntos
+
+Imagina que quieres ir de un punto $A$ a un punto $B$. Si trazas líneas horizontales y verticales, formas un triángulo rectángulo. El camino directo es la hipotenusa. Por eso usamos el **Teorema de Pitágoras**.
+
+La fórmula para la distancia $d$ es:
 
 $$
 d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}
 $$
 
-> 💡 Esta fórmula proviene del **teorema de Pitágoras**: la distancia es la hipotenusa de un triángulo rectángulo cuyos catetos son las diferencias en $x$ y en $y$.
+---
+
+## 📍 Punto Medio
+
+El punto medio es simplemente el **promedio** de las posiciones. Sumamos las coordenadas correspondientes y las dividimos entre dos.
+
+$$
+M = \left( \frac{x_1 + x_2}{2}, \frac{y_1 + y_2}{2} \right)
+$$
 
 ---
 
-### Ejemplo 1
+## ⚙️ Ejemplos Resueltos
 
-Encontrar la distancia entre $A(1, 2)$ y $B(4, 6)$.
+### Ejemplo 1: Distancia Estándar
+
+Calcula la distancia entre $P_1(1, 2)$ y $P_2(4, 6)$.
+
+**Razonamiento:**
+Identificamos $x_1=1, y_1=2, x_2=4, y_2=6$. Aplicamos fórmula:
 
 $$
-d = \sqrt{(4-1)^2 + (6-2)^2} = \sqrt{9 + 16} = \sqrt{25} = 5
+d = \sqrt{(4 - 1)^2 + (6 - 2)^2}
 $$
 
 $$
-\boxed{d = 5}
+d = \sqrt{3^2 + 4^2} = \sqrt{9 + 16} = \sqrt{25}
 $$
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="jsxgraph-distancia1" class="jsxgraph-container" style="width: 100%; height: 350px; border-radius: 8px; overflow: hidden;"></div>
-</div>
+**Resultado:**
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-distancia1')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-distancia1', {
-      boundingbox: [-1, 8, 7, -1], axis: true, showCopyright: false, showNavigation: false, pan: {enabled: false}, zoom: {enabled: false}
-    });
-    
-    var A = board.create('point', [1, 2], {name: 'A(1, 2)', size: 4, fixed: true, color: '#3b82f6', label: {fontSize: 11, offset: [-50, -10]}});
-    var B = board.create('point', [4, 6], {name: 'B(4, 6)', size: 4, fixed: true, color: '#3b82f6', label: {fontSize: 11, offset: [5, 10]}});
-    
-    // Línea de distancia
-    board.create('segment', [A, B], {strokeColor: '#22c55e', strokeWidth: 3, fixed: true});
-    
-    // Triángulo auxiliar
-    board.create('segment', [[1, 2], [4, 2]], {strokeColor: '#94a3b8', strokeWidth: 1, dash: 2, fixed: true});
-    board.create('segment', [[4, 2], [4, 6]], {strokeColor: '#94a3b8', strokeWidth: 1, dash: 2, fixed: true});
-    
-    // Etiquetas de catetos
-    board.create('text', [2.5, 1.5, '3'], {fontSize: 12, strokeColor: '#64748b', fixed: true});
-    board.create('text', [4.3, 4, '4'], {fontSize: 12, strokeColor: '#64748b', fixed: true});
-    
-    // Etiqueta de distancia
-    board.create('text', [2, 4.5, 'd = 5'], {fontSize: 14, strokeColor: '#22c55e', cssStyle: 'font-weight: bold;', fixed: true});
-    
-    board.unsuspendUpdate();
-  }
-});
-</script>
+$$
+\boxed{5}
+$$
 
 ---
 
-### Ejemplo 2
+### Ejemplo 2: Punto Medio
 
-Encontrar la distancia entre $P(-3, 2)$ y $Q(5, -4)$.
+Encuentra el punto medio entre $A(2, 10)$ y $B(8, 4)$.
+
+**Razonamiento:**
+Promediamos las $x$: $(2 + 8)/2 = 5$.
+Promediamos las $y$: $(10 + 4)/2 = 7$.
+
+**Resultado:**
 
 $$
-d = \sqrt{(5-(-3))^2 + (-4-2)^2} = \sqrt{64 + 36} = \sqrt{100} = 10
+\boxed{M(5, 7)}
 $$
-
-$$
-\boxed{d = 10}
-$$
-
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="jsxgraph-distancia2" class="jsxgraph-container" style="width: 100%; height: 400px; border-radius: 8px; overflow: hidden;"></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-distancia2')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-distancia2', {
-      boundingbox: [-5, 5, 7, -6], axis: true, showCopyright: false, showNavigation: false, pan: {enabled: false}, zoom: {enabled: false}
-    });
-    
-    var P = board.create('point', [-3, 2], {name: 'P(-3, 2)', size: 4, fixed: true, color: '#ef4444', label: {fontSize: 11, offset: [-60, 10]}});
-    var Q = board.create('point', [5, -4], {name: 'Q(5, -4)', size: 4, fixed: true, color: '#ef4444', label: {fontSize: 11, offset: [5, -12]}});
-    
-    // Línea de distancia
-    board.create('segment', [P, Q], {strokeColor: '#22c55e', strokeWidth: 3, fixed: true});
-    
-    // Triángulo auxiliar
-    board.create('segment', [[-3, 2], [5, 2]], {strokeColor: '#94a3b8', strokeWidth: 1, dash: 2, fixed: true});
-    board.create('segment', [[5, 2], [5, -4]], {strokeColor: '#94a3b8', strokeWidth: 1, dash: 2, fixed: true});
-    
-    // Etiquetas de catetos
-    board.create('text', [1, 2.5, '8'], {fontSize: 12, strokeColor: '#64748b', fixed: true});
-    board.create('text', [5.3, -1, '6'], {fontSize: 12, strokeColor: '#64748b', fixed: true});
-    
-    // Etiqueta de distancia
-    board.create('text', [0, -1.5, 'd = 10'], {fontSize: 14, strokeColor: '#22c55e', cssStyle: 'font-weight: bold;', fixed: true});
-    
-    board.unsuspendUpdate();
-  }
-});
-</script>
 
 ---
 
-## 📖 Punto medio
+### Ejemplo 3: Distancia con Negativos
 
-El **punto medio** $M$ entre $P_1(x_1, y_1)$ y $P_2(x_2, y_2)$ es:
+Encuentra la distancia entre $A(-1, -1)$ y $B(2, 3)$.
+
+**Razonamiento:**
+Cuidado con los signos al restar: $2 - (-1) = 3$.
 
 $$
-M = \left(\frac{x_1 + x_2}{2}, \frac{y_1 + y_2}{2}\right)
+d = \sqrt{(3)^2 + (4)^2} = \sqrt{9 + 16} = \sqrt{25}
 $$
 
-> 💡 Es simplemente el **promedio** de las coordenadas $x$ y el **promedio** de las coordenadas $y$.
+**Resultado:**
+
+$$
+\boxed{5}
+$$
 
 ---
 
-### Ejemplo 3
+### Ejemplo 4: Distancia en Línea Recta
 
-Encontrar el punto medio entre $A(2, 4)$ y $B(8, 10)$.
+Encuentra la distancia entre $P(2, 8)$ y $Q(2, -2)$.
 
+**Razonamiento:**
+Como la $x$ es la misma (2), es una línea vertical. Solo restamos las $y$:
 $$
-M = \left(\frac{2+8}{2}, \frac{4+10}{2}\right) = \left(\frac{10}{2}, \frac{14}{2}\right) = (5, 7)
-$$
-
-$$
-\boxed{M = (5, 7)}
+8 - (-2) = 10
 $$
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="jsxgraph-puntomedio1" class="jsxgraph-container" style="width: 100%; height: 380px; border-radius: 8px; overflow: hidden;"></div>
-</div>
+**Resultado:**
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-puntomedio1')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-puntomedio1', {
-      boundingbox: [-1, 12, 10, -1], axis: true, showCopyright: false, showNavigation: false, pan: {enabled: false}, zoom: {enabled: false}
-    });
-    
-    var A = board.create('point', [2, 4], {name: 'A(2, 4)', size: 4, fixed: true, color: '#3b82f6', label: {fontSize: 11, offset: [-50, -10]}});
-    var B = board.create('point', [8, 10], {name: 'B(8, 10)', size: 4, fixed: true, color: '#3b82f6', label: {fontSize: 11, offset: [5, 10]}});
-    
-    // Segmento AB
-    board.create('segment', [A, B], {strokeColor: '#94a3b8', strokeWidth: 2, fixed: true});
-    
-    // Punto medio
-    board.create('point', [5, 7], {name: 'M(5, 7)', size: 5, fixed: true, color: '#22c55e', label: {fontSize: 12, offset: [8, 8], cssStyle: 'font-weight: bold;'}});
-    
-    board.unsuspendUpdate();
-  }
-});
-</script>
+$$
+\boxed{10}
+$$
 
 ---
 
-### Ejemplo 4
+### Ejemplo 5: Punto Medio en el Origen
 
-Encontrar el punto medio entre $P(-4, 3)$ y $Q(6, -1)$.
+Halla el punto medio entre $R(-10, 5)$ y $S(10, -5)$.
+
+**Razonamiento:**
+Promedio de $x$: $(-10 + 10)/2 = 0$.
+Promedio de $y$: $(5 - 5)/2 = 0$.
+
+**Resultado:**
 
 $$
-M = \left(\frac{-4+6}{2}, \frac{3+(-1)}{2}\right) = \left(\frac{2}{2}, \frac{2}{2}\right) = (1, 1)
+\boxed{M(0, 0)}
 $$
-
-$$
-\boxed{M = (1, 1)}
-$$
-
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="jsxgraph-puntomedio2" class="jsxgraph-container" style="width: 100%; height: 350px; border-radius: 8px; overflow: hidden;"></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-puntomedio2')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-puntomedio2', {
-      boundingbox: [-6, 5, 8, -3], axis: true, showCopyright: false, showNavigation: false, pan: {enabled: false}, zoom: {enabled: false}
-    });
-    
-    var P = board.create('point', [-4, 3], {name: 'P(-4, 3)', size: 4, fixed: true, color: '#ef4444', label: {fontSize: 11, offset: [-55, 10]}});
-    var Q = board.create('point', [6, -1], {name: 'Q(6, -1)', size: 4, fixed: true, color: '#ef4444', label: {fontSize: 11, offset: [5, -12]}});
-    
-    // Segmento PQ
-    board.create('segment', [P, Q], {strokeColor: '#94a3b8', strokeWidth: 2, fixed: true});
-    
-    // Punto medio
-    board.create('point', [1, 1], {name: 'M(1, 1)', size: 5, fixed: true, color: '#22c55e', label: {fontSize: 12, offset: [8, 8], cssStyle: 'font-weight: bold;'}});
-    
-    board.unsuspendUpdate();
-  }
-});
-</script>
 
 ---
 
-## 📋 Resumen
+## 📝 Ejercicios de Práctica
 
-| Concepto | Fórmula |
-|:---------|:-------:|
-| Distancia | $d = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}$ |
-| Punto medio | $M = \left(\dfrac{x_1+x_2}{2}, \dfrac{y_1+y_2}{2}\right)$ |
-
----
-
-## 📝 Ejercicios de práctica
-
-**Ejercicio 1:** Calcula la distancia entre $A(0, 0)$ y $B(3, 4)$.
+### Ejercicio 1
+Encuentra la distancia entre $(0, 0)$ y $(6, 8)$.
 
 <details>
 <summary>Ver solución</summary>
 
 $$
-d = \sqrt{9 + 16} = \sqrt{25} = 5
+\sqrt{6^2 + 8^2} = \sqrt{36 + 64} = \sqrt{100} = 10
 $$
+
+**Resultado:** $\boxed{10}$
 
 </details>
 
 ---
 
-**Ejercicio 2:** Encuentra el punto medio entre $(2, 6)$ y $(8, 2)$.
+### Ejercicio 2
+Calcula el punto medio entre $(1, 5)$ y $(7, 9)$.
 
 <details>
 <summary>Ver solución</summary>
 
 $$
-M = (5, 4)
+M = \left( \frac{1+7}{2}, \frac{5+9}{2} \right) = (4, 7)
 $$
+
+**Resultado:** $\boxed{(4, 7)}$
 
 </details>
 
 ---
 
-**Ejercicio 3:** Calcula la distancia entre $(-1, 2)$ y $(2, 6)$.
+### Ejercicio 3
+¿Cuál es la distancia entre $(-3, 0)$ y $(3, 0)$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** Es una línea horizontal. La distancia es $3 - (-3) = 6$.
+
+**Resultado:** $\boxed{6}$
+
+</details>
+
+---
+
+### Ejercicio 4
+Encuentra el punto medio entre $(-4, 2)$ y $(4, -2)$.
 
 <details>
 <summary>Ver solución</summary>
 
 $$
-d = \sqrt{(3)^2 + (4)^2} = \sqrt{25} = 5
+M = \left( \frac{0}{2}, \frac{0}{2} \right) = (0, 0)
 $$
+
+**Resultado:** $\boxed{(0, 0)}$
 
 </details>
 
 ---
 
-**Ejercicio 4:** Encuentra el punto medio entre $(-6, 4)$ y $(2, -2)$.
+### Ejercicio 5
+Calcula la distancia entre $(2, 2)$ y $(5, 5)$.
 
 <details>
 <summary>Ver solución</summary>
 
 $$
-M = \left(\frac{-6+2}{2}, \frac{4-2}{2}\right) = (-2, 1)
+\sqrt{(5-2)^2 + (5-2)^2} = \sqrt{3^2 + 3^2} = \sqrt{18}
 $$
+
+**Resultado:** $\boxed{3\sqrt{2}}$
 
 </details>
 
 ---
+
+### Ejercicio 6
+Si el punto medio entre $(0, 0)$ y $(x, y)$ es $(5, 3)$, ¿cuánto valen $x$ e $y$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** El doble de la mitad.
+**Resultado:** $\boxed{x=10, y=6}$
+
+</details>
+
+---
+
+### Ejercicio 7
+Encuentra la distancia entre $(1, 10)$ y $(1, -2)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** Distancia vertical: $10 - (-2) = 12$.
+**Resultado:** $\boxed{12}$
+
+</details>
+
+---
+
+### Ejercicio 8
+Calcula el punto medio entre $(10, 20)$ y $(20, 10)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Resultado:** $\boxed{(15, 15)}$
+
+</details>
+
+---
+
+### Ejercicio 9
+Determina la distancia entre $(1, 2)$ y $(-2, -2)$.
+
+<details>
+<summary>Ver solución</summary>
+
+$$
+\sqrt{(-2-1)^2 + (-2-2)^2} = \sqrt{(-3)^2 + (-4)^2} = \sqrt{9+16} = 5
+$$
+
+**Resultado:** $\boxed{5}$
+
+</details>
+
+---
+
+### Ejercicio 10
+¿Qué fórmula usarías para saber si un punto está justo en el centro de dos ciudades en un mapa coordenado?
+
+<details>
+<summary>Ver solución</summary>
+
+**Resultado:** $\boxed{\text{Fórmula del Punto Medio}}$
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Concepto | Fórmula | Idea Clave |
+|:--- |:---: |:--- |
+| **Distancia** | $d = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}$ | Teorema de Pitágoras. |
+| **Punto Medio** | $M = \left( \frac{x_1+x_2}{2}, \frac{y_1+y_2}{2} \right)$ | Promedio de posiciones. |
+
+> **Conclusión:** La distancia nos dice cuánto caminar y el punto medio nos dice dónde descansar. Ambas herramientas son fundamentales para entender la geometría del plano.

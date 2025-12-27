@@ -1,344 +1,360 @@
-# ⚡ Potencias de i
+# **Potencias de i**
 
-En esta lección estudiaremos el patrón cíclico que siguen las potencias de la unidad imaginaria $i$.
-
----
-
-## 📖 Las primeras potencias de i
-
-Calculemos las primeras potencias:
-
-$$
-i^1 = i
-$$
-
-$$
-i^2 = -1 \quad \text{(por definición)}
-$$
-
-$$
-i^3 = i^2 \cdot i = (-1) \cdot i = -i
-$$
-
-$$
-i^4 = i^2 \cdot i^2 = (-1)(-1) = 1
-$$
-
-$$
-i^5 = i^4 \cdot i = 1 \cdot i = i
-$$
-
-$$
-i^6 = i^4 \cdot i^2 = 1 \cdot (-1) = -1
-$$
+Imagina un reloj que solo tiene 4 horas. Cada vez que multiplicas por $i$, la aguja avanza una hora. Después de 4 veces, vuelves al principio. Este comportamiento cíclico hace que calcular potencias enormes (como $i^{2000}$) sea increíblemente fácil si conoces el secreto del número 4.
 
 ---
 
-## 📖 El patrón cíclico
+## 🎯 ¿Qué vas a aprender?
 
-Las potencias de $i$ forman un **ciclo de 4**:
-
-| Residuo de dividir entre 4 | Potencia |
-|:--------------------------:|:--------:|
-| 1 | $i$ |
-| 2 | $-1$ |
-| 3 | $-i$ |
-| 0 | $1$ |
-
-### Regla
-
-Para calcular $i^n$, dividimos $n$ entre $4$ y usamos el **residuo**:
-
-- Si el residuo es 0: $i^n = 1$
-- Si el residuo es 1: $i^n = i$
-- Si el residuo es 2: $i^n = -1$
-- Si el residuo es 3: $i^n = -i$
+- El ciclo de 4 pasos de las potencias de $i$.
+- Cómo calcular cualquier potencia positiva ($i^n$).
+- Cómo calcular potencias negativas ($i^{-n}$).
+- Patrones interesantes en sumas de potencias consecutivas.
 
 ---
 
-### Ejemplo 1
+## 🔄 El Ciclo de 4 Pasos
 
-Calcular $i^{17}$.
+Empecemos multiplicando $i$ por sí mismo varias veces:
 
-$17 \div 4 = 4$ con residuo $1$
+1. **Uno:** $i^1 = i$
+2. **Dos:** $i^2 = -1$ (Por definición)
+3. **Tres:** $i^3 = i^2 \cdot i = (-1) \cdot i = -i$
+4. **Cuatro:** $i^4 = i^2 \cdot i^2 = (-1)(-1) = 1$
+
+¡Si seguimos, se repite!
+- $i^5 = i^4 \cdot i = 1 \cdot i = i$ (Igual a $i^1$)
+- $i^6 = i^4 \cdot i^2 = 1 \cdot (-1) = -1$ (Igual a $i^2$)
+
+### **La Tabla Maestra**
+
+Todo depende del residuo (lo que sobra) al dividir el exponente entre 4:
+
+| Residuo | Valor Equivalente | Resultado Final |
+|:---:|:---:|:---:|
+| **1** | $i^1$ | $i$ |
+| **2** | $i^2$ | $-1$ |
+| **3** | $i^3$ | $-i$ |
+| **0** | $i^4$ | $1$ |
+
+---
+
+## ⚙️ Ejemplos Resueltos
+
+### Ejemplo 1: Exponente Grande
+
+Calcula $i^{53}$.
+
+**Razonamiento:**
+Dividimos 53 entre 4.
+$53 = 13 \times 4 + 1$.
+El residuo es **1**.
+
+**Cálculo:**
 
 $$
-i^{17} = i^1 = i
+i^{53} = i^1 = i
 $$
 
+**Resultado:**
+
 $$
-\boxed{i^{17} = i}
+\boxed{i}
 $$
 
 ---
 
-### Ejemplo 2
+### Ejemplo 2: Exponente Exacto
 
-Calcular $i^{24}$.
+Calcula $i^{100}$.
 
-$24 \div 4 = 6$ con residuo $0$
+**Razonamiento:**
+100 es múltiplo de 4 ($25 \times 4$). El residuo es **0**.
 
-$$
-i^{24} = i^0 = 1
-$$
-
-$$
-\boxed{i^{24} = 1}
-$$
-
----
-
-### Ejemplo 3
-
-Calcular $i^{35}$.
-
-$35 \div 4 = 8$ con residuo $3$
+**Cálculo:**
 
 $$
-i^{35} = i^3 = -i
+i^{100} = i^0 = i^4 = 1
 $$
 
+**Resultado:**
+
 $$
-\boxed{i^{35} = -i}
+\boxed{1}
 $$
 
 ---
 
-### Ejemplo 4
+### Ejemplo 3: Potencia Negativa
 
-Calcular $i^{102}$.
+Calcula $i^{-3}$.
 
-$102 \div 4 = 25$ con residuo $2$
-
-$$
-i^{102} = i^2 = -1
-$$
+**Razonamiento:**
+Recordemos que $x^{-n} = 1/x^n$.
 
 $$
-\boxed{i^{102} = -1}
+i^{-3} = \frac{1}{i^3}
 $$
 
----
-
-### Ejemplo 5
-
-Calcular $i^{1000}$.
-
-$1000 \div 4 = 250$ con residuo $0$
+Sustituimos $i^3 = -i$.
 
 $$
-i^{1000} = 1
+\frac{1}{-i}
 $$
 
-$$
-\boxed{i^{1000} = 1}
-$$
-
----
-
-## 📖 Potencias negativas de i
-
-Para potencias negativas, primero simplificamos:
+Para eliminar la $i$ del denominador, multiplicamos por $i/i$:
 
 $$
-i^{-1} = \frac{1}{i} = \frac{1}{i} \cdot \frac{i}{i} = \frac{i}{i^2} = \frac{i}{-1} = -i
+\frac{1 \cdot i}{-i \cdot i} = \frac{i}{-i^2} = \frac{i}{-(-1)} = \frac{i}{1} = i
 $$
 
-$$
-i^{-2} = \frac{1}{i^2} = \frac{1}{-1} = -1
-$$
+**Resultado:**
 
 $$
-i^{-3} = \frac{1}{i^3} = \frac{1}{-i} = \frac{1}{-i} \cdot \frac{-i}{-i} = \frac{-i}{i^2} = \frac{-i}{-1} = i
-$$
-
-$$
-i^{-4} = \frac{1}{i^4} = \frac{1}{1} = 1
+\boxed{i}
 $$
 
 ---
 
-### Ejemplo 6
+### Ejemplo 4: Suma de Potencias
 
-Calcular $i^{-7}$.
+Calcula $i^{10} + i^{12}$.
 
-$|-7| = 7$, $7 \div 4 = 1$ con residuo $3$, entonces $i^7 = -i$
+**Paso 1: Simplificar cada una**
+- $10 \div 4 \rightarrow$ Residuo 2. Así que $i^{10} = i^2 = -1$.
+- $12 \div 4 \rightarrow$ Residuo 0. Así que $i^{12} = i^4 = 1$.
 
-$$
-i^{-7} = \frac{1}{i^7} = \frac{1}{-i} = \frac{i}{-i^2} = \frac{i}{1} = i
-$$
-
-O usando el patrón para negativos (se invierte el signo de $i$):
+**Paso 2: Sumar**
 
 $$
-\boxed{i^{-7} = i}
+-1 + 1
 $$
 
----
-
-### Ejemplo 7
-
-Calcular $i^{-10}$.
-
-$10 \div 4 = 2$ con residuo $2$, entonces $i^{10} = -1$
+**Resultado:**
 
 $$
-i^{-10} = \frac{1}{i^{10}} = \frac{1}{-1} = -1
-$$
-
-$$
-\boxed{i^{-10} = -1}
+\boxed{0}
 $$
 
 ---
 
-## 📖 Suma de potencias
+## 📝 Ejercicios de Práctica
 
-### Ejemplo 8
-
-Calcular $i^5 + i^6 + i^7 + i^8$.
-
-$$
-i^5 = i, \quad i^6 = -1, \quad i^7 = -i, \quad i^8 = 1
-$$
-
-$$
-i + (-1) + (-i) + 1 = i - 1 - i + 1 = 0
-$$
-
-$$
-\boxed{i^5 + i^6 + i^7 + i^8 = 0}
-$$
-
-> **Observación:** La suma de 4 potencias consecutivas de $i$ siempre es 0.
-
----
-
-### Ejemplo 9
-
-Calcular $i^{10} + i^{20} + i^{30}$.
-
-$$
-i^{10} = i^2 = -1
-$$
-
-$$
-i^{20} = i^0 = 1
-$$
-
-$$
-i^{30} = i^2 = -1
-$$
-
-$$
--1 + 1 + (-1) = -1
-$$
-
-$$
-\boxed{i^{10} + i^{20} + i^{30} = -1}
-$$
-
----
-
-### Ejemplo 10
-
-Calcular $i^{100} - i^{99}$.
-
-$$
-i^{100} = i^0 = 1
-$$
-
-$$
-i^{99} = i^3 = -i
-$$
-
-$$
-1 - (-i) = 1 + i
-$$
-
-$$
-\boxed{i^{100} - i^{99} = 1 + i}
-$$
-
----
-
-## 📋 Resumen
-
-| Potencia | Valor | Potencia | Valor |
-|:--------:|:-----:|:--------:|:-----:|
-| $i^1$ | $i$ | $i^5$ | $i$ |
-| $i^2$ | $-1$ | $i^6$ | $-1$ |
-| $i^3$ | $-i$ | $i^7$ | $-i$ |
-| $i^4$ | $1$ | $i^8$ | $1$ |
-
----
-
-## 📝 Ejercicios de práctica
-
-**Ejercicio 1:** Calcula $i^{15}$.
+### Ejercicio 1
+Calcula $i^{22}$.
 
 <details>
 <summary>Ver solución</summary>
 
-$15 \div 4 = 3$ residuo $3$ → $i^{15} = -i$
+$22 \div 4$ da residuo 2.
+
+$$
+i^{22} = i^2 = -1
+$$
+
+**Resultado:**
+
+$$
+\boxed{-1}
+$$
 
 </details>
 
 ---
 
-**Ejercicio 2:** Calcula $i^{48}$.
+### Ejercicio 2
+Calcula $i^{33}$.
 
 <details>
 <summary>Ver solución</summary>
 
-$48 \div 4 = 12$ residuo $0$ → $i^{48} = 1$
+$33 \div 4$ da residuo 1.
+
+$$
+i^{33} = i^1 = i
+$$
+
+**Resultado:**
+
+$$
+\boxed{i}
+$$
 
 </details>
 
 ---
 
-**Ejercicio 3:** Calcula $i^{73}$.
+### Ejercicio 3
+Calcula $i^{103}$.
 
 <details>
 <summary>Ver solución</summary>
 
-$73 \div 4 = 18$ residuo $1$ → $i^{73} = i$
+$103 \div 4$ da residuo 3.
+
+$$
+i^{103} = i^3 = -i
+$$
+
+**Resultado:**
+
+$$
+\boxed{-i}
+$$
 
 </details>
 
 ---
 
-**Ejercicio 4:** Calcula $i^{-5}$.
+### Ejercicio 4
+Calcula $i^{80}$.
 
 <details>
 <summary>Ver solución</summary>
 
-$i^5 = i$, entonces $i^{-5} = \frac{1}{i} = -i$
+80 es múltiplo exacto de 4 (residuo 0).
+
+$$
+i^{80} = 1
+$$
+
+**Resultado:**
+
+$$
+\boxed{1}
+$$
 
 </details>
 
 ---
 
-**Ejercicio 5:** Calcula $i^{21} + i^{22} + i^{23} + i^{24}$.
+### Ejercicio 5
+Simplifica $i^{4n + 3}$ (donde $n$ es entero).
 
 <details>
 <summary>Ver solución</summary>
 
-$i + (-1) + (-i) + 1 = 0$
+$i^{4n} \cdot i^3 = (i^4)^n \cdot i^3 = 1^n \cdot (-i) = -i$.
+
+**Resultado:**
+
+$$
+\boxed{-i}
+$$
 
 </details>
 
 ---
 
-**Ejercicio 6:** Calcula $i^{50} - i^{51}$.
+### Ejercicio 6
+Calcula $i^{-1}$.
 
 <details>
 <summary>Ver solución</summary>
 
-$i^{50} = -1$, $i^{51} = i$
+$$
+\frac{1}{i} = \frac{i}{i^2} = \frac{i}{-1} = -i
+$$
 
-$-1 - i$
+**Resultado:**
+
+$$
+\boxed{-i}
+$$
 
 </details>
 
 ---
+
+### Ejercicio 7
+Calcula $i^6 \cdot i^7$.
+
+<details>
+<summary>Ver solución</summary>
+
+Propiedad de potencias: $i^{6+7} = i^{13}$.
+$13 \div 4$ da residuo 1.
+
+**Resultado:**
+
+$$
+\boxed{i}
+$$
+
+</details>
+
+---
+
+### Ejercicio 8
+Calcula $(2i)^3$.
+
+<details>
+<summary>Ver solución</summary>
+
+$$
+2^3 \cdot i^3 = 8 \cdot (-i) = -8i
+$$
+
+**Resultado:**
+
+$$
+\boxed{-8i}
+$$
+
+</details>
+
+---
+
+### Ejercicio 9
+Simplifica $i^{2023}$.
+
+<details>
+<summary>Ver solución</summary>
+
+$2023 \div 4$. Observamos los últimos dos dígitos (23).
+$23 \div 4$ da residuo 3.
+
+$$
+i^{2023} = i^3 = -i
+$$
+
+**Resultado:**
+
+$$
+\boxed{-i}
+$$
+
+</details>
+
+---
+
+### Ejercicio 10
+Suma: $i + i^2 + i^3 + i^4$.
+
+<details>
+<summary>Ver solución</summary>
+
+$$
+i + (-1) + (-i) + 1 = 0
+$$
+
+**Resultado:**
+
+$$
+\boxed{0}
+$$
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Potencia Clave | Valor | Truco de Memoria |
+|:--- |:--- |:--- |
+| $i^0$ o $i^4$ | **1** | Vuelta completa |
+| $i^1$ | **i** | Una hora |
+| $i^2$ | **-1** | Media vuelta (*el más importante*) |
+| $i^3$ | **-i** | Tres cuartos |
+
+> **Conclusión:** Cualquier potencia de $i$, por gigante que sea, siempre será uno de estos cuatro resultados: $1, i, -1, -i$.

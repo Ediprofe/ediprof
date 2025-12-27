@@ -1,304 +1,439 @@
-# ➗ División de Radicales
+# **División de Radicales**
 
-En esta lección aprenderemos a dividir radicales, tanto con el mismo índice como con índices diferentes.
-
----
-
-## 📖 División de radicales con el mismo índice
-
-Cuando los radicales tienen el **mismo índice**, se dividen los radicandos:
-
-$$
-\frac{\sqrt[n]{a}}{\sqrt[n]{b}} = \sqrt[n]{\frac{a}{b}} \quad \text{(para } b \neq 0\text{)}
-$$
+Dividir radicales es muy parecido a simplificar fracciones, pero con una regla importante: para combinar raíces en una sola, deben tener el mismo índice. Imagina que quieres calcular cuántas veces cabe una baldosa cuadrada de área $\sqrt{2}$ en un piso de área $\sqrt{50}$; para resolverlo, necesitas dividir radicales.
 
 ---
 
-### Ejemplo 1
+## 🎯 ¿Qué vas a aprender?
 
-Calcular $\dfrac{\sqrt{50}}{\sqrt{2}}$.
-
-$$
-\frac{\sqrt{50}}{\sqrt{2}} = \sqrt{\frac{50}{2}} = \sqrt{25} = 5
-$$
-
-$$
-\boxed{\frac{\sqrt{50}}{\sqrt{2}} = 5}
-$$
+- Cómo dividir radicales que tienen el **mismo índice**.
+- Cómo simplificar coeficientes y radicandos por separado.
+- Cómo dividir radicales cuando tienen **índices diferentes**.
+- Estrategias para simplificar el resultado final.
 
 ---
 
-### Ejemplo 2
+## ➗ División con el Mismo Índice
 
-Calcular $\dfrac{\sqrt[3]{54}}{\sqrt[3]{2}}$.
+Esta es la situación ideal. Si los índices son iguales, puedes unir todo bajo una sola raíz "grande" y dividir los números de adentro.
 
-$$
-\frac{\sqrt[3]{54}}{\sqrt[3]{2}} = \sqrt[3]{\frac{54}{2}} = \sqrt[3]{27} = 3
-$$
+### **La Regla de Oro**
 
 $$
-\boxed{\frac{\sqrt[3]{54}}{\sqrt[3]{2}} = 3}
+\frac{\sqrt[n]{a}}{\sqrt[n]{b}} = \sqrt[n]{\frac{a}{b}}
 $$
+
+Es decir: **"La división de las raíces es la raíz de la división."**
 
 ---
 
-### Ejemplo 3
+## ⚙️ Ejemplos Resueltos
 
-Simplificar $\dfrac{\sqrt{48}}{\sqrt{3}}$.
+### Ejemplo 1: División Directa
 
-$$
-\frac{\sqrt{48}}{\sqrt{3}} = \sqrt{\frac{48}{3}} = \sqrt{16} = 4
-$$
+Calcula la división:
 
 $$
-\boxed{\frac{\sqrt{48}}{\sqrt{3}} = 4}
+\frac{\sqrt{50}}{\sqrt{2}}
 $$
 
----
-
-### Ejemplo 4
-
-Simplificar $\dfrac{6\sqrt{20}}{3\sqrt{5}}$.
-
-**Paso 1:** Dividimos coeficientes y radicales:
+**Razonamiento:**
+Como ambas son raíces cuadradas (índice 2), unimos los números en una sola raíz y dividimos.
 
 $$
-\frac{6\sqrt{20}}{3\sqrt{5}} = \frac{6}{3} \cdot \sqrt{\frac{20}{5}} = 2\sqrt{4} = 2 \times 2 = 4
+\sqrt{\frac{50}{2}}
 $$
 
 $$
-\boxed{\frac{6\sqrt{20}}{3\sqrt{5}} = 4}
+\sqrt{25}
+$$
+
+**Resultado:**
+
+$$
+\boxed{5}
 $$
 
 ---
 
-### Ejemplo 5
+### Ejemplo 2: División con Coeficientes
 
-Simplificar $\dfrac{10\sqrt{63}}{5\sqrt{7}}$.
-
-$$
-\frac{10\sqrt{63}}{5\sqrt{7}} = 2\sqrt{\frac{63}{7}} = 2\sqrt{9} = 6
-$$
+Simplifica la expresión:
 
 $$
-\boxed{\frac{10\sqrt{63}}{5\sqrt{7}} = 6}
+\frac{6\sqrt{20}}{3\sqrt{5}}
 $$
 
----
+**Razonamiento:**
+Trabajamos por separado: "los de afuera con los de afuera" y "los de adentro con los de adentro".
+1. Dividimos los coeficientes: $6 \div 3 = 2$.
+2. Dividimos los radicales: $\sqrt{20} \div \sqrt{5} = \sqrt{4}$.
 
-## 📖 División con variables
-
-### Ejemplo 6
-
-Simplificar $\dfrac{\sqrt{x^5}}{\sqrt{x}}$.
+**Paso a paso:**
 
 $$
-\frac{\sqrt{x^5}}{\sqrt{x}} = \sqrt{\frac{x^5}{x}} = \sqrt{x^4} = x^2
+\frac{6}{3} \cdot \sqrt{\frac{20}{5}}
 $$
 
 $$
-\boxed{\frac{\sqrt{x^5}}{\sqrt{x}} = x^2}
-$$
-
----
-
-### Ejemplo 7
-
-Simplificar $\dfrac{\sqrt{18a^3b^4}}{\sqrt{2ab^2}}$.
-
-$$
-\frac{\sqrt{18a^3b^4}}{\sqrt{2ab^2}} = \sqrt{\frac{18a^3b^4}{2ab^2}} = \sqrt{9a^2b^2} = 3ab
+2 \cdot \sqrt{4}
 $$
 
 $$
-\boxed{\frac{\sqrt{18a^3b^4}}{\sqrt{2ab^2}} = 3ab}
+2 \cdot 2
+$$
+
+**Resultado:**
+
+$$
+\boxed{4}
 $$
 
 ---
 
-## 📖 División de radicales con diferentes índices
+### Ejemplo 3: División con Variables
 
-Para dividir radicales con **índices diferentes**, primero los convertimos al **mismo índice**.
-
-### Ejemplo 8
-
-Calcular $\dfrac{\sqrt{a}}{\sqrt[3]{a}}$.
-
-**Paso 1:** El MCM de 2 y 3 es 6.
-
-**Paso 2:** Convertimos:
+Simplifica:
 
 $$
-\sqrt{a} = \sqrt[6]{a^3}
+\frac{\sqrt{18x^5}}{\sqrt{2x}}
 $$
 
-$$
-\sqrt[3]{a} = \sqrt[6]{a^2}
-$$
+**Razonamiento:**
+Unimos en una sola fracción y usamos las reglas de los exponentes (al dividir, se restan los exponentes: $x^5 / x^1 = x^4$).
 
-**Paso 3:** Dividimos:
+**Paso 1: Simplificar la fracción**
 
 $$
-\frac{\sqrt[6]{a^3}}{\sqrt[6]{a^2}} = \sqrt[6]{\frac{a^3}{a^2}} = \sqrt[6]{a}
+\sqrt{\frac{18x^5}{2x}}
 $$
 
 $$
-\boxed{\frac{\sqrt{a}}{\sqrt[3]{a}} = \sqrt[6]{a}}
+\sqrt{9x^4}
 $$
 
----
+**Paso 2: Calcular la raíz**
+La raíz de 9 es 3, y la raíz de $x^4$ es $x^2$.
 
-### Ejemplo 9
-
-Calcular $\dfrac{\sqrt[3]{8}}{\sqrt{2}}$.
-
-**Simplificamos primero:** $\sqrt[3]{8} = 2$
+**Resultado:**
 
 $$
-\frac{2}{\sqrt{2}} = \frac{2}{\sqrt{2}} \cdot \frac{\sqrt{2}}{\sqrt{2}} = \frac{2\sqrt{2}}{2} = \sqrt{2}
-$$
-
-$$
-\boxed{\frac{\sqrt[3]{8}}{\sqrt{2}} = \sqrt{2}}
+\boxed{3x^2}
 $$
 
 ---
 
-## 📖 Cuando el resultado tiene radical en el denominador
+### Ejemplo 4: División con Índices Diferentes
 
-Los siguientes ejemplos dejan radicales en el denominador. En la próxima lección aprenderemos a **racionalizar** para eliminarlos.
-
-### Ejemplo 10
-
-Simplificar $\dfrac{\sqrt{15}}{\sqrt{5}}$.
+Calcula:
 
 $$
-\frac{\sqrt{15}}{\sqrt{5}} = \sqrt{\frac{15}{5}} = \sqrt{3}
+\frac{\sqrt{a}}{\sqrt[3]{a}}
 $$
 
+**Razonamiento:**
+Aquí **NO** podemos dividir directamente porque los índices son distintos (2 y 3).
+Debemos convertirlos a un índice común (Mínimo Común Múltiplo). El MCM de 2 y 3 es 6.
+
+**Paso 1: Convertir al índice común (6)**
+Multiplicamos índice y exponente para llegar a 6.
+- Numerador (índice 2): Multiplicamos por 3.
+  
 $$
-\boxed{\frac{\sqrt{15}}{\sqrt{5}} = \sqrt{3}}
-$$
-
----
-
-### Ejemplo 11
-
-Simplificar $\dfrac{12}{\sqrt{3}}$.
-
-Por ahora, dejamos el resultado como está:
-
-$$
-\frac{12}{\sqrt{3}}
+  \sqrt[2]{a^1} = \sqrt[2 \cdot 3]{a^{1 \cdot 3}} = \sqrt[6]{a^3}
 $$
 
-En la siguiente lección veremos cómo racionalizar este tipo de expresiones.
-
+- Denominador (índice 3): Multiplicamos por 2.
+  
 $$
-\boxed{\frac{12}{\sqrt{3}} = \frac{12}{\sqrt{3}} \text{ (por racionalizar)}}
-$$
-
----
-
-### Ejemplo 12
-
-Simplificar $\dfrac{\sqrt[3]{40}}{\sqrt[3]{5}}$.
-
-$$
-\frac{\sqrt[3]{40}}{\sqrt[3]{5}} = \sqrt[3]{\frac{40}{5}} = \sqrt[3]{8} = 2
+  \sqrt[3]{a^1} = \sqrt[3 \cdot 2]{a^{1 \cdot 2}} = \sqrt[6]{a^2}
 $$
 
+**Paso 2: Dividir ahora que son iguales**
+
 $$
-\boxed{\frac{\sqrt[3]{40}}{\sqrt[3]{5}} = 2}
+\frac{\sqrt[6]{a^3}}{\sqrt[6]{a^2}} = \sqrt[6]{\frac{a^3}{a^2}}
+$$
+
+**Resultado:**
+
+$$
+\boxed{\sqrt[6]{a}}
 $$
 
 ---
 
-## 📋 Resumen
+## 📝 Ejercicios de Práctica
 
-| Operación | Fórmula |
-|:----------|:-------:|
-| División (mismo índice) | $\dfrac{\sqrt[n]{a}}{\sqrt[n]{b}} = \sqrt[n]{\dfrac{a}{b}}$ |
-| División (diferentes índices) | Convertir al mismo índice primero |
-
----
-
-## 📝 Ejercicios de práctica
-
-**Ejercicio 1:** Calcula $\dfrac{\sqrt{72}}{\sqrt{2}}$.
+### Ejercicio 1
+Divide: $\dfrac{\sqrt{72}}{\sqrt{2}}$
 
 <details>
 <summary>Ver solución</summary>
 
+**Razonamiento:**
+Unimos en una sola raíz:
+
 $$
-\sqrt{\frac{72}{2}} = \sqrt{36} = 6
+\sqrt{\frac{72}{2}}
+$$
+
+$$
+\sqrt{36}
+$$
+
+**Resultado:**
+
+$$
+\boxed{6}
 $$
 
 </details>
 
 ---
 
-**Ejercicio 2:** Calcula $\dfrac{\sqrt[3]{250}}{\sqrt[3]{2}}$.
+### Ejercicio 2
+Divide: $\dfrac{\sqrt[3]{54}}{\sqrt[3]{2}}$
 
 <details>
 <summary>Ver solución</summary>
 
+**Razonamiento:**
+Mismo índice (3), dividimos dentro:
+
 $$
-\sqrt[3]{\frac{250}{2}} = \sqrt[3]{125} = 5
+\sqrt[3]{\frac{54}{2}}
+$$
+
+$$
+\sqrt[3]{27}
+$$
+
+**Resultado:**
+
+$$
+\boxed{3}
 $$
 
 </details>
 
 ---
 
-**Ejercicio 3:** Simplifica $\dfrac{8\sqrt{45}}{4\sqrt{5}}$.
+### Ejercicio 3
+Simplifica: $\dfrac{10\sqrt{48}}{2\sqrt{3}}$
 
 <details>
 <summary>Ver solución</summary>
 
+**Razonamiento:**
+Dividimos coeficientes ($10/2$) y radicandos ($48/3$):
+
 $$
-\frac{8}{4} \cdot \sqrt{\frac{45}{5}} = 2\sqrt{9} = 6
+5 \cdot \sqrt{16}
+$$
+
+$$
+5 \cdot 4
+$$
+
+**Resultado:**
+
+$$
+\boxed{20}
 $$
 
 </details>
 
 ---
 
-**Ejercicio 4:** Simplifica $\dfrac{\sqrt{a^7}}{\sqrt{a^3}}$.
+### Ejercicio 4
+Simplifica con variables: $\dfrac{\sqrt{x^7}}{\sqrt{x^3}}$
 
 <details>
 <summary>Ver solución</summary>
 
+**Razonamiento:**
+Restamos exponentes: $7 - 3 = 4$.
+
 $$
-\sqrt{\frac{a^7}{a^3}} = \sqrt{a^4} = a^2
+\sqrt{x^4}
+$$
+
+**Resultado:**
+
+$$
+\boxed{x^2}
 $$
 
 </details>
 
 ---
 
-**Ejercicio 5:** Simplifica $\dfrac{\sqrt{28}}{\sqrt{7}}$.
+### Ejercicio 5
+Calcula: $\dfrac{\sqrt{125}}{\sqrt{5}}$
 
 <details>
 <summary>Ver solución</summary>
 
+**Razonamiento:**
+
 $$
-\sqrt{\frac{28}{7}} = \sqrt{4} = 2
+\sqrt{\frac{125}{5}}
+$$
+
+$$
+\sqrt{25}
+$$
+
+**Resultado:**
+
+$$
+\boxed{5}
 $$
 
 </details>
 
 ---
 
-**Ejercicio 6:** Simplifica $\dfrac{\sqrt[4]{32}}{\sqrt[4]{2}}$.
+### Ejercicio 6
+Simplifica: $\dfrac{\sqrt[4]{80}}{\sqrt[4]{5}}$
 
 <details>
 <summary>Ver solución</summary>
 
+**Razonamiento:**
+
 $$
-\sqrt[4]{\frac{32}{2}} = \sqrt[4]{16} = 2
+\sqrt[4]{\frac{80}{5}}
+$$
+
+$$
+\sqrt[4]{16}
+$$
+
+**Resultado:**
+
+$$
+\boxed{2}
 $$
 
 </details>
 
 ---
+
+### Ejercicio 7
+Divide: $\dfrac{\sqrt{18a^3}}{\sqrt{2a}}$
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+
+$$
+\sqrt{\frac{18a^3}{2a}}
+$$
+
+$$
+\sqrt{9a^2}
+$$
+
+$$
+3a
+$$
+
+**Resultado:**
+
+$$
+\boxed{3a}
+$$
+
+</details>
+
+---
+
+### Ejercicio 8
+Divide con índices diferentes: $\dfrac{\sqrt[4]{x^3}}{\sqrt{x}}$
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Índices 4 y 2. MCM = 4.
+El denominador $\sqrt{x}$ es $\sqrt[4]{x^2}$.
+
+$$
+\frac{\sqrt[4]{x^3}}{\sqrt[4]{x^2}} = \sqrt[4]{x^{3-2}}
+$$
+
+**Resultado:**
+
+$$
+\boxed{\sqrt[4]{x}}
+$$
+
+</details>
+
+---
+
+### Ejercicio 9
+Simplifica: $\dfrac{15\sqrt{24}}{5\sqrt{6}}$
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Coeficientes: $15/5 = 3$. Radicales: $24/6 = 4$.
+
+$$
+3 \cdot \sqrt{4}
+$$
+
+$$
+3 \cdot 2
+$$
+
+**Resultado:**
+
+$$
+\boxed{6}
+$$
+
+</details>
+
+---
+
+### Ejercicio 10
+Simplifica: $\dfrac{\sqrt{200}}{\sqrt{8}}$
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+
+$$
+\sqrt{\frac{200}{8}}
+$$
+
+$$
+\sqrt{25}
+$$
+
+**Resultado:**
+
+$$
+\boxed{5}
+$$
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Tipo de División | Regla Clave | Ejemplo |
+|:--- |:--- |:--- |
+| **Mismo Índice** | Unir y dividir | $\frac{\sqrt{8}}{\sqrt{2}} = \sqrt{4} = 2$ |
+| **Con Coeficientes** | Dividir afuera con afuera | $\frac{4\sqrt{x}}{2\sqrt{x}} = 2$ |
+| **Índice Diferente** | Igualar índices (MCM) primero | $\frac{\sqrt[4]{x}}{\sqrt{x}} \rightarrow \text{MCM}$ |
+
+> **Consejo:** Siempre intenta simplificar la fracción dentro de la raíz antes de intentar calcular la raíz. Es mucho más fácil calcular $\sqrt{25}$ que $\sqrt{50} \div \sqrt{2}$.
