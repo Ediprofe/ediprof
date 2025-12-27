@@ -1,419 +1,306 @@
-# Diagonales de Polígonos
+# **Diagonales de Polígonos**
 
-Una **diagonal** es un segmento que une dos vértices no consecutivos de un polígono. El número de diagonales depende del número de lados.
+Una diagonal es un "atajo". En lugar de caminar por los lados (el borde), la diagonal cruza por en medio del polígono. Es la línea que conecta a dos vértices que no son vecinos.
 
 ---
 
-## 📖 ¿Qué es una diagonal?
+## 🎯 ¿Qué vas a aprender?
 
-> **Definición:** Una diagonal es un segmento que une dos vértices de un polígono que **no son adyacentes** (no son consecutivos).
+- Definir qué es una diagonal.
+- Calcular cuántas diagonales salen de **un solo vértice**.
+- Calcular el número **total** de diagonales de cualquier polígono ($D$).
+- Entender la lógica detrás de la fórmula (para no tener que memorizarla).
+
+---
+
+## 📐 ¿Qué es una Diagonal?
+
+> **Definición:** Es el segmento de recta que une dos vértices **no consecutivos**.
+
+Si unes dos vértices consecutivos, eso es un **lado**, no una diagonal.
 
 ### Ejemplo
-
-En un cuadrilátero $ABCD$:
-- $\overline{AC}$ es diagonal (une vértices no consecutivos)
-- $\overline{BD}$ es diagonal (une vértices no consecutivos)
-- $\overline{AB}$ **no** es diagonal (es un lado)
-
-**Ilustración: ¿Qué es una Diagonal?**
-
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.5rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.25rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="jsxgraph-def-diagonal" style="width: 100%; height: 300px; min-height: 250px; border-radius: 8px;"></div>
-</div>
-
-<script>
-(function() {
-  function initDefDiag() {
-    if (typeof JXG === 'undefined' || !document.getElementById('jsxgraph-def-diagonal')) {
-      setTimeout(initDefDiag, 100);
-      return;
-    }
-    
-    if (JXG.boards['jsxgraph-def-diagonal']) return;
-
-    var board = JXG.JSXGraph.initBoard('jsxgraph-def-diagonal', {
-      boundingbox: [-1, 4, 5, -1],
-      axis: false,
-      showCopyright: false,
-      showNavigation: false,
-      keepaspectratio: true
-    });
-    
-    // Cuadrilátero ABCD
-    var A = board.create('point', [0, 0], {name:'A', size:3, color:'#1e293b', fixed:true});
-    var B = board.create('point', [4, 0], {name:'B', size:3, color:'#1e293b', fixed:true});
-    var C = board.create('point', [4, 3], {name:'C', size:3, color:'#1e293b', fixed:true});
-    var D = board.create('point', [0, 3], {name:'D', size:3, color:'#1e293b', fixed:true});
-    
-    // Lados (azul, sólido)
-    board.create('polygon', [A, B, C, D], {
-        fillColor: '#dbeafe', fillOpacity:0.2,
-        borders: {strokeColor: '#3b82f6', strokeWidth:2}
-    });
-    
-    // Diagonales (rojo, punteadas)
-    board.create('segment', [A, C], {strokeColor: '#ef4444', strokeWidth:2, dash:2});
-    board.create('segment', [B, D], {strokeColor: '#ef4444', strokeWidth:2, dash:2});
-    
-    // Etiquetas
-    board.create('text', [2, 1.5, 'Diagonales'], {fontSize:12, color:'#ef4444', fontWeight:'bold'});
-    board.create('text', [2, -0.5, 'Lados = Azul (sólido)'], {fontSize:10, color:'#3b82f6', anchorX:'middle'});
-  }
-  
-  initDefDiag();
-})();
-</script>
+En un cuadrado $ABCD$:
+-   De $A$ a $B$: Lado.
+-   De $A$ a $C$: **Diagonal**.
+-   De $A$ a $D$: Lado.
 
 ---
 
-## 📖 Fórmula del número de diagonales
+## 🔢 Diagonales desde UN Vértice ($d$)
 
-El número de diagonales de un polígono de $n$ lados es:
+Imagina que estás parado en un vértice de un polígono de $n$ lados y quieres lanzar cuerdas a los otros vértices.
+¿A cuántos puedes lanzar?
+-   No puedes lanzarte a ti mismo. ($-1$)
+-   No puedes lanzar a tu vecino de la derecha (ya es un lado). ($-1$)
+-   No puedes lanzar a tu vecino de la izquierda (ya es un lado). ($-1$)
+
+En total, pierdes 3 vértices.
+
+> **Fórmula:** El número de diagonales desde un solo vértice es:
 
 $$
-d = \frac{n(n-3)}{2}
+d = n - 3
 $$
-
-### ¿De dónde viene esta fórmula?
-
-- Desde cada vértice se pueden trazar $(n-3)$ diagonales
-- Hay $n$ vértices
-- Cada diagonal se cuenta dos veces (una desde cada extremo)
-- Por lo tanto: $d = \frac{n(n-3)}{2}$
 
 ---
 
-## 📖 Tabla de diagonales
+## 🔢 Diagonales Totales ($D$)
 
-| Polígono | n | Diagonales |
-|----------|---|------------|
-| Triángulo | 3 | $\frac{3(0)}{2} = 0$ |
-| Cuadrilátero | 4 | $\frac{4(1)}{2} = 2$ |
-| Pentágono | 5 | $\frac{5(2)}{2} = 5$ |
-| Hexágono | 6 | $\frac{6(3)}{2} = 9$ |
-| Heptágono | 7 | $\frac{7(4)}{2} = 14$ |
-| Octágono | 8 | $\frac{8(5)}{2} = 20$ |
-| Decágono | 10 | $\frac{10(7)}{2} = 35$ |
-| Dodecágono | 12 | $\frac{12(9)}{2} = 54$ |
+Si hay $n$ vértices, y de cada uno salen $n-3$ diagonales, podrías pensar que el total es $n(n-3)$.
+**¡Pero cuidado!**
+La diagonal que va de $A$ a $C$ es la misma que va de $C$ a $A$. Si simplemente multiplicamos, estaríamos contando cada cuerda dos veces (una por cada extremo).
+Así que debemos dividir por 2.
 
-**Ilustración: Comparativa de Diagonales:**
+> **Fórmula Maestra:** El número total de diagonales es:
 
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.5rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.25rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <canvas id="rough-comp-diagonales" width="800" height="600" style="width: 100%; height: auto; border-radius: 8px;"></canvas>
-</div>
+$$
+D = \frac{n(n - 3)}{2}
+$$
 
-<script>
-(function() {
-  function initCompDiagRough() {
-    if (typeof rough === 'undefined') {
-      setTimeout(initCompDiagRough, 100);
-      return;
-    }
-    
-    const canvas = document.getElementById('rough-comp-diagonales');
-    if (!canvas) {
-      setTimeout(initCompDiagRough, 100);
-      return;
-    }
-    
-    const rc = rough.canvas(canvas);
-    const ctx = canvas.getContext('2d');
-    
-    // Función para dibujar polígono con diagonales
-    function drawPolygonWithDiagonals(cx, cy, n, label, diagCount) {
-      const r = 80;
-      const points = [];
-      const startAngle = (n === 3) ? -Math.PI/2 : ((n === 4) ? -Math.PI/4 : Math.PI/10);
-      
-      // Calcular vértices
-      for(let i=0; i<n; i++) {
-        const ang = (2*Math.PI/n) * i + startAngle;
-        points.push([cx + r*Math.cos(ang), cy + r*Math.sin(ang)]);
-      }
-      
-      // Dibujar polígono
-      rc.polygon(points, { 
-        stroke: '#3b82f6', 
-        strokeWidth: 2,
-        fill: '#dbeafe',
-        fillStyle: 'solid'
-      });
-      
-      // Dibujar diagonales
-      for(let i=0; i<n; i++) {
-        for(let j=i+1; j<n; j++) {
-          // Saltar lados
-          if (j === i+1) continue;
-          if (i === 0 && j === n-1) continue;
-          
-          // Dibujar diagonal
-          rc.line(points[i][0], points[i][1], points[j][0], points[j][1], {
-            stroke: '#ef4444',
-            strokeWidth: 1.5,
-            roughness: 1.5
-          });
-        }
-      }
-      
-      // Etiquetas
-      ctx.font = 'bold 16px Inter, sans-serif';
-      ctx.fillStyle = '#1e3a8a';
-      ctx.textAlign = 'center';
-      ctx.fillText(label, cx, cy + r + 30);
-      
-      ctx.font = 'bold 14px Inter, sans-serif';
-      ctx.fillStyle = '#ef4444';
-      ctx.fillText('d = ' + diagCount, cx, cy + r + 55);
-    }
-    
-    // Grid 2x2
-    // Ajustamos coordenadas para que quepan las etiquetas
-    // Canvas height aumentado a 600
-    drawPolygonWithDiagonals(200, 130, 3, 'Triángulo (n=3)', 0);
-    drawPolygonWithDiagonals(600, 130, 4, 'Cuadrilátero (n=4)', 2);
-    drawPolygonWithDiagonals(200, 410, 5, 'Pentágono (n=5)', 5);
-    drawPolygonWithDiagonals(600, 410, 6, 'Hexágono (n=6)', 9);
-  }
-  
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initCompDiagRough);
-  } else {
-    initCompDiagRough();
-  }
-})();
-</script>
+### Tabla de Diagonales
+-   **Triángulo ($n=3$):** $\frac{3(0)}{2} = 0$. (¡No tiene!)
+-   **Cuadrilátero ($n=4$):** $\frac{4(1)}{2} = 2$.
+-   **Pentágono ($n=5$):** $\frac{5(2)}{2} = 5$. (El único con $D = n$).
+-   **Hexágono ($n=6$):** $\frac{6(3)}{2} = 9$.
 
 ---
 
-## 📖 Propiedad: Diagonales desde un vértice
+## ⚙️ Ejemplos Resueltos
 
-Desde un vértice cualquiera se pueden trazar exactamente $(n-3)$ diagonales.
+### Ejemplo 1: Diagonales de un Decágono
 
-### ¿Por qué $(n-3)$?
+¿Cuántas diagonales tiene un polígono de 10 lados?
 
-De los $n$ vértices:
-- No se puede unir consigo mismo (1 vértice)
-- No se puede unir con los vértices adyacentes (2 vértices)
-- Quedan $n - 3$ vértices disponibles
+**Razonamiento:**
+$n = 10$.
+$n - 3 = 7$.
 
-### Ejemplos
+$$
+D = \frac{10 \times 7}{2}
+$$
 
-| Polígono | n | Diagonales desde un vértice |
-|----------|---|----------------------------|
-| Cuadrilátero | 4 | $4 - 3 = 1$ |
-| Pentágono | 5 | $5 - 3 = 2$ |
-| Hexágono | 6 | $6 - 3 = 3$ |
-| Octágono | 8 | $8 - 3 = 5$ |
+$$
+D = \frac{70}{2}
+$$
+
+**Resultado:**
+$$
+\boxed{35 \text{ diagonales}}
+$$
+
+### Ejemplo 2: Problema Inverso
+
+¿Qué polígono tiene 9 diagonales?
+
+**Razonamiento:**
+$$
+\frac{n(n-3)}{2} = 9
+$$
+
+$$
+n(n-3) = 18
+$$
+
+Buscamos dos números que se lleven 3 de diferencia y multiplicados den 18.
+Probamos: $6 \times 3 = 18$.
+Entonces $n = 6$.
+
+**Resultado:**
+$$
+\boxed{\text{Hexágono}}
+$$
 
 ---
 
-## 📖 División en triángulos
+## 📝 Ejercicios de Práctica
 
-Las diagonales trazadas desde **un solo vértice** dividen al polígono en $(n-2)$ triángulos.
-
-### Ejemplo
-
-Un hexágono (6 lados):
-- Diagonales desde un vértice: 3
-- Triángulos formados: $6 - 2 = 4$
-
-Esta propiedad es la base de la fórmula para la suma de ángulos interiores.
-
-**Ilustración: Diagonales desde un Vértice:**
-
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.5rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.25rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="jsxgraph-diag-vertice" style="width: 100%; height: 350px; min-height: 300px; border-radius: 8px;"></div>
-</div>
-
-<script>
-(function() {
-  function initDiagVert() {
-    if (typeof JXG === 'undefined' || !document.getElementById('jsxgraph-diag-vertice')) {
-      setTimeout(initDiagVert, 100);
-      return;
-    }
-    
-    if (JXG.boards['jsxgraph-diag-vertice']) return;
-
-    var board = JXG.JSXGraph.initBoard('jsxgraph-diag-vertice', {
-      boundingbox: [-3, 4, 5, -3],
-      axis: false,
-      showCopyright: false,
-      showNavigation: false,
-      keepaspectratio: true
-    });
-    
-    // Pentágono
-    var r = 2.5;
-    var cx = 1, cy = 0.5;
-    var points = [];
-    for(var i=0; i<5; i++) {
-        var ang = (72 * i + 18) * Math.PI / 180;
-        points.push(board.create('point', [cx + r*Math.cos(ang), cy + r*Math.sin(ang)], {
-            name: String.fromCharCode(65+i),
-            size:3, color:'#1e293b', fixed:true
-        }));
-    }
-    
-    // Polígono
-    var poly = board.create('polygon', points, {
-        fillColor: 'none',
-        borders: {strokeColor: '#3b82f6', strokeWidth:2}
-    });
-    
-    // Diagonales desde A (points[0]) a C y D (points[2] y points[3])
-    // n=5, n-3=2 diagonales
-    board.create('segment', [points[0], points[2]], {strokeColor: '#ef4444', strokeWidth:2, dash:2});
-    board.create('segment', [points[0], points[3]], {strokeColor: '#ef4444', strokeWidth:2, dash:2});
-    
-    // Colorear los 3 triángulos: ABC, ACD, ADE
-    var colors = ['#bfdbfe', '#fef3c7', '#bbf7d0'];
-    board.create('polygon', [points[0], points[1], points[2]], {
-        fillColor: colors[0], fillOpacity:0.4, borders:{visible:false}
-    });
-    board.create('polygon', [points[0], points[2], points[3]], {
-        fillColor: colors[1], fillOpacity:0.4, borders:{visible:false}
-    });
-    board.create('polygon', [points[0], points[3], points[4]], {
-        fillColor: colors[2], fillOpacity:0.4, borders:{visible:false}
-    });
-    
-    // Etiquetas
-    board.create('text', [1, -2.2, 'Desde A: (n-3) = 2 diagonales'], {fontSize:11, fontWeight:'bold', color:'#1e3a8a', anchorX:'middle'});
-    board.create('text', [1, -2.5, '(n-2) = 3 triángulos'], {fontSize:11, fontWeight:'bold', color:'#1e3a8a', anchorX:'middle'});
-  }
-  
-  initDiagVert();
-})();
-</script>
-
----
-
-## 📖 Todas las diagonales
-
-Si trazamos **todas** las diagonales de un polígono convexo, el número de regiones internas puede ser muy grande.
-
-Para un polígono convexo de $n$ lados, las diagonales pueden intersectarse en puntos internos, creando muchas regiones.
-
----
-
-## 📖 Encontrar n conociendo las diagonales
-
-Si conocemos el número de diagonales $d$, podemos encontrar $n$:
-
-$$
-d = \frac{n(n-3)}{2}
-$$
-
-$$
-2d = n^2 - 3n
-$$
-
-$$
-n^2 - 3n - 2d = 0
-$$
-
-Resolviendo con la fórmula cuadrática:
-
-$$
-n = \frac{3 + \sqrt{9 + 8d}}{2}
-$$
-
-### Ejemplo
-
-Si $d = 20$:
-
-$$
-n = \frac{3 + \sqrt{9 + 160}}{2} = \frac{3 + \sqrt{169}}{2} = \frac{3 + 13}{2} = 8
-$$
-
-Es un **octágono**.
-
----
-
-## 📝 Ejercicios de práctica
-
-### Ejercicio 1: Calcular diagonales
-
-¿Cuántas diagonales tiene cada polígono?
-
-1. Pentágono (5 lados)
-2. Heptágono (7 lados)
-3. Nonágono (9 lados)
+### Ejercicio 1
+Calcula las diagonales totales de un octágono ($n=8$).
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. $d = \frac{5(5-3)}{2} = \frac{10}{2} = 5$
-2. $d = \frac{7(7-3)}{2} = \frac{28}{2} = 14$
-3. $d = \frac{9(9-3)}{2} = \frac{54}{2} = 27$
+**Razonamiento:**
+$$
+D = \frac{8(8-3)}{2} = \frac{8 \times 5}{2} = \frac{40}{2}
+$$
+
+**Resultado:**
+$$
+\boxed{20}
+$$
+
+</details>
+
+### Ejercicio 2
+¿Cuántas diagonales salen de **un solo vértice** en un polígono de 20 lados?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$$
+d = n - 3 = 20 - 3
+$$
+
+**Resultado:**
+$$
+\boxed{17}
+$$
+
+</details>
+
+### Ejercicio 3
+Calcula el número de diagonales de un triángulo.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$$
+D = \frac{3(0)}{2}
+$$
+
+**Resultado:**
+$$
+\boxed{0}
+$$
+
+</details>
+
+### Ejercicio 4
+Si un polígono tiene 54 diagonales, ¿cuántos lados tiene?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$$
+\frac{n(n-3)}{2} = 54 \Rightarrow n(n-3) = 108
+$$
+Buscamos factores de 108 con diferencia de 3.
+$12 \times 9 = 108$.
+$n = 12$.
+
+**Resultado:**
+$$
+\boxed{12 \text{ lados (Dodecágono)}}
+$$
+
+</details>
+
+### Ejercicio 5
+Verdadero o Falso: Un pentágono tiene el mismo número de lados que de diagonales.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$n=5$.
+$D = 5(2)/2 = 5$.
+$5 = 5$.
+
+**Resultado:**
+$$
+\boxed{\text{Verdadero}}
+$$
+
+</details>
+
+### Ejercicio 6
+Calcula las diagonales de un icoságono ($n=20$).
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$$
+D = \frac{20 \times 17}{2} = 10 \times 17
+$$
+
+**Resultado:**
+$$
+\boxed{170}
+$$
+
+</details>
+
+### Ejercicio 7
+¿Por qué dividimos entre 2 en la fórmula de las diagonales?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Porque si no, contaríamos cada diagonal dos veces (una de ida $A \to B$ y otra de vuelta $B \to A$).
+
+**Resultado:**
+$$
+\boxed{\text{Para evitar contar doble}}
+$$
+
+</details>
+
+### Ejercicio 8
+¿Cuántas diagonales se pueden trazar desde un vértice en un cuadrilátero?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$4 - 3 = 1$. (Solo una cruza, la otra es lado).
+
+**Resultado:**
+$$
+\boxed{1}
+$$
+
+</details>
+
+### Ejercicio 9
+Un polígono tiene 170 diagonales. ¿Es un icoságono?
+*(Pista: Ver ejercicio 6).*
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Sí, el cálculo coincide.
+
+**Resultado:**
+$$
+\boxed{\text{Sí}}
+$$
+
+</details>
+
+### Ejercicio 10
+Si duplicamos el número de lados de un cuadrado ($n=4 \to n=8$), ¿se duplica el número de diagonales?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Cuadrado ($n=4$): $D=2$.
+Octágono ($n=8$): $D=20$.
+De 2 a 20 se multiplicó por 10.
+El crecimiento es cuadrático, no lineal.
+
+**Resultado:**
+$$
+\boxed{\text{No, aumenta mucho más}}
+$$
 
 </details>
 
 ---
 
-### Ejercicio 2: Diagonales desde un vértice
+## 🔑 Resumen
 
-¿Cuántas diagonales se pueden trazar desde un vértice?
+| Fórmula | Uso |
+| :--- | :--- |
+| **$n - 3$** | Diagonales desde **UN** vértice. |
+| **$\frac{n(n-3)}{2}$** | Diagonales **TOTALES**. |
 
-1. Hexágono
-2. Decágono
-3. Polígono de 15 lados
-
-<details>
-<summary><strong>Ver respuestas</strong></summary>
-
-1. $6 - 3 = 3$ diagonales
-2. $10 - 3 = 7$ diagonales
-3. $15 - 3 = 12$ diagonales
-
-</details>
-
----
-
-### Ejercicio 3: Encontrar el polígono
-
-¿Cuántos lados tiene un polígono con...?
-
-1. 9 diagonales
-2. 35 diagonales
-3. 44 diagonales
-
-<details>
-<summary><strong>Ver respuestas</strong></summary>
-
-1. $\frac{n(n-3)}{2} = 9 \Rightarrow n(n-3) = 18 \Rightarrow n = 6$ (hexágono)
-2. $\frac{n(n-3)}{2} = 35 \Rightarrow n(n-3) = 70 \Rightarrow n = 10$ (decágono)
-3. $\frac{n(n-3)}{2} = 44 \Rightarrow n(n-3) = 88 \Rightarrow n = 11$ (endecágono)
-
-</details>
-
----
-
-### Ejercicio 4: Verdadero o Falso
-
-1. Un triángulo tiene 0 diagonales.
-2. Un cuadrilátero tiene 4 diagonales.
-3. Desde cada vértice de un octágono se pueden trazar 5 diagonales.
-4. Un pentágono tiene el mismo número de lados que de diagonales.
-
-<details>
-<summary><strong>Ver respuestas</strong></summary>
-
-1. **Verdadero** - No hay vértices no adyacentes
-2. **Falso** - Tiene 2 diagonales
-3. **Verdadero** - $8 - 3 = 5$
-4. **Verdadero** - Tiene 5 lados y 5 diagonales
-
-</details>
-
----
+> **Consejo:** Si olvidas la fórmula, prueba con un cuadrado ($n=4, D=2$) o un pentágono ($n=5, D=5$) para redescubrirla.

@@ -1,358 +1,414 @@
-# Teorema de Tales
+# **Teorema de Tales**
 
-El **Teorema de Tales** es uno de los resultados más importantes de la geometría. Establece proporciones entre segmentos cuando rectas paralelas cortan a dos rectas transversales.
-
----
-
-## 📖 Tales de Mileto
-
-Tales de Mileto (624-546 a.C.) fue un matemático y filósofo griego. Según la leyenda, usó este teorema para calcular la altura de las pirámides de Egipto midiendo su sombra.
+Hace más de 2500 años, un faraón egipcio desafió al sabio griego Tales de Mileto a medir la altura de la Gran Pirámide de Guiza. Tales no se subió a la pirámide; simplemente clavó su bastón en la arena, esperó a que la sombra del bastón fuera igual a su altura, y dedujo que en ese instante la sombra de la pirámide también sería igual a su altura. Este principio de proporcionalidad es lo que hoy llamamos el **Teorema de Tales**.
 
 ---
 
-## 📖 Configuración del teorema
+## 🎯 ¿Qué vas a aprender?
 
-Imagina:
-- **Dos rectas** (transversales) que salen de un punto $O$ o son paralelas
-- **Tres o más rectas paralelas** que las cortan
-
-Los segmentos que se forman en una transversal son **proporcionales** a los segmentos que se forman en la otra.
-
----
-
-## 📖 Enunciado del Teorema de Tales
-
-> **Teorema:** Si varias rectas paralelas son cortadas por dos transversales, los segmentos que determinan en una transversal son proporcionales a los correspondientes de la otra.
-
-$$
-\boxed{\frac{AB}{BC} = \frac{A'B'}{B'C'}}
-$$
-
-**Ilustración: Teorema de Tales (paralelas cortando transversales):**
-
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="jsxgraph-tales-intro" style="width: 100%; height: 400px; min-height: 350px; border-radius: 8px;"></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  var board = JXG.JSXGraph.initBoard('jsxgraph-tales-intro', {
-    boundingbox: [-1, 8, 12, -1],
-    axis: false,
-    showCopyright: false,
-    showNavigation: false
-  });
-  
-  // Transversal 1 (izquierda)
-  board.create('segment', [[2, 0.5], [2, 7]], {strokeColor: '#1e293b', strokeWidth: 2, fixed: true});
-  // Transversal 2 (derecha)
-  board.create('segment', [[8, 0.5], [8, 7]], {strokeColor: '#1e293b', strokeWidth: 2, fixed: true});
-  
-  // Líneas paralelas horizontales
-  board.create('segment', [[1, 2], [9, 2]], {strokeColor: '#3b82f6', strokeWidth: 2, fixed: true});
-  board.create('segment', [[1, 4], [9, 4]], {strokeColor: '#22c55e', strokeWidth: 2, fixed: true});
-  board.create('segment', [[1, 6.5], [9, 6.5]], {strokeColor: '#f59e0b', strokeWidth: 2, fixed: true});
-  
-  // Puntos en transversal 1
-  var A = board.create('point', [2, 2], {name: 'A', size: 4, color: '#3b82f6', fixed: true, label: {fontSize: 12, offset: [-15, 0]}});
-  var B = board.create('point', [2, 4], {name: 'B', size: 4, color: '#22c55e', fixed: true, label: {fontSize: 12, offset: [-15, 0]}});
-  var C = board.create('point', [2, 6.5], {name: 'C', size: 4, color: '#f59e0b', fixed: true, label: {fontSize: 12, offset: [-15, 0]}});
-  
-  // Puntos en transversal 2
-  var Ap = board.create('point', [8, 2], {name: "A'", size: 4, color: '#3b82f6', fixed: true, label: {fontSize: 12, offset: [10, 0]}});
-  var Bp = board.create('point', [8, 4], {name: "B'", size: 4, color: '#22c55e', fixed: true, label: {fontSize: 12, offset: [10, 0]}});
-  var Cp = board.create('point', [8, 6.5], {name: "C'", size: 4, color: '#f59e0b', fixed: true, label: {fontSize: 12, offset: [10, 0]}});
-  
-  // Etiquetas de segmentos
-  board.create('text', [1.3, 3, '4'], {fontSize: 12, color: '#ef4444', fixed: true});
-  board.create('text', [1.3, 5.2, '6'], {fontSize: 12, color: '#a855f7', fixed: true});
-  board.create('text', [8.5, 3, '8'], {fontSize: 12, color: '#ef4444', fixed: true});
-  board.create('text', [8.5, 5.2, '12'], {fontSize: 12, color: '#a855f7', fixed: true});
-  
-  // Etiquetas "paralelas"
-  board.create('text', [9.5, 2, '∥'], {fontSize: 14, color: '#3b82f6', fixed: true});
-  board.create('text', [9.5, 4, '∥'], {fontSize: 14, color: '#22c55e', fixed: true});
-  board.create('text', [9.5, 6.5, '∥'], {fontSize: 14, color: '#f59e0b', fixed: true});
-  
-  board.create('text', [5, -0.3, 'AB/BC = A\'B\'/B\'C\' → 4/6 = 8/12 ✓'], {fontSize: 13, color: '#1e293b', fixed: true, anchorX: 'middle', fontWeight: 'bold'});
-});
-</script>
+- Comprender la relación de proporcionalidad cuando rectas paralelas cortan a transversales.
+- Aplicar el Teorema de Tales en triángulos (recta paralela a un lado).
+- Calcular alturas inalcanzables usando sombras y proporciones.
+- Determinar si dos rectas son paralelas usando el recíproco del teorema.
 
 ---
 
-## 📖 Caso 1: Dos transversales cortadas por paralelas
+## 📐 El Teorema General
 
-Si las rectas paralelas $l_1$, $l_2$, $l_3$ cortan a las transversales $r$ y $s$:
+Si tres o más rectas paralelas son cortadas por dos transversales (rectas secantes), los segmentos que se forman en una transversal son **proporcionales** a los segmentos correspondientes en la otra.
 
-$$
-\frac{AB}{BC} = \frac{DE}{EF}
-$$
-
-### Ejemplo
-
-Si en una transversal los segmentos miden 4 cm y 6 cm, y en la otra el primer segmento mide 8 cm:
+Si las rectas $L_1, L_2, L_3$ son paralelas:
 
 $$
-\frac{4}{6} = \frac{8}{x} \Rightarrow x = \frac{6 \times 8}{4} = 12 \text{ cm}
+\frac{A}{B} = \frac{A'}{B'}
 $$
+
+Donde $A$ y $B$ son segmentos de la primera línea, y $A'$ y $B'$ son sus correspondientes en la segunda.
 
 ---
 
-## 📖 Caso 2: Teorema de Tales en triángulos
+## 📐 Teorema de Tales en Triángulos
 
-Si una recta es **paralela a un lado** de un triángulo y corta a los otros dos lados, entonces divide a estos lados en segmentos **proporcionales**.
+Este es el caso más útil en la práctica.
 
-### En el triángulo ABC
+Si trazamos una línea paralela a cualquiera de los lados de un triángulo, se forma un nuevo triángulo que es **semejante** al original.
 
-Si $DE \parallel BC$ y $D$ está en $AB$, $E$ está en $AC$:
-
-$$
-\frac{AD}{DB} = \frac{AE}{EC}
-$$
-
-También se cumple:
+Si la recta $DE$ es paralela a la base $BC$:
 
 $$
 \frac{AD}{AB} = \frac{AE}{AC} = \frac{DE}{BC}
 $$
 
-**Ilustración: Tales en triángulos (recta paralela a un lado):**
+También se cumple la proporción de los segmentos cortados:
 
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="jsxgraph-tales-triangulo" style="width: 100%; height: 400px; min-height: 350px; border-radius: 8px;"></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  var board = JXG.JSXGraph.initBoard('jsxgraph-tales-triangulo', {
-    boundingbox: [-1, 7, 10, -1.5],
-    axis: false,
-    showCopyright: false,
-    showNavigation: false
-  });
-  
-  // Triángulo ABC
-  var A = board.create('point', [4.5, 6], {name: 'A', size: 4, color: '#1e293b', fixed: true, label: {fontSize: 13, offset: [0, 10]}});
-  var B = board.create('point', [1, 0.5], {name: 'B', size: 4, color: '#1e293b', fixed: true, label: {fontSize: 13, offset: [-10, -10]}});
-  var C = board.create('point', [8, 0.5], {name: 'C', size: 4, color: '#1e293b', fixed: true, label: {fontSize: 13, offset: [10, -10]}});
-  
-  board.create('segment', [A, B], {strokeColor: '#1e293b', strokeWidth: 2, fixed: true});
-  board.create('segment', [A, C], {strokeColor: '#1e293b', strokeWidth: 2, fixed: true});
-  board.create('segment', [B, C], {strokeColor: '#1e293b', strokeWidth: 2, fixed: true});
-  
-  // Puntos D y E en los lados (DE paralelo a BC)
-  var D = board.create('point', [2.75, 3.25], {name: 'D', size: 4, color: '#22c55e', fixed: true, label: {fontSize: 12, color: '#22c55e', offset: [-15, 0]}});
-  var E = board.create('point', [6.25, 3.25], {name: 'E', size: 4, color: '#22c55e', fixed: true, label: {fontSize: 12, color: '#22c55e', offset: [10, 0]}});
-  
-  // Línea DE paralela a BC
-  board.create('segment', [D, E], {strokeColor: '#ef4444', strokeWidth: 3, fixed: true});
-  
-  // Etiquetas
-  board.create('text', [1.7, 4.7, 'AD'], {fontSize: 11, color: '#3b82f6', fixed: true});
-  board.create('text', [1.5, 1.8, 'DB'], {fontSize: 11, color: '#a855f7', fixed: true});
-  board.create('text', [7, 4.7, 'AE'], {fontSize: 11, color: '#3b82f6', fixed: true});
-  board.create('text', [7.3, 1.8, 'EC'], {fontSize: 11, color: '#a855f7', fixed: true});
-  
-  board.create('text', [4.5, 3.6, 'DE ∥ BC'], {fontSize: 11, color: '#ef4444', fixed: true, anchorX: 'middle'});
-  board.create('text', [4.5, -0.8, 'AD/DB = AE/EC (proporcionales)'], {fontSize: 13, color: '#1e293b', fixed: true, anchorX: 'middle', fontWeight: 'bold'});
-});
-</script>
+$$
+\frac{AD}{DB} = \frac{AE}{EC}
+$$
 
 ---
 
-## 📖 Ejemplo 1: Calcular un segmento
+## ⚙️ Ejemplos Resueltos
 
-En el triángulo $ABC$, la recta $DE$ es paralela a $BC$. Si:
-- $AD = 3$ cm
-- $DB = 6$ cm
-- $AE = 4$ cm
+### Ejemplo 1: Rectas Paralelas
 
-¿Cuánto mide $EC$?
+Tres estantes horizontales son cortados por dos soportes inclinados. En el soporte izquierdo, la distancia entre el primer y segundo estante es 50 cm, y entre el segundo y tercero es 80 cm. En el soporte derecho, la distancia superior es 60 cm. ¿Cuánto mide la distancia inferior ($x$)?
 
-**Solución:**
+**Datos:**
+Izquierda: 50 y 80.
+Derecha: 60 y $x$.
 
-Por el Teorema de Tales:
+**Razonamiento:**
+Por el Teorema de Tales, los segmentos son proporcionales.
+
+$$
+\frac{50}{80} = \frac{60}{x}
+$$
+
+Despejamos $x$:
+
+$$
+x = \frac{60 \cdot 80}{50}
+$$
+
+$$
+x = \frac{4800}{50}
+$$
+
+**Resultado:**
+$$
+\boxed{x = 96 \text{ cm}}
+$$
+
+---
+
+### Ejemplo 2: En un Triángulo
+
+En el triángulo $ABC$, cortamos con una recta paralela a la base $BC$.
+El segmento de arriba $AD = 4$ cm.
+El segmento de abajo $DB = 6$ cm.
+En el otro lado, el segmento de arriba $AE = 8$ cm.
+¿Cuánto mide el segmento de abajo $EC$?
+
+**Razonamiento:**
+Establecemos la proporción entre los trozos de los lados.
 
 $$
 \frac{AD}{DB} = \frac{AE}{EC}
 $$
 
 $$
-\frac{3}{6} = \frac{4}{EC}
+\frac{4}{6} = \frac{8}{EC}
+$$
+
+Despejamos $EC$:
+
+$$
+EC = \frac{8 \cdot 6}{4}
 $$
 
 $$
-EC = \frac{6 \times 4}{3} = 8 \text{ cm}
+EC = \frac{48}{4}
+$$
+
+**Resultado:**
+$$
+\boxed{12 \text{ cm}}
 $$
 
 ---
 
-## 📖 Ejemplo 2: Calcular la altura de un edificio
+### Ejemplo 3: Midiendo la Pirámide (Sombras)
 
-Un poste de 3 metros proyecta una sombra de 2 metros. Un edificio proyecta una sombra de 20 metros. ¿Cuánto mide el edificio?
+Supón que el bastón de Tales mide 1.5 m y proyecta una sombra de 2 m. Al mismo tiempo, la pirámide proyecta una sombra de 180 m (desde el centro de su base). ¿Cuál es la altura ($H$) de la pirámide?
 
-**Solución:**
-
-Los rayos del sol forman triángulos semejantes:
-
-$$
-\frac{\text{altura del poste}}{\text{sombra del poste}} = \frac{\text{altura del edificio}}{\text{sombra del edificio}}
-$$
+**Razonamiento:**
+Los rayos del sol son paralelos, creando triángulos semejantes entre el objeto y su sombra.
 
 $$
-\frac{3}{2} = \frac{h}{20}
+\frac{\text{Altura Objeto}}{\text{Sombra Objeto}} = \frac{\text{Altura Bastón}}{\text{Sombra Bastón}}
 $$
 
 $$
-h = \frac{3 \times 20}{2} = 30 \text{ metros}
+\frac{H}{180} = \frac{1.5}{2}
 $$
 
-**Ilustración: Problema de sombras:**
+$$
+H = \frac{1.5 \cdot 180}{2}
+$$
 
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="jsxgraph-sombras" style="width: 100%; height: 350px; min-height: 300px; border-radius: 8px;"></div>
-</div>
+$$
+H = \frac{270}{2}
+$$
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  var board = JXG.JSXGraph.initBoard('jsxgraph-sombras', {
-    boundingbox: [-1, 8, 14, -1.5],
-    axis: false,
-    showCopyright: false,
-    showNavigation: false
-  });
-  
-  // Suelo
-  board.create('segment', [[0, 0.5], [13, 0.5]], {strokeColor: '#94a3b8', strokeWidth: 2, fixed: true});
-  
-  // Poste (3m)
-  board.create('segment', [[2, 0.5], [2, 2.5]], {strokeColor: '#22c55e', strokeWidth: 4, fixed: true});
-  board.create('text', [1.5, 1.5, '3m'], {fontSize: 11, color: '#22c55e', fixed: true});
-  
-  // Sombra del poste (2m)
-  board.create('segment', [[2, 0.5], [4, 0.5]], {strokeColor: '#64748b', strokeWidth: 3, fixed: true});
-  board.create('text', [3, 0.1, '2m'], {fontSize: 10, color: '#64748b', fixed: true, anchorX: 'middle'});
-  
-  // Edificio (30m = h)
-  board.create('segment', [[8, 0.5], [8, 7]], {strokeColor: '#3b82f6', strokeWidth: 5, fixed: true});
-  board.create('text', [7.3, 3.5, 'h=?'], {fontSize: 12, color: '#3b82f6', fixed: true});
-  
-  // Sombra del edificio (20m)
-  board.create('segment', [[8, 0.5], [12, 0.5]], {strokeColor: '#64748b', strokeWidth: 3, fixed: true});
-  board.create('text', [10, 0.1, '20m'], {fontSize: 10, color: '#64748b', fixed: true, anchorX: 'middle'});
-  
-  // Rayos del sol
-  board.create('segment', [[2, 2.5], [4, 0.5]], {strokeColor: '#f59e0b', strokeWidth: 1, dash: 2, fixed: true});
-  board.create('segment', [[8, 7], [12, 0.5]], {strokeColor: '#f59e0b', strokeWidth: 1, dash: 2, fixed: true});
-  
-  // Sol
-  board.create('point', [0.5, 7], {name: '☀️', size: 0, color: 'transparent', fixed: true, label: {fontSize: 20, offset: [0, 0]}});
-  
-  board.create('text', [6.5, -0.8, '3/2 = h/20 → h = 30 metros'], {fontSize: 13, color: '#1e293b', fixed: true, anchorX: 'middle', fontWeight: 'bold'});
-});
-</script>
+**Resultado:**
+$$
+\boxed{135 \text{ m}}
+$$
 
 ---
 
-## 📖 Recíproco del Teorema de Tales
+## 📝 Ejercicios de Práctica
 
-El teorema también funciona "al revés":
-
-> Si una recta corta a dos lados de un triángulo en segmentos proporcionales, entonces es paralela al tercer lado.
-
-### Uso
-
-Si verificamos que $\frac{AD}{DB} = \frac{AE}{EC}$, entonces podemos concluir que $DE \parallel BC$.
-
----
-
-## 📖 Aplicaciones del Teorema de Tales
-
-| Aplicación | Uso |
-|------------|-----|
-| Dividir un segmento en partes iguales | Construcción geométrica |
-| Medir distancias inaccesibles | Altura de edificios, ancho de ríos |
-| Escalas en mapas | Proporciones |
-| Ampliaciones y reducciones | Diseño gráfico |
-
----
-
-## 📝 Ejercicios de práctica
-
-### Ejercicio 1: Aplicar Tales en un triángulo
-
-En el triángulo $ABC$, se traza $DE \parallel BC$ con $D$ en $AB$ y $E$ en $AC$.
-
-Si $AD = 5$, $DB = 10$ y $AC = 24$, calcula $AE$ y $EC$.
+### Ejercicio 1
+Calcula $x$ sabiendo que las rectas horizontales son paralelas.
+Lado Izquierdo: segmentos de 3 y 4.
+Lado Derecho: segmentos de $x$ y 8.
 
 <details>
-<summary><strong>Ver respuesta</strong></summary>
+<summary>Ver solución</summary>
 
-Por Tales: $\frac{AD}{DB} = \frac{AE}{EC}$, es decir $\frac{5}{10} = \frac{AE}{EC}$
-
-También: $\frac{AD}{AB} = \frac{AE}{AC}$
-
+**Razonamiento:**
 $$
-\frac{5}{15} = \frac{AE}{24} \Rightarrow AE = \frac{5 \times 24}{15} = 8
+\frac{3}{4} = \frac{x}{8}
 $$
 
 $$
-EC = 24 - 8 = 16
+x = \frac{3 \cdot 8}{4}
 $$
 
-Verificación: $\frac{5}{10} = \frac{8}{16} = \frac{1}{2}$ ✓
+**Resultado:**
+$$
+\boxed{x = 6}
+$$
+
+</details>
+
+### Ejercicio 2
+En un triángulo, una paralela a la base divide un lado en segmentos de 2 cm y 5 cm. Si el otro lado mide 14 cm en total, ¿cuánto miden sus segmentos?
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:**
+Lado 1: 2 y 5 (Total 7).
+Lado 2: Total 14.
+Razón de escala: $\frac{14}{7} = 2$.
+
+**Razonamiento:**
+Los segmentos del segundo lado conservan la proporción pero multiplicados por la escala.
+
+$$
+2 \cdot 2 = 4
+$$
+
+$$
+5 \cdot 2 = 10
+$$
+
+**Resultado:**
+$$
+\boxed{4 \text{ cm y } 10 \text{ cm}}
+$$
+
+</details>
+
+### Ejercicio 3
+Un edificio proyecta una sombra de 15 m. Un poste vertical de 4 m proyecta una sombra de 3 m a la misma hora. Calcula la altura del edificio.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$$
+\frac{H}{15} = \frac{4}{3}
+$$
+
+$$
+H = \frac{4 \cdot 15}{3}
+$$
+
+**Resultado:**
+$$
+\boxed{20 \text{ m}}
+$$
+
+</details>
+
+### Ejercicio 4
+Calcula el valor de $x$ si $\frac{x}{4} = \frac{15}{10}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$$
+x = \frac{15 \cdot 4}{10}
+$$
+
+$$
+x = \frac{60}{10}
+$$
+
+**Resultado:**
+$$
+\boxed{x = 6}
+$$
+
+</details>
+
+### Ejercicio 5
+Si $AD=3$, $DB=x$, $AE=5$, $EC=10$. Hallar $x$ asumiendo $DE \parallel BC$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Propiedad de segmentos proporcionales:
+
+$$
+\frac{3}{x} = \frac{5}{10}
+$$
+
+$$
+\frac{3}{x} = \frac{1}{2}
+$$
+
+$$
+x = 3 \cdot 2
+$$
+
+**Resultado:**
+$$
+\boxed{x = 6}
+$$
+
+</details>
+
+### Ejercicio 6
+En un triángulo con base 12, trazamos una paralela media (uniendo los puntos medios de los lados). ¿Cuánto mide este segmento paralelo?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Si une los puntos medios, la razón de semejanza entre el triángulo pequeño y el grande es $\frac{1}{2}$.
+La base del pequeño será la mitad de la base del grande.
+
+$$
+\text{Base}' = \frac{12}{2}
+$$
+
+**Resultado:**
+$$
+\boxed{6}
+$$
+
+</details>
+
+### Ejercicio 7
+¿Para qué sirve el Teorema de Tales en la vida real si no eres matemático?
+
+<details>
+<summary>Ver solución</summary>
+
+**Respuesta:**
+Permite medir distancias inaccesibles, como la altura de un árbol, un edificio o el ancho de un río, usando solo un objeto pequeño de referencia (como tu propia altura) y proporciones simples.
+
+**Resultado:**
+$$
+\boxed{\text{Estimación de distancias remotas}}
+$$
+
+</details>
+
+### Ejercicio 8
+Tenemos dos rectas cortadas por transversales.
+Segmentos: $3, 6, 9$ en la primera.
+En la segunda el primer segmento mide 4.
+¿Cuánto mide el segmento total de la segunda recta?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Razón entre lados correspondientes del primer tramo: $\frac{4}{3}$.
+El total de la primera recta es $3+6+9 = 18$.
+El total de la segunda recta será $18 \cdot \frac{4}{3}$.
+
+$$
+Total = \frac{72}{3}
+$$
+
+**Resultado:**
+$$
+\boxed{24}
+$$
+
+</details>
+
+### Ejercicio 9 (Recíproco)
+En un triángulo, $AD=2, DB=4, AE=3, EC=6$. ¿Es la línea $DE$ paralela a la base?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Comprobamos si las proporciones son iguales.
+
+$$
+\frac{2}{4} = 0.5
+$$
+
+$$
+\frac{3}{6} = 0.5
+$$
+
+Son iguales.
+
+**Resultado:**
+$$
+\boxed{\text{Sí, es paralela}}
+$$
+
+</details>
+
+### Ejercicio 10
+Un farol de 5 m de altura proyecta la sombra de una persona. Si la persona mide 1.80 m y está a 3 metros de la base del farol, ¿cuánto mide su sombra?
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:**
+Triángulos semejantes formados por la luz.
+Altura grande: 5. Altura pequeña: 1.8.
+Base grande: $3 + x$ (distancia farol-persona + sombra). Base pequeña: $x$ (sombra).
+
+**Razonamiento:**
+$$
+\frac{5}{1.8} = \frac{3+x}{x}
+$$
+
+$$
+5x = 1.8(3+x)
+$$
+
+$$
+5x = 5.4 + 1.8x
+$$
+
+$$
+3.2x = 5.4
+$$
+
+$$
+x = \frac{5.4}{3.2}
+$$
+
+**Resultado:**
+$$
+\boxed{1.6875 \text{ m}}
+$$
 
 </details>
 
 ---
 
-### Ejercicio 2: Problema de sombras
+## 🔑 Resumen
 
-Un árbol proyecta una sombra de 15 metros y una persona de 1.8 m proyecta una sombra de 1.2 m (medidas tomadas al mismo tiempo). ¿Cuánto mide el árbol?
+| Concepto | Fórmula Clave | Aplicación |
+|----------|---------------|------------|
+| **Teorema General** | $\frac{A}{B} = \frac{A'}{B'}$ | Paralelas cortando rectas cualesquiera. |
+| **En Triángulos** | $\frac{Pequeño}{Grande} = k$ | Triángulos encajados (semejanza). |
+| **Recíproco** | Igualdad de razón $\implies$ Paralelismo | Verificar si dos líneas son paralelas. |
 
-<details>
-<summary><strong>Ver respuesta</strong></summary>
-
-$$
-\frac{h_{árbol}}{s_{árbol}} = \frac{h_{persona}}{s_{persona}}
-$$
-
-$$
-\frac{h}{15} = \frac{1.8}{1.2}
-$$
-
-$$
-h = \frac{1.8 \times 15}{1.2} = \frac{27}{1.2} = 22.5 \text{ metros}
-$$
-
-</details>
-
----
-
-### Ejercicio 3: Tres paralelas
-
-Tres rectas paralelas cortan a dos transversales. En la primera transversal los segmentos miden 6 cm y 9 cm. En la segunda, el primer segmento mide 8 cm. ¿Cuánto mide el segundo segmento?
-
-<details>
-<summary><strong>Ver respuesta</strong></summary>
-
-$$
-\frac{6}{9} = \frac{8}{x}
-$$
-
-$$
-x = \frac{9 \times 8}{6} = 12 \text{ cm}
-$$
-
-</details>
-
----
+> "Lo que pasa en un lado, pasa proporcionalmente en el otro". Esa es la esencia de Tales.

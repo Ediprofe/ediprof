@@ -1,421 +1,247 @@
-# Rectas Notables del Triángulo
+# **Rectas Notables del Triángulo**
 
-En todo triángulo existen cuatro tipos de rectas especiales llamadas **rectas notables**: medianas, alturas, bisectrices y mediatrices. Cada una tiene propiedades únicas y aplicaciones importantes.
-
----
-
-## 📖 Las cuatro rectas notables
-
-| Recta | Definición | Se traza desde |
-|-------|------------|----------------|
-| Mediana | Une un vértice con el punto medio del lado opuesto | Vértice → punto medio |
-| Altura | Perpendicular desde un vértice al lado opuesto | Vértice → lado (⊥) |
-| Bisectriz | Divide un ángulo en dos partes iguales | Vértice → lado opuesto |
-| Mediatriz | Perpendicular al punto medio de un lado | Punto medio de lado (⊥) |
+Los triángulos tienen líneas invisibles que revelan sus secretos más profundos. Imagina que quieres equilibrar un triángulo en la punta de un lápiz, o encontrar el punto exacto para dibujar un círculo perfecto a su alrededor. Para eso necesitas conocer a las "Cuatro Fantásticas": Medianas, Alturas, Bisectrices y Mediatrices.
 
 ---
 
-## 📖 Medianas
+## 🎯 ¿Qué vas a aprender?
 
-Una **mediana** es el segmento que une un **vértice** con el **punto medio** del lado opuesto.
-
-### Propiedades de las medianas
-
-1. Todo triángulo tiene **3 medianas** (una desde cada vértice)
-2. Las tres medianas se cortan en un único punto llamado **baricentro**
-3. Cada mediana divide al triángulo en dos triángulos de **igual área**
-4. El baricentro divide cada mediana en razón $2:1$ (desde el vértice)
-
-### Fórmula del baricentro
-
-Si los vértices son $A(x_1, y_1)$, $B(x_2, y_2)$, $C(x_3, y_3)$:
-
-$$
-G = \left( \frac{x_1 + x_2 + x_3}{3}, \frac{y_1 + y_2 + y_3}{3} \right)
-$$
-
-### Aplicación
-
-El baricentro es el **centro de gravedad** del triángulo. Si recortamos un triángulo de cartón, podemos equilibrarlo en la punta de un lápiz colocándolo en el baricentro.
-
-**Las tres medianas y el baricentro G (calculado):**
-
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="jsxgraph-medianas" style="width: 100%; height: 350px; min-height: 300px; border-radius: 8px;"></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-medianas')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-medianas', {
-      boundingbox: [-1, 7, 9, -1],
-      axis: false,
-      showCopyright: false,
-      showNavigation: false,
-      pan: { enabled: false },
-      zoom: { enabled: false }
-    });
-    
-    // Vertices del triangulo
-    var A = [1, 1], B = [7, 1], C = [4, 6];
-    
-    // Puntos medios (calculados)
-    var mBC = [(B[0]+C[0])/2, (B[1]+C[1])/2];
-    var mAC = [(A[0]+C[0])/2, (A[1]+C[1])/2];
-    var mAB = [(A[0]+B[0])/2, (A[1]+B[1])/2];
-    
-    // Baricentro (calculado)
-    var G = [(A[0]+B[0]+C[0])/3, (A[1]+B[1]+C[1])/3];
-    
-    // Dibujar triangulo
-    var pA = board.create('point', A, {name: 'A', size: 5, fixed: true, color: '#1e293b', label: {fontSize: 13, offset: [-15, -10]}});
-    var pB = board.create('point', B, {name: 'B', size: 5, fixed: true, color: '#1e293b', label: {fontSize: 13, offset: [10, -10]}});
-    var pC = board.create('point', C, {name: 'C', size: 5, fixed: true, color: '#1e293b', label: {fontSize: 13, offset: [0, 10]}});
-    
-    board.create('segment', [pA, pB], {strokeColor: '#1e293b', strokeWidth: 2});
-    board.create('segment', [pB, pC], {strokeColor: '#1e293b', strokeWidth: 2});
-    board.create('segment', [pC, pA], {strokeColor: '#1e293b', strokeWidth: 2});
-    
-    // Puntos medios
-    var pmBC = board.create('point', mBC, {name: '', size: 4, fixed: true, color: '#22c55e'});
-    var pmAC = board.create('point', mAC, {name: '', size: 4, fixed: true, color: '#22c55e'});
-    var pmAB = board.create('point', mAB, {name: '', size: 4, fixed: true, color: '#22c55e'});
-    
-    // Medianas
-    board.create('segment', [pA, pmBC], {strokeColor: '#22c55e', strokeWidth: 2.5});
-    board.create('segment', [pB, pmAC], {strokeColor: '#22c55e', strokeWidth: 2.5});
-    board.create('segment', [pC, pmAB], {strokeColor: '#22c55e', strokeWidth: 2.5});
-    
-    // Baricentro
-    board.create('point', G, {name: 'G', size: 7, fixed: true, color: '#ef4444', label: {fontSize: 14, color: '#ef4444', offset: [10, 5]}});
-    
-    board.create('text', [4, -0.3, 'G = Baricentro = ((x1+x2+x3)/3, (y1+y2+y3)/3)'], {fontSize: 11, color: '#ef4444', anchorX: 'middle'});
-    
-    board.unsuspendUpdate();
-  }
-});
-</script>
+*   Qué son y para qué sirven las 4 rectas notables.
+*   Cómo se llama el punto donde se cruzan (Baricentro, Ortocentro, Incentro, Circuncentro).
+*   La diferencia clave entre "Altura" y "Mediatriz".
+*   Mnemotecnias para no confundir nunca los nombres de los puntos.
 
 ---
 
-## 📖 Alturas
+## 1. La Mediana (El Equilibrio)
 
-Una **altura** es el segmento **perpendicular** trazado desde un **vértice** hasta el lado opuesto (o su prolongación).
+Es la línea que busca la justicia. Conecta un vértice con el **punto medio** del lado opuesto, dividiendo ese lado en dos partes iguales.
 
-### Propiedades de las alturas
+> **Definición:** Segmento que va del vértice al medio del lado opuesto.
 
-1. Todo triángulo tiene **3 alturas**
-2. Las tres alturas se cortan en un punto llamado **ortocentro**
-3. En un triángulo **acutángulo**, el ortocentro está **dentro** del triángulo
-4. En un triángulo **obtusángulo**, el ortocentro está **fuera** del triángulo
-5. En un triángulo **rectángulo**, el ortocentro está en el **vértice del ángulo recto**
-
-### Aplicación
-
-La altura es esencial para calcular el **área** del triángulo:
+*   **Punto de cruce:** **Baricentro** ($G$).
+*   **Superpoder:** Es el **Centro de Gravedad**. Si recortas un triángulo de cartón, puedes sostenerlo en equilibrio poniendo el dedo justo en el Baricentro.
 
 $$
-\text{Área} = \frac{base \times altura}{2}
+\text{Mediana} \rightarrow \text{Punto Medio}
 $$
-
-**Las tres alturas y el ortocentro H (calculado):**
-
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="jsxgraph-alturas" style="width: 100%; height: 350px; min-height: 300px; border-radius: 8px;"></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-alturas')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-alturas', {
-      boundingbox: [-1, 7, 9, -1],
-      axis: false,
-      showCopyright: false,
-      showNavigation: false,
-      pan: { enabled: false },
-      zoom: { enabled: false }
-    });
-    
-    // Vertices
-    var A = [1, 1], B = [7, 1], C = [4, 6];
-    
-    // Funcion para proyectar punto P sobre linea definida por Q-R
-    function footOfAltitude(P, Q, R) {
-      var dx = R[0] - Q[0];
-      var dy = R[1] - Q[1];
-      var t = ((P[0] - Q[0]) * dx + (P[1] - Q[1]) * dy) / (dx * dx + dy * dy);
-      return [Q[0] + t * dx, Q[1] + t * dy];
-    }
-    
-    // Pies de las alturas (calculados)
-    var hA = footOfAltitude(A, B, C);
-    var hB = footOfAltitude(B, A, C);
-    var hC = footOfAltitude(C, A, B);
-    
-    // Ortocentro (interseccion de alturas) - calculado
-    // Para triangulo con base horizontal en y=1 y vertice superior
-    var H = [C[0], A[1] + (C[0] - A[0]) * (C[0] - B[0]) / (C[1] - A[1])];
-    // Simplificado para este triangulo: H esta en x=4
-    H = [4, 1 + (4-1)*(4-7)/(6-1) * (-1)];
-    H = [4, 2.8];
-    
-    // Dibujar triangulo
-    var pA = board.create('point', A, {name: 'A', size: 5, fixed: true, color: '#1e293b', label: {fontSize: 13, offset: [-15, -10]}});
-    var pB = board.create('point', B, {name: 'B', size: 5, fixed: true, color: '#1e293b', label: {fontSize: 13, offset: [10, -10]}});
-    var pC = board.create('point', C, {name: 'C', size: 5, fixed: true, color: '#1e293b', label: {fontSize: 13, offset: [0, 10]}});
-    
-    board.create('segment', [pA, pB], {strokeColor: '#1e293b', strokeWidth: 2});
-    board.create('segment', [pB, pC], {strokeColor: '#1e293b', strokeWidth: 2});
-    board.create('segment', [pC, pA], {strokeColor: '#1e293b', strokeWidth: 2});
-    
-    // Alturas (segmentos perpendiculares)
-    board.create('segment', [A, hA], {strokeColor: '#3b82f6', strokeWidth: 2.5});
-    board.create('segment', [B, hB], {strokeColor: '#3b82f6', strokeWidth: 2.5});
-    board.create('segment', [C, hC], {strokeColor: '#3b82f6', strokeWidth: 2.5});
-    
-    // Pies de altura
-    board.create('point', hA, {name: '', size: 3, fixed: true, color: '#3b82f6'});
-    board.create('point', hB, {name: '', size: 3, fixed: true, color: '#3b82f6'});
-    board.create('point', hC, {name: '', size: 3, fixed: true, color: '#3b82f6'});
-    
-    // Ortocentro
-    board.create('point', H, {name: 'H', size: 7, fixed: true, color: '#ef4444', label: {fontSize: 14, color: '#ef4444', offset: [10, 5]}});
-    
-    board.create('text', [4, -0.3, 'H = Ortocentro (interseccion de alturas)'], {fontSize: 11, color: '#ef4444', anchorX: 'middle'});
-    
-    board.unsuspendUpdate();
-  }
-});
-</script>
 
 ---
 
-## 📖 Bisectrices
+## 2. La Altura (La Estatura)
 
-Una **bisectriz** es el rayo que divide un **ángulo** del triángulo en dos ángulos **iguales**.
+Es la línea seria y recta. Cae desde un vértice de forma **perpendicular** ($90^\circ$) sobre el lado opuesto (o su prolongación). Es la que usamos para medir "qué tan alto" es el triángulo.
 
-### Propiedades de las bisectrices
+> **Definición:** Segmento que va del vértice al lado opuesto formando $90^\circ$.
 
-1. Todo triángulo tiene **3 bisectrices interiores**
-2. Las tres bisectrices se cortan en un punto llamado **incentro**
-3. El incentro es equidistante a los tres lados
-4. El incentro es el centro de la **circunferencia inscrita** en el triángulo
-
-### Fórmula del incentro
-
-Si los lados opuestos a $A$, $B$, $C$ miden $a$, $b$, $c$:
+*   **Punto de cruce:** **Ortocentro** ($H$).
+*   **Dato Curioso:** En los triángulos obtusángulos, las alturas pueden "caer" fuera del triángulo.
 
 $$
-I = \left( \frac{a \cdot x_A + b \cdot x_B + c \cdot x_C}{a+b+c}, \frac{a \cdot y_A + b \cdot y_B + c \cdot y_C}{a+b+c} \right)
+\text{Altura} \rightarrow 90^\circ \text{ (desde vértice)}
 $$
-
-### Aplicación
-
-La circunferencia inscrita es la circunferencia más grande que cabe dentro del triángulo, tocando los tres lados.
-
-**Las tres bisectrices, el incentro I y el inradio (calculados):**
-
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="jsxgraph-bisectrices" style="width: 100%; height: 350px; min-height: 300px; border-radius: 8px;"></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-bisectrices')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-bisectrices', {
-      boundingbox: [-1, 7, 9, -1],
-      axis: false,
-      showCopyright: false,
-      showNavigation: false,
-      pan: { enabled: false },
-      zoom: { enabled: false }
-    });
-    
-    // Vertices
-    var A = [1, 1], B = [7, 1], C = [4, 6];
-    
-    // Calcular longitudes de lados
-    function dist(p1, p2) {
-      return Math.sqrt((p2[0]-p1[0])*(p2[0]-p1[0]) + (p2[1]-p1[1])*(p2[1]-p1[1]));
-    }
-    
-    var a = dist(B, C);  // Lado opuesto a A
-    var b = dist(A, C);  // Lado opuesto a B
-    var c = dist(A, B);  // Lado opuesto a C
-    
-    // Incentro (calculado con formula)
-    var I = [
-      (a * A[0] + b * B[0] + c * C[0]) / (a + b + c),
-      (a * A[1] + b * B[1] + c * C[1]) / (a + b + c)
-    ];
-    
-    // Inradio = Area / semiperimetro
-    var s = (a + b + c) / 2;
-    var area = Math.abs((B[0]-A[0])*(C[1]-A[1]) - (C[0]-A[0])*(B[1]-A[1])) / 2;
-    var inradius = area / s;
-    
-    // Dibujar triangulo
-    var pA = board.create('point', A, {name: 'A', size: 5, fixed: true, color: '#1e293b', label: {fontSize: 13, offset: [-15, -10]}});
-    var pB = board.create('point', B, {name: 'B', size: 5, fixed: true, color: '#1e293b', label: {fontSize: 13, offset: [10, -10]}});
-    var pC = board.create('point', C, {name: 'C', size: 5, fixed: true, color: '#1e293b', label: {fontSize: 13, offset: [0, 10]}});
-    
-    board.create('segment', [pA, pB], {strokeColor: '#1e293b', strokeWidth: 2});
-    board.create('segment', [pB, pC], {strokeColor: '#1e293b', strokeWidth: 2});
-    board.create('segment', [pC, pA], {strokeColor: '#1e293b', strokeWidth: 2});
-    
-    // Bisectrices (desde vertices hacia incentro, extendidas)
-    var extA = [I[0] + (I[0] - A[0]) * 2, I[1] + (I[1] - A[1]) * 2];
-    var extB = [I[0] + (I[0] - B[0]) * 2, I[1] + (I[1] - B[1]) * 2];
-    var extC = [I[0] + (I[0] - C[0]) * 2, I[1] + (I[1] - C[1]) * 2];
-    
-    board.create('segment', [A, extA], {strokeColor: '#a855f7', strokeWidth: 2});
-    board.create('segment', [B, extB], {strokeColor: '#a855f7', strokeWidth: 2});
-    board.create('segment', [C, extC], {strokeColor: '#a855f7', strokeWidth: 2});
-    
-    // Incentro
-    var pI = board.create('point', I, {name: 'I', size: 7, fixed: true, color: '#ef4444', label: {fontSize: 14, color: '#ef4444', offset: [10, 5]}});
-    
-    // Circunferencia inscrita
-    board.create('circle', [I, inradius], {strokeColor: '#f59e0b', strokeWidth: 2, fillColor: 'transparent'});
-    
-    board.create('text', [4, -0.3, 'I = Incentro, r = ' + inradius.toFixed(2)], {fontSize: 11, color: '#ef4444', anchorX: 'middle'});
-    
-    board.unsuspendUpdate();
-  }
-});
-</script>
 
 ---
 
-## 📖 Mediatrices
+## 3. La Bisectriz (La Igualdad Angular)
 
-Una **mediatriz** es la recta **perpendicular** a un lado del triángulo que pasa por su **punto medio**.
+Es la línea que corta un ángulo por la mitad. Si un ángulo mide $60^\circ$, la bisectriz lo parte en dos de $30^\circ$.
 
-### Propiedades de las mediatrices
+> **Definición:** Rayo que divide un ángulo interior en dos ángulos iguales.
 
-1. Todo triángulo tiene **3 mediatrices** (una para cada lado)
-2. Las tres mediatrices se cortan en un punto llamado **circuncentro**
-3. El circuncentro es equidistante a los tres vértices
-4. El circuncentro es el centro de la **circunferencia circunscrita**
-
-### Diferencia con la altura
-
-- **Altura**: perpendicular desde un vértice
-- **Mediatriz**: perpendicular desde el punto medio del lado
-
-### Aplicación
-
-La circunferencia circunscrita pasa por los tres vértices del triángulo.
-
-### Fórmula del circuncentro
-
-Si los vértices son $A(x_1, y_1)$, $B(x_2, y_2)$, $C(x_3, y_3)$:
+*   **Punto de cruce:** **Incentro** ($I$).
+*   **Superpoder:** Es el centro de la **Circunferencia Inscrita** (un círculo perfecto dibujado *dentro* del triángulo).
 
 $$
-D = 2[x_1(y_2 - y_3) + x_2(y_3 - y_1) + x_3(y_1 - y_2)]
+\text{Bisectriz} \rightarrow \text{Ángulos Iguales}
 $$
-
-$$
-O_x = \frac{(x_1^2 + y_1^2)(y_2 - y_3) + (x_2^2 + y_2^2)(y_3 - y_1) + (x_3^2 + y_3^2)(y_1 - y_2)}{D}
-$$
-
-$$
-O_y = \frac{(x_1^2 + y_1^2)(x_3 - x_2) + (x_2^2 + y_2^2)(x_1 - x_3) + (x_3^2 + y_3^2)(x_2 - x_1)}{D}
-$$
-
-### Fórmula del circunradio
-
-$$
-R = \frac{abc}{4 \cdot \text{Área}}
-$$
-
-donde $a$, $b$, $c$ son las longitudes de los lados.
 
 ---
 
-## 📖 Resumen comparativo
+## 4. La Mediatriz (La Independiente)
 
-| Recta | Se traza en | Punto de encuentro | Propiedad especial |
-|-------|-------------|-------------------|-------------------|
-| Mediana | Vértice → punto medio lado | Baricentro | Centro de gravedad |
-| Altura | Vértice ⊥ lado opuesto | Ortocentro | Para calcular área |
-| Bisectriz | Divide ángulo en 2 iguales | Incentro | Circunferencia inscrita |
-| Mediatriz | ⊥ al punto medio del lado | Circuncentro | Circunferencia circunscrita |
+Es la única que **NO** tiene obligación de salir de un vértice. Simplemente busca el punto medio de un lado y traza una línea perpendicular ($90^\circ$) ahí mismo.
+
+> **Definición:** Recta perpendicular trazada en el punto medio de un lado.
+
+*   **Punto de cruce:** **Circuncentro** ($O$ o $C$).
+*   **Superpoder:** Es el centro de la **Circunferencia Circunscrita** (un círculo que rodea al triángulo tocando sus 3 vértices).
+
+$$
+\text{Mediatriz} \rightarrow 90^\circ \text{ en Punto Medio (sin vértice)}
+$$
 
 ---
 
-## 📝 Ejercicios de práctica
+## 🧠 Mnemotecnia: "BAMI CO"
 
-### Ejercicio 1: Identificar rectas
+Para recordar qué punto va con qué recta, usa estas siglas (aunque hay muchas variantes, esta es clásica):
 
-Indica qué recta notable es cada descripción:
+| Recta | Punto | Truco |
+| :--- | :--- | :--- |
+| **M**ediana | **B**aricentro | **MB** (Muy Bueno) |
+| **A**ltura | **O**rtocentro | **AO** (Alta Ortografía) |
+| **B**isectriz | **I**ncentro | **BI** (Bicicleta) |
+| **M**ediatriz | **C**ircuncentro | **MC** (Maestro de Ceremonias) |
 
-1. Une el vértice $A$ con el punto medio de $\overline{BC}$
-2. Es perpendicular al lado $\overline{AB}$ y pasa por su punto medio
-3. Divide el ángulo $\angle B$ en dos partes iguales
-4. Sale del vértice $C$ y es perpendicular al lado $\overline{AB}$
+---
+
+## ⚙️ Tabla Resumen
+
+| Recta | Característica Clave | Punto Notable | Propiedad Física/Geométrica |
+| :--- | :--- | :--- | :--- |
+| **Mediana** | Punto medio | **Baricentro** | Centro de gravedad |
+| **Altura** | Perpendicular ($90^\circ$) | **Ortocentro** | Altura total |
+| **Bisectriz** | Divide ángulo | **Incentro** | Círculo adentro (Inscrito) |
+| **Mediatriz** | $90^\circ$ en medio | **Circuncentro**| Círculo afuera (Circunscrito) |
+
+---
+
+## 📝 Ejercicios de Práctica
+
+### Ejercicio 1
+¿Qué recta notable divide a un ángulo en dos partes iguales?
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. **Mediana** desde $A$
-2. **Mediatriz** del lado $AB$
-3. **Bisectriz** del ángulo $B$
-4. **Altura** desde $C$
+**Respuesta:**
+La **Bisectriz**.
 
 </details>
 
 ---
 
-### Ejercicio 2: Puntos notables
-
-Relaciona cada punto con las rectas que lo determinan:
-
-| Punto | Intersección de... |
-|-------|-------------------|
-| Baricentro | |
-| Ortocentro | |
-| Incentro | |
-| Circuncentro | |
+### Ejercicio 2
+Si trazas las tres medianas de un triángulo de madera, ¿qué encontrarás en su intersección?
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-| Punto | Intersección de... |
-|-------|-------------------|
-| Baricentro | Las 3 medianas |
-| Ortocentro | Las 3 alturas |
-| Incentro | Las 3 bisectrices |
-| Circuncentro | Las 3 mediatrices |
+**Respuesta:**
+El **Baricentro**, que es su centro de gravedad (punto de equilibrio).
 
 </details>
 
 ---
 
-### Ejercicio 3: Verdadero o Falso
-
-1. La mediatriz pasa siempre por un vértice del triángulo.
-2. El baricentro siempre está dentro del triángulo.
-3. En un triángulo obtusángulo, el ortocentro está afuera.
-4. La altura y la mediana desde un mismo vértice son siempre iguales.
+### Ejercicio 3
+¿Cuál es la única recta notable que no necesariamente pasa por un vértice?
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. **Falso** - Pasa por el punto medio del lado, no por el vértice
-2. **Verdadero** - El baricentro siempre está en el interior
-3. **Verdadero** - En triángulos obtusángulos, el ortocentro está afuera
-4. **Falso** - Solo coinciden en el triángulo equilátero
+**Respuesta:**
+La **Mediatriz**. Nace del lado, no del vértice.
 
 </details>
 
 ---
+
+### Ejercicio 4
+En un triángulo equilátero, ¿qué pasa con las cuatro rectas notables?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Por su simetría perfecta, la altura, mediana, bisectriz y mediatriz coinciden en la misma línea.
+
+**Resultado:**
+$\boxed{\text{Son la misma línea}}$
+
+</details>
+
+---
+
+### Ejercicio 5
+¿Cómo se llama el punto que es el centro de la circunferencia que toca los tres vértices del triángulo?
+
+<details>
+<summary>Ver solución</summary>
+
+**Respuesta:**
+El **Circuncentro** (cruce de mediatrices).
+
+</details>
+
+---
+
+### Ejercicio 6
+Si una altura cae fuera del triángulo, ¿qué tipo de triángulo es?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Solo ocurre en los triángulos con un ángulo muy abierto ($>90^\circ$).
+
+**Resultado:**
+$\boxed{\text{Obtusángulo}}$
+
+</details>
+
+---
+
+### Ejercicio 7
+¿Qué ángulo forma la altura con el lado opuesto?
+
+<details>
+<summary>Ver solución</summary>
+
+**Respuesta:**
+Un ángulo recto de $90^\circ$.
+
+</details>
+
+---
+
+### Ejercicio 8
+Relaciona: **Incentro**.
+
+<details>
+<summary>Ver solución</summary>
+
+**Respuesta:**
+Es el cruce de las **Bisectrices**.
+
+</details>
+
+---
+
+### Ejercicio 9
+Si dibujas un círculo dentro del triángulo que toca los lados sin salirse, ¿qué punto usaste como centro?
+
+<details>
+<summary>Ver solución</summary>
+
+**Respuesta:**
+El **Incentro**.
+
+</details>
+
+---
+
+### Ejercicio 10
+Dibuja (mentalmente) la mediana de un lado de 10 cm. ¿En qué punto del lado "aterriza"?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+La mediana va al punto medio.
+$10 / 2 = 5$.
+
+**Resultado:**
+$\boxed{\text{A los 5 cm (Punto Medio)}}$
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+*   **Mediana** $\rightarrow$ Equilibrio (Baricentro).
+*   **Altura** $\rightarrow$ Perpendicularidad (Ortocentro).
+*   **Bisectriz** $\rightarrow$ Ángulos (Incentro).
+*   **Mediatriz** $\rightarrow$ Lados y $90^\circ$ (Circuncentro).

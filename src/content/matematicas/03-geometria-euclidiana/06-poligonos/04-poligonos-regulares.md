@@ -1,443 +1,322 @@
-# Polígonos Regulares
+# **Polígonos Regulares**
 
-Los **polígonos regulares** tienen propiedades especiales que los hacen muy útiles en geometría, arquitectura y diseño. En esta lección profundizamos en sus características.
-
----
-
-## 📖 Definición
-
-> **Definición:** Un polígono regular es aquel que tiene **todos sus lados iguales** (equilátero) y **todos sus ángulos iguales** (equiángulo).
-
-### Ejemplos
-
-- Triángulo equilátero (3 lados)
-- Cuadrado (4 lados)
-- Pentágono regular (5 lados)
-- Hexágono regular (6 lados)
+Cuando la naturaleza quiere eficiencia, crea polígonos regulares. Piénsalo: las abejas usan hexágonos, los copos de nieve tienen estructura hexagonal, y las flores suelen tener simetría pentagonal. Son las figuras geométricamente "perfectas".
 
 ---
 
-## 📖 Elementos de un polígono regular
+## 🎯 ¿Qué vas a aprender?
 
-### Centro
-
-El **centro** del polígono regular es el punto equidistante de todos los vértices y de todos los lados.
-
-### Radio
-
-El **radio** ($R$) es la distancia desde el centro hasta cualquier vértice. Es el radio de la circunferencia **circunscrita**.
-
-### Apotema
-
-El **apotema** ($a$) es la distancia desde el centro hasta el punto medio de cualquier lado. Es el radio de la circunferencia **inscrita**.
-
-### Ángulo central
-
-El **ángulo central** es el ángulo formado por dos radios consecutivos:
-
-$$
-\theta = \frac{360°}{n}
-$$
-
-**Ilustración: Elementos del Polígono Regular:**
-
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.5rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.25rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="jsxgraph-elementos-regulares" style="width: 100%; height: 400px; min-height: 350px; border-radius: 8px;"></div>
-</div>
-
-<script>
-(function() {
-  function initElementosReg() {
-    if (typeof JXG === 'undefined' || !document.getElementById('jsxgraph-elementos-regulares')) {
-      setTimeout(initElementosReg, 100);
-      return;
-    }
-    
-    if (JXG.boards['jsxgraph-elementos-regulares']) return;
-
-    var board = JXG.JSXGraph.initBoard('jsxgraph-elementos-regulares', {
-      boundingbox: [-4, 4, 4, -4],
-      axis: false,
-      showCopyright: false,
-      showNavigation: false,
-      keepaspectratio: true
-    });
-    
-    // Hexágono Regular
-    var r = 2.5;
-    var center = [0, 0];
-    var points = [];
-    for(var i=0; i<6; i++) {
-        var ang = (60 * i) * Math.PI / 180;
-        points.push(board.create('point', [r*Math.cos(ang), r*Math.sin(ang)], {
-            visible:false, fixed:true
-        }));
-    }
-    
-    var poly = board.create('polygon', points, {
-        fillColor: '#dbeafe', borders: {strokeColor: '#3b82f6', strokeWidth:2}
-    });
-
-    // Centro
-    var C = board.create('point', [0, 0], {name:'Centro', size:3, color:'#1e293b', fixed:true});
-    
-    // Radio (R) - desde centro a vértice superior
-    var R = board.create('segment', [C, points[1]], {strokeColor: '#ef4444', strokeWidth:2});
-    board.create('text', [0.6, 1.5, 'R (Radio)'], {fontSize:11, color:'#ef4444', fontWeight:'bold'});
-    
-    // Apotema (a) - desde centro perpendicular al lado derecho
-    var midPoint = board.create('point', [
-        (points[0].X() + points[1].X())/2,
-        (points[0].Y() + points[1].Y())/2
-    ], {visible:false});
-    var A = board.create('segment', [C, midPoint], {strokeColor: '#22c55e', strokeWidth:2, dash:2});
-    board.create('text', [0.6, 0.3, 'a (Apotema)'], {fontSize:11, color:'#22c55e', fontWeight:'bold'});
-    
-    // Ángulo Central
-    board.create('angle', [points[0], C, points[1]], {
-        radius: 0.6, fillColor: '#f97316', fillOpacity:0.3,
-        name: 'θ'
-    });
-    board.create('text', [-1.2, -0.5, 'Ángulo Central'], {fontSize:10, color:'#f97316'});
-  }
-  
-  initElementosReg();
-})();
-</script>
+- Identificar los elementos exclusivos de un polígono regular (centro, radio, apotema).
+- Calcular el perímetro de forma rápida ($n \times l$).
+- Calcular el área usando el perímetro y la apotema.
+- Comprender la diferencia entre el radio (al vértice) y la apotema (al centro del lado).
 
 ---
 
-## 📖 Tabla de elementos
+## 👑 Anatomía de la Perfección
 
-| Polígono regular | n | Ángulo central | Ángulo interior |
-|------------------|---|----------------|-----------------|
-| Triángulo | 3 | 120° | 60° |
-| Cuadrado | 4 | 90° | 90° |
-| Pentágono | 5 | 72° | 108° |
-| Hexágono | 6 | 60° | 120° |
-| Octágono | 8 | 45° | 135° |
-| Decágono | 10 | 36° | 144° |
-| Dodecágono | 12 | 30° | 150° |
+Un polígono regular es **equilátero** (lados iguales) y **equiángulo** (ángulos iguales). Esta simetría crea nuevos elementos que no existen en los polígonos irregulares.
+
+### 1. Centro ($C$)
+Es el punto que está a la misma distancia de todos los vértices. Es el "corazón" de la figura.
+
+### 2. Radio ($R$)
+Es la distancia del Centro a cualquiera de los **Vértices**.
+*(Es el radio de la circunferencia imaginaria que rodea al polígono).*
+
+### 3. Apotema ($a$)
+Es la distancia del Centro al **punto medio de un lado**.
+-   Funciona como la **altura** de los triángulos internos.
+-   Siempre es perpendicular al lado ($90^\circ$).
+-   *(Es el radio de la circunferencia que cabe dentro del polígono).*
+
+> **Ojo:** No confundas Radio con Apotema. El Radio va a la esquina (es más largo), la Apotema va al lado (es más corta).
 
 ---
 
-## 📖 Relación entre radio y apotema
+## 📏 Cálculos Básicos
 
-Para un polígono regular de $n$ lados:
-
-$$
-a = R \cos\left(\frac{180°}{n}\right)
-$$
-
-### Relación con el lado
-
-Si $l$ es la longitud del lado:
+### Perímetro ($P$)
+Como todos los lados medin lo mismo ($l$) y hay $n$ lados:
 
 $$
-l = 2R \sin\left(\frac{180°}{n}\right)
+P = n \cdot l
+$$
+
+### Ángulo Central
+Si te paras en el centro y das una vuelta completa ($360^\circ$) mirando a cada vértice:
+
+$$
+\text{Ángulo Central} = \frac{360^\circ}{n}
 $$
 
 ---
 
-## 📖 Perímetro
+## 🟥 El Área del Polígono Regular
 
-El perímetro de un polígono regular es:
+Imagina que cortas el polígono como una pizza. Si unes el centro con cada vértice, obtienes **$n$ triángulos iguales**.
+
+1.  El área de un triángulo es $\frac{\text{base} \cdot \text{altura}}{2}$.
+2.  Aquí, la base es el lado ($l$) y la altura es la apotema ($a$).
+3.  Área de un triángulo = $\frac{l \cdot a}{2}$.
+4.  Como hay $n$ triángulos: $A = n \cdot \frac{l \cdot a}{2}$.
+5.  Pero como $n \cdot l$ es el Perímetro ($P$):
 
 $$
-P = n \times l
+A = \frac{P \cdot a}{2}
 $$
 
-Donde $l$ es la longitud de cada lado.
+> **Fórmula Maestra:** El área es el semiperímetro por la apotema.
 
 ---
 
-## 📖 Área de un polígono regular
+## ⚙️ Ejemplos Resueltos
 
-La fórmula general del área es:
+### Ejemplo 1: Área de un Pentágono
 
+Un pentágono regular tiene 6 cm de lado y su apotema mide 4 cm. Calcula su área.
+
+**Datos:**
+-   $n = 5$
+-   $l = 6$
+-   $a = 4$
+
+**Razonamiento:**
+Primero hallamos el perímetro.
+$$P = 5 \times 6 = 30 \text{ cm}$$
+
+Ahora el área:
 $$
-A = \frac{P \times a}{2} = \frac{n \times l \times a}{2}
-$$
-
-Donde:
-- $P$ = perímetro
-- $a$ = apotema
-- $n$ = número de lados
-- $l$ = longitud de cada lado
-
-### Interpretación
-
-El área es igual a la suma de las áreas de $n$ triángulos, cada uno con:
-- Base = lado del polígono
-- Altura = apotema
-
-**Ilustración: Composición del Área:**
-
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.5rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.25rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="jsxgraph-area-composicion" style="width: 100%; height: 400px; min-height: 350px; border-radius: 8px;"></div>
-</div>
-
-<script>
-(function() {
-  function initAreaComp() {
-    if (typeof JXG === 'undefined' || !document.getElementById('jsxgraph-area-composicion')) {
-      setTimeout(initAreaComp, 100);
-      return;
-    }
-    
-    if (JXG.boards['jsxgraph-area-composicion']) return;
-
-    var board = JXG.JSXGraph.initBoard('jsxgraph-area-composicion', {
-      boundingbox: [-4, 4, 4, -4],
-      axis: false,
-      showCopyright: false,
-      showNavigation: false,
-      keepaspectratio: true
-    });
-    
-    // Hexágono Regular
-    var r = 2.5;
-    var center = [0, 0];
-    var points = [];
-    for(var i=0; i<6; i++) {
-        var ang = (60 * i) * Math.PI / 180;
-        points.push(board.create('point', [r*Math.cos(ang), r*Math.sin(ang)], {
-            visible:false, fixed:true
-        }));
-    }
-    
-    var poly = board.create('polygon', points, {
-        fillColor: 'none', borders: {strokeColor: '#3b82f6', strokeWidth:2}
-    });
-
-    // Centro
-    var C = board.create('point', [0, 0], {name:'', size:2, color:'#1e293b', fixed:true});
-    
-    // Radios a todos los vértices (creando triángulos)
-    var colors = ['#bfdbfe', '#fef3c7', '#bfdbfe', '#fef3c7', '#bfdbfe', '#fef3c7'];
-    for(var i=0; i<6; i++) {
-        var next = (i+1)%6;
-        // Crear triángulo
-        var tri = board.create('polygon', [C, points[i], points[next]], {
-            fillColor: colors[i], fillOpacity:0.6,
-            borders: {strokeColor: '#94a3b8', strokeWidth:1}
-        });
-    }
-    
-    // Etiquetar un triángulo (el superior)
-    var mid0 = [(points[0].X() + points[1].X())/2, (points[0].Y() + points[1].Y())/2];
-    board.create('text', [mid0[0], mid0[1]+0.3, 'l (lado)'], {fontSize:10, color:'#3b82f6', fontWeight:'bold'});
-    board.create('text', [0, 0.8, 'a'], {fontSize:10, color:'#22c55e', fontWeight:'bold'});
-    
-    board.create('text', [0, -3.2, '6 triángulos: A = 6 × (l × a / 2)'], {anchorX:'middle', fontSize:11, fontWeight:'bold', color:'#1e3a8a'});
-  }
-  
-  initAreaComp();
-})();
-</script>
-
----
-
-## 📖 Casos especiales
-
-### Triángulo equilátero
-
-Para un triángulo de lado $l$:
-
-$$
-A = \frac{l^2 \sqrt{3}}{4}
+A = \frac{30 \cdot 4}{2}
 $$
 
-### Cuadrado
-
-Para un cuadrado de lado $l$:
-
 $$
-A = l^2
+A = \frac{120}{2}
 $$
 
-### Hexágono regular
+**Resultado:**
+$$
+\boxed{60 \text{ cm}^2}
+$$
 
-Para un hexágono de lado $l$:
+### Ejemplo 2: Hallar la Apotema
+
+Un octágono tiene un perímetro de 80 m y un área de 400 m². ¿Cuánto mide su apotema?
+
+**Razonamiento:**
+Usamos la fórmula y despejamos $a$.
 
 $$
-A = \frac{3l^2\sqrt{3}}{2}
+400 = \frac{80 \cdot a}{2}
+$$
+
+$$
+400 = 40 \cdot a
+$$
+
+$$
+a = \frac{400}{40}
+$$
+
+**Resultado:**
+$$
+\boxed{10 \text{ m}}
 $$
 
 ---
 
-## 📖 Circunferencias asociadas
+## 📝 Ejercicios de Práctica
 
-### Circunferencia circunscrita
-
-Pasa por **todos los vértices**. Su radio es $R$.
-
-### Circunferencia inscrita
-
-Es **tangente a todos los lados**. Su radio es $a$ (apotema).
-
-**Ilustración: Circunferencias Inscrita y Circunscrita:**
-
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.5rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.25rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="jsxgraph-circunferencias" style="width: 100%; height: 400px; min-height: 350px; border-radius: 8px;"></div>
-</div>
-
-<script>
-(function() {
-  function initCircunf() {
-    if (typeof JXG === 'undefined' || !document.getElementById('jsxgraph-circunferencias')) {
-      setTimeout(initCircunf, 100);
-      return;
-    }
-    
-    if (JXG.boards['jsxgraph-circunferencias']) return;
-
-    var board = JXG.JSXGraph.initBoard('jsxgraph-circunferencias', {
-      boundingbox: [-4, 4, 4, -4],
-      axis: false,
-      showCopyright: false,
-      showNavigation: false,
-      keepaspectratio: true
-    });
-    
-    // Pentágono Regular
-    var R = 2.5; // Radio circunscrito
-    var center = [0, 0];
-    var points = [];
-    for(var i=0; i<5; i++) {
-        var ang = (72 * i + 18) * Math.PI / 180;
-        points.push(board.create('point', [R*Math.cos(ang), R*Math.sin(ang)], {
-            size:2, color:'#1e293b', fixed:true, name:''
-        }));
-    }
-    
-    var poly = board.create('polygon', points, {
-        fillColor: '#dbeafe', fillOpacity:0.3, borders: {strokeColor: '#3b82f6', strokeWidth:2}
-    });
-
-    // Centro
-    var C = board.create('point', [0, 0], {name:'Centro', size:3, color:'#1e293b', fixed:true});
-    
-    // Circunferencia Circunscrita (pasa por vértices)
-    var circCirc = board.create('circle', [C, R], {
-        strokeColor: '#ef4444', strokeWidth:2, dash:2
-    });
-    
-    // Apotema (radio inscrito)
-    var a = R * Math.cos(Math.PI / 5); // Para pentágono: cos(36°)
-    
-    // Circunferencia Inscrita (tangente a lados)
-    var circInsc = board.create('circle', [C, a], {
-        strokeColor: '#22c55e', strokeWidth:2, dash:2
-    });
-    
-    // Etiquetas
-    board.create('text', [2, 2.8, 'Circunscrita (R)'], {fontSize:11, color:'#ef4444', fontWeight:'bold'});
-    board.create('text', [1.2, 1.2, 'Inscrita (a)'], {fontSize:11, color:'#22c55e', fontWeight:'bold'});
-  }
-  
-  initCircunf();
-})();
-</script>
-
----
-
-## 📝 Ejercicios de práctica
-
-### Ejercicio 1: Ángulo central
-
-Calcula el ángulo central de:
-
-1. Pentágono regular
-2. Octágono regular
-3. Decágono regular
+### Ejercicio 1
+Calcula el perímetro de un hexágono regular de lado 10.
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. $\theta = \frac{360°}{5} = 72°$
-2. $\theta = \frac{360°}{8} = 45°$
-3. $\theta = \frac{360°}{10} = 36°$
+**Razonamiento:**
+$$
+P = 6 \times 10
+$$
+
+**Resultado:**
+$$
+\boxed{60}
+$$
+
+</details>
+
+### Ejercicio 2
+Calcula el ángulo central de un decágono regular ($n=10$).
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$$
+\frac{360}{10}
+$$
+
+**Resultado:**
+$$
+\boxed{36^\circ}
+$$
+
+</details>
+
+### Ejercicio 3
+Calcula el área de un heptágono regular con perímetro 70 y apotema 10.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$$
+A = \frac{70 \cdot 10}{2} = \frac{700}{2}
+$$
+
+**Resultado:**
+$$
+\boxed{350}
+$$
+
+</details>
+
+### Ejercicio 4
+Si el radio de un hexágono regular es igual a su lado (propiedad especial del hexágono), y el lado mide 8, ¿cuánto mide el radio?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+En el hexágono, los triángulos internos son equiláteros. Radio = Lado.
+
+**Resultado:**
+$$
+\boxed{8}
+$$
+
+</details>
+
+### Ejercicio 5
+Un cuadrado tiene lado 10. ¿Cuánto mide su apotema?
+*(Pista: La apotema va del centro a la mitad del lado).*
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+En un cuadrado, la apotema es exactamente la mitad del lado.
+$10 / 2 = 5$.
+
+**Resultado:**
+$$
+\boxed{5}
+$$
+
+</details>
+
+### Ejercicio 6
+Calcula el área de un dodecágono regular ($n=12$) de lado 2 y apotema 3.7.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Perímetro $P = 12 \times 2 = 24$.
+$$
+A = \frac{24 \cdot 3.7}{2} = 12 \cdot 3.7
+$$
+
+**Resultado:**
+$$
+\boxed{44.4}
+$$
+
+</details>
+
+### Ejercicio 7
+Verdadero o Falso: La apotema siempre es menor que el radio.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Sí. En el triángulo rectángulo formado (Centro-MitadLado-Vértice), el Radio es la hipotenusa y la Apotema es un cateto.
+
+**Resultado:**
+$$
+\boxed{\text{Verdadero}}
+$$
+
+</details>
+
+### Ejercicio 8
+Si el área de un polígono regular es 100 y su perímetro es 50, ¿cuál es su apotema?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$$
+100 = \frac{50 \cdot a}{2} \Rightarrow 100 = 25a \Rightarrow a=4
+$$
+
+**Resultado:**
+$$
+\boxed{4}
+$$
+
+</details>
+
+### Ejercicio 9
+Calcula el lado de un eneágono regular ($n=9$) si su perímetro es 81.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$$
+l = \frac{81}{9}
+$$
+
+**Resultado:**
+$$
+\boxed{9}
+$$
+
+</details>
+
+### Ejercicio 10
+Un triángulo equilátero tiene lado 6 y altura total 5.2. ¿Cuánto mide su apotema?
+*(Nota avanzada: El centroide divide la altura en razón 2:1).*
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+La apotema es $\frac{1}{3}$ de la altura en un triángulo equilátero.
+$a = \frac{5.2}{3} \approx 1.73$.
+O usando fórmula de área:
+$A_{\text{triángulo}} = \frac{6 \cdot 5.2}{2} = 15.6$.
+$P = 18$.
+$15.6 = \frac{18 \cdot a}{2} \Rightarrow 15.6 = 9a \Rightarrow a = 1.73$.
+
+**Resultado:**
+$$
+\boxed{1.73}
+$$
 
 </details>
 
 ---
 
-### Ejercicio 2: Perímetro
+## 🔑 Resumen
 
-Calcula el perímetro de:
+| Concepto | Fórmula / Definición |
+| :--- | :--- |
+| **Apotema ($a$)** | Distancia Centro $\rightarrow$ Lado ($90^\circ$). |
+| **Radio ($R$)** | Distancia Centro $\rightarrow$ Vértice. |
+| **Perímetro** | $n \cdot l$ |
+| **Área** | $\frac{P \cdot a}{2}$ |
 
-1. Hexágono regular de lado 5 cm
-2. Octágono regular de lado 4 cm
-3. Decágono regular de lado 3 cm
-
-<details>
-<summary><strong>Ver respuestas</strong></summary>
-
-1. $P = 6 \times 5 = 30$ cm
-2. $P = 8 \times 4 = 32$ cm
-3. $P = 10 \times 3 = 30$ cm
-
-</details>
-
----
-
-### Ejercicio 3: Área
-
-Calcula el área de polígonos regulares con:
-
-1. Perímetro = 24 cm, apotema = 4 cm
-2. Perímetro = 36 cm, apotema = 6 cm
-
-<details>
-<summary><strong>Ver respuestas</strong></summary>
-
-1. $A = \frac{24 \times 4}{2} = 48$ cm²
-2. $A = \frac{36 \times 6}{2} = 108$ cm²
-
-</details>
-
----
-
-### Ejercicio 4: Problema completo
-
-Un hexágono regular tiene lado de 6 cm y apotema de aproximadamente 5.2 cm. Calcula:
-
-1. El perímetro
-2. El área
-3. El ángulo central
-
-<details>
-<summary><strong>Ver respuestas</strong></summary>
-
-1. Perímetro = $6 \times 6 = 36$ cm
-2. Área = $\frac{36 \times 5.2}{2} = 93.6$ cm²
-3. Ángulo central = $\frac{360°}{6} = 60°$
-
-</details>
-
----
-
-### Ejercicio 5: Encontrar el lado
-
-Un pentágono regular tiene perímetro de 45 cm. ¿Cuánto mide cada lado?
-
-<details>
-<summary><strong>Ver respuesta</strong></summary>
-
-$$
-l = \frac{P}{n} = \frac{45}{5} = 9 \text{ cm}
-$$
-
-</details>
-
----
+> El área de un polígono regular es, en el fondo, la suma de muchos triángulos idénticos.

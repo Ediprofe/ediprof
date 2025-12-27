@@ -1,280 +1,293 @@
-# Clasificación de Triángulos por sus Lados
+# **Clasificación de Triángulos por sus Lados**
 
-Los triángulos se pueden clasificar de diferentes maneras. En esta lección estudiaremos la clasificación según la **longitud de sus lados**: equiláteros, isósceles y escalenos.
-
----
-
-## 📖 Tres tipos de triángulos según sus lados
-
-| Tipo | Lados iguales | Característica |
-|------|---------------|----------------|
-| Equilátero | 3 iguales | Todos los lados son iguales |
-| Isósceles | 2 iguales | Dos lados son iguales |
-| Escaleno | 0 iguales | Todos los lados son diferentes |
+Si te doy tres palitos de madera, ¿cómo son entre ellos? Pueden ser todos iguales, solo dos iguales o todos diferentes.
+Los triángulos siguen esa misma lógica. Dependiendo de si sus "palitos" (lados) son gemelos o no, reciben nombres especiales.
 
 ---
 
-## 📖 Triángulo Equilátero
+## 🎯 ¿Qué vas a aprender?
 
-Un triángulo es **equilátero** cuando sus **tres lados** tienen la **misma longitud**.
+*   Los tres nombres clave: **Equilátero, Isósceles, Escaleno**.
+*   Cómo usar la regla de los "lados iguales" para saber también sus ángulos.
+*   Por qué el triángulo equilátero es el más perfecto.
+*   Cómo identificar el tipo de triángulo mirando medidas o marcas de igualdad.
+
+---
+
+## 📏 Los 3 Tipos de Triángulos
+
+### 1. Triángulo Equilátero
+
+Es el triángulo **perfecto**. Todo en él es igual.
+Tiene sus **3 lados iguales** y, como consecuencia, sus **3 ángulos también son iguales** (siempre $60^\circ$).
+
+> **Regla:** 3 lados iguales.
 
 $$
 a = b = c
 $$
 
-### Propiedades del triángulo equilátero
-
-1. **Todos los lados son iguales** (por definición)
-2. **Todos los ángulos son iguales** (y miden $60°$ cada uno)
-3. Es el triángulo más **simétrico** (tiene 3 ejes de simetría)
-
-### ¿Por qué los ángulos miden 60°?
-
-La suma de los ángulos interiores de un triángulo es $180°$. Si los tres ángulos son iguales:
-
-$$
-3\alpha = 180° \Rightarrow \alpha = 60°
-$$
-
-### Ejemplos en la vida real
-
-- Señal de tránsito de "ceda el paso"
-- Las caras del tetraedro regular
-- Logotipos y símbolos simétricos
-
-### Ejemplo numérico
-
-Si un lado de un triángulo equilátero mide $5$ cm, entonces:
-- Lado $a = 5$ cm
-- Lado $b = 5$ cm
-- Lado $c = 5$ cm
+**Mnemotecnia:** **"Equi"** viene de *equilibrado* o *igual*.
+**Ejemplo real:** Señal de "Ceda el Paso".
 
 ---
 
-## 📖 Triángulo Isósceles
+### 2. Triángulo Isósceles
 
-Un triángulo es **isósceles** cuando tiene **dos lados iguales** (y uno diferente).
+Es el triángulo **simétrico**. Tiene **2 lados iguales** (gemelos) y uno diferente (la base).
+Sus ángulos de la base también son gemelos.
 
-### Elementos especiales
-
-- **Lados iguales**: se llaman **lados congruentes**
-- **Lado diferente**: se llama **base**
-- **Ángulo opuesto a la base**: se llama **ángulo del vértice**
-- **Ángulos en la base**: son **iguales** entre sí
-
-### Propiedad fundamental
-
-En un triángulo isósceles, los **ángulos de la base son iguales**.
+> **Regla:** 2 lados iguales.
 
 $$
-\text{Si } a = b, \text{ entonces } \angle A = \angle B
+a = b \neq c
 $$
 
-### Ejemplos en la vida real
-
-- Percha de ropa (forma de triángulo isósceles)
-- Techos de casas simétricas
-- Algunas flechas y puntas
-
-### Ejemplo numérico
-
-Un triángulo isósceles tiene lados de $7$ cm, $7$ cm y $4$ cm.
-- Lados iguales: $7$ cm y $7$ cm
-- Base: $4$ cm
-- Los ángulos de la base son iguales
+**Mnemotecnia:** Imagina una persona parada con las **2** piernas abiertas (lados iguales) sobre el suelo (lado distinto).
+**Ejemplo real:** Una rebanada de pizza estándar, un gancho de ropa.
 
 ---
 
-## 📖 Triángulo Escaleno
+### 3. Triángulo Escaleno
 
-Un triángulo es **escaleno** cuando sus **tres lados** tienen **longitudes diferentes**.
+Es el triángulo **rebelde**. No tiene nada igual.
+Sus **3 lados son diferentes** y sus **3 ángulos son diferentes**.
+
+> **Regla:** 0 lados iguales (todos distintos).
 
 $$
 a \neq b \neq c
 $$
 
-### Propiedades del triángulo escaleno
-
-1. **Ningún lado es igual a otro**
-2. **Ningún ángulo es igual a otro**
-3. No tiene ejes de simetría
-
-### Relación lados-ángulos
-
-En un triángulo escaleno:
-- Al lado **mayor** le corresponde el ángulo **mayor**
-- Al lado **menor** le corresponde el ángulo **menor**
-
-### Ejemplos en la vida real
-
-- La mayoría de triángulos que dibujamos "a mano"
-- Muchas formas irregulares en la naturaleza
-
-### Ejemplo numérico
-
-Un triángulo con lados de $3$ cm, $5$ cm y $7$ cm es escaleno porque todos sus lados son diferentes.
+**Mnemotecnia:** **"Esca"**leno suena a *escalera* (donde cada peldaño está a distinta altura) o *escalofriante* (caótico).
+**Ejemplo real:** La mayoría de los triángulos que se forman al romper un vidrio.
 
 ---
 
-## 📖 Tabla Comparativa
+## 🏗️ Relación Lados-Ángulos (Regla de Oro)
 
-| Característica | Equilátero | Isósceles | Escaleno |
-|----------------|------------|-----------|----------|
-| Lados iguales | 3 | 2 | 0 |
-| Ángulos iguales | 3 (60° cada uno) | 2 | 0 |
-| Ejes de simetría | 3 | 1 | 0 |
-| Todos diferentes | No | No | Sí |
-
-### 📊 Ilustración: Los tres tipos de triángulos
-
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
-  <span>📊</span>
-  <div id="jsxgraph-tipos-triangulos" style="width: 100%; height: 280px;"></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-tipos-triangulos')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-tipos-triangulos', {
-      boundingbox: [-1, 4, 15, -1],
-      axis: false,
-      showCopyright: false,
-      showNavigation: false,
-      pan: { enabled: false },
-      zoom: { enabled: false }
-    });
-    
-    // EQUILÁTERO (izquierda)
-    var eq1 = board.create('point', [0, 0], {size: 2, color: '#22c55e', fixed: true, name: '', withLabel: false});
-    var eq2 = board.create('point', [3, 0], {size: 2, color: '#22c55e', fixed: true, name: '', withLabel: false});
-    var eq3 = board.create('point', [1.5, 2.6], {size: 2, color: '#22c55e', fixed: true, name: '', withLabel: false});
-    board.create('polygon', [eq1, eq2, eq3], {fillColor: '#22c55e', fillOpacity: 0.2, borders: {strokeColor: '#22c55e', strokeWidth: 3}});
-    board.create('text', [1.5, -0.7, 'Equilátero'], {fontSize: 13, color: '#22c55e', fixed: true, anchorX: 'middle'});
-    
-    // ISÓSCELES (centro)
-    var is1 = board.create('point', [5, 0], {size: 2, color: '#3b82f6', fixed: true, name: '', withLabel: false});
-    var is2 = board.create('point', [9, 0], {size: 2, color: '#3b82f6', fixed: true, name: '', withLabel: false});
-    var is3 = board.create('point', [7, 3], {size: 2, color: '#3b82f6', fixed: true, name: '', withLabel: false});
-    board.create('polygon', [is1, is2, is3], {fillColor: '#3b82f6', fillOpacity: 0.2, borders: {strokeColor: '#3b82f6', strokeWidth: 3}});
-    board.create('text', [7, -0.7, 'Isósceles'], {fontSize: 13, color: '#3b82f6', fixed: true, anchorX: 'middle'});
-    
-    // ESCALENO (derecha)
-    var sc1 = board.create('point', [10, 0], {size: 2, color: '#f59e0b', fixed: true, name: '', withLabel: false});
-    var sc2 = board.create('point', [14, 0], {size: 2, color: '#f59e0b', fixed: true, name: '', withLabel: false});
-    var sc3 = board.create('point', [11, 2.5], {size: 2, color: '#f59e0b', fixed: true, name: '', withLabel: false});
-    board.create('polygon', [sc1, sc2, sc3], {fillColor: '#f59e0b', fillOpacity: 0.2, borders: {strokeColor: '#f59e0b', strokeWidth: 3}});
-    board.create('text', [12, -0.7, 'Escaleno'], {fontSize: 13, color: '#f59e0b', fixed: true, anchorX: 'middle'});
-  }
-});
-</script>
-
-> 💡 **Mnemotécnica:** **Equi**látero = lados **iguales**. **Iso**sceles = **dos** iguales. **Esca**leno = todos **diferentes**.
+Hay una conexión secreta:
+*   Si tiene **3 lados** iguales $\rightarrow$ Tiene **3 ángulos** iguales ($60^\circ$).
+*   Si tiene **2 lados** iguales $\rightarrow$ Tiene **2 ángulos** iguales (los de abajo).
+*   Si tiene **0 lados** iguales $\rightarrow$ Tiene **0 ángulos** iguales.
 
 ---
 
-## 📖 Identificar el tipo de triángulo
+## ⚙️ Ejemplos Resueltos
 
-### Procedimiento
+### Ejemplo 1: Identificación por medidas
 
-1. Compara las longitudes de los tres lados
-2. Si los tres son iguales → **Equilátero**
-3. Si dos son iguales → **Isósceles**
-4. Si todos son diferentes → **Escaleno**
+Clasifica un triángulo con lados de $8\,\text{cm}$, $8\,\text{cm}$ y $5\,\text{cm}$.
 
-### Ejemplo 1
+**Razonamiento:**
+Contamos cuántos lados se repiten.
+Hay dos lados de $8\,\text{cm}$.
+Dos lados iguales $\rightarrow$ **Isósceles**.
 
-Triángulo con lados 6, 6, 6 → **Equilátero** (tres iguales)
-
-### Ejemplo 2
-
-Triángulo con lados 5, 5, 8 → **Isósceles** (dos iguales)
-
-### Ejemplo 3
-
-Triángulo con lados 4, 6, 9 → **Escaleno** (todos diferentes)
+**Resultado:**
+$\boxed{\text{Triángulo Isósceles}}$
 
 ---
 
-## 📝 Ejercicios de práctica
+### Ejemplo 2: El Perímetro del Equilátero
 
-### Ejercicio 1: Clasificar triángulos
+Un triángulo equilátero tiene un perímetro de $15\,\text{cm}$. ¿Cuánto mide cada lado?
 
-Clasifica cada triángulo según sus lados:
+**Razonamiento:**
+Como es equilátero, los 3 lados son idénticos.
+Dividimos el total entre 3.
 
-| Lados | Tipo |
-|-------|------|
-| 8 cm, 8 cm, 8 cm | |
-| 5 cm, 5 cm, 3 cm | |
-| 4 cm, 7 cm, 10 cm | |
-| 12 cm, 12 cm, 12 cm | |
-| 6 cm, 9 cm, 6 cm | |
+$$
+Lado = \frac{15}{3} = 5
+$$
+
+**Resultado:**
+$\boxed{5\,\text{cm}}$
+
+---
+
+### Ejemplo 3: El Escaleno
+
+Un triángulo tiene lados $3\,\text{m}$, $4\,\text{m}$ y $5\,\text{m}$. Clasifícalo.
+
+**Razonamiento:**
+Miramos los números: 3, 4, 5.
+Ninguno se repite. Todos son distintos.
+
+**Resultado:**
+$\boxed{\text{Triángulo Escaleno}}$
+
+---
+
+## 📝 Ejercicios de Práctica
+
+### Ejercicio 1
+Si un triángulo tiene lados $10, 10, 10$, ¿qué tipo es?
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-| Lados | Tipo |
-|-------|------|
-| 8 cm, 8 cm, 8 cm | Equilátero |
-| 5 cm, 5 cm, 3 cm | Isósceles |
-| 4 cm, 7 cm, 10 cm | Escaleno |
-| 12 cm, 12 cm, 12 cm | Equilátero |
-| 6 cm, 9 cm, 6 cm | Isósceles |
+**Razonamiento:**
+Los tres lados son iguales.
+
+**Resultado:**
+$\boxed{\text{Equilátero}}$
 
 </details>
 
 ---
 
-### Ejercicio 2: Ángulos del equilátero
-
-Si un triángulo equilátero tiene todos sus ángulos iguales, ¿cuánto mide cada ángulo?
+### Ejercicio 2
+Clasifica un triángulo con lados $5, 6, 7$.
 
 <details>
-<summary><strong>Ver respuesta</strong></summary>
+<summary>Ver solución</summary>
 
-$$
-\text{Cada ángulo} = \frac{180°}{3} = 60°
-$$
+**Razonamiento:**
+Todos los lados tienen medidas diferentes.
+
+**Resultado:**
+$\boxed{\text{Escaleno}}$
 
 </details>
 
 ---
 
-### Ejercicio 3: Triángulo isósceles
-
-En un triángulo isósceles, los lados iguales miden 10 cm cada uno y la base mide 12 cm. Los ángulos de la base miden $50°$ cada uno. ¿Cuánto mide el ángulo del vértice?
+### Ejercicio 3
+¿Cuántos ángulos iguales tiene, como mínimo, un triángulo isósceles?
 
 <details>
-<summary><strong>Ver respuesta</strong></summary>
+<summary>Ver solución</summary>
 
-La suma de ángulos es $180°$:
+**Razonamiento:**
+Al tener dos lados iguales, obligatoriamente tiene dos ángulos iguales.
 
-$$
-50° + 50° + \text{ángulo del vértice} = 180°
-$$
-
-$$
-\text{Ángulo del vértice} = 180° - 100° = 80°
-$$
+**Resultado:**
+$\boxed{2}$
 
 </details>
 
 ---
 
-### Ejercicio 4: Verdadero o Falso
-
-1. Un triángulo equilátero es también isósceles.
-2. Un triángulo isósceles puede tener los tres lados iguales.
-3. En un triángulo escaleno, al menos dos ángulos son iguales.
-4. El triángulo equilátero tiene un solo eje de simetría.
+### Ejercicio 4
+Un triángulo equilátero tiene un lado de $12\,\text{cm}$. ¿Cuál es su perímetro?
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. **Verdadero** - Tiene al menos dos lados iguales (de hecho, tiene tres)
-2. **Verdadero** - Eso sería un equilátero (caso especial de isósceles)
-3. **Falso** - Todos sus ángulos son diferentes
-4. **Falso** - Tiene tres ejes de simetría
+**Razonamiento:**
+$P = 12 + 12 + 12$ (o $12 \times 3$).
+
+**Resultado:**
+$\boxed{36\,\text{cm}}$
 
 </details>
 
 ---
+
+### Ejercicio 5
+¿Puede un triángulo ser isósceles y equilátero a la vez?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Sí, técnicamente. La definición de isósceles es "al menos dos lados iguales". El equilátero tiene tres, así que cumple. (Aunque siempre preferimos llamarlo equilátero por ser más específico).
+
+**Resultado:**
+$\boxed{\text{Sí}}$
+
+</details>
+
+---
+
+### Ejercicio 6
+En un triángulo isósceles, el lado desigual mide $10$ y los lados iguales miden $x$. Si el perímetro es $30$, halla $x$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$x + x + 10 = 30$
+$2x = 20$
+$x = 10$.
+(Resultó ser equilátero).
+
+**Resultado:**
+$\boxed{10}$
+
+</details>
+
+---
+
+### Ejercicio 7
+Si un triángulo tiene ángulos de $60^\circ, 60^\circ, 60^\circ$, ¿qué puedes decir de sus lados?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Si los ángulos son iguales, los lados también deben ser iguales.
+
+**Resultado:**
+$\boxed{\text{Son iguales (Equilátero)}}$
+
+</details>
+
+---
+
+### Ejercicio 8
+Clasifica: Lados $9, 9, 2$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Dos lados de 9.
+
+**Resultado:**
+$\boxed{\text{Isósceles}}$
+
+</details>
+
+---
+
+### Ejercicio 9
+¿Cómo se llama el triángulo con 0 ejes de simetría?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+El que es todo desigual y caótico.
+
+**Resultado:**
+$\boxed{\text{Escaleno}}$
+
+</details>
+
+---
+
+### Ejercicio 10
+Verdadero o Falso: Todo triángulo escaleno tiene sus tres ángulos diferentes.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Si los lados son distintos, las aperturas (ángulos) opuestas también deben ser distintas.
+
+**Resultado:**
+$\boxed{\text{Verdadero}}$
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Tipo | Lados Iguales | Ángulos Iguales | Simetría |
+| :--- | :---: | :---: | :--- |
+| **Equilátero** | 3 | 3 ($60^\circ$) | Perfecta |
+| **Isósceles** | 2 | 2 | Media |
+| **Escaleno** | 0 | 0 | Ninguna |

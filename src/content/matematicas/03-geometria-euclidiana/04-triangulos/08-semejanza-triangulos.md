@@ -1,390 +1,373 @@
-# Semejanza de Triángulos
+# **Semejanza de Triángulos**
 
-Dos triángulos son **semejantes** cuando tienen la misma forma, aunque no necesariamente el mismo tamaño. Es como una "copia a escala" de un triángulo.
+¿Alguna vez has hecho zoom en una foto en tu celular? La imagen se hace más grande, pero las personas y objetos no se deforman; mantienen su forma exacta. En geometría, esto se llama **semejanza**. Dos figuras son semejantes cuando son una "copia a escala" la una de la otra.
 
 ---
 
-## 📖 ¿Qué es la semejanza?
+## 🎯 ¿Qué vas a aprender?
 
-Dos triángulos son **semejantes** si:
-- Sus **ángulos correspondientes son iguales**
-- Sus **lados correspondientes son proporcionales**
+- Comprender qué significa que dos triángulos sean semejantes.
+- Calcular la razón de semejanza ($k$) entre dos figuras.
+- Aplicar los criterios de semejanza (AA, LLL, LAL).
+- Resolver problemas hallando lados desconocidos usando proporciones.
+- Relacionar las áreas de triángulos semejantes.
 
-> **Definición:** Dos triángulos son semejantes si uno es una ampliación o reducción del otro.
+---
 
-### Símbolo
+## 📐 Concepto de Semejanza
+
+Dos triángulos son **semejantes** si tienen la misma forma, aunque tengan distinto tamaño.
+
+Para que esto ocurra, deben cumplirse dos condiciones simultáneamente:
+1.  Sus **ángulos correspondientes** son iguales.
+2.  Sus **lados correspondientes** son proporcionales.
+
+El símbolo de la semejanza es $\sim$.
 
 $$
 \triangle ABC \sim \triangle DEF
 $$
 
-Se lee: "El triángulo ABC es semejante al triángulo DEF"
+### Razón de Semejanza ($k$)
 
----
-
-## 📖 Diferencia entre congruencia y semejanza
-
-| Característica | Congruencia | Semejanza |
-|----------------|-------------|-----------|
-| Forma | Igual | Igual |
-| Tamaño | Igual | Puede ser diferente |
-| Lados | Iguales | Proporcionales |
-| Ángulos | Iguales | Iguales |
-| Símbolo | $\cong$ | $\sim$ |
-
-> **Nota:** Todo par de triángulos congruentes son también semejantes, pero no al revés.
-
-**Ilustración: Congruencia vs Semejanza:**
-
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="jsxgraph-semejanza-intro" style="width: 100%; height: 350px; min-height: 300px; border-radius: 8px;"></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  var board = JXG.JSXGraph.initBoard('jsxgraph-semejanza-intro', {
-    boundingbox: [-1, 6, 14, -1.5],
-    axis: false,
-    showCopyright: false,
-    showNavigation: false
-  });
-  
-  // Triángulo original (pequeño)
-  var A1 = board.create('point', [1, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-  var B1 = board.create('point', [3.5, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-  var C1 = board.create('point', [2.25, 2.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-  board.create('polygon', [A1, B1, C1], {fillColor: '#22c55e', fillOpacity: 0.3, borders: {strokeColor: '#22c55e', strokeWidth: 2}, fixed: true});
-  board.create('text', [2.25, -0.3, 'Original'], {fontSize: 11, color: '#22c55e', fixed: true, anchorX: 'middle'});
-  
-  // Triángulo congruente (mismo tamaño)
-  var A2 = board.create('point', [5, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-  var B2 = board.create('point', [7.5, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-  var C2 = board.create('point', [6.25, 2.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-  board.create('polygon', [A2, B2, C2], {fillColor: '#3b82f6', fillOpacity: 0.3, borders: {strokeColor: '#3b82f6', strokeWidth: 2}, fixed: true});
-  board.create('text', [6.25, -0.3, 'Congruente'], {fontSize: 11, color: '#3b82f6', fixed: true, anchorX: 'middle'});
-  board.create('text', [6.25, -0.8, '(= tamaño)'], {fontSize: 10, color: '#3b82f6', fixed: true, anchorX: 'middle'});
-  
-  // Triángulo semejante (diferente tamaño, misma forma)
-  var A3 = board.create('point', [9, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-  var B3 = board.create('point', [13, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-  var C3 = board.create('point', [11, 4.2], {name: '', size: 3, color: '#1e293b', fixed: true});
-  board.create('polygon', [A3, B3, C3], {fillColor: '#f59e0b', fillOpacity: 0.3, borders: {strokeColor: '#f59e0b', strokeWidth: 2}, fixed: true});
-  board.create('text', [11, -0.3, 'Semejante'], {fontSize: 11, color: '#f59e0b', fixed: true, anchorX: 'middle'});
-  board.create('text', [11, -0.8, '(k=1.6)'], {fontSize: 10, color: '#f59e0b', fixed: true, anchorX: 'middle'});
-  
-  board.create('text', [7, 5.3, 'Semejante = misma FORMA | Congruente = misma forma + mismo TAMAÑO'], {fontSize: 12, color: '#1e293b', fixed: true, anchorX: 'middle'});
-});
-</script>
-
----
-
-## 📖 Razón de semejanza
-
-La **razón de semejanza** ($k$) es el factor por el cual se multiplican los lados de un triángulo para obtener los lados del otro.
+Es el número por el que multiplicamos los lados del triángulo pequeño para obtener los del grande.
 
 $$
-k = \frac{a'}{a} = \frac{b'}{b} = \frac{c'}{c}
-$$
-
-### Ejemplo
-
-Si un triángulo tiene lados de 3, 4, 5 cm y otro tiene lados de 6, 8, 10 cm:
-
-$$
-k = \frac{6}{3} = \frac{8}{4} = \frac{10}{5} = 2
-$$
-
-La razón de semejanza es $k = 2$ (el segundo triángulo es el doble del primero).
-
-**Ilustración: Razón de semejanza k=2:**
-
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="jsxgraph-razon" style="width: 100%; height: 380px; min-height: 320px; border-radius: 8px;"></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  var board = JXG.JSXGraph.initBoard('jsxgraph-razon', {
-    boundingbox: [-1, 6, 14, -1.5],
-    axis: false,
-    showCopyright: false,
-    showNavigation: false
-  });
-  
-  // Triángulo pequeño (3-4-5)
-  var A1 = board.create('point', [1, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-  var B1 = board.create('point', [4, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-  var C1 = board.create('point', [1, 3], {name: '', size: 3, color: '#1e293b', fixed: true});
-  board.create('polygon', [A1, B1, C1], {fillColor: '#dbeafe', fillOpacity: 0.4, borders: {strokeColor: '#3b82f6', strokeWidth: 2}, fixed: true});
-  
- board.create('text', [2.5, 0.2, '4'], {fontSize: 12, color: '#ef4444', fixed: true, anchorX: 'middle'});
-  board.create('text', [0.6, 1.7, '3'], {fontSize: 12, color: '#22c55e', fixed: true});
-  board.create('text', [2.8, 2, '5'], {fontSize: 12, color: '#3b82f6', fixed: true});
-  
-  // Triángulo grande (6-8-10) = k*2
-  var A2 = board.create('point', [6, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-  var B2 = board.create('point', [12, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-  var C2 = board.create('point', [6, 5.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-  board.create('polygon', [A2, B2, C2], {fillColor: '#fef3c7', fillOpacity: 0.4, borders: {strokeColor: '#f59e0b', strokeWidth: 2}, fixed: true});
-  
-  board.create('text', [9, 0.2, '8'], {fontSize: 12, color: '#ef4444', fixed: true, anchorX: 'middle'});
-  board.create('text', [5.5, 3, '6'], {fontSize: 12, color: '#22c55e', fixed: true});
-  board.create('text', [9.5, 3.5, '10'], {fontSize: 12, color: '#3b82f6', fixed: true});
-  
-  // Flecha y k
-  board.create('text', [4.8, 2.5, '× k'], {fontSize: 14, color: '#a855f7', fixed: true});
-  board.create('text', [9, -1, 'k = 6/3 = 8/4 = 10/5 = 2'], {fontSize: 13, color: '#1e293b', fixed: true, anchorX: 'middle', fontWeight: 'bold'});
-});
-</script>
-
----
-
-## 📖 Criterios de semejanza
-
-### Criterio AA (Ángulo-Ángulo)
-
-Dos triángulos son semejantes si tienen **dos ángulos iguales**.
-
-$$
-\boxed{AA: \text{ Si } \angle A = \angle A' \text{ y } \angle B = \angle B' \Rightarrow \triangle ABC \sim \triangle A'B'C'}
-$$
-
-> **Nota:** Si dos ángulos son iguales, el tercero también lo es automáticamente (porque suman 180°).
-
-### Ejemplo
-
-Si un triángulo tiene ángulos de 30° y 60°, y otro tiene ángulos de 60° y 90°:
-- Primer triángulo: 30°, 60°, 90°
-- Segundo triángulo: 60°, 90°, 30°
-
-Son semejantes por AA.
-
-**Ilustración: Criterio AA (Ángulo-Ángulo):**
-
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="jsxgraph-aa" style="width: 100%; height: 350px; min-height: 300px; border-radius: 8px;"></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  var board = JXG.JSXGraph.initBoard('jsxgraph-aa', {
-    boundingbox: [-1, 5, 14, -1.5],
-    axis: false,
-    showCopyright: false,
-    showNavigation: false
-  });
-  
-  // Triángulo 1 (pequeño)
-  var A1 = board.create('point', [1, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-  var B1 = board.create('point', [4, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-  var C1 = board.create('point', [2.5, 3], {name: '', size: 3, color: '#1e293b', fixed: true});
-  board.create('polygon', [A1, B1, C1], {fillColor: '#dcfce7', fillOpacity: 0.4, borders: {strokeColor: '#1e293b', strokeWidth: 2}, fixed: true});
-  
-  board.create('angle', [B1, A1, C1], {radius: 0.4, fillColor: '#a855f7', fillOpacity: 0.5, strokeColor: '#a855f7', name: '30°', label: {fontSize: 9}});
-  board.create('angle', [C1, B1, A1], {radius: 0.4, fillColor: '#f59e0b', fillOpacity: 0.5, strokeColor: '#f59e0b', name: '60°', label: {fontSize: 9}});
-  
-  // Triángulo 2 (grande, mismos ángulos)
-  var A2 = board.create('point', [6, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-  var B2 = board.create('point', [12, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-  var C2 = board.create('point', [9, 4.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-  board.create('polygon', [A2, B2, C2], {fillColor: '#dcfce7', fillOpacity: 0.4, borders: {strokeColor: '#1e293b', strokeWidth: 2}, fixed: true});
-  
-  board.create('angle', [B2, A2, C2], {radius: 0.5, fillColor: '#a855f7', fillOpacity: 0.5, strokeColor: '#a855f7', name: '30°', label: {fontSize: 10}});
-  board.create('angle', [C2, B2, A2], {radius: 0.5, fillColor: '#f59e0b', fillOpacity: 0.5, strokeColor: '#f59e0b', name: '60°', label: {fontSize: 10}});
-  
-  board.create('text', [5, 2.5, '∼'], {fontSize: 24, color: '#1e293b', fixed: true, anchorX: 'middle'});
-  board.create('text', [6.5, -1, 'AA: 2 ángulos iguales → Semejantes (el 3° también es igual: 90°)'], {fontSize: 12, color: '#1e293b', fixed: true, anchorX: 'middle'});
-});
-</script>
-
----
-
-### Criterio LAL (Lado-Ángulo-Lado)
-
-Dos triángulos son semejantes si tienen **un ángulo igual** y los **lados que lo forman son proporcionales**.
-
-$$
-\boxed{LAL: \text{ Si } \frac{a}{a'} = \frac{b}{b'} \text{ y } \angle C = \angle C' \Rightarrow \triangle ABC \sim \triangle A'B'C'}
-$$
-
-### Ejemplo
-
-Triángulo 1: lados 3 y 4 con ángulo de 50° entre ellos
-Triángulo 2: lados 6 y 8 con ángulo de 50° entre ellos
-
-$$
-\frac{6}{3} = \frac{8}{4} = 2
-$$
-
-Son semejantes por LAL (razón $k = 2$).
-
----
-
-### Criterio LLL (Lado-Lado-Lado)
-
-Dos triángulos son semejantes si sus **tres lados son proporcionales**.
-
-$$
-\boxed{LLL: \text{ Si } \frac{a}{a'} = \frac{b}{b'} = \frac{c}{c'} \Rightarrow \triangle ABC \sim \triangle A'B'C'}
-$$
-
-### Ejemplo
-
-Triángulo 1: lados 2, 3, 4 cm
-Triángulo 2: lados 4, 6, 8 cm
-
-$$
-\frac{4}{2} = \frac{6}{3} = \frac{8}{4} = 2
-$$
-
-Son semejantes por LLL.
-
----
-
-## 📖 Propiedades de triángulos semejantes
-
-### Relación de perímetros
-
-Si $k$ es la razón de semejanza:
-
-$$
-\frac{\text{Perímetro}_2}{\text{Perímetro}_1} = k
-$$
-
-### Relación de áreas
-
-$$
-\frac{\text{Área}_2}{\text{Área}_1} = k^2
-$$
-
-### Ejemplo
-
-Si $k = 3$:
-- El perímetro se triplica
-- El área se multiplica por $3^2 = 9$
-
-**Ilustración: Relación de áreas (k²):**
-
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="jsxgraph-areas" style="width: 100%; height: 350px; min-height: 300px; border-radius: 8px;"></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  var board = JXG.JSXGraph.initBoard('jsxgraph-areas', {
-    boundingbox: [-1, 6, 14, -2],
-    axis: false,
-    showCopyright: false,
-    showNavigation: false
-  });
-  
-  // Triángulo pequeño (área = 2)
-  var A1 = board.create('point', [1, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-  var B1 = board.create('point', [3, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-  var C1 = board.create('point', [2, 2.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-  board.create('polygon', [A1, B1, C1], {fillColor: '#22c55e', fillOpacity: 0.5, borders: {strokeColor: '#22c55e', strokeWidth: 2}, fixed: true});
-  board.create('text', [2, 1.2, 'Área=2'], {fontSize: 11, color: '#166534', fixed: true, anchorX: 'middle'});
-  
-  // Triángulo grande (k=2, área = 2*k² = 8)
-  var A2 = board.create('point', [5, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-  var B2 = board.create('point', [9, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-  var C2 = board.create('point', [7, 4.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-  board.create('polygon', [A2, B2, C2], {fillColor: '#3b82f6', fillOpacity: 0.5, borders: {strokeColor: '#3b82f6', strokeWidth: 2}, fixed: true});
-  board.create('text', [7, 2, 'Área=8'], {fontSize: 12, color: '#1e40af', fixed: true, anchorX: 'middle'});
-  
-  // Triángulo más grande (k=3, área = 2*9 = 18)
-  var A3 = board.create('point', [10, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-  var B3 = board.create('point', [16, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-  // Ajustamos para que quepa
-  board.create('text', [13, 2.5, 'k=3: Área=18'], {fontSize: 12, color: '#f59e0b', fixed: true, anchorX: 'middle'});
-  
-  board.create('text', [7, -1.3, 'Si k=2: Área₂ = Área₁ × k² = 2 × 4 = 8'], {fontSize: 12, color: '#1e293b', fixed: true, anchorX: 'middle'});
-  board.create('text', [3.8, 3, 'k=2'], {fontSize: 12, color: '#a855f7', fixed: true});
-});
-</script>
-
----
-
-## 📖 Ejemplo completo
-
-**Problema:** Determinar si los triángulos son semejantes y calcular la razón de semejanza.
-
-Triángulo ABC: lados 4, 6, 8 cm
-Triángulo DEF: lados 6, 9, 12 cm
-
-**Solución:**
-
-Verificamos si los lados son proporcionales:
-
-$$
-\frac{6}{4} = 1.5, \quad \frac{9}{6} = 1.5, \quad \frac{12}{8} = 1.5
-$$
-
-Las tres razones son iguales, entonces:
-
-$$
-\triangle ABC \sim \triangle DEF \quad \text{con } k = 1.5
+\frac{DE}{AB} = \frac{EF}{BC} = \frac{DF}{AC} = k
 $$
 
 ---
 
-## 📝 Ejercicios de práctica
+## 🔍 Criterios de Semejanza
 
-### Ejercicio 1: ¿Son semejantes?
+Al igual que en la congruencia, existen "atajos" para saber si dos triángulos son semejantes sin medir todo.
 
-Determina si los triángulos son semejantes:
+### 1. Criterio AA (Ángulo-Ángulo)
 
-1. Triángulo 1: lados 5, 10, 15 y Triángulo 2: lados 2, 4, 6
-2. Triángulo 1: ángulos 40°, 60°, 80° y Triángulo 2: ángulos 40°, 80°, 60°
+Es el más usado. Si dos triángulos tienen **dos ángulos iguales**, entonces son semejantes. (El tercer ángulo obligatoriamente será igual porque suman 180°).
+
+$$
+\text{Si } \angle A = \angle D \text{ y } \angle B = \angle E \implies \triangle ABC \sim \triangle DEF
+$$
+
+### 2. Criterio LLL (Lados Proporcionales)
+
+Si los tres lados de un triángulo son proporcionales a los tres lados del otro, son semejantes.
+
+$$
+\frac{a'}{a} = \frac{b'}{b} = \frac{c'}{c} = k \implies \text{Semejantes}
+$$
+
+### 3. Criterio LAL (Lado-Ángulo-Lado)
+
+Si tienen dos lados proporcionales y el ángulo **comprendido** entre ellos es igual, son semejantes.
+
+$$
+\frac{a'}{a} = \frac{c'}{c} \text{ y } \angle B = \angle B' \implies \text{Semejantes}
+$$
+
+---
+
+## ⚙️ Ejemplos Resueltos
+
+### Ejemplo 1: Cálculo de la razón de semejanza
+
+Un triángulo tiene lados 3, 4 y 5. Otro triángulo tiene lados 9, 12 y 15. ¿Son semejantes? ¿Cuál es la razón?
+
+**Datos:**
+Lados $T_1$: 3, 4, 5.
+Lados $T_2$: 9, 12, 15.
+
+**Razonamiento:**
+Calculamos el cociente entre lados correspondientes (mayor con mayor, menor con menor).
+
+$$
+\frac{9}{3} = 3
+$$
+
+$$
+\frac{12}{4} = 3
+$$
+
+$$
+\frac{15}{5} = 3
+$$
+
+Como todas las razones dan lo mismo ($3$), son semejantes por criterio **LLL**.
+
+**Resultado:**
+$$
+\boxed{\text{Sí, son semejantes con } k = 3}
+$$
+
+### Ejemplo 2: Hallar un lado desconocido
+
+Los triángulos $\triangle ABC$ y $\triangle DEF$ son semejantes.
+En $\triangle ABC$, el lado $AB = 8$ cm.
+En $\triangle DEF$, el lado correspondiente $DE = 4$ cm y el lado $EF = 6$ cm.
+¿Cuánto mide el lado $BC$?
+
+**Razonamiento:**
+Primero hallamos la razón de semejanza del segundo al primero (o viceversa).
+Usamos los lados correspondientes conocidos $AB$ y $DE$.
+
+$$
+k = \frac{AB}{DE} = \frac{8}{4} = 2
+$$
+
+Esto significa que el triángulo $ABC$ es el doble de grande que $DEF$.
+Para hallar $BC$, multiplicamos su correspondiente $EF$ por la razón.
+
+$$
+BC = EF \cdot k
+$$
+
+$$
+BC = 6 \cdot 2
+$$
+
+**Resultado:**
+$$
+\boxed{12 \text{ cm}}
+$$
+
+---
+
+## 📝 Ejercicios de Práctica
+
+### Ejercicio 1
+Determina si dos triángulos son semejantes si el primero tiene ángulos de 40° y 70°, y el segundo tiene ángulos de 70° y 80°.
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. **Sí**, son semejantes. $\frac{5}{2} = \frac{10}{4} = \frac{15}{6} = 2.5$
-2. **Sí**, son semejantes. Tienen los mismos tres ángulos (AA).
+**Razonamiento:**
+Calculamos el tercer ángulo del primer triángulo:
+$180^\circ - 40^\circ - 70^\circ = 70^\circ$.
+Ángulos del primero: 40°, 70°, 70°.
+Ángulos del segundo: 70°, 80°, y el tercero es $180^\circ-150^\circ=30^\circ$.
+
+Los ángulos no coinciden.
+
+**Resultado:**
+$$
+\boxed{\text{No son semejantes}}
+$$
 
 </details>
 
----
-
-### Ejercicio 2: Encontrar lado desconocido
-
-Los triángulos ABC y DEF son semejantes con $k = 3$. Si $AB = 4$ cm, ¿cuánto mide $DE$?
+### Ejercicio 2
+Si un mapa está a escala 1:1000, ¿qué significa esto en términos de semejanza?
 
 <details>
-<summary><strong>Ver respuesta</strong></summary>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+El mapa y el terreno real son figuras semejantes.
+La razón de semejanza es $k = 1000$ (si vamos del mapa a la realidad).
+1 cm en el mapa equivale a 1000 cm en la realidad.
+
+**Resultado:**
+$$
+\boxed{\text{Son figuras semejantes con razón } k=1000}
+$$
+
+</details>
+
+### Ejercicio 3
+Calcula la altura de un árbol si proyecta una sombra de 12 m, al mismo tiempo que un poste de 2 m de altura proyecta una sombra de 3 m.
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:**
+Triángulo Árbol: Altura $h$, Sombra 12.
+Triángulo Poste: Altura 2, Sombra 3.
+Los rayos del sol caen paralelos, formando triángulos semejantes (AA).
+
+**Razonamiento:**
+Establecemos la proporción:
 
 $$
-DE = AB \times k = 4 \times 3 = 12 \text{ cm}
+\frac{h}{2} = \frac{12}{3}
+$$
+
+$$
+\frac{h}{2} = 4
+$$
+
+$$
+h = 4 \cdot 2
+$$
+
+**Resultado:**
+$$
+\boxed{8 \text{ m}}
+$$
+
+</details>
+
+### Ejercicio 4
+En un triángulo, trazamos una línea paralela a la base. ¿El triángulo pequeño que se forma en la punta es semejante al triángulo grande original?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Al trazar una paralela, los ángulos correspondientes son iguales.
+El ángulo superior es común.
+Por criterio AA, los triángulos son semejantes. (Teorema fundamental de la semejanza).
+
+**Resultado:**
+$$
+\boxed{\text{Sí, son semejantes}}
+$$
+
+</details>
+
+### Ejercicio 5
+Dos triángulos semejantes tienen una razón de semejanza $k=3$. Si el perímetro del pequeño es 15 cm, ¿cuál es el perímetro del grande?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+La razón de los perímetros es igual a la razón de semejanza $k$.
+
+$$
+P_{grande} = P_{pequeño} \cdot k
+$$
+
+$$
+P_{grande} = 15 \cdot 3
+$$
+
+**Resultado:**
+$$
+\boxed{45 \text{ cm}}
+$$
+
+</details>
+
+### Ejercicio 6
+Dos triángulos semejantes tienen una razón de semejanza $k=3$. Si el área del pequeño es $10 \text{ cm}^2$, ¿cuál es el área del grande?
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:**
+$k = 3$.
+$A_1 = 10$.
+
+**Razonamiento:**
+La razón de las áreas es el **cuadrado** de la razón de semejanza ($k^2$).
+
+$$
+A_2 = A_1 \cdot k^2
+$$
+
+$$
+A_2 = 10 \cdot 3^2
+$$
+
+$$
+A_2 = 10 \cdot 9
+$$
+
+**Resultado:**
+$$
+\boxed{90 \text{ cm}^2}
+$$
+
+</details>
+
+### Ejercicio 7
+Halla $x$ si $\triangle ABC \sim \triangle DEF$.
+Lados $ABC$: 4, 6, $x$.
+Lados $DEF$: 2, 3, 5.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Vemos la relación entre los lados conocidos.
+$4 \to 2$ (La mitad).
+$6 \to 3$ (La mitad).
+Pasar de $ABC$ a $DEF$ es dividir por 2 (o multiplicar por $0.5$).
+Pasar de $DEF$ a $ABC$ es multiplicar por 2.
+
+$$
+x = 5 \cdot 2
+$$
+
+**Resultado:**
+$$
+\boxed{x = 10}
+$$
+
+</details>
+
+### Ejercicio 8
+¿Todos los triángulos equiláteros son semejantes entre sí?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Un triángulo equilátero tiene siempre sus tres ángulos internos de 60°.
+Por el criterio AA (tienen los mismos ángulos), cualquier par de triángulos equiláteros será semejante.
+
+**Resultado:**
+$$
+\boxed{\text{Sí, siempre}}
+$$
+
+</details>
+
+### Ejercicio 9
+¿Todos los triángulos rectángulos son semejantes entre sí?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Todos tienen un ángulo de 90°.
+Pero los otros dos ángulos pueden variar (ej. 45-45 vs 30-60).
+No cumplen necesariamente el criterio AA.
+
+**Resultado:**
+$$
+\boxed{\text{No necesariamente}}
+$$
+
+</details>
+
+### Ejercicio 10
+Si la razón de semejanza entre dos triángulos es $k=1$, ¿cómo se llaman esos triángulos?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Si $k=1$, significa que los lados miden lo mismo y no hay cambio de tamaño.
+Son triángulos iguales en forma y tamaño.
+
+**Resultado:**
+$$
+\boxed{\text{Congruentes}}
 $$
 
 </details>
 
 ---
 
-### Ejercicio 3: Relación de áreas
+## 🔑 Resumen
 
-Dos triángulos semejantes tienen razón de semejanza $k = 2$. Si el área del triángulo pequeño es 10 cm², ¿cuál es el área del grande?
+| Concepto | Fórmula / Regla | Nota Clave |
+|----------|-----------------|------------|
+| **Semejanza** | Misma forma, distinto tamaño | Ángulos iguales, lados proporcionales. |
+| **Razón ($k$)** | $k = \frac{\text{Lado Grande}}{\text{Lado Pequeño}}$ | Factor de escala. |
+| **Criterio AA** | $\angle A = \angle A', \angle B = \angle B'$ | El criterio más rápido. |
+| **Áreas** | $\frac{A_2}{A_1} = k^2$ | El área crece al cuadrado de $k$. |
 
-<details>
-<summary><strong>Ver respuesta</strong></summary>
-
-$$
-\text{Área}_2 = \text{Área}_1 \times k^2 = 10 \times 2^2 = 10 \times 4 = 40 \text{ cm}^2
-$$
-
-</details>
-
----
+> La semejanza es la base de los mapas, los planos, la fotografía y el funcionamiento de nuestra propia visión al percibir distancias.

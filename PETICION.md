@@ -165,29 +165,12 @@ Situaciones que requieren confirmación:
 
 # 📝 PETICIÓN ESPECÍFICA.
 
-
-
 Corrige las siguientes lecciones al estilo Ediprofe.
 
-http://localhost:4321/matematicas/geometria-euclidiana/rectas-perpendiculares-paralelas/propiedades-angulos-paralelas
 
-
-
-MUCHOS EJEMPLOS RECUERDA, MÍNIMO 3 EJEMPLOS POR CEONCEPTO EXPLICADO.
 
 
 LAS IMAGENES QUE SE GENERAN CON LIBRERÍA DE JAVASCRIPT ELIMINALAS, QUE YO LUEGO LAS REGENERO.
-
-
-
-
-
-
-
-
-
-
-
 
 El símbolo $ déjalo mejor como "pesos" porque hay un problema para renderizar eso en latex.
 

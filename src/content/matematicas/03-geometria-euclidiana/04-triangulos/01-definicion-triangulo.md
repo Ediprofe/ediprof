@@ -1,267 +1,369 @@
-# Definición de Triángulo
+# **Definición de Triángulo**
 
-El **triángulo** es una de las figuras geométricas más importantes. Es el polígono más simple (tiene el menor número de lados posible) y es la base para construir y analizar figuras más complejas.
-
-### 📊 Mira primero: Un triángulo y sus partes
-
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
-  <span>📊</span>
-  <div id="jsxgraph-triangulo-intro" style="width: 100%; height: 280px;"></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-triangulo-intro')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-triangulo-intro', {
-      boundingbox: [-1, 5, 7, -1],
-      axis: false,
-      showCopyright: false,
-      showNavigation: false,
-      pan: { enabled: false },
-      zoom: { enabled: false }
-    });
-    
-    var A = board.create('point', [0, 0], {name: 'A', size: 4, color: '#ef4444', fixed: true, label: {fontSize: 16, color: '#ef4444', offset: [-15, -10]}});
-    var B = board.create('point', [6, 0], {name: 'B', size: 4, color: '#ef4444', fixed: true, label: {fontSize: 16, color: '#ef4444', offset: [10, -10]}});
-    var C = board.create('point', [3, 4], {name: 'C', size: 4, color: '#ef4444', fixed: true, label: {fontSize: 16, color: '#ef4444', offset: [0, 10]}});
-    
-    board.create('segment', [A, B], {strokeColor: '#3b82f6', strokeWidth: 3, fixed: true});
-    board.create('segment', [B, C], {strokeColor: '#22c55e', strokeWidth: 3, fixed: true});
-    board.create('segment', [C, A], {strokeColor: '#f59e0b', strokeWidth: 3, fixed: true});
-    
-    board.create('text', [3, -0.5, 'lado c'], {fontSize: 12, color: '#3b82f6', fixed: true});
-    board.create('text', [5, 2.2, 'lado a'], {fontSize: 12, color: '#22c55e', fixed: true});
-    board.create('text', [0.8, 2.2, 'lado b'], {fontSize: 12, color: '#f59e0b', fixed: true});
-  }
-});
-</script>
-
-> 🎯 **En esta lección:** 3 vértices (A, B, C) + 3 lados + 3 ángulos = Triángulo
+Si miras a tu alrededor, verás triángulos en puentes, grúas y techos de casas. ¿Te has preguntado por qué es la figura favorita de los ingenieros y arquitectos? No es casualidad: el triángulo es la única figura que no se deforma cuando aplicas fuerza sobre ella. En esta lección, entenderás qué hace tan especial a esta figura de tres lados.
 
 ---
 
-## 📖 ¿Qué es un triángulo?
+## 🎯 ¿Qué vas a aprender?
 
-Un **triángulo** es un polígono de tres lados.
-
-> **Definición:** Un triángulo es la figura geométrica formada por tres segmentos que unen tres puntos no alineados.
-
-### ¿Por qué "no alineados"?
-
-Si los tres puntos estuvieran en la misma recta, no formarían una figura cerrada, sino simplemente una línea.
+*   La definición exacta de triángulo y por qué sus vértices no pueden estar alineados.
+*   Cómo identificar y nombrar correctamente sus elementos: vértices, lados y ángulos.
+*   La relación entre vértices y sus lados opuestos.
+*   Por qué el triángulo es la figura más rígida de todas.
+*   La regla de oro para saber si tres líneas pueden formar un triángulo (Desigualdad Triangular).
 
 ---
 
-## 📖 Elementos del triángulo
+## 📐 ¿Qué es un triángulo?
 
-Todo triángulo tiene los siguientes elementos:
+Un triángulo es la figura geométrica más simple que podemos cerrar. Se forma al unir tres puntos que **no están en línea recta**.
+
+> **Definición:** Un triángulo es la unión de tres segmentos determinados por tres puntos no colineales.
+
+### ¿Por qué "no colineales"?
+
+Imagina tres puntos en una misma línea recta. Si intentas unirlos, solo obtienes... una línea recta más larga. Para que exista una figura "abierta" y con área interior, necesitamos que al menos un punto se salga de la fila.
+
+---
+
+## 🧩 Elementos del Triángulo
+
+Todo triángulo, grande o pequeño, tiene tres componentes fundamentales. Vamos a desglosarlos usando un triángulo estándar llamado $\triangle ABC$.
 
 ### 1. Vértices
-
-Son los **tres puntos** donde se unen los lados. Se nombran con letras mayúsculas: $A$, $B$, $C$.
+Son los puntos de las esquinas. Se nombran siempre con **letras mayúsculas**.
+*   Ejemplo: $A$, $B$, $C$.
 
 ### 2. Lados
+Son los segmentos que unen los vértices. Tenemos dos formas de nombrarlos:
+*   **Por sus extremos:** Usando las dos letras mayúsculas de los vértices (ej. $\overline{AB}$).
+*   **Por su nombre corto:** Usando la **letra minúscula** del vértice que tienen en frente (opuesto).
+    *   Lado $a$ está frente al vértice $A$.
+    *   Lado $b$ está frente al vértice $B$.
+    *   Lado $c$ está frente al vértice $C$.
 
-Son los **tres segmentos** que unen los vértices. Se nombran:
-- Con las letras de sus extremos: $\overline{AB}$, $\overline{BC}$, $\overline{CA}$
-- O con letras minúsculas: $a$, $b$, $c$ (donde cada lado es opuesto al vértice de la misma letra)
+### 3. Ángulos Interiores
+Es la abertura formada por dos lados en cada vértice.
+*   Ejemplo: $\angle A$, $\angle B$, $\angle C$.
+*   También se pueden nombrar con tres letras, dejando el vértice en el medio: $\angle BAC$ (es lo mismo que $\angle A$).
 
-### 3. Ángulos interiores
-
-Son los **tres ángulos** formados por los lados:
-- $\angle A$ o $\angle BAC$ (en el vértice $A$)
-- $\angle B$ o $\angle ABC$ (en el vértice $B$)  
-- $\angle C$ o $\angle BCA$ (en el vértice $C$)
-
-### Tabla de elementos
+### Tabla Resumen
 
 | Elemento | Cantidad | Notación |
-|----------|----------|----------|
-| Vértices | 3 | $A$, $B$, $C$ |
-| Lados | 3 | $\overline{AB}$, $\overline{BC}$, $\overline{CA}$ o $a$, $b$, $c$ |
-| Ángulos interiores | 3 | $\angle A$, $\angle B$, $\angle C$ |
-
-### 📊 Ilustración: Elementos del triángulo
-
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0;">
-  <span>📊</span>
-  <div id="jsxgraph-triangulo-elementos" style="width: 100%; height: 320px;"></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-triangulo-elementos')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-triangulo-elementos', {
-      boundingbox: [-1, 5, 7, -1],
-      axis: false,
-      showCopyright: false,
-      showNavigation: false,
-      pan: { enabled: false },
-      zoom: { enabled: false }
-    });
-    
-    // Vértices
-    var A = board.create('point', [0, 0], {name: 'A', size: 4, color: '#ef4444', fixed: true, label: {fontSize: 16, color: '#ef4444', offset: [-15, -10]}});
-    var B = board.create('point', [6, 0], {name: 'B', size: 4, color: '#ef4444', fixed: true, label: {fontSize: 16, color: '#ef4444', offset: [10, -10]}});
-    var C = board.create('point', [3, 4], {name: 'C', size: 4, color: '#ef4444', fixed: true, label: {fontSize: 16, color: '#ef4444', offset: [0, 10]}});
-    
-    // Lados
-    board.create('segment', [A, B], {strokeColor: '#3b82f6', strokeWidth: 3, fixed: true});
-    board.create('segment', [B, C], {strokeColor: '#22c55e', strokeWidth: 3, fixed: true});
-    board.create('segment', [C, A], {strokeColor: '#f59e0b', strokeWidth: 3, fixed: true});
-    
-    // Etiquetas de lados
-    board.create('text', [3, -0.5, 'c'], {fontSize: 14, color: '#3b82f6', fixed: true});
-    board.create('text', [4.8, 2.2, 'a'], {fontSize: 14, color: '#22c55e', fixed: true});
-    board.create('text', [1, 2.2, 'b'], {fontSize: 14, color: '#f59e0b', fixed: true});
-    
-    // Ángulos
-    board.create('angle', [B, A, C], {radius: 0.6, fillColor: '#ef4444', fillOpacity: 0.3, strokeColor: '#ef4444'});
-    board.create('angle', [C, B, A], {radius: 0.6, fillColor: '#ef4444', fillOpacity: 0.3, strokeColor: '#ef4444'});
-    board.create('angle', [A, C, B], {radius: 0.6, fillColor: '#ef4444', fillOpacity: 0.3, strokeColor: '#ef4444'});
-  }
-});
-</script>
-
-> 💡 **Observa:** Los **vértices** (A, B, C) son los puntos rojos. Los **lados** (a, b, c) son los segmentos de colores. El lado $a$ (verde) es opuesto al vértice $A$.
+| :--- | :---: | :--- |
+| **Vértices** | 3 | $A$, $B$, $C$ |
+| **Lados** | 3 | $\overline{AB}, \overline{BC}, \overline{CA}$  o  $a, b, c$ |
+| **Ángulos** | 3 | $\angle A, \angle B, \angle C$ |
 
 ---
 
-## 📖 Notación del triángulo
+## 🏗️ Propiedad Fundamental: La Rigidez
 
-Un triángulo se nombra con el símbolo $\triangle$ seguido de los tres vértices:
+Toma cuatro palitos y únelos con chinches para formar un cuadrado. Si lo empujas suavemente, se deformará y se convertirá en un rombo. ¡No es rígido!
+
+Ahora haz lo mismo con tres palitos para formar un triángulo. Empújalo. **No se deforma**.
+
+> **Propiedad de Rigidez:** El triángulo es la única figura que no cambia de forma cuando se aplica fuerza en sus vértices (siempre que sus lados no se rompan ni se estiren).
+
+Por esto las torres eléctricas y las bicicletas están llenas de triángulos.
+
+---
+
+## 📏 Propiedad de Existencia (Desigualdad Triangular)
+
+No puedes tomar tres palitos de cualquier tamaño y esperar que formen un triángulo. Por ejemplo, si tienes dos lados muy cortos y uno muy largo, los cortos no alcanzarán a tocarse y cerrar la figura.
+
+Para que exista un triángulo, **la suma de dos lados cualquiera debe ser siempre mayor que el tercer lado**.
+
+**Matemáticamente:**
 
 $$
-\triangle ABC
+a + b > c
 $$
 
-Se lee: "triángulo ABC"
-
-### Orden de los vértices
-
-El orden de las letras indica cómo recorremos el triángulo. $\triangle ABC$ y $\triangle BCA$ son el mismo triángulo.
-
----
-
-## 📖 Lados opuestos a vértices
-
-Cada vértice tiene un lado **opuesto** (el lado que no lo toca):
-
-| Vértice | Lado opuesto |
-|---------|--------------|
-| $A$ | lado $a$ = $\overline{BC}$ |
-| $B$ | lado $b$ = $\overline{AC}$ |
-| $C$ | lado $c$ = $\overline{AB}$ |
-
-Esta convención es muy útil para escribir fórmulas de manera clara.
-
----
-
-## 📖 Propiedades básicas
-
-### Propiedad 1: Los triángulos son rígidos
-
-A diferencia de los cuadriláteros, un triángulo **no se puede deformar** si sus lados tienen longitud fija. Por eso se usan en construcción y estructuras.
-
-### Ejemplo
-
-Las grúas, puentes y techos usan triángulos porque son estructuras estables.
-
-### Propiedad 2: Desigualdad triangular
-
-Para que tres segmentos puedan formar un triángulo, cada lado debe ser **menor que la suma de los otros dos**:
-
 $$
-a < b + c, \quad b < a + c, \quad c < a + b
+a + c > b
 $$
 
-### Ejemplo
+$$
+b + c > a
+$$
 
-¿Pueden tres segmentos de 3 cm, 4 cm y 8 cm formar un triángulo?
-
-- ¿$3 < 4 + 8$? → $3 < 12$ ✓
-- ¿$4 < 3 + 8$? → $4 < 11$ ✓
-- ¿$8 < 3 + 4$? → $8 < 7$ ✗
-
-**No pueden formar un triángulo** porque $8$ no es menor que $3 + 4$.
+Si alguna de estas sumas falla, el triángulo es imposible.
 
 ---
 
-## 📖 Los triángulos en la vida real
+## ⚙️ Ejemplos Resueltos
 
-| Ejemplo | ¿Por qué usa triángulos? |
-|---------|-------------------------|
-| Techos de casas | Estructura estable |
-| Torres de alta tensión | Rigidez |
-| Bicicletas (marco) | No se deforma |
-| Pizza cortada | Cada porción es un triángulo |
-| Señales de tránsito | Forma distintiva |
-| Pirámides de Egipto | Caras triangulares |
+### Ejemplo 1: Identificación de Lados Opuestos
 
-### Ejemplo 1: El marco de una bicicleta
+Dado el triángulo $\triangle PQR$, identifica qué lado se opone a cada ángulo.
 
-El marco de una bicicleta tiene forma triangular porque es la forma más rígida y ligera para conectar tres puntos.
+**Razonamiento:**
+El lado opuesto es aquel que "no toca" al vértice del ángulo. O dicho de otra forma, es el lado formado por las otras dos letras.
 
-### Ejemplo 2: Las señales de "ceda el paso"
+1.  Para el ángulo $\angle P$, el lado opuesto conecta $Q$ y $R$.
+2.  Para el ángulo $\angle Q$, el lado opuesto conecta $P$ y $R$.
+3.  Para el ángulo $\angle R$, el lado opuesto conecta $P$ y $Q$.
 
-Las señales triangulares se usan porque su forma única las hace fáciles de reconocer, incluso de lejos.
+**Resultado:**
+$$
+\text{Opuesto a } P \rightarrow \overline{QR} \text{ (o lado } p)
+$$
+
+$$
+\text{Opuesto a } Q \rightarrow \overline{PR} \text{ (o lado } q)
+$$
+
+$$
+\text{Opuesto a } R \rightarrow \overline{PQ} \text{ (o lado } r)
+$$
 
 ---
 
-## 📝 Ejercicios de práctica
+### Ejemplo 2: Verificando la Existencia
 
-### Ejercicio 1: Identificar elementos
+¿Es posible construir un torneo con lados que midan $3\,\text{cm}$, $4\,\text{cm}$ y $8\,\text{cm}$?
 
-En el triángulo $\triangle PQR$, identifica:
+**Datos:**
+*   $a = 3$
+*   $b = 4$
+*   $c = 8$
 
-1. Los tres vértices
-2. Los tres lados (usa notación de segmentos)
-3. El lado opuesto al vértice $Q$
-4. Los dos lados que forman el ángulo $\angle P$
+**Razonamiento:**
+Probamos la Desigualdad Triangular. Sumamos los dos más pequeños y vemos si superan al mayor.
+
+$$
+3 + 4 = 7
+$$
+
+¿Es $7$ mayor que el tercer lado ($8$)?
+No, $7 < 8$.
+
+**Conclusión:**
+Los lados de 3 y 4 cm son demasiado cortos. Incluso puestos en línea recta solo suman 7 cm, por lo que nunca podrían encontrarse para cerrar un triángulo sobre una base de 8 cm.
+
+**Resultado:**
+$\boxed{\text{No es posible}}$
+
+---
+
+### Ejemplo 3: El Lado Faltante
+
+Tienes dos lados de un triángulo que miden $5$ y $7$. El tercer lado debe ser un número entero. ¿Cuál es la **mínima** longitud que podría tener el tercer lado?
+
+**Datos:**
+*   Lado 1 = $5$
+*   Lado 2 = $7$
+*   Lado 3 = $x$
+
+**Razonamiento:**
+La suma de los lados pequeños debe superar al grande.
+Si $x$ fuera el lado más pequeño, entonces $x + 5$ debe ser mayor que $7$.
+
+$$
+x + 5 > 7
+$$
+
+$$
+x > 7 - 5
+$$
+
+$$
+x > 2
+$$
+
+El número debe ser mayor que 2. Como buscamos el entero mínimo...
+
+**Resultado:**
+$\boxed{3}$
+
+---
+
+## 📝 Ejercicios de Práctica
+
+### Ejercicio 1
+En un triángulo $\triangle XYZ$, ¿cuál es el lado opuesto al vértice $Y$?
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. Vértices: $P$, $Q$, $R$
-2. Lados: $\overline{PQ}$, $\overline{QR}$, $\overline{RP}$
-3. Lado opuesto a $Q$: $\overline{PR}$ (o lado $q$)
-4. Lados que forman $\angle P$: $\overline{PQ}$ y $\overline{PR}$
+**Razonamiento:**
+El lado opuesto al vértice $Y$ es el segmento que une los otros dos vértices, $X$ y $Z$. También se puede denotar con la letra minúscula del vértice.
+
+**Resultado:**
+$\boxed{\overline{XZ} \text{ o lado } y}$
 
 </details>
 
 ---
 
-### Ejercicio 2: Desigualdad triangular
-
-¿Pueden los siguientes conjuntos de medidas formar un triángulo?
-
-1. 5 cm, 7 cm, 10 cm
-2. 2 cm, 3 cm, 6 cm
-3. 4 cm, 4 cm, 4 cm
-4. 1 cm, 1 cm, 3 cm
+### Ejercicio 2
+Determina si es posible formar un triángulo con lados de $6\,\text{m}$, $7\,\text{m}$ y $15\,\text{m}$.
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. **Sí** → $10 < 5 + 7 = 12$ ✓
-2. **No** → $6 < 2 + 3 = 5$? → $6 < 5$ ✗
-3. **Sí** → $4 < 4 + 4 = 8$ ✓
-4. **No** → $3 < 1 + 1 = 2$? → $3 < 2$ ✗
+**Razonamiento:**
+Sumamos los dos lados menores:
+$$
+6 + 7 = 13
+$$
+
+Comparamos con el lado mayor ($15$):
+$$
+13 < 15
+$$
+
+Como la suma no supera al lado mayor, no pueden cerrarse.
+
+**Resultado:**
+$\boxed{\text{No es posible}}$
 
 </details>
 
 ---
 
-### Ejercicio 3: Notación
-
-Escribe de dos formas diferentes el lado opuesto al vértice $B$ en el triángulo $\triangle ABC$.
+### Ejercicio 3
+Nombra los tres ángulos del triángulo formado por los vértices $D$, $E$ y $F$.
 
 <details>
-<summary><strong>Ver respuesta</strong></summary>
+<summary>Ver solución</summary>
 
-- Como segmento: $\overline{AC}$
-- Como lado: $b$
+**Razonamiento:**
+Los ángulos se nombran con el vértice en el centro o simplemente con la letra del vértice.
+
+**Resultado:**
+$\boxed{\angle D, \angle E, \angle F \text{ o } \angle EDF, \angle DEF, \angle EFD}$
 
 </details>
 
 ---
+
+### Ejercicio 4
+En el triángulo $\triangle MNO$, el lado $n$ mide 10 y el lado $o$ mide 10. ¿Cómo se llama el lado que une los vértices $N$ y $O$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+El lado que une $N$ y $O$ es el que está opuesto al vértice faltante, que es $M$.
+
+**Resultado:**
+$\boxed{\text{lado } m \text{ o } \overline{NO}}$
+
+</details>
+
+---
+
+### Ejercicio 5
+Calcula si se puede formar un triángulo con lados $5, 5, 5$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Sumamos dos lados cualquiera: $5 + 5 = 10$.
+Comparamos con el tercero: $10 > 5$.
+Sí es posible (es un triángulo equilátero).
+
+**Resultado:**
+$\boxed{\text{Sí es posible}}$
+
+</details>
+
+---
+
+### Ejercicio 6
+Si dos lados de un triángulo miden $3\,\text{cm}$ y $4\,\text{cm}$, ¿cuál es la longitud máxima **entera** posible para el tercer lado?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+El tercer lado ($x$) debe ser menor que la suma de los otros dos.
+$$x < 3 + 4$$
+$$x < 7$$
+El entero menor que 7 es 6.
+
+**Resultado:**
+$\boxed{6\,\text{cm}}$
+
+</details>
+
+---
+
+### Ejercicio 7
+¿Por qué tres puntos alineados no forman un triángulo?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Porque al unirlos se forma un único segmento de recta, no una figura cerrada con área y tres ángulos.
+
+**Resultado:**
+$\boxed{\text{Porque son colineales}}$
+
+</details>
+
+---
+
+### Ejercicio 8
+En la notación $\triangle GHI$, ¿qué vértice está entre el lado $g$ y el lado $h$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+El lado $g$ es opuesto a $G$ (conecta $H$ e $I$).
+El lado $h$ es opuesto a $H$ (conecta $G$ e $I$).
+Ambos lados se encuentran en el vértice $I$.
+
+**Resultado:**
+$\boxed{\text{Vértice } I}$
+
+</details>
+
+---
+
+### Ejercicio 9
+Dibuja (mentalmente) un triángulo. Si cortas una esquina, ¿cuántos vértices tendrá la figura resultante?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Si cortas una esquina de un triángulo (traspasando una línea recta), eliminas 1 vértice pero creas 2 nuevos. De 3 pasas a 4. Se vuelve un cuadrilátero.
+
+**Resultado:**
+$\boxed{4}$
+
+</details>
+
+---
+
+### Ejercicio 10
+Menciona un objeto de tu casa que tenga forma triangular para asegurar rigidez.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Ejemplos comunes: Percha (gancho) de ropa, escuadra, soporte de repisa, escalera de tijera abierta.
+
+**Resultado:**
+$\boxed{\text{Percha / Escuadra}}$
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Concepto | Descripción |
+| :--- | :--- |
+| **Triángulo** | Polígono de 3 lados cerrado. Rigidez total. |
+| **Vértices** | Puntos de unión ($A, B, C$). |
+| **Lados** | Segmentos que unen vértices ($a, b, c$). |
+| **Desigualdad Triangular** | `Lado1 + Lado2 > Lado3`. Condición vital para existir. |

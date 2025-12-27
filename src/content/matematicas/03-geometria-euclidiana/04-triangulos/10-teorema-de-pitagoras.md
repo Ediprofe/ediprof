@@ -1,143 +1,55 @@
-# Teorema de Pitágoras
+# **Teorema de Pitágoras**
 
-El **Teorema de Pitágoras** es probablemente el teorema más famoso de las matemáticas. Relaciona los lados de un triángulo rectángulo y tiene incontables aplicaciones prácticas.
-
----
-
-## 📖 Pitágoras de Samos
-
-Pitágoras (570-495 a.C.) fue un matemático y filósofo griego. Aunque el teorema lleva su nombre, los babilonios y egipcios ya conocían esta relación siglos antes.
+Si las matemáticas tuvieran celebridades, el Teorema de Pitágoras sería la estrella más famosa. Es esa ecuación que todo el mundo recuerda: la suma de los cuadrados de los lados cortos es igual al cuadrado del lado largo. Pero más allá de la fama, es la herramienta fundamental para calcular distancias en diagonal, desde la construcción de pirámides hasta el desarrollo de videojuegos modernos.
 
 ---
 
-## 📖 Enunciado del teorema
+## 🎯 ¿Qué vas a aprender?
 
-> **Teorema de Pitágoras:** En todo triángulo rectángulo, el cuadrado de la hipotenusa es igual a la suma de los cuadrados de los catetos.
+- Identificar quién es quién: Hipotenusa vs. Catetos.
+- Aplicar la fórmula $a^2 + b^2 = c^2$ para solucionar problemas.
+- Calcular la hipotenusa (el lado largo) sumando áreas.
+- Calcular un cateto (el lado corto) restando áreas.
+- Reconocer ternas pitagóricas para calcular mentalmente.
+
+---
+
+## 📐 Identificando los Lados
+
+El teorema **SOLO** funciona en triángulos rectángulos (los que tienen una esquina perfecta de 90° o forma de "L").
+
+1.  **Hipotenusa ($c$):**
+    - Es el lado más largo.
+    - Está siempre **frente** al ángulo recto.
+    - Es como la rampa o el tobogán del triángulo.
+
+2.  **Catetos ($a$ y $b$):**
+    - Son los dos lados más cortos.
+    - Son los que forman el ángulo recto (la "L").
+
+---
+
+## 🔮 La Fórmula Sagrada
+
+El área del cuadrado construido sobre la hipotenusa es igual a la suma de las áreas de los cuadrados construidos sobre los catetos.
 
 $$
-\boxed{c^2 = a^2 + b^2}
+c^2 = a^2 + b^2
 $$
 
-Donde:
-- $c$ = **hipotenusa** (lado opuesto al ángulo recto, el más largo)
-- $a$ y $b$ = **catetos** (los lados que forman el ángulo recto)
+### ¿Cómo usarla?
 
-**Ilustración: Partes del triángulo rectángulo:**
+Todo depende de qué lado te falte.
 
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="jsxgraph-partes" style="width: 100%; height: 350px; min-height: 300px; border-radius: 8px;"></div>
-</div>
-
-<script>
-(function() {
-  function initPartes() {
-    if (typeof JXG === 'undefined' || !document.getElementById('jsxgraph-partes')) {
-      setTimeout(initPartes, 100);
-      return;
-    }
-    
-    if (JXG.boards['jsxgraph-partes']) return;
-
-    var board = JXG.JSXGraph.initBoard('jsxgraph-partes', {
-      boundingbox: [-1, 5, 6, -1], // Ajustado para triángulo 3-4-5
-      axis: false,
-      showCopyright: false,
-      showNavigation: false,
-      keepaspectratio: true
-    });
-    
-    // Puntos fijos (Triángulo 3-4-5)
-    var A = board.create('point', [0, 0], {name: '', size: 3, color: '#1e293b', fixed: true});
-    var B = board.create('point', [4, 0], {name: '', size: 3, color: '#1e293b', fixed: true});
-    var C = board.create('point', [0, 3], {name: '', size: 3, color: '#1e293b', fixed: true});
-    
-    // Triángulo
-    board.create('polygon', [A, B, C], {
-      fillColor: '#dbeafe', 
-      fillOpacity: 0.5, 
-      borders: {strokeColor: '#1e293b', strokeWidth: 2}
-    });
-
-    // Ángulo Recto
-    board.create('angle', [B, A, C], {
-      radius: 0.4, 
-      orthoType: 'sectordot', 
-      fillColor: 'none', 
-      strokeColor: '#ef4444', // Rojo para destacar
-      strokeWidth: 2,
-      fixed: true,
-      name: ''
-    });
-    
-    // Etiquetas descriptivas
-    // Hipotenusa
-    board.create('text', [2.2, 1.7, 'Hipotenusa (c)'], {
-      fontSize: 12, 
-      color: '#b45309', 
-      fixed: true, 
-      anchorX: 'left',
-      anchorY: 'bottom',
-      rotate: 37 // Rotar texto alineado aprox
-    });
-
-    // Cateto a (vertical)
-    board.create('text', [-0.2, 1.5, 'Cateto (a)'], {
-      fontSize: 12, 
-      color: '#166534', 
-      fixed: true, 
-      anchorX: 'right',
-      anchorY: 'middle',
-      rotate: 90
-    });
-
-    // Cateto b (base)
-    board.create('text', [2, -0.3, 'Cateto (b)'], {
-      fontSize: 12, 
-      color: '#1e40af', 
-      fixed: true, 
-      anchorX: 'middle',
-      anchorY: 'top'
-    });
-
-    // Nota Ángulo recto
-    board.create('text', [0.6, 0.6, '90°'], {
-      fontSize: 11, 
-      color: '#ef4444', 
-      fixed: true
-    });
-
-  }
-  
-  initPartes();
-})();
-</script>
-
----
-
-## 📖 Recordatorio: Partes del triángulo rectángulo
-
-| Elemento | Descripción |
-|----------|-------------|
-| Ángulo recto | El ángulo de 90° |
-| Catetos | Los dos lados que forman el ángulo recto |
-| Hipotenusa | El lado opuesto al ángulo recto (siempre el más largo) |
-
-
-
----
-
-## 📖 Fórmulas derivadas
-
-### Calcular la hipotenusa
+**Caso 1: Buscas la Hipotenusa ($c$)**
+Como buscas el lado más grande, **SUMAS**.
 
 $$
 c = \sqrt{a^2 + b^2}
 $$
 
-### Calcular un cateto
+**Caso 2: Buscas un Cateto ($a$ o $b$)**
+Como buscas un lado más pequeño, tienes que **RESTAR** a la hipotenusa.
 
 $$
 a = \sqrt{c^2 - b^2}
@@ -149,367 +61,369 @@ $$
 
 ---
 
-## 📖 Ejemplo 1: Encontrar la hipotenusa
+## ⚙️ Ejemplos Resueltos
 
-Un triángulo rectángulo tiene catetos de 3 cm y 4 cm. ¿Cuánto mide la hipotenusa?
+### Ejemplo 1: Hallando la Hipotenusa
 
-**Solución:**
+Tienes un triángulo con catetos de 3 cm y 4 cm. ¿Cuánto mide su diagonal (hipotenusa)?
 
-$$
-c^2 = 3^2 + 4^2 = 9 + 16 = 25
-$$
+**Datos:**
+$a = 3$
+$b = 4$
+$c = ?$
 
-$$
-c = \sqrt{25} = 5 \text{ cm}
-$$
-
----
-
-## 📖 Ejemplo 2: Encontrar un cateto
-
-Un triángulo rectángulo tiene hipotenusa de 13 cm y un cateto de 5 cm. ¿Cuánto mide el otro cateto?
-
-**Solución:**
+**Razonamiento:**
+Usamos la fórmula de suma.
 
 $$
-a^2 = c^2 - b^2 = 13^2 - 5^2 = 169 - 25 = 144
+c = \sqrt{3^2 + 4^2}
 $$
 
 $$
-a = \sqrt{144} = 12 \text{ cm}
-$$
-
----
-
-## 📖 Ternas pitagóricas
-
-Una **terna pitagórica** es un conjunto de tres números enteros que satisfacen el Teorema de Pitágoras.
-
-### Ternas más conocidas
-
-| Terna | Verificación |
-|-------|--------------|
-| (3, 4, 5) | $9 + 16 = 25$ |
-| (5, 12, 13) | $25 + 144 = 169$ |
-| (8, 15, 17) | $64 + 225 = 289$ |
-| (7, 24, 25) | $49 + 576 = 625$ |
-
-### Propiedad
-
-Si $(a, b, c)$ es una terna pitagórica, entonces $(ka, kb, kc)$ también lo es para cualquier $k$ entero.
-
-### Ejemplo
-
-$(3, 4, 5) \times 2 = (6, 8, 10)$ también es una terna pitagórica:
-
-$$
-6^2 + 8^2 = 36 + 64 = 100 = 10^2 \quad ✓
-$$
-
-**Ilustración: Ternas pitagóricas comunes:**
-
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="jsxgraph-ternas" style="width: 100%; height: 350px; min-height: 300px; border-radius: 8px;"></div>
-</div>
-
-<script>
-(function() {
-  function initTernas() {
-    if (typeof JXG === 'undefined' || !document.getElementById('jsxgraph-ternas')) {
-      setTimeout(initTernas, 100);
-      return;
-    }
-    
-    if (JXG.boards['jsxgraph-ternas']) return;
-
-    var board = JXG.JSXGraph.initBoard('jsxgraph-ternas', {
-      boundingbox: [-1, 6, 15, -1.5],
-      axis: false,
-      showCopyright: false,
-      showNavigation: false
-    });
-    
-    // Terna 3-4-5
-    var A1 = board.create('point', [0.5, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-    var B1 = board.create('point', [3.5, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-    var C1 = board.create('point', [0.5, 2.75], {name: '', size: 3, color: '#1e293b', fixed: true});
-    board.create('polygon', [A1, B1, C1], {fillColor: '#22c55e', fillOpacity: 0.3, borders: {strokeColor: '#22c55e', strokeWidth: 2}, fixed: true});
-    board.create('text', [2, 0.2, '4'], {fontSize: 10, color: '#22c55e', fixed: true, anchorX: 'middle'});
-    board.create('text', [0.2, 1.6, '3'], {fontSize: 10, color: '#22c55e', fixed: true});
-    board.create('text', [2.2, 2, '5'], {fontSize: 10, color: '#22c55e', fixed: true});
-    board.create('text', [2, -0.8, '(3,4,5)'], {fontSize: 11, color: '#22c55e', fixed: true, anchorX: 'middle', fontWeight: 'bold'});
-    
-    // Terna 5-12-13
-    var A2 = board.create('point', [5, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-    var B2 = board.create('point', [9, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-    var C2 = board.create('point', [5, 2.2], {name: '', size: 3, color: '#1e293b', fixed: true});
-    board.create('polygon', [A2, B2, C2], {fillColor: '#3b82f6', fillOpacity: 0.3, borders: {strokeColor: '#3b82f6', strokeWidth: 2}, fixed: true});
-    board.create('text', [7, 0.2, '12'], {fontSize: 10, color: '#3b82f6', fixed: true, anchorX: 'middle'});
-    board.create('text', [4.7, 1.3, '5'], {fontSize: 10, color: '#3b82f6', fixed: true});
-    board.create('text', [7.2, 1.5, '13'], {fontSize: 10, color: '#3b82f6', fixed: true});
-    board.create('text', [7, -0.8, '(5,12,13)'], {fontSize: 11, color: '#3b82f6', fixed: true, anchorX: 'middle', fontWeight: 'bold'});
-    
-    // Terna 8-15-17
-    var A3 = board.create('point', [10, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-    var B3 = board.create('point', [14.5, 0.5], {name: '', size: 3, color: '#1e293b', fixed: true});
-    var C3 = board.create('point', [10, 2.9], {name: '', size: 3, color: '#1e293b', fixed: true});
-    board.create('polygon', [A3, B3, C3], {fillColor: '#f59e0b', fillOpacity: 0.3, borders: {strokeColor: '#f59e0b', strokeWidth: 2}, fixed: true});
-    board.create('text', [12.2, 0.2, '15'], {fontSize: 10, color: '#f59e0b', fixed: true, anchorX: 'middle'});
-    board.create('text', [9.6, 1.7, '8'], {fontSize: 10, color: '#f59e0b', fixed: true});
-    board.create('text', [12.5, 2, '17'], {fontSize: 10, color: '#f59e0b', fixed: true});
-    board.create('text', [12.2, -0.8, '(8,15,17)'], {fontSize: 11, color: '#f59e0b', fixed: true, anchorX: 'middle', fontWeight: 'bold'});
-    
-    board.create('text', [7.5, 5, 'Ternas pitagóricas: números enteros que cumplen a² + b² = c²'], {fontSize: 12, color: '#1e293b', fixed: true, anchorX: 'middle'});
-  }
-  
-  initTernas();
-})();
-</script>
-
----
-
-## 📖 Aplicaciones prácticas
-
-### Ejemplo 1: Escalera apoyada en pared
-
-Una escalera de 5 m está apoyada en una pared. Su base está a 3 m de la pared. ¿A qué altura llega la escalera?
-
-$$
-h^2 = 5^2 - 3^2 = 25 - 9 = 16
+c = \sqrt{9 + 16}
 $$
 
 $$
-h = 4 \text{ m}
+c = \sqrt{25}
 $$
 
-**Ilustración: Escalera apoyada en pared:**
-
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span> Interactivo: Desliza el punto azul de la base
-  </div>
-  <div id="jsxgraph-escalera" style="width: 100%; height: 350px; min-height: 300px; border-radius: 8px;"></div>
-</div>
-
-<script>
-(function() {
-  function initEscalera() {
-    if (typeof JXG === 'undefined' || !document.getElementById('jsxgraph-escalera')) {
-      setTimeout(initEscalera, 100);
-      return;
-    }
-    
-    if (JXG.boards['jsxgraph-escalera']) return;
-
-    var board = JXG.JSXGraph.initBoard('jsxgraph-escalera', {
-      boundingbox: [-1, 6, 8, -1],
-      axis: false,
-      showCopyright: false,
-      showNavigation: false
-    });
-    
-    // Pared
-    board.create('segment', [[0.5, 0], [0.5, 5.5]], {strokeColor: '#94a3b8', strokeWidth: 6, fixed: true});
-    
-    // Suelo
-    board.create('segment', [[0, 0], [6, 0]], {strokeColor: '#94a3b8', strokeWidth: 4, fixed: true});
-    
-    // Eje X invisible para restringir movimiento
-    var xaxis = board.create('line', [[0,0], [1,0]], {visible: false});
-    
-    // Punto base (deslizable)
-    var B = board.create('glider', [3.5, 0, xaxis], {name: '', size: 5, color: '#3b82f6'});
-    
-    // Punto base de la pared (fijo)
-    var origin = board.create('point', [0.5, 0], {visible: false, fixed: true});
-    
-    // Calcular punto superior de la escalera
-    var T = board.create('point', [0.5, function() {
-      var dist = B.X() - 0.5;
-      if (dist < 0 || dist > 5) return 0;
-      return Math.sqrt(25 - dist*dist);
-    }], {name: '', size: 5, color: '#ef4444', fixed: true}); 
-
-    // Escalera
-    board.create('segment', [T, B], {strokeColor: '#ef4444', strokeWidth: 4});
-    
-    // Altura (linea punteada)
-    board.create('segment', [origin, T], {strokeColor: '#22c55e', strokeWidth: 3, dash: 2});
-    
-    // Base (linea punteada)
-    board.create('segment', [origin, B], {strokeColor: '#3b82f6', strokeWidth: 3, dash: 2});
-    
-    // Ángulo recto (construido con puntos invisibles fijos para evitar deformación)
-    var p1 = board.create('point', [0.5, 0], {visible: false, fixed: true});
-    var p2 = board.create('point', [0.5, 0.3], {visible: false, fixed: true});
-    var p3 = board.create('point', [0.8, 0.3], {visible: false, fixed: true});
-    var p4 = board.create('point', [0.8, 0], {visible: false, fixed: true});
-    
-    board.create('polygon', [p1, p2, p3, p4], {
-      fillColor: '#1e293b', 
-      fillOpacity: 0.3, 
-      borders: {strokeColor: '#1e293b', strokeWidth: 1}, 
-      fixed: true,
-      hasInnerPoints: false
-    });
-    
-    // Etiquetas
-    board.create('text', [0.1, function(){ return T.Y()/2; }, function() { 
-      return 'h=' + T.Y().toFixed(1) + 'm';
-    }], {fontSize: 12, color: '#22c55e'});
-
-    board.create('text', [function(){ return (B.X()+0.5)/2; }, -0.4, function() {
-      return (B.X()-0.5).toFixed(1) + 'm';
-    }], {fontSize: 12, color: '#3b82f6', anchorX: 'middle'});
-
-    board.create('text', [function(){ return (B.X()+0.5)/2 + 0.3; }, function(){ return T.Y()/2 + 0.3; }, '5m'], {fontSize: 12, color: '#ef4444'});
-    
-    // Cálculos
-    board.create('text', [5.5, 3, function() {
-      var base = B.X() - 0.5;
-      return 'h² + ' + base.toFixed(1) + '² = 5²';
-    }], {fontSize: 12, color: '#1e293b'});
-    
-    board.create('text', [5.5, 2.3, function() {
-       var base = B.X() - 0.5;
-       var h2 = 25 - base*base;
-       return 'h² = ' + h2.toFixed(1);
-    }], {fontSize: 12, color: '#1e293b'});
-    
-    board.create('text', [5.5, 1.6, function() {
-      return 'h = ' + T.Y().toFixed(2) + ' m';
-    }], {fontSize: 12, color: '#22c55e', fontWeight: 'bold'});
-  }
-  
-  initEscalera();
-})();
-</script>
-
-### Ejemplo 2: Diagonal de un rectángulo
-
-Un rectángulo mide 6 m de largo y 8 m de ancho. ¿Cuánto mide su diagonal?
-
+**Resultado:**
 $$
-d = \sqrt{6^2 + 8^2} = \sqrt{36 + 64} = \sqrt{100} = 10 \text{ m}
-$$
-
-### Ejemplo 3: Distancia entre dos puntos
-
-La distancia entre los puntos $(1, 2)$ y $(4, 6)$ se calcula con Pitágoras:
-
-$$
-d = \sqrt{(4-1)^2 + (6-2)^2} = \sqrt{9 + 16} = \sqrt{25} = 5
+\boxed{5 \text{ cm}}
 $$
 
 ---
 
-## 📖 El recíproco
+### Ejemplo 2: Hallando un Cateto
 
-El teorema también funciona al revés:
+Una escalera de 10 m (hipotenusa) está apoyada en una pared. Si la base está a 6 m de la pared, ¿a qué altura llega?
 
-> Si en un triángulo se cumple que $c^2 = a^2 + b^2$, entonces el triángulo es rectángulo.
+**Datos:**
+$c = 10$ (Escalera/Hipotenusa)
+$b = 6$ (Base/Cateto)
+$a = ?$ (Altura/Cateto)
 
-### Ejemplo
-
-Un triángulo tiene lados 6, 8 y 10. ¿Es rectángulo?
+**Razonamiento:**
+Como buscamos un cateto, usamos la resta.
 
 $$
-6^2 + 8^2 = 36 + 64 = 100 = 10^2 \quad ✓
+a = \sqrt{10^2 - 6^2}
 $$
 
-Sí, es un triángulo rectángulo.
+$$
+a = \sqrt{100 - 36}
+$$
+
+$$
+a = \sqrt{64}
+$$
+
+**Resultado:**
+$$
+\boxed{8 \text{ m}}
+$$
 
 ---
 
-## 📖 Clasificación por la relación pitagórica
+### Ejemplo 3: La Diagonal de televisión
 
-| Condición | Tipo de triángulo |
-|-----------|-------------------|
-| $c^2 = a^2 + b^2$ | Rectángulo |
-| $c^2 < a^2 + b^2$ | Acutángulo |
-| $c^2 > a^2 + b^2$ | Obtusángulo |
+Una pantalla de 50 pulgadas (diagonal) tiene un ancho de 40 pulgadas. ¿Cuál es su altura?
 
-### Ejemplo
+**Razonamiento:**
+La diagonal es la hipotenusa. El ancho es un cateto. Buscamos el otro cateto.
 
-Triángulo con lados 4, 5, 6:
-- Mayor lado: 6
-- $6^2 = 36$
-- $4^2 + 5^2 = 16 + 25 = 41$
-- $36 < 41$, entonces es **acutángulo**
+$$
+h = \sqrt{50^2 - 40^2}
+$$
+
+$$
+h = \sqrt{2500 - 1600}
+$$
+
+$$
+h = \sqrt{900}
+$$
+
+**Resultado:**
+$$
+\boxed{30 \text{ pulgadas}}
+$$
 
 ---
 
-## 📝 Ejercicios de práctica
+## 📝 Ejercicios de Práctica
 
-### Ejercicio 1: Calcular hipotenusa
-
-Encuentra la hipotenusa de triángulos con estos catetos:
-
-1. $a = 6$, $b = 8$
-2. $a = 5$, $b = 12$
-3. $a = 8$, $b = 15$
+### Ejercicio 1
+Calcula la hipotenusa de un triángulo rectángulo cuyos catetos miden 5 cm y 12 cm.
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. $c = \sqrt{36 + 64} = \sqrt{100} = 10$
-2. $c = \sqrt{25 + 144} = \sqrt{169} = 13$
-3. $c = \sqrt{64 + 225} = \sqrt{289} = 17$
+**Razonamiento:**
+$$
+c = \sqrt{5^2 + 12^2}
+$$
+
+$$
+c = \sqrt{25 + 144}
+$$
+
+$$
+c = \sqrt{169}
+$$
+
+**Resultado:**
+$$
+\boxed{13 \text{ cm}}
+$$
+
+</details>
+
+### Ejercicio 2
+Si la hipotenusa mide 15 cm y uno de los catetos mide 9 cm, ¿cuánto mide el otro cateto?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Usamos resta.
+
+$$
+b = \sqrt{15^2 - 9^2}
+$$
+
+$$
+b = \sqrt{225 - 81}
+$$
+
+$$
+b = \sqrt{144}
+$$
+
+**Resultado:**
+$$
+\boxed{12 \text{ cm}}
+$$
+
+</details>
+
+### Ejercicio 3
+¿Es posible formar un triángulo rectángulo con lados de 2, 3 y 4 metros? (Verifícalo).
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Comprobamos si $2^2 + 3^2 = 4^2$.
+
+$$
+4 + 9 = 13
+$$
+
+$$
+4^2 = 16
+$$
+
+$$
+13 \neq 16
+$$
+
+**Resultado:**
+$$
+\boxed{\text{No es rectángulo}}
+$$
+
+</details>
+
+### Ejercicio 4
+Calcula la diagonal de un cuadrado cuyo lado mide 1 metro.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$$
+d = \sqrt{1^2 + 1^2}
+$$
+
+$$
+d = \sqrt{1 + 1}
+$$
+
+$$
+d = \sqrt{2}
+$$
+
+**Resultado:**
+$$
+\boxed{\approx 1.41 \text{ m}}
+$$
+
+</details>
+
+### Ejercicio 5
+Un barco navega 8 km al Norte y luego 6 km al Este. ¿A qué distancia en línea recta se encuentra del puerto de salida?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$$
+d = \sqrt{8^2 + 6^2}
+$$
+
+$$
+d = \sqrt{64 + 36}
+$$
+
+$$
+d = \sqrt{100}
+$$
+
+**Resultado:**
+$$
+\boxed{10 \text{ km}}
+$$
+
+</details>
+
+### Ejercicio 6
+Calcula la altura de un triángulo equilátero de lado 2 cm.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+La altura divide la base en dos (1 cm y 1 cm).
+Se forma un triángulo rectángulo con hipotenusa 2 y cateto base 1.
+
+$$
+h = \sqrt{2^2 - 1^2}
+$$
+
+$$
+h = \sqrt{4 - 1}
+$$
+
+**Resultado:**
+$$
+\boxed{\sqrt{3} \approx 1.73 \text{ cm}}
+$$
+
+</details>
+
+### Ejercicio 7
+Si la hipotenusa de un triángulo rectángulo es $\sqrt{10}$ y un cateto es 1, halla el otro cateto.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$$
+x = \sqrt{(\sqrt{10})^2 - 1^2}
+$$
+
+$$
+x = \sqrt{10 - 1}
+$$
+
+$$
+x = \sqrt{9}
+$$
+
+**Resultado:**
+$$
+\boxed{3}
+$$
+
+</details>
+
+### Ejercicio 8
+¿Cuál es la longitud de la hipotenusa en un triángulo con catetos iguales de 5 cm?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$$
+c = \sqrt{5^2 + 5^2}
+$$
+
+$$
+c = \sqrt{25 + 25}
+$$
+
+$$
+c = \sqrt{50} = \sqrt{25 \cdot 2}
+$$
+
+**Resultado:**
+$$
+\boxed{5\sqrt{2} \text{ cm}}
+$$
+
+</details>
+
+### Ejercicio 9
+Comprueba si los números (8, 15, 17) forman una terna pitagórica.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$$
+8^2 + 15^2 = 64 + 225 = 289
+$$
+
+$$
+17^2 = 289
+$$
+
+**Resultado:**
+$$
+\boxed{\text{Sí, lo son}}
+$$
+
+</details>
+
+### Ejercicio 10
+Una puerta rectangular mide 2 metros de alto y 1 metro de ancho. ¿Pasará un tablero de madera de 2.20 metros de diámetro por la diagonal?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Calculamos la diagonal de la puerta.
+
+$$
+D = \sqrt{2^2 + 1^2}
+$$
+
+$$
+D = \sqrt{4 + 1} = \sqrt{5}
+$$
+
+$$
+D \approx 2.236 \text{ m}
+$$
+
+Como $2.236 > 2.20$, el tablero pasa.
+
+**Resultado:**
+$$
+\boxed{\text{Sí pasa}}
+$$
 
 </details>
 
 ---
 
-### Ejercicio 2: Calcular cateto
+## 🔑 Resumen
 
-Encuentra el cateto faltante:
+| Concepto | Fórmula | Cuándo usar |
+|----------|---------|-------------|
+| **Hallar Hipotenusa** | $c = \sqrt{a^2+b^2}$ | Cuando conoces los dos lados cortos. |
+| **Hallar Cateto** | $a = \sqrt{c^2-b^2}$ | Cuando conoces la diagonal y un lado corto. |
+| **Recíproco** | $a^2+b^2=c^2$ | Para verificar si una esquina es recta (90°). |
 
-1. $c = 10$, $b = 6$, $a = ?$
-2. $c = 25$, $a = 7$, $b = ?$
-
-<details>
-<summary><strong>Ver respuestas</strong></summary>
-
-1. $a = \sqrt{100 - 36} = \sqrt{64} = 8$
-2. $b = \sqrt{625 - 49} = \sqrt{576} = 24$
-
-</details>
-
----
-
-### Ejercicio 3: ¿Es triángulo rectángulo?
-
-Determina si estos triángulos son rectángulos:
-
-1. Lados: 9, 12, 15
-2. Lados: 5, 7, 9
-3. Lados: 20, 21, 29
-
-<details>
-<summary><strong>Ver respuestas</strong></summary>
-
-1. $15^2 = 225$, $9^2 + 12^2 = 81 + 144 = 225$ → **Sí es rectángulo**
-2. $9^2 = 81$, $5^2 + 7^2 = 25 + 49 = 74$ → $81 \neq 74$, **No es rectángulo**
-3. $29^2 = 841$, $20^2 + 21^2 = 400 + 441 = 841$ → **Sí es rectángulo**
-
-</details>
-
----
-
-### Ejercicio 4: Problema aplicado
-
-Un campo de fútbol mide 100 m de largo y 64 m de ancho. Un jugador quiere correr en diagonal de una esquina a la opuesta. ¿Qué distancia recorrerá?
-
-<details>
-<summary><strong>Ver respuesta</strong></summary>
-
-$$
-d = \sqrt{100^2 + 64^2} = \sqrt{10000 + 4096} = \sqrt{14096} \approx 118.7 \text{ m}
-$$
-
-</details>
-
----
+> Recuerda: La hipotenusa es egoísta, quiere todo el espacio, por eso **suma**. Los catetos son modestos, si buscas uno, tienes que **restar**.
