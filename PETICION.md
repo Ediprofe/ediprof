@@ -167,12 +167,21 @@ Situaciones que requieren confirmación:
 
 Corrige las siguientes lecciones al estilo Ediprofe.
 
+http://localhost:4321/matematicas/geometria-euclidiana/transformaciones/introduccion-transformaciones
+
+http://localhost:4321/matematicas/geometria-euclidiana/transformaciones/traslacion
+
+http://localhost:4321/matematicas/geometria-euclidiana/transformaciones/rotacion
+
+http://localhost:4321/matematicas/geometria-euclidiana/transformaciones/reflexion
+
+http://localhost:4321/matematicas/geometria-euclidiana/transformaciones/homotecia
 
 
 
-LAS IMAGENES QUE SE GENERAN CON LIBRERÍA DE JAVASCRIPT ELIMINALAS, QUE YO LUEGO LAS REGENERO.
+LAS IMAGENES QUE YA APARECEN EN CADA LECCIÓN ELIMÍNALAS!
 
-El símbolo $ déjalo mejor como "pesos" porque hay un problema para renderizar eso en latex.
+Si encuentras un símbolo $ déjalo mejor como "pesos" porque hay un problema para renderizar eso en latex.
 
 ## PASO 1: LEE las referencias
 

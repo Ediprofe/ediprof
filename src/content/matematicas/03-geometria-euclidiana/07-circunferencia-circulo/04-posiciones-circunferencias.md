@@ -1,237 +1,269 @@
-# Posiciones entre Circunferencias
+# **Posiciones entre Circunferencias**
 
-Dos circunferencias pueden estar en diferentes posiciones relativas según la distancia entre sus centros y la relación con sus radios.
-
-**📊 Posiciones relativas entre circunferencias**
-
-![Posiciones entre circunferencias](/images/geometria/circulos/posiciones-circunferencias.svg)
+Dos burbujas de jabón flotando pueden hacer tres cosas: mantenerse separadas, unirse compartiendo una pared, o que una se "coma" a la otra. Así se comportan también las circunferencias.
 
 ---
 
-## 📖 Elementos a considerar
+## 🎯 ¿Qué vas a aprender?
 
-Sean dos circunferencias con:
-- Centros $O_1$ y $O_2$
-- Radios $r_1$ y $r_2$ (asumimos $r_1 \geq r_2$)
-- Distancia entre centros $d = \overline{O_1O_2}$
-
----
-
-## 📖 Circunferencias exteriores
-
-> **Definición:** Dos circunferencias son **exteriores** cuando **no tienen puntos en común** y una está completamente fuera de la otra.
-
-### Condición
-
-$$
-d > r_1 + r_2
-$$
-
-La distancia entre centros es **mayor** que la suma de los radios.
-
-### Puntos comunes: 0
+- Clasificar la posición de dos circunferencias comparando la distancia ($d$) entre sus centros con la suma o resta de sus radios ($R$ y $r$).
+- Distinguir entre tangentes exteriores e interiores.
+- Identificar cuándo dos circunferencias son secantes o concéntricas.
 
 ---
 
-## 📖 Circunferencias tangentes exteriores
+## 📏 Clasificación por Distancia entre Centros ($d$)
 
-> **Definición:** Dos circunferencias son **tangentes exteriores** cuando se tocan en **un solo punto** y cada una está fuera de la otra.
+Para saber qué hacen dos circunferencias, comparamos la distancia entre sus centros con sus radios.
+Sean $R$ el radio mayor y $r$ el radio menor.
 
-### Condición
+<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+    <strong style="color: #1e293b; font-size: 0.95rem; margin-left: 0.3rem;">Posiciones Relativas</strong>
+  </div>
+  <img src="/images/geometria/circulos/posiciones-circunferencias.svg" alt="Diagrama de posiciones relativas entre circunferencias" style="width: 100%; height: auto;">
+</div>
 
-$$
-d = r_1 + r_2
-$$
+### 1. Exteriores (Separadas)
+Están lejos una de la otra. No se tocan.
+*   **Condición:** La distancia es mayor que la suma de sus radios.
+$$ d > R + r $$
 
-La distancia entre centros es **igual** a la suma de los radios.
+### 2. Tangentes Exteriores (Se besan por fuera)
+Se tocan en un solo punto, pero una está fuera de la otra.
+*   **Condición:** La distancia es exactamente la suma de los radios.
+$$ d = R + r $$
 
-### Puntos comunes: 1
+### 3. Secantes (Se cruzan)
+Tienen dos puntos en común, como los aros olímpicos.
+*   **Condición:** La distancia es menor que la suma, pero mayor que la diferencia.
+$$ R - r < d < R + r $$
 
----
+### 4. Tangentes Interiores (Se besan por dentro)
+Se tocan en un punto, pero una está dentro de la otra.
+*   **Condición:** La distancia es exactamente la diferencia de los radios.
+$$ d = R - r $$
 
-## 📖 Circunferencias secantes
+### 5. Interiores (Una dentro de otra)
+Una está flotando dentro de la otra sin tocarla.
+*   **Condición:** La distancia es menor que la diferencia de los radios.
+$$ d < R - r $$
 
-> **Definición:** Dos circunferencias son **secantes** cuando se cortan en **dos puntos**.
-
-### Condición
-
-$$
-|r_1 - r_2| < d < r_1 + r_2
-$$
-
-La distancia está entre la diferencia y la suma de los radios.
-
-### Puntos comunes: 2
-
----
-
-## 📖 Circunferencias tangentes interiores
-
-> **Definición:** Dos circunferencias son **tangentes interiores** cuando se tocan en **un solo punto** y una está dentro de la otra.
-
-### Condición
-
-$$
-d = |r_1 - r_2|
-$$
-
-La distancia entre centros es **igual** a la diferencia de los radios.
-
-### Puntos comunes: 1
+### 6. Concéntricas (Mismo centro)
+Comparten el mismo centro ("Ojo de buey").
+*   **Condición:** La distancia es cero.
+$$ d = 0 $$
 
 ---
 
-## 📖 Circunferencias interiores
+## ⚙️ Ejemplos Resueltos
 
-> **Definición:** Dos circunferencias son **interiores** cuando una está completamente **dentro** de la otra, sin tocarse.
+### Ejemplo 1: Identificación
 
-### Condición
+Dos circunferencias tienen radios de 8 cm y 3 cm. La distancia entre centros es de 11 cm. ¿Cómo están posicionadas?
 
+**Razonamiento:**
+Sumamos radios: $8 + 3 = 11$.
+Restamos radios: $8 - 3 = 5$.
+La distancia ($d=11$) es igual a la suma.
+
+**Resultado:**
 $$
-d < |r_1 - r_2|
+\boxed{\text{Tangentes Exteriores}}
 $$
 
-La distancia entre centros es **menor** que la diferencia de los radios.
+### Ejemplo 2: Cálculo de Distancia
 
-### Puntos comunes: 0
+¿Cuál debe ser la distancia entre centros para que dos circunferencias de radios 10 cm y 6 cm sean tangentes interiores?
+
+**Razonamiento:**
+Para tangencia interior, $d = R - r$.
+$$
+d = 10 - 6 = 4
+$$
+
+**Resultado:**
+$$
+\boxed{4 \text{ cm}}
+$$
 
 ---
 
-## 📖 Circunferencias concéntricas
+## 📝 Ejercicios de Práctica
 
-> **Definición:** Dos circunferencias son **concéntricas** cuando tienen el **mismo centro**.
-
-### Condición
-
-$$
-d = 0
-$$
-
-### Puntos comunes: 0 (si $r_1 \neq r_2$) o infinitos (si $r_1 = r_2$)
-
----
-
-## 📖 Tabla resumen
-
-| Posición | Condición | Puntos comunes |
-|----------|-----------|----------------|
-| Exteriores | $d > r_1 + r_2$ | 0 |
-| Tangentes exteriores | $d = r_1 + r_2$ | 1 |
-| Secantes | $\|r_1 - r_2\| < d < r_1 + r_2$ | 2 |
-| Tangentes interiores | $d = \|r_1 - r_2\|$ | 1 |
-| Interiores | $d < \|r_1 - r_2\|$ | 0 |
-| Concéntricas | $d = 0$ | 0 (o infinitos) |
-
----
-
-## 📖 Ejemplos
-
-### Ejemplo 1
-
-$r_1 = 5$ cm, $r_2 = 3$ cm, $d = 10$ cm
-
-$$
-r_1 + r_2 = 8, \quad |r_1 - r_2| = 2
-$$
-
-Como $d = 10 > 8 = r_1 + r_2$: **Exteriores**
-
-### Ejemplo 2
-
-$r_1 = 6$ cm, $r_2 = 4$ cm, $d = 10$ cm
-
-$$
-d = 6 + 4 = r_1 + r_2
-$$
-
-**Tangentes exteriores**
-
-### Ejemplo 3
-
-$r_1 = 8$ cm, $r_2 = 5$ cm, $d = 6$ cm
-
-$$
-|r_1 - r_2| = 3, \quad r_1 + r_2 = 13
-$$
-
-Como $3 < 6 < 13$: **Secantes**
-
----
-
-## 📝 Ejercicios de práctica
-
-### Ejercicio 1: Clasificar posiciones
-
-Determina la posición relativa de las circunferencias:
-
-1. $r_1 = 7$ cm, $r_2 = 4$ cm, $d = 15$ cm
-2. $r_1 = 6$ cm, $r_2 = 3$ cm, $d = 9$ cm
-3. $r_1 = 10$ cm, $r_2 = 4$ cm, $d = 8$ cm
-4. $r_1 = 8$ cm, $r_2 = 3$ cm, $d = 5$ cm
+### Ejercicio 1
+$R=10, r=5, d=20$. ¿Posición?
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. $r_1 + r_2 = 11$, $d = 15 > 11$ → **Exteriores**
-2. $r_1 + r_2 = 9$, $d = 9 = 9$ → **Tangentes exteriores**
-3. $|r_1 - r_2| = 6$, $r_1 + r_2 = 14$, $6 < 8 < 14$ → **Secantes**
-4. $|r_1 - r_2| = 5$, $d = 5 = 5$ → **Tangentes interiores**
+**Razonamiento:**
+$R+r = 15$.
+$d=20 > 15$. Estan muy lejos.
+
+**Resultado:**
+$$
+\boxed{\text{Exteriores}}
+$$
+
+</details>
+
+### Ejercicio 2
+$R=7, r=3, d=2$. ¿Posición?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$R-r = 4$.
+$d=2 < 4$. Está muy adentro.
+
+**Resultado:**
+$$
+\boxed{\text{Interiores}}
+$$
+
+</details>
+
+### Ejercicio 3
+$R=6, r=4, d=8$. ¿Posición?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Suma = 10. Resta = 2.
+$2 < 8 < 10$. Está en el medio.
+
+**Resultado:**
+$$
+\boxed{\text{Secantes}}
+$$
+
+</details>
+
+### Ejercicio 4
+Si dos circunferencias comparten el mismo centro, ¿cómo se llaman?
+
+<details>
+<summary>Ver solución</summary>
+
+**Respuesta:**
+
+$$
+\text{Concéntricas}
+$$
+
+</details>
+
+### Ejercicio 5
+Calcula la distancia de centros para que circunferencias de radio 12 y 5 sean tangentes interiores.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$$
+d = 12 - 5
+$$
+
+**Resultado:**
+$$
+\boxed{7}
+$$
+
+</details>
+
+### Ejercicio 6
+$d=0$. ¿Posición?
+
+<details>
+<summary>Ver solución</summary>
+
+**Respuesta:**
+
+$$
+\text{Concéntricas}
+$$
+
+</details>
+
+### Ejercicio 7
+¿Cuántos puntos de contacto tienen dos circunferencias secantes?
+
+<details>
+<summary>Ver solución</summary>
+
+**Respuesta:**
+
+$$
+2
+$$
+
+</details>
+
+### Ejercicio 8
+Si $R=5$ y $r=5$, y son tangentes exteriores, ¿cuánto es $d$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$$
+d = 5 + 5
+$$
+
+**Resultado:**
+$$
+\boxed{10}
+$$
+
+</details>
+
+### Ejercicio 9
+Para que sean interiores, la distancia debe ser menor que...
+
+<details>
+<summary>Ver solución</summary>
+
+**Respuesta:**
+
+$$
+R - r
+$$
+
+</details>
+
+### Ejercicio 10
+Dos engranajes se tocan por fuera. Uno tiene radio 20 cm y el otro 30 cm. ¿A qué distancia están sus ejes?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Engranajes tangentes exteriores.
+$$
+d = 20 + 30
+$$
+
+**Resultado:**
+$$
+\boxed{50 \text{ cm}}
+$$
 
 </details>
 
 ---
 
-### Ejercicio 2: Encontrar distancia
+## 🔑 Resumen
 
-¿A qué distancia deben estar los centros para que las circunferencias sean tangentes exteriores si $r_1 = 5$ cm y $r_2 = 3$ cm?
+| Posición | Distancia ($d$) | Puntos |
+| :--- | :--- | :---: |
+| **Exteriores** | $> R+r$ | 0 |
+| **Tangentes Ext.** | $= R+r$ | 1 |
+| **Secantes** | Entre resta y suma | 2 |
+| **Tangentes Int.** | $= R-r$ | 1 |
+| **Interiores** | $< R-r$ | 0 |
 
-<details>
-<summary><strong>Ver respuesta</strong></summary>
-
-$$
-d = r_1 + r_2 = 5 + 3 = 8 \text{ cm}
-$$
-
-</details>
-
----
-
-### Ejercicio 3: Problema inverso
-
-Dos circunferencias secantes tienen radios 10 cm y 6 cm. ¿Entre qué valores puede estar la distancia entre centros?
-
-<details>
-<summary><strong>Ver respuesta</strong></summary>
-
-$$
-|10 - 6| < d < 10 + 6
-$$
-
-$$
-4 < d < 16
-$$
-
-La distancia debe estar entre 4 cm y 16 cm (sin incluir los extremos).
-
-</details>
-
----
-
-### Ejercicio 4: Verdadero o Falso
-
-1. Dos circunferencias concéntricas tienen el mismo centro.
-2. Si $d = r_1 + r_2$, las circunferencias son tangentes interiores.
-3. Dos circunferencias secantes tienen exactamente 2 puntos en común.
-4. Si una circunferencia está dentro de otra sin tocarla, son interiores.
-
-<details>
-<summary><strong>Ver respuestas</strong></summary>
-
-1. **Verdadero**
-2. **Falso** - Son tangentes exteriores
-3. **Verdadero**
-4. **Verdadero**
-
-</details>
-
----
+> La distancia te cuenta la historia completa de su relación.

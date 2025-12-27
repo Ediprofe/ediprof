@@ -1,276 +1,309 @@
-# Ángulos en la Circunferencia
+# **Ángulos en la Circunferencia**
 
-Los ángulos asociados a la circunferencia tienen propiedades especiales según dónde esté ubicado el vértice. En esta lección estudiamos los tipos principales.
-
----
-
-## 📖 Tipos de ángulos según la posición del vértice
-
-| Tipo de ángulo | Posición del vértice |
-|----------------|---------------------|
-| Central | En el centro |
-| Inscrito | En la circunferencia |
-| Semi-inscrito | En la circunferencia (un lado tangente) |
-| Interior | Dentro de la circunferencia |
-| Exterior | Fuera de la circunferencia |
+¿Has notado que en el cine, sin importar si te sientas en el centro o al costado, el ángulo de visión cambia? En una circunferencia, la posición desde donde observas un arco determina matemáticamente el ángulo que ves.
 
 ---
 
-## 📖 Ángulo central
+## 🎯 ¿Qué vas a aprender?
 
-> **Definición:** Un ángulo central tiene su **vértice en el centro** de la circunferencia y sus lados son radios.
+- Diferenciar entre ángulo central, inscrito, semi-inscrito, interior y exterior.
+- Calcular la medida de ángulos basándose en los arcos que interceptan.
+- Aplicar la propiedad fundamental de que el ángulo inscrito es la mitad del central.
+- Usar las fórmulas de semisuma y semidiferencia para ángulos interiores y exteriores.
 
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem;">
-    <span style="font-size: 1rem;">📊</span>
-    <strong style="color: #1e293b; font-size: 0.9rem; margin-left: 0.3rem;">Ángulo Central</strong>
-  </div>
+---
 
-![Ángulo central](/images/geometria/circulos/angulo-central.svg)
+## 📍 Ángulos según el Vértice
 
+La clave para saber qué fórmula usar es mirar **dónde está el vértice** (la punta del ángulo).
+
+### 1. Ángulo Central (Vértice en el Centro)
+Es el jefe. Su medida es exactamente igual a la del arco que abarca.
+
+<div style="width: 100%; margin-bottom: 20px;">
+  <img src="/images/geometria/circulos/angulo-central.svg" alt="Ángulo central" style="width: 100%; height: auto;">
 </div>
 
-### Propiedad
-
-El ángulo central tiene la **misma medida** que el arco que abarca:
-
 $$
-\text{Ángulo central} = \text{Arco}
+\text{Ángulo Central} = \text{Arco}
 $$
 
-### Ejemplo
+### 2. Ángulo Inscrito (Vértice en el Borde)
+Es el más común. Su vértice toca la circunferencia y sus lados la cortan.
+> **Propiedad de Oro:** Mide la **mitad** del arco que tiene enfrente.
 
-Si el ángulo central mide 60°, el arco que abarca también mide 60°.
-
----
-
-## 📖 Ángulo inscrito
-
-> **Definición:** Un ángulo inscrito tiene su **vértice en la circunferencia** y sus lados son cuerdas.
-
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem;">
-    <span style="font-size: 1rem;">📊</span>
-    <strong style="color: #1e293b; font-size: 0.9rem; margin-left: 0.3rem;">Ángulo Inscrito</strong>
-  </div>
-
-![Ángulo inscrito](/images/geometria/circulos/angulo-inscrito.svg)
-
+<div style="width: 100%; margin-bottom: 20px;">
+  <img src="/images/geometria/circulos/angulo-inscrito.svg" alt="Ángulo inscrito" style="width: 100%; height: auto;">
 </div>
 
-### Propiedad fundamental
-
-El ángulo inscrito mide la **mitad del arco** que abarca:
-
 $$
-\text{Ángulo inscrito} = \frac{\text{Arco}}{2}
+\text{Ángulo Inscrito} = \frac{\text{Arco}}{2}
 $$
 
-### Teorema
+### 3. Ángulo Semi-Inscrito (Vértice en el Borde, Tangente)
+Tiene un pie dentro (cuerda) y otro fuera (tangente). Su vértice es el punto de tangencia.
+Funciona igual que el inscrito: mide la **mitad** del arco.
 
-Un ángulo inscrito es igual a la **mitad del ángulo central** que abarca el mismo arco:
-
-$$
-\alpha_{inscrito} = \frac{\alpha_{central}}{2}
-$$
-
-### Ejemplo
-
-Si el arco mide 80°, el ángulo inscrito mide $\frac{80°}{2} = 40°$.
-
----
-
-## 📖 Corolarios importantes
-
-### 1. Ángulos inscritos sobre el mismo arco
-
-Todos los ángulos inscritos que abarcan el **mismo arco** son **iguales**.
-
-### 2. Ángulo inscrito en semicircunferencia
-
-Un ángulo inscrito que abarca un **diámetro** (semicircunferencia = 180°) mide:
-
-$$
-\alpha = \frac{180°}{2} = 90°
-$$
-
-> **Teorema de Tales:** Todo ángulo inscrito en una semicircunferencia es un ángulo recto.
-
----
-
-## 📖 Ángulo semi-inscrito
-
-> **Definición:** Un ángulo semi-inscrito tiene su vértice en la circunferencia, un lado es una **cuerda** y el otro es una **tangente**.
-
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem;">
-    <span style="font-size: 1rem;">📊</span>
-    <strong style="color: #1e293b; font-size: 0.9rem; margin-left: 0.3rem;">Ángulo Semi-inscrito</strong>
-  </div>
-
-![Ángulo semi-inscrito](/images/geometria/circulos/angulo-semi-inscrito.svg)
-
+<div style="width: 100%; margin-bottom: 20px;">
+  <img src="/images/geometria/circulos/angulo-semi-inscrito.svg" alt="Ángulo semi-inscrito" style="width: 100%; height: auto;">
 </div>
 
-### Propiedad
-
-El ángulo semi-inscrito mide la **mitad del arco** que determina:
-
 $$
-\text{Ángulo semi-inscrito} = \frac{\text{Arco}}{2}
+\text{Ángulo Semi-Inscrito} = \frac{\text{Arco}}{2}
 $$
-
-(Igual que el inscrito)
 
 ---
 
-## 📖 Ángulo interior (vértice dentro)
+## ➕➖ Ángulos Interior y Exterior
 
-> **Definición:** Un ángulo interior tiene su vértice **dentro** de la circunferencia (pero no en el centro).
+### 4. Ángulo Interior (Vértice Adentro)
+Se forma cuando dos cuerdas se cruzan en un punto interior (no el centro).
+Mira a dos arcos (uno al frente y otro a su espalda).
+> **Fórmula:** La **Semisuma** de los arcos.
 
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem;">
-    <span style="font-size: 1rem;">📊</span>
-    <strong style="color: #1e293b; font-size: 0.9rem; margin-left: 0.3rem;">Ángulo Interior</strong>
-  </div>
-
-![Ángulo interior](/images/geometria/circulos/angulo-interior.svg)
-
+<div style="width: 100%; margin-bottom: 20px;">
+  <img src="/images/geometria/circulos/angulo-interior.svg" alt="Ángulo interior" style="width: 100%; height: auto;">
 </div>
 
-### Propiedad
-
-El ángulo interior mide la **semisuma de los arcos** que abarcan sus lados:
-
 $$
-\alpha = \frac{\text{Arco}_1 + \text{Arco}_2}{2}
+\text{Interior} = \frac{\text{Arco Mayor} + \text{Arco Menor}}{2}
 $$
 
-### Ejemplo
+### 5. Ángulo Exterior (Vértice Afuera)
+Se forma cuando dos líneas se encuentran fuera de la circunferencia.
+Atrapa dos arcos entre sus "brazos" (uno grande lejos y uno pequeño cerca).
+> **Fórmula:** La **Semidiferencia** de los arcos.
 
-Si los arcos miden 50° y 70°:
-
-$$
-\alpha = \frac{50° + 70°}{2} = 60°
-$$
-
----
-
-## 📖 Ángulo exterior (vértice fuera)
-
-> **Definición:** Un ángulo exterior tiene su vértice **fuera** de la circunferencia.
-
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem;">
-    <span style="font-size: 1rem;">📊</span>
-    <strong style="color: #1e293b; font-size: 0.9rem; margin-left: 0.3rem;">Ángulo Exterior</strong>
-  </div>
-
-![Ángulo exterior](/images/geometria/circulos/angulo-exterior.svg)
-
+<div style="width: 100%; margin-bottom: 20px;">
+  <img src="/images/geometria/circulos/angulo-exterior.svg" alt="Ángulo exterior" style="width: 100%; height: auto;">
 </div>
 
-### Propiedad
-
-El ángulo exterior mide la **semidiferencia de los arcos** que abarcan sus lados:
-
 $$
-\alpha = \frac{\text{Arco mayor} - \text{Arco menor}}{2}
-$$
-
-### Ejemplo
-
-Si los arcos miden 100° y 40°:
-
-$$
-\alpha = \frac{100° - 40°}{2} = 30°
+\text{Exterior} = \frac{\text{Arco Mayor} - \text{Arco Menor}}{2}
 $$
 
 ---
 
-## 📖 Tabla resumen
+## ⚙️ Ejemplos Resueltos
 
-| Tipo de ángulo | Vértice | Fórmula |
-|----------------|---------|---------|
-| Central | En el centro | = Arco |
-| Inscrito | En la circunferencia | = Arco / 2 |
-| Semi-inscrito | En la circunferencia | = Arco / 2 |
-| Interior | Dentro | = (Arco₁ + Arco₂) / 2 |
-| Exterior | Fuera | = (Arco mayor − Arco menor) / 2 |
+### Ejemplo 1: Cálculo de Ángulo Inscrito
+
+Si un arco mide $80^\circ$, ¿cuánto mide el ángulo inscrito que lo mira?
+
+**Razonamiento:**
+El ángulo inscrito es la mitad del arco.
+
+$$
+\alpha = \frac{80^\circ}{2}
+$$
+
+**Resultado:**
+$$
+\boxed{40^\circ}
+$$
+
+### Ejemplo 2: Ángulo Exterior
+
+Desde un punto exterior, un ángulo intercepta dos arcos de $100^\circ$ y $30^\circ$. Calcula el ángulo.
+
+**Razonamiento:**
+Usamos la semidiferencia.
+
+$$
+\alpha = \frac{100 - 30}{2} = \frac{70}{2}
+$$
+
+**Resultado:**
+$$
+\boxed{35^\circ}
+$$
 
 ---
 
-## 📝 Ejercicios de práctica
+## 📝 Ejercicios de Práctica
 
-### Ejercicio 1: Ángulo inscrito
-
-Un arco mide 120°. ¿Cuánto mide el ángulo inscrito que lo abarca?
+### Ejercicio 1
+El ángulo central mide $50^\circ$. ¿Cuánto mide el arco correspondiente?
 
 <details>
-<summary><strong>Ver respuesta</strong></summary>
+<summary>Ver solución</summary>
 
+**Razonamiento:**
+Central = Arco.
+
+**Resultado:**
 $$
-\alpha = \frac{120°}{2} = 60°
+\boxed{50^\circ}
+$$
+
+</details>
+
+### Ejercicio 2
+Un ángulo inscrito subtiende (mira a) un diámetro. ¿Cuánto mide?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+El arco de un diámetro es media vuelta ($180^\circ$).
+Inscrito = $180 / 2$.
+
+**Resultado:**
+$$
+\boxed{90^\circ}
+$$
+
+</details>
+
+### Ejercicio 3
+Dos cuerdas se cruzan. Los arcos miden $40^\circ$ y $80^\circ$. Calcula el ángulo interior.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Semisuma.
+$$
+\frac{40+80}{2} = \frac{120}{2}
+$$
+
+**Resultado:**
+$$
+\boxed{60^\circ}
+$$
+
+</details>
+
+### Ejercicio 4
+Si el ángulo inscrito mide $30^\circ$, ¿cuánto mide el arco?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Arco = Doble del inscrito.
+$$
+2 \times 30
+$$
+
+**Resultado:**
+$$
+\boxed{60^\circ}
+$$
+
+</details>
+
+### Ejercicio 5
+Calcula el ángulo exterior si los arcos son $120^\circ$ y $40^\circ$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Semidiferencia.
+$$
+\frac{120-40}{2} = \frac{80}{2}
+$$
+
+**Resultado:**
+$$
+\boxed{40^\circ}
+$$
+
+</details>
+
+### Ejercicio 6
+Un ángulo semi-inscrito abarca un arco de $140^\circ$. Calcúlalo.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Mitad del arco.
+
+**Resultado:**
+$$
+\boxed{70^\circ}
+$$
+
+</details>
+
+### Ejercicio 7
+Todos los ángulos inscritos que miran al mismo arco son iguales. ¿Verdadero o Falso?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Verdadero. Si el arco es constante, su mitad también lo es.
+
+**Resultado:**
+$$
+\boxed{\text{Verdadero}}
+$$
+
+</details>
+
+### Ejercicio 8
+Si el ángulo central es $80^\circ$, ¿cuánto mide el ángulo inscrito que mira al mismo arco?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Inscrito es la mitad del central.
+
+**Resultado:**
+$$
+\boxed{40^\circ}
+$$
+
+</details>
+
+### Ejercicio 9
+Arco mayor = $200^\circ$, Arco menor = $60^\circ$. Vértice exterior. Calcula.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$$
+\frac{200-60}{2} = \frac{140}{2}
+$$
+
+**Resultado:**
+$$
+\boxed{70^\circ}
+$$
+
+</details>
+
+### Ejercicio 10
+Si un cuadrilátero está inscrito en una circunferencia, sus ángulos opuestos suman $180^\circ$. ¿Por qué?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Porque entre los dos ángulos inscritos opuestos abarcan la circunferencia completa ($360^\circ$). La suma de sus medidas será $360/2 = 180^\circ$.
+
+**Resultado:**
+$$
+\boxed{\text{Son suplementarios}}
 $$
 
 </details>
 
 ---
 
-### Ejercicio 2: Encontrar el arco
+## 🔑 Resumen
 
-Un ángulo inscrito mide 35°. ¿Cuánto mide el arco que abarca?
+| Ángulo | Ubicación Vértice | Fórmula |
+| :--- | :--- | :--- |
+| **Central** | Centro | $= \text{Arco}$ |
+| **Inscrito** | Borde | $= \text{Arco}/2$ |
+| **Semi-Inscrito** | Borde (Tangente) | $= \text{Arco}/2$ |
+| **Interior** | Adentro | $= \text{Suma}/2$ |
+| **Exterior** | Afuera | $= \text{Resta}/2$ |
 
-<details>
-<summary><strong>Ver respuesta</strong></summary>
-
-$$
-\text{Arco} = 2 \times 35° = 70°
-$$
-
-</details>
-
----
-
-### Ejercicio 3: Ángulo interior
-
-Dos cuerdas se cortan dentro de la circunferencia. Los arcos opuestos miden 80° y 60°. ¿Cuánto mide el ángulo?
-
-<details>
-<summary><strong>Ver respuesta</strong></summary>
-
-$$
-\alpha = \frac{80° + 60°}{2} = 70°
-$$
-
-</details>
-
----
-
-### Ejercicio 4: Ángulo exterior
-
-Desde un punto exterior salen dos secantes. Los arcos interceptados miden 110° y 30°. ¿Cuánto mide el ángulo?
-
-<details>
-<summary><strong>Ver respuesta</strong></summary>
-
-$$
-\alpha = \frac{110° - 30°}{2} = 40°
-$$
-
-</details>
-
----
-
-### Ejercicio 5: Teorema de Tales
-
-Un triángulo está inscrito en una circunferencia con la hipotenusa como diámetro. ¿Cuánto mide el ángulo opuesto al diámetro?
-
-<details>
-<summary><strong>Ver respuesta</strong></summary>
-
-Por el Teorema de Tales, el ángulo inscrito en una semicircunferencia es **90°**.
-
-</details>
-
----
+> Recuerda: Adentro $\to$ Suma. Afuera $\to$ Resta. Borde $\to$ Mitad.

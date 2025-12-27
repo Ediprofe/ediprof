@@ -1,16 +1,19 @@
-# Elementos de la Circunferencia
+# **Elementos de la Circunferencia**
 
-Además del centro, radio y diámetro, la circunferencia tiene otros elementos importantes: cuerdas, arcos, secantes y tangentes.
+Una circunferencia es mucho más que un simple centro y un radio. Tiene una anatomía propia con cuerdas, líneas que la cortan, y regiones que se forman dentro de ella. Conocer estos elementos es clave para resolver problemas de ingeniería y diseño.
 
 ---
 
-## 📖 Repaso: Elementos básicos
+## 🎯 ¿Qué vas a aprender?
 
-| Elemento | Definición |
-|----------|------------|
-| Centro ($O$) | Punto equidistante de todos los puntos de la circunferencia |
-| Radio ($r$) | Segmento del centro a la circunferencia |
-| Diámetro ($d$) | Segmento que pasa por el centro con extremos en la circunferencia |
+- Diferenciar entre recta secante, tangente y exterior.
+- Identificar cuerdas, arcos y saetas.
+- Calcular el área de sectores circulares (rebanadas de pizza) y coronas (anillos).
+- Entender propiedades clave de las tangentes.
+
+---
+
+## 📏 Líneas en la Circunferencia
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0;">
   <div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem;">
@@ -18,269 +21,308 @@ Además del centro, radio y diámetro, la circunferencia tiene otros elementos i
       <span style="font-size: 1rem;">📊</span>
       <strong style="color: #1e293b; font-size: 0.9rem; margin-left: 0.3rem;">Radio</strong>
     </div>
-
-![Radio](/images/geometria/circulos/elemento-radio.svg)
-
+    <img src="/images/geometria/circulos/elemento-radio.svg" alt="Radio" style="width: 100%; height: auto;">
   </div>
   <div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem;">
     <div style="margin-bottom: 0.5rem;">
       <span style="font-size: 1rem;">📊</span>
       <strong style="color: #1e293b; font-size: 0.9rem; margin-left: 0.3rem;">Diámetro</strong>
     </div>
-
-![Diámetro](/images/geometria/circulos/elemento-diametro.svg)
-
+    <img src="/images/geometria/circulos/elemento-diametro.svg" alt="Diámetro" style="width: 100%; height: auto;">
   </div>
+</div>
+
+### 1. Cuerda
+Es cualquier segmento de recta que une **dos puntos** de la circunferencia sin pasar necesariamente por el centro.
+*   **Dato Curioso:** El diámetro es la cuerda más larga posible.
+
+<div style="width: 100%; margin-bottom: 20px;">
+  <img src="/images/geometria/circulos/elemento-cuerda.svg" alt="Cuerda que une dos puntos" style="width: 100%; height: auto;">
+</div>
+
+### 2. Arco ($\frown$)
+Es un trozo de la propia circunferencia. Es la parte curva que queda entre dos puntos.
+
+<div style="width: 100%; margin-bottom: 20px;">
+  <img src="/images/geometria/circulos/elemento-arco.svg" alt="Arco de circunferencia" style="width: 100%; height: auto;">
 </div>
 
 ---
 
-## 📖 Cuerda
+## 📐 Rectas y la Circunferencia
 
-> **Definición:** Una cuerda es un segmento cuyos **extremos están en la circunferencia**.
+### 1. Recta Secante
+Es una línea infinita que **corta** a la circunferencia en dos puntos. (Como una brocheta atravesando una aceituna).
 
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem;">
-    <span style="font-size: 1rem;">📊</span>
-    <strong style="color: #1e293b; font-size: 0.9rem; margin-left: 0.3rem;">Cuerda</strong>
-  </div>
+### 2. Recta Tangente
+Es una línea que **toca** a la circunferencia en un único punto y no la atraviesa.
+> **Propiedad de Oro:** El radio que va al punto de tangencia es **siempre perpendicular** ($90^\circ$) a la recta tangente.
 
-![Cuerda](/images/geometria/circulos/elemento-cuerda.svg)
+---
 
+## 🍕 Regiones del Círculo
+
+### Sector Circular
+Es la región comprendida entre dos radios y un arco.
+*   *Analogía:* Una rebanada de pizza o de pastel.
+
+<div style="width: 100%; margin-bottom: 20px;">
+  <img src="/images/geometria/circulos/elemento-sector.svg" alt="Sector Circular" style="width: 100%; height: auto;">
 </div>
 
-### Propiedades
-
-- El diámetro es la **cuerda más larga** posible
-- Cuerdas iguales están a igual distancia del centro
-- La perpendicular desde el centro a una cuerda la **biseca** (divide en dos partes iguales)
-
-### Ejemplo
-
-Si una cuerda $\overline{AB}$ está a 3 cm del centro y el radio es 5 cm, la longitud de la cuerda es:
+**Fórmula de Área:**
+Depende del ángulo central $\alpha$:
 
 $$
-\text{Mitad de cuerda} = \sqrt{5^2 - 3^2} = \sqrt{16} = 4 \text{ cm}
+A = \frac{\pi r^2 \cdot \alpha}{360^\circ}
 $$
 
-$$
-\text{Cuerda} = 2 \times 4 = 8 \text{ cm}
-$$
+### Segmento Circular
+Es la región entre una **cuerda** y su arco correspondiente.
+*   *Analogía:* La parte de la pizza que queda si le cortas el borde recto con un cuchillo (sin llegar al centro).
 
----
-
-## 📖 Arco
-
-> **Definición:** Un arco es una **porción de la circunferencia** comprendida entre dos puntos.
-
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem;">
-    <span style="font-size: 1rem;">📊</span>
-    <strong style="color: #1e293b; font-size: 0.9rem; margin-left: 0.3rem;">Arco</strong>
-  </div>
-
-![Arco](/images/geometria/circulos/elemento-arco.svg)
-
+<div style="width: 100%; margin-bottom: 20px;">
+  <img src="/images/geometria/circulos/elemento-segmento.svg" alt="Segmento Circular" style="width: 100%; height: auto;">
 </div>
 
-### Notación
+### Corona Circular
+Es la región entre dos circunferencias concéntricas (mismo centro).
+*   *Analogía:* Una dona o una arandela.
 
-El arco entre los puntos $A$ y $B$ se escribe:
-
-$$
-\overset{\frown}{AB}
-$$
-
-### Tipos de arcos
-
-Si una cuerda divide la circunferencia en dos partes:
-
-| Arco | Descripción |
-|------|-------------|
-| Arco menor | El más pequeño (< semicircunferencia) |
-| Arco mayor | El más grande (> semicircunferencia) |
-| Semicircunferencia | Exactamente la mitad (= 180°) |
-
----
-
-## 📖 Secante
-
-> **Definición:** Una secante es una **recta que corta** a la circunferencia en **dos puntos**.
-
-### Propiedades
-
-- Toda cuerda es parte de una recta secante
-- La secante divide al círculo en dos regiones
-
----
-
-## 📖 Tangente
-
-> **Definición:** Una tangente es una **recta que toca** a la circunferencia en **exactamente un punto**.
-
-Ese punto único se llama **punto de tangencia**.
-
-### Propiedades
-
-1. La tangente es **perpendicular** al radio en el punto de tangencia
-2. Desde un punto exterior se pueden trazar **dos tangentes**
-3. Los segmentos de tangente desde un punto exterior son **iguales**
-
-### Ejemplo
-
-Si dos tangentes desde el punto $P$ tocan la circunferencia en $A$ y $B$:
-
-$$
-\overline{PA} = \overline{PB}
-$$
-
----
-
-## 📖 Sector circular
-
-> **Definición:** Un sector circular es la región del círculo limitada por **dos radios y un arco**.
-
-Es como una "rebanada de pizza".
-
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem;">
-    <span style="font-size: 1rem;">📊</span>
-    <strong style="color: #1e293b; font-size: 0.9rem; margin-left: 0.3rem;">Sector Circular</strong>
-  </div>
-
-![Sector circular](/images/geometria/circulos/elemento-sector.svg)
-
+<div style="width: 100%; margin-bottom: 20px;">
+  <img src="/images/geometria/circulos/elemento-corona.svg" alt="Corona Circular" style="width: 100%; height: auto;">
 </div>
 
-### Área del sector
-
-Si el ángulo central es $\theta$ (en grados):
-
-$$
-A_{sector} = \frac{\theta}{360°} \times \pi r^2
-$$
-
----
-
-## 📖 Segmento circular
-
-> **Definición:** Un segmento circular es la región limitada por **una cuerda y su arco**.
-
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem;">
-    <span style="font-size: 1rem;">📊</span>
-    <strong style="color: #1e293b; font-size: 0.9rem; margin-left: 0.3rem;">Segmento Circular</strong>
-  </div>
-
-![Segmento circular](/images/geometria/circulos/elemento-segmento.svg)
-
-</div>
-
-### Área del segmento
+**Fórmula de Área:**
+Restas el círculo pequeño ($r$) del grande ($R$):
 
 $$
-A_{segmento} = A_{sector} - A_{triángulo}
+A = \pi(R^2 - r^2)
 $$
 
 ---
 
-## 📖 Corona circular
+## ⚙️ Ejemplos Resueltos
 
-> **Definición:** Una corona circular es la región entre **dos circunferencias concéntricas** (mismo centro, radios diferentes).
+### Ejemplo 1: Cálculo de Cuerda
 
-<div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem;">
-    <span style="font-size: 1rem;">📊</span>
-    <strong style="color: #1e293b; font-size: 0.9rem; margin-left: 0.3rem;">Corona Circular</strong>
-  </div>
+A una distancia de 3 cm del centro de una circunferencia de radio 5 cm, se traza una cuerda. ¿Cuánto mide?
 
-![Corona circular](/images/geometria/circulos/elemento-corona.svg)
-
-</div>
-
-### Área de la corona
+**Razonamiento:**
+Se forma un triángulo rectángulo donde la hipotenusa es el radio (5) y un cateto es la distancia al centro (3).
+El otro cateto es la mitad de la cuerda ($x$).
 
 $$
-A_{corona} = \pi R^2 - \pi r^2 = \pi(R^2 - r^2)
+x = \sqrt{5^2 - 3^2} = \sqrt{25 - 9} = \sqrt{16} = 4
 $$
 
-Donde $R$ es el radio mayor y $r$ el radio menor.
+La mitad mide 4. La cuerda completa mide el doble.
+
+$$
+L = 2 \cdot 4
+$$
+
+**Resultado:**
+$$
+\boxed{8 \text{ cm}}
+$$
+
+### Ejemplo 2: Área de una Corona
+
+Calcula el área de una arandela con radio interior 2 cm y radio exterior 4 cm.
+
+**Razonamiento:**
+$$
+A = \pi(4^2 - 2^2)
+$$
+$$
+A = \pi(16 - 4)
+$$
+$$
+A = 12\pi
+$$
+
+**Resultado:**
+$$
+\boxed{12\pi \approx 37.7 \text{ cm}^2}
+$$
 
 ---
 
-## 📝 Ejercicios de práctica
+## 📝 Ejercicios de Práctica
 
-### Ejercicio 1: Clasificar elementos
-
-Indica qué elemento es cada uno:
-
-1. Segmento que une dos puntos de la circunferencia
-2. Recta que toca la circunferencia en un solo punto
-3. Porción de la circunferencia entre dos puntos
-4. Recta que corta la circunferencia en dos puntos
+### Ejercicio 1
+Identifica: Línea que toca la circunferencia en UN solo punto.
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. **Cuerda**
-2. **Tangente**
-3. **Arco**
-4. **Secante**
+**Respuesta:**
+
+$$
+\text{Tangente}
+$$
+
+</details>
+
+### Ejercicio 2
+Calcula el área de un sector circular de $90^\circ$ en un círculo de radio 10.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$90^\circ$ es la cuarta parte de $360^\circ$.
+$$
+A = \frac{\pi \cdot 10^2}{4} = \frac{100\pi}{4}
+$$
+
+**Resultado:**
+$$
+\boxed{25\pi}
+$$
+
+</details>
+
+### Ejercicio 3
+Una cuerda de 16 cm está a 6 cm del centro. ¿Cuál es el radio de la circunferencia?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Mitad de cuerda = 8 cm. Distancia = 6 cm.
+Triángulo rectángulo (6, 8, $r$).
+$$
+r = \sqrt{6^2 + 8^2} = \sqrt{36 + 64} = \sqrt{100}
+$$
+
+**Resultado:**
+$$
+\boxed{10 \text{ cm}}
+$$
+
+</details>
+
+### Ejercicio 4
+¿Qué ángulo forma una recta tangente con el radio en el punto de contacto?
+
+<details>
+<summary>Ver solución</summary>
+
+**Resultado:**
+$$
+\boxed{90^\circ \text{ (Perpendicular)}}
+$$
+
+</details>
+
+### Ejercicio 5
+Calcula el área de una corona circular formada por círculos de radio 3 y 5.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$$
+A = \pi(5^2 - 3^2) = \pi(25 - 9)
+$$
+
+**Resultado:**
+$$
+\boxed{16\pi}
+$$
+
+</details>
+
+### Ejercicio 6
+Verdadero o Falso: El diámetro es una cuerda.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Cumple la definición (une dos puntos de la circunferencia). Es la cuerda máxima.
+
+**Resultado:**
+$$
+\boxed{\text{Verdadero}}
+$$
+
+</details>
+
+### Ejercicio 7
+Si un sector circular abarca $180^\circ$, ¿cómo se llama esa región comúnmente?
+
+<details>
+<summary>Ver solución</summary>
+
+**Respuesta:**
+
+$$
+\text{Semicírculo}
+$$
+
+</details>
+
+### Ejercicio 8
+Desde un punto exterior, ¿cuántas tangentes se pueden trazar a una circunferencia?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Se pueden trazar dos líneas que "rocen" la circunferencia, una por "arriba" y otra por "abajo".
+
+**Resultado:**
+$$
+\boxed{2}
+$$
+
+</details>
+
+### Ejercicio 9
+Calcula la longitud del arco correspondiente a un ángulo de $60^\circ$ y radio 6.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$60^\circ$ es la sexta parte de $360^\circ$.
+Longitud total = $2\pi(6) = 12\pi$.
+Arco = $12\pi / 6$.
+
+**Resultado:**
+$$
+\boxed{2\pi}
+$$
+
+</details>
+
+### Ejercicio 10
+Nombra la región limitada por una cuerda y un arco.
+
+<details>
+<summary>Ver solución</summary>
+
+**Respuesta:**
+
+$$
+\text{Segmento Circular}
+$$
 
 </details>
 
 ---
 
-### Ejercicio 2: Cuerda
+## 🔑 Resumen
 
-Una cuerda está a 4 cm del centro de una circunferencia de radio 5 cm. ¿Cuánto mide la cuerda?
+| Elemento | Tipo | Descripción clave |
+| :--- | :--- | :--- |
+| **Cuerda** | Línea | Une dos puntos (ej. Diámetro). |
+| **Secante** | Recta | Atraviesa y sale (2 puntos). |
+| **Tangente** | Recta | Solo toca y sigue (1 punto). |
+| **Sector** | Región | "Rebanada de pizza". |
+| **Corona** | Región | "Dona" (entre dos círculos). |
 
-<details>
-<summary><strong>Ver respuesta</strong></summary>
-
-Usando Pitágoras:
-$$
-\text{Mitad de cuerda} = \sqrt{5^2 - 4^2} = \sqrt{9} = 3 \text{ cm}
-$$
-
-$$
-\text{Cuerda} = 2 \times 3 = 6 \text{ cm}
-$$
-
-</details>
-
----
-
-### Ejercicio 3: Corona circular
-
-Una corona circular tiene radio exterior de 10 cm y radio interior de 6 cm. Calcula su área.
-
-<details>
-<summary><strong>Ver respuesta</strong></summary>
-
-$$
-A = \pi(10^2 - 6^2) = \pi(100 - 36) = 64\pi \approx 201.1 \text{ cm}^2
-$$
-
-</details>
-
----
-
-### Ejercicio 4: Verdadero o Falso
-
-1. El diámetro es la cuerda más larga de la circunferencia.
-2. Una tangente corta la circunferencia en dos puntos.
-3. La tangente es perpendicular al radio en el punto de tangencia.
-4. Un arco es un segmento de recta.
-
-<details>
-<summary><strong>Ver respuestas</strong></summary>
-
-1. **Verdadero**
-2. **Falso** - La tangente toca en exactamente un punto
-3. **Verdadero**
-4. **Falso** - Un arco es una porción de la circunferencia (curva)
-
-</details>
-
----
+> Recuerda: La tangente es "tímida", solo toca un punto. La secante es "atrevida", cruza sin miedo.
