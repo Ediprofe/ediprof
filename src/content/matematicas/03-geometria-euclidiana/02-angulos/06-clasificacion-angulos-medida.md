@@ -73,6 +73,30 @@ Una vuelta completa son $360^\circ$.
 Reflejo = $360^\circ - 60^\circ = 300^\circ$.
 **Resultado:** **$300^\circ$ (Cóncavo)**.
 
+### Ejemplo 4: Ángulo Nulo vs Perigonal
+¿Cuál es la diferencia entre $0^\circ$ y $360^\circ$?
+
+**Razonamiento:**
+Visualmente se ven igual (un rayo encima del otro).
+- $0^\circ$ significa que no hubo movimiento.
+- $360^\circ$ significa que diste una vuelta completa y volviste.
+**Respuesta:** En el $360^\circ$ hubo un giro completo.
+
+### Ejemplo 5: Suma y clasifica
+Suma $40^\circ + 45^\circ$ y clasifica el resultado.
+
+**Razonamiento:**
+$40 + 45 = 85^\circ$.
+Como $85 < 90$, sigue siendo menor a la esquina recta.
+**Resultado:** **Agudo**.
+
+### Ejemplo 6: Diferencia y clasifica
+Calcula $120^\circ - 30^\circ$ y clasifica.
+
+**Razonamiento:**
+$120 - 30 = 90^\circ$.
+**Resultado:** **Recto**.
+
 ---
 
 ## 📝 Ejercicios de Práctica

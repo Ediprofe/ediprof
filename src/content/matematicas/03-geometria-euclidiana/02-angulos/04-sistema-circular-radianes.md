@@ -43,7 +43,7 @@ Esta es la clave para todo. Si ves $\pi$, piensa en $180^\circ$ (media vuelta).
 
 ---
 
-## ⚙️ Ejemplos Mentales
+## ⚙️ Ejemplos Resueltos
 
 ### Ejemplo 1: El ángulo recto
 ¿Cuánto es $90^\circ$ en radianes?
@@ -82,6 +82,24 @@ $$
 Entonces es la sexta parte de $\pi$.
 $$
 \frac{\pi}{6} \text{ rad}
+$$
+
+### Ejemplo 5: Vuelta Completa
+¿Cuántos radianes tiene un giro de $360^\circ$?
+
+**Razonamiento:**
+Son dos vueltas de $180^\circ$.
+$$
+2 \times \pi = 2\pi \text{ rad}
+$$
+
+### Ejemplo 6: Ángulo Cero
+¿Cuántos radianes tiene un ángulo de $0^\circ$?
+
+**Razonamiento:**
+Si no hay giro en grados, no hay arco recorrido.
+$$
+0 \text{ rad}
 $$
 
 ---

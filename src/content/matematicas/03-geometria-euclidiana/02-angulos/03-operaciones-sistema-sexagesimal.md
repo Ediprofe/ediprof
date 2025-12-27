@@ -121,6 +121,49 @@ $$
 \boxed{12^\circ \, 45' \, 18''}
 $$
 
+### Ejemplo 4: Resta Simple
+Restar $50^\circ \, 30'$ de $80^\circ \, 45'$.
+
+**Razonamiento:**
+Aquí no necesitamos pedir prestado porque los números de arriba son mayores.
+- Minutos: $45 - 30 = 15'$
+- Grados: $80 - 50 = 30^\circ$
+
+**Resultado:**
+$$
+\boxed{30^\circ \, 15'}
+$$
+
+### Ejemplo 5: Suma llevando dos veces
+Suma $50'' + 50''$.
+
+**Razonamiento:**
+$50 + 50 = 100''$.
+Como $100''$ es mayor que 60:
+$$
+100 \div 60 = 1 \text{ (minuto) y sobran } 40 \text{ (segundos)}
+$$
+
+**Resultado:**
+$$
+\boxed{1' \, 40''}
+$$
+
+### Ejemplo 6: Multiplicación Mental
+Si tienes un ángulo de $10^\circ \, 30'$ y lo duplicas, ¿cuánto tienes?
+
+**Razonamiento:**
+- Doble de $10^\circ = 20^\circ$.
+- Doble de $30' = 60'$.
+- Pero $60'$ es $1^\circ$.
+
+Total: $20^\circ + 1^\circ = 21^\circ$.
+
+**Resultado:**
+$$
+\boxed{21^\circ}
+$$
+
 ---
 
 ## 📝 Ejercicios de Práctica

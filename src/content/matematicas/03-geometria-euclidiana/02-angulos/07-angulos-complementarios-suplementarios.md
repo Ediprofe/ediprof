@@ -88,6 +88,43 @@ $$
 \boxed{45^\circ}
 $$
 
+### Ejemplo 4: Complemento con Álgebra
+Si el complemento de un ángulo es $x$ y el ángulo es $x+10$, ¿cuánto valen?
+
+**Planteamiento:**
+Suman 90.
+$$
+x + (x + 10) = 90
+$$
+$$
+2x = 80 \to x = 40
+$$
+**Resultado:**
+Los ángulos son $40^\circ$ y $50^\circ$.
+
+### Ejemplo 5: Ángulos Iguales
+¿Cuál es el ángulo que es igual a su propio suplemento?
+
+**Razonamiento:**
+$x + x = 180$.
+$2x = 180$.
+$x = 90$.
+**Resultado:**
+Solo el ángulo recto ($90^\circ$) cumple esto.
+
+### Ejemplo 6: Conjugado Obtuso
+Calcula el conjugado de un ángulo obtuso de $150^\circ$.
+
+**Razonamiento:**
+Deben sumar 360.
+$$
+360^\circ - 150^\circ = 210^\circ
+$$
+**Resultado:**
+$$
+\boxed{210^\circ}
+$$
+
 ---
 
 ## 📝 Ejercicios de Práctica

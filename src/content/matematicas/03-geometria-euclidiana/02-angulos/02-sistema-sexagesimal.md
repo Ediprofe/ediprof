@@ -101,6 +101,45 @@ $$
 \boxed{10^\circ\, 30'}
 $$
 
+### Ejemplo 4: De Segundos a Minutos
+Convertir $360''$ a minutos.
+
+**Razonamiento:**
+Cada 60 segundos es 1 minuto. Debemos dividir por 60.
+$$
+360 \div 60 = 6
+$$
+
+**Resultado:**
+$$
+\boxed{6'}
+$$
+
+### Ejemplo 5: Notación Completa
+¿Cómo se escribe "5 grados y un cuarto"?
+
+**Razonamiento:**
+Un cuarto de grado es $0.25^\circ$.
+En minutos: $0.25 \times 60 = 15'$.
+**Resultado:**
+$$
+\boxed{5^\circ \, 15'}
+$$
+
+### Ejemplo 6: Relación con el Tiempo
+Si en el reloj pasa media hora, ¿cuántos grados se movió la aguja de los minutos?
+
+**Razonamiento:**
+Una vuelta completa (1 hora) son $360^\circ$.
+Media hora es media vuelta.
+$$
+360 \div 2 = 180
+$$
+**Resultado:**
+$$
+\boxed{180^\circ}
+$$
+
 ---
 
 ## 🌍 Aplicación Real: Coordenadas GPS

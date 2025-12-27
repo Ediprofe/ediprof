@@ -81,7 +81,59 @@ $$
 
 **Resultado:**
 $$
-\boxed{\approx 143.2^\circ}
+\boxed{143.2^\circ}
+$$
+
+### Ejemplo 4: Ángulos Negativos
+Convierte $-30^\circ$ a radianes.
+
+**Razonamiento:**
+El signo negativo solo indica la dirección del giro, se mantiene en la conversión.
+$$
+-30 \times \frac{\pi}{180} = -\frac{30\pi}{180} = -\frac{1\pi}{6}
+$$
+
+**Resultado:**
+$$
+\boxed{-\frac{\pi}{6} \text{ rad}}
+$$
+
+### Ejemplo 5: Más de una vuelta
+Convierte $390^\circ$ a radianes.
+
+**Razonamiento:**
+$$
+390 \times \frac{\pi}{180} = \frac{39\pi}{18}
+$$
+Dividimos ambos por 3:
+$$
+\frac{13\pi}{6}
+$$
+
+**Resultado:**
+$$
+\boxed{\frac{13\pi}{6} \text{ rad}}
+$$
+
+### Ejemplo 6: Simplificación de fracciones raras
+Convierte $15^\circ$ a radianes.
+
+**Razonamiento:**
+$$
+\frac{15\pi}{180}
+$$
+Dividimos por 5:
+$$
+\frac{3\pi}{36}
+$$
+Dividimos por 3:
+$$
+\frac{\pi}{12}
+$$
+
+**Resultado:**
+$$
+\boxed{\frac{\pi}{12} \text{ rad}}
 $$
 
 ---
@@ -221,7 +273,7 @@ $5(180)/6 = 5(30) = 150$.
 ## 🔑 Resumen
 
 | Conversión | Truco Mental |
-|:--- |:--- |
+|:--- |:--- |:--- |
 | **Grados $\to$ Radianes** | Simplifica la fracción $\frac{\text{Grados}}{180}$ y ponle $\pi$. |
 | **Radianes $\to$ Grados** | Cambia la $\pi$ por $180^\circ$ y opera. |
 

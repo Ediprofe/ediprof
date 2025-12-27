@@ -70,6 +70,27 @@ Si abres una puerta empujándola hacia la izquierda (antihorario) 45 grados, ¿e
 Giro antihorario = Positivo.
 **Respuesta:** $+45^\circ$.
 
+### Ejemplo 4: Longitud de los lados
+¿Un ángulo se vuelve más grande si alargamos los rayos que lo forman?
+
+**Razonamiento:**
+No. El ángulo es la **abertura** (el giro), no el largo de las líneas. Imagina dos linternas: si los rayos de luz llegan más lejos, la abertura entre ellas sigue siendo la misma.
+**Respuesta:** El ángulo permanece igual.
+
+### Ejemplo 5: Notación con números
+En figuras complejas, a veces vemos números dentro de los ángulos (ej. $\angle 1$, $\angle 2$). ¿Qué significan?
+
+**Razonamiento:**
+Son etiquetas rápidas para no tener que escribir tres letras ($\angle ABC$).
+**Respuesta:** $\angle 1$ es simplemente el nombre corto asignado a ese ángulo específico en el diagrama.
+
+### Ejemplo 6: Ángulo cero
+¿Qué pasa si los dos rayos ($\overrightarrow{OA}$ y $\overrightarrow{OB}$) están uno encima del otro sin haberse movido?
+
+**Razonamiento:**
+No hay abertura. El giro es nulo.
+**Respuesta:** Es un ángulo de $0^\circ$.
+
 ---
 
 ## 📝 Ejercicios de Práctica
