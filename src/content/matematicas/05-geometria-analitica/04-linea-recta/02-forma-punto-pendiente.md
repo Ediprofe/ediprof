@@ -1,354 +1,222 @@
-# Forma Punto-Pendiente
+# **Forma Punto-Pendiente**
 
-Si conoces un punto por donde pasa una recta y su pendiente, tienes toda la información necesaria para escribir su ecuación. La **forma punto-pendiente** es la herramienta perfecta para este caso.
+Imagina que eres un detective. Encuentras una huella en el lugar del crimen (un punto) y sabes en qué dirección huyó el sospechoso (la pendiente). Con solo esos dos datos, puedes trazar exactamente su camino. En matemáticas, esa "huella + dirección" es la **Forma Punto-Pendiente**.
 
 ---
 
 ## 🎯 ¿Qué vas a aprender?
 
-- La fórmula punto-pendiente
-- Cuándo y cómo usarla
-- Cómo simplificarla a otras formas
+- La ecuación fundamental: $y - y_1 = m(x - x_1)$.
+- Cómo construir una recta conociendo solo un punto y su inclinación.
+- Cómo traducir esta forma misteriosa a la forma general o clásica.
+- Por qué esta es la herramienta favorita de los físicos e ingenieros.
 
 ---
 
-## 📖 Lo Esencial de Punto-Pendiente
+## 🕵️‍♂️ La Ecuación del Detective
 
-| Datos | Fórmula |
-|-------|---------|
-| Punto $(x_1, y_1)$ y pendiente $m$ | $y - y_1 = m(x - x_1)$ |
+Si conocemos **un punto** $P_1(x_1, y_1)$ y la **pendiente** $m$, la ecuación de la recta es:
+
+$$
+y - y_1 = m(x - x_1)
+$$
+
+### ¿De dónde sale?
+Recuerda la fórmula de la pendiente $m = \frac{y - y_1}{x - x_1}$.
+Si pasas el denominador multiplicando al otro lado, ¡obtienes esta ecuación!
 
 <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+    <strong style="color: #1e293b; font-size: 0.95rem; margin-left: 0.3rem;">Punto + Pendiente = Recta Única</strong>
+  </div>
   <img src="/images/geometria/analitica/punto-pendiente.svg" alt="Forma punto-pendiente" style="width: 100%; height: auto;" />
 </div>
 
 ---
 
-## 📖 La Fórmula Punto-Pendiente
+## ⚙️ Ejemplos Resueltos
 
-Si una recta pasa por el punto $(x_1, y_1)$ y tiene pendiente $m$, su ecuación es:
+### Ejemplo 1: El Caso Básico
+Tenemos el punto $A(2, 3)$ y pendiente $m=4$.
+1.  Identificamos: $x_1=2, y_1=3, m=4$.
+2.  Sustituimos:
+    $$ y - 3 = 4(x - 2) $$
+3.  Despejamos (para ponerla bonita):
+    $y - 3 = 4x - 8$
+    $y = 4x - 5$
 
-$$
-y - y_1 = m(x - x_1)
-$$
+### Ejemplo 2: Pendiente Negativa
+Punto $B(-1, 5)$ y pendiente $m=-2$.
+1.  Identificamos: $x_1=-1, y_1=5$. (Cuidado con el menos).
+2.  Sustituimos:
+    $$ y - 5 = -2(x - (-1)) $$
+    $$ y - 5 = -2(x + 1) $$
+3.  Despejamos:
+    $y - 5 = -2x - 2$
+    $y = -2x + 3$
 
-### ¿De dónde viene?
-
-Recordemos la definición de pendiente:
-
-$$
-m = \frac{y - y_1}{x - x_1}
-$$
-
-Despejando:
-
-$$
-y - y_1 = m(x - x_1)
-$$
-
-> 💡 **Cuándo usarla:** Cuando conoces **un punto** y la **pendiente**.
-
----
-
-## 📖 Ejemplos Resueltos
-
-### ⚙️ Ejemplo 1: Ecuación básica
-
-Escribe la ecuación de la recta que pasa por $(3, 5)$ con pendiente $m = 2$.
-
-**Aplicamos la fórmula:**
-
-$$
-y - 5 = 2(x - 3)
-$$
-
-**Forma punto-pendiente:** $y - 5 = 2(x - 3)$
-
-**Simplificando a forma explícita:**
-$$
-y - 5 = 2x - 6
-$$
-$$
-y = 2x - 1
-$$
-
-### ⚙️ Ejemplo 2: Pendiente fraccionaria
-
-Escribe la ecuación de la recta que pasa por $(4, -1)$ con pendiente $m = \frac{3}{4}$.
-
-**Aplicamos la fórmula:**
-
-$$
-y - (-1) = \frac{3}{4}(x - 4)
-$$
-
-$$
-y + 1 = \frac{3}{4}(x - 4)
-$$
-
-**Simplificando:**
-$$
-y + 1 = \frac{3}{4}x - 3
-$$
-$$
-y = \frac{3}{4}x - 4
-$$
-
-### ⚙️ Ejemplo 3: Pendiente negativa
-
-Encuentra la ecuación de la recta que pasa por $(-2, 3)$ con pendiente $m = -5$.
-
-**Aplicamos la fórmula:**
-
-$$
-y - 3 = -5(x - (-2))
-$$
-
-$$
-y - 3 = -5(x + 2)
-$$
-
-**Simplificando:**
-$$
-y - 3 = -5x - 10
-$$
-$$
-y = -5x - 7
-$$
-
-### ⚙️ Ejemplo 4: Convertir a forma general
-
-Escribe la ecuación de la recta por $(1, 2)$ con $m = \frac{2}{3}$ en forma general.
-
-**Punto-pendiente:**
-$$
-y - 2 = \frac{2}{3}(x - 1)
-$$
-
-**Multiplicamos por 3:**
-$$
-3(y - 2) = 2(x - 1)
-$$
-$$
-3y - 6 = 2x - 2
-$$
-
-**Forma general:**
-$$
-2x - 3y + 4 = 0
-$$
-
----
-
-## 📖 Recta que Pasa por un Punto con Pendiente Dada
-
-### ⚙️ Ejemplo 5: Problema aplicado
-
-Una recta tiene pendiente $m = -\frac{1}{2}$ y pasa por el punto medio de $A(2, 6)$ y $B(6, 2)$. Encuentra su ecuación.
-
-**Paso 1:** Encontrar el punto medio de $AB$:
-$$
-M = \left(\frac{2+6}{2}, \frac{6+2}{2}\right) = (4, 4)
-$$
-
-**Paso 2:** Aplicar punto-pendiente:
-$$
-y - 4 = -\frac{1}{2}(x - 4)
-$$
-
-**Paso 3:** Simplificar:
-$$
-y - 4 = -\frac{1}{2}x + 2
-$$
-$$
-y = -\frac{1}{2}x + 6
-$$
-
-**O en forma general:** $x + 2y - 12 = 0$
-
----
-
-## 📖 Recta Paralela Pasando por un Punto
-
-<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <img src="/images/geometria/analitica/paralela-perpendicular-punto.svg" alt="Paralela y perpendicular por un punto" style="width: 100%; height: auto;" />
-</div>
-
-Para encontrar la recta paralela a una dada que pasa por un punto:
-1. Identifica la pendiente de la recta dada
-2. Usa esa misma pendiente con el punto dado
-
-### ⚙️ Ejemplo 6: Recta paralela
-
-Encuentra la ecuación de la recta paralela a $y = 3x + 1$ que pasa por $(2, -4)$.
-
-**Paso 1:** La pendiente de $y = 3x + 1$ es $m = 3$.
-
-**Paso 2:** Aplicamos punto-pendiente con $(2, -4)$ y $m = 3$:
-$$
-y - (-4) = 3(x - 2)
-$$
-$$
-y + 4 = 3x - 6
-$$
-$$
-y = 3x - 10
-$$
-
----
-
-## 📖 Recta Perpendicular Pasando por un Punto
-
-Para encontrar la recta perpendicular a una dada que pasa por un punto:
-1. Identifica la pendiente de la recta dada
-2. Calcula la pendiente perpendicular: $m_\perp = -\frac{1}{m}$
-3. Usa esa pendiente con el punto dado
-
-### ⚙️ Ejemplo 7: Recta perpendicular
-
-Encuentra la ecuación de la recta perpendicular a $y = 2x - 3$ que pasa por $(4, 1)$.
-
-**Paso 1:** La pendiente de $y = 2x - 3$ es $m = 2$.
-
-**Paso 2:** La pendiente perpendicular es $m_\perp = -\frac{1}{2}$.
-
-**Paso 3:** Aplicamos punto-pendiente:
-$$
-y - 1 = -\frac{1}{2}(x - 4)
-$$
-$$
-y - 1 = -\frac{1}{2}x + 2
-$$
-$$
-y = -\frac{1}{2}x + 3
-$$
-
----
-
-## 🔑 Resumen
-
-| Situación | Procedimiento |
-|-----------|---------------|
-| Punto y pendiente conocidos | $y - y_1 = m(x - x_1)$ |
-| Recta paralela por un punto | Usar la misma pendiente |
-| Recta perpendicular por un punto | Usar $m_\perp = -\frac{1}{m}$ |
+### Ejemplo 3: Pendiente Fraccionaria
+Punto $C(4, 1)$ y pendiente $m=1/2$.
+$$ y - 1 = \frac{1}{2}(x - 4) $$
+Para evitar fracciones feas, pasamos el 2 a multiplicar al otro lado:
+$$ 2(y - 1) = 1(x - 4) $$
+$$ 2y - 2 = x - 4 $$
+$$ x - 2y - 2 = 0 $$ (Forma general)
 
 ---
 
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1
-Escribe la ecuación de la recta que pasa por $(5, 2)$ con pendiente $m = 4$.
+Escribe la ecuación para $P(1, 1)$ y $m = 3$.
 
 <details>
 <summary>Ver solución</summary>
 
-$$
-y - 2 = 4(x - 5)
-$$
-$$
-y - 2 = 4x - 20
-$$
-$$
-y = 4x - 18
-$$
+**Razonamiento:**
+$y - 1 = 3(x - 1) \Rightarrow y = 3x - 3 + 1$.
 
+**Respuesta:** $\boxed{y = 3x - 2}$
 </details>
+
+---
 
 ### Ejercicio 2
-Encuentra la ecuación de la recta que pasa por $(-3, 7)$ con pendiente $m = -\frac{2}{3}$.
+Escribe la ecuación para $P(-2, -5)$ y $m = 1$.
 
 <details>
 <summary>Ver solución</summary>
 
-$$
-y - 7 = -\frac{2}{3}(x - (-3))
-$$
-$$
-y - 7 = -\frac{2}{3}(x + 3)
-$$
-$$
-y - 7 = -\frac{2}{3}x - 2
-$$
-$$
-y = -\frac{2}{3}x + 5
-$$
+**Razonamiento:**
+$y - (-5) = 1(x - (-2)) \Rightarrow y + 5 = x + 2$.
 
+**Respuesta:** $\boxed{y = x - 3}$
 </details>
+
+---
 
 ### Ejercicio 3
-Escribe en forma general la ecuación de la recta por $(2, 3)$ con $m = \frac{1}{4}$.
+Escribe la ecuación para el origen $(0, 0)$ y $m = -5$.
 
 <details>
 <summary>Ver solución</summary>
 
-$$
-y - 3 = \frac{1}{4}(x - 2)
-$$
+**Razonamiento:**
+$y - 0 = -5(x - 0)$.
 
-Multiplicando por 4:
-$$
-4y - 12 = x - 2
-$$
-$$
-x - 4y + 10 = 0
-$$
-
+**Respuesta:** $\boxed{y = -5x}$
 </details>
+
+---
 
 ### Ejercicio 4
-Encuentra la ecuación de la recta paralela a $3x - y + 5 = 0$ que pasa por $(1, -2)$.
+Escribe la ecuación para $P(3, 0)$ y $m = 0.5$.
 
 <details>
 <summary>Ver solución</summary>
 
-**Pendiente de la recta dada:**
-$$
-m = -\frac{3}{-1} = 3
-$$
+**Razonamiento:**
+$y - 0 = 0.5(x - 3) \Rightarrow y = 0.5x - 1.5$.
 
-**Ecuación paralela:**
-$$
-y - (-2) = 3(x - 1)
-$$
-$$
-y + 2 = 3x - 3
-$$
-$$
-y = 3x - 5
-$$
-
-O en forma general: $3x - y - 5 = 0$
-
+**Respuesta:** $\boxed{y = 0.5x - 1.5}$
 </details>
+
+---
 
 ### Ejercicio 5
-Encuentra la ecuación de la recta perpendicular a $2x + 5y - 10 = 0$ que pasa por $(4, 3)$.
+Halla la ecuación para $P(4, 2)$ con pendiente indefinida.
 
 <details>
 <summary>Ver solución</summary>
 
-**Pendiente de la recta dada:**
-$$
-m = -\frac{2}{5}
-$$
+**Razonamiento:**
+Pendiente indefinida = Recta Vertical. $x$ es constante.
 
-**Pendiente perpendicular:**
-$$
-m_\perp = \frac{5}{2}
-$$
-
-**Ecuación:**
-$$
-y - 3 = \frac{5}{2}(x - 4)
-$$
-$$
-y - 3 = \frac{5}{2}x - 10
-$$
-$$
-y = \frac{5}{2}x - 7
-$$
-
-O en forma general: $5x - 2y - 14 = 0$
-
+**Respuesta:** $\boxed{x = 4}$
 </details>
+
+---
+
+### Ejercicio 6
+Convierte $y-2 = 3(x-1)$ a forma general ($Ax+By+C=0$).
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$y - 2 = 3x - 3 \Rightarrow 0 = 3x - y - 1$.
+
+**Respuesta:** $\boxed{3x - y - 1 = 0}$
+</details>
+
+---
+
+### Ejercicio 7
+Halla la recta que pasa por $(1, 2)$ y es paralela a $y=2x$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Misma pendiente $m=2$.
+$y - 2 = 2(x - 1) \Rightarrow y = 2x$.
+
+**Respuesta:** $\boxed{y = 2x}$
+</details>
+
+---
+
+### Ejercicio 8
+Halla la recta que pasa por $(1, 2)$ y es perpendicular a $y=3x$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Pendiente perp. $m = -1/3$.
+$y - 2 = -1/3 (x - 1)$.
+
+**Respuesta:** $\boxed{y = -\frac{1}{3}x + \frac{7}{3}}$
+</details>
+
+---
+
+### Ejercicio 9
+Si en la ecuación $y-3 = k(x-2)$, la recta es horizontal, ¿cuánto vale $k$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Recta horizontal tiene pendiente 0.
+
+**Respuesta:** $\boxed{0}$
+</details>
+
+---
+
+### Ejercicio 10
+Escribe la ecuación para $P(-3, 0)$ y $m = -1$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$y - 0 = -1(x + 3) \Rightarrow y = -x - 3$.
+
+**Respuesta:** $\boxed{y = -x - 3}$
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Paso | Acción |
+| :--- | :--- |
+| **1** | Escribe $y - (\quad) = (\quad)(x - (\quad))$. |
+| **2** | Rellena los huecos: $y_1$, $m$, $x_1$. |
+| **3** | Simplifica signos (menos por menos da más). |
+| **4** | Despeja $y$ o iguala a 0 según te pidan. |
+
+> **Conclusión:** No necesitas memorizar tres fórmulas de rectas. Si te aprendes esta ("Punto-Pendiente"), puedes deducir todas las demás. Es la navaja suiza de las rectas.

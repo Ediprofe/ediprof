@@ -1,289 +1,226 @@
-# Forma Pendiente-Ordenada al Origen
+# **Forma Pendiente-Ordenada al Origen**
 
-La forma más común de escribir la ecuación de una recta es la **forma pendiente-ordenada** (también llamada forma explícita). Es especialmente útil porque muestra directamente la pendiente y el punto donde la recta cruza el eje Y.
+Esta es la celebridad de las ecuaciones, la famosa $y = mx + b$. Es la forma más usada porque es la más honesta: te dice inmediatamente qué tan inclinada está la recta ($m$) y dónde corta al eje vertical ($b$).
 
 ---
 
 ## 🎯 ¿Qué vas a aprender?
 
-- La forma $y = mx + b$ y su significado
-- Cómo identificar la pendiente y el intercepto
-- Cómo graficar rápidamente usando esta forma
+- Qué significan $m$ y $b$ visualmente.
+- Cómo obtener esta ecuación a partir de la Forma General.
+- Cómo graficar una recta en 5 segundos sin hacer tablas.
+- El significado físico (velocidad y posición inicial).
 
 ---
 
-## 📖 Lo Esencial de Pendiente-Ordenada
-
-| Elemento | Símbolo | Significado |
-|----------|---------|-------------|
-| Pendiente | $m$ | Inclinación de la recta |
-| Ordenada al origen | $b$ | Donde cruza el eje Y |
-| Forma completa | $y = mx + b$ | Ecuación explícita |
-
-<div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <img src="/images/geometria/analitica/pendiente-ordenada.svg" alt="Forma pendiente-ordenada" style="width: 100%; height: auto;" />
-</div>
-
----
-
-## 📖 La Forma Pendiente-Ordenada
-
-La ecuación de una recta en **forma pendiente-ordenada** es:
+## 🌟 La Fórmula Estrella
 
 $$
 y = mx + b
 $$
 
-donde:
-- $m$ es la **pendiente** de la recta
-- $b$ es la **ordenada al origen** (el valor de $y$ cuando $x = 0$)
-
-> 💡 El punto $(0, b)$ es donde la recta **cruza el eje Y**.
-
-### ¿Por qué es tan útil?
-
-1. **Lees directamente:** La pendiente ($m$) y el intercepto ($b$)
-2. **Graficas fácilmente:** Empiezas en $(0, b)$ y usas la pendiente
-3. **Comparas rectas:** Paralelas tienen igual $m$
-
----
-
-## 📖 Identificar Pendiente e Intercepto
-
-### ⚙️ Ejemplo 1: Lectura directa
-
-Para $y = 3x - 7$:
-- Pendiente: $m = 3$
-- Ordenada al origen: $b = -7$
-- La recta cruza el eje Y en $(0, -7)$
-
-### ⚙️ Ejemplo 2: Pendiente negativa
-
-Para $y = -\frac{2}{5}x + 4$:
-- Pendiente: $m = -\frac{2}{5}$
-- Ordenada al origen: $b = 4$
-- La recta cruza el eje Y en $(0, 4)$
-
-### ⚙️ Ejemplo 3: Casos especiales
-
-**Para $y = 5$:**
-- Podemos escribirla como $y = 0x + 5$
-- Pendiente: $m = 0$ (horizontal)
-- Intercepto: $b = 5$
-
-**Para $y = 2x$:**
-- Podemos escribirla como $y = 2x + 0$
-- Pendiente: $m = 2$
-- Intercepto: $b = 0$ (pasa por el origen)
-
----
-
-## 📖 Graficar Usando Pendiente-Ordenada
+Donde:
+*   **$m$ (Pendiente):** Es el cambio, la velocidad, la inclinación.
+*   **$b$ (Ordenada al Origen):** Es el punto de partida, el corte con el Eje Y ($0, b$).
 
 <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
-  <img src="/images/geometria/analitica/graficar-pendiente-ordenada.svg" alt="Graficar con pendiente-ordenada" style="width: 100%; height: auto;" />
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+    <strong style="color: #1e293b; font-size: 0.95rem; margin-left: 0.3rem;">Elementos Visuales</strong>
+  </div>
+  <img src="/images/geometria/analitica/pendiente-ordenada.svg" alt="Forma pendiente-ordenada" style="width: 100%; height: auto;" />
 </div>
 
-**Método rápido para graficar:**
+---
 
-1. Ubica el punto $(0, b)$ en el eje Y
-2. Desde ahí, usa la pendiente: $m = \frac{\text{subida}}{\text{avance}}$
-3. Marca el segundo punto
-4. Traza la recta
+## ⚡ Cómo Graficar al Instante
 
-### ⚙️ Ejemplo 4: Graficar paso a paso
+Si tienes $y = 2x - 3$:
+1.  **Punto de Inicio:** Mira la $b (-3)$. Marca el punto en el eje Y en -3.
+2.  **Movimiento:** Mira la $m (2)$. Como $2 = 2/1$, significa "sube 2, avanza 1".
+3.  Desde el punto -3, sube 2 cuadritos y avanza 1 a la derecha. Marca el segundo punto.
+4.  ¡Une los puntos!
 
-Grafica $y = \frac{2}{3}x + 1$.
-
-**Paso 1:** El intercepto es $(0, 1)$. Marca este punto.
-
-**Paso 2:** La pendiente es $\frac{2}{3}$:
-- Subida = 2
-- Avance = 3
-- Desde $(0, 1)$: avanza 3 unidades a la derecha y sube 2 → llegamos a $(3, 3)$
-
-**Paso 3:** Marca $(3, 3)$ y traza la recta por ambos puntos.
-
-### ⚙️ Ejemplo 5: Pendiente negativa
-
-Grafica $y = -2x + 4$.
-
-**Paso 1:** Intercepto: $(0, 4)$
-
-**Paso 2:** Pendiente $m = -2 = \frac{-2}{1}$:
-- Desde $(0, 4)$: avanza 1 a la derecha y baja 2 → llegamos a $(1, 2)$
-
-**Paso 3:** Traza la recta por $(0, 4)$ y $(1, 2)$.
+### Ejemplo Inverso (Ecuación desde Gráfica)
+Si ves una recta que corta al eje Y en 5 y por cada 3 pasos a la derecha baja 1:
+*   $b = 5$.
+*   $m = -1/3$.
+*   Ecuación: $y = -\frac{1}{3}x + 5$.
 
 ---
 
-## 📖 Obtener la Forma Pendiente-Ordenada
+## ⚙️ Ejemplos Resueltos
 
-### Desde la forma general
+### Ejemplo 1: Identificación
+Dada la recta $y = -4x + 1$:
+*   Pendiente $m = -4$. (Baja rápido).
+*   Ordenada $b = 1$. (Corta en $y=1$).
 
-Para convertir $Ax + By + C = 0$ a $y = mx + b$:
+### Ejemplo 2: Conversión desde General
+Convierte $2x + 3y - 12 = 0$ a la forma $y = mx + b$.
+1.  Deja la $y$ sola: $3y = -2x + 12$.
+2.  Pasa el 3 a dividir a TODO: $y = \frac{-2x + 12}{3}$.
+3.  Separa fracciones: $y = -\frac{2}{3}x + 4$.
+    *   $m = -2/3$.
+    *   $b = 4$.
 
-$$
-By = -Ax - C
-$$
-$$
-y = -\frac{A}{B}x - \frac{C}{B}
-$$
-
-### ⚙️ Ejemplo 6: Conversión
-
-Convierte $4x - 2y + 6 = 0$ a forma $y = mx + b$.
-
-$$
--2y = -4x - 6
-$$
-$$
-y = 2x + 3
-$$
-
-**Pendiente:** $m = 2$
-**Intercepto:** $b = 3$
-
-### Desde dos puntos
-
-Si conoces dos puntos $(x_1, y_1)$ y $(x_2, y_2)$:
-
-1. Calcula $m = \frac{y_2 - y_1}{x_2 - x_1}$
-2. Usa punto-pendiente y simplifica a $y = mx + b$
-
-### ⚙️ Ejemplo 7: Desde dos puntos
-
-Encuentra la ecuación de la recta que pasa por $(1, 3)$ y $(4, 9)$.
-
-**Paso 1:** Pendiente:
-$$
-m = \frac{9 - 3}{4 - 1} = \frac{6}{3} = 2
-$$
-
-**Paso 2:** Punto-pendiente con $(1, 3)$:
-$$
-y - 3 = 2(x - 1)
-$$
-$$
-y = 2x - 2 + 3
-$$
-$$
-y = 2x + 1
-$$
-
----
-
-## 📖 Comparación de Rectas
-
-### Rectas paralelas
-
-Dos rectas son paralelas si tienen la **misma pendiente**.
-
-$y = 3x + 2$ y $y = 3x - 5$ son paralelas (ambas tienen $m = 3$).
-
-### Rectas que se intersectan
-
-Dos rectas se intersectan si tienen **diferentes pendientes**.
-
-$y = 2x + 1$ y $y = -x + 4$ se intersectan (tienen $m = 2$ y $m = -1$).
-
-### Rectas perpendiculares
-
-Dos rectas son perpendiculares si $m_1 \cdot m_2 = -1$.
-
-$y = 2x + 1$ y $y = -\frac{1}{2}x + 3$ son perpendiculares.
-
----
-
-## 🔑 Resumen
-
-| Forma | $y = mx + b$ |
-|-------|--------------|
-| $m$ | Pendiente |
-| $b$ | Ordenada al origen |
-| $(0, b)$ | Punto donde cruza el eje Y |
+### Ejemplo 3: Recta Horizontal
+Para $y = 5$:
+*   Es como decir $y = 0x + 5$.
+*   Pendiente 0 (plana).
+*   Corta en 5.
 
 ---
 
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1
-Identifica la pendiente y el intercepto de $y = -4x + 9$.
+Identifica $m$ y $b$ de $y = 3x - 2$.
 
 <details>
 <summary>Ver solución</summary>
 
-- Pendiente: $m = -4$
-- Intercepto Y: $b = 9$
-- La recta cruza el eje Y en $(0, 9)$
+**Razonamiento:**
+Comparar con $y=mx+b$.
 
+**Respuesta:** $\boxed{m=3, b=-2}$
 </details>
+
+---
 
 ### Ejercicio 2
-Convierte $6x + 3y - 12 = 0$ a forma $y = mx + b$.
+Escribe la ecuación si $m=5$ y pasa por el origen.
 
 <details>
 <summary>Ver solución</summary>
 
-$$
-3y = -6x + 12
-$$
-$$
-y = -2x + 4
-$$
+**Razonamiento:**
+Pasa por origen $\Rightarrow b=0$.
 
-Pendiente: $m = -2$, Intercepto: $b = 4$
-
+**Respuesta:** $\boxed{y = 5x}$
 </details>
+
+---
 
 ### Ejercicio 3
-Escribe la ecuación de la recta que pasa por $(0, -5)$ con pendiente $m = 3$.
+Convierte $4x - 2y + 8 = 0$ a esta forma.
 
 <details>
 <summary>Ver solución</summary>
 
-Como pasa por $(0, -5)$, el intercepto es $b = -5$.
+**Razonamiento:**
+$2y = 4x + 8 \Rightarrow y = 2x + 4$.
 
-$$
-y = 3x - 5
-$$
-
+**Respuesta:** $\boxed{y = 2x + 4}$
 </details>
+
+---
 
 ### Ejercicio 4
-¿Son paralelas las rectas $2x - y + 3 = 0$ y $4x - 2y - 7 = 0$?
+Si una recta baja 3 unidades por cada 1 que avanza y empieza en 2, ¿cuál es su ecuación?
 
 <details>
 <summary>Ver solución</summary>
 
-**Primera recta:** $y = 2x + 3$ → $m_1 = 2$
+**Razonamiento:**
+Baja 3 $\Rightarrow m=-3$. Empieza en 2 $\Rightarrow b=2$.
 
-**Segunda recta:** $2y = 4x - 7$ → $y = 2x - \frac{7}{2}$ → $m_2 = 2$
-
-Como $m_1 = m_2 = 2$, las rectas son **paralelas**.
-
+**Respuesta:** $\boxed{y = -3x + 2}$
 </details>
+
+---
 
 ### Ejercicio 5
-Encuentra la ecuación de la recta que pasa por $(2, 5)$ y $(6, 1)$ en forma $y = mx + b$.
+Halla $b$ si la recta $y = 2x + b$ pasa por $(1, 5)$.
 
 <details>
 <summary>Ver solución</summary>
 
-**Pendiente:**
-$$
-m = \frac{1 - 5}{6 - 2} = \frac{-4}{4} = -1
-$$
+**Razonamiento:**
+$5 = 2(1) + b \Rightarrow 5 = 2 + b \Rightarrow b = 3$.
 
-**Usando punto-pendiente:**
-$$
-y - 5 = -1(x - 2)
-$$
-$$
-y = -x + 2 + 5
-$$
-$$
-y = -x + 7
-$$
-
+**Respuesta:** $\boxed{3}$
 </details>
+
+---
+
+### Ejercicio 6
+Grafica mentalmente $y = -x$. ¿Por dónde pasa?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$b=0$ (Origen). $m=-1$ (Diagonal bajando a 45°).
+
+**Respuesta:** **Origen, bajando a 45°**
+</details>
+
+---
+
+### Ejercicio 7
+¿Qué recta está más inclinada: $y=3x+1$ o $y=5x-100$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+La inclinación depende solo de $m$.
+$|5| > |3|$.
+
+**Respuesta:** $\boxed{y = 5x - 100}$
+</details>
+
+---
+
+### Ejercicio 8
+Escribe la ecuación que corta al eje Y en -4 y tiene pendiente 0.5.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$b=-4, m=0.5$.
+
+**Respuesta:** $\boxed{y = 0.5x - 4}$
+</details>
+
+---
+
+### Ejercicio 9
+Si dos rectas tienen la misma $b$ pero distinta $m$, ¿dónde se cruzan?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Ambas pasan por $(0, b)$.
+
+**Respuesta:** **En el Eje Y (0, b)**
+</details>
+
+---
+
+### Ejercicio 10
+Convierte $y-2 = 3(x-1)$ a esta forma.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$y - 2 = 3x - 3 \Rightarrow y = 3x - 1$.
+
+**Respuesta:** $\boxed{y = 3x - 1}$
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Componente | ¿Qué te dice? |
+| :--- | :--- |
+| **$m$** | Dirección e intensidad. |
+| **$b$** | Posición vertical inicial. |
+| **$x$ e $y$** | Las coordenadas de cualquier punto de la línea. |
+
+> **Conclusión:** Esta es la forma "amigable" de la recta. Siempre que quieras graficar o entender cómo se comporta una línea, intenta convertir su ecuación a $y = mx + b$.

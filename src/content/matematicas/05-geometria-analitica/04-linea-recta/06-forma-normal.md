@@ -1,287 +1,228 @@
-# Forma Normal de la Recta
+# **Forma Normal de la Recta**
 
-La **forma normal** (o forma polar normalizada) es una representación especial de la recta que usa la distancia perpendicular desde el origen hasta la recta. Es particularmente útil en aplicaciones de geometría computacional y física.
+Imagina que estás en un barco (el origen) y ves una costa lejana (la recta). La forma más natural de describir dónde está la costa no es con pendientes, sino diciendo: "Está a 5 km en dirección Noreste". Esa es la **Forma Normal**: usa una distancia y un ángulo.
 
 ---
 
 ## 🎯 ¿Qué vas a aprender?
 
-- Qué es la forma normal de una recta
-- Cómo obtenerla a partir de otras formas
-- Sus aplicaciones en el cálculo de distancias
+- Qué significan la $p$ (distancia) y la $\omega$ (ángulo normal).
+- La ecuación $x \cos \omega + y \sin \omega - p = 0$.
+- Cómo transformar la ecuación general a normal.
+- Por qué es vital para calcular distancias.
 
 ---
 
-## 📖 Lo Esencial de Forma Normal
+## 🧭 Navegando con $p$ y $\omega$
 
-| Concepto | Expresión |
-|----------|-----------|
-| Forma normal | $x\cos\omega + y\sin\omega - p = 0$ |
-| Distancia al origen | $p$ (siempre positiva) |
-| Ángulo del vector normal | $\omega$ |
-| Normalización | Dividir entre $\sqrt{A^2 + B^2}$ |
+Definimos una recta usando dos parámetros nuevos:
+1.  **$p$ (Rho o p):** La distancia perpendicular desde el origen hasta la recta. **(Siempre positiva)**.
+2.  **$\omega$ (Omega):** El ángulo que forma esa línea perpendicular con el eje X.
 
 <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+    <strong style="color: #1e293b; font-size: 0.95rem; margin-left: 0.3rem;">La Normal (Perpendicular)</strong>
+  </div>
   <img src="/images/geometria/analitica/forma-normal.svg" alt="Forma normal de la recta" style="width: 100%; height: auto;" />
 </div>
 
----
-
-## 📖 Concepto de Forma Normal
-
-La **forma normal** de una recta es:
-
-$$
-x\cos\omega + y\sin\omega = p
-$$
-
-o equivalentemente:
-
-$$
-x\cos\omega + y\sin\omega - p = 0
-$$
-
-donde:
-- $p$ es la **distancia perpendicular** desde el origen hasta la recta (siempre $p > 0$)
-- $\omega$ es el ángulo que forma la recta perpendicular (desde el origen a la recta) con el eje X positivo
-
-> 💡 Esta forma es útil porque el coeficiente del lado derecho directamente nos da la distancia al origen.
+La ecuación mágica es:
+$$ x \cos \omega + y \sin \omega - p = 0 $$
 
 ---
 
-## 📖 Propiedades de la Forma Normal
+## 🔄 Conversión: De General a Normal
 
-La forma normal tiene una propiedad especial:
+Si tienes $Ax + By + C = 0$ y quieres convertirla, debes dividir toda la ecuación por un número especial llamado "el radical":
 
-$$
-\cos^2\omega + \sin^2\omega = 1
-$$
+$$ r = \pm \sqrt{A^2 + B^2} $$
 
-Esto significa que los coeficientes de $x$ y $y$ satisfacen que la suma de sus cuadrados es 1.
-
----
-
-## 📖 De Forma General a Forma Normal
-
-Para convertir $Ax + By + C = 0$ a forma normal:
-
-**Paso 1:** Calcula el factor de normalización:
-$$
-\sqrt{A^2 + B^2}
-$$
-
-**Paso 2:** Divide toda la ecuación por $\pm\sqrt{A^2 + B^2}$, eligiendo el signo para que $p > 0$ (es decir, para que el término constante sea negativo después de pasar al lado derecho).
-
-$$
-\frac{A}{\pm\sqrt{A^2 + B^2}}x + \frac{B}{\pm\sqrt{A^2 + B^2}}y + \frac{C}{\pm\sqrt{A^2 + B^2}} = 0
-$$
-
-### ⚙️ Ejemplo 1: Normalizar una ecuación
-
-Convierte $3x + 4y - 10 = 0$ a forma normal.
-
-**Paso 1:** Factor de normalización:
-$$
-\sqrt{3^2 + 4^2} = \sqrt{9 + 16} = \sqrt{25} = 5
-$$
-
-**Paso 2:** Como $C = -10 < 0$, dividimos entre $+5$:
-$$
-\frac{3}{5}x + \frac{4}{5}y - 2 = 0
-$$
-
-**Forma normal:**
-$$
-\frac{3}{5}x + \frac{4}{5}y = 2
-$$
-
-Donde:
-- $\cos\omega = \frac{3}{5}$
-- $\sin\omega = \frac{4}{5}$
-- $p = 2$ (distancia al origen)
-
-### ⚙️ Ejemplo 2: Con término constante positivo
-
-Convierte $4x - 3y + 10 = 0$ a forma normal.
-
-**Paso 1:** Factor de normalización:
-$$
-\sqrt{16 + 9} = 5
-$$
-
-**Paso 2:** Como $C = 10 > 0$, dividimos entre $-5$ para que $p > 0$:
-$$
--\frac{4}{5}x + \frac{3}{5}y - 2 = 0
-$$
-
-**Forma normal:**
-$$
--\frac{4}{5}x + \frac{3}{5}y = 2
-$$
-
-- $p = 2$
-
-### ⚙️ Ejemplo 3: Encontrar la distancia al origen
-
-¿Cuál es la distancia del origen a la recta $8x - 6y + 20 = 0$?
-
-**Paso 1:** Factor de normalización:
-$$
-\sqrt{64 + 36} = 10
-$$
-
-**Paso 2:** Distancia:
-$$
-p = \frac{|C|}{\sqrt{A^2 + B^2}} = \frac{|20|}{10} = 2
-$$
-
-**Respuesta:** La distancia es 2 unidades.
+**¿Qué signo elijo?**
+El objetivo es que $p$ (el término independiente final) sea **positivo**.
+*   Si $C$ es negativo, usa el radical positivo (para que al pasar $C$ al otro lado quede positivo).
+*   Si $C$ es positivo, usa el radical negativo.
+*   En resumen: El radical debe tener **signo contrario a C**.
 
 ---
 
-## 📖 Cálculo del Ángulo ω
+## ⚙️ Ejemplos Resueltos
 
-Una vez en forma normal $x\cos\omega + y\sin\omega = p$:
+### Ejemplo 1: Ecuación Directa
+Recta a distancia 5 del origen con ángulo normal de 60°.
+*   $p = 5$.
+*   $\omega = 60°$.
+*   $\cos 60° = 1/2$, $\sin 60° = \sqrt{3}/2$.
+*   Ecuación: $\frac{1}{2}x + \frac{\sqrt{3}}{2}y - 5 = 0$.
 
-$$
-\cos\omega = \frac{A}{\pm\sqrt{A^2 + B^2}}, \quad \sin\omega = \frac{B}{\pm\sqrt{A^2 + B^2}}
-$$
-
-El ángulo $\omega$ se encuentra usando:
-$$
-\omega = \arctan\left(\frac{\sin\omega}{\cos\omega}\right)
-$$
-
-### ⚙️ Ejemplo 4: Encontrar el ángulo
-
-Para $3x + 4y - 10 = 0$:
-
-$$
-\cos\omega = \frac{3}{5} = 0.6, \quad \sin\omega = \frac{4}{5} = 0.8
-$$
-
-$$
-\tan\omega = \frac{0.8}{0.6} = \frac{4}{3}
-$$
-
-$$
-\omega = \arctan\left(\frac{4}{3}\right) \approx 53.13°
-$$
-
----
-
-## 📖 Aplicación: Fórmula de Distancia Punto-Recta
-
-La forma normal lleva naturalmente a la fórmula de distancia de un punto a una recta.
-
-Si la recta es $Ax + By + C = 0$ y el punto es $(x_0, y_0)$:
-
-$$
-d = \frac{|Ax_0 + By_0 + C|}{\sqrt{A^2 + B^2}}
-$$
-
-### ⚙️ Ejemplo 5: Distancia de un punto a una recta
-
-Encuentra la distancia del punto $(1, 2)$ a la recta $3x - 4y + 5 = 0$.
-
-$$
-d = \frac{|3(1) - 4(2) + 5|}{\sqrt{9 + 16}} = \frac{|3 - 8 + 5|}{5} = \frac{|0|}{5} = 0
-$$
-
-El punto está **sobre la recta**.
-
-### ⚙️ Ejemplo 6: Otro ejemplo de distancia
-
-Encuentra la distancia del punto $(3, 4)$ a la recta $5x + 12y - 26 = 0$.
-
-$$
-d = \frac{|5(3) + 12(4) - 26|}{\sqrt{25 + 144}} = \frac{|15 + 48 - 26|}{13} = \frac{37}{13} \approx 2.85
-$$
-
----
-
-## 🔑 Resumen
-
-| Concepto | Fórmula |
-|----------|---------|
-| Forma normal | $x\cos\omega + y\sin\omega = p$ |
-| Distancia al origen | $p = \frac{\|C\|}{\sqrt{A^2 + B^2}}$ |
-| Normalización | Dividir entre $\sqrt{A^2 + B^2}$ |
-| Distancia punto-recta | $d = \frac{\|Ax_0 + By_0 + C\|}{\sqrt{A^2 + B^2}}$ |
+### Ejemplo 2: Convertir General a Normal
+Ecuación: $3x - 4y - 10 = 0$.
+1.  **Calcular Radical:** $\sqrt{3^2 + (-4)^2} = \sqrt{9+16} = 5$.
+2.  **Elegir Signo:** $C = -10$ (Negativo). El radical debe ser **Positivo** ($+5$).
+3.  **Dividir:**
+    $$ \frac{3x}{5} - \frac{4y}{5} - \frac{10}{5} = 0 $$
+    $$ \frac{3}{5}x - \frac{4}{5}y - 2 = 0 $$
+    *   Distancia al origen ($p$) = 2.
+    *   $\cos \omega = 3/5$, $\sin \omega = -4/5$.
 
 ---
 
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1
-Convierte $5x + 12y - 26 = 0$ a forma normal.
+Escribe la ecuación si $p=3$ y $\omega=0°$ (Normal horizontal).
 
 <details>
 <summary>Ver solución</summary>
 
-$$
-\sqrt{25 + 144} = 13
-$$
+**Razonamiento:**
+$\cos 0 = 1, \sin 0 = 0$.
+$x(1) + y(0) - 3 = 0 \Rightarrow x - 3 = 0$. (Recta vertical $x=3$).
 
-$$
-\frac{5}{13}x + \frac{12}{13}y - 2 = 0
-$$
-
-Forma normal: $\frac{5}{13}x + \frac{12}{13}y = 2$
-
-Distancia al origen: $p = 2$
-
+**Respuesta:** $\boxed{x - 3 = 0}$
 </details>
+
+---
 
 ### Ejercicio 2
-¿Cuál es la distancia del origen a la recta $x + y - 5 = 0$?
+Escribe la ecuación si $p=2$ y $\omega=90°$.
 
 <details>
 <summary>Ver solución</summary>
 
-$$
-p = \frac{|-5|}{\sqrt{1 + 1}} = \frac{5}{\sqrt{2}} = \frac{5\sqrt{2}}{2} \approx 3.54
-$$
+**Razonamiento:**
+$\cos 90 = 0, \sin 90 = 1$.
+$y - 2 = 0$. (Recta horizontal $y=2$).
 
+**Respuesta:** $\boxed{y - 2 = 0}$
 </details>
+
+---
 
 ### Ejercicio 3
-Encuentra la distancia del punto $(5, 1)$ a la recta $3x + 4y - 7 = 0$.
+Convierte $4x + 3y - 12 = 0$ a normal.
 
 <details>
 <summary>Ver solución</summary>
 
-$$
-d = \frac{|3(5) + 4(1) - 7|}{\sqrt{9 + 16}} = \frac{|15 + 4 - 7|}{5} = \frac{12}{5} = 2.4
-$$
+**Razonamiento:**
+Radical: $\sqrt{16+9}=5$. Signo opuesto a $C(-12)$: Positivo.
+Dividir por 5.
 
+**Respuesta:** $\boxed{\frac{4}{5}x + \frac{3}{5}y - \frac{12}{5} = 0}$
 </details>
+
+---
 
 ### Ejercicio 4
-Si la forma normal de una recta es $\frac{1}{2}x + \frac{\sqrt{3}}{2}y = 4$, encuentra su forma general.
+Convierte $5x + 12y + 26 = 0$.
 
 <details>
 <summary>Ver solución</summary>
 
-Multiplicamos por 2:
-$$
-x + \sqrt{3}y = 8
-$$
+**Razonamiento:**
+Radical: $\sqrt{25+144}=13$. Signo opuesto a $C(+26)$: **Negativo** (-13).
+Dividir por -13.
 
-Forma general: $x + \sqrt{3}y - 8 = 0$
-
+**Respuesta:** $\boxed{-\frac{5}{13}x - \frac{12}{13}y - 2 = 0}$
 </details>
+
+---
 
 ### Ejercicio 5
-Verifica que $(2, 3)$ está a distancia 1 de la recta $4x - 3y - 4 = 0$.
+¿Cuál es la distancia de la recta $3x + 4y - 20 = 0$ al origen?
 
 <details>
 <summary>Ver solución</summary>
 
-$$
-d = \frac{|4(2) - 3(3) - 4|}{\sqrt{16 + 9}} = \frac{|8 - 9 - 4|}{5} = \frac{|-5|}{5} = 1
-$$
+**Razonamiento:**
+Radical 5.
+$p = |-20|/5 = 4$.
 
-Sí, la distancia es exactamente 1. ✓
-
+**Respuesta:** $\boxed{4}$
 </details>
+
+---
+
+### Ejercicio 6
+Si $\omega = 45°$ y $p=\sqrt{2}$, halla la ecuación.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$\frac{\sqrt{2}}{2}x + \frac{\sqrt{2}}{2}y - \sqrt{2} = 0$.
+Multiplicando todo por $\sqrt{2}$: $x+y-2=0$.
+
+**Respuesta:** $\boxed{x + y - 2 = 0}$
+</details>
+
+---
+
+### Ejercicio 7
+Halla $p$ si la ecuación normalizada es $0.6x + 0.8y - 6 = 0$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+El término independiente negativo es $-p$. Así que $p=6$.
+
+**Respuesta:** $\boxed{6}$
+</details>
+
+---
+
+### Ejercicio 8
+¿En qué cuadrante apunta el vector normal si $\cos \omega > 0$ y $\sin \omega < 0$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+X positiva, Y negativa. Cuarto Cuadrante.
+
+**Respuesta:** **IV Cuadrante**
+</details>
+
+---
+
+### Ejercicio 9
+Convierte $x - y - 2 = 0$ a normal.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Radical $\sqrt{1+1}=\sqrt{2}$. Signo positivo.
+$\frac{x}{\sqrt{2}} - \frac{y}{\sqrt{2}} - \frac{2}{\sqrt{2}} = 0$.
+$\frac{\sqrt{2}}{2}x - \frac{\sqrt{2}}{2}y - \sqrt{2} = 0$.
+
+**Respuesta:** $\boxed{\frac{\sqrt{2}}{2}x - \frac{\sqrt{2}}{2}y - \sqrt{2} = 0}$
+</details>
+
+---
+
+### Ejercicio 10
+Si la distancia al origen es 0, ¿cuánto vale $C$ en la general?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Si pasa por el origen, $C=0$.
+
+**Respuesta:** $\boxed{C = 0}$
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Paso de Conversión | Acción |
+| :--- | :--- |
+| **1. Radical** | Calcular $\sqrt{A^2+B^2}$. |
+| **2. Signo** | Mirar $C$. Elegir signo del radical **opuesto** a $C$. |
+| **3. Dividir** | Dividir toda la ecuación general por el radical con signo. |
+
+> **Conclusión:** La Forma Normal es la "forma de navegación". Nos dice qué tan lejos está la recta del centro del mundo (el origen) y en qué dirección mirar para encontrarla.
