@@ -1,380 +1,195 @@
-# Muestreo Probabilístico
+# **Muestreo Probabilístico**
 
-Ya sabes que el muestreo es estudiar una parte para inferir sobre el todo. Pero ¿cómo **seleccionar** esa parte de manera justa y confiable?
-
-El **muestreo probabilístico** garantiza que cada miembro de la población tenga una **probabilidad conocida** de ser seleccionado. Es como un sorteo justo donde todos tienen oportunidad.
+Si vas a elegir una muestra, no lo hagas "a dedo". Para que la estadística funcione, la elección debe ser dejada al azar. Esto garantiza que todos tengan la misma oportunidad y elimina tus prejuicios.
 
 ---
 
 ## 🎯 ¿Qué vas a aprender?
 
-- Qué hace que un muestreo sea "probabilístico"
-- Los 4 métodos principales: aleatorio simple, sistemático, estratificado y por conglomerados
-- Cuándo usar cada método
+- Aleatorio Simple vs Sistemático.
+- Técnicas avanzadas: Estratificado y Conglomerados.
+- Cómo usar un generador de números aleatorios.
 
 ---
 
-## 📊 Resumen de Métodos
+## 🎲 Concepto 1: Métodos Básicos (Simple y Sistemático)
 
-| Método | Idea Principal | Mejor Para |
-|--------|---------------|------------|
-| **Aleatorio Simple** | Cada individuo tiene igual probabilidad | Poblaciones homogéneas |
-| **Sistemático** | Seleccionar cada k-ésimo elemento | Listas ordenadas |
-| **Estratificado** | Dividir en grupos, muestrear cada grupo | Poblaciones con subgrupos |
-| **Por Conglomerados** | Dividir en grupos, seleccionar grupos completos | Poblaciones dispersas geográficamente |
+Son los más fáciles de entender. Requieren tener una lista completa de la población (Marco Muestral).
 
----
+### 1. Aleatorio Simple
+Es la lotería pura. Nombres en un sombrero o Excel `RAND()`.
 
-## 📖 Muestreo Aleatorio Simple
+### 2. Sistemático
+Eliges uno al azar y luego saltas de $k$ en $k$ (ej. cada 10 personas).
 
-> En el **muestreo aleatorio simple**, cada individuo de la población tiene **exactamente la misma probabilidad** de ser seleccionado. Es como sacar nombres de un sombrero.
+**5 Ejemplos de Aplicación:**
 
-### 💡 Características:
-- Todos tienen igual oportunidad
-- La selección es completamente al azar
-- Es el método más básico y fundamental
+### Ejemplo 1.1: Rifas (Simple)
+Tienes 100 boletas. Sacas 3 papeles de una bolsa.
+*   Totalmente al azar.
 
-### ⚙️ Ejemplo 1: Lotería
+### Ejemplo 1.2: Control de Calidad (Sistemático)
+En una banda transportadora de botellas, un robot revisa la botella #5, #105, #205...
+*   Intervalo $k=100$.
 
-**Población:** 500 empleados de una empresa
-**Muestra deseada:** 50 empleados
+### Ejemplo 1.3: Encuesta a Empleados (Simple)
+La empresa tiene 500 empleados. Usas Excel para elegir 50 ID al azar.
 
-**Proceso:**
-1. Asignar un número del 1 al 500 a cada empleado
-2. Usar un generador de números aleatorios (o papelitos en una bolsa)
-3. Seleccionar 50 números al azar
-4. Los empleados con esos números forman la muestra
+### Ejemplo 1.4: Entrada al Cine (Sistemático)
+Encuestas a la persona #10, #20, #30... que entra a la sala.
+*   Riesgo: Si entran parejas (2 en 2), podrías encuestar siempre al hombre o siempre a la mujer si tu intervalo sincroniza con el patrón.
 
-**Probabilidad de ser seleccionado:** $\frac{50}{500} = \frac{1}{10} = 10\%$ para cada empleado.
-
-### ⚙️ Ejemplo 2: Encuesta en el salón
-
-**Población:** 35 estudiantes del salón
-**Muestra deseada:** 7 estudiantes
-
-**Proceso:**
-1. Escribir los 35 nombres en papelitos iguales
-2. Mezclar bien los papelitos en una bolsa
-3. Sacar 7 papelitos sin ver
-4. Esos 7 estudiantes son la muestra
-
-### 💡 ¿Cómo generar números aleatorios?
-- Tabla de números aleatorios (método tradicional)
-- Calculadora científica con función RAND
-- Hojas de cálculo (función ALEATORIO)
-- Aplicaciones en línea
-
-### ✅ Ventajas y ❌ Desventajas
-
-| ✅ Ventajas | ❌ Desventajas |
-|-------------|---------------|
-| Muy simple de entender | Necesitas lista completa de la población |
-| Libre de sesgo del investigador | Puede no representar bien subgrupos pequeños |
-| Base para métodos estadísticos | Difícil si la población está dispersa |
+### Ejemplo 1.5: Bingo (Simple)
+Las balotas salen de la máquina. No hay orden ni patrón.
 
 ---
 
-## 📖 Muestreo Sistemático
+## 🏗️ Concepto 2: Métodos Estructurados (Estratificado y Conglomerados)
 
-> En el **muestreo sistemático**, se selecciona un punto de inicio al azar y luego se elige **cada k-ésimo elemento** de la lista.
+Cuando la población es compleja o gigante, el azar simple no basta o es muy caro.
 
-### 💡 La fórmula del intervalo:
+### 3. Estratificado
+Divides la población en grupos "estratos" (Homogéneos adentro) y sacas muestra de **todos**. Asegura representatividad perfecta.
 
-$$
-k = \frac{N}{n}
-$$
+### 4. Conglomerados
+Divides en grupos "clusters" (Heterogéneos adentro) y eliges **algunos** grupos completos. Ahorra dinero.
 
-Donde:
-- $N$ = tamaño de la población
-- $n$ = tamaño de la muestra deseada
-- $k$ = intervalo de selección
+**5 Ejemplos Comparativos:**
 
-### ⚙️ Ejemplo 1: Lista de clientes
+### Ejemplo 2.1: Encuesta Universitaria (Estratificado)
+Quieres representar bien a todas las carreras.
+*   Estratos: Ingeniería, Artes, Medicina.
+*   Sacas el 10% de Ingenieros, 10% de Artistas, 10% de Médicos.
+*   *Garantía:* Ninguna carrera queda fuera.
 
-**Población:** 1,000 clientes en una base de datos
-**Muestra deseada:** 100 clientes
+### Ejemplo 2.2: Estudio de Barrios (Conglomerados)
+Quieres estudiar familias en Bogotá. No puedes ir a todas las casas.
+*   Conglomerados: Manzanas (Cuadras).
+*   Eliges 20 manzanas al azar y encuestas a **todas** las casas de esas 20 manzanas.
+*   *Ahorro:* Menos desplazamiento.
 
-**Cálculo del intervalo:**
-$$
-k = \frac{1000}{100} = 10
-$$
+### Ejemplo 2.3: Sondeo Nacional (Multi-etápico)
+Primero eliges Departamentos (Conglomerado), luego Municipios, luego Barrios, luego Casas.
 
-**Proceso:**
-1. Elegir un número aleatorio entre 1 y 10 (supongamos que sale el 3)
-2. Seleccionar: cliente 3, 13, 23, 33, 43, 53... (cada 10)
-3. Continuar hasta tener 100 clientes
+### Ejemplo 2.4: Brecha Salarial (Estratificado)
+Estratas por Género (Hombre/Mujer) para asegurar que tienes suficientes datos de ambos para comparar.
 
-**Resultado:** Se seleccionan los clientes: 3, 13, 23, 33, 43, 53, 63, 73, 83, 93, 103, 113...
-
-### ⚙️ Ejemplo 2: Fila de producción
-
-Una fábrica produce tornillos en una línea de producción. Para control de calidad:
-
-- **Población:** Todos los tornillos del día
-- **Muestra deseada:** Cada tornillo número 50
-
-**Proceso:**
-1. Punto de inicio aleatorio: tornillo #23
-2. Luego: #73, #123, #173, #223...
-3. Se revisa la calidad de cada tornillo seleccionado
-
-### ⚠️ Cuidado con patrones
-
-El muestreo sistemático puede fallar si hay un **patrón** en la lista que coincida con el intervalo.
-
-**Ejemplo problemático:**
-- Una tienda ordena sus ventas por día de la semana
-- Si k = 7, siempre seleccionarías el mismo día de la semana
-- La muestra estaría sesgada hacia ese día
-
-**Solución:** Asegurarse de que la lista no tenga patrones periódicos.
-
-### ✅ Ventajas y ❌ Desventajas
-
-| ✅ Ventajas | ❌ Desventajas |
-|-------------|---------------|
-| Más fácil de aplicar que el aleatorio simple | Puede coincidir con patrones en los datos |
-| No necesitas lista completa al inicio | Requiere que la lista esté disponible |
-| Garantiza distribución uniforme | Menos aleatorio que el simple |
-
----
-
-## 📖 Muestreo Estratificado
-
-> En el **muestreo estratificado**, la población se divide en **grupos homogéneos** (estratos) y se toma una muestra aleatoria de **cada estrato**.
-
-### 💡 ¿Qué es un estrato?
-Un subgrupo de la población donde los miembros son **similares entre sí** respecto a alguna característica importante.
-
-### ⚙️ Ejemplo 1: Encuesta universitaria
-
-**Población:** 10,000 estudiantes universitarios
-**Estratos:** Por facultad (Ingeniería, Medicina, Derecho, etc.)
-
-| Facultad | Estudiantes | Proporción | Muestra (de 500) |
-|----------|-------------|------------|------------------|
-| Ingeniería | 3,000 | 30% | 150 |
-| Medicina | 2,000 | 20% | 100 |
-| Derecho | 2,500 | 25% | 125 |
-| Humanidades | 2,500 | 25% | 125 |
-| **Total** | 10,000 | 100% | 500 |
-
-**Proceso:**
-1. Dividir la población por facultad
-2. Calcular cuántos seleccionar de cada una (proporcional)
-3. Hacer muestreo aleatorio simple dentro de cada facultad
-
-**Resultado:** La muestra respeta la proporción de cada facultad en la población.
-
-### ⚙️ Ejemplo 2: Encuesta nacional por regiones
-
-**Población:** Habitantes de un país
-**Estratos:** Regiones geográficas
-
-| Región | Población | Muestra proporcional |
-|--------|-----------|---------------------|
-| Norte | 5 millones (25%) | 250 encuestados |
-| Centro | 10 millones (50%) | 500 encuestados |
-| Sur | 5 millones (25%) | 250 encuestados |
-| **Total** | 20 millones | 1,000 encuestados |
-
-### 💡 ¿Cuándo usar estratificación?
-
-Cuando la población tiene **subgrupos importantes** que queremos asegurar que estén representados:
-- Niveles socioeconómicos
-- Géneros
-- Grupos de edad
-- Regiones geográficas
-- Departamentos de una empresa
-
-### ✅ Ventajas y ❌ Desventajas
-
-| ✅ Ventajas | ❌ Desventajas |
-|-------------|---------------|
-| Garantiza representación de todos los subgrupos | Necesitas conocer los estratos de antemano |
-| Más preciso que el aleatorio simple | Más complejo de administrar |
-| Permite análisis por subgrupos | Requiere información previa de la población |
-
----
-
-## 📖 Muestreo por Conglomerados
-
-> En el **muestreo por conglomerados**, la población se divide en grupos (conglomerados) y se seleccionan **algunos grupos completos** para estudiar.
-
-### 💡 Diferencia con estratificado:
-- **Estratificado:** Muestra de TODOS los estratos
-- **Conglomerados:** Muestra de ALGUNOS grupos (pero completos)
-
-### ⚙️ Ejemplo 1: Colegios de una ciudad
-
-**Población:** Todos los estudiantes de bachillerato de una ciudad
-**Conglomerados:** Los 100 colegios de la ciudad
-
-**Proceso:**
-1. Seleccionar aleatoriamente 10 colegios de los 100
-2. Encuestar a TODOS los estudiantes de esos 10 colegios
-3. Los otros 90 colegios no participan
-
-### ⚙️ Ejemplo 2: Barrios para estudio de salud
-
-**Población:** Todos los habitantes de una ciudad
-**Conglomerados:** Los 50 barrios de la ciudad
-
-**Proceso:**
-1. Seleccionar aleatoriamente 5 barrios
-2. Visitar y encuestar hogares en esos 5 barrios
-3. Los otros 45 barrios no se visitan
-
-### 💡 ¿Cuándo usar conglomerados?
-
-- Cuando la población está **naturalmente dividida** en grupos
-- Cuando es **costoso o difícil** llegar a toda la población
-- Cuando los grupos (conglomerados) son **internamente heterogéneos** (tienen variedad dentro)
-
-### ⚙️ Ejemplo 3: Muestreo en dos etapas
-
-A veces se combina:
-1. **Primera etapa:** Seleccionar conglomerados (ej: 10 colegios)
-2. **Segunda etapa:** Dentro de cada conglomerado, hacer muestreo aleatorio (ej: 30 estudiantes por colegio)
-
-**Resultado:** 10 colegios × 30 estudiantes = 300 estudiantes
-
-### ✅ Ventajas y ❌ Desventajas
-
-| ✅ Ventajas | ❌ Desventajas |
-|-------------|---------------|
-| Muy económico (concentra esfuerzos) | Menos preciso que estratificado |
-| No necesitas lista de toda la población | Los conglomerados deben ser heterogéneos |
-| Ideal para poblaciones dispersas | Mayor error de muestreo |
-
----
-
-## 💡 ¿Cuál Método Elegir?
-
-| Situación | Método Recomendado |
-|-----------|-------------------|
-| Población pequeña y accesible | Aleatorio Simple |
-| Tienes una lista ordenada | Sistemático |
-| Hay subgrupos importantes a representar | Estratificado |
-| Población dispersa geográficamente | Por Conglomerados |
-| Presupuesto muy limitado | Por Conglomerados |
-| Necesitas máxima precisión | Estratificado |
-
----
-
-## 🔑 Resumen
-
-| Método | Proceso | Clave |
-|--------|---------|-------|
-| **Aleatorio Simple** | Selección al azar de individuos | Todos tienen igual probabilidad |
-| **Sistemático** | Cada k-ésimo elemento | Punto de inicio aleatorio |
-| **Estratificado** | Muestra de cada estrato | Garantiza representación de subgrupos |
-| **Por Conglomerados** | Grupos completos seleccionados | Económico para poblaciones dispersas |
+### Ejemplo 2.5: Calidad de Cajas de Fruta (Conglomerados)
+Llegan 100 camiones con cajas de naranjas.
+*   Eliges 5 cajas al azar (Conglomerados).
+*   Revisas las 50 naranjas de esas 5 cajas.
 
 ---
 
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1
-Una universidad tiene 5,000 estudiantes. El investigador quiere una muestra de 200 usando muestreo sistemático.
-
-a) ¿Cuál es el intervalo de selección (k)?
-b) Si el número aleatorio inicial es 7, ¿cuáles son los primeros 5 estudiantes seleccionados?
+Diferencia entre Estratificado y Conglomerados.
 
 <details>
 <summary>Ver solución</summary>
-
-a) **Intervalo:**
-$$k = \frac{N}{n} = \frac{5000}{200} = 25$$
-
-b) **Primeros 5 seleccionados:**
-- Inicio: 7
-- Luego: 7+25=32, 32+25=57, 57+25=82, 82+25=107
-
-**Respuesta:** Estudiantes 7, 32, 57, 82, 107
-
+Estratificado = Muestra de TODOS los grupos. Conglomerados = Muestra de ALGUNOS grupos.
 </details>
+
+---
 
 ### Ejercicio 2
-¿Qué tipo de muestreo se está usando en cada caso?
-
-a) Se asigna un número a cada empleado y se usa una app para seleccionar 50 números al azar.
-b) Se divide a los votantes por departamento y se encuesta proporcionalmente en cada uno.
-c) Se seleccionan 5 hospitales de una ciudad y se encuestan todos los médicos de esos hospitales.
-d) En una línea de producción, se inspecciona cada producto número 100.
+¿Qué método usa una tómbola?
 
 <details>
 <summary>Ver solución</summary>
-
-a) **Aleatorio Simple** - Cada empleado tiene igual probabilidad
-
-b) **Estratificado** - Se divide en grupos y se muestrea de cada uno
-
-c) **Por Conglomerados** - Se seleccionan grupos completos
-
-d) **Sistemático** - Se selecciona cada k-ésimo elemento (k=100)
-
+Aleatorio Simple.
 </details>
+
+---
 
 ### Ejercicio 3
-Un investigador quiere estudiar a los estudiantes de secundaria de un país. Tiene tiempo y presupuesto limitados.
-
-a) ¿Sería práctico un muestreo aleatorio simple? ¿Por qué?
-b) ¿Qué método de muestreo recomendarías y cómo lo implementarías?
+Riesgo del muestreo sistemático.
 
 <details>
 <summary>Ver solución</summary>
-
-a) **No sería práctico** porque:
-- Necesitaría una lista de TODOS los estudiantes del país
-- Si selecciona al azar, podría tener que viajar a muchas ciudades diferentes
-- Sería muy costoso y lento
-
-b) **Muestreo por conglomerados (en dos etapas):**
-
-**Primera etapa:** 
-- Conglomerados = colegios
-- Seleccionar aleatoriamente 20 colegios del país
-
-**Segunda etapa:**
-- En cada colegio seleccionado, hacer muestreo aleatorio de 30 estudiantes
-- Total: 20 × 30 = 600 estudiantes
-
-**Ventajas:**
-- Solo visita 20 colegios en lugar de cientos
-- Más económico y manejable
-- Aún así obtiene diversidad geográfica si los colegios están bien distribuidos
-
+Periodicidad. Si el intervalo coincide con un patrón oculto en la lista (ej. siempre lunes).
 </details>
+
+---
 
 ### Ejercicio 4
-Una empresa tiene 1,000 empleados distribuidos así:
-
-| Departamento | Empleados |
-|--------------|-----------|
-| Producción | 500 |
-| Ventas | 300 |
-| Administración | 200 |
-
-Si quieren encuestar a 100 empleados usando muestreo estratificado proporcional, ¿cuántos deben seleccionar de cada departamento?
+Si quiero dividir por estratos socioeconómicos (1 a 6).
 
 <details>
 <summary>Ver solución</summary>
-
-**Paso 1:** Calcular las proporciones:
-- Producción: $\frac{500}{1000} = 50\%$
-- Ventas: $\frac{300}{1000} = 30\%$
-- Administración: $\frac{200}{1000} = 20\%$
-
-**Paso 2:** Aplicar proporciones a la muestra de 100:
-
-| Departamento | Proporción | Muestra |
-|--------------|------------|---------|
-| Producción | 50% | 50 empleados |
-| Ventas | 30% | 30 empleados |
-| Administración | 20% | 20 empleados |
-| **Total** | 100% | **100 empleados** |
-
-**Respuesta:** 50 de Producción, 30 de Ventas, 20 de Administración
-
+Muestreo Estratificado.
 </details>
+
+---
+
+### Ejercicio 5
+¿Cuál método es más barato geográficamente?
+
+<details>
+<summary>Ver solución</summary>
+Conglomerados (concentra el trabajo de campo).
+</details>
+
+---
+
+### Ejercicio 6
+Fórmula del intervalo sistemático ($k$).
+
+<details>
+<summary>Ver solución</summary>
+$k = N/n$. (Población / Muestra deseada).
+</details>
+
+---
+
+### Ejercicio 7
+¿Qué significa "Probabilístico"?
+
+<details>
+<summary>Ver solución</summary>
+Que se conoce la probabilidad de elección de cada sujeto ($P > 0$).
+</details>
+
+---
+
+### Ejercicio 8
+Ejemplo de muestreo NO probabilístico (Malo).
+
+<details>
+<summary>Ver solución</summary>
+Muestreo por Conveniencia (preguntar al que pase por la calle).
+</details>
+
+---
+
+### Ejercicio 9
+Si en un estrato hay más gente, ¿saco más muestra?
+
+<details>
+<summary>Ver solución</summary>
+Sí, se llama Afijación Proporcional. (Más gente = Más muestra).
+</details>
+
+---
+
+### Ejercicio 10
+Herramienta tecnológica para muestrear.
+
+<details>
+<summary>Ver solución</summary>
+Generadores de números pseudoaleatorios (R, Python, Excel).
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Método | Lema |
+| :--- | :--- |
+| **Aleatorio Simple** | "La suerte es loca". |
+| **Sistemático** | "Cuenta pasos (1, 2, 3... Tú)". |
+| **Estratificado** | "Un poco de todo (Ensalada)". |
+| **Conglomerados** | "Toma el paquete completo". |
+
+> **Conclusión:** El azar bien diseñado es la única forma de eliminar el sesgo humano. Confía en los dados.

@@ -1,288 +1,186 @@
-# Censo y Muestreo
+# **Censo y Muestreo**
 
-¿Cómo sabemos cuántas personas viven en un país? ¿Y cómo saben las encuestadoras quién ganará las elecciones **sin preguntarle a todos**?
-
-La respuesta está en dos estrategias fundamentales: el **censo** y el **muestreo**.
+¿Por qué no preguntarle a TODOS? Porque a menudo es imposible, caro o peligroso. Decidir entre preguntar a todos (Censo) o a unos pocos (Muestreo) es la primera gran decisión de un estudio.
 
 ---
 
 ## 🎯 ¿Qué vas a aprender?
 
-- Qué es un censo y cuándo se usa
-- Qué es el muestreo y por qué es más común
-- Las ventajas y desventajas de cada método
-- Cuándo elegir uno u otro
+- Diferencias operativas Censo vs Muestreo.
+- Cuándo es obligatorio hacer un Censo.
+- El concepto de "Muestra Representativa".
 
 ---
 
-## 📊 Comparación Rápida
+## 📋 Concepto 1: La Gran Decisión (Censo vs Muestreo)
 
-| Aspecto | Censo | Muestreo |
-|---------|-------|----------|
-| **¿A quién estudia?** | Toda la población | Solo una parte (muestra) |
-| **Costo** | Muy alto | Bajo o moderado |
-| **Tiempo** | Mucho | Poco |
-| **Precisión** | 100% exacto | Aproximado (con margen de error) |
-| **¿Cuándo se usa?** | Poblaciones pequeñas o cuando la ley lo exige | La mayoría de investigaciones |
+*   **Censo:** Mide al 100% de la población. Resultado exacto.
+*   **Muestreo:** Mide a una fracción ($n < N$). Resultado estimado con error.
 
----
+**5 Escenarios de Decisión:**
 
-## 📖 ¿Qué es un Censo?
+### Escenario 1.1: Población Pequeña
+Un profesor con 30 alumnos quiere saber la edad promedio.
+*   **Decisión:** Censo.
+*   *Razón:* Es fácil y rápido medir a los 30.
 
-> Un **censo** es el proceso de recolectar datos de **todos y cada uno** de los individuos de una población.
+### Escenario 1.2: Pruebas Destructivas
+Una fábrica de fósforos quiere saber si prenden bien.
+*   **Decisión:** Muestreo.
+*   *Razón:* ¡Si haces un censo, quemas toda la producción y no te queda nada para vender!
 
-### 💡 Características del censo:
-- Cubre el **100%** de la población
-- Da resultados **exactos** (no hay margen de error)
-- Es **muy costoso** y lleva **mucho tiempo**
-- Se usa para decisiones muy importantes (planificación nacional, distribución de recursos)
+### Escenario 1.3: Población Infinita
+Un biólogo estudia el peso de los peces en el Amazonas.
+*   **Decisión:** Muestreo.
+*   *Razón:* Es imposible atrapar a todos los peces del río.
 
-### ⚙️ Ejemplo 1: Censo poblacional
+### Escenario 1.4: Precisión Legal
+El gobierno debe asignar curules en el congreso según habitantes por región.
+*   **Decisión:** Censo.
+*   *Razón:* La ley exige el dato exacto, no una estimación.
 
-En Colombia, el DANE (Departamento Administrativo Nacional de Estadística) realiza un **censo nacional** aproximadamente cada 10 años.
-
-**¿Qué hacen?**
-- Visitan **todas** las viviendas del país
-- Registran cuántas personas viven en cada una
-- Preguntan edad, género, educación, empleo, etc.
-
-**¿Para qué sirve?**
-- Saber exactamente cuántos colombianos hay
-- Planificar hospitales, escuelas, carreteras
-- Distribuir el presupuesto nacional
-
-### ⚙️ Ejemplo 2: Censo escolar
-
-El profesor quiere saber la edad **exacta** de todos sus estudiantes.
-
-- **Población:** Los 35 estudiantes del salón
-- **Método:** Pregunta la edad a **cada uno** de los 35
-- **Resultado:** Datos exactos, sin estimaciones
-
-Como la población es pequeña (35), el censo es factible.
+### Escenario 1.5: Urgencia
+Una epidemia estalla y necesitas saber en 24 horas qué porcentaje está infectado.
+*   **Decisión:** Muestreo rápido.
+*   *Razón:* Un censo tardaría meses.
 
 ---
 
-## 📖 ¿Qué es el Muestreo?
+## ⚖️ Concepto 2: Representatividad (La Sopa)
 
-> El **muestreo** es el proceso de seleccionar y estudiar solo una **parte** (muestra) de la población para obtener información sobre el todo.
+Para que el muestreo funcione, la muestra debe ser un **microcosmos** de la población. Como probar una cucharada de sopa: debe tener la misma proporción de sal, fideos y verduras que la olla entera.
 
-### 💡 Características del muestreo:
-- Estudia solo una **fracción** de la población
-- Es **más económico** y **rápido**
-- Los resultados tienen un **margen de error**
-- Es el método más usado en investigación
+**5 Ejemplos de Sesgo (Mala Representatividad):**
 
-### ⚙️ Ejemplo 1: Encuesta electoral
+### Ejemplo 2.1: El Sesgo Telefónico
+En 1936, una encuesta predijo mal al presidente de EE.UU. porque llamaron por teléfono.
+*   *Error:* En esa época solo los ricos tenían teléfono. Ignoraron a los pobres.
 
-**Pregunta:** ¿Quién ganará las elecciones presidenciales?
+### Ejemplo 2.2: Encuesta Voluntaria
+Un noticiero pregunta: "¿Qué opina del gobierno? Envíe un SMS".
+*   *Error:* Solo responden los que están muy enojados o muy felices. La mayoría moderada no gasta dinero en el SMS.
 
-- **Población:** 35 millones de votantes potenciales
-- **Muestra:** 2,000 personas encuestadas
-- **Resultado:** "El candidato A tiene 48% ± 3%"
+### Ejemplo 2.3: Ubicación Geográfica
+Encuestar sobre "Transporte en Bogotá" pero solo ir a las estaciones del Norte.
+*   *Error:* Ignoras la realidad del Sur y Occidente.
 
-¿Por qué no hacen un censo? Sería imposible preguntar a 35 millones de personas antes de las elecciones.
+### Ejemplo 2.4: Sesgo de Supervivencia
+Analizar los aviones que regresan de la guerra para ver dónde poner blindaje.
+*   *Error:* Debes mirar los que NO regresaron (los derribados). Si refuerzas donde recibieron balas los que volvieron, proteges partes no vitales.
 
-### ⚙️ Ejemplo 2: Control de calidad
-
-Una fábrica de ampolletas produce 100,000 unidades al día.
-
-- **Población:** 100,000 ampolletas
-- **Muestra:** 500 ampolletas seleccionadas al azar
-- **Prueba:** Se encienden hasta que se queman para medir duración
-
-¿Por qué no hacen un censo? ¡Tendrían que quemar TODA la producción! El muestreo permite probar sin destruir todo.
-
----
-
-## 💡 ¿Cuándo Usar Cada Método?
-
-| Situación | Método Recomendado | Razón |
-|-----------|-------------------|-------|
-| Población pequeña (< 100) | Censo | Es factible y da datos exactos |
-| Población muy grande | Muestreo | Imposible llegar a todos |
-| Se requiere exactitud total | Censo | Sin margen de error |
-| Presupuesto limitado | Muestreo | Más económico |
-| La prueba destruye el objeto | Muestreo | No se puede probar todo |
-| Decisiones de planificación nacional | Censo | La ley lo requiere |
-
----
-
-## 📖 Ventajas y Desventajas
-
-### Censo
-
-| ✅ Ventajas | ❌ Desventajas |
-|-------------|---------------|
-| Datos 100% exactos | Muy costoso |
-| No hay margen de error | Requiere mucho tiempo |
-| Información de toda la población | Difícil de actualizar frecuentemente |
-| Base para políticas públicas | Puede haber subregistro (gente que no contestan) |
-
-### Muestreo
-
-| ✅ Ventajas | ❌ Desventajas |
-|-------------|---------------|
-| Económico | Solo da estimaciones |
-| Rápido | Siempre hay margen de error |
-| Puede repetirse frecuentemente | La muestra podría no ser representativa |
-| Permite estudiar poblaciones infinitas | Requiere técnicas estadísticas adecuadas |
-
----
-
-## 📖 El Concepto de Representatividad
-
-> Una muestra es **representativa** cuando refleja fielmente las características de la población de la que proviene.
-
-### 💡 Analogía
-
-Piensa en una olla de sopa bien mezclada:
-- Una cucharada (muestra) sabe igual que toda la olla (población)
-- La cucharada es **representativa** del sabor total
-
-Pero si la sopa no está bien mezclada:
-- Una cucharada de arriba podría ser muy diferente a una de abajo
-- La cucharada NO sería representativa
-
-### ⚙️ Ejemplo: Muestra NO representativa
-
-**Problema:** Quieres saber la opinión de los jóvenes colombianos sobre el cambio climático.
-
-**Error:** Solo encuestas a estudiantes de universidades privadas de Bogotá.
-
-**¿Por qué falla?**
-- No incluye jóvenes de otras ciudades
-- No incluye jóvenes de universidades públicas
-- No incluye jóvenes que no estudian
-
-**Resultado:** La muestra no representa a TODOS los jóvenes colombianos.
-
-### 💡 Regla de oro
-Para que una muestra sea representativa, **todos los miembros de la población deben tener la oportunidad de ser seleccionados**.
-
----
-
-## 📖 Error de Muestreo
-
-> El **error de muestreo** es la diferencia entre el valor obtenido en la muestra y el valor real en la población.
-
-### ⚙️ Ejemplo numérico
-
-- **Parámetro real (población):** El promedio de edad de todos los votantes es 42 años
-- **Estadístico (muestra):** El promedio de edad de los 2,000 encuestados es 43.5 años
-- **Error de muestreo:** $|43.5 - 42| = 1.5$ años
-
-### 💡 ¿Se puede eliminar el error de muestreo?
-
-**No completamente, pero sí reducirlo:**
-- Aumentando el tamaño de la muestra
-- Usando métodos de muestreo adecuados
-- Asegurando que la muestra sea representativa
-
----
-
-## 🔑 Resumen
-
-| Concepto | Definición |
-|----------|------------|
-| **Censo** | Estudiar a TODOS los individuos de la población |
-| **Muestreo** | Estudiar solo una PARTE (muestra) de la población |
-| **Muestra representativa** | Refleja fielmente las características de la población |
-| **Error de muestreo** | Diferencia entre el valor de la muestra y el real |
+### Ejemplo 2.5: Hora del día
+Encuestar en casas a las 10:00 AM un martes.
+*   *Error:* Solo encontrarás amas de casa, desempleados o jubilados. Los trabajadores no están.
 
 ---
 
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1
-Indica si cada situación requiere un **censo** o es más adecuado el **muestreo**:
-
-a) Un profesor quiere saber el promedio de notas de sus 40 estudiantes.
-b) Una empresa quiere conocer la satisfacción de sus 5 millones de clientes.
-c) El gobierno necesita saber cuántos habitantes tiene el país para distribuir el presupuesto.
-d) Una marca quiere probar la resistencia de sus cascos de motocicleta (la prueba los destruye).
+Ventaja principal del Censo.
 
 <details>
 <summary>Ver solución</summary>
-
-a) **Censo** - Población pequeña (40), es factible consultar a todos.
-
-b) **Muestreo** - Población muy grande, imposible consultar 5 millones.
-
-c) **Censo** - La planificación nacional requiere datos exactos.
-
-d) **Muestreo** - La prueba destruye los cascos, no pueden probar todos.
-
+Exactitud total (Error cero).
 </details>
+
+---
 
 ### Ejercicio 2
-Explica por qué las encuestas electorales siempre reportan un "margen de error" (ej: "48% ± 3%").
+Ventaja principal del Muestreo.
 
 <details>
 <summary>Ver solución</summary>
-
-Las encuestas electorales usan **muestreo** en lugar de censo porque:
-- Es imposible preguntar a millones de votantes
-- Se necesitan resultados rápidos
-
-Como solo se pregunta a una muestra (ej: 2,000 personas), los resultados son **estimaciones** del valor real. El "margen de error" indica el rango dentro del cual probablemente está el valor verdadero.
-
-Por ejemplo, "48% ± 3%" significa:
-- La estimación es 48%
-- El valor real probablemente está entre 45% y 51%
-
-Si hicieran un censo (preguntar a todos), no habría margen de error.
-
+Costo y Tiempo reducidos. Viabilidad.
 </details>
+
+---
 
 ### Ejercicio 3
-Un investigador quiere estudiar los hábitos alimenticios de los adolescentes de una ciudad. Propone encuestar solo a estudiantes de un colegio ubicado en una zona de alto nivel socioeconómico.
-
-a) ¿Esta muestra sería representativa de todos los adolescentes de la ciudad?
-b) ¿Qué problemas podría tener esta investigación?
-c) ¿Cómo mejorarías el diseño de la muestra?
+¿Qué es sesgo de selección?
 
 <details>
 <summary>Ver solución</summary>
-
-a) **No**, la muestra NO sería representativa porque:
-- Solo incluye un nivel socioeconómico
-- Solo incluye estudiantes (excluye adolescentes que no estudian)
-- Solo incluye un colegio
-
-b) **Problemas:**
-- Los hábitos alimenticios varían según el nivel económico
-- Las conclusiones no aplicarían a adolescentes de otros estratos
-- Sesgo de selección: solo un tipo de adolescente está representado
-
-c) **Mejoras:**
-- Incluir colegios de diferentes zonas y niveles socioeconómicos
-- Incluir colegios públicos y privados
-- Considerar adolescentes que no estén escolarizados
-- Buscar diversidad geográfica dentro de la ciudad
-
+Elegir la muestra de forma que ciertos grupos queden sistemáticamente excluidos.
 </details>
+
+---
 
 ### Ejercicio 4
-¿Cuál es la diferencia entre el "error de muestreo" inevitable y un error causado por una muestra mal seleccionada?
+Caso donde el muestreo es la única opción.
 
 <details>
 <summary>Ver solución</summary>
-
-**Error de muestreo inevitable:**
-- Ocurre porque estamos usando una parte (muestra) en lugar del todo (población)
-- Siempre existe, aunque la muestra sea perfectamente seleccionada
-- Se puede **reducir** aumentando el tamaño de la muestra
-- Es aleatorio y predecible estadísticamente
-
-**Error por muestra mal seleccionada (sesgo):**
-- Ocurre cuando la muestra NO es representativa
-- Es un error **sistemático**, no aleatorio
-- NO se reduce aumentando el tamaño de la muestra
-- Lleva a conclusiones incorrectas
-
-**Ejemplo:**
-- Si encuesto a 100 personas **al azar** y obtengo 52% en lugar del 50% real → Error de muestreo normal
-- Si encuesto a 10,000 personas pero **solo en zonas ricas** → Error de sesgo (aunque la muestra sea grande, está mal seleccionada)
-
+Poblaciones infinitas o pruebas destructivas (balas, fósforos).
 </details>
+
+---
+
+### Ejercicio 5
+¿Tamaño de muestra garantiza representatividad?
+
+<details>
+<summary>Ver solución</summary>
+No. Una muestra grande pero mal elegida (sesgada) sigue siendo inútil.
+</details>
+
+---
+
+### Ejercicio 6
+Si quiero estudiar a "Todos los usuarios de Internet".
+
+<details>
+<summary>Ver solución</summary>
+Necesito muestreo online. Un censo es imposible.
+</details>
+
+---
+
+### Ejercicio 7
+Analogía de la sopa.
+
+<details>
+<summary>Ver solución</summary>
+Debes "revolver" bien (aleatorizar) antes de probar la cucharada (muestra).
+</details>
+
+---
+
+### Ejercicio 8
+Estudio de sangre: ¿Censo o Muestreo?
+
+<details>
+<summary>Ver solución</summary>
+Muestreo. Si te sacan toda la sangre (censo), mueres.
+</details>
+
+---
+
+### Ejercicio 9
+¿Qué es el marco muestral?
+
+<details>
+<summary>Ver solución</summary>
+La lista real de donde sacas la muestra (ej. guía telefónica). Si está incompleta, hay sesgo.
+</details>
+
+---
+
+### Ejercicio 10
+Consecuencia de una muestra sesgada.
+
+<details>
+<summary>Ver solución</summary>
+Conclusiones falsas sobre la población (Inferencias inválidas).
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Método | Precisión | Costo | Uso Ideaal |
+| :--- | :--- | :--- | :--- |
+| **Censo** | 100% | $$$$$ | Planificación estatal, grupos micro. |
+| **Muestreo** | $\approx$ 95% | $ | Investigación, Mercado, Ciencia. |
+
+> **Conclusión:** No necesitas comerte toda la torta para saber que es de chocolate. Un bocado basta, si el bocado tiene de todo.
