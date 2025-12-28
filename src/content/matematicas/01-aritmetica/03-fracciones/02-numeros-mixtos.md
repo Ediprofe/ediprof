@@ -1,24 +1,28 @@
-# 🔄 Números Mixtos
+# **Números Mixtos**
 
-En este tema aprenderemos qué son los números mixtos y cómo convertirlos a fracciones impropias y viceversa.
+A veces, una sola pizza no alcanza. Cuando necesitamos más de una unidad completa, usamos **números mixtos**. Un número mixto es la mezcla perfecta entre un número entero (las pizzas enteras) y una fracción propia (las rebanadas sueltas). Son otra forma de escribir las fracciones impropias.
 
 ---
 
-## 📖 ¿Qué es un número mixto?
+## 🎯 ¿Qué vas a aprender?
 
-Un **número mixto** combina un número entero con una fracción propia.
+- Qué es un número mixto y cómo se forma.
+- Convertir fracciones impropias a números mixtos (de "todo fracción" a "enteros y sobras").
+- Convertir números mixtos a fracciones impropias (de vuelta a "todo fracción").
+- Visualizar cantidades mayores a la unidad.
 
-$$
-a\frac{b}{c} = a + \frac{b}{c}
-$$
+---
 
-### Ejemplo 1
+## ¿Qué es un Número Mixto?
 
-$$
-2\frac{3}{4} = 2 + \frac{3}{4}
-$$
+Es una expresión formada por una **parte entera** y una **parte fraccionaria**.
 
-Gráficamente, esto se ve como **dos unidades completas** (círculos llenos) más **tres cuartos** de una tercera unidad:
+$$ \text{Mixto} = \text{Entero} + \text{Fracción} = A\frac{b}{c} $$
+
+### ⚙️ Ejemplos Resueltos
+
+#### Ejemplo 1: $2\frac{3}{4}$
+Significa que tienes 2 enteros completos y $\frac{3}{4}$ de otro.
 
 <div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
@@ -52,27 +56,15 @@ document.addEventListener('DOMContentLoaded', function() {
         options: { responsive: true, plugins: { legend: { display: false }, tooltip: { enabled: false } } }
       };
     };
-    
-    // Dos unidades completas
     new Chart(document.getElementById('chart-mixto1'), pieConfig(['#3b82f6','#3b82f6','#3b82f6','#3b82f6']));
     new Chart(document.getElementById('chart-mixto2'), pieConfig(['#3b82f6','#3b82f6','#3b82f6','#3b82f6']));
-    // 3/4
     new Chart(document.getElementById('chart-mixto3'), pieConfig(['#3b82f6','#3b82f6','#3b82f6','#e5e7eb']));
   }
 });
 </script>
 
-**Interpretación:** "Dos enteros y tres cuartos" o $2\frac{3}{4}$.
-
----
-
-### Ejemplo 2
-
-$$
-5\frac{1}{2} = 5 + \frac{1}{2}
-$$
-
-Gráficamente: **cinco unidades completas** más **la mitad** de otra:
+#### Ejemplo 2: $5\frac{1}{2}$
+Cinco enteros y medio.
 
 <div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1rem auto; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
@@ -103,82 +95,203 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-**Interpretación:** "Cinco enteros y un medio" o $5\frac{1}{2}$.
+#### Ejemplo 3: $1\frac{1}{3}$
+Un entero y un tercio.
+
+#### Ejemplo 4: $3\frac{3}{4}$ horas
+Tres horas completas y tres cuartos de hora (45 minutos).
+
+#### Ejemplo 5: Edad
+"Tengo 7 años y medio" = $7\frac{1}{2}$.
 
 ---
 
-## 📖 De fracción impropia a número mixto
+## Convertir Fracción Impropia a Mixto
 
-**Método:**
-1. Divide el numerador entre el denominador
-2. El cociente es la parte entera
-3. El residuo es el nuevo numerador
-4. El denominador permanece igual
+Dividimos el numerador entre el denominador. El cociente es el **entero**, el residuo es el nuevo **numerador**.
 
-### Ejemplo 1
+### ⚙️ Ejemplos Resueltos
 
-Convertir $\frac{17}{5}$ a número mixto:
+#### Ejemplo 6: Convertir $\frac{17}{5}$
+1.  Dividimos: $17 \div 5$.
+2.  Cabe 3 veces ($3 \times 5 = 15$). Sobran 2.
+3.  Entero: 3. Numerador: 2. Denominador: 5 (sigue igual).
+**Resultado:** $\boxed{3\frac{2}{5}}$
 
-$$
-17 \div 5 = 3 \text{ con residuo } 2
-$$
+#### Ejemplo 7: Convertir $\frac{23}{6}$
+1.  $23 \div 6 = 3$ (porque $6 \times 3 = 18$).
+2.  Sobra $23 - 18 = 5$.
+**Resultado:** $\boxed{3\frac{5}{6}}$
 
-$$
-\frac{17}{5} = 3\frac{2}{5}
-$$
+#### Ejemplo 8: Convertir $\frac{11}{4}$
+1.  $11 \div 4 = 2$ (sobran 3).
+**Resultado:** $\boxed{2\frac{3}{4}}$
 
----
+#### Ejemplo 9: Convertir $\frac{9}{2}$
+1.  $9 \div 2 = 4$ (sobra 1).
+**Resultado:** $\boxed{4\frac{1}{2}}$
 
-### Ejemplo 2
-
-Convertir $\frac{23}{6}$ a número mixto:
-
-$$
-23 \div 6 = 3 \text{ con residuo } 5
-$$
-
-$$
-\frac{23}{6} = 3\frac{5}{6}
-$$
+#### Ejemplo 10: Convertir $\frac{5}{5}$
+1.  $5 \div 5 = 1$ (sobra 0).
+**Resultado:** $\boxed{1}$ (Es un entero, no hay parte fraccionaria).
 
 ---
 
-## 📖 De número mixto a fracción impropia
+## Convertir Número Mixto a Fracción Impropia
 
-**Fórmula:**
+Multiplicamos el entero por el denominador y sumamos el numerador. El denominador se mantiene.
 
-$$
-a\frac{b}{c} = \frac{a \times c + b}{c}
-$$
+$$ \text{Numerador Final} = (\text{Entero} \times \text{Denominador}) + \text{Numerador} $$
 
-### Ejemplo 1
+### ⚙️ Ejemplos Resueltos
 
-Convertir $4\frac{2}{3}$ a fracción impropia:
+#### Ejemplo 11: Convertir $4\frac{2}{3}$
+1.  Multiplico: $4 \times 3 = 12$.
+2.  Sumo numerador: $12 + 2 = 14$.
+3.  Denominador igual: 3.
+**Resultado:** $\boxed{\frac{14}{3}}$
 
-$$
-4\frac{2}{3} = \frac{4 \times 3 + 2}{3} = \frac{14}{3}
-$$
+#### Ejemplo 12: Convertir $2\frac{5}{7}$
+1.  $2 \times 7 = 14$.
+2.  $14 + 5 = 19$.
+**Resultado:** $\boxed{\frac{19}{7}}$
+
+#### Ejemplo 13: Convertir $1\frac{1}{2}$
+1.  $1 \times 2 = 2$.
+2.  $2 + 1 = 3$.
+**Resultado:** $\boxed{\frac{3}{2}}$
+
+#### Ejemplo 14: Convertir $10\frac{1}{10}$
+1.  $10 \times 10 = 100$.
+2.  $100 + 1 = 101$.
+**Resultado:** $\boxed{\frac{101}{10}}$
+
+#### Ejemplo 15: Convertir $3\frac{3}{4}$
+1.  $3 \times 4 = 12$.
+2.  $12 + 3 = 15$.
+**Resultado:** $\boxed{\frac{15}{4}}$
+
+---
+
+## 📝 Ejercicios de Práctica
+
+### Ejercicio 1
+Convierte $\frac{25}{4}$ a número mixto.
+
+<details>
+<summary>Ver solución</summary>
+
+$25 \div 4 = 6$ (sobra 1).
+**Resultado:** $\boxed{6\frac{1}{4}}$
+
+</details>
+
+### Ejercicio 2
+Convierte $\frac{31}{6}$ a número mixto.
+
+<details>
+<summary>Ver solución</summary>
+
+$31 \div 6 = 5$ (sobra 1).
+**Resultado:** $\boxed{5\frac{1}{6}}$
+
+</details>
+
+### Ejercicio 3
+Convierte $3\frac{2}{5}$ a fracción impropia.
+
+<details>
+<summary>Ver solución</summary>
+
+$3 \times 5 + 2 = 17$.
+**Resultado:** $\boxed{\frac{17}{5}}$
+
+</details>
+
+### Ejercicio 4
+Convierte $7\frac{3}{8}$ a fracción impropia.
+
+<details>
+<summary>Ver solución</summary>
+
+$7 \times 8 + 3 = 59$.
+**Resultado:** $\boxed{\frac{59}{8}}$
+
+</details>
+
+### Ejercicio 5
+Convierte $\frac{100}{9}$ a mixto.
+
+<details>
+<summary>Ver solución</summary>
+
+$100 \div 9 = 11$ (sobra 1).
+**Resultado:** $\boxed{11\frac{1}{9}}$
+
+</details>
+
+### Ejercicio 6
+Convierte $5\frac{5}{6}$ a impropia.
+
+<details>
+<summary>Ver solución</summary>
+
+$5 \times 6 + 5 = 35$.
+**Resultado:** $\boxed{\frac{35}{6}}$
+
+</details>
+
+### Ejercicio 7
+¿Qué número es mayor: $3\frac{1}{2}$ o $\frac{7}{2}$?
+
+<details>
+<summary>Ver solución</summary>
+
+Convertimos $3\frac{1}{2} = \frac{7}{2}$.
+**Resultado:** $\boxed{\text{Son iguales}}$
+
+</details>
+
+### Ejercicio 8
+Convierte $\frac{15}{2}$ a mixto.
+
+<details>
+<summary>Ver solución</summary>
+
+$15 \div 2 = 7$ (sobra 1).
+**Resultado:** $\boxed{7\frac{1}{2}}$
+
+</details>
+
+### Ejercicio 9
+Convierte $1\frac{7}{8}$ a impropia.
+
+<details>
+<summary>Ver solución</summary>
+
+$1 \times 8 + 7 = 15$.
+**Resultado:** $\boxed{\frac{15}{8}}$
+
+</details>
+
+### Ejercicio 10
+Si tienes $2\frac{1}{4}$ pizzas, ¿cuántos cuartos de pizza tienes?
+
+<details>
+<summary>Ver solución</summary>
+
+Convertimos a impropia: $2 \times 4 + 1 = 9$.
+**Resultado:** $\boxed{9 \text{ cuartos}}$
+
+</details>
 
 ---
 
-### Ejemplo 2
+## 🔑 Resumen
 
-Convertir $2\frac{5}{7}$ a fracción impropia:
+| Conversión | Procedimiento | Fórmula |
+| :--- | :--- | :--- |
+| **Impropia $\to$ Mixto** | Dividir numerador entre denominador. | $C \frac{R}{D}$ |
+| **Mixto $\to$ Impropia** | Multiplicar entero por denominador y sumar numerador. | $\frac{E \times D + N}{D}$ |
 
-$$
-2\frac{5}{7} = \frac{2 \times 7 + 5}{7} = \frac{19}{7}
-$$
-
----
-
-## 📝 Ejercicios de práctica
-
-**Ejercicio 1:** Convierte a número mixto: $\frac{25}{4}$
-
-**Ejercicio 2:** Convierte a número mixto: $\frac{31}{6}$
-
-**Ejercicio 3:** Convierte a fracción impropia: $3\frac{2}{5}$
-
-**Ejercicio 4:** Convierte a fracción impropia: $7\frac{3}{8}$
-
----
+> **Conclusión:** Los números mixtos son fáciles de entender en la vida real ("dos pasteles y medio"), pero las fracciones impropias son más fáciles para hacer cálculos matemáticos.

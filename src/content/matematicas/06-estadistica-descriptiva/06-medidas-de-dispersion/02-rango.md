@@ -1,245 +1,237 @@
-# El Rango
+# **El Rango**
 
-La medida de dispersión más simple es el **rango**: solo necesitas el valor más grande y el más pequeño. Es rápido, intuitivo, pero tiene sus limitaciones.
+Si te digo que la temperatura de hoy variará entre 10°C y 12°C, sabes qué ropa ponerte. Si te digo que variará entre -10°C y 40°C, estás en problemas. Esa "distancia" entre el extremo más bajo y el más alto es el **Rango**. Es la medida de dispersión más primitiva, pero también la más rápida de calcular.
 
 ---
 
 ## 🎯 ¿Qué vas a aprender?
 
-- Qué es el rango y cómo calcularlo
-- Sus ventajas y limitaciones
-- Cuándo es útil y cuándo no
+- Calcular el Rango para datos sueltos ($R = Max - Min$).
+- Estimar el Rango en tablas de frecuencias (Límite Superior - Límite Inferior).
+- Entender por qué el Rango es extremadamente sensible (y a veces engañoso).
+- Usarlo para una primera impresión rápida de la variabilidad.
 
 ---
 
-## 📖 Definición del Rango
+## Cálculo con Datos Simples
 
-> El **rango** es la diferencia entre el valor máximo y el valor mínimo de un conjunto de datos.
+$$ R = X_{max} - X_{min} $$
 
-### 💡 Fórmula:
+### ⚙️ Ejemplos Resueltos
 
-$$
-R = X_{máx} - X_{mín}
-$$
+#### Ejemplo 1: Temperaturas diurnas
+**Datos:** 20, 22, 25, 21.
+- Max: 25. Min: 20.
+- Rango: $25 - 20 = \boxed{5}$
 
-### ⚙️ Ejemplo 1: Notas de un examen
+#### Ejemplo 2: Notas (0 a 10)
+**Datos:** 1, 5, 8, 10.
+- Max: 10. Min: 1.
+- Rango: $10 - 1 = \boxed{9}$
 
-Notas: 5, 6, 7, 7, 8, 8, 9, 9, 10
+#### Ejemplo 3: Con Negativos
+**Datos:** -5, 0, 5, 10.
+- Max: 10. Min: -5.
+- Rango: $10 - (-5) = 10 + 5 = \boxed{15}$
 
-- $X_{máx} = 10$
-- $X_{mín} = 5$
-- $R = 10 - 5 = 5$
+#### Ejemplo 4: Datos Constantes
+**Datos:** 8, 8, 8, 8.
+- Max: 8. Min: 8.
+- Rango: $8 - 8 = \boxed{0}$ (Sin dispersión).
 
-**El rango es 5 puntos.**
-
-### ⚙️ Ejemplo 2: Estaturas
-
-Estaturas (cm): 155, 162, 168, 170, 175, 180, 185
-
-- $X_{máx} = 185$ cm
-- $X_{mín} = 155$ cm
-- $R = 185 - 155 = 30$ cm
-
-**El rango es 30 cm.**
-
----
-
-## 📖 Interpretación del Rango
-
-El rango nos dice cuánto **"espacio"** ocupan los datos en la escala de medición.
-
-### ⚙️ Ejemplo comparativo
-
-**Curso A:** Notas de 6, 7, 7, 8, 8, 9 → R = 9 - 6 = 3
-**Curso B:** Notas de 3, 5, 7, 9, 11 → R = 11 - 3 = 8
-
-| Curso | Rango | Interpretación |
-|-------|-------|----------------|
-| A | 3 | Notas más homogéneas |
-| B | 8 | Notas más dispersas |
+#### Ejemplo 5: Edad en una fiesta familiar
+**Datos:** Bebé (1 año), Abuelo (90 años), Tío (40).
+- Max: 90. Min: 1.
+- Rango: $90 - 1 = \boxed{89}$
 
 ---
 
-## 💡 Ventajas del Rango
+## Cálculo con Datos Agrupados
 
-| Ventaja | Descripción |
-|---------|-------------|
-| **Simplicidad** | Solo necesitas máximo y mínimo |
-| **Rapidez** | Se calcula en segundos |
-| **Intuitivo** | Fácil de entender y comunicar |
-| **Primera aproximación** | Útil para una idea rápida de dispersión |
+Usamos los límites de los intervalos extremos.
+$$ R \approx L_{sup\_final} - L_{inf\_inicial} $$
 
----
+### ⚙️ Ejemplos Resueltos
 
-## ⚠️ Limitaciones del Rango
+#### Ejemplo 1: Estaturas
+**Clases:** [150-160], [160-170], [170-180].
+- Límite final: 180.
+- Límite inicial: 150.
+- Rango: $180 - 150 = \boxed{30}$
 
-### Limitación 1: Solo usa dos valores
+#### Ejemplo 2: Edades (Límites abiertos)
+**Clases:** [10-20), [20-30), [30-40).
+- Asumimos el rango teórico cubierto.
+- Rango: $40 - 10 = \boxed{30}$
 
-El rango **ignora** todos los valores intermedios.
+#### Ejemplo 3: Tiempos de carrera
+**Clases:** 0-10 min, 10-20 min.
+- Rango: $20 - 0 = \boxed{20}$
 
-### ⚙️ Ejemplo:
+#### Ejemplo 4: Salarios (Millones)
+**Clases:** [1-2], [2-3], [3-5], [5-10].
+- Rango: $10 - 1 = \boxed{9 \text{ Millones}}$
 
-**Grupo A:** 0, 50, 50, 50, 50, 50, 100
-**Grupo B:** 0, 10, 30, 50, 70, 90, 100
-
-Ambos tienen $R = 100 - 0 = 100$, pero:
-- Grupo A tiene la mayoría en 50 (menos disperso realmente)
-- Grupo B tiene valores distribuidos (más disperso)
-
-El rango no distingue esta diferencia.
-
-### Limitación 2: Muy sensible a valores extremos
-
-Un solo **outlier** puede alterar drásticamente el rango.
-
-### ⚙️ Ejemplo:
-
-**Datos originales:** 10, 12, 14, 16, 18 → R = 8
-**Con outlier:** 10, 12, 14, 16, **100** → R = 90
-
-¡El rango pasó de 8 a 90 por un solo valor!
-
-### Limitación 3: No indica distribución interna
-
-El rango no dice nada sobre cómo están distribuidos los datos dentro del intervalo.
+#### Ejemplo 5: Frecuencias cero
+**Clases:** [0-10] (f=5), [10-20] (f=0), [20-30] (f=5).
+- Aunque el centro esté vacío, el rango cubre todo el espectro observado.
+- Rango: $30 - 0 = \boxed{30}$
 
 ---
 
-## 📖 Rango para Datos Agrupados
+## Limitaciones del Rango
 
-Para datos en tablas de frecuencias:
+El Rango solo ve los bordes y es ciego a lo que pasa en el medio.
 
-$$
-R = L_s^{última} - L_i^{primera}
-$$
+### ⚙️ Ejemplos Resueltos: ¿Por qué falla?
 
-### ⚙️ Ejemplo:
+#### Ejemplo 1: El Outlier Solitario
+**Grupo A:** 5, 5, 5, 5, 5. ($R=0$).
+**Grupo B:** 5, 5, 5, 5, 1000. ($R=995$).
+**Análisis:** Un solo dato disparó la dispersión a niveles absurdos.
 
-| Intervalo | f |
-|-----------|---|
-| 10 - 19 | 5 |
-| 20 - 29 | 12 |
-| 30 - 39 | 18 |
-| 40 - 49 | 10 |
-| 50 - 59 | 5 |
+#### Ejemplo 2: Distribución Interna
+**Grupo A:** 0, 0, 0, 10, 10, 10. ($R=10$).
+**Grupo B:** 0, 2, 4, 6, 8, 10. ($R=10$).
+**Análisis:** Tienen el mismo rango, pero B está mucho más distribuido. A está polarizado.
 
-$$
-R = 59 - 10 = 49
-$$
+#### Ejemplo 3: Tamaño de la Muestra
+**Pequeña:** 10 datos. Probable Rango pequeño.
+**Gigante:** 1 millón de datos. Probable que aparezca un valor raro muy alto y uno muy bajo.
+**Análisis:** El rango tiende a crecer con el tamaño de la muestra ($n$).
 
-O usando límites reales: $R = 59.5 - 9.5 = 50$
+#### Ejemplo 4: Comparación injusta
+**Clase A:** Todos sacaron 3.0, excepto un genio (5.0) y uno que faltó (0.0). $R=5.0$.
+**Clase B:** Todos sacaron entre 2.0 y 4.0. $R=2.0$.
+**Análisis:** La Clase A parece más dispersa, pero es solo por dos alumnos.
 
----
-
-## 📖 Cuándo Usar el Rango
-
-| Situación | ¿Usar rango? | Razón |
-|-----------|--------------|-------|
-| Vista rápida inicial | ✅ Sí | Fácil y rápido |
-| Datos sin outliers | ✅ Sí | Representativo |
-| Análisis riguroso | ⚠️ Complementar | Usar junto con otras medidas |
-| Hay valores extremos | ❌ Evitar solo | Muy distorsionado |
-| Comparar grupos | ⚠️ Con cuidado | Si tienen outliers, no es justo |
-
----
-
-## 🔑 Resumen
-
-| Concepto | Descripción |
-|----------|-------------|
-| **Rango** | $R = X_{máx} - X_{mín}$ |
-| **Ventaja** | Simple, rápido, intuitivo |
-| **Limitación** | Solo usa dos valores, sensible a extremos |
-| **Uso ideal** | Primera aproximación o cuando no hay outliers |
+#### Ejemplo 5: Datos Abiertos
+**Encuesta:** "¿Cuánto ganas? Menos de 1M, Entre 1-2M, **Más de 2M**".
+**Análisis:** No podemos calcular el rango porque no tenemos un límite superior cerrado ("Más de 2M" es infinito).
 
 ---
 
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1
-Calcula el rango de los siguientes conjuntos:
-
-a) 15, 22, 18, 30, 25, 12, 28
-b) 3.5, 4.2, 3.8, 4.0, 5.1, 3.6
-c) -5, -2, 0, 3, 7, 10
+Halla el rango de: 5, 10, 15, 20.
 
 <details>
 <summary>Ver solución</summary>
 
-a) **Datos: 15, 22, 18, 30, 25, 12, 28**
-$X_{máx} = 30$, $X_{mín} = 12$
-$R = 30 - 12 = 18$
-
-b) **Datos: 3.5, 4.2, 3.8, 4.0, 5.1, 3.6**
-$X_{máx} = 5.1$, $X_{mín} = 3.5$
-$R = 5.1 - 3.5 = 1.6$
-
-c) **Datos: -5, -2, 0, 3, 7, 10**
-$X_{máx} = 10$, $X_{mín} = -5$
-$R = 10 - (-5) = 10 + 5 = 15$
+**Cálculo:** $20 - 5 = 15$.
+**Resultado:** $\boxed{15}$
 
 </details>
 
 ### Ejercicio 2
-Los tiempos (en minutos) que tardaron 8 corredores en completar una carrera fueron:
-25, 28, 27, 26, 29, 27, 28, 55
-
-a) Calcula el rango
-b) ¿Hay algún valor atípico?
-c) ¿El rango representa bien la dispersión del grupo?
+Si el dato mínimo es 50 y el rango es 40, ¿cuál es el dato máximo?
 
 <details>
 <summary>Ver solución</summary>
 
-a) **Rango:**
-$R = 55 - 25 = 30$ minutos
-
-b) **Valor atípico:**
-Sí, el 55 es un outlier. Los demás están entre 25-29, pero uno tardó 55 minutos (quizás tuvo un problema).
-
-c) **¿Representa bien la dispersión?**
-NO. El rango de 30 minutos sugiere mucha dispersión, pero 7 de 8 corredores tienen un rango de solo 4 minutos (25-29).
-
-El rango está inflado por el outlier (55) y no representa la dispersión real del grupo típico.
+**Fórmula:** $Max = Min + R$.
+**Cálculo:** $50 + 40 = 90$.
+**Resultado:** $\boxed{90}$
 
 </details>
 
 ### Ejercicio 3
-¿Por qué el rango de las notas 5, 5, 5, 5, 10 es el mismo que el de 5, 6, 7, 8, 9, 10?
+Calcula el rango de temperaturas: -10°C, -5°C, 0°C, 2°C.
 
 <details>
 <summary>Ver solución</summary>
 
-Ambos tienen **rango = 5** (10 - 5 = 5) porque el rango solo considera el máximo y el mínimo.
-
-**Pero son muy diferentes:**
-- Primer grupo: 4 de 5 valores son 5, solo uno es 10 (muy concentrado en 5)
-- Segundo grupo: Valores distribuidos uniformemente (5,6,7,8,9,10)
-
-**Esto ilustra la principal limitación del rango:** 
-Ignora todos los valores intermedios y no refleja cómo están distribuidos los datos dentro del intervalo.
+**Max:** 2. **Min:** -10.
+**Resta:** $2 - (-10) = 12$.
+**Resultado:** $\boxed{12}$
 
 </details>
 
 ### Ejercicio 4
-Una empresa mide las ventas diarias (en miles de pesos):
-
-Semana 1: 50, 55, 52, 48, 53 → R = ?
-Semana 2: 20, 45, 60, 80, 45 → R = ?
-
-¿Qué semana tuvo ventas más consistentes?
+¿Qué rango es más preocupante para la presión arterial sistólica?
+A: [110, 130]. B: [90, 180].
 
 <details>
 <summary>Ver solución</summary>
 
-**Semana 1:**
-$R = 55 - 48 = 7$ (miles de pesos)
-
-**Semana 2:**
-$R = 80 - 20 = 60$ (miles de pesos)
-
-**La Semana 1 tuvo ventas más consistentes** porque:
-- Rango de solo 7 (todas las ventas entre 48-55)
-- Semana 2 tiene rango de 60 (ventas muy variables, de 20 a 80)
+**Análisis:** B tiene mucha variabilidad (inestable).
+**Resultado:** $\boxed{\text{B}}$
 
 </details>
+
+### Ejercicio 5
+Calcula el rango para la tabla: [0-5], [5-10], [10-15].
+
+<details>
+<summary>Ver solución</summary>
+
+**Sup:** 15. **Inf:** 0.
+**Resultado:** $\boxed{15}$
+
+</details>
+
+### Ejercicio 6
+Si todos los estudiantes sacan la misma nota, ¿cuál es el rango?
+
+<details>
+<summary>Ver solución</summary>
+
+**Diff:** $X - X = 0$.
+**Resultado:** $\boxed{0}$
+
+</details>
+
+### Ejercicio 7
+Tienes el rango [10, 50]. Si eliminas el 50 y el nuevo máximo es 40, ¿qué pasa con el rango?
+
+<details>
+<summary>Ver solución</summary>
+
+**Antes:** 40. **Ahora:** $40-10=30$.
+**Resultado:** $\boxed{\text{Disminuye}}$
+
+</details>
+
+### Ejercicio 8
+¿Es posible tener un rango negativo?
+
+<details>
+<summary>Ver solución</summary>
+
+**Teoría:** No, porque Max $\ge$ Min.
+**Resultado:** $\boxed{\text{Falso}}$
+
+</details>
+
+### Ejercicio 9
+Si multiplicas todos los datos por 2, ¿qué le pasa al rango?
+
+<details>
+<summary>Ver solución</summary>
+
+**Prueba:** [2, 4] (R=2) $\to$ [4, 8] (R=4).
+**Resultado:** $\boxed{\text{Se duplica}}$
+
+</details>
+
+### Ejercicio 10
+¿El rango se ve afectado si sumas 100 a todos los datos?
+
+<details>
+<summary>Ver solución</summary>
+
+**Prueba:** [2, 4] (R=2) $\to$ [102, 104] (R=2).
+**Resultado:** $\boxed{\text{No cambia}}$
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Estadístico | Fórmula | Ventaja | Desventaja |
+|-------------|---------|---------|------------|
+| **Rango ($R$)** | $X_{max} - X_{min}$ | Cálculo mental instantáneo. | Ignora el 99% de los datos. Muy sensible a outliers. |
+
+> **Conclusión:** El Rango es como juzgar un libro por su portada y contraportada. Te dice qué tan grueso es, pero no qué dice en medio. Úsalo con precaución.

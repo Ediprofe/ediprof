@@ -1,119 +1,239 @@
-# 📈 Proporcionalidad Directa e Inversa
+# **Proporcionalidad Directa e Inversa**
 
-En este tema aprenderemos a identificar y trabajar con magnitudes directa e inversamente proporcionales.
-
----
-
-## 📖 Proporcionalidad directa
-
-Dos magnitudes son **directamente proporcionales** cuando al aumentar una, la otra aumenta en la misma proporción (y viceversa).
-
-$$
-\frac{a_1}{b_1} = \frac{a_2}{b_2} = k \quad \text{(constante de proporcionalidad)}
-$$
-
-### Características
-
-* Si una se duplica, la otra se duplica
-* Si una se reduce a la mitad, la otra también
-* El **cociente** entre ellas es constante
-
-### Ejemplo 1
-
-| Kg de manzanas | Precio (\$) | Razón |
-|----------------|-------------|-------|
-| $1$ | $25$ | $25$ |
-| $2$ | $50$ | $25$ |
-| $3$ | $75$ | $25$ |
-
-La constante $k = 25$ (precio por kg). Más kg → más dinero.
+El mundo está conectado. Si trabajas más horas, ganas más dinero (generalmente). Si vas más rápido a la playa, tardas menos tiempo en llegar. Algunas cosas crecen juntas, como buenos amigos, y otras se mueven en direcciones opuestas, como un balancín. Entender estas conexiones es la clave de la proporcionalidad.
 
 ---
 
-### Ejemplo 2
+## 🎯 ¿Qué vas a aprender?
 
-Un grifo llena $10$ litros en $2$ minutos. ¿Cuántos litros llena en $5$ minutos?
-
-**Análisis:** Más tiempo → más litros (directa)
-
-$$
-\frac{10}{2} = \frac{x}{5}
-$$
-
-$$
-x = \frac{10 \times 5}{2} = 25 \text{ litros}
-$$
+- Diferenciar entre magnitudes directamente proporcionales (amigos) y magnitudes inversamente proporcionales (balancín).
+- Calcular constantes de proporcionalidad.
+- Resolver problemas de la vida real aplicando la lógica correcta (más es más, o más es menos).
 
 ---
 
-## 📖 Proporcionalidad inversa
+## Proporcionalidad Directa (Más es Más)
 
-Dos magnitudes son **inversamente proporcionales** cuando al aumentar una, la otra disminuye en la misma proporción.
+Dos magnitudes son **Directamente Proporcionales** si al multiplicar una por un número (duplicar, triplicar), la otra también se multiplica por el mismo número.
 
-$$
-a_1 \times b_1 = a_2 \times b_2 = k \quad \text{(producto constante)}
-$$
+**Regla:** El cociente (división) es constante.
+$$ \frac{A}{B} = k $$
+Si **A aumenta**, **B aumenta**.
 
-### Características
+### ⚙️ Ejemplos Resueltos
 
-* Si una se duplica, la otra se reduce a la mitad
-* El **producto** entre ellas es constante
+#### Ejemplo 1: Tacos y Dinero
+Si 1 taco cuesta 20 pesos, 2 tacos cuestan 40, y 3 tacos cuestan 60.
+$$ \frac{20}{1} = 20, \quad \frac{40}{2} = 20, \quad \frac{60}{3} = 20 $$
+La constante es el precio. Si comes más, pagas más.
 
-### Ejemplo 1
+#### Ejemplo 2: Distancia y Tiempo
+A velocidad constante, si en 1 hora recorro 80 km, en 2 horas recorreré 160 km.
+Más tiempo $\to$ Más distancia.
+$$ \frac{80}{1} = \frac{160}{2} = 80 \text{ km/h} $$
 
-| Trabajadores | Días para terminar | Producto |
-|--------------|-------------------|----------|
-| $2$ | $12$ | $24$ |
-| $3$ | $8$ | $24$ |
-| $4$ | $6$ | $24$ |
+#### Ejemplo 3: Pintura y Pared
+Si 1 litro pinta 10 $m^2$, 5 litros pintarán 50 $m^2$.
+Más pintura $\to$ Más área pintada.
 
-La constante $k = 24$. Más trabajadores → menos días.
+#### Ejemplo 4: Sueldo y Horas
+Si gano 100 por hora. 5 horas son 500. 10 horas son 1000.
+Más trabajo $\to$ Más dinero.
 
----
-
-### Ejemplo 2
-
-Si $6$ obreros terminan una obra en $10$ días, ¿cuántos días tardarán $4$ obreros?
-
-**Análisis:** Menos obreros → más días (inversa)
-
-$$
-6 \times 10 = 4 \times x
-$$
-
-$$
-60 = 4x \quad \Rightarrow \quad x = 15 \text{ días}
-$$
+#### Ejemplo 5: Escala de mapa
+Si 1 cm son 1 km reales. 10 cm son 10 km reales.
+Más cm en el papel $\to$ Más km en la realidad.
 
 ---
 
-## 📖 Cómo identificar el tipo
+## Proporcionalidad Inversa (Más es Menos)
 
-| Pregunta clave | Directa | Inversa |
-|----------------|---------|---------|
-| Si aumenta A, ¿qué pasa con B? | Aumenta | Disminuye |
-| ¿Qué es constante? | $\frac{A}{B}$ | $A \times B$ |
+Dos magnitudes son **Inversamente Proporcionales** si al multiplicar una (duplicar), la otra se **divide** (se reduce a la mitad).
+
+**Regla:** El producto (multiplicación) es constante.
+$$ A \times B = k $$
+Si **A aumenta**, **B disminuye**.
+
+### ⚙️ Ejemplos Resueltos
+
+#### Ejemplo 6: Obreros y Días (El clásico)
+Si 2 pintores tardan 6 días en pintar una casa.
+-   Si contrato el doble (4 pintores), tardarán la mitad (3 días).
+-   Si contrato el triple (6 pintores), tardarán un tercio (2 días).
+Producto constante: $2 \times 6 = 12$. $4 \times 3 = 12$.
+
+#### Ejemplo 7: Velocidad y Tiempo
+Si voy a 100 km/h tardo 2 horas.
+-   Si voy el doble de rápido (200 km/h), tardo la mitad (1 hora).
+-   Si voy a la mitad (50 km/h), tardo el doble (4 horas).
+Más velocidad $\to$ Menos tiempo.
+
+#### Ejemplo 8: Comida y Animales
+Un costal de comida dura 20 días para 1 perro.
+-   Para 2 perros durará 10 días.
+-   Para 4 perros durará 5 días.
+Más bocas $\to$ Menos días de comida.
+
+#### Ejemplo 9: Repartir el pastel
+Si somos 2 personas, nos toca medio pastel (50%).
+Si somos 10 personas, nos toca un trocito pequeño (5%).
+Más gente $\to$ Menos pastel por persona.
+
+#### Ejemplo 10: Caudal y Llenado
+Un grifo grueso llena el tanque en 1 hora.
+Dos grifos iguales (doble caudal) lo llenan en media hora.
+Más agua entrando $\to$ Menos tiempo de espera.
 
 ---
 
-## 📝 Ejercicios de práctica
+## Identificando el Tipo
 
-### Identificar tipo
+Antes de calcular, siempre hazte la pregunta mágica: **"Si doblo esta cantidad, ¿la otra se dobla o se reduce a la mitad?"**.
 
-**Ejercicio 1:** Clasifica como directa o inversa:
-- a) Litros de gasolina y kilómetros recorridos
-- b) Velocidad y tiempo de viaje (distancia fija)
+### ⚙️ Escenarios de Análisis
+
+#### Escenario A: Altura de un árbol y su sombra
+Más altura $\to$ Más sombra.
+**Tipo:** Directa.
+
+#### Escenario B: Velocidad fija y distancia recorrida
+Más tiempo viajando $\to$ Más lejos llego.
+**Tipo:** Directa.
+
+#### Escenario C: Ancho y largo de un rectángulo (Área fija)
+Si quiero mantener el área fija, si hago el rectángulo el doble de ancho, debo hacerlo la mitad de largo.
+**Tipo:** Inversa.
+
+#### Escenario D: Grifos y tiempo de llenado
+Más grifos $\to$ Menos tiempo.
+**Tipo:** Inversa.
+
+#### Escenario E: Años de una persona y su altura
+Más años $\to$ ¿Más altura?
+Sí, pero solo hasta cierta edad. Luego para o decrece.
+**Tipo:** No es proporcional (no hay una constante $k$ perfecta).
 
 ---
 
-### Proporcionalidad directa
+## 📝 Ejercicios de Práctica
 
-**Ejercicio 2:** Si $5$ cuadernos cuestan \$$40$, ¿cuánto cuestan $12$ cuadernos?
+### Ejercicio 1
+Identifica: Cantidad de manzanas compradas y precio total (sin ofertas).
+
+<details>
+<summary>Ver solución</summary>
+
+Más manzanas = Más dinero.
+**Resultado:** $\boxed{\text{Directa}}$
+
+</details>
+
+### Ejercicio 2
+Identifica: Velocidad de un auto y tiempo para llegar a destino.
+
+<details>
+<summary>Ver solución</summary>
+
+Más rápido = Llegas antes.
+**Resultado:** $\boxed{\text{Inversa}}$
+
+</details>
+
+### Ejercicio 3
+Si 3 kilos de azúcar valen 60 pesos, ¿cuánto valen 6 kilos?
+
+<details>
+<summary>Ver solución</summary>
+
+Directa. Doble de azúcar = Doble de precio.
+**Resultado:** $\boxed{120 \text{ pesos}}$
+
+</details>
+
+### Ejercicio 4
+Si 2 albañiles hacen una pared en 10 días, ¿cuánto tardarán 4 albañiles?
+
+<details>
+<summary>Ver solución</summary>
+
+Inversa. Doble de albañiles = Mitad de días.
+**Resultado:** $\boxed{5 \text{ días}}$
+
+</details>
+
+### Ejercicio 5
+Identifica: Número de páginas leídas y tiempo transcurrido (a ritmo constante).
+
+<details>
+<summary>Ver solución</summary>
+
+Más tiempo = Más páginas.
+**Resultado:** $\boxed{\text{Directa}}$
+
+</details>
+
+### Ejercicio 6
+Identifica: Número de personas en un ascensor y espacio libre disponible.
+
+<details>
+<summary>Ver solución</summary>
+
+Más personas = Menos espacio.
+**Resultado:** $\boxed{\text{Inversa}}$
+
+</details>
+
+### Ejercicio 7
+Si $A \times B = 20$. Si $A=2, B=10$. Si $A=4$, ¿cuánto vale $B$?
+
+<details>
+<summary>Ver solución</summary>
+
+Es inversa (producto constante). $4 \times B = 20 \to B=5$.
+**Resultado:** $\boxed{5}$
+
+</details>
+
+### Ejercicio 8
+Si $\frac{A}{B} = 5$. Si $B=10$, ¿cuánto vale $A$?
+
+<details>
+<summary>Ver solución</summary>
+
+Es directa. $A = 5 \times 10 = 50$.
+**Resultado:** $\boxed{50}$
+
+</details>
+
+### Ejercicio 9
+Identifica: Área de un cuadrado y la longitud de su lado.
+
+<details>
+<summary>Ver solución</summary>
+
+¡Cuidado! Si doblas el lado, el área se cuadruplica ($2^2=4$). Es directa, pero **cuadrática**, no lineal simple. En este contexto simple diremos "relación directa no lineal".
+**Resultado:** $\boxed{\text{No lineal}}$
+
+</details>
+
+### Ejercicio 10
+Un coche gasta 5 litros en 100 km. ¿Cuántos en 200 km?
+
+<details>
+<summary>Ver solución</summary>
+
+Directa.
+**Resultado:** $\boxed{10 \text{ litros}}$
+
+</details>
 
 ---
 
-### Proporcionalidad inversa
+## 🔑 Resumen
 
-**Ejercicio 3:** Si $8$ grifos llenan un tanque en $6$ horas, ¿cuánto tardan $12$ grifos?
+| Tipo | Lógica | Operación Constante |
+| :--- | :--- | :--- |
+| **Directa** | $\uparrow A \Rightarrow \uparrow B$ | División ($\frac{A}{B} = k$) |
+| **Inversa** | $\uparrow A \Rightarrow \downarrow B$ | Multiplicación ($A \times B = k$) |
 
----
+> **Conclusión:** Antes de sacar la calculadora, usa el sentido común. Pregúntate: si tengo el doble de esto, ¿necesito el doble de aquello (directa) o la mitad (inversa)?

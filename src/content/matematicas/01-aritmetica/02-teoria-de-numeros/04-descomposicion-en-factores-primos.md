@@ -1,24 +1,59 @@
-# 🔬 Descomposición en Factores Primos
+# **Descomposición en Factores Primos**
 
-En este tema aprenderemos a expresar cualquier número como producto de números primos.
-
----
-
-## 📖 ¿Qué es la factorización prima?
-
-La **descomposición en factores primos** expresa un número como producto de primos.
-
-$$
-\text{Número} = p_1^{a_1} \times p_2^{a_2} \times \cdots
-$$
+Imagina que cada número compuesto es una construcción de Lego. La **descomposición prima** es desarmar esa construcción hasta tener solo los bloques originales (los números primos) que la formaron. Cualquier número mayor que 1 es primo o se puede escribir de forma única como una multiplicación de primos.
 
 ---
 
-## 📖 Método de divisiones sucesivas
+## 🎯 ¿Qué vas a aprender?
 
-Dividimos el número entre primos comenzando por el menor posible.
+- Descomponer cualquier número en sus factores primos.
+- Usar el método de "divisiones sucesivas" (la línea vertical).
+- Escribir la factorización usando potencias (ej. $2^3 \times 3$).
+- Entender el "ADN matemático" de los números.
 
-### Ejemplo 1: Descomponer 60
+---
+
+## Método de Divisiones Sucesivas
+
+Es el método más ordenado. Trazamos una línea vertical y dividimos por números primos en orden ($2, 3, 5, 7, 11...$).
+
+### ⚙️ Ejemplos Resueltos
+
+#### Ejemplo 1: Factorizar 60
+1.  ¿Divisible por 2? $60 \div 2 = 30$.
+2.  ¿Divisible por 2? $30 \div 2 = 15$.
+3.  ¿Divisible por 2? No. ¿Por 3? $15 \div 3 = 5$.
+4.  ¿Divisible por 3? No. ¿Por 5? $5 \div 5 = 1$.
+**Resultado:** $60 = 2 \times 2 \times 3 \times 5 = \boxed{2^2 \times 3 \times 5}$
+
+#### Ejemplo 2: Factorizar 24
+- $24 \div 2 = 12$
+- $12 \div 2 = 6$
+- $6 \div 2 = 3$
+- $3 \div 3 = 1$
+**Resultado:** $24 = 2^3 \times 3$.
+
+#### Ejemplo 3: Factorizar 98
+- $98 \div 2 = 49$
+- ¿49 por 2? No. ¿3? No ($4+9=13$). ¿5? No. ¿7? Sí.
+- $49 \div 7 = 7$
+- $7 \div 7 = 1$
+**Resultado:** $98 = 2 \times 7^2$.
+
+#### Ejemplo 4: Factorizar 100
+- $100 \div 2 = 50$
+- $50 \div 2 = 25$
+- $25 \div 5 = 5$
+- $5 \div 5 = 1$
+**Resultado:** $100 = 2^2 \times 5^2$.
+
+#### Ejemplo 5: Factorizar 17
+- Es primo. No se descompone (salvo $17 \times 1$).
+**Resultado:** $17$.
+
+---
+
+<!-- Conservando imágenes existentes -->
 
 <div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
@@ -55,359 +90,122 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-> 💡 Dividimos sucesivamente entre primos hasta llegar a 1.
+---
 
-$$
-60 = 2^2 \times 3 \times 5
-$$
+## 📝 Ejercicios de Práctica
+
+### Ejercicio 1
+Descompón el número 12.
+
+<details>
+<summary>Ver solución</summary>
+
+$12 \div 2 = 6$, $6 \div 2 = 3$, $3 \div 3 = 1$.
+**Resultado:** $\boxed{2^2 \times 3}$
+
+</details>
+
+### Ejercicio 2
+Descompón el número 50.
+
+<details>
+<summary>Ver solución</summary>
+
+$50 \div 2 = 25$, $25 \div 5 = 5$, $5 \div 5 = 1$.
+**Resultado:** $\boxed{2 \times 5^2}$
+
+</details>
+
+### Ejercicio 3
+Descompón el número 36.
+
+<details>
+<summary>Ver solución</summary>
+
+$36 = 2 \times 18 = 2 \times 2 \times 9 = 2 \times 2 \times 3 \times 3$.
+**Resultado:** $\boxed{2^2 \times 3^2}$
+
+</details>
+
+### Ejercicio 4
+Descompón el número 45.
+
+<details>
+<summary>Ver solución</summary>
+
+$45 \div 3 = 15$, $15 \div 3 = 5$, $5 \div 5 = 1$.
+**Resultado:** $\boxed{3^2 \times 5}$
+
+</details>
+
+### Ejercicio 5
+Descompón el número 32.
+
+<details>
+<summary>Ver solución</summary>
+
+$2 \times 2 \times 2 \times 2 \times 2$.
+**Resultado:** $\boxed{2^5}$
+
+</details>
+
+### Ejercicio 6
+Descompón 110.
+
+<details>
+<summary>Ver solución</summary>
+
+$110 \div 2 = 55$, $55 \div 5 = 11$, $11 \div 11 = 1$.
+**Resultado:** $\boxed{2 \times 5 \times 11}$
+
+</details>
+
+### Ejercicio 7
+Si un número es $2^2 \times 5$, ¿cuál es?
+
+<details>
+<summary>Ver solución</summary>
+
+$4 \times 5 = 20$.
+**Resultado:** $\boxed{20}$
+
+</details>
+
+### Ejercicio 8
+Descompón 72.
+
+<details>
+<summary>Ver solución</summary>
+
+$72 \div 2=36$, $36 \div 2=18$, $18 \div 2=9$, $9 \div 3=3$.
+**Resultado:** $\boxed{2^3 \times 3^2}$
+
+</details>
+
+### Ejercicio 9
+Descompón 1000.
+
+<details>
+<summary>Ver solución</summary>
+
+$1000 = 10^3 = (2 \times 5)^3$.
+**Resultado:** $\boxed{2^3 \times 5^3}$
+
+</details>
+
+### Ejercicio 10
+Descompón 19.
+
+<details>
+<summary>Ver solución</summary>
+
+Es primo.
+**Resultado:** $\boxed{19}$
+
+</details>
 
 ---
 
-### Ejemplo 2: Descomponer 84
+## 🔑 Resumen
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="jsxgraph-fact84" class="jsxgraph-container" style="width: 100%; height: 220px; border-radius: 8px; overflow: hidden;"></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-fact84')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-fact84', {
-      boundingbox: [-0.5, 5.5, 5, -0.5], axis: false, showCopyright: false, showNavigation: false, pan: {enabled: false}, zoom: {enabled: false}
-    });
-    // Línea vertical divisora
-    board.create('segment', [[2, 5], [2, 0.5]], {strokeColor: '#374151', strokeWidth: 3, fixed: true});
-    // Números a la izquierda
-    board.create('text', [1, 4.5, '84'], {fontSize: 18, strokeColor: '#374151', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
-    board.create('text', [1, 3.5, '42'], {fontSize: 18, strokeColor: '#374151', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
-    board.create('text', [1, 2.5, '21'], {fontSize: 18, strokeColor: '#374151', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
-    board.create('text', [1, 1.5, '7'], {fontSize: 18, strokeColor: '#374151', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
-    board.create('text', [1, 0.5, '1'], {fontSize: 18, strokeColor: '#22c55e', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
-    // Factores primos a la derecha
-    board.create('text', [2.5, 4.5, '2'], {fontSize: 18, strokeColor: '#ef4444', fixed: true, cssStyle: 'font-weight: bold;'});
-    board.create('text', [2.5, 3.5, '2'], {fontSize: 18, strokeColor: '#ef4444', fixed: true, cssStyle: 'font-weight: bold;'});
-    board.create('text', [2.5, 2.5, '3'], {fontSize: 18, strokeColor: '#3b82f6', fixed: true, cssStyle: 'font-weight: bold;'});
-    board.create('text', [2.5, 1.5, '7'], {fontSize: 18, strokeColor: '#8b5cf6', fixed: true, cssStyle: 'font-weight: bold;'});
-    // Líneas horizontales
-    for (var i = 0; i < 4; i++) {
-      board.create('segment', [[0.3, 4-i], [2.8, 4-i]], {strokeColor: '#d1d5db', strokeWidth: 1, fixed: true});
-    }
-    board.unsuspendUpdate();
-  }
-});
-</script>
-
-$$
-84 = 2^2 \times 3 \times 7
-$$
-
----
-
-### Ejemplo 3: Descomponer 72
-
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="jsxgraph-fact72" class="jsxgraph-container" style="width: 100%; height: 280px; border-radius: 8px; overflow: hidden;"></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-fact72')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-fact72', {
-      boundingbox: [-0.5, 6.5, 5, -0.5], axis: false, showCopyright: false, showNavigation: false, pan: {enabled: false}, zoom: {enabled: false}
-    });
-    // Línea vertical divisora
-    board.create('segment', [[2, 6], [2, 0.5]], {strokeColor: '#374151', strokeWidth: 3, fixed: true});
-    // 72 → 36 → 18 → 9 → 3 → 1
-    board.create('text', [1, 5.5, '72'], {fontSize: 18, strokeColor: '#374151', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
-    board.create('text', [1, 4.5, '36'], {fontSize: 18, strokeColor: '#374151', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
-    board.create('text', [1, 3.5, '18'], {fontSize: 18, strokeColor: '#374151', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
-    board.create('text', [1, 2.5, '9'], {fontSize: 18, strokeColor: '#374151', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
-    board.create('text', [1, 1.5, '3'], {fontSize: 18, strokeColor: '#374151', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
-    board.create('text', [1, 0.5, '1'], {fontSize: 18, strokeColor: '#22c55e', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
-    // Factores primos
-    board.create('text', [2.5, 5.5, '2'], {fontSize: 18, strokeColor: '#ef4444', fixed: true, cssStyle: 'font-weight: bold;'});
-    board.create('text', [2.5, 4.5, '2'], {fontSize: 18, strokeColor: '#ef4444', fixed: true, cssStyle: 'font-weight: bold;'});
-    board.create('text', [2.5, 3.5, '2'], {fontSize: 18, strokeColor: '#ef4444', fixed: true, cssStyle: 'font-weight: bold;'});
-    board.create('text', [2.5, 2.5, '3'], {fontSize: 18, strokeColor: '#3b82f6', fixed: true, cssStyle: 'font-weight: bold;'});
-    board.create('text', [2.5, 1.5, '3'], {fontSize: 18, strokeColor: '#3b82f6', fixed: true, cssStyle: 'font-weight: bold;'});
-    // Líneas horizontales
-    for (var i = 0; i < 5; i++) {
-      board.create('segment', [[0.3, 5-i], [2.8, 5-i]], {strokeColor: '#d1d5db', strokeWidth: 1, fixed: true});
-    }
-    board.unsuspendUpdate();
-  }
-});
-</script>
-
-$$
-72 = 2^3 \times 3^2
-$$
-
----
-
-### Ejemplo 4: Descomponer 150
-
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="jsxgraph-fact150" class="jsxgraph-container" style="width: 100%; height: 250px; border-radius: 8px; overflow: hidden;"></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-fact150')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-fact150', {
-      boundingbox: [-0.5, 5.5, 5, -0.5], axis: false, showCopyright: false, showNavigation: false, pan: {enabled: false}, zoom: {enabled: false}
-    });
-    // Línea vertical divisora
-    board.create('segment', [[2, 5], [2, 0.5]], {strokeColor: '#374151', strokeWidth: 3, fixed: true});
-    // 150 → 75 → 25 → 5 → 1
-    board.create('text', [1, 4.5, '150'], {fontSize: 18, strokeColor: '#374151', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
-    board.create('text', [1, 3.5, '75'], {fontSize: 18, strokeColor: '#374151', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
-    board.create('text', [1, 2.5, '25'], {fontSize: 18, strokeColor: '#374151', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
-    board.create('text', [1, 1.5, '5'], {fontSize: 18, strokeColor: '#374151', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
-    board.create('text', [1, 0.5, '1'], {fontSize: 18, strokeColor: '#22c55e', fixed: true, anchorX: 'right', cssStyle: 'font-weight: bold;'});
-    // Factores primos
-    board.create('text', [2.5, 4.5, '2'], {fontSize: 18, strokeColor: '#ef4444', fixed: true, cssStyle: 'font-weight: bold;'});
-    board.create('text', [2.5, 3.5, '3'], {fontSize: 18, strokeColor: '#3b82f6', fixed: true, cssStyle: 'font-weight: bold;'});
-    board.create('text', [2.5, 2.5, '5'], {fontSize: 18, strokeColor: '#f59e0b', fixed: true, cssStyle: 'font-weight: bold;'});
-    board.create('text', [2.5, 1.5, '5'], {fontSize: 18, strokeColor: '#f59e0b', fixed: true, cssStyle: 'font-weight: bold;'});
-    // Líneas horizontales
-    for (var i = 0; i < 4; i++) {
-      board.create('segment', [[0.3, 4-i], [2.8, 4-i]], {strokeColor: '#d1d5db', strokeWidth: 1, fixed: true});
-    }
-    board.unsuspendUpdate();
-  }
-});
-</script>
-
-$$
-150 = 2 \times 3 \times 5^2
-$$
-
----
-
-## 📖 Método del árbol de factores
-
-Descomponemos en cualquier par de factores y seguimos hasta llegar a primos.
-
-### Ejemplo 1: Descomponer 36
-
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="jsxgraph-arbol36" class="jsxgraph-container" style="width: 100%; height: 200px; border-radius: 8px; overflow: hidden;"></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-arbol36')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-arbol36', {
-      boundingbox: [-0.5, 4.5, 7, -0.5], axis: false, showCopyright: false, showNavigation: false, pan: {enabled: false}, zoom: {enabled: false}
-    });
-    // Nivel 0: 36
-    board.create('text', [3.5, 4, '36'], {fontSize: 18, strokeColor: '#374151', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
-    // Ramas
-    board.create('segment', [[3.2, 3.6], [1.8, 2.8]], {strokeColor: '#374151', strokeWidth: 2, fixed: true});
-    board.create('segment', [[3.8, 3.6], [5.2, 2.8]], {strokeColor: '#374151', strokeWidth: 2, fixed: true});
-    // Nivel 1: 6 × 6
-    board.create('text', [1.5, 2.5, '6'], {fontSize: 16, strokeColor: '#3b82f6', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
-    board.create('text', [5.5, 2.5, '6'], {fontSize: 16, strokeColor: '#3b82f6', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
-    // Ramas nivel 1
-    board.create('segment', [[1.2, 2.1], [0.5, 1.3]], {strokeColor: '#374151', strokeWidth: 2, fixed: true});
-    board.create('segment', [[1.8, 2.1], [2.5, 1.3]], {strokeColor: '#374151', strokeWidth: 2, fixed: true});
-    board.create('segment', [[5.2, 2.1], [4.5, 1.3]], {strokeColor: '#374151', strokeWidth: 2, fixed: true});
-    board.create('segment', [[5.8, 2.1], [6.5, 1.3]], {strokeColor: '#374151', strokeWidth: 2, fixed: true});
-    // Nivel 2: primos (2 × 3) y (2 × 3)
-    board.create('text', [0.3, 0.9, '2'], {fontSize: 16, strokeColor: '#ef4444', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
-    board.create('text', [2.7, 0.9, '3'], {fontSize: 16, strokeColor: '#22c55e', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
-    board.create('text', [4.3, 0.9, '2'], {fontSize: 16, strokeColor: '#ef4444', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
-    board.create('text', [6.7, 0.9, '3'], {fontSize: 16, strokeColor: '#22c55e', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
-    // Resultado
-    board.create('text', [3.5, 0.2, '36 = 2² × 3²'], {fontSize: 14, strokeColor: '#374151', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
-    board.unsuspendUpdate();
-  }
-});
-</script>
-
-$$
-36 = 6 \times 6 = (2 \times 3) \times (2 \times 3) = 2^2 \times 3^2
-$$
-
----
-
-### Ejemplo 2: Descomponer 100
-
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="jsxgraph-arbol100" class="jsxgraph-container" style="width: 100%; height: 200px; border-radius: 8px; overflow: hidden;"></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-arbol100')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-arbol100', {
-      boundingbox: [-0.5, 4.5, 7, -0.5], axis: false, showCopyright: false, showNavigation: false, pan: {enabled: false}, zoom: {enabled: false}
-    });
-    // Nivel 0: 100
-    board.create('text', [3.5, 4, '100'], {fontSize: 18, strokeColor: '#374151', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
-    // Ramas
-    board.create('segment', [[3.2, 3.6], [1.8, 2.8]], {strokeColor: '#374151', strokeWidth: 2, fixed: true});
-    board.create('segment', [[3.8, 3.6], [5.2, 2.8]], {strokeColor: '#374151', strokeWidth: 2, fixed: true});
-    // Nivel 1: 10 × 10
-    board.create('text', [1.5, 2.5, '10'], {fontSize: 16, strokeColor: '#3b82f6', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
-    board.create('text', [5.5, 2.5, '10'], {fontSize: 16, strokeColor: '#3b82f6', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
-    // Ramas nivel 1
-    board.create('segment', [[1.2, 2.1], [0.5, 1.3]], {strokeColor: '#374151', strokeWidth: 2, fixed: true});
-    board.create('segment', [[1.8, 2.1], [2.5, 1.3]], {strokeColor: '#374151', strokeWidth: 2, fixed: true});
-    board.create('segment', [[5.2, 2.1], [4.5, 1.3]], {strokeColor: '#374151', strokeWidth: 2, fixed: true});
-    board.create('segment', [[5.8, 2.1], [6.5, 1.3]], {strokeColor: '#374151', strokeWidth: 2, fixed: true});
-    // Nivel 2: primos (2 × 5) y (2 × 5)
-    board.create('text', [0.3, 0.9, '2'], {fontSize: 16, strokeColor: '#ef4444', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
-    board.create('text', [2.7, 0.9, '5'], {fontSize: 16, strokeColor: '#f59e0b', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
-    board.create('text', [4.3, 0.9, '2'], {fontSize: 16, strokeColor: '#ef4444', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
-    board.create('text', [6.7, 0.9, '5'], {fontSize: 16, strokeColor: '#f59e0b', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
-    // Resultado
-    board.create('text', [3.5, 0.2, '100 = 2² × 5²'], {fontSize: 14, strokeColor: '#374151', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
-    board.unsuspendUpdate();
-  }
-});
-</script>
-
-$$
-100 = 10 \times 10 = (2 \times 5) \times (2 \times 5) = 2^2 \times 5^2
-$$
-
----
-
-### Ejemplo 3: Descomponer 48
-
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="jsxgraph-arbol48" class="jsxgraph-container" style="width: 100%; height: 250px; border-radius: 8px; overflow: hidden;"></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-arbol48')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-arbol48', {
-      boundingbox: [-0.5, 5.5, 8, -0.5], axis: false, showCopyright: false, showNavigation: false, pan: {enabled: false}, zoom: {enabled: false}
-    });
-    // Nivel 0: 48
-    board.create('text', [4, 5, '48'], {fontSize: 18, strokeColor: '#374151', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
-    // Ramas nivel 0
-    board.create('segment', [[3.7, 4.6], [2, 3.8]], {strokeColor: '#374151', strokeWidth: 2, fixed: true});
-    board.create('segment', [[4.3, 4.6], [6, 3.8]], {strokeColor: '#374151', strokeWidth: 2, fixed: true});
-    // Nivel 1: 6 × 8
-    board.create('text', [2, 3.5, '6'], {fontSize: 16, strokeColor: '#3b82f6', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
-    board.create('text', [6, 3.5, '8'], {fontSize: 16, strokeColor: '#3b82f6', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
-    // Ramas nivel 1
-    board.create('segment', [[1.7, 3.1], [1, 2.3]], {strokeColor: '#374151', strokeWidth: 2, fixed: true});
-    board.create('segment', [[2.3, 3.1], [3, 2.3]], {strokeColor: '#374151', strokeWidth: 2, fixed: true});
-    board.create('segment', [[5.7, 3.1], [5, 2.3]], {strokeColor: '#374151', strokeWidth: 2, fixed: true});
-    board.create('segment', [[6.3, 3.1], [7, 2.3]], {strokeColor: '#374151', strokeWidth: 2, fixed: true});
-    // Nivel 2: 2×3 y 2×4
-    board.create('text', [1, 2, '2'], {fontSize: 15, strokeColor: '#ef4444', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
-    board.create('text', [3, 2, '3'], {fontSize: 15, strokeColor: '#22c55e', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
-    board.create('text', [5, 2, '2'], {fontSize: 15, strokeColor: '#ef4444', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
-    board.create('text', [7, 2, '4'], {fontSize: 15, strokeColor: '#3b82f6', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
-    // Ramas del 4
-    board.create('segment', [[6.7, 1.6], [6.2, 0.9]], {strokeColor: '#374151', strokeWidth: 2, fixed: true});
-    board.create('segment', [[7.3, 1.6], [7.8, 0.9]], {strokeColor: '#374151', strokeWidth: 2, fixed: true});
-    // Nivel 3: 2×2
-    board.create('text', [6.2, 0.6, '2'], {fontSize: 15, strokeColor: '#ef4444', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
-    board.create('text', [7.8, 0.6, '2'], {fontSize: 15, strokeColor: '#ef4444', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
-    // Resultado
-    board.create('text', [4, 0.1, '48 = 2⁴ × 3'], {fontSize: 14, strokeColor: '#374151', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
-    board.unsuspendUpdate();
-  }
-});
-</script>
-
-$$
-48 = 6 \times 8 = (2 \times 3) \times (2 \times 4) = 2^4 \times 3
-$$
-
----
-
-### Ejemplo 4: Descomponer 72
-
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="jsxgraph-arbol72" class="jsxgraph-container" style="width: 100%; height: 250px; border-radius: 8px; overflow: hidden;"></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-arbol72')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-arbol72', {
-      boundingbox: [-0.5, 5.5, 8, -0.5], axis: false, showCopyright: false, showNavigation: false, pan: {enabled: false}, zoom: {enabled: false}
-    });
-    // Nivel 0: 72
-    board.create('text', [4, 5, '72'], {fontSize: 18, strokeColor: '#374151', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
-    // Ramas nivel 0
-    board.create('segment', [[3.7, 4.6], [2, 3.8]], {strokeColor: '#374151', strokeWidth: 2, fixed: true});
-    board.create('segment', [[4.3, 4.6], [6, 3.8]], {strokeColor: '#374151', strokeWidth: 2, fixed: true});
-    // Nivel 1: 8 × 9
-    board.create('text', [2, 3.5, '8'], {fontSize: 16, strokeColor: '#3b82f6', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
-    board.create('text', [6, 3.5, '9'], {fontSize: 16, strokeColor: '#3b82f6', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
-    // Ramas nivel 1
-    board.create('segment', [[1.7, 3.1], [1, 2.3]], {strokeColor: '#374151', strokeWidth: 2, fixed: true});
-    board.create('segment', [[2.3, 3.1], [3, 2.3]], {strokeColor: '#374151', strokeWidth: 2, fixed: true});
-    board.create('segment', [[5.7, 3.1], [5, 2.3]], {strokeColor: '#374151', strokeWidth: 2, fixed: true});
-    board.create('segment', [[6.3, 3.1], [7, 2.3]], {strokeColor: '#374151', strokeWidth: 2, fixed: true});
-    // Nivel 2: 2×4 y 3×3
-    board.create('text', [1, 2, '2'], {fontSize: 15, strokeColor: '#ef4444', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
-    board.create('text', [3, 2, '4'], {fontSize: 15, strokeColor: '#3b82f6', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
-    board.create('text', [5, 2, '3'], {fontSize: 15, strokeColor: '#22c55e', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
-    board.create('text', [7, 2, '3'], {fontSize: 15, strokeColor: '#22c55e', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
-    // Ramas del 4
-    board.create('segment', [[2.7, 1.6], [2.2, 0.9]], {strokeColor: '#374151', strokeWidth: 2, fixed: true});
-    board.create('segment', [[3.3, 1.6], [3.8, 0.9]], {strokeColor: '#374151', strokeWidth: 2, fixed: true});
-    // Nivel 3: 2×2
-    board.create('text', [2.2, 0.6, '2'], {fontSize: 15, strokeColor: '#ef4444', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
-    board.create('text', [3.8, 0.6, '2'], {fontSize: 15, strokeColor: '#ef4444', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
-    // Resultado
-    board.create('text', [4, 0.1, '72 = 2³ × 3²'], {fontSize: 14, strokeColor: '#374151', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
-    board.unsuspendUpdate();
-  }
-});
-</script>
-
-$$
-72 = 8 \times 9 = (2 \times 4) \times (3 \times 3) = 2^3 \times 3^2
-$$
-
----
-
-## 📖 Unicidad de la descomposición
-
-Todo número compuesto tiene una **única** descomposición en factores primos (Teorema Fundamental de la Aritmética).
-
----
-
-## 📝 Ejercicios de práctica
-
-**Ejercicio 1:** Descompón $72$ en factores primos.
-
-**Ejercicio 2:** Descompón $150$ en factores primos.
-
-**Ejercicio 3:** Expresa $200$ como producto de potencias de primos.
-
-**Ejercicio 4:** Si $n = 2^3 \times 5^2$, ¿cuánto vale $n$?
-
----
+> **Dato Clave:** Todo número mayor que 1 tiene un **ADN único**. Por ejemplo, el 12 siempre será $2^2 \times 3$. No hay otra combinación de primos que dé 12. ¡Esta unicidad se llama el **Teorema Fundamental de la Aritmética**!

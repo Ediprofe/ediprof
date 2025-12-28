@@ -1,239 +1,228 @@
-# Coeficiente de Variación
+# **Coeficiente de Variación**
 
-¿Qué pasa si queremos comparar la dispersión de fenómenos completamente diferentes? Una desviación estándar de 10 puede ser mucha o poca, dependiendo de si hablamos de centímetros o millones de pesos. El **coeficiente de variación** resuelve este problema.
+Si te dicen que una máquina tiene un error de 1 cm, ¿es mucho o poco?
+- En un **microchip** de 2 cm, un error de 1 cm es desastroso (50% de error).
+- En un **edificio** de 100 metros (10,000 cm), un error de 1 cm es irrelevante (0.01% de error).
+
+La **Desviación Estándar** ($S=1$ cm) es la misma en ambos casos, pero el impacto es muy diferente. Para medir la dispersión **relativa** al tamaño de la cosa, usamos el **Coeficiente de Variación (CV)**.
 
 ---
 
 ## 🎯 ¿Qué vas a aprender?
 
-- Qué es el coeficiente de variación y para qué sirve
-- Cómo calcularlo e interpretarlo
-- Cuándo usarlo (y cuándo no)
-- Comparar la dispersión entre grupos diferentes
+- Calcular el Coeficiente de Variación para comparar peras con manzanas.
+- Interpretar el resultado como un porcentaje de variación.
+- Clasificar datos como "homogéneos" o "heterogéneos" según su CV.
+- Entender por qué no funciona con temperaturas (escalas sin cero absoluto).
 
 ---
 
-## 📖 El Problema: Comparar Dispersiones Diferentes
+## La Fórmula de la Relatividad Estadística
 
-### ⚙️ Ejemplo:
+Simplemente dividimos la desviación entre el promedio.
 
-- **Estaturas:** Media = 170 cm, $s = 10$ cm
-- **Pesos:** Media = 70 kg, $s = 10$ kg
+$$ CV = \frac{s}{|\bar{x}|} \times 100\% $$
 
-Ambos tienen $s = 10$, pero ¿tienen la misma dispersión relativa?
-
-- 10 cm respecto a 170 cm es aproximadamente **6%**
-- 10 kg respecto a 70 kg es aproximadamente **14%**
-
-El peso tiene mayor variabilidad **relativa**, aunque la desviación estándar "absoluta" sea igual.
+Este número nos dice qué tan grande es la dispersión en comparación con el tamaño promedio de los datos.
 
 ---
 
-## 📖 Definición del Coeficiente de Variación
+## Cálculo y Comparación
 
-> El **coeficiente de variación** (CV) expresa la desviación estándar como **porcentaje** de la media.
+### ⚙️ Ejemplos Resueltos
 
-### 💡 Fórmula:
+#### Ejemplo 1: El Pan vs El Carro
+- **Pan:** Precio \$2,000. Desviación \$200.
+  $$CV = \frac{200}{2000} \times 100\% = 10\%$$
+- **Carro:** Precio \$50,000,000. Desviación \$200.
+  $$CV = \frac{200}{50,000,000} \times 100\% = 0.0004\%$$
+**Conclusión:** Aunque la desviación es la misma (\$200), el precio del pan varía muchísimo más en términos relativos.
 
-$$
-CV = \frac{s}{\bar{x}} \times 100\%
-$$
+#### Ejemplo 2: Hormiga vs Elefante
+- **Hormigas:** Peso medio 5 mg ($S=1$ mg). $CV = 20\%$.
+- **Elefantes:** Peso medio 5,000,000 mg ($S=10,000$ mg). $CV = 0.2\%$.
+**Conclusión:** Las hormigas son más "diversas" en peso que los elefantes, aun si la desviación del elefante es gigante.
 
-### 💡 Características:
-- Es **adimensional** (no tiene unidades)
-- Permite comparar variables con diferentes escalas
-- Se expresa como porcentaje
+#### Ejemplo 3: Dólares vs Euros
+- **Grupo A (Dólares):** Media \$100, $S=10$. $CV = 10\%$.
+- **Grupo B (Euros):** Media €90, $S=9$. $CV = 10\%$.
+**Conclusión:** Ambos grupos tienen la misma variabilidad relativa. El CV no tiene unidades (es adimensional), perfecto para comparar monedas.
 
----
+#### Ejemplo 4: Inversiones
+- **Acción A:** Retorno 10%, Riesgo ($S$) 2%. $CV = 20\%$.
+- **Acción B:** Retorno 20%, Riesgo ($S$) 6%. $CV = 30\%$.
+**Conclusión:** La Acción A es más segura (menos volátil en relación a lo que ganas).
 
-## 📖 Cálculo del Coeficiente de Variación
-
-### ⚙️ Ejemplo 1: Estaturas vs Pesos
-
-**Estaturas:**
-- $\bar{x} = 170$ cm
-- $s = 10$ cm
-- $CV = \frac{10}{170} \times 100\% = 5.88\%$
-
-**Pesos:**
-- $\bar{x} = 70$ kg
-- $s = 10$ kg
-- $CV = \frac{10}{70} \times 100\% = 14.29\%$
-
-**Conclusión:** Aunque ambos tienen $s = 10$, el peso tiene **mayor variabilidad relativa** (14.29% vs 5.88%).
-
-### ⚙️ Ejemplo 2: Comparar dos grupos
-
-**Grupo A - Salarios (empleados junior):**
-- Media: $1,500,000
-- Desviación estándar: $200,000
-- $CV = \frac{200,000}{1,500,000} \times 100\% = 13.3\%$
-
-**Grupo B - Salarios (ejecutivos):**
-- Media: $8,000,000
-- Desviación estándar: $600,000
-- $CV = \frac{600,000}{8,000,000} \times 100\% = 7.5\%$
-
-| Grupo | $s$ | CV | Conclusión |
-|-------|-----|-----|------------|
-| Junior | $200,000 | 13.3% | Mayor variabilidad relativa |
-| Ejecutivos | $600,000 | 7.5% | Menor variabilidad relativa |
-
-Aunque los ejecutivos tienen **mayor** desviación estándar ($600k vs $200k), tienen **menor** coeficiente de variación (7.5% vs 13.3%).
-
-Los salarios de los junior son proporcionalmente más dispersos.
+#### Ejemplo 5: Adultos vs Niños
+- **Niños:** Altura media 100 cm, $S=10$ cm. $CV=10\%$.
+- **Adultos:** Altura media 170 cm, $S=10$ cm. $CV=5.8\%$.
+**Conclusión:** La dispersión es la misma (10 cm), pero en los niños se nota más (representa una mayor porción de su cuerpo).
 
 ---
 
-## 📖 Interpretación del CV
+## Interpretación: ¿Homogéneo o Heterogéneo?
 
-| Valor del CV | Interpretación |
-|--------------|----------------|
-| CV < 10% | Muy baja dispersión (datos homogéneos) |
-| 10% ≤ CV < 20% | Dispersión moderada |
-| 20% ≤ CV < 30% | Alta dispersión |
-| CV ≥ 30% | Muy alta dispersión (datos heterogéneos) |
+Aunque no hay una regla sagrada, se suele usar este semáforo comúnmente en ciencias sociales y biológicas:
 
-### 💡 Estas son guías generales, el contexto importa.
+1.  **CV < 10%:** Datos **Homogéneos**. (Muy parecidos entre sí. El promedio es muy confiable).
+2.  **CV 10% - 30%:** Dispersión Moderada.
+3.  **CV > 30%:** Datos **Heterogéneos**. (Muy distintos. El promedio es poco representativo).
 
----
+### ⚙️ Ejemplos Resueltos: Calidad de Datos
 
-## ⚠️ Limitaciones del Coeficiente de Variación
+#### Ejemplo 1: Laboratorio Clínico
+Un análisis de sangre da $CV=2\%$.
+**Interpretación:** Altísima precisión. Datos muy homogéneos.
 
-### Limitación 1: No funciona si la media es cero o cercana a cero
+#### Ejemplo 2: Ingresos de un País
+El $CV$ de los salarios suele ser alto (ej: 60% o más).
+**Interpretación:** Muy Heterogéneo. Hay mucha desigualdad. El "sueldo promedio" no representa a la mayoría.
 
-Si $\bar{x} \approx 0$, el CV se vuelve muy grande o indefinido.
+#### Ejemplo 3: Llenado de Botellas
+Fábrica de refrescos. Media 500ml, $S=5$ml.
+$$CV = \frac{5}{500} = 1\%$$
+**Interpretación:** Proceso controlado y homogéneo.
 
-### ⚙️ Ejemplo problemático:
+#### Ejemplo 4: Edad en un concierto de Rock
+Media 25 años, $S=10$ años.
+$$CV = \frac{10}{25} = 40\%$$
+**Interpretación:** Público Heterogéneo (hay desde adolescentes hasta abuelos).
 
-Temperaturas (°C): -5, 0, 2, 3, 5 → Media ≈ 1°C
-
-CV sería muy grande, pero no porque haya mucha dispersión, sino porque la media está cerca de cero.
-
-### Limitación 2: No funciona con datos negativos
-
-Si la media es negativa, el CV pierde sentido.
-
-### Limitación 3: Mejor para variables de razón
-
-El CV es más significativo para variables que tienen un **cero absoluto** (peso, estatura, dinero) que para variables como temperatura Celsius.
-
----
-
-## 📖 Aplicaciones Prácticas
-
-| Campo | Uso del CV |
-|-------|------------|
-| **Control de calidad** | Comparar la precisión de diferentes máquinas |
-| **Finanzas** | Medir el riesgo relativo de inversiones |
-| **Ciencias** | Comparar variabilidad de mediciones en diferentes experimentos |
-| **Economía** | Comparar desigualdad entre países de diferente tamaño |
-
-### ⚙️ Ejemplo: Control de calidad
-
-Dos máquinas producen tornillos de 10 mm:
-
-| Máquina | Media | $s$ | CV |
-|---------|-------|-----|-----|
-| A | 10.0 mm | 0.2 mm | 2% |
-| B | 10.0 mm | 0.5 mm | 5% |
-
-**La máquina A es más precisa** (menor CV).
-
----
-
-## 🔑 Resumen
-
-| Concepto | Descripción |
-|----------|-------------|
-| **Coeficiente de Variación** | $CV = \frac{s}{\bar{x}} \times 100\%$ |
-| **Ventaja** | Permite comparar dispersiones de variables diferentes |
-| **Interpretación** | Dispersión como % de la media |
-| **Limitación** | No usar si la media es cero o negativa |
+#### Ejemplo 5: Temperatura Corporal
+Media 37°C. $S=0.5$°C.
+$$CV = \frac{0.5}{37} = 1.3\%$$
+**Interpretación:** El cuerpo humano regula su temperatura de forma muy homogénea.
 
 ---
 
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1
-Calcula el CV para cada conjunto:
-
-a) Media = 50, s = 10
-b) Media = 200, s = 10
-c) Media = 200, s = 40
+Calcula el CV si $\bar{x}=50$ y $S=5$.
 
 <details>
 <summary>Ver solución</summary>
 
-a) $CV = \frac{10}{50} \times 100\% = 20\%$
-
-b) $CV = \frac{10}{200} \times 100\% = 5\%$
-
-c) $CV = \frac{40}{200} \times 100\% = 20\%$
-
-**Comparación:**
-- a y c tienen el mismo CV (20%) aunque diferentes medias y desviaciones
-- b tiene menor CV (5%) aunque tiene la misma s que a
+**Cálculo:** $(5/50) \times 100 = 10\%$.
+**Resultado:** $\boxed{10\%}$
 
 </details>
 
 ### Ejercicio 2
-¿Cuál grupo tiene datos más homogéneos?
-
-Grupo A: Media = 100, CV = 15%
-Grupo B: Media = 500, CV = 8%
+¿Qué grupo es más variable relativamente?
+A: Media 100, $S=10$.
+B: Media 10, $S=2$.
 
 <details>
 <summary>Ver solución</summary>
 
-**El Grupo B tiene datos más homogéneos** porque su CV es menor (8% < 15%).
-
-El CV nos dice que:
-- En el Grupo A, los datos varían típicamente un 15% respecto a la media
-- En el Grupo B, los datos varían típicamente un 8% respecto a la media
-
-Aunque no conocemos las desviaciones estándar exactas, sabemos que el Grupo B es proporcionalmente menos disperso.
+- **A:** $10/100 = 10\%$.
+- **B:** $2/10 = 20\%$.
+**Resultado:** $\boxed{\text{Grupo B}}$
 
 </details>
 
 ### Ejercicio 3
-Las estaturas de hombres tienen media 175 cm y CV = 4%. Las de mujeres tienen media 162 cm y CV = 4%. ¿Qué grupo tiene mayor desviación estándar?
+Si el CV es 0%, ¿qué significa?
 
 <details>
 <summary>Ver solución</summary>
 
-Despejando s de la fórmula del CV:
-
-$s = CV \times \bar{x}$ (con CV en decimal)
-
-**Hombres:**
-$s = 0.04 \times 175 = 7$ cm
-
-**Mujeres:**
-$s = 0.04 \times 162 = 6.48$ cm
-
-**Los hombres tienen mayor desviación estándar** (7 cm vs 6.48 cm), aunque ambos grupos tienen el mismo CV.
-
-Esto tiene sentido: si la variabilidad relativa es igual, el grupo con mayor media tendrá mayor dispersión absoluta.
+**Análisis:** $S$ debe ser 0.
+**Resultado:** $\boxed{\text{Todos los datos son iguales}}$
 
 </details>
 
 ### Ejercicio 4
-¿Por qué el CV no se debe usar para comparar temperaturas en Celsius?
+En un examen, el curso A tiene CV=5% y el curso B tiene CV=25%. ¿En cuál curso es más justo usar el promedio para calificar al grupo?
 
 <details>
 <summary>Ver solución</summary>
 
-El CV no es apropiado para temperaturas Celsius porque:
-
-1. **El cero no es absoluto:** 0°C no significa "ausencia de temperatura", es solo el punto de congelación del agua.
-
-2. **Puede dar resultados sin sentido:** Si la temperatura media es 5°C con s = 2°C, el CV sería 40%. Pero si cambiamos a Fahrenheit (media ≈ 41°F, s ≈ 3.6°F), el CV sería ~9%.
-
-3. **Depende de la escala:** El mismo fenómeno daría CV diferentes según usemos Celsius, Fahrenheit o Kelvin.
-
-4. **La media puede ser cercana a cero:** En temperaturas cerca de 0°C, el CV se dispara artificialmente.
-
-**Alternativa:** Para temperaturas, es mejor usar solo la desviación estándar, o convertir a Kelvin (donde sí hay cero absoluto).
+**Lógica:** Menor CV = Más representativo.
+**Resultado:** $\boxed{\text{Curso A}}$
 
 </details>
+
+### Ejercicio 5
+Calcula el CV de: 10, 10, 10.
+
+<details>
+<summary>Ver solución</summary>
+
+**S:** 0. Media: 10.
+**Resultado:** $\boxed{0\%}$
+
+</details>
+
+### Ejercicio 6
+Si multiplicas todos los datos por 10, ¿cambia el CV?
+
+<details>
+<summary>Ver solución</summary>
+
+**Análisis:**
+- Media se multiplica por 10.
+- Desviación se multiplica por 10.
+- La división cancela el 10.
+**Resultado:** $\boxed{\text{No cambia}}$
+
+</details>
+
+### Ejercicio 7
+¿Por qué no se usa CV con temperaturas en Celsius?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razón:** El 0°C es arbitrario. Si la media es 0, divides por 0. Si es negativa, da CV negativo (raro).
+**Resultado:** $\boxed{\text{Falta de cero absoluto}}$
+
+</details>
+
+### Ejercicio 8
+Si el CV es 100%, ¿qué relación hay entre la media y la desviación?
+
+<details>
+<summary>Ver solución</summary>
+
+**Ecuación:** $S / \bar{x} = 1$.
+**Resultado:** $\boxed{S = \bar{x}}$ (Son iguales).
+
+</details>
+
+### Ejercicio 9
+Una acción tiene retorno esperado 0% y riesgo 5%. ¿Cuál es el CV?
+
+<details>
+<summary>Ver solución</summary>
+
+**Cálculo:** $5/0 \to \infty$.
+**Resultado:** $\boxed{\text{Indefinido (No sirve aquí)}}$
+
+</details>
+
+### Ejercicio 10
+Si sumas 100 a todos los datos, ¿el CV mejora (baja) o empeora (sube)?
+
+<details>
+<summary>Ver solución</summary>
+
+**Análisis:**
+- $S$ no cambia.
+- $\bar{x}$ aumenta.
+- Fracción $S/(\bar{x}+100)$ se hace más pequeña.
+**Resultado:** $\boxed{\text{Baja (Mejora)}}$
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Estadístico | Fórmula | Unidades | Uso Principal |
+|-------------|---------|----------|---------------|
+| **Desv. Estándar ($S$)** | $\sqrt{Var}$ | Metros, Kilos, etc. | Medir dispersión absoluta. |
+| **Coef. Variación ($CV$)** | $S / \bar{x}$ | % (Adimensional). | Comparar dispersión relativa. |
+
+> **Conclusión:** El Coeficiente de Variación es el "igualador". Nos permite comparar la precisión de un relojero suizo con la de un constructor de puentes, hablando un idioma común: el porcentaje.

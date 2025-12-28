@@ -1,11 +1,47 @@
-# Aplicaciones
+# **Aplicaciones de Triángulos Oblicuángulos**
 
-La resolución de triángulos oblicuángulos tiene muchas aplicaciones prácticas en topografía, navegación, astronomía e ingeniería.
+¿Para qué sirve todo esto? Pues bien, a menos que seas un topógrafo o un capitán de barco, raro vez medirás triángulos por diversión. Pero en el mundo real, los triángulos oblicuángulos están en todas partes: desde medir montañas inaccesibles hasta calcular rutas de aviones que se desvían por el viento.
+
+---
+
+## 🎯 ¿Qué vas a aprender?
+
+- Cómo medir la altura de un objeto sin acercarte a él (el problema de los dos observadores).
+- Cómo calcular distancias en navegación usando rumbos y brújulas.
+- Cómo calcular el área de cualquier terreno irregular.
+- La súper Fórmula de Herón para áreas (sin saber la altura).
+
+---
+
+## 🗺️ Problema 1: Navegación y Rumbos
+
+En el mar y en el aire, casi nunca vas en línea recta. El viento te empuja, o tienes que esquivar una tormenta.
+
+**El Problema:**
+Un avión vuela 300 km hacia el Este, y luego gira 60° hacia el Norte y vuela otros 400 km. ¿A qué distancia está del punto de partida?
+
+**Solución:**
+1.  Dibuja el trayecto. Tienes dos lados (300 y 400).
+2.  El ángulo de giro es exterior. El ángulo interior del triángulo es $180° - 60° = 120°$.
+3.  Tienes Lado-Ángulo-Lado. Usa **Ley de Cosenos**.
+
+$$
+d^2 = 300^2 + 400^2 - 2(300)(400)\cos(120°)
+$$
+$$
+d^2 = 90,000 + 160,000 - 240,000(-0.5)
+$$
+$$
+d^2 = 250,000 + 120,000 = 370,000
+$$
+$$
+d = \sqrt{370,000} \approx 608 \text{ km}
+$$
 
 <div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
     <span style="font-size: 1.1rem;">📊</span>
-    <strong style="color: #1e293b; font-size: 0.95rem; margin-left: 0.3rem;">Ejemplo: Navegación marítima</strong>
+    <strong style="color: #1e293b; font-size: 0.95rem; margin-left: 0.3rem;">Aplicación: Navegación</strong>
   </div>
 
 ![Aplicación de navegación](/images/trigonometria/triangulos-oblicuangulos/aplicacion-navegacion.svg)
@@ -14,178 +50,201 @@ La resolución de triángulos oblicuángulos tiene muchas aplicaciones práctica
 
 ---
 
-## 📖 Tipos de problemas
+## 🏔️ Problema 2: Alturas Inaccesibles
 
-1. **Distancias inaccesibles**: medir distancias que no podemos recorrer directamente
-2. **Navegación**: calcular rumbos y posiciones
-3. **Topografía**: medición de terrenos
-4. **Fuerzas**: resolver componentes de vectores
+Quieres medir la altura de una montaña, pero no puedes llegar a la base (hay un río o un precipicio). ¿Qué haces?
 
----
+**El Método de los Dos Observadores:**
+1.  Mides el ángulo de elevación desde el punto A ($30°$).
+2.  Caminas 100 metros hacia la montaña hasta el punto B.
+3.  Vuelves a medir el ángulo ($45°$).
 
-## 📖 Problema 1: Ancho de un río
-
-Desde un punto $A$ en la orilla de un río, se observan dos puntos $B$ y $C$ en la otra orilla. El ángulo $\angle BAC = 40°$. Desde $A$, caminando 100 m hasta $D$ paralelo a $BC$, se mide que $\angle BDA = 70°$ y $\angle BDC = 50°$.
-
-### Solución
-
-En el triángulo $ABD$:
-- $\angle ABD = 180° - 40° - 70° = 70°$
-- $AD = 100$ m
-
-Por Ley de Senos:
-
-$$
-\frac{AB}{\sin 70°} = \frac{100}{\sin 70°}
-$$
-
-$AB = 100$ m (triángulo isósceles)
-
-El ancho del río se calcula con la altura del triángulo.
+¡Ahora tienes un triángulo oblicuángulo con un lado conocido (100 m) y muchos ángulos!
+1.  Usas la Ley de Senos para hallar la distancia de B a la cima.
+2.  Usas seno básico (SOH) para hallar la altura.
 
 ---
 
-## 📖 Problema 2: Dos barcos
+## 📐 Problema 3: Áreas de Terrenos
 
-Dos barcos parten de un puerto. El primero navega 80 km con rumbo N35°E. El segundo navega 60 km con rumbo S55°E. ¿A qué distancia están entre sí?
+¿Cómo mides el área de un parque triangular si no sabes la altura?
 
-### Solución
-
-El ángulo entre las trayectorias es $35° + 55° = 90°$.
-
-Por Ley de Cosenos (o Pitágoras, ya que es 90°):
-
+### Opción A: Fórmula del Seno
+Si conoces dos lados y el ángulo del medio:
 $$
-d^2 = 80^2 + 60^2 = 6400 + 3600 = 10000
+\text{Área} = \frac{1}{2} a b \sin C
 $$
 
+### Opción B: Fórmula de Herón
+Si solo conoces los tres lados ($a, b, c$), primero calculas el semiperímetro ($s$):
 $$
-d = 100 \text{ km}
+s = \frac{a + b + c}{2}
 $$
-
----
-
-## 📖 Problema 3: Torre inclinada
-
-Desde un punto a 50 m de la base de una torre inclinada, el ángulo de elevación a la cima es 35°. Desde el lado opuesto, a 80 m de la base, el ángulo es 25°. ¿Cuál es la altura de la torre?
-
-### Solución
-
-En el triángulo formado:
-- Un lado de 50 m, ángulo opuesto a la torre
-- Otro lado de 80 m, ángulo opuesto
-- Los ángulos en la base son 35° y 25°
-- El ángulo en la cima es $180° - 35° - 25° = 120°$
-
-Por Ley de Senos, podemos encontrar la altura.
-
----
-
-## 📖 Problema 4: Área de un triángulo
-
-El **área de un triángulo** se puede calcular con:
-
-$$
-\text{Área} = \frac{1}{2}ab\sin C
-$$
-
-### Ejemplo
-
-Calculemos el área de un triángulo con $a = 8$, $b = 10$ y $C = 60°$:
-
-$$
-\text{Área} = \frac{1}{2}(8)(10)\sin 60° = 40 \times \frac{\sqrt{3}}{2} = 20\sqrt{3} \approx 34.6 \text{ u}^2
-$$
-
----
-
-## 📖 Fórmula de Herón
-
-Para un triángulo con lados $a$, $b$, $c$:
-
-$$
-s = \frac{a + b + c}{2} \quad \text{(semiperímetro)}
-$$
-
+Y luego:
 $$
 \text{Área} = \sqrt{s(s-a)(s-b)(s-c)}
 $$
 
-### Ejemplo
-
-Triángulo con lados 5, 6, 7:
-
-$s = \frac{5 + 6 + 7}{2} = 9$
-
-$$
-\text{Área} = \sqrt{9 \times 4 \times 3 \times 2} = \sqrt{216} = 6\sqrt{6} \approx 14.7 \text{ u}^2
-$$
-
 ---
 
-## 📝 Ejercicios de práctica
+## 📝 Ejercicios de Práctica
 
-### Ejercicio 1: Distancia
-
-Dos observadores separados por 500 m ven un globo aerostático. Desde un observador, el ángulo de elevación es 40°. Desde el otro, es 35°. ¿A qué altura está el globo?
+### Ejercicio 1
+Calcula el área de un triángulo con lados 3, 4 y 5 usando Herón.
 
 <details>
-<summary><strong>Ver respuesta</strong></summary>
+<summary>Ver solución</summary>
 
-En el triángulo formado, el ángulo en el globo es $180° - 40° - 35° = 105°$.
+**Razonamiento:**
+$s = (3+4+5)/2 = 6$.
+Área $= \sqrt{6(6-3)(6-4)(6-5)} = \sqrt{6 \cdot 3 \cdot 2 \cdot 1} = \sqrt{36} = 6$.
 
-Por Ley de Senos, encontramos la distancia del primer observador al globo:
-
-$$
-\frac{d}{\sin 35°} = \frac{500}{\sin 105°}
-$$
-
-$d = \frac{500 \times 0.574}{0.966} \approx 297$ m
-
-La altura: $h = 297 \times \sin 40° \approx 191$ m
-
+**Respuesta:** $\boxed{6}$
 </details>
 
 ---
 
-### Ejercicio 2: Área
-
-Calcula el área de un triángulo con:
-1. $a = 12$, $b = 15$, $C = 50°$
-2. Lados 8, 9, 11
+### Ejercicio 2
+Un barco navega 50 km al Norte y luego 50 km al Este. ¿Distancia al origen?
 
 <details>
-<summary><strong>Ver respuestas</strong></summary>
+<summary>Ver solución</summary>
 
-1. $\text{Área} = \frac{1}{2}(12)(15)\sin 50° = 90 \times 0.766 \approx 68.9$ u²
+**Razonamiento:**
+Es un triángulo rectángulo (Norte y Este son perpendiculares).
+$d = \sqrt{50^2 + 50^2} = 50\sqrt{2} \approx 70.7$.
 
-2. $s = 14$
-
-   $\text{Área} = \sqrt{14 \times 6 \times 5 \times 3} = \sqrt{1260} \approx 35.5$ u²
-
+**Respuesta:** $\boxed{70.7 \text{ km}}$
 </details>
 
 ---
 
-### Ejercicio 3: Navegación
-
-Un barco navega 40 km al norte, luego gira 60° a la derecha y navega 30 km más. ¿A qué distancia está del punto de partida?
+### Ejercicio 3
+Dos fuerzas de 10 N y 20 N tiran de un objeto con un ángulo de 60° entre ellas. Halla la fuerza resultante.
 
 <details>
-<summary><strong>Ver respuesta</strong></summary>
+<summary>Ver solución</summary>
 
-El ángulo en el vértice es $180° - 60° = 120°$.
+**Razonamiento:**
+En vectores, el ángulo en el triángulo de suma es el suplementario ($180-60=120$).
+$R^2 = 10^2 + 20^2 - 2(10)(20)\cos(120)$.
+$R = \sqrt{100+400+200} = \sqrt{700} \approx 26.46$.
 
-$$
-d^2 = 40^2 + 30^2 - 2(40)(30)\cos 120°
-$$
-
-$$
-d^2 = 1600 + 900 - 2400(-0.5) = 2500 + 1200 = 3700
-$$
-
-$d \approx 60.8$ km
-
+**Respuesta:** $\boxed{26.46 \text{ N}}$
 </details>
 
 ---
+
+### Ejercicio 4
+Calcula el área si $a=10, b=10, C=30°$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Área $= 0.5(10)(10)\sin 30° = 50(0.5) = 25$.
+
+**Respuesta:** $\boxed{25}$
+</details>
+
+---
+
+### Ejercicio 5
+Para medir el ancho de un río, un topógrafo mide una base de 100m paralela al río. Los ángulos hacia un árbol en la otra orilla son 40° y 60°. ¿Qué ley usas primero?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Tienes un lado y dos ángulos adyacentes. Puedes hallar el tercer ángulo. Es caso ALA. Ley de Senos.
+
+**Respuesta:** **Ley de Senos**
+</details>
+
+---
+
+### Ejercicio 6
+Calcula el semiperímetro ($s$) de un triángulo equilátero de lado 10.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$s = (10+10+10)/2 = 15$.
+
+**Respuesta:** $\boxed{15}$
+</details>
+
+---
+
+### Ejercicio 7
+Si dos lados miden 100 y el ángulo entre ellos es 90°, ¿cuál es el área?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Triángulo rectángulo. Área = base $\cdot$ altura / 2.
+$100 \cdot 100 / 2 = 5000$.
+
+**Respuesta:** $\boxed{5000}$
+</details>
+
+---
+
+### Ejercicio 8
+¿Qué fórmula usarías para el área si solo tienes los 3 lados?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+La de Herón, porque no requiere ángulos.
+
+**Respuesta:** **Fórmula de Herón**
+</details>
+
+---
+
+### Ejercicio 9
+Un poste se inclina 10° respecto a la vertical hacia el sol. Proyecta una sombra de 20m cuando el sol está a 60°. ¿Cuál es la longitud del poste?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Es un problema clásico de Ley de Senos.
+Ángulo del poste con el suelo: $90+10 = 100°$ (o $80$, depende de la orientación).
+Ángulo del sol: $60°$. Triple ángulo: $180-100-60 = 20°$.
+$L/\sin 60 = 20/\sin 20$.
+
+**Respuesta:** **Usar Ley de Senos**
+</details>
+
+---
+
+### Ejercicio 10
+Si caminas 10m, giras 90°, caminas 10m, giras 90°, caminas 10m. ¿A qué distancia estás del inicio?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Hiciste 3 lados de un cuadrado. Te falta 1 lado de 10m para cerrar.
+Distancia = 10m.
+
+**Respuesta:** $\boxed{10 \text{ m}}$
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Problema | Herramienta Clave |
+| :--- | :--- |
+| **Navegación** | Ley de Cosenos (casi siempre LAL). |
+| **Áreas (lados y ángulo)** | Fórmula del Seno ($0.5 a b \sin C$). |
+| **Áreas (solo lados)** | Fórmula de Herón ($\sqrt{s(s-a)\dots}$). |
+| **Alturas inaccesibles** | Ley de Senos (Dos observadores). |
+
+> **Conclusión:** La trigonometría no se queda en el papel. Es la base del GPS, la arquitectura y hasta de los videojuegos 3D. ¡Donde hay una distancia, hay un triángulo!

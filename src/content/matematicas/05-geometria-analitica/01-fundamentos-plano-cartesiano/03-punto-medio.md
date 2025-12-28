@@ -1,302 +1,236 @@
-# Punto Medio de un Segmento
+# **Punto Medio de un Segmento**
 
-Si tienes que encontrarte con un amigo que está a cierta distancia de ti, ¿cuál es el punto justo a la mitad del camino? En geometría analítica, este problema tiene una solución muy elegante: la **fórmula del punto medio**.
+Imagina que dos amigos viven en ciudades distintas y quieren encontrarse exactamente a la mitad del camino para almorzar. ¿Cómo calculas esas coordenadas? No necesitas fórmulas complejas; solo necesitas saber sacar un **promedio**.
 
 ---
 
 ## 🎯 ¿Qué vas a aprender?
 
-- Qué es el punto medio de un segmento
-- La fórmula para calcularlo
-- Cómo aplicarla en diferentes situaciones
+- Qué es geométricamente el punto medio.
+- La fórmula del punto medio (que es básicamente un promedio).
+- Cómo encontrar el punto medio dados dos extremos.
+- El problema inverso: Cómo hallar un extremo si te dan el punto medio.
 
 ---
 
-## 📖 Lo Esencial del Punto Medio
+## ⚖️ El Concepto de "Promedio"
 
-| Concepto | Fórmula |
-|----------|---------|
-| Punto medio | $M = \left(\dfrac{x_1 + x_2}{2}, \dfrac{y_1 + y_2}{2}\right)$ |
-| Coordenada $x$ del punto medio | $x_M = \dfrac{x_1 + x_2}{2}$ |
-| Coordenada $y$ del punto medio | $y_M = \dfrac{y_1 + y_2}{2}$ |
+Si sacaste 10 en un examen y 6 en otro, tu promedio es $\frac{10+6}{2} = 8$. El 8 está justo en medio del 6 y el 10.
+
+El **Punto Medio ($M$)** funciona exactamente igual, pero lo haces dos veces:
+1.  Sacas el promedio de las $x$ (coordenadas horizontales).
+2.  Sacas el promedio de las $y$ (coordenadas verticales).
 
 <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; width: 100%; box-sizing: border-box;">
+  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
+    <span style="font-size: 1.1rem;">📊</span>
+    <strong style="color: #1e293b; font-size: 0.95rem; margin-left: 0.3rem;">Punto Medio = Promedio</strong>
+  </div>
   <img src="/images/geometria/analitica/punto-medio.svg" alt="Punto medio de un segmento" style="width: 100%; height: auto;" />
 </div>
 
 ---
 
-## 📖 Concepto de Punto Medio
+## 🧬 La Fórmula
 
-> El **punto medio** de un segmento es el punto que lo divide en dos partes iguales.
+Dados dos puntos $A(x_1, y_1)$ y $B(x_2, y_2)$, el punto medio $M$ es:
 
-Si tenemos un segmento con extremos $P_1(x_1, y_1)$ y $P_2(x_2, y_2)$, el punto medio $M$ cumple que:
-- La distancia de $P_1$ a $M$ es igual a la distancia de $M$ a $P_2$
-- $M$ está exactamente a la mitad entre $P_1$ y $P_2$
+$$
+M = \left( \frac{x_1 + x_2}{2} , \frac{y_1 + y_2}{2} \right)
+$$
+
+> **Truco:** Suma las coordenadas y divide entre 2. ¡Así de fácil!
 
 ---
 
-## 📖 Deducción de la Fórmula
+## ⚙️ Ejemplos Resueltos
 
-Para encontrar el punto medio, simplemente calculamos el **promedio** de las coordenadas:
+### Ejemplo 1: Calcular el Punto Medio
+Encuentra el punto medio entre $A(2, 4)$ y $B(6, 10)$.
 
-**Para la coordenada x:**
-- El punto medio en x está a la mitad entre $x_1$ y $x_2$
-- Eso es el promedio: $x_M = \dfrac{x_1 + x_2}{2}$
+**Paso 1: Promedio de las X**
+$$ x_m = \frac{2 + 6}{2} = \frac{8}{2} = 4 $$
 
-**Para la coordenada y:**
-- El punto medio en y está a la mitad entre $y_1$ y $y_2$
-- Eso es el promedio: $y_M = \dfrac{y_1 + y_2}{2}$
+**Paso 2: Promedio de las Y**
+$$ y_m = \frac{4 + 10}{2} = \frac{14}{2} = 7 $$
 
-### Fórmula del Punto Medio
+**Resultado:** El punto medio es $\boxed{M(4, 7)}$.
 
-Dados dos puntos $P_1(x_1, y_1)$ y $P_2(x_2, y_2)$, el punto medio $M$ es:
+### Ejemplo 2: El Problema del Extremo Perdido (Inverso)
+El punto medio de un segmento es $M(2, 3)$. Uno de los extremos es $A(-1, 1)$. ¿Cuál es el otro extremo $B(x_2, y_2)$?
 
-$$
-M = \left(\frac{x_1 + x_2}{2}, \frac{y_1 + y_2}{2}\right)
-$$
+**Paso 1: Plantear la ecuación para X**
+$$ 2 = \frac{-1 + x_2}{2} $$
+Multiplicamos por 2:
+$$ 4 = -1 + x_2 $$
+$$ x_2 = 5 $$
 
-> 💡 **Truco para recordar:** El punto medio es simplemente el "promedio" de los puntos. ¡Sumas y divides entre 2!
+**Paso 2: Plantear la ecuación para Y**
+$$ 3 = \frac{1 + y_2}{2} $$
+Multiplicamos por 2:
+$$ 6 = 1 + y_2 $$
+$$ y_2 = 5 $$
 
----
-
-## 📖 Ejemplos Resueltos
-
-### ⚙️ Ejemplo 1: Punto medio entre A(2, 4) y B(6, 8)
-
-**Datos:**
-- $P_1 = A(2, 4)$ → $x_1 = 2$, $y_1 = 4$
-- $P_2 = B(6, 8)$ → $x_2 = 6$, $y_2 = 8$
-
-**Aplicamos la fórmula:**
-
-$$
-x_M = \frac{2 + 6}{2} = \frac{8}{2} = 4
-$$
-
-$$
-y_M = \frac{4 + 8}{2} = \frac{12}{2} = 6
-$$
-
-**Respuesta:** El punto medio es $M(4, 6)$.
-
-### ⚙️ Ejemplo 2: Punto medio entre P(-3, 5) y Q(7, -1)
-
-**Datos:**
-- $x_1 = -3$, $y_1 = 5$
-- $x_2 = 7$, $y_2 = -1$
-
-**Cálculo:**
-
-$$
-x_M = \frac{-3 + 7}{2} = \frac{4}{2} = 2
-$$
-
-$$
-y_M = \frac{5 + (-1)}{2} = \frac{4}{2} = 2
-$$
-
-**Respuesta:** El punto medio es $M(2, 2)$.
-
-### ⚙️ Ejemplo 3: Punto medio entre R(-4, -2) y S(-8, 6)
-
-**Datos:**
-- $x_1 = -4$, $y_1 = -2$
-- $x_2 = -8$, $y_2 = 6$
-
-**Cálculo:**
-
-$$
-x_M = \frac{-4 + (-8)}{2} = \frac{-12}{2} = -6
-$$
-
-$$
-y_M = \frac{-2 + 6}{2} = \frac{4}{2} = 2
-$$
-
-**Respuesta:** El punto medio es $M(-6, 2)$.
-
----
-
-## 📖 Problema Inverso: Encontrar un Extremo
-
-A veces conocemos un extremo y el punto medio, y necesitamos encontrar el **otro extremo**.
-
-### Estrategia
-
-Si $M$ es el punto medio de $P_1$ y $P_2$, entonces:
-
-$$
-x_M = \frac{x_1 + x_2}{2} \Rightarrow x_2 = 2x_M - x_1
-$$
-
-$$
-y_M = \frac{y_1 + y_2}{2} \Rightarrow y_2 = 2y_M - y_1
-$$
-
-### ⚙️ Ejemplo 4: Encontrar el otro extremo
-
-Si $A(3, 1)$ es un extremo de un segmento y $M(5, 4)$ es su punto medio, ¿cuál es el otro extremo $B$?
-
-**Despejamos $B(x_2, y_2)$:**
-
-$$
-x_2 = 2(5) - 3 = 10 - 3 = 7
-$$
-
-$$
-y_2 = 2(4) - 1 = 8 - 1 = 7
-$$
-
-**Respuesta:** El otro extremo es $B(7, 7)$.
-
-**Verificación:** 
-$$
-M = \left(\frac{3 + 7}{2}, \frac{1 + 7}{2}\right) = \left(\frac{10}{2}, \frac{8}{2}\right) = (5, 4) ✓
-$$
-
----
-
-## 📖 Aplicación: Centro de un Segmento Diagonal
-
-El punto medio también nos permite encontrar el **centro de figuras geométricas**.
-
-### ⚙️ Ejemplo 5: Centro de un rectángulo
-
-Un rectángulo tiene vértices opuestos en $A(-2, -1)$ y $C(6, 5)$. Encuentra su centro.
-
-El centro de un rectángulo está en el punto medio de su diagonal.
-
-$$
-x_c = \frac{-2 + 6}{2} = \frac{4}{2} = 2
-$$
-
-$$
-y_c = \frac{-1 + 5}{2} = \frac{4}{2} = 2
-$$
-
-**Respuesta:** El centro del rectángulo es $(2, 2)$.
-
----
-
-## 🔑 Resumen
-
-| Problema | Fórmula |
-|----------|---------|
-| Punto medio de $P_1$ y $P_2$ | $M = \left(\dfrac{x_1 + x_2}{2}, \dfrac{y_1 + y_2}{2}\right)$ |
-| Encontrar extremo $P_2$ dado $P_1$ y $M$ | $x_2 = 2x_M - x_1$, $y_2 = 2y_M - y_1$ |
+**Resultado:** El otro extremo es $\boxed{B(5, 5)}$.
 
 ---
 
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1
-Encuentra el punto medio del segmento con extremos $A(4, 7)$ y $B(-2, 3)$.
+Encuentra el punto medio entre $A(0, 0)$ y $B(10, 10)$.
 
 <details>
 <summary>Ver solución</summary>
 
-$$
-x_M = \frac{4 + (-2)}{2} = \frac{2}{2} = 1
-$$
+**Razonamiento:**
+Promedios: $10/2 = 5$ y $10/2 = 5$.
 
-$$
-y_M = \frac{7 + 3}{2} = \frac{10}{2} = 5
-$$
-
-**Respuesta:** $M(1, 5)$
-
+**Respuesta:** $\boxed{(5, 5)}$
 </details>
+
+---
 
 ### Ejercicio 2
-Encuentra el punto medio entre $P(0, 0)$ y $Q(8, -6)$.
+Calcula el punto medio de $C(4, -2)$ y $D(-4, 2)$.
 
 <details>
 <summary>Ver solución</summary>
 
-$$
-x_M = \frac{0 + 8}{2} = 4
-$$
+**Razonamiento:**
+$x: \frac{4-4}{2} = 0$.
+$y: \frac{-2+2}{2} = 0$.
 
-$$
-y_M = \frac{0 + (-6)}{2} = -3
-$$
-
-**Respuesta:** $M(4, -3)$
-
+**Respuesta:** $\boxed{(0, 0)}$
 </details>
+
+---
 
 ### Ejercicio 3
-Si $A(-1, 5)$ es un extremo de un segmento y $M(2, 3)$ es su punto medio, encuentra el otro extremo $B$.
+Encuentra el punto medio entre $P(3, 5)$ y $Q(7, 9)$.
 
 <details>
 <summary>Ver solución</summary>
 
-Usamos las fórmulas para encontrar el extremo:
+**Razonamiento:**
+$x: (3+7)/2 = 5$.
+$y: (5+9)/2 = 7$.
 
-$$
-x_2 = 2(2) - (-1) = 4 + 1 = 5
-$$
-
-$$
-y_2 = 2(3) - 5 = 6 - 5 = 1
-$$
-
-**Respuesta:** $B(5, 1)$
-
-**Verificación:**
-$$
-M = \left(\frac{-1 + 5}{2}, \frac{5 + 1}{2}\right) = \left(\frac{4}{2}, \frac{6}{2}\right) = (2, 3) ✓
-$$
-
+**Respuesta:** $\boxed{(5, 7)}$
 </details>
+
+---
 
 ### Ejercicio 4
-Un triángulo tiene vértices en $A(0, 0)$, $B(6, 0)$ y $C(3, 6)$. Encuentra el punto medio de cada lado.
+Si el punto medio es $(3, 3)$ y un extremo es $(0, 0)$, halla el otro extremo.
 
 <details>
 <summary>Ver solución</summary>
 
-**Punto medio de AB:**
-$$
-M_{AB} = \left(\frac{0 + 6}{2}, \frac{0 + 0}{2}\right) = (3, 0)
-$$
+**Razonamiento:**
+Doble del medio menos el extremo conocido.
+$x: 2(3) - 0 = 6$.
+$y: 2(3) - 0 = 6$.
 
-**Punto medio de BC:**
-$$
-M_{BC} = \left(\frac{6 + 3}{2}, \frac{0 + 6}{2}\right) = (4.5, 3)
-$$
-
-**Punto medio de CA:**
-$$
-M_{CA} = \left(\frac{3 + 0}{2}, \frac{6 + 0}{2}\right) = (1.5, 3)
-$$
-
-**Respuestas:** $M_{AB}(3, 0)$, $M_{BC}(4.5, 3)$, $M_{CA}(1.5, 3)$
-
+**Respuesta:** $\boxed{(6, 6)}$
 </details>
+
+---
 
 ### Ejercicio 5
-El punto $M(4, -2)$ es el punto medio del segmento $\overline{PQ}$. Si $P$ está en el origen, ¿dónde está $Q$?
+Calcula el punto medio de una vara que va de $(-5, 0)$ a $(5, 0)$.
 
 <details>
 <summary>Ver solución</summary>
 
-Dado $P(0, 0)$ y $M(4, -2)$:
+**Razonamiento:**
+$x: (-5+5)/2 = 0$.
+$y: (0+0)/2 = 0$.
+Es el origen.
 
-$$
-x_Q = 2(4) - 0 = 8
-$$
-
-$$
-y_Q = 2(-2) - 0 = -4
-$$
-
-**Respuesta:** $Q(8, -4)$
-
-**Verificación:**
-$$
-M = \left(\frac{0 + 8}{2}, \frac{0 + (-4)}{2}\right) = (4, -2) ✓
-$$
-
+**Respuesta:** $\boxed{(0, 0)}$
 </details>
+
+---
+
+### Ejercicio 6
+Encuentra el centro de un círculo cuyo diámetro va de $A(1, 2)$ a $B(5, 6)$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+El centro es el punto medio del diámetro.
+$x: (1+5)/2 = 3$.
+$y: (2+6)/2 = 4$.
+
+**Respuesta:** $\boxed{(3, 4)}$
+</details>
+
+---
+
+### Ejercicio 7
+Si tus notas son 2 y 10, ¿cuál es tu nota promedio (punto medio)?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$(2+10)/2 = 6$.
+
+**Respuesta:** $\boxed{6}$
+</details>
+
+---
+
+### Ejercicio 8
+El extremo $A$ está en $(4, 8)$. El punto medio es $(4, 8)$. ¿Dónde está $B$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Si el medio es igual al extremo, el segmento tiene longitud 0. $A=B=M$.
+
+**Respuesta:** $\boxed{(4, 8)}$
+</details>
+
+---
+
+### Ejercicio 9
+Halla el punto medio de $(1.5, 2.5)$ y $(3.5, 4.5)$. (Con decimales).
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+$x: (1.5+3.5)/2 = 5/2 = 2.5$.
+$y: (2.5+4.5)/2 = 7/2 = 3.5$.
+
+**Respuesta:** $\boxed{(2.5, 3.5)}$
+</details>
+
+---
+
+### Ejercicio 10
+Demuestra que el punto medio divide al segmento en razón 1:1.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+La distancia de un extremo al centro es igual a la distancia del centro al otro extremo. Por eso la razón es 1.
+
+**Respuesta:** **Es por definición**
+</details>
+
+---
+
+## 🔑 Resumen
+
+| ¿Qué buscas? | Fórmula Mental |
+| :--- | :--- |
+| **Punto Medio** | Promedio de $x$, Promedio de $y$. |
+| **Extremo Faltante** | Doble del medio M, menos el extremo conocido. |
+
+> **Conclusión:** El punto medio es el concepto más democrático de la geometría: trata a ambos extremos por igual. Es fundamental para encontrar centros de círculos, rectángulos y para equilibrar balanzas.

@@ -1,311 +1,304 @@
-# Frecuencia Acumulada
+# **Frecuencia Acumulada**
 
-Hasta ahora hemos contado cuántas veces aparece cada valor. Pero a veces necesitamos responder preguntas como: *"¿Cuántos estudiantes sacaron 7 o menos?"* o *"¿Cuántos ganan menos de 2 millones de pesos?"*
+Imagina que estás ahorrando monedas en una alcancía.
+- Día 1: pones 2 monedas. (Total acumulado: 2)
+- Día 2: pones 3 monedas. (Total acumulado: 5)
+- Día 3: pones 4 monedas. (Total acumulado: 9)
 
-Para esto necesitamos la **frecuencia acumulada**: ir sumando las frecuencias a medida que avanzamos.
+La cantidad de monedas que pones cada día es la **frecuencia absoluta**. El total que tienes guardado hasta ese momento es la **frecuencia acumulada**. En estadística, esto nos sirve para responder preguntas como "¿Cuántos ganan *menos de* cierto valor?" o "¿Qué porcentaje sacó *máximo* cierta nota?".
 
 ---
 
 ## 🎯 ¿Qué vas a aprender?
 
-- Qué es la frecuencia acumulada absoluta y relativa
-- Cómo calcularlas e interpretarlas
-- Qué es una ojiva (curva de frecuencia acumulada)
-- Cómo usar la acumulada para responder preguntas de "menor o igual que"
+- Calcular la frecuencia acumulada absoluta ($F_i$) sumando paso a paso.
+- Calcular la frecuencia acumulada relativa ($H_i$) y porcentual.
+- Interpretar tablas acumuladas para responder preguntas de tipo "menor que" o "hasta".
+- Entender la lógica de la acumulación de datos.
 
 ---
 
-## 📊 Tipos de Frecuencia Acumulada
+## Frecuencia Acumulada Absoluta ($F_i$ o $N_i$)
 
-| Tipo | Símbolo | Qué indica |
-|------|---------|------------|
-| Acumulada Absoluta | $F$ | Cuántos datos hay **hasta** cierto valor |
-| Acumulada Relativa | $F_r$ | Qué proporción hay **hasta** cierto valor |
-| Acumulada Porcentual | $F\%$ | Qué porcentaje hay **hasta** cierto valor |
+Es la suma de las frecuencias absolutas de todos los valores iguales o inferiores al considerado. Se calcula sumando progresivamente:
+$$ F_1 = f_1 $$
+$$ F_2 = f_1 + f_2 $$
+$$ F_3 = f_1 + f_2 + f_3 $$
+... y así sucesivamente.
 
----
+### ⚙️ Ejemplos Resueltos: Calculando $F_i$
 
-## 📖 Frecuencia Acumulada Absoluta
+#### Ejemplo 1: Goles en 5 partidos
+**Datos ($f_i$):** 2, 1, 0, 3, 1
+**Cálculo Acumulado:**
+- Partido 1: 2
+- Partido 2: 2 + 1 = 3
+- Partido 3: 3 + 0 = 3
+- Partido 4: 3 + 3 = 6
+- Partido 5: 6 + 1 = 7
+**Tabla:**
+| Goles | $f_i$ | $F_i$ |
+|-------|-------|-------|
+| P1 | 2 | 2 |
+| P2 | 1 | 3 |
+| P3 | 0 | 3 |
+| P4 | 3 | 6 |
+| P5 | 1 | 7 |
 
-> La **frecuencia acumulada absoluta** ($F$) de un valor es la **suma** de todas las frecuencias de ese valor y los **anteriores**.
+#### Ejemplo 2: Hijos por familia (Muestra de 4 familias)
+**Datos ($f_i$):** 1, 2, 4, 1
+**Cálculo:**
+- 1 + 2 = 3
+- 3 + 4 = 7
+- 7 + 1 = 8
+**Tabla:**
+| Fam | $f_i$ | $F_i$ |
+|-----|-------|-------|
+| A | 1 | 1 |
+| B | 2 | 3 |
+| C | 4 | 7 |
+| D | 1 | 8 |
 
-### 💡 Fórmula:
+#### Ejemplo 3: Ventas diarias
+**Datos ($f_i$):** Lun: 10, Mar: 15, Mie: 20
+**Cálculo:**
+- Lun: 10
+- Mar: 25
+- Mie: 45
+**Resultado Final:** 45 ventas acumuladas al miércoles.
 
-$$
-F_i = f_1 + f_2 + ... + f_i = \sum_{j=1}^{i} f_j
-$$
+#### Ejemplo 4: Notas (1 a 5) de 5 alumnos
+**Datos ($f_i$):** 1, 1, 1, 1, 1 (Todos diferentes)
+**Cálculo:**
+- Alumno 1: 1
+- Alumno 2: 2
+- Alumno 3: 3
+- Alumno 4: 4
+- Alumno 5: 5
 
-O más simple: vas sumando de arriba hacia abajo.
-
-### ⚙️ Ejemplo: Notas de examen
-
-| Nota | f | Frecuencia Acumulada (F) |
-|------|---|--------------------------|
-| 5 | 2 | 2 |
-| 6 | 5 | 2 + 5 = 7 |
-| 7 | 8 | 7 + 8 = 15 |
-| 8 | 6 | 15 + 6 = 21 |
-| 9 | 4 | 21 + 4 = 25 |
-| 10 | 3 | 25 + 3 = **28** |
-| **Total** | **28** | |
-
-### 💡 ¿Cómo interpretar?
-
-- $F = 7$ para nota 6 significa: **7 estudiantes** sacaron 6 o menos
-- $F = 15$ para nota 7 significa: **15 estudiantes** sacaron 7 o menos
-- $F = 28$ para nota 10 (última) siempre es igual a $n$ (el total)
-
-### 💡 Propiedad:
-La frecuencia acumulada de la **última categoría** siempre es igual a $n$.
-
----
-
-## 📖 Frecuencia Acumulada Relativa
-
-> La **frecuencia acumulada relativa** ($F_r$) es la proporción de datos que hay **hasta** cierto valor.
-
-### 💡 Fórmula:
-
-$$
-F_r = \frac{F}{n}
-$$
-
-Donde:
-- $F$ = frecuencia acumulada absoluta
-- $n$ = total de datos
-
-### ⚙️ Ejemplo continuado
-
-Total de datos: $n = 28$
-
-| Nota | f | F | $F_r = \frac{F}{28}$ | $F\%$ |
-|------|---|---|---------------------|-------|
-| 5 | 2 | 2 | 0.071 | 7.1% |
-| 6 | 5 | 7 | 0.250 | 25.0% |
-| 7 | 8 | 15 | 0.536 | 53.6% |
-| 8 | 6 | 21 | 0.750 | 75.0% |
-| 9 | 4 | 25 | 0.893 | 89.3% |
-| 10 | 3 | 28 | 1.000 | 100% |
-
-### 💡 ¿Cómo interpretar?
-
-- $F_r = 0.25$ (25%) para nota 6: **25% de los estudiantes** sacaron 6 o menos
-- $F_r = 0.536$ (53.6%) para nota 7: **Más de la mitad** sacó 7 o menos
-- $F_r = 0.75$ (75%) para nota 8: **75%** sacó 8 o menos (o sea, 25% sacó más de 8)
+#### Ejemplo 5: Clientes por hora
+**Datos ($f_i$):** 8am: 5, 9am: 10, 10am: 2
+**Cálculo:**
+- Hasta 8am: 5
+- Hasta 9am: 15
+- Hasta 10am: 17
 
 ---
 
-## ⚙️ Ejemplo Completo: Datos Agrupados
+## Frecuencia Acumulada Relativa ($H_i$)
 
-Usemos los datos de peso de la lección anterior:
+Es la proporción acumulada. Se puede calcular sumando las frecuencias relativas ($h_i$) o dividiendo la acumulada absoluta entre el total ($F_i / n$).
+$$ H_i = \frac{F_i}{n} $$
 
-| Clase | Intervalo | f | F | $F_r$ | $F\%$ |
-|-------|-----------|---|---|-------|-------|
-| 1 | 52 - 58 | 7 | 7 | 0.175 | 17.5% |
-| 2 | 59 - 65 | 8 | 15 | 0.375 | 37.5% |
-| 3 | 66 - 72 | 9 | 24 | 0.600 | 60.0% |
-| 4 | 73 - 79 | 8 | 32 | 0.800 | 80.0% |
-| 5 | 80 - 86 | 4 | 36 | 0.900 | 90.0% |
-| 6 | 87 - 93 | 4 | 40 | 1.000 | 100% |
-| **Total** | | **40** | | | |
+### ⚙️ Ejemplos Resueltos: Calculando $H_i$
 
-### 💡 Preguntas que podemos responder:
+#### Ejemplo 1: Datos cualitativos ordinales (Satisfacción)
+**Datos:** Malo (2), Regular (5), Bueno (3). Total $n=10$.
+**Acumulada Absoluta ($F_i$):** 2, 7, 10.
+**Acumulada Relativa ($H_i$):**
+- Malo: $2/10 = 0.2$
+- Regular: $7/10 = 0.7$
+- Bueno: $10/10 = 1.0$
 
-**"¿Cuántos estudiantes pesan 72 kg o menos?"**
-- Miramos la clase que contiene 72: clase 3 (66-72)
-- $F = 24$
-- **Respuesta:** 24 estudiantes
+#### Ejemplo 2: Encuesta rápida (Sí/No)
+**Datos:** No (4), Sí (6). Total $n=10$. (Orden lógico: No, luego Sí para acumular total).
+**Acumulada ($F_i$):** 4, 10.
+**Relativa:**
+- No: $0.4$
+- Sí: $1.0$
 
-**"¿Qué porcentaje pesa menos de 80 kg?"**
-- Clase 4 termina en 79, así que buscamos $F\%$ de clase 4
-- $F\% = 80\%$
-- **Respuesta:** 80% de los estudiantes
+#### Ejemplo 3: Monedas (Lanzamiento 4 veces)
+**Datos:** Cara (1), Sello (3). Total $n=4$.
+**Acumulada ($F_i$):** 1, 4.
+**Relativa:**
+- $1/4 = 0.25$
+- $4/4 = 1.00$
 
-**"¿Cuántos pesan MÁS de 79 kg?"**
-- Total - los que pesan 79 o menos = $40 - 32 = 8$
-- O bien: $100\% - 80\% = 20\%$ de 40 = 8
-- **Respuesta:** 8 estudiantes
+#### Ejemplo 4: Grados escolares
+**Datos:** 6° (5), 7° (15). Total $n=20$.
+**Acumulada ($F_i$):** 5, 20.
+**Relativa:**
+- 6°: $5/20 = 0.25$
+- 7°: $20/20 = 1.00$
 
----
-
-## 📖 Frecuencia Acumulada "Hacia Arriba" (Mayor o igual)
-
-A veces queremos saber cuántos datos hay **por encima** de cierto valor.
-
-> La **frecuencia acumulada descendente** indica cuántos datos son **mayores o iguales** a cierto valor.
-
-### 💡 Cálculo:
-$$F_{\geq} = n - F_{anterior}$$
-
-### ⚙️ Ejemplo
-
-| Nota | f | F (≤) | F (≥) |
-|------|---|-------|-------|
-| 5 | 2 | 2 | 28 |
-| 6 | 5 | 7 | 26 |
-| 7 | 8 | 15 | 21 |
-| 8 | 6 | 21 | 13 |
-| 9 | 4 | 25 | 7 |
-| 10 | 3 | 28 | 3 |
-
-**Interpretación:**
-- $F_{\geq} = 21$ para nota 7: 21 estudiantes sacaron 7 o más
-- $F_{\geq} = 7$ para nota 9: 7 estudiantes sacaron 9 o más
+#### Ejemplo 5: Tallas S, M, L
+**Datos:** S (10), M (30), L (10). Total $n=50$.
+**Acumulada ($F_i$):** 10, 40, 50.
+**Relativa:**
+- S: $10/50 = 0.2$
+- M: $40/50 = 0.8$ (¡Ojo! El 80% es talla M o menor)
+- L: $50/50 = 1.0$
 
 ---
 
-## 📖 La Ojiva (Polígono de Frecuencias Acumuladas)
+## Interpretación: ¿Qué significan los números?
 
-> La **ojiva** es la representación gráfica de las frecuencias acumuladas. Muestra cómo se van acumulando los datos.
+La clave de la frecuencia acumulada es leerla como "hasta aquí".
 
-### 💡 Características de la ojiva:
+### ⚙️ Ejemplos Resueltos de Interpretación
 
-- El eje X tiene los valores (o límites superiores de clase)
-- El eje Y tiene la frecuencia acumulada (o $F\%$)
-- Es una curva que **siempre sube** (o permanece igual, nunca baja)
-- Termina en el total ($n$ o 100%)
+#### Ejemplo 1: Notas de examen (0 a 10)
+Si para la nota 6, la frecuencia acumulada $F_i$ es 15:
+**Interpretación:** 15 estudiantes sacaron una nota de 6 o menos.
 
-### 💡 Usos de la ojiva:
+#### Ejemplo 2: Salarios
+Si para el rango "1-2 Millones", la frecuencia acumulada porcentual es 40%:
+**Interpretación:** El 40% de los empleados gana 2 millones o menos.
 
-- **Encontrar la mediana visualmente:** El valor donde $F\% = 50\%$
-- **Encontrar percentiles:** El valor donde $F\% = P\%$
-- **Comparar distribuciones:** Dos ojivas en el mismo gráfico
+#### Ejemplo 3: Edades
+Si para la edad 18 años, $F_i = 100$ y el total es 200:
+**Interpretación:** Hay 100 personas que tienen 18 años o menos (exactamente la mitad de la población).
 
----
+#### Ejemplo 4: Tiempo de espera
+Si la $H_i$ acumulada para "30 minutos" es 0.95:
+**Interpretación:** El 95% de los clientes espera 30 minutos o menos. (¡Buen servicio!).
 
-## 💡 Verificaciones Importantes
-
-| Verificación | Debe cumplirse |
-|--------------|----------------|
-| Último valor de $F$ | Igual a $n$ |
-| Último valor de $F_r$ | Igual a 1 |
-| Último valor de $F\%$ | Igual a 100% |
-| $F$ siempre... | Aumenta o se mantiene, nunca disminuye |
-
----
-
-## 🔑 Resumen
-
-| Concepto | Fórmula | Qué responde |
-|----------|---------|--------------|
-| **F (acumulada absoluta)** | Suma de todas las $f$ anteriores | ¿Cuántos hay hasta X? |
-| **$F_r$ (acumulada relativa)** | $\frac{F}{n}$ | ¿Qué proporción hay hasta X? |
-| **$F\%$ (acumulada %)** | $F_r \times 100$ | ¿Qué % hay hasta X? |
-| **Ojiva** | Gráfico de $F$ vs valores | Visualizar la acumulación |
+#### Ejemplo 5: Calidad de producto
+Si la acumulada hasta "Defectos leves" es del 100%:
+**Interpretación:** Todos los productos tienen como máximo defectos leves (no hay defectos graves).
 
 ---
 
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1
-Una encuesta sobre horas de estudio diario dio estos resultados:
-
-| Horas | f |
-|-------|---|
-| 0-1 | 5 |
-| 2-3 | 12 |
-| 4-5 | 18 |
-| 6-7 | 10 |
-| 8-9 | 5 |
-| **Total** | **50** |
-
-a) Calcula la frecuencia acumulada (F)
-b) Calcula la frecuencia acumulada relativa ($F_r$) y porcentual ($F\%$)
+**Datos ($f_i$):** 4, 6, 10.
+Calcula la serie de frecuencias acumuladas absolutas $F_i$.
 
 <details>
 <summary>Ver solución</summary>
 
-| Horas | f | F | $F_r$ | $F\%$ |
-|-------|---|---|-------|-------|
-| 0-1 | 5 | 5 | 0.10 | 10% |
-| 2-3 | 12 | 17 | 0.34 | 34% |
-| 4-5 | 18 | 35 | 0.70 | 70% |
-| 6-7 | 10 | 45 | 0.90 | 90% |
-| 8-9 | 5 | 50 | 1.00 | 100% |
+**Cálculo:**
+1. 4
+2. 4 + 6 = 10
+3. 10 + 10 = 20
+**Resultado:** $\boxed{4, 10, 20}$
 
 </details>
 
 ### Ejercicio 2
-Usando la tabla del Ejercicio 1, responde:
-
-a) ¿Cuántos estudiantes estudian 5 horas diarias o menos?
-b) ¿Qué porcentaje estudia más de 5 horas?
-c) ¿Cuántos estudian entre 4 y 7 horas (inclusive)?
+Si $F_3 = 50$ y $f_4 = 10$, ¿cuánto es $F_4$?
 
 <details>
 <summary>Ver solución</summary>
 
-a) **5 horas o menos:**
-La clase 4-5 tiene límite superior 5, entonces $F = 35$
-**Respuesta:** 35 estudiantes
-
-b) **Más de 5 horas:**
-$100\% - 70\% = 30\%$
-**Respuesta:** 30% (o 15 estudiantes)
-
-c) **Entre 4 y 7 horas:**
-$F_{6-7} - F_{2-3} = 45 - 17 = 28$
-**Respuesta:** 28 estudiantes
+**Razonamiento:** La acumulada siguiente es la anterior más la frecuencia actual.
+$$ F_4 = F_3 + f_4 = 50 + 10 = 60 $$
+**Resultado:** $\boxed{60}$
 
 </details>
 
 ### Ejercicio 3
-Las notas de 30 estudiantes son:
-
-| Nota | f |
-|------|---|
-| 3 | 2 |
-| 4 | 4 |
-| 5 | 6 |
-| 6 | 8 |
-| 7 | 5 |
-| 8 | 3 |
-| 9 | 2 |
-
-¿Cuántos estudiantes aprobaron si la nota mínima para aprobar es 6?
+En una tabla con $n=100$, la frecuencia acumulada relativa del tercer intervalo es $0.45$. ¿Cuántos datos hay acumulados hasta ese intervalo?
 
 <details>
 <summary>Ver solución</summary>
 
-**Método 1:** Sumar las frecuencias de 6 o más:
-$8 + 5 + 3 + 2 = 18$ estudiantes aprobaron
-
-**Método 2:** Usar frecuencia acumulada
-Primero calculamos $F$:
-
-| Nota | f | F |
-|------|---|---|
-| 3 | 2 | 2 |
-| 4 | 4 | 6 |
-| 5 | 6 | 12 |
-| 6 | 8 | 20 |
-| 7 | 5 | 25 |
-| 8 | 3 | 28 |
-| 9 | 2 | 30 |
-
-Los que NO aprobaron (nota < 6) = 12
-Los que aprobaron = $30 - 12 = 18$
-
-**Respuesta:** 18 estudiantes aprobaron
+**Datos:** $H_i = 0.45, n = 100$.
+**Cálculo:**
+$$ F_i = H_i \times n = 0.45 \times 100 = 45 $$
+**Resultado:** $\boxed{45}$
 
 </details>
 
 ### Ejercicio 4
-Explica con tus palabras por qué la frecuencia acumulada **nunca puede disminuir** a medida que avanzamos en la tabla.
+Completa la tabla:
+| Dato | $f_i$ | $F_i$ |
+|------|-------|-------|
+| A | 5 | ? |
+| B | ? | 12 |
+| C | 8 | ? |
 
 <details>
 <summary>Ver solución</summary>
 
-La frecuencia acumulada nunca puede disminuir porque:
-
-1. **Es una suma:** Cada valor de $F$ es la suma de todas las frecuencias anteriores más la actual.
-
-2. **Las frecuencias son positivas o cero:** No puede haber frecuencias negativas (no puedes tener -3 personas con cierta característica).
-
-3. **Sumar cero o más:** En cada paso sumamos $f_i \geq 0$, así que el total solo puede **aumentar o mantenerse igual**.
-
-4. **Lógicamente:** Si 10 personas tienen nota 5 o menos, no puede haber menos de 10 con nota 6 o menos (porque los 10 anteriores siguen contando, más los nuevos).
-
-**Analogía:** Es como llenar un vaso con agua. Puedes seguir agregando agua (aumentar) o no agregar nada (quedarse igual), pero el nivel nunca baja por sí solo.
+**Paso 1:** $F_1 = f_1 = 5$.
+**Paso 2:** $F_2 = F_1 + f_2 \Rightarrow 12 = 5 + f_2 \Rightarrow f_2 = 7$.
+**Paso 3:** $F_3 = 12 + 8 = 20$.
+**Resultado:** $\boxed{5, 7, 20}$
 
 </details>
+
+### Ejercicio 5
+Calcula la acumulada relativa si $F_i = 25$ y $n=50$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Cálculo:**
+$$ H_i = \frac{25}{50} = 0.5 $$
+**Resultado:** $\boxed{0.5}$
+
+</details>
+
+### Ejercicio 6
+**Interpretación:** En una encuesta de satisfacción (1 a 5), la frecuencia acumulada porcentual para el valor 3 es 80%. ¿Qué significa esto?
+
+<details>
+<summary>Ver solución</summary>
+
+**Significado:** Que el 80% de los encuestados dio una calificación de 3 o menos (es decir, baja satisfacción). Solo el 20% dio notas de 4 o 5.
+**Resultado:** $\boxed{\text{El 80\% calificó con 3 o menos}}$
+
+</details>
+
+### Ejercicio 7
+Si $H_{final}$ te da 0.95 en tus cálculos, ¿qué pasó?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** La frecuencia acumulada relativa final **siempre** debe ser 1 (o 0.999... por decimales). Si da 0.95, faltó sumar datos.
+**Resultado:** $\boxed{\text{Error de cálculo o datos faltantes}}$
+
+</details>
+
+### Ejercicio 8
+Dada la serie acumulada $F_i$: 2, 5, 9, 10. Reconstruye las frecuencias absolutas $f_i$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Cálculos:**
+- $f_1 = 2$
+- $f_2 = 5 - 2 = 3$
+- $f_3 = 9 - 5 = 4$
+- $f_4 = 10 - 9 = 1$
+**Resultado:** $\boxed{2, 3, 4, 1}$
+
+</details>
+
+### Ejercicio 9
+Calcula qué porcentaje de alumnos sacó menos de 4, si $F_{Nota<4} = 30$ y $n=40$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Cálculo:**
+$$ \% = \frac{30}{40} \times 100 = 0.75 \times 100 = 75\% $$
+**Resultado:** $\boxed{75\%}$
+
+</details>
+
+### Ejercicio 10
+Si la ojiva (gráfica de acumuladas) llega hasta una altura de 150 en el eje Y, ¿cuánto es $n$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** La ojiva termina en el total acumulado.
+**Resultado:** $\boxed{150}$
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Concepto | Símbolo | Fórmula | Significado |
+|----------|---------|---------|-------------|
+| **Frec. Acumulada Absoluta** | $F_i$ (o $N_i$) | $\sum f_i$ | Total de datos **hasta** ese punto. |
+| **Frec. Acumulada Relativa** | $H_i$ (o $F_r$) | $F_i / n$ | Proporción de datos **hasta** ese punto. |
+| **Sumatoria** | $\sum$ | - | La acumulada final siempre debe ser igual a $n$ (total). |
+
+> **Conclusión:** La frecuencia acumulada es la herramienta para entender la posición relativa de los datos, permitiéndonos ver "cuántos hay debajo" de cierto límite.

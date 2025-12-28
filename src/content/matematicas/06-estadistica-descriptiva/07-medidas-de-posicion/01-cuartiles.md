@@ -1,317 +1,218 @@
-# Cuartiles
+# **Cuartiles**
 
-Ya conoces la mediana: el valor que divide los datos en dos mitades. Los **cuartiles** van más allá: dividen los datos en **cuatro partes iguales**, dándonos una imagen más completa de la distribución.
+Si cortas una pizza en cuatro partes iguales, tendrás cuatro pedazos del 25% cada uno. En estadística, **los cuartiles** son los tres cortes que dividen tus datos en cuatro grupos iguales. Son nuestra primera herramienta para entender no solo el centro, sino la **posición** de los datos.
 
 ---
 
 ## 🎯 ¿Qué vas a aprender?
 
-- Qué son los cuartiles Q1, Q2 y Q3
-- Cómo calcularlos paso a paso
-- Cómo interpretarlos
-- El rango intercuartílico
+- Calcular los tres cuartiles ($Q_1, Q_2, Q_3$) en datos simples.
+- Entender que $Q_2$ es lo mismo que la **Mediana**.
+- Interpretar qué significa estar en el "cuartil superior" o "inferior".
+- Usar los cuartiles en tablas de frecuencia.
 
 ---
 
-## 📊 Los Tres Cuartiles
+## El Concepto de los 4 Grupos
 
-| Cuartil | Símbolo | División | Interpretación |
-|---------|---------|----------|----------------|
-| Primer cuartil | $Q_1$ | 25% abajo, 75% arriba | Valor que supera al 25% |
-| Segundo cuartil | $Q_2$ | 50% abajo, 50% arriba | **Es la mediana** |
-| Tercer cuartil | $Q_3$ | 75% abajo, 25% arriba | Valor que supera al 75% |
-
----
-
-## 📖 ¿Qué son los Cuartiles?
-
-> Los **cuartiles** son valores que dividen un conjunto de datos ordenados en **cuatro partes iguales**, cada una con el 25% de los datos.
-
-### 💡 Visualización:
-
-```
-Datos ordenados:
-[----25%----][----25%----][----25%----][----25%----]
-             ↑            ↑            ↑
-            Q1           Q2           Q3
-          (P25)       (mediana)      (P75)
-```
+Para obtener 4 pedazos, necesitas hacer **3 cortes**.
+1.  **$Q_1$ (Cuartil 1):** Deja el 25% de los datos por debajo.
+2.  **$Q_2$ (Cuartil 2):** Deja el 50% de los datos por debajo. (¡Es la Mediana!).
+3.  **$Q_3$ (Cuartil 3):** Deja el 75% de los datos por debajo.
 
 ---
 
-## 📖 Cálculo de Cuartiles: Método de Posición
+## Cálculo con Datos Simples
 
-### Paso 1: Ordenar los datos
+Primero, **ordena** los datos. Luego busca la posición:
+$$ Posición = \frac{k(n+1)}{4} $$
+Donde $k$ es el número de cuartil (1, 2 o 3).
 
-Siempre de menor a mayor.
+### ⚙️ Ejemplos Resueltos
 
-### Paso 2: Calcular las posiciones
+#### Ejemplo 1: Datos Impares (El caso fácil)
+**Datos:** 2, 4, 6, 8, 10, 12, 14. ($n=7$).
+1.  **$Q_1$:** Pos = $1(8)/4 = 2$. Dato: **4**.
+2.  **$Q_2$:** Pos = $2(8)/4 = 4$. Dato: **8**.
+3.  **$Q_3$:** Pos = $3(8)/4 = 6$. Dato: **12**.
+**Resultados:** $\boxed{4, 8, 12}$
 
-$$
-\text{Posición de } Q_k = \frac{k(n+1)}{4}
-$$
+#### Ejemplo 2: Datos Pares (Promedio)
+**Datos:** 10, 20, 30, 40. ($n=4$).
+1.  **$Q_1$:** Pos = $1(5)/4 = 1.25$. Promedio entre dato 1 y 2. $(10+20)/2 = 15$.
+2.  **$Q_2$:** Pos = $2(5)/4 = 2.5$. Promedio entre 2 y 3. $(20+30)/2 = 25$.
+3.  **$Q_3$:** Pos = $3(5)/4 = 3.75$. Promedio entre 3 y 4. $(30+40)/2 = 35$.
+**Resultados:** $\boxed{15, 25, 35}$
 
-Donde:
-- $k = 1, 2, 3$ (para Q1, Q2, Q3)
-- $n$ = número de datos
+#### Ejemplo 3: Interpolación estricta
+Si quieres ser muy preciso con la posición 1.25 (del ejemplo anterior):
+$10 + 0.25(20-10) = 10 + 2.5 = 12.5$.
+(Generalmente el promedio simple basta en cursos introductorios, pero la interpolación es más exacta).
 
-### ⚙️ Ejemplo: 11 datos
+#### Ejemplo 4: Interpretación de Riqueza
+Si estás en el **$Q_3$** de ingresos, significa que ganas más que el 75% de la gente. Solo el 25% ("el top") gana más que tú.
 
-Datos ordenados: 12, 15, 18, 20, 22, 25, 28, 30, 35, 40, 45
-
-$n = 11$
-
-**Posición de Q1:**
-$$
-\text{Pos}_{Q_1} = \frac{1 \times 12}{4} = 3
-$$
-Q1 = dato en posición 3 = **18**
-
-**Posición de Q2 (mediana):**
-$$
-\text{Pos}_{Q_2} = \frac{2 \times 12}{4} = 6
-$$
-Q2 = dato en posición 6 = **25**
-
-**Posición de Q3:**
-$$
-\text{Pos}_{Q_3} = \frac{3 \times 12}{4} = 9
-$$
-Q3 = dato en posición 9 = **35**
+#### Ejemplo 5: Resistencia a Outliers
+**Datos:** 1, 2, 3, 4, 1000.
+$Q_1$ (aprox dato 1-2) = 1.5.
+$Q_3$ (aprox dato 4-5) = Mayor, pero no explota como la media.
+Los cuartiles son **resistentes** a valores extremos.
 
 ---
 
-## 📖 Cuando la Posición No es Entera
+## Cálculo con Datos Agrupados
 
-### ⚙️ Ejemplo: 10 datos
+Usamos la misma lógica de la Mediana (interpolación), pero cambiamos $n/2$ por $kn/4$.
 
-Datos: 5, 8, 12, 15, 18, 22, 25, 30, 35, 40
+$$ Q_k = L_i + \left( \frac{\frac{kn}{4} - F_{ant}}{f_{Q}} \right) \cdot A $$
 
-$n = 10$
+### ⚙️ Ejemplos Resueltos
 
-**Posición de Q1:**
-$$
-\text{Pos}_{Q_1} = \frac{1 \times 11}{4} = 2.75
-$$
+#### Ejemplo 1: Tabla de Notas ($n=40$)
+**Posición $Q_1$:** $1(40)/4 = 10$. Buscamos en $F_i$.
+Si el intervalo [0-2.0] tiene $F=5$ y [2.0-3.0] tiene $F=15$...
+El $Q_1$ cae en la clase [2.0-3.0].
 
-La posición 2.75 está entre el dato 2 (8) y el dato 3 (12).
+#### Ejemplo 2: Posición Exacta
+Si la posición calculada es 10 y $F_{ant}$ es justo 10...
+El cuartil es el límite superior de esa clase anterior.
 
-**Interpolación:**
-$$
-Q_1 = 8 + 0.75 \times (12 - 8) = 8 + 3 = 11
-$$
+#### Ejemplo 3: Salarios ($n=100$)
+**$Q_3 = 3(100)/4 = 75$**.
+Buscamos el dato 75 en las frecuencias acumuladas.
 
-**Posición de Q3:**
-$$
-\text{Pos}_{Q_3} = \frac{3 \times 11}{4} = 8.25
-$$
+#### Ejemplo 4: Rango Intercuartílico (IQR)
+Es la distancia entre $Q_3$ y $Q_1$.
+Mide la dispersión del "centro" de los datos (la caja del medio).
+$$IQR = Q_3 - Q_1$$
 
-Entre dato 8 (30) y dato 9 (35):
-$$
-Q_3 = 30 + 0.25 \times (35 - 30) = 30 + 1.25 = 31.25
-$$
-
----
-
-## 📖 Método Alternativo (Más Simple)
-
-Otra forma común de calcular cuartiles:
-
-### Paso 1: Encontrar la mediana (Q2)
-
-Divide los datos en dos mitades.
-
-### Paso 2: Q1 = mediana de la mitad inferior
-
-### Paso 3: Q3 = mediana de la mitad superior
-
-### ⚙️ Ejemplo:
-
-Datos: 2, 4, 6, 8, 10, 12, 14, 16 (n = 8)
-
-**Q2 (mediana):** Entre 8 y 10 → $\frac{8+10}{2} = 9$
-
-**Mitad inferior:** 2, 4, 6, 8
-**Q1:** Mediana de (2, 4, 6, 8) = $\frac{4+6}{2} = 5$
-
-**Mitad superior:** 10, 12, 14, 16
-**Q3:** Mediana de (10, 12, 14, 16) = $\frac{12+14}{2} = 13$
-
-**Resultado:** Q1 = 5, Q2 = 9, Q3 = 13
-
----
-
-## 📖 Interpretación de los Cuartiles
-
-### ⚙️ Ejemplo: Notas de un examen
-
-Q1 = 55, Q2 = 70, Q3 = 82
-
-| Cuartil | Interpretación |
-|---------|----------------|
-| Q1 = 55 | El 25% de los estudiantes sacó menos de 55 |
-| Q2 = 70 | La mitad sacó menos de 70, la mitad más |
-| Q3 = 82 | El 75% sacó menos de 82 (solo 25% superó 82) |
-
-### 💡 Aplicaciones:
-- **"Estás en el primer cuartil"** → Estás en el 25% más bajo
-- **"Estás en el cuarto cuartil"** → Estás en el 25% más alto
-- **"Tu puntaje supera a Q3"** → Estás por encima del 75%
-
----
-
-## 📖 Rango Intercuartílico (IQR)
-
-> El **rango intercuartílico** (IQR) es la diferencia entre Q3 y Q1. Contiene el **50% central** de los datos.
-
-### 💡 Fórmula:
-
-$$
-IQR = Q_3 - Q_1
-$$
-
-### ⚙️ Ejemplo:
-
-Si Q1 = 55 y Q3 = 82:
-$$
-IQR = 82 - 55 = 27
-$$
-
-### 💡 ¿Por qué es útil el IQR?
-
-1. **Medida de dispersión resistente:** No se afecta por valores extremos
-2. **Define el "centro":** El 50% central de los datos
-3. **Detectar outliers:** Valores fuera de $[Q_1 - 1.5 \times IQR, Q_3 + 1.5 \times IQR]$ son atípicos
-
----
-
-## 📖 Detección de Valores Atípicos (Outliers)
-
-### 💡 Regla del 1.5 × IQR:
-
-Un valor es **atípico** si:
-- Es menor que $Q_1 - 1.5 \times IQR$ (atípico bajo)
-- Es mayor que $Q_3 + 1.5 \times IQR$ (atípico alto)
-
-### ⚙️ Ejemplo:
-
-Q1 = 55, Q3 = 82, IQR = 27
-
-**Límites:**
-- Inferior: $55 - 1.5(27) = 55 - 40.5 = 14.5$
-- Superior: $82 + 1.5(27) = 82 + 40.5 = 122.5$
-
-Cualquier nota menor a 14.5 o mayor a 122.5 sería atípica.
-
----
-
-## 🔑 Resumen
-
-| Concepto | Descripción |
-|----------|-------------|
-| **Q1** | Primer cuartil (percentil 25) |
-| **Q2** | Segundo cuartil = mediana (percentil 50) |
-| **Q3** | Tercer cuartil (percentil 75) |
-| **IQR** | $Q_3 - Q_1$ (rango del 50% central) |
-| **Outlier** | Fuera de $[Q_1 - 1.5 \times IQR, Q_3 + 1.5 \times IQR]$ |
+#### Ejemplo 5: Identificación de Outliers
+Cualquier dato que esté muy lejos de los cuartiles (más de $1.5 \times IQR$) se considera sospechoso.
 
 ---
 
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1
-Encuentra Q1, Q2 y Q3 para: 3, 5, 7, 9, 11, 13, 15
+Halla los cuartiles de: 1, 1, 1, 1, 1.
 
 <details>
 <summary>Ver solución</summary>
 
-n = 7 (impar), datos ya ordenados
-
-**Q2 (mediana):** Posición 4 → **9**
-
-**Mitad inferior:** 3, 5, 7
-**Q1:** Mediana de (3, 5, 7) = **5**
-
-**Mitad superior:** 11, 13, 15
-**Q3:** Mediana de (11, 13, 15) = **13**
-
-**Resultado:** Q1 = 5, Q2 = 9, Q3 = 13
+**Lógica:** Todos son 1.
+**Resultados:** $\boxed{1, 1, 1}$
 
 </details>
 
 ### Ejercicio 2
-Los puntajes de 12 estudiantes son:
-45, 52, 58, 62, 65, 70, 75, 78, 82, 88, 92, 98
-
-a) Calcula Q1, Q2 y Q3
-b) Calcula el IQR
-c) ¿Hay valores atípicos?
+Calcula $Q_2$ de: 1, 3, 5, 7, 9.
 
 <details>
 <summary>Ver solución</summary>
 
-a) **Cuartiles:**
-
-n = 12
-
-**Q2:** Promedio de posiciones 6 y 7 = $\frac{70+75}{2} = 72.5$
-
-**Mitad inferior:** 45, 52, 58, 62, 65, 70
-**Q1:** Promedio de posiciones 3 y 4 = $\frac{58+62}{2} = 60$
-
-**Mitad superior:** 75, 78, 82, 88, 92, 98
-**Q3:** Promedio de posiciones 3 y 4 = $\frac{82+88}{2} = 85$
-
-b) **IQR:**
-$IQR = 85 - 60 = 25$
-
-c) **Valores atípicos:**
-- Límite inferior: $60 - 1.5(25) = 60 - 37.5 = 22.5$
-- Límite superior: $85 + 1.5(25) = 85 + 37.5 = 122.5$
-
-Rango válido: [22.5, 122.5]
-Todos los valores están dentro → **No hay outliers**
+**Concepto:** Es la mediana.
+**Resultado:** $\boxed{5}$
 
 </details>
 
 ### Ejercicio 3
-Si Q1 = 100 y Q3 = 180, ¿el valor 250 es un outlier?
+En una carrera, llegaste en el $Q_1$ de tiempos. ¿Fue bueno o malo?
 
 <details>
 <summary>Ver solución</summary>
 
-**Paso 1:** Calcular IQR
-$IQR = 180 - 100 = 80$
-
-**Paso 2:** Calcular límite superior
-$Q_3 + 1.5 \times IQR = 180 + 1.5(80) = 180 + 120 = 300$
-
-**Paso 3:** Comparar
-250 < 300
-
-**Conclusión:** 250 **NO** es un outlier (está dentro del límite).
+**Análisis:** $Q_1$ en tiempo significa tiempos bajos (rápidos).
+**Resultado:** $\boxed{\text{Bueno (eres rápido)}}$
 
 </details>
 
 ### Ejercicio 4
-¿Por qué decimos que el IQR es una medida "resistente" de dispersión?
+Si $Q_1 = 20$ y $Q_3 = 30$, calcula el IQR.
 
 <details>
 <summary>Ver solución</summary>
 
-El IQR es "resistente" porque:
-
-1. **Solo usa Q1 y Q3:** Ignora los valores extremos (el 25% más bajo y el 25% más alto).
-
-2. **No cambia con outliers:** Si el valor máximo pasa de 100 a 1000, el IQR no cambia (Q1 y Q3 permanecen igual).
-
-3. **Representa el centro:** Mide la dispersión del 50% central de los datos.
-
-**Comparación:**
-- **Rango** (máx - mín): Cambia drásticamente con un solo outlier
-- **Desviación estándar:** Se ve afectada por outliers
-- **IQR:** Resistente a outliers
-
-**Por eso el IQR se prefiere para datos con posibles valores extremos.**
+**Resta:** $30 - 20 = 10$.
+**Resultado:** $\boxed{10}$
 
 </details>
+
+### Ejercicio 5
+Calcula $Q_1$ de: 10, 20, 30, 40.
+
+<details>
+<summary>Ver solución</summary>
+
+**Posición:** $1.25$. Entre 10 y 20.
+**Promedio:** 15.
+**Resultado:** $\boxed{15}$
+
+</details>
+
+### Ejercicio 6
+Verdadero o Falso: El $Q_2$ siempre es igual a la Media.
+
+<details>
+<summary>Ver solución</summary>
+
+**Teoría:** Falso. Es igual a la Mediana. Solo en simetría perfecta coinciden con la media.
+**Resultado:** $\boxed{\text{Falso}}$
+
+</details>
+
+### Ejercicio 7
+Datos: 0, 10, 20, 30. ¿Qué porcentaje de datos es menor a 20?
+
+<details>
+<summary>Ver solución</summary>
+
+**Observación:** 20 es el percentil 75 aprox ($Q_3$ fue 25). Bueno, técnicamente 20 es mayor que el 50% exacto.
+**Cuartiles:** $Q_1=5, Q_2=15, Q_3=25$. 20 está entre $Q_2$ y $Q_3$.
+**Resultado:** $\boxed{50\%}$ (Estrictamente, 0 y 10 son menores).
+
+</details>
+
+### Ejercicio 8
+Posición de $Q_3$ si $n=100$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Fórmula:** $3(101)/4 = 303/4 = 75.75$.
+**Resultado:** $\boxed{75.75}$
+
+</details>
+
+### Ejercicio 9
+Si agregas un dato gigante al final, ¿cambia mucho $Q_1$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Análisis:** $Q_1$ mira el inicio de la lista. No se entera.
+**Resultado:** $\boxed{\text{No cambia (o muy poco)}}$
+
+</details>
+
+### Ejercicio 10
+¿Qué cuartil usarías para definir la "clase alta" en economía?
+
+<details>
+<summary>Ver solución</summary>
+
+**Contexto:** Los más ricos están arriba.
+**Resultado:** $\boxed{\text{Sobre Q3 (Top 25\%)}}$
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Cuartil | Porcentaje Acumulado | Equivalente |
+|---------|----------------------|-------------|
+| **$Q_1$** | 25% | Percentil 25. |
+| **$Q_2$** | 50% | La Mediana. |
+| **$Q_3$** | 75% | Percentil 75. |
+
+> **Conclusión:** Los cuartiles son los hitos de la carretera de tus datos. Te dicen si vas en el pelotón de atrás ($<Q_1$), en el medio (IQR), o en la fuga delantera ($>Q_3$).

@@ -1,30 +1,35 @@
-# 🍕 Introducción a las Fracciones
+# **Introducción a las Fracciones**
 
-En este tema aprenderemos qué son las fracciones, sus elementos y cómo interpretarlas en diferentes contextos.
+Imagina que tienes una pizza deliciosa pero tienes que compartirla con tus amigos. Si la cortas en pedazos iguales y repartes algunos, estás usando fracciones. Una fracción es simplemente una forma de decir "una parte de algo completo". No son monstruos matemáticos, son pedazos de realidad.
 
 ---
 
-## 📖 ¿Qué es una fracción?
+## 🎯 ¿Qué vas a aprender?
 
-Una **fracción** representa una o más partes iguales de una unidad o cantidad.
+- Comprender el concepto de fracción como parte de una unidad.
+- Identificar los elementos: Numerador y Denominador.
+- Distinguir entre fracciones propias e impropias.
+- Interpretar fracciones en contextos reales (comida, grupos).
 
-$$
-\text{Fracción} = \frac{a}{b}
-$$
+---
 
-Donde:
-* $a$ se llama **numerador** (indica cuántas partes tomamos)
-* $b$ se llama **denominador** (indica en cuántas partes iguales se divide la unidad)
+## ¿Qué es una Fracción?
 
-### Ejemplo 1
+Una fracción representa una parte de un total.
+Se escribe de la forma $\frac{a}{b}$, donde:
 
-Si dividimos una pizza en $8$ partes iguales y tomamos $3$:
+-   **Denominador ($b$):** En cuántas partes iguales dividimos el total (El número de abajo).
+-   **Numerador ($a$):** Cuántas partes tomamos (El número de arriba).
 
-$$
-\frac{3}{8}
-$$
+$$ \text{Fracción} = \frac{\text{Partes que tomo}}{\text{Total de partes}} $$
 
-En la siguiente figura, las **porciones azules** representan las partes que tomamos, mientras que las **porciones grises** son las que quedan:
+### ⚙️ Ejemplos Resueltos
+
+#### Ejemplo 1: La Pizza
+Dividimos una pizza en 8 rebanadas iguales y te comes 3.
+-   Total de partes (Denominador): 8
+-   Partes que tomas (Numerador): 3
+**Fracción:** $\boxed{\frac{3}{8}}$
 
 <div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1rem auto; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
@@ -60,19 +65,11 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-**Interpretación:** "Tres de ocho partes" o "tres octavos" de la pizza.
-
----
-
-### Ejemplo 2
-
-En un grupo de $12$ estudiantes, $7$ son mujeres:
-
-$$
-\frac{7}{12}
-$$
-
-En el gráfico, las **porciones azules** representan a las mujeres y las **grises** a los hombres:
+#### Ejemplo 2: El grupo de clase
+En un salón hay 12 estudiantes. 7 son mujeres.
+-   Total (Denominador): 12
+-   Mujeres (Numerador): 7
+**Fracción:** $\boxed{\frac{7}{12}}$
 
 <div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1rem auto; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
@@ -93,19 +90,33 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-**Interpretación:** "$7$ de cada $12$ estudiantes son mujeres".
+#### Ejemplo 3: Días de la semana
+¿Qué fracción de la semana representan los días de fin de semana (sábado y domingo)?
+-   Total días: 7
+-   Fin de semana: 2
+**Fracción:** $\boxed{\frac{2}{7}}$
+
+#### Ejemplo 4: El chocolate
+Tienes una barra de chocolate de 10 cuadros. Te comes 1.
+**Fracción:** $\boxed{\frac{1}{10}}$
+
+#### Ejemplo 5: El tanque de gasolina
+Un tanque se divide en 4 cuartos. Si está lleno hasta la mitad (2 cuartos).
+**Fracción:** $\boxed{\frac{2}{4}}$ (que es lo mismo que $\frac{1}{2}$).
 
 ---
 
-## 📖 Tipos de fracciones
+## Tipos de Fracciones
 
-### Fracción propia
+Dependiendo de si tomamos menos, igual o más que la unidad, las fracciones tienen nombres.
 
-El numerador es **menor** que el denominador. Su valor es menor que $1$.
+### 1. Fracción Propia
+El numerador es **menor** que el denominador ($a < b$). Representa **menos de 1 unidad**.
 
-### Ejemplo 1: $\frac{3}{5}$
+### ⚙️ Ejemplos Resueltos
 
-Tomamos 3 partes de un total de 5:
+#### Ejemplo 6: $\frac{3}{5}$
+Tomas 3 de 5 partes. No completas el total.
 
 <div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1rem auto; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
@@ -126,11 +137,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-Como 3 < 5, la fracción es **menor que 1** (no llenamos todo el círculo).
-
-### Ejemplo 2: $\frac{2}{7}$
-
-Tomamos solo 2 partes de un total de 7:
+#### Ejemplo 7: $\frac{2}{7}$
+Tomas 2 de 7 partes. Es propia.
 
 <div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1rem auto; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
@@ -151,17 +159,24 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-Como 2 < 7, esta también es una fracción **propia**.
+#### Ejemplo 8: $\frac{1}{2}$
+Tomas la mitad. 1 es menor que 2. Es propia.
+
+#### Ejemplo 9: $\frac{99}{100}$
+Casi llegas, pero 99 es menor que 100. Es propia.
+
+#### Ejemplo 10: $\frac{0}{5}$
+No tomas nada. 0 es menor que 5. Es propia.
 
 ---
 
-### Fracción impropia
+### 2. Fracción Impropia
+El numerador es **mayor o igual** que el denominador ($a \ge b$). Representa **1 unidad o más**.
 
-El numerador es **mayor o igual** que el denominador. Su valor es mayor o igual a $1$.
+### ⚙️ Ejemplos Resueltos
 
-### Ejemplo 1: $\frac{7}{4}$
-
-Necesitamos más de una unidad: $7 \div 4 = 1$ unidad completa más $\frac{3}{4}$:
+#### Ejemplo 11: $\frac{7}{4}$
+Tomas 7 cuartos. Como un entero solo tiene 4 cuartos, necesitas **dos pasteles** (uno entero y 3 pedazos del otro).
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 0.5rem; margin: 1rem auto;">
   <div style="width: 80px;"><canvas id="chart-impropia-74a"></canvas></div>
@@ -188,11 +203,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-Como 7 > 4, es una fracción **impropia** (mayor que 1).
-
-### Ejemplo 2: $\frac{9}{9}$
-
-Cuando numerador y denominador son iguales, la fracción es exactamente 1:
+#### Ejemplo 12: $\frac{9}{9}$
+Tomas todo. Es igual a 1 (La unidad completa). Se considera impropia (o fracción unidad).
 
 <div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1rem auto; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
@@ -212,39 +224,135 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-$\frac{9}{9} = 1$ (el círculo completo está lleno).
+#### Ejemplo 13: $\frac{10}{5}$
+Tomas 10 quintos. $10 \div 5 = 2$. Son exactamente 2 unidades.
 
---- 
+#### Ejemplo 14: $\frac{5}{4}$
+Un poco más de 1 unidad ($1.25$).
 
-
-> 💡 **Resumen:** La fracción **propia** (azul) es siempre menor que 1, mientras que la **impropia** (roja/verde) es igual o mayor que 1.
-
----
-
-## 📖 Interpretaciones de una fracción
-
-### Como parte de un todo
-
-$$
-\frac{3}{4} \text{ de una pizza significa } 3 \text{ de } 4 \text{ rebanadas}
-$$
-
-### Como división
-
-$$
-\frac{3}{4} = 3 \div 4 = 0.75
-$$
+#### Ejemplo 15: $\frac{100}{1}$
+Son 100 enteros. Toda fracción es una división.
 
 ---
 
-## 📝 Ejercicios de práctica
+## 📝 Ejercicios de Práctica
 
-**Ejercicio 1:** Identifica el numerador y denominador de $\frac{5}{9}$ y explica qué representa.
+### Ejercicio 1
+En una caja de 6 huevos, usas 2 para el desayuno. Escribe la fracción de huevos usados.
 
-**Ejercicio 2:** Clasifica como propia o impropia: $\frac{8}{5}$, $\frac{3}{7}$, $\frac{6}{6}$.
+<details>
+<summary>Ver solución</summary>
 
-**Ejercicio 3:** María comió $2$ rebanadas de un pastel de $10$ rebanadas. Expresa esto como fracción.
+-   Total: 6
+-   Usados: 2
+**Resultado:** $\boxed{\frac{2}{6}}$
 
-**Ejercicio 4:** Expresa $\frac{5}{8}$ como decimal.
+</details>
+
+### Ejercicio 2
+Identifica el numerador y el denominador de $\frac{5}{9}$.
+
+<details>
+<summary>Ver solución</summary>
+
+-   **Numerador:** 5 (arriba).
+-   **Denominador:** 9 (abajo).
+
+</details>
+
+### Ejercicio 3
+Clasifica $\frac{2}{3}$ como propia o impropia.
+
+<details>
+<summary>Ver solución</summary>
+
+$2 < 3$. Es menor que 1.
+**Resultado:** $\boxed{\text{Propia}}$
+
+</details>
+
+### Ejercicio 4
+Clasifica $\frac{8}{5}$ como propia o impropia.
+
+<details>
+<summary>Ver solución</summary>
+
+$8 > 5$. Es mayor que 1.
+**Resultado:** $\boxed{\text{Impropia}}$
+
+</details>
+
+### Ejercicio 5
+¿Cómo se lee la fracción $\frac{3}{4}$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Resultado:** $\boxed{\text{Tres cuartos}}$
+
+</details>
+
+### Ejercicio 6
+Representa "cinco días de una semana" como fracción.
+
+<details>
+<summary>Ver solución</summary>
+
+Una semana tiene 7 días.
+**Resultado:** $\boxed{\frac{5}{7}}$
+
+</details>
+
+### Ejercicio 7
+Clasifica $\frac{12}{12}$.
+
+<details>
+<summary>Ver solución</summary>
+
+Numerador igual a denominador.
+**Resultado:** $\boxed{\text{Impropia (o unidad)}}$
+
+</details>
+
+### Ejercicio 8
+Si te comes 4 pedazos de una pizza de 8, ¿qué fracción quedó?
+
+<details>
+<summary>Ver solución</summary>
+
+Quedan $8 - 4 = 4$ pedazos.
+**Resultado:** $\boxed{\frac{4}{8}}$
+
+</details>
+
+### Ejercicio 9
+Escribe una fracción impropia con denominador 3.
+
+<details>
+<summary>Ver solución</summary>
+
+El numerador debe ser 3 o mayor. Ejemplos: $\frac{4}{3}, \frac{5}{3}, \frac{10}{3}$.
+**Resultado:** $\boxed{\frac{4}{3} \text{ (ejemplo)}}$
+
+</details>
+
+### Ejercicio 10
+¿Qué fracción representa 50 centavos de un peso (100 centavos)?
+
+<details>
+<summary>Ver solución</summary>
+
+**Resultado:** $\boxed{\frac{50}{100}}$
+
+</details>
 
 ---
+
+## 🔑 Resumen
+
+| Tipo | Numerador vs Denominador | Valor | Ejemplo |
+| :--- | :--- | :--- | :--- |
+| **Propia** | Numerador < Denominador | Menor que 1 | $\frac{1}{2}$ |
+| **Impropia** | Numerador >= Denominador | Mayor o igual que 1 | $\frac{3}{2}, \frac{5}{5}$ |
+
+> **Conclusión:** Las fracciones son la forma matemática de compartir. Recuerda siempre: el denominador (abajo) dice "en cuántos cortamos" y el numerador (arriba) dice "cuántos tomamos".

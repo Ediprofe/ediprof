@@ -1,24 +1,30 @@
-# ✖️ Multiplicación y División de Fracciones
+# **Multiplicación y División de Fracciones**
 
-En este tema aprenderemos a multiplicar y dividir fracciones.
+Multiplicar fracciones es la operación más fácil del mundo (solo se trata de seguir la línea). Dividirlas, en cambio, tiene un pequeño truco de magia: ¡se convierte en una multiplicación!
 
 ---
 
-## 📖 Multiplicación de fracciones
+## 🎯 ¿Qué vas a aprender?
 
-Multiplicamos **numerador con numerador** y **denominador con denominador**.
+- Multiplicar fracciones (numerador con numerador, denominador con denominador).
+- Multiplicar una fracción por un número entero.
+- Dividir fracciones usando el truco del "Inverso" (o "Vuelta de Carnero").
+- Simplificar resultados finales.
 
-$$
-\frac{a}{b} \times \frac{c}{d} = \frac{a \times c}{b \times d}
-$$
+---
 
-### Ejemplo 1
+## Multiplicación de Fracciones
 
-$$
-\frac{2}{3} \times \frac{4}{5} = \frac{2 \times 4}{3 \times 5} = \frac{8}{15}
-$$
+Es directa. Lo de arriba por lo de arriba, lo de abajo por lo de abajo.
 
-Multiplicar $\frac{2}{3}$ por $\frac{4}{5}$ significa tomar **2/3 de 4/5**:
+$$ \frac{a}{b} \times \frac{c}{d} = \frac{a \times c}{b \times d} $$
+
+### ⚙️ Ejemplos Resueltos
+
+#### Ejemplo 1: $\frac{2}{3} \times \frac{4}{5}$
+-   Arriba: $2 \times 4 = 8$.
+-   Abajo: $3 \times 5 = 15$.
+**Resultado:** $\boxed{\frac{8}{15}}$
 
 <div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1rem auto; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
@@ -60,80 +66,184 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
----
+#### Ejemplo 2: $\frac{1}{2} \times \frac{1}{2}$ (La mitad de la mitad)
+-   $1 \times 1 = 1$.
+-   $2 \times 2 = 4$.
+**Resultado:** $\boxed{\frac{1}{4}}$ (un cuarto).
 
-### Ejemplo 2
+#### Ejemplo 3: $\frac{3}{4} \times \frac{2}{7}$
+-   $3 \times 2 = 6$.
+-   $4 \times 7 = 28$.
+$\frac{6}{28} \implies \text{simplificamos} \implies \boxed{\frac{3}{14}}$.
 
-$$
-\frac{3}{4} \times \frac{2}{7} = \frac{3 \times 2}{4 \times 7} = \frac{6}{28} = \frac{3}{14}
-$$
+#### Ejemplo 4: Multiplicar por un Entero ($5 \times \frac{3}{4}$)
+Imagina que el 5 tiene un 1 abajo: $\frac{5}{1} \times \frac{3}{4}$.
+-   $5 \times 3 = 15$.
+-   $1 \times 4 = 4$.
+**Resultado:** $\boxed{\frac{15}{4}}$ (o $3\frac{3}{4}$).
 
----
-
-## 📖 Multiplicar fracción por entero
-
-El entero se escribe como fracción con denominador $1$.
-
-### Ejemplo 1
-
-$$
-\frac{3}{4} \times 5 = \frac{3}{4} \times \frac{5}{1} = \frac{15}{4} = 3\frac{3}{4}
-$$
-
----
-
-### Ejemplo 2
-
-$$
-\frac{2}{5} \times 10 = \frac{2 \times 10}{5} = \frac{20}{5} = 4
-$$
+#### Ejemplo 5: $\frac{10}{3} \times \frac{3}{5}$
+-   $10 \times 3 = 30$.
+-   $3 \times 5 = 15$.
+$30 \div 15 = 2$.
+**Resultado:** $\boxed{2}$
 
 ---
 
-## 📖 División de fracciones
+## División de Fracciones
 
-Para dividir, multiplicamos por el **recíproco** de la segunda fracción.
+Para dividir $\frac{a}{b} \div \frac{c}{d}$, damos una "vuelta de carnero" a la segunda fracción ($\frac{d}{c}$) y transformamos la división en **multiplicación**.
 
-$$
-\frac{a}{b} \div \frac{c}{d} = \frac{a}{b} \times \frac{d}{c}
-$$
+$$ \frac{a}{b} \div \frac{c}{d} = \frac{a}{b} \times \frac{d}{c} $$
 
-### Ejemplo 1
+### ⚙️ Ejemplos Resueltos
 
-$$
-\frac{3}{4} \div \frac{2}{5} = \frac{3}{4} \times \frac{5}{2} = \frac{15}{8} = 1\frac{7}{8}
-$$
+#### Ejemplo 6: $\frac{1}{2} \div \frac{1}{4}$
+Invertimos $\frac{1}{4}$ a $\frac{4}{1}$ y multiplicamos:
+$\frac{1}{2} \times \frac{4}{1} = \frac{4}{2} = 2$.
+**Resultado:** $\boxed{2}$ (En una mitad caben dos cuartos).
+
+#### Ejemplo 7: $\frac{3}{4} \div \frac{2}{5}$
+Invertimos $\frac{2}{5}$ a $\frac{5}{2}$.
+$\frac{3}{4} \times \frac{5}{2} = \frac{15}{8}$.
+**Resultado:** $\boxed{\frac{15}{8}}$
+
+#### Ejemplo 8: $\frac{5}{7} \div 3$
+El 3 es $\frac{3}{1}$. Al invertir queda $\frac{1}{3}$.
+$\frac{5}{7} \times \frac{1}{3} = \frac{5}{21}$.
+**Resultado:** $\boxed{\frac{5}{21}}$
+
+#### Ejemplo 9: $4 \div \frac{1}{2}$
+¿Cuántas mitades caben en 4 enteros?
+$4 \times \frac{2}{1} = 8$.
+**Resultado:** $\boxed{8}$
+
+#### Ejemplo 10: $\frac{2}{3} \div \frac{2}{3}$
+Cualquier cosa dividida por sí misma es 1.
+$\frac{2}{3} \times \frac{3}{2} = \frac{6}{6} = 1$.
+**Resultado:** $\boxed{1}$
+
+---
+
+## 📝 Ejercicios de Práctica
+
+### Ejercicio 1
+Multiplica $\frac{3}{5} \times \frac{2}{3}$.
+
+<details>
+<summary>Ver solución</summary>
+
+$\frac{6}{15} \to \frac{2}{5}$.
+**Resultado:** $\boxed{\frac{2}{5}}$
+
+</details>
+
+### Ejercicio 2
+Divide $\frac{1}{2} \div \frac{1}{3}$.
+
+<details>
+<summary>Ver solución</summary>
+
+$\frac{1}{2} \times 3 = \frac{3}{2}$.
+**Resultado:** $\boxed{\frac{3}{2}}$
+
+</details>
+
+### Ejercicio 3
+Calcula $\frac{4}{7} \times 2$.
+
+<details>
+<summary>Ver solución</summary>
+
+$\frac{8}{7}$.
+**Resultado:** $\boxed{\frac{8}{7}}$
+
+</details>
+
+### Ejercicio 4
+Divide $\frac{2}{5} \div 2$.
+
+<details>
+<summary>Ver solución</summary>
+
+$\frac{2}{5} \times \frac{1}{2} = \frac{2}{10} = \frac{1}{5}$.
+**Resultado:** $\boxed{\frac{1}{5}}$
+
+</details>
+
+### Ejercicio 5
+Multiplica $\frac{5}{8} \times \frac{8}{5}$.
+
+<details>
+<summary>Ver solución</summary>
+
+Es un número por su inverso.
+**Resultado:** $\boxed{1}$
+
+</details>
+
+### Ejercicio 6
+Divide $\frac{3}{4} \div \frac{3}{4}$.
+
+<details>
+<summary>Ver solución</summary>
+
+Son iguales.
+**Resultado:** $\boxed{1}$
+
+</details>
+
+### Ejercicio 7
+Calcula el área de un rectángulo de lados $\frac{1}{2}$ m y $\frac{3}{4}$ m.
+
+<details>
+<summary>Ver solución</summary>
+
+Área = Base $\times$ Altura = $\frac{1}{2} \times \frac{3}{4} = \frac{3}{8}$.
+**Resultado:** $\boxed{\frac{3}{8} m^2}$
+
+</details>
+
+### Ejercicio 8
+Divide $\frac{7}{9} \div \frac{1}{2}$.
+
+<details>
+<summary>Ver solución</summary>
+
+$\frac{7}{9} \times 2 = \frac{14}{9}$.
+**Resultado:** $\boxed{\frac{14}{9}}$
+
+</details>
+
+### Ejercicio 9
+Multiplica $2\frac{1}{2} \times \frac{1}{3}$.
+
+<details>
+<summary>Ver solución</summary>
+
+Convertir mixto: $\frac{5}{2} \times \frac{1}{3} = \frac{5}{6}$.
+**Resultado:** $\boxed{\frac{5}{6}}$
+
+</details>
+
+### Ejercicio 10
+Si repartes $\frac{1}{2}$ pastel entre 4 personas, ¿cuánto le toca a cada una?
+
+<details>
+<summary>Ver solución</summary>
+
+$\frac{1}{2} \div 4 = \frac{1}{2} \times \frac{1}{4} = \frac{1}{8}$.
+**Resultado:** $\boxed{\frac{1}{8}}$
+
+</details>
 
 ---
 
-### Ejemplo 2
+## 🔑 Resumen
 
-$$
-\frac{5}{6} \div \frac{1}{3} = \frac{5}{6} \times \frac{3}{1} = \frac{15}{6} = \frac{5}{2} = 2\frac{1}{2}
-$$
+| Operación | Método | Fórmula |
+| :--- | :--- | :--- |
+| **Multiplicación** | Directo (Línea recta) | $\frac{a \times c}{b \times d}$ |
+| **División** | Invertir el segundo y multiplicar | $\frac{a}{b} \times \frac{d}{c}$ |
 
----
-
-## 📖 Recíproco de una fracción
-
-El **recíproco** de $\frac{a}{b}$ es $\frac{b}{a}$.
-
-| Fracción | Recíproco |
-|----------|-----------|
-| $\frac{2}{3}$ | $\frac{3}{2}$ |
-| $\frac{5}{7}$ | $\frac{7}{5}$ |
-| $4 = \frac{4}{1}$ | $\frac{1}{4}$ |
-
----
-
-## 📝 Ejercicios de práctica
-
-**Ejercicio 1:** $\frac{2}{5} \times \frac{3}{7}$
-
-**Ejercicio 2:** $\frac{4}{9} \times 6$
-
-**Ejercicio 3:** $\frac{5}{8} \div \frac{3}{4}$
-
-**Ejercicio 4:** $\frac{7}{10} \div \frac{2}{5}$
-
----
+> **Conclusión:** Multiplicar fracciones suele hacer el número más pequeño (si son propias). Dividir fracciones por una fracción pequeña hace el resultado más grande.

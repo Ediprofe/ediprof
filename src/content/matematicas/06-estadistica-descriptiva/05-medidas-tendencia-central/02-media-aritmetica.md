@@ -1,352 +1,283 @@
-# Media Aritmética
+# **Media Aritmética**
 
-El "promedio" que todos conocemos y usamos tiene un nombre técnico: **media aritmética**. Es la medida de tendencia central más utilizada, pero también la más malinterpretada.
-
-Aprendamos a calcularla correctamente y a entender cuándo confiar en ella.
+Imagina que tú tienes 5 caramelos y tu amigo tiene 1. No es justo, ¿cierto? Si juntan todos los caramelos ($5+1=6$) y los reparten en partes iguales ($6 \div 2 = 3$), ahora ambos tienen 3. Ese "3" es la **media aritmética**. Es el valor que tendrían todos los datos si fueran **iguales** manteniendo el mismo total.
 
 ---
 
 ## 🎯 ¿Qué vas a aprender?
 
-- La fórmula y cálculo de la media
-- Propiedades importantes de la media
-- Cómo calcular la media con tablas de frecuencias
-- La notación sumatoria (Σ)
+- Calcular la media ($\bar{x}$) para datos sueltos.
+- Calcular la media usando tablas de frecuencia ($f_i$).
+- Comprender las propiedades clave: centro de gravedad y sensibilidad.
+- Resolver problemas de promedios ponderados implícitos.
 
 ---
 
-## 📊 Fórmula de la Media
+## Cálculo con Datos Simples
 
-| Tipo de datos | Fórmula |
-|---------------|---------|
-| Datos simples | $\bar{x} = \frac{\sum x_i}{n}$ |
-| Con frecuencias | $\bar{x} = \frac{\sum f_i \cdot x_i}{n}$ |
-| Datos agrupados | $\bar{x} = \frac{\sum f_i \cdot x_i}{n}$ (usando marcas de clase) |
+La fórmula es intuitiva: suma todo y divide entre la cantidad.
+$$ \bar{x} = \frac{\sum x_i}{n} $$
 
----
+### ⚙️ Ejemplos Resueltos
 
-## 📖 Definición de la Media
+#### Ejemplo 1: Notas de semestre
+**Datos:** 3.0, 4.0, 5.0.
+**Suma:** $3+4+5 = 12$.
+**División:** $12 / 3 = 4.0$.
+**Media:** $\boxed{4.0}$
 
-> La **media aritmética** ($\bar{x}$) es la suma de todos los valores dividida entre la cantidad de valores.
+#### Ejemplo 2: Goles en 4 partidos
+**Datos:** 0, 0, 2, 6.
+**Suma:** 8.
+**División:** $8 / 4 = 2$.
+**Media:** $\boxed{2 \text{ goles por partido}}$
 
-### 💡 Fórmula básica:
+#### Ejemplo 3: Temperatura (con negativos)
+**Datos:** -2°C, 0°C, 5°C.
+**Suma:** $-2 + 0 + 5 = 3$.
+**División:** $3 / 3 = 1$.
+**Media:** $\boxed{1^\circ\text{C}}$
 
-$$
-\bar{x} = \frac{x_1 + x_2 + x_3 + ... + x_n}{n} = \frac{\sum_{i=1}^{n} x_i}{n}
-$$
+#### Ejemplo 4: Edades (decimales)
+**Datos:** 10.5, 11.5.
+**Suma:** 22.
+**División:** $22 / 2 = 11$.
+**Media:** $\boxed{11 \text{ años}}$
 
-Donde:
-- $\bar{x}$ = "x barra", la media
-- $x_i$ = cada valor individual
-- $n$ = cantidad total de valores
-- $\Sigma$ = sumatoria (suma de todos)
-
----
-
-## 📖 La Notación Sumatoria (Σ)
-
-> El símbolo **Σ** (sigma mayúscula) significa "suma de todos".
-
-### 💡 Cómo leerlo:
-
-$$
-\sum_{i=1}^{n} x_i = x_1 + x_2 + x_3 + ... + x_n
-$$
-
-- El índice ($i$) va desde 1 hasta $n$
-- Sumamos todos los valores $x_i$
-
-### ⚙️ Ejemplo:
-
-Si $x_1 = 3$, $x_2 = 5$, $x_3 = 7$, $x_4 = 9$:
-
-$$
-\sum_{i=1}^{4} x_i = 3 + 5 + 7 + 9 = 24
-$$
+#### Ejemplo 5: Dato constante
+**Datos:** 5, 5, 5, 5.
+**Suma:** 20.
+**División:** $20 / 4 = 5$.
+**Media:** $\boxed{5}$ (Si todos son iguales, la media es ese valor).
 
 ---
 
-## 📖 Cálculo de la Media: Datos Simples
+## Cálculo con Tablas de Frecuencia
 
-### ⚙️ Ejemplo 1: Notas de 6 exámenes
+Cuando los datos se repiten, no sumamos uno por uno (2+2+2...). Multiplicamos el valor por cuántas veces aparece ($2 \times 3$).
+$$ \bar{x} = \frac{\sum (x_i \cdot f_i)}{n} $$
 
-Notas: 7.5, 8.0, 6.5, 9.0, 7.0, 8.5
+### ⚙️ Ejemplos Resueltos
 
-**Paso 1:** Sumar todos los valores
-$$
-\sum x = 7.5 + 8.0 + 6.5 + 9.0 + 7.0 + 8.5 = 46.5
-$$
+#### Ejemplo 1: Encuesta de hijos
+**Tabla:**
+- 0 hijos: 3 familias ($0 \times 3 = 0$)
+- 1 hijo: 5 familias ($1 \times 5 = 5$)
+- 2 hijos: 2 familias ($2 \times 2 = 4$)
+**Total Datos ($n$):** $3+5+2 = 10$.
+**Suma Total:** $0+5+4 = 9$.
+**Media:** $\boxed{0.9 \text{ hijos}}$
 
-**Paso 2:** Dividir entre la cantidad (n = 6)
-$$
-\bar{x} = \frac{46.5}{6} = 7.75
-$$
+#### Ejemplo 2: Calificación de servicio (1 a 3)
+**Tabla:**
+- 1 estrella: 10 personas (10)
+- 2 estrellas: 0 personas (0)
+- 3 estrellas: 10 personas (30)
+**Total ($n$):** 20.
+**Suma:** 40.
+**Media:** $40/20 = \boxed{2.0}$
 
-**Interpretación:** El promedio de notas es 7.75
+#### Ejemplo 3: Edades en un grupo
+**Tabla:**
+- 15 años: 4 alumnos (60)
+- 16 años: 6 alumnos (96)
+**Total ($n$):** 10.
+**Suma:** 156.
+**Media:** $\boxed{15.6 \text{ años}}$
 
-### ⚙️ Ejemplo 2: Edades de 5 amigos
+#### Ejemplo 4: Lanzamiento de moneda (Cara=1, Sello=0)
+**Datos:** 3 Caras, 7 Sellos.
+**Cálculo:** $(1\times3 + 0\times7) = 3$.
+**Total:** 10 lanzamientos.
+**Media:** $\boxed{0.3}$ (Indica proporción de caras).
 
-Edades: 18, 20, 19, 21, 17
-
-$$
-\bar{x} = \frac{18 + 20 + 19 + 21 + 17}{5} = \frac{95}{5} = 19 \text{ años}
-$$
-
----
-
-## 📖 Cálculo de la Media: Con Tabla de Frecuencias
-
-Cuando los datos vienen en una tabla de frecuencias, usamos:
-
-$$
-\bar{x} = \frac{\sum f_i \cdot x_i}{n} = \frac{\sum f_i \cdot x_i}{\sum f_i}
-$$
-
-### ⚙️ Ejemplo: Número de hermanos
-
-| Hermanos ($x_i$) | Frecuencia ($f_i$) | $f_i \cdot x_i$ |
-|------------------|-------------------|-----------------|
-| 0 | 5 | $5 \times 0 = 0$ |
-| 1 | 12 | $12 \times 1 = 12$ |
-| 2 | 8 | $8 \times 2 = 16$ |
-| 3 | 4 | $4 \times 3 = 12$ |
-| 4 | 1 | $1 \times 4 = 4$ |
-| **Total** | **30** | **44** |
-
-$$
-\bar{x} = \frac{\sum f_i \cdot x_i}{\sum f_i} = \frac{44}{30} = 1.47 \text{ hermanos}
-$$
-
-**Interpretación:** En promedio, los estudiantes tienen aproximadamente 1.5 hermanos.
+#### Ejemplo 5: Salarios simplificados
+**Tabla:**
+- \$100: 2 personas (200)
+- \$200: 8 personas (1600)
+**Total:** 10 personas.
+**Suma:** 1800.
+**Media:** $\boxed{\$180}$
 
 ---
 
-## 📖 Cálculo de la Media: Datos Agrupados
+## Propiedades Importantes
 
-Para datos agrupados en clases, usamos la **marca de clase** ($x_i$) como representante de cada intervalo:
+1.  **Suma de desviaciones es Cero:** Si restas la media a cada dato y sumas esos resultados, siempre da 0.
+2.  **Sensibilidad:** Un solo dato gigante arrastra la media hacia él.
 
-### ⚙️ Ejemplo: Pesos de estudiantes
+### ⚙️ Ejemplos Resueltos: Propiedades
 
-| Intervalo | Marca de Clase ($x_i$) | $f_i$ | $f_i \cdot x_i$ |
-|-----------|----------------------|-------|-----------------|
-| 52 - 58 | 55 | 7 | 385 |
-| 59 - 65 | 62 | 8 | 496 |
-| 66 - 72 | 69 | 9 | 621 |
-| 73 - 79 | 76 | 8 | 608 |
-| 80 - 86 | 83 | 4 | 332 |
-| 87 - 93 | 90 | 4 | 360 |
-| **Total** | | **40** | **2,802** |
+#### Ejemplo 1: Desviación Cero
+**Datos:** 1, 2, 3. Media = 2.
+**Restas:**
+- $1 - 2 = -1$
+- $2 - 2 = 0$
+- $3 - 2 = 1$
+**Suma:** $-1 + 0 + 1 = 0$. ¡Comprobado!
 
-$$
-\bar{x} = \frac{2802}{40} = 70.05 \text{ kg}
-$$
+#### Ejemplo 2: El efecto millonario (Sensibilidad)
+**Datos:** 1, 1, 1, 100.
+**Media sin el 100:** 1.0.
+**Media con el 100:** $103/4 = 25.75$.
+**Lección:** Un dato cambió la media de 1 a 25. La media no es robusta.
 
-**Nota:** Este es un valor **aproximado** porque no conocemos los valores exactos dentro de cada clase.
+#### Ejemplo 3: Cambio de escala (Suma)
+**Situación:** La media de notas es 3.5. El profesor regala 0.5 a todos.
+**Nueva Media:** $3.5 + 0.5 = 4.0$. (No necesitas recalcular todo).
 
----
+#### Ejemplo 4: Cambio de escala (Multiplicación)
+**Situación:** La media de sueldos es \$100. Se sube el sueldo un 10% (multiplicar por 1.1).
+**Nueva Media:** $100 \times 1.1 = 110$.
 
-## 📖 Propiedades de la Media
-
-### 💡 Propiedad 1: La suma de las desviaciones es cero
-
-Si restamos la media a cada valor, la suma de esas diferencias es cero:
-
-$$
-\sum (x_i - \bar{x}) = 0
-$$
-
-### ⚙️ Ejemplo:
-
-Datos: 2, 4, 6 → Media = 4
-
-| $x_i$ | $x_i - \bar{x}$ |
-|-------|-----------------|
-| 2 | 2 - 4 = -2 |
-| 4 | 4 - 4 = 0 |
-| 6 | 6 - 4 = +2 |
-| **Suma** | **0** |
-
-**Interpretación:** La media es el "punto de equilibrio" donde las desviaciones negativas y positivas se cancelan.
-
-### 💡 Propiedad 2: Sensibilidad a valores extremos
-
-La media cambia significativamente cuando hay valores extremos (outliers).
-
-### ⚙️ Ejemplo:
-
-**Sin outlier:** 10, 12, 11, 13, 14 → $\bar{x} = \frac{60}{5} = 12$
-
-**Con outlier:** 10, 12, 11, 13, **100** → $\bar{x} = \frac{146}{5} = 29.2$
-
-¡Un solo valor extremo (100) casi triplicó la media!
-
-### 💡 Propiedad 3: Transformaciones lineales
-
-Si multiplicamos todos los datos por una constante $a$ y sumamos $b$:
-
-$$
-\bar{x}_{nuevo} = a \cdot \bar{x} + b
-$$
-
-### ⚙️ Ejemplo: Conversión de temperatura
-
-Si la media en Celsius es 20°C, ¿cuál es en Fahrenheit?
-
-Fórmula: $F = 1.8 \cdot C + 32$
-
-$$
-\bar{x}_F = 1.8 \times 20 + 32 = 36 + 32 = 68°F
-$$
-
----
-
-## 📖 Media Poblacional vs Muestral
-
-| Símbolo | Descripción | Fórmula |
-|---------|-------------|---------|
-| $\mu$ (mu) | Media poblacional (parámetro) | $\mu = \frac{\sum x_i}{N}$ |
-| $\bar{x}$ (x barra) | Media muestral (estadístico) | $\bar{x} = \frac{\sum x_i}{n}$ |
-
-- **N** = tamaño de la población
-- **n** = tamaño de la muestra
-
-Usamos $\bar{x}$ como **estimador** de $\mu$ cuando no podemos medir toda la población.
-
----
-
-## 💡 Cuándo Usar (y No Usar) la Media
-
-| ✅ Usar cuando... | ❌ Evitar cuando... |
-|-------------------|---------------------|
-| Datos simétricos | Hay valores extremos (outliers) |
-| Se necesita un dato resumen | La distribución es muy sesgada |
-| Datos cuantitativos | Datos cualitativos |
-| Comparar grupos | El "centro" no es representativo |
-
----
-
-## 🔑 Resumen
-
-| Concepto | Descripción |
-|----------|-------------|
-| **Media ($\bar{x}$)** | Suma de valores / cantidad de valores |
-| **Fórmula simple** | $\bar{x} = \frac{\sum x_i}{n}$ |
-| **Con frecuencias** | $\bar{x} = \frac{\sum f_i \cdot x_i}{n}$ |
-| **Símbolo Σ** | Sumatoria (suma de todos) |
-| **Debilidad** | Sensible a valores extremos |
+#### Ejemplo 5: Media de Medias (Ponderada)
+**Situación:** Salón A (20 alumnos, media 3.0). Salón B (30 alumnos, media 4.0).
+**Error Común:** $(3+4)/2 = 3.5$. ¡Incorrecto! Son tamaños diferentes.
+**Correcto:** $( (20\times3) + (30\times4) ) / 50 = (60+120)/50 = 3.6$.
 
 ---
 
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1
-Calcula la media de los siguientes datos:
-
-a) 15, 18, 22, 19, 16
-b) 3.5, 4.2, 3.8, 4.0, 4.5, 3.9
+Calcula la media de: 12, 15, 18, 12, 13.
 
 <details>
 <summary>Ver solución</summary>
 
-a) **Datos: 15, 18, 22, 19, 16**
-$$\bar{x} = \frac{15 + 18 + 22 + 19 + 16}{5} = \frac{90}{5} = 18$$
-
-b) **Datos: 3.5, 4.2, 3.8, 4.0, 4.5, 3.9**
-$$\bar{x} = \frac{3.5 + 4.2 + 3.8 + 4.0 + 4.5 + 3.9}{6} = \frac{23.9}{6} = 3.98$$
+**Suma:** $12+15+18+12+13 = 70$.
+**Cantidad:** 5.
+**Cálculo:** $\frac{70}{5} = 14$.
+**Resultado:** $\boxed{14}$
 
 </details>
 
 ### Ejercicio 2
-Usa la siguiente tabla de frecuencias para calcular la media:
-
-| Calificación | Frecuencia |
-|--------------|------------|
-| 5 | 3 |
-| 6 | 7 |
-| 7 | 12 |
-| 8 | 8 |
-| 9 | 4 |
-| 10 | 2 |
+Si la suma de 10 datos es 450, ¿cuál es su media?
 
 <details>
 <summary>Ver solución</summary>
 
-| Calificación ($x_i$) | $f_i$ | $f_i \cdot x_i$ |
-|---------------------|-------|-----------------|
-| 5 | 3 | 15 |
-| 6 | 7 | 42 |
-| 7 | 12 | 84 |
-| 8 | 8 | 64 |
-| 9 | 4 | 36 |
-| 10 | 2 | 20 |
-| **Total** | **36** | **261** |
-
-$$\bar{x} = \frac{261}{36} = 7.25$$
-
-**La media de calificaciones es 7.25**
+**Fórmula:** $\bar{x} = \text{Suma} / n$.
+**Cálculo:** $450 / 10 = 45$.
+**Resultado:** $\boxed{45}$
 
 </details>
 
 ### Ejercicio 3
-La media de 5 números es 12. Si agregamos el número 24, ¿cuál es la nueva media?
+Tienes 4 notas: 3.0, 3.5, 4.0. ¿Qué nota necesitas en el cuarto examen para promediar 4.0?
 
 <details>
 <summary>Ver solución</summary>
 
-**Paso 1:** Encontrar la suma original
-Si $\bar{x} = 12$ y $n = 5$:
-$$\sum x = \bar{x} \times n = 12 \times 5 = 60$$
-
-**Paso 2:** Agregar el nuevo número
-$$\sum x_{nueva} = 60 + 24 = 84$$
-
-**Paso 3:** Calcular la nueva media
-$$\bar{x}_{nueva} = \frac{84}{6} = 14$$
-
-**La nueva media es 14**
+**Razonamiento:** Para promediar 4.0 en 4 notas, necesitas sumar $4 \times 4.0 = 16$.
+**Suma actual:** $3.0 + 3.5 + 4.0 = 10.5$.
+**Faltante:** $16 - 10.5 = 5.5$.
+**Resultado:** $\boxed{5.5}$
 
 </details>
 
 ### Ejercicio 4
-Si la media de los precios en dólares es $50, y el tipo de cambio es 1 dólar = 4,000 pesos, ¿cuál es la media en pesos?
+Calcula la media de la tabla:
+- $x=2, f=3$
+- $x=4, f=2$
 
 <details>
 <summary>Ver solución</summary>
 
-Usamos la propiedad de transformación lineal.
-
-La conversión es: $\text{pesos} = \text{dólares} \times 4000$
-
-Esto es una transformación con $a = 4000$ y $b = 0$:
-
-$$\bar{x}_{pesos} = 4000 \times \bar{x}_{dólares} = 4000 \times 50 = 200,000 \text{ pesos}$$
-
-**La media en pesos es $200,000**
+**Productos:** $2\times3=6$, $4\times2=8$.
+**Suma Productos:** $6+8=14$.
+**Total Datos:** $3+2=5$.
+**Media:** $14/5 = 2.8$.
+**Resultado:** $\boxed{2.8}$
 
 </details>
 
 ### Ejercicio 5
-Demuestra que $\sum (x_i - \bar{x}) = 0$ para los datos: 3, 5, 7, 9, 11
+Demuestra que la suma de desviaciones de 2, 4, 6 (Media=4) es cero.
 
 <details>
 <summary>Ver solución</summary>
 
-**Paso 1:** Calcular la media
-$$\bar{x} = \frac{3 + 5 + 7 + 9 + 11}{5} = \frac{35}{5} = 7$$
-
-**Paso 2:** Calcular las desviaciones
-
-| $x_i$ | $x_i - \bar{x}$ |
-|-------|-----------------|
-| 3 | 3 - 7 = -4 |
-| 5 | 5 - 7 = -2 |
-| 7 | 7 - 7 = 0 |
-| 9 | 9 - 7 = +2 |
-| 11 | 11 - 7 = +4 |
-
-**Paso 3:** Sumar las desviaciones
-$$\sum (x_i - \bar{x}) = -4 + (-2) + 0 + 2 + 4 = 0$$
-
-**✓ Demostrado:** La suma de las desviaciones respecto a la media es cero.
+**Desviaciones:** $(2-4)=-2$, $(4-4)=0$, $(6-4)=2$.
+**Suma:** $-2+0+2 = 0$.
+**Resultado:** $\boxed{0}$
 
 </details>
+
+### Ejercicio 6
+Si multiplicas todos los datos originales por 3, ¿qué le pasa a la media?
+
+<details>
+<summary>Ver solución</summary>
+
+**Propiedad:** Linealidad.
+**Resultado:** $\boxed{\text{La media también se multiplica por 3}}$
+
+</details>
+
+### Ejercicio 7
+Encuentra la media de: 100, 200, 300, 10000. ¿Representa bien a los datos?
+
+<details>
+<summary>Ver solución</summary>
+
+**Cálculo:** $10600 / 4 = 2650$.
+**Análisis:** 3 de los 4 datos son $\le 300$. El promedio 2650 está lejisimos de ellos.
+**Resultado:** $\boxed{2650, \text{ No representa bien (sesgo)}}$
+
+</details>
+
+### Ejercicio 8
+El promedio de edad de 3 personas es 20 años. Si se une una persona de 40 años, ¿cuál es el nuevo promedio?
+
+<details>
+<summary>Ver solución</summary>
+
+**Suma original:** $3 \times 20 = 60$.
+**Nueva suma:** $60 + 40 = 100$.
+**Nuevo total ($n$):** 4.
+**Media:** $100 / 4 = 25$.
+**Resultado:** $\boxed{25 \text{ años}}$
+
+</details>
+
+### Ejercicio 9
+Calcula la media de los primeros 5 números pares (2, 4, 6, 8, 10).
+
+<details>
+<summary>Ver solución</summary>
+
+**Suma:** 30.
+**Media:** $30/5 = 6$. (Nota: es justo el del medio por ser simétrico).
+**Resultado:** $\boxed{6}$
+
+</details>
+
+### Ejercicio 10
+Si en una empresa el salario medio hombres (10 personas) es \$1000 y mujeres (90 personas) es \$500. ¿Cuál es el promedio global?
+
+<details>
+<summary>Ver solución</summary>
+
+**Ponderado:**
+- Hombres: $10 \times 1000 = 10,000$.
+- Mujeres: $90 \times 500 = 45,000$.
+- Suma Global: 55,000.
+- Total Personas: 100.
+- Media: $55,000 / 100 = 550$.
+**Resultado:** $\boxed{\$550}$
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Concepto | Fórmula | Clave |
+|----------|---------|-------|
+| **Media Simple** | $\bar{x} = \frac{\sum x}{n}$ | Repartición equitativa. |
+| **Media Ponderada** | $\bar{x} = \frac{\sum (x \cdot f)}{n}$ | Usar con tablas de frecuencia. |
+| **Outliers** | N/A | La media es "jalada" fuertemente por valores extremos. |
+
+> **Conclusión:** La media es el centro de gravedad de los datos. Úsala cuando quieras repartir todo por igual, pero ten cuidado si hay "datos gigantes" que rompan el equilibrio.

@@ -1,253 +1,218 @@
-# Deciles
+# **Deciles**
 
-Los cuartiles dividen en 4 partes. ¿Y si quisiéramos una división más fina? Los **deciles** dividen los datos en **10 partes iguales**, dando una imagen más detallada de la distribución.
+Ya aprendiste a dividir un pastel en 4 partes (cuartiles). Ahora imagina que quieres hacer un "Top 10" de los mejores estudiantes, o analizar el 10% más pobre de un país. Necesitas una división más fina. Los **Deciles** son los cortes que dividen tus datos en **10 grupos iguales**, cada uno con el 10% de la información.
 
 ---
 
 ## 🎯 ¿Qué vas a aprender?
 
-- Qué son los deciles y cuántos hay
-- Cómo calcularlos
-- Cómo interpretarlos
-- Relación con cuartiles y percentiles
+- Calcular los nueve deciles ($D_1$ a $D_9$) en datos simples y tablas.
+- Entender la equivalencia entre Deciles, Cuartiles y Percentiles.
+- Interpretar qué significa estar en el "último decil".
+- Identificar su uso en clasificaciones económicas y académicas.
 
 ---
 
-## 📊 Los Nueve Deciles
+## La Decarquía de los Datos
 
-| Decil | Símbolo | Porcentaje debajo |
-|-------|---------|-------------------|
-| Primer decil | $D_1$ | 10% |
-| Segundo decil | $D_2$ | 20% |
-| Tercer decil | $D_3$ | 30% |
-| Cuarto decil | $D_4$ | 40% |
-| Quinto decil | $D_5$ | 50% (= mediana) |
-| Sexto decil | $D_6$ | 60% |
-| Séptimo decil | $D_7$ | 70% |
-| Octavo decil | $D_8$ | 80% |
-| Noveno decil | $D_9$ | 90% |
+Para tener 10 grupos, haces **9 cortes**:
+- **$D_1$:** Deja atrás al 10% de los datos.
+- **$D_5$:** Deja atrás al 50%. (¡Es la Mediana!).
+- **$D_9$:** Deja atrás al 90%. (Solo el 10% "top" lo supera).
 
 ---
 
-## 📖 ¿Qué son los Deciles?
+## Cálculo con Datos Simples
 
-> Los **deciles** son 9 valores que dividen un conjunto de datos ordenados en **10 partes iguales**, cada una con el 10% de los datos.
+Ordena y busca la posición:
+$$ Posición = \frac{k(n+1)}{10} $$
+Donde $k$ va de 1 a 9.
 
-### 💡 Visualización:
+### ⚙️ Ejemplos Resueltos
 
-```
-[10%][10%][10%][10%][10%][10%][10%][10%][10%][10%]
-    ↑    ↑    ↑    ↑    ↑    ↑    ↑    ↑    ↑
-   D1   D2   D3   D4   D5   D6   D7   D8   D9
-```
+#### Ejemplo 1: El Top 10% ($D_9$)
+**Datos:** 2, 4, 6, 8, 10, 12, 14, 16, 18, 20. ($n=10$).
+**Objetivo:** Hallar el corte del 90%.
+**Posición:** $9(11)/10 = 99/10 = 9.9$.
+**Valor:** Entre el dato 9 (18) y el 10 (20).
+**Interpolación:** $18 + 0.9(20-18) = 18 + 1.8 = 19.8$.
+**Interpretación:** Solo el 10% de los datos supera 19.8.
 
----
+#### Ejemplo 2: La Mediana ($D_5$)
+**Posición:** $5(11)/10 = 55/10 = 5.5$.
+**Valor:** Entre dato 5 (10) y 6 (12).
+**Promedio:** 11.
+**Confirmación:** La mediana de 0 a 20 es 11.
 
-## 📖 Cálculo de Deciles
+#### Ejemplo 3: El Fondo 20% ($D_2$)
+**Datos:** 10, 20, 30, 40, 50. ($n=5$).
+**Posición:** $2(6)/10 = 1.2$.
+**Valor:** Entre 10 y 20.
+**Interpolación:** $10 + 0.2(10) = 12$.
 
-### 💡 Fórmula de posición:
+#### Ejemplo 4: Conjunto Pequeño vs Grande
+- En $n=9$, la posición de $D_1$ es $1(10)/10 = 1$ (Exacta).
+- En $n=100$, la posición de $D_1$ es $1(101)/10 = 10.1$ (Aprox dato 10).
 
-$$
-\text{Posición de } D_k = \frac{k(n+1)}{10}
-$$
-
-Donde:
-- $k = 1, 2, ..., 9$
-- $n$ = número de datos
-
-### ⚙️ Ejemplo: 20 datos
-
-Datos ordenados (puntajes de examen):
-35, 42, 48, 52, 55, 58, 62, 65, 68, 70, 72, 75, 78, 80, 82, 85, 88, 90, 93, 98
-
-$n = 20$
-
-**Decil 1 ($D_1$):**
-$$
-\text{Pos} = \frac{1 \times 21}{10} = 2.1
-$$
-Interpolamos entre posición 2 (42) y posición 3 (48):
-$D_1 = 42 + 0.1(48-42) = 42 + 0.6 = 42.6$
-
-**Decil 5 ($D_5$ = mediana):**
-$$
-\text{Pos} = \frac{5 \times 21}{10} = 10.5
-$$
-Entre posición 10 (70) y 11 (72):
-$D_5 = 70 + 0.5(72-70) = 71$
-
-**Decil 9 ($D_9$):**
-$$
-\text{Pos} = \frac{9 \times 21}{10} = 18.9
-$$
-Entre posición 18 (90) y 19 (93):
-$D_9 = 90 + 0.9(93-90) = 90 + 2.7 = 92.7$
+#### Ejemplo 5: Equivalencia
+Si calculas $Q_2$ (Mediana) y $D_5$, te dará exactamente el mismo número.
 
 ---
 
-## 📖 Interpretación de Deciles
+## Cálculo con Datos Agrupados (Frecuencias)
 
-### ⚙️ Ejemplo: Ingresos mensuales
+Usamos la fórmula maestra de posición:
+$$ D_k = L_i + \left( \frac{\frac{kn}{10} - F_{ant}}{f_{D}} \right) \cdot A $$
 
-$D_1 = \$800,000$
-$D_5 = \$1,500,000$
-$D_9 = \$4,200,000$
+### ⚙️ Ejemplos Resueltos
 
-| Decil | Interpretación |
-|-------|----------------|
-| $D_1$ | El 10% más pobre gana menos de $800,000 |
-| $D_5$ | La mitad gana menos de $1,500,000 |
-| $D_9$ | El 90% gana menos de $4,200,000 (solo 10% gana más) |
+#### Ejemplo 1: Ingresos de un País ($n=1,000,000$)
+**Objetivo:** Hallar la línea de pobreza extrema (supongamos $D_1$).
+**Posición:** $1(1M)/10 = 100,000$.
+Buscamos en la tabla acumulada quién contiene a las primeras 100,000 personas.
 
-### 💡 Usos comunes:
+#### Ejemplo 2: Notas de Admisión ($n=500$)
+**Objetivo:** Aceptar solo al 20% superior.
+**Estrategia:** Calcular $D_8$ (deja atrás al 80%).
+**Posición:** $8(500)/10 = 400$.
+El puntaje de corte será el valor del estudiante número 400 en el ranking ascendente.
 
-- **"Estás en el decil 8"** → Superas al 80% de las personas
-- **"Perteneces al primer decil"** → Estás en el 10% más bajo
-- **"El decil 10"** → El 10% superior (los valores más altos)
+#### Ejemplo 3: Análisis de Ventas
+**Dato:** El $D_5$ es 50 unidades vendidas.
+**Interpretación:** En el 50% de los días, vendemos menos de 50 unidades.
 
----
+#### Ejemplo 4: Comparación
+- **Decil 1:** Salario \$500.
+- **Decil 10:** Salario \$50,000.
+**Análisis:** La brecha es enorme (100 veces). Indica desigualdad.
 
-## 📖 Relación con Cuartiles y Percentiles
-
-| Medida | División | Cantidad de valores |
-|--------|----------|---------------------|
-| Cuartiles | 4 partes | 3 (Q1, Q2, Q3) |
-| Deciles | 10 partes | 9 (D1 a D9) |
-| Percentiles | 100 partes | 99 (P1 a P99) |
-
-### 💡 Equivalencias:
-
-| Decil | Equivale a |
-|-------|------------|
-| $D_1$ | Percentil 10 ($P_{10}$) |
-| $D_2$ | Percentil 20 ($P_{20}$) |
-| $D_5$ | Percentil 50 = Mediana = $Q_2$ |
-| $D_{7.5}$ | Percentil 75 = $Q_3$ (conceptualmente) |
-| $D_9$ | Percentil 90 ($P_{90}$) |
-
----
-
-## 📖 Deciles en Datos Agrupados
-
-Para tablas de frecuencias, se usa interpolación similar a la mediana:
-
-$$
-D_k = L_i + \left(\frac{\frac{kn}{10} - F_{anterior}}{f_{D_k}}\right) \times A
-$$
-
-Donde:
-- $L_i$ = límite inferior de la clase del decil
-- $F_{anterior}$ = frecuencia acumulada antes de esa clase
-- $f_{D_k}$ = frecuencia de la clase del decil
-- $A$ = amplitud de clase
-
----
-
-## 💡 Aplicaciones Prácticas
-
-| Campo | Uso de deciles |
-|-------|----------------|
-| **Educación** | "Tu puntaje está en el decil 9" (top 10%) |
-| **Economía** | Distribución del ingreso por deciles |
-| **Salud** | Percentiles de crecimiento infantil |
-| **Recursos humanos** | Evaluaciones de desempeño |
-
-### ⚙️ Ejemplo: Análisis de desigualdad
-
-Los economistas usan los deciles para estudiar la desigualdad:
-
-| Decil | % del ingreso total |
-|-------|---------------------|
-| 1 (más pobre) | 2% |
-| 5 (medio) | 8% |
-| 10 (más rico) | 35% |
-
-Si el decil 10 tiene el 35% del ingreso total, hay alta desigualdad.
-
----
-
-## 🔑 Resumen
-
-| Concepto | Descripción |
-|----------|-------------|
-| **Deciles** | 9 valores que dividen datos en 10 partes iguales |
-| **$D_k$** | El valor debajo del cual está el k×10% de datos |
-| **$D_5$** | = Mediana |
-| **Posición** | $\frac{k(n+1)}{10}$ |
+#### Ejemplo 5: ¿En qué decil estoy?
+Si ganas \$1500 y $D_3 = \$1400$ y $D_4 = \$1600$.
+**Respuesta:** Estás en el 4º decil. (Superas el 30%, pero no llegas al 40%).
 
 ---
 
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1
-En un conjunto de 50 datos, ¿en qué posición está $D_3$?
+Encuentra $D_5$ de: 1, 3, 5, 7, 9.
 
 <details>
 <summary>Ver solución</summary>
 
-$$\text{Posición de } D_3 = \frac{3 \times 51}{10} = \frac{153}{10} = 15.3$$
-
-El tercer decil está en la posición **15.3** (entre los datos 15 y 16).
+**Concepto:** Es la mediana (5).
+**Resultado:** $\boxed{5}$
 
 </details>
 
 ### Ejercicio 2
-Si $D_7 = 85$ en las notas de un examen, ¿qué significa?
+Si $n=49$, ¿cuál es la posición exacta de $D_2$?
 
 <details>
 <summary>Ver solución</summary>
 
-$D_7 = 85$ significa que:
-
-- **El 70%** de los estudiantes sacó **menos de 85**
-- **El 30%** de los estudiantes sacó **85 o más**
-
-Si tu nota es 85, estás en el **30% superior** de la clase.
+**Cálculo:** $2(50)/10 = 10$.
+**Posición:** $\boxed{10}$
 
 </details>
 
 ### Ejercicio 3
-¿Cuál es la relación entre $D_5$ y la mediana?
+Estás en el $Decil \ 9$ de altura. ¿Eres alto o bajo?
 
 <details>
 <summary>Ver solución</summary>
 
-**Son lo mismo.**
-
-$D_5$ = Quinto decil = valor debajo del cual está el 50% de datos = **Mediana**
-
-También es igual a:
-- $Q_2$ (segundo cuartil)
-- $P_{50}$ (percentil 50)
+**Análisis:** Superas al 90%.
+**Resultado:** $\boxed{\text{Muy alto}}$
 
 </details>
 
 ### Ejercicio 4
-Los tiempos (en minutos) de 10 corredores fueron:
-18, 20, 22, 24, 26, 28, 30, 32, 34, 36
-
-Calcula $D_1$, $D_5$ y $D_9$.
+Si $D_1 = 10$ y $D_9 = 100$, ¿qué opinas de la dispersión?
 
 <details>
 <summary>Ver solución</summary>
 
-n = 10
-
-**$D_1$:**
-$\text{Pos} = \frac{1 \times 11}{10} = 1.1$
-$D_1 = 18 + 0.1(20-18) = 18 + 0.2 = 18.2$ min
-
-**$D_5$:**
-$\text{Pos} = \frac{5 \times 11}{10} = 5.5$
-$D_5 = 26 + 0.5(28-26) = 26 + 1 = 27$ min
-
-**$D_9$:**
-$\text{Pos} = \frac{9 \times 11}{10} = 9.9$
-$D_9 = 34 + 0.9(36-34) = 34 + 1.8 = 35.8$ min
-
-**Resultado:**
-- $D_1 = 18.2$ min (el 10% más rápido)
-- $D_5 = 27$ min (mediana)
-- $D_9 = 35.8$ min (el 10% más lento está por encima)
+**Análisis:** El rango entre el 10% y el 90% es amplio (90 puntos).
+**Resultado:** $\boxed{\text{Alta dispersión}}$
 
 </details>
+
+### Ejercicio 5
+Calcula $D_1$ para: 10, 20, 30... hasta 100. ($n=10$).
+
+<details>
+<summary>Ver solución</summary>
+
+**Posición:** $1(11)/10 = 1.1$.
+**Valor:** $10 + 0.1(10) = 11$.
+**Resultado:** $\boxed{11}$
+
+</details>
+
+### Ejercicio 6
+Verdadero o Falso: $D_5$ es igual a la Media Aritmética.
+
+<details>
+<summary>Ver solución</summary>
+
+**Teoría:** Falso. Es la Mediana.
+**Resultado:** $\boxed{\text{Falso}}$
+
+</details>
+
+### Ejercicio 7
+¿Qué decil usarías para definir el "60% de aprobación"?
+
+<details>
+<summary>Ver solución</summary>
+
+**Necesidad:** Cortar el 40% inferior (reprobados) y dejar el 60% superior.
+**Decil:** $D_4$.
+**Resultado:** $\boxed{D_4}$
+
+</details>
+
+### Ejercicio 8
+En una tabla, $F=25$ para la clase A y $n=100$. ¿Qué deciles ya pasaron?
+
+<details>
+<summary>Ver solución</summary>
+25 es el 25% de 100.
+Han pasado $D_1$ (10) y $D_2$ (20). Aún no llegamos a $D_3$ (30).
+**Resultado:** $\boxed{D_1 \text{ y } D_2}$
+</details>
+
+### Ejercicio 9
+Si duplicas todos los datos, ¿qué pasa con $D_1$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Análisis:** Todas las medidas de posición se duplican.
+**Resultado:** $\boxed{\text{Se duplica}}$
+
+</details>
+
+### Ejercicio 10
+Si un país elimina la pobreza y todos ganan lo mismo, ¿cuánto vale $D_1$ comparado con $D_9$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Análisis:** Si todos son iguales, $X_{min} = X_{max}$.
+**Resultado:** $\boxed{\text{Son iguales}}$
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Decil | % Inferior | Equivalente |
+|-------|------------|-------------|
+| **$D_1$** | 10% | Percentil 10. |
+| **$D_5$** | 50% | $Q_2$, Mediana. |
+| **$D_{10}$** | 100% | Máximo (teórico). |
+
+> **Conclusión:** Los deciles son el estándar en economía y grandes estudios. Nos permiten ver los matices que los cuartiles (demasiado gruesos) esconden.

@@ -1,318 +1,223 @@
-# Comparación: Media, Mediana y Moda
+# **Comparación: Media, Mediana y Moda**
 
-Ya conoces las tres medidas de tendencia central. Ahora es momento de juntarlas, compararlas y aprender a elegir la correcta para cada situación.
+Tienes un conjunto de datos y tres herramientas para encontrar su centro. ¿Cuál usas? Usar la herramienta equivocada no es solo un error matemático, es una mentira estadística. Decir "el sueldo promedio es alto" cuando la mayoría gana poco (porque un millonario infló la media) es técnicamente cierto pero éticamente falso. Aquí aprenderás a elegir la medida correcta.
 
 ---
 
 ## 🎯 ¿Qué vas a aprender?
 
-- Cómo se relacionan las tres medidas
-- Qué indica cuando coinciden o difieren
-- Cómo elegir la mejor medida para cada caso
-- Interpretar el sesgo usando la relación entre ellas
+- Relacionar la forma del gráfico (simetría) con la posición de las tres medidas.
+- Identificar cuándo la Media miente por culpa de los valores extremos.
+- Elegir la medida adecuada según el tipo de variable (Cualitativa vs Cuantitativa).
+- Interpretar el sesgo (hacia dónde se "derrite" la montaña de datos).
 
 ---
 
-## 📊 Resumen Comparativo
+## Simetría vs. Sesgo
 
-| Característica | Media | Mediana | Moda |
-|----------------|-------|---------|------|
-| Cálculo | Suma / n | Valor central | Más frecuente |
-| Usa todos los valores | ✅ Sí | ❌ No | ❌ No |
-| Sensible a extremos | ✅ Muy | ❌ No | ❌ No |
-| Datos cualitativos | ❌ No | ❌ No | ✅ Sí |
-| Siempre existe | ✅ Sí | ✅ Sí | ❌ No siempre |
-| Valor único | ✅ Sí | ✅ Sí* | ❌ Puede haber varias |
+Imagina los datos como una montaña.
+1.  **Simétrica:** Una montaña perfecta. Las tres medidas coinciden en la cima.
+2.  **Sesgada a la Derecha (Positiva):** La montaña tiene una cola larga a la derecha (valores altos escasos). La media persigue a la cola.
+3.  **Sesgada a la Izquierda (Negativa):** La montaña tiene una cola larga a la izquierda (valores bajos escasos). La media persigue a la cola.
 
-*En datos pares, la mediana puede ser un promedio de dos valores.
+### ⚙️ Ejemplos Resueltos: Identificando la Forma
 
----
+#### Ejemplo 1: Simetría Perfecta
+**Datos:** 2, 4, 6, 8, 10.
+- Media: 6. Mediana: 6. Moda: N/A (o centro 6 si repites).
+**Conclusión:** Todo coincide. Es una campana perfecta.
 
-## 📖 Cuando las Tres Coinciden: Distribución Simétrica
+#### Ejemplo 2: Sesgo Derecha (Ingresos)
+**Datos:** 1, 1, 2, 10.
+- Moda: 1.
+- Mediana: 1.5.
+- Media: 3.5.
+**Orden:** $Mo < Me < \bar{x}$.
+**Análisis:** La media (3.5) es la mayor porque el 10 la jaló.
 
-En una distribución **perfectamente simétrica**:
+#### Ejemplo 3: Sesgo Izquierda (Examen Fácil)
+**Datos:** 2, 8, 9, 10.
+- Moda: N/A.
+- Mediana: 8.5.
+- Media: 7.25.
+**Orden:** $\bar{x} < Me$.
+**Análisis:** La media (7.25) es la menor porque el 2 la jaló hacia abajo.
 
-$$
-\text{Media} = \text{Mediana} = \text{Moda}
-$$
+#### Ejemplo 4: Salarios de Empresa
+**Situación:** Moda = \$1M, Mediana = \$1.2M, Media = \$5M.
+**Forma:** Sesgada a la derecha brutalmente.
+**Interpretación:** La mayoría gana poco (Moda), pero hay jefes que ganan muchísimo (inflando la Media).
 
-### 💡 Visualización:
-
-```
-        Moda
-          ▼
-      ▄▄█▄▄
-    ▄██████▄
-  ▄██████████▄
-▄██████████████▄
-        ▲
-    Media = Mediana
-```
-
-### ⚙️ Ejemplo: Datos simétricos
-
-Datos: 2, 4, 6, 6, 6, 8, 10
-
-- **Media:** $\frac{2+4+6+6+6+8+10}{7} = \frac{42}{7} = 6$
-- **Mediana:** Valor en posición 4 → **6**
-- **Moda:** El 6 aparece 3 veces → **6**
-
-Las tres son iguales porque los datos son simétricos alrededor del 6.
+#### Ejemplo 5: Edad de Jubilación
+**Situación:** La mayoría se jubila a los 65. Pocos se jubilan jóvenes (40, 50).
+**Forma:** Sesgada a la izquierda.
+**Orden:** La media será menor que la moda (65).
 
 ---
 
-## 📖 Cuando Difieren: Distribución Sesgada
+## Sensibilidad y Robustez
 
-### 📐 Sesgo a la Derecha (Positivo)
+¿Qué tan frágil es el dato ante un error o un extremo?
 
-```
-█▄
-██▄
-████▄
-██████▄▄▄▄▄
-```
+### ⚙️ Ejemplos Resueltos
 
-**Orden:** Moda < Mediana < Media
+#### Ejemplo 1: El Error de Dedo
+**Datos:** 10, 11, 12.
+- Media: 11. Mediana: 11.
+**Cambio:** Escribes 120 en vez de 12. (10, 11, 120).
+- Media: 47 (¡Explotó!). Mediana: 11 (Intacta).
+**Ganador:** Mediana (Robusta).
 
-La "cola" hacia la derecha jala la media hacia arriba.
+#### Ejemplo 2: Datos Cualitativos
+**Datos:** Rojo, Rojo, Azul.
+- Media: ¿Rojo + Azul / 3? Imposible.
+- Mediana: No se puede ordenar colores.
+- Moda: Rojo.
+**Ganador:** Moda (Única opción).
 
-### ⚙️ Ejemplo: Ingresos
+#### Ejemplo 3: Datos de Inventario
+**Situación:** Vendes tallas S, M, L.
+- Media: Talla "M y medio". Inútil para pedir stock.
+- Moda: La talla que más se vendió.
+**Ganador:** Moda.
 
-Datos (en millones): 1, 1, 1, 2, 2, 3, 3, 4, 15
+#### Ejemplo 4: Récords Olímpicos
+**Datos:** Tiempos muy precisos y cercanos.
+- Media: Responde bien a pequeñas variaciones.
+- Mediana: Puede ignorar mejoras de milisegundos si no cambian el orden.
+**Ganador:** Media (Más sensible y precisa para datos compactos).
 
-- **Moda:** 1 (aparece 3 veces)
-- **Mediana:** 2 (valor en posición 5)
-- **Media:** $\frac{32}{9} = 3.56$
-
-**Orden:** 1 < 2 < 3.56 ✓ (sesgo a la derecha)
-
-### 📐 Sesgo a la Izquierda (Negativo)
-
-```
-         ▄█
-        ▄██
-       ▄████
-▄▄▄▄▄▄██████
-```
-
-**Orden:** Media < Mediana < Moda
-
-La "cola" hacia la izquierda jala la media hacia abajo.
-
-### ⚙️ Ejemplo: Notas de un examen fácil
-
-Datos: 3, 7, 8, 8, 9, 9, 9, 10, 10
-
-- **Media:** $\frac{73}{9} = 8.11$
-- **Mediana:** 9 (valor en posición 5)
-- **Moda:** 9 (aparece 3 veces)
-
-**Orden:** 8.11 < 9 = 9 ✓ (sesgo a la izquierda)
-
----
-
-## 💡 Guía Rápida: ¿Cuál Usar?
-
-| Situación | Mejor opción | Razón |
-|-----------|--------------|-------|
-| Datos simétricos, sin extremos | **Media** | Usa toda la información |
-| Hay valores extremos (outliers) | **Mediana** | Resistente a extremos |
-| Distribución muy sesgada | **Mediana** | Más representativa |
-| Datos cualitativos | **Moda** | Única opción |
-| Buscar lo más común | **Moda** | Define lo "típico" |
-| Decisiones de inventario | **Moda** | ¿Qué producir más? |
-| Planificación financiera | **Mediana** | Ingresos son sesgados |
-
----
-
-## ⚙️ Ejemplos de Decisión
-
-### Caso 1: Tiempo de espera en un banco
-
-Tiempos (min): 2, 3, 3, 4, 5, 5, 6, 7, 8, 45
-
-- Media: 8.8 minutos (distorsionada por 45)
-- Mediana: 5 minutos (mejor representativa)
-- Moda: 3 y 5 minutos
-
-**Mejor:** Mediana. El tiempo "típico" es 5 minutos, no 8.8.
-
-### Caso 2: Tallas de uniformes
-
-Tallas pedidas: S, M, M, M, L, L, L, L, XL
-
-- Media: No aplica (dato cualitativo)
-- Mediana: L (valor central)
-- Moda: L (la más frecuente)
-
-**Mejor:** Moda. Para producción, importa cuál es más demandada.
-
-### Caso 3: Temperaturas del mes
-
-Temperaturas similares entre 18°C y 25°C, sin extremos.
-
-**Mejor:** Media. Datos numéricos, simétricos, sin outliers.
-
----
-
-## 📖 El Coeficiente de Asimetría (Sesgo)
-
-Una forma de medir el sesgo numéricamente:
-
-### 💡 Coeficiente de Pearson (simplificado):
-
-$$
-As = \frac{3(\bar{x} - Me)}{\sigma}
-$$
-
-Donde:
-- $\bar{x}$ = media
-- $Me$ = mediana
-- $\sigma$ = desviación estándar
-
-### 💡 Interpretación:
-
-| Valor de As | Interpretación |
-|-------------|----------------|
-| As ≈ 0 | Distribución simétrica |
-| As > 0 | Sesgo a la derecha (positivo) |
-| As < 0 | Sesgo a la izquierda (negativo) |
-
----
-
-## 📖 Resumen Visual
-
-```
-SIMÉTRICA:          SESGO DERECHA:      SESGO IZQUIERDA:
-   ▲                 ▲                           ▲
-Moda=Me=x̄          Mo < Me < x̄            x̄ < Me < Mo
-   │                 │     └→              ←┘     │
-   ▼                 ▼                           ▼
-```
-
----
-
-## 🔑 Resumen
-
-| Concepto | Resumen |
-|----------|---------|
-| **Distribución simétrica** | Media = Mediana = Moda |
-| **Sesgo a la derecha** | Moda < Mediana < Media |
-| **Sesgo a la izquierda** | Media < Mediana < Moda |
-| **Mejor para datos normales** | Media |
-| **Mejor para datos sesgados** | Mediana |
-| **Mejor para cualitativos** | Moda |
+#### Ejemplo 5: Precios de Vivienda
+**Datos:** Casas de barrio popular y una mansión.
+- Media: Indica que el barrio es de ricos.
+- Mediana: Indica el precio real de la casa típica.
+**Ganador:** Mediana.
 
 ---
 
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1
-Para cada conjunto de datos, calcula media, mediana y moda, y determina el tipo de sesgo:
-
-a) 5, 6, 6, 7, 7, 7, 8, 8, 9
-b) 10, 10, 10, 11, 12, 15, 20, 25, 50
+En una distribución donde $\bar{x} = 100$, $Me = 50$, $Mo = 20$, ¿hacia dónde es el sesgo?
 
 <details>
 <summary>Ver solución</summary>
 
-**a) Datos: 5, 6, 6, 7, 7, 7, 8, 8, 9**
-
-- **Media:** $\frac{63}{9} = 7$
-- **Mediana:** Posición 5 → **7**
-- **Moda:** 7 (aparece 3 veces)
-
-**Resultado:** Media = Mediana = Moda = 7
-**Sesgo:** Distribución **simétrica**
-
----
-
-**b) Datos: 10, 10, 10, 11, 12, 15, 20, 25, 50**
-
-- **Media:** $\frac{163}{9} = 18.1$
-- **Mediana:** Posición 5 → **12**
-- **Moda:** 10 (aparece 3 veces)
-
-**Resultado:** Moda (10) < Mediana (12) < Media (18.1)
-**Sesgo:** **Positivo** (a la derecha) - el 50 jala la media
+**Análisis:** La media es mucho mayor que la mediana y moda. La cola va hacia la derecha.
+**Resultado:** $\boxed{\text{Sesgo Positivo (Derecha)}}$
 
 </details>
 
 ### Ejercicio 2
-Un profesor tiene las siguientes notas: 2, 3, 7, 7, 8, 8, 8, 9, 9
-
-a) ¿Qué medida debería usar para reportar el rendimiento "típico"?
-b) ¿Por qué?
+Si quieres impresionar inversores diciendo que tu empresa paga "muy bien", pero en realidad pagas mal a la mayoría y mucho a ti mismo, ¿qué medida publicas?
 
 <details>
 <summary>Ver solución</summary>
 
-**Cálculos:**
-- Media: $\frac{61}{9} = 6.78$
-- Mediana: 8 (posición 5)
-- Moda: 8 (aparece 3 veces)
-
-**a) Debería usar la MEDIANA (o la moda)**
-
-**b) Razón:**
-- Las notas 2 y 3 son valores extremos bajos
-- Estos valores "jalan" la media hacia abajo (6.78)
-- Pero 7 de 9 estudiantes sacaron 7 o más
-- La mediana (8) representa mejor al grupo "típico"
-- La media (6.78) sugiere un rendimiento peor del real
+**Estrategia:** La media se inflará con tu sueldo alto. La mediana revelaría la verdad baja.
+**Resultado:** $\boxed{\text{La Media}}$
 
 </details>
 
 ### Ejercicio 3
-En cada situación, ¿qué medida de tendencia central usaría un experto?
-
-a) Un economista reportando el ingreso típico de un país
-b) Un fabricante decidiendo qué talla de camiseta producir más
-c) Un meteorólogo calculando la temperatura media mensual
-d) Un hospital analizando tiempos de espera en emergencias
+Para decidir qué sabor de helado comprar más para una fiesta, ¿usas la media, mediana o moda?
 
 <details>
 <summary>Ver solución</summary>
 
-a) **Mediana** - Los ingresos tienen distribución sesgada (pocos ganan mucho). La mediana es el estándar internacional.
-
-b) **Moda** - Necesita saber cuál es la más demandada, no un promedio de tallas.
-
-c) **Media** - Las temperaturas son datos numéricos continuos, generalmente sin extremos absurdos en un mes típico.
-
-d) **Mediana** - Los tiempos de espera suelen tener distribución sesgada (algunos casos muy largos). La mediana representa mejor el tiempo "típico".
+**Variable:** Sabores (Cualitativa).
+**Resultado:** $\boxed{\text{La Moda}}$
 
 </details>
 
 ### Ejercicio 4
-Si en un conjunto de datos: Media = 50, Mediana = 55, Moda = 60
-
-a) ¿Cuál es el tipo de sesgo?
-b) ¿Hacia qué lado está la "cola" larga?
-c) Dibuja un histograma aproximado
+En una distribución perfectamente simétrica, si la media es 50, ¿cuánto vale la mediana?
 
 <details>
 <summary>Ver solución</summary>
 
-a) **Sesgo NEGATIVO (a la izquierda)**
-Media (50) < Mediana (55) < Moda (60)
-
-b) La **cola larga está hacia la IZQUIERDA** (valores bajos)
-
-c) **Histograma aproximado:**
-
-```
-         ▄█   ← Moda (60)
-        ▄██
-       ▄███   ← Mediana (55)
-      ▄████
-     ▄█████
-▄▄▄▄██████    ← Media (50) jalada por cola izquierda
-     ↑
-Cola larga
-hacia valores bajos
-```
-
-**Interpretación:** La mayoría de los datos están en valores altos (cerca de 60), pero hay algunos valores muy bajos que jalan la media hacia abajo.
+**Propiedad:** En simetría, coinciden.
+**Resultado:** $\boxed{50}$
 
 </details>
+
+### Ejercicio 5
+¿Qué medida es más afectada si el dato más grande se duplica?
+
+<details>
+<summary>Ver solución</summary>
+
+**Análisis:** La mediana solo mira posición. La media suma el valor.
+**Resultado:** $\boxed{\text{La Media}}$
+
+</details>
+
+### Ejercicio 6
+Tienes datos: 1, 2, 3, 100.
+Media = 26.5. Mediana = 2.5.
+¿Cuál describe mejor al "grupo típico"?
+
+<details>
+<summary>Ver solución</summary>
+
+**Análisis:** 3 de los 4 datos están entre 1 y 3. El 2.5 está cerca. El 26.5 está lejísimos.
+**Resultado:** $\boxed{\text{La Mediana}}$
+
+</details>
+
+### Ejercicio 7
+Verdadero o Falso: En una distribución sesgada a la izquierda, la media es menor que la moda.
+
+<details>
+<summary>Ver solución</summary>
+
+**Visualización:** Cola izquierda = valores bajos jalan la media abajo.
+**Resultado:** $\boxed{\text{Verdadero}}$
+
+</details>
+
+### Ejercicio 8
+Si tus datos son "Rango Militar" (Soldado, Cabo, Sargento, General), ¿puedes calcular la mediana?
+
+<details>
+<summary>Ver solución</summary>
+
+**Variable:** Cualitativa Ordinal (tienen orden). Sí se puede hallar el rango central.
+**Resultado:** $\boxed{\text{Sí}}$
+
+</details>
+
+### Ejercicio 9
+Un conjunto de datos tiene dos picos de frecuencia. ¿Cómo se llama y qué medida lo destaca?
+
+<details>
+<summary>Ver solución</summary>
+
+**Nombre:** Bimodal.
+**Medida:** La Moda (te dará los dos valores). La media te daría un punto en el medio del valle, donde no hay nadie.
+**Resultado:** $\boxed{\text{Bimodal - Moda}}$
+
+</details>
+
+### Ejercicio 10
+¿Cuál es la única medida que puede no existir?
+
+<details>
+<summary>Ver solución</summary>
+
+**Análisis:** Siempre puedes sumar (media) u ordenar (mediana). Pero si no hay repeticiones...
+**Resultado:** $\boxed{\text{La Moda}}$
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Característica | Media ($\bar{x}$) | Mediana ($Me$) | Moda ($Mo$) |
+|----------------|-------------------|----------------|-------------|
+| **Lo mejor** | Precisión matemática. | Honestidad (Robustez). | Popularidad. |
+| **Lo peor** | Sensible a extremos. | Ignora magnitudes. | Puede no existir. |
+| **Cuándo usar** | Datos normales/simétricos. | Ingresos, precios, sesgos. | Tallas, votos, colores. |
+
+> **Conclusión:** Si los datos son democráticos (sin extremos locos), usa la Media. Si hay dictadores (outliers), usa la Mediana. Si es un concurso de belleza (cualitativo), usa la Moda.

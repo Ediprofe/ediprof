@@ -1,276 +1,260 @@
-# Principio de Multiplicación y Adición
+# **Principios de Multiplicación y Adición**
 
-Antes de calcular probabilidades, necesitamos saber **contar**: ¿cuántos resultados posibles hay? Las **técnicas de conteo** nos dan herramientas sistemáticas para responder esta pregunta sin tener que listar todo.
+Si tienes 3 camisas y 2 pantalones, ¿cuántos "outfits" diferentes puedes armar? No necesitas ponerte la ropa para saberlo. Las **técnicas de conteo** son atajos matemáticos para contar posibilidades en situaciones gigantescas sin tener que hacer listas interminables. Todo se basa en dos palabras clave: **"Y"** vs **"O"**.
 
 ---
 
 ## 🎯 ¿Qué vas a aprender?
 
-- El principio fundamental de conteo (multiplicación)
-- El principio de adición
-- Cuándo usar cada uno
-- Aplicaciones prácticas
+- Distinguir cuándo multiplicar opciones y cuándo sumarlas.
+- Aplicar el Principio Multiplicativo en eventos secuenciales (esto **Y** aquello).
+- Aplicar el Principio Aditivo en eventos excluyentes (esto **O** aquello).
+- Resolver problemas mixtos combinando ambos principios.
 
 ---
 
-## 📊 Resumen de Principios
+## El Principio Multiplicativo ("Y")
 
-| Principio | Cuándo usarlo | Fórmula |
-|-----------|---------------|---------|
-| **Multiplicación** | Etapas **consecutivas** (Y) | $n_1 \times n_2 \times ... \times n_k$ |
-| **Adición** | Opciones **excluyentes** (O) | $n_1 + n_2 + ... + n_k$ |
+Si debes tomar una decisión A **Y** luego, obligatoriamente, tomar una decisión B.
+$$ \text{Total} = (\text{Opciones A}) \times (\text{Opciones B}) $$
 
----
+La clave es que los eventos ocurren **uno después del otro** (o simultáneamente) para formar un resultado completo.
 
-## 📖 Principio de Multiplicación
+### ⚙️ Ejemplos Resueltos
 
-> Si una tarea se puede realizar en **k etapas**, donde la etapa 1 tiene $n_1$ opciones, la etapa 2 tiene $n_2$ opciones, y así sucesivamente, entonces el **total de maneras** de completar la tarea es:
+#### Ejemplo 1: El Outfit Básico
+**Situación:** Tienes 3 camisas **Y** 2 pantalones. Debes elegir uno de cada.
+**Cálculo:** $3 \times 2 = \boxed{6}$ combinaciones posibles.
 
-$$
-\text{Total} = n_1 \times n_2 \times n_3 \times ... \times n_k
-$$
+#### Ejemplo 2: El Menú Ejecutivo
+**Situación:** 2 entradas, 4 platos fuertes, 3 bebidas.
+**Cálculo:** $2 \times 4 \times 3 = \boxed{24}$ almuerzos diferentes.
 
-### 💡 Palabra clave: "Y"
+#### Ejemplo 3: Placas de Carro
+**Situación:** 3 letras (26 opciones) **Y** 3 dígitos (10 opciones).
+**Cálculo:** $26 \times 26 \times 26 \times 10 \times 10 \times 10 = 17,576 \times 1,000 = \boxed{17,576,000}$.
 
-El principio de multiplicación aplica cuando las etapas ocurren **consecutivamente** (primero esto Y luego aquello).
+#### Ejemplo 4: Código de Candado
+**Situación:** 3 rodillos, cada uno con dígitos 0-9.
+**Cálculo:** $10 \times 10 \times 10 = \boxed{1,000}$ combinaciones.
 
-### ⚙️ Ejemplo 1: Vestirse
-
-Tienes:
-- 4 camisas
-- 3 pantalones
-- 2 pares de zapatos
-
-¿De cuántas maneras diferentes puedes vestirte?
-
-**Etapa 1:** Elegir camisa → 4 opciones
-**Etapa 2:** Elegir pantalón → 3 opciones
-**Etapa 3:** Elegir zapatos → 2 opciones
-
-$$
-\text{Total} = 4 \times 3 \times 2 = 24 \text{ combinaciones}
-$$
-
-### ⚙️ Ejemplo 2: Placas de vehículos
-
-Una placa tiene formato: 3 letras seguidas de 3 dígitos (ABC-123).
-
-- Letras: 26 opciones para cada una
-- Dígitos: 10 opciones para cada uno (0-9)
-
-$$
-\text{Total} = 26 \times 26 \times 26 \times 10 \times 10 \times 10 = 26^3 \times 10^3
-$$
-$$
-= 17,576 \times 1,000 = 17,576,000 \text{ placas posibles}
-$$
-
-### ⚙️ Ejemplo 3: Contraseñas
-
-Una contraseña tiene 4 caracteres:
-- Posición 1: debe ser letra mayúscula (26 opciones)
-- Posiciones 2-3: cualquier letra o dígito (36 opciones cada una)
-- Posición 4: debe ser dígito (10 opciones)
-
-$$
-\text{Total} = 26 \times 36 \times 36 \times 10 = 336,960 \text{ contraseñas}
-$$
+#### Ejemplo 5: Ruta de Viaje
+**Situación:** De ciudad A a B hay 2 caminos. De B a C hay 5 caminos. ¿Rutas de A a C?
+**Cálculo:** $2 \times 5 = \boxed{10}$ rutas.
 
 ---
 
-## 📖 Principio de Adición
+## El Principio Aditivo ("O")
 
-> Si una tarea se puede realizar de **manera A** (con $n_A$ opciones) **O** de **manera B** (con $n_B$ opciones), y las maneras son **mutuamente excluyentes**, entonces:
+Si debes tomar una decisión A **O** una decisión B, pero **no puedes hacer ambas al tiempo**.
+$$ \text{Total} = (\text{Opciones A}) + (\text{Opciones B}) $$
 
-$$
-\text{Total} = n_A + n_B
-$$
+La clave es que los eventos son **alternativas excluyentes**. Si elijo uno, descarto el otro.
 
-### 💡 Palabra clave: "O"
+### ⚙️ Ejemplos Resueltos
 
-El principio de adición aplica cuando hay opciones **alternativas** que se excluyen mutuamente (esto O aquello, pero no ambos).
+#### Ejemplo 1: Viaje a la Costa
+**Situación:** Puedes ir en Bus (3 empresas) **O** en Avión (2 aerolíneas). No puedes ir en ambos.
+**Cálculo:** $3 + 2 = \boxed{5}$ formas de viajar.
 
-### ⚙️ Ejemplo 1: Transporte al trabajo
+#### Ejemplo 2: Elegir un Libro
+**Situación:** En la repisa hay 4 novelas **y** 3 biografías. Quieres leer **un** libro.
+**Cálculo:** $4 + 3 = \boxed{7}$ opciones totales.
+*(Nota la trampa lingüística: aunque la repisa tenga novelas "y" biografías, tu elección es una "u" otra).*
 
-Puedes ir al trabajo:
-- En metro: 3 rutas posibles
-- En bus: 5 rutas posibles
-- En bicicleta: 2 rutas posibles
+#### Ejemplo 3: El Postre
+**Situación:** Puedes pedir helado (5 sabores) **O** pastel (3 tipos).
+**Cálculo:** $5 + 3 = \boxed{8}$ opciones de postre.
 
-¿De cuántas maneras puedes llegar?
+#### Ejemplo 4: Regalo Universitario
+**Situación:** Tu papá te ofrece pagarte un curso de inglés (2 academias) **O** un viaje (4 destinos).
+**Cálculo:** $2 + 4 = \boxed{6}$ opciones de regalo.
 
-$$
-\text{Total} = 3 + 5 + 2 = 10 \text{ maneras}
-$$
-
-### ⚙️ Ejemplo 2: Elegir representante
-
-De un grupo de 12 hombres y 8 mujeres, ¿de cuántas formas puedes elegir UN representante?
-
-$$
-\text{Total} = 12 + 8 = 20 \text{ formas}
-$$
+#### Ejemplo 5: Clave de Acceso
+**Situación:** La clave puede ser un número de 1 dígito (0-9) **O** una vocal (a,e,i,o,u).
+**Cálculo:** $10 + 5 = \boxed{15}$ claves posibles.
 
 ---
 
-## 📖 Combinando Ambos Principios
+## ⚙️ Problemas Mixtos (Multiplicación + Adición)
 
-Muchos problemas requieren usar **ambos principios**.
+La vida real mezcla ambos. Detecta los "Y" (bloques) y los conecta con "O".
 
-### ⚙️ Ejemplo: Menú de restaurante
+#### Ejemplo 1: Outfit Variable
+**Situación:**
+- Para el frío: 2 chaquetas **Y** 2 bufandas.
+- Para el calor: 3 camisetas **sin** nada más.
+**Análisis:** (Chaqueta $\times$ Bufanda) $+$ (Camiseta).
+**Cálculo:** $(2 \times 2) + 3 = 4 + 3 = \boxed{7}$ outfits.
 
-Un restaurante ofrece:
-- **Entrada:** Ensalada (2 tipos) O sopa (3 tipos)
-- **Plato fuerte:** 4 opciones
-- **Postre:** 3 opciones
+#### Ejemplo 2: Ruta Compleja
+**Situación:**
+- Ruta Norte: Pasas por 2 pueblos (Pueblo A tiene 3 hoteles, Pueblo B tiene 2).
+- Ruta Sur: Directa (1 hotel).
+**Pregunta:** ¿Cuántas opciones de hospedaje hay en total?
+**Cálculo:** $(3 + 2) + 1 = \boxed{6}$ hoteles en el mapa.
+*(Aquí sumamos todo porque "hospedarse en A" excluye "hospedarse en B").*
 
-¿Cuántos menús diferentes hay?
+#### Ejemplo 3: Contraseña Alfanumérica
+**Situación:** La clave debe empezar con una Vocal, y luego puede seguir un Dígito **O** una Letra cualquiera. (Largo total = 2 caracteres).
+**Análisis:**
+- Caso A: Vocal + Dígito ($5 \times 10 = 50$).
+- Caso B: Vocal + Letra ($5 \times 26 = 130$).
+**Total:** $50 + 130 = \boxed{180}$.
 
-**Paso 1:** Opciones de entrada (Adición porque es O)
-$2 + 3 = 5$ opciones
+#### Ejemplo 4: Comprar Carro
+**Situación:**
+- Modelo Deportivo: 2 colores, manual o automático (2 transmisiones).
+- Modelo Familiar: 3 colores, solo automático (1 transmisión).
+**Total:** $(2 \times 2) + (3 \times 1) = 4 + 3 = \boxed{7}$ opciones.
 
-**Paso 2:** Menú completo (Multiplicación porque es Y)
-$5 \times 4 \times 3 = 60$ menús diferentes
-
-### ⚙️ Ejemplo: Comités
-
-De 5 profesores y 8 estudiantes, ¿de cuántas formas puedes elegir un comité de 2 personas que incluya 1 profesor Y 1 estudiante?
-
-**Paso 1:** Elegir profesor → 5 opciones
-**Paso 2:** Elegir estudiante → 8 opciones
-
-$$
-\text{Total} = 5 \times 8 = 40 \text{ comités posibles}
-$$
-
----
-
-## 📖 El Problema de las Restricciones
-
-### ⚙️ Ejemplo: Números de 3 dígitos sin repetición
-
-¿Cuántos números de 3 dígitos se pueden formar con los dígitos 1, 2, 3, 4, 5 sin repetir?
-
-**Posición 1 (centenas):** 5 opciones (cualquiera)
-**Posición 2 (decenas):** 4 opciones (ya usamos uno)
-**Posición 3 (unidades):** 3 opciones (ya usamos dos)
-
-$$
-\text{Total} = 5 \times 4 \times 3 = 60 \text{ números}
-$$
-
-### ⚙️ Ejemplo: Números pares de 3 dígitos sin repetición
-
-Con los mismos dígitos 1, 2, 3, 4, 5, ¿cuántos son **pares**?
-
-Un número es par si termina en dígito par: 2 o 4.
-
-**Estrategia:** Empezar por la restricción más fuerte.
-
-**Paso 1:** Posición 3 (unidades, debe ser par) → 2 opciones (2 o 4)
-**Paso 2:** Posición 1 (centenas) → 4 opciones (los 5 menos el usado)
-**Paso 3:** Posición 2 (decenas) → 3 opciones (los 5 menos los 2 usados)
-
-$$
-\text{Total} = 2 \times 4 \times 3 = 24 \text{ números pares}
-$$
-
----
-
-## 💡 ¿Multiplicación o Adición?
-
-| Pregunta mental | Principio |
-|-----------------|-----------|
-| "¿Las elecciones son consecutivas?" | **Multiplicación** |
-| "¿Las opciones son alternativas excluyentes?" | **Adición** |
-| "La palabra clave es Y" | **Multiplicación** |
-| "La palabra clave es O" | **Adición** |
-
----
-
-## 🔑 Resumen
-
-| Principio | Cuándo usarlo | Operación |
-|-----------|---------------|-----------|
-| **Multiplicación** | Etapas consecutivas (Y) | Multiplicar opciones |
-| **Adición** | Alternativas excluyentes (O) | Sumar opciones |
+#### Ejemplo 5: Entrada al Cine
+**Situación:** Entras por la Puerta A (2 torniquetes) **O** por la Puerta B (3 torniquetes). Luego, eliges sala (4 salas).
+**Análisis:** Entrar ($2+3$) **Y** elegir sala ($4$).
+**Cálculo:** $(2+3) \times 4 = 5 \times 4 = \boxed{20}$ trayectorias.
 
 ---
 
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1
-Una pizzería ofrece:
-- 3 tamaños
-- 8 tipos de masa
-- 15 ingredientes principales
-
-¿Cuántas pizzas diferentes puedes pedir?
+Lanzas una moneda **y** un dado. ¿Cuántos resultados posibles hay?
 
 <details>
 <summary>Ver solución</summary>
 
-Cada elección es consecutiva (tamaño Y masa Y ingrediente):
-
-$$\text{Total} = 3 \times 8 \times 15 = 360 \text{ pizzas}$$
+**Principio:** Multiplicación (Y).
+**Cálculo:** $2 \text{ (moneda)} \times 6 \text{ (dado)} = 12$.
+**Resultado:** $\boxed{12}$
 
 </details>
 
 ### Ejercicio 2
-¿Cuántos números de 4 dígitos hay (desde 1000 hasta 9999)?
+Quieres adoptar una mascota. En el refugio hay 10 perros **y** 15 gatos. Solo puedes llevarte uno.
 
 <details>
 <summary>Ver solución</summary>
 
-- **Posición 1 (miles):** 9 opciones (1-9, no puede ser 0)
-- **Posición 2 (centenas):** 10 opciones (0-9)
-- **Posición 3 (decenas):** 10 opciones (0-9)
-- **Posición 4 (unidades):** 10 opciones (0-9)
-
-$$\text{Total} = 9 \times 10 \times 10 \times 10 = 9,000$$
-
-**Verificación:** 9999 - 1000 + 1 = 9,000 ✓
+**Principio:** Adición (O).
+**Cálculo:** $10 + 15 = 25$.
+**Resultado:** $\boxed{25}$
 
 </details>
 
 ### Ejercicio 3
-¿De cuántas formas puedes formar una comisión de 3 personas de un grupo de 10, si el orden importa (presidente, vicepresidente, secretario)?
+Código de 2 dígitos. El primero no puede ser 0.
 
 <details>
 <summary>Ver solución</summary>
 
-- Presidente: 10 opciones
-- Vicepresidente: 9 opciones (ya elegimos presidente)
-- Secretario: 8 opciones (ya elegimos 2)
-
-$$\text{Total} = 10 \times 9 \times 8 = 720$$
+**Principio:** Multiplicación con restricción.
+- 1º Dígito: 1-9 (9 opciones).
+- 2º Dígito: 0-9 (10 opciones).
+**Cálculo:** $9 \times 10 = 90$.
+**Resultado:** $\boxed{90}$
 
 </details>
 
 ### Ejercicio 4
-De 6 libros de ficción y 4 de no ficción, ¿de cuántas formas puedes elegir 1 libro para leer?
+Vas a comprar una computadora.
+- Marca A: 3 modelos.
+- Marca B: 2 modelos.
+Adicionalmente, debes elegir si comprar seguro extendido o no (2 opciones).
 
 <details>
 <summary>Ver solución</summary>
 
-Puedes elegir un libro de ficción O uno de no ficción:
-
-$$\text{Total} = 6 + 4 = 10$$
+**Análisis:** (Elegir PC) **Y** (Elegir Seguro).
+- PC: Marca A **O** Marca B $\to 3+2=5$.
+- Seguro: 2.
+**Cálculo:** $5 \times 2 = 10$.
+**Resultado:** $\boxed{10}$
 
 </details>
 
 ### Ejercicio 5
-Con los dígitos 1, 2, 3, 4, 5, 6, ¿cuántos números de 3 dígitos mayores a 400 se pueden formar sin repetir dígitos?
+¿Cuántos números pares de 3 cifras existen? (Considera 0-9, primer dígito $\neq 0$).
 
 <details>
 <summary>Ver solución</summary>
 
-**Restricción:** El primer dígito debe ser 4, 5, o 6 (para ser > 400).
-
-**Paso 1:** Posición 1 (centenas) → 3 opciones (4, 5, 6)
-**Paso 2:** Posición 2 → 5 opciones (los 6 menos el usado)
-**Paso 3:** Posición 3 → 4 opciones (los 6 menos los 2 usados)
-
-$$\text{Total} = 3 \times 5 \times 4 = 60$$
+- 1ª Cifra: 1-9 (9 opciones).
+- 2ª Cifra: 0-9 (10 opciones).
+- 3ª Cifra: 0, 2, 4, 6, 8 (5 opciones).
+**Cálculo:** $9 \times 10 \times 5 = 450$.
+**Resultado:** $\boxed{450}$
 
 </details>
+
+### Ejercicio 6
+Tienes 3 camisas rojas y 2 azules. ¿De cuántas formas puedes elegir una camisa roja **o** una azul?
+
+<details>
+<summary>Ver solución</summary>
+
+**Principio:** Adición.
+**Cálculo:** $3 + 2 = 5$.
+**Resultado:** $\boxed{5}$
+
+</details>
+
+### Ejercicio 7
+Un test tiene 5 preguntas de Verdadero/Falso. ¿De cuántas formas se puede responder al azar?
+
+<details>
+<summary>Ver solución</summary>
+
+**Análisis:** P1(2) **Y** P2(2) **Y** ...
+**Cálculo:** $2 \times 2 \times 2 \times 2 \times 2 = 2^5 = 32$.
+**Resultado:** $\boxed{32}$
+
+</details>
+
+### Ejercicio 8
+Placa de moto: 3 letras **Y** 2 números. (Letras 26, Números 10).
+
+<details>
+<summary>Ver solución</summary>
+
+**Cálculo:** $26 \times 26 \times 26 \times 10 \times 10 = 17,576 \times 100$.
+**Resultado:** $\boxed{1,757,600}$
+
+</details>
+
+### Ejercicio 9
+Para ir de X a Z debes pasar por Y. De X a Y hay 3 caminos. De Y a Z hay 2 caminos. Además, hay un túnel directo de X a Z.
+
+<details>
+<summary>Ver solución</summary>
+
+**Análisis:** (Camino vía Y) **O** (Túnel).
+- Vía Y: $3 \times 2 = 6$.
+- Túnel: 1.
+**Cálculo:** $6 + 1 = 7$.
+**Resultado:** $\boxed{7}$
+
+</details>
+
+### Ejercicio 10
+Lanzas un dado. Ganas si sale par **O** si sale un 5. ¿Cuántos casos favorables hay?
+
+<details>
+<summary>Ver solución</summary>
+
+**Pares:** 2, 4, 6 (3 casos).
+**Cinco:** 5 (1 caso).
+**Total:** $3 + 1 = 4$.
+**Resultado:** $\boxed{4}$
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Principio | Conector Lógico | Acción Matemática |
+|-----------|-----------------|-------------------|
+| **Multiplicación** | **Y** (Simultáneo/Secuencial) | $\times$ Multiplicar |
+| **Adición** | **O** (Excluyente) | $+$ Sumar |
+
+> **Conclusión:** Si puedes decir "hago esto **Y LUEGO** hago aquello", multiplica. Si dices "hago esto **O EN SU LUGAR** hago aquello", suma.

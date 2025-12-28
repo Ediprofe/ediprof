@@ -1,18 +1,29 @@
-# 🔍 Comparación de Fracciones
+# **Comparación de Fracciones**
 
-En este tema aprenderemos diferentes métodos para comparar fracciones y determinar cuál es mayor o menor.
+Si te ofrecen $\frac{1}{3}$ de un pastel o $\frac{1}{4}$ del mismo pastel, ¿cuál eliges si tienes mucha hambre? A veces el instinto nos falla con los números. Aprender a **comparar fracciones** te permitirá saber exactamente quién tiene más, quién tiene menos o si todos tienen lo mismo.
 
 ---
 
-## 📖 Comparación con el mismo denominador
+## 🎯 ¿Qué vas a aprender?
 
-Cuando dos fracciones tienen el **mismo denominador**, la mayor es la que tiene el **mayor numerador**.
+- Comparar fracciones con el mismo denominador (fácil).
+- Comparar fracciones con diferente denominador usando el "Producto Cruzado" (el truco maestro).
+- Comparar fracciones con el mismo numerador (lógica inversa).
+- Ordenar varias fracciones de menor a mayor.
 
-### Ejemplo 1
+---
 
-Comparar $\frac{5}{8}$ y $\frac{3}{8}$:
+## Comparación con Mismo Denominador
 
-Como $5 > 3$ y ambas tienen denominador $8$:
+Si el pastel está partido igual (mismo denominador), solo miramos quién tomó más pedazos (numerador).
+**Mayor numerador = Mayor fracción**.
+
+### ⚙️ Ejemplos Resueltos
+
+#### Ejemplo 1: $\frac{5}{8}$ vs $\frac{3}{8}$
+Mismo denominador (8).
+Como 5 es más que 3:
+$$ \frac{5}{8} > \frac{3}{8} $$
 
 <div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1rem auto; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
@@ -52,102 +63,209 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-$$
-\frac{5}{8} > \frac{3}{8}
-$$
+#### Ejemplo 2: $\frac{7}{12}$ vs $\frac{11}{12}$
+$7 < 11$.
+**Resultado:** $\boxed{\frac{7}{12} < \frac{11}{12}}$
+
+#### Ejemplo 3: $\frac{1}{5}$ vs $\frac{2}{5}$
+$1 < 2$.
+**Resultado:** $\boxed{\frac{1}{5} < \frac{2}{5}}$
+
+#### Ejemplo 4: $\frac{10}{20}$ vs $\frac{15}{20}$
+**Resultado:** $\boxed{\frac{10}{20} < \frac{15}{20}}$
+
+#### Ejemplo 5: Ordenar
+$\frac{4}{9}, \frac{1}{9}, \frac{8}{9}$.
+**Resultado:** $\boxed{\frac{1}{9} < \frac{4}{9} < \frac{8}{9}}$
 
 ---
 
-### Ejemplo 2
+## Comparación con Diferente Denominador (Producto Cruzado)
 
-Comparar $\frac{7}{12}$ y $\frac{11}{12}$:
+El "truco ninja" para no dibujar:
+1.  Multiplica el numerador de la primera por el denominador de la segunda (diagonal abajo).
+2.  Multiplica el denominador de la primera por el numerador de la segunda (diagonal arriba).
+3.  Compara los resultados.
 
-Como $7 < 11$:
+### ⚙️ Ejemplos Resueltos
 
-$$
-\frac{7}{12} < \frac{11}{12}
-$$
+#### Ejemplo 6: $\frac{3}{4}$ vs $\frac{5}{7}$
+Multiplicamos cruzado:
+-   $3 \times 7 = 21$ (Lado izquierdo).
+-   $4 \times 5 = 20$ (Lado derecho).
+Como $21 > 20$, entonces:
+$$ \boxed{\frac{3}{4} > \frac{5}{7}} $$
 
----
+#### Ejemplo 7: $\frac{2}{5}$ vs $\frac{3}{7}$
+-   $2 \times 7 = 14$
+-   $5 \times 3 = 15$
+$14 < 15$.
+$$ \boxed{\frac{2}{5} < \frac{3}{7}} $$
 
-## 📖 Comparación con el mismo numerador
+#### Ejemplo 8: $\frac{1}{3}$ vs $\frac{2}{6}$
+-   $1 \times 6 = 6$
+-   $3 \times 2 = 6$
+¡Son iguales!
+$$ \boxed{\frac{1}{3} = \frac{2}{6}} $$
 
-Cuando dos fracciones tienen el **mismo numerador**, la mayor es la que tiene el **menor denominador**.
+#### Ejemplo 9: $\frac{4}{5}$ vs $\frac{7}{9}$
+-   $4 \times 9 = 36$
+-   $5 \times 7 = 35$
+$$ \boxed{\frac{4}{5} > \frac{7}{9}} $$
 
-### Ejemplo 1
-
-Comparar $\frac{3}{5}$ y $\frac{3}{7}$:
-
-Como $5 < 7$ y ambas tienen numerador $3$:
-
-$$
-\frac{3}{5} > \frac{3}{7}
-$$
-
----
-
-### Ejemplo 2
-
-Comparar $\frac{4}{9}$ y $\frac{4}{6}$:
-
-Como $9 > 6$:
-
-$$
-\frac{4}{9} < \frac{4}{6}
-$$
-
----
-
-## 📖 Método del producto cruzado
-
-Para comparar $\frac{a}{b}$ y $\frac{c}{d}$:
-
-$$
-a \times d \quad \Box \quad b \times c
-$$
-
-El símbolo que corresponde es el mismo para las fracciones.
-
-### Ejemplo 1
-
-Comparar $\frac{3}{4}$ y $\frac{5}{7}$:
-
-$$
-3 \times 7 = 21 \quad \text{y} \quad 4 \times 5 = 20
-$$
-
-Como $21 > 20$:
-
-$$
-\frac{3}{4} > \frac{5}{7}
-$$
+#### Ejemplo 10: $\frac{1}{2}$ vs $\frac{1}{3}$
+-   $1 \times 3 = 3$
+-   $2 \times 1 = 2$
+$$ \boxed{\frac{1}{2} > \frac{1}{3}} $$
 
 ---
 
-### Ejemplo 2
+## Comparación con Mismo Numerador
 
-Comparar $\frac{2}{5}$ y $\frac{3}{7}$:
+Si tomas la **misma cantidad** de partes (mismo numerador), será más grande la fracción que tenga pedazos más grandes (menor denominador).
+**Menor denominador = Mayor fracción**.
 
-$$
-2 \times 7 = 14 \quad \text{y} \quad 5 \times 3 = 15
-$$
+### ⚙️ Ejemplos Resueltos
 
-Como $14 < 15$:
+#### Ejemplo 11: $\frac{1}{2}$ vs $\frac{1}{4}$
+Ambas toman 1 pedazo. Pero los de $\frac{1}{2}$ son gigantes y los de $\frac{1}{4}$ son pequeños.
+$$ \boxed{\frac{1}{2} > \frac{1}{4}} $$
 
-$$
-\frac{2}{5} < \frac{3}{7}
-$$
+#### Ejemplo 12: $\frac{3}{5}$ vs $\frac{3}{8}$
+Tomas 3. Pero 5 significa "partir menos" (pedazos grandes).
+$$ \boxed{\frac{3}{5} > \frac{3}{8}} $$
+
+#### Ejemplo 13: $\frac{10}{20}$ vs $\frac{10}{5}$
+$$ \boxed{\frac{10}{20} < \frac{10}{5}} $$
+
+#### Ejemplo 14: $\frac{7}{7}$ vs $\frac{7}{8}$
+$\frac{7}{7}$ es un entero. $\frac{7}{8}$ es menos que un entero.
+$$ \boxed{\frac{7}{7} > \frac{7}{8}} $$
+
+#### Ejemplo 15: $\frac{5}{100}$ vs $\frac{5}{2}$
+$$ \boxed{\frac{5}{100} < \frac{5}{2}} $$
 
 ---
 
-## 📝 Ejercicios de práctica
+## 📝 Ejercicios de Práctica
 
-**Ejercicio 1:** Ordena de menor a mayor: $\frac{2}{9}$, $\frac{5}{9}$, $\frac{8}{9}$
+### Ejercicio 1
+Compara $\frac{2}{3}$ y $\frac{4}{5}$.
 
-**Ejercicio 2:** Compara usando producto cruzado: $\frac{4}{5}$ y $\frac{7}{9}$
+<details>
+<summary>Ver solución</summary>
 
-**Ejercicio 3:** ¿Cuál es mayor, $\frac{5}{6}$ o $\frac{7}{8}$?
+$2 \times 5 = 10$. $3 \times 4 = 12$.
+**Resultado:** $\boxed{<}$
 
-**Ejercicio 4:** Ordena de mayor a menor: $\frac{3}{4}$, $\frac{3}{5}$, $\frac{3}{8}$
+</details>
+
+### Ejercicio 2
+Compara $\frac{7}{9}$ y $\frac{6}{9}$.
+
+<details>
+<summary>Ver solución</summary>
+
+Mismo denominador. $7 > 6$.
+**Resultado:** $\boxed{>}$
+
+</details>
+
+### Ejercicio 3
+Compara $\frac{3}{8}$ y $\frac{3}{5}$.
+
+<details>
+<summary>Ver solución</summary>
+
+Mismo numerador. 8 parte más pequeño que 5.
+**Resultado:** $\boxed{<}$
+
+</details>
+
+### Ejercicio 4
+Compara $\frac{1}{2}$ y $\frac{50}{100}$.
+
+<details>
+<summary>Ver solución</summary>
+
+$1 \times 100 = 100$. $2 \times 50 = 100$.
+**Resultado:** $\boxed{=}$
+
+</details>
+
+### Ejercicio 5
+Ordena: $\frac{1}{5}, \frac{1}{2}, \frac{1}{10}$.
+
+<details>
+<summary>Ver solución</summary>
+
+Mismo numerador. Gana el denominador pequeño.
+**Resultado:** $\boxed{\frac{1}{10} < \frac{1}{5} < \frac{1}{2}}$
+
+</details>
+
+### Ejercicio 6
+Compara $\frac{6}{7}$ y $\frac{7}{8}$.
+
+<details>
+<summary>Ver solución</summary>
+
+$6 \times 8 = 48$. $7 \times 7 = 49$.
+**Resultado:** $\boxed{<}$
+
+</details>
+
+### Ejercicio 7
+¿Quién comió más? Ana ($\frac{2}{3}$) o Luis ($\frac{4}{6}$).
+
+<details>
+<summary>Ver solución</summary>
+
+$2 \times 6 = 12$. $3 \times 4 = 12$.
+**Resultado:** $\boxed{\text{Igual}}$
+
+</details>
+
+### Ejercicio 8
+Compara $\frac{9}{5}$ y $1$.
+
+<details>
+<summary>Ver solución</summary>
+
+$\frac{9}{5}$ es impropia (>1).
+**Resultado:** $\boxed{>}$
+
+</details>
+
+### Ejercicio 9
+Compara $2\frac{1}{2}$ y $\frac{5}{2}$.
+
+<details>
+<summary>Ver solución</summary>
+
+$2 \times 2 + 1 = 5$.
+**Resultado:** $\boxed{=}$
+
+</details>
+
+### Ejercicio 10
+Ordena $\frac{3}{4}, \frac{1}{4}, \frac{5}{4}$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Resultado:** $\boxed{\frac{1}{4} < \frac{3}{4} < \frac{5}{4}}$
+
+</details>
 
 ---
+
+## 🔑 Resumen
+
+| Caso | Regla Directa | Método Infalible |
+| :--- | :--- | :--- |
+| **Mismo denominador** | Gana numerador mayor. | - |
+| **Mismo numerador** | Gana denominador menor. | - |
+| **Diferentes** | - | Producto Cruzado ($a \times d \text{ vs } b \times c$) |
+
+> **Conclusión:** Ante la duda, ¡cruza los números! El producto cruzado nunca miente.

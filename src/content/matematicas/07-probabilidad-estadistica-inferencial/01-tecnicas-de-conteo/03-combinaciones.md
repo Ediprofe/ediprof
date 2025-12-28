@@ -1,275 +1,210 @@
-# Combinaciones
+# **Combinaciones**
 
-¿Y si el orden **no** importa? Cuando solo queremos elegir elementos sin importar el orden, usamos **combinaciones**.
+Si ganas la lotería con los números "5, 12, 33", te da igual si salieron en ese orden o si salieron "33, 12, 5". Son los mismos números, es el mismo premio. Cuando el orden de los elementos **NO altera el resultado**, dejamos de hablar de Permutaciones y entramos al mundo de las **Combinaciones**.
 
 ---
 
 ## 🎯 ¿Qué vas a aprender?
 
-- Qué son las combinaciones y cuándo usarlas
-- La fórmula de combinaciones
-- Diferencia entre permutaciones y combinaciones
-- Propiedades de las combinaciones
+- Calcular combinaciones ($nCr$).
+- Entender por qué dividimos por $r!$ (eliminar el orden).
+- Aprovechar la simetría ($10C3 = 10C7$).
+- Resolver problemas de grupos mixtos (Hombres/Mujeres, Cartas, etc.).
 
 ---
 
-## 📊 Fórmula de Combinaciones
+## La Fórmula de la Combinación ($nCr$)
 
-$$
-C(n,r) = \binom{n}{r} = \frac{n!}{r!(n-r)!}
-$$
+Para calcular combinaciones, primero calculamos como si el orden importara (Permutación) y luego dividimos por las formas de ordenar esos elementos, para eliminar la duplicidad.
 
-Se lee "n elige r" o "combinación de n en r".
+$$ _nC_r = \binom{n}{r} = \frac{n!}{r!(n-r)!} $$
 
----
-
-## 📖 ¿Qué son las Combinaciones?
-
-> Una **combinación** es una selección de elementos donde el **orden no importa**.
-
-### 💡 Clave:
-
-- En **permutaciones**: {A, B, C} y {C, B, A} son **diferentes**
-- En **combinaciones**: {A, B, C} y {C, B, A} son **iguales**
-
-### ⚙️ Ejemplo comparativo:
-
-**Pregunta 1:** ¿De cuántas formas puedes elegir presidente, vicepresidente y secretario de 5 personas?
-→ **Permutación** (los cargos son diferentes)
-
-**Pregunta 2:** ¿De cuántas formas puedes elegir un comité de 3 personas de 5?
-→ **Combinación** (solo importa quiénes están en el comité)
+- $n$: Total de elementos disponibles.
+- $r$: Cuántos vamos a elegir.
 
 ---
 
-## 📖 Fórmula de Combinaciones
+## Inducción: ¿Por qué es menor que la Permutación?
 
-### 💡 Derivación:
-
-Las combinaciones son las permutaciones divididas entre las formas de ordenar cada grupo:
-
-$$
-C(n,r) = \frac{P(n,r)}{r!} = \frac{n!}{r!(n-r)!}
-$$
-
-### 💡 Notación:
-
-$$
-C(n,r) = C_n^r = \binom{n}{r} = _nC_r
-$$
-
-Todas estas notaciones significan "n elige r".
+Imagina elegir 3 letras de {A, B, C, D}.
+- **Permutación:** ABC, ACB, BAC, BCA, CAB, CBA... (Son 6 casos distintos).
+- **Combinación:** {A, B, C}. (Es 1 solo caso).
+Por eso la combinación siempre es un número menor.
 
 ---
 
-## 📖 Cálculo de Combinaciones
+## Tipos de Problemas
 
-### ⚙️ Ejemplo 1: Elegir comité de 3 de 10 personas
+### 1. Selección Simple
+Elegir un subgrupo donde todos son iguales en jerarquía.
 
-$$
-C(10,3) = \frac{10!}{3!(10-3)!} = \frac{10!}{3! \cdot 7!}
-$$
+#### ⚙️ Ejemplos Resueltos
+1.  **Comité de Estudio:** De 10 alumnos, elegir 3 para un trabajo.
+    $_10C_3 = \frac{10 \cdot 9 \cdot 8}{3 \cdot 2 \cdot 1} = 120$.
+2.  **Juego de Cartas:** Mano de 5 cartas de una baraja de 52.
+    $_52C_5 = 2,598,960$.
+3.  **Helado:** Elegir 2 bolas de 10 sabores (en un vaso, sin importar cuál va abajo).
+    $_10C_2 = 45$.
+4.  **Examen:** Responder 3 preguntas de 5 opcionales.
+    $_5C_3 = 10$.
+5.  **Saludo:** 4 personas se saludan entre sí. ¿Cuántos apretones de mano?
+    $_4C_2 = 6$.
 
-Simplificando:
-$$
-= \frac{10 \times 9 \times 8}{3 \times 2 \times 1} = \frac{720}{6} = 120
-$$
+### 2. Selección con Grupos Mixtos (Multiplicación de Combinaciones)
+Elegir un poco de aquí y un poco de allá.
 
-### ⚙️ Ejemplo 2: Elegir 5 cartas de una baraja de 52
+#### ⚙️ Ejemplos Resueltos
+1.  **Comité Mixto:** 5 Hombres, 6 Mujeres. Armar grupo de 2 Hombres Y 2 Mujeres.
+    $(_5C_2) \times (_6C_2) = 10 \times 15 = 150$.
+2.  **Baraja:** 4 Ases, 48 Otras. Sacar 2 Ases Y 3 Otras.
+    $(_4C_2) \times (_48C_3) = 6 \times 17,296 = 103,776$.
+3.  **Frutas:** 3 Manzanas, 4 Peras. Elegir 1 de cada una.
+    $(_3C_1) \times (_4C_1) = 3 \times 4 = 12$.
+4.  **Equipo:** 3 Arqueros, 10 Jugadores. Elegir 1 Arquero Y 4 Jugadores.
+    $(_3C_1) \times (_10C_4) = 3 \times 210 = 630$.
+5.  **Bolsa de Canicas:** 5 Rojas, 3 Azules. Sacar 2 Rojas Y 1 Azul.
+    $(_5C_2) \times (_3C_1) = 10 \times 3 = 30$.
 
-$$
-C(52,5) = \frac{52!}{5! \cdot 47!} = \frac{52 \times 51 \times 50 \times 49 \times 48}{5 \times 4 \times 3 \times 2 \times 1}
-$$
-$$
-= \frac{311,875,200}{120} = 2,598,960
-$$
+### 3. Propiedad de Simetría
+Elegir a quiénes **invitas** es lo mismo que elegir a quiénes **no invitas**.
+$$ _nC_r = _nC_{n-r} $$
 
-### ⚙️ Ejemplo 3: Elegir 2 de 6
-
-$$
-C(6,2) = \frac{6!}{2! \cdot 4!} = \frac{6 \times 5}{2 \times 1} = \frac{30}{2} = 15
-$$
-
----
-
-## 📖 Propiedades de las Combinaciones
-
-### 💡 Propiedad 1: Simetría
-
-$$
-C(n,r) = C(n, n-r)
-$$
-
-**Ejemplo:** $C(10,3) = C(10,7) = 120$
-
-**Razón:** Elegir 3 para incluir es lo mismo que elegir 7 para excluir.
-
-### 💡 Propiedad 2: Casos extremos
-
-$$
-C(n,0) = C(n,n) = 1
-$$
-
-**Razón:** Solo hay una forma de elegir nada o todo.
-
-### 💡 Propiedad 3: Elegir uno
-
-$$
-C(n,1) = n
-$$
-
-**Razón:** Elegir 1 de n tiene n opciones.
-
-### 💡 Propiedad 4: Triángulo de Pascal
-
-$$
-C(n,r) = C(n-1, r-1) + C(n-1, r)
-$$
-
----
-
-## 📖 Permutación vs Combinación
-
-| Aspecto | Permutación | Combinación |
-|---------|-------------|-------------|
-| ¿Orden importa? | ✅ Sí | ❌ No |
-| Fórmula | $\frac{n!}{(n-r)!}$ | $\frac{n!}{r!(n-r)!}$ |
-| Resultado | Mayor | Menor |
-| Ejemplo | Primeros 3 lugares | Comité de 3 |
-
-### ⚙️ Comparación numérica:
-
-De 10 elementos, elegir 3:
-- **Permutación:** $P(10,3) = 720$
-- **Combinación:** $C(10,3) = 120$
-
-La combinación es 6 veces menor porque cada grupo de 3 se puede ordenar de $3! = 6$ formas.
-
----
-
-## 📖 Problemas con Múltiples Grupos
-
-### ⚙️ Ejemplo: Comité mixto
-
-De 8 hombres y 6 mujeres, ¿de cuántas formas puedes formar un comité de 5 con exactamente 3 hombres y 2 mujeres?
-
-**Paso 1:** Elegir 3 hombres de 8
-$$C(8,3) = \frac{8 \times 7 \times 6}{6} = 56$$
-
-**Paso 2:** Elegir 2 mujeres de 6
-$$C(6,2) = \frac{6 \times 5}{2} = 15$$
-
-**Paso 3:** Multiplicar (ambas elecciones son consecutivas)
-$$\text{Total} = 56 \times 15 = 840$$
-
-### ⚙️ Ejemplo: Al menos uno de cada tipo
-
-Del mismo grupo, ¿cuántos comités de 4 tienen **al menos** 1 hombre y 1 mujer?
-
-**Estrategia:** Total - casos no deseados
-
-**Total de comités de 4:**
-$$C(14,4) = 1001$$
-
-**Comités solo hombres:**
-$$C(8,4) = 70$$
-
-**Comités solo mujeres:**
-$$C(6,4) = 15$$
-
-**Comités mixtos:**
-$$1001 - 70 - 15 = 916$$
-
----
-
-## 💡 ¿Cuándo es Combinación?
-
-| Pregunta | Si la respuesta es NO → Combinación |
-|----------|-------------------------------------|
-| ¿El orden importa? | Combinación |
-| ¿Hay posiciones distinguibles? | Combinación |
-| ¿Es lo mismo A-B-C que C-B-A? | Combinación |
-
----
-
-## 🔑 Resumen
-
-| Concepto | Fórmula |
-|----------|---------|
-| **Combinación** | $C(n,r) = \frac{n!}{r!(n-r)!}$ |
-| **Simetría** | $C(n,r) = C(n, n-r)$ |
-| **Casos base** | $C(n,0) = C(n,n) = 1$ |
-| **Relación con P** | $C(n,r) = \frac{P(n,r)}{r!}$ |
+#### ⚙️ Ejemplos Resueltos
+1.  **$_10C_8$:** Es difícil calcular $\frac{10!}{8!2!}$.
+    Mejor calculo $_10C_2 = 45$. ¡Es igual!
+2.  **$_50C_49$:** Elegir 49 de 50.
+    Es lo mismo que $_50C_1 = 50$.
+3.  **$_5C_5$:** Elegir todos.
+    Es lo mismo que $_5C_0$ (Elegir ninguno). = 1.
+4.  **$_100C_98$:**
+    Es $_100C_2 = 4,950$.
+5.  **$_7C_4$ vs $_7C_3$:**
+    Son idénticos (35).
 
 ---
 
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1
-Calcula:
-a) C(8,3)
-b) C(10,7)
-c) C(5,5)
+Calcula $_5C_2$.
 
 <details>
 <summary>Ver solución</summary>
 
-a) $C(8,3) = \frac{8 \times 7 \times 6}{6} = 56$
-
-b) $C(10,7) = C(10,3) = \frac{10 \times 9 \times 8}{6} = 120$ (por simetría)
-
-c) $C(5,5) = 1$ (solo hay una forma de elegir todos)
+**Cálculo:** $\frac{5 \cdot 4}{2 \cdot 1} = 10$.
+**Resultado:** $\boxed{10}$
 
 </details>
 
 ### Ejercicio 2
-¿De cuántas formas puedes elegir 6 números de 49 para la lotería?
+Tienes 6 ingredientes para pizza. ¿Cuántas pizzas de 2 ingredientes puedes hacer?
 
 <details>
 <summary>Ver solución</summary>
 
-El orden no importa en la lotería:
-
-$$C(49,6) = \frac{49!}{6! \cdot 43!} = \frac{49 \times 48 \times 47 \times 46 \times 45 \times 44}{720}$$
-$$= 13,983,816$$
-
-¡Casi 14 millones de combinaciones posibles!
+**Cálculo:** $_6C_2 = 15$.
+**Resultado:** $\boxed{15}$
 
 </details>
 
 ### Ejercicio 3
-De 10 estudiantes, ¿de cuántas formas puedes formar grupos de estudio de 4 personas?
+Calcula $_8C_6$ usando la simetría.
 
 <details>
 <summary>Ver solución</summary>
 
-El orden no importa (solo importa quiénes están en el grupo):
-
-$$C(10,4) = \frac{10 \times 9 \times 8 \times 7}{24} = 210$$
+**Simetría:** Es igual a $_8C_2$.
+$\frac{8 \cdot 7}{2} = 28$.
+**Resultado:** $\boxed{28}$
 
 </details>
 
 ### Ejercicio 4
-Un examen tiene 10 preguntas y debes responder exactamente 7. ¿De cuántas formas puedes elegir qué preguntas responder?
+De 4 candidatos, ¿cuántas ternas (3) se pueden formar?
 
 <details>
 <summary>Ver solución</summary>
 
-$$C(10,7) = C(10,3) = \frac{10 \times 9 \times 8}{6} = 120$$
+**Simetría:** Elegir 3 es dejar 1 por fuera. $_4C_1 = 4$.
+**Resultado:** $\boxed{4}$
 
 </details>
 
 ### Ejercicio 5
-De 7 ingenieros y 5 médicos, ¿de cuántas formas puedes formar un equipo de 6 con exactamente 4 ingenieros?
+En una lotería de 45 números, aciertas 6. ¿Importa el orden?
 
 <details>
 <summary>Ver solución</summary>
 
-Si hay 4 ingenieros, debe haber 2 médicos.
-
-Elegir 4 de 7 ingenieros: $C(7,4) = 35$
-Elegir 2 de 5 médicos: $C(5,2) = 10$
-
-$$\text{Total} = 35 \times 10 = 350$$
+**Concepto:** No importa.
+**Resultado:** $\boxed{\text{Es Combinación}}$
 
 </details>
+
+### Ejercicio 6
+Calcula $_7C_7$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Propiedad:** Solo hay 1 forma de elegir todo.
+**Resultado:** $\boxed{1}$
+
+</details>
+
+### Ejercicio 7
+Hay 5 puntos en un papel, no hay 3 alineados. ¿Cuántos triángulos puedes dibujar uniendo los puntos?
+
+<details>
+<summary>Ver solución</summary>
+
+**Análisis:** Un triángulo necesita 3 puntos.
+**Cálculo:** $_5C_3$. (Igual a $_5C_2$). $10$.
+**Resultado:** $\boxed{10}$
+
+</details>
+
+### Ejercicio 8
+Grupo de 10 personas. ¿Cuántos apretones de mano si todos se saludan?
+
+<details>
+<summary>Ver solución</summary>
+
+**Cálculo:** $_10C_2 = \frac{10 \cdot 9}{2} = 45$.
+**Resultado:** $\boxed{45}$
+
+</details>
+
+### Ejercicio 9
+Elegir 3 vocales de las 5 existentes.
+
+<details>
+<summary>Ver solución</summary>
+
+**Cálculo:** $_5C_3 = 10$.
+**Resultado:** $\boxed{10}$
+
+</details>
+
+### Ejercicio 10
+De 5 físicos y 4 químicos, formar comité de 2 físicos y 1 químico.
+
+<details>
+<summary>Ver solución</summary>
+
+**Cálculo:** $(_5C_2) \times (_4C_1) = 10 \times 4 = 40$.
+**Resultado:** $\boxed{40}$
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Concepto | Permutación ($nPr$) | Combinación ($nCr$) |
+|----------|---------------------|---------------------|
+| **Orden** | ✅ Importa. | ❌ No importa. |
+| **Clave** | Jerarquías, Posiciones. | Grupos, Subconjuntos. |
+| **Valor** | Más grande. | Más pequeño. |
+
+> **Conclusión:** Si preguntas "¿Quién es primero?", es Permutación. Si preguntas "¿Quiénes están en el equipo?", es Combinación.

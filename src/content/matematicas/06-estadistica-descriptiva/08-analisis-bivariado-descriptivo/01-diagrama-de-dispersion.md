@@ -1,309 +1,236 @@
-# Diagrama de Dispersión
+# **Diagrama de Dispersión**
 
-Hasta ahora hemos analizado **una variable** a la vez. Pero muchas preguntas interesantes involucran **dos variables**: ¿Hay relación entre horas de estudio y notas? ¿Entre altura y peso? El **diagrama de dispersión** nos ayuda a visualizar estas relaciones.
+¿Alguna vez te has preguntado si estudiar más horas realmente mejora tus notas? ¿O si la altura de una persona está relacionada con su talla de zapatos? Hasta ahora, hemos estudiado una sola variable a la vez (univariado). Pero el mundo es complejo y las cosas suelen estar conectadas. El **Diagrama de Dispersión** es nuestra herramienta visual para descubrir si dos variables bailan al mismo rtimo.
 
 ---
 
 ## 🎯 ¿Qué vas a aprender?
 
-- Qué es un diagrama de dispersión
-- Cómo construirlo e interpretarlo
-- Identificar tipos de relación entre variables
-- Detectar patrones y valores atípicos
+- Construir un diagrama de dispersión paso a paso.
+- Identificar relaciones positivas, negativas y nulas visualmente.
+- Distinguir entre relaciones fuertes y débiles.
+- Detectar valores atípicos (outliers) que rompen el patrón.
 
 ---
 
-## 📖 ¿Qué es un Diagrama de Dispersión?
+## El Mapa de Dos Variables
 
-> Un **diagrama de dispersión** (o nube de puntos) es un gráfico donde cada punto representa un par de valores $(x_i, y_i)$ de dos variables.
+Un diagrama de dispersión (o nube de puntos) coloca cada "caso" en un plano cartesiano.
+- **Eje X (Horizontal):** La variable independiente (la causa probable).
+- **Eje Y (Vertical):** La variable dependiente (el efecto probable).
 
-### 💡 Estructura:
-- **Eje X (horizontal):** Variable explicativa o independiente
-- **Eje Y (vertical):** Variable respuesta o dependiente
-- **Cada punto:** Un caso u observación
+Cada punto es una pareja $(x, y)$.
 
----
+### ⚙️ Ejempos de Construcción
 
-## 📖 Construcción del Diagrama
+#### Ejemplo 1: Estudio vs Notas
+**Datos:** Ana (2h, 3.0), Luis (5h, 4.5), Pedro (1h, 2.0).
+- **Punto Ana:** Avanzas 2 a la derecha, subes 3.
+- **Punto Luis:** Avanzas 5 a la derecha, subes 4.5.
+**Resultado:** Una nube que "sube" hacia la derecha.
 
-### ⚙️ Ejemplo: Horas de estudio vs Nota
+#### Ejemplo 2: Velocidad vs Tiempo de Viaje
+**Datos:** Auto A (60km/h, 2h), Auto B (120km/h, 1h).
+- **Punto A:** (60, 2).
+- **Punto B:** (120, 1).
+**Resultado:** Una nube que "baja" hacia la derecha.
 
-| Estudiante | Horas (X) | Nota (Y) |
-|------------|-----------|----------|
-| Ana | 2 | 55 |
-| Luis | 4 | 65 |
-| María | 3 | 60 |
-| Carlos | 5 | 75 |
-| Sofía | 6 | 80 |
-| Pedro | 1 | 45 |
-| Laura | 7 | 90 |
-| Diego | 4 | 70 |
+#### Ejemplo 3: Talla vs Coeficiente Intelectual (CI)
+**Datos:** Sujeto 1 (Talla 40, CI 100), Sujeto 2 (Talla 35, CI 120).
+**Resultado:** Puntos por todos lados sin orden aparente.
 
-**Paso 1:** Definir ejes
-- Eje X: Horas de estudio (0 a 8)
-- Eje Y: Nota (0 a 100)
+#### Ejemplo 4: Temperatura vs Venta de Helados
+**Datos:** Día frío (10°C, 5 helados), Día caluroso (30°C, 100 helados).
+**Patrón:** A mayor temperatura (X), mayor venta (Y).
 
-**Paso 2:** Ubicar cada punto
-- Ana: (2, 55)
-- Luis: (4, 65)
-- ... y así sucesivamente
-
-**Resultado:** Una nube de puntos que muestra la relación entre horas y notas.
+#### Ejemplo 5: Edad del Auto vs Precio
+**Datos:** Auto nuevo (0 años, \$20M), Auto viejo (10 años, \$5M).
+**Patrón:** A mayor edad (X), menor precio (Y).
 
 ---
 
-## 📖 Tipos de Relación
+## Tipos de Relaciones
 
-### 💡 Relación Positiva (Directa)
+### 1. Relación Positiva (Directa)
+Cuando la X crece, la Y tiende a crecer. La nube sube como una escalera.
 
-```
-    Y ↑
-      │         ●
-      │       ●
-      │     ●
-      │   ●
-      │ ●
-      └─────────→ X
-```
+#### ⚙️ Ejemplos
+1.  **Estatura y Peso:** La gente más alta suele pesar más.
+2.  **Publicidad y Ventas:** Más anuncios suelen traer más clientes.
+3.  **Temperatura y Consumo de Agua:** Más calor, más sed.
+4.  **Años de Estudio y Salario:** Generalmente, más educación paga mejor.
+5.  **Velocidad de Carga y Rebote:** (Este es trampa, a veces es negativo, pero asumamos que velocidad = "rapidez"). Si hablamos de "Tiempo de Carga" vs "Abandono", es positiva: más demora, más abandono.
 
-**Cuando X aumenta, Y también aumenta.**
+### 2. Relación Negativa (Inversa)
+Cuando la X crece, la Y tiende a bajar. La nube cae como un tobogán.
 
-Ejemplos:
-- Horas de estudio → Notas
-- Altura → Peso
-- Años de experiencia → Salario
+#### ⚙️ Ejemplos
+1.  **Fumar y Salud Pulmonar:** Más cigarrillos, menos capacidad pulmonar.
+2.  **Precio y Demanda:** Si subes el precio, compran menos.
+3.  **Peso del Auto y Rendimiento:** Más pesado, menos km por galón.
+4.  **Ausencias y Notas:** Más faltas a clase, peor nota.
+5.  **Vacunación y Enfermedad:** Más gente vacunada, menos casos.
 
-### 💡 Relación Negativa (Inversa)
+### 3. Sin Relación (Nula)
+La X no afecta a la Y. La nube es un desorden redondo o cuadrado.
 
-```
-    Y ↑
-      │ ●
-      │   ●
-      │     ●
-      │       ●
-      │         ●
-      └─────────→ X
-```
-
-**Cuando X aumenta, Y disminuye.**
-
-Ejemplos:
-- Precio → Cantidad demandada
-- Velocidad → Tiempo de viaje
-- Ejercicio → Peso corporal
-
-### 💡 Sin Relación (Dispersión aleatoria)
-
-```
-    Y ↑
-      │  ●    ●
-      │    ●
-      │ ●      ●
-      │   ●  ●
-      │  ●  ●
-      └─────────→ X
-```
-
-**No hay patrón claro; X e Y no están relacionadas.**
-
-Ejemplos:
-- Número de zapato → Nota en matemáticas
-- Color de ojos → Altura
+#### ⚙️ Ejemplos
+1.  **Inteligencia y Belleza:** Ser listo no te hace feo ni guapo.
+2.  **Color de ojos y Salario:** No hay conexión lógica.
+3.  **Suerte en dados y Clima:** El azar no depende de la lluvia.
+4.  **Número de zapato y Nota de Matemáticas:** Absurdo.
+5.  **Hora del día y Precio del Oro:** (A largo plazo no varía por la hora).
 
 ---
 
-## 📖 Fuerza de la Relación
+## Fuerza de la Relación
 
-### 💡 Relación fuerte:
+No basta saber si sube o baja. ¿Qué tan "apretada" es la relación?
 
-Los puntos están **muy cerca** de una línea imaginaria.
+- **Fuerte:** Los puntos forman una línea delgada y clara. Si sabes X, casi adivinas Y.
+- **Débil:** Los puntos están muy dispersos, como una nube gorda. Si sabes X, tienes una vaga idea de Y.
 
-```
-      │        /●
-      │      /●
-      │    /●
-      │  /●
-      │/●
-      └─────────→
-```
+### ⚙️ Ejemplos Visuales
 
-### 💡 Relación débil:
+#### Ejemplo 1: Conversión Km a Millas
+**Relación:** Perfecta. Todos los puntos caen EXACTAMENTE en una recta.
 
-Los puntos están **dispersos** alrededor de una tendencia.
+#### Ejemplo 2: Hijos vs Estatura Padres
+**Relación:** Fuerte positiva. Padres altos suelen tener hijos altos, pero hay excepciones.
 
-```
-      │      ●  ●
-      │    ●  ●
-      │  ●  ●
-      │    ●
-      │  ●
-      └─────────→
-```
+#### Ejemplo 3: Ingresos vs Felicidad
+**Relación:** Positiva moderada/débil. El dinero ayuda, pero hay millonarios tristes y pobres felices. La nube es difusa.
 
-### 💡 Sin relación:
+#### Ejemplo 4: Horas de Sueño vs Rendimiento
+**Relación:** Curvilínea. Poco sueño es malo, mucho sueño es malo, 8 horas es óptimo. (Forma de U invertida).
 
-Dispersión **aleatoria** sin ningún patrón.
-
----
-
-## 📖 Forma de la Relación
-
-### 💡 Relación lineal:
-
-Los puntos siguen aproximadamente una **línea recta**.
-
-### 💡 Relación curvilínea:
-
-Los puntos siguen una **curva**.
-
-```
-      │         ●●●
-      │       ●
-      │     ●
-      │   ●
-      │ ●●
-      └─────────→
-```
-
-Ejemplo: Rendimiento vs horas de trabajo (al principio mejora, luego el cansancio lo reduce)
-
----
-
-## 📖 Valores Atípicos (Outliers)
-
-En un diagrama de dispersión, un **outlier** es un punto que está **muy alejado** del patrón general.
-
-### ⚙️ Ejemplo:
-
-```
-      │           ● (outlier)
-      │
-      │    /●
-      │  /●
-      │/●
-      └─────────→
-```
-
-El punto superior derecho puede ser:
-- Un error de medición
-- Un caso genuinamente diferente
-- Un valor que merece investigación
-
----
-
-## 📖 Interpretación: Lo que NO muestra el diagrama
-
-### ⚠️ Correlación no implica causalidad
-
-Que dos variables estén relacionadas **no significa** que una cause la otra.
-
-### ⚙️ Ejemplo:
-
-Hay correlación entre ventas de helados y muertes por ahogamiento.
-
-¿Los helados causan ahogamientos? **No.**
-
-Ambas variables están relacionadas con una **tercera variable**: el calor del verano.
-
----
-
-## 💡 Preguntas que Responde el Diagrama
-
-| Pregunta | Cómo responderla |
-|----------|------------------|
-| ¿Hay relación? | ¿Los puntos siguen algún patrón? |
-| ¿Es positiva o negativa? | ¿Suben juntos o uno sube y otro baja? |
-| ¿Qué tan fuerte es? | ¿Los puntos están cerca o dispersos? |
-| ¿Es lineal o curva? | ¿Siguen una línea recta u otra forma? |
-| ¿Hay outliers? | ¿Hay puntos muy alejados del patrón? |
-
----
-
-## 🔑 Resumen
-
-| Concepto | Descripción |
-|----------|-------------|
-| **Diagrama de dispersión** | Gráfico de puntos $(x_i, y_i)$ |
-| **Relación positiva** | X e Y aumentan juntas |
-| **Relación negativa** | Una aumenta, otra disminuye |
-| **Sin relación** | Puntos dispersos aleatoriamente |
-| **Outlier** | Punto alejado del patrón general |
+#### Ejemplo 5: El Outlier Solitario
+**Caso:** Estatura vs Peso. Todos siguen el patrón, menos "Juan".
+- Juan mide 1.50m pero pesa 120kg.
+- Su punto está lejos de la nube principal. Es un dato atípico.
 
 ---
 
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1
-Indica si esperarías una relación positiva, negativa o ninguna entre:
-
-a) Temperatura exterior y consumo de aire acondicionado
-b) Edad de un carro y su precio de reventa
-c) Número de hermanos y estatura
-d) Horas de sueño y nivel de cansancio
+¿Qué tipo de relación esperas entre "Cantidad de lluvia" y "Uso de paraguas"?
 
 <details>
 <summary>Ver solución</summary>
 
-a) **Positiva:** Más calor → más uso de A/C
-
-b) **Negativa:** Más viejo → menor precio
-
-c) **Sin relación:** No hay conexión lógica entre ambas
-
-d) **Negativa:** Más sueño → menos cansancio
+**Razonamiento:** Si llueve más, la gente usa más paraguas.
+**Resultado:** $\boxed{\text{Positiva}}$
 
 </details>
 
 ### Ejercicio 2
-Observa esta descripción de puntos y determina el tipo de relación:
-
-"Los puntos forman una línea que baja de izquierda a derecha, y están bastante cerca de esa línea imaginaria."
+¿Qué relación esperas entre "Antigüedad de una computadora" y "Velocidad de procesamiento"?
 
 <details>
 <summary>Ver solución</summary>
 
-**Relación negativa fuerte**
-
-- "Baja de izquierda a derecha" → Negativa (cuando X sube, Y baja)
-- "Bastante cerca de la línea" → Fuerte (poco dispersos)
+**Razonamiento:** Con los años, las computadoras se sienten más lentas (o el software exige más).
+**Resultado:** $\boxed{\text{Negativa}}$
 
 </details>
 
 ### Ejercicio 3
-En un estudio, se encuentra que los países con más consumo de chocolate también tienen más premios Nobel. ¿El chocolate hace más inteligentes a las personas?
+Si los puntos forman un círculo perfecto en el centro, ¿qué relación hay?
 
 <details>
 <summary>Ver solución</summary>
 
-**No podemos concluir causalidad.**
-
-**Correlación ≠ Causalidad**
-
-Posibles explicaciones:
-1. **Variable oculta:** Los países ricos tienen más acceso tanto a chocolate como a educación de calidad
-2. **Coincidencia estadística:** Podría ser solo azar
-3. **Causalidad inversa:** Quizás los países con más premios Nobel celebran más con chocolate (absurdo, pero ilustra el punto)
-
-**Conclusión:** El diagrama de dispersión muestra que existe una relación, pero no puede demostrar que una variable CAUSA la otra.
+**Razonamiento:** Un círculo indica que para cualquier X, la Y puede ser cualquier cosa.
+**Resultado:** $\boxed{\text{Nula (Sin relación)}}$
 
 </details>
 
 ### Ejercicio 4
-¿Por qué es importante buscar outliers en un diagrama de dispersión antes de calcular correlaciones?
+En un gráfico Salario vs Ahorro, ves un punto muy arriba a la izquierda (Poco salario, Mucho ahorro). ¿Cómo se llama ese punto?
 
 <details>
 <summary>Ver solución</summary>
 
-Es importante porque:
-
-1. **Distorsionan la correlación:** Un solo outlier puede hacer que una correlación parezca más fuerte o más débil de lo real.
-
-2. **Pueden indicar errores:** El outlier podría ser un dato mal registrado.
-
-3. **Pueden ser casos especiales:** Merecen investigación individual (¿por qué es diferente?).
-
-4. **Afectan la línea de regresión:** Si calculamos una recta de mejor ajuste, el outlier la "jala" hacia él.
-
-**Mejor práctica:** Siempre graficar primero, identificar outliers, investigarlos, y luego decidir si incluirlos en el análisis.
+**Razonamiento:** Se sale del patrón normal (donde poco salario implica poco ahorro).
+**Resultado:** $\boxed{\text{Outlier (Atípico)}}$
 
 </details>
+
+### Ejercicio 5
+¿Una relación fuerte garantiza que X causa Y?
+
+<details>
+<summary>Ver solución</summary>
+
+**Concepto:** Correlación no implica causalidad. Podría ser coincidencia o haber una tercera variable.
+**Resultado:** $\boxed{\text{No}}$
+
+</details>
+
+### Ejercicio 6
+Graficas $(1,2), (2,4), (3,6)$. ¿Qué patrón ves?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** X sube, Y sube. Forman una línea recta perfecta.
+**Resultado:** $\boxed{\text{Positiva Perfecta}}$
+
+</details>
+
+### Ejercicio 7
+Graficas $(1,10), (2,5), (3,2)$. ¿Qué patrón ves?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** X sube, Y baja.
+**Resultado:** $\boxed{\text{Negativa}}$
+
+</details>
+
+### Ejercicio 8
+¿Qué eje se usa tradicionalmente para la variable dependiente?
+
+<details>
+<summary>Ver solución</summary>
+
+**Convención:** El eje vertical.
+**Resultado:** $\boxed{\text{Eje Y}}$
+
+</details>
+
+### Ejercicio 9
+Si la nube de puntos es "gorda" y dispersa, ¿la relación es fuerte o débil?
+
+<details>
+<summary>Ver solución</summary>
+
+**Visualización:** Mucha dispersión = Poca fuerza.
+**Resultado:** $\boxed{\text{Débil}}$
+
+</details>
+
+### Ejercicio 10
+¿Qué relación hay entre "Día del mes" y "Temperatura corporal"?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** Tu temperatura no depende de si es 1 o 30 de marzo.
+**Resultado:** $\boxed{\text{Nula}}$
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Tipo de Relación | Dirección de la Nube | Significado |
+|------------------|----------------------|-------------|
+| **Positiva** | ↗️ Sube a la derecha. | Si X crece, Y crece. |
+| **Negativa** | ↘️ Baja a la derecha. | Si X crece, Y baja. |
+| **Nula** | ☁️ Nube sin forma. | X no afecta a Y. |
+
+> **Conclusión:** Antes de calcular nada complejo, ¡haz un dibujo! El diagrama de dispersión es la primera prueba de la verdad para cualquier par de variables.

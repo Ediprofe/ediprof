@@ -1,18 +1,95 @@
-# 🔢 Múltiplos y Divisores
+# **Múltiplos y Divisores**
 
-En este tema aprenderemos a identificar múltiplos y divisores de un número.
+Imagina que tienes una caja de chocolates. Si puedes repartirlos exactamente entre 4 amigos sin que sobre ninguno, entonces el número de chocolates es un **múltiplo** de 4, y 4 es un **divisor** de ese número. Estos dos conceptos son como el anverso y el reverso de una misma moneda: si $A$ es múltiplo de $B$, entonces $B$ divide a $A$.
 
 ---
 
-## 📖 Múltiplos de un número
+## 🎯 ¿Qué vas a aprender?
 
-Un **múltiplo** de un número es el resultado de multiplicar ese número por cualquier natural.
+- Qué es un múltiplo y cómo encontrarlos.
+- Qué es un divisor y cómo identificarlos.
+- La relación inseparable entre múltiplo y divisor.
+- Propiedades clave (infinitos múltiplos, divisores finitos).
 
-$$
-\text{Múltiplo de } a = a \times n \quad \text{donde } n \in \mathbb{N}
-$$
+---
 
-### Ejemplo 1: Múltiplos de 3
+## 🔢 Múltiplos
+
+Un **múltiplo** de un número es el resultado de multiplicarlo por cualquier número natural ($0, 1, 2, 3...$).
+Piensa en la "tabla de multiplicar" extendida hasta el infinito.
+
+### ⚙️ Ejemplos Resueltos
+
+#### Ejemplo 1: Múltiplos de 3
+Multiplicamos 3 por los naturales:
+- $3 \times 0 = 0$
+- $3 \times 1 = 3$
+- $3 \times 2 = 6$
+- $3 \times 3 = 9$
+- ...
+$$ M(3) = \{0, 3, 6, 9, 12, 15, ...\} $$
+
+#### Ejemplo 2: Múltiplos de 5
+Vamos saltando de 5 en 5.
+$$ M(5) = \{0, 5, 10, 15, 20, 25, 30...\} $$
+
+#### Ejemplo 3: ¿Es 24 múltiplo de 6?
+Sí, porque existe un número ($4$) tal que $6 \times 4 = 24$.
+También porque si divides $24 \div 6$, el residuo es 0.
+
+#### Ejemplo 4: Múltiplos comunes
+Encuentra múltiplos comunes de 2 y 3.
+- $M(2) = \{0, 2, 4, 6, 8, 10, 12...\}$
+- $M(3) = \{0, 3, 6, 9, 12...\}$
+- **Comunes:** $0, 6, 12...$ (Son los múltiplos de 6).
+
+#### Ejemplo 5: Propiedades
+- El 0 es múltiplo de todos.
+- Todo número es múltiplo de sí mismo ($5 \times 1 = 5$).
+- Los múltiplos son **infinitos**.
+
+---
+
+## ➗ Divisores
+
+Un **divisor** es un número que divide a otro **exactamente** (el residuo es cero).
+Piensa en "formar grupos exactos".
+
+### ⚙️ Ejemplos Resueltos
+
+#### Ejemplo 6: Divisores de 12
+¿Qué números dividen al 12 sin dejar residuo?
+- $12 \div 1 = 12$ (Sí)
+- $12 \div 2 = 6$ (Sí)
+- $12 \div 3 = 4$ (Sí)
+- $12 \div 4 = 3$ (Sí)
+- $12 \div 5$ (No, sobra 2)
+- $12 \div 6 = 2$ (Sí)
+- ...
+- $12 \div 12 = 1$ (Sí)
+$$ D(12) = \{1, 2, 3, 4, 6, 12\} $$
+
+#### Ejemplo 7: Divisores de 7
+- $7 \div 1 = 7$
+- $7 \div 7 = 1$
+Solo tiene dos divisores: $\{1, 7\}$. (Es un número primo).
+
+#### Ejemplo 8: ¿Es 5 divisor de 20?
+Sí, porque $20$ termina en 0 (regla del 5) y $5 \times 4 = 20$.
+
+#### Ejemplo 9: Relación Múltiplo-Divisor
+- 20 es **múltiplo** de 5.
+- 5 es **divisor** de 20.
+Es la misma relación vista desde dos lados.
+
+#### Ejemplo 10: Número Perfecto
+El 6 es curioso. Sus divisores (sin contarse a sí mismo) son $1, 2, 3$.
+Si los sumas: $1 + 2 + 3 = 6$.
+¡La suma da el mismo número! Se llama número perfecto.
+
+---
+
+<!-- Conservando imágenes existentes -->
 
 <div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
@@ -45,207 +122,132 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-> 💡 Los puntos verdes muestran los múltiplos de 3. Cada salto representa sumar 3.
+---
 
-$$
-M(3) = \{3, 6, 9, 12, 15, \ldots\}
-$$
+## 📝 Ejercicios de Práctica
+
+### Ejercicio 1
+Escribe los primeros 5 múltiplos de 8.
+
+<details>
+<summary>Ver solución</summary>
+
+**Cálculo:** $8 \times 0, 8 \times 1, 8 \times 2, 8 \times 3, 8 \times 4$.
+**Resultado:** $\boxed{0, 8, 16, 24, 32}$
+
+</details>
+
+### Ejercicio 2
+Encuentra todos los divisores de 15.
+
+<details>
+<summary>Ver solución</summary>
+
+**Prueba:**
+- $1 \times 15$
+- $3 \times 5$
+**Resultado:** $\boxed{1, 3, 5, 15}$
+
+</details>
+
+### Ejercicio 3
+¿Es 45 múltiplo de 9?
+
+<details>
+<summary>Ver solución</summary>
+
+**Verificación:** ¿Existe un número tal que $9 \times n = 45$? Sí, el 5.
+**Resultado:** $\boxed{\text{Sí}}$
+
+</details>
+
+### Ejercicio 4
+¿Es 7 divisor de 40?
+
+<details>
+<summary>Ver solución</summary>
+
+**Verificación:** $40 \div 7$.
+$7 \times 5 = 35$, $7 \times 6 = 42$. No es exacto.
+**Resultado:** $\boxed{\text{No}}$
+
+</details>
+
+### Ejercicio 5
+Halla un número que sea múltiplo de 3 y de 4 a la vez (diferente de 0).
+
+<details>
+<summary>Ver solución</summary>
+
+- Multiplos de 3: 3, 6, 9, 12...
+- Multiplos de 4: 4, 8, 12...
+**Resultado:** $\boxed{12}$
+
+</details>
+
+### Ejercicio 6
+Encuentra los divisores de 13.
+
+<details>
+<summary>Ver solución</summary>
+
+Es un número primo. Solo lo dividen el 1 y él mismo.
+**Resultado:** $\boxed{1, 13}$
+
+</details>
+
+### Ejercicio 7
+Si un número termina en 0, ¿qué número es seguro su divisor? (Además del 1 y él mismo).
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** Todos los múltiplos de 2 son pares (0,2...), los de 5 terminan en 0 o 5, los de 10 terminan en 0.
+**Resultado:** $\boxed{2, 5, 10}$
+
+</details>
+
+### Ejercicio 8
+Escribe un múltiplo de 7 mayor que 50.
+
+<details>
+<summary>Ver solución</summary>
+
+**Tabla del 7:** $7 \times 7 = 49$, $7 \times 8 = 56$.
+**Resultado:** $\boxed{56}$
+
+</details>
+
+### Ejercicio 9
+¿Cuántos divisores tiene el 5?
+
+<details>
+<summary>Ver solución</summary>
+
+El 1 y el 5.
+**Resultado:** $\boxed{2}$
+
+</details>
+
+### Ejercicio 10
+¿El 1 es múltiplo o divisor de 8?
+
+<details>
+<summary>Ver solución</summary>
+
+- Múltiplo de 8 sería $8, 16...$ (Grande).
+- Divisor de 8 es 1, 2, 4, 8 (Pequeño que contenido).
+**Resultado:** $\boxed{\text{Divisor}}$
+
+</details>
 
 ---
 
-### Ejemplo 2: Múltiplos de 7
+## 🔑 Resumen
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="jsxgraph-mult7" class="jsxgraph-container" style="width: 100%; height: 100px; border-radius: 8px; overflow: hidden;"></div>
-</div>
+| Concepto | Definición | Ejemplo | Cantidad |
+|----------|------------|---------|----------|
+| **Múltiplo** | Resultado de multiplicar (Tabla). | $M(5) = \{0, 5, 10...\}$ | Infinitos |
+| **Divisor** | Número que divide exacto. | $D(10) = \{1, 2, 5, 10\}$ | Finitos (pocos) |
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-mult7')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-mult7', {
-      boundingbox: [-2, 2, 40, -0.5], axis: false, showCopyright: false, showNavigation: false, pan: {enabled: false}, zoom: {enabled: false}
-    });
-    // Recta numérica
-    board.create('segment', [[0, 0.8], [35, 0.8]], {strokeWidth: 2, strokeColor: '#374151', fixed: true});
-    // Marcas cada 7 unidades
-    for (var i = 0; i <= 35; i += 7) {
-      board.create('point', [i, 0.8], {size: 5, fixed: true, color: '#3b82f6', name: String(i), label: {offset: [0, -18], strokeColor: '#3b82f6', fontSize: 11}});
-    }
-    board.create('text', [17.5, 1.6, 'M(7) = {7, 14, 21, 28, 35, ...}'], {fontSize: 12, strokeColor: '#3b82f6', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
-    board.unsuspendUpdate();
-  }
-});
-</script>
-
-$$
-M(7) = \{7, 14, 21, 28, 35, \ldots\}
-$$
-
----
-
-## 📖 Propiedades de los múltiplos
-
-* Todo número es múltiplo de sí mismo y de $1$
-* El cero es múltiplo de cualquier número
-* Un número tiene **infinitos** múltiplos
-
----
-
-## 📖 Divisores de un número
-
-Un **divisor** de un número es aquel que lo divide exactamente (residuo cero).
-
-### Ejemplo 1: Divisores de 12
-
-Los divisores de 12 son aquellos números que permiten dividir 12 unidades en grupos iguales:
-
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="jsxgraph-div12" class="jsxgraph-container" style="width: 100%; height: 250px; border-radius: 8px; overflow: hidden;"></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-div12')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-div12', {
-      boundingbox: [-0.5, 5.5, 18, -0.8], axis: false, showCopyright: false, showNavigation: false, pan: {enabled: false}, zoom: {enabled: false}
-    });
-    // 12 = 3 × 4 (cuadrícula 3 filas, 4 columnas)
-    for (var r = 0; r < 3; r++) {
-      for (var c = 0; c < 4; c++) {
-        board.create('polygon', [[c*1.2, 4.5-r*1.2], [c*1.2+0.9, 4.5-r*1.2], [c*1.2+0.9, 3.6-r*1.2], [c*1.2, 3.6-r*1.2]], {fillColor: '#22c55e', fillOpacity: 0.8, strokeColor: '#166534', strokeWidth: 2, fixed: true, vertices: {visible: false}});
-      }
-    }
-    board.create('text', [2.3, 0.4, '3 × 4 = 12'], {fontSize: 13, strokeColor: '#166534', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
-    // 12 = 2 × 6 (cuadrícula 2 filas, 6 columnas)
-    for (var r = 0; r < 2; r++) {
-      for (var c = 0; c < 6; c++) {
-        board.create('polygon', [[6+c*0.9, 4.5-r*1.2], [6+c*0.9+0.75, 4.5-r*1.2], [6+c*0.9+0.75, 3.6-r*1.2], [6+c*0.9, 3.6-r*1.2]], {fillColor: '#3b82f6', fillOpacity: 0.8, strokeColor: '#1d4ed8', strokeWidth: 2, fixed: true, vertices: {visible: false}});
-      }
-    }
-    board.create('text', [8.3, 0.4, '2 × 6 = 12'], {fontSize: 13, strokeColor: '#1d4ed8', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
-    // 12 = 1 × 12 (fila horizontal)
-    for (var c = 0; c < 12; c++) {
-      board.create('polygon', [[12.5+c*0.45, 3.3], [12.5+c*0.45+0.35, 3.3], [12.5+c*0.45+0.35, 4.2], [12.5+c*0.45, 4.2]], {fillColor: '#f59e0b', fillOpacity: 0.8, strokeColor: '#d97706', strokeWidth: 1, fixed: true, vertices: {visible: false}});
-    }
-    board.create('text', [15.2, 0.4, '1 × 12'], {fontSize: 13, strokeColor: '#d97706', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
-    // Título
-    board.create('text', [9, 5.2, 'D(12) = {1, 2, 3, 4, 6, 12}'], {fontSize: 15, strokeColor: '#374151', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
-    board.unsuspendUpdate();
-  }
-});
-</script>
-
-> 💡 Los divisores permiten dividir 12 en grupos iguales sin que sobren unidades.
-
-$$
-D(12) = \{1, 2, 3, 4, 6, 12\}
-$$
-
----
-
-### Ejemplo 2: Divisores de 18
-
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="jsxgraph-div18" class="jsxgraph-container" style="width: 100%; height: 250px; border-radius: 8px; overflow: hidden;"></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-div18')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-div18', {
-      boundingbox: [-0.5, 5.5, 18, -0.8], axis: false, showCopyright: false, showNavigation: false, pan: {enabled: false}, zoom: {enabled: false}
-    });
-    // 18 = 3 × 6
-    for (var r = 0; r < 3; r++) {
-      for (var c = 0; c < 6; c++) {
-        board.create('polygon', [[c*1, 4.5-r*1.2], [c*1+0.8, 4.5-r*1.2], [c*1+0.8, 3.6-r*1.2], [c*1, 3.6-r*1.2]], {fillColor: '#8b5cf6', fillOpacity: 0.8, strokeColor: '#6d28d9', strokeWidth: 2, fixed: true, vertices: {visible: false}});
-      }
-    }
-    board.create('text', [2.5, 0.4, '3 × 6 = 18'], {fontSize: 13, strokeColor: '#6d28d9', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
-    // 18 = 2 × 9
-    for (var r = 0; r < 2; r++) {
-      for (var c = 0; c < 9; c++) {
-        board.create('polygon', [[6.5+c*0.7, 4.5-r*1.2], [6.5+c*0.7+0.55, 4.5-r*1.2], [6.5+c*0.7+0.55, 3.6-r*1.2], [6.5+c*0.7, 3.6-r*1.2]], {fillColor: '#ec4899', fillOpacity: 0.8, strokeColor: '#be185d', strokeWidth: 2, fixed: true, vertices: {visible: false}});
-      }
-    }
-    board.create('text', [9.3, 0.4, '2 × 9 = 18'], {fontSize: 13, strokeColor: '#be185d', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
-    // 18 = 1 × 18 (fila)
-    for (var c = 0; c < 18; c++) {
-      board.create('polygon', [[13+c*0.28, 3.3], [13+c*0.28+0.22, 3.3], [13+c*0.28+0.22, 4.2], [13+c*0.28, 4.2]], {fillColor: '#06b6d4', fillOpacity: 0.8, strokeColor: '#0891b2', strokeWidth: 1, fixed: true, vertices: {visible: false}});
-    }
-    board.create('text', [15.5, 0.4, '1 × 18'], {fontSize: 13, strokeColor: '#0891b2', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
-    // Título
-    board.create('text', [9, 5.2, 'D(18) = {1, 2, 3, 6, 9, 18}'], {fontSize: 15, strokeColor: '#374151', fixed: true, anchorX: 'middle', cssStyle: 'font-weight: bold;'});
-    board.unsuspendUpdate();
-  }
-});
-</script>
-
-$$
-D(18) = \{1, 2, 3, 6, 9, 18\}
-$$
-
----
-
-## 📖 Propiedades de los divisores
-
-* El $1$ es divisor de todos los números
-* Todo número es divisor de sí mismo
-* Un número tiene una cantidad **finita** de divisores
-
----
-
-## 📖 Relación entre múltiplos y divisores
-
-Si $a$ es múltiplo de $b$, entonces $b$ es divisor de $a$.
-
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div id="jsxgraph-relacion" class="jsxgraph-container" style="width: 100%; height: 120px; border-radius: 8px; overflow: hidden;"></div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof JXG !== 'undefined' && document.getElementById('jsxgraph-relacion')) {
-    var board = JXG.JSXGraph.initBoard('jsxgraph-relacion', {
-      boundingbox: [-1, 3, 10, -0.5], axis: false, showCopyright: false, showNavigation: false, pan: {enabled: false}, zoom: {enabled: false}
-    });
-    // Ejemplo: 15 y 5
-    board.create('text', [0.5, 2.3, '15 es múltiplo de 5'], {fontSize: 13, strokeColor: '#22c55e', fixed: true, cssStyle: 'font-weight: bold;'});
-    board.create('text', [6, 2.3, '→'], {fontSize: 16, strokeColor: '#374151', fixed: true});
-    board.create('text', [6.8, 2.3, '5 es divisor de 15'], {fontSize: 13, strokeColor: '#3b82f6', fixed: true, cssStyle: 'font-weight: bold;'});
-    // Ejemplo: 24 y 6
-    board.create('text', [0.5, 1.0, '24 es múltiplo de 6'], {fontSize: 13, strokeColor: '#22c55e', fixed: true, cssStyle: 'font-weight: bold;'});
-    board.create('text', [6, 1.0, '→'], {fontSize: 16, strokeColor: '#374151', fixed: true});
-    board.create('text', [6.8, 1.0, '6 es divisor de 24'], {fontSize: 13, strokeColor: '#3b82f6', fixed: true, cssStyle: 'font-weight: bold;'});
-    board.unsuspendUpdate();
-  }
-});
-</script>
-
-> 💡 **Múltiplo ↔ Divisor** son conceptos inversos.
-
----
-
-## 📝 Ejercicios de práctica
-
-**Ejercicio 1:** Escribe los primeros 6 múltiplos de $8$.
-
-**Ejercicio 2:** Encuentra todos los divisores de $24$.
-
-**Ejercicio 3:** ¿Es $45$ múltiplo de $9$?
-
-**Ejercicio 4:** ¿Es $7$ divisor de $42$?
-
----
+> **Conclusión:** Los múltiplos crecen hacia el infinito (como saltos de rana). Los divisores son piezas de rompecabezas que forman al número exacto.

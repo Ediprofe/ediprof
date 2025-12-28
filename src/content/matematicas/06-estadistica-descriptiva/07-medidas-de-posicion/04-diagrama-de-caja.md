@@ -1,314 +1,216 @@
-# Diagrama de Caja (Box Plot)
+# **Diagrama de Caja (BoxPlot)**
 
-El **diagrama de caja** (o box plot) es una representación visual poderosa que muestra los cuartiles, la mediana y los valores atípicos de un vistazo. Es una de las herramientas más útiles para resumir y comparar distribuciones.
+Imagina que eres un detective y necesitas ver **todo** lo importante de una escena del crimen en una sola foto: dónde está la acción principal, hasta dónde llega el desorden y si hay algo sospechoso fuera de lugar. En estadística, esa foto es el **Diagrama de Caja**. Te muestra el centro, la dispersión y los valores extraños (outliers) en un solo dibujo compacto.
 
 ---
 
 ## 🎯 ¿Qué vas a aprender?
 
-- Qué es un diagrama de caja y qué partes tiene
-- Cómo construirlo paso a paso
-- Cómo interpretar la información que muestra
-- Cómo detectar valores atípicos
+- Construir un diagrama de caja a partir de una lista de datos.
+- Identificar sus cinco componentes clave (Mínimo, $Q_1$, Mediana, $Q_3$, Máximo).
+- Detectar outliers visual y matemáticamente.
+- Comparar dos grupos con solo mirar sus gráficos.
 
 ---
 
-## 📊 Partes del Diagrama de Caja
+## La Anatomía de la Caja
 
-| Parte | Representa | Significado |
-|-------|------------|-------------|
-| **Línea central** | Mediana (Q2) | El 50% central |
-| **Caja** | De Q1 a Q3 | El 50% central de los datos (IQR) |
-| **Bigotes** | Rango sin outliers | Datos típicos |
-| **Puntos aislados** | Outliers | Valores atípicos |
-
----
-
-## 📖 Estructura del Diagrama de Caja
-
-```
-                 Valor mínimo        Valor máximo
-                 (sin outliers)       (sin outliers)
-                      │                     │
-Outliers  ○     ├─────┼─────────────────────┼─────┤     ○  Outliers
-bajos           │     │                     │     │        altos
-                │     │                     │     │
-           Bigote   Q1     Q2 (mediana)    Q3   Bigote
-           inferior        │                    superior
-                      └────────────┘
-                           IQR
-                       (50% central)
-```
+Un diagrama de caja se construye con los cuartiles y consta de:
+1.  **La Caja:** Va de $Q_1$ a $Q_3$. Contiene el **50% central** de los datos.
+2.  **La Línea:** Dentro de la caja, marca la **Mediana ($Q_2$)**.
+3.  **Los Bigotes:** Se extienden desde la caja hasta los valores mínimo y máximo (que no sean outliers).
+4.  **Los Puntos:** Valores atípicos (**Outliers**) que están demasiado lejos.
 
 ---
 
-## 📖 Construcción del Diagrama de Caja
+## Construcción Paso a Paso
 
-### Paso 1: Calcular las estadísticas
+Supongamos estos datos ordenados:
+$$ 1, 2, 5, 6, 7, 8, 8, 10, 12, 15, 25 $$
 
-Necesitas:
-- Q1 (primer cuartil)
-- Q2 (mediana)
-- Q3 (tercer cuartil)
-- IQR = Q3 - Q1
+### Paso 1: Los 5 Números Resumen
+1.  **Mínimo:** 1
+2.  **$Q_1$:** (Pos 3) $\to$ **5**
+3.  **Mediana ($Q_2$):** (Pos 6) $\to$ **8**
+4.  **$Q_3$:** (Pos 9) $\to$ **12**
+5.  **Máximo:** 25
 
-### Paso 2: Calcular los límites para outliers
+### Paso 2: Calcular el Rango Intercuartílico (IQR)
+$$ IQR = Q_3 - Q_1 = 12 - 5 = 7 $$
 
-- Límite inferior: $Q_1 - 1.5 \times IQR$
-- Límite superior: $Q_3 + 1.5 \times IQR$
+### Paso 3: Barreras de Outliers
+- **Límite Inferior:** $Q_1 - 1.5(IQR) = 5 - 1.5(7) = 5 - 10.5 = -5.5$.
+- **Límite Superior:** $Q_3 + 1.5(IQR) = 12 + 10.5 = 22.5$.
 
-### Paso 3: Identificar los bigotes
+### Paso 4: Identificar Outliers
+¿Hay datos fuera de $[-5.5, 22.5]$?
+Sí, el **25** es mayor que 22.5. Es un **Outlier**.
 
-- **Bigote inferior:** Valor mínimo que NO es outlier
-- **Bigote superior:** Valor máximo que NO es outlier
+### Paso 5: Ajustar Bigotes
+- **Bigote Izquierdo:** Hasta el dato mínimo dentro del límite (1).
+- **Bigote Derecho:** Hasta el dato máximo dentro del límite (15). (No hasta el 22.5, ni hasta el 25).
 
-### Paso 4: Marcar outliers
-
-Cualquier valor fuera de los límites se marca como punto aislado.
-
----
-
-## ⚙️ Ejemplo Completo
-
-### Datos: Tiempos de espera (minutos)
-
-2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 12, 13, 14, 15, 18, 35
-
-**Paso 1: Estadísticas básicas**
-
-n = 16 datos
-
-- Q1 (posición 4.25): $\approx 6.25$
-- Q2 (mediana, posición 8.5): $\frac{10+11}{2} = 10.5$
-- Q3 (posición 12.75): $\approx 13.75$
-- IQR = 13.75 - 6.25 = 7.5
-
-**Paso 2: Límites para outliers**
-
-- Inferior: $6.25 - 1.5(7.5) = 6.25 - 11.25 = -5$ (ningún dato menor)
-- Superior: $13.75 + 1.5(7.5) = 13.75 + 11.25 = 25$
-
-**Paso 3: Identificar outliers**
-
-¿Hay valores > 25? Sí, el 35 es un **outlier superior**.
-
-**Paso 4: Definir bigotes**
-
-- Bigote inferior: valor mínimo = 2
-- Bigote superior: máximo sin outlier = 18 (el 35 es outlier)
-
-**Resumen para el gráfico:**
-
-| Elemento | Valor |
-|----------|-------|
-| Bigote inferior | 2 |
-| Q1 | 6.25 |
-| Mediana (Q2) | 10.5 |
-| Q3 | 13.75 |
-| Bigote superior | 18 |
-| Outlier | 35 |
-
----
-
-## 📖 Interpretación del Diagrama de Caja
-
-### 💡 Información que obtenemos:
-
-| Característica | Cómo verla |
-|----------------|------------|
-| **Centro** | Posición de la línea mediana |
-| **Dispersión** | Tamaño de la caja (IQR) |
-| **Simetría** | ¿Mediana centrada en la caja? |
-| **Outliers** | Puntos fuera de los bigotes |
-| **Rango** | Extensión total (bigotes + outliers) |
-
-### 💡 Simetría vs Sesgo:
-
-**Distribución simétrica:**
+### Resultado Visual
 ```
-        ├───┬───────┬───┤
-            ↑
-        Mediana centrada
-```
-
-**Sesgo a la derecha:**
-```
-    ├──┬─────────────────┤
-       ↑
-    Mediana cerca de Q1
-```
-
-**Sesgo a la izquierda:**
-```
-├─────────────────┬──┤
-                  ↑
-          Mediana cerca de Q3
+      (Bigote)   [   Caja   ]   (Bigote)      (Outlier)
+      1 ------- 5 ----|---- 12 ------- 15         * 25
+                      8
 ```
 
 ---
 
-## 📖 Comparación de Distribuciones
+## Interpretación de Formas
 
-Una ventaja del diagrama de caja es comparar **varios grupos** lado a lado.
+### ⚙️ Ejemplos Resueltos
 
-### ⚙️ Ejemplo: Notas de tres cursos
+#### Ejemplo 1: Simetría Perfecta
+**Forma:** La línea de la mediana está justo en el centro de la caja. Los bigotes son igual de largos.
+**Significado:** Datos en campana (Normales).
 
-```
-Curso A: ├────┬─────────┤     (7 a 9, mediana 8)
-Curso B:   ├─┬───────────────┤   (6 a 10, mediana 7)
-Curso C:       ├────┬────┤        (8 a 9, mediana 8.5)
-         ─────────────────────────
-         5    6    7    8    9    10
-```
+#### Ejemplo 2: Sesgo a la Derecha
+**Forma:** La caja es corta a la izquierda y larga a la derecha. El bigote derecho es muy largo.
+**Significado:** La mayoría está "pegada" a valores bajos, pero hay una cola larga de valores altos.
 
-**Conclusiones:**
-- **Curso C** tiene notas más altas y consistentes (caja pequeña)
-- **Curso B** tiene más variabilidad (caja grande)
-- **Curso A** está en el medio
+#### Ejemplo 3: Caja Pequeña vs Grande
+**Comparación:** Caja A mide 2 cm. Caja B mide 10 cm.
+**Significado:** Los datos del grupo A son mucho más homogéneos (compactos) que los de B.
 
----
+#### Ejemplo 4: Mediana Desplazada
+**Forma:** La línea está pegada a $Q_3$ (parte superior de la caja).
+**Significado:** El 25% de los datos entre mediana y $Q_3$ están muy apretados. Hay alta densidad ahí.
 
-## 📖 Los Cinco Números Resumen
-
-El diagrama de caja visualiza el **resumen de cinco números**:
-
-| Número | Significado |
-|--------|-------------|
-| Mínimo | Valor más bajo (sin outliers) |
-| Q1 | Primer cuartil |
-| Mediana | Segundo cuartil |
-| Q3 | Tercer cuartil |
-| Máximo | Valor más alto (sin outliers) |
-
----
-
-## 💡 Ventajas del Diagrama de Caja
-
-| Ventaja | Descripción |
-|---------|-------------|
-| **Compacto** | Resume mucha información en poco espacio |
-| **Comparación fácil** | Varios grupos lado a lado |
-| **Detecta outliers** | Los muestra claramente |
-| **Muestra simetría** | Revela la forma de la distribución |
-| **Resistente** | Basado en cuartiles, no en medias |
-
----
-
-## 🔑 Resumen
-
-| Concepto | Descripción |
-|----------|-------------|
-| **Caja** | Desde Q1 hasta Q3 (contiene 50% de datos) |
-| **Línea media** | La mediana (Q2) |
-| **Bigotes** | Extensión hasta valores no atípicos |
-| **Outliers** | Valores fuera de $Q \pm 1.5 \times IQR$ |
-| **Uso principal** | Comparar distribuciones visualmente |
+#### Ejemplo 5: Comparación Lado a Lado
+**Salarios Hombres vs Mujeres**
+- La caja de Hombres está más arriba que la de Mujeres.
+- La mediana de Hombres supera al $Q_3$ de Mujeres.
+**Conclusión visual:** El hombre "promedio" gana más que el 75% de las mujeres. (Análisis visual potente).
 
 ---
 
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1
-Dados: Q1 = 20, Q2 = 30, Q3 = 45, Mín = 5, Máx = 100
-
-a) Calcula el IQR
-b) Calcula los límites para outliers
-c) ¿El valor 5 es outlier? ¿Y el 100?
+Calcula el IQR si $Q_1=10$ y $Q_3=20$.
 
 <details>
 <summary>Ver solución</summary>
 
-a) **IQR:**
-$IQR = Q_3 - Q_1 = 45 - 20 = 25$
-
-b) **Límites:**
-- Inferior: $20 - 1.5(25) = 20 - 37.5 = -17.5$
-- Superior: $45 + 1.5(25) = 45 + 37.5 = 82.5$
-
-c) **¿Son outliers?**
-- 5: ¿5 < -17.5? No → **No es outlier**
-- 100: ¿100 > 82.5? Sí → **Es outlier**
+**Resta:** $20 - 10 = 10$.
+**Resultado:** $\boxed{10}$
 
 </details>
 
 ### Ejercicio 2
-Observa este diagrama de caja y responde:
-
-```
-         ├────┬─────────┤     ○
-         │    │         │
-      ───┼────┼─────────┼─────────
-        10   15        25       40
-```
-
-a) ¿Cuál es la mediana?
-b) ¿Cuál es el IQR?
-c) ¿Hay outliers? ¿Cuáles?
-d) ¿La distribución es simétrica o sesgada?
+Si el límite superior es 100, y tienes un dato en 105, ¿cómo se dibuja?
 
 <details>
 <summary>Ver solución</summary>
 
-a) **Mediana:** 15 (la línea vertical dentro de la caja)
-
-b) **IQR:** 
-Q1 ≈ 10, Q3 ≈ 25
-$IQR = 25 - 10 = 15$
-
-c) **Outliers:**
-El punto en 40 es un outlier (está separado después del bigote)
-
-d) **Sesgo:**
-La mediana (15) está más cerca de Q1 (10) que de Q3 (25). La cola es más larga hacia la derecha.
-**Distribución sesgada a la derecha (positiva)**
+**Regla:** Es outlier.
+**Resultado:** $\boxed{\text{Como un punto externo}}$
 
 </details>
 
 ### Ejercicio 3
-¿Por qué el diagrama de caja es mejor que solo reportar la media y desviación estándar para datos con outliers?
+En un diagrama, la caja va de 5 a 15. ¿Entre qué valores está el 50% central?
 
 <details>
 <summary>Ver solución</summary>
 
-El diagrama de caja es mejor porque:
-
-1. **Muestra los outliers explícitamente:** Los ves como puntos separados, no ocultos en un promedio.
-
-2. **Usa medidas resistentes:** Cuartiles y mediana no se distorsionan con outliers (a diferencia de media y desviación estándar).
-
-3. **Revela la forma:** Puedes ver si hay sesgo, cuánta dispersión hay, y dónde está el centro real.
-
-4. **No oculta información:** La media "promedia" todo y puede dar una imagen incorrecta. El box plot muestra dónde realmente están los datos.
-
-**Ejemplo:**
-Datos: 10, 11, 12, 13, 14, 100
-
-- Media: 26.7 (parece que el "centro" es 26.7)
-- Box plot: Mediana ≈ 12.5, con un outlier visible en 100
-
-El box plot muestra claramente que la mayoría de datos está entre 10-14, con un dato anómalo.
+**Definición:** La caja ES el 50% central.
+**Resultado:** $\boxed{5 \text{ y } 15}$
 
 </details>
 
 ### Ejercicio 4
-¿Qué significa si una caja es muy larga comparada con otra?
+Si no hay outliers, ¿hasta dónde llegan los bigotes?
 
 <details>
 <summary>Ver solución</summary>
 
-Una **caja más larga** significa:
-
-- **Mayor IQR (rango intercuartílico)**
-- **Mayor variabilidad** en el 50% central de los datos
-- Los datos están **más dispersos**
-
-**Comparación:**
-
-```
-Grupo A: ├─┬─┤         (caja pequeña = datos homogéneos)
-Grupo B: ├────────┬────────┤  (caja grande = datos heterogéneos)
-```
-
-Aunque ambos grupos podrían tener la misma mediana, el Grupo B tiene mucha más variabilidad que el Grupo A.
+**Regla:** Hasta el Mínimo y Máximo reales.
+**Resultado:** $\boxed{\text{Min y Max}}$
 
 </details>
+
+### Ejercicio 5
+¿Qué porcentaje de datos queda fuera de la caja (sumando ambos lados)?
+
+<details>
+<summary>Ver solución</summary>
+
+**Análisis:** Dentro hay 50%. Fuera queda el resto.
+**Resultado:** $\boxed{50\%}$
+
+</details>
+
+### Ejercicio 6
+Observas una caja muy aplastada (corta). ¿Qué indica sobre la dispersión?
+
+<details>
+<summary>Ver solución</summary>
+
+**Interpretación:** Poca dispersión (Baja varianza).
+**Resultado:** $\boxed{\text{Datos muy concentrados}}$
+
+</details>
+
+### Ejercicio 7
+Si la mediana es 10 y $Q_1=2$, $Q_3=11$. ¿Hacia dónde es el sesgo?
+
+<details>
+<summary>Ver solución</summary>
+
+**Distancias:**
+- $Q_1$ a Mediana: $10-2=8$.
+- Mediana a $Q_3$: $11-10=1$.
+**Análisis:** La parte izquierda es mucho más larga.
+**Resultado:** $\boxed{\text{Sesgo a la Izquierda}}$
+
+</details>
+
+### Ejercicio 8
+¿El diagrama de caja muestra el promedio ($\bar{x}$)?
+
+<details>
+<summary>Ver solución</summary>
+
+**Teoría:** No explícitamente (muestra mediana). A veces programas lo añaden con una "x" o punto extra.
+**Resultado:** $\boxed{\text{No necesariamente}}$
+
+</details>
+
+### Ejercicio 9
+Calcula el límite superior para outliers si $Q_3=50$ e $IQR=10$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Fórmula:** $50 + 1.5(10) = 50 + 15$.
+**Resultado:** $\boxed{65}$
+
+</details>
+
+### Ejercicio 10
+Tienes dos diagramas. El A está contenido totalmente dentro del rango del B. ¿Cuál tiene mayor dispersión?
+
+<details>
+<summary>Ver solución</summary>
+
+**Visual:** B abarca más espacio.
+**Resultado:** $\boxed{B}$
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Elemento | Definición Gráfica | Significado Estadístico |
+|----------|--------------------|-------------------------|
+| **Caja** | Rectángulo central. | Rango Intercuartílico ($Q_3-Q_1$). |
+| **Línea** | Corte dentro de la caja. | Mediana ($Q_2$). |
+| **Bigote** | Línea externa. | Alcance de datos normales. |
+| **Punto** | Fuera del bigote. | Outlier (Dato atípico). |
+
+> **Conclusión:** El BoxPlot es el mejor amigo para comparar grupos. En un segundo te dice quién gana (posición), quién es más consistente (ancho de caja) y quién tiene "ovejas negras" (outliers).

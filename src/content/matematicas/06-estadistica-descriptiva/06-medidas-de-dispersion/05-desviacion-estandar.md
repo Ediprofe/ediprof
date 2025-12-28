@@ -1,284 +1,220 @@
-# Desviación Estándar
+# **Desviación Estándar**
 
-La varianza tiene un problema: sus unidades están al cuadrado. Si medimos estaturas en cm, la varianza está en cm². Para volver a las unidades originales, usamos la **desviación estándar**: la medida de dispersión más usada en la práctica.
+La **Varianza** nos dejaba con un problema: si medimos estaturas en metros, el resultado nos daba en "metros cuadrados". ¡Nadie mide $\text{m}^2$ de altura! Para corregir esto, usamos la **Desviación Estándar** ($\sigma$ o $S$), que es simplemente la raíz cuadrada de la varianza. Con esto, volvemos al mundo real y podemos decir: "La estatura promedio es 1.70m con una variación de 0.10m".
 
 ---
 
 ## 🎯 ¿Qué vas a aprender?
 
-- Qué es la desviación estándar y cómo calcularla
-- Por qué es preferida sobre la varianza
-- Cómo interpretarla en contexto
-- La regla empírica para distribuciones normales
+- Calcular la Desviación Estándar sacando la raíz cuadrada de la varianza.
+- Interpretar el resultado en las mismas unidades que tus datos.
+- Diferenciar entre la fórmula poblacional ($\sigma$) y muestral ($S$).
+- Conocer la **Regla Empírica** (lo que pasa a 1, 2 y 3 desviaciones de distancia).
 
 ---
 
-## 📊 Fórmulas de la Desviación Estándar
+## Volviendo a la Realidad
 
-| Tipo | Símbolo | Fórmula |
-|------|---------|---------|
-| **Poblacional** | $\sigma$ | $\sigma = \sqrt{\sigma^2} = \sqrt{\frac{\sum (x_i - \mu)^2}{N}}$ |
-| **Muestral** | $s$ | $s = \sqrt{s^2} = \sqrt{\frac{\sum (x_i - \bar{x})^2}{n-1}}$ |
+$$ \text{Desviación Estándar} = \sqrt{\text{Varianza}} $$
 
----
-
-## 📖 ¿Qué es la Desviación Estándar?
-
-> La **desviación estándar** es la **raíz cuadrada** de la varianza. Representa la dispersión típica de los datos respecto a la media.
-
-### 💡 Ventaja principal:
-
-$$
-\text{Desviación estándar tiene las MISMAS UNIDADES que los datos}
-$$
-
-- Si los datos están en cm → la desviación estándar está en cm
-- Si los datos están en pesos → la desviación estándar está en pesos
+Si la varianza te dio 25 "unidades cuadradas", la desviación estándar es 5 "unidades normales".
 
 ---
 
-## 📖 Cálculo de la Desviación Estándar
+## Cálculo y Fórmulas
 
-### ⚙️ Ejemplo: Estaturas de 6 estudiantes
+Igual que la varianza, tiene dos sabores:
 
-Datos: 160, 165, 170, 175, 180, 190 cm
+1.  **Poblacional ($\sigma$):** $\sqrt{\frac{\sum(x-\mu)^2}{N}}$
+2.  **Muestral ($S$):** $\sqrt{\frac{\sum(x-\bar{x})^2}{n-1}}$
 
-Ya calculamos antes que $s^2 = 116.67$ cm²
+### ⚙️ Ejemplos Resueltos
 
-**Desviación estándar:**
-$$
-s = \sqrt{116.67} = 10.80 \text{ cm}
-$$
+#### Ejemplo 1: Datos Simples ($N$)
+**Varianza calculada:** $\sigma^2 = 4$.
+**Cálculo:** $\sigma = \sqrt{4} = 2$.
+**Interpretación:** Los datos se alejan, en promedio, 2 unidades del centro.
 
-**Interpretación:** Las estaturas se desvían, en promedio, aproximadamente **10.8 cm** de la media (173.3 cm).
+#### Ejemplo 2: Datos Muestrales ($n$)
+**Datos:** 2, 4, 6.
+**Varianza Muestral:** $S^2 = 4$. (Ver lección anterior).
+**Desviación Estándar:** $S = \sqrt{4} = 2$.
 
----
+#### Ejemplo 3: Unidades Físicas
+**Datos:** 10m, 20m. ($\text{Varianza} = 25 \text{m}^2$).
+**Desviación:** $\sqrt{25 \text{m}^2} = \boxed{5 \text{m}}$. 
+(Ahora sí tiene sentido físico).
 
-## 📖 Interpretación de la Desviación Estándar
+#### Ejemplo 4: Precisión de Máquinas
+- **Máquina A:** $S = 0.1$ mm.
+- **Máquina B:** $S = 1.0$ mm.
+**Análisis:** La Máquina A es 10 veces más precisa (menos dispersa) que la B.
 
-### 💡 ¿Qué significa en términos prácticos?
-
-La desviación estándar nos dice "qué tan lejos" están típicamente los datos de la media.
-
-### ⚙️ Ejemplo comparativo:
-
-**Clase A:** Media = 7, $s = 0.5$
-**Clase B:** Media = 7, $s = 2.5$
-
-| Clase | Interpretación |
-|-------|----------------|
-| A | Las notas están típicamente a 0.5 puntos de 7 (entre 6.5 y 7.5) |
-| B | Las notas están típicamente a 2.5 puntos de 7 (entre 4.5 y 9.5) |
-
-La Clase B tiene **5 veces más variabilidad** que la Clase A.
+#### Ejemplo 5: Sin Dispersión
+**Datos:** 7, 7, 7. ($\sigma^2=0$).
+**Desviación:** $\sqrt{0} = \boxed{0}$.
 
 ---
 
-## 📖 La Regla Empírica (68-95-99.7)
+## Interpretación: La Regla Empírica
 
-Para distribuciones **aproximadamente normales** (en forma de campana):
+Si tus datos se parecen a una campana (Normal):
+- **68%** de los datos están a **1 desviación** ($\bar{x} \pm \sigma$).
+- **95%** de los datos están a **2 desviaciones** ($\bar{x} \pm 2\sigma$).
+- **99.7%** de los datos están a **3 desviaciones** ($\bar{x} \pm 3\sigma$).
 
-| Intervalo | Porcentaje de datos |
-|-----------|---------------------|
-| $\bar{x} \pm 1s$ | Aproximadamente **68%** |
-| $\bar{x} \pm 2s$ | Aproximadamente **95%** |
-| $\bar{x} \pm 3s$ | Aproximadamente **99.7%** |
+### ⚙️ Ejemplos Resueltos
 
-### ⚙️ Ejemplo:
+#### Ejemplo 1: Coeficiente Intelectual (CI)
+**Media:** 100. **Desviación:** 15.
+- Entre 85 y 115 ($100 \pm 15$) está el **68%** de la gente (promedio).
+- Entre 70 y 130 ($100 \pm 30$) está el **95%** (casi todos).
+- Tener más de 145 es ser un genio (top 0.15%).
 
-Si la estatura media es 170 cm con $s = 10$ cm:
+#### Ejemplo 2: Estatura Hombres
+**Media:** 175 cm. **Desviación:** 5 cm.
+- **68%** mide entre 170 y 180 cm.
+- **95%** mide entre 165 y 185 cm.
 
-| Intervalo | Rango | % esperado |
-|-----------|-------|------------|
-| $170 \pm 10$ | 160 - 180 cm | 68% |
-| $170 \pm 20$ | 150 - 190 cm | 95% |
-| $170 \pm 30$ | 140 - 200 cm | 99.7% |
+#### Ejemplo 3: Duración de Batería
+**Media:** 10 horas. **Desviación:** 1 hora.
+- Es muy probable (68%) que dure entre 9 y 11 horas.
+- Es rarísimo (0.3%) que dure menos de 7 horas o más de 13.
 
-**Interpretación:**
-- El 68% de las personas mide entre 160 y 180 cm
-- Casi todos (95%) miden entre 150 y 190 cm
-- Es muy raro (<0.3%) medir menos de 140 cm o más de 200 cm
+#### Ejemplo 4: Calidad Six Sigma
+En la industria, buscan que los errores ocurran solo más allá de **6 desviaciones** estándar ($6\sigma$). Eso es casi imposible (3.4 defectos por millón).
 
----
-
-## 📖 Comparación: Varianza vs Desviación Estándar
-
-| Aspecto | Varianza ($s^2$) | Desviación Estándar ($s$) |
-|---------|------------------|---------------------------|
-| Fórmula | Promedio de cuadrados | Raíz de la varianza |
-| Unidades | Cuadrado de originales | Mismas que originales |
-| Interpretación directa | ❌ Difícil | ✅ Fácil |
-| Uso matemático | ✅ Propiedades útiles | ⚠️ Menos propiedades |
-| Uso en reportes | ❌ Menos común | ✅ Muy común |
-
----
-
-## 📖 Desviación Estándar con Datos Agrupados
-
-Para tablas de frecuencias:
-
-$$
-s = \sqrt{\frac{\sum f_i (x_i - \bar{x})^2}{n-1}}
-$$
-
-O simplemente: calcular la varianza y sacar la raíz.
-
-### ⚙️ Ejemplo:
-
-Si la varianza con datos agrupados es $s^2 = 25$, entonces:
-
-$$
-s = \sqrt{25} = 5
-$$
-
----
-
-## 💡 ¿Cuándo es "Alta" o "Baja"?
-
-No hay un número mágico. Depende del contexto.
-
-### ⚙️ Comparaciones útiles:
-
-| Contexto | s = 5 es... |
-|----------|-------------|
-| Temperatura corporal (°C) | **Alta** (5°C de variación es mucho) |
-| Precio de casas (millones) | **Baja** (5 millones de variación es poco) |
-| Notas (escala 0-10) | **Moderada** |
-
-### 💡 Regla práctica:
-
-Usar el **coeficiente de variación** (próxima lección) para comparar dispersiones entre fenómenos diferentes.
-
----
-
-## 📖 Cálculo Paso a Paso Completo
-
-### ⚙️ Ejemplo: Horas de estudio diario
-
-Datos: 2, 3, 3, 4, 4, 4, 5, 5, 6 horas (n = 9)
-
-**Paso 1:** Media
-$$
-\bar{x} = \frac{2+3+3+4+4+4+5+5+6}{9} = \frac{36}{9} = 4
-$$
-
-**Paso 2:** Desviaciones al cuadrado
-
-| $x_i$ | $x_i - \bar{x}$ | $(x_i - \bar{x})^2$ |
-|-------|-----------------|---------------------|
-| 2 | -2 | 4 |
-| 3 | -1 | 1 |
-| 3 | -1 | 1 |
-| 4 | 0 | 0 |
-| 4 | 0 | 0 |
-| 4 | 0 | 0 |
-| 5 | 1 | 1 |
-| 5 | 1 | 1 |
-| 6 | 2 | 4 |
-| **Suma** | | **12** |
-
-**Paso 3:** Varianza muestral
-$$
-s^2 = \frac{12}{9-1} = \frac{12}{8} = 1.5
-$$
-
-**Paso 4:** Desviación estándar
-$$
-s = \sqrt{1.5} = 1.22 \text{ horas}
-$$
-
-**Interpretación:** Los estudiantes estudian en promedio 4 horas, con una desviación típica de 1.22 horas.
-
----
-
-## 🔑 Resumen
-
-| Concepto | Descripción |
-|----------|-------------|
-| **Desviación estándar** | $s = \sqrt{s^2}$ |
-| **Unidades** | Las mismas que los datos originales |
-| **Interpretación** | Dispersión típica respecto a la media |
-| **Regla 68-95-99.7** | Para distribuciones normales |
+#### Ejemplo 5: Notas de Examen
+**Media:** 3.5. **Desviación:** 0.5.
+- La mayoría (68%) sacó entre 3.0 y 4.0.
+- Casi nadie sacó menos de 2.0 o más de 5.0 (a 3 desviaciones).
 
 ---
 
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1
-Si la varianza de un conjunto de datos es 36, ¿cuál es la desviación estándar?
+Si la varianza es 100, ¿cuánto vale la desviación estándar?
 
 <details>
 <summary>Ver solución</summary>
 
-$$s = \sqrt{s^2} = \sqrt{36} = 6$$
-
-La desviación estándar es **6**.
+**Cálculo:** $\sqrt{100} = 10$.
+**Resultado:** $\boxed{10}$
 
 </details>
 
 ### Ejercicio 2
-Los pesos de 5 productos son: 98, 100, 102, 104, 106 gramos.
-Calcula la desviación estándar muestral.
+Si la desviación estándar es 3, ¿cuánto vale la varianza?
 
 <details>
 <summary>Ver solución</summary>
 
-**Paso 1:** Media
-$\bar{x} = \frac{510}{5} = 102$ g
-
-**Paso 2:** Desviaciones al cuadrado
-
-| $x_i$ | $(x_i - 102)^2$ |
-|-------|-----------------|
-| 98 | 16 |
-| 100 | 4 |
-| 102 | 0 |
-| 104 | 4 |
-| 106 | 16 |
-| **Suma** | **40** |
-
-**Paso 3:** Varianza
-$s^2 = \frac{40}{4} = 10$
-
-**Paso 4:** Desviación estándar
-$s = \sqrt{10} = 3.16$ g
-
-**Interpretación:** Los pesos se desvían típicamente 3.16 g de la media de 102 g.
+**Cálculo:** $3^2 = 9$.
+**Resultado:** $\boxed{9}$
 
 </details>
 
 ### Ejercicio 3
-Las notas de un examen tienen media 75 y desviación estándar 8. Suponiendo distribución normal, ¿entre qué valores está aproximadamente el 95% de los estudiantes?
+Calcula $S$ para la muestra: 1, 3, 5.
 
 <details>
 <summary>Ver solución</summary>
 
-Usando la regla empírica: 95% está en $\bar{x} \pm 2s$
-
-$75 \pm 2(8) = 75 \pm 16$
-
-**Intervalo:** [59, 91]
-
-**El 95% de los estudiantes tiene notas entre 59 y 91.**
+**Media:** 3.
+**Restas:** -2, 0, 2.
+**Cuadrados:** 4, 0, 4. Suma=8.
+**Var ($n-1$):** $8/2 = 4$.
+**Desviación:** $\sqrt{4} = 2$.
+**Resultado:** $\boxed{2}$
 
 </details>
 
 ### Ejercicio 4
-¿Por qué preferimos reportar la desviación estándar en lugar de la varianza?
+En una fábrica, ¿prefieres una desviación estándar grande o pequeña?
 
 <details>
 <summary>Ver solución</summary>
 
-Preferimos la desviación estándar porque:
-
-1. **Mismas unidades:** Si medimos en cm, la desviación estándar está en cm. La varianza estaría en cm² (difícil de interpretar).
-
-2. **Interpretación directa:** "Las estaturas varían típicamente 10 cm" es más claro que "la varianza es 100 cm²".
-
-3. **Comparabilidad:** Podemos decir "la desviación estándar de estaturas es 10 cm y de pesos es 5 kg". Con varianza serían "100 cm² y 25 kg²", difíciles de comparar.
-
-4. **Regla empírica:** Las reglas del 68-95-99.7 se expresan en términos de desviación estándar.
-
-**Resumen:** La desviación estándar es más intuitiva y comunicable, aunque matemáticamente la varianza tiene propiedades más convenientes.
+**Contexto:** Quieres consistencia.
+**Resultado:** $\boxed{\text{Pequeña}}$
 
 </details>
+
+### Ejercicio 5
+Si $\text{Media}=50$ y $\sigma=10$, ¿entre qué valores está el 68% de los datos?
+
+<details>
+<summary>Ver solución</summary>
+
+**Rango:** $50 \pm 10$.
+**Resultado:** $\boxed{40 \text{ y } 60}$
+
+</details>
+
+### Ejercicio 6
+Tienes datos en "Kilogramos". ¿En qué unidad está la desviación estándar?
+
+<details>
+<summary>Ver solución</summary>
+
+**Teoría:** Misma unidad.
+**Resultado:** $\boxed{\text{Kilogramos}}$
+
+</details>
+
+### Ejercicio 7
+Si todos los datos son iguales a 10, ¿cuánto vale $\sigma$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Análisis:** No hay dispersión.
+**Resultado:** $\boxed{0}$
+
+</details>
+
+### Ejercicio 8
+Compara $\sigma$ de A:[4,5,6] y B:[1,5,9].
+
+<details>
+<summary>Ver solución</summary>
+
+**A:** Distancia a media es 1.
+**B:** Distancia a media es 4.
+**Resultado:** $\boxed{B > A}$
+
+</details>
+
+### Ejercicio 9
+Si sumas 1000 a todos los datos, ¿la desviación estándar cambia?
+
+<details>
+<summary>Ver solución</summary>
+
+**Análisis:** La varianza no cambiaba. La raíz tampoco.
+**Resultado:** $\boxed{\text{No cambia}}$
+
+</details>
+
+### Ejercicio 10
+Si multiplicas todos los datos por 10, ¿qué le pasa a la desviación estándar?
+
+<details>
+<summary>Ver solución</summary>
+
+**Análisis:** Varianza se multiplicaba por $10^2$. Raíz de $10^2$ es 10.
+**Resultado:** $\boxed{\text{Se multiplica por 10}}$
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Estadístico | Símbolo | Relación | Unidad |
+|-------------|---------|----------|--------|
+| **Varianza** | $\sigma^2$ | Madre de la dispersión. | Cuadrada ($u^2$). |
+| **Desv. Estándar** | $\sigma$ | Hija (Raíz cuadrada). | Lineal ($u$). |
+
+> **Conclusión:** La Desviación Estándar es la reina de la estadística práctica. Nos dice cuán confiable es el promedio y cuán "normal" es un dato.

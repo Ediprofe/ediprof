@@ -1,311 +1,227 @@
-# Coeficiente de Correlación
+# **Coeficiente de Correlación**
 
-La covarianza nos dice la dirección de la relación, pero no qué tan fuerte es (porque depende de las unidades). El **coeficiente de correlación de Pearson** soluciona esto: es un número entre -1 y 1 que mide tanto la dirección como la fuerza de la relación lineal.
+La Covarianza tenía un defecto fatal: si cambiabas de metros a centímetros, el número se volvía gigante, aunque la relación fuera la misma. Necesitábamos un número que **siempre** estuviera entre -1 y 1, sin importar si medimos en hormigas o galaxias. Karl Pearson lo resolvió con una idea brillante: dividir la covarianza entre las desviaciones estándar. Así nació la $r$ de Pearson, el estándar de oro en la ciencia.
 
 ---
 
 ## 🎯 ¿Qué vas a aprender?
 
-- Qué es el coeficiente de correlación de Pearson
-- Cómo calcularlo e interpretarlo
-- El coeficiente de determinación (r²)
-- Errores comunes de interpretación
+- Calcular el Coeficiente de Correlación de Pearson ($r$).
+- Interpretar la fuerza de la relación usando la escala de -1 a 1.
+- Entender por qué es "adimensional" (no tiene unidades).
+- Distinguir entre Correlación y Causalidad.
 
 ---
 
-## 📊 Escala del Coeficiente de Correlación
+## La Fórmula Mágica
 
-| Valor de r | Interpretación |
-|------------|----------------|
-| r = 1 | Correlación positiva perfecta |
-| 0.7 ≤ r < 1 | Correlación positiva fuerte |
-| 0.4 ≤ r < 0.7 | Correlación positiva moderada |
-| 0 < r < 0.4 | Correlación positiva débil |
-| r = 0 | Sin correlación lineal |
-| -0.4 < r < 0 | Correlación negativa débil |
-| -0.7 < r ≤ -0.4 | Correlación negativa moderada |
-| -1 < r ≤ -0.7 | Correlación negativa fuerte |
-| r = -1 | Correlación negativa perfecta |
+Simplemente tomamos la Covarianza y la "normalizamos" dividiéndola por el producto de las desviaciones estándar de X y Y.
+
+$$ r = \frac{S_{xy}}{S_x \cdot S_y} $$
+
+Esto garantiza que el resultado siempre esté "atrapado" entre -1 y +1.
 
 ---
 
-## 📖 ¿Qué es el Coeficiente de Correlación?
+## La Escala de Pearson
 
-> El **coeficiente de correlación de Pearson** ($r$) es una medida estandarizada de la relación lineal entre dos variables. Siempre está entre -1 y 1.
-
-### 💡 Propiedades:
-
-- $-1 \leq r \leq 1$
-- No tiene unidades (es adimensional)
-- El signo indica la dirección
-- El valor absoluto indica la fuerza
+- **$r = +1$:** Positiva Perfecta. (Línea recta subiendo).
+- **$r = 0.8$:** Positiva Fuerte. (Nube estirada subiendo).
+- **$r = 0$:** Sin Relación Lineal. (Nube redonda).
+- **$r = -0.5$:** Negativa Moderada. (Nube gorda bajando).
+- **$r = -1$:** Negativa Perfecta. (Línea recta bajando).
 
 ---
 
-## 📖 Fórmula del Coeficiente de Correlación
+## Cálculo y Análisis
 
-### 💡 Fórmula con covarianza:
+### ⚙️ Ejemplos Resueltos
 
-$$
-r = \frac{s_{XY}}{s_X \cdot s_Y} = \frac{Cov(X,Y)}{\sqrt{Var(X)} \cdot \sqrt{Var(Y)}}
-$$
+#### Ejemplo 1: Cálculo Manual
+**Datos:**
+- Covarianza ($S_{xy}$) = 50.
+- Desviación X ($S_x$) = 5.
+- Desviación Y ($S_y$) = 12.
+**Cálculo:**
+$$ r = \frac{50}{5 \cdot 12} = \frac{50}{60} = 0.83 $$
+**Interpretación:** Relación Positiva Fuerte.
 
-### 💡 Fórmula directa:
+#### Ejemplo 2: El caso de los Metros vs Centímetros
+- **Metros:** $S_{xy}=2, S_x=1, S_y=2 \to r = 2/(1\cdot2) = \boxed{1}$.
+- **Centímetros:** $S_{xy}=20000, S_x=100, S_y=200 \to r = 20000/(100\cdot200) = \boxed{1}$.
+**Conclusión:** ¡El valor no cambia! Pearson solucionó el problema de las unidades.
 
-$$
-r = \frac{n\sum x_i y_i - (\sum x_i)(\sum y_i)}{\sqrt{[n\sum x_i^2 - (\sum x_i)^2][n\sum y_i^2 - (\sum y_i)^2]}}
-$$
+#### Ejemplo 3: Relación Inversa
+**Datos:** Precio vs Ventas.
+- $S_{xy} = -80$.
+- $S_x = 4$.
+- $S_y = 25$.
+$$ r = \frac{-80}{4 \cdot 25} = \frac{-80}{100} = -0.8 $$
+**Interpretación:** Relación Negativa Fuerte.
 
----
+#### Ejemplo 4: Sin Relación
+**Datos:**
+- $r = 0.05$.
+**Interpretación:** Prácticamente cero. Las variables no tienen nada que ver linealmente.
 
-## 📖 Cálculo Paso a Paso
-
-### ⚙️ Ejemplo: Horas de estudio vs Nota
-
-Retomemos los datos anteriores:
-
-| $x_i$ | $y_i$ | $x_i^2$ | $y_i^2$ | $x_i y_i$ |
-|-------|-------|---------|---------|-----------|
-| 2 | 50 | 4 | 2500 | 100 |
-| 4 | 70 | 16 | 4900 | 280 |
-| 3 | 60 | 9 | 3600 | 180 |
-| 5 | 80 | 25 | 6400 | 400 |
-| 6 | 85 | 36 | 7225 | 510 |
-| **Σ = 20** | **Σ = 345** | **Σ = 90** | **Σ = 24625** | **Σ = 1470** |
-
-$n = 5$
-
-**Aplicando la fórmula:**
-
-**Numerador:**
-$$
-n\sum xy - (\sum x)(\sum y) = 5(1470) - (20)(345) = 7350 - 6900 = 450
-$$
-
-**Denominador:**
-$$
-\sqrt{[5(90) - 20^2][5(24625) - 345^2]}
-$$
-$$
-= \sqrt{[450 - 400][123125 - 119025]}
-$$
-$$
-= \sqrt{50 \times 4100} = \sqrt{205000} = 452.77
-$$
-
-**Coeficiente de correlación:**
-$$
-r = \frac{450}{452.77} = 0.994
-$$
-
-**Interpretación:** r = 0.994 indica una correlación **positiva muy fuerte**. Las horas de estudio y las notas están casi perfectamente relacionadas linealmente.
+#### Ejemplo 5: Correlación Espuria
+**Datos:** Venta de Helados vs Ataques de Tiburón ($r = 0.9$).
+**Análisis:** ¿Comer helado atrae tiburones? No.
+Ambas suben en verano. Hay una **variable oculta** (Temperatura).
+**Lección:** Correlación no implica Causalidad.
 
 ---
 
-## 📖 Interpretación Visual
+## El Coeficiente de Determinación ($r^2$)
 
-### r = 1: Correlación positiva perfecta
-```
-    ●
-   ●
-  ●
- ●
-●
-```
-Todos los puntos en una línea recta ascendente.
+Si elevas $r$ al cuadrado, obtienes $R^2$. Este número (entre 0% y 100%) te dice **cuánto explica X a Y**.
+- Si $r = 0.9$, entonces $R^2 = 0.81$ (81%).
+- Significa que el 81% de la variación de Y se debe a X. El otro 19% son otros factores.
 
-### r = -1: Correlación negativa perfecta
-```
-●
- ●
-  ●
-   ●
-    ●
-```
-Todos los puntos en una línea recta descendente.
+### ⚙️ Ejemplos de Interpretación
 
-### r = 0: Sin correlación lineal
-```
-  ●    ●
-    ●
- ●      ●
-   ●  ●
-  ●    ●
-```
-Puntos dispersos aleatoriamente.
+#### Ejemplo 1: Estudio vs Notas
+$r=0.8 \to R^2=0.64$.
+El 64% de tu nota depende de cuánto estudias. El 36% restante depende de tu suerte, talento natural o si dormiste bien.
 
-### r = 0.7: Correlación positiva fuerte (pero no perfecta)
-```
-      ●
-     ●
-    ● ●
-   ●●
-  ●●
- ●
-```
-Tendencia clara, pero con algo de dispersión.
+#### Ejemplo 2: Altura Padres vs Hijos
+$r=0.5 \to R^2=0.25$.
+La genética de altura explica el 25%. El 75% depende de nutrición, ambiente, etc.
 
----
+#### Ejemplo 3: Ley Física
+$r=1.0 \to R^2=100\%$.
+La fuerza explica el 100% de la aceleración (en el vacío ideal).
 
-## 📖 Coeficiente de Determinación (r²)
+#### Ejemplo 4: Calidad de Vida
+$r^2=10\%$.
+La variable que estudias (ej: clima) explica muy poco (10%) de la calidad de vida.
 
-> El **coeficiente de determinación** ($r^2$) indica qué proporción de la variación en Y es "explicada" por X.
-
-### 💡 Cálculo:
-
-$$
-r^2 = (r)^2
-$$
-
-### ⚙️ Ejemplo:
-
-Si $r = 0.994$:
-$$
-r^2 = (0.994)^2 = 0.988 = 98.8\%
-$$
-
-**Interpretación:** El 98.8% de la variación en las notas puede explicarse por las horas de estudio.
-
-### 💡 Escala de r²:
-
-| Valor de r² | Interpretación |
-|-------------|----------------|
-| r² = 0 | X no explica nada de la variación en Y |
-| r² = 0.5 | X explica el 50% de la variación en Y |
-| r² = 1 | X explica toda la variación en Y |
-
----
-
-## ⚠️ Errores Comunes
-
-### Error 1: Correlación implica causalidad
-
-**NUNCA** asumas que porque r es alto, X causa Y.
-
-**Ejemplo:** r = 0.95 entre consumo de helados y ahogamientos. ¿Los helados causan ahogamientos? No. Ambos están relacionados con el verano.
-
-### Error 2: r = 0 significa independencia
-
-$r = 0$ significa que no hay relación **lineal**, pero puede haber relación curvilínea.
-
-### Error 3: Solo mirar r sin graficar
-
-**Siempre** haz el diagrama de dispersión primero. Un solo outlier puede distorsionar r completamente.
-
-### Error 4: Comparar r de diferentes estudios
-
-El valor de r depende del rango de datos. Un estudio con más variación puede mostrar r más alto para la misma relación real.
-
----
-
-## 💡 Propiedades del Coeficiente de Correlación
-
-1. **Adimensional:** No tiene unidades
-2. **Simétrico:** $r_{XY} = r_{YX}$
-3. **No afectado por transformaciones lineales:** Si cambiamos unidades, r no cambia
-4. **Solo mide relación lineal:** No detecta relaciones curvilíneas
-
----
-
-## 🔑 Resumen
-
-| Concepto | Descripción |
-|----------|-------------|
-| **r (Pearson)** | Medida de correlación lineal entre -1 y 1 |
-| **r positivo** | X e Y aumentan juntas |
-| **r negativo** | Una aumenta, otra disminuye |
-| **\|r\| cercano a 1** | Relación lineal fuerte |
-| **r² (determinación)** | % de variación explicada |
+#### Ejemplo 5: Mercado de Valores
+$r^2=0.01$.
+El modelo no sirve para predecir nada.
 
 ---
 
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1
-Si la covarianza entre X e Y es 28, $s_X = 4$ y $s_Y = 10$, calcula r.
+Si $r = 1.2$, ¿qué significa?
 
 <details>
 <summary>Ver solución</summary>
 
-$$r = \frac{s_{XY}}{s_X \cdot s_Y} = \frac{28}{4 \times 10} = \frac{28}{40} = 0.70$$
-
-**r = 0.70** → Correlación positiva moderada-fuerte
+**Análisis:** Es imposible. El rango es [-1, 1]. Hiciste mal el cálculo.
+**Resultado:** $\boxed{\text{Error matemático}}$
 
 </details>
 
 ### Ejercicio 2
-Si r = -0.85 entre horas de TV y notas:
-a) ¿Qué tipo de relación hay?
-b) ¿Cuál es r²?
-c) Interpreta r² en contexto.
+Si $Cov(X,Y) = -10, S_x=2, S_y=5$. Calcula $r$.
 
 <details>
 <summary>Ver solución</summary>
 
-a) **Correlación negativa fuerte.** Más horas de TV se asocian con menores notas.
-
-b) **r² = (-0.85)² = 0.7225 = 72.25%**
-
-c) **Interpretación:** El 72.25% de la variación en las notas puede "explicarse" por las horas de TV.
-
-**Cuidado:** Esto no significa que la TV cause malas notas. Podría haber otras variables (dedicación al estudio, etc.).
+**Cálculo:** $-10 / (2 \cdot 5) = -1$.
+**Resultado:** $\boxed{-1 \text{ (Negativa Perfecta)}}$
 
 </details>
 
 ### Ejercicio 3
-¿Es posible que dos variables tengan r = 0 pero estén fuertemente relacionadas?
+¿Qué relación es más fuerte: $r=0.6$ o $r=-0.8$?
 
 <details>
 <summary>Ver solución</summary>
 
-**Sí, es posible.**
-
-r = 0 solo significa que no hay relación **lineal**.
-
-**Ejemplo:** Si Y = X²
-
-| X | Y |
-|---|---|
-| -2 | 4 |
-| -1 | 1 |
-| 0 | 0 |
-| 1 | 1 |
-| 2 | 4 |
-
-Calculando r, obtenemos aproximadamente 0 porque:
-- Cuando X es negativo, Y es alto
-- Cuando X es 0, Y es bajo
-- Cuando X es positivo, Y es alto
-
-Los efectos se cancelan, dando r ≈ 0.
-
-Pero claramente hay una relación: Y depende perfectamente de X (es $X^2$).
-
-**Moraleja:** Siempre graficar primero.
+**Análisis:** Miramos el valor absoluto (la fuerza). $|-0.8| > |0.6|$.
+**Resultado:** $\boxed{-0.8}$
 
 </details>
 
 ### Ejercicio 4
-¿Por qué r = 0.3 en un estudio médico podría ser muy importante, mientras que r = 0.3 en física podría considerarse muy bajo?
+Si $r=0$, ¿puedes decir que las variables son independientes?
 
 <details>
 <summary>Ver solución</summary>
 
-El contexto determina la importancia:
-
-**En medicina:**
-- El comportamiento humano tiene muchas variables no controlables
-- Una correlación de 0.3 (9% de varianza explicada) podría representar vidas salvadas
-- Si r = 0.3 entre ejercicio y reducción de enfermedades cardíacas, es significativo clínicamente
-
-**En física:**
-- Las leyes físicas son muy precisas
-- Una correlación de 0.3 indicaría una medición muy mala o un modelo incorrecto
-- Se esperan correlaciones cercanas a 1 para relaciones físicas conocidas
-
-**Conclusión:** La interpretación de r depende de:
-1. El campo de estudio
-2. La complejidad del fenómeno
-3. El propósito práctico del análisis
+**Teoría:** Solo dice que no hay relación **lineal**. Podría haber una parábola perfecta ($U$).
+**Resultado:** $\boxed{\text{No necesariamente}}$
 
 </details>
+
+### Ejercicio 5
+Calcula $R^2$ si $r=0.5$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Cálculo:** $0.5 \times 0.5 = 0.25$.
+**Resultado:** $\boxed{25\%}$
+
+</details>
+
+### Ejercicio 6
+Si todos los puntos forman una línea vertical, ¿cuánto vale $r$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Teoría:** $S_x = 0$. Divides por cero. Indefinido.
+**Resultado:** $\boxed{\text{Indefinido}}$
+
+</details>
+
+### Ejercicio 7
+En ciencias sociales, un $r=0.3$ suele considerarse "interesante". En física, "basura". ¿Por qué?
+
+<details>
+<summary>Ver solución</summary>
+
+**Contexto:** Los humanos somos impredecibles (ruido). Los átomos no.
+**Resultado:** $\boxed{\text{Depende del contexto}}$
+
+</details>
+
+### Ejercicio 8
+Si cambias X de "Años" a "Meses", ¿cambia $r$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Propiedad:** $r$ es adimensional e invariante a escala.
+**Resultado:** $\boxed{\text{No cambia}}$
+
+</details>
+
+### Ejercicio 9
+¿Qué signo tiene $r$ si la Covarianza es negativa?
+
+<details>
+<summary>Ver solución</summary>
+
+**Lógica:** $S_x$ y $S_y$ siempre son positivos. El signo lo da la covarianza.
+**Resultado:** $\boxed{\text{Negativo}}$
+
+</details>
+
+### Ejercicio 10
+Si $r=1$, ¿todos los puntos deben estar en la línea?
+
+<details>
+<summary>Ver solución</summary>
+
+**Definición:** Sí, perfección lineal.
+**Resultado:** $\boxed{\text{Sí}}$
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Estadístico | Fórmula | Rango | Uso |
+|-------------|---------|-------|-----|
+| **Covarianza** | No sirve para comparar. | $(-\infty, \infty)$ | Solo signo. |
+| **Correlación ($r$)** | $\frac{S_{xy}}{S_x S_y}$ | $[-1, 1]$ | Dirección y Fuerza. |
+| **Determinación ($R^2$)** | $r^2$ | $[0, 1]$ | Capacidad explicativa. |
+
+> **Conclusión:** Pearson nos dio el traductor universal. Con $r$, un psicólogo puede hablar con un astrónomo sobre qué tan fuertes son sus descubrimientos.

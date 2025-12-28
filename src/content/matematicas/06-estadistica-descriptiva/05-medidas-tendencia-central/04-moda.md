@@ -1,347 +1,262 @@
-# La Moda
+# **La Moda**
 
-¿Cuál es la talla de zapato más vendida? ¿Cuál es el color de carro más popular? ¿Cuál es la nota más común en el examen? Estas preguntas se responden con la **moda**.
+¿Cuál es la canción número 1 en Spotify esta semana? ¿Qué color de camiseta se vendió más? Estas preguntas no buscan un "promedio" matemático ni un "centro" geográfico. Buscan lo **popular**, lo **frecuente**. En estadística, el valor que gana el concurso de popularidad se llama **Moda**. Es la única medida que funciona incluso si tus datos no son números (como "colores" o "marcas").
 
 ---
 
 ## 🎯 ¿Qué vas a aprender?
 
-- Qué es la moda y cómo encontrarla
-- Distribuciones unimodales, bimodales y multimodales
-- Cómo encontrar la moda en tablas y datos agrupados
-- Cuándo es más útil que la media o mediana
+- Identificar la moda en conjuntos de datos simples (unimodal).
+- Reconocer casos especiales: bimodal, multimodal y amodal.
+- Encontrar la moda en tablas de frecuencia.
+- Diferenciar cuándo la moda es más útil que la media.
 
 ---
 
-## 📊 Tipos de Distribuciones según la Moda
+## Identificando la Moda
 
-| Tipo | Descripción | Ejemplo |
-|------|-------------|---------|
-| **Unimodal** | Una sola moda | Notas: 7, 8, **8**, 8, 9 → Moda = 8 |
-| **Bimodal** | Dos modas | Tallas: S, **M**, L, **M**, **L**, XL → Modas = M y L |
-| **Multimodal** | Tres o más modas | Poco común |
-| **Amodal** | Sin moda (todos diferentes) | Edades: 15, 16, 17, 18, 19 → Sin moda |
+Es simple: busca el dato que más se repite.
+- **Unimodal:** Un solo ganador.
+- **Bimodal:** Dos ganadores empatados.
+- **Multimodal:** Tres o más ganadores.
+- **Amodal:** Nadie gana (todos aparecen igual).
 
----
+### ⚙️ Ejemplo Resueltos
 
-## 📖 Definición de la Moda
+#### Ejemplo 1: Unimodal (El Ganador)
+**Datos:** 5, 8, 2, 5, 5, 9.
+**Conteo:** El 5 aparece tres veces. Los demás solo una vez.
+**Moda:** $\boxed{5}$
 
-> La **moda** (Mo) es el valor que aparece con **mayor frecuencia** en un conjunto de datos.
+#### Ejemplo 2: Bimodal (Empate)
+**Datos:** 1, 2, 1, 2, 3.
+**Conteo:** El 1 aparece dos veces. El 2 aparece dos veces.
+**Moda:** $\boxed{1 \text{ y } 2}$
 
-### 💡 Características:
-- Es el valor **más repetido**
-- Puede existir más de una moda
-- Puede no existir (si todos los valores son diferentes)
-- Funciona tanto para datos cuantitativos como cualitativos
+#### Ejemplo 3: Multimodal (Triple Empate)
+**Datos:** A, B, C, A, B, C, D.
+**Conteo:** A(2), B(2), C(2), D(1).
+**Moda:** $\boxed{\text{A, B y C}}$
 
----
+#### Ejemplo 4: Amodal (Todos iguales)
+**Datos:** 10, 20, 30, 40.
+**Conteo:** Todos aparecen una sola vez. No hay ningún dato que "destaque".
+**Moda:** $\boxed{\text{No tiene}}$
 
-## 📖 Encontrar la Moda: Datos Simples
-
-### ⚙️ Ejemplo 1: Unimodal
-
-Notas de 10 estudiantes: 7, 8, 6, 8, 9, 8, 7, 10, 8, 6
-
-**Conteo:**
-| Nota | Frecuencia |
-|------|------------|
-| 6 | 2 |
-| 7 | 2 |
-| **8** | **4** ← máximo |
-| 9 | 1 |
-| 10 | 1 |
-
-**Moda = 8** (aparece 4 veces, más que cualquier otro)
-
-### ⚙️ Ejemplo 2: Bimodal
-
-Edades: 20, 22, 22, 25, 25, 25, 28, 28, 28, 30
-
-**Conteo:**
-| Edad | Frecuencia |
-|------|------------|
-| 20 | 1 |
-| 22 | 2 |
-| **25** | **3** |
-| **28** | **3** |
-| 30 | 1 |
-
-**Modas = 25 y 28** (ambas con frecuencia 3)
-
-### ⚙️ Ejemplo 3: Amodal
-
-Datos: 1, 2, 3, 4, 5, 6, 7
-
-Cada valor aparece exactamente 1 vez → **No hay moda**
+#### Ejemplo 5: Falsa Alarma
+**Datos:** 1, 2, 3, 3, 4, 5 (Moda=3). Si agregamos otro 4...
+**Datos:** 1, 2, 3, 3, 4, 4, 5. (Moda=3 y 4).
+**Lección:** La moda es muy sensible a cambios pequeños en los datos.
 
 ---
 
-## 📖 Moda para Datos Cualitativos
+## Moda en Tablas de Frecuencia
 
-La moda es la **única** medida de tendencia central que funciona con datos cualitativos.
+Aquí no tienes que contar, ¡ya contaron por ti! Solo busca el número más grande en la columna de Frecuencia ($f_i$) y mira a quién pertenece.
 
-### ⚙️ Ejemplo: Colores favoritos
+### ⚙️ Ejemplos Resueltos
 
-| Color | Votos |
-|-------|-------|
-| Azul | 15 |
-| Rojo | 8 |
-| **Verde** | **22** |
-| Amarillo | 5 |
+#### Ejemplo 1: Tallas de Ropa
+**Tabla:**
+- S: 50
+- M: 120
+- L: 80
+**Análisis:** 120 es la frecuencia mayor.
+**Moda:** $\boxed{\text{Talla M}}$
 
-**Moda = Verde** (es el color con más votos)
+#### Ejemplo 2: Hijos por familia
+**Tabla:**
+- 0 hijos: 5 familias
+- 1 hijo: 20 familias
+- 2 hijos: 20 familias
+- 3 hijos: 2 familias
+**Análisis:** Empate en 20.
+**Moda:** $\boxed{1 \text{ y } 2 \text{ hijos}}$
 
-❌ No podemos calcular la media de colores (¿qué es "azul + rojo ÷ 2"?)
-❌ No podemos ordenar colores para encontrar la mediana
-✅ Pero sí podemos encontrar el más frecuente
+#### Ejemplo 3: Fruta favorita
+**Tabla:**
+- Manzana: 10
+- Pera: 5
+- Banano: 2
+**Mayor Frecuencia:** 10.
+**Moda:** $\boxed{\text{Manzana}}$
 
----
+#### Ejemplo 4: Notas (0-10)
+**Tabla:**
+- Nota 8: 15 alumnos
+- Nota 9: 4 alumnos
+- Nota 10: 1 alumno
+**Mayor Frecuencia:** 15.
+**Moda:** $\boxed{8}$
 
-## 📖 Moda con Tabla de Frecuencias
-
-Es muy fácil: busca la frecuencia más alta y el valor correspondiente.
-
-### ⚙️ Ejemplo
-
-| Número de hijos | Frecuencia |
-|-----------------|------------|
-| 0 | 5 |
-| 1 | 12 |
-| **2** | **18** ← máximo |
-| 3 | 10 |
-| 4 | 5 |
-
-**Moda = 2 hijos** (frecuencia 18, la mayor)
-
----
-
-## 📖 Moda con Datos Agrupados: Clase Modal
-
-Para datos agrupados, identificamos la **clase modal** (la clase con mayor frecuencia).
-
-### ⚙️ Ejemplo: Pesos de estudiantes
-
-| Intervalo | Frecuencia |
-|-----------|------------|
-| 52 - 58 | 7 |
-| 59 - 65 | 8 |
-| **66 - 72** | **9** ← máximo |
-| 73 - 79 | 8 |
-| 80 - 86 | 4 |
-| 87 - 93 | 4 |
-
-**Clase modal = 66 - 72 kg**
-
-### 💡 Estimación de la moda exacta
-
-Podemos estimar un valor más preciso usando la **marca de clase**:
-
-$$
-\text{Moda} \approx \text{Marca de clase modal} = \frac{66 + 72}{2} = 69 \text{ kg}
-$$
-
-### 💡 Fórmula de interpolación (opcional)
-
-Para mayor precisión:
-
-$$
-Mo = L_i + \left( \frac{d_1}{d_1 + d_2} \right) \times A
-$$
-
-Donde:
-- $L_i$ = límite inferior de la clase modal
-- $d_1$ = frecuencia modal - frecuencia clase anterior
-- $d_2$ = frecuencia modal - frecuencia clase siguiente
-- $A$ = amplitud de clase
+#### Ejemplo 5: Color de ojos
+**Tabla:**
+- Café: 80%
+- Azul: 10%
+- Verde: 10%
+**Mayor Porcentaje:** 80%.
+**Moda:** $\boxed{\text{Café}}$
 
 ---
 
-## 📖 Interpretación Visual
+## ¿Cuándo es la Mejor Opción?
 
-En un histograma o polígono de frecuencias, la moda está en el **pico** (la barra más alta).
+La moda brilla donde las matemáticas fallan.
 
-### Distribución unimodal:
-```
-      ▄█▄
-    ▄█████▄
-  ▄█████████▄
-```
-Un solo pico → una moda
+1.  **Datos Cualitativos:** No puedes promediar "Rojo" y "Azul". La moda es tu única opción.
+2.  **Inventarios:** Saber la talla más vendida es más útil que la "talla promedio".
+3.  **Votaciones:** El presidente es la "Moda" de los candidatos.
 
-### Distribución bimodal:
-```
-  ▄▄▄     ▄▄▄
- █████   █████
-███████ ███████
-```
-Dos picos → dos modas
+### ⚙️ Ejemplos Resueltos: Casos de Uso
 
----
+#### Ejemplo 1: Elecciones
+**Datos:** Candidato A (40%), B (30%), C (30%).
+**Análisis:** No existe "Candidato 1.5".
+**Mejor Medida:** Moda (Candidato A).
 
-## 💡 ¿Cuándo Usar la Moda?
+#### Ejemplo 2: Fabricación
+**Datos:** Diámetros de tuberías más usados.
+**Análisis:** Si el promedio es 2.5cm pero nadie compra esa medida, no sirve. Si la mayoría compra 2.0cm, fabrica eso.
+**Mejor Medida:** Moda.
 
-| Situación | ¿Usar moda? | Razón |
-|-----------|-------------|-------|
-| Datos cualitativos | ✅ Sí | Es la única opción |
-| Buscar lo más popular/típico | ✅ Sí | Es exactamente lo que mide |
-| Datos numéricos simétricos | ⚠️ Opcional | Media o mediana suelen ser mejores |
-| Decisiones comerciales | ✅ Sí | ¿Qué talla producir más? |
+#### Ejemplo 3: Tráfico Web
+**Datos:** Páginas más visitadas.
+**Análisis:** Necesitas saber qué contenido optimizar.
+**Mejor Medida:** Moda (La página con más visitas).
 
-### ⚙️ Ejemplo práctico: Taller de zapatos
+#### Ejemplo 4: Errores comunes
+**Datos:** Tipos de quejas de clientes.
+**Análisis:** ¿Cuál es la queja más frecuente para arreglarla primero?
+**Mejor Medida:** Moda (Pareto).
 
-Un taller necesita producir zapatos. ¿Qué talla producir más?
-
-| Talla | Demanda |
-|-------|---------|
-| 36 | 50 |
-| 37 | 80 |
-| **38** | **150** |
-| 39 | 100 |
-| 40 | 70 |
-
-**Moda = Talla 38** → Producir más zapatos de esta talla.
-
-La media (38.something) no tiene sentido práctico porque no produces "talla 38.3".
-
----
-
-## 📖 Relación Moda-Media-Mediana en Distribuciones Sesgadas
-
-| Distribución | Orden de izq. a der. |
-|--------------|---------------------|
-| Sesgada a la derecha | Moda < Mediana < Media |
-| Simétrica | Moda = Mediana = Media |
-| Sesgada a la izquierda | Media < Mediana < Moda |
-
-### 💡 Regla empírica (aproximación de Pearson):
-
-$$
-\text{Media} - \text{Moda} \approx 3 \times (\text{Media} - \text{Mediana})
-$$
-
----
-
-## 🔑 Resumen
-
-| Concepto | Descripción |
-|----------|-------------|
-| **Moda** | Valor que más se repite |
-| **Unimodal** | Una sola moda |
-| **Bimodal** | Dos modas |
-| **Amodal** | Sin moda (todos diferentes) |
-| **Uso principal** | Datos cualitativos o encontrar lo más común |
+#### Ejemplo 5: Horas Pico
+**Datos:** Hora con más pasajeros en el metro.
+**Análisis:** Para programar más trenes.
+**Mejor Medida:** Moda.
 
 ---
 
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1
-Encuentra la moda de los siguientes conjuntos:
-
-a) 5, 7, 8, 7, 9, 7, 6, 8, 7
-b) 10, 20, 30, 40, 50
-c) A, B, B, C, C, C, D, D
-d) 2, 2, 3, 3, 4, 4
+Encuentra la moda de: 3, 3, 5, 6, 9, 3, 6.
 
 <details>
 <summary>Ver solución</summary>
 
-a) **Datos: 5, 7, 8, 7, 9, 7, 6, 8, 7**
-Conteo: 5(1), 6(1), 7(4), 8(2), 9(1)
-**Moda = 7** (unimodal)
-
-b) **Datos: 10, 20, 30, 40, 50**
-Cada valor aparece 1 vez
-**Sin moda** (amodal)
-
-c) **Datos: A, B, B, C, C, C, D, D**
-Conteo: A(1), B(2), C(3), D(2)
-**Moda = C** (unimodal)
-
-d) **Datos: 2, 2, 3, 3, 4, 4**
-Conteo: 2(2), 3(2), 4(2)
-**Modas = 2, 3 y 4** (multimodal, las tres tienen la misma frecuencia)
+**Conteo:** El 3 aparece tres veces. El 6 dos veces.
+**Resultado:** $\boxed{3}$
 
 </details>
 
 ### Ejercicio 2
-En una encuesta sobre marca de celular favorita:
-
-| Marca | Votos |
-|-------|-------|
-| Apple | 45 |
-| Samsung | 52 |
-| Xiaomi | 38 |
-| Huawei | 25 |
-| Otros | 40 |
-
-a) ¿Cuál es la moda?
-b) ¿Por qué no usamos media o mediana aquí?
+Si todos los estudiantes de un salón tienen 15 años, ¿cuál es la moda?
 
 <details>
 <summary>Ver solución</summary>
 
-a) **Moda = Samsung** (52 votos, la mayor frecuencia)
-
-b) **No usamos media ni mediana porque:**
-- Las marcas son datos **cualitativos** (nominales)
-- No podemos sumar "Apple + Samsung" para calcular media
-- No podemos ordenar marcas para encontrar mediana
-- La moda es la **única** medida de tendencia central aplicable a datos nominales
+**Datos:** 15, 15, 15...
+**Análisis:** Al ser el único valor, es el más repetido.
+**Resultado:** $\boxed{15}$
 
 </details>
 
 ### Ejercicio 3
-La siguiente tabla muestra ventas de camisetas por talla:
-
-| Talla | Frecuencia |
-|-------|------------|
-| XS | 15 |
-| S | 42 |
-| M | 68 |
-| L | 55 |
-| XL | 30 |
-| XXL | 10 |
-
-a) ¿Cuál es la moda?
-b) Si la tienda solo puede destacar UNA talla en su vitrina, ¿cuál debería ser?
+Encuentra la moda de los colores: Rojo, Azul, Rojo, Verde, Verde, Verde, Azul.
 
 <details>
 <summary>Ver solución</summary>
 
-a) **Moda = M** (frecuencia 68, la mayor)
-
-b) **Talla M** debería ir en la vitrina porque:
-- Es la más demandada (moda)
-- Maximiza las posibilidades de venta por exposición
-- Representa al cliente "típico" de la tienda
+**Conteo:** Verde (3), Rojo (2), Azul (2).
+**Resultado:** $\boxed{\text{Verde}}$
 
 </details>
 
 ### Ejercicio 4
-Explica por qué una distribución bimodal podría indicar que los datos provienen de dos grupos diferentes.
+En una tabla, la Frecuencia más alta es 50 y corresponde al valor $X=10$. ¿Cuál es la moda, 50 o 10?
 
 <details>
 <summary>Ver solución</summary>
 
-Una distribución **bimodal** (dos picos) sugiere dos grupos porque:
-
-**Cada grupo tiene su propio "centro":**
-- Grupo 1 tiene su moda en el primer pico
-- Grupo 2 tiene su moda en el segundo pico
-
-**Ejemplo 1: Estaturas**
-Si mezclamos hombres y mujeres:
-- Pico 1: ~163 cm (moda de mujeres)
-- Pico 2: ~175 cm (moda de hombres)
-
-**Ejemplo 2: Tiempos de llegada**
-Restaurante con dos turnos de comida:
-- Pico 1: 12:30 pm (almuerzo)
-- Pico 2: 7:30 pm (cena)
-
-**Implicación:**
-Cuando vemos un histograma bimodal, debemos preguntarnos:
-"¿Hay dos poblaciones mezcladas que deberían analizarse por separado?"
+**Concepto:** La moda es el valor del dato, no su frecuencia.
+**Resultado:** $\boxed{10}$
 
 </details>
+
+### Ejercicio 5
+Halla la moda de: 1, 2, 3, 4, 5.
+
+<details>
+<summary>Ver solución</summary>
+
+**Análisis:** Todos tienen frecuencia 1. No hay ganador.
+**Resultado:** $\boxed{\text{Amodal (No tiene)}}$
+
+</details>
+
+### Ejercicio 6
+Si tienes dos modas lejanas (ej: notas 1.0 y 5.0), ¿qué te dice esto sobre el grupo?
+
+<details>
+<summary>Ver solución</summary>
+
+**Interpretación:** El grupo está polarizado. Hay dos subgrupos muy distintos (los que saben mucho y los que no saben nada).
+**Resultado:** $\boxed{\text{Población dividida (Bimodal)}}$
+
+</details>
+
+### Ejercicio 7
+Calcula la moda de: 9, 10, 11, 10, 9.
+
+<details>
+<summary>Ver solución</summary>
+
+**Conteo:** 9(2), 10(2), 11(1).
+**Resultado:** $\boxed{9 \text{ y } 10}$
+
+</details>
+
+### Ejercicio 8
+¿Puede la moda ser igual a la media y la mediana?
+
+<details>
+<summary>Ver solución</summary>
+
+**Caso:** Distribución perfectamente simétrica y unimodal.
+**Resultado:** $\boxed{\text{Sí}}$
+
+</details>
+
+### Ejercicio 9
+En una encuesta de satisfacción "Sí/No", hubo 40 Sí y 60 No. ¿Cuál es la moda?
+
+<details>
+<summary>Ver solución</summary>
+
+**Mayoría:** No (60).
+**Resultado:** $\boxed{\text{No}}$
+
+</details>
+
+### Ejercicio 10
+Si agregas un dato que es igual a la moda actual, ¿la moda cambia?
+
+<details>
+<summary>Ver solución</summary>
+
+**Análisis:** Si agregas más votos al ganador, sigue ganando.
+**Resultado:** $\boxed{\text{No, se refuerza}}$
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Concepto | Definición | Clave |
+|----------|------------|-------|
+| **Moda** | Valor más frecuente ($Max \ f_i$). | Útil para cualitativos ("lo popular"). |
+| **Bimodal** | Dos picos de frecuencia. | Indica dos grupos mezclados. |
+| **Amodal** | Frecuencias iguales. | Datos planos o insuficientes. |
+
+> **Conclusión:** La moda es simple pero poderosa. Es la reina de la democracia estadística: gana la mayoría simple.

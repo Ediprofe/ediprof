@@ -1,324 +1,262 @@
-# Gráficos para Datos Cualitativos
+# **Gráficos para Datos Cualitativos**
 
-Los números y tablas son útiles, pero a veces **una imagen dice más que mil datos**. Los gráficos nos permiten ver patrones, comparaciones y proporciones de un vistazo.
-
-Empecemos con los gráficos más adecuados para datos **cualitativos** (categóricos).
+Supón que quieres convencer a tu jefe de que el producto A se vende más que el B. Le muestras una tabla con números y probablemente se aburra. Pero si le muestras una barra gigante azul para "A" y una pequeña roja para "B", el mensaje es instantáneo. Esa es la magia de los gráficos cualitativos: transforman categorías (nombres, etiquetas) en imágenes impactantes.
 
 ---
 
 ## 🎯 ¿Qué vas a aprender?
 
-- Cuándo usar cada tipo de gráfico
-- Cómo construir e interpretar diagramas de barras
-- Cómo construir e interpretar diagramas circulares (de pastel)
-- Qué son los pictogramas y cuándo usarlos
+- Identificar cuándo usar diagramas de barras, circulares o pictogramas.
+- Construir diagramas de barras verticales y horizontales.
+- Calcular los grados exactos para cada sector en un diagrama circular.
+- Crear pictogramas usando escalas representativas.
+- Evaluar críticamente qué gráfico comunica mejor la información.
 
 ---
 
-## 📊 Resumen de Gráficos para Datos Cualitativos
+## Diagrama de Barras
 
-| Gráfico | Mejor para | Ejemplo |
-|---------|------------|---------|
-| **Diagrama de barras** | Comparar categorías | Votos por candidato |
-| **Diagrama circular** | Mostrar proporciones del todo | Distribución del presupuesto |
-| **Pictograma** | Comunicación visual simple | Infografías |
+Es el gráfico más versátil. Consiste en rectángulos separados donde la altura (o longitud) representa la frecuencia de cada categoría.
 
----
+### ⚙️ Ejemplos Resueltos
 
-## 📖 Diagrama de Barras
+#### Ejemplo 1: Barras Verticales (Mascotas)
+**Datos:** Perro (40), Gato (30), Pez (10).
+**Construcción:**
+- Eje X: Categorías (Perro, Gato, Pez).
+- Eje Y: Frecuencia (0 a 40).
+- Alturas: La barra de "Perro" sube hasta 40, la de "Gato" hasta 30.
 
-> El **diagrama de barras** usa rectángulos de igual ancho pero diferente altura para representar la frecuencia de cada categoría.
+#### Ejemplo 2: Barras Horizontales (Nombres largos)
+**Datos:** "Ingeniería Mecánica", "Administración de Empresas Turísticas", "Medicina Nuclear".
+**Análisis:** Como los nombres son muy largos, si los pones abajo (vertical) se amontonan. Mejor ponerlos a la izquierda (horizontal).
 
-### 💡 Características:
-- Cada categoría tiene una barra
-- La **altura** de la barra representa la frecuencia (o porcentaje)
-- Las barras están **separadas** (no se tocan)
-- Puede ser vertical u horizontal
+#### Ejemplo 3: Comparación incorrecta (Eje Y cortado)
+**Situación:** Una barra mide 10cm y representa "100 ventas". Otra mide 11cm y representa "105 ventas".
+**Error:** Si el eje Y empieza en 90, la diferencia parece enorme. El eje Y siempre debe empezar en **cero** para comparar honestamente.
 
-### ⚙️ Ejemplo 1: Transporte al trabajo
+#### Ejemplo 4: Barras Agrupadas
+**Datos:** Preferencia de Hombres vs Mujeres por colores (Azul, Rojo).
+**Uso:** Para cada color, pones dos barritas pegadas (una para Hom, otra para Muj). Así comparas géneros dentro de cada color.
 
-| Medio | f | % |
-|-------|---|---|
-| Bus | 45 | 45% |
-| Metro | 25 | 25% |
-| Carro | 20 | 20% |
-| Bicicleta | 7 | 7% |
-| A pie | 3 | 3% |
-| **Total** | **100** | **100%** |
-
-**Cómo construirlo:**
-
-1. Eje horizontal (X): Las categorías (Bus, Metro, Carro...)
-2. Eje vertical (Y): La frecuencia (0 a 45 o más)
-3. Para cada categoría, dibujar una barra hasta su frecuencia
-4. Dejar espacio entre barras
-
-### 💡 Reglas importantes:
-
-- **El eje Y debe empezar en cero** (si no, las comparaciones visuales son engañosas)
-- Todas las barras deben tener el **mismo ancho**
-- Las barras deben estar **separadas** (esto las distingue del histograma)
-- Añadir **título** y **etiquetas** a los ejes
-
-### ⚙️ Ejemplo 2: Barras horizontales
-
-A veces las barras horizontales son mejores:
-- Cuando los nombres de las categorías son largos
-- Cuando hay muchas categorías
-
-| Carrera | Estudiantes |
-|---------|-------------|
-| Ingeniería de Sistemas | 350 |
-| Medicina | 280 |
-| Administración de Empresas | 420 |
-| Derecho | 310 |
-| Psicología | 190 |
-
-Con barras horizontales, los nombres largos son más fáciles de leer.
+#### Ejemplo 5: Ordenando las barras (Pareto)
+**Datos:** Defectos: A (50), B (200), C (10).
+**Mejor práctica:** Ordenarlas de mayor a menor (B, A, C) facilita ver qué es lo más importante rápidamente.
 
 ---
 
-## 📖 Diagrama Circular (de Pastel)
+## Diagrama Circular (Pastel)
 
-> El **diagrama circular** divide un círculo en sectores, donde cada sector representa una categoría y su **área** es proporcional a su frecuencia.
+Representa las partes de un todo. El círculo completo son los $360^\circ$ (100%). Cada rebanada se calcula proporcionalmente.
 
-### 💡 Características:
-- El círculo completo = 100% (el total)
-- Cada "rebanada" = porcentaje de esa categoría
-- Ideal para mostrar **partes de un todo**
+$$ \text{Grados} = f_r \times 360^\circ $$
 
-### 💡 Fórmula para el ángulo:
+### ⚙️ Ejemplos Resueltos: Calculando Grados
 
-$$
-\text{Ángulo} = \frac{f}{n} \times 360° = f_r \times 360°
-$$
+#### Ejemplo 1: Mitad y Mitad
+**Datos:** 50% Hombres, 50% Mujeres.
+**Cálculo:**
+$$ 0.5 \times 360^\circ = 180^\circ $$
+**Resultado:** $\boxed{180^\circ \text{ (Medio círculo)}}$
 
-### ⚙️ Ejemplo: Distribución de gastos mensuales
+#### Ejemplo 2: Un tercio
+**Datos:** Categoría "A" tiene frecuencia relativa $1/3$.
+**Cálculo:**
+$$ \frac{1}{3} \times 360^\circ = 120^\circ $$
+**Resultado:** $\boxed{120^\circ}$
 
-| Categoría | Gasto | % | Ángulo |
-|-----------|-------|---|--------|
-| Vivienda | $800,000 | 40% | 144° |
-| Alimentación | $400,000 | 20% | 72° |
-| Transporte | $300,000 | 15% | 54° |
-| Servicios | $200,000 | 10% | 36° |
-| Otros | $300,000 | 15% | 54° |
-| **Total** | $2,000,000 | 100% | 360° |
+#### Ejemplo 3: Encuesta pequeña ($n=20$)
+**Dato:** 5 personas eligieron "Verano".
+**Proporción:** $5/20 = 0.25$.
+**Cálculo:**
+$$ 0.25 \times 360^\circ = 90^\circ $$
+**Resultado:** $\boxed{90^\circ \text{ (Ángulo recto)}}$
 
-**Cálculo del ángulo para Vivienda:**
-$$
-\text{Ángulo} = 0.40 \times 360° = 144°
-$$
+#### Ejemplo 4: Presupuesto ($n=1000$)
+**Dato:** Gasto en comida = 100.
+**Proporción:** $100/1000 = 0.1$.
+**Cálculo:**
+$$ 0.1 \times 360^\circ = 36^\circ $$
+**Resultado:** $\boxed{36^\circ}$
 
-### 💡 ¿Cuándo usar el diagrama circular?
-
-| ✅ Usar cuando... | ❌ Evitar cuando... |
-|-------------------|---------------------|
-| Quieres mostrar partes de un todo | Hay más de 6-7 categorías |
-| Las proporciones son lo importante | Los valores son muy similares |
-| Hay pocas categorías (3-6 ideal) | Quieres comparar valores exactos |
-| Suman 100% | Las categorías no son exhaustivas |
-
-### ⚠️ Limitaciones del diagrama circular
-
-- **Difícil comparar valores similares:** ¿35% vs 37%? Difícil de ver
-- **Muchas categorías = confusión:** Más de 7 rebanadas es difícil de leer
-- **No muestra valores exactos:** Necesitas etiquetas
+#### Ejemplo 5: Votos ($n=60$)
+**Dato:** Candidato X obtuvo 20 votos.
+**Proporción:** $20/60 = 1/3$.
+**Cálculo:**
+$$ \frac{1}{3} \times 360^\circ = 120^\circ $$
+**Resultado:** $\boxed{120^\circ}$
 
 ---
 
-## 📖 Pictogramas
+## Pictogramas
 
-> Un **pictograma** usa símbolos o imágenes para representar cantidades. Cada símbolo representa un valor fijo.
+Usan íconos repetidos o escalados para representar cantidades. Son menos precisos pero muy atractivos visualmente. Es vital definir la **escala** (ejemplo: 1 ícono = 100 unidades).
 
-### 💡 Características:
-- Muy visual y atractivo
-- Fácil de entender para público general
-- Común en infografías y reportes
+### ⚙️ Ejemplos Resueltos: Interpretación de Escalas
 
-### ⚙️ Ejemplo: Ventas de helados por día
+#### Ejemplo 1: Libros leídos
+**Escala:** 1 libro dibuja = 5 libros reales.
+**Dato:** Ana tiene 3 dibujos de libros.
+**Cálculo:** $3 \times 5 = 15$.
+**Interpretación:** Ana leyó 15 libros.
 
-**Escala:** 🍦 = 10 helados
+#### Ejemplo 2: Producción de autos
+**Escala:** 1 auto = 1,000 unidades.
+**Dato:** Toyota tiene 4 autos y medio dibujados.
+**Cálculo:** $4.5 \times 1000 = 4,500$.
+**Interpretación:** Produjeron 4,500 autos.
 
-| Día | Ventas | Representación |
-|-----|--------|----------------|
-| Lunes | 30 | 🍦🍦🍦 |
-| Martes | 45 | 🍦🍦🍦🍦½ |
-| Miércoles | 50 | 🍦🍦🍦🍦🍦 |
-| Jueves | 35 | 🍦🍦🍦½ |
-| Viernes | 80 | 🍦🍦🍦🍦🍦🍦🍦🍦 |
+#### Ejemplo 3: Goles por equipo
+**Escala:** 1 Balón = 2 goles.
+**Dato:** Equipo Rojo tiene 7 goles.
+**Dibujo:** Necesitas $7/2 = 3.5$ balones.
+**Resultado:** $\boxed{\text{● ● ● ◐}}$
 
-### 💡 Reglas del pictograma:
+#### Ejemplo 4: Manzanas cosechadas
+**Escala:** 1 Manzana = 10 kg.
+**Dato:** Cosecha de 125 kg.
+**Dibujo:** $125 / 10 = 12.5$.
+**Resultado:** 12 manzanas enteras y media manzana.
 
-1. **Especificar la escala:** "Cada 🍦 = 10 helados"
-2. Usar **el mismo símbolo** para todas las categorías
-3. Usar **medio símbolo** para valores intermedios
-4. El símbolo debe ser **relevante** al tema
-
-### ⚠️ Cuidado con pictogramas en 3D
-
-Algunos pictogramas usan símbolos más grandes para valores mayores. Esto puede ser **engañoso** porque:
-- Si duplicas el tamaño del símbolo, el área se cuadruplica
-- La percepción visual exagera las diferencias
-
-**Regla:** Mejor usar **más símbolos** que **símbolos más grandes**.
-
----
-
-## 💡 ¿Cuál Gráfico Elegir?
-
-| Pregunta | Gráfico recomendado |
-|----------|---------------------|
-| "¿Cuál categoría es más frecuente?" | Diagrama de barras |
-| "¿Qué proporción del total es cada categoría?" | Diagrama circular |
-| "¿Cómo comunicar a un público general?" | Pictograma |
-| "Hay muchas categorías (> 7)" | Diagrama de barras |
-| "Las categorías tienen orden (ordinal)" | Diagrama de barras (ordenado) |
-
----
-
-## 📖 Errores Comunes a Evitar
-
-### ❌ Error 1: No empezar el eje Y en cero
-
-**Problema:** Exagera visualmente las diferencias
-
-| Categoría | Valor real | Parece que... |
-|-----------|------------|---------------|
-| A | 100 | Es enorme |
-| B | 95 | Es muy pequeño |
-
-Si el eje empieza en 90, la diferencia parece enorme cuando es solo 5%.
-
-### ❌ Error 2: Usar colores sin propósito
-
-- No uses 15 colores diferentes sin razón
-- Usa color para destacar, no para confundir
-- Considera personas con daltonismo
-
-### ❌ Error 3: Gráficos 3D innecesarios
-
-- Los efectos 3D distorsionan las proporciones
-- Una rebanada de pastel "al frente" parece más grande
-- Preferir gráficos 2D para precisión
-
----
-
-## 🔑 Resumen
-
-| Gráfico | Cuándo usarlo | Cuándo evitarlo |
-|---------|---------------|-----------------|
-| **Barras** | Comparar categorías, muchas categorías | Mostrar partes de un todo |
-| **Circular** | Mostrar proporciones, pocas categorías | Más de 7 categorías, valores similares |
-| **Pictograma** | Comunicación visual, público general | Datos precisos, análisis técnico |
+#### Ejemplo 5: Población
+**Escala:** 1 Silueta = 1 millón de habitantes.
+**Dato:** Ciudad A (5 millones) vs Ciudad B (2 millones).
+**Visual:** Ciudad A tendría 5 figuras, Ciudad B tendría 2.
 
 ---
 
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1
-Una encuesta sobre redes sociales favoritas dio estos resultados:
-
-| Red Social | Usuarios |
-|------------|----------|
-| TikTok | 150 |
-| Instagram | 120 |
-| YouTube | 100 |
-| Facebook | 50 |
-| Twitter | 30 |
-| Otras | 50 |
-| **Total** | **500** |
-
-a) ¿Qué tipo de gráfico usarías para comparar las redes?
-b) ¿Qué tipo de gráfico usarías para mostrar qué proporción usa cada red?
-c) Calcula el ángulo que tendría TikTok en un diagrama circular.
+En un diagrama circular, ¿cuántos grados corresponden a una frecuencia relativa de 0.1?
 
 <details>
 <summary>Ver solución</summary>
 
-a) **Diagrama de barras** - Ideal para comparar categorías visualmente
-
-b) **Diagrama circular** - Muestra cada red como proporción del total
-
-c) **Ángulo de TikTok:**
-$$f_r = \frac{150}{500} = 0.30 = 30\%$$
-$$\text{Ángulo} = 0.30 \times 360° = 108°$$
+**Cálculo:**
+$$ 0.1 \times 360^\circ = 36^\circ $$
+**Resultado:** $\boxed{36^\circ}$
 
 </details>
 
 ### Ejercicio 2
-Explica por qué un diagrama circular NO sería adecuado para representar:
-
-"Los géneros musicales favoritos de una clase donde cada estudiante podía elegir hasta 3 géneros"
+Si dibujas un diagrama de barras para los días de la semana (Lunes a Domingo), ¿cuántas barras necesitas?
 
 <details>
 <summary>Ver solución</summary>
 
-El diagrama circular **NO funcionaría** porque:
-
-1. **Los porcentajes no suman 100%:** Si cada estudiante elige 3 géneros, los porcentajes sumarán más del 100%.
-
-2. **No son partes de un todo:** El círculo representa "el total", pero aquí un estudiante está contado en múltiples categorías.
-
-3. **Ejemplo:** Si 80% eligió reggaetón, 60% eligió pop y 50% eligió rock, ¿cuánto sería el círculo? 80 + 60 + 50 = 190%, ¡no tiene sentido!
-
-**Mejor opción:** Diagrama de barras, donde cada barra puede exceder y las barras no necesitan sumar ningún total específico.
+**Análisis:** Hay 7 días en la semana. Cada categoría necesita su propia barra independiente.
+**Resultado:** $\boxed{7 \text{ barras}}$
 
 </details>
 
 ### Ejercicio 3
-Una empresa tiene empleados en 4 departamentos:
-
-| Departamento | Empleados |
-|--------------|-----------|
-| Ventas | 48 |
-| Producción | 72 |
-| Administración | 24 |
-| Logística | 36 |
-
-Calcula el ángulo para cada departamento en un diagrama circular.
+En un pictograma donde ⭐️ = 10 clientes, ¿cuántas estrellas necesitas para representar 55 clientes?
 
 <details>
 <summary>Ver solución</summary>
 
-**Total:** $48 + 72 + 24 + 36 = 180$ empleados
-
-| Departamento | f | $f_r$ | Ángulo |
-|--------------|---|-------|--------|
-| Ventas | 48 | $\frac{48}{180} = 0.267$ | $0.267 \times 360° = 96°$ |
-| Producción | 72 | $\frac{72}{180} = 0.400$ | $0.400 \times 360° = 144°$ |
-| Administración | 24 | $\frac{24}{180} = 0.133$ | $0.133 \times 360° = 48°$ |
-| Logística | 36 | $\frac{36}{180} = 0.200$ | $0.200 \times 360° = 72°$ |
-| **Total** | 180 | 1.000 | 360° |
-
-**Verificación:** $96 + 144 + 48 + 72 = 360°$ ✓
+**Cálculo:**
+$$ \frac{55}{10} = 5.5 $$
+**Resultado:** $\boxed{5 \text{ estrellas y media}}$
 
 </details>
 
 ### Ejercicio 4
-Crea un pictograma para representar los libros leídos por 5 amigos, usando la escala: 📚 = 4 libros
-
-| Persona | Libros leídos |
-|---------|---------------|
-| Ana | 12 |
-| Luis | 8 |
-| María | 16 |
-| Carlos | 6 |
-| Sofía | 10 |
+Calcula el ángulo para un sector que representa el 25% del total.
 
 <details>
 <summary>Ver solución</summary>
 
-**Escala:** 📚 = 4 libros
-
-| Persona | Libros | Pictograma |
-|---------|--------|------------|
-| Ana | 12 | 📚📚📚 |
-| Luis | 8 | 📚📚 |
-| María | 16 | 📚📚📚📚 |
-| Carlos | 6 | 📚½ (1.5 símbolos) |
-| Sofía | 10 | 📚📚½ (2.5 símbolos) |
-
-**Nota:** Carlos leyó 6 libros = $\frac{6}{4} = 1.5$ símbolos
-Sofía leyó 10 libros = $\frac{10}{4} = 2.5$ símbolos
+**Cálculo:**
+$$ 0.25 \times 360^\circ = \frac{360^\circ}{4} = 90^\circ $$
+**Resultado:** $\boxed{90^\circ}$
 
 </details>
+
+### Ejercicio 5
+Tienes datos sobre "Marcas de Carro" (Toyota, Ford, Mazda). ¿Qué tipo de variable es y qué gráfico recomiendas?
+
+<details>
+<summary>Ver solución</summary>
+
+**Variable:** Cualitativa Nominal.
+**Gráfico:** Diagrama de Barras (para comparar cantidades) o Circular (para ver participación de mercado).
+**Resultado:** $\boxed{\text{Cualitativa / Barras o Circular}}$
+
+</details>
+
+### Ejercicio 6
+Si la frecuencia absoluta de "Azul" es 60 y el total de datos es 180, ¿qué ángulo le corresponde en el diagrama circular?
+
+<details>
+<summary>Ver solución</summary>
+
+**Proporción:** $60/180 = 1/3$.
+**Cálculo:**
+$$ \frac{1}{3} \times 360^\circ = 120^\circ $$
+**Resultado:** $\boxed{120^\circ}$
+
+</details>
+
+### Ejercicio 7
+En un gráfico de barras, la barra de "Perros" mide 4 cm y la de "Gatos" mide 2 cm. Si la escala es 1 cm = 5 animales, ¿cuántos perros más que gatos hay?
+
+<details>
+<summary>Ver solución</summary>
+
+**Perros:** $4 \times 5 = 20$.
+**Gatos:** $2 \times 5 = 10$.
+**Diferencia:** $20 - 10 = 10$.
+**Resultado:** $\boxed{10 \text{ perros más}}$
+
+</details>
+
+### Ejercicio 8
+¿Por qué no es recomendable usar un diagrama circular si tienes 20 categorías?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** Con 20 sectores, las rebanadas se vuelven imposibles de distinguir y leer. El gráfico pierde su utilidad visual.
+**Resultado:** $\boxed{\text{Se vuelve ilegible}}$
+
+</details>
+
+### Ejercicio 9
+Si en un diagrama circular un sector mide $180^\circ$, ¿qué porcentaje de los datos representa?
+
+<details>
+<summary>Ver solución</summary>
+
+**Cálculo:**
+$$ \frac{180}{360} = 0.5 $$
+**Porcentaje:** $0.5 \times 100 = 50\%$.
+**Resultado:** $\boxed{50\%}$
+
+</details>
+
+### Ejercicio 10
+Diseña una escala para un pictograma si tus datos son: 500, 1000, 1500, 2000.
+
+<details>
+<summary>Ver solución</summary>
+
+**Análisis:** Todos son múltiplos de 500.
+**Escala ideal:** 1 Símbolo = 500 unidades.
+**Dibujos:** 1, 2, 3 y 4 símbolos respectivamente.
+**Resultado:** $\boxed{1 \text{ ícono} = 500 \text{ unidades}}$
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Gráfico | Uso Principal | Clave de Construcción |
+|---------|---------------|-----------------------|
+| **Barras** | Comparar frecuencias ($f_i$). | Alturas proporcionales. Ejes claros. |
+| **Circular** | Mostrar proporciones ($f_r$). | Ángulo = $f_r \times 360^\circ$. |
+| **Pictograma** | Impacto visual simple. | Definir escala (1 ícono = X cantidad). |
+
+> **Conclusión:** No existe el "mejor gráfico" universal. Elige barras para comparar, círculos para dividir un todo, y pictogramas para atraer audiencias no técnicas.

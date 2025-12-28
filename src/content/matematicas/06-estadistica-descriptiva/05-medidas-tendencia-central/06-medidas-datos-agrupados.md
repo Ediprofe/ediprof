@@ -1,324 +1,252 @@
-# Medidas para Datos Agrupados
+# **Medidas para Datos Agrupados**
 
-Cuando los datos vienen organizados en tablas de frecuencias (especialmente con clases), necesitamos adaptar nuestras fórmulas. Ya no tenemos los valores individuales, pero podemos **estimar** las medidas de tendencia central usando la información disponible.
+Imagina que encuentras un reporte antiguo que dice: *"100 personas ganan entre \$500 y \$1000, 20 personas ganan entre \$1000 y \$1500"*. No tienes la lista exacta de sueldos, pero necesitas calcular el promedio. ¿Te rindes? ¡No! Usamos técnicas de estimación para recuperar las medidas de tendencia central usando "marcas de clase" y suposiciones inteligentes.
 
 ---
 
 ## 🎯 ¿Qué vas a aprender?
 
-- Cómo calcular la media con datos agrupados
-- Cómo estimar la mediana con interpolación
-- Cómo identificar la clase modal y estimar la moda
-- Por qué solo son estimaciones
+- Calcular la Media ($\bar{x}$) usando la marca de clase como representante.
+- Estimar la Mediana usando la fórmula de interpolación lineal.
+- Estimar la Moda usando las frecuencias vecinas.
+- Entender que todos estos valores son **aproximaciones**.
 
 ---
 
-## 📊 Resumen de Fórmulas
+## Media: El método de la Marca de Clase
 
-| Medida | Fórmula para Datos Agrupados |
-|--------|------------------------------|
-| **Media** | $\bar{x} = \frac{\sum f_i \cdot x_i}{n}$ |
-| **Mediana** | $Me = L_i + \left(\frac{\frac{n}{2} - F_{ant}}{f_{med}}\right) \cdot A$ |
-| **Moda** | Clase con mayor frecuencia |
+Como no sabemos cuánto vale cada dato del intervalo, asumimos que todos valen lo mismo: el centro del intervalo (Marca de Clase, $x_i$).
 
-Donde $x_i$ = marca de clase
+$$ \bar{x} = \frac{\sum (f_i \cdot x_i)}{n} $$
 
----
+### ⚙️ Ejemplos Resueltos
 
-## 📖 Datos de Ejemplo
+#### Ejemplo 1: Datos Básicos
+- Int [0-10], $f=5$. Marca $x_1=5$. Producto: 25.
+- Int [10-20], $f=5$. Marca $x_2=15$. Producto: 75.
+- Suma: 100. Total $n=10$.
+- Media: $100/10 = \boxed{10}$
 
-Usaremos la siguiente tabla a lo largo de la lección:
+#### Ejemplo 2: Intervalos Asimétricos
+- [0-4], $f=10$. Marca 2. Prod: 20.
+- [4-6], $f=20$. Marca 5. Prod: 100.
+- Suma: 120. $n=30$.
+- Media: $120/30 = \boxed{4}$
 
-**Estaturas de 50 estudiantes (en cm)**
+#### Ejemplo 3: Calificaciones
+- [3.0 - 4.0), $f=2$. Marca 3.5. Prod: 7.0.
+- [4.0 - 5.0], $f=8$. Marca 4.5. Prod: 36.0.
+- Suma: 43. $n=10$.
+- Media: $\boxed{4.3}$
 
-| Clase | Intervalo | $x_i$ (marca) | f | F |
-|-------|-----------|---------------|---|---|
-| 1 | 150 - 154 | 152 | 4 | 4 |
-| 2 | 155 - 159 | 157 | 9 | 13 |
-| 3 | 160 - 164 | 162 | 15 | 28 |
-| 4 | 165 - 169 | 167 | 12 | 40 |
-| 5 | 170 - 174 | 172 | 7 | 47 |
-| 6 | 175 - 179 | 177 | 3 | 50 |
-| **Total** | | | **50** | |
+#### Ejemplo 4: Edades
+- [10-20], $f=100$. Marca 15. Prod: 1500.
+- [20-30], $f=0$.
+- Suma: 1500. $n=100$.
+- Media: $\boxed{15}$
 
----
-
-## 📖 Media para Datos Agrupados
-
-### 💡 Idea clave:
-No conocemos los valores exactos, así que usamos la **marca de clase** ($x_i$) como representante de todos los valores en ese intervalo.
-
-### 💡 Fórmula:
-
-$$
-\bar{x} = \frac{\sum f_i \cdot x_i}{n}
-$$
-
-### ⚙️ Cálculo paso a paso:
-
-| Intervalo | $x_i$ | $f_i$ | $f_i \cdot x_i$ |
-|-----------|-------|-------|-----------------|
-| 150-154 | 152 | 4 | 608 |
-| 155-159 | 157 | 9 | 1,413 |
-| 160-164 | 162 | 15 | 2,430 |
-| 165-169 | 167 | 12 | 2,004 |
-| 170-174 | 172 | 7 | 1,204 |
-| 175-179 | 177 | 3 | 531 |
-| **Total** | | **50** | **8,190** |
-
-$$
-\bar{x} = \frac{8,190}{50} = 163.8 \text{ cm}
-$$
-
-**Interpretación:** La estatura media estimada es aproximadamente 163.8 cm.
+#### Ejemplo 5: Caso Unico
+- [100-200], $f=1$.
+- Media = Marca de clase = $\boxed{150}$
 
 ---
 
-## 📖 Mediana para Datos Agrupados
+## Mediana: El método de Interpolación
 
-### 💡 Proceso:
+Primero hallamos la posición $P = n/2$. Luego buscamos el intervalo que contiene esa posición y aplicamos zoom (interpolación).
 
-1. **Encontrar la posición de la mediana:** $\frac{n}{2}$
-2. **Identificar la clase mediana:** Donde $F \geq \frac{n}{2}$
-3. **Interpolar** para obtener un valor más preciso
+$$ Me = L_i + \left( \frac{\frac{n}{2} - F_{ant}}{f_{med}} \right) \cdot A $$
 
-### 💡 Fórmula de interpolación:
+### ⚙️ Ejemplos Resueltos
 
-$$
-Me = L_i + \left(\frac{\frac{n}{2} - F_{anterior}}{f_{mediana}}\right) \cdot A
-$$
+#### Ejemplo 1: Interpolación simple
+- $n=20$, $n/2=10$.
+- Intervalo mediano [20-30]. $F_{ant}=5$. $f_{med}=10$. $A=10$.
+- $Me = 20 + \frac{10 - 5}{10} \cdot 10 = 20 + 0.5 \cdot 10 = \boxed{25}$
 
-Donde:
-- $L_i$ = límite inferior de la clase mediana
-- $F_{anterior}$ = frecuencia acumulada ANTES de la clase mediana
-- $f_{mediana}$ = frecuencia de la clase mediana
-- $A$ = amplitud de clase
+#### Ejemplo 2: Al inicio del intervalo
+- Posición mediana cae justo en el borde inferior.
+- Entonces $n/2 - F_{ant} = 0$.
+- $Me = L_i + 0 = \boxed{L_i}$
 
-### ⚙️ Cálculo paso a paso:
+#### Ejemplo 3: Al final del intervalo
+- Posición mediana casi completa la frecuencia.
+- La fracción se acerca a 1.
+- $Me \approx \boxed{L_{sup}}$
 
-**Paso 1:** Posición de la mediana
-$$
-\frac{n}{2} = \frac{50}{2} = 25
-$$
+#### Ejemplo 4: Intervalo amplio
+- Clase mediana [100-200], $A=100$.
+- Fracción de interpolación calculada: $0.4$.
+- $Me = 100 + 0.4 \cdot 100 = \boxed{140}$
 
-**Paso 2:** Identificar la clase mediana
-Buscamos el primer F ≥ 25:
-- F = 4 para 150-154 ❌
-- F = 13 para 155-159 ❌
-- F = 28 para 160-164 ✅ ← Clase mediana
-
-**Paso 3:** Identificar valores
-- $L_i = 160$ (o 159.5 si usamos límites reales)
-- $F_{anterior} = 13$ (frecuencia acumulada de la clase anterior)
-- $f_{mediana} = 15$
-- $A = 5$
-
-**Paso 4:** Aplicar fórmula
-$$
-Me = 160 + \left(\frac{25 - 13}{15}\right) \cdot 5
-$$
-$$
-Me = 160 + \left(\frac{12}{15}\right) \cdot 5 = 160 + 0.8 \cdot 5 = 160 + 4 = 164 \text{ cm}
-$$
-
-**Interpretación:** La estatura mediana estimada es 164 cm. El 50% de los estudiantes mide menos de 164 cm.
+#### Ejemplo 5: Distribución Uniforme
+- Intervalo [0-10], $f=10$. $F_{ant}=0$. Bscamos dato 5 (mitad).
+- $Me = 0 + \frac{5-0}{10} \cdot 10 = \boxed{5}$ (Justo el centro).
 
 ---
 
-## 📖 Moda para Datos Agrupados
+## Moda: El método de diferencias
 
-### 💡 Proceso simple:
-Identificar la **clase modal** = la clase con mayor frecuencia.
+La Moda vive en la clase con más frecuencia ($f_{max}$). Para hallarla exacta, vemos qué vecinos la "jalan" más fuerte.
 
-En nuestro ejemplo:
+$$ Mo = L_i + \left( \frac{\Delta_1}{\Delta_1 + \Delta_2} \right) \cdot A $$
 
-| Intervalo | f |
-|-----------|---|
-| 150-154 | 4 |
-| 155-159 | 9 |
-| **160-164** | **15** ← Máxima |
-| 165-169 | 12 |
-| 170-174 | 7 |
-| 175-179 | 3 |
+Donde $\Delta_1$ es la diferencia con el vecino anterior y $\Delta_2$ con el siguiente.
 
-**Clase modal: 160-164 cm**
+### ⚙️ Ejemplos Resueltos
 
-### 💡 Estimación usando la marca de clase:
+#### Ejemplo 1: Vecinos Simétricos
+- Clase Modal $f=10$. Anterior $f=5$. Siguiente $f=5$.
+- $\Delta_1=5, \Delta_2=5$.
+- Fracción $= 5/10 = 0.5$.
+- La moda está en el puro medio del intervalo.
 
-$$
-Mo \approx x_i = \frac{160 + 164}{2} = 162 \text{ cm}
-$$
+#### Ejemplo 2: Vecino Anterior es 0
+- Clase Modal es la primera ($f_{ant}=0$).
+- $\Delta_1 = f_{mod}$.
+- La moda se jala hacia la izquierda.
 
-### 💡 Fórmula de interpolación (más precisa):
+#### Ejemplo 3: Vecino Siguiente es grande
+- Clase Modal $f=20$. Siguiente $f=19$. ($\Delta_2=1$).
+- $\Delta_1$ (con anterior) digamos que es 10.
+- El vecino siguiente jala la moda hacia la derecha (cerca del límite superior).
 
-$$
-Mo = L_i + \left(\frac{d_1}{d_1 + d_2}\right) \cdot A
-$$
+#### Ejemplo 4: Estimación rápida (Marca de clase)
+- A veces, simplemente se usa la **Marca de Clase** como estimador rápido sin fórmula compleja.
+- Int [10-20]. Moda estimada $\approx \boxed{15}$
 
-Donde:
-- $d_1$ = $f_{modal} - f_{anterior}$ = 15 - 9 = 6
-- $d_2$ = $f_{modal} - f_{siguiente}$ = 15 - 12 = 3
-
-$$
-Mo = 160 + \left(\frac{6}{6 + 3}\right) \cdot 5 = 160 + \frac{6}{9} \cdot 5 = 160 + 3.33 = 163.3 \text{ cm}
-$$
-
----
-
-## 📊 Resumen de Resultados
-
-Para los datos de estaturas:
-
-| Medida | Valor Estimado |
-|--------|----------------|
-| **Media** | 163.8 cm |
-| **Mediana** | 164.0 cm |
-| **Moda** | 163.3 cm |
-
-### 💡 ¿Qué indica esto?
-
-Las tres medidas son muy similares (≈163-164 cm), lo que sugiere una distribución **aproximadamente simétrica**.
-
----
-
-## ⚠️ Importante: Son Estimaciones
-
-Cuando trabajamos con datos agrupados:
-
-1. **Perdemos precisión:** No conocemos los valores exactos dentro de cada clase
-2. **Asumimos uniformidad:** La marca de clase asume que los datos están uniformemente distribuidos en cada intervalo
-3. **El resultado es aproximado:** Si tuviéramos los datos originales, los valores podrían diferir ligeramente
-
-### 💡 ¿Por qué usar datos agrupados entonces?
-
-- **Grandes volúmenes de datos:** Más fácil de manejar
-- **Datos ya agrupados:** A veces solo tenemos la tabla
-- **Visualización:** Histogramas requieren datos agrupados
-- **Suficiente precisión:** Para muchos propósitos, la estimación es adecuada
-
----
-
-## 🔑 Resumen
-
-| Medida | Procedimiento |
-|--------|---------------|
-| **Media** | Usar marcas de clase: $\bar{x} = \frac{\sum f_i \cdot x_i}{n}$ |
-| **Mediana** | Interpolar en la clase que contiene la posición $\frac{n}{2}$ |
-| **Moda** | Clase con mayor frecuencia (o interpolar) |
+#### Ejemplo 5: Clase Unica
+- Solo hay un intervalo [0-10] con datos.
+- Moda estimada $\approx \boxed{5}$
 
 ---
 
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1
-Calcula la media para los siguientes datos agrupados:
-
-| Intervalo | f |
-|-----------|---|
-| 10 - 20 | 5 |
-| 20 - 30 | 12 |
-| 30 - 40 | 18 |
-| 40 - 50 | 10 |
-| 50 - 60 | 5 |
+Calcula la media de:
+- [0-10], f=4
+- [10-20], f=6
 
 <details>
 <summary>Ver solución</summary>
 
-**Paso 1:** Calcular marcas de clase y productos
-
-| Intervalo | $x_i$ | $f_i$ | $f_i \cdot x_i$ |
-|-----------|-------|-------|-----------------|
-| 10-20 | 15 | 5 | 75 |
-| 20-30 | 25 | 12 | 300 |
-| 30-40 | 35 | 18 | 630 |
-| 40-50 | 45 | 10 | 450 |
-| 50-60 | 55 | 5 | 275 |
-| **Total** | | **50** | **1,730** |
-
-**Paso 2:** Calcular la media
-$$\bar{x} = \frac{1,730}{50} = 34.6$$
-
-**La media estimada es 34.6**
+**Marcas:** 5 y 15.
+**Productos:** $20 + 90 = 110$.
+**Total:** 10.
+**Media:** $\boxed{11}$
 
 </details>
 
 ### Ejercicio 2
-Usando la tabla del Ejercicio 1, calcula la mediana.
+Encuentra la clase mediana si $F$ acumuladas son: 5, 15, 25. Total $n=25$.
 
 <details>
 <summary>Ver solución</summary>
 
-**Paso 1:** Calcular frecuencias acumuladas
-
-| Intervalo | f | F |
-|-----------|---|---|
-| 10-20 | 5 | 5 |
-| 20-30 | 12 | 17 |
-| 30-40 | 18 | 35 |
-| 40-50 | 10 | 45 |
-| 50-60 | 5 | 50 |
-
-**Paso 2:** Posición de la mediana
-$\frac{n}{2} = \frac{50}{2} = 25$
-
-**Paso 3:** Identificar clase mediana
-F = 17 para 20-30 ❌
-F = 35 para 30-40 ✅ ← Clase mediana
-
-**Paso 4:** Interpolar
-- $L_i = 30$
-- $F_{anterior} = 17$
-- $f_{mediana} = 18$
-- $A = 10$
-
-$$Me = 30 + \left(\frac{25 - 17}{18}\right) \cdot 10 = 30 + \frac{8}{18} \cdot 10$$
-$$Me = 30 + 0.444 \cdot 10 = 30 + 4.44 = 34.4$$
-
-**La mediana estimada es 34.4**
+**Posición:** $12.5$.
+**F:** El primer grupo (5) no llega. El segundo (15) sí lo atrapa.
+**Clase:** $\boxed{\text{La segunda}}$
 
 </details>
 
 ### Ejercicio 3
-Usando la tabla del Ejercicio 1:
-a) ¿Cuál es la clase modal?
-b) Estima la moda usando la marca de clase
-c) Compara la media, mediana y moda. ¿Qué tipo de distribución sugiere?
+Calcula $\bar{x}$ si tienes clases de amplitud 10 comenzando en 0, con frecuencias 1, 1, 1.
 
 <details>
 <summary>Ver solución</summary>
 
-a) **Clase modal:** 30-40 (frecuencia 18, la mayor)
-
-b) **Moda estimada (marca de clase):**
-$$Mo = \frac{30 + 40}{2} = 35$$
-
-c) **Comparación:**
-- Media ≈ 34.6
-- Mediana ≈ 34.4
-- Moda ≈ 35
-
-**Las tres medidas son muy similares (34-35), lo que sugiere una distribución aproximadamente SIMÉTRICA.**
-
-En una distribución simétrica: Media ≈ Mediana ≈ Moda ✓
+**Marcas:** 5, 15, 25.
+**Suma:** 45.
+**Media:** $45/3 = \boxed{15}$
 
 </details>
 
 ### Ejercicio 4
-¿Por qué la media calculada con datos agrupados es solo una "estimación" y no el valor exacto?
+Si la moda cae en el intervalo [50-60], ¿puede ser el valor de la moda 65?
 
 <details>
 <summary>Ver solución</summary>
 
-La media con datos agrupados es una estimación porque:
-
-1. **Perdemos información:** Al agrupar, no sabemos los valores exactos dentro de cada clase.
-
-2. **Usamos la marca de clase:** Asumimos que todos los valores de una clase son iguales al punto medio, pero esto no es necesariamente cierto.
-
-3. **Ejemplo:** En la clase 30-40, podría haber valores como 31, 32, 38, 39 (asimétricos) o 34, 35, 36 (centrados). Usamos 35 para todos.
-
-4. **El error depende de la distribución real:** Si los datos dentro de cada clase están centrados en la marca, la estimación es buena. Si están concentrados en un extremo, hay más error.
-
-**Conclusión:** La estimación es útil y generalmente cercana al valor real, pero si necesitas exactitud total, debes trabajar con los datos originales no agrupados.
+**Lógica:** La moda debe estar *dentro* de su intervalo.
+**Resultado:** $\boxed{\text{No}}$
 
 </details>
+
+### Ejercicio 5
+Interpola la mediana: $L_i=10, A=5$. Necesitas recorrer el 50% del intervalo.
+
+<details>
+<summary>Ver solución</summary>
+
+**Cálculo:** $10 + (0.5 \times 5) = 12.5$.
+**Resultado:** $\boxed{12.5}$
+
+</details>
+
+### Ejercicio 6
+Si la frecuencia modal es 20 y la anterior es 20, ¿cuánto vale $\Delta_1$?
+
+<details>
+<summary>Ver solución</summary>
+
+**Resta:** $20 - 20 = 0$.
+**Resultado:** $\boxed{0}$
+
+</details>
+
+### Ejercicio 7
+¿Qué pasa con la media de datos agrupados si todos los intervalos se desplazan +10 unidades a la derecha?
+
+<details>
+<summary>Ver solución</summary>
+
+**Propiedad:** La media también aumenta 10.
+**Resultado:** $\boxed{\text{Aumenta 10}}$
+
+</details>
+
+### Ejercicio 8
+Calcula la marca de clase del intervalo [19.5 - 29.5].
+
+<details>
+<summary>Ver solución</summary>
+
+**Promedio:** $(19.5 + 29.5) / 2 = 49 / 2 = 24.5$.
+**Resultado:** $\boxed{24.5}$
+
+</details>
+
+### Ejercicio 9
+Si en el intervalo de la mediana $f_{med}$ es muy pequeña, ¿qué pasa con el resultado de la interpolación?
+
+<details>
+<summary>Ver solución</summary>
+
+**Análisis:** Al dividir por un $f_{med}$ pequeño, el término de fracción crece rápido, cubriendo el intervalo con pocos "pasos".
+**Resultado:** $\boxed{\text{Es sensible (inestable)}}$
+
+</details>
+
+### Ejercicio 10
+¿Es posible calcular la media exacta si solo te dan la tabla agrupada?
+
+<details>
+<summary>Ver solución</summary>
+
+**Teoría:** No, perdiste los datos individuales.
+**Resultado:** $\boxed{\text{No, solo una estimación}}$
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Estadístico | Método Agrupado | Precisión |
+|-------------|-----------------|-----------|
+| **Media** | Ponderado con Marcas de Clase. | Buena ssi la distribución es uniforme. |
+| **Mediana** | Interpolación del área acumulada. | Más robusta que la media. |
+| **Moda** | Interacción con vecinos ($\Delta$). | Depende mucho del ancho del intervalo elegido. |
+
+> **Conclusión:** Agrupar datos nos ahorra espacio pero nos cobra un precio en precisión. Las fórmulas de datos agrupados son nuestro mejor intento de reconstruir la realidad perdida.

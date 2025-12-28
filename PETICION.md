@@ -167,15 +167,9 @@ Situaciones que requieren confirmación:
 
 Corrige las siguientes lecciones al estilo Ediprofe.
 
-http://localhost:4321/matematicas/trigonometria/triangulos-oblicuangulos/ley-senos
+http://localhost:4321/matematicas/aritmetica/potenciacion-radicacion-logaritmos/propiedades-de-los-logaritmos
 
-http://localhost:4321/matematicas/trigonometria/triangulos-oblicuangulos/ley-cosenos
-
-http://localhost:4321/matematicas/trigonometria/triangulos-oblicuangulos/ley-tangentes
-
-http://localhost:4321/matematicas/trigonometria/triangulos-oblicuangulos/resolucion-casos
-
-http://localhost:4321/matematicas/trigonometria/triangulos-oblicuangulos/aplicaciones
+http://localhost:4321/matematicas/aritmetica/potenciacion-radicacion-logaritmos/operaciones-combinadas-avanzadas
 
 
 
@@ -184,8 +178,14 @@ http://localhost:4321/matematicas/trigonometria/triangulos-oblicuangulos/aplicac
 
 
 
-LAS IMAGENES QUE YA APARECEN EN CADA LECCIÓN NO LAS ELIMINES! ÚSALAS PARA MEJORAR LA LECCIÓN.
+
+MINIMO 5 EJEMPLOS POR SECCIÓN O CONCEPTO. TEN EN CUENTA QUE DENTRO DE UNA MISMA LECCIÓN PUEDEN HABER VARIOS CONCEPTOS, NORMALMENTE DSEPARADOS POR TÍTULO MARKDOWN, PERO SIN ANOTAR EXPLÍCITAMENTE "CONCEPTO 1: ..." NI NADA DE ESO...SOLO TENIENDOLO EN CUENTA. REPITO: NO ANOTAR ESO EN LOS TÍTULOS ESO DE "CONCEPTO 1:...." MIRA LA LECCIÓN DE REFERENCIA.
+
+LAS IMAGENES GENERADAS EN LAS LECCIONES NO LAS ELIMINES! ÚSALAS COMO PARTE DE LA REESCRITURA.
+
 Si encuentras un símbolo $ déjalo mejor como "pesos" porque hay un problema para renderizar eso en latex.
+
+Recuerda que en los títulos markdown de sección no puedes agregar expresiones latex.
 
 ## PASO 1: LEE las referencias
 

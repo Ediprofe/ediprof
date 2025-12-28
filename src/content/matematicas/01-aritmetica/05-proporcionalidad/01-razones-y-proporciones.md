@@ -1,136 +1,262 @@
-# ⚖️ Razones y Proporciones
+# **Razones y Proporciones**
 
-En este tema aprenderemos qué son las razones y proporciones, conceptos fundamentales para entender las relaciones entre cantidades.
-
----
-
-## 📖 ¿Qué es una razón?
-
-Una **razón** es la comparación entre dos cantidades mediante una división.
-
-$$
-\text{Razón de } a \text{ a } b = \frac{a}{b} = a : b
-$$
-
-### Ejemplo 1
-
-Si hay $12$ manzanas y $4$ naranjas, la razón de manzanas a naranjas es:
-
-$$
-\frac{12}{4} = 3 \quad \text{o} \quad 12:4 = 3:1
-$$
-
-Esto significa "hay $3$ manzanas por cada naranja".
+¿Alguna vez has cocinado arroz? La regla de oro suele ser "dos tazas de agua por cada taza de arroz". Esa relación es una **razón**. Y si quieres hacer el doble, usarás 4 tazas de agua por 2 de arroz. ¡Eso ya es una **proporción**! Entender esto es la clave para ajustar recetas, mezclar pinturas o entender mapas.
 
 ---
 
-### Ejemplo 2
+## 🎯 ¿Qué vas a aprender?
 
-En una clase hay $15$ niñas y $10$ niños. La razón de niñas a niños es:
-
-$$
-\frac{15}{10} = \frac{3}{2} \quad \text{o} \quad 15:10 = 3:2
-$$
-
-Esto significa "hay $3$ niñas por cada $2$ niños".
+- Qué es una **Razón** (comparación de dos cantidades).
+- Qué es una **Proporción** (igualdad entre dos razones).
+- Cómo saber si dos razones son equivalentes (Producto de Extremos = Producto de Medios).
+- Cómo encontrar un dato faltante ($x$) en una proporción.
 
 ---
 
-## 📖 Antecedente y consecuente
+## ¿Qué es una Razón?
 
-En una razón $a : b$:
+Es una comparación entre dos cantidades mediante una división. Se puede escribir como fracción ($\frac{a}{b}$) o con dos puntos ($a:b$).
+Se lee: "$a$ es a $b$".
 
-| Término | Nombre | Ejemplo en $5:3$ |
-|---------|--------|------------------|
-| Primero | Antecedente | $5$ |
-| Segundo | Consecuente | $3$ |
+### ⚙️ Ejemplos Resueltos
 
----
+#### Ejemplo 1: Arroz y Agua
+La receta dice 2 tazas de agua por 1 de arroz.
+Razón: $2:1$ (Dos es a uno).
+$$ \frac{2}{1} = 2 $$
+Significa que hay el doble de agua que de arroz.
 
-## 📖 ¿Qué es una proporción?
+#### Ejemplo 2: Velocidad
+Un auto recorre $100$ km en $2$ horas.
+Razón: $\frac{100}{2} = 50$.
+Significa que recorre 50 km por cada 1 hora.
 
-Una **proporción** es la igualdad entre dos razones.
+#### Ejemplo 3: El salón de clase
+Hay 12 niños y 18 niñas.
+Razón niños a niñas: $\frac{12}{18}$.
+Simplificando (dividir entre 6): $\frac{2}{3}$.
+Significa que por cada **2 niños** hay **3 niñas**.
 
-$$
-\frac{a}{b} = \frac{c}{d} \quad \text{o} \quad a : b :: c : d
-$$
+#### Ejemplo 4: Mezcla de pintura
+Para obtener un verde específico, mezclas 3 litros de azul con 2 litros de amarillo.
+Razón: $3:2$.
 
-Se lee: "$a$ es a $b$ como $c$ es a $d$"
-
-### Ejemplo 1
-
-Verificar si $\frac{2}{3} = \frac{8}{12}$ es proporción:
-
-$$
-2 \times 12 = 24 \quad \text{y} \quad 3 \times 8 = 24
-$$
-
-Como $24 = 24$, **sí es proporción** ✓
-
----
-
-### Ejemplo 2
-
-Verificar si $\frac{5}{7} = \frac{15}{21}$ es proporción:
-
-$$
-5 \times 21 = 105 \quad \text{y} \quad 7 \times 15 = 105
-$$
-
-Como $105 = 105$, **sí es proporción** ✓
+#### Ejemplo 5: Distancia en mapa
+En un mapa, 1 cm representa 100 metros reales.
+Razón: $1:10000$ (usando las mismas unidades, cm).
 
 ---
 
-## 📖 Propiedad fundamental
+## ¿Qué es una Proporción?
 
-En toda proporción, el **producto de los extremos** es igual al **producto de los medios**.
+Es la **igualdad entre dos razones**.
+Se escribe: $\frac{a}{b} = \frac{c}{d}$.
+Se lee: "$a$ es a $b$ **como** $c$ es a $d$".
 
-$$
-\frac{a}{b} = \frac{c}{d} \quad \Leftrightarrow \quad a \times d = b \times c
-$$
+**Propiedad Fundamental:** El producto de los extremos ($a \times d$) es igual al producto de los medios ($b \times c$).
 
-### Ejemplo 1
+$$ a \times d = b \times c $$
 
-Encontrar $x$ en $\frac{3}{5} = \frac{x}{20}$
+### ⚙️ Ejemplos Resueltos
 
-$$
-3 \times 20 = 5 \times x
-$$
+#### Ejemplo 6: El arroz (Doblando la receta)
+Si $2:1$ es la receta original. Para el doble usamos $4:2$.
+¿Es proporción?
+$$ \frac{2}{1} = \frac{4}{2} $$
+Comprobamos multiplicando cruzado:
+$2 \times 2 = 4$.
+$1 \times 4 = 4$.
+¡Sí es proporción!
 
-$$
-60 = 5x \quad \Rightarrow \quad x = 12
-$$
+#### Ejemplo 7: Fotos
+Una foto de $10 \times 15$ cm se amplía a $20 \times 30$ cm.
+$$ \frac{10}{15} = \frac{20}{30} $$
+Cruzado:
+$10 \times 30 = 300$.
+$15 \times 20 = 300$.
+Es proporcional. La foto no se deforma.
+
+#### Ejemplo 8: ¿Falsa proporción?
+¿$\frac{2}{3} = \frac{4}{5}$?
+Cruzado:
+$2 \times 5 = 10$.
+$3 \times 4 = 12$.
+$10 \neq 12$. ¡No es proporción!
+
+#### Ejemplo 9: Comprobando equivalencia
+¿$\frac{5}{10} = \frac{1}{2}$?
+$5 \times 2 = 10$.
+$10 \times 1 = 10$.
+Sí lo es.
+
+#### Ejemplo 10: La escala
+Si 1 cm son 100 m, entonces 5 cm deben ser 500 m.
+$$ \frac{1}{100} = \frac{5}{500} $$
+$1 \times 500 = 500$.
+$100 \times 5 = 500$.
+Correcto.
+
+---
+
+## Hallar el término desconocido (x)
+
+Si sabemos que es una proporción, podemos encontrar el valor que falta despejando $x$.
+
+### ⚙️ Ejemplos Resueltos
+
+#### Ejemplo 11: $\frac{3}{5} = \frac{x}{20}$
+Aplicamos propiedad fundamental:
+$3 \times 20 = 5 \times x$.
+$60 = 5x$.
+$x = \frac{60}{5} = 12$.
+$$ \boxed{x = 12} $$
+
+#### Ejemplo 12: $\frac{2}{x} = \frac{4}{10}$
+$2 \times 10 = 4 \times x$.
+$20 = 4x$.
+$x = \frac{20}{4} = 5$.
+$$ \boxed{x = 5} $$
+
+#### Ejemplo 13: $\frac{x}{9} = \frac{4}{6}$
+$x \times 6 = 9 \times 4$.
+$6x = 36$.
+$x = 6$.
+$$ \boxed{x = 6} $$
+
+#### Ejemplo 14: Escala de mapa
+Si 2 cm son 50 km, ¿cuántos km son 10 cm?
+$$ \frac{2}{50} = \frac{10}{x} $$
+$2x = 500$.
+$x = 250$.
+**Resultado:** $\boxed{250 \text{ km}}$
+
+#### Ejemplo 15: Recetas
+Si para 4 personas necesito 200g de harina, ¿para 6 personas?
+$$ \frac{4}{200} = \frac{6}{x} $$
+$4x = 1200$.
+$x = 300$.
+**Resultado:** $\boxed{300 \text{ g}}$
 
 ---
 
-### Ejemplo 2
+## 📝 Ejercicios de Práctica
 
-Encontrar $x$ en $\frac{4}{x} = \frac{12}{15}$
+### Ejercicio 1
+Encuentra la razón entre 8 perros y 2 gatos.
 
-$$
-4 \times 15 = x \times 12
-$$
+<details>
+<summary>Ver solución</summary>
 
-$$
-60 = 12x \quad \Rightarrow \quad x = 5
-$$
+$\frac{8}{2} = 4$.
+**Resultado:** $\boxed{4:1}$
+
+</details>
+
+### Ejercicio 2
+¿Son proporcionales $\frac{3}{4}$ y $\frac{9}{12}$?
+
+<details>
+<summary>Ver solución</summary>
+
+$36 = 36$.
+**Resultado:** $\boxed{\text{Sí}}$
+
+</details>
+
+### Ejercicio 3
+Halla $x$: $\frac{1}{3} = \frac{x}{18}$.
+
+<details>
+<summary>Ver solución</summary>
+
+$3x = 18 \to x=6$.
+**Resultado:** $\boxed{6}$
+
+</details>
+
+### Ejercicio 4
+Halla $x$: $\frac{5}{10} = \frac{2}{x}$.
+
+<details>
+<summary>Ver solución</summary>
+
+$5x = 20 \to x=4$.
+**Resultado:** $\boxed{4}$
+
+</details>
+
+### Ejercicio 5
+En una fiesta hay 3 hombres por cada 2 mujeres. Si hay 20 mujeres, ¿cuántos hombres hay?
+
+<details>
+<summary>Ver solución</summary>
+
+$\frac{3}{2} = \frac{x}{20}$. $2x = 60 \to x=30$.
+**Resultado:** $\boxed{30}$
+
+</details>
+
+### Ejercicio 6
+Simplifica la razón $50:100$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Resultado:** $\boxed{1:2}$
+
+</details>
+
+### Ejercicio 7
+Halla $x$: $\frac{x}{7} = \frac{4}{14}$.
+
+<details>
+<summary>Ver solución</summary>
+
+$14x = 28 \to x=2$.
+**Resultado:** $\boxed{2}$
+
+</details>
+
+### Ejercicio 8
+¿Forman proporción $2, 5, 8, 20$? (en ese orden).
+
+<details>
+<summary>Ver solución</summary>
+
+$\frac{2}{5} = \frac{8}{20}$. $40 = 40$.
+**Resultado:** $\boxed{\text{Sí}}$
+
+</details>
+
+### Ejercicio 9
+Si compras 3 lápices por 15 pesos, ¿cuál es la razón precio/lápiz?
+
+<details>
+<summary>Ver solución</summary>
+
+**Resultado:** $\boxed{5 \text{ pesos por lápiz}}$
+
+</details>
+
+### Ejercicio 10
+Completa: $\frac{2}{3} = \frac{10}{?}$.
+
+<details>
+<summary>Ver solución</summary>
+
+$2 \times 5 = 10$, así que $3 \times 5 = 15$.
+**Resultado:** $\boxed{15}$
+
+</details>
 
 ---
 
-## 📝 Ejercicios de práctica
+## 🔑 Resumen
 
-### Sobre razones
+| Concepto | Fórmula | Significado |
+| :--- | :--- | :--- |
+| **Razón** | $\frac{a}{b}$ | Relación entre dos cantidades. |
+| **Proporción** | $\frac{a}{b} = \frac{c}{d}$ | Igualdad de dos razones. |
+| **Propiedad** | $a \cdot d = b \cdot c$ | Producto cruzado es igual. |
 
-**Ejercicio 1:** Expresa como razón simplificada: $20$ alumnos y $4$ profesores.
-
-**Ejercicio 2:** En un estacionamiento hay $35$ autos y $14$ motos. ¿Cuál es la razón de autos a motos?
-
----
-
-### Sobre proporciones
-
-**Ejercicio 3:** Verifica si $\frac{6}{9} = \frac{14}{21}$ es una proporción.
-
-**Ejercicio 4:** Encuentra $x$ en $\frac{7}{x} = \frac{21}{18}$.
-
----
+> **Conclusión:** Las proporciones son la base de la "Regla de Tres". Si entiendes que una proporción es solo una igualdad de fracciones, ya tienes la mitad del camino recorrido.

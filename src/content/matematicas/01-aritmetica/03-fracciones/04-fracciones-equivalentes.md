@@ -1,18 +1,28 @@
-# ⚖️ Fracciones Equivalentes
+# **Fracciones Equivalentes**
 
-En este tema aprenderemos qué son las fracciones equivalentes, cómo obtenerlas y cómo simplificar fracciones.
+¿Preferirías media pizza ($\frac{1}{2}$) o dos cuartos de pizza ($\frac{2}{4}$)? ¡Es exactamente la misma cantidad! Las fracciones pueden vestirse con números diferentes pero valer lo mismo. A estas "gemelas disfrazadas" las llamamos **fracciones equivalentes**.
 
 ---
 
-## 📖 ¿Qué son fracciones equivalentes?
+## 🎯 ¿Qué vas a aprender?
 
-Dos fracciones son **equivalentes** si representan la misma cantidad.
+- Identificar cuándo dos fracciones representan la misma cantidad.
+- Amplificar fracciones (hacer los números más grandes).
+- Simplificar fracciones (hacer los números más pequeños).
+- Usar el producto cruzado para comprobar equivalencias.
 
-$$
-\frac{1}{2} = \frac{2}{4} = \frac{3}{6}
-$$
+---
 
-Observa cómo las tres fracciones llenan **exactamente la mitad** del círculo:
+## ¿Qué son Fracciones Equivalentes?
+
+Son fracciones que representan la misma porción de la unidad, aunque tengan números distintos.
+
+$$ \frac{1}{2} = \frac{2}{4} = \frac{4}{8} $$
+
+### ⚙️ Ejemplos Resueltos
+
+#### Ejemplo 1: Media Pizza
+Mira estas tres fracciones. Los números cambian, pero la cantidad azul (la mitad) es idéntica.
 
 <div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1rem auto; width: 100%; box-sizing: border-box;">
   <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
@@ -62,98 +72,184 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-Aunque tienen diferente numerador y denominador, **todas representan la mitad**.
+#### Ejemplo 2: El dinero
+-   $\frac{1}{2}$ de un peso = 50 centavos.
+-   $\frac{2}{4}$ de un peso = 50 centavos (2 monedas de 25).
+-   $\frac{50}{100}$ de un peso = 50 centavos.
+**Conclusión:** $\frac{1}{2} = \frac{2}{4} = \frac{50}{100}$.
+
+#### Ejemplo 3: El tanque de gasolina
+Si el tanque marca $\frac{2}{4}$, es lo mismo que decir "medio tanque" ($\frac{1}{2}$).
+
+#### Ejemplo 4: Comprobación (Método Cruzado)
+¿Es $\frac{3}{5} = \frac{6}{10}$?
+Multiplicamos cruzado:
+-   $3 \times 10 = 30$
+-   $5 \times 6 = 30$
+¡Sí son equivalentes!
+**Resultado:** $\boxed{\text{Sí}}$
+
+#### Ejemplo 5: Falsas equivalencias
+¿Es $\frac{1}{3} = \frac{2}{5}$?
+-   $1 \times 5 = 5$
+-   $3 \times 2 = 6$
+¡No son iguales!
+**Resultado:** $\boxed{\text{No}}$
 
 ---
 
-## 📖 Amplificar fracciones
+## Amplificar y Simplificar
 
-**Amplificar** significa multiplicar numerador y denominador por el mismo número.
+-   **Amplificar:** Multiplicar arriba y abajo por el mismo número. (La fracción "engorda" pero vale lo mismo).
+-   **Simplificar:** Dividir arriba y abajo por el mismo número. (La fracción "adelgaza" pero vale lo mismo).
 
-### Ejemplo 1
+### ⚙️ Ejemplos Resueltos
 
-Amplificar $\frac{2}{3}$ por $4$:
+#### Ejemplo 6: Amplificar $\frac{2}{3}$ por 4
+Multiplicamos todo por 4:
+$$ \frac{2 \times 4}{3 \times 4} = \frac{8}{12} $$
+**Resultado:** $\boxed{\frac{8}{12}}$
 
-$$
-\frac{2}{3} = \frac{2 \times 4}{3 \times 4} = \frac{8}{12}
-$$
+#### Ejemplo 7: Amplificar $\frac{1}{5}$ por 10
+$$ \frac{1 \times 10}{5 \times 10} = \frac{10}{50} $$
+**Resultado:** $\boxed{\frac{10}{50}}$
 
----
+#### Ejemplo 8: Simplificar $\frac{20}{30}$
+Dividimos todo entre 10 (quitamos ceros):
+$$ \frac{20 \div 10}{30 \div 10} = \frac{2}{3} $$
+**Resultado:** $\boxed{\frac{2}{3}}$
 
-### Ejemplo 2
+#### Ejemplo 9: Simplificar $\frac{12}{18}$
+Dividimos entre 6 (su MCD):
+$$ \frac{12 \div 6}{18 \div 6} = \frac{2}{3} $$
+**Resultado:** $\boxed{\frac{2}{3}}$
 
-Amplificar $\frac{3}{5}$ por $6$:
-
-$$
-\frac{3}{5} = \frac{3 \times 6}{5 \times 6} = \frac{18}{30}
-$$
-
----
-
-## 📖 Simplificar fracciones
-
-**Simplificar** significa dividir numerador y denominador por un factor común.
-
-### Ejemplo 1
-
-Simplificar $\frac{12}{18}$:
-
-$$
-\frac{12}{18} = \frac{12 \div 6}{18 \div 6} = \frac{2}{3}
-$$
+#### Ejemplo 10: Simplificar $\frac{7}{21}$
+Dividimos entre 7:
+$$ \frac{7 \div 7}{21 \div 7} = \frac{1}{3} $$
+**Resultado:** $\boxed{\frac{1}{3}}$
 
 ---
 
-### Ejemplo 2
+## 📝 Ejercicios de Práctica
 
-Simplificar $\frac{24}{36}$:
+### Ejercicio 1
+Amplifica $\frac{3}{4}$ multiplicando por 5.
 
-$$
-\frac{24}{36} = \frac{24 \div 12}{36 \div 12} = \frac{2}{3}
-$$
+<details>
+<summary>Ver solución</summary>
+
+$3 \times 5 = 15$, $4 \times 5 = 20$.
+**Resultado:** $\boxed{\frac{15}{20}}$
+
+</details>
+
+### Ejercicio 2
+Simplifica $\frac{50}{100}$ a su mínima expresión.
+
+<details>
+<summary>Ver solución</summary>
+
+Divides por 50.
+**Resultado:** $\boxed{\frac{1}{2}}$
+
+</details>
+
+### Ejercicio 3
+¿Son $\frac{2}{3}$ y $\frac{4}{6}$ equivalentes?
+
+<details>
+<summary>Ver solución</summary>
+
+$2 \times 6 = 12$, $3 \times 4 = 12$.
+**Resultado:** $\boxed{\text{Sí}}$
+
+</details>
+
+### Ejercicio 4
+Encuentra el número que falta: $\frac{1}{2} = \frac{x}{10}$.
+
+<details>
+<summary>Ver solución</summary>
+
+$1 \times 10 = 2 \times x \to 10 = 2x \to x=5$.
+**Resultado:** $\boxed{5}$
+
+</details>
+
+### Ejercicio 5
+Simplifica $\frac{8}{12}$.
+
+<details>
+<summary>Ver solución</summary>
+
+Divide por 4.
+**Resultado:** $\boxed{\frac{2}{3}}$
+
+</details>
+
+### Ejercicio 6
+Amplifica $\frac{7}{8}$ por 2.
+
+<details>
+<summary>Ver solución</summary>
+
+**Resultado:** $\boxed{\frac{14}{16}}$
+
+</details>
+
+### Ejercicio 7
+¿Son $\frac{4}{5}$ y $\frac{5}{6}$ equivalentes?
+
+<details>
+<summary>Ver solución</summary>
+
+$4 \times 6 = 24$, $5 \times 5 = 25$.
+**Resultado:** $\boxed{\text{No}}$
+
+</details>
+
+### Ejercicio 8
+Simplifica $\frac{30}{45}$.
+
+<details>
+<summary>Ver solución</summary>
+
+Divide por 15 (o por 5 y luego por 3).
+**Resultado:** $\boxed{\frac{2}{3}}$
+
+</details>
+
+### Ejercicio 9
+Escribe 3 fracciones equivalentes a $\frac{1}{3}$.
+
+<details>
+<summary>Ver solución</summary>
+
+Por 2, 3, 4:
+**Resultado:** $\boxed{\frac{2}{6}, \frac{3}{9}, \frac{4}{12}}$
+
+</details>
+
+### Ejercicio 10
+Simplifica $\frac{11}{33}$.
+
+<details>
+<summary>Ver solución</summary>
+
+Divide por 11.
+**Resultado:** $\boxed{\frac{1}{3}}$
+
+</details>
 
 ---
 
-## 📖 Verificar equivalencia
+## 🔑 Resumen
 
-Para verificar si dos fracciones son equivalentes, usamos el **producto cruzado**:
+| Concepto | Operación | Regla clave |
+| :--- | :--- | :--- |
+| **Equivalentes** | Representan lo mismo | Producto cruzado igual ($a \times d = b \times c$). |
+| **Amplificar** | Multiplicar ($\times$) | Mismo número arriba y abajo. |
+| **Simplificar** | Dividir ($\div$) | Mismo divisor arriba y abajo. |
 
-$$
-\frac{a}{b} = \frac{c}{d} \quad \Leftrightarrow \quad a \times d = b \times c
-$$
-
-### Ejemplo 1
-
-¿Son equivalentes $\frac{3}{4}$ y $\frac{9}{12}$?
-
-$$
-3 \times 12 = 36 \quad \text{y} \quad 4 \times 9 = 36
-$$
-
-Como $36 = 36$, **sí son equivalentes** ✓
-
----
-
-### Ejemplo 2
-
-¿Son equivalentes $\frac{2}{5}$ y $\frac{6}{14}$?
-
-$$
-2 \times 14 = 28 \quad \text{y} \quad 5 \times 6 = 30
-$$
-
-Como $28 \neq 30$, **no son equivalentes** ✗
-
----
-
-## 📝 Ejercicios de práctica
-
-**Ejercicio 1:** Amplifica $\frac{4}{7}$ por $5$.
-
-**Ejercicio 2:** Simplifica $\frac{15}{25}$ a su mínima expresión.
-
-**Ejercicio 3:** ¿Son equivalentes $\frac{5}{8}$ y $\frac{20}{32}$?
-
-**Ejercicio 4:** Encuentra $x$ en $\frac{3}{4} = \frac{x}{20}$.
-
----
+> **Conclusión:** No te dejes engañar por números grandes. Siempre trata de simplificar tus fracciones a su formar más "flaca" (irreducible) para ver su verdadero valor.
