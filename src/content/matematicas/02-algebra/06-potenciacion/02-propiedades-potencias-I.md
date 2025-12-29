@@ -1,6 +1,6 @@
 # **Propiedades de las Potencias (I)**
 
-Imagina que estás multiplicando bacterias en un laboratorio. Cada hora se duplican. Si comienzas con $2^5$ bacterias y luego las multiplicas por otro grupo de $2^3$, ¿cómo calculas rápidamente el total? No necesitas hacer la cuenta larga cada vez. Las matemáticas tienen "atajos" llamados propiedades que nos permiten operar con exponentes a la velocidad de la luz.
+Imagina que estás multiplicando bacterias en un laboratorio. Cada hora se duplican. Si comienzas con $2^5$ bacterias y luego las multiplicas por otro grupo de $2^3$, ¿cómo calculas rápidamente el total? No necesitas hacer la cuenta larga cada vez. Las matemáticas tienen "atajos" llamados propiedades que nos permiten operar con exponentes rápidamente.
 
 ---
 
@@ -83,7 +83,7 @@ $$
 = y^5
 $$
 
-(Es como si canceláramos 3 íes de arriba con las 3 de abajo).
+(Cancelamos $y^3$ arriba con $y^3$ abajo).
 
 **Resultado:** $\boxed{y^5}$
 

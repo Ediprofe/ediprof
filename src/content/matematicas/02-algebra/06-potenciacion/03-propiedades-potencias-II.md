@@ -1,9 +1,5 @@
 # **Propiedades de las Potencias (II)**
 
-¿Qué pasa si tienes una potencia que ya está elevada y la vuelves a elevar? Es como una muñeca rusa *matrioska*: una dentro de otra. En esta lección aprenderemos cómo simplificar estas "torres de potencias" y qué hacer cuando un exponente afecta a todo un grupo de números multiplicándose.
-
----
-
 ## 🎯 ¿Qué vas a aprender?
 
 - La regla de "Potencia de una potencia" (Multiplicar exponentes).
@@ -27,8 +23,7 @@ $$
 
 ### 2. Potencia de un Producto
 
-El exponente afecta a **cada uno** de los factores dentro del paréntesis. "El sol sale para todos".
-
+El exponente afecta a **cada uno** de los factores dentro del paréntesis.
 $$
 (a \cdot b)^n = a^n \cdot b^n
 $$

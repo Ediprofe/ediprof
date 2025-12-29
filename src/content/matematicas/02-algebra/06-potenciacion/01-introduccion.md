@@ -1,6 +1,6 @@
 # **Introducción a la Potenciación**
 
-¿Alguna vez te has preguntado cuántos ancestros tienes si retrocedes 10 generaciones? Tienes 2 padres, 4 abuelos, 8 bisabuelos... ¡esa lista crece rapidísimo! Para expresar estas multiplicaciones repetidas de forma compacta, los matemáticos inventaron la **potenciación**. Es la forma de escribir números gigantes (o minúsculos) sin gastar toda la tinta del bolígrafo.
+¿Alguna vez te has preguntado cuántos ancestros tienes si retrocedes 10 generaciones? Tienes 2 padres, 4 abuelos, 8 bisabuelos... ¡esa lista crece rapidísimo! Para expresar estas multiplicaciones repetidas de forma compacta, los matemáticos inventaron la **potenciación**. Es la forma de escribir números gigantes (o minúsculos) sin gastar toda la tinta del lapícero.
 
 ---
 

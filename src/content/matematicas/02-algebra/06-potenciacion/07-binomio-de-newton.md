@@ -1,17 +1,16 @@
 # **Binomio de Newton**
 
-Si te pido calcular $(a+b)^2$, seguro sabes que es $a^2 + 2ab + b^2$. Pero, ¿qué pasa si te pido $(a+b)^{10}$? Multiplicar el paréntesis 10 veces sería una pesadilla interminable.
+Si te pido calcular $(a+b)^2$, seguro sabes que es $a^2 + 2ab + b^2$. Pero, ¿qué pasa si te pido $(a+b)^{10}$?
 
-Para evitar ese trabajo manual, Isaac Newton generalizó un patrón elegante que nos permite expandir cualquier potencia de un binomio en segundos.
+Para evitar ese trabajo manual de multiplicar el paréntesis 10 veces, Isaac Newton generalizó un patrón elegante que nos permite expandir cualquier potencia de un binomio en segundos.
 
 ---
 
-## �� ¿Qué vas a aprender?
+## 🎯 ¿Qué vas a aprender?
 
 - Cómo expandir potencias como $(x+y)^5$ sin multiplicar paso a paso.
 - El patrón secreto de los exponentes que suben y bajan.
 - Cómo usar los números combinatorios para hallar los coeficientes.
-- Cómo encontrar un término específico sin desarrollar toda la fórmula.
 
 ---
 
@@ -141,46 +140,6 @@ $$
 
 ---
 
-### Ejemplo 3: Hallar un término específico
-
-Encuentra el **cuarto término** de la expansión de $(x + 2y)^{10}$.
-
-**Razonamiento:**
-No necesitamos expandir todo. Usamos la fórmula del término general $T_{k+1}$.
-Para el término 4, $k = 3$ (porque empezamos a contar desde $k=0$).
-
-$$
-T_{k+1} = \binom{n}{k} a^{n-k} b^k
-$$
-
-Sustituimos $n=10, k=3, a=x, b=2y$:
-
-$$
-T_4 = \binom{10}{3} (x)^{10-3} (2y)^3
-$$
-
-Calculamos el coeficiente $\binom{10}{3} = \frac{10 \times 9 \times 8}{3 \times 2 \times 1} = 120$.
-
-$$
-T_4 = 120 (x^7) (8y^3)
-$$
-
-$$
-T_4 = 120 \times 8 \times x^7 y^3
-$$
-
-$$
-T_4 = 960 x^7 y^3
-$$
-
-**Resultado:**
-
-$$
-\boxed{960 x^7 y^3}
-$$
-
----
-
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1
@@ -248,26 +207,6 @@ $$
 </details>
 
 ### Ejercicio 4
-Halla el coeficiente del tercer término de $(a + b)^5$.
-
-<details>
-<summary>Ver solución</summary>
-
-**Razonamiento:**
-Tercer término implica $k=2$. $n=5$.
-
-$$
-\binom{5}{2} = \frac{5 \times 4}{2 \times 1} = 10
-$$
-
-**Resultado:**
-$$
-\boxed{10}
-$$
-
-</details>
-
-### Ejercicio 5
 Expande $(x^2 + 1)^3$.
 
 <details>
@@ -287,27 +226,7 @@ $$
 
 </details>
 
-### Ejercicio 6
-Encuentra el término central de $(x + y)^4$.
-
-<details>
-<summary>Ver solución</summary>
-
-**Razonamiento:**
-Si $n=4$, hay 5 términos. El central es el 3º ($k=2$).
-
-$$
-\binom{4}{2} x^{4-2} y^2 = 6x^2y^2
-$$
-
-**Resultado:**
-$$
-\boxed{6x^2y^2}
-$$
-
-</details>
-
-### Ejercicio 7
+### Ejercicio 5
 Expande $(3 - x)^3$.
 
 <details>
@@ -330,7 +249,7 @@ $$
 
 </details>
 
-### Ejercicio 8
+### Ejercicio 6
 Calcula el valor de $\binom{6}{3}$.
 
 <details>
@@ -349,7 +268,7 @@ $$
 
 </details>
 
-### Ejercicio 9
+### Ejercicio 7
 Expande $(x + \frac{1}{x})^2$.
 
 <details>
@@ -372,7 +291,7 @@ $$
 
 </details>
 
-### Ejercicio 10
+### Ejercicio 8
 ¿Cuántos términos tiene la expansión de $(a+b)^{12}$?
 
 <details>
@@ -392,6 +311,49 @@ $$
 
 </details>
 
+### Ejercicio 9
+Expande $(a - 1)^4$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Coeficientes: 1, 4, 6, 4, 1. Signos alternados.
+
+$$
+a^4 - 4a^3(1) + 6a^2(1)^2 - 4a(1)^3 + 1^4
+$$
+
+**Resultado:**
+$$
+\boxed{a^4 - 4a^3 + 6a^2 - 4a + 1}
+$$
+
+</details>
+
+### Ejercicio 10
+Expande $(2 + y)^3$.
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+
+$$
+2^3 + 3(2)^2(y) + 3(2)(y)^2 + y^3
+$$
+
+$$
+8 + 12y + 6y^2 + y^3
+$$
+
+**Resultado:**
+$$
+\boxed{8 + 12y + 6y^2 + y^3}
+$$
+
+</details>
+
 ---
 
 ## 🔑 Resumen
@@ -404,3 +366,9 @@ $$
 | **Signos** | Si es resta, alternan: $+ - + - \dots$ |
 
 > El Binomio de Newton convierte multiplicaciones tediosas en un proceso de sustitución simple y elegante.
+
+---
+
+## 📌 Nota
+
+> *Aprenderás a encontrar un término específico (sin desarrollar todo el binomio) cuando estudies el tema de **Progresiones**.*

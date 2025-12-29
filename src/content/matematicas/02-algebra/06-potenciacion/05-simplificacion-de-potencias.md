@@ -1,9 +1,5 @@
 # **Simplificación de Potencias**
 
-Has llegado al jefe final del nivel de Potencias. Aquí no aprenderemos reglas nuevas, sino que pondremos todas las armas que ya tienes sobre la mesa para derrotar expresiones algebraicas monstruosas. El secreto no es la fuerza bruta, sino el orden: desarmar el problema pieza por pieza.
-
----
-
 ## 🎯 ¿Qué vas a aprender?
 
 - Una estrategia de 4 pasos para atacar cualquier problema.
@@ -13,9 +9,9 @@ Has llegado al jefe final del nivel de Potencias. Aquí no aprenderemos reglas n
 
 ---
 
-## 🔍 Tabla Maestra de Propiedades
+## 🔍 Resumen de propiedades
 
-Ten esta tabla a mano. Es tu mapa del tesoro.
+Ten esta tabla a mano.
 
 | Nombre | Regla |
 | :--- | :--- |

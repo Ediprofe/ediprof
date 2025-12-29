@@ -13,7 +13,7 @@ Hasta ahora hemos operado con enteros, pero ¿qué sucede cuando tienes una frac
 
 ---
 
-## 🔍 Reglas Avanzadas
+## 🔍 Propiedades
 
 ### 1. Potencia de un Cociente
 
@@ -39,7 +39,7 @@ $$
 a^{\frac{m}{n}} = \sqrt[n]{a^m}
 $$
 
-> Truco para recordar: En la flor (fracción), la raíz está abajo (como las raíces de una planta) y el poder (potencia) está arriba.
+> Truco para recordar: En la flor (fracción), la raíz está abajo (como las raíces de una planta).
 
 ---
 
@@ -80,7 +80,7 @@ $$
 
 ---
 
-### Ejemplo 2: El "Volantín" (Exponente negativo)
+### Ejemplo 2: Exponente negativo
 
 Simplifica $\left( \dfrac{2}{5} \right)^{-2}$.
 
