@@ -1,5 +1,4 @@
-# **Cuadrado de un Binomio**
-
+# Cuadrado de un Binomio
 
 
 ## 🎯 ¿Qué vas a aprender?
@@ -21,56 +20,110 @@ A estos patrones los llamamos **productos notables**. Son como "atajos" matemát
 
 ## 🟦 El Cuadrado de una Suma
 
-Imagina que tienes un cuadrado de lado $a$ y decides ampliarlo agregándole una distancia $b$. El nuevo lado será $(a+b)$, y el área total será $(a+b)^2$.
+Para elevar al cuadrado cualquier suma, aplicamos la siguiente regla:
 
-Si calculamos el área sumando las piezas individuales, obtenemos un cuadrado grande ($a^2$), un cuadrado pequeño ($b^2$) y dos rectángulos iguales ($ab$ cada uno).
+| Identidad | Fórmula | Resultado |
+|-----------|---------|-----------|
+| **Cuadrado de una Suma** | $(a + b)^2$ | $a^2 + 2ab + b^2$ |
+
+![Representación geométrica del cuadrado de una suma](/images/matematicas/algebra/productos-notables/cuadrado-suma-teoria.svg)
+
+> **Regla de oro:** El cuadrado de la suma es igual al primer término al cuadrado, más el doble del producto del primero por el segundo, más el segundo término al cuadrado.
+
+---
+
+### **¿Por qué funciona? (La explicación geométrica)**
+
+Imagina que tienes un cuadrado de lado $a$ y decides ampliarlo agregándole una distancia $b$. El nuevo lado será $(a+b)$, y el área total del cuadrado resultante será $(a+b)^2$.
+
+Si observamos la imagen de arriba, vemos que el área total se compone de cuatro piezas:
+1.  Un cuadrado grande de área $a^2$.
+2.  Un cuadrado pequeño de área $b^2$.
+3.  Dos rectángulos iguales, cada uno con área $ab$.
+
+Al sumar todas estas piezas, obtenemos la fórmula: $a^2 + ab + ab + b^2 = a^2 + 2ab + b^2$.
 
 ### **Ejemplo: Ampliando el área**
 
-Calcula: $(x + 3)^2$
+Calcula el desarrollo de: $(x + 3)^2$
+
+![Ejemplo visual del cuadrado de una suma con x y 3](/images/matematicas/algebra/productos-notables/cuadrado-suma-ejemplo.svg)
 
 **Razonamiento:**
-1.  Elevamos el **primer término** al cuadrado: $x^2$.
+1.  Elevamos el **primer término** ($x$) al cuadrado: $x^2$.
 2.  Calculamos el **doble del producto** de ambos ($2 \cdot x \cdot 3$): $6x$.
-3.  Elevamos el **segundo término** al cuadrado: $3^2 = 9$.
-4.  Sumamos todas las piezas.
+3.  Elevamos el **segundo término** ($3$) al cuadrado: $3^2 = 9$.
+4.  Sumamos todas las piezas resultantes.
 
 **Resultado:** $\boxed{x^2 + 6x + 9}$
 
-### **La Regla General**
-
-Para elevar al cuadrado cualquier suma, aplicamos:
-
-$$
-\boxed{(a + b)^2 = a^2 + 2ab + b^2}
-$$
-
-> **En palabras:** El primer término al cuadrado, más el doble del primero por el segundo, más el segundo al cuadrado.
 
 ---
 
 ## 🟥 El Cuadrado de una Resta
 
-¿Qué sucede si en lugar de sumar, restamos? El proceso es casi idéntico, pero debemos prestar atención al signo del término central.
+Cuando restamos en el binomio, la regla cambia ligeramente en el signo del término central:
+
+| Identidad | Fórmula | Resultado |
+|-----------|---------|-----------|
+| **Cuadrado de una Resta** | $(a - b)^2$ | $a^2 - 2ab + b^2$ |
+
+![Representación geométrica del cuadrado de una resta](/images/matematicas/algebra/productos-notables/cuadrado-resta-teoria.svg)
+
+> **Regla de oro:** El cuadrado de la resta es igual al primer término al cuadrado, **menos** el doble del producto del primero por el segundo, **más** el segundo término al cuadrado.
+
+---
+
+### **¿Por qué funciona? (La explicación geométrica)**
+
+Si tenemos un cuadrado grande de lado $a$, su área total es $a^2$. Si queremos encontrar el área de un cuadrado más pequeño de lado $(a-b)$, debemos "recortar" tiras del cuadrado original.
+
+Como se ve en la imagen:
+1. Empezamos con el área total $a^2$.
+2. Restamos dos rectángulos de área $ab$.
+3. Al hacer esto, hemos restado el cuadradito de la esquina ($b^2$) **dos veces**.
+4. Por eso, debemos sumar $b^2$ una vez para compensar.
+
+Esto nos da: $a^2 - 2ab + b^2$.
+
+---
 
 ### **Ejemplo: El Caso de la Diferencia**
 
-Calcula: $(2m - 5)^2$
+Calcula el desarrollo de:
+
+$$
+(x - 2)^2
+$$
+
+![Ejemplo visual del cuadrado de una resta con x y 2](/images/matematicas/algebra/productos-notables/cuadrado-resta-ejemplo.svg)
 
 **Razonamiento:**
-1.  Cuadrado del **primero**: $(2m)^2 = 4m^2$.
-2.  **Doble** del primero por el segundo: $2 \cdot (2m) \cdot (5) = 20m$. Como es una resta, este término será negativo.
-3.  Cuadrado del **segundo**: $(-5)^2 = 25$ (siempre positivo).
 
-**Resultado:** $\boxed{4m^2 - 20m + 25}$
-
-### **La Regla General**
-
+1. Cuadrado del **primero**:
 $$
-\boxed{(a - b)^2 = a^2 - 2ab + b^2}
+(x)^2 = x^2
 $$
 
-⚠️ **Cuidado:** Un error muy común es pensar que $(a+b)^2 = a^2 + b^2$. ¡Nunca olvides el término del medio ($2ab$)!
+2. **Doble** del primero por el segundo:
+$$
+2 \cdot (x) \cdot (2) = 4x
+$$
+Como es una resta, este término será negativo ($-4x$).
+
+3. Cuadrado del **segundo**:
+$$
+(2)^2 = 4
+$$
+(siempre positivo).
+
+**Resultado:**
+
+$$
+\boxed{x^2 - 4x + 4}
+$$
+
+⚠️ **Cuidado:** Un error muy común es pensar que $(a-b)^2 = a^2 - b^2$. ¡Nunca te olvides del término central $-2ab$!
 
 ---
 
@@ -78,35 +131,76 @@ $$
 
 ### Ejemplo 1: Con dos variables
 
-Calcula: $(3x + 2y)^2$
+Calcula:
+
+$$
+(3x + 2y)^2
+$$
 
 **Datos:**
 - Primer término: $3x$
 - Segundo término: $2y$
 
 **Razonamiento:**
-1. $(3x)^2 = 9x^2$
-2. $2 \cdot (3x) \cdot (2y) = 12xy$
-3. $(2y)^2 = 4y^2$
 
-**Resultado:** $\boxed{9x^2 + 12xy + 4y^2}$
+1. Cuadrado del primero:
+$$
+(3x)^2 = 9x^2
+$$
+
+2. Doble del primero por el segundo:
+$$
+2 \cdot (3x) \cdot (2y) = 12xy
+$$
+
+3. Cuadrado del segundo:
+$$
+(2y)^2 = 4y^2
+$$
+
+**Resultado:**
+
+$$
+\boxed{9x^2 + 12xy + 4y^2}
+$$
 
 ---
 
 ### Ejemplo 2: Con fracciones
 
-Desarrolla: $\left(x - \frac{1}{2}\right)^2$
+Desarrolla:
+
+$$
+\left(x - \frac{1}{2}\right)^2
+$$
 
 **Datos:**
 - Primer término: $x$
 - Segundo término: $\frac{1}{2}$
 
 **Razonamiento:**
-1. Cuadrado del primero: $x^2$
-2. Doble del primero por el segundo: $2 \cdot x \cdot \frac{1}{2} = 1x$ (negativo)
-3. Cuadrado del segundo: $\left(\frac{1}{2}\right)^2 = \frac{1}{4}$
 
-**Resultado:** $\boxed{x^2 - x + \frac{1}{4}}$
+1. Cuadrado del primero:
+$$
+x^2
+$$
+
+2. Doble del primero por el segundo:
+$$
+2 \cdot x \cdot \frac{1}{2} = 1x
+$$
+(negativo debido a la resta).
+
+3. Cuadrado del segundo:
+$$
+\left(\frac{1}{2}\right)^2 = \frac{1}{4}
+$$
+
+**Resultado:**
+
+$$
+\boxed{x^2 - x + \frac{1}{4}}
+$$
 
 ---
 
@@ -119,8 +213,18 @@ Calcula el resultado de: $(x + 4)^2$
 <summary>Ver solución</summary>
 
 **Datos:** $a = x$, $b = 4$.
-**Razonamiento:** Aplicamos $(a+b)^2 = a^2 + 2ab + b^2$. Tenemos $x^2 + 2(x)(4) + 4^2$.
-**Resultado:** $\boxed{x^2 + 8x + 16}$
+
+**Razonamiento:** Aplicamos $(a+b)^2 = a^2 + 2ab + b^2$:
+
+$$
+x^2 + 2(x)(4) + 4^2
+$$
+
+**Resultado:** 
+
+$$
+\boxed{x^2 + 8x + 16}
+$$
 
 </details>
 
@@ -131,8 +235,18 @@ Desarrolla: $(a - 6)^2$
 <summary>Ver solución</summary>
 
 **Datos:** $a = a$, $b = 6$.
-**Razonamiento:** Aplicamos el cuadrado de la resta: $a^2 - 2(a)(6) + 6^2$.
-**Resultado:** $\boxed{a^2 - 12a + 36}$
+
+**Razonamiento:** Aplicamos el cuadrado de la resta:
+
+$$
+a^2 - 2(a)(6) + 6^2
+$$
+
+**Resultado:**
+
+$$
+\boxed{a^2 - 12a + 36}
+$$
 
 </details>
 
@@ -143,8 +257,18 @@ Resuelve: $(5x + 1)^2$
 <summary>Ver solución</summary>
 
 **Datos:** Primer término $5x$, segundo constante $1$.
-**Razonamiento:** $(5x)^2 + 2(5x)(1) + 1^2 = 25x^2 + 10x + 1$.
-**Resultado:** $\boxed{25x^2 + 10x + 1}$
+
+**Razonamiento:** 
+
+$$
+(5x)^2 + 2(5x)(1) + 1^2
+$$
+
+**Resultado:**
+
+$$
+\boxed{25x^2 + 10x + 1}
+$$
 
 </details>
 
@@ -155,8 +279,18 @@ Calcula: $(3m - 2n)^2$
 <summary>Ver solución</summary>
 
 **Datos:** Términos $3m$ y $2n$.
-**Razonamiento:** $(3m)^2 - 2(3m)(2n) + (2n)^2 = 9m^2 - 12mn + 4n^2$.
-**Resultado:** $\boxed{9m^2 - 12mn + 4n^2}$
+
+**Razonamiento:**
+
+$$
+(3m)^2 - 2(3m)(2n) + (2n)^2
+$$
+
+**Resultado:**
+
+$$
+\boxed{9m^2 - 12mn + 4n^2}
+$$
 
 </details>
 
@@ -167,8 +301,20 @@ Desarrolla: $(x^2 + 3)^2$
 <summary>Ver solución</summary>
 
 **Datos:** El primer término ya tiene exponente ($x^2$).
-**Razonamiento:** $(x^2)^2 + 2(x^2)(3) + 3^2$. Aplicamos potencia de potencia: $x^4 + 6x^2 + 9$.
-**Resultado:** $\boxed{x^4 + 6x^2 + 9}$
+
+**Razonamiento:**
+
+$$
+(x^2)^2 + 2(x^2)(3) + 3^2
+$$
+
+Aplicamos potencia de potencia:
+
+**Resultado:**
+
+$$
+\boxed{x^4 + 6x^2 + 9}
+$$
 
 </details>
 
@@ -179,8 +325,18 @@ Resuelve: $(x - \frac{1}{3})^2$
 <summary>Ver solución</summary>
 
 **Datos:** Segundo término una fracción.
-**Razonamiento:** $x^2 - 2(x)(\frac{1}{3}) + (\frac{1}{3})^2 = x^2 - \frac{2}{3}x + \frac{1}{9}$.
-**Resultado:** $\boxed{x^2 - \frac{2}{3}x + \frac{1}{9}}$
+
+**Razonamiento:**
+
+$$
+x^2 - 2(x)\left(\frac{1}{3}\right) + \left(\frac{1}{3}\right)^2
+$$
+
+**Resultado:**
+
+$$
+\boxed{x^2 - \frac{2}{3}x + \frac{1}{9}}
+$$
 
 </details>
 
@@ -191,8 +347,18 @@ Calcula: $(10 + 2a)^2$
 <summary>Ver solución</summary>
 
 **Datos:** $a = 10, b = 2a$.
-**Razonamiento:** $10^2 + 2(10)(2a) + (2a)^2 = 100 + 40a + 4a^2$.
-**Resultado:** $\boxed{100 + 40a + 4a^2}$
+
+**Razonamiento:**
+
+$$
+10^2 + 2(10)(2a) + (2a)^2
+$$
+
+**Resultado:**
+
+$$
+\boxed{100 + 40a + 4a^2}
+$$
 
 </details>
 
@@ -203,8 +369,18 @@ Desarrolla: $(4xy - 1)^2$
 <summary>Ver solución</summary>
 
 **Datos:** Término compuesto $4xy$.
-**Razonamiento:** $(4xy)^2 - 2(4xy)(1) + 1^2 = 16x^2y^2 - 8xy + 1$.
-**Resultado:** $\boxed{16x^2y^2 - 8xy + 1}$
+
+**Razonamiento:**
+
+$$
+(4xy)^2 - 2(4xy)(1) + 1^2
+$$
+
+**Resultado:**
+
+$$
+\boxed{16x^2y^2 - 8xy + 1}
+$$
 
 </details>
 
@@ -215,8 +391,18 @@ Calcula el área de un cuadrado de lado $(x + 7)$.
 <summary>Ver solución</summary>
 
 **Datos:** Lado $L = x + 7$.
-**Razonamiento:** El área es $L^2$. Por tanto: $(x+7)^2 = x^2 + 14x + 49$.
-**Resultado:** $\boxed{x^2 + 14x + 49}$
+
+**Razonamiento:** El área es $L^2$. Por tanto:
+
+$$
+(x+7)^2 = x^2 + 14x + 49
+$$
+
+**Resultado:**
+
+$$
+\boxed{x^2 + 14x + 49}
+$$
 
 </details>
 
@@ -227,8 +413,20 @@ Simplifica la expresión: $(x + 2)^2 - x^2$
 <summary>Ver solución</summary>
 
 **Datos:** Resta de polinomios.
-**Razonamiento:** Desarrollamos el cuadrado: $x^2 + 4x + 4$. Luego restamos $x^2$. Los términos $x^2$ se eliminan.
-**Resultado:** $\boxed{4x + 4}$
+
+**Razonamiento:** Desarrollamos el cuadrado:
+
+$$
+x^2 + 4x + 4
+$$
+
+Luego restamos $x^2$. Los términos $x^2$ se eliminan.
+
+**Resultado:**
+
+$$
+\boxed{4x + 4}
+$$
 
 </details>
 

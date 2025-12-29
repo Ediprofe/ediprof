@@ -1,180 +1,233 @@
 # **Suma y Diferencia de Potencias Impares**
 
-Este caso es una generalización de la suma y diferencia de cubos. Aplica cuando tienes dos términos elevados a la misma potencia impar (5, 7, 9, etc.).
+Ya sabes cómo factorizar diferencias de cuadrados ($x^2 - y^2$) y sumas o diferencias de cubos ($x^3 \pm y^3$). ¿Qué pasa si el exponente es 5, 7 o cualquier otro número impar? Hoy aprenderás que estas expresiones siguen un **patrón muy elegante** que te permitirá factorizarlas fácilmente, sin importar qué tan grande sea el exponente.
 
 ---
 
 ## 🎯 ¿Qué vas a aprender?
 
-- A identificar potencias impares iguales.
-- A aplicar la fórmula general de diferencia de potencias.
-- A aplicar la fórmula general de suma de potencias impares.
-- Por qué la suma de potencias pares no se factoriza.
+- A identificar cuándo aplicar este caso (potencias iguales impares).
+- A construir el segundo factor "bajando y subiendo" exponentes.
+- A manejar correctamente los signos en sumas y diferencias.
+- A aplicar la fórmula general para cualquier potencia impar $n$.
 
 ---
 
-## 🔍 Potencias impares comunes
+## 🔍 El Patrón: De lo conocido a lo nuevo
 
-| Potencia | Valores |
-| :---: | :---: |
-| $n = 5$ | $1^5 = 1$, $2^5 = 32$, $3^5 = 243$ |
-| $n = 7$ | $1^7 = 1$, $2^7 = 128$, $3^7 = 2187$ |
+Recuerda cómo factorizamos una diferencia de cubos ($n=3$):
+
+$$
+x^3 - y^3 = (x - y)(x^2 + xy + y^2)
+$$
+
+Observa el segundo paréntesis (el factor largo):
+1.  Empieza con $x^2$ (uno menos que el original).
+2.  La $x$ baja: $x^2 \to x^1 \to \text{desaparece}$.
+3.  La $y$ sube: $\text{no está} \to y^1 \to y^2$.
+4.  Todos los signos son positivos.
+
+**¡Para potencias mayores ($n=5, 7, \dots$) funciona exactamente igual!**
 
 ---
 
-## 📐 Las Fórmulas
+## ⚡ Caso 1: Diferencia de Potencias Impares ($a^n - b^n$)
 
-**Diferencia de potencias** (funciona para cualquier $n$):
+Cuando tienes una resta, el patrón de signos es el más fácil: **todos son positivos**.
 
-$$
-\boxed{a^n - b^n = (a - b)(a^{n-1} + a^{n-2}b + a^{n-3}b^2 + \cdots + b^{n-1})}
-$$
-
-**Suma de potencias impares** (solo cuando $n$ es impar):
+### La Fórmula
 
 $$
-\boxed{a^n + b^n = (a + b)(a^{n-1} - a^{n-2}b + a^{n-3}b^2 - \cdots + b^{n-1})}
+\boxed{a^n - b^n = (a - b)(a^{n-1} + a^{n-2}b + \dots + b^{n-1})}
 $$
 
-**Cómo recordarlas:**
-- El primer factor tiene el **mismo signo** que la expresión.
-- En la diferencia, los signos del segundo factor son **todos positivos**.
-- En la suma, los signos **alternan** (empezando con positivo).
-- El segundo factor tiene **$n$ términos**.
+**Cómo construirla paso a paso:**
+1.  **Primer factor (la raíz):** Es la resta de las bases $(a - b)$.
+2.  **Segundo factor (el polinomio):**
+    *   El primer término empieza con exponente $n-1$.
+    *   Vas **bajando** el exponente de $a$ y **subiendo** el de $b$.
+    *   **Todos** los signos son positivos ($+$).
 
----
+### Ejemplo 1: Diferencia de quintas
 
-## ⚙️ Ejemplos Resueltos
+Factoriza la expresión:
 
-### Ejemplo 1: Diferencia de quintas potencias
-
-Factoriza: $x^5 - 32$
-
-**Datos:**
-- $x^5 = (x)^5$
-- $32 = (2)^5$
+$$
+x^5 - 32
+$$
 
 **Razonamiento:**
 
-1. Primer factor: 
+1.  Verificamos que sean potencias quintas:
+
+$$
+x^5 - 2^5
+$$
+
+2.  Escribimos el primer factor con la resta de las bases:
 
 $$
 (x - 2)
 $$
 
-2. Segundo factor: 5 términos con signos positivos.
+3.  Construimos el segundo factor. Como era $x^5$, empezamos con $x^4$.
+    *   $x$ baja: $x^4 \to x^3 \to x^2 \to x \to 1$
+    *   $2$ sube: $1 \to 2 \to 2^2 \to 2^3 \to 2^4$
 
-3.
+    Escribámoslo término a término:
+
 $$
-x^4 + x^3 \cdot 2 + x^2 \cdot 4 + x \cdot 8 + 16
+x^4 + x^3(2) + x^2(2^2) + x(2^3) + 2^4
 $$
 
-**Resultado:** $\boxed{(x - 2)(x^4 + 2x^3 + 4x^2 + 8x + 16)}$
+4.  Simplificamos las potencias de los números:
+
+$$
+x^4 + 2x^3 + 4x^2 + 8x + 16
+$$
+
+**Resultado:**
+
+$$
+\boxed{(x - 2)(x^4 + 2x^3 + 4x^2 + 8x + 16)}
+$$
 
 ---
 
-### Ejemplo 2: Suma de quintas potencias
+## ⚡ Caso 2: Suma de Potencias Impares ($a^n + b^n$)
 
-Factoriza: $x^5 + 32$
+Cuando tienes una suma, el patrón es casi idéntico, pero los signos del segundo factor **se alternan**.
 
-**Datos:**
-- $x^5 = (x)^5$
-- $32 = (2)^5$
+### La Fórmula
+
+$$
+\boxed{a^n + b^n = (a + b)(a^{n-1} - a^{n-2}b + \dots + b^{n-1})}
+$$
+
+**Regla de signos para la SUMA:**
+*   Empiezas con positivo (+).
+*   Luego negativo (-).
+*   Luego positivo (+).
+*   Y así sucesivamente... (**+ , - , + , - , ...**)
+
+### Ejemplo 2: Suma de quintas
+
+Factoriza la expresión:
+
+$$
+m^5 + 243
+$$
 
 **Razonamiento:**
 
-1. Primer factor: 
+1.  Identificamos las potencias. Sabemos que $3^5 = 243$:
 
 $$
-(x + 2)
+m^5 + 3^5
 $$
 
-2. Segundo factor: 5 términos con signos alternados.
+2.  Primer factor (suma de bases):
 
-3.
 $$
-x^4 - 2x^3 + 4x^2 - 8x + 16
+(m + 3)
 $$
 
-**Resultado:** $\boxed{(x + 2)(x^4 - 2x^3 + 4x^2 - 8x + 16)}$
+3.  Segundo factor (alternando signos):
+    *   Empieza con $m^4$.
+    *   Signos: $+ - + - +$
+
+    Construyamos:
+
+$$
+m^4 - m^3(3) + m^2(3^2) - m(3^3) + 3^4
+$$
+
+4.  Simplificamos:
+
+$$
+m^4 - 3m^3 + 9m^2 - 27m + 81
+$$
+
+**Resultado:**
+
+$$
+\boxed{(m + 3)(m^4 - 3m^3 + 9m^2 - 27m + 81)}
+$$
 
 ---
 
-### Ejemplo 3: Diferencia con coeficientes
+## ⚙️ Ejemplos Resueltos Complejos
 
-Factoriza: $32m^5 - 243$
+### Ejemplo 3: Con coeficientes en ambos términos
+
+Factoriza:
+
+$$
+32x^5 + 1
+$$
 
 **Datos:**
-- $32m^5 = (2m)^5$
-- $243 = (3)^5$
+*   $\sqrt[5]{32x^5} = 2x$
+*   $\sqrt[5]{1} = 1$
 
 **Razonamiento:**
 
-1. Primer factor: 
+1.  Primer factor:
 
 $$
-(2m - 3)
+(2x + 1)
 $$
 
-2. Segundo factor: 
+2.  Segundo factor (alternando signos).
+    *   Cuidado: el primer término $(2x)$ debe elevarse completo entre paréntesis.
 
 $$
-(2m)^4 + (2m)^3(3) + (2m)^2(9) + (2m)(27) + 81
+(2x)^4 - (2x)^3(1) + (2x)^2(1^2) - (2x)(1^3) + 1^4
 $$
 
-3. Simplificamos: 
+3.  Desarrollamos las potencias:
+    *   $(2x)^4 = 16x^4$
+    *   $(2x)^3 = 8x^3$
+    *   $(2x)^2 = 4x^2$
 
 $$
-16m^4 + 24m^3 + 36m^2 + 54m + 81
+16x^4 - 8x^3 + 4x^2 - 2x + 1
 $$
 
-**Resultado:** $\boxed{(2m - 3)(16m^4 + 24m^3 + 36m^2 + 54m + 81)}$
+**Resultado:**
 
----
+$$
+\boxed{(2x + 1)(16x^4 - 8x^3 + 4x^2 - 2x + 1)}
+$$
 
-### Ejemplo 4: Séptimas potencias
+### Ejemplo 4: Séptima potencia (n=7)
 
-Factoriza: $x^7 - y^7$
+Factoriza:
 
-**Datos:**
-- Ambos términos a la séptima potencia.
+$$
+x^7 - y^7
+$$
 
 **Razonamiento:**
 
-1. Primer factor: 
+1.  Primer factor (es resta, así que resta de bases):
 
 $$
 (x - y)
 $$
 
-2. Segundo factor: 7 términos con signos positivos.
-
-**Resultado:** $\boxed{(x - y)(x^6 + x^5y + x^4y^2 + x^3y^3 + x^2y^4 + xy^5 + y^6)}$
-
----
-
-### Ejemplo 5: Con factor común
-
-Factoriza: $2x^5 + 64$
-
-**Datos:**
-- Factor común 2.
-
-**Razonamiento:**
-
-1. Sacamos el 2: 
+2.  Segundo factor (es resta, así que **todos positivos**).
+    *   Empezamos con exponente 6 ($7-1$).
 
 $$
-2(x^5 + 32)
+x^6 + x^5y + x^4y^2 + x^3y^3 + x^2y^4 + xy^5 + y^6
 $$
 
-2. Adentro es suma de quintas: 
+**Resultado:**
 
 $$
-2(x + 2)(x^4 - 2x^3 + 4x^2 - 8x + 16)
+\boxed{(x - y)(x^6 + x^5y + x^4y^2 + x^3y^3 + x^2y^4 + xy^5 + y^6)}
 $$
-
-**Resultado:** $\boxed{2(x + 2)(x^4 - 2x^3 + 4x^2 - 8x + 16)}$
 
 ---
 
@@ -186,14 +239,20 @@ Factoriza: $x^5 - 1$
 <details>
 <summary>Ver solución</summary>
 
-**Datos:** $1 = 1^5$
-**Razonamiento:** 
+**Datos:** Diferencia de quintas ($1 = 1^5$).
+
+**Razonamiento:**
+El primer factor es $(x-1)$. El segundo tiene todos los signos positivos, empezando en $x^4$.
 
 $$
-(x - 1)(x^4 + x^3 + x^2 + x + 1)
+(x - 1)(x^4 + x^3(1) + x^2(1)^2 + x(1)^3 + 1^4)
 $$
 
-**Resultado:** $\boxed{(x - 1)(x^4 + x^3 + x^2 + x + 1)}$
+**Resultado:**
+
+$$
+\boxed{(x - 1)(x^4 + x^3 + x^2 + x + 1)}
+$$
 
 </details>
 
@@ -203,152 +262,210 @@ Factoriza: $a^5 + 1$
 <details>
 <summary>Ver solución</summary>
 
-**Datos:** $1 = 1^5$
-**Razonamiento:** 
+**Datos:** Suma de quintas. Signos alternados.
+
+**Razonamiento:**
 
 $$
 (a + 1)(a^4 - a^3 + a^2 - a + 1)
 $$
 
-**Resultado:** $\boxed{(a + 1)(a^4 - a^3 + a^2 - a + 1)}$
+**Resultado:**
+
+$$
+\boxed{(a + 1)(a^4 - a^3 + a^2 - a + 1)}
+$$
 
 </details>
 
 ### Ejercicio 3
-Factoriza: $a^5 - 243$
+Factoriza: $x^7 + 1$
 
 <details>
 <summary>Ver solución</summary>
 
-**Datos:** $243 = 3^5$
-**Razonamiento:** 
+**Datos:** Suma de séptimas ($n=7$). Signos alternados.
+
+**Razonamiento:**
+Empezamos con $x^6$.
 
 $$
-(a - 3)(a^4 + 3a^3 + 9a^2 + 27a + 81)
+(x + 1)(x^6 - x^5 + x^4 - x^3 + x^2 - x + 1)
 $$
 
-**Resultado:** $\boxed{(a - 3)(a^4 + 3a^3 + 9a^2 + 27a + 81)}$
+**Resultado:**
+
+$$
+\boxed{(x + 1)(x^6 - x^5 + x^4 - x^3 + x^2 - x + 1)}
+$$
 
 </details>
 
 ### Ejercicio 4
-Factoriza: $a^5 + 32$
+Factoriza: $32 - b^5$
 
 <details>
 <summary>Ver solución</summary>
 
-**Datos:** $32 = 2^5$
-**Razonamiento:** 
+**Datos:** $32 = 2^5$.
+
+**Razonamiento:**
+Primer factor $(2 - b)$. Segundo factor con todos positivos.
 
 $$
-(a + 2)(a^4 - 2a^3 + 4a^2 - 8a + 16)
+(2 - b)(2^4 + 2^3b + 2^2b^2 + 2b^3 + b^4)
 $$
 
-**Resultado:** $\boxed{(a + 2)(a^4 - 2a^3 + 4a^2 - 8a + 16)}$
+Simplificamos las potencias de 2:
+
+**Resultado:**
+
+$$
+\boxed{(2 - b)(16 + 8b + 4b^2 + 2b^3 + b^4)}
+$$
 
 </details>
 
 ### Ejercicio 5
-Factoriza: $32x^5 - 1$
+Factoriza: $x^5 + 32y^5$
 
 <details>
 <summary>Ver solución</summary>
 
-**Datos:** $32x^5 = (2x)^5$
-**Razonamiento:** 
+**Datos:** $32y^5 = (2y)^5$.
+
+**Razonamiento:**
+Primer factor $(x + 2y)$. Segundo factor alterna signos.
 
 $$
-(2x - 1)(16x^4 + 8x^3 + 4x^2 + 2x + 1)
+x^4 - x^3(2y) + x^2(2y)^2 - x(2y)^3 + (2y)^4
 $$
 
-**Resultado:** $\boxed{(2x - 1)(16x^4 + 8x^3 + 4x^2 + 2x + 1)}$
+**Resultado:**
+
+$$
+\boxed{(x + 2y)(x^4 - 2x^3y + 4x^2y^2 - 8xy^3 + 16y^4)}
+$$
 
 </details>
 
 ### Ejercicio 6
-Factoriza: $243m^5 + 32n^5$
+Factoriza: $243x^5 - 1$
 
 <details>
 <summary>Ver solución</summary>
 
-**Datos:** $(3m)^5$ y $(2n)^5$
-**Razonamiento:** 
+**Datos:** $243x^5 = (3x)^5$.
+
+**Razonamiento:**
+Primer factor $(3x - 1)$. Segundo factor todo positivo.
 
 $$
-(3m + 2n)(81m^4 - 54m^3n + 36m^2n^2 - 24mn^3 + 16n^4)
+(3x)^4 + (3x)^3 + (3x)^2 + (3x) + 1
 $$
 
-**Resultado:** $\boxed{(3m + 2n)(81m^4 - 54m^3n + 36m^2n^2 - 24mn^3 + 16n^4)}$
+**Resultado:**
+
+$$
+\boxed{(3x - 1)(81x^4 + 27x^3 + 9x^2 + 3x + 1)}
+$$
 
 </details>
 
 ### Ejercicio 7
-Factoriza: $x^7 + y^7$
+Factoriza: $m^7 - n^7$
 
 <details>
 <summary>Ver solución</summary>
 
-**Datos:** Potencia 7 (impar).
-**Razonamiento:** 
+**Datos:** Diferencia de séptimas.
+
+**Razonamiento:**
+Primer factor $(m-n)$. Segundo factor positivo, bajando de $m^6$ a $m^0$.
+
+**Resultado:**
 
 $$
-(x + y)(x^6 - x^5y + x^4y^2 - x^3y^3 + x^2y^4 - xy^5 + y^6)
+\boxed{(m - n)(m^6 + m^5n + m^4n^2 + m^3n^3 + m^2n^4 + mn^5 + n^6)}
 $$
-
-**Resultado:** $\boxed{(x + y)(x^6 - x^5y + x^4y^2 - x^3y^3 + x^2y^4 - xy^5 + y^6)}$
 
 </details>
 
 ### Ejercicio 8
-Factoriza: $x^6 - 1$ (usar diferencia de cuadrados primero)
+Factoriza: $a^5b^5 + 32$
 
 <details>
 <summary>Ver solución</summary>
 
-**Datos:** $x^6 - 1 = (x^3)^2 - 1^2$
-**Razonamiento:** 
+**Datos:** $(ab)^5 + 2^5$.
+
+**Razonamiento:**
 
 $$
-(x^3 + 1)(x^3 - 1)
+(ab + 2)((ab)^4 - (ab)^3(2) + (ab)^2(4) - (ab)(8) + 16)
 $$
 
-Luego cada uno es suma/diferencia de cubos.
+**Resultado:**
 
-**Resultado:** $\boxed{(x + 1)(x^2 - x + 1)(x - 1)(x^2 + x + 1)}$
+$$
+\boxed{(ab + 2)(a^4b^4 - 2a^3b^3 + 4a^2b^2 - 8ab + 16)}
+$$
 
 </details>
 
 ### Ejercicio 9
-Factoriza: $2x^5 - 2$
+Factoriza: $x^{10} + 1$ (Nota: $x^{10} = (x^2)^5$)
 
 <details>
 <summary>Ver solución</summary>
 
-**Datos:** Factor común 2.
-**Razonamiento:** 
+**Datos:** Podemos verlo como una suma de quintas de $x^2$.
+
+**Razonamiento:**
+$(x^2)^5 + 1^5$. Bases son $x^2$ y $1$.
+
+Primer factor: $(x^2 + 1)$.
+Segundo factor (alternando):
 
 $$
-2(x^5 - 1) = 2(x - 1)(x^4 + x^3 + x^2 + x + 1)
+(x^2)^4 - (x^2)^3 + (x^2)^2 - x^2 + 1
 $$
 
-**Resultado:** $\boxed{2(x - 1)(x^4 + x^3 + x^2 + x + 1)}$
+**Resultado:**
+
+$$
+\boxed{(x^2 + 1)(x^8 - x^6 + x^4 - x^2 + 1)}
+$$
 
 </details>
 
 ### Ejercicio 10
-Factoriza: $5a^7 + 5$
+Factoriza: $2a^5 + 64$
 
 <details>
 <summary>Ver solución</summary>
 
-**Datos:** Factor común 5.
-**Razonamiento:** 
+**Datos:** Primero hay un **Factor Común** 2.
+
+**Razonamiento:**
+
+1.  Saca el factor común:
 
 $$
-5(a^7 + 1) = 5(a + 1)(a^6 - a^5 + a^4 - a^3 + a^2 - a + 1)
+2(a^5 + 32)
 $$
 
-**Resultado:** $\boxed{5(a + 1)(a^6 - a^5 + a^4 - a^3 + a^2 - a + 1)}$
+2.  Factoriza la suma de quintas dentro:
+
+$$
+2(a + 2)(a^4 - 2a^3 + 4a^2 - 8a + 16)
+$$
+
+**Resultado:**
+
+$$
+\boxed{2(a + 2)(a^4 - 2a^3 + 4a^2 - 8a + 16)}
+$$
 
 </details>
 
@@ -356,9 +473,11 @@ $$
 
 ## 🔑 Resumen
 
-| Caso | Fórmula | Signos del 2do factor |
-| :--- | :--- | :--- |
-| **Diferencia** $a^n - b^n$ | $(a - b)(\text{n términos})$ | Todos positivos |
-| **Suma** $a^n + b^n$ (n impar) | $(a + b)(\text{n términos})$ | Alternados (+, -, +, ...) |
+Para factorizar $a^n \pm b^n$ con $n$ impar:
 
-> La suma de potencias pares ($a^4 + b^4$, $a^6 + b^6$, etc.) no se puede factorizar con esta fórmula.
+| Caso | Fórmula básica | Signos 2do Factor |
+| :--- | :--- | :--- |
+| **Resta (-)** | $(a-b)(\dots)$ | **Todos +** $(+,+,+, \dots)$ |
+| **Suma (+)** | $(a+b)(\dots)$ | **Alternados** $(+,-,+,-, \dots)$ |
+
+> **Truco final:** El segundo factor siempre tiene exactamente **$n$ términos**. Si factorizas potencia 5, el paréntesis largo tendrá 5 términos.

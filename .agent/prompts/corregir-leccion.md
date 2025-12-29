@@ -17,9 +17,23 @@ http://localhost:4321/matematicas/algebra/potenciacion/propiedades-potencias-ii
 
 
 
+Corrige las siguientes lecciones al estilo Ediprofe.
+
+http://localhost:4321/matematicas/aritmetica/potenciacion-radicacion-logaritmos/propiedades-de-los-logaritmos
+
+http://localhost:4321/matematicas/aritmetica/potenciacion-radicacion-logaritmos/operaciones-combinadas-avanzadas
 
 
----
+
+MINIMO 5 EJEMPLOS POR SECCIÓN O CONCEPTO. TEN EN CUENTA QUE DENTRO DE UNA MISMA LECCIÓN PUEDEN HABER VARIOS CONCEPTOS, NORMALMENTE DSEPARADOS POR TÍTULO MARKDOWN, PERO SIN ANOTAR EXPLÍCITAMENTE "CONCEPTO 1: ..." NI NADA DE ESO...SOLO TENIENDOLO EN CUENTA. REPITO: NO ANOTAR ESO EN LOS TÍTULOS ESO DE "CONCEPTO 1:...." MIRA LA LECCIÓN DE REFERENCIA.
+
+LAS IMAGENES GENERADAS EN LAS LECCIONES NO LAS ELIMINES! ÚSALAS COMO PARTE DE LA REESCRITURA.
+
+LAS IMAGENES GENERADAS EN LAS LECCIONES ELIMÍNALAS! ÚSALAS COMO PARTE DE LA REESCRITURA.
+
+Si encuentras un símbolo $ déjalo mejor como "pesos" porque hay un problema para renderizar eso en latex.
+
+Recuerda que en los títulos markdown de sección no puedes agregar expresiones latex.
 
 ## PASO 1: LEE las referencias
 
@@ -29,6 +43,8 @@ http://localhost:4321/matematicas/algebra/potenciacion/propiedades-potencias-ii
 
 
 Nota como hay lecciones que por su naturaleza no cabe hablando de más antes del título "¿Qué vas a aprender?". Si hay una conexión muy pertienente, entonces se puede hacer ese párrafo pequeño introductorio.
+
+Ten en cuenta también que los títulos markdown de la lección no pueden tener expresiones latex, ya que se daña como se ve en eo índice de la página y en la barra lateral de navegación.
 
 ---
 
@@ -51,27 +67,48 @@ Nota como hay lecciones que por su naturaleza no cabe hablando de más antes del
 □ Resultados importantes con `\boxed{}`
 □ LaTeX en bloques con líneas vacías antes/después
 □ Usar nombres propios para una enseñanza en latinoamerica, sin spanglish ni nombres de métodos rebuscados o cosas así, a menos que sea algo ya conocido de verdad así.
-□ **⚠️ TODAS LAS ECUACIONES EN BLOQUE:** 
-   - Propiedades, fórmulas Y pasos de razonamiento deben estar en LaTeX de bloque.
-   - Cada ecuación en su propio bloque `$$..$$` separado por líneas vacías.
+□ **⚠️ TODAS LAS ECUACIONES EN BLOQUE (REGLA CRÍTICA):** 
+
+   > **🚨 NUNCA uses formato inline `$...$` para ecuaciones importantes.** Esta regla se aplica a TODAS las ecuaciones, incluyendo las de los pasos de razonamiento y las soluciones de ejercicios.
+   
+   - Cada ecuación debe ir en su propio bloque `$$...$$`.
+   - SIEMPRE deja una línea vacía ANTES y DESPUÉS del bloque.
    - Esto mejora la legibilidad y evita errores de renderizado.
    
-   **Ejemplo correcto:**
+   **Ejemplo correcto (cada paso en su bloque):**
    ```markdown
    **Razonamiento:**
    
-   $$
-   a^{-5 + 2}
-   $$
-   
-   Debo 5 y pago 2, quedo debiendo 3.
+   1. Abrimos el centro:
    
    $$
-   a^{-3}
+   2x^2 + 6x + x + 3
+   $$
+   
+   2. Agrupamos:
+   
+   $$
+   (2x^2 + 6x) + (x + 3)
+   $$
+   
+   3. Factor común:
+   
+   $$
+   2x(x + 3) + 1(x + 3)
    $$
    ```
    
-   **Incorrecto:** `$$a^{-5+2}$$ Debo $5...` (inline y sin separación).
+   **Incorrecto (inline o sin separación):**
+   ```markdown
+   Abrimos: $2x^2 + 6x + x + 3$, agrupamos $(2x^2+6x)+(x+3)$ y sacamos...
+   ```
+   
+   **También incorrecto (bloque pegado al texto):**
+   ```markdown
+   **Razonamiento:**
+   $$2x^2 + 6x + x + 3$$
+   Agrupamos:
+   ```
 
 ---
 
@@ -163,3 +200,4 @@ No hagas sugerencias, **implementa los cambios directamente**.
 2. Lista los cambios realizados
 
 ---
+

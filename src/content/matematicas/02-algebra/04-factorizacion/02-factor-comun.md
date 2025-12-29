@@ -1,6 +1,6 @@
 # **Factor Común**
 
-El factor común es el primer caso de factorización y el más básico. Consiste en identificar qué número, letra o expresión se repite en todos los términos y sacarlo afuera del paréntesis.
+El factor común es el primer caso de factorización y el más básico. Consiste en identificar qué número, letra o expresión se repite en todos los términos y sacarlo del paréntesis.
 
 ---
 
@@ -62,6 +62,8 @@ $$
 $$
 
 **Resultado:** $\boxed{4x^2(x + 2)}$
+
+![factorizacion-por-factor-comun](https://cdn.ediprofe.com/img/matematicas/novi-factorizacion-por-factor-comun.webp)
 
 ---
 
@@ -392,6 +394,9 @@ $$
 ---
 
 ## 🔑 Resumen
+
+![resumen-factor-comun](https://cdn.ediprofe.com/img/matematicas/1z8p-resumen-factor-comun.webp)
+
 
 | Tipo | Estructura | Ejemplo |
 | :--- | :--- | :--- |

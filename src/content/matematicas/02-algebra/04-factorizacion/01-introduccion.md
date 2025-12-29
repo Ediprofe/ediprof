@@ -1,6 +1,6 @@
 # **Introducción a la Factorización**
 
-¿Alguna vez has desarmado un juguete o un aparato electrónico para entender cómo funciona por dentro? En matemáticas, la **factorización** es precisamente eso: desarmar una expresión grande para ver los "ladrillos" o factores que la construyen. Es la herramienta que nos permite simplificar lo complejo.
+¿Alguna vez has desarmado un juguete o un aparato electrónico para entender cómo funciona por dentro? En matemáticas, la **factorización** es precisamente eso: desarmar una expresión grande para ver los "ladrillos" o factores que la construyen. Esto nos permite simplificar lo complejo.
 
 ---
 

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 460">
+  <defs></defs>
+  <rect x="0.00" y="0.00" width="450.00" height="460.00" fill="#f8fafc" stroke="none" stroke-width="0" rx="0"  />
+  <text x="225.00" y="25.00" font-family="Inter, sans-serif" font-size="20" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Representación Geométrica: (a - b)²</text>
+  <rect x="50.00" y="90.00" width="300.00" height="300.00" fill="none" stroke="#1e293b" stroke-width="1" rx="0"  stroke-dasharray="5,5"/>
+  <rect x="50.00" y="90.00" width="220.00" height="220.00" fill="#3b82f6" stroke="#1e293b" stroke-width="2" rx="0"  />
+  <text x="160.00" y="200.00" font-family="Inter, sans-serif" font-size="22" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">(a - b)²</text>
+  <rect x="270.00" y="90.00" width="80.00" height="220.00" fill="#22c55e" stroke="#1e293b" stroke-width="1" rx="0" fill-opacity="0.3" />
+  <text x="310.00" y="200.00" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">b(a - b)</text>
+  <rect x="50.00" y="310.00" width="220.00" height="80.00" fill="#22c55e" stroke="#1e293b" stroke-width="1" rx="0" fill-opacity="0.3" />
+  <text x="160.00" y="350.00" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">b(a - b)</text>
+  <rect x="270.00" y="310.00" width="80.00" height="80.00" fill="#22c55e" stroke="#1e293b" stroke-width="2" rx="0" fill-opacity="0.6" />
+  <text x="310.00" y="350.00" font-family="Inter, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">b²</text>
+  <line x1="50.00" y1="75.00" x2="350.00" y2="75.00" stroke="#1e293b" stroke-width="1"  />
+  <text x="200.00" y="65.00" font-family="Inter, sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">a</text>
+  <line x1="35.00" y1="90.00" x2="35.00" y2="390.00" stroke="#1e293b" stroke-width="1"  />
+  <text x="20.00" y="240.00" font-family="Inter, sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">a</text>
+  <text x="160.00" y="410.00" font-family="Inter, sans-serif" font-size="16" font-weight="normal" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">a - b</text>
+  <text x="310.00" y="410.00" font-family="Inter, sans-serif" font-size="16" font-weight="normal" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">b</text>
+</svg>

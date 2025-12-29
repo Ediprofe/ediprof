@@ -1,32 +1,79 @@
 # **Trinomio de la forma ax² + bx + c**
 
-En lecciones anteriores aprendimos a factorizar trinomios donde el coeficiente de $x^2$ es 1. Ahora veremos qué hacer cuando ese coeficiente es diferente de 1. Existen dos métodos principales para resolver este tipo de trinomios.
+En lecciones anteriores aprendimos a factorizar trinomios donde el coeficiente de $x^2$ es 1. Ahora veremos qué hacer cuando ese coeficiente es diferente de 1. Para resolver estos trinomios, existen tres métodos principales que nos permiten llegar al mismo resultado.
 
 ---
 
 ## 🎯 ¿Qué vas a aprender?
 
 - A identificar trinomios con coeficiente principal distinto de 1.
-- El **Método de Agrupación** para factorizar paso a paso.
-- El **Método de Tanteo** para factorizar de forma rápida.
-- A elegir el mejor método según el problema.
+- El **Método de Reducción** para convertir un trinomio difícil en uno simple de una vez.
+- El **Método de Agrupación** para factorizar paso a paso mediante el producto AC.
+- El **Método de Tanteo** para factorizar mediante inspección cruzada.
+- A elegir el mejor método según tu preferencia y el problema.
 
 ---
 
-## 🏗️ Método 1: Agrupación
+## 🏗️ Método 1: Reducción a la forma simple
 
-Este es el método más ordenado y confiable. Consiste en convertir el trinomio de 3 términos en un polinomio de 4 términos para poder aplicar factor común por agrupación.
+Este es un método muy potente que transforma de inmediato nuestro trinomio de la forma $ax^2 + bx + c$ ($a \neq 1$) en uno de la forma $x^2 + bx + c$ ($a = 1$) mediante un truco matemático. 
 
-### Pasos del Método de Agrupación
+### Pasos del Método
 
-1. Multiplica el primer coeficiente ($a$) por el último ($c$). A esto le llamamos "Producto AC".
-2. Busca dos números que **multiplicados** den el Producto AC y **sumados** den $b$.
-3. Reescribe el trinomio abriendo el término central con esos dos números.
-4. Factoriza por agrupación (factor común por parejas).
+Consiste en **multiplicar y dividir por el mismo coeficiente $a$** en un solo paso:
+
+1.  Multiplicamos y dividimos todo el trinomio por $a$. Al multiplicar, el primer término queda como $(ax)^2$, el término central queda con el factor indicado $b(ax)$ y el último término se multiplica directamente $ac$.
+2.  Factorizamos el trinomio de arriba buscando dos números que multipliquen $ac$ y sumen $b$.
+3.  Simplificamos la fracción dividiendo para eliminar el denominador $a$.
 
 ---
 
-### Ejemplo 1: Agrupación básica
+### Ejemplo 1: El truco de multiplicar y dividir de una vez
+
+Factoriza usando reducción: $6x^2 - 7x - 3$
+
+**Datos:**
+- $a = 6$, $b = -7$, $c = -3$
+
+**Razonamiento:**
+
+1. **Multiplicamos y dividimos por 6 directamente:**
+
+$$
+\frac{(6x)^2 - 7(6x) - 18}{6}
+$$
+
+2. **Factorizamos el trinomio de arriba:** Buscamos dos números que multipliquen **-18** y sumen **-7**. Estos son **-9** y **+2**.
+   Escribimos los paréntesis usando $6x$ como nuestra variable:
+
+$$
+\frac{(6x - 9)(6x + 2)}{6}
+$$
+
+3. **Simplificamos:** Descomponemos el denominador $6$ en $3 \times 2$ para que divida exactamente a cada paréntesis:
+
+$$
+\frac{(6x - 9)}{3} \cdot \frac{(6x + 2)}{2} = (2x - 3)(3x + 1)
+$$
+
+**Resultado:** $\boxed{(2x - 3)(3x + 1)}$
+
+---
+
+## 🏗️ Método 2: Agrupación (Producto AC)
+
+Este método es muy estructurado. Consiste en convertir el trinomio de 3 términos en un polinomio de 4 términos para poder aplicar factor común por agrupación.
+
+### Pasos del Método
+
+1. Multiplica el primer coeficiente ($a$) por el último ($c$) para obtener el **Producto AC**.
+2. Busca dos números que **multiplicados** den el Producto AC y **sumados** den el término central $b$.
+3. Reescribe el trinomio sustituyendo el término central por la suma de estos dos números.
+4. Factoriza por agrupación sacando el factor común por parejas.
+
+---
+
+### Ejemplo 2: Agrupación paso a paso
 
 Factoriza: $2x^2 + 7x + 3$
 
@@ -38,124 +85,64 @@ Factoriza: $2x^2 + 7x + 3$
 
 1. Buscamos números que multipliquen 6 y sumen 7. Son **6** y **1**.
 
-2. Abrimos el centro: 
+2. Abrimos el centro:
 
 $$
 2x^2 + 6x + x + 3
 $$
 
-3. Agrupamos: 
+3. Agrupamos por parejas:
 
 $$
 (2x^2 + 6x) + (x + 3)
 $$
 
-4. Factor común: 
+4. Sacamos factor común de cada grupo:
 
 $$
 2x(x + 3) + 1(x + 3)
 $$
 
-5. El bloque $(x + 3)$ es común.
+5. Como el bloque $(x + 3)$ se repite, lo extraemos:
 
 **Resultado:** $\boxed{(x + 3)(2x + 1)}$
 
 ---
 
-### Ejemplo 2: Agrupación con signos negativos
+## 🏗️ Método 3: Tanteo (Inspección)
 
-Factoriza: $3x^2 - 10x + 8$
+Este método consiste en probar combinaciones de factores de los términos extremos hasta que la suma cruzada coincida con el término central. Es muy rápido cuando los números son pequeños.
 
-**Datos:**
-- Producto AC = $3 \times 8 = 24$
-- Necesitamos que sumen $-10$ y multipliquen $+24$
-
-**Razonamiento:**
-
-1. Ambos números deben ser negativos: **-6** y **-4**.
-
-2. Abrimos: 
-
-$$
-3x^2 - 6x - 4x + 8
-$$
-
-3. Agrupamos: 
-
-$$
-3x(x - 2) - 4(x - 2)
-$$
-
-4. Al sacar el -4, el signo interno cambia.
-
-**Resultado:** $\boxed{(x - 2)(3x - 4)}$
-
----
-
-### Ejemplo 3: Agrupación con término negativo al final
-
-Factoriza: $2x^2 + 3x - 2$
-
-**Datos:**
-- Producto AC = $2 \times (-2) = -4$
-- Necesitamos que sumen $+3$ y multipliquen $-4$
-
-**Razonamiento:**
-
-1. Números con signos diferentes: **+4** y **-1**.
-
-2. Abrimos: 
-
-$$
-2x^2 + 4x - x - 2
-$$
-
-3. Agrupamos: 
-
-$$
-2x(x + 2) - 1(x + 2)
-$$
-
-**Resultado:** $\boxed{(x + 2)(2x - 1)}$
-
----
-
-## 🏗️ Método 2: Tanteo
-
-Este método consiste en probar combinaciones de factores hasta encontrar la correcta. Es más rápido cuando los coeficientes son pequeños.
-
-### Pasos del Método de Tanteo
+### Pasos del Método
 
 1. Descompón el primer término ($ax^2$) en dos factores.
 2. Descompón el último término ($c$) en dos factores.
 3. Prueba combinaciones multiplicando en cruz.
-4. Si la suma de los productos cruzados da el término central, encontraste los factores.
+4. Si la suma de estos productos cruzados es igual al término central, has encontrado los binomios correctos.
 
 ---
 
-### Ejemplo 4: Tanteo básico
+### Ejemplo 3: Tanteo básico
 
 Factoriza: $2x^2 + 5x + 2$
 
-**Datos:**
-- Factores de $2x^2$: $(2x)$ y $(x)$
-- Factores de $2$: $(1)$ y $(2)$
-
 **Razonamiento:**
 
-1. Probamos: 
+1. Factores de $2x^2$: $(2x)$ y $(x)$.
+2. Factores de $2$: $(1)$ y $(2)$.
+3. Probamos la combinación:
 
 $$
 (2x + 1)(x + 2)
 $$
 
-2. Verificamos en cruz: 
+4. Verificamos en cruz:
 
 $$
 2x \cdot 2 = 4x \quad \text{y} \quad x \cdot 1 = x
 $$
 
-3. Suma: 
+5. Suma:
 
 $$
 4x + x = 5x
@@ -167,106 +154,47 @@ $$
 
 ---
 
-### Ejemplo 5: Tanteo con signos diferentes
-
-Factoriza: $3x^2 - 5x - 2$
-
-**Datos:**
-- Factores de $3x^2$: $(3x)$ y $(x)$
-- Factores de $-2$: $(1)$ y $(-2)$ o $(-1)$ y $(2)$
-
-**Razonamiento:**
-
-1. Probamos: 
-
-$$
-(3x + 1)(x - 2)
-$$
-
-2. Verificamos: 
-
-$$
-3x \cdot (-2) = -6x \quad \text{y} \quad x \cdot 1 = x
-$$
-
-3. Suma: 
-
-$$
--6x + x = -5x
-$$
-
-¡Correcto!
-
-**Resultado:** $\boxed{(3x + 1)(x - 2)}$
-
----
-
-### Ejemplo 6: Combinando con factor común
-
-Factoriza completamente: $6x^2 + 15x + 9$
-
-**Datos:**
-- Todos los coeficientes (6, 15, 9) son divisibles por 3.
-
-**Razonamiento:**
-
-1. Sacamos factor común 3: 
-
-$$
-3(2x^2 + 5x + 3)
-$$
-
-2. Factorizamos el trinomio interno por tanteo o agrupación.
-
-3. Probamos: 
-
-$$
-(2x + 3)(x + 1)
-$$
-
-Verificación: 
-
-$$
-2x + 3x = 5x \quad \checkmark
-$$
-
-**Resultado:** $\boxed{3(2x + 3)(x + 1)}$
-
----
-
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1
-Factoriza usando Agrupación: $2x^2 + 9x + 4$
+Factoriza: $2x^2 + 9x + 4$
 
 <details>
 <summary>Ver solución</summary>
 
-**Datos:** AC = 8. Números: 8 y 1.
-**Razonamiento:** 
+**Datos:** AC = 8, Suma = 9. Números: 8 y 1.
+
+**Razonamiento:**
 
 $$
 2x^2 + 8x + x + 4 = 2x(x+4) + 1(x+4)
 $$
+
 **Resultado:** $\boxed{(x + 4)(2x + 1)}$
 
 </details>
 
 ### Ejercicio 2
-Factoriza usando Tanteo: $3x^2 + 7x + 2$
+Factoriza: $3x^2 + 7x + 2$
 
 <details>
 <summary>Ver solución</summary>
 
-**Datos:** Factores $(3x, x)$ y $(1, 2)$.
-**Razonamiento:** 
+**Datos:** Multiplicamos y dividimos por 3. AC = 6, Suma = 7. Números: 6 y 1.
+
+**Razonamiento:**
 
 $$
-3x(2) + x(1) = 7x
+\frac{(3x)^2 + 7(3x) + 6}{3} = \frac{(3x+6)(3x+1)}{3}
 $$
 
-Coincide.
-**Resultado:** $\boxed{(3x + 1)(x + 2)}$
+Simplificando:
+
+$$
+(x+2)(3x+1)
+$$
+
+**Resultado:** $\boxed{(x + 2)(3x + 1)}$
 
 </details>
 
@@ -276,12 +204,14 @@ Factoriza: $2x^2 + 11x + 5$
 <details>
 <summary>Ver solución</summary>
 
-**Datos:** AC = 10. Números: 10 y 1.
-**Razonamiento:** 
+**Datos:** AC = 10, Suma = 11. Números: 10 y 1.
+
+**Razonamiento:**
 
 $$
-2x(x+5) + 1(x+5)
+2x^2 + 10x + x + 5 = 2x(x+5) + 1(x+5)
 $$
+
 **Resultado:** $\boxed{(x + 5)(2x + 1)}$
 
 </details>
@@ -292,12 +222,20 @@ Factoriza: $6x^2 - 7x + 2$
 <details>
 <summary>Ver solución</summary>
 
-**Datos:** AC = 12. Números: -4 y -3.
-**Razonamiento:** 
+**Datos:** AC = 12, Suma = -7. Números: -4 y -3.
+
+**Razonamiento:**
 
 $$
-6x^2 - 4x - 3x + 2 = 2x(3x-2) - 1(3x-2)
+\frac{(6x-4)(6x-3)}{2 \times 3}
 $$
+
+Simplificando:
+
+$$
+(3x - 2)(2x - 1)
+$$
+
 **Resultado:** $\boxed{(3x - 2)(2x - 1)}$
 
 </details>
@@ -308,12 +246,14 @@ Factoriza: $5x^2 + 7x + 2$
 <details>
 <summary>Ver solución</summary>
 
-**Datos:** AC = 10. Números: 5 y 2.
-**Razonamiento:** 
+**Datos:** AC = 10, Suma = 7. Números: 5 y 2.
+
+**Razonamiento:**
 
 $$
-5x(x+1) + 2(x+1)
+5x^2 + 5x + 2x + 2 = 5x(x+1) + 2(x+1)
 $$
+
 **Resultado:** $\boxed{(x + 1)(5x + 2)}$
 
 </details>
@@ -324,13 +264,21 @@ Factoriza: $4x^2 - 15x - 4$
 <details>
 <summary>Ver solución</summary>
 
-**Datos:** Tanteo: $(4x, x)$ y $(1, -4)$.
-**Razonamiento:** 
+**Datos:** AC = -16, Suma = -15. Números: -16 y 1.
+
+**Razonamiento:**
 
 $$
-4x(-4) + x(1) = -15x
+\frac{(4x-16)(4x+1)}{4}
 $$
-**Resultado:** $\boxed{(4x + 1)(x - 4)}$
+
+Simplificando:
+
+$$
+(x - 4)(4x + 1)
+$$
+
+**Resultado:** $\boxed{(x - 4)(4x + 1)}$
 
 </details>
 
@@ -340,12 +288,14 @@ Factoriza: $3x^2 - 14x - 5$
 <details>
 <summary>Ver solución</summary>
 
-**Datos:** AC = -15. Números: -15 y 1.
-**Razonamiento:** 
+**Datos:** AC = -15, Suma = -14. Números: -15 y 1.
+
+**Razonamiento:**
 
 $$
-3x(x-5) + 1(x-5)
+3x^2 - 15x + x - 5 = 3x(x-5) + 1(x-5)
 $$
+
 **Resultado:** $\boxed{(x - 5)(3x + 1)}$
 
 </details>
@@ -356,13 +306,21 @@ Factoriza: $2x^2 - 5x - 3$
 <details>
 <summary>Ver solución</summary>
 
-**Datos:** Tanteo: $(2x, x)$ y $(1, -3)$.
-**Razonamiento:** 
+**Datos:** AC = -6, Suma = -5. Números: -6 y 1.
+
+**Razonamiento:**
 
 $$
-2x(-3) + x(1) = -5x
+\frac{(2x-6)(2x+1)}{2}
 $$
-**Resultado:** $\boxed{(2x + 1)(x - 3)}$
+
+Simplificando:
+
+$$
+(x - 3)(2x + 1)
+$$
+
+**Resultado:** $\boxed{(x - 3)(2x + 1)}$
 
 </details>
 
@@ -372,35 +330,171 @@ Factoriza: $6x^2 + x - 2$
 <details>
 <summary>Ver solución</summary>
 
-**Datos:** AC = -12. Números: 4 y -3.
-**Razonamiento:** 
+**Datos:** AC = -12, Suma = 1. Números: 4 y -3.
+
+**Razonamiento:**
 
 $$
-2x(3x+2) - 1(3x+2)
+\frac{(6x+4)(6x-3)}{2 \cdot 3}
 $$
+
+Simplificando:
+
+$$
+(3x + 2)(2x - 1)
+$$
+
 **Resultado:** $\boxed{(3x + 2)(2x - 1)}$
 
 </details>
 
 ### Ejercicio 10
-Factoriza sacando primero factor común: $4x^2 + 18x + 8$
+Factoriza: $4x^2 + 18x + 8$
 
 <details>
 <summary>Ver solución</summary>
 
-**Datos:** Factor común 2.
-**Razonamiento:** 
+**Razonamiento:**
+
+Primero sacamos factor común 2:
 
 $$
 2(2x^2 + 9x + 4)
 $$
 
-Adentro: 
+Luego factorizamos el trinomio interno (AC = 8, números 8 y 1):
 
 $$
-(2x+1)(x+4)
+2[2x(x+4) + 1(x+4)] = 2(x+4)(2x+1)
 $$
+
 **Resultado:** $\boxed{2(2x + 1)(x + 4)}$
+
+</details>
+
+### Ejercicio 11
+Factoriza usando Reducción: $3x^2 - 5x - 2$
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+
+Multiplicamos y dividimos por 3:
+
+$$
+\frac{(3x)^2 - 5(3x) - 6}{3}
+$$
+
+Buscamos factores de -6 que sumen -5: -6 y 1.
+
+$$
+\frac{(3x-6)(3x+1)}{3}
+$$
+
+Simplificando:
+
+$$
+(x - 2)(3x + 1)
+$$
+
+**Resultado:** $\boxed{(x - 2)(3x + 1)}$
+
+</details>
+
+### Ejercicio 12
+Factoriza: $5x^2 + 13x - 6$
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** AC = -30, Suma = 13. Números: 15 y -2.
+
+**Razonamiento:**
+
+$$
+\frac{(5x+15)(5x-2)}{5}
+$$
+
+Simplificando:
+
+$$
+(x + 3)(5x - 2)
+$$
+
+**Resultado:** $\boxed{(x + 3)(5x - 2)}$
+
+</details>
+
+### Ejercicio 13
+Factoriza: $6x^2 + 7x + 2$
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** AC = 12, Suma = 7. Números: 4 y 3.
+
+**Razonamiento:**
+
+$$
+\frac{(6x+4)(6x+3)}{2 \cdot 3}
+$$
+
+Simplificando:
+
+$$
+(3x + 2)(2x + 1)
+$$
+
+**Resultado:** $\boxed{(3x + 2)(2x + 1)}$
+
+</details>
+
+### Ejercicio 14
+Factoriza: $2x^2 - 7x + 3$
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** AC = 6, Suma = -7. Números: -6 y -1.
+
+**Razonamiento:**
+
+$$
+\frac{(2x-6)(2x-1)}{2}
+$$
+
+Simplificando:
+
+$$
+(x - 3)(2x - 1)
+$$
+
+**Resultado:** $\boxed{(x - 3)(2x - 1)}$
+
+</details>
+
+### Ejercicio 15
+Factoriza: $8x^2 - 14x + 3$
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** AC = 24, Suma = -14. Números: -12 y -2.
+
+**Razonamiento:**
+
+$$
+\frac{(8x-12)(8x-2)}{4 \cdot 2}
+$$
+
+Simplificando:
+
+$$
+(2x - 3)(4x - 1)
+$$
+
+**Resultado:** $\boxed{(2x - 3)(4x - 1)}$
 
 </details>
 
@@ -410,7 +504,8 @@ $$
 
 | Método | Cuándo usarlo | Ventaja |
 | :--- | :--- | :--- |
-| **Agrupación** | Cuando los números son grandes o no ves la respuesta rápido | Siempre funciona |
-| **Tanteo** | Cuando los coeficientes son pequeños | Más rápido |
+| **Reducción** ($ax$) | Si buscas rapidez transformando a trinomio simple | Te permite usar lo que ya sabes del caso anterior |
+| **Agrupación** ($AC$) | Cuando prefieres un camino lógico y seguro | Evitas confusiones con la división final |
+| **Tanteo** | Cuando los coeficientes son pequeños | Ahorra mucho espacio y tiempo con práctica |
 
-> Ambos métodos dan el mismo resultado. Elige el que te resulte más cómodo según el problema. Lo importante es verificar siempre multiplicando los factores.
+> Todos los métodos te llevarán a la expresión correcta. ¡Elige el que te resulte más natural y no olvides verificar siempre multiplicando tus binomios!

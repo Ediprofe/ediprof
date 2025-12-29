@@ -1,0 +1,13 @@
+{
+    "type": "square_diff",
+    "metadata": {
+        "title": "Ejemplo Visual: (x - 2)²",
+        "description": "Visualización del área (x-2)² dentro de un cuadrado de lado x"
+    },
+    "data": {
+        "a_label": "x",
+        "b_label": "2",
+        "a_val": 300,
+        "b_val": 80
+    }
+}

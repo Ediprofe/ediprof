@@ -1,0 +1,14 @@
+{
+    "type": "square_sum",
+    "metadata": {
+        "title": "Ejemplo Visual: (x + 3)²",
+        "description": "Cálculo del área de un cuadrado de lado x + 3"
+    },
+    "data": {
+        "a_label": "x",
+        "b_label": "3",
+        "ab_label": "3x",
+        "a_val": 220,
+        "b_val": 100
+    }
+}

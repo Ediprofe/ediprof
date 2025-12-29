@@ -1,0 +1,13 @@
+{
+    "type": "square_diff",
+    "metadata": {
+        "title": "Representación Geométrica: (a - b)²",
+        "description": "Demostración visual de la identidad notable (a-b)² = a² - 2ab + b²"
+    },
+    "data": {
+        "a_label": "a",
+        "b_label": "b",
+        "a_val": 300,
+        "b_val": 80
+    }
+}

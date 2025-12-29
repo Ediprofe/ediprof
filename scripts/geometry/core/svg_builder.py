@@ -94,11 +94,15 @@ class SVGBuilder:
              fill: str = COLORS['background'],
              stroke: str = 'none',
              stroke_width: float = 0,
-             rx: float = 0) -> 'SVGBuilder':
+             rx: float = 0,
+             fill_opacity: float = 1.0,
+             dashed: bool = False) -> 'SVGBuilder':
         """Dibuja un rectángulo."""
+        opacity_attr = f'fill-opacity="{fill_opacity}"' if fill_opacity < 1.0 else ''
+        style = f'stroke-dasharray="5,5"' if dashed else ''
         self.elements.append(
             f'<rect x="{x:.2f}" y="{y:.2f}" width="{width:.2f}" height="{height:.2f}" '
-            f'fill="{fill}" stroke="{stroke}" stroke-width="{stroke_width}" rx="{rx}"/>'
+            f'fill="{fill}" stroke="{stroke}" stroke-width="{stroke_width}" rx="{rx}" {opacity_attr} {style}/>'
         )
         return self
     

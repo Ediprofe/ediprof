@@ -80,29 +80,45 @@
 
 ### ⚠️ Regla Crítica: Ecuaciones en Bloque
 
-**TODAS** las ecuaciones en ejemplos y razonamientos deben estar en formato de bloque, NO inline. Esto mejora la legibilidad y evita errores de renderizado.
+> **🚨 MUY IMPORTANTE:** Esta regla se aplica a TODAS las ecuaciones, incluyendo las que están dentro de razonamientos y soluciones de ejercicios.
 
-**✅ Correcto:**
+**TODAS** las ecuaciones en ejemplos y razonamientos deben estar en formato de bloque, **NUNCA inline**. Esto mejora la legibilidad y evita errores de renderizado.
+
+**✅ Correcto (cada ecuación en su propio renglón):**
 ```markdown
 **Razonamiento:**
 
-$$
-a^{-5 + 2}
-$$
-
-Debo 5 y pago 2, quedo debiendo 3.
+1. Abrimos el centro:
 
 $$
-a^{-3}
+2x^2 + 6x + x + 3
+$$
+
+2. Agrupamos:
+
+$$
+(2x^2 + 6x) + (x + 3)
+$$
+
+3. Factor común:
+
+$$
+2x(x + 3) + 1(x + 3)
 $$
 ```
 
-**❌ Incorrecto:**
+**❌ Incorrecto (todo en una línea o mezclado con texto):**
 ```markdown
 **Razonamiento:**
-$$a^{-5 + 2}$$
-Debo $5 y pago 2$ → Quedo debiendo 3.
-$$= a^{-3}$$
+Abrimos: $2x^2 + 6x + x + 3$, agrupamos $(2x^2+6x)+(x+3)$ y sacamos...
+```
+
+**❌ También incorrecto (bloque sin líneas vacías):**
+```markdown
+**Razonamiento:**
+$$2x^2 + 6x + x + 3$$
+Agrupamos:
+$$...
 ```
 
 ---
