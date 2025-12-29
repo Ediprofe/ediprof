@@ -6,180 +6,203 @@ Una fracción compleja no es más que una fracción que tiene... ¡más fraccion
 
 ## 🎯 ¿Qué vas a aprender?
 
-- Cómo identificar una fracción compleja.
-- El método de "División de Fracciones" (El Sándwich).
-- El método del MCM para simplificar todo de un solo golpe.
-- Estrategias para resolver fracciones "escalonadas" (torres de fracciones).
+- El método de la "Oreja" (Sándwich) para casos simples.
+- El método del MCM para simplificar expresiones con sumas y restas.
+- Cómo resolver "torres" de fracciones (fracciones escalonadas).
+- A simplificar el resultado final usando factorización.
 
 ---
 
-## 🔍 Dos Métodos para Resolver
+## 👂 Método 1: Del Sándwich (La Oreja)
 
-1.  **Método del Sándwich (Oreja):** Tratas al numerador y denominador como fracciones separadas, las unificas y luego multiplicas extremos por medios.
-    $$ \frac{\frac{A}{B}}{\frac{C}{D}} = \frac{A \cdot D}{B \cdot C} $$
-2.  **Método del MCM (Recomendado):** Multiplicas TODO (arriba y abajo) por el MCM de las fracciones pequeñas para eliminarlas al instante.
+Este método es ideal cuando tienes **una sola fracción arriba y una sola fracción abajo**. Se basa en multiplicar los extremos por los medios.
+
+**Gráficamente se ve así:**
+
+$$
+\left. \frac{ \overbrace{ \frac{\color{blue}{A}}{\color{red}{B}} }^{ \text{Extremo} } }{ \underbrace{ \frac{\color{red}{C}}{\color{blue}{D}} }_{ \text{Medio} } } \right\}
+\quad \longrightarrow \quad
+\boxed{\frac{\color{blue}{A} \cdot \color{blue}{D}}{\color{red}{B} \cdot \color{red}{C}}}
+$$
+
+1.  **Oreja Grande (Extremos):** Une el de hasta arriba ($\color{blue}A$) con el de hasta abajo ($\color{blue}D$). Su producto va **ARRIBA**.
+2.  **Oreja Chica (Medios):** Une los dos del centro ($\color{red}B$ y $\color{red}C$). Su producto va **ABAJO**.
 
 ---
 
-## ⚙️ Ejemplos Resueltos
+### ⚙️ Ejemplos: El Método de la Oreja
 
-### Ejemplo 1: Fracción sobre Fracción (Sándwich)
-
+#### Ejemplo 1: Con números simples
 Simplifica: $\dfrac{\frac{3}{4}}{\frac{5}{7}}$
 
-**Datos:**
-- Extremos: 3 y 7.
-- Medios: 4 y 5.
-
 **Razonamiento:**
-
-1. Multiplicamos extremos (van arriba): 
-
-$$
-3 \cdot 7 = 21
-$$
-
-2. Multiplicamos medios (van abajo): 
-
-$$
-4 \cdot 5 = 20
-$$
-
-3. ¿Se puede simplificar? No.
+1. Extremos (Oreja grande): $3 \cdot 7 = 21$.
+2. Medios (Oreja chica): $4 \cdot 5 = 20$.
 
 **Resultado:** $\boxed{\frac{21}{20}}$
 
----
-
-### Ejemplo 2: Método del Sándwich con Variables
-
+#### Ejemplo 2: Con variables y monomios
 Simplifica: $\dfrac{\frac{2x}{y^2}}{\frac{6x^2}{y}}$
 
-**Datos:**
-- Extremos: $2x$ y $y$.
-- Medios: $y^2$ y $6x^2$.
-
 **Razonamiento:**
-
 1. Aplicamos la regla:
-
+   
 $$
 \frac{2x \cdot y}{y^2 \cdot 6x^2}
 $$
 
-2. Simplificamos:
-   - Números: $2/6 = 1/3$.
-   - $x$: $x/x^2 = 1/x$.
-   - $y$: $y/y^2 = 1/y$.
-
-3. Juntamos: 
-
-$$
-\frac{1}{3xy}
-$$
+2. Simplificamos términos:
+   - $2/6 = 1/3$.
+   - $x/x^2 = 1/x$.
+   - $y/y^2 = 1/y$.
 
 **Resultado:** $\boxed{\frac{1}{3xy}}$
 
----
-
-### Ejemplo 3: Sumas en el numerador (Método MCM)
-
-Simplifica: $\dfrac{1 + \frac{1}{x}}{1 - \frac{1}{x}}$
-
-**Datos:**
-- Denominador pequeño: $x$. MCM = $x$.
+#### Ejemplo 3: Oreja con binomios (Simplificación)
+Simplifica: $\dfrac{\frac{x+1}{3}}{\frac{x^2-1}{6}}$
 
 **Razonamiento:**
+1. Multiplicamos extremos y medios:
+   
+$$
+\frac{6(x+1)}{3(x^2-1)}
+$$
 
-1. Multiplicamos TODO (arriba y abajo) por $x$:
+2. Factorizamos el denominador ($x^2-1$ es diferencia de cuadrados):
+   
+$$
+\frac{6(x+1)}{3(x+1)(x-1)}
+$$
 
+3. Simplificamos: $6/3=2$ y cancelamos $(x+1)$.
+
+**Resultado:** $\boxed{\frac{2}{x-1}}$
+
+#### Ejemplo 4: Entero dividido por Fracción
+Simplifica: $\dfrac{2a}{\frac{a}{b}}$
+
+**Razonamiento:**
+1. Imagina que el $2a$ tiene un 1 debajo: $\frac{2a}{1} / \frac{a}{b}$.
+2. Oreja Grande: $2a \cdot b = 2ab$.
+3. Oreja Chica: $1 \cdot a = a$.
+4. Queda: $\frac{2ab}{a}$. Se cancela la "a".
+
+**Resultado:** $\boxed{2b}$
+
+---
+
+## 🚀 Método 2: Del MCM (El Profesional)
+
+Este método es mucho más potente y rápido cuando tienes **sumas o restas dentro** de la fracción compleja. En lugar de resolver arriba y abajo por separado, eliminamos todos los denominadores pequeños de un solo golpe.
+
+**El Proceso:**
+1. Encuentra el **MCM** de todos los denominadores "pequeños" (los que están dentro de las fracciones internas).
+2. Multiplica cada término (individualmente) del numerador y denominador por ese MCM.
+3. ¡Simplifica lo que queda!
+
+---
+
+### ⚙️ Ejemplos: El Método del MCM
+
+#### Ejemplo 5: Variable simple
+Simplifica: $\dfrac{1 + \frac{1}{x}}{1 - \frac{1}{x}}$
+
+**Razonamiento:**
+1. Los denominadores pequeños son $x$. El MCM es $x$.
+2. Multiplicamos cada término de arriba y de abajo por $x$:
+   
 $$
 \frac{x(1) + x(\frac{1}{x})}{x(1) - x(\frac{1}{x})}
 $$
 
-2. Operamos:
-   - $x \cdot 1 = x$.
-   - $x \cdot \frac{1}{x} = 1$.
-
-3. Queda:
-
+3. Al multiplicar $x \cdot \frac{1}{x}$, la $x$ desaparece y queda 1:
+   
 $$
-\frac{x+1}{x-1}
+\frac{x + 1}{x - 1}
 $$
 
 **Resultado:** $\boxed{\frac{x+1}{x-1}}$
 
----
-
-### Ejemplo 4: Fracciones Algebraicas Mixtas
-
+#### Ejemplo 6: Fracciones Algebraicas Mixtas
 Simplifica: $\dfrac{\frac{1}{a} + \frac{1}{b}}{\frac{a}{b} - \frac{b}{a}}$
 
-**Datos:**
-- Denominadores pequeños: $a, b$.
-- MCM de todos: $ab$.
-
 **Razonamiento:**
-
-1. Multiplicamos todo por $ab$:
-
+1. Denominadores pequeños: $a$ y $b$. El MCM es $ab$.
+2. Multiplicamos todo por $ab$:
+   
 $$
-\frac{ab(\frac{1}{a}) + ab(\frac{1}{b})}{ab(\frac{a}{b}) - ab(\frac{b}{a})}
-$$
-
-2. Simplificamos cada término:
-   - Numerador: $b + a$.
-   - Denominador: $a^2 - b^2$.
-
-3. Queda:
-
-$$
-\frac{a+b}{a^2-b^2}
+\frac{ab(\frac{1}{a}) + ab(\frac{1}{b})}{ab(\frac{a}{b}) - ab(\frac{b}{a})} = \frac{b + a}{a^2 - b^2}
 $$
 
-4. Factorizamos el denominador (Diferencia de cuadrados):
-
+3. Factorizamos el denominador (Diferencia de cuadrados):
+   
 $$
 \frac{a+b}{(a+b)(a-b)}
 $$
 
-5. Cancelamos $(a+b)$.
+4. Cancelamos el factor común $(a+b)$.
 
 **Resultado:** $\boxed{\frac{1}{a-b}}$
 
----
-
-### Ejemplo 5: Fracciones Escalonadas (Torres)
-
-Simplifica: $1 + \dfrac{1}{1 + \dfrac{1}{x}}$
-
-**Datos:**
-- Resolvemos de abajo hacia arriba.
+#### Ejemplo 7: Diferencia de Cuadrados (MCM $x^2$)
+Simplifica: $\dfrac{1 - \frac{9}{x^2}}{1 + \frac{3}{x}}$
 
 **Razonamiento:**
-
-1. **Paso 1 (Abajo):** 
-
+1. El MCM de $x^2$ y $x$ es $x^2$.
+2. Multiplicamos todo por $x^2$:
+   
 $$
-1 + \frac{1}{x} = \frac{x+1}{x}
-$$
-
-2. **Sustituimos:**
-
-$$
-1 + \frac{1}{\frac{x+1}{x}}
+\frac{x^2(1) - x^2(\frac{9}{x^2})}{x^2(1) + x^2(\frac{3}{x})} = \frac{x^2 - 9}{x^2 + 3x}
 $$
 
-3. **Paso 2 (Invertir):** Uno sobre una fracción es la fracción invertida: 
+3. Factorizamos:
+   - Numerador: $(x+3)(x-3)$.
+   - Denominador: $x(x+3)$.
+4. Cancelamos $(x+3)$.
 
+**Resultado:** $\boxed{\frac{x-3}{x}}$
+
+#### Ejemplo 8: Binomios Complejos
+Simplifica: $\dfrac{\frac{1}{x-1} + 1}{\frac{1}{x+1} - 1}$
+
+**Razonamiento:**
+1. El MCM es $(x-1)(x+1)$.
+2. Multiplicamos arriba y abajo:
+   
 $$
-1 + \frac{x}{x+1}
+\frac{(x-1)(x+1)[\frac{1}{x-1} + 1]}{(x-1)(x+1)[\frac{1}{x+1} - 1]}
 $$
 
-4. **Paso 3 (Suma final):**
-
+3. Distribuimos el MCM:
+   - Arriba: $(x+1) + (x-1)(x+1) = (x+1) + (x^2-1) = x^2+x$.
+   - Abajo: $(x-1) - (x-1)(x+1) = (x-1) - (x^2-1) = x-x^2$.
+4. Factorizamos final:
+   
 $$
-\frac{x+1 + x}{x+1} = \frac{2x+1}{x+1}
+\frac{x(x+1)}{x(1-x)} = \frac{x+1}{1-x}
+$$
+
+**Resultado:** $\boxed{\frac{x+1}{1-x}}$
+
+---
+
+
+---
+
+## 🏗️ Fracciones Escalonadas (Torres)
+
+Cuando veas una fracción que parece una escalera hacia abajo, la clave es resolver **de abajo hacia arriba**, un escalón a la vez.
+
+#### Ejemplo 5: La Gran Escalera
+Simplifica: $1 + \dfrac{1}{1 + \dfrac{1}{x}}$
+
+**Razonamiento:**
+1. **Paso 1 (Último escalón):** Resolvemos $1 + \frac{1}{x} = \frac{x+1}{x}$.
+2. **Paso 2 (Invertir):** Ahora tenemos $1 / (\frac{x+1}{x})$. Dividir 1 entre una fracción es simplemente voltearla: $\to \frac{x}{x+1}$.
+3. **Paso 3 (Suma final):** 
+   
+$$
+1 + \frac{x}{x+1} = \frac{(x+1) + x}{x+1} = \frac{2x+1}{x+1}
 $$
 
 **Resultado:** $\boxed{\frac{2x+1}{x+1}}$
@@ -188,24 +211,20 @@ $$
 
 ## 📝 Ejercicios de Práctica
 
-### Ejercicio 1
+### Ejercicio 1 (Oreja)
 Simplifica $\dfrac{\frac{a}{b}}{\frac{c}{d}}$.
 
 <details>
 <summary>Ver solución</summary>
 
 **Razonamiento:** 
+Extremos $ad$, medios $bc$.
 
-Extremos $ad$, medios $bc$:
-
-$$
-\frac{a}{b} \div \frac{c}{d} = \frac{ad}{bc}
-$$
 **Resultado:** $\boxed{\frac{ad}{bc}}$
 
 </details>
 
-### Ejercicio 2
+### Ejercicio 2 (Oreja)
 Simplifica $\dfrac{\frac{x}{2}}{\frac{x}{3}}$.
 
 <details>
@@ -216,174 +235,144 @@ Simplifica $\dfrac{\frac{x}{2}}{\frac{x}{3}}$.
 $$
 \frac{3x}{2x} = \frac{3}{2}
 $$
+
 **Resultado:** $\boxed{\frac{3}{2}}$
+
 </details>
 
-### Ejercicio 3
+### Ejercicio 3 (Aritmético)
 Simplifica $\dfrac{1 - \frac{1}{2}}{3}$.
 
 <details>
 <summary>Ver solución</summary>
 
 **Razonamiento:** 
+Primero arriba $1 - 1/2 = 1/2$. Luego oreja (3 tiene un 1 abajo):
 
 $$
-1 - 1/2 = 1/2 \quad \to \quad \frac{1/2}{3} = \frac{1}{6}
+\frac{1/2}{3/1} = \frac{1}{6}
 $$
+
 **Resultado:** $\boxed{\frac{1}{6}}$
 
 </details>
 
-### Ejercicio 4
+### Ejercicio 4 (MCM)
 Simplifica $\dfrac{\frac{1}{x} + 1}{\frac{1}{x}}$.
 
 <details>
 <summary>Ver solución</summary>
 
 **Razonamiento:** 
-
-Multiplicar todo por $x$:
+Multiplica todo por $x$:
 
 $$
-\frac{(1 + x)}{1} = x + 1
+\frac{1 + x}{1}
 $$
+
 **Resultado:** $\boxed{x+1}$
+
 </details>
 
-### Ejercicio 5
+### Ejercicio 5 (Signos)
 Simplifica $\dfrac{\frac{1}{x} - \frac{1}{y}}{x-y}$.
 
 <details>
 <summary>Ver solución</summary>
 
 **Razonamiento:** 
-
-Numerador: 
-
-$$
-\frac{1}{x} - \frac{1}{y} = \frac{y-x}{xy}
-$$
-
-División: 
+MCM arriba es $xy \to \frac{y-x}{xy}$.
+Dividimos por $(x-y)$ (oreja):
 
 $$
 \frac{y-x}{xy(x-y)} = \frac{-(x-y)}{xy(x-y)} = -\frac{1}{xy}
 $$
+
 **Resultado:** $\boxed{-\frac{1}{xy}}$
 
 </details>
 
-### Ejercicio 6
+### Ejercicio 6 (MCM Polinómico)
 Simplifica $\dfrac{x + \frac{x}{y}}{y + \frac{y}{x}}$.
 
 <details>
 <summary>Ver solución</summary>
 
 **Razonamiento:** 
-
-Utilizando el MCM $xy$:
-
-Numerador: 
+MCM = $xy$.
 
 $$
-x(xy) + x(x) = x^2y + x^2 = x^2(y+1)
-$$
-
-Denominador: 
-
-$$
-y(xy) + y(y) = xy^2 + y^2 = y^2(x+1)
+\frac{xy(x) + xy(\frac{x}{y})}{xy(y) + xy(\frac{y}{x})} = \frac{x^2y + x^2}{xy^2 + y^2} = \frac{x^2(y+1)}{y^2(x+1)}
 $$
 
 **Resultado:** $\boxed{\frac{x^2(y+1)}{y^2(x+1)}}$
 
 </details>
 
-### Ejercicio 7
+### Ejercicio 7 (Escalonada)
 Simplifica $2 - \dfrac{3}{1 - \frac{1}{x}}$.
 
 <details>
 <summary>Ver solución</summary>
 
 **Razonamiento:** 
-
-$$
-1 - 1/x = \frac{x-1}{x}
-$$
-
-Invierte: 
-
-$$
-\frac{3x}{x-1}
-$$
-
-Resta: 
-
-$$
-2 - \frac{3x}{x-1} = \frac{2x-2-3x}{x-1} = \frac{-x-2}{x-1}
-$$
+1. Abajo: $1 - 1/x = \frac{x-1}{x}$.
+2. División: $3 / (\frac{x-1}{x}) = \frac{3x}{x-1}$.
+3. Resta: $2 - \frac{3x}{x-1} = \frac{2x-2-3x}{x-1} = \frac{-x-2}{x-1}$.
 
 **Resultado:** $\boxed{\frac{-(x+2)}{x-1}}$
 
 </details>
 
-### Ejercicio 8
+### Ejercicio 8 (Diferencia de cuadrados)
 Simplifica $\dfrac{\frac{x^2}{y^2} - 1}{\frac{x}{y} + 1}$.
 
 <details>
 <summary>Ver solución</summary>
 
 **Razonamiento:** 
-
-Multiplicar por $y^2$:
-
-Numerador: $x^2 - y^2$. 
-
-Denominador: $xy + y^2 = y(x+y)$.
+MCM = $y^2$.
 
 $$
-\frac{(x+y)(x-y)}{y(x+y)} = \frac{x-y}{y}
+\frac{x^2 - y^2}{xy + y^2} = \frac{(x+y)(x-y)}{y(x+y)} = \frac{x-y}{y}
 $$
+
 **Resultado:** $\boxed{\frac{x-y}{y}}$
+
 </details>
 
-### Ejercicio 9
+### Ejercicio 9 (Cálculo)
 Simplifica $\dfrac{\frac{1}{x+h} - \frac{1}{x}}{h}$.
 
 <details>
 <summary>Ver solución</summary>
 
 **Razonamiento:** 
-
-Numerador: 
-
-$$
-\frac{x - (x+h)}{x(x+h)} = \frac{-h}{x(x+h)}
-$$
-
-Div por $h$: Se va la $h$.
+MCM arriba = $x(x+h)$.
+Numerador: $\frac{x - (x+h)}{x(x+h)} = \frac{-h}{x(x+h)}$.
+Dividir por $h$: se cancela la $h$.
 
 **Resultado:** $\boxed{\frac{-1}{x(x+h)}}$
 
 </details>
 
-### Ejercicio 10
+### Ejercicio 10 (Exponentes)
 Simplifica $\dfrac{x^{-1} + y^{-1}}{x^{-1}y^{-1}}$.
 
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:**
+**Razonamiento:** 
 
 $$
 \frac{1/x + 1/y}{1/xy}
 $$
 
-Multiplicar por $xy$:
+MCM = $xy$:
 
-Numerador: $y + x$. 
-
-Denominador: $1$.
+$$
+\frac{y + x}{1}
+$$
 
 **Resultado:** $\boxed{x+y}$
 
@@ -395,7 +384,8 @@ Denominador: $1$.
 
 | Método | Cuándo usarlo |
 | :--- | :--- |
-| **Sándwich** | Cuando es una sola fracción dividida entre otra sola fracción. |
-| **MCM** | Cuando hay sumas o restas de fracciones dentro. |
+| **Sándwich (Oreja)** | Una sola fracción arriba y una sola abajo. |
+| **MCM** | Hay sumas o restas de fracciones en cualquiera de los términos. |
+| **Escalonada** | Resolver siempre del "piso" más bajo hacia arriba. |
 
-> ¡No te asustes por la altura de la torre! Rompe el problema piso por piso, simplificando siempre que puedas.
+> **Consejo:** Si ves muchas fracciones dentro de otra, el método del **MCM** es siempre tu mejor amigo. ¡Te ahorra mucho tiempo y papel!

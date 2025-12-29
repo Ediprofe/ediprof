@@ -6,7 +6,7 @@ En el mundo real, los problemas no vienen etiquetados como "solo suma" o "solo m
 
 ## 🎯 ¿Qué vas a aprender?
 
-- La jerarquía de operaciones (PEMDAS/PAPOMUDAS) aplicada a fracciones.
+- La jerarquía de operaciones (PEMDAS) aplicada a fracciones.
 - Cómo manejar signos de agrupación (paréntesis, corchetes).
 - Estrategias para no perder el hilo en ejercicios largos.
 - Cómo simplificar expresiones complejas paso a paso.

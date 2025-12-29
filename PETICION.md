@@ -165,7 +165,9 @@ Situaciones que requieren confirmación:
 
 # 📝 PETICIÓN ESPECÍFICA.
 
+http://localhost:4321/matematicas/algebra/fracciones-algebraicas/fracciones-complejas
 
+pero por favor explica un método primero y luego ejercicios, que se vea progresivo y fácilmente entendible.
 
 <!-- 
 ### ⚠️ Regla Crítica: Ecuaciones en Bloque
