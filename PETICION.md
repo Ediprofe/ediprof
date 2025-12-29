@@ -165,9 +165,6 @@ Situaciones que requieren confirmación:
 
 # 📝 PETICIÓN ESPECÍFICA.
 
-Para la lección:
-
-
 
 
 <!-- 
