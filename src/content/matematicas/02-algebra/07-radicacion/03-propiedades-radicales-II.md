@@ -1,10 +1,4 @@
-# **Propiedades de los Radicales (II)**
-
-¿Alguna vez has visto la película *Inception* (El Origen)? Es un sueño dentro de un sueño. En matemáticas, también tenemos "raíces dentro de raíces".
-
-En esta lección completaremos tu caja de herramientas con las propiedades avanzadas para manejar estas situaciones y simplificar expresiones que parecen imposibles.
-
----
+# Propiedades de los Radicales (II)
 
 ## 🎯 ¿Qué vas a aprender?
 

@@ -15,18 +15,42 @@ Simplificar un radical es exactamente eso: sacar todo lo que se pueda "empacar" 
 
 ---
 
-## 🔓 La Regla del Escape
+## 🔓 Primera Propiedad: Extracción de Factores
 
-Para que un número o variable pueda "escapar" de la raíz, debe pagar un precio: **formar un grupo del tamaño del índice**.
+### Formulación Formal
 
-- Si es raíz cuadrada ($\sqrt{}$), necesitas grupos de **2**.
-- Si es raíz cúbica ($\sqrt[3]{}$), necesitas grupos de **3**.
+Sea $\sqrt[n]{a}$ un radical y $a = b^n \cdot c$ donde $b^n$ es el mayor factor perfecto de $a$ con exponente múltiplo de $n$. Entonces:
 
-**Ejemplo Visual:**
-Imagina $\sqrt{2 \cdot 2 \cdot 2 \cdot 2 \cdot 3}$.
-Hay dos parejas de 2. Cada pareja sale como un solo número. El 3 se queda solo.
 $$
-2 \cdot 2 \sqrt{3} = 4\sqrt{3}
+\sqrt[n]{a} = \sqrt[n]{b^n \cdot c} = b \cdot \sqrt[n]{c}
+$$
+
+### ¿Por qué funciona?
+
+Partimos de la **propiedad del producto de raíces** (que ya conoces):
+
+$$
+\sqrt[n]{x \cdot y} = \sqrt[n]{x} \cdot \sqrt[n]{y}
+$$
+
+Si $x = b^n$, entonces $\sqrt[n]{b^n} = b$, por definición de raíz. Por lo tanto:
+
+$$
+\sqrt[n]{b^n \cdot c} = \sqrt[n]{b^n} \cdot \sqrt[n]{c} = b \cdot \sqrt[n]{c}
+$$
+
+### Regla Práctica
+
+| Índice | Grupo mínimo para salir |
+|--------|------------------------|
+| 2 ($\sqrt{}$) | Pares (2 factores iguales) |
+| 3 ($\sqrt[3]{}$) | Tríos (3 factores iguales) |
+| $n$ ($\sqrt[n]{}$) | Grupos de $n$ factores |
+
+### Ejemplo Visual
+
+$$
+\sqrt{2 \cdot 2 \cdot 2 \cdot 2 \cdot 3} = \sqrt{(2 \cdot 2) \cdot (2 \cdot 2) \cdot 3} = \sqrt{2^2 \cdot 2^2 \cdot 3} = 2 \cdot 2 \cdot \sqrt{3} = 4\sqrt{3}
 $$
 
 ---

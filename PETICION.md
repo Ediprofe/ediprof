@@ -165,9 +165,10 @@ Situaciones que requieren confirmación:
 
 # 📝 PETICIÓN ESPECÍFICA.
 
-http://localhost:4321/matematicas/algebra/potenciacion/binomio-de-newton
+http://localhost:4321/matematicas/algebra/radicacion/introduccion
 
-Creo que esta lección habla sobre término general, primer término y unas cosas que si seguimos el orden de álgebra, como que se sienten pegadas ahí a la fuerza y sin la debida introducción. Qué recomiendas? Eso ya está en la parte de progresiones: http://localhost:4321/matematicas/algebra/progresiones/progresion-aritmetica, http://localhost:4321/matematicas/algebra/progresiones/progresion-geometrica, pero no sé cómo manejarlo porque veo que la convecnión de los libros es meterho donde está actualmente, pero no veo que sea progresivo y suave ese salto. PIENSA Y RECOMIENDA
+Para esta lección por favor que tenga un total de 5 ejemplos antes de los ejercicios de práctica.
+
 
 <!-- 
 ### ⚠️ Regla Crítica: Ecuaciones en Bloque
