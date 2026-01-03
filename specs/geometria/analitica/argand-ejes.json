@@ -1,0 +1,1 @@
+{"tipo": "plano-complejo", "titulo": "Reales e Imaginarios Puros", "points": [{"p": [6, 0], "label": "z = 6", "color": "primary"}, {"p": [-5, 0], "label": "z = -5", "color": "primary"}, {"p": [0, 4], "label": "z = 4i", "color": "secondary"}, {"p": [0, -3], "label": "z = -3i", "color": "secondary"}]}

@@ -3490,6 +3490,216 @@ def render_interior_exterior_circ(output_path: str, title: str = "Interior, Exte
 
 
 # ============================================================================
+# NÚMEROS COMPLEJOS (PLANO DE ARGAND)
+# ============================================================================
+
+def render_plano_complejo(output_path: str, points: list = None, title: str = "El Plano Complejo"):
+    """
+    Renderiza un plano complejo (Argand) con etiquetas Re e Im.
+    points: lista de diccionarios {'p': (re, im), 'label': 'z', 'color': 'primary'}
+    """
+    coord = CoordinateSystem(
+        svg_width=600, svg_height=500,
+        x_range=(-6, 6), y_range=(-5, 5),
+        padding=60
+    )
+    
+    builder = SVGBuilder(600, 500)
+    builder.rect(0, 0, 600, 500, fill=COLORS['white'])
+    builder.text(title, Point(300, 30), font_size=18, font_weight='bold')
+    
+    coord.draw_grid(builder, step=1)
+    coord.draw_axes(builder, show_arrows=True, x_label="Re", y_label="Im")
+    coord.draw_ticks(builder, step=1, show_labels=True)
+    
+    if points:
+        for p_data in points:
+            p = Point(*p_data['p'])
+            color = COLORS.get(p_data.get('color', 'point'), p_data.get('color', COLORS['point']))
+            label = p_data.get('label', '')
+            
+            # Guías
+            svg_p = coord.to_svg(p)
+            svg_re = coord.to_svg(Point(p.x, 0))
+            svg_im = coord.to_svg(Point(0, p.y))
+            builder.line(svg_p, svg_re, stroke=color, stroke_width=1, dashed=True)
+            builder.line(svg_p, svg_im, stroke=color, stroke_width=1, dashed=True)
+            
+            coord.draw_point(builder, p, label=label, show_coords=False, color=color,
+                             label_offset=(10, -15 if p.y >= 0 else 25))
+    
+    builder.save(output_path)
+    return True
+
+def render_suma_compleja(output_path: str, z1: tuple = (3, 1), z2: tuple = (1, 2), title: str = "Suma en el Plano Complejo"):
+    """
+    Renderiza la suma de dos complejos usando el método del paralelogramo.
+    """
+    p1 = Point(z1[0], z1[1])
+    p2 = Point(z2[0], z2[1])
+    p_suma = Point(p1.x + p2.x, p1.y + p2.y)
+    
+    xs = [0, p1.x, p2.x, p_suma.x]
+    ys = [0, p1.y, p2.y, p_suma.y]
+    x_range = (min(xs) - 1.5, max(xs) + 1.5)
+    y_range = (min(ys) - 1.5, max(ys) + 1.5)
+    
+    coord = CoordinateSystem(
+        svg_width=600, svg_height=500,
+        x_range=x_range, y_range=y_range,
+        padding=70
+    )
+    
+    builder = SVGBuilder(600, 500)
+    builder.rect(0, 0, 600, 500, fill=COLORS['white'])
+    builder.text(title, Point(300, 30), font_size=18, font_weight='bold')
+    
+    coord.draw_grid(builder, step=1)
+    coord.draw_axes(builder, show_arrows=True, x_label="Re", y_label="Im")
+    coord.draw_ticks(builder, step=1, show_labels=True)
+    
+    svg_origin = coord.to_svg(Point(0, 0))
+    svg_p1 = coord.to_svg(p1)
+    svg_p2 = coord.to_svg(p2)
+    svg_p_suma = coord.to_svg(p_suma)
+    
+    builder.line(svg_p1, svg_p_suma, stroke=COLORS['auxiliary'], stroke_width=1.5, dashed=True)
+    builder.line(svg_p2, svg_p_suma, stroke=COLORS['auxiliary'], stroke_width=1.5, dashed=True)
+    
+    builder.arrow(svg_origin, svg_p1, stroke=COLORS['primary'], stroke_width=3)
+    builder.arrow(svg_origin, svg_p2, stroke=COLORS['secondary'], stroke_width=3)
+    builder.arrow(svg_origin, svg_p_suma, stroke=COLORS['accent'], stroke_width=4)
+    
+    coord.draw_point(builder, p1, label=f'z₁={z1[0]}+{z1[1]}i', color=COLORS['primary'])
+    coord.draw_point(builder, p2, label=f'z₂={z2[0]}+{z2[1]}i', color=COLORS['secondary'])
+    coord.draw_point(builder, p_suma, label=f'Suma', color=COLORS['accent'], radius=7)
+    
+    formula = f'({z1[0]}+{z1[1]}i) + ({z2[0]}+{z2[1]}i) = {int(p_suma.x)}+{int(p_suma.y)}i'
+    builder.formula_box(formula, Point(300, 460), font_size=14)
+    
+    builder.save(output_path)
+    return True
+
+
+def render_modulo_complejo(output_path: str, z: tuple = (3, 4), title: str = "Módulo de un Número Complejo"):
+    """
+    Renderiza el módulo de un número complejo como la hipotenusa de un triángulo rectángulo.
+    """
+    a, b = z
+    p = Point(a, b)
+    origin = Point(0, 0)
+    
+    # Rango dinámico
+    x_range = (min(0, a) - 2, max(0, a) + 2)
+    y_range = (min(0, b) - 2, max(0, b) + 2)
+    
+    coord = CoordinateSystem(
+        svg_width=600, svg_height=500,
+        x_range=x_range, y_range=y_range,
+        padding=70
+    )
+    
+    builder = SVGBuilder(600, 500)
+    builder.rect(0, 0, 600, 500, fill=COLORS['white'])
+    builder.text(title, Point(300, 30), font_size=18, font_weight='bold')
+    
+    coord.draw_grid(builder, step=1)
+    coord.draw_axes(builder, show_arrows=True, x_label="Re", y_label="Im")
+    coord.draw_ticks(builder, step=1, show_labels=True)
+    
+    # Triángulo rectángulo
+    color_tri = COLORS['auxiliary']
+    coord.draw_right_triangle(builder, origin, p, color=color_tri, fill=COLORS['polygon_fill'])
+    
+    # Vector (Módulo)
+    svg_origin = coord.to_svg(origin)
+    svg_p = coord.to_svg(p)
+    builder.arrow(svg_origin, svg_p, stroke=COLORS['primary'], stroke_width=4)
+    
+    # Etiquetas componentes
+    mid_re = coord.to_svg(Point(a/2, 0))
+    mid_im = coord.to_svg(Point(a, b/2))
+    
+    builder.text(f'a = {a}', Point(mid_re.x, mid_re.y + (20 if b >= 0 else -10)), 
+                 font_size=14, font_weight='bold', fill=COLORS['text'])
+    builder.text(f'b = {b}', Point(mid_im.x + (15 if a >= 0 else -15), mid_im.y), 
+                 font_size=14, font_weight='bold', fill=COLORS['text'], anchor='start' if a >= 0 else 'end')
+    
+    # Etiqueta Módulo
+    mid_mod = svg_origin.midpoint(svg_p)
+    builder.text(f'|z|', Point(mid_mod.x - 20, mid_mod.y - 20), 
+                 font_size=16, font_weight='bold', fill=COLORS['primary'])
+    
+    # Punto
+    coord.draw_point(builder, p, label=f'z = {a} + {b}i' if b >= 0 else f'z = {a} - {abs(b)}i', 
+                     color=COLORS['primary'], radius=6)
+    
+    # Fórmula en caja
+    mod_val = math.sqrt(a**2 + b**2)
+    mod_str = str(int(mod_val)) if mod_val == int(mod_val) else f'√{a**2 + b**2}'
+    formula = f'|z| = √({a}² + ({b})²) = {mod_str}'
+    builder.formula_box(formula, Point(300, 460), font_size=14)
+    
+    builder.save(output_path)
+    return True
+
+
+def render_conjugado_complejo(output_path: str, z: tuple = (3, 2), title: str = "Conjugado de un Número Complejo"):
+    """
+    Renderiza un número complejo y su conjugado como reflejo sobre el eje Real.
+    """
+    a, b = z
+    p = Point(a, b)
+    p_conj = Point(a, -b)
+    
+    # Rango dinámico
+    x_range = (min(0, a) - 2, max(0, a) + 2)
+    y_range = (min(0, b, -b) - 2, max(0, b, -b) + 2)
+    
+    coord = CoordinateSystem(
+        svg_width=600, svg_height=500,
+        x_range=x_range, y_range=y_range,
+        padding=70
+    )
+    
+    builder = SVGBuilder(600, 500)
+    builder.rect(0, 0, 600, 500, fill=COLORS['white'])
+    builder.text(title, Point(300, 30), font_size=18, font_weight='bold')
+    
+    coord.draw_grid(builder, step=1)
+    coord.draw_axes(builder, show_arrows=True, x_label="Re", y_label="Im")
+    coord.draw_ticks(builder, step=1, show_labels=True)
+    
+    # Línea de reflexión (opcional pero didáctica)
+    svg_p = coord.to_svg(p)
+    svg_p_conj = coord.to_svg(p_conj)
+    builder.line(svg_p, svg_p_conj, stroke=COLORS['auxiliary'], stroke_width=1, dashed=True)
+    
+    # Guías al eje horizontal
+    svg_re = coord.to_svg(Point(a, 0))
+    builder.line(svg_p, svg_re, stroke=COLORS['primary'], stroke_width=1, dashed=True)
+    builder.line(svg_p_conj, svg_re, stroke=COLORS['secondary'], stroke_width=1, dashed=True)
+    
+    # Vectores
+    svg_origin = coord.to_svg(Point(0, 0))
+    builder.arrow(svg_origin, svg_p, stroke=COLORS['primary'], stroke_width=3)
+    builder.arrow(svg_origin, svg_p_conj, stroke=COLORS['secondary'], stroke_width=3)
+    
+    # Puntos
+    coord.draw_point(builder, p, label=f'z = {a} + {b}i' if b >= 0 else f'z = {a} - {abs(b)}i', 
+                     color=COLORS['primary'], radius=6)
+    coord.draw_point(builder, p_conj, label=f'z̄ = {a} - {b}i' if b >= 0 else f'z̄ = {a} + {abs(b)}i', 
+                     color=COLORS['secondary'], radius=6, label_offset=(10, 25 if b >= 0 else -15))
+    
+    # Nota explicativa
+    builder.text("Reflejo sobre el eje Real", Point(300, 470), 
+                 font_size=14, font_weight='bold', fill=COLORS['text_light'])
+    
+    builder.save(output_path)
+    return True
+
+
+# ============================================================================
 # RENDERIZADO DESDE SPEC JSON
 # ============================================================================
 
@@ -3533,6 +3743,35 @@ def render_from_spec(spec: dict, output_path: str) -> bool:
             title=spec.get('titulo', 'Área de un triángulo')
         )
     
+    elif tipo == 'plano-complejo':
+        return render_plano_complejo(
+            output_path,
+            points=spec.get('points', []),
+            title=spec.get('titulo', 'El Plano de Argand')
+        )
+    
+    elif tipo == 'suma-compleja':
+        return render_suma_compleja(
+            output_path,
+            z1=tuple(spec.get('z1', [3, 1])),
+            z2=tuple(spec.get('z2', [1, 2])),
+            title=spec.get('titulo', 'Suma Gráfica de Complejos')
+        )
+    
+    elif tipo == 'modulo-complejo':
+        return render_modulo_complejo(
+            output_path,
+            z=tuple(spec.get('z', [3, 4])),
+            title=spec.get('titulo', 'Módulo de un Número Complejo')
+        )
+    
+    elif tipo == 'conjugado-complejo':
+        return render_conjugado_complejo(
+            output_path,
+            z=tuple(spec.get('z', [3, 2])),
+            title=spec.get('titulo', 'Simetría del Conjugado')
+        )
+    
     else:
         print(f"❌ Tipo desconocido: {tipo}")
         return False
@@ -3551,7 +3790,8 @@ def main():
         'plano-basico', 'distancia', 'punto-medio', 
         'division-segmento', 'area-triangulo',
         'tipos-pendiente', 'calculo-pendiente', 'angulo-inclinacion',
-        'paralelas-perpendiculares', 'angulo-entre-rectas'
+        'paralelas-perpendiculares', 'angulo-entre-rectas',
+        'plano-complejo', 'suma-compleja', 'modulo-complejo', 'conjugado-complejo'
     ], help='Tipo de ilustración predefinida')
     parser.add_argument('--output', required=True, help='Archivo SVG de salida')
     parser.add_argument('--title', help='Título personalizado')
@@ -3594,6 +3834,14 @@ def main():
             success = render_paralelas_perpendiculares(args.output, title=title)
         elif args.type == 'angulo-entre-rectas':
             success = render_angulo_entre_rectas(args.output, title=title)
+        elif args.type == 'plano-complejo':
+            success = render_plano_complejo(args.output, title=title)
+        elif args.type == 'suma-compleja':
+            success = render_suma_compleja(args.output, title=title)
+        elif args.type == 'modulo-complejo':
+            success = render_modulo_complejo(args.output, title=title)
+        elif args.type == 'conjugado-complejo':
+            success = render_conjugado_complejo(args.output, title=title)
         else:
             print(f"❌ Tipo no implementado: {args.type}")
             sys.exit(1)

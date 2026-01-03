@@ -165,9 +165,14 @@ Situaciones que requieren confirmación:
 
 # 📝 PETICIÓN ESPECÍFICA.
 
-http://localhost:4321/matematicas/algebra/radicacion/introduccion
+http://localhost:4321/matematicas/algebra/numeros-complejos/conjugado
 
-Para esta lección por favor que tenga un total de 5 ejemplos antes de los ejercicios de práctica.
+
+Para esta lección por favor agregar las ilustraciones que correspondan para apoyar cada uno de los conceptos y ejemplos, tipo plano cartesiano complejo relacionado y demás.
+
+Para ellos por favor toma contexto del proyecto en CLAUDE.md y este archivo junto con los archivos relacionados. Para que no dupliques funciones o sigas prácticas contrarias a la metodología ya establecida en este proyecto.
+
+Creo que la imagen se genera por SVG, no sé, revisa bien.
 
 
 <!-- 

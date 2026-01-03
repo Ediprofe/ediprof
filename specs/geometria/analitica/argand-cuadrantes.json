@@ -1,0 +1,1 @@
+{"tipo": "plano-complejo", "titulo": "Números Complejos en los Cuadrantes", "points": [{"p": [3, 2], "label": "z₁ = 3 + 2i", "color": "point"}, {"p": [-4, 1], "label": "z₂ = -4 + i", "color": "secondary"}, {"p": [-2, -3], "label": "z₃ = -2 - 3i", "color": "highlight"}, {"p": [5, -4], "label": "z₄ = 5 - 4i", "color": "accent"}]}
