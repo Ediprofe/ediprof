@@ -1,6 +1,6 @@
 # **Ecuaciones de Primer Grado**
 
-Ya sabemos despejar y conocemos los conceptos. Ahora vamos a resolver ecuaciones completas sistemáticamente. Es como seguir una receta de cocina: si sigues los pasos en orden, el resultado delicioso (la solución) está garantizado.
+Ya sabemos despejar y conocemos los conceptos. Ahora vamos a resolver ecuaciones completas sistemáticamente. Si sigues los pasos en orden, la solución está garantizada.
 
 ---
 

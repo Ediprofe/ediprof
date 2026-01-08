@@ -55,6 +55,9 @@ $$
 \boxed{x = 7}
 $$
 
+![la-ecuacion-como-una-balanza](https://cdn.ediprofe.com/img/matematicas/ylqt-la-ecuacion-como-una-balanza.webp)
+
+
 ---
 
 ### Ejemplo 2

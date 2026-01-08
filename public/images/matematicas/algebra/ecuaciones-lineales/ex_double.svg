@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 150">
+  <defs></defs>
+  <rect x="0.00" y="0.00" width="600.00" height="150.00" fill="#f8fafc" stroke="none" stroke-width="0" rx="0"  />
+  <line x1="20.00" y1="75.00" x2="580.00" y2="75.00" stroke="#64748b" stroke-width="2"  marker-end="url(#arrow)"/>
+  <line x1="175.00" y1="70.00" x2="175.00" y2="80.00" stroke="#64748b" stroke-width="2"  />
+  <text x="175.00" y="100.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">-5</text>
+  <line x1="210.00" y1="70.00" x2="210.00" y2="80.00" stroke="#64748b" stroke-width="2"  />
+  <text x="210.00" y="100.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">-4</text>
+  <line x1="245.00" y1="70.00" x2="245.00" y2="80.00" stroke="#64748b" stroke-width="2"  />
+  <text x="245.00" y="100.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">-3</text>
+  <line x1="280.00" y1="70.00" x2="280.00" y2="80.00" stroke="#64748b" stroke-width="2"  />
+  <text x="280.00" y="100.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">-2</text>
+  <line x1="315.00" y1="70.00" x2="315.00" y2="80.00" stroke="#64748b" stroke-width="2"  />
+  <text x="315.00" y="100.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">-1</text>
+  <line x1="350.00" y1="70.00" x2="350.00" y2="80.00" stroke="#64748b" stroke-width="2"  />
+  <text x="350.00" y="100.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">0</text>
+  <line x1="385.00" y1="70.00" x2="385.00" y2="80.00" stroke="#64748b" stroke-width="2"  />
+  <text x="385.00" y="100.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">1</text>
+  <line x1="420.00" y1="70.00" x2="420.00" y2="80.00" stroke="#64748b" stroke-width="2"  />
+  <text x="420.00" y="100.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">2</text>
+  <line x1="455.00" y1="70.00" x2="455.00" y2="80.00" stroke="#64748b" stroke-width="2"  />
+  <text x="455.00" y="100.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">3</text>
+  <circle cx="210.00" cy="75.00" r="6" fill="#22c55e" />
+  <circle cx="373.10" cy="75.00" r="6" fill="#22c55e" />
+  <rect x="184.40" y="38.80" width="51.20" height="22.40" fill="#bbf7d0" stroke="none" stroke-width="0" rx="4"  />
+  <text x="210.00" y="50.00" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#22c55e" text-anchor="middle" dominant-baseline="middle">x = -4</text>
+  <rect x="343.90" y="38.80" width="58.40" height="22.40" fill="#bbf7d0" stroke="none" stroke-width="0" rx="4"  />
+  <text x="373.10" y="50.00" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#22c55e" text-anchor="middle" dominant-baseline="middle">x = 2/3</text>
+</svg>

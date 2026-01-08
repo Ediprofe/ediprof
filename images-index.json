@@ -458,7 +458,16 @@
       "size": "48KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/b471-funcion-matematica.webp",
       "status": "uploaded"
+    },
+    {
+      "id": "ylqt",
+      "name": "la-ecuacion-como-una-balanza.webp",
+      "materia": "matematicas",
+      "date": "2026-01-08",
+      "size": "65KB",
+      "url": "https://cdn.ediprofe.com/img/matematicas/ylqt-la-ecuacion-como-una-balanza.webp",
+      "status": "uploaded"
     }
   ],
-  "lastUpdated": "2026-01-08T01:52:40.446Z"
+  "lastUpdated": "2026-01-08T17:02:32.807Z"
 }

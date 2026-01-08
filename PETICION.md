@@ -165,21 +165,11 @@ Situaciones que requieren confirmación:
 
 # 📝 PETICIÓN ESPECÍFICA.
 
-http://localhost:4321/matematicas/algebra/funciones-lineales/rectas-paralelas-perpendiculares
+http://localhost:4321/matematicas/algebra/ecuaciones-lineales/ecuaciones-valor-absoluto
 
-ELABORA UNA ILUSTRACIÓN PARA CADA UNO DE LOS SIGUIENTES ÍTEMS EN LA LECCIÓN:
+📍 Concepto 2: Desplazando el Centro
 
-Ejemplo 1: Identificación
-Ejemplo 2: Cálculo de Pendiente
-Ejemplo 3: Crear Recta Paralela
-Ejemplo 4: Verificar Perpendicularidad
-Ejemplo 5: Perpendicular por un punto
-🔑 Resumen
-
-ES DECIR, 6 ILUSTRACIONES.
-
-
-USA LA METODOLOGÍA DE TRABAJO QUE ESTÁ DOCUMENTADA EN EL PROYECTO.
+Esta sección está casi entendible, desglósala más por favor.
 
 
 
