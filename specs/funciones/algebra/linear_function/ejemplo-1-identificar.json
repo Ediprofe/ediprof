@@ -1,0 +1,61 @@
+{
+    "type": "function",
+    "metadata": {
+        "id": "ejemplo-1-identificar",
+        "title": "Identificar Partes: y = 3x - 5",
+        "lesson": "02-algebra/09-funciones-lineales/03-funcion-lineal"
+    },
+    "canvas": {
+        "width": 600,
+        "height": 450,
+        "padding": 50,
+        "background": "#f8fafc"
+    },
+    "axes": {
+        "x": {
+            "min": -2,
+            "max": 5,
+            "label": "x",
+            "step": 1,
+            "ticks": "numeric"
+        },
+        "y": {
+            "min": -8,
+            "max": 8,
+            "label": "y",
+            "step": 2,
+            "ticks": "numeric"
+        }
+    },
+    "functions": [
+        {
+            "expression": "3*x - 5",
+            "color": "#3b82f6",
+            "strokeWidth": 3
+        }
+    ],
+    "markers": [
+        {
+            "x": 0,
+            "y": -5,
+            "label": "b = -5",
+            "color": "#ef4444",
+            "labelPosition": "right"
+        }
+    ],
+    "annotations": [
+        {
+            "type": "text",
+            "x": 3,
+            "y": -4,
+            "text": "m = 3\nb = -5",
+            "color": "#1e293b",
+            "fontSize": 16,
+            "fontWeight": "bold"
+        }
+    ],
+    "animations": {
+        "enabled": true,
+        "duration": 2
+    }
+}

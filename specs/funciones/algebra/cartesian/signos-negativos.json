@@ -1,0 +1,63 @@
+{
+    "type": "function",
+    "metadata": {
+        "id": "signos-negativos",
+        "title": "Ubicando el Punto B(-4, 5)",
+        "lesson": "02-algebra/09-funciones-lineales/02-plano-cartesiano"
+    },
+    "canvas": {
+        "width": 650,
+        "height": 450,
+        "padding": 75,
+        "background": "#f8fafc"
+    },
+    "axes": {
+        "x": {
+            "min": -6,
+            "max": 2,
+            "label": "x",
+            "step": 1,
+            "ticks": "numeric"
+        },
+        "y": {
+            "min": -2,
+            "max": 7,
+            "label": "y",
+            "step": 1,
+            "ticks": "numeric"
+        }
+    },
+    "markers": [
+        {
+            "x": -4,
+            "y": 5,
+            "label": "B(-4, 5)",
+            "color": "#8b5cf6",
+            "labelPosition": "top"
+        }
+    ],
+    "annotations": [
+        {
+            "type": "arrow",
+            "from_x": 0,
+            "from_y": 0,
+            "to_x": -4,
+            "to_y": 0,
+            "label": "4 izq",
+            "color": "#ef4444"
+        },
+        {
+            "type": "arrow",
+            "from_x": -4,
+            "from_y": 0,
+            "to_x": -4,
+            "to_y": 5,
+            "label": "5 subir",
+            "color": "#22c55e"
+        }
+    ],
+    "animations": {
+        "enabled": true,
+        "duration": 2
+    }
+}

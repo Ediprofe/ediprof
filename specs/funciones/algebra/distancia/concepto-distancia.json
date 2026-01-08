@@ -1,0 +1,81 @@
+{
+    "type": "function",
+    "metadata": {
+        "id": "concepto-distancia",
+        "title": "Fórmula de Distancia (Pitágoras)",
+        "lesson": "02-algebra/09-funciones-lineales/03-distancia-y-punto-medio"
+    },
+    "canvas": {
+        "width": 650,
+        "height": 450,
+        "padding": 75,
+        "background": "#f8fafc"
+    },
+    "axes": {
+        "x": {
+            "min": 0,
+            "max": 6,
+            "label": "x",
+            "step": 1,
+            "ticks": "numeric"
+        },
+        "y": {
+            "min": 0,
+            "max": 6,
+            "label": "y",
+            "step": 1,
+            "ticks": "numeric"
+        }
+    },
+    "markers": [
+        {
+            "x": 1,
+            "y": 1,
+            "label": "P1(x1, y1)",
+            "color": "#3b82f6",
+            "labelPosition": "bottom"
+        },
+        {
+            "x": 5,
+            "y": 4,
+            "label": "P2(x2, y2)",
+            "color": "#22c55e",
+            "labelPosition": "top"
+        }
+    ],
+    "annotations": [
+        {
+            "type": "arrow",
+            "from_x": 1,
+            "from_y": 1,
+            "to_x": 5,
+            "to_y": 1,
+            "label": "x₂ - x₁",
+            "color": "#64748b",
+            "style": "dashed"
+        },
+        {
+            "type": "arrow",
+            "from_x": 5,
+            "from_y": 1,
+            "to_x": 5,
+            "to_y": 4,
+            "label": "y₂ - y₁",
+            "color": "#64748b",
+            "style": "dashed"
+        },
+        {
+            "type": "arrow",
+            "from_x": 1,
+            "from_y": 1,
+            "to_x": 5,
+            "to_y": 4,
+            "label": "d",
+            "color": "#ef4444"
+        }
+    ],
+    "animations": {
+        "enabled": true,
+        "duration": 2
+    }
+}

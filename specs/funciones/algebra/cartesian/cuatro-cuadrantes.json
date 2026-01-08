@@ -1,0 +1,72 @@
+{
+    "type": "function",
+    "metadata": {
+        "id": "cuatro-cuadrantes",
+        "title": "Los Cuatro Cuadrantes",
+        "lesson": "02-algebra/09-funciones-lineales/02-plano-cartesiano"
+    },
+    "canvas": {
+        "width": 650,
+        "height": 450,
+        "padding": 75,
+        "background": "#f8fafc"
+    },
+    "axes": {
+        "x": {
+            "min": -6,
+            "max": 6,
+            "label": "Abscisas",
+            "step": 2,
+            "ticks": "numeric"
+        },
+        "y": {
+            "min": -6,
+            "max": 6,
+            "label": "Ordenadas",
+            "step": 2,
+            "ticks": "numeric"
+        }
+    },
+    "annotations": [
+        {
+            "type": "text",
+            "x": 3,
+            "y": 3,
+            "text": "Cuadrante I\n(+, +)",
+            "color": "#3b82f6",
+            "fontSize": 16,
+            "fontWeight": "bold"
+        },
+        {
+            "type": "text",
+            "x": -3,
+            "y": 3,
+            "text": "Cuadrante II\n(-, +)",
+            "color": "#8b5cf6",
+            "fontSize": 16,
+            "fontWeight": "bold"
+        },
+        {
+            "type": "text",
+            "x": -3,
+            "y": -3,
+            "text": "Cuadrante III\n(-, -)",
+            "color": "#ef4444",
+            "fontSize": 16,
+            "fontWeight": "bold"
+        },
+        {
+            "type": "text",
+            "x": 3,
+            "y": -3,
+            "text": "Cuadrante IV\n(+, -)",
+            "color": "#f97316",
+            "fontSize": 16,
+            "fontWeight": "bold"
+        }
+    ],
+    "animations": {
+        "enabled": true,
+        "duration": 2
+    }
+}

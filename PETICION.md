@@ -165,14 +165,24 @@ Situaciones que requieren confirmación:
 
 # 📝 PETICIÓN ESPECÍFICA.
 
-http://localhost:4321/matematicas/algebra/numeros-complejos/conjugado
+http://localhost:4321/matematicas/algebra/funciones-lineales/rectas-paralelas-perpendiculares
+
+ELABORA UNA ILUSTRACIÓN PARA CADA UNO DE LOS SIGUIENTES ÍTEMS EN LA LECCIÓN:
+
+Ejemplo 1: Identificación
+Ejemplo 2: Cálculo de Pendiente
+Ejemplo 3: Crear Recta Paralela
+Ejemplo 4: Verificar Perpendicularidad
+Ejemplo 5: Perpendicular por un punto
+🔑 Resumen
+
+ES DECIR, 6 ILUSTRACIONES.
 
 
-Para esta lección por favor agregar las ilustraciones que correspondan para apoyar cada uno de los conceptos y ejemplos, tipo plano cartesiano complejo relacionado y demás.
+USA LA METODOLOGÍA DE TRABAJO QUE ESTÁ DOCUMENTADA EN EL PROYECTO.
 
-Para ellos por favor toma contexto del proyecto en CLAUDE.md y este archivo junto con los archivos relacionados. Para que no dupliques funciones o sigas prácticas contrarias a la metodología ya establecida en este proyecto.
 
-Creo que la imagen se genera por SVG, no sé, revisa bien.
+
 
 
 <!-- 

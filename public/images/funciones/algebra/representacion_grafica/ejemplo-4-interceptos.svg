@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" 
+style="max-width: 100%; height: auto; font-family: Inter, system-ui, sans-serif;">
+
+  <style>
+    .wave-path {
+      stroke-dasharray: 3000;
+      stroke-dashoffset: 0;
+      animation: none;
+    }
+    .marker-group { opacity: 1; animation: none; }
+    .label-group { opacity: 1; animation: none; }
+    .annotation-group { opacity: 1; animation: none; }
+    @keyframes drawWave { to { stroke-dashoffset: 0; } }
+    @keyframes fadeIn { to { opacity: 1; } }
+  </style>
+
+  <rect width="600" height="450" fill="#ffffff" rx="8"/>
+  <text x="300.0" y="25" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">Graficar y = 2x + 4 (Método Interceptos)</text>
+  <g class="grid">
+    <line x1="50.0" y1="50" x2="50.0" y2="400" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="121.4" y1="50" x2="121.4" y2="400" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="192.9" y1="50" x2="192.9" y2="400" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="264.3" y1="50" x2="264.3" y2="400" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="335.7" y1="50" x2="335.7" y2="400" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="407.1" y1="50" x2="407.1" y2="400" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="478.6" y1="50" x2="478.6" y2="400" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="550.0" y1="50" x2="550.0" y2="400" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="50" y1="400.0" x2="550" y2="400.0" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="50" y1="361.1" x2="550" y2="361.1" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="50" y1="283.3" x2="550" y2="283.3" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="50" y1="244.4" x2="550" y2="244.4" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="50" y1="205.6" x2="550" y2="205.6" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="50" y1="166.7" x2="550" y2="166.7" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="50" y1="127.8" x2="550" y2="127.8" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="50" y1="88.9" x2="550" y2="88.9" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="50" y1="50.0" x2="550" y2="50.0" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+  </g>
+  <g class="axes">
+    <line x1="50" y1="322.2" x2="550" y2="322.2" stroke="#374151" stroke-width="2"/>
+    <polygon points="550,322.2 542,318.2 542,326.2" fill="#374151"/>
+    <line x1="335.7" y1="50" x2="335.7" y2="400" stroke="#374151" stroke-width="2"/>
+    <polygon points="335.7,50 331.7,58 339.7,58" fill="#374151"/>
+    <text x="550" y="312.2" text-anchor="end" font-size="14" font-weight="bold" fill="#374151">x</text>
+    <text x="325.7" y="50" text-anchor="end" font-size="14" font-weight="bold" fill="#374151">y</text>
+    <line x1="50.0" y1="318.2" x2="50.0" y2="326.2" stroke="#374151" stroke-width="1.5"/>
+    <text x="50.0" y="342.2" text-anchor="middle" font-size="12" fill="#374151">-4</text>
+    <line x1="121.4" y1="318.2" x2="121.4" y2="326.2" stroke="#374151" stroke-width="1.5"/>
+    <text x="121.4" y="342.2" text-anchor="middle" font-size="12" fill="#374151">-3</text>
+    <line x1="192.9" y1="318.2" x2="192.9" y2="326.2" stroke="#374151" stroke-width="1.5"/>
+    <text x="192.9" y="342.2" text-anchor="middle" font-size="12" fill="#374151">-2</text>
+    <line x1="264.3" y1="318.2" x2="264.3" y2="326.2" stroke="#374151" stroke-width="1.5"/>
+    <text x="264.3" y="342.2" text-anchor="middle" font-size="12" fill="#374151">-1</text>
+    <line x1="407.1" y1="318.2" x2="407.1" y2="326.2" stroke="#374151" stroke-width="1.5"/>
+    <text x="407.1" y="342.2" text-anchor="middle" font-size="12" fill="#374151">1</text>
+    <line x1="478.6" y1="318.2" x2="478.6" y2="326.2" stroke="#374151" stroke-width="1.5"/>
+    <text x="478.6" y="342.2" text-anchor="middle" font-size="12" fill="#374151">2</text>
+    <line x1="550.0" y1="318.2" x2="550.0" y2="326.2" stroke="#374151" stroke-width="1.5"/>
+    <text x="550.0" y="342.2" text-anchor="middle" font-size="12" fill="#374151">3</text>
+    <line x1="331.7" y1="400.0" x2="339.7" y2="400.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="323.7" y="404.0" text-anchor="end" font-size="12" fill="#374151">-2</text>
+    <line x1="331.7" y1="361.1" x2="339.7" y2="361.1" stroke="#374151" stroke-width="1.5"/>
+    <text x="323.7" y="365.1" text-anchor="end" font-size="12" fill="#374151">-1</text>
+    <line x1="331.7" y1="283.3" x2="339.7" y2="283.3" stroke="#374151" stroke-width="1.5"/>
+    <text x="323.7" y="287.3" text-anchor="end" font-size="12" fill="#374151">1</text>
+    <line x1="331.7" y1="244.4" x2="339.7" y2="244.4" stroke="#374151" stroke-width="1.5"/>
+    <text x="323.7" y="248.4" text-anchor="end" font-size="12" fill="#374151">2</text>
+    <line x1="331.7" y1="205.6" x2="339.7" y2="205.6" stroke="#374151" stroke-width="1.5"/>
+    <text x="323.7" y="209.6" text-anchor="end" font-size="12" fill="#374151">3</text>
+    <line x1="331.7" y1="166.7" x2="339.7" y2="166.7" stroke="#374151" stroke-width="1.5"/>
+    <text x="323.7" y="170.7" text-anchor="end" font-size="12" fill="#374151">4</text>
+    <line x1="331.7" y1="127.8" x2="339.7" y2="127.8" stroke="#374151" stroke-width="1.5"/>
+    <text x="323.7" y="131.8" text-anchor="end" font-size="12" fill="#374151">5</text>
+    <line x1="331.7" y1="88.9" x2="339.7" y2="88.9" stroke="#374151" stroke-width="1.5"/>
+    <text x="323.7" y="92.9" text-anchor="end" font-size="12" fill="#374151">6</text>
+    <line x1="331.7" y1="50.0" x2="339.7" y2="50.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="323.7" y="54.0" text-anchor="end" font-size="12" fill="#374151">7</text>
+  </g>
+  <path id="func-0" class="wave-path" d="M 122.50 398.83 L 125.00 396.11 L 127.50 393.39 L 130.00 390.67 L 132.50 387.94 L 135.00 385.22 L 137.50 382.50 L 140.00 379.78 L 142.50 377.06 L 145.00 374.33 L 147.50 371.61 L 150.00 368.89 L 152.50 366.17 L 155.00 363.44 L 157.50 360.72 L 160.00 358.00 L 162.50 355.28 L 165.00 352.56 L 167.50 349.83 L 170.00 347.11 L 172.50 344.39 L 175.00 341.67 L 177.50 338.94 L 180.00 336.22 L 182.50 333.50 L 185.00 330.78 L 187.50 328.06 L 190.00 325.33 L 192.50 322.61 L 195.00 319.89 L 197.50 317.17 L 200.00 314.44 L 202.50 311.72 L 205.00 309.00 L 207.50 306.28 L 210.00 303.56 L 212.50 300.83 L 215.00 298.11 L 217.50 295.39 L 220.00 292.67 L 222.50 289.94 L 225.00 287.22 L 227.50 284.50 L 230.00 281.78 L 232.50 279.06 L 235.00 276.33 L 237.50 273.61 L 240.00 270.89 L 242.50 268.17 L 245.00 265.44 L 247.50 262.72 L 250.00 260.00 L 252.50 257.28 L 255.00 254.56 L 257.50 251.83 L 260.00 249.11 L 262.50 246.39 L 265.00 243.67 L 267.50 240.94 L 270.00 238.22 L 272.50 235.50 L 275.00 232.78 L 277.50 230.06 L 280.00 227.33 L 282.50 224.61 L 285.00 221.89 L 287.50 219.17 L 290.00 216.44 L 292.50 213.72 L 295.00 211.00 L 297.50 208.28 L 300.00 205.56 L 302.50 202.83 L 305.00 200.11 L 307.50 197.39 L 310.00 194.67 L 312.50 191.94 L 315.00 189.22 L 317.50 186.50 L 320.00 183.78 L 322.50 181.06 L 325.00 178.33 L 327.50 175.61 L 330.00 172.89 L 332.50 170.17 L 335.00 167.44 L 337.50 164.72 L 340.00 162.00 L 342.50 159.28 L 345.00 156.56 L 347.50 153.83 L 350.00 151.11 L 352.50 148.39 L 355.00 145.67 L 357.50 142.94 L 360.00 140.22 L 362.50 137.50 L 365.00 134.78 L 367.50 132.06 L 370.00 129.33 L 372.50 126.61 L 375.00 123.89 L 377.50 121.17 L 380.00 118.44 L 382.50 115.72 L 385.00 113.00 L 387.50 110.28 L 390.00 107.56 L 392.50 104.83 L 395.00 102.11 L 397.50 99.39 L 400.00 96.67 L 402.50 93.94 L 405.00 91.22 L 407.50 88.50 L 410.00 85.78 L 412.50 83.06 L 415.00 80.33 L 417.50 77.61 L 420.00 74.89 L 422.50 72.17 L 425.00 69.44 L 427.50 66.72 L 430.00 64.00 L 432.50 61.28 L 435.00 58.56 L 437.50 55.83 L 440.00 53.11 L 442.50 50.39" fill="none" stroke="#3b82f6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <g class="marker-group">
+    <circle cx="335.7" cy="166.7" r="6" fill="#22c55e" stroke="white" stroke-width="2"/>
+    <circle cx="192.9" cy="322.2" r="6" fill="#f97316" stroke="white" stroke-width="2"/>
+  </g>
+  <g class="label-group">
+    <rect x="300.7142857142857" y="158.66666666666666" width="100" height="16" fill="white" fill-opacity="0.9" rx="3"/>
+    <text x="350.7" y="170.7" text-anchor="start" font-size="11" font-weight="bold" fill="#22c55e">Corte Y (0, 4)</text>
+    <rect x="127.85714285714286" y="314.22222222222223" width="100" height="16" fill="white" fill-opacity="0.9" rx="3"/>
+    <text x="177.9" y="326.2" text-anchor="end" font-size="11" font-weight="bold" fill="#f97316">Corte X (-2, 0)</text>
+  </g>
+</svg>

@@ -1,0 +1,79 @@
+{
+    "type": "function",
+    "metadata": {
+        "id": "ejemplo-1-distancia",
+        "title": "Ejemplo 1: Distancia P1(1,2) a P2(4,6)",
+        "lesson": "02-algebra/09-funciones-lineales/03-distancia-y-punto-medio"
+    },
+    "canvas": {
+        "width": 650,
+        "height": 450,
+        "padding": 75,
+        "background": "#f8fafc"
+    },
+    "axes": {
+        "x": {
+            "min": 0,
+            "max": 6,
+            "label": "x",
+            "step": 1,
+            "ticks": "numeric"
+        },
+        "y": {
+            "min": 0,
+            "max": 7,
+            "label": "y",
+            "step": 1,
+            "ticks": "numeric"
+        }
+    },
+    "markers": [
+        {
+            "x": 1,
+            "y": 2,
+            "label": "P1(1, 2)",
+            "color": "#3b82f6",
+            "labelPosition": "bottom"
+        },
+        {
+            "x": 4,
+            "y": 6,
+            "label": "P2(4, 6)",
+            "color": "#22c55e",
+            "labelPosition": "top"
+        }
+    ],
+    "annotations": [
+        {
+            "type": "arrow",
+            "from_x": 1,
+            "from_y": 2,
+            "to_x": 4,
+            "to_y": 2,
+            "label": "3 unidades",
+            "color": "#64748b"
+        },
+        {
+            "type": "arrow",
+            "from_x": 4,
+            "from_y": 2,
+            "to_x": 4,
+            "to_y": 6,
+            "label": "4 unidades",
+            "color": "#64748b"
+        },
+        {
+            "type": "arrow",
+            "from_x": 1,
+            "from_y": 2,
+            "to_x": 4,
+            "to_y": 6,
+            "label": "d = 5",
+            "color": "#ef4444"
+        }
+    ],
+    "animations": {
+        "enabled": true,
+        "duration": 2
+    }
+}

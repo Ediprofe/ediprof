@@ -21,6 +21,10 @@ $$
 y = mx + b
 $$
 
+<div style="width: 100%; margin-top: 1.5rem; margin-bottom: 2rem;">
+  <img src="/images/funciones/algebra/linear_function/formula-maestra.svg" alt="La Fórmula Maestra y = mx + b" style="width: 100%; height: auto; border-radius: 8px; border: 1px solid #e2e8f0;">
+</div>
+
 Donde:
 - **$m$:** Es la **pendiente**. Indica la inclinación.
 - **$b$:** Es el **intercepto con el eje Y**. Indica dónde cruza la recta al eje vertical.
@@ -43,6 +47,10 @@ $$
 \boxed{m = 3, \quad b = -5}
 $$
 
+<div style="width: 100%; margin-top: 1.5rem; margin-bottom: 2rem;">
+  <img src="/images/funciones/algebra/linear_function/ejemplo-1-identificar.svg" alt="Identificar m y b" style="width: 100%; height: auto; border-radius: 8px; border: 1px solid #e2e8f0;">
+</div>
+
 ---
 
 ### Ejemplo 2: El Significado de la Pendiente
@@ -52,6 +60,10 @@ $$
 **Razonamiento:**
 La pendiente nos dice cuánto cambia $y$ cuando $x$ aumenta 1.
 Si $m = 2$, significa que por cada paso a la derecha que damos en el gráfico, debemos subir 2 pasos.
+
+<div style="width: 100%; margin-top: 1.5rem; margin-bottom: 2rem;">
+  <img src="/images/funciones/algebra/linear_function/ejemplo-2-pendiente.svg" alt="Significado de la Pendiente" style="width: 100%; height: auto; border-radius: 8px; border: 1px solid #e2e8f0;">
+</div>
 
 ---
 
@@ -66,6 +78,10 @@ Si pasa por el origen, el valor de $y$ cuando $x=0$ es cero. Por lo tanto, $b = 
 $$
 \boxed{y = 4x}
 $$
+
+<div style="width: 100%; margin-top: 1.5rem; margin-bottom: 2rem;">
+  <img src="/images/funciones/algebra/linear_function/ejemplo-3-origen.svg" alt="Función que pasa por el Origen" style="width: 100%; height: auto; border-radius: 8px; border: 1px solid #e2e8f0;">
+</div>
 
 ---
 
@@ -87,6 +103,10 @@ $$
 \boxed{f(10) = -5}
 $$
 
+<div style="width: 100%; margin-top: 1.5rem; margin-bottom: 2rem;">
+  <img src="/images/funciones/algebra/linear_function/ejemplo-4-evaluacion.svg" alt="Evaluación de Función" style="width: 100%; height: auto; border-radius: 8px; border: 1px solid #e2e8f0;">
+</div>
+
 ---
 
 ### Ejemplo 5: Armar Ecuación desde Puntos
@@ -102,6 +122,10 @@ $$
 \boxed{y = \frac{1}{2}x + 4}
 $$
 
+<div style="width: 100%; margin-top: 1.5rem; margin-bottom: 2rem;">
+  <img src="/images/funciones/algebra/linear_function/ejemplo-5-armar.svg" alt="Armar Ecuación" style="width: 100%; height: auto; border-radius: 8px; border: 1px solid #e2e8f0;">
+</div>
+
 ---
 
 ## 🔄 Tipos de Pendiente
@@ -111,6 +135,10 @@ El valor de $m$ decide el destino de la recta:
 1. **$m > 0$ (Positiva):** La función es **creciente**. Sube de izquierda a derecha.
 2. **$m < 0$ (Negativa):** La función es **decreciente**. Baja de izquierda a derecha.
 3. **$m = 0$:** La función es **constante**. Es una línea horizontal.
+
+<div style="width: 100%; margin-top: 1.5rem; margin-bottom: 2rem;">
+  <img src="/images/funciones/algebra/linear_function/pendientes-tipos.svg" alt="Tipos de Pendiente" style="width: 100%; height: auto; border-radius: 8px; border: 1px solid #e2e8f0;">
+</div>
 
 ---
 

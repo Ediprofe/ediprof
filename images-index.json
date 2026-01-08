@@ -449,7 +449,16 @@
       "size": "69KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/1z8p-resumen-factor-comun.webp",
       "status": "uploaded"
+    },
+    {
+      "id": "b471",
+      "name": "funcion-matematica.webp",
+      "materia": "matematicas",
+      "date": "2026-01-08",
+      "size": "48KB",
+      "url": "https://cdn.ediprofe.com/img/matematicas/b471-funcion-matematica.webp",
+      "status": "uploaded"
     }
   ],
-  "lastUpdated": "2025-12-28T18:53:42.081Z"
+  "lastUpdated": "2026-01-08T01:52:40.446Z"
 }

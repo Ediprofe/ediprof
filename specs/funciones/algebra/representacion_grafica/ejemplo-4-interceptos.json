@@ -1,0 +1,56 @@
+{
+    "type": "function",
+    "metadata": {
+        "id": "ejemplo-4-interceptos",
+        "title": "Graficar y = 2x + 4 (Método Interceptos)",
+        "lesson": "02-algebra/09-funciones-lineales/04-representacion-grafica"
+    },
+    "canvas": {
+        "width": 600,
+        "height": 450,
+        "padding": 50,
+        "background": "#ffffff"
+    },
+    "axes": {
+        "x": {
+            "min": -4,
+            "max": 3,
+            "label": "x",
+            "step": 1,
+            "ticks": "numeric"
+        },
+        "y": {
+            "min": -2,
+            "max": 7,
+            "label": "y",
+            "step": 1,
+            "ticks": "numeric"
+        }
+    },
+    "functions": [
+        {
+            "expression": "2*x + 4",
+            "color": "#3b82f6",
+            "strokeWidth": 3
+        }
+    ],
+    "markers": [
+        {
+            "x": 0,
+            "y": 4,
+            "label": "Corte Y (0, 4)",
+            "color": "#22c55e",
+            "labelPosition": "right"
+        },
+        {
+            "x": -2,
+            "y": 0,
+            "label": "Corte X (-2, 0)",
+            "color": "#f97316",
+            "labelPosition": "left"
+        }
+    ],
+    "animations": {
+        "enabled": false
+    }
+}

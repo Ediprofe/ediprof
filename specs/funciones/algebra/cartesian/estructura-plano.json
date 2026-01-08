@@ -1,0 +1,44 @@
+{
+    "type": "function",
+    "metadata": {
+        "id": "estructura-plano",
+        "title": "Estructura del Plano Cartesiano",
+        "lesson": "02-algebra/09-funciones-lineales/02-plano-cartesiano"
+    },
+    "canvas": {
+        "width": 650,
+        "height": 450,
+        "padding": 75,
+        "background": "#f8fafc"
+    },
+    "axes": {
+        "x": {
+            "min": -6,
+            "max": 6,
+            "label": "Eje X (Abscisas)",
+            "step": 1,
+            "ticks": "numeric"
+        },
+        "y": {
+            "min": -6,
+            "max": 6,
+            "label": "Eje Y (Ordenadas)",
+            "step": 1,
+            "ticks": "numeric"
+        }
+    },
+    "markers": [
+        {
+            "x": 0,
+            "y": 0,
+            "label": "Origen (0,0)",
+            "color": "#ef4444",
+            "labelPosition": "top"
+        }
+    ],
+    "annotations": [],
+    "animations": {
+        "enabled": true,
+        "duration": 2
+    }
+}

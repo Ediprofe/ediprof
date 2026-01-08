@@ -1,0 +1,61 @@
+{
+    "type": "function",
+    "metadata": {
+        "id": "ejemplo-3-origen",
+        "title": "Función que pasa por el Origen",
+        "lesson": "02-algebra/09-funciones-lineales/03-funcion-lineal"
+    },
+    "canvas": {
+        "width": 600,
+        "height": 450,
+        "padding": 50,
+        "background": "#f8fafc"
+    },
+    "axes": {
+        "x": {
+            "min": -2,
+            "max": 2,
+            "label": "x",
+            "step": 1,
+            "ticks": "numeric"
+        },
+        "y": {
+            "min": -8,
+            "max": 8,
+            "label": "y",
+            "step": 2,
+            "ticks": "numeric"
+        }
+    },
+    "functions": [
+        {
+            "expression": "4*x",
+            "color": "#3b82f6",
+            "strokeWidth": 3
+        }
+    ],
+    "markers": [
+        {
+            "x": 0,
+            "y": 0,
+            "label": "Origen (0, 0)",
+            "color": "#ef4444",
+            "labelPosition": "top"
+        }
+    ],
+    "annotations": [
+        {
+            "type": "text",
+            "x": 1,
+            "y": -4,
+            "text": "b = 0\ny = 4x",
+            "color": "#1e293b",
+            "fontSize": 16,
+            "fontWeight": "bold"
+        }
+    ],
+    "animations": {
+        "enabled": true,
+        "duration": 2
+    }
+}

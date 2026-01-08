@@ -1,0 +1,67 @@
+{
+    "type": "function",
+    "metadata": {
+        "id": "ejemplo-1-identificacion",
+        "title": "Rectas Paralelas: m1 = m2",
+        "lesson": "02-algebra/09-funciones-lineales/05-rectas-paralelas-perpendiculares"
+    },
+    "canvas": {
+        "width": 600,
+        "height": 450,
+        "padding": 50,
+        "background": "#ffffff"
+    },
+    "axes": {
+        "x": {
+            "min": -5,
+            "max": 5,
+            "label": "x",
+            "step": 1,
+            "ticks": "numeric"
+        },
+        "y": {
+            "min": -5,
+            "max": 10,
+            "label": "y",
+            "step": 2,
+            "ticks": "numeric"
+        }
+    },
+    "functions": [
+        {
+            "id": "f1",
+            "expression": "2*x + 5",
+            "color": "#3b82f6",
+            "strokeWidth": 3,
+            "label": "y = 2x + 5"
+        },
+        {
+            "id": "f2",
+            "expression": "2*x - 3",
+            "color": "#f97316",
+            "strokeWidth": 3,
+            "label": "y = 2x - 3"
+        }
+    ],
+    "annotations": [
+        {
+            "type": "text",
+            "x": -2,
+            "y": 7,
+            "text": "m = 2",
+            "color": "#3b82f6",
+            "fontWeight": "bold"
+        },
+        {
+            "type": "text",
+            "x": 2,
+            "y": -1,
+            "text": "m = 2",
+            "color": "#3b82f6",
+            "fontWeight": "bold"
+        }
+    ],
+    "animations": {
+        "enabled": false
+    }
+}

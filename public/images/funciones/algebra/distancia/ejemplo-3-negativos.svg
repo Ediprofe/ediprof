@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 450" 
+style="max-width: 100%; height: auto; font-family: Inter, system-ui, sans-serif;">
+
+  <style>
+    .wave-path {
+      stroke-dasharray: 3000;
+      stroke-dashoffset: 3000;
+      animation: drawWave 2s ease-out forwards;
+    }
+    .marker-group { opacity: 0; animation: fadeIn 0.5s ease-out 2s forwards; }
+    .label-group { opacity: 0; animation: fadeIn 0.5s ease-out 2.3s forwards; }
+    .annotation-group { opacity: 0; animation: fadeIn 0.5s ease-out 2.5s forwards; }
+    @keyframes drawWave { to { stroke-dashoffset: 0; } }
+    @keyframes fadeIn { to { opacity: 1; } }
+  </style>
+
+  <rect width="650" height="450" fill="#f8fafc" rx="8"/>
+  <text x="325.0" y="25" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">Ejemplo 3: Distancia con Negativos</text>
+  <g class="grid">
+    <line x1="75.0" y1="75" x2="75.0" y2="375" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="158.3" y1="75" x2="158.3" y2="375" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="241.7" y1="75" x2="241.7" y2="375" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="325.0" y1="75" x2="325.0" y2="375" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="408.3" y1="75" x2="408.3" y2="375" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="491.7" y1="75" x2="491.7" y2="375" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="575.0" y1="75" x2="575.0" y2="375" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="75" y1="375.0" x2="575" y2="375.0" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="75" y1="325.0" x2="575" y2="325.0" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="75" y1="225.0" x2="575" y2="225.0" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="75" y1="175.0" x2="575" y2="175.0" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="75" y1="125.0" x2="575" y2="125.0" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="75" y1="75.0" x2="575" y2="75.0" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+  </g>
+  <g class="axes">
+    <line x1="75" y1="275.0" x2="575" y2="275.0" stroke="#374151" stroke-width="2"/>
+    <polygon points="575,275.0 567,271.0 567,279.0" fill="#374151"/>
+    <line x1="241.7" y1="75" x2="241.7" y2="375" stroke="#374151" stroke-width="2"/>
+    <polygon points="241.7,75 237.7,83 245.7,83" fill="#374151"/>
+    <text x="635" y="260.0" text-anchor="end" font-size="14" font-weight="bold" fill="#374151">x</text>
+    <text x="241.7" y="60.0" text-anchor="middle" font-size="14" font-weight="bold" fill="#374151">y</text>
+    <line x1="75.0" y1="271.0" x2="75.0" y2="279.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="75.0" y="295.0" text-anchor="middle" font-size="12" fill="#374151">-2</text>
+    <line x1="158.3" y1="271.0" x2="158.3" y2="279.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="158.3" y="295.0" text-anchor="middle" font-size="12" fill="#374151">-1</text>
+    <line x1="325.0" y1="271.0" x2="325.0" y2="279.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="325.0" y="295.0" text-anchor="middle" font-size="12" fill="#374151">1</text>
+    <line x1="408.3" y1="271.0" x2="408.3" y2="279.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="408.3" y="295.0" text-anchor="middle" font-size="12" fill="#374151">2</text>
+    <line x1="491.7" y1="271.0" x2="491.7" y2="279.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="491.7" y="295.0" text-anchor="middle" font-size="12" fill="#374151">3</text>
+    <line x1="575.0" y1="271.0" x2="575.0" y2="279.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="575.0" y="295.0" text-anchor="middle" font-size="12" fill="#374151">4</text>
+    <line x1="237.7" y1="375.0" x2="245.7" y2="375.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="229.7" y="379.0" text-anchor="end" font-size="12" fill="#374151">-2</text>
+    <line x1="237.7" y1="325.0" x2="245.7" y2="325.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="229.7" y="329.0" text-anchor="end" font-size="12" fill="#374151">-1</text>
+    <line x1="237.7" y1="225.0" x2="245.7" y2="225.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="229.7" y="229.0" text-anchor="end" font-size="12" fill="#374151">1</text>
+    <line x1="237.7" y1="175.0" x2="245.7" y2="175.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="229.7" y="179.0" text-anchor="end" font-size="12" fill="#374151">2</text>
+    <line x1="237.7" y1="125.0" x2="245.7" y2="125.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="229.7" y="129.0" text-anchor="end" font-size="12" fill="#374151">3</text>
+    <line x1="237.7" y1="75.0" x2="245.7" y2="75.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="229.7" y="79.0" text-anchor="end" font-size="12" fill="#374151">4</text>
+  </g>
+  <g class="marker-group">
+    <circle cx="158.3" cy="325.0" r="6" fill="#ef4444" stroke="white" stroke-width="2"/>
+    <circle cx="408.3" cy="125.0" r="6" fill="#22c55e" stroke="white" stroke-width="2"/>
+  </g>
+  <g class="label-group">
+    <rect x="93.33333333333331" y="317.0" width="100" height="16" fill="white" fill-opacity="0.9" rx="3"/>
+    <text x="143.3" y="329.0" text-anchor="end" font-size="11" font-weight="bold" fill="#ef4444">A(-1, -1)</text>
+    <rect x="358.3333333333333" y="98.0" width="100" height="16" fill="white" fill-opacity="0.9" rx="3"/>
+    <text x="408.3" y="110.0" text-anchor="middle" font-size="11" font-weight="bold" fill="#22c55e">B(2, 3)</text>
+  </g>
+  <g class="annotation-group">
+    <line x1="158.3" y1="325.0" x2="408.3" y2="325.0" stroke="#64748b" stroke-width="2.5"/>
+    <polygon points="408.3,325.0 399.1,328.9 399.1,321.1" fill="#64748b"/>
+    <rect x="261.3333333333333" y="303.0" width="44" height="14" rx="3" fill="white" fill-opacity="0.9"/>
+    <text x="283.3" y="313.0" text-anchor="middle" font-size="11" font-weight="bold" fill="#64748b">3 u</text>
+    <line x1="408.3" y1="325.0" x2="408.3" y2="125.0" stroke="#64748b" stroke-width="2.5"/>
+    <polygon points="408.3,125.0 412.2,134.2 404.4,134.2" fill="#64748b"/>
+    <rect x="386.3333333333333" y="203.0" width="44" height="14" rx="3" fill="white" fill-opacity="0.9"/>
+    <text x="408.3" y="213.0" text-anchor="middle" font-size="11" font-weight="bold" fill="#64748b">4 u</text>
+    <line x1="158.3" y1="325.0" x2="408.3" y2="125.0" stroke="#f97316" stroke-width="2.5"/>
+    <polygon points="408.3,125.0 403.6,133.8 398.7,127.7" fill="#f97316"/>
+    <rect x="261.3333333333333" y="203.0" width="44" height="14" rx="3" fill="white" fill-opacity="0.9"/>
+    <text x="283.3" y="213.0" text-anchor="middle" font-size="11" font-weight="bold" fill="#f97316">d = 5</text>
+  </g>
+</svg>

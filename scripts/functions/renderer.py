@@ -10,6 +10,7 @@ import json
 import math
 import argparse
 import webbrowser
+import html
 from pathlib import Path
 from typing import Dict, List, Tuple, Any, Optional
 
@@ -226,19 +227,35 @@ def generate_function_svg(spec: Dict[str, Any]) -> str:
                 cx, _ = map_to_canvas(x_val, 0, x_min, x_max, y_min, y_max, width, height, padding)
                 svg_parts.append(f'    <line x1="{cx:.1f}" y1="{plot_y}" x2="{cx:.1f}" y2="{plot_y + plot_height}" stroke="{COLORS["grid"]}" stroke-dasharray="4,4"/>')
     else:
-        # Cuadrícula numérica
+        # Cuadrícula numérica eje X
         x_range = x_max - x_min
-        step = 1 if x_range <= 10 else (5 if x_range <= 50 else 10)
+        x_step = x_axis.get('step')
+        if x_step is not None:
+            step = parse_math_expr(x_step)
+        else:
+            step = 1 if x_range <= 10 else (5 if x_range <= 50 else 10)
+            
         x_val = math.ceil(x_min / step) * step
         while x_val <= x_max:
             cx, _ = map_to_canvas(x_val, 0, x_min, x_max, y_min, y_max, width, height, padding)
             svg_parts.append(f'    <line x1="{cx:.1f}" y1="{plot_y}" x2="{cx:.1f}" y2="{plot_y + plot_height}" stroke="{COLORS["grid"]}" stroke-dasharray="4,4"/>')
             x_val += step
     
-    for y_val in [-1, -0.5, 0.5, 1]:
-        if y_min <= y_val <= y_max:
+    # Cuadrícula eje Y (Dyamic)
+    y_range = y_max - y_min
+    y_step = y_axis.get('step')
+    if y_step is not None:
+        step_y = parse_math_expr(y_step)
+    else:
+        step_y = 0.5 if y_range <= 2 else (1 if y_range <= 10 else (5 if y_range <= 50 else 10))
+        
+    y_val = math.ceil(y_min / step_y) * step_y
+    while y_val <= y_max:
+        if abs(y_val) > 1e-10: # Avoid drawing on top of the X axis if it is at 0 (or handled by axis lines)
             _, cy = map_to_canvas(0, y_val, x_min, x_max, y_min, y_max, width, height, padding)
-            svg_parts.append(f'    <line x1="{plot_x}" y1="{cy:.1f}" x2="{plot_x + plot_width}" y2="{cy:.1f}" stroke="{COLORS["grid"]}" stroke-dasharray="4,4"/>')
+            if plot_y <= cy <= plot_y + plot_height:
+                svg_parts.append(f'    <line x1="{plot_x}" y1="{cy:.1f}" x2="{plot_x + plot_width}" y2="{cy:.1f}" stroke="{COLORS["grid"]}" stroke-dasharray="4,4"/>')
+        y_val += step_y
     svg_parts.append('  </g>')
     
     # Ejes
@@ -252,8 +269,11 @@ def generate_function_svg(spec: Dict[str, Any]) -> str:
     
     x_label = x_axis.get('label', 'x')
     y_label = y_axis.get('label', 'y')
-    svg_parts.append(f'    <text x="{plot_x + plot_width + 10}" y="{origin_y + 5:.1f}" font-size="14" font-weight="bold" fill="{COLORS["axis"]}">{x_label}</text>')
-    svg_parts.append(f'    <text x="{origin_x + 8:.1f}" y="{plot_y - 5}" font-size="14" font-weight="bold" fill="{COLORS["axis"]}">{y_label}</text>')
+
+    # Label X: Al final del eje X, un poco arriba
+    svg_parts.append(f'    <text x="{plot_x + plot_width}" y="{origin_y - 10:.1f}" text-anchor="end" font-size="14" font-weight="bold" fill="{COLORS["axis"]}">{x_label}</text>')
+    # Label Y: Arriba del eje Y, un poco a la izquierda
+    svg_parts.append(f'    <text x="{origin_x - 10:.1f}" y="{plot_y}" text-anchor="end" font-size="14" font-weight="bold" fill="{COLORS["axis"]}">{y_label}</text>')
     
     # Ticks
     if ticks_style == 'pi':
@@ -267,7 +287,12 @@ def generate_function_svg(spec: Dict[str, Any]) -> str:
                     svg_parts.append(f'    <text x="{cx:.1f}" y="{origin_y + 20:.1f}" text-anchor="middle" font-size="12" fill="{COLORS["axis"]}">{label}</text>')
     else:
         x_range = x_max - x_min
-        step = 1 if x_range <= 10 else (5 if x_range <= 50 else 10)
+        x_step = x_axis.get('step')
+        if x_step is not None:
+            step = parse_math_expr(x_step)
+        else:
+            step = 1 if x_range <= 10 else (5 if x_range <= 50 else 10)
+            
         x_val = math.ceil(x_min / step) * step
         while x_val <= x_max:
             if abs(x_val) > 0.01:
@@ -276,11 +301,22 @@ def generate_function_svg(spec: Dict[str, Any]) -> str:
                 svg_parts.append(f'    <text x="{cx:.1f}" y="{origin_y + 20:.1f}" text-anchor="middle" font-size="12" fill="{COLORS["axis"]}">{int(x_val) if x_val == int(x_val) else x_val}</text>')
             x_val += step
     
-    for y_val in [-1, 1]:
-        if y_min < y_val < y_max:
+    # Ticks eje Y (Dynamic)
+    y_range = y_max - y_min
+    y_step = y_axis.get('step')
+    if y_step is not None:
+        step_y = parse_math_expr(y_step)
+    else:
+        step_y = 1 if y_range <= 10 else (5 if y_range <= 50 else 10)
+        
+    y_val = math.ceil(y_min / step_y) * step_y
+    while y_val <= y_max:
+        if abs(y_val) > 1e-10:
             _, cy = map_to_canvas(0, y_val, x_min, x_max, y_min, y_max, width, height, padding)
-            svg_parts.append(f'    <line x1="{origin_x - 4:.1f}" y1="{cy:.1f}" x2="{origin_x + 4:.1f}" y2="{cy:.1f}" stroke="{COLORS["axis"]}" stroke-width="1.5"/>')
-            svg_parts.append(f'    <text x="{origin_x - 12:.1f}" y="{cy + 4:.1f}" text-anchor="end" font-size="12" fill="{COLORS["axis"]}">{y_val}</text>')
+            if plot_y <= cy <= plot_y + plot_height:
+                svg_parts.append(f'    <line x1="{origin_x - 4:.1f}" y1="{cy:.1f}" x2="{origin_x + 4:.1f}" y2="{cy:.1f}" stroke="{COLORS["axis"]}" stroke-width="1.5"/>')
+                svg_parts.append(f'    <text x="{origin_x - 12:.1f}" y="{cy + 4:.1f}" text-anchor="end" font-size="12" fill="{COLORS["axis"]}">{int(y_val) if y_val == int(y_val) else y_val}</text>')
+        y_val += step_y
     svg_parts.append('  </g>')
     
     # Funciones
@@ -347,16 +383,16 @@ def generate_function_svg(spec: Dict[str, Any]) -> str:
         legend_x = width - padding - 10
         legend_y = padding + 10
         legend_width = 180
-        legend_height = 25 + len(functions_with_labels) * 22
+        legend_height = 10 + len(functions_with_labels) * 22
         
         svg_parts.append(f'  <g class="annotation-group">')
         svg_parts.append(f'    <rect x="{legend_x - legend_width}" y="{legend_y}" width="{legend_width}" height="{legend_height}" rx="6" fill="white" fill-opacity="0.95" stroke="{COLORS["grid"]}" stroke-width="1"/>')
-        svg_parts.append(f'    <text x="{legend_x - legend_width + 10}" y="{legend_y + 16}" font-size="11" font-weight="bold" fill="{COLORS["text"]}">Leyenda</text>')
+        # Título 'Leyenda' eliminado por solicitud del usuario
         
         for i, func in enumerate(functions_with_labels):
             func_color = func.get('color', COLOR_PALETTE[i % len(COLOR_PALETTE)])
             func_label = func.get('label', '')
-            ly = legend_y + 30 + i * 22
+            ly = legend_y + 15 + i * 22
             svg_parts.append(f'    <line x1="{legend_x - legend_width + 10}" y1="{ly}" x2="{legend_x - legend_width + 35}" y2="{ly}" stroke="{func_color}" stroke-width="3" stroke-linecap="round"/>')
             svg_parts.append(f'    <text x="{legend_x - legend_width + 42}" y="{ly + 4}" font-size="10" fill="{COLORS["text"]}">{func_label}</text>')
         svg_parts.append('  </g>')
@@ -383,7 +419,7 @@ def generate_function_svg(spec: Dict[str, Any]) -> str:
                 cx1, cy = map_to_canvas(from_x, y_pos, x_min, x_max, y_min, y_max, width, height, padding)
                 cx2, _ = map_to_canvas(to_x, y_pos, x_min, x_max, y_min, y_max, width, height, padding)
                 svg_parts.append(f'    <path d="M {cx1:.1f} {cy - 5:.1f} L {cx1:.1f} {cy:.1f} L {cx2:.1f} {cy:.1f} L {cx2:.1f} {cy - 5:.1f}" fill="none" stroke="{color}" stroke-width="2"/>')
-                svg_parts.append(f'    <text x="{(cx1 + cx2) / 2:.1f}" y="{cy + 18:.1f}" text-anchor="middle" font-size="12" font-weight="bold" fill="{color}">{label}</text>')
+                svg_parts.append(f'    <text x="{(cx1 + cx2) / 2:.1f}" y="{cy + 18:.1f}" text-anchor="middle" font-size="12" font-weight="bold" fill="{color}">{html.escape(label)}</text>')
             
             elif ann_type == 'arrow':
                 from_x = parse_math_expr(ann.get('from_x', 0))
@@ -410,7 +446,7 @@ def generate_function_svg(spec: Dict[str, Any]) -> str:
                     mid_x = (cx1 + cx2) / 2
                     mid_y = (cy1 + cy2) / 2 - 12
                     svg_parts.append(f'    <rect x="{mid_x - 22}" y="{mid_y - 10}" width="44" height="14" rx="3" fill="white" fill-opacity="0.9"/>')
-                    svg_parts.append(f'    <text x="{mid_x:.1f}" y="{mid_y:.1f}" text-anchor="middle" font-size="11" font-weight="bold" fill="{color}">{label}</text>')
+                    svg_parts.append(f'    <text x="{mid_x:.1f}" y="{mid_y:.1f}" text-anchor="middle" font-size="11" font-weight="bold" fill="{color}">{html.escape(label)}</text>')
             
             elif ann_type == 'horizontal_line':
                 y_val = parse_math_expr(ann.get('y', 0))
@@ -418,7 +454,7 @@ def generate_function_svg(spec: Dict[str, Any]) -> str:
                 _, cy = map_to_canvas(0, y_val, x_min, x_max, y_min, y_max, width, height, padding)
                 svg_parts.append(f'    <line x1="{padding}" y1="{cy:.1f}" x2="{width - padding}" y2="{cy:.1f}" stroke="{color}" stroke-width="1.5" stroke-dasharray="{dasharray}"/>')
                 if label:
-                    svg_parts.append(f'    <text x="{width - padding + 5}" y="{cy + 4:.1f}" text-anchor="start" font-size="10" fill="{color}">{label}</text>')
+                    svg_parts.append(f'    <text x="{width - padding + 5}" y="{cy + 4:.1f}" text-anchor="start" font-size="10" fill="{color}">{html.escape(label)}</text>')
             
             elif ann_type == 'vertical_asymptote':
                 x_val = parse_math_expr(ann.get('x', 0))
@@ -426,7 +462,7 @@ def generate_function_svg(spec: Dict[str, Any]) -> str:
                 cx, _ = map_to_canvas(x_val, 0, x_min, x_max, y_min, y_max, width, height, padding)
                 svg_parts.append(f'    <line x1="{cx:.1f}" y1="{padding}" x2="{cx:.1f}" y2="{height - padding}" stroke="{color}" stroke-width="1.5" stroke-dasharray="8,4"/>')
                 if label:
-                    svg_parts.append(f'    <text x="{cx + 5:.1f}" y="{padding + 15}" text-anchor="start" font-size="9" fill="{color}">{label}</text>')
+                    svg_parts.append(f'    <text x="{cx + 5:.1f}" y="{padding + 15}" text-anchor="start" font-size="9" fill="{color}">{html.escape(label)}</text>')
             
             elif ann_type == 'text':
                 x_pos = parse_math_expr(ann.get('x', 0))
@@ -438,7 +474,8 @@ def generate_function_svg(spec: Dict[str, Any]) -> str:
                 # Manejar texto multilínea
                 lines = text.split('\n')
                 for i, line in enumerate(lines):
-                    svg_parts.append(f'    <text x="{cx:.1f}" y="{cy + i * 14:.1f}" text-anchor="middle" font-size="{font_size}" font-weight="{font_weight}" fill="{color}">{line}</text>')
+                    escaped_line = html.escape(line)
+                    svg_parts.append(f'    <text x="{cx:.1f}" y="{cy + i * 14:.1f}" text-anchor="middle" font-size="{font_size}" font-weight="{font_weight}" fill="{color}">{escaped_line}</text>')
         
         svg_parts.append('  </g>')
     

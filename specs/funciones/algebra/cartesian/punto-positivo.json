@@ -1,0 +1,63 @@
+{
+    "type": "function",
+    "metadata": {
+        "id": "punto-positivo",
+        "title": "Ubicando el Punto A(3, 2)",
+        "lesson": "02-algebra/09-funciones-lineales/02-plano-cartesiano"
+    },
+    "canvas": {
+        "width": 650,
+        "height": 450,
+        "padding": 75,
+        "background": "#f8fafc"
+    },
+    "axes": {
+        "x": {
+            "min": -2,
+            "max": 6,
+            "label": "x",
+            "step": 1,
+            "ticks": "numeric"
+        },
+        "y": {
+            "min": -2,
+            "max": 6,
+            "label": "y",
+            "step": 1,
+            "ticks": "numeric"
+        }
+    },
+    "markers": [
+        {
+            "x": 3,
+            "y": 2,
+            "label": "A(3, 2)",
+            "color": "#3b82f6",
+            "labelPosition": "top"
+        }
+    ],
+    "annotations": [
+        {
+            "type": "arrow",
+            "from_x": 0,
+            "from_y": 0,
+            "to_x": 3,
+            "to_y": 0,
+            "label": "3 der",
+            "color": "#64748b"
+        },
+        {
+            "type": "arrow",
+            "from_x": 3,
+            "from_y": 0,
+            "to_x": 3,
+            "to_y": 2,
+            "label": "2 subir",
+            "color": "#22c55e"
+        }
+    ],
+    "animations": {
+        "enabled": true,
+        "duration": 2
+    }
+}

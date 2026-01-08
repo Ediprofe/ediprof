@@ -1,6 +1,6 @@
 # **Introducción a los Números Imaginarios**
 
-¿Existe algún número que multiplicado por sí mismo dé -1? Piénsalo: $1 \cdot 1 = 1$ y $(-1) \cdot (-1) = 1$. Parece imposible, ¿verdad? Para resolver este enigma, los matemáticos tuvieron que inventar un nuevo tipo de número, que hoy es fundamental para entender desde la electricidad hasta la mecánica cuántica.
+¿Existe algún número que multiplicado por sí mismo dé -1? Piénsalo: $1 \cdot 1 = 1$ y $(-1) \cdot (-1) = 1$. Parece imposible, ¿verdad? Para resolver este enigma, los matemáticos tuvieron que definir un nuevo tipo de número, que hoy es fundamental para entender desde la electricidad hasta la mecánica cuántica.
 
 ---
 

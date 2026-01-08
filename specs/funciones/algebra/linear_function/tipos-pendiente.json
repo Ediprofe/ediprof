@@ -1,0 +1,77 @@
+{
+    "type": "function",
+    "metadata": {
+        "id": "tipos-pendiente",
+        "title": "Tipos de Pendiente (m)",
+        "lesson": "02-algebra/09-funciones-lineales/03-funcion-lineal"
+    },
+    "canvas": {
+        "width": 600,
+        "height": 450,
+        "padding": 50,
+        "background": "#ffffff"
+    },
+    "axes": {
+        "x": {
+            "min": -4,
+            "max": 4,
+            "label": "x",
+            "step": 1,
+            "ticks": "numeric"
+        },
+        "y": {
+            "min": -4,
+            "max": 4,
+            "label": "y",
+            "step": 1,
+            "ticks": "numeric"
+        }
+    },
+    "functions": [
+        {
+            "expression": "x",
+            "color": "#22c55e",
+            "strokeWidth": 3
+        },
+        {
+            "expression": "-x",
+            "color": "#ef4444",
+            "strokeWidth": 3
+        },
+        {
+            "expression": "2",
+            "color": "#3b82f6",
+            "strokeWidth": 3
+        }
+    ],
+    "annotations": [
+        {
+            "type": "text",
+            "x": 2.5,
+            "y": 3,
+            "text": "Creciente (m > 0)",
+            "color": "#22c55e",
+            "fontWeight": "bold"
+        },
+        {
+            "type": "text",
+            "x": -3,
+            "y": 3.5,
+            "text": "Decreciente (m < 0)",
+            "color": "#ef4444",
+            "fontWeight": "bold"
+        },
+        {
+            "type": "text",
+            "x": -3,
+            "y": 1.5,
+            "text": "Constante (m = 0)",
+            "color": "#3b82f6",
+            "fontWeight": "bold"
+        }
+    ],
+    "animations": {
+        "enabled": false,
+        "duration": 2
+    }
+}

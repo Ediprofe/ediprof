@@ -1,6 +1,6 @@
 # **El Plano Cartesiano**
 
-Para poder "dibujar" las funciones, necesitamos un mapa. En matemáticas, ese mapa es el Plano Cartesiano (nombrado así por René Descartes). Es un sistema de dos líneas que se cruzan y nos permite localizar cualquier punto con precisión, como si usáramos un GPS para encontrar una dirección.
+Antes de dibujar gráficas o resolver ecuaciones, necesitamos un mapa en el cual trabajar. En matemáticas, ese mapa se llama **Plano Cartesiano** (nombrado así por el filósofo René Descartes). Es un sistema de dos rectas numéricas que se cruzan, permitiéndonos localizar cualquier punto con precisión, como si usáramos un GPS para encontrar una dirección.
 
 ---
 
@@ -21,6 +21,10 @@ El plano se forma cruzando dos rectas numéricas de forma perpendicular:
 - **Eje Y (Ordenadas):** La línea vertical. Es como la altura.
 - **Origen:** El punto exacto donde se cruzan. Sus coordenadas son $(0, 0)$.
 
+<div style="width: 100%; margin-top: 1.5rem; margin-bottom: 2rem;">
+  <img src="/images/funciones/algebra/cartesian/estructura-plano.svg" alt="Estructura del Plano Cartesiano" style="width: 100%; height: auto; border-radius: 8px; border: 1px solid #e2e8f0;">
+</div>
+
 ---
 
 ## ⚙️ Ejemplos Resueltos
@@ -37,6 +41,10 @@ El primer número (3) es la $x$, el segundo (2) es la $y$.
 
 Ahí marcamos el punto $A$.
 
+<div style="width: 100%; margin-top: 1.5rem; margin-bottom: 2rem;">
+  <img src="/images/funciones/algebra/cartesian/punto-positivo.svg" alt="Ubicando Punto A(3, 2)" style="width: 100%; height: auto; border-radius: 8px; border: 1px solid #e2e8f0;">
+</div>
+
 ---
 
 ### Ejemplo 2: Uso de Signos Negativos
@@ -48,6 +56,10 @@ Encuentra el punto $B(-4, 5)$.
 - $y = 5$: Subimos **5 unidades**.
 
 Este punto queda en la parte superior izquierda del mapa.
+
+<div style="width: 100%; margin-top: 1.5rem; margin-bottom: 2rem;">
+  <img src="/images/funciones/algebra/cartesian/signos-negativos.svg" alt="Ubicando Punto B(-4, 5)" style="width: 100%; height: auto; border-radius: 8px; border: 1px solid #e2e8f0;">
+</div>
 
 ---
 
@@ -61,6 +73,10 @@ Encuentra el punto $C(0, -3)$.
 
 El punto queda justo sobre el eje vertical (Y).
 
+<div style="width: 100%; margin-top: 1.5rem; margin-bottom: 2rem;">
+  <img src="/images/funciones/algebra/cartesian/punto-eje-y.svg" alt="Ubicando Punto C(0, -3)" style="width: 100%; height: auto; border-radius: 8px; border: 1px solid #e2e8f0;">
+</div>
+
 ---
 
 ### Ejemplo 4: Punto en el Cuadrante III
@@ -72,6 +88,10 @@ Encuentra el punto $D(-2, -4)$.
 - $y = -4$: Bajamos 4 unidades.
 
 Este punto está en la "zona fría" (abajo a la izquierda), donde tanto el avance como el alto son negativos.
+
+<div style="width: 100%; margin-top: 1.5rem; margin-bottom: 2rem;">
+  <img src="/images/funciones/algebra/cartesian/punto-cuadrante-iii.svg" alt="Ubicando Punto D(-2, -4)" style="width: 100%; height: auto; border-radius: 8px; border: 1px solid #e2e8f0;">
+</div>
 
 ---
 
@@ -85,6 +105,10 @@ Encuentra el punto $E(5, 0)$.
 
 El punto descansa exactamente sobre la línea de tierra (Eje X).
 
+<div style="width: 100%; margin-top: 1.5rem; margin-bottom: 2rem;">
+  <img src="/images/funciones/algebra/cartesian/punto-eje-x.svg" alt="Ubicando Punto E(5, 0)" style="width: 100%; height: auto; border-radius: 8px; border: 1px solid #e2e8f0;">
+</div>
+
 ---
 
 ## 🌍 Los Cuatro Cuadrantes
@@ -95,6 +119,10 @@ El plano queda dividido en cuatro áreas principales. Se cuentan en sentido cont
 2. **Cuadrante II (-, +):** Izquierda y Arriba.
 3. **Cuadrante III (-, -):** Izquierda y Abajo.
 4. **Cuadrante IV (+, -):** Derecha y Abajo.
+
+<div style="width: 100%; margin-top: 1.5rem; margin-bottom: 2rem;">
+  <img src="/images/funciones/algebra/cartesian/cuatro-cuadrantes.svg" alt="Los Cuatro Cuadrantes" style="width: 100%; height: auto; border-radius: 8px; border: 1px solid #e2e8f0;">
+</div>
 
 ---
 
@@ -237,4 +265,4 @@ Dibuja mentalmente (o en papel) los puntos $(2,2), (-2,2), (-2,-2)$ y $(2,-2)$. 
 | **Cuadrante IV** | $(+, -)$ | Inferior Derecha |
 | **Ejes** | Al menos un 0 | Sobre la línea divisoria |
 
-> **Conclusión:** Dominar el plano cartesiano es como aprender a leer un mapa: una vez que sabes dónde estás, puedes trazar cualquier camino (función) con seguridad.
+> **Conclusión:** Dominar el plano cartesiano es como aprender a leer un mapa: una vez que sabes dónde estás, puedes trazar cualquier camino con seguridad. En la siguiente lección, usaremos este plano para visualizar **funciones lineales**, las rectas más útiles de las matemáticas.

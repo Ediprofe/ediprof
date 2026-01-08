@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 450" 
+style="max-width: 100%; height: auto; font-family: Inter, system-ui, sans-serif;">
+
+  <style>
+    .wave-path {
+      stroke-dasharray: 3000;
+      stroke-dashoffset: 3000;
+      animation: drawWave 2s ease-out forwards;
+    }
+    .marker-group { opacity: 0; animation: fadeIn 0.5s ease-out 2s forwards; }
+    .label-group { opacity: 0; animation: fadeIn 0.5s ease-out 2.3s forwards; }
+    .annotation-group { opacity: 0; animation: fadeIn 0.5s ease-out 2.5s forwards; }
+    @keyframes drawWave { to { stroke-dashoffset: 0; } }
+    @keyframes fadeIn { to { opacity: 1; } }
+  </style>
+
+  <rect width="650" height="450" fill="#f8fafc" rx="8"/>
+  <text x="325.0" y="25" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">Ejemplo 5: Punto Medio en el Origen</text>
+  <g class="grid">
+    <line x1="75.0" y1="75" x2="75.0" y2="375" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="116.7" y1="75" x2="116.7" y2="375" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="158.3" y1="75" x2="158.3" y2="375" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="200.0" y1="75" x2="200.0" y2="375" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="241.7" y1="75" x2="241.7" y2="375" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="283.3" y1="75" x2="283.3" y2="375" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="325.0" y1="75" x2="325.0" y2="375" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="366.7" y1="75" x2="366.7" y2="375" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="408.3" y1="75" x2="408.3" y2="375" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="450.0" y1="75" x2="450.0" y2="375" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="491.7" y1="75" x2="491.7" y2="375" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="533.3" y1="75" x2="533.3" y2="375" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="575.0" y1="75" x2="575.0" y2="375" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="75" y1="375.0" x2="575" y2="375.0" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="75" y1="325.0" x2="575" y2="325.0" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="75" y1="275.0" x2="575" y2="275.0" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="75" y1="175.0" x2="575" y2="175.0" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="75" y1="125.0" x2="575" y2="125.0" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="75" y1="75.0" x2="575" y2="75.0" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+  </g>
+  <g class="axes">
+    <line x1="75" y1="225.0" x2="575" y2="225.0" stroke="#374151" stroke-width="2"/>
+    <polygon points="575,225.0 567,221.0 567,229.0" fill="#374151"/>
+    <line x1="325.0" y1="75" x2="325.0" y2="375" stroke="#374151" stroke-width="2"/>
+    <polygon points="325.0,75 321.0,83 329.0,83" fill="#374151"/>
+    <text x="635" y="210.0" text-anchor="end" font-size="14" font-weight="bold" fill="#374151">x</text>
+    <text x="325.0" y="60.0" text-anchor="middle" font-size="14" font-weight="bold" fill="#374151">y</text>
+    <line x1="75.0" y1="221.0" x2="75.0" y2="229.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="75.0" y="245.0" text-anchor="middle" font-size="12" fill="#374151">-12</text>
+    <line x1="116.7" y1="221.0" x2="116.7" y2="229.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="116.7" y="245.0" text-anchor="middle" font-size="12" fill="#374151">-10</text>
+    <line x1="158.3" y1="221.0" x2="158.3" y2="229.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="158.3" y="245.0" text-anchor="middle" font-size="12" fill="#374151">-8</text>
+    <line x1="200.0" y1="221.0" x2="200.0" y2="229.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="200.0" y="245.0" text-anchor="middle" font-size="12" fill="#374151">-6</text>
+    <line x1="241.7" y1="221.0" x2="241.7" y2="229.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="241.7" y="245.0" text-anchor="middle" font-size="12" fill="#374151">-4</text>
+    <line x1="283.3" y1="221.0" x2="283.3" y2="229.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="283.3" y="245.0" text-anchor="middle" font-size="12" fill="#374151">-2</text>
+    <line x1="366.7" y1="221.0" x2="366.7" y2="229.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="366.7" y="245.0" text-anchor="middle" font-size="12" fill="#374151">2</text>
+    <line x1="408.3" y1="221.0" x2="408.3" y2="229.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="408.3" y="245.0" text-anchor="middle" font-size="12" fill="#374151">4</text>
+    <line x1="450.0" y1="221.0" x2="450.0" y2="229.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="450.0" y="245.0" text-anchor="middle" font-size="12" fill="#374151">6</text>
+    <line x1="491.7" y1="221.0" x2="491.7" y2="229.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="491.7" y="245.0" text-anchor="middle" font-size="12" fill="#374151">8</text>
+    <line x1="533.3" y1="221.0" x2="533.3" y2="229.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="533.3" y="245.0" text-anchor="middle" font-size="12" fill="#374151">10</text>
+    <line x1="575.0" y1="221.0" x2="575.0" y2="229.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="575.0" y="245.0" text-anchor="middle" font-size="12" fill="#374151">12</text>
+    <line x1="321.0" y1="375.0" x2="329.0" y2="375.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="313.0" y="379.0" text-anchor="end" font-size="12" fill="#374151">-6</text>
+    <line x1="321.0" y1="325.0" x2="329.0" y2="325.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="313.0" y="329.0" text-anchor="end" font-size="12" fill="#374151">-4</text>
+    <line x1="321.0" y1="275.0" x2="329.0" y2="275.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="313.0" y="279.0" text-anchor="end" font-size="12" fill="#374151">-2</text>
+    <line x1="321.0" y1="175.0" x2="329.0" y2="175.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="313.0" y="179.0" text-anchor="end" font-size="12" fill="#374151">2</text>
+    <line x1="321.0" y1="125.0" x2="329.0" y2="125.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="313.0" y="129.0" text-anchor="end" font-size="12" fill="#374151">4</text>
+    <line x1="321.0" y1="75.0" x2="329.0" y2="75.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="313.0" y="79.0" text-anchor="end" font-size="12" fill="#374151">6</text>
+  </g>
+  <g class="marker-group">
+    <circle cx="116.7" cy="100.0" r="6" fill="#ef4444" stroke="white" stroke-width="2"/>
+    <circle cx="533.3" cy="350.0" r="6" fill="#22c55e" stroke="white" stroke-width="2"/>
+    <circle cx="325.0" cy="225.0" r="6" fill="#f97316" stroke="white" stroke-width="2"/>
+  </g>
+  <g class="label-group">
+    <rect x="66.66666666666666" y="73.0" width="100" height="16" fill="white" fill-opacity="0.9" rx="3"/>
+    <text x="116.7" y="85.0" text-anchor="middle" font-size="11" font-weight="bold" fill="#ef4444">R(-10, 5)</text>
+    <rect x="483.33333333333326" y="363.0" width="100" height="16" fill="white" fill-opacity="0.9" rx="3"/>
+    <text x="533.3" y="375.0" text-anchor="middle" font-size="11" font-weight="bold" fill="#22c55e">S(10, -5)</text>
+    <rect x="290.0" y="217.0" width="100" height="16" fill="white" fill-opacity="0.9" rx="3"/>
+    <text x="340.0" y="229.0" text-anchor="start" font-size="11" font-weight="bold" fill="#f97316">Origen (0,0)</text>
+  </g>
+  <g class="annotation-group">
+    <line x1="116.7" y1="100.0" x2="325.0" y2="225.0" stroke="#9ca3af" stroke-width="2.5"/>
+    <polygon points="325.0,225.0 315.1,223.6 319.1,216.9" fill="#9ca3af"/>
+    <line x1="325.0" y1="225.0" x2="533.3" y2="350.0" stroke="#9ca3af" stroke-width="2.5"/>
+    <polygon points="533.3,350.0 523.4,348.6 527.4,341.9" fill="#9ca3af"/>
+  </g>
+</svg>

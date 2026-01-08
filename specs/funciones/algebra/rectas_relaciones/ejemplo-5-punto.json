@@ -1,0 +1,66 @@
+{
+    "type": "function",
+    "metadata": {
+        "id": "ejemplo-5-punto",
+        "title": "Perpendicular por un Punto",
+        "lesson": "02-algebra/09-funciones-lineales/05-rectas-paralelas-perpendiculares"
+    },
+    "canvas": {
+        "width": 600,
+        "height": 450,
+        "padding": 50,
+        "background": "#ffffff"
+    },
+    "axes": {
+        "x": {
+            "min": -5,
+            "max": 5,
+            "label": "x",
+            "step": 1,
+            "ticks": "numeric"
+        },
+        "y": {
+            "min": -1,
+            "max": 6,
+            "label": "y",
+            "step": 1,
+            "ticks": "numeric"
+        }
+    },
+    "functions": [
+        {
+            "expression": "2*x + 10",
+            "color": "#3b82f6",
+            "strokeWidth": 2,
+            "label": "m = 2"
+        },
+        {
+            "expression": "(-1/2)*x + 4",
+            "color": "#22c55e",
+            "strokeWidth": 4,
+            "label": "m = -1/2"
+        }
+    ],
+    "markers": [
+        {
+            "x": 0,
+            "y": 4,
+            "label": "P(0, 4)",
+            "color": "#ef4444",
+            "labelPosition": "right"
+        }
+    ],
+    "annotations": [
+        {
+            "type": "text",
+            "x": -2.4,
+            "y": 4.5,
+            "text": "90°",
+            "color": "#ef4444",
+            "fontWeight": "bold"
+        }
+    ],
+    "animations": {
+        "enabled": false
+    }
+}

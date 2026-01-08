@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" 
+style="max-width: 100%; height: auto; font-family: Inter, system-ui, sans-serif;">
+
+  <style>
+    .wave-path {
+      stroke-dasharray: 3000;
+      stroke-dashoffset: 0;
+      animation: none;
+    }
+    .marker-group { opacity: 1; animation: none; }
+    .label-group { opacity: 1; animation: none; }
+    .annotation-group { opacity: 1; animation: none; }
+    @keyframes drawWave { to { stroke-dashoffset: 0; } }
+    @keyframes fadeIn { to { opacity: 1; } }
+  </style>
+
+  <rect width="600" height="450" fill="#ffffff" rx="8"/>
+  <text x="300.0" y="25" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">Verificar Perpendicularidad</text>
+  <g class="grid">
+    <line x1="50.0" y1="50" x2="50.0" y2="400" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="79.4" y1="50" x2="79.4" y2="400" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="108.8" y1="50" x2="108.8" y2="400" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="138.2" y1="50" x2="138.2" y2="400" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="167.6" y1="50" x2="167.6" y2="400" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="197.1" y1="50" x2="197.1" y2="400" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="226.5" y1="50" x2="226.5" y2="400" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="255.9" y1="50" x2="255.9" y2="400" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="285.3" y1="50" x2="285.3" y2="400" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="314.7" y1="50" x2="314.7" y2="400" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="344.1" y1="50" x2="344.1" y2="400" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="373.5" y1="50" x2="373.5" y2="400" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="402.9" y1="50" x2="402.9" y2="400" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="432.4" y1="50" x2="432.4" y2="400" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="461.8" y1="50" x2="461.8" y2="400" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="491.2" y1="50" x2="491.2" y2="400" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="520.6" y1="50" x2="520.6" y2="400" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="550.0" y1="50" x2="550.0" y2="400" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="50" y1="400.0" x2="550" y2="400.0" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="50" y1="370.8" x2="550" y2="370.8" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="50" y1="341.7" x2="550" y2="341.7" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="50" y1="312.5" x2="550" y2="312.5" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="50" y1="283.3" x2="550" y2="283.3" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="50" y1="254.2" x2="550" y2="254.2" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="50" y1="195.8" x2="550" y2="195.8" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="50" y1="166.7" x2="550" y2="166.7" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="50" y1="137.5" x2="550" y2="137.5" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="50" y1="108.3" x2="550" y2="108.3" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="50" y1="79.2" x2="550" y2="79.2" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="50" y1="50.0" x2="550" y2="50.0" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+  </g>
+  <g class="axes">
+    <line x1="50" y1="225.0" x2="550" y2="225.0" stroke="#374151" stroke-width="2"/>
+    <polygon points="550,225.0 542,221.0 542,229.0" fill="#374151"/>
+    <line x1="314.7" y1="50" x2="314.7" y2="400" stroke="#374151" stroke-width="2"/>
+    <polygon points="314.7,50 310.7,58 318.7,58" fill="#374151"/>
+    <text x="550" y="215.0" text-anchor="end" font-size="14" font-weight="bold" fill="#374151">x</text>
+    <text x="304.7" y="50" text-anchor="end" font-size="14" font-weight="bold" fill="#374151">y</text>
+    <line x1="50.0" y1="221.0" x2="50.0" y2="229.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="50.0" y="245.0" text-anchor="middle" font-size="12" fill="#374151">-9</text>
+    <line x1="79.4" y1="221.0" x2="79.4" y2="229.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="79.4" y="245.0" text-anchor="middle" font-size="12" fill="#374151">-8</text>
+    <line x1="108.8" y1="221.0" x2="108.8" y2="229.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="108.8" y="245.0" text-anchor="middle" font-size="12" fill="#374151">-7</text>
+    <line x1="138.2" y1="221.0" x2="138.2" y2="229.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="138.2" y="245.0" text-anchor="middle" font-size="12" fill="#374151">-6</text>
+    <line x1="167.6" y1="221.0" x2="167.6" y2="229.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="167.6" y="245.0" text-anchor="middle" font-size="12" fill="#374151">-5</text>
+    <line x1="197.1" y1="221.0" x2="197.1" y2="229.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="197.1" y="245.0" text-anchor="middle" font-size="12" fill="#374151">-4</text>
+    <line x1="226.5" y1="221.0" x2="226.5" y2="229.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="226.5" y="245.0" text-anchor="middle" font-size="12" fill="#374151">-3</text>
+    <line x1="255.9" y1="221.0" x2="255.9" y2="229.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="255.9" y="245.0" text-anchor="middle" font-size="12" fill="#374151">-2</text>
+    <line x1="285.3" y1="221.0" x2="285.3" y2="229.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="285.3" y="245.0" text-anchor="middle" font-size="12" fill="#374151">-1</text>
+    <line x1="344.1" y1="221.0" x2="344.1" y2="229.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="344.1" y="245.0" text-anchor="middle" font-size="12" fill="#374151">1</text>
+    <line x1="373.5" y1="221.0" x2="373.5" y2="229.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="373.5" y="245.0" text-anchor="middle" font-size="12" fill="#374151">2</text>
+    <line x1="402.9" y1="221.0" x2="402.9" y2="229.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="402.9" y="245.0" text-anchor="middle" font-size="12" fill="#374151">3</text>
+    <line x1="432.4" y1="221.0" x2="432.4" y2="229.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="432.4" y="245.0" text-anchor="middle" font-size="12" fill="#374151">4</text>
+    <line x1="461.8" y1="221.0" x2="461.8" y2="229.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="461.8" y="245.0" text-anchor="middle" font-size="12" fill="#374151">5</text>
+    <line x1="491.2" y1="221.0" x2="491.2" y2="229.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="491.2" y="245.0" text-anchor="middle" font-size="12" fill="#374151">6</text>
+    <line x1="520.6" y1="221.0" x2="520.6" y2="229.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="520.6" y="245.0" text-anchor="middle" font-size="12" fill="#374151">7</text>
+    <line x1="550.0" y1="221.0" x2="550.0" y2="229.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="550.0" y="245.0" text-anchor="middle" font-size="12" fill="#374151">8</text>
+    <line x1="310.7" y1="400.0" x2="318.7" y2="400.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="302.7" y="404.0" text-anchor="end" font-size="12" fill="#374151">-6</text>
+    <line x1="310.7" y1="370.8" x2="318.7" y2="370.8" stroke="#374151" stroke-width="1.5"/>
+    <text x="302.7" y="374.8" text-anchor="end" font-size="12" fill="#374151">-5</text>
+    <line x1="310.7" y1="341.7" x2="318.7" y2="341.7" stroke="#374151" stroke-width="1.5"/>
+    <text x="302.7" y="345.7" text-anchor="end" font-size="12" fill="#374151">-4</text>
+    <line x1="310.7" y1="312.5" x2="318.7" y2="312.5" stroke="#374151" stroke-width="1.5"/>
+    <text x="302.7" y="316.5" text-anchor="end" font-size="12" fill="#374151">-3</text>
+    <line x1="310.7" y1="283.3" x2="318.7" y2="283.3" stroke="#374151" stroke-width="1.5"/>
+    <text x="302.7" y="287.3" text-anchor="end" font-size="12" fill="#374151">-2</text>
+    <line x1="310.7" y1="254.2" x2="318.7" y2="254.2" stroke="#374151" stroke-width="1.5"/>
+    <text x="302.7" y="258.2" text-anchor="end" font-size="12" fill="#374151">-1</text>
+    <line x1="310.7" y1="195.8" x2="318.7" y2="195.8" stroke="#374151" stroke-width="1.5"/>
+    <text x="302.7" y="199.8" text-anchor="end" font-size="12" fill="#374151">1</text>
+    <line x1="310.7" y1="166.7" x2="318.7" y2="166.7" stroke="#374151" stroke-width="1.5"/>
+    <text x="302.7" y="170.7" text-anchor="end" font-size="12" fill="#374151">2</text>
+    <line x1="310.7" y1="137.5" x2="318.7" y2="137.5" stroke="#374151" stroke-width="1.5"/>
+    <text x="302.7" y="141.5" text-anchor="end" font-size="12" fill="#374151">3</text>
+    <line x1="310.7" y1="108.3" x2="318.7" y2="108.3" stroke="#374151" stroke-width="1.5"/>
+    <text x="302.7" y="112.3" text-anchor="end" font-size="12" fill="#374151">4</text>
+    <line x1="310.7" y1="79.2" x2="318.7" y2="79.2" stroke="#374151" stroke-width="1.5"/>
+    <text x="302.7" y="83.2" text-anchor="end" font-size="12" fill="#374151">5</text>
+    <line x1="310.7" y1="50.0" x2="318.7" y2="50.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="302.7" y="54.0" text-anchor="end" font-size="12" fill="#374151">6</text>
+  </g>
+  <path id="func-0" class="wave-path" d="M 50.00 283.33 L 52.50 281.68 L 55.00 280.03 L 57.50 278.38 L 60.00 276.72 L 62.50 275.07 L 65.00 273.42 L 67.50 271.76 L 70.00 270.11 L 72.50 268.46 L 75.00 266.81 L 77.50 265.15 L 80.00 263.50 L 82.50 261.85 L 85.00 260.19 L 87.50 258.54 L 90.00 256.89 L 92.50 255.24 L 95.00 253.58 L 97.50 251.93 L 100.00 250.28 L 102.50 248.62 L 105.00 246.97 L 107.50 245.32 L 110.00 243.67 L 112.50 242.01 L 115.00 240.36 L 117.50 238.71 L 120.00 237.06 L 122.50 235.40 L 125.00 233.75 L 127.50 232.10 L 130.00 230.44 L 132.50 228.79 L 135.00 227.14 L 137.50 225.49 L 140.00 223.83 L 142.50 222.18 L 145.00 220.53 L 147.50 218.87 L 150.00 217.22 L 152.50 215.57 L 155.00 213.92 L 157.50 212.26 L 160.00 210.61 L 162.50 208.96 L 165.00 207.31 L 167.50 205.65 L 170.00 204.00 L 172.50 202.35 L 175.00 200.69 L 177.50 199.04 L 180.00 197.39 L 182.50 195.74 L 185.00 194.08 L 187.50 192.43 L 190.00 190.78 L 192.50 189.12 L 195.00 187.47 L 197.50 185.82 L 200.00 184.17 L 202.50 182.51 L 205.00 180.86 L 207.50 179.21 L 210.00 177.56 L 212.50 175.90 L 215.00 174.25 L 217.50 172.60 L 220.00 170.94 L 222.50 169.29 L 225.00 167.64 L 227.50 165.99 L 230.00 164.33 L 232.50 162.68 L 235.00 161.03 L 237.50 159.38 L 240.00 157.72 L 242.50 156.07 L 245.00 154.42 L 247.50 152.76 L 250.00 151.11 L 252.50 149.46 L 255.00 147.81 L 257.50 146.15 L 260.00 144.50 L 262.50 142.85 L 265.00 141.19 L 267.50 139.54 L 270.00 137.89 L 272.50 136.24 L 275.00 134.58 L 277.50 132.93 L 280.00 131.28 L 282.50 129.62 L 285.00 127.97 L 287.50 126.32 L 290.00 124.67 L 292.50 123.01 L 295.00 121.36 L 297.50 119.71 L 300.00 118.06 L 302.50 116.40 L 305.00 114.75 L 307.50 113.10 L 310.00 111.44 L 312.50 109.79 L 315.00 108.14 L 317.50 106.49 L 320.00 104.83 L 322.50 103.18 L 325.00 101.53 L 327.50 99.88 L 330.00 98.22 L 332.50 96.57 L 335.00 94.92 L 337.50 93.26 L 340.00 91.61 L 342.50 89.96 L 345.00 88.31 L 347.50 86.65 L 350.00 85.00 L 352.50 83.35 L 355.00 81.69 L 357.50 80.04 L 360.00 78.39 L 362.50 76.74 L 365.00 75.08 L 367.50 73.43 L 370.00 71.78 L 372.50 70.12 L 375.00 68.47 L 377.50 66.82 L 380.00 65.17 L 382.50 63.51 L 385.00 61.86 L 387.50 60.21 L 390.00 58.56 L 392.50 56.90 L 395.00 55.25 L 397.50 53.60 L 400.00 51.94 L 402.50 50.29" fill="none" stroke="#3b82f6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path id="func-1" class="wave-path" d="M 177.50 50.07 L 180.00 53.79 L 182.50 57.51 L 185.00 61.23 L 187.50 64.95 L 190.00 68.67 L 192.50 72.39 L 195.00 76.10 L 197.50 79.82 L 200.00 83.54 L 202.50 87.26 L 205.00 90.98 L 207.50 94.70 L 210.00 98.42 L 212.50 102.14 L 215.00 105.85 L 217.50 109.57 L 220.00 113.29 L 222.50 117.01 L 225.00 120.73 L 227.50 124.45 L 230.00 128.17 L 232.50 131.89 L 235.00 135.60 L 237.50 139.32 L 240.00 143.04 L 242.50 146.76 L 245.00 150.48 L 247.50 154.20 L 250.00 157.92 L 252.50 161.64 L 255.00 165.35 L 257.50 169.07 L 260.00 172.79 L 262.50 176.51 L 265.00 180.23 L 267.50 183.95 L 270.00 187.67 L 272.50 191.39 L 275.00 195.10 L 277.50 198.82 L 280.00 202.54 L 282.50 206.26 L 285.00 209.98 L 287.50 213.70 L 290.00 217.42 L 292.50 221.14 L 295.00 224.85 L 297.50 228.57 L 300.00 232.29 L 302.50 236.01 L 305.00 239.73 L 307.50 243.45 L 310.00 247.17 L 312.50 250.89 L 315.00 254.60 L 317.50 258.32 L 320.00 262.04 L 322.50 265.76 L 325.00 269.48 L 327.50 273.20 L 330.00 276.92 L 332.50 280.64 L 335.00 284.35 L 337.50 288.07 L 340.00 291.79 L 342.50 295.51 L 345.00 299.23 L 347.50 302.95 L 350.00 306.67 L 352.50 310.39 L 355.00 314.10 L 357.50 317.82 L 360.00 321.54 L 362.50 325.26 L 365.00 328.98 L 367.50 332.70 L 370.00 336.42 L 372.50 340.14 L 375.00 343.85 L 377.50 347.57 L 380.00 351.29 L 382.50 355.01 L 385.00 358.73 L 387.50 362.45 L 390.00 366.17 L 392.50 369.89 L 395.00 373.60 L 397.50 377.32 L 400.00 381.04 L 402.50 384.76 L 405.00 388.48 L 407.50 392.20 L 410.00 395.92 L 412.50 399.64" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <g class="annotation-group">
+    <rect x="360" y="60" width="180" height="54" rx="6" fill="white" fill-opacity="0.95" stroke="#e2e8f0" stroke-width="1"/>
+    <line x1="370" y1="75" x2="395" y2="75" stroke="#3b82f6" stroke-width="3" stroke-linecap="round"/>
+    <text x="402" y="79" font-size="10" fill="#1e293b">y = 2/3x + 4</text>
+    <line x1="370" y1="97" x2="395" y2="97" stroke="#22c55e" stroke-width="3" stroke-linecap="round"/>
+    <text x="402" y="101" font-size="10" fill="#1e293b">y = -3/2x - 1</text>
+  </g>
+  <g class="annotation-group">
+    <text x="314.7" y="195.8" text-anchor="middle" font-size="11" font-weight="bold" fill="#ef4444">90°</text>
+  </g>
+</svg>

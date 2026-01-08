@@ -1,0 +1,54 @@
+{
+    "type": "function",
+    "metadata": {
+        "id": "punto-eje-x",
+        "title": "Ubicando el Punto E(5, 0)",
+        "lesson": "02-algebra/09-funciones-lineales/02-plano-cartesiano"
+    },
+    "canvas": {
+        "width": 650,
+        "height": 450,
+        "padding": 75,
+        "background": "#f8fafc"
+    },
+    "axes": {
+        "x": {
+            "min": -2,
+            "max": 7,
+            "label": "x",
+            "step": 1,
+            "ticks": "numeric"
+        },
+        "y": {
+            "min": -4,
+            "max": 4,
+            "label": "y",
+            "step": 1,
+            "ticks": "numeric"
+        }
+    },
+    "markers": [
+        {
+            "x": 5,
+            "y": 0,
+            "label": "E(5, 0)",
+            "color": "#14b8a6",
+            "labelPosition": "top"
+        }
+    ],
+    "annotations": [
+        {
+            "type": "arrow",
+            "from_x": 0,
+            "from_y": 0,
+            "to_x": 5,
+            "to_y": 0,
+            "label": "5 der",
+            "color": "#64748b"
+        }
+    ],
+    "animations": {
+        "enabled": true,
+        "duration": 2
+    }
+}

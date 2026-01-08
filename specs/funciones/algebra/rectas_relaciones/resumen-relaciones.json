@@ -1,0 +1,53 @@
+{
+    "type": "function",
+    "metadata": {
+        "id": "resumen-relaciones",
+        "title": "Resumen: Paralelas y Perpendiculares",
+        "lesson": "02-algebra/09-funciones-lineales/05-rectas-paralelas-perpendiculares"
+    },
+    "canvas": {
+        "width": 800,
+        "height": 400,
+        "padding": 50,
+        "background": "#ffffff"
+    },
+    "axes": {
+        "x": {
+            "min": -5,
+            "max": 5,
+            "label": "x",
+            "step": 1,
+            "ticks": "numeric"
+        },
+        "y": {
+            "min": -5,
+            "max": 5,
+            "label": "y",
+            "step": 1,
+            "ticks": "numeric"
+        }
+    },
+    "functions": [
+        {
+            "expression": "0.5*x + 2",
+            "color": "#3b82f6",
+            "strokeWidth": 3,
+            "label": "L1"
+        },
+        {
+            "expression": "0.5*x - 1",
+            "color": "#22c55e",
+            "strokeWidth": 3,
+            "label": "L2 (Paralela a L1)"
+        },
+        {
+            "expression": "-2*x + 1",
+            "color": "#ef4444",
+            "strokeWidth": 3,
+            "label": "L3 (Perpendicular a L1 y L2)"
+        }
+    ],
+    "animations": {
+        "enabled": false
+    }
+}

@@ -1,0 +1,54 @@
+{
+    "type": "function",
+    "metadata": {
+        "id": "punto-eje-y",
+        "title": "Ubicando el Punto C(0, -3)",
+        "lesson": "02-algebra/09-funciones-lineales/02-plano-cartesiano"
+    },
+    "canvas": {
+        "width": 650,
+        "height": 450,
+        "padding": 75,
+        "background": "#f8fafc"
+    },
+    "axes": {
+        "x": {
+            "min": -4,
+            "max": 4,
+            "label": "x",
+            "step": 1,
+            "ticks": "numeric"
+        },
+        "y": {
+            "min": -6,
+            "max": 2,
+            "label": "y",
+            "step": 1,
+            "ticks": "numeric"
+        }
+    },
+    "markers": [
+        {
+            "x": 0,
+            "y": -3,
+            "label": "C(0, -3)",
+            "color": "#f97316",
+            "labelPosition": "right"
+        }
+    ],
+    "annotations": [
+        {
+            "type": "arrow",
+            "from_x": 0,
+            "from_y": 0,
+            "to_x": 0,
+            "to_y": -3,
+            "label": "3 bajar",
+            "color": "#ef4444"
+        }
+    ],
+    "animations": {
+        "enabled": true,
+        "duration": 2
+    }
+}

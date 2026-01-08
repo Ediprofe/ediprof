@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" 
+style="max-width: 100%; height: auto; font-family: Inter, system-ui, sans-serif;">
+
+  <style>
+    .wave-path {
+      stroke-dasharray: 3000;
+      stroke-dashoffset: 3000;
+      animation: drawWave 2s ease-out forwards;
+    }
+    .marker-group { opacity: 0; animation: fadeIn 0.5s ease-out 2s forwards; }
+    .label-group { opacity: 0; animation: fadeIn 0.5s ease-out 2.3s forwards; }
+    .annotation-group { opacity: 0; animation: fadeIn 0.5s ease-out 2.5s forwards; }
+    @keyframes drawWave { to { stroke-dashoffset: 0; } }
+    @keyframes fadeIn { to { opacity: 1; } }
+  </style>
+
+  <rect width="600" height="450" fill="#f8fafc" rx="8"/>
+  <text x="300.0" y="25" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">Función que pasa por el Origen</text>
+  <g class="grid">
+    <line x1="50.0" y1="50" x2="50.0" y2="400" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="175.0" y1="50" x2="175.0" y2="400" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="300.0" y1="50" x2="300.0" y2="400" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="425.0" y1="50" x2="425.0" y2="400" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="550.0" y1="50" x2="550.0" y2="400" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="50" y1="400.0" x2="550" y2="400.0" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="50" y1="356.2" x2="550" y2="356.2" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="50" y1="312.5" x2="550" y2="312.5" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="50" y1="268.8" x2="550" y2="268.8" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="50" y1="181.2" x2="550" y2="181.2" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="50" y1="137.5" x2="550" y2="137.5" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="50" y1="93.8" x2="550" y2="93.8" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="50" y1="50.0" x2="550" y2="50.0" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+  </g>
+  <g class="axes">
+    <line x1="50" y1="225.0" x2="550" y2="225.0" stroke="#374151" stroke-width="2"/>
+    <polygon points="550,225.0 542,221.0 542,229.0" fill="#374151"/>
+    <line x1="300.0" y1="50" x2="300.0" y2="400" stroke="#374151" stroke-width="2"/>
+    <polygon points="300.0,50 296.0,58 304.0,58" fill="#374151"/>
+    <text x="550" y="215.0" text-anchor="end" font-size="14" font-weight="bold" fill="#374151">x</text>
+    <text x="290.0" y="50" text-anchor="end" font-size="14" font-weight="bold" fill="#374151">y</text>
+    <line x1="50.0" y1="221.0" x2="50.0" y2="229.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="50.0" y="245.0" text-anchor="middle" font-size="12" fill="#374151">-2</text>
+    <line x1="175.0" y1="221.0" x2="175.0" y2="229.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="175.0" y="245.0" text-anchor="middle" font-size="12" fill="#374151">-1</text>
+    <line x1="425.0" y1="221.0" x2="425.0" y2="229.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="425.0" y="245.0" text-anchor="middle" font-size="12" fill="#374151">1</text>
+    <line x1="550.0" y1="221.0" x2="550.0" y2="229.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="550.0" y="245.0" text-anchor="middle" font-size="12" fill="#374151">2</text>
+    <line x1="296.0" y1="400.0" x2="304.0" y2="400.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="288.0" y="404.0" text-anchor="end" font-size="12" fill="#374151">-8</text>
+    <line x1="296.0" y1="356.2" x2="304.0" y2="356.2" stroke="#374151" stroke-width="1.5"/>
+    <text x="288.0" y="360.2" text-anchor="end" font-size="12" fill="#374151">-6</text>
+    <line x1="296.0" y1="312.5" x2="304.0" y2="312.5" stroke="#374151" stroke-width="1.5"/>
+    <text x="288.0" y="316.5" text-anchor="end" font-size="12" fill="#374151">-4</text>
+    <line x1="296.0" y1="268.8" x2="304.0" y2="268.8" stroke="#374151" stroke-width="1.5"/>
+    <text x="288.0" y="272.8" text-anchor="end" font-size="12" fill="#374151">-2</text>
+    <line x1="296.0" y1="181.2" x2="304.0" y2="181.2" stroke="#374151" stroke-width="1.5"/>
+    <text x="288.0" y="185.2" text-anchor="end" font-size="12" fill="#374151">2</text>
+    <line x1="296.0" y1="137.5" x2="304.0" y2="137.5" stroke="#374151" stroke-width="1.5"/>
+    <text x="288.0" y="141.5" text-anchor="end" font-size="12" fill="#374151">4</text>
+    <line x1="296.0" y1="93.8" x2="304.0" y2="93.8" stroke="#374151" stroke-width="1.5"/>
+    <text x="288.0" y="97.8" text-anchor="end" font-size="12" fill="#374151">6</text>
+    <line x1="296.0" y1="50.0" x2="304.0" y2="50.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="288.0" y="54.0" text-anchor="end" font-size="12" fill="#374151">8</text>
+  </g>
+  <path id="func-0" class="wave-path" d="M 50.00 400.00 L 52.50 398.25 L 55.00 396.50 L 57.50 394.75 L 60.00 393.00 L 62.50 391.25 L 65.00 389.50 L 67.50 387.75 L 70.00 386.00 L 72.50 384.25 L 75.00 382.50 L 77.50 380.75 L 80.00 379.00 L 82.50 377.25 L 85.00 375.50 L 87.50 373.75 L 90.00 372.00 L 92.50 370.25 L 95.00 368.50 L 97.50 366.75 L 100.00 365.00 L 102.50 363.25 L 105.00 361.50 L 107.50 359.75 L 110.00 358.00 L 112.50 356.25 L 115.00 354.50 L 117.50 352.75 L 120.00 351.00 L 122.50 349.25 L 125.00 347.50 L 127.50 345.75 L 130.00 344.00 L 132.50 342.25 L 135.00 340.50 L 137.50 338.75 L 140.00 337.00 L 142.50 335.25 L 145.00 333.50 L 147.50 331.75 L 150.00 330.00 L 152.50 328.25 L 155.00 326.50 L 157.50 324.75 L 160.00 323.00 L 162.50 321.25 L 165.00 319.50 L 167.50 317.75 L 170.00 316.00 L 172.50 314.25 L 175.00 312.50 L 177.50 310.75 L 180.00 309.00 L 182.50 307.25 L 185.00 305.50 L 187.50 303.75 L 190.00 302.00 L 192.50 300.25 L 195.00 298.50 L 197.50 296.75 L 200.00 295.00 L 202.50 293.25 L 205.00 291.50 L 207.50 289.75 L 210.00 288.00 L 212.50 286.25 L 215.00 284.50 L 217.50 282.75 L 220.00 281.00 L 222.50 279.25 L 225.00 277.50 L 227.50 275.75 L 230.00 274.00 L 232.50 272.25 L 235.00 270.50 L 237.50 268.75 L 240.00 267.00 L 242.50 265.25 L 245.00 263.50 L 247.50 261.75 L 250.00 260.00 L 252.50 258.25 L 255.00 256.50 L 257.50 254.75 L 260.00 253.00 L 262.50 251.25 L 265.00 249.50 L 267.50 247.75 L 270.00 246.00 L 272.50 244.25 L 275.00 242.50 L 277.50 240.75 L 280.00 239.00 L 282.50 237.25 L 285.00 235.50 L 287.50 233.75 L 290.00 232.00 L 292.50 230.25 L 295.00 228.50 L 297.50 226.75 L 300.00 225.00 L 302.50 223.25 L 305.00 221.50 L 307.50 219.75 L 310.00 218.00 L 312.50 216.25 L 315.00 214.50 L 317.50 212.75 L 320.00 211.00 L 322.50 209.25 L 325.00 207.50 L 327.50 205.75 L 330.00 204.00 L 332.50 202.25 L 335.00 200.50 L 337.50 198.75 L 340.00 197.00 L 342.50 195.25 L 345.00 193.50 L 347.50 191.75 L 350.00 190.00 L 352.50 188.25 L 355.00 186.50 L 357.50 184.75 L 360.00 183.00 L 362.50 181.25 L 365.00 179.50 L 367.50 177.75 L 370.00 176.00 L 372.50 174.25 L 375.00 172.50 L 377.50 170.75 L 380.00 169.00 L 382.50 167.25 L 385.00 165.50 L 387.50 163.75 L 390.00 162.00 L 392.50 160.25 L 395.00 158.50 L 397.50 156.75 L 400.00 155.00 L 402.50 153.25 L 405.00 151.50 L 407.50 149.75 L 410.00 148.00 L 412.50 146.25 L 415.00 144.50 L 417.50 142.75 L 420.00 141.00 L 422.50 139.25 L 425.00 137.50 L 427.50 135.75 L 430.00 134.00 L 432.50 132.25 L 435.00 130.50 L 437.50 128.75 L 440.00 127.00 L 442.50 125.25 L 445.00 123.50 L 447.50 121.75 L 450.00 120.00 L 452.50 118.25 L 455.00 116.50 L 457.50 114.75 L 460.00 113.00 L 462.50 111.25 L 465.00 109.50 L 467.50 107.75 L 470.00 106.00 L 472.50 104.25 L 475.00 102.50 L 477.50 100.75 L 480.00 99.00 L 482.50 97.25 L 485.00 95.50 L 487.50 93.75 L 490.00 92.00 L 492.50 90.25 L 495.00 88.50 L 497.50 86.75 L 500.00 85.00 L 502.50 83.25 L 505.00 81.50 L 507.50 79.75 L 510.00 78.00 L 512.50 76.25 L 515.00 74.50 L 517.50 72.75 L 520.00 71.00 L 522.50 69.25 L 525.00 67.50 L 527.50 65.75 L 530.00 64.00 L 532.50 62.25 L 535.00 60.50 L 537.50 58.75 L 540.00 57.00 L 542.50 55.25 L 545.00 53.50 L 547.50 51.75 L 550.00 50.00" fill="none" stroke="#3b82f6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <g class="marker-group">
+    <circle cx="300.0" cy="225.0" r="6" fill="#ef4444" stroke="white" stroke-width="2"/>
+  </g>
+  <g class="label-group">
+    <rect x="250.0" y="198.0" width="100" height="16" fill="white" fill-opacity="0.9" rx="3"/>
+    <text x="300.0" y="210.0" text-anchor="middle" font-size="11" font-weight="bold" fill="#ef4444">Origen (0, 0)</text>
+  </g>
+  <g class="annotation-group">
+    <text x="425.0" y="312.5" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">b = 0</text>
+    <text x="425.0" y="326.5" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">y = 4x</text>
+  </g>
+</svg>

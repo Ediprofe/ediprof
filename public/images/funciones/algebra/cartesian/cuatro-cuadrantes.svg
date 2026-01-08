@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 450" 
+style="max-width: 100%; height: auto; font-family: Inter, system-ui, sans-serif;">
+
+  <style>
+    .wave-path {
+      stroke-dasharray: 3000;
+      stroke-dashoffset: 3000;
+      animation: drawWave 2s ease-out forwards;
+    }
+    .marker-group { opacity: 0; animation: fadeIn 0.5s ease-out 2s forwards; }
+    .label-group { opacity: 0; animation: fadeIn 0.5s ease-out 2.3s forwards; }
+    .annotation-group { opacity: 0; animation: fadeIn 0.5s ease-out 2.5s forwards; }
+    @keyframes drawWave { to { stroke-dashoffset: 0; } }
+    @keyframes fadeIn { to { opacity: 1; } }
+  </style>
+
+  <rect width="650" height="450" fill="#f8fafc" rx="8"/>
+  <text x="325.0" y="25" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">Los Cuatro Cuadrantes</text>
+  <g class="grid">
+    <line x1="75.0" y1="75" x2="75.0" y2="375" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="158.3" y1="75" x2="158.3" y2="375" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="241.7" y1="75" x2="241.7" y2="375" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="325.0" y1="75" x2="325.0" y2="375" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="408.3" y1="75" x2="408.3" y2="375" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="491.7" y1="75" x2="491.7" y2="375" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="575.0" y1="75" x2="575.0" y2="375" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="75" y1="375.0" x2="575" y2="375.0" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="75" y1="325.0" x2="575" y2="325.0" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="75" y1="275.0" x2="575" y2="275.0" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="75" y1="175.0" x2="575" y2="175.0" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="75" y1="125.0" x2="575" y2="125.0" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+    <line x1="75" y1="75.0" x2="575" y2="75.0" stroke="#e2e8f0" stroke-dasharray="4,4"/>
+  </g>
+  <g class="axes">
+    <line x1="75" y1="225.0" x2="575" y2="225.0" stroke="#374151" stroke-width="2"/>
+    <polygon points="575,225.0 567,221.0 567,229.0" fill="#374151"/>
+    <line x1="325.0" y1="75" x2="325.0" y2="375" stroke="#374151" stroke-width="2"/>
+    <polygon points="325.0,75 321.0,83 329.0,83" fill="#374151"/>
+    <text x="635" y="210.0" text-anchor="end" font-size="14" font-weight="bold" fill="#374151">Abscisas</text>
+    <text x="325.0" y="60.0" text-anchor="middle" font-size="14" font-weight="bold" fill="#374151">Ordenadas</text>
+    <line x1="75.0" y1="221.0" x2="75.0" y2="229.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="75.0" y="245.0" text-anchor="middle" font-size="12" fill="#374151">-6</text>
+    <line x1="158.3" y1="221.0" x2="158.3" y2="229.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="158.3" y="245.0" text-anchor="middle" font-size="12" fill="#374151">-4</text>
+    <line x1="241.7" y1="221.0" x2="241.7" y2="229.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="241.7" y="245.0" text-anchor="middle" font-size="12" fill="#374151">-2</text>
+    <line x1="408.3" y1="221.0" x2="408.3" y2="229.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="408.3" y="245.0" text-anchor="middle" font-size="12" fill="#374151">2</text>
+    <line x1="491.7" y1="221.0" x2="491.7" y2="229.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="491.7" y="245.0" text-anchor="middle" font-size="12" fill="#374151">4</text>
+    <line x1="575.0" y1="221.0" x2="575.0" y2="229.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="575.0" y="245.0" text-anchor="middle" font-size="12" fill="#374151">6</text>
+    <line x1="321.0" y1="375.0" x2="329.0" y2="375.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="313.0" y="379.0" text-anchor="end" font-size="12" fill="#374151">-6</text>
+    <line x1="321.0" y1="325.0" x2="329.0" y2="325.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="313.0" y="329.0" text-anchor="end" font-size="12" fill="#374151">-4</text>
+    <line x1="321.0" y1="275.0" x2="329.0" y2="275.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="313.0" y="279.0" text-anchor="end" font-size="12" fill="#374151">-2</text>
+    <line x1="321.0" y1="175.0" x2="329.0" y2="175.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="313.0" y="179.0" text-anchor="end" font-size="12" fill="#374151">2</text>
+    <line x1="321.0" y1="125.0" x2="329.0" y2="125.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="313.0" y="129.0" text-anchor="end" font-size="12" fill="#374151">4</text>
+    <line x1="321.0" y1="75.0" x2="329.0" y2="75.0" stroke="#374151" stroke-width="1.5"/>
+    <text x="313.0" y="79.0" text-anchor="end" font-size="12" fill="#374151">6</text>
+  </g>
+  <g class="annotation-group">
+    <text x="450.0" y="150.0" text-anchor="middle" font-size="16" font-weight="bold" fill="#3b82f6">Cuadrante I</text>
+    <text x="450.0" y="164.0" text-anchor="middle" font-size="16" font-weight="bold" fill="#3b82f6">(+, +)</text>
+    <text x="200.0" y="150.0" text-anchor="middle" font-size="16" font-weight="bold" fill="#8b5cf6">Cuadrante II</text>
+    <text x="200.0" y="164.0" text-anchor="middle" font-size="16" font-weight="bold" fill="#8b5cf6">(-, +)</text>
+    <text x="200.0" y="300.0" text-anchor="middle" font-size="16" font-weight="bold" fill="#ef4444">Cuadrante III</text>
+    <text x="200.0" y="314.0" text-anchor="middle" font-size="16" font-weight="bold" fill="#ef4444">(-, -)</text>
+    <text x="450.0" y="300.0" text-anchor="middle" font-size="16" font-weight="bold" fill="#f97316">Cuadrante IV</text>
+    <text x="450.0" y="314.0" text-anchor="middle" font-size="16" font-weight="bold" fill="#f97316">(+, -)</text>
+  </g>
+</svg>

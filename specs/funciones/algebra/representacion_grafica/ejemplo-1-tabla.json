@@ -1,0 +1,70 @@
+{
+    "type": "function",
+    "metadata": {
+        "id": "ejemplo-1-tabla",
+        "title": "Graficar y = 2x - 1 (Método Tabla)",
+        "lesson": "02-algebra/09-funciones-lineales/04-representacion-grafica"
+    },
+    "canvas": {
+        "width": 600,
+        "height": 450,
+        "padding": 50,
+        "background": "#ffffff"
+    },
+    "axes": {
+        "x": {
+            "min": -3,
+            "max": 4,
+            "label": "x",
+            "step": 1,
+            "ticks": "numeric"
+        },
+        "y": {
+            "min": -5,
+            "max": 5,
+            "label": "y",
+            "step": 1,
+            "ticks": "numeric"
+        }
+    },
+    "functions": [
+        {
+            "expression": "2*x - 1",
+            "color": "#3b82f6",
+            "strokeWidth": 3
+        }
+    ],
+    "markers": [
+        {
+            "x": -1,
+            "y": -3,
+            "label": "(-1, -3)",
+            "color": "#ef4444",
+            "labelPosition": "left"
+        },
+        {
+            "x": 0,
+            "y": -1,
+            "label": "(0, -1)",
+            "color": "#ef4444",
+            "labelPosition": "left"
+        },
+        {
+            "x": 1,
+            "y": 1,
+            "label": "(1, 1)",
+            "color": "#ef4444",
+            "labelPosition": "right"
+        },
+        {
+            "x": 2,
+            "y": 3,
+            "label": "(2, 3)",
+            "color": "#ef4444",
+            "labelPosition": "right"
+        }
+    ],
+    "animations": {
+        "enabled": false
+    }
+}

@@ -23,6 +23,10 @@ $$
 d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}
 $$
 
+<div style="width: 100%; margin-top: 1.5rem; margin-bottom: 2rem;">
+  <img src="/images/funciones/algebra/distancia/concepto-distancia.svg" alt="Concepto de Distancia entre dos puntos" style="width: 100%; height: auto; border-radius: 8px; border: 1px solid #e2e8f0;">
+</div>
+
 ---
 
 ## 📍 Punto Medio
@@ -32,6 +36,10 @@ El punto medio es simplemente el **promedio** de las posiciones. Sumamos las coo
 $$
 M = \left( \frac{x_1 + x_2}{2}, \frac{y_1 + y_2}{2} \right)
 $$
+
+<div style="width: 100%; margin-top: 1.5rem; margin-bottom: 2rem;">
+  <img src="/images/funciones/algebra/distancia/concepto-punto-medio.svg" alt="Concepto de Punto Medio" style="width: 100%; height: auto; border-radius: 8px; border: 1px solid #e2e8f0;">
+</div>
 
 ---
 
@@ -58,6 +66,10 @@ $$
 \boxed{5}
 $$
 
+<div style="width: 100%; margin-top: 1.5rem; margin-bottom: 2rem;">
+  <img src="/images/funciones/algebra/distancia/ejemplo-1-distancia.svg" alt="Ejemplo 1: Distancia Estándar" style="width: 100%; height: auto; border-radius: 8px; border: 1px solid #e2e8f0;">
+</div>
+
 ---
 
 ### Ejemplo 2: Punto Medio
@@ -73,6 +85,10 @@ Promediamos las $y$: $(10 + 4)/2 = 7$.
 $$
 \boxed{M(5, 7)}
 $$
+
+<div style="width: 100%; margin-top: 1.5rem; margin-bottom: 2rem;">
+  <img src="/images/funciones/algebra/distancia/ejemplo-2-punto-medio.svg" alt="Ejemplo 2: Punto Medio" style="width: 100%; height: auto; border-radius: 8px; border: 1px solid #e2e8f0;">
+</div>
 
 ---
 
@@ -93,6 +109,10 @@ $$
 \boxed{5}
 $$
 
+<div style="width: 100%; margin-top: 1.5rem; margin-bottom: 2rem;">
+  <img src="/images/funciones/algebra/distancia/ejemplo-3-negativos.svg" alt="Ejemplo 3: Distancia con Negativos" style="width: 100%; height: auto; border-radius: 8px; border: 1px solid #e2e8f0;">
+</div>
+
 ---
 
 ### Ejemplo 4: Distancia en Línea Recta
@@ -111,6 +131,10 @@ $$
 \boxed{10}
 $$
 
+<div style="width: 100%; margin-top: 1.5rem; margin-bottom: 2rem;">
+  <img src="/images/funciones/algebra/distancia/ejemplo-4-recta.svg" alt="Ejemplo 4: Distancia Vertical" style="width: 100%; height: auto; border-radius: 8px; border: 1px solid #e2e8f0;">
+</div>
+
 ---
 
 ### Ejemplo 5: Punto Medio en el Origen
@@ -126,6 +150,10 @@ Promedio de $y$: $(5 - 5)/2 = 0$.
 $$
 \boxed{M(0, 0)}
 $$
+
+<div style="width: 100%; margin-top: 1.5rem; margin-bottom: 2rem;">
+  <img src="/images/funciones/algebra/distancia/ejemplo-5-origen.svg" alt="Ejemplo 5: Punto Medio en el Origen" style="width: 100%; height: auto; border-radius: 8px; border: 1px solid #e2e8f0;">
+</div>
 
 ---
 

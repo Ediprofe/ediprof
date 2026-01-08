@@ -1,4 +1,4 @@
-# **Representación Gráfica de Funciones**
+# Representación Gráfica de Funciones
 
 Una gráfica es la "foto" de una función. Mientras que la ecuación nos da la lógica, la gráfica nos permite ver el comportamiento de un vistazo: si algo crece rápido, si se mantiene estable o si cae. Aprender a graficar es aprender a visualizar datos.
 
@@ -13,114 +13,134 @@ Una gráfica es la "foto" de una función. Mientras que la ecuación nos da la l
 
 ---
 
-## 📖 Método 1: La Tabla de Valores
+## Método 1: La Tabla de Valores
 
 Es el método más seguro. Consiste en elegir valores para $x$, calcular su $y$ y unir los puntos resultantes.
 
-### Ejemplo 1: Graficar $y = 2x - 1$
+### Ejemplo 1: Graficar y = 2x - 1
 
 **Paso 1: Crear la tabla**
+
 Elegimos valores sencillos para $x$:
 
-$$
-\begin{array}{|c|c|c|}
-\hline
-x & y = 2x - 1 & \text{Punto} (x, y) \\
-\hline
--1 & 2(-1) - 1 = -3 & (-1, -3) \\
-0 & 2(0) - 1 = -1 & (0, -1) \\
-1 & 2(1) - 1 = 1 & (1, 1) \\
-2 & 2(2) - 1 = 3 & (2, 3) \\
-\hline
-\end{array}
-$$
+| x | Cálculo | Punto (x, y) |
+|:---:|:---|:---:|
+| -1 | 2(-1) - 1 = -3 | (-1, -3) |
+| 0 | 2(0) - 1 = -1 | (0, -1) |
+| 1 | 2(1) - 1 = 1 | (1, 1) |
+| 2 | 2(2) - 1 = 3 | (2, 3) |
 
 **Paso 2: Ubicar y unir**
+
 Ubicamos esos cuatro puntos en el plano y trazamos la línea recta que los une todos.
 
+<div style="width: 100%; margin-top: 1.5rem; margin-bottom: 2rem;">
+  <img src="/images/funciones/algebra/representacion_grafica/ejemplo-1-tabla.svg" alt="Gráfica de y = 2x - 1" style="width: 100%; height: auto; border-radius: 8px; border: 1px solid #e2e8f0;">
+</div>
+
 ---
 
-### Ejemplo 2: Graficar $y = -x + 4$
+### Ejemplo 2: Graficar y = -x + 4
 
 **Paso 1: Crear la tabla**
-$$
-\begin{array}{|c|c|c|}
-\hline
-x & y = -x + 4 & \text{Punto} (x, y) \\
-\hline
-0 & -(0) + 4 = 4 & (0, 4) \\
-1 & -(1) + 4 = 3 & (1, 3) \\
-2 & -(2) + 4 = 2 & (2, 2) \\
-3 & -(3) + 4 = 1 & (3, 1) \\
-\hline
-\end{array}
-$$
+
+| x | Cálculo | Punto (x, y) |
+|:---:|:---|:---:|
+| 0 | -(0) + 4 = 4 | (0, 4) |
+| 1 | -(1) + 4 = 3 | (1, 3) |
+| 2 | -(2) + 4 = 2 | (2, 2) |
+| 3 | -(3) + 4 = 1 | (3, 1) |
 
 **Paso 2: Ubicar y unir**
+
 Al unir los puntos, notarás que la recta baja conforme avanzas a la derecha porque la pendiente es negativa.
+
+<div style="width: 100%; margin-top: 1.5rem; margin-bottom: 2rem;">
+  <img src="/images/funciones/algebra/representacion_grafica/ejemplo-2-tabla.svg" alt="Gráfica de y = -x + 4" style="width: 100%; height: auto; border-radius: 8px; border: 1px solid #e2e8f0;">
+</div>
 
 ---
 
-## 📖 Método 2: Interceptos
+## Método 2: Interceptos
 
 Buscamos los dos puntos donde la recta cruza los ejes. Es el método más rápido.
 
 - **Corte con Y:** Hacemos $x = 0$.
 - **Corte con X:** Hacemos $y = 0$.
 
-### Ejemplo 3: Graficar $y = 3x - 6$
+### Ejemplo 3: Graficar y = 3x - 6
 
-**Corte con Y ($x=0$):**
+**Corte con Y (x=0):**
+
 $$
 y = 3(0) - 6 = -6 \implies (0, -6)
 $$
 
-**Corte con X ($y=0$):**
+**Corte con X (y=0):**
+
 $$
 0 = 3x - 6 \implies 3x = 6 \implies x = 2 \implies (2, 0)
 $$
 
 Solo marcamos $(0, -6)$ y $(2, 0)$ y trazamos la recta.
 
+<div style="width: 100%; margin-top: 1.5rem; margin-bottom: 2rem;">
+  <img src="/images/funciones/algebra/representacion_grafica/ejemplo-3-interceptos.svg" alt="Gráfica de y = 3x - 6" style="width: 100%; height: auto; border-radius: 8px; border: 1px solid #e2e8f0;">
+</div>
+
 ---
 
-### Ejemplo 4: Graficar $y = 2x + 4$
+### Ejemplo 4: Graficar y = 2x + 4
 
-**Corte con Y ($x=0$):**
+**Corte con Y (x=0):**
+
 $$
 y = 2(0) + 4 = 4 \implies (0, 4)
 $$
 
-**Corte con X ($y=0$):**
+**Corte con X (y=0):**
+
 $$
 0 = 2x + 4 \implies 2x = -4 \implies x = -2 \implies (-2, 0)
 $$
 
 Marcamos el 4 en el eje vertical y el -2 en el eje horizontal, luego unimos.
 
+<div style="width: 100%; margin-top: 1.5rem; margin-bottom: 2rem;">
+  <img src="/images/funciones/algebra/representacion_grafica/ejemplo-4-interceptos.svg" alt="Gráfica de y = 2x + 4" style="width: 100%; height: auto; border-radius: 8px; border: 1px solid #e2e8f0;">
+</div>
+
 ---
 
-## 📖 Método 3: Pendiente e Intercepto
+## Método 3: Pendiente e Intercepto
 
 Es el método más "profesional".
 1. Marcas $b$ en el eje vertical.
 2. Desde ahí, caminas según la pendiente $m$ (subida/avance).
 
-### Ejemplo 5: Graficar $y = \frac{2}{3}x + 1$
+### Ejemplo 5: Graficar y = (2/3)x + 1
 
 - **Paso 1:** Marcas el punto $(0, 1)$ porque $b = 1$.
 - **Paso 2:** La pendiente es $2/3$. Significa: **sube 2, avanza 3**.
 - **Paso 3:** Desde $(0, 1)$, sube 2 y avanza 3 a la derecha. Llegas al punto $(3, 3)$.
 - **Paso 4:** Une los dos puntos.
 
+<div style="width: 100%; margin-top: 1.5rem; margin-bottom: 2rem;">
+  <img src="/images/funciones/algebra/representacion_grafica/ejemplo-5-pendiente.svg" alt="Gráfica de y = (2/3)x + 1" style="width: 100%; height: auto; border-radius: 8px; border: 1px solid #e2e8f0;">
+</div>
+
 ---
 
-### Ejemplo 6: Graficar $y = -2x + 5$
+### Ejemplo 6: Graficar y = -2x + 5
 
 - **Paso 1:** Marcas el punto $(0, 5)$ porque $b = 5$.
 - **Paso 2:** La pendiente es $-2$. Significa: **baja 2, avanza 1**.
 - **Paso 3:** Desde el 5 en el eje vertical, bajas 2 unidades y avanzas 1 a la derecha. Llegas al punto $(1, 3)$.
 - **Paso 4:** Une los puntos para ver la recta descendente.
+
+<div style="width: 100%; margin-top: 1.5rem; margin-bottom: 2rem;">
+  <img src="/images/funciones/algebra/representacion_grafica/ejemplo-6-pendiente.svg" alt="Gráfica de y = -2x + 5" style="width: 100%; height: auto; border-radius: 8px; border: 1px solid #e2e8f0;">
+</div>
 
 ---
 
