@@ -476,7 +476,25 @@
       "size": "70KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/wnld-sistema-de-ecuaciones.webp",
       "status": "uploaded"
+    },
+    {
+      "id": "3k9m",
+      "name": "progresion-aritmetica.webp",
+      "materia": "matematicas",
+      "date": "2026-01-09",
+      "size": "70KB",
+      "url": "https://cdn.ediprofe.com/img/matematicas/3k9m-progresion-aritmetica.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "uf7p",
+      "name": "progresiones-geometricas.webp",
+      "materia": "matematicas",
+      "date": "2026-01-09",
+      "size": "88KB",
+      "url": "https://cdn.ediprofe.com/img/matematicas/uf7p-progresiones-geometricas.webp",
+      "status": "uploaded"
     }
   ],
-  "lastUpdated": "2026-01-09T00:10:36.671Z"
+  "lastUpdated": "2026-01-09T16:54:43.554Z"
 }

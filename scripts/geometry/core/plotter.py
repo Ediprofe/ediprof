@@ -193,7 +193,11 @@ class MathPlotter:
         # Configuración de la caja
         item_height = 20
         padding = 15
-        box_width = 160
+        
+        # Calcular ancho dinámicamente basado en el texto más largo
+        max_label_len = max([len(item['label']) for item in self.legend_items])
+        box_width = max(160, max_label_len * 7 + 70) 
+        
         box_height = padding * 2 + len(self.legend_items) * item_height
         
         # Posición por defecto (top-right)
