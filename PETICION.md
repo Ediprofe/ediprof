@@ -1,7 +1,6 @@
 # 📋 PETICIÓN AL AGENTE
 
 > **Este documento es tu punto de entrada.** Lee las instrucciones, las reglas críticas, y luego la petición del usuario al final.
-
 ---
 
 ## 🚀 INSTRUCCIONES RÁPIDAS
@@ -163,12 +162,22 @@ Situaciones que requieren confirmación:
 
 ---
 
+
+
 # 📝 PETICIÓN ESPECÍFICA.
 
+http://localhost:4321/matematicas/algebra/funciones-exponenciales-logaritmicas/funciones-logaritmicas
 
 
+Elabora estas 5 ilustraciones relaciondas a cada ejemplo:
+- Ejemplo 1: Evaluando la función
+- Ejemplo 2: ¿Qué números funcionan?
+- Ejemplo 3: Graficando Puntos
+- Ejemplo 4: Transformación Inversa
+- Ejemplo 5: Comparación de Crecimiento
 
 
+También te pido que la ilustración donde se muestra la asintota vertical, hagas esa linea punteada de rojo no tan gruesa porque actualmente está dando la sensación de que la gráfica toca la asíntota vertical.
 
 
 <!-- 
