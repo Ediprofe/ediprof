@@ -28,7 +28,10 @@ class MathPlotter:
                  show_grid: bool = True,
                  show_axes: bool = True,
                  grid_step: float = 1,
+                 grid_step_x: Optional[float] = None,
+                 grid_step_y: Optional[float] = None,
                  custom_x_ticks: List[float] = None,
+                 custom_y_ticks: List[float] = None,
                  x_label: str = 'x',
                  y_label: str = 'y'):
         
@@ -46,15 +49,21 @@ class MathPlotter:
             self.builder.text(title, Point(width/2, 30), 
                             font_size=16, font_weight='bold', fill=COLORS['text'])
             
+        # Determine steps
+        step_x = grid_step_x if grid_step_x is not None else grid_step
+        step_y = grid_step_y if grid_step_y is not None else grid_step
+
         # 3. Grid y Ejes (Configurables)
         if show_grid:
-            self.coord.draw_grid(self.builder, step=grid_step, custom_x_ticks=custom_x_ticks)
+            self.coord.draw_grid(self.builder, step_x=step_x, step_y=step_y, 
+                               custom_x_ticks=custom_x_ticks, custom_y_ticks=custom_y_ticks)
         
         if show_axes:
             self.coord.draw_axes(self.builder, show_arrows=True, x_label=x_label, y_label=y_label)
             # Los ticks numéricos solo si es un gráfico matemático estándar
             if show_grid: 
-                self.coord.draw_ticks(self.builder, step=grid_step, custom_x_ticks=custom_x_ticks)
+                self.coord.draw_ticks(self.builder, step_x=step_x, step_y=step_y, 
+                                    custom_x_ticks=custom_x_ticks, custom_y_ticks=custom_y_ticks)
 
     def plot(self, 
              func: Callable[[float], float], 

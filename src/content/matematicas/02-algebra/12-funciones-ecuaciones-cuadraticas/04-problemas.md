@@ -25,6 +25,8 @@ La vida no siempre es lineal. A veces, para optimizar el espacio de tu sala, cal
 ### Ejemplo 1: El Rectángulo Misterioso
 El largo de una cancha es 4 metros más que su ancho. Su área total es de 96 m². ¿Cuánto mide de ancho?
 
+![Problema del Rectángulo](/images/matematicas/algebra/funciones-ecuaciones-cuadraticas/problemas_ex1_rectangulo.svg)
+
 **1. Definir variables:**
 - Ancho: $x$
 - Largo: $x + 4$
@@ -78,6 +80,8 @@ $$
 \boxed{\text{Alos 3 segundos, alcanza 45 metros}}
 $$
 
+![Trayectoria del Cohete](/images/matematicas/algebra/funciones-ecuaciones-cuadraticas/problemas_ex2_cohete.svg)
+
 ---
 
 ### Ejemplo 3: Números Consecutivos
@@ -112,6 +116,8 @@ $$
 
 ### Ejemplo 4: El Marco de la Foto
 Una foto mide $10 \times 15$ cm. Se le pone un marco de ancho constante $x$. Si el área total (foto + marco) es 266 cm², ¿cuánto mide el ancho del marco?
+
+![Esquema del Marco](/images/matematicas/algebra/funciones-ecuaciones-cuadraticas/problemas_ex4_marco.svg)
 
 **1. Dimensiones totales:**
 - Nuevo largo: $15 + 2x$ (se suma $x$ a cada lado)
@@ -175,6 +181,8 @@ El tiempo negativo no existe en este contexto.
 $$
 \boxed{\text{Toca el suelo a los 4 segundos}}
 $$
+
+![Gráfica Caída Libre](/images/matematicas/algebra/funciones-ecuaciones-cuadraticas/problemas_ex5_caida.svg)
 
 ---
 

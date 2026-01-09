@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400">
+  <defs></defs>
+  <rect x="0.00" y="0.00" width="500.00" height="400.00" fill="white" stroke="none" stroke-width="0" rx="0"  />
+  <text x="250.00" y="30.00" font-family="Inter, sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">El Rectángulo</text>
+  <rect x="107.50" y="106.67" width="285.00" height="186.67" fill="#3b82f6" stroke="#3b82f6" stroke-width="3" rx="0" fill-opacity="0.1" />
+  <text x="250.00" y="313.33" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Largo = x + 4</text>
+  <text x="67.50" y="200.00" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Ancho = x</text>
+  <text x="250.00" y="200.00" font-family="Inter, sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Área = 96 m²</text>
+</svg>

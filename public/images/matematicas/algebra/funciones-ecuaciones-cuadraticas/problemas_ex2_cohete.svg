@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <defs>
+        <marker id="arrow-64748b-10" markerWidth="10" markerHeight="10" 
+                refX="9.0" refY="5.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 10,5.0 0,10" fill="#64748b"/>
+        </marker>
+
+        <marker id="arrow-64748b-10" markerWidth="10" markerHeight="10" 
+                refX="9.0" refY="5.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 10,5.0 0,10" fill="#64748b"/>
+        </marker></defs>
+  <rect x="0.00" y="0.00" width="600.00" height="400.00" fill="white" stroke="none" stroke-width="0" rx="0"  />
+  <text x="300.00" y="30.00" font-family="Inter, sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Trayectoria del Cohete</text>
+  <line x1="156.00" y1="340.00" x2="156.00" y2="60.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="220.00" y1="340.00" x2="220.00" y2="60.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="284.00" y1="340.00" x2="284.00" y2="60.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="348.00" y1="340.00" x2="348.00" y2="60.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="412.00" y1="340.00" x2="412.00" y2="60.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="476.00" y1="340.00" x2="476.00" y2="60.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="540.00" y1="340.00" x2="540.00" y2="60.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="60.00" y1="340.00" x2="540.00" y2="340.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="60.00" y1="289.09" x2="540.00" y2="289.09" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="60.00" y1="263.64" x2="540.00" y2="263.64" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="60.00" y1="238.18" x2="540.00" y2="238.18" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="60.00" y1="212.73" x2="540.00" y2="212.73" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="60.00" y1="187.27" x2="540.00" y2="187.27" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="60.00" y1="161.82" x2="540.00" y2="161.82" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="60.00" y1="136.36" x2="540.00" y2="136.36" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="60.00" y1="110.91" x2="540.00" y2="110.91" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="60.00" y1="85.45" x2="540.00" y2="85.45" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="60.00" y1="60.00" x2="540.00" y2="60.00" stroke="#e2e8f0" stroke-width="0.5"  />
+  <line x1="60.00" y1="314.55" x2="540.00" y2="314.55" stroke="#64748b" stroke-width="2"  marker-end="url(#arrow-64748b-10)"/>
+  <line x1="92.00" y1="340.00" x2="92.00" y2="60.00" stroke="#64748b" stroke-width="2"  marker-end="url(#arrow-64748b-10)"/>
+  <text x="535.00" y="334.55" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#64748b" text-anchor="middle" dominant-baseline="middle">Tiempo (s)</text>
+  <text x="72.00" y="70.00" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#64748b" text-anchor="middle" dominant-baseline="middle">Altura (m)</text>
+  <line x1="156.00" y1="309.55" x2="156.00" y2="319.55" stroke="#64748b" stroke-width="1"  />
+  <text x="156.00" y="332.55" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">1</text>
+  <line x1="220.00" y1="309.55" x2="220.00" y2="319.55" stroke="#64748b" stroke-width="1"  />
+  <text x="220.00" y="332.55" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">2</text>
+  <line x1="284.00" y1="309.55" x2="284.00" y2="319.55" stroke="#64748b" stroke-width="1"  />
+  <text x="284.00" y="332.55" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">3</text>
+  <line x1="348.00" y1="309.55" x2="348.00" y2="319.55" stroke="#64748b" stroke-width="1"  />
+  <text x="348.00" y="332.55" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">4</text>
+  <line x1="412.00" y1="309.55" x2="412.00" y2="319.55" stroke="#64748b" stroke-width="1"  />
+  <text x="412.00" y="332.55" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">5</text>
+  <line x1="476.00" y1="309.55" x2="476.00" y2="319.55" stroke="#64748b" stroke-width="1"  />
+  <text x="476.00" y="332.55" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">6</text>
+  <line x1="540.00" y1="309.55" x2="540.00" y2="319.55" stroke="#64748b" stroke-width="1"  />
+  <text x="540.00" y="332.55" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">7</text>
+  <line x1="87.00" y1="340.00" x2="97.00" y2="340.00" stroke="#64748b" stroke-width="1"  />
+  <text x="77.00" y="340.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="end" dominant-baseline="middle">-5</text>
+  <line x1="87.00" y1="289.09" x2="97.00" y2="289.09" stroke="#64748b" stroke-width="1"  />
+  <text x="77.00" y="289.09" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="end" dominant-baseline="middle">5</text>
+  <line x1="87.00" y1="263.64" x2="97.00" y2="263.64" stroke="#64748b" stroke-width="1"  />
+  <text x="77.00" y="263.64" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="end" dominant-baseline="middle">10</text>
+  <line x1="87.00" y1="238.18" x2="97.00" y2="238.18" stroke="#64748b" stroke-width="1"  />
+  <text x="77.00" y="238.18" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="end" dominant-baseline="middle">15</text>
+  <line x1="87.00" y1="212.73" x2="97.00" y2="212.73" stroke="#64748b" stroke-width="1"  />
+  <text x="77.00" y="212.73" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="end" dominant-baseline="middle">20</text>
+  <line x1="87.00" y1="187.27" x2="97.00" y2="187.27" stroke="#64748b" stroke-width="1"  />
+  <text x="77.00" y="187.27" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="end" dominant-baseline="middle">25</text>
+  <line x1="87.00" y1="161.82" x2="97.00" y2="161.82" stroke="#64748b" stroke-width="1"  />
+  <text x="77.00" y="161.82" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="end" dominant-baseline="middle">30</text>
+  <line x1="87.00" y1="136.36" x2="97.00" y2="136.36" stroke="#64748b" stroke-width="1"  />
+  <text x="77.00" y="136.36" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="end" dominant-baseline="middle">35</text>
+  <line x1="87.00" y1="110.91" x2="97.00" y2="110.91" stroke="#64748b" stroke-width="1"  />
+  <text x="77.00" y="110.91" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="end" dominant-baseline="middle">40</text>
+  <line x1="87.00" y1="85.45" x2="97.00" y2="85.45" stroke="#64748b" stroke-width="1"  />
+  <text x="77.00" y="85.45" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="end" dominant-baseline="middle">45</text>
+  <line x1="87.00" y1="60.00" x2="97.00" y2="60.00" stroke="#64748b" stroke-width="1"  />
+  <text x="77.00" y="60.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#64748b" text-anchor="end" dominant-baseline="middle">50</text>
+  <polyline points="74.55,358.09 79.39,345.62 84.24,333.43 89.09,321.54 93.94,309.94 98.79,298.63 103.64,287.62 108.48,276.90 113.33,266.46 118.18,256.33 123.03,246.48 127.88,236.93 132.73,227.66 137.58,218.69 142.42,210.02 147.27,201.63 152.12,193.54 156.97,185.74 161.82,178.23 166.67,171.01 171.52,164.09 176.36,157.45 181.21,151.11 186.06,145.06 190.91,139.31 195.76,133.85 200.61,128.67 205.45,123.79 210.30,119.21 215.15,114.91 220.00,110.91 224.85,107.20 229.70,103.78 234.55,100.65 239.39,97.82 244.24,95.28 249.09,93.03 253.94,91.07 258.79,89.40 263.64,88.03 268.48,86.95 273.33,86.16 278.18,85.66 283.03,85.46 287.88,85.55 292.73,85.93 297.58,86.60 302.42,87.56 307.27,88.82 312.12,90.37 316.97,92.21 321.82,94.34 326.67,96.77 331.52,99.48 336.36,102.49 341.21,105.80 346.06,109.39 350.91,113.28 355.76,117.45 360.61,121.92 365.45,126.69 370.30,131.74 375.15,137.09 380.00,142.73 384.85,148.66 389.70,154.88 394.55,161.40 399.39,168.21 404.24,175.31 409.09,182.70 413.94,190.38 418.79,198.36 423.64,206.63 428.48,215.19 433.33,224.04 438.18,233.19 443.03,242.62 447.88,252.35 452.73,262.37 457.58,272.69 462.42,283.29 467.27,294.19 472.12,305.38 476.97,316.87 481.82,328.64 486.67,340.71 491.52,353.07" fill="none" stroke="#ef4444" stroke-width="3"  stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="284.00" cy="85.45" r="9" fill="white" />
+  <circle cx="284.00" cy="85.45" r="5" fill="#f97316" stroke="white" stroke-width="2"/>
+  <rect x="230.50" y="47.45" width="107.00" height="26.00" fill="white" stroke="#f97316" stroke-width="1.5" rx="6"  />
+  <text x="284.00" y="64.45" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#f97316" text-anchor="middle" dominant-baseline="middle">Máx (3s, 45m)</text>
+  <rect x="420.00" y="60.00" width="160.00" height="50.00" fill="white" stroke="#e2e8f0" stroke-width="0" rx="8"  />
+  <line x1="435.00" y1="80.00" x2="465.00" y2="80.00" stroke="#ef4444" stroke-width="3"  />
+  <text x="475.00" y="84.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#1e293b" text-anchor="start" dominant-baseline="middle">h(t) = -5t² + 30t</text>
+</svg>

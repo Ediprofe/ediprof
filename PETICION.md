@@ -165,18 +165,16 @@ Situaciones que requieren confirmación:
 
 # 📝 PETICIÓN ESPECÍFICA.
 
-http://localhost:4321/matematicas/algebra/sistemas-ecuaciones-lineales/metodo-cramer
+http://localhost:4321/matematicas/algebra/funciones-exponenciales-logaritmicas/funciones-exponenciales
 
-Realiza las ilustraciones para estas secciones de la leccion:
+- 🏗️ La Fórmula General (dos gráficas, que consideren los valores de b, y obviamente mostrando lo demás que se explica en este titulo).
+- Ejemplo 1: Bacterias en el Laboratorio
+- Ejemplo 2: El Auto Nuevo (Depreciación)
+- Ejemplo 3: ¿Crece o Decrece?
+- Ejemplo 4: El Papel Doblado
+- Ejemplo 5: Gráfica Básica
 
-
-Ejemplo 1: Cálculo Directo
-Ejemplo 2: Números Grandes
-Ejemplo 3: Sistema Imposible
-Ejemplo 4: Sistema Indeterminado
-
-
-4 ilustraciones, cada una al final de la resolución de cada ejemplo, para que sea un apoyo visual a la explicación.
+7 gráficas para que sea un apoyo visual a la explicación.
 
 
 SIGUE LAS REGLAS DE ESTE PROYECTO.

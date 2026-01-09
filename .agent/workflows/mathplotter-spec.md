@@ -129,6 +129,23 @@ p2.save("sesgada-derecha.svg")
 
 ---
 
+## Estándares de Texto Matemático
+
+> **REGLA:** En títulos, etiquetas de ejes y leyendas, **NUNCA** usar el símbolo `^` para exponentes. Usar caracteres Unicode.
+
+| Entrada | Salida Visual | Correcto (Python string) | Incorrecto |
+|---|---|---|---|
+| `x^2` | $x^2$ | `"x²"` | `"x^2"` |
+| `x^3` | $x^3$ | `"x³"` | `"x^3"` |
+| `2^x` | $2^x$ | `"2ˣ"` | `"2^x"` |
+| `e^x` | $e^x$ | `"eˣ"` | `"e^x"` |
+| `t^-1` | $t^{-1}$ | `"t⁻¹"` | `"t^-1"` |
+| `0.5^x` | $(0.5)^x$ | `"(0.5)ˣ"` | `"(0.5)^x"` |
+
+**Nota:** Si el exponente es complejo (ej: $x+1$), simplificar la etiqueta o usar texto descriptivo, pero evitar `2^(x+1)` visualmente.
+
+---
+
 ## API Completa
 
 ### Constructor
@@ -142,8 +159,11 @@ p2.save("sesgada-derecha.svg")
 | `title` | str | None | Título del gráfico |
 | `show_grid` | bool | True | Mostrar cuadrícula |
 | `show_axes` | bool | True | Mostrar ejes |
-| `grid_step` | float | 1 | Paso de la cuadrícula |
-| `custom_x_ticks` | list | None | Ticks personalizados |
+| `grid_step` | float | 1 | Paso general de cuadrícula |
+| `grid_step_x` | float | None | Paso específico eje X |
+| `grid_step_y` | float | None | Paso específico eje Y |
+| `custom_x_ticks` | list | None | Ticks personalizados X |
+| `custom_y_ticks` | list | None | Ticks personalizados Y |
 
 ### Métodos
 
@@ -172,6 +192,7 @@ p2.save("sesgada-derecha.svg")
 
 - [ ] ¿Creé el script en `scripts/plots/`?
 - [ ] ¿Usé colores de la paleta (`'primary'`, etc.)?
+- [ ] ¿Usé Unicode para exponentes (x², 2ˣ) en lugar de ^?
 - [ ] ¿Los rangos cubren todos los datos?
 - [ ] ¿Usé `custom_x_ticks` si los números se amontonan?
 - [ ] ¿Guardé en la carpeta correcta (`public/images/{materia}/`)?

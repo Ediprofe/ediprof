@@ -18,8 +18,16 @@
 Resolver $ax^2 + bx + c = 0$ es encontrar los valores de $x$ donde la parábola corta al eje horizontal (eje $X$).
 
 - **Dos cortes:** La ecuación tiene 2 soluciones reales.
+  
+  ![2 Cortes](/images/matematicas/algebra/funciones-ecuaciones-cuadraticas/resolucion_concept_2.svg)
+
 - **Un corte:** La ecuación tiene 1 solución real (el vértice toca el eje).
+
+  ![1 Corte](/images/matematicas/algebra/funciones-ecuaciones-cuadraticas/resolucion_concept_1.svg)
+
 - **Cero cortes:** La parábola flota sobre (o bajo) el eje. No hay solución real.
+
+  ![0 Cortes](/images/matematicas/algebra/funciones-ecuaciones-cuadraticas/resolucion_concept_0.svg)
 
 ---
 
@@ -46,6 +54,8 @@ $$
 \boxed{x = 2, \quad x = 3}
 $$
 
+![Solución gráfica Ejemplo 1](/images/matematicas/algebra/funciones-ecuaciones-cuadraticas/resolucion_ex1.svg)
+
 ### Ejemplo 2: Diferencia de Cuadrados
 Resolver $x^2 - 9 = 0$.
 
@@ -62,6 +72,8 @@ $$
 $$
 \boxed{x = 3, \quad x = -3}
 $$
+
+![Solución gráfica Ejemplo 2](/images/matematicas/algebra/funciones-ecuaciones-cuadraticas/resolucion_ex2.svg)
 
 ---
 
@@ -98,6 +110,8 @@ $$
 \boxed{x = 0.5, \quad x = -3}
 $$
 
+![Solución gráfica Ejemplo 3](/images/matematicas/algebra/funciones-ecuaciones-cuadraticas/resolucion_ex3.svg)
+
 ### Ejemplo 4: Raíces no exactas
 Resolver $x^2 - 4x + 1 = 0$.
 
@@ -117,6 +131,8 @@ $$
 $$
 \boxed{x \approx 3.73, \quad x \approx 0.27}
 $$
+
+![Solución gráfica Ejemplo 4](/images/matematicas/algebra/funciones-ecuaciones-cuadraticas/resolucion_ex4.svg)
 
 ---
 
@@ -143,6 +159,8 @@ $$
 \boxed{x = 3}
 $$
 
+![Solución gráfica Ejemplo 5](/images/matematicas/algebra/funciones-ecuaciones-cuadraticas/resolucion_ex5.svg)
+
 ### Ejemplo 6: Sin Solución
 Resolver $x^2 + x + 1 = 0$.
 
@@ -155,6 +173,8 @@ Como $\sqrt{-3}$ no es real:
 $$
 \boxed{\text{No tiene solución real}}
 $$
+
+![Solución gráfica Ejemplo 6 (Flotante)](/images/matematicas/algebra/funciones-ecuaciones-cuadraticas/resolucion_ex6.svg)
 
 ---
 
@@ -186,6 +206,8 @@ Resolver $x^2 + 6x + 5 = 0$.
 $$
 \boxed{x = -1, \quad x = -5}
 $$
+
+![Solución gráfica Ejemplo 7](/images/matematicas/algebra/funciones-ecuaciones-cuadraticas/resolucion_ex7.svg)
 
 ---
 

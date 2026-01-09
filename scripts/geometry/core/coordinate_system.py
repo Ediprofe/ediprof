@@ -97,60 +97,77 @@ class CoordinateSystem:
     
     def draw_grid(self, builder: SVGBuilder,
                   step: float = 1,
+                  step_x: float = None,
+                  step_y: float = None,
                   grid_color: str = COLORS['grid'],
                   grid_width: float = 0.5,
-                  custom_x_ticks: List[float] = None) -> SVGBuilder:
+                  custom_x_ticks: List[float] = None,
+                  custom_y_ticks: List[float] = None) -> SVGBuilder:
         """Dibuja la cuadrícula."""
+        sx = step_x if step_x is not None else step
+        sy = step_y if step_y is not None else step
         
         # Líneas verticales (X)
         if custom_x_ticks:
             x_values = custom_x_ticks
         else:
             x_values = []
-            x = math.ceil(self.x_min / step) * step
-            while x <= self.x_max:
+            x = math.ceil(self.x_min / sx) * sx
+            while x <= self.x_max + 0.0001: # Small epsilon
                 x_values.append(x)
-                x += step
+                x += sx
                 
         for x in x_values:
-            if x != 0:  # No dibujar sobre el eje Y
+            if abs(x) > 0.0001:  # No dibujar sobre el eje Y
                 p1 = self.to_svg(Point(x, self.y_min))
                 p2 = self.to_svg(Point(x, self.y_max))
                 builder.line(p1, p2, stroke=grid_color, stroke_width=grid_width)
         
         # Líneas horizontales (Y)
-        y = math.ceil(self.y_min / step) * step
-        while y <= self.y_max:
-            if y != 0:  # No dibujar sobre el eje X
+        if custom_y_ticks:
+            y_values = custom_y_ticks
+        else:
+            y_values = []
+            y = math.ceil(self.y_min / sy) * sy
+            while y <= self.y_max + 0.0001:
+                y_values.append(y)
+                y += sy
+                
+        for y in y_values:
+            if abs(y) > 0.0001:  # No dibujar sobre el eje X
                 p1 = self.to_svg(Point(self.x_min, y))
                 p2 = self.to_svg(Point(self.x_max, y))
                 builder.line(p1, p2, stroke=grid_color, stroke_width=grid_width)
-            y += step
         
         return builder
     
     def draw_ticks(self, builder: SVGBuilder,
                    step: float = 1,
+                   step_x: float = None,
+                   step_y: float = None,
                    tick_size: float = 5,
                    show_labels: bool = True,
                    tick_color: str = COLORS['axis'],
                    label_color: str = COLORS['text_light'],
-                   custom_x_ticks: List[float] = None) -> SVGBuilder:
+                   custom_x_ticks: List[float] = None,
+                   custom_y_ticks: List[float] = None) -> SVGBuilder:
         """Dibuja las marcas y etiquetas en los ejes."""
         origin = self.origin_svg
+        sx = step_x if step_x is not None else step
+        sy = step_y if step_y is not None else step
         
         # Marcas en eje X
         if custom_x_ticks:
             x_values = custom_x_ticks
         else:
             x_values = []
-            x = math.ceil(self.x_min / step) * step
-            while x <= self.x_max:
+            x = math.ceil(self.x_min / sx) * sx
+            while x <= self.x_max + 0.0001:
                 x_values.append(x)
-                x += step
+                x += sx
                 
         for x in x_values:
-            if x != 0 or custom_x_ticks:
+            if abs(x) > 0.0001 or custom_x_ticks:
                 p = self.to_svg(Point(x, 0))
                 builder.line(
                     Point(p.x, origin.y - tick_size),
@@ -163,9 +180,17 @@ class CoordinateSystem:
                                  font_size=11, fill=label_color)
         
         # Marcas en eje Y
-        y = math.ceil(self.y_min / step) * step
-        while y <= self.y_max:
-            if y != 0:
+        if custom_y_ticks:
+            y_values = custom_y_ticks
+        else:
+            y_values = []
+            y = math.ceil(self.y_min / sy) * sy
+            while y <= self.y_max + 0.0001:
+                y_values.append(y)
+                y += sy
+                
+        for y in y_values:
+            if abs(y) > 0.0001 or custom_y_ticks:
                 p = self.to_svg(Point(0, y))
                 builder.line(
                     Point(origin.x - tick_size, p.y),
@@ -176,7 +201,7 @@ class CoordinateSystem:
                     label = str(int(y)) if y == int(y) else f'{y:.1f}'
                     builder.text(label, Point(origin.x - 15, p.y),
                                  font_size=11, fill=label_color, anchor='end')
-            y += step
+        return builder
         
         # Etiqueta del origen
         if show_labels:

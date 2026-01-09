@@ -28,14 +28,24 @@ Si $a$ fuera cero, el término cuadrado desaparecería y volveríamos a tener un
 
 El coeficiente $a$ decide la forma y dirección:
 - **Si $a > 0$:** La parábola abre hacia **arriba** (carita feliz). Tiene un punto mínimo.
+  
+  ![Gráfica a > 0](/images/matematicas/algebra/funciones-ecuaciones-cuadraticas/intro_a_positive.svg)
+
 - **Si $a < 0$:** La parábola abre hacia **abajo** (carita triste). Tiene un punto máximo.
+
+  ![Gráfica a < 0](/images/matematicas/algebra/funciones-ecuaciones-cuadraticas/intro_a_negative.svg)
+
 - **Valor absoluto:** Mientras más grande sea $|a|$, más "flaca" y cerrada será la parábola.
+
+  ![Comparación de aperturas](/images/matematicas/algebra/funciones-ecuaciones-cuadraticas/width_comparison.svg)
 
 ---
 
 ## 📍 El Vértice: El Corazón de la Parábola
 
 El vértice $(h, k)$ es el punto de inflexión donde la curva cambia de dirección.
+
+![Concepto de Vértice](/images/matematicas/algebra/funciones-ecuaciones-cuadraticas/vertex_concept.svg)
 
 Para encontrar la coordenada $x$ del vértice ($x_v$):
 
@@ -83,6 +93,8 @@ $$
 \boxed{\text{Vértice en } (2, -1)}
 $$
 
+![Ejemplo 1: Gráfica](/images/matematicas/algebra/funciones-ecuaciones-cuadraticas/intro_ex1.svg)
+
 ---
 
 ### Ejemplo 2: Hacia Abajo
@@ -112,6 +124,8 @@ $$
 \boxed{\text{Vértice en } (2, 2)}
 $$
 
+![Ejemplo 2: Gráfica](/images/matematicas/algebra/funciones-ecuaciones-cuadraticas/intro_ex2.svg)
+
 ---
 
 ### Ejemplo 3: Parábola Incompleta
@@ -135,6 +149,8 @@ $$
 \boxed{\text{Vértice en } (-1, -3)}
 $$
 
+![Ejemplo 3: Gráfica](/images/matematicas/algebra/funciones-ecuaciones-cuadraticas/intro_ex3.svg)
+
 ---
 
 ### Ejemplo 4: Evaluación
@@ -155,6 +171,8 @@ $$
 \boxed{f(3) = 0}
 $$
 
+![Ejemplo 4: Evaluación](/images/matematicas/algebra/funciones-ecuaciones-cuadraticas/intro_ex4.svg)
+
 ---
 
 ### Ejemplo 5: Intercepto con el Eje Y
@@ -171,6 +189,8 @@ Es decir, es simplemente el valor de $c$.
 $$
 \boxed{\text{Punto } (0, 10)}
 $$
+
+![Ejemplo 5: Intercepto](/images/matematicas/algebra/funciones-ecuaciones-cuadraticas/intro_ex5.svg)
 
 ---
 

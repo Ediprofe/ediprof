@@ -40,6 +40,17 @@ Donde:
     - Si $0 < b < 1$: **Decrece** (se achica) rápidamente.
 - **$x$ (Tiempo):** El número de periodos que pasan.
 
+<div style="display: flex; gap: 40px; flex-direction: column; justify-content: center;">
+  <div style="width: 100%;">
+    <p style="text-align: center;"><strong>Crecimiento (b > 1)</strong></p>
+    <img src="/images/matematicas/algebra/funciones-exponenciales-logaritmicas/intro_growth.svg" alt="Crecimiento Exponencial" style="width: 100%; height: auto;" />
+  </div>
+  <div style="width: 100%;">
+    <p style="text-align: center;"><strong>Decaimiento (0 < b < 1)</strong></p>
+    <img src="/images/matematicas/algebra/funciones-exponenciales-logaritmicas/intro_decay.svg" alt="Decaimiento Exponencial" style="width: 100%; height: auto;" />
+  </div>
+</div>
+
 ---
 
 ## ⚙️ Ejemplos Resueltos
@@ -70,6 +81,8 @@ $$
 \boxed{8100 \text{ bacterias}}
 $$
 
+![Cultivo de Bacterias](/images/matematicas/algebra/funciones-exponenciales-logaritmicas/example1_bacteria.svg)
+
 ---
 
 ### Ejemplo 2: El Auto Nuevo (Depreciación)
@@ -98,6 +111,8 @@ $$
 \boxed{11.809.800 \text{ pesos}}
 $$
 
+![Depreciación del Auto](/images/matematicas/algebra/funciones-exponenciales-logaritmicas/example2_car.svg)
+
 ---
 
 ### Ejemplo 3: ¿Crece o Decrece?
@@ -112,6 +127,8 @@ De hecho, crece un 5% en cada paso (el 0.05 extra).
 $$
 \boxed{\text{Crece}}
 $$
+
+![Análisis de Crecimiento](/images/matematicas/algebra/funciones-exponenciales-logaritmicas/example3_growth_check.svg)
 
 ---
 
@@ -144,6 +161,8 @@ Calculamos puntos:
 - $x=-1 \implies y = 2^{-1} = 0.5$ (Punto $-1, 0.5$)
 
 La curva nunca toca el eje X (asíntota horizontal), pero sube rapidísimo a la derecha.
+
+![Gráfica Básica y=2^x](/images/matematicas/algebra/funciones-exponenciales-logaritmicas/example5_basic_graph.svg)
 
 ---
 
