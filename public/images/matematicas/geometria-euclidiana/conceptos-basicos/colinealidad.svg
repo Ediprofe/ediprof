@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 250">
+  <defs></defs>
+  <rect x="0.00" y="0.00" width="500.00" height="250.00" fill="white" stroke="none" stroke-width="0" rx="0"  />
+  <text x="125.00" y="40.00" font-family="Inter, sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Colineales</text>
+  <line x1="30.00" y1="100.00" x2="220.00" y2="100.00" stroke="#94a3b8" stroke-width="2" stroke-dasharray="5,5" />
+  <circle cx="50.00" cy="100.00" r="5" fill="#22c55e" />
+  <text x="50.00" y="85.00" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">A</text>
+  <circle cx="125.00" cy="100.00" r="5" fill="#22c55e" />
+  <text x="125.00" y="85.00" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">B</text>
+  <circle cx="200.00" cy="100.00" r="5" fill="#22c55e" />
+  <text x="200.00" y="85.00" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">C</text>
+  <text x="125.00" y="140.00" font-family="Inter, sans-serif" font-size="12" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">En la misma línea</text>
+  <line x1="250.00" y1="30.00" x2="250.00" y2="220.00" stroke="#e2e8f0" stroke-width="2"  />
+  <text x="375.00" y="40.00" font-family="Inter, sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">No Colineales</text>
+  <polygon points="300.00,120.00 375.00,80.00 450.00,110.00" fill="#fecaca" stroke="none" stroke-width="2"/>
+  <circle cx="300.00" cy="120.00" r="5" fill="#ef4444" />
+  <text x="300.00" y="105.00" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">D</text>
+  <circle cx="375.00" cy="80.00" r="5" fill="#ef4444" />
+  <text x="375.00" y="65.00" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">E</text>
+  <circle cx="450.00" cy="110.00" r="5" fill="#ef4444" />
+  <text x="450.00" y="95.00" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">F</text>
+  <text x="375.00" y="140.00" font-family="Inter, sans-serif" font-size="12" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">Forman figura (Triángulo)</text>
+</svg>

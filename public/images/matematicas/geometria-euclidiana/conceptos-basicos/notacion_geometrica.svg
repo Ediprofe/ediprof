@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 250">
+  <defs>
+        <marker id="arrow-3b82f6-10" markerWidth="10" markerHeight="10" 
+                refX="9.0" refY="5.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 10,5.0 0,10" fill="#3b82f6"/>
+        </marker>
+
+        <marker id="arrow-3b82f6-10" markerWidth="10" markerHeight="10" 
+                refX="9.0" refY="5.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 10,5.0 0,10" fill="#3b82f6"/>
+        </marker></defs>
+  <rect x="0.00" y="0.00" width="600.00" height="250.00" fill="white" stroke="none" stroke-width="0" rx="0"  />
+  <circle cx="150.00" cy="80.00" r="6" fill="#ef4444" />
+  <text x="170.00" y="80.00" font-family="Inter, sans-serif" font-size="20" font-weight="bold" fill="#1e293b" text-anchor="start" dominant-baseline="middle">X</text>
+  <text x="150.00" y="130.00" font-family="Inter, sans-serif" font-size="14" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">Notación de Punto</text>
+  <line x1="300.00" y1="40.00" x2="300.00" y2="210.00" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="5,5" />
+  <line x1="350.00" y1="80.00" x2="550.00" y2="80.00" stroke="#3b82f6" stroke-width="3"  marker-end="url(#arrow-3b82f6-10)"/>
+  <line x1="550.00" y1="80.00" x2="350.00" y2="80.00" stroke="#3b82f6" stroke-width="3"  marker-end="url(#arrow-3b82f6-10)"/>
+  <circle cx="400.00" cy="80.00" r="4" fill="white" stroke="#3b82f6" stroke-width="2"/>
+  <circle cx="500.00" cy="80.00" r="4" fill="white" stroke="#3b82f6" stroke-width="2"/>
+  <text x="400.00" y="60.00" font-family="Inter, sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">A</text>
+  <text x="500.00" y="60.00" font-family="Inter, sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">B</text>
+  <text x="450.00" y="150.00" font-family="Inter, sans-serif" font-size="30" font-weight="normal" fill="#22c55e" text-anchor="middle" dominant-baseline="middle">↔</text>
+  <text x="450.00" y="180.00" font-family="Inter, sans-serif" font-size="20" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">AB</text>
+  <text x="450.00" y="210.00" font-family="Inter, sans-serif" font-size="14" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">Notación de Recta</text>
+</svg>

@@ -21,9 +21,9 @@ Euclides hizo algo revolucionario: no solo midió, sino que **probó** por qué 
 
 ---
 
-## 🧱 Los Ladrillos del Universo (Conceptos Primitivos)
+## 🧱 Conceptos Fundamentales de Geometría
 
-En geometría, hay tres elementos que **no se pueden definir** con palabras más simples. Simplemente "son". Son los átomos de la geometría.
+En geometría, hay tres elementos que **no se pueden definir** con palabras más simples. Simplemente "son". Son las piezas básicas de la geometría.
 
 ### 1. El Punto (0 Dimensiones)
 Imagina una ubicación exacta en el mapa, pero sin tamaño. No tiene largo, ni ancho, ni alto.
@@ -43,6 +43,8 @@ Una superficie plana infinita. Tiene largo y ancho, pero no grosor.
 - **Nombre:** Letras griegas ($\alpha, \pi$).
 - **Idea:** La superficie de un lago en calma, extendiéndose por siempre.
 
+![conceptos-fundamentales-de-geometria](https://cdn.ediprofe.com/img/matematicas/moz8-conceptos-fundamentales-de-geometria.webp)
+
 ---
 
 ## 📏 Las Dimensiones
@@ -53,6 +55,8 @@ Podemos clasificar todo lo que vemos según sus dimensiones:
 - **1D:** Una Línea. Podemos medir "largo".
 - **2D:** Una Figura Plana (cuadrado, círculo). Podemos medir "área".
 - **3D:** Un Cuerpo (cubo, esfera). Podemos medir "volumen".
+
+![las-dimensiones](https://cdn.ediprofe.com/img/matematicas/7y1v-las-dimensiones.webp)
 
 ---
 
@@ -69,19 +73,23 @@ Clasifica los siguientes objetos según su concepto geométrico:
 2.  Borde $\to$ Longitud recta $\to$ **Recta** (o segmento).
 3.  Pantalla $\to$ Superficie plana $\to$ **Plano**.
 
+![punto-recta-y-plano](https://cdn.ediprofe.com/img/matematicas/2yg7-punto-recta-y-plano.webp)
+
 ---
 
 ### Ejemplo 2: Notación Geométrica
-¿Cómo se escribe correctamente "la recta que pasa por A y B" y "el punto X"?
+¿Cómo se escribe correctamente "la recta que pasa por A y B" y "el punto P"?
 
 **Razonamiento:**
-- Los puntos usan mayúsculas: $X$.
+- Los puntos usan mayúsculas: $P$.
 - Las rectas usan dos puntos con una flecha doble arriba: $\overleftrightarrow{AB}$.
 
 **Resultado:**
 $$
-\text{Punto: } X, \quad \text{Recta: } \overleftrightarrow{AB}
+\text{Punto: } P, \quad \text{Recta: } \overleftrightarrow{AB}
 $$
+
+![notacion-geometrica-puntos-y-rectas](https://cdn.ediprofe.com/img/matematicas/z02w-notacion-geometrica-puntos-y-rectas.webp)
 
 ---
 
@@ -208,6 +216,8 @@ Espacio (3D). Tiene volumen.
 ---
 
 ## 🔑 Resumen
+
+![introduccion-a-la-geometria](https://cdn.ediprofe.com/img/matematicas/wsx3-introduccion-a-la-geometria.webp)
 
 | Elemento | Dimensiones | Se mide... | Ejemplo Mental |
 |:--- |:--- |:--- |:--- |

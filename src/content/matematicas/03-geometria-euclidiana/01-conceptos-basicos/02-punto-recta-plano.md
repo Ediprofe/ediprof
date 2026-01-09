@@ -20,6 +20,8 @@ Es la idea de "ubicación" pura. No mide nada.
 - **Notación:** Letras mayúsculas ($A, B, C$).
 - **En la vida real:** Un pixel muerto en tu pantalla, una estrella en el cielo, la ubicación en Google Maps.
 
+![el-punto](https://cdn.ediprofe.com/img/matematicas/5ry1-el-punto.webp)
+
 ---
 
 ## 📏 La Recta
@@ -31,8 +33,12 @@ Es una colección infinita de puntos alineados. Es flaca (sin ancho) e infinita 
     - Con una letra minúscula: Recta $l$, Recta $m$.
 - **Propiedad Clave:** Por dos puntos pasa **exactamente una** recta.
 
+![la-recta](https://cdn.ediprofe.com/img/matematicas/fvs8-la-recta.webp)
+
 ### Puntos Colineales
 Son puntos que viven en la misma línea recta. Si $A, B$ y $C$ están en la misma línea, son colineales. Si $C$ se sale de la fila, no lo son.
+
+![puntos-colineales](https://cdn.ediprofe.com/img/matematicas/yoy7-puntos-colineales.webp)
 
 ---
 
@@ -43,10 +49,15 @@ Es una superficie plana que se extiende infinitamente en todas direcciones. Es c
 - **Notación:** Letras griegas ($\alpha, \beta, \pi$) o tres puntos ($ABC$).
 - **Propiedad Clave:** Por tres puntos no alineados pasa **exactamente un** plano. (Por eso los trípodes de cámara son estables; tres patas definen un plano perfecto).
 
+![el-plano](https://cdn.ediprofe.com/img/matematicas/b8sg-el-plano.webp)
+
+
 ### Puntos Coplanares
 Son puntos (o rectas) que viven en el mismo plano.
 - Las patas de tu mesa tocan el suelo (son coplanares).
 - Si levantas una pata, esa pata deja de ser coplanar con el suelo.
+
+![puntos-coplanares](https://cdn.ediprofe.com/img/matematicas/u2pp-puntos-coplanares.webp)
 
 ---
 
@@ -60,6 +71,8 @@ $$
 \overleftrightarrow{MN}
 $$
 
+![ejemplo-1-notacion-de-recta](https://cdn.ediprofe.com/img/matematicas/bs19-ejemplo-1-notacion-de-recta.webp)
+
 ### Ejemplo 2: Colinealidad
 Imagina las cuentas de un collar estirado. ¿Son colineales?
 
@@ -67,12 +80,16 @@ Imagina las cuentas de un collar estirado. ¿Son colineales?
 Si el hilo está tenso, todas las cuentas siguen una línea recta.
 **Respuesta:** Sí, son colineales.
 
+![ejemplo-2-colinealidad](https://cdn.ediprofe.com/img/matematicas/pudl-ejemplo-2-colinealidad.webp)
+
 ### Ejemplo 3: Definir un Plano
 ¿Por qué una silla de 4 patas cojea pero un banquillo de 3 patas no?
 
 **Razonamiento:**
 - 3 puntos definen un plano único. Las 3 patas siempre encontrarán un plano donde apoyarse.
 - 4 puntos **no siempre** son coplanares. Si una pata es corta, ese cuarto punto está fuera del plano de los otros tres.
+
+![ejemplo-3-definir-un-plano](https://cdn.ediprofe.com/img/matematicas/duwc-ejemplo-3-definir-un-plano.webp)
 
 ---
 

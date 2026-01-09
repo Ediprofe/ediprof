@@ -166,18 +166,11 @@ Situaciones que requieren confirmación:
 
 # 📝 PETICIÓN ESPECÍFICA.
 
-http://localhost:4321/matematicas/algebra/funciones-exponenciales-logaritmicas/funciones-logaritmicas
+http://localhost:4321/matematicas/geometria-euclidiana/conceptos-basicos/introduccion-geometria
 
+http://localhost:4321/matematicas/geometria-euclidiana/conceptos-basicos/punto-recta-plano
 
-Elabora estas 5 ilustraciones relaciondas a cada ejemplo:
-- Ejemplo 1: Evaluando la función
-- Ejemplo 2: ¿Qué números funcionan?
-- Ejemplo 3: Graficando Puntos
-- Ejemplo 4: Transformación Inversa
-- Ejemplo 5: Comparación de Crecimiento
-
-
-También te pido que la ilustración donde se muestra la asintota vertical, hagas esa linea punteada de rojo no tan gruesa porque actualmente está dando la sensación de que la gráfica toca la asíntota vertical.
+Las dos lecciones anteriores creo que explican muchas cosas en común. Quiero que analices y, SIN QUITAR LAS ILUSTRACIONES DE LA PRIMERA LECCIÓN, REDISEÑES ESO PARA QUE, QUEDE SOLO UNA LECCIÓN GRANDE, CON LOS EJEMPLOS O CONSIDERACIONES QUE TENGA LA SEGUNDA Y QUE SE AGREGUEN A LA PRIMERA. PUEDO CAMBIAR LAIMAGEN DE RESUMEN SI ES NECESARIO, Y AGREGAR LAS OTRAS IMÁGENES RELACIONADAS DE CONCEPTOS FALTANTES EN LA PRIMERA LECCIÓN Y QUE SEA AGREGADOS EN VIRTUD DE LA SEGUNDA LECCIÓN.
 
 
 <!-- 
