@@ -62,6 +62,8 @@ $$
 \boxed{x = 6, \quad y = 4}
 $$
 
+![Solución gráfica Ejemplo 1](/images/matematicas/algebra/sistemas-ecuaciones-lineales/igualacion_ex1.svg)
+
 ---
 
 ### Ejemplo 2: Despejando $y$
@@ -101,6 +103,8 @@ $$
 $$
 \boxed{x = 3, \quad y = 5}
 $$
+
+![Solución gráfica Ejemplo 2](/images/matematicas/algebra/sistemas-ecuaciones-lineales/igualacion_ex2.svg)
 
 ---
 
@@ -149,6 +153,8 @@ $$
 \boxed{x = 2, \quad y = 3}
 $$
 
+![Solución gráfica Ejemplo 3](/images/matematicas/algebra/sistemas-ecuaciones-lineales/igualacion_ex3.svg)
+
 ---
 
 ### Ejemplo 4: Fracciones en Ambos Lados
@@ -190,6 +196,8 @@ $$
 \boxed{x = 3, \quad y = \frac{8}{3}}
 $$
 
+![Solución gráfica Ejemplo 4](/images/matematicas/algebra/sistemas-ecuaciones-lineales/igualacion_ex4.svg)
+
 ---
 
 ### Ejemplo 5: Sistema Imposible
@@ -220,6 +228,8 @@ $$
 $$
 \boxed{\text{Sin Solución}}
 $$
+
+![Solución gráfica Ejemplo 5 (Paralelas)](/images/matematicas/algebra/sistemas-ecuaciones-lineales/igualacion_ex5.svg)
 
 ---
 

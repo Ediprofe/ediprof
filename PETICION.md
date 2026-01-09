@@ -165,11 +165,21 @@ Situaciones que requieren confirmación:
 
 # 📝 PETICIÓN ESPECÍFICA.
 
-http://localhost:4321/matematicas/algebra/ecuaciones-lineales/ecuaciones-valor-absoluto
+http://localhost:4321/matematicas/algebra/sistemas-ecuaciones-lineales/metodo-cramer
 
-📍 Concepto 2: Desplazando el Centro
+Realiza las ilustraciones para estas secciones de la leccion:
 
-Esta sección está casi entendible, desglósala más por favor.
+
+Ejemplo 1: Cálculo Directo
+Ejemplo 2: Números Grandes
+Ejemplo 3: Sistema Imposible
+Ejemplo 4: Sistema Indeterminado
+
+
+4 ilustraciones, cada una al final de la resolución de cada ejemplo, para que sea un apoyo visual a la explicación.
+
+
+SIGUE LAS REGLAS DE ESTE PROYECTO.
 
 
 

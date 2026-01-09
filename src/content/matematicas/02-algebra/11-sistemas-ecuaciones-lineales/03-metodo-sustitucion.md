@@ -68,6 +68,8 @@ $$
 \boxed{x = 4, \quad y = 3}
 $$
 
+![Solución gráfica Ejemplo 1](/images/matematicas/algebra/sistemas-ecuaciones-lineales/sustitucion_ex1.svg)
+
 ---
 
 ### Ejemplo 2: Despejando $x$
@@ -110,6 +112,8 @@ $$
 \boxed{x = \frac{14}{5}, \quad y = \frac{9}{5}}
 $$
 
+![Solución gráfica Ejemplo 2](/images/matematicas/algebra/sistemas-ecuaciones-lineales/sustitucion_ex2.svg)
+
 ---
 
 ### Ejemplo 3: Variable ya despejada
@@ -147,6 +151,8 @@ $$
 $$
 \boxed{x = 2, \quad y = 1}
 $$
+
+![Solución gráfica Ejemplo 3](/images/matematicas/algebra/sistemas-ecuaciones-lineales/sustitucion_ex3.svg)
 
 ---
 
@@ -190,6 +196,8 @@ $$
 \boxed{x = 7, \quad y = 1.5}
 $$
 
+![Solución gráfica Ejemplo 4](/images/matematicas/algebra/sistemas-ecuaciones-lineales/sustitucion_ex4.svg)
+
 ---
 
 ### Ejemplo 5: Sistema Incompatible
@@ -223,6 +231,8 @@ $$
 \boxed{\text{Sin Solución}}
 $$
 
+![Solución gráfica Ejemplo 5 (Paralelas)](/images/matematicas/algebra/sistemas-ecuaciones-lineales/sustitucion_ex5.svg)
+
 ---
 
 ### Ejemplo 6: Sistema Indeterminado
@@ -255,6 +265,8 @@ $$
 $$
 \boxed{\text{Infinitas soluciones}}
 $$
+
+![Solución gráfica Ejemplo 6 (Coincidentes)](/images/matematicas/algebra/sistemas-ecuaciones-lineales/sustitucion_ex6.svg)
 
 ---
 

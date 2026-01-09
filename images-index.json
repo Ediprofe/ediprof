@@ -467,7 +467,16 @@
       "size": "65KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/ylqt-la-ecuacion-como-una-balanza.webp",
       "status": "uploaded"
+    },
+    {
+      "id": "wnld",
+      "name": "sistema-de-ecuaciones.webp",
+      "materia": "matematicas",
+      "date": "2026-01-09",
+      "size": "70KB",
+      "url": "https://cdn.ediprofe.com/img/matematicas/wnld-sistema-de-ecuaciones.webp",
+      "status": "uploaded"
     }
   ],
-  "lastUpdated": "2026-01-08T17:02:32.807Z"
+  "lastUpdated": "2026-01-09T00:10:36.671Z"
 }

@@ -107,6 +107,8 @@ $$
 \boxed{x = 2, \quad y = 1}
 $$
 
+![Solución gráfica Ejemplo 1](/images/matematicas/algebra/sistemas-ecuaciones-lineales/cramer_ex1.svg)
+
 ---
 
 ### Ejemplo 2: Números Grandes
@@ -146,6 +148,8 @@ $$
 \boxed{x = 2, \quad y = 3}
 $$
 
+![Solución gráfica Ejemplo 2](/images/matematicas/algebra/sistemas-ecuaciones-lineales/cramer_ex2.svg)
+
 ---
 
 ### Ejemplo 3: Sistema Imposible ($\Delta_S = 0$)
@@ -177,6 +181,8 @@ $$
 \boxed{\text{Sin Solución}}
 $$
 
+![Solución gráfica Ejemplo 3 (Paralelas)](/images/matematicas/algebra/sistemas-ecuaciones-lineales/cramer_ex3.svg)
+
 ---
 
 ### Ejemplo 4: Sistema Indeterminado ($\Delta_S = \Delta_x = 0$)
@@ -204,6 +210,8 @@ Todo es cero:
 $$
 \boxed{\text{Infinitas soluciones}}
 $$
+
+![Solución gráfica Ejemplo 4 (Coincidentes)](/images/matematicas/algebra/sistemas-ecuaciones-lineales/cramer_ex4.svg)
 
 ---
 

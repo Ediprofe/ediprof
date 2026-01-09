@@ -2,6 +2,8 @@
 
 Imagina que estás en una tienda y sabes que 2 manzanas y 1 pera cuestan 5 pesos, pero 1 manzana y 3 peras cuestan 10 pesos. Con esa información, podrías averiguar el precio exacto de cada fruta. Eso es un sistema de ecuaciones: usar múltiples pistas para descubrir varios valores desconocidos al mismo tiempo.
 
+![sistema-de-ecuaciones](https://cdn.ediprofe.com/img/matematicas/wnld-sistema-de-ecuaciones.webp)
+
 ---
 
 ## 🎯 ¿Qué vas a aprender?
@@ -62,14 +64,20 @@ Cada ecuación lineal representa una **línea recta** en el plano cartesiano. La
 Dependiendo de cómo sean las rectas, tenemos tres casos:
 
 ### 1. Sistema Compatible Determinado (Una Solución)
+
+![Gráfica de Sistema Compatible Determinado](/images/matematicas/algebra/sistemas-ecuaciones-lineales/sistema_determinado.svg)
 Las rectas se **cruzan en un único punto**. Es el caso más común.
 - Significa que hay un único valor para $x$ y $y$.
 
 ### 2. Sistema Incompatible (Sin Solución)
+
+![Gráfica de Sistema Incompatible](/images/matematicas/algebra/sistemas-ecuaciones-lineales/sistema_incompatible.svg)
 Las rectas son **paralelas** y nunca se tocan.
 - No existe ningún par de números que cumpla ambas ecuaciones.
 
 ### 3. Sistema Compatible Indeterminado (Infinitas Soluciones)
+
+![Gráfica de Sistema Indeterminado](/images/matematicas/algebra/sistemas-ecuaciones-lineales/sistema_indeterminado.svg)
 Las rectas son **coincidentes** (una está encima de la otra).
 - Cualquier punto de la recta sirve como solución.
 
