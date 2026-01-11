@@ -1,0 +1,14 @@
+{
+    "metadata": {
+        "id": "ejemplo-3-giro",
+        "title": "Sentido de giro positivo"
+    },
+    "construction": {
+        "type": "angle_rotation",
+        "angle_deg": 45,
+        "direction": "ccw",
+        "show_initial_label": true,
+        "show_terminal_label": true,
+        "show_sign": true
+    }
+}

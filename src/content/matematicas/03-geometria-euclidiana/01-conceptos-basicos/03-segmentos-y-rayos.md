@@ -1,200 +1,332 @@
 # **Segmentos y Rayos**
 
-¿Alguna vez te has preguntado por qué un lápiz tiene fin pero la luz de una linterna parece no acabar nunca en el cielo nocturno? En geometría, ambos viven en una recta, pero tienen reglas muy diferentes. Uno es un **segmento** (limitado) y el otro es un **rayo** (imparable).
+¿Alguna vez te has preguntado por qué un lápiz tiene fin pero la luz de una linterna parece no acabar nunca en el cielo nocturno? En geometría, ambos viven en una recta, pero tienen reglas muy diferentes. Uno es un **rayo** (imparable) y el otro es un **segmento** (limitado).
 
 ---
 
 ## 🎯 ¿Qué vas a aprender?
 
-- Diferenciar entre una línea infinita, un segmento y un rayo.
-- Cómo medir distancias geométricamente.
-- Encontrar el punto medio exacto de un objeto.
-- Notación correcta: ¿Por qué $\overrightarrow{AB}$ no es lo mismo que $\overrightarrow{BA}$?
-
----
-
-## 📏 El Segmento de Recta
-
-Es la parte de una recta que tiene principio y tiene fin. Es lo que podemos medir en el mundo real.
-
-- **Definición:** Todos los puntos entre $A$ y $B$, incluyéndolos.
-- **Notación:** $\overline{AB}$.
-- **Longitud:** La medida numérica se escribe sin la barra ($AB = 5 \text{ cm}$).
-
-### El Punto Medio
-Es el punto exacto $M$ que divide al segmento en dos partes iguales.
-Si $M$ es punto medio de $\overline{AB}$, entonces:
-$$
-AM = MB
-$$
+- El concepto de **rayo** como una semirrecta con dirección.
+- El **segmento** como una porción medible de una recta.
+- Cómo encontrar el punto medio exacto de un objeto.
+- Notación científica correcta para no confundir direcciones.
 
 ---
 
 ## 🔦 El Rayo (o Semirrecta)
 
-Tiene un punto de inicio (origen) pero no tiene fin.
+Imaginalo como la luz de un puntero láser: sabes exactamente de dónde sale (el origen), pero sigue infinitamente en una sola dirección.
 
-- **Definición:** Empieza en un punto y sigue infinitamente en una dirección.
-- **Notación:** $\overrightarrow{AB}$.
-    - La primera letra ($A$) **siempre** es el origen.
-    - La segunda ($B$) solo indica la dirección.
-- **Ojo:** El rayo $\overrightarrow{AB}$ sale de $A$ hacia $B$. El rayo $\overrightarrow{BA}$ sale de $B$ hacia $A$. ¡Son opuestos!
+- **Definición:** Es la parte de una recta que comienza en un punto y se extiende para siempre en un sentido.
+- **Origen:** El punto donde comienza.
+- **Notación:** Se escribe con una flechita arriba.
+
+$$
+\overrightarrow{AB}
+$$
+
+**⚠️ Regla de Oro:** La primera letra ($$A$$) **siempre** debe ser el punto de origen. La segunda letra ($$B$$) solo nos dice hacia dónde va el rayo. Por eso, el rayo $$\overrightarrow{AB}$$ y el rayo $$\overrightarrow{BA}$$ son totalmente diferentes.
+
+![el-rayo-o-semirecta](https://cdn.ediprofe.com/img/matematicas/abrt-el-rayo-o-semirecta.webp)
+
+---
+
+## 📏 El Segmento de Recta
+
+A diferencia del rayo, el segmento es "tímido": tiene principio y tiene fin. Es la única parte de la recta que podemos atrapar y medir con una regla.
+
+- **Definición:** Es el conjunto de puntos que están entre dos extremos, incluyéndolos.
+- **Notación:** Se escribe con una barra horizontal.
+
+$$
+\overline{AB}
+$$
+
+- **Longitud:** Cuando hablamos de cuánto mide (un número), ya no ponemos la barra. Por ejemplo:
+
+$$
+AB = 5 \text{ cm}
+$$
+
+### El Punto Medio
+Es el punto exacto $$M$$ que se para justo a la mitad del segmento. Si $$M$$ es el punto medio, entonces las dos mitades miden exactamente lo mismo:
+
+$$
+AM = MB
+$$
+
+![el-segmento-de-recta](https://cdn.ediprofe.com/img/matematicas/7rot-el-segmento-de-recta.webp)
 
 ---
 
 ## ⚙️ Ejemplos Resueltos
 
-### Ejemplo 1: Cálculo con Punto Medio
-Un segmento $\overline{PQ}$ mide 20 cm. $M$ es el punto medio. ¿Cuánto mide $\overline{PM}$?
+### Ejemplo 1: Comparando Rayos
+Si tienes una recta con tres puntos alineados en orden $$A - B - C$$. ¿Es lo mismo el rayo $$\overrightarrow{AB}$$ que el rayo $$\overrightarrow{AC}$$?
 
 **Razonamiento:**
-El punto medio divide en dos mitades exactas.
+Ambos rayos empiezan en el mismo origen ($$A$$) y van en la misma dirección (hacia la derecha, pasando por $$B$$ y por $$C$$).
+
+**Resultado:**
 $$
-PM = \frac{PQ}{2} = \frac{20}{2} = 10 \text{ cm}
+\boxed{\text{Sí, son el mismo rayo}}
 $$
 
-### Ejemplo 2: Suma de Segmentos
-Puntos $A, B, C$ son colineales en orden. $AB = 5$, $BC = 3$. ¿Cuánto mide $\overline{AC}$?
+---
+
+### Ejemplo 2: Rayos Opuestos
+Dibujas un punto $$X$$ y, desde allí, lanzas un rayo hacia la izquierda ($$A$$) y otro hacia la derecha ($$B$$). ¿Qué forman juntos?
 
 **Razonamiento:**
-Como están alineados en orden, el segmento total es la suma de las partes.
+Dos rayos que comparten el mismo origen y van en direcciones exactamente contrarias forman una línea continua sin fin.
+
+**Resultado:**
+$$
+\boxed{\text{Forman una Recta}}
+$$
+
+---
+
+### Ejemplo 3: El Tesoro a la Mitad
+Un cable de fibra óptica mide 40 metros. Si ocurre un corte justo en el punto medio $$M$$. ¿A qué distancia del inicio está el corte?
+
+**Razonamiento:**
+El punto medio divide la longitud total entre dos partes iguales.
+
+$$
+\text{Distancia} = \frac{40}{2}
+$$
+
+**Resultado:**
+$$
+\boxed{20 \text{ metros}}
+$$
+
+---
+
+### Ejemplo 4: Sumando Distancias
+En una carretera recta, el pueblo $$A$$ está a 15 km del punto de control $$B$$, y el pueblo $$C$$ está a 25 km después de $$B$$. ¿Cuál es la distancia total de $$A$$ hasta $$C$$?
+
+**Razonamiento:**
+Como están alineados, sumamos los segmentos individuales.
+
 $$
 AC = AB + BC
 $$
+
 $$
-AC = 5 + 3 = 8
+AC = 15 + 25
 $$
 
-### Ejemplo 3: Identificación Visual
-Tienes una flecha dibujada en el papel. ¿Es un segmento o un rayo?
+**Resultado:**
+$$
+\boxed{40 \text{ km}}
+$$
+
+---
+
+### Ejemplo 5: Notación Correcta
+Si un rayo nace en el punto $$S$$ y pasa por los puntos $$T$$ y $$U$$. ¿Cuál es su nombre oficial?
 
 **Razonamiento:**
-- Si tiene punta en un lado y un punto en el otro, representa un **rayo**.
-- Si tiene dos puntos finales, es un **segmento**.
-- Como es un dibujo físico finito, técnicamente es un segmento de tinta, pero *representa* un concepto.
+El origen es $$S$$, por lo que debe ir de primero en la notación. Podemos usar cualquier otro punto por el que pase para indicar la dirección.
+
+**Resultado:**
+$$
+\boxed{\overrightarrow{ST} \text{ o } \overrightarrow{SU}}
+$$
 
 ---
 
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1
-Si $\overline{XY}$ mide 14 metros y $M$ corta a la mitad, ¿cuánto mide $\overline{XM}$?
+Si el segmento $$\overline{MN}$$ mide 100 cm y $$P$$ es su punto medio, ¿cuánto mide el segmento $$\overline{NP}$$?
 
 <details>
 <summary>Ver solución</summary>
 
-$14 / 2 = 7$ metros.
-**Resultado:** $\boxed{7 \text{ m}}$
+**Razonamiento:**
+Dividimos el total entre 2.
+
+$$
+\frac{100}{2} = 50
+$$
+
+**Resultado:**
+$$
+\boxed{50 \text{ cm}}
+$$
 
 </details>
 
 ---
 
 ### Ejercicio 2
-Escribe la notación de un rayo que empieza en $Z$ y pasa por $P$.
+Escribe la notación de una semirrecta que tiene su origen en el punto $$Q$$ y se dirige hacia el punto $$R$$.
 
 <details>
 <summary>Ver solución</summary>
 
-El origen va primero.
-**Resultado:** $\boxed{\overrightarrow{ZP}}$
+**Resultado:**
+$$
+\boxed{\overrightarrow{QR}}
+$$
 
 </details>
 
 ---
 
 ### Ejercicio 3
-¿Un segmento tiene longitud infinita?
+¿Cuál es la principal diferencia entre una Recta y un Segmento?
 
 <details>
 <summary>Ver solución</summary>
 
-Falso. Es finito.
+**Razonamiento:**
+La recta es infinita; el segmento tiene dos extremos y se puede medir.
+
+**Resultado:**
+$$
+\boxed{\text{El segmento es finito, la recta es infinita}}
+$$
 
 </details>
 
 ---
 
 ### Ejercicio 4
-Si $A, B, C$ son colineales y $AC=10$, $AB=4$. ¿Cuánto mide $BC$? (Asumiendo orden $A-B-C$).
+Si un rayo se llama $$\overrightarrow{PQ}$$. ¿Cuál es su punto de origen?
 
 <details>
 <summary>Ver solución</summary>
 
-$BC = 10 - 4 = 6$.
-**Resultado:** $\boxed{6}$
+**Razonamiento:**
+En la notación de rayos, la primera letra siempre indica el origen.
+
+**Resultado:**
+$$
+\boxed{\text{El punto } P}
+$$
 
 </details>
 
 ---
 
 ### Ejercicio 5
-¿Es lo mismo el segmento $\overline{AB}$ que el segmento $\overline{BA}$?
+Un segmento mide 12 metros. Si lo dividimos en el punto medio y luego dividimos una de esas mitaes otra vez a la mitad, ¿cuánto mide el trozo más pequeño?
 
 <details>
 <summary>Ver solución</summary>
 
-Sí, contiene los mismos puntos.
+**Razonamiento:**
+
+1. Primera división:
+$$
+\frac{12}{2} = 6
+$$
+
+2. Segunda división:
+$$
+\frac{6}{2} = 3
+$$
+
+**Resultado:**
+$$
+\boxed{3 \text{ metros}}
+$$
 
 </details>
 
 ---
 
 ### Ejercicio 6
-¿Es lo mismo el rayo $\overrightarrow{AB}$ que el rayo $\overrightarrow{BA}$?
+¿Es posible medir la longitud de un rayo con una regla común? Explica por qué.
 
 <details>
 <summary>Ver solución</summary>
 
-No. Tienen orígenes diferentes y direcciones opuestas.
+**Razonamiento:**
+No, porque el rayo nunca termina. No tiene un segundo extremo para poner el "final" de la regla.
+
+**Resultado:**
+$$
+\boxed{\text{No, porque es infinito}}
+$$
 
 </details>
 
 ---
 
 ### Ejercicio 7
-Un láser encendido es el mejor ejemplo de...
+Si los segmentos $$\overline{AB}$$ y $$\overline{BC}$$ están alineados y miden 7 y 9 respectivamente. ¿Cuánto mide el segmento total $$\overline{AC}$$?
 
 <details>
 <summary>Ver solución</summary>
 
-Rayo (Origen conocido, final desconocido o infinito).
+**Razonamiento:**
+$$
+7 + 9 = 16
+$$
+
+**Resultado:**
+$$
+\boxed{16}
+$$
 
 </details>
 
 ---
 
 ### Ejercicio 8
-¿Cuántos puntos medios tiene un segmento?
+¿Cuántos puntos finales tiene un rayo?
 
 <details>
 <summary>Ver solución</summary>
 
-Exactamente uno.
+**Razonamiento:**
+Tiene un punto de inicio (origen), pero no tiene punto final ya que es infinito.
+
+**Resultado:**
+$$
+\boxed{\text{Cero (0)}}
+$$
 
 </details>
 
 ---
 
 ### Ejercicio 9
-Si $\overline{AM} \cong \overline{MB}$, entonces $M$ es...
+Si el punto $$K$$ está entre $$J$$ y $$L$$, y se cumple que $$JK = 5$$ y $$JL = 5$$. ¿Es $$K$$ el punto medio?
 
 <details>
 <summary>Ver solución</summary>
 
-El punto medio de $\overline{AB}$.
+**Razonamiento:**
+Si $$JK=5$$ y el total $$JL=5$$, entonces $$K$$ tiene que estar encima de $$L$$. Para ser punto medio, el total debería ser 10.
+
+**Resultado:**
+$$
+\boxed{\text{No, K no es el punto medio}}
+$$
 
 </details>
 
 ---
 
 ### Ejercicio 10
-Dibuja (mentalmente) dos rayos opuestos que comparten el mismo origen. ¿Qué forman?
+Verdadero o Falso: El nombre de un segmento puede escribirse como $$\overline{AB}$$ o $$\overline{BA}$$ sin cambiar su significado.
 
 <details>
 <summary>Ver solución</summary>
 
-Una recta.
+**Razonamiento:**
+En los segmentos, el orden de las letras no importa porque ambos son extremos fijos.
+
+**Resultado:**
+$$
+\boxed{\text{Verdadero}}
+$$
 
 </details>
 
@@ -202,10 +334,15 @@ Una recta.
 
 ## 🔑 Resumen
 
-| Elemento | Símbolo | Inicio | Fin | ¿Medible? |
-|:--- |:--- |:--- |:--- |:--- |
-| **Recta** | $\overleftrightarrow{AB}$ | No | No | No (infinito) |
-| **Semirrecta (Rayo)** | $\overrightarrow{AB}$ | Sí | No | No (infinito) |
-| **Segmento** | $\overline{AB}$ | Sí | Sí | Sí (finito) |
+Como repaso final, aquí tienes cómo se comparan todas las "líneas" que hemos visto hasta ahora:
 
-> **Conclusión:** Solo podemos medir segmentos. En la vida real, casi todo lo que llamamos "línea" es, en realidad, un segmento.
+![resumen-elementos-geometricos](https://cdn.ediprofe.com/img/matematicas/2ptb-resumen-elementos-geometricos.webp)
+
+| Elemento | Imagen | Notación | ¿Tiene origen? | ¿Tiene fin? | ¿Se puede medir? |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Punto** | $$.$$ | $$A$$ | - | - | 0D (Sin medida) |
+| **Recta** | $$\longleftrightarrow$$ | $$\overleftrightarrow{AB}$$ | No | No | No (Infinita) |
+| **Rayo** | $$\longrightarrow$$ | $$\overrightarrow{AB}$$ | **SÍ** | No | No (Infinita) |
+| **Segmento** | $$\text{---}$$ | $$\overline{AB}$$ | **SÍ** | **SÍ** | **SÍ (Finito)** |
+
+> **Conclusión:** Aunque la recta es la madre de todas, en nuestro día a día trabajamos principalmente con **segmentos** (cosas con principio y fin) y usamos **rayos** para describir hacia dónde se mueve la luz o la energía.

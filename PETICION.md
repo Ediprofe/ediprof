@@ -166,13 +166,10 @@ Situaciones que requieren confirmación:
 
 # 📝 PETICIÓN ESPECÍFICA.
 
-http://localhost:4321/matematicas/geometria-euclidiana/conceptos-basicos/introduccion-geometria
-
-http://localhost:4321/matematicas/geometria-euclidiana/conceptos-basicos/punto-recta-plano
-
-Las dos lecciones anteriores creo que explican muchas cosas en común. Quiero que analices y, SIN QUITAR LAS ILUSTRACIONES DE LA PRIMERA LECCIÓN, REDISEÑES ESO PARA QUE, QUEDE SOLO UNA LECCIÓN GRANDE, CON LOS EJEMPLOS O CONSIDERACIONES QUE TENGA LA SEGUNDA Y QUE SE AGREGUEN A LA PRIMERA. PUEDO CAMBIAR LAIMAGEN DE RESUMEN SI ES NECESARIO, Y AGREGAR LAS OTRAS IMÁGENES RELACIONADAS DE CONCEPTOS FALTANTES EN LA PRIMERA LECCIÓN Y QUE SEA AGREGADOS EN VIRTUD DE LA SEGUNDA LECCIÓN.
+http://localhost:4322/matematicas/geometria-euclidiana/angulos/definicion-angulo
 
 
+Tratanto de ilustrar los ejemplos que se muestran en esta lección, me doy cuenta que no hay como un resultado deseado, o pienso eso de primera medida. Mira a ver si hay algun spec sólido para trabajar las ilustraciones de esta lección, LEE CLAUDE.md y PETICION.md y archivos derivados, y dime cómo hariamos para ilustrar esto de forma elegante, bonita, escalable y fácilmente mantenible. ADELANTE.
 <!-- 
 ### ⚠️ Regla Crítica: Ecuaciones en Bloque
 

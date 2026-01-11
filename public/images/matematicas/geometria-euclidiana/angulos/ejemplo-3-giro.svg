@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332 166">
+  <defs>
+    <marker id="arrow-64748b-10" markerWidth="10" markerHeight="10" 
+            refX="9.0" refY="5.0" orient="auto"
+            markerUnits="userSpaceOnUse">
+        <polygon points="0,0 10,5.0 0,10" fill="#64748b"/>
+    </marker>
+
+    <marker id="arrow-22c55e-10" markerWidth="10" markerHeight="10" 
+            refX="9.0" refY="5.0" orient="auto"
+            markerUnits="userSpaceOnUse">
+        <polygon points="0,0 10,5.0 0,10" fill="#22c55e"/>
+    </marker>
+
+    <marker id="arc-arrow-22c55e" markerWidth="8" markerHeight="8" 
+            refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+        <polygon points="0,0 8,4 0,8" fill="#22c55e"/>
+    </marker></defs>
+  <rect x="0" y="0" width="332" height="166" fill="white"/>
+  <g transform="translate(105.52, 111.45)">
+    <line x1="0.00" y1="0.00" x2="80.00" y2="0.00" stroke="#64748b" stroke-width="2" marker-end="url(#arrow-64748b-10)"/>
+    <text x="40.00" y="18.00" font-family="Inter, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">Lado Inicial</text>
+    <line x1="0.00" y1="0.00" x2="56.57" y2="-56.57" stroke="#22c55e" stroke-width="3" marker-end="url(#arrow-22c55e-10)"/>
+    <text x="74.25" y="-74.25" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#22c55e" text-anchor="middle">Lado Terminal</text>
+    <path d="M 30.00 0.00 A 30.00 30.00 0 0 0 21.21 -21.21" fill="none" stroke="#22c55e" stroke-width="2" marker-end="url(#arc-arrow-22c55e)"/>
+    <text x="44.35" y="-18.37" font-family="Inter, sans-serif" font-size="20" font-weight="bold" fill="#22c55e" text-anchor="middle">+</text>
+  </g>
+</svg>

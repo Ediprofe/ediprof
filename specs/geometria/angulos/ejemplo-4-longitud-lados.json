@@ -1,0 +1,24 @@
+{
+    "metadata": {
+        "id": "ejemplo-4-longitud-lados",
+        "title": "La longitud de los lados no afecta el ángulo"
+    },
+    "construction": {
+        "type": "angle_comparison",
+        "angles": [
+            {
+                "title": "Rayos cortos",
+                "angle_deg": 45,
+                "ray_length": 50,
+                "color": "#3b82f6"
+            },
+            {
+                "title": "Rayos largos",
+                "angle_deg": 45,
+                "ray_length": 90,
+                "color": "#3b82f6"
+            }
+        ],
+        "message": "¡Mismo ángulo! La longitud no importa."
+    }
+}

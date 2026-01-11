@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 140">
+  <defs>
+    <marker id="arrow-64748b-10" markerWidth="10" markerHeight="10" 
+            refX="9.0" refY="5.0" orient="auto"
+            markerUnits="userSpaceOnUse">
+        <polygon points="0,0 10,5.0 0,10" fill="#64748b"/>
+    </marker></defs>
+  <rect x="0" y="0" width="280" height="140" fill="white"/>
+  <g transform="translate(100.00, 110.00)">
+    <circle cx="0.00" cy="0.00" r="4" fill="#1e293b"/>
+    <line x1="0.00" y1="0.00" x2="80.00" y2="0.00" stroke="#64748b" stroke-width="2" marker-end="url(#arrow-64748b-10)"/>
+    <line x1="0.00" y1="0.00" x2="61.28" y2="-51.42" stroke="#64748b" stroke-width="2" marker-end="url(#arrow-64748b-10)"/>
+    <line x1="0.00" y1="0.00" x2="0.00" y2="-80.00" stroke="#64748b" stroke-width="2" marker-end="url(#arrow-64748b-10)"/>
+    <text x="46.98" y="-17.10" font-family="Inter, sans-serif" font-size="16" font-weight="bold" fill="#22c55e" text-anchor="middle">∠1</text>
+    <text x="21.13" y="-45.32" font-family="Inter, sans-serif" font-size="16" font-weight="bold" fill="#ef4444" text-anchor="middle">∠2</text>
+  </g>
+</svg>

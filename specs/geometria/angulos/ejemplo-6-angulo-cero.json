@@ -1,0 +1,11 @@
+{
+    "metadata": {
+        "id": "ejemplo-6-angulo-cero",
+        "title": "Ángulo cero (0°)"
+    },
+    "construction": {
+        "type": "angle_special",
+        "value": 0,
+        "label": "Los rayos coinciden"
+    }
+}

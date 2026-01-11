@@ -29,16 +29,18 @@ Si tenemos un ángulo con vértice en $B$, y puntos $A$ y $C$ en los lados:
 - **Una letra:** $\angle B$ (Solo si no hay confusión con otros ángulos en el mismo vértice).
 - **Letras griegas:** $\alpha, \beta, \theta$ (Se usan para el valor de la medida).
 
+![anatomia-de-un-angulo](https://cdn.ediprofe.com/img/matematicas/mxol-anatomia-de-un-angulo.webp)
+
 ---
 
 ## 🔄 El Giro: Positivo o Negativo
 
 En matemáticas, los ángulos tienen dirección. Imagina que un lado está quieto (**lado inicial**) y el otro se mueve (**lado terminal**).
 
-- **Ángulo Positivo ($+$):** Gira en contra de las manecillas del reloj (Antihorario). 
-    - ↺
-- **Ángulo Negativo ($-$):** Gira a favor de las manecillas del reloj (Horario).
-    - ↻
+- **Ángulo Positivo ($$ + $$):** Gira en contra de las manecillas del reloj (Antihorario). 
+- **Ángulo Negativo ($$ - $$):** Gira a favor de las manecillas del reloj (Horario).
+
+![giro-positivo-y-negativo-de-angulos](https://cdn.ediprofe.com/img/matematicas/b9pb-giro-positivo-y-negativo-de-angulos.webp)
 
 > **¿Por qué?** Es una convención antigua relacionada con cómo se mueven los planetas vistos desde el hemisferio norte.
 
@@ -55,6 +57,9 @@ En el ángulo $\angle POR$:
 - La letra central es el vértice: **$O$**.
 - Los lados son los rayos que salen de $O$: **$\overrightarrow{OP}$ y $\overrightarrow{OR}$**.
 
+![ejemplo-1-identificacion](/images/matematicas/geometria-euclidiana/angulos/ejemplo-1-identificacion.svg)
+
+
 ### Ejemplo 2: Notación
 Tienes un triángulo con vértices $X, Y, Z$. ¿Cómo nombras el ángulo en la esquina $Y$?
 
@@ -63,12 +68,22 @@ $$
 \angle XYZ \quad \text{o} \quad \angle ZYX \quad \text{o simplemente} \quad \angle Y
 $$
 
+![ejemplo-2-notacion](/images/matematicas/geometria-euclidiana/angulos/ejemplo-2-notacion.svg)
+
+
 ### Ejemplo 3: Sentido de giro
 Si abres una puerta empujándola hacia la izquierda (antihorario) 45 grados, ¿el ángulo es positivo o negativo?
 
 **Razonamiento:**
 Giro antihorario = Positivo.
-**Respuesta:** $+45^\circ$.
+
+**Respuesta:**
+$$
++45^\circ
+$$
+
+![ejemplo-3-giro](/images/matematicas/geometria-euclidiana/angulos/ejemplo-3-giro.svg)
+
 
 ### Ejemplo 4: Longitud de los lados
 ¿Un ángulo se vuelve más grande si alargamos los rayos que lo forman?
@@ -77,6 +92,9 @@ Giro antihorario = Positivo.
 No. El ángulo es la **abertura** (el giro), no el largo de las líneas. Imagina dos linternas: si los rayos de luz llegan más lejos, la abertura entre ellas sigue siendo la misma.
 **Respuesta:** El ángulo permanece igual.
 
+![ejemplo-4-longitud-lados](/images/matematicas/geometria-euclidiana/angulos/ejemplo-4-longitud-lados.svg)
+
+
 ### Ejemplo 5: Notación con números
 En figuras complejas, a veces vemos números dentro de los ángulos (ej. $\angle 1$, $\angle 2$). ¿Qué significan?
 
@@ -84,12 +102,22 @@ En figuras complejas, a veces vemos números dentro de los ángulos (ej. $\angle
 Son etiquetas rápidas para no tener que escribir tres letras ($\angle ABC$).
 **Respuesta:** $\angle 1$ es simplemente el nombre corto asignado a ese ángulo específico en el diagrama.
 
+![ejemplo-5-notacion-numerica](/images/matematicas/geometria-euclidiana/angulos/ejemplo-5-notacion-numerica.svg)
+
+
 ### Ejemplo 6: Ángulo cero
 ¿Qué pasa si los dos rayos ($\overrightarrow{OA}$ y $\overrightarrow{OB}$) están uno encima del otro sin haberse movido?
 
 **Razonamiento:**
 No hay abertura. El giro es nulo.
-**Respuesta:** Es un ángulo de $0^\circ$.
+
+**Respuesta:**
+$$
+0^\circ
+$$
+
+![ejemplo-6-angulo-cero](/images/matematicas/geometria-euclidiana/angulos/ejemplo-6-angulo-cero.svg)
+
 
 ---
 
@@ -137,7 +165,12 @@ Si las manecillas del reloj van de las 12 a las 3, ¿el ángulo geométrico es p
 <details>
 <summary>Ver solución</summary>
 
-Negativo (sentido horario). Aunque en la vida real solemos decir "90 grados", técnicamente giró $-90^\circ$.
+Negativo (sentido horario). Aunque en la vida real solemos decir 90 grados, técnicamente giró:
+
+$$
+-90^\circ
+$$
+
 
 </details>
 
@@ -161,7 +194,9 @@ Un ángulo completo (vuelta entera) mide...
 <details>
 <summary>Ver solución</summary>
 
-$360^\circ$.
+$$
+360^\circ
+$$
 
 </details>
 
@@ -204,12 +239,16 @@ Lado inicial.
 ---
 
 ### Ejercicio 10
-Si giras $180^\circ$, ¿en qué dirección quedas mirando?
+Si realizas un giro de:
+$$
+180^\circ
+$$
+¿En qué dirección quedas mirando?
 
 <details>
 <summary>Ver solución</summary>
 
-En la dirección opuesta.
+En la dirección opuesta a la inicial.
 
 </details>
 

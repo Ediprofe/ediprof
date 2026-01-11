@@ -1,0 +1,38 @@
+{
+    "metadata": {
+        "id": "ejemplo-5-notacion-numerica",
+        "title": "Notación numérica de ángulos"
+    },
+    "construction": {
+        "type": "angle_basic",
+        "vertex": {},
+        "rays": [
+            {
+                "angle_deg": 0
+            },
+            {
+                "angle_deg": 40
+            },
+            {
+                "angle_deg": 90
+            }
+        ],
+        "arc": {
+            "show": false
+        },
+        "custom_labels": [
+            {
+                "text": "∠1",
+                "angle": 20,
+                "distance": 50,
+                "color": "#22c55e"
+            },
+            {
+                "text": "∠2",
+                "angle": 65,
+                "distance": 50,
+                "color": "#ef4444"
+            }
+        ]
+    }
+}

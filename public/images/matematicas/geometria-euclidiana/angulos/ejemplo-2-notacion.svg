@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 510 255">
+  <defs>
+    <marker id="arrow-64748b-10" markerWidth="10" markerHeight="10" 
+            refX="9.0" refY="5.0" orient="auto"
+            markerUnits="userSpaceOnUse">
+        <polygon points="0,0 10,5.0 0,10" fill="#64748b"/>
+    </marker></defs>
+  <rect x="0" y="0" width="510" height="255" fill="white"/>
+  <g transform="translate(219.44, 111.17)">
+    <circle cx="0.00" cy="0.00" r="4" fill="#1e293b"/>
+    <text x="-18.00" y="8.00" font-family="Inter, sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle">Y</text>
+    <line x1="0.00" y1="0.00" x2="75.18" y2="27.36" stroke="#64748b" stroke-width="2" marker-end="url(#arrow-64748b-10)"/>
+    <text x="89.27" y="32.49" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="middle">X</text>
+    <line x1="0.00" y1="0.00" x2="51.42" y2="-61.28" stroke="#64748b" stroke-width="2" marker-end="url(#arrow-64748b-10)"/>
+    <text x="61.06" y="-72.77" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="middle">Z</text>
+    <path d="M 28.19 10.26 A 30.00 30.00 0 0 0 19.28 -22.98" fill="none" stroke="#3b82f6" stroke-width="2"/>
+    <text x="0.00" y="60.00" font-family="Inter, sans-serif" font-size="16" font-weight="bold" fill="#3b82f6" text-anchor="middle">∠XYZ</text>
+    <text x="0.00" y="82.00" font-family="Inter, sans-serif" font-size="16" font-weight="bold" fill="#3b82f6" text-anchor="middle">∠ZYX</text>
+    <text x="0.00" y="104.00" font-family="Inter, sans-serif" font-size="16" font-weight="bold" fill="#3b82f6" text-anchor="middle">∠Y</text>
+  </g>
+</svg>

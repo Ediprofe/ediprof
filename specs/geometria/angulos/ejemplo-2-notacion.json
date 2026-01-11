@@ -1,0 +1,25 @@
+{
+    "metadata": {
+        "id": "ejemplo-2-notacion",
+        "title": "Notación de ángulos"
+    },
+    "construction": {
+        "type": "angle_notation",
+        "vertex_label": "Y",
+        "rays": [
+            {
+                "angle_deg": -20,
+                "label": "X"
+            },
+            {
+                "angle_deg": 50,
+                "label": "Z"
+            }
+        ],
+        "notations": [
+            "∠XYZ",
+            "∠ZYX",
+            "∠Y"
+        ]
+    }
+}

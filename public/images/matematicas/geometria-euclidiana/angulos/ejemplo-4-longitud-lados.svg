@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 452 226">
+  <defs>
+    <marker id="arrow-64748b-10" markerWidth="10" markerHeight="10" 
+            refX="9.0" refY="5.0" orient="auto"
+            markerUnits="userSpaceOnUse">
+        <polygon points="0,0 10,5.0 0,10" fill="#64748b"/>
+    </marker>
+
+    <marker id="arrow-3b82f6-10" markerWidth="10" markerHeight="10" 
+            refX="9.0" refY="5.0" orient="auto"
+            markerUnits="userSpaceOnUse">
+        <polygon points="0,0 10,5.0 0,10" fill="#3b82f6"/>
+    </marker></defs>
+  <rect x="0" y="0" width="452" height="226" fill="white"/>
+  <g transform="translate(210.30, 88.40)">
+    <text x="-90.00" y="-50.00" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#3b82f6" text-anchor="middle">Rayos cortos</text>
+    <circle cx="-90.00" cy="40.00" r="4" fill="#1e293b"/>
+    <line x1="-90.00" y1="40.00" x2="-40.00" y2="40.00" stroke="#64748b" stroke-width="2" marker-end="url(#arrow-64748b-10)"/>
+    <line x1="-90.00" y1="40.00" x2="-54.64" y2="4.64" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrow-3b82f6-10)"/>
+    <path d="M -65.00 40.00 A 25.00 25.00 0 0 0 -72.32 22.32" fill="none" stroke="#3b82f6" stroke-width="2"/>
+    <text x="90.00" y="-50.00" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#3b82f6" text-anchor="middle">Rayos largos</text>
+    <circle cx="90.00" cy="40.00" r="4" fill="#1e293b"/>
+    <line x1="90.00" y1="40.00" x2="180.00" y2="40.00" stroke="#64748b" stroke-width="2" marker-end="url(#arrow-64748b-10)"/>
+    <line x1="90.00" y1="40.00" x2="153.64" y2="-23.64" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrow-3b82f6-10)"/>
+    <path d="M 115.00 40.00 A 25.00 25.00 0 0 0 107.68 22.32" fill="none" stroke="#3b82f6" stroke-width="2"/>
+    <text x="0.00" y="100.00" font-family="Inter, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">¡Mismo ángulo! La longitud no importa.</text>
+    <line x1="0.00" y1="-60.00" x2="0.00" y2="90.00" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4,4"/>
+  </g>
+</svg>

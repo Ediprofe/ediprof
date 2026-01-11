@@ -611,7 +611,97 @@
       "size": "50KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/duwc-ejemplo-3-definir-un-plano.webp",
       "status": "uploaded"
+    },
+    {
+      "id": "7rot",
+      "name": "el-segmento-de-recta.webp",
+      "materia": "matematicas",
+      "date": "2026-01-11",
+      "size": "35KB",
+      "url": "https://cdn.ediprofe.com/img/matematicas/7rot-el-segmento-de-recta.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "abrt",
+      "name": "el-rayo-o-semirecta.webp",
+      "materia": "matematicas",
+      "date": "2026-01-11",
+      "size": "52KB",
+      "url": "https://cdn.ediprofe.com/img/matematicas/abrt-el-rayo-o-semirecta.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "2ptb",
+      "name": "resumen-elementos-geometricos.webp",
+      "materia": "matematicas",
+      "date": "2026-01-11",
+      "size": "74KB",
+      "url": "https://cdn.ediprofe.com/img/matematicas/2ptb-resumen-elementos-geometricos.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "aziu",
+      "name": "rectas-secantes.webp",
+      "materia": "matematicas",
+      "date": "2026-01-11",
+      "size": "58KB",
+      "url": "https://cdn.ediprofe.com/img/matematicas/aziu-rectas-secantes.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "n0lo",
+      "name": "rectas-paralelas.webp",
+      "materia": "matematicas",
+      "date": "2026-01-11",
+      "size": "62KB",
+      "url": "https://cdn.ediprofe.com/img/matematicas/n0lo-rectas-paralelas.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "1qqa",
+      "name": "rectas-coincidentes.webp",
+      "materia": "matematicas",
+      "date": "2026-01-11",
+      "size": "51KB",
+      "url": "https://cdn.ediprofe.com/img/matematicas/1qqa-rectas-coincidentes.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "iyyy",
+      "name": "ejemplo-1.webp",
+      "materia": "matematicas",
+      "date": "2026-01-11",
+      "size": "48KB",
+      "url": "https://cdn.ediprofe.com/img/matematicas/iyyy-ejemplo-1.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "j2z8",
+      "name": "punto-de-interseccion-rectas-paralelas.webp",
+      "materia": "matematicas",
+      "date": "2026-01-11",
+      "size": "51KB",
+      "url": "https://cdn.ediprofe.com/img/matematicas/j2z8-punto-de-interseccion-rectas-paralelas.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "mxol",
+      "name": "anatomia-de-un-angulo.webp",
+      "materia": "matematicas",
+      "date": "2026-01-11",
+      "size": "42KB",
+      "url": "https://cdn.ediprofe.com/img/matematicas/mxol-anatomia-de-un-angulo.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "b9pb",
+      "name": "giro-positivo-y-negativo-de-angulos.webp",
+      "materia": "matematicas",
+      "date": "2026-01-11",
+      "size": "22KB",
+      "url": "https://cdn.ediprofe.com/img/matematicas/b9pb-giro-positivo-y-negativo-de-angulos.webp",
+      "status": "uploaded"
     }
   ],
-  "lastUpdated": "2026-01-09T19:02:52.766Z"
+  "lastUpdated": "2026-01-11T18:45:36.349Z"
 }

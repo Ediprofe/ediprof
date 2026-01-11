@@ -1,0 +1,26 @@
+{
+    "metadata": {
+        "id": "ejemplo-1-identificacion",
+        "title": "Identificación de elementos del ángulo"
+    },
+    "construction": {
+        "type": "angle_basic",
+        "vertex": {
+            "label": "O"
+        },
+        "rays": [
+            {
+                "angle_deg": 0,
+                "label": "R"
+            },
+            {
+                "angle_deg": 55,
+                "label": "P"
+            }
+        ],
+        "arc": {
+            "label": "α",
+            "color": "#22c55e"
+        }
+    }
+}

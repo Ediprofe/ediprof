@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 128">
+  <defs>
+    <marker id="arrow-3b82f6-10" markerWidth="10" markerHeight="10" 
+            refX="9.0" refY="5.0" orient="auto"
+            markerUnits="userSpaceOnUse">
+        <polygon points="0,0 10,5.0 0,10" fill="#3b82f6"/>
+    </marker></defs>
+  <rect x="0" y="0" width="256" height="128" fill="white"/>
+  <g transform="translate(88.00, 60.80)">
+    <line x1="0.00" y1="0.00" x2="80.00" y2="0.00" stroke="#3b82f6" stroke-width="3" marker-end="url(#arrow-3b82f6-10)"/>
+    <text x="40.00" y="-20.00" font-family="Inter, sans-serif" font-size="18" font-weight="bold" fill="#3b82f6" text-anchor="middle">0°</text>
+    <text x="40.00" y="30.00" font-family="Inter, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Los rayos coinciden</text>
+  </g>
+</svg>

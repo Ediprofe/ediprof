@@ -34,6 +34,17 @@ Este documento ayuda a elegir la **tecnología correcta** para cada tipo de ilus
 │         • Geometría analítica: plano cartesiano, rectas
 │         📁 Ver: circle-spec.md, geometry-exact.md, cartesian-spec.md
 │
+├─── 📏 ¿Es un ÁNGULO con elementos exactos?
+│    │   (vértice, lados, arcos, notación, giros)
+│    │
+│    └─── SÍ → SVG GENERADO (AngleSpec → SVG)
+│         • Ángulos básicos con etiquetas
+│         • Giro positivo/negativo
+│         • Comparación de ángulos
+│         • Ángulos especiales (0°, 90°, 180°, 360°)
+│         📁 Ver: angle-spec.md
+│
+│
 ├─── 📈 ¿Es una GRÁFICA de funciones?
 │    │   (sin, cos, parábolas, exponenciales, rectas)
 │    │

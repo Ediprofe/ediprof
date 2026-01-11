@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 347 173">
+  <defs>
+    <marker id="arrow-64748b-10" markerWidth="10" markerHeight="10" 
+            refX="9.0" refY="5.0" orient="auto"
+            markerUnits="userSpaceOnUse">
+        <polygon points="0,0 10,5.0 0,10" fill="#64748b"/>
+    </marker></defs>
+  <rect x="0" y="0" width="347" height="173" fill="white"/>
+  <g transform="translate(132.08, 118.68)">
+    <circle cx="0.00" cy="0.00" r="4" fill="#1e293b"/>
+    <text x="-15.00" y="15.00" font-family="Inter, sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle">O</text>
+    <line x1="0.00" y1="0.00" x2="80.00" y2="0.00" stroke="#64748b" stroke-width="2" marker-end="url(#arrow-64748b-10)"/>
+    <text x="98.00" y="0.00" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="middle">R</text>
+    <line x1="0.00" y1="0.00" x2="45.89" y2="-65.53" stroke="#64748b" stroke-width="2" marker-end="url(#arrow-64748b-10)"/>
+    <text x="56.21" y="-80.28" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="middle">P</text>
+    <path d="M 30.00 0.00 A 30.00 30.00 0 0 0 17.21 -24.57" fill="none" stroke="#22c55e" stroke-width="2"/>
+    <text x="39.92" y="-20.78" font-family="Inter, sans-serif" font-size="16" font-weight="bold" fill="#22c55e" text-anchor="middle">α</text>
+  </g>
+</svg>
