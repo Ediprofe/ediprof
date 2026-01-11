@@ -701,7 +701,70 @@
       "size": "22KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/b9pb-giro-positivo-y-negativo-de-angulos.webp",
       "status": "uploaded"
+    },
+    {
+      "id": "ch5h",
+      "name": "sistema-base-60.webp",
+      "materia": "matematicas",
+      "date": "2026-01-11",
+      "size": "57KB",
+      "url": "https://cdn.ediprofe.com/img/matematicas/ch5h-sistema-base-60.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "zjmm",
+      "name": "suma-de-angulos.webp",
+      "materia": "matematicas",
+      "date": "2026-01-11",
+      "size": "52KB",
+      "url": "https://cdn.ediprofe.com/img/matematicas/zjmm-suma-de-angulos.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "lonv",
+      "name": "resta-de-angulos.webp",
+      "materia": "matematicas",
+      "date": "2026-01-11",
+      "size": "39KB",
+      "url": "https://cdn.ediprofe.com/img/matematicas/lonv-resta-de-angulos.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "52ci",
+      "name": "conversion-decimal-a-sexagesimal.webp",
+      "materia": "matematicas",
+      "date": "2026-01-11",
+      "size": "58KB",
+      "url": "https://cdn.ediprofe.com/img/matematicas/52ci-conversion-decimal-a-sexagesimal.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "aoqx",
+      "name": "resta-simple.webp",
+      "materia": "matematicas",
+      "date": "2026-01-11",
+      "size": "44KB",
+      "url": "https://cdn.ediprofe.com/img/matematicas/aoqx-resta-simple.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "0mjx",
+      "name": "suma-llevando-dos-veces.webp",
+      "materia": "matematicas",
+      "date": "2026-01-11",
+      "size": "46KB",
+      "url": "https://cdn.ediprofe.com/img/matematicas/0mjx-suma-llevando-dos-veces.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "q8nx",
+      "name": "multiplicacion-mental.webp",
+      "materia": "matematicas",
+      "date": "2026-01-11",
+      "size": "60KB",
+      "url": "https://cdn.ediprofe.com/img/matematicas/q8nx-multiplicacion-mental.webp",
+      "status": "uploaded"
     }
   ],
-  "lastUpdated": "2026-01-11T18:45:36.349Z"
+  "lastUpdated": "2026-01-11T22:26:10.087Z"
 }

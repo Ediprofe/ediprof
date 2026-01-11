@@ -36,110 +36,83 @@ Si el número de arriba es menor que el de abajo, no podemos restar directamente
 
 ---
 
-## ⚙️ Ejemplos Resueltos
+## ➕ Sección 1: Suma de Ángulos
 
-### Ejemplo 1: Suma con Acarreo
+Sumar ángulos es agrupar. La clave es recordar que cada vez que acumulas 60 en una columna (segundos o minutos), eso se convierte en 1 unidad de la columna siguiente (izquierda).
+
+### Ejemplo 1.1: Suma Directa (Sin Acarreo)
+Sumar $10^\circ \, 20' + 20^\circ \, 10'$.
+
+**Razonamiento:**
+Ordenamos en columnas y sumamos.
+
+| | Grados ($^\circ$) | Minutos ($'$) |
+| :--- | :---: | :---: |
+| | $10$ | $20$ |
+| **(+)** | $20$ | $10$ |
+| **Total** | **$30$** | **$30$** |
+
+**Resultado:**
+$$
+\boxed{30^\circ \, 30'}
+$$
+
+### Ejemplo 1.2: Suma con Acarreo Simple
 Sumar $32^\circ \, 45' \, 50'' + 10^\circ \, 20' \, 30''$.
 
-**Paso 1: Suma vertical directa**
-- Segundos: $50 + 30 = 80''$
-- Minutos: $45 + 20 = 65'$
-- Grados: $32 + 10 = 42^\circ$
+**Paso 1: Suma por columnas**
 
-**Resultado provisional:** $42^\circ \, 65' \, 80''$.
+| | Grados | Minutos | Segundos |
+| :--- | :---: | :---: | :---: |
+| | $32$ | $45$ | $50$ |
+| **(+)** | $10$ | $20$ | $30$ |
+| **Suma Inicial** | **$42$** | **$65$** | **$80$** |
 
-**Paso 2: Ajuste de Segundos**
-$80''$ se pasan de 60. Son $1'$ y sobran $20''$.
-- Sumamos $1'$ a los $65'$ que teníamos $\to 66'$.
-- Quedan $20''$.
-**Nuevo estado:** $42^\circ \, 66' \, 20''$.
+**Paso 2: Ajuste de Acarreo (Llevadas)**
+Siempre empezamos ajustando de derecha a izquierda (desde los segundos).
 
-**Paso 3: Ajuste de Minutos**
-$66'$ se pasan de 60. Son $1^\circ$ y sobran $6'$.
-- Sumamos $1^\circ$ a los $42^\circ \to 43^\circ$.
-- Quedan $6'$.
+1.  **Segundos:** Tenemos **$80''$**.
+    *   Como $60'' = 1'$, nos llevamos 1 a los minutos.
+    *   Sobran $20''$.
+    *   *Minutos ahora:* $65 + 1 = 66'$.
+2.  **Minutos:** Tenemos **$66'$**.
+    *   Como $60' = 1^\circ$, nos llevamos 1 a los grados.
+    *   Sobran $6'$.
+    *   *Grados ahora:* $42 + 1 = 43^\circ$.
 
-**Resultado Final:**
+**Resultado:**
 $$
 \boxed{43^\circ \, 6' \, 20''}
 $$
 
-### Ejemplo 2: Resta pidiendo prestado
-Restar $90^\circ - 35^\circ \, 20'$.
+![suma-de-angulos](https://cdn.ediprofe.com/img/matematicas/zjmm-suma-de-angulos.webp)
 
-**Planteamiento:**
-$$
- \begin{array}{r}
-   90^\circ \quad 00' \\
- - 35^\circ \quad 20' \\
- \hline
- \end{array}
-$$
-
-**Paso 1: Préstamo**
-A $00'$ no le puedo quitar $20'$. Pido $1^\circ$ prestado al 90.
-- El $90^\circ$ se vuelve $89^\circ$.
-- El $1^\circ$ prestado se convierte en $60'$.
-
-**Nuevo planteamiento:**
-$$
- \begin{array}{r}
-   89^\circ \quad 60' \\
- - 35^\circ \quad 20' \\
- \hline
-   54^\circ \quad 40'
- \end{array}
-$$
-
-**Resultado Final:**
-$$
-\boxed{54^\circ \, 40'}
-$$
-
-### Ejemplo 3: De Decimal a Sexagesimal
-Convertir $12.755^\circ$ a grados, minutos y segundos.
-
-**Paso 1: Grados enteros**
-Tenemos **$12^\circ$**. Sobra $0.755^\circ$.
-
-**Paso 2: Minutos**
-Multiplicamos el sobrante por 60.
-$$
-0.755 \times 60 = 45.3'
-$$
-Tenemos **$45'$**. Sobra $0.3'$.
-
-**Paso 3: Segundos**
-Multiplicamos el nuevo sobrante por 60.
-$$
-0.3 \times 60 = 18''
-$$
-Tenemos **$18''$**.
-
-**Resultado Final:**
-$$
-\boxed{12^\circ \, 45' \, 18''}
-$$
-
-### Ejemplo 4: Resta Simple
-Restar $50^\circ \, 30'$ de $80^\circ \, 45'$.
+### Ejemplo 1.3: Suma de Minutos que completan grado
+Sumar $40^\circ \, 50' + 10^\circ \, 30'$.
 
 **Razonamiento:**
-Aquí no necesitamos pedir prestado porque los números de arriba son mayores.
-- Minutos: $45 - 30 = 15'$
-- Grados: $80 - 50 = 30^\circ$
+
+| | Grados | Minutos |
+| :--- | :---: | :---: |
+| | $40$ | $50$ |
+| **(+)** | $10$ | $30$ |
+| **Total** | **$50$** | **$80$** |
+
+Ajustamos los $80'$:
+*   $80' = 60' + 20' = 1^\circ + 20'$.
+*   Sumamos ese grado extra: $50^\circ + 1^\circ = 51^\circ$.
 
 **Resultado:**
 $$
-\boxed{30^\circ \, 15'}
+\boxed{51^\circ \, 20'}
 $$
 
-### Ejemplo 5: Suma llevando dos veces
+### Ejemplo 1.4: Suma llevando dos veces (Solo Segundos)
 Suma $50'' + 50''$.
 
 **Razonamiento:**
-$50 + 50 = 100''$.
-Como $100''$ es mayor que 60:
+$50'' + 50'' = 100''$.
+
 $$
 100 \div 60 = 1 \text{ (minuto) y sobran } 40 \text{ (segundos)}
 $$
@@ -149,19 +122,221 @@ $$
 \boxed{1' \, 40''}
 $$
 
-### Ejemplo 6: Multiplicación Mental
-Si tienes un ángulo de $10^\circ \, 30'$ y lo duplicas, ¿cuánto tienes?
+![suma-llevando-dos-veces](https://cdn.ediprofe.com/img/matematicas/0mjx-suma-llevando-dos-veces.webp)
+
+### Ejemplo 1.5: Suma Triple
+Sumar tres ángulos: $10^\circ + 15^\circ \, 40' + 5^\circ \, 30'$.
 
 **Razonamiento:**
-- Doble de $10^\circ = 20^\circ$.
-- Doble de $30' = 60'$.
-- Pero $60'$ es $1^\circ$.
 
-Total: $20^\circ + 1^\circ = 21^\circ$.
+| | Grados | Minutos |
+| :--- | :---: | :---: |
+| | $10$ | $00$ |
+| | $15$ | $40$ |
+| **(+)** | $5$ | $30$ |
+| **Suma** | **$30$** | **$70$** |
+
+Ajustamos los $70'$:
+*   $70' = 1^\circ$ y sobran $10'$.
+*   Total grados: $30 + 1 = 31^\circ$.
+
+**Resultado:**
+$$
+\boxed{31^\circ \, 10'}
+$$
+
+---
+
+## ➖ Sección 2: Resta de Ángulos
+
+La resta suele ser más desafiante porque a veces "no nos alcanza". En esos casos, rompemos 1 grado para obtener 60 minutos (o 1 minuto para 60 segundos).
+
+### Ejemplo 2.1: Resta Simple
+Restar $50^\circ \, 30'$ de $80^\circ \, 45'$.
+
+**Razonamiento:**
+
+| | Grados | Minutos |
+| :--- | :---: | :---: |
+| | $80$ | $45$ |
+| **(-)** | $50$ | $30$ |
+| **Resta** | **$30$** | **$15$** |
+
+Aquí no hubo problema porque los de arriba eran mayores.
+
+**Resultado:**
+$$
+\boxed{30^\circ \, 15'}
+$$
+
+![resta-simple](https://cdn.ediprofe.com/img/matematicas/aoqx-resta-simple.webp)
+
+### Ejemplo 2.2: Resta pidiendo prestado a Grados
+Restar $90^\circ - 35^\circ \, 20'$.
+
+**El Problema:**
+Al intentar ponerlo en tabla, vemos un hueco arriba.
+
+| | Grados | Minutos |
+| :--- | :---: | :---: |
+| | $90$ | $00$ ⚠️ |
+| **(-)** | $35$ | $20$ |
+
+No podemos restar $0 - 20$.
+
+**La Solución (El Préstamo):**
+Quitamos 1 grado al 90 y se lo damos a los minutos como 60.
+
+| | Grados | Minutos |
+| :--- | :---: | :---: |
+| *Antes* | $90$ | $00$ |
+| **TRANSFORMACIÓN** | $\downarrow -1$ | $\downarrow +60$ |
+| *Ahora* | **$89$** | **$60$** |
+| **(-)** | $35$ | $20$ |
+| **Resta Final** | **$54$** | **$40$** |
+
+**Resultado:**
+$$
+\boxed{54^\circ \, 40'}
+$$
+
+![resta-de-angulos](https://cdn.ediprofe.com/img/matematicas/lonv-resta-de-angulos.webp)
+
+### Ejemplo 2.3: Resta pidiendo prestado a Minutos
+Restar $10^\circ \, 15' - 5^\circ \, 40'$.
+
+**Razonamiento:**
+
+| | Grados | Minutos |
+| :--- | :---: | :---: |
+| *Inicial* | $10$ | $15$ |
+| **Ajuste** | $9$ | $75$ |
+| **(-)** | $5$ | $40$ |
+| **Resta** | **$4$** | **$35$** |
+
+*Nota del ajuste:* El $10$ bajó a $9$. El $15$ sumó $60$ y se volvió $75$.
+
+**Resultado:**
+$$
+\boxed{4^\circ \, 35'}
+$$
+
+### Ejemplo 2.4: Resta Doble (El Préstamo en Cadena)
+Restar $20^\circ - 5^\circ \, 10' \, 10''$.
+
+**Razonamiento:**
+Necesitamos segundos y minutos arriba, pero tenemos ceros. El préstamo va en cadena como una cascada.
+
+1.  **Grados a Minutos:** $20^\circ \to 19^\circ$ y pasamos $60'$.
+2.  **Minutos a Segundos:** De esos $60'$, tomamos 1 (quedan $59'$) y pasamos $60''$.
+
+**Tabla Final de Resta:**
+
+| | Grados | Minutos | Segundos |
+| :--- | :---: | :---: | :---: |
+| *Transformado* | $19$ | $59$ | $60$ |
+| **(-)** | $5$ | $10$ | $10$ |
+| **Resta** | **$14$** | **$49$** | **$50$** |
+
+**Resultado:**
+$$
+\boxed{14^\circ \, 49' \, 50''}
+$$
+
+### Ejemplo 2.5: Resta de Suplemento
+Calcular el suplemento de $125^\circ \, 45'$.
+
+**Razonamiento:**
+Operación: $180^\circ - 125^\circ \, 45'$.
+
+| | Grados | Minutos |
+| :--- | :---: | :---: |
+| *Transformado ($180^\circ$)* | $179$ | $60$ |
+| **(-)** | $125$ | $45$ |
+| **Resta** | **$54$** | **$15$** |
+
+**Resultado:**
+$$
+\boxed{54^\circ \, 15'}
+$$
+
+---
+
+## ✖️ Sección 3: Multiplicación, División y Conversión
+
+Aquí veremos cómo manipular ángulos cambiándolos de escala o de formato.
+
+### Ejemplo 3.1: Conversión de Decimal a Sexagesimal
+Convertir $12.755^\circ$ a grados, minutos y segundos.
+
+**Razonamiento:**
+Descomponemos la parte decimal multiplicando por 60 sucesivamente.
+1.  Entero: $12^\circ$. Sobra $0.755$.
+2.  Minutos: $0.755 \times 60 = 45.3'$. Tenemos $45'$ y sobra $0.3$.
+3.  Segundos: $0.3 \times 60 = 18''$. Exactos.
+
+**Resultado:**
+$$
+\boxed{12^\circ \, 45' \, 18''}
+$$
+
+![conversion-decimal-a-sexagesimal](https://cdn.ediprofe.com/img/matematicas/52ci-conversion-decimal-a-sexagesimal.webp)
+
+### Ejemplo 3.2: Conversión de Sexagesimal a Decimal
+Convertir $30^\circ \, 30'$ a grados decimales.
+
+**Razonamiento:**
+Hacemos el proceso inverso: dividimos por 60.
+1.  Tomamos los minutos: $30'$.
+2.  Dividimos: $30 \div 60 = 0.5$.
+3.  Sumamos a los grados: $30 + 0.5 = 30.5$.
+
+**Resultado:**
+$$
+\boxed{30.5^\circ}
+$$
+
+### Ejemplo 3.3: Multiplicación Mental (Escalar simple)
+Si tienes un ángulo de $10^\circ \, 30'$ y lo duplicas.
+
+**Razonamiento:**
+Multiplicamos cada parte por 2.
+1.  $10^\circ \times 2 = 20^\circ$.
+2.  $30' \times 2 = 60'$.
+3.  Ajustamos: $60'$ es exactamente $1^\circ$. Lo sumamos a los 20.
 
 **Resultado:**
 $$
 \boxed{21^\circ}
+$$
+
+![multiplicacion-mental](https://cdn.ediprofe.com/img/matematicas/q8nx-multiplicacion-mental.webp)
+
+### Ejemplo 3.4: Multiplicación con Acarreo
+Multiplicar $20^\circ \, 40' \times 3$.
+
+**Razonamiento:**
+1.  Minutos: $40 \times 3 = 120'$.
+2.  Grados: $20 \times 3 = 60^\circ$.
+3.  Ajuste: $120'$ son exactamente $2^\circ$ ($120 \div 60 = 2$).
+4.  Sumamos: $60^\circ + 2^\circ = 62^\circ$.
+
+**Resultado:**
+$$
+\boxed{62^\circ}
+$$
+
+### Ejemplo 3.5: División Simple
+Dividir $45^\circ$ entre 2 (Bisecar el ángulo).
+
+**Razonamiento:**
+1.  $45 \div 2 = 22.5^\circ$.
+2.  Pero en sexagesimal no solemos dejar decimales si podemos usar minutos.
+3.  El $0.5^\circ$ restante lo multiplicamos por 60 para volverlo minutos: $0.5 \times 60 = 30'$.
+
+**Resultado:**
+$$
+\boxed{22^\circ \, 30'}
 $$
 
 ---

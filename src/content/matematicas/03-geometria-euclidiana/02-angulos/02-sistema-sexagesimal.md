@@ -34,6 +34,8 @@ El sistema sexagesimal divide la unidad principal en 60 partes más pequeñas.
 > - Minuto = Minuto
 > - Segundo = Segundo
 
+![sistema-base-60](https://cdn.ediprofe.com/img/matematicas/ch5h-sistema-base-60.webp)
+
 ---
 
 ## 📝 Lectura y Escritura
@@ -139,23 +141,6 @@ $$
 $$
 \boxed{180^\circ}
 $$
-
----
-
-## 🌍 Aplicación Real: Coordenadas GPS
-
-Tu ubicación en la Tierra se da en grados. Por ejemplo, la Plaza de Bolívar en Bogotá está en:
-
-$$
-4^\circ \, 35' \, 53'' \text{ N}
-$$
-
-Esto significa:
-1.  **$4^\circ$:** Cuatro grados al norte del ecuador.
-2.  **$35'$:** Un poco más de medio grado adicional.
-3.  **$53''$:** Ajuste de precisión fina.
-
-Sin los minutos y segundos, el GPS solo podría decirte "estás en Colombia", pero no en qué calle.
 
 ---
 

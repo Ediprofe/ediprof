@@ -166,10 +166,10 @@ Situaciones que requieren confirmación:
 
 # 📝 PETICIÓN ESPECÍFICA.
 
-http://localhost:4322/matematicas/geometria-euclidiana/angulos/definicion-angulo
+http://localhost:4322/matematicas/geometria-euclidiana/angulos/operaciones-sistema-sexagesimal
 
+QUIERO QUE ESTA LECCIÓN LA ESCRIBAS DE MANERA QUE SE TRABAJEN 5 EJEMPLOS DE SUMA, 5 EJEMPLOS DE RESTA, Y ASÍ, O SEA, 5 EJEMPLOS DE CADA SUBCONCEPTO QUE CONSIDERES IMPORTANTE REVISAR. BASATE EN LO QUE YA ESTÁ. POR FAVOR NO ELIMINAR IMAGENES QUE EYA ESTÁN YA QUE SON EL APOYO A LOS EJEMPLOS QUE YA ESTÁN. VAS ES A REORGANIZAR Y AGREGAR MÁS EJEMPLOS OKAY? ADELANTE
 
-Tratanto de ilustrar los ejemplos que se muestran en esta lección, me doy cuenta que no hay como un resultado deseado, o pienso eso de primera medida. Mira a ver si hay algun spec sólido para trabajar las ilustraciones de esta lección, LEE CLAUDE.md y PETICION.md y archivos derivados, y dime cómo hariamos para ilustrar esto de forma elegante, bonita, escalable y fácilmente mantenible. ADELANTE.
 <!-- 
 ### ⚠️ Regla Crítica: Ecuaciones en Bloque
 
