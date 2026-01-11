@@ -22,24 +22,50 @@ Un radián ($\text{rad}$) es el ángulo que se forma cuando la **longitud del ar
 
 > **Dato:** Un radián equivale aproximadamente a $57.3^\circ$.
 
+![el-radian](https://cdn.ediprofe.com/img/matematicas/w4n5-el-radian.webp)
+
 ---
 
 ## 🥧 La Relación con $\pi$
 
-Sabemos que la circunferencia completa mide $2\pi r$ (dos veces pi por el radio). Esto significa que en una vuelta completa caben exactamente **$2\pi$ radios**.
+Para entender de dónde sale ese número raro ($\pi$), hagamos un experimento visual. Si tomas el radio ($r$) y lo vas pegando sobre el borde de la media circunferencia ($180^\circ$):
 
-Por lo tanto:
+1.  Pones el **Primer radio**: Llevas 1 radián.
+2.  Pones el **Segundo radio**: Llevas 2 radianes.
+3.  Pones el **Tercer radio**: Llevas 3 radianes.
+
+Al llegar aquí, te darás cuenta de que te falta un **pedacito muy pequeño** para completar la media vuelta. Ese pedacito mide $0.1416...$ radios.
+
+![Definición visual de Pi radianes](/images/geometria/circulos/definicion-radian-pi.svg)
+
+En total, en media vuelta caben exactamente **3 radios y ese pedacito**:
+
 $$
-1 \text{ vuelta} = 360^\circ = 2\pi \text{ rad}
+3 + 0.14159... = 3.14159... = \pi
 $$
 
-Si dividimos todo por 2, obtenemos la **Regla de Oro**:
+Por lo tanto, la media vuelta son $\pi$ radianes.
 
 $$
 180^\circ = \pi \text{ rad}
 $$
 
-Esta es la clave para todo. Si ves $\pi$, piensa en $180^\circ$ (media vuelta).
+Y si seguimos pegando cuerdas hasta dar la vuelta completa, veremos que caben **6 radios enteros** y un pedazo más grande ($0.28...$).
+
+![Definición visual de 2Pi radianes](/images/geometria/circulos/definicion-2pi-radianes.svg)
+
+Ese total es exactamente **$2\pi$ radios**.
+
+$$
+1 \text{ vuelta} = 360^\circ = 2\pi \text{ rad} \approx 6.2832 \text{ rad}
+$$
+
+Esta igualdad es tu **Regla de Oro** (simplificada a la mitad):
+$$
+180^\circ = \pi \text{ rad}
+$$
+
+> **Consejo:** Siempre que veas el símbolo $\pi$ en ángulos, tradúcelo mentalmente como "media vuelta".
 
 ---
 

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" style="font-family: Inter, system-ui, sans-serif;">
+<rect width="600" height="600" fill="white"/>
+<text x="300.0" y="30" text-anchor="middle" font-size="20" font-weight="bold" fill="#1e293b">1 Vuelta Completa</text>
+<text x="300.0" y="55" text-anchor="middle" font-size="14" fill="#64748b">360° = 2π radianes ≈ 6.28 radios</text>
+<path d="M 300.0 320.0 L 500.0 320.0 A 200 200 0 0 0 408.1 151.7 Z" fill="#3b82f6" stroke="white" stroke-width="2" opacity="0.9"/>
+<text x="440.4" y="243.3" text-anchor="middle" dominant-baseline="middle" font-size="16" font-weight="bold" fill="#fff">1</text>
+<path d="M 300.0 320.0 L 408.1 151.7 A 200 200 0 0 0 216.8 138.1 Z" fill="#8b5cf6" stroke="white" stroke-width="2" opacity="0.9"/>
+<text x="311.3" y="160.4" text-anchor="middle" dominant-baseline="middle" font-size="16" font-weight="bold" fill="#fff">2</text>
+<path d="M 300.0 320.0 L 216.8 138.1 A 200 200 0 0 0 102.0 291.8 Z" fill="#ec4899" stroke="white" stroke-width="2" opacity="0.9"/>
+<text x="171.8" y="224.2" text-anchor="middle" dominant-baseline="middle" font-size="16" font-weight="bold" fill="#fff">3</text>
+<path d="M 300.0 320.0 L 102.0 291.8 A 200 200 0 0 0 169.3 471.4 Z" fill="#f59e0b" stroke="white" stroke-width="2" opacity="0.9"/>
+<text x="150.2" y="376.1" text-anchor="middle" dominant-baseline="middle" font-size="16" font-weight="bold" fill="#fff">4</text>
+<path d="M 300.0 320.0 L 169.3 471.4 A 200 200 0 0 0 356.7 511.8 Z" fill="#10b981" stroke="white" stroke-width="2" opacity="0.9"/>
+<text x="266.3" y="476.4" text-anchor="middle" dominant-baseline="middle" font-size="16" font-weight="bold" fill="#fff">5</text>
+<path d="M 300.0 320.0 L 356.7 511.8 A 200 200 0 0 0 492.0 375.9 Z" fill="#06b6d4" stroke="white" stroke-width="2" opacity="0.9"/>
+<text x="413.4" y="432.9" text-anchor="middle" dominant-baseline="middle" font-size="16" font-weight="bold" fill="#fff">6</text>
+<path d="M 300.0 320.0 L 506.4 380.1 A 215 215 0 0 0 515.0 320.0 Z" fill="#ef4444" stroke="white" stroke-width="2" opacity="0.9"/>
+<text x="547.5" y="355.3" text-anchor="start" font-size="14" font-weight="bold" fill="#ef4444">0.28...</text>
+<line x1="300.0" y1="320.0" x2="530.0" y2="320.0" stroke="#64748b" stroke-width="2" stroke-dasharray="4,4"/>
+<text x="535.0" y="320.0" dominant-baseline="middle" font-size="14" fill="#64748b">0 / 2π</text>
+<circle cx="300.0" cy="320.0" r="4" fill="#1e293b"/>
+</svg>

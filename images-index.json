@@ -764,7 +764,16 @@
       "size": "60KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/q8nx-multiplicacion-mental.webp",
       "status": "uploaded"
+    },
+    {
+      "id": "w4n5",
+      "name": "el-radian.webp",
+      "materia": "matematicas",
+      "date": "2026-01-11",
+      "size": "52KB",
+      "url": "https://cdn.ediprofe.com/img/matematicas/w4n5-el-radian.webp",
+      "status": "uploaded"
     }
   ],
-  "lastUpdated": "2026-01-11T22:26:10.087Z"
+  "lastUpdated": "2026-01-11T23:05:08.847Z"
 }
