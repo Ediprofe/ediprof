@@ -773,7 +773,34 @@
       "size": "52KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/w4n5-el-radian.webp",
       "status": "uploaded"
+    },
+    {
+      "id": "c81n",
+      "name": "de-grados-a-radianes.webp",
+      "materia": "matematicas",
+      "date": "2026-01-12",
+      "size": "73KB",
+      "url": "https://cdn.ediprofe.com/img/matematicas/c81n-de-grados-a-radianes.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "p9h8",
+      "name": "de-radianes-a-grados.webp",
+      "materia": "matematicas",
+      "date": "2026-01-12",
+      "size": "72KB",
+      "url": "https://cdn.ediprofe.com/img/matematicas/p9h8-de-radianes-a-grados.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "e2ww",
+      "name": "resumen-conversion-de-angulos.webp",
+      "materia": "matematicas",
+      "date": "2026-01-12",
+      "size": "56KB",
+      "url": "https://cdn.ediprofe.com/img/matematicas/e2ww-resumen-conversion-de-angulos.webp",
+      "status": "uploaded"
     }
   ],
-  "lastUpdated": "2026-01-11T23:05:08.847Z"
+  "lastUpdated": "2026-01-12T00:18:33.924Z"
 }

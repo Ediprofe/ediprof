@@ -13,7 +13,7 @@ Si viajas a Estados Unidos, tienes que cambiar tus kilómetros por millas. En ma
 
 ---
 
-## 💡 La Piedra Rosetta
+## 💡 La Clave
 
 Todo se basa en una sola igualdad:
 
@@ -37,104 +37,145 @@ De aquí salen dos factores de conversión que usaremos como si fueran "fraccion
 
 ## ⚙️ Ejemplos Resueltos
 
-### Ejemplo 1: Grados $\to$ Radianes
+Vamos a practicar por separado cada dirección de la conversión.
+
+### Parte 1: De Grados ($^\circ$) a Radianes
+**Estrategia:** Multiplicamos por $\frac{\pi}{180^\circ}$ y simplificamos la fracción resultante.
+
+#### Ejemplo 1: Ángulo estándar
 Convierte $120^\circ$ a radianes.
 
-**Razonamiento:**
-Multiplicamos por el factor que tiene la $\pi$ arriba.
+**Solución:**
 $$
-120^\circ \times \frac{\pi}{180^\circ} = \frac{120\pi}{180}
+120 \times \frac{\pi}{180} = \frac{120\pi}{180}
 $$
-Simplificamos la fracción (quitamos ceros y sacamos sexta):
-$$
-\frac{12\pi}{18} = \frac{2\pi}{3}
-$$
-
-**Resultado:**
+Simplificamos dividiendo por 60:
 $$
 \boxed{\frac{2\pi}{3} \text{ rad}}
 $$
 
-### Ejemplo 2: Radianes $\to$ Grados
-Convierte $\frac{\pi}{5}$ rad a grados.
-
-**Razonamiento:**
-Sustituimos mentalmente $\pi$ por $180^\circ$. ¡Es el truco más rápido!
-$$
-\frac{180^\circ}{5}
-$$
-$180 \div 5 = 36$.
-
-**Resultado:**
-$$
-\boxed{36^\circ}
-$$
-
-### Ejemplo 3: Decimales
-Convertir 2.5 radianes a grados.
-
-**Razonamiento:**
-Aquí no hay $\pi$ para cancelar, así que usamos el factor numérico ($1 \text{ rad} \approx 57.3^\circ$).
-$$
-2.5 \times 57.3^\circ
-$$
-
-**Resultado:**
-$$
-\boxed{143.2^\circ}
-$$
-
-### Ejemplo 4: Ángulos Negativos
+#### Ejemplo 2: Ángulo negativo
 Convierte $-30^\circ$ a radianes.
 
-**Razonamiento:**
-El signo negativo solo indica la dirección del giro, se mantiene en la conversión.
+**Solución:**
+El signo se mantiene igual.
 $$
--30 \times \frac{\pi}{180} = -\frac{30\pi}{180} = -\frac{1\pi}{6}
+-30 \times \frac{\pi}{180} = -\frac{30\pi}{180}
 $$
-
-**Resultado:**
+Simplificamos dividiendo por 30:
 $$
 \boxed{-\frac{\pi}{6} \text{ rad}}
 $$
 
-### Ejemplo 5: Más de una vuelta
+#### Ejemplo 3: Más de una vuelta
 Convierte $390^\circ$ a radianes.
 
-**Razonamiento:**
+**Solución:**
 $$
-390 \times \frac{\pi}{180} = \frac{39\pi}{18}
+390 \times \frac{\pi}{180} = \frac{390\pi}{180}
 $$
-Dividimos ambos por 3:
+Quitamos ceros ($\div 10$) y luego sacamos tercera ($\div 3$):
 $$
-\frac{13\pi}{6}
+\frac{39\pi}{18} = \frac{13\pi}{6}
 $$
-
 **Resultado:**
 $$
 \boxed{\frac{13\pi}{6} \text{ rad}}
 $$
 
-### Ejemplo 6: Simplificación de fracciones raras
+#### Ejemplo 4: Ángulo pequeño
 Convierte $15^\circ$ a radianes.
 
-**Razonamiento:**
+**Solución:**
 $$
-\frac{15\pi}{180}
+15 \times \frac{\pi}{180} = \frac{15\pi}{180}
 $$
-Dividimos por 5:
-$$
-\frac{3\pi}{36}
-$$
-Dividimos por 3:
-$$
-\frac{\pi}{12}
-$$
-
-**Resultado:**
+Simplificamos (quinceava parte):
 $$
 \boxed{\frac{\pi}{12} \text{ rad}}
 $$
+
+#### Ejemplo 5: Cuarto cuadrante
+Convierte $315^\circ$ a radianes.
+
+**Solución:**
+$$
+315 \times \frac{\pi}{180} = \frac{315\pi}{180}
+$$
+Dividimos por 5 (315/5=63, 180/5=36) $\to \frac{63\pi}{36}$.
+Dividimos por 9 (63/9=7, 36/9=4):
+$$
+\boxed{\frac{7\pi}{4} \text{ rad}}
+$$
+
+![de-grados-a-radianes](https://cdn.ediprofe.com/img/matematicas/c81n-de-grados-a-radianes.webp)
+---
+
+### Parte 2: De Radianes a Grados
+**Estrategia:** Sustituimos $\pi$ por $180^\circ$ y operamos. Si no hay $\pi$, multiplicamos por $57.3^\circ$.
+
+#### Ejemplo 6: Fracción simple
+Convierte $\frac{\pi}{5}$ rad a grados.
+
+**Solución:**
+Cambiamos $\pi \to 180^\circ$:
+$$
+\frac{180^\circ}{5}
+$$
+$$
+\boxed{36^\circ}
+$$
+
+#### Ejemplo 7: Decimales (sin $\pi$)
+Convertir $2.5$ radianes a grados.
+
+**Solución:**
+Usamos la equivalencia $1 \text{ rad} \approx 57.29^\circ$:
+$$
+2.5 \times 57.29^\circ
+$$
+$$
+\boxed{143.2^\circ}
+$$
+
+#### Ejemplo 8: Negativos
+Convierte $-\frac{3\pi}{4}$ rad a grados.
+
+**Solución:**
+$$
+-\frac{3(180^\circ)}{4}
+$$
+Primero dividimos: $180 \div 4 = 45$.
+Luego multiplicamos: $-3 \times 45 = -135$.
+$$
+\boxed{-135^\circ}
+$$
+
+#### Ejemplo 9: Fracción impropia
+Convierte $\frac{9\pi}{4}$ rad a grados.
+
+**Solución:**
+$$
+\frac{9(180^\circ)}{4}
+$$
+Sabemos que $180/4 = 45$.
+$9 \times 45 = 405$.
+$$
+\boxed{405^\circ}
+$$
+
+#### Ejemplo 10: Enteros de $\pi$
+Convierte $3\pi$ rad a grados.
+
+**Solución:**
+$$
+3(180^\circ)
+$$
+$$
+\boxed{540^\circ}
+$$
+
+![de-radianes-a-grados](https://cdn.ediprofe.com/img/matematicas/p9h8-de-radianes-a-grados.webp)
 
 ---
 
@@ -272,8 +313,10 @@ $5(180)/6 = 5(30) = 150$.
 
 ## 🔑 Resumen
 
+![resumen-conversion-de-angulos](https://cdn.ediprofe.com/img/matematicas/e2ww-resumen-conversion-de-angulos.webp)
+
 | Conversión | Truco Mental |
-|:--- |:--- |:--- |
+| :--- | :--- |
 | **Grados $\to$ Radianes** | Simplifica la fracción $\frac{\text{Grados}}{180}$ y ponle $\pi$. |
 | **Radianes $\to$ Grados** | Cambia la $\pi$ por $180^\circ$ y opera. |
 

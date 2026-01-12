@@ -166,28 +166,9 @@ Situaciones que requieren confirmación:
 
 # 📝 PETICIÓN ESPECÍFICA.
 
-http://localhost:4322/matematicas/geometria-euclidiana/angulos/sistema-circular-radianes
+http://localhost:4322/matematicas/geometria-euclidiana/angulos/conversion-grados-radianes
 
-"## 🥧 La Relación con $\pi$
-
-Sabemos que la circunferencia completa mide $2\pi r$ (dos veces pi por el radio). Esto significa que en una vuelta completa caben exactamente **$2\pi$ radios**.
-
-Por lo tanto:
-$$
-1 \text{ vuelta} = 360^\circ = 2\pi \text{ rad}
-$$
-
-Si dividimos todo por 2, obtenemos la **Regla de Oro**:
-
-$$
-180^\circ = \pi \text{ rad}
-$$
-
-Esta es la clave para todo. Si ves $\pi$, piensa en $180^\circ$ (media vuelta).
-
----"
-
-podrias esa parte mejorarla, en el sentido de que por ejemplo agregues una ilustración y se vea cómo se completa el diametro de la circunferencia, en términos de un radian o algo así, y todo lo que ahí se dice. DIME SI MEJOR LAS ILUSTRACIONES LAS HACES CON AL GUN RENDER Y SPEC QUE TENGAS EN EL PROYECTO, O MEJOR LE DIGO A NANOBANANA. LO QUE SÍ QUIERO, ES QUE ME DES EL TEXTO MEJORADO CON ESOS COMENTARIOS QUE TE PIDO.
+En esta lección por por favor los factores de covnersión que se vea la unidad que se cancela, en el mismo formato de latex. Hazlo para todos los ejemplos.
 
 <!-- 
 ### ⚠️ Regla Crítica: Ecuaciones en Bloque

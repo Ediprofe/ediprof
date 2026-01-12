@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 350" style="font-family: Inter, system-ui, sans-serif;">
+<rect width="400" height="350" fill="white" rx="12"/>
+<text x="200.0" y="30" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">0° = 0 rad</text>
+<line x1="80.0" y1="185.0" x2="320.0" y2="185.0" stroke="#94a3b8" stroke-width="1.5"/>
+<line x1="200.0" y1="65.0" x2="200.0" y2="305.0" stroke="#94a3b8" stroke-width="1.5"/>
+<circle cx="200.0" cy="185.0" r="100" fill="none" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,4" opacity="0.3"/>
+<line x1="200.0" y1="185.0" x2="300.00" y2="185.00" stroke="#1e293b" stroke-width="2"/>
+<circle cx="300.00" cy="185.00" r="3" fill="#1e293b"/>
+<line x1="200.0" y1="185.0" x2="300.00" y2="185.00" stroke="#f97316" stroke-width="3"/>
+<circle cx="300.00" cy="185.00" r="4" fill="#f97316"/>
+<text x="330.00" y="185.00" text-anchor="start" font-size="14" font-weight="bold" fill="#f97316">0 rad</text>
+<circle cx="200.0" cy="185.0" r="4" fill="#1e293b"/>
+</svg>

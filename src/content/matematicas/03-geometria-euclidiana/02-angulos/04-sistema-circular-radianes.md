@@ -30,18 +30,18 @@ Un radián ($\text{rad}$) es el ángulo que se forma cuando la **longitud del ar
 
 Para entender de dónde sale ese número raro ($\pi$), hagamos un experimento visual. Si tomas el radio ($r$) y lo vas pegando sobre el borde de la media circunferencia ($180^\circ$):
 
-1.  Pones el **Primer radio**: Llevas 1 radián.
-2.  Pones el **Segundo radio**: Llevas 2 radianes.
-3.  Pones el **Tercer radio**: Llevas 3 radianes.
+1.  Pones el **Primer radio** (1 Rad).
+2.  Pones **otro radio** a continuación (otro Rad).
+3.  Pones **otro más** (otro Rad).
 
-Al llegar aquí, te darás cuenta de que te falta un **pedacito muy pequeño** para completar la media vuelta. Ese pedacito mide $0.1416...$ radios.
+Al llegar aquí, tenemos 3 radianes, pero te darás cuenta de que falta un **pedacito muy pequeño** para completar la media vuelta. Ese pedacito mide $0.1415...$ radios.
 
 ![Definición visual de Pi radianes](/images/geometria/circulos/definicion-radian-pi.svg)
 
 En total, en media vuelta caben exactamente **3 radios y ese pedacito**:
 
 $$
-3 + 0.14159... = 3.14159... = \pi
+1 + 1 + 1 + 0.1415... = 3.1415... = \pi
 $$
 
 Por lo tanto, la media vuelta son $\pi$ radianes.
@@ -69,63 +69,103 @@ $$
 
 ---
 
-## ⚙️ Ejemplos Resueltos
+## ⚙️ Ejemplos Resueltos: Usando la Media Vuelta ($\pi$)
 
-### Ejemplo 1: El ángulo recto
-¿Cuánto es $90^\circ$ en radianes?
+Recordemos la **Regla de Oro**: Media vuelta ($180^\circ$) equivale a $\pi$ radianes. Usaremos esta ficha de "media vuelta" para armar los demás ángulos.
 
-**Razonamiento:**
-$90^\circ$ es la mitad de $180^\circ$.
-Si $180^\circ = \pi$, entonces la mitad es:
+### Ejemplo 1: La Vuelta Completa ($360^\circ$)
+![360 grados 2 pi](/images/geometria/angulos/ejemplo-5-360deg.svg)
+
+Imagina completar el círculo.
+*   **Media vueltas:** Son **2** medias vueltas ($180^\circ + 180^\circ$).
+*   **Radianes:** $2 \times \pi = 2\pi \text{ rad}$
+*   *(Es la totalidad del pastel)*.
+
 $$
-\frac{\pi}{2} \text{ rad}
-$$
-
-### Ejemplo 2: $45^\circ$
-¿Cuánto es $45^\circ$ en radianes?
-
-**Razonamiento:**
-$45^\circ$ es la mitad de $90^\circ$, o sea, la cuarta parte de $180^\circ$.
-$$
-\frac{\pi}{4} \text{ rad}
+360^\circ = 2\pi \text{ rad}
 $$
 
-### Ejemplo 3: Multiplicando
-¿Cuánto es $270^\circ$?
+---
 
-**Razonamiento:**
-$270^\circ$ son tres veces $90^\circ$ ($90+90+90$).
-Como $90^\circ = \pi/2$, entonces:
-$$
-3 \times \frac{\pi}{2} = \frac{3\pi}{2} \text{ rad}
-$$
+### Ejemplo 2: Ángulo Nulo ($0^\circ$)
+![0 grados 0 rad](/images/geometria/angulos/ejemplo-6-0deg.svg)
 
-### Ejemplo 4: Sextos
-¿Cuánto es $30^\circ$?
+No hemos empezado a girar.
+*   **Media vueltas:** 0.
+*   **Radianes:** $0 \times \pi = 0 \text{ rad}$
 
-**Razonamiento:**
-¿Cuántas veces cabe 30 en 180? Cabe 6 veces ($30 \times 6 = 180$).
-Entonces es la sexta parte de $\pi$.
 $$
-\frac{\pi}{6} \text{ rad}
+0^\circ = 0 \text{ rad}
 $$
 
-### Ejemplo 5: Vuelta Completa
-¿Cuántos radianes tiene un giro de $360^\circ$?
+---
 
-**Razonamiento:**
-Son dos vueltas de $180^\circ$.
+### Ejemplo 3: Media Vuelta ($180^\circ$)
+![180 grados pi](/images/geometria/angulos/ejemplo-7-180deg.svg)
+
+Es nuestra referencia principal.
+*   **Media vueltas:** 1 exacta.
+*   **Radianes:** $1 \times \pi = \pi \text{ rad}$
+*   *(Es la mitad del pastel)*.
+
 $$
-2 \times \pi = 2\pi \text{ rad}
+180^\circ = \pi \text{ rad}
 $$
 
-### Ejemplo 6: Ángulo Cero
-¿Cuántos radianes tiene un ángulo de $0^\circ$?
+---
 
-**Razonamiento:**
-Si no hay giro en grados, no hay arco recorrido.
+### Ejemplo 4: Un Cuarto de Vuelta ($90^\circ$)
+![90 grados pi medios](/images/geometria/angulos/ejemplo-1-90deg.svg)
+
+Es el ángulo recto.
+*   **Media vueltas:** Es la **mitad** de una media vuelta ($180^\circ \div 2$).
+*   **Radianes:** $\frac{\pi}{2} \text{ rad}$
+*   *(Es un cuarto del pastel total)*.
+
 $$
-0 \text{ rad}
+90^\circ = \frac{\pi}{2} \text{ rad}
+$$
+
+---
+
+### Ejemplo 5: Tres Cuartos de Vuelta ($270^\circ$)
+![270 grados 3 pi medios](/images/geometria/angulos/ejemplo-3-270deg.svg)
+
+Llegamos abajo, al eje Y negativo.
+*   **Media vueltas:** Son **3 mitades** de media vuelta ($90^\circ + 90^\circ + 90^\circ$).
+*   **Radianes:** $3 \times \frac{\pi}{2} = \frac{3\pi}{2} \text{ rad}$
+*   *(Son tres cuartos del pastel total)*.
+
+$$
+270^\circ = \frac{3\pi}{2} \text{ rad}
+$$
+
+---
+
+### Ejemplo 6: Mitad de un Cuarto ($45^\circ$)
+![45 grados pi cuartos](/images/geometria/angulos/ejemplo-2-45deg.svg)
+
+Es la famosa diagonal.
+*   **Media vueltas:** Es la **cuarta parte** de una media vuelta ($180^\circ \div 4 = 45^\circ$).
+*   **Radianes:** $\frac{\pi}{4} \text{ rad}$
+*   *(Es un octavo del pastel total)*.
+
+$$
+45^\circ = \frac{\pi}{4} \text{ rad}
+$$
+
+---
+
+### Ejemplo 7: Un Sexto de Media Vuelta ($30^\circ$)
+![30 grados pi sextos](/images/geometria/angulos/ejemplo-4-30deg.svg)
+
+Una rebanada delgada.
+*   **Media vueltas:** Es la **sexta parte** de una media vuelta ($180^\circ \div 6 = 30^\circ$).
+*   **Radianes:** $\frac{\pi}{6} \text{ rad}$
+*   *(Es un doceavo del pastel total)*.
+
+$$
+30^\circ = \frac{\pi}{6} \text{ rad}
 $$
 
 ---
