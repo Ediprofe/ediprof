@@ -53,6 +53,8 @@ $$
 \angle C = \angle F
 $$
 
+![congruence-definition](/images/geometria/triangulos/congruence-definition.svg)
+
 ---
 
 ## 🔍 Criterios de Congruencia
@@ -67,6 +69,8 @@ $$
 \text{Si } a=a', b=b', c=c' \implies \text{Congruentes}
 $$
 
+![criterion-lll](/images/geometria/triangulos/criterion-lll.svg)
+
 ### 2. Criterio LAL (Lado-Ángulo-Lado)
 
 Si dos triángulos tienen dos lados iguales y el **ángulo comprendido** entre ellos también es igual, entonces son congruentes.
@@ -77,6 +81,8 @@ $$
 \text{Si } a=a', \angle B=\angle B', c=c' \implies \text{Congruentes}
 $$
 
+![criterion-lal](/images/geometria/triangulos/criterion-lal.svg)
+
 ### 3. Criterio ALA (Ángulo-Lado-Ángulo)
 
 Si dos triángulos tienen dos ángulos iguales y el **lado comprendido** entre ellos también es igual, entonces son congruentes.
@@ -84,6 +90,8 @@ Si dos triángulos tienen dos ángulos iguales y el **lado comprendido** entre e
 $$
 \text{Si } \angle A=\angle A', c=c', \angle B=\angle B' \implies \text{Congruentes}
 $$
+
+![criterion-ala](/images/geometria/triangulos/criterion-ala.svg)
 
 ---
 
@@ -102,6 +110,8 @@ $$
 $$
 ST = 3, TU = 4, US = 5
 $$
+
+![example-lll-345](/images/geometria/triangulos/example-lll-345.svg)
 
 **Razonamiento:**
 
@@ -135,6 +145,8 @@ Tienes dos triángulos.
 Triángulo 1: Lados de 5 cm y 7 cm, con un ángulo de 40° entre ellos.
 Triángulo 2: Lados de 5 cm y 7 cm, con un ángulo de 40° entre ellos.
 
+![example-lal-5740](/images/geometria/triangulos/example-lal-5740.svg)
+
 **Razonamiento:**
 
 Verificamos las condiciones:
@@ -156,6 +168,8 @@ $$
 
 Triángulo A: Lados 6 y 8, ángulo opuesto al lado 8 es 30°.
 Triángulo B: Lados 6 y 8, ángulo opuesto al lado 8 es 30°.
+
+![example-lla-ambiguous](/images/geometria/triangulos/example-lla-ambiguous.svg)
 
 **Razonamiento:**
 
