@@ -54,6 +54,7 @@ COLORS = {
     'bisectrices': '#8b5cf6',
     'mediatrices': '#ec4899',
     'punto_notable': '#ef4444',
+    'euler_line': '#0ea5e9',       # Cyan - Recta de Euler
     
     # === GEOMETRÍA ANALÍTICA ===
     'axis': '#64748b',           # Ejes coordenados

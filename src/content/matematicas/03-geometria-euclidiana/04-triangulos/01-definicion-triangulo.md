@@ -20,9 +20,13 @@ Un triángulo es la figura geométrica más simple que podemos cerrar. Se forma 
 
 > **Definición:** Un triángulo es la unión de tres segmentos determinados por tres puntos no colineales.
 
+![definition](/images/geometria/triangulos/definition.svg)
+
 ### ¿Por qué "no colineales"?
 
 Imagina tres puntos en una misma línea recta. Si intentas unirlos, solo obtienes... una línea recta más larga. Para que exista una figura "abierta" y con área interior, necesitamos que al menos un punto se salga de la fila.
+
+![collinear-vs-non](/images/geometria/triangulos/collinear-vs-non.svg)
 
 ---
 
@@ -55,6 +59,8 @@ Es la abertura formada por dos lados en cada vértice.
 | **Lados** | 3 | $\overline{AB}, \overline{BC}, \overline{CA}$  o  $a, b, c$ |
 | **Ángulos** | 3 | $\angle A, \angle B, \angle C$ |
 
+![elements](/images/geometria/triangulos/elements.svg)
+
 ---
 
 ## 🏗️ Propiedad Fundamental: La Rigidez
@@ -66,6 +72,9 @@ Ahora haz lo mismo con tres palitos para formar un triángulo. Empújalo. **No s
 > **Propiedad de Rigidez:** El triángulo es la única figura que no cambia de forma cuando se aplica fuerza en sus vértices (siempre que sus lados no se rompan ni se estiren).
 
 Por esto las torres eléctricas y las bicicletas están llenas de triángulos.
+
+![rigides-de-triangulos](https://cdn.ediprofe.com/img/matematicas/vqr6-rigides-de-triangulos.webp)
+
 
 ---
 
@@ -91,6 +100,9 @@ $$
 
 Si alguna de estas sumas falla, el triángulo es imposible.
 
+![desigualdad-triangular](https://cdn.ediprofe.com/img/matematicas/rpng-desigualdad-triangular.webp)
+
+
 ---
 
 ## ⚙️ Ejemplos Resueltos
@@ -105,6 +117,8 @@ El lado opuesto es aquel que "no toca" al vértice del ángulo. O dicho de otra 
 1.  Para el ángulo $\angle P$, el lado opuesto conecta $Q$ y $R$.
 2.  Para el ángulo $\angle Q$, el lado opuesto conecta $P$ y $R$.
 3.  Para el ángulo $\angle R$, el lado opuesto conecta $P$ y $Q$.
+
+![ex1-opposite-sides](/images/geometria/triangulos/ex1-opposite-sides.svg)
 
 **Resultado:**
 $$
@@ -143,6 +157,8 @@ No, $7 < 8$.
 **Conclusión:**
 Los lados de 3 y 4 cm son demasiado cortos. Incluso puestos en línea recta solo suman 7 cm, por lo que nunca podrían encontrarse para cerrar un triángulo sobre una base de 8 cm.
 
+![ex2-existence-fail](/images/geometria/triangulos/ex2-existence-fail.svg)
+
 **Resultado:**
 $\boxed{\text{No es posible}}$
 
@@ -177,6 +193,8 @@ El número debe ser mayor que 2. Como buscamos el entero mínimo...
 
 **Resultado:**
 $\boxed{3}$
+
+![ex3-missing-side](/images/geometria/triangulos/ex3-missing-side.svg)
 
 ---
 

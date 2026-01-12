@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" style="font-family: Inter, system-ui, sans-serif;">
+<rect width="600" height="400" fill="#f8fafc" rx="12"/>
+<path d="M 300 50 L 100 350 L 400 350 Z" fill="#f8fafc" stroke="#22c55e" stroke-width="4" stroke-linejoin="round"/>
+<line x1="300.00" y1="50.00" x2="259.82" y2="350.00" stroke="#22c55e" stroke-width="4" stroke-linecap="round"/>
+<path d="M 300 50 L 272.26 91.60 A 50 50 0 0 0 293.36 99.56 Z" fill="#22c55e" fill-opacity="0.2" stroke="none"/><path d="M 272.26 91.60 A 50 50 0 0 0 293.36 99.56" fill="none" stroke="#22c55e" stroke-width="2"/><text x="275.30" y="115.50" text-anchor="middle" dominant-baseline="middle" font-weight="bold" fill="#22c55e">α</text>
+<path d="M 300 50 L 292.04 109.47 A 60 60 0 0 0 318.97 106.92 Z" fill="#22c55e" fill-opacity="0.2" stroke="none"/><path d="M 292.04 109.47 A 60 60 0 0 0 318.97 106.92" fill="none" stroke="#22c55e" stroke-width="2"/><text x="307.53" y="129.64" text-anchor="middle" dominant-baseline="middle" font-weight="bold" fill="#22c55e">α</text>
+<text x="300" y="30" text-anchor="middle" font-size="24" font-weight="bold" fill="#22c55e">Bisectriz</text>
+</svg>

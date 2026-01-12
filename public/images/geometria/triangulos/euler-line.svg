@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" style="font-family: Inter, system-ui, sans-serif;">
+<rect width="600" height="400" fill="#f8fafc" rx="12"/>
+<path d="M 300.0 60.0 L 100.0 340.0 L 500.0 340.0 Z" fill="#f8fafc" stroke="#22c55e" stroke-width="3" stroke-linejoin="round"/>
+<line x1="300.0" y1="60.0" x2="300.0" y2="340.0" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="4"/>
+<line x1="100.0" y1="340.0" x2="400.0" y2="200.0" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="4"/>
+<line x1="500.0" y1="340.0" x2="200.0" y2="200.0" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="4"/>
+<line x1="300.0" y1="60.0" x2="300.00" y2="340.00" stroke="#f97316" stroke-width="1.5" stroke-dasharray="4"/>
+<line x1="100.0" y1="340.0" x2="364.86" y2="150.81" stroke="#f97316" stroke-width="1.5" stroke-dasharray="4"/>
+<line x1="500.0" y1="340.0" x2="235.14" y2="150.81" stroke="#f97316" stroke-width="1.5" stroke-dasharray="4"/>
+<line x1="300.00" y1="271.43" x2="300.0" y2="340.0" stroke="#ec4899" stroke-width="1.5" stroke-dasharray="4"/>
+<line x1="300.00" y1="271.43" x2="400.0" y2="200.0" stroke="#ec4899" stroke-width="1.5" stroke-dasharray="4"/>
+<line x1="300.00" y1="271.43" x2="200.0" y2="200.0" stroke="#ec4899" stroke-width="1.5" stroke-dasharray="4"/>
+<line x1="300.00" y1="371.43" x2="300.00" y2="97.14" stroke="#0ea5e9" stroke-width="4"/>
+<circle cx="300.00" cy="271.43" r="10" fill="#ec4899"/>
+<text x="315.00" y="276.43" font-weight="bold" font-size="16" fill="#ec4899">O</text>
+<circle cx="300.00" cy="246.67" r="10" fill="#22c55e"/>
+<text x="315.00" y="251.67" font-weight="bold" font-size="16" fill="#22c55e">G</text>
+<circle cx="300.00" cy="197.14" r="10" fill="#f97316"/>
+<text x="315.00" y="202.14" font-weight="bold" font-size="16" fill="#f97316">H</text>
+<circle cx="300.00" cy="60.00" r="4" fill="#1e293b"/><text x="300.00" y="45.00" text-anchor="middle" font-weight="bold" fill="#1e293b">A</text>
+<circle cx="100.00" cy="340.00" r="4" fill="#1e293b"/><text x="85.00" y="355.00" text-anchor="middle" font-weight="bold" fill="#1e293b">B</text>
+<circle cx="500.00" cy="340.00" r="4" fill="#1e293b"/><text x="515.00" y="355.00" text-anchor="middle" font-weight="bold" fill="#1e293b">C</text>
+<text x="300" y="390" text-anchor="middle" font-size="16" font-weight="bold" fill="#0ea5e9">Recta de Euler: O, G, H alineados</text>
+</svg>

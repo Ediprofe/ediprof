@@ -30,6 +30,8 @@ $$
 **Mnemotecnia:** **"Equi"** viene de *equilibrado* o *igual*.
 **Ejemplo real:** Señal de "Ceda el Paso".
 
+![equilateral](/images/geometria/triangulos/equilateral.svg)
+
 ---
 
 ### 2. Triángulo Isósceles
@@ -45,6 +47,8 @@ $$
 
 **Mnemotecnia:** Imagina una persona parada con las **2** piernas abiertas (lados iguales) sobre el suelo (lado distinto).
 **Ejemplo real:** Una rebanada de pizza estándar, un gancho de ropa.
+
+![isosceles](/images/geometria/triangulos/isosceles.svg)
 
 ---
 
@@ -62,14 +66,18 @@ $$
 **Mnemotecnia:** **"Esca"**leno suena a *escalera* (donde cada peldaño está a distinta altura) o *escalofriante* (caótico).
 **Ejemplo real:** La mayoría de los triángulos que se forman al romper un vidrio.
 
+![scalene](/images/geometria/triangulos/scalene.svg)
+
 ---
 
-## 🏗️ Relación Lados-Ángulos (Regla de Oro)
+## 🏗️ Relación Lados-Ángulos
 
 Hay una conexión secreta:
 *   Si tiene **3 lados** iguales $\rightarrow$ Tiene **3 ángulos** iguales ($60^\circ$).
 *   Si tiene **2 lados** iguales $\rightarrow$ Tiene **2 ángulos** iguales (los de abajo).
 *   Si tiene **0 lados** iguales $\rightarrow$ Tiene **0 ángulos** iguales.
+
+![sides-angles-relation](/images/geometria/triangulos/sides-angles-relation.svg)
 
 ---
 
@@ -86,6 +94,8 @@ Dos lados iguales $\rightarrow$ **Isósceles**.
 
 **Resultado:**
 $\boxed{\text{Triángulo Isósceles}}$
+
+![ex1-identification](/images/geometria/triangulos/ex1-identification.svg)
 
 ---
 
@@ -104,6 +114,8 @@ $$
 **Resultado:**
 $\boxed{5\,\text{cm}}$
 
+![ex2-perimeter](/images/geometria/triangulos/ex2-perimeter.svg)
+
 ---
 
 ### Ejemplo 3: El Escaleno
@@ -116,6 +128,8 @@ Ninguno se repite. Todos son distintos.
 
 **Resultado:**
 $\boxed{\text{Triángulo Escaleno}}$
+
+![ex3-scalene](/images/geometria/triangulos/ex3-scalene.svg)
 
 ---
 

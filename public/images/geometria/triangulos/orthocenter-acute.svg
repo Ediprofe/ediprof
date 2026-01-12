@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" style="font-family: Inter, system-ui, sans-serif;">
+<rect width="600" height="400" fill="#f8fafc" rx="12"/>
+<path d="M 300 60 L 120 340 L 480 340 Z" fill="#f8fafc" stroke="#22c55e" stroke-width="3" stroke-linejoin="round"/>
+<line x1="300.00" y1="60.00" x2="300.00" y2="340.00" stroke="#f97316" stroke-width="2" stroke-linecap="round"/>
+<line x1="120.00" y1="340.00" x2="374.73" y2="176.25" stroke="#f97316" stroke-width="2" stroke-linecap="round"/>
+<line x1="480.00" y1="340.00" x2="225.27" y2="176.25" stroke="#f97316" stroke-width="2" stroke-linecap="round"/>
+<path d="M 312.00 340.00 L 312.00 352.00 L 300.00 352.00" fill="none" stroke="#f97316" stroke-width="1.5"/>
+<path d="M 381.22 186.34 L 371.12 192.83 L 364.64 182.73" fill="none" stroke="#f97316" stroke-width="1.5"/>
+<path d="M 218.78 186.34 L 208.69 179.85 L 215.18 169.76" fill="none" stroke="#f97316" stroke-width="1.5"/>
+<circle cx="300.00" cy="224.29" r="8" fill="#f97316"/>
+<text x="315.00" y="229.29" font-weight="bold" font-size="18" fill="#f97316">H</text>
+<circle cx="300.00" cy="60.00" r="4" fill="#1e293b"/><text x="300.00" y="45.00" text-anchor="middle" font-weight="bold" fill="#1e293b">A</text>
+<circle cx="120.00" cy="340.00" r="4" fill="#1e293b"/><text x="105.00" y="355.00" text-anchor="middle" font-weight="bold" fill="#1e293b">B</text>
+<circle cx="480.00" cy="340.00" r="4" fill="#1e293b"/><text x="495.00" y="355.00" text-anchor="middle" font-weight="bold" fill="#1e293b">C</text>
+<text x="300" y="390" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">Ortocentro DENTRO (Acutángulo)</text>
+</svg>

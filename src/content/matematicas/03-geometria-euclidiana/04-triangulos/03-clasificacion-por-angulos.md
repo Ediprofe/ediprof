@@ -32,6 +32,8 @@ $$
 **Ejemplo de la vida real:**
 Una señal de "Ceda el Paso" o una porción de pizza delgada.
 
+![acutangle](/images/geometria/triangulos/acutangle.svg)
+
 ---
 
 ### 2. Triángulo Rectángulo
@@ -52,6 +54,8 @@ $$
 **Ejemplo de la vida real:**
 Una escuadra de dibujo, la esquina de una hoja de papel, la rampa de una escalera.
 
+![rectangle](/images/geometria/triangulos/rectangle.svg)
+
 ---
 
 ### 3. Triángulo Obtusángulo
@@ -68,6 +72,8 @@ $$
 **Ejemplo de la vida real:**
 Un gancho de ropa (percha) de madera, el techo de una casa muy plano (tipo chalet suizo).
 
+![obtusangle](/images/geometria/triangulos/obtusangle.svg)
+
 ---
 
 ## 🏗️ Lógica Geométrica: ¿Por qué es así?
@@ -78,6 +84,8 @@ La suma de los ángulos de CUALQUIER triángulo es siempre $180^\circ$. Esto nos
     $$90^\circ + 90^\circ = 180^\circ$$
     ¡Ya gastamos todo el presupuesto! El tercer ángulo sería $0^\circ$, y el triángulo se cerraría en una línea plana. Imposible.
     Por eso, un triángulo solo puede tener **un** ángulo recto o **un** ángulo obtuso.
+
+![logic-geometry](/images/geometria/triangulos/logic-geometry.svg)
 
 ---
 
@@ -96,6 +104,8 @@ Como el mayor es agudo, todos son agudos.
 **Resultado:**
 $\boxed{\text{Triángulo Acutángulo}}$
 
+![ex1-quick-id](/images/geometria/triangulos/ex1-quick-id.svg)
+
 ---
 
 ### Ejemplo 2: El intruso
@@ -109,6 +119,8 @@ Es mayor que $90^\circ$. Es un ángulo obtuso.
 **Resultado:**
 $\boxed{\text{Triángulo Obtusángulo}}$
 
+![ex2-intruder](/images/geometria/triangulos/ex2-intruder.svg)
+
 ---
 
 ### Ejemplo 3: Clasificación Doble
@@ -121,6 +133,8 @@ Clasifica un triángulo que tiene lados iguales de $5\,\text{cm}$ y un ángulo d
 
 **Resultado:**
 $\boxed{\text{Triángulo Rectángulo Isósceles}}$
+
+![ex3-double-class](/images/geometria/triangulos/ex3-double-class.svg)
 
 ---
 

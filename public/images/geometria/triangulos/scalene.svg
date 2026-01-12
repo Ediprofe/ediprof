@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" style="font-family: Inter, system-ui, sans-serif;">
+<rect width="600" height="400" fill="#f8fafc" rx="12"/>
+<path d="M 200 50 L 100 350 L 550 350 Z" fill="#f8fafc" stroke="#22c55e" stroke-width="4" stroke-linejoin="round"/>
+<line x1="145.26" y1="198.42" x2="154.74" y2="201.58" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+<line x1="327.00" y1="355.00" x2="327.00" y2="345.00" stroke="#22c55e" stroke-width="2" stroke-linecap="round"/><line x1="323.00" y1="355.00" x2="323.00" y2="345.00" stroke="#22c55e" stroke-width="2" stroke-linecap="round"/>
+<line x1="378.25" y1="196.20" x2="371.75" y2="203.80" stroke="#f97316" stroke-width="2" stroke-linecap="round"/><line x1="375.22" y1="193.60" x2="368.71" y2="201.19" stroke="#f97316" stroke-width="2" stroke-linecap="round"/><line x1="381.29" y1="198.81" x2="374.78" y2="206.40" stroke="#f97316" stroke-width="2" stroke-linecap="round"/>
+<path d="M 200 50 L 190.51 78.46 A 30 30 0 0 0 222.78 69.52 Z" fill="#1e293b" fill-opacity="0.2" stroke="none"/><path d="M 190.51 78.46 A 30 30 0 0 0 222.78 69.52" fill="none" stroke="#1e293b" stroke-width="2"/><text x="213.35" y="98.19" text-anchor="middle" dominant-baseline="middle" font-weight="bold" fill="#1e293b">α</text>
+<path d="M 100 350 L 140.00 350.00 A 40 40 0 0 0 112.65 312.05 Z" fill="#1e293b" fill-opacity="0.2" stroke="none"/><path d="M 140.00 350.00 A 40 40 0 0 0 112.65 312.05" fill="none" stroke="#1e293b" stroke-width="2"/><text x="148.67" y="314.92" text-anchor="middle" dominant-baseline="middle" font-weight="bold" fill="#1e293b">β</text>
+<path d="M 550 350 L 512.04 317.46 A 50 50 0 0 0 500.00 350.00 Z" fill="#1e293b" fill-opacity="0.2" stroke="none"/><path d="M 512.04 317.46 A 50 50 0 0 0 500.00 350.00" fill="none" stroke="#1e293b" stroke-width="2"/><text x="484.35" y="325.71" text-anchor="middle" dominant-baseline="middle" font-weight="bold" fill="#1e293b">γ</text>
+</svg>

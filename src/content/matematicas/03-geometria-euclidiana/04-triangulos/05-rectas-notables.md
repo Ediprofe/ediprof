@@ -7,9 +7,8 @@ Los triángulos tienen líneas invisibles que revelan sus secretos más profundo
 ## 🎯 ¿Qué vas a aprender?
 
 *   Qué son y para qué sirven las 4 rectas notables.
-*   Cómo se llama el punto donde se cruzan (Baricentro, Ortocentro, Incentro, Circuncentro).
 *   La diferencia clave entre "Altura" y "Mediatriz".
-*   Mnemotecnias para no confundir nunca los nombres de los puntos.
+*   Cómo identificar cada línea por características visuales como ángulos de $90^\circ$ o marcas de igualdad.
 
 ---
 
@@ -19,12 +18,16 @@ Es la línea que busca la justicia. Conecta un vértice con el **punto medio** d
 
 > **Definición:** Segmento que va del vértice al medio del lado opuesto.
 
-*   **Punto de cruce:** **Baricentro** ($G$).
-*   **Superpoder:** Es el **Centro de Gravedad**. Si recortas un triángulo de cartón, puedes sostenerlo en equilibrio poniendo el dedo justo en el Baricentro.
+*   **Pista Visual:** Busca marcas de igualdad (rayitas) en el lado donde cae la línea. Si el lado está partido en dos trozos iguales, es una mediana.
 
 $$
 \text{Mediana} \rightarrow \text{Punto Medio}
 $$
+
+> **🔮 El Secreto de la Mediana (Áreas Iguales):**
+> No importa qué tan estirado esté el triángulo: la mediana siempre lo divide en **dos triángulos de áreas idénticas**. Si fuera un pastel, la mediana asegura que dos personas coman exactamente la misma cantidad.
+
+![median](/images/geometria/triangulos/median.svg)
 
 ---
 
@@ -34,12 +37,16 @@ Es la línea seria y recta. Cae desde un vértice de forma **perpendicular** ($9
 
 > **Definición:** Segmento que va del vértice al lado opuesto formando $90^\circ$.
 
-*   **Punto de cruce:** **Ortocentro** ($H$).
-*   **Dato Curioso:** En los triángulos obtusángulos, las alturas pueden "caer" fuera del triángulo.
+*   **Pista Visual:** Busca el símbolo de cuadrado ($90^\circ$) en la base.
 
 $$
 \text{Altura} \rightarrow 90^\circ \text{ (desde vértice)}
 $$
+
+> **📏 El Secreto de la Altura (Distancia Mínima):**
+> Geoméitricamente, la altura representa la **distancia más corta** desde el vértice hasta el suelo (el lado opuesto). Si dejaras caer una pelota desde el vértice, caería siguiendo exactamente la línea de la altura.
+
+![altitude](/images/geometria/triangulos/altitude.svg)
 
 ---
 
@@ -49,12 +56,16 @@ Es la línea que corta un ángulo por la mitad. Si un ángulo mide $60^\circ$, l
 
 > **Definición:** Rayo que divide un ángulo interior en dos ángulos iguales.
 
-*   **Punto de cruce:** **Incentro** ($I$).
-*   **Superpoder:** Es el centro de la **Circunferencia Inscrita** (un círculo perfecto dibujado *dentro* del triángulo).
+*   **Pista Visual:** Busca marcas de ángulos iguales ($\alpha, \alpha$ o arcos idénticos) en el vértice de donde sale.
 
 $$
 \text{Bisectriz} \rightarrow \text{Ángulos Iguales}
 $$
+
+> **⚖️ El Secreto de la Bisectriz (Equidistancia a Lados):**
+> Cualquier punto que elijas sobre la bisectriz estará **a la misma distancia** de los dos lados del ángulo. Es como caminar por un pasillo manteniéndote siempre en el centro exacto para no chocar con ninguna de las dos paredes.
+
+![bisector](/images/geometria/triangulos/bisector.svg)
 
 ---
 
@@ -64,38 +75,22 @@ Es la única que **NO** tiene obligación de salir de un vértice. Simplemente b
 
 > **Definición:** Recta perpendicular trazada en el punto medio de un lado.
 
-*   **Punto de cruce:** **Circuncentro** ($O$ o $C$).
-*   **Superpoder:** Es el centro de la **Circunferencia Circunscrita** (un círculo que rodea al triángulo tocando sus 3 vértices).
+*   **Pista Visual:** Busca DOS cosas: el símbolo de $90^\circ$ Y marcas de igualdad en el lado. Además, fíjate que a menudo **no toca el vértice** opuesto.
 
 $$
 \text{Mediatriz} \rightarrow 90^\circ \text{ en Punto Medio (sin vértice)}
 $$
 
----
+![perpendicular-bisector](/images/geometria/triangulos/perpendicular-bisector.svg)
 
-## 🧠 Mnemotecnia: "BAMI CO"
+> **📍 El Secreto de la Mediatriz (Equidistancia a Vértices):**
+> Cualquier punto sobre la mediatriz está **a la misma distancia** de los dos extremos del lado. Si dos personas viven en las esquinas de la base, la mediatriz es el camino "justo" donde ambas tendrían que caminar lo mismo para encontrarse.
 
-Para recordar qué punto va con qué recta, usa estas siglas (aunque hay muchas variantes, esta es clásica):
-
-| Recta | Punto | Truco |
-| :--- | :--- | :--- |
-| **M**ediana | **B**aricentro | **MB** (Muy Bueno) |
-| **A**ltura | **O**rtocentro | **AO** (Alta Ortografía) |
-| **B**isectriz | **I**ncentro | **BI** (Bicicleta) |
-| **M**ediatriz | **C**ircuncentro | **MC** (Maestro de Ceremonias) |
+![perpendicular-bisector-equidistance](/images/geometria/triangulos/perpendicular-bisector-equidistance.svg)
 
 ---
 
-## ⚙️ Tabla Resumen
 
-| Recta | Característica Clave | Punto Notable | Propiedad Física/Geométrica |
-| :--- | :--- | :--- | :--- |
-| **Mediana** | Punto medio | **Baricentro** | Centro de gravedad |
-| **Altura** | Perpendicular ($90^\circ$) | **Ortocentro** | Altura total |
-| **Bisectriz** | Divide ángulo | **Incentro** | Círculo adentro (Inscrito) |
-| **Mediatriz** | $90^\circ$ en medio | **Circuncentro**| Círculo afuera (Circunscrito) |
-
----
 
 ## 📝 Ejercicios de Práctica
 
@@ -113,13 +108,13 @@ La **Bisectriz**.
 ---
 
 ### Ejercicio 2
-Si trazas las tres medianas de un triángulo de madera, ¿qué encontrarás en su intersección?
+Si ves una línea que sale de un vértice y divide el lado opuesto en dos segmentos de 5 cm cada uno, ¿qué línea es?
 
 <details>
 <summary>Ver solución</summary>
 
 **Respuesta:**
-El **Baricentro**, que es su centro de gravedad (punto de equilibrio).
+Una **Mediana** (porque va al punto medio).
 
 </details>
 
@@ -155,13 +150,13 @@ $\boxed{\text{Son la misma línea}}$
 ---
 
 ### Ejercicio 5
-¿Cómo se llama el punto que es el centro de la circunferencia que toca los tres vértices del triángulo?
+¿Qué recta necesitas dibujar para saber la "estatura" de un triángulo?
 
 <details>
 <summary>Ver solución</summary>
 
 **Respuesta:**
-El **Circuncentro** (cruce de mediatrices).
+La **Altura**.
 
 </details>
 
@@ -197,26 +192,26 @@ Un ángulo recto de $90^\circ$.
 ---
 
 ### Ejercicio 8
-Relaciona: **Incentro**.
+Estás viendo una línea perpendicular a un lado. ¿Es una altura o una mediatriz?
 
 <details>
 <summary>Ver solución</summary>
 
 **Respuesta:**
-Es el cruce de las **Bisectrices**.
+Depende. Si sale del vértice opuesto, es **Altura**. Si sale del punto medio del lado, es **Mediatriz**.
 
 </details>
 
 ---
 
 ### Ejercicio 9
-Si dibujas un círculo dentro del triángulo que toca los lados sin salirse, ¿qué punto usaste como centro?
+Para dividir un terreno triangular en dos áreas iguales usando una cerca desde una esquina, ¿qué línea trazas?
 
 <details>
 <summary>Ver solución</summary>
 
 **Respuesta:**
-El **Incentro**.
+La **Mediana**. (Divide el triángulo en dos áreas iguales).
 
 </details>
 
@@ -241,7 +236,4 @@ $\boxed{\text{A los 5 cm (Punto Medio)}}$
 
 ## 🔑 Resumen
 
-*   **Mediana** $\rightarrow$ Equilibrio (Baricentro).
-*   **Altura** $\rightarrow$ Perpendicularidad (Ortocentro).
-*   **Bisectriz** $\rightarrow$ Ángulos (Incentro).
-*   **Mediatriz** $\rightarrow$ Lados y $90^\circ$ (Circuncentro).
+![summary-lines](/images/geometria/triangulos/summary-lines.svg)

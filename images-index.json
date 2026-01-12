@@ -1016,7 +1016,25 @@
       "size": "37KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/1on3-ejemplo-6-el-rectangulo.webp",
       "status": "uploaded"
+    },
+    {
+      "id": "vqr6",
+      "name": "rigides-de-triangulos.webp",
+      "materia": "matematicas",
+      "date": "2026-01-12",
+      "size": "57KB",
+      "url": "https://cdn.ediprofe.com/img/matematicas/vqr6-rigides-de-triangulos.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "rpng",
+      "name": "desigualdad-triangular.webp",
+      "materia": "matematicas",
+      "date": "2026-01-12",
+      "size": "44KB",
+      "url": "https://cdn.ediprofe.com/img/matematicas/rpng-desigualdad-triangular.webp",
+      "status": "uploaded"
     }
   ],
-  "lastUpdated": "2026-01-12T03:02:06.336Z"
+  "lastUpdated": "2026-01-12T04:15:40.019Z"
 }

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" style="font-family: Inter, system-ui, sans-serif;">
+<rect width="600" height="400" fill="#f8fafc" rx="12"/>
+<path d="M 136.16959114220165 264.7152872702092 L 300 150 L 463.8304088577984 264.7152872702092 Z" fill="#f8fafc" stroke="#22c55e" stroke-width="4" stroke-linejoin="round"/>
+<path d="M 300 150 L 275.43 167.21 A 30 30 0 0 0 324.57 167.21 Z" fill="#f97316" fill-opacity="0.2" stroke="none"/><path d="M 275.43 167.21 A 30 30 0 0 0 324.57 167.21" fill="none" stroke="#f97316" stroke-width="2"/><text x="300.00" y="200.00" text-anchor="middle" dominant-baseline="middle" font-weight="bold" fill="#f97316">110°</text>
+<path d="M 136.16959114220165 264.7152872702092 L 176.17 264.72 A 40 40 0 0 0 168.94 241.77 Z" fill="#64748b" fill-opacity="0.2" stroke="none"/><path d="M 176.17 264.72 A 40 40 0 0 0 168.94 241.77" fill="none" stroke="#64748b" stroke-width="2"/><text x="193.39" y="246.67" text-anchor="middle" dominant-baseline="middle" font-weight="bold" fill="#64748b">35°</text>
+<path d="M 463.8304088577984 264.7152872702092 L 431.06 241.77 A 40 40 0 0 0 423.83 264.72 Z" fill="#64748b" fill-opacity="0.2" stroke="none"/><path d="M 431.06 241.77 A 40 40 0 0 0 423.83 264.72" fill="none" stroke="#64748b" stroke-width="2"/><text x="406.61" y="246.67" text-anchor="middle" dominant-baseline="middle" font-weight="bold" fill="#64748b">35°</text>
+<text x="300" y="350" text-anchor="middle" font-size="16" fill="#f97316" font-weight="bold">¡Hay un intruso &gt; 90°!</text>
+</svg>

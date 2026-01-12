@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" style="font-family: Inter, system-ui, sans-serif;">
+<rect width="600" height="400" fill="#f8fafc" rx="12"/>
+<path d="M 300 50 L 100 350 L 500 350 Z" fill="#f8fafc" stroke="#22c55e" stroke-width="4" stroke-linejoin="round"/>
+<line x1="300.00" y1="50.00" x2="300.00" y2="350.00" stroke="#3b82f6" stroke-width="4" stroke-linecap="round"/>
+<circle cx="300.00" cy="350.00" r="4" fill="#3b82f6"/><text x="300.00" y="370.00" text-anchor="middle" font-weight="bold" fill="#3b82f6">M (Punto Medio)</text>
+<line x1="202.00" y1="355.00" x2="202.00" y2="345.00" stroke="#1e293b" stroke-width="2" stroke-linecap="round"/><line x1="198.00" y1="355.00" x2="198.00" y2="345.00" stroke="#1e293b" stroke-width="2" stroke-linecap="round"/>
+<line x1="402.00" y1="355.00" x2="402.00" y2="345.00" stroke="#1e293b" stroke-width="2" stroke-linecap="round"/><line x1="398.00" y1="355.00" x2="398.00" y2="345.00" stroke="#1e293b" stroke-width="2" stroke-linecap="round"/>
+<text x="300" y="30" text-anchor="middle" font-size="24" font-weight="bold" fill="#3b82f6">Mediana</text>
+</svg>

@@ -166,13 +166,26 @@ Situaciones que requieren confirmación:
 
 # 📝 PETICIÓN ESPECÍFICA.
 
-http://localhost:4321/matematicas/geometria-euclidiana/rectas-perpendiculares-paralelas/angulos-entre-paralelas-secante
+http://localhost:4321/matematicas/geometria-euclidiana/triangulos/puntos-notables
 
-http://localhost:4321/matematicas/geometria-euclidiana/rectas-perpendiculares-paralelas/propiedades-angulos-paralelas
+AGREGA LAS ILUSTRACIONES DEBIDAS RELACIOANDAS PARA LAS SIGUIENTES SECCIONES:
+
+- 1. El Baricentro (G)
+- 2. El Ortocentro (H)
+    Acutángulo (Dentro)
+    Rectángulo (En el Vértice)
+    Obtusángulo (Fuera)
+- 3. El Incentro (I)
+- 4. El Circuncentro (O)
+  
+
+7 ILUSTRACIONES.
 
 
+POR FAVOR QUITA LAS ILUSTRACIONES QUE ESTÁN MONTADAS CON UNA LIBRERÍA DE JAVASCRIPT Y REEMPLAZA CON LO QUE TE PEDÍ.
 
-ESTAS DOS LECCIONES ESTÁN RELACIONADAS, TIENEN ILUSTRACIONES MUY BONITAS, PERO SIENTO QUE FALTA QUE TENGA MÁS SINERGÍA Y COMO QUE HAYA UN RESUMEN CLARO DE AMBAS, NO SÉ, O UN RESUMEN MÁS CLARA DE CADA UNO. NO SÉ DIME TÚ CÓMO PODRÍA MEJORAR ESE REDONDEO DE LO QUE TRAEN AMBAS LECCIONES RELACIONADAS SIN DESECHAR EL USO DE LAS MUCHAS IMAGENES QUE SE USAN EN ELLAS DOS? PIENSA Y PROCEDE
+AGREGA LAS ILUSTRACIONES. PARA ELLO REVISA LAS CONVENCIONES Y MODO DE TRABAJO DEL PROYECTO. REVISA CLAUDE.md y ARCHIVOS REFERIDOS NECESARIOS PARA TAL FIN. SI ES NECESARIO (SOLO SI NO HAY LÓGICA CREADA AL RESPECTO), CREA LA LÓGICA, POR EJEMPLO RENDERERS, ETC., TÚ SABRÁS.
+
 
 <!-- 
 ### ⚠️ Regla Crítica: Ecuaciones en Bloque

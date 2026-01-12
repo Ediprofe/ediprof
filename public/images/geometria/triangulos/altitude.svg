@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" style="font-family: Inter, system-ui, sans-serif;">
+<rect width="600" height="400" fill="#f8fafc" rx="12"/>
+<path d="M 200 50 L 100 350 L 500 350 Z" fill="#f8fafc" stroke="#22c55e" stroke-width="4" stroke-linejoin="round"/>
+<line x1="200.00" y1="50.00" x2="200.00" y2="350.00" stroke="#f97316" stroke-width="4" stroke-linecap="round"/>
+<rect x="200" y="325" width="25" height="25" fill="none" stroke="#f97316" stroke-width="2"/>
+<circle cx="212.5" cy="337.5" r="2" fill="#f97316"/>
+<text x="200" y="380" text-anchor="middle" font-weight="bold" fill="#f97316">90°</text>
+<text x="200" y="30" text-anchor="middle" font-size="24" font-weight="bold" fill="#f97316">Altura</text>
+</svg>

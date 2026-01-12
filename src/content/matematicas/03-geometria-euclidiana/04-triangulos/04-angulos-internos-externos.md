@@ -25,6 +25,8 @@ $$
 \angle A + \angle B + \angle C = 180^\circ
 $$
 
+![internal-angles-sum](/images/geometria/triangulos/internal-angles-sum.svg)
+
 ### ¿Por qué sirve esto?
 Si conoces dos ángulos, el tercero es "lo que falta" para llegar a 180.
 
@@ -41,6 +43,8 @@ $$
 \angle Ext_A + \angle Ext_B + \angle Ext_C = 360^\circ
 $$
 
+![external-angles-sum](/images/geometria/triangulos/external-angles-sum.svg)
+
 ---
 
 ## 🚀 Teorema del Ángulo Exterior
@@ -50,6 +54,8 @@ Hay un atajo genial. Un ángulo exterior es igual a la suma de los dos internos 
 $$
 \angle Ext_C = \angle A + \angle B
 $$
+
+![exterior-angle-theorem](/images/geometria/triangulos/exterior-angle-theorem.svg)
 
 **Ejemplo:**
 Si en las esquinas A y B tienes $50^\circ$ y $60^\circ$, el ángulo exterior en C será $50 + 60 = 110^\circ$. ¡Sin necesidad de calcular el interno de C primero!
@@ -70,6 +76,8 @@ Restamos de 180: $180 - 120 = 60$.
 **Resultado:**
 $\boxed{60^\circ}$
 
+![ex1-missing-angle](/images/geometria/triangulos/ex1-missing-angle.svg)
+
 ---
 
 ### Ejemplo 2: El Triángulo Rectángulo
@@ -87,6 +95,8 @@ $x = 60$.
 **Resultado:**
 $\boxed{60^\circ}$
 
+![ex2-right-triangle](/images/geometria/triangulos/ex2-right-triangle.svg)
+
 ---
 
 ### Ejemplo 3: Usando el Ángulo Exterior
@@ -101,6 +111,8 @@ $x = 120^\circ - 70^\circ = 50^\circ$.
 
 **Resultado:**
 $\boxed{50^\circ}$
+
+![ex3-using-exterior](/images/geometria/triangulos/ex3-using-exterior.svg)
 
 ---
 

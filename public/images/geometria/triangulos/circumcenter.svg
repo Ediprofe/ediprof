@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" style="font-family: Inter, system-ui, sans-serif;">
+<rect width="600" height="400" fill="#f8fafc" rx="12"/>
+<circle cx="300.00" cy="261.14" r="161.14" fill="#ec4899" fill-opacity="0.05" stroke="#ec4899" stroke-width="2"/>
+<path d="M 300 100 L 150 320 L 450 320 Z" fill="#f8fafc" stroke="#22c55e" stroke-width="3" stroke-linejoin="round"/>
+<line x1="300.00" y1="261.14" x2="300.00" y2="320.00" stroke="#ec4899" stroke-width="2" stroke-linecap="round"/>
+<line x1="300.00" y1="261.14" x2="375.00" y2="210.00" stroke="#ec4899" stroke-width="2" stroke-linecap="round"/>
+<line x1="300.00" y1="261.14" x2="225.00" y2="210.00" stroke="#ec4899" stroke-width="2" stroke-linecap="round"/>
+<path d="M 310.00 320.00 L 310.00 330.00 L 300.00 330.00" fill="none" stroke="#ec4899" stroke-width="1.5"/>
+<path d="M 380.63 218.26 L 372.37 223.90 L 366.74 215.63" fill="none" stroke="#ec4899" stroke-width="1.5"/>
+<path d="M 219.37 218.26 L 211.10 212.63 L 216.74 204.37" fill="none" stroke="#ec4899" stroke-width="1.5"/>
+<circle cx="300.00" cy="261.14" r="8" fill="#ef4444"/>
+<text x="315.00" y="251.14" font-weight="bold" font-size="18" fill="#ef4444">O</text>
+<circle cx="300.00" cy="100.00" r="4" fill="#1e293b"/><text x="300.00" y="85.00" text-anchor="middle" font-weight="bold" fill="#1e293b">A</text>
+<circle cx="150.00" cy="320.00" r="4" fill="#1e293b"/><text x="135.00" y="335.00" text-anchor="middle" font-weight="bold" fill="#1e293b">B</text>
+<circle cx="450.00" cy="320.00" r="4" fill="#1e293b"/><text x="465.00" y="335.00" text-anchor="middle" font-weight="bold" fill="#1e293b">C</text>
+<text x="300" y="390" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">Circuncentro (Mediatrices) + Círculo Circunscrito</text>
+</svg>
