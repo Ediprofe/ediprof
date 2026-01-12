@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" style="font-family: Inter, system-ui, sans-serif;">
+<rect width="600" height="400" fill="#f8fafc" rx="12"/>
+<line x1="100.0" y1="150.0" x2="500.0" y2="150.0" stroke="#22c55e" stroke-width="3" stroke-linecap="round"/>
+<line x1="100.0" y1="250.0" x2="500.0" y2="250.0" stroke="#22c55e" stroke-width="3" stroke-linecap="round"/>
+<path d="M 485.0 144.0 L 500.0 150.0 L 485.0 156.0" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 485.0 244.0 L 500.0 250.0 L 485.0 256.0" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="139.13" y1="334.99" x2="460.87" y2="65.01" stroke="#14b8a6" stroke-width="3" stroke-linecap="round"/>
+<path d="M 359.5876796297105 150.0 L 319.59 150.00 A 40 40 0 0 0 328.95 175.71 Z" fill="#f97316" fill-opacity="0.4" stroke="none" /><path d="M 319.59 150.00 A 40 40 0 0 0 328.95 175.71" fill="none" stroke="#f97316" stroke-width="2" />
+<text x="303.21" y="170.52" text-anchor="end" dominant-baseline="middle" font-weight="bold" fill="#1e293b">40°</text>
+<path d="M 240.41232037028948 250.0 L 280.41 250.00 A 40 40 0 0 0 271.05 224.29 Z" fill="#f97316" fill-opacity="0.4" stroke="none" /><path d="M 280.41 250.00 A 40 40 0 0 0 271.05 224.29" fill="none" stroke="#f97316" stroke-width="2" />
+<text x="296.79" y="229.48" text-anchor="start" dominant-baseline="middle" font-weight="bold" fill="#1e293b">?</text>
+</svg>

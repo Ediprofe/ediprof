@@ -23,11 +23,15 @@ $$
 \text{Ángulo Arriba} = \text{Ángulo Abajo}
 $$
 
+![concept-ascensor](/images/matematicas/concept-ascensor.svg)
+
 ### 2. Alternos ("El Cruce")
 Si cruzas la línea (formando una Z o una X extendida), el ángulo se mantiene.
 $$
 \text{Ángulo Izquierda} = \text{Ángulo Derecha}
 $$
+
+![concept-cruce](/images/matematicas/concept-cruce.svg)
 
 ---
 
@@ -41,6 +45,8 @@ $$
 \text{Ángulo Arriba} + \text{Ángulo Abajo} = 180^\circ
 $$
 
+![concept-suma](/images/matematicas/concept-suma.svg)
+
 ---
 
 ## ⚙️ Ejemplos Resueltos
@@ -51,6 +57,8 @@ Si un ángulo superior derecho mide $110^\circ$, ¿cuánto mide el inferior dere
 **Razonamiento:**
 Están en la misma posición (arriba-derecha y abajo-derecha). Son correspondientes.
 **Resultado:** $110^\circ$.
+
+![prop-ex1](/images/matematicas/prop-ex1.svg)
 
 ### Ejemplo 2: Alternos Internos con Ecuación
 Dos ángulos alternos internos miden $2x$ y $80^\circ$. Halla $x$.
@@ -63,6 +71,8 @@ $$
 $$
 x = 40^\circ
 $$
+
+![prop-ex2](/images/matematicas/prop-ex2.svg)
 
 ### Ejemplo 3: Conjugados y Suplemento
 Dos ángulos conjugados internos miden $x$ y $x+20$. Halla $x$.
@@ -80,6 +90,8 @@ x = 80^\circ
 $$
 Los ángulos son $80^\circ$ y $100^\circ$.
 
+![prop-ex3](/images/matematicas/prop-ex3.svg)
+
 ### Ejemplo 4: Alternos Externos
 Si un ángulo fuera de las paralelas (arriba izquierda) mide $150^\circ$, ¿cuánto mide el de abajo derecha (también fuera)?
 
@@ -87,12 +99,16 @@ Si un ángulo fuera de las paralelas (arriba izquierda) mide $150^\circ$, ¿cuá
 Son alternos externos. Cruzan la transversal y están fuera. Son iguales.
 **Resultado:** $150^\circ$.
 
+![prop-ex4](/images/matematicas/prop-ex4.svg)
+
 ### Ejemplo 5: ¿Son paralelas?
 Un ingeniero mide dos ángulos correspondientes en una estructura. Uno mide $70^\circ$ y el otro $71^\circ$. ¿Son las vigas paralelas?
 
 **Razonamiento:**
 Para ser paralelas estrictas, los ángulos correspondientes deben ser **exactamente iguales**.
 **Resultado:** No, las vigas no son paralelas (aunque están cerca).
+
+![prop-ex5-noparallel](/images/matematicas/prop-ex5-noparallel.svg)
 
 ### Ejemplo 6: El Zig-Zag (Propiedad M)
 Imagina una línea quebrada entre dos paralelas que forma una "M" acostada. El ángulo del medio que apunta a la derecha es igual a la suma de los dos ángulos de las puntas que apuntan a la izquierda.
@@ -104,6 +120,8 @@ $$
 x = 30 + 40 = 70^\circ.
 $$
 **Resultado:** $70^\circ$.
+
+![prop-ex6-zigzag](/images/matematicas/prop-ex6-zigzag.svg)
 
 ### Ejemplo 7: Ecuación Compleja
 Dos ángulos correspondientes son $5x - 20$ y $3x + 40$.
@@ -120,6 +138,8 @@ $$
 x = 30^\circ
 $$
 El ángulo mide $5(30) - 20 = 130^\circ$.
+
+![prop-ex7](/images/matematicas/prop-ex7.svg)
 
 ---
 
@@ -254,9 +274,11 @@ Falso. Si son iguales, **obligatoriamente** son paralelas.
 
 ## 🔑 Resumen
 
-| Relación | Operación | ¿Cuándo ocurre? |
-|:--- |:--- |:--- |
-| **Alternos / Correspondientes** | Iguales ($a = b$) | Cruzando la línea o misma posición. |
-| **Conjugados** | Suman 180 ($a+b=180$) | Encerrados del mismo lado. |
+![resumen-zfc](/images/matematicas/resumen-zfc.svg)
+
+| Relación | Operación | ¿Cuándo aplica? | Ejemplo |
+|:--- |:--- |:--- |:--- |
+| **Alternos / Correspondientes** | Iguales ($a = b$) | Cruzando la línea o misma posición | $2x = 80 \to x = 40$ |
+| **Conjugados** | Suman 180 ($a+b=180$) | Encerrados del mismo lado | $x + 100 = 180 \to x = 80$ |
 
 > **Conclusión:** Ante la duda, mira el dibujo. Si uno es agudo y el otro obtuso, suman 180. Si ambos se ven iguales (ambos agudos o ambos obtusos), entonces son iguales. Así de simple.

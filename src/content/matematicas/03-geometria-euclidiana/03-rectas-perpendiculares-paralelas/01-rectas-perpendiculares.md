@@ -6,20 +6,37 @@ En el mundo de la construcción y el diseño, el ángulo de 90° es el rey. Cuan
 
 ## 🎯 ¿Qué vas a aprender?
 
-- Qué significa que dos rectas sean perpendiculares ($\perp$).
-- Por qué forman cuatro ángulos iguales de 90°.
+- Qué significa que dos rectas sean perpendiculares:
+  
+$$
+\perp
+$$
+
+- Por qué forman cuatro ángulos iguales de $90^\circ$.
 - Cómo encontrar la distancia más corta entre un punto y una recta (spoiler: es la perpendicular).
 
 ---
 
 ## 📐 Definición Formal
 
-Dos rectas son **perpendiculares** si al cortarse forman al menos un ángulo recto ($90^\circ$).
+Dos rectas son **perpendiculares** si al cortarse forman al menos un ángulo recto:
 
-- **Símbolo:** $l \perp m$.
+$$
+90^\circ
+$$
+
+- **Símbolo:**
+  
+$$
+l \perp m
+$$
+
 - **Consecuencia:** Si forman un ángulo recto, automáticamente los otros tres también son rectos (todos miden $90^\circ$).
 
 > **Ojo:** No basta con que se crucen (eso es ser secantes). Tienen que cruzarse en "forma de cruz perfecta".
+
+![rectas-perpendiculares](https://cdn.ediprofe.com/img/matematicas/qodc-rectas-perpendiculares.webp)
+
 
 ---
 
@@ -29,6 +46,8 @@ Imagina que estás en medio de un campo de fútbol y quieres llegar a la línea 
 
 - La **distancia** de un punto a una recta se mide siempre sobre el camino **perpendicular**.
 - Cualquier otro camino (oblicuo) será más largo.
+
+![la-perpendicular-como-distancia](https://cdn.ediprofe.com/img/matematicas/ncyo-la-perpendicular-como-distancia.webp)
 
 ---
 
@@ -45,15 +64,23 @@ Clasifica los siguientes cruces como perpendiculares o no:
 2.  Forma ángulos agudos y obtusos $\to$ **No perpendiculares** (solo secantes).
 3.  El poste vertical cae a 90° sobre el horizontal $\to$ **Perpendiculares**.
 
+![ejemplo-1](https://cdn.ediprofe.com/img/matematicas/rh7b-ejemplo-1.webp)
+
+
 ### Ejemplo 2: Ángulos Faltantes
 Si $l \perp m$ y se cruzan en el punto $P$, ¿cuánto suman los cuatro ángulos alrededor de $P$?
 
 **Razonamiento:**
 Al ser perpendiculares, los 4 ángulos miden $90^\circ$.
+
 $$
 90 + 90 + 90 + 90 = 360^\circ
 $$
+
 **Resultado:** $360^\circ$ (una vuelta completa).
+
+![ejemplo-2](https://cdn.ediprofe.com/img/matematicas/4lte-ejemplo-2.webp)
+
 
 ### Ejemplo 3: Pendientes (Introducción)
 Si una recta sube con pendiente 2, ¿cómo debe ser una recta perpendicular?
@@ -63,12 +90,18 @@ Debe ser "opuesta" e "invertida". Si una sube rápido, la otra debe bajar lento.
 (Esta es una propiedad avanzada: el producto de pendientes es -1).
 **Respuesta:** Debe tener pendiente negativa (bajar).
 
+![ejemplo-3](https://cdn.ediprofe.com/img/matematicas/movb-ejemplo-3.webp)
+
+
 ### Ejemplo 4: Construcción Lógica
 Si trazamos una línea vertical en una hoja y luego una horizontal que la cruce, ¿son perpendiculares?
 
 **Razonamiento:**
 La vertical va de arriba a abajo. La horizontal de izquierda a derecha. El ángulo entre ellas es, por definición, $90^\circ$.
 **Resultado:** Sí, son perpendiculares.
+
+![ejemplo-4](https://cdn.ediprofe.com/img/matematicas/8l0h-ejemplo-4.webp)
+
 
 ### Ejemplo 5: Distancia
 Un barco está en el punto $P$. La costa es una línea recta $r$. El capitán mide la distancia a la costa en dirección Noreste y le da 10 km. Mide en dirección Norte (perpendicular a la costa) y le da 7 km. ¿Cuál es la distancia real del barco a la costa?
@@ -77,12 +110,17 @@ Un barco está en el punto $P$. La costa es una línea recta $r$. El capitán mi
 La distancia geométrica siempre es la **mínima**, es decir, la perpendicular.
 **Resultado:** 7 km.
 
+![ejemplo-5](https://cdn.ediprofe.com/img/matematicas/dyp5-ejemplo-5.webp)
+
+
 ### Ejemplo 6: Triángulos
 En un triángulo rectángulo, ¿cómo son los lados que forman el ángulo recto?
 
 **Razonamiento:**
 Se llaman catetos. Como forman un ángulo de $90^\circ$, son perpendiculares entre sí.
 **Respuesta:** Perpendiculares.
+
+![ejemplo-6](https://cdn.ediprofe.com/img/matematicas/w41d-ejemplo-6.webp)
 
 ---
 
@@ -94,7 +132,9 @@ Se llaman catetos. Como forman un ángulo de $90^\circ$, son perpendiculares ent
 <details>
 <summary>Ver solución</summary>
 
-$90^\circ$.
+$$
+90^\circ
+$$
 
 </details>
 
@@ -202,7 +242,9 @@ Símbolo matemático para "es perpendicular a".
 <details>
 <summary>Ver solución</summary>
 
-$\perp$.
+$$
+\perp
+$$
 
 </details>
 
@@ -213,7 +255,7 @@ $\perp$.
 | Concepto | Característica | Símbolo |
 |:--- |:--- |:--- |
 | **Perpendiculares** | Se cruzan a 90° | $l \perp m$ |
-| **Ángulos** | 4 rectos iguales | $\square$ |
+| **Ángulos** | 4 rectos iguales | $90^\circ$ |
 | **Distancia** | Mínima (camino más corto) | $d(P, r)$ |
 
 > **Conclusión:** La perpendicularidad es la definición de "estar derecho" respecto a algo. Sin ella, los edificios se caerían y no podríamos medir distancias correctamente.

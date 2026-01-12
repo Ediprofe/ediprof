@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" style="font-family: Inter, system-ui, sans-serif;">
+<rect width="600" height="400" fill="#f8fafc" rx="12"/>
+<defs><marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#ef4444"/></marker></defs>
+<line x1="100.00" y1="156.98" x2="500.00" y2="143.02" stroke="#22c55e" stroke-width="3" stroke-linecap="round"/>
+<line x1="100.00" y1="250.00" x2="500.00" y2="250.00" stroke="#22c55e" stroke-width="3" stroke-linecap="round"/>
+<path d="M 485.0 137.01584610165045 L 500.0 143.01584610165045 L 485.0 149.01584610165045" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 485.0 244.0 L 500.0 250.0 L 485.0 256.0" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="228.18" y1="397.34" x2="371.82" y2="2.66" stroke="#14b8a6" stroke-width="3" stroke-linecap="round"/>
+<path d="M 318.43279475865853 149.3563126231442 L 358.41 147.96 A 40 40 0 0 0 332.11 111.77 Z" fill="#f97316" fill-opacity="0.4" stroke="none" /><path d="M 358.41 147.96 A 40 40 0 0 0 332.11 111.77" fill="none" stroke="#f97316" stroke-width="2" />
+<text x="366.97" y="114.09" text-anchor="start" dominant-baseline="middle" font-weight="bold" fill="#1e293b">71°</text>
+<path d="M 281.80148828668985 250.0 L 321.80 250.00 A 40 40 0 0 0 295.48 212.41 Z" fill="#f97316" fill-opacity="0.4" stroke="none" /><path d="M 321.80 250.00 A 40 40 0 0 0 295.48 212.41" fill="none" stroke="#f97316" stroke-width="2" />
+<text x="330.95" y="215.59" text-anchor="start" dominant-baseline="middle" font-weight="bold" fill="#1e293b">70°</text>
+</svg>

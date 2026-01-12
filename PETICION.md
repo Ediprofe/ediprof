@@ -166,9 +166,13 @@ Situaciones que requieren confirmación:
 
 # 📝 PETICIÓN ESPECÍFICA.
 
-http://localhost:4322/matematicas/geometria-euclidiana/angulos/angulos-entre-rectas
+http://localhost:4321/matematicas/geometria-euclidiana/rectas-perpendiculares-paralelas/angulos-entre-paralelas-secante
 
-ILUSTRA EL EJEMPLO 3. SIGUE LAS CONVECIONES Y PAUTAS DEL PROYECTO.
+http://localhost:4321/matematicas/geometria-euclidiana/rectas-perpendiculares-paralelas/propiedades-angulos-paralelas
+
+
+
+ESTAS DOS LECCIONES ESTÁN RELACIONADAS, TIENEN ILUSTRACIONES MUY BONITAS, PERO SIENTO QUE FALTA QUE TENGA MÁS SINERGÍA Y COMO QUE HAYA UN RESUMEN CLARO DE AMBAS, NO SÉ, O UN RESUMEN MÁS CLARA DE CADA UNO. NO SÉ DIME TÚ CÓMO PODRÍA MEJORAR ESE REDONDEO DE LO QUE TRAEN AMBAS LECCIONES RELACIONADAS SIN DESECHAR EL USO DE LAS MUCHAS IMAGENES QUE SE USAN EN ELLAS DOS? PIENSA Y PROCEDE
 
 <!-- 
 ### ⚠️ Regla Crítica: Ecuaciones en Bloque

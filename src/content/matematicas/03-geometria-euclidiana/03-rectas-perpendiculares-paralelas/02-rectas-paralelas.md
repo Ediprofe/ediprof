@@ -22,7 +22,8 @@ Dos rectas son **paralelas** si:
 - **Símbolo:** $l \parallel m$.
 - **Distancia:** La separación entre ellas ($d$) es constante en cualquier punto.
 
-> **Regla de Oro:** Si mides la distancia perpendicular hoy, mañana y en un millón de años, será la misma.
+![rectas-paralelas](https://cdn.ediprofe.com/img/matematicas/fz17-rectas-paralelas.webp)
+
 
 ---
 
@@ -40,6 +41,8 @@ $$
 \text{Si } a \perp c \text{ y } b \perp c \implies a \parallel b
 $$
 
+![transitividad-y-dos-perpendiculares-a-una-recta](https://cdn.ediprofe.com/img/matematicas/wcgu-transitividad-y-dos-perpendiculares-a-una-recta.webp)
+
 ---
 
 ## ⚙️ Ejemplos Resueltos
@@ -53,12 +56,18 @@ Identifica las rectas paralelas en una habitación.
 Ambos pares mantienen la misma distancia y nunca se cruzan.
 **Resultado:** Son paralelas.
 
+![ejemplo-1-identificacion](https://cdn.ediprofe.com/img/matematicas/6nch-ejemplo-1-identificacion.webp)
+
+
 ### Ejemplo 2: Distancia Constante
 Tenemos dos rectas paralelas separadas por 5 metros. Si nos movemos 100 km al norte, ¿cuál será la separación?
 
 **Razonamiento:**
 Por definición, la distancia entre paralelas **nunca cambia**.
 **Resultado:** 5 metros.
+
+![ejemplo-2-distancia-constante](https://cdn.ediprofe.com/img/matematicas/yylk-ejemplo-2-distancia-constante.webp)
+
 
 ### Ejemplo 3: Pendientes (Analítica)
 Si la recta A tiene pendiente $m=3$ y la recta B es paralela a A, ¿cuál es la pendiente de B?
@@ -67,12 +76,17 @@ Si la recta A tiene pendiente $m=3$ y la recta B es paralela a A, ¿cuál es la 
 Para no chocar nunca, deben tener la misma inclinación.
 **Resultado:** $m=3$.
 
+![ejemplo-3-pendientes](https://cdn.ediprofe.com/img/matematicas/mq57-ejemplo-3-pendientes.webp)
+
 ### Ejemplo 4: Construcción Lógica
 Si trazamos renglones en un cuaderno y todos tienen 1 cm de alto. ¿Son las líneas de los renglones paralelas?
 
 **Razonamiento:**
 Al tener una altura fija constante entre línea y línea, se garantiza que no se tocan.
 **Resultado:** Sí, son paralelas.
+
+![ejemplo-4-construccion-logica](https://cdn.ediprofe.com/img/matematicas/xth5-ejemplo-4-construccion-logica.webp)
+
 
 ### Ejemplo 5: Falsas Paralelas
 Imagina las líneas de longitud en un globo terráqueo. Parecen paralelas en el ecuador, pero... ¿lo son?
@@ -81,12 +95,17 @@ Imagina las líneas de longitud en un globo terráqueo. Parecen paralelas en el 
 Se juntan en los polos Norte y Sur. Si se juntan, no son paralelas.
 **Resultado:** No son paralelas (en geometría esférica no existen paralelas "reales" como en el plano).
 
+![ejemplo-5-falsas-paralelas](https://cdn.ediprofe.com/img/matematicas/zo9m-ejemplo-5-falsas-paralelas.webp)
+
+
 ### Ejemplo 6: El rectángulo
 ¿Cuántos pares de rectas paralelas forman los lados de un rectángulo?
 
 **Razonamiento:**
 El lado de arriba es paralelo al de abajo. El de la izquierda al de la derecha.
 **Resultado:** 2 pares.
+
+![ejemplo-6-el-rectangulo](https://cdn.ediprofe.com/img/matematicas/1on3-ejemplo-6-el-rectangulo.webp)
 
 ---
 
