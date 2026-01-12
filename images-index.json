@@ -1034,7 +1034,34 @@
       "size": "44KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/rpng-desigualdad-triangular.webp",
       "status": "uploaded"
+    },
+    {
+      "id": "13wk",
+      "name": "centro-de-masa-baricentro.webp",
+      "materia": "matematicas",
+      "date": "2026-01-12",
+      "size": "60KB",
+      "url": "https://cdn.ediprofe.com/img/matematicas/13wk-centro-de-masa-baricentro.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "cfw5",
+      "name": "circuncentro-y-compas.webp",
+      "materia": "matematicas",
+      "date": "2026-01-12",
+      "size": "41KB",
+      "url": "https://cdn.ediprofe.com/img/matematicas/cfw5-circuncentro-y-compas.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "4flj",
+      "name": "circuncentro-interseccion-de-mediatrices.webp",
+      "materia": "matematicas",
+      "date": "2026-01-12",
+      "size": "58KB",
+      "url": "https://cdn.ediprofe.com/img/matematicas/4flj-circuncentro-interseccion-de-mediatrices.webp",
+      "status": "uploaded"
     }
   ],
-  "lastUpdated": "2026-01-12T04:15:40.019Z"
+  "lastUpdated": "2026-01-12T17:39:05.240Z"
 }

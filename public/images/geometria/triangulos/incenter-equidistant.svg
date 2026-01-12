@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" style="font-family: Inter, system-ui, sans-serif;">
+<rect width="600" height="400" fill="#f8fafc" rx="12"/>
+<path d="M 300.0 60.0 L 100.0 340.0 L 500.0 340.0 Z" fill="#f8fafc" stroke="#22c55e" stroke-width="3" stroke-linejoin="round"/>
+<line x1="300.0" y1="60.0" x2="300.00" y2="237.08" stroke="#8b5cf6" stroke-width="2.5"/>
+<line x1="100.0" y1="340.0" x2="300.00" y2="237.08" stroke="#8b5cf6" stroke-width="2.5"/>
+<line x1="500.0" y1="340.0" x2="300.00" y2="237.08" stroke="#8b5cf6" stroke-width="2.5"/>
+<line x1="300.00" y1="237.08" x2="300.00" y2="340.00" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4"/>
+<line x1="300.00" y1="237.08" x2="383.75" y2="177.25" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4"/>
+<line x1="300.00" y1="237.08" x2="216.25" y2="177.25" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4"/>
+<path d="M 308.00 340.00 L 308.00 348.00 L 300.00 348.00" fill="none" stroke="#ef4444" stroke-width="1.5"/>
+<path d="M 388.40 183.76 L 381.89 188.41 L 377.24 181.90" fill="none" stroke="#ef4444" stroke-width="1.5"/>
+<path d="M 211.60 183.76 L 205.09 179.11 L 209.74 172.60" fill="none" stroke="#ef4444" stroke-width="1.5"/>
+<circle cx="300.00" cy="340.00" r="5" fill="#ef4444"/>
+<circle cx="383.75" cy="177.25" r="5" fill="#ef4444"/>
+<circle cx="216.25" cy="177.25" r="5" fill="#ef4444"/>
+<text x="310.00" y="288.54" font-size="16" font-weight="bold" fill="#ef4444">5</text>
+<text x="321.88" y="207.16" font-size="16" font-weight="bold" fill="#ef4444">5</text>
+<text x="238.12" y="202.16" font-size="16" font-weight="bold" fill="#ef4444">5</text>
+<circle cx="300.00" cy="237.08" r="10" fill="#ef4444"/>
+<text x="315.00" y="227.08" font-weight="bold" font-size="18" fill="#ef4444">I</text>
+<circle cx="300.00" cy="60.00" r="4" fill="#1e293b"/><text x="300.00" y="45.00" text-anchor="middle" font-weight="bold" fill="#1e293b">A</text>
+<circle cx="100.00" cy="340.00" r="4" fill="#1e293b"/><text x="85.00" y="355.00" text-anchor="middle" font-weight="bold" fill="#1e293b">B</text>
+<circle cx="500.00" cy="340.00" r="4" fill="#1e293b"/><text x="515.00" y="355.00" text-anchor="middle" font-weight="bold" fill="#1e293b">C</text>
+<circle cx="300.00" cy="237.08" r="102.92" fill="#8b5cf6" fill-opacity="0.25" stroke="#8b5cf6" stroke-width="3"/>
+<text x="300" y="390" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">Incentro: Equidistante de los 3 lados</text>
+</svg>

@@ -1237,60 +1237,62 @@ def generate_svg_main(mode, output_path):
 
     elif mode == 'circumcenter':
         # Triangle with perpendicular bisectors and circumscribed circle
-        # Use a smaller triangle so the circle fits in the canvas
-        A = (300, 100)
-        B = (150, 320)
-        C = (450, 320)
+        # Using SymPy for exact calculations
+        from core.triangle_geometry import TriangleGeometry
         
-        # Circumcenter (exact formula)
-        D = 2 * (A[0]*(B[1]-C[1]) + B[0]*(C[1]-A[1]) + C[0]*(A[1]-B[1]))
-        if abs(D) < 1e-10:
-            O = (300, 200)
-            R = 120
-        else:
-            Ox = ((A[0]**2+A[1]**2)*(B[1]-C[1]) + (B[0]**2+B[1]**2)*(C[1]-A[1]) + (C[0]**2+C[1]**2)*(A[1]-B[1])) / D
-            Oy = ((A[0]**2+A[1]**2)*(C[0]-B[0]) + (B[0]**2+B[1]**2)*(A[0]-C[0]) + (C[0]**2+C[1]**2)*(B[0]-A[0])) / D
-            O = (Ox, Oy)
-            R = math.hypot(A[0]-O[0], A[1]-O[1])
+        # Triangle adjusted and centered vertically in the 600x400 canvas
+        # New coordinates: moved up to center the circle (O.y ≈ 200)
+        tri = TriangleGeometry((300, 51), (160, 251), (440, 251))
+        A, B, C = tri.vertices
+        O = tri.circumcenter
+        R = tri.circumradius
+        mids = tri.midpoints
+        M_a, M_b, M_c = mids['M_a'], mids['M_b'], mids['M_c']
         
-        # Midpoints
-        M_a = ((B[0]+C[0])/2, (B[1]+C[1])/2)
-        M_b = ((A[0]+C[0])/2, (A[1]+C[1])/2)
-        M_c = ((A[0]+B[0])/2, (A[1]+B[1])/2)
+        # === 1. Circumscribed circle ===
+        # Centered at O(300, 200), R=149 -> y_min=51, y_max=349 (Centered!)
+        parts.append(f'<circle cx="{O[0]:.2f}" cy="{O[1]:.2f}" r="{R:.2f}" fill="{COLORS["mediatrices"]}" fill-opacity="0.08" stroke="{COLORS["mediatrices"]}" stroke-width="2.5"/>')
         
-        # Circumscribed circle - use correct color from spec
-        parts.append(f'<circle cx="{O[0]:.2f}" cy="{O[1]:.2f}" r="{R:.2f}" fill="{COLORS["mediatrices"]}" fill-opacity="0.05" stroke="{COLORS["mediatrices"]}" stroke-width="2"/>')
-        
-        # Triangle
+        # === 2. Triangle ===
         parts.append(f'<path d="M {A[0]} {A[1]} L {B[0]} {B[1]} L {C[0]} {C[1]} Z" fill="{COLORS["background"]}" stroke="{COLORS["line"]}" stroke-width="3" stroke-linejoin="round"/>')
         
-        # Perpendicular Bisectors - use correct color from spec
+        # === 3. Perpendicular Bisectors (from O to midpoints) ===
         parts.append(draw_segment(O, M_a, color=COLORS['mediatrices'], width=2))
         parts.append(draw_segment(O, M_b, color=COLORS['mediatrices'], width=2))
         parts.append(draw_segment(O, M_c, color=COLORS['mediatrices'], width=2))
         
-        # Right angle marks at midpoints
-        for mid, p1, p2 in [(M_a, B, C), (M_b, A, C), (M_c, A, B)]:
+        # === 4. Right angle marks at midpoints ===
+        def draw_right_angle_mark(mid, p1, p2, size=10):
             dx, dy = p2[0] - p1[0], p2[1] - p1[1]
             length = math.hypot(dx, dy)
-            if length > 0:
-                ux, uy = dx/length, dy/length
-                nx, ny = -uy, ux
-                s = 10
-                sq1 = (mid[0] + ux*s, mid[1] + uy*s)
-                sq2 = (mid[0] + ux*s + nx*s, mid[1] + uy*s + ny*s)
-                sq3 = (mid[0] + nx*s, mid[1] + ny*s)
-                parts.append(f'<path d="M {sq1[0]:.2f} {sq1[1]:.2f} L {sq2[0]:.2f} {sq2[1]:.2f} L {sq3[0]:.2f} {sq3[1]:.2f}" fill="none" stroke="{COLORS["mediatrices"]}" stroke-width="1.5"/>')
+            if length < 1e-6:
+                return ""
+            ux, uy = dx/length, dy/length
+            nx, ny = -uy, ux
+            sq1 = (mid[0] + ux*size, mid[1] + uy*size)
+            sq2 = (mid[0] + ux*size + nx*size, mid[1] + uy*size + ny*size)
+            sq3 = (mid[0] + nx*size, mid[1] + ny*size)
+            return f'<path d="M {sq1[0]:.2f} {sq1[1]:.2f} L {sq2[0]:.2f} {sq2[1]:.2f} L {sq3[0]:.2f} {sq3[1]:.2f}" fill="none" stroke="{COLORS["mediatrices"]}" stroke-width="1.5"/>'
         
-        # Circumcenter O - use punto_notable color
-        parts.append(f'<circle cx="{O[0]:.2f}" cy="{O[1]:.2f}" r="8" fill="{COLORS["punto_notable"]}"/>')
-        parts.append(f'<text x="{O[0]+15:.2f}" y="{O[1]-10:.2f}" font-weight="bold" font-size="18" fill="{COLORS["punto_notable"]}">O</text>')
+        parts.append(draw_right_angle_mark(M_a, B, C, 10))
+        parts.append(draw_right_angle_mark(M_b, A, C, 10))
+        parts.append(draw_right_angle_mark(M_c, A, B, 10))
         
-        # Labels
+        # === 5. Midpoint markers ===
+        parts.append(f'<circle cx="{M_a[0]}" cy="{M_a[1]}" r="4" fill="{COLORS["mediatrices"]}"/>')
+        parts.append(f'<circle cx="{M_b[0]}" cy="{M_b[1]}" r="4" fill="{COLORS["mediatrices"]}"/>')
+        parts.append(f'<circle cx="{M_c[0]}" cy="{M_c[1]}" r="4" fill="{COLORS["mediatrices"]}"/>')
+        
+        # === 6. Circumcenter O ===
+        parts.append(f'<circle cx="{O[0]:.2f}" cy="{O[1]:.2f}" r="10" fill="{COLORS["punto_notable"]}"/>')
+        parts.append(f'<text x="{O[0]+15:.2f}" y="{O[1]+5:.2f}" font-weight="bold" font-size="18" fill="{COLORS["punto_notable"]}">O</text>')
+        
+        # === 7. Vertex Labels ===
         parts.append(draw_point(A[0], A[1], label="A", color=COLORS['text'], label_offset=(0, -15)))
         parts.append(draw_point(B[0], B[1], label="B", color=COLORS['text'], label_offset=(-15, 15)))
         parts.append(draw_point(C[0], C[1], label="C", color=COLORS['text'], label_offset=(15, 15)))
         
+        # === 8. Title ===
         parts.append(f'<text x="{300}" y="{390}" text-anchor="middle" font-size="16" font-weight="bold" fill="{COLORS["text"]}">Circuncentro (Mediatrices) + Círculo Circunscrito</text>')
 
     elif mode == 'euler_line':
@@ -1364,6 +1366,479 @@ def generate_svg_main(mode, output_path):
         parts.append(draw_point(C[0], C[1], label="C", color=COLORS['text'], label_offset=(15, 15)))
         
         parts.append(f'<text x="{300}" y="{390}" text-anchor="middle" font-size="16" font-weight="bold" fill="{COLORS["euler_line"]}">Recta de Euler: O, G, H alineados</text>')
+
+    elif mode == 'barycenter_ratio':
+        # Barycenter with 2:1 ratio illustration
+        # Using SymPy for exact calculations
+        from core.triangle_geometry import TriangleGeometry
+        
+        tri = TriangleGeometry((300, 60), (100, 340), (500, 340))
+        A, B, C = tri.vertices
+        G = tri.barycenter
+        mids = tri.midpoints
+        M_a = mids['M_a']  # Midpoint of BC (opposite to A)
+        
+        # === 1. Triangle ===
+        parts.append(f'<path d="M {A[0]} {A[1]} L {B[0]} {B[1]} L {C[0]} {C[1]} Z" fill="{COLORS["background"]}" stroke="{COLORS["line"]}" stroke-width="3" stroke-linejoin="round"/>')
+        
+        # === 2. Just one median (A to M_a) to focus on the ratio ===
+        parts.append(f'<line x1="{A[0]}" y1="{A[1]}" x2="{M_a[0]}" y2="{M_a[1]}" stroke="{COLORS["medianas"]}" stroke-width="3"/>')
+        
+        # === 3. Mark the two parts with different visual emphasis ===
+        # Long part: A to G (2 parts)
+        parts.append(f'<line x1="{A[0]}" y1="{A[1]}" x2="{G[0]:.2f}" y2="{G[1]:.2f}" stroke="{COLORS["primary"]}" stroke-width="5"/>')
+        # Short part: G to M_a (1 part)
+        parts.append(f'<line x1="{G[0]:.2f}" y1="{G[1]:.2f}" x2="{M_a[0]}" y2="{M_a[1]}" stroke="{COLORS["danger"]}" stroke-width="5"/>')
+        
+        # === 4. Labels for the parts ===
+        # Calculate midpoints of each segment for labels
+        mid_AG = ((A[0] + G[0])/2, (A[1] + G[1])/2)
+        mid_GM = ((G[0] + M_a[0])/2, (G[1] + M_a[1])/2)
+        
+        # Label "2" for long part
+        parts.append(f'<text x="{mid_AG[0]-25:.2f}" y="{mid_AG[1]:.2f}" font-size="20" font-weight="bold" fill="{COLORS["primary"]}">2</text>')
+        # Label "1" for short part
+        parts.append(f'<text x="{mid_GM[0]-20:.2f}" y="{mid_GM[1]:.2f}" font-size="20" font-weight="bold" fill="{COLORS["danger"]}">1</text>')
+        
+        # === 5. Points with labels ===
+        # Barycenter G
+        parts.append(f'<circle cx="{G[0]:.2f}" cy="{G[1]:.2f}" r="10" fill="{COLORS["punto_notable"]}"/>')
+        parts.append(f'<text x="{G[0]+15:.2f}" y="{G[1]+5:.2f}" font-weight="bold" font-size="18" fill="{COLORS["punto_notable"]}">G</text>')
+        
+        # Midpoint M
+        parts.append(f'<circle cx="{M_a[0]}" cy="{M_a[1]}" r="6" fill="{COLORS["medianas"]}"/>')
+        parts.append(f'<text x="{M_a[0]+12:.2f}" y="{M_a[1]+18:.2f}" font-weight="bold" font-size="16" fill="{COLORS["medianas"]}">M</text>')
+        
+        # === 6. Vertex labels ===
+        parts.append(draw_point(A[0], A[1], label="A", color=COLORS['text'], label_offset=(0, -15)))
+        parts.append(draw_point(B[0], B[1], label="B", color=COLORS['text'], label_offset=(-15, 15)))
+        parts.append(draw_point(C[0], C[1], label="C", color=COLORS['text'], label_offset=(15, 15)))
+        
+        # === 7. Title ===
+        parts.append(f'<text x="{300}" y="{390}" text-anchor="middle" font-size="16" font-weight="bold" fill="{COLORS["text"]}">Propiedad 2:1 del Baricentro</text>')
+
+    elif mode == 'barycenter_ratio_all':
+        # Shows the 2:1 property for ALL three medians
+        from core.triangle_geometry import TriangleGeometry
+        tri = TriangleGeometry((300, 50), (100, 350), (500, 350))
+        A, B, C = tri.vertices
+        G = tri.barycenter
+        mids = tri.midpoints
+        
+        # Draw background triangle
+        parts.append(f'<path d="M {A[0]} {A[1]} L {B[0]} {B[1]} L {C[0]} {C[1]} Z" fill="{COLORS["background"]}" stroke="{COLORS["line"]}" stroke-width="3" stroke-linejoin="round"/>')
+        
+        # Helper to draw labeled median part with UNIFORM color scheme (Blue/Red)
+        def draw_median_parts(V, M, offset_l, offset_s):
+             # Draw thin guide line
+             parts.append(f'<line x1="{V[0]}" y1="{V[1]}" x2="{M[0]}" y2="{M[1]}" stroke="{COLORS["medianas"]}" stroke-width="2" stroke-opacity="0.3"/>')
+             
+             # Highlight segments
+             # Long (V-G) -> BLUE (Primary)
+             parts.append(f'<line x1="{V[0]}" y1="{V[1]}" x2="{G[0]:.2f}" y2="{G[1]:.2f}" stroke="{COLORS["primary"]}" stroke-width="4"/>')
+             # Short (G-M) -> RED (Danger)
+             parts.append(f'<line x1="{G[0]:.2f}" y1="{G[1]:.2f}" x2="{M[0]}" y2="{M[1]}" stroke="{COLORS["danger"]}" stroke-width="4"/>')
+             
+             # Labels "2" and "1"
+             mid_VG = ((V[0] + G[0])/2, (V[1] + G[1])/2)
+             mid_GM = ((G[0] + M[0])/2, (G[1] + M[1])/2)
+             
+             # White background circles for readability
+             parts.append(f'<circle cx="{mid_VG[0]+offset_l[0]:.2f}" cy="{mid_VG[1]+offset_l[1]-5:.2f}" r="8" fill="{COLORS["background"]}" fill-opacity="0.8"/>')
+             parts.append(f'<text x="{mid_VG[0]+offset_l[0]:.2f}" y="{mid_VG[1]+offset_l[1]:.2f}" font-size="16" font-weight="bold" fill="{COLORS["primary"]}" text-anchor="middle">2</text>')
+             
+             parts.append(f'<circle cx="{mid_GM[0]+offset_s[0]:.2f}" cy="{mid_GM[1]+offset_s[1]-5:.2f}" r="8" fill="{COLORS["background"]}" fill-opacity="0.8"/>')
+             parts.append(f'<text x="{mid_GM[0]+offset_s[0]:.2f}" y="{mid_GM[1]+offset_s[1]:.2f}" font-size="16" font-weight="bold" fill="{COLORS["danger"]}" text-anchor="middle">1</text>')
+
+        # Draw for all 3 medians using the SAME logic
+        draw_median_parts(A, mids['M_a'], (15, 5), (15, 5)) 
+        draw_median_parts(B, mids['M_b'], (-10, -10), (0, 20)) 
+        draw_median_parts(C, mids['M_c'], (10, -10), (-10, 20))
+        
+        # Draw G
+        parts.append(f'<circle cx="{G[0]:.2f}" cy="{G[1]:.2f}" r="8" fill="{COLORS["punto_notable"]}"/>')
+        parts.append(f'<text x="{G[0]+12:.2f}" y="{G[1]-10:.2f}" font-weight="bold" font-size="16" fill="{COLORS["punto_notable"]}">G</text>')
+        
+        # Vertices
+        parts.append(draw_point(A[0], A[1], label="A", color=COLORS['text'], label_offset=(0, -15)))
+        parts.append(draw_point(B[0], B[1], label="B", color=COLORS['text'], label_offset=(-15, 15)))
+        parts.append(draw_point(C[0], C[1], label="C", color=COLORS['text'], label_offset=(15, 15)))
+        
+        parts.append(f'<text x="{300}" y="{390}" text-anchor="middle" font-size="16" font-weight="bold" fill="{COLORS["text"]}">Proporción 2:1 en todas las medianas</text>')
+
+    elif mode == 'barycenter_areas':
+        # Shows that medians divide the triangle into 6 equal areas
+        # Using a Scalene Triangle to demonstrate generality
+        from core.triangle_geometry import TriangleGeometry
+        tri = TriangleGeometry((220, 50), (80, 320), (520, 280))
+        A, B, C = tri.vertices
+        G = tri.barycenter
+        mids = tri.midpoints
+        
+        # Draw background triangle
+        parts.append(f'<path d="M {A[0]} {A[1]} L {B[0]} {B[1]} L {C[0]} {C[1]} Z" fill="{COLORS["background"]}" stroke="{COLORS["line"]}" stroke-width="3" stroke-linejoin="round"/>')
+        
+        # Draw 3 Medians
+        parts.append(f'<line x1="{A[0]}" y1="{A[1]}" x2="{mids["M_a"][0]}" y2="{mids["M_a"][1]}" stroke="{COLORS["medianas"]}" stroke-width="2"/>')
+        parts.append(f'<line x1="{B[0]}" y1="{B[1]}" x2="{mids["M_b"][0]}" y2="{mids["M_b"][1]}" stroke="{COLORS["medianas"]}" stroke-width="2"/>')
+        parts.append(f'<line x1="{C[0]}" y1="{C[1]}" x2="{mids["M_c"][0]}" y2="{mids["M_c"][1]}" stroke="{COLORS["medianas"]}" stroke-width="2"/>')
+        
+        # Mark the 6 areas
+        # We need the centroid of each of the 6 small triangles to place the label
+        # The 6 triangles are: GM_aC, GM_aB, GM_bA, GM_bC, GM_cA, GM_cB
+        # Actually easier involves vertices: G-B-Ma, G-C-Ma, etc.
+        
+        def get_centroid(p1, p2, p3):
+            return ((p1[0]+p2[0]+p3[0])/3, (p1[1]+p2[1]+p3[1])/3)
+            
+        # List of 6 triangles represented by their vertices (besides G)
+        # Tri 1: G, B, M_a
+        c1 = get_centroid(G, B, mids['M_a'])
+        # Tri 2: G, C, M_a
+        c2 = get_centroid(G, C, mids['M_a'])
+        # Tri 3: G, C, M_b
+        c3 = get_centroid(G, C, mids['M_b'])
+        # Tri 4: G, A, M_b
+        c4 = get_centroid(G, A, mids['M_b'])
+        # Tri 5: G, A, M_c
+        c5 = get_centroid(G, A, mids['M_c'])
+        # Tri 6: G, B, M_c
+        c6 = get_centroid(G, B, mids['M_c'])
+        
+        areas_centers = [c1, c2, c3, c4, c5, c6]
+        
+        for i, center in enumerate(areas_centers):
+            parts.append(f'<text x="{center[0]:.2f}" y="{center[1]+5:.2f}" text-anchor="middle" font-size="14" font-weight="bold" fill="{COLORS["text"]}" font-style="italic">S</text>')
+            
+        # Draw G
+        parts.append(f'<circle cx="{G[0]:.2f}" cy="{G[1]:.2f}" r="8" fill="{COLORS["punto_notable"]}"/>')
+        parts.append(f'<text x="{G[0]+12:.2f}" y="{G[1]-10:.2f}" font-weight="bold" font-size="16" fill="{COLORS["punto_notable"]}">G</text>')
+        
+        # Title
+        parts.append(f'<text x="{300}" y="{390}" text-anchor="middle" font-size="16" font-weight="bold" fill="{COLORS["text"]}">6 Áreas Iguales (S)</text>')
+
+    elif mode == 'incenter_equidistant':
+        # Incenter showing equal distance to all three sides
+        # Using SymPy for exact calculations
+        from core.triangle_geometry import TriangleGeometry
+        
+        tri = TriangleGeometry((300, 60), (100, 340), (500, 340))
+        A, B, C = tri.vertices
+        I = tri.incenter
+        r = abs(tri.inradius)
+        
+        # Calculate perpendicular feet from I to each side
+        from sympy import Point, Line
+        I_point = Point(I[0], I[1])
+        
+        # Feet of perpendiculars from I to each side
+        line_BC = Line(Point(B[0], B[1]), Point(C[0], C[1]))
+        line_AC = Line(Point(A[0], A[1]), Point(C[0], C[1]))
+        line_AB = Line(Point(A[0], A[1]), Point(B[0], B[1]))
+        
+        foot_BC = line_BC.projection(I_point)
+        foot_AC = line_AC.projection(I_point)
+        foot_AB = line_AB.projection(I_point)
+        
+        P1 = (float(foot_BC.x), float(foot_BC.y))
+        P2 = (float(foot_AC.x), float(foot_AC.y))
+        P3 = (float(foot_AB.x), float(foot_AB.y))
+        
+        print(f"DEBUG: Incenter I={I}, Inradius r={r}")
+        
+        # === 1. Triangle ===
+        parts.append(f'<path d="M {A[0]} {A[1]} L {B[0]} {B[1]} L {C[0]} {C[1]} Z" fill="{COLORS["background"]}" stroke="{COLORS["line"]}" stroke-width="3" stroke-linejoin="round"/>')
+        
+        # === 1.5 Bisectors (The lines that define the Incenter) ===
+        # Draw from Vertices to Incenter (Bisector segments)
+        parts.append(f'<line x1="{A[0]}" y1="{A[1]}" x2="{I[0]:.2f}" y2="{I[1]:.2f}" stroke="{COLORS["bisectrices"]}" stroke-width="2.5"/>')
+        parts.append(f'<line x1="{B[0]}" y1="{B[1]}" x2="{I[0]:.2f}" y2="{I[1]:.2f}" stroke="{COLORS["bisectrices"]}" stroke-width="2.5"/>')
+        parts.append(f'<line x1="{C[0]}" y1="{C[1]}" x2="{I[0]:.2f}" y2="{I[1]:.2f}" stroke="{COLORS["bisectrices"]}" stroke-width="2.5"/>')
+        
+        # (Inscribed circle moved to end)
+        
+        # === 3. Perpendicular lines from I to each side (radii to tangent points) ===
+        # These show the "distance" property (radius)
+        parts.append(f'<line x1="{I[0]:.2f}" y1="{I[1]:.2f}" x2="{P1[0]:.2f}" y2="{P1[1]:.2f}" stroke="{COLORS["danger"]}" stroke-width="1.5" stroke-dasharray="4"/>')
+        parts.append(f'<line x1="{I[0]:.2f}" y1="{I[1]:.2f}" x2="{P2[0]:.2f}" y2="{P2[1]:.2f}" stroke="{COLORS["danger"]}" stroke-width="1.5" stroke-dasharray="4"/>')
+        parts.append(f'<line x1="{I[0]:.2f}" y1="{I[1]:.2f}" x2="{P3[0]:.2f}" y2="{P3[1]:.2f}" stroke="{COLORS["danger"]}" stroke-width="1.5" stroke-dasharray="4"/>')
+        
+        # === 4. Right angle marks at feet ===
+        def draw_right_angle(foot, p1, p2, size=10):
+            dx, dy = p2[0] - p1[0], p2[1] - p1[1]
+            length = math.hypot(dx, dy)
+            if length < 1e-6:
+                return ""
+            ux, uy = dx/length, dy/length
+            nx, ny = -uy, ux
+            sq1 = (foot[0] + ux*size, foot[1] + uy*size)
+            sq2 = (foot[0] + ux*size + nx*size, foot[1] + uy*size + ny*size)
+            sq3 = (foot[0] + nx*size, foot[1] + ny*size)
+            return f'<path d="M {sq1[0]:.2f} {sq1[1]:.2f} L {sq2[0]:.2f} {sq2[1]:.2f} L {sq3[0]:.2f} {sq3[1]:.2f}" fill="none" stroke="{COLORS["danger"]}" stroke-width="1.5"/>'
+        
+        parts.append(draw_right_angle(P1, B, C, 8))
+        parts.append(draw_right_angle(P2, A, C, 8))
+        parts.append(draw_right_angle(P3, A, B, 8))
+        
+        # === 5. Tangent point markers ===
+        parts.append(f'<circle cx="{P1[0]:.2f}" cy="{P1[1]:.2f}" r="5" fill="{COLORS["danger"]}"/>')
+        parts.append(f'<circle cx="{P2[0]:.2f}" cy="{P2[1]:.2f}" r="5" fill="{COLORS["danger"]}"/>')
+        parts.append(f'<circle cx="{P3[0]:.2f}" cy="{P3[1]:.2f}" r="5" fill="{COLORS["danger"]}"/>')
+        
+        # === 6. Label "5" for each radius (Example) ===
+        parts.append(f'<text x="{(I[0]+P1[0])/2+10:.2f}" y="{(I[1]+P1[1])/2:.2f}" font-size="16" font-weight="bold" fill="{COLORS["danger"]}">5</text>')
+        parts.append(f'<text x="{(I[0]+P2[0])/2-20:.2f}" y="{(I[1]+P2[1])/2:.2f}" font-size="16" font-weight="bold" fill="{COLORS["danger"]}">5</text>')
+        parts.append(f'<text x="{(I[0]+P3[0])/2-20:.2f}" y="{(I[1]+P3[1])/2-5:.2f}" font-size="16" font-weight="bold" fill="{COLORS["danger"]}">5</text>')
+        
+        # === 7. Incenter I ===
+        parts.append(f'<circle cx="{I[0]:.2f}" cy="{I[1]:.2f}" r="10" fill="{COLORS["punto_notable"]}"/>')
+        parts.append(f'<text x="{I[0]+15:.2f}" y="{I[1]-10:.2f}" font-weight="bold" font-size="18" fill="{COLORS["punto_notable"]}">I</text>')
+        
+        # === 8. Vertex labels ===
+        parts.append(draw_point(A[0], A[1], label="A", color=COLORS['text'], label_offset=(0, -15)))
+        parts.append(draw_point(B[0], B[1], label="B", color=COLORS['text'], label_offset=(-15, 15)))
+        parts.append(draw_point(C[0], C[1], label="C", color=COLORS['text'], label_offset=(15, 15)))
+        
+        # === 8. Inscribed circle (Moved to END to ensure visibility) ===
+        # Increased opacity and stroke width
+        parts.append(f'<circle cx="{I[0]:.2f}" cy="{I[1]:.2f}" r="{r:.2f}" fill="{COLORS["bisectrices"]}" fill-opacity="0.25" stroke="{COLORS["bisectrices"]}" stroke-width="3"/>')
+
+        # === 9. Title ===
+        parts.append(f'<text x="{300}" y="{390}" text-anchor="middle" font-size="16" font-weight="bold" fill="{COLORS["text"]}">Incentro: Equidistante de los 3 lados</text>')
+
+    elif mode == 'summary_all_points':
+        # 2x2 Grid Summary of all 4 points
+        # RADICAL FIX: Titles at TOP, Smaller Geometry
+        
+        from core.triangle_geometry import TriangleGeometry
+        
+        # Much more compact base triangle to ensure circumcircle fits
+        # Verified: With offset (300, 200), circle bottom at y=361 (38px margin)
+        # A(150, 50), B(100, 130), C(200, 130) -> Height 80, Width 100
+        base_tri_coords = [(150, 50), (100, 130), (200, 130)]
+        
+        def draw_mini_diagram(offset_x, offset_y, type_str, title, subtitle, color_theme):
+            # Title at TOP of the cell
+            svg_content = f'<text x="{offset_x+150}" y="{offset_y+30}" text-anchor="middle" font-size="14" font-weight="bold" fill="{color_theme}">{title}</text>'
+            # Subtitle (Description)
+            svg_content += f'<text x="{offset_x+150}" y="{offset_y+50}" text-anchor="middle" font-size="12" font-style="italic" fill="{COLORS["text"]}">{subtitle}</text>'
+            
+            # Create geometry for this specific offset
+            t_verts = [(p[0]+offset_x, p[1]+offset_y) for p in base_tri_coords]
+            tri = TriangleGeometry(t_verts[0], t_verts[1], t_verts[2])
+            A, B, C = tri.vertices
+            
+            svg_content += ""
+            
+            # Draw Triangle
+            svg_content += f'<path d="M {A[0]} {A[1]} L {B[0]} {B[1]} L {C[0]} {C[1]} Z" fill="{COLORS["background"]}" stroke="{COLORS["line"]}" stroke-width="2" stroke-linejoin="round"/>'
+            
+            # Specific Construction
+            if type_str == 'medians':
+                mids = tri.midpoints
+                G = tri.barycenter
+                svg_content += f'<line x1="{A[0]}" y1="{A[1]}" x2="{mids["M_a"][0]}" y2="{mids["M_a"][1]}" stroke="{color_theme}" stroke-width="1.5"/>'
+                svg_content += f'<line x1="{B[0]}" y1="{B[1]}" x2="{mids["M_b"][0]}" y2="{mids["M_b"][1]}" stroke="{color_theme}" stroke-width="1.5"/>'
+                svg_content += f'<line x1="{C[0]}" y1="{C[1]}" x2="{mids["M_c"][0]}" y2="{mids["M_c"][1]}" stroke="{color_theme}" stroke-width="1.5"/>'
+                svg_content += f'<circle cx="{G[0]:.2f}" cy="{G[1]:.2f}" r="5" fill="{COLORS["punto_notable"]}"/>'
+                svg_content += f'<text x="{G[0]+12:.2f}" y="{G[1]+5:.2f}" font-weight="bold" font-size="14" fill="{COLORS["punto_notable"]}">G</text>'
+
+            elif type_str == 'altitudes':
+                feet = tri.altitude_feet
+                H = tri.orthocenter
+                svg_content += f'<line x1="{A[0]}" y1="{A[1]}" x2="{feet["H_a"][0]:.2f}" y2="{feet["H_a"][1]:.2f}" stroke="{color_theme}" stroke-width="1.5"/>'
+                svg_content += f'<line x1="{B[0]}" y1="{B[1]}" x2="{feet["H_b"][0]:.2f}" y2="{feet["H_b"][1]:.2f}" stroke="{color_theme}" stroke-width="1.5"/>'
+                svg_content += f'<line x1="{C[0]}" y1="{C[1]}" x2="{feet["H_c"][0]:.2f}" y2="{feet["H_c"][1]:.2f}" stroke="{color_theme}" stroke-width="1.5"/>'
+                svg_content += f'<circle cx="{H[0]:.2f}" cy="{H[1]:.2f}" r="5" fill="{COLORS["punto_notable"]}"/>'
+                svg_content += f'<text x="{H[0]+12:.2f}" y="{H[1]+5:.2f}" font-weight="bold" font-size="14" fill="{COLORS["punto_notable"]}">H</text>'
+                
+            elif type_str == 'bisectors':
+                I = tri.incenter
+                svg_content += draw_segment(A, I, color=color_theme, width=1.5)
+                svg_content += draw_segment(B, I, color=color_theme, width=1.5)
+                svg_content += draw_segment(C, I, color=color_theme, width=1.5)
+                svg_content += f'<circle cx="{I[0]:.2f}" cy="{I[1]:.2f}" r="{tri.inradius:.2f}" fill="{color_theme}" fill-opacity="0.1" stroke="{color_theme}" stroke-width="1"/>'
+                svg_content += f'<circle cx="{I[0]:.2f}" cy="{I[1]:.2f}" r="5" fill="{COLORS["punto_notable"]}"/>'
+                svg_content += f'<text x="{I[0]+12:.2f}" y="{I[1]+5:.2f}" font-weight="bold" font-size="14" fill="{COLORS["punto_notable"]}">I</text>'
+
+            elif type_str == 'perpendicular_bisectors':
+                O = tri.circumcenter
+                mids = tri.midpoints
+                svg_content += draw_segment(O, mids["M_a"], color=color_theme, width=1.5)
+                svg_content += draw_segment(O, mids["M_b"], color=color_theme, width=1.5)
+                svg_content += draw_segment(O, mids["M_c"], color=color_theme, width=1.5)
+                # Ensure circumcircle doesn't get cut off. Reduced triangle size helps this.
+                svg_content += f'<circle cx="{O[0]:.2f}" cy="{O[1]:.2f}" r="{tri.circumradius:.2f}" fill="{color_theme}" fill-opacity="0.1" stroke="{color_theme}" stroke-width="1"/>'
+                svg_content += f'<circle cx="{O[0]:.2f}" cy="{O[1]:.2f}" r="5" fill="{COLORS["punto_notable"]}"/>'
+                svg_content += f'<text x="{O[0]+12:.2f}" y="{O[1]+10:.2f}" font-weight="bold" font-size="14" fill="{COLORS["punto_notable"]}">O</text>'
+            
+            return svg_content
+        
+        # Top Left: Baricentro
+        parts.append(draw_mini_diagram(0, 0, 'medians', 'Baricentro (Medianas)', 'Vértice → Punto Medio', COLORS['medianas']))
+        
+        # Top Right: Ortocentro
+        parts.append(draw_mini_diagram(300, 0, 'altitudes', 'Ortocentro (Alturas)', '90° desde el Vértice', COLORS['alturas']))
+        
+        # Bottom Left: Incentro
+        parts.append(draw_mini_diagram(0, 200, 'bisectors', 'Incentro (Bisectrices)', 'Divide ángulo en dos partes iguales', COLORS['bisectrices']))
+        
+        # Bottom Right: Circuncentro
+        parts.append(draw_mini_diagram(300, 200, 'perpendicular_bisectors', 'Circuncentro (Mediatrices)', 'Perpendicular en punto medio', COLORS['mediatrices']))
+        
+        # Grid separator lines
+        parts.append(f'<line x1="300" y1="20" x2="300" y2="380" stroke="{COLORS["grid"]}" stroke-width="1" stroke-dasharray="4"/>')
+        parts.append(f'<line x1="20" y1="200" x2="580" y2="200" stroke="{COLORS["grid"]}" stroke-width="1" stroke-dasharray="4"/>')
+
+    elif mode == 'circumcenter_right':
+        # Special case: Right triangle -> Circumcenter on hypotenuse midpoint
+        from core.triangle_geometry import TriangleGeometry
+        
+        # Right triangle A=(100, 100), B=(100, 300), C=(400, 300)
+        # Right angle at B
+        tri = TriangleGeometry((100, 100), (100, 300), (400, 300))
+        A, B, C = tri.vertices
+        O = tri.circumcenter
+        R = tri.circumradius
+        mids = tri.midpoints
+        
+        # === 1. Triangle ===
+        parts.append(f'<path d="M {A[0]} {A[1]} L {B[0]} {B[1]} L {C[0]} {C[1]} Z" fill="{COLORS["background"]}" stroke="{COLORS["line"]}" stroke-width="3" stroke-linejoin="round"/>')
+        
+        # === 2. Right Angle Mark at B ===
+        parts.append(f'<rect x="{B[0]}" y="{B[1]-20}" width="20" height="20" fill="none" stroke="{COLORS["text"]}" stroke-width="2"/>')
+        parts.append(f'<circle cx="{B[0]+8}" cy="{B[1]-8}" r="2" fill="{COLORS["text"]}"/>')
+
+        # === 3. Perpendicular Bisectors (Mediatrices) ===
+        # Use full lines or segments from midpoints to O
+        parts.append(f'<line x1="{mids["M_a"][0]:.2f}" y1="{mids["M_a"][1]:.2f}" x2="{O[0]:.2f}" y2="{O[1]:.2f}" stroke="{COLORS["mediatrices"]}" stroke-width="2" stroke-dasharray="6"/>') # From side BC
+        parts.append(f'<line x1="{mids["M_c"][0]:.2f}" y1="{mids["M_c"][1]:.2f}" x2="{O[0]:.2f}" y2="{O[1]:.2f}" stroke="{COLORS["mediatrices"]}" stroke-width="2" stroke-dasharray="6"/>') # From side AB
+        
+        # Hypotenuse bisector is just a perpendicular line through O
+        # AC vector dx=300, dy=200 -> slope 2/3. Perp slope -1.5. Direction (2, -3)
+        # Draw a segment of length 140 centered at O
+        # Vector (20, -30) scaled
+        dx, dy = 100, -150  # Direction vector roughly perpendicular to AC (300, 200) -> dot product 300*100 + 200*-150 = 30000 - 30000 = 0.
+        # Start and End points relative to O
+        parts.append(f'<line x1="{O[0]-dx/2:.2f}" y1="{O[1]-dy/2:.2f}" x2="{O[0]+dx/2:.2f}" y2="{O[1]+dy/2:.2f}" stroke="{COLORS["mediatrices"]}" stroke-width="2" stroke-dasharray="6"/>')
+        
+        # Mark right angle at hypotenuse mediatriz
+        # A bit tricky to align, let's skip the tiny square on the diagonal mediatriz to avoid clutter, 
+        # as the dashed line itself clearly indicates the geometry.
+        
+        # === 4. Circumscribed Circle ===
+        parts.append(f'<circle cx="{O[0]:.2f}" cy="{O[1]:.2f}" r="{R:.2f}" fill="{COLORS["mediatrices"]}" fill-opacity="0.1" stroke="{COLORS["mediatrices"]}" stroke-width="2"/>')
+        
+        # === 5. Midpoints Markers ===
+        parts.append(f'<circle cx="{mids["M_a"][0]:.2f}" cy="{mids["M_a"][1]:.2f}" r="4" fill="{COLORS["mediatrices"]}"/>') # Bottom
+        parts.append(f'<circle cx="{mids["M_c"][0]:.2f}" cy="{mids["M_c"][1]:.2f}" r="4" fill="{COLORS["mediatrices"]}"/>') # Left
+        
+        # === 6. Circumcenter O ===
+        parts.append(f'<circle cx="{O[0]:.2f}" cy="{O[1]:.2f}" r="8" fill="{COLORS["punto_notable"]}"/>')
+        parts.append(f'<text x="{O[0]+15:.2f}" y="{O[1]-15:.2f}" font-weight="bold" font-size="18" fill="{COLORS["punto_notable"]}">O</text>')
+        
+        # === 7. Vertices ===
+        parts.append(draw_point(A[0], A[1], label="A", color=COLORS['text'], label_offset=(0, -15)))
+        parts.append(draw_point(B[0], B[1], label="B", color=COLORS['text'], label_offset=(-15, 15)))
+        parts.append(draw_point(C[0], C[1], label="C", color=COLORS['text'], label_offset=(15, 15)))
+        
+        # === 8. Title ===
+        parts.append(f'<text x="{300}" y="{390}" text-anchor="middle" font-size="16" font-weight="bold" fill="{COLORS["text"]}">Circuncentro en el punto medio de la hipotenusa</text>')
+
+    elif mode == 'barycenter_coordinates':
+        # Cartesian plane with triangle and barycenter formula visualization
+        # Canvas: 600x400, Origin at (80, 320), Scale: 60 px per unit
+        
+        origin_x, origin_y = 80, 320
+        scale = 50  # pixels per unit
+        
+        # Helper functions
+        def to_canvas(x, y):
+            return (origin_x + x * scale, origin_y - y * scale)
+        
+        # Triangle vertices with nice integer coordinates
+        # A(1, 5), B(2, 1), C(7, 3)
+        A_coord = (1, 5)
+        B_coord = (2, 1)
+        C_coord = (7, 3)
+        
+        # Calculate barycenter G = ((x1+x2+x3)/3, (y1+y2+y3)/3)
+        G_x = (A_coord[0] + B_coord[0] + C_coord[0]) / 3  # (1+2+7)/3 = 10/3 ≈ 3.33
+        G_y = (A_coord[1] + B_coord[1] + C_coord[1]) / 3  # (5+1+3)/3 = 9/3 = 3
+        G_coord = (G_x, G_y)
+        
+        A = to_canvas(*A_coord)
+        B = to_canvas(*B_coord)
+        C = to_canvas(*C_coord)
+        G = to_canvas(*G_coord)
+        
+        # === 1. GRID ===
+        # Vertical lines (x = 0 to 9)
+        for i in range(10):
+            x = origin_x + i * scale
+            opacity = "0.3" if i > 0 else "1"
+            width = "1" if i > 0 else "2"
+            parts.append(f'<line x1="{x}" y1="40" x2="{x}" y2="{origin_y+20}" stroke="{COLORS["grid"]}" stroke-width="{width}" stroke-opacity="{opacity}"/>')
+            if i > 0:
+                parts.append(f'<text x="{x}" y="{origin_y+35}" text-anchor="middle" font-size="12" fill="{COLORS["text"]}">{i}</text>')
+        
+        # Horizontal lines (y = 0 to 6)
+        for i in range(7):
+            y = origin_y - i * scale
+            opacity = "0.3" if i > 0 else "1"
+            width = "1" if i > 0 else "2"
+            parts.append(f'<line x1="{origin_x-20}" y1="{y}" x2="580" y2="{y}" stroke="{COLORS["grid"]}" stroke-width="{width}" stroke-opacity="{opacity}"/>')
+            if i > 0:
+                parts.append(f'<text x="{origin_x-30}" y="{y+4}" text-anchor="middle" font-size="12" fill="{COLORS["text"]}">{i}</text>')
+        
+        # Axis labels
+        parts.append(f'<text x="570" y="{origin_y+35}" font-size="14" font-weight="bold" fill="{COLORS["text"]}">x</text>')
+        parts.append(f'<text x="{origin_x-30}" y="50" font-size="14" font-weight="bold" fill="{COLORS["text"]}">y</text>')
+        
+        # Origin label
+        parts.append(f'<text x="{origin_x-20}" y="{origin_y+35}" font-size="12" fill="{COLORS["text"]}">0</text>')
+        
+        # === 2. TRIANGLE ===
+        parts.append(f'<path d="M {A[0]} {A[1]} L {B[0]} {B[1]} L {C[0]} {C[1]} Z" fill="{COLORS["medianas"]}" fill-opacity="0.1" stroke="{COLORS["line"]}" stroke-width="2.5" stroke-linejoin="round"/>')
+        
+        # === 3. MEDIANS (dashed, leading to G) ===
+        M_a = to_canvas((B_coord[0]+C_coord[0])/2, (B_coord[1]+C_coord[1])/2)
+        M_b = to_canvas((A_coord[0]+C_coord[0])/2, (A_coord[1]+C_coord[1])/2)
+        M_c = to_canvas((A_coord[0]+B_coord[0])/2, (A_coord[1]+B_coord[1])/2)
+        
+        parts.append(f'<line x1="{A[0]}" y1="{A[1]}" x2="{M_a[0]}" y2="{M_a[1]}" stroke="{COLORS["medianas"]}" stroke-width="1.5" stroke-dasharray="5"/>')
+        parts.append(f'<line x1="{B[0]}" y1="{B[1]}" x2="{M_b[0]}" y2="{M_b[1]}" stroke="{COLORS["medianas"]}" stroke-width="1.5" stroke-dasharray="5"/>')
+        parts.append(f'<line x1="{C[0]}" y1="{C[1]}" x2="{M_c[0]}" y2="{M_c[1]}" stroke="{COLORS["medianas"]}" stroke-width="1.5" stroke-dasharray="5"/>')
+        
+        # === 4. VERTICES with coordinate labels ===
+        # A
+        parts.append(f'<circle cx="{A[0]}" cy="{A[1]}" r="6" fill="{COLORS["primary"]}"/>')
+        parts.append(f'<text x="{A[0]-5}" y="{A[1]-15}" font-weight="bold" font-size="14" fill="{COLORS["primary"]}">A({A_coord[0]}, {A_coord[1]})</text>')
+        
+        # B
+        parts.append(f'<circle cx="{B[0]}" cy="{B[1]}" r="6" fill="{COLORS["primary"]}"/>')
+        parts.append(f'<text x="{B[0]-45}" y="{B[1]+20}" font-weight="bold" font-size="14" fill="{COLORS["primary"]}">B({B_coord[0]}, {B_coord[1]})</text>')
+        
+        # C
+        parts.append(f'<circle cx="{C[0]}" cy="{C[1]}" r="6" fill="{COLORS["primary"]}"/>')
+        parts.append(f'<text x="{C[0]+10}" y="{C[1]+20}" font-weight="bold" font-size="14" fill="{COLORS["primary"]}">C({C_coord[0]}, {C_coord[1]})</text>')
+        
+        # === 5. BARYCENTER G with calculation ===
+        parts.append(f'<circle cx="{G[0]:.2f}" cy="{G[1]:.2f}" r="10" fill="{COLORS["punto_notable"]}"/>')
+        parts.append(f'<text x="{G[0]+15:.2f}" y="{G[1]-10:.2f}" font-weight="bold" font-size="16" fill="{COLORS["punto_notable"]}">G</text>')
+        
+        # === 6. CALCULATION BOX (formula with values) ===
+        box_x, box_y = 350, 40
+        # Background box
+        parts.append(f'<rect x="{box_x}" y="{box_y}" width="230" height="90" rx="8" fill="{COLORS["background"]}" stroke="{COLORS["medianas"]}" stroke-width="2"/>')
+        
+        # Formula lines
+        parts.append(f'<text x="{box_x+115}" y="{box_y+25}" text-anchor="middle" font-size="13" font-weight="bold" fill="{COLORS["medianas"]}">Cálculo del Baricentro</text>')
+        parts.append(f'<text x="{box_x+10}" y="{box_y+50}" font-size="12" fill="{COLORS["text"]}">x = (1 + 2 + 7) / 3 = 10/3 ≈ 3.33</text>')
+        parts.append(f'<text x="{box_x+10}" y="{box_y+75}" font-size="12" fill="{COLORS["text"]}">y = (5 + 1 + 3) / 3 = 9/3 = 3</text>')
+        
+        # Result
+        parts.append(f'<text x="{G[0]+15:.2f}" y="{G[1]+20:.2f}" font-size="12" fill="{COLORS["punto_notable"]}">({G_x:.2f}, {G_y:.0f})</text>')
 
     parts.append('</svg>')
     
