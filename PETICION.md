@@ -166,9 +166,9 @@ Situaciones que requieren confirmación:
 
 # 📝 PETICIÓN ESPECÍFICA.
 
-http://localhost:4322/matematicas/geometria-euclidiana/angulos/conversion-grados-radianes
+http://localhost:4322/matematicas/geometria-euclidiana/angulos/angulos-entre-rectas
 
-En esta lección por por favor los factores de covnersión que se vea la unidad que se cancela, en el mismo formato de latex. Hazlo para todos los ejemplos.
+ILUSTRA EL EJEMPLO 3. SIGUE LAS CONVECIONES Y PAUTAS DEL PROYECTO.
 
 <!-- 
 ### ⚠️ Regla Crítica: Ecuaciones en Bloque

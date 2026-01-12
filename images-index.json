@@ -800,7 +800,70 @@
       "size": "56KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/e2ww-resumen-conversion-de-angulos.webp",
       "status": "uploaded"
+    },
+    {
+      "id": "e5c0",
+      "name": "la-escala-angulos.webp",
+      "materia": "matematicas",
+      "date": "2026-01-12",
+      "size": "53KB",
+      "url": "https://cdn.ediprofe.com/img/matematicas/e5c0-la-escala-angulos.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "gdwj",
+      "name": "angulos-complementarios.webp",
+      "materia": "matematicas",
+      "date": "2026-01-12",
+      "size": "46KB",
+      "url": "https://cdn.ediprofe.com/img/matematicas/gdwj-angulos-complementarios.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "yvsa",
+      "name": "angulos-suplementarios.webp",
+      "materia": "matematicas",
+      "date": "2026-01-12",
+      "size": "48KB",
+      "url": "https://cdn.ediprofe.com/img/matematicas/yvsa-angulos-suplementarios.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "qtxx",
+      "name": "angulos-conjugados.webp",
+      "materia": "matematicas",
+      "date": "2026-01-12",
+      "size": "49KB",
+      "url": "https://cdn.ediprofe.com/img/matematicas/qtxx-angulos-conjugados.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "ca9v",
+      "name": "angulos-adyacentes.webp",
+      "materia": "matematicas",
+      "date": "2026-01-12",
+      "size": "49KB",
+      "url": "https://cdn.ediprofe.com/img/matematicas/ca9v-angulos-adyacentes.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "iq8t",
+      "name": "angulos-opuestos-por-el-vertice.webp",
+      "materia": "matematicas",
+      "date": "2026-01-12",
+      "size": "42KB",
+      "url": "https://cdn.ediprofe.com/img/matematicas/iq8t-angulos-opuestos-por-el-vertice.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "qwl6",
+      "name": "giro-de-los-angulos.webp",
+      "materia": "matematicas",
+      "date": "2026-01-12",
+      "size": "18KB",
+      "url": "https://cdn.ediprofe.com/img/matematicas/qwl6-giro-de-los-angulos.webp",
+      "status": "uploaded"
     }
   ],
-  "lastUpdated": "2026-01-12T00:18:33.924Z"
+  "lastUpdated": "2026-01-12T00:58:08.552Z"
 }

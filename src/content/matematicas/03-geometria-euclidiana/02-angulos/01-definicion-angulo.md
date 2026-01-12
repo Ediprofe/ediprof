@@ -40,7 +40,7 @@ En matemáticas, los ángulos tienen dirección. Imagina que un lado está quiet
 - **Ángulo Positivo ($$ + $$):** Gira en contra de las manecillas del reloj (Antihorario). 
 - **Ángulo Negativo ($$ - $$):** Gira a favor de las manecillas del reloj (Horario).
 
-![giro-positivo-y-negativo-de-angulos](https://cdn.ediprofe.com/img/matematicas/b9pb-giro-positivo-y-negativo-de-angulos.webp)
+![giro-de-los-angulos](https://cdn.ediprofe.com/img/matematicas/qwl6-giro-de-los-angulos.webp)
 
 > **¿Por qué?** Es una convención antigua relacionada con cómo se mueven los planetas vistos desde el hemisferio norte.
 

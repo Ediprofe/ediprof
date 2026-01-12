@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" style="font-family: Inter, system-ui, sans-serif;">
+<rect width="600" height="300" fill="white" rx="12"/>
+<line x1="180.0" y1="150.0" x2="420.0" y2="150.0" stroke="#64748b" stroke-width="3" stroke-linecap="round"/>
+<line x1="300.0" y1="150.0" x2="403.92" y2="90.00" stroke="#64748b" stroke-width="3" stroke-linecap="round"/>
+<path d="M 300.0 150.0 L 380.00 150.00 A 80 80 0 0 0 369.28 110.00 Z" fill="#f97316" fill-opacity="0.2" stroke="none" /><path d="M 380.00 150.00 A 80 80 0 0 0 369.28 110.00" fill="none" stroke="#f97316" stroke-width="2" />
+<text x="406.25" y="126.53" text-anchor="start" font-weight="bold" fill="#f97316">30°</text>
+<path d="M 300.0 150.0 L 351.96 120.00 A 60 60 0 0 0 240.00 150.00 Z" fill="#3b82f6" fill-opacity="0.2" stroke="none" /><path d="M 351.96 120.00 A 60 60 0 0 0 240.00 150.00" fill="none" stroke="#3b82f6" stroke-width="2" />
+<text x="274.12" y="53.41" text-anchor="middle" font-weight="bold" fill="#3b82f6">?</text>
+<circle cx="300.0" cy="150.0" r="4" fill="#1e293b"/>
+</svg>

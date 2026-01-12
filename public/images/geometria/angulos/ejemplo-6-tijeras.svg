@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" style="font-family: Inter, system-ui, sans-serif;">
+<rect width="600" height="300" fill="white" rx="12"/>
+<line x1="410.87" y1="104.08" x2="189.13" y2="195.92" stroke="#64748b" stroke-width="3" stroke-linecap="round"/>
+<line x1="410.87" y1="195.92" x2="189.13" y2="104.08" stroke="#64748b" stroke-width="3" stroke-linecap="round"/>
+<path d="M 300.0 150.0 L 346.19 169.13 A 50 50 0 0 0 346.19 130.87 Z" fill="#f97316" fill-opacity="0.2" stroke="none" /><path d="M 346.19 169.13 A 50 50 0 0 0 346.19 130.87" fill="none" stroke="#f97316" stroke-width="2" />
+<text x="410.00" y="140.00" text-anchor="middle" font-weight="bold" fill="#f97316">Hojas</text>
+<text x="410.00" y="160.00" text-anchor="middle" font-weight="bold" fill="#f97316">45°</text>
+<path d="M 300.0 150.0 L 253.81 130.87 A 50 50 0 0 0 253.81 169.13 Z" fill="#f97316" fill-opacity="0.2" stroke="none" /><path d="M 253.81 130.87 A 50 50 0 0 0 253.81 169.13" fill="none" stroke="#f97316" stroke-width="2" />
+<text x="190.00" y="140.00" text-anchor="middle" font-weight="bold" fill="#f97316">Mangos</text>
+<text x="190.00" y="160.00" text-anchor="middle" font-weight="bold" fill="#f97316">?</text>
+<circle cx="300.0" cy="150.0" r="4" fill="#1e293b"/>
+</svg>

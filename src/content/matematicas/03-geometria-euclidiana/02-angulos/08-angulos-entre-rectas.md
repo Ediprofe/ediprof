@@ -23,6 +23,8 @@ $$
 
 Si uno mide $50^\circ$, el de enfrente mide $50^\circ$. No importa cómo muevas las rectas, esto siempre se cumple.
 
+![angulos-opuestos-por-el-vertice](https://cdn.ediprofe.com/img/matematicas/iq8t-angulos-opuestos-por-el-vertice.webp)
+
 ---
 
 ## 🏘️ Ángulos Adyacentes
@@ -36,6 +38,8 @@ $$
 
 Son **suplementarios**. Si uno crece, el otro se encoge para mantener la línea recta.
 
+![angulos-adyacentes](https://cdn.ediprofe.com/img/matematicas/ca9v-angulos-adyacentes.webp)
+
 ---
 
 ## ⚙️ Ejemplos Resueltos
@@ -43,12 +47,16 @@ Son **suplementarios**. Si uno crece, el otro se encoge para mantener la línea 
 ### Ejemplo 1: Opuestos por el vértice
 Si el ángulo de arriba en una 'X' mide $120^\circ$, ¿cuánto mide el de abajo?
 
+![opuestos-120](/images/geometria/angulos/ejemplo-1-opuestos.svg)
+
 **Razonamiento:**
 Están opuestos por el vértice (frente a frente).
 **Respuesta:** $120^\circ$.
 
 ### Ejemplo 2: Adyacentes
 Si un ángulo mide $30^\circ$, ¿cuánto mide su vecino adyacente en la misma recta?
+
+![adyacentes-30](/images/geometria/angulos/ejemplo-2-adyacentes.svg)
 
 **Razonamiento:**
 Deben sumar $180^\circ$.
@@ -60,6 +68,8 @@ $$
 ### Ejemplo 3: Cruce Completo
 En un cruce, el ángulo norte mide $80^\circ$. Calcula los otros tres (Sur, Este, Oeste).
 
+![cruce-rectas-80-100](/images/geometria/angulos/ejemplo-cruce-rectas.svg)
+
 **Razonamiento:**
 1.  **Sur (Opuesto):** Igual al Norte $\to 80^\circ$.
 2.  **Este (Adyacente):** Suplemento del Norte $\to 180^\circ - 80^\circ = 100^\circ$.
@@ -69,6 +79,8 @@ En un cruce, el ángulo norte mide $80^\circ$. Calcula los otros tres (Sur, Este
 
 ### Ejemplo 4: Ecuaciones con Opuestos
 Dos ángulos opuestos por el vértice miden $(3x + 10)$ y $(4x - 20)$. Halla $x$.
+
+![ecuaciones-opuestos](/images/geometria/angulos/ejemplo-4-ecuaciones-opuestos.svg)
 
 **Razonamiento:**
 Al ser opuestos, son **iguales**.
@@ -86,6 +98,8 @@ $$
 ### Ejemplo 5: Ecuaciones con Adyacentes
 Dos ángulos adyacentes miden $x$ y $4x$. Halla los ángulos.
 
+![ecuaciones-adyacentes](/images/geometria/angulos/ejemplo-5-ecuaciones-adyacentes.svg)
+
 **Razonamiento:**
 Al ser adyacentes en una recta, **suman 180**.
 $$
@@ -101,6 +115,8 @@ Los ángulos son $36^\circ$ y $4(36) = 144^\circ$.
 
 ### Ejemplo 6: Tijeras
 Si abres unas tijeras tal que el ángulo entre las hojas es de $45^\circ$, ¿cuál es el ángulo entre los mangos?
+
+![tijeras-angulos](/images/geometria/angulos/ejemplo-6-tijeras.svg)
 
 **Razonamiento:**
 Las hojas y los mangos forman una 'X'. Son opuestos por el vértice.

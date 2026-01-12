@@ -21,11 +21,16 @@ Son dos ángulos que al sumarse dan **$90^\circ$** (un ángulo recto).
 - **Regla:** $\alpha + \beta = 90^\circ$.
 - **Ejemplo:** $30^\circ$ y $60^\circ$ son complementarios.
 
+![angulos-complementarios](https://cdn.ediprofe.com/img/matematicas/gdwj-angulos-complementarios.webp)
+
+
 ### 2. Ángulos Suplementarios
 Son dos ángulos que al sumarse dan **$180^\circ$** (un ángulo llano).
 
 - **Regla:** $\alpha + \beta = 180^\circ$.
 - **Ejemplo:** $100^\circ$ y $80^\circ$ son suplementarios.
+
+![angulos-suplementarios](https://cdn.ediprofe.com/img/matematicas/yvsa-angulos-suplementarios.webp)
 
 ### 3. Ángulos Conjugados
 Son dos ángulos que al sumarse dan **$360^\circ$** (una vuelta completa).
@@ -33,6 +38,7 @@ Son dos ángulos que al sumarse dan **$360^\circ$** (una vuelta completa).
 - **Regla:** $\alpha + \beta = 360^\circ$.
 - **Ejemplo:** $270^\circ$ y $90^\circ$ son conjugados.
 
+![angulos-conjugados](https://cdn.ediprofe.com/img/matematicas/qtxx-angulos-conjugados.webp)
 ---
 
 ## ⚙️ Ejemplos Resueltos
@@ -260,10 +266,10 @@ $360^\circ - x$.
 
 ## 🔑 Resumen
 
-| Tipo | Suma Total | Mnemotecnia |
-|:--- |:--- |:--- |
-| **Complementarios** | $90^\circ$ | **C**ompleta la esquina (**C**orner). |
-| **Suplementarios** | $180^\circ$ | **S**uper línea (**S**traight). |
-| **Conjugados** | $360^\circ$ | **C**írculo completo. |
+| Tipo | Suma Total |
+|:--- |:--- |
+| **Complementarios** | $90^\circ$ |
+| **Suplementarios** | $180^\circ$ |
+| **Conjugados** | $360^\circ$ |
 
 > **Conclusión:** Sabiendo cuánto deben sumar, puedes encontrar cualquier pieza faltante con una simple resta o una ecuación pequeña.

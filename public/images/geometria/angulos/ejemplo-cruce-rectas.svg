@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" style="font-family: Inter, system-ui, sans-serif;">
+<rect width="600" height="300" fill="white" rx="12"/>
+<path d="M 300.0 150.0 L 332.14 111.70 A 50 50 0 0 0 267.86 111.70 Z" fill="#f97316" fill-opacity="0.2" stroke="none" /><path d="M 332.14 111.70 A 50 50 0 0 0 267.86 111.70" fill="none" stroke="#f97316" stroke-width="2" />
+<path d="M 300.0 150.0 L 267.86 188.30 A 50 50 0 0 0 332.14 188.30 Z" fill="#f97316" fill-opacity="0.2" stroke="none" /><path d="M 267.86 188.30 A 50 50 0 0 0 332.14 188.30" fill="none" stroke="#f97316" stroke-width="2" />
+<path d="M 300.0 150.0 L 267.86 111.70 A 50 50 0 0 0 267.86 188.30 Z" fill="#3b82f6" fill-opacity="0.2" stroke="none" /><path d="M 267.86 111.70 A 50 50 0 0 0 267.86 188.30" fill="none" stroke="#3b82f6" stroke-width="2" />
+<path d="M 300.0 150.0 L 332.14 188.30 A 50 50 0 0 0 332.14 111.70 Z" fill="#3b82f6" fill-opacity="0.2" stroke="none" /><path d="M 332.14 188.30 A 50 50 0 0 0 332.14 111.70" fill="none" stroke="#3b82f6" stroke-width="2" />
+<line x1="377.13" y1="58.07" x2="222.87" y2="241.93" stroke="#64748b" stroke-width="3" stroke-linecap="round"/>
+<line x1="222.87" y1="58.07" x2="377.13" y2="241.93" stroke="#64748b" stroke-width="3" stroke-linecap="round"/>
+<text x="300.00" y="60.00" text-anchor="middle" font-weight="bold" fill="#f97316">Norte (80°)</text>
+<text x="300.00" y="255.00" text-anchor="middle" font-weight="bold" fill="#f97316">Sur (80°)</text>
+<text x="200.00" y="155.00" text-anchor="end" dominant-baseline="middle" font-weight="bold" fill="#3b82f6">Oeste (100°)</text>
+<text x="400.00" y="155.00" text-anchor="start" dominant-baseline="middle" font-weight="bold" fill="#3b82f6">Este (100°)</text>
+<circle cx="300.0" cy="150.0" r="4" fill="#1e293b"/>
+</svg>

@@ -17,6 +17,8 @@ No todos los ángulos son iguales. Así como clasificamos a las personas por alt
 
 Imagina que abres una puerta. Dependiendo de cuánto la abras, el ángulo cambia de nombre.
 
+![la-escala-angulos](https://cdn.ediprofe.com/img/matematicas/e5c0-la-escala-angulos.webp)
+
 ### 1. Ángulo Agudo ("Puntiagudo")
 Mide **menos de 90°**.
 - Es cerrado, como la punta de una lanza o una rebanada delgada de pizza.
@@ -45,6 +47,7 @@ Mide **más de 180° pero menos de 360°**.
 ### 6. Ángulo Completo (o Perigonal)
 Mide **exactamente 360°**.
 - Es una vuelta entera. El lado final vuelve al inicio.
+
 
 ---
 
@@ -134,6 +137,7 @@ Entre 90 y 180.
 <summary>Ver solución</summary>
 
 Llano.
+**Resultado:** $\boxed{\text{Llano}}$
 
 </details>
 
@@ -159,6 +163,7 @@ Verdadero o Falso: Un triángulo puede tener dos ángulos rectos.
 <summary>Ver solución</summary>
 
 Falso. $90+90=180$, y la suma total debe ser 180, así que el tercer ángulo sería 0, lo cual es imposible.
+**Resultado:** $\boxed{\text{Falso}}$
 
 </details>
 
@@ -184,7 +189,7 @@ Mayor de 180.
 <summary>Ver solución</summary>
 
 Forman una línea recta.
-**Resultado:** $\boxed{\text{Llano (180$^\circ$)}}$
+**Resultado:** $\boxed{\text{Llano } (180^\circ)}$
 
 </details>
 
@@ -197,6 +202,7 @@ Forman una línea recta.
 <summary>Ver solución</summary>
 
 Cualquier ángulo mayor que 0. Un ángulo de $0.0001^\circ$ es Agudo.
+**Resultado:** $\boxed{\text{Agudo}}$
 
 </details>
 
@@ -222,6 +228,7 @@ El borde de una tarjeta de crédito tiene un ángulo...
 <summary>Ver solución</summary>
 
 Recto.
+**Resultado:** $\boxed{\text{Recto}}$
 
 </details>
 
