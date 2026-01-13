@@ -24,6 +24,9 @@ $$
 AB \parallel CD \quad \text{y} \quad AD \parallel BC
 $$
 
+![Definición de Paralelogramo](/images/content/matematicas/geometria/cuadrilateros/para_def.svg)
+
+
 ---
 
 ## 🔮 Propiedades Fundamentales
@@ -44,6 +47,9 @@ $$
 \angle A = \angle C \quad \text{y} \quad \angle B = \angle D
 $$
 
+![Propiedades de Lados y Ángulos](/images/content/matematicas/geometria/cuadrilateros/para_props.svg)
+
+
 ### 3. Ángulos Consecutivos Suplementarios
 Dos ángulos seguidos (vecinos) siempre suman $180^\circ$.
 
@@ -51,8 +57,14 @@ $$
 \angle A + \angle B = 180^\circ
 $$
 
+![Ángulos Consecutivos Suplementarios](/images/content/matematicas/geometria/cuadrilateros/para_consecutive.svg)
+
+
 ### 4. Las Diagonales se Bisecan
-Las diagonales se cortan exactamente en su **punto medio**. No necesariamente son iguales entre sí, pero se dividen en dos partes iguales mutuamente.
+Las diagonales se **bisecan** (del latín *bi* "dos" y *secare* "cortar"), lo que significa que se cortan mutuamente en su **punto medio**. Es decir, cada diagonal divide a la otra en dos segmentos de igual longitud.
+
+![Diagonales que se bisecan](/images/content/matematicas/geometria/cuadrilateros/para_diagonals.svg)
+
 
 ---
 
@@ -65,6 +77,9 @@ $$
 P = 2a + 2b
 $$
 
+![Perímetro del Paralelogramo](/images/content/matematicas/geometria/cuadrilateros/para_perimeter.svg)
+
+
 ### Área ($A$)
 Es el producto de la base por la altura (perpendicular). **Cuidado:** No es el producto de los dos lados (a menos que sea un rectángulo).
 
@@ -75,6 +90,9 @@ $$
 $$
 A = b \cdot h
 $$
+
+![Concepto de Área](/images/content/matematicas/geometria/cuadrilateros/para_area_concept.svg)
+
 
 ---
 
@@ -97,6 +115,9 @@ $$
 \boxed{\angle C=60^\circ, \angle B=120^\circ, \angle D=120^\circ}
 $$
 
+![Ejemplo Cálculo de Ángulos](/images/content/matematicas/geometria/cuadrilateros/para_ex_angles.svg)
+
+
 ---
 
 ### Ejemplo 2: Área con lados inclinados
@@ -114,6 +135,9 @@ $$
 $$
 \boxed{40 \text{ cm}^2}
 $$
+
+![Ejemplo de Área](/images/content/matematicas/geometria/cuadrilateros/para_ex_area.svg)
+
 
 ---
 
@@ -351,4 +375,10 @@ $$
 | **Diagonales** | Se cortan en su punto medio (se bisecan). |
 | **Área** | $\text{Base} \times \text{Perpendicular}$. |
 
-> Si un cuadrilátero cumple cualquiera de estas propiedades, ¡es automáticamente un paralelogramo!
+> **Nota:** Aunque estas son propiedades de los paralelogramos, para **demostrar** que un cuadrilátero lo es, basta verificar **una** de estas condiciones suficientes:
+> 1.  Sus diagonales se bisecan.
+> 2.  Tiene **ambos** pares de lados opuestos iguales.
+> 3.  Tiene **un** par de lados opuestos que son paralelos e iguales a la vez.
+
+![Resumen Paralelogramos](/images/content/matematicas/geometria/cuadrilateros/para_summary.svg)
+

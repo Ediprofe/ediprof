@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 460" style="font-family: Inter, system-ui, sans-serif;">
+<rect width="600" height="460" fill="#f8fafc" />
+<path d="M 175.0 280.0 L 375.0 280.0 L 425.0 140.0 L 225.0 140.0 Z" fill="#3b82f6" fill-opacity="0.1" stroke="#3b82f6" stroke-width="3"/>
+<polyline points="272.93,287.07 280.00,280.00 272.93,272.93" fill="none" stroke="#1e293b" stroke-width="2"/>
+<polyline points="322.93,147.07 330.00,140.00 322.93,132.93" fill="none" stroke="#1e293b" stroke-width="2"/>
+<polyline points="205.12,216.68 200.84,207.65 191.80,211.93" fill="none" stroke="#1e293b" stroke-width="2"/>
+<polyline points="206.80,211.97 202.52,202.94 193.49,207.22" fill="none" stroke="#1e293b" stroke-width="2"/>
+<polyline points="405.12,216.68 400.84,207.65 391.80,211.93" fill="none" stroke="#1e293b" stroke-width="2"/>
+<polyline points="406.80,211.97 402.52,202.94 393.49,207.22" fill="none" stroke="#1e293b" stroke-width="2"/>
+<text x="150.00" y="280.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">A</text>
+<text x="400.00" y="280.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">B</text>
+<text x="450.00" y="140.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">C</text>
+<text x="200.00" y="140.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">D</text>
+<text x="300.00" y="340.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Dos pares de lados paralelos</text>
+<text x="300.00" y="35.00" font-family="sans-serif" font-size="22" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Definición de Paralelogramo</text>
+</svg>

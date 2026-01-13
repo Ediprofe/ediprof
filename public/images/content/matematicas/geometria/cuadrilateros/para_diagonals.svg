@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 460" style="font-family: Inter, system-ui, sans-serif;">
+<rect width="600" height="460" fill="#f8fafc" />
+<path d="M 175.0 280.0 L 375.0 280.0 L 425.0 140.0 L 225.0 140.0 Z" fill="#3b82f6" fill-opacity="0.1" stroke="#3b82f6" stroke-width="3"/>
+<line x1="175.0" y1="280.0" x2="425.0" y2="140.0" stroke="#22c55e" stroke-width="2" stroke-dasharray="5,5"/>
+<line x1="375.0" y1="280.0" x2="225.0" y2="140.0" stroke="#22c55e" stroke-width="2" stroke-dasharray="5,5"/>
+<text x="300.00" y="195.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">M</text>
+<line x1="236.45" y1="251.32" x2="231.57" y2="242.59" stroke="#22c55e" stroke-width="2"/>
+<line x1="239.94" y1="249.36" x2="235.06" y2="240.64" stroke="#22c55e" stroke-width="2"/>
+<line x1="243.43" y1="247.41" x2="238.55" y2="238.68" stroke="#22c55e" stroke-width="2"/>
+<line x1="361.45" y1="181.32" x2="356.57" y2="172.59" stroke="#22c55e" stroke-width="2"/>
+<line x1="364.94" y1="179.36" x2="360.06" y2="170.64" stroke="#22c55e" stroke-width="2"/>
+<line x1="368.43" y1="177.41" x2="363.55" y2="168.68" stroke="#22c55e" stroke-width="2"/>
+<line x1="259.09" y1="178.66" x2="265.91" y2="171.34" stroke="#22c55e" stroke-width="2"/>
+<line x1="334.09" y1="248.66" x2="340.91" y2="241.34" stroke="#22c55e" stroke-width="2"/>
+<text x="300.00" y="35.00" font-family="sans-serif" font-size="22" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Las Diagonales se Bisecan</text>
+</svg>

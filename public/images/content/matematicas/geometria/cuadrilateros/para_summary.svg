@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 460" style="font-family: Inter, system-ui, sans-serif;">
+<rect width="600" height="460" fill="#f8fafc" />
+<path d="M 175.0 280.0 L 375.0 280.0 L 425.0 140.0 L 225.0 140.0 Z" fill="#3b82f6" fill-opacity="0.1" stroke="#3b82f6" stroke-width="3"/>
+<polyline points="272.93,287.07 280.00,280.00 272.93,272.93" fill="none" stroke="#3b82f6" stroke-width="2"/>
+<polyline points="322.93,147.07 330.00,140.00 322.93,132.93" fill="none" stroke="#3b82f6" stroke-width="2"/>
+<line x1="204.04" y1="213.57" x2="194.62" y2="210.20" stroke="#22c55e" stroke-width="2"/>
+<line x1="205.38" y1="209.80" x2="195.96" y2="206.43" stroke="#22c55e" stroke-width="2"/>
+<line x1="404.04" y1="213.57" x2="394.62" y2="210.20" stroke="#22c55e" stroke-width="2"/>
+<line x1="405.38" y1="209.80" x2="395.96" y2="206.43" stroke="#22c55e" stroke-width="2"/>
+<line x1="175.0" y1="280.0" x2="425.0" y2="140.0" stroke="#22c55e" stroke-width="1" stroke-dasharray="3,3" opacity="0.6"/>
+<line x1="375.0" y1="280.0" x2="225.0" y2="140.0" stroke="#22c55e" stroke-width="1" stroke-dasharray="3,3" opacity="0.6"/>
+<path d="M 175.00 280.00 L 183.41 256.46 A 25 25 0 0 1 200.00 280.00 Z" fill="#1e293b" fill-opacity="0" stroke="none"/>
+<path d="M 183.41 256.46 A 25 25 0 0 1 200.00 280.00" fill="none" stroke="#1e293b" stroke-width="2"/>
+
+<path d="M 425.00 140.00 L 416.59 163.54 A 25 25 0 0 1 400.00 140.00 Z" fill="#1e293b" fill-opacity="0" stroke="none"/>
+<path d="M 416.59 163.54 A 25 25 0 0 1 400.00 140.00" fill="none" stroke="#1e293b" stroke-width="2"/>
+
+<text x="100.0" y="320.0" font-family="Inter, sans-serif" font-size="16" fill="#1e293b" text-anchor="start" dominant-baseline="middle">1. Lados opuestos paralelos e iguales</text>
+<text x="100.0" y="345.0" font-family="Inter, sans-serif" font-size="16" fill="#1e293b" text-anchor="start" dominant-baseline="middle">2. Ángulos opuestos iguales</text>
+<text x="100.0" y="370.0" font-family="Inter, sans-serif" font-size="16" fill="#1e293b" text-anchor="start" dominant-baseline="middle">3. Diagonales se bisecan</text>
+<text x="100.0" y="395.0" font-family="Inter, sans-serif" font-size="16" fill="#1e293b" text-anchor="start" dominant-baseline="middle">4. Área = Base × Altura (Perpendicular)</text>
+</svg>

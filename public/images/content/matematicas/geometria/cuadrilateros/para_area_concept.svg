@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 460" style="font-family: Inter, system-ui, sans-serif;">
+<rect width="600" height="460" fill="#f8fafc" />
+<path d="M 175.0 280.0 L 375.0 280.0 L 425.0 140.0 L 225.0 140.0 Z" fill="#3b82f6" fill-opacity="0.1" stroke="#3b82f6" stroke-width="3"/>
+<line x1="225.0" y1="140.0" x2="225.0" y2="280.0" stroke="#ef4444" stroke-width="2" stroke-dasharray="4,4"/>
+<path d="M 225.0 265.0 L 240.0 265.0 L 240.0 280.0" fill="none" stroke="#ef4444"/>
+<text x="275.00" y="300.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Base (b)</text>
+<text x="210.00" y="210.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#ef4444" text-anchor="middle" dominant-baseline="middle">h</text>
+<text x="410.00" y="210.00" font-family="sans-serif" font-size="14" font-weight="bold" fill="#64748b" text-anchor="middle" dominant-baseline="middle">lado</text>
+<text x="300.00" y="35.00" font-family="sans-serif" font-size="22" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Área = Base × Altura</text>
+</svg>

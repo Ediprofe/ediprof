@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 460" style="font-family: Inter, system-ui, sans-serif;">
+<rect width="600" height="460" fill="#f8fafc" />
+<path d="M 175.0 280.0 L 375.0 280.0 L 425.0 140.0 L 225.0 140.0 Z" fill="#3b82f6" fill-opacity="0.1" stroke="#3b82f6" stroke-width="4"/>
+<text x="275.00" y="305.00" font-family="sans-serif" font-size="24" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">b</text>
+<text x="325.00" y="115.00" font-family="sans-serif" font-size="24" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">b</text>
+<text x="175.00" y="210.00" font-family="sans-serif" font-size="24" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">a</text>
+<text x="425.00" y="210.00" font-family="sans-serif" font-size="24" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">a</text>
+<rect x="210.0" y="200.0" width="180" height="60" rx="6" fill="#fef3c7" stroke="#e2e8f0"/>
+<text x="300.00" y="235.00" font-family="sans-serif" font-size="24" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">P = 2a + 2b</text>
+<text x="300.00" y="35.00" font-family="sans-serif" font-size="22" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Perímetro = Suma de Lados</text>
+</svg>
