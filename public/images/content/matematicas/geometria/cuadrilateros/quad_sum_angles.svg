@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 460" style="font-family: Inter, system-ui, sans-serif;">
+<rect width="600" height="460" fill="#f8fafc" />
+<path d="M 150.00 170.00 L 420.00 150.00 L 200.00 350.00 Z" fill="#3b82f6" fill-opacity="0.05" stroke="#3b82f6" stroke-width="2.5" stroke-linejoin="round"/>
+<path d="M 420.00 150.00 L 380.00 330.00 L 200.00 350.00 Z" fill="#22c55e" fill-opacity="0.05" stroke="#22c55e" stroke-width="2.5" stroke-linejoin="round"/>
+<line x1="420.0" y1="150.0" x2="200.0" y2="350.0" stroke="#1e293b" stroke-width="2" stroke-dasharray="4,4"/>
+<text x="256.67" y="223.33" font-family="sans-serif" font-size="18" font-weight="bold" fill="#3b82f6" text-anchor="middle" dominant-baseline="middle">180°</text>
+<text x="333.33" y="276.67" font-family="sans-serif" font-size="18" font-weight="bold" fill="#22c55e" text-anchor="middle" dominant-baseline="middle">180°</text>
+<rect x="220.0" y="400" width="160" height="40" rx="4" fill="#fef3c7" stroke="#e2e8f0"/>
+<text x="300.00" y="420.00" font-family="sans-serif" font-size="20" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Total = 360°</text>
+<text x="300.00" y="35.00" font-family="sans-serif" font-size="22" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Suma de Ángulos (360°)</text>
+</svg>

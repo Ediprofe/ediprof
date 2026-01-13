@@ -23,7 +23,11 @@ Un **cuadrilátero** es un polígono cerrado formado por **cuatro lados**, **cua
 1.  **Vértices:** Los 4 puntos de las esquinas ($A, B, C, D$).
 2.  **Lados:** Los 4 segmentos que unen los vértices ($AB, BC, CD, DA$).
 3.  **Ángulos Interiores:** Los 4 ángulos dentro de la figura ($\alpha, \beta, \gamma, \delta$).
-4.  **Diagonales:** Los segmentos que unen vértices opuestos. Todo cuadrilátero tiene exactamente **dos** diagonales.
+4.  **Diagonales:** Son los segmentos que unen **vértices opuestos** (esquinas que NO están juntas). Imagina una línea que "salta" de una esquina a la de enfrente, ignorando a los vecinos. Todo cuadrilátero tiene exactamente **dos** diagonales.
+
+![Elementos del Cuadrilátero](/images/content/matematicas/geometria/cuadrilateros/quad_elements.svg)
+
+---
 
 ---
 
@@ -37,6 +41,9 @@ $$
 \angle A + \angle B + \angle C + \angle D = 360^\circ
 $$
 
+![Suma de Ángulos](/images/content/matematicas/geometria/cuadrilateros/quad_sum_angles.svg)
+
+
 ---
 
 ## 🔄 Clasificación: Convexos vs. Cóncavos
@@ -47,8 +54,14 @@ No todos los cuadriláteros tienen la forma "típica" de caja.
 Es el "normal". Todos sus ángulos interiores son menores de $180^\circ$. Si trazas sus dos diagonales, ambas quedan **dentro** de la figura.
 *(Ejemplo: Un cuadrado, un rombo).*
 
+![Cuadrilátero Convexo](/images/content/matematicas/geometria/cuadrilateros/quad_convex.svg)
+
+
 ### 2. Cuadrilátero Cóncavo
 Tiene una "muesca" o entrada hacia adentro (como una punta de flecha o un bumerán). Tiene al menos un ángulo interior **mayor de $180^\circ$**. Una de sus diagonales queda **fuera** de la figura.
+
+![Cuadrilátero Cóncavo](/images/content/matematicas/geometria/cuadrilateros/quad_concave.svg)
+
 
 ---
 
@@ -57,6 +70,9 @@ Tiene una "muesca" o entrada hacia adentro (como una punta de flecha o un bumer�
 ### Ejemplo 1: Hallar un ángulo desconocido
 
 En un cuadrilátero $ABCD$, los ángulos miden: $A=100^\circ$, $B=80^\circ$, $C=70^\circ$. ¿Cuánto mide el ángulo $D$?
+
+![Ejemplo Ángulo Desconocido](/images/content/matematicas/geometria/cuadrilateros/quad_ex1.svg)
+
 
 **Razonamiento:**
 Sabemos que la suma total debe ser $360^\circ$.
@@ -85,6 +101,9 @@ $$
 ### Ejemplo 2: Identificar Convexidad
 
 Tienes un cuadrilátero con ángulos: $40^\circ, 30^\circ, 50^\circ, 240^\circ$. ¿Es convexo o cóncavo?
+
+![Identificar Cóncavidad](/images/content/matematicas/geometria/cuadrilateros/quad_ex2.svg)
+
 
 **Razonamiento:**
 Revisamos los ángulos.
@@ -327,3 +346,6 @@ $$
 | **Cóncavo** | Un ángulo $> 180^\circ$, diagonal externa. |
 
 > Todo cuadrilátero se puede descomponer en dos triángulos, esa es la clave de su geometría.
+
+![Resumen Tipos](/images/content/matematicas/geometria/cuadrilateros/quad_summary.svg)
+
