@@ -335,10 +335,10 @@ Consultar el árbol de decisión en CLAUDE.md:
 
 | Tipo de ASCII art | Tecnología | Workflow |
 |-------------------|------------|----------|
-| Diagramas de átomos, moléculas, procesos | **Rough.js** | `.agent/workflows/roughjs.md` |
+| Diagramas conceptuales | **PNG de tablet** | Ver CLAUDE.md |
 | Niveles de energía, orbitales | **SVG estático** | Spec + Renderer |
 | Geometría exacta | **GeometrySpec** | `.agent/workflows/geometry-exact.md` |
-| Gráficas de funciones | **GraphSpec** | `.agent/workflows/graphspec.md` |
+| Gráficas de funciones | **CartesianSpec** | `.agent/workflows/cartesian-spec.md` |
 | Tabla periódica, tendencias | **SVG estático** | Spec + Renderer |
 
 ### Paso 3: Generar la ilustración
@@ -567,9 +567,9 @@ Aprobación definitiva por parte del usuario antes de publicar.
 
 # 🔗 Workflows Relacionados
 
-- [ECharts](./echarts.md) - Funciones y datos
+- [Ilustración](./ilustracion.md) - Crear/usar renderers
+- [Corregir](./corregir.md) - Corregir lecciones
+- [Nuevo Tema](./nuevo-tema.md) - Crear temas desde cero
 - [GeometrySpec](./geometry-exact.md) - Geometría exacta
-- [Rough.js](./roughjs.md) - Diagramas ilustrativos
-- [Chart.js](./chartjs.md) - Fracciones
-- [Three.js](./threejs.md) - Geometría 3D
+- [CartesianSpec](./cartesian-spec.md) - Geometría analítica
 - [Árbol de Decisión](./illustration-decision.md) - Guía expandida

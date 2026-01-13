@@ -38,10 +38,10 @@ Sistema para generar ilustraciones geométricas **matemáticamente perfectas** u
 
 ### ❌ NO usar GeometrySpec para:
 
-- Gráficas de funciones → ECharts
-- Diagramas ilustrativos → Rough.js
-- Geometría 3D → Three.js
-- Figuras sin propiedades exactas → Rough.js
+- Gráficas de funciones → CartesianSpec / MathPlotter
+- Diagramas ilustrativos → PNG de tablet (ver CLAUDE.md)
+- Geometría 3D → No soportado actualmente
+- Figuras sin propiedades exactas → PNG de tablet
 
 ---
 

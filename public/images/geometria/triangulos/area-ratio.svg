@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 460">
+<rect width="600" height="460" fill="#f8fafc"/>
+<path d="M 112.00 301.00 L 112.00 286.00 L 127.00 286.00 L 127.00 301.00 Z" fill="#1e293b" fill-opacity="0.2" stroke="#1e293b" stroke-width="2"/>
+
+<path d="M 344.00 301.00 L 344.00 281.00 L 364.00 281.00 L 364.00 301.00 Z" fill="#1e293b" fill-opacity="0.2" stroke="#1e293b" stroke-width="2"/>
+
+<path d="M 112.00 301.00 L 184.00 301.00 L 112.00 205.00 Z" fill="#3b82f6" fill-opacity="0.15" stroke="#3b82f6" stroke-width="2" stroke-linejoin="round"/>
+<path d="M 344.00 301.00 L 488.00 301.00 L 344.00 109.00 Z" fill="#22c55e" fill-opacity="0.15" stroke="#22c55e" stroke-width="2" stroke-linejoin="round"/>
+<text x="148.00" y="326.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">b = 3</text>
+<text x="82.00" y="253.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">h = 4</text>
+<text x="141.00" y="274.00" font-family="sans-serif" font-size="20" font-weight="bold" fill="#3b82f6" text-anchor="middle" dominant-baseline="middle">A=6</text>
+<text x="416.00" y="326.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">b = 6</text>
+<text x="309.00" y="205.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">h = 8</text>
+<text x="402.00" y="247.00" font-family="sans-serif" font-size="24" font-weight="bold" fill="#22c55e" text-anchor="middle" dominant-baseline="middle">A=24</text>
+<defs><marker id="arrow_area" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#f97316" /></marker></defs>
+<line x1="234.0" y1="210.0" x2="294.0" y2="210.0" stroke="#f97316" stroke-width="3" marker-end="url(#arrow_area)"/>
+<text x="264.00" y="185.00" font-family="sans-serif" font-size="22" font-weight="bold" fill="#f97316" text-anchor="middle" dominant-baseline="middle">k = 2</text>
+<text x="264.00" y="245.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Área × k²</text>
+<text x="264.00" y="270.00" font-family="sans-serif" font-size="20" font-weight="bold" fill="#ef4444" text-anchor="middle" dominant-baseline="middle">6 · 2² = 24</text>
+<text x="300.00" y="435.00" font-family="sans-serif" font-size="22" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Razón de Áreas = k²</text>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 460" style="font-family: Inter, system-ui, sans-serif;">
+<rect width="600" height="460" fill="#f8fafc" />
+<path d="M 280.00 182.00 L 424.00 290.00 L 280.00 290.00 Z" fill="#1e293b" fill-opacity="0.05" stroke="#1e293b" stroke-width="2" stroke-linejoin="round"/>
+<rect x="172.0" y="182.0" width="108" height="108" fill="#3b82f6" fill-opacity="0.2" stroke="#3b82f6" stroke-width="2"/>
+<text x="226.00" y="236.00" font-family="sans-serif" font-size="24" font-weight="bold" fill="#3b82f6" text-anchor="middle" dominant-baseline="middle">a²</text>
+<rect x="280.0" y="290.0" width="144" height="144" fill="#22c55e" fill-opacity="0.2" stroke="#22c55e" stroke-width="2"/>
+<text x="352.00" y="362.00" font-family="sans-serif" font-size="24" font-weight="bold" fill="#22c55e" text-anchor="middle" dominant-baseline="middle">b²</text>
+<path d="M 280.0 182.0 L 424.0 290.0 L 532.0 146.0 L 388.0 38.0 Z" fill="#ef4444" fill-opacity="0.2" stroke="#ef4444" stroke-width="2"/>
+<text x="406.00" y="164.00" font-family="sans-serif" font-size="24" font-weight="bold" fill="#ef4444" text-anchor="middle" dominant-baseline="middle">c²</text>
+<text x="300.00" y="35.00" font-family="sans-serif" font-size="22" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">La Fórmula Clave</text>
+</svg>

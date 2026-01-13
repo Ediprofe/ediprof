@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 460" style="font-family: Inter, system-ui, sans-serif;">
+<rect width="600" height="460" fill="#f8fafc" />
+<line x1="50" y1="150.0" x2="550" y2="150.0" stroke="#22c55e" stroke-width="2" stroke-dasharray="5,5"/>
+<text x="560" y="155.0" fill="#22c55e" font-size="16">L1</text>
+<line x1="50" y1="230.0" x2="550" y2="230.0" stroke="#22c55e" stroke-width="2" stroke-dasharray="5,5"/>
+<text x="560" y="235.0" fill="#22c55e" font-size="16">L2</text>
+<line x1="50" y1="310.0" x2="550" y2="310.0" stroke="#22c55e" stroke-width="2" stroke-dasharray="5,5"/>
+<text x="560" y="315.0" fill="#22c55e" font-size="16">L3</text>
+<line x1="195.80" y1="86.00" x2="282.20" y2="374.00" stroke="#3b82f6" stroke-width="3"/>
+<line x1="402.80" y1="86.00" x2="345.20" y2="374.00" stroke="#ef4444" stroke-width="3"/>
+<text x="212.00" y="190.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">A</text>
+<text x="236.00" y="270.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">B</text>
+<text x="397.00" y="190.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">A'</text>
+<text x="381.00" y="270.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">B'</text>
+<rect x="200.0" y="395" width="200" height="50" rx="8" fill="#fef3c7" stroke="#e2e8f0" stroke-width="1"/>
+<text x="300.0" y="428" font-family="KaTeX_Main, Times, serif" font-size="24" fill="#1e293b" text-anchor="middle">A/B = A'/B'</text>
+<text x="300.00" y="35.00" font-family="sans-serif" font-size="22" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Teorema General de Tales</text>
+</svg>

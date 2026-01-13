@@ -429,6 +429,8 @@ $$
 
 ## 🔑 Resumen
 
+![congruencia-de-triangulos](https://cdn.ediprofe.com/img/matematicas/bcpc-congruencia-de-triangulos.webp)
+
 | Criterio | Significado | Clave Visual |
 |----------|-------------|--------------|
 | **LLL** | Lado-Lado-Lado | Los 3 lados son idénticos. |

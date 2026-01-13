@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 460">
+<rect width="600" height="460" fill="#f8fafc"/>
+<path d="M 118.00 290.00 L 222.00 290.00 L 150.50 173.00 Z" fill="none" stroke="#94a3b8" stroke-width="2.5" stroke-linejoin="round"/>
+<path d="M 322.00 290.00 L 482.00 290.00 L 372.00 110.00 Z" fill="none" stroke="#94a3b8" stroke-width="2.5" stroke-linejoin="round"/>
+<path d="M 118.00 290.00 L 126.03 261.09 A 30 30 0 0 1 148.00 290.00 Z" fill="#8b5cf6" fill-opacity="0.2" stroke="none"/>
+<path d="M 222.00 290.00 L 192.00 290.00 A 30 30 0 0 1 206.36 264.40 Z" fill="#f97316" fill-opacity="0.2" stroke="none"/>
+<path d="M 322.00 290.00 L 334.04 246.64 A 45 45 0 0 1 367.00 290.00 Z" fill="#8b5cf6" fill-opacity="0.2" stroke="none"/>
+<path d="M 482.00 290.00 L 437.00 290.00 A 45 45 0 0 1 458.53 251.60 Z" fill="#f97316" fill-opacity="0.2" stroke="none"/>
+<text x="300.00" y="430.00" font-family="sans-serif" font-size="22" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Criterio AA: Dos ángulos iguales</text>
+</svg>

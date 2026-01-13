@@ -1,14 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300">
-<rect width="600" height="300" fill="#f8fafc"/>
-<path d="M 60 230 L 220 230 L 110 100 Z" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linejoin="round"/>
-<path d="M 360 230 L 520 230 L 410 100 Z" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linejoin="round"/>
-<line x1="60" y1="230" x2="220" y2="230" stroke="#3b82f6" stroke-width="4"/>
-<line x1="360" y1="230" x2="520" y2="230" stroke="#3b82f6" stroke-width="4"/>
-<line x1="137.00" y1="225.20" x2="143.00" y2="234.80" stroke="#3b82f6" stroke-width="2"/>
-<line x1="437.00" y1="225.20" x2="443.00" y2="234.80" stroke="#3b82f6" stroke-width="2"/>
-<path d="M 60 230 L 68.97 206.67 A 25 25 0 0 1 85.00 230.00 Z" fill="#22c55e" fill-opacity="0.4" stroke="none"/><path d="M 68.97 206.67 A 25 25 0 0 1 85.00 230.00" fill="none" stroke="#22c55e" stroke-width="2"/>
-<path d="M 360 230 L 368.97 206.67 A 25 25 0 0 1 385.00 230.00 Z" fill="#22c55e" fill-opacity="0.4" stroke="none"/><path d="M 368.97 206.67 A 25 25 0 0 1 385.00 230.00" fill="none" stroke="#22c55e" stroke-width="2"/>
-<path d="M 220 230 L 195.00 230.00 A 25 25 0 0 1 203.85 210.92 Z" fill="#ef4444" fill-opacity="0.4" stroke="none"/><path d="M 195.00 230.00 A 25 25 0 0 1 203.85 210.92" fill="none" stroke="#ef4444" stroke-width="2"/><path d="M 200.00 230.00 A 20 20 0 0 1 207.08 214.73" fill="none" stroke="#ef4444" stroke-width="2"/>
-<path d="M 520 230 L 495.00 230.00 A 25 25 0 0 1 503.85 210.92 Z" fill="#ef4444" fill-opacity="0.4" stroke="none"/><path d="M 495.00 230.00 A 25 25 0 0 1 503.85 210.92" fill="none" stroke="#ef4444" stroke-width="2"/><path d="M 500.00 230.00 A 20 20 0 0 1 507.08 214.73" fill="none" stroke="#ef4444" stroke-width="2"/>
-<text x="300" y="280" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle">Ángulo-Lado-Ángulo</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 350">
+<rect width="600" height="350" fill="#f8fafc"/>
+<path d="M 106.00 237.00 L 250.00 237.00 L 154.00 123.00 Z" fill="none" stroke="#94a3b8" stroke-width="2.5" stroke-linejoin="round"/>
+<path d="M 350.00 237.00 L 494.00 237.00 L 398.00 123.00 Z" fill="none" stroke="#94a3b8" stroke-width="2.5" stroke-linejoin="round"/>
+<line x1="106.00" y1="237.00" x2="250.00" y2="237.00" stroke="#3b82f6" stroke-width="5"/>
+<line x1="350.00" y1="237.00" x2="494.00" y2="237.00" stroke="#3b82f6" stroke-width="5"/>
+<line x1="174.00" y1="230.60" x2="182.00" y2="243.40" stroke="#3b82f6" stroke-width="2"/>
+<line x1="418.00" y1="230.60" x2="426.00" y2="243.40" stroke="#3b82f6" stroke-width="2"/>
+<path d="M 106.00 237.00 L 115.70 213.96 A 25 25 0 0 1 131.00 237.00 Z" fill="#22c55e" fill-opacity="0.4" stroke="none"/><path d="M 115.70 213.96 A 25 25 0 0 1 131.00 237.00" fill="none" stroke="#22c55e" stroke-width="2"/>
+<path d="M 350.00 237.00 L 359.70 213.96 A 25 25 0 0 1 375.00 237.00 Z" fill="#22c55e" fill-opacity="0.4" stroke="none"/><path d="M 359.70 213.96 A 25 25 0 0 1 375.00 237.00" fill="none" stroke="#22c55e" stroke-width="2"/>
+<path d="M 250.00 237.00 L 225.00 237.00 A 25 25 0 0 1 233.90 217.88 Z" fill="#ef4444" fill-opacity="0.4" stroke="none"/><path d="M 225.00 237.00 A 25 25 0 0 1 233.90 217.88" fill="none" stroke="#ef4444" stroke-width="2"/><path d="M 230.00 237.00 A 20 20 0 0 1 237.12 221.70" fill="none" stroke="#ef4444" stroke-width="2"/>
+<path d="M 494.00 237.00 L 469.00 237.00 A 25 25 0 0 1 477.90 217.88 Z" fill="#ef4444" fill-opacity="0.4" stroke="none"/><path d="M 469.00 237.00 A 25 25 0 0 1 477.90 217.88" fill="none" stroke="#ef4444" stroke-width="2"/><path d="M 474.00 237.00 A 20 20 0 0 1 481.12 221.70" fill="none" stroke="#ef4444" stroke-width="2"/>
+<text x="330.00" y="180.00" font-family="sans-serif" font-size="45" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">≅</text>
+<text x="300.00" y="325.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Criterio ALA: Ángulo-Lado-Ángulo</text>
 </svg>

@@ -75,7 +75,7 @@
 | **Título** | `# **Título**` (SIN emoji) |
 | **Fórmula importante** | Bloque `$$...$$` con líneas vacías antes/después |
 | **TODAS las ecuaciones** | Formato de bloque para legibilidad (ver abajo) |
-| **Resultado** | `$\boxed{...}$` |
+| **Resultado final** | `$$\boxed{...}$$` — Siempre en bloque, nunca inline |
 | **Soluciones** | Dentro de `<details><summary>Ver solución</summary>...</details>` |
 
 ### ⚠️ Regla Crítica: Ecuaciones en Bloque

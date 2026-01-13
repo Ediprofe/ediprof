@@ -1061,7 +1061,34 @@
       "size": "58KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/4flj-circuncentro-interseccion-de-mediatrices.webp",
       "status": "uploaded"
+    },
+    {
+      "id": "bcpc",
+      "name": "congruencia-de-triangulos.webp",
+      "materia": "matematicas",
+      "date": "2026-01-12",
+      "size": "53KB",
+      "url": "https://cdn.ediprofe.com/img/matematicas/bcpc-congruencia-de-triangulos.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "3kr8",
+      "name": "estantes-y-teorema-de-thales.webp",
+      "materia": "matematicas",
+      "date": "2026-01-13",
+      "size": "38KB",
+      "url": "https://cdn.ediprofe.com/img/matematicas/3kr8-estantes-y-teorema-de-thales.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "aigt",
+      "name": "teorema-de-pitagoras.webp",
+      "materia": "matematicas",
+      "date": "2026-01-13",
+      "size": "49KB",
+      "url": "https://cdn.ediprofe.com/img/matematicas/aigt-teorema-de-pitagoras.webp",
+      "status": "uploaded"
     }
   ],
-  "lastUpdated": "2026-01-12T17:39:05.240Z"
+  "lastUpdated": "2026-01-13T02:58:05.046Z"
 }

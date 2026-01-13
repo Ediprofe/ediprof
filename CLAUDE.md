@@ -8,6 +8,18 @@
 
 **Si eres un agente que llega por primera vez, lee esto:**
 
+### ⛔ REGLA UNIVERSAL (APLICA A TODO)
+
+> **Cualquier edición a contenido educativo (.md en src/content/) DEBE mantener el estilo Ediprofe:**
+>
+> - **LaTeX:** Bloques `$$` con líneas vacías antes y después (NUNCA inline para ecuaciones importantes)
+> - **Resultados:** Siempre con `\boxed{}`
+> - **Títulos:** SIN LaTeX, SIN emoji en H1
+> - **Estructura:** NO modificar jerarquía de títulos existente
+> - **Referencia:** `.agent/prompts/estilo-ediprofe.md`
+>
+> **Esto aplica a COMANDOS y PETICIONES NATURALES.**
+
 ### 1. Sistema de Ilustraciones (Spec-First)
 - **La IA NO dibuja directamente** → genera specs JSON
 - **Python/SymPy renderiza** → cálculos exactos, SVG perfecto
@@ -32,6 +44,27 @@
 - **Cuando NO tengas certeza** de lo que vas a hacer → **CONFIRMAR ANTES**
 - **Para diagramas técnicos/visuales** → describir el plan y esperar aprobación
 - **Ver sección:** [🔄 PROTOCOLO DE CLARIFICACIÓN](#-protocolo-de-clarificación-antes-de-ejecutar)
+
+### 6. Crear Renderer Nuevo (⛔ STOP OBLIGATORIO)
+
+> **PRIMERO: ¿Ya existe renderer para esta lección?**
+> ```bash
+> python scripts/geometry/list_renderers.py --search "[nombre-leccion]"
+> ```
+> **Si existe → ÚSALO. No crees uno nuevo.**
+
+**Si NO existe, verifica TODOS estos puntos:**
+
+| ✅ Requisito | Cómo cumplirlo |
+|--------------|----------------|
+| **Colores** | `from core.colors import COLORS` |
+| **Canvas** | `from core.canvas import get_canvas_config` |
+| **Layouts** | `from core.layouts import side_by_side, centered_single` |
+| **Primitivas** | `from core.triangle_primitives import draw_triangle, ...` |
+| **NO hardcodear** | ❌ `width=600` → ✅ `get_canvas_config('horizontal')` |
+| **Template** | Copiar `scripts/geometry/renderer_template.py` |
+
+📁 Ver workflow: `/ilustrar`
 
 ### Índice Rápido de Secciones Técnicas
 
@@ -1560,15 +1593,36 @@ bash scripts/verify-svg-rendering.sh
 
 # 📁 DOCUMENTACIÓN DE WORKFLOWS
 
-| Archivo | Contenido |
-|---------|-----------|
-| `.agent/workflows/content-generation.md` | **Flujo de 5 etapas para lecciones** |
-| `.agent/workflows/circle-spec.md` | CircleSpec: circunferencias (SymPy) |
-| `.agent/workflows/geometry-exact.md` | GeometrySpec: triángulos (SymPy) |
-| `.agent/workflows/cartesian-spec.md` | CartesianSpec: geometría analítica |
-| `.agent/workflows/chemistry-spec.md` | **ChemistrySpec: tabla periódica, tendencias** |
-| `.agent/workflows/graphspec.md` | Gráficas de funciones |
-| `.agent/workflows/illustration-decision.md` | Árbol de decisión expandido |
+```
+.agent/workflows/
+├── comandos/    ← TÚ USAS ESTOS (7 comandos)
+└── specs/       ← El agente usa estos internamente
+```
+
+## Tus Comandos (`.agent/workflows/comandos/`)
+
+| Comando | Qué hace |
+|---------|----------|
+| `/planear-materia` | Proponer árbol completo de MATERIA |
+| `/planear-unidad` | Proponer estructura de UNIDAD |
+| `/planear-tema` | Proponer lecciones de TEMA |
+| `/generar` | Generar lecciones (sin ilustraciones) |
+| `/corregir` | Corregir lección existente |
+| `/plan-ilustraciones` | Proponer lista de ilustraciones |
+| `/ilustrar` | Ejecutar plan aprobado |
+
+## Specs Técnicos (`.agent/workflows/specs/`)
+
+Estos son **internos** - el agente los consulta automáticamente:
+
+| Spec | Cuándo se usa |
+|------|---------------|
+| `angle-spec.md` | Al generar ángulos |
+| `circle-spec.md` | Al generar circunferencias |
+| `geometry-exact.md` | Al generar triángulos |
+| `cartesian-spec.md` | Al generar plano cartesiano |
+| `chemistry-spec.md` | Al generar química |
+| `illustration-decision.md` | Para elegir tecnología |
 
 ---
 
@@ -1826,13 +1880,15 @@ Para ver el estilo correcto de lecciones, revisar:
 
 ```
 scripts/geometry/core/
-├── __init__.py          # Exporta todo (usar: from core import ...)
-├── base.py              # Point, ValidationResult
-├── colors.py            # COLORS (paleta unificada) ← FUENTE ÚNICA
-├── canvas.py            # SIZE_SIMPLE, SIZE_COMPOUND, etc.
-├── primitives.py        # escape_xml, point_on_circle, format_number
-├── svg_builder.py       # SVGBuilder (API fluida para SVG)
-└── coordinate_system.py # CoordinateSystem (transformación math↔SVG)
+├── __init__.py            # Exporta todo (usar: from core import ...)
+├── base.py                # Point, ValidationResult
+├── colors.py              # COLORS (paleta unificada) ← FUENTE ÚNICA
+├── canvas.py              # SIZE_SIMPLE, SIZE_COMPOUND, etc.
+├── primitives.py          # escape_xml, point_on_circle, format_number
+├── triangle_primitives.py # draw_triangle, draw_angle_arc, draw_tick_marks ← NUEVO
+├── layouts.py             # side_by_side, centered_single ← NUEVO
+├── svg_builder.py         # SVGBuilder (API fluida para SVG)
+└── coordinate_system.py   # CoordinateSystem (transformación math↔SVG)
 ```
 
 ## Uso Básico

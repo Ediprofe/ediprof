@@ -27,15 +27,22 @@ El teorema **SOLO** funciona en triángulos rectángulos (los que tienen una esq
     - Son los dos lados más cortos.
     - Son los que forman el ángulo recto (la "L").
 
+![Identificando Lados](/images/content/matematicas/geometria/triangulos/pythagoras_sides.svg)
+
 ---
 
-## 🔮 La Fórmula Sagrada
+---
+
+## 🔑 La Fórmula Clave
 
 El área del cuadrado construido sobre la hipotenusa es igual a la suma de las áreas de los cuadrados construidos sobre los catetos.
 
 $$
 c^2 = a^2 + b^2
 $$
+
+![Fórmula Sagrada](/images/content/matematicas/geometria/triangulos/pythagoras_squares.svg)
+
 
 ### ¿Cómo usarla?
 
@@ -66,6 +73,9 @@ $$
 ### Ejemplo 1: Hallando la Hipotenusa
 
 Tienes un triángulo con catetos de 3 cm y 4 cm. ¿Cuánto mide su diagonal (hipotenusa)?
+
+![Hallar Hipotenusa](/images/content/matematicas/geometria/triangulos/pythagoras_ex1.svg)
+
 
 **Datos:**
 $a = 3$
@@ -98,6 +108,9 @@ $$
 
 Una escalera de 10 m (hipotenusa) está apoyada en una pared. Si la base está a 6 m de la pared, ¿a qué altura llega?
 
+![Problema Escalera](/images/content/matematicas/geometria/triangulos/pythagoras_ladder.svg)
+
+
 **Datos:**
 $c = 10$ (Escalera/Hipotenusa)
 $b = 6$ (Base/Cateto)
@@ -128,6 +141,9 @@ $$
 ### Ejemplo 3: La Diagonal de televisión
 
 Una pantalla de 50 pulgadas (diagonal) tiene un ancho de 40 pulgadas. ¿Cuál es su altura?
+
+![Diagonal TV](/images/content/matematicas/geometria/triangulos/pythagoras_tv.svg)
+
 
 **Razonamiento:**
 La diagonal es la hipotenusa. El ancho es un cateto. Buscamos el otro cateto.
@@ -420,6 +436,9 @@ $$
 
 ## 🔑 Resumen
 
+![teorema-de-pitagoras](https://cdn.ediprofe.com/img/matematicas/aigt-teorema-de-pitagoras.webp)
+
+
 | Concepto | Fórmula | Cuándo usar |
 |----------|---------|-------------|
 | **Hallar Hipotenusa** | $c = \sqrt{a^2+b^2}$ | Cuando conoces los dos lados cortos. |
@@ -427,3 +446,4 @@ $$
 | **Recíproco** | $a^2+b^2=c^2$ | Para verificar si una esquina es recta (90°). |
 
 > Recuerda: La hipotenusa es egoísta, quiere todo el espacio, por eso **suma**. Los catetos son modestos, si buscas uno, tienes que **restar**.
+

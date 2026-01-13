@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 460">
+<rect width="600" height="460" fill="#f8fafc"/>
+<line x1="101.50" y1="290.00" x2="218.50" y2="290.00" stroke="#3b82f6" stroke-width="3.5" stroke-linecap="round"/><line x1="218.50" y1="290.00" x2="140.50" y2="199.00" stroke="#22c55e" stroke-width="3.5" stroke-linecap="round"/><line x1="140.50" y1="199.00" x2="101.50" y2="290.00" stroke="#ef4444" stroke-width="3.5" stroke-linecap="round"/>
+<line x1="318.50" y1="290.00" x2="498.50" y2="290.00" stroke="#3b82f6" stroke-width="3.5" stroke-linecap="round"/><line x1="498.50" y1="290.00" x2="378.50" y2="150.00" stroke="#22c55e" stroke-width="3.5" stroke-linecap="round"/><line x1="378.50" y1="150.00" x2="318.50" y2="290.00" stroke="#ef4444" stroke-width="3.5" stroke-linecap="round"/>
+<text x="160.00" y="315.00" font-family="sans-serif" font-size="20" font-weight="normal" fill="#3b82f6" text-anchor="middle" dominant-baseline="middle">a</text>
+<text x="408.50" y="315.00" font-family="sans-serif" font-size="20" font-weight="normal" fill="#3b82f6" text-anchor="middle" dominant-baseline="middle">k·a</text>
+<text x="300.00" y="430.00" font-family="sans-serif" font-size="22" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Criterio LLL: Lados Proporcionales</text>
+</svg>

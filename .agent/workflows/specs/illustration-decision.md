@@ -44,7 +44,17 @@ Este documento ayuda a elegir la **tecnología correcta** para cada tipo de ilus
 │         • Ángulos especiales (0°, 90°, 180°, 360°)
 │         📁 Ver: angle-spec.md
 │
+├─── ⚖️ ¿Es COMPARACIÓN de triángulos?
+│    │   (congruencia, semejanza, proporciones)
+│    │
+│    └─── SÍ → SVG GENERADO (Building Blocks → SVG)
+│         • Congruencia: LLL, LAL, ALA
+│         • Semejanza: AA, LLL, LAL
+│         • Comparación de proporciones
+│         📁 Usar: scripts/geometry/renderer_template.py
+│         ⚠️ OBLIGATORIO: Importar de core/ (ver CLAUDE.md sección 6)
 │
+
 ├─── 📈 ¿Es una GRÁFICA de funciones?
 │    │   (sin, cos, parábolas, exponenciales, rectas)
 │    │
@@ -76,6 +86,32 @@ Este documento ayuda a elegir la **tecnología correcta** para cada tipo de ilus
      └─── SÍ → LATEX (inline en .md)
           • $inline$ o $$bloque$$
 ```
+
+---
+
+## ❓ ¿No existe renderer para mi caso?
+
+> **Flujo cuando necesitas crear un renderer NUEVO:**
+
+```
+¿NO existe renderer?
+│
+├─── PASO 1: Copiar template
+│    └─── scripts/geometry/renderer_template.py
+│
+├─── PASO 2: Importar de core/ (OBLIGATORIO)
+│    ├── from core.colors import COLORS
+│    ├── from core.canvas import get_canvas_config
+│    ├── from core.layouts import side_by_side
+│    └── from core.triangle_primitives import draw_triangle
+│
+├─── PASO 3: Ensamblar bloques
+│    └─── 20 líneas, no 200
+│
+└─── ⚠️ NUNCA hardcodear width=600, height=300
+```
+
+📁 Ver: `CLAUDE.md` sección 6 (checklist obligatorio)
 
 ---
 

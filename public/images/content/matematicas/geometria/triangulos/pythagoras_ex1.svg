@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 460" style="font-family: Inter, system-ui, sans-serif;">
+<rect width="600" height="460" fill="#f8fafc" />
+<path d="M 200.00 155.00 L 400.00 305.00 L 200.00 305.00 Z" fill="none" fill-opacity="1.0" stroke="#3b82f6" stroke-width="3" stroke-linejoin="round"/>
+<text x="180.00" y="230.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">3</text>
+<text x="300.00" y="330.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">4</text>
+<text x="320.00" y="210.00" font-family="sans-serif" font-size="26" font-weight="bold" fill="#ef4444" text-anchor="middle" dominant-baseline="middle">?</text>
+<text x="300.00" y="35.00" font-family="sans-serif" font-size="22" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Hallando la Hipotenusa</text>
+</svg>

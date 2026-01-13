@@ -36,6 +36,38 @@ $$
 \frac{DE}{AB} = \frac{EF}{BC} = \frac{DF}{AC} = k
 $$
 
+![similarity-concept](/images/geometria/triangulos/similarity-concept.svg)
+
+### Proporciones en Perímetros y Áreas
+
+Cuando dos triángulos son semejantes con una razón $k$, todas sus medidas lineales cambian en la misma proporción, pero las de superficie (áreas) cambian al cuadrado.
+
+#### 1. Perímetros y Medidas Lineales ($k$)
+Cualquier medida de "longitud" (lados, perímetros, alturas, medianas) sigue la misma razón $k$.
+$$
+\frac{\text{Perímetro}_2}{\text{Perímetro}_1} = k
+$$
+
+$$
+\frac{\text{Altura}_2}{\text{Altura}_1} = k
+$$
+
+#### 2. Áreas ($k^2$)
+La razón de las áreas es el **cuadrado** de la razón de semejanza. Esto ocurre porque el área se calcula multiplicando dos dimensiones (base y altura), y ambas han sido multiplicadas por $k$.
+
+
+$$
+\text{Área} = \frac{(b \cdot k) \cdot (h \cdot k)}{2} = \frac{b \cdot h}{2} \cdot \mathbf{k^2}
+$$
+
+$$
+\boxed{\frac{\text{Área}_2}{\text{Área}_1} = k^2}
+$$
+
+![area-ratio](/images/geometria/triangulos/area-ratio.svg)
+
+> **💡 Importante:** Si la razón de semejanza es $k=3$, el triángulo grande tendrá un perímetro 3 veces mayor, pero un área **9 veces** mayor ($3^2 = 9$).
+
 ---
 
 ## 🔍 Criterios de Semejanza
@@ -50,6 +82,8 @@ $$
 \text{Si } \angle A = \angle D \text{ y } \angle B = \angle E \implies \triangle ABC \sim \triangle DEF
 $$
 
+![criterion-aa](/images/geometria/triangulos/criterion-aa.svg)
+
 ### 2. Criterio LLL (Lados Proporcionales)
 
 Si los tres lados de un triángulo son proporcionales a los tres lados del otro, son semejantes.
@@ -58,6 +92,8 @@ $$
 \frac{a'}{a} = \frac{b'}{b} = \frac{c'}{c} = k \implies \text{Semejantes}
 $$
 
+![criterion-lll-sim](/images/geometria/triangulos/criterion-lll-sim.svg)
+
 ### 3. Criterio LAL (Lado-Ángulo-Lado)
 
 Si tienen dos lados proporcionales y el ángulo **comprendido** entre ellos es igual, son semejantes.
@@ -65,6 +101,8 @@ Si tienen dos lados proporcionales y el ángulo **comprendido** entre ellos es i
 $$
 \frac{a'}{a} = \frac{c'}{c} \text{ y } \angle B = \angle B' \implies \text{Semejantes}
 $$
+
+![criterion-lal-sim](/images/geometria/triangulos/criterion-lal-sim.svg)
 
 ---
 
@@ -77,6 +115,8 @@ Un triángulo tiene lados 3, 4 y 5. Otro triángulo tiene lados 9, 12 y 15. ¿So
 **Datos:**
 Lados $T_1$: 3, 4, 5.
 Lados $T_2$: 9, 12, 15.
+
+![example-ratio-345-91215](/images/geometria/triangulos/example-ratio-345-91215.svg)
 
 **Razonamiento:**
 Calculamos el cociente entre lados correspondientes (mayor con mayor, menor con menor).
@@ -106,6 +146,8 @@ Los triángulos $\triangle ABC$ y $\triangle DEF$ son semejantes.
 En $\triangle ABC$, el lado $AB = 8$ cm.
 En $\triangle DEF$, el lado correspondiente $DE = 4$ cm y el lado $EF = 6$ cm.
 ¿Cuánto mide el lado $BC$?
+
+![example-find-side](/images/geometria/triangulos/example-find-side.svg)
 
 **Razonamiento:**
 Primero hallamos la razón de semejanza del segundo al primero (o viceversa).

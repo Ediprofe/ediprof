@@ -29,8 +29,6 @@ MINIMO 5 EJEMPLOS POR SECCIÓN O CONCEPTO. TEN EN CUENTA QUE DENTRO DE UNA MISMA
 
 LAS IMAGENES GENERADAS EN LAS LECCIONES NO LAS ELIMINES! ÚSALAS COMO PARTE DE LA REESCRITURA.
 
-LAS IMAGENES GENERADAS EN LAS LECCIONES ELIMÍNALAS! ÚSALAS COMO PARTE DE LA REESCRITURA.
-
 Si encuentras un símbolo $ déjalo mejor como "pesos" porque hay un problema para renderizar eso en latex.
 
 Recuerda que en los títulos markdown de sección no puedes agregar expresiones latex.
@@ -64,7 +62,7 @@ Ten en cuenta también que los títulos markdown de la lección no pueden tener 
 □ Razonamiento inductivo: ejemplo → regla (NO fórmula → ejemplo)
 □ Conexión cotidiana desde la primera oración
 □ Paso a paso detallado (no dar saltos lógicos)
-□ Resultados importantes con `\boxed{}`
+□ Resultados importantes con `$$\boxed{}$$` (siempre en bloque)
 □ LaTeX en bloques con líneas vacías antes/después
 □ Usar nombres propios para una enseñanza en latinoamerica, sin spanglish ni nombres de métodos rebuscados o cosas así, a menos que sea algo ya conocido de verdad así.
 □ **⚠️ TODAS LAS ECUACIONES EN BLOQUE (REGLA CRÍTICA):** 

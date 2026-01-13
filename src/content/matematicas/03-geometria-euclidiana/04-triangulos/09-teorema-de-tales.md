@@ -25,6 +25,8 @@ $$
 
 Donde $A$ y $B$ son segmentos de la primera línea, y $A'$ y $B'$ son sus correspondientes en la segunda.
 
+![Teorema General de Tales](/images/content/matematicas/geometria/tales/thales_general.svg)
+
 ---
 
 ## 📐 Teorema de Tales en Triángulos
@@ -45,6 +47,57 @@ $$
 \frac{AD}{DB} = \frac{AE}{EC}
 $$
 
+> ⚠️ **Error Común:** ¡Cuidado con las bases!
+> La proporción $\frac{\text{Arriba}}{\text{Abajo}}$ **NO** es igual a $\frac{\text{Base Pequeña}}{\text{Base Grande}}$.
+> Si necesitas calcular una base ($DE$ o $BC$), **siempre** debes usar los lados completos del triángulo (Triángulo Pequeño vs Triángulo Grande).
+
+
+### Ejemplo de Advertencia: ¡Cuidado con la Base!
+
+Este es el error más frecuente en exámenes. Calcula $x$ (la base del triángulo pequeño).
+
+![Error Común Base](/images/content/matematicas/geometria/tales/thales_base_trap.svg)
+
+**Datos:**
+- Lado izquierdo: $AD=2$, $DB=3$.
+- Bases: $DE=4$, $BC=x$.
+
+**❌ Razonamiento Incorrecto (ERROR):**
+Decir que "pedacito es a pedacito como base es a base":
+$$
+\frac{2}{3} = \frac{4}{x} \implies 2x = 12 \implies x = 6 \quad (\text{FALSO})
+$$
+
+**✅ Razonamiento Correcto:**
+Para relacionar las BASES, usamos los LADOS COMPLETOS (Triángulo Pequeño vs Grande).
+- Lado pequeño del triángulo: $2$
+- Lado grande del triángulo: $2 + 3 = 5$
+
+$$
+\frac{\text{Lado Pequeño}}{\text{Lado Grande}} = \frac{\text{Base Pequeña}}{\text{Base Grande}}
+$$
+
+$$
+\frac{2}{5} = \frac{4}{x}
+$$
+
+$$
+2x = 5 \cdot 4
+$$
+
+$$
+2x = 20
+$$
+
+**Resultado:**
+
+$$
+\boxed{x = 10}
+$$
+
+![Tales en Triángulo](/images/content/matematicas/geometria/tales/thales_triangle_concept.svg)
+
+
 ---
 
 ## ⚙️ Ejemplos Resueltos
@@ -52,6 +105,11 @@ $$
 ### Ejemplo 1: Rectas Paralelas
 
 Tres estantes horizontales son cortados por dos soportes inclinados. En el soporte izquierdo, la distancia entre el primer y segundo estante es 50 cm, y entre el segundo y tercero es 80 cm. En el soporte derecho, la distancia superior es 60 cm. ¿Cuánto mide la distancia inferior ($x$)?
+
+![estantes-y-teorema-de-thales](https://cdn.ediprofe.com/img/matematicas/3kr8-estantes-y-teorema-de-thales.webp)
+
+![Ejemplo de Estantes](/images/content/matematicas/geometria/tales/thales_shelves.svg)
+
 
 **Datos:**
 Izquierda: 50 y 80.
@@ -89,6 +147,9 @@ El segmento de abajo $DB = 6$ cm.
 En el otro lado, el segmento de arriba $AE = 8$ cm.
 ¿Cuánto mide el segmento de abajo $EC$?
 
+![Ejemplo Numérico Triángulo](/images/content/matematicas/geometria/tales/thales_triangle_ex2.svg)
+
+
 **Razonamiento:**
 Establecemos la proporción entre los trozos de los lados.
 
@@ -121,6 +182,9 @@ $$
 
 Supón que el bastón de Tales mide 1.5 m y proyecta una sombra de 2 m. Al mismo tiempo, la pirámide proyecta una sombra de 180 m (desde el centro de su base). ¿Cuál es la altura ($H$) de la pirámide?
 
+![Ejemplo Sombras](/images/content/matematicas/geometria/tales/thales_shadows.svg)
+
+
 **Razonamiento:**
 Los rayos del sol son paralelos, creando triángulos semejantes entre el objeto y su sombra.
 
@@ -146,6 +210,41 @@ $$
 $$
 
 ---
+
+
+### Ejemplo 4: El Teorema Recíproco (¿Son Paralelas?)
+
+En un triángulo, tenemos los segmentos $AD=3$, $DB=6$, $AE=4$ y $EC=8$. ¿Es la línea $DE$ paralela a la base $BC$?
+
+![¿Son Paralelas?](/images/content/matematicas/geometria/tales/thales_reciprocal.svg)
+
+**Datos:**
+- Lado Izquierdo: $\frac{3}{6}$
+- Lado Derecho: $\frac{4}{8}$
+
+**Razonamiento:**
+Calculamos las razones de cada lado por separado:
+
+$$
+\frac{AD}{DB} = \frac{3}{6} = 0.5
+$$
+
+$$
+\frac{AE}{EC} = \frac{4}{8} = 0.5
+$$
+
+Como las razones son iguales, el Teorema Recíproco asegura que la línea es paralela.
+
+**Resultado:**
+
+$$
+\boxed{\text{Sí, DE } \parallel \text{ BC}}
+$$
+
+---
+
+
+
 
 ## 📝 Ejercicios de Práctica
 
@@ -412,3 +511,6 @@ $$
 | **Recíproco** | Igualdad de razón $\implies$ Paralelismo | Verificar si dos líneas son paralelas. |
 
 > "Lo que pasa en un lado, pasa proporcionalmente en el otro". Esa es la esencia de Tales.
+
+![Resumen Visual Tales](/images/content/matematicas/geometria/tales/thales_summary.svg)
+
