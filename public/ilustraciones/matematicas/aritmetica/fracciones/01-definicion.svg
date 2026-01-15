@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400">
+  <defs></defs>
+  <rect x="0.00" y="0.00" width="500.00" height="400.00" fill="#f8fafc" stroke="none" stroke-width="0" rx="0"  />
+  <line x1="160.00" y1="200.00" x2="240.00" y2="200.00" stroke="#1e293b" stroke-width="4"  />
+  <text x="200.00" y="175.00" font-family="Inter, sans-serif" font-size="48" font-weight="bold" fill="#3b82f6" text-anchor="middle" dominant-baseline="middle">a</text>
+  <text x="200.00" y="245.00" font-family="Inter, sans-serif" font-size="48" font-weight="bold" fill="#22c55e" text-anchor="middle" dominant-baseline="middle">b</text>
+  <text x="330.00" y="170.00" font-family="Inter, sans-serif" font-size="18" font-weight="bold" fill="#3b82f6" text-anchor="start" dominant-baseline="middle">Numerador</text>
+  <text x="330.00" y="190.00" font-family="Inter, sans-serif" font-size="14" font-weight="normal" fill="#64748b" text-anchor="start" dominant-baseline="middle">(Partes que tomamos)</text>
+  <text x="330.00" y="235.00" font-family="Inter, sans-serif" font-size="18" font-weight="bold" fill="#22c55e" text-anchor="start" dominant-baseline="middle">Denominador</text>
+  <text x="330.00" y="255.00" font-family="Inter, sans-serif" font-size="14" font-weight="normal" fill="#64748b" text-anchor="start" dominant-baseline="middle">(Total de partes iguales)</text>
+  <line x1="250.00" y1="175.00" x2="320.00" y2="175.00" stroke="#64748b" stroke-width="2"  />
+  <line x1="250.00" y1="235.00" x2="320.00" y2="235.00" stroke="#64748b" stroke-width="2"  />
+</svg>

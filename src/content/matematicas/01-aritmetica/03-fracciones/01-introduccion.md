@@ -21,88 +21,98 @@ Se escribe de la forma $\frac{a}{b}$, donde:
 -   **Denominador ($b$):** En cuántas partes iguales dividimos el total (El número de abajo).
 -   **Numerador ($a$):** Cuántas partes tomamos (El número de arriba).
 
-$$ \text{Fracción} = \frac{\text{Partes que tomo}}{\text{Total de partes}} $$
+$$ 
+\text{Fracción} = \frac{\text{Partes que tomo}}{\text{Total de partes}} 
+$$
+
+![Definición de Numerador y Denominador](/ilustraciones/matematicas/aritmetica/fracciones/01-definicion.svg)
 
 ### ⚙️ Ejemplos Resueltos
 
 #### Ejemplo 1: La Pizza
-Dividimos una pizza en 8 rebanadas iguales y te comes 3.
--   Total de partes (Denominador): 8
--   Partes que tomas (Numerador): 3
-**Fracción:** $\boxed{\frac{3}{8}}$
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1rem auto; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <canvas id="chart-pizza-38"></canvas>
-</div>
+Dividimos una pizza en 8 rebanadas iguales y te comes 3. Determina la fracción de pizza consumida.
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof Chart !== 'undefined') {
-    new Chart(document.getElementById('chart-pizza-38'), {
-      type: 'pie',
-      data: {
-        labels: ['1', '2', '3', '4', '5', '6', '7', '8'],
-        datasets: [{
-          data: [1, 1, 1, 1, 1, 1, 1, 1],
-          backgroundColor: ['#3b82f6', '#3b82f6', '#3b82f6', '#e5e7eb', '#e5e7eb', '#e5e7eb', '#e5e7eb', '#e5e7eb'],
-          borderColor: '#374151',
-          borderWidth: 2
-        }]
-      },
-      options: {
-        responsive: true,
-        plugins: {
-          legend: { display: false },
-          title: { display: true, text: '3/8 de la pizza', font: { size: 16, weight: 'bold' } },
-          tooltip: { enabled: false }
-        }
-      }
-    });
-  }
-});
-</script>
+**Idea clave:** El total de cortes define el denominador y las porciones comidas el numerador.
+
+![3/8 de una pizza](/ilustraciones/matematicas/aritmetica/fracciones/02-pizza.svg)
+
+**Razonamiento:**
+- Dividimos la unidad (pizza) en 8 partes iguales: $\text{Denominador} = 8$.
+- Tomamos 3 partes de ese total: $\text{Numerador} = 3$.
+
+**Resultado:**
+$$
+\boxed{\frac{3}{8}}
+$$
 
 #### Ejemplo 2: El grupo de clase
-En un salón hay 12 estudiantes. 7 son mujeres.
--   Total (Denominador): 12
--   Mujeres (Numerador): 7
-**Fracción:** $\boxed{\frac{7}{12}}$
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1rem auto; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <canvas id="chart-estudiantes"></canvas>
-</div>
+En un salón hay 12 estudiantes en total. Si 7 son mujeres, ¿qué fracción del grupo representan?
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof Chart !== 'undefined' && document.getElementById('chart-estudiantes')) {
-    new Chart(document.getElementById('chart-estudiantes'), {
-      type: 'pie',
-      data: { labels: ['1','2','3','4','5','6','7','8','9','10','11','12'], datasets: [{ data: [1,1,1,1,1,1,1,1,1,1,1,1], backgroundColor: ['#3b82f6','#3b82f6','#3b82f6','#3b82f6','#3b82f6','#3b82f6','#3b82f6','#e5e7eb','#e5e7eb','#e5e7eb','#e5e7eb','#e5e7eb'], borderColor: '#374151', borderWidth: 2 }] },
-      options: { responsive: true, plugins: { legend: { display: false }, title: { display: true, text: '7 de 12 estudiantes', font: { size: 14, weight: 'bold' } }, tooltip: { enabled: false } } }
-    });
-  }
-});
-</script>
+**Idea clave:** El total de estudiantes es el denominador.
+
+![7 de 12 estudiantes](/ilustraciones/matematicas/aritmetica/fracciones/03-grupo.svg)
+
+**Razonamiento:**
+- El conjunto completo tiene 12 elementos: $\text{Denominador} = 12$.
+- El subgrupo de interés (mujeres) tiene 7 elementos: $\text{Numerador} = 7$.
+
+**Resultado:**
+$$
+\boxed{\frac{7}{12}}
+$$
 
 #### Ejemplo 3: Días de la semana
+
 ¿Qué fracción de la semana representan los días de fin de semana (sábado y domingo)?
--   Total días: 7
--   Fin de semana: 2
-**Fracción:** $\boxed{\frac{2}{7}}$
+
+**Idea clave:** Una semana completa tiene 7 días (denominador) y el fin de semana tiene 2 (numerador).
+
+![Fracción 2/7 de la semana](/ilustraciones/matematicas/aritmetica/fracciones/03-semana.svg)
+
+**Razonamiento:**
+- El total de días es 7: $\text{Denominador} = 7$.
+- Tomamos sábado y domingo: $\text{Numerador} = 2$.
+
+**Resultado:**
+$$
+\boxed{\frac{2}{7}}
+$$
 
 #### Ejemplo 4: El chocolate
-Tienes una barra de chocolate de 10 cuadros. Te comes 1.
-**Fracción:** $\boxed{\frac{1}{10}}$
+
+Tienes una barra de chocolate que tiene de 10 cuadros iguales. Te comes 1 cuadro. ¿Qué fracción consumiste?
+
+**Idea clave:** La barra completa se divide en 10 partes.
+
+![Fracción 1/10 de chocolate](/ilustraciones/matematicas/aritmetica/fracciones/04-chocolate.svg)
+
+**Razonamiento:**
+- La unidad (barra) está dividida en 10: $\text{Denominador} = 10$.
+- Se consume 1 parte: $\text{Numerador} = 1$.
+
+**Resultado:**
+$$
+\boxed{\frac{1}{10}}
+$$
 
 #### Ejemplo 5: El tanque de gasolina
-Un tanque se divide en 4 cuartos. Si está lleno hasta la mitad (2 cuartos).
-**Fracción:** $\boxed{\frac{2}{4}}$ (que es lo mismo que $\frac{1}{2}$).
+
+Un tanque de combustible se divide en 4 cuartos. Si el indicador marca que está a la mitad. ¿Qué fracción representa?
+
+**Idea clave:** La mitad de 4 partes son 2 partes.
+
+![Fracción 2/4 del tanque](/ilustraciones/matematicas/aritmetica/fracciones/05-tanque.svg)
+
+**Razonamiento:**
+- El total de divisiones es 4: $\text{Denominador} = 4$.
+- El nivel llega hasta la mitad (2 de 4): $\text{Numerador} = 2$.
+
+**Resultado:**
+$$
+\boxed{\frac{2}{4} = \frac{1}{2}}
+$$
 
 ---
 
@@ -116,57 +126,87 @@ El numerador es **menor** que el denominador ($a < b$). Representa **menos de 1 
 ### ⚙️ Ejemplos Resueltos
 
 #### Ejemplo 6: $\frac{3}{5}$
-Tomas 3 de 5 partes. No completas el total.
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1rem auto; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <canvas id="chart-propia-35"></canvas>
-</div>
+Representa la fracción tres quintos e indica si es propia.
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof Chart !== 'undefined' && document.getElementById('chart-propia-35')) {
-    new Chart(document.getElementById('chart-propia-35'), {
-      type: 'pie',
-      data: { labels: ['1','2','3','4','5'], datasets: [{ data: [1,1,1,1,1], backgroundColor: ['#3b82f6','#3b82f6','#3b82f6','#e5e7eb','#e5e7eb'], borderColor: '#374151', borderWidth: 2 }] },
-      options: { responsive: true, plugins: { legend: { display: false }, tooltip: { enabled: false } } }
-    });
-  }
-});
-</script>
+**Idea clave:** Comparamos el numerador con el denominador.
+
+![Fracción propia 3/5](/ilustraciones/matematicas/aritmetica/fracciones/04-propia-3-5.svg)
+
+**Razonamiento:**
+- Dividimos la unidad en 5 partes y tomamos 3.
+- Como $3 < 5$, el valor es menor que la unidad completa.
+
+**Resultado:**
+$$
+\boxed{\text{Es una fracción propia}}
+$$
 
 #### Ejemplo 7: $\frac{2}{7}$
-Tomas 2 de 7 partes. Es propia.
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1rem auto; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <canvas id="chart-propia-27"></canvas>
-</div>
+Representa la fracción dos séptimos.
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof Chart !== 'undefined' && document.getElementById('chart-propia-27')) {
-    new Chart(document.getElementById('chart-propia-27'), {
-      type: 'pie',
-      data: { labels: ['1','2','3','4','5','6','7'], datasets: [{ data: [1,1,1,1,1,1,1], backgroundColor: ['#3b82f6','#3b82f6','#e5e7eb','#e5e7eb','#e5e7eb','#e5e7eb','#e5e7eb'], borderColor: '#374151', borderWidth: 2 }] },
-      options: { responsive: true, plugins: { legend: { display: false }, tooltip: { enabled: false } } }
-    });
-  }
-});
-</script>
+**Idea clave:** Solo tomamos 2 partes de un total de 7.
 
-#### Ejemplo 8: $\frac{1}{2}$
-Tomas la mitad. 1 es menor que 2. Es propia.
+![Fracción propia 2/7](/ilustraciones/matematicas/aritmetica/fracciones/05-propia-2-7.svg)
 
-#### Ejemplo 9: $\frac{99}{100}$
-Casi llegas, pero 99 es menor que 100. Es propia.
+**Razonamiento:**
+- El denominador indica que la unidad se reparte en 7.
+- Al tomar solo 2, no alcanzamos a completar la unidad.
 
-#### Ejemplo 10: $\frac{0}{5}$
-No tomas nada. 0 es menor que 5. Es propia.
+**Resultado:**
+$$
+\boxed{\text{Propia (Valor < 1)}}
+$$
+
+#### Ejemplo 8: La mitad de algo
+
+Representa la fracción un medio y determina si es propia.
+
+**Idea clave:** Tomamos exactamente la mitad de la unidad.
+
+![Fracción propia 1/2](/ilustraciones/matematicas/aritmetica/fracciones/08-mitad.svg)
+
+**Razonamiento:**
+- Dividimos en 2 partes y tomamos 1.
+- Como $1 < 2$, es una fracción propia.
+
+**Resultado:**
+$$
+\boxed{\text{Propia}}
+$$
+
+#### Ejemplo 9: Casi la unidad
+
+Clasifica la fracción $\frac{99}{100}$.
+
+**Idea clave:** El numerador es apenas menor que el denominador.
+
+**Razonamiento:**
+- Aunque falta muy poco para completar la unidad, el numerador (99) es menor que el denominador (100).
+- Por definición, si $a < b$ es propia.
+
+**Resultado:**
+$$
+\boxed{\text{Propia}}
+$$
+
+#### Ejemplo 10: No tomamos nada
+
+¿Qué tipo de fracción es $\frac{0}{5}$?
+
+**Idea clave:** Tomamos cero partes de un total.
+
+![Fracción vacía 0/5](/ilustraciones/matematicas/aritmetica/fracciones/10-nada.svg)
+
+**Razonamiento:**
+- El denominador es 5, pero al no tomar ninguna parte (0), el valor es 0.
+- Como $0 < 5$, técnicamente cumple la definición de fracción propia.
+
+**Resultado:**
+$$
+\boxed{\text{Propia}}
+$$
 
 ---
 
@@ -176,62 +216,88 @@ El numerador es **mayor o igual** que el denominador ($a \ge b$). Representa **1
 ### ⚙️ Ejemplos Resueltos
 
 #### Ejemplo 11: $\frac{7}{4}$
-Tomas 7 cuartos. Como un entero solo tiene 4 cuartos, necesitas **dos pasteles** (uno entero y 3 pedazos del otro).
 
-<div style="display: flex; justify-content: center; align-items: center; gap: 0.5rem; margin: 1rem auto;">
-  <div style="width: 80px;"><canvas id="chart-impropia-74a"></canvas></div>
-  <span style="font-size: 1.2rem; color: #374151;">+</span>
-  <div style="width: 80px;"><canvas id="chart-impropia-74b"></canvas></div>
-</div>
+Representa siete cuartos.
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof Chart !== 'undefined') {
-    if (document.getElementById('chart-impropia-74a')) {
-      new Chart(document.getElementById('chart-impropia-74a'), {
-        type: 'pie', data: { labels: ['1','2','3','4'], datasets: [{ data: [1,1,1,1], backgroundColor: ['#ef4444','#ef4444','#ef4444','#ef4444'], borderColor: '#374151', borderWidth: 2 }] },
-        options: { responsive: true, plugins: { legend: { display: false }, tooltip: { enabled: false } } }
-      });
-    }
-    if (document.getElementById('chart-impropia-74b')) {
-      new Chart(document.getElementById('chart-impropia-74b'), {
-        type: 'pie', data: { labels: ['1','2','3','4'], datasets: [{ data: [1,1,1,1], backgroundColor: ['#ef4444','#ef4444','#ef4444','#e5e7eb'], borderColor: '#374151', borderWidth: 2 }] },
-        options: { responsive: true, plugins: { legend: { display: false }, tooltip: { enabled: false } } }
-      });
-    }
-  }
-});
-</script>
+**Idea clave:** Como el numerador es mayor que el denominador, necesitamos más de una unidad.
+
+![Fracción impropia 7/4](/ilustraciones/matematicas/aritmetica/fracciones/06-impropia-7-4.svg)
+
+**Razonamiento:**
+- Una unidad solo tiene 4 cuartos ($\frac{4}{4}$).
+- Para completar 7 cuartos, tomamos una unidad completa y 3 pedazos de otra igual.
+
+**Resultado:**
+$$
+\boxed{\frac{7}{4} = 1 + \frac{3}{4}}
+$$
 
 #### Ejemplo 12: $\frac{9}{9}$
-Tomas todo. Es igual a 1 (La unidad completa). Se considera impropia (o fracción unidad).
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1rem auto; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <canvas id="chart-impropia-99"></canvas>
-</div>
+Representa la fracción nueve novenos.
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof Chart !== 'undefined' && document.getElementById('chart-impropia-99')) {
-    new Chart(document.getElementById('chart-impropia-99'), {
-      type: 'pie', data: { labels: ['1','2','3','4','5','6','7','8','9'], datasets: [{ data: [1,1,1,1,1,1,1,1,1], backgroundColor: ['#22c55e','#22c55e','#22c55e','#22c55e','#22c55e','#22c55e','#22c55e','#22c55e','#22c55e'], borderColor: '#374151', borderWidth: 2 }] },
-      options: { responsive: true, plugins: { legend: { display: false }, tooltip: { enabled: false } } }
-    });
-  }
-});
-</script>
+**Idea clave:** Cuando el numerador y denominador son iguales, representamos la unidad completa.
 
-#### Ejemplo 13: $\frac{10}{5}$
-Tomas 10 quintos. $10 \div 5 = 2$. Son exactamente 2 unidades.
+![Fracción unidad 9/9](/ilustraciones/matematicas/aritmetica/fracciones/07-impropia-9-9.svg)
 
-#### Ejemplo 14: $\frac{5}{4}$
-Un poco más de 1 unidad ($1.25$).
+**Razonamiento:**
+- Dividimos en 9 partes y tomamos las 9.
+- Esto equivale exactamente a 1 entero.
 
-#### Ejemplo 15: $\frac{100}{1}$
-Son 100 enteros. Toda fracción es una división.
+**Resultado:**
+$$
+\boxed{\frac{9}{9} = 1}
+$$
+
+#### Ejemplo 13: Dos unidades completas
+
+Representa la fracción diez quintos.
+
+**Idea clave:** Si el numerador es múltiplo del denominador, obtenemos enteros.
+
+![Fracción impropia 10/5](/ilustraciones/matematicas/aritmetica/fracciones/13-dos-unidades.svg)
+
+**Razonamiento:**
+- Cada unidad tiene 5 quintos.
+- Al tomar 10 quintos, estamos tomando exactamente 2 unidades: $10 \div 5 = 2$.
+
+**Resultado:**
+$$
+\boxed{\frac{10}{5} = 2}
+$$
+
+#### Ejemplo 14: Un poco más de uno
+
+Representa la fracción cinco cuartos.
+
+**Idea clave:** Necesitamos una unidad completa y una parte de otra.
+
+![Fracción impropia 5/4](/ilustraciones/matematicas/aritmetica/fracciones/14-cinco-cuartos.svg)
+
+**Razonamiento:**
+- Una unidad tiene 4 cuartos ($\frac{4}{4}$).
+- Tomamos 1 cuarto adicional de la siguiente unidad para completar 5.
+
+**Resultado:**
+$$
+\boxed{\frac{5}{4} = 1 + \frac{1}{4}}
+$$
+
+#### Ejemplo 15: Fracción como división
+
+¿Qué representa la fracción $\frac{100}{1}$?
+
+**Idea clave:** Toda fracción es en esencia una división.
+
+**Razonamiento:**
+- El denominador 1 indica que la unidad no se divide (está entera).
+- Tomamos 100 de esas unidades enteras.
+- $100 \div 1 = 100$.
+
+**Resultado:**
+$$
+\boxed{100}
+$$
 
 ---
 

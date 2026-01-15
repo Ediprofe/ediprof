@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 420">
+  <defs></defs>
+  <rect x="0.00" y="0.00" width="750.00" height="420.00" fill="#f8fafc" stroke="none" stroke-width="0" rx="0"  />
+  <path d="M 95.0 200.0 L 95.00 140.00 A 60 60 0 0 1 95.00 260.00 Z" fill="#22c55e" stroke="#64748b" stroke-width="2"/>
+  <path d="M 95.0 200.0 L 95.00 260.00 A 60 60 0 0 1 95.00 140.00 Z" fill="#22c55e" stroke="#64748b" stroke-width="2"/>
+  <circle cx="95.00" cy="200.00" r="60.00" fill="none" stroke="#64748b" stroke-width="2"  />
+  <path d="M 235.0 200.0 L 235.00 140.00 A 60 60 0 0 1 235.00 260.00 Z" fill="#22c55e" stroke="#64748b" stroke-width="2"/>
+  <path d="M 235.0 200.0 L 235.00 260.00 A 60 60 0 0 1 235.00 140.00 Z" fill="#22c55e" stroke="#64748b" stroke-width="2"/>
+  <circle cx="235.00" cy="200.00" r="60.00" fill="none" stroke="#64748b" stroke-width="2"  />
+  <path d="M 375.0 200.0 L 375.00 140.00 A 60 60 0 0 1 375.00 260.00 Z" fill="#22c55e" stroke="#64748b" stroke-width="2"/>
+  <path d="M 375.0 200.0 L 375.00 260.00 A 60 60 0 0 1 375.00 140.00 Z" fill="#22c55e" stroke="#64748b" stroke-width="2"/>
+  <circle cx="375.00" cy="200.00" r="60.00" fill="none" stroke="#64748b" stroke-width="2"  />
+  <path d="M 515.0 200.0 L 515.00 140.00 A 60 60 0 0 1 515.00 260.00 Z" fill="#22c55e" stroke="#64748b" stroke-width="2"/>
+  <path d="M 515.0 200.0 L 515.00 260.00 A 60 60 0 0 1 515.00 140.00 Z" fill="#22c55e" stroke="#64748b" stroke-width="2"/>
+  <circle cx="515.00" cy="200.00" r="60.00" fill="none" stroke="#64748b" stroke-width="2"  />
+  <path d="M 655.0 200.0 L 655.00 140.00 A 60 60 0 0 1 655.00 260.00 Z" fill="#22c55e" stroke="#64748b" stroke-width="2"/>
+  <path d="M 655.0 200.0 L 655.00 260.00 A 60 60 0 0 1 655.00 140.00 Z" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+  <circle cx="655.00" cy="200.00" r="60.00" fill="none" stroke="#64748b" stroke-width="2"  />
+  <text x="375.00" y="395.00" font-family="Inter, sans-serif" font-size="32" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">4 ␣ 1/2 = 9/2</text>
+</svg>

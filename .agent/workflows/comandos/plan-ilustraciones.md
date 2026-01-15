@@ -51,9 +51,7 @@ Leer las lecciones y identificar:
 [Enunciado del problema]
 [Idea clave: qué vamos a hacer (1 línea)]
 
-<div class="illustration">
-  <img src="..." alt="..." />
-</div>
+![Descripción de la ilustración](/ruta/a/la/ilustracion.svg)
 
 **Razonamiento:**
 [Desarrollo paso a paso con ecuaciones $$...$$]

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400">
+  <defs></defs>
+  <rect x="0.00" y="0.00" width="500.00" height="400.00" fill="#f8fafc" stroke="none" stroke-width="0" rx="0"  />
+  <path d="M 190.0 200.0 L 190.00 100.00 A 100 100 0 0 1 285.11 169.10 Z" fill="#22c55e" stroke="#64748b" stroke-width="2"/>
+  <path d="M 190.0 200.0 L 285.11 169.10 A 100 100 0 0 1 248.78 280.90 Z" fill="#22c55e" stroke="#64748b" stroke-width="2"/>
+  <path d="M 190.0 200.0 L 248.78 280.90 A 100 100 0 0 1 131.22 280.90 Z" fill="#22c55e" stroke="#64748b" stroke-width="2"/>
+  <path d="M 190.0 200.0 L 131.22 280.90 A 100 100 0 0 1 94.89 169.10 Z" fill="#22c55e" stroke="#64748b" stroke-width="2"/>
+  <path d="M 190.0 200.0 L 94.89 169.10 A 100 100 0 0 1 190.00 100.00 Z" fill="#22c55e" stroke="#64748b" stroke-width="2"/>
+  <circle cx="190.00" cy="200.00" r="100.00" fill="none" stroke="#64748b" stroke-width="2"  />
+  <text x="420.00" y="200.00" font-family="Inter, sans-serif" font-size="56" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">5/5</text>
+</svg>

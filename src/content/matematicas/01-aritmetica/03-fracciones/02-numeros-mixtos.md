@@ -1,6 +1,6 @@
 # **Números Mixtos**
 
-A veces, una sola pizza no alcanza. Cuando necesitamos más de una unidad completa, usamos **números mixtos**. Un número mixto es la mezcla perfecta entre un número entero (las pizzas enteras) y una fracción propia (las rebanadas sueltas). Son otra forma de escribir las fracciones impropias.
+A veces, una sola pizza no alcanza. Cuando necesitamos más de una unidad completa, usamos **números mixtos**. Un número mixto es la mezcla perfecta entre un número entero (las pizzas enteras) y una fracción propia (las porciones sueltas). Son otra forma de escribir las fracciones impropias.
 
 ---
 
@@ -15,161 +15,314 @@ A veces, una sola pizza no alcanza. Cuando necesitamos más de una unidad comple
 
 ## ¿Qué es un Número Mixto?
 
-Es una expresión formada por una **parte entera** y una **parte fraccionaria**.
+> 🍕 **Nota:** Para que todo sea más fácil de entender, explicaremos este tema usando **PIZZAS**.
+> - **Entero** = Pizza completa.
+> - **Fracción** = Porciones sueltas.
 
-$$ \text{Mixto} = \text{Entero} + \text{Fracción} = A\frac{b}{c} $$
+Una expresión formada por una **parte entera** y una **parte fraccionaria**.
+
+![Definición de Número Mixto](/ilustraciones/matematicas/aritmetica/fracciones/mixtos-01-definicion.svg)
+
+$$ 
+\text{Mixto} = \text{Entero} + \text{Fracción} = A\frac{b}{c} 
+$$
 
 ### ⚙️ Ejemplos Resueltos
 
-#### Ejemplo 1: $2\frac{3}{4}$
-Significa que tienes 2 enteros completos y $\frac{3}{4}$ de otro.
+#### Ejemplo 1: El número $2\frac{3}{4}$
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1.5rem auto; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div style="display: flex; justify-content: center; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
-    <div style="text-align: center;">
-      <div style="width: 80px;"><canvas id="chart-mixto1"></canvas></div>
-      <p style="font-size: 12px; color: #374151; margin-top: 0.25rem;">1</p>
-    </div>
-    <span style="font-size: 1.5rem; color: #374151;">+</span>
-    <div style="text-align: center;">
-      <div style="width: 80px;"><canvas id="chart-mixto2"></canvas></div>
-      <p style="font-size: 12px; color: #374151; margin-top: 0.25rem;">1</p>
-    </div>
-    <span style="font-size: 1.5rem; color: #374151;">+</span>
-    <div style="text-align: center;">
-      <div style="width: 80px;"><canvas id="chart-mixto3"></canvas></div>
-      <p style="font-size: 12px; color: #374151; margin-top: 0.25rem;">3/4</p>
-    </div>
-  </div>
-</div>
+Representa de forma visual el número mixto dos enteros y tres cuartos.
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof Chart !== 'undefined') {
-    var pieConfig = function(colors) {
-      return {
-        type: 'pie',
-        data: { labels: ['1','2','3','4'], datasets: [{ data: [1,1,1,1], backgroundColor: colors, borderColor: '#374151', borderWidth: 2 }] },
-        options: { responsive: true, plugins: { legend: { display: false }, tooltip: { enabled: false } } }
-      };
-    };
-    new Chart(document.getElementById('chart-mixto1'), pieConfig(['#3b82f6','#3b82f6','#3b82f6','#3b82f6']));
-    new Chart(document.getElementById('chart-mixto2'), pieConfig(['#3b82f6','#3b82f6','#3b82f6','#3b82f6']));
-    new Chart(document.getElementById('chart-mixto3'), pieConfig(['#3b82f6','#3b82f6','#3b82f6','#e5e7eb']));
-  }
-});
-</script>
+**Idea clave:** Picamos de a 4 porciones, tomamos dos pizzas y 3/4 de otra.
 
-#### Ejemplo 2: $5\frac{1}{2}$
-Cinco enteros y medio.
+![Representación de 2 3/4](/ilustraciones/matematicas/aritmetica/fracciones/mixtos-02-ejemplo1.svg)
 
-<div style="background: #e2e8f0; border: 1px solid #cbd5e1; border-radius: 12px; padding: 0.75rem; margin: 1rem auto; width: 100%; box-sizing: border-box;">
-  <div style="margin-bottom: 0.5rem; padding-left: 0.25rem;">
-    <span style="font-size: 1.1rem;">📊</span>
-  </div>
-  <div style="display: flex; justify-content: center; align-items: center; gap: 0.3rem; flex-wrap: wrap;">
-    <div style="width: 50px;"><canvas id="chart-mixto-5a"></canvas></div>
-    <div style="width: 50px;"><canvas id="chart-mixto-5b"></canvas></div>
-    <div style="width: 50px;"><canvas id="chart-mixto-5c"></canvas></div>
-    <div style="width: 50px;"><canvas id="chart-mixto-5d"></canvas></div>
-    <div style="width: 50px;"><canvas id="chart-mixto-5e"></canvas></div>
-    <span style="font-size: 1rem; color: #374151;">+</span>
-    <div style="width: 50px;"><canvas id="chart-mixto-5f"></canvas></div>
-  </div>
-</div>
+**Razonamiento:**
+- El entero "2" son **2 pizzas completas**.
+- La fracción "3/4" son **3 porciones** de una pizza de 4.
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof Chart !== 'undefined') {
-    var fullPie = { type: 'pie', data: { labels: ['1','2'], datasets: [{ data: [1,1], backgroundColor: ['#22c55e','#22c55e'], borderColor: '#374151', borderWidth: 2 }] }, options: { responsive: true, plugins: { legend: { display: false }, tooltip: { enabled: false } } } };
-    ['chart-mixto-5a','chart-mixto-5b','chart-mixto-5c','chart-mixto-5d','chart-mixto-5e'].forEach(function(id) {
-      if (document.getElementById(id)) new Chart(document.getElementById(id), fullPie);
-    });
-    if (document.getElementById('chart-mixto-5f')) {
-      new Chart(document.getElementById('chart-mixto-5f'), { type: 'pie', data: { labels: ['1','2'], datasets: [{ data: [1,1], backgroundColor: ['#22c55e','#e5e7eb'], borderColor: '#374151', borderWidth: 2 }] }, options: { responsive: true, plugins: { legend: { display: false }, tooltip: { enabled: false } } } });
-    }
-  }
-});
-</script>
+**Resultado:**
+$$
+\boxed{2\frac{3}{4}}
+$$
 
-#### Ejemplo 3: $1\frac{1}{3}$
-Un entero y un tercio.
+#### Ejemplo 2: El número $5\frac{1}{2}$
 
-#### Ejemplo 4: $3\frac{3}{4}$ horas
-Tres horas completas y tres cuartos de hora (45 minutos).
+Representa visualmente cinco enteros y un medio.
+
+**Idea clave:** Picamos de a 2 porciones. Tenemos 5 pizzas enteras y 1 porción de otra.
+
+![Representación de 5 1/2](/ilustraciones/matematicas/aritmetica/fracciones/mixtos-03-ejemplo2.svg)
+
+**Razonamiento:**
+- Dibujamos **5 pizzas completas**.
+- La sexta pizza la partimos en 2 y tomamos **1 porción**.
+
+**Resultado:**
+$$
+\boxed{5\frac{1}{2}}
+$$
+
+#### Ejemplo 3: El número $1\frac{1}{3}$
+
+Representa un entero y un tercio.
+
+**Idea clave:** Picamos de a 3 porciones. Tenemos 1 pizza entera y 1 porción de otra.
+
+![Representación de 1 1/3](/ilustraciones/matematicas/aritmetica/fracciones/mixtos-04-ejemplo3.svg)
+
+**Razonamiento:**
+- Tenemos **1 pizza completa**.
+- Más **1 porción** de una pizza de 3.
+
+**Resultado:**
+$$
+\boxed{1\frac{1}{3}}
+$$
+
+#### Ejemplo 4: Tiempo
+
+¿Cómo se representan $3\frac{3}{4}$ horas?
+
+**Idea clave:** Imagina las horas como pizzas. Picamos de a 4 porciones. 3 horas enteras y 3 porciones de otra.
+
+![Tres horas y tres cuartos](/ilustraciones/matematicas/aritmetica/fracciones/mixtos-08-ejemplo4.svg)
+
+**Razonamiento:**
+- 3 horas completas.
+- $\frac{3}{4}$ de hora son 3 cuartos (45 minutos).
+
+**Resultado:**
+$$
+\boxed{3 \text{ horas y } 45 \text{ min}}
+$$
 
 #### Ejemplo 5: Edad
-"Tengo 7 años y medio" = $7\frac{1}{2}$.
+
+Si alguien dice "tengo 7 años y medio", ¿cómo se escribe como mixto?
+
+**Idea clave:** Imagina los años como pizzas. Picamos de a 2 porciones. 7 años enteros y 1 porción de otro.
+
+![Siete años y medio](/ilustraciones/matematicas/aritmetica/fracciones/mixtos-09-ejemplo5.svg)
+
+**Razonamiento:**
+- Parte entera: 7.
+- Parte fraccionaria: $\frac{1}{2}$.
+
+**Resultado:**
+$$
+\boxed{7\frac{1}{2}}
+$$
 
 ---
 
-## Convertir Fracción Impropia a Mixto
+## 1. De Fracción Impropia a Número Mixto
 
-Dividimos el numerador entre el denominador. El cociente es el **entero**, el residuo es el nuevo **numerador**.
+**¿Cuál es la lógica?**
+Tenemos muchas porciones sueltas y queremos saber cuántas pizzas completas podemos armar.
+
+$$ \text{Fracción Impropia} \xrightarrow{\text{Armar pizzas}} \text{Número Mixto} $$
 
 ### ⚙️ Ejemplos Resueltos
 
-#### Ejemplo 6: Convertir $\frac{17}{5}$
-1.  Dividimos: $17 \div 5$.
-2.  Cabe 3 veces ($3 \times 5 = 15$). Sobran 2.
-3.  Entero: 3. Numerador: 2. Denominador: 5 (sigue igual).
-**Resultado:** $\boxed{3\frac{2}{5}}$
+#### Ejemplo 6: Convertir $\frac{17}{5}$ a mixto
 
-#### Ejemplo 7: Convertir $\frac{23}{6}$
-1.  $23 \div 6 = 3$ (porque $6 \times 3 = 18$).
-2.  Sobra $23 - 18 = 5$.
-**Resultado:** $\boxed{3\frac{5}{6}}$
+Tenemos 17 porciones.
 
-#### Ejemplo 8: Convertir $\frac{11}{4}$
-1.  $11 \div 4 = 2$ (sobran 3).
-**Resultado:** $\boxed{2\frac{3}{4}}$
+**Idea clave:** Picamos de a 5 porciones. ¿Cuántas armamos?
 
-#### Ejemplo 9: Convertir $\frac{9}{2}$
-1.  $9 \div 2 = 4$ (sobra 1).
-**Resultado:** $\boxed{4\frac{1}{2}}$
+![Conversión de 17/5](/ilustraciones/matematicas/aritmetica/fracciones/mixtos-05-ejemplo6.svg)
 
-#### Ejemplo 10: Convertir $\frac{5}{5}$
-1.  $5 \div 5 = 1$ (sobra 0).
-**Resultado:** $\boxed{1}$ (Es un entero, no hay parte fraccionaria).
+**Razonamiento Visual:**
+1.  **Armamos pizzas de 5 porciones**.
+2.  Con 17 porciones, nos salen **3 pizzas completas** ($3 \times 5 = 15$).
+3.  Nos sobran **2 porciones**.
+
+**Operación Matemática:**
+- $17 \div 5 = 3$ (3 pizzas).
+- El residuo es 2 (2 porciones sobran).
+
+**Resultado:**
+$$
+\boxed{3\frac{2}{5}}
+$$
+
+#### Ejemplo 7: Convertir $\frac{23}{6}$ a mixto
+
+Tenemos 23 porciones.
+
+**Idea clave:** Picamos de a 6 porciones.
+
+![Conversión de 23/6](/ilustraciones/matematicas/aritmetica/fracciones/mixtos-10-ejemplo7.svg)
+
+**Razonamiento:**
+1.  **Armamos pizzas de 6 porciones**.
+2.  Con 23 porciones, nos salen **3 pizzas completas** (18 porciones).
+3.  Nos sobran $23 - 18 = 5$ porciones.
+
+**Resultado:**
+$$
+\boxed{3\frac{5}{6}}
+$$
+
+#### Ejemplo 8: Convertir $\frac{11}{4}$ a mixto
+
+Tenemos 11 porciones.
+
+**Idea clave:** Picamos de a 4 porciones.
+
+![Conversión de 11/4](/ilustraciones/matematicas/aritmetica/fracciones/mixtos-11-ejemplo8.svg)
+
+**Razonamiento:**
+1.  **Armamos pizzas de 4 porciones**.
+2.  Con 11 porciones, nos salen **2 pizzas completas** (8 porciones).
+3.  Nos sobran **3 porciones**.
+
+**Resultado:**
+$$
+\boxed{2\frac{3}{4}}
+$$
+
+#### Ejemplo 9: Convertir $\frac{9}{2}$ a mixto
+
+Tenemos 9 porciones (medios).
+
+**Idea clave:** Picamos de a 2 porciones.
+
+![Conversión de 9/2](/ilustraciones/matematicas/aritmetica/fracciones/mixtos-12-ejemplo9.svg)
+
+**Razonamiento:**
+1.  **Armamos pizzas de 2 porciones**.
+2.  Con 9 porciones, nos salen **4 pizzas completas** ($4 \times 2 = 8$).
+3.  Nos sobra **1 porción**.
+
+**Resultado:**
+$$
+\boxed{4\frac{1}{2}}
+$$
+
+#### Ejemplo 10: Convertir $\frac{5}{5}$ a mixto
+
+Tenemos 5 porciones.
+
+**Idea clave:** Picamos de a 5 porciones.
+
+![Conversión de 5/5](/ilustraciones/matematicas/aritmetica/fracciones/mixtos-13-ejemplo10.svg)
+
+**Razonamiento:**
+1.  **Armamos pizzas de 5 porciones**.
+2.  Con 5 porciones, armamos exactamente **1 pizza completa**.
+3.  No sobra nada.
+
+**Resultado:**
+$$
+\boxed{1}
+$$
 
 ---
 
-## Convertir Número Mixto a Fracción Impropia
+## 2. De Número Mixto a Fracción Impropia
 
-Multiplicamos el entero por el denominador y sumamos el numerador. El denominador se mantiene.
+**¿Cuál es la lógica?**
+Aquí hacemos lo contrario. Tenemos cajas completas (enteros) y queremos saber cuántas piezas hay en total. La estrategia es **DESARMAR TODO EN PIEZAS**.
+
+Para saberlo, **"picamos"** o desarmamos los enteros en trozos del tamaño que indique el denominador.
+
+$$ \text{Número Mixto} \xrightarrow{\text{Desarmar todo}} \text{Fracción Impropia} $$
 
 $$ \text{Numerador Final} = (\text{Entero} \times \text{Denominador}) + \text{Numerador} $$
 
 ### ⚙️ Ejemplos Resueltos
 
-#### Ejemplo 11: Convertir $4\frac{2}{3}$
-1.  Multiplico: $4 \times 3 = 12$.
-2.  Sumo numerador: $12 + 2 = 14$.
-3.  Denominador igual: 3.
-**Resultado:** $\boxed{\frac{14}{3}}$
+#### Ejemplo 11: Convertir $4\frac{2}{3}$ a impropia
 
-#### Ejemplo 12: Convertir $2\frac{5}{7}$
-1.  $2 \times 7 = 14$.
-2.  $14 + 5 = 19$.
-**Resultado:** $\boxed{\frac{19}{7}}$
+Cuatro enteros y dos tercios.
 
-#### Ejemplo 13: Convertir $1\frac{1}{2}$
-1.  $1 \times 2 = 2$.
-2.  $2 + 1 = 3$.
-**Resultado:** $\boxed{\frac{3}{2}}$
+**Idea clave:** Picamos de a 3 (tercios).
 
-#### Ejemplo 14: Convertir $10\frac{1}{10}$
-1.  $10 \times 10 = 100$.
-2.  $100 + 1 = 101$.
-**Resultado:** $\boxed{\frac{101}{10}}$
+![Conversión de 4 2/3](/ilustraciones/matematicas/aritmetica/fracciones/mixtos-06-ejemplo11.svg)
 
-#### Ejemplo 15: Convertir $3\frac{3}{4}$
-1.  $3 \times 4 = 12$.
-2.  $12 + 3 = 15$.
-**Resultado:** $\boxed{\frac{15}{4}}$
+**Razonamiento Visual:**
+1.  **Picamos de a 3**.
+2.  De 4 enteros salen $4 \times 3 = 12$ porciones.
+3.  Más las 2 sueltas: $12 + 2 = 14$.
+
+**Resultado:**
+$$
+\boxed{\frac{14}{3}}
+$$
+
+#### Ejemplo 12: Convertir $2\frac{5}{7}$ a impropia
+
+Dos enteros y cinco séptimos.
+
+**Idea clave:** Picamos de a 7 (séptimos).
+
+![Conversión de 2 5/7](/ilustraciones/matematicas/aritmetica/fracciones/mixtos-14-ejemplo12.svg)
+
+**Razonamiento:**
+1.  **Picamos de a 7**.
+2.  De 2 enteros salen $2 \times 7 = 14$ porciones.
+3.  Más las 5 sueltas: $14 + 5 = 19$.
+
+**Resultado:**
+$$
+\boxed{\frac{19}{7}}
+$$
+
+#### Ejemplo 13: Convertir $1\frac{1}{2}$ a impropia
+
+Un entero y medio.
+
+**Idea clave:** Picamos de a 2 (medios).
+
+![Conversión de 1 1/2](/ilustraciones/matematicas/aritmetica/fracciones/mixtos-07-ejemplo13.svg)
+
+**Razonamiento:**
+1.  **Picamos de a 2**.
+2.  De 1 entero salen $1 \times 2 = 2$ mitades.
+3.  Más la otra mitad suelta: $2 + 1 = 3$.
+
+**Resultado:**
+$$
+\boxed{\frac{3}{2}}
+$$
+
+#### Ejemplo 14: Convertir $10\frac{1}{10}$ a impropia
+
+Diez enteros y un décimo.
+
+**Idea clave:** Picamos de a 10 (décimos).
+
+![Conversión de 10 1/10](/ilustraciones/matematicas/aritmetica/fracciones/mixtos-15-ejemplo14.svg)
+
+**Razonamiento:**
+1.  **Picamos de a 10**.
+2.  De 10 enteros salen $10 \times 10 = 100$ porciones.
+3.  Más la suelta: $100 + 1 = 101$.
+
+**Resultado:**
+$$
+\boxed{\frac{101}{10}}
+$$
+
+#### Ejemplo 15: Convertir $3\frac{3}{4}$ a impropia
+
+Tres enteros y tres cuartos.
+
+**Idea clave:** Picamos de a 4 (cuartos).
+
+![Conversión de 3 3/4](/ilustraciones/matematicas/aritmetica/fracciones/mixtos-16-ejemplo15.svg)
+
+**Razonamiento:**
+1.  **Picamos de a 4**.
+2.  De 3 enteros salen $3 \times 4 = 12$ porciones.
+3.  Más las 3 sueltas: $12 + 3 = 15$.
+
+**Resultado:**
+$$
+\boxed{\frac{15}{4}}
+$$
 
 ---
 
@@ -287,11 +440,12 @@ Convertimos a impropia: $2 \times 4 + 1 = 9$.
 
 ---
 
-## 🔑 Resumen
+## 🔑 Resumen: El ciclo de la Fracción
 
-| Conversión | Procedimiento | Fórmula |
-| :--- | :--- | :--- |
-| **Impropia $\to$ Mixto** | Dividir numerador entre denominador. | $C \frac{R}{D}$ |
-| **Mixto $\to$ Impropia** | Multiplicar entero por denominador y sumar numerador. | $\frac{E \times D + N}{D}$ |
+- **Impropia a Mixto:** Es como **empacar**. Tienes muchas piezas sueltas y llenas tantas cajas completas como puedas.
+    - Operación: **División** (Cociente = Entero, Residuo = Piezas sobrantes).
 
-> **Conclusión:** Los números mixtos son fáciles de entender en la vida real ("dos pasteles y medio"), pero las fracciones impropias son más fáciles para hacer cálculos matemáticos.
+- **Mixto a Impropia:** Es como **desempacar**. Abres todas las cajas completas para contar cuántas piezas hay en total.
+    - Operación: **Multiplicación y Suma** (Enteros $\times$ Piezas por caja + Sobrantes).
+
+> **Conclusión:** ¡No memorices la fórmula, visualiza las cajas y las piezas!

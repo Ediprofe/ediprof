@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400">
+  <defs></defs>
+  <rect x="0.00" y="0.00" width="500.00" height="400.00" fill="#f8fafc" stroke="none" stroke-width="0" rx="0"  />
+  <path d="M 190.0 200.0 L 190.00 100.00 A 100 100 0 0 1 254.28 123.40 Z" fill="#22c55e" stroke="#64748b" stroke-width="2"/>
+  <path d="M 190.0 200.0 L 254.28 123.40 A 100 100 0 0 1 288.48 182.64 Z" fill="#22c55e" stroke="#64748b" stroke-width="2"/>
+  <path d="M 190.0 200.0 L 288.48 182.64 A 100 100 0 0 1 276.60 250.00 Z" fill="#22c55e" stroke="#64748b" stroke-width="2"/>
+  <path d="M 190.0 200.0 L 276.60 250.00 A 100 100 0 0 1 224.20 293.97 Z" fill="#22c55e" stroke="#64748b" stroke-width="2"/>
+  <path d="M 190.0 200.0 L 224.20 293.97 A 100 100 0 0 1 155.80 293.97 Z" fill="#22c55e" stroke="#64748b" stroke-width="2"/>
+  <path d="M 190.0 200.0 L 155.80 293.97 A 100 100 0 0 1 103.40 250.00 Z" fill="#22c55e" stroke="#64748b" stroke-width="2"/>
+  <path d="M 190.0 200.0 L 103.40 250.00 A 100 100 0 0 1 91.52 182.64 Z" fill="#22c55e" stroke="#64748b" stroke-width="2"/>
+  <path d="M 190.0 200.0 L 91.52 182.64 A 100 100 0 0 1 125.72 123.40 Z" fill="#22c55e" stroke="#64748b" stroke-width="2"/>
+  <path d="M 190.0 200.0 L 125.72 123.40 A 100 100 0 0 1 190.00 100.00 Z" fill="#22c55e" stroke="#64748b" stroke-width="2"/>
+  <circle cx="190.00" cy="200.00" r="100.00" fill="none" stroke="#64748b" stroke-width="2"  />
+  <text x="420.00" y="200.00" font-family="Inter, sans-serif" font-size="56" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">9/9</text>
+</svg>
