@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 460" style="font-family: Inter, system-ui, sans-serif;">
+<rect width="600" height="460" fill="#f8fafc" />
+<path d="M 160.00 300.00 L 440.00 300.00 L 380.00 160.00 L 240.00 160.00 Z" fill="none" fill-opacity="0.1" stroke="#3b82f6" stroke-width="3" stroke-linejoin="round"/>
+<text x="140.00" y="320.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">A</text>
+<text x="460.00" y="320.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">B</text>
+<text x="400.00" y="140.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">C</text>
+<text x="220.00" y="140.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">D</text>
+<path d="M 160.00 300.00 L 177.36 269.61 A 35 35 0 0 1 195.00 300.00 Z" fill="#f97316" fill-opacity="0.2" stroke="none"/>
+<path d="M 177.36 269.61 A 35 35 0 0 1 195.00 300.00" fill="none" stroke="#f97316" stroke-width="2"/>
+
+<text x="205.00" y="280.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">110°</text>
+<path d="M 240.00 160.00 L 275.00 160.00 A 35 35 0 0 1 222.64 190.39 Z" fill="#ef4444" fill-opacity="0.2" stroke="none"/>
+<path d="M 275.00 160.00 A 35 35 0 0 1 222.64 190.39" fill="none" stroke="#ef4444" stroke-width="2"/>
+
+<text x="265.00" y="195.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#ef4444" text-anchor="middle" dominant-baseline="middle">x = 70°</text>
+<text x="300.00" y="35.00" font-family="sans-serif" font-size="22" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Ejemplo: Ángulos Conjugados</text>
+</svg>

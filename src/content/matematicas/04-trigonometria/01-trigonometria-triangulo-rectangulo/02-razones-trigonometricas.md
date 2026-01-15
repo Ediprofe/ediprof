@@ -21,7 +21,7 @@ En un triángulo rectángulo, comparamos sus lados:
 *   ¿Qué tan grande es el opuesto comparado con la hipotenusa?
 *   ¿Qué tan grande es el opuesto comparado con el adyacente?
 
-![Triángulo 3-4-5 con razones trigonométricas](/images/geometria/trigonometria/03-triangulo-345.svg)
+![Concepto de Razón](/images/geometria/trigonometria/ratio-concept.svg)
 
 ---
 
@@ -29,30 +29,37 @@ En un triángulo rectángulo, comparamos sus lados:
 
 Existen nombres específicos para estas divisiones. Apréndetelos, porque los usarás por el resto de tu vida académica (y profesional si eliges ciencias).
 
-### 1. Seno ($\sin$)
-Compara qué tan alto es el triángulo respecto a su lado más largo.
+### 1. Seno (sin)
+Mide la proporción del lado que está **enfrente** de ti respecto al lado más largo. En nuestro triángulo 3-4-5:
 
 $$
 \sin(\theta) = \frac{\text{Opuesto}}{\text{Hipotenusa}}
 $$
 
-### 2. Coseno ($\cos$)
-Compara qué tan ancho es el triángulo respecto a su lado más largo.
+![Razón Seno](/images/geometria/trigonometria/ratio-sine.svg)
+
+### 2. Coseno (cos)
+Mide la proporción del lado que **toca tu ángulo** respecto al lado más largo. En nuestro triángulo 3-4-5:
 
 $$
 \cos(\theta) = \frac{\text{Adyacente}}{\text{Hipotenusa}}
 $$
 
-### 3. Tangente ($\tan$)
-Compara la altura con el ancho (la pendiente).
+![Razón Coseno](/images/geometria/trigonometria/ratio-cosine.svg)
+
+### 3. Tangente (tan)
+Compara directamente tus dos catetos. En nuestro triángulo 3-4-5:
 
 $$
 \tan(\theta) = \frac{\text{Opuesto}}{\text{Adyacente}}
 $$
 
-![SOH-CAH-TOA](/images/geometria/trigonometria/07-soh-cah-toa.svg)
+![Razón Tangente](/images/geometria/trigonometria/ratio-tangent.svg)
 
-> **Regla de Oro:** **SOH** (Seno=Op/Hip) - **CAH** (Cos=Ad/Hip) - **TOA** (Tan=Op/Ad). Repítelo 5 veces.
+### SOH-CAH-TOA
+> **Para recordar:** **SOH** (Seno=Op/Hip) - **CAH** (Cos=Ad/Hip) - **TOA** (Tan=Op/Ad). Repítelo 5 veces.
+
+![SOH-CAH-TOA](/images/geometria/trigonometria/07-soh-cah-toa.svg)
 
 ---
 
@@ -62,7 +69,12 @@ $$
 
 Dado un triángulo con Opuesto=3, Adyacente=4, Hipotenusa=5. Calcular $\sin$, $\cos$ y $\tan$.
 
+Identificaremos los valores de los lados y aplicaremos las fórmulas de SOH-CAH-TOA.
+
+![Ejemplo 1: Razones Básicas](/images/geometria/trigonometria/example-ratios-basic.svg)
+
 **Razonamiento:**
+
 *   **Seno (SOH):** Opuesto / Hipotenusa.
     $$
     \sin(\theta) = \frac{3}{5} = 0.6
@@ -85,10 +97,18 @@ $$
 
 Imagina que duplicamos el triángulo anterior. Ahora Opuesto=6, Adyacente=8, Hipotenusa=10.
 
+Demostraremos que la escala del triángulo no altera el valor de sus razones trigonométricas.
+
+![Ejemplo 2: Razones en Semejanza](/images/geometria/trigonometria/example-ratios-similarity.svg)
+
 **Razonamiento:**
+
+Probamos con el Seno:
 $$
 \sin(\theta) = \frac{6}{10} = 0.6
 $$
+
+Como puedes ver, al simplificar la fracción $\frac{6}{10}$, volvemos al valor original de $\frac{3}{5}$.
 
 **Resultado:**
 $$
@@ -108,7 +128,11 @@ En un triángulo, el lado opuesto mide 5 y la hipotenusa 13. ¿Cuánto vale el S
 <summary>Ver solución</summary>
 
 **Razonamiento:**
-$\text{Seno} = \text{Opuesto} / \text{Hipotenusa}$.
+Aplicamos la definición de Seno:
+
+$$
+\text{Seno} = \frac{\text{Opuesto}}{\text{Hipotenusa}}
+$$
 
 **Resultado:**
 $$
@@ -124,8 +148,17 @@ En el mismo triángulo ($Op=5, Hip=13$), usa Pitágoras para hallar el Adyacente
 <summary>Ver solución</summary>
 
 **Razonamiento:**
-$Ady = \sqrt{13^2 - 5^2} = \sqrt{169-25} = \sqrt{144} = 12$.
-$\cos = 12/13$.
+1.  Hallamos el cateto adyacente usando el Teorema de Pitágoras:
+
+$$
+Ady = \sqrt{13^2 - 5^2} = \sqrt{169 - 25} = \sqrt{144} = 12
+$$
+
+2.  Calculamos el Coseno:
+
+$$
+\cos = \frac{12}{13}
+$$
 
 **Resultado:**
 $$
@@ -170,7 +203,11 @@ Calcula el Seno de un ángulo si Opuesto=8 e Hipotenusa=10. Simplifica la fracci
 <summary>Ver solución</summary>
 
 **Razonamiento:**
-$8/10 = 4/5$.
+Simplificamos la fracción dividiendo ambos números por 2:
+
+$$
+\frac{8}{10} = \frac{4}{5}
+$$
 
 **Resultado:**
 $$
@@ -202,7 +239,7 @@ Si $\sin(\theta) = 0.5$, ¿cuál es la relación entre el Opuesto y la Hipotenus
 <summary>Ver solución</summary>
 
 **Razonamiento:**
-$0.5$ es la mitad.
+Una razón de $0.5$ equivale a $\frac{1}{2}$. Esto significa que el numerador es la mitad del denominador.
 
 **Resultado:**
 $$
@@ -217,10 +254,10 @@ Completa la frase: "SOH - CAH - ..."
 <details>
 <summary>Ver solución</summary>
 
-**Respuesta:**
+**Resultado:**
 
 $$
-\text{TOA}
+\boxed{\text{TOA}}
 $$
 
 </details>
@@ -232,7 +269,11 @@ Calcula la Tangente si Opuesto=10 y Adyacente=2.
 <summary>Ver solución</summary>
 
 **Razonamiento:**
-$10/2 = 5$.
+Dividimos los valores dados:
+
+$$
+\frac{10}{2} = 5
+$$
 
 **Resultado:**
 $$
@@ -248,8 +289,11 @@ Un triángulo rectángulo isósceles tiene catetos iguales (digamos que miden 1)
 <summary>Ver solución</summary>
 
 **Razonamiento:**
-$\text{Opuesto}=1, \text{Adyacente}=1$.
-$\tan = 1/1 = 1$.
+Al ser isósceles, el opuesto y el adyacente valen 1:
+
+$$
+\tan = \frac{1}{1} = 1
+$$
 
 **Resultado:**
 $$

@@ -1,0 +1,49 @@
+{
+    "tipo": "triangulo-rectangulo",
+    "titulo": "Ejemplo 2: θ = 30°",
+    "canvas": {
+        "width": 500,
+        "height": 300,
+        "padding": 40
+    },
+    "vertices": {
+        "A": [
+            60,
+            240
+        ],
+        "B": [
+            340,
+            240
+        ],
+        "C": [
+            340,
+            80
+        ]
+    },
+    "angulos": {
+        "A": {
+            "tipo": "agudo",
+            "etiqueta": "30°",
+            "color": "#8b5cf6",
+            "radio": 45
+        },
+        "B": {
+            "tipo": "recto"
+        }
+    },
+    "lados": {
+        "AB": {
+            "texto": "0.866",
+            "color": "#22c55e"
+        },
+        "BC": {
+            "texto": "0.5",
+            "color": "#ef4444"
+        },
+        "AC": {
+            "texto": "1",
+            "color": "#3b82f6"
+        }
+    },
+    "offset_etiquetas": 30
+}

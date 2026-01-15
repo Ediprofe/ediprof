@@ -1,0 +1,70 @@
+{
+    "tipo": "triangulo-rectangulo",
+    "titulo": "Ejemplo 4: El Ángulo Superior",
+    "canvas": {
+        "width": 600,
+        "height": 400,
+        "padding": 50
+    },
+    "vertices": {
+        "A": [
+            120,
+            320
+        ],
+        "B": [
+            300,
+            320
+        ],
+        "C": [
+            300,
+            100
+        ]
+    },
+    "angulos": {
+        "C": {
+            "tipo": "agudo",
+            "etiqueta": "φ",
+            "color": "#f59e0b",
+            "radio": 40,
+            "offset_etiqueta": 55
+        },
+        "B": {
+            "tipo": "recto"
+        }
+    },
+    "lados": {
+        "AB": {
+            "texto": "8",
+            "color": "#ef4444"
+        },
+        "BC": {
+            "texto": "15",
+            "color": "#22c55e"
+        },
+        "AC": {
+            "texto": "17",
+            "color": "#3b82f6"
+        }
+    },
+    "offset_etiquetas": 32,
+    "info_box": {
+        "x": 80,
+        "y": 80,
+        "width": 180,
+        "titulo": "VISTA DESDE PHI (φ)",
+        "lineas": [
+            {
+                "texto": "Hipotenusa = 17",
+                "color": "#3b82f6"
+            },
+            {
+                "texto": "Cat. Adyacente = 15",
+                "color": "#22c55e"
+            },
+            {
+                "texto": "Cat. Opuesto = 8",
+                "color": "#ef4444"
+            }
+        ]
+    }
+}

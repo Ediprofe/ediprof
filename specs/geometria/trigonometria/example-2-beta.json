@@ -1,0 +1,70 @@
+{
+    "tipo": "triangulo-rectangulo",
+    "titulo": "Ejemplo 2: Ángulo β",
+    "canvas": {
+        "width": 600,
+        "height": 400,
+        "padding": 50
+    },
+    "vertices": {
+        "A": [
+            60,
+            320
+        ],
+        "B": [
+            300,
+            320
+        ],
+        "C": [
+            300,
+            110
+        ]
+    },
+    "angulos": {
+        "C": {
+            "tipo": "agudo",
+            "etiqueta": "β",
+            "color": "#8b5cf6",
+            "radio": 35,
+            "offset_etiqueta": 50
+        },
+        "B": {
+            "tipo": "recto"
+        }
+    },
+    "lados": {
+        "AB": {
+            "texto": "4 (Opuesto)",
+            "color": "#ef4444"
+        },
+        "BC": {
+            "texto": "3 (Adyacente)",
+            "color": "#22c55e"
+        },
+        "AC": {
+            "texto": "5 (Hipotenusa)",
+            "color": "#3b82f6"
+        }
+    },
+    "offset_etiquetas": 32,
+    "info_box": {
+        "x": 380,
+        "y": 150,
+        "width": 180,
+        "titulo": "DESDE EL PUNTO DE VISTA DE β",
+        "lineas": [
+            {
+                "texto": "Hipotenusa = 5",
+                "color": "#3b82f6"
+            },
+            {
+                "texto": "Cat. Adyacente = 3",
+                "color": "#22c55e"
+            },
+            {
+                "texto": "Cat. Opuesto = 4",
+                "color": "#ef4444"
+            }
+        ]
+    }
+}

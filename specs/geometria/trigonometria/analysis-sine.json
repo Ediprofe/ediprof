@@ -1,0 +1,61 @@
+{
+    "tipo": "triangulo-rectangulo",
+    "titulo": "Seno: Proporción de Altura",
+    "canvas": {
+        "width": 500,
+        "height": 300,
+        "padding": 40
+    },
+    "vertices": {
+        "A": [
+            60,
+            240
+        ],
+        "B": [
+            260,
+            240
+        ],
+        "C": [
+            260,
+            90
+        ]
+    },
+    "angulos": {
+        "A": {
+            "tipo": "agudo",
+            "etiqueta": "θ",
+            "color": "#8b5cf6",
+            "radio": 35
+        },
+        "B": {
+            "tipo": "recto"
+        }
+    },
+    "lados": {
+        "BC": {
+            "texto": "sin θ = 0.6",
+            "color": "#ef4444"
+        },
+        "AC": {
+            "texto": "1 (100%)",
+            "color": "#3b82f6"
+        }
+    },
+    "offset_etiquetas": 30,
+    "info_box": {
+        "x": 320,
+        "y": 80,
+        "width": 160,
+        "titulo": "ANÁLISIS",
+        "lineas": [
+            {
+                "texto": "Seno es la vertical",
+                "color": "#ef4444"
+            },
+            {
+                "texto": "60% de la hipotenusa",
+                "color": "#1e293b"
+            }
+        ]
+    }
+}

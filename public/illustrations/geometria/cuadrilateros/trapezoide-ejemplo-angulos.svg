@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 460" style="font-family: Inter, system-ui, sans-serif;">
+<rect width="600" height="460" fill="#f8fafc" />
+<path d="M 200.00 150.00 L 400.00 150.00 L 440.00 330.00 L 190.00 330.00 Z" fill="none" fill-opacity="0.1" stroke="#3b82f6" stroke-width="3" stroke-linejoin="round"/>
+<text x="175.00" y="140.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">A</text>
+<text x="425.00" y="140.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">B</text>
+<text x="465.00" y="340.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">C</text>
+<text x="165.00" y="340.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">D</text>
+<path d="M 200.00 150.00 L 230.00 150.00 A 30 30 0 0 1 198.34 179.95 Z" fill="#f97316" fill-opacity="0.2" stroke="none"/>
+<path d="M 230.00 150.00 A 30 30 0 0 1 198.34 179.95" fill="none" stroke="#f97316" stroke-width="2"/>
+
+<text x="225.00" y="180.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">100°</text>
+<path d="M 400.00 150.00 L 406.51 179.29 A 30 30 0 0 1 370.00 150.00 Z" fill="#f97316" fill-opacity="0.2" stroke="none"/>
+<path d="M 406.51 179.29 A 30 30 0 0 1 370.00 150.00" fill="none" stroke="#f97316" stroke-width="2"/>
+
+<text x="375.00" y="180.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">80°</text>
+<path d="M 440.00 330.00 L 410.00 330.00 A 30 30 0 0 1 433.49 300.71 Z" fill="#f97316" fill-opacity="0.2" stroke="none"/>
+<path d="M 410.00 330.00 A 30 30 0 0 1 433.49 300.71" fill="none" stroke="#f97316" stroke-width="2"/>
+
+<text x="405.00" y="310.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">70°</text>
+<path d="M 190.00 330.00 L 191.94 295.05 A 35 35 0 0 1 225.00 330.00 Z" fill="#ef4444" fill-opacity="0.2" stroke="none"/>
+<path d="M 191.94 295.05 A 35 35 0 0 1 225.00 330.00" fill="none" stroke="#ef4444" stroke-width="2"/>
+
+<text x="225.00" y="305.00" font-family="sans-serif" font-size="24" font-weight="bold" fill="#ef4444" text-anchor="middle" dominant-baseline="middle">x = ?</text>
+<text x="300.00" y="390.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#64748b" text-anchor="middle" dominant-baseline="middle">Suma Total = 360°</text>
+<text x="300.00" y="35.00" font-family="sans-serif" font-size="22" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Ejemplo: Ángulos en el Trapezoide</text>
+</svg>

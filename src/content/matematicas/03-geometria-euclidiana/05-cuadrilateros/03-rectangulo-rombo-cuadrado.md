@@ -18,79 +18,44 @@ Si los paralelogramos fueran una familia, estos tres serían los miembros más d
 
 Es el paralelogramo de los **ángulos rectos**. Su nombre lo dice: *"Rect-Ángulo"*.
 
-### Definición
-Paralelogramo con **cuatro ángulos de $90^\circ$**.
+### Definición y Propiedades
 
-### Propiedades Clave
-1.  Cumple todas las propiedades del paralelogramo.
-2.  **Diagonales Iguales:** Es su superpoder. La distancia de una esquina a la opuesta es idéntica en ambas direcciones. ($AC = BD$).
+Un paralelogramo con **cuatro ángulos de $90^\circ$**. Su superpoder son las **diagonales iguales** ($AC = BD$).
+
+![Propiedades del Rectángulo](/illustrations/geometria/cuadrilateros/rectangulo-propiedades.svg)
+
+#### Ejemplo 1: Verificación de Propiedades
+Si en un cuadrilátero las diagonales miden 10 cm cada una y sus lados opuestos son paralelos, ¿qué figura es?
+
+![Verificación de Rectángulo](/illustrations/geometria/cuadrilateros/ejemplo-rectangulo-verificacion.svg)
+
+**Resultado:** Es un **rectángulo**.
+
+---
 
 ### Fórmula de la Diagonal
-Como forma dos triángulos rectángulos, usamos Pitágoras:
+
+Como el rectángulo forma dos triángulos rectángulos al trazar la diagonal, usamos el Teorema de Pitágoras:
 
 $$
 d = \sqrt{b^2 + h^2}
 $$
 
----
+![Fórmula de la diagonal del rectángulo](/illustrations/geometria/cuadrilateros/rectangulo-diagonal-formula.svg)
 
-## 🔶 El Rombo
-
-Es el paralelogramo de los **lados iguales**. Imagina un cuadrado que ha sido "empujado" o inclinado.
-
-### Definición
-Paralelogramo con **cuatro lados iguales**.
-
-### Propiedades Clave
-1.  Lados idénticos ($AB=BC=CD=DA$).
-2.  **Diagonales Perpendiculares:** Se cruzan formando una cruz perfecta ($90^\circ$).
-3.  **Diagonales Bisectrices:** Cada diagonal parte a los ángulos de las esquinas por la mitad.
-
-### Área del Rombo
-Aunque $b \cdot h$ funciona, es más común usar sus diagonales ($D$ mayor y $d$ menor):
-
-$$
-\text{Área} = \frac{D \cdot d}{2}
-$$
-
----
-
-## 🔲 El Cuadrado
-
-Es la figura perfecta. Tiene lo mejor de los dos mundos.
-
-### Definición
-Es un **Rectángulo** (ángulos rectos) y a la vez un **Rombo** (lados iguales).
-
-### Propiedades Clave
-1.  4 lados iguales.
-2.  4 ángulos de $90^\circ$.
-3.  Diagonales iguales Y perpendiculares.
-
-### Diagonal del Cuadrado
-Si el lado es $l$:
-
-$$
-d = l\sqrt{2}
-$$
-
----
-
-## ⚙️ Ejemplos Resueltos
-
-### Ejemplo 1: Diagonal de un Rectángulo
+#### Ejemplo 2: La Puerta de Entrada
 
 Una puerta mide $2$ m de alto y $1$ m de ancho. ¿Cuánto mide su diagonal?
 
+Usaremos el Teorema de Pitágoras sobre el rectángulo que forma la puerta.
+
+![Diagonal de la Puerta](/illustrations/geometria/cuadrilateros/ejemplo-puerta.svg)
+
 **Razonamiento:**
-Usamos Pitágoras.
 
+Usamos Pitágoras: 
 $$
-d = \sqrt{2^2 + 1^2}
-$$
-
-$$
-d = \sqrt{4+1}
+d = \sqrt{2^2 + 1^2} = \sqrt{4+1}
 $$
 
 **Resultado:**
@@ -100,19 +65,57 @@ $$
 
 ---
 
-### Ejemplo 2: Área de un Rombo
+## 🔶 El Rombo
+
+Es el paralelogramo de los **lados iguales**. Imagina un cuadrado que ha sido "empujado" o inclinado.
+
+### Definición y Propiedades Clave
+
+Paralelogramo con **cuatro lados iguales** ($AB=BC=CD=DA$). Sus diagonales son **perpendiculares** y funcionan como **bisectrices**.
+
+![Propiedades del Rombo](/illustrations/geometria/cuadrilateros/rombo-propiedades.svg)
+
+#### Ejemplo 3: El Perímetro del Rombo
+
+Si un lado de un rombo mide 5 cm, ¿cuánto mide su perímetro?
+
+Como en un rombo todos los lados son iguales, multiplicamos por 4.
+
+![Perímetro del Rombo](/illustrations/geometria/cuadrilateros/ejemplo-rombo-perimetro.svg)
+
+**Razonamiento:**
+
+Como en un rombo todos los lados son iguales:
+$$
+P = 5 \times 4 = 20
+$$
+
+**Resultado:** $\boxed{20 \text{ cm}}$
+
+---
+
+### Área del Rombo
+
+Es más común calcular el área usando sus diagonales ($D$ mayor y $d$ menor):
+
+$$
+\text{Área} = \frac{D \cdot d}{2}
+$$
+
+![Fórmula del área del rombo](/illustrations/geometria/cuadrilateros/rombo-area-formula.svg)
+
+#### Ejemplo 4: Cálculo del Área
 
 Un rombo tiene diagonales de $10$ cm y $6$ cm. Calcula su área.
 
+Aplicaremos la fórmula del área basada en las diagonales.
+
+![Área del Rombo](/illustrations/geometria/cuadrilateros/ejemplo-area-rombo.svg)
+
 **Razonamiento:**
-Usamos la fórmula de las diagonales.
 
 $$
-A = \frac{10 \cdot 6}{2}
-$$
-
-$$
-A = \frac{60}{2}
+A = \frac{10 \cdot 6}{2} = \frac{60}{2}
 $$
 
 **Resultado:**
@@ -120,7 +123,50 @@ $$
 \boxed{30 \text{ cm}^2}
 $$
 
+## ⬜ El Cuadrado
+
+Es la figura perfecta. Es un **Rectángulo** (ángulos rectos) y un **Rombo** (lados iguales) a la vez.
+
+![El Cuadrado: Perfección](/illustrations/geometria/cuadrilateros/cuadrado-perfeccion.svg)
+
+#### Ejemplo 5: Simetría Total
+¿Por qué el cuadrado es el más simétrico? Porque sus diagonales son **iguales** y **perpendiculares**.
+
+![Simetría del Cuadrado](/illustrations/geometria/cuadrilateros/ejemplo-cuadrado-simetria.svg)
+
 ---
+
+### Diagonal del Cuadrado
+
+Por Pitágoras, si el lado es $l$, la diagonal siempre sigue esta relación:
+
+$$
+d = l\sqrt{2}
+$$
+
+![Fórmula de la diagonal del cuadrado](/illustrations/geometria/cuadrilateros/cuadrado-diagonal-formula.svg)
+
+#### Ejemplo 6: Aplicación Directa
+
+Halla la diagonal de un cuadrado que tiene un lado de $5$ cm.
+
+Utilizaremos la relación directa entre el lado y la diagonal del cuadrado ($l\sqrt{2}$).
+
+![Ejemplo de diagonal del cuadrado](/illustrations/geometria/cuadrilateros/ejemplo-diagonal-cuadrado.svg)
+
+**Razonamiento:**
+
+$$
+d = 5\sqrt{2} \approx 7.07
+$$
+
+**Resultado:**
+$$
+\boxed{5\sqrt{2} \approx 7.07 \text{ cm}}
+$$
+
+---
+
 
 ## 📝 Ejercicios de Práctica
 
@@ -243,6 +289,9 @@ Halla el lado de un rombo si sus diagonales miden 6 y 8.
 
 **Razonamiento:**
 Las semidiagonales son 3 y 4.
+
+![Lado del Rombo](/illustrations/geometria/cuadrilateros/ejercicio-rombo-pitagoras.svg)
+
 El lado es la hipotenusa.
 Usamos Pitágoras: $\sqrt{3^2 + 4^2}$.
 

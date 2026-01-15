@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 460" style="font-family: Inter, system-ui, sans-serif;">
+<rect width="600" height="460" fill="#f8fafc" />
+<path d="M 125.00 230.00 L 265.00 125.00 L 475.00 230.00 L 370.00 370.00 Z" fill="none" fill-opacity="0.1" stroke="#3b82f6" stroke-width="3" stroke-linejoin="round"/>
+<text x="105.00" y="240.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">A</text>
+<text x="265.00" y="105.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">B</text>
+<text x="495.00" y="240.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">C</text>
+<text x="370.00" y="390.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">D</text>
+<line x1="125.0" y1="230.0" x2="475.0" y2="230.0" stroke="#1e293b" stroke-width="3"/>
+<text x="300.00" y="250.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Diagonal = 10</text>
+<line x1="265.0" y1="125.0" x2="265.0" y2="230.0" stroke="#ef4444" stroke-dasharray="3,3"/>
+<path d="M 265.00 218.00 L 277.00 218.00 L 277.00 230.00" fill="none" stroke="#ef4444" stroke-width="2"/>
+<text x="235.00" y="177.50" font-family="sans-serif" font-size="18" font-weight="bold" fill="#ef4444" text-anchor="middle" dominant-baseline="middle">h₁=3</text>
+<line x1="370.0" y1="370.0" x2="370.0" y2="230.0" stroke="#ef4444" stroke-dasharray="3,3"/>
+<path d="M 370.00 242.00 L 358.00 242.00 L 358.00 230.00" fill="none" stroke="#ef4444" stroke-width="2"/>
+<text x="400.00" y="300.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#ef4444" text-anchor="middle" dominant-baseline="middle">h₂=4</text>
+<text x="300.00" y="430.00" font-family="sans-serif" font-size="20" font-weight="bold" fill="#22c55e" text-anchor="middle" dominant-baseline="middle">A = (10 × 3)/2 + (10 × 4)/2 = 35</text>
+<text x="300.00" y="35.00" font-family="sans-serif" font-size="22" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Ejercicio: Triangulación</text>
+</svg>

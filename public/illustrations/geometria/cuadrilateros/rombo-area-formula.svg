@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 460" style="font-family: Inter, system-ui, sans-serif;">
+<rect width="600" height="460" fill="#f8fafc" />
+<path d="M 150.0 230.0 L 300.0 320.0 L 450.0 230.0 L 300.0 140.0 Z" fill="none" fill-opacity="0.1" stroke="#22c55e" stroke-width="3"/>
+<line x1="150.0" y1="230.0" x2="450.0" y2="230.0" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="4,4"/>
+<line x1="300.0" y1="320.0" x2="300.0" y2="140.0" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="4,4"/>
+<text x="130.00" y="230.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">A</text>
+<text x="300.00" y="340.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">B</text>
+<text x="470.00" y="230.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">C</text>
+<text x="300.00" y="120.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">D</text>
+<path d="M 300.0 215.0 L 315.0 215.0 L 315.0 230.0" fill="none" stroke="#ef4444" stroke-width="2"/>
+<line x1="150.0" y1="350.0" x2="450.0" y2="350.0" stroke="#1e293b" stroke-width="1.5"/>
+<line x1="150.0" y1="345.0" x2="150.0" y2="355.0" stroke="#1e293b" stroke-width="1.5"/>
+<line x1="450.0" y1="345.0" x2="450.0" y2="355.0" stroke="#1e293b" stroke-width="1.5"/>
+<line x1="150.0" y1="230.0" x2="150.0" y2="350.0" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="2,2"/>
+<line x1="450.0" y1="230.0" x2="450.0" y2="350.0" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="2,2"/>
+<text x="300.00" y="370.00" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Diagonal Mayor (D)</text>
+<line x1="480.0" y1="140.0" x2="480.0" y2="320.0" stroke="#1e293b" stroke-width="1.5"/>
+<line x1="475.0" y1="140.0" x2="485.0" y2="140.0" stroke="#1e293b" stroke-width="1.5"/>
+<line x1="475.0" y1="320.0" x2="485.0" y2="320.0" stroke="#1e293b" stroke-width="1.5"/>
+<line x1="300.0" y1="140.0" x2="480.0" y2="140.0" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="2,2"/>
+<line x1="300.0" y1="320.0" x2="480.0" y2="320.0" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="2,2"/>
+<text x="500.0" y="230.0" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle" transform="rotate(-90 500.0 230.0)">Diagonal Menor (d)</text>
+<rect x="210.0" y="390.0" width="180" height="50" rx="8" fill="#fef3c7" stroke="#e2e8f0"/>
+<text x="300.00" y="415.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Área = (D · d) / 2</text>
+<text x="300.00" y="35.00" font-family="sans-serif" font-size="22" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Fórmula del Área del Rombo</text>
+</svg>

@@ -1,0 +1,61 @@
+{
+    "tipo": "triangulo-rectangulo",
+    "titulo": "Tangente cuando θ = 45°",
+    "canvas": {
+        "width": 400,
+        "height": 320,
+        "padding": 40
+    },
+    "vertices": {
+        "A": [
+            60,
+            260
+        ],
+        "B": [
+            260,
+            260
+        ],
+        "C": [
+            260,
+            60
+        ]
+    },
+    "angulos": {
+        "A": {
+            "tipo": "agudo",
+            "etiqueta": "45°",
+            "color": "#8b5cf6",
+            "radio": 40
+        },
+        "B": {
+            "tipo": "recto"
+        }
+    },
+    "lados": {
+        "AB": {
+            "texto": "Adyacente = 1",
+            "color": "#22c55e"
+        },
+        "BC": {
+            "texto": "Opuesto = 1",
+            "color": "#ef4444"
+        }
+    },
+    "offset_etiquetas": 25,
+    "info_box": {
+        "x": 280,
+        "y": 100,
+        "width": 100,
+        "titulo": "RESULTADO",
+        "lineas": [
+            {
+                "texto": "tan 45° = 1/1",
+                "color": "#f59e0b"
+            },
+            {
+                "texto": "tan 45° = 1",
+                "color": "#1e293b"
+            }
+        ]
+    }
+}

@@ -1,0 +1,61 @@
+{
+    "tipo": "triangulo-rectangulo",
+    "titulo": "Coseno cuando θ ≈ 0°",
+    "canvas": {
+        "width": 500,
+        "height": 200,
+        "padding": 40
+    },
+    "vertices": {
+        "A": [
+            60,
+            150
+        ],
+        "B": [
+            400,
+            150
+        ],
+        "C": [
+            400,
+            130
+        ]
+    },
+    "angulos": {
+        "A": {
+            "tipo": "agudo",
+            "etiqueta": "θ ≈ 0°",
+            "color": "#8b5cf6",
+            "radio": 40
+        },
+        "B": {
+            "tipo": "recto"
+        }
+    },
+    "lados": {
+        "AB": {
+            "texto": "Adyacente = Hip",
+            "color": "#22c55e"
+        },
+        "AC": {
+            "texto": "Hipotenusa",
+            "color": "#3b82f6"
+        }
+    },
+    "offset_etiquetas": 25,
+    "info_box": {
+        "x": 60,
+        "y": 40,
+        "width": 180,
+        "titulo": "OBSERVA",
+        "lineas": [
+            {
+                "texto": "El adyacente iguala",
+                "color": "#1e293b"
+            },
+            {
+                "texto": "la hipotenusa → cos = 1",
+                "color": "#22c55e"
+            }
+        ]
+    }
+}

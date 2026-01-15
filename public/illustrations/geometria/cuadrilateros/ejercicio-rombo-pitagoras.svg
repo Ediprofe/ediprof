@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 460" style="font-family: Inter, system-ui, sans-serif;">
+<rect width="600" height="460" fill="#f8fafc" />
+<path d="M 140.0 230.0 L 300.0 110.0 L 460.0 230.0 L 300.0 350.0 Z" fill="none" fill-opacity="0.1" stroke="#1e293b" stroke-width="3"/>
+<path d="M 140.00 230.00 L 300.00 230.00 L 300.00 350.00 Z" fill="#ef4444" fill-opacity="0.2" stroke="#ef4444" stroke-width="2.5" stroke-linejoin="round"/>
+<line x1="140.0" y1="230.0" x2="460.0" y2="230.0" stroke="#e2e8f0" stroke-dasharray="2,2"/>
+<line x1="300.0" y1="110.0" x2="300.0" y2="350.0" stroke="#e2e8f0" stroke-dasharray="2,2"/>
+<path d="M 285.0 230.0 L 285.0 245.0 L 300.0 245.0" fill="none" stroke="#ef4444" stroke-width="2"/>
+<text x="220.00" y="210.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">D/2 = 4</text>
+<text x="345.00" y="290.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">d/2 = 3</text>
+<text x="190.00" y="315.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#ef4444" text-anchor="middle" dominant-baseline="middle">Lado = ?</text>
+<text x="300.00" y="390.00" font-family="sans-serif" font-size="20" font-weight="bold" fill="#ef4444" text-anchor="middle" dominant-baseline="middle">Side = √(3² + 4²) = 5</text>
+<text x="300.00" y="35.00" font-family="sans-serif" font-size="22" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Ejercicio: Lado del Rombo</text>
+</svg>

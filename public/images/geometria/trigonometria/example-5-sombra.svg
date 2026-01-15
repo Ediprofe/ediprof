@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" style="font-family: Inter, system-ui, sans-serif;">
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+<rect width="600" height="400" fill="#ffffff"/>
+  <text x="300.0" y="25" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">Ejemplo 5: La Sombra</text>
+  <polygon points="80.0,320.0 380.0,320.0 380.0,180.0" fill="#f8fafc" stroke="#1e293b" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="80.0" cy="320.0" r="5" fill="#1e293b"/>
+  <circle cx="380.0" cy="320.0" r="5" fill="#1e293b"/>
+  <circle cx="380.0" cy="180.0" r="5" fill="#1e293b"/>
+  <path d="M 120.0 320.0 A 40 40 0 0 0 116.2 303.1" fill="none" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="133.7" y="308.1" text-anchor="middle" dominant-baseline="middle" font-size="18" font-weight="bold" fill="#8b5cf6">θ</text>
+  <path d="M 362.0 320.0 L 362.0 302.0 L 380.0 302.0" fill="none" stroke="#64748b" stroke-width="2"/>
+  <rect x="178.0" y="340.0" width="104" height="24" rx="4" ry="4" fill="#ffffff" filter="url(#shadow)"/>
+  <text x="230.0" y="352.0" text-anchor="middle" dominant-baseline="middle" font-size="13" font-weight="bold" fill="#22c55e">12 (Sombra)</text>
+  <rect x="368.0" y="238.0" width="88" height="24" rx="4" ry="4" fill="#ffffff" filter="url(#shadow)"/>
+  <text x="412.0" y="250.0" text-anchor="middle" dominant-baseline="middle" font-size="13" font-weight="bold" fill="#ef4444">5 (Poste)</text>
+  <rect x="144.5" y="209.0" width="144" height="24" rx="4" ry="4" fill="#ffffff" filter="url(#shadow)"/>
+  <text x="216.5" y="221.0" text-anchor="middle" dominant-baseline="middle" font-size="13" font-weight="bold" fill="#3b82f6">13 (Rayo de sol)</text>
+  <rect x="380" y="60" width="180" height="101" rx="8" ry="8" fill="#e2e8f0" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="470.0" y="78" text-anchor="middle" font-size="11" font-weight="bold" fill="#475569">VISTA DESDE THETA (θ)</text>
+  <text x="390" y="98" font-size="12" fill="#3b82f6">Hipotenusa = 13</text>
+  <text x="390" y="120" font-size="12" fill="#22c55e">Cat. Adyacente = 12</text>
+  <text x="390" y="142" font-size="12" fill="#ef4444">Cat. Opuesto = 5</text>
+</svg>

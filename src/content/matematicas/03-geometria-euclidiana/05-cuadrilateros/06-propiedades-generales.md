@@ -23,6 +23,8 @@ De ahí, se dividen según el paralelismo:
 2.  **Un solo par paralelo:** Trapecio.
 3.  **Dos pares paralelos:** Paralelogramo.
 
+![Jerarquía de Cuadriláteros](/illustrations/geometria/cuadrilateros/jerarquia-cuadrilateros.svg)
+
 Dentro de los **Paralelogramos** hay una élite:
 -   Si tiene **Ángulos Rectos** $\rightarrow$ Rectángulo.
 -   Si tiene **Lados Iguales** $\rightarrow$ Rombo.
@@ -58,6 +60,8 @@ Dentro de los **Paralelogramos** hay una élite:
 | **Trapecio** | $A = \frac{B+b}{2} \cdot h$ | Suma de lados |
 | **Deltoide** | $A = \frac{D \cdot d}{2}$ | $2a + 2b$ |
 
+![Mapa de Fórmulas de Área](/illustrations/geometria/cuadrilateros/mapa-areas.svg)
+
 ---
 
 ## ⚙️ Ejemplos Resueltos
@@ -65,20 +69,50 @@ Dentro de los **Paralelogramos** hay una élite:
 ### Ejemplo 1: Identificación
 
 "Tengo diagonales iguales que se cortan en el punto medio, pero mis lados consecutivos son diferentes". ¿Quién soy?
-*   Diagonales se bisecan = Paralelogramo.
-*   Diagonales iguales = Rectángulo o Cuadrado.
-*   Lados diferentes = No soy cuadrado.
-*   **Soy un Rectángulo.**
+
+Analizaremos las propiedades de las diagonales para identificar la figura.
+
+![Identificación de Rectángulo](/illustrations/geometria/cuadrilateros/identificacion-rectangulo.svg)
+
+**Razonamiento:**
+
+*   **Diagonales se bisecan:** Significa que se cortan en su punto medio, lo que garantiza que es un **paralelogramo**.
+*   **Diagonales iguales:** En los paralelogramos, esto ocurre solo en el **rectángulo** y el **cuadrado**.
+*   **Lados consecutivos diferentes:** Descarta al cuadrado (que tiene los 4 lados iguales).
+
+**Resultado:**
+$$
+\boxed{\text{Rectángulo}}
+$$
 
 ### Ejemplo 2: Cálculo Mixto
 
 Un trapecio isósceles tiene bases de 10 y 20, y altura de 12. Calcula su perímetro.
-*   Diferencia bases: $10$. Como es isósceles, 5 de sobra a cada lado.
-*   Triángulo rectángulo: Cateto base 5, cateto altura 12.
-*   Hipotenusa (lado lateral): $\sqrt{5^2 + 12^2} = 13$.
-*   Perímetro: $20 + 10 + 13 + 13 = 56$.
 
-**Resultado:** $\boxed{56}$
+Utilizaremos el Teorema de Pitágoras para hallar el lado lateral faltante.
+
+![Perímetro de Trapecio Isósceles](/illustrations/geometria/cuadrilateros/perimetro-isosceles-calculo.svg)
+
+**Razonamiento:**
+
+1.  **Diferencia de bases:** $20 - 10 = 10$. Como es isósceles, esa diferencia se reparte en dos segmentos de 5 a cada lado.
+2.  **Triángulo rectángulo:** Se forma un triángulo de catetos 5 (base) y 12 (altura).
+3.  **Hipotenusa ($L$):** Calculamos el lado lateral usando Pitágoras:
+
+$$
+L = \sqrt{5^2 + 12^2} = \sqrt{25 + 144} = \sqrt{169} = 13
+$$
+
+4.  **Perímetro:** Sumamos los cuatro lados ($B + b + 2L$):
+
+$$
+P = 10 + 20 + 13 + 13
+$$
+
+**Resultado:**
+$$
+\boxed{56}
+$$
 
 ---
 

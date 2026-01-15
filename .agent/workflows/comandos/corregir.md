@@ -49,6 +49,35 @@ globs: ["src/content/**/*.md"]
 - [ ] Resultados con `\boxed{}`
 - [ ] **TODAS las ecuaciones en bloque** `$$...$$` con líneas vacías
 
+### 📐 Verificar Flujo Visual en Ejemplos
+
+> [!IMPORTANT]
+> **En ejemplos con ilustración, la imagen va ANTES de los cálculos.**
+> La ilustración da CONTEXTO, los cálculos desarrollan la solución.
+
+**Patrón obligatorio:**
+```markdown
+#### Ejemplo N: Título
+
+[Enunciado del problema]
+[Idea clave (1 línea)]
+
+<div class="illustration">
+  <img src="..." alt="..." />
+</div>
+
+**Razonamiento:**
+[Desarrollo paso a paso con $$...$$]
+
+**Resultado:**
+$$
+\boxed{...}
+$$
+```
+
+❌ **NUNCA** poner cálculos antes de la ilustración.
+❌ **NUNCA** agrupar ilustraciones al final.
+
 ---
 
 ## ✅ Paso 4: Corregir Directamente

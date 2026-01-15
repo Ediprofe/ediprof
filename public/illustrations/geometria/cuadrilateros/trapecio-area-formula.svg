@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 460" style="font-family: Inter, system-ui, sans-serif;">
+<rect width="600" height="460" fill="#f8fafc" />
+<path d="M 150.00 305.00 L 450.00 305.00 L 380.00 155.00 L 220.00 155.00 Z" fill="#3b82f6" fill-opacity="0.1" stroke="#3b82f6" stroke-width="3" stroke-linejoin="round"/>
+<text x="300.00" y="330.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Base Mayor (B)</text>
+<text x="300.00" y="130.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Base Menor (b)</text>
+<line x1="220.0" y1="155.0" x2="220.0" y2="305.0" stroke="#ef4444" stroke-width="2" stroke-dasharray="4,4"/>
+<text x="200.00" y="230.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#ef4444" text-anchor="middle" dominant-baseline="middle">h</text>
+<rect x="190.0" y="365.0" width="220" height="50" rx="10" fill="#fef3c7" stroke="#e2e8f0"/>
+<text x="300.00" y="390.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Área = [(B+b)/2] · h</text>
+<text x="300.00" y="35.00" font-family="sans-serif" font-size="22" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Fórmula del Área del Trapecio</text>
+</svg>

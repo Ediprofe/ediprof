@@ -1,0 +1,49 @@
+{
+    "tipo": "triangulo-rectangulo",
+    "titulo": "Concepto de Razón: Comparar Lados",
+    "canvas": {
+        "width": 500,
+        "height": 300,
+        "padding": 40
+    },
+    "vertices": {
+        "A": [
+            60,
+            240
+        ],
+        "B": [
+            260,
+            240
+        ],
+        "C": [
+            260,
+            80
+        ]
+    },
+    "angulos": {
+        "A": {
+            "tipo": "agudo",
+            "etiqueta": "θ",
+            "color": "#8b5cf6",
+            "radio": 35
+        },
+        "B": {
+            "tipo": "recto"
+        }
+    },
+    "lados": {
+        "AB": {
+            "texto": "4",
+            "color": "#22c55e"
+        },
+        "BC": {
+            "texto": "3",
+            "color": "#ef4444"
+        },
+        "AC": {
+            "texto": "5",
+            "color": "#3b82f6"
+        }
+    },
+    "offset_etiquetas": 30
+}

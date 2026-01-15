@@ -25,6 +25,54 @@ Debe existir un plan aprobado de `/plan-ilustraciones`.
 
 ## 📋 Proceso
 
+### Paso 0: Verificar Estructura de Integración
+
+> ⛔ **ANTES de generar cualquier SVG, confirmar la ubicación en el markdown:**
+
+| Tipo | Ubicación Correcta |
+|------|-------------------|
+| Ilustración Teórica | **Inmediatamente después** de su explicación |
+| Ilustración de Ejemplo | **Después del enunciado**, **ANTES** de los cálculos |
+
+> [!IMPORTANT]  
+> **Flujo obligatorio para ejemplos:**
+> 1. Enunciado + idea clave (1-2 líneas)
+> 2. **Ilustración** (contexto visual)
+> 3. Razonamiento con cálculos `$$...$$`
+> 4. Resultado `\boxed{}`
+
+❌ **NUNCA** poner cálculos antes de la ilustración que da contexto.
+❌ **NUNCA** agrupar ilustraciones al final de una sección.
+✅ **SIEMPRE** generar e integrar una por una en orden de aparición.
+
+---
+
+### Paso 0.5: Verificar Correspondencia con el Texto
+
+> 📝 **La ilustración debe ser AUTO-EXPLICATIVA usando la notación del texto.**
+
+**Reglas:**
+1. Usar los **mismos símbolos** que el texto (si dice $AC = BD$, la figura debe etiquetar $A$, $B$, $C$, $D$).
+2. Incluir **fórmulas clave** dentro de la ilustración si aplica (ej: cálculo de área con valores).
+3. Mostrar **propiedades mencionadas** (si dice "diagonales perpendiculares", marcar el ángulo de $90°$).
+4. Los **valores numéricos** de los ejemplos deben aparecer como etiquetas en la figura.
+
+> La ilustración debe poder entenderse **sin leer el texto**, porque incluye toda la notación relevante.
+
+---
+
+### Paso 0.6: Verificar Legibilidad Visual
+
+> 👁️ **Validar que las etiquetas no se solapen ni se salgan del canvas.**
+
+Antes de finalizar cada SVG:
+1. **Etiquetas verticales** → usar `transform="rotate(-90)"`
+2. **Dimensiones** → líneas de cota FUERA de la figura
+3. **Vértices** → offset mínimo 20px desde el punto
+4. **Verificación visual** → revisar que nada se solapa ni se corta
+
+---
+
 ### Paso 1: Verificar renderer existente
 
 ```bash

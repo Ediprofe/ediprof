@@ -23,84 +23,50 @@ Un **trapecio** es un cuadrilátero que tiene **exactamente un par** de lados pa
 2.  **Lados Laterales:** Son los dos lados **no** paralelos.
 3.  **Altura ($h$):** Es la distancia perpendicular que separa a las dos bases.
 
+![Anatomía del Trapecio](/illustrations/geometria/cuadrilateros/trapecio-anatomia.svg)
+
 ---
 
 ## 🔄 Tipos de Trapecios
 
 ### 1. Trapecio Isósceles
-Sus lados laterales (las "piernas") son iguales. Es perfectamente simétrico.
--   Sus ángulos basales son iguales.
--   Sus diagonales son iguales.
+Sus lados laterales tienen la **misma longitud**. Como resultado:
+-   Es **simétrico** respecto a un eje vertical.
+-   Los **ángulos de cada base son iguales** entre sí.
+-   Sus **diagonales son iguales**.
 
-### 2. Trapecio Rectángulo
-Uno de sus lados laterales es perpendicular a las bases.
--   Tiene **dos ángulos rectos** ($90^\circ$).
+![Trapecio Isósceles](/illustrations/geometria/cuadrilateros/trapecio-isosceles.svg)
 
-### 3. Trapecio Escaleno
-Sus lados laterales son de diferente longitud y no tiene ángulos rectos.
+#### Ejemplo 1: Ángulos en Trapecio Isósceles
+Si un ángulo de la base de un trapecio isósceles mide $75^\circ$, ¿cuánto mide el otro ángulo de la misma base?
 
----
+Por la simetría del trapecio isósceles, los ángulos de la misma base son iguales.
 
-## 📏 Propiedades Importantes
-
-### 1. Ángulos Conjugados
-Los ángulos que están sobre el mismo lado lateral suman $180^\circ$ (porque son internos entre paralelas).
-
-$$
-\alpha + \delta = 180^\circ \quad \text{y} \quad \beta + \gamma = 180^\circ
-$$
-
-### 2. Base Media ($m$)
-Es el segmento que une los puntos medios de los lados laterales. Su longitud es el promedio de las bases.
-
-$$
-m = \frac{B + b}{2}
-$$
-
-### 3. Área ($A$)
-Multiplica el promedio de las bases (base media) por la altura.
-
-$$
-A = \frac{B + b}{2} \cdot h
-$$
-
----
-
-## ⚙️ Ejemplos Resueltos
-
-### Ejemplo 1: Cálculo del Área
-
-Un trapecio tiene base mayor 10 cm, base menor 6 cm y altura 4 cm. Calcula su área.
-
-**Razonamiento:**
-Usamos la fórmula del área.
-
-$$
-A = \frac{10 + 6}{2} \cdot 4
-$$
-
-$$
-A = \frac{16}{2} \cdot 4
-$$
-
-$$
-A = 8 \cdot 4
-$$
+![Ejemplo de Ángulos en Trapecio Isósceles](/illustrations/geometria/cuadrilateros/trapecio-ejemplo-isosceles.svg)
 
 **Resultado:**
 $$
-\boxed{32 \text{ cm}^2}
+\boxed{75^\circ}
 $$
 
 ---
 
-### Ejemplo 2: Ángulos en Trapecio Rectángulo
+### 2. Trapecio Rectángulo
+Uno de sus lados laterales es **perpendicular** a las bases.
+-   Tiene **dos ángulos rectos** ($90^\circ$) sobre el lado perpendicular.
+-   Los otros dos ángulos son **conjugados** (suman $180^\circ$).
+
+![Trapecio Rectángulo](/illustrations/geometria/cuadrilateros/trapecio-rectangulo.svg)
+
+#### Ejemplo 2: Ángulos en Trapecio Rectángulo
 
 En un trapecio rectángulo, un ángulo agudo mide $50^\circ$. ¿Cuánto mide su ángulo obtuso adyacente?
 
+Los ángulos no rectos están sobre el lado inclinado y son conjugados (suman $180^\circ$).
+
+![Ejemplo de Ángulos en Trapecio Rectángulo](/illustrations/geometria/cuadrilateros/trapecio-ejemplo-angulos.svg)
+
 **Razonamiento:**
-Sabemos que tienen dos ángulos de $90^\circ$.
-Los otros dos deben sumar $180^\circ$ (por ser conjugados internos).
 
 $$
 x + 50^\circ = 180^\circ
@@ -114,6 +80,118 @@ $$
 $$
 \boxed{130^\circ}
 $$
+
+
+### 3. Trapecio Escaleno
+Sus lados laterales son de diferente longitud y no tiene ángulos rectos. Es el trapecio más común e irregular.
+
+![Trapecio Escaleno](/illustrations/geometria/cuadrilateros/trapecio-escaleno.svg)
+
+#### Ejemplo 3: Identificación
+En un trapecio escaleno, si un lado lateral mide 5 cm y el otro 8 cm, ¿pueden ser iguales sus ángulos basales?
+
+![Ejemplo de Trapecio Escaleno](/illustrations/geometria/cuadrilateros/trapecio-ejemplo-identificacion.svg)
+
+**Resultado:** **No**, ya que no tiene simetría lateral.
+
+---
+
+---
+
+## 📏 Propiedades Importantes
+
+### 1. Ángulos Conjugados
+Los ángulos que están sobre el mismo lado lateral siempre suman $180^\circ$ porque las bases son paralelas.
+
+$$
+\alpha + \delta = 180^\circ
+$$
+
+![Ángulos Conjugados en el Trapecio](/illustrations/geometria/cuadrilateros/trapecio-angulos-conjugados.svg)
+
+#### Ejemplo 4: Hallar el Ángulo Suplementario
+Si el ángulo inferior de un lado lateral mide $110^\circ$, ¿cuánto mide el superior?
+
+Los ángulos sobre un mismo lado son conjugados (suman $180^\circ$).
+
+![Ejemplo de Ángulos Conjugados](/illustrations/geometria/cuadrilateros/trapecio-ejemplo-conjugados.svg)
+
+**Razonamiento:**
+
+$$
+x = 180^\circ - 110^\circ = 70^\circ
+$$
+
+**Resultado:**
+$$
+\boxed{70^\circ}
+$$
+
+
+---
+
+### 2. Base Media o Mediana ($m$)
+Es el segmento que une los puntos medios de los lados laterales. Su longitud es exactamente el promedio de las dos bases.
+
+$$
+m = \frac{B + b}{2}
+$$
+
+![Base Media del Trapecio](/illustrations/geometria/cuadrilateros/trapecio-base-media.svg)
+
+#### Ejemplo 5: Cálculo de la Mediana
+Un trapecio tiene bases de 25 cm y 15 cm. ¿Cuál es su base media?
+
+Aplicamos la fórmula de la base media.
+
+![Ejemplo de Base Media](/illustrations/geometria/cuadrilateros/trapecio-ejemplo-base-media.svg)
+
+**Razonamiento:**
+
+$$
+m = \frac{25 + 15}{2} = \frac{40}{2} = 20
+$$
+
+**Resultado:**
+$$
+\boxed{20 \text{ cm}}
+$$
+
+
+---
+
+### 3. Área ($A$)
+El área es el producto de la base media por la altura. Es como convertir el trapecio en un rectángulo equivalente.
+
+$$
+A = \frac{B + b}{2} \cdot h
+$$
+
+![Fórmula del Área del Trapecio](/illustrations/geometria/cuadrilateros/trapecio-area-formula.svg)
+
+#### Ejemplo 6: Cálculo del Área
+
+Un trapecio tiene base mayor 10 cm, base menor 6 cm y altura 4 cm. Calcula su área.
+
+Usamos la fórmula del área del trapecio.
+
+![Cálculo de Área de un Trapecio](/illustrations/geometria/cuadrilateros/trapecio-ejemplo-area.svg)
+
+**Razonamiento:**
+
+$$
+A = \frac{10 + 6}{2} \cdot 4
+$$
+
+$$
+A = \frac{16}{2} \cdot 4 = 8 \cdot 4
+$$
+
+**Resultado:**
+$$
+\boxed{32 \text{ cm}^2}
+$$
+
 
 ---
 
@@ -215,6 +293,9 @@ Calcula el perímetro de un trapecio isósceles con bases 4 y 10, y altura 4.
 **Razonamiento:**
 La diferencia de bases es $10-4=6$.
 Como es isósceles, sobra 3 a cada lado.
+
+![Teorema de Pitágoras en Trapecio](/illustrations/geometria/cuadrilateros/trapecio-ejercicio-pitagoras.svg)
+
 Se forma un triángulo rectángulo de catetos 3 y 4 (altura).
 Hipotenusa (lado lateral) = 5 (Terna 3-4-5).
 Perímetro = $10 + 4 + 5 + 5$.

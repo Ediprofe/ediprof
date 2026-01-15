@@ -1,0 +1,61 @@
+{
+    "tipo": "triangulo-rectangulo",
+    "titulo": "Coseno cuando θ = 90°",
+    "canvas": {
+        "width": 300,
+        "height": 350,
+        "padding": 40
+    },
+    "vertices": {
+        "A": [
+            60,
+            300
+        ],
+        "B": [
+            80,
+            300
+        ],
+        "C": [
+            80,
+            60
+        ]
+    },
+    "angulos": {
+        "A": {
+            "tipo": "agudo",
+            "etiqueta": "θ → 90°",
+            "color": "#8b5cf6",
+            "radio": 30
+        },
+        "B": {
+            "tipo": "recto"
+        }
+    },
+    "lados": {
+        "AB": {
+            "texto": "Adyacente ≈ 0",
+            "color": "#22c55e"
+        },
+        "AC": {
+            "texto": "Hipotenusa",
+            "color": "#3b82f6"
+        }
+    },
+    "offset_etiquetas": 25,
+    "info_box": {
+        "x": 120,
+        "y": 100,
+        "width": 160,
+        "titulo": "OBSERVA",
+        "lineas": [
+            {
+                "texto": "El adyacente casi",
+                "color": "#1e293b"
+            },
+            {
+                "texto": "desaparece → cos ≈ 0",
+                "color": "#22c55e"
+            }
+        ]
+    }
+}

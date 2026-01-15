@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 460" style="font-family: Inter, system-ui, sans-serif;">
+<rect width="600" height="460" fill="#f8fafc" />
+<path d="M 150.00 180.00 L 285.00 90.00 L 450.00 180.00 Z" fill="#bfdbfe" fill-opacity="0.2" stroke="#3b82f6" stroke-width="2.5" stroke-linejoin="round"/>
+<path d="M 150.00 180.00 L 450.00 180.00 L 345.00 300.00 Z" fill="#bbf7d0" fill-opacity="0.2" stroke="#22c55e" stroke-width="2.5" stroke-linejoin="round"/>
+<text x="125.00" y="180.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">A</text>
+<text x="285.00" y="70.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">B</text>
+<text x="475.00" y="180.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">C</text>
+<text x="345.00" y="320.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">D</text>
+<line x1="150.0" y1="180.0" x2="450.0" y2="180.0" stroke="#1e293b" stroke-width="3"/>
+<text x="300.00" y="200.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">d = 10</text>
+<line x1="285.0" y1="90.0" x2="285.0" y2="180.0" stroke="#ef4444" stroke-width="2" stroke-dasharray="3,3"/>
+<path d="M 285.00 165.00 L 300.00 165.00 L 300.00 180.00" fill="none" stroke="#ef4444" stroke-width="2"/>
+<text x="260.00" y="135.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#ef4444" text-anchor="middle" dominant-baseline="middle">h₁ = 3</text>
+<line x1="345.0" y1="300.0" x2="345.0" y2="180.0" stroke="#ef4444" stroke-width="2" stroke-dasharray="3,3"/>
+<path d="M 345.00 195.00 L 330.00 195.00 L 330.00 180.00" fill="none" stroke="#ef4444" stroke-width="2"/>
+<text x="380.00" y="240.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#ef4444" text-anchor="middle" dominant-baseline="middle">h₂ = 4</text>
+<text x="300.00" y="35.00" font-family="sans-serif" font-size="22" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Ejemplo: Área por Triangulación</text>
+</svg>

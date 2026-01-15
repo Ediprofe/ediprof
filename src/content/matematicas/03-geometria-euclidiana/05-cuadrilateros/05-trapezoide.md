@@ -22,6 +22,8 @@ Es decir:
 -   No es paralelogramo.
 -   No es trapecio.
 
+![Trapezoide Irregular](/illustrations/geometria/cuadrilateros/trapezoide-irregular.svg)
+
 ---
 
 ## 🪁 El Deltoide (Cometa)
@@ -34,36 +36,24 @@ Es un tipo especial de trapezoide que sí tiene simetría (aunque no lados paral
 3.  La diagonal mayor es **eje de simetría** (divide a la figura en dos mitades idénticas).
 4.  La diagonal mayor biseca a la diagonal menor.
 
-### Área del Deltoide
-Como sus diagonales forman una cruz de $90^\circ$, usamos la misma fórmula que el rombo:
+![Anatomía del Deltoide](/illustrations/geometria/cuadrilateros/deltoide-anatomia.svg)
 
+### Área del Deltoide
 $$
 A = \frac{D \cdot d}{2}
 $$
 
----
-
-## 📏 Área de un Trapezoide General
-
-No existe una fórmula mágica simple como "base por altura". Para hallar su área, usamos la estrategia de **triangulación**:
-1.  Trazamos una diagonal para dividirlo en dos triángulos.
-2.  Calculamos el área de cada triángulo por separado.
-3.  Sumamos las áreas.
-
-$$
-A_{\text{total}} = A_{\text{triángulo 1}} + A_{\text{triángulo 2}}
-$$
-
----
-
-## ⚙️ Ejemplos Resueltos
+![Fórmula del Área del Deltoide](/illustrations/geometria/cuadrilateros/deltoide-area-formula.svg)
 
 ### Ejemplo 1: Área de una Cometa
 
 Una cometa tiene una estructura de madera en cruz. El palo largo mide 60 cm y el corto 40 cm. ¿Cuánta tela se necesita?
 
+El palo largo es la diagonal mayor $D$ y el corto es la diagonal menor $d$.
+
+![Cálculo de Área de una Cometa](/illustrations/geometria/cuadrilateros/deltoide-ejemplo-area.svg)
+
 **Razonamiento:**
-El palo largo es $D$ y el corto es $d$.
 
 $$
 A = \frac{60 \cdot 40}{2}
@@ -78,14 +68,66 @@ $$
 \boxed{1200 \text{ cm}^2}
 $$
 
+
 ---
 
-### Ejemplo 2: Ángulos Desconocidos
+## 📏 Área de un Trapezoide General
+
+No existe una fórmula mágica simple como "base por altura". Para hallar su área, usamos la estrategia de **triangulación**:
+1.  Trazamos una diagonal para dividirlo en dos triángulos.
+2.  Calculamos el área de cada triángulo por separado.
+3.  Sumamos las áreas.
+
+$$
+A_{\text{total}} = A_{\text{triángulo 1}} + A_{\text{triángulo 2}}
+$$
+
+![Método de Triangulación](/illustrations/geometria/cuadrilateros/trapezoide-triangulacion.svg)
+
+#### Ejemplo 2: Cálculo por Triangulación
+Si trazamos una diagonal de 10 cm y las alturas de los triángulos resultantes miden 3 cm y 4 cm, ¿cuál es el área del trapezoide?
+
+Dividimos el trapezoide en dos triángulos que comparten la misma base (la diagonal $d = 10$).
+
+![Ejemplo de área por triangulación](/illustrations/geometria/cuadrilateros/trapezoide-ejemplo-triangulacion.svg)
+
+**Razonamiento:**
+
+1. **Área del Triángulo 1 ($A_1$):**
+
+$$
+A_1 = \frac{10 \cdot 3}{2} = 15 \text{ cm}^2
+$$
+
+2. **Área del Triángulo 2 ($A_2$):**
+
+$$
+A_2 = \frac{10 \cdot 4}{2} = 20 \text{ cm}^2
+$$
+
+Sumamos ambas áreas para obtener el total:
+
+$$
+A_{\text{total}} = 15 + 20
+$$
+
+**Resultado:**
+$$
+\boxed{35 \text{ cm}^2}
+$$
+
+
+---
+
+### Ejemplo 3: Ángulos Desconocidos
 
 Un trapezoide asimétrico tiene ángulos de $80^\circ$, $100^\circ$ y $70^\circ$. Halla el cuarto ángulo.
 
+La suma de ángulos internos de todo cuadrilátero es $360^\circ$.
+
+![Suma de Ángulos en el Trapezoide](/illustrations/geometria/cuadrilateros/trapezoide-ejemplo-angulos.svg)
+
 **Razonamiento:**
-Suma total = $360^\circ$.
 
 $$
 x = 360^\circ - (80^\circ + 100^\circ + 70^\circ)
@@ -100,7 +142,9 @@ $$
 \boxed{110^\circ}
 $$
 
+
 ---
+
 
 ## 📝 Ejercicios de Práctica
 
@@ -171,6 +215,9 @@ Si divides un trapezoide general con una diagonal de longitud 10 cm, y las altur
 **Razonamiento:**
 Área T1: $\frac{10 \cdot 3}{2} = 15$.
 Área T2: $\frac{10 \cdot 4}{2} = 20$.
+
+![Ejercicio de Triangulación](/illustrations/geometria/cuadrilateros/trapezoide-ejercicio-area.svg)
+
 Total: $15 + 20$.
 
 **Resultado:**

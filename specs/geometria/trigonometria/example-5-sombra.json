@@ -1,0 +1,70 @@
+{
+    "tipo": "triangulo-rectangulo",
+    "titulo": "Ejemplo 5: La Sombra",
+    "canvas": {
+        "width": 600,
+        "height": 400,
+        "padding": 50
+    },
+    "vertices": {
+        "A": [
+            80,
+            320
+        ],
+        "B": [
+            380,
+            320
+        ],
+        "C": [
+            380,
+            180
+        ]
+    },
+    "angulos": {
+        "A": {
+            "tipo": "agudo",
+            "etiqueta": "θ",
+            "color": "#8b5cf6",
+            "radio": 40,
+            "offset_etiqueta": 55
+        },
+        "B": {
+            "tipo": "recto"
+        }
+    },
+    "lados": {
+        "AB": {
+            "texto": "12 (Sombra)",
+            "color": "#22c55e"
+        },
+        "BC": {
+            "texto": "5 (Poste)",
+            "color": "#ef4444"
+        },
+        "AC": {
+            "texto": "13 (Rayo de sol)",
+            "color": "#3b82f6"
+        }
+    },
+    "offset_etiquetas": 32,
+    "info_box": {
+        "x": 380,
+        "y": 60,
+        "width": 180,
+        "titulo": "VISTA DESDE THETA (θ)",
+        "lineas": [
+            {
+                "texto": "Hipotenusa = 13",
+                "color": "#3b82f6"
+            },
+            {
+                "texto": "Cat. Adyacente = 12",
+                "color": "#22c55e"
+            },
+            {
+                "texto": "Cat. Opuesto = 5",
+                "color": "#ef4444"
+            }
+        ]
+    }
+}

@@ -40,6 +40,8 @@ $$
 AB = CD \quad \text{y} \quad BC = AD
 $$
 
+![Lados Opuestos Iguales en un Paralelogramo](/illustrations/geometria/cuadrilateros/paralelogramo-lados-iguales.svg)
+
 ### 2. Ángulos Opuestos Iguales
 Los ángulos de las esquinas opuestas son idénticos.
 
@@ -102,7 +104,12 @@ $$
 
 En un paralelogramo, el ángulo $A$ mide $60^\circ$. Halla los demás.
 
+Determinaremos los ángulos basándonos en las propiedades de igualdad y suplementariedad.
+
+![Ejemplo Cálculo de Ángulos](/images/content/matematicas/geometria/cuadrilateros/para_ex_angles.svg)
+
 **Razonamiento:**
+
 1.  El opuesto a $A$ es $C$, así que $C = 60^\circ$.
 2.  El consecutivo a $A$ es $B$. Deben sumar $180^\circ$.
     $$
@@ -115,8 +122,6 @@ $$
 \boxed{\angle C=60^\circ, \angle B=120^\circ, \angle D=120^\circ}
 $$
 
-![Ejemplo Cálculo de Ángulos](/images/content/matematicas/geometria/cuadrilateros/para_ex_angles.svg)
-
 
 ---
 
@@ -124,7 +129,12 @@ $$
 
 Un paralelogramo tiene una base de $10$ cm. Su lado inclinado mide $5$ cm, pero su altura vertical es de $4$ cm. Calcula el área.
 
+Identificaremos la base y la altura correspondiente para aplicar la fórmula correcta.
+
+![Ejemplo de Área](/images/content/matematicas/geometria/cuadrilateros/para_ex_area.svg)
+
 **Razonamiento:**
+
 Para el área SOLO nos importa la base y la altura perpendicular. El lado inclinado ($5$) es una distracción para el cálculo del área (aunque útil para el perímetro).
 
 $$
@@ -135,8 +145,6 @@ $$
 $$
 \boxed{40 \text{ cm}^2}
 $$
-
-![Ejemplo de Área](/images/content/matematicas/geometria/cuadrilateros/para_ex_area.svg)
 
 
 ---
@@ -368,6 +376,8 @@ $$
 
 ## 🔑 Resumen
 
+![resumen-paralelogramos](https://cdn.ediprofe.com/img/matematicas/lvui-resumen-paralelogramos.webp)
+
 | Propiedad | Descripción |
 |-----------|-------------|
 | **Lados** | Opuestos paralelos e iguales. |
@@ -379,6 +389,3 @@ $$
 > 1.  Sus diagonales se bisecan.
 > 2.  Tiene **ambos** pares de lados opuestos iguales.
 > 3.  Tiene **un** par de lados opuestos que son paralelos e iguales a la vez.
-
-![Resumen Paralelogramos](/images/content/matematicas/geometria/cuadrilateros/para_summary.svg)
-

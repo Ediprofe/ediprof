@@ -135,12 +135,21 @@ $$...
 
 ---
 
-### Ejemplos de las lecciones modelo
+## 🖼️ Flujo Visual en Ejemplos con Ilustración
 
-```
-MRUA: mrua.png, mapa-movimiento-mrua.png, mrua-analisis-edificio.png
-MCU: mcu-intro.png, carrusel-mcu.png, rueda-2hz.png, mcu-resumen.png
-```
+> **Cuandо un ejemplo incluye ilustración, esta va ANTES de los cálculos.**
+
+| Orden | Elemento |
+|-------|----------|
+| 1 | Enunciado + idea clave |
+| 2 | **Ilustración** (contexto visual) |
+| 3 | Razonamiento con `$$...$$` |
+| 4 | Resultado `\boxed{}` |
+
+> [!IMPORTANT]
+> La ilustración da el CONTEXTO visual (elementos, dimensiones, notación).
+> Los cálculos DESARROLLAN la solución sobre ese contexto.
+> El estudiante primero VE, luego CALCULA.
 
 ---
 
@@ -148,5 +157,10 @@ MCU: mcu-intro.png, carrusel-mcu.png, rueda-2hz.png, mcu-resumen.png
 
 Estas lecciones ya están aprobadas y representan el estilo objetivo:
 
-- `src/content/fisica/02-cinematica/04-MRUA/01-introduccion.md`
-- `src/content/fisica/02-cinematica/05-MCU/01-introduccion.md`
+http://localhost:4321/matematicas/geometria-euclidiana/cuadrilateros/trapezoide
+
+http://localhost:4321/matematicas/geometria-euclidiana/cuadrilateros/trapecio
+
+
+
+

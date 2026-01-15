@@ -1,0 +1,65 @@
+{
+    "tipo": "triangulo-rectangulo",
+    "titulo": "Seno en θ = 45°",
+    "canvas": {
+        "width": 380,
+        "height": 320,
+        "padding": 40
+    },
+    "vertices": {
+        "A": [
+            60,
+            260
+        ],
+        "B": [
+            260,
+            260
+        ],
+        "C": [
+            260,
+            60
+        ]
+    },
+    "angulos": {
+        "A": {
+            "tipo": "agudo",
+            "etiqueta": "45°",
+            "color": "#8b5cf6",
+            "radio": 35
+        },
+        "B": {
+            "tipo": "recto"
+        }
+    },
+    "lados": {
+        "BC": {
+            "texto": "Op = 0.71",
+            "color": "#ef4444"
+        },
+        "AB": {
+            "texto": "Ady = 0.71",
+            "color": "#22c55e"
+        },
+        "AC": {
+            "texto": "Hip = 1",
+            "color": "#3b82f6"
+        }
+    },
+    "offset_etiquetas": 25,
+    "info_box": {
+        "x": 220,
+        "y": 40,
+        "width": 150,
+        "titulo": "θ = 45°",
+        "lineas": [
+            {
+                "texto": "sin = cos = 0.71",
+                "color": "#8b5cf6"
+            },
+            {
+                "texto": "¡Catetos iguales!",
+                "color": "#1e293b"
+            }
+        ]
+    }
+}

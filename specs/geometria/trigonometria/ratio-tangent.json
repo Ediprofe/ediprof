@@ -1,0 +1,61 @@
+{
+    "tipo": "triangulo-rectangulo",
+    "titulo": "Tangente (tan) = 3 / 4 = 0.75",
+    "canvas": {
+        "width": 500,
+        "height": 300,
+        "padding": 40
+    },
+    "vertices": {
+        "A": [
+            60,
+            240
+        ],
+        "B": [
+            260,
+            240
+        ],
+        "C": [
+            260,
+            90
+        ]
+    },
+    "angulos": {
+        "A": {
+            "tipo": "agudo",
+            "etiqueta": "θ",
+            "color": "#8b5cf6",
+            "radio": 35
+        },
+        "B": {
+            "tipo": "recto"
+        }
+    },
+    "lados": {
+        "AB": {
+            "texto": "4 (Adyacente)",
+            "color": "#22c55e"
+        },
+        "BC": {
+            "texto": "3 (Opuesto)",
+            "color": "#ef4444"
+        }
+    },
+    "offset_etiquetas": 30,
+    "info_box": {
+        "x": 320,
+        "y": 80,
+        "width": 160,
+        "titulo": "CÁLCULO",
+        "lineas": [
+            {
+                "texto": "tan θ = 3 / 4",
+                "color": "#f59e0b"
+            },
+            {
+                "texto": "tan θ = 0.75",
+                "color": "#1e293b"
+            }
+        ]
+    }
+}

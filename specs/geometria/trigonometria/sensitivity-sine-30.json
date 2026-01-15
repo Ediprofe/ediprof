@@ -1,0 +1,65 @@
+{
+    "tipo": "triangulo-rectangulo",
+    "titulo": "Seno en θ = 30°",
+    "canvas": {
+        "width": 400,
+        "height": 280,
+        "padding": 40
+    },
+    "vertices": {
+        "A": [
+            60,
+            220
+        ],
+        "B": [
+            290,
+            220
+        ],
+        "C": [
+            290,
+            87
+        ]
+    },
+    "angulos": {
+        "A": {
+            "tipo": "agudo",
+            "etiqueta": "30°",
+            "color": "#8b5cf6",
+            "radio": 40
+        },
+        "B": {
+            "tipo": "recto"
+        }
+    },
+    "lados": {
+        "BC": {
+            "texto": "Op = 0.50",
+            "color": "#ef4444"
+        },
+        "AB": {
+            "texto": "Ady = 0.87",
+            "color": "#22c55e"
+        },
+        "AC": {
+            "texto": "Hip = 1",
+            "color": "#3b82f6"
+        }
+    },
+    "offset_etiquetas": 25,
+    "info_box": {
+        "x": 220,
+        "y": 40,
+        "width": 160,
+        "titulo": "θ = 30°",
+        "lineas": [
+            {
+                "texto": "sin = 0.50",
+                "color": "#ef4444"
+            },
+            {
+                "texto": "cos = 0.87",
+                "color": "#22c55e"
+            }
+        ]
+    }
+}

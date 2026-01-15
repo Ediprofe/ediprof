@@ -51,10 +51,15 @@ Supongamos que elegimos un ángulo y lo llamamos alfa ($\alpha$).
 
 Mira un triángulo rectángulo con lados 3, 4 y 5. El ángulo de referencia ($\theta$) está entre el lado 4 y el lado 5.
 
+Identificaremos el nombre de cada lado basándonos en la posición de $\theta$.
+
+![Ejemplo 1: Ángulo θ](/images/geometria/trigonometria/example-1-theta.svg)
+
 **Razonamiento:**
-1.  **Hipotenusa:** Es el lado más largo (5).
-2.  **Adyacente:** Es el cateto que toca el ángulo. Como el ángulo está entre 4 y 5, y 5 es hipotenusa, entonces 4 es el adyacente.
-3.  **Opuesto:** Es el que sobra, el que está enfrente (3).
+
+1.  **Hipotenusa:** Es el lado más largo ($5$).
+2.  **Adyacente:** Es el cateto que toca el ángulo. Como el ángulo está entre $4$ y $5$, y $5$ es hipotenusa, entonces $4$ es el adyacente.
+3.  **Opuesto:** Es el que sobra, el que está enfrente ($3$).
 
 **Resultado:**
 $$
@@ -65,14 +70,76 @@ $$
 
 En el mismo triángulo, ahora nos paramos en la otra esquina (ángulo $\beta$), la que está entre el lado 3 y el lado 5.
 
+Veremos cómo cambian los nombres de los catetos al cambiar nuestro punto de vista.
+
+![Ejemplo 2: Ángulo β](/images/geometria/trigonometria/example-2-beta.svg)
+
 **Razonamiento:**
-1.  **Hipotenusa:** Sigue siendo 5. ¡Nunca cambia!
-2.  **Adyacente:** Ahora el ángulo toca el lado 3. Así que el adyacente es 3.
-3.  **Opuesto:** Ahora el lado que queda lejos es el 4.
+
+1.  **Hipotenusa:** Sigue siendo $5$. ¡Nunca cambia!
+2.  **Adyacente:** Ahora el ángulo toca el lado $3$. Así que el adyacente es $3$.
+3.  **Opuesto:** Ahora el lado que queda lejos es el $4$.
 
 **Resultado:**
 $$
 \boxed{\text{Hip}=5, \text{Ady}=3, \text{Op}=4}
+$$
+
+### Ejemplo 3: La Escalera del Bombero
+
+Un bombero apoya una escalera de $10 \text{ m}$ contra una pared. La base de la escalera está a $6 \text{ m}$ de la pared. Si el ángulo de referencia ($\alpha$) está en el suelo.
+
+Determinaremos los componentes del triángulo formado por la escalera, el suelo y la pared.
+
+![Ejemplo 3: La Escalera](/images/geometria/trigonometria/example-3-escalera.svg)
+
+**Razonamiento:**
+
+1.  **Hipotenusa:** Es la escalera ($10$). Está inclinada y es el lado más largo.
+2.  **Adyacente:** Es la distancia en el suelo ($6$), ya que el ángulo $\alpha$ del suelo "toca" este cateto.
+3.  **Opuesto:** Es la altura de la pared ($8$). Está enfrente del ángulo $\alpha$.
+
+**Resultado:**
+$$
+\boxed{\text{Hip}=10, \text{Ady}=6, \text{Op}=8}
+$$
+
+### Ejemplo 4: El Ángulo Superior
+
+En un triángulo rectángulo de lados $8$, $15$ y $17$, nos ubicamos en el ángulo superior ($\phi$), ubicado entre el lado $17$ y el lado $15$.
+
+Identificaremos los catetos desde esta nueva perspectiva "hacia abajo".
+
+![Ejemplo 4: El Ángulo Superior](/images/geometria/trigonometria/example-4-superior.svg)
+
+**Razonamiento:**
+
+1.  **Hipotenusa:** Es el lado más largo ($17$).
+2.  **Adyacente:** Es el cateto que toca el ángulo $\phi$, en este caso es el lado vertical ($15$).
+3.  **Opuesto:** El lado que queda "al fondo", lejos del ángulo $\phi$, es el lado horizontal ($8$).
+
+**Resultado:**
+$$
+\boxed{\text{Hip}=17, \text{Ady}=15, \text{Op}=8}
+$$
+
+### Ejemplo 5: La Sombra del Árbol
+
+Un árbol de $5 \text{ m}$ proyecta una sombra de $12 \text{ m}$ en el suelo. El rayo de sol que conecta la punta del árbol con el final de la sombra mide $13 \text{ m}$. Queremos analizar el ángulo de elevación ($\theta$) desde el suelo.
+
+Organizaremos la información visual para prepararnos para calcular razones trigonométricas.
+
+![Ejemplo 5: La Sombra](/images/geometria/trigonometria/example-5-sombra.svg)
+
+**Razonamiento:**
+
+1.  **Hipotenusa:** Es el rayo de sol ($13$).
+2.  **Adyacente:** Es la sombra depositada en el suelo ($12$), pues el ángulo $\theta$ nace del suelo.
+3.  **Opuesto:** Es la altura del árbol ($5$). Está justo enfrente del observador en el suelo.
+
+**Resultado:**
+$$
+\boxed{\text{Hip}=13, \text{Ady}=12, \text{Op}=5}
 $$
 
 > **Conclusión:** Lo que para un ángulo es "opuesto", para el otro es "adyacente".
@@ -87,10 +154,10 @@ En un triángulo rectángulo, ¿cuál es el único lado que nunca cambia de nomb
 <details>
 <summary>Ver solución</summary>
 
-**Respuesta:**
+**Resultado:**
 
 $$
-\text{La Hipotenusa}
+\boxed{\text{La Hipotenusa}}
 $$
 
 </details>
@@ -101,10 +168,10 @@ Si estás parado en un ángulo y tienes un gato justo enfrente de ti en el otro 
 <details>
 <summary>Ver solución</summary>
 
-**Respuesta:**
+**Resultado:**
 
 $$
-\text{Cateto Opuesto}
+\boxed{\text{Cateto Opuesto}}
 $$
 
 </details>
@@ -147,27 +214,28 @@ $$
 <details>
 <summary>Ver solución</summary>
 
-**Respuesta:**
-No. En un triángulo rectángulo, la hipotenusa es siempre el lado mayor.
+**Razonamiento:**
+En un triángulo rectángulo, la hipotenusa es siempre el lado mayor por estar frente al ángulo de mayor amplitud ($90^\circ$).
 
+**Resultado:**
 $$
-\boxed{\text{Falso}}
+\boxed{\text{No / Falso}}
 $$
 
 </details>
 
 ### Ejercicio 6
-Si el cateto opuesto mide 5 y el adyacente 12, calcula la hipotenusa.
+En un triángulo rectángulo cualquiera, si para el ángulo $\alpha$ el cateto opuesto es el lado $a$, ¿qué nombre recibe ese mismo lado $a$ si ahora nos paramos en el otro ángulo agudo del triángulo?
 
 <details>
 <summary>Ver solución</summary>
 
 **Razonamiento:**
-Pitágoras: $h = \sqrt{5^2 + 12^2} = \sqrt{25+144} = \sqrt{169}$.
+Como se explicó en la sección "Todo depende del punto de vista", lo que para un ángulo es "opuesto" (está enfrente), para el otro ángulo es "adyacente" (lo toca para formar la esquina).
 
 **Resultado:**
 $$
-\boxed{13}
+\boxed{\text{Cateto Adyacente}}
 $$
 
 </details>
@@ -198,10 +266,10 @@ Estás apoyando una escalera en una pared.
 <details>
 <summary>Ver solución</summary>
 
-**Respuesta:**
+**Resultado:**
 
 $$
-\text{La Escalera}
+\boxed{\text{La Escalera}}
 $$
 
 </details>

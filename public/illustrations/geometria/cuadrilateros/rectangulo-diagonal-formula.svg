@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 460" style="font-family: Inter, system-ui, sans-serif;">
+<rect width="600" height="460" fill="#f8fafc" />
+<path d="M 150.0 140.0 L 450.0 140.0 L 450.0 320.0 L 150.0 320.0 Z" fill="none" fill-opacity="0.1" stroke="#3b82f6" stroke-width="3"/>
+<path d="M 165.00 320.00 L 165.00 305.00 L 150.00 305.00" fill="none" stroke="#ef4444" stroke-width="2"/>
+<line x1="150.0" y1="320.0" x2="450.0" y2="140.0" stroke="#ef4444" stroke-width="3"/>
+<text x="125.00" y="335.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">A</text>
+<text x="475.00" y="335.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">B</text>
+<text x="475.00" y="125.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">C</text>
+<text x="125.00" y="125.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">D</text>
+<text x="300.00" y="345.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">base (b)</text>
+<text x="495.00" y="230.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">altura (h)</text>
+<text x="280.00" y="220.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#ef4444" text-anchor="middle" dominant-baseline="middle">d = √(b² + h²)</text>
+<text x="300.00" y="35.00" font-family="sans-serif" font-size="22" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Fórmula de la Diagonal (Rectángulo)</text>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 460" style="font-family: Inter, system-ui, sans-serif;">
+<rect width="600" height="460" fill="#f8fafc" />
+<path d="M 100.00 310.00 L 500.00 310.00 L 380.00 150.00 L 220.00 150.00 Z" fill="none" fill-opacity="0.1" stroke="#1e293b" stroke-width="3" stroke-linejoin="round"/>
+<line x1="220.0" y1="150.0" x2="220.0" y2="310.0" stroke="#ef4444" stroke-dasharray="2,2"/>
+<line x1="380.0" y1="150.0" x2="380.0" y2="310.0" stroke="#ef4444" stroke-dasharray="2,2"/>
+<path d="M 100.00 310.00 L 220.00 310.00 L 220.00 150.00 Z" fill="#fed7aa" fill-opacity="0.4" stroke="#f97316" stroke-width="2.5" stroke-linejoin="round"/>
+<text x="300.00" y="130.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">b = 4</text>
+<text x="300.00" y="335.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">B = 10</text>
+<text x="160.00" y="325.00" font-family="sans-serif" font-size="14" font-weight="bold" fill="#f97316" text-anchor="middle" dominant-baseline="middle">3</text>
+<text x="300.00" y="325.00" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">4</text>
+<text x="440.00" y="325.00" font-family="sans-serif" font-size="14" font-weight="bold" fill="#f97316" text-anchor="middle" dominant-baseline="middle">3</text>
+<text x="205.00" y="230.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#ef4444" text-anchor="middle" dominant-baseline="middle">4</text>
+<text x="140.00" y="230.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#22c55e" text-anchor="middle" dominant-baseline="middle">L = 5</text>
+<text x="300.00" y="370.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#22c55e" text-anchor="middle" dominant-baseline="middle">√(3² + 4²) = 5</text>
+<text x="300.00" y="35.00" font-family="sans-serif" font-size="22" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Ejercicio: Perímetro y Pitágoras</text>
+</svg>

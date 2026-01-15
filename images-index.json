@@ -1088,7 +1088,16 @@
       "size": "49KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/aigt-teorema-de-pitagoras.webp",
       "status": "uploaded"
+    },
+    {
+      "id": "lvui",
+      "name": "resumen-paralelogramos.webp",
+      "materia": "matematicas",
+      "date": "2026-01-14",
+      "size": "54KB",
+      "url": "https://cdn.ediprofe.com/img/matematicas/lvui-resumen-paralelogramos.webp",
+      "status": "uploaded"
     }
   ],
-  "lastUpdated": "2026-01-13T02:58:05.046Z"
+  "lastUpdated": "2026-01-14T16:45:56.918Z"
 }

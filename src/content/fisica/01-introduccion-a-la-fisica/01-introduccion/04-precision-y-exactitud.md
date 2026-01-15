@@ -1,3 +1,7 @@
+ <!-- - Algunas equivalencias entre el SI y el sistema inglés.
+ - prefijos y sufijos para el SI -->
+
+
 # 🎯 **Precisión y Exactitud**
 
 En toda medición pueden presentarse errores, por lo que es esencial distinguir entre dos cualidades fundamentales: exactitud y precisión.

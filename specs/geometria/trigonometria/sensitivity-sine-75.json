@@ -1,0 +1,65 @@
+{
+    "tipo": "triangulo-rectangulo",
+    "titulo": "Seno en θ = 75°",
+    "canvas": {
+        "width": 300,
+        "height": 420,
+        "padding": 40
+    },
+    "vertices": {
+        "A": [
+            60,
+            380
+        ],
+        "B": [
+            127,
+            380
+        ],
+        "C": [
+            127,
+            130
+        ]
+    },
+    "angulos": {
+        "A": {
+            "tipo": "agudo",
+            "etiqueta": "75°",
+            "color": "#8b5cf6",
+            "radio": 25
+        },
+        "B": {
+            "tipo": "recto"
+        }
+    },
+    "lados": {
+        "BC": {
+            "texto": "Op = 0.97",
+            "color": "#ef4444"
+        },
+        "AB": {
+            "texto": "Ady = 0.26",
+            "color": "#22c55e"
+        },
+        "AC": {
+            "texto": "Hip = 1",
+            "color": "#3b82f6"
+        }
+    },
+    "offset_etiquetas": 25,
+    "info_box": {
+        "x": 145,
+        "y": 150,
+        "width": 140,
+        "titulo": "θ = 75°",
+        "lineas": [
+            {
+                "texto": "sin = 0.97",
+                "color": "#ef4444"
+            },
+            {
+                "texto": "cos = 0.26",
+                "color": "#22c55e"
+            }
+        ]
+    }
+}

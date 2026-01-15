@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 460" style="font-family: Inter, system-ui, sans-serif;">
+<rect width="600" height="460" fill="#f8fafc" />
+<path d="M 150.0 320.0 L 450.0 320.0 L 450.0 140.0 L 150.0 140.0 Z" fill="#3b82f6" fill-opacity="0.1" stroke="#3b82f6" stroke-width="3"/>
+<text x="125.00" y="335.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">A</text>
+<text x="475.00" y="335.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">B</text>
+<text x="475.00" y="125.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">C</text>
+<text x="125.00" y="125.00" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">D</text>
+<path d="M 165.00 320.00 L 165.00 305.00 L 150.00 305.00" fill="none" stroke="#ef4444" stroke-width="2"/>
+<path d="M 450.00 305.00 L 435.00 305.00 L 435.00 320.00" fill="none" stroke="#ef4444" stroke-width="2"/>
+<path d="M 435.00 140.00 L 435.00 155.00 L 450.00 155.00" fill="none" stroke="#ef4444" stroke-width="2"/>
+<path d="M 150.00 155.00 L 165.00 155.00 L 165.00 140.00" fill="none" stroke="#ef4444" stroke-width="2"/>
+<line x1="150.0" y1="320.0" x2="450.0" y2="140.0" stroke="#22c55e" stroke-width="2" stroke-dasharray="5,5"/>
+<line x1="450.0" y1="320.0" x2="150.0" y2="140.0" stroke="#22c55e" stroke-width="2" stroke-dasharray="5,5"/>
+<line x1="229.12" y1="281.86" x2="220.88" y2="268.14" stroke="#22c55e" stroke-width="2"/>
+<line x1="379.12" y1="191.86" x2="370.88" y2="178.14" stroke="#22c55e" stroke-width="2"/>
+<line x1="379.12" y1="268.14" x2="370.88" y2="281.86" stroke="#22c55e" stroke-width="2"/>
+<line x1="229.12" y1="178.14" x2="220.88" y2="191.86" stroke="#22c55e" stroke-width="2"/>
+<text x="300.00" y="380.00" font-family="sans-serif" font-size="20" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Diagonales Iguales: AC = BD</text>
+<text x="300.00" y="35.00" font-family="sans-serif" font-size="22" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Propiedades del Rectángulo</text>
+</svg>

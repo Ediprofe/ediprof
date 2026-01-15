@@ -1,0 +1,61 @@
+{
+    "tipo": "triangulo-rectangulo",
+    "titulo": "Seno cuando θ = 90°",
+    "canvas": {
+        "width": 300,
+        "height": 350,
+        "padding": 40
+    },
+    "vertices": {
+        "A": [
+            60,
+            300
+        ],
+        "B": [
+            80,
+            300
+        ],
+        "C": [
+            80,
+            60
+        ]
+    },
+    "angulos": {
+        "A": {
+            "tipo": "agudo",
+            "etiqueta": "θ → 90°",
+            "color": "#8b5cf6",
+            "radio": 30
+        },
+        "B": {
+            "tipo": "recto"
+        }
+    },
+    "lados": {
+        "BC": {
+            "texto": "Opuesto = Hip",
+            "color": "#ef4444"
+        },
+        "AC": {
+            "texto": "Hipotenusa",
+            "color": "#3b82f6"
+        }
+    },
+    "offset_etiquetas": 25,
+    "info_box": {
+        "x": 120,
+        "y": 100,
+        "width": 160,
+        "titulo": "OBSERVA",
+        "lineas": [
+            {
+                "texto": "El opuesto iguala",
+                "color": "#1e293b"
+            },
+            {
+                "texto": "la hipotenusa → sin = 1",
+                "color": "#ef4444"
+            }
+        ]
+    }
+}
