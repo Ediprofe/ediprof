@@ -19,6 +19,8 @@ Imagina que observas una gota de agua de un charco bajo el microscopio. Verías 
 
 Una **célula** es la estructura más pequeña que puede realizar todas las funciones de un ser vivo: nacer, crecer, alimentarse, reproducirse y responder al ambiente.
 
+![la-celula-unidad-basica-de-la-vida](https://cdn.ediprofe.com/img/ciencias/74mg-la-celula-unidad-basica-de-la-vida.webp)
+
 ### ¿Por qué no las vemos a simple vista?
 
 La mayoría de las células miden entre 10 y 100 **micrómetros** (milésimas de milímetro). El ojo humano solo puede ver objetos mayores a 0.1 milímetros, por eso necesitamos un **microscopio** para observarlas.
@@ -51,6 +53,8 @@ Antes de esta teoría, se creía en la **generación espontánea**: que los sere
 
 La teoría celular también explica por qué nacemos de nuestros padres: nuestra primera célula (el cigoto) se formó cuando el óvulo de mamá se unió con el espermatozoide de papá. Ambos eran células que venían de otras células previas.
 
+![la-teoria-celular](https://cdn.ediprofe.com/img/ciencias/e5if-la-teoria-celular.webp)
+
 ---
 
 ## Funciones Vitales de la Célula
@@ -77,6 +81,8 @@ Las células se dividen para crear nuevas células. Esto permite:
 - **Crecimiento**: de una célula original, tu cuerpo llegó a tener billones.
 - **Reparación**: cuando te cortas, las células vecinas se dividen para cerrar la herida.
 - **Reemplazo**: tus glóbulos rojos viven solo 120 días; constantemente se producen nuevos.
+
+![funciones-vitales-de-la-celula](https://cdn.ediprofe.com/img/ciencias/odo4-funciones-vitales-de-la-celula.webp)
 
 ---
 
@@ -109,9 +115,12 @@ Los organismos como tú tienen **millones o billones de células especializadas*
 
 Es como una ciudad donde hay médicos, maestros, policías y comerciantes, cada uno haciendo su trabajo pero todos cooperando.
 
+
 ### ¿Por qué surgieron los pluricelulares?
 
 La **división del trabajo** permite mayor eficiencia. Una célula nerviosa es mejor transmitiendo señales que una célula que tiene que hacer todo. La especialización permitió que los seres vivos se volvieran más grandes y complejos.
+
+![orgnismos-unicelulares-y-pluricelulares](https://cdn.ediprofe.com/img/ciencias/6e3f-orgnismos-unicelulares-y-pluricelulares.webp)
 
 ---
 

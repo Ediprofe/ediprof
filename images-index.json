@@ -1097,7 +1097,79 @@
       "size": "54KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/lvui-resumen-paralelogramos.webp",
       "status": "uploaded"
+    },
+    {
+      "id": "74mg",
+      "name": "la-celula-unidad-basica-de-la-vida.webp",
+      "materia": "ciencias",
+      "date": "2026-01-15",
+      "size": "75KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/74mg-la-celula-unidad-basica-de-la-vida.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "e5if",
+      "name": "la-teoria-celular.webp",
+      "materia": "ciencias",
+      "date": "2026-01-15",
+      "size": "77KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/e5if-la-teoria-celular.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "odo4",
+      "name": "funciones-vitales-de-la-celula.webp",
+      "materia": "ciencias",
+      "date": "2026-01-15",
+      "size": "74KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/odo4-funciones-vitales-de-la-celula.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "6e3f",
+      "name": "orgnismos-unicelulares-y-pluricelulares.webp",
+      "materia": "ciencias",
+      "date": "2026-01-15",
+      "size": "88KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/6e3f-orgnismos-unicelulares-y-pluricelulares.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "rh89",
+      "name": "celula-eucariota-y-procariota.webp",
+      "materia": "ciencias",
+      "date": "2026-01-15",
+      "size": "73KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/rh89-celula-eucariota-y-procariota.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "k01i",
+      "name": "celula-animal-y-vegetal.webp",
+      "materia": "ciencias",
+      "date": "2026-01-15",
+      "size": "64KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/k01i-celula-animal-y-vegetal.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "l0bj",
+      "name": "celula-animal-y-vegetal.webp",
+      "materia": "ciencias",
+      "date": "2026-01-15",
+      "size": "73KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/l0bj-celula-animal-y-vegetal.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "w3xi",
+      "name": "bajo-el-microscopio-celula-vegetal.webp",
+      "materia": "ciencias",
+      "date": "2026-01-15",
+      "size": "71KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/w3xi-bajo-el-microscopio-celula-vegetal.webp",
+      "status": "uploaded"
     }
   ],
-  "lastUpdated": "2026-01-14T16:45:56.918Z"
+  "lastUpdated": "2026-01-15T17:36:34.351Z"
 }

@@ -1,349 +1,271 @@
 # **Tipos de Células**
 
-Si miraras bajo el microscopio una gota de agua de estanque y luego una muestra de tu sangre, verías células muy diferentes. Algunas tienen núcleo definido, otras no; algunas tienen pared rígida, otras son flexibles. Aunque todas son células, no todas son iguales. Vamos a conocer los principales tipos.
+Si pudieras viajar al pasado millones de años, verías que la vida empezó de forma muy simple. Hoy, si comparas una bacteria, una planta y tu propio cuerpo, notarás que aunque todos estamos hechos de células, estas no son iguales. Algunas células son como un morral básico de un solo bolsillo, mientras que otras son como morrales de expedición con muchos compartimentos organizados.
 
 ---
 
 ## 🎯 ¿Qué vas a aprender?
 
-- Diferenciar entre células procariotas y eucariotas.
-- Distinguir las características de células animales y vegetales.
-- Identificar ejemplos de cada tipo de célula en la vida cotidiana.
-- Comparar estructuras celulares mediante tablas y ejemplos.
+- Diferenciar entre células procariotas (simples) y eucariotas (complejas).
+- Identificar las diferencias clave entre células animales y vegetales.
+- Comprender por qué las plantas son verdes y rígidas sin usar términos complejos.
+- Reconocer ejemplos de cada tipo de célula en tu entorno.
 
 ---
 
-## Célula Procariota vs Eucariota
+## Células Simples y Complejas: Procariotas y Eucariotas
 
-La diferencia más importante entre las células es si tienen o no un **núcleo definido**. Esto divide a todas las células en dos grandes grupos.
+La forma más básica de clasificar las células es por su "orden interno". Imagina que intentas buscar tus llaves en un bolso donde todo está suelto versus uno donde cada cosa tiene su propio estuche.
+
+### La Célula Procariota (El "Morral de un solo bolsillo")
+Son las más antiguas y sencillas. Se llaman así porque **no tienen un núcleo** que proteja su material genético (ADN). Como en un morral de un solo compartimento, su ADN está suelto y mezclado en el centro de la célula con todo lo demás.
+- **Ejemplo:** Las bacterias que viven en tu piel o las que ayudan a fabricar el yogur.
+
+### La Célula Eucariota (El "Morral con compartimientos")
+Son más grandes y modernas. Su característica principal es que tienen un **núcleo definido**, que es como un estuche especial y seguro donde guardan el ADN. Además, tienen muchas "habitaciones" internas llamadas organelos, cada una con un trabajo específico.
+- **Ejemplo:** Las células de los animales, las plantas y los hongos (como los champiñones).
 
 | Característica | Procariota | Eucariota |
-|----------------|------------|-----------|
-| **Núcleo** | No tiene membrana nuclear | Tiene núcleo con membrana |
-| **Tamaño** | Pequeñas (1-10 µm) | Más grandes (10-100 µm) |
-| **Organelos** | Pocos y simples | Muchos y complejos |
-| **ADN** | Circular, libre en el citoplasma | Lineal, dentro del núcleo |
-| **Ejemplos** | Bacterias | Animales, plantas, hongos |
+| :--- | :--- | :--- |
+| **Núcleo** | No tiene | Sí tiene (protege el ADN) |
+| **Tamaño** | Muy pequeñas | Más grandes y complejas |
+| **Organización** | ADN libre en el citoplasma | ADN dentro del núcleo |
+| **Ejemplos** | Bacterias | Animales, vegetales, hongos |
 
-### ⚙️ Ejemplos Resueltos
-
-#### Ejemplo 1: Identificando una bacteria
-
-Un científico observa un microorganismo muy pequeño, sin núcleo visible y con ADN circular. ¿Qué tipo de célula es?
-
-**Idea clave:** Las células sin núcleo definido son procariotas.
-
-**Razonamiento:**
-- No tiene núcleo visible → el ADN está libre en el citoplasma.
-- Es muy pequeño → característica típica de procariotas.
-- Tiene ADN circular → típico de bacterias.
-
-**Resultado:**
-
-> Es una **célula procariota**, probablemente una bacteria.
-
-#### Ejemplo 2: La célula de tu piel
-
-Las células de tu piel tienen un núcleo bien definido con membrana. ¿Qué tipo de célula son?
-
-**Idea clave:** Las células con núcleo definido son eucariotas.
-
-**Razonamiento:**
-- Tienen núcleo con membrana → son eucariotas.
-- Pertenecen a un animal (tú) → son células animales eucariotas.
-- Dentro del núcleo está el ADN organizado en cromosomas.
-
-**Resultado:**
-
-> Son **células eucariotas animales**.
-
-#### Ejemplo 3: El yogur y las bacterias
-
-El yogur se hace gracias a bacterias que fermentan la leche. ¿Qué tipo de células son estas bacterias?
-
-**Idea clave:** Todas las bacterias son procariotas.
-
-**Razonamiento:**
-- Las bacterias del yogur (como Lactobacillus) son microorganismos.
-- Como todas las bacterias, no tienen núcleo definido.
-- Su ADN está libre en el citoplasma.
-
-**Resultado:**
-
-> Las bacterias del yogur son **células procariotas**.
-
-#### Ejemplo 4: Una levadura
-
-La levadura que usamos para hacer pan es un hongo unicelular. ¿Es procariota o eucariota?
-
-**Idea clave:** Los hongos son eucariotas, aunque sean unicelulares.
-
-**Razonamiento:**
-- Ser unicelular NO significa ser procariota.
-- La levadura es un hongo, y todos los hongos son eucariotas.
-- Tiene núcleo definido, mitocondrias y otros organelos complejos.
-
-**Resultado:**
-
-> La levadura es una **célula eucariota** (aunque tenga una sola célula).
-
-#### Ejemplo 5: ¿Cuál es más antigua evolutivamente?
-
-Si las células procariotas son más simples, ¿cuáles aparecieron primero en la historia de la Tierra?
-
-**Idea clave:** Lo más simple suele ser más antiguo evolutivamente.
-
-**Razonamiento:**
-- Las procariotas aparecieron hace ~3,800 millones de años.
-- Las eucariotas aparecieron hace ~2,000 millones de años.
-- Las eucariotas son más complejas y evolucionaron después.
-
-**Resultado:**
-
-> Las células **procariotas** aparecieron primero, las eucariotas vinieron después.
+![celula-eucariota-y-procariota](https://cdn.ediprofe.com/img/ciencias/rh89-celula-eucariota-y-procariota.webp)
 
 ---
 
-## Célula Animal vs Célula Vegetal
+## Células de Animales y Vegetales
 
-Dentro de las células eucariotas, hay diferencias importantes entre las células de los animales y las de las plantas.
+Dentro del grupo de las células complejas (eucariotas), existen dos versiones muy famosas: las que forman a los animales (incluyéndote a ti) y las que forman a las plantas.
 
-| Característica | Célula Animal | Célula Vegetal |
-|----------------|---------------|----------------|
-| **Pared celular** | No tiene | Sí tiene (de celulosa) |
-| **Cloroplastos** | No tiene | Sí tiene (para fotosíntesis) |
-| **Vacuola** | Pequeñas o ausentes | Una grande central |
-| **Forma** | Irregular, redondeada | Regular, rectangular |
-| **Centriolos** | Sí tiene | Generalmente no |
+### ¿En qué se diferencian?
 
-### ⚙️ Ejemplos Resueltos
+Imagina que una planta tiene que fabricar su propio alimento porque no puede caminar a buscarlo, mientras que un animal se mueve y necesita ser flexible. Estas necesidades dictan cómo son sus células.
 
-#### Ejemplo 6: ¿Por qué las plantas son verdes?
+1.  **Cloroplastos (Los "Paneles Solares"):** Las plantas tienen unas estructuras verdes que captan la luz del sol para fabricar "azúcar" (su alimento). Los animales no los tenemos porque nosotros obtenemos energía comiendo.
+2.  **Pared Celular (La "Armadura"):** Las plantas no tienen huesos. Para mantenerse erguidas, cada una de sus células tiene una pared exterior muy dura y rígida. Las células animales no tienen esa pared, por eso nuestra piel es suave y flexible.
+3.  **Vacuola (El "Tanque de Agua"):** Las plantas guardan mucha agua para momentos de sequía en una bolsa gigante dentro de la célula. En los animales, estas bolsas son muy pequeñas o no existen.
 
-Las hojas de las plantas son verdes. ¿Qué tienen las células vegetales que explica esto?
+![celula-animal-y-vegetal](https://cdn.ediprofe.com/img/ciencias/l0bj-celula-animal-y-vegetal.webp)
 
-**Idea clave:** Los cloroplastos contienen clorofila, que es verde.
+| Estructura | Célula Animal | Célula Vegetal |
+| :--- | :--- | :--- |
+| **Forma** | Irregular (redondeada) | Regular (como un ladrillo) |
+| **Pared Dura** | No tiene (es flexible) | Sí tiene (es rígida) |
+| **Paneles Solares** | No tiene | Sí tiene (cloroplastos) |
+| **Tanque de Agua** | Pequeño | Muy grande |
 
-**Razonamiento:**
-- Las células vegetales tienen cloroplastos.
-- Los cloroplastos contienen clorofila.
-- La clorofila absorbe luz roja y azul, pero refleja la verde.
-- Por eso vemos las plantas de color verde.
+---
 
-**Resultado:**
+## ⚙️ Ejemplos de Clasificación
 
-> Las plantas son verdes porque sus células tienen **cloroplastos con clorofila**.
+#### Ejemplo 1: El mundo bacteriano
 
-#### Ejemplo 7: ¿Por qué las plantas son rígidas?
+Un estudiante observa un microorganismo que no tiene una "bolsita" o núcleo para su ADN. ¿Cómo lo clasificarías?
 
-Un tallo de apio es firme y crujiente. ¿Qué estructura de la célula vegetal explica esto?
-
-**Idea clave:** La pared celular da rigidez a las células vegetales.
+**Idea clave:** La ausencia de núcleo define a las procariotas.
 
 **Razonamiento:**
-- Las células vegetales tienen pared celular de celulosa.
-- La celulosa es un material rígido y resistente.
-- Además, la vacuola llena de agua empuja contra la pared (turgencia).
-- Esto hace que el tallo sea firme.
+1. Al no tener núcleo, el ADN está disperso.
+2. Es la característica principal de las bacterias.
+3. Por lo tanto, es una construcción simple.
 
 **Resultado:**
+$$
+\boxed{\text{Célula Procariota}}
+$$
 
-> La rigidez viene de la **pared celular** y la **vacuola** llena de agua.
+#### Ejemplo 2: ¿Por qué no somos verdes?
 
-#### Ejemplo 8: ¿Por qué los animales no hacen fotosíntesis?
+Si los seres humanos estamos hechos de células complejas, ¿por qué no podemos fabricar alimento con el sol como los árboles?
 
-Los animales necesitamos comer para obtener energía. ¿Por qué no podemos hacer fotosíntesis como las plantas?
-
-**Idea clave:** Las células animales no tienen cloroplastos.
+**Idea clave:** Los animales carecen de cloroplastos (paneles solares).
 
 **Razonamiento:**
-- La fotosíntesis ocurre en los cloroplastos.
-- Las células animales NO tienen cloroplastos.
-- Sin cloroplastos, no podemos convertir luz solar en alimento.
-- Por eso dependemos de comer otros seres vivos.
+1. Para fabricar alimento con luz, se necesitan cloroplastos.
+2. Las células animales no poseen estas estructuras.
+3. Nosotros dependemos de la nutrición externa (comer).
 
 **Resultado:**
+$$
+\boxed{\text{Porque no tenemos cloroplastos}}
+$$
 
-> Los animales no hacemos fotosíntesis porque nuestras células **no tienen cloroplastos**.
+#### Ejemplo 3: El tallo de una flor
 
-#### Ejemplo 9: Forma de las células
+Si cortas una flor y la dejas sin agua, se dobla y se pone "triste". Pero cuando la pones en agua, vuelve a estar firme. ¿Qué explica esto a nivel celular?
 
-Al observar bajo el microscopio, ¿cómo distinguir si una célula es animal o vegetal por su forma?
-
-**Idea clave:** La pared celular determina la forma de la célula.
+**Idea clave:** La vacuola y la pared celular trabajan juntas.
 
 **Razonamiento:**
-- Células vegetales: tienen pared rígida → forma rectangular/cuadrada.
-- Células animales: sin pared rígida → forma irregular/redondeada.
-- Las células vegetales se ven como ladrillos ordenados.
-- Las células animales se ven como gotas o formas variadas.
+1. La vacuola gigante se llena de agua y empuja hacia afuera.
+2. La pared celular rígida resiste ese empuje.
+3. Esa presión interna hace que la planta se mantenga firme (como un globo inflado dentro de una caja de cartón).
 
 **Resultado:**
+$$
+\boxed{\text{La presión del agua en la vacuola contra la pared celular}}
+$$
 
-> Células vegetales = forma **rectangular**. Células animales = forma **irregular**.
+#### Ejemplo 4: La forma de las células
 
-#### Ejemplo 10: La vacuola gigante
+Bajo el microscopio, ves células que parecen ladrillos bien ordenados uno al lado del otro. ¿A qué tipo de organismo pertenecen?
 
-¿Por qué las células vegetales tienen una vacuola tan grande?
-
-**Idea clave:** La vacuola almacena agua y da soporte a la planta.
+**Idea clave:** La pared celular da formas geométricas regulares.
 
 **Razonamiento:**
-- La vacuola puede ocupar hasta el 90% de la célula vegetal.
-- Almacena agua, nutrientes y desechos.
-- Al llenarse de agua, empuja la membrana contra la pared celular.
-- Esto mantiene la planta erguida (como un globo inflado).
+1. Las células vegetales tienen una pared rígida.
+2. Esta pared las obliga a mantener formas rectangulares o hexagonales.
+3. Las células animales, al ser suaves, se ven más desordenadas o redondeadas.
 
 **Resultado:**
+$$
+\boxed{\text{A una planta (Células Vegetales)}}
+$$
 
-> La vacuola grande **almacena agua** y **mantiene la planta firme** (turgencia).
+![bajo-el-microscopio-celula-vegetal](https://cdn.ediprofe.com/img/ciencias/w3xi-bajo-el-microscopio-celula-vegetal.webp)
+
+#### Ejemplo 5: Las levaduras del pan
+
+Las levaduras son pequeños hongos que hacen crecer el pan. Tienen un núcleo donde guardan su ADN. ¿Son procariotas o eucariotas?
+
+**Idea clave:** La presencia de núcleo define a las eucariotas.
+
+**Razonamiento:**
+1. Tienen un compartimento especial (núcleo) para el ADN.
+2. Esto las hace células complejas independientemente de su tamaño.
+3. No son bacterias, por lo que entran en el grupo moderno.
+
+**Resultado:**
+$$
+\boxed{\text{Célula Eucariota}}
+$$
 
 ---
 
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1
-¿Qué tipo de célula tiene una bacteria que causa infección?
+¿Cuál es la diferencia principal entre una célula procariota y una eucariota?
 
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:**
-- Todas las bacterias son procariotas.
-- No tienen núcleo definido.
+**Razonamiento:** La forma en que guardan el ADN es la clave.
+- Procariota: ADN suelto.
+- Eucariota: ADN dentro de un núcleo.
 
-**Resultado:** Es una célula **procariota**.
+**Resultado:** El **núcleo definido**.
 
 </details>
 
 ### Ejercicio 2
-Un estudiante observa una célula rectangular con pared gruesa y una vacuola grande. ¿Es animal o vegetal?
+Si observas una célula con una pared celular rígida y cloroplastos, ¿qué tipo de célula es?
 
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:**
-- Forma rectangular → típico de célula vegetal.
-- Pared celular → solo las vegetales la tienen.
-- Vacuola grande → característica de célula vegetal.
+**Razonamiento:** Los cloroplastos sirven para captar luz y la pared para dar rigidez, ambas características de las plantas.
 
-**Resultado:** Es una célula **vegetal**.
+**Resultado:** **Célula Vegetal**.
 
 </details>
 
 ### Ejercicio 3
-¿Por qué las células eucariotas son más grandes que las procariotas?
+¿Por qué las células animales suelen tener formas irregulares o redondeadas?
 
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:**
-- Las eucariotas tienen más organelos (núcleo, mitocondrias, retículo, etc.).
-- Necesitan más espacio para todos estos componentes.
+**Razonamiento:** A diferencia de las plantas, los animales no tienen una pared exterior dura sobre sus células.
 
-**Resultado:** Porque tienen **más organelos** que requieren espacio.
+**Resultado:** Porque **no tienen pared celular**.
 
 </details>
 
 ### Ejercicio 4
-Un organismo unicelular tiene núcleo. ¿Es procariota o eucariota?
+La mayoría de las bacterias son muy pequeñas y simples. ¿En qué grupo las clasificarías?
 
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:**
-- Tener núcleo = eucariota.
-- Ser unicelular no significa ser procariota.
+**Razonamiento:** No tienen núcleo ni organelos complejos.
 
-**Resultado:** Es **eucariota** (como las levaduras o protozoos).
+**Resultado:** **Procariotas**.
 
 </details>
 
 ### Ejercicio 5
-¿Qué organelo te falta para poder hacer fotosíntesis?
+¿Qué estructura de la célula vegetal funciona como un panel solar?
 
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:**
-- La fotosíntesis ocurre en los cloroplastos.
-- Las células humanas no tienen cloroplastos.
+**Razonamiento:** Los cloroplastos atrapan la energía del sol para que la planta pueda fabricar su propio alimento.
 
-**Resultado:** Nos faltan los **cloroplastos**.
+**Resultado:** Los **cloroplastos**.
 
 </details>
 
 ### Ejercicio 6
-Si una célula vegetal pierde toda el agua de su vacuola, ¿qué le pasará a la planta?
+¿En qué parte de la célula eucariota se guarda la "receta" de la vida (ADN)?
 
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:**
-- La vacuola llena de agua mantiene la célula turgente.
-- Sin agua, la célula se encoge y la planta pierde rigidez.
+**Razonamiento:** La eucariota tiene un compartimento central protegido.
 
-**Resultado:** La planta se **marchitará** (perderá firmeza).
+**Resultado:** En el **núcleo**.
 
 </details>
 
 ### Ejercicio 7
-¿Qué tienen en común una célula de hoja de árbol y una célula de tu hígado?
+¿Qué pasaría si nuestras células tuvieran pared celular como las de las plantas?
 
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:**
-- Ambas son eucariotas.
-- Ambas tienen núcleo, mitocondrias, membrana celular.
+**Razonamiento:** La pared es rígida. Si nuestras células fueran rígidas, no podríamos doblar los dedos, mover los brazos o parpadear.
 
-**Resultado:** Ambas son **células eucariotas** con núcleo y organelos.
+**Resultado:** Seríamos **rígidos** y no podríamos movernos con flexibilidad.
 
 </details>
 
 ### Ejercicio 8
-¿Por qué el ADN de una bacteria está "suelto" en el citoplasma?
+¿Para qué sirve la vacuola gigante en las plantas?
 
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:**
-- Las bacterias son procariotas.
-- Los procariotas no tienen membrana nuclear.
-- Sin membrana, el ADN no está separado del citoplasma.
+**Razonamiento:** Las plantas no pueden ir a tomar agua cuando quieren, necesitan guardarla.
 
-**Resultado:** Porque las bacterias **no tienen núcleo** (membrana nuclear).
+**Resultado:** Para **almacenar agua** y dar soporte a la planta.
 
 </details>
 
 ### Ejercicio 9
-¿Qué estructura permite que las células vegetales mantengan su forma aunque las pinches?
+Identifica el tipo de célula: Tiene núcleo, tiene mitocondrias, no tiene pared celular, forma irregular.
 
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:**
-- La membrana es flexible y se rompería.
-- La pared celular es rígida y resistente.
+**Razonamiento:** El núcleo la hace eucariota. La falta de pared celular la hace animal.
 
-**Resultado:** La **pared celular** de celulosa.
+**Resultado:** **Célula Animal**.
 
 </details>
 
 ### Ejercicio 10
-Clasifica estos organismos según el tipo de célula que tienen: bacteria, hongo, planta, animal.
+¿Un hongo es procariota o eucariota si sabemos que tiene núcleo?
 
 <details>
 <summary>Ver solución</summary>
 
-| Organismo | Tipo de célula |
-|-----------|----------------|
-| Bacteria | Procariota |
-| Hongo | Eucariota |
-| Planta | Eucariota vegetal |
-| Animal | Eucariota animal |
+**Razonamiento:** Todo organismo con núcleo protegido es eucariota.
 
-**Resultado:** Solo la bacteria es **procariota**; los demás son **eucariotas**.
+**Resultado:** **Eucariota**.
 
 </details>
 
@@ -351,11 +273,10 @@ Clasifica estos organismos según el tipo de célula que tienen: bacteria, hongo
 
 ## 🔑 Resumen
 
-| Tipo | Características principales | Ejemplos |
-|------|---------------------------|----------|
-| **Procariota** | Sin núcleo, pequeña, ADN circular | Bacterias |
-| **Eucariota** | Con núcleo, grande, ADN lineal | Animales, plantas, hongos |
-| **Célula animal** | Sin pared, sin cloroplastos, forma irregular | Células humanas |
-| **Célula vegetal** | Con pared, con cloroplastos, vacuola grande, forma rectangular | Células de plantas |
+| Tipo de Célula | Núcleo | Pared | Cloroplastos | Forma |
+| :--- | :--- | :--- | :--- | :--- |
+| **Procariota** | No | Sí (pero distinta) | No | Simple |
+| **Eucariota Animal**| Sí | No | No | Irregular |
+| **Eucariota Vegetal**| Sí | Sí | Sí | Rectangular |
 
-> **Conclusión:** Aunque todas las células comparten características básicas (membrana, citoplasma, material genético), existen diferencias importantes. Las procariotas son más simples y antiguas; las eucariotas son más complejas y diversas. Dentro de las eucariotas, las células vegetales tienen adaptaciones para la fotosíntesis y el soporte que las células animales no tienen.
+> **Conclusión:** Existen células simples (procariotas) y células complejas (eucariotas). Dentro de las complejas, los animales y las plantas tienen diferencias clave: las plantas están blindadas (pared celular) y tienen sus propios paneles solares (cloroplastos), mientras que nosotros somos flexibles y buscamos alimento en el exterior.
