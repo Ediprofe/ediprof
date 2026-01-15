@@ -1169,7 +1169,187 @@
       "size": "71KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/w3xi-bajo-el-microscopio-celula-vegetal.webp",
       "status": "uploaded"
+    },
+    {
+      "id": "f4o9",
+      "name": "nucleo-y-membrana-celular.webp",
+      "materia": "ciencias",
+      "date": "2026-01-15",
+      "size": "62KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/f4o9-nucleo-y-membrana-celular.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "oh4q",
+      "name": "mitocondrias.webp",
+      "materia": "ciencias",
+      "date": "2026-01-15",
+      "size": "72KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/oh4q-mitocondrias.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "ntko",
+      "name": "ribosomas-y-reticulos.webp",
+      "materia": "ciencias",
+      "date": "2026-01-15",
+      "size": "78KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/ntko-ribosomas-y-reticulos.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "8cs4",
+      "name": "la-celula-como-una-ciudad-vibrante.webp",
+      "materia": "ciencias",
+      "date": "2026-01-15",
+      "size": "103KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/8cs4-la-celula-como-una-ciudad-vibrante.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "84h1",
+      "name": "las-proteinas-los-trabajadores.webp",
+      "materia": "ciencias",
+      "date": "2026-01-15",
+      "size": "78KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/84h1-las-proteinas-los-trabajadores.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "2qgz",
+      "name": "aparato-de-golgi.webp",
+      "materia": "ciencias",
+      "date": "2026-01-15",
+      "size": "81KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/2qgz-aparato-de-golgi.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "zllu",
+      "name": "lisosomas.webp",
+      "materia": "ciencias",
+      "date": "2026-01-15",
+      "size": "87KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/zllu-lisosomas.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "dxgc",
+      "name": "cloroplastos.webp",
+      "materia": "ciencias",
+      "date": "2026-01-15",
+      "size": "61KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/dxgc-cloroplastos.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "uwak",
+      "name": "pared-celular.webp",
+      "materia": "ciencias",
+      "date": "2026-01-15",
+      "size": "78KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/uwak-pared-celular.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "9dcb",
+      "name": "vacuola-gigante.webp",
+      "materia": "ciencias",
+      "date": "2026-01-15",
+      "size": "64KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/9dcb-vacuola-gigante.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "7bwa",
+      "name": "ejemplo-1-de-donde-sale-la-energia.webp",
+      "materia": "ciencias",
+      "date": "2026-01-15",
+      "size": "79KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/7bwa-ejemplo-1-de-donde-sale-la-energia.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "y1e9",
+      "name": "ejemplo-2-muerte-celular.webp",
+      "materia": "ciencias",
+      "date": "2026-01-15",
+      "size": "71KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/y1e9-ejemplo-2-muerte-celular.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "32r7",
+      "name": "ejemplo-3-el-color-verde.webp",
+      "materia": "ciencias",
+      "date": "2026-01-15",
+      "size": "69KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/32r7-ejemplo-3-el-color-verde.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "2itm",
+      "name": "ejemplo-4-centro-de-empaque-y-distribucion.webp",
+      "materia": "ciencias",
+      "date": "2026-01-15",
+      "size": "88KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/2itm-ejemplo-4-centro-de-empaque-y-distribucion.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "q09g",
+      "name": "ejemplo-5-laboratorio-de-limpieza.webp",
+      "materia": "ciencias",
+      "date": "2026-01-15",
+      "size": "84KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/q09g-ejemplo-5-laboratorio-de-limpieza.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "xxdh",
+      "name": "ejemplo-6-reciclaje-lisosomas.webp",
+      "materia": "ciencias",
+      "date": "2026-01-15",
+      "size": "88KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/xxdh-ejemplo-6-reciclaje-lisosomas.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "d7ro",
+      "name": "resumen-organelos-celulares.webp",
+      "materia": "ciencias",
+      "date": "2026-01-15",
+      "size": "111KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/d7ro-resumen-organelos-celulares.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "9xpo",
+      "name": "membrana-celular.webp",
+      "materia": "ciencias",
+      "date": "2026-01-15",
+      "size": "57KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/9xpo-membrana-celular.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "p9nh",
+      "name": "nucleo-celular.webp",
+      "materia": "ciencias",
+      "date": "2026-01-15",
+      "size": "73KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/p9nh-nucleo-celular.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "xr09",
+      "name": "nucleo-y-membrana-celular.webp",
+      "materia": "ciencias",
+      "date": "2026-01-15",
+      "size": "98KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/xr09-nucleo-y-membrana-celular.webp",
+      "status": "uploaded"
     }
   ],
-  "lastUpdated": "2026-01-15T17:36:34.351Z"
+  "lastUpdated": "2026-01-15T21:27:51.574Z"
 }
