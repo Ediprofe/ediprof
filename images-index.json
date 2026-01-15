@@ -1349,7 +1349,25 @@
       "size": "98KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/xr09-nucleo-y-membrana-celular.webp",
       "status": "uploaded"
+    },
+    {
+      "id": "3aiu",
+      "name": "mitocondria-plantas-de-energia.webp",
+      "materia": "ciencias",
+      "date": "2026-01-15",
+      "size": "65KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/3aiu-mitocondria-plantas-de-energia.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "wjl5",
+      "name": "claroplastos-fabrica-de-alimentos.webp",
+      "materia": "ciencias",
+      "date": "2026-01-15",
+      "size": "84KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/wjl5-claroplastos-fabrica-de-alimentos.webp",
+      "status": "uploaded"
     }
   ],
-  "lastUpdated": "2026-01-15T21:27:51.574Z"
+  "lastUpdated": "2026-01-15T22:58:29.787Z"
 }

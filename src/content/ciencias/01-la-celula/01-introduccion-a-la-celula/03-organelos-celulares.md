@@ -17,9 +17,9 @@ Si la célula fuera una ciudad, los organelos serían los edificios: la planta d
 
 ---
 
-## El Centro de Control y la Frontera
+## La Frontera y el Centro de Mando
 
-Cada célula necesita una forma de protegerse y un lugar donde se guarden las instrucciones para funcionar.
+Antes de conocer los edificios que hay **adentro** de la ciudad, debemos pasar por sus límites. Aunque a veces se estudian juntos, el primero es la envoltura de la célula y el segundo es el organelo principal.
 
 ### Membrana Celular (El Portero)
 Es una capa delgada que rodea a toda la célula. Su trabajo es vigilar quién entra y quién sale. No es una pared sólida; tiene pequeños poros que permiten el paso de agua y nutrientes, pero bloquean sustancias dañinas.
@@ -42,7 +42,7 @@ Para que una ciudad funcione, necesita electricidad y fábricas que produzcan lo
 ### Mitocondrias (Las Plantas de Energía)
 Son las encargadas de producir energía. Toman los nutrientes (como el azúcar) y el oxígeno para transformarlos en la energía que la célula usa. A este proceso vital se le llama **respiración celular**. Sin ellas, la célula se quedaría "sin batería".
 
-![mitocondrias](https://cdn.ediprofe.com/img/ciencias/oh4q-mitocondrias.webp)
+![mitocondria-plantas-de-energia](https://cdn.ediprofe.com/img/ciencias/3aiu-mitocondria-plantas-de-energia.webp)
 
 ### Ribosomas y Retículo (Las Fábricas y Pasillos)
 - **Ribosomas:** Son máquinas pequeñitas que fabrican proteínas (los materiales de construcción del cuerpo).
@@ -76,17 +76,25 @@ Son como pequeños estómagos. Se encargan de la **digestión celular**: rompen 
 
 Como vimos en la lección anterior, las plantas tienen algunos edificios extra que los animales no poseemos.
 
-1.  **Cloroplastos:** Contienen un pigmento verde llamado clorofila. Son los encargados de realizar la **fotosíntesis**, un proceso mágico donde usan la luz del sol para fabricar su propio alimento.
+1.  **Cloroplastos:** Contienen un pigmento verde llamado clorofila. Son los encargados de realizar un proceso "mágico" donde usan la luz del sol para fabricar su propio alimento.
 
 ![cloroplastos](https://cdn.ediprofe.com/img/ciencias/dxgc-cloroplastos.webp)
+
+A este proceso se le llama **fotosíntesis**.
+
+![claroplastos-fabrica-de-alimentos](https://cdn.ediprofe.com/img/ciencias/wjl5-claroplastos-fabrica-de-alimentos.webp)
+
 
 2.  **Pared Celular:** Es una capa muy dura por fuera de la membrana. Es como una armadura de madera que le da forma y fuerza a la planta.
 
 ![pared-celular](https://cdn.ediprofe.com/img/ciencias/uwak-pared-celular.webp)
 
-3.  **Vacuola Gigante:** Es una bolsa de almacenamiento enorme. Guarda agua y nutrientes, y cuando está llena, hace que la planta esté erguida y firme.
+3.  **Vacuola Central Gigante:** Es una bolsa de almacenamiento enorme que ocupa gran parte de la célula vegetal. Guarda agua y, al llenarse, hace que la planta se mantenga firme (como un globo inflado).
 
 ![vacuola-gigante](https://cdn.ediprofe.com/img/ciencias/9dcb-vacuola-gigante.webp)
+
+> **Dato Curioso:** Las células animales también tienen vacuolas, pero son **pequeñas y generalmente temporales**. Sirven para almacenar, transportar y digerir sustancias, pero a diferencia de las plantas, **no se encargan de darle soporte** ni forma a la célula.
+
 
 | Organelo | Función Principal | Analogía |
 | :--- | :--- | :--- |
@@ -337,14 +345,19 @@ Ordena el proceso: un ribosoma fabrica una proteína, el Golgi la empaca, y el r
 
 ![resumen-organelos-celulares](https://cdn.ediprofe.com/img/ciencias/d7ro-resumen-organelos-celulares.webp)
 
-| Organelo | Función |
-| :--- | :--- |
-| **Membrana** | Frontera y portería |
-| **Núcleo** | Instrucciones (ADN) |
-| **Mitocondrias**| Pilas / Energía |
-| **Ribosomas** | Fábrica de proteínas |
-| **Golgi** | Empaque y envío |
-| **Lisosomas** | Limpieza y digestión |
-| **Cloroplastos**| Alimento solar |
+| Componente | Función Clave | ¿Dónde se encuentra? |
+| :--- | :--- | :--- |
+| **Membrana** *(Envoltura)* | Frontera y control de entrada/salida | ✅ Plantas y Animales |
+| **Núcleo** | Guarda el manual de instrucciones (ADN) | ✅ Plantas y Animales |
+| **Mitocondrias** | Generan energía (Respiración celular) | ✅ Plantas y Animales |
+| **Ribosomas** | Fabrican a los trabajadores (Proteínas) | ✅ Plantas y Animales |
+| **Retículo Rugoso** | Ayuda a fabricar proteínas | ✅ Plantas y Animales |
+| **Retículo Liso** | Fabrica grasas y desintoxica | ✅ Plantas y Animales |
+| **Aparato de Golgi** | Empaca y distribuye sustancias | ✅ Plantas y Animales |
+| **Lisosomas** | Reciclaje y digestión de desechos | 🦁 Principalmente Animales |
+| **Cloroplastos** | Fabrican alimento (Fotosíntesis) | 🌿 Solo Plantas |
+| **Pared Celular** | Brinda soporte y rigidez extra | 🌿 Solo Plantas |
+| **Vacuolas** | Almacenamiento (Gigante en plantas; pequeñas en animales) | ✅ Ambas (Gigante solo en plantas) |
+| **Proteínas** *(Trabajadores)*| Construyen, defienden y transportan | ✅ En todas las células |
 
-> **Conclusión:** La célula funciona como un equipo perfectamente coordinado. Los organelos no son solo partes sueltas, son compartimentos especializados que permiten que la vida ocurra en un espacio tan pequeño que ni siquiera podemos verlo. Sin el trabajo de cada uno de ellos, nosotros no podríamos respirar, movernos ni crecer.
+> **Conclusión:** La célula es una ciudad completa. Aunque las plantas tienen algunos "edificios" extra para alimentarse del sol y mantenerse rígidas, la mayoría de los organelos trabajan igual en todos los seres vivos, permitiendo que la vida exista.
