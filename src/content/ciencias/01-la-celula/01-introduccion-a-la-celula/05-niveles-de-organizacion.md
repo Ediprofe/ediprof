@@ -23,17 +23,55 @@ En la naturaleza, las cosas no están mezcladas al azar. Existe un orden jerárq
 4.  **Sistema:** Un conjunto de órganos que trabajan coordinadamente. Por ejemplo, el sistema circulatorio.
 5.  **Organismo:** El ser vivo completo, que es el resultado de todos los sistemas trabajando juntos.
 
-| Nivel | Definición | Un ejemplo... |
-| :--- | :--- | :--- |
-| **Célula** | Unidad básica de la vida | Célula ósea |
-| **Tejido** | Grupo de células iguales | Tejido del hueso |
-| **Órgano** | Varios tejidos juntos | Un hueso (fémur) |
-| **Sistema** | Grupo de órganos | Sistema Óseo |
-| **Organismo** | El ser vivo completo | Un perro |
+![la-jerarquia-de-la-vida-ejemplo-sistema-oseo](https://cdn.ediprofe.com/img/ciencias/a38z-la-jerarquia-de-la-vida.webp)
 
 ---
 
-## ⚙️ Ejemplos de Organización
+## 🔗 Cadenas de Organización
+
+Para entender mejor cómo se conectan estos niveles, aquí tienes tres ejemplos concretos que muestran cómo se construye la complejidad biológica, paso a paso, hasta llegar al nivel de sistema.
+
+### 1. El camino del Movimiento (Sistema Muscular)
+*   **Nivel 1 (Célula):** **Miocito** (Célula muscular). Es la unidad especializada en contraerse y estirarse.
+*   **Nivel 2 (Tejido):** **Tejido Muscular**. Conjunto de miles de miocitos unidos para generar fuerza.
+*   **Nivel 3 (Órgano):** **Músculo** (ej. Bíceps). Paquete formado por tejido muscular envuelto en tejido conectivo, con vasos sanguíneos y nervios.
+*   **Nivel 4 (Sistema):** **Sistema Muscular**. Todos los músculos del cuerpo coordinados para mover el esqueleto.
+
+![el-camino-del-movimiento-sistema-muscular](https://cdn.ediprofe.com/img/ciencias/xegd-el-camino-del-movimiento-sistema-muscular.webp)
+
+
+### 2. El camino del Control (Sistema Nervioso)
+*   **Nivel 1 (Célula):** **Neurona**. Célula con forma de estrella especializada en transmitir impulsos eléctricos.
+*   **Nivel 2 (Tejido):** **Tejido Nervioso**. Red de millones de neuronas interconectadas para enviar mensajes.
+*   **Nivel 3 (Órgano):** **Cerebro**. Centro de control formado por una masa compleja de tejido nervioso.
+*   **Nivel 4 (Sistema):** **Sistema Nervioso**. El conjunto del cerebro, la médula espinal y los nervios que recorren todo el cuerpo.
+
+![el-camino-de-control-sistema-nervioso](https://cdn.ediprofe.com/img/ciencias/1dx5-el-camino-de-control-sistema-nervioso.webp)
+
+
+### 3. El camino de la Nutrición (Sistema Digestivo)
+*   **Nivel 1 (Célula):** **Enterocito**. Célula del revestimiento del intestino encargada de absorber los nutrientes.
+*   **Nivel 2 (Tejido):** **Epitelio Intestinal** (Tejido epitelial). Capa continua de células que recubre el interior del órgano.
+*   **Nivel 3 (Órgano):** **Intestino Delgado**. Tubo largo formado por capas de epitelio, músculo y tejido conectivo.
+*   **Nivel 4 (Sistema):** **Sistema Digestivo**. El equipo formado por boca, esófago, estómago e intestinos.
+
+![el-camino-de-la-nutricion-sistema-digestivo](https://cdn.ediprofe.com/img/ciencias/58dq-el-camino-de-la-nutricion-sistema-digestivo.webp)
+
+
+### 🧩 La Integración Final: Nivel 5 (Organismo)
+
+¿Puede vivir el Sistema Muscular si no tiene al Sistema Digestivo para alimentarlo ni al Sistema Nervioso para darle órdenes? **No.**
+
+El **Nivel 5 (Organismo)** no es la continuación de una sola línea, sino la **unión de todas ellas**.
+*   **Organismo (Ser Humano) =** Sistema Muscular **+** Sistema Nervioso **+** Sistema Digestivo **+** Sistema Óseo **+** Sistema Circulatorio...
+
+Todos deben trabajar simultáneamente para crear un individuo funcional.
+
+![la-integracion-fina-organismo](https://cdn.ediprofe.com/img/ciencias/16js-la-integracion-fina-organismo.webp)
+
+---
+
+## ⚙️ Análisis de Casos
 
 #### Ejemplo 1: El latido de la vida
 
