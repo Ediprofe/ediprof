@@ -111,6 +111,24 @@ async function main() {
     log('━'.repeat(50), 'cyan');
     console.log();
 
+    // 0. Elegir fuente
+    const { source } = await inquirer.prompt([
+        {
+            type: 'rawlist',
+            name: 'source',
+            message: '¿Qué quieres exportar?',
+            choices: [
+                { name: '📚 Lecciones del contenido web', value: 'content' },
+                { name: '📋 Guías docentes institucionales', value: 'guias' }
+            ]
+        }
+    ]);
+
+    if (source === 'guias') {
+        await exportGuiasDocentes();
+        return;
+    }
+
     // 1. Elegir formato
     const { format } = await inquirer.prompt([
         {
@@ -354,6 +372,130 @@ async function exportToDocx(materia, unidad, tema, lessons, outputPath, leccione
         cmd += ` -t "${templatePath}"`;
     }
     execSync(cmd, { stdio: 'inherit', cwd: PROJECT_ROOT });
+}
+
+const GUIAS_DIR = join(PROJECT_ROOT, 'guias-docente');
+
+/**
+ * Lista archivos .md en guias-docente/ organizados por semestre
+ */
+function listGuiasDocentes() {
+    if (!existsSync(GUIAS_DIR)) return [];
+
+    const semestres = readdirSync(GUIAS_DIR)
+        .filter(f => {
+            const fullPath = join(GUIAS_DIR, f);
+            return statSync(fullPath).isDirectory() && !f.startsWith('.') && f !== 'output';
+        })
+        .sort();
+
+    const guias = [];
+    for (const semestre of semestres) {
+        const semestreDir = join(GUIAS_DIR, semestre);
+        const files = readdirSync(semestreDir)
+            .filter(f => f.endsWith('.md'))
+            .sort();
+
+        for (const file of files) {
+            guias.push({
+                semestre,
+                file,
+                path: join(semestreDir, file),
+                title: getLessonTitle(join(semestreDir, file))
+            });
+        }
+    }
+    return guias;
+}
+
+async function exportGuiasDocentes() {
+    log('━'.repeat(50), 'cyan');
+    log('📋 EXPORTAR GUÍAS DOCENTES', 'bold');
+    log('━'.repeat(50), 'cyan');
+    console.log();
+
+    const guias = listGuiasDocentes();
+
+    if (guias.length === 0) {
+        log('❌ No hay guías docentes en guias-docente/', 'red');
+        log('   Usa el comando /guia para generar actividades.', 'yellow');
+        process.exit(1);
+    }
+
+    // Agrupar por semestre
+    const semestreGroups = {};
+    for (const g of guias) {
+        if (!semestreGroups[g.semestre]) semestreGroups[g.semestre] = [];
+        semestreGroups[g.semestre].push(g);
+    }
+
+    // Crear choices con separadores por semestre
+    const choices = [];
+    for (const semestre of Object.keys(semestreGroups).sort()) {
+        choices.push(new inquirer.Separator(`── ${semestre} ──`));
+        for (const g of semestreGroups[semestre]) {
+            choices.push({
+                name: `${g.file.includes('bilingue') ? '🌍' : '🎯'} ${g.title}`,
+                value: g.path
+            });
+        }
+    }
+
+    const { selectedGuias } = await inquirer.prompt([
+        {
+            type: 'checkbox',
+            name: 'selectedGuias',
+            message: 'Selecciona las guías a exportar (espacio para marcar):',
+            choices,
+            validate: answer => answer.length > 0 ? true : 'Selecciona al menos una guía'
+        }
+    ]);
+
+    // Nombre del archivo de salida
+    const defaultName = selectedGuias.length === 1
+        ? `${basename(selectedGuias[0], '.md')}.docx`
+        : 'guias-docentes.docx';
+
+    const { outputName } = await inquirer.prompt([
+        {
+            type: 'input',
+            name: 'outputName',
+            message: 'Nombre del archivo de salida:',
+            default: defaultName
+        }
+    ]);
+
+    const outputPath = resolve(process.env.HOME, 'Desktop', outputName);
+
+    // Usar plantilla bitacora.docx
+    const templatePath = join(PROJECT_ROOT, 'templates', 'bitacora.docx');
+    const useTemplate = existsSync(templatePath);
+
+    console.log();
+    log('━'.repeat(50), 'cyan');
+    log('📤 Exportando guías docentes...', 'green');
+    if (useTemplate) {
+        log('   📋 Usando plantilla: bitacora.docx', 'cyan');
+    }
+    log('━'.repeat(50), 'cyan');
+    console.log();
+
+    let cmd = `bash "${join(PROJECT_ROOT, 'scripts', 'export-to-docx.sh')}" ${selectedGuias.map(f => `"${f}"`).join(' ')} -o "${outputPath}"`;
+    if (useTemplate) {
+        cmd += ` -t "${templatePath}"`;
+    }
+
+    try {
+        execSync(cmd, { stdio: 'inherit', cwd: PROJECT_ROOT });
+
+        console.log();
+        log('━'.repeat(50), 'cyan');
+        log('✅ ¡Éxito! Archivo guardado en:', 'green');
+        log(`   ${outputPath}`, 'yellow');
+        log('━'.repeat(50), 'cyan');
+    } catch (error) {
+        throw new Error(`Error al exportar: ${error.message}`);
+    }
 }
 
 main().catch(err => {
