@@ -1367,7 +1367,133 @@
       "size": "84KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/wjl5-claroplastos-fabrica-de-alimentos.webp",
       "status": "uploaded"
+    },
+    {
+      "id": "rgh6",
+      "name": "celula-eucariota.webp",
+      "materia": "ciencias",
+      "date": "2026-01-15",
+      "size": "75KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/rgh6-celula-eucariota.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "9w6x",
+      "name": "celula-procariota.webp",
+      "materia": "ciencias",
+      "date": "2026-01-15",
+      "size": "67KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/9w6x-celula-procariota.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "x3e3",
+      "name": "membrana-celular-una-frontera-selectiva.webp",
+      "materia": "ciencias",
+      "date": "2026-01-16",
+      "size": "95KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/x3e3-membrana-celular-una-frontera-selectiva.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "7hft",
+      "name": "transporte-pasivo.webp",
+      "materia": "ciencias",
+      "date": "2026-01-16",
+      "size": "62KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/7hft-transporte-pasivo.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "7c56",
+      "name": "difusion-simple.webp",
+      "materia": "ciencias",
+      "date": "2026-01-16",
+      "size": "61KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/7c56-difusion-simple.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "i8qy",
+      "name": "difusion-facilitada.webp",
+      "materia": "ciencias",
+      "date": "2026-01-16",
+      "size": "109KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/i8qy-difusion-facilitada.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "2gxy",
+      "name": "osmosis.webp",
+      "materia": "ciencias",
+      "date": "2026-01-16",
+      "size": "75KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/2gxy-osmosis.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "2685",
+      "name": "transporte-activo.webp",
+      "materia": "ciencias",
+      "date": "2026-01-16",
+      "size": "64KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/2685-transporte-activo.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "kndb",
+      "name": "transporte-con-movimiento-de-la-membrana.webp",
+      "materia": "ciencias",
+      "date": "2026-01-16",
+      "size": "97KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/kndb-transporte-con-movimiento-de-la-membrana.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "7d8r",
+      "name": "fagocitosis.webp",
+      "materia": "ciencias",
+      "date": "2026-01-16",
+      "size": "80KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/7d8r-fagocitosis.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "noay",
+      "name": "pinocitosis.webp",
+      "materia": "ciencias",
+      "date": "2026-01-16",
+      "size": "57KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/noay-pinocitosis.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "a0ox",
+      "name": "endocitosis-por-receptores.webp",
+      "materia": "ciencias",
+      "date": "2026-01-16",
+      "size": "80KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/a0ox-endocitosis-por-receptores.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "xjlr",
+      "name": "exocitosis.webp",
+      "materia": "ciencias",
+      "date": "2026-01-16",
+      "size": "54KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/xjlr-exocitosis.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "jaj0",
+      "name": "resumen-transporte-celular.webp",
+      "materia": "ciencias",
+      "date": "2026-01-16",
+      "size": "79KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/jaj0-resumen-transporte-celular.webp",
+      "status": "uploaded"
     }
   ],
-  "lastUpdated": "2026-01-15T22:58:29.787Z"
+  "lastUpdated": "2026-01-16T01:46:01.613Z"
 }

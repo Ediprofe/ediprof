@@ -21,9 +21,14 @@ La forma más básica de clasificar las células es por su "orden interno". Imag
 Son las más antiguas y sencillas. Se llaman así porque **no tienen un núcleo** que proteja su material genético (ADN). Como en un morral de un solo compartimento, su ADN está suelto y mezclado en el centro de la célula con todo lo demás.
 - **Ejemplo:** Las bacterias que viven en tu piel o las que ayudan a fabricar el yogur.
 
+![celula-procariota](https://cdn.ediprofe.com/img/ciencias/9w6x-celula-procariota.webp)
+
+
 ### La Célula Eucariota (El "Morral con compartimientos")
 Son más grandes y modernas. Su característica principal es que tienen un **núcleo definido**, que es como un estuche especial y seguro donde guardan el ADN. Además, tienen muchas "habitaciones" internas llamadas organelos, cada una con un trabajo específico.
 - **Ejemplo:** Las células de los animales, las plantas y los hongos (como los champiñones).
+
+![celula-eucariota](https://cdn.ediprofe.com/img/ciencias/rgh6-celula-eucariota.webp)
 
 | Característica | Procariota | Eucariota |
 | :--- | :--- | :--- |
@@ -81,7 +86,7 @@ $$
 
 Si los seres humanos estamos hechos de células complejas, ¿por qué no podemos fabricar alimento con el sol como los árboles?
 
-**Idea clave:** Los animales carecen de cloroplastos (paneles solares).
+**Idea clave:** Los animales carecen de cloroplastos (fábricas de alimentos, como paneles solares).
 
 **Razonamiento:**
 1. Para fabricar alimento con luz, se necesitan cloroplastos.
