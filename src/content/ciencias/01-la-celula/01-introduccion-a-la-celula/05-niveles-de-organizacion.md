@@ -1,13 +1,21 @@
 # **Niveles de Organización**
 
-Tu cuerpo es como un gran país: hay ciudadanos (células), que forman vecindarios (tejidos), que forman ciudades (órganos), que forman regiones (sistemas), y todo junto forma la nación completa (tu organismo). Cada nivel trabaja en conjunto con los demás para que todo funcione perfectamente. Vamos a explorar esta jerarquía desde lo más pequeño a lo más grande.
+Tu cuerpo es como un gran país: hay ciudadanos (células), que forman vecindarios (tejidos), que forman ciudades (órganos), que forman regiones (sistemas), y todo junto forma la nación completa (tu organismo). Cada nivel trabaja en conjunto con los demás para que todo funcione perfectamente. Vamos a explorar esta jerarquía desde lo más pequeño a lo más grande
+.......................
 
----
 
-## 🎯 ¿Qué vas a aprender?
 
-- Identificar los niveles de organización de los seres vivos.
-- Comprender cómo cada nivel se construye sobre el anterior.
+
+Hola, en esete video vamos a trabajar sobre varios de los mejores elementos en este video
+
+
+
+
+
+
+
+🎯 ¿Qué vas a aprender?
+- Identificar los niveles de organización de los seres vivos
 - Relacionar célula, tejido, órgano, sistema y organismo.
 - Reconocer ejemplos de cada nivel en el cuerpo humano.
 

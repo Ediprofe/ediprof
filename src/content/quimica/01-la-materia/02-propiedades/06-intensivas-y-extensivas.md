@@ -119,6 +119,84 @@ La temperatura **no depende** de cuánta agua haya.
 
 </details>
 
+### Ejercicio 4
+Si tienes 5 gramos de azúcar y 50 gramos de azúcar, ¿qué propiedad ha cambiado entre ambas muestras?
+
+<details>
+<summary>Ver solución</summary>
+
+Ha cambiado la **masa** y el **volumen**. Ambas son propiedades **extensivas**, pues su valor aumenta al aumentar la cantidad de materia.
+
+</details>
+
+### Ejercicio 5
+¿Es el **color** una propiedad intensiva o extensiva?
+
+<details>
+<summary>Ver solución</summary>
+
+Es una propiedad **intensiva**.
+
+Una hoja de papel es blanca sin importar si tienes la hoja completa o si la cortas en pequeños pedacitos. La cualidad del color no depende de la cantidad de material.
+
+</details>
+
+### Ejercicio 6
+¿Cuál de los dos tipos de propiedades es más útil para que un científico identifique una sustancia desconocida?
+
+<details>
+<summary>Ver solución</summary>
+
+Las propiedades **intensivas**.
+
+Como no dependen de la cantidad, son específicas de cada material (como el punto de fusión o la densidad). Las extensivas (como la masa) no sirven para identificar qué es, pues 1 kg puede ser de algodón, de plomo o de agua.
+
+</details>
+
+### Ejercicio 7
+Si mides la longitud de un lápiz nuevo y luego de uno usado, ¿estás midiendo una propiedad intensiva o extensiva?
+
+<details>
+<summary>Ver solución</summary>
+
+Es una propiedad **extensiva**.
+
+La **longitud** depende directamente del tamaño del objeto; a medida que el lápiz se gasta (pierde materia), su longitud disminuye.
+
+</details>
+
+### Ejercicio 8
+La **conductividad eléctrica** del cobre, ¿es intensiva o extensiva?
+
+<details>
+<summary>Ver solución</summary>
+
+Es **intensiva**.
+
+Un centímetro de cable de cobre conduce la electricidad con la misma facilidad que un kilómetro del mismo cable (teniendo el mismo grosor). La capacidad de conducir es propia del material cobre.
+
+</details>
+
+### Ejercicio 9
+Si mezclas 1 litro de agua con otro litro de agua, obtienes 2 litros en total. ¿Qué nos dice esto sobre el volumen?
+
+<details>
+<summary>Ver solución</summary>
+
+Nos confirma que el volumen es **aditivo** y, por tanto, es una propiedad **extensiva**. Al sumar más materia, el espacio ocupado aumenta proporcionalmente.
+
+</details>
+
+### Ejercicio 10
+¿Cambia el punto de ebullición del agua si ponemos a hervir una taza en lugar de una olla gigante?
+
+<details>
+<summary>Ver solución</summary>
+
+**No cambia.** El agua hervirá a los mismos **100 °C** (al nivel del mar) en ambos casos. El punto de ebullición es una propiedad **intensiva**. Lo único que cambiará es el tiempo que tarde en calentarse, pero no la temperatura de ebullición.
+
+</details>
+
 ---
 
 ## 🔑 Resumen

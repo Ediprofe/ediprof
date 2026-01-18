@@ -143,6 +143,90 @@ En una mezcla, los componentes pueden variar en proporción.
 
 </details>
 
+### Ejercicio 4
+Clasifica la **limonada** (agua, jugo de limón y azúcar) como sustancia pura o mezcla.
+
+<details>
+<summary>Ver solución</summary>
+
+Es una **mezcla**.
+
+No tiene una fórmula única, sino que es la unión de varias sustancias puras ($$H_2O$$, ácido cítrico, sacarosa) que conservan sus propiedades.
+
+</details>
+
+### Ejercicio 5
+Si preparas café con leche y azúcar, y al revolverlo no puedes distinguir dónde está cada ingrediente, ¿qué tipo de mezcla has formado?
+
+<details>
+<summary>Ver solución</summary>
+
+Has formado una **mezcla homogénea**.
+
+También se le llama **solución** o disolución, porque sus componentes se han distribuido de manera uniforme y presentan una sola fase a simple vista.
+
+</details>
+
+### Ejercicio 6
+Menciona un ejemplo de mezcla **heterogénea** que utilicen los albañiles en la construcción.
+
+<details>
+<summary>Ver solución</summary>
+
+El **hormigón** o **concreto**.
+
+Es una mezcla de cemento, agua, arena y piedras. En él se pueden distinguir claramente los diferentes componentes, especialmente las piedras.
+
+</details>
+
+### Ejercicio 7
+¿Se pueden separar los componentes de una mezcla mediante métodos físicos (como filtrar o evaporar)?
+
+<details>
+<summary>Ver solución</summary>
+
+**Sí.**
+
+Como los componentes de una mezcla no están unidos químicamente, mantienen su identidad y pueden separarse aprovechando sus propiedades físicas (como el tamaño o el punto de ebullición).
+
+</details>
+
+### Ejercicio 8
+¿El **agua destilada** es una mezcla o una sustancia pura? Justifica.
+
+<details>
+<summary>Ver solución</summary>
+
+Es una **sustancia pura** (específicamente un **compuesto**).
+
+Al ser destilada, se le han quitado todas las sales y minerales, dejando únicamente moléculas de $$H_2O$$. Tiene una fórmula química única y propiedades constantes.
+
+</details>
+
+### Ejercicio 9
+Clasifica la **sangre** como mezcla homogénea o heterogénea.
+
+<details>
+<summary>Ver solución</summary>
+
+A simple vista parece homogénea, pero científicamente es una **mezcla heterogénea** (un coloide).
+
+Si se observa bajo el microscopio, se pueden distinguir claramente las células (glóbulos rojos, blancos) flotando en el plasma.
+
+</details>
+
+### Ejercicio 10
+Si disuelves sal en un vaso de agua, ¿estás realizando un proceso físico o químico?
+
+<details>
+<summary>Ver solución</summary>
+
+Estás realizando un **proceso físico**.
+
+Al final tienes agua salada (una mezcla). No has creado una sustancia nueva, pues el agua sigue siendo agua y la sal sigue siendo sal; tanto así que si dejas evaporar el agua, la sal quedará intacta en el fondo.
+
+</details>
+
 ---
 
 ## 🔑 Resumen

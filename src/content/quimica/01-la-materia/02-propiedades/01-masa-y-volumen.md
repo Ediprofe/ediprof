@@ -132,6 +132,93 @@ El agua tiene más **partículas** (moléculas) por unidad de volumen que el air
 
 </details>
 
+### Ejercicio 4
+Si tienes 1 kg de algodón y 1 kg de hierro, ¿ambos tienen el mismo volumen?
+
+<details>
+<summary>Ver solución</summary>
+
+**No.** Aunque tienen la misma masa (1 kg), el algodón ocupa mucho más espacio que el hierro. Por lo tanto, el algodón tiene un **volumen mucho mayor**.
+
+</details>
+
+### Ejercicio 5
+Convierte 0.8 kilogramos (kg) a gramos (g).
+
+<details>
+<summary>Ver solución</summary>
+
+$$
+0.8 \text{ kg} \times \frac{1000 \text{ g}}{1 \text{ kg}} = 800 \text{ g}
+$$
+
+</details>
+
+### Ejercicio 6
+Mencionas 3 unidades de medida para el volumen.
+
+<details>
+<summary>Ver solución</summary>
+
+1. Litro (**L**)
+2. Mililitro (**mL**)
+3. Metro cúbico (**m³**)
+
+También se usan galones, centímetros cúbicos (cm³), entre otros.
+
+</details>
+
+### Ejercicio 7
+¿Qué instrumento de laboratorio usarías para medir exactamente 25 mL de agua?
+
+<details>
+<summary>Ver solución</summary>
+
+Una **probeta** o un **matraz aforado**. La probeta es la más común para medir volúmenes variables con buena precisión.
+
+</details>
+
+### Ejercicio 8
+Si un objeto ocupa un espacio de 2 metros cúbicos ($$2 \text{ m}^3$$), ¿cuántos litros de agua caben en ese espacio?
+
+<details>
+<summary>Ver solución</summary>
+
+Sabemos que $$1 \text{ m}^3 = 1000 \text{ L}$$. Entonces:
+
+$$
+2 \text{ m}^3 \times 1000 \text{ L/m}^3 = 2000 \text{ L}
+$$
+
+**Resultado:**
+$$
+\boxed{2000 \text{ L}}
+$$
+
+</details>
+
+### Ejercicio 9
+¿Es lo mismo masa que peso? Explica brevemente.
+
+<details>
+<summary>Ver solución</summary>
+
+**No.**
+- **Masa:** Cantidad de materia (no cambia si vas a la Luna).
+- **Peso:** Fuerza con la que la gravedad atrae esa masa (sí cambia en la Luna).
+
+</details>
+
+### Ejercicio 10
+Un frasco de jarabe dice que contiene 120 mL. ¿A cuántos centímetros cúbicos ($$\text{cm}^3$$) equivale esto?
+
+<details>
+<summary>Ver solución</summary>
+
+Equivale exactamente a **$$120 \text{ cm}^3$$**, ya que $$1 \text{ mL} = 1 \text{ cm}^3$$.
+
+</details>
+
 ## Resumen
 
 ![resumen-masa-y-volumen](https://cdn.ediprofe.com/img/quimica/22e2-resumen-masa-y-volumen.webp)

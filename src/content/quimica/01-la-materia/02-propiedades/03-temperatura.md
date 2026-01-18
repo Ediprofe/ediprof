@@ -109,7 +109,16 @@ Convierte 25°C a Kelvin.
 <summary>Ver solución</summary>
 
 $$
-K = °C + 273.15 = 25 + 273.15 = 298.15 \text{ K}
+K = °C + 273.15
+$$
+
+$$
+K = 25 + 273.15 = 298.15 \text{ K}
+$$
+
+**Resultado:**
+$$
+\boxed{298.15 \text{ K}}
 $$
 
 </details>
@@ -123,6 +132,96 @@ $$
 Porque el hierro tiene un **punto de fusión mucho más alto** (1538°C vs 0°C).
 
 Los enlaces entre átomos de hierro son mucho más fuertes que los enlaces en el hielo.
+
+</details>
+
+### Ejercicio 4
+¿Cuál es el nombre del instrumento que se utiliza para medir la temperatura?
+
+<details>
+<summary>Ver solución</summary>
+
+Se utiliza el **termómetro**.
+
+Existen diferentes tipos según su uso, como los digitales, de mercurio, de alcohol o infrarrojos.
+
+</details>
+
+### Ejercicio 5
+Si la temperatura de un día caluroso es de $$30 \text{ °C}$$, ¿cuál sería su equivalente en grados Fahrenheit?
+
+<details>
+<summary>Ver solución</summary>
+
+Usamos la fórmula:
+$$
+°F = (°C \times 1.8) + 32
+$$
+
+$$
+°F = (30 \times 1.8) + 32 = 54 + 32 = 86 \text{ °F}
+$$
+
+**Resultado:**
+$$
+\boxed{86 \text{ °F}}
+$$
+
+</details>
+
+### Ejercicio 6
+Define qué es el "Punto de Fusión".
+
+<details>
+<summary>Ver solución</summary>
+
+Es la temperatura exacta a la cual una sustancia cambia de estado **sólido a líquido**. Para el agua, este punto es de **0 °C**.
+
+</details>
+
+### Ejercicio 7
+¿Cuál es la escala de temperatura que se utiliza principalmente en el ámbito científico y no usa el símbolo de grado (°)?
+
+<details>
+<summary>Ver solución</summary>
+
+La escala **Kelvin (K)**.
+
+Es la escala del Sistema Internacional de Unidades y se basa en el cero absoluto.
+
+</details>
+
+### Ejercicio 8
+Verdadero o Falso: La temperatura y el calor son conceptos idénticos.
+
+<details>
+<summary>Ver solución</summary>
+
+**Falso.**
+- El **calor** es la transferencia de energía de un cuerpo a otro.
+- La **temperatura** es una medida de la energía térmica o "qué tan caliente" está un cuerpo.
+
+</details>
+
+### Ejercicio 9
+Si pones agua en un congelador que está a $$-15 \text{ °C}$$, ¿qué proceso físico ocurrirá con el tiempo?
+
+<details>
+<summary>Ver solución</summary>
+
+Ocurrirá la **solidificación**.
+
+Al perder calor, el agua bajará su temperatura hasta los 0 °C y luego se convertirá en hielo (sólido).
+
+</details>
+
+### Ejercicio 10
+Menciona una diferencia entre el punto de ebullición del agua ($$100 \text{ °C}$$) y el del alcohol etílico ($$78.5 \text{ °C}$$).
+
+<details>
+<summary>Ver solución</summary>
+
+La diferencia es que el **alcohol necesita menos calor** que el agua para empezar a hervir. Si pusiéramos ambos al fuego al mismo tiempo, el alcohol se convertiría en gas mucho más rápido que el agua.
 
 </details>
 

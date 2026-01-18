@@ -116,6 +116,86 @@ Es **cualitativa** porque:
 
 </details>
 
+### Ejercicio 4
+Clasifica la siguiente descripción: "La barra de oro pesa 500 gramos".
+
+<details>
+<summary>Ver solución</summary>
+
+Es una propiedad **cuantitativa**.
+
+Contiene un **valor numérico** (500) y una **unidad de medida** (gramos). Además, se requiere una balanza para obtener este dato.
+
+</details>
+
+### Ejercicio 5
+¿Qué tipo de órganos o herramientas utilizamos principalmente para identificar las propiedades cualitativas?
+
+<details>
+<summary>Ver solución</summary>
+
+Utilizamos los **sentidos** (vista, olfato, tacto, gusto y oído). No necesitamos instrumentos de medición complejos para notar que algo es azul, huele rico o es ruidoso.
+
+</details>
+
+### Ejercicio 6
+Clasifica: "El alcohol etílico es un líquido incoloro".
+
+<details>
+<summary>Ver solución</summary>
+
+Es una propiedad **cualitativa**.
+
+Describe una característica visual (la falta de color) que no se puede expresar con un número y una unidad de medida estándar.
+
+</details>
+
+### Ejercicio 7
+¿Por qué la temperatura se considera una propiedad cuantitativa?
+
+<details>
+<summary>Ver solución</summary>
+
+Porque se puede **medir con un instrumento** (termómetro) y se expresa mediante un **número** y una **escala** (como 37 °C).
+
+</details>
+
+### Ejercicio 8
+Clasifica: "La piscina tiene una profundidad de 2 metros".
+
+<details>
+<summary>Ver solución</summary>
+
+Es una propiedad **cuantitativa**.
+
+Da una medida exacta de longitud (2) con su unidad respectiva (metros).
+
+</details>
+
+### Ejercicio 9
+Verdadero o Falso: Las propiedades cuantitativas son más precisas para la ciencia que las cualitativas.
+
+<details>
+<summary>Ver solución</summary>
+
+**Verdadero.**
+
+Aunque ambas son importantes, las cuantitativas permiten hacer cálculos, comparaciones exactas y experimentos repetibles porque no dependen de la percepción subjetiva de una persona.
+
+</details>
+
+### Ejercicio 10
+Indica si el **volumen** de una botella de refresco (600 mL) es cualitativo o cuantitativo.
+
+<details>
+<summary>Ver solución</summary>
+
+Es **cuantitativo**.
+
+Indica una cantidad exacta de espacio ocupado usando el número 600 y la unidad mL.
+
+</details>
+
 
 ---
 
