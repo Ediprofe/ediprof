@@ -62,6 +62,9 @@ Poseen una **única fórmula química**.
 | Óxido de silicio | SiO₂ | (arena) |
 | Amoníaco | NH₃ | nitrógeno + hidrógeno |
 
+![sustancias-puras](https://cdn.ediprofe.com/img/quimica/ejvp-sustancias-puras.webp)
+
+
 ---
 
 ## 📖 Mezclas
@@ -78,7 +81,12 @@ Se forman al **combinar sustancias sin reaccionar químicamente**.
 | Agua salada | H₂O + NaCl |
 | Agua con arena | H₂O + SiO₂ |
 
+![mezclas](https://cdn.ediprofe.com/img/quimica/hho8-mezclas.webp)
+
+
 ---
+
+
 
 ### 🔹 Tipos de Mezclas
 
@@ -87,17 +95,84 @@ Se forman al **combinar sustancias sin reaccionar químicamente**.
 | **Homogéneas** | Componentes no se distinguen | Aire, agua salada |
 | **Heterogéneas** | Componentes sí se distinguen | Agua + aceite, ensalada |
 
+
+![mezclas-homogeneas-y-heterogeneas](https://cdn.ediprofe.com/img/quimica/18ns-mezclas-homogeneas-y-heterogeneas.webp)
+
+
 ---
 
-## 📖 Cambios en las Mezclas
+## 📖 Formar una Mezcla es un Cambio Físico
 
-| Proceso | Tipo | ¿Cambian las fórmulas? |
-|---------|------|------------------------|
-| Separación de mezclas | Físico | ❌ No |
-| Formación de mezclas | Físico | ❌ No |
-| Formación de compuestos | Químico | ✅ Sí |
+> Formar o separar una mezcla es un **cambio físico**: los componentes **antes y después** son los mismos.
+
+### 💡 Ejemplo 1: Agua salada (homogénea)
+
+![agua-sal-cambio-fisico](https://cdn.ediprofe.com/img/quimica/1y1y-agua-sal-cambio-fisico.webp)
+
+| Momento | Componentes |
+|---------|-------------|
+| **Antes** de mezclar | H₂O + NaCl |
+| **Durante** la mezcla | Agua salada (los dos juntos) |
+| **Después** de evaporar | H₂O (vapor) + NaCl (sólido) |
+
+> El agua sigue siendo agua y la sal sigue siendo sal. **No aparecieron sustancias nuevas**.
 
 
+
+### 💡 Ejemplo 2: Agua con aceite (heterogénea)
+
+![agua-aceite-cambio-fisico](https://cdn.ediprofe.com/img/quimica/276v-agua-aceite-cambio-fisico.webp)
+
+
+| Momento | Componentes |
+|---------|-------------|
+| **Antes** de mezclar | H₂O + aceite |
+| **Durante** la mezcla | Dos capas visibles |
+| **Después** de decantar | H₂O + aceite (separados) |
+
+> Al separar la mezcla, recuperas exactamente lo que tenías al inicio.
+
+---
+
+## 📖 Formar un Compuesto es un Cambio Químico
+
+> Formar un compuesto es un **cambio químico**: las sustancias originales **desaparecen** y nace algo nuevo.
+
+### 💡 Ejemplo 1: Oxidación del hierro
+
+![ejemplo-1-oxidacion-hierro](https://cdn.ediprofe.com/img/quimica/5twh-ejemplo-1-oxidacion-hierro.webp)
+
+
+| Momento | Sustancias |
+|---------|------------|
+| **Antes** de la reacción | Fe (hierro) + O₂ (oxígeno) |
+| **Después** de la reacción | Fe₂O₃ (óxido de hierro) |
+
+> El hierro y el oxígeno ya no existen como tales. **Apareció una sustancia nueva** con propiedades diferentes (color rojizo, quebradizo).
+
+### 💡 Ejemplo 2: Formación del agua
+
+![ejemplo-2-formacion-de-agua](https://cdn.ediprofe.com/img/quimica/3tg0-ejemplo-2-formacion-de-agua.webp)
+
+
+| Momento | Sustancias |
+|---------|------------|
+| **Antes** de la reacción | H₂ (hidrógeno) + O₂ (oxígeno) |
+| **Después** de la reacción | H₂O (agua) |
+
+> El hidrógeno y el oxígeno eran gases. Ahora son agua líquida. **Las propiedades cambiaron completamente**.
+
+---
+
+### 📊 Comparación: Mezcla vs Compuesto
+
+| Proceso | Tipo de cambio | ¿Aparecen sustancias nuevas? |
+|---------|----------------|------------------------------|
+| Formar una **mezcla** | Físico | ❌ No |
+| Separar una **mezcla** | Físico | ❌ No |
+| Formar un **compuesto** | Químico | ✅ Sí |
+
+> **Clave:** En las mezclas, los componentes conservan sus propiedades. En los compuestos, las sustancias originales desaparecen y nace algo nuevo.
 ---
 
 ## 📝 Ejercicios de Práctica
@@ -240,3 +315,5 @@ Al final tienes agua salada (una mezcla). No has creado una sustancia nueva, pue
 | **Compuesto** | Varios elementos, una fórmula | H₂O |
 | **Mezcla homogénea** | No se distinguen componentes | Aire |
 | **Mezcla heterogénea** | Se distinguen componentes | Ensalada |
+
+![sustancias-puras-y-mezclas](https://cdn.ediprofe.com/img/quimica/s5uv-sustancias-puras-y-mezclas.webp)

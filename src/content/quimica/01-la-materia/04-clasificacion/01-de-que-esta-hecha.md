@@ -36,6 +36,8 @@ Existen diferentes tipos de átomos llamados **elementos**.
 
 ---
 
+![materia-atomos-y-elementos](https://cdn.ediprofe.com/img/quimica/2uvg-materia-atomos-y-elementos.webp)
+
 ## 📖 Elementos
 
 > Son los **distintos tipos de átomos**.
@@ -56,6 +58,7 @@ Existen diferentes tipos de átomos llamados **elementos**.
 | Sodio | Na |
 | Cloro | Cl |
 
+
 ---
 
 ## 📖 Compuestos
@@ -73,6 +76,7 @@ Existen diferentes tipos de átomos llamados **elementos**.
 
 > Los compuestos forman la **mayoría de las sustancias de la naturaleza**.
 
+![elementos-y-compuestos](https://cdn.ediprofe.com/img/quimica/gxvf-elementos-y-compuestos.webp)
 
 ---
 

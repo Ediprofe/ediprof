@@ -1538,7 +1538,232 @@
       "size": "86KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/58dq-el-camino-de-la-nutricion-sistema-digestivo.webp",
       "status": "uploaded"
+    },
+    {
+      "id": "kdov",
+      "name": "que-es-la-quimica.webp",
+      "materia": "quimica",
+      "date": "2026-01-21",
+      "size": "76KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/kdov-que-es-la-quimica.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "iemk",
+      "name": "la-importancia-de-la-quimica.webp",
+      "materia": "quimica",
+      "date": "2026-01-21",
+      "size": "97KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/iemk-la-importancia-de-la-quimica.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "42vn",
+      "name": "ramas-de-la-quimica.webp",
+      "materia": "quimica",
+      "date": "2026-01-21",
+      "size": "102KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/42vn-ramas-de-la-quimica.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "hgtg",
+      "name": "quimica-en-la-vida-diaria.webp",
+      "materia": "quimica",
+      "date": "2026-01-21",
+      "size": "78KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/hgtg-quimica-en-la-vida-diaria.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "ikdz",
+      "name": "relacion-con-otras-ciencias.webp",
+      "materia": "quimica",
+      "date": "2026-01-21",
+      "size": "88KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/ikdz-relacion-con-otras-ciencias.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "appo",
+      "name": "la-quimica-una-ciencia-interdisciplinar.webp",
+      "materia": "quimica",
+      "date": "2026-01-21",
+      "size": "97KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/appo-la-quimica-una-ciencia-interdisciplinar.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "ytk3",
+      "name": "mezclas-homogeneas-y-heterogeneas.webp",
+      "materia": "quimica",
+      "date": "2026-01-21",
+      "size": "77KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/ytk3-mezclas-homogeneas-y-heterogeneas.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "tmqd",
+      "name": "tamizado.webp",
+      "materia": "quimica",
+      "date": "2026-01-21",
+      "size": "64KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/tmqd-tamizado.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "xheq",
+      "name": "filtracion.webp",
+      "materia": "quimica",
+      "date": "2026-01-21",
+      "size": "59KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/xheq-filtracion.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "mvqw",
+      "name": "decantacion.webp",
+      "materia": "quimica",
+      "date": "2026-01-21",
+      "size": "67KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/mvqw-decantacion.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "nxyp",
+      "name": "evaporacion.webp",
+      "materia": "quimica",
+      "date": "2026-01-21",
+      "size": "55KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/nxyp-evaporacion.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "snoz",
+      "name": "destilacion.webp",
+      "materia": "quimica",
+      "date": "2026-01-21",
+      "size": "65KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/snoz-destilacion.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "c35j",
+      "name": "cromatografia.webp",
+      "materia": "quimica",
+      "date": "2026-01-21",
+      "size": "49KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/c35j-cromatografia.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "n0c3",
+      "name": "cambio-fisico-y-quimico.webp",
+      "materia": "quimica",
+      "date": "2026-01-21",
+      "size": "69KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/n0c3-cambio-fisico-y-quimico.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "2uvg",
+      "name": "materia-atomos-y-elementos.webp",
+      "materia": "quimica",
+      "date": "2026-01-21",
+      "size": "71KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/2uvg-materia-atomos-y-elementos.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "gxvf",
+      "name": "elementos-y-compuestos.webp",
+      "materia": "quimica",
+      "date": "2026-01-21",
+      "size": "51KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/gxvf-elementos-y-compuestos.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "s5uv",
+      "name": "sustancias-puras-y-mezclas.webp",
+      "materia": "quimica",
+      "date": "2026-01-21",
+      "size": "107KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/s5uv-sustancias-puras-y-mezclas.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "ejvp",
+      "name": "sustancias-puras.webp",
+      "materia": "quimica",
+      "date": "2026-01-21",
+      "size": "78KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/ejvp-sustancias-puras.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "hho8",
+      "name": "mezclas.webp",
+      "materia": "quimica",
+      "date": "2026-01-21",
+      "size": "55KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/hho8-mezclas.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "18ns",
+      "name": "mezclas-homogeneas-y-heterogeneas.webp",
+      "materia": "quimica",
+      "date": "2026-01-21",
+      "size": "69KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/18ns-mezclas-homogeneas-y-heterogeneas.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "6dx7",
+      "name": "separacion-de-mezclas-cambio-fisico.webp",
+      "materia": "quimica",
+      "date": "2026-01-21",
+      "size": "86KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/6dx7-separacion-de-mezclas-cambio-fisico.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "1y1y",
+      "name": "agua-sal-cambio-fisico.webp",
+      "materia": "quimica",
+      "date": "2026-01-21",
+      "size": "72KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/1y1y-agua-sal-cambio-fisico.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "276v",
+      "name": "agua-aceite-cambio-fisico.webp",
+      "materia": "quimica",
+      "date": "2026-01-21",
+      "size": "68KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/276v-agua-aceite-cambio-fisico.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "5twh",
+      "name": "ejemplo-1-oxidacion-hierro.webp",
+      "materia": "quimica",
+      "date": "2026-01-21",
+      "size": "75KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/5twh-ejemplo-1-oxidacion-hierro.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "3tg0",
+      "name": "ejemplo-2-formacion-de-agua.webp",
+      "materia": "quimica",
+      "date": "2026-01-21",
+      "size": "74KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/3tg0-ejemplo-2-formacion-de-agua.webp",
+      "status": "uploaded"
     }
   ],
-  "lastUpdated": "2026-01-16T14:01:04.387Z"
+  "lastUpdated": "2026-01-21T05:41:54.551Z"
 }

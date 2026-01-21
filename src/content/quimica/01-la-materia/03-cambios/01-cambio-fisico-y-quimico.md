@@ -62,6 +62,8 @@ Los cambios en la materia pueden ser de dos tipos: **físicos** (no aparecen nue
 
 ## 📊 Comparación
 
+![cambio-fisico-y-quimico](https://cdn.ediprofe.com/img/quimica/n0c3-cambio-fisico-y-quimico.webp)
+
 | Aspecto | Cambio Físico | Cambio Químico |
 |---------|---------------|----------------|
 | **¿Nuevas sustancias?** | ❌ No | ✅ Sí |
