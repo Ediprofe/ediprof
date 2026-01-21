@@ -36,6 +36,8 @@ Existen varios tipos de termómetros:
 - Infrarrojos
 - De alcohol
 
+![temperatura-e-instrumentos](https://cdn.ediprofe.com/img/quimica/9wf1-temperatura-e-instrumentos.webp)
+
 ---
 
 ## 📖 Unidades de Medida
@@ -57,11 +59,15 @@ $$
 K = °C + 273.15
 $$
 
+![unidades-de-temperatura](https://cdn.ediprofe.com/img/quimica/mo9o-unidades-de-temperatura.webp)
+
 ---
 
 ## 📖 Temperaturas de Cambio de Fase
 
 ### 💡 Puntos de fusión y ebullición:
+
+![temperatura-de-fusion-y-ebullicion](https://cdn.ediprofe.com/img/quimica/8avr-temperatura-de-fusion-y-ebullicion.webp)
 
 | Sustancia | Fusión (°C) | Ebullición (°C) |
 |-----------|-------------|-----------------|

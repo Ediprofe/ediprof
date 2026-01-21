@@ -1763,7 +1763,70 @@
       "size": "74KB",
       "url": "https://cdn.ediprofe.com/img/quimica/3tg0-ejemplo-2-formacion-de-agua.webp",
       "status": "uploaded"
+    },
+    {
+      "id": "1y77",
+      "name": "densidad-que-tan-lleno-esta-un-espacio.webp",
+      "materia": "quimica",
+      "date": "2026-01-21",
+      "size": "86KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/1y77-densidad-que-tan-lleno-esta-un-espacio.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "2lwi",
+      "name": "densidad-y-flotacion.webp",
+      "materia": "quimica",
+      "date": "2026-01-21",
+      "size": "77KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/2lwi-densidad-y-flotacion.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "95as",
+      "name": "propiedad-intensiva-y-especifica.webp",
+      "materia": "quimica",
+      "date": "2026-01-21",
+      "size": "86KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/95as-propiedad-intensiva-y-especifica.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "cagr",
+      "name": "experimento-de-los-3-dados.webp",
+      "materia": "quimica",
+      "date": "2026-01-21",
+      "size": "86KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/cagr-experimento-de-los-3-dados.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "9wf1",
+      "name": "temperatura-e-instrumentos.webp",
+      "materia": "quimica",
+      "date": "2026-01-21",
+      "size": "60KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/9wf1-temperatura-e-instrumentos.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "mo9o",
+      "name": "unidades-de-temperatura.webp",
+      "materia": "quimica",
+      "date": "2026-01-21",
+      "size": "68KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/mo9o-unidades-de-temperatura.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "8avr",
+      "name": "temperatura-de-fusion-y-ebullicion.webp",
+      "materia": "quimica",
+      "date": "2026-01-21",
+      "size": "70KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/8avr-temperatura-de-fusion-y-ebullicion.webp",
+      "status": "uploaded"
     }
   ],
-  "lastUpdated": "2026-01-21T05:41:54.551Z"
+  "lastUpdated": "2026-01-21T15:51:07.004Z"
 }

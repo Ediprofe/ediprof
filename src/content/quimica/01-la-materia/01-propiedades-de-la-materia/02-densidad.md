@@ -1,107 +1,157 @@
-# Densidad
+# **Densidad**
 
-La **densidad** indica cuánta masa hay en cierto volumen. Es una propiedad **específica** de cada sustancia.
+¿Alguna vez te has preguntado por qué una pequeña piedra se hunde rápidamente en un vaso con agua, mientras que un enorme tronco de madera puede flotar en el río? La respuesta no está en el peso total, sino en cómo está distribuida la materia.
 
 ---
 
 ## 🎯 ¿Qué vas a aprender?
 
-- La definición y fórmula de densidad
-- Por qué es una propiedad específica
-- La relación entre densidad y flotación
+- Qué significa realmente la unidad $g/mL$.
+- Cómo calcular la densidad usando la masa y el volumen.
+- Por qué es una propiedad **intensiva** y **específica**.
+- La relación entre la densidad y la capacidad de flotar.
 
 ---
 
-## 📖 Definición
+## 📖 ¿Qué es la densidad?
 
-> **Densidad** → propiedad que indica **cuánta masa hay en cierto volumen**.
+Imagina que tienes cubitos pequeños, todos del mismo tamaño (exactamente $1 \text{ mL}$ de volumen). Si llenas uno con algodón y otro con plomo, el de plomo será mucho más pesado.
+
+La **densidad** es la medida de cuánta "masa" logramos meter en un espacio determinado.
+
+![densidad-que-tan-lleno-esta-un-espacio](https://cdn.ediprofe.com/img/quimica/1y77-densidad-que-tan-lleno-esta-un-espacio.webp)
 
 ---
 
-## 📖 Fórmula
+## 📖 Fórmula de la Densidad
+
+Para calcular la densidad de cualquier objeto, solo debemos dividir su masa total entre el volumen que ocupa:
 
 $$
 d = \frac{m}{V}
 $$
 
-| Símbolo | Significado | Unidad |
-|---------|-------------|--------|
-| d | Densidad | g/mL o g/cm³ |
-| m | Masa | g |
-| V | Volumen | mL o cm³ |
+| Símbolo | Significado | Unidad común |
+| :--- | :--- | :--- |
+| $d$ | Densidad | $g/mL$ o $g/cm^3$ |
+| $m$ | Masa | $g$ |
+| $V$ | Volumen | $mL$ o $cm^3$ |
 
----
+> [!TIP]
+> Recuerda que $1 \text{ mL}$ es exactamente el mismo espacio que $1 \text{ cm}^3$. Puedes usar cualquiera de las dos unidades.
 
-## 📖 Propiedad Específica
+### 🧮 Ejemplos de cálculo:
 
-La densidad es **propia de cada sustancia**:
+#### Ejemplo 1
+Una roca tiene una masa de **$100 \text{ g}$** y un volumen de **$20 \text{ mL}$**.
 
-### 💡 Características:
+$$
+d = \frac{100 \text{ g}}{20 \text{ mL}} = 5 \text{ g/mL}
+$$
 
-- **No depende** del tamaño de la muestra
-- **No cambia** si se toma más o menos material
-- **Caracteriza** a cada sustancia
+#### Ejemplo 2
+Un líquido desconocido pesa **$45 \text{ g}$** y ocupa **$50 \text{ mL}$**.
 
-### 💡 Ejemplos:
-
-| Sustancia | Densidad (g/mL) |
-|-----------|-----------------|
-| Aceite | 0.92 |
-| Agua | 1.00 |
-| Piedra | 2.5 |
-| Hierro | 7.87 |
-| Oro | 19.3 |
-
-> La densidad del agua (1.00 g/mL) es la referencia más común.
+$$
+d = \frac{45 \text{ g}}{50 \text{ mL}} = 0.9 \text{ g/mL}
+$$
 
 ---
 
 ## 📖 Densidad y Flotación
 
-> Los cuerpos **menos densos flotan** sobre los **más densos**.
+La densidad determina quién "gana" la posición en un fluido (como el agua o el aire).
 
-### 💡 Regla:
+- Si un objeto es **menos denso** que el líquido, **flota**.
+- Si un objeto es **más denso** que el líquido, **se hunde**.
 
-| Condición | Resultado |
-|-----------|-----------|
-| Menor densidad | **Flota** |
-| Mayor densidad | **Se hunde** |
+Por eso el aceite ($0.92 \text{ g/mL}$) siempre se queda arriba del agua ($1.00 \text{ g/mL}$), aunque eches un galón entero de aceite en un vaso de agua.
 
-### 💡 Ejemplos:
-
-| Objeto | Densidad | ¿Flota en agua? |
-|--------|----------|-----------------|
-| Aceite | 0.92 g/mL | ✅ Flota |
-| Madera | 0.6 g/mL | ✅ Flota |
-| Piedra | 2.5 g/mL | ❌ Se hunde |
-| Hierro | 7.87 g/mL | ❌ Se hunde |
+![densidad-y-flotacion](https://cdn.ediprofe.com/img/quimica/2lwi-densidad-y-flotacion.webp)
 
 ---
 
-## 🔑 Resumen
+## 📖 Propiedad Intensiva y Específica
 
-| Concepto | Descripción |
-|----------|-------------|
-| **Densidad** | Masa / Volumen |
-| **Propiedad específica** | Propia de cada sustancia |
-| **Flotación** | Menor densidad → flota |
+La densidad es una propiedad muy especial porque cumple dos condiciones claves:
+
+1. **Es Intensiva:** No depende de la cantidad de materia. Un clavo de hierro tiene la **misma densidad** que una viga gigante de hierro.
+2. **Es Específica:** Funciona como una "huella dactilar". Cada sustancia tiene su propia densidad única, lo que nos permite identificarlas.
+
+### 💡 Ejemplo:
+
+Si encuentras un metal brillante y mides su densidad:
+- Si te da **$19.3 \text{ g/mL}$**, puedes estar seguro de que es **oro**.
+- Si te da **$10.5 \text{ g/mL}$**, probablemente sea **plata**.
+
+| Sustancia | Densidad ($g/mL$) |
+| :--- | :--- |
+| Aceite | $0.92$ |
+| Agua | $1.00$ |
+| Aluminio | $2.70$ |
+| Hierro | $7.87$ |
+| Oro | $19.3$ |
+
+![propiedad-intensiva-y-especifica](https://cdn.ediprofe.com/img/quimica/95as-propiedad-intensiva-y-especifica.webp)
+
+---
+
+## 💡 Entendiendo la unidad $g/mL$: El experimento de los 3 dados
+
+Para visualizarlo mejor, imagina que tienes **3 dados idénticos**, cada uno con un volumen de exactamente $1 \text{ mL}$.
+
+Si ponemos cada dado en una balanza, ¿cuánto pesará según su material?
+
+![experimento-de-los-3-dados](https://cdn.ediprofe.com/img/quimica/cagr-experimento-de-los-3-dados.webp)
+
+#### 1. El dado de Agua (Referencia)
+La balanza marca **$1 \text{ gramo}$** exacto.
+$$
+\text{Densidad} = 1.0 \text{ g/mL}
+$$
+Es el equilibrio perfecto: $1 \text{ mL}$ de espacio pesa $1 \text{ g}$.
+
+#### 2. El dado de Hierro (Pesado)
+Ese **mismo dado** lleno de hierro marca **$7.8 \text{ gramos}$**.
+$$
+\text{Densidad} = 7.8 \text{ g/mL}
+$$
+Tiene mucha más materia apretada en el mismo espacio.
+
+#### 3. El dado de Corcho (Ligero)
+Ese **mismo dado** de corcho marca apenas **$0.2 \text{ gramos}$**.
+$$
+\text{Densidad} = 0.2 \text{ g/mL}
+$$
+Es un material muy ligero, casi vacío comparado con el agua.
+
+> **La Clave:** La unidad $g/mL$ solo responde a: **"¿Cuánto pesaría un dado de $1 \text{ mL}$ de este material?"**
 
 ---
 
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1
-¿Cuál es la densidad de un objeto con masa 40 g y volumen 20 mL?
+¿Cuál es la densidad de un objeto que tiene una masa de $40 \text{ g}$ y ocupa un volumen de $20 \text{ mL}$?
 
 <details>
 <summary>Ver solución</summary>
+
+**Datos:**
+- $m = 40 \text{ g}$
+- $V = 20 \text{ mL}$
+
+**Razonamiento:**
+Usamos la fórmula de densidad:
 
 $$
 d = \frac{m}{V}
 $$
 
+Sustituimos los valores:
+
 $$
-d = \frac{40 \text{ g}}{20 \text{ mL}} = 2 \text{ g/mL}
+d = \frac{40 \text{ g}}{20 \text{ mL}}
 $$
 
 **Resultado:**
@@ -112,138 +162,219 @@ $$
 </details>
 
 ### Ejercicio 2
-¿Por qué el aceite flota sobre el agua?
+¿Por qué el aceite flota sobre el agua? Explícalo usando el concepto de densidad.
 
 <details>
 <summary>Ver solución</summary>
 
-El aceite tiene **menor densidad** (0.92 g/mL) que el agua (1.00 g/mL).
+**Razonamiento:**
+1. El aceite tiene una densidad de aproximadamente $0.92 \text{ g/mL}$.
+2. El agua tiene una densidad de $1.00 \text{ g/mL}$.
+3. Como la densidad del aceite es **menor** que la del agua, las moléculas del agua están más "apretadas" y empujan al aceite hacia la superficie.
 
-Los líquidos menos densos flotan sobre los más densos.
+**Resultado:**
+El aceite flota porque es **menos denso** que el agua.
 
 </details>
 
 ### Ejercicio 3
-Si cortas un trozo de hierro por la mitad, ¿cambia su densidad?
+Si tienes un bloque de madera con una densidad de $0.6 \text{ g/mL}$ y lo cortas exactamente por la mitad, ¿cuál será la densidad de cada mitad?
 
 <details>
 <summary>Ver solución</summary>
 
-**No cambia**. La densidad es una propiedad **específica** que no depende de la cantidad de material.
+**Razonamiento:**
+La densidad es una **propiedad intensiva**. Esto significa que **no depende de la cantidad de materia**. Al cortar el bloque, reduces la masa a la mitad, pero también el volumen a la mitad, por lo que la relación masa/volumen se mantiene igual.
 
-El trozo pequeño tiene la **misma densidad** que el grande: 7.87 g/mL.
+**Resultado:**
+$$
+\boxed{0.6 \text{ g/mL}}
+$$
 
 </details>
 
 ### Ejercicio 4
-Calcula la masa de un objeto que tiene una densidad de $$5 \text{ g/mL}$$ y un volumen de $$10 \text{ mL}$$.
+Calcula la masa de un trozo de platino que tiene un volumen de $10 \text{ mL}$ si su densidad es de $21.4 \text{ g/mL}$.
 
 <details>
 <summary>Ver solución</summary>
 
-Despejamos la masa de la fórmula $$d = m/V$$:
+**Datos:**
+- $d = 21.4 \text{ g/mL}$
+- $V = 10 \text{ mL}$
+
+**Razonamiento:**
+Despejamos la masa de la fórmula original:
+
 $$
 m = d \times V
 $$
 
+Sustituimos:
+
 $$
-m = 5 \text{ g/mL} \times 10 \text{ mL} = 50 \text{ g}
+m = 21.4 \text{ g/mL} \times 10 \text{ mL}
 $$
 
 **Resultado:**
 $$
-\boxed{50 \text{ g}}
+\boxed{214 \text{ g}}
 $$
 
 </details>
 
 ### Ejercicio 5
-Un objeto tiene una masa de $$100 \text{ g}$$ y una densidad de $$2 \text{ g/mL}$$. ¿Qué volumen ocupa?
+Un cilindro de metal tiene una masa de $270 \text{ g}$ y una densidad de $2.7 \text{ g/mL}$. ¿Qué volumen ocupa este cilindro?
 
 <details>
 <summary>Ver solución</summary>
 
-Despejamos el volumen:
+**Datos:**
+- $m = 270 \text{ g}$
+- $d = 2.7 \text{ g/mL}$
+
+**Razonamiento:**
+Despejamos el volumen de la fórmula:
+
 $$
 V = \frac{m}{d}
 $$
 
+Dividimos los valores:
+
 $$
-V = \frac{100 \text{ g}}{2 \text{ g/mL}} = 50 \text{ mL}
+V = \frac{270 \text{ g}}{2.7 \text{ g/mL}}
 $$
 
 **Resultado:**
 $$
-\boxed{50 \text{ mL}}
+\boxed{100 \text{ mL}}
 $$
 
 </details>
 
 ### Ejercicio 6
-¿Por qué un globo lleno de helio se eleva en el aire?
+Un globo está lleno de un gas con densidad $0.18 \text{ g/L}$. Si el aire tiene una densidad de $1.22 \text{ g/L}$, ¿el globo subirá o caerá al suelo?
 
 <details>
 <summary>Ver solución</summary>
 
-Porque el **helio** es un gas **menos denso** que la mezcla de gases que componen el aire. Al ser menos denso, el aire lo empuja hacia arriba (flota en la atmósfera).
+**Razonamiento:**
+Comparamos las densidades. Para que algo flote en el aire, su densidad debe ser menor que la del aire que lo rodea.
+
+$$
+0.18 \text{ g/L} < 1.22 \text{ g/L}
+$$
+
+Al ser mucho menos denso, el aire ejercerá un empuje hacia arriba.
+
+**Resultado:**
+El globo **subirá** (flotará en el aire).
 
 </details>
 
 ### Ejercicio 7
-Si un objeto tiene una densidad de $$0.8 \text{ g/mL}$$, ¿se hundirá o flotará en el agua?
+Un joyero quiere saber si un anillo es de oro puro. El anillo pesa $38.6 \text{ g}$ y desplaza un volumen de $2 \text{ mL}$ de agua. ¿Cuál es su densidad?
 
 <details>
 <summary>Ver solución</summary>
 
-**Flotará.**
+**Razonamiento:**
+Calculamos la densidad con los datos obtenidos:
 
-Como su densidad ($$0.8 \text{ g/mL}$$) es **menor** que la del agua ($$1.0 \text{ g/mL}$$), el objeto se mantendrá en la superficie.
+$$
+d = \frac{38.6 \text{ g}}{2 \text{ mL}}
+$$
+
+$$
+d = 19.3 \text{ g/mL}
+$$
+
+Al comparar con la tabla de densidades, vemos que coincide exactamente con el valor del oro.
+
+**Resultado:**
+$$
+\boxed{19.3 \text{ g/mL}}
+$$
 
 </details>
 
 ### Ejercicio 8
-¿Por qué los chalecos salvavidas están rellenos de materiales ligeros y con mucho aire?
+¿Por qué una persona flota con más facilidad en el Mar Muerto (agua muy salada) que en una piscina de agua dulce?
 
 <details>
 <summary>Ver solución</summary>
 
-Para disminuir la **densidad promedio** de la persona que lo usa. El chaleco es muy poco denso, lo que ayuda a que el conjunto (persona + chaleco) sea menos denso que el agua y así pueda flotar.
+**Razonamiento:**
+El agua con mucha sal disuelta es **más densa** que el agua dulce. Al ser el líquido más denso, empuja con más fuerza hacia arriba a los objetos (o personas) que están en él.
+
+**Resultado:**
+Porque el agua salada es **más densa**, lo que facilita la flotación.
 
 </details>
 
 ### Ejercicio 9
-El oro tiene una densidad de $$19.3 \text{ g/cm}^3$$. ¿Cuál es la masa de un pequeño cubo de oro de $$2 \text{ cm}^3$$?
+Se tiene una roca de $500 \text{ g}$ que al sumergirla en una probeta hace que el nivel del agua suba de $100 \text{ mL}$ a $300 \text{ mL}$. ¿Cuál es su densidad?
 
 <details>
 <summary>Ver solución</summary>
 
-$$
-m = d \times V
-$$
+**Datos:**
+- $m = 500 \text{ g}$
+- $V_{final} = 300 \text{ mL}$
+- $V_{inicial} = 100 \text{ mL}$
+
+**Razonamiento:**
+Primero hallamos el volumen de la roca por diferencia:
 
 $$
-m = 19.3 \text{ g/cm}^3 \times 2 \text{ cm}^3 = 38.6 \text{ g}
+V = 300 \text{ mL} - 100 \text{ mL} = 200 \text{ mL}
+$$
+
+Ahora calculamos densidad:
+
+$$
+d = \frac{500 \text{ g}}{200 \text{ mL}}
 $$
 
 **Resultado:**
 $$
-\boxed{38.6 \text{ g}}
+\boxed{2.5 \text{ g/mL}}
 $$
 
 </details>
 
 ### Ejercicio 10
-Ordena estas sustancias de la **menos densa** a la **más densa**: Agua ($$1.0 \text{ g/mL}$$), Aceite ($$0.92 \text{ g/mL}$$), Hierro ($$7.8 \text{ g/mL}$$).
+Ordena los siguientes materiales de mayor a menor densidad: Madera ($0.5 \text{ g/mL}$), Oro ($19.3 \text{ g/mL}$), Agua ($1.0 \text{ g/mL}$), Mercurio ($13.6 \text{ g/mL}$).
 
 <details>
 <summary>Ver solución</summary>
 
-El orden es:
-1. **Aceite** ($$0.92 \text{ g/mL}$$)
-2. **Agua** ($$1.0 \text{ g/mL}$$)
-3. **Hierro** ($$7.8 \text{ g/mL}$$)
+**Razonamiento:**
+Simplemente comparamos los valores numéricos de mayor a menor.
+
+1. Oro ($19.3$)
+2. Mercurio ($13.6$)
+3. Agua ($1.0$)
+4. Madera ($0.5$)
+
+**Resultado:**
+Oro > Mercurio > Agua > Madera.
 
 </details>
 
-![resumen-densidad](https://cdn.ediprofe.com/img/quimica/oa8i-resumen-densidad.webp)
+---
 
+## 🔑 Resumen
+
+| Concepto | Descripción |
+| :--- | :--- |
+| **Densidad** | Relación entre la masa y el espacio que ocupa un cuerpo ($d = m/V$). |
+| **Unidad $g/mL$** | Cuántos gramos pesa exactamente $1 \text{ mL}$ de la sustancia. |
+| **P. Intensiva** | No cambia con la cantidad de materia (es constante). |
+| **P. Específica** | Sirve para identificar sustancias únicas (como una huella digital). |
+| **Flotación** | Un objeto flota si su densidad es menor que la del fluido donde está. |
+
+> La densidad es la clave para entender por qué algunos materiales se sienten "pesados" para su tamaño y por qué otros flotan sin esfuerzo.
+
+![resumen-densidad](https://cdn.ediprofe.com/img/quimica/oa8i-resumen-densidad.webp)
