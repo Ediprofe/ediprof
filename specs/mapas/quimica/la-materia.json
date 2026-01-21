@@ -1,0 +1,216 @@
+{
+    "version": "1.0",
+    "type": "conceptmap",
+    "metadata": {
+        "id": "la-materia-unidad-1",
+        "title": "La Materia - Mapa Conceptual",
+        "lesson": "quimica/la-materia"
+    },
+    "canvas": {
+        "width": 1400,
+        "height": 900,
+        "background": "#fafafa"
+    },
+    "layout": {
+        "type": "horizontal",
+        "spacing_x": 220,
+        "spacing_y": 60
+    },
+    "nodes": [
+        {
+            "id": "materia",
+            "text": "LA MATERIA",
+            "level": 0,
+            "color": "#66BB6A"
+        },
+        {
+            "id": "propiedades",
+            "text": "Propiedades",
+            "parent": "materia",
+            "level": 1,
+            "color": "#9575CD"
+        },
+        {
+            "id": "cualitativas",
+            "text": "Cualitativas",
+            "parent": "propiedades",
+            "level": 2,
+            "color": "#B39DDB"
+        },
+        {
+            "id": "cuantitativas",
+            "text": "Cuantitativas",
+            "parent": "propiedades",
+            "level": 2,
+            "color": "#B39DDB"
+        },
+        {
+            "id": "extensivas",
+            "text": "Extensivas",
+            "parent": "propiedades",
+            "level": 2,
+            "color": "#B39DDB"
+        },
+        {
+            "id": "intensivas",
+            "text": "Intensivas",
+            "parent": "propiedades",
+            "level": 2,
+            "color": "#B39DDB"
+        },
+        {
+            "id": "estados",
+            "text": "Estados",
+            "parent": "materia",
+            "level": 1,
+            "color": "#64B5F6"
+        },
+        {
+            "id": "solido",
+            "text": "Sólido",
+            "parent": "estados",
+            "level": 2,
+            "color": "#90CAF9"
+        },
+        {
+            "id": "liquido",
+            "text": "Líquido",
+            "parent": "estados",
+            "level": 2,
+            "color": "#90CAF9"
+        },
+        {
+            "id": "gaseoso",
+            "text": "Gaseoso",
+            "parent": "estados",
+            "level": 2,
+            "color": "#90CAF9"
+        },
+        {
+            "id": "cambios-estado",
+            "text": "Cambios de estado",
+            "parent": "estados",
+            "level": 2,
+            "color": "#90CAF9"
+        },
+        {
+            "id": "cambios",
+            "text": "Cambios",
+            "parent": "materia",
+            "level": 1,
+            "color": "#FFB74D"
+        },
+        {
+            "id": "fisico",
+            "text": "Físico",
+            "parent": "cambios",
+            "level": 2,
+            "color": "#FFCC80"
+        },
+        {
+            "id": "quimico",
+            "text": "Químico",
+            "parent": "cambios",
+            "level": 2,
+            "color": "#FFCC80"
+        },
+        {
+            "id": "clasificacion",
+            "text": "Clasificación",
+            "parent": "materia",
+            "level": 1,
+            "color": "#BA68C8"
+        },
+        {
+            "id": "sustancia-pura",
+            "text": "Sustancia Pura",
+            "parent": "clasificacion",
+            "level": 2,
+            "color": "#CE93D8"
+        },
+        {
+            "id": "mezcla",
+            "text": "Mezcla",
+            "parent": "clasificacion",
+            "level": 2,
+            "color": "#CE93D8"
+        },
+        {
+            "id": "elemento",
+            "text": "Elemento",
+            "parent": "sustancia-pura",
+            "level": 3,
+            "color": "#E1BEE7"
+        },
+        {
+            "id": "compuesto",
+            "text": "Compuesto",
+            "parent": "sustancia-pura",
+            "level": 3,
+            "color": "#E1BEE7"
+        },
+        {
+            "id": "homogenea",
+            "text": "Homogénea",
+            "parent": "mezcla",
+            "level": 3,
+            "color": "#E1BEE7"
+        },
+        {
+            "id": "heterogenea",
+            "text": "Heterogénea",
+            "parent": "mezcla",
+            "level": 3,
+            "color": "#E1BEE7"
+        },
+        {
+            "id": "separacion",
+            "text": "Separación",
+            "parent": "materia",
+            "level": 1,
+            "color": "#FF8A65"
+        },
+        {
+            "id": "tamizado",
+            "text": "Tamizado",
+            "parent": "separacion",
+            "level": 2,
+            "color": "#FFAB91"
+        },
+        {
+            "id": "filtracion",
+            "text": "Filtración",
+            "parent": "separacion",
+            "level": 2,
+            "color": "#FFAB91"
+        },
+        {
+            "id": "decantacion",
+            "text": "Decantación",
+            "parent": "separacion",
+            "level": 2,
+            "color": "#FFAB91"
+        },
+        {
+            "id": "evaporacion",
+            "text": "Evaporación",
+            "parent": "separacion",
+            "level": 2,
+            "color": "#FFAB91"
+        },
+        {
+            "id": "destilacion",
+            "text": "Destilación",
+            "parent": "separacion",
+            "level": 2,
+            "color": "#FFAB91"
+        },
+        {
+            "id": "cromatografia",
+            "text": "Cromatografía",
+            "parent": "separacion",
+            "level": 2,
+            "color": "#FFAB91"
+        }
+    ]
+}
