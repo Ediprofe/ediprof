@@ -1826,7 +1826,61 @@
       "size": "70KB",
       "url": "https://cdn.ediprofe.com/img/quimica/8avr-temperatura-de-fusion-y-ebullicion.webp",
       "status": "uploaded"
+    },
+    {
+      "id": "qo3x",
+      "name": "la-interfase-preparando-el-escenario.webp",
+      "materia": "ciencias",
+      "date": "2026-01-22",
+      "size": "92KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/qo3x-la-interfase-preparando-el-escenario.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "wkee",
+      "name": "mitosis-creacion-de-clones.webp",
+      "materia": "ciencias",
+      "date": "2026-01-22",
+      "size": "78KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/wkee-mitosis-creacion-de-clones.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "siz3",
+      "name": "meiosis-creacion-de-diversidad.webp",
+      "materia": "ciencias",
+      "date": "2026-01-22",
+      "size": "89KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/siz3-meiosis-creacion-de-diversidad.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "cmuq",
+      "name": "mitosis-vs-meiosis.webp",
+      "materia": "ciencias",
+      "date": "2026-01-22",
+      "size": "82KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/cmuq-mitosis-vs-meiosis.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "2grt",
+      "name": "resumen-mitosis-vs-meiosis.webp",
+      "materia": "ciencias",
+      "date": "2026-01-22",
+      "size": "89KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/2grt-resumen-mitosis-vs-meiosis.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "x2v0",
+      "name": "velocidad-de-division-celular.webp",
+      "materia": "ciencias",
+      "date": "2026-01-22",
+      "size": "82KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/x2v0-velocidad-de-division-celular.webp",
+      "status": "uploaded"
     }
   ],
-  "lastUpdated": "2026-01-21T15:51:07.004Z"
+  "lastUpdated": "2026-01-22T16:10:15.277Z"
 }
