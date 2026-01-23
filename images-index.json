@@ -1880,7 +1880,43 @@
       "size": "82KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/x2v0-velocidad-de-division-celular.webp",
       "status": "uploaded"
+    },
+    {
+      "id": "a7yg",
+      "name": "el-proceso-de-nutricion.webp",
+      "materia": "ciencias",
+      "date": "2026-01-23",
+      "size": "67KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/a7yg-el-proceso-de-nutricion.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "wsaa",
+      "name": "nutricion-autotrofa.webp",
+      "materia": "ciencias",
+      "date": "2026-01-23",
+      "size": "61KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/wsaa-nutricion-autotrofa.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "h8rs",
+      "name": "nutricion-heterotrofa.webp",
+      "materia": "ciencias",
+      "date": "2026-01-23",
+      "size": "58KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/h8rs-nutricion-heterotrofa.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "ookl",
+      "name": "resumen-nutricion-autotrofa-y-heterotrofa.webp",
+      "materia": "ciencias",
+      "date": "2026-01-23",
+      "size": "96KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/ookl-resumen-nutricion-autotrofa-y-heterotrofa.webp",
+      "status": "uploaded"
     }
   ],
-  "lastUpdated": "2026-01-22T16:10:15.277Z"
+  "lastUpdated": "2026-01-23T16:24:26.921Z"
 }

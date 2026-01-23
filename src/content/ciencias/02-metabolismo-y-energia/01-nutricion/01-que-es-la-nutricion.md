@@ -21,6 +21,9 @@ La nutrición es un conjunto de procesos mediante los cuales los seres vivos obt
 2.  **Desarrollar procesos vitales:** Como caminar, pensar o incluso dormir.
 3.  **Construir estructuras:** Para que el cuerpo crezca o se sane después de una herida.
 
+![el-proceso-de-nutricion](https://cdn.ediprofe.com/img/ciencias/a7yg-el-proceso-de-nutricion.webp)
+
+
 ---
 
 ## **2. Nutrición Autótrofa**
@@ -35,6 +38,8 @@ Ellos no necesitan comerse a otros seres vivos. En su lugar, fabrican sus propio
 **Ejemplo de flujo:**
 Materia inorgánica ($CO_2$, $H_2O$) + Energía (Luz) $\rightarrow$ Materia orgánica (Glucosa) + Oxígeno ($O_2$).
 
+![nutricion-autotrofa](https://cdn.ediprofe.com/img/ciencias/wsaa-nutricion-autotrofa.webp)
+
 ---
 
 ## **3. Nutrición Heterótrofa**
@@ -48,6 +53,8 @@ A diferencia de los autótrofos, ellos no pueden fabricar sus nutrientes a parti
 
 **Ejemplo de flujo:**
 Alimento (materia orgánica) $\rightarrow$ Energía + Materiales de construcción para el cuerpo.
+
+![nutricion-heterotrofa](https://cdn.ediprofe.com/img/ciencias/h8rs-nutricion-heterotrofa.webp)
 
 ---
 
@@ -171,6 +178,8 @@ Alimento (materia orgánica) $\rightarrow$ Energía + Materiales de construcció
 ---
 
 ## 🔑 Resumen
+
+![resumen-nutricion-autotrofa-y-heterotrofa](https://cdn.ediprofe.com/img/ciencias/ookl-resumen-nutricion-autotrofa-y-heterotrofa.webp)
 
 | Característica | Nutrición Autótrofa | Nutrición Heterótrofa |
 | :--- | :--- | :--- |
