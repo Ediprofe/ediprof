@@ -52,13 +52,193 @@ const { title } = Astro.props;
 <script>
     import { toPng } from "html-to-image";
 
+    // --- LÓGICA DEL PUNTERO LÁSER (TIPO GOODNOTES - SINCRONÍA DE LUZ) ---
+    interface LaserPoint {
+        x: number;
+        y: number;
+    }
+    interface LaserStroke {
+        points: LaserPoint[];
+        isDead: boolean;
+    }
+
+    class LaserPointer {
+        private canvas: HTMLCanvasElement;
+        private ctx: CanvasRenderingContext2D;
+        private strokes: LaserStroke[] = [];
+        private currentStroke: LaserStroke | null = null;
+        private active = false;
+        private rafId: number | null = null;
+        private lastGlobalActivityTime: number = Date.now();
+        private duration = 3000;
+
+        constructor(canvasId: string) {
+            this.canvas = document.getElementById(
+                canvasId,
+            ) as HTMLCanvasElement;
+            this.ctx = this.canvas.getContext("2d", { alpha: true })!;
+            this.init();
+        }
+
+        private init() {
+            window.addEventListener("resize", () => this.resize());
+            this.resize();
+
+            const getPos = (e: any) => ({
+                x: e.clientX || e.touches?.[0]?.clientX,
+                y: e.clientY || e.touches?.[0]?.clientY,
+            });
+
+            const start = (e: any) => {
+                if (!this.active) return;
+                if (e.touches) e.preventDefault();
+                const { x, y } = getPos(e);
+                this.lastGlobalActivityTime = Date.now();
+                this.currentStroke = { points: [{ x, y }], isDead: false };
+                this.strokes.push(this.currentStroke);
+            };
+
+            const move = (e: any) => {
+                if (!this.active || !this.currentStroke) return;
+                const { x, y } = getPos(e);
+                this.lastGlobalActivityTime = Date.now();
+                this.currentStroke.points.push({ x, y });
+                if (this.currentStroke.points.length > 300)
+                    this.currentStroke.points.shift();
+            };
+
+            const stop = () => {
+                this.currentStroke = null;
+                this.lastGlobalActivityTime = Date.now();
+            };
+
+            this.canvas.addEventListener("mousedown", start);
+            window.addEventListener("mousemove", move);
+            window.addEventListener("mouseup", stop);
+
+            this.canvas.addEventListener("touchstart", start, {
+                passive: false,
+            });
+            window.addEventListener("touchmove", move, { passive: false });
+            window.addEventListener("touchend", stop);
+        }
+
+        private resize() {
+            this.canvas.width = window.innerWidth;
+            this.canvas.height = window.innerHeight;
+        }
+
+        public toggle(state: boolean) {
+            this.active = state;
+            this.canvas.classList.toggle("active", state);
+            if (state) {
+                this.startLoop();
+            } else {
+                this.strokes = [];
+                this.clear();
+            }
+        }
+
+        private startLoop() {
+            if (this.rafId) return;
+            const loop = () => {
+                this.update();
+                this.draw();
+                this.rafId = requestAnimationFrame(loop);
+            };
+            this.rafId = requestAnimationFrame(loop);
+        }
+
+        private update() {
+            const now = Date.now();
+            const timeSinceLastActivity = this.currentStroke
+                ? 0
+                : now - this.lastGlobalActivityTime;
+
+            if (timeSinceLastActivity > this.duration) {
+                this.strokes = []; // Limpiar todo en bloque al expirar
+            }
+        }
+
+        private clear() {
+            this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+        }
+
+        private draw() {
+            this.clear();
+            if (this.strokes.length === 0) return;
+
+            const now = Date.now();
+            const idleTime = this.currentStroke
+                ? 0
+                : now - this.lastGlobalActivityTime;
+            const globalAlpha = Math.max(0, 1 - idleTime / this.duration);
+
+            if (globalAlpha <= 0) return;
+
+            this.strokes.forEach((stroke) => {
+                if (stroke.points.length < 2) return;
+
+                // 1. Capa de GLOW (Resplandor)
+                this.renderStroke(
+                    stroke,
+                    `rgba(255, 0, 0, ${globalAlpha * 0.3})`,
+                    25,
+                    30,
+                    "lighter",
+                );
+                // 2. Capa de NEON (Cuerpo)
+                this.renderStroke(
+                    stroke,
+                    `rgba(255, 0, 0, ${globalAlpha * 0.8})`,
+                    8,
+                    10,
+                    "lighter",
+                );
+                // 3. Capa de NUCLEO (Plasma Blanco)
+                this.renderStroke(
+                    stroke,
+                    `rgba(255, 255, 255, ${globalAlpha * 0.95})`,
+                    3,
+                    0,
+                    "source-over",
+                );
+            });
+        }
+
+        private renderStroke(
+            stroke: LaserStroke,
+            color: string,
+            width: number,
+            blur: number,
+            composite: string,
+        ) {
+            this.ctx.globalCompositeOperation = composite as any;
+            this.ctx.beginPath();
+            this.ctx.strokeStyle = color;
+            this.ctx.lineWidth = width;
+            this.ctx.lineCap = "round";
+            this.ctx.lineJoin = "round";
+            this.ctx.shadowBlur = blur;
+            this.ctx.shadowColor = color;
+
+            const pts = stroke.points;
+            this.ctx.moveTo(pts[0].x, pts[0].y);
+
+            for (let i = 1; i < pts.length - 1; i++) {
+                const midX = (pts[i].x + pts[i + 1].x) / 2;
+                const midY = (pts[i].y + pts[i + 1].y) / 2;
+                this.ctx.quadraticCurveTo(pts[i].x, pts[i].y, midX, midY);
+            }
+            this.ctx.stroke();
+        }
+    }
+
     function initMapSystem() {
         const wrappers = document.querySelectorAll(".concept-map-wrapper");
 
         // --- LÓGICA DEL VISOR (PRESENTACIÓN IMÁGENES) ---
         const overlay = document.getElementById("map-visualizer-overlay");
-
-        // MOVER AL BODY (Teleport): Para evitar conflictos de z-index con breadcrumbs/headers
         if (overlay && overlay.parentElement !== document.body) {
             document.body.appendChild(overlay);
         }
@@ -75,8 +255,16 @@ const { title } = Astro.props;
         ) as HTMLButtonElement;
         const counter = document.getElementById("visualizer-counter");
 
-        let currentImages: string[] = [];
-        let currentIndex = 0;
+        // Elementos Láser
+        const laserBtn = document.getElementById("laser-btn");
+        const laserPointer = new LaserPointer("laser-canvas");
+        let laserActive = false;
+
+        const toggleLaser = () => {
+            laserActive = !laserActive;
+            laserBtn?.classList.toggle("active", laserActive);
+            laserPointer.toggle(laserActive);
+        };
 
         const updateGallery = () => {
             if (visualizerImg && counter && prevBtn && nextBtn) {
@@ -96,7 +284,11 @@ const { title } = Astro.props;
         const closeVisualizer = () => {
             overlay?.classList.remove("active");
             document.body.classList.remove("visualizer-open");
+            if (laserActive) toggleLaser(); // Apagar laser al cerrar
         };
+
+        let currentImages: string[] = [];
+        let currentIndex = 0;
 
         const nextImage = () => {
             if (currentIndex < currentImages.length - 1) {
@@ -117,7 +309,6 @@ const { title } = Astro.props;
                 wrapper.getAttribute("data-title") || "mapa-conceptual";
             const downloadBtn = wrapper.querySelector(".download-map-btn");
 
-            // Abrir Visor desde MapSection
             wrapper.querySelectorAll(".view-images-btn").forEach((btn) => {
                 btn.addEventListener("click", () => {
                     const imagesData = btn.getAttribute("data-images");
@@ -131,7 +322,6 @@ const { title } = Astro.props;
                 });
             });
 
-            // Lógica de descarga (PNG)
             if (downloadBtn) {
                 downloadBtn.addEventListener("click", async () => {
                     const span = downloadBtn.querySelector("span");
@@ -159,8 +349,10 @@ const { title } = Astro.props;
             }
         });
 
-        // Eventos Globales Visor
+        // Eventos Globales
         closeBtn?.addEventListener("click", closeVisualizer);
+        laserBtn?.addEventListener("click", toggleLaser);
+
         overlay?.addEventListener("click", (e) => {
             if (
                 e.target === overlay ||
@@ -168,6 +360,7 @@ const { title } = Astro.props;
             )
                 closeVisualizer();
         });
+
         prevBtn?.addEventListener("click", prevImage);
         nextBtn?.addEventListener("click", nextImage);
 
@@ -176,6 +369,7 @@ const { title } = Astro.props;
             if (e.key === "Escape") closeVisualizer();
             if (e.key === "ArrowRight") nextImage();
             if (e.key === "ArrowLeft") prevImage();
+            if (e.key.toLowerCase() === "l") toggleLaser();
         };
 
         document.addEventListener("keydown", handleKeyDown);
