@@ -90,7 +90,6 @@ const { title } = Astro.props;
 
             const getPos = (e: any) => {
                 const rect = this.canvas.getBoundingClientRect();
-                // Ajuste de escala para que rraye bien incluso con zoom aplicado por CSS/Transform
                 const scaleX = this.canvas.width / rect.width;
                 const scaleY = this.canvas.height / rect.height;
                 return {
@@ -125,7 +124,7 @@ const { title } = Astro.props;
                 const { x, y } = getPos(e);
                 this.lastGlobalActivityTime = Date.now();
                 this.currentStroke.points.push({ x, y });
-                if (this.currentStroke.points.length > 1000)
+                if (this.currentStroke.points.length > 800)
                     this.currentStroke.points.shift();
             };
 
@@ -134,8 +133,10 @@ const { title } = Astro.props;
                 this.lastGlobalActivityTime = Date.now();
             };
 
-            this.canvas.addEventListener("mousedown", start);
-            window.addEventListener("mousemove", move);
+            this.canvas.addEventListener("mousedown", start, {
+                passive: false,
+            });
+            window.addEventListener("mousemove", move, { passive: false });
             window.addEventListener("mouseup", stop);
 
             this.canvas.addEventListener("touchstart", start, {
@@ -146,7 +147,6 @@ const { title } = Astro.props;
         }
 
         public resize() {
-            // El canvas toma el tamaño físico real de la ventana para máxima calidad
             this.canvas.width = window.innerWidth;
             this.canvas.height = window.innerHeight;
         }
@@ -294,15 +294,16 @@ const { title } = Astro.props;
         }
     }
 
-    // --- SISTEMA DE PAN & ZOOM (TIPO TABLET - COBERTURA TOTAL) ---
+    // --- SISTEMA DE MOVIMIENTO Y ZOOM TÁCTIL (MULTI-TOUCH) ---
     class PanZoomSystem {
         private container: HTMLElement;
-        private lastX = 0;
-        private lastY = 0;
-        private posX = 0;
-        private posY = 0;
+        private dx = 0;
+        private dy = 0; // Posición actual
+        private startX = 0;
+        private startY = 0; // Posición inicial toque
         private scale = 1;
-        private minScale = 1;
+        private initialPinchDistance = 0;
+        private initialScale = 1;
         private isDragging = false;
         public active = true;
 
@@ -314,21 +315,45 @@ const { title } = Astro.props;
         private init() {
             const start = (e: any) => {
                 if (!this.active) return;
+
+                if (e.touches && e.touches.length === 2) {
+                    this.isDragging = false;
+                    this.initialPinchDistance = this.getDistance(
+                        e.touches[0],
+                        e.touches[1],
+                    );
+                    this.initialScale = this.scale;
+                    return;
+                }
+
                 this.isDragging = true;
                 const pos = this.getPos(e);
-                this.lastX = pos.x;
-                this.lastY = pos.y;
+                this.startX = pos.x - this.dx;
+                this.startY = pos.y - this.dy;
             };
 
             const move = (e: any) => {
-                if (!this.active || !this.isDragging) return;
+                if (!this.active) return;
+
+                // Zoom (Pellizco)
+                if (e.touches && e.touches.length === 2) {
+                    e.preventDefault();
+                    const dist = this.getDistance(e.touches[0], e.touches[1]);
+                    const ratio = dist / this.initialPinchDistance;
+                    this.scale = Math.min(
+                        Math.max(this.initialScale * ratio, 1),
+                        6,
+                    );
+                    this.apply();
+                    return;
+                }
+
+                // Mover (Pan)
+                if (!this.isDragging) return;
+                e.preventDefault();
                 const pos = this.getPos(e);
-                const dx = pos.x - this.lastX;
-                const dy = pos.y - this.lastY;
-                this.posX += dx;
-                this.posY += dy;
-                this.lastX = pos.x;
-                this.lastY = pos.y;
+                this.dx = pos.x - this.startX;
+                this.dy = pos.y - this.startY;
                 this.apply();
             };
 
@@ -336,14 +361,11 @@ const { title } = Astro.props;
                 this.isDragging = false;
             };
 
-            const zoom = (e: WheelEvent) => {
+            const wheelZoom = (e: WheelEvent) => {
                 if (!this.active) return;
                 e.preventDefault();
                 const delta = e.deltaY > 0 ? 0.9 : 1.1;
-                this.scale = Math.min(
-                    Math.max(this.scale * delta, this.minScale),
-                    6,
-                );
+                this.scale = Math.min(Math.max(this.scale * delta, 1), 6);
                 this.apply();
             };
 
@@ -355,7 +377,16 @@ const { title } = Astro.props;
             });
             window.addEventListener("touchmove", move, { passive: false });
             window.addEventListener("touchend", stop);
-            this.container.addEventListener("wheel", zoom, { passive: false });
+            this.container.addEventListener("wheel", wheelZoom, {
+                passive: false,
+            });
+        }
+
+        private getDistance(t1: any, t2: any) {
+            return Math.sqrt(
+                Math.pow(t2.clientX - t1.clientX, 2) +
+                    Math.pow(t2.clientY - t1.clientY, 2),
+            );
         }
 
         private getPos(e: any) {
@@ -366,12 +397,12 @@ const { title } = Astro.props;
         }
 
         private apply() {
-            this.container.style.transform = `translate(${this.posX}px, ${this.posY}px) scale(${this.scale})`;
+            this.container.style.transform = `translate(${this.dx}px, ${this.dy}px) scale(${this.scale})`;
         }
 
         public reset() {
-            this.posX = 0;
-            this.posY = 0;
+            this.dx = 0;
+            this.dy = 0;
             this.scale = 1;
             this.apply();
         }
@@ -464,9 +495,6 @@ const { title } = Astro.props;
         };
 
         wrappers.forEach((wrapper) => {
-            const title =
-                wrapper.getAttribute("data-title") || "mapa-conceptual";
-            const downloadBtn = wrapper.querySelector(".download-map-btn");
             wrapper.querySelectorAll(".view-images-btn").forEach((btn) => {
                 btn.addEventListener("click", () => {
                     const imagesData = btn.getAttribute("data-images");
@@ -543,7 +571,6 @@ const { title } = Astro.props;
         position: relative;
         margin: 3rem 0;
     }
-
     .concept-map-container {
         background-color: #ffffff;
         border: 1px solid #e2e8f0;
@@ -554,7 +581,6 @@ const { title } = Astro.props;
         position: relative;
         overflow: hidden;
     }
-
     .concept-map-container::before {
         content: "";
         position: absolute;
@@ -564,7 +590,6 @@ const { title } = Astro.props;
         height: 100%;
         background: #2563eb;
     }
-
     .download-map-btn {
         position: absolute;
         top: 1rem;
@@ -584,37 +609,27 @@ const { title } = Astro.props;
         transition: all 0.2s ease;
         z-index: 10;
     }
-
     .download-map-btn:hover {
         background: #f1f5f9;
         color: #2563eb;
         border-color: #cbd5e1;
         transform: translateY(-1px);
     }
-
-    .download-map-btn.loading {
-        opacity: 0.7;
-        pointer-events: none;
-    }
-
     .map-root {
         margin-bottom: 1rem;
     }
-
     .root-label {
         font-weight: 400;
         font-size: 1.3rem;
         color: #0f172a;
         letter-spacing: -0.02em;
     }
-
     .root-v-line {
         color: #cbd5e1;
         margin-left: 0.1rem;
         font-size: 0.9rem;
         margin-top: 0.2rem;
     }
-
     .map-branches {
         border-left: 1.5px solid #cbd5e1;
         margin-left: 0.5rem;
