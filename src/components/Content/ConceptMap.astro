@@ -69,8 +69,8 @@ const { title } = Astro.props;
         public ctx: CanvasRenderingContext2D;
         private strokes: LaserStroke[] = [];
         private currentStroke: LaserStroke | null = null;
-        public isInputActive = false; // Controla si se permite dibujar actualmente
-        private systemRunning = false; // Controla el loop de renderizado
+        public isInputActive = false;
+        private systemRunning = false;
         private toolMode: "laser" | "pen" = "laser";
         private currentColor: string = "#FFFFFF";
         private rafId: number | null = null;
@@ -90,75 +90,85 @@ const { title } = Astro.props;
             window.addEventListener("resize", () => this.resize());
             this.resize();
 
-            const getPos = (e: any) => {
-                const rect = this.canvas.getBoundingClientRect();
-                const scaleX = this.canvas.width / rect.width;
-                const scaleY = this.canvas.height / rect.height;
-                return {
-                    x:
-                        ((e.clientX || e.touches?.[0]?.clientX) - rect.left) *
-                        scaleX,
-                    y:
-                        ((e.clientY || e.touches?.[0]?.clientY) - rect.top) *
-                        scaleY,
-                };
-            };
-
-            const start = (e: any) => {
-                if (!this.isInputActive || this.isBlockedByGesture) return;
-                if (e.touches && e.touches.length > 1) {
-                    this.isBlockedByGesture = true;
-                    this.stop();
-                    return;
-                }
-
-                if (e.touches) e.preventDefault();
-                const { x, y } = getPos(e);
-                this.lastGlobalActivityTime = Date.now();
-                this.currentStroke = {
-                    points: [{ x, y }],
-                    isDead: false,
-                    isPermanent: this.toolMode === "pen",
-                    color:
-                        this.toolMode === "laser"
-                            ? "#FF0000"
-                            : this.currentColor,
-                };
-                this.strokes.push(this.currentStroke);
-            };
-
-            const move = (e: any) => {
-                if (
-                    !this.isInputActive ||
-                    !this.currentStroke ||
-                    this.isBlockedByGesture
-                )
-                    return;
-                if (e.touches && e.touches.length > 1) {
-                    this.stop();
-                    return;
-                }
-
-                const { x, y } = getPos(e);
-                this.lastGlobalActivityTime = Date.now();
-                this.currentStroke.points.push({ x, y });
-                if (this.currentStroke.points.length > 800)
-                    this.currentStroke.points.shift();
-            };
-
-            const stop = () => {
-                this.currentStroke = null;
-                this.lastGlobalActivityTime = Date.now();
-            };
-
-            this.canvas.addEventListener("mousedown", start);
-            window.addEventListener("mousemove", move);
-            window.addEventListener("mouseup", stop);
-            this.canvas.addEventListener("touchstart", start, {
+            this.canvas.addEventListener(
+                "mousedown",
+                (e) => this.handleStart(e),
+                {
+                    passive: false,
+                },
+            );
+            window.addEventListener("mousemove", (e) => this.handleMove(e), {
                 passive: false,
             });
-            window.addEventListener("touchmove", move, { passive: false });
-            window.addEventListener("touchend", stop);
+            window.addEventListener("mouseup", () => this.handleStop());
+            this.canvas.addEventListener(
+                "touchstart",
+                (e) => this.handleStart(e),
+                {
+                    passive: false,
+                },
+            );
+            window.addEventListener("touchmove", (e) => this.handleMove(e), {
+                passive: false,
+            });
+            window.addEventListener("touchend", () => this.handleStop());
+        }
+
+        private getPos(e: MouseEvent | TouchEvent) {
+            const rect = this.canvas.getBoundingClientRect();
+            const scaleX = this.canvas.width / rect.width;
+            const scaleY = this.canvas.height / rect.height;
+            const clientX = "clientX" in e ? e.clientX : e.touches[0].clientX;
+            const clientY = "clientY" in e ? e.clientY : e.touches[0].clientY;
+            return {
+                x: (clientX - rect.left) * scaleX,
+                y: (clientY - rect.top) * scaleY,
+            };
+        }
+
+        private handleStart(e: MouseEvent | TouchEvent) {
+            if (!this.isInputActive || this.isBlockedByGesture) return;
+            if ("touches" in e && e.touches.length > 1) {
+                this.isBlockedByGesture = true;
+                this.handleStop();
+                return;
+            }
+
+            if ("touches" in e) e.preventDefault();
+            const { x, y } = this.getPos(e);
+            this.lastGlobalActivityTime = Date.now();
+            this.currentStroke = {
+                points: [{ x, y }],
+                isDead: false,
+                isPermanent: this.toolMode === "pen",
+                color:
+                    this.toolMode === "laser" ? "#FF0000" : this.currentColor,
+            };
+            this.strokes.push(this.currentStroke);
+        }
+
+        private handleMove(e: MouseEvent | TouchEvent) {
+            if (
+                !this.isInputActive ||
+                !this.currentStroke ||
+                this.isBlockedByGesture
+            )
+                return;
+            if ("touches" in e && e.touches.length > 1) {
+                this.handleStop();
+                return;
+            }
+
+            const { x, y } = this.getPos(e);
+            this.lastGlobalActivityTime = Date.now();
+            this.currentStroke.points.push({ x, y });
+            if (this.currentStroke.points.length > 800)
+                this.currentStroke.points.shift();
+        }
+
+        private handleStop() {
+            this.currentStroke = null;
+            this.lastGlobalActivityTime = Date.now();
         }
 
         public setGestureBlock(state: boolean) {
@@ -187,7 +197,6 @@ const { title } = Astro.props;
 
         public setDrawingEnabled(enabled: boolean) {
             this.isInputActive = enabled;
-            // Si no está habilitado, el canvas no debe capturar NADA para dejar que el panzoom trabaje
             this.canvas.style.pointerEvents = enabled ? "auto" : "none";
         }
 
@@ -346,8 +355,8 @@ const { title } = Astro.props;
         }
 
         private init() {
-            const start = (e: any) => {
-                if (e.touches && e.touches.length >= 2) {
+            const start = (e: MouseEvent | TouchEvent) => {
+                if ("touches" in e && e.touches.length >= 2) {
                     this.isDragging = false;
                     this.onGestureStateChange(true);
                     this.initialPinchDistance = this.getDistance(
@@ -365,8 +374,8 @@ const { title } = Astro.props;
                 this.startY = pos.y - this.dy;
             };
 
-            const move = (e: any) => {
-                if (e.touches && e.touches.length >= 2) {
+            const move = (e: MouseEvent | TouchEvent) => {
+                if ("touches" in e && e.touches.length >= 2) {
                     e.preventDefault();
                     const dist = this.getDistance(e.touches[0], e.touches[1]);
                     if (this.initialPinchDistance > 0) {
@@ -394,14 +403,17 @@ const { title } = Astro.props;
                 setTimeout(() => this.onGestureStateChange(false), 150);
             };
 
-            this.container.addEventListener("mousedown", start);
-            window.addEventListener("mousemove", move);
+            this.container.addEventListener("mousedown", start, {
+                passive: false,
+            });
+            window.addEventListener("mousemove", move, { passive: false });
             window.addEventListener("mouseup", stop);
             this.container.addEventListener("touchstart", start, {
                 passive: false,
             });
             window.addEventListener("touchmove", move, { passive: false });
             window.addEventListener("touchend", stop);
+            this.container.addEventListener("touchcancel", stop);
             this.container.addEventListener(
                 "wheel",
                 (e) => {
@@ -415,17 +427,19 @@ const { title } = Astro.props;
             );
         }
 
-        private getDistance(t1: any, t2: any) {
+        private getDistance(t1: Touch, t2: Touch) {
             return Math.sqrt(
                 Math.pow(t2.clientX - t1.clientX, 2) +
                     Math.pow(t2.clientY - t1.clientY, 2),
             );
         }
 
-        private getPos(e: any) {
+        private getPos(e: MouseEvent | TouchEvent) {
+            const clientX = "clientX" in e ? e.clientX : e.touches[0].clientX;
+            const clientY = "clientY" in e ? e.clientY : e.touches[0].clientY;
             return {
-                x: e.clientX || e.touches?.[0]?.clientX,
-                y: e.clientY || e.touches?.[0]?.clientY,
+                x: clientX,
+                y: clientY,
             };
         }
 
@@ -482,17 +496,9 @@ const { title } = Astro.props;
                 laserPointer.startSystem();
                 systemInitialized = true;
             }
-
-            // Mantenemos el panzoom activo solo en modo HAND
             panZoom.setEnabled(tool === "hand");
-
-            // Habilitamos el dibujo solo si NO es modo HAND
             laserPointer.setDrawingEnabled(tool !== "hand");
-
-            if (tool !== "hand") {
-                laserPointer.setMode(tool as "laser" | "pen");
-            }
-
+            if (tool !== "hand") laserPointer.setMode(tool as "laser" | "pen");
             handBtn?.classList.toggle("active", tool === "hand");
             laserBtn?.classList.toggle("active", tool === "laser");
             penBtn?.classList.toggle("active", tool === "pen");
@@ -529,6 +535,9 @@ const { title } = Astro.props;
         };
 
         wrappers.forEach((wrapper) => {
+            const title =
+                wrapper.getAttribute("data-title") || "mapa-conceptual";
+            const downloadBtn = wrapper.querySelector(".download-map-btn");
             wrapper.querySelectorAll(".view-images-btn").forEach((btn) => {
                 btn.addEventListener("click", () => {
                     const imagesData = btn.getAttribute("data-images");
@@ -543,6 +552,32 @@ const { title } = Astro.props;
                     }
                 });
             });
+
+            if (downloadBtn) {
+                downloadBtn.addEventListener("click", async () => {
+                    const span = downloadBtn.querySelector("span");
+                    const mapContainer = wrapper.querySelector(
+                        ".concept-map-container",
+                    ) as HTMLElement;
+                    if (span) span.textContent = "Generando...";
+                    try {
+                        await new Promise((r) => setTimeout(r, 100));
+                        const dataUrl = await toPng(mapContainer, {
+                            backgroundColor: "#ffffff",
+                            pixelRatio: 2,
+                            filter: (node: HTMLElement) =>
+                                !node.classList?.contains("download-map-btn") &&
+                                !node.classList?.contains("view-images-btn"),
+                        });
+                        const link = document.createElement("a");
+                        link.download = `Ediprofe-${title.replace(/\s+/g, "-")}.png`;
+                        link.href = dataUrl;
+                        link.click();
+                    } finally {
+                        if (span) span.textContent = "Descargar";
+                    }
+                });
+            }
         });
 
         closeBtn?.addEventListener("click", closeVisualizer);
@@ -596,3 +631,93 @@ const { title } = Astro.props;
     initMapSystem();
     document.addEventListener("astro:page-load", initMapSystem);
 </script>
+
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+
+    .concept-map-wrapper {
+        position: relative;
+        margin: 3rem 0;
+    }
+
+    .concept-map-container {
+        background-color: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 16px;
+        padding: 1.5rem 2rem;
+        font-family: "Space Grotesk", sans-serif;
+        color: #334155;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .concept-map-container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        background: #2563eb;
+    }
+
+    .download-map-btn {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 12px;
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        color: #64748b;
+        font-family: inherit;
+        font-size: 0.75rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        z-index: 10;
+    }
+
+    .download-map-btn:hover {
+        background: #f1f5f9;
+        color: #2563eb;
+        border-color: #cbd5e1;
+        transform: translateY(-1px);
+    }
+
+    .download-map-btn.loading {
+        opacity: 0.7;
+        pointer-events: none;
+    }
+
+    .map-root {
+        margin-bottom: 1rem;
+    }
+
+    .root-label {
+        font-weight: 400;
+        font-size: 1.3rem;
+        color: #0f172a;
+        letter-spacing: -0.02em;
+    }
+
+    .root-v-line {
+        color: #cbd5e1;
+        margin-left: 0.1rem;
+        font-size: 0.9rem;
+        margin-top: 0.2rem;
+    }
+
+    .map-branches {
+        border-left: 1.5px solid #cbd5e1;
+        margin-left: 0.5rem;
+        padding-left: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+        padding-top: 0.5rem;
+    }
+</style>
