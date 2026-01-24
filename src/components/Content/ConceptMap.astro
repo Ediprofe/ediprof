@@ -75,6 +75,7 @@ const { title } = Astro.props;
         private rafId: number | null = null;
         private lastGlobalActivityTime: number = Date.now();
         private duration = 3000;
+        private isBlockedByGesture = false;
 
         constructor(canvasId: string) {
             this.canvas = document.getElementById(
@@ -103,7 +104,13 @@ const { title } = Astro.props;
             };
 
             const start = (e: any) => {
-                if (!this.active) return;
+                if (!this.active || this.isBlockedByGesture) return;
+                // Bloqueo inmediato si hay más de un toque (pinch-zoom detectado)
+                if (e.touches && e.touches.length > 1) {
+                    this.isBlockedByGesture = true;
+                    return;
+                }
+
                 if (e.touches) e.preventDefault();
                 const { x, y } = getPos(e);
                 this.lastGlobalActivityTime = Date.now();
@@ -120,7 +127,17 @@ const { title } = Astro.props;
             };
 
             const move = (e: any) => {
-                if (!this.active || !this.currentStroke) return;
+                if (
+                    !this.active ||
+                    !this.currentStroke ||
+                    this.isBlockedByGesture
+                )
+                    return;
+                if (e.touches && e.touches.length > 1) {
+                    this.stop(); // Abortar dibujo si entra un segundo dedo
+                    return;
+                }
+
                 const { x, y } = getPos(e);
                 this.lastGlobalActivityTime = Date.now();
                 this.currentStroke.points.push({ x, y });
@@ -131,12 +148,11 @@ const { title } = Astro.props;
             const stop = () => {
                 this.currentStroke = null;
                 this.lastGlobalActivityTime = Date.now();
+                // El desbloqueo de gesto se maneja externamente para mayor seguridad
             };
 
-            this.canvas.addEventListener("mousedown", start, {
-                passive: false,
-            });
-            window.addEventListener("mousemove", move, { passive: false });
+            this.canvas.addEventListener("mousedown", start);
+            window.addEventListener("mousemove", move);
             window.addEventListener("mouseup", stop);
 
             this.canvas.addEventListener("touchstart", start, {
@@ -144,6 +160,11 @@ const { title } = Astro.props;
             });
             window.addEventListener("touchmove", move, { passive: false });
             window.addEventListener("touchend", stop);
+        }
+
+        public setGestureBlock(state: boolean) {
+            this.isBlockedByGesture = state;
+            if (state) this.currentStroke = null;
         }
 
         public resize() {
@@ -281,10 +302,8 @@ const { title } = Astro.props;
             this.ctx.lineJoin = "round";
             this.ctx.shadowBlur = blur;
             this.ctx.shadowColor = color;
-
             const pts = stroke.points;
             this.ctx.moveTo(pts[0].x, pts[0].y);
-
             for (let i = 1; i < pts.length - 1; i++) {
                 const midX = (pts[i].x + pts[i + 1].x) / 2;
                 const midY = (pts[i].y + pts[i + 1].y) / 2;
@@ -294,30 +313,34 @@ const { title } = Astro.props;
         }
     }
 
-    // --- SISTEMA DE MOVIMIENTO Y ZOOM TÁCTIL (MULTI-TOUCH) ---
+    // --- SISTEMA DE MOVIMIENTO Y ZOOM TÁCTIL (BLOQUEO DE HERRAMIENTAS SEGURO) ---
     class PanZoomSystem {
         private container: HTMLElement;
         private dx = 0;
-        private dy = 0; // Posición actual
+        private dy = 0;
         private startX = 0;
-        private startY = 0; // Posición inicial toque
+        private startY = 0;
         private scale = 1;
         private initialPinchDistance = 0;
         private initialScale = 1;
         private isDragging = false;
+        private onGestureStateChange: (gesturing: boolean) => void;
         public active = true;
 
-        constructor(containerId: string) {
+        constructor(
+            containerId: string,
+            onGestureStateChange: (gesturing: boolean) => void,
+        ) {
             this.container = document.getElementById(containerId)!;
+            this.onGestureStateChange = onGestureStateChange;
             this.init();
         }
 
         private init() {
             const start = (e: any) => {
-                if (!this.active) return;
-
-                if (e.touches && e.touches.length === 2) {
+                if (e.touches && e.touches.length >= 2) {
                     this.isDragging = false;
+                    this.onGestureStateChange(true);
                     this.initialPinchDistance = this.getDistance(
                         e.touches[0],
                         e.touches[1],
@@ -326,6 +349,7 @@ const { title } = Astro.props;
                     return;
                 }
 
+                if (!this.active) return;
                 this.isDragging = true;
                 const pos = this.getPos(e);
                 this.startX = pos.x - this.dx;
@@ -333,36 +357,39 @@ const { title } = Astro.props;
             };
 
             const move = (e: any) => {
-                if (!this.active) return;
-
-                // Zoom (Pellizco)
-                if (e.touches && e.touches.length === 2) {
+                // Zoom
+                if (e.touches && e.touches.length >= 2) {
                     e.preventDefault();
                     const dist = this.getDistance(e.touches[0], e.touches[1]);
-                    const ratio = dist / this.initialPinchDistance;
-                    this.scale = Math.min(
-                        Math.max(this.initialScale * ratio, 1),
-                        6,
-                    );
-                    this.apply();
+                    if (this.initialPinchDistance > 0) {
+                        const ratio = dist / this.initialPinchDistance;
+                        this.scale = Math.min(
+                            Math.max(this.initialScale * ratio, 1),
+                            6,
+                        );
+                        this.apply();
+                    }
                     return;
                 }
 
-                // Mover (Pan)
-                if (!this.isDragging) return;
-                e.preventDefault();
-                const pos = this.getPos(e);
-                this.dx = pos.x - this.startX;
-                this.dy = pos.y - this.startY;
-                this.apply();
+                // Mover
+                if (this.isDragging && this.active) {
+                    e.preventDefault();
+                    const pos = this.getPos(e);
+                    this.dx = pos.x - this.startX;
+                    this.dy = pos.y - this.startY;
+                    this.apply();
+                }
             };
 
             const stop = () => {
                 this.isDragging = false;
+                // Añadimos un pequeño delay antes de permitir dibujar para evitar rrayas accidentales al soltar el zoom
+                setTimeout(() => this.onGestureStateChange(false), 150);
             };
 
             const wheelZoom = (e: WheelEvent) => {
-                if (!this.active) return;
+                if (!e.ctrlKey && !this.active) return; // Solo zoom por rueda si es Hand o con Ctrl
                 e.preventDefault();
                 const delta = e.deltaY > 0 ? 0.9 : 1.1;
                 this.scale = Math.min(Math.max(this.scale * delta, 1), 6);
@@ -377,6 +404,7 @@ const { title } = Astro.props;
             });
             window.addEventListener("touchmove", move, { passive: false });
             window.addEventListener("touchend", stop);
+            window.addEventListener("touchcancel", stop);
             this.container.addEventListener("wheel", wheelZoom, {
                 passive: false,
             });
@@ -416,10 +444,8 @@ const { title } = Astro.props;
     function initMapSystem() {
         const wrappers = document.querySelectorAll(".concept-map-wrapper");
         const overlay = document.getElementById("map-visualizer-overlay");
-
-        if (overlay && overlay.parentElement !== document.body) {
+        if (overlay && overlay.parentElement !== document.body)
             document.body.appendChild(overlay);
-        }
 
         const visualizerImg = document.getElementById(
             "visualizer-img",
@@ -441,7 +467,10 @@ const { title } = Astro.props;
         const colorDots = document.querySelectorAll(".color-dot");
 
         const laserPointer = new LaserPointer("laser-canvas");
-        const panZoom = new PanZoomSystem("pan-zoom-wrapper");
+        // El PanZoomSystem ahora controla si el LaserPointer puede dibujar o no
+        const panZoom = new PanZoomSystem("pan-zoom-wrapper", (isGesturing) => {
+            laserPointer.setGestureBlock(isGesturing);
+        });
 
         let visualizerToolsActive = false;
 
@@ -543,7 +572,6 @@ const { title } = Astro.props;
             if (!overlay?.classList.contains("active")) return;
             const key = e.key.toLowerCase();
             const isMod = e.ctrlKey || e.metaKey;
-
             if (isMod && key === "z") {
                 e.preventDefault();
                 laserPointer.undo();
@@ -566,7 +594,6 @@ const { title } = Astro.props;
 
 <style>
     @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
-
     .concept-map-wrapper {
         position: relative;
         margin: 3rem 0;
