@@ -62,6 +62,7 @@ const { title } = Astro.props;
         isDead: boolean;
         isPermanent?: boolean;
         color: string;
+        type?: "line" | "arrow" | "rect";
     }
 
     class LaserPointer {
@@ -71,7 +72,7 @@ const { title } = Astro.props;
         private currentStroke: LaserStroke | null = null;
         public isInputActive = false;
         private systemRunning = false;
-        private toolMode: "laser" | "pen" = "laser";
+        private toolMode: "laser" | "pen" | "arrow" | "rect" = "laser";
         private currentColor: string = "#FFFFFF";
         private rafId: number | null = null;
         private lastGlobalActivityTime: number = Date.now();
@@ -140,9 +141,18 @@ const { title } = Astro.props;
             this.currentStroke = {
                 points: [{ x, y }],
                 isDead: false,
-                isPermanent: this.toolMode === "pen",
+                isPermanent:
+                    this.toolMode === "pen" ||
+                    this.toolMode === "arrow" ||
+                    this.toolMode === "rect",
                 color:
                     this.toolMode === "laser" ? "#FF0000" : this.currentColor,
+                type:
+                    this.toolMode === "arrow"
+                        ? "arrow"
+                        : this.toolMode === "rect"
+                          ? "rect"
+                          : "line",
             };
             this.strokes.push(this.currentStroke);
         }
@@ -161,9 +171,21 @@ const { title } = Astro.props;
 
             const { x, y } = this.getPos(e);
             this.lastGlobalActivityTime = Date.now();
-            this.currentStroke.points.push({ x, y });
-            if (this.currentStroke.points.length > 800)
-                this.currentStroke.points.shift();
+
+            if (
+                this.currentStroke.type === "arrow" ||
+                this.currentStroke.type === "rect"
+            ) {
+                // Para flechas y rectangulos solo guardamos inicio y fin actual
+                this.currentStroke.points = [
+                    this.currentStroke.points[0],
+                    { x, y },
+                ];
+            } else {
+                this.currentStroke.points.push({ x, y });
+                if (this.currentStroke.points.length > 800)
+                    this.currentStroke.points.shift();
+            }
         }
 
         private handleStop() {
@@ -200,7 +222,7 @@ const { title } = Astro.props;
             this.canvas.style.pointerEvents = enabled ? "auto" : "none";
         }
 
-        public setMode(mode: "laser" | "pen") {
+        public setMode(mode: "laser" | "pen" | "arrow" | "rect") {
             this.toolMode = mode;
         }
         public setColor(color: string) {
@@ -258,37 +280,55 @@ const { title } = Astro.props;
 
                 if (stroke.isPermanent) {
                     const rgb = this.hexToRgb(stroke.color);
-                    this.renderStroke(
-                        stroke,
-                        `rgba(${rgb}, ${alpha})`,
-                        4,
-                        3,
-                        "source-over",
-                    );
-                    this.renderStroke(
-                        stroke,
-                        `rgba(255, 255, 255, ${alpha * 0.4})`,
-                        1.5,
-                        0,
-                        "source-over",
-                    );
+                    const colorStr = `rgba(${rgb}, ${alpha})`;
+
+                    if (stroke.type === "arrow") {
+                        this.renderArrow(
+                            stroke.points[0],
+                            stroke.points[1],
+                            colorStr,
+                            4,
+                        );
+                    } else if (stroke.type === "rect") {
+                        this.renderRect(
+                            stroke.points[0],
+                            stroke.points[1],
+                            colorStr,
+                            4,
+                        );
+                    } else {
+                        this.renderStroke(
+                            stroke.points,
+                            colorStr,
+                            4,
+                            3,
+                            "source-over",
+                        );
+                        this.renderStroke(
+                            stroke.points,
+                            `rgba(255, 255, 255, ${alpha * 0.4})`,
+                            1.5,
+                            0,
+                            "source-over",
+                        );
+                    }
                 } else {
                     this.renderStroke(
-                        stroke,
+                        stroke.points,
                         `rgba(255, 0, 0, ${alpha * 0.3})`,
                         25,
                         30,
                         "lighter",
                     );
                     this.renderStroke(
-                        stroke,
+                        stroke.points,
                         `rgba(255, 0, 0, ${alpha * 0.8})`,
                         8,
                         10,
                         "lighter",
                     );
                     this.renderStroke(
-                        stroke,
+                        stroke.points,
                         `rgba(255, 255, 255, ${alpha * 0.95})`,
                         3,
                         0,
@@ -306,7 +346,7 @@ const { title } = Astro.props;
         }
 
         private renderStroke(
-            stroke: LaserStroke,
+            pts: LaserPoint[],
             color: string,
             width: number,
             blur: number,
@@ -320,7 +360,6 @@ const { title } = Astro.props;
             this.ctx.lineJoin = "round";
             this.ctx.shadowBlur = blur;
             this.ctx.shadowColor = color;
-            const pts = stroke.points;
             this.ctx.moveTo(pts[0].x, pts[0].y);
             for (let i = 1; i < pts.length - 1; i++) {
                 const midX = (pts[i].x + pts[i + 1].x) / 2;
@@ -328,6 +367,64 @@ const { title } = Astro.props;
                 this.ctx.quadraticCurveTo(pts[i].x, pts[i].y, midX, midY);
             }
             this.ctx.stroke();
+        }
+
+        private renderArrow(
+            from: LaserPoint,
+            to: LaserPoint,
+            color: string,
+            width: number,
+        ) {
+            const headlen = 15; // length of head in pixels
+            const angle = Math.atan2(to.y - from.y, to.x - from.x);
+
+            this.ctx.globalCompositeOperation = "source-over";
+            this.ctx.beginPath();
+            this.ctx.strokeStyle = color;
+            this.ctx.lineWidth = width;
+            this.ctx.lineCap = "round";
+            this.ctx.lineJoin = "round";
+            this.ctx.shadowBlur = 0;
+
+            // Línea principal
+            this.ctx.moveTo(from.x, from.y);
+            this.ctx.lineTo(to.x, to.y);
+
+            // Cabeza de la flecha
+            this.ctx.moveTo(to.x, to.y);
+            this.ctx.lineTo(
+                to.x - headlen * Math.cos(angle - Math.PI / 6),
+                to.y - headlen * Math.sin(angle - Math.PI / 6),
+            );
+            this.ctx.moveTo(to.x, to.y);
+            this.ctx.lineTo(
+                to.x - headlen * Math.cos(angle + Math.PI / 6),
+                to.y - headlen * Math.sin(angle + Math.PI / 6),
+            );
+
+            this.ctx.stroke();
+        }
+
+        private renderRect(
+            from: LaserPoint,
+            to: LaserPoint,
+            color: string,
+            width: number,
+        ) {
+            this.ctx.globalCompositeOperation = "source-over";
+            this.ctx.beginPath();
+            this.ctx.strokeStyle = color;
+            this.ctx.lineWidth = width;
+            this.ctx.lineCap = "round";
+            this.ctx.lineJoin = "round";
+            this.ctx.shadowBlur = 0;
+
+            const x = Math.min(from.x, to.x);
+            const y = Math.min(from.y, to.y);
+            const w = Math.abs(to.x - from.x);
+            const h = Math.abs(to.y - from.y);
+
+            this.ctx.strokeRect(x, y, w, h);
         }
     }
 
@@ -462,96 +559,66 @@ const { title } = Astro.props;
 
     function initMapSystem() {
         const wrappers = document.querySelectorAll(".concept-map-wrapper");
-        const overlay = document.getElementById("map-visualizer-overlay");
-        if (overlay && overlay.parentElement !== document.body)
-            document.body.appendChild(overlay);
 
-        const visualizerImg = document.getElementById(
-            "visualizer-img",
-        ) as HTMLImageElement;
-        const closeBtn = document.getElementById("close-visualizer");
-        const prevBtn = document.getElementById(
-            "prev-img-side",
-        ) as HTMLButtonElement;
-        const nextBtn = document.getElementById(
-            "next-img-side",
-        ) as HTMLButtonElement;
-
-        const handBtn = document.getElementById("hand-btn");
         const laserBtn = document.getElementById("laser-btn");
         const penBtn = document.getElementById("pen-btn");
+        const arrowBtn = document.getElementById("arrow-btn");
+        const rectBtn = document.getElementById("rect-btn");
+        const handBtn = document.getElementById("hand-btn");
         const clearBtn = document.getElementById("clear-btn");
         const undoBtn = document.getElementById("undo-btn");
         const colorDots = document.querySelectorAll(".color-dot");
+        const globalCanvas = document.getElementById(
+            "laser-canvas",
+        ) as HTMLCanvasElement;
 
         const laserPointer = new LaserPointer("laser-canvas");
-        const panZoom = new PanZoomSystem("pan-zoom-wrapper", (isGesturing) => {
-            laserPointer.setGestureBlock(isGesturing);
-        });
-
         let systemInitialized = false;
 
-        const setTool = (tool: "hand" | "laser" | "pen") => {
+        const setTool = (tool: "hand" | "laser" | "pen" | "arrow" | "rect") => {
             if (!systemInitialized) {
                 laserPointer.startSystem();
                 systemInitialized = true;
             }
-            panZoom.setEnabled(tool === "hand");
+
             laserPointer.setDrawingEnabled(tool !== "hand");
-            if (tool !== "hand") laserPointer.setMode(tool as "laser" | "pen");
+            if (tool !== "hand")
+                laserPointer.setMode(
+                    tool as "laser" | "pen" | "arrow" | "rect",
+                );
+
+            globalCanvas?.classList.toggle("active", tool !== "hand");
             handBtn?.classList.toggle("active", tool === "hand");
             laserBtn?.classList.toggle("active", tool === "laser");
             penBtn?.classList.toggle("active", tool === "pen");
-        };
-
-        const updateGallery = () => {
-            if (visualizerImg && prevBtn && nextBtn) {
-                visualizerImg.src = currentImages[currentIndex];
-                panZoom.reset();
-            }
-        };
-
-        const closeVisualizer = () => {
-            overlay?.classList.remove("active");
-            document.body.classList.remove("visualizer-open");
-            laserPointer.stopSystem();
-            systemInitialized = false;
-        };
-
-        let currentImages: string[] = [];
-        let currentIndex = 0;
-
-        const nextImage = () => {
-            if (currentIndex < currentImages.length - 1) {
-                currentIndex++;
-                updateGallery();
-            }
-        };
-        const prevImage = () => {
-            if (currentIndex > 0) {
-                currentIndex--;
-                updateGallery();
-            }
+            arrowBtn?.classList.toggle("active", tool === "arrow");
+            rectBtn?.classList.toggle("active", tool === "rect");
         };
 
         wrappers.forEach((wrapper) => {
             const title =
                 wrapper.getAttribute("data-title") || "mapa-conceptual";
             const downloadBtn = wrapper.querySelector(".download-map-btn");
-            wrapper.querySelectorAll(".view-images-btn").forEach((btn) => {
-                btn.addEventListener("click", () => {
-                    const imagesData = btn.getAttribute("data-images");
-                    if (imagesData && overlay) {
-                        currentImages = JSON.parse(imagesData);
-                        currentIndex = 0;
-                        updateGallery();
-                        overlay.classList.add("active");
-                        document.body.classList.add("visualizer-open");
-                        laserPointer.resize();
-                        setTool("hand");
-                    }
+
+            // Lógica de Acordeones
+            wrapper
+                .querySelectorAll(".toggle-illustrations-btn")
+                .forEach((btn) => {
+                    btn.addEventListener("click", () => {
+                        const section = btn.closest(".map-section");
+                        const accordion = section?.querySelector(
+                            ".illustrations-accordion",
+                        ) as HTMLElement;
+                        if (accordion) {
+                            const isHidden = accordion.hidden;
+                            accordion.hidden = !isHidden;
+                            btn.setAttribute(
+                                "aria-expanded",
+                                isHidden ? "true" : "false",
+                            );
+                        }
+                    });
                 });
-            });
 
             if (downloadBtn) {
                 downloadBtn.addEventListener("click", async () => {
@@ -559,31 +626,73 @@ const { title } = Astro.props;
                     const mapContainer = wrapper.querySelector(
                         ".concept-map-container",
                     ) as HTMLElement;
+
                     if (span) span.textContent = "Generando...";
+
+                    // 1. Identificar qué acordeones están abiertos para restaurarlos luego
+                    const openAccordions = Array.from(
+                        mapContainer.querySelectorAll(
+                            ".illustrations-accordion:not([hidden])",
+                        ),
+                    ) as HTMLElement[];
+
                     try {
-                        await new Promise((r) => setTimeout(r, 100));
+                        // 2. CERRAR todo automáticamente (esto colapsa la altura del contenedor)
+                        openAccordions.forEach((acc) => (acc.hidden = true));
+
+                        // Ocultar botones extra visualmente
+                        mapContainer.classList.add("is-exporting");
+
+                        // 3. Esperar a que el navegador recalcule el layout (Reflow)
+                        // Damos tiempo generoso para evitar condiciones de carrera
+                        await new Promise((r) => setTimeout(r, 500));
+
                         const dataUrl = await toPng(mapContainer, {
                             backgroundColor: "#ffffff",
                             pixelRatio: 2,
-                            filter: (node: HTMLElement) =>
-                                !node.classList?.contains("download-map-btn") &&
-                                !node.classList?.contains("view-images-btn"),
+                            // 4. FILTRO DE SEGURIDAD:
+                            // Ignoramos explícitamente los acordeones y botones al generar la imagen.
+                            // Esto evita que 'html-to-image' intente procesar imágenes ocultas (que podrían dar error CORS)
+                            filter: (node: HTMLElement) => {
+                                const classList = node.classList;
+                                if (!classList) return true;
+                                return (
+                                    !classList.contains("download-map-btn") &&
+                                    !classList.contains(
+                                        "toggle-illustrations-btn",
+                                    ) &&
+                                    !classList.contains(
+                                        "illustrations-accordion",
+                                    )
+                                );
+                            },
                         });
+
                         const link = document.createElement("a");
                         link.download = `Ediprofe-${title.replace(/\s+/g, "-")}.png`;
                         link.href = dataUrl;
                         link.click();
+                    } catch (err) {
+                        console.error("Error al exportar mapa:", err);
+                        alert(
+                            "Hubo un problema técnico al crear la imagen. Intenta recargar la página.",
+                        );
                     } finally {
+                        // 5. RESTAURAR el estado original
+                        openAccordions.forEach((acc) => (acc.hidden = false));
+                        mapContainer.classList.remove("is-exporting");
                         if (span) span.textContent = "Descargar";
                     }
                 });
             }
         });
 
-        closeBtn?.addEventListener("click", closeVisualizer);
+        // Eventos del Dock
         handBtn?.addEventListener("click", () => setTool("hand"));
         laserBtn?.addEventListener("click", () => setTool("laser"));
         penBtn?.addEventListener("click", () => setTool("pen"));
+        arrowBtn?.addEventListener("click", () => setTool("arrow"));
+        rectBtn?.addEventListener("click", () => setTool("rect"));
         clearBtn?.addEventListener("click", () => laserPointer.clearAll());
         undoBtn?.addEventListener("click", () => laserPointer.undo());
 
@@ -597,30 +706,19 @@ const { title } = Astro.props;
             });
         });
 
-        overlay?.addEventListener("click", (e) => {
-            if (
-                e.target === overlay ||
-                (e.target as HTMLElement).classList.contains("image-stage")
-            )
-                closeVisualizer();
-        });
-
-        prevBtn?.addEventListener("click", prevImage);
-        nextBtn?.addEventListener("click", nextImage);
-
+        // Shortcuts de Teclado
         const handleKeyDown = (e: KeyboardEvent) => {
-            if (!overlay?.classList.contains("active")) return;
             const key = e.key.toLowerCase();
             const isMod = e.ctrlKey || e.metaKey;
+
             if (isMod && key === "z") {
                 e.preventDefault();
                 laserPointer.undo();
-            } else if (e.key === "Escape") closeVisualizer();
-            else if (e.key === "ArrowRight") nextImage();
-            else if (e.key === "ArrowLeft") prevImage();
-            else if (key === "h") setTool("hand");
+            } else if (key === "h") setTool("hand");
             else if (key === "l") setTool("laser");
             else if (key === "p") setTool("pen");
+            else if (key === "a") setTool("arrow");
+            else if (key === "r") setTool("rect");
             else if (key === "c") laserPointer.clearAll();
         };
 
@@ -691,6 +789,19 @@ const { title } = Astro.props;
     .download-map-btn.loading {
         opacity: 0.7;
         pointer-events: none;
+    }
+
+    /* Ocultar elementos durante la exportación */
+    .concept-map-container.is-exporting .toggle-illustrations-btn,
+    .concept-map-container.is-exporting .download-map-btn {
+        display: none !important;
+    }
+
+    /* MATAR animaciones y transiciones durante la exportación para asegurar layout estático */
+    .concept-map-container.is-exporting,
+    .concept-map-container.is-exporting * {
+        transition: none !important;
+        animation: none !important;
     }
 
     .map-root {
