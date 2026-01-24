@@ -8,7 +8,14 @@ import MapStep from '../../../../components/Content/MapStep.astro';
 
 <ConceptMap title="La Célula (Unidad de la Vida)">
 
-  <MapSection title="01. ¿Qué es la célula?">
+  <MapSection 
+    title="01. ¿Qué es la célula?"
+    images={[
+      'https://cdn.ediprofe.com/img/ciencias/74mg-la-celula-unidad-basica-de-la-vida.webp',
+      'https://cdn.ediprofe.com/img/ciencias/e5if-la-teoria-celular.webp',
+      'https://cdn.ediprofe.com/img/ciencias/odo4-funciones-vitales-de-la-celula.webp'
+    ]}
+  >
     <MapItem label="Teoría celular:">
       <MapPoint>1. Todo **ser vivo** tiene células</MapPoint>
       <MapPoint>2. Es la **unidad mínima** de vida</MapPoint>
@@ -17,7 +24,15 @@ import MapStep from '../../../../components/Content/MapStep.astro';
     <MapPoint>Funciones: Nutrición, relación y reproducción</MapPoint>
   </MapSection>
 
-  <MapSection title="02. Tipos de Células">
+  <MapSection 
+    title="02. Tipos de Células"
+    images={[
+      'https://cdn.ediprofe.com/img/ciencias/9w6x-celula-procariota.webp',
+      'https://cdn.ediprofe.com/img/ciencias/rgh6-celula-eucariota.webp',
+      'https://cdn.ediprofe.com/img/ciencias/rh89-celula-eucariota-y-procariota.webp',
+      'https://cdn.ediprofe.com/img/ciencias/l0bj-celula-animal-y-vegetal.webp'
+    ]}
+  >
     <MapItem label="Procariotas: Simples, sin núcleo, ADN circular (ej. Bacterias)" />
     <MapItem label="Eucariotas: Complejas, núcleo definido, organelos variados">
       <MapPoint>Animal: Sin pared, vacuolas pequeñas, forma irregular</MapPoint>
@@ -25,7 +40,17 @@ import MapStep from '../../../../components/Content/MapStep.astro';
     </MapItem>
   </MapSection>
 
-  <MapSection title="03. Organelos (La Ciudad Celular)">
+  <MapSection 
+    title="03. Organelos (La Ciudad Celular)"
+    images={[
+      'https://cdn.ediprofe.com/img/ciencias/8cs4-la-celula-como-una-ciudad-vibrante.webp',
+      'https://cdn.ediprofe.com/img/ciencias/ntko-ribosomas-y-reticulos.webp',
+      'https://cdn.ediprofe.com/img/ciencias/2qgz-aparato-de-golgi.webp',
+      'https://cdn.ediprofe.com/img/ciencias/dxgc-cloroplastos.webp',
+      'https://cdn.ediprofe.com/img/ciencias/uwak-pared-celular.webp',
+      'https://cdn.ediprofe.com/img/ciencias/9dcb-vacuola-gigante.webp'
+    ]}
+  >
     <MapPoint>**Mando:** Núcleo (ADN) | **Energía:** Mitocondrias (ATP)</MapPoint>
     <MapPoint>**Trabajadores:** Proteínas (enzimas, estructura, defensa)</MapPoint>
     <MapPoint>**Fábrica:** Ribosomas (crea proteínas) | Retículo (canales)</MapPoint>
@@ -37,7 +62,18 @@ import MapStep from '../../../../components/Content/MapStep.astro';
     </MapItem>
   </MapSection>
 
-  <MapSection title="04. Transporte Celular">
+  <MapSection 
+    title="04. Transporte Celular"
+    images={[
+      'https://cdn.ediprofe.com/img/ciencias/x3e3-membrana-celular-una-frontera-selectiva.webp',
+      'https://cdn.ediprofe.com/img/ciencias/7hft-transporte-pasivo.webp',
+      'https://cdn.ediprofe.com/img/ciencias/7c56-difusion-simple.webp',
+      'https://cdn.ediprofe.com/img/ciencias/i8qy-difusion-facilitada.webp',
+      'https://cdn.ediprofe.com/img/ciencias/2gxy-osmosis.webp',
+      'https://cdn.ediprofe.com/img/ciencias/2685-transporte-activo.webp',
+      'https://cdn.ediprofe.com/img/ciencias/kndb-transporte-con-movimiento-de-la-membrana.webp'
+    ]}
+  >
     <MapItem label="Pasivo (Sin gasto):">
       <MapPoint>**Difusión Simple:** Moléculas pequeñas</MapPoint>
       <MapPoint>**Difusión Facilitada:** Por canal o transportador</MapPoint>
@@ -49,11 +85,25 @@ import MapStep from '../../../../components/Content/MapStep.astro';
     </MapItem>
   </MapSection>
 
-  <MapSection title="05. Niveles de Organización">
+  <MapSection 
+    title="05. Niveles de Organización"
+    images={[
+      'https://cdn.ediprofe.com/img/ciencias/a38z-la-jerarquia-de-la-vida.webp',
+      'https://cdn.ediprofe.com/img/ciencias/16js-la-integracion-fina-organismo.webp'
+    ]}
+  >
     <MapPoint>**Escala:** Célula <MapStep /> Tejido <MapStep /> Órgano <MapStep /> Sistema <MapStep /> Organismo</MapPoint>
   </MapSection>
 
-  <MapSection title="06. El Ciclo Celular">
+  <MapSection 
+    title="06. El Ciclo Celular"
+    images={[
+      'https://cdn.ediprofe.com/img/ciencias/qo3x-la-interfase-preparando-el-escenario.webp',
+      'https://cdn.ediprofe.com/img/ciencias/wkee-mitosis-creacion-de-clones.webp',
+      'https://cdn.ediprofe.com/img/ciencias/siz3-meiosis-creacion-de-diversidad.webp',
+      'https://cdn.ediprofe.com/img/ciencias/2grt-resumen-mitosis-vs-meiosis.webp'
+    ]}
+  >
     <MapPoint>**Interfase:** G1 (crece), S (duplica), G2 (control)</MapPoint>
     <MapPoint>**Mitosis:** Células del cuerpo <MapStep /> 2 idénticas</MapPoint>
     <MapPoint>**Meiosis:** Células sexuales <MapStep /> 4 distintas</MapPoint>

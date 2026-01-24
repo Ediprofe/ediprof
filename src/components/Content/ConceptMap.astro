@@ -1,4 +1,6 @@
 ---
+import MapVisualizer from "./MapVisualizer.astro";
+
 interface Props {
     title: string;
 }
@@ -8,7 +10,7 @@ const { title } = Astro.props;
 
 <div class="concept-map-wrapper" data-title={title}>
     <div class="concept-map-container">
-        <!-- Botón de Descarga (Oculto en impresión/captura) -->
+        <!-- Botón de Descarga -->
         <button
             class="download-map-btn"
             title="Descargar como Imagen"
@@ -42,61 +44,140 @@ const { title } = Astro.props;
             <slot />
         </div>
     </div>
+
+    <!-- Visor de Ilustraciones Global -->
+    <MapVisualizer />
 </div>
 
 <script>
     import { toPng } from "html-to-image";
 
-    function initDownloadButtons() {
+    function initMapSystem() {
+        // --- 1. Lógica de Descarga ---
         const wrappers = document.querySelectorAll(".concept-map-wrapper");
 
+        // --- 2. Lógica del Explorador de Imágenes ---
+        const overlay = document.getElementById("map-visualizer-overlay");
+        const visualizerImg = document.getElementById(
+            "visualizer-img",
+        ) as HTMLImageElement;
+        const closeBtn = document.getElementById("close-visualizer");
+        const prevBtn = document.getElementById(
+            "prev-img",
+        ) as HTMLButtonElement;
+        const nextBtn = document.getElementById(
+            "next-img",
+        ) as HTMLButtonElement;
+        const counter = document.getElementById("visualizer-counter");
+
+        let currentImages: string[] = [];
+        let currentIndex = 0;
+
+        function updateGallery() {
+            if (visualizerImg && counter && prevBtn && nextBtn) {
+                visualizerImg.src = currentImages[currentIndex];
+                counter.textContent = `${currentIndex + 1} / ${currentImages.length}`;
+                prevBtn.disabled = currentIndex === 0;
+                nextBtn.disabled = currentIndex === currentImages.length - 1;
+            }
+        }
+
         wrappers.forEach((wrapper) => {
-            const btn = wrapper.querySelector(".download-map-btn");
-            const container = wrapper.querySelector(".concept-map-container");
+            const downloadBtn = wrapper.querySelector(".download-map-btn");
+            const mapContainer = wrapper.querySelector(
+                ".concept-map-container",
+            );
             const title =
                 wrapper.getAttribute("data-title") || "mapa-conceptual";
 
-            if (btn && container instanceof HTMLElement) {
-                btn.addEventListener("click", async () => {
-                    const span = btn.querySelector("span");
+            // Click en botones de "Ilustraciones" (MapSection)
+            wrapper.querySelectorAll(".view-images-btn").forEach((btn) => {
+                btn.addEventListener("click", () => {
+                    const imagesData = btn.getAttribute("data-images");
+                    if (imagesData && overlay) {
+                        currentImages = JSON.parse(imagesData);
+                        currentIndex = 0;
+                        updateGallery();
+                        overlay.classList.add("active");
+                        document.body.style.overflow = "hidden";
+                    }
+                });
+            });
+
+            // Lógica de descarga
+            if (downloadBtn && mapContainer instanceof HTMLElement) {
+                downloadBtn.addEventListener("click", async () => {
+                    const span = downloadBtn.querySelector("span");
                     const originalText = span ? span.textContent : "Descargar";
                     if (span) span.textContent = "Generando...";
-                    btn.classList.add("loading");
-
+                    downloadBtn.classList.add("loading");
                     try {
                         await new Promise((r) => setTimeout(r, 100));
-
-                        const dataUrl = await toPng(container, {
+                        const dataUrl = await toPng(mapContainer, {
                             backgroundColor: "#ffffff",
                             pixelRatio: 2,
-                            filter: (node: any) => {
-                                return !node.classList?.contains(
-                                    "download-map-btn",
-                                );
-                            },
+                            filter: (node: any) =>
+                                !node.classList?.contains("download-map-btn") &&
+                                !node.classList?.contains("view-images-btn"),
                         });
-
                         const link = document.createElement("a");
                         link.download = `Ediprofe-${title.replace(/\s+/g, "-")}.png`;
                         link.href = dataUrl;
                         link.click();
                     } catch (err) {
                         console.error("Error al exportar imagen:", err);
-                        alert(
-                            "No se pudo generar la imagen. Intenta nuevamente.",
-                        );
+                        alert("No se pudo generar la imagen.");
                     } finally {
                         if (span) span.textContent = originalText;
-                        btn.classList.remove("loading");
+                        downloadBtn.classList.remove("loading");
                     }
                 });
             }
         });
+
+        // Controles globales del Visualizador
+        const closeVisualizer = () => {
+            overlay?.classList.remove("active");
+            document.body.style.overflow = "";
+        };
+
+        const nextImage = () => {
+            if (currentIndex < currentImages.length - 1) {
+                currentIndex++;
+                updateGallery();
+            }
+        };
+
+        const prevImage = () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateGallery();
+            }
+        };
+
+        closeBtn?.addEventListener("click", closeVisualizer);
+
+        overlay?.addEventListener("click", (e) => {
+            if (e.target === overlay) closeVisualizer();
+        });
+
+        prevBtn?.addEventListener("click", prevImage);
+        nextBtn?.addEventListener("click", nextImage);
+
+        // --- Navegación por Teclado ---
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (!overlay?.classList.contains("active")) return;
+
+            if (e.key === "Escape") closeVisualizer();
+            if (e.key === "ArrowRight") nextImage();
+            if (e.key === "ArrowLeft") prevImage();
+        };
+
+        document.addEventListener("keydown", handleKeyDown);
     }
 
-    // Ejecutar en carga inicial y transiciones de Astro
-    initDownloadButtons();
-    document.addEventListener("astro:page-load", initDownloadButtons);
+    initMapSystem();
+    document.addEventListener("astro:page-load", initMapSystem);
 </script>
 
 <style>
@@ -128,7 +209,6 @@ const { title } = Astro.props;
         background: #2563eb;
     }
 
-    /* Estilos Botón Descarga */
     .download-map-btn {
         position: absolute;
         top: 1rem;

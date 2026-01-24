@@ -1,0 +1,153 @@
+---
+
+---
+
+<div id="map-visualizer-overlay" class="visualizer-overlay">
+    <div class="visualizer-window">
+        <header class="visualizer-header">
+            <span class="visualizer-title">Explorador de Evidencias</span>
+            <button id="close-visualizer" class="close-btn">&times;</button>
+        </header>
+
+        <div class="visualizer-content">
+            <div id="visualizer-image-container" class="image-container">
+                <img id="visualizer-img" src="" alt="Ilustración" />
+            </div>
+
+            <div class="visualizer-controls">
+                <button id="prev-img" class="nav-btn">Anterior</button>
+                <span id="visualizer-counter">1 / 1</span>
+                <button id="next-img" class="nav-btn">Siguiente</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .visualizer-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(15, 23, 42, 0.9);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        backdrop-filter: blur(4px);
+    }
+
+    .visualizer-overlay.active {
+        display: flex;
+    }
+
+    .visualizer-window {
+        background: #ffffff;
+        width: 90%;
+        max-width: 1000px;
+        max-height: 85vh;
+        border-radius: 12px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        border: 1px solid #e2e8f0;
+    }
+
+    .visualizer-header {
+        padding: 1rem 1.5rem;
+        background: #f8fafc;
+        border-bottom: 1px solid #e2e8f0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .visualizer-title {
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 600;
+        font-size: 1rem;
+        color: #0f172a;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .close-btn {
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: #64748b;
+        cursor: pointer;
+        line-height: 1;
+    }
+
+    .close-btn:hover {
+        color: #ef4444;
+    }
+
+    .visualizer-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 1.5rem;
+        overflow: hidden;
+        background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+        background-size: 20px 20px;
+    }
+
+    .image-container {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 300px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+        border: 1px solid #f1f5f9;
+        margin-bottom: 1.5rem;
+    }
+
+    .image-container img {
+        max-width: 100%;
+        max-height: 60vh;
+        object-fit: contain;
+    }
+
+    .visualizer-controls {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        padding-top: 0.5rem;
+    }
+
+    .nav-btn {
+        padding: 8px 24px;
+        background: #0f172a;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-family: inherit;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    .nav-btn:hover {
+        background: #2563eb;
+    }
+
+    .nav-btn:disabled {
+        background: #e2e8f0;
+        color: #94a3b8;
+        cursor: not-allowed;
+    }
+
+    #visualizer-counter {
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 600;
+        color: #64748b;
+    }
+</style>
