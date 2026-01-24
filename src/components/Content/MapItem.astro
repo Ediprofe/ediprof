@@ -1,0 +1,52 @@
+---
+interface Props {
+    label?: string;
+}
+
+const { label } = Astro.props;
+---
+
+<div class="map-item">
+    <div class="item-h-connector"></div>
+
+    {label && <div class="item-label">{label}</div>}
+
+    <div class="item-sub-content">
+        <slot />
+    </div>
+</div>
+
+<style>
+    .map-item {
+        position: relative;
+    }
+
+    .item-h-connector {
+        position: absolute;
+        left: -1.8rem;
+        top: 0.65rem;
+        width: 1.2rem;
+        height: 1px;
+        background: #cbd5e1;
+    }
+
+    .item-label {
+        font-weight: 400;
+        color: #1e293b;
+        margin-bottom: 0.2rem; /* Tightened */
+        font-size: 1rem;
+    }
+
+    .item-sub-content {
+        border-left: 1px solid #cbd5e1;
+        margin-left: -0.2rem;
+        padding-left: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem; /* Tightened */
+    }
+
+    .item-sub-content:empty {
+        display: none;
+    }
+</style>

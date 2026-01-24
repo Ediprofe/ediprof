@@ -1,0 +1,48 @@
+---
+interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<div class="map-section">
+    <!-- The horizontal connector belonging to this section -->
+    <div class="section-h-connector"></div>
+
+    <h3 class="section-title">{title}</h3>
+
+    <div class="section-content">
+        <slot />
+    </div>
+</div>
+
+<style>
+    .map-section {
+        position: relative;
+    }
+
+    .section-h-connector {
+        position: absolute;
+        left: -2rem;
+        top: 0.7rem;
+        width: 1.5rem;
+        height: 1.5px;
+        background: #cbd5e1;
+    }
+
+    .section-title {
+        margin: 0;
+        color: #2563eb;
+        font-weight: 400;
+        font-size: 1.1rem;
+        margin-bottom: 0.4rem; /* Tightened */
+        letter-spacing: -0.01em;
+    }
+
+    .section-content {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem; /* Tightened */
+    }
+</style>

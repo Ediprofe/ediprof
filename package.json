@@ -20,6 +20,7 @@
     "@astrojs/sitemap": "^3.0.0",
     "@inquirer/prompts": "8.1.0",
     "astro": "^4.0.0",
+    "html-to-image": "1.11.13",
     "inquirer": "13.1.0",
     "katex": "^0.16.9",
     "rehype-external-links": "3.0.0",
