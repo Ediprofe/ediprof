@@ -52,7 +52,7 @@ const { title } = Astro.props;
 <script>
     import { toPng } from "html-to-image";
 
-    // --- LÓGICA DEL PUNTERO LÁSER & LÁPIZ (TIPO GOODNOTES - SINCRONÍA DE LUZ) ---
+    // --- LÓGICA DEL PUNTERO LÁSER & LÁPIZ (PRECISIÓN ZOOM-AWARE) ---
     interface LaserPoint {
         x: number;
         y: number;
@@ -66,10 +66,10 @@ const { title } = Astro.props;
 
     class LaserPointer {
         private canvas: HTMLCanvasElement;
-        private ctx: CanvasRenderingContext2D;
+        public ctx: CanvasRenderingContext2D;
         private strokes: LaserStroke[] = [];
         private currentStroke: LaserStroke | null = null;
-        private active = false;
+        public active = false;
         private toolMode: "laser" | "pen" = "laser";
         private currentColor: string = "#FFFFFF";
         private rafId: number | null = null;
@@ -90,9 +90,16 @@ const { title } = Astro.props;
 
             const getPos = (e: any) => {
                 const rect = this.canvas.getBoundingClientRect();
+                // Ajuste de escala para que rraye bien incluso con zoom aplicado por CSS/Transform
+                const scaleX = this.canvas.width / rect.width;
+                const scaleY = this.canvas.height / rect.height;
                 return {
-                    x: (e.clientX || e.touches?.[0]?.clientX) - rect.left,
-                    y: (e.clientY || e.touches?.[0]?.clientY) - rect.top,
+                    x:
+                        ((e.clientX || e.touches?.[0]?.clientX) - rect.left) *
+                        scaleX,
+                    y:
+                        ((e.clientY || e.touches?.[0]?.clientY) - rect.top) *
+                        scaleY,
                 };
             };
 
@@ -118,7 +125,7 @@ const { title } = Astro.props;
                 const { x, y } = getPos(e);
                 this.lastGlobalActivityTime = Date.now();
                 this.currentStroke.points.push({ x, y });
-                if (this.currentStroke.points.length > 500)
+                if (this.currentStroke.points.length > 1000)
                     this.currentStroke.points.shift();
             };
 
@@ -138,7 +145,8 @@ const { title } = Astro.props;
             window.addEventListener("touchend", stop);
         }
 
-        private resize() {
+        public resize() {
+            // El canvas toma el tamaño físico real de la ventana para máxima calidad
             this.canvas.width = window.innerWidth;
             this.canvas.height = window.innerHeight;
         }
@@ -156,11 +164,9 @@ const { title } = Astro.props;
         public setMode(mode: "laser" | "pen") {
             this.toolMode = mode;
         }
-
         public setColor(color: string) {
             this.currentColor = color;
         }
-
         public undo() {
             this.strokes.pop();
             this.lastGlobalActivityTime = Date.now();
@@ -192,7 +198,7 @@ const { title } = Astro.props;
             }
         }
 
-        private clearCanvas() {
+        public clearCanvas() {
             this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         }
 
@@ -212,7 +218,6 @@ const { title } = Astro.props;
                 if (alpha <= 0) return;
 
                 if (stroke.isPermanent) {
-                    // ESTILO LÁPIZ (Color dinámico)
                     const rgb = this.hexToRgb(stroke.color);
                     this.renderStroke(
                         stroke,
@@ -229,7 +234,6 @@ const { title } = Astro.props;
                         "source-over",
                     );
                 } else {
-                    // ESTILO LÁSER (Rojo Neón siempre)
                     this.renderStroke(
                         stroke,
                         `rgba(255, 0, 0, ${alpha * 0.3})`,
@@ -290,6 +294,94 @@ const { title } = Astro.props;
         }
     }
 
+    // --- SISTEMA DE PAN & ZOOM (TIPO TABLET - COBERTURA TOTAL) ---
+    class PanZoomSystem {
+        private container: HTMLElement;
+        private lastX = 0;
+        private lastY = 0;
+        private posX = 0;
+        private posY = 0;
+        private scale = 1;
+        private minScale = 1;
+        private isDragging = false;
+        public active = true;
+
+        constructor(containerId: string) {
+            this.container = document.getElementById(containerId)!;
+            this.init();
+        }
+
+        private init() {
+            const start = (e: any) => {
+                if (!this.active) return;
+                this.isDragging = true;
+                const pos = this.getPos(e);
+                this.lastX = pos.x;
+                this.lastY = pos.y;
+            };
+
+            const move = (e: any) => {
+                if (!this.active || !this.isDragging) return;
+                const pos = this.getPos(e);
+                const dx = pos.x - this.lastX;
+                const dy = pos.y - this.lastY;
+                this.posX += dx;
+                this.posY += dy;
+                this.lastX = pos.x;
+                this.lastY = pos.y;
+                this.apply();
+            };
+
+            const stop = () => {
+                this.isDragging = false;
+            };
+
+            const zoom = (e: WheelEvent) => {
+                if (!this.active) return;
+                e.preventDefault();
+                const delta = e.deltaY > 0 ? 0.9 : 1.1;
+                this.scale = Math.min(
+                    Math.max(this.scale * delta, this.minScale),
+                    6,
+                );
+                this.apply();
+            };
+
+            this.container.addEventListener("mousedown", start);
+            window.addEventListener("mousemove", move);
+            window.addEventListener("mouseup", stop);
+            this.container.addEventListener("touchstart", start, {
+                passive: false,
+            });
+            window.addEventListener("touchmove", move, { passive: false });
+            window.addEventListener("touchend", stop);
+            this.container.addEventListener("wheel", zoom, { passive: false });
+        }
+
+        private getPos(e: any) {
+            return {
+                x: e.clientX || e.touches?.[0]?.clientX,
+                y: e.clientY || e.touches?.[0]?.clientY,
+            };
+        }
+
+        private apply() {
+            this.container.style.transform = `translate(${this.posX}px, ${this.posY}px) scale(${this.scale})`;
+        }
+
+        public reset() {
+            this.posX = 0;
+            this.posY = 0;
+            this.scale = 1;
+            this.apply();
+        }
+
+        public setEnabled(state: boolean) {
+            this.active = state;
+            this.container.classList.toggle("draggable", state);
+        }
+    }
+
     function initMapSystem() {
         const wrappers = document.querySelectorAll(".concept-map-wrapper");
         const overlay = document.getElementById("map-visualizer-overlay");
@@ -310,20 +402,24 @@ const { title } = Astro.props;
         ) as HTMLButtonElement;
         const counter = document.getElementById("visualizer-counter");
 
-        // Elementos Láser & Lápiz
+        const handBtn = document.getElementById("hand-btn");
         const laserBtn = document.getElementById("laser-btn");
         const penBtn = document.getElementById("pen-btn");
         const clearBtn = document.getElementById("clear-btn");
         const undoBtn = document.getElementById("undo-btn");
         const colorDots = document.querySelectorAll(".color-dot");
+
         const laserPointer = new LaserPointer("laser-canvas");
+        const panZoom = new PanZoomSystem("pan-zoom-wrapper");
 
         let visualizerToolsActive = false;
-        let currentTool: "laser" | "pen" = "laser";
 
-        const setTool = (tool: "laser" | "pen") => {
-            currentTool = tool;
-            laserPointer.setMode(tool);
+        const setTool = (tool: "hand" | "laser" | "pen") => {
+            panZoom.setEnabled(tool === "hand");
+            laserPointer.setMode(tool === "hand" ? "laser" : (tool as any));
+            laserPointer.active = tool !== "hand";
+
+            handBtn?.classList.toggle("active", tool === "hand");
             laserBtn?.classList.toggle("active", tool === "laser");
             penBtn?.classList.toggle("active", tool === "pen");
 
@@ -339,6 +435,7 @@ const { title } = Astro.props;
                 counter.textContent = `${currentIndex + 1} / ${currentImages.length}`;
                 prevBtn.disabled = currentIndex === 0;
                 nextBtn.disabled = currentIndex === currentImages.length - 1;
+                panZoom.reset();
             }
         };
 
@@ -347,6 +444,7 @@ const { title } = Astro.props;
             document.body.classList.remove("visualizer-open");
             visualizerToolsActive = false;
             laserPointer.toggleSystem(false);
+            panZoom.reset();
         };
 
         let currentImages: string[] = [];
@@ -358,7 +456,6 @@ const { title } = Astro.props;
                 updateGallery();
             }
         };
-
         const prevImage = () => {
             if (currentIndex > 0) {
                 currentIndex--;
@@ -370,7 +467,6 @@ const { title } = Astro.props;
             const title =
                 wrapper.getAttribute("data-title") || "mapa-conceptual";
             const downloadBtn = wrapper.querySelector(".download-map-btn");
-
             wrapper.querySelectorAll(".view-images-btn").forEach((btn) => {
                 btn.addEventListener("click", () => {
                     const imagesData = btn.getAttribute("data-images");
@@ -380,40 +476,15 @@ const { title } = Astro.props;
                         updateGallery();
                         overlay.classList.add("active");
                         document.body.classList.add("visualizer-open");
-                        setTool("laser");
+                        laserPointer.resize();
+                        setTool("hand");
                     }
                 });
             });
-
-            if (downloadBtn) {
-                downloadBtn.addEventListener("click", async () => {
-                    const span = downloadBtn.querySelector("span");
-                    const mapContainer = wrapper.querySelector(
-                        ".concept-map-container",
-                    ) as HTMLElement;
-                    if (span) span.textContent = "Generando...";
-                    try {
-                        await new Promise((r) => setTimeout(r, 100));
-                        const dataUrl = await toPng(mapContainer, {
-                            backgroundColor: "#ffffff",
-                            pixelRatio: 2,
-                            filter: (node: any) =>
-                                !node.classList?.contains("download-map-btn") &&
-                                !node.classList?.contains("view-images-btn"),
-                        });
-                        const link = document.createElement("a");
-                        link.download = `Ediprofe-${title.replace(/\s+/g, "-")}.png`;
-                        link.href = dataUrl;
-                        link.click();
-                    } finally {
-                        if (span) span.textContent = "Descargar";
-                    }
-                });
-            }
         });
 
-        // Eventos Globales
         closeBtn?.addEventListener("click", closeVisualizer);
+        handBtn?.addEventListener("click", () => setTool("hand"));
         laserBtn?.addEventListener("click", () => setTool("laser"));
         penBtn?.addEventListener("click", () => setTool("pen"));
         clearBtn?.addEventListener("click", () => laserPointer.clearAll());
@@ -425,7 +496,7 @@ const { title } = Astro.props;
                 laserPointer.setColor(color);
                 colorDots.forEach((d) => d.classList.remove("active"));
                 dot.classList.add("active");
-                setTool("pen"); // Activar lápiz automáticamente al elegir color
+                setTool("pen");
             });
         });
 
@@ -448,19 +519,13 @@ const { title } = Astro.props;
             if (isMod && key === "z") {
                 e.preventDefault();
                 laserPointer.undo();
-            } else if (e.key === "Escape") {
-                closeVisualizer();
-            } else if (e.key === "ArrowRight") {
-                nextImage();
-            } else if (e.key === "ArrowLeft") {
-                prevImage();
-            } else if (key === "l") {
-                setTool("laser");
-            } else if (key === "p") {
-                setTool("pen");
-            } else if (key === "c") {
-                laserPointer.clearAll();
-            }
+            } else if (e.key === "Escape") closeVisualizer();
+            else if (e.key === "ArrowRight") nextImage();
+            else if (e.key === "ArrowLeft") prevImage();
+            else if (key === "h") setTool("hand");
+            else if (key === "l") setTool("laser");
+            else if (key === "p") setTool("pen");
+            else if (key === "c") laserPointer.clearAll();
         };
 
         window.removeEventListener("keydown", handleKeyDown);
