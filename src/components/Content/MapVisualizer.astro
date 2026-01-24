@@ -1,101 +1,215 @@
 <div id="map-visualizer-overlay" class="visualizer-overlay">
-    <!-- Header Overlay (Transparente y Flotante) -->
-    <header class="visualizer-header">
-        <div class="header-info">
-            <span class="badge">Visualización Técnica</span>
-            <span id="visualizer-counter" class="counter">1 / 1</span>
-
-            <!-- Botón Lápiz Láser -->
-            <button
-                id="laser-btn"
-                class="tool-btn"
-                title="Activar Puntero Láser (L)"
-            >
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    ><path d="m13.4 2 3.5 3.5-3.5 3.5-3.5-3.5z"></path><path
-                        d="M7.4 15.6 2 21"></path><path d="m15.5 15.5 4-4"
-                    ></path><path d="M14 17h5"></path><path d="M17 14v5"
-                    ></path><path d="m7.4 9.4 6.2 6.2"></path></svg
-                >
-                <span>Láser</span>
-            </button>
-        </div>
-        <button id="close-visualizer" class="close-btn" title="Cerrar (Esc)">
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                ><line x1="18" y1="6" x2="6" y2="18"></line><line
-                    x1="6"
-                    y1="6"
-                    x2="18"
-                    y2="18"></line></svg
-            >
-        </button>
-    </header>
-
     <!-- Área de Imagen "Edge-to-Edge" -->
     <div class="visualizer-main">
         <!-- Lienzo para el Láser Efímero -->
         <canvas id="laser-canvas" class="laser-layer"></canvas>
 
-        <!-- Navegación Lateral -->
-        <button
-            id="prev-img-side"
-            class="side-nav-btn prev"
-            aria-label="Anterior"
-        >
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="60"
-                height="60"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1"
-                stroke-linecap="round"
-                stroke-linejoin="round"><path d="M15 18l-6-6 6-6"></path></svg
-            >
-        </button>
-
         <div id="visualizer-image-container" class="image-stage">
             <img id="visualizer-img" src="" alt="Ilustración técnica" />
         </div>
 
-        <button
-            id="next-img-side"
-            class="side-nav-btn next"
-            aria-label="Siguiente"
-        >
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="60"
-                height="60"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                ><path d="M9 18l6-6-6-6" transform="rotate(180 12 12)"
-                ></path></svg
-            >
-        </button>
+        <!-- Dock de Controles Inferior (Flotante) -->
+        <div class="visualizer-dock-container">
+            <div class="visualizer-glass-dock">
+                <!-- Navegación -->
+                <div class="dock-section main-nav">
+                    <button
+                        id="prev-img-side"
+                        class="dock-btn"
+                        title="Anterior"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            ><path d="M15 18l-6-6 6-6"></path></svg
+                        >
+                    </button>
+                    <span id="visualizer-counter" class="dock-counter"
+                        >1 / 1</span
+                    >
+                    <button
+                        id="next-img-side"
+                        class="dock-btn"
+                        title="Siguiente"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            ><path
+                                d="M9 18l6-6 6-6"
+                                transform="rotate(180 12 12)"></path></svg
+                        >
+                    </button>
+                </div>
+
+                <div class="dock-divider"></div>
+
+                <!-- Herramientas de Dibujo -->
+                <div class="dock-section tools">
+                    <button
+                        id="laser-btn"
+                        class="dock-btn tool-trigger"
+                        title="Láser Efímero (L)"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="18"
+                            height="18"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            ><path d="m13.4 2 3.5 3.5-3.5 3.5-3.5-3.5z"
+                            ></path><path d="M7.4 15.6 2 21"></path><path
+                                d="m15.5 15.5 4-4"></path><path d="M14 17h5"
+                            ></path><path d="M17 14v5"></path><path
+                                d="m7.4 9.4 6.2 6.2"></path></svg
+                        >
+                        <span>Láser</span>
+                    </button>
+                    <button
+                        id="pen-btn"
+                        class="dock-btn tool-trigger"
+                        title="Lápiz Permanente (P)"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="18"
+                            height="18"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            ><path
+                                d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"
+                            ></path><path d="m15 5 4 4"></path></svg
+                        >
+                        <span>Lápiz</span>
+                    </button>
+                </div>
+
+                <div class="dock-divider"></div>
+
+                <!-- Selector de Colores (Solo para Lápiz) -->
+                <div id="dock-colors" class="dock-section colors">
+                    <button
+                        class="color-dot active"
+                        data-color="#FFFFFF"
+                        title="Blanco"
+                        style="background: #FFFFFF;"></button>
+                    <button
+                        class="color-dot"
+                        data-color="#FEF015"
+                        title="Amarillo"
+                        style="background: #FEF015;"></button>
+                    <button
+                        class="color-dot"
+                        data-color="#EF4444"
+                        title="Rojo"
+                        style="background: #EF4444;"></button>
+                    <button
+                        class="color-dot"
+                        data-color="#3B82F6"
+                        title="Azul"
+                        style="background: #3B82F6;"></button>
+                    <button
+                        class="color-dot"
+                        data-color="#111111"
+                        title="Negro"
+                        style="background: #111111; border: 1px solid rgba(255,255,255,0.2)"
+                    ></button>
+                </div>
+
+                <div class="dock-divider"></div>
+
+                <!-- Acciones -->
+                <div class="dock-section actions">
+                    <button
+                        id="undo-btn"
+                        class="dock-btn"
+                        title="Deshacer (Ctrl/Cmd + Z)"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            ><path d="M3 7v6h6"></path><path
+                                d="M21 17a9 9 0 0 0-9-9 9 9 0 0 0-6 2.3L3 13"
+                            ></path></svg
+                        >
+                    </button>
+                    <button
+                        id="clear-btn"
+                        class="dock-btn"
+                        title="Limpiar Pizarra (C)"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            ><path d="M3 6h18"></path><path
+                                d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"
+                            ></path><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"
+                            ></path><line x1="10" y1="11" x2="10" y2="17"
+                            ></line><line x1="14" y1="11" x2="14" y2="17"
+                            ></line></svg
+                        >
+                    </button>
+                    <button
+                        id="close-visualizer"
+                        class="dock-btn close-trigger"
+                        title="Cerrar (Esc)"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            ><line x1="18" y1="6" x2="6" y2="18"></line><line
+                                x1="6"
+                                y1="6"
+                                x2="18"
+                                y2="18"></line></svg
+                        >
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -106,7 +220,7 @@
         left: 0;
         width: 100vw;
         height: 100vh;
-        background: #000000; /* Negro absoluto para proyector */
+        background: #000000;
         display: none;
         flex-direction: column;
         z-index: 999999999;
@@ -117,94 +231,6 @@
 
     .visualizer-overlay.active {
         display: flex;
-    }
-
-    /* Header flotante para no robar espacio */
-    .visualizer-header {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 80px;
-        padding: 0 3rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent);
-        z-index: 30; /* Encima de todo */
-        opacity: 0.3;
-        transition: opacity 0.3s ease;
-    }
-
-    .visualizer-header:hover {
-        opacity: 1;
-    }
-
-    .header-info {
-        display: flex;
-        align-items: center;
-        gap: 2rem;
-    }
-
-    /* Botón Láser */
-    .tool-btn {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        background: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        color: white;
-        padding: 6px 14px;
-        border-radius: 8px;
-        font-family: inherit;
-        font-size: 0.8rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.2s;
-    }
-
-    .tool-btn:hover {
-        background: rgba(255, 255, 255, 0.2);
-    }
-
-    .tool-btn.active {
-        background: #ef4444;
-        border-color: #f87171;
-        box-shadow: 0 0 15px rgba(239, 68, 68, 0.4);
-    }
-
-    .badge {
-        font-size: 0.75rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.15em;
-        background: #2563eb;
-        padding: 6px 12px;
-        border-radius: 4px;
-    }
-
-    .counter {
-        font-size: 1.1rem;
-        font-weight: 600;
-        color: #f1f5f9;
-        font-variant-numeric: tabular-nums;
-    }
-
-    .close-btn {
-        background: none;
-        border: none;
-        color: white;
-        cursor: pointer;
-        padding: 1rem;
-        transition: all 0.2s;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .close-btn:hover {
-        color: #ef4444;
-        transform: scale(1.1);
     }
 
     .visualizer-main {
@@ -223,13 +249,14 @@
         left: 0;
         width: 100%;
         height: 100%;
-        z-index: 25; /* Entre la imagen y los botones de nav side */
-        pointer-events: none; /* Por defecto desactivado */
+        z-index: 10;
+        pointer-events: none;
     }
 
     .laser-layer.active {
         pointer-events: auto;
         cursor: crosshair;
+        z-index: 50;
     }
 
     .image-stage {
@@ -247,55 +274,135 @@
         object-fit: contain;
         max-width: 100vw;
         max-height: 100vh;
-        filter: drop-shadow(0 20px 50px rgba(0, 0, 0, 0.5));
     }
 
-    .side-nav-btn {
+    /* Dock de Controles */
+    .visualizer-dock-container {
         position: absolute;
-        top: 0;
-        height: 100%;
-        width: 15%;
+        bottom: 2rem;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        pointer-events: none;
+        z-index: 100;
+    }
+
+    .visualizer-glass-dock {
+        background: rgba(20, 20, 20, 0.7);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 8px 16px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        pointer-events: auto;
+        opacity: 0.4;
+        transition:
+            opacity 0.3s ease,
+            transform 0.3s ease;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    .visualizer-glass-dock:hover {
+        opacity: 1;
+        transform: translateY(-5px);
+    }
+
+    .dock-section {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .dock-divider {
+        width: 1px;
+        height: 24px;
+        background: rgba(255, 255, 255, 0.1);
+        margin: 0 4px;
+    }
+
+    .dock-btn {
         background: transparent;
-        border: none;
-        color: rgba(255, 255, 255, 0.1);
-        cursor: pointer;
+        border: 1px solid transparent;
+        color: rgba(255, 255, 255, 0.7);
+        padding: 0 10px;
+        height: 40px;
+        border-radius: 12px;
         display: flex;
         align-items: center;
         justify-content: center;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        z-index: 10;
+        cursor: pointer;
+        transition: all 0.2s;
+        gap: 8px;
+        font-family: inherit;
     }
 
-    .side-nav-btn:hover:not(:disabled) {
-        background: linear-gradient(
-            to right,
-            rgba(255, 255, 255, 0.05),
-            transparent
-        );
-        color: rgba(255, 255, 255, 0.8);
+    .dock-btn:hover:not(:disabled) {
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
     }
 
-    .side-nav-btn.next:hover:not(:disabled) {
-        background: linear-gradient(
-            to left,
-            rgba(255, 255, 255, 0.05),
-            transparent
-        );
-    }
-
-    .side-nav-btn.prev {
-        left: 0;
-    }
-    .side-nav-btn.next {
-        right: 0;
-    }
-
-    .side-nav-btn:disabled {
-        opacity: 0;
+    .dock-btn:disabled {
+        opacity: 0.2;
         cursor: default;
     }
 
-    /* Ocultar scrollbar body al abrir */
+    .tool-trigger.active {
+        background: #2563eb;
+        color: white;
+        border-color: #60a5fa;
+    }
+
+    #laser-btn.active {
+        background: #ef4444;
+        border-color: #f87171;
+    }
+
+    #pen-btn.active {
+        background: #2563eb; /* Azul por defecto al activar lápiz */
+        border-color: #60a5fa;
+    }
+
+    /* Colores */
+    .colors {
+        gap: 6px;
+    }
+    .color-dot {
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        border: 2px solid transparent;
+        cursor: pointer;
+        transition:
+            transform 0.2s,
+            border-color 0.2s;
+        padding: 0;
+    }
+    .color-dot:hover {
+        transform: scale(1.2);
+    }
+    .color-dot.active {
+        border-color: white;
+        transform: scale(1.3);
+    }
+
+    .close-trigger:hover {
+        background: rgba(239, 68, 68, 0.2);
+        color: #ef4444;
+    }
+
+    .dock-counter {
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: #94a3b8;
+        padding: 0 4px;
+        min-width: 40px;
+        text-align: center;
+    }
+
     :global(body.visualizer-open) {
         overflow: hidden !important;
         height: 100vh;
