@@ -53,92 +53,49 @@ const { title } = Astro.props;
     import { toPng } from "html-to-image";
 
     function initMapSystem() {
-        // --- 1. Lógica de Descarga ---
         const wrappers = document.querySelectorAll(".concept-map-wrapper");
 
-        // --- 2. Lógica del Explorador de Imágenes ---
+        // --- LÓGICA DEL VISOR (PRESENTACIÓN IMÁGENES) ---
         const overlay = document.getElementById("map-visualizer-overlay");
+
+        // MOVER AL BODY (Teleport): Para evitar conflictos de z-index con breadcrumbs/headers
+        if (overlay && overlay.parentElement !== document.body) {
+            document.body.appendChild(overlay);
+        }
+
         const visualizerImg = document.getElementById(
             "visualizer-img",
         ) as HTMLImageElement;
         const closeBtn = document.getElementById("close-visualizer");
         const prevBtn = document.getElementById(
-            "prev-img",
+            "prev-img-side",
         ) as HTMLButtonElement;
         const nextBtn = document.getElementById(
-            "next-img",
+            "next-img-side",
         ) as HTMLButtonElement;
         const counter = document.getElementById("visualizer-counter");
 
         let currentImages: string[] = [];
         let currentIndex = 0;
 
-        function updateGallery() {
+        const updateGallery = () => {
             if (visualizerImg && counter && prevBtn && nextBtn) {
                 visualizerImg.src = currentImages[currentIndex];
                 counter.textContent = `${currentIndex + 1} / ${currentImages.length}`;
                 prevBtn.disabled = currentIndex === 0;
                 nextBtn.disabled = currentIndex === currentImages.length - 1;
+                prevBtn.style.visibility =
+                    currentIndex === 0 ? "hidden" : "visible";
+                nextBtn.style.visibility =
+                    currentIndex === currentImages.length - 1
+                        ? "hidden"
+                        : "visible";
             }
-        }
+        };
 
-        wrappers.forEach((wrapper) => {
-            const downloadBtn = wrapper.querySelector(".download-map-btn");
-            const mapContainer = wrapper.querySelector(
-                ".concept-map-container",
-            );
-            const title =
-                wrapper.getAttribute("data-title") || "mapa-conceptual";
-
-            // Click en botones de "Ilustraciones" (MapSection)
-            wrapper.querySelectorAll(".view-images-btn").forEach((btn) => {
-                btn.addEventListener("click", () => {
-                    const imagesData = btn.getAttribute("data-images");
-                    if (imagesData && overlay) {
-                        currentImages = JSON.parse(imagesData);
-                        currentIndex = 0;
-                        updateGallery();
-                        overlay.classList.add("active");
-                        document.body.style.overflow = "hidden";
-                    }
-                });
-            });
-
-            // Lógica de descarga
-            if (downloadBtn && mapContainer instanceof HTMLElement) {
-                downloadBtn.addEventListener("click", async () => {
-                    const span = downloadBtn.querySelector("span");
-                    const originalText = span ? span.textContent : "Descargar";
-                    if (span) span.textContent = "Generando...";
-                    downloadBtn.classList.add("loading");
-                    try {
-                        await new Promise((r) => setTimeout(r, 100));
-                        const dataUrl = await toPng(mapContainer, {
-                            backgroundColor: "#ffffff",
-                            pixelRatio: 2,
-                            filter: (node: any) =>
-                                !node.classList?.contains("download-map-btn") &&
-                                !node.classList?.contains("view-images-btn"),
-                        });
-                        const link = document.createElement("a");
-                        link.download = `Ediprofe-${title.replace(/\s+/g, "-")}.png`;
-                        link.href = dataUrl;
-                        link.click();
-                    } catch (err) {
-                        console.error("Error al exportar imagen:", err);
-                        alert("No se pudo generar la imagen.");
-                    } finally {
-                        if (span) span.textContent = originalText;
-                        downloadBtn.classList.remove("loading");
-                    }
-                });
-            }
-        });
-
-        // Controles globales del Visualizador
         const closeVisualizer = () => {
             overlay?.classList.remove("active");
-            document.body.style.overflow = "";
+            document.body.classList.remove("visualizer-open");
         };
 
         const nextImage = () => {
@@ -155,19 +112,67 @@ const { title } = Astro.props;
             }
         };
 
-        closeBtn?.addEventListener("click", closeVisualizer);
+        wrappers.forEach((wrapper) => {
+            const title =
+                wrapper.getAttribute("data-title") || "mapa-conceptual";
+            const downloadBtn = wrapper.querySelector(".download-map-btn");
 
-        overlay?.addEventListener("click", (e) => {
-            if (e.target === overlay) closeVisualizer();
+            // Abrir Visor desde MapSection
+            wrapper.querySelectorAll(".view-images-btn").forEach((btn) => {
+                btn.addEventListener("click", () => {
+                    const imagesData = btn.getAttribute("data-images");
+                    if (imagesData && overlay) {
+                        currentImages = JSON.parse(imagesData);
+                        currentIndex = 0;
+                        updateGallery();
+                        overlay.classList.add("active");
+                        document.body.classList.add("visualizer-open");
+                    }
+                });
+            });
+
+            // Lógica de descarga (PNG)
+            if (downloadBtn) {
+                downloadBtn.addEventListener("click", async () => {
+                    const span = downloadBtn.querySelector("span");
+                    const mapContainer = wrapper.querySelector(
+                        ".concept-map-container",
+                    ) as HTMLElement;
+                    if (span) span.textContent = "Generando...";
+                    try {
+                        await new Promise((r) => setTimeout(r, 100));
+                        const dataUrl = await toPng(mapContainer, {
+                            backgroundColor: "#ffffff",
+                            pixelRatio: 2,
+                            filter: (node: any) =>
+                                !node.classList?.contains("download-map-btn") &&
+                                !node.classList?.contains("view-images-btn"),
+                        });
+                        const link = document.createElement("a");
+                        link.download = `Ediprofe-${title.replace(/\s+/g, "-")}.png`;
+                        link.href = dataUrl;
+                        link.click();
+                    } finally {
+                        if (span) span.textContent = "Descargar";
+                    }
+                });
+            }
         });
 
+        // Eventos Globales Visor
+        closeBtn?.addEventListener("click", closeVisualizer);
+        overlay?.addEventListener("click", (e) => {
+            if (
+                e.target === overlay ||
+                (e.target as HTMLElement).classList.contains("image-stage")
+            )
+                closeVisualizer();
+        });
         prevBtn?.addEventListener("click", prevImage);
         nextBtn?.addEventListener("click", nextImage);
 
-        // --- Navegación por Teclado ---
         const handleKeyDown = (e: KeyboardEvent) => {
             if (!overlay?.classList.contains("active")) return;
-
             if (e.key === "Escape") closeVisualizer();
             if (e.key === "ArrowRight") nextImage();
             if (e.key === "ArrowLeft") prevImage();
