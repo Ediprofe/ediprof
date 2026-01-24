@@ -52,7 +52,7 @@ const { title } = Astro.props;
 <script>
     import { toPng } from "html-to-image";
 
-    // --- LÓGICA DEL PUNTERO LÁSER & LÁPIZ (PRECISIÓN ZOOM-AWARE) ---
+    // --- LÓGICA DEL PUNTERO LÁSER & LÁPIZ (SINCRONÍA DE LUZ) ---
     interface LaserPoint {
         x: number;
         y: number;
@@ -69,7 +69,8 @@ const { title } = Astro.props;
         public ctx: CanvasRenderingContext2D;
         private strokes: LaserStroke[] = [];
         private currentStroke: LaserStroke | null = null;
-        public active = false;
+        public isInputActive = false; // Controla si se permite dibujar actualmente
+        private systemRunning = false; // Controla el loop de renderizado
         private toolMode: "laser" | "pen" = "laser";
         private currentColor: string = "#FFFFFF";
         private rafId: number | null = null;
@@ -104,10 +105,10 @@ const { title } = Astro.props;
             };
 
             const start = (e: any) => {
-                if (!this.active || this.isBlockedByGesture) return;
-                // Bloqueo inmediato si hay más de un toque (pinch-zoom detectado)
+                if (!this.isInputActive || this.isBlockedByGesture) return;
                 if (e.touches && e.touches.length > 1) {
                     this.isBlockedByGesture = true;
+                    this.stop();
                     return;
                 }
 
@@ -128,13 +129,13 @@ const { title } = Astro.props;
 
             const move = (e: any) => {
                 if (
-                    !this.active ||
+                    !this.isInputActive ||
                     !this.currentStroke ||
                     this.isBlockedByGesture
                 )
                     return;
                 if (e.touches && e.touches.length > 1) {
-                    this.stop(); // Abortar dibujo si entra un segundo dedo
+                    this.stop();
                     return;
                 }
 
@@ -148,13 +149,11 @@ const { title } = Astro.props;
             const stop = () => {
                 this.currentStroke = null;
                 this.lastGlobalActivityTime = Date.now();
-                // El desbloqueo de gesto se maneja externamente para mayor seguridad
             };
 
             this.canvas.addEventListener("mousedown", start);
             window.addEventListener("mousemove", move);
             window.addEventListener("mouseup", stop);
-
             this.canvas.addEventListener("touchstart", start, {
                 passive: false,
             });
@@ -172,14 +171,24 @@ const { title } = Astro.props;
             this.canvas.height = window.innerHeight;
         }
 
-        public toggleSystem(state: boolean) {
-            this.active = state;
-            this.canvas.classList.toggle("active", state);
-            if (state) {
-                this.startLoop();
-            } else {
-                this.clearAll();
-            }
+        public startSystem() {
+            if (this.systemRunning) return;
+            this.systemRunning = true;
+            this.startLoop();
+        }
+
+        public stopSystem() {
+            this.systemRunning = false;
+            this.isInputActive = false;
+            this.clearAll();
+            if (this.rafId) cancelAnimationFrame(this.rafId);
+            this.rafId = null;
+        }
+
+        public setDrawingEnabled(enabled: boolean) {
+            this.isInputActive = enabled;
+            // Si no está habilitado, el canvas no debe capturar NADA para dejar que el panzoom trabaje
+            this.canvas.style.pointerEvents = enabled ? "auto" : "none";
         }
 
         public setMode(mode: "laser" | "pen") {
@@ -200,8 +209,8 @@ const { title } = Astro.props;
         }
 
         private startLoop() {
-            if (this.rafId) return;
             const loop = () => {
+                if (!this.systemRunning) return;
                 this.update();
                 this.draw();
                 this.rafId = requestAnimationFrame(loop);
@@ -313,7 +322,7 @@ const { title } = Astro.props;
         }
     }
 
-    // --- SISTEMA DE MOVIMIENTO Y ZOOM TÁCTIL (BLOQUEO DE HERRAMIENTAS SEGURO) ---
+    // --- SISTEMA DE MOVIMIENTO Y ZOOM TÁCTIL ---
     class PanZoomSystem {
         private container: HTMLElement;
         private dx = 0;
@@ -357,7 +366,6 @@ const { title } = Astro.props;
             };
 
             const move = (e: any) => {
-                // Zoom
                 if (e.touches && e.touches.length >= 2) {
                     e.preventDefault();
                     const dist = this.getDistance(e.touches[0], e.touches[1]);
@@ -372,7 +380,6 @@ const { title } = Astro.props;
                     return;
                 }
 
-                // Mover
                 if (this.isDragging && this.active) {
                     e.preventDefault();
                     const pos = this.getPos(e);
@@ -384,16 +391,7 @@ const { title } = Astro.props;
 
             const stop = () => {
                 this.isDragging = false;
-                // Añadimos un pequeño delay antes de permitir dibujar para evitar rrayas accidentales al soltar el zoom
                 setTimeout(() => this.onGestureStateChange(false), 150);
-            };
-
-            const wheelZoom = (e: WheelEvent) => {
-                if (!e.ctrlKey && !this.active) return; // Solo zoom por rueda si es Hand o con Ctrl
-                e.preventDefault();
-                const delta = e.deltaY > 0 ? 0.9 : 1.1;
-                this.scale = Math.min(Math.max(this.scale * delta, 1), 6);
-                this.apply();
             };
 
             this.container.addEventListener("mousedown", start);
@@ -404,10 +402,17 @@ const { title } = Astro.props;
             });
             window.addEventListener("touchmove", move, { passive: false });
             window.addEventListener("touchend", stop);
-            window.addEventListener("touchcancel", stop);
-            this.container.addEventListener("wheel", wheelZoom, {
-                passive: false,
-            });
+            this.container.addEventListener(
+                "wheel",
+                (e) => {
+                    if (!this.active && !e.ctrlKey) return;
+                    e.preventDefault();
+                    const delta = e.deltaY > 0 ? 0.9 : 1.1;
+                    this.scale = Math.min(Math.max(this.scale * delta, 1), 6);
+                    this.apply();
+                },
+                { passive: false },
+            );
         }
 
         private getDistance(t1: any, t2: any) {
@@ -457,7 +462,6 @@ const { title } = Astro.props;
         const nextBtn = document.getElementById(
             "next-img-side",
         ) as HTMLButtonElement;
-        const counter = document.getElementById("visualizer-counter");
 
         const handBtn = document.getElementById("hand-btn");
         const laserBtn = document.getElementById("laser-btn");
@@ -467,34 +471,36 @@ const { title } = Astro.props;
         const colorDots = document.querySelectorAll(".color-dot");
 
         const laserPointer = new LaserPointer("laser-canvas");
-        // El PanZoomSystem ahora controla si el LaserPointer puede dibujar o no
         const panZoom = new PanZoomSystem("pan-zoom-wrapper", (isGesturing) => {
             laserPointer.setGestureBlock(isGesturing);
         });
 
-        let visualizerToolsActive = false;
+        let systemInitialized = false;
 
         const setTool = (tool: "hand" | "laser" | "pen") => {
+            if (!systemInitialized) {
+                laserPointer.startSystem();
+                systemInitialized = true;
+            }
+
+            // Mantenemos el panzoom activo solo en modo HAND
             panZoom.setEnabled(tool === "hand");
-            laserPointer.setMode(tool === "hand" ? "laser" : (tool as any));
-            laserPointer.active = tool !== "hand";
+
+            // Habilitamos el dibujo solo si NO es modo HAND
+            laserPointer.setDrawingEnabled(tool !== "hand");
+
+            if (tool !== "hand") {
+                laserPointer.setMode(tool as "laser" | "pen");
+            }
 
             handBtn?.classList.toggle("active", tool === "hand");
             laserBtn?.classList.toggle("active", tool === "laser");
             penBtn?.classList.toggle("active", tool === "pen");
-
-            if (!visualizerToolsActive) {
-                visualizerToolsActive = true;
-                laserPointer.toggleSystem(true);
-            }
         };
 
         const updateGallery = () => {
-            if (visualizerImg && counter && prevBtn && nextBtn) {
+            if (visualizerImg && prevBtn && nextBtn) {
                 visualizerImg.src = currentImages[currentIndex];
-                counter.textContent = `${currentIndex + 1} / ${currentImages.length}`;
-                prevBtn.disabled = currentIndex === 0;
-                nextBtn.disabled = currentIndex === currentImages.length - 1;
                 panZoom.reset();
             }
         };
@@ -502,9 +508,8 @@ const { title } = Astro.props;
         const closeVisualizer = () => {
             overlay?.classList.remove("active");
             document.body.classList.remove("visualizer-open");
-            visualizerToolsActive = false;
-            laserPointer.toggleSystem(false);
-            panZoom.reset();
+            laserPointer.stopSystem();
+            systemInitialized = false;
         };
 
         let currentImages: string[] = [];
@@ -591,79 +596,3 @@ const { title } = Astro.props;
     initMapSystem();
     document.addEventListener("astro:page-load", initMapSystem);
 </script>
-
-<style>
-    @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
-    .concept-map-wrapper {
-        position: relative;
-        margin: 3rem 0;
-    }
-    .concept-map-container {
-        background-color: #ffffff;
-        border: 1px solid #e2e8f0;
-        border-radius: 16px;
-        padding: 1.5rem 2rem;
-        font-family: "Space Grotesk", sans-serif;
-        color: #334155;
-        position: relative;
-        overflow: hidden;
-    }
-    .concept-map-container::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 4px;
-        height: 100%;
-        background: #2563eb;
-    }
-    .download-map-btn {
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        padding: 6px 12px;
-        background: #f8fafc;
-        border: 1px solid #e2e8f0;
-        border-radius: 8px;
-        color: #64748b;
-        font-family: inherit;
-        font-size: 0.75rem;
-        font-weight: 500;
-        cursor: pointer;
-        transition: all 0.2s ease;
-        z-index: 10;
-    }
-    .download-map-btn:hover {
-        background: #f1f5f9;
-        color: #2563eb;
-        border-color: #cbd5e1;
-        transform: translateY(-1px);
-    }
-    .map-root {
-        margin-bottom: 1rem;
-    }
-    .root-label {
-        font-weight: 400;
-        font-size: 1.3rem;
-        color: #0f172a;
-        letter-spacing: -0.02em;
-    }
-    .root-v-line {
-        color: #cbd5e1;
-        margin-left: 0.1rem;
-        font-size: 0.9rem;
-        margin-top: 0.2rem;
-    }
-    .map-branches {
-        border-left: 1.5px solid #cbd5e1;
-        margin-left: 0.5rem;
-        padding-left: 2rem;
-        display: flex;
-        flex-direction: column;
-        gap: 1.2rem;
-        padding-top: 0.5rem;
-    }
-</style>
