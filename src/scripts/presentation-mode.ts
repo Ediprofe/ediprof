@@ -238,12 +238,14 @@ class LaserPointer {
         } else if (stroke.type === 'rect') {
           this.renderRect(stroke.points[0], stroke.points[1], colorStr, 4 / scale);
         } else {
-          // Smart Strokes: Scale width inversely to zoom to keep visual consistency
-          this.renderStroke(stroke.points, colorStr, 4 / scale, 3 / scale, 'source-over');
-          this.renderStroke(stroke.points, `rgba(255, 255, 255, ${alpha * 0.4})`, 1.5 / scale, 0, 'source-over');
+          // Smart Strokes: Scale width inversely to zoom
+          // SOLID STROKES: No blur/glow for permanent pen
+          this.renderStroke(stroke.points, colorStr, 4 / scale, 0, 'source-over');
+          // Optional: Add a subtle highlight for "ink" feel, but keep it sharp
+          // this.renderStroke(stroke.points, `rgba(255, 255, 255, ${alpha * 0.2})`, 2 / scale, 0, 'source-over');
         }
       } else {
-        // Laser effect scaling
+        // Laser effect scaling (NEON stays here)
         this.renderStroke(stroke.points, `rgba(255, 0, 0, ${alpha * 0.3})`, 25 / scale, 30 / scale, 'lighter');
         this.renderStroke(stroke.points, `rgba(255, 0, 0, ${alpha * 0.8})`, 8 / scale, 10 / scale, 'lighter');
         this.renderStroke(stroke.points, `rgba(255, 255, 255, ${alpha * 0.95})`, 3 / scale, 0, 'source-over');
@@ -354,7 +356,8 @@ function createDockHTML(): string {
           <button class="color-dot" data-color="#FFD700" title="Cyber Yellow (2)" style="background: #FFD700;"></button>
           <button class="color-dot active" data-color="#FF0055" title="Neon Rose (3)" style="background: #FF0055;"></button>
           <button class="color-dot" data-color="#2979FF" title="Electric Blue (4)" style="background: #2979FF;"></button>
-          <button class="color-dot" data-color="#00FF99" title="Neon Green (5)" style="background: #00FF99; border: 1px solid rgba(255,255,255,0.2)"></button>
+          <button class="color-dot" data-color="#111111" title="Negro (5)" style="background: #111111; border: 1px solid rgba(255,255,255,0.4)"></button>
+          <button class="color-dot" data-color="#00FF99" title="Neon Green (6)" style="background: #00FF99; border: 1px solid rgba(255,255,255,0.2)"></button>
         </div>
         <div class="dock-divider"></div>
         <div class="dock-section actions">
@@ -496,7 +499,14 @@ function createStyles(): string {
       @media (max-width: 768px) {
         .dock-btn span { display: none; }
         .dock-btn { padding: 0 8px; }
-        .presentation-glass-dock { padding: 8px 12px; gap: 6px; }
+        .presentation-glass-dock { 
+          padding: 6px 10px; 
+          gap: 4px; 
+          /* Scale down slightly on mobile to prevent blocking view */
+          transform: scale(0.85);
+          transform-origin: bottom center;
+        }
+        .color-dot { width: 18px; height: 18px; }
       }
 
       /* Animación suave al activar/desactivar */
@@ -574,7 +584,8 @@ function setupEventListeners() {
     else if (key === '2') setColorFromKey('#FFD700');
     else if (key === '3') setColorFromKey('#FF0055');
     else if (key === '4') setColorFromKey('#2979FF');
-    else if (key === '5') setColorFromKey('#00FF99');
+    else if (key === '5') setColorFromKey('#111111');
+    else if (key === '6') setColorFromKey('#00FF99');
 
     else if (key === 'escape') {
       closePresentationMode();
