@@ -77,13 +77,13 @@ class LaserPointer {
 
   private getPos(e: MouseEvent | TouchEvent) {
     const rect = this.canvas.getBoundingClientRect();
-    const scaleX = this.canvas.width / rect.width;
-    const scaleY = this.canvas.height / rect.height;
+    // With High-DPI and ctx.scale(), we work in CSS pixels directly.
+    // The context transformation handles the mapping to physical pixels.
     const clientX = 'clientX' in e ? e.clientX : e.touches[0].clientX;
     const clientY = 'clientY' in e ? e.clientY : e.touches[0].clientY;
     return {
-      x: (clientX - rect.left) * scaleX,
-      y: (clientY - rect.top) * scaleY,
+      x: clientX - rect.left,
+      y: clientY - rect.top,
     };
   }
 
