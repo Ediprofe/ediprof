@@ -16,8 +16,8 @@ const { title, images = [] } = Astro.props;
         {
             images.length > 0 && (
                 <button
-                    class="view-images-btn"
-                    data-images={JSON.stringify(images)}
+                    class="toggle-illustrations-btn"
+                    aria-expanded="false"
                     title="Ver ilustraciones"
                 >
                     <svg
@@ -42,6 +42,25 @@ const { title, images = [] } = Astro.props;
             )
         }
     </div>
+
+    {
+        images.length > 0 && (
+            <div class="illustrations-accordion" hidden>
+                <div class="illustrations-grid">
+                    {images.map((img) => (
+                        <div class="illustration-item">
+                            <img
+                                src={img}
+                                alt={`Ilustración de ${title}`}
+                                loading="lazy"
+                                class="presentational-image"
+                            />
+                        </div>
+                    ))}
+                </div>
+            </div>
+        )
+    }
 
     <div class="section-content">
         <slot />
@@ -78,8 +97,8 @@ const { title, images = [] } = Astro.props;
         letter-spacing: -0.01em;
     }
 
-    /* Estilos Botón "Ver Ilustraciones" */
-    .view-images-btn {
+    /* Estilos Botón "Ilustraciones" (Toggle) */
+    .toggle-illustrations-btn {
         display: flex;
         align-items: center;
         gap: 6px;
@@ -96,11 +115,77 @@ const { title, images = [] } = Astro.props;
         flex-shrink: 0;
     }
 
-    .view-images-btn:hover {
+    .toggle-illustrations-btn:hover {
         background: #f8fafc;
         color: #2563eb;
         border-color: #cbd5e1;
-        transform: translateY(-1px);
+    }
+
+    .toggle-illustrations-btn[aria-expanded="true"] {
+        background: #eff6ff;
+        color: #2563eb;
+        border-color: #bfdbfe;
+    }
+
+    /* Acordeón de Ilustraciones */
+    .illustrations-accordion {
+        margin-bottom: 1.5rem;
+        margin-top: 1rem;
+        padding: 0;
+        background: transparent;
+        border-radius: 0;
+        border: none;
+        animation: slideDown 0.3s ease-out;
+    }
+
+    .illustrations-accordion[hidden] {
+        display: none;
+    }
+
+    .illustrations-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .illustration-item {
+        width: 100%;
+        border-radius: 12px;
+        overflow: hidden;
+        background: #fff;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        border: 1px solid #e2e8f0;
+    }
+
+    .illustration-item img {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        /* Imagen ocupa todo el ancho sin padding */
+    }
+
+    /* Modo oscuro para ilustraciones */
+    :global(html.dark) .illustration-item {
+        background: #1e293b;
+        border-color: #334155;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    :global(html.dark) .illustration-item img {
+        /* Fondo claro para imágenes con transparencia en modo oscuro */
+        background: linear-gradient(135deg, #f5f7fa 0%, #e2e8f0 100%);
+    }
+
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     .section-content {
