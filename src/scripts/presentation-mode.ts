@@ -31,7 +31,7 @@ class LaserPointer {
   public isInputActive = false;
   private systemRunning = false;
   private toolMode: 'laser' | 'pen' | 'arrow' | 'rect' = 'laser';
-  private currentColor: string = '#EF4444'; // Rojo por defecto
+  private currentColor: string = '#FF0055'; // Neon Rose por defecto
   private rafId: number | null = null;
   private lastGlobalActivityTime: number = Date.now();
   private duration = 3000;
@@ -104,7 +104,7 @@ class LaserPointer {
       points: [{ x, y }],
       isDead: false,
       isPermanent: this.toolMode === 'pen' || this.toolMode === 'arrow' || this.toolMode === 'rect',
-      color: this.toolMode === 'laser' ? '#EF4444' : this.currentColor,
+      color: this.toolMode === 'laser' ? '#FF0055' : this.currentColor,
       type: this.toolMode === 'arrow' ? 'arrow' : this.toolMode === 'rect' ? 'rect' : 'line',
     };
     this.strokes.push(this.currentStroke);
@@ -140,8 +140,12 @@ class LaserPointer {
   }
 
   public resize() {
-    this.canvas.width = window.innerWidth;
-    this.canvas.height = window.innerHeight;
+    const dpr = window.devicePixelRatio || 1;
+    this.canvas.width = window.innerWidth * dpr;
+    this.canvas.height = window.innerHeight * dpr;
+    this.canvas.style.width = window.innerWidth + 'px';
+    this.canvas.style.height = window.innerHeight + 'px';
+    this.ctx.scale(dpr, dpr);
     this.draw(); // Redraw immediately to prevent content loss
   }
 
@@ -347,10 +351,10 @@ function createDockHTML(): string {
         <div class="dock-divider"></div>
         <div id="pm-colors" class="dock-section colors">
           <button class="color-dot" data-color="#FFFFFF" title="Blanco (1)" style="background: #FFFFFF;"></button>
-          <button class="color-dot" data-color="#FEF015" title="Amarillo (2)" style="background: #FEF015;"></button>
-          <button class="color-dot active" data-color="#EF4444" title="Rojo (3)" style="background: #EF4444;"></button>
-          <button class="color-dot" data-color="#3B82F6" title="Azul (4)" style="background: #3B82F6;"></button>
-          <button class="color-dot" data-color="#111111" title="Negro (5)" style="background: #111111; border: 1px solid rgba(255,255,255,0.2)"></button>
+          <button class="color-dot" data-color="#FFD700" title="Cyber Yellow (2)" style="background: #FFD700;"></button>
+          <button class="color-dot active" data-color="#FF0055" title="Neon Rose (3)" style="background: #FF0055;"></button>
+          <button class="color-dot" data-color="#2979FF" title="Electric Blue (4)" style="background: #2979FF;"></button>
+          <button class="color-dot" data-color="#00FF99" title="Neon Green (5)" style="background: #00FF99; border: 1px solid rgba(255,255,255,0.2)"></button>
         </div>
         <div class="dock-divider"></div>
         <div class="dock-section actions">
@@ -567,10 +571,10 @@ function setupEventListeners() {
 
     // Atajos de colores
     if (key === '1') setColorFromKey('#FFFFFF');
-    else if (key === '2') setColorFromKey('#FEF015');
-    else if (key === '3') setColorFromKey('#EF4444');
-    else if (key === '4') setColorFromKey('#3B82F6');
-    else if (key === '5') setColorFromKey('#111111');
+    else if (key === '2') setColorFromKey('#FFD700');
+    else if (key === '3') setColorFromKey('#FF0055');
+    else if (key === '4') setColorFromKey('#2979FF');
+    else if (key === '5') setColorFromKey('#00FF99');
 
     else if (key === 'escape') {
       closePresentationMode();
