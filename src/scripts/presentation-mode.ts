@@ -130,6 +130,7 @@ class LaserPointer {
 
   private handleStop() {
     this.currentStroke = null;
+    this.isBlockedByGesture = false; // CRITICAL FIX: Reset block state when gesture ends
     this.lastGlobalActivityTime = Date.now();
   }
 
@@ -141,6 +142,7 @@ class LaserPointer {
   public resize() {
     this.canvas.width = window.innerWidth;
     this.canvas.height = window.innerHeight;
+    this.draw(); // Redraw immediately to prevent content loss
   }
 
   public startSystem() {
@@ -162,6 +164,9 @@ class LaserPointer {
     // CRITICAL: Only block interaction with the underlying page if we are actually drawing (pen/laser/shapes)
     // If enabled is false (Hand mode), we allow clicks to pass through to the page (pointer-events: none)
     this.canvas.style.pointerEvents = enabled ? 'auto' : 'none';
+    
+    // CRITICAL FIX: Prevent browser default gestures (scrolling/zoom) ONLY when drawing
+    this.canvas.style.touchAction = enabled ? 'none' : 'auto';
   }
 
   public setMode(mode: 'laser' | 'pen' | 'arrow' | 'rect') {
