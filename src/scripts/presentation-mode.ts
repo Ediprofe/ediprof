@@ -218,6 +218,8 @@ class LaserPointer {
     const idleTime = this.currentStroke ? 0 : now - this.lastGlobalActivityTime;
     const globalAlpha = Math.max(0, 1 - idleTime / this.duration);
 
+    const scale = window.visualViewport?.scale || 1;
+
     this.strokes.forEach((stroke) => {
       if (stroke.points.length < 2) return;
       const alpha = stroke.isPermanent ? 1.0 : globalAlpha;
@@ -228,17 +230,19 @@ class LaserPointer {
         const colorStr = `rgba(${rgb}, ${alpha})`;
 
         if (stroke.type === 'arrow') {
-          this.renderArrow(stroke.points[0], stroke.points[1], colorStr, 4);
+          this.renderArrow(stroke.points[0], stroke.points[1], colorStr, 4 / scale);
         } else if (stroke.type === 'rect') {
-          this.renderRect(stroke.points[0], stroke.points[1], colorStr, 4);
+          this.renderRect(stroke.points[0], stroke.points[1], colorStr, 4 / scale);
         } else {
-          this.renderStroke(stroke.points, colorStr, 4, 3, 'source-over');
-          this.renderStroke(stroke.points, `rgba(255, 255, 255, ${alpha * 0.4})`, 1.5, 0, 'source-over');
+          // Smart Strokes: Scale width inversely to zoom to keep visual consistency
+          this.renderStroke(stroke.points, colorStr, 4 / scale, 3 / scale, 'source-over');
+          this.renderStroke(stroke.points, `rgba(255, 255, 255, ${alpha * 0.4})`, 1.5 / scale, 0, 'source-over');
         }
       } else {
-        this.renderStroke(stroke.points, `rgba(255, 0, 0, ${alpha * 0.3})`, 25, 30, 'lighter');
-        this.renderStroke(stroke.points, `rgba(255, 0, 0, ${alpha * 0.8})`, 8, 10, 'lighter');
-        this.renderStroke(stroke.points, `rgba(255, 255, 255, ${alpha * 0.95})`, 3, 0, 'source-over');
+        // Laser effect scaling
+        this.renderStroke(stroke.points, `rgba(255, 0, 0, ${alpha * 0.3})`, 25 / scale, 30 / scale, 'lighter');
+        this.renderStroke(stroke.points, `rgba(255, 0, 0, ${alpha * 0.8})`, 8 / scale, 10 / scale, 'lighter');
+        this.renderStroke(stroke.points, `rgba(255, 255, 255, ${alpha * 0.95})`, 3 / scale, 0, 'source-over');
       }
     });
   }
@@ -526,7 +530,10 @@ function setupEventListeners() {
   document.getElementById('pm-pen-btn')?.addEventListener('click', () => setTool('pen'));
   document.getElementById('pm-arrow-btn')?.addEventListener('click', () => setTool('arrow'));
   document.getElementById('pm-rect-btn')?.addEventListener('click', () => setTool('rect'));
-  document.getElementById('pm-clear-btn')?.addEventListener('click', () => laserPointer?.clearAll());
+  document.getElementById('pm-clear-btn')?.addEventListener('click', () => {
+    laserPointer?.clearAll();
+    setTool('hand'); // UX Improvement: Auto-switch to hand after clearing
+  });
   document.getElementById('pm-undo-btn')?.addEventListener('click', () => laserPointer?.undo());
   document.getElementById('pm-close-btn')?.addEventListener('click', () => closePresentationMode());
 
