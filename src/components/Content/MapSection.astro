@@ -130,10 +130,11 @@ const { title, images = [] } = Astro.props;
     /* Acordeón de Ilustraciones */
     .illustrations-accordion {
         margin-bottom: 1.5rem;
-        padding: 1rem;
-        background: #f8fafc;
-        border-radius: 12px;
-        border: 1px dashed #cbd5e1;
+        margin-top: 1rem;
+        padding: 0;
+        background: transparent;
+        border-radius: 0;
+        border: none;
         animation: slideDown 0.3s ease-out;
     }
 
@@ -144,15 +145,16 @@ const { title, images = [] } = Astro.props;
     .illustrations-grid {
         display: flex;
         flex-direction: column;
-        gap: 1.5rem;
+        gap: 1rem;
     }
 
     .illustration-item {
         width: 100%;
-        border-radius: 8px;
+        border-radius: 12px;
         overflow: hidden;
         background: #fff;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        border: 1px solid #e2e8f0;
     }
 
     .illustration-item img {
@@ -160,6 +162,19 @@ const { title, images = [] } = Astro.props;
         width: 100%;
         height: auto;
         object-fit: contain;
+        /* Imagen ocupa todo el ancho sin padding */
+    }
+
+    /* Modo oscuro para ilustraciones */
+    :global(html.dark) .illustration-item {
+        background: #1e293b;
+        border-color: #334155;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    :global(html.dark) .illustration-item img {
+        /* Fondo claro para imágenes con transparencia en modo oscuro */
+        background: linear-gradient(135deg, #f5f7fa 0%, #e2e8f0 100%);
     }
 
     @keyframes slideDown {

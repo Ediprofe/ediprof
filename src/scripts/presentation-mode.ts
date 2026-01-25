@@ -31,7 +31,7 @@ class LaserPointer {
   public isInputActive = false;
   private systemRunning = false;
   private toolMode: 'laser' | 'pen' | 'arrow' | 'rect' = 'laser';
-  private currentColor: string = '#FFFFFF';
+  private currentColor: string = '#EF4444'; // Rojo por defecto
   private rafId: number | null = null;
   private lastGlobalActivityTime: number = Date.now();
   private duration = 3000;
@@ -43,16 +43,36 @@ class LaserPointer {
     this.init();
   }
 
+
+
+  // Event handlers bound properties for cleanup
+  private boundResize = () => this.resize();
+  private boundStart = (e: MouseEvent | TouchEvent) => this.handleStart(e);
+  private boundMove = (e: MouseEvent | TouchEvent) => this.handleMove(e);
+  private boundStop = () => this.handleStop();
+
   private init() {
-    window.addEventListener('resize', () => this.resize());
+    window.addEventListener('resize', this.boundResize);
     this.resize();
 
-    this.canvas.addEventListener('mousedown', (e) => this.handleStart(e), { passive: false });
-    window.addEventListener('mousemove', (e) => this.handleMove(e), { passive: false });
-    window.addEventListener('mouseup', () => this.handleStop());
-    this.canvas.addEventListener('touchstart', (e) => this.handleStart(e), { passive: false });
-    window.addEventListener('touchmove', (e) => this.handleMove(e), { passive: false });
-    window.addEventListener('touchend', () => this.handleStop());
+    this.canvas.addEventListener('mousedown', this.boundStart, { passive: false });
+    window.addEventListener('mousemove', this.boundMove, { passive: false });
+    window.addEventListener('mouseup', this.boundStop);
+    
+    this.canvas.addEventListener('touchstart', this.boundStart, { passive: false });
+    window.addEventListener('touchmove', this.boundMove, { passive: false });
+    window.addEventListener('touchend', this.boundStop);
+  }
+
+  public destroy() {
+    this.stopSystem();
+    window.removeEventListener('resize', this.boundResize);
+    this.canvas.removeEventListener('mousedown', this.boundStart);
+    window.removeEventListener('mousemove', this.boundMove);
+    window.removeEventListener('mouseup', this.boundStop);
+    this.canvas.removeEventListener('touchstart', this.boundStart);
+    window.removeEventListener('touchmove', this.boundMove);
+    window.removeEventListener('touchend', this.boundStop);
   }
 
   private getPos(e: MouseEvent | TouchEvent) {
@@ -66,6 +86,8 @@ class LaserPointer {
       y: (clientY - rect.top) * scaleY,
     };
   }
+
+
 
   private handleStart(e: MouseEvent | TouchEvent) {
     if (!this.isInputActive || this.isBlockedByGesture) return;
@@ -82,7 +104,7 @@ class LaserPointer {
       points: [{ x, y }],
       isDead: false,
       isPermanent: this.toolMode === 'pen' || this.toolMode === 'arrow' || this.toolMode === 'rect',
-      color: this.toolMode === 'laser' ? '#FF0000' : this.currentColor,
+      color: this.toolMode === 'laser' ? '#EF4444' : this.currentColor,
       type: this.toolMode === 'arrow' ? 'arrow' : this.toolMode === 'rect' ? 'rect' : 'line',
     };
     this.strokes.push(this.currentStroke);
@@ -137,6 +159,8 @@ class LaserPointer {
 
   public setDrawingEnabled(enabled: boolean) {
     this.isInputActive = enabled;
+    // CRITICAL: Only block interaction with the underlying page if we are actually drawing (pen/laser/shapes)
+    // If enabled is false (Hand mode), we allow clicks to pass through to the page (pointer-events: none)
     this.canvas.style.pointerEvents = enabled ? 'auto' : 'none';
   }
 
@@ -313,11 +337,11 @@ function createDockHTML(): string {
         </div>
         <div class="dock-divider"></div>
         <div id="pm-colors" class="dock-section colors">
-          <button class="color-dot active" data-color="#FFFFFF" title="Blanco" style="background: #FFFFFF;"></button>
-          <button class="color-dot" data-color="#FEF015" title="Amarillo" style="background: #FEF015;"></button>
-          <button class="color-dot" data-color="#EF4444" title="Rojo" style="background: #EF4444;"></button>
-          <button class="color-dot" data-color="#3B82F6" title="Azul" style="background: #3B82F6;"></button>
-          <button class="color-dot" data-color="#111111" title="Negro" style="background: #111111; border: 1px solid rgba(255,255,255,0.2)"></button>
+          <button class="color-dot" data-color="#FFFFFF" title="Blanco (1)" style="background: #FFFFFF;"></button>
+          <button class="color-dot" data-color="#FEF015" title="Amarillo (2)" style="background: #FEF015;"></button>
+          <button class="color-dot active" data-color="#EF4444" title="Rojo (3)" style="background: #EF4444;"></button>
+          <button class="color-dot" data-color="#3B82F6" title="Azul (4)" style="background: #3B82F6;"></button>
+          <button class="color-dot" data-color="#111111" title="Negro (5)" style="background: #111111; border: 1px solid rgba(255,255,255,0.2)"></button>
         </div>
         <div class="dock-divider"></div>
         <div class="dock-section actions">
@@ -461,6 +485,12 @@ function createStyles(): string {
         .dock-btn { padding: 0 8px; }
         .presentation-glass-dock { padding: 8px 12px; gap: 6px; }
       }
+
+      /* Animación suave al activar/desactivar */
+      .lesson-content,
+      .content-article {
+        transition: all 0.3s ease-out;
+      }
     </style>
   `;
 }
@@ -506,6 +536,16 @@ function setupEventListeners() {
     });
   });
 
+  // Helper para cambiar color desde teclado
+  const setColorFromKey = (color: string) => {
+    laserPointer?.setColor(color);
+    document.querySelectorAll('#pm-colors .color-dot').forEach((d) => {
+      if (d.getAttribute('data-color') === color) d.classList.add('active');
+      else d.classList.remove('active');
+    });
+    setTool('pen');
+  };
+
   // Atajos de teclado
   const handleKeyDown = (e: KeyboardEvent) => {
     if (!isInitialized) return;
@@ -513,7 +553,14 @@ function setupEventListeners() {
     const key = e.key.toLowerCase();
     const isMod = e.ctrlKey || e.metaKey;
 
-    if (key === 'escape') {
+    // Atajos de colores
+    if (key === '1') setColorFromKey('#FFFFFF');
+    else if (key === '2') setColorFromKey('#FEF015');
+    else if (key === '3') setColorFromKey('#EF4444');
+    else if (key === '4') setColorFromKey('#3B82F6');
+    else if (key === '5') setColorFromKey('#111111');
+
+    else if (key === 'escape') {
       closePresentationMode();
     } else if (isMod && key === 'z') {
       e.preventDefault();
@@ -532,24 +579,43 @@ function setupEventListeners() {
   (window as any).__presentationKeyHandler = handleKeyDown;
 }
 
+
+
 function closePresentationMode() {
   if (!isInitialized) return;
 
-  laserPointer?.stopSystem();
+  laserPointer?.destroy();
   laserPointer = null;
   isInitialized = false;
+
+  // Desactivar modo pantalla completa
+  document.body.classList.remove('presentation-mode-active'); // Cleanup legacy just in case
 
   // Remover elementos del DOM
   document.getElementById('presentation-canvas')?.remove();
   document.getElementById('presentation-dock')?.remove();
   document.getElementById('presentation-mode-styles')?.remove();
 
-  // Remover event listener
+  /* 
   if ((window as any).__presentationKeyHandler) {
-    window.removeEventListener('keydown', (window as any).__presentationKeyHandler);
-    delete (window as any).__presentationKeyHandler;
+      window.removeEventListener('keydown', (window as any).__presentationKeyHandler);
+      // delete (window as any).__presentationKeyHandler; 
   }
+  */
+  // NOTA: Mantenemos el listener de teclado global para poder volver a abrirlo con Ctrl+Shift+P
+  // Solamente el UI del dock consume eventos cuando está abierto.
 
+  // Salir de Fullscreen si estamos en él (Solo si el usuario lo activó manualmente, pero por seguridad podemos dejarlo o quitarlo, mejor quitarlo para no interferir con preferencias de usuario)
+  // if (document.fullscreenElement) {
+  //   document.exitFullscreen().catch(err => console.error(err));
+  // }
+
+  // Quitar clase de foco
+  // const container = document.querySelector('.lesson-container');
+  // if (container) {
+  //   container.classList.remove('mode-focus');
+  // }
+  
   // Mostrar botón de activación de nuevo
   const triggerBtn = document.getElementById('presentation-trigger') as HTMLElement | null;
   if (triggerBtn) {
@@ -585,7 +651,8 @@ export function initPresentationMode() {
 
   isInitialized = true;
 
-  // Empezar en modo puntero (hand)
+  // Empezar en modo puntero (hand) implícito
+  // El control de pointer-events se maneja dentro de setTool('hand')
   setTool('hand');
 }
 

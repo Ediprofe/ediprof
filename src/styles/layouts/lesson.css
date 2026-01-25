@@ -12,6 +12,54 @@
   grid-template-columns: 280px 1fr;
   min-height: 100vh;
   background: var(--bg-primary);
+  transition: grid-template-columns 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+/* Botón flotante para expandir (Uncollapse) */
+.sidebar-expand-btn {
+  position: fixed;
+  top: 100px;
+  /* Debajo del header sticky */
+  left: 20px;
+  width: 40px;
+  height: 40px;
+  background: white;
+  border: 1px solid var(--border-color, rgba(0, 0, 0, 0.1));
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 90;
+  color: var(--text-primary);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-20px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+:global(html.dark) .sidebar-expand-btn {
+  background: #1e293b;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Estado Colapsado (Manual) */
+.lesson-container.sidebar-collapsed {
+  grid-template-columns: 0px 1fr !important;
+}
+
+.lesson-container.sidebar-collapsed .sidebar {
+  transform: translateX(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.lesson-container.sidebar-collapsed .sidebar-expand-btn {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
 }
 
 .lesson-content {
