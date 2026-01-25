@@ -379,19 +379,19 @@ function createStyles(): string {
       }
       .presentation-dock-wrapper {
         position: fixed;
-        bottom: 2rem;
-        left: 50%;
-        transform: translateX(-50%);
+        /* Reset positioning for JS control via Visual Viewport API */
+        top: 0;
+        left: 0;
         width: auto;
         display: flex;
         justify-content: center;
         z-index: 999999999;
-        animation: slideUp 0.3s ease-out;
+        /* Remove CSS animation and transforms, we handle them in JS now */
+        transform-origin: 0 0;
+        will-change: transform;
       }
-      @keyframes slideUp {
-        from { transform: translateX(-50%) translateY(100px); opacity: 0; }
-        to { transform: translateX(-50%) translateY(0); opacity: 1; }
-      }
+      
+      /* ... keep existing glass dock styles ... */
       .presentation-glass-dock {
         background: rgba(15, 23, 42, 0.9);
         backdrop-filter: blur(12px);
@@ -575,8 +575,50 @@ function setupEventListeners() {
 
   window.addEventListener('keydown', handleKeyDown);
 
+  // --- Visual Viewport Logic for Sticky Dock ---
+  const updateDockPosition = () => {
+    const dock = document.getElementById('presentation-dock');
+    if (!dock || !window.visualViewport) return;
+
+    const vv = window.visualViewport;
+    
+    // Scale: If zoom is 200% (scale=2), we want dock to be 50% size to look normal.
+    // However, since we use transform logic, we need to be careful.
+    const scale = 1 / vv.scale; 
+    
+    // Center horizontally: Left edge of Visual VP + half its width
+    const x = vv.offsetLeft + (vv.width / 2);
+    
+    // Bottom vertically: Top edge of Visual VP + height - margin (e.g. 60px)
+    const y = vv.offsetTop + vv.height - 60; 
+
+    // Apply transform:
+    // translate(x, y): Move to target position (relative to layout viewport top-left 0,0)
+    // scale(scale): Resize to counter zoom
+    // translate(-50%, -100%): Center horizontally (dock center) and anchor to bottom (dock bottom)
+    // IMPORTANT: Top/Left are 0 in CSS, so this translate is absolute relative to viewport origin
+    dock.style.transform = `translate(${x}px, ${y}px) scale(${scale}) translate(-50%, 0)`;
+  };
+
+  // Attach Visual Viewport listeners
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener('resize', updateDockPosition);
+    window.visualViewport.addEventListener('scroll', updateDockPosition);
+    // Initial update
+    requestAnimationFrame(updateDockPosition);
+  } else {
+    // Fallback for browsers without Visual Viewport API
+    const dock = document.getElementById('presentation-dock');
+    if (dock) {
+      dock.style.bottom = '2rem';
+      dock.style.left = '50%';
+      dock.style.transform = 'translateX(-50%)';
+    }
+  }
+
   // Guardar referencia para cleanup
   (window as any).__presentationKeyHandler = handleKeyDown;
+  (window as any).__presentationDockUpdater = updateDockPosition;
 }
 
 
@@ -587,6 +629,12 @@ function closePresentationMode() {
   laserPointer?.destroy();
   laserPointer = null;
   isInitialized = false;
+
+  // Clean up Viewport listeners
+  if (window.visualViewport && (window as any).__presentationDockUpdater) {
+    window.visualViewport.removeEventListener('resize', (window as any).__presentationDockUpdater);
+    window.visualViewport.removeEventListener('scroll', (window as any).__presentationDockUpdater);
+  }
 
   // Desactivar modo pantalla completa
   document.body.classList.remove('presentation-mode-active'); // Cleanup legacy just in case
