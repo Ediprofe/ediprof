@@ -498,15 +498,17 @@ function createStyles(): string {
       }
       @media (max-width: 768px) {
         .dock-btn span { display: none; }
-        .dock-btn { padding: 0 8px; }
+        .dock-btn { padding: 0 4px; height: 32px; }
         .presentation-glass-dock { 
-          padding: 6px 10px; 
-          gap: 4px; 
-          /* Scale down slightly on mobile to prevent blocking view */
-          transform: scale(0.85);
+          padding: 4px 6px; 
+          gap: 1px; 
+          /* Scale down more on mobile */
+          transform: scale(0.75);
           transform-origin: bottom center;
         }
-        .color-dot { width: 18px; height: 18px; }
+        .color-dot { width: 16px; height: 16px; }
+        .dock-divider { margin: 0 2px; height: 16px; }
+        .dock-section { gap: 2px; }
       }
 
       /* Animación suave al activar/desactivar */
