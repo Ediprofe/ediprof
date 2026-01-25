@@ -1,0 +1,154 @@
+---
+/**
+ * PresentationTrigger - Botón para activar el Modo Presentación
+ *
+ * Este botón sutil permite a los profesores activar herramientas de anotación
+ * (láser, lápiz, flechas) sobre cualquier lección.
+ *
+ * El JavaScript del modo presentación se carga dinámicamente solo cuando
+ * el usuario hace clic, evitando impacto en la carga inicial de la página.
+ */
+---
+
+<button
+  id="presentation-trigger"
+  class="presentation-trigger"
+  title="Activar Modo Presentación (Ctrl+Shift+P)"
+  aria-label="Activar modo presentación para anotar sobre la lección"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="m15 12-8.5 8.5c-.83.83-2.17.83-3 0 0 0 0 0 0 0a2.12 2.12 0 0 1 0-3L12 9"></path>
+    <path d="M17.64 15 22 10.64"></path>
+    <path d="m20.91 11.7-1.25-1.25c-.6-.6-.93-1.4-.93-2.25v-.86L16.01 4.6a5.56 5.56 0 0 0-3.94-1.64H9l.92.82A6.18 6.18 0 0 1 12 8.4v1.56l2 2h2.47l2.26 1.91"></path>
+  </svg>
+</button>
+
+<script>
+  function initTrigger() {
+    const btn = document.getElementById('presentation-trigger') as HTMLButtonElement | null;
+    if (!btn) return;
+
+    // Evitar agregar múltiples listeners
+    if (btn.dataset.initialized === 'true') return;
+    btn.dataset.initialized = 'true';
+
+    const activatePresentation = async () => {
+      // No activar si ya está cargando
+      if (btn.classList.contains('loading')) return;
+
+      btn.classList.add('loading');
+      try {
+        const { initPresentationMode } = await import('../../scripts/presentation-mode');
+        initPresentationMode();
+        // Nota: el módulo se encarga de ocultar el botón y mostrarlo al cerrar
+      } catch (err) {
+        console.error('Error cargando modo presentación:', err);
+      } finally {
+        btn.classList.remove('loading');
+      }
+    };
+
+    btn.addEventListener('click', activatePresentation);
+
+    // Atajo de teclado global: Ctrl+Shift+P
+    const handleGlobalShortcut = (e: KeyboardEvent) => {
+      // No activar si el editor ya está abierto
+      if (document.getElementById('presentation-dock')) return;
+
+      if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key.toLowerCase() === 'p') {
+        e.preventDefault();
+        activatePresentation();
+      }
+    };
+
+    // Remover listener anterior si existe
+    if ((window as any).__presentationTriggerShortcut) {
+      window.removeEventListener('keydown', (window as any).__presentationTriggerShortcut);
+    }
+    (window as any).__presentationTriggerShortcut = handleGlobalShortcut;
+    window.addEventListener('keydown', handleGlobalShortcut);
+  }
+
+  initTrigger();
+  document.addEventListener('astro:page-load', initTrigger);
+</script>
+
+<style>
+  .presentation-trigger {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    z-index: 9999;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .presentation-trigger:hover {
+    background: rgba(37, 99, 235, 0.9);
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
+  }
+
+  .presentation-trigger:active {
+    transform: scale(0.95);
+  }
+
+  .presentation-trigger.loading {
+    pointer-events: none;
+    opacity: 0.7;
+  }
+
+  .presentation-trigger.loading svg {
+    animation: pulse 1s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+
+  /* Ocultar en móviles muy pequeños */
+  @media (max-width: 480px) {
+    .presentation-trigger {
+      width: 40px;
+      height: 40px;
+      bottom: 1rem;
+      right: 1rem;
+    }
+
+    .presentation-trigger svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  /* Ocultar al imprimir */
+  @media print {
+    .presentation-trigger {
+      display: none !important;
+    }
+  }
+</style>

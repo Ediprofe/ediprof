@@ -5,6 +5,7 @@ import CollapsibleSidebar from '../components/Navigation/CollapsibleSidebar.astr
 import TableOfContents from '../components/Content/TableOfContents.astro';
 import MobileMenu from '../components/Navigation/MobileMenu.astro';
 import StickyHeader from '../components/Layout/StickyHeader.astro';
+import PresentationTrigger from '../components/UI/PresentationTrigger.astro';
 import { getMetaName } from '../utils/load-meta';
 import { formatName, formatBlockName, cleanSegment } from '../utils/navigation-generator.js';
 import { materiaConfig, getMateriaName } from '../config/materias';
@@ -148,6 +149,9 @@ const cleanBloque = cleanSegment(bloque);
   </div>
   
   <Footer variant="minimal" />
+
+  <!-- Botón para activar Modo Presentación (carga JS dinámicamente al hacer clic) -->
+  <PresentationTrigger />
 </BaseLayout>
 
 <style>
