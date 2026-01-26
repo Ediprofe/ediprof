@@ -20,7 +20,7 @@ interface LaserStroke {
   isDead: boolean;
   isPermanent?: boolean;
   color: string;
-  type?: 'line' | 'arrow' | 'rect';
+  type?: 'line' | 'arrow' | 'rect' | 'highlighter';
 }
 
 class LaserPointer {
@@ -30,7 +30,7 @@ class LaserPointer {
   private currentStroke: LaserStroke | null = null;
   public isInputActive = false;
   private systemRunning = false;
-  private toolMode: 'laser' | 'pen' | 'arrow' | 'rect' = 'laser';
+  private toolMode: 'laser' | 'pen' | 'arrow' | 'rect' | 'highlighter' = 'laser';
   private currentColor: string = '#FF0055'; // Neon Rose por defecto
   private rafId: number | null = null;
   private lastGlobalActivityTime: number = Date.now();
@@ -103,9 +103,9 @@ class LaserPointer {
     this.currentStroke = {
       points: [{ x, y }],
       isDead: false,
-      isPermanent: this.toolMode === 'pen' || this.toolMode === 'arrow' || this.toolMode === 'rect',
+      isPermanent: this.toolMode === 'pen' || this.toolMode === 'arrow' || this.toolMode === 'rect' || this.toolMode === 'highlighter',
       color: this.toolMode === 'laser' ? '#FF0055' : this.currentColor,
-      type: this.toolMode === 'arrow' ? 'arrow' : this.toolMode === 'rect' ? 'rect' : 'line',
+      type: this.toolMode === 'arrow' ? 'arrow' : this.toolMode === 'rect' ? 'rect' : this.toolMode === 'highlighter' ? 'highlighter' : 'line',
     };
     this.strokes.push(this.currentStroke);
   }
@@ -173,7 +173,7 @@ class LaserPointer {
     this.canvas.style.touchAction = enabled ? 'none' : 'auto';
   }
 
-  public setMode(mode: 'laser' | 'pen' | 'arrow' | 'rect') {
+  public setMode(mode: 'laser' | 'pen' | 'arrow' | 'rect' | 'highlighter') {
     this.toolMode = mode;
   }
 
@@ -226,7 +226,7 @@ class LaserPointer {
 
     this.strokes.forEach((stroke) => {
       if (stroke.points.length < 2) return;
-      const alpha = stroke.isPermanent ? 1.0 : globalAlpha;
+      const alpha = stroke.isPermanent ? (stroke.type === 'highlighter' ? 0.4 : 1.0) : globalAlpha;
       if (alpha <= 0) return;
 
       if (stroke.isPermanent) {
@@ -237,6 +237,9 @@ class LaserPointer {
           this.renderArrow(stroke.points[0], stroke.points[1], colorStr, 4 / scale);
         } else if (stroke.type === 'rect') {
           this.renderRect(stroke.points[0], stroke.points[1], colorStr, 4 / scale);
+        } else if (stroke.type === 'highlighter') {
+          // Highlighter: Thick, semi-transparent, no blur
+          this.renderStroke(stroke.points, colorStr, 24 / scale, 0, 'source-over');
         } else {
           // Smart Strokes: Scale width inversely to zoom
           // SOLID STROKES: No blur/glow for permanent pen
@@ -321,7 +324,7 @@ class LaserPointer {
 // Estado global del modo presentación
 let isInitialized = false;
 let laserPointer: LaserPointer | null = null;
-let currentTool: 'hand' | 'laser' | 'pen' | 'arrow' | 'rect' = 'hand';
+let currentTool: 'hand' | 'laser' | 'pen' | 'arrow' | 'rect' | 'highlighter' = 'hand';
 
 function createDockHTML(): string {
   return `
@@ -348,6 +351,10 @@ function createDockHTML(): string {
           <button id="pm-pen-btn" class="dock-btn tool-trigger" title="Lápiz (P)">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"></path><path d="m15 5 4 4"></path></svg>
             <span>Lápiz</span>
+          </button>
+          <button id="pm-highlighter-btn" class="dock-btn tool-trigger" title="Resaltador (M)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 11-6 6v3h9l3-3"/><path d="m22 12-4.6 4.6a2 2 0 0 1-2.8 0l-5.2-5.2a2 2 0 0 1 0-2.8L14 4"/></svg>
+            <span>Resaltar</span>
           </button>
         </div>
         <div class="dock-divider"></div>
@@ -477,6 +484,11 @@ function createStyles(): string {
         background: #6366f1;
         box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
       }
+      #pm-highlighter-btn.active {
+        background: #facc15;
+        color: #000;
+        box-shadow: 0 4px 12px rgba(250, 204, 21, 0.3);
+      }
       .colors { gap: 8px; }
       .color-dot {
         width: 20px;
@@ -509,6 +521,8 @@ function createStyles(): string {
         .color-dot { width: 16px; height: 16px; }
         .dock-divider { margin: 0 2px; height: 16px; }
         .dock-section { gap: 2px; }
+        /* Hide complex diagram tools on mobile to prioritize space */
+        #pm-arrow-btn, #pm-rect-btn { display: none; }
       }
 
       /* Animación suave al activar/desactivar */
@@ -520,13 +534,13 @@ function createStyles(): string {
   `;
 }
 
-function setTool(tool: 'hand' | 'laser' | 'pen' | 'arrow' | 'rect') {
+function setTool(tool: 'hand' | 'laser' | 'pen' | 'arrow' | 'rect' | 'highlighter') {
   if (!laserPointer) return;
 
   currentTool = tool;
   laserPointer.setDrawingEnabled(tool !== 'hand');
   if (tool !== 'hand') {
-    laserPointer.setMode(tool as 'laser' | 'pen' | 'arrow' | 'rect');
+    laserPointer.setMode(tool as 'laser' | 'pen' | 'arrow' | 'rect' | 'highlighter');
   }
 
   const canvas = document.getElementById('presentation-canvas');
@@ -538,6 +552,7 @@ function setTool(tool: 'hand' | 'laser' | 'pen' | 'arrow' | 'rect') {
   document.getElementById('pm-pen-btn')?.classList.toggle('active', tool === 'pen');
   document.getElementById('pm-arrow-btn')?.classList.toggle('active', tool === 'arrow');
   document.getElementById('pm-rect-btn')?.classList.toggle('active', tool === 'rect');
+  document.getElementById('pm-highlighter-btn')?.classList.toggle('active', tool === 'highlighter');
 }
 
 function setupEventListeners() {
@@ -546,6 +561,7 @@ function setupEventListeners() {
   document.getElementById('pm-pen-btn')?.addEventListener('click', () => setTool('pen'));
   document.getElementById('pm-arrow-btn')?.addEventListener('click', () => setTool('arrow'));
   document.getElementById('pm-rect-btn')?.addEventListener('click', () => setTool('rect'));
+  document.getElementById('pm-highlighter-btn')?.addEventListener('click', () => setTool('highlighter'));
   document.getElementById('pm-clear-btn')?.addEventListener('click', () => {
     laserPointer?.clearAll();
     setTool('hand'); // UX Improvement: Auto-switch to hand after clearing
@@ -560,7 +576,11 @@ function setupEventListeners() {
       laserPointer?.setColor(color);
       document.querySelectorAll('#pm-colors .color-dot').forEach((d) => d.classList.remove('active'));
       dot.classList.add('active');
-      setTool('pen');
+      
+      // Solo cambiar a lápiz si no estamos ya usando una herramienta de dibujo (flecha, rect, resaltador)
+      if (currentTool === 'hand' || currentTool === 'laser') {
+        setTool('pen');
+      }
     });
   });
 
@@ -571,7 +591,11 @@ function setupEventListeners() {
       if (d.getAttribute('data-color') === color) d.classList.add('active');
       else d.classList.remove('active');
     });
-    setTool('pen');
+    
+    // Maintain current tool if it is a shape or highlighter
+    if (currentTool === 'hand' || currentTool === 'laser') {
+      setTool('pen');
+    }
   };
 
   // Atajos de teclado
@@ -597,6 +621,7 @@ function setupEventListeners() {
     } else if (key === 'h') setTool('hand');
     else if (key === 'l') setTool('laser');
     else if (key === 'p') setTool('pen');
+    else if (key === 'm') setTool('highlighter');
     else if (key === 'a') setTool('arrow');
     else if (key === 'r') setTool('rect');
     else if (key === 'c') laserPointer?.clearAll();

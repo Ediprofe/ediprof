@@ -140,15 +140,10 @@
     }
   }
 
-  /* Ocultar en móviles muy pequeños o cuando el teclado cubre pantalla */
-  @media (max-width: 480px) {
-    .presentation-trigger {
-      width: 42px;
-      height: 42px;
-    }
-    .presentation-trigger svg {
-      width: 20px;
-      height: 20px;
+  /* Ocultar en móviles y tablets (< 768px) */
+  @media (max-width: 768px) {
+    #presentation-trigger-wrapper {
+      display: none !important;
     }
   }
 
