@@ -74,10 +74,14 @@ export class WindowManager {
   }
 
   private injectStyles() {
-     if (document.getElementById('presentation-mode-styles')) return;
-     const style = document.createElement('style');
-     style.id = 'presentation-mode-styles';
-     // Copying CSS from original file
+     let style = document.getElementById('presentation-mode-styles');
+     if (!style) {
+       style = document.createElement('style');
+       style.id = 'presentation-mode-styles';
+       document.head.appendChild(style);
+     }
+     
+     // Always update content to ensure latest styles (handle HMR/updates)
      style.textContent = `
        .presentation-canvas {
          position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
@@ -100,15 +104,20 @@ export class WindowManager {
          background-size: 40px 40px;
        }
        .presentation-dock-wrapper {
-         position: fixed; top: 0; left: 0; width: auto; display: flex; justify-content: center;
-         z-index: 999999999; transform-origin: 0 0; will-change: transform;
+         position: fixed; top: 0; left: 0; width: 100vw; display: flex; justify-content: center;
+         z-index: 999999999; pointer-events: none;
        }
        .presentation-glass-dock {
          background: rgba(15, 23, 42, 0.9); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
          border: 1px solid rgba(255, 255, 255, 0.1); padding: 8px 16px; border-radius: 24px;
-         display: flex; align-items: center; gap: 10px;
-         box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+         display: flex; align-items: center; gap: 10px; pointer-events: auto;
+         box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3); margin-top: 12px;
        }
+       /* Ensure elements inside don't break flex layout */
+       .presentation-glass-dock > * {
+         flex-shrink: 0;
+       }
+
        .dock-btn { 
           background: transparent; border: 1px solid transparent; color: rgba(255, 255, 255, 0.7);
           padding: 0 10px; height: 40px; border-radius: 14px; cursor: pointer; display: flex;
@@ -129,13 +138,12 @@ export class WindowManager {
        .color-dot.active { border-color: white; transform: scale(1.25); box-shadow: 0 0 10px rgba(255,255,255,0.3); }
        .dock-divider { width: 1px; height: 24px; background: rgba(255,255,255,0.15); }
        
-       @media (max-width: 768px) {
+       @media (max-width: 640px) {
          .dock-btn span { display: none; }
-         .presentation-glass-dock { transform: scale(0.75); transform-origin: bottom center; }
+         .presentation-glass-dock { transform: scale(0.85); transform-origin: top center; margin-top: 8px; }
          #pm-arrow-btn, #pm-rect-btn { display: none; }
        }
      `;
-     document.head.appendChild(style);
   }
 
   private createDock() {

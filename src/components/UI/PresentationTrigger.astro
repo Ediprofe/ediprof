@@ -43,6 +43,8 @@
     if (!controller) {
       controller = new PresentationController(() => {
         controller = null;
+        const b = document.getElementById("presentation-trigger");
+        if (b) b.classList.remove("loading");
       });
     }
   };
@@ -150,11 +152,10 @@
     }
   }
 
-  /* Ocultar en móviles y tablets (< 768px) */
-  @media (max-width: 768px) {
-    #presentation-trigger-wrapper {
-      display: none !important;
-    }
+  /* Ocultar en móviles muy pequeños si es necesario, pero permitir en tablets */
+  @media (max-width: 480px) {
+    /* Podríamos ajustar el tamaño o posición, pero por ahora lo dejamos visible */
+    /* o si se prefiere ocultar solo en móviles muy pequeños */
   }
 
   /* Ocultar al imprimir */
