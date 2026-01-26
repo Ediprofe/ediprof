@@ -268,25 +268,41 @@ export class CanvasRenderer {
 
   private renderText(pos: LaserPoint, text: string, color: string, size: number) {
       this.ctx.globalCompositeOperation = 'source-over';
-      // Match the CSS font exactly: bold 32px "Space Grotesk"
       this.ctx.font = `bold ${size}px "Space Grotesk", sans-serif`;
       this.ctx.textAlign = 'left';
       this.ctx.textBaseline = 'top'; 
       
       const lines = text.split('\n');
       const lineHeight = size * 1.2;
-
-      // Visual match adjustment: CSS text-shadow 15px looks smaller than Canvas 15px.
-      // Also, Input was positioned at y - 20.
       const startY = pos.y - 20;
+      
+      // ROUND coordinates to avoid sub-pixel blurring
+      const x = Math.round(pos.x);
 
       lines.forEach((line, index) => {
-          const y = startY + (index * lineHeight);
+          const y = Math.round(startY + (index * lineHeight));
           
-          this.ctx.shadowBlur = 8; // Reduced from 15 to match visual weight
+          // PASS 1: PURE GLOW (The "CSS text-shadow" effect)
+          // We draw the text far off-screen (-10000px) but cast the shadow back to the correct position.
+          // This isolates the shadow so we don't muddy the text pixels or get double-draw artifacts.
+          this.ctx.save();
+          this.ctx.shadowBlur = 15; // Match CSS value exactly
           this.ctx.shadowColor = color;
+          this.ctx.shadowOffsetX = 10000; // Offset shadow by +10000
+          this.ctx.shadowOffsetY = 0;
           this.ctx.fillStyle = color;
-          this.ctx.fillText(line, pos.x, y);
+          
+          // Draw text at x - 10000. Shadow appears at x.
+          this.ctx.fillText(line, x - 10000, y);
+          this.ctx.restore();
+
+          // PASS 2: SOLID TEXT (The "CSS color" effect)
+          // Draw clean, sharp text on top of the glow
+          this.ctx.shadowBlur = 0;
+          this.ctx.shadowOffsetX = 0;
+          this.ctx.shadowOffsetY = 0;
+          this.ctx.fillStyle = color;
+          this.ctx.fillText(line, x, y);
       });
   }
 }

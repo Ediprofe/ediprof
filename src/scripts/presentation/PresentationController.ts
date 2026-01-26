@@ -193,6 +193,10 @@ export class PresentationController {
           input.addEventListener('input', resizeInput);
           
           input.addEventListener('keydown', (e) => {
+              // CRITICAL: Stop propagation to prevent WindowManager from triggering shortcuts
+              // (e.g. 'c' clearing the board, 't' switching tools, etc.)
+              e.stopPropagation();
+
               if (e.key === 'Enter' && !e.shiftKey) {
                   e.preventDefault(); // Prevent default new line if committing
                   commitText();

@@ -133,6 +133,50 @@
   box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
 }
 
+/* ============================================
+   SHORTCUT TOOLTIPS (Badge on Hover)
+   ============================================ */
+.dock-btn {
+  position: relative;
+  /* Para el tooltip absoluto */
+}
+
+.dock-btn[data-shortcut]:hover::after,
+.color-dot[data-shortcut]:hover::after {
+  content: attr(data-shortcut);
+  position: absolute;
+  bottom: 110%;
+  /* Encima del botón */
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+  pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  animation: tooltip-fade-in 0.2s forwards;
+  z-index: 100;
+}
+
+@keyframes tooltip-fade-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
 /* Estados activos específicos por herramienta */
 #pm-laser-btn.active {
   background: #ef4444;

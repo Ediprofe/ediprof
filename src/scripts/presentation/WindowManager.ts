@@ -149,7 +149,7 @@ export class WindowManager {
     const colorDotsHTML = COLOR_PALETTE.map((c, i) => {
       const isDefault = i === 2; // Rojo por defecto
       const borderStyle = c.hex === '#111111' ? 'border: 1px solid rgba(255,255,255,0.4)' : '';
-      return `<button class="color-dot${isDefault ? ' active' : ''}" data-color="${c.hex}" title="${c.name} (${c.key})" style="background: ${c.hex}; ${borderStyle}"></button>`;
+      return `<button class="color-dot${isDefault ? ' active' : ''}" data-color="${c.hex}" data-shortcut="${c.key}" title="${c.name} (${c.key})" style="background: ${c.hex}; ${borderStyle}"></button>`;
     }).join('\n           ');
 
     // Dock Container
@@ -159,28 +159,28 @@ export class WindowManager {
     this.dockWrapper.innerHTML = `
         <div class="presentation-glass-dock">
         <div style="display:flex;gap:4px">
-          <button id="pm-hand-btn" class="dock-btn tool-trigger active" title="Puntero (H)">
+          <button id="pm-hand-btn" class="dock-btn tool-trigger active" data-shortcut="H" title="Puntero (H)">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m3 3 7.07 16.97 2.51-7.39 7.39-2.51L3 3z"></path><path d="m13 13 6 6"></path></svg><span>Puntero</span>
           </button>
-           <button id="pm-select-btn" class="dock-btn tool-trigger" title="Seleccionar (S)">
+           <button id="pm-select-btn" class="dock-btn tool-trigger" data-shortcut="S" title="Seleccionar (S)">
              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg><span>Selecc.</span>
           </button>
-          <button id="pm-arrow-btn" class="dock-btn tool-trigger" title="Flecha (A)">
+          <button id="pm-arrow-btn" class="dock-btn tool-trigger" data-shortcut="A" title="Flecha (A)">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
           </button>
-           <button id="pm-rect-btn" class="dock-btn tool-trigger" title="Rect (R)">
+           <button id="pm-rect-btn" class="dock-btn tool-trigger" data-shortcut="R" title="Rect (R)">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"></rect></svg>
           </button>
-          <button id="pm-text-btn" class="dock-btn tool-trigger" title="Texto (T)">
+          <button id="pm-text-btn" class="dock-btn tool-trigger" data-shortcut="T" title="Texto (T)">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 7 4 4 20 4 20 7"></polyline><line x1="9" y1="20" x2="15" y2="20"></line><line x1="12" y1="4" x2="12" y2="20"></line></svg>
           </button>
-          <button id="pm-laser-btn" class="dock-btn tool-trigger" title="Láser (L)">
+          <button id="pm-laser-btn" class="dock-btn tool-trigger" data-shortcut="L" title="Láser (L)">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m13.4 2 3.5 3.5-3.5 3.5-3.5-3.5z"></path><path d="M7.4 15.6 2 21"></path><path d="m15.5 15.5 4-4"></path><path d="M14 17h5"></path><path d="M17 14v5"></path><path d="m7.4 9.4 6.2 6.2"></path></svg><span>Láser</span>
           </button>
-          <button id="pm-pen-btn" class="dock-btn tool-trigger" title="Lápiz (P)">
+          <button id="pm-pen-btn" class="dock-btn tool-trigger" data-shortcut="P" title="Lápiz (P)">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"></path><path d="m15 5 4 4"></path></svg><span>Lápiz</span>
           </button>
-          <button id="pm-highlighter-btn" class="dock-btn tool-trigger" title="Resaltador (M)">
+          <button id="pm-highlighter-btn" class="dock-btn tool-trigger" data-shortcut="M" title="Resaltador (M)">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 11-6 6v3h9l3-3"/><path d="m22 12-4.6 4.6a2 2 0 0 1-2.8 0l-5.2-5.2a2 2 0 0 1 0-2.8L14 4"/></svg>
           </button>
         </div>
@@ -190,22 +190,22 @@ export class WindowManager {
         </div>
         <div class="dock-divider"></div>
          <div style="display:flex;gap:4px">
-           <button id="pm-undo-btn" class="dock-btn" title="Deshacer (Ctrl+Z)">
+           <button id="pm-undo-btn" class="dock-btn" data-shortcut="Ctrl+Z" title="Deshacer (Ctrl+Z)">
              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7v6h6"></path><path d="M21 17a9 9 0 0 0-9-9 9 9 0 0 0-6 2.3L3 13"></path></svg>
            </button>
-           <button id="pm-clear-btn" class="dock-btn" title="Limpiar (C)">
+           <button id="pm-clear-btn" class="dock-btn" data-shortcut="C" title="Limpiar (C)">
              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"></path><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path></svg>
            </button>
-           <button id="pm-close-btn" class="dock-btn dock-btn-close" title="Cerrar (Esc)">
+           <button id="pm-close-btn" class="dock-btn dock-btn-close" data-shortcut="Esc" title="Cerrar (Esc)">
              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
            </button>
          </div>
          <div class="dock-divider"></div>
          <div style="display:flex;gap:4px">
-           <button id="pm-board-white" class="dock-btn" title="Pizarra Blanca (W)">
+           <button id="pm-board-white" class="dock-btn" data-shortcut="W" title="Pizarra Blanca (W)">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><line x1="3" x2="21" y1="9" y2="9"/><line x1="9" x2="9" y1="21" y2="9"/></svg>
            </button>
-           <button id="pm-board-black" class="dock-btn" title="Pizarra Negra (B)">
+           <button id="pm-board-black" class="dock-btn" data-shortcut="B" title="Pizarra Negra (B)">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/></svg>
            </button>
          </div>
@@ -248,6 +248,11 @@ export class WindowManager {
   private handleKeyDown(e: KeyboardEvent) {
     const key = e.key.toLowerCase();
     const isMod = e.ctrlKey || e.metaKey;
+
+    // Ignore shortcuts if typing in an input/textarea
+    if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) {
+        return;
+    }
 
     // Escape siempre cierra
     if (key === 'escape') {
