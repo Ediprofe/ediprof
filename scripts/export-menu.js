@@ -181,7 +181,7 @@ async function main() {
         }
     ]);
 
-    // 4. Elegir tema
+    // 4. Elegir alcance (unidad, tema o lecciones)
     const temasDir = join(unidadesDir, unidad);
     const temas = listFolders(temasDir);
 
@@ -190,67 +190,88 @@ async function main() {
         process.exit(1);
     }
 
-    const temaChoices = temas.map((t, i) => ({
-        name: `${i + 1}. ${getName(join(temasDir, t))}`,
-        value: t
-    }));
-
-    const { tema } = await inquirer.prompt([
-        {
-            type: 'rawlist',
-            name: 'tema',
-            message: '¿De qué tema?',
-            choices: temaChoices
-        }
-    ]);
-
-    // 5. Elegir qué exportar
-    const leccionesDir = join(temasDir, tema);
-    const lecciones = listLessons(leccionesDir);
-
-    if (lecciones.length === 0) {
-        log('❌ No hay lecciones en este tema', 'red');
-        process.exit(1);
+    // Contar lecciones totales en la unidad
+    let totalLeccionesUnidad = 0;
+    for (const t of temas) {
+        totalLeccionesUnidad += listLessons(join(temasDir, t)).length;
     }
 
-    const { scope } = await inquirer.prompt([
+    const { scopeLevel } = await inquirer.prompt([
         {
             type: 'rawlist',
-            name: 'scope',
+            name: 'scopeLevel',
             message: '¿Qué quieres exportar?',
             choices: [
-                { name: `📚 Todo el tema (${lecciones.length} lecciones)`, value: 'tema' },
-                { name: '📄 Seleccionar lecciones específicas', value: 'seleccionar' }
+                { name: `📦 Toda la unidad (${temas.length} temas, ${totalLeccionesUnidad} lecciones)`, value: 'unidad' },
+                { name: '📚 Un tema específico', value: 'tema' },
+                { name: '📄 Lecciones específicas de un tema', value: 'lecciones' }
             ]
         }
     ]);
 
+    let tema = null;
+    let scope = scopeLevel;
     let selectedLessons = [];
+    let leccionesDir = null;
 
-    if (scope === 'seleccionar') {
-        const lessonChoices = lecciones.map(l => ({
-            name: getLessonTitle(join(leccionesDir, l)),
-            value: l
+    // Si no es unidad completa, elegir tema
+    if (scopeLevel === 'tema' || scopeLevel === 'lecciones') {
+        const temaChoices = temas.map((t, i) => ({
+            name: `${i + 1}. ${getName(join(temasDir, t))}`,
+            value: t
         }));
 
-        const { lessons } = await inquirer.prompt([
+        const { selectedTema } = await inquirer.prompt([
             {
-                type: 'checkbox',
-                name: 'lessons',
-                message: 'Selecciona las lecciones (espacio para marcar, enter para confirmar):',
-                choices: lessonChoices,
-                validate: (answer) => answer.length > 0 ? true : 'Selecciona al menos una lección'
+                type: 'rawlist',
+                name: 'selectedTema',
+                message: '¿De qué tema?',
+                choices: temaChoices
             }
         ]);
-        selectedLessons = lessons;
-    } else {
-        selectedLessons = lecciones;
+        tema = selectedTema;
+        leccionesDir = join(temasDir, tema);
+
+        // Si quiere lecciones específicas, mostrar selector
+        if (scopeLevel === 'lecciones') {
+            const lecciones = listLessons(leccionesDir);
+
+            if (lecciones.length === 0) {
+                log('❌ No hay lecciones en este tema', 'red');
+                process.exit(1);
+            }
+
+            const lessonChoices = lecciones.map(l => ({
+                name: getLessonTitle(join(leccionesDir, l)),
+                value: l
+            }));
+
+            const { lessons } = await inquirer.prompt([
+                {
+                    type: 'checkbox',
+                    name: 'lessons',
+                    message: 'Selecciona las lecciones (espacio para marcar, enter para confirmar):',
+                    choices: lessonChoices,
+                    validate: (answer) => answer.length > 0 ? true : 'Selecciona al menos una lección'
+                }
+            ]);
+            selectedLessons = lessons;
+            scope = 'seleccionar';
+        } else {
+            // Tema completo
+            selectedLessons = listLessons(leccionesDir);
+        }
     }
 
-    // 6. Nombre del archivo de salida
-    const defaultName = scope === 'tema'
-        ? `${getName(join(temasDir, tema))}.${format === 'pdf' ? 'pdf' : 'docx'}`
-        : `exportacion.${format === 'pdf' ? 'pdf' : 'docx'}`;
+    // 5. Nombre del archivo de salida
+    let defaultName;
+    if (scopeLevel === 'unidad') {
+        defaultName = `${getName(join(unidadesDir, unidad))}.${format === 'pdf' ? 'pdf' : 'docx'}`;
+    } else if (scope === 'tema') {
+        defaultName = `${getName(join(temasDir, tema))}.${format === 'pdf' ? 'pdf' : 'docx'}`;
+    } else {
+        defaultName = `exportacion.${format === 'pdf' ? 'pdf' : 'docx'}`;
+    }
 
     const { outputName } = await inquirer.prompt([
         {
@@ -301,9 +322,9 @@ async function main() {
 
     try {
         if (format === 'pdf') {
-            await exportToPdf(materia, unidad, tema, selectedLessons, scope, outputPath);
+            await exportToPdf(materia, unidad, tema, selectedLessons, scopeLevel, outputPath);
         } else {
-            await exportToDocx(materia, unidad, tema, selectedLessons, outputPath, leccionesDir, templatePath);
+            await exportToDocx(materia, unidad, tema, selectedLessons, outputPath, leccionesDir, templatePath, scopeLevel, temasDir);
         }
 
         console.log();
@@ -331,12 +352,19 @@ function getMateriaIcon(materia) {
 async function exportToPdf(materia, unidad, tema, lessons, scope, outputPath) {
     const cleanMateria = cleanSlug(materia);
     const cleanUnidad = cleanSlug(unidad);
-    const cleanTema = cleanSlug(tema);
+    const cleanTema = tema ? cleanSlug(tema) : null;
 
-    if (scope === 'tema') {
+    if (scope === 'unidad') {
+        // Exportar unidad completa
+        const unidadUrl = `${cleanMateria}/${cleanUnidad}`;
+        log(`📦 Generando PDF de toda la unidad...`, 'blue');
+
+        const cmd = `node "${join(PROJECT_ROOT, 'scripts', 'export-to-pdf.mjs')}" --unidad ${unidadUrl} --output "${outputPath}"`;
+        execSync(cmd, { stdio: 'inherit', cwd: PROJECT_ROOT });
+    } else if (scope === 'tema') {
         // Exportar tema completo
         const temaUrl = `${cleanMateria}/${cleanUnidad}/${cleanTema}`;
-        log(`📄 Generando PDF del tema completo...`, 'blue');
+        log(`📚 Generando PDF del tema completo...`, 'blue');
 
         const cmd = `node "${join(PROJECT_ROOT, 'scripts', 'export-to-pdf.mjs')}" --tema ${temaUrl} --output "${outputPath}"`;
         execSync(cmd, { stdio: 'inherit', cwd: PROJECT_ROOT });
@@ -357,10 +385,23 @@ async function exportToPdf(materia, unidad, tema, lessons, scope, outputPath) {
     }
 }
 
-async function exportToDocx(materia, unidad, tema, lessons, outputPath, leccionesDir, templatePath) {
-    const files = lessons.map(l => join(leccionesDir, l));
+async function exportToDocx(materia, unidad, tema, lessons, outputPath, leccionesDir, templatePath, scopeLevel, temasDir) {
+    let files = [];
 
-    log(`📝 Generando Word con ${files.length} lección(es)...`, 'blue');
+    if (scopeLevel === 'unidad') {
+        // Recolectar todas las lecciones de todos los temas de la unidad
+        const temas = listFolders(temasDir);
+        for (const t of temas) {
+            const temaLeccionesDir = join(temasDir, t);
+            const temaLecciones = listLessons(temaLeccionesDir);
+            files.push(...temaLecciones.map(l => join(temaLeccionesDir, l)));
+        }
+        log(`📦 Generando Word de toda la unidad (${files.length} lecciones)...`, 'blue');
+    } else {
+        files = lessons.map(l => join(leccionesDir, l));
+        log(`📝 Generando Word con ${files.length} lección(es)...`, 'blue');
+    }
+
     if (templatePath) {
         log(`   📋 Usando plantilla: ${basename(templatePath)}`, 'cyan');
     }

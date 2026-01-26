@@ -1,0 +1,765 @@
+---
+/**
+ * /print-unidad/[...slug].astro
+ *
+ * PDF por UNIDAD completa con:
+ * - Portada de la unidad (1 página)
+ * - Índice general con todos los temas y lecciones
+ * - Cada tema con separador y sus lecciones
+ * - Página final
+ *
+ * USO:
+ *   /print-unidad/fisica/introduccion-a-la-fisica
+ */
+import { getCollection } from 'astro:content';
+import { cleanSlug, formatName } from '../../utils/navigation-generator.js';
+import { materiaConfig, type MateriaSlug, SITE_CONFIG } from '../../config/materias';
+
+function getMateriaColors(materia: string) {
+  const config = materiaConfig[materia as MateriaSlug] || materiaConfig.fisica;
+  return {
+    primary: config.color,
+    accent: config.color,
+    light: config.lightSolid,
+    dark: config.dark
+  };
+}
+
+interface TemaData {
+  temaSlug: string;
+  temaName: string;
+  lessons: any[];
+}
+
+export async function getStaticPaths() {
+  const unidades = new Map<string, {
+    temas: Map<string, TemaData>,
+    materia: string,
+    unidadSlug: string,
+    cleanUnidadSlug: string
+  }>();
+
+  const processCollection = async (materiaName: string) => {
+    try {
+      const lessons = await getCollection(materiaName);
+      lessons.forEach(lesson => {
+        const parts = lesson.slug.split('/');
+        if (parts.length >= 3) {
+          const unidadSlug = parts[0];
+          const temaSlug = parts[1];
+          const cleanUnidad = cleanSlug(unidadSlug);
+          const cleanUnidadKey = `${materiaName}/${cleanUnidad}`;
+
+          if (!unidades.has(cleanUnidadKey)) {
+            unidades.set(cleanUnidadKey, {
+              temas: new Map(),
+              materia: materiaName,
+              unidadSlug,
+              cleanUnidadSlug: cleanUnidadKey
+            });
+          }
+
+          const unidadData = unidades.get(cleanUnidadKey)!;
+          const cleanTema = cleanSlug(temaSlug);
+
+          if (!unidadData.temas.has(cleanTema)) {
+            unidadData.temas.set(cleanTema, {
+              temaSlug,
+              temaName: formatName(temaSlug),
+              lessons: []
+            });
+          }
+
+          unidadData.temas.get(cleanTema)!.lessons.push(lesson);
+        }
+      });
+    } catch (e) {}
+  };
+
+  await processCollection('matematicas');
+  await processCollection('fisica');
+  await processCollection('quimica');
+  await processCollection('ciencias');
+
+  // Ordenar lecciones dentro de cada tema
+  unidades.forEach(unidad => {
+    unidad.temas.forEach(tema => {
+      tema.lessons.sort((a, b) => a.slug.localeCompare(b.slug));
+    });
+  });
+
+  return Array.from(unidades.entries()).map(([slug, data]) => ({
+    params: { slug },
+    props: {
+      temas: Array.from(data.temas.values()).sort((a, b) => a.temaSlug.localeCompare(b.temaSlug)),
+      materia: data.materia,
+      unidadSlug: data.unidadSlug,
+      cleanUnidadSlug: data.cleanUnidadSlug
+    }
+  }));
+}
+
+interface Props {
+  temas: TemaData[];
+  materia: string;
+  unidadSlug: string;
+  cleanUnidadSlug: string;
+}
+
+const { temas, materia, unidadSlug, cleanUnidadSlug } = Astro.props;
+const colors = getMateriaColors(materia);
+
+// Renderizar todas las lecciones de todos los temas
+const renderedTemas = await Promise.all(
+  temas.map(async (tema) => {
+    const renderedLessons = await Promise.all(
+      tema.lessons.map(async (lesson) => {
+        const { Content, headings } = await lesson.render();
+        const firstH1 = headings.find((h: any) => h.depth === 1);
+        const title = lesson.data?.title || firstH1?.text?.replace(/\*\*/g, '').trim() || 'Lección';
+        const lessonUrl = `${SITE_CONFIG.url}/${materia}/${cleanSlug(lesson.slug)}`;
+        return { lesson, Content, title, headings, lessonUrl };
+      })
+    );
+    return { ...tema, renderedLessons };
+  })
+);
+
+const unidadName = formatName(unidadSlug);
+const materiaName = materiaConfig[materia as MateriaSlug]?.name || materia.charAt(0).toUpperCase() + materia.slice(1);
+const unidadUrl = `${SITE_CONFIG.url}/${cleanUnidadSlug}`;
+
+// Contadores
+const totalTemas = temas.length;
+const totalLecciones = temas.reduce((acc, t) => acc + t.lessons.length, 0);
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{unidadName} - {materiaName} - Ediprofe</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {
+      delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]
+    });"></script>
+
+  <style define:vars={{ primaryColor: colors.primary, accentColor: colors.accent, lightColor: colors.light, darkColor: colors.dark }}>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    @page { size: letter; margin: 0.6in; }
+    @page :first { margin: 0.4in; }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 10pt;
+      line-height: 1.55;
+      color: #1e293b;
+      background: white;
+    }
+
+    a { color: var(--primaryColor); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ═══════════════════════════════════════════════════════════════
+       PORTADA - Diseño para UNIDAD
+       ═══════════════════════════════════════════════════════════════ */
+    .cover {
+      page-break-after: always;
+      padding: 40px;
+      min-height: calc(100vh - 80px);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cover-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 20px;
+      border-bottom: 2px solid #e2e8f0;
+    }
+
+    .cover-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--primaryColor);
+    }
+
+    .cover-logo svg { width: 40px; height: 40px; fill: currentColor; }
+    .cover-logo-text { font-size: 14pt; font-weight: 700; }
+
+    .cover-materia {
+      background: var(--primaryColor);
+      color: white;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 10pt;
+      font-weight: 600;
+    }
+
+    .cover-main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 60px 0;
+    }
+
+    .cover-label {
+      font-size: 11pt;
+      color: #64748b;
+      margin-bottom: 8px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .cover-title {
+      font-size: 38pt;
+      font-weight: 800;
+      color: var(--primaryColor);
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .cover-divider {
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primaryColor), var(--accentColor));
+      border-radius: 2px;
+      margin-bottom: 20px;
+    }
+
+    .cover-meta {
+      display: flex;
+      gap: 24px;
+      color: #64748b;
+      font-size: 11pt;
+    }
+
+    .cover-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .cover-footer {
+      padding-top: 20px;
+      border-top: 2px solid #e2e8f0;
+    }
+
+    .cover-social {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 14px;
+    }
+
+    .cover-social-link {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #64748b;
+      font-size: 10pt;
+      text-decoration: none;
+    }
+
+    .cover-social-link:hover { color: var(--primaryColor); }
+    .cover-social-link svg { width: 16px; height: 16px; fill: currentColor; }
+
+    .cover-footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 9pt;
+      color: #94a3b8;
+    }
+
+    .cover-url {
+      color: var(--primaryColor);
+      font-size: 10pt;
+      font-weight: 500;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       ÍNDICE GENERAL
+       ═══════════════════════════════════════════════════════════════ */
+    .toc {
+      page-break-after: always;
+      padding: 30px 0;
+    }
+
+    .toc-header {
+      margin-bottom: 30px;
+    }
+
+    .toc-header h2 {
+      font-size: 20pt;
+      color: var(--primaryColor);
+      margin-bottom: 4px;
+    }
+
+    .toc-header .subtitle {
+      color: #64748b;
+      font-size: 10pt;
+    }
+
+    .toc-tema {
+      margin-bottom: 20px;
+    }
+
+    .toc-tema-header {
+      background: var(--lightColor);
+      padding: 10px 14px;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      border-left: 4px solid var(--primaryColor);
+    }
+
+    .toc-tema-number {
+      font-size: 9pt;
+      color: var(--primaryColor);
+      font-weight: 600;
+    }
+
+    .toc-tema-title {
+      font-size: 12pt;
+      font-weight: 700;
+      color: var(--darkColor);
+    }
+
+    .toc-lessons {
+      list-style: none;
+      padding-left: 20px;
+    }
+
+    .toc-lesson {
+      display: flex;
+      align-items: center;
+      padding: 6px 0;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .toc-lesson-number {
+      width: 24px;
+      height: 24px;
+      background: #f1f5f9;
+      color: #64748b;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 9pt;
+      margin-right: 10px;
+      flex-shrink: 0;
+    }
+
+    .toc-lesson-title {
+      font-size: 10pt;
+      color: #1e293b;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       SEPARADOR DE TEMA
+       ═══════════════════════════════════════════════════════════════ */
+    .tema-separator {
+      page-break-before: always;
+      padding: 60px 40px;
+      min-height: 50vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--lightColor) 0%, white 100%);
+    }
+
+    .tema-separator-label {
+      font-size: 10pt;
+      color: var(--primaryColor);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .tema-separator-title {
+      font-size: 32pt;
+      font-weight: 800;
+      color: var(--darkColor);
+      margin-bottom: 16px;
+    }
+
+    .tema-separator-divider {
+      width: 60px;
+      height: 4px;
+      background: var(--primaryColor);
+      border-radius: 2px;
+      margin-bottom: 16px;
+    }
+
+    .tema-separator-meta {
+      color: #64748b;
+      font-size: 11pt;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       LECCIONES
+       ═══════════════════════════════════════════════════════════════ */
+    .lesson {
+      page-break-before: always;
+    }
+
+    .lesson-intro {
+      background: var(--lightColor);
+      padding: 14px 18px;
+      border-radius: 10px;
+      margin-bottom: 16px;
+      border-left: 4px solid var(--primaryColor);
+      page-break-inside: avoid;
+      page-break-after: avoid;
+    }
+
+    .lesson-intro-meta {
+      font-size: 9pt;
+      color: var(--primaryColor);
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .lesson-intro-title {
+      font-size: 16pt;
+      font-weight: 700;
+      color: var(--darkColor);
+    }
+
+    .lesson-intro-title a { color: var(--darkColor); }
+
+    .lesson-content :global(h1) { display: none; }
+
+    .lesson-content :global(h2) {
+      font-size: 13pt;
+      font-weight: 600;
+      color: var(--primaryColor);
+      margin-top: 18px;
+      margin-bottom: 8px;
+      padding-bottom: 4px;
+      border-bottom: 2px solid var(--accentColor);
+    }
+
+    .lesson-content :global(h3) {
+      font-size: 11pt;
+      font-weight: 600;
+      color: #334155;
+      margin-top: 12px;
+      margin-bottom: 6px;
+    }
+
+    .lesson-content :global(p) {
+      margin-bottom: 8px;
+      text-align: justify;
+    }
+
+    .lesson-content :global(ul),
+    .lesson-content :global(ol) {
+      margin-left: 18px;
+      margin-bottom: 8px;
+    }
+
+    .lesson-content :global(li) { margin-bottom: 3px; }
+
+    .lesson-content :global(img) {
+      max-width: 100%;
+      max-height: 40vh;
+      width: auto;
+      height: auto;
+      margin: 10px auto;
+      display: block;
+      border-radius: 8px;
+      page-break-inside: avoid;
+      object-fit: contain;
+    }
+
+    .lesson-content :global(table) {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0;
+      font-size: 9pt;
+    }
+
+    .lesson-content :global(th),
+    .lesson-content :global(td) {
+      border: 1px solid #cbd5e1;
+      padding: 5px 8px;
+      text-align: left;
+    }
+
+    .lesson-content :global(th) {
+      background: var(--primaryColor);
+      color: white;
+      font-weight: 600;
+    }
+
+    .lesson-content :global(blockquote) {
+      background: var(--lightColor);
+      border-left: 3px solid var(--primaryColor);
+      padding: 8px 12px;
+      margin: 10px 0;
+      font-style: italic;
+    }
+
+    .lesson-content :global(code) {
+      background: #f1f5f9;
+      padding: 1px 4px;
+      border-radius: 3px;
+      font-size: 9pt;
+    }
+
+    .lesson-content :global(pre) {
+      background: #1e293b;
+      color: #e2e8f0;
+      padding: 10px 12px;
+      border-radius: 6px;
+      overflow-x: auto;
+      margin: 10px 0;
+      font-size: 8pt;
+    }
+
+    .lesson-content :global(pre code) {
+      background: none;
+      padding: 0;
+      color: inherit;
+    }
+
+    .lesson-content :global(hr) {
+      border: none;
+      border-top: 1px solid #e2e8f0;
+      margin: 16px 0;
+    }
+
+    .lesson-content :global(details),
+    .lesson-content :global(.interactive),
+    .lesson-content :global(button) {
+      display: none !important;
+    }
+
+    .lesson-content :global(.katex-display) {
+      margin: 10px 0;
+      overflow-x: auto;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       PÁGINA FINAL
+       ═══════════════════════════════════════════════════════════════ */
+    .final-page {
+      page-break-before: always;
+      padding: 40px;
+      min-height: calc(100vh - 80px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .final-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: var(--primaryColor);
+      margin-bottom: 8px;
+    }
+
+    .final-logo svg { width: 50px; height: 50px; fill: currentColor; }
+    .final-logo-text { font-size: 28pt; font-weight: 700; }
+
+    .final-tagline {
+      font-size: 11pt;
+      color: #64748b;
+      margin-bottom: 24px;
+    }
+
+    .final-social {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 20px;
+    }
+
+    .final-social-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #64748b;
+      font-size: 11pt;
+      text-decoration: none;
+    }
+
+    .final-social-link:hover { color: var(--primaryColor); }
+    .final-social-link svg { width: 20px; height: 20px; fill: currentColor; }
+
+    .final-url {
+      font-size: 14pt;
+      color: var(--primaryColor);
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <!-- ═══════════════════════════════════════════════════════════════
+       PORTADA
+       ═══════════════════════════════════════════════════════════════ -->
+  <div class="cover">
+    <div class="cover-header">
+      <div class="cover-logo">
+        <svg viewBox="0 0 50 50">
+          <g transform="translate(3, 5)">
+            <path d="M5 8 L5 38 Q22 35 22 20 L22 5 Q5 5 5 8" opacity="0.8"/>
+            <path d="M25 5 L25 20 Q25 35 42 38 L42 8 Q42 5 25 5"/>
+            <rect x="22" y="3" width="3" height="37" rx="1"/>
+            <line x1="9" y1="15" x2="18" y2="14" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <line x1="9" y1="22" x2="16" y2="21" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <line x1="29" y1="14" x2="38" y2="15" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <line x1="29" y1="21" x2="36" y2="22" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          </g>
+        </svg>
+        <span class="cover-logo-text">Ediprofe</span>
+      </div>
+      <div class="cover-materia">{materiaName}</div>
+    </div>
+
+    <div class="cover-main">
+      <div class="cover-label">Unidad Completa</div>
+      <h1 class="cover-title"><a href={unidadUrl} style="color: inherit; text-decoration: none;">{unidadName}</a></h1>
+      <div class="cover-divider"></div>
+      <div class="cover-meta">
+        <div class="cover-meta-item">📚 {totalTemas} temas</div>
+        <div class="cover-meta-item">📄 {totalLecciones} lecciones</div>
+        <div class="cover-meta-item">📘 Guía didáctica completa</div>
+      </div>
+    </div>
+
+    <div class="cover-footer">
+      <div class="cover-social">
+        <a href={SITE_CONFIG.url} class="cover-social-link">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+          {SITE_CONFIG.name.toLowerCase()}.com
+        </a>
+        <a href={SITE_CONFIG.social.youtube.url} class="cover-social-link">
+          <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          YouTube
+        </a>
+        <a href={SITE_CONFIG.social.tiktok.url} class="cover-social-link">
+          <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+          TikTok
+        </a>
+      </div>
+      <div class="cover-footer-bottom">
+        <span>Educación de calidad para todos</span>
+        <a href={unidadUrl} class="cover-url">Ver en la web &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       ÍNDICE GENERAL
+       ═══════════════════════════════════════════════════════════════ -->
+  <div class="toc">
+    <div class="toc-header">
+      <h2>📋 Contenido de la Unidad</h2>
+      <p class="subtitle">{totalTemas} temas &bull; {totalLecciones} lecciones</p>
+    </div>
+
+    {renderedTemas.map((tema, temaIndex) => (
+      <div class="toc-tema">
+        <div class="toc-tema-header">
+          <div class="toc-tema-number">Tema {temaIndex + 1}</div>
+          <div class="toc-tema-title">{tema.temaName}</div>
+        </div>
+        <ol class="toc-lessons">
+          {tema.renderedLessons.map(({ title }, lessonIndex) => (
+            <li class="toc-lesson">
+              <span class="toc-lesson-number">{lessonIndex + 1}</span>
+              <span class="toc-lesson-title">{title}</span>
+            </li>
+          ))}
+        </ol>
+      </div>
+    ))}
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       TEMAS Y LECCIONES
+       ═══════════════════════════════════════════════════════════════ -->
+  {renderedTemas.map((tema, temaIndex) => (
+    <>
+      <!-- Separador del tema -->
+      <div class="tema-separator">
+        <div class="tema-separator-label">Tema {temaIndex + 1} de {totalTemas}</div>
+        <h2 class="tema-separator-title">{tema.temaName}</h2>
+        <div class="tema-separator-divider"></div>
+        <div class="tema-separator-meta">{tema.renderedLessons.length} lecciones</div>
+      </div>
+
+      <!-- Lecciones del tema -->
+      {tema.renderedLessons.map(({ Content, title, lessonUrl }, lessonIndex) => (
+        <article class="lesson">
+          <div class="lesson-intro">
+            <div class="lesson-intro-meta">Tema {temaIndex + 1} &bull; Lección {lessonIndex + 1} de {tema.renderedLessons.length}</div>
+            <h2 class="lesson-intro-title">
+              <a href={lessonUrl}>{title}</a>
+            </h2>
+          </div>
+          <div class="lesson-content">
+            <Content />
+          </div>
+        </article>
+      ))}
+    </>
+  ))}
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       PÁGINA FINAL
+       ═══════════════════════════════════════════════════════════════ -->
+  <div class="final-page">
+    <div class="final-logo">
+      <svg viewBox="0 0 50 50">
+        <g transform="translate(3, 5)">
+          <path d="M5 8 L5 38 Q22 35 22 20 L22 5 Q5 5 5 8" opacity="0.8"/>
+          <path d="M25 5 L25 20 Q25 35 42 38 L42 8 Q42 5 25 5"/>
+          <rect x="22" y="3" width="3" height="37" rx="1"/>
+          <line x1="9" y1="15" x2="18" y2="14" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <line x1="9" y1="22" x2="16" y2="21" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <line x1="29" y1="14" x2="38" y2="15" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <line x1="29" y1="21" x2="36" y2="22" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        </g>
+      </svg>
+      <span class="final-logo-text">Ediprofe</span>
+    </div>
+    <div class="final-tagline">Educación de calidad para todos</div>
+
+    <div class="final-social">
+      <a href={SITE_CONFIG.url} class="final-social-link">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+        {SITE_CONFIG.name.toLowerCase()}.com
+      </a>
+      <a href={SITE_CONFIG.social.youtube.url} class="final-social-link">
+        <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        {SITE_CONFIG.social.youtube.handle}
+      </a>
+      <a href={SITE_CONFIG.social.tiktok.url} class="final-social-link">
+        <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+        {SITE_CONFIG.social.tiktok.handle}
+      </a>
+    </div>
+
+    <a href={SITE_CONFIG.url} class="final-url">{SITE_CONFIG.name.toLowerCase()}.com</a>
+  </div>
+</body>
+</html>
