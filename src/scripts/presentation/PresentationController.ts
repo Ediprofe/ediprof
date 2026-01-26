@@ -18,28 +18,29 @@ export class PresentationController {
   // Resize Observer
   private resizeObserver: ResizeObserver | null = null;
   private onExitCallback: (() => void) | undefined;
+  private canvas: HTMLCanvasElement;
 
   constructor(onExit?: () => void) {
      this.onExitCallback = onExit;
 
      // 1. Setup Canvas
-     const canvas = document.createElement('canvas');
-     canvas.id = 'presentation-canvas';
-     canvas.className = 'presentation-canvas';
-     document.body.appendChild(canvas);
+     this.canvas = document.createElement('canvas');
+     this.canvas.id = 'presentation-canvas';
+     this.canvas.className = 'presentation-canvas';
+     document.body.appendChild(this.canvas);
 
      // 2. Initialize Components
      this.strokeManager = new StrokeManager(() => this.requestRender());
      
      this.renderer = new CanvasRenderer(
-        canvas,
+        this.canvas,
         () => this.strokeManager.getStrokes(),
         () => this.strokeManager.selectionBox,
         () => this.strokeManager.isSelecting
      );
      
      this.inputHandler = new InputHandler(
-        canvas,
+        this.canvas,
         (p, mt) => this.handleStart(p, mt),
         (p, mt) => this.handleMove(p, mt),
         () => this.handleStop()
@@ -86,8 +87,7 @@ export class PresentationController {
       window.removeEventListener('resize', this.boundResize);
       window.removeEventListener('scroll', this.boundScroll);
       
-      const canvas = document.getElementById('presentation-canvas');
-      if (canvas) canvas.remove();
+      this.canvas.remove();
       
       this.onExitCallback?.();
   }
