@@ -12,6 +12,9 @@ export class WindowManager {
     onClose: () => void;
   };
 
+  // Referencia al dock para posicionamiento dinámico
+  private dockWrapper: HTMLElement | null = null;
+
   constructor(events: typeof WindowManager.prototype.events) {
     this.events = events;
   }
@@ -21,6 +24,7 @@ export class WindowManager {
     this.createDock();
     this.setupListeners();
     this.setupKeyboardShortcuts();
+    this.setupVisualViewport();
   }
 
   public destroy() {
@@ -34,6 +38,14 @@ export class WindowManager {
     if (styles) styles.remove();
 
     window.removeEventListener('keydown', this.boundHandleKey);
+
+    // Limpiar Visual Viewport listeners
+    if (window.visualViewport) {
+      window.visualViewport.removeEventListener('resize', this.boundUpdateDockPosition);
+      window.visualViewport.removeEventListener('scroll', this.boundUpdateDockPosition);
+    }
+
+    this.dockWrapper = null;
   }
 
   public setToolActive(tool: string) {
@@ -80,6 +92,49 @@ export class WindowManager {
     // Este método se mantiene por compatibilidad y posibles overrides futuros
   }
 
+  // ============================================
+  // VISUAL VIEWPORT - Posicionamiento dinámico con zoom
+  // ============================================
+
+  private boundUpdateDockPosition = () => this.updateDockPosition();
+
+  private setupVisualViewport() {
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener('resize', this.boundUpdateDockPosition);
+      window.visualViewport.addEventListener('scroll', this.boundUpdateDockPosition);
+    }
+    // Posición inicial
+    requestAnimationFrame(() => this.updateDockPosition());
+  }
+
+  private updateDockPosition() {
+    if (!this.dockWrapper) return;
+
+    const vv = window.visualViewport;
+    if (!vv) {
+      // Fallback para navegadores sin Visual Viewport API
+      this.dockWrapper.style.left = '0';
+      this.dockWrapper.style.top = `${window.innerHeight - 80}px`;
+      this.dockWrapper.style.width = `${window.innerWidth}px`;
+      this.dockWrapper.style.transform = 'none';
+      return;
+    }
+
+    const scale = 1 / vv.scale;
+
+    // Posicionar el wrapper para que cubra el ancho del viewport visual
+    // y esté en la parte inferior
+    const left = vv.offsetLeft;
+    const top = vv.offsetTop + vv.height - 80 * scale;
+    const width = vv.width;
+
+    this.dockWrapper.style.left = `${left}px`;
+    this.dockWrapper.style.top = `${top}px`;
+    this.dockWrapper.style.width = `${width}px`;
+    this.dockWrapper.style.transform = `scale(${scale})`;
+    this.dockWrapper.style.transformOrigin = 'center top';
+  }
+
   private createDock() {
     if (document.getElementById('presentation-dock')) return;
 
@@ -97,10 +152,10 @@ export class WindowManager {
     }).join('\n           ');
 
     // Dock Container
-    const dockWrapper = document.createElement('div');
-    dockWrapper.id = 'presentation-dock';
-    dockWrapper.className = 'presentation-dock-wrapper-bottom';
-    dockWrapper.innerHTML = `
+    this.dockWrapper = document.createElement('div');
+    this.dockWrapper.id = 'presentation-dock';
+    this.dockWrapper.className = 'presentation-dock-wrapper-bottom';
+    this.dockWrapper.innerHTML = `
         <div class="presentation-glass-dock">
         <div style="display:flex;gap:4px">
           <button id="pm-hand-btn" class="dock-btn tool-trigger active" title="Puntero (H)">
@@ -152,7 +207,7 @@ export class WindowManager {
          </div>
         </div>
       `;
-    document.body.appendChild(dockWrapper);
+    document.body.appendChild(this.dockWrapper);
   }
 
   private setupListeners() {
