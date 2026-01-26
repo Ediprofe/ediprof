@@ -58,16 +58,6 @@ export class StrokeManager {
      }
   }
 
-  // Called periodically to cleanup "dead" strokes if we implemented fading logic inside StrokeManager
-  // But currently fading is visual-only based on timestamp in Renderer.
-  // Unless we want to physically remove old laser strokes? 
-  // The original code did: checks duration and removes.
-  public cleanupOldStrokes(maxAge: number, lastActivityTime: number) {
-      // In original code:
-      // if (timeSinceLastActivity > duration) this.strokes = this.strokes.filter(s => s.isPermanent);
-      // We can replicate that logic in the Controller loop.
-  }
-  
   public computeSelection(box: { x: number, y: number, w: number, h: number }) {
       const rx = Math.min(box.x, box.x + box.w);
       const ry = Math.min(box.y, box.y + box.h);

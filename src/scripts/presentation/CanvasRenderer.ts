@@ -1,17 +1,17 @@
 import type { LaserPoint, LaserStroke } from './types';
+import { TIMING, UI_COLORS, SIZES } from './config';
 
 export class CanvasRenderer {
   private canvas: HTMLCanvasElement;
   private ctx: CanvasRenderingContext2D;
   private rafId: number | null = null;
   private isSystemRunning = false;
-  
+
   // Dependencies overridden by controller
   private getStrokes: () => LaserStroke[];
-  private getSelectionBox: () => { x: number, y: number, w: number, h: number } | null;
+  private getSelectionBox: () => { x: number; y: number; w: number; h: number } | null;
   private isSelecting: () => boolean;
-  
-  private duration = 3000; // time for laser fading
+
   private lastGlobalActivityTime = 0;
 
   constructor(
@@ -95,7 +95,7 @@ export class CanvasRenderer {
     // For now, we trust the timestamp provided by controller updates.
     // A simpler approach: Fade based on "now - lastGlobalActivityTime" passed in.
     const idleTime = now - this.lastGlobalActivityTime;
-    const globalAlpha = Math.max(0, 1 - idleTime / this.duration);
+    const globalAlpha = Math.max(0, 1 - idleTime / TIMING.laserFadeDuration);
 
     if (strokes.length > 0) {
       strokes.forEach((stroke) => {

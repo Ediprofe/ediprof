@@ -2,6 +2,7 @@ import { StrokeManager } from './StrokeManager';
 import { CanvasRenderer } from './CanvasRenderer';
 import { InputHandler } from './InputHandler';
 import { WindowManager } from './WindowManager';
+import { TOOL_COLORS, UI_COLORS } from './config';
 import type { LaserPoint, ToolMode, LaserStroke } from './types';
 
 export class PresentationController {
@@ -9,9 +10,9 @@ export class PresentationController {
   private renderer: CanvasRenderer;
   private inputHandler: InputHandler;
   private windowManager: WindowManager;
-  
+
   private currentTool: ToolMode = 'hand';
-  private currentColor: string = '#EF4444';
+  private currentColor: string = TOOL_COLORS.red;
   private systemRunning = false;
   private currentStroke: LaserStroke | null = null;
   
@@ -146,7 +147,7 @@ export class PresentationController {
           points: [p],
           isDead: false,
           isPermanent: this.currentTool !== 'laser',
-          color: this.currentTool === 'laser' ? '#FF0055' : this.currentColor,
+          color: this.currentTool === 'laser' ? UI_COLORS.laser : this.currentColor,
           type: this.currentTool,
           isSelected: false
       };
