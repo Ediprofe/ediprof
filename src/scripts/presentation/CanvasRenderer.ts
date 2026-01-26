@@ -121,8 +121,8 @@ export class CanvasRenderer {
              if (stroke.isSelected) this.renderArrow(stroke.points[0], stroke.points[1], 'rgba(59, 130, 246, 0.5)', 20 * s);
             this.renderArrow(stroke.points[0], stroke.points[1], colorStr, 8 * s);
           } else if (stroke.type === 'rect') {
-             if (stroke.isSelected) this.renderRect(stroke.points[0], stroke.points[1], 'rgba(59, 130, 246, 0.5)', 12 * s);
-            this.renderRect(stroke.points[0], stroke.points[1], colorStr, 4 * s);
+             if (stroke.isSelected) this.renderRect(stroke.points[0], stroke.points[1], 'rgba(59, 130, 246, 0.5)', 20 * s);
+            this.renderRect(stroke.points[0], stroke.points[1], colorStr, 8 * s);
           } else if (stroke.type === 'highlighter') {
             this.renderStroke(stroke.points, colorStr, 24 * s, 0, 'source-over');
           } else {
@@ -179,48 +179,86 @@ export class CanvasRenderer {
   }
 
   private renderArrow(from: LaserPoint, to: LaserPoint, color: string, width: number) {
-    const headlen = Math.max(width * 3.5, 25);
+    const headlen = Math.max(width * 2.5, 20);
     const angle = Math.atan2(to.y - from.y, to.x - from.x);
 
+    // Función auxiliar para dibujar la geometría de la flecha
+    // Separamos shaft (línea) y head (triángulo) para controlar mejor el estilo
+    const drawGeometry = (lineWidth: number, isFill = false) => {
+        this.ctx.lineWidth = lineWidth;
+        
+        // Shaft
+        this.ctx.beginPath();
+        this.ctx.moveTo(from.x, from.y);
+        this.ctx.lineTo(to.x, to.y);
+        this.ctx.stroke();
+
+        // Head
+        this.ctx.beginPath();
+        this.ctx.moveTo(to.x, to.y);
+        this.ctx.lineTo(to.x - headlen * Math.cos(angle - Math.PI / 6), to.y - headlen * Math.sin(angle - Math.PI / 6));
+        this.ctx.lineTo(to.x - headlen * Math.cos(angle + Math.PI / 6), to.y - headlen * Math.sin(angle + Math.PI / 6));
+        this.ctx.closePath();
+        if (isFill) {
+            this.ctx.fill();
+        } else {
+            this.ctx.stroke();
+        }
+    };
+
     this.ctx.globalCompositeOperation = 'source-over';
-    this.ctx.shadowBlur = width;
-    this.ctx.shadowColor = color;
-
-    // Shaft
-    this.ctx.beginPath();
-    this.ctx.strokeStyle = color;
-    this.ctx.lineWidth = width;
     this.ctx.lineCap = 'round';
-    this.ctx.moveTo(from.x, from.y);
-    this.ctx.lineTo(to.x, to.y);
-    this.ctx.stroke();
+    this.ctx.lineJoin = 'round';
 
-    // Head (Filled)
-    this.ctx.beginPath();
+    // 1. CAPA DE RESPLANDOR (Glow)
+    // Crea el efecto de luz difusa alrededor
+    this.ctx.shadowBlur = 15;
+    this.ctx.shadowColor = color;
+    this.ctx.strokeStyle = color;
     this.ctx.fillStyle = color;
-    this.ctx.moveTo(to.x, to.y);
-    this.ctx.lineTo(to.x - headlen * Math.cos(angle - Math.PI / 6), to.y - headlen * Math.sin(angle - Math.PI / 6));
-    this.ctx.lineTo(to.x - headlen * Math.cos(angle + Math.PI / 6), to.y - headlen * Math.sin(angle + Math.PI / 6));
-    this.ctx.closePath();
-    this.ctx.fill();
+    // Dibujamos un poco más grueso para el halo
+    drawGeometry(width + 4, true);
 
-    this.ctx.shadowBlur = 0;
+    // 2. CAPA DE NÚCLEO (Color Sólido)
+    // Define la forma nítida
+    this.ctx.shadowBlur = 0; // Reset shadow
+    this.ctx.strokeStyle = color;
+    this.ctx.fillStyle = color;
+    drawGeometry(width, true);
+
+    // 3. CAPA DE BRILLO (Highlight)
+    // Línea central blanca semitransparente para dar efecto de "tubo de neón" o energía
+    this.ctx.strokeStyle = 'rgba(255, 255, 255, 0.5)';
+    this.ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+    drawGeometry(width * 0.3, true);
   }
 
   private renderRect(from: LaserPoint, to: LaserPoint, color: string, width: number) {
-    this.ctx.globalCompositeOperation = 'source-over';
-    this.ctx.beginPath();
-    this.ctx.strokeStyle = color;
-    this.ctx.lineWidth = width;
-    this.ctx.lineCap = 'round';
-    this.ctx.lineJoin = 'round';
-    this.ctx.shadowBlur = 0;
-
     const x = Math.min(from.x, to.x);
     const y = Math.min(from.y, to.y);
     const w = Math.abs(to.x - from.x);
     const h = Math.abs(to.y - from.y);
 
+    this.ctx.globalCompositeOperation = 'source-over';
+    this.ctx.lineCap = 'round';
+    this.ctx.lineJoin = 'round';
+
+    // 1. CAPA DE RESPLANDOR (Glow)
+    this.ctx.shadowBlur = 15;
+    this.ctx.shadowColor = color;
+    this.ctx.strokeStyle = color;
+    this.ctx.lineWidth = width + 4;
+    this.ctx.strokeRect(x, y, w, h);
+
+    // 2. CAPA DE NÚCLEO (Color Sólido)
+    this.ctx.shadowBlur = 0;
+    this.ctx.strokeStyle = color;
+    this.ctx.lineWidth = width;
+    this.ctx.strokeRect(x, y, w, h);
+
+    // 3. CAPA DE BRILLO (Highlight)
+    this.ctx.strokeStyle = 'rgba(255, 255, 255, 0.5)';
+    this.ctx.lineWidth = width * 0.3;
     this.ctx.strokeRect(x, y, w, h);
   }
 }
