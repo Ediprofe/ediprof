@@ -71,9 +71,21 @@ export class InputHandler {
       }
       
       const isMultiTouch = 'touches' in e && e.touches.length > 1;
+      
+      // Check for Apple Pencil (Stylus)
+      let isStylus = false;
+      if ('touches' in e && e.touches.length > 0) {
+        const t = e.touches[0] as any; // Cast to any to access touchType
+        if (t.touchType === 'stylus') isStylus = true;
+      }
 
       if (!this.isInputActive || this.isBlockedByGesture) return;
-      if (isMultiTouch) {
+      
+      // Allow multi-touch ONLY if it's not a stylus (stylus is precise)
+      // or if we have strict multi-touch logic. 
+      // Actually, if stylus is present, we should probably ignore "palm" touches?
+      // simple logic: if stylus, trust it.
+      if (isMultiTouch && !isStylus) {
           this.isBlockedByGesture = true;
           this.onStop();
           return;
@@ -90,8 +102,17 @@ export class InputHandler {
   private boundMove = (e: MouseEvent | TouchEvent) => {
       const isMultiTouch = 'touches' in e && e.touches.length > 1;
 
+      // Check for Apple Pencil or Stylus
+      let isStylus = false;
+      if ('touches' in e && e.touches.length > 0) {
+        const t = e.touches[0] as any;
+        if (t.touchType === 'stylus' || t.touchType === 'direct') { 
+            if (t.touchType === 'stylus') isStylus = true;
+        }
+      }
+
       if (!this.isInputActive || this.isBlockedByGesture) return;
-      if (isMultiTouch) {
+      if (isMultiTouch && !isStylus) {
           this.onStop();
           return;
       }
@@ -104,7 +125,7 @@ export class InputHandler {
       if ('touches' in e || (e as MouseEvent).buttons === 1) {
           // Only send move if touching or mouse down
            const pos = this.getPos(e);
-           this.onMove(pos, isMultiTouch);
+           this.onMove(pos, isMultiTouch && !isStylus);
       }
   };
 
