@@ -12,6 +12,7 @@ export class WindowManager {
 
   constructor(events: typeof WindowManager.prototype.events) {
     this.events = events;
+    // WindowManager updated for Bottom Dock Positioning
   }
 
   public init() {
@@ -28,7 +29,7 @@ export class WindowManager {
       const board = document.getElementById('presentation-board');
       if (board) board.remove();
       
-      const styles = document.getElementById('presentation-mode-styles');
+      const styles = document.getElementById('presentation-mode-styles-v3');
       if (styles) styles.remove();
       
       window.removeEventListener('keydown', this.boundHandleKey);
@@ -74,10 +75,10 @@ export class WindowManager {
   }
 
   private injectStyles() {
-     let style = document.getElementById('presentation-mode-styles');
+     let style = document.getElementById('presentation-mode-styles-v3');
      if (!style) {
        style = document.createElement('style');
-       style.id = 'presentation-mode-styles';
+       style.id = 'presentation-mode-styles-v3';
        document.head.appendChild(style);
      }
      
@@ -103,10 +104,15 @@ export class WindowManager {
          background-image: linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px);
          background-size: 40px 40px;
        }
-       .presentation-dock-wrapper {
-         position: fixed; top: 12px; left: 50%; transform: translateX(-50%); 
+       .presentation-dock-wrapper-bottom {
+         position: fixed; 
+         bottom: 24px; 
+         top: auto; 
+         left: 50%; 
+         transform: translateX(-50%); 
          display: flex; justify-content: center; width: auto;
-         z-index: 999999999; pointer-events: none;
+         z-index: 2147483647; /* Standard max z-index */
+         pointer-events: none;
        }
        .presentation-glass-dock {
          background: rgba(15, 23, 42, 0.9); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
@@ -148,7 +154,7 @@ export class WindowManager {
 
        /* Mobile Logic: Smaller scale and hide complex tools if needed */
        @media (max-width: 640px) {
-         .presentation-glass-dock { transform: scale(0.9); transform-origin: top center; }
+         .presentation-glass-dock { transform: scale(0.9); transform-origin: bottom center; }
          #pm-arrow-btn, #pm-rect-btn { display: none; }
        }
      `;
@@ -166,7 +172,7 @@ export class WindowManager {
       // Dock Container
       const dockWrapper = document.createElement('div');
       dockWrapper.id = 'presentation-dock';
-      dockWrapper.className = 'presentation-dock-wrapper';
+      dockWrapper.className = 'presentation-dock-wrapper-bottom';
       dockWrapper.innerHTML = `
         <div class="presentation-glass-dock">
         <div style="display:flex;gap:4px">
