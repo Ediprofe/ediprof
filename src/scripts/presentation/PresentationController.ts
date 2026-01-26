@@ -17,8 +17,11 @@ export class PresentationController {
   
   // Resize Observer
   private resizeObserver: ResizeObserver | null = null;
+  private onExitCallback: (() => void) | undefined;
 
-  constructor() {
+  constructor(onExit?: () => void) {
+     this.onExitCallback = onExit;
+
      // 1. Setup Canvas
      const canvas = document.createElement('canvas');
      canvas.id = 'presentation-canvas';
@@ -85,6 +88,8 @@ export class PresentationController {
       
       const canvas = document.getElementById('presentation-canvas');
       if (canvas) canvas.remove();
+      
+      this.onExitCallback?.();
   }
   
   private boundResize = () => this.renderer.resize();
@@ -147,7 +152,10 @@ export class PresentationController {
       };
       
       this.strokeManager.addStroke(this.currentStroke);
-      this.renderer.setLastActivityTime(Date.now());
+      
+      if (this.currentTool === 'laser') {
+        this.renderer.setLastActivityTime(Date.now());
+      }
   }
   
   private handleMove(p: LaserPoint, isMultiTouch: boolean) {
@@ -167,7 +175,10 @@ export class PresentationController {
               // Lines add points
               this.currentStroke.points.push(p);
           }
-           this.renderer.setLastActivityTime(Date.now());
+          
+          if (this.currentTool === 'laser') {
+              this.renderer.setLastActivityTime(Date.now());
+          }
       }
   }
   
@@ -194,7 +205,10 @@ export class PresentationController {
            this.currentStroke.maxY = maxY;
            
            this.currentStroke = null;
-           this.renderer.setLastActivityTime(Date.now());
+           
+           if (this.currentTool === 'laser') {
+              this.renderer.setLastActivityTime(Date.now());
+           }
       }
   }
 }

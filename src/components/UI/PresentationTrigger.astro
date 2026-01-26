@@ -41,7 +41,9 @@
 
   const initPresentationMode = () => {
     if (!controller) {
-      controller = new PresentationController();
+      controller = new PresentationController(() => {
+        controller = null;
+      });
     }
   };
 
