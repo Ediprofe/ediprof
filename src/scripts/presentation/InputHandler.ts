@@ -51,7 +51,8 @@ export class InputHandler {
     this.isInputActive = active;
     // CRITICAL: Prevent scrolling/zooming only when drawing
     this.canvas.style.pointerEvents = active ? 'auto' : 'none';
-    this.canvas.style.touchAction = active ? 'none' : 'auto';
+    // Allow panning with finger (scrolling) even when active, unless we intercept it in handlers
+    this.canvas.style.touchAction = active ? 'pan-x pan-y' : 'auto';
   }
 
   private getPos(e: MouseEvent | TouchEvent): LaserPoint {
@@ -74,23 +75,43 @@ export class InputHandler {
       
       // Check for Apple Pencil (Stylus)
       let isStylus = false;
+      let touchType = 'direct';
+      
       if ('touches' in e && e.touches.length > 0) {
         const t = e.touches[0] as any; // Cast to any to access touchType
-        if (t.touchType === 'stylus') isStylus = true;
+        if (t.touchType) {
+            touchType = t.touchType;
+            if (t.touchType === 'stylus') isStylus = true;
+        }
       }
 
       if (!this.isInputActive || this.isBlockedByGesture) return;
       
-      // Allow multi-touch ONLY if it's not a stylus (stylus is precise)
-      // or if we have strict multi-touch logic. 
-      // Actually, if stylus is present, we should probably ignore "palm" touches?
-      // simple logic: if stylus, trust it.
+      // LOGIC: Finger should SCROLL, Stylus should DRAW
+      // If we are in a drawing mode (InputActive=true), we want to ignore finger touches
+      // so the browser handles them (scrolling).
+      // Exception: If the user explicitly wants to draw with finger?
+      // For now, let's enforce: Stylus = Draw, Finger = Scroll (if supported)
+      // If touchType is not supported (desktop/some android), we assume everything is a draw intention
+      // unless it is multitouch.
+      
+      const supportsTouchType = 'touches' in e && e.touches.length > 0 && 'touchType' in (e.touches[0] as any);
+      
+      if (supportsTouchType && !isStylus) {
+          // It is a finger (direct) on a device that distinguishes them.
+          // Let it scroll. DO NOT capture.
+            return;
+      }
+
+      // If it is Multitouch and not stylus, we already return above? 
+      // strict multi-touch logic handles pinch-zoom
       if (isMultiTouch && !isStylus) {
           this.isBlockedByGesture = true;
           this.onStop();
           return;
       }
 
+      // Capture for drawing
       if ('touches' in e && e.cancelable) {
           e.preventDefault(); 
       }
@@ -106,12 +127,18 @@ export class InputHandler {
       let isStylus = false;
       if ('touches' in e && e.touches.length > 0) {
         const t = e.touches[0] as any;
-        if (t.touchType === 'stylus' || t.touchType === 'direct') { 
-            if (t.touchType === 'stylus') isStylus = true;
-        }
+        if (t.touchType === 'stylus') isStylus = true;
       }
+      
+      const supportsTouchType = 'touches' in e && e.touches.length > 0 && 'touchType' in (e.touches[0] as any);
 
       if (!this.isInputActive || this.isBlockedByGesture) return;
+      
+      // LOGIC: Finger should SCROLL, Stylus should DRAW
+      if (supportsTouchType && !isStylus) {
+          return; // Allow scroll
+      }
+
       if (isMultiTouch && !isStylus) {
           this.onStop();
           return;

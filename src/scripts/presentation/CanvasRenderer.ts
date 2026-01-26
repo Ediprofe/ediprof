@@ -118,8 +118,8 @@ export class CanvasRenderer {
           const colorStr = `rgba(${rgb}, ${alpha})`;
 
           if (stroke.type === 'arrow') {
-             if (stroke.isSelected) this.renderArrow(stroke.points[0], stroke.points[1], 'rgba(59, 130, 246, 0.5)', 12 * s);
-            this.renderArrow(stroke.points[0], stroke.points[1], colorStr, 4 * s);
+             if (stroke.isSelected) this.renderArrow(stroke.points[0], stroke.points[1], 'rgba(59, 130, 246, 0.5)', 20 * s);
+            this.renderArrow(stroke.points[0], stroke.points[1], colorStr, 8 * s);
           } else if (stroke.type === 'rect') {
              if (stroke.isSelected) this.renderRect(stroke.points[0], stroke.points[1], 'rgba(59, 130, 246, 0.5)', 12 * s);
             this.renderRect(stroke.points[0], stroke.points[1], colorStr, 4 * s);
@@ -179,25 +179,32 @@ export class CanvasRenderer {
   }
 
   private renderArrow(from: LaserPoint, to: LaserPoint, color: string, width: number) {
-    const headlen = 15;
+    const headlen = Math.max(width * 3.5, 25);
     const angle = Math.atan2(to.y - from.y, to.x - from.x);
 
     this.ctx.globalCompositeOperation = 'source-over';
+    this.ctx.shadowBlur = width;
+    this.ctx.shadowColor = color;
+
+    // Shaft
     this.ctx.beginPath();
     this.ctx.strokeStyle = color;
     this.ctx.lineWidth = width;
     this.ctx.lineCap = 'round';
-    this.ctx.lineJoin = 'round';
-    this.ctx.shadowBlur = 0;
-
     this.ctx.moveTo(from.x, from.y);
     this.ctx.lineTo(to.x, to.y);
+    this.ctx.stroke();
+
+    // Head (Filled)
+    this.ctx.beginPath();
+    this.ctx.fillStyle = color;
     this.ctx.moveTo(to.x, to.y);
     this.ctx.lineTo(to.x - headlen * Math.cos(angle - Math.PI / 6), to.y - headlen * Math.sin(angle - Math.PI / 6));
-    this.ctx.moveTo(to.x, to.y);
     this.ctx.lineTo(to.x - headlen * Math.cos(angle + Math.PI / 6), to.y - headlen * Math.sin(angle + Math.PI / 6));
+    this.ctx.closePath();
+    this.ctx.fill();
 
-    this.ctx.stroke();
+    this.ctx.shadowBlur = 0;
   }
 
   private renderRect(from: LaserPoint, to: LaserPoint, color: string, width: number) {
