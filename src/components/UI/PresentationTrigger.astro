@@ -35,7 +35,15 @@
 </div>
 
 <script>
-  import { initPresentationMode } from "../../scripts/presentation-mode";
+  import { PresentationController } from "../../scripts/presentation/PresentationController";
+
+  let controller: PresentationController | null = null;
+
+  const initPresentationMode = () => {
+    if (!controller) {
+      controller = new PresentationController();
+    }
+  };
 
   // Logic to make the trigger button sticky during zoom (Visual Viewport)
   // We apply the positioning/scaling to the WRAPPER, so the button

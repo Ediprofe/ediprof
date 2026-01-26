@@ -224,31 +224,38 @@ const cleanBloque = cleanSegment(bloque);
 <script>
   // Script para manejar el botón de expandir y atajo de teclado
   const expandBtn = document.getElementById("sidebar-expand-btn");
-  const layoutContainer = document.querySelector(".lesson-container");
 
+  // Helper para alternar sidebar
   function toggleSidebarState() {
-    if (layoutContainer) {
-      layoutContainer.classList.toggle("sidebar-collapsed");
+    // Re-query container to ensure we have the live element
+    const container = document.querySelector(".lesson-container");
+    if (container) {
+      container.classList.toggle("sidebar-collapsed");
       setTimeout(() => window.dispatchEvent(new Event("resize")), 300);
     }
   }
 
   if (expandBtn) {
     expandBtn.addEventListener("click", () => {
-      if (layoutContainer) {
-        layoutContainer.classList.remove("sidebar-collapsed");
+      const container = document.querySelector(".lesson-container");
+      if (container) {
+        container.classList.remove("sidebar-collapsed");
         setTimeout(() => window.dispatchEvent(new Event("resize")), 300);
       }
     });
   }
 
   // Global Keyboard Shortcut: Cmd+B / Ctrl+B
-  document.addEventListener("keydown", (e) => {
-    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "b") {
-      e.preventDefault();
-      toggleSidebarState();
-    }
-  });
+  // Prevent duplicate listeners on navigation (Idempotency Check)
+  if (!window._sidebarShortcutInitialized) {
+    document.addEventListener("keydown", (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "b") {
+        e.preventDefault();
+        toggleSidebarState();
+      }
+    });
+    window._sidebarShortcutInitialized = true;
+  }
 </script>
 
 <style>
