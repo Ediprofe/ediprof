@@ -104,14 +104,15 @@ export class WindowManager {
          background-size: 40px 40px;
        }
        .presentation-dock-wrapper {
-         position: fixed; top: 0; left: 0; width: 100vw; display: flex; justify-content: center;
+         position: fixed; top: 12px; left: 50%; transform: translateX(-50%); 
+         display: flex; justify-content: center; width: auto;
          z-index: 999999999; pointer-events: none;
        }
        .presentation-glass-dock {
          background: rgba(15, 23, 42, 0.9); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
          border: 1px solid rgba(255, 255, 255, 0.1); padding: 8px 16px; border-radius: 24px;
          display: flex; align-items: center; gap: 10px; pointer-events: auto;
-         box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3); margin-top: 12px;
+         box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
        }
        /* Ensure elements inside don't break flex layout */
        .presentation-glass-dock > * {
@@ -138,9 +139,16 @@ export class WindowManager {
        .color-dot.active { border-color: white; transform: scale(1.25); box-shadow: 0 0 10px rgba(255,255,255,0.3); }
        .dock-divider { width: 1px; height: 24px; background: rgba(255,255,255,0.15); }
        
+       /* Tablet Logic: Scale slightly to avoid overlapping sidebars */
+       @media (max-width: 1024px) {
+          .dock-btn span { display: none; } /* Hide labels on tablet too */
+          .presentation-glass-dock { padding: 6px 12px; gap: 6px; }
+          .dock-btn { padding: 0 6px; }
+       }
+
+       /* Mobile Logic: Smaller scale and hide complex tools if needed */
        @media (max-width: 640px) {
-         .dock-btn span { display: none; }
-         .presentation-glass-dock { transform: scale(0.85); transform-origin: top center; margin-top: 8px; }
+         .presentation-glass-dock { transform: scale(0.9); transform-origin: top center; }
          #pm-arrow-btn, #pm-rect-btn { display: none; }
        }
      `;
