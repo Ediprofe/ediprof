@@ -1,0 +1,123 @@
+import ConceptMap from '../../../../components/Content/ConceptMap.astro';
+import MapSection from '../../../../components/Content/MapSection.astro';
+import MapItem from '../../../../components/Content/MapItem.astro';
+import MapPoint from '../../../../components/Content/MapPoint.astro';
+import MapStep from '../../../../components/Content/MapStep.astro';
+
+# **Resumen: La Materia**
+
+<ConceptMap title="La Materia">
+
+  <MapSection 
+    title="Introducción"
+    images={[
+      'https://cdn.ediprofe.com/img/quimica/kdov-que-es-la-quimica.webp',
+      'https://cdn.ediprofe.com/img/quimica/42vn-ramas-de-la-quimica.webp',
+      'https://cdn.ediprofe.com/img/quimica/zu9o-cambios-de-fase.png'
+    ]}
+  >
+    <MapItem label="La Química y sus Ramas:">
+      <MapPoint>Estudio de la composición y transformación de la materia.</MapPoint>
+    </MapItem>
+    <MapItem label="¿Qué es la Materia?">
+      <MapPoint>Todo lo que tiene **masa** y **volumen** (ocupa un lugar).</MapPoint>
+    </MapItem>
+    <MapItem label="Estados de Agregación:">
+      <MapPoint>Sólido (unido), Líquido (fluido), Gaseoso (libre) y Plasma (ionizado).</MapPoint>
+    </MapItem>
+    <MapItem label="Cambios por Calentamiento (Progresivos):">
+      <MapPoint>**Fusión:** Sólido <MapStep /> Líquido</MapPoint>
+      <MapPoint>**Vaporización:** Líquido <MapStep /> Gas</MapPoint>
+      <MapPoint>**Sublimación:** Directo de Sólido <MapStep /> Gas</MapPoint>
+    </MapItem>
+    <MapItem label="Cambios por Enfriamiento (Regresivos):">
+      <MapPoint>**Solidificación:** Líquido <MapStep /> Sólido</MapPoint>
+      <MapPoint>**Condensación:** Gas <MapStep /> Líquido</MapPoint>
+      <MapPoint>**Deposición:** Directo de Gas <MapStep /> Sólido</MapPoint>
+    </MapItem>
+  </MapSection>
+
+  <MapSection 
+    title="Propiedades de la Materia"
+    images={[
+      'https://cdn.ediprofe.com/img/quimica/sk2e-propiedades-intensivas-y-extensivas.webp',
+      'https://cdn.ediprofe.com/img/quimica/p9uq-resumen-conductividad.webp',
+      'https://cdn.ediprofe.com/img/quimica/2928-propiedades-cualitativas-y-cuantitativas.webp'
+    ]}
+  >
+    <MapItem label="Propiedades Extensivas:">
+      <MapPoint>Dependen de la cantidad (Masa, Volumen).</MapPoint>
+    </MapItem>
+    <MapItem label="Propiedades Intensivas:">
+      <MapPoint>NO dependen de la cantidad (Densidad, Temperatura, Conductividad).</MapPoint>
+    </MapItem>
+    <MapItem label="Cualitativas y Cuantitativas:">
+      <MapPoint>Cualitativas (sentidos) vs Cuantitativas (medibles).</MapPoint>
+    </MapItem>
+  </MapSection>
+
+  <MapSection 
+    title="Cambios"
+    images={[
+      'https://cdn.ediprofe.com/img/quimica/n0c3-cambio-fisico-y-quimico.webp',
+      'https://cdn.ediprofe.com/img/quimica/qws2-cambio-fisico-y-quimico.webp'
+    ]}
+  >
+    <MapItem label="Cambio Físico y Químico:">
+      <MapPoint>**Físico:** No altera la naturaleza de la sustancia (Ej: Cambios de estado, romper).</MapPoint>
+      <MapPoint>**Químico:** Altera la naturaleza, crea nuevas sustancias (Ej: Oxidación, combustión).</MapPoint>
+    </MapItem>
+  </MapSection>
+
+  <MapSection 
+    title="Clasificación"
+    images={[
+      'https://cdn.ediprofe.com/img/quimica/qwgf-sustancias-puras-y-mezclas.webp',
+      'https://cdn.ediprofe.com/img/quimica/s5uv-sustancias-puras-y-mezclas.webp'
+    ]}
+  >
+    <MapItem label="Sustancias Puras:">
+      <MapPoint>Elementos (un solo tipo de átomo) y Compuestos (átomos diferentes unidos).</MapPoint>
+    </MapItem>
+    <MapItem label="Mezclas:">
+      <MapPoint>Homogéneas (uniformes) y Heterogéneas (se ven sus componentes).</MapPoint>
+    </MapItem>
+  </MapSection>
+
+  <MapSection 
+    title="Separación de mezclas"
+    images={[
+      'https://cdn.ediprofe.com/img/quimica/tmqd-tamizado.webp',
+      'https://cdn.ediprofe.com/img/quimica/xheq-filtracion.webp',
+      'https://cdn.ediprofe.com/img/quimica/mvqw-decantacion.webp',
+      'https://cdn.ediprofe.com/img/quimica/nxyp-evaporacion.webp',
+      'https://cdn.ediprofe.com/img/quimica/snoz-destilacion.webp',
+      'https://cdn.ediprofe.com/img/quimica/c35j-cromatografia.webp'
+    ]}
+  >
+    <MapItem label="Tamizado:">
+      <MapPoint>Sólidos de diferente tamaño. Ej: Arena y piedras.</MapPoint>
+    </MapItem>
+    <MapItem label="Filtración:">
+      <MapPoint>Sólido insoluble en líquido. Ej: Café y granos.</MapPoint>
+    </MapItem>
+    <MapItem label="Decantación:">
+      <MapPoint>Líquidos con diferente densidad. Ej: Agua y aceite.</MapPoint>
+    </MapItem>
+    <MapItem label="Evaporación:">
+      <MapPoint>Sólido disuelto en líquido. Ej: Sal del mar.</MapPoint>
+    </MapItem>
+    <MapItem label="Destilación:">
+      <MapPoint>Líquidos con diferente punto de ebullición. Ej: Alcohol y agua.</MapPoint>
+    </MapItem>
+    <MapItem label="Cromatografía:">
+      <MapPoint>Afinidad por un solvente. Ej: Colores de la tinta.</MapPoint>
+    </MapItem>
+  </MapSection>
+
+</ConceptMap>
+
+---
+
+> **Tip de Repaso:** Este mapa conecta todos los conceptos de la unidad. Úsalo para repasar antes de una evaluación y asegúrate de entender cómo cada tema (desde la definición hasta los métodos de separación) forma parte del estudio de **La Materia**.
+
