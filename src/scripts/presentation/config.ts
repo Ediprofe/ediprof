@@ -82,6 +82,7 @@ export const KEYBOARD_SHORTCUTS = {
     's': 'select',
     'a': 'arrow',
     'r': 'rect',
+    't': 'text',
   },
   boards: {
     'b': 'black',

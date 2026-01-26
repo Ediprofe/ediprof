@@ -3,7 +3,7 @@ export interface LaserPoint {
   y: number;
 }
 
-export type ToolMode = 'laser' | 'pen' | 'arrow' | 'rect' | 'highlighter' | 'select' | 'hand';
+export type ToolMode = 'laser' | 'pen' | 'arrow' | 'rect' | 'highlighter' | 'select' | 'hand' | 'text';
 
 export interface LaserStroke {
   points: LaserPoint[];
@@ -11,6 +11,7 @@ export interface LaserStroke {
   isPermanent: boolean;
   color: string;
   type: ToolMode;
+  text?: string;
   isSelected?: boolean;
   // Bounding Box for optimization and selection
   minX?: number;

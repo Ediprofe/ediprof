@@ -97,7 +97,7 @@
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
 }
 
-.presentation-glass-dock > * {
+.presentation-glass-dock>* {
   flex-shrink: 0;
 }
 
@@ -156,12 +156,19 @@
   0% {
     box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
   }
+
   70% {
     box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
   }
+
   100% {
     box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
   }
+}
+
+#pm-text-btn.active {
+  background: #ec4899;
+  box-shadow: 0 4px 12px rgba(236, 72, 153, 0.3);
 }
 
 #pm-rect-btn.active {

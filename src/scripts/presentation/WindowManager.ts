@@ -58,6 +58,7 @@ export class WindowManager {
       pen: 'pm-pen-btn',
       arrow: 'pm-arrow-btn',
       rect: 'pm-rect-btn',
+      text: 'pm-text-btn',
       highlighter: 'pm-highlighter-btn',
     };
 
@@ -170,6 +171,9 @@ export class WindowManager {
            <button id="pm-rect-btn" class="dock-btn tool-trigger" title="Rect (R)">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"></rect></svg>
           </button>
+          <button id="pm-text-btn" class="dock-btn tool-trigger" title="Texto (T)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 7 4 4 20 4 20 7"></polyline><line x1="9" y1="20" x2="15" y2="20"></line><line x1="12" y1="4" x2="12" y2="20"></line></svg>
+          </button>
           <button id="pm-laser-btn" class="dock-btn tool-trigger" title="Láser (L)">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m13.4 2 3.5 3.5-3.5 3.5-3.5-3.5z"></path><path d="M7.4 15.6 2 21"></path><path d="m15.5 15.5 4-4"></path><path d="M14 17h5"></path><path d="M17 14v5"></path><path d="m7.4 9.4 6.2 6.2"></path></svg><span>Láser</span>
           </button>
@@ -217,6 +221,7 @@ export class WindowManager {
     document.getElementById('pm-pen-btn')?.addEventListener('click', () => this.events.onToolChange('pen'));
     document.getElementById('pm-arrow-btn')?.addEventListener('click', () => this.events.onToolChange('arrow'));
     document.getElementById('pm-rect-btn')?.addEventListener('click', () => this.events.onToolChange('rect'));
+    document.getElementById('pm-text-btn')?.addEventListener('click', () => this.events.onToolChange('text'));
     document.getElementById('pm-highlighter-btn')?.addEventListener('click', () => this.events.onToolChange('highlighter'));
 
     document.getElementById('pm-undo-btn')?.addEventListener('click', () => this.events.onUndo());

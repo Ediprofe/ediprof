@@ -107,7 +107,8 @@ export class CanvasRenderer {
             }
         }
 
-        if (stroke.points.length < 2) return;
+        // Text only requires 1 point
+        if (stroke.type !== 'text' && stroke.points.length < 2) return;
         
         // Permanent strokes don't fade, Laser fades
         const alpha = stroke.isPermanent ? (stroke.type === 'highlighter' ? 0.4 : 1.0) : globalAlpha;
@@ -125,6 +126,9 @@ export class CanvasRenderer {
             this.renderRect(stroke.points[0], stroke.points[1], colorStr, 8 * s);
           } else if (stroke.type === 'highlighter') {
             this.renderStroke(stroke.points, colorStr, 24 * s, 0, 'source-over');
+          } else if (stroke.type === 'text' && stroke.text) {
+             if (stroke.isSelected) this.renderText(stroke.points[0], stroke.text, 'rgba(59, 130, 246, 0.5)', 32 * s);
+             this.renderText(stroke.points[0], stroke.text, colorStr, 32 * s);
           } else {
             this.renderStroke(stroke.points, colorStr, 4 * s, 0, 'source-over');
           }
@@ -260,5 +264,29 @@ export class CanvasRenderer {
     this.ctx.strokeStyle = 'rgba(255, 255, 255, 0.5)';
     this.ctx.lineWidth = width * 0.3;
     this.ctx.strokeRect(x, y, w, h);
+  }
+
+  private renderText(pos: LaserPoint, text: string, color: string, size: number) {
+      this.ctx.globalCompositeOperation = 'source-over';
+      // Match the CSS font exactly: bold 32px "Space Grotesk"
+      this.ctx.font = `bold ${size}px "Space Grotesk", sans-serif`;
+      this.ctx.textAlign = 'left';
+      this.ctx.textBaseline = 'top'; 
+      
+      const lines = text.split('\n');
+      const lineHeight = size * 1.2;
+
+      // Visual match adjustment: CSS text-shadow 15px looks smaller than Canvas 15px.
+      // Also, Input was positioned at y - 20.
+      const startY = pos.y - 20;
+
+      lines.forEach((line, index) => {
+          const y = startY + (index * lineHeight);
+          
+          this.ctx.shadowBlur = 8; // Reduced from 15 to match visual weight
+          this.ctx.shadowColor = color;
+          this.ctx.fillStyle = color;
+          this.ctx.fillText(line, pos.x, y);
+      });
   }
 }

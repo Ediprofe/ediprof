@@ -130,6 +130,90 @@ export class PresentationController {
   /* ================= INPUT LOGIC ================= */
   
   private handleStart(p: LaserPoint, isMultiTouch: boolean) {
+      if (this.currentTool === 'text') {
+          // Use textarea for multi-line support
+          const input = document.createElement('textarea');
+          
+          input.style.position = 'absolute';
+          input.style.left = `${p.x}px`;
+          input.style.top = `${p.y - 20}px`;
+          input.style.background = 'transparent';
+          input.style.border = '1px dashed rgba(255,255,255,0.3)'; // Visual cue for editing area
+          input.style.outline = 'none';
+          input.style.color = this.currentColor;
+          input.style.font = 'bold 32px "Space Grotesk", sans-serif';
+          input.style.lineHeight = '1.2';
+          input.style.textShadow = `0 0 15px ${this.currentColor}`;
+          input.style.zIndex = '2147483647';
+          input.style.padding = '0';
+          input.style.margin = '0';
+          input.style.overflow = 'hidden';
+          input.style.resize = 'none';
+          input.style.whiteSpace = 'pre'; // Preserve whitespace
+
+          // Initial size
+          input.style.minWidth = '50px';
+          input.style.width = '20px'; // Start small to measure
+          input.style.height = '40px';
+          
+          document.body.appendChild(input);
+          
+          const resizeInput = () => {
+             input.style.width = '0px';
+             input.style.height = '0px';
+             
+             // +10 buffer to avoid scrollbars flickering
+             const newW = input.scrollWidth + 20;
+             const newH = input.scrollHeight;
+             
+             // Prevent expanding beyond viewport width to avoid horizontal scroll
+             const maxWidth = window.innerWidth - p.x - 20;
+             input.style.width = Math.min(newW, Math.max(maxWidth, 100)) + 'px';
+             input.style.height = newH + 'px';
+          };
+
+          const commitText = () => {
+              const text = input.value;
+              if (text && text.trim().length > 0) {
+                  const stroke: LaserStroke = {
+                      points: [{ x: p.x, y: p.y }],
+                      isDead: false,
+                      isPermanent: true,
+                      color: this.currentColor,
+                      type: 'text',
+                      text: text,
+                      isSelected: false
+                  };
+                  this.strokeManager.addStroke(stroke);
+                  this.renderer.setLastActivityTime(Date.now());
+              }
+              input.remove();
+          };
+
+          input.addEventListener('input', resizeInput);
+          
+          input.addEventListener('keydown', (e) => {
+              if (e.key === 'Enter' && !e.shiftKey) {
+                  e.preventDefault(); // Prevent default new line if committing
+                  commitText();
+              } else if (e.key === 'Escape') {
+                  input.remove();
+              }
+              // Shift+Enter allows new line naturally
+              // Auto-resize will handle height increase
+              requestAnimationFrame(resizeInput);
+          });
+
+          input.addEventListener('blur', commitText);
+          
+          requestAnimationFrame(() => {
+              input.focus();
+              resizeInput();
+          });
+          
+          return;
+      }
+
       if (this.currentTool === 'select') {
           this.strokeManager.isSelecting = true;
           this.strokeManager.selectionBox = { x: p.x, y: p.y, w: 0, h: 0 };
