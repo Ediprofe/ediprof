@@ -20,6 +20,8 @@ Durante un cambio de estado:
 - La **composición química** de la sustancia **NO cambia**
 - Solo cambia la **organización y movimiento** de las partículas
 
+![cambios-de-estado](https://cdn.ediprofe.com/img/quimica/2ub5-cambios-de-estado.webp)
+
 ---
 
 ## 📖 Fusión
@@ -31,6 +33,8 @@ El hielo se derrite a 0 °C y se convierte en agua líquida.
 
 ### 💡 ¿Qué ocurre?
 Las partículas ganan energía y vencen las fuerzas que las mantenían en posición fija.
+
+![fusion](https://cdn.ediprofe.com/img/quimica/t7rs-fusion.webp)
 
 ---
 
@@ -44,18 +48,65 @@ El agua se congela a 0 °C y se convierte en hielo.
 ### 💡 ¿Qué ocurre?
 Las partículas pierden energía y las fuerzas de atracción las fijan en posiciones ordenadas.
 
+![solidificacion](https://cdn.ediprofe.com/img/quimica/q2ln-solidificacion.webp)
+
+
 ---
 
 ## 📖 Vaporización
 
 > **Vaporización** = paso de **líquido → gas**
 
-Hay dos tipos:
-- **Evaporación**: ocurre lentamente en la superficie
-- **Ebullición**: ocurre rápidamente en todo el líquido (a temperatura de ebullición)
+Seguramente has notado que la ropa se seca sola al sol, pero el agua de una olla solo burbujea cuando el fuego está muy alto. ¿Por qué ocurre esto si en ambos casos el agua se vuelve vapor?
 
-### 💡 Ejemplo:
-El agua hierve a 100 °C y se convierte en vapor.
+Para entenderlo, debemos diferenciar las dos formas en que el líquido "escapa":
+
+### 1. Evaporación (El escape silencioso)
+Ocurre lentamente y **solo en la superficie** del líquido. No necesitas una temperatura fija; siempre hay partículas rápidas que logran saltar al aire.
+*   **Ejemplo:** Un charco secándose o el sudor en tu piel.
+
+### 2. Ebullición (El escape masivo)
+Ocurre rápidamente en **todo el volumen** del líquido. Aquí es donde vemos burbujas subiendo desde el fondo. Esto solo sucede cuando se alcanza una temperatura específica.
+*   **Ejemplo:** Agua hirviendo con furor para hacer pasta.
+
+![vaporizacion-y-ebullicion](https://cdn.ediprofe.com/img/quimica/pnvj-vaporizacion-y-ebullicion.webp)
+
+---
+
+### � **El "Empuje Invisible": La Presión de Vapor**
+
+¿Has notado que si dejas alcohol en tu mano desaparece casi al instante y se siente frío, mientras que el agua tarda mucho más? Eso es porque el alcohol tiene más "ganas" de escapar.
+
+1.  **Definición:** Las partículas de un líquido siempre están chocando y empujando hacia arriba para volverse gas. Ese empuje interno se llama **Presión de Vapor**.
+2.  **La "Tapa" de Aire:** Sobre el líquido hay aire (atmósfera) que empuja hacia abajo, intentando mantener a las partículas en su lugar.
+3.  **La Batalla por la Ebullición:**
+    *   **A baja temperatura:** El líquido empuja débilmente. Solo la superficie evapora.
+    *   **Al calentar:** La Presión de Vapor aumenta porque las partículas se mueven con más energía.
+    *   **Punto de Ebullición:** Es el momento exacto en que la **Presión de Vapor iguala a la Presión Atmosférica**. En ese instante, el aire ya no puede contener al líquido y se forman burbujas en todo su interior.
+
+![presion-de-vapor-vs-atmosferica](https://cdn.ediprofe.com/img/quimica/cuhy-presion-de-vapor-vs-atmosferica.webp)
+
+---
+
+### 🌡️ **Temperaturas de Ebullición Comunes**
+
+No todas las sustancias necesitan el mismo calor para ganar la batalla contra la atmósfera. Depende de qué tan fuerte se atraigan sus partículas entre sí:
+
+| Sustancia | Temperatura de Ebullición (a nivel del mar) |
+| :--- | :--- |
+| **Alcohol Etílico** | $78\,^\circ\mathrm{C}$ |
+| **Agua Pureza** | $100\,^\circ\mathrm{C}$ |
+| **Aceite de Cocina** | $ 290\,^\circ\mathrm{C}$ |
+| **Mercurio** | $357\,^\circ\mathrm{C}$ |
+
+![punto-de-ebullicion-y-fuerza-de-atraccion](https://cdn.ediprofe.com/img/quimica/913v-punto-de-ebullicion-y-fuerza-de-atraccion.webp)
+
+
+> **Dato curioso:** En ciudades altas como Bogotá o La Paz, como hay menos aire empujando hacia abajo (baja presión atmosférica), el agua hierve a menos de $100\,^\circ\mathrm{C}$. ¡Es más fácil escapar!
+
+![altura-y-presion-atmosferica](https://cdn.ediprofe.com/img/quimica/itfr-altura-y-presion-atmosferica.webp)
+
+![altura-y-punto-de-ebullicion](https://cdn.ediprofe.com/img/quimica/ph13-altura-y-punto-de-ebullicion.webp)
 
 ---
 
@@ -69,6 +120,8 @@ El vapor de agua en el aire se condensa en las ventanas frías.
 ### 💡 ¿Qué ocurre?
 Las partículas del gas pierden energía y se acercan lo suficiente para formar un líquido.
 
+![condensacion](https://cdn.ediprofe.com/img/quimica/ow5p-condensacion.webp)
+
 ---
 
 ## 📖 Sublimación
@@ -78,6 +131,8 @@ Las partículas del gas pierden energía y se acercan lo suficiente para formar 
 ### 💡 Ejemplo:
 - El hielo seco (CO₂ sólido) pasa directamente a gas
 - La naftalina (bolitas antipolillas) se sublima lentamente
+
+![sublimacion](https://cdn.ediprofe.com/img/quimica/ydtp-sublimacion.webp)
 
 ---
 
@@ -89,9 +144,13 @@ Las partículas del gas pierden energía y se acercan lo suficiente para formar 
 - La escarcha se forma cuando el vapor de agua del aire pasa directamente a hielo
 - Los cristales de nieve en las nubes
 
+![deposicion](https://cdn.ediprofe.com/img/quimica/7p2h-deposicion.webp)
+
 ---
 
 ## 📖 Diagrama de Cambios de Estado
+
+![cambios-de-estado-de-la-materia](https://cdn.ediprofe.com/img/quimica/fzeu-cambios-de-estado.webp)
 
 | Cambio | Desde | Hacia | Energía |
 |--------|-------|-------|---------|
@@ -168,15 +227,16 @@ c) **Endotérmico** (fusión: absorbe calor)
 
 ## 🔑 Resumen
 
-| Cambio | Proceso | Tipo |
-|--------|---------|------|
-| **Fusión** | Sólido → Líquido | Endotérmico |
-| **Solidificación** | Líquido → Sólido | Exotérmico |
-| **Vaporización** | Líquido → Gas | Endotérmico |
-| **Condensación** | Gas → Líquido | Exotérmico |
-| **Sublimación** | Sólido → Gas | Endotérmico |
-| **Deposición** | Gas → Sólido | Exotérmico |
+![resumen-cambios-de-estado](https://cdn.ediprofe.com/img/quimica/gckl-resumen-cambios-de-estado.webp)
 
-> Los cambios de estado son transformaciones físicas: la sustancia sigue siendo la misma, solo cambia su organización.
+| Concepto | Descripción Clave |
+| :--- | :--- |
+| **Procesos Endotérmicos** | Cambios que **absorben energía** (calor) para separar las partículas (Fusión, Vaporización, Sublimación). |
+| **Procesos Exotérmicos** | Cambios que **liberan energía** para que las partículas se unan (Solidificación, Condensación, Deposición). |
+| **Presión de Vapor** | La "fuerza de empuje" interna de un líquido para convertirse en gas. |
+| **Ebullición** | Ocurre cuando la **Presión de Vapor** iguala a la **Presión Atmosférica**. |
+| **Diferencia Crítica** | La evaporación ocurre a cualquier temperatura; la ebullición solo a una temperatura fija. |
+
+> **Recuerda:** Los cambios de estado son transformaciones físicas. No se crean nuevas sustancias, solo se reorganizan sus partículas según la energía que ganan o pierden.
 
 ---

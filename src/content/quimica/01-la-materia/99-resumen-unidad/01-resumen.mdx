@@ -12,8 +12,7 @@ import MapStep from '../../../../components/Content/MapStep.astro';
     title="Introducción"
     images={[
       'https://cdn.ediprofe.com/img/quimica/kdov-que-es-la-quimica.webp',
-      'https://cdn.ediprofe.com/img/quimica/42vn-ramas-de-la-quimica.webp',
-      'https://cdn.ediprofe.com/img/quimica/zu9o-cambios-de-fase.png'
+      'https://cdn.ediprofe.com/img/quimica/42vn-ramas-de-la-quimica.webp'
     ]}
   >
     <MapItem label="La Química y sus Ramas:">
@@ -22,18 +21,30 @@ import MapStep from '../../../../components/Content/MapStep.astro';
     <MapItem label="¿Qué es la Materia?">
       <MapPoint>Todo lo que tiene **masa** y **volumen** (ocupa un lugar).</MapPoint>
     </MapItem>
-    <MapItem label="Estados de Agregación:">
-      <MapPoint>Sólido (unido), Líquido (fluido), Gaseoso (libre) y Plasma (ionizado).</MapPoint>
+  </MapSection>
+
+  <MapSection 
+    title="Estados de la Materia"
+    images={[
+      'https://cdn.ediprofe.com/img/quimica/xoc3-resumen-estados-de-la-materia.webp',
+      'https://cdn.ediprofe.com/img/quimica/gckl-resumen-cambios-de-estado.webp',
+      'https://cdn.ediprofe.com/img/quimica/xjov-diagrama-de-fases-del-agua.webp'
+    ]}
+  >
+    <MapItem label="Estados de Agregación (Forma y Volumen):">
+      <MapPoint>**Sólido:** Forma y Volumen Fijos.</MapPoint>
+      <MapPoint>**Líquido:** Forma Variable, Volumen Fijo.</MapPoint>
+      <MapPoint>**Gaseoso:** Forma y Volumen Variables (Compresible).</MapPoint>
+      <MapPoint>**Plasma:** Gas ionizado conductor de electricidad.</MapPoint>
     </MapItem>
-    <MapItem label="Cambios por Calentamiento (Progresivos):">
-      <MapPoint>**Fusión:** Sólido <MapStep /> Líquido</MapPoint>
-      <MapPoint>**Vaporización:** Líquido <MapStep /> Gas</MapPoint>
-      <MapPoint>**Sublimación:** Directo de Sólido <MapStep /> Gas</MapPoint>
+    <MapItem label="Cambios de Estado (Energía):">
+      <MapPoint>**Endotérmicos (Absorben):** Fusión, Vaporización y Sublimación.</MapPoint>
+      <MapPoint>**Exotérmicos (Liberan):** Solidificación, Condensación y Deposición.</MapPoint>
+      <MapPoint>**Vaporización:** Evaporación (superficie) vs Ebullición (Presión Vapor = Presión Atm).</MapPoint>
     </MapItem>
-    <MapItem label="Cambios por Enfriamiento (Regresivos):">
-      <MapPoint>**Solidificación:** Líquido <MapStep /> Sólido</MapPoint>
-      <MapPoint>**Condensación:** Gas <MapStep /> Líquido</MapPoint>
-      <MapPoint>**Deposición:** Directo de Gas <MapStep /> Sólido</MapPoint>
+    <MapItem label="Diagramas de Fase (P vs T):">
+      <MapPoint>**Punto Triple:** Coexistencia de Sólido, Líquido y Gas.</MapPoint>
+      <MapPoint>**Punto Crítico:** No hay distinción entre líquido y gas (Fluido Supercrítico).</MapPoint>
     </MapItem>
   </MapSection>
 

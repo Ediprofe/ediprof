@@ -70,6 +70,8 @@ Para el agua, el punto crítico está a:
 - Temperatura: 374 °C
 - Presión: 218 atm
 
+![que-es-un-diagrama-de-fases](https://cdn.ediprofe.com/img/quimica/jv6x-que-es-un-diagrama-de-fases.webp)
+
 ---
 
 ## 📖 Cómo Leer el Diagrama
@@ -138,6 +140,9 @@ Porque a presión atmosférica normal (1 atm), el punto de fusión del CO₂ no 
 ---
 
 ## 🔑 Resumen
+
+![diagrama-de-fases-del-agua](https://cdn.ediprofe.com/img/quimica/xjov-diagrama-de-fases-del-agua.webp)
+
 
 | Concepto | Descripción |
 |----------|-------------|
