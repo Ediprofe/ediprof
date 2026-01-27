@@ -6,6 +6,9 @@
   --bg-secondary: #ffffff;
   --text-primary: #1e293b;
   --text-secondary: #64748b;
+  --color-border: #e2e8f0;
+  /* Slate 500 - High Contrast for Maps */
+  --color-map-line: #64748b;
   --sidebar-width: 280px;
 }
 
@@ -48,6 +51,9 @@ html.dark {
   --bg-secondary: #1e293b;
   --text-primary: #f1f5f9;
   --text-secondary: #cbd5e1;
+  --color-border: #334155;
+  --color-map-line: #475569;
+  /* Slate 600 */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -56,11 +62,23 @@ html.dark {
     --bg-secondary: #1e293b;
     --text-primary: #f1f5f9;
     --text-secondary: #cbd5e1;
+    --color-map-line: #475569;
   }
 }
 
 /* Print styles */
 @media print {
+
+  /* Forzar modo claro en impresión/exportación */
+  :root {
+    --bg-primary: #f8fafc !important;
+    --bg-secondary: #ffffff !important;
+    --text-primary: #1e293b !important;
+    --text-secondary: #64748b !important;
+    --color-border: #e2e8f0 !important;
+    --color-map-line: #94a3b8 !important;
+  }
+
   .video-container,
   nav,
   .sidebar,
@@ -69,11 +87,11 @@ html.dark {
   .mobile-menu-toggle {
     display: none !important;
   }
-  
+
   .lesson-container {
     grid-template-columns: 1fr !important;
   }
-  
+
   .content-article {
     box-shadow: none !important;
   }
@@ -142,7 +160,8 @@ a[href*="drive.google.com"] {
   text-decoration: none !important;
   color: #1e1b4b !important;
   font-weight: 600 !important;
-  font-size: 0 !important; /* Oculta el texto del link */
+  font-size: 0 !important;
+  /* Oculta el texto del link */
   transition: all 0.25s ease !important;
 }
 

@@ -77,8 +77,8 @@ const { title, images = [] } = Astro.props;
         left: -2rem;
         top: 0.7rem;
         width: 1.5rem;
-        height: 1.5px;
-        background: #cbd5e1;
+        height: 2px;
+        background: var(--color-map-line, #64748b);
     }
 
     .section-header {
@@ -91,7 +91,7 @@ const { title, images = [] } = Astro.props;
 
     .section-title {
         margin: 0;
-        color: #2563eb;
+        color: var(--color-primary);
         font-weight: 400;
         font-size: 1.1rem;
         letter-spacing: -0.01em;
@@ -103,10 +103,10 @@ const { title, images = [] } = Astro.props;
         align-items: center;
         gap: 6px;
         padding: 4px 10px;
-        background: #ffffff;
-        border: 1px solid #e2e8f0;
+        background: var(--bg-secondary);
+        border: 1px solid var(--color-border);
         border-radius: 6px;
-        color: #64748b;
+        color: var(--text-secondary);
         font-family: "Space Grotesk", sans-serif;
         font-size: 0.7rem;
         font-weight: 500;
@@ -116,15 +116,15 @@ const { title, images = [] } = Astro.props;
     }
 
     .toggle-illustrations-btn:hover {
-        background: #f8fafc;
-        color: #2563eb;
-        border-color: #cbd5e1;
+        background: var(--bg-primary);
+        color: var(--color-primary);
+        border-color: var(--color-border);
     }
 
     .toggle-illustrations-btn[aria-expanded="true"] {
-        background: #eff6ff;
-        color: #2563eb;
-        border-color: #bfdbfe;
+        background: rgba(37, 99, 235, 0.1);
+        color: var(--color-primary);
+        border-color: var(--color-primary);
     }
 
     /* Acordeón de Ilustraciones */
@@ -152,9 +152,9 @@ const { title, images = [] } = Astro.props;
         width: 100%;
         border-radius: 12px;
         overflow: hidden;
-        background: #fff;
+        background: var(--bg-secondary);
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-        border: 1px solid #e2e8f0;
+        border: 1px solid var(--color-border);
     }
 
     .illustration-item img {
@@ -167,8 +167,6 @@ const { title, images = [] } = Astro.props;
 
     /* Modo oscuro para ilustraciones */
     :global(html.dark) .illustration-item {
-        background: #1e293b;
-        border-color: #334155;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     }
 

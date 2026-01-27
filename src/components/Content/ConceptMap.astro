@@ -44,209 +44,237 @@ const { title } = Astro.props;
 
         <div class="map-root">
             <div class="root-label">{title}</div>
-            <div class="root-v-line">║</div>
+            <div class="root-v-line"></div>
         </div>
         <div class="map-branches">
             <slot />
         </div>
     </div>
-</div>
 
-<script>
-    import { toPng } from "html-to-image";
+    <script>
+        import { toPng } from "html-to-image";
 
-    function initMapSystem() {
-        const wrappers = document.querySelectorAll(".concept-map-wrapper");
+        function initMapSystem() {
+            const wrappers = document.querySelectorAll(".concept-map-wrapper");
 
-        wrappers.forEach((wrapper) => {
-            // Evitar inicialización duplicada
-            if (wrapper.hasAttribute('data-initialized')) return;
-            wrapper.setAttribute('data-initialized', 'true');
+            wrappers.forEach((wrapper) => {
+                // Evitar inicialización duplicada
+                if (wrapper.hasAttribute("data-initialized")) return;
+                wrapper.setAttribute("data-initialized", "true");
 
-            const title = wrapper.getAttribute("data-title") || "mapa-conceptual";
-            const downloadBtn = wrapper.querySelector(".download-map-btn");
+                const title =
+                    wrapper.getAttribute("data-title") || "mapa-conceptual";
+                const downloadBtn = wrapper.querySelector(".download-map-btn");
 
-            // Lógica de Acordeones
-            wrapper.querySelectorAll(".toggle-illustrations-btn").forEach((btn) => {
-                btn.addEventListener("click", () => {
-                    const section = btn.closest(".map-section");
-                    const accordion = section?.querySelector(
-                        ".illustrations-accordion",
-                    ) as HTMLElement;
-                    if (accordion) {
-                        const isHidden = accordion.hidden;
-                        accordion.hidden = !isHidden;
-                        btn.setAttribute(
-                            "aria-expanded",
-                            isHidden ? "true" : "false",
-                        );
-                    }
-                });
-            });
-
-            // Lógica de Descarga
-            if (downloadBtn) {
-                downloadBtn.addEventListener("click", async () => {
-                    const span = downloadBtn.querySelector("span");
-                    const mapContainer = wrapper.querySelector(
-                        ".concept-map-container",
-                    ) as HTMLElement;
-
-                    if (span) span.textContent = "Generando...";
-
-                    // Identificar qué acordeones están abiertos para restaurarlos luego
-                    const openAccordions = Array.from(
-                        mapContainer.querySelectorAll(
-                            ".illustrations-accordion:not([hidden])",
-                        ),
-                    ) as HTMLElement[];
-
-                    try {
-                        // CERRAR acordeones automáticamente
-                        openAccordions.forEach((acc) => (acc.hidden = true));
-
-                        // Ocultar botones extra visualmente
-                        mapContainer.classList.add("is-exporting");
-
-                        // Esperar a que el navegador recalcule el layout
-                        await new Promise((r) => setTimeout(r, 500));
-
-                        const dataUrl = await toPng(mapContainer, {
-                            backgroundColor: "#ffffff",
-                            pixelRatio: 2,
-                            filter: (node: HTMLElement) => {
-                                const classList = node.classList;
-                                if (!classList) return true;
-                                return (
-                                    !classList.contains("download-map-btn") &&
-                                    !classList.contains("toggle-illustrations-btn") &&
-                                    !classList.contains("illustrations-accordion")
+                // Lógica de Acordeones
+                wrapper
+                    .querySelectorAll(".toggle-illustrations-btn")
+                    .forEach((btn) => {
+                        btn.addEventListener("click", () => {
+                            const section = btn.closest(".map-section");
+                            const accordion = section?.querySelector(
+                                ".illustrations-accordion",
+                            ) as HTMLElement;
+                            if (accordion) {
+                                const isHidden = accordion.hidden;
+                                accordion.hidden = !isHidden;
+                                btn.setAttribute(
+                                    "aria-expanded",
+                                    isHidden ? "true" : "false",
                                 );
-                            },
+                            }
                         });
+                    });
 
-                        const link = document.createElement("a");
-                        link.download = `Ediprofe-${title.replace(/\s+/g, "-")}.png`;
-                        link.href = dataUrl;
-                        link.click();
-                    } catch (err) {
-                        console.error("Error al exportar mapa:", err);
-                        alert(
-                            "Hubo un problema técnico al crear la imagen. Intenta recargar la página.",
-                        );
-                    } finally {
-                        // RESTAURAR el estado original
-                        openAccordions.forEach((acc) => (acc.hidden = false));
-                        mapContainer.classList.remove("is-exporting");
-                        if (span) span.textContent = "Descargar";
-                    }
-                });
-            }
-        });
-    }
+                // Lógica de Descarga
+                if (downloadBtn) {
+                    downloadBtn.addEventListener("click", async () => {
+                        const span = downloadBtn.querySelector("span");
+                        const mapContainer = wrapper.querySelector(
+                            ".concept-map-container",
+                        ) as HTMLElement;
 
-    initMapSystem();
-    document.addEventListener("astro:page-load", initMapSystem);
-</script>
+                        if (span) span.textContent = "Generando...";
 
-<style>
-    @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+                        // Identificar qué acordeones están abiertos para restaurarlos luego
+                        const openAccordions = Array.from(
+                            mapContainer.querySelectorAll(
+                                ".illustrations-accordion:not([hidden])",
+                            ),
+                        ) as HTMLElement[];
 
-    .concept-map-wrapper {
-        position: relative;
-        margin: 3rem 0;
-    }
+                        try {
+                            // CERRAR acordeones automáticamente
+                            openAccordions.forEach(
+                                (acc) => (acc.hidden = true),
+                            );
 
-    .concept-map-container {
-        background-color: #ffffff;
-        border: 1px solid #e2e8f0;
-        border-radius: 16px;
-        padding: 1.5rem 2rem;
-        font-family: "Space Grotesk", sans-serif;
-        color: #334155;
-        position: relative;
-        overflow: hidden;
-    }
+                            // Ocultar botones extra visualmente
+                            mapContainer.classList.add("is-exporting");
+                            mapContainer.classList.add("force-light-mode"); // Forzar colores claros
 
-    .concept-map-container::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 4px;
-        height: 100%;
-        background: #2563eb;
-    }
+                            // Esperar a que el navegador recalcule el layout
+                            await new Promise((r) => setTimeout(r, 500));
 
-    .download-map-btn {
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        padding: 6px 12px;
-        background: #f8fafc;
-        border: 1px solid #e2e8f0;
-        border-radius: 8px;
-        color: #64748b;
-        font-family: inherit;
-        font-size: 0.75rem;
-        font-weight: 500;
-        cursor: pointer;
-        transition: all 0.2s ease;
-        z-index: 10;
-    }
+                            const dataUrl = await toPng(mapContainer, {
+                                backgroundColor: "#ffffff",
+                                pixelRatio: 2,
+                                filter: (node: HTMLElement) => {
+                                    const classList = node.classList;
+                                    if (!classList) return true;
+                                    return (
+                                        !classList.contains(
+                                            "download-map-btn",
+                                        ) &&
+                                        !classList.contains(
+                                            "toggle-illustrations-btn",
+                                        ) &&
+                                        !classList.contains(
+                                            "illustrations-accordion",
+                                        )
+                                    );
+                                },
+                            });
 
-    .download-map-btn:hover {
-        background: #f1f5f9;
-        color: #2563eb;
-        border-color: #cbd5e1;
-        transform: translateY(-1px);
-    }
+                            const link = document.createElement("a");
+                            link.download = `Ediprofe-${title.replace(/\s+/g, "-")}.png`;
+                            link.href = dataUrl;
+                            link.click();
+                        } catch (err) {
+                            console.error("Error al exportar mapa:", err);
+                            alert(
+                                "Hubo un problema técnico al crear la imagen. Intenta recargar la página.",
+                            );
+                        } finally {
+                            // RESTAURAR el estado original
+                            openAccordions.forEach(
+                                (acc) => (acc.hidden = false),
+                            );
+                            mapContainer.classList.remove("is-exporting");
+                            mapContainer.classList.remove("force-light-mode");
+                            if (span) span.textContent = "Descargar";
+                        }
+                    });
+                }
+            });
+        }
 
-    .download-map-btn.loading {
-        opacity: 0.7;
-        pointer-events: none;
-    }
+        initMapSystem();
+        document.addEventListener("astro:page-load", initMapSystem);
+    </script>
 
-    /* Ocultar elementos durante la exportación */
-    .concept-map-container.is-exporting .toggle-illustrations-btn,
-    .concept-map-container.is-exporting .download-map-btn {
-        display: none !important;
-    }
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
 
-    .concept-map-container.is-exporting,
-    .concept-map-container.is-exporting * {
-        transition: none !important;
-        animation: none !important;
-    }
+        .concept-map-wrapper {
+            position: relative;
+            margin: 3rem 0;
+        }
 
-    .map-root {
-        margin-bottom: 1rem;
-    }
+        .concept-map-container {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
+            font-family: "Space Grotesk", sans-serif;
+            color: var(--text-primary);
+            position: relative;
+            overflow: hidden;
+        }
 
-    .root-label {
-        font-weight: 400;
-        font-size: 1.3rem;
-        color: #0f172a;
-        letter-spacing: -0.02em;
-    }
+        .concept-map-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--color-primary);
+        }
 
-    .root-v-line {
-        color: #cbd5e1;
-        margin-left: 0.1rem;
-        font-size: 0.9rem;
-        margin-top: 0.2rem;
-    }
+        .download-map-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            background: var(--bg-primary);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            color: var(--text-secondary);
+            font-family: inherit;
+            font-size: 0.75rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 10;
+        }
 
-    .map-branches {
-        border-left: 1.5px solid #cbd5e1;
-        margin-left: 0.5rem;
-        padding-left: 2rem;
-        display: flex;
-        flex-direction: column;
-        gap: 1.2rem;
-        padding-top: 0.5rem;
-    }
-</style>
+        .download-map-btn:hover {
+            background: var(--bg-secondary);
+            color: var(--color-primary);
+            border-color: var(--color-primary);
+            transform: translateY(-1px);
+        }
+
+        .download-map-btn.loading {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        /* Ocultar elementos durante la exportación */
+        .concept-map-container.is-exporting .toggle-illustrations-btn,
+        .concept-map-container.is-exporting .download-map-btn {
+            display: none !important;
+        }
+
+        .concept-map-container.is-exporting,
+        .concept-map-container.is-exporting * {
+            transition: none !important;
+            animation: none !important;
+        }
+
+        .map-root {
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .root-label {
+            font-weight: 400;
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+        }
+
+        .root-v-line {
+            width: 2px;
+            height: 1.5rem;
+            background-color: var(--color-map-line, #64748b);
+            margin-left: 0.85rem; /* Matches map-branches border position */
+            margin-top: 0.3rem;
+        }
+
+        .map-branches {
+            border-left: 2px solid var(--color-map-line, #64748b);
+            margin-left: 0.85rem;
+            padding-left: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            padding-top: 0.5rem;
+            position: relative;
+        }
+
+        /* Forzar modo claro para la exportación */
+        :global(.force-light-mode) {
+            --bg-primary: #f8fafc !important;
+            --bg-secondary: #ffffff !important;
+            --text-primary: #1e293b !important;
+            --text-secondary: #64748b !important;
+            --color-border: #e2e8f0 !important;
+            --color-map-line: #94a3b8 !important;
+        }
+    </style>
+</div>
