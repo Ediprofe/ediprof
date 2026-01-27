@@ -7,6 +7,49 @@
    LESSON LAYOUT - DISEÑO PREMIUM
    ======================================== */
 
+/* ========================================
+   TEXT ZOOM / READING MODE (ROOT SCALING)
+   ======================================== */
+
+/* Zoom Grande (125%) - Escala TODO lo que usa rem */
+:global(html.text-zoom-lg) {
+  font-size: 125%;
+  /* 16px -> 20px base */
+}
+
+/* Zoom Gigante (150%) - Escala TODO lo que usa rem */
+:global(html.text-zoom-xl) {
+  font-size: 150%;
+  /* 16px -> 24px base */
+}
+
+/* Ajustes de layout para que el contenedor no se desborde con el zoom */
+@media (min-width: 1200px) {
+
+  :global(html.text-zoom-lg) .lesson-container,
+  :global(html.text-zoom-xl) .lesson-container {
+    /* Reducir sidebar para dar más espacio al contenido */
+    grid-template-columns: 240px 1fr;
+  }
+}
+
+/* Ocultar elementos menos relevantes en modo Zoom XL */
+:global(html.text-zoom-xl) .header-label,
+:global(html.text-zoom-xl) .header-desc,
+:global(html.text-zoom-xl) .crumb-sep {
+  opacity: 0.7;
+}
+
+/* Ajustes conectores visuales para texto muy grande */
+:global(html.text-zoom-xl) .map-branches {
+  gap: 2rem !important;
+}
+
+
+/* ========================================
+   LESSON LAYOUT - DISEÑO PREMIUM
+   ======================================== */
+
 .lesson-container {
   display: grid;
   grid-template-columns: 280px 1fr;

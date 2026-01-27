@@ -1,0 +1,149 @@
+---
+/**
+ * Botón para alternar el tamaño del texto (Zoom)
+ * Ciclos: Normal -> Grande (125%) -> Gigante (150%) -> Normal
+ */
+---
+
+<button
+    class="text-zoom-btn js-text-zoom-toggle"
+    aria-label="Cambiar tamaño de texto"
+    title="Cambiar tamaño de texto"
+>
+    <span class="zoom-icon">aA</span>
+    <span class="zoom-level js-zoom-level-indicator"></span>
+</button>
+
+<script>
+    // Selección de todas las instancias del botón
+    const buttons = document.querySelectorAll(".js-text-zoom-toggle");
+
+    // Niveles de zoom disponibles
+    const ZOOM_LEVELS = ["normal", "lg", "xl"];
+
+    // Obtener nivel actual desde html
+    const getCurrentLevel = () => {
+        if (document.documentElement.classList.contains("text-zoom-xl"))
+            return "xl";
+        if (document.documentElement.classList.contains("text-zoom-lg"))
+            return "lg";
+        return "normal";
+    };
+
+    // Actualizar UI de TODOS los botones
+    const updateUI = (level: string) => {
+        buttons.forEach((btn) => {
+            const indicator = btn.querySelector(".js-zoom-level-indicator");
+            if (!indicator) return;
+
+            // Resetear clases activas
+            btn.classList.remove("active-lg", "active-xl");
+
+            if (level === "lg") {
+                indicator.textContent = "L";
+                btn.classList.add("active-lg");
+            } else if (level === "xl") {
+                indicator.textContent = "XL";
+                btn.classList.add("active-xl");
+            } else {
+                indicator.textContent = "";
+            }
+        });
+    };
+
+    // Inicializar estado desde localStorage o html actual
+    const storedLevel = localStorage.getItem("ediprofe-text-zoom") || "normal";
+
+    // Aplicar estado inicial
+    if (storedLevel !== "normal") {
+        document.documentElement.classList.add(`text-zoom-${storedLevel}`);
+        updateUI(storedLevel);
+    }
+
+    // Agregamos listeners a cada botón
+    buttons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            const current = getCurrentLevel();
+            let next = "normal";
+
+            // Ciclo: normal -> lg -> xl -> normal
+            if (current === "normal") next = "lg";
+            else if (current === "lg") next = "xl";
+            else if (current === "xl") next = "normal";
+
+            // Limpiar clases anteriores
+            document.documentElement.classList.remove(
+                "text-zoom-lg",
+                "text-zoom-xl",
+            );
+
+            // Aplicar nueva clase si no es normal
+            if (next !== "normal") {
+                document.documentElement.classList.add(`text-zoom-${next}`);
+            }
+
+            // Guardar preferencia
+            localStorage.setItem("ediprofe-text-zoom", next);
+
+            // Actualizar UI de todas las instancias
+            updateUI(next);
+        });
+    });
+</script>
+
+<style>
+    .text-zoom-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2px;
+        background: transparent;
+        border: 1px solid transparent;
+        cursor: pointer;
+        padding: 0.5rem;
+        border-radius: 8px;
+        color: var(--text-secondary);
+        transition: all 0.2s;
+        font-family: inherit;
+        position: relative;
+        height: 36px;
+        min-width: 36px;
+    }
+
+    .text-zoom-btn:hover {
+        background: var(--bg-hover, rgba(0, 0, 0, 0.05));
+        color: var(--text-primary);
+    }
+
+    :global(html.dark) .text-zoom-btn:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    .zoom-icon {
+        font-size: 0.9rem;
+        font-weight: 600;
+        letter-spacing: -1px;
+    }
+
+    .zoom-level {
+        font-size: 0.65rem;
+        font-weight: 700;
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        background: var(--color-primary);
+        color: white;
+        padding: 0 3px;
+        border-radius: 4px;
+        min-width: 14px;
+        text-align: center;
+        line-height: 1.2;
+    }
+
+    /* Estilos activos */
+    .text-zoom-btn.active-lg,
+    .text-zoom-btn.active-xl {
+        color: var(--color-primary);
+        background: var(--bg-active, rgba(37, 99, 235, 0.1));
+    }
+</style>
