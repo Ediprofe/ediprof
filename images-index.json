@@ -2132,7 +2132,34 @@
       "size": "113KB",
       "url": "https://cdn.ediprofe.com/img/quimica/jv6x-que-es-un-diagrama-de-fases.webp",
       "status": "uploaded"
+    },
+    {
+      "id": "r494",
+      "name": "flujo-de-clase.webp",
+      "materia": "ciencias",
+      "date": "2026-01-28",
+      "size": "88KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/r494-flujo-de-clase.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "u059",
+      "name": "las-3-notas-salvavidas.webp",
+      "materia": "ciencias",
+      "date": "2026-01-28",
+      "size": "93KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/u059-las-3-notas-salvavidas.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "2uvu",
+      "name": "resumen-entrenamiento-intercalado.webp",
+      "materia": "ciencias",
+      "date": "2026-01-28",
+      "size": "92KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/2uvu-resumen-entrenamiento-intercalado.webp",
+      "status": "uploaded"
     }
   ],
-  "lastUpdated": "2026-01-27T04:26:06.860Z"
+  "lastUpdated": "2026-01-28T14:26:39.580Z"
 }
