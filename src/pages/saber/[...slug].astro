@@ -1,0 +1,115 @@
+---
+/**
+ * Página dinámica para talleres ICFES (Pruebas Saber)
+ *
+ * Renderiza contenido de la colección 'saber' con estilos específicos
+ * para preguntas de selección múltiple y retroalimentación.
+ */
+import { getCollection } from 'astro:content';
+import LessonLayout from '../../layouts/LessonLayout.astro';
+import { cleanSlug } from '../../utils/navigation-generator.js';
+
+// Importar estilos específicos de talleres ICFES
+import '../../styles/saber/preguntas-icfes.css';
+
+export async function getStaticPaths() {
+  // Helper para extraer título del primer H1 del markdown
+  function extractTitleFromBody(body: string): string | null {
+    const match = body?.match(/^#\s+(.+)$/m);
+    if (match) {
+      return match[1]
+        .replace(/\*\*/g, '')
+        .replace(/[\u{1F300}-\u{1F9FF}]/gu, '')
+        .replace(/[\u{2600}-\u{26FF}]/gu, '')
+        .replace(/[\u{2700}-\u{27BF}]/gu, '')
+        .trim();
+    }
+    return null;
+  }
+
+  const allTalleres: Array<{ taller: any; area: string; fullSlug: string; cleanFullSlug: string }> = [];
+
+  try {
+    const talleres = await getCollection('saber');
+
+    talleres.forEach((taller: any) => {
+      // Extraer el área del slug (primer segmento)
+      const slugParts = taller.slug.split('/');
+      const area = slugParts[0] || 'general';
+
+      const fullSlug = taller.slug;
+      const cleanFullSlug = cleanSlug(taller.slug);
+
+      allTalleres.push({ taller, area, fullSlug, cleanFullSlug });
+    });
+  } catch (e) {
+    console.log('No se encontró la colección saber o está vacía');
+  }
+
+  // Ordenar por slug
+  allTalleres.sort((a, b) => a.fullSlug.localeCompare(b.fullSlug));
+
+  // Crear paths con navegación prev/next
+  return allTalleres.map((item, index) => {
+    const prevTaller = index > 0 ? allTalleres[index - 1] : null;
+    const nextTaller = index < allTalleres.length - 1 ? allTalleres[index + 1] : null;
+
+    return {
+      params: {
+        slug: item.cleanFullSlug
+      },
+      props: {
+        taller: item.taller,
+        area: item.area,
+        prevTaller: prevTaller ? {
+          slug: `/saber/${prevTaller.cleanFullSlug}`,
+          title: prevTaller.taller.data?.title || extractTitleFromBody(prevTaller.taller.body) || 'Taller anterior'
+        } : null,
+        nextTaller: nextTaller ? {
+          slug: `/saber/${nextTaller.cleanFullSlug}`,
+          title: nextTaller.taller.data?.title || extractTitleFromBody(nextTaller.taller.body) || 'Siguiente taller'
+        } : null
+      }
+    };
+  });
+}
+
+interface Props {
+  taller: any;
+  area: string;
+  prevTaller: { slug: string; title: string } | null;
+  nextTaller: { slug: string; title: string } | null;
+}
+
+const { taller, area, prevTaller, nextTaller } = Astro.props;
+const { Content, headings } = await taller.render();
+
+// Extraer título
+const firstH1 = headings.find((h: any) => h.depth === 1);
+const cleanTitle = (text: string) => text
+  .replace(/\*\*/g, '')
+  .replace(/[\u{1F300}-\u{1F9FF}]/gu, '')
+  .replace(/[\u{2600}-\u{26FF}]/gu, '')
+  .replace(/[\u{2700}-\u{27BF}]/gu, '')
+  .trim();
+const title = taller.data?.title || (firstH1?.text ? cleanTitle(firstH1.text) : 'Sin título');
+
+// Crear frontmatter con área como materia para que el layout funcione
+const extendedFrontmatter = {
+  ...taller.data,
+  title,
+  // Mapear área a materia para compatibilidad con LessonLayout
+  materia: area
+};
+---
+
+<LessonLayout
+  frontmatter={extendedFrontmatter}
+  headings={headings}
+  url={Astro.url.pathname}
+  prevLesson={prevTaller}
+  nextLesson={nextTaller}
+  contentClass="saber-taller"
+>
+  <Content />
+</LessonLayout>

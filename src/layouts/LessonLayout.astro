@@ -25,9 +25,10 @@ interface Props {
   url: string;
   prevLesson?: { slug: string; title: string } | null;
   nextLesson?: { slug: string; title: string } | null;
+  contentClass?: string; // Clase adicional para el contenido (ej: saber-taller)
 }
 
-const { frontmatter, headings, url, prevLesson, nextLesson } = Astro.props;
+const { frontmatter, headings, url, prevLesson, nextLesson, contentClass = '' } = Astro.props;
 const title =
   frontmatter.title ||
   headings.find((h) => h.depth === 1)?.text ||
@@ -151,7 +152,7 @@ const cleanBloque = cleanSegment(bloque);
       <article class={`content-article content-article-${materia}`}>
         {headings.length > 2 && <TableOfContents headings={headings} />}
 
-        <div class="content-body">
+        <div class={`content-body ${contentClass}`.trim()}>
           <slot />
         </div>
       </article>
