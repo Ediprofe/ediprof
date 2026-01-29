@@ -244,7 +244,7 @@ async function uploadImage(fileName, materia, isSaber = false) {
   const baseName = path.basename(fileName, path.extname(fileName));
   const similar = findSimilar(index, baseName, materia);
   
-  if (similar.length > 0 && !isSaber) {
+  if (similar.length > 0) {
     log('⚠️', `Ya existen imágenes similares:`, 'yellow');
     similar.forEach(img => {
       console.log(`   ${colors.gray}${img.id}-${img.name} (${img.date})${colors.reset}`);
@@ -254,13 +254,11 @@ async function uploadImage(fileName, materia, isSaber = false) {
     console.log('');
   }
 
-  // Generar ID único (solo para lecciones normales)
-  let id = '';
-  if (!isSaber) {
-    do {
-      id = generateId();
-    } while (index.images.some(img => img.id === id));
-  }
+  // Generar ID único (siempre)
+  let id;
+  do {
+    id = generateId();
+  } while (index.images.some(img => img.id === id));
 
   // Preparar nombres de archivo
   const cleanName = baseName.toLowerCase()
@@ -273,9 +271,7 @@ async function uploadImage(fileName, materia, isSaber = false) {
 
   console.log('');
   log('📍', `Materia: ${materia}`, 'blue');
-  if (!isSaber) {
-    log('🆔', `ID generado: ${id}`, 'blue');
-  }
+  log('🆔', `ID generado: ${id}`, 'blue');
   log('📦', `Tipo: ${isSaber ? 'Taller Saber' : 'Lección'}`, 'blue');
   console.log('');
 
@@ -298,16 +294,12 @@ async function uploadImage(fileName, materia, isSaber = false) {
   // Determinar nombre final y ruta
   const { finalPath, format } = optimizeResult;
   const finalName = `${cleanName}.${format}`;
+  const r2FileName = `${id}-${finalName}`;
   
   // Ruta según tipo (Saber o Lección)
-  let r2FileName, r2Path;
-  if (isSaber) {
-    r2FileName = finalName;
-    r2Path = `img/saber/${materia}/${r2FileName}`;
-  } else {
-    r2FileName = `${id}-${finalName}`;
-    r2Path = `img/${materia}/${r2FileName}`;
-  }
+  const r2Path = isSaber 
+    ? `img/saber/${materia}/${r2FileName}`
+    : `img/${materia}/${r2FileName}`;
 
   // Verificar wrangler
   if (!checkWrangler()) {
@@ -358,7 +350,7 @@ async function uploadImage(fileName, materia, isSaber = false) {
 
   // Actualizar índice
   index.images.push({
-    id: isSaber ? 'saber' : id,
+    id,
     name: finalName,
     materia,
     type: isSaber ? 'saber' : 'lesson',
