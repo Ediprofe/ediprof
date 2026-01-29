@@ -1,0 +1,169 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Layout/Header.astro";
+import Footer from "../../components/Layout/Footer.astro";
+import SectionHeader from "../../components/UI/SectionHeader.astro";
+import { getCollection } from "astro:content";
+import { cleanSlug, formatName } from "../../utils/navigation-generator.js";
+
+// Obtener todos los talleres de la colección 'saber'
+const talleres = await getCollection("saber");
+
+// Organizar talleres por Área (materia)
+const talleresPorArea = talleres.reduce((acc: any, taller: any) => {
+    const parts = taller.slug.split("/");
+    const areaKey = parts[0] || "general";
+
+    if (!acc[areaKey]) {
+        acc[areaKey] = {
+            name: areaKey.charAt(0).toUpperCase() + areaKey.slice(1),
+            items: [],
+        };
+    }
+
+    // Extraer título del frontmatter o del primer H1
+    const title = taller.data.title || "Taller de Práctica";
+    const slug = cleanSlug(taller.slug);
+
+    acc[areaKey].items.push({
+        title,
+        slug: `/saber/${slug}`,
+        unidad: formatName(parts[1] || ""),
+    });
+
+    return acc;
+}, {});
+
+const areas = Object.values(talleresPorArea);
+---
+
+<BaseLayout title="Academia Saber 11" showTopBar={false}>
+    <div class="saber-hub">
+        <Header />
+
+        <main class="container">
+            <SectionHeader
+                badge="Entrenamiento"
+                title="Academia Saber 11"
+                description="Selecciona un taller para comenzar tu preparación específica. Diseñado siguiendo los estándares del ICFES."
+            />
+
+            <div class="areas-grid">
+                {
+                    areas.map((area: any) => (
+                        <div class="area-card">
+                            <div class="area-header">
+                                <span class="area-icon">📝</span>
+                                <h3>{area.name}</h3>
+                            </div>
+                            <ul class="taller-list">
+                                {area.items.map((taller: any) => (
+                                    <li>
+                                        <a
+                                            href={taller.slug}
+                                            class="taller-link"
+                                        >
+                                            <span class="taller-title">
+                                                {taller.title}
+                                            </span>
+                                            <span class="taller-unidad">
+                                                {taller.unidad}
+                                            </span>
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))
+                }
+            </div>
+        </main>
+
+        <Footer />
+    </div>
+</BaseLayout>
+
+<style>
+    .saber-hub {
+        min-height: 100vh;
+        padding-top: 80px;
+        background: var(--bg-primary);
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 3rem 1.5rem;
+    }
+
+    .areas-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+    }
+
+    .area-card {
+        background: var(--bg-secondary);
+        border: 1px solid var(--border-color);
+        border-radius: 16px;
+        padding: 1.5rem;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    .area-header {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .area-icon {
+        font-size: 1.5rem;
+    }
+
+    .area-header h3 {
+        margin: 0;
+        font-size: 1.25rem;
+        color: var(--text-primary);
+    }
+
+    .taller-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .taller-link {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        background: var(--bg-primary);
+        border: 1px solid var(--border-color);
+        border-radius: 10px;
+        text-decoration: none;
+        transition: all 0.2s ease;
+    }
+
+    .taller-link:hover {
+        border-color: var(--accent-primary);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .taller-title {
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: 0.25rem;
+    }
+
+    .taller-unidad {
+        font-size: 0.85rem;
+        color: var(--text-secondary);
+    }
+</style>

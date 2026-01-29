@@ -7,9 +7,9 @@ import { getCollection } from 'astro:content';
 import { buildNavigationFromLessonsWithCollection, mergeNavigations, cleanSegment } from './navigation-generator.js';
 import { allMeta } from './load-meta';
 
-// Lista de materias disponibles
-export const MATERIAS_LIST = ['matematicas', 'fisica', 'quimica', 'ciencias'] as const;
-export type MateriaKey = typeof MATERIAS_LIST[number];
+import { MATERIAS_SLUGS, type MateriaSlug } from '../config/materias';
+export const MATERIAS_LIST = MATERIAS_SLUGS;
+export type MateriaKey = MateriaSlug;
 
 export interface MateriaStats {
   name: string;

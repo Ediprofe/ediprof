@@ -35,7 +35,7 @@ export const SITE_CONFIG = {
   }
 } as const;
 
-export const MATERIAS_SLUGS = ['matematicas', 'fisica', 'quimica', 'ciencias'] as const;
+export const MATERIAS_SLUGS = ['matematicas', 'fisica', 'quimica', 'ciencias', 'saber'] as const;
 export type MateriaSlug = typeof MATERIAS_SLUGS[number];
 
 export const materiaConfig: Record<MateriaSlug, MateriaConfig> = {
@@ -78,6 +78,16 @@ export const materiaConfig: Record<MateriaSlug, MateriaConfig> = {
     lightSolid: '#dcfce7',
     dark: '#166534',
     description: 'Biología y ciencias naturales'
+  },
+  saber: {
+    name: 'Talleres Saber',
+    icon: '📝',
+    color: '#6366f1',
+    gradient: 'linear-gradient(135deg, #6366f1, #4f46e5)',
+    lightBg: 'rgba(99, 102, 241, 0.1)',
+    lightSolid: '#e0e7ff',
+    dark: '#3730a3',
+    description: 'Entrenamiento para Pruebas Saber 11'
   }
 };
 
