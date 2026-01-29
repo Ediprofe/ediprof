@@ -455,8 +455,8 @@ async function interactiveMode() {
   const imageType = await select({
     message: '¿Para qué es esta imagen?',
     choices: [
-      { name: '📚 Lección (con ID único)', value: 'lesson' },
-      { name: '📝 Taller Saber (sin ID)', value: 'saber' }
+      { name: '📚 Lección (img/{materia}/{id}-nombre.webp)', value: 'lesson' },
+      { name: '📝 Taller Saber (img/saber/{materia}/{id}-nombre.webp)', value: 'saber' }
     ]
   });
   
