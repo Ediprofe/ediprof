@@ -119,6 +119,7 @@ async function main() {
             message: '¿Qué quieres exportar?',
             choices: [
                 { name: '📚 Lecciones del contenido web', value: 'content' },
+                { name: '📝 Talleres Saber (ICFES)', value: 'saber' },
                 { name: '📋 Guías docentes institucionales', value: 'guias' }
             ]
         }
@@ -126,6 +127,11 @@ async function main() {
 
     if (source === 'guias') {
         await exportGuiasDocentes();
+        return;
+    }
+
+    if (source === 'saber') {
+        await exportTalleresSaber();
         return;
     }
 
@@ -416,6 +422,7 @@ async function exportToDocx(materia, unidad, tema, lessons, outputPath, leccione
 }
 
 const GUIAS_DIR = join(PROJECT_ROOT, 'guias-docente');
+const SABER_DIR = join(PROJECT_ROOT, 'src', 'content', 'saber');
 
 /**
  * Lista archivos .md en guias-docente/ organizados por semestre
@@ -543,3 +550,111 @@ main().catch(err => {
     console.error('❌ Error:', err);
     process.exit(1);
 });
+
+
+/**
+ * Lista talleres Saber disponibles
+ */
+function listTalleresSaber() {
+    if (!existsSync(SABER_DIR)) return [];
+
+    const talleres = [];
+    const materias = listFolders(SABER_DIR);
+
+    for (const materia of materias) {
+        const materiaDir = join(SABER_DIR, materia);
+        const unidades = listFolders(materiaDir);
+
+        for (const unidad of unidades) {
+            const unidadDir = join(materiaDir, unidad);
+            const files = readdirSync(unidadDir)
+                .filter(f => f.endsWith('.md') && !f.startsWith('_'))
+                .sort();
+
+            for (const file of files) {
+                talleres.push({
+                    materia,
+                    unidad,
+                    file,
+                    path: join(unidadDir, file),
+                    title: getLessonTitle(join(unidadDir, file))
+                });
+            }
+        }
+    }
+    return talleres;
+}
+
+/**
+ * Exporta talleres Saber a PDF
+ */
+async function exportTalleresSaber() {
+    log('━'.repeat(50), 'cyan');
+    log('📝 EXPORTAR TALLERES SABER', 'bold');
+    log('━'.repeat(50), 'cyan');
+    console.log();
+
+    const talleres = listTalleresSaber();
+
+    if (talleres.length === 0) {
+        log('❌ No hay talleres Saber en src/content/saber/', 'red');
+        process.exit(1);
+    }
+
+    // Agrupar por materia
+    const materiaGroups = {};
+    for (const t of talleres) {
+        if (!materiaGroups[t.materia]) materiaGroups[t.materia] = [];
+        materiaGroups[t.materia].push(t);
+    }
+
+    // Crear choices con separadores por materia
+    const choices = [];
+    for (const materia of Object.keys(materiaGroups).sort()) {
+        choices.push(new inquirer.Separator(`── ${getMateriaIcon(materia)} ${getName(join(SABER_DIR, materia))} ──`));
+        for (const t of materiaGroups[materia]) {
+            choices.push({
+                name: `${t.title}`,
+                value: t.path
+            });
+        }
+    }
+
+    const { selectedTaller } = await inquirer.prompt([
+        {
+            type: 'rawlist',
+            name: 'selectedTaller',
+            message: 'Selecciona el taller a exportar:',
+            choices
+        }
+    ]);
+
+    // Directorio de salida
+    const outputDir = resolve(process.env.HOME, 'Desktop', 'talleres-saber');
+    if (!existsSync(outputDir)) {
+        mkdirSync(outputDir, { recursive: true });
+    }
+
+    console.log();
+    log('━'.repeat(50), 'cyan');
+    log('📤 Generando PDFs del taller Saber...', 'green');
+    log('   Se generarán 3 versiones:', 'cyan');
+    log('   • PDF normal (1 columna)', 'cyan');
+    log('   • PDF imprimible (2 columnas)', 'cyan');
+    log('   • PDF retroalimentación (con respuestas)', 'cyan');
+    log('━'.repeat(50), 'cyan');
+    console.log();
+
+    try {
+        const cmd = `node "${join(PROJECT_ROOT, 'scripts', 'export-saber-pdf.mjs')}" "${selectedTaller}" "${outputDir}"`;
+        execSync(cmd, { stdio: 'inherit', cwd: PROJECT_ROOT });
+
+        console.log();
+        log('━'.repeat(50), 'cyan');
+        log('✅ ¡Éxito! Archivos guardados en:', 'green');
+        log(`   ${outputDir}`, 'yellow');
+        log('━'.repeat(50), 'cyan');
+    } catch (error) {
+        throw new Error(`Error al exportar: ${error.message}`);
+    }
+}
