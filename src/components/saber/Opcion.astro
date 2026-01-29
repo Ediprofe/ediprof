@@ -1,0 +1,61 @@
+---
+interface Props {
+    correcta?: boolean;
+    class?: string;
+    // Letra opcional si queremos forzar una (ej: 'A'), si no, usa CSS counter automático
+    letra?: string;
+}
+
+const { correcta = false, letra, class: className } = Astro.props;
+---
+
+<li
+    class={`opcion-item ${correcta ? "is-correct" : ""} ${className || ""}`}
+    data-is-correct={correcta}
+    style={letra ? `--custom-letter: "${letra}"` : ""}
+>
+    <slot />
+</li>
+
+<style>
+    li.opcion-item {
+        counter-increment: saber-opt;
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1rem 1.25rem;
+        background: var(--saber-bg-secondary, #fff);
+        border: 2px solid var(--saber-border, #e2e8f0);
+        border-radius: 12px;
+        position: relative;
+        transition: all 0.2s ease;
+        line-height: 1.6;
+    }
+
+    li.opcion-item:hover {
+        border-color: var(--saber-primary, #3b82f6);
+        background: rgba(59, 130, 246, 0.04);
+        transform: translateX(4px);
+    }
+
+    /* Badge automático */
+    li.opcion-item::before {
+        content: var(--custom-letter, counter(saber-opt, upper-alpha));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 36px;
+        height: 36px;
+        background: linear-gradient(
+            135deg,
+            var(--saber-primary, #3b82f6),
+            var(--saber-secondary, #2563eb)
+        );
+        color: white;
+        font-weight: 700;
+        font-size: 1rem;
+        border-radius: 10px;
+        flex-shrink: 0;
+        box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+    }
+</style>

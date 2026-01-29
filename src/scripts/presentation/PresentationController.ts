@@ -42,8 +42,8 @@ export class PresentationController {
      
      this.inputHandler = new InputHandler(
         this.canvas,
-        (p, mt) => this.handleStart(p, mt),
-        (p, mt) => this.handleMove(p, mt),
+        (p, mt, sh) => this.handleStart(p, mt, sh),
+        (p, mt, sh) => this.handleMove(p, mt, sh),
         () => this.handleStop()
      );
      
@@ -129,7 +129,7 @@ export class PresentationController {
   
   /* ================= INPUT LOGIC ================= */
   
-  private handleStart(p: LaserPoint, isMultiTouch: boolean) {
+  private handleStart(p: LaserPoint, isMultiTouch: boolean, isShift: boolean) {
       if (this.currentTool === 'text') {
           // Use textarea for multi-line support
           const input = document.createElement('textarea');
@@ -247,7 +247,7 @@ export class PresentationController {
       }
   }
   
-  private handleMove(p: LaserPoint, isMultiTouch: boolean) {
+  private handleMove(p: LaserPoint, isMultiTouch: boolean, isShift: boolean) {
       if (this.currentTool === 'select') {
           if (this.strokeManager.isSelecting && this.strokeManager.selectionBox) {
               this.strokeManager.selectionBox.w = p.x - this.strokeManager.selectionBox.x;
@@ -257,11 +257,41 @@ export class PresentationController {
       }
   
       if (this.currentStroke) {
-          if (this.currentStroke.type === 'arrow' || this.currentStroke.type === 'rect') {
-              // Shapes update their second point
-              this.currentStroke.points = [this.currentStroke.points[0], p];
+          // Si es forma (Arrow, Rect) O si es herramienta de dibujo (Pen, Highlighter) con Shift presionado
+          const isDrawToolWithShift = (this.currentStroke.type === 'pen' || this.currentStroke.type === 'highlighter') && isShift;
+
+          if (this.currentStroke.type === 'arrow' || this.currentStroke.type === 'rect' || isDrawToolWithShift) {
+              let targetP = p;
+
+              // Lógica de Shift para ortogonalidad (0, 45, 90 grados)
+              if (isShift) {
+                  const startP = this.currentStroke.points[0];
+                  const dx = p.x - startP.x;
+                  const dy = p.y - startP.y;
+                  const absDx = Math.abs(dx);
+                  const absDy = Math.abs(dy);
+
+                  // Si dx es mucho mayor que dy, forzar horizontal
+                  if (absDy < absDx * 0.5) {
+                      targetP = { x: p.x, y: startP.y };
+                  } 
+                  // Si dy es mucho mayor que dx, forzar vertical
+                  else if (absDx < absDy * 0.5) {
+                       targetP = { x: startP.x, y: p.y };
+                  }
+                  // Diagonal perfecta
+                  else {
+                      const signX = Math.sign(dx);
+                      const signY = Math.sign(dy);
+                      const len = Math.max(absDx, absDy);
+                      targetP = { x: startP.x + len * signX, y: startP.y + len * signY };
+                  }
+              }
+
+              // Shapes and Shift-Draw update to be just Start -> End (Straight Line)
+              this.currentStroke.points = [this.currentStroke.points[0], targetP];
           } else {
-              // Lines add points
+              // Freehand drawing
               this.currentStroke.points.push(p);
           }
           

@@ -1,0 +1,154 @@
+---
+interface Props {
+    id: string | number;
+    fuente?: string;
+    anio?: string | number;
+    competencia?: string;
+    componente?: string;
+    class?: string;
+    headerless?: boolean; // Nueva prop para evitar duplicar números
+}
+
+const {
+    id,
+    fuente = "ICFES",
+    anio,
+    competencia,
+    componente,
+    class: className,
+    headerless = false,
+} = Astro.props;
+
+// Normalización de datos para consistencia (ej: "icfes" -> "ICFES")
+const fuenteNormalizada = fuente.toUpperCase().trim();
+const anioNormalizado = anio
+    ? anio.toString()
+    : new Date().getFullYear().toString();
+
+// Construcción del ID único para anclajes
+const anchorId = `pregunta-${id}`;
+---
+
+<article class={`saber-pregunta ${className || ""}`} id={anchorId}>
+    <div class="pregunta-header">
+        {
+            !headerless && (
+                <h2 class="numero-pregunta">
+                    <span class="hash">#</span>
+                    {id}
+                </h2>
+            )
+        }
+        <div class="meta-tags">
+            <span class="tag fuente">{fuenteNormalizada}</span>
+            <span class="tag anio">{anioNormalizado}</span>
+            {
+                competencia && (
+                    <span class="tag competencia" title="Competencia">
+                        {competencia}
+                    </span>
+                )
+            }
+            {
+                componente && (
+                    <span class="tag componente" title="Componente">
+                        {componente}
+                    </span>
+                )
+            }
+        </div>
+    </div>
+
+    <div class="pregunta-contenido">
+        <slot />
+    </div>
+</article>
+
+<style>
+    .saber-pregunta {
+        margin-bottom: 4rem;
+        position: relative;
+        scroll-margin-top: 100px;
+    }
+
+    .pregunta-header {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        padding-bottom: 1rem;
+        margin-bottom: 1.5rem;
+        border-bottom: 2px solid var(--saber-border, #e2e8f0);
+    }
+
+    .numero-pregunta {
+        font-size: 2rem;
+        font-weight: 800;
+        margin: 0;
+        color: var(--saber-primary, #3b82f6);
+        line-height: 1;
+        display: flex;
+        align-items: center;
+    }
+
+    .hash {
+        font-size: 1.25rem;
+        color: var(--saber-border, #cbd5e1);
+        margin-right: 0.25rem;
+        font-weight: 400;
+    }
+
+    .meta-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .tag {
+        font-size: 0.75rem;
+        font-weight: 600;
+        padding: 0.25rem 0.6rem;
+        border-radius: 99px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .tag.fuente {
+        background-color: #f1f5f9;
+        color: #64748b;
+    }
+
+    .tag.anio {
+        background-color: #f1f5f9;
+        color: #64748b;
+    }
+
+    .tag.competencia {
+        background-color: #dbeafe;
+        color: #2563eb;
+    }
+
+    .tag.componente {
+        background-color: #dcfce7;
+        color: #16a34a;
+    }
+
+    :global(.dark) .pregunta-header {
+        border-bottom-color: #334155;
+    }
+
+    :global(.dark) .tag.fuente,
+    :global(.dark) .tag.anio {
+        background-color: #1e293b;
+        color: #94a3b8;
+    }
+
+    :global(.dark) .tag.competencia {
+        background-color: rgba(37, 99, 235, 0.2);
+        color: #60a5fa;
+    }
+
+    :global(.dark) .tag.componente {
+        background-color: rgba(22, 163, 74, 0.2);
+        color: #4ade80;
+    }
+</style>

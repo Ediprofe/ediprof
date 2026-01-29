@@ -62,28 +62,76 @@ function cloneChildren(children) {
 }
 
 /**
+ * Consume los primeros N caracteres del árbol de nodos.
+ * Retorna una nueva lista de nodos con esos caracteres eliminados.
+ */
+function consumeCharacters(nodes, limit) {
+  let consumed = 0;
+
+  function processList(list) {
+    const keptNodes = [];
+
+    for (const node of list) {
+      if (consumed >= limit) {
+        // Ya consumimos todo lo necesario, mantenemos el resto intacto
+        keptNodes.push(node);
+        continue;
+      }
+
+      if (node.type === 'text') {
+        const text = node.value;
+        const len = text.length;
+        const needed = limit - consumed;
+
+        if (len <= needed) {
+          // Este nodo está totalmente dentro del rango a eliminar
+          consumed += len;
+          // No lo agregamos a keptNodes (se elimina)
+        } else {
+          // Consumimos parcialmente este nodo
+          const newText = text.slice(needed);
+          consumed += needed;
+          keptNodes.push({ ...node, value: newText });
+        }
+      } else if (node.children) {
+        // Es un elemento contenedor (b, strong, em, etc.)
+        // Procesamos sus hijos recursivamente
+        const newChildren = processList(node.children);
+
+        // Si después de limpiar hijos, el nodo quedó vacío, ¿lo guardamos?
+        // Si tiene hijos, lo guardamos.
+        if (newChildren.length > 0) {
+          keptNodes.push({ ...node, children: newChildren });
+        }
+      } else {
+        // Otros nodos (comentarios, etc), se mantienen
+        keptNodes.push(node);
+      }
+    }
+    return keptNodes;
+  }
+
+  return processList(nodes);
+}
+
+/**
  * Crea la estructura HTML para una opción de respuesta
  */
 function createOptionElement(letra, contentNodes) {
-  const cleanNodes = [];
-  let firstTextProcessed = false;
+  // 1. Obtener texto completo para determinar la longitud exacta del prefijo
+  const fullText = contentNodes.map(extractText).join('');
+  const match = fullText.match(/^\s*[A-D]\.\s*/);
 
-  for (const node of contentNodes) {
-    if (node.type === 'text' && !firstTextProcessed) {
-      const cleaned = node.value.replace(/^[A-D]\.\s*/, '').trim();
-      if (cleaned) {
-        cleanNodes.push({ type: 'text', value: cleaned });
-      }
-      firstTextProcessed = true;
-    } else if (node.type === 'text') {
-      const trimmed = node.value.trim();
-      if (trimmed) {
-        cleanNodes.push({ type: 'text', value: trimmed });
-      }
-    } else {
-      cleanNodes.push(node);
-    }
+  let cleanNodes = contentNodes;
+
+  if (match) {
+    const prefixLength = match[0].length;
+    // Usar la función utilitaria para consumir exactamente esos caracteres del árbol
+    cleanNodes = consumeCharacters(contentNodes, prefixLength);
   }
+
+  // Si después de limpiar nos queda un array vacío o solo espacios, hay que tener cuidado.
+  // Pero generalmente quedará el contenido real (texto, imágenes, etc).
 
   return {
     type: 'element',

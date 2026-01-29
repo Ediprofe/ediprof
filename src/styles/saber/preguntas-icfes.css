@@ -123,6 +123,61 @@
 }
 
 /* ========================================
+   LISTAS NATIVAS (SOLUCIÓN ROBUSTA)
+   Uso manual: <ol class="saber-opciones">
+   ======================================== */
+ol.saber-opciones {
+  list-style: none;
+  counter-reset: saber-opt;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 1.5rem 0 2rem 0;
+}
+
+ol.saber-opciones li {
+  counter-increment: saber-opt;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: var(--saber-bg-secondary);
+  border: 2px solid var(--saber-border);
+  border-radius: 12px;
+  position: relative;
+  transition: all 0.2s ease;
+  line-height: 1.6;
+}
+
+ol.saber-opciones li:hover {
+  border-color: var(--saber-primary);
+  background: rgba(37, 99, 235, 0.04);
+  transform: translateX(4px);
+}
+
+:global(html.dark) ol.saber-opciones li:hover {
+  background: rgba(37, 99, 235, 0.1);
+}
+
+/* Badge automático A, B, C... mediante CSS counters */
+ol.saber-opciones li::before {
+  content: counter(saber-opt, upper-alpha);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, var(--saber-primary), var(--saber-secondary));
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 10px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+}
+
+/* ========================================
    DETAILS/SUMMARY - RETROALIMENTACIÓN
    Diseño profesional y funcional
    ======================================== */
@@ -232,10 +287,12 @@
 .saber-taller details[open]>p:has(br) {
   background: white;
   border-radius: 12px;
-  padding: 1rem 1.5rem;
+  padding: 1.5rem 2rem 1.5rem 2.5rem;
+  /* Más padding izq para alineación */
   margin: 1.5rem 1.5rem;
   border: 1px solid #e5e7eb;
   line-height: 2.2;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
 }
 
 :global(html.dark) .saber-taller details[open]>p:has(br) {
@@ -308,13 +365,34 @@
   font-size: 1rem;
 }
 
+/* CORRECCIÓN: Evitar icono en párrafos que son continuación (ej: tras una lista) */
+.saber-taller details[open]>ul+p:has(strong:first-child)::before,
+.saber-taller details[open]>ol+p:has(strong:first-child)::before {
+  content: none !important;
+  display: none;
+}
+
+/* Ajustar padding para estos párrafos de conclusión (sin icono) */
+.saber-taller details[open]>ul+p:has(strong:first-child),
+.saber-taller details[open]>ol+p:has(strong:first-child) {
+  padding-left: 1.5rem;
+  /* Padding normal, no el de 3.5rem del icono */
+}
+
 /* ==========================================
    FUSIÓN VISUAL: EXPLICACIÓN + LISTA
    Une el párrafo verde con la lista siguiente
    ========================================== */
 
-/* 1. El párrafo pierde borde inferior y margen */
-.saber-taller details[open]>p:has(strong:first-child):has(+ ul) {
+/* ==========================================
+   FUSIÓN VISUAL: EXPLICACIÓN + LISTAS + TEXTO
+   Une el párrafo verde (Explicación) con elementos siguientes
+   ========================================== */
+
+/* 1. EL ENCABEZADO (Explicación) pierde borde inferior si le sigue algo */
+.saber-taller details[open]>p:has(strong:first-child):has(+ ul),
+.saber-taller details[open]>p:has(strong:first-child):has(+ ol),
+.saber-taller details[open]>p:has(strong:first-child):has(+ p:not(:has(strong:first-child))) {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   border-bottom: none;
@@ -322,28 +400,69 @@
   padding-bottom: 0.5rem;
 }
 
-/* 2. La lista gana estilo verde y pierde borde superior */
-.saber-taller details[open]>p:has(strong:first-child)+ul {
+/* 2. ELEMENTOS INTERMEDIOS (Listas, párrafos) ganan estilo verde */
+
+/* Listas (UL y OL) inmediatamente después del encabezado */
+.saber-taller details[open]>p:has(strong:first-child)+ul,
+.saber-taller details[open]>p:has(strong:first-child)+ol {
   background: var(--correct-bg);
   border: 2px solid var(--correct-border);
   border-top: none;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
   border-radius: 0 0 12px 12px;
-  margin: 0 1.5rem 1.5rem 1.5rem;
-  padding: 0 1.5rem 1.5rem 3.5rem;
-  /* Indentación alineada con el texto */
+  /* Fusión Borde: subir 2px para solapar el borde del elemento anterior */
+  margin: -2px 1.5rem 1.5rem 1.5rem;
+  padding: 1rem 1.5rem 1.5rem 3.5rem;
   color: var(--correct-text);
   list-style: none;
-  /* Quitamos bullets default para personalizar si se quiere, o dejamos */
+  position: relative;
+  z-index: 5;
 }
 
-/* Restaurar bullets para estas listas integradas pero con color correcto */
-.saber-taller details[open]>p:has(strong:first-child)+ul li {
+/* Si la lista NO es el último elemento (hay un párrafo de conclusión), quitar radius inferior */
+.saber-taller details[open]>p:has(strong:first-child)+ul:has(+ p),
+.saber-taller details[open]>p:has(strong:first-child)+ol:has(+ p) {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0.5rem;
+}
+
+/* Párrafos de texto inmediatamente después del encabezado (sin negrita inicial) */
+.saber-taller details[open]>p:has(strong:first-child)+p:not(:has(strong:first-child)) {
+  background: var(--correct-bg);
+  border: 2px solid var(--correct-border);
+  border-top: none;
+  border-radius: 0 0 12px 12px;
+  margin: -2px 1.5rem 1.5rem 1.5rem;
+  padding: 1rem 1.5rem 1.5rem 1.5rem;
+  color: var(--correct-text);
+  z-index: 5;
+}
+
+/* 3. ELEMENTOS DE CIERRE (Párrafo final tras una lista) */
+/* Selector complejo: Header + Lista + Párrafo */
+.saber-taller details[open]>p:has(strong:first-child)+ul+p,
+.saber-taller details[open]>p:has(strong:first-child)+ol+p {
+  background: var(--correct-bg);
+  border: 2px solid var(--correct-border);
+  border-top: none;
+  border-radius: 0 0 12px 12px;
+  margin: -2px 1.5rem 1.5rem 1.5rem;
+  padding: 1rem 1.5rem 1.5rem 1.5rem;
+  color: var(--correct-text);
+  z-index: 5;
+}
+
+/* Estilos de viñetas para listas integradas */
+.saber-taller details[open]>p:has(strong:first-child)+ul li,
+.saber-taller details[open]>p:has(strong:first-child)+ol li {
   position: relative;
   padding-left: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
+/* Bullets para UL */
 .saber-taller details[open]>p:has(strong:first-child)+ul li::before {
   content: "•";
   color: var(--correct-border);
@@ -351,6 +470,21 @@
   display: inline-block;
   width: 1em;
   margin-left: -1em;
+}
+
+/* Números para OL (Counter reset necesario si usamos list-style: none) */
+.saber-taller details[open]>p:has(strong:first-child)+ol {
+  counter-reset: explanation-steps;
+}
+
+.saber-taller details[open]>p:has(strong:first-child)+ol li::before {
+  counter-increment: explanation-steps;
+  content: counter(explanation-steps) ".";
+  color: var(--correct-border);
+  font-weight: 700;
+  display: inline-block;
+  width: 1.5em;
+  margin-left: -1.5em;
 }
 
 /* ==========================================

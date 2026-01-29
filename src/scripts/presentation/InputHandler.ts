@@ -6,8 +6,8 @@ export class InputHandler {
   private isBlockedByGesture = false;
   
   // Callbacks
-  private onStart: (p: LaserPoint, isMultiTouch: boolean) => void;
-  private onMove: (p: LaserPoint, isMultiTouch: boolean) => void;
+  private onStart: (p: LaserPoint, isMultiTouch: boolean, isShift: boolean) => void;
+  private onMove: (p: LaserPoint, isMultiTouch: boolean, isShift: boolean) => void;
   private onStop: () => void;
   
   // Config
@@ -16,8 +16,8 @@ export class InputHandler {
   
   constructor(
     canvas: HTMLCanvasElement,
-    onStart: (p: LaserPoint, isMultiTouch: boolean) => void,
-    onMove: (p: LaserPoint, isMultiTouch: boolean) => void,
+    onStart: (p: LaserPoint, isMultiTouch: boolean, isShift: boolean) => void,
+    onMove: (p: LaserPoint, isMultiTouch: boolean, isShift: boolean) => void,
     onStop: () => void
   ) {
     this.canvas = canvas;
@@ -117,7 +117,8 @@ export class InputHandler {
       }
       
       const pos = this.getPos(e);
-      this.onStart(pos, isMultiTouch);
+      const isShift = 'shiftKey' in e ? (e as MouseEvent).shiftKey : false;
+      this.onStart(pos, isMultiTouch, isShift);
   };
 
   private boundMove = (e: MouseEvent | TouchEvent) => {
@@ -152,7 +153,8 @@ export class InputHandler {
       if ('touches' in e || (e as MouseEvent).buttons === 1) {
           // Only send move if touching or mouse down
            const pos = this.getPos(e);
-           this.onMove(pos, isMultiTouch && !isStylus);
+           const isShift = 'shiftKey' in e ? (e as MouseEvent).shiftKey : false;
+           this.onMove(pos, isMultiTouch && !isStylus, isShift);
       }
   };
 

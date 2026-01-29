@@ -568,7 +568,7 @@ function listTalleresSaber() {
         for (const unidad of unidades) {
             const unidadDir = join(materiaDir, unidad);
             const files = readdirSync(unidadDir)
-                .filter(f => f.endsWith('.md') && !f.startsWith('_'))
+                .filter(f => (f.endsWith('.md') || f.endsWith('.mdx')) && !f.startsWith('_'))
                 .sort();
 
             for (const file of files) {

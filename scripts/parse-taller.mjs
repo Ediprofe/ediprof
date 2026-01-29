@@ -36,7 +36,7 @@ export function parseTallerMarkdown(filePath) {
     // Dividir por bloques de contexto (separados por ---)
     // PERO también detectar bloques de contexto compartido sin separador
     // Ejemplo: "<!-- imprimible: ancho-completo -->\n\nRESPONDA LAS PREGUNTAS..."
-    
+
     // Primero, normalizar: agregar --- antes de bloques de contexto compartido
     content = content.replace(
         /(<!-- imprimible: ancho-completo -->\s*\n+RESPONDA LAS PREGUNTAS)/g,
@@ -70,7 +70,7 @@ export function parseTallerMarkdown(filePath) {
 
             for (const qRaw of rawQuestions) {
                 // Verificar que sea realmente una pregunta (puede haber basura al inicio si el split falló)
-                if (qRaw.match(/^##\s*\d+\./) || qRaw.match(/^\s*##\s*\d+\./) || 
+                if (qRaw.match(/^##\s*\d+\./) || qRaw.match(/^\s*##\s*\d+\./) ||
                     qRaw.match(/^##\s*Pregunta\s+\d+/) || qRaw.match(/^\s*##\s*Pregunta\s+\d+/)) {
                     numeroGlobal++;
                     // Importante: parsePregunta espera el texto crudo de esa pregunta
@@ -180,7 +180,7 @@ function parsePregunta(section, numeroGlobal) {
         if (inComment) {
             if (!commentBuffer) commentBuffer = line;
             else if (line !== commentBuffer) commentBuffer += '\n' + line;
-            
+
             if (line.includes('-->')) {
                 inComment = false;
                 commentBuffer = '';
@@ -188,11 +188,24 @@ function parsePregunta(section, numeroGlobal) {
             continue; // Saltar toda la línea si estamos en comentario
         }
 
-        // ¿Es opción? (formato: A. texto, sin dash)
+        // ¿Es opción? (formato clásico: A. texto, sin dash)
         const opcionMatch = line.match(/^\s*([A-D])\.\s*(.+)$/);
+
+        // ¿Es opción MDX? (formato: <Opcion letra="A">Texto</Opcion>)
+        const opcionMdxMatch = line.match(/<Opcion\s+[^>]*letra=["']([A-D])["'][^>]*>(.*?)<\/Opcion>/);
+
         if (opcionMatch) {
             inOpciones = true;
             opciones[opcionMatch[1]] = opcionMatch[2].trim();
+            continue;
+        } else if (opcionMdxMatch) {
+            inOpciones = true;
+            opciones[opcionMdxMatch[1]] = opcionMdxMatch[2].trim();
+            continue;
+        }
+
+        // Ignorar etiquetas de cierre o apertura del wrapper MDX
+        if (line.trim() === '<Opciones>' || line.trim() === '</Opciones>' || line.match(/<Opciones\s+.*>/)) {
             continue;
         }
 
