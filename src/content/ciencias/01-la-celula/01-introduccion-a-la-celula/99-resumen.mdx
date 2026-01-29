@@ -1,0 +1,135 @@
+import ConceptMap from '../../../../components/Content/ConceptMap.astro';
+import MapSection from '../../../../components/Content/MapSection.astro';
+import MapItem from '../../../../components/Content/MapItem.astro';
+import MapPoint from '../../../../components/Content/MapPoint.astro';
+import MapStep from '../../../../components/Content/MapStep.astro';
+
+# **Resumen: Introducción a la Célula**
+
+<ConceptMap title="La Célula (Unidad de la Vida)">
+
+  <MapSection 
+    title="01. ¿Qué es la célula?"
+    images={[
+      'https://cdn.ediprofe.com/img/ciencias/74mg-la-celula-unidad-basica-de-la-vida.webp',
+      'https://cdn.ediprofe.com/img/ciencias/e5if-la-teoria-celular.webp',
+      'https://cdn.ediprofe.com/img/ciencias/odo4-funciones-vitales-de-la-celula.webp'
+    ]}
+  >
+    <MapItem label="Definición:">
+      <MapPoint>Es la **unidad básica**, estructural y funcional de todos los seres vivos.</MapPoint>
+    </MapItem>
+    <MapItem label="Teoría celular:">
+      <MapPoint>1. Todo **ser vivo** tiene células</MapPoint>
+      <MapPoint>2. Es la **unidad básica** de vida</MapPoint>
+      <MapPoint>3. Toda célula nace de **otra**</MapPoint>
+    </MapItem>
+    <MapItem label="Según número de células:">
+      <MapPoint>**Unicelulares:** Formados por una sola célula (ej. Bacterias).</MapPoint>
+      <MapPoint>**Pluricelulares:** Formados por muchas células (ej. Plantas, Animales).</MapPoint>
+    </MapItem>
+    <MapPoint>Funciones Vitales: Nutrición, relación y reproducción.</MapPoint>
+  </MapSection>
+
+  <MapSection 
+    title="02. Tipos de Células"
+    images={[
+      'https://cdn.ediprofe.com/img/ciencias/9w6x-celula-procariota.webp',
+      'https://cdn.ediprofe.com/img/ciencias/rgh6-celula-eucariota.webp',
+      'https://cdn.ediprofe.com/img/ciencias/rh89-celula-eucariota-y-procariota.webp',
+      'https://cdn.ediprofe.com/img/ciencias/l0bj-celula-animal-y-vegetal.webp'
+    ]}
+  >
+    <MapItem label="Procariotas: Simples, sin núcleo, ADN circular (ej. Bacterias)" />
+    <MapItem label="Eucariotas: Complejas, núcleo definido, organelos variados">
+      <MapPoint>Animal: Sin pared, vacuolas pequeñas, forma irregular</MapPoint>
+      <MapPoint>Vegetal: Pared celular, cloroplastos, vacuola gigante</MapPoint>
+    </MapItem>
+  </MapSection>
+
+  <MapSection 
+    title="03. Organelos (La Ciudad Celular)"
+    images={[
+      'https://cdn.ediprofe.com/img/ciencias/8cs4-la-celula-como-una-ciudad-vibrante.webp',
+      'https://cdn.ediprofe.com/img/ciencias/ntko-ribosomas-y-reticulos.webp',
+      'https://cdn.ediprofe.com/img/ciencias/2qgz-aparato-de-golgi.webp',
+      'https://cdn.ediprofe.com/img/ciencias/dxgc-cloroplastos.webp',
+      'https://cdn.ediprofe.com/img/ciencias/uwak-pared-celular.webp',
+      'https://cdn.ediprofe.com/img/ciencias/9dcb-vacuola-gigante.webp'
+    ]}
+  >
+    <MapPoint>**Mando:** Núcleo (ADN) | **Energía:** Mitocondrias (ATP)</MapPoint>
+    <MapPoint>**Trabajadores:** Proteínas (enzimas, estructura, defensa)</MapPoint>
+    <MapPoint>**Fábrica:** Ribosomas (crea proteínas) | Retículo (canales)</MapPoint>
+    <MapPoint>**Logística:** Ap. Golgi (empaque) | Lisosomas (limpieza)</MapPoint>
+    <MapItem label="Exclusivos de plantas:">
+      <MapPoint>**Cloroplastos:** Fotosíntesis</MapPoint>
+      <MapPoint>**Pared celular:** Soporte rígido</MapPoint>
+      <MapPoint>**Vacuola central:** Almacén de agua</MapPoint>
+    </MapItem>
+  </MapSection>
+
+  <MapSection 
+    title="04. Transporte Celular"
+    images={[
+      'https://cdn.ediprofe.com/img/ciencias/x3e3-membrana-celular-una-frontera-selectiva.webp',
+      'https://cdn.ediprofe.com/img/ciencias/7hft-transporte-pasivo.webp',
+      'https://cdn.ediprofe.com/img/ciencias/7c56-difusion-simple.webp',
+      'https://cdn.ediprofe.com/img/ciencias/i8qy-difusion-facilitada.webp',
+      'https://cdn.ediprofe.com/img/ciencias/2gxy-osmosis.webp',
+      'https://cdn.ediprofe.com/img/ciencias/2685-transporte-activo.webp',
+      'https://cdn.ediprofe.com/img/ciencias/kndb-transporte-con-movimiento-de-la-membrana.webp'
+    ]}
+  >
+    <MapItem label="Pasivo (Sin gasto de ATP):">
+      <MapPoint>**Difusión Simple:** Moléculas pequeñas.</MapPoint>
+      <MapPoint>**Difusión Facilitada:** Por canales o proteínas.</MapPoint>
+      <MapPoint>**Ósmosis:** Paso de agua.</MapPoint>
+    </MapItem>
+    <MapItem label="Activo (Gasta ATP):">
+      <MapPoint>**Bombas:** Contra el gradiente (ej. Na+/K+).</MapPoint>
+      <MapPoint>**Transporte Masivo:** Uso de vesículas.</MapPoint>
+    </MapItem>
+    <MapItem label="Transporte en Masa (Activo):">
+      <MapPoint>**Endocitosis (Entrada):** Fagocitosis y Pinocitosis.</MapPoint>
+      <MapPoint>**Exocitosis (Salida):** Expulsión de sustancias.</MapPoint>
+    </MapItem>
+  </MapSection>
+
+  <MapSection 
+    title="05. Niveles de Organización"
+    images={[
+      'https://cdn.ediprofe.com/img/ciencias/a38z-la-jerarquia-de-la-vida.webp',
+      'https://cdn.ediprofe.com/img/ciencias/16js-la-integracion-fina-organismo.webp'
+    ]}
+  >
+    <MapPoint>**Escala:** Célula <MapStep /> Tejido <MapStep /> Órgano <MapStep /> Sistema <MapStep /> Organismo</MapPoint>
+  </MapSection>
+
+  <MapSection 
+    title="06. El Ciclo Celular"
+    images={[
+      'https://cdn.ediprofe.com/img/ciencias/qo3x-la-interfase-preparando-el-escenario.webp',
+      'https://cdn.ediprofe.com/img/ciencias/wkee-mitosis-creacion-de-clones.webp',
+      'https://cdn.ediprofe.com/img/ciencias/siz3-meiosis-creacion-de-diversidad.webp',
+      'https://cdn.ediprofe.com/img/ciencias/2grt-resumen-mitosis-vs-meiosis.webp'
+    ]}
+  >
+    <MapItem label="Interfase:">
+      <MapPoint>Fase de preparación: **G1** (crece), **S** (duplica ADN), **G2** (control).</MapPoint>
+    </MapItem>
+    <MapItem label="Mitosis (Células Somáticas):">
+      <MapPoint>Produce **2 células hijas idénticas** (diploides).</MapPoint>
+      <MapPoint>**Función:** Crecimiento y reparación. **Sin variabilidad** genética.</MapPoint>
+    </MapItem>
+    <MapItem label="Meiosis (Células Sexuales):">
+      <MapPoint>Produce **4 células hijas diferentes** (haploides).</MapPoint>
+      <MapPoint>**Función:** Reproducción sexual. **Crea variabilidad** (recombinación).</MapPoint>
+    </MapItem>
+  </MapSection>
+
+</ConceptMap>
+
+---
+
+> **Tip de Estudio:** Copia este mapa en una hoja completa de tu cuaderno. Es la mejor forma de visualizar cómo se conecta todo lo que hemos aprendido sobre este tema.

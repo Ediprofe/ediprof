@@ -2159,7 +2159,17 @@
       "size": "92KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/2uvu-resumen-entrenamiento-intercalado.webp",
       "status": "uploaded"
+    },
+    {
+      "id": "lbny",
+      "name": "image.webp",
+      "materia": "fisica",
+      "type": "saber",
+      "date": "2026-01-29",
+      "size": "108KB",
+      "url": "https://cdn.ediprofe.com/img/saber/fisica/lbny-image.webp",
+      "status": "uploaded"
     }
   ],
-  "lastUpdated": "2026-01-28T14:26:39.580Z"
+  "lastUpdated": "2026-01-29T00:44:20.689Z"
 }
