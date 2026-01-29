@@ -10,6 +10,8 @@ export class WindowManager {
     onDeleteSelected: () => void;
     onBoardChange: (type: 'none' | 'white' | 'black') => void;
     onClose: () => void;
+    onCopy?: () => void;
+    onPaste?: () => void;
   };
 
   // Referencia al dock para posicionamiento dinámico
@@ -267,6 +269,20 @@ export class WindowManager {
       return;
     }
 
+    // Ctrl+C = Copiar
+    if (isMod && key === 'c') {
+      e.preventDefault();
+      this.events.onCopy?.();
+      return;
+    }
+
+    // Ctrl+V = Pegar
+    if (isMod && key === 'v') {
+      e.preventDefault();
+      this.events.onPaste?.();
+      return;
+    }
+
     // Herramientas (desde config)
     const toolShortcuts = KEYBOARD_SHORTCUTS.tools as Record<string, string>;
     if (toolShortcuts[key]) {
@@ -282,7 +298,7 @@ export class WindowManager {
     }
 
     // Acciones
-    if (key === 'c') {
+    if (key === 'c' && !isMod) {
       this.events.onClear();
       return;
     }

@@ -15,6 +15,9 @@ export class PresentationController {
   private currentColor: string = TOOL_COLORS.red;
   private systemRunning = false;
   private currentStroke: LaserStroke | null = null;
+  private clipboard: LaserStroke[] = [];
+  private isDragging = false;
+  private lastDragPoint: LaserPoint | null = null;
   
   // Resize Observer
   private resizeObserver: ResizeObserver | null = null;
@@ -55,7 +58,9 @@ export class PresentationController {
         onClear: () => this.strokeManager.clearAll(),
         onDeleteSelected: () => this.strokeManager.deleteSelected(),
         onBoardChange: (t) => this.windowManager.setBoardState(t),
-        onClose: () => this.stop()
+        onClose: () => this.stop(),
+        onCopy: () => this.handleCopy(),
+        onPaste: () => this.handlePaste()
      });
      
      this.start();
@@ -219,13 +224,31 @@ export class PresentationController {
       }
 
       if (this.currentTool === 'select') {
+          // 1. Check if clicking on an already selected item to start DRAG
+          const selected = this.strokeManager.getSelectedStrokes();
+          if (selected.length > 0) {
+              // Check hit on any selected stroke bbox
+              const hit = selected.some(s => {
+                  const sMinX = s.minX ?? -Infinity;
+                  const sMaxX = s.maxX ?? Infinity;
+                  const sMinY = s.minY ?? -Infinity;
+                  const sMaxY = s.maxY ?? Infinity;
+                  // Expand bbox slightly for easier grabbing
+                  const margin = 10;
+                  return p.x >= sMinX - margin && p.x <= sMaxX + margin &&
+                         p.y >= sMinY - margin && p.y <= sMaxY + margin;
+              });
+
+              if (hit) {
+                  this.isDragging = true;
+                  this.lastDragPoint = p;
+                  return;
+              }
+          }
+
+          // 2. Otherwise start SELECTION BOX
           this.strokeManager.isSelecting = true;
           this.strokeManager.selectionBox = { x: p.x, y: p.y, w: 0, h: 0 };
-          
-          // Deselect previous on new selection start?
-          // Common behavior: clicking outside selection clears it. 
-          // Dragging starts new selection.
-          // Let's clear previous selection unless Shift held? (Skip shift for now).
           this.strokeManager.deselectAll();
           
           return;
@@ -249,6 +272,29 @@ export class PresentationController {
   
   private handleMove(p: LaserPoint, isMultiTouch: boolean, isShift: boolean) {
       if (this.currentTool === 'select') {
+          if (this.isDragging && this.lastDragPoint) {
+              const dx = p.x - this.lastDragPoint.x;
+              const dy = p.y - this.lastDragPoint.y;
+              
+              const selected = this.strokeManager.getSelectedStrokes();
+              selected.forEach(s => {
+                  s.points.forEach(pt => {
+                      pt.x += dx;
+                      pt.y += dy;
+                  });
+                  // Update cached BBox
+                  if (s.minX !== undefined) s.minX += dx;
+                  if (s.maxX !== undefined) s.maxX += dx;
+                  if (s.minY !== undefined) s.minY += dy;
+                  if (s.maxY !== undefined) s.maxY += dy;
+              });
+              
+              this.lastDragPoint = p;
+              // Force render call if needed (renderer loop usually handles it, but just in case)
+              // this.requestRender(); 
+              return;
+          }
+
           if (this.strokeManager.isSelecting && this.strokeManager.selectionBox) {
               this.strokeManager.selectionBox.w = p.x - this.strokeManager.selectionBox.x;
               this.strokeManager.selectionBox.h = p.y - this.strokeManager.selectionBox.y;
@@ -302,6 +348,12 @@ export class PresentationController {
   }
   
   private handleStop() {
+      if (this.isDragging) {
+          this.isDragging = false;
+          this.lastDragPoint = null;
+          return;
+      }
+
       if (this.currentTool === 'select' && this.strokeManager.isSelecting && this.strokeManager.selectionBox) {
           this.strokeManager.computeSelection(this.strokeManager.selectionBox);
           this.strokeManager.isSelecting = false;
@@ -329,5 +381,55 @@ export class PresentationController {
               this.renderer.setLastActivityTime(Date.now());
            }
       }
+  }
+
+  private handleCopy() {
+    const selected = this.strokeManager.getSelectedStrokes();
+    if (selected.length > 0) {
+      // Deep clone to avoid reference issues
+      this.clipboard = JSON.parse(JSON.stringify(selected));
+    }
+  }
+
+  private handlePaste() {
+    if (this.clipboard.length === 0) return;
+
+    // Deselect current selection
+    this.strokeManager.deselectAll();
+
+    // Clone clipboard content to allow multiple pastes
+    const toPaste: LaserStroke[] = JSON.parse(JSON.stringify(this.clipboard));
+
+    // Calculate bounding box of clipboard content to center or offset logic
+    // For simplicity: just offset by 20px
+    const offset = 20;
+
+    toPaste.forEach(stroke => {
+      // Offset points
+      stroke.points.forEach(p => {
+        p.x += offset;
+        p.y += offset;
+      });
+
+      // Update bbox if it exists
+      if (stroke.minX !== undefined) stroke.minX += offset;
+      if (stroke.maxX !== undefined) stroke.maxX += offset;
+      if (stroke.minY !== undefined) stroke.minY += offset;
+      if (stroke.maxY !== undefined) stroke.maxY += offset;
+
+      // Select the new pasted strokes
+      stroke.isSelected = true;
+
+      // Treat as new strokes
+      this.strokeManager.addStroke(stroke);
+    });
+
+    // Update clipboard content positions in memory so next paste cascades
+    this.clipboard = JSON.parse(JSON.stringify(toPaste));
+    
+    // Switch to select tool if not active, so user sees the pasted items selected
+    if (this.currentTool !== 'select') {
+        this.setTool('select');
+    }
   }
 }

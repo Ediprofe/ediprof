@@ -14,6 +14,10 @@ export class StrokeManager {
     return this.strokes;
   }
 
+  public getSelectedStrokes(): LaserStroke[] {
+    return this.strokes.filter(s => s.isSelected);
+  }
+
   public addStroke(stroke: LaserStroke) {
     this.strokes.push(stroke);
     this.onUpdate();
