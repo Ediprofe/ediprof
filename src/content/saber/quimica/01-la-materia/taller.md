@@ -94,6 +94,12 @@ La afirmación de Juan es una conclusión porque resume el patrón o tendencia o
 </details>
 
 ## 3.
+
+<!--
+fuente: ICFES
+año: 2024
+-->
+
 Una olla con agua hierve a una temperatura de 100 °C cuando está a una altura de 0 km. 
 
 ![altura-y-presion-atmosferica](https://cdn.ediprofe.com/img/saber/quimica/altura-y-presion-atmosferica.webp)
