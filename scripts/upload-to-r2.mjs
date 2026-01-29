@@ -220,7 +220,7 @@ function searchImages(index, query) {
 }
 
 // Proceso principal de subida
-async function uploadImage(fileName, materia) {
+async function uploadImage(fileName, materia, isSaber = false) {
   const inputPath = path.join(CONFIG.inboxDir, fileName);
   
   // Verificar que existe el archivo
@@ -244,7 +244,7 @@ async function uploadImage(fileName, materia) {
   const baseName = path.basename(fileName, path.extname(fileName));
   const similar = findSimilar(index, baseName, materia);
   
-  if (similar.length > 0) {
+  if (similar.length > 0 && !isSaber) {
     log('⚠️', `Ya existen imágenes similares:`, 'yellow');
     similar.forEach(img => {
       console.log(`   ${colors.gray}${img.id}-${img.name} (${img.date})${colors.reset}`);
@@ -254,11 +254,13 @@ async function uploadImage(fileName, materia) {
     console.log('');
   }
 
-  // Generar ID único
-  let id;
-  do {
-    id = generateId();
-  } while (index.images.some(img => img.id === id));
+  // Generar ID único (solo para lecciones normales)
+  let id = '';
+  if (!isSaber) {
+    do {
+      id = generateId();
+    } while (index.images.some(img => img.id === id));
+  }
 
   // Preparar nombres de archivo
   const cleanName = baseName.toLowerCase()
@@ -271,7 +273,10 @@ async function uploadImage(fileName, materia) {
 
   console.log('');
   log('📍', `Materia: ${materia}`, 'blue');
-  log('🆔', `ID generado: ${id}`, 'blue');
+  if (!isSaber) {
+    log('🆔', `ID generado: ${id}`, 'blue');
+  }
+  log('📦', `Tipo: ${isSaber ? 'Taller Saber' : 'Lección'}`, 'blue');
   console.log('');
 
   // Optimizar imagen
@@ -293,8 +298,16 @@ async function uploadImage(fileName, materia) {
   // Determinar nombre final y ruta
   const { finalPath, format } = optimizeResult;
   const finalName = `${cleanName}.${format}`;
-  const r2FileName = `${id}-${finalName}`;
-  const r2Path = `img/${materia}/${r2FileName}`;
+  
+  // Ruta según tipo (Saber o Lección)
+  let r2FileName, r2Path;
+  if (isSaber) {
+    r2FileName = finalName;
+    r2Path = `img/saber/${materia}/${r2FileName}`;
+  } else {
+    r2FileName = `${id}-${finalName}`;
+    r2Path = `img/${materia}/${r2FileName}`;
+  }
 
   // Verificar wrangler
   if (!checkWrangler()) {
@@ -345,9 +358,10 @@ async function uploadImage(fileName, materia) {
 
   // Actualizar índice
   index.images.push({
-    id,
+    id: isSaber ? 'saber' : id,
     name: finalName,
     materia,
+    type: isSaber ? 'saber' : 'lesson',
     date: new Date().toISOString().split('T')[0],
     size: formatBytes(fs.statSync(finalPath).size),
     url,
@@ -445,6 +459,17 @@ async function interactiveMode() {
     }
   });
   
+  // Preguntar si es para Saber o Lección
+  const imageType = await select({
+    message: '¿Para qué es esta imagen?',
+    choices: [
+      { name: '📚 Lección (con ID único)', value: 'lesson' },
+      { name: '📝 Taller Saber (sin ID)', value: 'saber' }
+    ]
+  });
+  
+  const isSaber = imageType === 'saber';
+  
   // Seleccionar materia con flechas
   const selectedMateria = await select({
     message: 'Selecciona la materia (↑↓ para navegar):',
@@ -459,7 +484,7 @@ async function interactiveMode() {
   console.log('');
   
   // Subir la imagen
-  await uploadImage(selectedFile, selectedMateria);
+  await uploadImage(selectedFile, selectedMateria, isSaber);
   
   // Preguntar si eliminar el original
   const deleteOriginal = await confirm({
