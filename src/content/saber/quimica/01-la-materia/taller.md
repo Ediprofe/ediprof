@@ -175,6 +175,7 @@ D. ==el recipiente II es el que contiene mayor masa== ✅ (II = 2ml × 0.99 = ==
 
 **Respuesta: D**
 
+**Explicación:**
 Para encontrar la masa, utilizamos la relación $m = d \times v$. Calculamos la masa para cada recipiente:
 - Recipiente I (Tolueno): $1 \text{ ml} \times 0,78 \text{ g/ml} = 0,78 \text{ g}$
 - Recipiente II (Agua): $2 \text{ ml} \times 0,99 \text{ g/ml} = 1,98 \text{ g}$

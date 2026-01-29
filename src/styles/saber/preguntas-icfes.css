@@ -208,18 +208,18 @@
 }
 
 /* Contenido dentro de details - texto base legible */
-.saber-taller details[open] > *:not(summary) {
+.saber-taller details[open]>*:not(summary) {
   color: var(--retro-text);
   padding: 0 1.5rem;
 }
 
-.saber-taller details[open] > p {
+.saber-taller details[open]>p {
   margin: 1rem 0;
   line-height: 1.7;
   color: var(--retro-text);
 }
 
-.saber-taller details[open] > p:first-of-type {
+.saber-taller details[open]>p:first-of-type {
   margin-top: 1.5rem;
 }
 
@@ -229,7 +229,7 @@
    ========================================== */
 
 /* Contenedor de opciones en retroalimentación */
-.saber-taller details[open] > p:has(br) {
+.saber-taller details[open]>p:has(br) {
   background: white;
   border-radius: 12px;
   padding: 1rem 1.5rem;
@@ -238,7 +238,7 @@
   line-height: 2.2;
 }
 
-:global(html.dark) .saber-taller details[open] > p:has(br) {
+:global(html.dark) .saber-taller details[open]>p:has(br) {
   background: rgba(15, 23, 42, 0.6);
   border-color: #374151;
 }
@@ -278,7 +278,7 @@
    ========================================== */
 
 /* "Respuesta: X" - caja verde destacada (párrafos cortos sin texto largo) */
-.saber-taller details[open] > p:has(strong:first-child) {
+.saber-taller details[open]>p:has(strong:first-child) {
   background: var(--correct-bg);
   border: 2px solid var(--correct-border);
   border-radius: 12px;
@@ -291,7 +291,7 @@
 }
 
 /* Checkmark icon - posicionado absolutamente para no romper el flujo del texto */
-.saber-taller details[open] > p:has(strong:first-child)::before {
+.saber-taller details[open]>p:has(strong:first-child)::before {
   content: "✓";
   position: absolute;
   left: 1rem;
@@ -309,11 +309,56 @@
 }
 
 /* ==========================================
+   FUSIÓN VISUAL: EXPLICACIÓN + LISTA
+   Une el párrafo verde con la lista siguiente
+   ========================================== */
+
+/* 1. El párrafo pierde borde inferior y margen */
+.saber-taller details[open]>p:has(strong:first-child):has(+ ul) {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0.5rem;
+}
+
+/* 2. La lista gana estilo verde y pierde borde superior */
+.saber-taller details[open]>p:has(strong:first-child)+ul {
+  background: var(--correct-bg);
+  border: 2px solid var(--correct-border);
+  border-top: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-radius: 0 0 12px 12px;
+  margin: 0 1.5rem 1.5rem 1.5rem;
+  padding: 0 1.5rem 1.5rem 3.5rem;
+  /* Indentación alineada con el texto */
+  color: var(--correct-text);
+  list-style: none;
+  /* Quitamos bullets default para personalizar si se quiere, o dejamos */
+}
+
+/* Restaurar bullets para estas listas integradas pero con color correcto */
+.saber-taller details[open]>p:has(strong:first-child)+ul li {
+  position: relative;
+  padding-left: 0.5rem;
+}
+
+.saber-taller details[open]>p:has(strong:first-child)+ul li::before {
+  content: "•";
+  color: var(--correct-border);
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+/* ==========================================
    EXPLICACIÓN - CAJA INFORMATIVA
    ========================================== */
 
 /* Último párrafo (explicación) */
-.saber-taller details[open] > p:last-of-type:not(:has(strong:first-child)):not(:has(br)) {
+.saber-taller details[open]>p:last-of-type:not(:has(strong:first-child)):not(:has(br)) {
   background: linear-gradient(135deg, #eff6ff, #dbeafe);
   border: 1px solid #93c5fd;
   border-left: 4px solid var(--saber-primary);
@@ -324,7 +369,7 @@
   line-height: 1.8;
 }
 
-:global(html.dark) .saber-taller details[open] > p:last-of-type:not(:has(strong:first-child)):not(:has(br)) {
+:global(html.dark) .saber-taller details[open]>p:last-of-type:not(:has(strong:first-child)):not(:has(br)) {
   background: linear-gradient(135deg, rgba(30, 58, 138, 0.3), rgba(30, 64, 175, 0.2));
   border-color: #3b82f6;
   color: #93c5fd;
@@ -340,10 +385,25 @@
   margin: 1rem 0;
 }
 
-.saber-taller ul > li {
+.saber-taller ul>li {
   margin-bottom: 0.5rem;
   line-height: 1.6;
   padding: 0;
+}
+
+/* Listas genéricas dentro de retroalimentación */
+.saber-taller details[open]>ul {
+  background: white;
+  border: 1px solid var(--saber-border);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem 1.25rem 2.5rem;
+  margin: 0 1.5rem 1.5rem 1.5rem;
+  color: var(--retro-text);
+}
+
+:global(html.dark) .saber-taller details[open]>ul {
+  background: rgba(15, 23, 42, 0.4);
+  border-color: var(--saber-border);
 }
 
 /* ========================================
@@ -496,10 +556,10 @@
     font-size: 1.25rem;
   }
 
-  .saber-taller details[open] > p,
-  .saber-taller details[open] > p:has(strong:first-child),
-  .saber-taller details[open] > p:has(br),
-  .saber-taller details[open] > p:last-of-type {
+  .saber-taller details[open]>p,
+  .saber-taller details[open]>p:has(strong:first-child),
+  .saber-taller details[open]>p:has(br),
+  .saber-taller details[open]>p:last-of-type {
     margin-left: 0.75rem;
     margin-right: 0.75rem;
     padding-left: 1rem;
@@ -518,11 +578,11 @@
     align-self: flex-start;
   }
 
-  .saber-taller details[open] > p:has(strong:first-child) {
+  .saber-taller details[open]>p:has(strong:first-child) {
     padding-left: 3rem;
   }
 
-  .saber-taller details[open] > p:has(strong:first-child)::before {
+  .saber-taller details[open]>p:has(strong:first-child)::before {
     width: 24px;
     height: 24px;
     font-size: 0.875rem;
@@ -539,7 +599,7 @@
     break-inside: avoid;
   }
 
-  .saber-taller details[open] summary ~ * {
+  .saber-taller details[open] summary~* {
     display: block;
   }
 
