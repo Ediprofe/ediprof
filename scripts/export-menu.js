@@ -12,7 +12,7 @@
  */
 
 import inquirer from 'inquirer';
-import { readdirSync, existsSync, statSync, readFileSync } from 'fs';
+import { readdirSync, existsSync, statSync, readFileSync, mkdirSync } from 'fs';
 import { join, resolve, basename } from 'path';
 import { execSync, spawn } from 'child_process';
 import { fileURLToPath } from 'url';
