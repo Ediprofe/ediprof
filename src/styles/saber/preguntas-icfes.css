@@ -74,17 +74,20 @@
 }
 
 /* ========================================
-   ALTERNATIVA: Lista simple con ::marker
-   Para cuando se usa Markdown estándar
+   OPCIONES DE RESPUESTA (A. B. C. D.)
+   Formato simple con CSS puro
    ======================================== */
 
-.saber-taller ul:not(.opciones-respuesta) {
-  list-style: none;
-  padding: 0;
+/* Contenedor de opciones - consistente con PDFs */
+.opciones-grid,
+.opciones-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
   margin: 1.5rem 0 2rem 0;
 }
 
-.saber-taller ul:not(.opciones-respuesta) > li {
+.opcion-item {
   display: flex;
   align-items: flex-start;
   gap: 1rem;
@@ -93,32 +96,26 @@
   border: 2px solid var(--border-color, #e2e8f0);
   border-radius: 12px;
   transition: all 0.2s ease;
-  margin-bottom: 0.75rem;
   line-height: 1.6;
 }
 
-.saber-taller ul:not(.opciones-respuesta) > li:last-child {
-  margin-bottom: 0;
-}
-
-.saber-taller ul:not(.opciones-respuesta) > li:hover {
+.opcion-item:hover {
   border-color: var(--color-primary);
   background: rgba(37, 99, 235, 0.04);
+  transform: translateX(4px);
 }
 
-:global(html.dark) .saber-taller ul:not(.opciones-respuesta) > li {
+:global(html.dark) .opcion-item {
   background: rgba(30, 41, 59, 0.5);
   border-color: #334155;
 }
 
-/* Letra automática con CSS counters */
-.saber-taller ul:not(.opciones-respuesta) {
-  counter-reset: opcion;
+:global(html.dark) .opcion-item:hover {
+  background: rgba(37, 99, 235, 0.1);
+  border-color: var(--color-primary);
 }
 
-.saber-taller ul:not(.opciones-respuesta) > li::before {
-  counter-increment: opcion;
-  content: counter(opcion, upper-alpha);
+.opcion-letra {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -133,8 +130,32 @@
   box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
 }
 
+.opcion-texto {
+  flex: 1;
+}
+
+/* Listas de contexto (con dash) - estilo normal de bullet */
+.saber-taller ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+}
+
+.saber-taller ul > li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+  padding: 0;
+}
+
+/* Listas dentro de details (retroalimentación) */
+.saber-taller details ul > li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
 /* ========================================
    DETAILS/SUMMARY - RETROALIMENTACIÓN
+   Estilo tipo PDF con caja amarilla
    ======================================== */
 
 .saber-taller details {
@@ -195,17 +216,53 @@
   border-bottom-color: #334155;
 }
 
-/* Contenido de la retroalimentación */
+/* Contenido de la retroalimentación - Estilo PDF */
+.saber-taller details[open] {
+  background: linear-gradient(135deg, #fef9e7, #fef5e7);
+  border: 3px solid #f4d03f;
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+:global(html.dark) .saber-taller details[open] {
+  background: linear-gradient(135deg, rgba(254, 249, 231, 0.1), rgba(254, 245, 231, 0.05));
+  border-color: #d4af37;
+}
+
+/* Título "Análisis de la Pregunta" - agregar con ::before */
+.saber-taller details[open] summary {
+  background: transparent;
+  border-bottom: 2px solid #d4af37;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  color: #8b4513;
+}
+
+:global(html.dark) .saber-taller details[open] summary {
+  color: #f4d03f;
+  border-bottom-color: #d4af37;
+}
+
+.saber-taller details[open] summary::before {
+  content: "🎯";
+  font-size: 1.25rem;
+  transform: none;
+}
+
+/* Contenido dentro de details */
 .saber-taller details > *:not(summary) {
-  padding: 0 1.25rem;
+  padding: 0;
+  margin: 0;
+}
+
+.saber-taller details > p {
+  margin: 0.75rem 0;
+  line-height: 1.7;
 }
 
 .saber-taller details > p:first-of-type {
-  padding-top: 1.25rem;
-}
-
-.saber-taller details > *:last-child {
-  padding-bottom: 1.25rem;
+  margin-top: 0;
 }
 
 /* ========================================
@@ -217,32 +274,76 @@
 /* Resaltado con <mark> o ==texto== */
 .saber-taller mark,
 .saber-taller .highlight {
-  background: linear-gradient(135deg, #fef08a, #fde047);
-  color: #854d0e;
-  padding: 0.1em 0.4em;
-  border-radius: 4px;
-  font-weight: 500;
+  background: linear-gradient(135deg, #fef08a, #fde047) !important;
+  color: #854d0e !important;
+  padding: 0.15em 0.4em !important;
+  border-radius: 4px !important;
+  font-weight: 600 !important;
 }
 
 :global(html.dark) .saber-taller mark,
 :global(html.dark) .saber-taller .highlight {
-  background: linear-gradient(135deg, #854d0e, #713f12);
-  color: #fef08a;
+  background: linear-gradient(135deg, #854d0e, #713f12) !important;
+  color: #fef08a !important;
 }
 
-/* Tachado con <del> o ~~texto~~ */
+/* Tachado con <del> o ~~texto~~ - MUY VISIBLE */
 .saber-taller del,
 .saber-taller s,
-.saber-taller .tachado {
-  text-decoration: line-through;
-  color: #dc2626;
-  opacity: 0.8;
+.saber-taller .tachado,
+.saber-taller details del,
+.saber-taller details s,
+.saber-taller p del,
+.saber-taller p s {
+  text-decoration: line-through !important;
+  text-decoration-thickness: 2px !important;
+  text-decoration-color: #dc2626 !important;
+  color: #dc2626 !important;
+  background: rgba(220, 38, 38, 0.15) !important;
+  padding: 0.1em 0.3em !important;
+  border-radius: 3px !important;
+  font-weight: 500 !important;
+  opacity: 1 !important;
 }
 
 :global(html.dark) .saber-taller del,
 :global(html.dark) .saber-taller s,
-:global(html.dark) .saber-taller .tachado {
-  color: #f87171;
+:global(html.dark) .saber-taller .tachado,
+:global(html.dark) .saber-taller details del,
+:global(html.dark) .saber-taller details s {
+  text-decoration-color: #f87171 !important;
+  color: #f87171 !important;
+  background: rgba(248, 113, 113, 0.2) !important;
+}
+
+/* Respuesta correcta - Formato especial */
+.saber-taller details p:has(strong:first-child) {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(22, 163, 74, 0.05));
+  border-left: 4px solid #22c55e;
+  padding: 0.75rem 1rem;
+  margin: 1.5rem 0;
+  border-radius: 0 8px 8px 0;
+  font-weight: 600;
+  color: #16a34a;
+}
+
+:global(html.dark) .saber-taller details p:has(strong:first-child) {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.15), rgba(22, 163, 74, 0.1));
+  color: #4ade80;
+}
+
+/* Explicación después de la respuesta */
+.saber-taller details > p:last-of-type {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.04), rgba(37, 99, 235, 0.02));
+  border-left: 4px solid var(--color-primary);
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+  border-radius: 0 8px 8px 0;
+  line-height: 1.7;
+}
+
+:global(html.dark) .saber-taller details > p:last-of-type {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(37, 99, 235, 0.05));
 }
 
 /* Respuesta correcta - Check verde */
@@ -402,19 +503,65 @@
   gap: 0.5rem;
 }
 
+/* Opciones dentro de retroalimentación (details) - formato simple tipo PDF */
+.saber-taller details .opciones-grid {
+  display: block;
+  margin: 1rem 0;
+  padding: 0;
+}
+
+.saber-taller details .opcion-item {
+  display: block;
+  background: transparent;
+  border: none;
+  padding: 0.5rem 0;
+  margin: 0;
+  gap: 0;
+  transition: none;
+  line-height: 1.8;
+}
+
+.saber-taller details .opcion-letra {
+  display: inline;
+  min-width: auto;
+  height: auto;
+  background: none;
+  color: inherit;
+  font-weight: 700;
+  font-size: inherit;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  margin-right: 0.25rem;
+}
+
+.saber-taller details .opcion-texto {
+  display: inline;
+  line-height: inherit;
+}
+
+.saber-taller details .opcion-item:hover {
+  background: transparent;
+  border: none;
+  transform: none;
+}
+
+/* Formato especial para opciones dentro de details - sin cajas */
+.saber-taller details p:has(+ p) {
+  margin-bottom: 0.5rem;
+}
+
 /* ========================================
    RESPONSIVE
    ======================================== */
 
 @media (max-width: 768px) {
-  .saber-taller ul:not(.opciones-respuesta) > li,
-  .saber-taller .opciones-respuesta li {
+  .opcion-item {
     padding: 0.875rem 1rem;
     gap: 0.75rem;
   }
 
-  .saber-taller .opcion-letra,
-  .saber-taller ul:not(.opciones-respuesta) > li::before {
+  .opcion-letra {
     min-width: 32px;
     height: 32px;
     font-size: 0.875rem;
@@ -430,15 +577,13 @@
 }
 
 @media (max-width: 480px) {
-  .saber-taller ul:not(.opciones-respuesta) > li,
-  .saber-taller .opciones-respuesta li {
+  .opcion-item {
     padding: 0.75rem;
     flex-direction: column;
     gap: 0.5rem;
   }
 
-  .saber-taller .opcion-letra,
-  .saber-taller ul:not(.opciones-respuesta) > li::before {
+  .opcion-letra {
     align-self: flex-start;
   }
 }
@@ -456,8 +601,7 @@
     display: block !important;
   }
 
-  .saber-taller ul:not(.opciones-respuesta) > li,
-  .saber-taller .opciones-respuesta li {
+  .opcion-item {
     break-inside: avoid;
     border-color: #ccc;
     background: white;

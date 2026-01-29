@@ -7,6 +7,8 @@ import rehypeKatex from 'rehype-katex';
 import rehypeExternalLinks from 'rehype-external-links';
 import { youtubeAutoEmbed } from './src/plugins/youtube-auto-embed.js';
 import tableWrapper from './src/plugins/table-wrapper.js';
+import { rehypeSaberOpciones } from './src/plugins/rehype-saber-opciones.js';
+import { remarkSaberMarcadores } from './src/plugins/remark-saber-marcadores.js';
 
 export default defineConfig({
   site: process.env.URL || 'https://ediprofe.com',
@@ -29,8 +31,9 @@ export default defineConfig({
       [remarkMath, {
         singleDollarTextMath: true
       }],
-      remarkBreaks,
-      youtubeAutoEmbed
+      youtubeAutoEmbed,
+      remarkSaberMarcadores,  // Procesar ==resaltado== y ~~tachado~~ en saber
+      remarkBreaks
     ],
     rehypePlugins: [
       [rehypeKatex, {
@@ -54,6 +57,7 @@ export default defineConfig({
           "\\cos": "\\text{cos}"
         }
       }],
+      rehypeSaberOpciones,  // Plugin para formatear opciones A. B. C. D.
       [rehypeExternalLinks, {
         target: '_blank',
         rel: ['noopener', 'noreferrer']

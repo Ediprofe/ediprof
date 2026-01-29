@@ -188,8 +188,8 @@ function parsePregunta(section, numeroGlobal) {
             continue; // Saltar toda la línea si estamos en comentario
         }
 
-        // ¿Es opción?
-        const opcionMatch = line.match(/^\s*-\s*([A-D])\.\s*(.+)$/);
+        // ¿Es opción? (formato: A. texto, sin dash)
+        const opcionMatch = line.match(/^\s*([A-D])\.\s*(.+)$/);
         if (opcionMatch) {
             inOpciones = true;
             opciones[opcionMatch[1]] = opcionMatch[2].trim();

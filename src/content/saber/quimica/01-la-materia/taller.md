@@ -25,10 +25,10 @@ $$4Fe + 3O_2 \rightarrow 2Fe_2O_3$$
 
 Teniendo en cuenta la información anterior, ¿qué tipo de sustancia se forma?
 
-- A. Un compuesto.
-- B. Una mezcla homogénea.
-- C. Un elemento.
-- D. Una mezcla heterogénea.
+A. Un compuesto.
+B. Una mezcla homogénea.
+C. Un elemento.
+D. Una mezcla heterogénea.
 
 <details>
 <summary>✅ Respuesta</summary>
@@ -42,10 +42,10 @@ $$4Fe + 3O_2 \rightarrow 2Fe_2O_3$$
 
 ==¿qué tipo de sustancia se forma?==
 
-- A. ==Un compuesto==. ✅
-- B. Una mezcla homogénea. ~~(No hay transformación química en las mezclas)~~
-- C. Un elemento. ~~(El producto tiene más de un elemento: Fe y O)~~
-- D. Una mezcla heterogénea. ~~(No hay transformación química en las mezclas)~~
+A. ==Un compuesto==. ✅
+B. Una mezcla homogénea. ~~(No hay transformación química en las mezclas)~~
+C. Un elemento. ~~(El producto tiene más de un elemento: Fe y O)~~
+D. Una mezcla heterogénea. ~~(No hay transformación química en las mezclas)~~
 
 **Respuesta: A**
 
@@ -69,10 +69,10 @@ Para la clase de Ciencias, Juan investiga sobre la variación de la temperatura 
 
 Con base en los datos obtenidos, Juan afirma que "a medida que aumenta la altitud, disminuye la temperatura de ebullición del agua". ¿Esta afirmación puede considerarse una evidencia o una conclusión basada en los datos experimentales?
 
-- A. Una conclusión, porque da una posible explicación al fenómeno observado.
-- B. Una evidencia, porque tiene en cuenta las variables del experimento.
-- C. Una conclusión, porque evalúa la tendencia de los datos contenidos en la tabla.
-- D. Una evidencia, porque los datos obtenidos proceden de diferentes mediciones.
+A. Una conclusión, porque da una posible explicación al fenómeno observado.
+B. Una evidencia, porque tiene en cuenta las variables del experimento.
+C. Una conclusión, porque evalúa la tendencia de los datos contenidos en la tabla.
+D. Una evidencia, porque los datos obtenidos proceden de diferentes mediciones.
 
 <details>
 <summary>✅ Respuesta</summary>
@@ -82,10 +82,10 @@ Juan encuentra datos... y los registra en la siguiente tabla... ==a medida que a
 
 ==¿Esta afirmación puede considerarse una evidencia o una conclusión?==
 
-- A. Una conclusión, porque ~~da una posible explicación al fenómeno~~ (describe tendencia, no explica)
-- B. ~~Una evidencia~~, porque tiene en cuenta las variables...
-- C. ==Una conclusión==, porque ==evalúa la tendencia de los datos== ✅
-- D. ~~Una evidencia~~, porque los datos proceden de diferentes mediciones...
+A. Una conclusión, porque ~~da una posible explicación al fenómeno~~ (describe tendencia, no explica)
+B. ~~Una evidencia~~, porque tiene en cuenta las variables...
+C. ==Una conclusión==, porque ==evalúa la tendencia de los datos== ✅
+D. ~~Una evidencia~~, porque los datos proceden de diferentes mediciones...
 
 **Respuesta: C**
 
@@ -100,10 +100,10 @@ Una olla con agua hierve a una temperatura de 100 °C cuando está a una altura 
 
 Teniendo en cuenta que el punto de ebullición es la temperatura a la cual la presión del vapor iguala a la presión atmosférica, si se pone a calentar la misma cantidad de agua a una altura de 25 km, puede afirmarse que el agua:
 
-- A. hierve a una temperatura menor que 100 °C, porque la presión es menor.
-- B. hierve a una temperatuzra mayor que 100 °C, porque la presión es menor.
-- C. nunca hierve porque a esa altura hay poca cantidad de aire.
-- D. se congelará porque al no haber aire, pasará a estado sólido.
+A. hierve a una temperatura menor que 100 °C, porque la presión es menor.
+B. hierve a una temperatuzra mayor que 100 °C, porque la presión es menor.
+C. nunca hierve porque a esa altura hay poca cantidad de aire.
+D. se congelará porque al no haber aire, pasará a estado sólido.
 
 <details>
 <summary>✅ Respuesta</summary>
@@ -115,10 +115,10 @@ Si se calienta agua a ==una altura de 25 km== (donde la gráfica muestra ==menor
 
 ==¿puede afirmarse que el agua...?==
 
-- A. ==hierve a una temperatura menor que 100 °C, porque la presión es menor== ✅
-- B. hierve a una temperatura mayor... ~~porque la presión es menor~~ (contradice: menor presión = menor T de ebullición)
-- C. ~~nunca hierve~~ porque a esa altura hay poca cantidad de aire.
-- D. ~~se congelará~~ porque al no haber aire...
+A. ==hierve a una temperatura menor que 100 °C, porque la presión es menor== ✅
+B. hierve a una temperatura mayor... ~~porque la presión es menor~~ (contradice: menor presión = menor T de ebullición)
+C. ~~nunca hierve~~ porque a esa altura hay poca cantidad de aire.
+D. ~~se congelará~~ porque al no haber aire...
 
 **Respuesta: A**
 
@@ -147,10 +147,10 @@ En cuatro recipientes se colocan volúmenes diferentes de cada líquido como se 
 
 De acuerdo con lo ilustrado es válido afirmar que:
 
-- A. el recipiente IV es el que contiene menor masa.
-- B. los recipientes II y IV contienen igual masa.
-- C. el recipiente III contiene menor masa que el I.
-- D. el recipiente II es el que contiene mayor masa.
+A. el recipiente IV es el que contiene menor masa.
+B. los recipientes II y IV contienen igual masa.
+C. el recipiente III contiene menor masa que el I.
+D. el recipiente II es el que contiene mayor masa.
 
 <details>
 <summary>✅ Respuesta</summary>
@@ -162,10 +162,10 @@ Para encontrar la masa: ==m = d × v==
 
 ==De acuerdo con lo ilustrado es válido afirmar que:==
 
-- A. el recipiente IV es el que contiene menor masa. ~~(IV = 2ml × 0.78 = 1.56g, no es la menor)~~
-- B. los recipientes II y IV contienen igual masa. ~~(II = 1.98g ≠ IV = 1.56g)~~
-- C. el recipiente III contiene menor masa que el I. ~~(III = 1.06g > I = 0.78g)~~
-- D. ==el recipiente II es el que contiene mayor masa== ✅ (II = 2ml × 0.99 = ==1.98g==)
+A. el recipiente IV es el que contiene menor masa. ~~(IV = 2ml × 0.78 = 1.56g, no es la menor)~~
+B. los recipientes II y IV contienen igual masa. ~~(II = 1.98g ≠ IV = 1.56g)~~
+C. el recipiente III contiene menor masa que el I. ~~(III = 1.06g > I = 0.78g)~~
+D. ==el recipiente II es el que contiene mayor masa== ✅ (II = 2ml × 0.99 = ==1.98g==)
 
 **Respuesta: D**
 
@@ -201,10 +201,10 @@ Un investigador realizó un experimento en el que sometió un bloque de hierro a
  
 ![cambios-de-fase](https://cdn.ediprofe.com/img/saber/quimica/cambios-de-fase.webp)
  
-- A. Gráfica A
-- B. Gráfica B
-- C. Gráfica C
-- D. Gráfica D
+A. Gráfica A
+B. Gráfica B
+C. Gráfica C
+D. Gráfica D
  
  <details>
  <summary>Ver respuesta correcta</summary>
@@ -216,10 +216,10 @@ La tabla muestra: a ==1.535 °C== (cambio sólido→líquido) y a ==2.750 °C== 
 
 ==¿Cuál de las siguientes gráficas corresponde...?==
 
-- A. Gráfica A ~~(no muestra mesetas horizontales)~~
-- B. Gráfica B ~~(solo una meseta o patrón incorrecto)~~
-- C. ==Gráfica C== ✅ (==dos mesetas horizontales== en los puntos de cambio de fase)
-- D. Gráfica D ~~(patrón incorrecto)~~
+A. Gráfica A ~~(no muestra mesetas horizontales)~~
+B. Gráfica B ~~(solo una meseta o patrón incorrecto)~~
+C. ==Gráfica C== ✅ (==dos mesetas horizontales== en los puntos de cambio de fase)
+D. Gráfica D ~~(patrón incorrecto)~~
 
  **Respuesta: C**
  
@@ -250,10 +250,10 @@ Para efectuar un procedimiento, un estudiante tiene las sustancias que se relaci
 
 Si el estudiante debe usar una sustancia cuyo punto de ebullición sea menor que 130 °C, soluble en agua y que no conduzca la electricidad, ¿cuál sustancia debería elegir?
 
-- A. La sustancia 1.
-- B. La sustancia 2.
-- C. La sustancia 3.
-- D. La sustancia 4.
+A. La sustancia 1.
+B. La sustancia 2.
+C. La sustancia 3.
+D. La sustancia 4.
 
 <details>
 <summary>✅ Respuesta</summary>
@@ -266,10 +266,10 @@ El estudiante debe usar una sustancia con:
 
 ==¿cuál sustancia debería elegir?==
 
-- A. La sustancia 1. ~~(Sí conduce electricidad)~~
-- B. La sustancia 2. ~~(Sí conduce electricidad)~~
-- C. La sustancia 3. ~~(No es soluble en agua)~~
-- D. ==La sustancia 4== ✅
+A. La sustancia 1. ~~(Sí conduce electricidad)~~
+B. La sustancia 2. ~~(Sí conduce electricidad)~~
+C. La sustancia 3. ~~(No es soluble en agua)~~
+D. ==La sustancia 4== ✅
 
 **Respuesta: D**
 
@@ -300,10 +300,10 @@ La siguiente tabla muestra las propiedades físicas y químicas de diferentes ma
 
 Si se desea elegir un material con baja densidad que pueda ser usado para la elaboración de láminas que serán usadas en latas de gaseosa, ¿cuál sería el más adecuado?
 
-- A. Cobre, porque tiene mayor conductividad y es maleable.
-- B. Acero inoxidable, porque tiene el mayor punto de ebullición y alta densidad.
-- C. Aluminio, porque posee la menor densidad y es maleable.
-- D. Hierro, porque tiene la menor conductividad eléctrica y la mayor densidad.
+A. Cobre, porque tiene mayor conductividad y es maleable.
+B. Acero inoxidable, porque tiene el mayor punto de ebullición y alta densidad.
+C. Aluminio, porque posee la menor densidad y es maleable.
+D. Hierro, porque tiene la menor conductividad eléctrica y la mayor densidad.
 
 <details>
 <summary>✅ Respuesta</summary>
@@ -315,10 +315,10 @@ La tabla muestra: Aluminio tiene ==2,70 g/cm³== (la ==menor densidad==) y es ==
 
 ==¿cuál sería el más adecuado?==
 
-- A. Cobre... ~~tiene mayor conductividad~~ (no es el criterio solicitado)
-- B. Acero inoxidable... ~~alta densidad~~ (lo contrario de lo pedido)
-- C. ==Aluminio==, porque posee la ==menor densidad== y es ==maleable== ✅
-- D. Hierro... ~~la mayor densidad~~ (lo contrario de lo pedido)
+A. Cobre... ~~tiene mayor conductividad~~ (no es el criterio solicitado)
+B. Acero inoxidable... ~~alta densidad~~ (lo contrario de lo pedido)
+C. ==Aluminio==, porque posee la ==menor densidad== y es ==maleable== ✅
+D. Hierro... ~~la mayor densidad~~ (lo contrario de lo pedido)
 
 **Respuesta: C**
 
@@ -343,10 +343,10 @@ Un estudiante escribe como hipótesis que estos dos líquidos se mezclan formand
 
 Al analizar los resultados, ¿será válida la hipótesis del estudiante y qué conclusión se puede dar?
 
-- A. La hipótesis es válida y se concluye que los resultados obtenidos se dieron debido a que estas sustancias no se mezclaron.
-- B. La hipótesis es válida y se concluye que el alcohol tiene enlaces que impiden que se forme una mezcla heterogénea con el aceite.
-- C. La hipótesis es falsa y se concluye que la mezcla obtenida luego de agitar las dos sustancias es de carácter homogéneo.
-- D. La hipótesis es falsa y se concluye que el alcohol no se disuelve en el aceite, por lo que se obtiene una mezcla heterogénea.
+A. La hipótesis es válida y se concluye que los resultados obtenidos se dieron debido a que estas sustancias no se mezclaron.
+B. La hipótesis es válida y se concluye que el alcohol tiene enlaces que impiden que se forme una mezcla heterogénea con el aceite.
+C. La hipótesis es falsa y se concluye que la mezcla obtenida luego de agitar las dos sustancias es de carácter homogéneo.
+D. La hipótesis es falsa y se concluye que el alcohol no se disuelve en el aceite, por lo que se obtiene una mezcla heterogénea.
 
 <details>
 <summary>✅ Respuesta</summary>
@@ -356,10 +356,10 @@ Un estudiante escribe como hipótesis que estos dos líquidos se mezclan ==forma
 
 ==¿será válida la hipótesis del estudiante y qué conclusión se puede dar?==
 
-- A. ~~La hipótesis es válida~~ y se concluye que los resultados...
-- B. ~~La hipótesis es válida~~ y se concluye que el alcohol tiene...
-- C. La hipótesis es falsa y se concluye que... ~~es de carácter homogéneo~~.
-- D. La hipótesis es ==falsa== y se concluye que... ==se obtiene una mezcla heterogénea==.
+A. ~~La hipótesis es válida~~ y se concluye que los resultados...
+B. ~~La hipótesis es válida~~ y se concluye que el alcohol tiene...
+C. La hipótesis es falsa y se concluye que... ~~es de carácter homogéneo~~.
+D. La hipótesis es ==falsa== y se concluye que... ==se obtiene una mezcla heterogénea==.
 
 **Respuesta: D**
 
@@ -404,10 +404,10 @@ año: 2024
 
 De acuerdo con el modelo, ¿cuál es el manejo apropiado que se debe hacer para evitar la acumulación de gases y el aumento en la presión al interior del biodigestor?
 
-- A. Depositar en el biodigestor diariamente todo tipo de residuos orgánicos e inorgánicos generados por los habitantes de la zona.
-- B. Aumentar drásticamente la temperatura del biodigestor para acelerar el proceso de descomposición de los residuos orgánicos.
-- C. Revisar constantemente la válvula de seguridad para evitar la acumulación de gases que puedan ocasionar la explosión del biodigestor.
-- D. Retirar la válvula de seguridad para acelerar el proceso de descomposición de los residuos sólidos e incrementar la producción de biogás.
+A. Depositar en el biodigestor diariamente todo tipo de residuos orgánicos e inorgánicos generados por los habitantes de la zona.
+B. Aumentar drásticamente la temperatura del biodigestor para acelerar el proceso de descomposición de los residuos orgánicos.
+C. Revisar constantemente la válvula de seguridad para evitar la acumulación de gases que puedan ocasionar la explosión del biodigestor.
+D. Retirar la válvula de seguridad para acelerar el proceso de descomposición de los residuos sólidos e incrementar la producción de biogás.
 
 <details>
 <summary>✅ Respuesta</summary>
@@ -417,10 +417,10 @@ El modelo muestra un biodigestor con una ==válvula de seguridad==.
 
 ==¿cuál es el manejo apropiado que se debe hacer para evitar la acumulación de gases y el aumento en la presión?==
 
-- A. Depositar... ~~todo tipo de residuos orgánicos e inorgánicos~~ (solo orgánicos)
-- B. ~~Aumentar drásticamente la temperatura~~ (puede dañar el sistema)
-- C. ==Revisar constantemente la válvula de seguridad== para ==evitar la acumulación de gases== ✅
-- D. ~~Retirar la válvula de seguridad~~ (peligroso, sin control de presión)
+A. Depositar... ~~todo tipo de residuos orgánicos e inorgánicos~~ (solo orgánicos)
+B. ~~Aumentar drásticamente la temperatura~~ (puede dañar el sistema)
+C. ==Revisar constantemente la válvula de seguridad== para ==evitar la acumulación de gases== ✅
+D. ~~Retirar la válvula de seguridad~~ (peligroso, sin control de presión)
 
 **Respuesta: C**
 
@@ -438,10 +438,10 @@ año: 2024
 
 De acuerdo con los datos reportados en la gráfica, ¿cuál de las siguientes conclusiones responde adecuadamente la pregunta de los científicos?
 
-- A. Las emisiones de gas metano aumentaron a más del doble entre el 2000 y el 2020.
-- B. Las emisiones de gas metano se duplicaron entre el 2009 y el 2011.
-- C. Las emisiones de gas metano se triplicaron entre el 2016 y el 2020.
-- D. Las emisiones de gas metano se mantuvieron constantes entre el 2000 y el 2020.
+A. Las emisiones de gas metano aumentaron a más del doble entre el 2000 y el 2020.
+B. Las emisiones de gas metano se duplicaron entre el 2009 y el 2011.
+C. Las emisiones de gas metano se triplicaron entre el 2016 y el 2020.
+D. Las emisiones de gas metano se mantuvieron constantes entre el 2000 y el 2020.
 
 <details>
 <summary>✅ Respuesta</summary>
@@ -451,10 +451,10 @@ La gráfica muestra: año ==2000== ≈ ==6.000 toneladas==, año ==2020== > ==14
 
 ==¿cuál de las siguientes conclusiones responde...?==
 
-- A. Las emisiones ==aumentaron a más del doble== entre el 2000 y el 2020 ✅ (14.000 > 12.000 = 2×6.000)
-- B. ...se duplicaron entre el 2009 y el 2011. ~~(periodo muy corto para duplicarse)~~
-- C. ...~~se triplicaron~~ entre el 2016 y el 2020. (no hay evidencia de esto)
-- D. ...~~se mantuvieron constantes~~ (la gráfica muestra aumento)
+A. Las emisiones ==aumentaron a más del doble== entre el 2000 y el 2020 ✅ (14.000 > 12.000 = 2×6.000)
+B. ...se duplicaron entre el 2009 y el 2011. ~~(periodo muy corto para duplicarse)~~
+C. ...~~se triplicaron~~ entre el 2016 y el 2020. (no hay evidencia de esto)
+D. ...~~se mantuvieron constantes~~ (la gráfica muestra aumento)
 
 **Respuesta: A**
 
@@ -475,10 +475,10 @@ año: 2024
 
 Se desea clasificar la mezcla inicial que se forma al agregar los residuos orgánicos en el biodigestor; si se sabe que una mezcla se clasifica en homogénea, donde no se pueden diferenciar a simple vista las partes que la componen, y heterogénea, donde se pueden diferenciar a simple vista las partes que la componen, ¿qué tipo de mezcla se tiene al inicio del proceso?
 
-- A. Una mezcla heterogénea de biogás y fertilizantes como productos iniciales del proceso.
-- B. Una mezcla homogénea de dióxido de carbono como único producto del proceso.
-- C. Una mezcla heterogénea de estiércol de animales, residuos de alimentos y agua.
-- D. Una mezcla homogénea de bacterias aerobias, biogás y estiércol de animales.
+A. Una mezcla heterogénea de biogás y fertilizantes como productos iniciales del proceso.
+B. Una mezcla homogénea de dióxido de carbono como único producto del proceso.
+C. Una mezcla heterogénea de estiércol de animales, residuos de alimentos y agua.
+D. Una mezcla homogénea de bacterias aerobias, biogás y estiércol de animales.
 
 <details>
 <summary>✅ Respuesta</summary>
@@ -488,10 +488,10 @@ Mezcla ==homogénea==: no se diferencian las partes. Mezcla ==heterogénea==: se
 
 ==¿qué tipo de mezcla se tiene al inicio del proceso?==
 
-- A. Una mezcla heterogénea de ~~biogás y fertilizantes~~ (estos son productos finales, no iniciales)
-- B. Una mezcla ~~homogénea~~ de dióxido de carbono... (el CO₂ es producto final)
-- C. Una mezcla ==heterogénea== de ==estiércol, residuos de alimentos y agua== ✅ (se distinguen a simple vista)
-- D. Una mezcla ~~homogénea~~ de bacterias ~~aerobias~~ (el proceso es anaerobio)
+A. Una mezcla heterogénea de ~~biogás y fertilizantes~~ (estos son productos finales, no iniciales)
+B. Una mezcla ~~homogénea~~ de dióxido de carbono... (el CO₂ es producto final)
+C. Una mezcla ==heterogénea== de ==estiércol, residuos de alimentos y agua== ✅ (se distinguen a simple vista)
+D. Una mezcla ~~homogénea~~ de bacterias ~~aerobias~~ (el proceso es anaerobio)
 
 **Respuesta: C**
 
@@ -515,10 +515,10 @@ Si partimos del punto X, donde el agua existe al mismo tiempo como líquido y ga
 
 ![Agua líquida y gaseosa](https://cdn.ediprofe.com/img/saber/quimica/agua-liquida-y-gaseosa.webp)
 
-- A. Imagen A
-- B. Imagen B
-- C. Imagen C
-- D. Imagen D
+A. Imagen A
+B. Imagen B
+C. Imagen C
+D. Imagen D
 
 <details>
 <summary>✅ Respuesta</summary>
@@ -530,10 +530,10 @@ El diagrama muestra: moverse a la derecha = entrar en zona ==Gaseoso==.
 
 ==¿qué imagen representa el estado resultante del agua?==
 
-- A. Imagen A ~~(líquido)~~
-- B. Imagen B ~~(mezcla líquido-gas)~~
-- C. Imagen C ~~(no corresponde al estado gaseoso)~~
-- D. ==Imagen D== ✅ (tanque lleno de ==gas==, todo el líquido se evaporó)
+A. Imagen A ~~(líquido)~~
+B. Imagen B ~~(mezcla líquido-gas)~~
+C. Imagen C ~~(no corresponde al estado gaseoso)~~
+D. ==Imagen D== ✅ (tanque lleno de ==gas==, todo el líquido se evaporó)
 
 **Respuesta: D**
 
@@ -555,10 +555,10 @@ Un estudiante escribe como hipótesis que estos dos líquidos se mezclan formand
 
 Al analizar los resultados, ¿será válida la hipótesis del estudiante y qué conclusión se puede dar?
 
-- A. La hipótesis es válida y se concluye que los resultados obtenidos se dieron debido a que estas sustancias no se mezclaron.
-- B. La hipótesis es válida y se concluye que el alcohol tiene enlaces que impiden que se forme una mezcla heterogénea con el aceite.
-- C. La hipótesis es falsa y se concluye que la mezcla obtenida luego de agitar las dos sustancias es de carácter homogéneo.
-- D. La hipótesis es falsa y se concluye que el alcohol no se disuelve en el aceite, por lo que se obtiene una mezcla heterogénea.
+A. La hipótesis es válida y se concluye que los resultados obtenidos se dieron debido a que estas sustancias no se mezclaron.
+B. La hipótesis es válida y se concluye que el alcohol tiene enlaces que impiden que se forme una mezcla heterogénea con el aceite.
+C. La hipótesis es falsa y se concluye que la mezcla obtenida luego de agitar las dos sustancias es de carácter homogéneo.
+D. La hipótesis es falsa y se concluye que el alcohol no se disuelve en el aceite, por lo que se obtiene una mezcla heterogénea.
 
 <details>
 <summary>✅ Respuesta</summary>
@@ -568,10 +568,10 @@ Hipótesis: ==formando una solución homogénea==. Resultado: ==se forman dos ca
 
 ==¿será válida la hipótesis del estudiante y qué conclusión se puede dar?==
 
-- A. ~~La hipótesis es válida~~ y se concluye que... ~~no se mezclaron~~ (contradice su hipótesis de mezcla)
-- B. ~~La hipótesis es válida~~... (la hipótesis es falsa porque predijo homogénea)
-- C. La hipótesis es falsa y... ~~es de carácter homogéneo~~ (falso, hay dos capas = heterogénea)
-- D. La hipótesis es ==falsa== y se concluye que... ==se obtiene una mezcla heterogénea== ✅
+A. ~~La hipótesis es válida~~ y se concluye que... ~~no se mezclaron~~ (contradice su hipótesis de mezcla)
+B. ~~La hipótesis es válida~~... (la hipótesis es falsa porque predijo homogénea)
+C. La hipótesis es falsa y... ~~es de carácter homogéneo~~ (falso, hay dos capas = heterogénea)
+D. La hipótesis es ==falsa== y se concluye que... ==se obtiene una mezcla heterogénea== ✅
 
 **Respuesta: D**
 
@@ -599,10 +599,10 @@ En la siguiente tabla se muestran los resultados de una práctica de laboratorio
 
 Los estudiantes afirman que a $35$ °C la sustancia 3 se encuentra en estado líquido y las sustancias 1 y 2 se encuentran en estado sólido. Teniendo en cuenta la información anterior, ¿qué debe hacer el profesor para comprobar la afirmación de los estudiantes?
 
-- A. Determinar los puntos de fusión y ebullición usando diferentes sustancias.
-- B. Determinar los puntos de fusión y ebullición usando las mismas sustancias.
-- C. Determinar los puntos de fusión y ebullición de las sustancias 1 y 3.
-- D. Determinar los puntos de fusión y ebullición de las sustancias 2 y 3.
+A. Determinar los puntos de fusión y ebullición usando diferentes sustancias.
+B. Determinar los puntos de fusión y ebullición usando las mismas sustancias.
+C. Determinar los puntos de fusión y ebullición de las sustancias 1 y 3.
+D. Determinar los puntos de fusión y ebullición de las sustancias 2 y 3.
 
 <details>
 <summary>✅ Respuesta</summary>
@@ -612,10 +612,10 @@ Afirmación: a 35°C, sustancia 3 (fusión ==31°C== < 35) está en ==estado lí
 
 ==¿qué debe hacer el profesor para comprobar la afirmación?==
 
-- A. ~~Determinar... usando diferentes sustancias~~ (no valida los datos originales)
-- B. ==Determinar los puntos de fusión y ebullición usando las mismas sustancias== ✅ (repetibilidad)
-- C. ~~Determinar... de las sustancias 1 y 3~~ (incompleto)
-- D. ~~Determinar... de las sustancias 2 y 3~~ (incompleto)
+A. ~~Determinar... usando diferentes sustancias~~ (no valida los datos originales)
+B. ==Determinar los puntos de fusión y ebullición usando las mismas sustancias== ✅ (repetibilidad)
+C. ~~Determinar... de las sustancias 1 y 3~~ (incompleto)
+D. ~~Determinar... de las sustancias 2 y 3~~ (incompleto)
 
 **Respuesta: B**
 
@@ -638,10 +638,10 @@ La profesora de química le pide a un estudiante que describa sus observaciones 
 
 De acuerdo con las observaciones del estudiante, ¿qué es el arroz con leche?
 
-- A. Una mezcla homogénea
-- B. Un compuesto
-- C. Una mezcla heterogénea
-- D. Un elemento
+A. Una mezcla homogénea
+B. Un compuesto
+C. Una mezcla heterogénea
+D. Un elemento
 
 <details>
 <summary>✅ Respuesta</summary>
@@ -651,10 +651,10 @@ El arroz con leche tiene: ==arroz==, ==leche==, ==uvas pasas==, ==azúcar==... L
 
 ==¿qué es el arroz con leche?==
 
-- A. Una mezcla homogénea ~~(los componentes se distinguen a simple vista)~~
-- B. Un compuesto ~~(las proporciones varían; en compuestos son fijas)~~
-- C. ==Una mezcla heterogénea== ✅ (componentes distinguibles: arroz, uvas pasas)
-- D. Un elemento ~~(tiene múltiples sustancias)~~
+A. Una mezcla homogénea ~~(los componentes se distinguen a simple vista)~~
+B. Un compuesto ~~(las proporciones varían; en compuestos son fijas)~~
+C. ==Una mezcla heterogénea== ✅ (componentes distinguibles: arroz, uvas pasas)
+D. Un elemento ~~(tiene múltiples sustancias)~~
 
 **Respuesta: C**
 
@@ -682,10 +682,10 @@ Andrés presenta a sus compañeros los resultados de su trabajo experimental, as
 
 Teniendo en cuenta la información anterior, ¿qué puede decir Andrés sobre su hipótesis?
 
-- A. Es falsa, porque la temperatura de ebullición aumenta a medida que disminuye la presión sobre el agua.
-- B. Es verdadera, porque cuando la presión sobre el agua permanece constante, el punto de ebullición aumenta.
-- C. Es falsa, porque a medida que aumenta la presión sobre el agua, la temperatura de ebullición aumenta.
-- D. Es verdadera, porque cuando la temperatura de ebullición del agua disminuye, se nota que la presión es constante.
+A. Es falsa, porque la temperatura de ebullición aumenta a medida que disminuye la presión sobre el agua.
+B. Es verdadera, porque cuando la presión sobre el agua permanece constante, el punto de ebullición aumenta.
+C. Es falsa, porque a medida que aumenta la presión sobre el agua, la temperatura de ebullición aumenta.
+D. Es verdadera, porque cuando la temperatura de ebullición del agua disminuye, se nota que la presión es constante.
 
 <details>
 <summary>✅ Respuesta</summary>
@@ -697,10 +697,10 @@ Datos: Presión (==56 → 150==) → Temperatura (==92 → 120==). ==Ambos aumen
 
 ==¿qué puede decir Andrés sobre su hipótesis?==
 
-- A. Es falsa, porque... ~~disminuye la presión~~ (no corresponde a los datos)
-- B. ~~Es verdadera~~... ~~la presión permanece constante~~ (la presión varía)
-- C. ==Es falsa==, porque a medida que ==aumenta la presión==, la ==temperatura de ebullición aumenta== ✅
-- D. ~~Es verdadera~~... ~~la presión es constante~~ (contradice los datos)
+A. Es falsa, porque... ~~disminuye la presión~~ (no corresponde a los datos)
+B. ~~Es verdadera~~... ~~la presión permanece constante~~ (la presión varía)
+C. ==Es falsa==, porque a medida que ==aumenta la presión==, la ==temperatura de ebullición aumenta== ✅
+D. ~~Es verdadera~~... ~~la presión es constante~~ (contradice los datos)
 
 **Respuesta: C**
 
@@ -720,10 +720,10 @@ Una fábrica produce diversas soluciones acuosas para diferentes usos industrial
 
 ![instrumentos-medida](https://cdn.ediprofe.com/img/saber/quimica/instrumentos-medida.webp)
 
-- A. Una balanza.
-- B. Un densímetro.
-- C. Un peachímetro.
-- D. Una probeta.
+A. Una balanza.
+B. Un densímetro.
+C. Un peachímetro.
+D. Una probeta.
 
 <details>
 <summary>✅ Respuesta</summary>
@@ -733,10 +733,10 @@ Se requiere medir el ==grado de acidez== de las soluciones acuosas.
 
 ==¿Qué instrumento de medida es el más apropiado...?==
 
-- A. Una balanza ~~(mide masa, no acidez)~~
-- B. Un densímetro ~~(mide densidad, no acidez)~~
-- C. ==Un peachímetro== ✅ (mide el ==pH== = grado de acidez)
-- D. Una probeta ~~(mide volumen, no acidez)~~
+A. Una balanza ~~(mide masa, no acidez)~~
+B. Un densímetro ~~(mide densidad, no acidez)~~
+C. ==Un peachímetro== ✅ (mide el ==pH== = grado de acidez)
+D. Una probeta ~~(mide volumen, no acidez)~~
 
 **Respuesta: C**
 
@@ -768,10 +768,10 @@ Posteriormente, la profesora muestra un ejemplo donde se tiene un tubo de ensayo
 
 De acuerdo con lo anterior, ¿cuál es la sustancia que se obtiene después de agitar el contenido del tubo?
 
-- A. Un elemento, porque, al agitar el agua y el yoduro de potasio se obtienen sustancias más simples.
-- B. Una mezcla heterogénea, porque el KI no se disuelve uniformemente en el agua y forma dos fases que se pueden observar a simple vista.
-- C. Un compuesto, porque el agua reaccionó, volviéndose amarilla y cambiando sus propiedades.
-- D. Una mezcla homogénea, porque el KI se disuelve uniformemente en el agua, formando un líquido de color amarillo que no presenta ningún tipo de fases.
+A. Un elemento, porque, al agitar el agua y el yoduro de potasio se obtienen sustancias más simples.
+B. Una mezcla heterogénea, porque el KI no se disuelve uniformemente en el agua y forma dos fases que se pueden observar a simple vista.
+C. Un compuesto, porque el agua reaccionó, volviéndose amarilla y cambiando sus propiedades.
+D. Una mezcla homogénea, porque el KI se disuelve uniformemente en el agua, formando un líquido de color amarillo que no presenta ningún tipo de fases.
 
 <details>
 <summary>✅ Respuesta</summary>
@@ -783,10 +783,10 @@ Según la tabla: Mezcla ==homogénea== → componentes ==distribuidos uniformeme
 
 ==¿cuál es la sustancia que se obtiene...?==
 
-- A. Un elemento... ~~se obtienen sustancias más simples~~ (una mezcla no simplifica elementos)
-- B. Una mezcla heterogénea... ~~no se disuelve uniformemente~~ (contradice el resultado: es uniforme)
-- C. Un compuesto... ~~reaccionó, volviéndose amarilla~~ (el color amarillo es del KI disuelto, no una reacción)
-- D. ==Una mezcla homogénea==, porque el KI ==se disuelve uniformemente==... ==no presenta fases== ✅
+A. Un elemento... ~~se obtienen sustancias más simples~~ (una mezcla no simplifica elementos)
+B. Una mezcla heterogénea... ~~no se disuelve uniformemente~~ (contradice el resultado: es uniforme)
+C. Un compuesto... ~~reaccionó, volviéndose amarilla~~ (el color amarillo es del KI disuelto, no una reacción)
+D. ==Una mezcla homogénea==, porque el KI ==se disuelve uniformemente==... ==no presenta fases== ✅
 
 **Respuesta: D**
 
@@ -808,10 +808,10 @@ Un estudiante desea determinar cuánto tiempo tarda una olla con agua, sometida 
 
 Al día siguiente, hace la misma práctica, pero, como no tiene agua en la nevera, utiliza 100 mL de agua del grifo del lavaplatos, a temperatura ambiente de 15 °C, y mide el tiempo que tarda en alcanzar los 80 °C a fuego lento; sin embargo, los resultados del tiempo son muy diferentes entre ambos días. ¿Qué pudo haber ocasionado este cambio en las mediciones?
 
-- A. La olla cambió sus propiedades al haberse usado previamente.
-- B. Se modificó la cantidad de agua entre las dos mediciones.
-- C. Se utilizaron líquidos distintos con igual volumen y temperatura.
-- D. Las temperaturas iniciales del agua fueron distintas.
+A. La olla cambió sus propiedades al haberse usado previamente.
+B. Se modificó la cantidad de agua entre las dos mediciones.
+C. Se utilizaron líquidos distintos con igual volumen y temperatura.
+D. Las temperaturas iniciales del agua fueron distintas.
 
 <details>
 <summary>✅ Respuesta</summary>
@@ -823,10 +823,10 @@ Resultados: los ==tiempos son muy diferentes==.
 
 ==¿Qué pudo haber ocasionado este cambio en las mediciones?==
 
-- A. La olla ~~cambió sus propiedades~~ (poco probable, no se menciona deterioro)
-- B. ~~Se modificó la cantidad de agua~~ (se usaron 100 mL ambos días)
-- C. ~~Se utilizaron líquidos distintos~~ (ambos eran agua)
-- D. Las ==temperaturas iniciales del agua fueron distintas== ✅ (4°C vs 15°C)
+A. La olla ~~cambió sus propiedades~~ (poco probable, no se menciona deterioro)
+B. ~~Se modificó la cantidad de agua~~ (se usaron 100 mL ambos días)
+C. ~~Se utilizaron líquidos distintos~~ (ambos eran agua)
+D. Las ==temperaturas iniciales del agua fueron distintas== ✅ (4°C vs 15°C)
 
 **Respuesta: D**
 
@@ -853,10 +853,10 @@ Un estudiante dispone 100 g de cuatro sustancias con diferentes calores específ
 
 Con base en la información contenida en la tabla, el estudiante afirma: "A mayor calor específico, se obtiene menor cambio de temperatura de la sustancia". ¿Esta afirmación es una conclusión o una evidencia?
 
-- A. Una conclusión, porque toma como referencia el comportamiento de una sustancia.
-- B. Una evidencia, porque toma en cuenta todos los datos obtenidos en el experimento.
-- C. Una conclusión, porque hace referencia a la tendencia del comportamiento de los datos obtenidos.
-- D. Una evidencia, porque toma como base el cambio de temperatura de las sustancias empleadas.
+A. Una conclusión, porque toma como referencia el comportamiento de una sustancia.
+B. Una evidencia, porque toma en cuenta todos los datos obtenidos en el experimento.
+C. Una conclusión, porque hace referencia a la tendencia del comportamiento de los datos obtenidos.
+D. Una evidencia, porque toma como base el cambio de temperatura de las sustancias empleadas.
 
 <details>
 <summary>✅ Respuesta</summary>
@@ -868,10 +868,10 @@ Datos: Calor 0.5 → T=33°C, Calor 1.0 → T=21°C. ==Tendencia clara==.
 
 ==¿Esta afirmación es una conclusión o una evidencia?==
 
-- A. Una conclusión... ~~toma como referencia el comportamiento de una sustancia~~ (evalúa todas)
-- B. ~~Una evidencia~~... ~~toma en cuenta todos los datos~~ (la evidencia es cada dato individual)
-- C. ==Una conclusión==, porque hace referencia a la ==tendencia del comportamiento de los datos== ✅
-- D. ~~Una evidencia~~... toma como base el cambio de temperatura... (sintetiza, no solo observa)
+A. Una conclusión... ~~toma como referencia el comportamiento de una sustancia~~ (evalúa todas)
+B. ~~Una evidencia~~... ~~toma en cuenta todos los datos~~ (la evidencia es cada dato individual)
+C. ==Una conclusión==, porque hace referencia a la ==tendencia del comportamiento de los datos== ✅
+D. ~~Una evidencia~~... toma como base el cambio de temperatura... (sintetiza, no solo observa)
 
 **Respuesta: C**
 
@@ -893,10 +893,10 @@ Un grupo de investigación desea extraer compuestos químicos naturales a partir
 
 ![instrumentos-medida](https://cdn.ediprofe.com/img/saber/quimica/instrumentos-medida.webp)
 
-- A. Un densímetro.
-- B. Una probeta.
-- C. Un peachímetro.
-- D. Una balanza.
+A. Un densímetro.
+B. Una probeta.
+C. Un peachímetro.
+D. Una balanza.
 
 <details>
 <summary>✅ Respuesta</summary>
@@ -906,10 +906,10 @@ Los investigadores deben ==determinar la masa== de los compuestos y de las plant
 
 ==¿Qué instrumento de medida deben usar...?==
 
-- A. Un densímetro ~~(mide densidad, no masa)~~
-- B. Una probeta ~~(mide volumen, no masa)~~
-- C. Un peachímetro ~~(mide pH, no masa)~~
-- D. ==Una balanza== ✅ (mide ==masa==)
+A. Un densímetro ~~(mide densidad, no masa)~~
+B. Una probeta ~~(mide volumen, no masa)~~
+C. Un peachímetro ~~(mide pH, no masa)~~
+D. ==Una balanza== ✅ (mide ==masa==)
 
 **Respuesta: D**
 
@@ -937,10 +937,10 @@ Los perfumes se crean a partir de la extracción de las esencias de flores, semi
 
 Teniendo en cuenta la información anterior, ¿cuál es el método de separación que se utiliza en la producción de perfumes?
 
-- A. La destilación, ya que separa las esencias de la mezcla de líquidos gracias a los cambios de temperatura.
-- B. La evaporación, ya que obtienen las sustancias sólidas del perfume y las separa de la mezcla inicial.
-- C. La cristalización, ya que se obtienen sólidos cristalinos del perfume gracias a cambios de temperatura.
-- D. La decantación, ya que separa el perfume de otras sustancias según la densidad de cada componente.
+A. La destilación, ya que separa las esencias de la mezcla de líquidos gracias a los cambios de temperatura.
+B. La evaporación, ya que obtienen las sustancias sólidas del perfume y las separa de la mezcla inicial.
+C. La cristalización, ya que se obtienen sólidos cristalinos del perfume gracias a cambios de temperatura.
+D. La decantación, ya que separa el perfume de otras sustancias según la densidad de cada componente.
 
 <details>
 <summary>✅ Respuesta</summary>
@@ -953,10 +953,10 @@ Definiciones:
 
 ==¿cuál es el método de separación que se utiliza en la producción de perfumes?==
 
-- A. ==La destilación==, ya que ==separa las esencias== gracias a los ==cambios de temperatura== ✅
-- B. La evaporación... ~~obtienen sustancias sólidas~~ (el perfume es líquido)
-- C. La cristalización... ~~sólidos cristalinos~~ (el perfume no es sólido)
-- D. La decantación... ~~según la densidad~~ (no se describe este método)
+A. ==La destilación==, ya que ==separa las esencias== gracias a los ==cambios de temperatura== ✅
+B. La evaporación... ~~obtienen sustancias sólidas~~ (el perfume es líquido)
+C. La cristalización... ~~sólidos cristalinos~~ (el perfume no es sólido)
+D. La decantación... ~~según la densidad~~ (no se describe este método)
 
 **Respuesta: A**
 
@@ -978,10 +978,10 @@ En un laboratorio, un grupo de estudiantes realiza el siguiente experimento: se 
 
 De acuerdo con la información anterior, ¿cuáles métodos se pueden aplicar para separar los componentes de la mezcla realizada en el laboratorio?
 
-- A. Filtración, para separar la disolución de agua y sal, y destilación para separar la arena disuelta.
-- B. Decantación, para separar la disolución de agua y sal; y evaporación para separar la arena disuelta.
-- C. Filtración, para separar la arena de la disolución de agua y sal, y evaporación para separar la sal disuelta.
-- D. Decantación, para separar la arena de la disolución de agua y sal, y destilación para separar la sal disuelta.
+A. Filtración, para separar la disolución de agua y sal, y destilación para separar la arena disuelta.
+B. Decantación, para separar la disolución de agua y sal; y evaporación para separar la arena disuelta.
+C. Filtración, para separar la arena de la disolución de agua y sal, y evaporación para separar la sal disuelta.
+D. Decantación, para separar la arena de la disolución de agua y sal, y destilación para separar la sal disuelta.
 
 <details>
 <summary>✅ Respuesta</summary>
@@ -995,10 +995,10 @@ Separación:
 
 ==¿cuáles métodos se pueden aplicar...?==
 
-- A. Filtración... ~~y destilación para separar la arena disuelta~~ (la arena no está disuelta)
-- B. ~~Decantación~~... (la arena no flota ni forma capas por densidad)
-- C. ==Filtración==, para ==separar la arena== de la disolución de agua y sal, y ==evaporación== para ==separar la sal disuelta== ✅
-- D. ~~Decantación~~... (no es el método adecuado para arena mezclada)
+A. Filtración... ~~y destilación para separar la arena disuelta~~ (la arena no está disuelta)
+B. ~~Decantación~~... (la arena no flota ni forma capas por densidad)
+C. ==Filtración==, para ==separar la arena== de la disolución de agua y sal, y ==evaporación== para ==separar la sal disuelta== ✅
+D. ~~Decantación~~... (no es el método adecuado para arena mezclada)
 
 **Respuesta: C**
 
@@ -1036,10 +1036,10 @@ Luego de esta explicación, les muestra la siguiente tabla con dos sustancias de
 
 La profesora les pregunta, ¿cuáles son los métodos de separación que se deben usar para separar el sólido X del sólido Z?
 
-- A. Agregar tolueno para disolver el sólido X, luego, filtrar para separar el sólido Z de la mezcla y, por último, evaporar el tolueno para obtener el sólido X.
-- B. Usar el método de tamizado para separar el sólido X del Z, por la diferencia en el tamaño de las partículas y, luego, filtrar para separar los dos sólidos.
-- C. Agregar agua para disolver el sólido Z, luego, filtrar para separar el sólido X de la mezcla y, por último, evaporar el agua para obtener el sólido Z.
-- D. Usar el método de imantación para separar el sólido X del Z, por las propiedades magnéticas del sólido Z, y, luego, evaporar para separar los sólidos.
+A. Agregar tolueno para disolver el sólido X, luego, filtrar para separar el sólido Z de la mezcla y, por último, evaporar el tolueno para obtener el sólido X.
+B. Usar el método de tamizado para separar el sólido X del Z, por la diferencia en el tamaño de las partículas y, luego, filtrar para separar los dos sólidos.
+C. Agregar agua para disolver el sólido Z, luego, filtrar para separar el sólido X de la mezcla y, por último, evaporar el agua para obtener el sólido Z.
+D. Usar el método de imantación para separar el sólido X del Z, por las propiedades magnéticas del sólido Z, y, luego, evaporar para separar los sólidos.
 
 <details>
 <summary>✅ Respuesta</summary>
@@ -1049,10 +1049,10 @@ Propiedades clave: X: ==no soluble en agua==; Z: ==soluble en agua==. Ambos: mis
 
 ==¿cuáles son los métodos de separación...?==
 
-- A. Agregar tolueno para disolver el sólido X... ~~(X no es soluble en tolueno)~~
-- B. Usar tamizado... ~~por la diferencia en el tamaño~~ (ambos tienen 1mm = mismo tamaño)
-- C. ==Agregar agua para disolver el sólido Z==, luego, ==filtrar para separar el sólido X==, y ==evaporar el agua para obtener el sólido Z== ✅
-- D. Usar imantación... ~~propiedades magnéticas del sólido Z~~ (ninguno tiene propiedades magnéticas)
+A. Agregar tolueno para disolver el sólido X... ~~(X no es soluble en tolueno)~~
+B. Usar tamizado... ~~por la diferencia en el tamaño~~ (ambos tienen 1mm = mismo tamaño)
+C. ==Agregar agua para disolver el sólido Z==, luego, ==filtrar para separar el sólido X==, y ==evaporar el agua para obtener el sólido Z== ✅
+D. Usar imantación... ~~propiedades magnéticas del sólido Z~~ (ninguno tiene propiedades magnéticas)
 
 **Respuesta: C**
 
@@ -1081,10 +1081,10 @@ La sustancia X es un líquido de una sola fase que se puede separar en dos compu
 
 Después de analizar los experimentos, concluye que ambas sustancias son diferentes tipos de mezclas. ¿Es correcta la conclusión de la estudiante?
 
-- A. Sí, porque la sustancia X es una mezcla heterogénea y la sustancia Y es una mezcla homogénea.
-- B. No, porque ambas son mezclas heterogéneas.
-- C. Sí, porque la sustancia X es una mezcla homogénea y la sustancia Y es una mezcla heterogénea.
-- D. No, porque ambas son mezclas homogéneas.
+A. Sí, porque la sustancia X es una mezcla heterogénea y la sustancia Y es una mezcla homogénea.
+B. No, porque ambas son mezclas heterogéneas.
+C. Sí, porque la sustancia X es una mezcla homogénea y la sustancia Y es una mezcla heterogénea.
+D. No, porque ambas son mezclas homogéneas.
 
 <details>
 <summary>✅ Respuesta</summary>
@@ -1095,10 +1095,10 @@ Sustancia Y: ==debe agitarse==, en reposo ==se separa en dos fases==, se separa 
 
 ==¿Es correcta la conclusión de la estudiante?==
 
-- A. ~~Sí~~, porque la sustancia X es ~~una mezcla heterogénea~~ (X tiene una sola fase = homogénea)
-- B. ~~No~~, porque ~~ambas son mezclas heterogéneas~~ (X es homogénea)
-- C. ==Sí==, porque la sustancia X es una ==mezcla homogénea== (una fase) y la sustancia Y es una ==mezcla heterogénea== (dos fases) ✅
-- D. ~~No~~, porque ~~ambas son mezclas homogéneas~~ (Y se separa en fases)
+A. ~~Sí~~, porque la sustancia X es ~~una mezcla heterogénea~~ (X tiene una sola fase = homogénea)
+B. ~~No~~, porque ~~ambas son mezclas heterogéneas~~ (X es homogénea)
+C. ==Sí==, porque la sustancia X es una ==mezcla homogénea== (una fase) y la sustancia Y es una ==mezcla heterogénea== (dos fases) ✅
+D. ~~No~~, porque ~~ambas son mezclas homogéneas~~ (Y se separa en fases)
 
 **Respuesta: C**
 
@@ -1125,10 +1125,10 @@ Un estudiante decide separar dos mezclas por filtración. La primera está confo
 
 El estudiante afirma que al filtrar las dos mezclas se obtienen sustancias puras en los vasos de precipitados. De acuerdo con este procedimiento su aseveración es
 
-- A. válida, debido a que en ambos procedimientos queda agua en el vaso de precipitados y los sólidos son retenidos por el papel filtro.
-- B. inválida, porque en el vaso de precipitados usado en la separación de la mezcla 2 hay una mezcla de agua y carbonato de calcio.
-- C. válida, ya que en el momento de la filtración los componentes de las mezclas forman nuevos compuestos.
-- D. inválida, puesto que en el vaso de precipitados de la mezcla 1 hay una mezcla de agua y cloruro de sodio.
+A. válida, debido a que en ambos procedimientos queda agua en el vaso de precipitados y los sólidos son retenidos por el papel filtro.
+B. inválida, porque en el vaso de precipitados usado en la separación de la mezcla 2 hay una mezcla de agua y carbonato de calcio.
+C. válida, ya que en el momento de la filtración los componentes de las mezclas forman nuevos compuestos.
+D. inválida, puesto que en el vaso de precipitados de la mezcla 1 hay una mezcla de agua y cloruro de sodio.
 
 <details>
 <summary>✅ Respuesta</summary>
@@ -1140,10 +1140,10 @@ Afirma que en ambos casos se ==obtienen sustancias puras en los vasos==.
 
 ==De acuerdo con este procedimiento su aseveración es:==
 
-- A. ~~válida~~, debido a que en ambos procedimientos... ~~(en la mezcla 1 el sólido no es retenido)~~
-- B. inválida, porque en el vaso... de la mezcla 2 ~~hay una mezcla de agua y carbonato de calcio~~. (falso: el sólido es retenido)
-- C. ~~válida~~, ya que... ~~forman nuevos compuestos~~. (es una separación física, no química)
-- D. ==inválida==, puesto que en el vaso... de la ==mezcla 1 hay una mezcla de agua y cloruro de sodio==. ✅
+A. ~~válida~~, debido a que en ambos procedimientos... ~~(en la mezcla 1 el sólido no es retenido)~~
+B. inválida, porque en el vaso... de la mezcla 2 ~~hay una mezcla de agua y carbonato de calcio~~. (falso: el sólido es retenido)
+C. ~~válida~~, ya que... ~~forman nuevos compuestos~~. (es una separación física, no química)
+D. ==inválida==, puesto que en el vaso... de la ==mezcla 1 hay una mezcla de agua y cloruro de sodio==. ✅
 
 **Respuesta: D**
 
@@ -1227,10 +1227,10 @@ Un recipiente contiene una mezcla preparada con las sustancias X, T y Q. Para se
 
 De acuerdo con la información de la tabla y el procedimiento de separación, es correcto afirmar que el sólido 1 es
 
-- A. una mezcla de las sustancias X y Q.
-- B. la sustancia X.
-- C. una mezcla de las sustancias T y Q.
-- D. la sustancia T.
+A. una mezcla de las sustancias X y Q.
+B. la sustancia X.
+C. una mezcla de las sustancias T y Q.
+D. la sustancia T.
 
 <details>
 <summary>✅ Respuesta</summary>
@@ -1242,10 +1242,10 @@ Procedimiento: ==Agregar agua, agitar y filtrar==.
 
 ==Es correcto afirmar que el sólido 1 es:==
 
-- A. ~~una mezcla de las sustancias X y Q~~. (Q es soluble en agua, por lo tanto pasa al filtrado)
-- B. ==la sustancia X==. ✅ (X es la única insoluble en agua, por lo que queda retenida en el filtro como sólido 1)
-- C. ~~una mezcla de las sustancias T y Q~~. (Ambas son solubles en agua, forman parte del Filtrado 1)
-- D. ~~la sustancia T~~. (T es soluble en agua, no queda como sólido en el primer paso)
+A. ~~una mezcla de las sustancias X y Q~~. (Q es soluble en agua, por lo tanto pasa al filtrado)
+B. ==la sustancia X==. ✅ (X es la única insoluble en agua, por lo que queda retenida en el filtro como sólido 1)
+C. ~~una mezcla de las sustancias T y Q~~. (Ambas son solubles en agua, forman parte del Filtrado 1)
+D. ~~la sustancia T~~. (T es soluble en agua, no queda como sólido en el primer paso)
 
 **Respuesta: B**
 
@@ -1273,10 +1273,10 @@ Un estudiante desea separar dos muestras en sus componentes. Para esto, sumerge 
 
 Después de observar estos resultados, el estudiante puede concluir que
 
-- A. la muestra 1 es una sustancia pura y la muestra 2 es una mezcla homogénea.
-- B. la muestra 1 y la muestra 2 son sustancias puras.
-- C. la muestra 1 y la muestra 2 son mezclas homogéneas.
-- D. la muestra 1 es una mezcla homogénea y la muestra 2 una sustancia pura.
+A. la muestra 1 es una sustancia pura y la muestra 2 es una mezcla homogénea.
+B. la muestra 1 y la muestra 2 son sustancias puras.
+C. la muestra 1 y la muestra 2 son mezclas homogéneas.
+D. la muestra 1 es una mezcla homogénea y la muestra 2 una sustancia pura.
 
 <details>
 <summary>✅ Respuesta</summary>
@@ -1290,10 +1290,10 @@ En los resultados:
 
 ==Después de observar estos resultados, el estudiante puede concluir que:==
 
-- A. ~~la muestra 1 es una sustancia pura~~ (Falso: se separó en dos componentes)
-- B. ~~la muestra 1~~ y la muestra 2 ~~son sustancias puras~~. (Muestra 1 es mezcla)
-- C. la muestra 1 y ~~la muestra 2 son mezclas homogéneas~~. (Muestra 2 no mostró separación)
-- D. la ==muestra 1 es una mezcla homogénea== y la ==muestra 2 una sustancia pura==. ✅
+A. ~~la muestra 1 es una sustancia pura~~ (Falso: se separó en dos componentes)
+B. ~~la muestra 1~~ y la muestra 2 ~~son sustancias puras~~. (Muestra 1 es mezcla)
+C. la muestra 1 y ~~la muestra 2 son mezclas homogéneas~~. (Muestra 2 no mostró separación)
+D. la ==muestra 1 es una mezcla homogénea== y la ==muestra 2 una sustancia pura==. ✅
 
 **Respuesta: D**
 
@@ -1318,10 +1318,10 @@ Un estudiante quiere separar tres muestras (M1, M2 y M3) en sus componentes. Par
 
 De acuerdo con el modelo de separación mostrado para las tres muestras, ¿cuál de las siguientes inferencias es válida?
 
-- A. Las muestras M1, M2 y M3 tienen la misma composición química.
-- B. La muestra M3 tiene más componentes que las muestras M1 y M2.
-- C. Cuando la muestra M1 reacciona con la muestra M2, produce los mismos productos presentes en la muestra M3.
-- D. Cuando las muestras M1 y M2 reaccionan con el papel, se vuelven más oscuras; mientras que la muestra M3 no reacciona.
+A. Las muestras M1, M2 y M3 tienen la misma composición química.
+B. La muestra M3 tiene más componentes que las muestras M1 y M2.
+C. Cuando la muestra M1 reacciona con la muestra M2, produce los mismos productos presentes en la muestra M3.
+D. Cuando las muestras M1 y M2 reaccionan con el papel, se vuelven más oscuras; mientras que la muestra M3 no reacciona.
 
 <details>
 <summary>✅ Respuesta</summary>
@@ -1336,10 +1336,10 @@ Al observar el resultado final:
 
 ==¿cuál de las siguientes inferencias es válida?==
 
-- A. ~~Las muestras M1, M2 y M3 tienen la misma composición química~~. (Falso: cada una se desplaza y separa de forma distinta)
-- B. ==La muestra M3 tiene más componentes que las muestras M1 y M2==. ✅ (M3 tiene 3 manchas, mientras que M1 tiene 2 e M2 tiene 1)
-- C. ~~Cuando la muestra M1 reacciona con la muestra M2... produce los mismos productos~~. (No hay evidencia de reacciones químicas entre muestras; es una separación física)
-- D. ~~Cuando las muestras M1 y M2 reaccionan con el papel... se vuelven más oscuras~~. (No se observa tal reacción ni cambio de oscuridad en el modelo)
+A. ~~Las muestras M1, M2 y M3 tienen la misma composición química~~. (Falso: cada una se desplaza y separa de forma distinta)
+B. ==La muestra M3 tiene más componentes que las muestras M1 y M2==. ✅ (M3 tiene 3 manchas, mientras que M1 tiene 2 e M2 tiene 1)
+C. ~~Cuando la muestra M1 reacciona con la muestra M2... produce los mismos productos~~. (No hay evidencia de reacciones químicas entre muestras; es una separación física)
+D. ~~Cuando las muestras M1 y M2 reaccionan con el papel... se vuelven más oscuras~~. (No se observa tal reacción ni cambio de oscuridad en el modelo)
 
 **Respuesta: B**
 

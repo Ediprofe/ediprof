@@ -1,0 +1,28 @@
+---
+/**
+ * Componente para renderizar opciones de respuesta en talleres Saber
+ * Uso en markdown:
+ * <OpcionesRespuesta opciones={[
+ *   "Un compuesto.",
+ *   "Una mezcla homogénea.",
+ *   "Un elemento.",
+ *   "Una mezcla heterogénea."
+ * ]} />
+ */
+
+interface Props {
+  opciones: string[];
+}
+
+const { opciones } = Astro.props;
+const letras = ['A', 'B', 'C', 'D'];
+---
+
+<div class="opciones-container">
+  {opciones.map((texto, index) => (
+    <div class="opcion-item">
+      <span class="opcion-letra">{letras[index]}</span>
+      <span class="opcion-texto">{texto}</span>
+    </div>
+  ))}
+</div>
