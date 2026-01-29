@@ -102,7 +102,7 @@ async function main() {
         await page.pdf({
             path: join(outputDir, `${fileName}_normal.pdf`),
             format: 'Letter',
-            margin: { top: '0.6in', right: '0.6in', bottom: '0.6in', left: '0.6in' },
+            margin: { top: '1.5cm', right: '1.5cm', bottom: '1.5cm', left: '1.5cm' },
             printBackground: true
         });
         log(`     ✓ ${fileName}_normal.pdf`, 'green');
@@ -132,7 +132,7 @@ async function main() {
         await page.pdf({
             path: join(outputDir, `${fileName}_retroalimentacion.pdf`),
             format: 'Letter',
-            margin: { top: '0.6in', right: '0.6in', bottom: '0.6in', left: '0.6in' },
+            margin: { top: '1.5cm', right: '1.5cm', bottom: '1.5cm', left: '1.5cm' },
             printBackground: true
         });
         log(`     ✓ ${fileName}_retroalimentacion.pdf`, 'green');

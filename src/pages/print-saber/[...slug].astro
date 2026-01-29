@@ -46,7 +46,7 @@ const unidad = parts[1] ? formatName(parts[1]) : "";
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>{title} - Ediprofe</title>
+        <title>{title}</title>
 
         <!-- Estilos base iguales a la web para consistencia -->
         <link
@@ -73,70 +73,88 @@ const unidad = parts[1] ? formatName(parts[1]) : "";
             body {
                 font-family: var(--f-body);
                 font-size: 11pt;
-                line-height: 1.6;
+                line-height: 1.65;
                 color: var(--c-text);
                 margin: 0;
-                padding: 0.5in;
+                padding: 0; /* Padding 0 para que Playwright maneje los márgenes físicos */
                 background: white;
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
 
-            .doc-header {
+            /* Salto de página antes de cada pregunta (solo Normal y Feedback) */
+            body:not(.mode-imprimible) h2 {
+                break-before: page;
+                margin-top: 0 !important;
+                padding-top: 0;
+            }
+
+            body:not(.mode-imprimible) h2:first-of-type {
+                break-before: auto;
+                margin-top: 10px !important;
+            }
+
+            /* Header Editorial para Normal y Feedback */
+            body:not(.mode-imprimible) .doc-header {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                border-bottom: 3px solid var(--c-primary);
-                padding-bottom: 20px;
-                margin-bottom: 30px;
+                border-bottom: 1px solid #1e293b;
+                padding-bottom: 30px;
+                margin-bottom: 50px;
                 text-align: center;
             }
 
-            .doc-brand {
-                font-family: var(--f-ui);
-                font-weight: 800;
-                font-size: 14pt;
-                color: var(--c-primary);
-                text-transform: uppercase;
-                letter-spacing: 2px;
-                margin-bottom: 8px;
+            body:not(.mode-imprimible) .doc-brand {
+                display: none; /* Eliminar Ediprofe */
             }
 
-            .doc-title {
+            body:not(.mode-imprimible) .doc-title {
                 font-family: var(--f-ui);
-                font-size: 20pt;
+                font-size: 26pt;
                 font-weight: 800;
-                line-height: 1.2;
+                line-height: 1.1;
                 color: #0f172a;
+                max-width: 90%;
             }
 
-            .doc-meta {
+            body:not(.mode-imprimible) .doc-meta {
                 font-family: var(--f-ui);
-                font-size: 10pt;
-                color: var(--c-text-light);
-                margin-top: 8px;
-                font-weight: 500;
-                background: var(--c-primary-light);
-                padding: 4px 12px;
-                border-radius: 99px;
-            }
-
-            .content-wrapper {
-                max-width: 800px;
-                margin: 0 auto;
+                font-size: 9.5pt;
+                color: #475569;
+                margin-top: 15px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                background: none;
+                padding: 0;
+                display: inline-flex;
+                align-items: center;
+                gap: 12px;
             }
 
             h2 {
                 font-family: var(--f-ui);
-                font-size: 13pt;
+                font-size: 15pt;
                 font-weight: 700;
                 color: var(--c-primary);
-                margin-top: 30px;
-                margin-bottom: 12px;
-                border-left: 4px solid var(--c-primary);
-                padding-left: 10px;
+                margin-top: 35px;
+                margin-bottom: 15px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
                 break-after: avoid;
                 break-inside: avoid;
+            }
+
+            /* Barra lateral solo para Normal/Feedback */
+            body:not(.mode-imprimible) h2::before {
+                content: "";
+                display: block;
+                width: 5px;
+                height: 1.2em;
+                background: var(--c-primary);
+                border-radius: 99px;
             }
 
             p {
@@ -190,47 +208,59 @@ const unidad = parts[1] ? formatName(parts[1]) : "";
                 text-align: center;
             }
 
-            .saber-opciones {
-                list-style: none;
-                padding: 0;
-                margin: 15px 0 25px 0;
+            /* Opciones Editorial (Normal/Feedback) */
+            body:not(.mode-imprimible) .saber-opciones {
+                list-style: none !important;
+                padding: 0 !important;
+                margin: 25px 0 40px 0 !important;
                 display: flex;
                 flex-direction: column;
-                gap: 10px;
+                gap: 12px;
+                break-inside: avoid !important;
             }
 
-            .opcion-item {
-                display: flex;
-                align-items: flex-start;
-                gap: 15px;
-                padding: 12px 16px;
-                background: white;
-                border: 1px solid var(--c-border);
-                border-radius: 12px;
-                break-inside: avoid;
+            body:not(.mode-imprimible) .opcion-item {
+                display: flex !important;
+                align-items: flex-start !important;
+                gap: 14px !important;
+                padding: 12px 20px !important;
+                background: #ffffff !important;
+                border: 1px solid #e2e8f0 !important;
+                border-radius: 12px !important;
+                break-inside: avoid !important;
+                position: relative !important;
+                min-height: 42px;
             }
 
-            .opcion-item::before {
-                content: var(--custom-letter, counter(saber-opt, upper-alpha));
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                min-width: 32px;
-                height: 32px;
-                background: linear-gradient(135deg, #3b82f6, #2563eb);
-                color: white;
-                font-family: var(--f-ui);
-                font-weight: 700;
+            body:not(.mode-imprimible) .opcion-item::before {
+                content: var(
+                    --custom-letter,
+                    counter(saber-opt, upper-alpha)
+                ) !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                width: 28px !important;
+                height: 28px !important;
+                min-width: 28px !important;
+                background: #2563eb !important;
+                color: #ffffff !important;
+                font-family: var(--f-ui) !important;
+                font-weight: 700 !important;
+                font-size: 10.5pt !important;
+                border-radius: 50% !important;
+                margin-top: 1px !important;
+                box-shadow: none !important;
+                flex-shrink: 0 !important;
+            }
+
+            body:not(.mode-imprimible) .opcion-item p {
+                margin: 0 !important;
+                padding: 2px 0 0 0 !important;
                 font-size: 11pt;
-                border-radius: 8px;
-                flex-shrink: 0;
-                margin-top: 2px;
-            }
-
-            li.opcion-item {
-                background: white !important;
-                border: 1px solid var(--c-border) !important;
-                padding: 12px 16px !important;
+                line-height: 1.5;
+                color: var(--c-text);
+                text-align: left !important;
             }
 
             /* ═══════════════════════════════════════════════════════════════
@@ -440,40 +470,84 @@ const unidad = parts[1] ? formatName(parts[1]) : "";
 
             body.mode-feedback details {
                 display: block;
-                margin-top: 10px;
-                padding: 10px;
-                background: #f0fdf4;
-                border: 1px solid #bbf7d0;
-                border-radius: 6px;
+                margin: 40px 0;
+                padding: 0;
+                background: #ffffff;
+                border: 1px solid #e2e8f0;
+                border-radius: 8px;
+                overflow: hidden;
                 page-break-inside: avoid;
+                position: relative;
+                break-before: page;
+                margin-top: 0 !important;
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
             }
 
             body.mode-feedback summary {
+                background: #0f172a; /* Slate 900 para más contraste */
+                color: white !important;
+                padding: 10px 16px;
                 font-family: var(--f-ui);
                 font-weight: 700;
-                color: #166534;
-                margin-bottom: 5px;
+                font-size: 0; /* Ocultar texto 'RESPUESTA' u otros */
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
                 list-style: none;
                 display: flex;
                 align-items: center;
-                gap: 5px;
+                gap: 10px;
             }
 
             body.mode-feedback summary::before {
-                content: "✅";
+                content: "ANÁLISIS";
+                font-size: 8.5pt;
+                background: rgba(255, 255, 255, 0.15);
+                padding: 2px 10px;
+                border-radius: 4px;
+                letter-spacing: 0.05em;
+            }
+
+            body.mode-feedback details > *:not(summary) {
+                padding: 24px 30px;
+                font-size: 10.5pt;
+                line-height: 1.7;
+            }
+
+            body.mode-feedback details p:first-of-type {
+                padding-top: 5px;
+            }
+
+            /* Estilo para tachados en feedback */
+            .saber-tachado {
+                color: #dc2626 !important; /* Rojo intenso editorial */
+                text-decoration: line-through !important;
+                opacity: 1 !important;
+                font-weight: 500;
+            }
+
+            /* Resaltado de la respuesta final */
+            body.mode-feedback details p strong {
+                color: #047857; /* Emerald 700 */
+                font-weight: 800;
+            }
+
+            /* Si el párrafo contiene la respuesta final, darle estilo de badge */
+            body.mode-feedback details p:last-child {
+                border-top: 1px dashed #cbd5e1;
+                margin-top: 20px;
+                padding-top: 15px;
+                font-style: italic;
+                color: #475569;
             }
 
             body.mode-feedback .opcion-item[data-is-correct="true"] {
-                border-color: #22c55e !important;
+                border-color: #10b981 !important;
                 background-color: #f0fdf4 !important;
+                box-shadow: 0 0 0 1px #10b981 !important;
             }
 
             body.mode-feedback .opcion-item[data-is-correct="true"]::before {
-                background: linear-gradient(
-                    135deg,
-                    #22c55e,
-                    #16a34a
-                ) !important;
+                background: #10b981 !important;
             }
         </style>
 
@@ -494,7 +568,7 @@ const unidad = parts[1] ? formatName(parts[1]) : "";
         <header class="doc-header">
             <div class="doc-brand">Ediprofe</div>
             <div class="doc-title">{title}</div>
-            <div class="doc-meta">{materia} • {unidad}</div>
+            <div class="doc-meta">Área: {materia} • {unidad}</div>
         </header>
 
         <main class="content-wrapper">
