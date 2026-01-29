@@ -98,32 +98,50 @@ function parseTaller(mdContent) {
         }
     }
 
-    // Extraer preguntas
+    // Extraer preguntas - método más robusto
     const content = mdContent.replace(/^---[\s\S]*?---\n/, '');
-    const preguntaRegex = /## Pregunta (\d+)([\s\S]*?)(?=## Pregunta \d+|$)/g;
-    let match;
-
-    while ((match = preguntaRegex.exec(content)) !== null) {
-        const [, numero, contenido] = match;
+    
+    // Dividir por "## Pregunta X"
+    const preguntaSections = content.split(/(?=## Pregunta \d+)/);
+    
+    for (const section of preguntaSections) {
+        if (!section.trim() || !section.startsWith('## Pregunta')) continue;
         
-        // Extraer texto de la pregunta (antes de las opciones)
-        const textoMatch = contenido.match(/^([\s\S]*?)(?=\n[A-D]\.\s)/);
-        const texto = textoMatch ? textoMatch[1].trim() : '';
-
+        // Extraer número de pregunta
+        const numeroMatch = section.match(/## Pregunta (\d+)/);
+        if (!numeroMatch) continue;
+        const numero = parseInt(numeroMatch[1]);
+        
+        // Encontrar donde empiezan las opciones (primera línea que empieza con "- A.")
+        const opcionesStartMatch = section.match(/\n- ([A-D])\./);
+        if (!opcionesStartMatch) continue;
+        
+        const opcionesStartIndex = section.indexOf(opcionesStartMatch[0]);
+        
+        // Texto de la pregunta (todo antes de las opciones)
+        const texto = section
+            .substring(section.indexOf('\n') + 1, opcionesStartIndex)
+            .trim();
+        
         // Extraer opciones
         const opciones = {};
-        const opcionRegex = /([A-D])\.\s+([\s\S]*?)(?=\n[A-D]\.\s|\n<details>|$)/g;
-        let opMatch;
-        while ((opMatch = opcionRegex.exec(contenido)) !== null) {
-            opciones[opMatch[1]] = opMatch[2].trim();
+        const opcionesText = section.substring(opcionesStartIndex);
+        
+        // Buscar cada opción A, B, C, D
+        for (const letra of ['A', 'B', 'C', 'D']) {
+            const regex = new RegExp(`- ${letra}\\. ([^\\n]+(?:\\n(?!- [A-D]\\.|<details>)[^\\n]+)*)`, 's');
+            const match = opcionesText.match(regex);
+            if (match) {
+                opciones[letra] = match[1].trim();
+            }
         }
-
+        
         // Extraer respuesta
-        const respuestaMatch = contenido.match(/<details>[\s\S]*?<summary>.*?Ver respuesta.*?<\/summary>([\s\S]*?)<\/details>/);
+        const respuestaMatch = section.match(/<details>[\s\S]*?<summary>.*?<\/summary>([\s\S]*?)<\/details>/);
         const respuesta = respuestaMatch ? respuestaMatch[1].trim() : '';
-
+        
         taller.preguntas.push({
-            numero: parseInt(numero),
+            numero,
             texto,
             opciones,
             respuesta
