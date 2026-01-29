@@ -1,0 +1,35 @@
+{
+  "quimica": {
+    "agua-liquida-y-gaseosa": "https://cdn.ediprofe.com/img/saber/quimica/agua-liquida-y-gaseosa.webp",
+    "altura-y-presion-atmosferica": "https://cdn.ediprofe.com/img/saber/quimica/altura-y-presion-atmosferica.webp",
+    "biodigestor": "https://cdn.ediprofe.com/img/saber/quimica/biodigestor.webp",
+    "cambios-de-fase": "https://cdn.ediprofe.com/img/saber/quimica/cambios-de-fase.webp",
+    "candado-de-hierro": "https://cdn.ediprofe.com/img/saber/quimica/candado-de-hierro.webp",
+    "comienzo-final-destilacion": "https://cdn.ediprofe.com/img/saber/quimica/comienzo-final-destilacion.webp",
+    "cromatografia-de-3-sustancias": "https://cdn.ediprofe.com/img/saber/quimica/cromatografia-de-3-sustancias.webp",
+    "cromatografia-de-muestras-1-y-2": "https://cdn.ediprofe.com/img/saber/quimica/cromatografia-de-muestras-1-y-2.webp",
+    "destilacion-y-decantacion": "https://cdn.ediprofe.com/img/saber/quimica/destilacion-y-decantacion.webp",
+    "diagrama-de-fases": "https://cdn.ediprofe.com/img/saber/quimica/diagrama-de-fases.webp",
+    "disolucion-ki-agua": "https://cdn.ediprofe.com/img/saber/quimica/disolucion-ki-agua.webp",
+    "ebullicion": "https://cdn.ediprofe.com/img/saber/quimica/ebullicion.webp",
+    "filtracion-agua-sal-y-agua-carbonato": "https://cdn.ediprofe.com/img/saber/quimica/filtracion-agua-sal-y-agua-carbonato.webp",
+    "image": "https://cdn.ediprofe.com/img/saber/quimica/image.webp",
+    "instrumentos-medida": "https://cdn.ediprofe.com/img/saber/quimica/instrumentos-medida.webp",
+    "metodos-de-separacion-1": "https://cdn.ediprofe.com/img/saber/quimica/metodos-de-separacion-1.webp",
+    "mezcla-filtrado-solido-gas": "https://cdn.ediprofe.com/img/saber/quimica/mezcla-filtrado-solido-gas.webp",
+    "olla-caliente": "https://cdn.ediprofe.com/img/saber/quimica/olla-caliente.webp",
+    "resumen-de-conceptos-la-materia": "https://cdn.ediprofe.com/img/saber/quimica/resumen-de-conceptos-la-materia.webp",
+    "resumen-la-materia-parte-1": "https://cdn.ediprofe.com/img/saber/quimica/resumen-la-materia-parte-1.webp",
+    "resumen-metodos-de-separacion": "https://cdn.ediprofe.com/img/saber/quimica/resumen-metodos-de-separacion.webp",
+    "solucion-amarilla": "https://cdn.ediprofe.com/img/saber/quimica/solucion-amarilla.webp",
+    "sustancias-y-densidades": "https://cdn.ediprofe.com/img/saber/quimica/sustancias-y-densidades.webp",
+    "tiempo-de-reaccion-y-tamaño-de-la-papa": "https://cdn.ediprofe.com/img/saber/quimica/tiempo-de-reaccion-y-tamaño-de-la-papa.webp",
+    "toneladas-metano-al-año": "https://cdn.ediprofe.com/img/saber/quimica/toneladas-metano-al-año.webp"
+  },
+  "ciencias": {
+    "icfes-contaminacion-rio-modelo": "https://cdn.ediprofe.com/img/saber/ciencias/icfes-contaminacion-rio-modelo.webp",
+    "icfes-graficas-plomo-p54": "https://cdn.ediprofe.com/img/saber/ciencias/icfes-graficas-plomo-p54.webp",
+    "icfes-metodo-cientifico-p56": "https://cdn.ediprofe.com/img/saber/ciencias/icfes-metodo-cientifico-p56.webp",
+    "image": "https://cdn.ediprofe.com/img/saber/ciencias/image.webp"
+  }
+}
