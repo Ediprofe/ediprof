@@ -1,84 +1,156 @@
 /**
  * Plugin de rehype para transformar opciones de respuesta en talleres Saber
- * Las opciones vienen como un <p> con texto separado por <br>
- * SOLO procesa opciones FUERA de <details> (las de dentro se muestran como lista simple)
+ *
+ * Transforma párrafos con formato "A. texto\nB. texto\nC. texto\nD. texto"
+ * en una estructura HTML con clases para estilizado.
+ *
+ * SOLO procesa opciones que NO tienen marcadores de retroalimentación
+ * (las opciones con <mark> o <del> están dentro de <details> y se dejan como texto).
  */
 import { visit } from 'unist-util-visit';
+
+// Controlar logs solo en desarrollo
+const DEBUG = process.env.NODE_ENV === 'development';
+const log = (...args) => DEBUG && console.log('[rehypeSaberOpciones]', ...args);
+
+/**
+ * Verifica si un nodo contiene elementos <mark> o <del> (retroalimentación)
+ */
+function containsMarkers(node) {
+  if (!node) return false;
+
+  if (node.type === 'element') {
+    if (node.tagName === 'mark' || node.tagName === 'del') {
+      return true;
+    }
+  }
+
+  if (node.children) {
+    return node.children.some(containsMarkers);
+  }
+
+  return false;
+}
+
+/**
+ * Extrae texto plano de un nodo (recursivamente)
+ */
+function extractText(node) {
+  if (node.type === 'text') return node.value;
+  if (node.children) return node.children.map(extractText).join('');
+  return '';
+}
+
+/**
+ * Clona nodos hijos preservando estructura HTML
+ */
+function cloneChildren(children) {
+  return children.map(child => {
+    if (child.type === 'text') {
+      return { type: 'text', value: child.value };
+    }
+    if (child.type === 'element') {
+      return {
+        type: 'element',
+        tagName: child.tagName,
+        properties: { ...child.properties },
+        children: cloneChildren(child.children || [])
+      };
+    }
+    return { ...child };
+  });
+}
+
+/**
+ * Crea la estructura HTML para una opción de respuesta
+ */
+function createOptionElement(letra, contentNodes) {
+  const cleanNodes = [];
+  let firstTextProcessed = false;
+
+  for (const node of contentNodes) {
+    if (node.type === 'text' && !firstTextProcessed) {
+      const cleaned = node.value.replace(/^[A-D]\.\s*/, '').trim();
+      if (cleaned) {
+        cleanNodes.push({ type: 'text', value: cleaned });
+      }
+      firstTextProcessed = true;
+    } else if (node.type === 'text') {
+      const trimmed = node.value.trim();
+      if (trimmed) {
+        cleanNodes.push({ type: 'text', value: trimmed });
+      }
+    } else {
+      cleanNodes.push(node);
+    }
+  }
+
+  return {
+    type: 'element',
+    tagName: 'div',
+    properties: { className: ['opcion-item'] },
+    children: [
+      {
+        type: 'element',
+        tagName: 'span',
+        properties: { className: ['opcion-letra'] },
+        children: [{ type: 'text', value: letra }]
+      },
+      {
+        type: 'element',
+        tagName: 'span',
+        properties: { className: ['opcion-texto'] },
+        children: cleanNodes
+      }
+    ]
+  };
+}
 
 export function rehypeSaberOpciones() {
   return (tree, file) => {
     const filePath = file.history?.[0] || file.path || '';
-    
-    console.log('[rehypeSaberOpciones] Procesando archivo:', filePath);
-    
+
+    // Solo procesar archivos de saber
     if (!filePath.includes('/saber/')) {
-      console.log('[rehypeSaberOpciones] ❌ No es saber, saltando');
       return;
     }
-    
-    console.log('[rehypeSaberOpciones] ✅ Es archivo saber, buscando párrafos con opciones...');
 
-    // Paso 1: Marcar todos los nodos dentro de <details>
-    const nodesInsideDetails = new Set();
-    
+    log('Procesando:', filePath.split('/').slice(-3).join('/'));
+
+    // Paso 1: Agregar clases a elementos <del> y <mark> existentes
     visit(tree, 'element', (node) => {
-      if (node.tagName === 'details') {
-        // Marcar todos los descendientes
-        visit(node, () => {
-          nodesInsideDetails.add(node);
-        });
+      if (node.tagName === 'del') {
+        node.properties = node.properties || {};
+        const existing = node.properties.className || [];
+        const classes = Array.isArray(existing) ? existing : [];
+        if (!classes.includes('saber-tachado')) {
+          node.properties.className = [...classes, 'saber-tachado'];
+        }
+      }
+      if (node.tagName === 'mark') {
+        node.properties = node.properties || {};
+        const existing = node.properties.className || [];
+        const classes = Array.isArray(existing) ? existing : [];
+        if (!classes.includes('saber-highlight')) {
+          node.properties.className = [...classes, 'saber-highlight'];
+        }
       }
     });
 
-    console.log(`[rehypeSaberOpciones] Nodos dentro de details: ${nodesInsideDetails.size}`);
+    // Paso 2: Encontrar párrafos con opciones (sin marcadores de retroalimentación)
+    const replacements = [];
+    let skippedWithMarkers = 0;
+    let foundPlain = 0;
 
-    const nodesToReplace = [];
-
-    // Función auxiliar para extraer texto de un nodo (incluyendo HTML inline)
-    function extractText(node) {
-      if (node.type === 'text') {
-        return node.value;
-      }
-      if (node.type === 'element') {
-        return node.children.map(extractText).join('');
-      }
-      return '';
-    }
-
-    // Función auxiliar para clonar nodos hijos (preservando HTML inline)
-    function cloneChildren(children) {
-      return children.map(child => {
-        if (child.type === 'text') {
-          return { type: 'text', value: child.value };
-        }
-        if (child.type === 'element') {
-          return {
-            type: 'element',
-            tagName: child.tagName,
-            properties: { ...child.properties },
-            children: cloneChildren(child.children || [])
-          };
-        }
-        return child;
-      });
-    }
-
-    // Paso 2: Buscar párrafos con opciones (solo fuera de details)
     visit(tree, 'element', (node, index, parent) => {
-      // Buscar párrafos <p>
       if (node.tagName !== 'p' || !parent || typeof index !== 'number') {
         return;
       }
 
-      // Saltar si está dentro de <details>
-      if (nodesInsideDetails.has(node)) {
-        return;
-      }
-
-      // Extraer partes del párrafo separadas por <br>
+      // Buscar patrón: párrafo con 4 líneas separadas por <br>
       const parts = [];
       let currentPart = [];
-      
+
       for (const child of node.children) {
         if (child.type === 'element' && child.tagName === 'br') {
           if (currentPart.length > 0) {
@@ -89,115 +161,62 @@ export function rehypeSaberOpciones() {
           currentPart.push(child);
         }
       }
-      // Agregar la última parte
       if (currentPart.length > 0) {
         parts.push(currentPart);
       }
 
-      // Verificar que tengamos exactamente 4 partes
-      if (parts.length !== 4) {
-        return;
-      }
+      // Debe tener exactamente 4 partes
+      if (parts.length !== 4) return;
 
       // Verificar que cada parte empiece con A., B., C., D.
       const opciones = [];
-      let hasMarkup = false; // Flag para detectar si tiene marcadores (está en details)
-      
+      const letras = ['A', 'B', 'C', 'D'];
+      let hasMarkers = false;
+
       for (let i = 0; i < 4; i++) {
-        const letra = String.fromCharCode(65 + i); // A, B, C, D
-        const part = parts[i];
-        
-        // Verificar si tiene elementos <mark> o <del> (indica que está en details)
-        for (const node of part) {
-          if (node.type === 'element' && (node.tagName === 'mark' || node.tagName === 'del')) {
-            hasMarkup = true;
-            break;
-          }
+        const text = parts[i].map(extractText).join('').trim();
+        const expectedPattern = new RegExp(`^${letras[i]}\\.\\s`);
+
+        if (!expectedPattern.test(text)) {
+          return;
         }
-        
-        // Extraer el texto completo de la parte
-        const fullText = part.map(extractText).join('').trim();
-        
-        if (!fullText.match(new RegExp(`^${letra}\\.\\s`))) {
-          return; // No coincide con la letra esperada
+
+        // Verificar si ESTA parte tiene marcadores
+        if (parts[i].some(containsMarkers)) {
+          hasMarkers = true;
         }
-        
-        // Guardar los nodos originales (preservando HTML inline como <mark>, <del>, etc.)
-        opciones.push({ 
-          text: fullText,
-          nodes: part
+
+        opciones.push({
+          letra: letras[i],
+          nodes: cloneChildren(parts[i])
         });
       }
 
-      // Si tiene marcadores, NO procesar (dejar como párrafo normal)
-      if (hasMarkup) {
-        console.log('[rehypeSaberOpciones] ⏭️  Saltando opciones con marcadores (dentro de details)');
+      // Si tiene marcadores, es retroalimentación dentro de <details> - NO procesar
+      if (hasMarkers) {
+        skippedWithMarkers++;
         return;
       }
 
-      // Si llegamos aquí, encontramos un grupo válido
-      console.log('[rehypeSaberOpciones] 🎉 Grupo completo encontrado (fuera de details)!', opciones.map(o => o.text.substring(0, 30)));
-      nodesToReplace.push({ parent, index, opciones });
+      foundPlain++;
+      replacements.push({ parent, index, opciones });
     });
 
-    console.log(`[rehypeSaberOpciones] Grupos a reemplazar: ${nodesToReplace.length}`);
+    log(`Saltados con marcadores (retroalimentación): ${skippedWithMarkers}`);
+    log(`Transformados (opciones limpias): ${foundPlain}`);
 
-    // Reemplazar en orden inverso
-    nodesToReplace.reverse().forEach(({ parent, index, opciones }) => {
+    // Paso 3: Reemplazar en orden inverso
+    for (const { parent, index, opciones } of replacements.reverse()) {
       const container = {
         type: 'element',
         tagName: 'div',
         properties: { className: ['opciones-grid'] },
-        children: opciones.map((opcion, i) => {
-          const letra = String.fromCharCode(65 + i);
-          
-          // Clonar los nodos originales
-          const textoNodes = cloneChildren(opcion.nodes);
-          
-          // Limpiar espacios en blanco y remover letra de TODOS los nodos de texto
-          for (let j = 0; j < textoNodes.length; j++) {
-            if (textoNodes[j].type === 'text') {
-              // Limpiar espacios en blanco al inicio y final
-              textoNodes[j].value = textoNodes[j].value.trim();
-              
-              // Remover la letra si está presente (A., B., C., D.)
-              textoNodes[j].value = textoNodes[j].value.replace(/^[A-D]\.\s+/, '');
-              
-              // Si el nodo quedó vacío, marcarlo para eliminación
-              if (!textoNodes[j].value) {
-                textoNodes[j]._remove = true;
-              }
-            }
-          }
-          
-          // Filtrar nodos vacíos
-          const cleanNodes = textoNodes.filter(n => !n._remove);
-          
-          return {
-            type: 'element',
-            tagName: 'div',
-            properties: { className: ['opcion-item'] },
-            children: [
-              {
-                type: 'element',
-                tagName: 'span',
-                properties: { className: ['opcion-letra'] },
-                children: [{ type: 'text', value: letra }]
-              },
-              {
-                type: 'element',
-                tagName: 'span',
-                properties: { className: ['opcion-texto'] },
-                children: cleanNodes
-              }
-            ]
-          };
-        })
+        children: opciones.map(({ letra, nodes }) =>
+          createOptionElement(letra, nodes)
+        )
       };
 
       parent.children[index] = container;
-    });
-    
-    console.log('[rehypeSaberOpciones] ✅ Procesamiento completado\n');
+    }
   };
 }
