@@ -2,6 +2,7 @@ import { StrokeManager } from './StrokeManager';
 import { CanvasRenderer } from './CanvasRenderer';
 import { InputHandler } from './InputHandler';
 import { WindowManager } from './WindowManager';
+import { TextHighlighter } from './TextHighlighter';
 import { TOOL_COLORS, UI_COLORS } from './config';
 import type { LaserPoint, ToolMode, LaserStroke } from './types';
 
@@ -10,6 +11,7 @@ export class PresentationController {
   private renderer: CanvasRenderer;
   private inputHandler: InputHandler;
   private windowManager: WindowManager;
+  private textHighlighter: TextHighlighter;
 
   private currentTool: ToolMode = 'hand';
   private currentColor: string = TOOL_COLORS.red;
@@ -54,14 +56,17 @@ export class PresentationController {
      this.windowManager = new WindowManager({
         onToolChange: (t) => this.setTool(t as ToolMode),
         onColorChange: (c) => this.setColor(c),
-        onUndo: () => this.strokeManager.undo(),
-        onClear: () => this.strokeManager.clearAll(),
+        onUndo: () => this.handleUndo(),
+        onClear: () => this.handleClear(),
         onDeleteSelected: () => this.strokeManager.deleteSelected(),
         onBoardChange: (t) => this.windowManager.setBoardState(t),
         onClose: () => this.stop(),
         onCopy: () => this.handleCopy(),
         onPaste: () => this.handlePaste()
      });
+     
+     // 4. Text Highlighter (para resaltar texto del DOM)
+     this.textHighlighter = new TextHighlighter();
      
      this.start();
   }
@@ -72,6 +77,9 @@ export class PresentationController {
       
       this.windowManager.init();
       this.renderer.startLoop();
+      
+      // Activar resaltado de texto en modo puntero por defecto
+      this.textHighlighter.activate();
       
       // Auto-resize handling
       this.resizeObserver = new ResizeObserver(() => this.renderer.resize());
@@ -88,6 +96,10 @@ export class PresentationController {
       this.renderer.stopLoop();
       this.windowManager.destroy();
       this.inputHandler.destroy();
+      
+      // Limpiar resaltados Y desactivar
+      this.textHighlighter.clearAll();
+      this.textHighlighter.deactivate();
       
       this.resizeObserver?.disconnect();
       window.removeEventListener('resize', this.boundResize);
@@ -120,6 +132,14 @@ export class PresentationController {
       // Canvas cursor
       const canvas = document.getElementById('presentation-canvas');
       if (canvas) canvas.classList.toggle('active', tool !== 'hand');
+      
+      // Text Highlighter: solo detecta selecciones en modo puntero (hand)
+      // Pero los resaltados existentes se MANTIENEN visibles en otras herramientas
+      if (tool === 'hand') {
+          this.textHighlighter.activate();
+      } else {
+          this.textHighlighter.pause(); // Solo pausa, no limpia
+      }
   }
   
   private setColor(color: string) {
@@ -130,6 +150,19 @@ export class PresentationController {
       if (this.currentTool === 'hand' || this.currentTool === 'laser' || this.currentTool === 'select') {
           this.setTool('pen');
       }
+  }
+  
+  private handleUndo() {
+      // Deshacer el último elemento (stroke o resaltado según orden)
+      // Por ahora, undo funciona principalmente para strokes
+      // Los resaltados se deshacen con su propio sistema cuando estás en modo puntero
+      this.strokeManager.undo();
+  }
+  
+  private handleClear() {
+      // Limpiar todo: strokes y resaltados
+      this.strokeManager.clearAll();
+      this.textHighlighter.clearAll();
   }
   
   /* ================= INPUT LOGIC ================= */
