@@ -24,6 +24,8 @@ $$
 
 Como los electrones tienen masa casi cero, **no se cuentan** en esta suma. Solo nos importan los "pesos pesados" del núcleo.
 
+![numero-masico](https://cdn.ediprofe.com/img/quimica/76cn-numero-masico.webp)
+
 ---
 
 ## 2. Notación Atómica
@@ -41,7 +43,7 @@ Donde:
 
 ---
 
-## 3. Ejemplo Paso a Paso: El Helio
+### Ejemplo 1: El Helio
 
 Imagina un átomo de Helio con:
 *   2 Protones ($Z=2$).
@@ -56,6 +58,60 @@ $$
 $$
 _2^4 \text{He}
 $$
+
+![numero-masico-helio](https://cdn.ediprofe.com/img/quimica/zcr7-numero-masico-helio.webp)
+
+### Ejemplo 2: El Berilio
+
+Ahora mira este átomo de Berilio:
+*   4 Protones ($Z=4$).
+*   5 Neutrones ($n=5$).
+
+**Cálculo de la Masa (A):**
+$$
+A = 4 (p^+) + 5 (n^0) = 9
+$$
+
+**Notación Final:**
+$$
+_4^9 \text{Be}
+$$
+
+![numero-masico-berilio](https://cdn.ediprofe.com/img/quimica/akm4-numero-masico-berilio.webp)
+
+
+### Completa la Tabla
+
+Un ejercicio clásico para dominar este tema es completar los datos de un átomo a partir de información parcial ($A = Z + n$). En la siguiente tabla, los datos en **negrita** son nuestra base inicial.
+
+| Notación Atómica | Número Atómico (Z) | Neutrones (n) | Número Másico (A) |
+| :--- | :---: | :---: | :---: |
+| $_{ \ }^{ \ } \text{O}$ | **8** | **8** |  |
+| $ \text{Cl}$ |  | **18** |  |
+| $_{ \ }^{ \ } \text{Mg}$ | **12** |  | **24** |
+| $ \text{U}$ |  |  | **238** |
+| $_{ \ }^{ \ } \text{Hg}$ | **80** |  | **201** |
+
+**Solución paso a paso:**
+
+Recuerda que si no conoces el número de protones (**Z**), puedes buscar el símbolo del elemento en tu Tabla Periódica.
+
+1.  **Oxígeno (O):** $A = 8 + 8 = 16$.
+2.  **Cloro (Cl):** Buscamos su identidad: $Z=17$. Luego, $A = 17 + 18 = 35$.
+3.  **Magnesio (Mg):** Despejamos neutrones: $n = 24 - 12 = 12$.
+4.  **Uranio (U):** Buscamos su identidad: $Z=92$. Luego, $n = 238 - 92 = 146$.
+5.  **Mercurio (Hg):** Despejamos neutrones: $n = 201 - 80 = 121$.
+
+**Tabla Resuelta:**
+
+| Notación | Z | n | A |
+| :--- | :---: | :---: | :---: |
+| $_{8}^{16} \text{O}$ | 8 | 8 | 16 |
+| $_{17}^{35} \text{Cl}$ | 17 | 18 | 35 |
+| $_{12}^{24} \text{Mg}$ | 12 | 12 | 24 |
+| $_{92}^{238} \text{U}$ | 92 | 146 | 238 |
+| $_{80}^{201} \text{Hg}$ | 80 | 121 | 201 |
+
 
 ---
 
