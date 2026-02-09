@@ -17,7 +17,7 @@ from core.primitives import escape_xml
 
 def render_particle_mass(output: Path):
     width = 750
-    height = 500
+    height = 600
     
     colors = COLORS
     

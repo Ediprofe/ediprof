@@ -55,14 +55,12 @@ Por eso, al calcular la masa de un átomo, **solo sumamos lo que hay en el núcl
 
 ![Masa de Partículas](/images/quimica/estructura/masa-particulas.svg)
 
-![uma](https://cdn.ediprofe.com/img/quimica/yw8o-uma.webp)
-
 ---
 
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1
-**Enunciado:** Si un átomo tiene 3 protones y 4 neutrones en su núcleo, ¿cuál es su masa aproximada en unidades de masa atómica (uma)?
+Si un átomo tiene 3 protones y 4 neutrones en su núcleo, ¿cuál es su masa aproximada en unidades de masa atómica (uma)?
 
 <details>
 <summary>Ver solución</summary>
@@ -88,7 +86,7 @@ $$\boxed{7 \text{ uma}}$$
 </details>
 
 ### Ejercicio 2
-**Enunciado:** ¿Cuál es la razón principal por la que se dice que la masa del electrón es "despreciable" al calcular la masa total de un átomo?
+¿Cuál es la razón principal por la que se dice que la masa del electrón es "despreciable" al calcular la masa total de un átomo?
 
 <details>
 <summary>Ver solución</summary>
@@ -102,7 +100,7 @@ $$\boxed{\text{Porque es } \approx 1836 \text{ veces más liviano que un protón
 </details>
 
 ### Ejercicio 3
-**Enunciado:** Ordena las partículas subatómicas de **menor a mayor** masa.
+Ordena las partículas subatómicas de **menor a mayor** masa.
 
 <details>
 <summary>Ver solución</summary>
@@ -119,7 +117,7 @@ $$\boxed{e^- < p^+ < n^0}$$
 </details>
 
 ### Ejercicio 4
-**Enunciado:** Si comparamos un átomo con un estadio de fútbol, ¿en qué parte del estadio se encontraría concentrada casi toda la masa?
+Si comparamos un átomo con un estadio de fútbol, ¿en qué parte del estadio se encontraría concentrada casi toda la masa?
 
 <details>
 <summary>Ver solución</summary>
@@ -134,7 +132,7 @@ $$\boxed{\text{En el núcleo (centro del estadio)}}$$
 
 
 ### Ejercicio 5
-**Enunciado:** Un átomo pierde todos sus electrones en una reacción extrema. ¿Cómo cambia su masa total en uma?
+Un átomo pierde todos sus electrones en una reacción extrema. ¿Cómo cambia su masa total en uma?
 
 <details>
 <summary>Ver solución</summary>
@@ -148,7 +146,7 @@ $$\boxed{\text{No cambia significativamente (se mantiene igual)}}$$
 </details>
 
 ### Ejercicio 6
-**Enunciado:** Según la analogía de la lección, si el protón es una bola de boliche, ¿qué objeto representaría al electrón?
+Según la analogía de la lección, si el protón es una bola de boliche, ¿qué objeto representaría al electrón?
 
 <details>
 <summary>Ver solución</summary>
@@ -162,7 +160,7 @@ $$\boxed{\text{Un clip de papel}}$$
 </details>
 
 ### Ejercicio 7
-**Enunciado:** ¿Qué partícula subatómica tiene una masa de aproximadamente $1.67 \times 10^{-27}$ kg y no posee carga eléctrica?
+¿Qué partícula subatómica tiene una masa de aproximadamente $1.67 \times 10^{-27}$ kg y no posee carga eléctrica?
 
 <details>
 <summary>Ver solución</summary>
@@ -177,7 +175,7 @@ $$\boxed{\text{El Neutrón } (n^0)}$$
 </details>
 
 ### Ejercicio 8
-**Enunciado:** Se tiene un átomo de Helio con 2 protones, 2 neutrones y 2 electrones. ¿Qué porcentaje aproximado de su masa total aporta la periferia (electrones)?
+Se tiene un átomo de Helio con 2 protones, 2 neutrones y 2 electrones. ¿Qué porcentaje aproximado de su masa total aporta la periferia (electrones)?
 
 <details>
 <summary>Ver solución</summary>
@@ -191,7 +189,7 @@ $$\boxed{\text{Menos del } 0.1\%}$$
 </details>
 
 ### Ejercicio 9
-**Enunciado:** Si sumamos la masa de 1 protón ($p^+$) y 1 neutrón ($n^0$), ¿cuál es el valor aproximado en unidades de masa atómica (uma)?
+Si sumamos la masa de 1 protón ($p^+$) y 1 neutrón ($n^0$), ¿cuál es el valor aproximado en unidades de masa atómica (uma)?
 
 <details>
 <summary>Ver solución</summary>
@@ -211,7 +209,7 @@ $$\boxed{2 \text{ uma}}$$
 </details>
 
 ### Ejercicio 10
-**Enunciado:** ¿Por qué los científicos utilizan la unidad "uma" en lugar de "kilogramos" para describir la masa de un átomo?
+¿Por qué los científicos utilizan la unidad "uma" en lugar de "kilogramos" para describir la masa de un átomo?
 
 <details>
 <summary>Ver solución</summary>

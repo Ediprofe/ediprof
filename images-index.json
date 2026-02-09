@@ -2379,7 +2379,237 @@
       "size": "73KB",
       "url": "https://cdn.ediprofe.com/img/quimica/akm4-numero-masico-berilio.webp",
       "status": "uploaded"
+    },
+    {
+      "id": "akxz",
+      "name": "reproduccion-asexual.webp",
+      "materia": "ciencias",
+      "type": "lesson",
+      "date": "2026-02-09",
+      "size": "91KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/akxz-reproduccion-asexual.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "5axo",
+      "name": "fision-binaria.webp",
+      "materia": "ciencias",
+      "type": "lesson",
+      "date": "2026-02-09",
+      "size": "53KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/5axo-fision-binaria.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "n8ob",
+      "name": "gemacion.webp",
+      "materia": "ciencias",
+      "type": "lesson",
+      "date": "2026-02-09",
+      "size": "48KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/n8ob-gemacion.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "njwh",
+      "name": "fragmentacion.webp",
+      "materia": "ciencias",
+      "type": "lesson",
+      "date": "2026-02-09",
+      "size": "66KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/njwh-fragmentacion.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "a12w",
+      "name": "partenogenesis.webp",
+      "materia": "ciencias",
+      "type": "lesson",
+      "date": "2026-02-09",
+      "size": "66KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/a12w-partenogenesis.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "7s7t",
+      "name": "reproduccion-sexual.webp",
+      "materia": "ciencias",
+      "type": "lesson",
+      "date": "2026-02-09",
+      "size": "57KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/7s7t-reproduccion-sexual.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "9af9",
+      "name": "gametos-los-protagonistas.webp",
+      "materia": "ciencias",
+      "type": "lesson",
+      "date": "2026-02-09",
+      "size": "63KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/9af9-gametos-los-protagonistas.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "aevm",
+      "name": "reproduccion-sexual-vs-asexual.webp",
+      "materia": "ciencias",
+      "type": "lesson",
+      "date": "2026-02-09",
+      "size": "86KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/aevm-reproduccion-sexual-vs-asexual.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "09u5",
+      "name": "resumen-reproduccion-sexual.webp",
+      "materia": "ciencias",
+      "type": "lesson",
+      "date": "2026-02-09",
+      "size": "78KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/09u5-resumen-reproduccion-sexual.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "g5y7",
+      "name": "reproduccion-vegetativa.webp",
+      "materia": "ciencias",
+      "type": "lesson",
+      "date": "2026-02-09",
+      "size": "75KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/g5y7-reproduccion-vegetativa.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "wihl",
+      "name": "estolones.webp",
+      "materia": "ciencias",
+      "type": "lesson",
+      "date": "2026-02-09",
+      "size": "79KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/wihl-estolones.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "pfqj",
+      "name": "rizomas.webp",
+      "materia": "ciencias",
+      "type": "lesson",
+      "date": "2026-02-09",
+      "size": "82KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/pfqj-rizomas.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "hsbd",
+      "name": "bulbos.webp",
+      "materia": "ciencias",
+      "type": "lesson",
+      "date": "2026-02-09",
+      "size": "65KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/hsbd-bulbos.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "2mo0",
+      "name": "bulbos.webp",
+      "materia": "ciencias",
+      "type": "lesson",
+      "date": "2026-02-09",
+      "size": "65KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/2mo0-bulbos.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "xtig",
+      "name": "tuberculos.webp",
+      "materia": "ciencias",
+      "type": "lesson",
+      "date": "2026-02-09",
+      "size": "72KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/xtig-tuberculos.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "urid",
+      "name": "esquejes.webp",
+      "materia": "ciencias",
+      "type": "lesson",
+      "date": "2026-02-09",
+      "size": "76KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/urid-esquejes.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "zs9l",
+      "name": "injertos.webp",
+      "materia": "ciencias",
+      "type": "lesson",
+      "date": "2026-02-09",
+      "size": "50KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/zs9l-injertos.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "dvxn",
+      "name": "cultivo-de-tejidos.webp",
+      "materia": "ciencias",
+      "type": "lesson",
+      "date": "2026-02-09",
+      "size": "61KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/dvxn-cultivo-de-tejidos.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "kcsi",
+      "name": "polinizacion.webp",
+      "materia": "ciencias",
+      "type": "lesson",
+      "date": "2026-02-09",
+      "size": "73KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/kcsi-polinizacion.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "5rgl",
+      "name": "fecundacion.webp",
+      "materia": "ciencias",
+      "type": "lesson",
+      "date": "2026-02-09",
+      "size": "41KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/5rgl-fecundacion.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "lx98",
+      "name": "formacion-de-semilla-y-fruto.webp",
+      "materia": "ciencias",
+      "type": "lesson",
+      "date": "2026-02-09",
+      "size": "69KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/lx98-formacion-de-semilla-y-fruto.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "n6ox",
+      "name": "reproduccion-sexual-en-plantas.webp",
+      "materia": "ciencias",
+      "type": "lesson",
+      "date": "2026-02-09",
+      "size": "62KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/n6ox-reproduccion-sexual-en-plantas.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "vuyu",
+      "name": "reproduccion-asexual.webp",
+      "materia": "ciencias",
+      "type": "lesson",
+      "date": "2026-02-09",
+      "size": "100KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/vuyu-reproduccion-asexual.webp",
+      "status": "uploaded"
     }
   ],
-  "lastUpdated": "2026-02-09T02:00:28.991Z"
+  "lastUpdated": "2026-02-09T17:31:13.236Z"
 }
