@@ -1,0 +1,15 @@
+{
+    "title": "Ejemplo: Helio (He)",
+    "subtitle": "Cálculo del Número Másico (A=4)",
+    "protons": 2,
+    "neutrons": 2,
+    "electrons": 2,
+    "element_symbol": "He",
+    "mass_number": "4",
+    "layout": {
+        "width": 600,
+        "height": 500,
+        "particle_radius": 14,
+        "orbit_base_radius": 100
+    }
+}

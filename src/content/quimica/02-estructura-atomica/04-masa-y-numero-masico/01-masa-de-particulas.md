@@ -53,6 +53,8 @@ Como usar kilogramos con números tan pequeños es incómodo, los químicos inve
 
 Por eso, al calcular la masa de un átomo, **solo sumamos lo que hay en el núcleo**. Los electrones "no cuentan" para el peso pesado.
 
+![Masa de Partículas](/images/quimica/estructura/masa-particulas.svg)
+
 ![uma](https://cdn.ediprofe.com/img/quimica/yw8o-uma.webp)
 
 ---

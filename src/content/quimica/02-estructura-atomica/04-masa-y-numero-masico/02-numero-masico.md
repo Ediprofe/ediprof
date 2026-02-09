@@ -24,7 +24,7 @@ $$
 
 Como los electrones tienen masa casi cero, **no se cuentan** en esta suma. Solo nos importan los "pesos pesados" del núcleo.
 
-![numero-masico](https://cdn.ediprofe.com/img/quimica/76cn-numero-masico.webp)
+![Ilustración Número Másico](/images/quimica/estructura/numero-masico.svg)
 
 ---
 
@@ -59,7 +59,7 @@ $$
 _2^4 \text{He}
 $$
 
-![numero-masico-helio](https://cdn.ediprofe.com/img/quimica/zcr7-numero-masico-helio.webp)
+![Ilustración Masa Helio](/images/quimica/estructura/numero-masico-helio-ilustracion.svg)
 
 ### Ejemplo 2: El Berilio
 
@@ -77,7 +77,7 @@ $$
 _4^9 \text{Be}
 $$
 
-![numero-masico-berilio](https://cdn.ediprofe.com/img/quimica/akm4-numero-masico-berilio.webp)
+![Ilustración Masa Berilio](/images/quimica/estructura/numero-masico-berilio-ilustracion.svg)
 
 
 ### Completa la Tabla

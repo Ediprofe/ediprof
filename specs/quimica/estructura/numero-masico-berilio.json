@@ -1,0 +1,15 @@
+{
+    "title": "Ejemplo: Berilio (Be)",
+    "subtitle": "Cálculo del Número Másico (A=9)",
+    "protons": 4,
+    "neutrons": 5,
+    "electrons": 4,
+    "element_symbol": "Be",
+    "mass_number": "9",
+    "layout": {
+        "width": 600,
+        "height": 500,
+        "particle_radius": 14,
+        "orbit_base_radius": 100
+    }
+}

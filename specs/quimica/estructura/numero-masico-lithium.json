@@ -1,0 +1,15 @@
+{
+    "title": "Número Másico (A)",
+    "subtitle": "El peso del átomo está en su núcleo",
+    "protons": 3,
+    "neutrons": 4,
+    "electrons": 3,
+    "element_symbol": "Li",
+    "mass_number": "7",
+    "layout": {
+        "width": 600,
+        "height": 500,
+        "particle_radius": 14,
+        "orbit_base_radius": 120
+    }
+}
