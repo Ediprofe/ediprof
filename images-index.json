@@ -2169,7 +2169,187 @@
       "size": "108KB",
       "url": "https://cdn.ediprofe.com/img/saber/fisica/lbny-image.webp",
       "status": "uploaded"
+    },
+    {
+      "id": "uv1w",
+      "name": "autopsia-cambios-de-fase.webp",
+      "materia": "ciencias",
+      "type": "lesson",
+      "date": "2026-02-08",
+      "size": "63KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/uv1w-autopsia-cambios-de-fase.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "4aud",
+      "name": "autopsia-herencia.webp",
+      "materia": "ciencias",
+      "type": "lesson",
+      "date": "2026-02-08",
+      "size": "76KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/4aud-autopsia-herencia.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "v0si",
+      "name": "autopsia-mecanica-y-gravedad.webp",
+      "materia": "ciencias",
+      "type": "lesson",
+      "date": "2026-02-08",
+      "size": "82KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/v0si-autopsia-mecanica-y-gravedad.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "iwce",
+      "name": "estructura-atomica-estadi-de-futbol.webp",
+      "materia": "quimica",
+      "type": "lesson",
+      "date": "2026-02-08",
+      "size": "62KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/iwce-estructura-atomica-estadi-de-futbol.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "5xyl",
+      "name": "numero-atomico.webp",
+      "materia": "quimica",
+      "type": "lesson",
+      "date": "2026-02-08",
+      "size": "63KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/5xyl-numero-atomico.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "wja6",
+      "name": "identificacion-en-la-tabla-periodica.webp",
+      "materia": "quimica",
+      "type": "lesson",
+      "date": "2026-02-08",
+      "size": "69KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/wja6-identificacion-en-la-tabla-periodica.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "4unx",
+      "name": "resumen-particulas-y-numero-atomico.webp",
+      "materia": "quimica",
+      "type": "lesson",
+      "date": "2026-02-08",
+      "size": "77KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/4unx-resumen-particulas-y-numero-atomico.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "3yeg",
+      "name": "atomos-neutros.webp",
+      "materia": "quimica",
+      "type": "lesson",
+      "date": "2026-02-08",
+      "size": "70KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/3yeg-atomos-neutros.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "5tx5",
+      "name": "atomo-carbono-neutro.webp",
+      "materia": "quimica",
+      "type": "lesson",
+      "date": "2026-02-08",
+      "size": "50KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/5tx5-atomo-carbono-neutro.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "t9mr",
+      "name": "iones-atomos-con-carga.webp",
+      "materia": "quimica",
+      "type": "lesson",
+      "date": "2026-02-08",
+      "size": "61KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/t9mr-iones-atomos-con-carga.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "9jzw",
+      "name": "energia-y-vida-cotidiana.webp",
+      "materia": "quimica",
+      "type": "lesson",
+      "date": "2026-02-08",
+      "size": "101KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/9jzw-energia-y-vida-cotidiana.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "28t3",
+      "name": "tipos-de-iones.webp",
+      "materia": "quimica",
+      "type": "lesson",
+      "date": "2026-02-08",
+      "size": "60KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/28t3-tipos-de-iones.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "fymk",
+      "name": "atomos-neutros-e-iones.webp",
+      "materia": "quimica",
+      "type": "lesson",
+      "date": "2026-02-09",
+      "size": "70KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/fymk-atomos-neutros-e-iones.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "44nm",
+      "name": "masa-en-nucleo-y-periferia.webp",
+      "materia": "quimica",
+      "type": "lesson",
+      "date": "2026-02-09",
+      "size": "64KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/44nm-masa-en-nucleo-y-periferia.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "uxho",
+      "name": "comparacion-de-masas-nucleones-y-electrones.webp",
+      "materia": "quimica",
+      "type": "lesson",
+      "date": "2026-02-09",
+      "size": "47KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/uxho-comparacion-de-masas-nucleones-y-electrones.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "yw8o",
+      "name": "uma.webp",
+      "materia": "quimica",
+      "type": "lesson",
+      "date": "2026-02-09",
+      "size": "69KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/yw8o-uma.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "8gc6",
+      "name": "estructura-del-atomo-y-su-masa.webp",
+      "materia": "quimica",
+      "type": "lesson",
+      "date": "2026-02-09",
+      "size": "76KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/8gc6-estructura-del-atomo-y-su-masa.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "wt4o",
+      "name": "resumen-masa-de-las-pasrticulas-subatomicas.webp",
+      "materia": "quimica",
+      "type": "lesson",
+      "date": "2026-02-09",
+      "size": "90KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/wt4o-resumen-masa-de-las-pasrticulas-subatomicas.webp",
+      "status": "uploaded"
     }
   ],
-  "lastUpdated": "2026-01-29T00:44:20.689Z"
+  "lastUpdated": "2026-02-09T00:18:57.431Z"
 }
