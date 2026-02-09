@@ -96,6 +96,8 @@ Un ejercicio clásico para dominar este tema es completar los datos de un átomo
 
 Recuerda que si no conoces el número de protones (**Z**), puedes buscar el símbolo del elemento en tu Tabla Periódica.
 
+![Tabla Periódica: Metales y No Metales](/images/quimica/tabla-periodica-metales-no-metales.svg)
+
 1.  **Oxígeno (O):** $A = 8 + 8 = 16$.
 2.  **Cloro (Cl):** Buscamos su identidad: $Z=17$. Luego, $A = 17 + 18 = 35$.
 3.  **Magnesio (Mg):** Despejamos neutrones: $n = 24 - 12 = 12$.

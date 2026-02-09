@@ -1,0 +1,1155 @@
+{
+    "version": "2.0",
+    "title": "Tabla Periódica: Metales, No Metales y Metaloides",
+    "description": "Clasificación con nombres, masas atómicas y diseño llamativo",
+    "layout": {
+        "columns": 18,
+        "rows": 7,
+        "cell_width": 46,
+        "cell_height": 64,
+        "gap": 2,
+        "padding": 15,
+        "lanthanide_gap": 20
+    },
+    "elements": [
+        {
+            "symbol": "H",
+            "Z": 1,
+            "group": 1,
+            "period": 1,
+            "category": "nonmetal",
+            "name": "Hidrógeno",
+            "mass": "1.008"
+        },
+        {
+            "symbol": "He",
+            "Z": 2,
+            "group": 18,
+            "period": 1,
+            "category": "nonmetal",
+            "name": "Helio",
+            "mass": "4.0026"
+        },
+        {
+            "symbol": "Li",
+            "Z": 3,
+            "group": 1,
+            "period": 2,
+            "category": "metal",
+            "name": "Litio",
+            "mass": "6.94"
+        },
+        {
+            "symbol": "Be",
+            "Z": 4,
+            "group": 2,
+            "period": 2,
+            "category": "metal",
+            "name": "Berilio",
+            "mass": "9.0122"
+        },
+        {
+            "symbol": "B",
+            "Z": 5,
+            "group": 13,
+            "period": 2,
+            "category": "metalloid",
+            "name": "Boro",
+            "mass": "10.81"
+        },
+        {
+            "symbol": "C",
+            "Z": 6,
+            "group": 14,
+            "period": 2,
+            "category": "nonmetal",
+            "name": "Carbono",
+            "mass": "12.011"
+        },
+        {
+            "symbol": "N",
+            "Z": 7,
+            "group": 15,
+            "period": 2,
+            "category": "nonmetal",
+            "name": "Nitrógeno",
+            "mass": "14.007"
+        },
+        {
+            "symbol": "O",
+            "Z": 8,
+            "group": 16,
+            "period": 2,
+            "category": "nonmetal",
+            "name": "Oxígeno",
+            "mass": "15.999"
+        },
+        {
+            "symbol": "F",
+            "Z": 9,
+            "group": 17,
+            "period": 2,
+            "category": "nonmetal",
+            "name": "Flúor",
+            "mass": "18.998"
+        },
+        {
+            "symbol": "Ne",
+            "Z": 10,
+            "group": 18,
+            "period": 2,
+            "category": "nonmetal",
+            "name": "Neón",
+            "mass": "20.180"
+        },
+        {
+            "symbol": "Na",
+            "Z": 11,
+            "group": 1,
+            "period": 3,
+            "category": "metal",
+            "name": "Sodio",
+            "mass": "22.990"
+        },
+        {
+            "symbol": "Mg",
+            "Z": 12,
+            "group": 2,
+            "period": 3,
+            "category": "metal",
+            "name": "Magnesio",
+            "mass": "24.305"
+        },
+        {
+            "symbol": "Al",
+            "Z": 13,
+            "group": 13,
+            "period": 3,
+            "category": "metal",
+            "name": "Aluminio",
+            "mass": "26.982"
+        },
+        {
+            "symbol": "Si",
+            "Z": 14,
+            "group": 14,
+            "period": 3,
+            "category": "metalloid",
+            "name": "Silicio",
+            "mass": "28.085"
+        },
+        {
+            "symbol": "P",
+            "Z": 15,
+            "group": 15,
+            "period": 3,
+            "category": "nonmetal",
+            "name": "Fósforo",
+            "mass": "30.974"
+        },
+        {
+            "symbol": "S",
+            "Z": 16,
+            "group": 16,
+            "period": 3,
+            "category": "nonmetal",
+            "name": "Azufre",
+            "mass": "32.06"
+        },
+        {
+            "symbol": "Cl",
+            "Z": 17,
+            "group": 17,
+            "period": 3,
+            "category": "nonmetal",
+            "name": "Cloro",
+            "mass": "35.45"
+        },
+        {
+            "symbol": "Ar",
+            "Z": 18,
+            "group": 18,
+            "period": 3,
+            "category": "nonmetal",
+            "name": "Argón",
+            "mass": "39.948"
+        },
+        {
+            "symbol": "K",
+            "Z": 19,
+            "group": 1,
+            "period": 4,
+            "category": "metal",
+            "name": "Potasio",
+            "mass": "39.098"
+        },
+        {
+            "symbol": "Ca",
+            "Z": 20,
+            "group": 2,
+            "period": 4,
+            "category": "metal",
+            "name": "Calcio",
+            "mass": "40.078"
+        },
+        {
+            "symbol": "Sc",
+            "Z": 21,
+            "group": 3,
+            "period": 4,
+            "category": "metal",
+            "name": "Escandio",
+            "mass": "44.956"
+        },
+        {
+            "symbol": "Ti",
+            "Z": 22,
+            "group": 4,
+            "period": 4,
+            "category": "metal",
+            "name": "Titanio",
+            "mass": "47.867"
+        },
+        {
+            "symbol": "V",
+            "Z": 23,
+            "group": 5,
+            "period": 4,
+            "category": "metal",
+            "name": "Vanadio",
+            "mass": "50.942"
+        },
+        {
+            "symbol": "Cr",
+            "Z": 24,
+            "group": 6,
+            "period": 4,
+            "category": "metal",
+            "name": "Cromo",
+            "mass": "51.996"
+        },
+        {
+            "symbol": "Mn",
+            "Z": 25,
+            "group": 7,
+            "period": 4,
+            "category": "metal",
+            "name": "Manganeso",
+            "mass": "54.938"
+        },
+        {
+            "symbol": "Fe",
+            "Z": 26,
+            "group": 8,
+            "period": 4,
+            "category": "metal",
+            "name": "Hierro",
+            "mass": "55.845"
+        },
+        {
+            "symbol": "Co",
+            "Z": 27,
+            "group": 9,
+            "period": 4,
+            "category": "metal",
+            "name": "Cobalto",
+            "mass": "58.933"
+        },
+        {
+            "symbol": "Ni",
+            "Z": 28,
+            "group": 10,
+            "period": 4,
+            "category": "metal",
+            "name": "Níquel",
+            "mass": "58.693"
+        },
+        {
+            "symbol": "Cu",
+            "Z": 29,
+            "group": 11,
+            "period": 4,
+            "category": "metal",
+            "name": "Cobre",
+            "mass": "63.546"
+        },
+        {
+            "symbol": "Zn",
+            "Z": 30,
+            "group": 12,
+            "period": 4,
+            "category": "metal",
+            "name": "Zinc",
+            "mass": "65.38"
+        },
+        {
+            "symbol": "Ga",
+            "Z": 31,
+            "group": 13,
+            "period": 4,
+            "category": "metal",
+            "name": "Galio",
+            "mass": "69.723"
+        },
+        {
+            "symbol": "Ge",
+            "Z": 32,
+            "group": 14,
+            "period": 4,
+            "category": "metalloid",
+            "name": "Germanio",
+            "mass": "72.630"
+        },
+        {
+            "symbol": "As",
+            "Z": 33,
+            "group": 15,
+            "period": 4,
+            "category": "metalloid",
+            "name": "Arsénico",
+            "mass": "74.922"
+        },
+        {
+            "symbol": "Se",
+            "Z": 34,
+            "group": 16,
+            "period": 4,
+            "category": "nonmetal",
+            "name": "Selenio",
+            "mass": "78.971"
+        },
+        {
+            "symbol": "Br",
+            "Z": 35,
+            "group": 17,
+            "period": 4,
+            "category": "nonmetal",
+            "name": "Bromo",
+            "mass": "79.904"
+        },
+        {
+            "symbol": "Kr",
+            "Z": 36,
+            "group": 18,
+            "period": 4,
+            "category": "nonmetal",
+            "name": "Kriptón",
+            "mass": "83.798"
+        },
+        {
+            "symbol": "Rb",
+            "Z": 37,
+            "group": 1,
+            "period": 5,
+            "category": "metal",
+            "name": "Rubidio",
+            "mass": "85.468"
+        },
+        {
+            "symbol": "Sr",
+            "Z": 38,
+            "group": 2,
+            "period": 5,
+            "category": "metal",
+            "name": "Estroncio",
+            "mass": "87.62"
+        },
+        {
+            "symbol": "Y",
+            "Z": 39,
+            "group": 3,
+            "period": 5,
+            "category": "metal",
+            "name": "Itrio",
+            "mass": "88.906"
+        },
+        {
+            "symbol": "Zr",
+            "Z": 40,
+            "group": 4,
+            "period": 5,
+            "category": "metal",
+            "name": "Zirconio",
+            "mass": "91.224"
+        },
+        {
+            "symbol": "Nb",
+            "Z": 41,
+            "group": 5,
+            "period": 5,
+            "category": "metal",
+            "name": "Niobio",
+            "mass": "92.906"
+        },
+        {
+            "symbol": "Mo",
+            "Z": 42,
+            "group": 6,
+            "period": 5,
+            "category": "metal",
+            "name": "Molibdeno",
+            "mass": "95.95"
+        },
+        {
+            "symbol": "Tc",
+            "Z": 43,
+            "group": 7,
+            "period": 5,
+            "category": "metal",
+            "name": "Tecnecio",
+            "mass": "[98]"
+        },
+        {
+            "symbol": "Ru",
+            "Z": 44,
+            "group": 8,
+            "period": 5,
+            "category": "metal",
+            "name": "Rutenio",
+            "mass": "101.07"
+        },
+        {
+            "symbol": "Rh",
+            "Z": 45,
+            "group": 9,
+            "period": 5,
+            "category": "metal",
+            "name": "Rodio",
+            "mass": "102.91"
+        },
+        {
+            "symbol": "Pd",
+            "Z": 46,
+            "group": 10,
+            "period": 5,
+            "category": "metal",
+            "name": "Paladio",
+            "mass": "106.42"
+        },
+        {
+            "symbol": "Ag",
+            "Z": 47,
+            "group": 11,
+            "period": 5,
+            "category": "metal",
+            "name": "Plata",
+            "mass": "107.87"
+        },
+        {
+            "symbol": "Cd",
+            "Z": 48,
+            "group": 12,
+            "period": 5,
+            "category": "metal",
+            "name": "Cadmio",
+            "mass": "112.41"
+        },
+        {
+            "symbol": "In",
+            "Z": 49,
+            "group": 13,
+            "period": 5,
+            "category": "metal",
+            "name": "Indio",
+            "mass": "114.82"
+        },
+        {
+            "symbol": "Sn",
+            "Z": 50,
+            "group": 14,
+            "period": 5,
+            "category": "metal",
+            "name": "Estaño",
+            "mass": "118.71"
+        },
+        {
+            "symbol": "Sb",
+            "Z": 51,
+            "group": 15,
+            "period": 5,
+            "category": "metalloid",
+            "name": "Antimonio",
+            "mass": "121.76"
+        },
+        {
+            "symbol": "Te",
+            "Z": 52,
+            "group": 16,
+            "period": 5,
+            "category": "metalloid",
+            "name": "Telurio",
+            "mass": "127.60"
+        },
+        {
+            "symbol": "I",
+            "Z": 53,
+            "group": 17,
+            "period": 5,
+            "category": "nonmetal",
+            "name": "Yodo",
+            "mass": "126.90"
+        },
+        {
+            "symbol": "Xe",
+            "Z": 54,
+            "group": 18,
+            "period": 5,
+            "category": "nonmetal",
+            "name": "Xenón",
+            "mass": "131.29"
+        },
+        {
+            "symbol": "Cs",
+            "Z": 55,
+            "group": 1,
+            "period": 6,
+            "category": "metal",
+            "name": "Cesio",
+            "mass": "132.91"
+        },
+        {
+            "symbol": "Ba",
+            "Z": 56,
+            "group": 2,
+            "period": 6,
+            "category": "metal",
+            "name": "Bario",
+            "mass": "137.33"
+        },
+        {
+            "symbol": "La",
+            "Z": 57,
+            "group": 3,
+            "period": 6,
+            "category": "metal",
+            "series": "lanthanide",
+            "series_pos": 1,
+            "name": "Lantano",
+            "mass": "138.91"
+        },
+        {
+            "symbol": "Ce",
+            "Z": 58,
+            "group": 3,
+            "period": 6,
+            "category": "metal",
+            "series": "lanthanide",
+            "series_pos": 2,
+            "name": "Cerio",
+            "mass": "140.12"
+        },
+        {
+            "symbol": "Pr",
+            "Z": 59,
+            "group": 3,
+            "period": 6,
+            "category": "metal",
+            "series": "lanthanide",
+            "series_pos": 3,
+            "name": "Praseodimio",
+            "mass": "140.91"
+        },
+        {
+            "symbol": "Nd",
+            "Z": 60,
+            "group": 3,
+            "period": 6,
+            "category": "metal",
+            "series": "lanthanide",
+            "series_pos": 4,
+            "name": "Neodimio",
+            "mass": "144.24"
+        },
+        {
+            "symbol": "Pm",
+            "Z": 61,
+            "group": 3,
+            "period": 6,
+            "category": "metal",
+            "series": "lanthanide",
+            "series_pos": 5,
+            "name": "Prometio",
+            "mass": "[145]"
+        },
+        {
+            "symbol": "Sm",
+            "Z": 62,
+            "group": 3,
+            "period": 6,
+            "category": "metal",
+            "series": "lanthanide",
+            "series_pos": 6,
+            "name": "Samario",
+            "mass": "150.36"
+        },
+        {
+            "symbol": "Eu",
+            "Z": 63,
+            "group": 3,
+            "period": 6,
+            "category": "metal",
+            "series": "lanthanide",
+            "series_pos": 7,
+            "name": "Europio",
+            "mass": "151.96"
+        },
+        {
+            "symbol": "Gd",
+            "Z": 64,
+            "group": 3,
+            "period": 6,
+            "category": "metal",
+            "series": "lanthanide",
+            "series_pos": 8,
+            "name": "Gadolinio",
+            "mass": "157.25"
+        },
+        {
+            "symbol": "Tb",
+            "Z": 65,
+            "group": 3,
+            "period": 6,
+            "category": "metal",
+            "series": "lanthanide",
+            "series_pos": 9,
+            "name": "Terbio",
+            "mass": "158.93"
+        },
+        {
+            "symbol": "Dy",
+            "Z": 66,
+            "group": 3,
+            "period": 6,
+            "category": "metal",
+            "series": "lanthanide",
+            "series_pos": 10,
+            "name": "Disprosio",
+            "mass": "162.50"
+        },
+        {
+            "symbol": "Ho",
+            "Z": 67,
+            "group": 3,
+            "period": 6,
+            "category": "metal",
+            "series": "lanthanide",
+            "series_pos": 11,
+            "name": "Holmio",
+            "mass": "164.93"
+        },
+        {
+            "symbol": "Er",
+            "Z": 68,
+            "group": 3,
+            "period": 6,
+            "category": "metal",
+            "series": "lanthanide",
+            "series_pos": 12,
+            "name": "Erbio",
+            "mass": "167.26"
+        },
+        {
+            "symbol": "Tm",
+            "Z": 69,
+            "group": 3,
+            "period": 6,
+            "category": "metal",
+            "series": "lanthanide",
+            "series_pos": 13,
+            "name": "Tulio",
+            "mass": "168.93"
+        },
+        {
+            "symbol": "Yb",
+            "Z": 70,
+            "group": 3,
+            "period": 6,
+            "category": "metal",
+            "series": "lanthanide",
+            "series_pos": 14,
+            "name": "Iterbio",
+            "mass": "173.05"
+        },
+        {
+            "symbol": "Lu",
+            "Z": 71,
+            "group": 3,
+            "period": 6,
+            "category": "metal",
+            "series": "lanthanide",
+            "series_pos": 15,
+            "name": "Lutecio",
+            "mass": "174.97"
+        },
+        {
+            "symbol": "Hf",
+            "Z": 72,
+            "group": 4,
+            "period": 6,
+            "category": "metal",
+            "name": "Hafnio",
+            "mass": "178.49"
+        },
+        {
+            "symbol": "Ta",
+            "Z": 73,
+            "group": 5,
+            "period": 6,
+            "category": "metal",
+            "name": "Tántalo",
+            "mass": "180.95"
+        },
+        {
+            "symbol": "W",
+            "Z": 74,
+            "group": 6,
+            "period": 6,
+            "category": "metal",
+            "name": "Wolframio",
+            "mass": "183.84"
+        },
+        {
+            "symbol": "Re",
+            "Z": 75,
+            "group": 7,
+            "period": 6,
+            "category": "metal",
+            "name": "Renio",
+            "mass": "186.21"
+        },
+        {
+            "symbol": "Os",
+            "Z": 76,
+            "group": 8,
+            "period": 6,
+            "category": "metal",
+            "name": "Osmio",
+            "mass": "190.23"
+        },
+        {
+            "symbol": "Ir",
+            "Z": 77,
+            "group": 9,
+            "period": 6,
+            "category": "metal",
+            "name": "Iridio",
+            "mass": "192.22"
+        },
+        {
+            "symbol": "Pt",
+            "Z": 78,
+            "group": 10,
+            "period": 6,
+            "category": "metal",
+            "name": "Platino",
+            "mass": "195.08"
+        },
+        {
+            "symbol": "Au",
+            "Z": 79,
+            "group": 11,
+            "period": 6,
+            "category": "metal",
+            "name": "Oro",
+            "mass": "196.97"
+        },
+        {
+            "symbol": "Hg",
+            "Z": 80,
+            "group": 12,
+            "period": 6,
+            "category": "metal",
+            "name": "Mercurio",
+            "mass": "200.59"
+        },
+        {
+            "symbol": "Tl",
+            "Z": 81,
+            "group": 13,
+            "period": 6,
+            "category": "metal",
+            "name": "Talio",
+            "mass": "204.38"
+        },
+        {
+            "symbol": "Pb",
+            "Z": 82,
+            "group": 14,
+            "period": 6,
+            "category": "metal",
+            "name": "Plomo",
+            "mass": "207.2"
+        },
+        {
+            "symbol": "Bi",
+            "Z": 83,
+            "group": 15,
+            "period": 6,
+            "category": "metal",
+            "name": "Bismuto",
+            "mass": "208.98"
+        },
+        {
+            "symbol": "Po",
+            "Z": 84,
+            "group": 16,
+            "period": 6,
+            "category": "metalloid",
+            "name": "Polonio",
+            "mass": "[209]"
+        },
+        {
+            "symbol": "At",
+            "Z": 85,
+            "group": 17,
+            "period": 6,
+            "category": "nonmetal",
+            "name": "Astato",
+            "mass": "[210]"
+        },
+        {
+            "symbol": "Rn",
+            "Z": 86,
+            "group": 18,
+            "period": 6,
+            "category": "nonmetal",
+            "name": "Radón",
+            "mass": "[222]"
+        },
+        {
+            "symbol": "Fr",
+            "Z": 87,
+            "group": 1,
+            "period": 7,
+            "category": "metal",
+            "name": "Francio",
+            "mass": "[223]"
+        },
+        {
+            "symbol": "Ra",
+            "Z": 88,
+            "group": 2,
+            "period": 7,
+            "category": "metal",
+            "name": "Radio",
+            "mass": "[226]"
+        },
+        {
+            "symbol": "Ac",
+            "Z": 89,
+            "group": 3,
+            "period": 7,
+            "category": "metal",
+            "series": "actinide",
+            "series_pos": 1,
+            "name": "Actinio",
+            "mass": "[227]"
+        },
+        {
+            "symbol": "Th",
+            "Z": 90,
+            "group": 3,
+            "period": 7,
+            "category": "metal",
+            "series": "actinide",
+            "series_pos": 2,
+            "name": "Torio",
+            "mass": "232.04"
+        },
+        {
+            "symbol": "Pa",
+            "Z": 91,
+            "group": 3,
+            "period": 7,
+            "category": "metal",
+            "series": "actinide",
+            "series_pos": 3,
+            "name": "Protactinio",
+            "mass": "231.04"
+        },
+        {
+            "symbol": "U",
+            "Z": 92,
+            "group": 3,
+            "period": 7,
+            "category": "metal",
+            "series": "actinide",
+            "series_pos": 4,
+            "name": "Uranio",
+            "mass": "238.03"
+        },
+        {
+            "symbol": "Np",
+            "Z": 93,
+            "group": 3,
+            "period": 7,
+            "category": "metal",
+            "series": "actinide",
+            "series_pos": 5,
+            "name": "Neptunio",
+            "mass": "[237]"
+        },
+        {
+            "symbol": "Pu",
+            "Z": 94,
+            "group": 3,
+            "period": 7,
+            "category": "metal",
+            "series": "actinide",
+            "series_pos": 6,
+            "name": "Plutonio",
+            "mass": "[244]"
+        },
+        {
+            "symbol": "Am",
+            "Z": 95,
+            "group": 3,
+            "period": 7,
+            "category": "metal",
+            "series": "actinide",
+            "series_pos": 7,
+            "name": "Americio",
+            "mass": "[243]"
+        },
+        {
+            "symbol": "Cm",
+            "Z": 96,
+            "group": 3,
+            "period": 7,
+            "category": "metal",
+            "series": "actinide",
+            "series_pos": 8,
+            "name": "Curio",
+            "mass": "[247]"
+        },
+        {
+            "symbol": "Bk",
+            "Z": 97,
+            "group": 3,
+            "period": 7,
+            "category": "metal",
+            "series": "actinide",
+            "series_pos": 9,
+            "name": "Berkelio",
+            "mass": "[247]"
+        },
+        {
+            "symbol": "Cf",
+            "Z": 98,
+            "group": 3,
+            "period": 7,
+            "category": "metal",
+            "series": "actinide",
+            "series_pos": 10,
+            "name": "Californio",
+            "mass": "[251]"
+        },
+        {
+            "symbol": "Es",
+            "Z": 99,
+            "group": 3,
+            "period": 7,
+            "category": "metal",
+            "series": "actinide",
+            "series_pos": 11,
+            "name": "Einstenio",
+            "mass": "[252]"
+        },
+        {
+            "symbol": "Fm",
+            "Z": 100,
+            "group": 3,
+            "period": 7,
+            "category": "metal",
+            "series": "actinide",
+            "series_pos": 12,
+            "name": "Fermio",
+            "mass": "[257]"
+        },
+        {
+            "symbol": "Md",
+            "Z": 101,
+            "group": 3,
+            "period": 7,
+            "category": "metal",
+            "series": "actinide",
+            "series_pos": 13,
+            "name": "Mendelevio",
+            "mass": "[258]"
+        },
+        {
+            "symbol": "No",
+            "Z": 102,
+            "group": 3,
+            "period": 7,
+            "category": "metal",
+            "series": "actinide",
+            "series_pos": 14,
+            "name": "Nobelio",
+            "mass": "[259]"
+        },
+        {
+            "symbol": "Lr",
+            "Z": 103,
+            "group": 3,
+            "period": 7,
+            "category": "metal",
+            "series": "actinide",
+            "series_pos": 15,
+            "name": "Lawrencio",
+            "mass": "[262]"
+        },
+        {
+            "symbol": "Rf",
+            "Z": 104,
+            "group": 4,
+            "period": 7,
+            "category": "metal",
+            "name": "Rutherfordio",
+            "mass": "[267]"
+        },
+        {
+            "symbol": "Db",
+            "Z": 105,
+            "group": 5,
+            "period": 7,
+            "category": "metal",
+            "name": "Dubnio",
+            "mass": "[270]"
+        },
+        {
+            "symbol": "Sg",
+            "Z": 106,
+            "group": 6,
+            "period": 7,
+            "category": "metal",
+            "name": "Seaborgio",
+            "mass": "[271]"
+        },
+        {
+            "symbol": "Bh",
+            "Z": 107,
+            "group": 7,
+            "period": 7,
+            "category": "metal",
+            "name": "Bohrio",
+            "mass": "[270]"
+        },
+        {
+            "symbol": "Hs",
+            "Z": 108,
+            "group": 8,
+            "period": 7,
+            "category": "metal",
+            "name": "Hassio",
+            "mass": "[277]"
+        },
+        {
+            "symbol": "Mt",
+            "Z": 109,
+            "group": 9,
+            "period": 7,
+            "category": "metal",
+            "name": "Meitnerio",
+            "mass": "[276]"
+        },
+        {
+            "symbol": "Ds",
+            "Z": 110,
+            "group": 10,
+            "period": 7,
+            "category": "metal",
+            "name": "Darmstatio",
+            "mass": "[281]"
+        },
+        {
+            "symbol": "Rg",
+            "Z": 111,
+            "group": 11,
+            "period": 7,
+            "category": "metal",
+            "name": "Roentgenio",
+            "mass": "[280]"
+        },
+        {
+            "symbol": "Cn",
+            "Z": 112,
+            "group": 12,
+            "period": 7,
+            "category": "metal",
+            "name": "Copernicio",
+            "mass": "[285]"
+        },
+        {
+            "symbol": "Nh",
+            "Z": 113,
+            "group": 13,
+            "period": 7,
+            "category": "metal",
+            "name": "Nihonio",
+            "mass": "[284]"
+        },
+        {
+            "symbol": "Fl",
+            "Z": 114,
+            "group": 14,
+            "period": 7,
+            "category": "metal",
+            "name": "Flerovio",
+            "mass": "[289]"
+        },
+        {
+            "symbol": "Mc",
+            "Z": 115,
+            "group": 15,
+            "period": 7,
+            "category": "metal",
+            "name": "Moscovio",
+            "mass": "[288]"
+        },
+        {
+            "symbol": "Lv",
+            "Z": 116,
+            "group": 16,
+            "period": 7,
+            "category": "metal",
+            "name": "Livermorio",
+            "mass": "[293]"
+        },
+        {
+            "symbol": "Ts",
+            "Z": 117,
+            "group": 17,
+            "period": 7,
+            "category": "nonmetal",
+            "name": "Teneso",
+            "mass": "[294]"
+        },
+        {
+            "symbol": "Og",
+            "Z": 118,
+            "group": 18,
+            "period": 7,
+            "category": "nonmetal",
+            "name": "Oganessón",
+            "mass": "[294]"
+        }
+    ],
+    "categories": {
+        "metal": {
+            "name": "Metales",
+            "color": "#dc2626",
+            "fill": "#fee2e2"
+        },
+        "nonmetal": {
+            "name": "No Metales",
+            "color": "#2563eb",
+            "fill": "#dbeafe"
+        },
+        "metalloid": {
+            "name": "Metaloides",
+            "color": "#9333ea",
+            "fill": "#f3e8ff"
+        }
+    }
+}

@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 700">
+<rect width="800" height="700" fill="#f8fafc" rx="12"/>
+<text x="400.0" y="40" font-family="Inter, sans-serif" font-size="24" font-weight="bold" fill="#1e293b" text-anchor="middle">Isótopos: "Gemelos" con Diferente Peso</text>
+<text x="200" y="120" font-family="Inter, sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle">Carbono-12</text>
+<text x="200" y="140" font-family="Inter, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">El 'Gemelo' Ligero</text>
+<circle cx="200" cy="280" r="100" fill="none" stroke="#e2e8f0" stroke-width="2.5" stroke-dasharray="0" opacity="0.8"/>
+<circle cx="200" cy="280" r="130" fill="none" stroke="#e2e8f0" stroke-width="2.5" stroke-dasharray="0" opacity="0.8"/>
+<circle cx="200" cy="180" r="6" fill="#3b82f6" stroke="white" stroke-width="1.5"/>
+<circle cx="200" cy="380" r="6" fill="#3b82f6" stroke="white" stroke-width="1.5"/>
+<circle cx="291.9238815542512" cy="371.9238815542512" r="6" fill="#3b82f6" stroke="white" stroke-width="1.5"/>
+<circle cx="108.07611844574883" cy="371.9238815542512" r="6" fill="#3b82f6" stroke="white" stroke-width="1.5"/>
+<circle cx="108.0761184457488" cy="188.07611844574882" r="6" fill="#3b82f6" stroke="white" stroke-width="1.5"/>
+<circle cx="291.9238815542511" cy="188.07611844574882" r="6" fill="#3b82f6" stroke="white" stroke-width="1.5"/>
+<circle cx="200" cy="280" r="72.37259631025503" fill="#fdf4ff" stroke="#8b5cf6" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.8"/>
+<g transform="translate(200,280)">
+<circle cx="0" cy="0" r="8" fill="#ef4444" stroke="white" stroke-width="1"/>
+<text x="0" y="2.5" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">+</text>
+<circle cx="-12.977741212676309" cy="11.8885757354194" r="8" fill="#64748b" stroke="white" stroke-width="1"/>
+<circle cx="2.176244377969725" cy="-24.794837374085667" r="8" fill="#ef4444" stroke="white" stroke-width="1"/>
+<text x="2.176244377969725" y="-22.294837374085667" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">+</text>
+<circle cx="18.547408681677165" cy="24.192429212355805" r="8" fill="#64748b" stroke="white" stroke-width="1"/>
+<circle cx="-34.661813682654" cy="-6.131775617957675" r="8" fill="#ef4444" stroke="white" stroke-width="1"/>
+<text x="-34.661813682654" y="-3.6317756179576746" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">+</text>
+<circle cx="33.206252764980206" cy="-21.122139505936527" r="8" fill="#64748b" stroke="white" stroke-width="1"/>
+<circle cx="-11.192834933578236" cy="41.632684829946655" r="8" fill="#ef4444" stroke="white" stroke-width="1"/>
+<text x="-11.192834933578236" y="44.132684829946655" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">+</text>
+<circle cx="-21.461047171202633" cy="-41.32485274402579" r="8" fill="#64748b" stroke="white" stroke-width="1"/>
+<circle cx="46.75914965726906" cy="17.078112405330845" r="8" fill="#ef4444" stroke="white" stroke-width="1"/>
+<text x="46.75914965726906" y="19.578112405330845" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">+</text>
+<circle cx="-48.80619200702169" cy="20.144369480669578" r="8" fill="#64748b" stroke="white" stroke-width="1"/>
+<circle cx="23.591685398903078" cy="-50.40865382093818" r="8" fill="#ef4444" stroke="white" stroke-width="1"/>
+<text x="23.591685398903078" y="-47.90865382093818" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">+</text>
+<circle cx="17.46745315556837" cy="55.697828326228525" r="8" fill="#64748b" stroke="white" stroke-width="1"/>
+</g>
+<text x="600" y="120" font-family="Inter, sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="middle">Carbono-14</text>
+<text x="600" y="140" font-family="Inter, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">El 'Gemelo' Pesado</text>
+<circle cx="600" cy="280" r="100" fill="none" stroke="#e2e8f0" stroke-width="2.5" stroke-dasharray="0" opacity="0.8"/>
+<circle cx="600" cy="280" r="130" fill="none" stroke="#e2e8f0" stroke-width="2.5" stroke-dasharray="0" opacity="0.8"/>
+<circle cx="600" cy="180" r="6" fill="#3b82f6" stroke="white" stroke-width="1.5"/>
+<circle cx="600" cy="380" r="6" fill="#3b82f6" stroke="white" stroke-width="1.5"/>
+<circle cx="691.9238815542512" cy="371.9238815542512" r="6" fill="#3b82f6" stroke="white" stroke-width="1.5"/>
+<circle cx="508.0761184457488" cy="371.9238815542512" r="6" fill="#3b82f6" stroke="white" stroke-width="1.5"/>
+<circle cx="508.0761184457488" cy="188.07611844574882" r="6" fill="#3b82f6" stroke="white" stroke-width="1.5"/>
+<circle cx="691.9238815542511" cy="188.07611844574882" r="6" fill="#3b82f6" stroke="white" stroke-width="1.5"/>
+<circle cx="600" cy="280" r="77.45770244816622" fill="#fdf4ff" stroke="#8b5cf6" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.8"/>
+<g transform="translate(600,280)">
+<circle cx="0" cy="0" r="8" fill="#ef4444" stroke="white" stroke-width="1"/>
+<text x="0" y="2.5" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">+</text>
+<circle cx="-12.977741212676309" cy="11.8885757354194" r="8" fill="#64748b" stroke="white" stroke-width="1"/>
+<circle cx="2.176244377969725" cy="-24.794837374085667" r="8" fill="#ef4444" stroke="white" stroke-width="1"/>
+<text x="2.176244377969725" y="-22.294837374085667" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">+</text>
+<circle cx="18.547408681677165" cy="24.192429212355805" r="8" fill="#64748b" stroke="white" stroke-width="1"/>
+<circle cx="-34.661813682654" cy="-6.131775617957675" r="8" fill="#ef4444" stroke="white" stroke-width="1"/>
+<text x="-34.661813682654" y="-3.6317756179576746" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">+</text>
+<circle cx="33.206252764980206" cy="-21.122139505936527" r="8" fill="#64748b" stroke="white" stroke-width="1"/>
+<circle cx="-11.192834933578236" cy="41.632684829946655" r="8" fill="#ef4444" stroke="white" stroke-width="1"/>
+<text x="-11.192834933578236" y="44.132684829946655" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">+</text>
+<circle cx="-21.461047171202633" cy="-41.32485274402579" r="8" fill="#64748b" stroke="white" stroke-width="1"/>
+<circle cx="46.75914965726906" cy="17.078112405330845" r="8" fill="#ef4444" stroke="white" stroke-width="1"/>
+<text x="46.75914965726906" y="19.578112405330845" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">+</text>
+<circle cx="-48.80619200702169" cy="20.144369480669578" r="8" fill="#64748b" stroke="white" stroke-width="1"/>
+<circle cx="23.591685398903078" cy="-50.40865382093818" r="8" fill="#ef4444" stroke="white" stroke-width="1"/>
+<text x="23.591685398903078" y="-47.90865382093818" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">+</text>
+<circle cx="17.46745315556837" cy="55.697828326228525" r="8" fill="#64748b" stroke="white" stroke-width="1"/>
+<circle cx="-52.748849319669496" cy="-30.57251863113019" r="8" fill="#f97316" stroke="white" stroke-width="1"/>
+<circle cx="61.97832999374253" cy="-13.622283625984167" r="8" fill="#f97316" stroke="white" stroke-width="1"/>
+</g>
+<path d="M 200 460 L 600 460" stroke="#64748b" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow)"/>
+<text x="400.0" y="455" font-family="Inter, sans-serif" font-size="14" fill="#3b82f6" font-weight="bold" text-anchor="middle">Mismo Z (6 Protones)</text>
+<text x="400.0" y="475" font-family="Inter, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">(Mismo ADN / Identidad)</text>
+<path d="M 400.0 550 L 380.0 590 L 420.0 590 Z" fill="#1e293b"/>
+<line x1="153.798061746948" y1="506.58795558326744" x2="646.201938253052" y2="593.4120444167326" stroke="#1e293b" stroke-width="6" stroke-linecap="round"/>
+<line x1="153.798061746948" y1="506.58795558326744" x2="153.798061746948" y2="536.5879555832674" stroke="#64748b" stroke-width="2"/>
+<ellipse cx="153.798061746948" cy="541.5879555832674" rx="30" ry="10" fill="#bfdbfe" stroke="#3b82f6" stroke-width="2"/>
+<line x1="646.201938253052" y1="593.4120444167326" x2="646.201938253052" y2="623.4120444167326" stroke="#64748b" stroke-width="2"/>
+<ellipse cx="646.201938253052" cy="628.4120444167326" rx="30" ry="10" fill="#fecaca" stroke="#ef4444" stroke-width="2"/>
+<text x="153.798061746948" y="566.5879555832674" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#3b82f6" text-anchor="middle">Masa = 12</text>
+<text x="646.201938253052" y="653.4120444167326" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#ef4444" text-anchor="middle">Masa = 14</text>
+<text x="706.201938253052" y="593.4120444167326" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#ef4444" text-anchor="start">¡Comió más!</text>
+<text x="706.201938253052" y="608.4120444167326" font-family="Inter, sans-serif" font-size="12" fill="#64748b" text-anchor="start">(+2 Neutrones)</text>
+</svg>

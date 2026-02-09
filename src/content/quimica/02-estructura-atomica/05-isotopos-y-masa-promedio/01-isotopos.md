@@ -20,6 +20,8 @@ Un Isótopo es un átomo que tiene **el mismo número de protones (Z)** que otro
 
 Son como gemelos idénticos: Tienen el mismo apellido (Z), pero uno come más y pesa más (A).
 
+![Isótopos: Gemelos con diferente peso](/images/quimica/isotopos/comparacion-gemelos.svg)
+
 ---
 
 ## 2. Ejemplo Clásico: El Hidrógeno
@@ -27,32 +29,49 @@ Son como gemelos idénticos: Tienen el mismo apellido (Z), pero uno come más y 
 El Hidrógeno es el elemento más simple, pero tiene tres versiones en la naturaleza:
 
 ### A. Protio ($^1H$) 💧
+![Isótopo Protio](/images/quimica/isotopos/h-1-protio.svg)
 *   **Protones:** 1
 *   **Neutrones:** 0
 *   **Masa (A):** 1
 *   **Abundancia:** 99.98% (Es el hidrógeno común del agua).
 
 ### B. Deuterio ($^2H$) 🧪
+![Isótopo Deuterio](/images/quimica/isotopos/h-2-deuterio.svg)
 *   **Protones:** 1
 *   **Neutrones:** 1
 *   **Masa (A):** 2
-*   **Abundancia:** 0.015% (Usado en reactores nucleares como "agua pesada").
+*   **Abundancia:** 0.015% (Usado en reactores nucleares).
 
 ### C. Tritio ($^3H$) ☢️
+![Isótopo Tritio](/images/quimica/isotopos/h-3-tritio.svg)
 *   **Protones:** 1
 *   **Neutrones:** 2
 *   **Masa (A):** 3
-*   **Abundancia:** Trazas (Es radiactivo e inestable).
+*   **Abundancia:** Trazas (Radiactivo e inestable).
 
 ---
 
 ## 3. Ejemplo del Carbono
 
-El Carbono también tiene isótopos famosos:
+El Carbono tiene 6 protones, pero sus neutrones pueden variar. Aquí están sus tres isótopos más importantes:
 
-*   **Carbono-12 ($^{12}C$):** Tiene 6 protones y 6 neutrones. Es el carbono de la vida, el más estable.
-*   **Carbono-13 ($^{13}C$):** Tiene 6 protones y 7 neutrones. Es más pesado pero estable.
-*   **Carbono-14 ($^{14}C$):** Tiene 6 protones y 8 neutrones. Es radiactivo y se usa para datar fósiles antiguos.
+### Carbono-12 ($^{12}C$)
+![Isótopo Carbono-12](/images/quimica/isotopos/c-12.svg)
+*   **Protones:** 6
+*   **Neutrones:** 6
+*   **Descripción:** Es el carbono de la vida, el más estable y común (98.9%).
+
+### Carbono-13 ($^{13}C$)
+![Isótopo Carbono-13](/images/quimica/isotopos/c-13.svg)
+*   **Protones:** 6
+*   **Neutrones:** 7
+*   **Descripción:** Es un isótopo estable pero menos común (1.1%).
+
+### Carbono-14 ($^{14}C$)
+![Isótopo Carbono-14](/images/quimica/isotopos/c-14.svg)
+*   **Protones:** 6
+*   **Neutrones:** 8
+*   **Descripción:** Es radiactivo e inestable. Se usa para datar fósiles antiguos por su vida media.
 
 ---
 

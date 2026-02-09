@@ -1,0 +1,22 @@
+{
+    "title": "Carbono-14 (¹⁴C)",
+    "subtitle": "Inestable, usado en datación",
+    "protons": 6,
+    "neutrons": 8,
+    "electrons": 6,
+    "abundance": "Trazas (< 0.0001%)",
+    "element_info": {
+        "symbol": "C",
+        "name": "Carbono",
+        "z": 6,
+        "mass": "14"
+    },
+    "layout": {
+        "width": 500,
+        "height": 500,
+        "particle_radius": 10,
+        "orbit_base_radius": 130,
+        "orbit_step": 35,
+        "electron_radius": 5
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "title": "Carbono-12 (¹²C)",
+    "subtitle": "El carbono de la vida",
+    "protons": 6,
+    "neutrons": 6,
+    "electrons": 6,
+    "abundance": "98.9%",
+    "element_info": {
+        "symbol": "C",
+        "name": "Carbono",
+        "z": 6,
+        "mass": "12"
+    },
+    "layout": {
+        "width": 500,
+        "height": 500,
+        "particle_radius": 10,
+        "orbit_base_radius": 130,
+        "orbit_step": 35,
+        "electron_radius": 5
+    }
+}

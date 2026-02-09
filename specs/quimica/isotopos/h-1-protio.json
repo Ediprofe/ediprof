@@ -1,0 +1,21 @@
+{
+    "title": "Protio (¹H)",
+    "subtitle": "Es el Isótopo más común del Hidrógeno",
+    "protons": 1,
+    "neutrons": 0,
+    "electrons": 1,
+    "abundance": "99.98%",
+    "element_info": {
+        "symbol": "H",
+        "name": "Hidrógeno",
+        "z": 1,
+        "mass": "1"
+    },
+    "layout": {
+        "width": 500,
+        "height": 500,
+        "particle_radius": 14,
+        "orbit_base_radius": 130,
+        "electron_radius": 6
+    }
+}

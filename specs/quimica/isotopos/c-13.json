@@ -1,0 +1,22 @@
+{
+    "title": "Carbono-13 (¹³C)",
+    "subtitle": "Importante en estudios geológicos",
+    "protons": 6,
+    "neutrons": 7,
+    "electrons": 6,
+    "abundance": "1.1%",
+    "element_info": {
+        "symbol": "C",
+        "name": "Carbono",
+        "z": 6,
+        "mass": "13"
+    },
+    "layout": {
+        "width": 500,
+        "height": 500,
+        "particle_radius": 10,
+        "orbit_base_radius": 130,
+        "orbit_step": 35,
+        "electron_radius": 5
+    }
+}

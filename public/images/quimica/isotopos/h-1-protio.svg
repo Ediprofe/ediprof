@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 550">
+<rect width="600" height="550" fill="#f8fafc" rx="12"/>
+<rect x="60" y="272.5" width="80" height="95" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
+<text x="68" y="292.5" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#1e293b">1</text>
+<text x="132" y="292.5" font-family="Inter, sans-serif" font-size="10" fill="#64748b" text-anchor="end">1</text>
+<text x="100.0" y="324.75" font-family="Inter, sans-serif" font-size="32" font-weight="800" fill="#1e293b" text-anchor="middle">H</text>
+<text x="100.0" y="355.5" font-family="Inter, sans-serif" font-size="10" fill="#1e293b" text-anchor="middle">Hidrógeno</text>
+<text x="400" y="50" font-family="Inter, sans-serif" font-size="24" font-weight="bold" fill="#1e293b" text-anchor="middle">Protio (¹H)</text>
+<text x="400" y="80" font-family="Inter, sans-serif" font-size="14" fill="#64748b" text-anchor="middle">Es el Isótopo más común del Hidrógeno</text>
+<rect x="345.0" y="100" width="110" height="24" rx="12" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+<text x="400" y="116" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#047857" text-anchor="middle">Abundancia: 99.98%</text>
+<circle cx="400" cy="320" r="130" fill="none" stroke="#e2e8f0" stroke-width="2.5" stroke-dasharray="0" opacity="0.8"/>
+<g transform="translate(400,320)">
+<circle cx="0" cy="0" r="20.0" fill="#fdf4ff" stroke="#8b5cf6" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.8"/>
+<circle cx="0" cy="0" r="14" fill="#ef4444" stroke="#ffffff" stroke-width="1"/>
+<text x="0" y="2.5" font-family="Inter, sans-serif" font-size="16.8" font-weight="bold" fill="white" text-anchor="middle">+</text>
+</g>
+<circle cx="400.0" cy="190.0" r="6" fill="#3b82f6" stroke="white" stroke-width="1"/>
+<text x="400.0" y="191.5" font-family="Inter, sans-serif" font-size="10.8" font-weight="bold" fill="white" text-anchor="middle">-</text>
+<circle cx="195.0" cy="500" r="6" fill="#ef4444" stroke="white" stroke-width="1"/>
+<text x="195.0" y="501.5" font-family="Inter, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle">+</text>
+<text x="210.0" y="504" font-family="Inter, sans-serif" font-size="12" fill="#64748b" text-anchor="start">Protón</text>
+<circle cx="285.0" cy="500" r="6" fill="#64748b" stroke="white" stroke-width="1"/>
+<text x="300.0" y="504" font-family="Inter, sans-serif" font-size="12" fill="#64748b" text-anchor="start">Neutrón</text>
+<circle cx="375.0" cy="500" r="6" fill="#3b82f6" stroke="white" stroke-width="1"/>
+<text x="375.0" y="501.5" font-family="Inter, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle">-</text>
+<text x="390.0" y="504" font-family="Inter, sans-serif" font-size="12" fill="#64748b" text-anchor="start">Electrón</text>
+</svg>
