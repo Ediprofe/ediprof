@@ -18,4 +18,6 @@ export interface LaserStroke {
   maxX?: number;
   minY?: number;
   maxY?: number;
+  // Timestamp when stroke was created (for laser fade calculation)
+  createdAt?: number;
 }

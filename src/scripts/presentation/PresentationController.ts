@@ -3,7 +3,7 @@ import { CanvasRenderer } from './CanvasRenderer';
 import { InputHandler } from './InputHandler';
 import { WindowManager } from './WindowManager';
 import { TextHighlighter } from './TextHighlighter';
-import { TOOL_COLORS, UI_COLORS } from './config';
+import { TOOL_COLORS, UI_COLORS, TIMING } from './config';
 import type { LaserPoint, ToolMode, LaserStroke } from './types';
 
 export class PresentationController {
@@ -139,6 +139,12 @@ export class PresentationController {
           this.textHighlighter.activate();
       } else {
           this.textHighlighter.pause(); // Solo pausa, no limpia
+      }
+      
+      // Al activar la herramienta láser, limpiar trazos completamente desvanecidos
+      // para evitar que aparezcan de nuevo al cambiar de herramienta
+      if (tool === 'laser') {
+          this.clearDeadLaserStrokes();
       }
   }
   
@@ -408,11 +414,38 @@ export class PresentationController {
            this.currentStroke.minY = minY;
            this.currentStroke.maxY = maxY;
            
+           // Set creation timestamp for laser strokes
+           if (this.currentTool === 'laser') {
+              this.currentStroke.createdAt = Date.now();
+           }
+           
            this.currentStroke = null;
            
            if (this.currentTool === 'laser') {
               this.renderer.setLastActivityTime(Date.now());
            }
+      }
+  }
+
+  /**
+   * Limpia los trazos de láser que ya se han desvanecido completamente.
+   * Esto previene que vuelvan a aparecer al reactivar el láser después de un tiempo.
+   */
+  private clearDeadLaserStrokes() {
+      const now = Date.now();
+      
+      const strokes = this.strokeManager.getStrokes();
+      const aliveStrokes = strokes.filter(s => {
+          if (s.isPermanent) return true;
+          if (!s.createdAt) return true; // Keep old strokes without timestamp for backward compatibility
+          
+          const age = now - s.createdAt;
+          const alpha = Math.max(0, 1 - age / TIMING.laserFadeDuration);
+          return alpha > 0.01; // Keep only if still visible
+      });
+      
+      if (aliveStrokes.length !== strokes.length) {
+          this.strokeManager.setStrokes(aliveStrokes);
       }
   }
 

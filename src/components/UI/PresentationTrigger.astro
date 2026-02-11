@@ -155,10 +155,11 @@ import '../../styles/presentation-dock.css';
     }
   }
 
-  /* Ocultar en móviles muy pequeños si es necesario, pero permitir en tablets */
-  @media (max-width: 480px) {
-    /* Podríamos ajustar el tamaño o posición, pero por ahora lo dejamos visible */
-    /* o si se prefiere ocultar solo en móviles muy pequeños */
+  /* Ocultar en pantallas pequeñas (menos de 768px) */
+  @media (max-width: 767px) {
+    #presentation-trigger-wrapper {
+      display: none !important;
+    }
   }
 
   /* Ocultar al imprimir */
