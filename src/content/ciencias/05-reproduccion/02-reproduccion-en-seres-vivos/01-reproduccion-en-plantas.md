@@ -8,7 +8,8 @@
 
 - Reproducción Asexual Natural: Estolones, Rizomas, Bulbos.
 - Reproducción Asexual Artificial: Esquejes, Injertos, Cultivo de tejidos.
-- Reproducción Sexual: La función de la flor y la polinización.
+- Reproducción Sexual: Partes de la flor y **plantas hermafroditas**.
+- El proceso: Polinización, fecundación y formación del fruto.
 
 ---
 
@@ -64,7 +65,21 @@ En las plantas, cualquier parte del cuerpo (tallo, hoja, raíz) puede generar un
 
 Ocurre en las plantas con flores (Angiospermas).
 
-1.  **Polinización:** El polen (gameto masculino) viaja desde la antera hasta el estigma (parte femenina) de la misma u otra flor.
+### ¿Sabías que muchas plantas son "Niño y Niña" a la vez?
+La mayoría de las plantas con flores son **hermafroditas**. Esto significa que una sola flor tiene órganos masculinos y femeninos al mismo tiempo.
+
+*   **Parte Masculina (Estambres):** Producen el polen.
+*   **Parte Femenina (Pistilo):** Contiene los óvulos.
+
+> **Ejemplos:** El café, el tomate, los lirios y la mayoría de los árboles frutales. Esto les permite, en algunos casos, polinizarse a sí mismas si no hay insectos cerca.
+
+![hermafroditas](https://cdn.ediprofe.com/img/ciencias/2phv-hermafroditas.webp)
+
+---
+
+### El Proceso de Reproducción Sexual
+
+1.  **Polinización:** El polen (gameto masculino) viaja desde la antera hasta el estigma de la misma u otra flor.
     > **Agentes Polinizadores:** Viento, agua, **insectos (abejas)**, aves (colibríes) y **murciélagos** (importantes en selvas y costas).
 
 ![polinizacion](https://cdn.ediprofe.com/img/ciencias/kcsi-polinizacion.webp)
@@ -121,18 +136,17 @@ La técnica para unir partes de dos plantas distintas es el **injerto**.
 </details>
 
 ### Ejercicio 3
-**Diferenciación**
+**Hermafroditismo**
 
-¿Cuál es la diferencia principal entre un bulbo (como la cebolla) y un tubérculo (como la papa)?
+En un cultivo de café, se observa que una sola flor es capaz de producir un grano de café sin necesidad de que haya otras plantas cerca. ¿Cómo es esto posible?
 
 <details>
 <summary>Ver solución</summary>
 
 **Razonamiento:**
-- El **bulbo** es un tallo subterráneo corto rodeado de hojas carnosas que almacenan alimento (como las capas de la cebolla).
-- El **tubérculo** es un tallo subterráneo engrosado que almacena principalmente almidón y no tiene capas de hojas (como el cuerpo de la papa).
+Muchas plantas sociales y de cultivo, como el café, son **hermafroditas**. Esto significa que tienen ambos órganos (estambres y pistilo) en la misma flor, permitiendo que el polen de una flor fecunde al óvulo de esa misma flor o planta.
 
-**Resultado:** $\boxed{\text{El bulbo tiene hojas carnosas, el tubérculo (como el ñame o papa) no}}$
+**Resultado:** $\boxed{\text{La planta es hermafrodita (tiene ambos sexos)}}$
 
 </details>
 
@@ -252,6 +266,7 @@ Es incorrecto. Las papas son **tubérculos**, que son **tallos** subterráneos m
 | **Estolón** | Asexual Natural | Tallo rastrero aéreo | Fresas / Pasto Kikuyo |
 | **Rizoma** | Asexual Natural | Tallo rastrero subterráneo | Plátano / Achira |
 | **Injerto** | Asexual Artificial | Unión física de dos plantas | Café / Cítricos |
+| **Hermafrodita** | Sexual | Planta con ambos sexos | Café / Tomate / Lirios |
 | **Semilla** | Sexual | Producto de la fecundación | Coco / Maíz |
 
 > Las plantas aprovechan tanto la velocidad de la reproducción asexual para colonizar, como la variabilidad de la sexual para resistir enfermedades gracias a las semillas.

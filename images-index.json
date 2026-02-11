@@ -2609,7 +2609,57 @@
       "size": "100KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/vuyu-reproduccion-asexual.webp",
       "status": "uploaded"
+    },
+    {
+      "id": "2phv",
+      "name": "hermafroditas.webp",
+      "materia": "ciencias",
+      "type": "lesson",
+      "date": "2026-02-11",
+      "size": "69KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/2phv-hermafroditas.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "1hq3",
+      "name": "tipos-de-fecundacion.webp",
+      "materia": "ciencias",
+      "type": "lesson",
+      "date": "2026-02-11",
+      "size": "87KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/1hq3-tipos-de-fecundacion.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "3hav",
+      "name": "oviparos.webp",
+      "materia": "ciencias",
+      "type": "lesson",
+      "date": "2026-02-11",
+      "size": "68KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/3hav-oviparos.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "a6yi",
+      "name": "viviparos.webp",
+      "materia": "ciencias",
+      "type": "lesson",
+      "date": "2026-02-11",
+      "size": "81KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/a6yi-viviparos.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "88on",
+      "name": "ovoviviparo.webp",
+      "materia": "ciencias",
+      "type": "lesson",
+      "date": "2026-02-11",
+      "size": "75KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/88on-ovoviviparo.webp",
+      "status": "uploaded"
     }
   ],
-  "lastUpdated": "2026-02-09T17:31:13.236Z"
+  "lastUpdated": "2026-02-11T14:44:53.349Z"
 }

@@ -34,6 +34,9 @@ Ocurre **dentro** del cuerpo de la hembra.
 
 > **Ejemplos:** Mamíferos, aves, reptiles, insectos.
 
+![tipos-de-fecundacion](https://cdn.ediprofe.com/img/ciencias/1hq3-tipos-de-fecundacion.webp)
+
+
 ---
 
 ## 🥚 Desarrollo del Embrión
@@ -44,13 +47,20 @@ Una vez fecundado, ¿dónde crece el bebé?
 El embrión se desarrolla en un huevo **fuera** del cuerpo materno. Se alimenta de las reservas del huevo (yema).
 > **Ejemplos:** Aves, la mayoría de reptiles, insectos, peces.
 
+![oviparos](https://cdn.ediprofe.com/img/ciencias/3hav-oviparos.webp)
+
 ### 2. Vivíparos (Bebé dentro)
 El embrión se desarrolla **dentro** del útero de la madre. Se alimenta directamente de ella a través de la placenta.
 > **Ejemplos:** Casi todos los mamíferos (humanos, perros, ballenas).
 
+![viviparos](https://cdn.ediprofe.com/img/ciencias/a6yi-viviparos.webp)
+
+
 ### 3. Ovovivíparos (Huevo dentro)
 El embrión se desarrolla en un huevo, pero el huevo permanece **dentro** del cuerpo de la madre hasta que eclosiona.
 > **Ejemplos:** Tiburones, algunas serpientes (víboras), caballitos de mar.
+
+![ovoviviparo](https://cdn.ediprofe.com/img/ciencias/88on-ovoviviparo.webp)
 
 ---
 
