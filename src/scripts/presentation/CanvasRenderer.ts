@@ -134,8 +134,9 @@ export class CanvasRenderer {
           }
         } else {
           // Laser Effect
-          this.renderStroke(stroke.points, `rgba(255, 0, 0, ${alpha * 0.3})`, 25 * s, 30 * s, 'lighter');
-          this.renderStroke(stroke.points, `rgba(255, 0, 0, ${alpha * 0.8})`, 8 * s, 10 * s, 'lighter');
+          const rgb = this.hexToRgb(stroke.color);
+          this.renderStroke(stroke.points, `rgba(${rgb}, ${alpha * 0.3})`, 25 * s, 30 * s, 'lighter');
+          this.renderStroke(stroke.points, `rgba(${rgb}, ${alpha * 0.8})`, 8 * s, 10 * s, 'lighter');
           this.renderStroke(stroke.points, `rgba(255, 255, 255, ${alpha * 0.95})`, 3 * s, 0, 'source-over');
         }
       });

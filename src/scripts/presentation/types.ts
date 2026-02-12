@@ -3,7 +3,7 @@ export interface LaserPoint {
   y: number;
 }
 
-export type ToolMode = 'laser' | 'pen' | 'arrow' | 'rect' | 'highlighter' | 'select' | 'hand' | 'text';
+export type ToolMode = 'laser' | 'pen' | 'arrow' | 'rect' | 'highlighter' | 'select' | 'hand' | 'text' | 'guide';
 
 export interface LaserStroke {
   points: LaserPoint[];

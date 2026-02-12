@@ -1,0 +1,139 @@
+---
+/**
+ * Página de Presentación de PDFs
+ *
+ * Permite cargar PDFs y usar todas las herramientas del Modo Clase
+ * para anotar sobre ellos. Las anotaciones quedan pegadas al scroll.
+ */
+
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PDFViewer from "../components/PDF/PDFViewer.astro";
+import PDFUploader from "../components/PDF/PDFUploader.astro";
+---
+
+<BaseLayout
+  title="Presentar PDF - Ediprofe"
+  description="Herramienta para presentar PDFs con anotaciones"
+  showTopBar={false}
+>
+  <div class="pdf-presenter-page">
+    <!-- Estado inicial: Sin PDF cargado -->
+    <div id="pdf-uploader-container" class="uploader-container">
+      <div class="container">
+        <h1 class="page-title">
+          <span class="icon">📄</span>
+          Presentar PDF
+        </h1>
+        <p class="page-description">
+          Carga un PDF y usa todas las herramientas del Modo Clase
+          <span class="keyboard-shortcut">Ctrl+Shift+P</span> para anotar sobre él.
+        </p>
+        <PDFUploader />
+      </div>
+    </div>
+
+    <!-- Estado: PDF cargado -->
+    <div id="pdf-viewer-container" class="viewer-container hidden">
+      <PDFViewer />
+    </div>
+  </div>
+</BaseLayout>
+
+<script>
+  import { PDFLoader } from "../scripts/pdf-presenter/pdf-loader";
+
+  // Inicializar el cargador de PDFs
+  const pdfLoader = PDFLoader.getInstance();
+
+  // Referencias a elementos
+  const uploaderContainer = document.getElementById("pdf-uploader-container");
+  const viewerContainer = document.getElementById("pdf-viewer-container");
+
+  // Escuchar evento de PDF cargado
+  document.addEventListener("pdf-loaded", () => {
+    uploaderContainer?.classList.add("hidden");
+    viewerContainer?.classList.remove("hidden");
+  });
+
+  // Manejar error de carga
+  document.addEventListener("pdf-error", (e: any) => {
+    alert(
+      "Error al cargar el PDF: " + (e.detail?.message || "Error desconocido"),
+    );
+  });
+</script>
+
+<style>
+  .pdf-presenter-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+  }
+
+  .uploader-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  .container {
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .page-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .page-title .icon {
+    font-size: 2.5rem;
+  }
+
+  .page-description {
+    font-size: 1.25rem;
+    color: #64748b;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+  }
+
+  .keyboard-shortcut {
+    display: inline-block;
+    background: #1e293b;
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+
+  .viewer-container {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+  }
+
+  .viewer-container.hidden,
+  .uploader-container.hidden {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .page-title {
+      font-size: 2rem;
+    }
+
+    .page-description {
+      font-size: 1rem;
+    }
+  }
+</style>

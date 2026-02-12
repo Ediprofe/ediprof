@@ -33,7 +33,8 @@ export const COLOR_PALETTE = [
 // ============================================
 
 export const UI_COLORS = {
-  laser: '#FF0055',
+  laser: '#FF0000',
+  guide: '#06b6d4',
   laserButton: '#ef4444',
   penButton: '#eab308',
   arrowButton: '#10b981',
@@ -83,6 +84,7 @@ export const KEYBOARD_SHORTCUTS = {
     'a': 'arrow',
     'r': 'rect',
     't': 'text',
+    'g': 'guide',
   },
   boards: {
     'b': 'black',

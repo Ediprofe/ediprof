@@ -1,0 +1,195 @@
+---
+/**
+ * PDFViewer - Visor de PDF limpio para presentaciones
+ *
+ * Interfaz minimalista: solo muestra el PDF y el Modo Clase (Ctrl+Shift+P).
+ * Sin botones de navegación, zoom ni rotación.
+ * Las páginas se navegan con scroll natural.
+ */
+
+import "../../styles/presentation-dock.css";
+import "../../styles/pdf-presenter.css";
+---
+
+<div class="pdf-viewer" id="pdf-viewer">
+  <!-- Área de visualización del PDF - ocupa 100% de la pantalla -->
+  <div class="pdf-container" id="pdf-container">
+    <div class="pdf-pages" id="pdf-pages">
+      <!-- Las páginas del PDF se renderizan aquí -->
+    </div>
+  </div>
+
+  <!-- Mensaje de ayuda -->
+  <div class="help-toast" id="help-toast">
+    <span class="keyboard-shortcut">Ctrl+Shift+P</span> para activar Modo Clase
+    <button class="close-toast" id="close-toast">×</button>
+  </div>
+</div>
+
+<script>
+  import { PDFLoader } from "../../scripts/pdf-presenter/pdf-loader";
+
+  const pdfLoader = PDFLoader.getInstance();
+
+  // Escuchar el atajo de teclado Ctrl+Shift+P (o Cmd+Shift+P en Mac)
+  document.addEventListener("keydown", (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key.toLowerCase() === "p") {
+      e.preventDefault();
+
+      if (!pdfLoader.isPresentationModeActive()) {
+        pdfLoader.activatePresentationMode();
+      }
+    }
+  });
+
+  // Cerrar toast de ayuda
+  const helpToast = document.getElementById("help-toast");
+  const closeToastBtn = document.getElementById("close-toast");
+
+  closeToastBtn?.addEventListener("click", () => {
+    helpToast?.classList.add("hidden");
+  });
+
+  // Auto-ocultar toast después de 5 segundos
+  setTimeout(() => {
+    helpToast?.classList.add("hidden");
+  }, 5000);
+
+  // Actualizar indicador de página (escuchando el scroll)
+  const pdfContainer = document.getElementById("pdf-container");
+
+  if (pdfContainer) {
+    pdfContainer.addEventListener("scroll", () => {
+      const pages = pdfContainer.querySelectorAll(".pdf-page");
+      const containerTop =
+        pdfContainer.scrollTop + pdfContainer.clientHeight / 2;
+
+      let currentPage = 1;
+      pages.forEach((page, index) => {
+        const pageEl = page as HTMLElement;
+        if (pageEl.offsetTop <= containerTop) {
+          currentPage = index + 1;
+        }
+      });
+
+      // Actualizar el loader con la página actual para referencia
+      document.dispatchEvent(
+        new CustomEvent("pdf-page-changed", {
+          detail: { current: currentPage, total: pages.length },
+        }),
+      );
+    });
+  }
+</script>
+
+<style>
+  .pdf-viewer {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: #525659;
+  }
+
+  /* Contenedor del PDF - ocupa toda la pantalla */
+  .pdf-container {
+    flex: 1;
+    overflow: auto;
+    position: relative;
+    padding: 1rem;
+  }
+
+  .pdf-pages {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    min-height: 100%;
+  }
+
+  /* Página individual del PDF */
+  :global(.pdf-page) {
+    background: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  :global(.pdf-page canvas) {
+    display: block;
+  }
+
+  /* Canvas de anotaciones - position:fixed is set inline by the renderer
+     with exact top/left matching the PDF container's bounding rect */
+  :global(.pdf-presentation-canvas) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 999999998;
+    display: block;
+  }
+
+  :global(.pdf-presentation-canvas.active) {
+    pointer-events: auto;
+    cursor: crosshair;
+  }
+
+  /* Toast de ayuda */
+  .help-toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(30, 41, 59, 0.95);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    animation: slideUp 0.3s ease;
+  }
+
+  .help-toast.hidden {
+    display: none;
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateX(-50%) translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+  }
+
+  .close-toast {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    font-size: 1.25rem;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 0.5rem;
+  }
+
+  .close-toast:hover {
+    color: white;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .pdf-container {
+      padding: 0.5rem;
+    }
+
+    .pdf-pages {
+      gap: 0.5rem;
+    }
+  }
+</style>

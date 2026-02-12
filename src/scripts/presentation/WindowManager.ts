@@ -62,6 +62,7 @@ export class WindowManager {
       rect: 'pm-rect-btn',
       text: 'pm-text-btn',
       highlighter: 'pm-highlighter-btn',
+      guide: 'pm-guide-btn',
     };
 
     const btn = document.getElementById(idMap[tool]);
@@ -179,6 +180,9 @@ export class WindowManager {
           <button id="pm-laser-btn" class="dock-btn tool-trigger" data-shortcut="L" title="Láser (L)">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m13.4 2 3.5 3.5-3.5 3.5-3.5-3.5z"></path><path d="M7.4 15.6 2 21"></path><path d="m15.5 15.5 4-4"></path><path d="M14 17h5"></path><path d="M17 14v5"></path><path d="m7.4 9.4 6.2 6.2"></path></svg><span>Láser</span>
           </button>
+          <button id="pm-guide-btn" class="dock-btn tool-trigger" data-shortcut="G" title="Guía (G)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h20"></path><path d="M2 8v8"></path><path d="M22 8v8"></path></svg><span>Guía</span>
+          </button>
           <button id="pm-pen-btn" class="dock-btn tool-trigger" data-shortcut="P" title="Lápiz (P)">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"></path><path d="m15 5 4 4"></path></svg><span>Lápiz</span>
           </button>
@@ -220,6 +224,7 @@ export class WindowManager {
     document.getElementById('pm-hand-btn')?.addEventListener('click', () => this.events.onToolChange('hand'));
     document.getElementById('pm-select-btn')?.addEventListener('click', () => this.events.onToolChange('select'));
     document.getElementById('pm-laser-btn')?.addEventListener('click', () => this.events.onToolChange('laser'));
+    document.getElementById('pm-guide-btn')?.addEventListener('click', () => this.events.onToolChange('guide'));
     document.getElementById('pm-pen-btn')?.addEventListener('click', () => this.events.onToolChange('pen'));
     document.getElementById('pm-arrow-btn')?.addEventListener('click', () => this.events.onToolChange('arrow'));
     document.getElementById('pm-rect-btn')?.addEventListener('click', () => this.events.onToolChange('rect'));

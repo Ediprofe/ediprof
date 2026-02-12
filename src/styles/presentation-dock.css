@@ -183,6 +183,11 @@
   box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
 }
 
+#pm-guide-btn.active {
+  background: #06b6d4;
+  box-shadow: 0 4px 12px rgba(6, 182, 212, 0.3);
+}
+
 #pm-pen-btn.active {
   background: #eab308;
   box-shadow: 0 4px 12px rgba(234, 179, 8, 0.3);

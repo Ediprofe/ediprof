@@ -1,0 +1,64 @@
+/**
+ * Estilos adicionales para el PDF Presenter
+ * 
+ * Estos estilos complementan los de presentation-dock.css
+ */
+
+/* ============================================
+   CANVAS DE ANOTACIONES EN PDF
+   ============================================ */
+
+.pdf-presentation-canvas {
+  /* position:fixed is set inline by the renderer with exact top/left
+     matching the PDF container's bounding rect */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999999998;
+  /* Below the dock but above PDF */
+  pointer-events: none;
+  touch-action: none;
+  display: block;
+}
+
+.pdf-presentation-canvas.active {
+  pointer-events: auto;
+  cursor: crosshair;
+}
+
+/* ============================================
+   PIZARRA BLANCA/NEGRA EN PDF
+   ============================================ */
+
+.pdf-presentation-board {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999999997;
+  pointer-events: none;
+  opacity: 0;
+  background-color: transparent;
+  transition: opacity 0.3s ease;
+}
+
+.pdf-presentation-board.white {
+  opacity: 1;
+  pointer-events: auto;
+  background-color: #ffffff;
+  background-image:
+    linear-gradient(#e5e7eb 1px, transparent 1px),
+    linear-gradient(90deg, #e5e7eb 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.pdf-presentation-board.black {
+  opacity: 1;
+  pointer-events: auto;
+  background-color: #1a1a1a;
+  background-image:
+    linear-gradient(#333 1px, transparent 1px),
+    linear-gradient(90deg, #333 1px, transparent 1px);
+  background-size: 40px 40px;
+}

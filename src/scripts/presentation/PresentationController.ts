@@ -141,9 +141,8 @@ export class PresentationController {
           this.textHighlighter.pause(); // Solo pausa, no limpia
       }
       
-      // Al activar la herramienta láser, limpiar trazos completamente desvanecidos
-      // para evitar que aparezcan de nuevo al cambiar de herramienta
-      if (tool === 'laser') {
+      // Al activar láser/guía, limpiar trazos completamente desvanecidos
+      if (tool === 'laser' || tool === 'guide') {
           this.clearDeadLaserStrokes();
       }
   }
@@ -153,7 +152,7 @@ export class PresentationController {
       this.windowManager.setActiveColor(color);
       
       // UX: Switch to pen if color clicked while in Hand/Laser
-      if (this.currentTool === 'hand' || this.currentTool === 'laser' || this.currentTool === 'select') {
+      if (this.currentTool === 'hand' || this.currentTool === 'laser' || this.currentTool === 'guide' || this.currentTool === 'select') {
           this.setTool('pen');
       }
   }
@@ -296,15 +295,17 @@ export class PresentationController {
       this.currentStroke = {
           points: [p],
           isDead: false,
-          isPermanent: this.currentTool !== 'laser',
-          color: this.currentTool === 'laser' ? UI_COLORS.laser : this.currentColor,
+          isPermanent: this.currentTool !== 'laser' && this.currentTool !== 'guide',
+          color: this.currentTool === 'laser'
+            ? UI_COLORS.laser
+            : (this.currentTool === 'guide' ? UI_COLORS.guide : this.currentColor),
           type: this.currentTool,
           isSelected: false
       };
       
       this.strokeManager.addStroke(this.currentStroke);
       
-      if (this.currentTool === 'laser') {
+      if (this.currentTool === 'laser' || this.currentTool === 'guide') {
         this.renderer.setLastActivityTime(Date.now());
       }
   }
@@ -375,12 +376,15 @@ export class PresentationController {
 
               // Shapes and Shift-Draw update to be just Start -> End (Straight Line)
               this.currentStroke.points = [this.currentStroke.points[0], targetP];
+          } else if (this.currentTool === 'guide') {
+              const startP = this.currentStroke.points[0];
+              this.currentStroke.points.push({ x: p.x, y: startP.y });
           } else {
               // Freehand drawing
               this.currentStroke.points.push(p);
           }
           
-          if (this.currentTool === 'laser') {
+          if (this.currentTool === 'laser' || this.currentTool === 'guide') {
               this.renderer.setLastActivityTime(Date.now());
           }
       }
@@ -414,14 +418,14 @@ export class PresentationController {
            this.currentStroke.minY = minY;
            this.currentStroke.maxY = maxY;
            
-           // Set creation timestamp for laser strokes
-           if (this.currentTool === 'laser') {
+           // Set creation timestamp for temporary strokes (laser/guía)
+           if (this.currentTool === 'laser' || this.currentTool === 'guide') {
               this.currentStroke.createdAt = Date.now();
            }
            
            this.currentStroke = null;
            
-           if (this.currentTool === 'laser') {
+           if (this.currentTool === 'laser' || this.currentTool === 'guide') {
               this.renderer.setLastActivityTime(Date.now());
            }
       }
