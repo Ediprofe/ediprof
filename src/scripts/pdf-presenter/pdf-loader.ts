@@ -52,6 +52,9 @@ export class PDFLoader {
         throw new Error('Contenedores del PDF no encontrados');
       }
 
+      // Ajuste inicial: abrir siempre con "fit to width" (100% del ancho disponible)
+      this.scale = await this.calculateFitWidthScale();
+
       // Renderizar todas las páginas
       await this.renderAllPages();
       
@@ -70,6 +73,52 @@ export class PDFLoader {
       }));
       throw error;
     }
+  }
+
+  /**
+   * Calcula escala para ajustar el PDF al 100% del ancho disponible del visor.
+   * Incluye fallback al viewport cuando el contenedor aún está oculto.
+   */
+  private async calculateFitWidthScale(): Promise<number> {
+    if (!this.pdfDocument) return this.scale;
+
+    const firstPage = await this.pdfDocument.getPage(1);
+    const baseViewport = firstPage.getViewport({ scale: 1, rotation: this.rotation });
+    firstPage.cleanup();
+
+    const availableWidth = this.getAvailableViewerWidth();
+    if (availableWidth <= 0 || baseViewport.width <= 0) return this.scale;
+
+    const fitScale = availableWidth / baseViewport.width;
+    return Math.max(0.5, Math.min(fitScale, 5));
+  }
+
+  private getAvailableViewerWidth(): number {
+    const container = this.pdfContainer;
+    const pagesContainer = this.pdfPagesContainer;
+
+    const measuredWidth = Math.max(
+      container?.clientWidth ?? 0,
+      pagesContainer?.clientWidth ?? 0
+    );
+
+    if (container && measuredWidth > 0) {
+      const style = window.getComputedStyle(container);
+      const paddingLeft = parseFloat(style.paddingLeft) || 0;
+      const paddingRight = parseFloat(style.paddingRight) || 0;
+      return Math.max(120, measuredWidth - paddingLeft - paddingRight);
+    }
+
+    // Fallback para estado oculto (display:none): usar viewport visual
+    const viewportWidth = window.visualViewport?.width ?? window.innerWidth;
+    if (container) {
+      const style = window.getComputedStyle(container);
+      const paddingLeft = parseFloat(style.paddingLeft) || 0;
+      const paddingRight = parseFloat(style.paddingRight) || 0;
+      return Math.max(120, viewportWidth - paddingLeft - paddingRight);
+    }
+
+    return Math.max(120, viewportWidth - 32);
   }
 
   /**
