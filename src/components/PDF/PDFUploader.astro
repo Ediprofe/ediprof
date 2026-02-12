@@ -1,0 +1,229 @@
+---
+/**
+ * PDFUploader - Componente de carga de PDFs con drag & drop
+ */
+---
+
+<div class="pdf-uploader" id="pdf-uploader">
+  <div class="upload-zone" id="upload-zone">
+    <div class="upload-icon">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="64"
+        height="64"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+        <polyline points="17 8 12 3 7 8"></polyline>
+        <line x1="12" y1="3" x2="12" y2="15"></line>
+      </svg>
+    </div>
+    <h3 class="upload-title">Arrastra tu PDF aquí</h3>
+    <p class="upload-subtitle">o</p>
+    <button class="upload-button" id="upload-button">
+      <span>Seleccionar archivo</span>
+    </button>
+    <p class="upload-hint">Tamaño máximo: 50MB</p>
+    <input type="file" id="file-input" accept=".pdf,application/pdf" hidden />
+  </div>
+
+  <!-- Estado de carga -->
+  <div class="loading-state hidden" id="loading-state">
+    <div class="spinner"></div>
+    <p class="loading-text">Cargando PDF...</p>
+  </div>
+</div>
+
+<script>
+  import { PDFLoader } from "../../scripts/pdf-presenter/pdf-loader";
+
+  const uploader = document.getElementById("pdf-uploader");
+  const uploadZone = document.getElementById("upload-zone");
+  const uploadButton = document.getElementById("upload-button");
+  const fileInput = document.getElementById("file-input") as HTMLInputElement;
+  const loadingState = document.getElementById("loading-state");
+
+  const pdfLoader = PDFLoader.getInstance();
+
+  // Drag & drop
+  uploadZone?.addEventListener("dragover", (e) => {
+    e.preventDefault();
+    uploadZone.classList.add("drag-over");
+  });
+
+  uploadZone?.addEventListener("dragleave", () => {
+    uploadZone.classList.remove("drag-over");
+  });
+
+  uploadZone?.addEventListener("drop", (e) => {
+    e.preventDefault();
+    uploadZone.classList.remove("drag-over");
+
+    const files = e.dataTransfer?.files;
+    if (files && files.length > 0) {
+      handleFile(files[0]);
+    }
+  });
+
+  // Botón de selección
+  uploadButton?.addEventListener("click", () => {
+    fileInput?.click();
+  });
+
+  fileInput?.addEventListener("change", (e) => {
+    const files = (e.target as HTMLInputElement).files;
+    if (files && files.length > 0) {
+      handleFile(files[0]);
+    }
+  });
+
+  // Manejar archivo
+  async function handleFile(file: File) {
+    if (file.type !== "application/pdf" && !file.name.endsWith(".pdf")) {
+      alert("Por favor selecciona un archivo PDF válido");
+      return;
+    }
+
+    if (file.size > 50 * 1024 * 1024) {
+      alert("El archivo es demasiado grande. Tamaño máximo: 50MB");
+      return;
+    }
+
+    // Mostrar estado de carga
+    uploadZone?.classList.add("hidden");
+    loadingState?.classList.remove("hidden");
+
+    try {
+      await pdfLoader.loadPDF(file);
+    } catch (error) {
+      console.error("Error loading PDF:", error);
+      uploadZone?.classList.remove("hidden");
+      loadingState?.classList.add("hidden");
+      alert("Error al cargar el PDF. Por favor intenta con otro archivo.");
+    }
+  }
+</script>
+
+<style>
+  .pdf-uploader {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .upload-zone {
+    background: white;
+    border: 3px dashed #cbd5e1;
+    border-radius: 16px;
+    padding: 3rem 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .upload-zone:hover,
+  .upload-zone.drag-over {
+    border-color: #3b82f6;
+    background: #eff6ff;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 40px rgba(59, 130, 246, 0.15);
+  }
+
+  .upload-icon {
+    color: #64748b;
+    margin-bottom: 1.5rem;
+  }
+
+  .upload-zone:hover .upload-icon,
+  .upload-zone.drag-over .upload-icon {
+    color: #3b82f6;
+  }
+
+  .upload-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 0.5rem;
+  }
+
+  .upload-subtitle {
+    font-size: 1rem;
+    color: #64748b;
+    margin-bottom: 1rem;
+  }
+
+  .upload-button {
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 0.875rem 2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-bottom: 0.75rem;
+  }
+
+  .upload-button:hover {
+    background: #2563eb;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  }
+
+  .upload-hint {
+    font-size: 0.875rem;
+    color: #94a3b8;
+    margin: 0;
+  }
+
+  .loading-state {
+    background: white;
+    border-radius: 16px;
+    padding: 3rem 2rem;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .loading-state.hidden,
+  .upload-zone.hidden {
+    display: none;
+  }
+
+  .spinner {
+    width: 48px;
+    height: 48px;
+    border: 4px solid #e2e8f0;
+    border-top-color: #3b82f6;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1rem;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .loading-text {
+    font-size: 1.125rem;
+    color: #64748b;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .upload-zone {
+      padding: 2rem 1.5rem;
+    }
+
+    .upload-title {
+      font-size: 1.25rem;
+    }
+  }
+</style>
