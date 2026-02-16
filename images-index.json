@@ -2799,7 +2799,37 @@
       "size": "67KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/t00e-fase-lutea.webp",
       "status": "uploaded"
+    },
+    {
+      "id": "lwr8",
+      "name": "grafico-mental-del-ciclo.webp",
+      "materia": "ciencias",
+      "type": "lesson",
+      "date": "2026-02-16",
+      "size": "67KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/lwr8-grafico-mental-del-ciclo.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "jgtm",
+      "name": "el-control-desde-el-cerebro.webp",
+      "materia": "ciencias",
+      "type": "lesson",
+      "date": "2026-02-16",
+      "size": "74KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/jgtm-el-control-desde-el-cerebro.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "t1cq",
+      "name": "fsh-lh-y-ovulacion.webp",
+      "materia": "ciencias",
+      "type": "lesson",
+      "date": "2026-02-16",
+      "size": "60KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/t1cq-fsh-lh-y-ovulacion.webp",
+      "status": "uploaded"
     }
   ],
-  "lastUpdated": "2026-02-16T23:08:59.482Z"
+  "lastUpdated": "2026-02-16T23:29:42.581Z"
 }

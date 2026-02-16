@@ -48,9 +48,27 @@ El cuerpo espera a ver si hubo éxito.
 
 ---
 
-## 🧪 El Baile de las Hormonas
+## 🧠 El Control desde el Cerebro (FSH y LH)
 
-Todo el ciclo está orquestado por dos mensajeros químicos principales: los **Estrógenos** y la **Progesterona**. Su comportamiento es como una coreografía que cambia según el resultado del mes:
+El ciclo no empieza en los ovarios, sino en el cerebro. Allí, una glándula llamada **Hipófisis** envía dos señales clave:
+
+1.  **FSH (Hormona Estimulante del Folículo):** 
+    Es la **"Jardinera"**. Su trabajo es hacer que los folículos (las semillas) empiecen a crecer y madurar durante la primera mitad del ciclo.
+    
+2.  **LH (Hormona Luteinizante):** 
+    Es el **"Detonador"**. Cuando el óvulo está listo, la LH sube de golpe (un pico gigante). Esta explosión es la que **rompe el folículo** y libera el óvulo (Ovulación).
+
+> **Conexión Clave:** El cerebro manda FSH y LH 👉 Los ovarios obedecen produciendo Estrógenos y Progesterona.
+
+![el-control-desde-el-cerebro](https://cdn.ediprofe.com/img/ciencias/jgtm-el-control-desde-el-cerebro.webp)
+
+![fsh-lh-y-ovulacion](https://cdn.ediprofe.com/img/ciencias/t1cq-fsh-lh-y-ovulacion.webp)
+
+---
+
+## 🧪 La Respuesta del Ovario (Estrógenos y Progesterona)
+
+Los ovarios responden a estas órdenes produciendo sus propias hormonas: los **Estrógenos** y la **Progesterona**. Su comportamiento es como una coreografía que cambia según el resultado del mes:
 
 ### 🎭 ¿Quién es quién?
 
@@ -82,6 +100,8 @@ Imagina una montaña rusa hormonal:
 2.  **Subida (Folicular):** Se reconstruye la pared y se prepara el óvulo.
 3.  **Cima (Ovulación):** ¡Lanzamiento del óvulo!
 4.  **Meseta (Lútea):** Espera tensa... si no llega espermatozoide -> Caída de nuevo.
+
+![grafico-mental-del-ciclo](https://cdn.ediprofe.com/img/ciencias/lwr8-grafico-mental-del-ciclo.webp)
 
 ---
 
