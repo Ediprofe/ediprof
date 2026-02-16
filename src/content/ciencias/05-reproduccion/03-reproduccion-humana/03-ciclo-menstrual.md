@@ -17,6 +17,9 @@ No es solo "la regla". Es un reloj biológico complejo que prepara el cuerpo par
 Es una serie de cambios que ocurren aproximadamente cada **28 días** (aunque varía entre 21 y 35 días según la mujer).
 El "Día 1" del ciclo es el **primer día de sangrado**.
 
+![el-ciclo-menstrual](https://cdn.ediprofe.com/img/ciencias/ycjo-el-ciclo-menstrual.webp)
+
+
 ### Las 3 Fases Principales
 
 #### 1. Fase Menstrual (Días 1 al 5)
@@ -24,17 +27,50 @@ El ciclo comienza cuando NO hubo embarazo en el mes anterior.
 - **En el Útero:** El endometrio (la "camita" de sangre y tejido) se desprende. Esto provoca el sangrado.
 - **Hormonas:** Los niveles de estrógeno y progesterona bajan al mínimo.
 
+![fase-mestrual](https://cdn.ediprofe.com/img/ciencias/jqc7-fase-mestrual.webp)
+
 #### 2. Fase Folicular y Ovulación (Días 6 al 14)
 El cuerpo se prepara para intentarlo de nuevo.
 - **En el Ovario:** Un folículo madura y prepara un óvulo fresco.
 - **En el Útero:** El endometrio empieza a crecer otra vez y se hace grueso.
 - **El Gran Evento: Ovulación (Día 14 aprox):** El ovario libera el óvulo maduro, que viaja hacia la trompa. Este es el momento de **máxima fertilidad**.
 
+![fase-folicular-y-ovulacion](https://cdn.ediprofe.com/img/ciencias/d6la-fase-folicular-y-ovulacion.webp)
+
+
 #### 3. Fase Lútea (Días 15 al 28)
 El cuerpo espera a ver si hubo éxito.
 - **En el Ovario:** El cascarón vacío del folículo produce mucha **progesterona**.
 - **En el Útero:** La progesterona mantiene el endometrio esponjoso y listo.
 - **Final:** Si el óvulo no se fecunda, el cuerpo deja de producir hormonas y todo se reinicia (vuelve al Día 1).
+
+![fase-lutea](https://cdn.ediprofe.com/img/ciencias/t00e-fase-lutea.webp)
+
+---
+
+## 🧪 El Baile de las Hormonas
+
+Todo el ciclo está orquestado por dos mensajeros químicos principales: los **Estrógenos** y la **Progesterona**. Su comportamiento es como una coreografía que cambia según el resultado del mes:
+
+### 🎭 ¿Quién es quién?
+
+Es fácil confundirlas, pero cada una tiene un "cargo" muy específico:
+
+*   **Estrógenos (La "Arquitecta"):** Su trabajo es **construir**. Después de la regla, se encargan de reconstruir el endometrio (la pared del útero) y de que el óvulo madure. Dominan la primera mitad del ciclo.
+*   **Progesterona (La "Guardiana"):** Su trabajo es **mantener**. Una vez que el óvulo sale, ella toma el mando para que el endometrio se quede en su sitio, esponjoso y lleno de nutrientes. Su nombre lo dice todo: *pro-gestación* (a favor del embarazo).
+
+### 📉 Dos Escenarios Posibles
+
+1. **Si NO hay embarazo (Ciclo Normal):**
+   - Al final de la fase lútea (cerca del día 28), los niveles de ambas hormonas **caen bruscamente**. Esta caída le indica al útero que ya no necesita mantener el endometrio, provocando el sangrado menstrual.
+
+2. **Si SÍ hay embarazo:**
+   - Si un espermatozoide fecunda al óvulo, el cuerpo recibe una señal para **no detener la producción**. La **Progesterona** se mantiene en niveles altos y estables para alimentar y proteger al embrión, impidiendo que ocurra la menstruación.
+
+> 💡 **Dato clave:** Por eso, la ausencia de la regla (amenorrea) es la primera señal de embarazo: los niveles altos de progesterona mantienen el útero intacto.
+
+![hormonas-con-y-sin-embarazo](https://cdn.ediprofe.com/img/ciencias/urm4-hormonas-con-y-sin-embarazo.webp)
+
 
 ---
 
