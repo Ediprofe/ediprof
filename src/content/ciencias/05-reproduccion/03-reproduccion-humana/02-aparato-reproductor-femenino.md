@@ -12,11 +12,35 @@ Diseñado para proteger, nutrir y dar vida. A diferencia del masculino, casi tod
 
 ---
 
+## 🗺️ Vista General: Mapa del Sistema
+
+A diferencia del hombre, la mayor parte del sistema femenino es interno para proteger el desarrollo de una nueva vida.
+
+### 📋 Resumen del Sistema
+
+| Parte | Función Principal |
+| :--- | :--- |
+| **Ovarios** | Producen los óvulos y las hormonas femeninas. |
+| **Trompas de Falopio** | Transportan el óvulo y es donde ocurre la fecundación. |
+| **Útero (Matriz)** | El lugar donde el bebé crece y se desarrolla. |
+| **Endometrio** | Recubrimiento interno que se desprende en la regla. |
+| **Cuello Uterino** | Puerta de entrada al útero que protege de infecciones. |
+| **Vagina** | Canal por donde sale el bebé y entra el semen. |
+| **Vulva** | Parte externa que protege las entradas internas. |
+
+![aparato-reproductor-femenino](https://cdn.ediprofe.com/img/ciencias/3dwo-aparato-reproductor-femenino.webp)
+
+> 💡 **Dato clave:** El sistema femenino está diseñado para cambiar drásticamente cada mes (ciclo menstrual) y aún más durante un embarazo.
+
+---
+
 ## 💎 Los Tesoros: Ovarios
 
 Son dos órganos del tamaño de una almendra.
 - **Función 1:** Guardan y maduran los **óvulos** (células sexuales). ¡Una mujer nace con todos los óvulos que tendrá en su vida!
 - **Función 2:** Producen hormonas femeninas (**estrógenos** y **progesterona**) que regulan el ciclo y los caracteres femeninos.
+
+![los-ovarios](https://cdn.ediprofe.com/img/ciencias/pdqx-los-ovarios.webp)
 
 ---
 
@@ -40,6 +64,9 @@ Son dos órganos del tamaño de una almendra.
     - **Función 2:** Es el **canal de parto** por donde sale el bebé.
     - **Función 3:** Vía de salida de la menstruación.
 
+![el-camino-de-la-vida](https://cdn.ediprofe.com/img/ciencias/6x13-el-camino-de-la-vida.webp)
+
+
 ---
 
 ## 🌸 La Parte Externa: La Vulva
@@ -48,6 +75,8 @@ Muchas personas confunden "vagina" (órgano interno) con "vulva" (órganos exter
 - **Labios Mayores y Menores:** Pliegues de piel que protegen la entrada.
 - **Clítoris:** Órgano pequeño y muy sensible, responsable del placer sexual.
 - **Orificio Uretral:** Por donde sale la orina (separado de la vagina).
+
+![la-vulva](https://cdn.ediprofe.com/img/ciencias/1i8e-la-vulva.webp)
 
 ---
 

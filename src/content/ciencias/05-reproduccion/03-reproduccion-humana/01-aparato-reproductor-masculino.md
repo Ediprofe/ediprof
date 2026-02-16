@@ -12,12 +12,37 @@ Es como una fábrica y un sistema de entrega todo en uno. Su misión: producir e
 
 ---
 
+## 🗺️ Vista General: Mapa del Sistema
+
+Este sistema está diseñado para trabajar en equipo: mientras unos producen, otros maduran, otros protegen y otros transportan.
+
+### 📋 Resumen del Sistema
+
+| Parte | Función Principal |
+| :--- | :--- |
+| **Testículos** | Producen los espermatozoides. |
+| **Epidídimo** | Maduran y almacenan los espermatozoides. |
+| **Vasos deferentes** | Transportan los espermatozoides hacia la uretra. |
+| **Vesículas seminales** | Aportan energía (líquido seminal) a los espermatozoides. |
+| **Próstata** | Protege y lubrica con el líquido prostático. |
+| **Uretra** | Canal de salida para la orina y el semen. |
+| **Tejido eréctil** | Se llena de sangre permitiendo la respuesta sexual. |
+
+![aparato-masculino](https://cdn.ediprofe.com/img/ciencias/iru2-aparato-masculino.webp)
+
+> 💡 **Dato clave:** Aunque el **Uréter renal** y la **Vejiga urinaria** aparecen en el diagrama, pertenecen al sistema excretor, pero comparten la uretra como camino de salida en el hombre.
+
+---
+
+
 ## 🏭 La Fábrica: Los Testículos
 
 Son dos órganos ovalados ubicados fuera del cuerpo en una bolsa de piel llamada **Escroto**.
 - **Función 1:** Producir **espermatozoides** (células sexuales).
 - **Función 2:** Producir **testosterona** (hormona masculina responsable de la voz grave, vello, etc.).
 - **Dato Curioso:** Están fuera del cuerpo porque necesitan estar más frescos (unos 2°C menos) para fabricar espermatozoides sanos.
+
+![la-fabrica-los-testiculos](https://cdn.ediprofe.com/img/ciencias/xe9n-la-fabrica-los-testiculos.webp)
 
 ---
 
@@ -35,6 +60,9 @@ Una vez fabricados, los espermatozoides viajan por un largo camino:
     El conducto final que atraviesa el pene.
     > **Ojo:** Por aquí sale tanto la orina como el semen, ¡pero nunca al mismo tiempo! Una válvula impide que se mezclen.
 
+![el-sistema-de-tuberias](https://cdn.ediprofe.com/img/ciencias/wnuj-el-sistema-de-tuberias.webp)
+
+
 ---
 
 ## 🧪 Las Glándulas Anexas
@@ -45,6 +73,8 @@ Los espermatozoides necesitan energía y protección para su viaje. Estas glánd
 2.  **Próstata:** Produce un líquido lechoso que protege a los espermatozoides del ambiente ácido de la vagina.
 3.  **Glándulas de Cowper:** Limpian y lubrican la uretra antes de la salida del semen.
 
+![glandulas-anexas](https://cdn.ediprofe.com/img/ciencias/mscq-glandulas-anexas.webp)
+
 ---
 
 ## 🚀 El Órgano Copulador: El Pene
@@ -52,6 +82,10 @@ Los espermatozoides necesitan energía y protección para su viaje. Estas glánd
 Es el órgano encargado de depositar el semen dentro del sistema reproductor femenino.
 - Está formado por tejido esponjoso que se llena de sangre durante la erección.
 - La punta sensible se llama **Glande**, y suele estar cubierta por una piel llamada **prepucio**.
+
+![el-pene-organo-copulador](https://cdn.ediprofe.com/img/ciencias/k18u-el-pene-organo-copulador.webp)
+
+
 
 ---
 
