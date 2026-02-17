@@ -2989,7 +2989,27 @@
       "size": "73KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/flwr-metodos-naturales.webp",
       "status": "uploaded"
+    },
+    {
+      "id": "8ixz",
+      "name": "linea-del-tiempo.webp",
+      "materia": "ciencias",
+      "type": "lesson",
+      "date": "2026-02-17",
+      "size": "96KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/8ixz-linea-del-tiempo.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "wsrh",
+      "name": "democrito.webp",
+      "materia": "ciencias",
+      "type": "lesson",
+      "date": "2026-02-17",
+      "size": "60KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/wsrh-democrito.webp",
+      "status": "uploaded"
     }
   ],
-  "lastUpdated": "2026-02-17T00:45:11.905Z"
+  "lastUpdated": "2026-02-17T16:36:20.829Z"
 }

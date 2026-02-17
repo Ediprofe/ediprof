@@ -24,6 +24,8 @@
 | 1913 | Bohr | Órbitas fijas | Electrones en niveles de energía |
 | 1926 | Schrödinger | Cuántico | Orbitales (nubes de probabilidad) |
 
+![linea-del-tiempo](https://cdn.ediprofe.com/img/ciencias/8ixz-linea-del-tiempo.webp)
+
 ---
 
 ## 📖 Los Orígenes: Demócrito (400 a.C.)
@@ -40,6 +42,8 @@
 ### ⚠️ Limitación:
 
 Demócrito no hizo experimentos. Sus ideas eran **filosóficas**, no científicas. Por eso fueron ignoradas durante casi 2,000 años.
+
+![democrito](https://cdn.ediprofe.com/img/ciencias/wsrh-democrito.webp)
 
 ---
 
