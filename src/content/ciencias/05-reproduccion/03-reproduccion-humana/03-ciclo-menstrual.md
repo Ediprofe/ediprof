@@ -89,6 +89,18 @@ Es fácil confundirlas, pero cada una tiene un "cargo" muy específico:
 
 ![hormonas-con-y-sin-embarazo](https://cdn.ediprofe.com/img/ciencias/urm4-hormonas-con-y-sin-embarazo.webp)
 
+### 🗺️ Mapa Mental del Control Hormonal
+
+Para visualizar todo el sistema de un vistazo, aquí tienes el esquema de mando:
+
+![control-hormonal-y-respuesta-ovarica](https://cdn.ediprofe.com/img/ciencias/juyb-control-hormonal-y-respuesta-ovarica.webp)
+
+
+![control-hormmonal-y-escenarios-ciclo-femenino](https://cdn.ediprofe.com/img/ciencias/hyga-control-hormmonal-y-escenarios-ciclo-femenino.webp)
+
+
+---
+
 
 ---
 

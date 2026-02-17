@@ -1,0 +1,96 @@
+{
+    "version": "1.0",
+    "type": "conceptmap",
+    "metadata": {
+        "id": "ciclo-hormonal",
+        "title": "Control Hormonal del Ciclo Menstrual"
+    },
+    "canvas": {
+        "width": 1200,
+        "height": 600,
+        "background": "#ffffff"
+    },
+    "layout": {
+        "type": "horizontal",
+        "spacing_x": 250,
+        "spacing_y": 80
+    },
+    "nodes": [
+        {
+            "id": "root",
+            "text": "Control Hormonal",
+            "level": 0,
+            "color": "#7E57C2"
+        },
+        {
+            "id": "cerebro",
+            "text": "🧠 Cerebro\n(Hipófisis)",
+            "parent": "root",
+            "level": 1,
+            "color": "#42A5F5"
+        },
+        {
+            "id": "fsh",
+            "text": "FSH\n(Jardinera)",
+            "parent": "cerebro",
+            "level": 2,
+            "color": "#26C6DA"
+        },
+        {
+            "id": "madura",
+            "text": "Madura Folículos",
+            "parent": "fsh",
+            "level": 3,
+            "color": "#66BB6A"
+        },
+        {
+            "id": "lh",
+            "text": "LH\n(Detonador)",
+            "parent": "cerebro",
+            "level": 2,
+            "color": "#EF5350"
+        },
+        {
+            "id": "ovulacion",
+            "text": "Provoca Ovulación",
+            "parent": "lh",
+            "level": 3,
+            "color": "#FF7043"
+        },
+        {
+            "id": "ovarios",
+            "text": "🏵️ Ovarios\n(Respuesta)",
+            "parent": "root",
+            "level": 1,
+            "color": "#FFA726"
+        },
+        {
+            "id": "estrogenos",
+            "text": "Estrógenos\n(Arquitecta)",
+            "parent": "ovarios",
+            "level": 2,
+            "color": "#EC407A"
+        },
+        {
+            "id": "construye",
+            "text": "Construye\nEndometrio",
+            "parent": "estrogenos",
+            "level": 3,
+            "color": "#F48FB1"
+        },
+        {
+            "id": "progesterona",
+            "text": "Progesterona\n(Guardiana)",
+            "parent": "ovarios",
+            "level": 2,
+            "color": "#AB47BC"
+        },
+        {
+            "id": "mantiene",
+            "text": "Mantiene\nEndometrio",
+            "parent": "progesterona",
+            "level": 3,
+            "color": "#CE93D8"
+        }
+    ]
+}

@@ -2829,7 +2829,27 @@
       "size": "60KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/t1cq-fsh-lh-y-ovulacion.webp",
       "status": "uploaded"
+    },
+    {
+      "id": "hyga",
+      "name": "control-hormmonal-y-escenarios-ciclo-femenino.webp",
+      "materia": "ciencias",
+      "type": "lesson",
+      "date": "2026-02-16",
+      "size": "82KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/hyga-control-hormmonal-y-escenarios-ciclo-femenino.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "juyb",
+      "name": "control-hormonal-y-respuesta-ovarica.webp",
+      "materia": "ciencias",
+      "type": "lesson",
+      "date": "2026-02-16",
+      "size": "56KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/juyb-control-hormonal-y-respuesta-ovarica.webp",
+      "status": "uploaded"
     }
   ],
-  "lastUpdated": "2026-02-16T23:29:42.581Z"
+  "lastUpdated": "2026-02-16T23:46:31.427Z"
 }
