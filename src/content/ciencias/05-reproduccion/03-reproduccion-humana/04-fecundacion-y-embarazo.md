@@ -18,11 +18,15 @@ Todo comienza con la **eyaculación**. Millones de espermatozoides son lanzados 
 - **El Reto:** Deben nadar a través del cuello uterino, cruzar el útero y llegar hasta las Trompas de Falopio.
 - **La Meta:** Solo UNO logrará entrar al óvulo.
 
+![la-carrera-de-la-vida](https://cdn.ediprofe.com/img/ciencias/o2vv-la-carrera-de-la-vida.webp)
+
 ### El Encuentro: La Fecundación
 
 1.  **Contacto:** El espermatozoide ganador toca la membrana del óvulo.
 2.  **Fusión:** El óvulo se cierra inmediatamente para que no entren otros. Los núcleos de ambas células se unen.
 3.  **Resultado:** Se forma el **Cigoto** (la primera célula del futuro bebé), con 46 cromosomas (23 de mamá + 23 de papá).
+
+![el-encuentro-la-fecundacion](https://cdn.ediprofe.com/img/ciencias/dkh7-el-encuentro-la-fecundacion.webp)
 
 ---
 
@@ -30,6 +34,8 @@ Todo comienza con la **eyaculación**. Millones de espermatozoides son lanzados 
 
 El cigoto empieza a dividirse mientras baja hacia el útero.
 Al llegar, se entierra en el **endometrio** (pared del útero) como una semilla en la tierra. Esto se llama **implantación** y marca el inicio real del embarazo.
+
+![la-implantacion](https://cdn.ediprofe.com/img/ciencias/8rti-la-implantacion.webp)
 
 ---
 
@@ -42,21 +48,30 @@ Dura aproximadamente 40 semanas (9 meses).
 - **Riesgo:** Es la etapa más delicada; mayor riesgo de aborto espontáneo.
 - **Tamaño:** Al final, el feto mide como una ciruela.
 
+![1er-trimestre](https://cdn.ediprofe.com/img/ciencias/zwvy-1er-trimestre.webp)
+
+
 ### 2do Trimestre (Semanas 13-24)
 - **Crecimiento:** El feto crece rápido y empieza a moverse (la madre lo siente).
 - **Desarrollo:** Se define el sexo, crece pelo fino (lanugo).
 - **Tamaño:** Al final, mide como una mazorca de maíz.
+
+![2do-trimestre](https://cdn.ediprofe.com/img/ciencias/gahh-2do-trimestre.webp)
 
 ### 3er Trimestre (Semanas 25-40)
 - **Maduración:** Los pulmones terminan de madurar para poder respirar aire.
 - **Engorde:** Gana peso y se coloca cabeza abajo para salir.
 - **Tamaño:** Al final, pesa unos 3-4 kg (como una sandía pequeña).
 
+![3er-trimestre](https://cdn.ediprofe.com/img/ciencias/p3ii-3er-trimestre.webp)
+
 ---
 
 ## 👶 El Parto
 
 El útero se contrae fuertemente para empujar al bebé hacia el canal de parto (vagina) y salir al mundo.
+
+![el-parto](https://cdn.ediprofe.com/img/ciencias/t394-el-parto.webp)
 
 ---
 

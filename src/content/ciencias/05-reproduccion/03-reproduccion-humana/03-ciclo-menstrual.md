@@ -99,8 +99,6 @@ Para visualizar todo el sistema de un vistazo, aquí tienes el esquema de mando:
 ![control-hormmonal-y-escenarios-ciclo-femenino](https://cdn.ediprofe.com/img/ciencias/hyga-control-hormmonal-y-escenarios-ciclo-femenino.webp)
 
 
----
-
 
 ---
 
@@ -120,6 +118,96 @@ Imagina una montaña rusa hormonal:
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1
+**La Jardinera del Ciclo**
+
+¿Qué hormona producida por el cerebro se encarga de que los folículos maduren en el ovario durante la primera mitad del ciclo?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+La **FSH** (Hormona Estimulante del Folículo) actúa como la "jardinera": su función es estimular el crecimiento y maduración de los folículos ováricos que contienen los óvulos.
+
+**Resultado:** $\boxed{\text{FSH}}$
+
+</details>
+
+### Ejercicio 2
+**El Momento del Disparo**
+
+¿Qué cambio hormonal específico en el cerebro es el responsable directo de que el óvulo sea liberado (ovulación)?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+La ovulación es provocada por un aumento brusco y repentino (pico) de la hormona **LH** (Luteinizante), que actúa como el "detonador" para romper el folículo.
+
+**Resultado:** $\boxed{\text{Pico de LH}}$
+
+</details>
+
+### Ejercicio 3
+**La Arquitecta del Útero**
+
+Si una mujer tiene niveles bajos de **estrógenos**, ¿qué proceso en su útero se verá directamente afectado?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+El estrógeno es la "Arquitecta". Su función principal tras la regla es reconstruir y engrosar la pared del útero (endometrio). Sin ella, la "camita" para el bebé no se formaría correctamente.
+
+**Resultado:** $\boxed{\text{La reconstrucción del endometrio}}$
+
+</details>
+
+### Ejercicio 4
+**La Guardiana del Embarazo**
+
+¿Por qué se dice que el nombre de la **Progesterona** revela su función secreta?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Su nombre viene de **"Pro-gestación"**. Como la "Guardiana", su misión es mantener el endometrio esponjoso y firme para proteger al embrión. Si sus niveles bajan, el endometrio se cae (menstruación).
+
+**Resultado:** $\boxed{\text{Porque está "a favor de la gestación" (mantiene el endometrio)}}$
+
+</details>
+
+### Ejercicio 5
+**La Señal de Reinicio**
+
+¿Qué sucede con los niveles de estrógeno y progesterona si un óvulo llega al útero y NO es fecundado?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+Al no haber embarazo, el cuerpo lúteo deja de producir hormonas. Los niveles de estrógeno y progesterona **caen bruscamente**, lo que provoca que el endometrio se desprenda (regla) y el ciclo se reinicie.
+
+**Resultado:** $\boxed{\text{Caen bruscamente}}$
+
+</details>
+
+### Ejercicio 6
+**La Pausa del Ciclo**
+
+En caso de embarazo, ¿qué hormona se mantiene alta para evitar que llegue la menstruación?
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:**
+La **progesterona** debe mantenerse en niveles altos y estables. Esta "guardiana" evita que el útero se limpie, protegiendo así el desarrollo del nuevo ser dentro del útero.
+
+**Resultado:** $\boxed{\text{Progesterona}}$
+
+</details>
+
+### Ejercicio 7
 **Cálculo de Fertilidad**
 
 Si el ciclo de Ana es regular de 28 días y su periodo comenzó el 1 de octubre, ¿cuál es su día más probable de ovulación?
@@ -130,155 +218,57 @@ Si el ciclo de Ana es regular de 28 días y su periodo comenzó el 1 de octubre,
 **Datos:**
 - Inicio ciclo: 1 de octubre.
 - Duración: 28 días.
-- Ovulación: Ocurre a mitad del ciclo (14 días ANTES del siguiente periodo).
+- Ovulación: Ocurre a mitad del ciclo (aprox. 14 días antes de la siguiente regla).
 
 **Razonamiento:**
-$$
-1 \text{ (Inicio)} + 13 \text{ días} = 14 \text{ de octubre}
-$$
+$1 \text{ (Inicio)} + 13 \text{ días} = 14 \text{ de octubre}$.
 
 **Resultado:** $\boxed{14 \text{ de octubre}}$
 
 </details>
 
-### Ejercicio 2
-**Concepto**
+### Ejercicio 8
+**La Ventana de Oportunidad**
 
-¿Qué hormona es la principal responsable de mantener el embarazo (o el endometrio) justo después de la ovulación?
-
-<details>
-<summary>Ver solución</summary>
-
-**Razonamiento:**
-La fase lútea está dominada por la **progesterona** (pro-gestación), que evita que el endometrio se desprenda.
-
-**Resultado:** $\boxed{\text{Progesterona}}$
-
-</details>
-
-
-### Ejercicio 3
-**Inicio del Ciclo**
-
-Si una mujer nota las primeras gotas de sangre de su menstruación el martes por la mañana, ¿cuál es técnicamente el "Día 1" de su ciclo menstrual?
+Si la ovulación ocurre un solo día, ¿por qué una mujer puede quedar embarazada si tuvo relaciones 3 días antes de ovular?
 
 <details>
 <summary>Ver solución</summary>
 
 **Razonamiento:**
-Por convención médica y biológica, el primer día de sangrado menstrual se marca como el inicio de un nuevo ciclo (Día 1).
-
-**Resultado:** $\boxed{\text{El día que comienza el sangrado}}$
-
-</details>
-
-### Ejercicio 4
-**La Ventana Fértil**
-
-Aunque la ovulación ocurre un solo día (aprox. el 14), los médicos dicen que una mujer puede quedar embarazada si tiene relaciones desde el día 11 o 12. ¿Por qué?
-
-<details>
-<summary>Ver solución</summary>
-
-**Razonamiento:**
-Porque los espermatozoides pueden sobrevivir dentro del cuerpo de la mujer entre 3 y 5 días. Si entran el día 11, pueden "esperar" en las trompas hasta que el óvulo salga el día 14.
+Porque los espermatozoides son "nadadores resistentes" que pueden sobrevivir dentro del cuerpo femenino entre **3 y 5 días**, esperando a que el óvulo sea liberado.
 
 **Resultado:** $\boxed{\text{Por la supervivencia de los espermatozoides (3-5 días)}}$
 
 </details>
 
-### Ejercicio 5
-**Cambios en el Útero**
-
-¿Para qué se vuelve el endometrio más grueso y lleno de vasos sanguíneos durante la fase folicular y lútea?
-
-<details>
-<summary>Ver solución</summary>
-
-**Razonamiento:**
-El cuerpo prepara un ambiente rico en nutrientes y oxígeno para que, en caso de haber un óvulo fecundado, este pueda enterrarse (implantarse) y empezar a crecer con todo lo necesario.
-
-**Resultado:** $\boxed{\text{Para nutrir y recibir al posible embrión}}$
-
-</details>
-
-### Ejercicio 6
-**La Fase Lútea**
-
-¿Qué sucede con el folículo (el "saquito" donde estaba el óvulo) después de que libera al óvulo en la ovulación?
-
-<details>
-<summary>Ver solución</summary>
-
-**Razonamiento:**
-El folículo vacío se transforma en una estructura amarillenta llamada **cuerpo lúteo** (de ahí el nombre de la fase), que se encarga de producir progesterona durante el resto del ciclo.
-
-**Resultado:** $\boxed{\text{Se convierte en el cuerpo lúteo}}$
-
-</details>
-
-### Ejercicio 7
-**Hormonas y Menstruación**
-
-¿Qué cambio hormonal específico provoca que el endometrio se desprenda y comience el sangrado menstrual?
-
-<details>
-<summary>Ver solución</summary>
-
-**Razonamiento:**
-Hacia el final de la fase lútea, si no hay embarazo, el cuerpo lúteo deja de funcionar. Esto causa una caída brusca en los niveles de progesterona y estrógeno, lo que da la señal al útero para soltar el endometrio.
-
-**Resultado:** $\boxed{\text{La caída de los niveles de progesterona y estrógeno}}$
-
-</details>
-
-### Ejercicio 8
-**Análisis de Caso**
-
-María tiene un ciclo de solo 21 días (ciclo corto). ¿Crees que su ovulación ocurre también el día 14?
-
-<details>
-<summary>Ver solución</summary>
-
-**Razonamiento:**
-No. La fase lútea suele ser fija (unos 14 días), por lo que la ovulación ocurre normalmente 14 días ANTES de la siguiente regla.
-$$
-21 - 14 = 7
-$$
-En un ciclo de 21 días, la ovulación ocurriría alrededor del día 7.
-
-**Resultado:** $\boxed{\text{No, ocurriría alrededor del día 7}}$
-
-</details>
-
-
 ### Ejercicio 9
-**Señal de Éxito**
+**El Inicio Técnico**
 
-Si un óvulo es fecundado y se implanta en el útero, ¿qué ocurre con el ciclo menstrual?
+¿Cuál es el evento que marca científicamente el **Día 1** de un nuevo ciclo menstrual?
 
 <details>
 <summary>Ver solución</summary>
 
 **Razonamiento:**
-El embrión produce una hormona que le dice al cuerpo lúteo que siga fabricando progesterona. Así, los niveles hormonales no caen, el endometrio no se desprende y la menstruación no llega (el ciclo se detiene).
+Aunque la regla parece el final de lo anterior, biológicamente se cuenta como el inicio. El primer día de sangrado menstrual es el Día 1.
 
-**Resultado:** $\boxed{\text{Se detiene (no hay menstruación)}}$
+**Resultado:** $\boxed{\text{El primer día de sangrado}}$
 
 </details>
 
 ### Ejercicio 10
-**Detección de Errores**
+**Mito vs. Realidad**
 
-Un comercial de televisión dice: "Todas las mujeres ovulan exactamente el día 14 de cada mes". ¿Es esto biológicamente exacto?
+Un comercial dice: "Todas las mujeres ovulan el día 14". ¿Por qué esta afirmación es biológicamente incorrecta?
 
 <details>
 <summary>Ver solución</summary>
 
 **Razonamiento:**
-Es un mito. El día 14 es un promedio para ciclos perfectos de 28 días. En la realidad, el estrés, la dieta, el ejercicio o simplemente la genética hacen que cada mujer y cada ciclo sean diferentes. Muchas mujeres sanas ovulan el día 10, 12, 16 o incluso 20.
+El día 14 es solo un promedio para ciclos de 28 días. En la realidad, factores como el estrés, la dieta o la genética hacen que cada mujer sea diferente. Una mujer puede ovular el día 10 o el 20 y ser perfectamente sana.
 
-**Resultado:** $\boxed{\text{Falso, varía según la mujer y el ciclo}}$
+**Resultado:** $\boxed{\text{Porque el ciclo varía según cada mujer y sus circunstancias}}$
 
 </details>
 
