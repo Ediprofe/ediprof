@@ -22,6 +22,8 @@ Impiden que el espermatozoide llegue al óvulo poniendo un obstáculo.
 - **Eficacia:** Alta si se usan bien.
 - **Ventaja Única:** **¡Protegen contra ETS!**
 
+![metodos-de-barrera](https://cdn.ediprofe.com/img/ciencias/cj2u-metodos-de-barrera.webp)
+
 ### 2. Métodos Hormonales (Químicos)
 Usan hormonas para impedir la ovulación. Si no hay óvulo, no hay embarazo.
 
@@ -31,8 +33,13 @@ Usan hormonas para impedir la ovulación. Si no hay óvulo, no hay embarazo.
 - **Eficacia:** Muy alta (99%).
 - **Desventaja:** NO protegen contra enfermedades.
 
+![metodos-hormonales](https://cdn.ediprofe.com/img/ciencias/xabe-metodos-hormonales.webp)
+
+
 ### 3. Métodos Intrauterinos (DIU)
 Un pequeño dispositivo en forma de T que el médico coloca dentro del útero. Puede ser de cobre (mata espermatozoides) u hormonal.
+
+![diu](https://cdn.ediprofe.com/img/ciencias/zexr-diu.webp)
 
 ### 4. Métodos Quirúrgicos (Definitivos)
 Para quienes están seguros de no querer más hijos.
@@ -40,9 +47,13 @@ Para quienes están seguros de no querer más hijos.
 - **Ligadura de Trompas (Mujer):** Se cortan o atan las trompas para que el óvulo no baje.
 - **Vasectomía (Hombre):** Se cortan los conductos deferentes para que el semen no tenga espermatozoides.
 
+![metodos-quirurgicos](https://cdn.ediprofe.com/img/ciencias/ksa5-metodos-quirurgicos.webp)
+
 ### 5. Métodos Naturales (Riesgosos)
 Se basan en calcular los días fértiles (Ritmo) o interumpir el coito.
 - **Eficacia:** Baja. Tienen alto riesgo de fallo (embarazo no deseado).
+
+![metodos-naturales](https://cdn.ediprofe.com/img/ciencias/flwr-metodos-naturales.webp)
 
 ---
 

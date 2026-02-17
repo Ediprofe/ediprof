@@ -39,6 +39,8 @@ Causadas por pequeños bichitos.
 - **Tricomoniasis:** Causa picazón intensa y mal olor.
 - **Ladillas:** Piojos del vello púbico. Pican mucho.
 
+![clasificacion-de-las-ets](https://cdn.ediprofe.com/img/ciencias/99ua-clasificacion-de-las-ets.webp)
+
 ---
 
 ## 🛡️ Prevención: La Regla de Oro
@@ -46,6 +48,8 @@ Causadas por pequeños bichitos.
 El único método que previene el contagio de ETS es el **PRESERVATIVO (Condón)**.
 
 > **¡Ojo!** La píldora anticonceptiva evita el embarazo, pero **NO protege** de ninguna enfermedad.
+
+![uso-del-preservativo](https://cdn.ediprofe.com/img/ciencias/3gyn-uso-del-preservativo.webp)
 
 ---
 

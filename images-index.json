@@ -2919,7 +2919,77 @@
       "size": "53KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/t394-el-parto.webp",
       "status": "uploaded"
+    },
+    {
+      "id": "99ua",
+      "name": "clasificacion-de-las-ets.webp",
+      "materia": "ciencias",
+      "type": "lesson",
+      "date": "2026-02-17",
+      "size": "105KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/99ua-clasificacion-de-las-ets.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "3gyn",
+      "name": "uso-del-preservativo.webp",
+      "materia": "ciencias",
+      "type": "lesson",
+      "date": "2026-02-17",
+      "size": "89KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/3gyn-uso-del-preservativo.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "cj2u",
+      "name": "metodos-de-barrera.webp",
+      "materia": "ciencias",
+      "type": "lesson",
+      "date": "2026-02-17",
+      "size": "78KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/cj2u-metodos-de-barrera.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "xabe",
+      "name": "metodos-hormonales.webp",
+      "materia": "ciencias",
+      "type": "lesson",
+      "date": "2026-02-17",
+      "size": "73KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/xabe-metodos-hormonales.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "zexr",
+      "name": "diu.webp",
+      "materia": "ciencias",
+      "type": "lesson",
+      "date": "2026-02-17",
+      "size": "56KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/zexr-diu.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "ksa5",
+      "name": "metodos-quirurgicos.webp",
+      "materia": "ciencias",
+      "type": "lesson",
+      "date": "2026-02-17",
+      "size": "51KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/ksa5-metodos-quirurgicos.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "flwr",
+      "name": "metodos-naturales.webp",
+      "materia": "ciencias",
+      "type": "lesson",
+      "date": "2026-02-17",
+      "size": "73KB",
+      "url": "https://cdn.ediprofe.com/img/ciencias/flwr-metodos-naturales.webp",
+      "status": "uploaded"
     }
   ],
-  "lastUpdated": "2026-02-17T00:16:51.178Z"
+  "lastUpdated": "2026-02-17T00:45:11.905Z"
 }
