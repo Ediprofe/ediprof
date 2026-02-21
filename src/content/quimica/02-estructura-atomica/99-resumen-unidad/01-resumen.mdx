@@ -1,0 +1,129 @@
+import ConceptMap from '../../../../components/Content/ConceptMap.astro';
+import MapSection from '../../../../components/Content/MapSection.astro';
+import MapItem from '../../../../components/Content/MapItem.astro';
+import MapPoint from '../../../../components/Content/MapPoint.astro';
+import MapStep from '../../../../components/Content/MapStep.astro';
+
+# **Resumen: Estructura Atómica**
+
+<ConceptMap title="Estructura Atómica">
+
+  <MapSection 
+    title="Partículas Subatómicas y Número Atómico"
+    images={[
+      'https://cdn.ediprofe.com/img/quimica/bd54-estructura-del-atomo.webp',
+      'https://cdn.ediprofe.com/img/quimica/5xyl-numero-atomico.webp'
+    ]}
+  >
+    <MapItem label="Estructura del Átomo:">
+      <MapPoint>**Núcleo:** Centro diminuto con protones (+) y neutrones (n).</MapPoint>
+      <MapPoint>**Periferia:** Zona externa donde se mueven los electrones (-).</MapPoint>
+    </MapItem>
+    <MapItem label="Número Atómico (Z):">
+      <MapPoint>Cantidad de **protones** en el núcleo.</MapPoint>
+      <MapPoint>Es el "DNI" del elemento: define su identidad.</MapPoint>
+      <MapPoint>La Tabla Periódica está ordenada por Z creciente.</MapPoint>
+    </MapItem>
+  </MapSection>
+
+  <MapSection 
+    title="Átomos Neutros e Iones"
+    images={[
+      'https://cdn.ediprofe.com/img/quimica/3yeg-atomos-neutros.webp',
+      'https://cdn.ediprofe.com/img/quimica/28t3-tipos-de-iones.webp'
+    ]}
+  >
+    <MapItem label="Átomo Neutro:">
+      <MapPoint>**p⁺ = e⁻** → Carga neta = 0.</MapPoint>
+    </MapItem>
+    <MapItem label="Iones (Carga):">
+      <MapPoint>**Catión (+):** Pierde electrones. Ej: Na⁺, Ca²⁺.</MapPoint>
+      <MapPoint>**Anión (-):** Gana electrones. Ej: Cl⁻, O²⁻.</MapPoint>
+    </MapItem>
+    <MapItem label="Identidad:">
+      <MapPoint>Ganar/perder electrones NO cambia el elemento (Z se mantiene).</MapPoint>
+    </MapItem>
+  </MapSection>
+
+  <MapSection 
+    title="Masa de las Partículas"
+    images={[
+      'https://cdn.ediprofe.com/img/quimica/44nm-masa-en-nucleo-y-periferia.webp',
+      'https://cdn.ediprofe.com/img/quimica/uxho-comparacion-de-masas-nucleones-y-electrones.webp'
+    ]}
+  >
+    <MapItem label="Distribución de Masa:">
+      <MapPoint>**Núcleo (p⁺ y n⁰):** 99.9% de la masa total.</MapPoint>
+      <MapPoint>**Electrones:** Masa casi despreciable (~0 uma).</MapPoint>
+    </MapItem>
+    <MapItem label="Analogía:">
+      <MapPoint>Protones/Neutrones = Bola de boliche.</MapPoint>
+      <MapPoint>Electrones = Clip de papel.</MapPoint>
+    </MapItem>
+    <MapItem label="Unidad de Masa Atómica (uma):">
+      <MapPoint>Protón ≈ 1 uma | Neutrón ≈ 1 uma | Electrón ≈ 0 uma.</MapPoint>
+    </MapItem>
+  </MapSection>
+
+  <MapSection 
+    title="Número Másico (A)"
+    images={[
+      '/images/quimica/estructura/numero-masico.svg'
+    ]}
+  >
+    <MapItem label="Definición:">
+      <MapPoint>Suma de protones y neutrones: **A = Z + n**.</MapPoint>
+    </MapItem>
+    <MapItem label="Notación Atómica:">
+      <MapPoint>ₐᶻX: A (arriba) = Masa, Z (abajo) = Protones.</MapPoint>
+      <MapPoint>Ejemplo: ₄²He → A=4, Z=2, n=2.</MapPoint>
+    </MapItem>
+    <MapItem label="Cálculo de Neutrones:">
+      <MapPoint>**n = A - Z** (Masa menos Protones).</MapPoint>
+    </MapItem>
+  </MapSection>
+
+  <MapSection 
+    title="Isótopos"
+    images={[
+      '/images/quimica/isotopos/hidrogeno-comparacion.svg',
+      '/images/quimica/isotopos/carbono-tres-isotopos.svg'
+    ]}
+  >
+    <MapItem label="Definición:">
+      <MapPoint>Átomos con **mismo Z** (mismo elemento) pero **diferente n** (neutrones).</MapPoint>
+      <MapPoint>Resultado: Diferente masa (A).</MapPoint>
+    </MapItem>
+    <MapItem label="Isótopos del Hidrógeno:">
+      <MapPoint>**Protio (¹H):** 0 neutrones, A=1.</MapPoint>
+      <MapPoint>**Deuterio (²H):** 1 neutrón, A=2.</MapPoint>
+      <MapPoint>**Tritio (³H):** 2 neutrones, A=3 (radiactivo).</MapPoint>
+    </MapItem>
+    <MapItem label="Isótopos del Carbono:">
+      <MapPoint>C-12 (6n), C-13 (7n), C-14 (8n) → Usado para datar fósiles.</MapPoint>
+    </MapItem>
+  </MapSection>
+
+  <MapSection 
+    title="Masa Atómica Promedio"
+    images={[
+      'https://cdn.ediprofe.com/img/quimica/s344-promedio-ponderado-idea-intuitiva.webp',
+      'https://cdn.ediprofe.com/img/quimica/5vvb-isotopos-y-masa-promedio.webp'
+    ]}
+  >
+    <MapItem label="¿Por qué hay decimales?">
+      <MapPoint>La masa en la tabla es un **promedio ponderado** de todos los isótopos naturales.</MapPoint>
+    </MapItem>
+    <MapItem label="Fórmula:">
+      <MapPoint>Masa Promedio = (M₁ × %₁) + (M₂ × %₂) + ... ÷ 100.</MapPoint>
+    </MapItem>
+    <MapItem label="Ejemplo Cloro:">
+      <MapPoint>Cl-35 (75.78%) + Cl-37 (24.22%) → **35.45 uma**.</MapPoint>
+    </MapItem>
+  </MapSection>
+
+</ConceptMap>
+
+---
+
+> **Tip de Repaso:** Este mapa conecta todos los conceptos clave de la estructura atómica. Asegúrate de dominar la relación entre **Z (protones)**, **n (neutrones)** y **A (masa)**, así como la diferencia entre átomos neutros, iones e isótopos. Estos son los fundamentos para entender cómo se organizan los elementos en la Tabla Periódica.

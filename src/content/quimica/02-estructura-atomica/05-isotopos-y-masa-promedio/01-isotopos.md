@@ -28,6 +28,8 @@ Son como gemelos idénticos: Tienen el mismo apellido (Z), pero uno come más y 
 
 El Hidrógeno es el elemento más simple, pero tiene tres versiones en la naturaleza:
 
+![Comparación de Isótopos del Hidrógeno](/images/quimica/isotopos/hidrogeno-comparacion.svg)
+
 ### A. Protio ($^1H$) 💧
 ![Isótopo Protio](/images/quimica/isotopos/h-1-protio.svg)
 *   **Protones:** 1
@@ -72,6 +74,14 @@ El Carbono tiene 6 protones, pero sus neutrones pueden variar. Aquí están sus 
 *   **Protones:** 6
 *   **Neutrones:** 8
 *   **Descripción:** Es radiactivo e inestable. Se usa para datar fósiles antiguos por su vida media.
+
+---
+
+## 📊 Resumen Visual: Los Tres Isótopos del Carbono
+
+![Comparación de los tres isótopos del carbono](/images/quimica/isotopos/carbono-tres-isotopos.svg)
+
+> **Observa:** Los tres isótopos tienen el mismo número de protones (6) y electrones (6), pero diferente número de neutrones. Los neutrones "extra" se muestran en **naranja**.
 
 ---
 

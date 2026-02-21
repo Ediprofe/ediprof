@@ -19,18 +19,21 @@ Un átomo es **neutro** cuando las cargas positivas y negativas están en perfec
 
 > **Regla de Oro:** En un átomo neutro, la cantidad de protones es **IGUAL** a la cantidad de electrones.
 
+
 $$
 p^+ = e^- \implies \text{Carga Neta} = 0
 $$
 
 ![atomos-neutros](https://cdn.ediprofe.com/img/quimica/3yeg-atomos-neutros.webp)
 
+![atomo-neutro-balanza-de-cargas](https://cdn.ediprofe.com/img/quimica/aty8-atomo-neutro-balanza-de-cargas.webp)
+
 **Ejemplo:**
 *   El Carbono ($Z=6$) tiene 6 protones.
 *   Si es neutro, debe tener **6 electrones**.
 *   Carga: $(+6) + (-6) = 0$.
 
-![atomo-carbono-neutro](https://cdn.ediprofe.com/img/quimica/5tx5-atomo-carbono-neutro.webp)
+![atomo-de-carbono-neutro](https://cdn.ediprofe.com/img/quimica/3yba-atomo-de-carbono-neutro.webp)
 
 ---
 
@@ -38,7 +41,7 @@ $$
 
 Un **Ion** es un átomo que ha perdido su neutralidad porque **ganó o perdió electrones**.
 
-![iones-atomos-con-carga](https://cdn.ediprofe.com/img/quimica/t9mr-iones-atomos-con-carga.webp)
+![iones-atomos-con-carga](https://cdn.ediprofe.com/img/quimica/x9sm-iones-atomos-con-carga.webp)
 
 
 ### ⚡ Energía y Vida Cotidiana

@@ -23,8 +23,8 @@ from pathlib import Path
 # Agregar path para importar core
 sys.path.insert(0, str(Path(__file__).parent.parent / 'geometry'))
 
-from core import COLORS
-from core.primitives import escape_xml
+from core import COLORS  # type: ignore
+from core.primitives import escape_xml  # type: ignore
 
 def load_spec(spec_path: str) -> dict:
     with open(spec_path, 'r', encoding='utf-8') as f:
@@ -178,7 +178,7 @@ def render_atom(spec: dict) -> str:
         # Rectángulo redondeado (Pill)
         svg_parts.append(f'<rect x="{badge_x}" y="{badge_y}" width="{badge_w}" height="{badge_h}" rx="12" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>')
         # Texto "Abundancia: X%"
-        svg_parts.append(f'<text x="{cx}" y="{badge_y + 16}" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#047857" text-anchor="middle">Abundancia: {abundance}</text>')
+        svg_parts.append(f'<text x="{cx}" y="{badge_y + 16}" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#047857" text-anchor="middle">Abundancia: {escape_xml(abundance)}</text>')
 
     # 1. Dibujar Órbitas (Shells) - ESTILO MEJORADO
     # Aumentar radio base de 80 a 90 para separar más

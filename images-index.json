@@ -3009,7 +3009,87 @@
       "size": "60KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/wsrh-democrito.webp",
       "status": "uploaded"
+    },
+    {
+      "id": "bd54",
+      "name": "estructura-del-atomo.webp",
+      "materia": "quimica",
+      "type": "lesson",
+      "date": "2026-02-21",
+      "size": "51KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/bd54-estructura-del-atomo.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "aty8",
+      "name": "atomo-neutro-balanza-de-cargas.webp",
+      "materia": "quimica",
+      "type": "lesson",
+      "date": "2026-02-21",
+      "size": "45KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/aty8-atomo-neutro-balanza-de-cargas.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "qso8",
+      "name": "atomo-neutro-carbono.webp",
+      "materia": "quimica",
+      "type": "lesson",
+      "date": "2026-02-21",
+      "size": "45KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/qso8-atomo-neutro-carbono.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "3yba",
+      "name": "atomo-de-carbono-neutro.webp",
+      "materia": "quimica",
+      "type": "lesson",
+      "date": "2026-02-21",
+      "size": "68KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/3yba-atomo-de-carbono-neutro.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "x9sm",
+      "name": "iones-atomos-con-carga.webp",
+      "materia": "quimica",
+      "type": "lesson",
+      "date": "2026-02-21",
+      "size": "45KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/x9sm-iones-atomos-con-carga.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "h0lq",
+      "name": "isotopos-y-masa-atomica-promedio.webp",
+      "materia": "quimica",
+      "type": "lesson",
+      "date": "2026-02-21",
+      "size": "74KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/h0lq-isotopos-y-masa-atomica-promedio.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "5vvb",
+      "name": "isotopos-y-masa-promedio.webp",
+      "materia": "quimica",
+      "type": "lesson",
+      "date": "2026-02-21",
+      "size": "74KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/5vvb-isotopos-y-masa-promedio.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "s344",
+      "name": "promedio-ponderado-idea-intuitiva.webp",
+      "materia": "quimica",
+      "type": "lesson",
+      "date": "2026-02-21",
+      "size": "56KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/s344-promedio-ponderado-idea-intuitiva.webp",
+      "status": "uploaded"
     }
   ],
-  "lastUpdated": "2026-02-17T16:36:20.829Z"
+  "lastUpdated": "2026-02-21T18:38:52.761Z"
 }

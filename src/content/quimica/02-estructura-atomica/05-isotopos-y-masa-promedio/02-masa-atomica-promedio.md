@@ -12,19 +12,43 @@ Si miras la Tabla Periódica, verás que la masa del Cloro es **35.45 uma**. ¿C
 
 ---
 
-## 1. El Secreto de los Decimales
+## 1. La Idea Intuitiva: Tus Notas del Colegio
 
-Los decimales existen porque **en la naturaleza los elementos son una mezcla de isótopos**.
+¿Recuerdas cómo calculan tu calificación al final de un período escolar? Seguramente algún profesor te ha dicho: *"El examen final vale el 80% de la nota y las tareas valen el 20%"*.
 
-Imagina una bolsa llena de átomos de Cloro:
-*   El **75%** son Cloro-35 (ligeros).
-*   El **25%** son Cloro-37 (pesados).
+Imagina que sacas un **10** (excelente) en tu examen, pero solo sacas un **5** en tus tareas.
 
-La Tabla Periódica no te da el peso de uno solo, te da el **promedio de peso de esa mezcla**.
+Si ambas cosas valieran igual, tu nota final sería simplemente el promedio: 7.5. Pero como el examen vale **4 veces más** que las tareas (80% vs 20%), tu nota del 10 **cuenta mucho más** en el resultado final.
+
+Pensemos con números reales:
+
+$$
+\text{Nota final} = \frac{(10 \times 80) + (5 \times 20)}{100} = \frac{800 + 100}{100} = 9
+$$
+
+Tu nota quedó en **9**, mucho más cerca del 10 que del 5. ¿Por qué? Porque el 10 apareció **más veces** en la cuenta (80 veces) que el 5 (solo 20 veces). Es como si hubieras sacado ochos dieces y solo veinte cincos.
+
+A esto se le llama **Promedio Ponderado**: cuando algo tiene mayor peso o abundancia, **aparece más** en el resultado final. El promedio no queda "en el medio", sino que se acerca al valor que más se repite.
+
+![promedio-ponderado-idea-intuitiva](https://cdn.ediprofe.com/img/quimica/s344-promedio-ponderado-idea-intuitiva.webp)
 
 ---
 
-## 2. Cálculo de Masa Ponderada
+## 2. El Secreto de los Decimales
+
+Revisando el mundo subatómico, los decimales existen justamente porque **en la naturaleza los elementos son una mezcla de isótopos**.
+
+Imagina una gran bolsa llena de átomos de Cloro:
+*   El **75%** son átomos Cloro-35 (ligeros).
+*   El **25%** son átomos Cloro-37 (pesados).
+
+La Tabla Periódica no te arroja el peso de un solo isótopo porque sería injusto, te entrega el **promedio ponderado de esa mezcla** natural.
+
+> **¡Apliquemos la intuición!** Siguiendo la regla de oro que acabamos de aprender, como hay una abundancia masiva del isótopo Cloro-35 (75% ganando por goleada), este será el "imán" que jalará el peso promedio con fuerza. ¡Y es completamente cierto! Es por esto que si miras tu tabla sentirás que el peso del cloro (~35.45) está sumamente cerca al 35 y bastante alejado del lejano 37.
+
+---
+
+## 3. Cálculo de Masa Ponderada
 
 Para hallar la masa promedio, no basta con sumar y dividir entre dos. Debemos tener en cuenta la **abundancia** (qué tan común es cada isótopo).
 
@@ -38,7 +62,7 @@ $$
 
 ---
 
-## 3. Ejemplo Paso a Paso: El Cloro
+## 4. Ejemplo Paso a Paso: El Cloro
 
 Vamos a calcular la masa que aparece en la tabla para el Cloro.
 
@@ -69,6 +93,9 @@ $$
     $$
 
 ¡Y listo! Por eso en la tabla el Cloro pesa $\approx 35.45$ (varía ligeramente por decimales precisos).
+
+![isotopos-y-masa-promedio](https://cdn.ediprofe.com/img/quimica/5vvb-isotopos-y-masa-promedio.webp)
+
 
 ---
 

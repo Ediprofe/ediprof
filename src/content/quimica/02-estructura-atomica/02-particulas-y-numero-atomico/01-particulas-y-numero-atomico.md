@@ -24,7 +24,7 @@ Imagina un átomo como un estadio de fútbol. Tiene dos zonas claramente diferen
 2.  **La Periferia (Zona Externa):** Es la zona inmensa que rodea al núcleo (como las gradas del estadio). Aquí encontramos:
     *   **Electrones ($e^-$):** Tienen carga eléctrica **negativa** y se mueven alrededor del núcleo.
 
-![estructura-atomica-estadi-de-futbol](https://cdn.ediprofe.com/img/quimica/iwce-estructura-atomica-estadi-de-futbol.webp)
+![estructura-del-atomo](https://cdn.ediprofe.com/img/quimica/bd54-estructura-del-atomo.webp)
 
 
 ---
@@ -60,7 +60,7 @@ La Tabla Periódica no es un mapa al azar; está organizada de **izquierda a der
 
 Esto nos permite identificar rápidamente de qué elemento estamos hablando si conocemos su número de protones.
 
-![identificacion-en-la-tabla-periodica](https://cdn.ediprofe.com/img/quimica/wja6-identificacion-en-la-tabla-periodica.webp)
+![Tabla Periódica: Metales y No Metales](/images/quimica/tabla-periodica-metales-no-metales.svg)
 
 
 ---

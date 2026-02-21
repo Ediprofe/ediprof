@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 620">
+<rect width="1500" height="620" fill="#f8fafc" rx="12"/>
+<text x="750.0" y="42" font-family="Inter, sans-serif" font-size="30" font-weight="900" fill="#1e293b" text-anchor="middle">Isótopos del Carbono</text>
+<text x="750.0" y="68" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#64748b" text-anchor="middle">Mismo número de protones (Z=6), diferente número de neutrones</text>
+<text x="250" y="105" font-family="Inter, sans-serif" font-size="22" font-weight="bold" fill="#1e293b" text-anchor="middle">Carbono-12</text>
+<rect x="215.0" y="118" width="70" height="32" rx="8" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="2"/>
+<text x="250" y="140" font-family="Inter, sans-serif" font-size="20" font-weight="900" fill="#8b5cf6" text-anchor="middle">¹²C</text>
+<circle cx="250" cy="290" r="105" fill="none" stroke="#e2e8f0" stroke-width="2" opacity="0.8"/>
+<circle cx="250" cy="290" r="140" fill="none" stroke="#e2e8f0" stroke-width="2" opacity="0.8"/>
+<circle cx="250" cy="185" r="5" fill="#3b82f6" stroke="white" stroke-width="1"/>
+<text x="250" y="187" font-family="Inter, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle">-</text>
+<circle cx="250" cy="395" r="5" fill="#3b82f6" stroke="white" stroke-width="1"/>
+<text x="250" y="397" font-family="Inter, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle">-</text>
+<circle cx="348.99494936611666" cy="388.99494936611666" r="5" fill="#3b82f6" stroke="white" stroke-width="1"/>
+<text x="348.99494936611666" y="390.99494936611666" font-family="Inter, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle">-</text>
+<circle cx="151.00505063388334" cy="388.99494936611666" r="5" fill="#3b82f6" stroke="white" stroke-width="1"/>
+<text x="151.00505063388334" y="390.99494936611666" font-family="Inter, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle">-</text>
+<circle cx="151.00505063388334" cy="191.00505063388334" r="5" fill="#3b82f6" stroke="white" stroke-width="1"/>
+<text x="151.00505063388334" y="193.00505063388334" font-family="Inter, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle">-</text>
+<circle cx="348.99494936611666" cy="191.00505063388334" r="5" fill="#3b82f6" stroke="white" stroke-width="1"/>
+<text x="348.99494936611666" y="193.00505063388334" font-family="Inter, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle">-</text>
+<circle cx="250" cy="290" r="65" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" opacity="0.95"/>
+<g transform="translate(250,290)">
+<circle cx="0" cy="0" r="9" fill="#ef4444" stroke="white" stroke-width="1"/>
+<text x="0" y="3" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">+</text>
+<circle cx="-13.272689876600769" cy="12.158770638497112" r="9" fill="#64748b" stroke="white" stroke-width="1"/>
+<circle cx="2.225704477469037" cy="-25.358356405314883" r="9" fill="#ef4444" stroke="white" stroke-width="1"/>
+<text x="2.225704477469037" y="-22.358356405314883" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">+</text>
+<circle cx="18.968940697169828" cy="24.742257149000253" r="9" fill="#64748b" stroke="white" stroke-width="1"/>
+<circle cx="-35.449582175441584" cy="-6.27113415472944" r="9" fill="#ef4444" stroke="white" stroke-width="1"/>
+<text x="-35.449582175441584" y="-3.27113415472944" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">+</text>
+<circle cx="33.960940327820666" cy="-21.602188131071447" r="9" fill="#64748b" stroke="white" stroke-width="1"/>
+<circle cx="-11.447217545705014" cy="42.57888221244544" r="9" fill="#ef4444" stroke="white" stroke-width="1"/>
+<text x="-11.447217545705014" y="45.57888221244544" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">+</text>
+<circle cx="-21.94879824327542" cy="-42.26405394275365" r="9" fill="#64748b" stroke="white" stroke-width="1"/>
+<circle cx="47.821857604025176" cy="17.46625132363382" r="9" fill="#ef4444" stroke="white" stroke-width="1"/>
+<text x="47.821857604025176" y="20.46625132363382" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">+</text>
+<circle cx="-49.91542364354491" cy="20.602196059775704" r="9" fill="#64748b" stroke="white" stroke-width="1"/>
+<circle cx="24.12786006705996" cy="-51.55430504414131" r="9" fill="#ef4444" stroke="white" stroke-width="1"/>
+<text x="24.12786006705996" y="-48.55430504414131" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">+</text>
+<circle cx="17.86444072728583" cy="56.96368806091553" r="9" fill="#64748b" stroke="white" stroke-width="1"/>
+</g>
+<rect x="177.5" y="470" width="145" height="105" rx="8" fill="white" stroke="#e2e8f0" stroke-width="1.5"/>
+<text x="250" y="495" font-family="Inter, sans-serif" font-size="20" font-weight="900" fill="#1e293b" text-anchor="middle">12 uma</text>
+<circle cx="192" cy="520" r="6" fill="#ef4444" stroke="white" stroke-width="1"/>
+<text x="192" y="522" font-family="Inter, sans-serif" font-size="8" font-weight="bold" fill="white" text-anchor="middle">+</text>
+<text x="205" y="523" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#ef4444" text-anchor="start">6 protones</text>
+<circle cx="192" cy="542" r="6" fill="#64748b" stroke="white" stroke-width="1"/>
+<text x="205" y="545" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#64748b" text-anchor="start">6 neutrones</text>
+<text x="250" y="565" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#22c55e" text-anchor="middle">98.9% • Estable</text>
+<text x="750" y="105" font-family="Inter, sans-serif" font-size="22" font-weight="bold" fill="#1e293b" text-anchor="middle">Carbono-13</text>
+<rect x="715.0" y="118" width="70" height="32" rx="8" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="2"/>
+<text x="750" y="140" font-family="Inter, sans-serif" font-size="20" font-weight="900" fill="#8b5cf6" text-anchor="middle">¹³C</text>
+<circle cx="750" cy="290" r="105" fill="none" stroke="#e2e8f0" stroke-width="2" opacity="0.8"/>
+<circle cx="750" cy="290" r="140" fill="none" stroke="#e2e8f0" stroke-width="2" opacity="0.8"/>
+<circle cx="750" cy="185" r="5" fill="#3b82f6" stroke="white" stroke-width="1"/>
+<text x="750" y="187" font-family="Inter, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle">-</text>
+<circle cx="750" cy="395" r="5" fill="#3b82f6" stroke="white" stroke-width="1"/>
+<text x="750" y="397" font-family="Inter, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle">-</text>
+<circle cx="848.9949493661167" cy="388.99494936611666" r="5" fill="#3b82f6" stroke="white" stroke-width="1"/>
+<text x="848.9949493661167" y="390.99494936611666" font-family="Inter, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle">-</text>
+<circle cx="651.0050506338833" cy="388.99494936611666" r="5" fill="#3b82f6" stroke="white" stroke-width="1"/>
+<text x="651.0050506338833" y="390.99494936611666" font-family="Inter, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle">-</text>
+<circle cx="651.0050506338833" cy="191.00505063388334" r="5" fill="#3b82f6" stroke="white" stroke-width="1"/>
+<text x="651.0050506338833" y="193.00505063388334" font-family="Inter, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle">-</text>
+<circle cx="848.9949493661167" cy="191.00505063388334" r="5" fill="#3b82f6" stroke="white" stroke-width="1"/>
+<text x="848.9949493661167" y="193.00505063388334" font-family="Inter, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle">-</text>
+<circle cx="750" cy="290" r="65" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" opacity="0.95"/>
+<g transform="translate(750,290)">
+<circle cx="0" cy="0" r="9" fill="#ef4444" stroke="white" stroke-width="1"/>
+<text x="0" y="3" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">+</text>
+<circle cx="-13.272689876600769" cy="12.158770638497112" r="9" fill="#64748b" stroke="white" stroke-width="1"/>
+<circle cx="2.225704477469037" cy="-25.358356405314883" r="9" fill="#ef4444" stroke="white" stroke-width="1"/>
+<text x="2.225704477469037" y="-22.358356405314883" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">+</text>
+<circle cx="18.968940697169828" cy="24.742257149000253" r="9" fill="#64748b" stroke="white" stroke-width="1"/>
+<circle cx="-35.449582175441584" cy="-6.27113415472944" r="9" fill="#ef4444" stroke="white" stroke-width="1"/>
+<text x="-35.449582175441584" y="-3.27113415472944" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">+</text>
+<circle cx="33.960940327820666" cy="-21.602188131071447" r="9" fill="#64748b" stroke="white" stroke-width="1"/>
+<circle cx="-11.447217545705014" cy="42.57888221244544" r="9" fill="#ef4444" stroke="white" stroke-width="1"/>
+<text x="-11.447217545705014" y="45.57888221244544" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">+</text>
+<circle cx="-21.94879824327542" cy="-42.26405394275365" r="9" fill="#64748b" stroke="white" stroke-width="1"/>
+<circle cx="47.821857604025176" cy="17.46625132363382" r="9" fill="#ef4444" stroke="white" stroke-width="1"/>
+<text x="47.821857604025176" y="20.46625132363382" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">+</text>
+<circle cx="-49.91542364354491" cy="20.602196059775704" r="9" fill="#64748b" stroke="white" stroke-width="1"/>
+<circle cx="24.12786006705996" cy="-51.55430504414131" r="9" fill="#ef4444" stroke="white" stroke-width="1"/>
+<text x="24.12786006705996" y="-48.55430504414131" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">+</text>
+<circle cx="17.86444072728583" cy="56.96368806091553" r="9" fill="#64748b" stroke="white" stroke-width="1"/>
+<circle cx="-53.947686804207436" cy="-31.26734860001951" r="9" fill="#f97316" stroke="white" stroke-width="1"/>
+</g>
+<rect x="677.5" y="470" width="145" height="105" rx="8" fill="white" stroke="#e2e8f0" stroke-width="1.5"/>
+<text x="750" y="495" font-family="Inter, sans-serif" font-size="20" font-weight="900" fill="#1e293b" text-anchor="middle">13 uma</text>
+<circle cx="692" cy="520" r="6" fill="#ef4444" stroke="white" stroke-width="1"/>
+<text x="692" y="522" font-family="Inter, sans-serif" font-size="8" font-weight="bold" fill="white" text-anchor="middle">+</text>
+<text x="705" y="523" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#ef4444" text-anchor="start">6 protones</text>
+<circle cx="692" cy="542" r="6" fill="#f97316" stroke="white" stroke-width="1"/>
+<text x="705" y="545" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#64748b" text-anchor="start">7 neutrones</text>
+<text x="750" y="565" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#22c55e" text-anchor="middle">1.1% • Estable</text>
+<text x="1250" y="105" font-family="Inter, sans-serif" font-size="22" font-weight="bold" fill="#1e293b" text-anchor="middle">Carbono-14</text>
+<rect x="1215.0" y="118" width="70" height="32" rx="8" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="2"/>
+<text x="1250" y="140" font-family="Inter, sans-serif" font-size="20" font-weight="900" fill="#8b5cf6" text-anchor="middle">¹⁴C</text>
+<circle cx="1250" cy="290" r="105" fill="none" stroke="#e2e8f0" stroke-width="2" opacity="0.8"/>
+<circle cx="1250" cy="290" r="140" fill="none" stroke="#e2e8f0" stroke-width="2" opacity="0.8"/>
+<circle cx="1250" cy="185" r="5" fill="#3b82f6" stroke="white" stroke-width="1"/>
+<text x="1250" y="187" font-family="Inter, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle">-</text>
+<circle cx="1250" cy="395" r="5" fill="#3b82f6" stroke="white" stroke-width="1"/>
+<text x="1250" y="397" font-family="Inter, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle">-</text>
+<circle cx="1348.9949493661165" cy="388.99494936611666" r="5" fill="#3b82f6" stroke="white" stroke-width="1"/>
+<text x="1348.9949493661165" y="390.99494936611666" font-family="Inter, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle">-</text>
+<circle cx="1151.0050506338835" cy="388.99494936611666" r="5" fill="#3b82f6" stroke="white" stroke-width="1"/>
+<text x="1151.0050506338835" y="390.99494936611666" font-family="Inter, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle">-</text>
+<circle cx="1151.0050506338832" cy="191.00505063388334" r="5" fill="#3b82f6" stroke="white" stroke-width="1"/>
+<text x="1151.0050506338832" y="193.00505063388334" font-family="Inter, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle">-</text>
+<circle cx="1348.9949493661165" cy="191.00505063388334" r="5" fill="#3b82f6" stroke="white" stroke-width="1"/>
+<text x="1348.9949493661165" y="193.00505063388334" font-family="Inter, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle">-</text>
+<circle cx="1250" cy="290" r="70" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" opacity="0.95"/>
+<g transform="translate(1250,290)">
+<circle cx="0" cy="0" r="9" fill="#ef4444" stroke="white" stroke-width="1"/>
+<text x="0" y="3" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">+</text>
+<circle cx="-13.272689876600769" cy="12.158770638497112" r="9" fill="#64748b" stroke="white" stroke-width="1"/>
+<circle cx="2.225704477469037" cy="-25.358356405314883" r="9" fill="#ef4444" stroke="white" stroke-width="1"/>
+<text x="2.225704477469037" y="-22.358356405314883" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">+</text>
+<circle cx="18.968940697169828" cy="24.742257149000253" r="9" fill="#64748b" stroke="white" stroke-width="1"/>
+<circle cx="-35.449582175441584" cy="-6.27113415472944" r="9" fill="#ef4444" stroke="white" stroke-width="1"/>
+<text x="-35.449582175441584" y="-3.27113415472944" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">+</text>
+<circle cx="33.960940327820666" cy="-21.602188131071447" r="9" fill="#64748b" stroke="white" stroke-width="1"/>
+<circle cx="-11.447217545705014" cy="42.57888221244544" r="9" fill="#ef4444" stroke="white" stroke-width="1"/>
+<text x="-11.447217545705014" y="45.57888221244544" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">+</text>
+<circle cx="-21.94879824327542" cy="-42.26405394275365" r="9" fill="#64748b" stroke="white" stroke-width="1"/>
+<circle cx="47.821857604025176" cy="17.46625132363382" r="9" fill="#ef4444" stroke="white" stroke-width="1"/>
+<text x="47.821857604025176" y="20.46625132363382" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">+</text>
+<circle cx="-49.91542364354491" cy="20.602196059775704" r="9" fill="#64748b" stroke="white" stroke-width="1"/>
+<circle cx="24.12786006705996" cy="-51.55430504414131" r="9" fill="#ef4444" stroke="white" stroke-width="1"/>
+<text x="24.12786006705996" y="-48.55430504414131" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">+</text>
+<circle cx="17.86444072728583" cy="56.96368806091553" r="9" fill="#64748b" stroke="white" stroke-width="1"/>
+<circle cx="-53.947686804207436" cy="-31.26734860001951" r="9" fill="#f97316" stroke="white" stroke-width="1"/>
+<circle cx="63.38692840269122" cy="-13.931880981120171" r="9" fill="#f97316" stroke="white" stroke-width="1"/>
+</g>
+<rect x="1177.5" y="470" width="145" height="105" rx="8" fill="white" stroke="#e2e8f0" stroke-width="1.5"/>
+<text x="1250" y="495" font-family="Inter, sans-serif" font-size="20" font-weight="900" fill="#1e293b" text-anchor="middle">14 uma</text>
+<circle cx="1192" cy="520" r="6" fill="#ef4444" stroke="white" stroke-width="1"/>
+<text x="1192" y="522" font-family="Inter, sans-serif" font-size="8" font-weight="bold" fill="white" text-anchor="middle">+</text>
+<text x="1205" y="523" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#ef4444" text-anchor="start">6 protones</text>
+<circle cx="1192" cy="542" r="6" fill="#f97316" stroke="white" stroke-width="1"/>
+<text x="1205" y="545" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#64748b" text-anchor="start">8 neutrones</text>
+<text x="1250" y="565" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#22c55e" text-anchor="middle">Trazas • Radiactivo</text>
+<rect x="410.0" y="574" width="680" height="26" rx="4" fill="white" stroke="#e2e8f0" stroke-width="1" opacity="0.95"/>
+<circle cx="470.0" cy="587" r="7" fill="#ef4444" stroke="white" stroke-width="1"/>
+<text x="470.0" y="590" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="white" text-anchor="middle">+</text>
+<text x="485.0" y="591" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="start">Protón (p⁺)</text>
+<circle cx="610.0" cy="587" r="7" fill="#64748b" stroke="white" stroke-width="1"/>
+<text x="625.0" y="591" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="start">Neutrón (n⁰)</text>
+<circle cx="760.0" cy="587" r="7" fill="#f97316" stroke="white" stroke-width="1"/>
+<text x="775.0" y="591" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="start">Neutrón extra</text>
+<circle cx="910.0" cy="587" r="5" fill="#3b82f6" stroke="white" stroke-width="1"/>
+<text x="910.0" y="589" font-family="Inter, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle">-</text>
+<text x="925.0" y="591" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="start">Electrón (e⁻)</text>
+</svg>
