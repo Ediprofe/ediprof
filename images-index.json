@@ -3089,7 +3089,47 @@
       "size": "56KB",
       "url": "https://cdn.ediprofe.com/img/quimica/s344-promedio-ponderado-idea-intuitiva.webp",
       "status": "uploaded"
+    },
+    {
+      "id": "zv4a",
+      "name": "tamano-atomico-y-ubicacion-en-tabla-periodica.webp",
+      "materia": "quimica",
+      "type": "lesson",
+      "date": "2026-02-21",
+      "size": "73KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/zv4a-tamano-atomico-y-ubicacion-en-tabla-periodica.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "8z32",
+      "name": "propiedades-de-los-metales.webp",
+      "materia": "quimica",
+      "type": "lesson",
+      "date": "2026-02-21",
+      "size": "98KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/8z32-propiedades-de-los-metales.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "fv0y",
+      "name": "propiedades-de-los-no-metales.webp",
+      "materia": "quimica",
+      "type": "lesson",
+      "date": "2026-02-21",
+      "size": "74KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/fv0y-propiedades-de-los-no-metales.webp",
+      "status": "uploaded"
+    },
+    {
+      "id": "f29z",
+      "name": "metales-vs-no-metales.webp",
+      "materia": "quimica",
+      "type": "lesson",
+      "date": "2026-02-21",
+      "size": "63KB",
+      "url": "https://cdn.ediprofe.com/img/quimica/f29z-metales-vs-no-metales.webp",
+      "status": "uploaded"
     }
   ],
-  "lastUpdated": "2026-02-21T18:38:52.761Z"
+  "lastUpdated": "2026-02-21T19:44:06.627Z"
 }

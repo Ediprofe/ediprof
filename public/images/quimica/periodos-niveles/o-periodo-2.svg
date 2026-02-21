@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 350">
+<rect width="400" height="350" fill="#f8fafc" rx="12"/>
+<text x="200.0" y="28" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle">Oxígeno (O)</text>
+<text x="200.0" y="45" font-family="Inter, sans-serif" font-size="11" fill="#3b82f6" text-anchor="middle">Período 2</text>
+<circle cx="200" cy="175" r="18" fill="#8b5cf6" stroke="white" stroke-width="2"/>
+<text x="200" y="180" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">O</text>
+<circle cx="200" cy="175" r="50" fill="none" stroke="#e2e8f0" stroke-width="1.5" opacity="0.9"/>
+<circle cx="200.0" cy="125.0" r="5" fill="#3b82f6" stroke="white" stroke-width="1"/>
+<text x="200.0" y="127.0" font-family="Inter, sans-serif" font-size="6" font-weight="bold" fill="white" text-anchor="middle">-</text>
+<circle cx="200.0" cy="225.0" r="5" fill="#3b82f6" stroke="white" stroke-width="1"/>
+<text x="200.0" y="227.0" font-family="Inter, sans-serif" font-size="6" font-weight="bold" fill="white" text-anchor="middle">-</text>
+<circle cx="200" cy="175" r="85" fill="none" stroke="#e2e8f0" stroke-width="1.5" opacity="0.9"/>
+<circle cx="200.0" cy="90.0" r="5" fill="#3b82f6" stroke="white" stroke-width="1"/>
+<text x="200.0" y="92.0" font-family="Inter, sans-serif" font-size="6" font-weight="bold" fill="white" text-anchor="middle">-</text>
+<circle cx="273.61215932167727" cy="132.5" r="5" fill="#3b82f6" stroke="white" stroke-width="1"/>
+<text x="273.61215932167727" y="134.5" font-family="Inter, sans-serif" font-size="6" font-weight="bold" fill="white" text-anchor="middle">-</text>
+<circle cx="273.61215932167727" cy="217.5" r="5" fill="#3b82f6" stroke="white" stroke-width="1"/>
+<text x="273.61215932167727" y="219.5" font-family="Inter, sans-serif" font-size="6" font-weight="bold" fill="white" text-anchor="middle">-</text>
+<circle cx="200.0" cy="260.0" r="5" fill="#3b82f6" stroke="white" stroke-width="1"/>
+<text x="200.0" y="262.0" font-family="Inter, sans-serif" font-size="6" font-weight="bold" fill="white" text-anchor="middle">-</text>
+<circle cx="126.38784067832273" cy="217.50000000000003" r="5" fill="#3b82f6" stroke="white" stroke-width="1"/>
+<text x="126.38784067832273" y="219.50000000000003" font-family="Inter, sans-serif" font-size="6" font-weight="bold" fill="white" text-anchor="middle">-</text>
+<circle cx="126.38784067832268" cy="132.50000000000006" r="5" fill="#3b82f6" stroke="white" stroke-width="1"/>
+<text x="126.38784067832268" y="134.50000000000006" font-family="Inter, sans-serif" font-size="6" font-weight="bold" fill="white" text-anchor="middle">-</text>
+<text x="200.0" y="300" font-family="Inter, sans-serif" font-size="13" font-weight="bold" fill="#1e293b" text-anchor="middle">2 niveles de energía</text>
+<text x="200.0" y="320" font-family="Inter, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">Configuración: 2, 6</text>
+</svg>

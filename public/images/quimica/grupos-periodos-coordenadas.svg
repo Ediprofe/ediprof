@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 290">
+<rect width="900" height="290" fill="#f8fafc" rx="12"/>
+<text x="350.0" y="25" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle">Grupos y Períodos: Coordenadas de la Tabla</text>
+<text x="350.0" y="42" font-family="Inter, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">Cada elemento tiene una posición única (grupo, período)</text>
+<text x="61.0" y="87" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="#3b82f6" text-anchor="middle">1</text>
+<text x="95.0" y="87" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="#3b82f6" text-anchor="middle">2</text>
+<text x="129.0" y="87" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="#3b82f6" text-anchor="middle">3</text>
+<text x="163.0" y="87" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="#3b82f6" text-anchor="middle">4</text>
+<text x="197.0" y="87" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="#3b82f6" text-anchor="middle">5</text>
+<text x="231.0" y="87" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="#3b82f6" text-anchor="middle">6</text>
+<text x="265.0" y="87" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="#3b82f6" text-anchor="middle">7</text>
+<text x="299.0" y="87" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="#3b82f6" text-anchor="middle">8</text>
+<text x="333.0" y="87" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="#3b82f6" text-anchor="middle">9</text>
+<text x="367.0" y="87" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="#3b82f6" text-anchor="middle">10</text>
+<text x="401.0" y="87" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="#3b82f6" text-anchor="middle">11</text>
+<text x="435.0" y="87" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="#3b82f6" text-anchor="middle">12</text>
+<text x="469.0" y="87" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="#3b82f6" text-anchor="middle">13</text>
+<text x="503.0" y="87" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="#3b82f6" text-anchor="middle">14</text>
+<text x="537.0" y="87" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="#3b82f6" text-anchor="middle">15</text>
+<text x="571.0" y="87" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="#3b82f6" text-anchor="middle">16</text>
+<text x="605.0" y="87" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="#3b82f6" text-anchor="middle">17</text>
+<text x="639.0" y="87" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="#3b82f6" text-anchor="middle">18</text>
+<text x="351" y="73" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#3b82f6" text-anchor="middle">GRUPOS →</text>
+<text x="37" y="112.0" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="#8b5cf6" text-anchor="end">1</text>
+<text x="37" y="142.0" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="#8b5cf6" text-anchor="end">2</text>
+<text x="37" y="172.0" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="#8b5cf6" text-anchor="end">3</text>
+<text x="37" y="202.0" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="#8b5cf6" text-anchor="end">4</text>
+<text x="15" y="169.0" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="#8b5cf6" text-anchor="middle" transform="rotate(-90 15 169.0)">PERÍODOS ↓</text>
+<rect x="45" y="95" width="32" height="28" fill="white" stroke="#e2e8f0" stroke-width="1.5" rx="4"/>
+<text x="61.0" y="113.0" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle">H</text>
+<rect x="623" y="95" width="32" height="28" fill="white" stroke="#e2e8f0" stroke-width="1.5" rx="4"/>
+<text x="639.0" y="113.0" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle">He</text>
+<rect x="45" y="125" width="32" height="28" fill="white" stroke="#e2e8f0" stroke-width="1.5" rx="4"/>
+<text x="61.0" y="143.0" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle">Li</text>
+<rect x="79" y="125" width="32" height="28" fill="white" stroke="#e2e8f0" stroke-width="1.5" rx="4"/>
+<text x="95.0" y="143.0" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle">Be</text>
+<rect x="453" y="125" width="32" height="28" fill="white" stroke="#e2e8f0" stroke-width="1.5" rx="4"/>
+<text x="469.0" y="143.0" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle">B</text>
+<rect x="487" y="125" width="32" height="28" fill="white" stroke="#e2e8f0" stroke-width="1.5" rx="4"/>
+<text x="503.0" y="143.0" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle">C</text>
+<rect x="521" y="125" width="32" height="28" fill="white" stroke="#e2e8f0" stroke-width="1.5" rx="4"/>
+<text x="537.0" y="143.0" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle">N</text>
+<rect x="555" y="125" width="32" height="28" fill="white" stroke="#e2e8f0" stroke-width="1.5" rx="4"/>
+<text x="571.0" y="143.0" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle">O</text>
+<rect x="589" y="125" width="32" height="28" fill="white" stroke="#e2e8f0" stroke-width="1.5" rx="4"/>
+<text x="605.0" y="143.0" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle">F</text>
+<rect x="623" y="125" width="32" height="28" fill="white" stroke="#e2e8f0" stroke-width="1.5" rx="4"/>
+<text x="639.0" y="143.0" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle">Ne</text>
+<rect x="45" y="155" width="32" height="28" fill="#3b82f6" stroke="#3b82f6" stroke-width="1.5" rx="4"/>
+<text x="61.0" y="173.0" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="white" text-anchor="middle">Na</text>
+<rect x="79" y="155" width="32" height="28" fill="white" stroke="#e2e8f0" stroke-width="1.5" rx="4"/>
+<text x="95.0" y="173.0" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle">Mg</text>
+<rect x="453" y="155" width="32" height="28" fill="white" stroke="#e2e8f0" stroke-width="1.5" rx="4"/>
+<text x="469.0" y="173.0" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle">Al</text>
+<rect x="487" y="155" width="32" height="28" fill="white" stroke="#e2e8f0" stroke-width="1.5" rx="4"/>
+<text x="503.0" y="173.0" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle">Si</text>
+<rect x="521" y="155" width="32" height="28" fill="white" stroke="#e2e8f0" stroke-width="1.5" rx="4"/>
+<text x="537.0" y="173.0" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle">P</text>
+<rect x="555" y="155" width="32" height="28" fill="white" stroke="#e2e8f0" stroke-width="1.5" rx="4"/>
+<text x="571.0" y="173.0" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle">S</text>
+<rect x="589" y="155" width="32" height="28" fill="#22c55e" stroke="#22c55e" stroke-width="1.5" rx="4"/>
+<text x="605.0" y="173.0" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="white" text-anchor="middle">Cl</text>
+<rect x="623" y="155" width="32" height="28" fill="white" stroke="#e2e8f0" stroke-width="1.5" rx="4"/>
+<text x="639.0" y="173.0" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle">Ar</text>
+<rect x="45" y="185" width="32" height="28" fill="white" stroke="#e2e8f0" stroke-width="1.5" rx="4"/>
+<text x="61.0" y="203.0" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle">K</text>
+<rect x="79" y="185" width="32" height="28" fill="white" stroke="#e2e8f0" stroke-width="1.5" rx="4"/>
+<text x="95.0" y="203.0" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle">Ca</text>
+<rect x="113" y="185" width="32" height="28" fill="white" stroke="#e2e8f0" stroke-width="1.5" rx="4"/>
+<text x="129.0" y="203.0" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle">Sc</text>
+<rect x="147" y="185" width="32" height="28" fill="white" stroke="#e2e8f0" stroke-width="1.5" rx="4"/>
+<text x="163.0" y="203.0" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle">Ti</text>
+<rect x="181" y="185" width="32" height="28" fill="white" stroke="#e2e8f0" stroke-width="1.5" rx="4"/>
+<text x="197.0" y="203.0" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle">V</text>
+<rect x="215" y="185" width="32" height="28" fill="white" stroke="#e2e8f0" stroke-width="1.5" rx="4"/>
+<text x="231.0" y="203.0" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle">Cr</text>
+<rect x="249" y="185" width="32" height="28" fill="white" stroke="#e2e8f0" stroke-width="1.5" rx="4"/>
+<text x="265.0" y="203.0" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle">Mn</text>
+<rect x="283" y="185" width="32" height="28" fill="#f97316" stroke="#f97316" stroke-width="1.5" rx="4"/>
+<text x="299.0" y="203.0" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="white" text-anchor="middle">Fe</text>
+<rect x="317" y="185" width="32" height="28" fill="white" stroke="#e2e8f0" stroke-width="1.5" rx="4"/>
+<text x="333.0" y="203.0" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle">Co</text>
+<rect x="351" y="185" width="32" height="28" fill="white" stroke="#e2e8f0" stroke-width="1.5" rx="4"/>
+<text x="367.0" y="203.0" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle">Ni</text>
+<rect x="385" y="185" width="32" height="28" fill="white" stroke="#e2e8f0" stroke-width="1.5" rx="4"/>
+<text x="401.0" y="203.0" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle">Cu</text>
+<rect x="419" y="185" width="32" height="28" fill="white" stroke="#e2e8f0" stroke-width="1.5" rx="4"/>
+<text x="435.0" y="203.0" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle">Zn</text>
+<rect x="453" y="185" width="32" height="28" fill="white" stroke="#e2e8f0" stroke-width="1.5" rx="4"/>
+<text x="469.0" y="203.0" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle">Ga</text>
+<rect x="487" y="185" width="32" height="28" fill="white" stroke="#e2e8f0" stroke-width="1.5" rx="4"/>
+<text x="503.0" y="203.0" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle">Ge</text>
+<rect x="521" y="185" width="32" height="28" fill="white" stroke="#e2e8f0" stroke-width="1.5" rx="4"/>
+<text x="537.0" y="203.0" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle">As</text>
+<rect x="555" y="185" width="32" height="28" fill="white" stroke="#e2e8f0" stroke-width="1.5" rx="4"/>
+<text x="571.0" y="203.0" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle">Se</text>
+<rect x="589" y="185" width="32" height="28" fill="white" stroke="#e2e8f0" stroke-width="1.5" rx="4"/>
+<text x="605.0" y="203.0" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle">Br</text>
+<rect x="623" y="185" width="32" height="28" fill="white" stroke="#e2e8f0" stroke-width="1.5" rx="4"/>
+<text x="639.0" y="203.0" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle">Kr</text>
+<text x="747" y="95" font-family="Inter, sans-serif" font-size="12" font-weight="900" fill="#1e293b" text-anchor="middle">Coordenadas</text>
+<rect x="677" y="120" width="45" height="35" fill="#3b82f6" stroke="#3b82f6" stroke-width="2" rx="6"/>
+<text x="699" y="144" font-family="Inter, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">Na</text>
+<text x="732" y="134" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b">Sodio</text>
+<text x="732" y="150" font-family="Inter, sans-serif" font-size="10" fill="#64748b">Grupo 1 • Período 3</text>
+<rect x="677" y="170" width="45" height="35" fill="#22c55e" stroke="#22c55e" stroke-width="2" rx="6"/>
+<text x="699" y="194" font-family="Inter, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">Cl</text>
+<text x="732" y="184" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b">Cloro</text>
+<text x="732" y="200" font-family="Inter, sans-serif" font-size="10" fill="#64748b">Grupo 17 • Período 3</text>
+<rect x="677" y="220" width="45" height="35" fill="#f97316" stroke="#f97316" stroke-width="2" rx="6"/>
+<text x="699" y="244" font-family="Inter, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">Fe</text>
+<text x="732" y="234" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b">Hierro</text>
+<text x="732" y="250" font-family="Inter, sans-serif" font-size="10" fill="#64748b">Grupo 8 • Período 4</text>
+<rect x="45" y="240" width="300" height="35" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5" rx="6"/>
+<text x="55" y="255" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#3b82f6">Grupos = Columnas verticales (1-18)</text>
+<text x="55" y="268" font-family="Inter, sans-serif" font-size="9" fill="#64748b">Elementos del mismo grupo tienen propiedades similares</text>
+<rect x="365" y="240" width="300" height="35" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1.5" rx="6"/>
+<text x="375" y="255" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#8b5cf6">Períodos = Filas horizontales (1-7)</text>
+<text x="375" y="268" font-family="Inter, sans-serif" font-size="9" fill="#64748b">El número de período = niveles de energía</text>
+</svg>

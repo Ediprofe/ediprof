@@ -29,6 +29,9 @@ La tabla periódica divide los elementos en tres grandes categorías: **metales*
 - Forman una "escalera" que **separa** metales de no metales
 - Ejemplos: B, Si, Ge, As, Sb, Te
 
+
+![Tabla Periódica: Metales y No Metales](/images/quimica/tabla-periodica-metales-no-metales.svg)
+
 ---
 
 ## 📊 Tabla Comparativa
@@ -41,6 +44,8 @@ La tabla periódica divide los elementos en tres grandes categorías: **metales*
 | **Punto de fusión** | **Alto** (1000°C - 1600°C) | **Bajo** (el agua funde a 0°C) |
 | **Maleabilidad** | **Sí** → forman láminas | **No** → se rompen |
 | **Ductilidad** | **Sí** → forman hilos | **No** → se fragmentan |
+
+![metales-vs-no-metales](https://cdn.ediprofe.com/img/quimica/f29z-metales-vs-no-metales.webp)
 
 ---
 
@@ -65,6 +70,9 @@ La tabla periódica divide los elementos en tres grandes categorías: **metales*
 | Aluminio | Al | Aviones, latas |
 | Oro | Au | Joyería |
 | Sodio | Na | Industria química |
+
+![propiedades-de-los-metales](https://cdn.ediprofe.com/img/quimica/8z32-propiedades-de-los-metales.webp)
+
 
 ---
 
@@ -104,6 +112,9 @@ Aunque está hecha de silicio (metaloide), la **fibra óptica** puede formar hil
 ### 💡 El mercurio es líquido
 
 Aunque es metal, el **mercurio (Hg)** es líquido a temperatura ambiente.
+
+![propiedades-de-los-no-metales](https://cdn.ediprofe.com/img/quimica/fv0y-propiedades-de-los-no-metales.webp)
+
 
 ---
 

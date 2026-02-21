@@ -26,6 +26,8 @@ La tabla periódica es una **representación ordenada de los elementos químicos
 **Ejemplo:**
 El Cobre (Cu) tiene Z = 29, lo que significa que posee **29 protones**.
 
+![Tabla Periódica: Metales y No Metales](/images/quimica/tabla-periodica-metales-no-metales.svg)
+
 ---
 
 ## 📖 Localización de los Elementos
@@ -58,6 +60,8 @@ Los elementos se ubican usando dos coordenadas:
 
 Cada elemento tiene una posición única, como en un mapa:
 
+![Grupos y Períodos: Coordenadas de la Tabla](/images/quimica/grupos-periodos-coordenadas.svg)
+
 | Elemento | Grupo | Período |
 |----------|-------|---------|
 | Sodio (Na) | 1 | 3 |
@@ -87,6 +91,8 @@ Los elementos se agrupan en **tres categorías principales**:
 - Forman una "escalera" diagonal que separa metales de no metales
 - Ejemplos: Si, Ge, As, Sb
 
+![Tabla Periódica: Metales y No Metales](/images/quimica/tabla-periodica-metales-no-metales.svg)
+
 ---
 
 ## 📖 Tamaño Atómico y Posición
@@ -102,6 +108,9 @@ La posición en la tabla se relaciona directamente con el **tamaño del átomo**
 
 > Los átomos más grandes están **abajo a la izquierda** (Cs, Fr)
 > Los átomos más pequeños están **arriba a la derecha** (F, He)
+
+![tamano-atomico-y-ubicacion-en-tabla-periodica](https://cdn.ediprofe.com/img/quimica/zv4a-tamano-atomico-y-ubicacion-en-tabla-periodica.webp)
+
 
 ---
 

@@ -16,6 +16,8 @@ El **período** en el que se encuentra un elemento está directamente relacionad
 
 > Los electrones se encuentran en la **periferia**, rodeando el **núcleo**.
 
+![Organización de los electrones en capas](/images/quimica/periodos-niveles/electrones-en-capas.svg)
+
 ### 💡 Capas, órbitas o niveles de energía:
 
 Los electrones no están distribuidos al azar. Se organizan en:
@@ -32,9 +34,27 @@ Los electrones no están distribuidos al azar. Se organizan en:
 
 ## 📖 Período = Número de Niveles
 
+![El período es la fila de la tabla periódica](/images/quimica/periodos-niveles/periodo-como-fila.svg)
+
 ### 💡 Regla fundamental:
 
 > El **período** (fila horizontal) corresponde al **número de niveles de energía** del elemento.
+
+#### Ejemplo: Hidrógeno (H) — Período 1
+
+![Hidrógeno: 1 nivel de energía](/images/quimica/periodos-niveles/h-periodo-1.svg)
+
+#### Ejemplo: Oxígeno (O) — Período 2
+
+![Oxígeno: 2 niveles de energía](/images/quimica/periodos-niveles/o-periodo-2.svg)
+
+#### Ejemplo: Sodio (Na) — Período 3
+
+![Sodio: 3 niveles de energía](/images/quimica/periodos-niveles/na-periodo-3.svg)
+
+#### Ejemplo: Potasio (K) — Período 4
+
+![Potasio: 4 niveles de energía](/images/quimica/periodos-niveles/k-periodo-4.svg)
 
 | Período | Niveles de energía |
 |---------|-------------------|
@@ -67,6 +87,18 @@ A medida que aumenta el período:
 - El átomo es **más grande**
 - Los electrones externos están **más lejos** del núcleo
 
+#### Comparación: Litio vs Cesio
+
+![Tamaño atómico: Li vs Cs](/images/quimica/periodos-niveles/tamano-li-cs.svg)
+
+#### Comparación: Oxígeno vs Azufre
+
+![Tamaño atómico: O vs S](/images/quimica/periodos-niveles/tamano-o-s.svg)
+
+#### Comparación: Sodio vs Potasio
+
+![Tamaño atómico: Na vs K](/images/quimica/periodos-niveles/tamano-na-k.svg)
+
 | Comparación | Período | Niveles | Tamaño |
 |-------------|---------|---------|--------|
 | Na vs K | 3 vs 4 | 3 vs 4 | K > Na |
@@ -76,6 +108,8 @@ A medida que aumenta el período:
 ---
 
 ## 📖 Visualización
+
+![Visualización de Potasio y Oxígeno con sus niveles de energía](/images/quimica/periodos-niveles/potasio-oxigeno.svg)
 
 ### 💡 Potasio (K) - Período 4:
 

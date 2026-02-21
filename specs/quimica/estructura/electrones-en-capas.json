@@ -1,0 +1,16 @@
+{
+  "title": "Organización de los Electrones",
+  "subtitle": "Los electrones se organizan en capas alrededor del núcleo",
+  "atoms": [
+    {
+      "symbol": "Ejemplo",
+      "protons": 6,
+      "neutrons": 6,
+      "electrons_shells": [2, 4],
+      "show_labels": true,
+      "label_shells": true
+    }
+  ],
+  "show_orbit_labels": true,
+  "show_electron_count": true
+}
