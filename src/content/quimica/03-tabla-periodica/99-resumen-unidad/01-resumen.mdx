@@ -1,0 +1,112 @@
+import ConceptMap from '../../../../components/Content/ConceptMap.astro';
+import MapSection from '../../../../components/Content/MapSection.astro';
+import MapItem from '../../../../components/Content/MapItem.astro';
+import MapPoint from '../../../../components/Content/MapPoint.astro';
+import MapStep from '../../../../components/Content/MapStep.astro';
+
+# **Resumen: Tabla Periódica**
+
+<ConceptMap title="Tabla Periódica">
+
+  <MapSection 
+    title="Introducción y Organización"
+    images={[
+      '/images/quimica/tabla-periodica-metales-no-metales.svg',
+      '/images/quimica/grupos-periodos-coordenadas.svg'
+    ]}
+  >
+    <MapItem label="¿Qué es?">
+      <MapPoint>Representación ordenada de los elementos según su **número atómico (Z)**.</MapPoint>
+    </MapItem>
+    <MapItem label="Grupos (Columnas):">
+      <MapPoint>18 grupos verticales. Elementos del mismo grupo tienen propiedades similares.</MapPoint>
+    </MapItem>
+    <MapItem label="Períodos (Filas):">
+      <MapPoint>7 períodos horizontales. Indican el número de **capas de electrones**.</MapPoint>
+    </MapItem>
+    <MapItem label="Ubicación como coordenadas:">
+      <MapPoint>Cada elemento tiene una posición única (grupo, período).</MapPoint>
+    </MapItem>
+  </MapSection>
+
+  <MapSection 
+    title="Metales, No Metales y Metaloides"
+    images={[
+      'https://cdn.ediprofe.com/img/quimica/f29z-metales-vs-no-metales.webp',
+      'https://cdn.ediprofe.com/img/quimica/8z32-propiedades-de-los-metales.webp'
+    ]}
+  >
+    <MapItem label="Metales (Izquierda):">
+      <MapPoint>~80% de los elementos. **Brillantes**, **conductores**, **maleables** y **dúctiles**.</MapPoint>
+      <MapPoint>Generalmente sólidos a temperatura ambiente (excepción: Hg líquido).</MapPoint>
+    </MapItem>
+    <MapItem label="No Metales (Derecha):">
+      <MapPoint>**Opacos**, **no conductores**, **frágiles**. Estados variados (sólido, líquido, gas).</MapPoint>
+      <MapPoint>Esenciales para la vida: C, O, N, H.</MapPoint>
+    </MapItem>
+    <MapItem label="Metaloides (Diagonal):">
+      <MapPoint>Propiedades **intermedias**. Forman la "escalera" que separa metales de no metales.</MapPoint>
+      <MapPoint>Ejemplos: B, Si, Ge, As, Sb, Te.</MapPoint>
+    </MapItem>
+    <MapItem label="Excepción importante:">
+      <MapPoint>El **Hidrógeno (H)** está en grupo 1 pero es **no metal**.</MapPoint>
+    </MapItem>
+  </MapSection>
+
+  <MapSection 
+    title="Tamaño Atómico y Posición"
+    images={[
+      'https://cdn.ediprofe.com/img/quimica/zv4a-tamano-atomico-y-ubicacion-en-tabla-periodica.webp'
+    ]}
+  >
+    <MapItem label="Tendencias del tamaño:">
+      <MapPoint>↓ **Hacia abajo:** Aumenta (más capas de electrones).</MapPoint>
+      <MapPoint>← **Hacia la izquierda:** Aumenta (menos protones tirando).</MapPoint>
+    </MapItem>
+    <MapItem label="Extremos:">
+      <MapPoint>**Más grandes:** Abajo-izquierda (Cs, Fr).</MapPoint>
+      <MapPoint>**Más pequeños:** Arriba-derecha (F, He).</MapPoint>
+    </MapItem>
+  </MapSection>
+
+  <MapSection 
+    title="Tabla Comparativa"
+    images={[
+      'https://cdn.ediprofe.com/img/quimica/fv0y-propiedades-de-los-no-metales.webp'
+    ]}
+  >
+    <MapItem label="Metales vs No Metales:">
+      <MapPoint>**Estado:** Metales = sólidos | No metales = variables.</MapPoint>
+      <MapPoint>**Brillo:** Metales = sí | No metales = no (opacos).</MapPoint>
+      <MapPoint>**Conductividad:** Metales = alta | No metales = baja (aislantes).</MapPoint>
+      <MapPoint>**Maleabilidad:** Metales = sí | No metales = no (frágiles).</MapPoint>
+    </MapItem>
+  </MapSection>
+
+  <MapSection 
+    title="Períodos y Capas de Electrones"
+    images={[
+      '/images/quimica/periodos-niveles/electrones-en-capas.svg',
+      '/images/quimica/periodos-niveles/tamano-na-k.svg'
+    ]}
+  >
+    <MapItem label="Regla Fundamental:">
+      <MapPoint>**Período = Número de capas de electrones**.</MapPoint>
+      <MapPoint>Período 1 → 1 capa, Período 2 → 2 capas, etc.</MapPoint>
+    </MapItem>
+    <MapItem label="Ejemplos:">
+      <MapPoint>**Hidrógeno (H):** Período 1 → 1 capa.</MapPoint>
+      <MapPoint>**Oxígeno (O):** Período 2 → 2 capas.</MapPoint>
+      <MapPoint>**Sodio (Na):** Período 3 → 3 capas.</MapPoint>
+      <MapPoint>**Potasio (K):** Período 4 → 4 capas.</MapPoint>
+    </MapItem>
+    <MapItem label="Relación con tamaño:">
+      <MapPoint>**Más capas = Átomo más grande.** Ej: K > Na > Li.</MapPoint>
+    </MapItem>
+  </MapSection>
+
+</ConceptMap>
+
+---
+
+> **Tip de Repaso:** Recuerda que el **período indica las capas** y el **grupo indica propiedades similares**. Los metales están a la izquierda, los no metales a la derecha, y los metaloides forman la escalera diagonal. ¡Usa estas "coordenadas" para ubicar cualquier elemento!

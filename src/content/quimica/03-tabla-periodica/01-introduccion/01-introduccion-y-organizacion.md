@@ -170,3 +170,105 @@ Clasifica estos elementos como metal, no metal o metaloide: Fe, S, Si, Cu, O
 | O (Oxígeno) | No metal |
 
 </details>
+
+### Ejercicio 4
+¿Cuántos protones tiene el hierro (Fe) si su número atómico es Z=26?
+
+<details>
+<summary>Ver solución</summary>
+
+El hierro tiene **26 protones**.
+
+El número atómico (Z) indica la cantidad de protones en el núcleo.
+
+</details>
+
+### Ejercicio 5
+¿Qué elemento está en el grupo 17 y período 3?
+
+<details>
+<summary>Ver solución</summary>
+
+El **cloro (Cl)** está en:
+- Grupo 17 (halógenos)
+- Período 3
+
+</details>
+
+### Ejercicio 6
+¿Por qué el hidrógeno (H) es una excepción en la tabla periódica?
+
+<details>
+<summary>Ver solución</summary>
+
+El hidrógeno es una excepción porque:
+- Está en el **grupo 1** (izquierda de la tabla)
+- Sin embargo, es un **no metal**, no un metal
+- Es el único no metal en ese grupo
+
+</details>
+
+### Ejercicio 7
+Ordena estos elementos de menor a mayor tamaño atómico: Li, Na, K, H
+
+<details>
+<summary>Ver solución</summary>
+
+De menor a mayor tamaño:
+
+**H < Li < Na < K**
+
+Explicación:
+- H está en período 1 (1 capa)
+- Li está en período 2 (2 capas)
+- Na está en período 3 (3 capas)
+- K está en período 4 (4 capas)
+
+A mayor período, mayor tamaño atómico.
+
+</details>
+
+### Ejercicio 8
+¿En qué grupo se encuentran los gases nobles?
+
+<details>
+<summary>Ver solución</summary>
+
+Los gases nobles se encuentran en el **grupo 18**.
+
+Son elementos muy estables: He, Ne, Ar, Kr, Xe, Rn.
+
+</details>
+
+### Ejercicio 9
+¿Cuál de estos elementos es un metal de transición: Na, Fe, Cl, Ca?
+
+<details>
+<summary>Ver solución</summary>
+
+El **hierro (Fe)** es un metal de transición.
+
+Está en el grupo 8, que pertenece a los grupos 3-12 (metales de transición).
+
+- Na: grupo 1 (metal alcalino)
+- Cl: grupo 17 (halógeno, no metal)
+- Ca: grupo 2 (alcalinotérreo)
+
+</details>
+
+### Ejercicio 10
+¿Dónde están los átomos más pequeños de la tabla periódica?
+
+<details>
+<summary>Ver solución</summary>
+
+Los átomos más pequeños están **arriba a la derecha** de la tabla.
+
+Ejemplos:
+- **Flúor (F)**: período 2, grupo 17
+- **Helio (He)**: período 1, grupo 18
+- **Oxígeno (O)**: período 2, grupo 16
+
+A menor período y mayor grupo, menor tamaño atómico.
+
+</details>

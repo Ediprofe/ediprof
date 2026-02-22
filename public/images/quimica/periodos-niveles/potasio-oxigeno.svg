@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420">
 <rect width="900" height="420" fill="#f8fafc" rx="12"/>
-<text x="450.0" y="28" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle">Comparación: Potasio (4 niveles) vs Oxígeno (2 niveles)</text>
+<text x="450.0" y="28" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle">Comparación: Potasio (4 capas) vs Oxígeno (2 capas)</text>
 <rect x="35" y="45" width="370" height="350" rx="10" fill="white" stroke="#3b82f6" stroke-width="2"/>
 <rect x="35" y="45" width="370" height="32" rx="10" fill="#3b82f6"/>
 <rect x="35" y="69" width="370" height="8" fill="#3b82f6"/>
@@ -49,7 +49,7 @@
 <circle cx="220" cy="200" r="115" fill="none" stroke="#e2e8f0" stroke-width="1.5" opacity="0.9"/>
 <circle cx="220.0" cy="85.0" r="4" fill="#3b82f6" stroke="white" stroke-width="1"/>
 <text x="220.0" y="87.0" font-family="Inter, sans-serif" font-size="6" font-weight="bold" fill="white" text-anchor="middle">-</text>
-<text x="220" y="320" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle">Período 4 → 4 niveles</text>
+<text x="220" y="320" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle">Período 4 → 4 capas</text>
 <text x="220" y="338" font-family="Inter, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">2, 8, 8, 1 = 19 e⁻ (Z=19)</text>
 <rect x="495" y="45" width="370" height="350" rx="10" fill="white" stroke="#22c55e" stroke-width="2"/>
 <rect x="495" y="45" width="370" height="32" rx="10" fill="#22c55e"/>
@@ -75,7 +75,7 @@
 <text x="597.7275866404783" y="249.50000000000003" font-family="Inter, sans-serif" font-size="6" font-weight="bold" fill="white" text-anchor="middle">-</text>
 <circle cx="597.7275866404783" cy="152.50000000000006" r="5" fill="#3b82f6" stroke="white" stroke-width="1"/>
 <text x="597.7275866404783" y="154.50000000000006" font-family="Inter, sans-serif" font-size="6" font-weight="bold" fill="white" text-anchor="middle">-</text>
-<text x="680" y="320" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle">Período 2 → 2 niveles</text>
+<text x="680" y="320" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle">Período 2 → 2 capas</text>
 <text x="680" y="338" font-family="Inter, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">2, 6 = 8 e⁻ (Z=8)</text>
 <text x="450.0" y="205" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#64748b" text-anchor="middle">vs</text>
 </svg>

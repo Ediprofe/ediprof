@@ -1,14 +1,14 @@
-# Períodos y Niveles de Energía
+# Períodos y Capas de Electrones
 
-El **período** en el que se encuentra un elemento está directamente relacionado con el número de **niveles de energía** (capas) que posee. Esta conexión es fundamental para entender la configuración electrónica.
+El **período** en el que se encuentra un elemento está directamente relacionado con el número de **capas de electrones** que posee. Esta conexión es fundamental para entender la configuración electrónica.
 
 ---
 
 ## 🎯 ¿Qué vas a aprender?
 
-- La relación entre período y niveles de energía
+- La relación entre período y capas de electrones
 - Cómo se organizan los electrones en capas
-- Por qué el período indica el número de niveles
+- Por qué el período indica el número de capas
 
 ---
 
@@ -18,69 +18,63 @@ El **período** en el que se encuentra un elemento está directamente relacionad
 
 ![Organización de los electrones en capas](/images/quimica/periodos-niveles/electrones-en-capas.svg)
 
-### 💡 Capas, órbitas o niveles de energía:
+### 💡 Capas de electrones:
 
-Los electrones no están distribuidos al azar. Se organizan en:
+Los electrones no están distribuidos al azar. Se organizan en **capas** alrededor del núcleo, como órbitas alrededor de un planeta.
 
-| Término | Significado |
-|---------|-------------|
-| **Capa** | Región donde se encuentran los electrones |
-| **Órbita** | Trayectoria de los electrones |
-| **Nivel de energía** | Cantidad de energía de esa capa |
-
-> Cada capa funciona como una **órbita**, similar a los planetas alrededor del Sol.
+> Cada capa es como una órbita donde giran los electrones, similar a los planetas alrededor del Sol.
 
 ---
 
-## 📖 Período = Número de Niveles
+## 📖 Período = Número de Capas
 
 ![El período es la fila de la tabla periódica](/images/quimica/periodos-niveles/periodo-como-fila.svg)
 
 ### 💡 Regla fundamental:
 
-> El **período** (fila horizontal) corresponde al **número de niveles de energía** del elemento.
+> El **período** (fila horizontal) corresponde al **número de capas de electrones** del elemento.
 
 #### Ejemplo: Hidrógeno (H) — Período 1
 
-![Hidrógeno: 1 nivel de energía](/images/quimica/periodos-niveles/h-periodo-1.svg)
+![Hidrógeno: 1 capa de electrones](/images/quimica/periodos-niveles/h-periodo-1.svg)
 
 #### Ejemplo: Oxígeno (O) — Período 2
 
-![Oxígeno: 2 niveles de energía](/images/quimica/periodos-niveles/o-periodo-2.svg)
+![Oxígeno: 2 capas de electrones](/images/quimica/periodos-niveles/o-periodo-2.svg)
 
 #### Ejemplo: Sodio (Na) — Período 3
 
-![Sodio: 3 niveles de energía](/images/quimica/periodos-niveles/na-periodo-3.svg)
+![Sodio: 3 capas de electrones](/images/quimica/periodos-niveles/na-periodo-3.svg)
 
 #### Ejemplo: Potasio (K) — Período 4
 
-![Potasio: 4 niveles de energía](/images/quimica/periodos-niveles/k-periodo-4.svg)
+![Potasio: 4 capas de electrones](/images/quimica/periodos-niveles/k-periodo-4.svg)
 
-| Período | Niveles de energía |
+| Período | Capas de electrones |
 |---------|-------------------|
-| 1 | 1 nivel |
-| 2 | 2 niveles |
-| 3 | 3 niveles |
-| 4 | 4 niveles |
-| 5 | 5 niveles |
-| 6 | 6 niveles |
-| 7 | 7 niveles |
+| 1 | 1 capa |
+| 2 | 2 capas |
+| 3 | 3 capas |
+| 4 | 4 capas |
+| 5 | 5 capas |
+| 6 | 6 capas |
+| 7 | 7 capas |
 
 ### 💡 Ejemplos prácticos:
 
-| Elemento | Período | Niveles de energía |
+| Elemento | Período | Capas de electrones |
 |----------|---------|-------------------|
-| **Hidrógeno (H)** | 1 | 1 nivel |
-| **Oxígeno (O)** | 2 | 2 niveles |
-| **Sodio (Na)** | 3 | 3 niveles |
-| **Potasio (K)** | 4 | 4 niveles |
-| **Rubidio (Rb)** | 5 | 5 niveles |
+| **Hidrógeno (H)** | 1 | 1 capa |
+| **Oxígeno (O)** | 2 | 2 capas |
+| **Sodio (Na)** | 3 | 3 capas |
+| **Potasio (K)** | 4 | 4 capas |
+| **Rubidio (Rb)** | 5 | 5 capas |
 
 ---
 
 ## 📖 Relación con el Tamaño Atómico
 
-### 💡 Más niveles = átomo más grande:
+### 💡 Más capas = átomo más grande:
 
 A medida que aumenta el período:
 - Hay **más capas** de electrones
@@ -99,7 +93,7 @@ A medida que aumenta el período:
 
 ![Tamaño atómico: Na vs K](/images/quimica/periodos-niveles/tamano-na-k.svg)
 
-| Comparación | Período | Niveles | Tamaño |
+| Comparación | Período | Capas | Tamaño |
 |-------------|---------|---------|--------|
 | Na vs K | 3 vs 4 | 3 vs 4 | K > Na |
 | O vs S | 2 vs 3 | 2 vs 3 | S > O |
@@ -109,23 +103,23 @@ A medida que aumenta el período:
 
 ## 📖 Visualización
 
-![Visualización de Potasio y Oxígeno con sus niveles de energía](/images/quimica/periodos-niveles/potasio-oxigeno.svg)
+![Visualización de Potasio y Oxígeno con sus capas de electrones](/images/quimica/periodos-niveles/potasio-oxigeno.svg)
 
 ### 💡 Potasio (K) - Período 4:
 
-El potasio tiene **4 niveles de energía**:
-- Nivel 1: 2 electrones
-- Nivel 2: 8 electrones
-- Nivel 3: 8 electrones
-- Nivel 4: 1 electrón
+El potasio tiene **4 capas de electrones**:
+- Capa 1: 2 electrones
+- Capa 2: 8 electrones
+- Capa 3: 8 electrones
+- Capa 4: 1 electrón
 
 **Total:** 19 electrones (Z = 19)
 
 ### 💡 Oxígeno (O) - Período 2:
 
-El oxígeno tiene **2 niveles de energía**:
-- Nivel 1: 2 electrones
-- Nivel 2: 6 electrones
+El oxígeno tiene **2 capas de electrones**:
+- Capa 1: 2 electrones
+- Capa 2: 6 electrones
 
 **Total:** 8 electrones (Z = 8)
 
@@ -136,8 +130,8 @@ El oxígeno tiene **2 niveles de energía**:
 | Concepto | Descripción |
 |----------|-------------|
 | **Período** | Fila horizontal de la tabla |
-| **Nivel de energía** | Capa donde están los electrones |
-| **Relación** | Período = Número de niveles |
+| **Capa de electrones** | Región donde giran los electrones |
+| **Relación** | Período = Número de capas |
 | **Tamaño** | A mayor período, átomo más grande |
 
 ---
@@ -145,36 +139,141 @@ El oxígeno tiene **2 niveles de energía**:
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1
-¿Cuántos niveles de energía tiene el calcio (Ca), que está en el período 4?
+¿Cuántas capas de electrones tiene el calcio (Ca), que está en el período 4?
 
 <details>
 <summary>Ver solución</summary>
 
-El calcio tiene **4 niveles de energía** porque está en el período 4.
+El calcio tiene **4 capas de electrones** porque está en el período 4.
 
 </details>
 
 ### Ejercicio 2
-¿Cuál tiene más niveles de energía: el cloro (Cl) o el bromo (Br)?
+¿Cuál tiene más capas de electrones: el cloro (Cl) o el bromo (Br)?
 
 <details>
 <summary>Ver solución</summary>
 
-- Cloro (Cl): período 3 → **3 niveles**
-- Bromo (Br): período 4 → **4 niveles**
+- Cloro (Cl): período 3 → **3 capas**
+- Bromo (Br): período 4 → **4 capas**
 
-El **bromo** tiene más niveles de energía.
+El **bromo** tiene más capas de electrones.
 
 </details>
 
 ### Ejercicio 3
-Si un elemento tiene 5 niveles de energía, ¿en qué período se encuentra?
+Si un elemento tiene 5 capas de electrones, ¿en qué período se encuentra?
 
 <details>
 <summary>Ver solución</summary>
 
-Si tiene 5 niveles de energía, está en el **período 5**.
+Si tiene 5 capas de electrones, está en el **período 5**.
 
 Ejemplos: Rubidio (Rb), Estroncio (Sr), Yodo (I)
+
+</details>
+
+### Ejercicio 4
+¿Cuántas capas de electrones tiene el helio (He)?
+
+<details>
+<summary>Ver solución</summary>
+
+El helio tiene **1 capa de electrones** porque está en el **período 1**.
+
+Aunque tiene 2 electrones, ambos están en la primera capa.
+
+</details>
+
+### Ejercicio 5
+Ordena estos elementos de menor a mayor número de capas: Li, K, Na, H
+
+<details>
+<summary>Ver solución</summary>
+
+De menor a mayor número de capas:
+
+**H < Li < Na < K**
+
+| Elemento | Período | Capas |
+|----------|---------|-------|
+| H (Hidrógeno) | 1 | 1 capa |
+| Li (Litio) | 2 | 2 capas |
+| Na (Sodio) | 3 | 3 capas |
+| K (Potasio) | 4 | 4 capas |
+
+</details>
+
+### Ejercicio 6
+¿Qué elemento es más grande: el litio (Li) o el sodio (Na)?
+
+<details>
+<summary>Ver solución</summary>
+
+El **sodio (Na)** es más grande porque:
+- Li está en el período 2 (2 capas)
+- Na está en el período 3 (3 capas)
+
+A mayor número de capas, mayor tamaño atómico.
+
+</details>
+
+### Ejercicio 7
+¿Cuántos electrones tiene el sodio (Na) en su capa más externa?
+
+<details>
+<summary>Ver solución</summary>
+
+El sodio (Na, Z=11) tiene **1 electrón** en su capa más externa.
+
+Distribución: 2 electrones en capa 1, 8 electrones en capa 2, 1 electrón en capa 3.
+
+</details>
+
+### Ejercicio 8
+¿En qué período está un elemento si tiene 6 capas de electrones?
+
+<details>
+<summary>Ver solución</summary>
+
+Si tiene 6 capas de electrones, está en el **período 6**.
+
+Ejemplos: Cesio (Cs), Bario (Ba), Oro (Au).
+
+</details>
+
+### Ejercicio 9
+¿Por qué el oxígeno (O) es más pequeño que el azufre (S)?
+
+<details>
+<summary>Ver solución</summary>
+
+El oxígeno es más pequeño porque:
+- O está en el **período 2** (2 capas)
+- S está en el **período 3** (3 capas)
+
+El azufre tiene una capa más de electrones, por lo tanto es más grande.
+
+</details>
+
+### Ejercicio 10
+Completa la tabla:
+
+| Elemento | Período | Capas de electrones |
+|----------|---------|---------------------|
+| H | ? | ? |
+| C | ? | ? |
+| Ne | ? | ? |
+| Ar | ? | ? |
+
+<details>
+<summary>Ver solución</summary>
+
+| Elemento | Período | Capas de electrones |
+|----------|---------|---------------------|
+| H (Hidrógeno) | 1 | 1 capa |
+| C (Carbono) | 2 | 2 capas |
+| Ne (Neón) | 2 | 2 capas |
+| Ar (Argón) | 3 | 3 capas |
 
 </details>

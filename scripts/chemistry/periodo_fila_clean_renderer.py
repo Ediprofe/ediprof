@@ -34,8 +34,13 @@ def generate_svg():
     cell_gap = 2
     group_gap = 80  # Gap between groups 2 and 13
 
+    # Center the table - calculate total width
+    # Table has 8 cells + 1 gap in middle = 8*cell_w + 7*cell_gap + group_gap
+    table_total_width = 8 * cell_w + 7 * cell_gap + group_gap
+    table_start_x = (width - table_total_width) / 2
+
     # Period number position
-    period_x = 25
+    period_x = table_start_x - 20
 
     # Elements per period: (symbol, group_number)
     # Groups: 1, 2, (gap), 13, 14, 15, 16, 17, 18
@@ -79,11 +84,10 @@ def generate_svg():
     # Group to x position mapping
     def group_to_x(group):
         if group <= 2:
-            return period_x + 20 + (group - 1) * (cell_w + cell_gap)
+            return table_start_x + (group - 1) * (cell_w + cell_gap)
         else:
             return (
-                period_x
-                + 20
+                table_start_x
                 + 2 * (cell_w + cell_gap)
                 + group_gap
                 + (group - 13) * (cell_w + cell_gap)

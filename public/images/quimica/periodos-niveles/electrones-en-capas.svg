@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 380">
 <rect width="500" height="380" fill="#f8fafc" rx="12"/>
 <text x="250.0" y="28" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle">Electrones en Capas</text>
-<text x="250.0" y="45" font-family="Inter, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">Se organizan en niveles alrededor del núcleo</text>
+<text x="250.0" y="45" font-family="Inter, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">Se organizan en capas alrededor del núcleo</text>
 <circle cx="250" cy="190" r="20" fill="#8b5cf6" stroke="white" stroke-width="2"/>
 <text x="250" y="195" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">C</text>
 <circle cx="250" cy="190" r="65" fill="none" stroke="#e2e8f0" stroke-width="1.5" opacity="0.9"/>
@@ -24,5 +24,5 @@
 <circle cx="195" cy="340" r="4" fill="#3b82f6" stroke="white" stroke-width="1"/>
 <text x="208" y="343" font-family="Inter, sans-serif" font-size="9" fill="#1e293b">Electrón</text>
 <circle cx="290" cy="340" r="7" fill="none" stroke="#e2e8f0" stroke-width="1"/>
-<text x="305" y="343" font-family="Inter, sans-serif" font-size="9" fill="#1e293b">Capa (2, 4 e⁻)</text>
+<text x="305" y="343" font-family="Inter, sans-serif" font-size="9" fill="#1e293b">Capa de electrones</text>
 </svg>

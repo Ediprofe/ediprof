@@ -170,3 +170,114 @@ Los metales tienen **electrones libres** en su superficie que reflejan la luz, p
 Los no metales no tienen estos electrones libres, por lo que la luz no se refleja de la misma manera y aparecen **opacos**.
 
 </details>
+
+### Ejercicio 4
+¿Qué propiedad permite al azufre (S) ser usado en la industria de llantas de pirotecnia?
+
+<details>
+<summary>Ver solución</summary>
+
+El azufre tiene **punto de fusión bajo**, lo que permite:
+- Fundir a temperaturas relativamente bajas
+- Usarse en fuegos artificiales (pirotecnia)
+- Fácil de manipular industrialmente
+
+</details>
+
+### Ejercicio 5
+¿Por qué el mercurio (Hg) es líquido a temperatura ambiente si es un metal?
+
+<details>
+<summary>Ver solución</summary>
+
+El mercurio es una **excepción** entre los metales porque:
+- Es metal, pero es **líquido** a temperatura ambiente
+- Tiene punto de fusión muy bajo (-39°C)
+- Sus átomos tienen fuerzas de unión débiles
+
+</details>
+
+### Ejercicio 6
+Menciona tres elementos que NO conduzcan electricidad.
+
+<details>
+<summary>Ver solución</summary>
+
+Ejemplos de no metales que NO conducen electricidad (son aislantes):
+- **Oxígeno (O)** - gas del aire
+- **Nitrógeno (N)** - 78% del aire
+- **Azufre (S)** - sólido amarillo
+- **Cloro (Cl)** - gas verdoso
+
+Los no metales tienen los electrones fuertemente unidos, no pueden moverse libremente para conducir electricidad.
+
+</details>
+
+### Ejercicio 7
+¿Qué diferencia hay entre maleabilidad y ductilidad?
+
+<details>
+<summary>Ver solución</summary>
+
+| Propiedad | Descripción | Ejemplo |
+|-----------|-------------|---------|
+| **Maleabilidad** | Capacidad de formar **láminas** delgadas | Papel de aluminio |
+| **Ductilidad** | Capacidad de formar **hilos** delgados | Cables de cobre |
+
+Ambas son propiedades características de los **metales**.
+
+</details>
+
+### Ejercicio 8
+Clasifica estos elementos: Al, Br, Ge, Mg, P
+
+<details>
+<summary>Ver solución</summary>
+
+| Elemento | Tipo | Ubicación en la tabla |
+|----------|------|----------------------|
+| Al (Aluminio) | Metal | Izquierda |
+| Br (Bromo) | No metal | Derecha |
+| Ge (Germanio) | Metaloide | Diagonal |
+| Mg (Magnesio) | Metal | Izquierda |
+| P (Fósforo) | No metal | Derecha |
+
+</details>
+
+### Ejercicio 9
+¿Por qué el silicio (Si) se considera metaloide?
+
+<details>
+<summary>Ver solución</summary>
+
+El silicio es un **metaloide** porque tiene propiedades **intermedias** entre metales y no metales:
+
+**Como metal:**
+- Es sólido a temperatura ambiente
+- Tiene cierto brillo
+
+**Como no metal:**
+- Es semiconductor (no conduce bien la electricidad)
+- Es frágil (no es maleable)
+
+</details>
+
+### Ejercicio 10
+¿Qué elementos formarían la "escalera" de metaloides en la tabla periódica?
+
+<details>
+<summary>Ver solución</summary>
+
+Los metaloides que forman la escalera diagonal son:
+
+**De arriba hacia abajo:**
+- B (Boro)
+- Si (Silicio)
+- Ge (Germanio)
+- As (Arsénico)
+- Sb (Antimonio)
+- Te (Telurio)
+
+Esta escalera **separa** los metales (izquierda) de los no metales (derecha).
+
+</details>

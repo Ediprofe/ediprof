@@ -29,7 +29,7 @@
 <circle cx="150.0" cy="60.0" r="4" fill="#3b82f6" stroke="white" stroke-width="1"/>
 <text x="150.0" y="62.0" font-family="Inter, sans-serif" font-size="6" font-weight="bold" fill="white" text-anchor="middle">-</text>
 <text x="150" y="250" font-family="Inter, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">Sodio — Período 3</text>
-<text x="150" y="265" font-family="Inter, sans-serif" font-size="9" fill="#3b82f6" text-anchor="middle">3 niveles</text>
+<text x="150" y="265" font-family="Inter, sans-serif" font-size="9" fill="#3b82f6" text-anchor="middle">3 capas</text>
 <text x="300.0" y="155" font-family="Inter, sans-serif" font-size="20" font-weight="bold" fill="#64748b" text-anchor="middle">&lt;</text>
 <circle cx="450" cy="150" r="14" fill="#8b5cf6" stroke="white" stroke-width="2"/>
 <text x="450" y="155" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">K</text>
@@ -76,6 +76,6 @@
 <circle cx="450.0" cy="35.0" r="4" fill="#22c55e" stroke="white" stroke-width="1"/>
 <text x="450.0" y="37.0" font-family="Inter, sans-serif" font-size="6" font-weight="bold" fill="white" text-anchor="middle">-</text>
 <text x="450" y="250" font-family="Inter, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">Potasio — Período 4</text>
-<text x="450" y="265" font-family="Inter, sans-serif" font-size="9" fill="#22c55e" text-anchor="middle">4 niveles</text>
+<text x="450" y="265" font-family="Inter, sans-serif" font-size="9" fill="#22c55e" text-anchor="middle">4 capas</text>
 <text x="300.0" y="290" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#1e293b" text-anchor="middle">K > Na (más capas = más grande)</text>
 </svg>

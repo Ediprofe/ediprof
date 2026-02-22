@@ -12,7 +12,7 @@
 <circle cx="150.0" cy="85.0" r="4" fill="#3b82f6" stroke="white" stroke-width="1"/>
 <text x="150.0" y="87.0" font-family="Inter, sans-serif" font-size="6" font-weight="bold" fill="white" text-anchor="middle">-</text>
 <text x="150" y="250" font-family="Inter, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">Litio — Período 2</text>
-<text x="150" y="265" font-family="Inter, sans-serif" font-size="9" fill="#3b82f6" text-anchor="middle">2 niveles</text>
+<text x="150" y="265" font-family="Inter, sans-serif" font-size="9" fill="#3b82f6" text-anchor="middle">2 capas</text>
 <text x="300.0" y="155" font-family="Inter, sans-serif" font-size="20" font-weight="bold" fill="#64748b" text-anchor="middle">&lt;</text>
 <circle cx="450" cy="150" r="14" fill="#8b5cf6" stroke="white" stroke-width="2"/>
 <text x="450" y="155" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">Cs</text>
@@ -133,6 +133,6 @@
 <circle cx="450.0" cy="15.0" r="4" fill="#22c55e" stroke="white" stroke-width="1"/>
 <text x="450.0" y="17.0" font-family="Inter, sans-serif" font-size="6" font-weight="bold" fill="white" text-anchor="middle">-</text>
 <text x="450" y="250" font-family="Inter, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">Cesio — Período 6</text>
-<text x="450" y="265" font-family="Inter, sans-serif" font-size="9" fill="#22c55e" text-anchor="middle">6 niveles</text>
+<text x="450" y="265" font-family="Inter, sans-serif" font-size="9" fill="#22c55e" text-anchor="middle">6 capas</text>
 <text x="300.0" y="290" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#1e293b" text-anchor="middle">Cs > Li (más capas = más grande)</text>
 </svg>

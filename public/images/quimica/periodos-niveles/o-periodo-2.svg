@@ -22,6 +22,6 @@
 <text x="126.38784067832273" y="219.50000000000003" font-family="Inter, sans-serif" font-size="6" font-weight="bold" fill="white" text-anchor="middle">-</text>
 <circle cx="126.38784067832268" cy="132.50000000000006" r="5" fill="#3b82f6" stroke="white" stroke-width="1"/>
 <text x="126.38784067832268" y="134.50000000000006" font-family="Inter, sans-serif" font-size="6" font-weight="bold" fill="white" text-anchor="middle">-</text>
-<text x="200.0" y="300" font-family="Inter, sans-serif" font-size="13" font-weight="bold" fill="#1e293b" text-anchor="middle">2 niveles de energía</text>
+<text x="200.0" y="300" font-family="Inter, sans-serif" font-size="13" font-weight="bold" fill="#1e293b" text-anchor="middle">2 capas de energía</text>
 <text x="200.0" y="320" font-family="Inter, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">Configuración: 2, 6</text>
 </svg>
