@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560">
+  <defs>
+        <marker id="arrow-14b8a6-18" markerWidth="18" markerHeight="18" 
+                refX="16.2" refY="9.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 18,9.0 0,18" fill="#14b8a6"/>
+        </marker>
+
+        <marker id="arrow-14b8a6-18" markerWidth="18" markerHeight="18" 
+                refX="16.2" refY="9.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 18,9.0 0,18" fill="#14b8a6"/>
+        </marker>
+
+        <marker id="arrow-f97316-18" markerWidth="18" markerHeight="18" 
+                refX="16.2" refY="9.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 18,9.0 0,18" fill="#f97316"/>
+        </marker>
+
+        <marker id="arrow-f97316-18" markerWidth="18" markerHeight="18" 
+                refX="16.2" refY="9.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 18,9.0 0,18" fill="#f97316"/>
+        </marker></defs>
+  <rect x="0.00" y="0.00" width="800.00" height="560.00" fill="#f8fafc" stroke="none" stroke-width="0" rx="12"  />
+  <text x="400.00" y="45.00" font-family="Inter, sans-serif" font-size="26" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Energía y Atracción en el Átomo</text>
+  <circle cx="400.00" cy="280.00" r="60.00" fill="none" stroke="#334155" stroke-width="2.5"  />
+  <text x="400.00" y="212.00" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#334155" text-anchor="middle" dominant-baseline="middle">n = 1</text>
+  <circle cx="400.00" cy="220.00" r="7.00" fill="#3b82f6" stroke="#ffffff" stroke-width="1.5"  />
+  <text x="400.00" y="222.00" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="400.00" cy="340.00" r="7.00" fill="#3b82f6" stroke="#ffffff" stroke-width="1.5"  />
+  <text x="400.00" y="342.00" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="400.00" cy="280.00" r="105.00" fill="none" stroke="#334155" stroke-width="2.5"  />
+  <text x="400.00" y="167.00" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#334155" text-anchor="middle" dominant-baseline="middle">n = 2</text>
+  <circle cx="400.00" cy="175.00" r="7.00" fill="#3b82f6" stroke="#ffffff" stroke-width="1.5"  />
+  <text x="400.00" y="177.00" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="474.25" cy="205.75" r="7.00" fill="#3b82f6" stroke="#ffffff" stroke-width="1.5"  />
+  <text x="474.25" y="207.75" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="505.00" cy="280.00" r="7.00" fill="#3b82f6" stroke="#ffffff" stroke-width="1.5"  />
+  <text x="505.00" y="282.00" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="474.25" cy="354.25" r="7.00" fill="#3b82f6" stroke="#ffffff" stroke-width="1.5"  />
+  <text x="474.25" y="356.25" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="400.00" cy="385.00" r="7.00" fill="#3b82f6" stroke="#ffffff" stroke-width="1.5"  />
+  <text x="400.00" y="387.00" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="325.75" cy="354.25" r="7.00" fill="#3b82f6" stroke="#ffffff" stroke-width="1.5"  />
+  <text x="325.75" y="356.25" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="295.00" cy="280.00" r="7.00" fill="#3b82f6" stroke="#ffffff" stroke-width="1.5"  />
+  <text x="295.00" y="282.00" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="325.75" cy="205.75" r="7.00" fill="#3b82f6" stroke="#ffffff" stroke-width="1.5"  />
+  <text x="325.75" y="207.75" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="400.00" cy="280.00" r="150.00" fill="none" stroke="#334155" stroke-width="2.5"  />
+  <text x="400.00" y="122.00" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#334155" text-anchor="middle" dominant-baseline="middle">n = 3</text>
+  <circle cx="400.00" cy="130.00" r="7.00" fill="#3b82f6" stroke="#ffffff" stroke-width="1.5"  />
+  <text x="400.00" y="132.00" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="506.07" cy="173.93" r="7.00" fill="#3b82f6" stroke="#ffffff" stroke-width="1.5"  />
+  <text x="506.07" y="175.93" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="550.00" cy="280.00" r="7.00" fill="#3b82f6" stroke="#ffffff" stroke-width="1.5"  />
+  <text x="550.00" y="282.00" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="506.07" cy="386.07" r="7.00" fill="#3b82f6" stroke="#ffffff" stroke-width="1.5"  />
+  <text x="506.07" y="388.07" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="400.00" cy="430.00" r="7.00" fill="#3b82f6" stroke="#ffffff" stroke-width="1.5"  />
+  <text x="400.00" y="432.00" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="293.93" cy="386.07" r="7.00" fill="#3b82f6" stroke="#ffffff" stroke-width="1.5"  />
+  <text x="293.93" y="388.07" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="250.00" cy="280.00" r="7.00" fill="#3b82f6" stroke="#ffffff" stroke-width="1.5"  />
+  <text x="250.00" y="282.00" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="293.93" cy="173.93" r="7.00" fill="#3b82f6" stroke="#ffffff" stroke-width="1.5"  />
+  <text x="293.93" y="175.93" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="400.00" cy="280.00" r="195.00" fill="none" stroke="#334155" stroke-width="2.5"  />
+  <text x="400.00" y="77.00" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#334155" text-anchor="middle" dominant-baseline="middle">n = 4</text>
+  <circle cx="400.00" cy="85.00" r="7.00" fill="#3b82f6" stroke="#ffffff" stroke-width="1.5"  />
+  <text x="400.00" y="87.00" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="400.00" cy="280.00" r="30.00" fill="#ef4444" stroke="#ffffff" stroke-width="3"  />
+  <text x="400.00" y="288.00" font-family="Inter, sans-serif" font-size="32" font-weight="bold" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">+</text>
+  <text x="400.00" y="330.00" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">NÚCLEO</text>
+  <line x1="80.00" y1="475.00" x2="80.00" y2="335.00" stroke="#14b8a6" stroke-width="6"  marker-end="url(#arrow-14b8a6-18)"/>
+  <line x1="80.00" y1="85.00" x2="80.00" y2="225.00" stroke="#14b8a6" stroke-width="6"  marker-end="url(#arrow-14b8a6-18)"/>
+  <text x="80.00" y="265.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#14b8a6" text-anchor="middle" dominant-baseline="middle">ATRACCIÓN</text>
+  <text x="80.00" y="295.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#14b8a6" text-anchor="middle" dominant-baseline="middle">AL NÚCLEO</text>
+  <line x1="720.00" y1="225.00" x2="720.00" y2="85.00" stroke="#f97316" stroke-width="6"  marker-end="url(#arrow-f97316-18)"/>
+  <line x1="720.00" y1="335.00" x2="720.00" y2="475.00" stroke="#f97316" stroke-width="6"  marker-end="url(#arrow-f97316-18)"/>
+  <text x="720.00" y="265.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#f97316" text-anchor="middle" dominant-baseline="middle">MAYOR</text>
+  <text x="720.00" y="295.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#f97316" text-anchor="middle" dominant-baseline="middle">ENERGÍA</text>
+  <text x="400.00" y="515.00" font-family="Inter, sans-serif" font-size="12" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">Electrones cercanos: Máxima atracción, mínima energía</text>
+  <text x="400.00" y="535.00" font-family="Inter, sans-serif" font-size="12" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">Electrones lejanos: Mínima atracción, máxima energía</text>
+</svg>

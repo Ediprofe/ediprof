@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 750">
+  <defs>
+        <marker id="arrow-94a3b8-10" markerWidth="10" markerHeight="10" 
+                refX="9.0" refY="5.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 10,5.0 0,10" fill="#94a3b8"/>
+        </marker>
+
+        <marker id="arrow-94a3b8-10" markerWidth="10" markerHeight="10" 
+                refX="9.0" refY="5.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 10,5.0 0,10" fill="#94a3b8"/>
+        </marker>
+
+        <marker id="arrow-94a3b8-10" markerWidth="10" markerHeight="10" 
+                refX="9.0" refY="5.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 10,5.0 0,10" fill="#94a3b8"/>
+        </marker>
+
+        <marker id="arrow-94a3b8-10" markerWidth="10" markerHeight="10" 
+                refX="9.0" refY="5.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 10,5.0 0,10" fill="#94a3b8"/>
+        </marker>
+
+        <marker id="arrow-94a3b8-10" markerWidth="10" markerHeight="10" 
+                refX="9.0" refY="5.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 10,5.0 0,10" fill="#94a3b8"/>
+        </marker>
+
+        <marker id="arrow-94a3b8-10" markerWidth="10" markerHeight="10" 
+                refX="9.0" refY="5.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 10,5.0 0,10" fill="#94a3b8"/>
+        </marker>
+
+        <marker id="arrow-94a3b8-10" markerWidth="10" markerHeight="10" 
+                refX="9.0" refY="5.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 10,5.0 0,10" fill="#94a3b8"/>
+        </marker>
+
+        <marker id="arrow-94a3b8-10" markerWidth="10" markerHeight="10" 
+                refX="9.0" refY="5.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 10,5.0 0,10" fill="#94a3b8"/>
+        </marker>
+
+        <marker id="arrow-94a3b8-10" markerWidth="10" markerHeight="10" 
+                refX="9.0" refY="5.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 10,5.0 0,10" fill="#94a3b8"/>
+        </marker>
+
+        <marker id="arrow-94a3b8-10" markerWidth="10" markerHeight="10" 
+                refX="9.0" refY="5.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 10,5.0 0,10" fill="#94a3b8"/>
+        </marker></defs>
+  <rect x="0.00" y="0.00" width="650.00" height="750.00" fill="#f8fafc" stroke="none" stroke-width="0" rx="12"  />
+  <text x="325.00" y="45.00" font-family="Inter, sans-serif" font-size="28" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Diagrama de Moeller</text>
+  <text x="325.00" y="75.00" font-family="Inter, sans-serif" font-size="16" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">(Regla de las Diagonales)</text>
+  <rect x="100.00" y="130.00" width="70.00" height="70.00" fill="#fbbf24" stroke="none" stroke-width="0" rx="0"  />
+  <text x="135.00" y="173.00" font-family="Inter, sans-serif" font-size="32" font-weight="900" fill="black" text-anchor="middle" dominant-baseline="middle">1s</text>
+  <rect x="100.00" y="215.00" width="70.00" height="70.00" fill="#fbbf24" stroke="none" stroke-width="0" rx="0"  />
+  <text x="135.00" y="258.00" font-family="Inter, sans-serif" font-size="32" font-weight="900" fill="black" text-anchor="middle" dominant-baseline="middle">2s</text>
+  <rect x="185.00" y="215.00" width="70.00" height="70.00" fill="#3b82f6" stroke="none" stroke-width="0" rx="0"  />
+  <text x="220.00" y="258.00" font-family="Inter, sans-serif" font-size="32" font-weight="900" fill="black" text-anchor="middle" dominant-baseline="middle">2p</text>
+  <rect x="100.00" y="300.00" width="70.00" height="70.00" fill="#fbbf24" stroke="none" stroke-width="0" rx="0"  />
+  <text x="135.00" y="343.00" font-family="Inter, sans-serif" font-size="32" font-weight="900" fill="black" text-anchor="middle" dominant-baseline="middle">3s</text>
+  <rect x="185.00" y="300.00" width="70.00" height="70.00" fill="#3b82f6" stroke="none" stroke-width="0" rx="0"  />
+  <text x="220.00" y="343.00" font-family="Inter, sans-serif" font-size="32" font-weight="900" fill="black" text-anchor="middle" dominant-baseline="middle">3p</text>
+  <rect x="270.00" y="300.00" width="70.00" height="70.00" fill="#ef4444" stroke="none" stroke-width="0" rx="0"  />
+  <text x="305.00" y="343.00" font-family="Inter, sans-serif" font-size="32" font-weight="900" fill="black" text-anchor="middle" dominant-baseline="middle">3d</text>
+  <rect x="100.00" y="385.00" width="70.00" height="70.00" fill="#fbbf24" stroke="none" stroke-width="0" rx="0"  />
+  <text x="135.00" y="428.00" font-family="Inter, sans-serif" font-size="32" font-weight="900" fill="black" text-anchor="middle" dominant-baseline="middle">4s</text>
+  <rect x="185.00" y="385.00" width="70.00" height="70.00" fill="#3b82f6" stroke="none" stroke-width="0" rx="0"  />
+  <text x="220.00" y="428.00" font-family="Inter, sans-serif" font-size="32" font-weight="900" fill="black" text-anchor="middle" dominant-baseline="middle">4p</text>
+  <rect x="270.00" y="385.00" width="70.00" height="70.00" fill="#ef4444" stroke="none" stroke-width="0" rx="0"  />
+  <text x="305.00" y="428.00" font-family="Inter, sans-serif" font-size="32" font-weight="900" fill="black" text-anchor="middle" dominant-baseline="middle">4d</text>
+  <rect x="355.00" y="385.00" width="70.00" height="70.00" fill="#84cc16" stroke="none" stroke-width="0" rx="0"  />
+  <text x="390.00" y="428.00" font-family="Inter, sans-serif" font-size="32" font-weight="900" fill="black" text-anchor="middle" dominant-baseline="middle">4f</text>
+  <rect x="100.00" y="470.00" width="70.00" height="70.00" fill="#fbbf24" stroke="none" stroke-width="0" rx="0"  />
+  <text x="135.00" y="513.00" font-family="Inter, sans-serif" font-size="32" font-weight="900" fill="black" text-anchor="middle" dominant-baseline="middle">5s</text>
+  <rect x="185.00" y="470.00" width="70.00" height="70.00" fill="#3b82f6" stroke="none" stroke-width="0" rx="0"  />
+  <text x="220.00" y="513.00" font-family="Inter, sans-serif" font-size="32" font-weight="900" fill="black" text-anchor="middle" dominant-baseline="middle">5p</text>
+  <rect x="270.00" y="470.00" width="70.00" height="70.00" fill="#ef4444" stroke="none" stroke-width="0" rx="0"  />
+  <text x="305.00" y="513.00" font-family="Inter, sans-serif" font-size="32" font-weight="900" fill="black" text-anchor="middle" dominant-baseline="middle">5d</text>
+  <rect x="355.00" y="470.00" width="70.00" height="70.00" fill="#84cc16" stroke="none" stroke-width="0" rx="0"  />
+  <text x="390.00" y="513.00" font-family="Inter, sans-serif" font-size="32" font-weight="900" fill="black" text-anchor="middle" dominant-baseline="middle">5f</text>
+  <rect x="100.00" y="555.00" width="70.00" height="70.00" fill="#fbbf24" stroke="none" stroke-width="0" rx="0"  />
+  <text x="135.00" y="598.00" font-family="Inter, sans-serif" font-size="32" font-weight="900" fill="black" text-anchor="middle" dominant-baseline="middle">6s</text>
+  <rect x="185.00" y="555.00" width="70.00" height="70.00" fill="#3b82f6" stroke="none" stroke-width="0" rx="0"  />
+  <text x="220.00" y="598.00" font-family="Inter, sans-serif" font-size="32" font-weight="900" fill="black" text-anchor="middle" dominant-baseline="middle">6p</text>
+  <rect x="270.00" y="555.00" width="70.00" height="70.00" fill="#ef4444" stroke="none" stroke-width="0" rx="0"  />
+  <text x="305.00" y="598.00" font-family="Inter, sans-serif" font-size="32" font-weight="900" fill="black" text-anchor="middle" dominant-baseline="middle">6d</text>
+  <rect x="355.00" y="555.00" width="70.00" height="70.00" fill="#84cc16" stroke="none" stroke-width="0" rx="0"  />
+  <text x="390.00" y="598.00" font-family="Inter, sans-serif" font-size="32" font-weight="900" fill="black" text-anchor="middle" dominant-baseline="middle">6f</text>
+  <rect x="100.00" y="640.00" width="70.00" height="70.00" fill="#fbbf24" stroke="none" stroke-width="0" rx="0"  />
+  <text x="135.00" y="683.00" font-family="Inter, sans-serif" font-size="32" font-weight="900" fill="black" text-anchor="middle" dominant-baseline="middle">7s</text>
+  <rect x="185.00" y="640.00" width="70.00" height="70.00" fill="#3b82f6" stroke="none" stroke-width="0" rx="0"  />
+  <text x="220.00" y="683.00" font-family="Inter, sans-serif" font-size="32" font-weight="900" fill="black" text-anchor="middle" dominant-baseline="middle">7p</text>
+  <rect x="270.00" y="640.00" width="70.00" height="70.00" fill="#ef4444" stroke="none" stroke-width="0" rx="0"  />
+  <text x="305.00" y="683.00" font-family="Inter, sans-serif" font-size="32" font-weight="900" fill="black" text-anchor="middle" dominant-baseline="middle">7d</text>
+  <rect x="355.00" y="640.00" width="70.00" height="70.00" fill="#84cc16" stroke="none" stroke-width="0" rx="0"  />
+  <text x="390.00" y="683.00" font-family="Inter, sans-serif" font-size="32" font-weight="900" fill="black" text-anchor="middle" dominant-baseline="middle">7f</text>
+  <line x1="191.00" y1="109.00" x2="79.00" y2="221.00" stroke="#94a3b8" stroke-width="3"  marker-end="url(#arrow-94a3b8-10)"/>
+  <line x1="191.00" y1="194.00" x2="79.00" y2="306.00" stroke="#94a3b8" stroke-width="3"  marker-end="url(#arrow-94a3b8-10)"/>
+  <line x1="276.00" y1="194.00" x2="79.00" y2="391.00" stroke="#94a3b8" stroke-width="3"  marker-end="url(#arrow-94a3b8-10)"/>
+  <line x1="276.00" y1="279.00" x2="79.00" y2="476.00" stroke="#94a3b8" stroke-width="3"  marker-end="url(#arrow-94a3b8-10)"/>
+  <line x1="361.00" y1="279.00" x2="79.00" y2="561.00" stroke="#94a3b8" stroke-width="3"  marker-end="url(#arrow-94a3b8-10)"/>
+  <line x1="361.00" y1="364.00" x2="79.00" y2="646.00" stroke="#94a3b8" stroke-width="3"  marker-end="url(#arrow-94a3b8-10)"/>
+  <line x1="446.00" y1="364.00" x2="79.00" y2="731.00" stroke="#94a3b8" stroke-width="3"  marker-end="url(#arrow-94a3b8-10)"/>
+  <line x1="446.00" y1="449.00" x2="164.00" y2="731.00" stroke="#94a3b8" stroke-width="3"  marker-end="url(#arrow-94a3b8-10)"/>
+  <line x1="446.00" y1="534.00" x2="249.00" y2="731.00" stroke="#94a3b8" stroke-width="3"  marker-end="url(#arrow-94a3b8-10)"/>
+  <line x1="446.00" y1="619.00" x2="334.00" y2="731.00" stroke="#94a3b8" stroke-width="3"  marker-end="url(#arrow-94a3b8-10)"/>
+  <rect x="50.00" y="700.00" width="550.00" height="35.00" fill="#1e293b" stroke="none" stroke-width="0" rx="6"  />
+  <text x="325.00" y="723.00" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">Orden: 1s → 2s → 2p → 3s → 3p → 4s → 3d → 4p → 5s ...</text>
+</svg>

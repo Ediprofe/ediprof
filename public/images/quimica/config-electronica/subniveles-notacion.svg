@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 350">
+  <defs>
+        <marker id="arrow-3b82f6-10" markerWidth="10" markerHeight="10" 
+                refX="9.0" refY="5.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 10,5.0 0,10" fill="#3b82f6"/>
+        </marker>
+
+        <marker id="arrow-8b5cf6-10" markerWidth="10" markerHeight="10" 
+                refX="9.0" refY="5.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 10,5.0 0,10" fill="#8b5cf6"/>
+        </marker></defs>
+  <rect x="0.00" y="0.00" width="600.00" height="350.00" fill="#f8fafc" stroke="none" stroke-width="0" rx="12"  />
+  <text x="300.00" y="45.00" font-family="Inter, sans-serif" font-size="24" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Notación de un Subnivel</text>
+  <text x="270.00" y="160.00" font-family="Inter, sans-serif" font-size="100" font-weight="bold" fill="#3b82f6" text-anchor="middle" dominant-baseline="middle">3</text>
+  <text x="335.00" y="160.00" font-family="Inter, sans-serif" font-size="100" font-weight="bold" fill="#8b5cf6" text-anchor="middle" dominant-baseline="middle">d</text>
+  <line x1="265.00" y1="320.00" x2="265.00" y2="220.00" stroke="#3b82f6" stroke-width="3"  marker-end="url(#arrow-3b82f6-10)"/>
+  <rect x="175.00" y="320.00" width="180.00" height="45.00" fill="white" stroke="#3b82f6" stroke-width="0" rx="8"  />
+  <text x="265.00" y="340.00" font-family="Inter, sans-serif" font-size="16" font-weight="bold" fill="#3b82f6" text-anchor="middle" dominant-baseline="middle">Nivel de Energía</text>
+  <text x="265.00" y="358.00" font-family="Inter, sans-serif" font-size="12" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">(Capa o Periodo)</text>
+  <line x1="340.00" y1="320.00" x2="340.00" y2="220.00" stroke="#8b5cf6" stroke-width="3"  marker-end="url(#arrow-8b5cf6-10)"/>
+  <rect x="250.00" y="320.00" width="180.00" height="45.00" fill="white" stroke="#8b5cf6" stroke-width="0" rx="8"  />
+  <text x="340.00" y="340.00" font-family="Inter, sans-serif" font-size="16" font-weight="bold" fill="#8b5cf6" text-anchor="middle" dominant-baseline="middle">Tipo de Orbital</text>
+  <text x="340.00" y="358.00" font-family="Inter, sans-serif" font-size="12" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">(s, p, d o f)</text>
+  <rect x="480.00" y="40.00" width="100.00" height="100.00" fill="#fef3c7" stroke="#f59e0b" stroke-width="0" rx="8"  />
+  <text x="530.00" y="65.00" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#92400e" text-anchor="middle" dominant-baseline="middle">Ejemplo</text>
+  <text x="530.00" y="95.00" font-family="Inter, sans-serif" font-size="30" font-weight="bold" fill="#92400e" text-anchor="middle" dominant-baseline="middle">3d</text>
+  <text x="530.00" y="125.00" font-family="Inter, sans-serif" font-size="10" font-weight="normal" fill="#92400e" text-anchor="middle" dominant-baseline="middle">Nivel 3, Orbital d</text>
+</svg>

@@ -31,6 +31,7 @@ La **distribución electrónica** muestra exactamente **cómo se ubican** los el
 
 > A **mayor nivel** (capa externa) → los electrones tienen **más energía**
 
+
 ### 💡 ¿Por qué?
 
 | Posición | Atracción del núcleo | Energía |
@@ -58,11 +59,15 @@ Los electrones externos están **menos atraídos** y poseen **más energía**.
 - Tienen **menor libertad**
 - Generalmente **no participan** en reacciones
 
+![Relación entre Nivel, Atracción y Energía](/images/quimica/config-electronica/energia-vs-distancia.svg)
+
 ---
 
 ## 📖 Niveles de Energía
 
 Cada nivel tiene una **capacidad máxima** de electrones:
+
+![Capacidad de Electrones por Nivel](/images/quimica/config-electronica/capacidad-niveles.svg)
 
 | Nivel | Capacidad máxima |
 |-------|-----------------|
@@ -74,6 +79,28 @@ Cada nivel tiene una **capacidad máxima** de electrones:
 > Fórmula: $2n^2$ donde $n$ es el número de nivel
 
 ### 💡 Ejemplos:
+
+#### 1. Hidrógeno (H)
+![Distribución Hidrógeno](/images/quimica/config-electronica/ejemplos/h-distribucion.svg)
+
+#### 2. Helio (He)
+![Distribución Helio](/images/quimica/config-electronica/ejemplos/he-distribucion.svg)
+
+#### 3. Litio (Li)
+![Distribución Litio](/images/quimica/config-electronica/ejemplos/li-distribucion.svg)
+
+#### 4. Carbono (C)
+![Distribución Carbono](/images/quimica/config-electronica/ejemplos/c-distribucion.svg)
+
+#### 5. Neón (Ne)
+![Distribución Neón](/images/quimica/config-electronica/ejemplos/ne-distribucion.svg)
+
+#### 6. Sodio (Na)
+![Distribución Sodio](/images/quimica/config-electronica/ejemplos/na-distribucion.svg)
+
+---
+
+#### 📊 Resumen de Ejemplos:
 
 | Elemento | Z | Distribución |
 |----------|---|--------------|
@@ -136,5 +163,112 @@ Distribución del cloro:
 - Nivel 3: 7 electrones
 
 **Total:** 2 + 8 + 7 = 17 electrones ✓
+
+</details>
+
+### Ejercicio 4
+¿Cuál es la capacidad máxima de electrones en el nivel 3?
+
+<details>
+<summary>Ver solución</summary>
+
+Usamos la fórmula $2n^2$ donde $n = 3$:
+
+$$
+2 \times 3^2 = 2 \times 9 = 18 \text{ electrones}
+$$
+
+</details>
+
+### Ejercicio 5
+Escribe la distribución por niveles del azufre (S, Z=16).
+
+<details>
+<summary>Ver solución</summary>
+
+Distribución del azufre:
+- Nivel 1: 2 electrones
+- Nivel 2: 8 electrones
+- Nivel 3: 6 electrones
+
+**Total:** 2 + 8 + 6 = 16 electrones ✓
+
+</details>
+
+### Ejercicio 6
+¿Por qué los electrones del nivel 1 tienen menos energía que los del nivel 2?
+
+<details>
+<summary>Ver solución</summary>
+
+Los electrones del nivel 1 están **más cerca del núcleo**, por lo tanto:
+- Sufren una **atracción más fuerte**
+- Tienen **menor libertad de movimiento**
+- Poseen **menor energía**
+
+</details>
+
+### Ejercicio 7
+Un elemento tiene distribución 2, 8, 8, 2. ¿Cuántos electrones tiene en total? ¿Cuántos niveles ocupa?
+
+<details>
+<summary>Ver solución</summary>
+
+**Total de electrones:**
+
+$$
+2 + 8 + 8 + 2 = 20 \text{ electrones}
+$$
+
+**Niveles que ocupa:** 4 niveles (niveles 1, 2, 3 y 4).
+
+</details>
+
+### Ejercicio 8
+¿Cuál es la distribución electrónica del oxígeno (O, Z=8)?
+
+<details>
+<summary>Ver solución</summary>
+
+Distribución del oxígeno:
+- Nivel 1: 2 electrones (se llena primero)
+- Nivel 2: 6 electrones (los restantes)
+
+**Total:** 2 + 6 = 8 electrones ✓
+
+</details>
+
+### Ejercicio 9
+¿Cuántos electrones como máximo puede haber en los primeros dos niveles combinados?
+
+<details>
+<summary>Ver solución</summary>
+
+Capacidad del nivel 1: $2 \times 1^2 = 2$ electrones
+
+Capacidad del nivel 2: $2 \times 2^2 = 8$ electrones
+
+**Total combinado:**
+
+$$
+2 + 8 = 10 \text{ electrones}
+$$
+
+</details>
+
+### Ejercicio 10
+El potasio (K, Z=19) tiene distribución 2, 8, 8, 1. ¿En qué nivel está su electrón más externo? ¿Por qué es fácil de perder?
+
+<details>
+<summary>Ver solución</summary>
+
+**Nivel del electrón más externo:** Nivel 4
+
+**Por qué es fácil de perder:**
+- Está **lejos del núcleo** (poca atracción)
+- Tiene **alta energía**
+- Tiene **mucha libertad de movimiento**
+
+Por eso el potasio forma fácilmente K⁺ perdiendo ese electrón.
 
 </details>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300">
+  <defs></defs>
+  <rect x="0.00" y="0.00" width="800.00" height="300.00" fill="#f8fafc" stroke="none" stroke-width="0" rx="12"  />
+  <text x="400.00" y="35.00" font-family="Inter, sans-serif" font-size="24" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Tipos de Orbitales</text>
+  <text x="100.00" y="80.00" font-family="Inter, sans-serif" font-size="18" font-weight="bold" fill="#3b82f6" text-anchor="middle" dominant-baseline="middle">Orbital &#39;s&#39;</text>
+  <circle cx="100.00" cy="170.00" r="40.00" fill="#3b82f6" stroke="#3b82f6" stroke-width="2" fill-opacity="0.6" />
+  <circle cx="90.00" cy="160.00" r="10.00" fill="white" stroke="#3b82f6" stroke-width="2" fill-opacity="0.4" />
+  <text x="100.00" y="260.00" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#64748b" text-anchor="middle" dominant-baseline="middle">Esférica</text>
+  <text x="100.00" y="280.00" font-family="Inter, sans-serif" font-size="12" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">Máx 2 e⁻</text>
+  <text x="300.00" y="80.00" font-family="Inter, sans-serif" font-size="18" font-weight="bold" fill="#8b5cf6" text-anchor="middle" dominant-baseline="middle">Orbital &#39;p&#39;</text>
+  <circle cx="300.00" cy="140.00" r="25.00" fill="#8b5cf6" stroke="#8b5cf6" stroke-width="1.5" fill-opacity="0.6" />
+  <circle cx="300.00" cy="200.00" r="25.00" fill="#8b5cf6" stroke="#8b5cf6" stroke-width="1.5" fill-opacity="0.6" />
+  <circle cx="300.00" cy="170.00" r="5.00" fill="#ef4444" stroke="#3b82f6" stroke-width="2"  />
+  <text x="300.00" y="260.00" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#64748b" text-anchor="middle" dominant-baseline="middle">Mancuerna</text>
+  <text x="300.00" y="280.00" font-family="Inter, sans-serif" font-size="12" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">Máx 2 e⁻</text>
+  <text x="500.00" y="80.00" font-family="Inter, sans-serif" font-size="18" font-weight="bold" fill="#14b8a6" text-anchor="middle" dominant-baseline="middle">Orbital &#39;d&#39;</text>
+  <circle cx="524.75" cy="194.75" r="22.00" fill="#14b8a6" stroke="#14b8a6" stroke-width="1" fill-opacity="0.5" />
+  <circle cx="475.25" cy="194.75" r="22.00" fill="#14b8a6" stroke="#14b8a6" stroke-width="1" fill-opacity="0.5" />
+  <circle cx="475.25" cy="145.25" r="22.00" fill="#14b8a6" stroke="#14b8a6" stroke-width="1" fill-opacity="0.5" />
+  <circle cx="524.75" cy="145.25" r="22.00" fill="#14b8a6" stroke="#14b8a6" stroke-width="1" fill-opacity="0.5" />
+  <circle cx="500.00" cy="170.00" r="5.00" fill="#ef4444" stroke="#3b82f6" stroke-width="2"  />
+  <text x="500.00" y="260.00" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#64748b" text-anchor="middle" dominant-baseline="middle">Trébol</text>
+  <text x="500.00" y="280.00" font-family="Inter, sans-serif" font-size="12" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">Máx 2 e⁻</text>
+  <text x="700.00" y="80.00" font-family="Inter, sans-serif" font-size="18" font-weight="bold" fill="#f97316" text-anchor="middle" dominant-baseline="middle">Orbital &#39;f&#39;</text>
+  <circle cx="738.00" cy="170.00" r="16.00" fill="#f97316" stroke="#f97316" stroke-width="1" fill-opacity="0.4" />
+  <circle cx="719.00" cy="202.91" r="16.00" fill="#f97316" stroke="#f97316" stroke-width="1" fill-opacity="0.4" />
+  <circle cx="681.00" cy="202.91" r="16.00" fill="#f97316" stroke="#f97316" stroke-width="1" fill-opacity="0.4" />
+  <circle cx="662.00" cy="170.00" r="16.00" fill="#f97316" stroke="#f97316" stroke-width="1" fill-opacity="0.4" />
+  <circle cx="681.00" cy="137.09" r="16.00" fill="#f97316" stroke="#f97316" stroke-width="1" fill-opacity="0.4" />
+  <circle cx="719.00" cy="137.09" r="16.00" fill="#f97316" stroke="#f97316" stroke-width="1" fill-opacity="0.4" />
+  <circle cx="700.00" cy="170.00" r="18.00" fill="none" stroke="#f97316" stroke-width="4" fill-opacity="0.2" />
+  <circle cx="700.00" cy="170.00" r="5.00" fill="#ef4444" stroke="#3b82f6" stroke-width="2"  />
+  <text x="700.00" y="260.00" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#64748b" text-anchor="middle" dominant-baseline="middle">Compleja</text>
+  <text x="700.00" y="280.00" font-family="Inter, sans-serif" font-size="12" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">Máx 2 e⁻</text>
+</svg>

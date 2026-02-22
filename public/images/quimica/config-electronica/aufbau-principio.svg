@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450">
+  <defs>
+        <marker id="arrow-1e293b-10" markerWidth="10" markerHeight="10" 
+                refX="9.0" refY="5.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 10,5.0 0,10" fill="#1e293b"/>
+        </marker>
+
+        <marker id="arrow-f97316-12" markerWidth="12" markerHeight="12" 
+                refX="10.8" refY="6.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 12,6.0 0,12" fill="#f97316"/>
+        </marker></defs>
+  <rect x="0.00" y="0.00" width="600.00" height="450.00" fill="#f8fafc" stroke="none" stroke-width="0" rx="12"  />
+  <text x="300.00" y="40.00" font-family="Inter, sans-serif" font-size="24" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Principio de Aufbau</text>
+  <line x1="80.00" y1="380.00" x2="80.00" y2="80.00" stroke="#1e293b" stroke-width="3"  marker-end="url(#arrow-1e293b-10)"/>
+  <text x="40.00" y="230.00" font-family="Inter, sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">ENERGÍA</text>
+  <line x1="150.00" y1="350.00" x2="450.00" y2="350.00" stroke="#e2e8f0" stroke-width="3"  />
+  <text x="120.00" y="355.00" font-family="Inter, sans-serif" font-size="16" font-weight="bold" fill="#3b82f6" text-anchor="end" dominant-baseline="middle">1s</text>
+  <circle cx="170.00" cy="340.00" r="8.00" fill="#3b82f6" stroke="white" stroke-width="1"  />
+  <text x="170.00" y="342.00" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="195.00" cy="340.00" r="8.00" fill="#3b82f6" stroke="white" stroke-width="1"  />
+  <text x="195.00" y="342.00" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <line x1="150.00" y1="300.00" x2="450.00" y2="300.00" stroke="#e2e8f0" stroke-width="3"  />
+  <text x="120.00" y="305.00" font-family="Inter, sans-serif" font-size="16" font-weight="bold" fill="#3b82f6" text-anchor="end" dominant-baseline="middle">2s</text>
+  <circle cx="170.00" cy="290.00" r="8.00" fill="#3b82f6" stroke="white" stroke-width="1"  />
+  <text x="170.00" y="292.00" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="195.00" cy="290.00" r="8.00" fill="#3b82f6" stroke="white" stroke-width="1"  />
+  <text x="195.00" y="292.00" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <line x1="150.00" y1="250.00" x2="450.00" y2="250.00" stroke="#e2e8f0" stroke-width="3"  />
+  <text x="120.00" y="255.00" font-family="Inter, sans-serif" font-size="16" font-weight="bold" fill="#3b82f6" text-anchor="end" dominant-baseline="middle">2p</text>
+  <circle cx="170.00" cy="240.00" r="8.00" fill="#3b82f6" stroke="white" stroke-width="1"  />
+  <text x="170.00" y="242.00" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="195.00" cy="240.00" r="8.00" fill="#3b82f6" stroke="white" stroke-width="1"  />
+  <text x="195.00" y="242.00" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="220.00" cy="240.00" r="8.00" fill="#3b82f6" stroke="white" stroke-width="1"  />
+  <text x="220.00" y="242.00" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="245.00" cy="240.00" r="8.00" fill="#3b82f6" stroke="white" stroke-width="1"  />
+  <text x="245.00" y="242.00" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="270.00" cy="240.00" r="8.00" fill="#3b82f6" stroke="white" stroke-width="1"  />
+  <text x="270.00" y="242.00" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="295.00" cy="240.00" r="8.00" fill="#3b82f6" stroke="white" stroke-width="1"  />
+  <text x="295.00" y="242.00" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <line x1="150.00" y1="200.00" x2="450.00" y2="200.00" stroke="#e2e8f0" stroke-width="3"  />
+  <text x="120.00" y="205.00" font-family="Inter, sans-serif" font-size="16" font-weight="bold" fill="#3b82f6" text-anchor="end" dominant-baseline="middle">3s</text>
+  <circle cx="170.00" cy="190.00" r="8.00" fill="#3b82f6" stroke="white" stroke-width="1"  />
+  <text x="170.00" y="192.00" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="195.00" cy="190.00" r="8.00" fill="#3b82f6" stroke="white" stroke-width="1"  />
+  <text x="195.00" y="192.00" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <line x1="150.00" y1="150.00" x2="450.00" y2="150.00" stroke="#e2e8f0" stroke-width="3"  />
+  <text x="120.00" y="155.00" font-family="Inter, sans-serif" font-size="16" font-weight="bold" fill="#3b82f6" text-anchor="end" dominant-baseline="middle">3p</text>
+  <circle cx="170.00" cy="140.00" r="8.00" fill="#f97316" stroke="white" stroke-width="1"  />
+  <text x="170.00" y="142.00" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="195.00" cy="140.00" r="8.00" fill="#f97316" stroke="white" stroke-width="1"  />
+  <text x="195.00" y="142.00" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="220.00" cy="140.00" r="8.00" fill="#f97316" stroke="white" stroke-width="1"  />
+  <text x="220.00" y="142.00" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <line x1="480.00" y1="360.00" x2="480.00" y2="140.00" stroke="#f97316" stroke-width="4" stroke-dasharray="5,5" marker-end="url(#arrow-f97316-12)"/>
+  <text x="490.00" y="250.00" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#f97316" text-anchor="start" dominant-baseline="middle">Orden de llenado</text>
+  <rect x="380.00" y="280.00" width="200.00" height="120.00" fill="white" stroke="#e2e8f0" stroke-width="1" rx="8"  />
+  <text x="395.00" y="305.00" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="start" dominant-baseline="middle">Llenado progresivo:</text>
+  <text x="395.00" y="330.00" font-family="Inter, sans-serif" font-size="12" font-weight="normal" fill="#64748b" text-anchor="start" dominant-baseline="middle">1. Niveles bajos primero</text>
+  <text x="395.00" y="350.00" font-family="Inter, sans-serif" font-size="12" font-weight="normal" fill="#64748b" text-anchor="start" dominant-baseline="middle">2. Construcción (Aufbau)</text>
+  <text x="395.00" y="370.00" font-family="Inter, sans-serif" font-size="12" font-weight="normal" fill="#64748b" text-anchor="start" dominant-baseline="middle">3. Hacia mayor energía</text>
+</svg>

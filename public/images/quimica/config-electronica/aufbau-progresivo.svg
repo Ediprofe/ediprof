@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 650">
+  <defs>
+        <marker id="arrow-1e293b-10" markerWidth="10" markerHeight="10" 
+                refX="9.0" refY="5.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 10,5.0 0,10" fill="#1e293b"/>
+        </marker></defs>
+  <rect x="0.00" y="0.00" width="800.00" height="650.00" fill="#f8fafc" stroke="none" stroke-width="0" rx="12"  />
+  <text x="400.00" y="40.00" font-family="Inter, sans-serif" font-size="26" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Llenado Progresivo de Orbitales</text>
+  <text x="400.00" y="65.00" font-family="Inter, sans-serif" font-size="14" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">Orden de energía creciente (Principio de Aufbau)</text>
+  <line x1="80.00" y1="610.00" x2="80.00" y2="100.00" stroke="#1e293b" stroke-width="3"  marker-end="url(#arrow-1e293b-10)"/>
+  <text x="70.00" y="100.00" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#1e293b" text-anchor="start" dominant-baseline="middle">MAYOR ENERGÍA</text>
+  <text x="290.00" y="592.50" font-family="Inter, sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="end" dominant-baseline="middle">1s</text>
+  <rect x="350.00" y="570.00" width="35.00" height="35.00" fill="#3b82f6" stroke="#3b82f6" stroke-width="2" rx="4" fill-opacity="0.2" />
+  <line x1="362.25" y1="598.00" x2="362.25" y2="577.00" stroke="#3b82f6" stroke-width="2"  />
+  <path d="M 357.0 584.0 L 362.25 577.0 L 367.5 584.0" fill="none" stroke="#3b82f6" stroke-width="2"/>
+  <line x1="372.75" y1="577.00" x2="372.75" y2="598.00" stroke="#3b82f6" stroke-width="2"  />
+  <path d="M 367.5 591.0 L 372.75 598.0 L 378.0 591.0" fill="none" stroke="#3b82f6" stroke-width="2"/>
+  <text x="290.00" y="542.50" font-family="Inter, sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="end" dominant-baseline="middle">2s</text>
+  <rect x="350.00" y="520.00" width="35.00" height="35.00" fill="#3b82f6" stroke="#3b82f6" stroke-width="2" rx="4" fill-opacity="0.2" />
+  <line x1="362.25" y1="548.00" x2="362.25" y2="527.00" stroke="#3b82f6" stroke-width="2"  />
+  <path d="M 357.0 534.0 L 362.25 527.0 L 367.5 534.0" fill="none" stroke="#3b82f6" stroke-width="2"/>
+  <line x1="372.75" y1="527.00" x2="372.75" y2="548.00" stroke="#3b82f6" stroke-width="2"  />
+  <path d="M 367.5 541.0 L 372.75 548.0 L 378.0 541.0" fill="none" stroke="#3b82f6" stroke-width="2"/>
+  <text x="290.00" y="492.50" font-family="Inter, sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="end" dominant-baseline="middle">2p</text>
+  <rect x="350.00" y="470.00" width="35.00" height="35.00" fill="#8b5cf6" stroke="#8b5cf6" stroke-width="2" rx="4" fill-opacity="0.2" />
+  <line x1="362.25" y1="498.00" x2="362.25" y2="477.00" stroke="#8b5cf6" stroke-width="2"  />
+  <path d="M 357.0 484.0 L 362.25 477.0 L 367.5 484.0" fill="none" stroke="#8b5cf6" stroke-width="2"/>
+  <line x1="372.75" y1="477.00" x2="372.75" y2="498.00" stroke="#8b5cf6" stroke-width="2"  />
+  <path d="M 367.5 491.0 L 372.75 498.0 L 378.0 491.0" fill="none" stroke="#8b5cf6" stroke-width="2"/>
+  <rect x="385.00" y="470.00" width="35.00" height="35.00" fill="#8b5cf6" stroke="#8b5cf6" stroke-width="2" rx="4" fill-opacity="0.2" />
+  <line x1="397.25" y1="498.00" x2="397.25" y2="477.00" stroke="#8b5cf6" stroke-width="2"  />
+  <path d="M 392.0 484.0 L 397.25 477.0 L 402.5 484.0" fill="none" stroke="#8b5cf6" stroke-width="2"/>
+  <line x1="407.75" y1="477.00" x2="407.75" y2="498.00" stroke="#8b5cf6" stroke-width="2"  />
+  <path d="M 402.5 491.0 L 407.75 498.0 L 413.0 491.0" fill="none" stroke="#8b5cf6" stroke-width="2"/>
+  <rect x="420.00" y="470.00" width="35.00" height="35.00" fill="#8b5cf6" stroke="#8b5cf6" stroke-width="2" rx="4" fill-opacity="0.2" />
+  <line x1="432.25" y1="498.00" x2="432.25" y2="477.00" stroke="#8b5cf6" stroke-width="2"  />
+  <path d="M 427.0 484.0 L 432.25 477.0 L 437.5 484.0" fill="none" stroke="#8b5cf6" stroke-width="2"/>
+  <line x1="442.75" y1="477.00" x2="442.75" y2="498.00" stroke="#8b5cf6" stroke-width="2"  />
+  <path d="M 437.5 491.0 L 442.75 498.0 L 448.0 491.0" fill="none" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="290.00" y="442.50" font-family="Inter, sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="end" dominant-baseline="middle">3s</text>
+  <rect x="350.00" y="420.00" width="35.00" height="35.00" fill="#3b82f6" stroke="#3b82f6" stroke-width="2" rx="4" fill-opacity="0.2" />
+  <line x1="362.25" y1="448.00" x2="362.25" y2="427.00" stroke="#3b82f6" stroke-width="2"  />
+  <path d="M 357.0 434.0 L 362.25 427.0 L 367.5 434.0" fill="none" stroke="#3b82f6" stroke-width="2"/>
+  <line x1="372.75" y1="427.00" x2="372.75" y2="448.00" stroke="#3b82f6" stroke-width="2"  />
+  <path d="M 367.5 441.0 L 372.75 448.0 L 378.0 441.0" fill="none" stroke="#3b82f6" stroke-width="2"/>
+  <text x="290.00" y="392.50" font-family="Inter, sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="end" dominant-baseline="middle">3p</text>
+  <rect x="350.00" y="370.00" width="35.00" height="35.00" fill="#8b5cf6" stroke="#8b5cf6" stroke-width="2" rx="4" fill-opacity="0.2" />
+  <rect x="385.00" y="370.00" width="35.00" height="35.00" fill="#8b5cf6" stroke="#8b5cf6" stroke-width="2" rx="4" fill-opacity="0.2" />
+  <rect x="420.00" y="370.00" width="35.00" height="35.00" fill="#8b5cf6" stroke="#8b5cf6" stroke-width="2" rx="4" fill-opacity="0.2" />
+  <text x="290.00" y="342.50" font-family="Inter, sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="end" dominant-baseline="middle">4s</text>
+  <rect x="350.00" y="320.00" width="35.00" height="35.00" fill="#3b82f6" stroke="#3b82f6" stroke-width="2" rx="4" fill-opacity="0.2" />
+  <text x="290.00" y="292.50" font-family="Inter, sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="end" dominant-baseline="middle">3d</text>
+  <rect x="350.00" y="270.00" width="35.00" height="35.00" fill="#14b8a6" stroke="#14b8a6" stroke-width="2" rx="4" fill-opacity="0.2" />
+  <rect x="385.00" y="270.00" width="35.00" height="35.00" fill="#14b8a6" stroke="#14b8a6" stroke-width="2" rx="4" fill-opacity="0.2" />
+  <rect x="420.00" y="270.00" width="35.00" height="35.00" fill="#14b8a6" stroke="#14b8a6" stroke-width="2" rx="4" fill-opacity="0.2" />
+  <rect x="455.00" y="270.00" width="35.00" height="35.00" fill="#14b8a6" stroke="#14b8a6" stroke-width="2" rx="4" fill-opacity="0.2" />
+  <rect x="490.00" y="270.00" width="35.00" height="35.00" fill="#14b8a6" stroke="#14b8a6" stroke-width="2" rx="4" fill-opacity="0.2" />
+  <text x="290.00" y="242.50" font-family="Inter, sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="end" dominant-baseline="middle">4p</text>
+  <rect x="350.00" y="220.00" width="35.00" height="35.00" fill="#8b5cf6" stroke="#8b5cf6" stroke-width="2" rx="4" fill-opacity="0.2" />
+  <rect x="385.00" y="220.00" width="35.00" height="35.00" fill="#8b5cf6" stroke="#8b5cf6" stroke-width="2" rx="4" fill-opacity="0.2" />
+  <rect x="420.00" y="220.00" width="35.00" height="35.00" fill="#8b5cf6" stroke="#8b5cf6" stroke-width="2" rx="4" fill-opacity="0.2" />
+  <text x="290.00" y="192.50" font-family="Inter, sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="end" dominant-baseline="middle">5s</text>
+  <rect x="350.00" y="170.00" width="35.00" height="35.00" fill="#3b82f6" stroke="#3b82f6" stroke-width="2" rx="4" fill-opacity="0.2" />
+  <rect x="600.00" y="150.00" width="160.00" height="180.00" fill="white" stroke="#e2e8f0" stroke-width="0" rx="8"  />
+  <text x="680.00" y="175.00" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Orbitales por Tipo</text>
+  <rect x="615.00" y="195.00" width="15.00" height="15.00" fill="#3b82f6" stroke="none" stroke-width="0" rx="2"  />
+  <text x="640.00" y="207.00" font-family="Inter, sans-serif" font-size="12" font-weight="normal" fill="#1e293b" text-anchor="start" dominant-baseline="middle">Tipo s: 1 orbital</text>
+  <rect x="615.00" y="225.00" width="15.00" height="15.00" fill="#8b5cf6" stroke="none" stroke-width="0" rx="2"  />
+  <text x="640.00" y="237.00" font-family="Inter, sans-serif" font-size="12" font-weight="normal" fill="#1e293b" text-anchor="start" dominant-baseline="middle">Tipo p: 3 orbital</text>
+  <rect x="615.00" y="255.00" width="15.00" height="15.00" fill="#14b8a6" stroke="none" stroke-width="0" rx="2"  />
+  <text x="640.00" y="267.00" font-family="Inter, sans-serif" font-size="12" font-weight="normal" fill="#1e293b" text-anchor="start" dominant-baseline="middle">Tipo d: 5 orbital</text>
+  <rect x="615.00" y="285.00" width="15.00" height="15.00" fill="#f97316" stroke="none" stroke-width="0" rx="2"  />
+  <text x="640.00" y="297.00" font-family="Inter, sans-serif" font-size="12" font-weight="normal" fill="#1e293b" text-anchor="start" dominant-baseline="middle">Tipo f: 7 orbital</text>
+  <rect x="600.00" y="350.00" width="160.00" height="80.00" fill="#eff6ff" stroke="#3b82f6" stroke-width="0" rx="8"  />
+  <text x="680.00" y="375.00" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#3b82f6" text-anchor="middle" dominant-baseline="middle">CAPACIDAD</text>
+  <text x="680.00" y="395.00" font-family="Inter, sans-serif" font-size="11" font-weight="normal" fill="#3b82f6" text-anchor="middle" dominant-baseline="middle">Cada cajita =</text>
+  <text x="680.00" y="415.00" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#3b82f6" text-anchor="middle" dominant-baseline="middle">MÁX 2 e⁻</text>
+</svg>
