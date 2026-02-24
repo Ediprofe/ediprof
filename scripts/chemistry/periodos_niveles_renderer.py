@@ -167,7 +167,7 @@ def render_atomo_individual(symbol, name, period, shells):
 
     # Info abajo
     svg.append(
-        f'<text x="{width / 2}" y="300" font-family="Inter, sans-serif" font-size="13" font-weight="bold" fill="{COLORS["text"]}" text-anchor="middle">{num_shells} {"nivel" if num_shells == 1 else "niveles"} de energía</text>'
+        f'<text x="{width / 2}" y="300" font-family="Inter, sans-serif" font-size="13" font-weight="bold" fill="{COLORS["text"]}" text-anchor="middle">{num_shells} {"capa" if num_shells == 1 else "capas"} de energía</text>'
     )
     svg.append(
         f'<text x="{width / 2}" y="320" font-family="Inter, sans-serif" font-size="10" fill="{COLORS["text_light"]}" text-anchor="middle">Configuración: {", ".join(map(str, shells))}</text>'
@@ -183,7 +183,7 @@ def render_atomo_individual(symbol, name, period, shells):
 def render_comparacion(left, right):
     """Genera SVG de comparación entre dos átomos."""
     svg = []
-    width, height = 600, 300
+    width, height = 600, 380
 
     svg.append(
         f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}">'
@@ -199,7 +199,7 @@ def render_comparacion(left, right):
 
     # Átomo izquierdo
     cx1 = 150
-    cy1 = 150
+    cy1 = 175
     num_l = len(left["shells"])
     base_l = 40
     step_l = 25
@@ -216,20 +216,20 @@ def render_comparacion(left, right):
         electron_color=COLORS["primary"],
     )
     svg.append(
-        f'<text x="{cx1}" y="250" font-family="Inter, sans-serif" font-size="10" fill="{COLORS["text_light"]}" text-anchor="middle">{left["name"]} — Período {left["period"]}</text>'
+        f'<text x="{cx1}" y="335" font-family="Inter, sans-serif" font-size="10" fill="{COLORS["text_light"]}" text-anchor="middle">{left["name"]} — Período {left["period"]}</text>'
     )
     svg.append(
-        f'<text x="{cx1}" y="265" font-family="Inter, sans-serif" font-size="9" fill="{COLORS["primary"]}" text-anchor="middle">{num_l} {"nivel" if num_l == 1 else "niveles"}</text>'
+        f'<text x="{cx1}" y="350" font-family="Inter, sans-serif" font-size="9" fill="{COLORS["primary"]}" text-anchor="middle">{num_l} {"capa" if num_l == 1 else "capas"}</text>'
     )
 
     # Flecha
     svg.append(
-        f'<text x="{width / 2}" y="155" font-family="Inter, sans-serif" font-size="20" font-weight="bold" fill="{COLORS["text_light"]}" text-anchor="middle">&lt;</text>'
+        f'<text x="{width / 2}" y="180" font-family="Inter, sans-serif" font-size="20" font-weight="bold" fill="{COLORS["text_light"]}" text-anchor="middle">&lt;</text>'
     )
 
     # Átomo derecho
     cx2 = 450
-    cy2 = 150
+    cy2 = 175
     num_r = len(right["shells"])
     base_r = 35 if num_r > 4 else 40
     step_r = 20 if num_r > 4 else 25
@@ -246,15 +246,15 @@ def render_comparacion(left, right):
         electron_color=COLORS["secondary"],
     )
     svg.append(
-        f'<text x="{cx2}" y="250" font-family="Inter, sans-serif" font-size="10" fill="{COLORS["text_light"]}" text-anchor="middle">{right["name"]} — Período {right["period"]}</text>'
+        f'<text x="{cx2}" y="335" font-family="Inter, sans-serif" font-size="10" fill="{COLORS["text_light"]}" text-anchor="middle">{right["name"]} — Período {right["period"]}</text>'
     )
     svg.append(
-        f'<text x="{cx2}" y="265" font-family="Inter, sans-serif" font-size="9" fill="{COLORS["secondary"]}" text-anchor="middle">{num_r} niveles</text>'
+        f'<text x="{cx2}" y="350" font-family="Inter, sans-serif" font-size="9" fill="{COLORS["secondary"]}" text-anchor="middle">{num_r} capas</text>'
     )
 
     # Conclusión
     svg.append(
-        f'<text x="{width / 2}" y="290" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="{COLORS["text"]}" text-anchor="middle">{right["symbol"]} > {left["symbol"]} (más capas = más grande)</text>'
+        f'<text x="{width / 2}" y="370" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="{COLORS["text"]}" text-anchor="middle">{right["symbol"]} > {left["symbol"]} (más capas = más grande)</text>'
     )
 
     svg.append("</svg>")
@@ -266,7 +266,7 @@ def render_comparacion(left, right):
 # ============================================
 def render_potasio_oxigeno():
     svg = []
-    width, height = 900, 420
+    width, height = 900, 450
 
     svg.append(
         f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}">'
@@ -277,14 +277,14 @@ def render_potasio_oxigeno():
 
     # Título
     svg.append(
-        f'<text x="{width / 2}" y="28" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="{COLORS["text"]}" text-anchor="middle">Comparación: Potasio (4 niveles) vs Oxígeno (2 niveles)</text>'
+        f'<text x="{width / 2}" y="28" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="{COLORS["text"]}" text-anchor="middle">Comparación: Potasio (4 capas) vs Oxígeno (2 capas)</text>'
     )
 
     # ===== POTASIO (K) =====
-    k_x, k_y = 220, 200
+    k_x, k_y = 220, 210
 
     svg.append(
-        f'<rect x="35" y="45" width="370" height="350" rx="10" fill="white" stroke="{COLORS["primary"]}" stroke-width="2"/>'
+        f'<rect x="35" y="45" width="370" height="380" rx="10" fill="white" stroke="{COLORS["primary"]}" stroke-width="2"/>'
     )
     svg.append(
         f'<rect x="35" y="45" width="370" height="32" rx="10" fill="{COLORS["primary"]}"/>'
@@ -309,17 +309,17 @@ def render_potasio_oxigeno():
     )
 
     svg.append(
-        f'<text x="{k_x}" y="320" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="{COLORS["text"]}" text-anchor="middle">Período 4 → 4 niveles</text>'
+        f'<text x="{k_x}" y="360" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="{COLORS["text"]}" text-anchor="middle">Período 4 → 4 capas</text>'
     )
     svg.append(
-        f'<text x="{k_x}" y="338" font-family="Inter, sans-serif" font-size="10" fill="{COLORS["text_light"]}" text-anchor="middle">2, 8, 8, 1 = 19 e⁻ (Z=19)</text>'
+        f'<text x="{k_x}" y="385" font-family="Inter, sans-serif" font-size="10" fill="{COLORS["text_light"]}" text-anchor="middle">2, 8, 8, 1 = 19 e⁻ (Z=19)</text>'
     )
 
     # ===== OXÍGENO (O) =====
-    o_x, o_y = 680, 200
+    o_x, o_y = 680, 210
 
     svg.append(
-        f'<rect x="495" y="45" width="370" height="350" rx="10" fill="white" stroke="{COLORS["secondary"]}" stroke-width="2"/>'
+        f'<rect x="495" y="45" width="370" height="380" rx="10" fill="white" stroke="{COLORS["secondary"]}" stroke-width="2"/>'
     )
     svg.append(
         f'<rect x="495" y="45" width="370" height="32" rx="10" fill="{COLORS["secondary"]}"/>'
@@ -344,15 +344,15 @@ def render_potasio_oxigeno():
     )
 
     svg.append(
-        f'<text x="{o_x}" y="320" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="{COLORS["text"]}" text-anchor="middle">Período 2 → 2 niveles</text>'
+        f'<text x="{o_x}" y="360" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="{COLORS["text"]}" text-anchor="middle">Período 2 → 2 capas</text>'
     )
     svg.append(
-        f'<text x="{o_x}" y="338" font-family="Inter, sans-serif" font-size="10" fill="{COLORS["text_light"]}" text-anchor="middle">2, 6 = 8 e⁻ (Z=8)</text>'
+        f'<text x="{o_x}" y="385" font-family="Inter, sans-serif" font-size="10" fill="{COLORS["text_light"]}" text-anchor="middle">2, 6 = 8 e⁻ (Z=8)</text>'
     )
 
     # Flecha comparativa
     svg.append(
-        f'<text x="{width / 2}" y="205" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="{COLORS["text_light"]}" text-anchor="middle">vs</text>'
+        f'<text x="{width / 2}" y="215" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="{COLORS["text_light"]}" text-anchor="middle">vs</text>'
     )
 
     svg.append("</svg>")

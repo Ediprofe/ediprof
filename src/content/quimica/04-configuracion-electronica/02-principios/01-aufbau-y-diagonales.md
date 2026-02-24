@@ -1,4 +1,4 @@
-# **Llenado de Orbitales y Regla de las Diagonales**
+# **Principio de Aufbau y Regla de las Diagonales**
 
 Imagina un hotel donde los huéspedes siempre buscan la habitación más barata y cómoda, que suele estar en los pisos más bajos. En el átomo, los electrones hacen lo mismo: buscan "acomodarse" en los lugares que requieren menos energía.
 
@@ -27,39 +27,43 @@ Ya sabes que los electrones se organizan en **niveles** ($n=1, 2, 3...$). Pero p
 
 Teniendo clara la Regla de Oro, veamos cómo son los 4 tipos de habitaciones (subniveles) y por qué tienen diferentes capacidades:
 
-1. **Habitación tipo $s$ (Sencilla):** Es la más básica. Solo tiene **1 cama doble** (es decir, 1 orbital). Como caben 2 personas por cama, su límite es de **2 electrones** ($1 \times 2 = 2$).
-2. **Habitación tipo $p$ (Premium):** Es un poco más grande. Cuenta con **3 camas dobles** (3 orbitales). Si llenamos las tres camas, su límite es de **6 electrones** ($3 \times 2 = 6$).
-3. **Habitación tipo $d$ (Doble lujo):** Es bastante espaciosa y cuenta con **5 camas dobles** (5 orbitales). Por lo tanto, puede hospedar hasta **10 electrones** ($5 \times 2 = 10$).
-4. **Habitación tipo $f$ (Fabulosa / Familiar):** Es inmensa, la más grande de todas. Tiene **7 camas dobles** (7 orbitales). Su capacidad máxima llega a los **14 electrones** ($7 \times 2 = 14$).
+1. **Habitación tipo $s$:** Es la más básica. Solo tiene **1 cama doble** (es decir, 1 orbital). Como caben 2 personas por cama, su límite es de **2 electrones** ($1 \times 2 = 2$).
+2. **Habitación tipo $p$:** Es un poco más grande. Cuenta con **3 camas dobles** (3 orbitales). Si llenamos las tres camas, su límite es de **6 electrones** ($3 \times 2 = 6$).
+3. **Habitación tipo $d$:** Es bastante espaciosa y cuenta con **5 camas dobles** (5 orbitales). Por lo tanto, puede hospedar hasta **10 electrones** ($5 \times 2 = 10$).
+4. **Habitación tipo $f$:** Es inmensa, la más grande de todas. Tiene **7 camas dobles** (7 orbitales). Su capacidad máxima llega a los **14 electrones** ($7 \times 2 = 14$).
 
 ¡Así de simple! Esa es la razón de existir de los números de capacidad límite: 2, 6, 10 y 14. Todo depende puramente de cuántas camas (orbitales) tenga la habitación.
 
 ![analogia-del-hotel-y-el-atomo](https://cdn.ediprofe.com/img/quimica/mhqy-analogia-del-hotel-y-el-atomo.webp)
 
 
-### 💡 Del Hotel a la Realidad: Las Formas de los Orbitales
+### 💡 Del Hotel a la Realidad: ¿Qué es un Orbital?
 
-Volviendo al estricto mundo cuántico, nuestra "habitación" y su "cama" no tienen paredes sólidas; un **orbital** es una nube tridimensional. Es el espacio exacto alrededor del núcleo donde es *altamente probable* encontrar a un electrón habitando.
+En el mundo cuántico, nuestra "cama" no tiene paredes sólidas. El concepto de **orbital** es el pilar fundamental para entender dónde están realmente los electrones:
 
-Cuando hablamos de piezas o subniveles tipo **$s, p, d, f$**, en realidad esas misteriosas letras describen la **FORMA geométrica tridimensional de la habitación** (la forma de la nube):
+> **Definición de Orbital:**
+> Un **orbital atómico** es la región del espacio alrededor del núcleo donde existe una **probabilidad muy alta (superior al 90%)** de encontrar al electrón. No es una órbita circular fija, sino una "nube" tridimensional de energía.
 
-- Las habitaciones u orbitales **$s$** (Sencillos) tienen forma de **esfera** perfecta.
-- Las habitaciones u orbitales **$p$** (Premium) tienen forma de **macuerna de gimansio** o figura de 8.
-- Las habitaciones u orbitales **$d$** y **$f$** poseen formas geométricas mucho más complejas, como rosetas o tréboles de múltiples hojas.
+![concepto-y-forma-de-los-arbitales-atomicos](https://cdn.ediprofe.com/img/quimica/337t-concepto-y-forma-de-los-arbitales-atomicos.webp)
 
-Para consolidar tu aprendizaje, aquí tienes la tabla resumen cruzando nuestra analogía del hotel con la cruda realidad química:
+
+Cuando hablamos de subniveles tipo **$s, p, d, f$**, en realidad esas letras describen la **FORMA tridimensional de esa nube de probabilidad**:
+
+- Las nubes u orbitales **$s$** tienen forma de **esfera** perfecta.
+- Las nubes u orbitales **$p$** tienen forma de **mancuerna de gimnasio** o figura de 8.
+- Las nubes u orbitales **$d$** y **$f$** poseen formas mucho más complejas, como rosetas o tréboles de múltiples hojas.
+
+Para consolidar tu aprendizaje, aquí tienes la tabla resumen cruzando nuestra analogía del hotel con la realidad científica del átomo:
 
 | Nombre y Letra del Subnivel | Forma de la Nube (Orbital) | Cantidad de Camas (Orbitales) | Capacidad Máxima |
 |:---|:---:|:---:|:---:|
-| **$s$** (Sencilla / Sharp) | Esférica | 1 orbital | **2 electrones** |
-| **$p$** (Premium / Principal) | Cacahuate / Mancuerna | 3 orbitales | **6 electrones** |
-| **$d$** (Doble / Diffuse) | Compleja (Rosetas) | 5 orbitales | **10 electrones** |
-| **$f$** (Familiar / Fundamental)| Muy Compleja | 7 orbitales | **14 electrones** |
-
-![del-hotel-a-los-orbitales](https://cdn.ediprofe.com/img/quimica/7zjt-del-hote-a-los-orbitales.webp)
+| **$s$** (Sharp) | Esférica | 1 orbital | **2 electrones** |
+| **$p$** (Principal) | Mancuerna | 3 orbitales | **6 electrones** |
+| **$d$** (Diffuse) | Compleja (Rosetas) | 5 orbitales | **10 electrones** |
+| **$f$** (Fundamental)| Muy Compleja | 7 orbitales | **14 electrones** |
 
 
-
+![subniveles-de-energia-forma-orbitales-y-electrones](https://cdn.ediprofe.com/img/quimica/42be-subniveles-de-energia-forma-orbitales-y-electrones.webp)
 
 
 ---

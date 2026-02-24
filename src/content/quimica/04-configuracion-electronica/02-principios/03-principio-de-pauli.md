@@ -22,6 +22,8 @@ El **Principio de Exclusión de Pauli** establece las reglas para cuántos elect
 - Deben **diferir** en al menos una propiedad cuántica
 - Esa propiedad es el **espín**
 
+![principio-de-exclusion-de-pauli](https://cdn.ediprofe.com/img/quimica/75r6-principio-de-exclusion-de-pauli.webp)
+
 ---
 
 ## 📖 Concepto de Espín
@@ -38,6 +40,8 @@ El **Principio de Exclusión de Pauli** establece las reglas para cuántos elect
 |--------|-------|-------|
 | ↑ | Arriba | +½ |
 | ↓ | Abajo | −½ |
+
+![concepto-de-espin](https://cdn.ediprofe.com/img/quimica/rb3b-concepto-de-espin.webp)
 
 ---
 
@@ -66,6 +70,8 @@ Dos electrones con el **mismo espín** en el mismo orbital tendrían las **cuatr
 
 Al tener espines opuestos, difieren en al menos una propiedad.
 
+![aplicacion-en-orbitales](https://cdn.ediprofe.com/img/quimica/it0k-aplicacion-en-orbitales.webp)
+
 ---
 
 ## 📖 Consecuencias del Principio
@@ -80,6 +86,8 @@ Al tener espines opuestos, difieren en al menos una propiedad.
 | f | 7 | 14 |
 
 > Cada orbital = 2 electrones → Total = 2 × orbitales
+
+![consecuencias-del-principio-de-pauli](https://cdn.ediprofe.com/img/quimica/1f7p-consecuencias-del-principio-de-pauli.webp)
 
 ---
 
