@@ -46,6 +46,49 @@ function log(emoji, message, color = 'reset') {
   console.log(`${colors[color]}${emoji} ${message}${colors.reset}`);
 }
 
+function buildCanonicalPath({ materia, id, name, isSaber = false }) {
+  return isSaber
+    ? `img/saber/${materia}/${id}-${name}`
+    : `img/${materia}/${id}-${name}`;
+}
+
+function buildCanonicalUrl(pathName) {
+  return `https://${CONFIG.cdnDomain}/${pathName}`;
+}
+
+function normalizeCdnUrl(url) {
+  if (!url || typeof url !== 'string') return url;
+  if (!url.startsWith('https://')) return url;
+  return url.replace(`https://${CONFIG.cdnDomain}/images/`, `https://${CONFIG.cdnDomain}/img/`);
+}
+
+function normalizeIndexEntry(entry) {
+  const normalized = { ...entry };
+  const aliases = Array.isArray(normalized.aliases) ? [...normalized.aliases] : [];
+  const normalizedUrl = normalizeCdnUrl(normalized.url);
+
+  if (normalized.url && normalizedUrl !== normalized.url) {
+    aliases.push(normalized.url);
+  }
+
+  if (normalizedUrl) {
+    normalized.url = normalizedUrl;
+    normalized.canonicalUrl = normalizedUrl;
+  } else if (normalized.status === 'uploaded' && normalized.id && normalized.name && normalized.materia) {
+    const inferredPath = buildCanonicalPath({
+      materia: normalized.materia,
+      id: normalized.id,
+      name: normalized.name,
+      isSaber: normalized.type === 'saber'
+    });
+    normalized.url = buildCanonicalUrl(inferredPath);
+    normalized.canonicalUrl = normalized.url;
+  }
+
+  normalized.aliases = [...new Set(aliases)];
+  return normalized;
+}
+
 // Genera ID único de 4 caracteres
 function generateId() {
   const chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
@@ -59,15 +102,21 @@ function generateId() {
 // Carga el índice de imágenes
 function loadIndex() {
   if (fs.existsSync(CONFIG.indexFile)) {
-    return JSON.parse(fs.readFileSync(CONFIG.indexFile, 'utf-8'));
+    const raw = JSON.parse(fs.readFileSync(CONFIG.indexFile, 'utf-8'));
+    const images = Array.isArray(raw.images) ? raw.images.map(normalizeIndexEntry) : [];
+    return {
+      ...raw,
+      images
+    };
   }
   return { images: [], lastUpdated: null };
 }
 
 // Guarda el índice
 function saveIndex(index) {
+  const normalizedImages = (index.images || []).map(normalizeIndexEntry);
   index.lastUpdated = new Date().toISOString();
-  fs.writeFileSync(CONFIG.indexFile, JSON.stringify(index, null, 2));
+  fs.writeFileSync(CONFIG.indexFile, JSON.stringify({ ...index, images: normalizedImages }, null, 2));
 }
 
 // Busca imágenes similares en el índice
@@ -213,7 +262,7 @@ function searchImages(index, query) {
   console.log('');
   
   results.forEach(img => {
-    const url = `https://${CONFIG.cdnDomain}/img/${img.materia}/${img.id}-${img.name}`;
+    const url = img.canonicalUrl || img.url || 'sin-url';
     console.log(`${colors.yellow}${img.materia}/${colors.reset}${img.id}-${img.name}`);
     console.log(`  ${colors.gray}${url}${colors.reset}`);
   });
@@ -294,12 +343,12 @@ async function uploadImage(fileName, materia, isSaber = false) {
   // Determinar nombre final y ruta
   const { finalPath, format } = optimizeResult;
   const finalName = `${cleanName}.${format}`;
-  const r2FileName = `${id}-${finalName}`;
-  
-  // Ruta según tipo (Saber o Lección)
-  const r2Path = isSaber 
-    ? `img/saber/${materia}/${r2FileName}`
-    : `img/${materia}/${r2FileName}`;
+  const r2Path = buildCanonicalPath({
+    materia,
+    id,
+    name: finalName,
+    isSaber
+  });
 
   // Verificar wrangler
   if (!checkWrangler()) {
@@ -315,10 +364,13 @@ async function uploadImage(fileName, materia, isSaber = false) {
       id,
       name: finalName,
       materia,
+      type: isSaber ? 'saber' : 'lesson',
       date: new Date().toISOString().split('T')[0],
       size: formatBytes(fs.statSync(finalPath).size),
       status: 'pending',
-      localPath: finalPath
+      localPath: finalPath,
+      canonicalPath: r2Path,
+      aliases: []
     });
     saveIndex(index);
     return;
@@ -334,7 +386,7 @@ async function uploadImage(fileName, materia, isSaber = false) {
   }
 
   // Generar URL y markdown
-  const url = `https://${CONFIG.cdnDomain}/${r2Path}`;
+  const url = buildCanonicalUrl(r2Path);
   const markdown = `![${cleanName}](${url})`;
 
   // Copiar al clipboard
@@ -357,6 +409,9 @@ async function uploadImage(fileName, materia, isSaber = false) {
     date: new Date().toISOString().split('T')[0],
     size: formatBytes(fs.statSync(finalPath).size),
     url,
+    canonicalUrl: url,
+    canonicalPath: r2Path,
+    aliases: [],
     status: 'uploaded'
   });
   saveIndex(index);
@@ -386,6 +441,7 @@ ${colors.yellow}Ejemplos:${colors.reset}
 ${colors.yellow}Comandos:${colors.reset}
   npm run img --list [materia]      Lista todas las imágenes
   npm run img --search <término>    Busca por nombre o ID
+  npm run img --normalize-index     Migra URLs legacy del índice a canónicas
   npm run img --help                Muestra esta ayuda
 
 ${colors.yellow}Materias válidas:${colors.reset}
@@ -540,6 +596,13 @@ async function main() {
       return;
     }
     searchImages(index, query);
+    return;
+  }
+
+  // Comando --normalize-index
+  if (args.includes('--normalize-index')) {
+    saveIndex(index);
+    log('✅', `Índice normalizado en ${CONFIG.indexFile}`, 'green');
     return;
   }
 

@@ -12,6 +12,8 @@
     "validate": "node scripts/validate-latex.js",
     "new:lesson": "node scripts/new-lesson.js",
     "export": "node scripts/export-menu.js",
+    "assets:audit": "node scripts/assets-audit.mjs",
+    "assets:manifest": "node scripts/export-assets-manifest.mjs",
     "img": "node scripts/upload-to-r2.mjs",
     "astro": "astro"
   },

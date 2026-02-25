@@ -6,8 +6,12 @@
       "materia": "fisica",
       "date": "2025-12-24",
       "size": "99KB",
-      "url": "https://cdn.ediprofe.com/images/fisica/dixh-test-mru.webp",
-      "status": "uploaded"
+      "url": "https://cdn.ediprofe.com/img/fisica/dixh-test-mru.webp",
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/fisica/dixh-test-mru.webp",
+      "aliases": [
+        "https://cdn.ediprofe.com/images/fisica/dixh-test-mru.webp"
+      ]
     },
     {
       "id": "lhnm",
@@ -15,8 +19,12 @@
       "materia": "fisica",
       "date": "2025-12-24",
       "size": "71KB",
-      "url": "https://cdn.ediprofe.com/images/fisica/lhnm-ramas-de-la-fisica.webp",
-      "status": "uploaded"
+      "url": "https://cdn.ediprofe.com/img/fisica/lhnm-ramas-de-la-fisica.webp",
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/fisica/lhnm-ramas-de-la-fisica.webp",
+      "aliases": [
+        "https://cdn.ediprofe.com/images/fisica/lhnm-ramas-de-la-fisica.webp"
+      ]
     },
     {
       "id": "niyw",
@@ -25,7 +33,9 @@
       "date": "2025-12-24",
       "size": "71KB",
       "url": "https://cdn.ediprofe.com/img/fisica/niyw-ramas-de-la-fisica.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/fisica/niyw-ramas-de-la-fisica.webp",
+      "aliases": []
     },
     {
       "id": "yssw",
@@ -34,7 +44,9 @@
       "date": "2025-12-24",
       "size": "77KB",
       "url": "https://cdn.ediprofe.com/img/fisica/yssw-resumen-metodo-cientifico.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/fisica/yssw-resumen-metodo-cientifico.webp",
+      "aliases": []
     },
     {
       "id": "8m24",
@@ -43,7 +55,9 @@
       "date": "2025-12-24",
       "size": "55KB",
       "url": "https://cdn.ediprofe.com/img/fisica/8m24-formulas-mrua.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/fisica/8m24-formulas-mrua.webp",
+      "aliases": []
     },
     {
       "id": "ijop",
@@ -52,7 +66,9 @@
       "date": "2025-12-24",
       "size": "41KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/ijop-test-mru.png",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/ijop-test-mru.png",
+      "aliases": []
     },
     {
       "id": "zu9o",
@@ -61,7 +77,9 @@
       "date": "2025-12-25",
       "size": "104KB",
       "url": "https://cdn.ediprofe.com/img/quimica/zu9o-cambios-de-fase.png",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/zu9o-cambios-de-fase.png",
+      "aliases": []
     },
     {
       "id": "c5r0",
@@ -70,7 +88,9 @@
       "date": "2025-12-25",
       "size": "73KB",
       "url": "https://cdn.ediprofe.com/img/quimica/c5r0-resumen-masa-y-volumen.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/c5r0-resumen-masa-y-volumen.webp",
+      "aliases": []
     },
     {
       "id": "22e2",
@@ -79,7 +99,9 @@
       "date": "2025-12-25",
       "size": "69KB",
       "url": "https://cdn.ediprofe.com/img/quimica/22e2-resumen-masa-y-volumen.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/22e2-resumen-masa-y-volumen.webp",
+      "aliases": []
     },
     {
       "id": "ahql",
@@ -88,7 +110,9 @@
       "date": "2025-12-25",
       "size": "80KB",
       "url": "https://cdn.ediprofe.com/img/quimica/ahql-image.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/ahql-image.webp",
+      "aliases": []
     },
     {
       "id": "oa8i",
@@ -97,7 +121,9 @@
       "date": "2025-12-25",
       "size": "80KB",
       "url": "https://cdn.ediprofe.com/img/quimica/oa8i-resumen-densidad.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/oa8i-resumen-densidad.webp",
+      "aliases": []
     },
     {
       "id": "elgh",
@@ -106,7 +132,9 @@
       "date": "2025-12-25",
       "size": "88KB",
       "url": "https://cdn.ediprofe.com/img/quimica/elgh-resumen-temperatura.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/elgh-resumen-temperatura.webp",
+      "aliases": []
     },
     {
       "id": "p9uq",
@@ -115,7 +143,9 @@
       "date": "2025-12-25",
       "size": "85KB",
       "url": "https://cdn.ediprofe.com/img/quimica/p9uq-resumen-conductividad.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/p9uq-resumen-conductividad.webp",
+      "aliases": []
     },
     {
       "id": "2928",
@@ -124,7 +154,9 @@
       "date": "2025-12-25",
       "size": "78KB",
       "url": "https://cdn.ediprofe.com/img/quimica/2928-propiedades-cualitativas-y-cuantitativas.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/2928-propiedades-cualitativas-y-cuantitativas.webp",
+      "aliases": []
     },
     {
       "id": "sk2e",
@@ -133,7 +165,9 @@
       "date": "2025-12-25",
       "size": "81KB",
       "url": "https://cdn.ediprofe.com/img/quimica/sk2e-propiedades-intensivas-y-extensivas.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/sk2e-propiedades-intensivas-y-extensivas.webp",
+      "aliases": []
     },
     {
       "id": "qws2",
@@ -142,7 +176,9 @@
       "date": "2025-12-25",
       "size": "85KB",
       "url": "https://cdn.ediprofe.com/img/quimica/qws2-cambio-fisico-y-quimico.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/qws2-cambio-fisico-y-quimico.webp",
+      "aliases": []
     },
     {
       "id": "f59q",
@@ -151,7 +187,9 @@
       "date": "2025-12-25",
       "size": "81KB",
       "url": "https://cdn.ediprofe.com/img/quimica/f59q-de-que-esta-hecha-la-materia.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/f59q-de-que-esta-hecha-la-materia.webp",
+      "aliases": []
     },
     {
       "id": "qwgf",
@@ -160,7 +198,9 @@
       "date": "2025-12-25",
       "size": "97KB",
       "url": "https://cdn.ediprofe.com/img/quimica/qwgf-sustancias-puras-y-mezclas.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/qwgf-sustancias-puras-y-mezclas.webp",
+      "aliases": []
     },
     {
       "id": "yzql",
@@ -169,7 +209,9 @@
       "date": "2025-12-25",
       "size": "47KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/yzql-de-palabras-a-simbolos.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/yzql-de-palabras-a-simbolos.webp",
+      "aliases": []
     },
     {
       "id": "8a1t",
@@ -178,7 +220,9 @@
       "date": "2025-12-25",
       "size": "71KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/8a1t-traduccion-visual-de-operaciones.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/8a1t-traduccion-visual-de-operaciones.webp",
+      "aliases": []
     },
     {
       "id": "fy5u",
@@ -187,7 +231,9 @@
       "date": "2025-12-25",
       "size": "65KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/fy5u-la-importancia-de-los-parentesis.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/fy5u-la-importancia-de-los-parentesis.webp",
+      "aliases": []
     },
     {
       "id": "udy5",
@@ -196,7 +242,9 @@
       "date": "2025-12-25",
       "size": "44KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/udy5-resumen-lenguaje-algebraico.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/udy5-resumen-lenguaje-algebraico.webp",
+      "aliases": []
     },
     {
       "id": "68xp",
@@ -205,7 +253,9 @@
       "date": "2025-12-25",
       "size": "79KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/68xp-resumen-lenguaje-algebraico.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/68xp-resumen-lenguaje-algebraico.webp",
+      "aliases": []
     },
     {
       "id": "kw22",
@@ -214,7 +264,9 @@
       "date": "2025-12-25",
       "size": "51KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/kw22-maquina-de-valor-numerico.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/kw22-maquina-de-valor-numerico.webp",
+      "aliases": []
     },
     {
       "id": "4hyl",
@@ -223,7 +275,9 @@
       "date": "2025-12-25",
       "size": "80KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/4hyl-expresiones-algebraicas.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/4hyl-expresiones-algebraicas.webp",
+      "aliases": []
     },
     {
       "id": "j7re",
@@ -232,7 +286,9 @@
       "date": "2025-12-25",
       "size": "66KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/j7re-resumen-monomios.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/j7re-resumen-monomios.webp",
+      "aliases": []
     },
     {
       "id": "s36h",
@@ -241,7 +297,9 @@
       "date": "2025-12-25",
       "size": "88KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/s36h-polinomio-y-terminos-semejantes.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/s36h-polinomio-y-terminos-semejantes.webp",
+      "aliases": []
     },
     {
       "id": "gzx3",
@@ -250,7 +308,9 @@
       "date": "2025-12-25",
       "size": "90KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/gzx3-polinomio-y-terminos-semejantes.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/gzx3-polinomio-y-terminos-semejantes.webp",
+      "aliases": []
     },
     {
       "id": "jrew",
@@ -259,7 +319,9 @@
       "date": "2025-12-25",
       "size": "79KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/jrew-resumen-operaciones-monomios.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/jrew-resumen-operaciones-monomios.webp",
+      "aliases": []
     },
     {
       "id": "9eqg",
@@ -268,7 +330,9 @@
       "date": "2025-12-25",
       "size": "67KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/9eqg-operaciones-con-polinomios.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/9eqg-operaciones-con-polinomios.webp",
+      "aliases": []
     },
     {
       "id": "5cb2",
@@ -277,7 +341,9 @@
       "date": "2025-12-26",
       "size": "211KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/5cb2-division-de-polinomio-tradicional.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/5cb2-division-de-polinomio-tradicional.webp",
+      "aliases": []
     },
     {
       "id": "bcwq",
@@ -286,7 +352,9 @@
       "date": "2025-12-26",
       "size": "281KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/bcwq-division-tradicional-de-polinomios.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/bcwq-division-tradicional-de-polinomios.webp",
+      "aliases": []
     },
     {
       "id": "4rd3",
@@ -295,7 +363,9 @@
       "date": "2025-12-26",
       "size": "216KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/4rd3-ejemplo-ruffini.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/4rd3-ejemplo-ruffini.webp",
+      "aliases": []
     },
     {
       "id": "d74f",
@@ -304,7 +374,9 @@
       "date": "2025-12-26",
       "size": "49KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/d74f-el-tren-de-los-terminos.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/d74f-el-tren-de-los-terminos.webp",
+      "aliases": []
     },
     {
       "id": "q1ss",
@@ -313,7 +385,9 @@
       "date": "2025-12-26",
       "size": "65KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/q1ss-factorizar-y-multiplicar.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/q1ss-factorizar-y-multiplicar.webp",
+      "aliases": []
     },
     {
       "id": "w3rh",
@@ -322,7 +396,9 @@
       "date": "2025-12-26",
       "size": "40KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/w3rh-factor-comun.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/w3rh-factor-comun.webp",
+      "aliases": []
     },
     {
       "id": "wp5n",
@@ -331,7 +407,9 @@
       "date": "2025-12-26",
       "size": "53KB",
       "url": "https://cdn.ediprofe.com/img/fisica/wp5n-ascensor.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/fisica/wp5n-ascensor.webp",
+      "aliases": []
     },
     {
       "id": "8y72",
@@ -340,7 +418,9 @@
       "date": "2025-12-26",
       "size": "40KB",
       "url": "https://cdn.ediprofe.com/img/fisica/8y72-resumen-distancia-desplazamiento.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/fisica/8y72-resumen-distancia-desplazamiento.webp",
+      "aliases": []
     },
     {
       "id": "oszg",
@@ -349,7 +429,9 @@
       "date": "2025-12-26",
       "size": "81KB",
       "url": "https://cdn.ediprofe.com/img/fisica/oszg-resumen-rapidez-velocidad.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/fisica/oszg-resumen-rapidez-velocidad.webp",
+      "aliases": []
     },
     {
       "id": "llj9",
@@ -358,7 +440,9 @@
       "date": "2025-12-26",
       "size": "37KB",
       "url": "https://cdn.ediprofe.com/img/fisica/llj9-despeje-mru.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/fisica/llj9-despeje-mru.webp",
+      "aliases": []
     },
     {
       "id": "w8j3",
@@ -367,7 +451,9 @@
       "date": "2025-12-26",
       "size": "37KB",
       "url": "https://cdn.ediprofe.com/img/fisica/w8j3-resumen-caida-libre.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/fisica/w8j3-resumen-caida-libre.webp",
+      "aliases": []
     },
     {
       "id": "zj93",
@@ -376,7 +462,9 @@
       "date": "2025-12-26",
       "size": "32KB",
       "url": "https://cdn.ediprofe.com/img/fisica/zj93-piedra-del-puente.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/fisica/zj93-piedra-del-puente.webp",
+      "aliases": []
     },
     {
       "id": "89oh",
@@ -385,7 +473,9 @@
       "date": "2025-12-26",
       "size": "24KB",
       "url": "https://cdn.ediprofe.com/img/fisica/89oh-altura-de-la-piedra.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/fisica/89oh-altura-de-la-piedra.webp",
+      "aliases": []
     },
     {
       "id": "rh5n",
@@ -394,7 +484,9 @@
       "date": "2025-12-26",
       "size": "41KB",
       "url": "https://cdn.ediprofe.com/img/fisica/rh5n-despegue-del-avion.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/fisica/rh5n-despegue-del-avion.webp",
+      "aliases": []
     },
     {
       "id": "8bj6",
@@ -403,7 +495,9 @@
       "date": "2025-12-26",
       "size": "36KB",
       "url": "https://cdn.ediprofe.com/img/fisica/8bj6-flecha-hacia-arriba.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/fisica/8bj6-flecha-hacia-arriba.webp",
+      "aliases": []
     },
     {
       "id": "w5ef",
@@ -412,7 +506,9 @@
       "date": "2025-12-26",
       "size": "60KB",
       "url": "https://cdn.ediprofe.com/img/fisica/w5ef-resumen-lanzamiento-vertical.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/fisica/w5ef-resumen-lanzamiento-vertical.webp",
+      "aliases": []
     },
     {
       "id": "tpbn",
@@ -421,7 +517,9 @@
       "date": "2025-12-26",
       "size": "64KB",
       "url": "https://cdn.ediprofe.com/img/fisica/tpbn-resumen-tiro-parabolico.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/fisica/tpbn-resumen-tiro-parabolico.webp",
+      "aliases": []
     },
     {
       "id": "mwgi",
@@ -430,7 +528,9 @@
       "date": "2025-12-26",
       "size": "60KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/mwgi-triangulo-de-pascal.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/mwgi-triangulo-de-pascal.webp",
+      "aliases": []
     },
     {
       "id": "novi",
@@ -439,7 +539,9 @@
       "date": "2025-12-28",
       "size": "64KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/novi-factorizacion-por-factor-comun.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/novi-factorizacion-por-factor-comun.webp",
+      "aliases": []
     },
     {
       "id": "1z8p",
@@ -448,7 +550,9 @@
       "date": "2025-12-28",
       "size": "69KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/1z8p-resumen-factor-comun.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/1z8p-resumen-factor-comun.webp",
+      "aliases": []
     },
     {
       "id": "b471",
@@ -457,7 +561,9 @@
       "date": "2026-01-08",
       "size": "48KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/b471-funcion-matematica.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/b471-funcion-matematica.webp",
+      "aliases": []
     },
     {
       "id": "ylqt",
@@ -466,7 +572,9 @@
       "date": "2026-01-08",
       "size": "65KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/ylqt-la-ecuacion-como-una-balanza.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/ylqt-la-ecuacion-como-una-balanza.webp",
+      "aliases": []
     },
     {
       "id": "wnld",
@@ -475,7 +583,9 @@
       "date": "2026-01-09",
       "size": "70KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/wnld-sistema-de-ecuaciones.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/wnld-sistema-de-ecuaciones.webp",
+      "aliases": []
     },
     {
       "id": "3k9m",
@@ -484,7 +594,9 @@
       "date": "2026-01-09",
       "size": "70KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/3k9m-progresion-aritmetica.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/3k9m-progresion-aritmetica.webp",
+      "aliases": []
     },
     {
       "id": "uf7p",
@@ -493,7 +605,9 @@
       "date": "2026-01-09",
       "size": "88KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/uf7p-progresiones-geometricas.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/uf7p-progresiones-geometricas.webp",
+      "aliases": []
     },
     {
       "id": "moz8",
@@ -502,7 +616,9 @@
       "date": "2026-01-09",
       "size": "69KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/moz8-conceptos-fundamentales-de-geometria.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/moz8-conceptos-fundamentales-de-geometria.webp",
+      "aliases": []
     },
     {
       "id": "7y1v",
@@ -511,7 +627,9 @@
       "date": "2026-01-09",
       "size": "41KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/7y1v-las-dimensiones.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/7y1v-las-dimensiones.webp",
+      "aliases": []
     },
     {
       "id": "2yg7",
@@ -520,7 +638,9 @@
       "date": "2026-01-09",
       "size": "53KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/2yg7-punto-recta-y-plano.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/2yg7-punto-recta-y-plano.webp",
+      "aliases": []
     },
     {
       "id": "z02w",
@@ -529,7 +649,9 @@
       "date": "2026-01-09",
       "size": "63KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/z02w-notacion-geometrica-puntos-y-rectas.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/z02w-notacion-geometrica-puntos-y-rectas.webp",
+      "aliases": []
     },
     {
       "id": "wsx3",
@@ -538,7 +660,9 @@
       "date": "2026-01-09",
       "size": "69KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/wsx3-introduccion-a-la-geometria.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/wsx3-introduccion-a-la-geometria.webp",
+      "aliases": []
     },
     {
       "id": "5ry1",
@@ -547,7 +671,9 @@
       "date": "2026-01-09",
       "size": "44KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/5ry1-el-punto.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/5ry1-el-punto.webp",
+      "aliases": []
     },
     {
       "id": "b8sg",
@@ -556,7 +682,9 @@
       "date": "2026-01-09",
       "size": "57KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/b8sg-el-plano.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/b8sg-el-plano.webp",
+      "aliases": []
     },
     {
       "id": "fvs8",
@@ -565,7 +693,9 @@
       "date": "2026-01-09",
       "size": "47KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/fvs8-la-recta.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/fvs8-la-recta.webp",
+      "aliases": []
     },
     {
       "id": "yoy7",
@@ -574,7 +704,9 @@
       "date": "2026-01-09",
       "size": "37KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/yoy7-puntos-colineales.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/yoy7-puntos-colineales.webp",
+      "aliases": []
     },
     {
       "id": "u2pp",
@@ -583,7 +715,9 @@
       "date": "2026-01-09",
       "size": "48KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/u2pp-puntos-coplanares.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/u2pp-puntos-coplanares.webp",
+      "aliases": []
     },
     {
       "id": "bs19",
@@ -592,7 +726,9 @@
       "date": "2026-01-09",
       "size": "37KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/bs19-ejemplo-1-notacion-de-recta.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/bs19-ejemplo-1-notacion-de-recta.webp",
+      "aliases": []
     },
     {
       "id": "pudl",
@@ -601,7 +737,9 @@
       "date": "2026-01-09",
       "size": "47KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/pudl-ejemplo-2-colinealidad.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/pudl-ejemplo-2-colinealidad.webp",
+      "aliases": []
     },
     {
       "id": "duwc",
@@ -610,7 +748,9 @@
       "date": "2026-01-09",
       "size": "50KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/duwc-ejemplo-3-definir-un-plano.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/duwc-ejemplo-3-definir-un-plano.webp",
+      "aliases": []
     },
     {
       "id": "7rot",
@@ -619,7 +759,9 @@
       "date": "2026-01-11",
       "size": "35KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/7rot-el-segmento-de-recta.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/7rot-el-segmento-de-recta.webp",
+      "aliases": []
     },
     {
       "id": "abrt",
@@ -628,7 +770,9 @@
       "date": "2026-01-11",
       "size": "52KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/abrt-el-rayo-o-semirecta.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/abrt-el-rayo-o-semirecta.webp",
+      "aliases": []
     },
     {
       "id": "2ptb",
@@ -637,7 +781,9 @@
       "date": "2026-01-11",
       "size": "74KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/2ptb-resumen-elementos-geometricos.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/2ptb-resumen-elementos-geometricos.webp",
+      "aliases": []
     },
     {
       "id": "aziu",
@@ -646,7 +792,9 @@
       "date": "2026-01-11",
       "size": "58KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/aziu-rectas-secantes.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/aziu-rectas-secantes.webp",
+      "aliases": []
     },
     {
       "id": "n0lo",
@@ -655,7 +803,9 @@
       "date": "2026-01-11",
       "size": "62KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/n0lo-rectas-paralelas.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/n0lo-rectas-paralelas.webp",
+      "aliases": []
     },
     {
       "id": "1qqa",
@@ -664,7 +814,9 @@
       "date": "2026-01-11",
       "size": "51KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/1qqa-rectas-coincidentes.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/1qqa-rectas-coincidentes.webp",
+      "aliases": []
     },
     {
       "id": "iyyy",
@@ -673,7 +825,9 @@
       "date": "2026-01-11",
       "size": "48KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/iyyy-ejemplo-1.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/iyyy-ejemplo-1.webp",
+      "aliases": []
     },
     {
       "id": "j2z8",
@@ -682,7 +836,9 @@
       "date": "2026-01-11",
       "size": "51KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/j2z8-punto-de-interseccion-rectas-paralelas.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/j2z8-punto-de-interseccion-rectas-paralelas.webp",
+      "aliases": []
     },
     {
       "id": "mxol",
@@ -691,7 +847,9 @@
       "date": "2026-01-11",
       "size": "42KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/mxol-anatomia-de-un-angulo.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/mxol-anatomia-de-un-angulo.webp",
+      "aliases": []
     },
     {
       "id": "b9pb",
@@ -700,7 +858,9 @@
       "date": "2026-01-11",
       "size": "22KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/b9pb-giro-positivo-y-negativo-de-angulos.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/b9pb-giro-positivo-y-negativo-de-angulos.webp",
+      "aliases": []
     },
     {
       "id": "ch5h",
@@ -709,7 +869,9 @@
       "date": "2026-01-11",
       "size": "57KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/ch5h-sistema-base-60.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/ch5h-sistema-base-60.webp",
+      "aliases": []
     },
     {
       "id": "zjmm",
@@ -718,7 +880,9 @@
       "date": "2026-01-11",
       "size": "52KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/zjmm-suma-de-angulos.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/zjmm-suma-de-angulos.webp",
+      "aliases": []
     },
     {
       "id": "lonv",
@@ -727,7 +891,9 @@
       "date": "2026-01-11",
       "size": "39KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/lonv-resta-de-angulos.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/lonv-resta-de-angulos.webp",
+      "aliases": []
     },
     {
       "id": "52ci",
@@ -736,7 +902,9 @@
       "date": "2026-01-11",
       "size": "58KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/52ci-conversion-decimal-a-sexagesimal.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/52ci-conversion-decimal-a-sexagesimal.webp",
+      "aliases": []
     },
     {
       "id": "aoqx",
@@ -745,7 +913,9 @@
       "date": "2026-01-11",
       "size": "44KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/aoqx-resta-simple.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/aoqx-resta-simple.webp",
+      "aliases": []
     },
     {
       "id": "0mjx",
@@ -754,7 +924,9 @@
       "date": "2026-01-11",
       "size": "46KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/0mjx-suma-llevando-dos-veces.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/0mjx-suma-llevando-dos-veces.webp",
+      "aliases": []
     },
     {
       "id": "q8nx",
@@ -763,7 +935,9 @@
       "date": "2026-01-11",
       "size": "60KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/q8nx-multiplicacion-mental.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/q8nx-multiplicacion-mental.webp",
+      "aliases": []
     },
     {
       "id": "w4n5",
@@ -772,7 +946,9 @@
       "date": "2026-01-11",
       "size": "52KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/w4n5-el-radian.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/w4n5-el-radian.webp",
+      "aliases": []
     },
     {
       "id": "c81n",
@@ -781,7 +957,9 @@
       "date": "2026-01-12",
       "size": "73KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/c81n-de-grados-a-radianes.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/c81n-de-grados-a-radianes.webp",
+      "aliases": []
     },
     {
       "id": "p9h8",
@@ -790,7 +968,9 @@
       "date": "2026-01-12",
       "size": "72KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/p9h8-de-radianes-a-grados.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/p9h8-de-radianes-a-grados.webp",
+      "aliases": []
     },
     {
       "id": "e2ww",
@@ -799,7 +979,9 @@
       "date": "2026-01-12",
       "size": "56KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/e2ww-resumen-conversion-de-angulos.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/e2ww-resumen-conversion-de-angulos.webp",
+      "aliases": []
     },
     {
       "id": "e5c0",
@@ -808,7 +990,9 @@
       "date": "2026-01-12",
       "size": "53KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/e5c0-la-escala-angulos.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/e5c0-la-escala-angulos.webp",
+      "aliases": []
     },
     {
       "id": "gdwj",
@@ -817,7 +1001,9 @@
       "date": "2026-01-12",
       "size": "46KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/gdwj-angulos-complementarios.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/gdwj-angulos-complementarios.webp",
+      "aliases": []
     },
     {
       "id": "yvsa",
@@ -826,7 +1012,9 @@
       "date": "2026-01-12",
       "size": "48KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/yvsa-angulos-suplementarios.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/yvsa-angulos-suplementarios.webp",
+      "aliases": []
     },
     {
       "id": "qtxx",
@@ -835,7 +1023,9 @@
       "date": "2026-01-12",
       "size": "49KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/qtxx-angulos-conjugados.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/qtxx-angulos-conjugados.webp",
+      "aliases": []
     },
     {
       "id": "ca9v",
@@ -844,7 +1034,9 @@
       "date": "2026-01-12",
       "size": "49KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/ca9v-angulos-adyacentes.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/ca9v-angulos-adyacentes.webp",
+      "aliases": []
     },
     {
       "id": "iq8t",
@@ -853,7 +1045,9 @@
       "date": "2026-01-12",
       "size": "42KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/iq8t-angulos-opuestos-por-el-vertice.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/iq8t-angulos-opuestos-por-el-vertice.webp",
+      "aliases": []
     },
     {
       "id": "qwl6",
@@ -862,7 +1056,9 @@
       "date": "2026-01-12",
       "size": "18KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/qwl6-giro-de-los-angulos.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/qwl6-giro-de-los-angulos.webp",
+      "aliases": []
     },
     {
       "id": "qodc",
@@ -871,7 +1067,9 @@
       "date": "2026-01-12",
       "size": "52KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/qodc-rectas-perpendiculares.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/qodc-rectas-perpendiculares.webp",
+      "aliases": []
     },
     {
       "id": "ncyo",
@@ -880,7 +1078,9 @@
       "date": "2026-01-12",
       "size": "58KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/ncyo-la-perpendicular-como-distancia.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/ncyo-la-perpendicular-como-distancia.webp",
+      "aliases": []
     },
     {
       "id": "vsli",
@@ -889,7 +1089,9 @@
       "date": "2026-01-12",
       "size": "42KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/vsli-ejemplo-1.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/vsli-ejemplo-1.webp",
+      "aliases": []
     },
     {
       "id": "4lte",
@@ -898,7 +1100,9 @@
       "date": "2026-01-12",
       "size": "34KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/4lte-ejemplo-2.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/4lte-ejemplo-2.webp",
+      "aliases": []
     },
     {
       "id": "movb",
@@ -907,7 +1111,9 @@
       "date": "2026-01-12",
       "size": "37KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/movb-ejemplo-3.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/movb-ejemplo-3.webp",
+      "aliases": []
     },
     {
       "id": "8l0h",
@@ -916,7 +1122,9 @@
       "date": "2026-01-12",
       "size": "48KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/8l0h-ejemplo-4.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/8l0h-ejemplo-4.webp",
+      "aliases": []
     },
     {
       "id": "dyp5",
@@ -925,7 +1133,9 @@
       "date": "2026-01-12",
       "size": "37KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/dyp5-ejemplo-5.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/dyp5-ejemplo-5.webp",
+      "aliases": []
     },
     {
       "id": "w41d",
@@ -934,7 +1144,9 @@
       "date": "2026-01-12",
       "size": "40KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/w41d-ejemplo-6.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/w41d-ejemplo-6.webp",
+      "aliases": []
     },
     {
       "id": "rh7b",
@@ -943,7 +1155,9 @@
       "date": "2026-01-12",
       "size": "43KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/rh7b-ejemplo-1.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/rh7b-ejemplo-1.webp",
+      "aliases": []
     },
     {
       "id": "fz17",
@@ -952,7 +1166,9 @@
       "date": "2026-01-12",
       "size": "33KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/fz17-rectas-paralelas.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/fz17-rectas-paralelas.webp",
+      "aliases": []
     },
     {
       "id": "wcgu",
@@ -961,7 +1177,9 @@
       "date": "2026-01-12",
       "size": "33KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/wcgu-transitividad-y-dos-perpendiculares-a-una-recta.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/wcgu-transitividad-y-dos-perpendiculares-a-una-recta.webp",
+      "aliases": []
     },
     {
       "id": "6nch",
@@ -970,7 +1188,9 @@
       "date": "2026-01-12",
       "size": "40KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/6nch-ejemplo-1-identificacion.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/6nch-ejemplo-1-identificacion.webp",
+      "aliases": []
     },
     {
       "id": "yylk",
@@ -979,7 +1199,9 @@
       "date": "2026-01-12",
       "size": "35KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/yylk-ejemplo-2-distancia-constante.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/yylk-ejemplo-2-distancia-constante.webp",
+      "aliases": []
     },
     {
       "id": "mq57",
@@ -988,7 +1210,9 @@
       "date": "2026-01-12",
       "size": "40KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/mq57-ejemplo-3-pendientes.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/mq57-ejemplo-3-pendientes.webp",
+      "aliases": []
     },
     {
       "id": "xth5",
@@ -997,7 +1221,9 @@
       "date": "2026-01-12",
       "size": "35KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/xth5-ejemplo-4-construccion-logica.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/xth5-ejemplo-4-construccion-logica.webp",
+      "aliases": []
     },
     {
       "id": "zo9m",
@@ -1006,7 +1232,9 @@
       "date": "2026-01-12",
       "size": "41KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/zo9m-ejemplo-5-falsas-paralelas.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/zo9m-ejemplo-5-falsas-paralelas.webp",
+      "aliases": []
     },
     {
       "id": "1on3",
@@ -1015,7 +1243,9 @@
       "date": "2026-01-12",
       "size": "37KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/1on3-ejemplo-6-el-rectangulo.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/1on3-ejemplo-6-el-rectangulo.webp",
+      "aliases": []
     },
     {
       "id": "vqr6",
@@ -1024,7 +1254,9 @@
       "date": "2026-01-12",
       "size": "57KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/vqr6-rigides-de-triangulos.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/vqr6-rigides-de-triangulos.webp",
+      "aliases": []
     },
     {
       "id": "rpng",
@@ -1033,7 +1265,9 @@
       "date": "2026-01-12",
       "size": "44KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/rpng-desigualdad-triangular.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/rpng-desigualdad-triangular.webp",
+      "aliases": []
     },
     {
       "id": "13wk",
@@ -1042,7 +1276,9 @@
       "date": "2026-01-12",
       "size": "60KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/13wk-centro-de-masa-baricentro.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/13wk-centro-de-masa-baricentro.webp",
+      "aliases": []
     },
     {
       "id": "cfw5",
@@ -1051,7 +1287,9 @@
       "date": "2026-01-12",
       "size": "41KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/cfw5-circuncentro-y-compas.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/cfw5-circuncentro-y-compas.webp",
+      "aliases": []
     },
     {
       "id": "4flj",
@@ -1060,7 +1298,9 @@
       "date": "2026-01-12",
       "size": "58KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/4flj-circuncentro-interseccion-de-mediatrices.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/4flj-circuncentro-interseccion-de-mediatrices.webp",
+      "aliases": []
     },
     {
       "id": "bcpc",
@@ -1069,7 +1309,9 @@
       "date": "2026-01-12",
       "size": "53KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/bcpc-congruencia-de-triangulos.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/bcpc-congruencia-de-triangulos.webp",
+      "aliases": []
     },
     {
       "id": "3kr8",
@@ -1078,7 +1320,9 @@
       "date": "2026-01-13",
       "size": "38KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/3kr8-estantes-y-teorema-de-thales.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/3kr8-estantes-y-teorema-de-thales.webp",
+      "aliases": []
     },
     {
       "id": "aigt",
@@ -1087,7 +1331,9 @@
       "date": "2026-01-13",
       "size": "49KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/aigt-teorema-de-pitagoras.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/aigt-teorema-de-pitagoras.webp",
+      "aliases": []
     },
     {
       "id": "lvui",
@@ -1096,7 +1342,9 @@
       "date": "2026-01-14",
       "size": "54KB",
       "url": "https://cdn.ediprofe.com/img/matematicas/lvui-resumen-paralelogramos.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/matematicas/lvui-resumen-paralelogramos.webp",
+      "aliases": []
     },
     {
       "id": "74mg",
@@ -1105,7 +1353,9 @@
       "date": "2026-01-15",
       "size": "75KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/74mg-la-celula-unidad-basica-de-la-vida.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/74mg-la-celula-unidad-basica-de-la-vida.webp",
+      "aliases": []
     },
     {
       "id": "e5if",
@@ -1114,7 +1364,9 @@
       "date": "2026-01-15",
       "size": "77KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/e5if-la-teoria-celular.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/e5if-la-teoria-celular.webp",
+      "aliases": []
     },
     {
       "id": "odo4",
@@ -1123,7 +1375,9 @@
       "date": "2026-01-15",
       "size": "74KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/odo4-funciones-vitales-de-la-celula.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/odo4-funciones-vitales-de-la-celula.webp",
+      "aliases": []
     },
     {
       "id": "6e3f",
@@ -1132,7 +1386,9 @@
       "date": "2026-01-15",
       "size": "88KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/6e3f-orgnismos-unicelulares-y-pluricelulares.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/6e3f-orgnismos-unicelulares-y-pluricelulares.webp",
+      "aliases": []
     },
     {
       "id": "rh89",
@@ -1141,7 +1397,9 @@
       "date": "2026-01-15",
       "size": "73KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/rh89-celula-eucariota-y-procariota.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/rh89-celula-eucariota-y-procariota.webp",
+      "aliases": []
     },
     {
       "id": "k01i",
@@ -1150,7 +1408,9 @@
       "date": "2026-01-15",
       "size": "64KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/k01i-celula-animal-y-vegetal.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/k01i-celula-animal-y-vegetal.webp",
+      "aliases": []
     },
     {
       "id": "l0bj",
@@ -1159,7 +1419,9 @@
       "date": "2026-01-15",
       "size": "73KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/l0bj-celula-animal-y-vegetal.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/l0bj-celula-animal-y-vegetal.webp",
+      "aliases": []
     },
     {
       "id": "w3xi",
@@ -1168,7 +1430,9 @@
       "date": "2026-01-15",
       "size": "71KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/w3xi-bajo-el-microscopio-celula-vegetal.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/w3xi-bajo-el-microscopio-celula-vegetal.webp",
+      "aliases": []
     },
     {
       "id": "f4o9",
@@ -1177,7 +1441,9 @@
       "date": "2026-01-15",
       "size": "62KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/f4o9-nucleo-y-membrana-celular.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/f4o9-nucleo-y-membrana-celular.webp",
+      "aliases": []
     },
     {
       "id": "oh4q",
@@ -1186,7 +1452,9 @@
       "date": "2026-01-15",
       "size": "72KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/oh4q-mitocondrias.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/oh4q-mitocondrias.webp",
+      "aliases": []
     },
     {
       "id": "ntko",
@@ -1195,7 +1463,9 @@
       "date": "2026-01-15",
       "size": "78KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/ntko-ribosomas-y-reticulos.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/ntko-ribosomas-y-reticulos.webp",
+      "aliases": []
     },
     {
       "id": "8cs4",
@@ -1204,7 +1474,9 @@
       "date": "2026-01-15",
       "size": "103KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/8cs4-la-celula-como-una-ciudad-vibrante.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/8cs4-la-celula-como-una-ciudad-vibrante.webp",
+      "aliases": []
     },
     {
       "id": "84h1",
@@ -1213,7 +1485,9 @@
       "date": "2026-01-15",
       "size": "78KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/84h1-las-proteinas-los-trabajadores.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/84h1-las-proteinas-los-trabajadores.webp",
+      "aliases": []
     },
     {
       "id": "2qgz",
@@ -1222,7 +1496,9 @@
       "date": "2026-01-15",
       "size": "81KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/2qgz-aparato-de-golgi.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/2qgz-aparato-de-golgi.webp",
+      "aliases": []
     },
     {
       "id": "zllu",
@@ -1231,7 +1507,9 @@
       "date": "2026-01-15",
       "size": "87KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/zllu-lisosomas.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/zllu-lisosomas.webp",
+      "aliases": []
     },
     {
       "id": "dxgc",
@@ -1240,7 +1518,9 @@
       "date": "2026-01-15",
       "size": "61KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/dxgc-cloroplastos.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/dxgc-cloroplastos.webp",
+      "aliases": []
     },
     {
       "id": "uwak",
@@ -1249,7 +1529,9 @@
       "date": "2026-01-15",
       "size": "78KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/uwak-pared-celular.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/uwak-pared-celular.webp",
+      "aliases": []
     },
     {
       "id": "9dcb",
@@ -1258,7 +1540,9 @@
       "date": "2026-01-15",
       "size": "64KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/9dcb-vacuola-gigante.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/9dcb-vacuola-gigante.webp",
+      "aliases": []
     },
     {
       "id": "7bwa",
@@ -1267,7 +1551,9 @@
       "date": "2026-01-15",
       "size": "79KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/7bwa-ejemplo-1-de-donde-sale-la-energia.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/7bwa-ejemplo-1-de-donde-sale-la-energia.webp",
+      "aliases": []
     },
     {
       "id": "y1e9",
@@ -1276,7 +1562,9 @@
       "date": "2026-01-15",
       "size": "71KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/y1e9-ejemplo-2-muerte-celular.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/y1e9-ejemplo-2-muerte-celular.webp",
+      "aliases": []
     },
     {
       "id": "32r7",
@@ -1285,7 +1573,9 @@
       "date": "2026-01-15",
       "size": "69KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/32r7-ejemplo-3-el-color-verde.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/32r7-ejemplo-3-el-color-verde.webp",
+      "aliases": []
     },
     {
       "id": "2itm",
@@ -1294,7 +1584,9 @@
       "date": "2026-01-15",
       "size": "88KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/2itm-ejemplo-4-centro-de-empaque-y-distribucion.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/2itm-ejemplo-4-centro-de-empaque-y-distribucion.webp",
+      "aliases": []
     },
     {
       "id": "q09g",
@@ -1303,7 +1595,9 @@
       "date": "2026-01-15",
       "size": "84KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/q09g-ejemplo-5-laboratorio-de-limpieza.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/q09g-ejemplo-5-laboratorio-de-limpieza.webp",
+      "aliases": []
     },
     {
       "id": "xxdh",
@@ -1312,7 +1606,9 @@
       "date": "2026-01-15",
       "size": "88KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/xxdh-ejemplo-6-reciclaje-lisosomas.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/xxdh-ejemplo-6-reciclaje-lisosomas.webp",
+      "aliases": []
     },
     {
       "id": "d7ro",
@@ -1321,7 +1617,9 @@
       "date": "2026-01-15",
       "size": "111KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/d7ro-resumen-organelos-celulares.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/d7ro-resumen-organelos-celulares.webp",
+      "aliases": []
     },
     {
       "id": "9xpo",
@@ -1330,7 +1628,9 @@
       "date": "2026-01-15",
       "size": "57KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/9xpo-membrana-celular.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/9xpo-membrana-celular.webp",
+      "aliases": []
     },
     {
       "id": "p9nh",
@@ -1339,7 +1639,9 @@
       "date": "2026-01-15",
       "size": "73KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/p9nh-nucleo-celular.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/p9nh-nucleo-celular.webp",
+      "aliases": []
     },
     {
       "id": "xr09",
@@ -1348,7 +1650,9 @@
       "date": "2026-01-15",
       "size": "98KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/xr09-nucleo-y-membrana-celular.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/xr09-nucleo-y-membrana-celular.webp",
+      "aliases": []
     },
     {
       "id": "3aiu",
@@ -1357,7 +1661,9 @@
       "date": "2026-01-15",
       "size": "65KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/3aiu-mitocondria-plantas-de-energia.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/3aiu-mitocondria-plantas-de-energia.webp",
+      "aliases": []
     },
     {
       "id": "wjl5",
@@ -1366,7 +1672,9 @@
       "date": "2026-01-15",
       "size": "84KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/wjl5-claroplastos-fabrica-de-alimentos.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/wjl5-claroplastos-fabrica-de-alimentos.webp",
+      "aliases": []
     },
     {
       "id": "rgh6",
@@ -1375,7 +1683,9 @@
       "date": "2026-01-15",
       "size": "75KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/rgh6-celula-eucariota.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/rgh6-celula-eucariota.webp",
+      "aliases": []
     },
     {
       "id": "9w6x",
@@ -1384,7 +1694,9 @@
       "date": "2026-01-15",
       "size": "67KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/9w6x-celula-procariota.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/9w6x-celula-procariota.webp",
+      "aliases": []
     },
     {
       "id": "x3e3",
@@ -1393,7 +1705,9 @@
       "date": "2026-01-16",
       "size": "95KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/x3e3-membrana-celular-una-frontera-selectiva.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/x3e3-membrana-celular-una-frontera-selectiva.webp",
+      "aliases": []
     },
     {
       "id": "7hft",
@@ -1402,7 +1716,9 @@
       "date": "2026-01-16",
       "size": "62KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/7hft-transporte-pasivo.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/7hft-transporte-pasivo.webp",
+      "aliases": []
     },
     {
       "id": "7c56",
@@ -1411,7 +1727,9 @@
       "date": "2026-01-16",
       "size": "61KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/7c56-difusion-simple.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/7c56-difusion-simple.webp",
+      "aliases": []
     },
     {
       "id": "i8qy",
@@ -1420,7 +1738,9 @@
       "date": "2026-01-16",
       "size": "109KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/i8qy-difusion-facilitada.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/i8qy-difusion-facilitada.webp",
+      "aliases": []
     },
     {
       "id": "2gxy",
@@ -1429,7 +1749,9 @@
       "date": "2026-01-16",
       "size": "75KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/2gxy-osmosis.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/2gxy-osmosis.webp",
+      "aliases": []
     },
     {
       "id": "2685",
@@ -1438,7 +1760,9 @@
       "date": "2026-01-16",
       "size": "64KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/2685-transporte-activo.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/2685-transporte-activo.webp",
+      "aliases": []
     },
     {
       "id": "kndb",
@@ -1447,7 +1771,9 @@
       "date": "2026-01-16",
       "size": "97KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/kndb-transporte-con-movimiento-de-la-membrana.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/kndb-transporte-con-movimiento-de-la-membrana.webp",
+      "aliases": []
     },
     {
       "id": "7d8r",
@@ -1456,7 +1782,9 @@
       "date": "2026-01-16",
       "size": "80KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/7d8r-fagocitosis.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/7d8r-fagocitosis.webp",
+      "aliases": []
     },
     {
       "id": "noay",
@@ -1465,7 +1793,9 @@
       "date": "2026-01-16",
       "size": "57KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/noay-pinocitosis.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/noay-pinocitosis.webp",
+      "aliases": []
     },
     {
       "id": "a0ox",
@@ -1474,7 +1804,9 @@
       "date": "2026-01-16",
       "size": "80KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/a0ox-endocitosis-por-receptores.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/a0ox-endocitosis-por-receptores.webp",
+      "aliases": []
     },
     {
       "id": "xjlr",
@@ -1483,7 +1815,9 @@
       "date": "2026-01-16",
       "size": "54KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/xjlr-exocitosis.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/xjlr-exocitosis.webp",
+      "aliases": []
     },
     {
       "id": "jaj0",
@@ -1492,7 +1826,9 @@
       "date": "2026-01-16",
       "size": "79KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/jaj0-resumen-transporte-celular.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/jaj0-resumen-transporte-celular.webp",
+      "aliases": []
     },
     {
       "id": "a38z",
@@ -1501,7 +1837,9 @@
       "date": "2026-01-16",
       "size": "68KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/a38z-la-jerarquia-de-la-vida.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/a38z-la-jerarquia-de-la-vida.webp",
+      "aliases": []
     },
     {
       "id": "xegd",
@@ -1510,7 +1848,9 @@
       "date": "2026-01-16",
       "size": "67KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/xegd-el-camino-del-movimiento-sistema-muscular.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/xegd-el-camino-del-movimiento-sistema-muscular.webp",
+      "aliases": []
     },
     {
       "id": "1dx5",
@@ -1519,7 +1859,9 @@
       "date": "2026-01-16",
       "size": "98KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/1dx5-el-camino-de-control-sistema-nervioso.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/1dx5-el-camino-de-control-sistema-nervioso.webp",
+      "aliases": []
     },
     {
       "id": "16js",
@@ -1528,7 +1870,9 @@
       "date": "2026-01-16",
       "size": "85KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/16js-la-integracion-fina-organismo.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/16js-la-integracion-fina-organismo.webp",
+      "aliases": []
     },
     {
       "id": "58dq",
@@ -1537,7 +1881,9 @@
       "date": "2026-01-16",
       "size": "86KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/58dq-el-camino-de-la-nutricion-sistema-digestivo.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/58dq-el-camino-de-la-nutricion-sistema-digestivo.webp",
+      "aliases": []
     },
     {
       "id": "kdov",
@@ -1546,7 +1892,9 @@
       "date": "2026-01-21",
       "size": "76KB",
       "url": "https://cdn.ediprofe.com/img/quimica/kdov-que-es-la-quimica.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/kdov-que-es-la-quimica.webp",
+      "aliases": []
     },
     {
       "id": "iemk",
@@ -1555,7 +1903,9 @@
       "date": "2026-01-21",
       "size": "97KB",
       "url": "https://cdn.ediprofe.com/img/quimica/iemk-la-importancia-de-la-quimica.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/iemk-la-importancia-de-la-quimica.webp",
+      "aliases": []
     },
     {
       "id": "42vn",
@@ -1564,7 +1914,9 @@
       "date": "2026-01-21",
       "size": "102KB",
       "url": "https://cdn.ediprofe.com/img/quimica/42vn-ramas-de-la-quimica.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/42vn-ramas-de-la-quimica.webp",
+      "aliases": []
     },
     {
       "id": "hgtg",
@@ -1573,7 +1925,9 @@
       "date": "2026-01-21",
       "size": "78KB",
       "url": "https://cdn.ediprofe.com/img/quimica/hgtg-quimica-en-la-vida-diaria.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/hgtg-quimica-en-la-vida-diaria.webp",
+      "aliases": []
     },
     {
       "id": "ikdz",
@@ -1582,7 +1936,9 @@
       "date": "2026-01-21",
       "size": "88KB",
       "url": "https://cdn.ediprofe.com/img/quimica/ikdz-relacion-con-otras-ciencias.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/ikdz-relacion-con-otras-ciencias.webp",
+      "aliases": []
     },
     {
       "id": "appo",
@@ -1591,7 +1947,9 @@
       "date": "2026-01-21",
       "size": "97KB",
       "url": "https://cdn.ediprofe.com/img/quimica/appo-la-quimica-una-ciencia-interdisciplinar.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/appo-la-quimica-una-ciencia-interdisciplinar.webp",
+      "aliases": []
     },
     {
       "id": "ytk3",
@@ -1600,7 +1958,9 @@
       "date": "2026-01-21",
       "size": "77KB",
       "url": "https://cdn.ediprofe.com/img/quimica/ytk3-mezclas-homogeneas-y-heterogeneas.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/ytk3-mezclas-homogeneas-y-heterogeneas.webp",
+      "aliases": []
     },
     {
       "id": "tmqd",
@@ -1609,7 +1969,9 @@
       "date": "2026-01-21",
       "size": "64KB",
       "url": "https://cdn.ediprofe.com/img/quimica/tmqd-tamizado.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/tmqd-tamizado.webp",
+      "aliases": []
     },
     {
       "id": "xheq",
@@ -1618,7 +1980,9 @@
       "date": "2026-01-21",
       "size": "59KB",
       "url": "https://cdn.ediprofe.com/img/quimica/xheq-filtracion.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/xheq-filtracion.webp",
+      "aliases": []
     },
     {
       "id": "mvqw",
@@ -1627,7 +1991,9 @@
       "date": "2026-01-21",
       "size": "67KB",
       "url": "https://cdn.ediprofe.com/img/quimica/mvqw-decantacion.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/mvqw-decantacion.webp",
+      "aliases": []
     },
     {
       "id": "nxyp",
@@ -1636,7 +2002,9 @@
       "date": "2026-01-21",
       "size": "55KB",
       "url": "https://cdn.ediprofe.com/img/quimica/nxyp-evaporacion.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/nxyp-evaporacion.webp",
+      "aliases": []
     },
     {
       "id": "snoz",
@@ -1645,7 +2013,9 @@
       "date": "2026-01-21",
       "size": "65KB",
       "url": "https://cdn.ediprofe.com/img/quimica/snoz-destilacion.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/snoz-destilacion.webp",
+      "aliases": []
     },
     {
       "id": "c35j",
@@ -1654,7 +2024,9 @@
       "date": "2026-01-21",
       "size": "49KB",
       "url": "https://cdn.ediprofe.com/img/quimica/c35j-cromatografia.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/c35j-cromatografia.webp",
+      "aliases": []
     },
     {
       "id": "n0c3",
@@ -1663,7 +2035,9 @@
       "date": "2026-01-21",
       "size": "69KB",
       "url": "https://cdn.ediprofe.com/img/quimica/n0c3-cambio-fisico-y-quimico.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/n0c3-cambio-fisico-y-quimico.webp",
+      "aliases": []
     },
     {
       "id": "2uvg",
@@ -1672,7 +2046,9 @@
       "date": "2026-01-21",
       "size": "71KB",
       "url": "https://cdn.ediprofe.com/img/quimica/2uvg-materia-atomos-y-elementos.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/2uvg-materia-atomos-y-elementos.webp",
+      "aliases": []
     },
     {
       "id": "gxvf",
@@ -1681,7 +2057,9 @@
       "date": "2026-01-21",
       "size": "51KB",
       "url": "https://cdn.ediprofe.com/img/quimica/gxvf-elementos-y-compuestos.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/gxvf-elementos-y-compuestos.webp",
+      "aliases": []
     },
     {
       "id": "s5uv",
@@ -1690,7 +2068,9 @@
       "date": "2026-01-21",
       "size": "107KB",
       "url": "https://cdn.ediprofe.com/img/quimica/s5uv-sustancias-puras-y-mezclas.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/s5uv-sustancias-puras-y-mezclas.webp",
+      "aliases": []
     },
     {
       "id": "ejvp",
@@ -1699,7 +2079,9 @@
       "date": "2026-01-21",
       "size": "78KB",
       "url": "https://cdn.ediprofe.com/img/quimica/ejvp-sustancias-puras.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/ejvp-sustancias-puras.webp",
+      "aliases": []
     },
     {
       "id": "hho8",
@@ -1708,7 +2090,9 @@
       "date": "2026-01-21",
       "size": "55KB",
       "url": "https://cdn.ediprofe.com/img/quimica/hho8-mezclas.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/hho8-mezclas.webp",
+      "aliases": []
     },
     {
       "id": "18ns",
@@ -1717,7 +2101,9 @@
       "date": "2026-01-21",
       "size": "69KB",
       "url": "https://cdn.ediprofe.com/img/quimica/18ns-mezclas-homogeneas-y-heterogeneas.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/18ns-mezclas-homogeneas-y-heterogeneas.webp",
+      "aliases": []
     },
     {
       "id": "6dx7",
@@ -1726,7 +2112,9 @@
       "date": "2026-01-21",
       "size": "86KB",
       "url": "https://cdn.ediprofe.com/img/quimica/6dx7-separacion-de-mezclas-cambio-fisico.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/6dx7-separacion-de-mezclas-cambio-fisico.webp",
+      "aliases": []
     },
     {
       "id": "1y1y",
@@ -1735,7 +2123,9 @@
       "date": "2026-01-21",
       "size": "72KB",
       "url": "https://cdn.ediprofe.com/img/quimica/1y1y-agua-sal-cambio-fisico.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/1y1y-agua-sal-cambio-fisico.webp",
+      "aliases": []
     },
     {
       "id": "276v",
@@ -1744,7 +2134,9 @@
       "date": "2026-01-21",
       "size": "68KB",
       "url": "https://cdn.ediprofe.com/img/quimica/276v-agua-aceite-cambio-fisico.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/276v-agua-aceite-cambio-fisico.webp",
+      "aliases": []
     },
     {
       "id": "5twh",
@@ -1753,7 +2145,9 @@
       "date": "2026-01-21",
       "size": "75KB",
       "url": "https://cdn.ediprofe.com/img/quimica/5twh-ejemplo-1-oxidacion-hierro.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/5twh-ejemplo-1-oxidacion-hierro.webp",
+      "aliases": []
     },
     {
       "id": "3tg0",
@@ -1762,7 +2156,9 @@
       "date": "2026-01-21",
       "size": "74KB",
       "url": "https://cdn.ediprofe.com/img/quimica/3tg0-ejemplo-2-formacion-de-agua.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/3tg0-ejemplo-2-formacion-de-agua.webp",
+      "aliases": []
     },
     {
       "id": "1y77",
@@ -1771,7 +2167,9 @@
       "date": "2026-01-21",
       "size": "86KB",
       "url": "https://cdn.ediprofe.com/img/quimica/1y77-densidad-que-tan-lleno-esta-un-espacio.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/1y77-densidad-que-tan-lleno-esta-un-espacio.webp",
+      "aliases": []
     },
     {
       "id": "2lwi",
@@ -1780,7 +2178,9 @@
       "date": "2026-01-21",
       "size": "77KB",
       "url": "https://cdn.ediprofe.com/img/quimica/2lwi-densidad-y-flotacion.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/2lwi-densidad-y-flotacion.webp",
+      "aliases": []
     },
     {
       "id": "95as",
@@ -1789,7 +2189,9 @@
       "date": "2026-01-21",
       "size": "86KB",
       "url": "https://cdn.ediprofe.com/img/quimica/95as-propiedad-intensiva-y-especifica.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/95as-propiedad-intensiva-y-especifica.webp",
+      "aliases": []
     },
     {
       "id": "cagr",
@@ -1798,7 +2200,9 @@
       "date": "2026-01-21",
       "size": "86KB",
       "url": "https://cdn.ediprofe.com/img/quimica/cagr-experimento-de-los-3-dados.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/cagr-experimento-de-los-3-dados.webp",
+      "aliases": []
     },
     {
       "id": "9wf1",
@@ -1807,7 +2211,9 @@
       "date": "2026-01-21",
       "size": "60KB",
       "url": "https://cdn.ediprofe.com/img/quimica/9wf1-temperatura-e-instrumentos.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/9wf1-temperatura-e-instrumentos.webp",
+      "aliases": []
     },
     {
       "id": "mo9o",
@@ -1816,7 +2222,9 @@
       "date": "2026-01-21",
       "size": "68KB",
       "url": "https://cdn.ediprofe.com/img/quimica/mo9o-unidades-de-temperatura.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/mo9o-unidades-de-temperatura.webp",
+      "aliases": []
     },
     {
       "id": "8avr",
@@ -1825,7 +2233,9 @@
       "date": "2026-01-21",
       "size": "70KB",
       "url": "https://cdn.ediprofe.com/img/quimica/8avr-temperatura-de-fusion-y-ebullicion.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/8avr-temperatura-de-fusion-y-ebullicion.webp",
+      "aliases": []
     },
     {
       "id": "qo3x",
@@ -1834,7 +2244,9 @@
       "date": "2026-01-22",
       "size": "92KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/qo3x-la-interfase-preparando-el-escenario.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/qo3x-la-interfase-preparando-el-escenario.webp",
+      "aliases": []
     },
     {
       "id": "wkee",
@@ -1843,7 +2255,9 @@
       "date": "2026-01-22",
       "size": "78KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/wkee-mitosis-creacion-de-clones.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/wkee-mitosis-creacion-de-clones.webp",
+      "aliases": []
     },
     {
       "id": "siz3",
@@ -1852,7 +2266,9 @@
       "date": "2026-01-22",
       "size": "89KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/siz3-meiosis-creacion-de-diversidad.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/siz3-meiosis-creacion-de-diversidad.webp",
+      "aliases": []
     },
     {
       "id": "cmuq",
@@ -1861,7 +2277,9 @@
       "date": "2026-01-22",
       "size": "82KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/cmuq-mitosis-vs-meiosis.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/cmuq-mitosis-vs-meiosis.webp",
+      "aliases": []
     },
     {
       "id": "2grt",
@@ -1870,7 +2288,9 @@
       "date": "2026-01-22",
       "size": "89KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/2grt-resumen-mitosis-vs-meiosis.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/2grt-resumen-mitosis-vs-meiosis.webp",
+      "aliases": []
     },
     {
       "id": "x2v0",
@@ -1879,7 +2299,9 @@
       "date": "2026-01-22",
       "size": "82KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/x2v0-velocidad-de-division-celular.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/x2v0-velocidad-de-division-celular.webp",
+      "aliases": []
     },
     {
       "id": "a7yg",
@@ -1888,7 +2310,9 @@
       "date": "2026-01-23",
       "size": "67KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/a7yg-el-proceso-de-nutricion.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/a7yg-el-proceso-de-nutricion.webp",
+      "aliases": []
     },
     {
       "id": "wsaa",
@@ -1897,7 +2321,9 @@
       "date": "2026-01-23",
       "size": "61KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/wsaa-nutricion-autotrofa.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/wsaa-nutricion-autotrofa.webp",
+      "aliases": []
     },
     {
       "id": "h8rs",
@@ -1906,7 +2332,9 @@
       "date": "2026-01-23",
       "size": "58KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/h8rs-nutricion-heterotrofa.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/h8rs-nutricion-heterotrofa.webp",
+      "aliases": []
     },
     {
       "id": "ookl",
@@ -1915,7 +2343,9 @@
       "date": "2026-01-23",
       "size": "96KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/ookl-resumen-nutricion-autotrofa-y-heterotrofa.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/ookl-resumen-nutricion-autotrofa-y-heterotrofa.webp",
+      "aliases": []
     },
     {
       "id": "1sn5",
@@ -1924,7 +2354,9 @@
       "date": "2026-01-27",
       "size": "58KB",
       "url": "https://cdn.ediprofe.com/img/quimica/1sn5-forma-de-la-materia.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/1sn5-forma-de-la-materia.webp",
+      "aliases": []
     },
     {
       "id": "ejdq",
@@ -1933,7 +2365,9 @@
       "date": "2026-01-27",
       "size": "74KB",
       "url": "https://cdn.ediprofe.com/img/quimica/ejdq-volumen-fijo-y-variable.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/ejdq-volumen-fijo-y-variable.webp",
+      "aliases": []
     },
     {
       "id": "ooke",
@@ -1942,7 +2376,9 @@
       "date": "2026-01-27",
       "size": "73KB",
       "url": "https://cdn.ediprofe.com/img/quimica/ooke-estado-solido.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/ooke-estado-solido.webp",
+      "aliases": []
     },
     {
       "id": "2bs2",
@@ -1951,7 +2387,9 @@
       "date": "2026-01-27",
       "size": "74KB",
       "url": "https://cdn.ediprofe.com/img/quimica/2bs2-estado-liquido.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/2bs2-estado-liquido.webp",
+      "aliases": []
     },
     {
       "id": "k3va",
@@ -1960,7 +2398,9 @@
       "date": "2026-01-27",
       "size": "73KB",
       "url": "https://cdn.ediprofe.com/img/quimica/k3va-estado-gaseoso.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/k3va-estado-gaseoso.webp",
+      "aliases": []
     },
     {
       "id": "pxqk",
@@ -1969,7 +2409,9 @@
       "date": "2026-01-27",
       "size": "61KB",
       "url": "https://cdn.ediprofe.com/img/quimica/pxqk-estado-plasma.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/pxqk-estado-plasma.webp",
+      "aliases": []
     },
     {
       "id": "jcj6",
@@ -1978,7 +2420,9 @@
       "date": "2026-01-27",
       "size": "77KB",
       "url": "https://cdn.ediprofe.com/img/quimica/jcj6-cuerpos-estelares-de-plasma.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/jcj6-cuerpos-estelares-de-plasma.webp",
+      "aliases": []
     },
     {
       "id": "xoc3",
@@ -1987,7 +2431,9 @@
       "date": "2026-01-27",
       "size": "100KB",
       "url": "https://cdn.ediprofe.com/img/quimica/xoc3-resumen-estados-de-la-materia.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/xoc3-resumen-estados-de-la-materia.webp",
+      "aliases": []
     },
     {
       "id": "2ub5",
@@ -1996,7 +2442,9 @@
       "date": "2026-01-27",
       "size": "84KB",
       "url": "https://cdn.ediprofe.com/img/quimica/2ub5-cambios-de-estado.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/2ub5-cambios-de-estado.webp",
+      "aliases": []
     },
     {
       "id": "t7rs",
@@ -2005,7 +2453,9 @@
       "date": "2026-01-27",
       "size": "54KB",
       "url": "https://cdn.ediprofe.com/img/quimica/t7rs-fusion.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/t7rs-fusion.webp",
+      "aliases": []
     },
     {
       "id": "q2ln",
@@ -2014,7 +2464,9 @@
       "date": "2026-01-27",
       "size": "67KB",
       "url": "https://cdn.ediprofe.com/img/quimica/q2ln-solidificacion.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/q2ln-solidificacion.webp",
+      "aliases": []
     },
     {
       "id": "pnvj",
@@ -2023,7 +2475,9 @@
       "date": "2026-01-27",
       "size": "76KB",
       "url": "https://cdn.ediprofe.com/img/quimica/pnvj-vaporizacion-y-ebullicion.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/pnvj-vaporizacion-y-ebullicion.webp",
+      "aliases": []
     },
     {
       "id": "mqv1",
@@ -2032,7 +2486,9 @@
       "date": "2026-01-27",
       "size": "85KB",
       "url": "https://cdn.ediprofe.com/img/quimica/mqv1-presion-de-vapor-y-punto-de-ebullicion.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/mqv1-presion-de-vapor-y-punto-de-ebullicion.webp",
+      "aliases": []
     },
     {
       "id": "cuhy",
@@ -2041,7 +2497,9 @@
       "date": "2026-01-27",
       "size": "79KB",
       "url": "https://cdn.ediprofe.com/img/quimica/cuhy-presion-de-vapor-vs-atmosferica.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/cuhy-presion-de-vapor-vs-atmosferica.webp",
+      "aliases": []
     },
     {
       "id": "itfr",
@@ -2050,7 +2508,9 @@
       "date": "2026-01-27",
       "size": "84KB",
       "url": "https://cdn.ediprofe.com/img/quimica/itfr-altura-y-presion-atmosferica.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/itfr-altura-y-presion-atmosferica.webp",
+      "aliases": []
     },
     {
       "id": "ph13",
@@ -2059,7 +2519,9 @@
       "date": "2026-01-27",
       "size": "83KB",
       "url": "https://cdn.ediprofe.com/img/quimica/ph13-altura-y-punto-de-ebullicion.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/ph13-altura-y-punto-de-ebullicion.webp",
+      "aliases": []
     },
     {
       "id": "913v",
@@ -2068,7 +2530,9 @@
       "date": "2026-01-27",
       "size": "95KB",
       "url": "https://cdn.ediprofe.com/img/quimica/913v-punto-de-ebullicion-y-fuerza-de-atraccion.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/913v-punto-de-ebullicion-y-fuerza-de-atraccion.webp",
+      "aliases": []
     },
     {
       "id": "ow5p",
@@ -2077,7 +2541,9 @@
       "date": "2026-01-27",
       "size": "58KB",
       "url": "https://cdn.ediprofe.com/img/quimica/ow5p-condensacion.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/ow5p-condensacion.webp",
+      "aliases": []
     },
     {
       "id": "ydtp",
@@ -2086,7 +2552,9 @@
       "date": "2026-01-27",
       "size": "54KB",
       "url": "https://cdn.ediprofe.com/img/quimica/ydtp-sublimacion.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/ydtp-sublimacion.webp",
+      "aliases": []
     },
     {
       "id": "7p2h",
@@ -2095,7 +2563,9 @@
       "date": "2026-01-27",
       "size": "59KB",
       "url": "https://cdn.ediprofe.com/img/quimica/7p2h-deposicion.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/7p2h-deposicion.webp",
+      "aliases": []
     },
     {
       "id": "fzeu",
@@ -2104,7 +2574,9 @@
       "date": "2026-01-27",
       "size": "94KB",
       "url": "https://cdn.ediprofe.com/img/quimica/fzeu-cambios-de-estado.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/fzeu-cambios-de-estado.webp",
+      "aliases": []
     },
     {
       "id": "gckl",
@@ -2113,7 +2585,9 @@
       "date": "2026-01-27",
       "size": "63KB",
       "url": "https://cdn.ediprofe.com/img/quimica/gckl-resumen-cambios-de-estado.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/gckl-resumen-cambios-de-estado.webp",
+      "aliases": []
     },
     {
       "id": "xjov",
@@ -2122,7 +2596,9 @@
       "date": "2026-01-27",
       "size": "155KB",
       "url": "https://cdn.ediprofe.com/img/quimica/xjov-diagrama-de-fases-del-agua.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/xjov-diagrama-de-fases-del-agua.webp",
+      "aliases": []
     },
     {
       "id": "jv6x",
@@ -2131,7 +2607,9 @@
       "date": "2026-01-27",
       "size": "113KB",
       "url": "https://cdn.ediprofe.com/img/quimica/jv6x-que-es-un-diagrama-de-fases.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/jv6x-que-es-un-diagrama-de-fases.webp",
+      "aliases": []
     },
     {
       "id": "r494",
@@ -2140,7 +2618,9 @@
       "date": "2026-01-28",
       "size": "88KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/r494-flujo-de-clase.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/r494-flujo-de-clase.webp",
+      "aliases": []
     },
     {
       "id": "u059",
@@ -2149,7 +2629,9 @@
       "date": "2026-01-28",
       "size": "93KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/u059-las-3-notas-salvavidas.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/u059-las-3-notas-salvavidas.webp",
+      "aliases": []
     },
     {
       "id": "2uvu",
@@ -2158,7 +2640,9 @@
       "date": "2026-01-28",
       "size": "92KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/2uvu-resumen-entrenamiento-intercalado.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/2uvu-resumen-entrenamiento-intercalado.webp",
+      "aliases": []
     },
     {
       "id": "lbny",
@@ -2168,7 +2652,9 @@
       "date": "2026-01-29",
       "size": "108KB",
       "url": "https://cdn.ediprofe.com/img/saber/fisica/lbny-image.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/saber/fisica/lbny-image.webp",
+      "aliases": []
     },
     {
       "id": "uv1w",
@@ -2178,7 +2664,9 @@
       "date": "2026-02-08",
       "size": "63KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/uv1w-autopsia-cambios-de-fase.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/uv1w-autopsia-cambios-de-fase.webp",
+      "aliases": []
     },
     {
       "id": "4aud",
@@ -2188,7 +2676,9 @@
       "date": "2026-02-08",
       "size": "76KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/4aud-autopsia-herencia.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/4aud-autopsia-herencia.webp",
+      "aliases": []
     },
     {
       "id": "v0si",
@@ -2198,7 +2688,9 @@
       "date": "2026-02-08",
       "size": "82KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/v0si-autopsia-mecanica-y-gravedad.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/v0si-autopsia-mecanica-y-gravedad.webp",
+      "aliases": []
     },
     {
       "id": "iwce",
@@ -2208,7 +2700,9 @@
       "date": "2026-02-08",
       "size": "62KB",
       "url": "https://cdn.ediprofe.com/img/quimica/iwce-estructura-atomica-estadi-de-futbol.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/iwce-estructura-atomica-estadi-de-futbol.webp",
+      "aliases": []
     },
     {
       "id": "5xyl",
@@ -2218,7 +2712,9 @@
       "date": "2026-02-08",
       "size": "63KB",
       "url": "https://cdn.ediprofe.com/img/quimica/5xyl-numero-atomico.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/5xyl-numero-atomico.webp",
+      "aliases": []
     },
     {
       "id": "wja6",
@@ -2228,7 +2724,9 @@
       "date": "2026-02-08",
       "size": "69KB",
       "url": "https://cdn.ediprofe.com/img/quimica/wja6-identificacion-en-la-tabla-periodica.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/wja6-identificacion-en-la-tabla-periodica.webp",
+      "aliases": []
     },
     {
       "id": "4unx",
@@ -2238,7 +2736,9 @@
       "date": "2026-02-08",
       "size": "77KB",
       "url": "https://cdn.ediprofe.com/img/quimica/4unx-resumen-particulas-y-numero-atomico.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/4unx-resumen-particulas-y-numero-atomico.webp",
+      "aliases": []
     },
     {
       "id": "3yeg",
@@ -2248,7 +2748,9 @@
       "date": "2026-02-08",
       "size": "70KB",
       "url": "https://cdn.ediprofe.com/img/quimica/3yeg-atomos-neutros.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/3yeg-atomos-neutros.webp",
+      "aliases": []
     },
     {
       "id": "5tx5",
@@ -2258,7 +2760,9 @@
       "date": "2026-02-08",
       "size": "50KB",
       "url": "https://cdn.ediprofe.com/img/quimica/5tx5-atomo-carbono-neutro.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/5tx5-atomo-carbono-neutro.webp",
+      "aliases": []
     },
     {
       "id": "t9mr",
@@ -2268,7 +2772,9 @@
       "date": "2026-02-08",
       "size": "61KB",
       "url": "https://cdn.ediprofe.com/img/quimica/t9mr-iones-atomos-con-carga.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/t9mr-iones-atomos-con-carga.webp",
+      "aliases": []
     },
     {
       "id": "9jzw",
@@ -2278,7 +2784,9 @@
       "date": "2026-02-08",
       "size": "101KB",
       "url": "https://cdn.ediprofe.com/img/quimica/9jzw-energia-y-vida-cotidiana.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/9jzw-energia-y-vida-cotidiana.webp",
+      "aliases": []
     },
     {
       "id": "28t3",
@@ -2288,7 +2796,9 @@
       "date": "2026-02-08",
       "size": "60KB",
       "url": "https://cdn.ediprofe.com/img/quimica/28t3-tipos-de-iones.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/28t3-tipos-de-iones.webp",
+      "aliases": []
     },
     {
       "id": "fymk",
@@ -2298,7 +2808,9 @@
       "date": "2026-02-09",
       "size": "70KB",
       "url": "https://cdn.ediprofe.com/img/quimica/fymk-atomos-neutros-e-iones.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/fymk-atomos-neutros-e-iones.webp",
+      "aliases": []
     },
     {
       "id": "44nm",
@@ -2308,7 +2820,9 @@
       "date": "2026-02-09",
       "size": "64KB",
       "url": "https://cdn.ediprofe.com/img/quimica/44nm-masa-en-nucleo-y-periferia.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/44nm-masa-en-nucleo-y-periferia.webp",
+      "aliases": []
     },
     {
       "id": "uxho",
@@ -2318,7 +2832,9 @@
       "date": "2026-02-09",
       "size": "47KB",
       "url": "https://cdn.ediprofe.com/img/quimica/uxho-comparacion-de-masas-nucleones-y-electrones.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/uxho-comparacion-de-masas-nucleones-y-electrones.webp",
+      "aliases": []
     },
     {
       "id": "yw8o",
@@ -2328,7 +2844,9 @@
       "date": "2026-02-09",
       "size": "69KB",
       "url": "https://cdn.ediprofe.com/img/quimica/yw8o-uma.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/yw8o-uma.webp",
+      "aliases": []
     },
     {
       "id": "8gc6",
@@ -2338,7 +2856,9 @@
       "date": "2026-02-09",
       "size": "76KB",
       "url": "https://cdn.ediprofe.com/img/quimica/8gc6-estructura-del-atomo-y-su-masa.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/8gc6-estructura-del-atomo-y-su-masa.webp",
+      "aliases": []
     },
     {
       "id": "wt4o",
@@ -2348,7 +2868,9 @@
       "date": "2026-02-09",
       "size": "90KB",
       "url": "https://cdn.ediprofe.com/img/quimica/wt4o-resumen-masa-de-las-pasrticulas-subatomicas.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/wt4o-resumen-masa-de-las-pasrticulas-subatomicas.webp",
+      "aliases": []
     },
     {
       "id": "76cn",
@@ -2358,7 +2880,9 @@
       "date": "2026-02-09",
       "size": "65KB",
       "url": "https://cdn.ediprofe.com/img/quimica/76cn-numero-masico.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/76cn-numero-masico.webp",
+      "aliases": []
     },
     {
       "id": "zcr7",
@@ -2368,7 +2892,9 @@
       "date": "2026-02-09",
       "size": "66KB",
       "url": "https://cdn.ediprofe.com/img/quimica/zcr7-numero-masico-helio.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/zcr7-numero-masico-helio.webp",
+      "aliases": []
     },
     {
       "id": "akm4",
@@ -2378,7 +2904,9 @@
       "date": "2026-02-09",
       "size": "73KB",
       "url": "https://cdn.ediprofe.com/img/quimica/akm4-numero-masico-berilio.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/akm4-numero-masico-berilio.webp",
+      "aliases": []
     },
     {
       "id": "akxz",
@@ -2388,7 +2916,9 @@
       "date": "2026-02-09",
       "size": "91KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/akxz-reproduccion-asexual.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/akxz-reproduccion-asexual.webp",
+      "aliases": []
     },
     {
       "id": "5axo",
@@ -2398,7 +2928,9 @@
       "date": "2026-02-09",
       "size": "53KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/5axo-fision-binaria.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/5axo-fision-binaria.webp",
+      "aliases": []
     },
     {
       "id": "n8ob",
@@ -2408,7 +2940,9 @@
       "date": "2026-02-09",
       "size": "48KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/n8ob-gemacion.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/n8ob-gemacion.webp",
+      "aliases": []
     },
     {
       "id": "njwh",
@@ -2418,7 +2952,9 @@
       "date": "2026-02-09",
       "size": "66KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/njwh-fragmentacion.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/njwh-fragmentacion.webp",
+      "aliases": []
     },
     {
       "id": "a12w",
@@ -2428,7 +2964,9 @@
       "date": "2026-02-09",
       "size": "66KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/a12w-partenogenesis.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/a12w-partenogenesis.webp",
+      "aliases": []
     },
     {
       "id": "7s7t",
@@ -2438,7 +2976,9 @@
       "date": "2026-02-09",
       "size": "57KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/7s7t-reproduccion-sexual.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/7s7t-reproduccion-sexual.webp",
+      "aliases": []
     },
     {
       "id": "9af9",
@@ -2448,7 +2988,9 @@
       "date": "2026-02-09",
       "size": "63KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/9af9-gametos-los-protagonistas.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/9af9-gametos-los-protagonistas.webp",
+      "aliases": []
     },
     {
       "id": "aevm",
@@ -2458,7 +3000,9 @@
       "date": "2026-02-09",
       "size": "86KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/aevm-reproduccion-sexual-vs-asexual.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/aevm-reproduccion-sexual-vs-asexual.webp",
+      "aliases": []
     },
     {
       "id": "09u5",
@@ -2468,7 +3012,9 @@
       "date": "2026-02-09",
       "size": "78KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/09u5-resumen-reproduccion-sexual.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/09u5-resumen-reproduccion-sexual.webp",
+      "aliases": []
     },
     {
       "id": "g5y7",
@@ -2478,7 +3024,9 @@
       "date": "2026-02-09",
       "size": "75KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/g5y7-reproduccion-vegetativa.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/g5y7-reproduccion-vegetativa.webp",
+      "aliases": []
     },
     {
       "id": "wihl",
@@ -2488,7 +3036,9 @@
       "date": "2026-02-09",
       "size": "79KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/wihl-estolones.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/wihl-estolones.webp",
+      "aliases": []
     },
     {
       "id": "pfqj",
@@ -2498,7 +3048,9 @@
       "date": "2026-02-09",
       "size": "82KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/pfqj-rizomas.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/pfqj-rizomas.webp",
+      "aliases": []
     },
     {
       "id": "hsbd",
@@ -2508,7 +3060,9 @@
       "date": "2026-02-09",
       "size": "65KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/hsbd-bulbos.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/hsbd-bulbos.webp",
+      "aliases": []
     },
     {
       "id": "2mo0",
@@ -2518,7 +3072,9 @@
       "date": "2026-02-09",
       "size": "65KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/2mo0-bulbos.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/2mo0-bulbos.webp",
+      "aliases": []
     },
     {
       "id": "xtig",
@@ -2528,7 +3084,9 @@
       "date": "2026-02-09",
       "size": "72KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/xtig-tuberculos.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/xtig-tuberculos.webp",
+      "aliases": []
     },
     {
       "id": "urid",
@@ -2538,7 +3096,9 @@
       "date": "2026-02-09",
       "size": "76KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/urid-esquejes.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/urid-esquejes.webp",
+      "aliases": []
     },
     {
       "id": "zs9l",
@@ -2548,7 +3108,9 @@
       "date": "2026-02-09",
       "size": "50KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/zs9l-injertos.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/zs9l-injertos.webp",
+      "aliases": []
     },
     {
       "id": "dvxn",
@@ -2558,7 +3120,9 @@
       "date": "2026-02-09",
       "size": "61KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/dvxn-cultivo-de-tejidos.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/dvxn-cultivo-de-tejidos.webp",
+      "aliases": []
     },
     {
       "id": "kcsi",
@@ -2568,7 +3132,9 @@
       "date": "2026-02-09",
       "size": "73KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/kcsi-polinizacion.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/kcsi-polinizacion.webp",
+      "aliases": []
     },
     {
       "id": "5rgl",
@@ -2578,7 +3144,9 @@
       "date": "2026-02-09",
       "size": "41KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/5rgl-fecundacion.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/5rgl-fecundacion.webp",
+      "aliases": []
     },
     {
       "id": "lx98",
@@ -2588,7 +3156,9 @@
       "date": "2026-02-09",
       "size": "69KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/lx98-formacion-de-semilla-y-fruto.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/lx98-formacion-de-semilla-y-fruto.webp",
+      "aliases": []
     },
     {
       "id": "n6ox",
@@ -2598,7 +3168,9 @@
       "date": "2026-02-09",
       "size": "62KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/n6ox-reproduccion-sexual-en-plantas.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/n6ox-reproduccion-sexual-en-plantas.webp",
+      "aliases": []
     },
     {
       "id": "vuyu",
@@ -2608,7 +3180,9 @@
       "date": "2026-02-09",
       "size": "100KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/vuyu-reproduccion-asexual.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/vuyu-reproduccion-asexual.webp",
+      "aliases": []
     },
     {
       "id": "2phv",
@@ -2618,7 +3192,9 @@
       "date": "2026-02-11",
       "size": "69KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/2phv-hermafroditas.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/2phv-hermafroditas.webp",
+      "aliases": []
     },
     {
       "id": "1hq3",
@@ -2628,7 +3204,9 @@
       "date": "2026-02-11",
       "size": "87KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/1hq3-tipos-de-fecundacion.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/1hq3-tipos-de-fecundacion.webp",
+      "aliases": []
     },
     {
       "id": "3hav",
@@ -2638,7 +3216,9 @@
       "date": "2026-02-11",
       "size": "68KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/3hav-oviparos.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/3hav-oviparos.webp",
+      "aliases": []
     },
     {
       "id": "a6yi",
@@ -2648,7 +3228,9 @@
       "date": "2026-02-11",
       "size": "81KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/a6yi-viviparos.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/a6yi-viviparos.webp",
+      "aliases": []
     },
     {
       "id": "88on",
@@ -2658,7 +3240,9 @@
       "date": "2026-02-11",
       "size": "75KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/88on-ovoviviparo.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/88on-ovoviviparo.webp",
+      "aliases": []
     },
     {
       "id": "xe9n",
@@ -2668,7 +3252,9 @@
       "date": "2026-02-16",
       "size": "79KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/xe9n-la-fabrica-los-testiculos.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/xe9n-la-fabrica-los-testiculos.webp",
+      "aliases": []
     },
     {
       "id": "wnuj",
@@ -2678,7 +3264,9 @@
       "date": "2026-02-16",
       "size": "85KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/wnuj-el-sistema-de-tuberias.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/wnuj-el-sistema-de-tuberias.webp",
+      "aliases": []
     },
     {
       "id": "mscq",
@@ -2688,7 +3276,9 @@
       "date": "2026-02-16",
       "size": "70KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/mscq-glandulas-anexas.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/mscq-glandulas-anexas.webp",
+      "aliases": []
     },
     {
       "id": "iru2",
@@ -2698,7 +3288,9 @@
       "date": "2026-02-16",
       "size": "85KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/iru2-aparato-masculino.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/iru2-aparato-masculino.webp",
+      "aliases": []
     },
     {
       "id": "k18u",
@@ -2708,7 +3300,9 @@
       "date": "2026-02-16",
       "size": "69KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/k18u-el-pene-organo-copulador.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/k18u-el-pene-organo-copulador.webp",
+      "aliases": []
     },
     {
       "id": "3dwo",
@@ -2718,7 +3312,9 @@
       "date": "2026-02-16",
       "size": "76KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/3dwo-aparato-reproductor-femenino.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/3dwo-aparato-reproductor-femenino.webp",
+      "aliases": []
     },
     {
       "id": "pdqx",
@@ -2728,7 +3324,9 @@
       "date": "2026-02-16",
       "size": "74KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/pdqx-los-ovarios.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/pdqx-los-ovarios.webp",
+      "aliases": []
     },
     {
       "id": "6x13",
@@ -2738,7 +3336,9 @@
       "date": "2026-02-16",
       "size": "84KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/6x13-el-camino-de-la-vida.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/6x13-el-camino-de-la-vida.webp",
+      "aliases": []
     },
     {
       "id": "1i8e",
@@ -2748,7 +3348,9 @@
       "date": "2026-02-16",
       "size": "71KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/1i8e-la-vulva.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/1i8e-la-vulva.webp",
+      "aliases": []
     },
     {
       "id": "ycjo",
@@ -2758,7 +3360,9 @@
       "date": "2026-02-16",
       "size": "54KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/ycjo-el-ciclo-menstrual.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/ycjo-el-ciclo-menstrual.webp",
+      "aliases": []
     },
     {
       "id": "urm4",
@@ -2768,7 +3372,9 @@
       "date": "2026-02-16",
       "size": "68KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/urm4-hormonas-con-y-sin-embarazo.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/urm4-hormonas-con-y-sin-embarazo.webp",
+      "aliases": []
     },
     {
       "id": "jqc7",
@@ -2778,7 +3384,9 @@
       "date": "2026-02-16",
       "size": "57KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/jqc7-fase-mestrual.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/jqc7-fase-mestrual.webp",
+      "aliases": []
     },
     {
       "id": "d6la",
@@ -2788,7 +3396,9 @@
       "date": "2026-02-16",
       "size": "64KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/d6la-fase-folicular-y-ovulacion.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/d6la-fase-folicular-y-ovulacion.webp",
+      "aliases": []
     },
     {
       "id": "t00e",
@@ -2798,7 +3408,9 @@
       "date": "2026-02-16",
       "size": "67KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/t00e-fase-lutea.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/t00e-fase-lutea.webp",
+      "aliases": []
     },
     {
       "id": "lwr8",
@@ -2808,7 +3420,9 @@
       "date": "2026-02-16",
       "size": "67KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/lwr8-grafico-mental-del-ciclo.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/lwr8-grafico-mental-del-ciclo.webp",
+      "aliases": []
     },
     {
       "id": "jgtm",
@@ -2818,7 +3432,9 @@
       "date": "2026-02-16",
       "size": "74KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/jgtm-el-control-desde-el-cerebro.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/jgtm-el-control-desde-el-cerebro.webp",
+      "aliases": []
     },
     {
       "id": "t1cq",
@@ -2828,7 +3444,9 @@
       "date": "2026-02-16",
       "size": "60KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/t1cq-fsh-lh-y-ovulacion.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/t1cq-fsh-lh-y-ovulacion.webp",
+      "aliases": []
     },
     {
       "id": "hyga",
@@ -2838,7 +3456,9 @@
       "date": "2026-02-16",
       "size": "82KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/hyga-control-hormmonal-y-escenarios-ciclo-femenino.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/hyga-control-hormmonal-y-escenarios-ciclo-femenino.webp",
+      "aliases": []
     },
     {
       "id": "juyb",
@@ -2848,7 +3468,9 @@
       "date": "2026-02-16",
       "size": "56KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/juyb-control-hormonal-y-respuesta-ovarica.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/juyb-control-hormonal-y-respuesta-ovarica.webp",
+      "aliases": []
     },
     {
       "id": "o2vv",
@@ -2858,7 +3480,9 @@
       "date": "2026-02-17",
       "size": "68KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/o2vv-la-carrera-de-la-vida.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/o2vv-la-carrera-de-la-vida.webp",
+      "aliases": []
     },
     {
       "id": "dkh7",
@@ -2868,7 +3492,9 @@
       "date": "2026-02-17",
       "size": "58KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/dkh7-el-encuentro-la-fecundacion.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/dkh7-el-encuentro-la-fecundacion.webp",
+      "aliases": []
     },
     {
       "id": "8rti",
@@ -2878,7 +3504,9 @@
       "date": "2026-02-17",
       "size": "45KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/8rti-la-implantacion.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/8rti-la-implantacion.webp",
+      "aliases": []
     },
     {
       "id": "zwvy",
@@ -2888,7 +3516,9 @@
       "date": "2026-02-17",
       "size": "65KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/zwvy-1er-trimestre.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/zwvy-1er-trimestre.webp",
+      "aliases": []
     },
     {
       "id": "gahh",
@@ -2898,7 +3528,9 @@
       "date": "2026-02-17",
       "size": "70KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/gahh-2do-trimestre.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/gahh-2do-trimestre.webp",
+      "aliases": []
     },
     {
       "id": "p3ii",
@@ -2908,7 +3540,9 @@
       "date": "2026-02-17",
       "size": "68KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/p3ii-3er-trimestre.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/p3ii-3er-trimestre.webp",
+      "aliases": []
     },
     {
       "id": "t394",
@@ -2918,7 +3552,9 @@
       "date": "2026-02-17",
       "size": "53KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/t394-el-parto.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/t394-el-parto.webp",
+      "aliases": []
     },
     {
       "id": "99ua",
@@ -2928,7 +3564,9 @@
       "date": "2026-02-17",
       "size": "105KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/99ua-clasificacion-de-las-ets.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/99ua-clasificacion-de-las-ets.webp",
+      "aliases": []
     },
     {
       "id": "3gyn",
@@ -2938,7 +3576,9 @@
       "date": "2026-02-17",
       "size": "89KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/3gyn-uso-del-preservativo.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/3gyn-uso-del-preservativo.webp",
+      "aliases": []
     },
     {
       "id": "cj2u",
@@ -2948,7 +3588,9 @@
       "date": "2026-02-17",
       "size": "78KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/cj2u-metodos-de-barrera.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/cj2u-metodos-de-barrera.webp",
+      "aliases": []
     },
     {
       "id": "xabe",
@@ -2958,7 +3600,9 @@
       "date": "2026-02-17",
       "size": "73KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/xabe-metodos-hormonales.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/xabe-metodos-hormonales.webp",
+      "aliases": []
     },
     {
       "id": "zexr",
@@ -2968,7 +3612,9 @@
       "date": "2026-02-17",
       "size": "56KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/zexr-diu.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/zexr-diu.webp",
+      "aliases": []
     },
     {
       "id": "ksa5",
@@ -2978,7 +3624,9 @@
       "date": "2026-02-17",
       "size": "51KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/ksa5-metodos-quirurgicos.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/ksa5-metodos-quirurgicos.webp",
+      "aliases": []
     },
     {
       "id": "flwr",
@@ -2988,7 +3636,9 @@
       "date": "2026-02-17",
       "size": "73KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/flwr-metodos-naturales.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/flwr-metodos-naturales.webp",
+      "aliases": []
     },
     {
       "id": "8ixz",
@@ -2998,7 +3648,9 @@
       "date": "2026-02-17",
       "size": "96KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/8ixz-linea-del-tiempo.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/8ixz-linea-del-tiempo.webp",
+      "aliases": []
     },
     {
       "id": "wsrh",
@@ -3008,7 +3660,9 @@
       "date": "2026-02-17",
       "size": "60KB",
       "url": "https://cdn.ediprofe.com/img/ciencias/wsrh-democrito.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/ciencias/wsrh-democrito.webp",
+      "aliases": []
     },
     {
       "id": "bd54",
@@ -3018,7 +3672,9 @@
       "date": "2026-02-21",
       "size": "51KB",
       "url": "https://cdn.ediprofe.com/img/quimica/bd54-estructura-del-atomo.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/bd54-estructura-del-atomo.webp",
+      "aliases": []
     },
     {
       "id": "aty8",
@@ -3028,7 +3684,9 @@
       "date": "2026-02-21",
       "size": "45KB",
       "url": "https://cdn.ediprofe.com/img/quimica/aty8-atomo-neutro-balanza-de-cargas.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/aty8-atomo-neutro-balanza-de-cargas.webp",
+      "aliases": []
     },
     {
       "id": "qso8",
@@ -3038,7 +3696,9 @@
       "date": "2026-02-21",
       "size": "45KB",
       "url": "https://cdn.ediprofe.com/img/quimica/qso8-atomo-neutro-carbono.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/qso8-atomo-neutro-carbono.webp",
+      "aliases": []
     },
     {
       "id": "3yba",
@@ -3048,7 +3708,9 @@
       "date": "2026-02-21",
       "size": "68KB",
       "url": "https://cdn.ediprofe.com/img/quimica/3yba-atomo-de-carbono-neutro.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/3yba-atomo-de-carbono-neutro.webp",
+      "aliases": []
     },
     {
       "id": "x9sm",
@@ -3058,7 +3720,9 @@
       "date": "2026-02-21",
       "size": "45KB",
       "url": "https://cdn.ediprofe.com/img/quimica/x9sm-iones-atomos-con-carga.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/x9sm-iones-atomos-con-carga.webp",
+      "aliases": []
     },
     {
       "id": "h0lq",
@@ -3068,7 +3732,9 @@
       "date": "2026-02-21",
       "size": "74KB",
       "url": "https://cdn.ediprofe.com/img/quimica/h0lq-isotopos-y-masa-atomica-promedio.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/h0lq-isotopos-y-masa-atomica-promedio.webp",
+      "aliases": []
     },
     {
       "id": "5vvb",
@@ -3078,7 +3744,9 @@
       "date": "2026-02-21",
       "size": "74KB",
       "url": "https://cdn.ediprofe.com/img/quimica/5vvb-isotopos-y-masa-promedio.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/5vvb-isotopos-y-masa-promedio.webp",
+      "aliases": []
     },
     {
       "id": "s344",
@@ -3088,7 +3756,9 @@
       "date": "2026-02-21",
       "size": "56KB",
       "url": "https://cdn.ediprofe.com/img/quimica/s344-promedio-ponderado-idea-intuitiva.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/s344-promedio-ponderado-idea-intuitiva.webp",
+      "aliases": []
     },
     {
       "id": "zv4a",
@@ -3098,7 +3768,9 @@
       "date": "2026-02-21",
       "size": "73KB",
       "url": "https://cdn.ediprofe.com/img/quimica/zv4a-tamano-atomico-y-ubicacion-en-tabla-periodica.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/zv4a-tamano-atomico-y-ubicacion-en-tabla-periodica.webp",
+      "aliases": []
     },
     {
       "id": "8z32",
@@ -3108,7 +3780,9 @@
       "date": "2026-02-21",
       "size": "98KB",
       "url": "https://cdn.ediprofe.com/img/quimica/8z32-propiedades-de-los-metales.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/8z32-propiedades-de-los-metales.webp",
+      "aliases": []
     },
     {
       "id": "fv0y",
@@ -3118,7 +3792,9 @@
       "date": "2026-02-21",
       "size": "74KB",
       "url": "https://cdn.ediprofe.com/img/quimica/fv0y-propiedades-de-los-no-metales.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/fv0y-propiedades-de-los-no-metales.webp",
+      "aliases": []
     },
     {
       "id": "f29z",
@@ -3128,7 +3804,9 @@
       "date": "2026-02-21",
       "size": "63KB",
       "url": "https://cdn.ediprofe.com/img/quimica/f29z-metales-vs-no-metales.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/f29z-metales-vs-no-metales.webp",
+      "aliases": []
     },
     {
       "id": "acif",
@@ -3138,7 +3816,9 @@
       "date": "2026-02-22",
       "size": "63KB",
       "url": "https://cdn.ediprofe.com/img/quimica/acif-el-hotel-atomico-niveles-subniveles.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/acif-el-hotel-atomico-niveles-subniveles.webp",
+      "aliases": []
     },
     {
       "id": "ffvu",
@@ -3148,7 +3828,9 @@
       "date": "2026-02-22",
       "size": "43KB",
       "url": "https://cdn.ediprofe.com/img/quimica/ffvu-subnivel-p.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/ffvu-subnivel-p.webp",
+      "aliases": []
     },
     {
       "id": "jn89",
@@ -3158,7 +3840,9 @@
       "date": "2026-02-22",
       "size": "88KB",
       "url": "https://cdn.ediprofe.com/img/quimica/jn89-la-analogia-del-hotel-atomico.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/jn89-la-analogia-del-hotel-atomico.webp",
+      "aliases": []
     },
     {
       "id": "mhqy",
@@ -3168,7 +3852,9 @@
       "date": "2026-02-22",
       "size": "90KB",
       "url": "https://cdn.ediprofe.com/img/quimica/mhqy-analogia-del-hotel-y-el-atomo.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/mhqy-analogia-del-hotel-y-el-atomo.webp",
+      "aliases": []
     },
     {
       "id": "hdkk",
@@ -3178,7 +3864,9 @@
       "date": "2026-02-22",
       "size": "72KB",
       "url": "https://cdn.ediprofe.com/img/quimica/hdkk-del-hotel-a-los-orbitales.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/hdkk-del-hotel-a-los-orbitales.webp",
+      "aliases": []
     },
     {
       "id": "7zjt",
@@ -3188,7 +3876,9 @@
       "date": "2026-02-22",
       "size": "74KB",
       "url": "https://cdn.ediprofe.com/img/quimica/7zjt-del-hote-a-los-orbitales.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/7zjt-del-hote-a-los-orbitales.webp",
+      "aliases": []
     },
     {
       "id": "jw2d",
@@ -3198,7 +3888,9 @@
       "date": "2026-02-24",
       "size": "96KB",
       "url": "https://cdn.ediprofe.com/img/quimica/jw2d-concepto-de-orbital-atomico.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/jw2d-concepto-de-orbital-atomico.webp",
+      "aliases": []
     },
     {
       "id": "337t",
@@ -3208,7 +3900,9 @@
       "date": "2026-02-24",
       "size": "77KB",
       "url": "https://cdn.ediprofe.com/img/quimica/337t-concepto-y-forma-de-los-arbitales-atomicos.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/337t-concepto-y-forma-de-los-arbitales-atomicos.webp",
+      "aliases": []
     },
     {
       "id": "42be",
@@ -3218,7 +3912,9 @@
       "date": "2026-02-24",
       "size": "71KB",
       "url": "https://cdn.ediprofe.com/img/quimica/42be-subniveles-de-energia-forma-orbitales-y-electrones.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/42be-subniveles-de-energia-forma-orbitales-y-electrones.webp",
+      "aliases": []
     },
     {
       "id": "tm9n",
@@ -3228,7 +3924,9 @@
       "date": "2026-02-24",
       "size": "70KB",
       "url": "https://cdn.ediprofe.com/img/quimica/tm9n-regla-de-hund.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/tm9n-regla-de-hund.webp",
+      "aliases": []
     },
     {
       "id": "k55g",
@@ -3238,7 +3936,9 @@
       "date": "2026-02-24",
       "size": "88KB",
       "url": "https://cdn.ediprofe.com/img/quimica/k55g-orbitales-y-subnivles.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/k55g-orbitales-y-subnivles.webp",
+      "aliases": []
     },
     {
       "id": "j80l",
@@ -3248,7 +3948,9 @@
       "date": "2026-02-24",
       "size": "58KB",
       "url": "https://cdn.ediprofe.com/img/quimica/j80l-proceso-de-llenado-de-orbitales.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/j80l-proceso-de-llenado-de-orbitales.webp",
+      "aliases": []
     },
     {
       "id": "9q0l",
@@ -3258,7 +3960,9 @@
       "date": "2026-02-24",
       "size": "43KB",
       "url": "https://cdn.ediprofe.com/img/quimica/9q0l-subnivel-2p-3-orbitales.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/9q0l-subnivel-2p-3-orbitales.webp",
+      "aliases": []
     },
     {
       "id": "p9fm",
@@ -3268,7 +3972,9 @@
       "date": "2026-02-24",
       "size": "36KB",
       "url": "https://cdn.ediprofe.com/img/quimica/p9fm-subnivel-2p-con-4-electrones.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/p9fm-subnivel-2p-con-4-electrones.webp",
+      "aliases": []
     },
     {
       "id": "s37b",
@@ -3278,7 +3984,9 @@
       "date": "2026-02-24",
       "size": "43KB",
       "url": "https://cdn.ediprofe.com/img/quimica/s37b-subnivel-2p-con-5-electrones.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/s37b-subnivel-2p-con-5-electrones.webp",
+      "aliases": []
     },
     {
       "id": "nd0r",
@@ -3288,7 +3996,9 @@
       "date": "2026-02-24",
       "size": "44KB",
       "url": "https://cdn.ediprofe.com/img/quimica/nd0r-subnivel-2p-con-6-electrones.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/nd0r-subnivel-2p-con-6-electrones.webp",
+      "aliases": []
     },
     {
       "id": "zdox",
@@ -3298,7 +4008,9 @@
       "date": "2026-02-24",
       "size": "74KB",
       "url": "https://cdn.ediprofe.com/img/quimica/zdox-por-que-asi-la-regla-de-hund.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/zdox-por-que-asi-la-regla-de-hund.webp",
+      "aliases": []
     },
     {
       "id": "huyz",
@@ -3308,7 +4020,9 @@
       "date": "2026-02-24",
       "size": "94KB",
       "url": "https://cdn.ediprofe.com/img/quimica/huyz-resume-regla-de-hund-y-orbitales.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/huyz-resume-regla-de-hund-y-orbitales.webp",
+      "aliases": []
     },
     {
       "id": "75r6",
@@ -3318,7 +4032,9 @@
       "date": "2026-02-24",
       "size": "61KB",
       "url": "https://cdn.ediprofe.com/img/quimica/75r6-principio-de-exclusion-de-pauli.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/75r6-principio-de-exclusion-de-pauli.webp",
+      "aliases": []
     },
     {
       "id": "rb3b",
@@ -3328,7 +4044,9 @@
       "date": "2026-02-24",
       "size": "47KB",
       "url": "https://cdn.ediprofe.com/img/quimica/rb3b-concepto-de-espin.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/rb3b-concepto-de-espin.webp",
+      "aliases": []
     },
     {
       "id": "it0k",
@@ -3338,7 +4056,9 @@
       "date": "2026-02-24",
       "size": "62KB",
       "url": "https://cdn.ediprofe.com/img/quimica/it0k-aplicacion-en-orbitales.webp",
-      "status": "uploaded"
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/it0k-aplicacion-en-orbitales.webp",
+      "aliases": []
     },
     {
       "id": "1f7p",
@@ -3348,8 +4068,23 @@
       "date": "2026-02-24",
       "size": "63KB",
       "url": "https://cdn.ediprofe.com/img/quimica/1f7p-consecuencias-del-principio-de-pauli.webp",
+      "status": "uploaded",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/quimica/1f7p-consecuencias-del-principio-de-pauli.webp",
+      "aliases": []
+    },
+    {
+      "id": "b5oj",
+      "name": "image.webp",
+      "materia": "fisica",
+      "type": "lesson",
+      "date": "2026-02-25",
+      "size": "43KB",
+      "url": "https://cdn.ediprofe.com/img/fisica/b5oj-image.webp",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/fisica/b5oj-image.webp",
+      "canonicalPath": "img/fisica/b5oj-image.webp",
+      "aliases": [],
       "status": "uploaded"
     }
   ],
-  "lastUpdated": "2026-02-24T22:32:13.101Z"
+  "lastUpdated": "2026-02-25T18:45:35.152Z"
 }
