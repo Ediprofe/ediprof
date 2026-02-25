@@ -114,6 +114,40 @@
             border-color: color-mix(in oklab, var(--ok) 60%, #1e2e56);
             background: color-mix(in oklab, var(--ok) 10%, #0e1a36);
         }
+        .md-block {
+            margin-top: 8px;
+            border: 1px solid #243761;
+            border-radius: 8px;
+            padding: 10px;
+            background: #081127;
+            white-space: pre-wrap;
+            line-height: 1.5;
+            font-size: 14px;
+        }
+        .assets-grid {
+            margin-top: 8px;
+            display: grid;
+            gap: 8px;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        }
+        .asset-item {
+            border: 1px solid #22325a;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #0b1329;
+        }
+        .asset-item img {
+            width: 100%;
+            height: 110px;
+            object-fit: cover;
+            background: #071126;
+        }
+        .asset-item .label {
+            padding: 6px 8px;
+            font-size: 12px;
+            color: var(--muted);
+            word-break: break-all;
+        }
         pre {
             overflow: auto;
             border: 1px solid #26375f;
@@ -179,6 +213,17 @@
                         <div class="q">
                             <strong>#{{ $q['order'] ?? '?' }} · {{ $q['id'] ?? '' }}</strong>
                             <div class="muted">{{ $q['meta']['fuente'] ?? 'sin fuente' }} @if(!empty($q['meta']['anio'])) · {{ $q['meta']['anio'] }} @endif</div>
+                            <div class="md-block">{{ $q['stem_mdx'] ?? '' }}</div>
+                            @if(!empty($q['stem_assets']))
+                                <div class="assets-grid">
+                                    @foreach($q['stem_assets'] as $asset)
+                                        <div class="asset-item">
+                                            <img src="{{ $asset }}" alt="asset pregunta {{ $q['id'] ?? '' }}" loading="lazy">
+                                            <div class="label">{{ $asset }}</div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            @endif
                             <ul class="opts">
                                 @foreach($q['options'] ?? [] as $option)
                                     <li class="{{ (!empty($option['is_correct']) ? 'correct' : '') }}">
@@ -190,6 +235,12 @@
                                 <div class="muted">Correcta: {{ $q['correct_option_id'] }}</div>
                             @else
                                 <div class="muted">Correcta oculta (modo estudiante)</div>
+                            @endif
+                            @if(!empty($q['feedback_mdx']))
+                                <details style="margin-top:8px;">
+                                    <summary class="muted" style="cursor:pointer;">Ver feedback</summary>
+                                    <div class="md-block">{{ $q['feedback_mdx'] }}</div>
+                                </details>
                             @endif
                         </div>
                     @endforeach

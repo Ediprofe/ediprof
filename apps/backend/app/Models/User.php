@@ -62,4 +62,12 @@ class User extends Authenticatable
     {
         return $this->hasMany(AccessGrant::class);
     }
+
+    /**
+     * @return HasMany<ApiToken, $this>
+     */
+    public function apiTokens(): HasMany
+    {
+        return $this->hasMany(ApiToken::class);
+    }
 }
