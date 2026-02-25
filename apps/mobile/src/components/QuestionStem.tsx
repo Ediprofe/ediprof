@@ -23,15 +23,45 @@ type Props = {
   blocks?: WorkshopRichBlock[] | null;
 };
 
-function cleanInlineMarkdown(value: string): string {
+function normalizeLatexInlineText(value: string): string {
   return value
-    .replace(/__(.*?)__/g, '$1')
-    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1')
-    .replace(/`([^`]+)`/g, '$1')
+    .replace(/\\([%$#&{}])/g, '$1')
+    .replace(/\\_/g, '_')
+    .replace(/\\text\s*\{([^}]*)\}/g, '$1')
     .replace(/\\rightarrow/g, '→')
     .replace(/\\times/g, '×')
     .replace(/\\cdot/g, '·')
+    .replace(/([A-Za-z0-9\)])_\\?\{([0-9]+)\}/g, (_m, base: string, digits: string) => {
+      return `${base}${toSubscriptDigits(digits)}`;
+    })
+    .replace(/([A-Za-z0-9\)])_([0-9]+)/g, (_m, base: string, digits: string) => {
+      return `${base}${toSubscriptDigits(digits)}`;
+    });
+}
+
+function cleanInlineMarkdown(value: string): string {
+  const markdownCleaned = value
+    .replace(/__(.*?)__/g, '$1')
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1')
+    .replace(/`([^`]+)`/g, '$1')
     .replace(/\$([^$]+)\$/g, '$1')
+    .replace(/\\left|\\right/g, '')
+    .replace(/\\,/g, ' ')
+    .replace(/\\;/g, ' ')
+    .replace(/\\:/g, ' ')
+    .replace(/\\!/g, '');
+
+  return normalizeLatexInlineText(markdownCleaned).trim();
+}
+
+function cleanInlineForRender(value: string): string {
+  return normalizeLatexInlineText(value);
+}
+
+function normalizeMathForDisplay(value: string): string {
+  return normalizeLatexInlineText(value)
+    .replace(/\\left|\\right/g, '')
+    .replace(/\s+/g, ' ')
     .trim();
 }
 
@@ -53,17 +83,6 @@ function toSubscriptDigits(value: string): string {
     .split('')
     .map((char) => digits[char] ?? char)
     .join('');
-}
-
-function normalizeMathForDisplay(value: string): string {
-  return value
-    .replace(/\\rightarrow/g, '→')
-    .replace(/\\times/g, '×')
-    .replace(/\\cdot/g, '·')
-    .replace(/_\\?\{([0-9]+)\}/g, (_, digits: string) => toSubscriptDigits(digits))
-    .replace(/_([0-9]+)/g, (_, digits: string) => toSubscriptDigits(digits))
-    .replace(/\s+/g, ' ')
-    .trim();
 }
 
 function parseInlineSegments(value: string): InlineSegment[] {
@@ -329,7 +348,7 @@ function QuestionStemImpl({ stem, stemAssets = [], blocks = null }: Props) {
 
       return (
         <Text key={`${keyPrefix}-${idx}`} style={[baseStyle, segmentStyle]}>
-          {segment.text}
+          {cleanInlineForRender(segment.text)}
         </Text>
       );
     });
