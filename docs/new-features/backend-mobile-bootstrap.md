@@ -18,6 +18,9 @@ Se creo una nueva app en:
 Incluye:
 - Laravel 12 inicializado.
 - Endpoint inicial `GET /api/v1/health`.
+- Endpoint de catalogo `GET /api/v1/content`.
+- Comando `php artisan content:sync-manifest`.
+- Migraciones base de negocio (`content_catalog`, `plans`, `subscriptions`, `access_grants`).
 - API routing habilitado en `bootstrap/app.php`.
 
 ### 2) Laravel Boost

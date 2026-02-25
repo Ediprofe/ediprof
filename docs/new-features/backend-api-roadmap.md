@@ -9,7 +9,7 @@ Backend unico para habilitar:
 ## Modelo inicial recomendado
 
 ### Tabla `content_catalog`
-- `id` (uuid)
+- `id` (bigint autoincrement)
 - `external_id` (string, unique) -> viene de `content:manifest`
 - `title` (string)
 - `route` (string)
@@ -51,19 +51,19 @@ Backend unico para habilitar:
 - `ends_at`
 - timestamps
 
-## Comandos artisan a crear
-1. `content:sync-manifest {path}`
+## Comandos artisan
+1. `content:sync-manifest {path}` (implementado)
 - sincroniza `content_catalog` desde `/tmp/ediprofe-content-manifest.json`
 
-2. `access:grant-school {user}`
+2. `access:grant-school {user}` (pendiente)
 - otorga acceso gratuito segun regla del colegio
 
 ## API v1 (primer corte)
-1. `GET /api/v1/health`
-2. `POST /api/v1/auth/login`
-3. `GET /api/v1/content`
-4. `GET /api/v1/content/{external_id}`
-5. `GET /api/v1/me/access`
+1. `GET /api/v1/health` (implementado)
+2. `GET /api/v1/content` (implementado)
+3. `POST /api/v1/auth/login` (pendiente)
+4. `GET /api/v1/content/{external_id}` (pendiente)
+5. `GET /api/v1/me/access` (pendiente)
 
 ## Regla de autorizacion (resumen)
 Permitir contenido si:
