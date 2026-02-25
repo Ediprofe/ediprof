@@ -8,10 +8,12 @@ import {
   StyleSheet,
   Text,
   TextInput,
+  useWindowDimensions,
   View,
 } from 'react-native';
 import { Image } from 'expo-image';
 import { StatusBar } from 'expo-status-bar';
+import { QuestionStem } from './src/components/QuestionStem';
 import { WorkshopCard } from './src/components/WorkshopCard';
 import {
   ApiRequestError,
@@ -33,6 +35,9 @@ import type { WorkshopDetail, WorkshopSummary } from './src/types/api';
 const DEFAULT_BASE_URL = 'http://127.0.0.1:8080/api/v1';
 
 export default function App() {
+  const { width } = useWindowDimensions();
+  const isCompact = width < 1080;
+
   const [baseUrl, setBaseUrl] = useState(DEFAULT_BASE_URL);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -259,8 +264,8 @@ export default function App() {
           {errorMessage ? <Text style={styles.error}>{errorMessage}</Text> : null}
         </View>
 
-        <View style={styles.columns}>
-          <View style={styles.leftCol}>
+        <View style={[styles.columns, isCompact ? styles.columnsCompact : null]}>
+          <View style={[styles.leftCol, isCompact ? styles.leftColCompact : null]}>
             <Text style={styles.sectionTitle}>Catálogo</Text>
             {loading ? <ActivityIndicator color="#9ac0ff" /> : null}
             <FlatList
@@ -281,7 +286,7 @@ export default function App() {
             />
           </View>
 
-          <View style={styles.rightCol}>
+          <View style={[styles.rightCol, isCompact ? styles.rightColCompact : null]}>
             <Text style={styles.sectionTitle}>{selectedTitle}</Text>
             {loadingWorkshop ? <ActivityIndicator color="#9ac0ff" /> : null}
 
@@ -306,18 +311,20 @@ export default function App() {
                 </View>
               ) : null}
 
-              {selectedWorkshop?.questions.slice(0, 3).map((question) => (
+              {selectedWorkshop?.questions.map((question) => (
                 <View key={question.id} style={styles.questionCard}>
-                  <Text style={styles.questionTitle}>#{question.order} · {question.id}</Text>
-                  <Text style={styles.questionStem}>{question.stem_mdx}</Text>
+                  <Text style={styles.questionTitle}>Pregunta {question.order}</Text>
+                  <QuestionStem stem={question.stem_mdx} />
 
-                  {question.stem_assets[0] ? (
+                  {question.stem_assets.map((asset, idx) => (
                     <Image
-                      source={question.stem_assets[0]}
+                      key={`${question.id}-asset-${idx}`}
+                      source={asset}
                       style={styles.questionImage}
-                      contentFit="cover"
+                      contentFit="contain"
+                      transition={120}
                     />
-                  ) : null}
+                  ))}
 
                   {question.options.map((option) => (
                     <View key={option.id} style={styles.optionRow}>
@@ -416,6 +423,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     gap: 10,
   },
+  columnsCompact: {
+    flexDirection: 'column',
+  },
   leftCol: {
     flex: 1,
     borderWidth: 1,
@@ -431,6 +441,14 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     backgroundColor: '#0d1731',
     padding: 8,
+  },
+  leftColCompact: {
+    flex: 0,
+    minHeight: 260,
+  },
+  rightColCompact: {
+    flex: 1,
+    minHeight: 420,
   },
   sectionTitle: {
     color: '#e8eeff',
@@ -460,16 +478,13 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     fontSize: 14,
   },
-  questionStem: {
-    color: '#d4ddf7',
-    fontSize: 12,
-    lineHeight: 18,
-  },
   questionImage: {
     width: '100%',
-    height: 140,
+    height: 220,
     borderRadius: 8,
-    backgroundColor: '#081025',
+    backgroundColor: '#f4f7ff',
+    borderWidth: 1,
+    borderColor: '#2a3f6d',
   },
   optionRow: {
     borderWidth: 1,
