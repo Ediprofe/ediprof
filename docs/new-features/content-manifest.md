@@ -7,6 +7,10 @@ Generar un contrato unico de contenido desde `src/content` para que web, backend
 - `npm run content:manifest`
 - Salida por defecto: `/tmp/ediprofe-content-manifest.json`
 
+Para derivar catalogo app (entrenamiento):
+- `npm run app:manifest`
+- Salida por defecto: `/tmp/ediprofe-app-training-manifest.json`
+
 Opciones:
 - `--output <ruta>`: cambia la ruta de salida.
 - `--published-only`: exporta solo entradas publicadas.

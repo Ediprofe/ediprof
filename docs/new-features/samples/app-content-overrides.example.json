@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "route": "/quimica/la-materia/resumen-unidad/resumen",
+      "surface": "both",
+      "access_tier": "free",
+      "app_module": "tactical_summary",
+      "card": {
+        "headline": "Resumen Tactico: La Materia",
+        "subtitle": "Repaso guiado en 8-12 min"
+      },
+      "tactical_summary": {
+        "key_points": [
+          "Materia: masa y volumen.",
+          "Intensivas vs extensivas.",
+          "Cambios fisicos vs quimicos.",
+          "Clasificacion: puras y mezclas.",
+          "Metodo de separacion correcto segun caso."
+        ],
+        "common_traps": [
+          "Confundir cambio de estado con reaccion quimica.",
+          "Tomar densidad como propiedad extensiva.",
+          "Elegir destilacion cuando corresponde filtracion."
+        ],
+        "micro_plan": [
+          "Lectura focal 3 min",
+          "3 preguntas rapidas",
+          "1 reto de error comun",
+          "Chequeo final de 60s"
+        ]
+      },
+      "practice": {
+        "recommended_questions": 8,
+        "recommended_minutes": 15,
+        "difficulty_mix": {
+          "easy": 3,
+          "medium": 4,
+          "hard": 1
+        }
+      }
+    },
+    {
+      "route": "/saber/quimica/la-materia/taller",
+      "surface": "app",
+      "access_tier": "premium",
+      "app_module": "workshop",
+      "card": {
+        "headline": "Taller Saber: Quimica - La Materia",
+        "subtitle": "Entrenamiento tipo ICFES con feedback"
+      },
+      "practice": {
+        "recommended_questions": 20,
+        "recommended_minutes": 35,
+        "difficulty_mix": {
+          "easy": 5,
+          "medium": 10,
+          "hard": 5
+        }
+      }
+    }
+  ]
+}
