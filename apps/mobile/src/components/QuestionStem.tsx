@@ -60,6 +60,12 @@ function cleanInlineForRender(value: string): string {
 
 function normalizeMathForDisplay(value: string): string {
   return normalizeLatexInlineText(value)
+    // Defensive cleanup when an escaped LaTeX command is decoded incorrectly
+    // (e.g. "\rightarrow" ending up as carriage-return + "ightarrow").
+    .replace(/\rightarrow/gi, '→')
+    .replace(/\brightarrow\b/gi, '→')
+    .replace(/\bightarrow\b/gi, '→')
+    .replace(/\barrow\b/gi, '→')
     .replace(/\\left|\\right/g, '')
     .replace(/\s+/g, ' ')
     .trim();
