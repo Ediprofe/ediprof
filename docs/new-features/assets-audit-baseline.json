@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "generatedAt": "2026-02-25T00:00:00.000Z",
+  "categories": {
+    "legacy_cdn_images": 0,
+    "cdn_other": 0,
+    "local_images": 560,
+    "local_ilustraciones": 30,
+    "local_illustrations": 40,
+    "relative_or_unknown": 0
+  },
+  "notes": "Baseline inicial para bloquear regresiones de rutas no canónicas en contenido."
+}

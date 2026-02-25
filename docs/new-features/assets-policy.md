@@ -15,8 +15,14 @@ Unificar referencias de imagen para que el contenido de Astro, backend Laravel y
 
 ## Scripts de apoyo
 - `npm run assets:audit`: reporte no bloqueante de referencias canónicas/legacy (salida por defecto en `/tmp`).
+- `npm run assets:audit:strict`: modo bloqueante con baseline (`docs/new-features/assets-audit-baseline.json`) para evitar regresiones.
+- `npm run assets:migrate`: codemod seguro de referencias legacy (`--write` para aplicar, `--include-local` opcional).
 - `npm run assets:manifest`: genera manifiesto de assets para consumo backend/app (salida por defecto en `/tmp`).
 - `npm run img --normalize-index`: migra URLs legacy del indice a URL canónica.
+
+## Gate en despliegue
+- Netlify ejecuta `npm run assets:audit:strict` antes del build.
+- Si una categoría legacy supera la línea base, el build falla.
 
 ## Checklist de contenido nuevo
 1. Subir imagen a CDN con `npm run img`.

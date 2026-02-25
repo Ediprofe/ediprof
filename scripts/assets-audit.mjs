@@ -13,7 +13,7 @@
  *   node scripts/assets-audit.mjs --output docs/new-features/assets-audit-report.json
  */
 
-import { readFileSync, mkdirSync, writeFileSync } from 'fs';
+import { readFileSync, mkdirSync, writeFileSync, existsSync } from 'fs';
 import { dirname, resolve } from 'path';
 import { globSync } from 'glob';
 
@@ -24,6 +24,7 @@ function parseArgs(argv) {
   const args = {
     strict: false,
     output: DEFAULT_OUTPUT,
+    baseline: null,
   };
 
   for (let i = 0; i < argv.length; i++) {
@@ -33,10 +34,43 @@ function parseArgs(argv) {
     } else if (token === '--output' && argv[i + 1]) {
       args.output = argv[i + 1];
       i += 1;
+    } else if (token === '--baseline' && argv[i + 1]) {
+      args.baseline = argv[i + 1];
+      i += 1;
     }
   }
 
   return args;
+}
+
+function compareWithBaseline(categories, baselinePath) {
+  const resolvedBaseline = resolve(baselinePath);
+  if (!existsSync(resolvedBaseline)) {
+    throw new Error(`No existe el baseline: ${baselinePath}`);
+  }
+
+  const raw = JSON.parse(readFileSync(resolvedBaseline, 'utf-8'));
+  const baselineCategories = raw.categories || {};
+  const regressions = [];
+
+  for (const [category, maxAllowed] of Object.entries(baselineCategories)) {
+    if (typeof maxAllowed !== 'number') continue;
+    const current = categories[category] || 0;
+    if (current > maxAllowed) {
+      regressions.push({
+        category,
+        current,
+        maxAllowed,
+        delta: current - maxAllowed,
+      });
+    }
+  }
+
+  return {
+    baselinePath: resolvedBaseline,
+    regressions,
+    trackedCategories: Object.keys(baselineCategories),
+  };
 }
 
 function normalizeRef(rawRef) {
@@ -92,7 +126,7 @@ function extractRefs(content) {
 }
 
 function main() {
-  const { strict, output } = parseArgs(process.argv.slice(2));
+  const { strict, output, baseline } = parseArgs(process.argv.slice(2));
   const files = globSync(CONTENT_GLOB, { nodir: true }).sort();
 
   const categories = {
@@ -176,6 +210,34 @@ function main() {
   console.log(`   Legacy/no canónico:  ${legacyCount}`);
   console.log(`   Externas:            ${categories.external_url}`);
   console.log(`   Reporte:             ${output}`);
+
+  if (baseline) {
+    try {
+      const baselineResult = compareWithBaseline(categories, baseline);
+      console.log(`   Baseline:            ${baselineResult.baselinePath}`);
+      console.log(
+        `   Categorías baseline: ${baselineResult.trackedCategories.join(', ') || '(ninguna)'}`
+      );
+
+      if (baselineResult.regressions.length > 0) {
+        console.error('⚠️  Regresiones detectadas contra baseline:');
+        baselineResult.regressions.forEach((regression) => {
+          console.error(
+            `   - ${regression.category}: actual=${regression.current}, máximo=${regression.maxAllowed}, +${regression.delta}`
+          );
+        });
+        if (strict) {
+          process.exit(1);
+        }
+      } else {
+        console.log('✅ Sin regresiones contra baseline.');
+      }
+    } catch (error) {
+      console.error(`❌ Error validando baseline: ${error.message}`);
+      process.exit(1);
+    }
+    return;
+  }
 
   if (strict && legacyCount > 0) {
     console.error('❌ Modo strict: se detectaron referencias legacy/no canónicas.');
