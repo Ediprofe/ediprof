@@ -243,10 +243,15 @@ class WorkshopManifestSyncService
                 'meta' => is_array(Arr::get($question, 'meta')) ? Arr::get($question, 'meta') : [],
                 'stem_mdx' => $this->stringOrNull(Arr::get($question, 'stem_mdx')) ?? '',
                 'stem_assets' => $this->normalizeStringList(Arr::get($question, 'stem_assets', [])),
+                'stem_blocks' => $this->normalizeBlocks(Arr::get($question, 'stem_blocks', [])),
                 'options' => $options,
                 'correct_option_id' => $correctOptionId,
                 'feedback_mdx' => $this->stringOrNull(Arr::get($question, 'feedback_mdx')) ?? '',
                 'feedback_assets' => $this->normalizeStringList(Arr::get($question, 'feedback_assets', [])),
+                'feedback_blocks' => $this->normalizeBlocks(Arr::get($question, 'feedback_blocks', [])),
+                'app_payload_version' => is_numeric(Arr::get($question, 'app_payload_version'))
+                    ? (int) Arr::get($question, 'app_payload_version')
+                    : null,
             ];
         }
 
@@ -321,6 +326,33 @@ class WorkshopManifestSyncService
         }
 
         return array_values(array_unique($normalized));
+    }
+
+    /**
+     * @return array<int, array<string, mixed>>
+     */
+    private function normalizeBlocks(mixed $blocks): array
+    {
+        if (! is_array($blocks)) {
+            return [];
+        }
+
+        $normalized = [];
+
+        foreach ($blocks as $block) {
+            if (! is_array($block)) {
+                continue;
+            }
+
+            $type = $this->stringOrNull(Arr::get($block, 'type'));
+            if ($type === null) {
+                continue;
+            }
+
+            $normalized[] = $block;
+        }
+
+        return array_values($normalized);
     }
 
     private function normalizeAccessTier(string $accessTier): string

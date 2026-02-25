@@ -1,6 +1,7 @@
 import { memo, useMemo } from 'react';
 import { Image } from 'expo-image';
 import { StyleSheet, Text, View } from 'react-native';
+import type { WorkshopRichBlock } from '../types/api';
 
 type InlineVariant = 'plain' | 'highlight' | 'strike' | 'bold';
 
@@ -10,14 +11,16 @@ type InlineSegment = {
 };
 
 type StemBlock =
-  | { type: 'paragraph'; text: string }
+  | { type: 'paragraph'; text?: string; inlines?: InlineSegment[] }
   | { type: 'math'; text: string }
+  | { type: 'equation'; latex: string }
   | { type: 'table'; rows: string[][] }
-  | { type: 'image'; alt: string; url: string };
+  | { type: 'image'; alt?: string; url?: string; src?: string };
 
 type Props = {
   stem: string;
   stemAssets?: string[];
+  blocks?: WorkshopRichBlock[] | null;
 };
 
 function cleanInlineMarkdown(value: string): string {
@@ -257,16 +260,63 @@ function toBlocks(stem: string, stemAssets: string[] = []): StemBlock[] {
   return blocks;
 }
 
-function QuestionStemImpl({ stem, stemAssets = [] }: Props) {
-  const blocks = useMemo(() => toBlocks(stem, stemAssets), [stem, stemAssets]);
+function QuestionStemImpl({ stem, stemAssets = [], blocks = null }: Props) {
+  const blocksNormalized = useMemo<StemBlock[]>(() => {
+    if (Array.isArray(blocks) && blocks.length > 0) {
+      const mapped: StemBlock[] = blocks
+        .map((block): StemBlock | null => {
+          if (!block || typeof block !== 'object' || !('type' in block)) {
+            return null;
+          }
 
-  const renderInlineText = (
-    text: string,
+          if (block.type === 'paragraph') {
+            return {
+              type: 'paragraph',
+              inlines: Array.isArray(block.inlines)
+                ? block.inlines.filter((segment) => typeof segment?.text === 'string')
+                : [],
+            };
+          }
+
+          if (block.type === 'equation') {
+            return {
+              type: 'equation',
+              latex: block.latex ?? '',
+            };
+          }
+
+          if (block.type === 'table') {
+            return {
+              type: 'table',
+              rows: Array.isArray(block.rows) ? block.rows : [],
+            };
+          }
+
+          if (block.type === 'image') {
+            return {
+              type: 'image',
+              src: block.src,
+              alt: block.alt,
+            };
+          }
+
+          return null;
+        })
+        .filter((block): block is StemBlock => block !== null);
+
+      if (mapped.length > 0) {
+        return mapped;
+      }
+    }
+
+    return toBlocks(stem, stemAssets);
+  }, [blocks, stem, stemAssets]);
+
+  const renderInlineSegments = (
+    segments: InlineSegment[],
     baseStyle: (typeof styles)['paragraph'] | (typeof styles)['cell'],
     keyPrefix: string,
   ) => {
-    const segments = parseInlineSegments(text);
-
     return segments.map((segment, idx) => {
       const segmentStyle =
         segment.variant === 'highlight'
@@ -287,30 +337,42 @@ function QuestionStemImpl({ stem, stemAssets = [] }: Props) {
 
   return (
     <View style={styles.root}>
-      {blocks.map((block, index) => {
+      {blocksNormalized.map((block, index) => {
         const key = `${block.type}-${index}`;
 
         if (block.type === 'paragraph') {
+          const segments = block.inlines ?? parseInlineSegments(block.text ?? '');
+
           return (
             <Text key={key} style={styles.paragraph}>
-              {renderInlineText(block.text, styles.paragraph, key)}
+              {renderInlineSegments(segments, styles.paragraph, key)}
             </Text>
           );
         }
 
-        if (block.type === 'math') {
+        if (block.type === 'math' || block.type === 'equation') {
+          const mathText =
+            block.type === 'equation'
+              ? normalizeMathForDisplay(cleanInlineMarkdown(block.latex))
+              : block.text;
+
           return (
             <View key={key} style={styles.mathBox}>
-              <Text style={styles.mathText}>{block.text}</Text>
+              <Text style={styles.mathText}>{mathText}</Text>
             </View>
           );
         }
 
         if (block.type === 'image') {
+          const src = block.url ?? block.src ?? '';
+          if (!src) {
+            return null;
+          }
+
           return (
             <Image
               key={key}
-              source={block.url}
+              source={src}
               accessibilityLabel={block.alt}
               style={styles.image}
               contentFit="contain"
@@ -327,7 +389,7 @@ function QuestionStemImpl({ stem, stemAssets = [] }: Props) {
             <View style={styles.tableRow}>
               {header.map((cell, idx) => (
                 <Text key={`h-${idx}`} style={[styles.cell, styles.headerCell]}>
-                  {renderInlineText(cell, styles.cell, `${key}-h-${idx}`)}
+                  {renderInlineSegments(parseInlineSegments(cell), styles.cell, `${key}-h-${idx}`)}
                 </Text>
               ))}
             </View>
@@ -335,7 +397,7 @@ function QuestionStemImpl({ stem, stemAssets = [] }: Props) {
               <View key={`r-${rowIndex}`} style={styles.tableRow}>
                 {row.map((cell, idx) => (
                   <Text key={`c-${rowIndex}-${idx}`} style={styles.cell}>
-                    {renderInlineText(cell, styles.cell, `${key}-c-${rowIndex}-${idx}`)}
+                    {renderInlineSegments(parseInlineSegments(cell), styles.cell, `${key}-c-${rowIndex}-${idx}`)}
                   </Text>
                 ))}
               </View>

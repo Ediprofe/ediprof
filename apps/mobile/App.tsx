@@ -404,7 +404,11 @@ export default function App() {
                 <View style={[styles.progressFill, { width: `${progressValue * 100}%` }]} />
               </View>
 
-              <QuestionStem stem={currentQuestion.stem_mdx} stemAssets={currentQuestion.stem_assets} />
+              <QuestionStem
+                stem={currentQuestion.stem_mdx}
+                stemAssets={currentQuestion.stem_assets}
+                blocks={currentQuestion.stem_blocks}
+              />
 
               <View style={styles.optionsWrap}>
                 {currentQuestion.options.map((option) => {
@@ -470,7 +474,11 @@ export default function App() {
                   <Text style={styles.feedbackTitle}>
                     {evaluation.is_correct ? 'Respuesta correcta' : 'Respuesta incorrecta'}
                   </Text>
-                  <QuestionStem stem={evaluation.feedback_mdx} stemAssets={evaluation.feedback_assets} />
+                  <QuestionStem
+                    stem={evaluation.feedback_mdx}
+                    stemAssets={evaluation.feedback_assets}
+                    blocks={evaluation.feedback_blocks}
+                  />
                 </View>
               ) : null}
             </View>

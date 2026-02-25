@@ -78,6 +78,14 @@ class WorkshopApiTest extends TestCase
                     'meta' => [],
                     'stem_mdx' => 'Pregunta',
                     'stem_assets' => [],
+                    'stem_blocks' => [
+                        [
+                            'type' => 'paragraph',
+                            'inlines' => [
+                                ['text' => 'Pregunta', 'variant' => 'plain'],
+                            ],
+                        ],
+                    ],
                     'options' => [
                         ['id' => 'A', 'text' => 'Correcta', 'is_correct' => true],
                         ['id' => 'B', 'text' => 'Incorrecta', 'is_correct' => false],
@@ -85,6 +93,15 @@ class WorkshopApiTest extends TestCase
                     'correct_option_id' => 'A',
                     'feedback_mdx' => 'Retro',
                     'feedback_assets' => [],
+                    'feedback_blocks' => [
+                        [
+                            'type' => 'paragraph',
+                            'inlines' => [
+                                ['text' => 'Retro', 'variant' => 'plain'],
+                            ],
+                        ],
+                    ],
+                    'app_payload_version' => 1,
                 ],
             ],
             'metadata' => ['contractVersion' => 1],
@@ -97,7 +114,8 @@ class WorkshopApiTest extends TestCase
             ->assertJsonPath('ok', true)
             ->assertJsonPath('data.questions.0.correct_option_id', null)
             ->assertJsonPath('data.questions.0.feedback_mdx', '')
-            ->assertJsonPath('data.questions.0.feedback_assets', []);
+            ->assertJsonPath('data.questions.0.feedback_assets', [])
+            ->assertJsonPath('data.questions.0.feedback_blocks', []);
 
         $question = $response->json('data.questions.0');
         $this->assertIsArray($question);
@@ -140,6 +158,15 @@ class WorkshopApiTest extends TestCase
                     'correct_option_id' => 'A',
                     'feedback_mdx' => 'Retro para estudiante',
                     'feedback_assets' => [],
+                    'feedback_blocks' => [
+                        [
+                            'type' => 'paragraph',
+                            'inlines' => [
+                                ['text' => 'Retro para estudiante', 'variant' => 'plain'],
+                            ],
+                        ],
+                    ],
+                    'app_payload_version' => 1,
                 ],
             ],
             'metadata' => ['contractVersion' => 1],
@@ -157,7 +184,8 @@ class WorkshopApiTest extends TestCase
             ->assertJsonPath('data.selected_option_id', 'A')
             ->assertJsonPath('data.correct_option_id', 'A')
             ->assertJsonPath('data.is_correct', true)
-            ->assertJsonPath('data.feedback_mdx', 'Retro para estudiante');
+            ->assertJsonPath('data.feedback_mdx', 'Retro para estudiante')
+            ->assertJsonPath('data.feedback_blocks.0.type', 'paragraph');
     }
 
     public function test_it_rejects_invalid_option_during_evaluation(): void

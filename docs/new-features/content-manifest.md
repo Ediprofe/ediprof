@@ -11,6 +11,11 @@ Para derivar catalogo app (entrenamiento):
 - `npm run app:manifest`
 - Salida por defecto: `/tmp/ediprofe-app-training-manifest.json`
 
+Para derivar payload nativo de talleres (UI móvil):
+- `npm run workshops:manifest`
+- Salida por defecto: `/tmp/ediprofe-workshops-manifest.json`
+- Contrato: `docs/new-features/workshops-app-payload-v1.md`
+
 Opciones:
 - `--output <ruta>`: cambia la ruta de salida.
 - `--published-only`: exporta solo entradas publicadas.

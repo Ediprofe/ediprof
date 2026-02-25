@@ -39,6 +39,14 @@ class WorkshopSyncManifestCommandTest extends TestCase
                             'meta' => ['fuente' => 'ICFES', 'anio' => 2024],
                             'stem_mdx' => 'Pregunta de prueba',
                             'stem_assets' => [],
+                            'stem_blocks' => [
+                                [
+                                    'type' => 'paragraph',
+                                    'inlines' => [
+                                        ['text' => 'Pregunta de prueba', 'variant' => 'plain'],
+                                    ],
+                                ],
+                            ],
                             'options' => [
                                 ['id' => 'A', 'text' => 'Correcta', 'is_correct' => true],
                                 ['id' => 'B', 'text' => 'Incorrecta', 'is_correct' => false],
@@ -46,6 +54,15 @@ class WorkshopSyncManifestCommandTest extends TestCase
                             'correct_option_id' => 'A',
                             'feedback_mdx' => 'Retro',
                             'feedback_assets' => [],
+                            'feedback_blocks' => [
+                                [
+                                    'type' => 'paragraph',
+                                    'inlines' => [
+                                        ['text' => 'Retro', 'variant' => 'plain'],
+                                    ],
+                                ],
+                            ],
+                            'app_payload_version' => 1,
                         ],
                     ],
                 ],
@@ -64,6 +81,18 @@ class WorkshopSyncManifestCommandTest extends TestCase
             'total_questions' => 1,
             'total_assets' => 1,
         ]);
+
+        $workshop = Workshop::query()
+            ->where('external_id', 'content:saber:quimica/la-materia/taller')
+            ->first();
+
+        $this->assertNotNull($workshop);
+        $questions = is_array($workshop->questions) ? $workshop->questions : [];
+        $firstQuestion = $questions[0] ?? null;
+        $this->assertIsArray($firstQuestion);
+        $this->assertSame(1, $firstQuestion['app_payload_version'] ?? null);
+        $this->assertIsArray($firstQuestion['stem_blocks'] ?? null);
+        $this->assertIsArray($firstQuestion['feedback_blocks'] ?? null);
 
         File::delete($manifestPath);
     }

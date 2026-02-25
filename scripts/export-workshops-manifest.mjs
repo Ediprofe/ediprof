@@ -17,6 +17,7 @@ import { globSync } from 'glob';
 const DEFAULT_OUTPUT = '/tmp/ediprofe-workshops-manifest.json';
 const DEFAULT_CONTENT_MANIFEST = '/tmp/ediprofe-content-manifest.json';
 const WORKSHOPS_GLOB = 'src/content/saber/**/taller.{md,mdx}';
+const APP_PAYLOAD_VERSION = 1;
 
 function parseArgs(argv) {
   const args = {
@@ -124,6 +125,237 @@ function stripHtmlTags(text) {
     .replace(/<[^>]+>/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();
+}
+
+function cleanInlineMarkdown(value) {
+  return String(value || '')
+    .replace(/__(.*?)__/g, '$1')
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1')
+    .replace(/`([^`]+)`/g, '$1')
+    .replace(/\\rightarrow/g, '→')
+    .replace(/\\times/g, '×')
+    .replace(/\\cdot/g, '·')
+    .replace(/\$([^$]+)\$/g, '$1')
+    .trim();
+}
+
+function parseInlineSegments(value) {
+  const source = cleanInlineMarkdown(value);
+  const pattern = /(==[\s\S]+?==|~~[\s\S]+?~~|\*\*[\s\S]+?\*\*)/g;
+
+  const segments = [];
+  let lastIndex = 0;
+  let match = null;
+
+  while ((match = pattern.exec(source)) !== null) {
+    const token = match[0] || '';
+    const index = match.index ?? 0;
+
+    if (index > lastIndex) {
+      const chunk = source.slice(lastIndex, index);
+      if (chunk.trim() !== '') {
+        segments.push({
+          text: chunk,
+          variant: 'plain',
+        });
+      }
+    }
+
+    if (token.startsWith('==')) {
+      segments.push({
+        text: token.slice(2, -2),
+        variant: 'highlight',
+      });
+    } else if (token.startsWith('~~')) {
+      segments.push({
+        text: token.slice(2, -2),
+        variant: 'strike',
+      });
+    } else if (token.startsWith('**')) {
+      segments.push({
+        text: token.slice(2, -2),
+        variant: 'bold',
+      });
+    }
+
+    lastIndex = index + token.length;
+  }
+
+  if (lastIndex < source.length) {
+    const chunk = source.slice(lastIndex);
+    if (chunk.trim() !== '') {
+      segments.push({
+        text: chunk,
+        variant: 'plain',
+      });
+    }
+  }
+
+  if (segments.length === 0 && source.trim() !== '') {
+    return [{
+      text: source,
+      variant: 'plain',
+    }];
+  }
+
+  return segments;
+}
+
+function parseTableRow(line) {
+  const raw = line.split('|').map((part) => part.trim());
+  const body = raw
+    .filter((part, idx) => !(idx === 0 && part === ''))
+    .filter((part, idx, arr) => !(idx === arr.length - 1 && part === ''));
+
+  return body.map(cleanInlineMarkdown);
+}
+
+function isTableSeparatorRow(line) {
+  const normalized = line.replace(/\s/g, '');
+  return /^\|?:?-+:?\|(:?-+:?\|)+$/.test(normalized);
+}
+
+function parseImageLine(line) {
+  const match = line.match(/^!\[([^\]]*)\]\(([^)]+)\)$/);
+  if (!match) return null;
+
+  const alt = (match[1] || '').trim();
+  const url = (match[2] || '').trim();
+  if (!url) return null;
+
+  return { alt, url };
+}
+
+function buildBlocks(content, assetRefs = []) {
+  const blocks = [];
+  const lines = String(content || '').replace(/\r\n/g, '\n').split('\n');
+  const renderedImages = new Set();
+  let isInsideComment = false;
+
+  let i = 0;
+  while (i < lines.length) {
+    const rawLine = lines[i] || '';
+    const line = rawLine.trim();
+
+    if (isInsideComment) {
+      if (line.includes('*/}')) {
+        isInsideComment = false;
+      }
+      i += 1;
+      continue;
+    }
+
+    if (line === '') {
+      i += 1;
+      continue;
+    }
+
+    if (line.includes('{/*')) {
+      if (!line.includes('*/}')) {
+        isInsideComment = true;
+      }
+      i += 1;
+      continue;
+    }
+
+    const image = parseImageLine(line);
+    if (image) {
+      renderedImages.add(image.url);
+      blocks.push({
+        type: 'image',
+        src: image.url,
+        alt: image.alt,
+      });
+      i += 1;
+      continue;
+    }
+
+    if (line === '$$') {
+      const mathLines = [];
+      i += 1;
+
+      while (i < lines.length && (lines[i] || '').trim() !== '$$') {
+        const value = (lines[i] || '').trim();
+        if (value !== '') {
+          mathLines.push(value);
+        }
+        i += 1;
+      }
+
+      blocks.push({
+        type: 'equation',
+        latex: mathLines.join('\n'),
+      });
+
+      if (i < lines.length && (lines[i] || '').trim() === '$$') {
+        i += 1;
+      }
+
+      continue;
+    }
+
+    if (line.includes('|')) {
+      const tableLines = [];
+
+      while (i < lines.length) {
+        const candidate = (lines[i] || '').trim();
+        if (!candidate.includes('|')) {
+          break;
+        }
+        tableLines.push(candidate);
+        i += 1;
+      }
+
+      const rows = tableLines
+        .filter((row) => !isTableSeparatorRow(row))
+        .map(parseTableRow)
+        .filter((row) => row.length > 0);
+
+      if (rows.length > 0) {
+        blocks.push({
+          type: 'table',
+          rows,
+        });
+        continue;
+      }
+    }
+
+    const paragraphLines = [];
+    while (i < lines.length) {
+      const candidate = (lines[i] || '').trim();
+      if (candidate === '' || candidate === '$$' || candidate.includes('|')) {
+        break;
+      }
+      if (parseImageLine(candidate)) {
+        break;
+      }
+      if (candidate.includes('{/*')) {
+        break;
+      }
+      paragraphLines.push(candidate);
+      i += 1;
+    }
+
+    const text = cleanInlineMarkdown(paragraphLines.join(' '));
+    if (text) {
+      blocks.push({
+        type: 'paragraph',
+        inlines: parseInlineSegments(text),
+      });
+    }
+  }
+
+  assetRefs.forEach((asset) => {
+    if (!asset || renderedImages.has(asset)) return;
+    renderedImages.add(asset);
+    blocks.push({
+      type: 'image',
+      src: asset,
+      alt: 'Imagen de apoyo',
+    });
+  });
+
+  return blocks;
 }
 
 function extractAssetRefs(content) {
@@ -244,6 +476,9 @@ function parseQuestion(section) {
   let feedbackMdx = detailsMatch ? detailsMatch[1].trim() : '';
   feedbackMdx = feedbackMdx.replace(/<summary>[\s\S]*?<\/summary>/i, '').trim();
 
+  const stemAssets = extractAssetRefs(stemMdx);
+  const feedbackAssets = extractAssetRefs(feedbackMdx);
+
   const questionId = String(attrs.id || section.number).trim();
   const anioRaw = attrs.anio ? Number.parseInt(String(attrs.anio), 10) : null;
 
@@ -259,11 +494,14 @@ function parseQuestion(section) {
       headerless: attrs.headerless === true,
     },
     stem_mdx: stemMdx,
-    stem_assets: extractAssetRefs(stemMdx),
+    stem_assets: stemAssets,
+    stem_blocks: buildBlocks(stemMdx, stemAssets),
     options,
     correct_option_id: correctOption?.id ?? null,
     feedback_mdx: feedbackMdx,
-    feedback_assets: extractAssetRefs(feedbackMdx),
+    feedback_assets: feedbackAssets,
+    feedback_blocks: buildBlocks(feedbackMdx, feedbackAssets),
+    app_payload_version: APP_PAYLOAD_VERSION,
   };
 }
 
@@ -360,6 +598,7 @@ function main() {
   const manifest = {
     generatedAt: new Date().toISOString(),
     contractVersion: 1,
+    appPayloadVersion: APP_PAYLOAD_VERSION,
     source: {
       workshopsGlob: WORKSHOPS_GLOB,
       contentManifest: existsSync(resolve(contentManifest)) ? resolve(contentManifest) : null,

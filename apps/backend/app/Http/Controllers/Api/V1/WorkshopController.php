@@ -206,6 +206,7 @@ class WorkshopController extends Controller
                 'is_correct' => $isCorrect,
                 'feedback_mdx' => (string) ($question['feedback_mdx'] ?? ''),
                 'feedback_assets' => is_array($question['feedback_assets'] ?? null) ? $question['feedback_assets'] : [],
+                'feedback_blocks' => is_array($question['feedback_blocks'] ?? null) ? $question['feedback_blocks'] : [],
                 'next_question_id' => $nextQuestionId,
             ],
         ]);

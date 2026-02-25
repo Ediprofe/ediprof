@@ -27,6 +27,7 @@ class WorkshopResource extends JsonResource
                 $question['correct_option_id'] = null;
                 $question['feedback_mdx'] = '';
                 $question['feedback_assets'] = [];
+                $question['feedback_blocks'] = [];
 
                 $question['options'] = array_map(static function (array $option): array {
                     unset($option['is_correct']);
