@@ -2,6 +2,13 @@ import { memo, useMemo } from 'react';
 import { Image } from 'expo-image';
 import { StyleSheet, Text, View } from 'react-native';
 
+type InlineVariant = 'plain' | 'highlight' | 'strike' | 'bold';
+
+type InlineSegment = {
+  text: string;
+  variant: InlineVariant;
+};
+
 type StemBlock =
   | { type: 'paragraph'; text: string }
   | { type: 'math'; text: string }
@@ -15,11 +22,7 @@ type Props = {
 
 function cleanInlineMarkdown(value: string): string {
   return value
-    .replace(/\*\*(.*?)\*\*/g, '$1')
     .replace(/__(.*?)__/g, '$1')
-    .replace(/\*(.*?)\*/g, '$1')
-    .replace(/==([^=]+)==/g, '$1')
-    .replace(/~~([^~]+)~~/g, '$1')
     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1')
     .replace(/`([^`]+)`/g, '$1')
     .replace(/\\rightarrow/g, '→')
@@ -58,6 +61,58 @@ function normalizeMathForDisplay(value: string): string {
     .replace(/_([0-9]+)/g, (_, digits: string) => toSubscriptDigits(digits))
     .replace(/\s+/g, ' ')
     .trim();
+}
+
+function parseInlineSegments(value: string): InlineSegment[] {
+  const source = cleanInlineMarkdown(value);
+  const pattern = /(==[\s\S]+?==|~~[\s\S]+?~~|\*\*[\s\S]+?\*\*)/g;
+
+  const segments: InlineSegment[] = [];
+  let lastIndex = 0;
+
+  for (const match of source.matchAll(pattern)) {
+    const token = match[0] ?? '';
+    const index = match.index ?? 0;
+
+    if (index > lastIndex) {
+      segments.push({
+        text: source.slice(lastIndex, index),
+        variant: 'plain',
+      });
+    }
+
+    if (token.startsWith('==')) {
+      segments.push({
+        text: token.slice(2, -2),
+        variant: 'highlight',
+      });
+    } else if (token.startsWith('~~')) {
+      segments.push({
+        text: token.slice(2, -2),
+        variant: 'strike',
+      });
+    } else if (token.startsWith('**')) {
+      segments.push({
+        text: token.slice(2, -2),
+        variant: 'bold',
+      });
+    }
+
+    lastIndex = index + token.length;
+  }
+
+  if (lastIndex < source.length) {
+    segments.push({
+      text: source.slice(lastIndex),
+      variant: 'plain',
+    });
+  }
+
+  if (segments.length === 0) {
+    return [{ text: source, variant: 'plain' }];
+  }
+
+  return segments;
 }
 
 function parseTableRow(line: string): string[] {
@@ -205,6 +260,31 @@ function toBlocks(stem: string, stemAssets: string[] = []): StemBlock[] {
 function QuestionStemImpl({ stem, stemAssets = [] }: Props) {
   const blocks = useMemo(() => toBlocks(stem, stemAssets), [stem, stemAssets]);
 
+  const renderInlineText = (
+    text: string,
+    baseStyle: (typeof styles)['paragraph'] | (typeof styles)['cell'],
+    keyPrefix: string,
+  ) => {
+    const segments = parseInlineSegments(text);
+
+    return segments.map((segment, idx) => {
+      const segmentStyle =
+        segment.variant === 'highlight'
+          ? styles.inlineHighlight
+          : segment.variant === 'strike'
+            ? styles.inlineStrike
+            : segment.variant === 'bold'
+              ? styles.inlineBold
+              : null;
+
+      return (
+        <Text key={`${keyPrefix}-${idx}`} style={[baseStyle, segmentStyle]}>
+          {segment.text}
+        </Text>
+      );
+    });
+  };
+
   return (
     <View style={styles.root}>
       {blocks.map((block, index) => {
@@ -213,7 +293,7 @@ function QuestionStemImpl({ stem, stemAssets = [] }: Props) {
         if (block.type === 'paragraph') {
           return (
             <Text key={key} style={styles.paragraph}>
-              {block.text}
+              {renderInlineText(block.text, styles.paragraph, key)}
             </Text>
           );
         }
@@ -247,7 +327,7 @@ function QuestionStemImpl({ stem, stemAssets = [] }: Props) {
             <View style={styles.tableRow}>
               {header.map((cell, idx) => (
                 <Text key={`h-${idx}`} style={[styles.cell, styles.headerCell]}>
-                  {cell}
+                  {renderInlineText(cell, styles.cell, `${key}-h-${idx}`)}
                 </Text>
               ))}
             </View>
@@ -255,7 +335,7 @@ function QuestionStemImpl({ stem, stemAssets = [] }: Props) {
               <View key={`r-${rowIndex}`} style={styles.tableRow}>
                 {row.map((cell, idx) => (
                   <Text key={`c-${rowIndex}-${idx}`} style={styles.cell}>
-                    {cell}
+                    {renderInlineText(cell, styles.cell, `${key}-c-${rowIndex}-${idx}`)}
                   </Text>
                 ))}
               </View>
@@ -327,5 +407,19 @@ const styles = StyleSheet.create({
     backgroundColor: '#f4f7ff',
     borderWidth: 1,
     borderColor: '#2a3f6d',
+  },
+  inlineHighlight: {
+    backgroundColor: 'rgba(255, 223, 128, 0.28)',
+    color: '#fff2c4',
+    fontWeight: '700',
+  },
+  inlineStrike: {
+    textDecorationLine: 'line-through',
+    textDecorationColor: '#c79aa1',
+    color: '#b6a6bb',
+  },
+  inlineBold: {
+    fontWeight: '800',
+    color: '#f4f7ff',
   },
 });
