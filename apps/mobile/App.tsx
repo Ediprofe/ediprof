@@ -23,13 +23,16 @@ import {
   logout,
 } from './src/lib/api';
 import {
+  clearWorkshopPracticeState,
   clearSessionToken,
+  loadWorkshopPracticeStateMap,
   loadWorkshopPracticeState,
   loadBaseUrl,
   loadSessionToken,
   saveBaseUrl,
   saveSessionToken,
   saveWorkshopPracticeState,
+  type WorkshopPracticeState,
 } from './src/lib/storage';
 import type { WorkshopDetail, WorkshopEvaluationResult, WorkshopSummary } from './src/types/api';
 
@@ -42,6 +45,43 @@ type HydratedPracticeState = {
   selectedOptionByQuestion: Record<string, string>;
   evaluationByQuestion: Record<string, WorkshopEvaluationResult>;
 };
+
+type WorkshopProgressMeta = {
+  completionPercent: number;
+  resumeQuestionIndex: number;
+  evaluatedCount: number;
+  updatedAt: string;
+};
+
+function hasPracticeData(state: {
+  questionIndex: number;
+  selectedOptionByQuestion: Record<string, string>;
+  evaluationByQuestion: Record<string, WorkshopEvaluationResult>;
+}): boolean {
+  return (
+    state.questionIndex > 0 ||
+    Object.keys(state.selectedOptionByQuestion).length > 0 ||
+    Object.keys(state.evaluationByQuestion).length > 0
+  );
+}
+
+function buildWorkshopProgressMeta(
+  totalQuestions: number,
+  state: Pick<WorkshopPracticeState, 'questionIndex' | 'evaluationByQuestion' | 'updatedAt'>,
+): WorkshopProgressMeta {
+  const resumeQuestionIndex =
+    totalQuestions > 0 ? Math.max(0, Math.min(state.questionIndex, totalQuestions - 1)) : 0;
+  const evaluatedCount = Object.keys(state.evaluationByQuestion).length;
+  const completionPercent =
+    totalQuestions > 0 ? Math.min(100, Math.round((evaluatedCount / totalQuestions) * 100)) : 0;
+
+  return {
+    completionPercent,
+    resumeQuestionIndex,
+    evaluatedCount,
+    updatedAt: state.updatedAt,
+  };
+}
 
 function hydratePracticeState(
   detail: WorkshopDetail,
@@ -139,6 +179,8 @@ export default function App() {
   const [questionIndex, setQuestionIndex] = useState(0);
   const [selectedOptionByQuestion, setSelectedOptionByQuestion] = useState<Record<string, string>>({});
   const [evaluationByQuestion, setEvaluationByQuestion] = useState<Record<string, WorkshopEvaluationResult>>({});
+  const [progressByWorkshopId, setProgressByWorkshopId] = useState<Record<string, WorkshopProgressMeta>>({});
+  const [resumeNotice, setResumeNotice] = useState<string | null>(null);
 
   const [loadingCatalog, setLoadingCatalog] = useState(false);
   const [loadingWorkshop, setLoadingWorkshop] = useState(false);
@@ -188,6 +230,19 @@ export default function App() {
       await saveBaseUrl(baseUrl);
       const response = await listWorkshops(baseUrl, token ?? undefined);
       setWorkshops(response.data);
+      const persistedMap = await loadWorkshopPracticeStateMap(response.data.map((workshop) => workshop.id));
+      const progressMap: Record<string, WorkshopProgressMeta> = {};
+
+      response.data.forEach((workshop) => {
+        const state = persistedMap[workshop.id];
+        if (!state || !hasPracticeData(state)) {
+          return;
+        }
+
+        progressMap[workshop.id] = buildWorkshopProgressMeta(workshop.stats.total_questions, state);
+      });
+
+      setProgressByWorkshopId(progressMap);
 
       const selectedExists = selectedWorkshopId
         ? response.data.some((item) => item.id === selectedWorkshopId)
@@ -215,6 +270,7 @@ export default function App() {
       setLoadingWorkshop(true);
       setErrorMessage(null);
       setDetailAccessError(null);
+      setResumeNotice(null);
 
       try {
         const detail = await getWorkshop(baseUrl, workshopId, token ?? undefined);
@@ -225,11 +281,15 @@ export default function App() {
         setQuestionIndex(hydrated.questionIndex);
         setSelectedOptionByQuestion(hydrated.selectedOptionByQuestion);
         setEvaluationByQuestion(hydrated.evaluationByQuestion);
+        if (hasPracticeData(hydrated)) {
+          setResumeNotice(`Reanudaste en la pregunta ${hydrated.questionIndex + 1}.`);
+        }
       } catch (error) {
         setSelectedWorkshop(null);
         setQuestionIndex(0);
         setSelectedOptionByQuestion({});
         setEvaluationByQuestion({});
+        setResumeNotice(null);
 
         if (
           error instanceof ApiRequestError &&
@@ -266,17 +326,63 @@ export default function App() {
     }
 
     const timer = setTimeout(() => {
-      void saveWorkshopPracticeState(selectedWorkshop.id, {
+      const snapshot = {
         questionIndex,
         selectedOptionByQuestion,
         evaluationByQuestion,
-      });
+      };
+
+      if (!hasPracticeData(snapshot)) {
+        void clearWorkshopPracticeState(selectedWorkshop.id);
+        setProgressByWorkshopId((prev) => {
+          if (!(selectedWorkshop.id in prev)) {
+            return prev;
+          }
+
+          const clone = { ...prev };
+          delete clone[selectedWorkshop.id];
+          return clone;
+        });
+        return;
+      }
+
+      const updatedAt = new Date().toISOString();
+      void saveWorkshopPracticeState(selectedWorkshop.id, snapshot);
+      setProgressByWorkshopId((prev) => ({
+        ...prev,
+        [selectedWorkshop.id]: buildWorkshopProgressMeta(selectedWorkshop.stats.total_questions, {
+          questionIndex,
+          evaluationByQuestion,
+          updatedAt,
+        }),
+      }));
     }, 180);
 
     return () => {
       clearTimeout(timer);
     };
   }, [evaluationByQuestion, questionIndex, selectedOptionByQuestion, selectedWorkshop]);
+
+  const handleResetProgress = useCallback(async () => {
+    if (!selectedWorkshop) {
+      return;
+    }
+
+    await clearWorkshopPracticeState(selectedWorkshop.id);
+    setQuestionIndex(0);
+    setSelectedOptionByQuestion({});
+    setEvaluationByQuestion({});
+    setResumeNotice('Progreso reiniciado.');
+    setProgressByWorkshopId((prev) => {
+      if (!(selectedWorkshop.id in prev)) {
+        return prev;
+      }
+
+      const clone = { ...prev };
+      delete clone[selectedWorkshop.id];
+      return clone;
+    });
+  }, [selectedWorkshop]);
 
   const handleLogin = useCallback(async () => {
     setErrorMessage(null);
@@ -474,6 +580,7 @@ export default function App() {
                   item={item}
                   isSelected={item.id === selectedWorkshopId}
                   onPress={handlePressWorkshop}
+                  progress={progressByWorkshopId[item.id] ?? null}
                 />
               </View>
             )}
@@ -514,6 +621,12 @@ export default function App() {
 
               <View style={styles.progressTrack}>
                 <View style={[styles.progressFill, { width: `${progressValue * 100}%` }]} />
+              </View>
+              <View style={styles.resumeRow}>
+                <Text style={styles.resumeText}>{resumeNotice ?? ' '}</Text>
+                <Pressable style={styles.resetProgressButton} onPress={() => void handleResetProgress()}>
+                  <Text style={styles.resetProgressText}>Reiniciar progreso</Text>
+                </Pressable>
               </View>
 
               <QuestionStem
@@ -746,6 +859,31 @@ const styles = StyleSheet.create({
     height: '100%',
     borderRadius: 999,
     backgroundColor: '#3f86ff',
+  },
+  resumeRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    gap: 10,
+  },
+  resumeText: {
+    flex: 1,
+    color: '#7fd7b3',
+    fontSize: 12,
+    lineHeight: 16,
+  },
+  resetProgressButton: {
+    borderRadius: 8,
+    backgroundColor: '#16274a',
+    borderWidth: 1,
+    borderColor: '#2d467a',
+    paddingHorizontal: 10,
+    paddingVertical: 7,
+  },
+  resetProgressText: {
+    color: '#c0d6ff',
+    fontWeight: '700',
+    fontSize: 11,
   },
   optionsWrap: {
     gap: 8,

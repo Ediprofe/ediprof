@@ -12,6 +12,37 @@ export type WorkshopPracticeState = {
   updatedAt: string;
 };
 
+function parseWorkshopPracticeState(raw: string | null): WorkshopPracticeState | null {
+  if (!raw) {
+    return null;
+  }
+
+  try {
+    const parsed = JSON.parse(raw) as Partial<WorkshopPracticeState>;
+    if (
+      typeof parsed !== 'object' ||
+      parsed === null ||
+      typeof parsed.questionIndex !== 'number' ||
+      !Number.isFinite(parsed.questionIndex) ||
+      typeof parsed.selectedOptionByQuestion !== 'object' ||
+      parsed.selectedOptionByQuestion === null ||
+      typeof parsed.evaluationByQuestion !== 'object' ||
+      parsed.evaluationByQuestion === null
+    ) {
+      return null;
+    }
+
+    return {
+      questionIndex: parsed.questionIndex,
+      selectedOptionByQuestion: parsed.selectedOptionByQuestion as Record<string, string>,
+      evaluationByQuestion: parsed.evaluationByQuestion as Record<string, WorkshopEvaluationResult>,
+      updatedAt: typeof parsed.updatedAt === 'string' ? parsed.updatedAt : new Date().toISOString(),
+    };
+  } catch {
+    return null;
+  }
+}
+
 export async function saveSessionToken(token: string): Promise<void> {
   await AsyncStorage.setItem(SESSION_KEY, token);
 }
@@ -52,34 +83,37 @@ export async function saveWorkshopPracticeState(
 
 export async function loadWorkshopPracticeState(workshopId: string): Promise<WorkshopPracticeState | null> {
   const raw = await AsyncStorage.getItem(workshopProgressKey(workshopId));
-  if (!raw) {
-    return null;
+  return parseWorkshopPracticeState(raw);
+}
+
+export async function loadWorkshopPracticeStateMap(
+  workshopIds: string[],
+): Promise<Record<string, WorkshopPracticeState>> {
+  if (workshopIds.length === 0) {
+    return {};
   }
 
-  try {
-    const parsed = JSON.parse(raw) as Partial<WorkshopPracticeState>;
-    if (
-      typeof parsed !== 'object' ||
-      parsed === null ||
-      typeof parsed.questionIndex !== 'number' ||
-      !Number.isFinite(parsed.questionIndex) ||
-      typeof parsed.selectedOptionByQuestion !== 'object' ||
-      parsed.selectedOptionByQuestion === null ||
-      typeof parsed.evaluationByQuestion !== 'object' ||
-      parsed.evaluationByQuestion === null
-    ) {
-      return null;
+  const pairs = await AsyncStorage.multiGet(workshopIds.map(workshopProgressKey));
+  const output: Record<string, WorkshopPracticeState> = {};
+
+  for (const [key, raw] of pairs) {
+    const state = parseWorkshopPracticeState(raw);
+    if (!state) {
+      continue;
     }
 
-    return {
-      questionIndex: parsed.questionIndex,
-      selectedOptionByQuestion: parsed.selectedOptionByQuestion as Record<string, string>,
-      evaluationByQuestion: parsed.evaluationByQuestion as Record<string, WorkshopEvaluationResult>,
-      updatedAt: typeof parsed.updatedAt === 'string' ? parsed.updatedAt : new Date().toISOString(),
-    };
-  } catch {
-    return null;
+    const workshopId = key.startsWith(WORKSHOP_PROGRESS_PREFIX)
+      ? key.slice(WORKSHOP_PROGRESS_PREFIX.length)
+      : '';
+
+    if (!workshopId) {
+      continue;
+    }
+
+    output[workshopId] = state;
   }
+
+  return output;
 }
 
 export async function clearWorkshopPracticeState(workshopId: string): Promise<void> {

@@ -7,9 +7,14 @@ type Props = {
   item: WorkshopSummary;
   isSelected: boolean;
   onPress: (id: string) => void;
+  progress?: {
+    completionPercent: number;
+    resumeQuestionIndex: number;
+    evaluatedCount: number;
+  } | null;
 };
 
-function WorkshopCardImpl({ item, isSelected, onPress }: Props) {
+function WorkshopCardImpl({ item, isSelected, onPress, progress = null }: Props) {
   const preview = item.asset_preview[0];
 
   return (
@@ -30,7 +35,17 @@ function WorkshopCardImpl({ item, isSelected, onPress }: Props) {
           <Text style={[styles.badge, item.can_access ? styles.ok : styles.locked]}>
             {item.can_access ? 'acceso' : 'bloqueado'}
           </Text>
+          {progress ? (
+            <Text style={[styles.badge, styles.progress]}>
+              {progress.completionPercent}% · P{progress.resumeQuestionIndex + 1}
+            </Text>
+          ) : null}
         </View>
+        {progress ? (
+          <Text style={styles.progressMeta}>
+            {progress.evaluatedCount} de {item.stats.total_questions} evaluadas
+          </Text>
+        ) : null}
       </View>
     </Pressable>
   );
@@ -94,5 +109,13 @@ const styles = StyleSheet.create({
   locked: {
     color: '#ff9da6',
     backgroundColor: 'rgba(255, 99, 114, 0.15)',
+  },
+  progress: {
+    color: '#87d6ff',
+    backgroundColor: 'rgba(80, 186, 255, 0.16)',
+  },
+  progressMeta: {
+    color: '#7fa8d6',
+    fontSize: 11,
   },
 });
