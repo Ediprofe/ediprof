@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\V1;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\WorkshopResource;
 use App\Models\Workshop;
+use App\Services\Access\WorkshopAccessService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
@@ -13,7 +14,7 @@ class WorkshopController extends Controller
     /**
      * Display a workshop by its external id, related content id, or route.
      */
-    public function show(Request $request, string $workshopId): JsonResponse
+    public function show(Request $request, string $workshopId, WorkshopAccessService $accessService): JsonResponse
     {
         $identifier = trim(rawurldecode($workshopId));
 
@@ -40,6 +41,28 @@ class WorkshopController extends Controller
                     'message' => 'Workshop not found for the requested identifier.',
                 ],
             ], 404);
+        }
+
+        $user = $request->user();
+
+        if ($workshop->access_tier === 'premium' && $user === null) {
+            return response()->json([
+                'ok' => false,
+                'error' => [
+                    'code' => 'auth_required',
+                    'message' => 'Authentication is required to access premium workshops.',
+                ],
+            ], 401);
+        }
+
+        if (! $accessService->canAccessWorkshop($user, $workshop)) {
+            return response()->json([
+                'ok' => false,
+                'error' => [
+                    'code' => 'premium_access_required',
+                    'message' => 'Your account does not have access to this premium workshop.',
+                ],
+            ], 403);
         }
 
         return response()->json([
