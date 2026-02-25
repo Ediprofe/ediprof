@@ -14,6 +14,7 @@ import { Image } from 'expo-image';
 import { StatusBar } from 'expo-status-bar';
 import { WorkshopCard } from './src/components/WorkshopCard';
 import {
+  ApiRequestError,
   getCurrentUser,
   getWorkshop,
   listWorkshops,
@@ -42,6 +43,9 @@ export default function App() {
   const [loading, setLoading] = useState(false);
   const [loadingWorkshop, setLoadingWorkshop] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [detailAccessError, setDetailAccessError] = useState<
+    'auth_required' | 'premium_access_required' | null
+  >(null);
 
   useEffect(() => {
     let mounted = true;
@@ -92,6 +96,8 @@ export default function App() {
         setSelectedWorkshopId(null);
         setSelectedWorkshop(null);
       }
+
+      setDetailAccessError(null);
     } catch (error) {
       setErrorMessage(error instanceof Error ? error.message : 'No fue posible cargar catálogo.');
     } finally {
@@ -107,11 +113,23 @@ export default function App() {
     async (workshopId: string) => {
       setLoadingWorkshop(true);
       setErrorMessage(null);
+      setDetailAccessError(null);
 
       try {
         const detail = await getWorkshop(baseUrl, workshopId, token ?? undefined);
         setSelectedWorkshop(detail);
       } catch (error) {
+        if (
+          error instanceof ApiRequestError &&
+          (error.code === 'auth_required' || error.code === 'premium_access_required')
+        ) {
+          setDetailAccessError(error.code);
+          setSelectedWorkshop(null);
+          setErrorMessage(error.message);
+
+          return;
+        }
+
         setErrorMessage(error instanceof Error ? error.message : 'No fue posible cargar el taller.');
         setSelectedWorkshop(null);
       } finally {
@@ -268,6 +286,26 @@ export default function App() {
             {loadingWorkshop ? <ActivityIndicator color="#9ac0ff" /> : null}
 
             <ScrollView style={styles.detailScroll} contentContainerStyle={styles.detailContent}>
+              {!selectedWorkshop && detailAccessError === 'auth_required' ? (
+                <View style={styles.emptyState}>
+                  <Text style={styles.emptyTitle}>Taller premium bloqueado</Text>
+                  <Text style={styles.emptyText}>
+                    Inicia sesión con una cuenta que tenga acceso premium para ver preguntas y
+                    retroalimentación.
+                  </Text>
+                </View>
+              ) : null}
+
+              {!selectedWorkshop && detailAccessError === 'premium_access_required' ? (
+                <View style={styles.emptyState}>
+                  <Text style={styles.emptyTitle}>Sin acceso premium</Text>
+                  <Text style={styles.emptyText}>
+                    Tu cuenta está autenticada, pero no tiene una suscripción o un permiso activo
+                    para este taller.
+                  </Text>
+                </View>
+              ) : null}
+
               {selectedWorkshop?.questions.slice(0, 3).map((question) => (
                 <View key={question.id} style={styles.questionCard}>
                   <Text style={styles.questionTitle}>#{question.order} · {question.id}</Text>
@@ -444,5 +482,23 @@ const styles = StyleSheet.create({
   optionText: {
     color: '#dee6ff',
     fontSize: 12,
+  },
+  emptyState: {
+    borderWidth: 1,
+    borderColor: '#334a7f',
+    borderRadius: 10,
+    backgroundColor: '#0b142b',
+    padding: 14,
+    gap: 8,
+  },
+  emptyTitle: {
+    color: '#f0f4ff',
+    fontWeight: '700',
+    fontSize: 16,
+  },
+  emptyText: {
+    color: '#c9d5f6',
+    fontSize: 13,
+    lineHeight: 19,
   },
 });

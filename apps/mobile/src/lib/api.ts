@@ -5,6 +5,19 @@ import type {
   WorkshopListResponse,
 } from '../types/api';
 
+export class ApiRequestError extends Error {
+  readonly status: number;
+
+  readonly code?: string;
+
+  constructor(message: string, status: number, code?: string) {
+    super(message);
+    this.name = 'ApiRequestError';
+    this.status = status;
+    this.code = code;
+  }
+}
+
 type LoginPayload = {
   email: string;
   password: string;
@@ -32,6 +45,20 @@ function toErrorMessage(payload: unknown, fallback: string): string {
   return fallback;
 }
 
+function toApiRequestError(
+  response: Response,
+  payload: ApiError | unknown,
+  fallback: string,
+): ApiRequestError {
+  const message = toErrorMessage(payload, fallback);
+  const code =
+    payload && typeof payload === 'object' && 'error' in payload
+      ? (payload as ApiError).error?.code
+      : undefined;
+
+  return new ApiRequestError(message, response.status, code);
+}
+
 export async function login(baseUrl: string, payload: LoginPayload): Promise<AuthSession> {
   const url = `${normalizeBaseUrl(baseUrl)}/auth/login`;
   const response = await fetch(url, {
@@ -49,7 +76,7 @@ export async function login(baseUrl: string, payload: LoginPayload): Promise<Aut
   const data = await parseJson<{ ok: boolean; data?: any } & ApiError>(response);
 
   if (!response.ok || !data.ok || !data.data?.token) {
-    throw new Error(toErrorMessage(data, 'No fue posible iniciar sesión.'));
+    throw toApiRequestError(response, data, 'No fue posible iniciar sesión.');
   }
 
   return {
@@ -78,7 +105,7 @@ export async function listWorkshops(baseUrl: string, token?: string): Promise<Wo
   const data = await parseJson<WorkshopListResponse & ApiError>(response);
 
   if (!response.ok || !data.ok) {
-    throw new Error(toErrorMessage(data, 'No fue posible cargar talleres.'));
+    throw toApiRequestError(response, data, 'No fue posible cargar talleres.');
   }
 
   return data;
@@ -106,7 +133,7 @@ export async function getWorkshop(
   const data = await parseJson<{ ok: boolean; data?: WorkshopDetail } & ApiError>(response);
 
   if (!response.ok || !data.ok || !data.data) {
-    throw new Error(toErrorMessage(data, 'No fue posible cargar el taller.'));
+    throw toApiRequestError(response, data, 'No fue posible cargar el taller.');
   }
 
   return data.data;
@@ -121,7 +148,8 @@ export async function getCurrentUser(baseUrl: string, token: string): Promise<vo
   });
 
   if (!response.ok) {
-    throw new Error('Tu sesión no es válida.');
+    const data = await parseJson<ApiError>(response).catch(() => null);
+    throw toApiRequestError(response, data, 'Tu sesión no es válida.');
   }
 }
 
