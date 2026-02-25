@@ -8,6 +8,7 @@
     "start": "astro dev",
     "optimize-images": "node scripts/optimize-images.mjs",
     "build": "npm run optimize-images && astro build",
+    "build:guarded": "npm run assets:audit:strict && npm run build",
     "preview": "astro preview",
     "validate": "node scripts/validate-latex.js",
     "new:lesson": "node scripts/new-lesson.js",
