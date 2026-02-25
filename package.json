@@ -17,6 +17,7 @@
     "assets:audit": "node scripts/assets-audit.mjs",
     "assets:audit:strict": "node scripts/assets-audit.mjs --strict --baseline docs/new-features/assets-audit-baseline.json",
     "assets:manifest": "node scripts/export-assets-manifest.mjs",
+    "content:manifest": "node scripts/export-content-manifest.mjs",
     "img": "node scripts/upload-to-r2.mjs",
     "astro": "astro"
   },
