@@ -1,0 +1,26 @@
+{
+  "expo": {
+    "name": "Ediprofe Mobile",
+    "slug": "ediprofe-mobile",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#0b1020"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.ediprofe.mobile"
+    },
+    "android": {
+      "package": "com.ediprofe.mobile"
+    },
+    "web": {
+      "bundler": "metro"
+    }
+  }
+}

@@ -1,0 +1,135 @@
+import type {
+  ApiError,
+  AuthSession,
+  WorkshopDetail,
+  WorkshopListResponse,
+} from '../types/api';
+
+type LoginPayload = {
+  email: string;
+  password: string;
+  deviceName: string;
+};
+
+function normalizeBaseUrl(url: string): string {
+  return url.replace(/\/$/, '');
+}
+
+async function parseJson<T>(response: Response): Promise<T> {
+  return (await response.json()) as T;
+}
+
+function toErrorMessage(payload: unknown, fallback: string): string {
+  if (!payload || typeof payload !== 'object') {
+    return fallback;
+  }
+
+  const maybeError = (payload as ApiError).error;
+  if (maybeError?.message) {
+    return maybeError.message;
+  }
+
+  return fallback;
+}
+
+export async function login(baseUrl: string, payload: LoginPayload): Promise<AuthSession> {
+  const url = `${normalizeBaseUrl(baseUrl)}/auth/login`;
+  const response = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      email: payload.email,
+      password: payload.password,
+      device_name: payload.deviceName,
+    }),
+  });
+
+  const data = await parseJson<{ ok: boolean; data?: any } & ApiError>(response);
+
+  if (!response.ok || !data.ok || !data.data?.token) {
+    throw new Error(toErrorMessage(data, 'No fue posible iniciar sesión.'));
+  }
+
+  return {
+    token: data.data.token as string,
+    tokenType: 'Bearer',
+    expiresAt: data.data.expires_at as string,
+    user: {
+      id: data.data.user.id as number,
+      name: data.data.user.name as string,
+      email: data.data.user.email as string,
+    },
+  };
+}
+
+export async function listWorkshops(baseUrl: string, token?: string): Promise<WorkshopListResponse> {
+  const url = `${normalizeBaseUrl(baseUrl)}/workshops?published=true&per_page=30`;
+  const response = await fetch(url, {
+    headers: token
+      ? {
+          Authorization: `Bearer ${token}`,
+        }
+      : undefined,
+  });
+
+  const data = await parseJson<WorkshopListResponse & ApiError>(response);
+
+  if (!response.ok || !data.ok) {
+    throw new Error(toErrorMessage(data, 'No fue posible cargar talleres.'));
+  }
+
+  return data;
+}
+
+export async function getWorkshop(
+  baseUrl: string,
+  workshopId: string,
+  token?: string,
+): Promise<WorkshopDetail> {
+  const encodedId = workshopId
+    .split('/')
+    .map(encodeURIComponent)
+    .join('/');
+
+  const url = `${normalizeBaseUrl(baseUrl)}/workshops/${encodedId}?published_only=false&include_answers=false`;
+  const response = await fetch(url, {
+    headers: token
+      ? {
+          Authorization: `Bearer ${token}`,
+        }
+      : undefined,
+  });
+
+  const data = await parseJson<{ ok: boolean; data?: WorkshopDetail } & ApiError>(response);
+
+  if (!response.ok || !data.ok || !data.data) {
+    throw new Error(toErrorMessage(data, 'No fue posible cargar el taller.'));
+  }
+
+  return data.data;
+}
+
+export async function getCurrentUser(baseUrl: string, token: string): Promise<void> {
+  const url = `${normalizeBaseUrl(baseUrl)}/auth/me`;
+  const response = await fetch(url, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+
+  if (!response.ok) {
+    throw new Error('Tu sesión no es válida.');
+  }
+}
+
+export async function logout(baseUrl: string, token: string): Promise<void> {
+  const url = `${normalizeBaseUrl(baseUrl)}/auth/logout`;
+  await fetch(url, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+}
