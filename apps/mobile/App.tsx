@@ -405,7 +405,7 @@ export default function App() {
               </View>
 
               <QuestionStem
-                stem={currentQuestion.stem_mdx}
+                stem={currentQuestion.stem_mdx ?? ''}
                 stemAssets={currentQuestion.stem_assets}
                 blocks={currentQuestion.stem_blocks}
               />
@@ -475,7 +475,7 @@ export default function App() {
                     {evaluation.is_correct ? 'Respuesta correcta' : 'Respuesta incorrecta'}
                   </Text>
                   <QuestionStem
-                    stem={evaluation.feedback_mdx}
+                    stem={evaluation.feedback_mdx ?? ''}
                     stemAssets={evaluation.feedback_assets}
                     blocks={evaluation.feedback_blocks}
                   />

@@ -73,12 +73,12 @@ export type WorkshopRichBlock =
 export type WorkshopQuestion = {
   id: string;
   order: number;
-  stem_mdx: string;
+  stem_mdx?: string;
   stem_assets: string[];
   stem_blocks?: WorkshopRichBlock[];
   options: WorkshopQuestionOption[];
   correct_option_id: string | null;
-  feedback_mdx: string;
+  feedback_mdx?: string;
   feedback_assets: string[];
   feedback_blocks?: WorkshopRichBlock[];
   app_payload_version?: number | null;
@@ -104,7 +104,7 @@ export type WorkshopEvaluationResult = {
   selected_option_id: string;
   correct_option_id: string | null;
   is_correct: boolean;
-  feedback_mdx: string;
+  feedback_mdx?: string;
   feedback_assets: string[];
   feedback_blocks?: WorkshopRichBlock[];
   next_question_id: string | null;

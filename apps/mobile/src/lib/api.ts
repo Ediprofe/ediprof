@@ -122,7 +122,9 @@ export async function getWorkshop(
     .map(encodeURIComponent)
     .join('/');
 
-  const url = `${normalizeBaseUrl(baseUrl)}/workshops/${encodedId}?published_only=false&include_answers=false`;
+  const url =
+    `${normalizeBaseUrl(baseUrl)}/workshops/${encodedId}` +
+    '?published_only=false&include_answers=false&format=app';
   const response = await fetch(url, {
     headers: token
       ? {
@@ -155,7 +157,7 @@ export async function evaluateWorkshopAnswer(
 
   const url =
     `${normalizeBaseUrl(baseUrl)}/workshops/${encodedWorkshopId}` +
-    `/questions/${encodedQuestionId}/evaluate?published_only=false`;
+    `/questions/${encodedQuestionId}/evaluate?published_only=false&format=app`;
 
   const response = await fetch(url, {
     method: 'POST',

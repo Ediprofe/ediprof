@@ -15,6 +15,7 @@ Para derivar payload nativo de talleres (UI móvil):
 - `npm run workshops:manifest`
 - Salida por defecto: `/tmp/ediprofe-workshops-manifest.json`
 - Contrato: `docs/new-features/workshops-app-payload-v1.md`
+- Consumo recomendado en app: `GET /api/v1/workshops/{id}?include_answers=false&format=app`
 
 Opciones:
 - `--output <ruta>`: cambia la ruta de salida.

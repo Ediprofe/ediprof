@@ -73,6 +73,19 @@ Cuando `include_answers=false`, el backend debe ocultar:
 - `feedback_assets`
 - `feedback_blocks`
 
+## Modo de entrega para app nativa
+Para clientes móviles, usar:
+
+```text
+GET /api/v1/workshops/{id}?published_only=false&include_answers=false&format=app
+```
+
+Con `format=app`, cada pregunta omite campos MDX crudos:
+- `stem_mdx`
+- `feedback_mdx`
+
+El cliente debe renderizar desde `stem_blocks` y `feedback_blocks`.
+
 ## Estado actual
 - Exportador `scripts/export-workshops-manifest.mjs` ya genera `stem_blocks` y `feedback_blocks`.
 - Backend sync (`workshops:sync-manifest`) persiste esos bloques en `questions`.

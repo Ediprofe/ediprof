@@ -130,6 +130,74 @@ class WorkshopApiTest extends TestCase
         $this->assertArrayNotHasKey('is_correct', $firstOption);
     }
 
+    public function test_it_returns_app_optimized_payload_without_mdx_fields(): void
+    {
+        Workshop::query()->create([
+            'external_id' => 'workshop:saber:quimica:la-materia:app-format',
+            'content_external_id' => 'content:saber:quimica/la-materia/app-format',
+            'title' => 'Taller App Payload',
+            'route' => '/saber/quimica/la-materia/app-format',
+            'area_slug' => 'quimica',
+            'unidad_slug' => 'la-materia',
+            'access_tier' => 'free',
+            'is_published' => true,
+            'total_questions' => 1,
+            'total_assets' => 0,
+            'assets' => [],
+            'questions' => [
+                [
+                    'id' => '1',
+                    'order' => 1,
+                    'meta' => ['fuente' => 'ICFES'],
+                    'stem_mdx' => 'Pregunta en MDX',
+                    'stem_assets' => [],
+                    'stem_blocks' => [
+                        [
+                            'type' => 'paragraph',
+                            'inlines' => [
+                                ['text' => 'Pregunta app', 'variant' => 'plain'],
+                            ],
+                        ],
+                    ],
+                    'options' => [
+                        ['id' => 'A', 'text' => 'Correcta', 'is_correct' => true],
+                        ['id' => 'B', 'text' => 'Incorrecta', 'is_correct' => false],
+                    ],
+                    'correct_option_id' => 'A',
+                    'feedback_mdx' => 'Retro en MDX',
+                    'feedback_assets' => [],
+                    'feedback_blocks' => [
+                        [
+                            'type' => 'paragraph',
+                            'inlines' => [
+                                ['text' => 'Retro app', 'variant' => 'plain'],
+                            ],
+                        ],
+                    ],
+                    'app_payload_version' => 1,
+                ],
+            ],
+            'metadata' => [],
+        ]);
+
+        $response = $this->getJson(
+            '/api/v1/workshops/workshop:saber:quimica:la-materia:app-format?include_answers=false&format=app'
+        );
+
+        $response
+            ->assertOk()
+            ->assertJsonPath('ok', true)
+            ->assertJsonPath('data.questions.0.stem_blocks.0.type', 'paragraph')
+            ->assertJsonPath('data.questions.0.feedback_blocks', [])
+            ->assertJsonPath('data.questions.0.correct_option_id', null);
+
+        $question = $response->json('data.questions.0');
+        $this->assertIsArray($question);
+        $this->assertArrayNotHasKey('meta', $question);
+        $this->assertArrayNotHasKey('stem_mdx', $question);
+        $this->assertArrayNotHasKey('feedback_mdx', $question);
+    }
+
     public function test_it_evaluates_answer_and_returns_feedback(): void
     {
         Workshop::query()->create([

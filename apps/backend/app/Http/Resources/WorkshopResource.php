@@ -18,9 +18,10 @@ class WorkshopResource extends JsonResource
     public function toArray(Request $request): array
     {
         $includeAnswers = $request->boolean('include_answers', true);
+        $appFormat = strtolower((string) $request->query('format', '')) === 'app';
         $questions = is_array($this->questions) ? $this->questions : [];
 
-        $questions = array_map(static function (array $question) use ($includeAnswers): array {
+        $questions = array_map(static function (array $question) use ($includeAnswers, $appFormat): array {
             unset($question['meta']);
 
             if (! $includeAnswers) {
@@ -35,6 +36,10 @@ class WorkshopResource extends JsonResource
                     return $option;
                 }, is_array($question['options'] ?? null) ? $question['options'] : []);
 
+            }
+
+            if ($appFormat) {
+                unset($question['stem_mdx'], $question['feedback_mdx']);
             }
 
             return $question;
