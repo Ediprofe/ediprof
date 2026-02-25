@@ -24,16 +24,107 @@ import {
 } from './src/lib/api';
 import {
   clearSessionToken,
+  loadWorkshopPracticeState,
   loadBaseUrl,
   loadSessionToken,
   saveBaseUrl,
   saveSessionToken,
+  saveWorkshopPracticeState,
 } from './src/lib/storage';
 import type { WorkshopDetail, WorkshopEvaluationResult, WorkshopSummary } from './src/types/api';
 
 const DEFAULT_BASE_URL = 'http://127.0.0.1:8080/api/v1';
 
 type DetailAccessError = 'auth_required' | 'premium_access_required' | null;
+
+type HydratedPracticeState = {
+  questionIndex: number;
+  selectedOptionByQuestion: Record<string, string>;
+  evaluationByQuestion: Record<string, WorkshopEvaluationResult>;
+};
+
+function hydratePracticeState(
+  detail: WorkshopDetail,
+  persisted: Awaited<ReturnType<typeof loadWorkshopPracticeState>>,
+): HydratedPracticeState {
+  const questionById = new Map(detail.questions.map((question) => [question.id, question]));
+
+  const selectedOptionByQuestion: Record<string, string> = {};
+  const persistedSelected = persisted?.selectedOptionByQuestion ?? {};
+
+  for (const [questionId, optionId] of Object.entries(persistedSelected)) {
+    if (typeof optionId !== 'string') {
+      continue;
+    }
+
+    const question = questionById.get(questionId);
+    if (!question) {
+      continue;
+    }
+
+    if (!question.options.some((option) => option.id === optionId)) {
+      continue;
+    }
+
+    selectedOptionByQuestion[questionId] = optionId;
+  }
+
+  const evaluationByQuestion: Record<string, WorkshopEvaluationResult> = {};
+  const persistedEvaluation = persisted?.evaluationByQuestion ?? {};
+
+  for (const [questionId, evaluation] of Object.entries(persistedEvaluation)) {
+    const question = questionById.get(questionId);
+    if (!question || typeof evaluation !== 'object' || evaluation === null) {
+      continue;
+    }
+
+    const selectedOptionId =
+      typeof evaluation.selected_option_id === 'string' ? evaluation.selected_option_id : '';
+    if (!selectedOptionId || !question.options.some((option) => option.id === selectedOptionId)) {
+      continue;
+    }
+
+    const correctOptionId =
+      typeof evaluation.correct_option_id === 'string' || evaluation.correct_option_id === null
+        ? evaluation.correct_option_id
+        : null;
+
+    if (
+      typeof correctOptionId === 'string' &&
+      !question.options.some((option) => option.id === correctOptionId)
+    ) {
+      continue;
+    }
+
+    evaluationByQuestion[questionId] = {
+      workshop_id: detail.id,
+      question_id: questionId,
+      selected_option_id: selectedOptionId,
+      correct_option_id: correctOptionId,
+      is_correct: Boolean(evaluation.is_correct),
+      feedback_mdx: typeof evaluation.feedback_mdx === 'string' ? evaluation.feedback_mdx : '',
+      feedback_assets: Array.isArray(evaluation.feedback_assets) ? evaluation.feedback_assets : [],
+      feedback_blocks: Array.isArray(evaluation.feedback_blocks) ? evaluation.feedback_blocks : [],
+      next_question_id:
+        typeof evaluation.next_question_id === 'string' || evaluation.next_question_id === null
+          ? evaluation.next_question_id
+          : null,
+    };
+  }
+
+  const totalQuestions = detail.questions.length;
+  const persistedIndex = persisted?.questionIndex ?? 0;
+  const boundedQuestionIndex =
+    totalQuestions > 0
+      ? Math.max(0, Math.min(Number.isFinite(persistedIndex) ? persistedIndex : 0, totalQuestions - 1))
+      : 0;
+
+  return {
+    questionIndex: boundedQuestionIndex,
+    selectedOptionByQuestion,
+    evaluationByQuestion,
+  };
+}
 
 export default function App() {
   const [baseUrl, setBaseUrl] = useState(DEFAULT_BASE_URL);
@@ -127,10 +218,13 @@ export default function App() {
 
       try {
         const detail = await getWorkshop(baseUrl, workshopId, token ?? undefined);
+        const persisted = await loadWorkshopPracticeState(workshopId);
+        const hydrated = hydratePracticeState(detail, persisted);
+
         setSelectedWorkshop(detail);
-        setQuestionIndex(0);
-        setSelectedOptionByQuestion({});
-        setEvaluationByQuestion({});
+        setQuestionIndex(hydrated.questionIndex);
+        setSelectedOptionByQuestion(hydrated.selectedOptionByQuestion);
+        setEvaluationByQuestion(hydrated.evaluationByQuestion);
       } catch (error) {
         setSelectedWorkshop(null);
         setQuestionIndex(0);
@@ -165,6 +259,24 @@ export default function App() {
   const handlePressWorkshop = useCallback((workshopId: string) => {
     setSelectedWorkshopId(workshopId);
   }, []);
+
+  useEffect(() => {
+    if (!selectedWorkshop) {
+      return;
+    }
+
+    const timer = setTimeout(() => {
+      void saveWorkshopPracticeState(selectedWorkshop.id, {
+        questionIndex,
+        selectedOptionByQuestion,
+        evaluationByQuestion,
+      });
+    }, 180);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [evaluationByQuestion, questionIndex, selectedOptionByQuestion, selectedWorkshop]);
 
   const handleLogin = useCallback(async () => {
     setErrorMessage(null);
