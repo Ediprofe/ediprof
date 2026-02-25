@@ -23,18 +23,16 @@ Para escribir una configuración en notación de gas noble, seguimos estos pasos
 
 ---
 
-## 📖 Ejercicio 1: Oxígeno (O)
+## 📖 Ejemplo 1: Oxígeno (O)
 
 **Enunciado:** Escribe la configuración abreviada del Oxígeno ($Z=8$).
 
-**Ilustración:**
+**Ilustraciones:**
 
-![Notación Gas Noble Oxígeno](/images/quimica/config-electronica/ejercicios/o-gas-noble.svg)
+![Ubicación Oxígeno](/images/quimica/config-electronica/ejercicios/o-gas-noble-map.svg)
+![Proceso Oxígeno](/images/quimica/config-electronica/ejercicios/o-gas-noble-proc.svg)
 
 **Solución:**
-
-<details>
-<summary>Ver solución</summary>
 
 **Datos:**
 
@@ -54,22 +52,18 @@ $$
 \boxed{[He] \, 2s^2 \, 2p^4}
 $$
 
-</details>
-
 ---
 
-## 📖 Ejercicio 2: Aluminio (Al)
+## 📖 Ejemplo 2: Aluminio (Al)
 
 **Enunciado:** Determina la configuración abreviada del Aluminio ($Z=13$).
 
-**Ilustración:**
+**Ilustraciones:**
 
-![Notación Gas Noble Aluminio](/images/quimica/config-electronica/ejercicios/al-gas-noble.svg)
+![Ubicación Aluminio](/images/quimica/config-electronica/ejercicios/al-gas-noble-map.svg)
+![Proceso Aluminio](/images/quimica/config-electronica/ejercicios/al-gas-noble-proc.svg)
 
 **Solución:**
-
-<details>
-<summary>Ver solución</summary>
 
 **Datos:**
 
@@ -89,22 +83,18 @@ $$
 \boxed{[Ne] \, 3s^2 \, 3p^1}
 $$
 
-</details>
-
 ---
 
-## 📖 Ejercicio 3: Azufre (S)
+## 📖 Ejemplo 3: Azufre (S)
 
 **Enunciado:** Escribe la configuración abreviada del Azufre ($Z=16$).
 
-**Ilustración:**
+**Ilustraciones:**
 
-![Notación Gas Noble Azufre](/images/quimica/config-electronica/ejercicios/s-gas-noble.svg)
+![Ubicación Azufre](/images/quimica/config-electronica/ejercicios/s-gas-noble-map.svg)
+![Proceso Azufre](/images/quimica/config-electronica/ejercicios/s-gas-noble-proc.svg)
 
 **Solución:**
-
-<details>
-<summary>Ver solución</summary>
 
 **Datos:**
 
@@ -124,22 +114,18 @@ $$
 \boxed{[Ne] \, 3s^2 \, 3p^4}
 $$
 
-</details>
-
 ---
 
-## 📖 Ejercicio 4: Hierro (Fe)
+## 📖 Ejemplo 4: Hierro (Fe)
 
 **Enunciado:** Determina la configuración abreviada del Hierro ($Z=26$).
 
-**Ilustración:**
+**Ilustraciones:**
 
-![Notación Gas Noble Hierro](/images/quimica/config-electronica/ejercicios/fe-gas-noble.svg)
+![Ubicación Hierro](/images/quimica/config-electronica/ejercicios/fe-gas-noble-map.svg)
+![Proceso Hierro](/images/quimica/config-electronica/ejercicios/fe-gas-noble-proc.svg)
 
 **Solución:**
-
-<details>
-<summary>Ver solución</summary>
 
 **Datos:**
 
@@ -159,22 +145,18 @@ $$
 \boxed{[Ar] \, 4s^2 \, 3d^6}
 $$
 
-</details>
-
 ---
 
-## 📖 Ejercicio 5: Rubidio (Rb)
+## 📖 Ejemplo 5: Rubidio (Rb)
 
 **Enunciado:** Escribe la configuración abreviada del Rubidio ($Z=37$).
 
-**Ilustración:**
+**Ilustraciones:**
 
-![Notación Gas Noble Rubidio](/images/quimica/config-electronica/ejercicios/rb-gas-noble.svg)
+![Ubicación Rubidio](/images/quimica/config-electronica/ejercicios/rb-gas-noble-map.svg)
+![Proceso Rubidio](/images/quimica/config-electronica/ejercicios/rb-gas-noble-proc.svg)
 
 **Solución:**
-
-<details>
-<summary>Ver solución</summary>
 
 **Datos:** $Z=37$.
 **Gas noble anterior:** Kriptón (Kr, $Z=36$).
@@ -191,22 +173,18 @@ $$
 \boxed{[Kr] \, 5s^1}
 $$
 
-</details>
-
 ---
 
-## 📖 Ejercicio 6: Ion Fluoruro (F⁻)
+## 📖 Ejemplo 6: Ion Fluoruro (F⁻)
 
 **Enunciado:** Escribe la configuración del ion fluoruro en notación de gas noble ($Z=9$, carga $1-$).
 
-**Ilustración:**
+**Ilustraciones:**
 
-![Notación Gas Noble Ion Fluoruro](/images/quimica/config-electronica/ejercicios/f-ion-gas-noble.svg)
+![Ubicación Fluoruro](/images/quimica/config-electronica/ejercicios/f-ion-gas-noble-map.svg)
+![Proceso Fluoruro](/images/quimica/config-electronica/ejercicios/f-ion-gas-noble-proc.svg)
 
 **Solución:**
-
-<details>
-<summary>Ver solución</summary>
 
 **Datos:** $Z=9$, gana $1e^-$. Total $= 10$ electrones.
 
@@ -222,22 +200,18 @@ $$
 \boxed{[Ne]}
 $$
 
-</details>
-
 ---
 
-## 📖 Ejercicio 7: Ion Sulfuro (S²⁻)
+## 📖 Ejemplo 7: Ion Sulfuro (S²⁻)
 
 **Enunciado:** Determina la configuración abreviada del ion sulfuro ($Z=16$, carga $2-$).
 
-**Ilustración:**
+**Ilustraciones:**
 
-![Notación Gas Noble Ion Sulfuro](/images/quimica/config-electronica/ejercicios/s-ion-gas-noble.svg)
+![Ubicación Sulfuro](/images/quimica/config-electronica/ejercicios/s-ion-gas-noble-map.svg)
+![Proceso Sulfuro](/images/quimica/config-electronica/ejercicios/s-ion-gas-noble-proc.svg)
 
 **Solución:**
-
-<details>
-<summary>Ver solución</summary>
 
 **Datos:** $Z=16$, gana $2e^-$. Total $= 18$.
 
@@ -252,22 +226,18 @@ $$
 \boxed{[Ar]}
 $$
 
-</details>
-
 ---
 
-## 📖 Ejercicio 8: Ion Nitruro (N³⁻)
+## 📖 Ejemplo 8: Ion Nitruro (N³⁻)
 
 **Enunciado:** Escribe la configuración abreviada del ion nitruro ($Z=7$, carga $3-$).
 
-**Ilustración:**
+**Ilustraciones:**
 
-![Notación Gas Noble Ion Nitruro](/images/quimica/config-electronica/ejercicios/n-ion-gas-noble.svg)
+![Ubicación Nitruro](/images/quimica/config-electronica/ejercicios/n-ion-gas-noble-map.svg)
+![Proceso Nitruro](/images/quimica/config-electronica/ejercicios/n-ion-gas-noble-proc.svg)
 
 **Solución:**
-
-<details>
-<summary>Ver solución</summary>
 
 **Datos:** $Z=7$, gana $3e^-$. Total $= 10$.
 
@@ -282,22 +252,18 @@ $$
 \boxed{[Ne]}
 $$
 
-</details>
-
 ---
 
-## 📖 Ejercicio 10: Ion Sodio (Na⁺)
+## 📖 Ejemplo 9: Ion Sodio (Na⁺)
 
 **Enunciado:** Determina la configuración abreviada del ion sodio ($Z=11$, carga $1+$).
 
-**Ilustración:**
+**Ilustraciones:**
 
-![Notación Gas Noble Ion Sodio](/images/quimica/config-electronica/ejercicios/na-ion-gas-noble.svg)
+![Ubicación Sodio](/images/quimica/config-electronica/ejercicios/na-ion-gas-noble-map.svg)
+![Proceso Sodio](/images/quimica/config-electronica/ejercicios/na-ion-gas-noble-proc.svg)
 
 **Solución:**
-
-<details>
-<summary>Ver solución</summary>
 
 **Datos:** $Z=11$, carga $+1$ (pierde $1$ electrón).
 
@@ -313,22 +279,18 @@ $$
 \boxed{[Ne]}
 $$
 
-</details>
-
 ---
 
-## 📖 Ejercicio 10: Ion Calcio (Ca²⁺)
+## 📖 Ejemplo 10: Ion Calcio (Ca²⁺)
 
 **Enunciado:** Escribe la configuración abreviada del ion calcio ($Z=20$, carga $2+$).
 
-**Ilustración:**
+**Ilustraciones:**
 
-![Notación Gas Noble Ion Calcio](/images/quimica/config-electronica/ejercicios/ca-ion-gas-noble.svg)
+![Ubicación Calcio](/images/quimica/config-electronica/ejercicios/ca-ion-gas-noble-map.svg)
+![Proceso Calcio](/images/quimica/config-electronica/ejercicios/ca-ion-gas-noble-proc.svg)
 
 **Solución:**
-
-<details>
-<summary>Ver solución</summary>
 
 **Datos:** $Z=20$, carga $+2$ (pierde $2$ electrones).
 
@@ -344,129 +306,235 @@ $$
 \boxed{[Ar]}
 $$
 
-</details>
-
 ---
 
 ## 📝 Ejercicios de Práctica
 
-### Ejercicio 1
+### Ejercicio 1: Carbono (C)
 **Escribe la configuración abreviada del Carbono ($Z=6$).**
 
 <details>
 <summary>Ver solución</summary>
 
 **Datos:** $Z=6$. Gas noble anterior: $[He]$.
+
+![Ubicación Carbono](/images/quimica/config-electronica/ejercicios/c-gas-noble-prac-map.svg)
+![Proceso Carbono](/images/quimica/config-electronica/ejercicios/c-gas-noble-prac-proc.svg)
+
 **Razonamiento:** $6 - 2 = 4$ electrones externos en nivel 2 ($2s^2, 2p^2$).
-**Resultado:** $\boxed{[He] \, 2s^2 \, 2p^2}$
+
+**Resultado:**
+
+$$
+\boxed{[He] \, 2s^2 \, 2p^2}
+$$
 
 </details>
 
-### Ejercicio 2
+---
+
+### Ejercicio 2: Fósforo (P)
 **Determina la configuración abreviada del Fósforo ($Z=15$).**
 
 <details>
 <summary>Ver solución</summary>
 
 **Datos:** $Z=15$. Gas noble anterior: $[Ne]$.
+
+![Ubicación Fósforo](/images/quimica/config-electronica/ejercicios/p-gas-noble-prac-map.svg)
+![Proceso Fósforo](/images/quimica/config-electronica/ejercicios/p-gas-noble-prac-proc.svg)
+
 **Razonamiento:** $15 - 10 = 5$ electrones externos en nivel 3 ($3s^2, 3p^3$).
-**Resultado:** $\boxed{[Ne] \, 3s^2 \, 3p^3}$
+
+**Resultado:**
+
+$$
+\boxed{[Ne] \, 3s^2 \, 3p^3}
+$$
 
 </details>
 
-### Ejercicio 3
+---
+
+### Ejercicio 3: Cloro (Cl)
 **¿Cuál es la configuración abreviada del Cloro ($Cl, Z=17$)?**
 
 <details>
 <summary>Ver solución</summary>
 
 **Datos:** $Z=17$. Gas noble anterior: $[Ne]$.
+
+![Ubicación Cloro](/images/quimica/config-electronica/ejercicios/cl-gas-noble-prac-map.svg)
+![Proceso Cloro](/images/quimica/config-electronica/ejercicios/cl-gas-noble-prac-proc.svg)
+
 **Razonamiento:** $17 - 10 = 7$ electrones externos ($3s^2, 3p^5$).
-**Resultado:** $\boxed{[Ne] \, 3s^2 \, 3p^5}$
+
+**Resultado:**
+
+$$
+\boxed{[Ne] \, 3s^2 \, 3p^5}
+$$
 
 </details>
 
-### Ejercicio 4
+---
+
+### Ejercicio 4: Escandio (Sc)
 **Escribe la configuración abreviada del Escandio ($Z=21$).**
 
 <details>
 <summary>Ver solución</summary>
 
 **Datos:** $Z=21$. Gas noble anterior: $[Ar]$.
+
+![Ubicación Escandio](/images/quimica/config-electronica/ejercicios/sc-gas-noble-prac-map.svg)
+![Proceso Escandio](/images/quimica/config-electronica/ejercicios/sc-gas-noble-prac-proc.svg)
+
 **Razonamiento:** $21 - 18 = 3$ electrones externos. Después de $Ar$ llenamos $4s^2$ y $3d^1$.
-**Resultado:** $\boxed{[Ar] \, 4s^2 \, 3d^1}$
+
+**Resultado:**
+
+$$
+\boxed{[Ar] \, 4s^2 \, 3d^1}
+$$
 
 </details>
 
-### Ejercicio 5
+---
+
+### Ejercicio 5: Estroncio (Sr)
 **Determina la configuración del Estroncio ($Z=38$).**
 
 <details>
 <summary>Ver solución</summary>
 
 **Datos:** $Z=38$. Gas noble anterior: $[Kr] (36)$.
+
+![Ubicación Estroncio](/images/quimica/config-electronica/ejercicios/sr-gas-noble-prac-map.svg)
+![Proceso Estroncio](/images/quimica/config-electronica/ejercicios/sr-gas-noble-prac-proc.svg)
+
 **Razonamiento:** Faltan $2$ electrones que van al nivel $5s$.
-**Resultado:** $\boxed{[Kr] \, 5s^2}$
+
+**Resultado:**
+
+$$
+\boxed{[Kr] \, 5s^2}
+$$
 
 </details>
 
-### Ejercicio 6
+---
+
+### Ejercicio 6: Ion Bromuro (Br⁻)
 **Escribe la configuración del ion Bromuro ($Br^-, Z=35$).**
 
 <details>
 <summary>Ver solución</summary>
 
 **Datos:** $Z=35$, gana $1e^-$. Total $= 36$.
+
+![Ubicación Bromuro](/images/quimica/config-electronica/ejercicios/br-ion-gas-noble-prac-map.svg)
+![Proceso Bromuro](/images/quimica/config-electronica/ejercicios/br-ion-gas-noble-prac-proc.svg)
+
 **Razonamiento:** Al completar $36$ electrones, alcanza la configuración del Kriptón.
-**Resultado:** $\boxed{[Kr]}$
+
+**Resultado:**
+
+$$
+\boxed{[Kr]}
+$$
 
 </details>
 
-### Ejercicio 7
+---
+
+### Ejercicio 7: Ion Aluminio (Al³⁺)
 **Determina la configuración del ion Aluminio ($Al^{3+}, Z=13$).**
 
 <details>
 <summary>Ver solución</summary>
 
 **Datos:** $Z=13$, pierde $3e^-$. Total $= 10$.
+
+![Ubicación Aluminio](/images/quimica/config-electronica/ejercicios/al-ion-gas-noble-prac-map.svg)
+![Proceso Aluminio](/images/quimica/config-electronica/ejercicios/al-ion-gas-noble-prac-proc.svg)
+
 **Razonamiento:** Queda con $10$ electrones, igual que el Neón.
-**Resultado:** $\boxed{[Ne]}$
+
+**Resultado:**
+
+$$
+\boxed{[Ne]}
+$$
 
 </details>
 
-### Ejercicio 8
+---
+
+### Ejercicio 8: Zinc (Zn)
 **Escribe la configuración del Zinc ($Z=30$).**
 
 <details>
 <summary>Ver solución</summary>
 
 **Datos:** $Z=30$. Gas noble anterior: $[Ar] (18)$.
+
+![Ubicación Zinc](/images/quimica/config-electronica/ejercicios/zn-gas-noble-prac-map.svg)
+![Proceso Zinc](/images/quimica/config-electronica/ejercicios/zn-gas-noble-prac-proc.svg)
+
 **Razonamiento:** Faltan $12$ electrones. Llenamos $4s^2$ y $3d^{10}$.
-**Resultado:** $\boxed{[Ar] \, 4s^2 \, 3d^{10}}$
+
+**Resultado:**
+
+$$
+\boxed{[Ar] \, 4s^2 \, 3d^{10}}
+$$
 
 </details>
 
-### Ejercicio 9
+---
+
+### Ejercicio 9: Ion Litio (Li⁺)
 **¿Cuál es la configuración del ion de Litio ($Li^+, Z=3$)?**
 
 <details>
 <summary>Ver solución</summary>
 
 **Datos:** $Z=3$, pierde $1e^-$. Total $= 2$.
+
+![Ubicación Litio](/images/quimica/config-electronica/ejercicios/li-ion-gas-noble-prac-map.svg)
+![Proceso Litio](/images/quimica/config-electronica/ejercicios/li-ion-gas-noble-prac-proc.svg)
+
 **Razonamiento:** Se queda con $2$ electrones, igual que el Helio.
-**Resultado:** $\boxed{[He]}$
+
+**Resultado:**
+
+$$
+\boxed{[He]}
+$$
 
 </details>
 
-### Ejercicio 10
+---
+
+### Ejercicio 10: Cobre (Cu)
 **Determina la configuración del Cobre ($Z=29$) en notación abreviada.**
 
 <details>
 <summary>Ver solución</summary>
 
 **Datos:** $Z=29$. Gas noble anterior: $[Ar]$.
+
+![Ubicación Cobre](/images/quimica/config-electronica/ejercicios/cu-gas-noble-prac-map.svg)
+![Proceso Cobre](/images/quimica/config-electronica/ejercicios/cu-gas-noble-prac-proc.svg)
+
 **Razonamiento:** Recordamos la excepción: un electrón del $4s$ salta al $3d$ para ganar estabilidad.
-**Resultado:** $\boxed{[Ar] \, 4s^1 \, 3d^{10}}$
+
+**Resultado:**
+
+$$
+\boxed{[Ar] \, 4s^1 \, 3d^{10}}
+$$
 
 </details>
 

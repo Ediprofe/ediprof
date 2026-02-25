@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 380">
+  <defs></defs>
+  <rect x="0.00" y="0.00" width="1000.00" height="380.00" fill="#f8fafc" stroke="none" stroke-width="0" rx="12"  />
+  <text x="500.00" y="45.00" font-family="Inter, sans-serif" font-size="32" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Ubicación: Calcio (Ca)</text>
+  <text x="271.00" y="110.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#64748b" text-anchor="middle" dominant-baseline="middle">s¹</text>
+  <text x="331.00" y="110.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#64748b" text-anchor="middle" dominant-baseline="middle">s²</text>
+  <text x="511.00" y="110.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#64748b" text-anchor="middle" dominant-baseline="middle">p¹</text>
+  <text x="571.00" y="110.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#64748b" text-anchor="middle" dominant-baseline="middle">p²</text>
+  <text x="631.00" y="110.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#64748b" text-anchor="middle" dominant-baseline="middle">p³</text>
+  <text x="691.00" y="110.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#64748b" text-anchor="middle" dominant-baseline="middle">p⁴</text>
+  <text x="751.00" y="110.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#64748b" text-anchor="middle" dominant-baseline="middle">p⁵</text>
+  <text x="811.00" y="110.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#64748b" text-anchor="middle" dominant-baseline="middle">p⁶</text>
+  <text x="220.00" y="156.00" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#64748b" text-anchor="end" dominant-baseline="middle">n=1</text>
+  <rect x="245.00" y="130.00" width="52.00" height="52.00" fill="#fff" stroke="#e2e8f0" stroke-width="2" rx="5"  />
+  <rect x="785.00" y="130.00" width="52.00" height="52.00" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="5"  />
+  <text x="811.00" y="162.00" font-family="Inter, sans-serif" font-size="18" font-weight="bold" fill="#f59e0b" text-anchor="middle" dominant-baseline="middle">He</text>
+  <text x="220.00" y="216.00" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#64748b" text-anchor="end" dominant-baseline="middle">n=2</text>
+  <rect x="245.00" y="190.00" width="52.00" height="52.00" fill="#fff" stroke="#e2e8f0" stroke-width="2" rx="5"  />
+  <rect x="305.00" y="190.00" width="52.00" height="52.00" fill="#fff" stroke="#e2e8f0" stroke-width="2" rx="5"  />
+  <rect x="485.00" y="190.00" width="52.00" height="52.00" fill="#fff" stroke="#e2e8f0" stroke-width="2" rx="5"  />
+  <rect x="545.00" y="190.00" width="52.00" height="52.00" fill="#fff" stroke="#e2e8f0" stroke-width="2" rx="5"  />
+  <rect x="605.00" y="190.00" width="52.00" height="52.00" fill="#fff" stroke="#e2e8f0" stroke-width="2" rx="5"  />
+  <rect x="665.00" y="190.00" width="52.00" height="52.00" fill="#fff" stroke="#e2e8f0" stroke-width="2" rx="5"  />
+  <rect x="725.00" y="190.00" width="52.00" height="52.00" fill="#fff" stroke="#e2e8f0" stroke-width="2" rx="5"  />
+  <rect x="785.00" y="190.00" width="52.00" height="52.00" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="5"  />
+  <text x="811.00" y="222.00" font-family="Inter, sans-serif" font-size="18" font-weight="bold" fill="#f59e0b" text-anchor="middle" dominant-baseline="middle">Ne</text>
+  <text x="220.00" y="276.00" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#64748b" text-anchor="end" dominant-baseline="middle">n=3</text>
+  <rect x="245.00" y="250.00" width="52.00" height="52.00" fill="#fff" stroke="#e2e8f0" stroke-width="2" rx="5"  />
+  <rect x="305.00" y="250.00" width="52.00" height="52.00" fill="#fff" stroke="#e2e8f0" stroke-width="2" rx="5"  />
+  <rect x="485.00" y="250.00" width="52.00" height="52.00" fill="#fff" stroke="#e2e8f0" stroke-width="2" rx="5"  />
+  <rect x="545.00" y="250.00" width="52.00" height="52.00" fill="#fff" stroke="#e2e8f0" stroke-width="2" rx="5"  />
+  <rect x="605.00" y="250.00" width="52.00" height="52.00" fill="#fff" stroke="#e2e8f0" stroke-width="2" rx="5"  />
+  <rect x="665.00" y="250.00" width="52.00" height="52.00" fill="#fff" stroke="#e2e8f0" stroke-width="2" rx="5"  />
+  <rect x="725.00" y="250.00" width="52.00" height="52.00" fill="#fff" stroke="#e2e8f0" stroke-width="2" rx="5"  />
+  <rect x="785.00" y="250.00" width="52.00" height="52.00" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="5"  />
+  <text x="811.00" y="282.00" font-family="Inter, sans-serif" font-size="18" font-weight="bold" fill="#f59e0b" text-anchor="middle" dominant-baseline="middle">Ar</text>
+  <text x="220.00" y="336.00" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#64748b" text-anchor="end" dominant-baseline="middle">n=4</text>
+  <rect x="245.00" y="310.00" width="52.00" height="52.00" fill="#fff" stroke="#e2e8f0" stroke-width="2" rx="5"  />
+  <rect x="305.00" y="310.00" width="52.00" height="52.00" fill="#bfdbfe" stroke="#3b82f6" stroke-width="2" rx="5"  />
+  <text x="331.00" y="342.00" font-family="Inter, sans-serif" font-size="22" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Ca</text>
+  <rect x="395.00" y="310.00" width="52.00" height="52.00" fill="#fff" stroke="#e2e8f0" stroke-width="2" rx="5"  />
+  <rect x="485.00" y="310.00" width="52.00" height="52.00" fill="#fff" stroke="#e2e8f0" stroke-width="2" rx="5"  />
+  <rect x="545.00" y="310.00" width="52.00" height="52.00" fill="#fff" stroke="#e2e8f0" stroke-width="2" rx="5"  />
+  <rect x="605.00" y="310.00" width="52.00" height="52.00" fill="#fff" stroke="#e2e8f0" stroke-width="2" rx="5"  />
+  <rect x="665.00" y="310.00" width="52.00" height="52.00" fill="#fff" stroke="#e2e8f0" stroke-width="2" rx="5"  />
+  <rect x="725.00" y="310.00" width="52.00" height="52.00" fill="#fff" stroke="#e2e8f0" stroke-width="2" rx="5"  />
+  <rect x="785.00" y="310.00" width="52.00" height="52.00" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="5"  />
+  <text x="811.00" y="342.00" font-family="Inter, sans-serif" font-size="18" font-weight="bold" fill="#f59e0b" text-anchor="middle" dominant-baseline="middle">Kr</text>
+  <text x="220.00" y="396.00" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#64748b" text-anchor="end" dominant-baseline="middle">n=5</text>
+  <rect x="245.00" y="370.00" width="52.00" height="52.00" fill="#fff" stroke="#e2e8f0" stroke-width="2" rx="5"  />
+  <rect x="305.00" y="370.00" width="52.00" height="52.00" fill="#fff" stroke="#e2e8f0" stroke-width="2" rx="5"  />
+  <rect x="395.00" y="370.00" width="52.00" height="52.00" fill="#fff" stroke="#e2e8f0" stroke-width="2" rx="5"  />
+  <rect x="485.00" y="370.00" width="52.00" height="52.00" fill="#fff" stroke="#e2e8f0" stroke-width="2" rx="5"  />
+  <rect x="545.00" y="370.00" width="52.00" height="52.00" fill="#fff" stroke="#e2e8f0" stroke-width="2" rx="5"  />
+  <rect x="605.00" y="370.00" width="52.00" height="52.00" fill="#fff" stroke="#e2e8f0" stroke-width="2" rx="5"  />
+  <rect x="665.00" y="370.00" width="52.00" height="52.00" fill="#fff" stroke="#e2e8f0" stroke-width="2" rx="5"  />
+  <rect x="725.00" y="370.00" width="52.00" height="52.00" fill="#fff" stroke="#e2e8f0" stroke-width="2" rx="5"  />
+  <rect x="785.00" y="370.00" width="52.00" height="52.00" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="5"  />
+  <text x="811.00" y="402.00" font-family="Inter, sans-serif" font-size="18" font-weight="bold" fill="#f59e0b" text-anchor="middle" dominant-baseline="middle">Xe</text>
+  <path d="M 331.0 336.0 Q 571.0 206.0 811.0 276.0" fill="none" stroke="#f59e0b" stroke-width="4"/>
+  <circle cx="811.00" cy="276.00" r="6.00" fill="#f59e0b" stroke="#3b82f6" stroke-width="2"  />
+</svg>

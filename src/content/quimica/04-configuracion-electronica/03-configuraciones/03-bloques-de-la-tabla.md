@@ -17,11 +17,15 @@ La tabla periódica se divide en **cuatro bloques** (s, p, d, f) según el tipo 
 
 > La **división de la tabla** se basa en **cómo termina la configuración electrónica** de cada elemento.
 
+![Los 4 Bloques de la Tabla Periódica](/images/quimica/config-electronica/bloques/tabla-bloques-completa.svg)
+
 La tabla se divide en **cuatro bloques principales:** **s, p, d y f**
 
 ---
 
 ## 📖 Elementos Representativos (Bloques s y p)
+
+![Bloques s y p (Elementos Representativos)](/images/quimica/config-electronica/bloques/tabla-bloques-representativos.svg)
 
 Estos elementos siguen **fielmente las reglas** de configuración electrónica.
 
@@ -58,6 +62,8 @@ Estos elementos siguen **fielmente las reglas** de configuración electrónica.
 ---
 
 ## 📖 Elementos de Transición (Bloques d y f)
+
+![Bloques d y f (Elementos de Transición)](/images/quimica/config-electronica/bloques/tabla-bloques-transicion.svg)
 
 Estos elementos presentan **múltiples excepciones**.
 
@@ -105,17 +111,6 @@ El **helio (He)** termina en **s²**, pero se ubica en la zona de **gases nobles
 
 ---
 
-## 🔑 Resumen
-
-| Bloque | Ubicación | Terminación | Grupos |
-|--------|-----------|-------------|--------|
-| **s** | Izquierda | s¹, s² | 1, 2 |
-| **p** | Derecha | p¹ a p⁶ | 13-18 |
-| **d** | Centro | d¹ a d¹⁰ | 3-12 |
-| **f** | Inferior | f¹ a f¹⁴ | Lantánidos/Actínidos |
-
----
-
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1
@@ -155,3 +150,98 @@ Aunque su configuración es **1s²** (bloque s), el helio se ubica con los gases
 - Sus propiedades son similares a los demás gases nobles
 
 </details>
+
+### Ejercicio 4
+¿En qué bloque se encuentra el sodio (Z=11)?
+
+<details>
+<summary>Ver solución</summary>
+
+Configuración: [Ne] 3s¹
+
+Termina en **3s¹** → **Bloque s**
+
+</details>
+
+### Ejercicio 5
+¿A qué bloque pertenece el cloro (Z=17)?
+
+<details>
+<summary>Ver solución</summary>
+
+Configuración: [Ne] 3s² 3p⁵
+
+Termina en **3p⁵** → **Bloque p**
+
+</details>
+
+### Ejercicio 6
+Identifica el bloque del zinc (Z=30).
+
+<details>
+<summary>Ver solución</summary>
+
+Configuración: [Ar] 4s² 3d¹⁰
+
+Termina en **3d¹⁰** → **Bloque d**
+
+</details>
+
+### Ejercicio 7
+¿En qué bloque se ubica el uranio (Z=92)?
+
+<details>
+<summary>Ver solución</summary>
+
+Configuración: [Rn] 7s² 5f³ 6d¹ (aproximada)
+
+Termina llenando orbitales **f** → **Bloque f**
+
+</details>
+
+### Ejercicio 8
+¿Cuál es el bloque de los metales alcalinotérreos (Grupo 2)?
+
+<details>
+<summary>Ver solución</summary>
+
+Todos los elementos del grupo 2 terminan su configuración en **ns²** → **Bloque s**
+
+</details>
+
+### Ejercicio 9
+Si un elemento termina en 4p³, ¿en qué bloque está?
+
+<details>
+<summary>Ver solución</summary>
+
+Como termina en un subnivel **p**, pertenece al **Bloque p**
+
+</details>
+
+### Ejercicio 10
+¿En qué bloque está la plata (Z=47)?
+
+<details>
+<summary>Ver solución</summary>
+
+Configuración: [Kr] 5s¹ 4d¹⁰
+
+Termina en **4d¹⁰** → **Bloque d**
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Bloque | Ubicación | Terminación | Grupos |
+|--------|-----------|-------------|--------|
+| **s** | Izquierda | s¹, s² | 1, 2 |
+| **p** | Derecha | p¹ a p⁶ | 13-18 |
+| **d** | Centro | d¹ a d¹⁰ | 3-12 |
+| **f** | Inferior | f¹ a f¹⁴ | Lantánidos/Actínidos |
+
+> Los bloques de la tabla periódica (s, p, d y f) agrupan los elementos según la forma en que sus electrones se organizan.
+
+![Guía Maestra: Bloques y Configuraciones](/images/quimica/config-electronica/bloques/tabla-maestra-bloques.svg)

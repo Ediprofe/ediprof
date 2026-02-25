@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520">
+  <defs>
+        <marker id="arrow-94a3b8-10" markerWidth="10" markerHeight="10" 
+                refX="9.0" refY="5.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 10,5.0 0,10" fill="#94a3b8"/>
+        </marker>
+
+        <marker id="arrow-94a3b8-10" markerWidth="10" markerHeight="10" 
+                refX="9.0" refY="5.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 10,5.0 0,10" fill="#94a3b8"/>
+        </marker></defs>
+  <rect x="0.00" y="0.00" width="1000.00" height="520.00" fill="#f8fafc" stroke="none" stroke-width="0" rx="12"  />
+  <text x="500.00" y="45.00" font-family="Inter, sans-serif" font-size="32" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Transformación: Aluminio</text>
+  <rect x="40.00" y="100.00" width="920.00" height="380.00" fill="#fff" stroke="#e2e8f0" stroke-width="0" rx="15"  />
+  <text x="70.00" y="170.00" font-family="Inter, sans-serif" font-size="16" font-weight="bold" fill="#64748b" text-anchor="start" dominant-baseline="middle">A) Configuración completa</text>
+  <text x="320.00" y="170.00" font-family="Inter, sans-serif" font-size="28" font-weight="bold" fill="#1e293b" text-anchor="end" dominant-baseline="middle">Al =</text>
+  <rect x="332.00" y="142.80" width="227.20" height="44.80" fill="#fef3c7" stroke="#f59e0b" stroke-width="2.5" rx="8"  />
+  <text x="445.60" y="170.00" font-family="Inter, sans-serif" font-size="32" font-weight="900" fill="#f59e0b" text-anchor="middle" dominant-baseline="middle">1s² 2s² 2p⁶</text>
+  <text x="648.40" y="170.00" font-family="Inter, sans-serif" font-size="32" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">3s² 3p¹</text>
+  <line x1="270.00" y1="185.00" x2="270.00" y2="255.00" stroke="#94a3b8" stroke-width="2"  marker-end="url(#arrow-94a3b8-10)"/>
+  <text x="70.00" y="280.00" font-family="Inter, sans-serif" font-size="16" font-weight="bold" fill="#64748b" text-anchor="start" dominant-baseline="middle">B) Equivalencia de [Ne]</text>
+  <text x="320.00" y="280.00" font-family="Inter, sans-serif" font-size="28" font-weight="bold" fill="#1e293b" text-anchor="end" dominant-baseline="middle">[Ne] =</text>
+  <text x="445.60" y="280.00" font-family="Inter, sans-serif" font-size="32" font-weight="bold" fill="#f59e0b" text-anchor="middle" dominant-baseline="middle">1s² 2s² 2p⁶</text>
+  <line x1="270.00" y1="295.00" x2="270.00" y2="365.00" stroke="#94a3b8" stroke-width="2"  marker-end="url(#arrow-94a3b8-10)"/>
+  <text x="70.00" y="390.00" font-family="Inter, sans-serif" font-size="16" font-weight="bold" fill="#64748b" text-anchor="start" dominant-baseline="middle">C) Notación Abreviada</text>
+  <text x="320.00" y="390.00" font-family="Inter, sans-serif" font-size="28" font-weight="bold" fill="#1e293b" text-anchor="end" dominant-baseline="middle">Al =</text>
+  <rect x="332.00" y="354.30" width="116.80" height="58.80" fill="#fef3c7" stroke="#f59e0b" stroke-width="2.5" rx="8"  />
+  <text x="390.40" y="390.00" font-family="Inter, sans-serif" font-size="42" font-weight="900" fill="#f59e0b" text-anchor="middle" dominant-baseline="middle">[Ne]</text>
+  <text x="559.00" y="390.00" font-family="Inter, sans-serif" font-size="42" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">3s² 3p¹</text>
+</svg>
