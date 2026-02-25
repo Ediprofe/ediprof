@@ -4,6 +4,9 @@ Esta app consume el backend Laravel de talleres.
 
 ## Ejecutar local
 
+Requisito recomendado:
+- Node `v22.x` (en este entorno, Node `v25` rompía el arranque de Expo Web).
+
 1. Inicia backend:
 
 ```bash
@@ -26,7 +29,7 @@ npm run start
 ## Flujo MVP
 
 - Login (`/api/v1/auth/login`)
-- Catálogo (`/api/v1/workshops`)
+- Catálogo (`/api/v1/workshops?published=false` en modo demo actual)
 - Detalle (`/api/v1/workshops/{id}?include_answers=false`)
 
 ## Preview web de apoyo
@@ -34,4 +37,3 @@ npm run start
 Para validar datos sin Expo:
 
 `http://127.0.0.1:8080/dev/workshops/preview`
-

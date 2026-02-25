@@ -65,7 +65,8 @@ export async function login(baseUrl: string, payload: LoginPayload): Promise<Aut
 }
 
 export async function listWorkshops(baseUrl: string, token?: string): Promise<WorkshopListResponse> {
-  const url = `${normalizeBaseUrl(baseUrl)}/workshops?published=true&per_page=30`;
+  // Dev-first for current content state: workshops are mostly drafts.
+  const url = `${normalizeBaseUrl(baseUrl)}/workshops?published=false&per_page=30`;
   const response = await fetch(url, {
     headers: token
       ? {
