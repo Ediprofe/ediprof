@@ -24,6 +24,8 @@ Route::prefix('v1')->middleware('resolve.api_token')->group(function (): void {
 
     Route::get('/content', [ContentController::class, 'index']);
     Route::get('/workshops', [WorkshopController::class, 'index']);
+    Route::post('/workshops/{workshopId}/questions/{questionId}/evaluate', [WorkshopController::class, 'evaluateAnswer'])
+        ->where('workshopId', '.*');
     Route::get('/workshops/{workshopId}', [WorkshopController::class, 'show'])
         ->where('workshopId', '.*');
 });

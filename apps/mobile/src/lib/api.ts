@@ -2,6 +2,7 @@ import type {
   ApiError,
   AuthSession,
   WorkshopDetail,
+  WorkshopEvaluationResult,
   WorkshopListResponse,
 } from '../types/api';
 
@@ -134,6 +135,47 @@ export async function getWorkshop(
 
   if (!response.ok || !data.ok || !data.data) {
     throw toApiRequestError(response, data, 'No fue posible cargar el taller.');
+  }
+
+  return data.data;
+}
+
+export async function evaluateWorkshopAnswer(
+  baseUrl: string,
+  workshopId: string,
+  questionId: string,
+  optionId: string,
+  token?: string,
+): Promise<WorkshopEvaluationResult> {
+  const encodedWorkshopId = workshopId
+    .split('/')
+    .map(encodeURIComponent)
+    .join('/');
+  const encodedQuestionId = encodeURIComponent(questionId);
+
+  const url =
+    `${normalizeBaseUrl(baseUrl)}/workshops/${encodedWorkshopId}` +
+    `/questions/${encodedQuestionId}/evaluate?published_only=false`;
+
+  const response = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      ...(token
+        ? {
+            Authorization: `Bearer ${token}`,
+          }
+        : {}),
+    },
+    body: JSON.stringify({
+      option_id: optionId,
+    }),
+  });
+
+  const data = await parseJson<{ ok: boolean; data?: WorkshopEvaluationResult } & ApiError>(response);
+
+  if (!response.ok || !data.ok || !data.data) {
+    throw toApiRequestError(response, data, 'No fue posible evaluar la respuesta.');
   }
 
   return data.data;

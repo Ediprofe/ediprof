@@ -20,8 +20,10 @@ class WorkshopResource extends JsonResource
         $includeAnswers = $request->boolean('include_answers', true);
         $questions = is_array($this->questions) ? $this->questions : [];
 
-        if (! $includeAnswers) {
-            $questions = array_map(static function (array $question): array {
+        $questions = array_map(static function (array $question) use ($includeAnswers): array {
+            unset($question['meta']);
+
+            if (! $includeAnswers) {
                 $question['correct_option_id'] = null;
                 $question['feedback_mdx'] = '';
                 $question['feedback_assets'] = [];
@@ -32,9 +34,10 @@ class WorkshopResource extends JsonResource
                     return $option;
                 }, is_array($question['options'] ?? null) ? $question['options'] : []);
 
-                return $question;
-            }, $questions);
-        }
+            }
+
+            return $question;
+        }, $questions);
 
         return [
             'id' => $this->external_id,
@@ -51,7 +54,6 @@ class WorkshopResource extends JsonResource
             ],
             'assets' => $this->assets ?? [],
             'questions' => $questions,
-            'metadata' => $this->metadata,
             'updated_at' => $this->updated_at?->toIso8601String(),
         ];
     }

@@ -71,6 +71,17 @@ export type WorkshopDetail = {
   };
 };
 
+export type WorkshopEvaluationResult = {
+  workshop_id: string;
+  question_id: string;
+  selected_option_id: string;
+  correct_option_id: string | null;
+  is_correct: boolean;
+  feedback_mdx: string;
+  feedback_assets: string[];
+  next_question_id: string | null;
+};
+
 export type ApiError = {
   ok: false;
   error?: {

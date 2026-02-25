@@ -8,7 +8,6 @@ import {
   StyleSheet,
   Text,
   TextInput,
-  useWindowDimensions,
   View,
 } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
@@ -16,6 +15,7 @@ import { QuestionStem } from './src/components/QuestionStem';
 import { WorkshopCard } from './src/components/WorkshopCard';
 import {
   ApiRequestError,
+  evaluateWorkshopAnswer,
   getCurrentUser,
   getWorkshop,
   listWorkshops,
@@ -29,27 +29,32 @@ import {
   saveBaseUrl,
   saveSessionToken,
 } from './src/lib/storage';
-import type { WorkshopDetail, WorkshopSummary } from './src/types/api';
+import type { WorkshopDetail, WorkshopEvaluationResult, WorkshopSummary } from './src/types/api';
 
 const DEFAULT_BASE_URL = 'http://127.0.0.1:8080/api/v1';
 
-export default function App() {
-  const { width } = useWindowDimensions();
-  const isCompact = width < 1080;
+type DetailAccessError = 'auth_required' | 'premium_access_required' | null;
 
+export default function App() {
   const [baseUrl, setBaseUrl] = useState(DEFAULT_BASE_URL);
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('demo@ediprofe.com');
+  const [password, setPassword] = useState('Demo12345!');
   const [token, setToken] = useState<string | null>(null);
+
   const [workshops, setWorkshops] = useState<WorkshopSummary[]>([]);
   const [selectedWorkshopId, setSelectedWorkshopId] = useState<string | null>(null);
   const [selectedWorkshop, setSelectedWorkshop] = useState<WorkshopDetail | null>(null);
-  const [loading, setLoading] = useState(false);
+
+  const [questionIndex, setQuestionIndex] = useState(0);
+  const [selectedOptionByQuestion, setSelectedOptionByQuestion] = useState<Record<string, string>>({});
+  const [evaluationByQuestion, setEvaluationByQuestion] = useState<Record<string, WorkshopEvaluationResult>>({});
+
+  const [loadingCatalog, setLoadingCatalog] = useState(false);
   const [loadingWorkshop, setLoadingWorkshop] = useState(false);
+  const [submittingAnswer, setSubmittingAnswer] = useState(false);
+
+  const [detailAccessError, setDetailAccessError] = useState<DetailAccessError>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
-  const [detailAccessError, setDetailAccessError] = useState<
-    'auth_required' | 'premium_access_required' | null
-  >(null);
 
   useEffect(() => {
     let mounted = true;
@@ -85,7 +90,7 @@ export default function App() {
   }, []);
 
   const refreshCatalog = useCallback(async () => {
-    setLoading(true);
+    setLoadingCatalog(true);
     setErrorMessage(null);
 
     try {
@@ -93,21 +98,22 @@ export default function App() {
       const response = await listWorkshops(baseUrl, token ?? undefined);
       setWorkshops(response.data);
 
-      if (response.data.length > 0) {
-        const firstId = response.data[0]?.id ?? null;
-        setSelectedWorkshopId((current) => current ?? firstId);
-      } else {
-        setSelectedWorkshopId(null);
-        setSelectedWorkshop(null);
+      const selectedExists = selectedWorkshopId
+        ? response.data.some((item) => item.id === selectedWorkshopId)
+        : false;
+
+      if (selectedExists) {
+        return;
       }
 
-      setDetailAccessError(null);
+      const firstId = response.data[0]?.id ?? null;
+      setSelectedWorkshopId(firstId);
     } catch (error) {
       setErrorMessage(error instanceof Error ? error.message : 'No fue posible cargar catálogo.');
     } finally {
-      setLoading(false);
+      setLoadingCatalog(false);
     }
-  }, [baseUrl, token]);
+  }, [baseUrl, selectedWorkshopId, token]);
 
   useEffect(() => {
     void refreshCatalog();
@@ -122,20 +128,25 @@ export default function App() {
       try {
         const detail = await getWorkshop(baseUrl, workshopId, token ?? undefined);
         setSelectedWorkshop(detail);
+        setQuestionIndex(0);
+        setSelectedOptionByQuestion({});
+        setEvaluationByQuestion({});
       } catch (error) {
+        setSelectedWorkshop(null);
+        setQuestionIndex(0);
+        setSelectedOptionByQuestion({});
+        setEvaluationByQuestion({});
+
         if (
           error instanceof ApiRequestError &&
           (error.code === 'auth_required' || error.code === 'premium_access_required')
         ) {
           setDetailAccessError(error.code);
-          setSelectedWorkshop(null);
           setErrorMessage(error.message);
-
           return;
         }
 
         setErrorMessage(error instanceof Error ? error.message : 'No fue posible cargar el taller.');
-        setSelectedWorkshop(null);
       } finally {
         setLoadingWorkshop(false);
       }
@@ -156,8 +167,8 @@ export default function App() {
   }, []);
 
   const handleLogin = useCallback(async () => {
-    setLoading(true);
     setErrorMessage(null);
+    setLoadingCatalog(true);
 
     try {
       if (!email.trim() || !password.trim()) {
@@ -177,13 +188,13 @@ export default function App() {
     } catch (error) {
       setErrorMessage(error instanceof Error ? error.message : 'No fue posible iniciar sesión.');
     } finally {
-      setLoading(false);
+      setLoadingCatalog(false);
     }
   }, [baseUrl, email, password, refreshCatalog]);
 
   const handleLogout = useCallback(async () => {
-    setLoading(true);
     setErrorMessage(null);
+    setLoadingCatalog(true);
 
     try {
       if (token) {
@@ -196,26 +207,99 @@ export default function App() {
     } catch (error) {
       setErrorMessage(error instanceof Error ? error.message : 'No fue posible cerrar sesión.');
     } finally {
-      setLoading(false);
+      setLoadingCatalog(false);
     }
   }, [baseUrl, refreshCatalog, token]);
 
-  const selectedTitle = useMemo(() => {
-    if (!selectedWorkshop) {
-      return 'Selecciona un taller';
+  const currentQuestion = useMemo(() => {
+    if (!selectedWorkshop || selectedWorkshop.questions.length === 0) {
+      return null;
     }
 
-    return `${selectedWorkshop.title} (${selectedWorkshop.stats.total_questions} preguntas)`;
+    const boundedIndex = Math.max(0, Math.min(questionIndex, selectedWorkshop.questions.length - 1));
+    return selectedWorkshop.questions[boundedIndex] ?? null;
+  }, [questionIndex, selectedWorkshop]);
+
+  const totalQuestions = selectedWorkshop?.questions.length ?? 0;
+  const progressValue = totalQuestions > 0 ? (questionIndex + 1) / totalQuestions : 0;
+
+  const currentQuestionId = currentQuestion?.id ?? null;
+  const selectedOptionId = currentQuestionId ? selectedOptionByQuestion[currentQuestionId] : undefined;
+  const evaluation = currentQuestionId ? evaluationByQuestion[currentQuestionId] : undefined;
+
+  const handleSelectOption = useCallback((optionId: string) => {
+    if (!currentQuestion) {
+      return;
+    }
+
+    const questionId = currentQuestion.id;
+
+    setSelectedOptionByQuestion((prev) => ({
+      ...prev,
+      [questionId]: optionId,
+    }));
+
+    setEvaluationByQuestion((prev) => {
+      if (!prev[questionId]) {
+        return prev;
+      }
+
+      const clone = { ...prev };
+      delete clone[questionId];
+      return clone;
+    });
+  }, [currentQuestion]);
+
+  const handleEvaluate = useCallback(async () => {
+    if (!selectedWorkshop || !currentQuestion || !selectedOptionId) {
+      return;
+    }
+
+    setSubmittingAnswer(true);
+    setErrorMessage(null);
+
+    try {
+      const result = await evaluateWorkshopAnswer(
+        baseUrl,
+        selectedWorkshop.id,
+        currentQuestion.id,
+        selectedOptionId,
+        token ?? undefined,
+      );
+
+      setEvaluationByQuestion((prev) => ({
+        ...prev,
+        [result.question_id]: result,
+      }));
+    } catch (error) {
+      setErrorMessage(error instanceof Error ? error.message : 'No fue posible evaluar la respuesta.');
+    } finally {
+      setSubmittingAnswer(false);
+    }
+  }, [baseUrl, currentQuestion, selectedOptionId, selectedWorkshop, token]);
+
+  const goPrev = useCallback(() => {
+    setQuestionIndex((prev) => Math.max(0, prev - 1));
+  }, []);
+
+  const goNext = useCallback(() => {
+    if (!selectedWorkshop) {
+      return;
+    }
+
+    setQuestionIndex((prev) => Math.min(selectedWorkshop.questions.length - 1, prev + 1));
   }, [selectedWorkshop]);
+
+  const title = selectedWorkshop
+    ? `${selectedWorkshop.title} (${selectedWorkshop.stats.total_questions} preguntas)`
+    : 'Selecciona un taller';
 
   return (
     <SafeAreaView style={styles.safeArea}>
       <StatusBar style="light" />
-      <View style={styles.root}>
-        <Text style={styles.h1}>Ediprofe Mobile MVP</Text>
-        <Text style={styles.subtitle}>
-          Para dispositivo físico usa la IP LAN, por ejemplo: http://192.168.x.x:8080/api/v1
-        </Text>
+      <ScrollView style={styles.root} contentContainerStyle={styles.rootContent}>
+        <Text style={styles.h1}>Ediprofe Mobile</Text>
+        <Text style={styles.subtitle}>Práctica guiada tipo Saber con retroalimentación inmediata.</Text>
 
         <View style={styles.panel}>
           <Text style={styles.label}>API Base URL</Text>
@@ -231,7 +315,7 @@ export default function App() {
             <TextInput
               style={[styles.input, styles.grow]}
               placeholder="email"
-              placeholderTextColor="#7f90b8"
+              placeholderTextColor="#8195be"
               value={email}
               onChangeText={setEmail}
               autoCapitalize="none"
@@ -240,7 +324,7 @@ export default function App() {
             <TextInput
               style={[styles.input, styles.grow]}
               placeholder="password"
-              placeholderTextColor="#7f90b8"
+              placeholderTextColor="#8195be"
               value={password}
               onChangeText={setPassword}
               secureTextEntry
@@ -263,71 +347,136 @@ export default function App() {
           {errorMessage ? <Text style={styles.error}>{errorMessage}</Text> : null}
         </View>
 
-        <View style={[styles.columns, isCompact ? styles.columnsCompact : null]}>
-          <View style={[styles.leftCol, isCompact ? styles.leftColCompact : null]}>
-            <Text style={styles.sectionTitle}>Catálogo</Text>
-            {loading ? <ActivityIndicator color="#9ac0ff" /> : null}
-            <FlatList
-              data={workshops}
-              keyExtractor={(item) => item.id}
-              renderItem={({ item }) => (
+        <View style={styles.panel}>
+          <Text style={styles.sectionTitle}>Catálogo</Text>
+          {loadingCatalog ? <ActivityIndicator color="#9ac0ff" style={styles.loader} /> : null}
+          <FlatList
+            data={workshops}
+            keyExtractor={(item) => item.id}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={styles.catalogRow}
+            renderItem={({ item }) => (
+              <View style={styles.catalogCardWrap}>
                 <WorkshopCard
                   item={item}
                   isSelected={item.id === selectedWorkshopId}
                   onPress={handlePressWorkshop}
                 />
-              )}
-              removeClippedSubviews
-              initialNumToRender={8}
-              maxToRenderPerBatch={10}
-              windowSize={7}
-              contentContainerStyle={styles.catalogContent}
-            />
-          </View>
+              </View>
+            )}
+          />
+        </View>
 
-          <View style={[styles.rightCol, isCompact ? styles.rightColCompact : null]}>
-            <Text style={styles.sectionTitle}>{selectedTitle}</Text>
-            {loadingWorkshop ? <ActivityIndicator color="#9ac0ff" /> : null}
+        <View style={styles.panel}>
+          <Text style={styles.sectionTitle}>{title}</Text>
 
-            <ScrollView style={styles.detailScroll} contentContainerStyle={styles.detailContent}>
-              {!selectedWorkshop && detailAccessError === 'auth_required' ? (
-                <View style={styles.emptyState}>
-                  <Text style={styles.emptyTitle}>Taller premium bloqueado</Text>
-                  <Text style={styles.emptyText}>
-                    Inicia sesión con una cuenta que tenga acceso premium para ver preguntas y
-                    retroalimentación.
-                  </Text>
-                </View>
-              ) : null}
+          {loadingWorkshop ? <ActivityIndicator color="#9ac0ff" style={styles.loader} /> : null}
 
-              {!selectedWorkshop && detailAccessError === 'premium_access_required' ? (
-                <View style={styles.emptyState}>
-                  <Text style={styles.emptyTitle}>Sin acceso premium</Text>
-                  <Text style={styles.emptyText}>
-                    Tu cuenta está autenticada, pero no tiene una suscripción o un permiso activo
-                    para este taller.
-                  </Text>
-                </View>
-              ) : null}
+          {!selectedWorkshop && detailAccessError === 'auth_required' ? (
+            <View style={styles.emptyState}>
+              <Text style={styles.emptyTitle}>Taller premium bloqueado</Text>
+              <Text style={styles.emptyText}>
+                Inicia sesión con una cuenta autorizada para desbloquear preguntas y retroalimentación.
+              </Text>
+            </View>
+          ) : null}
 
-              {selectedWorkshop?.questions.map((question) => (
-                <View key={question.id} style={styles.questionCard}>
-                  <Text style={styles.questionTitle}>Pregunta {question.order}</Text>
-                  <QuestionStem stem={question.stem_mdx} stemAssets={question.stem_assets} />
+          {!selectedWorkshop && detailAccessError === 'premium_access_required' ? (
+            <View style={styles.emptyState}>
+              <Text style={styles.emptyTitle}>Tu cuenta no tiene este acceso</Text>
+              <Text style={styles.emptyText}>
+                Este taller requiere una suscripción premium o un acceso institucional activo.
+              </Text>
+            </View>
+          ) : null}
 
-                  {question.options.map((option) => (
-                    <View key={option.id} style={styles.optionRow}>
+          {selectedWorkshop && currentQuestion ? (
+            <View style={styles.practiceCard}>
+              <View style={styles.progressHeader}>
+                <Text style={styles.progressTitle}>
+                  Pregunta {questionIndex + 1} de {totalQuestions}
+                </Text>
+                <Text style={styles.progressCounter}>{Math.round(progressValue * 100)}%</Text>
+              </View>
+
+              <View style={styles.progressTrack}>
+                <View style={[styles.progressFill, { width: `${progressValue * 100}%` }]} />
+              </View>
+
+              <QuestionStem stem={currentQuestion.stem_mdx} stemAssets={currentQuestion.stem_assets} />
+
+              <View style={styles.optionsWrap}>
+                {currentQuestion.options.map((option) => {
+                  const isSelected = selectedOptionId === option.id;
+                  const isCorrectOption = evaluation?.correct_option_id === option.id;
+                  const isWrongSelected =
+                    evaluation !== undefined && !evaluation.is_correct && isSelected && !isCorrectOption;
+
+                  return (
+                    <Pressable
+                      key={option.id}
+                      onPress={() => handleSelectOption(option.id)}
+                      style={[
+                        styles.optionButton,
+                        isSelected ? styles.optionSelected : null,
+                        isCorrectOption ? styles.optionCorrect : null,
+                        isWrongSelected ? styles.optionWrong : null,
+                      ]}
+                      disabled={submittingAnswer}
+                    >
                       <Text style={styles.optionText}>
                         {option.id}. {option.text}
                       </Text>
-                    </View>
-                  ))}
+                    </Pressable>
+                  );
+                })}
+              </View>
+
+              <View style={styles.controlsRow}>
+                <Pressable
+                  style={[styles.controlButton, questionIndex === 0 ? styles.controlDisabled : null]}
+                  onPress={goPrev}
+                  disabled={questionIndex === 0}
+                >
+                  <Text style={styles.buttonText}>Anterior</Text>
+                </Pressable>
+
+                <Pressable
+                  style={[
+                    styles.controlButtonPrimary,
+                    !selectedOptionId || submittingAnswer ? styles.controlDisabled : null,
+                  ]}
+                  onPress={handleEvaluate}
+                  disabled={!selectedOptionId || submittingAnswer}
+                >
+                  <Text style={styles.buttonText}>{submittingAnswer ? 'Comprobando...' : 'Comprobar'}</Text>
+                </Pressable>
+
+                <Pressable
+                  style={[
+                    styles.controlButton,
+                    questionIndex >= totalQuestions - 1 ? styles.controlDisabled : null,
+                  ]}
+                  onPress={goNext}
+                  disabled={questionIndex >= totalQuestions - 1}
+                >
+                  <Text style={styles.buttonText}>Siguiente</Text>
+                </Pressable>
+              </View>
+
+              {evaluation ? (
+                <View style={[styles.feedbackCard, evaluation.is_correct ? styles.feedbackOk : styles.feedbackBad]}>
+                  <Text style={styles.feedbackTitle}>
+                    {evaluation.is_correct ? 'Respuesta correcta' : 'Respuesta incorrecta'}
+                  </Text>
+                  <QuestionStem stem={evaluation.feedback_mdx} stemAssets={evaluation.feedback_assets} />
                 </View>
-              ))}
-            </ScrollView>
-          </View>
+              ) : null}
+            </View>
+          ) : null}
         </View>
-      </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }
@@ -335,43 +484,46 @@ export default function App() {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: '#0b1020',
+    backgroundColor: '#070d1d',
   },
   root: {
     flex: 1,
-    padding: 12,
-    gap: 10,
+  },
+  rootContent: {
+    padding: 14,
+    gap: 12,
+    paddingBottom: 30,
   },
   h1: {
-    color: '#eef3ff',
-    fontSize: 24,
-    fontWeight: '800',
+    color: '#f1f5ff',
+    fontSize: 30,
+    fontWeight: '900',
   },
   subtitle: {
     color: '#95a6cf',
-    fontSize: 12,
+    fontSize: 13,
   },
   panel: {
     borderWidth: 1,
-    borderColor: '#24345d',
-    borderRadius: 12,
-    backgroundColor: '#0f1a35',
-    padding: 10,
-    gap: 8,
+    borderColor: '#22345d',
+    borderRadius: 16,
+    padding: 12,
+    gap: 10,
+    backgroundColor: '#0c1631',
   },
   label: {
     color: '#dce6ff',
     fontSize: 12,
-    fontWeight: '600',
+    fontWeight: '700',
   },
   input: {
     borderWidth: 1,
     borderColor: '#2a3d6a',
-    borderRadius: 8,
+    borderRadius: 10,
     paddingHorizontal: 10,
-    paddingVertical: 8,
+    paddingVertical: 9,
     color: '#f5f8ff',
-    backgroundColor: '#0b142d',
+    backgroundColor: '#0a132a',
     minWidth: 120,
   },
   grow: {
@@ -379,122 +531,172 @@ const styles = StyleSheet.create({
   },
   row: {
     flexDirection: 'row',
-    gap: 8,
     alignItems: 'center',
-  },
-  buttonPrimary: {
-    borderRadius: 8,
-    backgroundColor: '#2f6bff',
-    paddingHorizontal: 12,
-    paddingVertical: 9,
-  },
-  buttonGhost: {
-    borderRadius: 8,
-    backgroundColor: '#1a2749',
-    paddingHorizontal: 12,
-    paddingVertical: 9,
-  },
-  buttonText: {
-    color: '#edf2ff',
-    fontWeight: '700',
-    fontSize: 12,
+    gap: 8,
   },
   meta: {
-    color: '#99a8cd',
+    color: '#9ab0db',
     fontSize: 12,
   },
   error: {
-    color: '#ff98a1',
+    color: '#ff9aa4',
     fontSize: 12,
+    lineHeight: 18,
   },
-  columns: {
-    flex: 1,
-    flexDirection: 'row',
-    gap: 10,
-  },
-  columnsCompact: {
-    flexDirection: 'column',
-  },
-  leftCol: {
-    flex: 1,
-    borderWidth: 1,
-    borderColor: '#23335b',
-    borderRadius: 12,
-    backgroundColor: '#0d1731',
-    padding: 8,
-  },
-  rightCol: {
-    flex: 1.2,
-    borderWidth: 1,
-    borderColor: '#23335b',
-    borderRadius: 12,
-    backgroundColor: '#0d1731',
-    padding: 8,
-  },
-  leftColCompact: {
-    flex: 0,
-    minHeight: 260,
-  },
-  rightColCompact: {
-    flex: 1,
-    minHeight: 420,
+  loader: {
+    marginVertical: 8,
   },
   sectionTitle: {
-    color: '#e8eeff',
-    fontWeight: '700',
-    marginBottom: 8,
+    color: '#eef3ff',
+    fontSize: 17,
+    fontWeight: '800',
   },
-  catalogContent: {
-    paddingBottom: 12,
+  catalogRow: {
+    paddingRight: 6,
   },
-  detailScroll: {
-    flex: 1,
+  catalogCardWrap: {
+    width: 320,
+    marginRight: 10,
   },
-  detailContent: {
-    paddingBottom: 20,
-    gap: 10,
-  },
-  questionCard: {
-    borderWidth: 1,
-    borderColor: '#253761',
+  buttonPrimary: {
     borderRadius: 10,
-    backgroundColor: '#0a142b',
-    padding: 10,
-    gap: 8,
+    backgroundColor: '#2f6bff',
+    paddingHorizontal: 14,
+    paddingVertical: 10,
   },
-  questionTitle: {
-    color: '#f0f4ff',
-    fontWeight: '700',
-    fontSize: 14,
+  buttonGhost: {
+    borderRadius: 10,
+    backgroundColor: '#18274b',
+    paddingHorizontal: 14,
+    paddingVertical: 10,
   },
-  optionRow: {
-    borderWidth: 1,
-    borderColor: '#2a3f6d',
-    borderRadius: 8,
-    backgroundColor: '#0f1a35',
-    paddingHorizontal: 9,
-    paddingVertical: 6,
-  },
-  optionText: {
-    color: '#dee6ff',
+  buttonText: {
+    color: '#eff4ff',
+    fontWeight: '800',
     fontSize: 12,
   },
   emptyState: {
     borderWidth: 1,
     borderColor: '#334a7f',
-    borderRadius: 10,
-    backgroundColor: '#0b142b',
+    borderRadius: 12,
+    backgroundColor: '#0a142b',
     padding: 14,
     gap: 8,
   },
   emptyTitle: {
     color: '#f0f4ff',
-    fontWeight: '700',
+    fontWeight: '800',
     fontSize: 16,
   },
   emptyText: {
     color: '#c9d5f6',
     fontSize: 13,
+    lineHeight: 20,
+  },
+  practiceCard: {
+    borderWidth: 1,
+    borderColor: '#2a3c67',
+    borderRadius: 14,
+    backgroundColor: '#091228',
+    padding: 12,
+    gap: 10,
+  },
+  progressHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  progressTitle: {
+    color: '#e8eeff',
+    fontWeight: '800',
+    fontSize: 15,
+  },
+  progressCounter: {
+    color: '#99b6ff',
+    fontWeight: '800',
+    fontSize: 12,
+  },
+  progressTrack: {
+    height: 8,
+    borderRadius: 999,
+    backgroundColor: '#1a2a4d',
+    overflow: 'hidden',
+  },
+  progressFill: {
+    height: '100%',
+    borderRadius: 999,
+    backgroundColor: '#3f86ff',
+  },
+  optionsWrap: {
+    gap: 8,
+    marginTop: 4,
+  },
+  optionButton: {
+    borderWidth: 1,
+    borderColor: '#2a3f6d',
+    borderRadius: 10,
+    backgroundColor: '#0f1a35',
+    paddingHorizontal: 10,
+    paddingVertical: 10,
+  },
+  optionSelected: {
+    borderColor: '#5f8fff',
+    backgroundColor: '#12244b',
+  },
+  optionCorrect: {
+    borderColor: '#2ccf8f',
+    backgroundColor: 'rgba(33, 171, 114, 0.18)',
+  },
+  optionWrong: {
+    borderColor: '#ff6f7d',
+    backgroundColor: 'rgba(209, 64, 86, 0.2)',
+  },
+  optionText: {
+    color: '#e0e9ff',
+    fontSize: 13,
     lineHeight: 19,
+  },
+  controlsRow: {
+    flexDirection: 'row',
+    gap: 8,
+    marginTop: 2,
+  },
+  controlButton: {
+    flex: 1,
+    borderRadius: 10,
+    backgroundColor: '#1a2749',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 10,
+  },
+  controlButtonPrimary: {
+    flex: 1,
+    borderRadius: 10,
+    backgroundColor: '#2f6bff',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 10,
+  },
+  controlDisabled: {
+    opacity: 0.45,
+  },
+  feedbackCard: {
+    borderWidth: 1,
+    borderRadius: 12,
+    padding: 10,
+    gap: 8,
+  },
+  feedbackOk: {
+    borderColor: '#2ccf8f',
+    backgroundColor: 'rgba(26, 133, 91, 0.18)',
+  },
+  feedbackBad: {
+    borderColor: '#ff6f7d',
+    backgroundColor: 'rgba(148, 47, 62, 0.2)',
+  },
+  feedbackTitle: {
+    color: '#f4f8ff',
+    fontSize: 14,
+    fontWeight: '800',
   },
 });

@@ -99,9 +99,108 @@ class WorkshopApiTest extends TestCase
             ->assertJsonPath('data.questions.0.feedback_mdx', '')
             ->assertJsonPath('data.questions.0.feedback_assets', []);
 
+        $question = $response->json('data.questions.0');
+        $this->assertIsArray($question);
+        $this->assertArrayNotHasKey('meta', $question);
+
+        $data = $response->json('data');
+        $this->assertIsArray($data);
+        $this->assertArrayNotHasKey('metadata', $data);
+
         $firstOption = $response->json('data.questions.0.options.0');
         $this->assertIsArray($firstOption);
         $this->assertArrayNotHasKey('is_correct', $firstOption);
+    }
+
+    public function test_it_evaluates_answer_and_returns_feedback(): void
+    {
+        Workshop::query()->create([
+            'external_id' => 'content:saber:quimica/la-materia/taller-evaluate',
+            'content_external_id' => 'content:saber:quimica/la-materia/taller-evaluate',
+            'title' => 'Taller Evaluacion',
+            'route' => '/saber/quimica/la-materia/taller-evaluate',
+            'area_slug' => 'quimica',
+            'unidad_slug' => 'la-materia',
+            'access_tier' => 'free',
+            'is_published' => true,
+            'total_questions' => 1,
+            'total_assets' => 0,
+            'assets' => [],
+            'questions' => [
+                [
+                    'id' => '1',
+                    'order' => 1,
+                    'meta' => ['fuente' => 'ICFES'],
+                    'stem_mdx' => 'Pregunta',
+                    'stem_assets' => [],
+                    'options' => [
+                        ['id' => 'A', 'text' => 'Correcta', 'is_correct' => true],
+                        ['id' => 'B', 'text' => 'Incorrecta', 'is_correct' => false],
+                    ],
+                    'correct_option_id' => 'A',
+                    'feedback_mdx' => 'Retro para estudiante',
+                    'feedback_assets' => [],
+                ],
+            ],
+            'metadata' => ['contractVersion' => 1],
+        ]);
+
+        $response = $this->postJson(
+            '/api/v1/workshops/content:saber:quimica/la-materia/taller-evaluate/questions/1/evaluate',
+            ['option_id' => 'A']
+        );
+
+        $response
+            ->assertOk()
+            ->assertJsonPath('ok', true)
+            ->assertJsonPath('data.question_id', '1')
+            ->assertJsonPath('data.selected_option_id', 'A')
+            ->assertJsonPath('data.correct_option_id', 'A')
+            ->assertJsonPath('data.is_correct', true)
+            ->assertJsonPath('data.feedback_mdx', 'Retro para estudiante');
+    }
+
+    public function test_it_rejects_invalid_option_during_evaluation(): void
+    {
+        Workshop::query()->create([
+            'external_id' => 'content:saber:quimica/la-materia/taller-invalid-option',
+            'content_external_id' => 'content:saber:quimica/la-materia/taller-invalid-option',
+            'title' => 'Taller Evaluacion',
+            'route' => '/saber/quimica/la-materia/taller-invalid-option',
+            'area_slug' => 'quimica',
+            'unidad_slug' => 'la-materia',
+            'access_tier' => 'free',
+            'is_published' => true,
+            'total_questions' => 1,
+            'total_assets' => 0,
+            'assets' => [],
+            'questions' => [
+                [
+                    'id' => '1',
+                    'order' => 1,
+                    'meta' => [],
+                    'stem_mdx' => 'Pregunta',
+                    'stem_assets' => [],
+                    'options' => [
+                        ['id' => 'A', 'text' => 'Correcta', 'is_correct' => true],
+                    ],
+                    'correct_option_id' => 'A',
+                    'feedback_mdx' => 'Retro',
+                    'feedback_assets' => [],
+                ],
+            ],
+            'metadata' => [],
+        ]);
+
+        $response = $this->postJson(
+            '/api/v1/workshops/content:saber:quimica/la-materia/taller-invalid-option/questions/1/evaluate',
+            ['option_id' => 'Z']
+        );
+
+        $response
+            ->assertStatus(422)
+            ->assertJsonPath('ok', false)
+            ->assertJsonPath('error.code', 'invalid_option');
     }
 
     public function test_it_requires_authentication_for_premium_workshop(): void
