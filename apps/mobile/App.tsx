@@ -11,7 +11,6 @@ import {
   useWindowDimensions,
   View,
 } from 'react-native';
-import { Image } from 'expo-image';
 import { StatusBar } from 'expo-status-bar';
 import { QuestionStem } from './src/components/QuestionStem';
 import { WorkshopCard } from './src/components/WorkshopCard';
@@ -314,17 +313,7 @@ export default function App() {
               {selectedWorkshop?.questions.map((question) => (
                 <View key={question.id} style={styles.questionCard}>
                   <Text style={styles.questionTitle}>Pregunta {question.order}</Text>
-                  <QuestionStem stem={question.stem_mdx} />
-
-                  {question.stem_assets.map((asset, idx) => (
-                    <Image
-                      key={`${question.id}-asset-${idx}`}
-                      source={asset}
-                      style={styles.questionImage}
-                      contentFit="contain"
-                      transition={120}
-                    />
-                  ))}
+                  <QuestionStem stem={question.stem_mdx} stemAssets={question.stem_assets} />
 
                   {question.options.map((option) => (
                     <View key={option.id} style={styles.optionRow}>
@@ -477,14 +466,6 @@ const styles = StyleSheet.create({
     color: '#f0f4ff',
     fontWeight: '700',
     fontSize: 14,
-  },
-  questionImage: {
-    width: '100%',
-    height: 220,
-    borderRadius: 8,
-    backgroundColor: '#f4f7ff',
-    borderWidth: 1,
-    borderColor: '#2a3f6d',
   },
   optionRow: {
     borderWidth: 1,

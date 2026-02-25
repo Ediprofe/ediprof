@@ -1,13 +1,16 @@
 import { memo, useMemo } from 'react';
+import { Image } from 'expo-image';
 import { StyleSheet, Text, View } from 'react-native';
 
 type StemBlock =
   | { type: 'paragraph'; text: string }
   | { type: 'math'; text: string }
-  | { type: 'table'; rows: string[][] };
+  | { type: 'table'; rows: string[][] }
+  | { type: 'image'; alt: string; url: string };
 
 type Props = {
   stem: string;
+  stemAssets?: string[];
 };
 
 function cleanInlineMarkdown(value: string): string {
@@ -20,6 +23,37 @@ function cleanInlineMarkdown(value: string): string {
     .replace(/\\times/g, '×')
     .replace(/\\cdot/g, '·')
     .replace(/\$([^$]+)\$/g, '$1')
+    .trim();
+}
+
+function toSubscriptDigits(value: string): string {
+  const digits: Record<string, string> = {
+    '0': '₀',
+    '1': '₁',
+    '2': '₂',
+    '3': '₃',
+    '4': '₄',
+    '5': '₅',
+    '6': '₆',
+    '7': '₇',
+    '8': '₈',
+    '9': '₉',
+  };
+
+  return value
+    .split('')
+    .map((char) => digits[char] ?? char)
+    .join('');
+}
+
+function normalizeMathForDisplay(value: string): string {
+  return value
+    .replace(/\\rightarrow/g, '→')
+    .replace(/\\times/g, '×')
+    .replace(/\\cdot/g, '·')
+    .replace(/_\\?\{([0-9]+)\}/g, (_, digits: string) => toSubscriptDigits(digits))
+    .replace(/_([0-9]+)/g, (_, digits: string) => toSubscriptDigits(digits))
+    .replace(/\s+/g, ' ')
     .trim();
 }
 
@@ -41,25 +75,47 @@ function isTableSeparatorRow(line: string): boolean {
   return /^\|?:?-+:?\|(:?-+:?\|)+$/.test(normalized);
 }
 
-function toBlocks(stem: string): StemBlock[] {
+function toBlocks(stem: string, stemAssets: string[] = []): StemBlock[] {
   const blocks: StemBlock[] = [];
   const lines = stem.replace(/\r\n/g, '\n').split('\n');
+  const renderedImages = new Set<string>();
 
   let i = 0;
+  let isInsideComment = false;
+
   while (i < lines.length) {
-    const line = lines[i]?.trim() ?? '';
+    const rawLine = lines[i] ?? '';
+    const line = rawLine.trim();
+
+    if (isInsideComment) {
+      if (line.includes('*/}')) {
+        isInsideComment = false;
+      }
+      i += 1;
+      continue;
+    }
 
     if (line === '') {
       i += 1;
       continue;
     }
 
-    if (line.startsWith('{/*') || line.endsWith('*/}')) {
+    if (line.includes('{/*')) {
+      if (!line.includes('*/}')) {
+        isInsideComment = true;
+      }
       i += 1;
       continue;
     }
 
-    if (line.startsWith('![') && line.includes('](')) {
+    const imageMatch = line.match(/^!\[([^\]]*)\]\(([^)]+)\)$/);
+    if (imageMatch) {
+      const alt = imageMatch[1]?.trim() ?? '';
+      const url = imageMatch[2]?.trim() ?? '';
+      if (url) {
+        renderedImages.add(url);
+        blocks.push({ type: 'image', alt, url });
+      }
       i += 1;
       continue;
     }
@@ -77,7 +133,7 @@ function toBlocks(stem: string): StemBlock[] {
 
       blocks.push({
         type: 'math',
-        text: cleanInlineMarkdown(mathLines.join('\n')),
+        text: normalizeMathForDisplay(cleanInlineMarkdown(mathLines.join('\n'))),
       });
 
       if (i < lines.length && (lines[i]?.trim() ?? '') === '$$') {
@@ -115,9 +171,11 @@ function toBlocks(stem: string): StemBlock[] {
       if (candidate === '' || candidate === '$$' || candidate.includes('|')) {
         break;
       }
-      if (candidate.startsWith('![') && candidate.includes('](')) {
-        i += 1;
-        continue;
+      if (candidate.match(/^!\[([^\]]*)\]\(([^)]+)\)$/)) {
+        break;
+      }
+      if (candidate.includes('{/*')) {
+        break;
       }
       paragraphLines.push(candidate);
       i += 1;
@@ -129,11 +187,20 @@ function toBlocks(stem: string): StemBlock[] {
     }
   }
 
+  stemAssets.forEach((asset) => {
+    if (!asset || renderedImages.has(asset)) {
+      return;
+    }
+
+    renderedImages.add(asset);
+    blocks.push({ type: 'image', alt: 'Imagen de apoyo', url: asset });
+  });
+
   return blocks;
 }
 
-function QuestionStemImpl({ stem }: Props) {
-  const blocks = useMemo(() => toBlocks(stem), [stem]);
+function QuestionStemImpl({ stem, stemAssets = [] }: Props) {
+  const blocks = useMemo(() => toBlocks(stem, stemAssets), [stem, stemAssets]);
 
   return (
     <View style={styles.root}>
@@ -153,6 +220,19 @@ function QuestionStemImpl({ stem }: Props) {
             <View key={key} style={styles.mathBox}>
               <Text style={styles.mathText}>{block.text}</Text>
             </View>
+          );
+        }
+
+        if (block.type === 'image') {
+          return (
+            <Image
+              key={key}
+              source={block.url}
+              accessibilityLabel={block.alt}
+              style={styles.image}
+              contentFit="contain"
+              transition={120}
+            />
           );
         }
 
@@ -205,9 +285,10 @@ const styles = StyleSheet.create({
   },
   mathText: {
     color: '#d8e6ff',
-    fontSize: 12,
+    fontSize: 14,
     lineHeight: 18,
     fontFamily: 'Courier',
+    letterSpacing: 0.2,
   },
   table: {
     borderWidth: 1,
@@ -235,5 +316,13 @@ const styles = StyleSheet.create({
     color: '#f1f5ff',
     fontWeight: '700',
     backgroundColor: '#132244',
+  },
+  image: {
+    width: '100%',
+    height: 220,
+    borderRadius: 8,
+    backgroundColor: '#f4f7ff',
+    borderWidth: 1,
+    borderColor: '#2a3f6d',
   },
 });
