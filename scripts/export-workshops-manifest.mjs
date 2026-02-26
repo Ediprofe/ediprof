@@ -20,6 +20,10 @@ import {
   parseInlineSegments,
   parseTableRow,
 } from '../src/scripts/workshops/inlineShared.js';
+import {
+  parseMdxCommentDirective,
+  stripMdxComments,
+} from '../src/scripts/workshops/directivesShared.js';
 
 const DEFAULT_OUTPUT = '/tmp/ediprofe-workshops-manifest.json';
 const DEFAULT_CONTENT_MANIFEST = '/tmp/ediprofe-content-manifest.json';
@@ -167,8 +171,16 @@ function isStructuralHtmlLine(line) {
 }
 
 function buildContextPayload(content) {
-  const contextMdx = String(content || '').trim();
-  if (!contextMdx) {
+  const rawContext = String(content || '').trim();
+  const contextMdx = stripMdxComments(rawContext)
+    .split('\n')
+    .map((line) => line.trimEnd())
+    .filter((line) => line.trim() !== '---')
+    .join('\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+
+  if (!rawContext) {
     return {
       context_mdx: '',
       context_assets: [],
@@ -176,20 +188,37 @@ function buildContextPayload(content) {
     };
   }
 
-  const contextAssets = extractAssetRefs(contextMdx);
+  const contextAssets = extractAssetRefs(rawContext);
 
   return {
     context_mdx: contextMdx,
     context_assets: contextAssets,
-    context_blocks: buildBlocks(contextMdx, contextAssets),
+    context_blocks: buildBlocks(rawContext, contextAssets),
   };
 }
 
 function normalizeDetachedContext(rawContext) {
   const lines = String(rawContext || '').replace(/\r\n/g, '\n').split('\n');
+  let isInsideComment = false;
   const kept = lines.filter((raw) => {
     const line = raw.trim();
     if (!line) return false;
+    const directive = parseMdxCommentDirective(line);
+    if (directive?.type === 'layout') {
+      return true;
+    }
+    if (isInsideComment) {
+      if (line.includes('*/}')) {
+        isInsideComment = false;
+      }
+      return false;
+    }
+    if (line.startsWith('{/*')) {
+      if (!line.includes('*/}')) {
+        isInsideComment = true;
+      }
+      return false;
+    }
     if (isStructuralHtmlLine(line)) return false;
     if (line === '---') return false;
     return true;
@@ -223,6 +252,15 @@ function buildBlocks(content, assetRefs = []) {
   const lines = String(content || '').replace(/\r\n/g, '\n').split('\n');
   const renderedImages = new Set();
   let isInsideComment = false;
+  let activeLayout = null;
+
+  function applyBlockLayout(block) {
+    if (!block || !activeLayout) return block;
+    return {
+      ...block,
+      layout: activeLayout,
+    };
+  }
 
   let i = 0;
   while (i < lines.length) {
@@ -242,13 +280,24 @@ function buildBlocks(content, assetRefs = []) {
       continue;
     }
 
+    if (line === '---') {
+      activeLayout = null;
+      i += 1;
+      continue;
+    }
+
     if (isStructuralHtmlLine(line)) {
       i += 1;
       continue;
     }
 
-    if (line.includes('{/*')) {
-      if (!line.includes('*/}')) {
+    const commentDirective = parseMdxCommentDirective(line);
+    if (commentDirective?.type === 'layout' && commentDirective.layout === 'full-width') {
+      activeLayout = 'full-width';
+    }
+
+    if (line.includes('{/*') || commentDirective) {
+      if (line.startsWith('{/*') && !line.includes('*/}')) {
         isInsideComment = true;
       }
       i += 1;
@@ -258,11 +307,11 @@ function buildBlocks(content, assetRefs = []) {
     const image = parseImageLine(line);
     if (image) {
       renderedImages.add(image.url);
-      blocks.push({
+      blocks.push(applyBlockLayout({
         type: 'image',
         src: image.url,
         alt: image.alt,
-      });
+      }));
       i += 1;
       continue;
     }
@@ -279,10 +328,10 @@ function buildBlocks(content, assetRefs = []) {
         i += 1;
       }
 
-      blocks.push({
+      blocks.push(applyBlockLayout({
         type: 'equation',
         latex: normalizeMathForDisplay(cleanInlineMarkdown(mathLines.join('\n'))),
-      });
+      }));
 
       if (i < lines.length && (lines[i] || '').trim() === '$$') {
         i += 1;
@@ -309,10 +358,10 @@ function buildBlocks(content, assetRefs = []) {
         .filter((row) => row.length > 0);
 
       if (rows.length > 0) {
-        blocks.push({
+        blocks.push(applyBlockLayout({
           type: 'table',
           rows,
-        });
+        }));
         continue;
       }
     }
@@ -343,11 +392,11 @@ function buildBlocks(content, assetRefs = []) {
       }
 
       if (items.length > 0) {
-        blocks.push({
+        blocks.push(applyBlockLayout({
           type: 'list',
           ordered,
           items,
-        });
+        }));
         continue;
       }
     }
@@ -377,10 +426,10 @@ function buildBlocks(content, assetRefs = []) {
 
     const text = cleanInlineMarkdown(paragraphLines.join(' '));
     if (text) {
-      blocks.push({
+      blocks.push(applyBlockLayout({
         type: 'paragraph',
         inlines: parseInlineSegments(text),
-      });
+      }));
     }
   }
 
@@ -518,13 +567,16 @@ function parseQuestion(section) {
   let stemMdx = inner;
   if (optionsMatch) stemMdx = stemMdx.replace(optionsMatch[0], '');
   if (detailsMatch) stemMdx = stemMdx.replace(detailsMatch[0], '');
-  stemMdx = stemMdx.trim();
+  const stemMdxRaw = stemMdx.trim();
+  stemMdx = stripMdxComments(stemMdxRaw).trim();
 
   let feedbackMdx = detailsMatch ? detailsMatch[1].trim() : '';
   feedbackMdx = feedbackMdx.replace(/<summary>[\s\S]*?<\/summary>/i, '').trim();
+  const feedbackMdxRaw = feedbackMdx;
+  feedbackMdx = stripMdxComments(feedbackMdxRaw).trim();
 
-  const stemAssets = extractAssetRefs(stemMdx);
-  const feedbackAssets = extractAssetRefs(feedbackMdx);
+  const stemAssets = extractAssetRefs(stemMdxRaw);
+  const feedbackAssets = extractAssetRefs(feedbackMdxRaw);
 
   const questionId = String(attrs.id || section.number).trim();
   const anioRaw = attrs.anio ? Number.parseInt(String(attrs.anio), 10) : null;
@@ -542,12 +594,12 @@ function parseQuestion(section) {
     },
     stem_mdx: stemMdx,
     stem_assets: stemAssets,
-    stem_blocks: buildBlocks(stemMdx, stemAssets),
+    stem_blocks: buildBlocks(stemMdxRaw, stemAssets),
     options,
     correct_option_id: correctOption?.id ?? null,
     feedback_mdx: feedbackMdx,
     feedback_assets: feedbackAssets,
-    feedback_blocks: buildBlocks(feedbackMdx, feedbackAssets),
+    feedback_blocks: buildBlocks(feedbackMdxRaw, feedbackAssets),
     app_payload_version: APP_PAYLOAD_VERSION,
     detached_context_mdx: detachedContext,
   };
@@ -597,7 +649,7 @@ function buildWorkshopEntry(filePath, contentEntryMap) {
     const detached = String(question.detached_context_mdx || '').trim();
     if (!detached) continue;
 
-    const ranges = parseSharedContextRanges(detached);
+    const ranges = parseSharedContextRanges(stripMdxComments(detached));
     if (ranges.length > 0) {
       const payload = buildContextPayload(detached);
       ranges.forEach((range) => {

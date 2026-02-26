@@ -171,6 +171,17 @@ const { workshopId } = Astro.props;
     return renderInlines(parseInlineSegments(value));
   }
 
+  function wrapBlock(block = {}, html = '') {
+    if (!html) return '';
+
+    const classes = ['members-block'];
+    if (block.layout === 'full-width') {
+      classes.push('layout-full-width');
+    }
+
+    return `<div class="${classes.join(' ')}">${html}</div>`;
+  }
+
   function renderBlocks(blocks = [], fallbackText = '') {
     if (!Array.isArray(blocks) || blocks.length === 0) {
       const fallback = cleanInlineMarkdown(fallbackText || '');
@@ -186,18 +197,18 @@ const { workshopId } = Astro.props;
             Array.isArray(block.inlines) && block.inlines.length > 0
               ? block.inlines
               : parseInlineSegments(block.text || '');
-          return `<p>${renderInlines(inlines)}</p>`;
+          return wrapBlock(block, `<p>${renderInlines(inlines)}</p>`);
         }
 
         if (block.type === 'image') {
           const src = escapeHtml(block.src || '');
           const alt = escapeHtml(block.alt || 'imagen');
-          return `<img src="${src}" alt="${alt}" loading="lazy" />`;
+          return wrapBlock(block, `<img src="${src}" alt="${alt}" loading="lazy" />`);
         }
 
         if (block.type === 'equation') {
           const latex = normalizeMathForDisplay(cleanInlineMarkdown(block.latex || ''));
-          return `<code class="members-equation">${escapeHtml(latex)}</code>`;
+          return wrapBlock(block, `<code class="members-equation">${escapeHtml(latex)}</code>`);
         }
 
         if (block.type === 'table') {
@@ -207,7 +218,9 @@ const { workshopId } = Astro.props;
           const header = rows[0] || [];
           const body = rows.slice(1);
 
-          return `
+          return wrapBlock(
+            block,
+            `
             <div class="members-table-wrap">
               <table class="members-table">
                 <thead>
@@ -222,7 +235,8 @@ const { workshopId } = Astro.props;
                 </tbody>
               </table>
             </div>
-          `;
+          `
+          );
         }
 
         if (block.type === 'list') {
@@ -240,7 +254,7 @@ const { workshopId } = Astro.props;
             })
             .join('');
 
-          return `<${tag} class="members-list-block">${renderedItems}</${tag}>`;
+          return wrapBlock(block, `<${tag} class="members-list-block">${renderedItems}</${tag}>`);
         }
 
         return '';

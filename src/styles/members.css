@@ -429,6 +429,14 @@
   font-size: 1.01rem;
 }
 
+.members-render .members-block {
+  margin: 0.5rem 0;
+}
+
+.members-render .members-block.layout-full-width {
+  width: 100%;
+}
+
 .members-render ul,
 .members-render ol {
   margin: 0.6rem 0 0.75rem 1.25rem;
