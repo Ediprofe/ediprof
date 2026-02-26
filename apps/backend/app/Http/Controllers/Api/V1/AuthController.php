@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\V1\LoginRequest;
+use App\Http\Requests\Api\V1\RegisterRequest;
 use App\Models\ApiToken;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
@@ -14,6 +15,48 @@ use Illuminate\Support\Str;
 
 class AuthController extends Controller
 {
+    public function register(RegisterRequest $request): JsonResponse
+    {
+        $validated = $request->validated();
+        $email = mb_strtolower(trim((string) $validated['email']));
+
+        $alreadyExists = User::query()
+            ->whereRaw('LOWER(email) = ?', [$email])
+            ->exists();
+
+        if ($alreadyExists) {
+            return response()->json([
+                'ok' => false,
+                'error' => [
+                    'code' => 'email_taken',
+                    'message' => 'There is already an account with this email.',
+                ],
+            ], 422);
+        }
+
+        $user = User::query()->create([
+            'name' => trim((string) $validated['name']),
+            'email' => $email,
+            'password' => (string) $validated['password'],
+            'role' => 'student',
+            'member_status' => 'pending',
+        ]);
+
+        return response()->json([
+            'ok' => true,
+            'data' => [
+                'message' => 'Account created. Your access is pending approval.',
+                'user' => [
+                    'id' => $user->id,
+                    'name' => $user->name,
+                    'email' => $user->email,
+                    'role' => $user->role,
+                    'member_status' => $user->member_status,
+                ],
+            ],
+        ], 201);
+    }
+
     public function login(LoginRequest $request): JsonResponse
     {
         $validated = $request->validated();
@@ -32,6 +75,16 @@ class AuthController extends Controller
                     'message' => 'Invalid email or password.',
                 ],
             ], 422);
+        }
+
+        if ($user->member_status === 'blocked') {
+            return response()->json([
+                'ok' => false,
+                'error' => [
+                    'code' => 'account_blocked',
+                    'message' => 'Your account has been blocked. Contact support.',
+                ],
+            ], 403);
         }
 
         $expiresInDays = (int) ($validated['expires_in_days'] ?? 30);
@@ -61,6 +114,8 @@ class AuthController extends Controller
                     'id' => $user->id,
                     'name' => $user->name,
                     'email' => $user->email,
+                    'role' => $user->role,
+                    'member_status' => $user->member_status,
                 ],
                 'session' => [
                     'token_id' => $apiToken->id,
@@ -93,6 +148,8 @@ class AuthController extends Controller
                     'id' => $user->id,
                     'name' => $user->name,
                     'email' => $user->email,
+                    'role' => $user->role,
+                    'member_status' => $user->member_status,
                 ],
                 'session' => [
                     'token_id' => $apiToken->id,

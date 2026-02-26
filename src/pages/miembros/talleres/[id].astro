@@ -1,0 +1,487 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Layout/Header.astro';
+import Footer from '../../../components/Layout/Footer.astro';
+import SectionHeader from '../../../components/UI/SectionHeader.astro';
+import { cleanSlug } from '../../../utils/navigation-generator.js';
+import '../../../styles/members.css';
+
+export async function getStaticPaths() {
+  const talleres = await getCollection('saber');
+  const paths = new Map();
+
+  for (const taller of talleres) {
+    const normalized = cleanSlug(taller.slug);
+    const workshopId = `content:saber:${normalized}`;
+    const encoded = Buffer.from(workshopId, 'utf8').toString('base64url');
+
+    paths.set(encoded, {
+      params: { id: encoded },
+      props: { workshopId },
+    });
+  }
+
+  return Array.from(paths.values());
+}
+
+const { workshopId } = Astro.props;
+---
+
+<BaseLayout title="Miembros | Práctica taller" showTopBar={false}>
+  <div class="members-hub">
+    <Header />
+
+    <main class="members-container">
+      <SectionHeader
+        badge="Práctica"
+        title="Taller Interactivo"
+        description="Resuelve pregunta por pregunta, comprueba y revisa la retroalimentación."
+      />
+
+      <section class="members-card">
+        <div class="members-actions" style="margin-bottom:0.8rem;">
+          <a class="members-button secondary" href="/miembros/talleres">Volver a catálogo</a>
+        </div>
+        <div id="feedback"></div>
+        <div id="practice"></div>
+      </section>
+    </main>
+
+    <Footer />
+  </div>
+</BaseLayout>
+
+<script define:vars={{ workshopId }}>
+  window.__EDIPROFE_WORKSHOP_ID__ = workshopId;
+</script>
+
+<script>
+  import {
+    apiEvaluate,
+    apiMe,
+    apiWorkshopDetail,
+    clearSession,
+    getSessionToken,
+    saveSession,
+  } from '../../../scripts/members/client';
+  import {
+    cleanInlineForRender,
+    cleanInlineMarkdown,
+    normalizeMathForDisplay,
+    parseInlineSegments,
+  } from '../../../scripts/members/workshopRender';
+
+  const workshopId = window.__EDIPROFE_WORKSHOP_ID__;
+
+  const token = getSessionToken();
+  if (!token) {
+    window.location.href = '/miembros/login';
+  }
+
+  const feedback = document.getElementById('feedback');
+  const practice = document.getElementById('practice');
+
+  const state = {
+    detail: null,
+    questionIndex: 0,
+    selectedByQuestion: {},
+    evaluationByQuestion: {},
+  };
+  const progressStorageKey = `ediprofe_member_workshop_progress:${workshopId}`;
+
+  function safeParseJSON(raw) {
+    if (!raw) return null;
+    try {
+      return JSON.parse(raw);
+    } catch {
+      return null;
+    }
+  }
+
+  function persistPracticeProgress() {
+    if (!state.detail || typeof window === 'undefined') {
+      return;
+    }
+
+    const payload = {
+      workshop_id: state.detail.id,
+      question_index: state.questionIndex,
+      selected_by_question: state.selectedByQuestion,
+      evaluation_by_question: state.evaluationByQuestion,
+      updated_at: Date.now(),
+    };
+
+    window.localStorage.setItem(progressStorageKey, JSON.stringify(payload));
+  }
+
+  function restorePracticeProgress(detail) {
+    if (!detail || typeof window === 'undefined') {
+      return;
+    }
+
+    const raw = window.localStorage.getItem(progressStorageKey);
+    const parsed = safeParseJSON(raw);
+    if (!parsed || parsed.workshop_id !== detail.id) {
+      return;
+    }
+
+    state.selectedByQuestion =
+      parsed.selected_by_question && typeof parsed.selected_by_question === 'object'
+        ? parsed.selected_by_question
+        : {};
+    state.evaluationByQuestion =
+      parsed.evaluation_by_question && typeof parsed.evaluation_by_question === 'object'
+        ? parsed.evaluation_by_question
+        : {};
+
+    const total = Array.isArray(detail.questions) ? detail.questions.length : 0;
+    const parsedIndex = Number.parseInt(String(parsed.question_index ?? '0'), 10);
+    const safeIndex = Number.isFinite(parsedIndex) ? parsedIndex : 0;
+    state.questionIndex = Math.min(Math.max(0, safeIndex), Math.max(total - 1, 0));
+  }
+
+  function escapeHtml(value) {
+    return String(value)
+      .replaceAll('&', '&amp;')
+      .replaceAll('<', '&lt;')
+      .replaceAll('>', '&gt;')
+      .replaceAll('"', '&quot;')
+      .replaceAll("'", '&#039;');
+  }
+
+  function renderInlines(inlines = []) {
+    return inlines
+      .map((segment) => {
+        const text = escapeHtml(cleanInlineForRender(segment?.text ?? ''));
+        const variant = segment?.variant ?? 'plain';
+
+        if (variant === 'bold') return `<strong>${text}</strong>`;
+        if (variant === 'italic') return `<em>${text}</em>`;
+        if (variant === 'highlight') return `<mark>${text}</mark>`;
+        if (variant === 'strike') return `<del>${text}</del>`;
+        return text;
+      })
+      .join('');
+  }
+
+  function renderInlineText(value = '') {
+    return renderInlines(parseInlineSegments(value));
+  }
+
+  function renderBlocks(blocks = [], fallbackText = '') {
+    if (!Array.isArray(blocks) || blocks.length === 0) {
+      const fallback = cleanInlineMarkdown(fallbackText || '');
+      return fallback ? `<p>${renderInlineText(fallback)}</p>` : '';
+    }
+
+    return blocks
+      .map((block) => {
+        if (!block || typeof block !== 'object') return '';
+
+        if (block.type === 'paragraph') {
+          const inlines =
+            Array.isArray(block.inlines) && block.inlines.length > 0
+              ? block.inlines
+              : parseInlineSegments(block.text || '');
+          return `<p>${renderInlines(inlines)}</p>`;
+        }
+
+        if (block.type === 'image') {
+          const src = escapeHtml(block.src || '');
+          const alt = escapeHtml(block.alt || 'imagen');
+          return `<img src="${src}" alt="${alt}" loading="lazy" />`;
+        }
+
+        if (block.type === 'equation') {
+          const latex = normalizeMathForDisplay(cleanInlineMarkdown(block.latex || ''));
+          return `<code class="members-equation">${escapeHtml(latex)}</code>`;
+        }
+
+        if (block.type === 'table') {
+          const rows = Array.isArray(block.rows) ? block.rows : [];
+          if (rows.length === 0) return '';
+
+          const header = rows[0] || [];
+          const body = rows.slice(1);
+
+          return `
+            <div class="members-table-wrap">
+              <table class="members-table">
+                <thead>
+                  <tr>${header.map((cell) => `<th>${renderInlineText(cell)}</th>`).join('')}</tr>
+                </thead>
+                <tbody>
+                  ${body
+                    .map(
+                      (row) => `<tr>${(row || []).map((cell) => `<td>${renderInlineText(cell)}</td>`).join('')}</tr>`
+                    )
+                    .join('')}
+                </tbody>
+              </table>
+            </div>
+          `;
+        }
+
+        if (block.type === 'list') {
+          const items = Array.isArray(block.items) ? block.items : [];
+          if (items.length === 0) return '';
+
+          const tag = block.ordered ? 'ol' : 'ul';
+          const renderedItems = items
+            .map((item) => {
+              const inlines =
+                Array.isArray(item?.inlines) && item.inlines.length > 0
+                  ? item.inlines
+                  : parseInlineSegments(item?.text || '');
+              return `<li>${renderInlines(inlines)}</li>`;
+            })
+            .join('');
+
+          return `<${tag} class="members-list-block">${renderedItems}</${tag}>`;
+        }
+
+        return '';
+      })
+      .join('');
+  }
+
+  function hasMeaningfulContext(blocks = []) {
+    if (!Array.isArray(blocks) || blocks.length === 0) {
+      return false;
+    }
+
+    return blocks.some((block) => {
+      if (!block || typeof block !== 'object') return false;
+
+      if (block.type === 'image') {
+        return Boolean(String(block.src || '').trim());
+      }
+
+      if (block.type === 'table' || block.type === 'equation') {
+        return true;
+      }
+
+      if (block.type === 'list') {
+        return Array.isArray(block.items) && block.items.length > 0;
+      }
+
+      if (block.type === 'paragraph') {
+        const raw = Array.isArray(block.inlines)
+          ? block.inlines.map((item) => item?.text || '').join(' ').trim()
+          : String(block.text || '').trim();
+
+        if (!raw) return false;
+        // Ignore structural wrappers that leaked from source formatting.
+        if (/^<\/?div\b[^>]*>$/i.test(raw)) return false;
+        if (/^<\/?span\b[^>]*>$/i.test(raw)) return false;
+        if (raw === '---') return false;
+
+        return true;
+      }
+
+      return false;
+    });
+  }
+
+  function render() {
+    if (!state.detail) return;
+
+    const questions = state.detail.questions || [];
+    const total = questions.length;
+    if (total === 0) {
+      practice.innerHTML = `<div class="members-alert">Este taller no tiene preguntas cargadas.</div>`;
+      return;
+    }
+    const question = questions[state.questionIndex];
+    const selectedId = state.selectedByQuestion[question.id];
+    const evaluation = state.evaluationByQuestion[question.id];
+    const checked = Boolean(evaluation);
+    const showContext = hasMeaningfulContext(question.context_blocks || []);
+    const contextHtml = showContext ? renderBlocks(question.context_blocks || [], '') : '';
+
+    const navigatorHtml = questions
+      .map((entry, index) => {
+        const result = state.evaluationByQuestion[entry.id];
+        const classes = ['members-qchip'];
+
+        if (index === state.questionIndex) classes.push('current');
+        if (!result) classes.push('pending');
+        if (result?.is_correct) classes.push('correct');
+        if (result && !result?.is_correct) classes.push('wrong');
+
+        return `<button type="button" class="${classes.join(' ')}" data-question-index="${index}" aria-label="Ir a la pregunta ${
+          index + 1
+        }"><span>${index + 1}</span></button>`;
+      })
+      .join('');
+
+    const optionsHtml = (question.options || [])
+      .map((option) => {
+        const selected = selectedId === option.id;
+        const isCorrect = evaluation?.correct_option_id === option.id;
+        const wrongSelected = checked && selected && !isCorrect;
+
+        return `
+          <button type="button" class="members-option ${selected ? 'selected' : ''} ${isCorrect ? 'correct' : ''} ${
+          wrongSelected ? 'wrong' : ''
+        }" data-option-id="${escapeHtml(option.id)}">
+            ${escapeHtml(option.id)}. ${escapeHtml(option.text)}
+          </button>
+        `;
+      })
+      .join('');
+
+    const correctCount = Object.values(state.evaluationByQuestion).filter((item) => item.is_correct).length;
+    const checkedCount = Object.keys(state.evaluationByQuestion).length;
+    const pendingCount = Math.max(total - checkedCount, 0);
+    const progressPercent = total > 0 ? Math.round((checkedCount / total) * 100) : 0;
+
+    practice.innerHTML = `
+      <article class="members-question">
+        <div class="members-progress-wrap">
+          <div class="members-progress-meta">
+            <p class="members-subtitle"><strong>${escapeHtml(state.detail.title)}</strong></p>
+            <p class="members-subtitle">
+              Pregunta ${state.questionIndex + 1} de ${total} · Correctas ${correctCount} · Comprobadas ${checkedCount}
+            </p>
+            <p class="members-subtitle">Pendientes ${pendingCount}</p>
+          </div>
+          <div class="members-progress-track" aria-label="Progreso del taller">
+            <div class="members-progress-fill" style="width:${progressPercent}%"></div>
+          </div>
+          <p class="members-progress-label">${progressPercent}% completado</p>
+        </div>
+
+        <div class="members-question-nav">
+          <p class="members-question-nav-head">Navegación rápida</p>
+          <div class="members-question-chip-grid">${navigatorHtml}</div>
+        </div>
+
+        ${
+          contextHtml
+            ? `
+          <div class="members-context">
+            <p class="members-context-title">Contexto compartido</p>
+            <div class="members-render">${contextHtml}</div>
+          </div>
+        `
+            : ''
+        }
+
+        <div class="members-render">
+          ${renderBlocks(question.stem_blocks || [], question.stem_mdx || '')}
+        </div>
+
+        <div class="members-options">${optionsHtml}</div>
+
+        <div class="members-actions members-actions-primary" style="margin-top:0.8rem;">
+          <button type="button" class="members-button secondary" id="prev-btn" ${state.questionIndex <= 0 ? 'disabled' : ''}>Anterior</button>
+          <button type="button" class="members-button" id="check-btn" ${selectedId ? '' : 'disabled'}>Comprobar</button>
+          <button type="button" class="members-button secondary" id="next-btn" ${state.questionIndex >= total - 1 ? 'disabled' : ''}>Siguiente</button>
+        </div>
+
+        ${
+          checked
+            ? `
+          <div class="members-alert ${evaluation.is_correct ? 'ok' : 'error'}">
+            ${evaluation.is_correct ? 'Respuesta correcta.' : 'Respuesta incorrecta.'}
+          </div>
+          <div class="members-render">
+            ${renderBlocks(evaluation.feedback_blocks || [], evaluation.feedback_mdx || '')}
+          </div>
+        `
+            : ''
+        }
+      </article>
+    `;
+
+    practice.querySelectorAll('[data-option-id]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const optionId = button.getAttribute('data-option-id');
+        state.selectedByQuestion[question.id] = optionId;
+        delete state.evaluationByQuestion[question.id];
+        persistPracticeProgress();
+        render();
+      });
+    });
+
+    practice.querySelectorAll('[data-question-index]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const nextIndex = Number.parseInt(button.getAttribute('data-question-index') || '', 10);
+        if (!Number.isFinite(nextIndex)) return;
+        state.questionIndex = Math.min(total - 1, Math.max(0, nextIndex));
+        persistPracticeProgress();
+        render();
+      });
+    });
+
+    practice.querySelector('#prev-btn')?.addEventListener('click', () => {
+      if (state.questionIndex <= 0) return;
+      state.questionIndex -= 1;
+      persistPracticeProgress();
+      render();
+    });
+
+    practice.querySelector('#next-btn')?.addEventListener('click', () => {
+      if (state.questionIndex >= total - 1) return;
+      state.questionIndex += 1;
+      render();
+      persistPracticeProgress();
+    });
+
+    practice.querySelector('#check-btn')?.addEventListener('click', async () => {
+      try {
+        const optionId = state.selectedByQuestion[question.id];
+        if (!optionId) {
+          return;
+        }
+
+        const result = await apiEvaluate(state.detail.id, question.id, optionId);
+        state.evaluationByQuestion[question.id] = result.data;
+
+        persistPracticeProgress();
+        render();
+      } catch (error) {
+        const message = error instanceof Error ? error.message : 'No fue posible evaluar la respuesta.';
+        feedback.innerHTML = `<div class="members-alert error">${message}</div>`;
+      }
+    });
+  }
+
+  async function boot() {
+    try {
+      const me = await apiMe();
+      const user = me?.data?.user;
+      if (!user) {
+        throw new Error('Sesión inválida.');
+      }
+      saveSession(token, user);
+
+      if (user.member_status !== 'approved' && user.role !== 'admin') {
+        feedback.innerHTML = '<div class="members-alert error">No tienes acceso a talleres premium.</div>';
+        return;
+      }
+
+      const response = await apiWorkshopDetail(workshopId);
+      state.detail = response?.data || null;
+      if (!state.detail) {
+        throw new Error('No se pudo cargar el taller.');
+      }
+
+      restorePracticeProgress(state.detail);
+      render();
+    } catch (error) {
+      const message = error instanceof Error ? error.message : 'No fue posible cargar el taller.';
+      if (/auth|required|sesión|session/i.test(message)) {
+        clearSession();
+        window.location.href = '/miembros/login';
+        return;
+      }
+
+      feedback.innerHTML = `<div class="members-alert error">${message}</div>`;
+    }
+  }
+
+  boot();
+</script>

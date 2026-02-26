@@ -1,0 +1,236 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Layout/Header.astro';
+import Footer from '../../components/Layout/Footer.astro';
+import SectionHeader from '../../components/UI/SectionHeader.astro';
+import '../../styles/members.css';
+---
+
+<BaseLayout title="Miembros | Admin" showTopBar={false}>
+  <div class="members-hub">
+    <Header />
+
+    <main class="members-container">
+      <SectionHeader
+        badge="Administración"
+        title="Panel de Estudiantes"
+        description="Aprueba, bloquea o revoca acceso premium de estudiantes registrados."
+      />
+
+      <section class="members-card">
+        <div class="members-actions" style="margin-bottom: 0.8rem;">
+          <a class="members-button secondary" href="/miembros">Volver al panel</a>
+        </div>
+
+        <form id="filters-form" class="members-form">
+          <label class="members-label" for="status-filter">Estado</label>
+          <select id="status-filter" class="members-select">
+            <option value="">Todos</option>
+            <option value="pending">Pendiente</option>
+            <option value="approved">Aprobado</option>
+            <option value="blocked">Bloqueado</option>
+          </select>
+
+          <label class="members-label" for="search-filter">Buscar por nombre o correo</label>
+          <input id="search-filter" class="members-input" type="text" placeholder="ej. maria@colegio.edu.co" />
+
+          <div class="members-actions">
+            <button class="members-button" type="submit">Filtrar</button>
+            <button class="members-button secondary" type="button" id="reset-btn">Limpiar</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="members-card">
+        <div id="feedback"></div>
+        <div id="summary" class="members-grid"></div>
+        <div id="students" class="members-list"></div>
+      </section>
+    </main>
+
+    <Footer />
+  </div>
+</BaseLayout>
+
+<script>
+  import {
+    apiAdminAction,
+    apiAdminListStudents,
+    apiMe,
+    clearSession,
+    getSessionToken,
+    saveSession,
+  } from '../../scripts/members/client';
+
+  const token = getSessionToken();
+  if (!token) {
+    window.location.href = '/miembros/login';
+  }
+
+  const feedback = document.getElementById('feedback');
+  const summary = document.getElementById('summary');
+  const studentsWrap = document.getElementById('students');
+  const filtersForm = document.getElementById('filters-form');
+  const resetBtn = document.getElementById('reset-btn');
+  const statusFilter = document.getElementById('status-filter');
+  const searchFilter = document.getElementById('search-filter');
+
+  function escapeHtml(value) {
+    return String(value ?? '')
+      .replaceAll('&', '&amp;')
+      .replaceAll('<', '&lt;')
+      .replaceAll('>', '&gt;')
+      .replaceAll('"', '&quot;')
+      .replaceAll("'", '&#039;');
+  }
+
+  function statusLabel(status) {
+    if (status === 'approved') return 'Aprobado';
+    if (status === 'blocked') return 'Bloqueado';
+    return 'Pendiente';
+  }
+
+  function statusClass(status) {
+    if (status === 'approved') return 'approved';
+    if (status === 'blocked') return 'blocked';
+    return 'pending';
+  }
+
+  function buildSummary(students) {
+    const counts = {
+      pending: 0,
+      approved: 0,
+      blocked: 0,
+    };
+
+    students.forEach((student) => {
+      if (student.member_status === 'approved') counts.approved += 1;
+      else if (student.member_status === 'blocked') counts.blocked += 1;
+      else counts.pending += 1;
+    });
+
+    summary.innerHTML = `
+      <article class="members-item"><h4>Pendientes</h4><p>${counts.pending}</p></article>
+      <article class="members-item"><h4>Aprobados</h4><p>${counts.approved}</p></article>
+      <article class="members-item"><h4>Bloqueados</h4><p>${counts.blocked}</p></article>
+    `;
+  }
+
+  function renderStudents(students) {
+    if (!Array.isArray(students) || students.length === 0) {
+      studentsWrap.innerHTML = '<div class="members-alert">No hay estudiantes para ese filtro.</div>';
+      return;
+    }
+
+    studentsWrap.innerHTML = students
+      .map((student) => {
+        const premiumText = student.has_school_premium_grant ? 'Premium activo' : 'Sin premium';
+
+        return `
+          <article class="members-item" data-student-id="${student.id}">
+            <h4>${escapeHtml(student.name)}</h4>
+            <p>${escapeHtml(student.email)}</p>
+            <p style="margin-top:0.35rem;">
+              <span class="members-pill ${statusClass(student.member_status)}">${statusLabel(student.member_status)}</span>
+              <span class="members-pill ${student.has_school_premium_grant ? 'approved' : 'pending'}" style="margin-left:0.3rem;">${premiumText}</span>
+            </p>
+            <div class="members-actions" style="margin-top:0.6rem;">
+              <button class="members-button success" type="button" data-action="approve">Aprobar</button>
+              <button class="members-button warn" type="button" data-action="block">Bloquear</button>
+              <button class="members-button secondary" type="button" data-action="revoke-premium">Revocar premium</button>
+            </div>
+          </article>
+        `;
+      })
+      .join('');
+
+    studentsWrap.querySelectorAll('[data-action]').forEach((button) => {
+      button.addEventListener('click', async () => {
+        const action = button.getAttribute('data-action');
+        const card = button.closest('[data-student-id]');
+        const studentId = Number(card?.getAttribute('data-student-id'));
+
+        if (!action || !studentId) return;
+
+        const actionLabel =
+          action === 'approve' ? 'aprobar' : action === 'block' ? 'bloquear' : 'revocar premium';
+        const confirmed = window.confirm(`¿Confirmas ${actionLabel} este estudiante?`);
+        if (!confirmed) return;
+
+        try {
+          button.setAttribute('disabled', 'disabled');
+          await apiAdminAction(studentId, action);
+          await loadStudents();
+          feedback.innerHTML = '<div class="members-alert ok">Acción aplicada correctamente.</div>';
+        } catch (error) {
+          const message = error instanceof Error ? error.message : 'No fue posible aplicar la acción.';
+          feedback.innerHTML = `<div class="members-alert error">${escapeHtml(message)}</div>`;
+        } finally {
+          button.removeAttribute('disabled');
+        }
+      });
+    });
+  }
+
+  async function loadStudents() {
+    const status = statusFilter?.value?.trim() || '';
+    const search = searchFilter?.value?.trim() || '';
+
+    const response = await apiAdminListStudents({
+      status,
+      search,
+    });
+    const students = Array.isArray(response?.data) ? response.data : [];
+
+    buildSummary(students);
+    renderStudents(students);
+  }
+
+  async function boot() {
+    try {
+      const me = await apiMe();
+      const user = me?.data?.user;
+      if (!user) {
+        throw new Error('No se pudo validar sesión.');
+      }
+
+      saveSession(token, user);
+
+      if (user.role !== 'admin') {
+        feedback.innerHTML = '<div class="members-alert error">No tienes permisos de administrador.</div>';
+        studentsWrap.innerHTML = '';
+        return;
+      }
+
+      await loadStudents();
+    } catch (error) {
+      clearSession();
+      window.location.href = '/miembros/login';
+    }
+  }
+
+  filtersForm?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    feedback.innerHTML = '';
+    try {
+      await loadStudents();
+    } catch (error) {
+      const message = error instanceof Error ? error.message : 'No fue posible listar estudiantes.';
+      feedback.innerHTML = `<div class="members-alert error">${escapeHtml(message)}</div>`;
+    }
+  });
+
+  resetBtn?.addEventListener('click', async () => {
+    statusFilter.value = '';
+    searchFilter.value = '';
+    feedback.innerHTML = '';
+    try {
+      await loadStudents();
+    } catch (error) {
+      const message = error instanceof Error ? error.message : 'No fue posible listar estudiantes.';
+      feedback.innerHTML = `<div class="members-alert error">${escapeHtml(message)}</div>`;
+    }
+  });
+
+  boot();
+</script>

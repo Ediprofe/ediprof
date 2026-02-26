@@ -18,7 +18,19 @@ class WorkshopAccessService
             return false;
         }
 
-        return $this->hasActiveSubscription($user) || $this->hasActiveGrant($user, $workshop);
+        if ($user->isAdmin()) {
+            return true;
+        }
+
+        if ($this->hasActiveSubscription($user)) {
+            return true;
+        }
+
+        if ($user->member_status !== 'approved') {
+            return false;
+        }
+
+        return $this->hasActiveGrant($user, $workshop);
     }
 
     private function hasActiveSubscription(User $user): bool

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\V1\AuthController;
+use App\Http\Controllers\Api\V1\Admin\StudentAccessController;
 use App\Http\Controllers\Api\V1\ContentController;
 use App\Http\Controllers\Api\V1\WorkshopController;
 use Illuminate\Http\Request;
@@ -18,7 +19,8 @@ Route::prefix('v1')->middleware('resolve.api_token')->group(function (): void {
         ]);
     });
 
-    Route::post('/auth/login', [AuthController::class, 'login']);
+    Route::post('/auth/register', [AuthController::class, 'register'])->middleware('throttle:auth-register');
+    Route::post('/auth/login', [AuthController::class, 'login'])->middleware('throttle:auth-login');
     Route::get('/auth/me', [AuthController::class, 'me'])->middleware('require.api_token');
     Route::post('/auth/logout', [AuthController::class, 'logout'])->middleware('require.api_token');
 
@@ -28,4 +30,11 @@ Route::prefix('v1')->middleware('resolve.api_token')->group(function (): void {
         ->where('workshopId', '.*');
     Route::get('/workshops/{workshopId}', [WorkshopController::class, 'show'])
         ->where('workshopId', '.*');
+
+    Route::prefix('admin')->middleware(['require.api_token', 'require.admin'])->group(function (): void {
+        Route::get('/students', [StudentAccessController::class, 'index']);
+        Route::post('/students/{studentId}/approve', [StudentAccessController::class, 'approve']);
+        Route::post('/students/{studentId}/block', [StudentAccessController::class, 'block']);
+        Route::post('/students/{studentId}/revoke-premium', [StudentAccessController::class, 'revokePremium']);
+    });
 });

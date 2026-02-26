@@ -5,26 +5,38 @@
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
+    "start:lan": "expo start --host lan",
+    "start:tunnel": "expo start --host tunnel",
     "android": "expo run:android",
     "ios": "expo run:ios",
     "web": "expo start --web",
+    "eas:login": "npx eas-cli login",
+    "eas:init": "npx eas-cli init",
+    "eas:build:ios:preview": "npx eas-cli build --platform ios --profile preview",
+    "eas:build:android:preview": "npx eas-cli build --platform android --profile preview",
+    "eas:build:ios:prod": "npx eas-cli build --platform ios --profile production",
+    "eas:build:android:prod": "npx eas-cli build --platform android --profile production",
+    "eas:run:android:latest": "npx eas-cli build:run --platform android --latest",
+    "eas:submit:ios:prod": "npx eas-cli submit --platform ios --profile production",
+    "eas:submit:android:prod": "npx eas-cli submit --platform android --profile production",
     "typecheck": "tsc --noEmit",
     "test:render": "node --test --experimental-strip-types ./tests/workshop-render.golden.test.ts"
   },
   "dependencies": {
-    "@expo/metro-runtime": "~4.0.1",
-    "@react-native-async-storage/async-storage": "1.23.1",
-    "expo": "~52.0.0",
-    "expo-asset": "~11.0.5",
-    "expo-image": "~2.0.0",
-    "expo-status-bar": "~2.0.0",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-native": "0.76.9",
-    "react-native-web": "~0.19.13"
+    "@expo/metro-runtime": "~6.1.2",
+    "@react-native-async-storage/async-storage": "2.2.0",
+    "expo": "~54.0.0",
+    "expo-asset": "~12.0.12",
+    "expo-image": "~3.0.11",
+    "expo-status-bar": "~3.0.9",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "react-native": "0.81.5",
+    "react-native-web": "^0.21.0"
   },
   "devDependencies": {
-    "@types/react": "~18.3.12",
-    "typescript": "~5.3.3"
+    "@types/react": "~19.1.10",
+    "eas-cli": "18.0.5",
+    "typescript": "~5.9.2"
   }
 }

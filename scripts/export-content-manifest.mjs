@@ -201,7 +201,7 @@ function classifyAssetRef(ref) {
 }
 
 function getAccessTier(frontmatter, collection) {
-  const raw = String(frontmatter.access || frontmatter.tier || '').toLowerCase().trim();
+  const raw = String(frontmatter.access_tier || frontmatter.access || frontmatter.tier || '').toLowerCase().trim();
 
   if (raw === 'premium' || raw === 'paid') return 'premium';
   if (raw === 'free' || raw === 'public') return 'free';

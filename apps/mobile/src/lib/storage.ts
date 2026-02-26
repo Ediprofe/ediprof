@@ -9,6 +9,9 @@ export type WorkshopPracticeState = {
   questionIndex: number;
   selectedOptionByQuestion: Record<string, string>;
   evaluationByQuestion: Record<string, WorkshopEvaluationResult>;
+  visitedQuestionIds: string[];
+  elapsedSeconds: number;
+  timerRunning: boolean;
   updatedAt: string;
 };
 
@@ -36,6 +39,14 @@ function parseWorkshopPracticeState(raw: string | null): WorkshopPracticeState |
       questionIndex: parsed.questionIndex,
       selectedOptionByQuestion: parsed.selectedOptionByQuestion as Record<string, string>,
       evaluationByQuestion: parsed.evaluationByQuestion as Record<string, WorkshopEvaluationResult>,
+      visitedQuestionIds: Array.isArray(parsed.visitedQuestionIds)
+        ? parsed.visitedQuestionIds.filter((id): id is string => typeof id === 'string')
+        : [],
+      elapsedSeconds:
+        typeof parsed.elapsedSeconds === 'number' && Number.isFinite(parsed.elapsedSeconds)
+          ? Math.max(0, Math.floor(parsed.elapsedSeconds))
+          : 0,
+      timerRunning: typeof parsed.timerRunning === 'boolean' ? parsed.timerRunning : true,
       updatedAt: typeof parsed.updatedAt === 'string' ? parsed.updatedAt : new Date().toISOString(),
     };
   } catch {
@@ -75,6 +86,9 @@ export async function saveWorkshopPracticeState(
     questionIndex: state.questionIndex,
     selectedOptionByQuestion: state.selectedOptionByQuestion,
     evaluationByQuestion: state.evaluationByQuestion,
+    visitedQuestionIds: Array.isArray(state.visitedQuestionIds) ? state.visitedQuestionIds : [],
+    elapsedSeconds: Math.max(0, Math.floor(state.elapsedSeconds)),
+    timerRunning: state.timerRunning,
     updatedAt: new Date().toISOString(),
   };
 

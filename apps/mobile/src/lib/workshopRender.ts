@@ -38,6 +38,9 @@ export function normalizeLatexInlineText(value: string): string {
     .replace(/\\_/g, '_')
     .replace(/\\+text\s*\{([^}]*)\}/g, '$1')
     .replace(/\\+rightarrow/g, '→')
+    .replace(/\brightarrow\b/gi, '→')
+    .replace(/\bightarrow\b/gi, '→')
+    .replace(/\barrow\b/gi, '→')
     .replace(/\\+times/g, '×')
     .replace(/\\+cdot/g, '·')
     .replace(/([A-Za-z0-9\)])_\\?\{([0-9]+)\}/g, (_m, base: string, digits: string) => {

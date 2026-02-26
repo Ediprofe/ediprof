@@ -1,0 +1,147 @@
+import Pregunta from '@/components/saber/Pregunta.astro';
+import Opciones from '@/components/saber/Opciones.astro';
+import Opcion from '@/components/saber/Opcion.astro';
+
+## 1.
+<Pregunta
+  id="1"
+  headerless
+  fuente="ICFES"
+  anio="2026"
+  bloque="Nombre del bloque"
+  competencia="Nombre de competencia"
+  componente="Nombre de componente"
+>
+
+Enunciado de la pregunta 1.
+
+Puedes usar imagen:
+![descripcion](https://cdn.ediprofe.com/img/saber/quimica/ejemplo.webp)
+
+Puedes usar ecuacion en bloque:
+$$
+4Fe + 3O_2 \rightarrow 2Fe_2O_3
+$$
+
+<Opciones>
+  <Opcion letra="A" correcta>Texto opcion A</Opcion>
+  <Opcion letra="B">Texto opcion B</Opcion>
+  <Opcion letra="C">Texto opcion C</Opcion>
+  <Opcion letra="D">Texto opcion D</Opcion>
+</Opciones>
+
+<details>
+<summary>✅ Respuesta</summary>
+
+Retroalimentacion con formato:
+- ==resaltado==
+- ~~tachado~~
+- **negrita**
+
+**Respuesta: A**
+
+</details>
+
+</Pregunta>
+
+## 2.
+<Pregunta id="2" headerless fuente="ICFES" anio="2026">
+
+Enunciado de la pregunta 2.
+
+| Columna 1 | Columna 2 |
+|---|---|
+| Dato A | Dato B |
+
+<Opciones>
+  <Opcion letra="A">Texto opcion A</Opcion>
+  <Opcion letra="B" correcta>Texto opcion B</Opcion>
+  <Opcion letra="C">Texto opcion C</Opcion>
+  <Opcion letra="D">Texto opcion D</Opcion>
+</Opciones>
+
+<details>
+<summary>✅ Respuesta</summary>
+
+Retroalimentacion de la pregunta 2.
+
+**Respuesta: B**
+
+</details>
+
+</Pregunta>
+
+## 3.
+RESPONDA LAS PREGUNTAS 3 A 5 CON BASE EN LA SIGUIENTE INFORMACION.
+
+Contexto compartido para varias preguntas, en markdown puro (sin `<div>` ni `<span>`).
+
+![contexto-compartido](https://cdn.ediprofe.com/img/saber/quimica/contexto.webp)
+
+<Pregunta id="3" headerless fuente="ICFES" anio="2026">
+
+Enunciado de la pregunta 3.
+
+<Opciones>
+  <Opcion letra="A">Texto opcion A</Opcion>
+  <Opcion letra="B">Texto opcion B</Opcion>
+  <Opcion letra="C" correcta>Texto opcion C</Opcion>
+  <Opcion letra="D">Texto opcion D</Opcion>
+</Opciones>
+
+<details>
+<summary>✅ Respuesta</summary>
+
+Retroalimentacion de la pregunta 3.
+
+**Respuesta: C**
+
+</details>
+
+</Pregunta>
+
+## 4.
+<Pregunta id="4" headerless fuente="ICFES" anio="2026">
+
+Enunciado de la pregunta 4.
+
+<Opciones>
+  <Opcion letra="A" correcta>Texto opcion A</Opcion>
+  <Opcion letra="B">Texto opcion B</Opcion>
+  <Opcion letra="C">Texto opcion C</Opcion>
+  <Opcion letra="D">Texto opcion D</Opcion>
+</Opciones>
+
+<details>
+<summary>✅ Respuesta</summary>
+
+Retroalimentacion de la pregunta 4.
+
+**Respuesta: A**
+
+</details>
+
+</Pregunta>
+
+## 5.
+<Pregunta id="5" headerless fuente="ICFES" anio="2026">
+
+Enunciado de la pregunta 5.
+
+<Opciones>
+  <Opcion letra="A">Texto opcion A</Opcion>
+  <Opcion letra="B">Texto opcion B</Opcion>
+  <Opcion letra="C">Texto opcion C</Opcion>
+  <Opcion letra="D" correcta>Texto opcion D</Opcion>
+</Opciones>
+
+<details>
+<summary>✅ Respuesta</summary>
+
+Retroalimentacion de la pregunta 5.
+
+**Respuesta: D**
+
+</details>
+
+</Pregunta>

@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import {
   ActivityIndicator,
   FlatList,
+  NativeModules,
   Pressable,
   SafeAreaView,
   ScrollView,
@@ -37,6 +38,9 @@ import {
 import type { WorkshopDetail, WorkshopEvaluationResult, WorkshopSummary } from './src/types/api';
 
 const DEFAULT_BASE_URL = 'http://127.0.0.1:8080/api/v1';
+const MIN_SESSION_DURATION_SECONDS = 10 * 60;
+const PER_QUESTION_SECONDS = 90;
+const STRICT_MODE_DURATION_SECONDS = 45 * 60;
 
 type DetailAccessError = 'auth_required' | 'premium_access_required' | null;
 
@@ -44,6 +48,9 @@ type HydratedPracticeState = {
   questionIndex: number;
   selectedOptionByQuestion: Record<string, string>;
   evaluationByQuestion: Record<string, WorkshopEvaluationResult>;
+  visitedQuestionIds: string[];
+  elapsedSeconds: number;
+  timerRunning: boolean;
 };
 
 type WorkshopProgressMeta = {
@@ -51,6 +58,11 @@ type WorkshopProgressMeta = {
   resumeQuestionIndex: number;
   evaluatedCount: number;
   updatedAt: string;
+};
+
+type SessionRecommendation = {
+  title: string;
+  detail: string;
 };
 
 function hasPracticeData(state: {
@@ -63,6 +75,16 @@ function hasPracticeData(state: {
     Object.keys(state.selectedOptionByQuestion).length > 0 ||
     Object.keys(state.evaluationByQuestion).length > 0
   );
+}
+
+function hasPersistableState(state: {
+  questionIndex: number;
+  selectedOptionByQuestion: Record<string, string>;
+  evaluationByQuestion: Record<string, WorkshopEvaluationResult>;
+  visitedQuestionIds: string[];
+  elapsedSeconds: number;
+}): boolean {
+  return hasPracticeData(state) || state.elapsedSeconds > 0 || state.visitedQuestionIds.length > 0;
 }
 
 function buildWorkshopProgressMeta(
@@ -81,6 +103,136 @@ function buildWorkshopProgressMeta(
     evaluatedCount,
     updatedAt: state.updatedAt,
   };
+}
+
+function buildSessionRecommendation(params: {
+  scorePercent: number;
+  wrongCount: number;
+  pendingCount: number;
+}): SessionRecommendation {
+  const { scorePercent, wrongCount, pendingCount } = params;
+
+  if (pendingCount > 0) {
+    return {
+      title: 'Completar evaluación',
+      detail: `Te faltan ${pendingCount} preguntas por comprobar. Termínalas para cerrar el diagnóstico.`,
+    };
+  }
+
+  if (wrongCount === 0) {
+    return {
+      title: 'Excelente cierre',
+      detail: 'Terminaste sin errores. Repite el taller mañana para consolidar retención.',
+    };
+  }
+
+  if (scorePercent >= 80) {
+    return {
+      title: 'Buen resultado, ajusta precisión',
+      detail: `Repite solo las ${wrongCount} preguntas incorrectas para subir a 100%.`,
+    };
+  }
+
+  if (scorePercent >= 60) {
+    return {
+      title: 'Base aceptable, falta consistencia',
+      detail: `Prioriza las ${wrongCount} preguntas falladas y vuelve a resolver todo el bloque.`,
+    };
+  }
+
+  return {
+    title: 'Refuerzo recomendado',
+    detail: `Tu sesión cerró en ${scorePercent}%. Repite este taller completo antes de pasar al siguiente.`,
+  };
+}
+
+function formatDuration(totalSeconds: number): string {
+  const safe = Math.max(0, Math.floor(totalSeconds));
+  const minutes = Math.floor(safe / 60);
+  const seconds = safe % 60;
+  return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+}
+
+function extractHostFromUrl(url: string): string | null {
+  try {
+    const parsed = new URL(url);
+    return parsed.hostname || null;
+  } catch {
+    return null;
+  }
+}
+
+function isLanHost(host: string): boolean {
+  if (host === 'localhost' || host === '127.0.0.1') {
+    return false;
+  }
+
+  if (host.startsWith('192.168.')) {
+    return true;
+  }
+
+  if (host.startsWith('10.')) {
+    return true;
+  }
+
+  const match = host.match(/^172\.(\d+)\./);
+  if (!match) {
+    return false;
+  }
+
+  const secondOctet = Number(match[1]);
+  return Number.isFinite(secondOctet) && secondOctet >= 16 && secondOctet <= 31;
+}
+
+function resolvePreferredBaseUrl(savedUrl: string | null, detectedUrl: string | null): string {
+  if (!savedUrl && detectedUrl) {
+    return detectedUrl;
+  }
+
+  if (!savedUrl) {
+    return DEFAULT_BASE_URL;
+  }
+
+  if (!detectedUrl) {
+    return savedUrl;
+  }
+
+  const savedHost = extractHostFromUrl(savedUrl);
+  const detectedHost = extractHostFromUrl(detectedUrl);
+
+  if (!savedHost || !detectedHost) {
+    return savedUrl;
+  }
+
+  if (savedHost === detectedHost) {
+    return savedUrl;
+  }
+
+  // In device testing, LAN host from Expo is usually the most reliable source.
+  if (savedHost === 'localhost' || savedHost === '127.0.0.1') {
+    return detectedUrl;
+  }
+
+  if (isLanHost(savedHost) && isLanHost(detectedHost)) {
+    return detectedUrl;
+  }
+
+  return savedUrl;
+}
+
+function detectLanApiBaseUrl(): string | null {
+  const scriptUrl = (NativeModules as { SourceCode?: { scriptURL?: string } })?.SourceCode?.scriptURL;
+  if (!scriptUrl || typeof scriptUrl !== 'string') {
+    return null;
+  }
+
+  const hostMatch = scriptUrl.match(/^(?:https?|exp|exps):\/\/([^/:]+):\d+/i);
+  const host = hostMatch?.[1];
+  if (!host || host === 'localhost' || host === '127.0.0.1') {
+    return null;
+  }
+
+  return `http://${host}:8080/api/v1`;
 }
 
 function hydratePracticeState(
@@ -159,15 +311,28 @@ function hydratePracticeState(
       ? Math.max(0, Math.min(Number.isFinite(persistedIndex) ? persistedIndex : 0, totalQuestions - 1))
       : 0;
 
+  const visitedQuestionIds = Array.isArray(persisted?.visitedQuestionIds)
+    ? persisted.visitedQuestionIds.filter((id) => typeof id === 'string' && questionById.has(id))
+    : [];
+
   return {
     questionIndex: boundedQuestionIndex,
     selectedOptionByQuestion,
     evaluationByQuestion,
+    visitedQuestionIds,
+    elapsedSeconds:
+      typeof persisted?.elapsedSeconds === 'number' && Number.isFinite(persisted.elapsedSeconds)
+        ? Math.max(0, Math.floor(persisted.elapsedSeconds))
+        : 0,
+    timerRunning: typeof persisted?.timerRunning === 'boolean' ? persisted.timerRunning : true,
   };
 }
 
 export default function App() {
-  const [baseUrl, setBaseUrl] = useState(DEFAULT_BASE_URL);
+  const [detectedLanBaseUrl] = useState<string | null>(() => detectLanApiBaseUrl());
+  const [baseUrl, setBaseUrl] = useState(() =>
+    resolvePreferredBaseUrl(null, detectLanApiBaseUrl()),
+  );
   const [email, setEmail] = useState('demo@ediprofe.com');
   const [password, setPassword] = useState('Demo12345!');
   const [token, setToken] = useState<string | null>(null);
@@ -179,6 +344,14 @@ export default function App() {
   const [questionIndex, setQuestionIndex] = useState(0);
   const [selectedOptionByQuestion, setSelectedOptionByQuestion] = useState<Record<string, string>>({});
   const [evaluationByQuestion, setEvaluationByQuestion] = useState<Record<string, WorkshopEvaluationResult>>({});
+  const [visitedQuestionIds, setVisitedQuestionIds] = useState<string[]>([]);
+  const [elapsedSeconds, setElapsedSeconds] = useState(0);
+  const [timerRunning, setTimerRunning] = useState(false);
+  const [showResultScreen, setShowResultScreen] = useState(false);
+  const [strictModeEnabled, setStrictModeEnabled] = useState(false);
+  const [reviewModeActive, setReviewModeActive] = useState(false);
+  const [reviewQuestionIds, setReviewQuestionIds] = useState<string[]>([]);
+  const [reviewCursor, setReviewCursor] = useState(0);
   const [progressByWorkshopId, setProgressByWorkshopId] = useState<Record<string, WorkshopProgressMeta>>({});
   const [resumeNotice, setResumeNotice] = useState<string | null>(null);
 
@@ -188,19 +361,24 @@ export default function App() {
 
   const [detailAccessError, setDetailAccessError] = useState<DetailAccessError>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const apiLooksLoopback = /127\.0\.0\.1|localhost/i.test(baseUrl);
 
   useEffect(() => {
     let mounted = true;
 
     const bootstrap = async () => {
       const [savedUrl, savedToken] = await Promise.all([loadBaseUrl(), loadSessionToken()]);
+      const preferredUrl = resolvePreferredBaseUrl(savedUrl, detectedLanBaseUrl);
 
       if (!mounted) {
         return;
       }
 
-      if (savedUrl) {
-        setBaseUrl(savedUrl);
+      if (preferredUrl) {
+        setBaseUrl(preferredUrl);
+        if (preferredUrl !== savedUrl) {
+          await saveBaseUrl(preferredUrl);
+        }
       }
 
       if (!savedToken) {
@@ -208,7 +386,7 @@ export default function App() {
       }
 
       try {
-        await getCurrentUser(savedUrl ?? DEFAULT_BASE_URL, savedToken);
+        await getCurrentUser(preferredUrl, savedToken);
         setToken(savedToken);
       } catch {
         await clearSessionToken();
@@ -220,7 +398,7 @@ export default function App() {
     return () => {
       mounted = false;
     };
-  }, []);
+  }, [detectedLanBaseUrl]);
 
   const refreshCatalog = useCallback(async () => {
     setLoadingCatalog(true);
@@ -281,6 +459,13 @@ export default function App() {
         setQuestionIndex(hydrated.questionIndex);
         setSelectedOptionByQuestion(hydrated.selectedOptionByQuestion);
         setEvaluationByQuestion(hydrated.evaluationByQuestion);
+        setVisitedQuestionIds(hydrated.visitedQuestionIds);
+        setElapsedSeconds(hydrated.elapsedSeconds);
+        setTimerRunning(hydrated.timerRunning);
+        setShowResultScreen(false);
+        setReviewModeActive(false);
+        setReviewQuestionIds([]);
+        setReviewCursor(0);
         if (hasPracticeData(hydrated)) {
           setResumeNotice(`Reanudaste en la pregunta ${hydrated.questionIndex + 1}.`);
         }
@@ -289,6 +474,13 @@ export default function App() {
         setQuestionIndex(0);
         setSelectedOptionByQuestion({});
         setEvaluationByQuestion({});
+        setVisitedQuestionIds([]);
+        setElapsedSeconds(0);
+        setTimerRunning(false);
+        setShowResultScreen(false);
+        setReviewModeActive(false);
+        setReviewQuestionIds([]);
+        setReviewCursor(0);
         setResumeNotice(null);
 
         if (
@@ -330,9 +522,12 @@ export default function App() {
         questionIndex,
         selectedOptionByQuestion,
         evaluationByQuestion,
+        visitedQuestionIds,
+        elapsedSeconds,
+        timerRunning,
       };
 
-      if (!hasPracticeData(snapshot)) {
+      if (!hasPersistableState(snapshot)) {
         void clearWorkshopPracticeState(selectedWorkshop.id);
         setProgressByWorkshopId((prev) => {
           if (!(selectedWorkshop.id in prev)) {
@@ -361,7 +556,15 @@ export default function App() {
     return () => {
       clearTimeout(timer);
     };
-  }, [evaluationByQuestion, questionIndex, selectedOptionByQuestion, selectedWorkshop]);
+  }, [
+    elapsedSeconds,
+    evaluationByQuestion,
+    questionIndex,
+    selectedOptionByQuestion,
+    selectedWorkshop,
+    timerRunning,
+    visitedQuestionIds,
+  ]);
 
   const handleResetProgress = useCallback(async () => {
     if (!selectedWorkshop) {
@@ -372,6 +575,13 @@ export default function App() {
     setQuestionIndex(0);
     setSelectedOptionByQuestion({});
     setEvaluationByQuestion({});
+    setVisitedQuestionIds([]);
+    setElapsedSeconds(0);
+    setTimerRunning(true);
+    setShowResultScreen(false);
+    setReviewModeActive(false);
+    setReviewQuestionIds([]);
+    setReviewCursor(0);
     setResumeNotice('Progreso reiniciado.');
     setProgressByWorkshopId((prev) => {
       if (!(selectedWorkshop.id in prev)) {
@@ -440,10 +650,120 @@ export default function App() {
 
   const totalQuestions = selectedWorkshop?.questions.length ?? 0;
   const progressValue = totalQuestions > 0 ? (questionIndex + 1) / totalQuestions : 0;
+  const sessionDurationSeconds = useMemo(
+    () =>
+      selectedWorkshop
+        ? strictModeEnabled
+          ? STRICT_MODE_DURATION_SECONDS
+          : Math.max(MIN_SESSION_DURATION_SECONDS, selectedWorkshop.questions.length * PER_QUESTION_SECONDS)
+        : 0,
+    [selectedWorkshop, strictModeEnabled],
+  );
+  const remainingSeconds = Math.max(0, sessionDurationSeconds - elapsedSeconds);
+  const timerExpired = sessionDurationSeconds > 0 && remainingSeconds === 0;
+  const evaluatedCount = useMemo(
+    () => Object.keys(evaluationByQuestion).length,
+    [evaluationByQuestion],
+  );
+  const visitedCount = useMemo(() => {
+    if (!selectedWorkshop) {
+      return 0;
+    }
+
+    const allowedIds = new Set(selectedWorkshop.questions.map((question) => question.id));
+    return visitedQuestionIds.filter((id) => allowedIds.has(id)).length;
+  }, [selectedWorkshop, visitedQuestionIds]);
+  const correctCount = useMemo(
+    () => Object.values(evaluationByQuestion).filter((item) => item.is_correct).length,
+    [evaluationByQuestion],
+  );
+  const wrongCount = Math.max(0, evaluatedCount - correctCount);
+  const pendingEvaluationCount = Math.max(0, totalQuestions - evaluatedCount);
+  const pendingVisitCount = Math.max(0, totalQuestions - visitedCount);
+  const scorePercent = totalQuestions > 0 ? Math.round((correctCount / totalQuestions) * 100) : 0;
+  const sessionCompleted = totalQuestions > 0 && evaluatedCount === totalQuestions;
+  const sessionFinished = sessionCompleted || timerExpired;
+  const blockedByTimer = timerExpired && !reviewModeActive;
+  const pendingQuestionIdsInOrder = useMemo(() => {
+    if (!selectedWorkshop) {
+      return [];
+    }
+
+    return selectedWorkshop.questions
+      .filter((question) => !evaluationByQuestion[question.id])
+      .map((question) => question.id);
+  }, [evaluationByQuestion, selectedWorkshop]);
+  const wrongQuestionIdsInOrder = useMemo(() => {
+    if (!selectedWorkshop) {
+      return [];
+    }
+
+    return selectedWorkshop.questions
+      .filter((question) => {
+        const evaluation = evaluationByQuestion[question.id];
+        return Boolean(evaluation && !evaluation.is_correct);
+      })
+      .map((question) => question.id);
+  }, [evaluationByQuestion, selectedWorkshop]);
+
+  const sessionRecommendation = useMemo(
+    () =>
+      buildSessionRecommendation({
+        scorePercent,
+        wrongCount,
+        pendingCount: pendingEvaluationCount,
+      }),
+    [pendingEvaluationCount, scorePercent, wrongCount],
+  );
+
+  useEffect(() => {
+    if (!selectedWorkshop || !timerRunning || timerExpired || showResultScreen) {
+      return;
+    }
+
+    const timer = setInterval(() => {
+      setElapsedSeconds((prev) => prev + 1);
+    }, 1000);
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, [selectedWorkshop, showResultScreen, timerExpired, timerRunning]);
+
+  useEffect(() => {
+    if (!selectedWorkshop) {
+      return;
+    }
+
+    if (sessionFinished && timerRunning) {
+      setTimerRunning(false);
+    }
+
+    if (sessionFinished && !reviewModeActive) {
+      setShowResultScreen(true);
+    }
+  }, [reviewModeActive, selectedWorkshop, sessionFinished, timerRunning]);
 
   const currentQuestionId = currentQuestion?.id ?? null;
   const selectedOptionId = currentQuestionId ? selectedOptionByQuestion[currentQuestionId] : undefined;
   const evaluation = currentQuestionId ? evaluationByQuestion[currentQuestionId] : undefined;
+  const currentQuestionEvaluated = Boolean(currentQuestionId && evaluationByQuestion[currentQuestionId]);
+  const canGoPrev = reviewModeActive ? reviewCursor > 0 : questionIndex > 0;
+  const canGoNext = reviewModeActive
+    ? reviewCursor < reviewQuestionIds.length - 1
+    : questionIndex < totalQuestions - 1;
+  const canAdvance = reviewModeActive
+    ? canGoNext
+    : totalQuestions > 0 && (!strictModeEnabled || currentQuestionEvaluated);
+  const canEvaluate = Boolean(selectedOptionId) && !submittingAnswer && !blockedByTimer;
+
+  useEffect(() => {
+    if (!currentQuestionId || showResultScreen) {
+      return;
+    }
+
+    setVisitedQuestionIds((prev) => (prev.includes(currentQuestionId) ? prev : [...prev, currentQuestionId]));
+  }, [currentQuestionId, showResultScreen]);
 
   const handleSelectOption = useCallback((optionId: string) => {
     if (!currentQuestion) {
@@ -469,7 +789,7 @@ export default function App() {
   }, [currentQuestion]);
 
   const handleEvaluate = useCallback(async () => {
-    if (!selectedWorkshop || !currentQuestion || !selectedOptionId) {
+    if (!selectedWorkshop || !currentQuestion || !selectedOptionId || blockedByTimer) {
       return;
     }
 
@@ -489,24 +809,181 @@ export default function App() {
         ...prev,
         [result.question_id]: result,
       }));
+
+      if (reviewModeActive && result.is_correct) {
+        const updatedReviewIds = reviewQuestionIds.filter((id) => id !== result.question_id);
+        setReviewQuestionIds(updatedReviewIds);
+
+        if (updatedReviewIds.length === 0) {
+          setReviewModeActive(false);
+          setShowResultScreen(true);
+          setResumeNotice('Repaso completado.');
+          return;
+        }
+
+        const nextCursor = Math.min(reviewCursor, updatedReviewIds.length - 1);
+        const nextQuestionId = updatedReviewIds[nextCursor];
+        const nextQuestionIndex = selectedWorkshop.questions.findIndex(
+          (question) => question.id === nextQuestionId,
+        );
+
+        setReviewCursor(nextCursor);
+        if (nextQuestionIndex >= 0) {
+          setQuestionIndex(nextQuestionIndex);
+        }
+      }
     } catch (error) {
       setErrorMessage(error instanceof Error ? error.message : 'No fue posible evaluar la respuesta.');
     } finally {
       setSubmittingAnswer(false);
     }
-  }, [baseUrl, currentQuestion, selectedOptionId, selectedWorkshop, token]);
+  }, [
+    baseUrl,
+    blockedByTimer,
+    currentQuestion,
+    reviewCursor,
+    reviewModeActive,
+    reviewQuestionIds,
+    selectedOptionId,
+    selectedWorkshop,
+    token,
+  ]);
 
   const goPrev = useCallback(() => {
+    if (!selectedWorkshop) {
+      return;
+    }
+
+    if (reviewModeActive) {
+      if (reviewQuestionIds.length === 0) {
+        return;
+      }
+      const nextCursor = Math.max(0, reviewCursor - 1);
+      const questionId = reviewQuestionIds[nextCursor];
+      const nextQuestionIndex = selectedWorkshop.questions.findIndex((question) => question.id === questionId);
+      setReviewCursor(nextCursor);
+      if (nextQuestionIndex >= 0) {
+        setQuestionIndex(nextQuestionIndex);
+      }
+      return;
+    }
+
     setQuestionIndex((prev) => Math.max(0, prev - 1));
-  }, []);
+  }, [reviewCursor, reviewModeActive, reviewQuestionIds, selectedWorkshop]);
 
   const goNext = useCallback(() => {
     if (!selectedWorkshop) {
       return;
     }
 
+    if (reviewModeActive) {
+      if (reviewQuestionIds.length === 0) {
+        return;
+      }
+      const nextCursor = Math.min(reviewQuestionIds.length - 1, reviewCursor + 1);
+      const questionId = reviewQuestionIds[nextCursor];
+      const nextQuestionIndex = selectedWorkshop.questions.findIndex((question) => question.id === questionId);
+      setReviewCursor(nextCursor);
+      if (nextQuestionIndex >= 0) {
+        setQuestionIndex(nextQuestionIndex);
+      }
+      return;
+    }
+
     setQuestionIndex((prev) => Math.min(selectedWorkshop.questions.length - 1, prev + 1));
-  }, [selectedWorkshop]);
+  }, [reviewCursor, reviewModeActive, reviewQuestionIds, selectedWorkshop]);
+
+  const openResultScreen = useCallback(() => {
+    setTimerRunning(false);
+    setShowResultScreen(true);
+  }, []);
+
+  const handleAdvance = useCallback(() => {
+    if (reviewModeActive) {
+      goNext();
+      return;
+    }
+
+    if (strictModeEnabled && !currentQuestionEvaluated) {
+      setResumeNotice('Modo examen activo: primero debes comprobar esta pregunta.');
+      return;
+    }
+
+    if (questionIndex >= totalQuestions - 1) {
+      openResultScreen();
+      return;
+    }
+
+    goNext();
+  }, [
+    currentQuestionEvaluated,
+    goNext,
+    openResultScreen,
+    questionIndex,
+    reviewModeActive,
+    strictModeEnabled,
+    totalQuestions,
+  ]);
+
+  const goToNextPending = useCallback(() => {
+    if (!selectedWorkshop || pendingQuestionIdsInOrder.length === 0) {
+      return;
+    }
+
+    const nextPendingId = pendingQuestionIdsInOrder[0];
+    const nextPendingIndex = selectedWorkshop.questions.findIndex((question) => question.id === nextPendingId);
+    if (nextPendingIndex < 0) {
+      return;
+    }
+
+    setReviewModeActive(false);
+    setReviewQuestionIds([]);
+    setReviewCursor(0);
+    setQuestionIndex(nextPendingIndex);
+    setShowResultScreen(false);
+    setResumeNotice(`Pendiente seleccionada: pregunta ${nextPendingIndex + 1}.`);
+  }, [pendingQuestionIdsInOrder, selectedWorkshop]);
+
+  const startWrongReview = useCallback(() => {
+    if (!selectedWorkshop || wrongQuestionIdsInOrder.length === 0) {
+      return;
+    }
+
+    const firstWrongId = wrongQuestionIdsInOrder[0];
+    const firstWrongIndex = selectedWorkshop.questions.findIndex((question) => question.id === firstWrongId);
+
+    setReviewModeActive(true);
+    setReviewQuestionIds(wrongQuestionIdsInOrder);
+    setReviewCursor(0);
+    if (firstWrongIndex >= 0) {
+      setQuestionIndex(firstWrongIndex);
+    }
+    setShowResultScreen(false);
+    setResumeNotice(`Repaso activo: ${wrongQuestionIdsInOrder.length} preguntas con error.`);
+  }, [selectedWorkshop, wrongQuestionIdsInOrder]);
+
+  const stopWrongReview = useCallback(() => {
+    setReviewModeActive(false);
+    setReviewQuestionIds([]);
+    setReviewCursor(0);
+    setShowResultScreen(true);
+  }, []);
+
+  const toggleStrictMode = useCallback(() => {
+    if (reviewModeActive) {
+      return;
+    }
+
+    setStrictModeEnabled((prev) => {
+      const next = !prev;
+      setResumeNotice(
+        next
+          ? 'Modo examen activo: no puedes avanzar sin comprobar.'
+          : 'Modo práctica activo: puedes navegar libremente.',
+      );
+      return next;
+    });
+  }, [reviewModeActive]);
 
   const title = selectedWorkshop
     ? `${selectedWorkshop.title} (${selectedWorkshop.stats.total_questions} preguntas)`
@@ -516,10 +993,21 @@ export default function App() {
     <SafeAreaView style={styles.safeArea}>
       <StatusBar style="light" />
       <ScrollView style={styles.root} contentContainerStyle={styles.rootContent}>
-        <Text style={styles.h1}>Ediprofe Mobile</Text>
-        <Text style={styles.subtitle}>Práctica guiada tipo Saber con retroalimentación inmediata.</Text>
+        <View style={styles.page}>
+          <View style={styles.heroCard}>
+            <Text style={styles.h1}>Ediprofe Mobile</Text>
+            <Text style={styles.subtitle}>Práctica guiada tipo Saber con retroalimentación inmediata.</Text>
+            <View style={styles.heroBadges}>
+              <Text style={[styles.heroBadge, token ? styles.heroBadgeOk : styles.heroBadgeWarn]}>
+                {token ? 'Sesión activa' : 'Sesión anónima'}
+              </Text>
+              <Text style={[styles.heroBadge, strictModeEnabled ? styles.heroBadgeOk : styles.heroBadgeInfo]}>
+                {strictModeEnabled ? 'Modo examen ON' : 'Modo práctica'}
+              </Text>
+            </View>
+          </View>
 
-        <View style={styles.panel}>
+          <View style={styles.panel}>
           <Text style={styles.label}>API Base URL</Text>
           <TextInput
             style={styles.input}
@@ -562,10 +1050,23 @@ export default function App() {
           </View>
 
           <Text style={styles.meta}>Token: {token ? 'activo' : 'anónimo'}</Text>
+          {detectedLanBaseUrl && baseUrl.trim() !== detectedLanBaseUrl ? (
+            <View style={styles.detectedUrlRow}>
+              <Text style={styles.detectedUrlText}>URL detectada: {detectedLanBaseUrl}</Text>
+              <Pressable style={styles.detectedUrlButton} onPress={() => setBaseUrl(detectedLanBaseUrl)}>
+                <Text style={styles.detectedUrlButtonText}>Usar detectada</Text>
+              </Pressable>
+            </View>
+          ) : null}
+          {apiLooksLoopback ? (
+            <Text style={styles.warning}>
+              En celular no uses 127.0.0.1/localhost. Usa la IP LAN de tu Mac.
+            </Text>
+          ) : null}
           {errorMessage ? <Text style={styles.error}>{errorMessage}</Text> : null}
         </View>
 
-        <View style={styles.panel}>
+          <View style={styles.panel}>
           <Text style={styles.sectionTitle}>Catálogo</Text>
           {loadingCatalog ? <ActivityIndicator color="#9ac0ff" style={styles.loader} /> : null}
           <FlatList
@@ -585,9 +1086,9 @@ export default function App() {
               </View>
             )}
           />
-        </View>
+          </View>
 
-        <View style={styles.panel}>
+          <View style={styles.panel}>
           <Text style={styles.sectionTitle}>{title}</Text>
 
           {loadingWorkshop ? <ActivityIndicator color="#9ac0ff" style={styles.loader} /> : null}
@@ -610,13 +1111,108 @@ export default function App() {
             </View>
           ) : null}
 
-          {selectedWorkshop && currentQuestion ? (
+          {selectedWorkshop ? (
+            <View style={styles.modeRow}>
+              <View style={styles.modeTextWrap}>
+                <Text style={styles.modeTitle}>Modo examen</Text>
+                <Text style={styles.modeDescription}>
+                  {strictModeEnabled
+                    ? `Activo · tiempo fijo ${formatDuration(sessionDurationSeconds)} · avance bloqueado sin comprobar`
+                    : 'Desactivado · modo práctica con navegación libre'}
+                </Text>
+              </View>
+              <Pressable
+                style={[
+                  styles.modeToggle,
+                  strictModeEnabled ? styles.modeToggleOn : styles.modeToggleOff,
+                  reviewModeActive ? styles.controlDisabled : null,
+                ]}
+                onPress={toggleStrictMode}
+                disabled={reviewModeActive}
+              >
+                <Text style={styles.modeToggleText}>{strictModeEnabled ? 'ON' : 'OFF'}</Text>
+              </Pressable>
+            </View>
+          ) : null}
+
+          {selectedWorkshop && showResultScreen ? (
+            <View style={styles.resultScreenCard}>
+              <View style={styles.resultHeader}>
+                <Text style={styles.resultTitle}>
+                  {sessionCompleted ? 'Resultado final' : 'Resultado parcial'}
+                </Text>
+                <Text style={styles.resultScore}>{scorePercent}%</Text>
+              </View>
+              <Text style={styles.resultMeta}>
+                Tiempo: {formatDuration(elapsedSeconds)} / {formatDuration(sessionDurationSeconds)}
+              </Text>
+              <Text style={styles.resultMeta}>
+                {correctCount} correctas · {wrongCount} incorrectas · {pendingEvaluationCount} sin comprobar
+              </Text>
+              <Text style={styles.resultMeta}>
+                {visitedCount} visitadas · {pendingVisitCount} por visitar
+              </Text>
+              {timerExpired ? <Text style={styles.timerExpiredText}>Tiempo agotado para esta sesión.</Text> : null}
+              <Text style={styles.resultRecommendationTitle}>{sessionRecommendation.title}</Text>
+              <Text style={styles.resultRecommendationText}>{sessionRecommendation.detail}</Text>
+
+              <View style={styles.resultActionsRow}>
+                <Pressable
+                  style={[
+                    styles.resultActionButton,
+                    pendingQuestionIdsInOrder.length === 0 ? styles.controlDisabled : null,
+                  ]}
+                  onPress={goToNextPending}
+                  disabled={pendingQuestionIdsInOrder.length === 0}
+                >
+                  <Text style={styles.resultActionText}>
+                    Resolver pendientes ({pendingQuestionIdsInOrder.length})
+                  </Text>
+                </Pressable>
+                <Pressable
+                  style={[
+                    styles.resultActionButton,
+                    wrongQuestionIdsInOrder.length === 0 ? styles.controlDisabled : null,
+                  ]}
+                  onPress={startWrongReview}
+                  disabled={wrongQuestionIdsInOrder.length === 0}
+                >
+                  <Text style={styles.resultActionText}>
+                    Repasar incorrectas ({wrongQuestionIdsInOrder.length})
+                  </Text>
+                </Pressable>
+                <Pressable style={styles.resultActionButtonSecondary} onPress={() => setShowResultScreen(false)}>
+                  <Text style={styles.resultActionText}>Volver a preguntas</Text>
+                </Pressable>
+                <Pressable style={styles.resultActionButtonSecondary} onPress={() => void handleResetProgress()}>
+                  <Text style={styles.resultActionText}>Reiniciar sesión</Text>
+                </Pressable>
+              </View>
+            </View>
+          ) : null}
+
+          {selectedWorkshop && currentQuestion && !showResultScreen ? (
             <View style={styles.practiceCard}>
               <View style={styles.progressHeader}>
                 <Text style={styles.progressTitle}>
-                  Pregunta {questionIndex + 1} de {totalQuestions}
+                  {reviewModeActive
+                    ? `Repaso ${reviewCursor + 1} de ${reviewQuestionIds.length}`
+                    : `Pregunta ${questionIndex + 1} de ${totalQuestions}`}
                 </Text>
                 <Text style={styles.progressCounter}>{Math.round(progressValue * 100)}%</Text>
+              </View>
+              <View style={styles.metricsRow}>
+                <Text style={[styles.metricPill, styles.metricGood]}>Correctas: {correctCount}</Text>
+                <Text style={[styles.metricPill, styles.metricBad]}>Incorrectas: {wrongCount}</Text>
+                <Text style={[styles.metricPill, styles.metricPending]}>
+                  Sin comprobar: {pendingEvaluationCount}
+                </Text>
+                <Text style={[styles.metricPill, styles.metricVisit]}>
+                  Por visitar: {pendingVisitCount}
+                </Text>
+                <Text style={[styles.metricPill, timerExpired ? styles.metricBad : styles.metricTimer]}>
+                  Tiempo: {formatDuration(remainingSeconds)}
+                </Text>
               </View>
 
               <View style={styles.progressTrack}>
@@ -624,10 +1220,23 @@ export default function App() {
               </View>
               <View style={styles.resumeRow}>
                 <Text style={styles.resumeText}>{resumeNotice ?? ' '}</Text>
-                <Pressable style={styles.resetProgressButton} onPress={() => void handleResetProgress()}>
-                  <Text style={styles.resetProgressText}>Reiniciar progreso</Text>
-                </Pressable>
+                <View style={styles.resumeActions}>
+                  {reviewModeActive ? (
+                    <Pressable style={styles.resetProgressButton} onPress={stopWrongReview}>
+                      <Text style={styles.resetProgressText}>Salir repaso</Text>
+                    </Pressable>
+                  ) : null}
+                  <Pressable style={styles.resetProgressButton} onPress={() => void handleResetProgress()}>
+                    <Text style={styles.resetProgressText}>Reiniciar progreso</Text>
+                  </Pressable>
+                </View>
               </View>
+
+              {blockedByTimer ? (
+                <Text style={styles.timerExpiredText}>
+                  Tiempo agotado. Revisa resultados o inicia repaso de incorrectas.
+                </Text>
+              ) : null}
 
               <QuestionStem
                 stem={currentQuestion.stem_mdx ?? ''}
@@ -664,35 +1273,44 @@ export default function App() {
 
               <View style={styles.controlsRow}>
                 <Pressable
-                  style={[styles.controlButton, questionIndex === 0 ? styles.controlDisabled : null]}
+                  style={[styles.controlButton, !canGoPrev ? styles.controlDisabled : null]}
                   onPress={goPrev}
-                  disabled={questionIndex === 0}
+                  disabled={!canGoPrev}
                 >
                   <Text style={styles.buttonText}>Anterior</Text>
                 </Pressable>
 
                 <Pressable
-                  style={[
-                    styles.controlButtonPrimary,
-                    !selectedOptionId || submittingAnswer ? styles.controlDisabled : null,
-                  ]}
+                  style={[styles.controlButtonPrimary, !canEvaluate ? styles.controlDisabled : null]}
                   onPress={handleEvaluate}
-                  disabled={!selectedOptionId || submittingAnswer}
+                  disabled={!canEvaluate}
                 >
-                  <Text style={styles.buttonText}>{submittingAnswer ? 'Comprobando...' : 'Comprobar'}</Text>
+                  <Text style={styles.buttonText}>
+                    {submittingAnswer ? 'Comprobando...' : blockedByTimer ? 'Tiempo agotado' : 'Comprobar'}
+                  </Text>
                 </Pressable>
 
                 <Pressable
-                  style={[
-                    styles.controlButton,
-                    questionIndex >= totalQuestions - 1 ? styles.controlDisabled : null,
-                  ]}
-                  onPress={goNext}
-                  disabled={questionIndex >= totalQuestions - 1}
+                  style={[styles.controlButton, !canAdvance ? styles.controlDisabled : null]}
+                  onPress={handleAdvance}
+                  disabled={!canAdvance}
                 >
-                  <Text style={styles.buttonText}>Siguiente</Text>
+                  <Text style={styles.buttonText}>
+                    {reviewModeActive
+                      ? 'Siguiente'
+                      : strictModeEnabled && !currentQuestionEvaluated
+                        ? 'Comprobar primero'
+                      : questionIndex >= totalQuestions - 1
+                        ? 'Resultados'
+                        : 'Siguiente'}
+                  </Text>
                 </Pressable>
               </View>
+              {!reviewModeActive && !strictModeEnabled ? (
+                <Pressable style={styles.finishSessionButton} onPress={openResultScreen}>
+                  <Text style={styles.finishSessionText}>Finalizar sesión y ver resultados</Text>
+                </Pressable>
+              ) : null}
 
               {evaluation ? (
                 <View style={[styles.feedbackCard, evaluation.is_correct ? styles.feedbackOk : styles.feedbackBad]}>
@@ -708,6 +1326,7 @@ export default function App() {
               ) : null}
             </View>
           ) : null}
+          </View>
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -723,26 +1342,67 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   rootContent: {
-    padding: 14,
-    gap: 12,
+    padding: 16,
     paddingBottom: 30,
   },
+  page: {
+    width: '100%',
+    maxWidth: 1100,
+    alignSelf: 'center',
+    gap: 12,
+  },
+  heroCard: {
+    borderWidth: 1,
+    borderColor: '#2a4275',
+    borderRadius: 16,
+    backgroundColor: '#0a1530',
+    paddingHorizontal: 14,
+    paddingVertical: 12,
+    gap: 6,
+  },
   h1: {
-    color: '#f1f5ff',
-    fontSize: 30,
+    color: '#f4f7ff',
+    fontSize: 29,
     fontWeight: '900',
   },
   subtitle: {
-    color: '#95a6cf',
+    color: '#a7badf',
     fontSize: 13,
+    lineHeight: 19,
+  },
+  heroBadges: {
+    marginTop: 2,
+    flexDirection: 'row',
+    gap: 8,
+    flexWrap: 'wrap',
+  },
+  heroBadge: {
+    borderRadius: 999,
+    paddingHorizontal: 10,
+    paddingVertical: 4,
+    fontSize: 11,
+    fontWeight: '800',
+    overflow: 'hidden',
+  },
+  heroBadgeOk: {
+    color: '#9df0ca',
+    backgroundColor: 'rgba(59, 201, 132, 0.18)',
+  },
+  heroBadgeWarn: {
+    color: '#ffd9a0',
+    backgroundColor: 'rgba(225, 159, 47, 0.18)',
+  },
+  heroBadgeInfo: {
+    color: '#a5d0ff',
+    backgroundColor: 'rgba(69, 141, 234, 0.2)',
   },
   panel: {
     borderWidth: 1,
-    borderColor: '#22345d',
+    borderColor: '#2a4275',
     borderRadius: 16,
     padding: 12,
     gap: 10,
-    backgroundColor: '#0c1631',
+    backgroundColor: '#0b1734',
   },
   label: {
     color: '#dce6ff',
@@ -771,8 +1431,36 @@ const styles = StyleSheet.create({
     color: '#9ab0db',
     fontSize: 12,
   },
+  detectedUrlRow: {
+    marginTop: 2,
+    gap: 8,
+  },
+  detectedUrlText: {
+    color: '#93c7ff',
+    fontSize: 12,
+    lineHeight: 18,
+  },
+  detectedUrlButton: {
+    alignSelf: 'flex-start',
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: '#3264c4',
+    backgroundColor: '#152c5d',
+    paddingHorizontal: 10,
+    paddingVertical: 7,
+  },
+  detectedUrlButtonText: {
+    color: '#d5e6ff',
+    fontSize: 12,
+    fontWeight: '700',
+  },
   error: {
     color: '#ff9aa4',
+    fontSize: 12,
+    lineHeight: 18,
+  },
+  warning: {
+    color: '#ffd39a',
     fontSize: 12,
     lineHeight: 18,
   },
@@ -826,6 +1514,54 @@ const styles = StyleSheet.create({
     fontSize: 13,
     lineHeight: 20,
   },
+  modeRow: {
+    borderWidth: 1,
+    borderColor: '#304978',
+    borderRadius: 12,
+    backgroundColor: '#0a1732',
+    paddingHorizontal: 10,
+    paddingVertical: 9,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    gap: 10,
+  },
+  modeTextWrap: {
+    flex: 1,
+    gap: 2,
+  },
+  modeTitle: {
+    color: '#eef4ff',
+    fontSize: 13,
+    fontWeight: '800',
+  },
+  modeDescription: {
+    color: '#a8bde6',
+    fontSize: 11,
+    lineHeight: 16,
+  },
+  modeToggle: {
+    borderRadius: 999,
+    borderWidth: 1,
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    minWidth: 54,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  modeToggleOn: {
+    borderColor: '#55d89d',
+    backgroundColor: 'rgba(49, 186, 122, 0.2)',
+  },
+  modeToggleOff: {
+    borderColor: '#406399',
+    backgroundColor: 'rgba(53, 85, 142, 0.2)',
+  },
+  modeToggleText: {
+    color: '#e7f0ff',
+    fontSize: 11,
+    fontWeight: '800',
+  },
   practiceCard: {
     borderWidth: 1,
     borderColor: '#2a3c67',
@@ -860,11 +1596,49 @@ const styles = StyleSheet.create({
     borderRadius: 999,
     backgroundColor: '#3f86ff',
   },
+  metricsRow: {
+    flexDirection: 'row',
+    gap: 6,
+    flexWrap: 'wrap',
+  },
+  metricPill: {
+    borderRadius: 999,
+    paddingHorizontal: 8,
+    paddingVertical: 3,
+    fontSize: 11,
+    fontWeight: '700',
+    overflow: 'hidden',
+  },
+  metricGood: {
+    color: '#9df0ca',
+    backgroundColor: 'rgba(59, 201, 132, 0.18)',
+  },
+  metricBad: {
+    color: '#ffb0b8',
+    backgroundColor: 'rgba(210, 80, 100, 0.2)',
+  },
+  metricPending: {
+    color: '#98c2ff',
+    backgroundColor: 'rgba(74, 132, 226, 0.2)',
+  },
+  metricVisit: {
+    color: '#b9ddff',
+    backgroundColor: 'rgba(56, 108, 187, 0.26)',
+  },
+  metricTimer: {
+    color: '#f0d79a',
+    backgroundColor: 'rgba(240, 190, 93, 0.2)',
+  },
   resumeRow: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     gap: 10,
+  },
+  resumeActions: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
   },
   resumeText: {
     flex: 1,
@@ -919,6 +1693,20 @@ const styles = StyleSheet.create({
     gap: 8,
     marginTop: 2,
   },
+  finishSessionButton: {
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: '#3a5f9f',
+    backgroundColor: 'rgba(38, 63, 109, 0.45)',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 10,
+  },
+  finishSessionText: {
+    color: '#d5e4ff',
+    fontWeight: '800',
+    fontSize: 12,
+  },
   controlButton: {
     flex: 1,
     borderRadius: 10,
@@ -955,6 +1743,77 @@ const styles = StyleSheet.create({
   feedbackTitle: {
     color: '#f4f8ff',
     fontSize: 14,
+    fontWeight: '800',
+  },
+  timerExpiredText: {
+    color: '#ffb6bd',
+    fontSize: 12,
+    lineHeight: 18,
+    fontWeight: '700',
+  },
+  resultScreenCard: {
+    borderWidth: 1,
+    borderColor: '#385b97',
+    borderRadius: 14,
+    backgroundColor: '#0a1737',
+    padding: 12,
+    gap: 8,
+  },
+  resultHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    gap: 10,
+  },
+  resultTitle: {
+    color: '#f3f6ff',
+    fontSize: 14,
+    fontWeight: '800',
+  },
+  resultScore: {
+    color: '#d4e5ff',
+    fontSize: 14,
+    fontWeight: '900',
+  },
+  resultMeta: {
+    color: '#c0d1f2',
+    fontSize: 12,
+  },
+  resultRecommendationTitle: {
+    color: '#f3f6ff',
+    fontSize: 13,
+    fontWeight: '700',
+  },
+  resultRecommendationText: {
+    color: '#c7d6f4',
+    fontSize: 12,
+    lineHeight: 18,
+  },
+  resultActionsRow: {
+    marginTop: 2,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 8,
+  },
+  resultActionButton: {
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: '#3f86ff',
+    backgroundColor: 'rgba(59, 114, 216, 0.2)',
+    paddingHorizontal: 10,
+    paddingVertical: 8,
+  },
+  resultActionButtonSecondary: {
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: '#325081',
+    backgroundColor: 'rgba(25, 45, 81, 0.45)',
+    paddingHorizontal: 10,
+    paddingVertical: 8,
+  },
+  resultActionText: {
+    color: '#d9e7ff',
+    fontSize: 11,
     fontWeight: '800',
   },
 });

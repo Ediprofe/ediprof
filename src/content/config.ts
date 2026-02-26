@@ -13,6 +13,9 @@ const saberSchema = z.object({
   area: z.string().optional(),
   unidad: z.string().optional(),
   total_preguntas: z.number().optional(),
+  access: z.enum(['free', 'premium', 'public', 'paid']).optional(),
+  tier: z.enum(['free', 'premium', 'public', 'paid']).optional(),
+  access_tier: z.enum(['free', 'premium', 'public', 'paid']).optional(),
   draft: z.boolean().optional().default(true), // Por defecto en draft
 });
 

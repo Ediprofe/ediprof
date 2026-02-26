@@ -26,11 +26,38 @@ type LoginPayload = {
 };
 
 function normalizeBaseUrl(url: string): string {
-  return url.replace(/\/$/, '');
+  const trimmed = url.trim().replace(/\s+/g, '');
+  return trimmed.replace(/\/+$/, '');
 }
 
 async function parseJson<T>(response: Response): Promise<T> {
   return (await response.json()) as T;
+}
+
+async function apiFetch(
+  rawUrl: string,
+  init?: RequestInit,
+  timeoutMs = 15000,
+): Promise<Response> {
+  const controller = new AbortController();
+  const timer = setTimeout(() => {
+    controller.abort();
+  }, timeoutMs);
+
+  try {
+    return await fetch(rawUrl, {
+      ...init,
+      signal: controller.signal,
+    });
+  } catch (error) {
+    if (error instanceof Error && error.name === 'AbortError') {
+      throw new Error(`Network request timed out: ${rawUrl}`);
+    }
+
+    throw new Error(`Network request failed: ${rawUrl}`);
+  } finally {
+    clearTimeout(timer);
+  }
 }
 
 function toErrorMessage(payload: unknown, fallback: string): string {
@@ -62,7 +89,7 @@ function toApiRequestError(
 
 export async function login(baseUrl: string, payload: LoginPayload): Promise<AuthSession> {
   const url = `${normalizeBaseUrl(baseUrl)}/auth/login`;
-  const response = await fetch(url, {
+  const response = await apiFetch(url, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -95,7 +122,7 @@ export async function login(baseUrl: string, payload: LoginPayload): Promise<Aut
 export async function listWorkshops(baseUrl: string, token?: string): Promise<WorkshopListResponse> {
   // Dev-first for current content state: workshops are mostly drafts.
   const url = `${normalizeBaseUrl(baseUrl)}/workshops?published=false&per_page=30`;
-  const response = await fetch(url, {
+  const response = await apiFetch(url, {
     headers: token
       ? {
           Authorization: `Bearer ${token}`,
@@ -125,7 +152,7 @@ export async function getWorkshop(
   const url =
     `${normalizeBaseUrl(baseUrl)}/workshops/${encodedId}` +
     '?published_only=false&include_answers=false&format=app';
-  const response = await fetch(url, {
+  const response = await apiFetch(url, {
     headers: token
       ? {
           Authorization: `Bearer ${token}`,
@@ -159,7 +186,7 @@ export async function evaluateWorkshopAnswer(
     `${normalizeBaseUrl(baseUrl)}/workshops/${encodedWorkshopId}` +
     `/questions/${encodedQuestionId}/evaluate?published_only=false&format=app`;
 
-  const response = await fetch(url, {
+  const response = await apiFetch(url, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -185,7 +212,7 @@ export async function evaluateWorkshopAnswer(
 
 export async function getCurrentUser(baseUrl: string, token: string): Promise<void> {
   const url = `${normalizeBaseUrl(baseUrl)}/auth/me`;
-  const response = await fetch(url, {
+  const response = await apiFetch(url, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -199,7 +226,7 @@ export async function getCurrentUser(baseUrl: string, token: string): Promise<vo
 
 export async function logout(baseUrl: string, token: string): Promise<void> {
   const url = `${normalizeBaseUrl(baseUrl)}/auth/logout`;
-  await fetch(url, {
+  await apiFetch(url, {
     method: 'POST',
     headers: {
       Authorization: `Bearer ${token}`,

@@ -13,6 +13,18 @@ import { cleanSlug } from '../../utils/navigation-generator.js';
 import '../../styles/saber/preguntas-icfes.css';
 
 export async function getStaticPaths() {
+  function resolveAccessTier(entry: any): 'free' | 'premium' {
+    const raw = String(entry?.data?.access_tier || entry?.data?.access || entry?.data?.tier || '')
+      .toLowerCase()
+      .trim();
+
+    if (raw === 'free' || raw === 'public') {
+      return 'free';
+    }
+
+    return 'premium';
+  }
+
   // Helper para extraer título del primer H1 del markdown
   function extractTitleFromBody(body: string): string | null {
     const match = body?.match(/^#\s+(.+)$/m);
@@ -29,22 +41,22 @@ export async function getStaticPaths() {
 
   const allTalleres: Array<{ taller: any; area: string; fullSlug: string; cleanFullSlug: string }> = [];
 
-  try {
-    const talleres = await getCollection('saber');
+  const talleres = await getCollection('saber');
 
-    talleres.forEach((taller: any) => {
-      // Extraer el área del slug (primer segmento)
-      const slugParts = taller.slug.split('/');
-      const area = slugParts[0] || 'general';
+  talleres.forEach((taller: any) => {
+    if (resolveAccessTier(taller) !== 'free') {
+      return;
+    }
 
-      const fullSlug = taller.slug;
-      const cleanFullSlug = cleanSlug(taller.slug);
+    // Extraer el área del slug (primer segmento)
+    const slugParts = taller.slug.split('/');
+    const area = slugParts[0] || 'general';
 
-      allTalleres.push({ taller, area, fullSlug, cleanFullSlug });
-    });
-  } catch (e) {
-    console.log('No se encontró la colección saber o está vacía');
-  }
+    const fullSlug = taller.slug;
+    const cleanFullSlug = cleanSlug(taller.slug);
+
+    allTalleres.push({ taller, area, fullSlug, cleanFullSlug });
+  });
 
   // Ordenar por slug
   allTalleres.sort((a, b) => a.fullSlug.localeCompare(b.fullSlug));

@@ -9,6 +9,18 @@ import { cleanSlug, formatName } from "../../utils/navigation-generator.js";
 // Obtener todos los talleres de la colección 'saber'
 const talleres = await getCollection("saber");
 
+function resolveAccessTier(entry: any): "free" | "premium" {
+    const raw = String(entry?.data?.access_tier || entry?.data?.access || entry?.data?.tier || "")
+        .toLowerCase()
+        .trim();
+
+    if (raw === "free" || raw === "public") {
+        return "free";
+    }
+
+    return "premium";
+}
+
 // Organizar talleres por Área (materia)
 const talleresPorArea = talleres.reduce((acc: any, taller: any) => {
     const parts = taller.slug.split("/");
@@ -24,11 +36,13 @@ const talleresPorArea = talleres.reduce((acc: any, taller: any) => {
     // Extraer título del frontmatter o del primer H1
     const title = taller.data.title || "Taller de Práctica";
     const slug = cleanSlug(taller.slug);
+    const accessTier = resolveAccessTier(taller);
 
     acc[areaKey].items.push({
         title,
-        slug: `/saber/${slug}`,
+        slug: accessTier === "free" ? `/saber/${slug}` : "/miembros/login",
         unidad: formatName(parts[1] || ""),
+        accessTier,
     });
 
     return acc;
@@ -68,6 +82,9 @@ const areas = Object.values(talleresPorArea);
                                             </span>
                                             <span class="taller-unidad">
                                                 {taller.unidad}
+                                            </span>
+                                            <span class={`taller-access ${taller.accessTier === "free" ? "free" : "premium"}`}>
+                                                {taller.accessTier === "free" ? "Gratis" : "Premium miembros"}
                                             </span>
                                         </a>
                                     </li>
@@ -165,5 +182,26 @@ const areas = Object.values(talleresPorArea);
     .taller-unidad {
         font-size: 0.85rem;
         color: var(--text-secondary);
+    }
+
+    .taller-access {
+        display: inline-flex;
+        align-items: center;
+        width: fit-content;
+        margin-top: 0.45rem;
+        font-size: 0.78rem;
+        border-radius: 999px;
+        border: 1px solid var(--border-color);
+        padding: 0.15rem 0.5rem;
+    }
+
+    .taller-access.free {
+        border-color: #27ae60;
+        color: #27ae60;
+    }
+
+    .taller-access.premium {
+        border-color: #d4ac0d;
+        color: #b9770e;
     }
 </style>

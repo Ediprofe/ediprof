@@ -14,7 +14,10 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.ediprofe.mobile"
+      "bundleIdentifier": "com.ediprofe.mobile",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "package": "com.ediprofe.mobile"
@@ -24,6 +27,12 @@
     },
     "plugins": [
       "expo-asset"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "a917fd5d-93c9-4e0b-b822-f5880329b534"
+      }
+    },
+    "owner": "ediprofe"
   }
 }

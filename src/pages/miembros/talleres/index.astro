@@ -1,0 +1,161 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Layout/Header.astro';
+import Footer from '../../../components/Layout/Footer.astro';
+import SectionHeader from '../../../components/UI/SectionHeader.astro';
+import '../../../styles/members.css';
+---
+
+<BaseLayout title="Miembros | Talleres" showTopBar={false}>
+  <div class="members-hub">
+    <Header />
+
+    <main class="members-container">
+      <SectionHeader
+        badge="Práctica"
+        title="Talleres Premium"
+        description="Selecciona un taller tipo Saber y practica con retroalimentación inmediata."
+      />
+
+      <section class="members-card">
+        <div class="members-actions" style="margin-bottom: 0.8rem;">
+          <a class="members-button secondary" href="/miembros">Volver al panel</a>
+        </div>
+        <div id="feedback"></div>
+        <div id="summary"></div>
+        <div id="workshops" class="members-list"></div>
+      </section>
+    </main>
+
+    <Footer />
+  </div>
+</BaseLayout>
+
+<script>
+  import { apiMe, apiWorkshops, clearSession, getSessionToken, saveSession } from '../../../scripts/members/client';
+
+  const token = getSessionToken();
+  if (!token) {
+    window.location.href = '/miembros/login';
+  }
+
+  const feedback = document.getElementById('feedback');
+  const summary = document.getElementById('summary');
+  const workshopsWrap = document.getElementById('workshops');
+  const LAST_WORKSHOP_KEY = 'ediprofe_member_last_workshop';
+
+  function toBase64Url(value) {
+    const utf8 = encodeURIComponent(value).replace(/%([0-9A-F]{2})/g, (_, p1) =>
+      String.fromCharCode(Number.parseInt(p1, 16))
+    );
+
+    return btoa(utf8).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/g, '');
+  }
+
+  function escapeHtml(value) {
+    return String(value ?? '')
+      .replaceAll('&', '&amp;')
+      .replaceAll('<', '&lt;')
+      .replaceAll('>', '&gt;')
+      .replaceAll('"', '&quot;')
+      .replaceAll("'", '&#039;');
+  }
+
+  async function boot() {
+    try {
+      const me = await apiMe();
+      const user = me?.data?.user;
+      if (!user) {
+        throw new Error('Sesión inválida.');
+      }
+
+      saveSession(token, user);
+
+      if (user.member_status !== 'approved' && user.role !== 'admin') {
+        feedback.innerHTML = `
+          <div class="members-alert">
+            Tu cuenta está en estado <strong>${user.member_status}</strong>. Aún no tienes acceso a talleres premium.
+          </div>
+        `;
+        return;
+      }
+
+      const response = await apiWorkshops();
+      const items = Array.isArray(response?.data) ? response.data : [];
+
+      if (items.length === 0) {
+        workshopsWrap.innerHTML = '<div class="members-alert">No hay talleres disponibles.</div>';
+        return;
+      }
+
+      const withAccess = items.filter((item) => item.can_access);
+      const totalQuestions = withAccess.reduce((acc, item) => acc + Number(item?.stats?.total_questions || 0), 0);
+      summary.innerHTML = `
+        <div class="members-grid" style="margin-bottom:0.85rem;">
+          <article class="members-item">
+            <h4>Talleres publicados</h4>
+            <p>${items.length}</p>
+          </article>
+          <article class="members-item">
+            <h4>Con acceso ahora</h4>
+            <p>${withAccess.length}</p>
+          </article>
+          <article class="members-item">
+            <h4>Preguntas para practicar</h4>
+            <p>${totalQuestions}</p>
+          </article>
+        </div>
+      `;
+
+      workshopsWrap.innerHTML = items
+        .map((item) => {
+          const link = `/miembros/talleres/${toBase64Url(item.id)}`;
+          const badge = item.can_access
+            ? '<span class="members-pill approved">Con acceso</span>'
+            : '<span class="members-pill pending">Sin acceso</span>';
+
+          return `
+            <article class="members-item">
+              <h4>${escapeHtml(item.title)}</h4>
+              <p>${escapeHtml(item.area_slug || 'general')} · ${Number(item.stats?.total_questions || 0)} preguntas</p>
+              <div class="members-actions" style="margin-top:0.55rem;">
+                ${badge}
+                <a
+                  class="members-button ${item.can_access ? '' : 'secondary'}"
+                  href="${item.can_access ? link : '#'}"
+                  data-link="${escapeHtml(link)}"
+                  data-title="${escapeHtml(item.title)}"
+                  ${
+            item.can_access ? '' : 'onclick="return false;"'
+          }>
+                  ${item.can_access ? 'Practicar' : 'Bloqueado'}
+                </a>
+              </div>
+            </article>
+          `;
+        })
+        .join('');
+
+      workshopsWrap.querySelectorAll('a[data-link]').forEach((anchor) => {
+        anchor.addEventListener('click', () => {
+          const link = anchor.getAttribute('data-link');
+          const title = anchor.getAttribute('data-title');
+          if (!link) return;
+          window.localStorage.setItem(
+            LAST_WORKSHOP_KEY,
+            JSON.stringify({
+              link,
+              title: title || 'Taller',
+              at: Date.now(),
+            })
+          );
+        });
+      });
+    } catch (error) {
+      clearSession();
+      window.location.href = '/miembros/login';
+    }
+  }
+
+  boot();
+</script>

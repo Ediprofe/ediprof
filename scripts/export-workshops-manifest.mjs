@@ -127,15 +127,64 @@ function stripHtmlTags(text) {
     .trim();
 }
 
-function cleanInlineMarkdown(value) {
+function toSubscriptDigits(value) {
+  const digits = {
+    '0': '₀',
+    '1': '₁',
+    '2': '₂',
+    '3': '₃',
+    '4': '₄',
+    '5': '₅',
+    '6': '₆',
+    '7': '₇',
+    '8': '₈',
+    '9': '₉',
+  };
+
   return String(value || '')
-    .replace(/__(.*?)__/g, '$1')
+    .split('')
+    .map((char) => digits[char] ?? char)
+    .join('');
+}
+
+function normalizeLatexInlineText(value) {
+  return String(value || '')
+    .replace(/\\([%$#&{}])/g, '$1')
+    .replace(/\\_/g, '_')
+    .replace(/\\+text\s*\{([^}]*)\}/g, '$1')
+    .replace(/\\+rightarrow/g, '→')
+    .replace(/\brightarrow\b/gi, '→')
+    .replace(/\bightarrow\b/gi, '→')
+    .replace(/\barrow\b/gi, '→')
+    .replace(/\\+times/g, '×')
+    .replace(/\\+cdot/g, '·')
+    .replace(/([A-Za-z0-9\)])_\\?\{([0-9]+)\}/g, (_m, base, digits) => `${base}${toSubscriptDigits(digits)}`)
+    .replace(/([A-Za-z0-9\)])_([0-9]+)/g, (_m, base, digits) => `${base}${toSubscriptDigits(digits)}`)
+    .replace(/\\(?=\s)/g, '');
+}
+
+function cleanInlineMarkdown(value) {
+  const markdownCleaned = String(value || '')
     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1')
     .replace(/`([^`]+)`/g, '$1')
-    .replace(/\\rightarrow/g, '→')
-    .replace(/\\times/g, '×')
-    .replace(/\\cdot/g, '·')
     .replace(/\$([^$]+)\$/g, '$1')
+    .replace(/\\left|\\right/g, '')
+    .replace(/\\,/g, ' ')
+    .replace(/\\;/g, ' ')
+    .replace(/\\:/g, ' ')
+    .replace(/\\!/g, '');
+
+  return normalizeLatexInlineText(markdownCleaned).replace(/\s+/g, ' ').trim();
+}
+
+function normalizeMathForDisplay(value) {
+  return normalizeLatexInlineText(value)
+    .replace(/\rightarrow/gi, '→')
+    .replace(/\brightarrow\b/gi, '→')
+    .replace(/\bightarrow\b/gi, '→')
+    .replace(/\barrow\b/gi, '→')
+    .replace(/\\left|\\right/g, '')
+    .replace(/\s+/g, ' ')
     .trim();
 }
 
@@ -226,6 +275,79 @@ function parseImageLine(line) {
   return { alt, url };
 }
 
+function isUnorderedListLine(line) {
+  return /^[-*]\s+/.test(String(line || '').trim());
+}
+
+function isOrderedListLine(line) {
+  return /^\d+\.\s+/.test(String(line || '').trim());
+}
+
+function parseListItemText(line) {
+  return String(line || '')
+    .trim()
+    .replace(/^[-*]\s+/, '')
+    .replace(/^\d+\.\s+/, '')
+    .trim();
+}
+
+function isStructuralHtmlLine(line) {
+  const normalized = String(line || '').trim();
+  return /^<\/?div\b[^>]*>$/i.test(normalized);
+}
+
+function buildContextPayload(content) {
+  const contextMdx = String(content || '').trim();
+  if (!contextMdx) {
+    return {
+      context_mdx: '',
+      context_assets: [],
+      context_blocks: [],
+    };
+  }
+
+  const contextAssets = extractAssetRefs(contextMdx);
+
+  return {
+    context_mdx: contextMdx,
+    context_assets: contextAssets,
+    context_blocks: buildBlocks(contextMdx, contextAssets),
+  };
+}
+
+function normalizeDetachedContext(rawContext) {
+  const lines = String(rawContext || '').replace(/\r\n/g, '\n').split('\n');
+  const kept = lines.filter((raw) => {
+    const line = raw.trim();
+    if (!line) return false;
+    if (isStructuralHtmlLine(line)) return false;
+    if (line === '---') return false;
+    return true;
+  });
+
+  return kept.join('\n').trim();
+}
+
+function parseSharedContextRanges(contextMdx) {
+  const ranges = [];
+  const regex = /RESPONDA\s+LAS\s+PREGUNTAS\s+(\d+)\s+A\s+(\d+)/gi;
+  let match = null;
+
+  while ((match = regex.exec(contextMdx)) !== null) {
+    const start = Number.parseInt(match[1], 10);
+    const end = Number.parseInt(match[2], 10);
+
+    if (!Number.isFinite(start) || !Number.isFinite(end)) continue;
+
+    ranges.push({
+      start: Math.min(start, end),
+      end: Math.max(start, end),
+    });
+  }
+
+  return ranges;
+}
+
 function buildBlocks(content, assetRefs = []) {
   const blocks = [];
   const lines = String(content || '').replace(/\r\n/g, '\n').split('\n');
@@ -246,6 +368,11 @@ function buildBlocks(content, assetRefs = []) {
     }
 
     if (line === '') {
+      i += 1;
+      continue;
+    }
+
+    if (isStructuralHtmlLine(line)) {
       i += 1;
       continue;
     }
@@ -284,7 +411,7 @@ function buildBlocks(content, assetRefs = []) {
 
       blocks.push({
         type: 'equation',
-        latex: mathLines.join('\n'),
+        latex: normalizeMathForDisplay(cleanInlineMarkdown(mathLines.join('\n'))),
       });
 
       if (i < lines.length && (lines[i] || '').trim() === '$$') {
@@ -320,6 +447,41 @@ function buildBlocks(content, assetRefs = []) {
       }
     }
 
+    if (isUnorderedListLine(line) || isOrderedListLine(line)) {
+      const ordered = isOrderedListLine(line);
+      const items = [];
+
+      while (i < lines.length) {
+        const candidate = (lines[i] || '').trim();
+        if (candidate === '') {
+          break;
+        }
+
+        const sameKind = ordered ? isOrderedListLine(candidate) : isUnorderedListLine(candidate);
+        if (!sameKind) {
+          break;
+        }
+
+        const text = cleanInlineMarkdown(parseListItemText(candidate));
+        if (text) {
+          items.push({
+            inlines: parseInlineSegments(text),
+          });
+        }
+
+        i += 1;
+      }
+
+      if (items.length > 0) {
+        blocks.push({
+          type: 'list',
+          ordered,
+          items,
+        });
+        continue;
+      }
+    }
+
     const paragraphLines = [];
     while (i < lines.length) {
       const candidate = (lines[i] || '').trim();
@@ -327,6 +489,13 @@ function buildBlocks(content, assetRefs = []) {
         break;
       }
       if (parseImageLine(candidate)) {
+        break;
+      }
+      if (isStructuralHtmlLine(candidate)) {
+        i += 1;
+        continue;
+      }
+      if (isUnorderedListLine(candidate) || isOrderedListLine(candidate)) {
         break;
       }
       if (candidate.includes('{/*')) {
@@ -403,7 +572,7 @@ function extractTitle(content) {
 }
 
 function toWorkshopId(slugClean) {
-  return `workshop:saber:${slugClean.replace(/\//g, ':')}`;
+  return `content:saber:${slugClean}`;
 }
 
 function splitQuestionSections(content) {
@@ -453,13 +622,21 @@ function parseOptions(optionsBody) {
 }
 
 function parseQuestion(section) {
-  const preguntaMatch = section.raw.match(/<Pregunta([^>]*)>([\s\S]*?)<\/Pregunta>/i);
+  const preguntaRegex = /<Pregunta([^>]*)>([\s\S]*?)<\/Pregunta>/i;
+  const preguntaMatch = section.raw.match(preguntaRegex);
   if (!preguntaMatch) {
     return null;
   }
 
   const attrs = parseTagAttributes(preguntaMatch[1] || '');
   const inner = (preguntaMatch[2] || '').trim();
+  const outerMatch = preguntaMatch[0] || '';
+  const fullMatchIndex = preguntaMatch.index ?? 0;
+  const leadingContext = section.raw.slice(0, fullMatchIndex).trim();
+  const trailingContext = section.raw.slice(fullMatchIndex + outerMatch.length).trim();
+  const detachedContext = normalizeDetachedContext(
+    [leadingContext, trailingContext].filter(Boolean).join('\n\n')
+  );
 
   const optionsMatch = inner.match(/<Opciones>([\s\S]*?)<\/Opciones>/i);
   const detailsMatch = inner.match(/<details>([\s\S]*?)<\/details>/i);
@@ -502,6 +679,7 @@ function parseQuestion(section) {
     feedback_assets: feedbackAssets,
     feedback_blocks: buildBlocks(feedbackMdx, feedbackAssets),
     app_payload_version: APP_PAYLOAD_VERSION,
+    detached_context_mdx: detachedContext,
   };
 }
 
@@ -534,14 +712,63 @@ function buildWorkshopEntry(filePath, contentEntryMap) {
   const { data: frontmatter, content } = parseFrontmatter(rawFile);
 
   const sections = splitQuestionSections(content);
-  const questions = sections
+  const parsedQuestions = sections
     .map(parseQuestion)
     .filter(Boolean)
     .sort((a, b) => a.order - b.order);
 
-  if (questions.length === 0) {
+  if (parsedQuestions.length === 0) {
     return null;
   }
+
+  const sharedContexts = [];
+
+  for (const question of parsedQuestions) {
+    const detached = String(question.detached_context_mdx || '').trim();
+    if (!detached) continue;
+
+    const ranges = parseSharedContextRanges(detached);
+    if (ranges.length > 0) {
+      const payload = buildContextPayload(detached);
+      ranges.forEach((range) => {
+        sharedContexts.push({
+          ...range,
+          ...payload,
+        });
+      });
+      continue;
+    }
+
+    Object.assign(question, buildContextPayload(detached));
+  }
+
+  const questions = parsedQuestions.map((question) => {
+    const contextualMatches = sharedContexts.filter(
+      (context) => question.order >= context.start && question.order <= context.end
+    );
+
+    if (contextualMatches.length === 0) {
+      // internal field used during parsing only
+      delete question.detached_context_mdx;
+      return question;
+    }
+
+    const contextMdx = contextualMatches
+      .map((context) => context.context_mdx)
+      .filter(Boolean)
+      .join('\n\n')
+      .trim();
+
+    const contextAssets = [...new Set(contextualMatches.flatMap((context) => context.context_assets || []))];
+    const contextBlocks = contextualMatches.flatMap((context) => context.context_blocks || []);
+
+    question.context_mdx = contextMdx;
+    question.context_assets = contextAssets;
+    question.context_blocks = contextBlocks;
+
+    delete question.detached_context_mdx;
+    return question;
+  });
 
   const contentEntry = contentEntryMap.get(route);
 
@@ -558,9 +785,11 @@ function buildWorkshopEntry(filePath, contentEntryMap) {
 
   const allAssets = [...new Set(questions.flatMap((q) => [...q.stem_assets, ...q.feedback_assets]))].sort();
 
+  const fallbackId = toWorkshopId(slugClean);
+
   return {
-    id: contentEntry?.id || toWorkshopId(slugClean),
-    content_external_id: contentEntry?.id || null,
+    id: contentEntry?.id || fallbackId,
+    content_external_id: contentEntry?.id || fallbackId,
     route,
     title,
     area_slug: areaSlug,

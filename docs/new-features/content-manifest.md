@@ -12,10 +12,16 @@ Para derivar catalogo app (entrenamiento):
 - Salida por defecto: `/tmp/ediprofe-app-training-manifest.json`
 
 Para derivar payload nativo de talleres (UI móvil):
+- `npm run workshops:preflight`
 - `npm run workshops:manifest`
 - Salida por defecto: `/tmp/ediprofe-workshops-manifest.json`
 - Contrato: `docs/new-features/workshops-app-payload-v1.md`
 - Consumo recomendado en app: `GET /api/v1/workshops/{id}?include_answers=false&format=app`
+
+Pipeline recomendado de publicación de talleres:
+- `npm run workshops:pipeline`
+- Luego sincronizar en backend:
+  - `php artisan workshops:sync-manifest /tmp/ediprofe-workshops-manifest.json`
 
 Opciones:
 - `--output <ruta>`: cambia la ruta de salida.
@@ -34,6 +40,11 @@ Opciones:
 1. Generar manifiesto: `npm run content:manifest`.
 2. Backend Laravel importa/lee el JSON para poblar catalogo y reglas de acceso.
 3. App React Native consume el mismo JSON para listado, filtros y prefetch de assets.
+
+## Authoring estable (recomendado)
+- Plantilla base de taller: `docs/new-features/samples/taller-template.mdx`
+- Regla: usa markdown puro para contexto compartido (sin wrappers HTML como `<div class="span-all">`).
+- Ejecuta `npm run workshops:preflight` antes de exportar/sincronizar.
 
 ## Nota de negocio
 - Contenido general: `accessTier=free`.

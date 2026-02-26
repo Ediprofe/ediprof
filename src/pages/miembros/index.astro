@@ -1,0 +1,254 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Layout/Header.astro';
+import Footer from '../../components/Layout/Footer.astro';
+import SectionHeader from '../../components/UI/SectionHeader.astro';
+import '../../styles/members.css';
+---
+
+<BaseLayout title="Miembros | Panel" showTopBar={false}>
+  <div class="members-hub">
+    <Header />
+
+    <main class="members-container">
+      <SectionHeader
+        badge="Miembros"
+        title="Panel del Estudiante"
+        description="Revisa tu estado de acceso, entra a los talleres y administra tu sesión."
+      />
+
+      <section class="members-card">
+        <div id="profile"></div>
+        <div class="members-actions" style="margin-top: 0.8rem;">
+          <a class="members-button secondary" href="/miembros/talleres">Ir a talleres</a>
+          <a class="members-button secondary" href="/miembros/admin" id="admin-link" style="display:none;">Panel admin</a>
+          <button class="members-button warn" id="logout-btn" type="button">Cerrar sesión</button>
+        </div>
+        <div id="feedback"></div>
+      </section>
+
+      <section class="members-card">
+        <h3 class="members-section-title">Ruta de práctica</h3>
+        <div id="route"></div>
+      </section>
+
+      <section class="members-card">
+        <h3 class="members-section-title">Tus talleres</h3>
+        <div id="workshop-summary"></div>
+      </section>
+    </main>
+
+    <Footer />
+  </div>
+</BaseLayout>
+
+<script>
+  import {
+    apiWorkshops,
+    apiLogout,
+    apiMe,
+    clearSession,
+    getApiBase,
+    getSessionToken,
+    saveSession,
+  } from '../../scripts/members/client';
+
+  const token = getSessionToken();
+  if (!token) {
+    window.location.href = '/miembros/login';
+  }
+
+  const profile = document.getElementById('profile');
+  const feedback = document.getElementById('feedback');
+  const routeWrap = document.getElementById('route');
+  const workshopSummary = document.getElementById('workshop-summary');
+  const adminLink = document.getElementById('admin-link');
+  const logoutBtn = document.getElementById('logout-btn');
+  const LAST_WORKSHOP_KEY = 'ediprofe_member_last_workshop';
+
+  function statusClass(status) {
+    if (status === 'approved') return 'approved';
+    if (status === 'blocked') return 'blocked';
+    return 'pending';
+  }
+
+  function statusLabel(status) {
+    if (status === 'approved') return 'Aprobado';
+    if (status === 'blocked') return 'Bloqueado';
+    return 'Pendiente';
+  }
+
+  function toBase64Url(value) {
+    const utf8 = encodeURIComponent(value).replace(/%([0-9A-F]{2})/g, (_, p1) =>
+      String.fromCharCode(Number.parseInt(p1, 16))
+    );
+
+    return btoa(utf8).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/g, '');
+  }
+
+  function escapeHtml(value) {
+    return String(value ?? '')
+      .replaceAll('&', '&amp;')
+      .replaceAll('<', '&lt;')
+      .replaceAll('>', '&gt;')
+      .replaceAll('"', '&quot;')
+      .replaceAll("'", '&#039;');
+  }
+
+  function renderRoute(status) {
+    const approveDone = status === 'approved' || status === 'blocked';
+    const practiceDone = status === 'approved';
+    const feedbackDone = status === 'approved';
+
+    routeWrap.innerHTML = `
+      <div class="members-steps">
+        <article class="members-step done">
+          <strong>1. Registro</strong>
+          <p>Cuenta creada y activa.</p>
+        </article>
+        <article class="members-step ${approveDone ? 'done' : 'current'}">
+          <strong>2. Revisión admin</strong>
+          <p>${status === 'pending' ? 'Esperando aprobación manual.' : `Estado: ${statusLabel(status)}.`}</p>
+        </article>
+        <article class="members-step ${practiceDone ? 'done' : ''}">
+          <strong>3. Práctica de talleres</strong>
+          <p>${practiceDone ? 'Ya puedes resolver preguntas.' : 'Se habilita al aprobar la cuenta.'}</p>
+        </article>
+        <article class="members-step ${feedbackDone ? 'done' : ''}">
+          <strong>4. Retroalimentación</strong>
+          <p>${feedbackDone ? 'Recibe explicación inmediata por pregunta.' : 'Disponible cuando empieces a practicar.'}</p>
+        </article>
+      </div>
+    `;
+  }
+
+  function renderWorkshopSummary(items) {
+    const total = items.length;
+    const accessible = items.filter((item) => item.can_access);
+    const totalQuestions = accessible.reduce((acc, item) => acc + Number(item?.stats?.total_questions || 0), 0);
+    const lastWorkshopRaw = window.localStorage.getItem(LAST_WORKSHOP_KEY);
+    let lastWorkshop = null;
+    if (lastWorkshopRaw) {
+      try {
+        lastWorkshop = JSON.parse(lastWorkshopRaw);
+      } catch {
+        lastWorkshop = null;
+      }
+    }
+
+    const recent = accessible.slice(0, 3);
+    const recentHtml =
+      recent.length > 0
+        ? recent
+            .map((item) => {
+              const link = `/miembros/talleres/${toBase64Url(item.id)}`;
+              return `
+              <article class="members-item">
+                <h4>${escapeHtml(item.title)}</h4>
+                <p>${escapeHtml(item.area_slug || 'general')} · ${Number(item?.stats?.total_questions || 0)} preguntas</p>
+                <div class="members-actions" style="margin-top:0.55rem;">
+                  <a class="members-button" href="${link}">Practicar</a>
+                </div>
+              </article>
+            `;
+            })
+            .join('')
+        : '<div class="members-alert">No tienes talleres con acceso todavía.</div>';
+
+    workshopSummary.innerHTML = `
+      <div class="members-grid">
+        <article class="members-item">
+          <h4>Talleres totales</h4>
+          <p>${total}</p>
+        </article>
+        <article class="members-item">
+          <h4>Con acceso</h4>
+          <p>${accessible.length}</p>
+        </article>
+        <article class="members-item">
+          <h4>Preguntas disponibles</h4>
+          <p>${totalQuestions}</p>
+        </article>
+      </div>
+      ${
+        lastWorkshop?.link
+          ? `
+        <div class="members-actions" style="margin-top:0.9rem;">
+          <a class="members-button" href="${escapeHtml(lastWorkshop.link)}">Continuar último taller</a>
+          <span class="members-pill pending">${escapeHtml(lastWorkshop.title || 'Taller reciente')}</span>
+        </div>
+      `
+          : ''
+      }
+      <div class="members-list" style="margin-top:0.9rem;">
+        ${recentHtml}
+      </div>
+      <div class="members-actions" style="margin-top:0.75rem;">
+        <a class="members-button secondary" href="/miembros/talleres">Ver catálogo completo</a>
+      </div>
+    `;
+  }
+
+  async function boot() {
+    try {
+      const me = await apiMe();
+      const user = me?.data?.user;
+      if (!user) {
+        throw new Error('No se pudo resolver sesión.');
+      }
+
+      saveSession(token, user);
+
+      profile.innerHTML = `
+        <div class="members-grid">
+          <div class="members-item">
+            <h4>${user.name}</h4>
+            <p>${user.email}</p>
+          </div>
+          <div class="members-item">
+            <h4>Rol</h4>
+            <p>${user.role || 'student'}</p>
+          </div>
+          <div class="members-item">
+            <h4>Estado</h4>
+            <p><span class="members-pill ${statusClass(user.member_status)}">${statusLabel(user.member_status)}</span></p>
+          </div>
+          <div class="members-item">
+            <h4>API</h4>
+            <p>${getApiBase()}</p>
+          </div>
+        </div>
+      `;
+
+      if (user.role === 'admin') {
+        adminLink.style.display = 'inline-flex';
+      }
+
+      renderRoute(user.member_status);
+
+      if (user.member_status === 'pending') {
+        feedback.innerHTML = `<div class="members-alert">Tu cuenta está pendiente de aprobación manual por el administrador.</div>`;
+        workshopSummary.innerHTML =
+          '<div class="members-alert">Cuando tu estado sea <strong>Aprobado</strong>, aquí verás tus talleres y avance.</div>';
+      } else if (user.member_status === 'blocked') {
+        feedback.innerHTML = `<div class="members-alert error">Tu cuenta fue bloqueada. Contacta al administrador.</div>`;
+        workshopSummary.innerHTML =
+          '<div class="members-alert error">Tu acceso premium está bloqueado. Contacta al administrador.</div>';
+      } else {
+        const workshopsResponse = await apiWorkshops();
+        const items = Array.isArray(workshopsResponse?.data) ? workshopsResponse.data : [];
+        renderWorkshopSummary(items);
+      }
+    } catch (error) {
+      clearSession();
+      window.location.href = '/miembros/login';
+    }
+  }
+
+  logoutBtn?.addEventListener('click', async () => {
+    await apiLogout();
+    window.location.href = '/miembros/login';
+  });
+
+  boot();
+</script>

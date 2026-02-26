@@ -16,6 +16,9 @@ type Props = {
 
 function WorkshopCardImpl({ item, isSelected, onPress, progress = null }: Props) {
   const preview = item.asset_preview[0];
+  const isCompleted = progress ? progress.completionPercent >= 100 : false;
+  const progressLabel = isCompleted ? 'completado' : 'en curso';
+  const progressStyle = isCompleted ? styles.progressCompleted : styles.progressInProgress;
 
   return (
     <Pressable
@@ -36,8 +39,8 @@ function WorkshopCardImpl({ item, isSelected, onPress, progress = null }: Props)
             {item.can_access ? 'acceso' : 'bloqueado'}
           </Text>
           {progress ? (
-            <Text style={[styles.badge, styles.progress]}>
-              {progress.completionPercent}% · P{progress.resumeQuestionIndex + 1}
+            <Text style={[styles.badge, progressStyle]}>
+              {progressLabel} · {progress.completionPercent}% · P{progress.resumeQuestionIndex + 1}
             </Text>
           ) : null}
         </View>
@@ -110,9 +113,13 @@ const styles = StyleSheet.create({
     color: '#ff9da6',
     backgroundColor: 'rgba(255, 99, 114, 0.15)',
   },
-  progress: {
+  progressInProgress: {
     color: '#87d6ff',
-    backgroundColor: 'rgba(80, 186, 255, 0.16)',
+    backgroundColor: 'rgba(80, 186, 255, 0.18)',
+  },
+  progressCompleted: {
+    color: '#9df0ca',
+    backgroundColor: 'rgba(59, 201, 132, 0.18)',
   },
   progressMeta: {
     color: '#7fa8d6',
