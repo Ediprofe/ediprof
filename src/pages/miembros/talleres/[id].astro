@@ -4,6 +4,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Header from '../../../components/Layout/Header.astro';
 import Footer from '../../../components/Layout/Footer.astro';
 import SectionHeader from '../../../components/UI/SectionHeader.astro';
+import PresentationTrigger from '../../../components/UI/PresentationTrigger.astro';
 import { cleanSlug } from '../../../utils/navigation-generator.js';
 import '../../../styles/members.css';
 
@@ -49,6 +50,7 @@ const { workshopId } = Astro.props;
     </main>
 
     <Footer />
+    <PresentationTrigger />
   </div>
 </BaseLayout>
 
