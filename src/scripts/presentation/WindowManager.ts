@@ -47,6 +47,10 @@ export class WindowManager {
       window.visualViewport.removeEventListener('scroll', this.boundUpdateDockPosition);
     }
 
+    // Ensure page scroll is always restored when presentation mode closes,
+    // even if it was closed while white/black board was active.
+    document.body.style.overflow = '';
+
     this.dockWrapper = null;
   }
 
