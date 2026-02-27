@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 480">
+  <defs></defs>
+  <rect x="0.00" y="0.00" width="850.00" height="480.00" fill="#f8fafc" stroke="none" stroke-width="0" rx="12"  />
+  <text x="425.00" y="45.00" font-family="Inter, sans-serif" font-size="32" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Sodio (Na)</text>
+  <text x="425.00" y="75.00" font-family="Inter, sans-serif" font-size="18" font-weight="bold" fill="#64748b" text-anchor="middle" dominant-baseline="middle">Z = 11</text>
+  <text x="68.00" y="140.00" font-family="Inter, sans-serif" font-size="9" font-weight="900" fill="#64748b" text-anchor="middle" dominant-baseline="middle">IA</text>
+  <text x="86.00" y="140.00" font-family="Inter, sans-serif" font-size="9" font-weight="900" fill="#64748b" text-anchor="middle" dominant-baseline="middle">IIA</text>
+  <text x="284.00" y="140.00" font-family="Inter, sans-serif" font-size="9" font-weight="900" fill="#64748b" text-anchor="middle" dominant-baseline="middle">IIIA</text>
+  <text x="302.00" y="140.00" font-family="Inter, sans-serif" font-size="9" font-weight="900" fill="#64748b" text-anchor="middle" dominant-baseline="middle">IVA</text>
+  <text x="320.00" y="140.00" font-family="Inter, sans-serif" font-size="9" font-weight="900" fill="#64748b" text-anchor="middle" dominant-baseline="middle">VA</text>
+  <text x="338.00" y="140.00" font-family="Inter, sans-serif" font-size="9" font-weight="900" fill="#64748b" text-anchor="middle" dominant-baseline="middle">VIA</text>
+  <text x="356.00" y="140.00" font-family="Inter, sans-serif" font-size="9" font-weight="900" fill="#64748b" text-anchor="middle" dominant-baseline="middle">VIIA</text>
+  <text x="374.00" y="140.00" font-family="Inter, sans-serif" font-size="9" font-weight="900" fill="#64748b" text-anchor="middle" dominant-baseline="middle">VIIIA</text>
+  <text x="48.00" y="161.00" font-family="Inter, sans-serif" font-size="10" font-weight="900" fill="#64748b" text-anchor="middle" dominant-baseline="middle">1</text>
+  <text x="48.00" y="179.00" font-family="Inter, sans-serif" font-size="10" font-weight="900" fill="#64748b" text-anchor="middle" dominant-baseline="middle">2</text>
+  <text x="48.00" y="197.00" font-family="Inter, sans-serif" font-size="10" font-weight="900" fill="#64748b" text-anchor="middle" dominant-baseline="middle">3</text>
+  <text x="48.00" y="215.00" font-family="Inter, sans-serif" font-size="10" font-weight="900" fill="#64748b" text-anchor="middle" dominant-baseline="middle">4</text>
+  <text x="48.00" y="233.00" font-family="Inter, sans-serif" font-size="10" font-weight="900" fill="#64748b" text-anchor="middle" dominant-baseline="middle">5</text>
+  <text x="48.00" y="251.00" font-family="Inter, sans-serif" font-size="10" font-weight="900" fill="#64748b" text-anchor="middle" dominant-baseline="middle">6</text>
+  <text x="48.00" y="269.00" font-family="Inter, sans-serif" font-size="10" font-weight="900" fill="#64748b" text-anchor="middle" dominant-baseline="middle">7</text>
+  <rect x="60.00" y="150.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="366.00" y="150.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="60.00" y="168.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="78.00" y="168.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="276.00" y="168.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="294.00" y="168.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="312.00" y="168.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="330.00" y="168.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="348.00" y="168.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="366.00" y="168.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="60.00" y="186.00" width="16.00" height="16.00" fill="#f59e0b" stroke="#f59e0b" stroke-width="2" rx="2"  />
+  <rect x="78.00" y="186.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="276.00" y="186.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="294.00" y="186.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="312.00" y="186.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="330.00" y="186.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="348.00" y="186.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="366.00" y="186.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="60.00" y="204.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="78.00" y="204.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="96.00" y="204.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="114.00" y="204.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="132.00" y="204.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="150.00" y="204.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="168.00" y="204.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="186.00" y="204.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="204.00" y="204.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="222.00" y="204.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="240.00" y="204.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="258.00" y="204.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="276.00" y="204.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="294.00" y="204.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="312.00" y="204.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="330.00" y="204.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="348.00" y="204.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="366.00" y="204.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="60.00" y="222.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="78.00" y="222.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="96.00" y="222.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="114.00" y="222.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="132.00" y="222.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="150.00" y="222.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="168.00" y="222.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="186.00" y="222.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="204.00" y="222.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="222.00" y="222.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="240.00" y="222.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="258.00" y="222.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="276.00" y="222.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="294.00" y="222.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="312.00" y="222.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="330.00" y="222.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="348.00" y="222.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="366.00" y="222.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="60.00" y="240.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="78.00" y="240.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="96.00" y="240.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="114.00" y="240.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="132.00" y="240.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="150.00" y="240.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="168.00" y="240.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="186.00" y="240.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="204.00" y="240.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="222.00" y="240.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="240.00" y="240.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="258.00" y="240.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="276.00" y="240.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="294.00" y="240.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="312.00" y="240.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="330.00" y="240.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="348.00" y="240.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="366.00" y="240.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="60.00" y="258.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="78.00" y="258.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="96.00" y="258.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="114.00" y="258.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="132.00" y="258.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="150.00" y="258.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="168.00" y="258.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="186.00" y="258.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="204.00" y="258.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="222.00" y="258.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="240.00" y="258.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="258.00" y="258.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="276.00" y="258.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="294.00" y="258.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="312.00" y="258.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="330.00" y="258.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="348.00" y="258.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <rect x="366.00" y="258.00" width="16.00" height="16.00" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5" rx="2"  />
+  <text x="210.00" y="310.00" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#94a3b8" text-anchor="middle" dominant-baseline="middle">Posición en la Tabla</text>
+  <circle cx="580.00" cy="240.00" r="45.00" fill="none" stroke="#e2e8f0" stroke-width="1.5" fill-opacity="0.3" />
+  <circle cx="580.00" cy="195.00" r="5.50" fill="#94a3b8" stroke="white" stroke-width="1"  />
+  <text x="580.00" y="196.80" font-family="Inter, sans-serif" font-size="10" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="580.00" cy="285.00" r="5.50" fill="#94a3b8" stroke="white" stroke-width="1"  />
+  <text x="580.00" y="286.80" font-family="Inter, sans-serif" font-size="10" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="580.00" cy="240.00" r="80.00" fill="none" stroke="#e2e8f0" stroke-width="1.5" fill-opacity="0.3" />
+  <circle cx="580.00" cy="160.00" r="5.50" fill="#94a3b8" stroke="white" stroke-width="1"  />
+  <text x="580.00" y="161.80" font-family="Inter, sans-serif" font-size="10" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="636.57" cy="183.43" r="5.50" fill="#94a3b8" stroke="white" stroke-width="1"  />
+  <text x="636.57" y="185.23" font-family="Inter, sans-serif" font-size="10" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="660.00" cy="240.00" r="5.50" fill="#94a3b8" stroke="white" stroke-width="1"  />
+  <text x="660.00" y="241.80" font-family="Inter, sans-serif" font-size="10" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="636.57" cy="296.57" r="5.50" fill="#94a3b8" stroke="white" stroke-width="1"  />
+  <text x="636.57" y="298.37" font-family="Inter, sans-serif" font-size="10" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="580.00" cy="320.00" r="5.50" fill="#94a3b8" stroke="white" stroke-width="1"  />
+  <text x="580.00" y="321.80" font-family="Inter, sans-serif" font-size="10" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="523.43" cy="296.57" r="5.50" fill="#94a3b8" stroke="white" stroke-width="1"  />
+  <text x="523.43" y="298.37" font-family="Inter, sans-serif" font-size="10" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="500.00" cy="240.00" r="5.50" fill="#94a3b8" stroke="white" stroke-width="1"  />
+  <text x="500.00" y="241.80" font-family="Inter, sans-serif" font-size="10" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="523.43" cy="183.43" r="5.50" fill="#94a3b8" stroke="white" stroke-width="1"  />
+  <text x="523.43" y="185.23" font-family="Inter, sans-serif" font-size="10" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="580.00" cy="240.00" r="115.00" fill="none" stroke="#f59e0b" stroke-width="3"  />
+  <circle cx="580.00" cy="125.00" r="5.50" fill="#f59e0b" stroke="white" stroke-width="1"  />
+  <text x="580.00" y="126.80" font-family="Inter, sans-serif" font-size="10" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="580.00" cy="240.00" r="22.00" fill="#f8fafc" stroke="#1e293b" stroke-width="2"  />
+  <text x="580.00" y="245.00" font-family="Inter, sans-serif" font-size="14" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Na</text>
+  <rect x="225.00" y="420.00" width="400.00" height="40.00" fill="#f1f5f9" stroke="none" stroke-width="0" rx="20"  />
+  <text x="425.00" y="446.00" font-family="monospace" font-size="18" font-weight="bold" fill="#334155" text-anchor="middle" dominant-baseline="middle">Configuración: [Ne] 3s¹</text>
+</svg>

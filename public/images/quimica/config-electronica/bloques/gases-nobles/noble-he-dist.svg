@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 750">
+  <defs></defs>
+  <rect x="0.00" y="0.00" width="850.00" height="750.00" fill="#f8fafc" stroke="none" stroke-width="0" rx="12"  />
+  <text x="425.00" y="50.00" font-family="Inter, sans-serif" font-size="32" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Gas Noble: Helio (He)</text>
+  <circle cx="425.00" cy="420.00" r="60.00" fill="none" stroke="#3b82f6" stroke-width="4"  />
+  <circle cx="425.00" cy="360.00" r="6.00" fill="#3b82f6" stroke="white" stroke-width="1.2"  />
+  <text x="425.00" y="362.00" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="425.00" cy="480.00" r="6.00" fill="#3b82f6" stroke="white" stroke-width="1.2"  />
+  <text x="425.00" y="482.00" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="425.00" cy="420.00" r="35.00" fill="#f1f5f9" stroke="#1e293b" stroke-width="3"  />
+  <text x="425.00" y="418.00" font-family="Inter, sans-serif" font-size="22" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">He</text>
+  <text x="425.00" y="438.00" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#64748b" text-anchor="middle" dominant-baseline="middle">Z=2</text>
+  <rect x="75.00" y="665.00" width="700.00" height="50.00" fill="#f1f5f9" stroke="none" stroke-width="0" rx="25"  />
+  <text x="425.00" y="698.00" font-family="monospace" font-size="18" font-weight="bold" fill="#334155" text-anchor="middle" dominant-baseline="middle">Configuración: 1s²</text>
+</svg>

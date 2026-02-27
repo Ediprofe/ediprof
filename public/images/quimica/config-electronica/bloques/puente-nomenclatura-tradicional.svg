@@ -1,0 +1,230 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 650">
+  <defs></defs>
+  <rect x="0.00" y="0.00" width="1100.00" height="650.00" fill="#f8fafc" stroke="none" stroke-width="0" rx="12"  />
+  <text x="550.00" y="50.00" font-family="Inter, sans-serif" font-size="36" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Elementos Representativos (Familia A)</text>
+  <text x="82.00" y="85.00" font-family="Inter, sans-serif" font-size="14" font-weight="900" fill="#f59e0b" text-anchor="middle" dominant-baseline="middle">s¹</text>
+  <text x="82.00" y="105.00" font-family="Inter, sans-serif" font-size="12" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">IA</text>
+  <text x="82.00" y="125.00" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#64748b" text-anchor="middle" dominant-baseline="middle">1</text>
+  <text x="134.00" y="85.00" font-family="Inter, sans-serif" font-size="14" font-weight="900" fill="#f59e0b" text-anchor="middle" dominant-baseline="middle">s²</text>
+  <text x="134.00" y="105.00" font-family="Inter, sans-serif" font-size="12" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">IIA</text>
+  <text x="134.00" y="125.00" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#64748b" text-anchor="middle" dominant-baseline="middle">2</text>
+  <text x="186.00" y="125.00" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#cbd5e1" text-anchor="middle" dominant-baseline="middle">3</text>
+  <text x="238.00" y="125.00" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#cbd5e1" text-anchor="middle" dominant-baseline="middle">4</text>
+  <text x="290.00" y="125.00" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#cbd5e1" text-anchor="middle" dominant-baseline="middle">5</text>
+  <text x="342.00" y="125.00" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#cbd5e1" text-anchor="middle" dominant-baseline="middle">6</text>
+  <text x="394.00" y="125.00" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#cbd5e1" text-anchor="middle" dominant-baseline="middle">7</text>
+  <text x="446.00" y="125.00" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#cbd5e1" text-anchor="middle" dominant-baseline="middle">8</text>
+  <text x="498.00" y="125.00" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#cbd5e1" text-anchor="middle" dominant-baseline="middle">9</text>
+  <text x="550.00" y="125.00" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#cbd5e1" text-anchor="middle" dominant-baseline="middle">10</text>
+  <text x="602.00" y="125.00" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#cbd5e1" text-anchor="middle" dominant-baseline="middle">11</text>
+  <text x="654.00" y="125.00" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#cbd5e1" text-anchor="middle" dominant-baseline="middle">12</text>
+  <text x="706.00" y="85.00" font-family="Inter, sans-serif" font-size="14" font-weight="900" fill="#3b82f6" text-anchor="middle" dominant-baseline="middle">p¹</text>
+  <text x="706.00" y="105.00" font-family="Inter, sans-serif" font-size="12" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">IIIA</text>
+  <text x="706.00" y="125.00" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#64748b" text-anchor="middle" dominant-baseline="middle">13</text>
+  <text x="758.00" y="85.00" font-family="Inter, sans-serif" font-size="14" font-weight="900" fill="#3b82f6" text-anchor="middle" dominant-baseline="middle">p²</text>
+  <text x="758.00" y="105.00" font-family="Inter, sans-serif" font-size="12" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">IVA</text>
+  <text x="758.00" y="125.00" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#64748b" text-anchor="middle" dominant-baseline="middle">14</text>
+  <text x="810.00" y="85.00" font-family="Inter, sans-serif" font-size="14" font-weight="900" fill="#3b82f6" text-anchor="middle" dominant-baseline="middle">p³</text>
+  <text x="810.00" y="105.00" font-family="Inter, sans-serif" font-size="12" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">VA</text>
+  <text x="810.00" y="125.00" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#64748b" text-anchor="middle" dominant-baseline="middle">15</text>
+  <text x="862.00" y="85.00" font-family="Inter, sans-serif" font-size="14" font-weight="900" fill="#3b82f6" text-anchor="middle" dominant-baseline="middle">p⁴</text>
+  <text x="862.00" y="105.00" font-family="Inter, sans-serif" font-size="12" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">VIA</text>
+  <text x="862.00" y="125.00" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#64748b" text-anchor="middle" dominant-baseline="middle">16</text>
+  <text x="914.00" y="85.00" font-family="Inter, sans-serif" font-size="14" font-weight="900" fill="#3b82f6" text-anchor="middle" dominant-baseline="middle">p⁵</text>
+  <text x="914.00" y="105.00" font-family="Inter, sans-serif" font-size="12" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">VIIA</text>
+  <text x="914.00" y="125.00" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#64748b" text-anchor="middle" dominant-baseline="middle">17</text>
+  <text x="966.00" y="85.00" font-family="Inter, sans-serif" font-size="14" font-weight="900" fill="#3b82f6" text-anchor="middle" dominant-baseline="middle">p⁶</text>
+  <text x="966.00" y="105.00" font-family="Inter, sans-serif" font-size="12" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">VIIIA</text>
+  <text x="966.00" y="125.00" font-family="Inter, sans-serif" font-size="11" font-weight="bold" fill="#64748b" text-anchor="middle" dominant-baseline="middle">18</text>
+  <text x="33.00" y="170.00" font-family="Inter, sans-serif" font-size="18" font-weight="900" fill="#94a3b8" text-anchor="middle" dominant-baseline="middle">1</text>
+  <rect x="58.00" y="140.00" width="48.00" height="48.00" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="8"  />
+  <text x="82.00" y="170.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">H</text>
+  <rect x="942.00" y="140.00" width="48.00" height="48.00" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2" rx="8"  />
+  <text x="966.00" y="170.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">He</text>
+  <text x="33.00" y="222.00" font-family="Inter, sans-serif" font-size="18" font-weight="900" fill="#94a3b8" text-anchor="middle" dominant-baseline="middle">2</text>
+  <rect x="58.00" y="192.00" width="48.00" height="48.00" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="8"  />
+  <text x="82.00" y="222.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Li</text>
+  <rect x="110.00" y="192.00" width="48.00" height="48.00" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="8"  />
+  <text x="134.00" y="222.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Be</text>
+  <rect x="682.00" y="192.00" width="48.00" height="48.00" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2" rx="8"  />
+  <text x="706.00" y="222.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">B</text>
+  <rect x="734.00" y="192.00" width="48.00" height="48.00" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2" rx="8"  />
+  <text x="758.00" y="222.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">C</text>
+  <rect x="786.00" y="192.00" width="48.00" height="48.00" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2" rx="8"  />
+  <text x="810.00" y="222.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">N</text>
+  <rect x="838.00" y="192.00" width="48.00" height="48.00" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2" rx="8"  />
+  <text x="862.00" y="222.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">O</text>
+  <rect x="890.00" y="192.00" width="48.00" height="48.00" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2" rx="8"  />
+  <text x="914.00" y="222.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">F</text>
+  <rect x="942.00" y="192.00" width="48.00" height="48.00" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2" rx="8"  />
+  <text x="966.00" y="222.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Ne</text>
+  <text x="33.00" y="274.00" font-family="Inter, sans-serif" font-size="18" font-weight="900" fill="#94a3b8" text-anchor="middle" dominant-baseline="middle">3</text>
+  <rect x="58.00" y="244.00" width="48.00" height="48.00" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="8"  />
+  <text x="82.00" y="274.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Na</text>
+  <rect x="110.00" y="244.00" width="48.00" height="48.00" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="8"  />
+  <text x="134.00" y="274.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Mg</text>
+  <rect x="682.00" y="244.00" width="48.00" height="48.00" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2" rx="8"  />
+  <text x="706.00" y="274.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Al</text>
+  <rect x="734.00" y="244.00" width="48.00" height="48.00" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2" rx="8"  />
+  <text x="758.00" y="274.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Si</text>
+  <rect x="786.00" y="244.00" width="48.00" height="48.00" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2" rx="8"  />
+  <text x="810.00" y="274.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">P</text>
+  <rect x="838.00" y="244.00" width="48.00" height="48.00" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2" rx="8"  />
+  <text x="862.00" y="274.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">S</text>
+  <rect x="890.00" y="244.00" width="48.00" height="48.00" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2" rx="8"  />
+  <text x="914.00" y="274.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Cl</text>
+  <rect x="942.00" y="244.00" width="48.00" height="48.00" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2" rx="8"  />
+  <text x="966.00" y="274.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Ar</text>
+  <text x="33.00" y="326.00" font-family="Inter, sans-serif" font-size="18" font-weight="900" fill="#94a3b8" text-anchor="middle" dominant-baseline="middle">4</text>
+  <rect x="58.00" y="296.00" width="48.00" height="48.00" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="8"  />
+  <text x="82.00" y="326.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">K</text>
+  <rect x="110.00" y="296.00" width="48.00" height="48.00" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="8"  />
+  <text x="134.00" y="326.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Ca</text>
+  <rect x="162.00" y="296.00" width="48.00" height="48.00" fill="#fee2e2" stroke="#e2e8f0" stroke-width="0.8" rx="8" fill-opacity="0.25" />
+  <text x="186.00" y="326.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#cbd5e1" text-anchor="middle" dominant-baseline="middle">Sc</text>
+  <rect x="214.00" y="296.00" width="48.00" height="48.00" fill="#fee2e2" stroke="#e2e8f0" stroke-width="0.8" rx="8" fill-opacity="0.25" />
+  <text x="238.00" y="326.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#cbd5e1" text-anchor="middle" dominant-baseline="middle">Ti</text>
+  <rect x="266.00" y="296.00" width="48.00" height="48.00" fill="#fee2e2" stroke="#e2e8f0" stroke-width="0.8" rx="8" fill-opacity="0.25" />
+  <text x="290.00" y="326.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#cbd5e1" text-anchor="middle" dominant-baseline="middle">V</text>
+  <rect x="318.00" y="296.00" width="48.00" height="48.00" fill="#fee2e2" stroke="#e2e8f0" stroke-width="0.8" rx="8" fill-opacity="0.25" />
+  <text x="342.00" y="326.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#cbd5e1" text-anchor="middle" dominant-baseline="middle">Cr</text>
+  <rect x="370.00" y="296.00" width="48.00" height="48.00" fill="#fee2e2" stroke="#e2e8f0" stroke-width="0.8" rx="8" fill-opacity="0.25" />
+  <text x="394.00" y="326.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#cbd5e1" text-anchor="middle" dominant-baseline="middle">Mn</text>
+  <rect x="422.00" y="296.00" width="48.00" height="48.00" fill="#fee2e2" stroke="#e2e8f0" stroke-width="0.8" rx="8" fill-opacity="0.25" />
+  <text x="446.00" y="326.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#cbd5e1" text-anchor="middle" dominant-baseline="middle">Fe</text>
+  <rect x="474.00" y="296.00" width="48.00" height="48.00" fill="#fee2e2" stroke="#e2e8f0" stroke-width="0.8" rx="8" fill-opacity="0.25" />
+  <text x="498.00" y="326.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#cbd5e1" text-anchor="middle" dominant-baseline="middle">Co</text>
+  <rect x="526.00" y="296.00" width="48.00" height="48.00" fill="#fee2e2" stroke="#e2e8f0" stroke-width="0.8" rx="8" fill-opacity="0.25" />
+  <text x="550.00" y="326.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#cbd5e1" text-anchor="middle" dominant-baseline="middle">Ni</text>
+  <rect x="578.00" y="296.00" width="48.00" height="48.00" fill="#fee2e2" stroke="#e2e8f0" stroke-width="0.8" rx="8" fill-opacity="0.25" />
+  <text x="602.00" y="326.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#cbd5e1" text-anchor="middle" dominant-baseline="middle">Cu</text>
+  <rect x="630.00" y="296.00" width="48.00" height="48.00" fill="#fee2e2" stroke="#e2e8f0" stroke-width="0.8" rx="8" fill-opacity="0.25" />
+  <text x="654.00" y="326.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#cbd5e1" text-anchor="middle" dominant-baseline="middle">Zn</text>
+  <rect x="682.00" y="296.00" width="48.00" height="48.00" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2" rx="8"  />
+  <text x="706.00" y="326.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Ga</text>
+  <rect x="734.00" y="296.00" width="48.00" height="48.00" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2" rx="8"  />
+  <text x="758.00" y="326.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Ge</text>
+  <rect x="786.00" y="296.00" width="48.00" height="48.00" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2" rx="8"  />
+  <text x="810.00" y="326.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">As</text>
+  <rect x="838.00" y="296.00" width="48.00" height="48.00" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2" rx="8"  />
+  <text x="862.00" y="326.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Se</text>
+  <rect x="890.00" y="296.00" width="48.00" height="48.00" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2" rx="8"  />
+  <text x="914.00" y="326.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Br</text>
+  <rect x="942.00" y="296.00" width="48.00" height="48.00" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2" rx="8"  />
+  <text x="966.00" y="326.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Kr</text>
+  <text x="33.00" y="378.00" font-family="Inter, sans-serif" font-size="18" font-weight="900" fill="#94a3b8" text-anchor="middle" dominant-baseline="middle">5</text>
+  <rect x="58.00" y="348.00" width="48.00" height="48.00" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="8"  />
+  <text x="82.00" y="378.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Rb</text>
+  <rect x="110.00" y="348.00" width="48.00" height="48.00" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="8"  />
+  <text x="134.00" y="378.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Sr</text>
+  <rect x="162.00" y="348.00" width="48.00" height="48.00" fill="#fee2e2" stroke="#e2e8f0" stroke-width="0.8" rx="8" fill-opacity="0.25" />
+  <text x="186.00" y="378.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#cbd5e1" text-anchor="middle" dominant-baseline="middle">Y</text>
+  <rect x="214.00" y="348.00" width="48.00" height="48.00" fill="#fee2e2" stroke="#e2e8f0" stroke-width="0.8" rx="8" fill-opacity="0.25" />
+  <text x="238.00" y="378.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#cbd5e1" text-anchor="middle" dominant-baseline="middle">Zr</text>
+  <rect x="266.00" y="348.00" width="48.00" height="48.00" fill="#fee2e2" stroke="#e2e8f0" stroke-width="0.8" rx="8" fill-opacity="0.25" />
+  <text x="290.00" y="378.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#cbd5e1" text-anchor="middle" dominant-baseline="middle">Nb</text>
+  <rect x="318.00" y="348.00" width="48.00" height="48.00" fill="#fee2e2" stroke="#e2e8f0" stroke-width="0.8" rx="8" fill-opacity="0.25" />
+  <text x="342.00" y="378.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#cbd5e1" text-anchor="middle" dominant-baseline="middle">Mo</text>
+  <rect x="370.00" y="348.00" width="48.00" height="48.00" fill="#fee2e2" stroke="#e2e8f0" stroke-width="0.8" rx="8" fill-opacity="0.25" />
+  <text x="394.00" y="378.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#cbd5e1" text-anchor="middle" dominant-baseline="middle">Tc</text>
+  <rect x="422.00" y="348.00" width="48.00" height="48.00" fill="#fee2e2" stroke="#e2e8f0" stroke-width="0.8" rx="8" fill-opacity="0.25" />
+  <text x="446.00" y="378.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#cbd5e1" text-anchor="middle" dominant-baseline="middle">Ru</text>
+  <rect x="474.00" y="348.00" width="48.00" height="48.00" fill="#fee2e2" stroke="#e2e8f0" stroke-width="0.8" rx="8" fill-opacity="0.25" />
+  <text x="498.00" y="378.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#cbd5e1" text-anchor="middle" dominant-baseline="middle">Rh</text>
+  <rect x="526.00" y="348.00" width="48.00" height="48.00" fill="#fee2e2" stroke="#e2e8f0" stroke-width="0.8" rx="8" fill-opacity="0.25" />
+  <text x="550.00" y="378.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#cbd5e1" text-anchor="middle" dominant-baseline="middle">Pd</text>
+  <rect x="578.00" y="348.00" width="48.00" height="48.00" fill="#fee2e2" stroke="#e2e8f0" stroke-width="0.8" rx="8" fill-opacity="0.25" />
+  <text x="602.00" y="378.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#cbd5e1" text-anchor="middle" dominant-baseline="middle">Ag</text>
+  <rect x="630.00" y="348.00" width="48.00" height="48.00" fill="#fee2e2" stroke="#e2e8f0" stroke-width="0.8" rx="8" fill-opacity="0.25" />
+  <text x="654.00" y="378.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#cbd5e1" text-anchor="middle" dominant-baseline="middle">Cd</text>
+  <rect x="682.00" y="348.00" width="48.00" height="48.00" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2" rx="8"  />
+  <text x="706.00" y="378.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">In</text>
+  <rect x="734.00" y="348.00" width="48.00" height="48.00" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2" rx="8"  />
+  <text x="758.00" y="378.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Sn</text>
+  <rect x="786.00" y="348.00" width="48.00" height="48.00" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2" rx="8"  />
+  <text x="810.00" y="378.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Sb</text>
+  <rect x="838.00" y="348.00" width="48.00" height="48.00" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2" rx="8"  />
+  <text x="862.00" y="378.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Te</text>
+  <rect x="890.00" y="348.00" width="48.00" height="48.00" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2" rx="8"  />
+  <text x="914.00" y="378.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">I</text>
+  <rect x="942.00" y="348.00" width="48.00" height="48.00" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2" rx="8"  />
+  <text x="966.00" y="378.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Xe</text>
+  <text x="33.00" y="430.00" font-family="Inter, sans-serif" font-size="18" font-weight="900" fill="#94a3b8" text-anchor="middle" dominant-baseline="middle">6</text>
+  <rect x="58.00" y="400.00" width="48.00" height="48.00" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="8"  />
+  <text x="82.00" y="430.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Cs</text>
+  <rect x="110.00" y="400.00" width="48.00" height="48.00" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="8"  />
+  <text x="134.00" y="430.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Ba</text>
+  <rect x="162.00" y="400.00" width="48.00" height="48.00" fill="#fee2e2" stroke="#e2e8f0" stroke-width="0.8" rx="8" fill-opacity="0.25" />
+  <text x="186.00" y="430.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#cbd5e1" text-anchor="middle" dominant-baseline="middle">La</text>
+  <rect x="214.00" y="400.00" width="48.00" height="48.00" fill="#fee2e2" stroke="#e2e8f0" stroke-width="0.8" rx="8" fill-opacity="0.25" />
+  <text x="238.00" y="430.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#cbd5e1" text-anchor="middle" dominant-baseline="middle">Hf</text>
+  <rect x="266.00" y="400.00" width="48.00" height="48.00" fill="#fee2e2" stroke="#e2e8f0" stroke-width="0.8" rx="8" fill-opacity="0.25" />
+  <text x="290.00" y="430.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#cbd5e1" text-anchor="middle" dominant-baseline="middle">Ta</text>
+  <rect x="318.00" y="400.00" width="48.00" height="48.00" fill="#fee2e2" stroke="#e2e8f0" stroke-width="0.8" rx="8" fill-opacity="0.25" />
+  <text x="342.00" y="430.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#cbd5e1" text-anchor="middle" dominant-baseline="middle">W</text>
+  <rect x="370.00" y="400.00" width="48.00" height="48.00" fill="#fee2e2" stroke="#e2e8f0" stroke-width="0.8" rx="8" fill-opacity="0.25" />
+  <text x="394.00" y="430.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#cbd5e1" text-anchor="middle" dominant-baseline="middle">Re</text>
+  <rect x="422.00" y="400.00" width="48.00" height="48.00" fill="#fee2e2" stroke="#e2e8f0" stroke-width="0.8" rx="8" fill-opacity="0.25" />
+  <text x="446.00" y="430.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#cbd5e1" text-anchor="middle" dominant-baseline="middle">Os</text>
+  <rect x="474.00" y="400.00" width="48.00" height="48.00" fill="#fee2e2" stroke="#e2e8f0" stroke-width="0.8" rx="8" fill-opacity="0.25" />
+  <text x="498.00" y="430.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#cbd5e1" text-anchor="middle" dominant-baseline="middle">Ir</text>
+  <rect x="526.00" y="400.00" width="48.00" height="48.00" fill="#fee2e2" stroke="#e2e8f0" stroke-width="0.8" rx="8" fill-opacity="0.25" />
+  <text x="550.00" y="430.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#cbd5e1" text-anchor="middle" dominant-baseline="middle">Pt</text>
+  <rect x="578.00" y="400.00" width="48.00" height="48.00" fill="#fee2e2" stroke="#e2e8f0" stroke-width="0.8" rx="8" fill-opacity="0.25" />
+  <text x="602.00" y="430.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#cbd5e1" text-anchor="middle" dominant-baseline="middle">Au</text>
+  <rect x="630.00" y="400.00" width="48.00" height="48.00" fill="#fee2e2" stroke="#e2e8f0" stroke-width="0.8" rx="8" fill-opacity="0.25" />
+  <text x="654.00" y="430.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#cbd5e1" text-anchor="middle" dominant-baseline="middle">Hg</text>
+  <rect x="682.00" y="400.00" width="48.00" height="48.00" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2" rx="8"  />
+  <text x="706.00" y="430.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Tl</text>
+  <rect x="734.00" y="400.00" width="48.00" height="48.00" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2" rx="8"  />
+  <text x="758.00" y="430.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Pb</text>
+  <rect x="786.00" y="400.00" width="48.00" height="48.00" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2" rx="8"  />
+  <text x="810.00" y="430.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Bi</text>
+  <rect x="838.00" y="400.00" width="48.00" height="48.00" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2" rx="8"  />
+  <text x="862.00" y="430.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Po</text>
+  <rect x="890.00" y="400.00" width="48.00" height="48.00" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2" rx="8"  />
+  <text x="914.00" y="430.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">At</text>
+  <rect x="942.00" y="400.00" width="48.00" height="48.00" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2" rx="8"  />
+  <text x="966.00" y="430.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Rn</text>
+  <text x="33.00" y="482.00" font-family="Inter, sans-serif" font-size="18" font-weight="900" fill="#94a3b8" text-anchor="middle" dominant-baseline="middle">7</text>
+  <rect x="58.00" y="452.00" width="48.00" height="48.00" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="8"  />
+  <text x="82.00" y="482.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Fr</text>
+  <rect x="110.00" y="452.00" width="48.00" height="48.00" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="8"  />
+  <text x="134.00" y="482.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Ra</text>
+  <rect x="162.00" y="452.00" width="48.00" height="48.00" fill="#fee2e2" stroke="#e2e8f0" stroke-width="0.8" rx="8" fill-opacity="0.25" />
+  <text x="186.00" y="482.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#cbd5e1" text-anchor="middle" dominant-baseline="middle">Ac</text>
+  <rect x="214.00" y="452.00" width="48.00" height="48.00" fill="#fee2e2" stroke="#e2e8f0" stroke-width="0.8" rx="8" fill-opacity="0.25" />
+  <text x="238.00" y="482.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#cbd5e1" text-anchor="middle" dominant-baseline="middle">Rf</text>
+  <rect x="266.00" y="452.00" width="48.00" height="48.00" fill="#fee2e2" stroke="#e2e8f0" stroke-width="0.8" rx="8" fill-opacity="0.25" />
+  <text x="290.00" y="482.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#cbd5e1" text-anchor="middle" dominant-baseline="middle">Db</text>
+  <rect x="318.00" y="452.00" width="48.00" height="48.00" fill="#fee2e2" stroke="#e2e8f0" stroke-width="0.8" rx="8" fill-opacity="0.25" />
+  <text x="342.00" y="482.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#cbd5e1" text-anchor="middle" dominant-baseline="middle">Sg</text>
+  <rect x="370.00" y="452.00" width="48.00" height="48.00" fill="#fee2e2" stroke="#e2e8f0" stroke-width="0.8" rx="8" fill-opacity="0.25" />
+  <text x="394.00" y="482.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#cbd5e1" text-anchor="middle" dominant-baseline="middle">Bh</text>
+  <rect x="422.00" y="452.00" width="48.00" height="48.00" fill="#fee2e2" stroke="#e2e8f0" stroke-width="0.8" rx="8" fill-opacity="0.25" />
+  <text x="446.00" y="482.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#cbd5e1" text-anchor="middle" dominant-baseline="middle">Hs</text>
+  <rect x="474.00" y="452.00" width="48.00" height="48.00" fill="#fee2e2" stroke="#e2e8f0" stroke-width="0.8" rx="8" fill-opacity="0.25" />
+  <text x="498.00" y="482.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#cbd5e1" text-anchor="middle" dominant-baseline="middle">Mt</text>
+  <rect x="526.00" y="452.00" width="48.00" height="48.00" fill="#fee2e2" stroke="#e2e8f0" stroke-width="0.8" rx="8" fill-opacity="0.25" />
+  <text x="550.00" y="482.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#cbd5e1" text-anchor="middle" dominant-baseline="middle">Ds</text>
+  <rect x="578.00" y="452.00" width="48.00" height="48.00" fill="#fee2e2" stroke="#e2e8f0" stroke-width="0.8" rx="8" fill-opacity="0.25" />
+  <text x="602.00" y="482.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#cbd5e1" text-anchor="middle" dominant-baseline="middle">Rg</text>
+  <rect x="630.00" y="452.00" width="48.00" height="48.00" fill="#fee2e2" stroke="#e2e8f0" stroke-width="0.8" rx="8" fill-opacity="0.25" />
+  <text x="654.00" y="482.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#cbd5e1" text-anchor="middle" dominant-baseline="middle">Cn</text>
+  <rect x="682.00" y="452.00" width="48.00" height="48.00" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2" rx="8"  />
+  <text x="706.00" y="482.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Nh</text>
+  <rect x="734.00" y="452.00" width="48.00" height="48.00" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2" rx="8"  />
+  <text x="758.00" y="482.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Fl</text>
+  <rect x="786.00" y="452.00" width="48.00" height="48.00" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2" rx="8"  />
+  <text x="810.00" y="482.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Mc</text>
+  <rect x="838.00" y="452.00" width="48.00" height="48.00" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2" rx="8"  />
+  <text x="862.00" y="482.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Lv</text>
+  <rect x="890.00" y="452.00" width="48.00" height="48.00" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2" rx="8"  />
+  <text x="914.00" y="482.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Ts</text>
+  <rect x="942.00" y="452.00" width="48.00" height="48.00" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2" rx="8"  />
+  <text x="966.00" y="482.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Og</text>
+  <rect x="230.00" y="564.00" width="25.00" height="25.00" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="6"  />
+  <text x="265.00" y="580.00" font-family="Inter, sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="start" dominant-baseline="middle">Bloque s (Familia IA e IIA)</text>
+  <rect x="550.00" y="564.00" width="25.00" height="25.00" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2" rx="6"  />
+  <text x="585.00" y="580.00" font-family="Inter, sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="start" dominant-baseline="middle">Bloque p (Familia IIIA a VIIIA)</text>
+</svg>

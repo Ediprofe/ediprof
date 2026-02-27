@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 450">
+  <defs>
+        <marker id="arrow-94a3b8-10" markerWidth="10" markerHeight="10" 
+                refX="9.0" refY="5.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 10,5.0 0,10" fill="#94a3b8"/>
+        </marker>
+
+        <marker id="arrow-10b981-10" markerWidth="10" markerHeight="10" 
+                refX="9.0" refY="5.0" orient="auto"
+                markerUnits="userSpaceOnUse">
+            <polygon points="0,0 10,5.0 0,10" fill="#10b981"/>
+        </marker></defs>
+  <rect x="0.00" y="0.00" width="700.00" height="450.00" fill="#f8fafc" stroke="none" stroke-width="0" rx="12"  />
+  <text x="350.00" y="40.00" font-family="Inter, sans-serif" font-size="26" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Ejemplo: Magnesio (Mg)</text>
+  <text x="50.00" y="100.00" font-family="Inter, sans-serif" font-size="18" font-weight="bold" fill="#64748b" text-anchor="start" dominant-baseline="middle">Z = 12</text>
+  <text x="50.00" y="130.00" font-family="Inter, sans-serif" font-size="18" font-weight="bold" fill="#10b981" text-anchor="start" dominant-baseline="middle">Grupo 2 (IIA)</text>
+  <text x="50.00" y="160.00" font-family="Inter, sans-serif" font-size="18" font-weight="bold" fill="#1e293b" text-anchor="start" dominant-baseline="middle">Periodo 3</text>
+  <rect x="50.00" y="320.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="220.00" y="320.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="50.00" y="330.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="60.00" y="330.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="170.00" y="330.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="180.00" y="330.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="190.00" y="330.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="200.00" y="330.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="210.00" y="330.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="220.00" y="330.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="50.00" y="340.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="60.00" y="340.00" width="8.00" height="8.00" fill="#10b981" stroke="#10b981" stroke-width="0.5" rx="1"  />
+  <rect x="170.00" y="340.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="180.00" y="340.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="190.00" y="340.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="200.00" y="340.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="210.00" y="340.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="220.00" y="340.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="50.00" y="350.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="60.00" y="350.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="70.00" y="350.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="80.00" y="350.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="90.00" y="350.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="100.00" y="350.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="110.00" y="350.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="120.00" y="350.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="130.00" y="350.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="140.00" y="350.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="150.00" y="350.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="160.00" y="350.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="170.00" y="350.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="180.00" y="350.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="190.00" y="350.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="200.00" y="350.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="210.00" y="350.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="220.00" y="350.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="50.00" y="360.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="60.00" y="360.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="70.00" y="360.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="80.00" y="360.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="90.00" y="360.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="100.00" y="360.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="110.00" y="360.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="120.00" y="360.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="130.00" y="360.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="140.00" y="360.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="150.00" y="360.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="160.00" y="360.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="170.00" y="360.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="180.00" y="360.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="190.00" y="360.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="200.00" y="360.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="210.00" y="360.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="220.00" y="360.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="50.00" y="370.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="60.00" y="370.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="70.00" y="370.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="80.00" y="370.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="90.00" y="370.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="100.00" y="370.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="110.00" y="370.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="120.00" y="370.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="130.00" y="370.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="140.00" y="370.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="150.00" y="370.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="160.00" y="370.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="170.00" y="370.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="180.00" y="370.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="190.00" y="370.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="200.00" y="370.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="210.00" y="370.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="220.00" y="370.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="50.00" y="380.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="60.00" y="380.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="70.00" y="380.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="80.00" y="380.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="90.00" y="380.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="100.00" y="380.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="110.00" y="380.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="120.00" y="380.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="130.00" y="380.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="140.00" y="380.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="150.00" y="380.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="160.00" y="380.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="170.00" y="380.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="180.00" y="380.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="190.00" y="380.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="200.00" y="380.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="210.00" y="380.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <rect x="220.00" y="380.00" width="8.00" height="8.00" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.5" rx="1"  />
+  <text x="50.00" y="310.00" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#94a3b8" text-anchor="start" dominant-baseline="middle">Ubicación en la Tabla</text>
+  <circle cx="450.00" cy="230.00" r="50.00" fill="none" stroke="#e2e8f0" stroke-width="1.5" fill-opacity="0.4" />
+  <circle cx="450.00" cy="180.00" r="5.00" fill="#94a3b8" stroke="white" stroke-width="1"  />
+  <text x="450.00" y="181.50" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="450.00" cy="280.00" r="5.00" fill="#94a3b8" stroke="white" stroke-width="1"  />
+  <text x="450.00" y="281.50" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="450.00" cy="230.00" r="85.00" fill="none" stroke="#e2e8f0" stroke-width="1.5" fill-opacity="0.4" />
+  <circle cx="450.00" cy="145.00" r="5.00" fill="#94a3b8" stroke="white" stroke-width="1"  />
+  <text x="450.00" y="146.50" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="510.10" cy="169.90" r="5.00" fill="#94a3b8" stroke="white" stroke-width="1"  />
+  <text x="510.10" y="171.40" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="535.00" cy="230.00" r="5.00" fill="#94a3b8" stroke="white" stroke-width="1"  />
+  <text x="535.00" y="231.50" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="510.10" cy="290.10" r="5.00" fill="#94a3b8" stroke="white" stroke-width="1"  />
+  <text x="510.10" y="291.60" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="450.00" cy="315.00" r="5.00" fill="#94a3b8" stroke="white" stroke-width="1"  />
+  <text x="450.00" y="316.50" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="389.90" cy="290.10" r="5.00" fill="#94a3b8" stroke="white" stroke-width="1"  />
+  <text x="389.90" y="291.60" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="365.00" cy="230.00" r="5.00" fill="#94a3b8" stroke="white" stroke-width="1"  />
+  <text x="365.00" y="231.50" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="389.90" cy="169.90" r="5.00" fill="#94a3b8" stroke="white" stroke-width="1"  />
+  <text x="389.90" y="171.40" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="450.00" cy="230.00" r="120.00" fill="none" stroke="#10b981" stroke-width="2.5"  />
+  <text x="580.00" y="230.00" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#10b981" text-anchor="start" dominant-baseline="middle">Capa 3 (Externa)</text>
+  <circle cx="450.00" cy="110.00" r="5.00" fill="#10b981" stroke="white" stroke-width="1"  />
+  <text x="450.00" y="111.50" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="450.00" cy="350.00" r="5.00" fill="#10b981" stroke="white" stroke-width="1"  />
+  <text x="450.00" y="351.50" font-family="Inter, sans-serif" font-size="9" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="450.00" cy="230.00" r="22.00" fill="#f8fafc" stroke="#64748b" stroke-width="2"  />
+  <text x="450.00" y="235.00" font-family="Inter, sans-serif" font-size="14" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Mg</text>
+  <line x1="140.00" y1="160.00" x2="320.00" y2="210.00" stroke="#94a3b8" stroke-width="2"  marker-end="url(#arrow-94a3b8-10)"/>
+  <text x="220.00" y="145.00" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#64748b" text-anchor="middle" dominant-baseline="middle">Periodo 3 = 3 capas de electrones</text>
+  <line x1="180.00" y1="130.00" x2="450.00" y2="100.00" stroke="#10b981" stroke-width="2"  marker-end="url(#arrow-10b981-10)"/>
+  <text x="280.00" y="110.00" font-family="Inter, sans-serif" font-size="14" font-weight="900" fill="#10b981" text-anchor="middle" dominant-baseline="middle">Grupo IIA = 2 e- de valencia</text>
+  <text x="350.00" y="420.00" font-family="monospace" font-size="16" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">Configuración: [Ne] 3s²</text>
+</svg>

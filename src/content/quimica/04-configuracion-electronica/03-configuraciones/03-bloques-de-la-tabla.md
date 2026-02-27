@@ -1,63 +1,170 @@
-# Bloques de la Tabla Periódica
+# **Bloques de la Tabla Periódica**
 
-La tabla periódica se divide en **cuatro bloques** (s, p, d, f) según el tipo de orbital en el que termina la configuración electrónica de cada elemento.
+Imagina que la tabla periódica es un gran vecindario donde las casas se agrupan por el tipo de patio que tienen. En química, esos "patios" son los orbitales, y entender en cuál de ellos vive el último electrón de un átomo es la llave para predecir cómo se comportará ese elemento.
 
 ---
 
 ## 🎯 ¿Qué vas a aprender?
 
-- La división de la tabla en bloques
-- Cómo identificar el bloque de un elemento
-- La relación entre bloque y configuración
-- Las excepciones importantes
+- La división de la tabla en bloques (s, p, d, f)
+- Qué son los electrones de valencia y por qué son los protagonistas
+- El secreto de la Familia A y los números romanos
+- Por qué los gases nobles son el modelo a seguir de los demás átomos
 
 ---
 
-## 📖 Concepto General
+## 📖 Clasificación General: La Naturaleza de los Elementos
 
-> La **división de la tabla** se basa en **cómo termina la configuración electrónica** de cada elemento.
+Antes de dividir la tabla por bloques electrónicos, es fundamental recordar que la naturaleza agrupa a los elementos en tres grandes categorías según sus propiedades físicas y químicas: **Metales, No Metales y Metaloides**.
+
+![Clasificación General de los Elementos](/images/quimica/config-electronica/bloques/clasificacion-metales-no-metales.svg)
+
+Esta división es el primer paso para entender por qué algunos elementos conducen electricidad (metales) mientras que otros son gases vitales para la vida (no metales).
+
+---
+
+## 📖 Concepto General: Los 4 Barrios
+
+> La **división de la tabla** se basa en **cómo termina la configuración electrónica** de cada elemento. El último subnivel que se llena define el "bloque" al que pertenece el elemento.
 
 ![Los 4 Bloques de la Tabla Periódica](/images/quimica/config-electronica/bloques/tabla-bloques-completa.svg)
 
-La tabla se divide en **cuatro bloques principales:** **s, p, d y f**
+La tabla se divide en **cuatro bloques principales:** **s, p, d y f**.
 
 ---
 
-## 📖 Elementos Representativos (Bloques s y p)
+## 📖 ¿Qué son los Electrones de Valencia?
 
-![Bloques s y p (Elementos Representativos)](/images/quimica/config-electronica/bloques/tabla-bloques-representativos.svg)
+Antes de explorar los bloques, debemos conocer a los protagonistas de la química. Los **electrones de valencia** son los electrones que se encuentran en el **nivel de energía más alto** (la capa más externa) de un átomo.
 
-Estos elementos siguen **fielmente las reglas** de configuración electrónica.
+Son los más importantes porque:
+1. Son los que participan en los **enlaces químicos**.
+2. Determinan las **propiedades químicas** del elemento.
+3. Indican la **reactividad** del átomo (qué tanto "desea" reaccionar con otros).
 
-### 💡 Bloque s:
+---
 
-| Característica | Descripción |
-|----------------|-------------|
-| **Ubicación** | Zona **izquierda** (columnas 1-2) |
-| **Terminación** | s¹ o s² |
-| **Grupos** | 1 (alcalinos) y 2 (alcalinotérreos) |
+## 📖 Elementos Representativos: La Familia A (Bloques s y p)
 
-**Ejemplos:**
-| Elemento | Configuración | Termina en |
-|----------|---------------|------------|
-| Francio (Fr) | [Rn] 7s¹ | 7s¹ |
-| Calcio (Ca) | [Ar] 4s² | 4s² |
-| Sodio (Na) | [Ne] 3s¹ | 3s¹ |
+Los elementos de los bloques **s** y **p** se conocen como **elementos representativos** porque sus propiedades químicas se repiten de forma muy regular. 
 
-### 💡 Bloque p:
+Antiguamente, se agrupaban en la **Familia A**, lo que nos otorga un "superpoder" visual:
 
-| Característica | Descripción |
-|----------------|-------------|
-| **Ubicación** | Zona **derecha** (columnas 13-18) |
-| **Terminación** | p¹ hasta p⁶ |
-| **Grupos** | 13 al 18 |
+![Nomenclatura Completa: Grupos, Periodos y Terminaciones](/images/quimica/config-electronica/bloques/puente-nomenclatura-tradicional.svg)
 
-**Ejemplos:**
-| Elemento | Configuración | Termina en |
-|----------|---------------|------------|
-| Cloro (Cl) | [Ne] 3s² 3p⁵ | 3p⁵ |
-| Carbono (C) | [He] 2s² 2p² | 2p² |
-| Fósforo (P) | [Ne] 3s² 3p³ | 3p³ |
+### 💡 La Regla de Oro de la Familia A
+Para estos elementos, el número romano del grupo coincide exactamente con la cantidad de electrones de valencia que poseen.
+
+| Grupo (Moderno) | Grupo (Tradicional) | e⁻ de Valencia | Configuración Externa |
+|:---:|:---:|:---:|:---:|
+| **1** | **IA** | **1** | ns¹ |
+| **2** | **IIA** | **2** | ns² |
+| **13** | **IIIA** | **3** | ns² np¹ |
+| **14** | **IVA** | **4** | ns² np² |
+| **15** | **VA** | **5** | ns² np³ |
+| **16** | **VIA** | **6** | ns² np⁴ |
+| **17** | **VIIA** | **7** | ns² np⁵ |
+| **18** | **VIIIA** | **8** | ns² np⁶ |
+
+![El Código de la Familia A](/images/quimica/config-electronica/bloques/codigo-romano-valencia.svg)
+
+---
+
+## 📖 Visualizando los Electrones (Ejemplos Reales)
+
+Observemos cómo la ubicación en la tabla determina la estructura interna del átomo.
+
+---
+
+### 1. Neón (Ne) - Z = 10
+Es un gas noble del Periodo 2. Al estar en el Grupo VIIIA, tiene su capa de valencia completa.
+
+![Ubicación del Neón](/images/quimica/config-electronica/bloques/ejemplos/valencia-ne-pos.svg)
+![Distribución del Neón](/images/quimica/config-electronica/bloques/ejemplos/valencia-ne-dist.svg)
+
+---
+
+### 2. Potasio (K) - Z = 19
+Al iniciar el periodo 4, abre una nueva capa con un solo electrón de valencia.
+
+![Ubicación del Potasio](/images/quimica/config-electronica/bloques/ejemplos/valencia-k-pos.svg)
+![Distribución del Potasio](/images/quimica/config-electronica/bloques/ejemplos/valencia-k-dist.svg)
+
+---
+
+### 3. Selenio (Se) - Z = 34
+Un elemento del bloque $p$ con muchos electrones internos, pero pocos de valencia.
+
+![Ubicación del Selenio](/images/quimica/config-electronica/bloques/ejemplos/valencia-se-pos.svg)
+![Distribución del Selenio](/images/quimica/config-electronica/bloques/ejemplos/valencia-se-dist.svg)
+
+---
+
+### 4. Bismuto (Bi) - Z = 83
+Un gigante del Periodo 6 con 5 electrones de valencia.
+
+![Ubicación del Bismuto](/images/quimica/config-electronica/bloques/ejemplos/valencia-bi-pos.svg)
+![Distribución del Bismuto](/images/quimica/config-electronica/bloques/ejemplos/valencia-bi-dist.svg)
+
+---
+
+## 📖 Los Modelos de Estabilidad: Los Gases Nobles (Grupo VIIIA)
+
+Los elementos del **Grupo 18 (VIIIA)** son la meta de estabilidad para todos los demás átomos debido a su **capa de valencia completa**.
+
+![Gases Nobles: La Meta de Estabilidad](/images/quimica/config-electronica/bloques/gases-nobles-meta-estabilidad.svg)
+
+> **Regla del Octeto:** Casi todos los átomos de la naturaleza "sueñan" con tener 8 electrones en su última capa para alcanzar la máxima estabilidad.
+
+Observemos los modelos de estabilidad uno por uno, **sin omitir capas**:
+
+---
+
+### 1. Helio (He) - Z = 2
+La excepción del octeto: completa su única capa ($n=1$) con solo 2 electrones.
+
+![Ubicación del Helio](/images/quimica/config-electronica/bloques/gases-nobles/noble-he-pos.svg)
+![Distribución del Helio](/images/quimica/config-electronica/bloques/gases-nobles/noble-he-dist.svg)
+
+---
+
+### 2. Neón (Ne) - Z = 10
+El primer modelo del octeto ($2s^2 2p^6$).
+
+![Ubicación del Neón](/images/quimica/config-electronica/bloques/gases-nobles/noble-ne-pos.svg)
+![Distribución del Neón](/images/quimica/config-electronica/bloques/gases-nobles/noble-ne-dist.svg)
+
+---
+
+### 3. Argón (Ar) - Z = 18
+Estabilidad completa en el nivel 3.
+
+![Ubicación del Argón](/images/quimica/config-electronica/bloques/gases-nobles/noble-ar-pos.svg)
+![Distribución del Argón](/images/quimica/config-electronica/bloques/gases-nobles/noble-ar-dist.svg)
+
+---
+
+### 4. Kriptón (Kr) - Z = 36
+A pesar de tener 36 electrones, solo los 8 de su capa 4 son de valencia.
+
+![Ubicación del Kriptón](/images/quimica/config-electronica/bloques/gases-nobles/noble-kr-pos.svg)
+![Distribución del Kriptón](/images/quimica/config-electronica/bloques/gases-nobles/noble-kr-dist.svg)
+
+---
+
+### 5. Xenón (Xe) - Z = 54
+5 capas completas de electrones organizadas perfectamente.
+
+![Ubicación del Xenón](/images/quimica/config-electronica/bloques/gases-nobles/noble-xe-pos.svg)
+![Distribución del Xenón](/images/quimica/config-electronica/bloques/gases-nobles/noble-xe-dist.svg)
+
+---
+
+### 6. Radón (Rn) - Z = 86
+El gigante de la estabilidad con 6 niveles de energía.
+
+![Ubicación del Radón](/images/quimica/config-electronica/bloques/gases-nobles/noble-rn-pos.svg)
+![Distribución del Radón](/images/quimica/config-electronica/bloques/gases-nobles/noble-rn-dist.svg)
 
 ---
 
@@ -65,169 +172,71 @@ Estos elementos siguen **fielmente las reglas** de configuración electrónica.
 
 ![Bloques d y f (Elementos de Transición)](/images/quimica/config-electronica/bloques/tabla-bloques-transicion.svg)
 
-Estos elementos presentan **múltiples excepciones**.
-
-### 💡 Bloque d (transición externa):
-
-| Característica | Descripción |
-|----------------|-------------|
-| **Ubicación** | Zona **central** (columnas 3-12) |
-| **Terminación** | d¹ hasta d¹⁰ |
-| **Grupos** | 3 al 12 |
-
-### 💡 Bloque f (transición interna):
-
-| Característica | Descripción |
-|----------------|-------------|
-| **Ubicación** | Parte **inferior** de la tabla |
-| **Incluye** | Lantánidos y Actínidos |
-| **Terminación** | f¹ hasta f¹⁴ |
-
----
-
-## 📖 Excepciones Importantes
-
-Los elementos de transición **no siempre siguen** las reglas de llenado:
-
-| Elemento | Esperado | Real | Razón |
-|----------|----------|------|-------|
-| Cobre (Cu) | 3d⁹ | 3d¹⁰ | d completo es más estable |
-| Cromo (Cr) | 3d⁴ | 3d⁵ | d semilleno es más estable |
-| Niobio (Nb) | 4d³ | 4d⁴ | Estabilidad extra |
+Estos elementos presentan **múltiples excepciones** y su número de electrones de valencia es más complejo de predecir.
 
 ---
 
 ## 📖 Relación con el Período
 
-> El **número (coeficiente)** indica el **nivel de energía**, que coincide con el **período** del elemento.
+> **Regla Infalible:** El Periodo del elemento indica el número total de niveles (capas) de energía que tiene el átomo.
 
-**Ejemplo:**
-- En **7s¹**, el **7** representa el nivel de energía
-- El elemento está en el **período 7**
-
-### 💡 Excepción notable:
-
-El **helio (He)** termina en **s²**, pero se ubica en la zona de **gases nobles** (bloque p) por sus propiedades químicas.
+| Elemento | Periodo | Niveles de Energía | Capas en el Dibujo |
+|:---:|:---:|:---:|:---:|
+| Neón | **2** | 2 niveles ($n=1, n=2$) | 2 círculos |
+| Argón | **3** | 3 niveles ($n=1, n=2, n=3$) | 3 círculos |
+| Selenio | **4** | 4 niveles ($n=1...n=4$) | 4 círculos |
+| Xenón | **5** | 5 niveles ($n=1...n=5$) | 5 círculos |
+| Bismuto | **6** | 6 niveles ($n=1...n=6$) | 6 círculos |
 
 ---
 
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1
-¿En qué bloque está el oxígeno (Z=8)?
+**¿En qué bloque está el oxígeno ($Z=8$)?**
 
 <details>
 <summary>Ver solución</summary>
 
-Configuración: 1s² 2s² 2p⁴
+**Datos:** $Z=8$.
+**Razonamiento:** Realizamos la configuración siguiendo las diagonales:
 
-Termina en **2p⁴** → **Bloque p**
+$$
+1s^2 \, 2s^2 \, 2p^4
+$$
+
+Como el último electrón entra en un orbital $p$:
+**Resultado:** $\boxed{\text{Bloque p}}$
 
 </details>
 
 ### Ejercicio 2
-¿En qué bloque está el hierro (Z=26)?
+**Determina el número de electrones de valencia del Sodio ($Z=11$) a partir de su grupo.**
 
 <details>
 <summary>Ver solución</summary>
 
-Configuración: [Ar] 4s² 3d⁶
-
-Termina en **3d⁶** → **Bloque d**
+**Datos:** Sodio (Na), $Z=11$, Grupo 1 (IA).
+**Razonamiento:** Según la regla de la Familia A, el número romano indica los electrones de valencia. Para el grupo IA:
+**Resultado:** $\boxed{1 \text{ electrón de valencia}}$
 
 </details>
 
 ### Ejercicio 3
-¿Por qué el helio está con los gases nobles si termina en s²?
+**¿Por qué el argón ($Z=18$) es un elemento muy estable?**
 
 <details>
 <summary>Ver solución</summary>
 
-Aunque su configuración es **1s²** (bloque s), el helio se ubica con los gases nobles porque:
+**Datos:** Argón (Ar), $Z=18$, Grupo VIIIA.
+**Razonamiento:** Su configuración es:
 
-- Tiene su **capa de valencia completa**
-- Es **químicamente inerte**
-- Sus propiedades son similares a los demás gases nobles
+$$
+[Ne] \, 3s^2 \, 3p^6
+$$
 
-</details>
-
-### Ejercicio 4
-¿En qué bloque se encuentra el sodio (Z=11)?
-
-<details>
-<summary>Ver solución</summary>
-
-Configuración: [Ne] 3s¹
-
-Termina en **3s¹** → **Bloque s**
-
-</details>
-
-### Ejercicio 5
-¿A qué bloque pertenece el cloro (Z=17)?
-
-<details>
-<summary>Ver solución</summary>
-
-Configuración: [Ne] 3s² 3p⁵
-
-Termina en **3p⁵** → **Bloque p**
-
-</details>
-
-### Ejercicio 6
-Identifica el bloque del zinc (Z=30).
-
-<details>
-<summary>Ver solución</summary>
-
-Configuración: [Ar] 4s² 3d¹⁰
-
-Termina en **3d¹⁰** → **Bloque d**
-
-</details>
-
-### Ejercicio 7
-¿En qué bloque se ubica el uranio (Z=92)?
-
-<details>
-<summary>Ver solución</summary>
-
-Configuración: [Rn] 7s² 5f³ 6d¹ (aproximada)
-
-Termina llenando orbitales **f** → **Bloque f**
-
-</details>
-
-### Ejercicio 8
-¿Cuál es el bloque de los metales alcalinotérreos (Grupo 2)?
-
-<details>
-<summary>Ver solución</summary>
-
-Todos los elementos del grupo 2 terminan su configuración en **ns²** → **Bloque s**
-
-</details>
-
-### Ejercicio 9
-Si un elemento termina en 4p³, ¿en qué bloque está?
-
-<details>
-<summary>Ver solución</summary>
-
-Como termina en un subnivel **p**, pertenece al **Bloque p**
-
-</details>
-
-### Ejercicio 10
-¿En qué bloque está la plata (Z=47)?
-
-<details>
-<summary>Ver solución</summary>
-
-Configuración: [Kr] 5s¹ 4d¹⁰
-
-Termina en **4d¹⁰** → **Bloque d**
+Tiene 8 electrones en su capa externa ($2+6$). Esto cumple con la Regla del Octeto.
+**Resultado:** $\boxed{\text{Tiene su capa de valencia completa}}$
 
 </details>
 
@@ -235,13 +244,11 @@ Termina en **4d¹⁰** → **Bloque d**
 
 ## 🔑 Resumen
 
-| Bloque | Ubicación | Terminación | Grupos |
-|--------|-----------|-------------|--------|
-| **s** | Izquierda | s¹, s² | 1, 2 |
-| **p** | Derecha | p¹ a p⁶ | 13-18 |
-| **d** | Centro | d¹ a d¹⁰ | 3-12 |
-| **f** | Inferior | f¹ a f¹⁴ | Lantánidos/Actínidos |
+| Bloque | Ubicación | e⁻ de Valencia |
+|--------|-----------|----------------|
+| **s** | Izquierda | 1 a 2 |
+| **p** | Derecha | 3 a 8 (Gases nobles = 8) |
+| **d** | Centro | Varía (Transición) |
+| **f** | Inferior | Varía (Transición Interna) |
 
-> Los bloques de la tabla periódica (s, p, d y f) agrupan los elementos según la forma en que sus electrones se organizan.
-
-![Guía Maestra: Bloques y Configuraciones](/images/quimica/config-electronica/bloques/tabla-maestra-bloques.svg)
+> La ubicación en la tabla periódica es un mapa directo a la estructura íntima del átomo.

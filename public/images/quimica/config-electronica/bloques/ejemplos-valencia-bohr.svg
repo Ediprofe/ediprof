@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400">
+  <defs></defs>
+  <rect x="0.00" y="0.00" width="900.00" height="400.00" fill="#f8fafc" stroke="none" stroke-width="0" rx="12"  />
+  <text x="450.00" y="40.00" font-family="Inter, sans-serif" font-size="24" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Relación Grupo - Capa de Valencia</text>
+  <text x="250.00" y="40.00" font-family="Inter, sans-serif" font-size="20" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Sodio (Na)</text>
+  <text x="250.00" y="65.00" font-family="Inter, sans-serif" font-size="18" font-weight="900" fill="#fbbf24" text-anchor="middle" dominant-baseline="middle">Grupo IA</text>
+  <text x="250.00" y="350.00" font-family="monospace" font-size="16" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">1s² 2s² 2p⁶ 3s¹</text>
+  <circle cx="250.00" cy="200.00" r="40.00" fill="none" stroke="#e2e8f0" stroke-width="1.5" fill-opacity="0.5" />
+  <circle cx="250.00" cy="160.00" r="4.00" fill="#94a3b8" stroke="white" stroke-width="0.8"  />
+  <text x="250.00" y="161.50" font-family="Inter, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="250.00" cy="240.00" r="4.00" fill="#94a3b8" stroke="white" stroke-width="0.8"  />
+  <text x="250.00" y="241.50" font-family="Inter, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="250.00" cy="200.00" r="65.00" fill="none" stroke="#e2e8f0" stroke-width="1.5" fill-opacity="0.5" />
+  <circle cx="250.00" cy="135.00" r="4.00" fill="#94a3b8" stroke="white" stroke-width="0.8"  />
+  <text x="250.00" y="136.50" font-family="Inter, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="295.96" cy="154.04" r="4.00" fill="#94a3b8" stroke="white" stroke-width="0.8"  />
+  <text x="295.96" y="155.54" font-family="Inter, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="315.00" cy="200.00" r="4.00" fill="#94a3b8" stroke="white" stroke-width="0.8"  />
+  <text x="315.00" y="201.50" font-family="Inter, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="295.96" cy="245.96" r="4.00" fill="#94a3b8" stroke="white" stroke-width="0.8"  />
+  <text x="295.96" y="247.46" font-family="Inter, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="250.00" cy="265.00" r="4.00" fill="#94a3b8" stroke="white" stroke-width="0.8"  />
+  <text x="250.00" y="266.50" font-family="Inter, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="204.04" cy="245.96" r="4.00" fill="#94a3b8" stroke="white" stroke-width="0.8"  />
+  <text x="204.04" y="247.46" font-family="Inter, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="185.00" cy="200.00" r="4.00" fill="#94a3b8" stroke="white" stroke-width="0.8"  />
+  <text x="185.00" y="201.50" font-family="Inter, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="204.04" cy="154.04" r="4.00" fill="#94a3b8" stroke="white" stroke-width="0.8"  />
+  <text x="204.04" y="155.54" font-family="Inter, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="250.00" cy="200.00" r="90.00" fill="none" stroke="#fbbf24" stroke-width="2.5"  />
+  <circle cx="250.00" cy="110.00" r="4.00" fill="#fbbf24" stroke="white" stroke-width="0.8"  />
+  <text x="250.00" y="111.50" font-family="Inter, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="250.00" cy="200.00" r="18.00" fill="#f8fafc" stroke="#64748b" stroke-width="1.5"  />
+  <text x="250.00" y="204.00" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Na</text>
+  <text x="650.00" y="40.00" font-family="Inter, sans-serif" font-size="20" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Fósforo (P)</text>
+  <text x="650.00" y="65.00" font-family="Inter, sans-serif" font-size="18" font-weight="900" fill="#3b82f6" text-anchor="middle" dominant-baseline="middle">Grupo VA</text>
+  <text x="650.00" y="350.00" font-family="monospace" font-size="16" font-weight="normal" fill="#64748b" text-anchor="middle" dominant-baseline="middle">[Ne] 3s² 3p³</text>
+  <circle cx="650.00" cy="200.00" r="40.00" fill="none" stroke="#e2e8f0" stroke-width="1.5" fill-opacity="0.5" />
+  <circle cx="650.00" cy="160.00" r="4.00" fill="#94a3b8" stroke="white" stroke-width="0.8"  />
+  <text x="650.00" y="161.50" font-family="Inter, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="650.00" cy="240.00" r="4.00" fill="#94a3b8" stroke="white" stroke-width="0.8"  />
+  <text x="650.00" y="241.50" font-family="Inter, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="650.00" cy="200.00" r="65.00" fill="none" stroke="#e2e8f0" stroke-width="1.5" fill-opacity="0.5" />
+  <circle cx="650.00" cy="135.00" r="4.00" fill="#94a3b8" stroke="white" stroke-width="0.8"  />
+  <text x="650.00" y="136.50" font-family="Inter, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="695.96" cy="154.04" r="4.00" fill="#94a3b8" stroke="white" stroke-width="0.8"  />
+  <text x="695.96" y="155.54" font-family="Inter, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="715.00" cy="200.00" r="4.00" fill="#94a3b8" stroke="white" stroke-width="0.8"  />
+  <text x="715.00" y="201.50" font-family="Inter, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="695.96" cy="245.96" r="4.00" fill="#94a3b8" stroke="white" stroke-width="0.8"  />
+  <text x="695.96" y="247.46" font-family="Inter, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="650.00" cy="265.00" r="4.00" fill="#94a3b8" stroke="white" stroke-width="0.8"  />
+  <text x="650.00" y="266.50" font-family="Inter, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="604.04" cy="245.96" r="4.00" fill="#94a3b8" stroke="white" stroke-width="0.8"  />
+  <text x="604.04" y="247.46" font-family="Inter, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="585.00" cy="200.00" r="4.00" fill="#94a3b8" stroke="white" stroke-width="0.8"  />
+  <text x="585.00" y="201.50" font-family="Inter, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="604.04" cy="154.04" r="4.00" fill="#94a3b8" stroke="white" stroke-width="0.8"  />
+  <text x="604.04" y="155.54" font-family="Inter, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="650.00" cy="200.00" r="90.00" fill="none" stroke="#3b82f6" stroke-width="2.5"  />
+  <circle cx="650.00" cy="110.00" r="4.00" fill="#3b82f6" stroke="white" stroke-width="0.8"  />
+  <text x="650.00" y="111.50" font-family="Inter, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="735.60" cy="172.19" r="4.00" fill="#3b82f6" stroke="white" stroke-width="0.8"  />
+  <text x="735.60" y="173.69" font-family="Inter, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="702.90" cy="272.81" r="4.00" fill="#3b82f6" stroke="white" stroke-width="0.8"  />
+  <text x="702.90" y="274.31" font-family="Inter, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="597.10" cy="272.81" r="4.00" fill="#3b82f6" stroke="white" stroke-width="0.8"  />
+  <text x="597.10" y="274.31" font-family="Inter, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="564.40" cy="172.19" r="4.00" fill="#3b82f6" stroke="white" stroke-width="0.8"  />
+  <text x="564.40" y="173.69" font-family="Inter, sans-serif" font-size="7" font-weight="bold" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="650.00" cy="200.00" r="18.00" fill="#f8fafc" stroke="#64748b" stroke-width="1.5"  />
+  <text x="650.00" y="204.00" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">P</text>
+  <text x="250.00" y="360.00" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#b45309" text-anchor="middle" dominant-baseline="middle">1 electrón de valencia</text>
+  <text x="650.00" y="360.00" font-family="Inter, sans-serif" font-size="14" font-weight="bold" fill="#1d4ed8" text-anchor="middle" dominant-baseline="middle">5 electrones de valencia</text>
+</svg>

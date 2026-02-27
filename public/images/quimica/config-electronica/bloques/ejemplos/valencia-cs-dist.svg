@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 820">
+  <defs></defs>
+  <rect x="0.00" y="0.00" width="800.00" height="820.00" fill="#f8fafc" stroke="none" stroke-width="0" rx="12"  />
+  <text x="400.00" y="50.00" font-family="Inter, sans-serif" font-size="32" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Distribución Electrónica: Cesio (Cs)</text>
+  <circle cx="400.00" cy="420.00" r="60.00" fill="none" stroke="#e2e8f0" stroke-width="1.5" fill-opacity="0.2" />
+  <circle cx="400.00" cy="360.00" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="400.00" y="362.00" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="400.00" cy="480.00" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="400.00" y="482.00" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="400.00" cy="420.00" r="96.00" fill="none" stroke="#e2e8f0" stroke-width="1.5" fill-opacity="0.2" />
+  <circle cx="400.00" cy="324.00" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="400.00" y="326.00" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="467.88" cy="352.12" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="467.88" y="354.12" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="496.00" cy="420.00" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="496.00" y="422.00" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="467.88" cy="487.88" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="467.88" y="489.88" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="400.00" cy="516.00" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="400.00" y="518.00" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="332.12" cy="487.88" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="332.12" y="489.88" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="304.00" cy="420.00" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="304.00" y="422.00" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="332.12" cy="352.12" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="332.12" y="354.12" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="400.00" cy="420.00" r="132.00" fill="none" stroke="#e2e8f0" stroke-width="1.5" fill-opacity="0.2" />
+  <circle cx="400.00" cy="288.00" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="400.00" y="290.00" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="445.15" cy="295.96" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="445.15" y="297.96" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="484.85" cy="318.88" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="484.85" y="320.88" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="514.32" cy="354.00" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="514.32" y="356.00" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="529.99" cy="397.08" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="529.99" y="399.08" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="529.99" cy="442.92" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="529.99" y="444.92" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="514.32" cy="486.00" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="514.32" y="488.00" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="484.85" cy="521.12" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="484.85" y="523.12" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="445.15" cy="544.04" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="445.15" y="546.04" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="400.00" cy="552.00" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="400.00" y="554.00" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="354.85" cy="544.04" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="354.85" y="546.04" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="315.15" cy="521.12" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="315.15" y="523.12" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="285.68" cy="486.00" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="285.68" y="488.00" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="270.01" cy="442.92" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="270.01" y="444.92" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="270.01" cy="397.08" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="270.01" y="399.08" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="285.68" cy="354.00" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="285.68" y="356.00" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="315.15" cy="318.88" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="315.15" y="320.88" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="354.85" cy="295.96" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="354.85" y="297.96" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="400.00" cy="420.00" r="168.00" fill="none" stroke="#e2e8f0" stroke-width="1.5" fill-opacity="0.2" />
+  <circle cx="400.00" cy="252.00" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="400.00" y="254.00" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="457.46" cy="262.13" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="457.46" y="264.13" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="507.99" cy="291.30" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="507.99" y="293.30" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="545.49" cy="336.00" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="545.49" y="338.00" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="565.45" cy="390.83" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="565.45" y="392.83" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="565.45" cy="449.17" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="565.45" y="451.17" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="545.49" cy="504.00" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="545.49" y="506.00" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="507.99" cy="548.70" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="507.99" y="550.70" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="457.46" cy="577.87" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="457.46" y="579.87" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="400.00" cy="588.00" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="400.00" y="590.00" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="342.54" cy="577.87" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="342.54" y="579.87" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="292.01" cy="548.70" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="292.01" y="550.70" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="254.51" cy="504.00" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="254.51" y="506.00" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="234.55" cy="449.17" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="234.55" y="451.17" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="234.55" cy="390.83" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="234.55" y="392.83" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="254.51" cy="336.00" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="254.51" y="338.00" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="292.01" cy="291.30" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="292.01" y="293.30" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="342.54" cy="262.13" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="342.54" y="264.13" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="400.00" cy="420.00" r="204.00" fill="none" stroke="#e2e8f0" stroke-width="1.5" fill-opacity="0.2" />
+  <circle cx="400.00" cy="216.00" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="400.00" y="218.00" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="544.25" cy="275.75" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="544.25" y="277.75" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="604.00" cy="420.00" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="604.00" y="422.00" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="544.25" cy="564.25" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="544.25" y="566.25" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="400.00" cy="624.00" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="400.00" y="626.00" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="255.75" cy="564.25" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="255.75" y="566.25" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="196.00" cy="420.00" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="196.00" y="422.00" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="255.75" cy="275.75" r="6.00" fill="#94a3b8" stroke="white" stroke-width="1.2"  />
+  <text x="255.75" y="277.75" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="400.00" cy="420.00" r="240.00" fill="none" stroke="#f59e0b" stroke-width="4"  />
+  <circle cx="400.00" cy="180.00" r="6.00" fill="#f59e0b" stroke="white" stroke-width="1.2"  />
+  <text x="400.00" y="182.00" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">-</text>
+  <circle cx="400.00" cy="420.00" r="32.00" fill="#f1f5f9" stroke="#1e293b" stroke-width="3"  />
+  <text x="400.00" y="418.00" font-family="Inter, sans-serif" font-size="20" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Cs</text>
+  <text x="400.00" y="436.00" font-family="Inter, sans-serif" font-size="12" font-weight="bold" fill="#64748b" text-anchor="middle" dominant-baseline="middle">Z=55</text>
+  <rect x="100.00" y="735.00" width="600.00" height="50.00" fill="#f1f5f9" stroke="none" stroke-width="0" rx="25"  />
+  <text x="400.00" y="768.00" font-family="monospace" font-size="22" font-weight="bold" fill="#334155" text-anchor="middle" dominant-baseline="middle">Configuración: [Xe] 6s¹</text>
+</svg>

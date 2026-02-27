@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 650">
+  <defs></defs>
+  <rect x="0.00" y="0.00" width="1000.00" height="650.00" fill="#f8fafc" stroke="none" stroke-width="0" rx="12"  />
+  <text x="500.00" y="45.00" font-family="Inter, sans-serif" font-size="32" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">Gases Nobles: El Modelo de Estabilidad</text>
+  <text x="77.00" y="75.00" font-family="Inter, sans-serif" font-size="14" font-weight="900" fill="#64748b" text-anchor="middle" dominant-baseline="middle">s¹</text>
+  <text x="77.00" y="95.00" font-family="Inter, sans-serif" font-size="12" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">IA</text>
+  <text x="77.00" y="115.00" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#94a3b8" text-anchor="middle" dominant-baseline="middle">1</text>
+  <text x="125.00" y="75.00" font-family="Inter, sans-serif" font-size="14" font-weight="900" fill="#64748b" text-anchor="middle" dominant-baseline="middle">s²</text>
+  <text x="125.00" y="95.00" font-family="Inter, sans-serif" font-size="12" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">IIA</text>
+  <text x="125.00" y="115.00" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#94a3b8" text-anchor="middle" dominant-baseline="middle">2</text>
+  <text x="653.00" y="75.00" font-family="Inter, sans-serif" font-size="14" font-weight="900" fill="#64748b" text-anchor="middle" dominant-baseline="middle">p1</text>
+  <text x="653.00" y="95.00" font-family="Inter, sans-serif" font-size="12" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">IIIA</text>
+  <text x="653.00" y="115.00" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#94a3b8" text-anchor="middle" dominant-baseline="middle">13</text>
+  <text x="701.00" y="75.00" font-family="Inter, sans-serif" font-size="14" font-weight="900" fill="#64748b" text-anchor="middle" dominant-baseline="middle">p2</text>
+  <text x="701.00" y="95.00" font-family="Inter, sans-serif" font-size="12" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">IVA</text>
+  <text x="701.00" y="115.00" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#94a3b8" text-anchor="middle" dominant-baseline="middle">14</text>
+  <text x="749.00" y="75.00" font-family="Inter, sans-serif" font-size="14" font-weight="900" fill="#64748b" text-anchor="middle" dominant-baseline="middle">p3</text>
+  <text x="749.00" y="95.00" font-family="Inter, sans-serif" font-size="12" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">VA</text>
+  <text x="749.00" y="115.00" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#94a3b8" text-anchor="middle" dominant-baseline="middle">15</text>
+  <text x="797.00" y="75.00" font-family="Inter, sans-serif" font-size="14" font-weight="900" fill="#64748b" text-anchor="middle" dominant-baseline="middle">p4</text>
+  <text x="797.00" y="95.00" font-family="Inter, sans-serif" font-size="12" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">VIA</text>
+  <text x="797.00" y="115.00" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#94a3b8" text-anchor="middle" dominant-baseline="middle">16</text>
+  <text x="845.00" y="75.00" font-family="Inter, sans-serif" font-size="14" font-weight="900" fill="#64748b" text-anchor="middle" dominant-baseline="middle">p5</text>
+  <text x="845.00" y="95.00" font-family="Inter, sans-serif" font-size="12" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">VIIA</text>
+  <text x="845.00" y="115.00" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#94a3b8" text-anchor="middle" dominant-baseline="middle">17</text>
+  <text x="893.00" y="75.00" font-family="Inter, sans-serif" font-size="14" font-weight="900" fill="#2563eb" text-anchor="middle" dominant-baseline="middle">p⁶</text>
+  <text x="893.00" y="95.00" font-family="Inter, sans-serif" font-size="12" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">VIIIA</text>
+  <text x="893.00" y="115.00" font-family="Inter, sans-serif" font-size="10" font-weight="bold" fill="#94a3b8" text-anchor="middle" dominant-baseline="middle">18</text>
+  <text x="30.00" y="154.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#94a3b8" text-anchor="middle" dominant-baseline="middle">1</text>
+  <rect x="55.00" y="130.00" width="44.00" height="44.00" fill="#fef3c7" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="871.00" y="130.00" width="44.00" height="44.00" fill="#2563eb" stroke="#1e3a8a" stroke-width="3.5" rx="8"  />
+  <text x="893.00" y="157.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">He</text>
+  <text x="30.00" y="202.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#94a3b8" text-anchor="middle" dominant-baseline="middle">2</text>
+  <rect x="55.00" y="178.00" width="44.00" height="44.00" fill="#fef3c7" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="103.00" y="178.00" width="44.00" height="44.00" fill="#fef3c7" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="631.00" y="178.00" width="44.00" height="44.00" fill="#e0f2fe" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="679.00" y="178.00" width="44.00" height="44.00" fill="#e0f2fe" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="727.00" y="178.00" width="44.00" height="44.00" fill="#e0f2fe" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="775.00" y="178.00" width="44.00" height="44.00" fill="#e0f2fe" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="823.00" y="178.00" width="44.00" height="44.00" fill="#e0f2fe" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="871.00" y="178.00" width="44.00" height="44.00" fill="#2563eb" stroke="#1e3a8a" stroke-width="3.5" rx="8"  />
+  <text x="893.00" y="205.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">Ne</text>
+  <text x="30.00" y="250.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#94a3b8" text-anchor="middle" dominant-baseline="middle">3</text>
+  <rect x="55.00" y="226.00" width="44.00" height="44.00" fill="#fef3c7" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="103.00" y="226.00" width="44.00" height="44.00" fill="#fef3c7" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="631.00" y="226.00" width="44.00" height="44.00" fill="#e0f2fe" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="679.00" y="226.00" width="44.00" height="44.00" fill="#e0f2fe" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="727.00" y="226.00" width="44.00" height="44.00" fill="#e0f2fe" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="775.00" y="226.00" width="44.00" height="44.00" fill="#e0f2fe" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="823.00" y="226.00" width="44.00" height="44.00" fill="#e0f2fe" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="871.00" y="226.00" width="44.00" height="44.00" fill="#2563eb" stroke="#1e3a8a" stroke-width="3.5" rx="8"  />
+  <text x="893.00" y="253.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">Ar</text>
+  <text x="30.00" y="298.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#94a3b8" text-anchor="middle" dominant-baseline="middle">4</text>
+  <rect x="55.00" y="274.00" width="44.00" height="44.00" fill="#fef3c7" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="103.00" y="274.00" width="44.00" height="44.00" fill="#fef3c7" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="151.00" y="274.00" width="44.00" height="44.00" fill="#fee2e2" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="199.00" y="274.00" width="44.00" height="44.00" fill="#fee2e2" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="247.00" y="274.00" width="44.00" height="44.00" fill="#fee2e2" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="295.00" y="274.00" width="44.00" height="44.00" fill="#fee2e2" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="343.00" y="274.00" width="44.00" height="44.00" fill="#fee2e2" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="391.00" y="274.00" width="44.00" height="44.00" fill="#fee2e2" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="439.00" y="274.00" width="44.00" height="44.00" fill="#fee2e2" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="487.00" y="274.00" width="44.00" height="44.00" fill="#fee2e2" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="535.00" y="274.00" width="44.00" height="44.00" fill="#fee2e2" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="583.00" y="274.00" width="44.00" height="44.00" fill="#fee2e2" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="631.00" y="274.00" width="44.00" height="44.00" fill="#e0f2fe" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="679.00" y="274.00" width="44.00" height="44.00" fill="#e0f2fe" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="727.00" y="274.00" width="44.00" height="44.00" fill="#e0f2fe" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="775.00" y="274.00" width="44.00" height="44.00" fill="#e0f2fe" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="823.00" y="274.00" width="44.00" height="44.00" fill="#e0f2fe" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="871.00" y="274.00" width="44.00" height="44.00" fill="#2563eb" stroke="#1e3a8a" stroke-width="3.5" rx="8"  />
+  <text x="893.00" y="301.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">Kr</text>
+  <text x="30.00" y="346.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#94a3b8" text-anchor="middle" dominant-baseline="middle">5</text>
+  <rect x="55.00" y="322.00" width="44.00" height="44.00" fill="#fef3c7" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="103.00" y="322.00" width="44.00" height="44.00" fill="#fef3c7" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="151.00" y="322.00" width="44.00" height="44.00" fill="#fee2e2" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="199.00" y="322.00" width="44.00" height="44.00" fill="#fee2e2" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="247.00" y="322.00" width="44.00" height="44.00" fill="#fee2e2" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="295.00" y="322.00" width="44.00" height="44.00" fill="#fee2e2" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="343.00" y="322.00" width="44.00" height="44.00" fill="#fee2e2" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="391.00" y="322.00" width="44.00" height="44.00" fill="#fee2e2" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="439.00" y="322.00" width="44.00" height="44.00" fill="#fee2e2" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="487.00" y="322.00" width="44.00" height="44.00" fill="#fee2e2" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="535.00" y="322.00" width="44.00" height="44.00" fill="#fee2e2" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="583.00" y="322.00" width="44.00" height="44.00" fill="#fee2e2" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="631.00" y="322.00" width="44.00" height="44.00" fill="#e0f2fe" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="679.00" y="322.00" width="44.00" height="44.00" fill="#e0f2fe" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="727.00" y="322.00" width="44.00" height="44.00" fill="#e0f2fe" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="775.00" y="322.00" width="44.00" height="44.00" fill="#e0f2fe" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="823.00" y="322.00" width="44.00" height="44.00" fill="#e0f2fe" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="871.00" y="322.00" width="44.00" height="44.00" fill="#2563eb" stroke="#1e3a8a" stroke-width="3.5" rx="8"  />
+  <text x="893.00" y="349.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">Xe</text>
+  <text x="30.00" y="394.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#94a3b8" text-anchor="middle" dominant-baseline="middle">6</text>
+  <rect x="55.00" y="370.00" width="44.00" height="44.00" fill="#fef3c7" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="103.00" y="370.00" width="44.00" height="44.00" fill="#fef3c7" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="151.00" y="370.00" width="44.00" height="44.00" fill="#fee2e2" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="199.00" y="370.00" width="44.00" height="44.00" fill="#fee2e2" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="247.00" y="370.00" width="44.00" height="44.00" fill="#fee2e2" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="295.00" y="370.00" width="44.00" height="44.00" fill="#fee2e2" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="343.00" y="370.00" width="44.00" height="44.00" fill="#fee2e2" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="391.00" y="370.00" width="44.00" height="44.00" fill="#fee2e2" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="439.00" y="370.00" width="44.00" height="44.00" fill="#fee2e2" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="487.00" y="370.00" width="44.00" height="44.00" fill="#fee2e2" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="535.00" y="370.00" width="44.00" height="44.00" fill="#fee2e2" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="583.00" y="370.00" width="44.00" height="44.00" fill="#fee2e2" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="631.00" y="370.00" width="44.00" height="44.00" fill="#e0f2fe" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="679.00" y="370.00" width="44.00" height="44.00" fill="#e0f2fe" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="727.00" y="370.00" width="44.00" height="44.00" fill="#e0f2fe" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="775.00" y="370.00" width="44.00" height="44.00" fill="#e0f2fe" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="823.00" y="370.00" width="44.00" height="44.00" fill="#e0f2fe" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="871.00" y="370.00" width="44.00" height="44.00" fill="#2563eb" stroke="#1e3a8a" stroke-width="3.5" rx="8"  />
+  <text x="893.00" y="397.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle">Rn</text>
+  <text x="30.00" y="442.00" font-family="Inter, sans-serif" font-size="16" font-weight="900" fill="#94a3b8" text-anchor="middle" dominant-baseline="middle">7</text>
+  <rect x="55.00" y="418.00" width="44.00" height="44.00" fill="#fef3c7" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="103.00" y="418.00" width="44.00" height="44.00" fill="#fef3c7" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="151.00" y="418.00" width="44.00" height="44.00" fill="#fee2e2" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="199.00" y="418.00" width="44.00" height="44.00" fill="#fee2e2" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="247.00" y="418.00" width="44.00" height="44.00" fill="#fee2e2" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="295.00" y="418.00" width="44.00" height="44.00" fill="#fee2e2" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="343.00" y="418.00" width="44.00" height="44.00" fill="#fee2e2" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="391.00" y="418.00" width="44.00" height="44.00" fill="#fee2e2" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="439.00" y="418.00" width="44.00" height="44.00" fill="#fee2e2" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="487.00" y="418.00" width="44.00" height="44.00" fill="#fee2e2" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="535.00" y="418.00" width="44.00" height="44.00" fill="#fee2e2" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="583.00" y="418.00" width="44.00" height="44.00" fill="#fee2e2" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="631.00" y="418.00" width="44.00" height="44.00" fill="#e0f2fe" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="679.00" y="418.00" width="44.00" height="44.00" fill="#e0f2fe" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="727.00" y="418.00" width="44.00" height="44.00" fill="#e0f2fe" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="775.00" y="418.00" width="44.00" height="44.00" fill="#e0f2fe" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="823.00" y="418.00" width="44.00" height="44.00" fill="#e0f2fe" stroke="#cbd5e1" stroke-width="0.8" rx="8" fill-opacity="0.4" />
+  <rect x="871.00" y="418.00" width="44.00" height="44.00" fill="#2563eb" stroke="#1e3a8a" stroke-width="3.5" rx="8"  />
+  <rect x="200.00" y="510.00" width="600.00" height="100.00" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5" rx="15"  />
+  <text x="500.00" y="545.00" font-family="Inter, sans-serif" font-size="28" font-weight="900" fill="#2563eb" text-anchor="middle" dominant-baseline="middle">REGLA DEL OCTETO</text>
+  <text x="500.00" y="580.00" font-family="Inter, sans-serif" font-size="16" font-weight="bold" fill="#1e40af" text-anchor="middle" dominant-baseline="middle">Los átomos buscan tener 8 electrones en su capa de valencia para ser estables.</text>
+</svg>
