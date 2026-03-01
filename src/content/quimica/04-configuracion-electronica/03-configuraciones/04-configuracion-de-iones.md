@@ -1,161 +1,188 @@
-# Configuración Electrónica de Iones
+# **Configuración Electrónica de Iones**
 
-Los **iones** son átomos que han ganado o perdido electrones. Su configuración electrónica es diferente a la del átomo neutro.
+Imagina que un átomo es como una casa buscando estabilidad. Algunos átomos tienen un solo huésped en el último piso, lo que hace que la estructura sea inestable. Al ganar o perder esos electrones, el átomo se transforma en un ion, alcanzando la estabilidad perfecta de un gas noble.
 
 ---
 
 ## 🎯 ¿Qué vas a aprender?
 
-- Qué es un ion y por qué se forman
-- Cómo calcular los electrones de un ion
-- Escribir la configuración de cationes y aniones
+- El motivo real por el que los átomos cambian su estructura
+- La diferencia visual entre "perder una capa" y "llenar una capa"
+- El cálculo matemático exacto detrás de cada carga eléctrica
+- Cómo predecir la estructura final de cualquier ion estable
 
 ---
 
-## 📖 Definición del Ion
+## 📖 La Transformación: ¿Qué sucede en el Átomo?
 
-> Un **ion** es un átomo que ha **ganado o perdido electrones**.
+Un **ion** es un átomo que ha decidido dejar de ser neutro para ser **estable**. Esta estabilidad se logra alcanzando el "Octeto": tener 8 electrones en su último nivel.
 
-### 💡 Objetivo de la ionización:
+![Comparación de Tamaño: Átomo vs Ion](/images/quimica/radios/radio-ionico-comparacion.svg)
 
-Alcanzar **8 electrones en la última capa** (regla del octeto).
-
-De esta forma logra una **configuración estable**, similar a la de un gas noble.
+Al transformarse, el dibujo de sus capas cambia radicalmente, pero su núcleo (identidad) se mantiene igual.
 
 ---
 
-## 📖 Tipos de Iones
+## 📖 Caso 1: Los Cationes (Pierden electrones)
 
-### 💡 Cationes (carga positiva):
+Los metales prefieren "regalar" sus electrones externos. Esto hace que el nivel de energía más exterior desaparezca, dejando al átomo con una estructura más compacta.
 
-- Se forman cuando el átomo **pierde electrones**
-- Se **resta** la cantidad perdida al número atómico (Z)
+### **Antes: Átomo de Sodio ($Na$)**
+*Tiene 11 electrones distribuidos en 3 niveles de energía.*
 
-| Ion | Z original | e⁻ perdidos | e⁻ finales |
-|-----|-----------|-------------|------------|
-| Na⁺ | 11 | 1 | 10 |
-| Ca²⁺ | 20 | 2 | 18 |
-| Al³⁺ | 13 | 3 | 10 |
-| Fe²⁺ | 26 | 2 | 24 |
-
-### 💡 Aniones (carga negativa):
-
-- Se forman cuando el átomo **gana electrones**
-- Se **suma** la cantidad ganada al número atómico (Z)
-
-| Ion | Z original | e⁻ ganados | e⁻ finales |
-|-----|-----------|------------|------------|
-| S²⁻ | 16 | 2 | 18 |
-| N³⁻ | 7 | 3 | 10 |
-| Cl⁻ | 17 | 1 | 18 |
-| O²⁻ | 8 | 2 | 10 |
+![Sodio Neutro - Distribución Limpia](/images/quimica/config-electronica/ejemplos/na-distribucion.svg)
 
 ---
 
-## 📖 Configuración Resultante
+### **Después: Ion Sodio ($Na^+$)**
+*Al perder 1 electrón, el tercer nivel desaparece. Nota que sigue siendo **Sodio**, pero ahora con solo 2 capas de electrones.*
 
-> La configuración del ion se vuelve **idéntica a la del gas noble más cercano**.
+![Ion Sodio - Distribución Limpia](/images/quimica/config-electronica/ejercicios/na-ion-gas-noble.svg)
 
-### 💡 ¿Por qué?
+---
 
-Porque el ion **completa 8 electrones en su último nivel**.
+## 📖 Caso 2: Los Aniones (Ganan electrones)
 
-### 💡 Notación:
+Los no metales prefieren "robar" electrones para completar los huecos que tienen en su última capa y así alcanzar su octeto.
 
-Se representa con el símbolo del gas noble entre corchetes, **sin añadir subniveles después**:
+### **Antes: Átomo de Oxígeno ($O$)**
+*Tiene 8 electrones. El nivel 2 tiene espacio para 2 electrones más.*
+
+![Oxígeno Neutro - Distribución Limpia](/images/quimica/config-electronica/ejercicios/o-configuracion.svg)
+
+---
+
+### **Después: Ion Óxido ($O^{2-}$)**
+*Al ganar 2 electrones, el dibujo muestra el segundo nivel completamente lleno.*
+
+![Ion Óxido - Distribución Limpia](/images/quimica/config-electronica/ejercicios/o-ion-configuracion.svg)
+
+---
+
+## 📖 Reglas de Cálculo: La Matemática del Cambio
+
+Para saber cuántos electrones debe tener nuestro dibujo o nuestra configuración, aplicamos estas reglas:
+
+### 💡 1. Cationes (Carga $+$)
+Indican pérdida de electrones. El signo "más" significa que ahora hay más protones que electrones en el núcleo.
 
 $$
-[Ne], \quad [Ar], \quad [Kr], \quad etc.
+\text{Total e}^- = Z - \text{carga}
 $$
 
----
+### 💡 2. Aniones (Carga $-$)
+Indican ganancia de electrones. El signo "menos" representa el exceso de partículas negativas.
 
-## 📖 Ejemplos de Equivalencia
-
-### 💡 Iones con 10 electrones (como Neón):
-
-| Ion | Proceso | Configuración |
-|-----|---------|---------------|
-| Na⁺ | 11 − 1 = 10 | [Ne] |
-| N³⁻ | 7 + 3 = 10 | [Ne] |
-| Mg²⁺ | 12 − 2 = 10 | [Ne] |
-| O²⁻ | 8 + 2 = 10 | [Ne] |
-
-### 💡 Iones con 18 electrones (como Argón):
-
-| Ion | Proceso | Configuración |
-|-----|---------|---------------|
-| Ca²⁺ | 20 − 2 = 18 | [Ar] |
-| S²⁻ | 16 + 2 = 18 | [Ar] |
-| K⁺ | 19 − 1 = 18 | [Ar] |
-| Cl⁻ | 17 + 1 = 18 | [Ar] |
-
----
-
-## 📖 Proceso Paso a Paso
-
-### 💡 Para cationes:
-
-1. Escribir Z del elemento
-2. Restar los electrones perdidos (carga)
-3. Escribir la configuración con el nuevo total
-4. Simplificar a notación de gas noble si corresponde
-
-### 💡 Para aniones:
-
-1. Escribir Z del elemento
-2. Sumar los electrones ganados (carga)
-3. Escribir la configuración con el nuevo total
-4. Simplificar a notación de gas noble si corresponde
-
----
-
-## 🔑 Resumen
-
-| Tipo | Formación | Cálculo | Ejemplo |
-|------|-----------|---------|---------|
-| **Catión (+)** | Pierde e⁻ | Z − carga | Na⁺: 11−1=10 |
-| **Anión (−)** | Gana e⁻ | Z + carga | Cl⁻: 17+1=18 |
+$$
+\text{Total e}^- = Z + \text{carga}
+$$
 
 ---
 
 ## 📝 Ejercicios de Práctica
 
 ### Ejercicio 1
-¿Cuántos electrones tiene el ion Fe³⁺?
+**¿Cuántos electrones tiene el ion Magnesio ($Mg^{2+}$)?**
 
 <details>
 <summary>Ver solución</summary>
 
-- Hierro: Z = 26
-- Fe³⁺ pierde 3 electrones
-- 26 − 3 = **23 electrones**
+**Datos:** $Z_{Mg} = 12$, carga $= +2$.
+**Razonamiento:** Un catión con carga $+2$ indica que el átomo perdió 2 electrones.
+
+$$
+\text{e}^- = 12 - 2
+$$
+
+**Resultado:** $\boxed{10 \text{ electrones}}$
 
 </details>
 
 ### Ejercicio 2
-¿Por qué Na⁺ y F⁻ tienen la misma configuración?
+**Escribe la configuración completa del ion Fluoruro ($F^-$).**
 
 <details>
 <summary>Ver solución</summary>
 
-- Na⁺: 11 − 1 = 10 electrones
-- F⁻: 9 + 1 = 10 electrones
+**Datos:** $Z_F = 9$, carga $= -1$.
+**Razonamiento:**
+1. Al ganar 1 electrón, el total es:
 
-Ambos tienen **10 electrones**, igual que el Neón [Ne].
+$$
+9 + 1 = 10 \text{ electrones}
+$$
+
+2. Seguimos el orden de llenado hasta 10:
+
+$$
+1s^2 \, 2s^2 \, 2p^6
+$$
+
+**Resultado:** $\boxed{1s^2 \, 2s^2 \, 2p^6}$
 
 </details>
 
 ### Ejercicio 3
-Escribe la configuración del ion O²⁻.
+**¿Qué configuración de gas noble alcanza el ion Sulfuro ($S^{2-}$)?**
 
 <details>
 <summary>Ver solución</summary>
 
-- Oxígeno: Z = 8
-- O²⁻ gana 2 electrones
-- 8 + 2 = 10 electrones
+**Datos:** $Z_S = 16$, carga $= -2$.
+**Razonamiento:**
+1. Calculamos el total de electrones tras ganar 2:
 
-Configuración: **[Ne]** (igual que el neón)
+$$
+16 + 2 = 18
+$$
+
+2. El gas noble con 18 electrones es el Argón.
+
+**Resultado:** $\boxed{[Ar]}$
 
 </details>
+
+### Ejercicio 4
+**Si el Aluminio ($Z=13$) pierde 3 electrones, ¿qué símbolo y carga tendrá el ion?**
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** Elemento Aluminio ($Al$), pierde 3 electrones.
+**Razonamiento:** Al perder 3 cargas negativas, el átomo queda con un exceso de 3 cargas positivas en su núcleo.
+
+**Resultado:** $\boxed{Al^{3+}}$
+
+</details>
+
+### Ejercicio 5
+**Indica qué gas noble tiene la misma estructura que el ion Potasio ($K^+$).**
+
+<details>
+<summary>Ver solución</summary>
+
+**Datos:** $Z_K = 19$, carga $= +1$.
+**Razonamiento:**
+1. Calculamos electrones:
+
+$$
+19 - 1 = 18 \text{ electrones}
+$$
+
+2. El gas noble con 18 electrones es el Argón ($Ar$).
+
+**Resultado:** $\boxed{\text{Argón (Ar)}}$
+
+</details>
+
+---
+
+## 🔑 Resumen
+
+| Concepto | Acción | Efecto Visual |
+|----------|--------|---------------|
+| **Catión (+)** | Pierde e⁻ | Desaparecen capas externas |
+| **Anión (-)** | Gana e⁻ | Se completan las capas existentes |
+| **Estabilidad** | Octeto | Se logra una estructura de 8 e⁻ |
+
+> Un ion es la versión estable y equilibrada de un átomo que ha decidido completar su estructura para vivir en paz electrónica.

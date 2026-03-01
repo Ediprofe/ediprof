@@ -14,6 +14,12 @@
   padding: 2.6rem 1.2rem 4rem;
 }
 
+/* Taller interactivo en desktop/proyector: usar mucho más ancho útil */
+.members-container.members-container--workshop {
+  max-width: min(96vw, 1560px);
+  padding: 1.7rem 0.95rem 3.2rem;
+}
+
 .members-card {
   background: linear-gradient(
       160deg,
@@ -202,6 +208,82 @@
   background: rgba(46, 204, 113, 0.1);
 }
 
+.members-feedback-panel {
+  margin-top: 0.92rem;
+  border: 1px solid color-mix(in oklab, var(--border-color) 72%, var(--color-primary) 28%);
+  border-radius: 14px;
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--bg-primary) 92%, var(--color-primary) 8%),
+    var(--bg-primary)
+  );
+  overflow: hidden;
+}
+
+.members-feedback-panel.ok {
+  border-color: color-mix(in oklab, #2ecc71 64%, var(--border-color) 36%);
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, #2ecc71 13%, var(--bg-primary) 87%),
+    var(--bg-primary)
+  );
+}
+
+.members-feedback-panel.error {
+  border-color: color-mix(in oklab, #e74c3c 64%, var(--border-color) 36%);
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, #e74c3c 11%, var(--bg-primary) 89%),
+    var(--bg-primary)
+  );
+}
+
+.members-feedback-head {
+  display: flex;
+  align-items: center;
+  gap: 0.56rem;
+  padding: 0.72rem 0.9rem;
+  border-bottom: 1px solid color-mix(in oklab, var(--border-color) 78%, transparent);
+  background: color-mix(in oklab, var(--bg-primary) 84%, white 16%);
+}
+
+.members-feedback-badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.2rem 0.58rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  border: 1px solid color-mix(in oklab, var(--color-primary) 44%, transparent);
+  color: color-mix(in oklab, var(--text-primary) 70%, var(--color-primary) 30%);
+  background: color-mix(in oklab, var(--color-primary) 18%, var(--bg-primary) 82%);
+}
+
+.members-feedback-panel.ok .members-feedback-badge {
+  border-color: color-mix(in oklab, #2ecc71 62%, transparent);
+  color: #166534;
+  background: color-mix(in oklab, #2ecc71 20%, var(--bg-primary) 80%);
+}
+
+.members-feedback-panel.error .members-feedback-badge {
+  border-color: color-mix(in oklab, #e74c3c 62%, transparent);
+  color: #7f1d1d;
+  background: color-mix(in oklab, #e74c3c 16%, var(--bg-primary) 84%);
+}
+
+.members-feedback-title {
+  margin: 0;
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.members-feedback-content {
+  padding: 0.1rem 0.9rem 0.8rem;
+}
+
 .members-link {
   color: var(--color-primary);
 }
@@ -276,6 +358,90 @@
   font-weight: 600;
 }
 
+.members-current-indicator {
+  margin-top: 0.62rem;
+  border: 1px solid color-mix(in oklab, var(--border-color) 72%, var(--color-primary) 28%);
+  border-radius: 12px;
+  background: color-mix(in oklab, var(--bg-primary) 90%, var(--color-primary) 10%);
+  padding: 0.65rem 0.72rem;
+}
+
+.members-current-indicator--pending {
+  border-color: color-mix(in oklab, var(--border-color) 78%, var(--color-primary) 22%);
+}
+
+.members-current-indicator--selected {
+  border-color: color-mix(in oklab, #2563eb 56%, var(--border-color) 44%);
+}
+
+.members-current-indicator--correct {
+  border-color: color-mix(in oklab, #27ae60 62%, var(--border-color) 38%);
+  background: color-mix(in oklab, #27ae60 11%, var(--bg-primary) 89%);
+}
+
+.members-current-indicator--wrong {
+  border-color: color-mix(in oklab, #c0392b 62%, var(--border-color) 38%);
+  background: color-mix(in oklab, #c0392b 10%, var(--bg-primary) 90%);
+}
+
+.members-current-label {
+  margin: 0 0 0.22rem;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: color-mix(in oklab, var(--text-secondary) 70%, var(--color-primary) 30%);
+}
+
+.members-current-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.45rem;
+}
+
+.members-current-number {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1.22;
+}
+
+.members-current-number span {
+  margin-left: 0.35rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.members-current-state {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  border: 1px solid color-mix(in oklab, var(--color-primary) 40%, transparent);
+  background: color-mix(in oklab, var(--color-primary) 15%, var(--bg-primary) 85%);
+  color: color-mix(in oklab, var(--text-primary) 70%, var(--color-primary) 30%);
+  padding: 0.2rem 0.56rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.members-current-indicator--correct .members-current-state {
+  border-color: color-mix(in oklab, #27ae60 58%, transparent);
+  color: #166534;
+  background: color-mix(in oklab, #27ae60 18%, var(--bg-primary) 82%);
+}
+
+.members-current-indicator--wrong .members-current-state {
+  border-color: color-mix(in oklab, #c0392b 58%, transparent);
+  color: #7f1d1d;
+  background: color-mix(in oklab, #c0392b 14%, var(--bg-primary) 86%);
+}
+
 .members-question-nav {
   margin-top: 0.6rem;
   padding: 0.6rem 0.68rem;
@@ -346,6 +512,17 @@
   min-width: 156px;
 }
 
+.members-actions-bottom-nav {
+  margin-top: 0.92rem;
+  padding-top: 0.72rem;
+  border-top: 1px dashed color-mix(in oklab, var(--border-color) 78%, var(--color-primary) 22%);
+  justify-content: space-between;
+}
+
+.members-actions-bottom-nav .members-button {
+  min-width: 158px;
+}
+
 .members-options {
   display: grid;
   gap: 0.56rem;
@@ -360,6 +537,10 @@
   color: var(--text-primary);
   padding: 0.66rem 0.74rem;
   cursor: pointer;
+  font-size: 1.06rem;
+  line-height: 1.45;
+  font-weight: 600;
+  min-height: 56px;
   transition: transform 0.16s ease, border-color 0.16s ease, background 0.16s ease;
 }
 
@@ -466,6 +647,15 @@
   text-decoration-thickness: 1.6px;
 }
 
+.members-choice-lines {
+  display: inline;
+}
+
+.members-choice-prefix {
+  font-weight: 800;
+  color: color-mix(in oklab, var(--text-primary) 80%, var(--color-primary) 20%);
+}
+
 .members-render img {
   max-width: 100%;
   border-radius: 12px;
@@ -536,5 +726,84 @@
 
   .members-question-chip-grid {
     grid-template-columns: repeat(6, minmax(38px, 1fr));
+  }
+}
+
+@media (min-width: 1100px) {
+  .members-container.members-container--workshop .section-header {
+    margin-bottom: 1rem;
+  }
+
+  .members-container.members-container--workshop .section-title {
+    font-size: clamp(2.15rem, 3.1vw, 3.4rem);
+    margin-bottom: 0.45rem;
+  }
+
+  .members-container.members-container--workshop .section-desc {
+    max-width: 980px;
+    font-size: 1.2rem;
+  }
+
+  .members-container.members-container--workshop .members-card {
+    padding: 1.15rem 1.35rem;
+  }
+
+  .members-container.members-container--workshop .members-question {
+    padding: 1.25rem;
+  }
+
+  .members-container.members-container--workshop .members-render p {
+    font-size: 1.11rem;
+    line-height: 1.66;
+  }
+
+  .members-container.members-container--workshop .members-current-number {
+    font-size: clamp(1.38rem, 1.25vw, 1.85rem);
+  }
+
+  .members-container.members-container--workshop .members-current-number span {
+    font-size: 0.98rem;
+  }
+
+  .members-container.members-container--workshop .members-current-state {
+    font-size: 0.84rem;
+    padding: 0.24rem 0.64rem;
+  }
+
+  .members-container.members-container--workshop .members-question-chip-grid {
+    grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
+  }
+
+  .members-container.members-container--workshop .members-option {
+    font-size: clamp(1.38rem, 1.35vw, 1.7rem);
+    line-height: 1.52;
+    font-weight: 650;
+    min-height: 98px;
+    padding: 1.15rem 1.35rem;
+    border-radius: 16px;
+  }
+
+  .members-container.members-container--workshop .members-feedback-head {
+    padding: 0.82rem 1rem;
+  }
+
+  .members-container.members-container--workshop .members-feedback-title {
+    font-size: 1.06rem;
+  }
+
+  .members-container.members-container--workshop .members-feedback-content {
+    padding: 0.2rem 1rem 0.95rem;
+  }
+}
+
+@media (min-width: 1600px) {
+  .members-container.members-container--workshop {
+    max-width: min(97vw, 1780px);
+  }
+
+  .members-container.members-container--workshop .members-option {
+    font-size: clamp(1.55rem, 1.15vw, 1.9rem);
+    min-height: 108px;
+    padding: 1.2rem 1.5rem;
   }
 }

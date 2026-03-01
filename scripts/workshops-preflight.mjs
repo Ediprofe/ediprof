@@ -10,6 +10,7 @@
  * - Rangos de contexto compartido
  * - Referencias de assets locales
  * - Fugas visibles de LaTeX en bloques ya parseados para app
+ * - Estilo editorial de retroalimentación (opciones A/B/C/D en líneas separadas)
  *
  * Uso:
  *   node scripts/workshops-preflight.mjs
@@ -237,6 +238,31 @@ function findLatexLeakInText(text) {
   return /\\(?:text|left|right|frac|sqrt|cdot|times|rightarrow|alpha|beta|gamma)\b/.test(source);
 }
 
+function hasAllChoiceLabels(text) {
+  const source = String(text || '');
+  return ['A.', 'B.', 'C.', 'D.'].every((token) => source.includes(token));
+}
+
+function countChoiceLineStarts(text) {
+  const source = String(text || '');
+  let count = 0;
+
+  ['A', 'B', 'C', 'D'].forEach((label) => {
+    const regex = new RegExp(`(?:^|\\n)\\s*${label}\\.\\s+`, 'm');
+    if (regex.test(source)) count += 1;
+  });
+
+  return count;
+}
+
+function hasCompactChoiceRun(text) {
+  const source = String(text || '').replace(/\r\n/g, '\n');
+  if (!hasAllChoiceLabels(source)) return false;
+
+  // Si no empiezan las 4 opciones en líneas separadas, el bloque quedó compacto.
+  return countChoiceLineStarts(source) < 4;
+}
+
 function validateManifestBlocks(manifest, collector) {
   const workshops = Array.isArray(manifest?.workshops) ? manifest.workshops : [];
 
@@ -260,6 +286,14 @@ function validateManifestBlocks(manifest, collector) {
 
           if (block.type === 'paragraph') {
             const inlines = Array.isArray(block.inlines) ? block.inlines : [];
+            const paragraphText = inlines.map((inline) => String(inline?.text || '')).join('');
+
+            if (label === 'feedback_blocks' && hasCompactChoiceRun(paragraphText)) {
+              collector.warnings.push(
+                `[${qRef}] ${label}[${idx}] contiene A/B/C/D en un solo párrafo. Recomendado: una opción por línea o lista markdown para consistencia web/PDF.`
+              );
+            }
+
             inlines.forEach((inline) => {
               const text = String(inline?.text || '');
               if (findLatexLeakInText(text)) {

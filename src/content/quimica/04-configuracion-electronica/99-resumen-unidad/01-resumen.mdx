@@ -1,0 +1,127 @@
+import ConceptMap from '../../../../components/Content/ConceptMap.astro';
+import MapSection from '../../../../components/Content/MapSection.astro';
+import MapItem from '../../../../components/Content/MapItem.astro';
+import MapPoint from '../../../../components/Content/MapPoint.astro';
+import MapStep from '../../../../components/Content/MapStep.astro';
+
+# **Resumen: Configuración Electrónica**
+
+<ConceptMap title="Configuración Electrónica">
+
+  <MapSection 
+    title="Niveles y Subniveles de Energía"
+    images={[
+      'https://cdn.ediprofe.com/img/quimica/mhqy-analogia-del-hotel-y-el-atomo.webp',
+      'https://cdn.ediprofe.com/img/quimica/42be-subniveles-de-energia-forma-orbitales-y-electrones.webp'
+    ]}
+  >
+    <MapItem label="Niveles (n):">
+      <MapPoint>Representan el **tamaño** y la **energía** del átomo (pisos del hotel).</MapPoint>
+      <MapPoint>Van desde n=1 hasta n=7.</MapPoint>
+    </MapItem>
+    <MapItem label="Subniveles (s, p, d, f):">
+      <MapPoint>**s:** 1 orbital (2 e⁻) - Esférico.</MapPoint>
+      <MapPoint>**p:** 3 orbitales (6 e⁻) - Mancuerna.</MapPoint>
+      <MapPoint>**d:** 5 orbitales (10 e⁻) - Roseta.</MapPoint>
+      <MapPoint>**f:** 7 orbitales (14 e⁻) - Muy complejo.</MapPoint>
+    </MapItem>
+    <MapItem label="Orbital Atómico:">
+      <MapPoint>Región donde hay un 90% de probabilidad de encontrar al electrón.</MapPoint>
+      <MapPoint>**Máximo 2 electrones** por orbital.</MapPoint>
+    </MapItem>
+  </MapSection>
+
+  <MapSection 
+    title="Principios de Llenado"
+    images={[
+      '/images/quimica/config-electronica/aufbau-progresivo.svg',
+      'https://cdn.ediprofe.com/img/quimica/tm9n-regla-de-hund.webp',
+      'https://cdn.ediprofe.com/img/quimica/75r6-principio-de-exclusion-de-pauli.webp'
+    ]}
+  >
+    <MapItem label="Principio de Aufbau:">
+      <MapPoint>Los electrones ocupan primero los subniveles de **menor energía**.</MapPoint>
+    </MapItem>
+    <MapItem label="Regla de Hund (Buses):">
+      <MapPoint>En orbitales del mismo subnivel, los e⁻ entran **uno por uno** (flecha arriba) antes de aparearse.</MapPoint>
+    </MapItem>
+    <MapItem label="Principio de Pauli:">
+      <MapPoint>Dos electrones en un mismo orbital deben tener **espines opuestos** (↑ y ↓).</MapPoint>
+    </MapItem>
+  </MapSection>
+
+  <MapSection 
+    title="Regla de las Diagonales (Moeller)"
+    images={[
+      '/images/quimica/config-electronica/diagrama-moeller.svg'
+    ]}
+  >
+    <MapItem label="Propósito:">
+      <MapPoint>Determinar el **orden correcto** de llenado de los subniveles.</MapPoint>
+    </MapItem>
+    <MapItem label="Secuencia Base:">
+      <MapPoint>1s → 2s → 2p → 3s → 3p → **4s** → **3d** → 4p → ...</MapPoint>
+      <MapPoint>*Nota:* El 4s se llena antes que el 3d porque tiene menor energía.</MapPoint>
+    </MapItem>
+  </MapSection>
+
+  <MapSection 
+    title="Tipos de Configuración"
+    images={[
+      '/images/quimica/config-electronica/ejercicios/fe-gas-noble-proc.svg',
+      '/images/quimica/config-electronica/ejercicios/ca-ion-configuracion.svg'
+    ]}
+  >
+    <MapItem label="Estructura Estándar:">
+      <MapPoint>Ej: Sodio (Z=11) → 1s² 2s² 2p⁶ 3s¹.</MapPoint>
+    </MapItem>
+    <MapItem label="Notación Gas Noble (Kernel):">
+      <MapPoint>Abreviada usando el gas noble anterior. Ej: Na → [Ne] 3s¹.</MapPoint>
+    </MapItem>
+    <MapItem label="Configuración de Iones:">
+      <MapPoint>**Cationes (+):** Se quitan electrones del nivel más alto.</MapPoint>
+      <MapPoint>**Aniones (-):** Se añaden electrones al último subnivel abierto.</MapPoint>
+    </MapItem>
+  </MapSection>
+
+  <MapSection 
+    title="Bloques y Tabla Periódica"
+    images={[
+      '/images/quimica/config-electronica/bloques/tabla-bloques-completa.svg'
+    ]}
+  >
+    <MapItem label="Bloque s (Grupos 1 y 2):">
+      <MapPoint>Metales alcalinos y alcalinotérreos.</MapPoint>
+    </MapItem>
+    <MapItem label="Bloque p (Grupos 13-18):">
+      <MapPoint>No metales, metaloides y gases nobles.</MapPoint>
+    </MapItem>
+    <MapItem label="Bloques d y f:">
+      <MapPoint>**d:** Metales de transición.</MapPoint>
+      <MapPoint>**f:** Tierras raras (Lantánidos y Actínidos).</MapPoint>
+    </MapItem>
+  </MapSection>
+
+  <MapSection 
+    title="Propiedades Periódicas (Tendencias)"
+    images={[
+      '/images/quimica/tendencias/radio-atomico.svg',
+      '/images/quimica/tendencias/electronegatividad.svg'
+    ]}
+  >
+    <MapItem label="Radio Atómico:">
+      <MapPoint>Aumenta hacia **abajo** y hacia la **izquierda**.</MapPoint>
+    </MapItem>
+    <MapItem label="Electronegatividad / Energía Ionización:">
+      <MapPoint>Aumenta hacia **arriba** y hacia la **derecha** (Flúor es el máximo).</MapPoint>
+    </MapItem>
+    <MapItem label="Resumen de Tendencia:">
+      <MapPoint>El radio va al revés de todas las demás propiedades energéticas.</MapPoint>
+    </MapItem>
+  </MapSection>
+
+</ConceptMap>
+
+---
+
+> **Tip de Repaso:** La configuración electrónica es el "plano" de un átomo. Si sabes dónde están sus electrones, puedes predecir si el átomo será grande o pequeño, y qué tanta fuerza usará para atraer o soltar otros electrones. ¡Todo está conectado!

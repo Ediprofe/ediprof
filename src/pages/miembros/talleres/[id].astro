@@ -33,7 +33,7 @@ const { workshopId } = Astro.props;
   <div class="members-hub">
     <Header />
 
-    <main class="members-container">
+    <main class="members-container members-container--workshop">
       <SectionHeader
         badge="Práctica"
         title="Taller Interactivo"
@@ -43,6 +43,7 @@ const { workshopId } = Astro.props;
       <section class="members-card">
         <div class="members-actions" style="margin-bottom:0.8rem;">
           <a class="members-button secondary" href="/miembros/talleres">Volver a catálogo</a>
+          <button type="button" class="members-button warn" id="reset-progress-btn">Reiniciar progreso</button>
         </div>
         <div id="feedback"></div>
         <div id="practice"></div>
@@ -83,14 +84,16 @@ const { workshopId } = Astro.props;
 
   const feedback = document.getElementById('feedback');
   const practice = document.getElementById('practice');
+  const resetProgressBtn = document.getElementById('reset-progress-btn');
 
   const state = {
     detail: null,
     questionIndex: 0,
     selectedByQuestion: {},
     evaluationByQuestion: {},
+    currentUser: null,
   };
-  const progressStorageKey = `ediprofe_member_workshop_progress:${workshopId}`;
+  let progressStorageKey = null;
 
   function safeParseJSON(raw) {
     if (!raw) return null;
@@ -102,7 +105,7 @@ const { workshopId } = Astro.props;
   }
 
   function persistPracticeProgress() {
-    if (!state.detail || typeof window === 'undefined') {
+    if (!state.detail || !progressStorageKey || typeof window === 'undefined') {
       return;
     }
 
@@ -118,7 +121,7 @@ const { workshopId } = Astro.props;
   }
 
   function restorePracticeProgress(detail) {
-    if (!detail || typeof window === 'undefined') {
+    if (!detail || !progressStorageKey || typeof window === 'undefined') {
       return;
     }
 
@@ -141,6 +144,23 @@ const { workshopId } = Astro.props;
     const parsedIndex = Number.parseInt(String(parsed.question_index ?? '0'), 10);
     const safeIndex = Number.isFinite(parsedIndex) ? parsedIndex : 0;
     state.questionIndex = Math.min(Math.max(0, safeIndex), Math.max(total - 1, 0));
+  }
+
+  function clearPracticeState() {
+    state.questionIndex = 0;
+    state.selectedByQuestion = {};
+    state.evaluationByQuestion = {};
+  }
+
+  function resetPracticeProgress() {
+    clearPracticeState();
+
+    if (progressStorageKey && typeof window !== 'undefined') {
+      window.localStorage.removeItem(progressStorageKey);
+    }
+
+    feedback.innerHTML = '<div class="members-alert ok">Progreso reiniciado. Puedes empezar desde la pregunta 1.</div>';
+    render();
   }
 
   function escapeHtml(value) {
@@ -182,7 +202,34 @@ const { workshopId } = Astro.props;
     return `<div class="${classes.join(' ')}">${html}</div>`;
   }
 
-  function renderBlocks(blocks = [], fallbackText = '') {
+  function looksLikeChoiceParagraph(text = '') {
+    const compact = String(text || '').replace(/\s+/g, ' ').trim();
+    if (!compact) return false;
+
+    return ['A.', 'B.', 'C.', 'D.'].every((token) => compact.includes(token));
+  }
+
+  function formatChoiceParagraphForFeedback(innerHtml = '') {
+    if (!innerHtml) return '';
+
+    const plainText = innerHtml.replace(/<[^>]*>/g, ' ');
+    if (!looksLikeChoiceParagraph(plainText)) {
+      return innerHtml;
+    }
+
+    let formatted = innerHtml;
+
+    // If options are packed in one line/paragraph, split B/C/D into new lines.
+    formatted = formatted.replace(/\s+([B-D])\.\s+/g, '<br /><span class="members-choice-prefix">$1.</span> ');
+    // Ensure A also receives the same visual weight when it starts the run.
+    formatted = formatted.replace(/^\s*(A)\.\s+/, '<span class="members-choice-prefix">$1.</span> ');
+    // Or when A appears right after a colon.
+    formatted = formatted.replace(/(:)\s*(A)\.\s+/, '$1<br /><span class="members-choice-prefix">$2.</span> ');
+
+    return `<span class="members-choice-lines">${formatted}</span>`;
+  }
+
+  function renderBlocks(blocks = [], fallbackText = '', options = {}) {
     if (!Array.isArray(blocks) || blocks.length === 0) {
       const fallback = cleanInlineMarkdown(fallbackText || '');
       return fallback ? `<p>${renderInlineText(fallback)}</p>` : '';
@@ -197,7 +244,9 @@ const { workshopId } = Astro.props;
             Array.isArray(block.inlines) && block.inlines.length > 0
               ? block.inlines
               : parseInlineSegments(block.text || '');
-          return wrapBlock(block, `<p>${renderInlines(inlines)}</p>`);
+          const renderedInline = renderInlines(inlines);
+          const paragraphHtml = options.feedback ? formatChoiceParagraphForFeedback(renderedInline) : renderedInline;
+          return wrapBlock(block, `<p>${paragraphHtml}</p>`);
         }
 
         if (block.type === 'image') {
@@ -260,6 +309,21 @@ const { workshopId } = Astro.props;
         return '';
       })
       .join('');
+  }
+
+  function scrollToQuestionTop({ smooth = true } = {}) {
+    const questionEl = practice.querySelector('.members-question');
+    if (!questionEl) return;
+
+    const topNav = document.querySelector('.top-nav');
+    const navOffset = topNav ? topNav.getBoundingClientRect().height : 0;
+    const extraGap = 12;
+    const targetTop = window.scrollY + questionEl.getBoundingClientRect().top - navOffset - extraGap;
+
+    window.scrollTo({
+      top: Math.max(0, targetTop),
+      behavior: smooth ? 'smooth' : 'auto',
+    });
   }
 
   function hasMeaningfulContext(blocks = []) {
@@ -352,6 +416,13 @@ const { workshopId } = Astro.props;
     const checkedCount = Object.keys(state.evaluationByQuestion).length;
     const pendingCount = Math.max(total - checkedCount, 0);
     const progressPercent = total > 0 ? Math.round((checkedCount / total) * 100) : 0;
+    const currentState = checked
+      ? evaluation.is_correct
+        ? { label: 'Correcta', css: 'correct' }
+        : { label: 'Por reforzar', css: 'wrong' }
+      : selectedId
+      ? { label: 'Seleccionada', css: 'selected' }
+      : { label: 'Pendiente', css: 'pending' };
 
     practice.innerHTML = `
       <article class="members-question">
@@ -367,6 +438,17 @@ const { workshopId } = Astro.props;
             <div class="members-progress-fill" style="width:${progressPercent}%"></div>
           </div>
           <p class="members-progress-label">${progressPercent}% completado</p>
+        </div>
+
+        <div class="members-current-indicator members-current-indicator--${currentState.css}" aria-live="polite">
+          <p class="members-current-label">Ahora estás en</p>
+          <div class="members-current-row">
+            <p class="members-current-number">
+              Pregunta ${state.questionIndex + 1}
+              <span>de ${total}</span>
+            </p>
+            <span class="members-current-state">${currentState.label}</span>
+          </div>
         </div>
 
         <div class="members-question-nav">
@@ -392,19 +474,28 @@ const { workshopId } = Astro.props;
         <div class="members-options">${optionsHtml}</div>
 
         <div class="members-actions members-actions-primary" style="margin-top:0.8rem;">
-          <button type="button" class="members-button secondary" id="prev-btn" ${state.questionIndex <= 0 ? 'disabled' : ''}>Anterior</button>
-          <button type="button" class="members-button" id="check-btn" ${selectedId ? '' : 'disabled'}>Comprobar</button>
-          <button type="button" class="members-button secondary" id="next-btn" ${state.questionIndex >= total - 1 ? 'disabled' : ''}>Siguiente</button>
+          <button type="button" class="members-button secondary" data-nav="prev" ${state.questionIndex <= 0 ? 'disabled' : ''}>Anterior</button>
+          <button type="button" class="members-button" data-action="check" ${selectedId ? '' : 'disabled'}>Comprobar</button>
+          <button type="button" class="members-button secondary" data-nav="next" ${state.questionIndex >= total - 1 ? 'disabled' : ''}>Siguiente</button>
         </div>
 
         ${
           checked
             ? `
-          <div class="members-alert ${evaluation.is_correct ? 'ok' : 'error'}">
-            ${evaluation.is_correct ? 'Respuesta correcta.' : 'Respuesta incorrecta.'}
+          <div class="members-feedback-panel ${evaluation.is_correct ? 'ok' : 'error'}">
+            <div class="members-feedback-head">
+              <span class="members-feedback-badge">${evaluation.is_correct ? 'Correcta' : 'Por reforzar'}</span>
+              <h4 class="members-feedback-title">
+                ${evaluation.is_correct ? 'Retroalimentación de la respuesta' : 'Retroalimentación para mejorar'}
+              </h4>
+            </div>
+            <div class="members-render members-feedback-content">
+              ${renderBlocks(evaluation.feedback_blocks || [], evaluation.feedback_mdx || '', { feedback: true })}
+            </div>
           </div>
-          <div class="members-render">
-            ${renderBlocks(evaluation.feedback_blocks || [], evaluation.feedback_mdx || '')}
+          <div class="members-actions members-actions-bottom-nav">
+            <button type="button" class="members-button secondary" data-nav="prev" ${state.questionIndex <= 0 ? 'disabled' : ''}>Anterior</button>
+            <button type="button" class="members-button secondary" data-nav="next" ${state.questionIndex >= total - 1 ? 'disabled' : ''}>Siguiente</button>
           </div>
         `
             : ''
@@ -429,24 +520,35 @@ const { workshopId } = Astro.props;
         state.questionIndex = Math.min(total - 1, Math.max(0, nextIndex));
         persistPracticeProgress();
         render();
+        scrollToQuestionTop();
       });
     });
 
-    practice.querySelector('#prev-btn')?.addEventListener('click', () => {
+    const goPrev = () => {
       if (state.questionIndex <= 0) return;
       state.questionIndex -= 1;
       persistPracticeProgress();
       render();
-    });
+      scrollToQuestionTop();
+    };
 
-    practice.querySelector('#next-btn')?.addEventListener('click', () => {
+    const goNext = () => {
       if (state.questionIndex >= total - 1) return;
       state.questionIndex += 1;
-      render();
       persistPracticeProgress();
+      render();
+      scrollToQuestionTop();
+    };
+
+    practice.querySelectorAll('[data-nav="prev"]').forEach((button) => {
+      button.addEventListener('click', goPrev);
     });
 
-    practice.querySelector('#check-btn')?.addEventListener('click', async () => {
+    practice.querySelectorAll('[data-nav="next"]').forEach((button) => {
+      button.addEventListener('click', goNext);
+    });
+
+    practice.querySelector('[data-action="check"]')?.addEventListener('click', async () => {
       try {
         const optionId = state.selectedByQuestion[question.id];
         if (!optionId) {
@@ -472,7 +574,9 @@ const { workshopId } = Astro.props;
       if (!user) {
         throw new Error('Sesión inválida.');
       }
+      state.currentUser = user;
       saveSession(token, user);
+      progressStorageKey = `ediprofe_member_workshop_progress:${user.id}:${workshopId}`;
 
       if (user.member_status !== 'approved' && user.role !== 'admin') {
         feedback.innerHTML = '<div class="members-alert error">No tienes acceso a talleres premium.</div>';
@@ -487,6 +591,17 @@ const { workshopId } = Astro.props;
 
       restorePracticeProgress(state.detail);
       render();
+
+      if (resetProgressBtn) {
+        resetProgressBtn.addEventListener('click', () => {
+          if (!state.detail) return;
+          const shouldReset = window.confirm(
+            `Se borrará tu avance guardado de "${state.detail.title}". ¿Deseas continuar?`
+          );
+          if (!shouldReset) return;
+          resetPracticeProgress();
+        });
+      }
     } catch (error) {
       const message = error instanceof Error ? error.message : 'No fue posible cargar el taller.';
       if (/auth|required|sesión|session/i.test(message)) {
