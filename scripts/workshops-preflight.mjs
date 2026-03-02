@@ -129,7 +129,7 @@ function parseOptions(optionsBody) {
 
 function parseSharedContextRanges(contextMdx) {
   const ranges = [];
-  const regex = /RESPONDA\s+LAS\s+PREGUNTAS\s+(\d+)\s+A\s+(\d+)/gi;
+  const regex = /RESPONDA\s+LAS\s+PREGUNTAS\s+(\d+)\s+(?:A|Y|AL|-)\s+(\d+)/gi;
   let match = null;
 
   while ((match = regex.exec(contextMdx)) !== null) {

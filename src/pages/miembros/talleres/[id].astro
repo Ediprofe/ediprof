@@ -172,23 +172,101 @@ const { workshopId } = Astro.props;
       .replaceAll("'", '&#039;');
   }
 
-  function renderInlines(inlines = []) {
-    return inlines
-      .map((segment) => {
-        const text = escapeHtml(cleanInlineForRender(segment?.text ?? ''));
-        const variant = segment?.variant ?? 'plain';
+  function renderMathInlineText(value = '', options = {}) {
+    const compact = Boolean(options?.compact);
+    const base = cleanInlineForRender(value || '');
+    const source = compact
+      ? normalizeMathForDisplay(base)
+      : String(base).replace(/\r?\n/g, ' ');
+    const exponentPattern = /\^\\?\{([^}]+)\}|\^([A-Za-z0-9+\-]+)/g;
 
-        if (variant === 'bold') return `<strong>${text}</strong>`;
-        if (variant === 'italic') return `<em>${text}</em>`;
-        if (variant === 'highlight') return `<mark>${text}</mark>`;
-        if (variant === 'strike') return `<del>${text}</del>`;
-        return text;
-      })
-      .join('');
+    let output = '';
+    let lastIndex = 0;
+    let match = null;
+
+    while ((match = exponentPattern.exec(source)) !== null) {
+      const tokenIndex = match.index ?? 0;
+      const exponentRaw = match[1] ?? match[2] ?? '';
+
+      output += escapeHtml(source.slice(lastIndex, tokenIndex));
+      output += `<sup>${escapeHtml(exponentRaw)}</sup>`;
+      lastIndex = tokenIndex + match[0].length;
+    }
+
+    if (lastIndex < source.length) {
+      output += escapeHtml(source.slice(lastIndex));
+    }
+
+    return output;
+  }
+
+  function shouldInsertInlineGap(prevRaw = '', nextRaw = '') {
+    if (!prevRaw || !nextRaw) return false;
+    if (/\s$/.test(prevRaw) || /^\s/.test(nextRaw)) return false;
+
+    const prevChar = prevRaw.trimEnd().slice(-1);
+    const nextChar = nextRaw.trimStart().slice(0, 1);
+    if (!prevChar || !nextChar) return false;
+
+    const prevIsWord = /[\p{L}\p{N})\]]/u.test(prevChar);
+    const nextIsWord = /[\p{L}\p{N}([¿¡]/u.test(nextChar);
+    return prevIsWord && nextIsWord;
+  }
+
+  function renderInlines(inlines = []) {
+    let html = '';
+    let previousRaw = '';
+
+    inlines.forEach((segment) => {
+      const rawText = String(segment?.text ?? '');
+      const text = renderMathInlineText(rawText);
+      const variant = segment?.variant ?? 'plain';
+
+      if (shouldInsertInlineGap(previousRaw, rawText)) {
+        html += ' ';
+      }
+
+      if (variant === 'bold') {
+        html += `<strong>${text}</strong>`;
+      } else if (variant === 'italic') {
+        html += `<em>${text}</em>`;
+      } else if (variant === 'highlight') {
+        html += `<mark>${text}</mark>`;
+      } else if (variant === 'strike') {
+        html += `<del>${text}</del>`;
+      } else {
+        html += text;
+      }
+
+      previousRaw = rawText;
+    });
+
+    return html;
   }
 
   function renderInlineText(value = '') {
     return renderInlines(parseInlineSegments(value));
+  }
+
+  function shouldRenderParagraphAsEquation(inlines = []) {
+    if (!Array.isArray(inlines) || inlines.length === 0) return false;
+
+    const hasRichVariants = inlines.some((segment) => segment?.variant && segment.variant !== 'plain');
+    if (hasRichVariants) return false;
+
+    const raw = inlines
+      .map((segment) => String(segment?.text || ''))
+      .join(' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+
+    if (!raw || raw.length > 120) return false;
+    if (!raw.includes('^')) return false;
+    if (/[¿?!:;,\.]/.test(raw)) return false;
+
+    // Accept common chemistry/electronic-configuration tokens such as 1s^2 2p^6.
+    const tokenMatches = raw.match(/[0-9]*[spdfgSPDFG][ ]*\^[0-9]+/g);
+    return Array.isArray(tokenMatches) && tokenMatches.length >= 2;
   }
 
   function wrapBlock(block = {}, html = '') {
@@ -244,6 +322,12 @@ const { workshopId } = Astro.props;
             Array.isArray(block.inlines) && block.inlines.length > 0
               ? block.inlines
               : parseInlineSegments(block.text || '');
+
+          if (shouldRenderParagraphAsEquation(inlines)) {
+            const eqRaw = inlines.map((segment) => segment?.text || '').join(' ');
+            return wrapBlock(block, `<code class="members-equation">${renderMathInlineText(eqRaw)}</code>`);
+          }
+
           const renderedInline = renderInlines(inlines);
           const paragraphHtml = options.feedback ? formatChoiceParagraphForFeedback(renderedInline) : renderedInline;
           return wrapBlock(block, `<p>${paragraphHtml}</p>`);
@@ -256,8 +340,8 @@ const { workshopId } = Astro.props;
         }
 
         if (block.type === 'equation') {
-          const latex = normalizeMathForDisplay(cleanInlineMarkdown(block.latex || ''));
-          return wrapBlock(block, `<code class="members-equation">${escapeHtml(latex)}</code>`);
+          const latex = renderMathInlineText(cleanInlineMarkdown(block.latex || ''), { compact: true });
+          return wrapBlock(block, `<code class="members-equation">${latex}</code>`);
         }
 
         if (block.type === 'table') {
@@ -401,12 +485,13 @@ const { workshopId } = Astro.props;
         const selected = selectedId === option.id;
         const isCorrect = evaluation?.correct_option_id === option.id;
         const wrongSelected = checked && selected && !isCorrect;
+        const optionText = renderInlineText(option.text || '');
 
         return `
           <button type="button" class="members-option ${selected ? 'selected' : ''} ${isCorrect ? 'correct' : ''} ${
           wrongSelected ? 'wrong' : ''
         }" data-option-id="${escapeHtml(option.id)}">
-            ${escapeHtml(option.id)}. ${escapeHtml(option.text)}
+            ${escapeHtml(option.id)}. ${optionText}
           </button>
         `;
       })

@@ -170,6 +170,17 @@ function isStructuralHtmlLine(line) {
   return /^<\/?div\b[^>]*>$/i.test(normalized);
 }
 
+function parseInlineEquationLine(line) {
+  const normalized = String(line || '').trim();
+  const match = normalized.match(/^\$\$\s*([\s\S]*?)\s*\$\$$/);
+  if (!match) return null;
+
+  const body = String(match[1] || '').trim();
+  if (!body) return null;
+
+  return normalizeMathForDisplay(cleanInlineMarkdown(body));
+}
+
 function buildContextPayload(content) {
   const rawContext = String(content || '').trim();
   const contextMdx = stripMdxComments(rawContext)
@@ -200,36 +211,46 @@ function buildContextPayload(content) {
 function normalizeDetachedContext(rawContext) {
   const lines = String(rawContext || '').replace(/\r\n/g, '\n').split('\n');
   let isInsideComment = false;
-  const kept = lines.filter((raw) => {
+  const kept = [];
+
+  lines.forEach((raw) => {
     const line = raw.trim();
-    if (!line) return false;
-    const directive = parseMdxCommentDirective(line);
-    if (directive?.type === 'layout') {
-      return true;
-    }
+
     if (isInsideComment) {
       if (line.includes('*/}')) {
         isInsideComment = false;
       }
-      return false;
+      return;
     }
+
     if (line.startsWith('{/*')) {
+      const directive = parseMdxCommentDirective(line);
+      if (directive?.type === 'layout' && directive.layout === 'full-width') {
+        kept.push(line);
+      }
       if (!line.includes('*/}')) {
         isInsideComment = true;
       }
-      return false;
+      return;
     }
-    if (isStructuralHtmlLine(line)) return false;
-    if (line === '---') return false;
-    return true;
+
+    if (isStructuralHtmlLine(line)) return;
+    if (line === '---') return;
+
+    if (line === '') {
+      kept.push('');
+      return;
+    }
+
+    kept.push(raw.trimEnd());
   });
 
-  return kept.join('\n').trim();
+  return kept.join('\n').replace(/\n{3,}/g, '\n\n').trim();
 }
 
 function parseSharedContextRanges(contextMdx) {
   const ranges = [];
-  const regex = /RESPONDA\s+LAS\s+PREGUNTAS\s+(\d+)\s+A\s+(\d+)/gi;
+  const regex = /RESPONDA\s+LAS\s+PREGUNTAS\s+(\d+)\s+(?:A|Y|AL|-)\s+(\d+)/gi;
   let match = null;
 
   while ((match = regex.exec(contextMdx)) !== null) {
@@ -311,6 +332,16 @@ function buildBlocks(content, assetRefs = []) {
         type: 'image',
         src: image.url,
         alt: image.alt,
+      }));
+      i += 1;
+      continue;
+    }
+
+    const inlineEquation = parseInlineEquationLine(line);
+    if (inlineEquation) {
+      blocks.push(applyBlockLayout({
+        type: 'equation',
+        latex: inlineEquation,
       }));
       i += 1;
       continue;
@@ -404,7 +435,7 @@ function buildBlocks(content, assetRefs = []) {
     const paragraphLines = [];
     while (i < lines.length) {
       const candidate = (lines[i] || '').trim();
-      if (candidate === '' || candidate === '$$' || candidate.includes('|')) {
+      if (candidate === '' || candidate === '$$' || candidate.includes('|') || candidate.includes('$$')) {
         break;
       }
       if (parseImageLine(candidate)) {
@@ -528,7 +559,7 @@ function parseOptions(optionsBody) {
     const attrs = parseTagAttributes(match[1] || '');
     const optionId = String(attrs.letra || '').trim().toUpperCase();
     const isCorrect = attrs.correcta === true || attrs.correcta === 'true';
-    const optionText = stripHtmlTags(match[2] || '');
+    const optionText = cleanInlineMarkdown(stripHtmlTags(match[2] || ''));
 
     options.push({
       id: optionId || `OPT_${options.length + 1}`,

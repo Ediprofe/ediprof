@@ -249,6 +249,7 @@ const pdfTitle = title.toUpperCase();
                 flex-shrink: 0 !important;
             }
 
+            body:not(.mode-imprimible) .opcion-item .opcion-body,
             body:not(.mode-imprimible) .opcion-item p {
                 margin: 0 !important;
                 padding: 2px 0 0 0 !important;
@@ -405,12 +406,18 @@ const pdfTitle = title.toUpperCase();
                 padding: 0 !important;
             }
 
+            body.mode-imprimible .opcion-item .opcion-body,
             body.mode-imprimible .opcion-item p {
                 margin: 0 !important;
                 padding: 0 !important;
                 line-height: 1.15 !important;
                 text-align: left;
-                display: inline;
+                display: block;
+            }
+
+            body.mode-imprimible .opcion-item .opcion-body {
+                flex: 1;
+                min-width: 0;
             }
 
             /* Contexto super compacto */

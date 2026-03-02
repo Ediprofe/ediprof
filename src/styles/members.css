@@ -682,6 +682,17 @@
   line-height: 1.35;
 }
 
+.members-render sup {
+  font-size: 0.72em;
+  line-height: 0;
+  vertical-align: super;
+  font-weight: 650;
+}
+
+.members-render code.members-equation sup {
+  font-size: 0.68em;
+}
+
 .members-context {
   border: 1px solid color-mix(in oklab, var(--border-color) 70%, var(--color-secondary) 30%);
   border-radius: 12px;
