@@ -95,6 +95,28 @@ import '../../styles/members.css';
       .replaceAll("'", '&#039;');
   }
 
+  function normalizeWorkshopList(response) {
+    const firstLevel = response?.data;
+    if (Array.isArray(firstLevel)) {
+      return firstLevel;
+    }
+
+    if (Array.isArray(firstLevel?.data)) {
+      return firstLevel.data;
+    }
+
+    return [];
+  }
+
+  function mergeWorkshops(primary = [], secondary = []) {
+    const byId = new Map();
+    [...primary, ...secondary].forEach((item) => {
+      if (!item?.id) return;
+      byId.set(item.id, item);
+    });
+    return Array.from(byId.values());
+  }
+
   function renderRoute(status) {
     const approveDone = status === 'approved' || status === 'blocked';
     const practiceDone = status === 'approved';
@@ -236,7 +258,19 @@ import '../../styles/members.css';
           '<div class="members-alert error">Tu acceso premium está bloqueado. Contacta al administrador.</div>';
       } else {
         const workshopsResponse = await apiWorkshops();
-        const items = Array.isArray(workshopsResponse?.data) ? workshopsResponse.data : [];
+        let items = normalizeWorkshopList(workshopsResponse);
+
+        const isLocalHost = ['localhost', '127.0.0.1'].includes(window.location.hostname);
+        if (isLocalHost) {
+          try {
+            const draftsResponse = await apiWorkshops({ published: false });
+            const drafts = normalizeWorkshopList(draftsResponse);
+            items = mergeWorkshops(items, drafts);
+          } catch {
+            // Ignorar fallback en local si falla
+          }
+        }
+
         renderWorkshopSummary(items);
       }
     } catch (error) {

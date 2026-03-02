@@ -180,10 +180,15 @@ export async function apiLogout(): Promise<void> {
   clearSession();
 }
 
-export async function apiWorkshops(): Promise<any> {
+export async function apiWorkshops(options: { published?: boolean } = {}): Promise<any> {
   const token = getSessionToken();
+  const params = new URLSearchParams();
+  params.set('per_page', '60');
+  if (typeof options.published === 'boolean') {
+    params.set('published', String(options.published));
+  }
 
-  const response = await fetch(`${getApiBase()}/workshops?published=false&per_page=60`, {
+  const response = await fetch(`${getApiBase()}/workshops?${params.toString()}`, {
     headers: token
       ? {
           Authorization: `Bearer ${token}`,

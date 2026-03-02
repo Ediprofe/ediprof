@@ -1,0 +1,184 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { cleanSlug } from '../../utils/navigation-generator.js';
+
+const talleres = await getCollection('saber');
+
+function toBase64Url(value: string): string {
+  return Buffer.from(value, 'utf8').toString('base64url');
+}
+
+function resolveAccessTier(entry: any): 'free' | 'premium' {
+  const raw = String(entry?.data?.access_tier || entry?.data?.access || entry?.data?.tier || '')
+    .toLowerCase()
+    .trim();
+  if (raw === 'free' || raw === 'public') return 'free';
+  return 'premium';
+}
+
+const items = talleres
+  .map((taller) => {
+    const clean = cleanSlug(taller.slug);
+    const id = `content:saber:${clean}`;
+    return {
+      id,
+      encodedId: toBase64Url(id),
+      sourceSlug: taller.slug,
+      cleanSlug: clean,
+      title: taller.data?.title || 'Taller sin título',
+      access: resolveAccessTier(taller),
+    };
+  })
+  .sort((a, b) => a.sourceSlug.localeCompare(b.sourceSlug));
+---
+
+<BaseLayout title="Dev | Talleres Saber" showTopBar={false}>
+  <main class="dev-wrap">
+    <h1>Revisión rápida de talleres (dev)</h1>
+    <p class="dev-help">
+      Esta vista es técnica para validar talleres nuevos sin depender del flujo de miembros.
+    </p>
+
+    <div class="dev-actions">
+      <code>npm run workshops:refresh:dev</code>
+      <span>Después de generar/editar un taller, ejecuta ese comando para sincronizar backend.</span>
+    </div>
+
+    <table class="dev-table">
+      <thead>
+        <tr>
+          <th>Taller</th>
+          <th>Acceso</th>
+          <th>Vista contenido</th>
+          <th>PDF</th>
+          <th>Miembros</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          items.map((item) => (
+            <tr>
+              <td>
+                <strong>{item.title}</strong>
+                <div class="meta">{item.sourceSlug}</div>
+              </td>
+              <td>
+                <span class={`pill ${item.access}`}>{item.access}</span>
+              </td>
+              <td>
+                {item.access === 'free' ? (
+                  <a href={`/saber/${item.cleanSlug}`} target="_blank" rel="noreferrer">Abrir /saber</a>
+                ) : (
+                  <span class="muted">Solo free</span>
+                )}
+              </td>
+              <td>
+                <div class="pdf-links">
+                  <a href={`/print-saber/${item.cleanSlug}?mode=default`} target="_blank" rel="noreferrer">Normal</a>
+                  <a href={`/print-saber/${item.cleanSlug}?mode=feedback`} target="_blank" rel="noreferrer">Retro</a>
+                  <a href={`/print-saber/${item.cleanSlug}?mode=imprimible`} target="_blank" rel="noreferrer">Imprimible</a>
+                </div>
+              </td>
+              <td>
+                <a href={`/miembros/talleres/${item.encodedId}`} target="_blank" rel="noreferrer">Abrir práctica</a>
+              </td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </main>
+</BaseLayout>
+
+<style>
+  .dev-wrap {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 120px 20px 48px;
+  }
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 0.4rem;
+  }
+  .dev-help {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+  }
+  .dev-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    background: var(--bg-secondary);
+    flex-wrap: wrap;
+  }
+  .dev-actions code {
+    background: #0f172a;
+    color: #f8fafc;
+    padding: 0.22rem 0.5rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+  }
+  .dev-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .dev-table th,
+  .dev-table td {
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.7rem;
+    vertical-align: top;
+    text-align: left;
+    font-size: 0.92rem;
+  }
+  .dev-table th {
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-secondary);
+  }
+  .dev-table tr:last-child td {
+    border-bottom: 0;
+  }
+  .meta {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    margin-top: 0.18rem;
+  }
+  .pill {
+    display: inline-flex;
+    padding: 0.15rem 0.5rem;
+    border-radius: 999px;
+    border: 1px solid var(--border-color);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .pill.free {
+    color: #15803d;
+    border-color: #86efac;
+    background: #dcfce7;
+  }
+  .pill.premium {
+    color: #a16207;
+    border-color: #fde68a;
+    background: #fef9c3;
+  }
+  .pdf-links {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .muted {
+    color: var(--text-secondary);
+    font-size: 0.82rem;
+  }
+</style>

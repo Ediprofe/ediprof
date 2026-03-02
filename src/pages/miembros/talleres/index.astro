@@ -61,6 +61,28 @@ import '../../../styles/members.css';
       .replaceAll("'", '&#039;');
   }
 
+  function normalizeWorkshopList(response) {
+    const firstLevel = response?.data;
+    if (Array.isArray(firstLevel)) {
+      return firstLevel;
+    }
+
+    if (Array.isArray(firstLevel?.data)) {
+      return firstLevel.data;
+    }
+
+    return [];
+  }
+
+  function mergeWorkshops(primary = [], secondary = []) {
+    const byId = new Map();
+    [...primary, ...secondary].forEach((item) => {
+      if (!item?.id) return;
+      byId.set(item.id, item);
+    });
+    return Array.from(byId.values());
+  }
+
   async function boot() {
     try {
       const me = await apiMe();
@@ -81,10 +103,22 @@ import '../../../styles/members.css';
       }
 
       const response = await apiWorkshops();
-      const items = Array.isArray(response?.data) ? response.data : [];
+      let items = normalizeWorkshopList(response);
+
+      const isLocalHost = ['localhost', '127.0.0.1'].includes(window.location.hostname);
+      if (isLocalHost) {
+        try {
+          const draftsResponse = await apiWorkshops({ published: false });
+          const drafts = normalizeWorkshopList(draftsResponse);
+          items = mergeWorkshops(items, drafts);
+        } catch {
+          // Ignorar fallback en local si falla
+        }
+      }
 
       if (items.length === 0) {
-        workshopsWrap.innerHTML = '<div class="members-alert">No hay talleres disponibles.</div>';
+        workshopsWrap.innerHTML =
+          '<div class="members-alert">No hay talleres disponibles. Ejecuta <code>npm run workshops:refresh:dev</code> y recarga.</div>';
         return;
       }
 
@@ -117,7 +151,7 @@ import '../../../styles/members.css';
           return `
             <article class="members-item">
               <h4>${escapeHtml(item.title)}</h4>
-              <p>${escapeHtml(item.area_slug || 'general')} · ${Number(item.stats?.total_questions || 0)} preguntas</p>
+              <p>${escapeHtml(item.area_slug || 'general')} · ${Number(item.stats?.total_questions || 0)} preguntas · ${item.published ? 'publicado' : 'borrador'}</p>
               <div class="members-actions" style="margin-top:0.55rem;">
                 ${badge}
                 <a

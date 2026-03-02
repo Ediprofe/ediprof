@@ -1,0 +1,53 @@
+---
+title: "Taller: Átomos y configuración electrónica"
+print_title: "Taller: Átomos y configuración electrónica"
+---
+
+import Pregunta from '@/components/saber/Pregunta.astro';
+import Opciones from '@/components/saber/Opciones.astro';
+import Opcion from '@/components/saber/Opcion.astro';
+
+
+## 1.
+<Pregunta id="1" headerless fuente="ICFES" anio="2024" bloque="Átomos y configuración electrónica" competencia="Explicación de fenómenos" componente="Entorno Químico">
+
+  En clase de Ciencias, la profesora explica que los isótopos son átomos de un mismo elemento que tienen en sus núcleos la misma cantidad de protones, pero difieren en la cantidad de neutrones y, por lo tanto, varía su número másico, que es la suma de protones y neutrones; al respecto, la profesora muestra los siguientes modelos atómicos de cuatro elementos:
+
+  ![Modelos atómicos de isótopos](/images/quimica/modelos-atomicos-isotopos.svg)
+
+  Teniendo en cuenta la información anterior, ¿qué afirmación es válida sobre los modelos atómicos?
+
+  <Opciones>
+    <Opcion letra="A">Los átomos 1 y 2 son isótopos, ya que tienen la misma cantidad de neutrones.</Opcion>
+    <Opcion letra="B">Los átomos 2 y 4 son isótopos, ya que su cantidad de protones varía en 1.</Opcion>
+    <Opcion letra="C">Los átomos 3 y 4 son isótopos, ya que tienen la misma masa atómica.</Opcion>
+    <Opcion letra="D" correcta>Los átomos 1 y 2 son isótopos, ya que tienen la misma cantidad de protones.</Opcion>
+  </Opciones>
+
+  <details>
+  <summary>✅ Respuesta</summary>
+
+  {/* RETROALIMENTACIÓN CON MARCADORES */}
+  La profesora explica que ==los isótopos son átomos de un mismo elemento que tienen en sus núcleos la misma cantidad de protones, pero difieren en la cantidad de neutrones==...
+
+  Al observar los modelos atómicos:
+  - Átomo 1: ==5 protones== y 5 neutrones.
+  - Átomo 2: ==5 protones== y 6 neutrones.
+  - Átomo 3: ==6 protones== y 6 neutrones.
+  - Átomo 4: ==6 protones== y 7 neutrones.
+
+  ==¿qué afirmación es válida sobre los modelos atómicos?==
+
+  - A. Los átomos 1 y 2 son isótopos... ~~misma cantidad de neutrones~~ (tienen 5 y 6 respectivamente).
+  - B. Los átomos 2 y 4 son isótopos... ~~su cantidad de protones varía en 1~~ (isótopos deben tener IGUAL cantidad de protones).
+  - C. Los átomos 3 y 4 son isótopos... ~~misma masa atómica~~ (tienen masa 12 y 13 respectivamente).
+  - D. ==Los átomos 1 y 2 son isótopos, ya que tienen la misma cantidad de protones== ✅
+
+  **Respuesta: D**
+
+  **Explicación:**
+  De acuerdo con la definición dada por la profesora, los isótopos deben tener la **misma cantidad de protones**. Al analizar los núcleos de los modelos presentados, los átomos **1 y 2** tienen ambos 5 protones (círculos blancos), lo que los identifica como isótopos de un mismo elemento (Boro). Por el contrario, difieren en su cantidad de neutrones (5 y 6), lo que cumple perfectamente con la definición.
+
+  </details>
+
+</Pregunta>

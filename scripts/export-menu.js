@@ -13,10 +13,9 @@
 
 import inquirer from 'inquirer';
 import { readdirSync, existsSync, statSync, readFileSync, mkdirSync } from 'fs';
-import { join, resolve, basename } from 'path';
+import { join, resolve, basename, dirname } from 'path';
 import { execSync, spawn } from 'child_process';
 import { fileURLToPath } from 'url';
-import { dirname } from 'path';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -629,8 +628,8 @@ async function exportTalleresSaber() {
         }
     ]);
 
-    // Directorio de salida
-    const outputDir = resolve(process.env.HOME, 'Desktop', 'talleres-saber');
+    // Directorio de salida (junto al taller seleccionado)
+    const outputDir = join(dirname(selectedTaller), 'output');
     if (!existsSync(outputDir)) {
         mkdirSync(outputDir, { recursive: true });
     }

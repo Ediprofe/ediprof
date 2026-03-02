@@ -28,17 +28,22 @@ const { Content, headings } = await taller.render();
 
 // Título y metadatos
 const firstH1 = headings.find((h: any) => h.depth === 1);
-const title =
-    taller.data.title ||
-    firstH1?.text?.replace(/\*\*/g, "").trim() ||
-    "Taller Saber 11";
 
 // Formatear unidad y materia desde el slug
 const parts = taller.slug.split("/"); // [materia, unidad, archivo]
-const materia = parts[0]
-    ? parts[0].charAt(0).toUpperCase() + parts[0].slice(1)
-    : "Saber 11";
 const unidad = parts[1] ? formatName(parts[1]) : "";
+
+const titleBase =
+    taller.data.print_title ||
+    taller.data.title ||
+    firstH1?.text?.replace(/\*\*/g, "").trim() ||
+    (unidad ? `Taller: ${unidad}` : "Taller Saber 11");
+
+const normalizedTitleBase = String(titleBase).trim();
+const title = /^taller\s*:/i.test(normalizedTitleBase)
+    ? normalizedTitleBase
+    : `Taller: ${normalizedTitleBase}`;
+const pdfTitle = title.toUpperCase();
 ---
 
 <!doctype html>
@@ -116,21 +121,11 @@ const unidad = parts[1] ? formatName(parts[1]) : "";
                 line-height: 1.1;
                 color: #0f172a;
                 max-width: 90%;
+                text-transform: uppercase;
             }
 
             body:not(.mode-imprimible) .doc-meta {
-                font-family: var(--f-ui);
-                font-size: 9.5pt;
-                color: #475569;
-                margin-top: 15px;
-                font-weight: 700;
-                text-transform: uppercase;
-                letter-spacing: 0.1em;
-                background: none;
-                padding: 0;
-                display: inline-flex;
-                align-items: center;
-                gap: 12px;
+                display: none !important;
             }
 
             h2 {
@@ -263,6 +258,12 @@ const unidad = parts[1] ? formatName(parts[1]) : "";
                 text-align: left !important;
             }
 
+            /* En normal/feedback mostrar solo fuente y año por pregunta */
+            body:not(.mode-imprimible) .meta-tags .tag.competencia,
+            body:not(.mode-imprimible) .meta-tags .tag.componente {
+                display: none !important;
+            }
+
             /* ═══════════════════════════════════════════════════════════════
                MODO IMPRIMIBLE (TINTA ECONÓMICA & ESPACIO ULTRA OPTIMIZADO)
                ═══════════════════════════════════════════════════════════════ */
@@ -286,8 +287,11 @@ const unidad = parts[1] ? formatName(parts[1]) : "";
                 border-bottom: 1px solid #000;
             }
             body.mode-imprimible .doc-title {
-                font-size: 10pt;
-                text-align: left;
+                font-size: 14pt;
+                text-align: center;
+                letter-spacing: 0.04em;
+                font-weight: 800;
+                text-transform: uppercase;
             }
             body.mode-imprimible .doc-brand,
             body.mode-imprimible .doc-meta {
@@ -567,8 +571,7 @@ const unidad = parts[1] ? formatName(parts[1]) : "";
     <body>
         <header class="doc-header">
             <div class="doc-brand">Ediprofe</div>
-            <div class="doc-title">{title}</div>
-            <div class="doc-meta">Área: {materia} • {unidad}</div>
+            <div class="doc-title">{pdfTitle}</div>
         </header>
 
         <main class="content-wrapper">
