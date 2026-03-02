@@ -515,9 +515,8 @@ const { workshopId } = Astro.props;
           <div class="members-progress-meta">
             <p class="members-subtitle"><strong>${escapeHtml(state.detail.title)}</strong></p>
             <p class="members-subtitle">
-              Pregunta ${state.questionIndex + 1} de ${total} · Correctas ${correctCount} · Comprobadas ${checkedCount}
+              Correctas ${correctCount} · Comprobadas ${checkedCount} · Pendientes ${pendingCount}
             </p>
-            <p class="members-subtitle">Pendientes ${pendingCount}</p>
           </div>
           <div class="members-progress-track" aria-label="Progreso del taller">
             <div class="members-progress-fill" style="width:${progressPercent}%"></div>

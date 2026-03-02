@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="620" viewBox="0 0 1400 620" role="img" aria-label="Modelos atómicos de B, O y Na">
+  <defs>
+    <style>
+      .title { font-family: Arial, sans-serif; font-size: 42px; font-weight: 700; fill: #1f2937; }
+      .label { font-family: Arial, sans-serif; font-size: 48px; font-weight: 700; fill: #111827; }
+      .sub { font-family: Arial, sans-serif; font-size: 46px; font-weight: 600; fill: #111827; }
+      .core { fill: #f8d9a3; stroke: #f0c277; stroke-width: 3; }
+      .ring { fill: none; stroke: #7f8c8d; stroke-width: 5; stroke-dasharray: 10 12; }
+      .electron { fill: #3b82f6; stroke: #1d4ed8; stroke-width: 2; }
+      .nucleus-text { font-family: Arial, sans-serif; font-size: 34px; font-weight: 700; fill: #1f2937; text-anchor: middle; dominant-baseline: middle; }
+    </style>
+  </defs>
+
+  <text x="700" y="62" text-anchor="middle" class="title">Modelos atómicos: B, O y Na (átomos neutros)</text>
+
+  <!-- Atom B -->
+  <g transform="translate(240,320)">
+    <circle class="ring" cx="0" cy="0" r="82" />
+    <circle class="ring" cx="0" cy="0" r="152" />
+    <circle class="core" cx="0" cy="0" r="58" />
+    <text class="nucleus-text" x="0" y="-14">5 p+</text>
+    <text class="nucleus-text" x="0" y="22">6 n</text>
+
+    <!-- Electrons: 2 inner -->
+    <circle class="electron" cx="0" cy="-82" r="12" />
+    <circle class="electron" cx="0" cy="82" r="12" />
+
+    <!-- Electrons: 3 outer -->
+    <circle class="electron" cx="0" cy="-152" r="12" />
+    <circle class="electron" cx="132" cy="76" r="12" />
+    <circle class="electron" cx="-132" cy="76" r="12" />
+  </g>
+  <text x="240" y="545" text-anchor="middle" class="sub">Átomo de B</text>
+
+  <!-- Atom O -->
+  <g transform="translate(700,320)">
+    <circle class="ring" cx="0" cy="0" r="82" />
+    <circle class="ring" cx="0" cy="0" r="152" />
+    <circle class="core" cx="0" cy="0" r="58" />
+    <text class="nucleus-text" x="0" y="-14">8 p+</text>
+    <text class="nucleus-text" x="0" y="22">8 n</text>
+
+    <!-- Electrons: 2 inner -->
+    <circle class="electron" cx="0" cy="-82" r="12" />
+    <circle class="electron" cx="0" cy="82" r="12" />
+
+    <!-- Electrons: 6 outer -->
+    <circle class="electron" cx="0" cy="-152" r="12" />
+    <circle class="electron" cx="132" cy="-76" r="12" />
+    <circle class="electron" cx="132" cy="76" r="12" />
+    <circle class="electron" cx="0" cy="152" r="12" />
+    <circle class="electron" cx="-132" cy="76" r="12" />
+    <circle class="electron" cx="-132" cy="-76" r="12" />
+  </g>
+  <text x="700" y="545" text-anchor="middle" class="sub">Átomo de O</text>
+
+  <!-- Atom Na -->
+  <g transform="translate(1160,320)">
+    <circle class="ring" cx="0" cy="0" r="62" />
+    <circle class="ring" cx="0" cy="0" r="112" />
+    <circle class="ring" cx="0" cy="0" r="162" />
+    <circle class="core" cx="0" cy="0" r="58" />
+    <text class="nucleus-text" x="0" y="-14">11 p+</text>
+    <text class="nucleus-text" x="0" y="22">12 n</text>
+
+    <!-- Electrons: 2 inner -->
+    <circle class="electron" cx="0" cy="-62" r="12" />
+    <circle class="electron" cx="0" cy="62" r="12" />
+
+    <!-- Electrons: 8 second shell -->
+    <circle class="electron" cx="0" cy="-112" r="12" />
+    <circle class="electron" cx="79" cy="-79" r="12" />
+    <circle class="electron" cx="112" cy="0" r="12" />
+    <circle class="electron" cx="79" cy="79" r="12" />
+    <circle class="electron" cx="0" cy="112" r="12" />
+    <circle class="electron" cx="-79" cy="79" r="12" />
+    <circle class="electron" cx="-112" cy="0" r="12" />
+    <circle class="electron" cx="-79" cy="-79" r="12" />
+
+    <!-- Electron: outer shell -->
+    <circle class="electron" cx="0" cy="-162" r="12" />
+  </g>
+  <text x="1160" y="545" text-anchor="middle" class="sub">Átomo de Na</text>
+</svg>

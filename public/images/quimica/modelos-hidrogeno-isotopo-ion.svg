@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="820" viewBox="0 0 1400 820" role="img" aria-label="Modelos de hidrógeno: átomo neutro, deuterio y catión">
+  <defs>
+    <style>
+      .title { font-family: Arial, sans-serif; font-size: 34px; font-weight: 700; fill: #1f2937; }
+      .subtitle { font-family: Arial, sans-serif; font-size: 26px; font-weight: 600; fill: #374151; }
+      .label { font-family: Arial, sans-serif; font-size: 34px; font-weight: 700; fill: #111827; }
+      .text { font-family: Arial, sans-serif; font-size: 30px; fill: #111827; }
+      .small { font-family: Arial, sans-serif; font-size: 28px; fill: #111827; }
+      .ring { fill: none; stroke: #4b5563; stroke-width: 4; }
+      .proton { fill: #ef4444; stroke: #b91c1c; stroke-width: 3; }
+      .electron { fill: #60a5fa; stroke: #1d4ed8; stroke-width: 3; }
+      .neutron { fill: #fde047; stroke: #ca8a04; stroke-width: 3; }
+      .plus { font-family: Arial, sans-serif; font-size: 26px; font-weight: 700; fill: white; text-anchor: middle; dominant-baseline: middle; }
+    </style>
+  </defs>
+
+  <text x="700" y="58" text-anchor="middle" class="title">Representación de átomos de hidrógeno</text>
+  <text x="700" y="98" text-anchor="middle" class="subtitle">(átomo neutro, isótopo deuterio e ion positivo)</text>
+
+  <text x="290" y="164" text-anchor="middle" class="label">Representación 1</text>
+  <text x="700" y="164" text-anchor="middle" class="label">Representación 2</text>
+  <text x="1110" y="164" text-anchor="middle" class="label">Representación 3</text>
+
+  <g transform="translate(290,360)">
+    <circle class="ring" cx="0" cy="0" r="124"/>
+    <circle class="proton" cx="0" cy="0" r="22"/>
+    <text class="plus" x="0" y="0">+</text>
+    <circle class="electron" cx="88" cy="-88" r="14"/>
+  </g>
+  <text x="290" y="534" text-anchor="middle" class="text">Hidrógeno</text>
+  <text x="290" y="572" text-anchor="middle" class="small">1 protón</text>
+  <text x="290" y="610" text-anchor="middle" class="small">1 electrón</text>
+
+  <g transform="translate(700,360)">
+    <circle class="ring" cx="0" cy="0" r="124"/>
+    <circle class="proton" cx="14" cy="0" r="22"/>
+    <text class="plus" x="14" y="0">+</text>
+    <circle class="neutron" cx="-16" cy="0" r="20"/>
+    <circle class="electron" cx="88" cy="-88" r="14"/>
+  </g>
+  <text x="700" y="534" text-anchor="middle" class="text">Deuterio</text>
+  <text x="700" y="572" text-anchor="middle" class="small">1 protón</text>
+  <text x="700" y="610" text-anchor="middle" class="small">1 electrón</text>
+  <text x="700" y="648" text-anchor="middle" class="small">1 neutrón</text>
+
+  <g transform="translate(1110,360)">
+    <circle class="ring" cx="0" cy="0" r="124"/>
+    <circle class="proton" cx="0" cy="0" r="22"/>
+    <text class="plus" x="0" y="0">+</text>
+  </g>
+  <text x="1110" y="534" text-anchor="middle" class="text">Hidrógeno</text>
+  <text x="1110" y="572" text-anchor="middle" class="small">1 protón</text>
+
+  <g transform="translate(700,744)">
+    <circle class="proton" cx="-250" cy="0" r="14"/><text class="plus" x="-250" y="0" style="font-size:18px">+</text>
+    <text x="-220" y="9" class="small">Protón</text>
+    <circle class="electron" cx="20" cy="0" r="12"/>
+    <text x="48" y="9" class="small">Electrón</text>
+    <circle class="neutron" cx="270" cy="0" r="12"/>
+    <text x="300" y="9" class="small">Neutrón</text>
+  </g>
+</svg>

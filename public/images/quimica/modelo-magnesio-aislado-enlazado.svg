@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900" role="img" aria-label="Modelos atómicos del magnesio: aislado y enlazado">
+  <defs>
+    <style>
+      .title{font-family:Arial,sans-serif;font-size:34px;font-weight:700;fill:#1f2937}
+      .sub{font-family:Arial,sans-serif;font-size:30px;font-weight:700;fill:#111827}
+      .text{font-family:Arial,sans-serif;font-size:24px;fill:#1f2937}
+      .ring{fill:none;stroke:#4b5563;stroke-width:4}
+      .nucleus{fill:#e5e7eb;stroke:#6b7280;stroke-width:3}
+      .ntext{font-family:Arial,sans-serif;font-size:28px;font-weight:700;fill:#111827;text-anchor:middle}
+      .electron{fill:#6b7280;stroke:#111827;stroke-width:2}
+    </style>
+  </defs>
+
+  <text x="700" y="58" text-anchor="middle" class="title">Modelos atómicos del magnesio (Mg)</text>
+  <text x="430" y="124" text-anchor="middle" class="sub">Aislado</text>
+  <text x="980" y="124" text-anchor="middle" class="sub">Enlazado</text>
+
+  <g transform="translate(430,420)">
+    <circle class="ring" cx="0" cy="0" r="78"/>
+    <circle class="ring" cx="0" cy="0" r="146"/>
+    <circle class="ring" cx="0" cy="0" r="214"/>
+    <circle class="nucleus" cx="0" cy="0" r="66"/>
+    <text x="0" y="-8" class="ntext">12 p+</text>
+    <text x="0" y="26" class="ntext">12 n</text>
+
+    <circle class="electron" cx="0" cy="-78" r="10"/>
+    <circle class="electron" cx="0" cy="78" r="10"/>
+
+    <circle class="electron" cx="0" cy="-146" r="10"/>
+    <circle class="electron" cx="103" cy="-103" r="10"/>
+    <circle class="electron" cx="146" cy="0" r="10"/>
+    <circle class="electron" cx="103" cy="103" r="10"/>
+    <circle class="electron" cx="0" cy="146" r="10"/>
+    <circle class="electron" cx="-103" cy="103" r="10"/>
+    <circle class="electron" cx="-146" cy="0" r="10"/>
+    <circle class="electron" cx="-103" cy="-103" r="10"/>
+
+    <circle class="electron" cx="0" cy="-214" r="10"/>
+    <circle class="electron" cx="0" cy="214" r="10"/>
+  </g>
+
+  <g transform="translate(980,420)">
+    <circle class="ring" cx="0" cy="0" r="78"/>
+    <circle class="ring" cx="0" cy="0" r="146"/>
+    <circle class="nucleus" cx="0" cy="0" r="66"/>
+    <text x="0" y="-8" class="ntext">12 p+</text>
+    <text x="0" y="26" class="ntext">12 n</text>
+
+    <circle class="electron" cx="0" cy="-78" r="10"/>
+    <circle class="electron" cx="0" cy="78" r="10"/>
+
+    <circle class="electron" cx="0" cy="-146" r="10"/>
+    <circle class="electron" cx="103" cy="-103" r="10"/>
+    <circle class="electron" cx="146" cy="0" r="10"/>
+    <circle class="electron" cx="103" cy="103" r="10"/>
+    <circle class="electron" cx="0" cy="146" r="10"/>
+    <circle class="electron" cx="-103" cy="103" r="10"/>
+    <circle class="electron" cx="-146" cy="0" r="10"/>
+    <circle class="electron" cx="-103" cy="-103" r="10"/>
+  </g>
+
+</svg>

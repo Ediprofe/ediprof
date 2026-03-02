@@ -4084,7 +4084,20 @@
       "canonicalPath": "img/fisica/b5oj-image.webp",
       "aliases": [],
       "status": "uploaded"
+    },
+    {
+      "id": "oeo8",
+      "name": "metodo-cient.webp",
+      "materia": "quimica",
+      "type": "saber",
+      "date": "2026-03-02",
+      "size": "50KB",
+      "url": "https://cdn.ediprofe.com/img/saber/quimica/oeo8-metodo-cient.webp",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/saber/quimica/oeo8-metodo-cient.webp",
+      "canonicalPath": "img/saber/quimica/oeo8-metodo-cient.webp",
+      "aliases": [],
+      "status": "uploaded"
     }
   ],
-  "lastUpdated": "2026-02-25T18:45:35.152Z"
+  "lastUpdated": "2026-03-02T11:16:12.782Z"
 }
