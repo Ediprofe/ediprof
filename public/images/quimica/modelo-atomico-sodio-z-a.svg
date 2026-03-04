@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-label="Propiedades del sodio con número atómico y número de masa">
+  <defs>
+    <style>
+      .title { font-family: Arial, sans-serif; font-size: 40px; font-weight: 700; fill: #1f2937; text-anchor: middle; }
+      .label { font-family: Arial, sans-serif; font-size: 48px; fill: #111827; }
+      .arrow { font-family: Arial, sans-serif; font-size: 54px; fill: #111827; }
+      .num { font-family: Arial, sans-serif; font-size: 64px; font-weight: 700; fill: #111827; text-anchor: middle; dominant-baseline: middle; }
+      .chem { font-family: Arial, sans-serif; font-size: 64px; fill: #111827; text-anchor: middle; dominant-baseline: middle; }
+      .name { font-family: Arial, sans-serif; font-size: 56px; fill: #111827; text-anchor: middle; dominant-baseline: middle; }
+      .card-stroke { stroke: #9ca3af; stroke-width: 4; fill: none; }
+      .num-bg { fill: #e5eef3; }
+      .name-bg { fill: #f4efe6; }
+    </style>
+  </defs>
+
+  <text x="600" y="78" class="title">Propiedades del sodio en la tabla periódica</text>
+
+  <text x="110" y="230" class="label">Número atómico Z</text>
+  <text x="110" y="335" class="label">Número de masa A</text>
+  <text x="595" y="235" class="arrow">→</text>
+  <text x="595" y="340" class="arrow">→</text>
+
+  <g transform="translate(680,145)">
+    <rect x="0" y="0" width="350" height="340" class="card-stroke"/>
+    <rect x="0" y="0" width="175" height="220" class="num-bg"/>
+    <rect x="0" y="220" width="350" height="120" class="name-bg"/>
+    <line x1="175" y1="0" x2="175" y2="220" class="card-stroke"/>
+    <line x1="0" y1="110" x2="175" y2="110" class="card-stroke"/>
+    <line x1="0" y1="220" x2="350" y2="220" class="card-stroke"/>
+
+    <text x="87.5" y="55" class="num">11</text>
+    <text x="87.5" y="165" class="num">23</text>
+    <text x="262.5" y="110" class="chem">Na</text>
+    <text x="175" y="280" class="name">Sodio</text>
+  </g>
+</svg>
