@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1360" height="1120" viewBox="0 0 1360 1120" role="img" aria-labelledby="title desc">
+  <title id="title">Opciones A, B, C y D</title>
+  <desc id="desc">Cuatro histogramas organizados en matriz 2x2.</desc>
+  <defs>
+    <style>
+      .bg { fill: #ffffff; }
+      .panel { fill: #ffffff; stroke: #111111; stroke-width: 2; }
+      .axis { stroke: #111111; stroke-width: 2; }
+      .grid { stroke: #dddddd; stroke-width: 1; }
+      .txt { fill: #111111; font-family: Arial, Helvetica, sans-serif; }
+      .small { font-size: 15px; }
+      .normal { font-size: 19px; }
+      .label { font-size: 28px; font-weight: 700; }
+      .legend1 { fill: #111111; }
+      .legend2 { fill: #8f8f8f; }
+      .bar1 { fill: #111111; }
+      .bar2 { fill: #8f8f8f; }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1360" height="1120"/>
+
+  <!-- PANEL A -->
+  <g transform="translate(40,40)">
+    <rect class="panel" x="0" y="0" width="620" height="500" rx="8"/>
+    <text class="txt label" x="24" y="44">A.</text>
+    <g transform="translate(90,70)">
+      <line class="grid" x1="0" y1="300" x2="430" y2="300"/><line class="grid" x1="0" y1="250" x2="430" y2="250"/>
+      <line class="grid" x1="0" y1="200" x2="430" y2="200"/><line class="grid" x1="0" y1="150" x2="430" y2="150"/>
+      <line class="grid" x1="0" y1="100" x2="430" y2="100"/><line class="grid" x1="0" y1="50" x2="430" y2="50"/>
+      <line class="axis" x1="0" y1="300" x2="430" y2="300"/><line class="axis" x1="0" y1="300" x2="0" y2="0"/>
+      <text class="txt small" x="-26" y="304">0</text><text class="txt small" x="-34" y="254">2</text><text class="txt small" x="-34" y="204">4</text>
+      <text class="txt small" x="-34" y="154">6</text><text class="txt small" x="-34" y="104">8</text><text class="txt small" x="-44" y="54">10</text><text class="txt small" x="-44" y="12">12</text>
+      <rect class="bar1" x="17" y="50" width="12" height="250"/><rect class="bar2" x="33" y="300" width="12" height="0"/>
+      <rect class="bar1" x="67" y="50" width="12" height="250"/><rect class="bar2" x="83" y="300" width="12" height="0"/>
+      <rect class="bar1" x="117" y="125" width="12" height="175"/><rect class="bar2" x="133" y="300" width="12" height="0"/>
+      <rect class="bar1" x="167" y="175" width="12" height="125"/><rect class="bar2" x="183" y="250" width="12" height="50"/>
+      <rect class="bar1" x="217" y="200" width="12" height="100"/><rect class="bar2" x="233" y="175" width="12" height="125"/>
+      <rect class="bar1" x="267" y="300" width="12" height="0"/><rect class="bar2" x="283" y="100" width="12" height="200"/>
+      <rect class="bar1" x="317" y="300" width="12" height="0"/><rect class="bar2" x="333" y="50" width="12" height="250"/>
+      <rect class="bar1" x="367" y="300" width="12" height="0"/><rect class="bar2" x="383" y="25" width="12" height="275"/>
+      <text class="txt small" x="24" y="325">1</text><text class="txt small" x="74" y="325">2</text><text class="txt small" x="124" y="325">3</text><text class="txt small" x="174" y="325">4</text>
+      <text class="txt small" x="224" y="325">5</text><text class="txt small" x="274" y="325">6</text><text class="txt small" x="324" y="325">7</text><text class="txt small" x="374" y="325">8</text>
+    </g>
+    <text class="txt normal" x="245" y="414">Número de huevos por nido</text>
+    <text class="txt normal" x="-246" y="26" transform="rotate(-90)">Número de nidos</text>
+    <rect class="legend1" x="210" y="440" width="14" height="14"/><text class="txt normal" x="232" y="453">Grupo I</text>
+    <rect class="legend2" x="320" y="440" width="14" height="14"/><text class="txt normal" x="342" y="453">Grupo II</text>
+  </g>
+
+  <!-- PANEL B -->
+  <g transform="translate(700,40)">
+    <rect class="panel" x="0" y="0" width="620" height="500" rx="8"/>
+    <text class="txt label" x="24" y="44">B.</text>
+    <g transform="translate(90,70)">
+      <line class="grid" x1="0" y1="300" x2="430" y2="300"/><line class="grid" x1="0" y1="250" x2="430" y2="250"/>
+      <line class="grid" x1="0" y1="200" x2="430" y2="200"/><line class="grid" x1="0" y1="150" x2="430" y2="150"/>
+      <line class="grid" x1="0" y1="100" x2="430" y2="100"/><line class="grid" x1="0" y1="50" x2="430" y2="50"/>
+      <line class="axis" x1="0" y1="300" x2="430" y2="300"/><line class="axis" x1="0" y1="300" x2="0" y2="0"/>
+      <text class="txt small" x="-26" y="304">0</text><text class="txt small" x="-34" y="254">2</text><text class="txt small" x="-34" y="204">4</text>
+      <text class="txt small" x="-34" y="154">6</text><text class="txt small" x="-34" y="104">8</text><text class="txt small" x="-44" y="54">10</text><text class="txt small" x="-44" y="12">12</text>
+      <rect class="bar1" x="17" y="300" width="12" height="0"/><rect class="bar2" x="33" y="300" width="12" height="0"/>
+      <rect class="bar1" x="67" y="275" width="12" height="25"/><rect class="bar2" x="83" y="275" width="12" height="25"/>
+      <rect class="bar1" x="117" y="250" width="12" height="50"/><rect class="bar2" x="133" y="250" width="12" height="50"/>
+      <rect class="bar1" x="167" y="225" width="12" height="75"/><rect class="bar2" x="183" y="225" width="12" height="75"/>
+      <rect class="bar1" x="217" y="25" width="12" height="275"/><rect class="bar2" x="233" y="25" width="12" height="275"/>
+      <rect class="bar1" x="267" y="62" width="12" height="238"/><rect class="bar2" x="283" y="62" width="12" height="238"/>
+      <rect class="bar1" x="317" y="125" width="12" height="175"/><rect class="bar2" x="333" y="125" width="12" height="175"/>
+      <rect class="bar1" x="367" y="100" width="12" height="200"/><rect class="bar2" x="383" y="100" width="12" height="200"/>
+      <text class="txt small" x="24" y="325">1</text><text class="txt small" x="74" y="325">2</text><text class="txt small" x="124" y="325">3</text><text class="txt small" x="174" y="325">4</text>
+      <text class="txt small" x="224" y="325">5</text><text class="txt small" x="274" y="325">6</text><text class="txt small" x="324" y="325">7</text><text class="txt small" x="374" y="325">8</text>
+    </g>
+    <text class="txt normal" x="245" y="414">Número de huevos por nido</text>
+    <text class="txt normal" x="-246" y="26" transform="rotate(-90)">Número de nidos</text>
+    <rect class="legend1" x="210" y="440" width="14" height="14"/><text class="txt normal" x="232" y="453">Grupo I</text>
+    <rect class="legend2" x="320" y="440" width="14" height="14"/><text class="txt normal" x="342" y="453">Grupo II</text>
+  </g>
+
+  <!-- PANEL C -->
+  <g transform="translate(40,580)">
+    <rect class="panel" x="0" y="0" width="620" height="500" rx="8"/>
+    <text class="txt label" x="24" y="44">C.</text>
+    <g transform="translate(90,70)">
+      <line class="grid" x1="0" y1="300" x2="430" y2="300"/><line class="grid" x1="0" y1="250" x2="430" y2="250"/>
+      <line class="grid" x1="0" y1="200" x2="430" y2="200"/><line class="grid" x1="0" y1="150" x2="430" y2="150"/>
+      <line class="grid" x1="0" y1="100" x2="430" y2="100"/><line class="grid" x1="0" y1="50" x2="430" y2="50"/>
+      <line class="axis" x1="0" y1="300" x2="430" y2="300"/><line class="axis" x1="0" y1="300" x2="0" y2="0"/>
+      <text class="txt small" x="-26" y="304">0</text><text class="txt small" x="-34" y="254">2</text><text class="txt small" x="-34" y="204">4</text>
+      <text class="txt small" x="-34" y="154">6</text><text class="txt small" x="-34" y="104">8</text><text class="txt small" x="-44" y="54">10</text><text class="txt small" x="-44" y="12">12</text>
+      <rect class="bar1" x="17" y="50" width="12" height="250"/><rect class="bar2" x="33" y="300" width="12" height="0"/>
+      <rect class="bar1" x="67" y="100" width="12" height="200"/><rect class="bar2" x="83" y="300" width="12" height="0"/>
+      <rect class="bar1" x="117" y="300" width="12" height="0"/><rect class="bar2" x="133" y="288" width="12" height="12"/>
+      <rect class="bar1" x="167" y="300" width="12" height="0"/><rect class="bar2" x="183" y="275" width="12" height="25"/>
+      <rect class="bar1" x="217" y="300" width="12" height="0"/><rect class="bar2" x="233" y="238" width="12" height="62"/>
+      <rect class="bar1" x="267" y="300" width="12" height="0"/><rect class="bar2" x="283" y="200" width="12" height="100"/>
+      <rect class="bar1" x="317" y="300" width="12" height="0"/><rect class="bar2" x="333" y="175" width="12" height="125"/>
+      <rect class="bar1" x="367" y="300" width="12" height="0"/><rect class="bar2" x="383" y="162" width="12" height="138"/>
+      <text class="txt small" x="24" y="325">1</text><text class="txt small" x="74" y="325">2</text><text class="txt small" x="124" y="325">3</text><text class="txt small" x="174" y="325">4</text>
+      <text class="txt small" x="224" y="325">5</text><text class="txt small" x="274" y="325">6</text><text class="txt small" x="324" y="325">7</text><text class="txt small" x="374" y="325">8</text>
+    </g>
+    <text class="txt normal" x="245" y="414">Número de huevos por nido</text>
+    <text class="txt normal" x="-246" y="26" transform="rotate(-90)">Número de nidos</text>
+    <rect class="legend1" x="210" y="440" width="14" height="14"/><text class="txt normal" x="232" y="453">Grupo I</text>
+    <rect class="legend2" x="320" y="440" width="14" height="14"/><text class="txt normal" x="342" y="453">Grupo II</text>
+  </g>
+
+  <!-- PANEL D -->
+  <g transform="translate(700,580)">
+    <rect class="panel" x="0" y="0" width="620" height="500" rx="8"/>
+    <text class="txt label" x="24" y="44">D.</text>
+    <g transform="translate(90,70)">
+      <line class="grid" x1="0" y1="300" x2="430" y2="300"/><line class="grid" x1="0" y1="250" x2="430" y2="250"/>
+      <line class="grid" x1="0" y1="200" x2="430" y2="200"/><line class="grid" x1="0" y1="150" x2="430" y2="150"/>
+      <line class="grid" x1="0" y1="100" x2="430" y2="100"/><line class="grid" x1="0" y1="50" x2="430" y2="50"/>
+      <line class="axis" x1="0" y1="300" x2="430" y2="300"/><line class="axis" x1="0" y1="300" x2="0" y2="0"/>
+      <text class="txt small" x="-26" y="304">0</text><text class="txt small" x="-34" y="254">2</text><text class="txt small" x="-34" y="204">4</text>
+      <text class="txt small" x="-34" y="154">6</text><text class="txt small" x="-34" y="104">8</text><text class="txt small" x="-44" y="54">10</text><text class="txt small" x="-44" y="12">12</text>
+      <rect class="bar1" x="17" y="300" width="12" height="0"/><rect class="bar2" x="33" y="50" width="12" height="250"/>
+      <rect class="bar1" x="67" y="300" width="12" height="0"/><rect class="bar2" x="83" y="50" width="12" height="250"/>
+      <rect class="bar1" x="117" y="300" width="12" height="0"/><rect class="bar2" x="133" y="125" width="12" height="175"/>
+      <rect class="bar1" x="167" y="250" width="12" height="50"/><rect class="bar2" x="183" y="175" width="12" height="125"/>
+      <rect class="bar1" x="217" y="175" width="12" height="125"/><rect class="bar2" x="233" y="200" width="12" height="100"/>
+      <rect class="bar1" x="267" y="100" width="12" height="200"/><rect class="bar2" x="283" y="300" width="12" height="0"/>
+      <rect class="bar1" x="317" y="50" width="12" height="250"/><rect class="bar2" x="333" y="300" width="12" height="0"/>
+      <rect class="bar1" x="367" y="25" width="12" height="275"/><rect class="bar2" x="383" y="300" width="12" height="0"/>
+      <text class="txt small" x="24" y="325">1</text><text class="txt small" x="74" y="325">2</text><text class="txt small" x="124" y="325">3</text><text class="txt small" x="174" y="325">4</text>
+      <text class="txt small" x="224" y="325">5</text><text class="txt small" x="274" y="325">6</text><text class="txt small" x="324" y="325">7</text><text class="txt small" x="374" y="325">8</text>
+    </g>
+    <text class="txt normal" x="245" y="414">Número de huevos por nido</text>
+    <text class="txt normal" x="-246" y="26" transform="rotate(-90)">Número de nidos</text>
+    <rect class="legend1" x="210" y="440" width="14" height="14"/><text class="txt normal" x="232" y="453">Grupo I</text>
+    <rect class="legend2" x="320" y="440" width="14" height="14"/><text class="txt normal" x="342" y="453">Grupo II</text>
+  </g>
+</svg>

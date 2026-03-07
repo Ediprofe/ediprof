@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="620" viewBox="0 0 900 620" role="img" aria-label="Grafica volumen vs temperatura a presion constante">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <text x="450" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="42" font-weight="700" fill="#0f172a">Con presion constante</text>
+
+  <line x1="150" y1="520" x2="760" y2="520" stroke="#111827" stroke-width="5"/>
+  <polygon points="760,520 742,510 742,530" fill="#111827"/>
+  <line x1="150" y1="520" x2="150" y2="140" stroke="#111827" stroke-width="5"/>
+  <polygon points="150,140 140,158 160,158" fill="#111827"/>
+
+  <line x1="150" y1="520" x2="630" y2="210" stroke="#111827" stroke-width="6"/>
+
+  <text x="455" y="586" text-anchor="middle" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="#111827">Temperatura</text>
+  <text x="72" y="350" transform="rotate(-90 72 350)" text-anchor="middle" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="#111827">Volumen</text>
+</svg>

@@ -49,10 +49,16 @@ const saberCollection = defineCollection({
   schema: saberSchema,
 });
 
+const simulacrosCollection = defineCollection({
+  type: 'content',
+  schema: saberSchema,
+});
+
 export const collections = {
   'matematicas': matematicasCollection,
   'fisica': fisicaCollection,
   'quimica': quimicaCollection,
   'ciencias': cienciasCollection,
   'saber': saberCollection,
+  'simulacros': simulacrosCollection,
 };

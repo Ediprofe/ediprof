@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="560" viewBox="0 0 920 560" role="img" aria-label="Relación entre avispas liberadas y número de moscas blancas por planta">
+  <rect x="0" y="0" width="920" height="560" fill="#ffffff"/>
+  <text x="460" y="46" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#111827">
+    Relación presa-depredador
+  </text>
+  <text x="460" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#374151">
+    Mosca blanca vs. avispas liberadas
+  </text>
+
+  <rect x="130" y="120" width="690" height="350" fill="#fafafa" stroke="#d1d5db" stroke-width="1.5"/>
+
+  <line x1="130" y1="470" x2="820" y2="470" stroke="#111827" stroke-width="3"/>
+  <line x1="130" y1="120" x2="130" y2="470" stroke="#111827" stroke-width="3"/>
+
+  <g stroke="#e5e7eb" stroke-width="1">
+    <line x1="130" y1="470" x2="820" y2="470"/>
+    <line x1="130" y1="420" x2="820" y2="420"/>
+    <line x1="130" y1="370" x2="820" y2="370"/>
+    <line x1="130" y1="320" x2="820" y2="320"/>
+    <line x1="130" y1="270" x2="820" y2="270"/>
+    <line x1="130" y1="220" x2="820" y2="220"/>
+    <line x1="130" y1="170" x2="820" y2="170"/>
+    <line x1="130" y1="120" x2="820" y2="120"/>
+  </g>
+
+  <g font-family="Arial, sans-serif" font-size="16" fill="#374151">
+    <text x="106" y="476" text-anchor="end">0</text>
+    <text x="106" y="426" text-anchor="end">500</text>
+    <text x="106" y="376" text-anchor="end">1000</text>
+    <text x="106" y="326" text-anchor="end">1500</text>
+    <text x="106" y="276" text-anchor="end">2000</text>
+    <text x="106" y="226" text-anchor="end">2500</text>
+    <text x="106" y="176" text-anchor="end">3000</text>
+    <text x="106" y="126" text-anchor="end">3500</text>
+
+    <text x="130" y="500" text-anchor="middle">0</text>
+    <text x="268" y="500" text-anchor="middle">10</text>
+    <text x="406" y="500" text-anchor="middle">20</text>
+    <text x="544" y="500" text-anchor="middle">30</text>
+    <text x="682" y="500" text-anchor="middle">40</text>
+    <text x="820" y="500" text-anchor="middle">50</text>
+  </g>
+
+  <text x="475" y="540" text-anchor="middle" font-family="Arial, sans-serif" font-size="19" fill="#111827">
+    Número de adultos de avispas liberados
+  </text>
+  <text x="38" y="300" transform="rotate(-90 38,300)" text-anchor="middle" font-family="Arial, sans-serif" font-size="19" fill="#111827">
+    Número de mosca blanca / planta
+  </text>
+
+  <path d="M130 120 C180 130,230 150,280 170 C330 190,360 210,390 250 C415 280,430 305,455 320 C480 350,505 365,535 380 C565 395,600 410,640 418 C685 422,730 420,780 418"
+        fill="none" stroke="#111827" stroke-width="4" stroke-linecap="round"/>
+
+  <g fill="#111827">
+    <circle cx="130" cy="120" r="5"/>
+    <circle cx="280" cy="170" r="5"/>
+    <circle cx="390" cy="250" r="5"/>
+    <circle cx="455" cy="320" r="5"/>
+    <circle cx="535" cy="380" r="5"/>
+    <circle cx="640" cy="418" r="5"/>
+    <circle cx="780" cy="418" r="5"/>
+  </g>
+</svg>

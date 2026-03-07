@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-label="Número de moscas blancas por planta según número de avispas liberadas">
+  <defs>
+    <style>
+      .axis { stroke: #222; stroke-width: 3; }
+      .grid { stroke: #d7d7d7; stroke-width: 1; }
+      .curve { fill: none; stroke: #202020; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+      .title { font: 700 46px Arial, sans-serif; fill: #222; }
+      .label { font: 600 34px Arial, sans-serif; fill: #222; }
+      .tick { font: 500 28px Arial, sans-serif; fill: #222; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="760" fill="#fff"/>
+
+  <text x="600" y="70" class="title" text-anchor="middle">Modelo presa-depredador (mosca blanca y avispas)</text>
+
+  <!-- Plot area -->
+  <g transform="translate(150,120)">
+    <rect x="0" y="0" width="900" height="520" fill="#fff" stroke="#bfbfbf" stroke-width="2"/>
+
+    <!-- Horizontal grid -->
+    <line class="grid" x1="0" y1="520" x2="900" y2="520"/>
+    <line class="grid" x1="0" y1="455" x2="900" y2="455"/>
+    <line class="grid" x1="0" y1="390" x2="900" y2="390"/>
+    <line class="grid" x1="0" y1="325" x2="900" y2="325"/>
+    <line class="grid" x1="0" y1="260" x2="900" y2="260"/>
+    <line class="grid" x1="0" y1="195" x2="900" y2="195"/>
+    <line class="grid" x1="0" y1="130" x2="900" y2="130"/>
+    <line class="grid" x1="0" y1="65" x2="900" y2="65"/>
+    <line class="grid" x1="0" y1="0" x2="900" y2="0"/>
+
+    <!-- Vertical grid -->
+    <line class="grid" x1="0" y1="0" x2="0" y2="520"/>
+    <line class="grid" x1="180" y1="0" x2="180" y2="520"/>
+    <line class="grid" x1="360" y1="0" x2="360" y2="520"/>
+    <line class="grid" x1="540" y1="0" x2="540" y2="520"/>
+    <line class="grid" x1="720" y1="0" x2="720" y2="520"/>
+    <line class="grid" x1="900" y1="0" x2="900" y2="520"/>
+
+    <!-- Axes -->
+    <line class="axis" x1="0" y1="520" x2="920" y2="520"/>
+    <line class="axis" x1="0" y1="540" x2="0" y2="-20"/>
+
+    <!-- Arrowheads -->
+    <polygon points="920,520 898,510 898,530" fill="#222"/>
+    <polygon points="0,-20 -10,2 10,2" fill="#222"/>
+
+    <!-- Curve: decreases strongly then stabilizes -->
+    <path class="curve" d="M0,65 C120,78 220,120 300,180 C360,225 400,290 450,345 C500,388 560,430 640,448 C700,455 780,454 900,450"/>
+
+    <!-- Y ticks -->
+    <text class="tick" x="-28" y="528" text-anchor="end">0</text>
+    <text class="tick" x="-28" y="463" text-anchor="end">500</text>
+    <text class="tick" x="-28" y="398" text-anchor="end">1.000</text>
+    <text class="tick" x="-28" y="333" text-anchor="end">1.500</text>
+    <text class="tick" x="-28" y="268" text-anchor="end">2.000</text>
+    <text class="tick" x="-28" y="203" text-anchor="end">2.500</text>
+    <text class="tick" x="-28" y="138" text-anchor="end">3.000</text>
+    <text class="tick" x="-28" y="73" text-anchor="end">3.500</text>
+    <text class="tick" x="-28" y="8" text-anchor="end">4.000</text>
+
+    <!-- X ticks -->
+    <text class="tick" x="0" y="565" text-anchor="middle">0</text>
+    <text class="tick" x="180" y="565" text-anchor="middle">10</text>
+    <text class="tick" x="360" y="565" text-anchor="middle">20</text>
+    <text class="tick" x="540" y="565" text-anchor="middle">30</text>
+    <text class="tick" x="720" y="565" text-anchor="middle">40</text>
+    <text class="tick" x="900" y="565" text-anchor="middle">50</text>
+
+    <!-- Axis labels -->
+    <text class="label" x="450" y="625" text-anchor="middle">Número de adultos de avispas liberados</text>
+    <text class="label" x="-115" y="260" transform="rotate(-90 -115 260)" text-anchor="middle">Número de moscas blancas / planta</text>
+  </g>
+</svg>

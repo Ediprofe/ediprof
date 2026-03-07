@@ -1,0 +1,97 @@
+---
+/**
+ * Página dinámica para simulacros.
+ *
+ * Renderiza contenido de la colección 'simulacros' con el mismo layout
+ * pedagógico usado para talleres tipo Saber.
+ */
+import { getCollection } from 'astro:content';
+import LessonLayout from '../../layouts/LessonLayout.astro';
+import { cleanSlug } from '../../utils/navigation-generator.js';
+
+import '../../styles/saber/preguntas-icfes.css';
+
+export async function getStaticPaths() {
+  const simulacros = await getCollection('simulacros');
+
+  const allSimulacros = simulacros
+    .map((simulacro: any) => {
+      const slugParts = simulacro.slug.split('/');
+      const area = slugParts[0] || 'general';
+
+      return {
+        simulacro,
+        area,
+        fullSlug: simulacro.slug,
+        cleanFullSlug: cleanSlug(simulacro.slug),
+      };
+    })
+    .sort((a, b) => a.fullSlug.localeCompare(b.fullSlug));
+
+  return allSimulacros.map((item, index) => {
+    const prev = index > 0 ? allSimulacros[index - 1] : null;
+    const next = index < allSimulacros.length - 1 ? allSimulacros[index + 1] : null;
+
+    return {
+      params: { slug: item.cleanFullSlug },
+      props: {
+        simulacro: item.simulacro,
+        area: item.area,
+        prevSimulacro: prev
+          ? {
+              slug: `/simulacros/${prev.cleanFullSlug}`,
+              title: prev.simulacro.data?.title || 'Simulacro anterior',
+            }
+          : null,
+        nextSimulacro: next
+          ? {
+              slug: `/simulacros/${next.cleanFullSlug}`,
+              title: next.simulacro.data?.title || 'Siguiente simulacro',
+            }
+          : null,
+      },
+    };
+  });
+}
+
+interface Props {
+  simulacro: any;
+  area: string;
+  prevSimulacro: { slug: string; title: string } | null;
+  nextSimulacro: { slug: string; title: string } | null;
+}
+
+const { simulacro, area, prevSimulacro, nextSimulacro } = Astro.props;
+const { Content, headings } = await simulacro.render();
+
+const firstH1 = headings.find((h: any) => h.depth === 1);
+const cleanTitle = (text: string) =>
+  text
+    .replace(/\*\*/g, '')
+    .replace(/[\u{1F300}-\u{1F9FF}]/gu, '')
+    .replace(/[\u{2600}-\u{26FF}]/gu, '')
+    .replace(/[\u{2700}-\u{27BF}]/gu, '')
+    .trim();
+
+const title =
+  simulacro.data?.title ||
+  (firstH1?.text ? cleanTitle(firstH1.text) : 'Simulacro sin título');
+
+const extendedFrontmatter = {
+  ...simulacro.data,
+  title,
+  materia: area,
+};
+---
+
+<LessonLayout
+  frontmatter={extendedFrontmatter}
+  headings={headings}
+  url={Astro.url.pathname}
+  prevLesson={prevSimulacro}
+  nextLesson={nextSimulacro}
+  contentClass="saber-taller"
+>
+  <Content />
+</LessonLayout>
+

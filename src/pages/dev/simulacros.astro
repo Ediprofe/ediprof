@@ -1,0 +1,98 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { cleanSlug } from '../../utils/navigation-generator.js';
+
+const simulacros = await getCollection('simulacros');
+
+const items = simulacros
+  .map((simulacro) => {
+    const clean = cleanSlug(simulacro.slug);
+    return {
+      title: simulacro.data?.title || 'Simulacro sin título',
+      sourceSlug: simulacro.slug,
+      cleanSlug: clean,
+    };
+  })
+  .sort((a, b) => a.sourceSlug.localeCompare(b.sourceSlug));
+---
+
+<BaseLayout title="Dev | Simulacros" showTopBar={false}>
+  <main class="dev-wrap">
+    <h1>Revisión rápida de simulacros (dev)</h1>
+    <p class="dev-help">
+      Vista técnica para validar simulacros nuevos sin depender del flujo de miembros.
+    </p>
+
+    <table class="dev-table">
+      <thead>
+        <tr>
+          <th>Simulacro</th>
+          <th>Slug fuente</th>
+          <th>Vista renderizada</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          items.map((item) => (
+            <tr>
+              <td><strong>{item.title}</strong></td>
+              <td><code>{item.sourceSlug}</code></td>
+              <td>
+                <a href={`/simulacros/${item.cleanSlug}`} target="_blank" rel="noreferrer">
+                  Abrir simulacro
+                </a>
+              </td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </main>
+</BaseLayout>
+
+<style>
+  .dev-wrap {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 120px 20px 48px;
+  }
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 0.4rem;
+  }
+  .dev-help {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+  }
+  .dev-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .dev-table th,
+  .dev-table td {
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.75rem;
+    vertical-align: top;
+    text-align: left;
+    font-size: 0.92rem;
+  }
+  .dev-table th {
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-secondary);
+  }
+  .dev-table tr:last-child td {
+    border-bottom: 0;
+  }
+  code {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+  }
+</style>
+
