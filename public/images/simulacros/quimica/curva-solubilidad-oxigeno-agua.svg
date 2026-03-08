@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Curva de solubilidad del oxígeno en agua</title>
+  <desc id="desc">Gráfica de la solubilidad del oxígeno en agua con zonas de solución insaturada, saturada y sobresaturada.</desc>
+  <defs>
+    <style>
+      .page { fill: #ffffff; }
+      .frame { fill: #ffffff; stroke: #cbd5e1; stroke-width: 2; }
+      .plot-bg { fill: #fef2f2; }
+      .zone-low { fill: #dcfce7; opacity: 0.9; }
+      .grid { stroke: #dbe4ee; stroke-width: 1.2; }
+      .axis { stroke: #0f172a; stroke-width: 3.5; }
+      .curve-halo { fill: none; stroke: #ffffff; stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; }
+      .curve { fill: none; stroke: #7c3aed; stroke-width: 6.5; stroke-linecap: round; stroke-linejoin: round; }
+      .txt { fill: #0f172a; font-family: Inter, Arial, Helvetica, sans-serif; }
+      .title { font-size: 30px; font-weight: 800; }
+      .axis-label { font-size: 21px; font-weight: 700; }
+      .tick { font-size: 17px; font-weight: 500; }
+      .zone-box { fill: rgba(255,255,255,0.96); stroke-width: 2.2; }
+      .zone-text { font-size: 19px; font-weight: 700; }
+      .ins-box { stroke: #16a34a; }
+      .sat-box { stroke: #d97706; }
+      .sup-box { stroke: #dc2626; }
+      .ins-text { fill: #166534; }
+      .sat-text { fill: #92400e; }
+      .sup-text { fill: #991b1b; }
+    </style>
+    <clipPath id="plot-clip">
+      <rect x="160" y="130" width="900" height="470" rx="18"/>
+    </clipPath>
+  </defs>
+
+  <rect class="page" x="0" y="0" width="1200" height="760"/>
+  <rect class="frame" x="48" y="38" width="1104" height="676" rx="28"/>
+
+  <text class="txt title" x="600" y="88" text-anchor="middle">Curva de solubilidad del oxígeno en agua</text>
+
+  <g clip-path="url(#plot-clip)">
+    <rect class="plot-bg" x="160" y="130" width="900" height="470"/>
+    <path class="zone-low" d="M 160 600 L 160.0 130.0 C 175.0 146.8, 220.0 202.7, 250.0 230.7 C 280.0 258.7, 310.0 277.7, 340.0 297.9 C 370.0 318.0, 400.0 335.9, 430.0 351.6 C 460.0 367.2, 490.0 379.5, 520.0 391.9 C 550.0 404.2, 580.0 415.9, 610.0 425.4 C 640.0 434.9, 670.0 442.2, 700.0 448.9 C 730.0 455.6, 760.0 460.9, 790.0 465.7 C 820.0 470.5, 850.0 475.0, 880.0 477.8 C 910.0 480.6, 940.0 481.4, 970.0 482.5 C 1000.0 483.6, 1045.0 484.2, 1060.0 484.5 L 1060 600 Z"/>
+
+    <line class="grid" x1="160" y1="600" x2="1060" y2="600"/>
+    <line class="grid" x1="160" y1="532.9" x2="1060" y2="532.9"/>
+    <line class="grid" x1="160" y1="465.7" x2="1060" y2="465.7"/>
+    <line class="grid" x1="160" y1="398.6" x2="1060" y2="398.6"/>
+    <line class="grid" x1="160" y1="331.4" x2="1060" y2="331.4"/>
+    <line class="grid" x1="160" y1="264.3" x2="1060" y2="264.3"/>
+    <line class="grid" x1="160" y1="197.1" x2="1060" y2="197.1"/>
+    <line class="grid" x1="160" y1="130" x2="1060" y2="130"/>
+
+    <line class="grid" x1="160" y1="130" x2="160" y2="600"/>
+    <line class="grid" x1="340" y1="130" x2="340" y2="600"/>
+    <line class="grid" x1="520" y1="130" x2="520" y2="600"/>
+    <line class="grid" x1="700" y1="130" x2="700" y2="600"/>
+    <line class="grid" x1="880" y1="130" x2="880" y2="600"/>
+    <line class="grid" x1="1060" y1="130" x2="1060" y2="600"/>
+
+    <path class="curve-halo" d="M 160.0 130.0 C 175.0 146.8, 220.0 202.7, 250.0 230.7 C 280.0 258.7, 310.0 277.7, 340.0 297.9 C 370.0 318.0, 400.0 335.9, 430.0 351.6 C 460.0 367.2, 490.0 379.5, 520.0 391.9 C 550.0 404.2, 580.0 415.9, 610.0 425.4 C 640.0 434.9, 670.0 442.2, 700.0 448.9 C 730.0 455.6, 760.0 460.9, 790.0 465.7 C 820.0 470.5, 850.0 475.0, 880.0 477.8 C 910.0 480.6, 940.0 481.4, 970.0 482.5 C 1000.0 483.6, 1045.0 484.2, 1060.0 484.5"/>
+    <path class="curve" d="M 160.0 130.0 C 175.0 146.8, 220.0 202.7, 250.0 230.7 C 280.0 258.7, 310.0 277.7, 340.0 297.9 C 370.0 318.0, 400.0 335.9, 430.0 351.6 C 460.0 367.2, 490.0 379.5, 520.0 391.9 C 550.0 404.2, 580.0 415.9, 610.0 425.4 C 640.0 434.9, 670.0 442.2, 700.0 448.9 C 730.0 455.6, 760.0 460.9, 790.0 465.7 C 820.0 470.5, 850.0 475.0, 880.0 477.8 C 910.0 480.6, 940.0 481.4, 970.0 482.5 C 1000.0 483.6, 1045.0 484.2, 1060.0 484.5"/>
+  </g>
+
+  <line class="axis" x1="160" y1="600" x2="1085" y2="600"/>
+  <line class="axis" x1="160" y1="600" x2="160" y2="116"/>
+
+  <text class="txt axis-label" x="610" y="684" text-anchor="middle">Temperatura (°C)</text>
+  <text class="txt axis-label" x="92" y="365" text-anchor="middle" transform="rotate(-90 92 365)">Solubilidad (mg de O₂ / 100 g de agua)</text>
+
+  <text class="txt tick" x="148" y="606" text-anchor="end">0</text>
+  <text class="txt tick" x="148" y="538.9" text-anchor="end">1</text>
+  <text class="txt tick" x="148" y="471.7" text-anchor="end">2</text>
+  <text class="txt tick" x="148" y="404.6" text-anchor="end">3</text>
+  <text class="txt tick" x="148" y="337.4" text-anchor="end">4</text>
+  <text class="txt tick" x="148" y="270.3" text-anchor="end">5</text>
+  <text class="txt tick" x="148" y="203.1" text-anchor="end">6</text>
+  <text class="txt tick" x="148" y="136" text-anchor="end">7</text>
+
+  <text class="txt tick" x="160" y="628" text-anchor="middle">0</text>
+  <text class="txt tick" x="340" y="628" text-anchor="middle">20</text>
+  <text class="txt tick" x="520" y="628" text-anchor="middle">40</text>
+  <text class="txt tick" x="700" y="628" text-anchor="middle">60</text>
+  <text class="txt tick" x="880" y="628" text-anchor="middle">80</text>
+  <text class="txt tick" x="1060" y="628" text-anchor="middle">100</text>
+
+  <rect class="zone-box sup-box" x="268" y="164" width="266" height="50" rx="25"/>
+  <text class="txt zone-text sup-text" x="401" y="196" text-anchor="middle">Solución sobresaturada</text>
+
+  <rect class="zone-box sat-box" x="586" y="384" width="214" height="50" rx="25"/>
+  <text class="txt zone-text sat-text" x="693" y="416" text-anchor="middle">Solución saturada</text>
+
+  <rect class="zone-box ins-box" x="764" y="516" width="242" height="50" rx="25"/>
+  <text class="txt zone-text ins-text" x="885" y="548" text-anchor="middle">Solución insaturada</text>
+</svg>

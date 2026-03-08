@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="560" viewBox="0 0 1440 560" role="img" aria-labelledby="title desc">
+  <title id="title">Relaciones gráficas en las leyes de los gases</title>
+  <desc id="desc">Tres paneles con las relaciones entre presión, volumen y temperatura para las leyes de Boyle, Charles y Gay-Lussac.</desc>
+  <defs>
+    <style>
+      .bg { fill: #ffffff; }
+      .panel { fill: #ffffff; stroke: #cbd5e1; stroke-width: 2; }
+      .plot { fill: #f8fafc; }
+      .grid { stroke: #e2e8f0; stroke-width: 1; }
+      .axis { stroke: #0f172a; stroke-width: 4; }
+      .txt { fill: #0f172a; font-family: Inter, Arial, Helvetica, sans-serif; }
+      .main-title { font-size: 28px; font-weight: 800; }
+      .panel-title { font-size: 24px; font-weight: 800; }
+      .panel-note { font-size: 16px; font-weight: 600; }
+      .axis-label { font-size: 18px; font-weight: 700; }
+      .curve-boyle { fill: none; stroke: #2563eb; stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+      .curve-charles { fill: none; stroke: #16a34a; stroke-width: 6; stroke-linecap: round; }
+      .curve-gay { fill: none; stroke: #d97706; stroke-width: 6; stroke-linecap: round; }
+      .boyle { fill: #1d4ed8; }
+      .charles { fill: #15803d; }
+      .gay { fill: #b45309; }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1440" height="560"/>
+  <text class="txt main-title" x="720" y="52" text-anchor="middle">Relaciones gráficas en las leyes de los gases</text>
+
+  <!-- Boyle -->
+  <g transform="translate(40 92)">
+    <rect class="panel" x="0" y="0" width="400" height="400" rx="24"/>
+    <rect class="plot" x="76" y="84" width="280" height="240" rx="18"/>
+
+    <line class="grid" x1="76" y1="144" x2="356" y2="144"/>
+    <line class="grid" x1="76" y1="204" x2="356" y2="204"/>
+    <line class="grid" x1="76" y1="264" x2="356" y2="264"/>
+    <line class="grid" x1="146" y1="84" x2="146" y2="324"/>
+    <line class="grid" x1="216" y1="84" x2="216" y2="324"/>
+    <line class="grid" x1="286" y1="84" x2="286" y2="324"/>
+
+    <line class="axis" x1="76" y1="324" x2="370" y2="324"/>
+    <polygon points="370,324 352,314 352,334" fill="#0f172a"/>
+    <line class="axis" x1="76" y1="324" x2="76" y2="68"/>
+    <polygon points="76,68 66,86 86,86" fill="#0f172a"/>
+
+    <text class="txt panel-title" x="200" y="40" text-anchor="middle">Ley de Boyle</text>
+    <text class="txt panel-note boyle" x="200" y="66" text-anchor="middle">Relación inversa</text>
+    <text class="txt axis-label" x="216" y="370" text-anchor="middle">Volumen (V)</text>
+    <text class="txt axis-label" x="24" y="205" text-anchor="middle" transform="rotate(-90 24 205)">Presión (P)</text>
+
+    <polyline class="curve-boyle" points="94.0,94.6 105.0,188.1 116.0,227.5 127.0,249.2 138.0,263.0 149.0,272.5 160.0,279.4 171.0,284.7 182.0,288.9 193.0,292.3 204.0,295.1 215.0,297.4 226.0,299.4 237.0,301.1 248.0,302.6 259.0,303.9 270.0,305.1 281.0,306.1 292.0,307.1 303.0,307.9 314.0,308.7 325.0,309.4 336.0,310.0"/>
+  </g>
+
+  <!-- Charles -->
+  <g transform="translate(520 92)">
+    <rect class="panel" x="0" y="0" width="400" height="400" rx="24"/>
+    <rect class="plot" x="76" y="84" width="280" height="240" rx="18"/>
+
+    <line class="grid" x1="76" y1="144" x2="356" y2="144"/>
+    <line class="grid" x1="76" y1="204" x2="356" y2="204"/>
+    <line class="grid" x1="76" y1="264" x2="356" y2="264"/>
+    <line class="grid" x1="146" y1="84" x2="146" y2="324"/>
+    <line class="grid" x1="216" y1="84" x2="216" y2="324"/>
+    <line class="grid" x1="286" y1="84" x2="286" y2="324"/>
+
+    <line class="axis" x1="76" y1="324" x2="370" y2="324"/>
+    <polygon points="370,324 352,314 352,334" fill="#0f172a"/>
+    <line class="axis" x1="76" y1="324" x2="76" y2="68"/>
+    <polygon points="76,68 66,86 86,86" fill="#0f172a"/>
+
+    <text class="txt panel-title" x="200" y="40" text-anchor="middle">Ley de Charles</text>
+    <text class="txt panel-note charles" x="200" y="66" text-anchor="middle">Relación directa</text>
+    <text class="txt axis-label" x="216" y="370" text-anchor="middle">Temperatura (T)</text>
+    <text class="txt axis-label" x="24" y="205" text-anchor="middle" transform="rotate(-90 24 205)">Volumen (V)</text>
+
+    <line class="curve-charles" x1="116" y1="286" x2="334" y2="122"/>
+  </g>
+
+  <!-- Gay-Lussac -->
+  <g transform="translate(1000 92)">
+    <rect class="panel" x="0" y="0" width="400" height="400" rx="24"/>
+    <rect class="plot" x="76" y="84" width="280" height="240" rx="18"/>
+
+    <line class="grid" x1="76" y1="144" x2="356" y2="144"/>
+    <line class="grid" x1="76" y1="204" x2="356" y2="204"/>
+    <line class="grid" x1="76" y1="264" x2="356" y2="264"/>
+    <line class="grid" x1="146" y1="84" x2="146" y2="324"/>
+    <line class="grid" x1="216" y1="84" x2="216" y2="324"/>
+    <line class="grid" x1="286" y1="84" x2="286" y2="324"/>
+
+    <line class="axis" x1="76" y1="324" x2="370" y2="324"/>
+    <polygon points="370,324 352,314 352,334" fill="#0f172a"/>
+    <line class="axis" x1="76" y1="324" x2="76" y2="68"/>
+    <polygon points="76,68 66,86 86,86" fill="#0f172a"/>
+
+    <text class="txt panel-title" x="200" y="40" text-anchor="middle">Ley de Gay-Lussac</text>
+    <text class="txt panel-note gay" x="200" y="66" text-anchor="middle">Relación directa</text>
+    <text class="txt axis-label" x="216" y="370" text-anchor="middle">Temperatura (T)</text>
+    <text class="txt axis-label" x="24" y="205" text-anchor="middle" transform="rotate(-90 24 205)">Presión (P)</text>
+
+    <line class="curve-gay" x1="118" y1="294" x2="334" y2="130"/>
+  </g>
+</svg>

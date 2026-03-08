@@ -288,6 +288,82 @@ ol.saber-opciones li::before {
 }
 
 /* ==========================================
+   DETAILS ANIDADOS - CONCEPTOS RELACIONADOS
+   ========================================== */
+
+.saber-taller details.conceptos-relacionados {
+  margin: 1.5rem 0 2.5rem 0;
+  padding: 0;
+  border: 2px solid #93c5fd;
+  border-radius: 14px;
+  background: #eff6ff;
+  box-shadow: none;
+}
+
+.saber-taller details.conceptos-relacionados > summary,
+.saber-taller details.conceptos-relacionados[open] > summary {
+  padding: 0.95rem 1.25rem;
+  margin: 0;
+  border-radius: 12px 12px 0 0;
+  border-bottom: 1px solid transparent;
+  background: linear-gradient(135deg, #dbeafe, #eff6ff);
+  color: #1d4ed8;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.saber-taller details.conceptos-relacionados > summary::before,
+.saber-taller details.conceptos-relacionados[open] > summary::before {
+  content: "🧠";
+  font-size: 1rem;
+  transform: none;
+}
+
+.saber-taller details.conceptos-relacionados > summary:hover,
+.saber-taller details.conceptos-relacionados[open] > summary:hover {
+  background: linear-gradient(135deg, #bfdbfe, #dbeafe);
+}
+
+.saber-taller details.conceptos-relacionados[open] {
+  background: #eff6ff;
+  border: 2px solid #60a5fa;
+}
+
+.saber-taller details.conceptos-relacionados[open] > summary {
+  border-bottom-color: #bfdbfe;
+}
+
+.saber-taller details.conceptos-relacionados > *:not(summary) {
+  color: #1e3a8a;
+  padding: 0 1.25rem;
+}
+
+.saber-taller details.conceptos-relacionados > p {
+  margin: 1rem 0;
+  line-height: 1.7;
+}
+
+.saber-taller details.conceptos-relacionados img {
+  margin: 1rem auto 1.25rem auto;
+  border-radius: 14px;
+}
+
+:global(html.dark) .saber-taller details.conceptos-relacionados {
+  background: rgba(30, 41, 59, 0.78);
+  border-color: #3b82f6;
+}
+
+:global(html.dark) .saber-taller details.conceptos-relacionados > summary,
+:global(html.dark) .saber-taller details.conceptos-relacionados[open] > summary {
+  background: linear-gradient(135deg, rgba(30, 64, 175, 0.45), rgba(30, 41, 59, 0.92));
+  color: #dbeafe;
+}
+
+:global(html.dark) .saber-taller details.conceptos-relacionados > *:not(summary) {
+  color: #bfdbfe;
+}
+
+/* ==========================================
    OPCIONES DENTRO DE RETROALIMENTACIÓN
    Diseño visual que destaca la correcta
    ========================================== */
