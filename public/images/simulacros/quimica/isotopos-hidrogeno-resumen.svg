@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 430">
+  <rect width="960" height="430" fill="#f8fafc" rx="16"/>
+  <text x="480" y="40" font-family="Inter, sans-serif" font-size="28" font-weight="900" fill="#1e293b" text-anchor="middle">Isótopos del hidrógeno</text>
+  <text x="480" y="64" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#64748b" text-anchor="middle">Todos tienen 1 protón y 1 electrón. Lo que cambia es el número de neutrones.</text>
+
+  <g transform="translate(160,0)">
+    <text x="0" y="108" font-family="Inter, sans-serif" font-size="22" font-weight="800" fill="#1e293b" text-anchor="middle">Protio</text>
+    <text x="0" y="132" font-family="Inter, sans-serif" font-size="20" font-weight="900" fill="#7c3aed" text-anchor="middle">¹H</text>
+    <circle cx="0" cy="225" r="72" fill="none" stroke="#cbd5e1" stroke-width="2"/>
+    <circle cx="0" cy="153" r="5" fill="#2563eb" stroke="white" stroke-width="1.4"/><path d="M -2 153 L 2 153" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
+    <circle cx="0" cy="225" r="26" fill="#fff7ed" stroke="#f97316" stroke-width="2" stroke-dasharray="6 5"/>
+    <circle cx="0" cy="225" r="11.5" fill="#ef4444" stroke="white" stroke-width="1.2"/><text x="0" y="229" font-family="Inter, sans-serif" font-size="12" font-weight="800" fill="white" text-anchor="middle">+</text>
+    <rect x="-74" y="318" width="148" height="66" rx="14" fill="white" stroke="#e2e8f0" stroke-width="1.5"/>
+    <text x="0" y="339" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#1e293b" text-anchor="middle">1 protón | 0 neutrones</text>
+    <text x="0" y="357" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#475569" text-anchor="middle">A = 1</text>
+    <text x="0" y="374" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#16a34a" text-anchor="middle">99.985% natural</text>
+  </g>
+
+  <g transform="translate(480,0)">
+    <text x="0" y="108" font-family="Inter, sans-serif" font-size="22" font-weight="800" fill="#1e293b" text-anchor="middle">Deuterio</text>
+    <text x="0" y="132" font-family="Inter, sans-serif" font-size="20" font-weight="900" fill="#7c3aed" text-anchor="middle">²H</text>
+    <circle cx="0" cy="225" r="72" fill="none" stroke="#cbd5e1" stroke-width="2"/>
+    <circle cx="0" cy="153" r="5" fill="#2563eb" stroke="white" stroke-width="1.4"/><path d="M -2 153 L 2 153" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
+    <circle cx="0" cy="225" r="30" fill="#fff7ed" stroke="#f97316" stroke-width="2" stroke-dasharray="6 5"/>
+    <circle cx="-11" cy="225" r="11.5" fill="#ef4444" stroke="white" stroke-width="1.2"/><text x="-11" y="229" font-family="Inter, sans-serif" font-size="12" font-weight="800" fill="white" text-anchor="middle">+</text>
+    <circle cx="11" cy="225" r="11.5" fill="#64748b" stroke="white" stroke-width="1.2"/><text x="11" y="229" font-family="Inter, sans-serif" font-size="12" font-weight="800" fill="white" text-anchor="middle">0</text>
+    <rect x="-74" y="318" width="148" height="66" rx="14" fill="white" stroke="#e2e8f0" stroke-width="1.5"/>
+    <text x="0" y="339" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#1e293b" text-anchor="middle">1 protón | 1 neutrón</text>
+    <text x="0" y="357" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#475569" text-anchor="middle">A = 2</text>
+    <text x="0" y="374" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#16a34a" text-anchor="middle">0.015% natural</text>
+  </g>
+
+  <g transform="translate(800,0)">
+    <text x="0" y="108" font-family="Inter, sans-serif" font-size="22" font-weight="800" fill="#1e293b" text-anchor="middle">Tritio</text>
+    <text x="0" y="132" font-family="Inter, sans-serif" font-size="20" font-weight="900" fill="#7c3aed" text-anchor="middle">³H</text>
+    <circle cx="0" cy="225" r="72" fill="none" stroke="#cbd5e1" stroke-width="2"/>
+    <circle cx="0" cy="153" r="5" fill="#2563eb" stroke="white" stroke-width="1.4"/><path d="M -2 153 L 2 153" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
+    <circle cx="0" cy="225" r="34" fill="#fff7ed" stroke="#f97316" stroke-width="2" stroke-dasharray="6 5"/>
+    <circle cx="0" cy="204" r="11.5" fill="#ef4444" stroke="white" stroke-width="1.2"/><text x="0" y="208" font-family="Inter, sans-serif" font-size="12" font-weight="800" fill="white" text-anchor="middle">+</text>
+    <circle cx="-13" cy="227" r="11.5" fill="#64748b" stroke="white" stroke-width="1.2"/><text x="-13" y="231" font-family="Inter, sans-serif" font-size="12" font-weight="800" fill="white" text-anchor="middle">0</text>
+    <circle cx="13" cy="227" r="11.5" fill="#64748b" stroke="white" stroke-width="1.2"/><text x="13" y="231" font-family="Inter, sans-serif" font-size="12" font-weight="800" fill="white" text-anchor="middle">0</text>
+    <rect x="-74" y="318" width="148" height="66" rx="14" fill="white" stroke="#e2e8f0" stroke-width="1.5"/>
+    <text x="0" y="339" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#1e293b" text-anchor="middle">1 protón | 2 neutrones</text>
+    <text x="0" y="357" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#475569" text-anchor="middle">A = 3</text>
+    <text x="0" y="374" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#b45309" text-anchor="middle">Trazas radiactivas</text>
+  </g>
+
+  <rect x="264" y="392" width="432" height="18" rx="9" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="480" y="405" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#475569" text-anchor="middle">Luego se puede añadir el tritio como tercer caso menos abundante.</text>
+</svg>

@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520">
+  <rect width="1200" height="520" fill="#f8fafc" rx="16"/>
+  <text x="600" y="42" font-family="Inter, sans-serif" font-size="28" font-weight="900" fill="#1e293b" text-anchor="middle">Isótopos del carbono</text>
+  <text x="600" y="66" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#64748b" text-anchor="middle">Mismo número atómico: 6 protones y 6 electrones. Cambia solo el número de neutrones.</text>
+
+  <g transform="translate(200,0)">
+    <text x="0" y="110" font-family="Inter, sans-serif" font-size="22" font-weight="800" fill="#1e293b" text-anchor="middle">Carbono-12</text>
+    <text x="0" y="136" font-family="Inter, sans-serif" font-size="20" font-weight="900" fill="#7c3aed" text-anchor="middle">¹²C</text>
+    <circle cx="0" cy="270" r="78" fill="none" stroke="#cbd5e1" stroke-width="2"/>
+    <circle cx="0" cy="270" r="114" fill="none" stroke="#cbd5e1" stroke-width="2"/>
+    <circle cx="0" cy="192" r="5" fill="#2563eb" stroke="white" stroke-width="1.4"/><path d="M -2 192 L 2 192" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
+    <circle cx="0" cy="348" r="5" fill="#2563eb" stroke="white" stroke-width="1.4"/><path d="M -2 348 L 2 348" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
+    <circle cx="0" cy="156" r="5" fill="#2563eb" stroke="white" stroke-width="1.4"/><path d="M -2 156 L 2 156" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
+    <circle cx="114" cy="270" r="5" fill="#2563eb" stroke="white" stroke-width="1.4"/><path d="M 112 270 L 116 270" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
+    <circle cx="0" cy="384" r="5" fill="#2563eb" stroke="white" stroke-width="1.4"/><path d="M -2 384 L 2 384" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
+    <circle cx="-114" cy="270" r="5" fill="#2563eb" stroke="white" stroke-width="1.4"/><path d="M -116 270 L -112 270" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
+    <circle cx="0" cy="270" r="60" fill="#fff7ed" stroke="#f97316" stroke-width="2" stroke-dasharray="6 5"/>
+    <g transform="translate(0,270)">
+      <circle cx="-24" cy="-22" r="10.5" fill="#64748b" stroke="white" stroke-width="1.2"/><text x="-24" y="-18" font-family="Inter, sans-serif" font-size="11" font-weight="800" fill="white" text-anchor="middle">0</text>
+      <circle cx="0" cy="-22" r="10.5" fill="#ef4444" stroke="white" stroke-width="1.2"/><text x="0" y="-18" font-family="Inter, sans-serif" font-size="12" font-weight="800" fill="white" text-anchor="middle">+</text>
+      <circle cx="24" cy="-22" r="10.5" fill="#64748b" stroke="white" stroke-width="1.2"/><text x="24" y="-18" font-family="Inter, sans-serif" font-size="11" font-weight="800" fill="white" text-anchor="middle">0</text>
+      <circle cx="-24" cy="0" r="10.5" fill="#ef4444" stroke="white" stroke-width="1.2"/><text x="-24" y="4" font-family="Inter, sans-serif" font-size="12" font-weight="800" fill="white" text-anchor="middle">+</text>
+      <circle cx="0" cy="0" r="10.5" fill="#64748b" stroke="white" stroke-width="1.2"/><text x="0" y="4" font-family="Inter, sans-serif" font-size="11" font-weight="800" fill="white" text-anchor="middle">0</text>
+      <circle cx="24" cy="0" r="10.5" fill="#ef4444" stroke="white" stroke-width="1.2"/><text x="24" y="4" font-family="Inter, sans-serif" font-size="12" font-weight="800" fill="white" text-anchor="middle">+</text>
+      <circle cx="-24" cy="22" r="10.5" fill="#64748b" stroke="white" stroke-width="1.2"/><text x="-24" y="26" font-family="Inter, sans-serif" font-size="11" font-weight="800" fill="white" text-anchor="middle">0</text>
+      <circle cx="0" cy="22" r="10.5" fill="#ef4444" stroke="white" stroke-width="1.2"/><text x="0" y="26" font-family="Inter, sans-serif" font-size="12" font-weight="800" fill="white" text-anchor="middle">+</text>
+      <circle cx="24" cy="22" r="10.5" fill="#64748b" stroke="white" stroke-width="1.2"/><text x="24" y="26" font-family="Inter, sans-serif" font-size="11" font-weight="800" fill="white" text-anchor="middle">0</text>
+      <circle cx="-48" cy="0" r="10.5" fill="#ef4444" stroke="white" stroke-width="1.2"/><text x="-48" y="4" font-family="Inter, sans-serif" font-size="12" font-weight="800" fill="white" text-anchor="middle">+</text>
+      <circle cx="48" cy="0" r="10.5" fill="#64748b" stroke="white" stroke-width="1.2"/><text x="48" y="4" font-family="Inter, sans-serif" font-size="11" font-weight="800" fill="white" text-anchor="middle">0</text>
+      <circle cx="0" cy="-44" r="10.5" fill="#ef4444" stroke="white" stroke-width="1.2"/><text x="0" y="-40" font-family="Inter, sans-serif" font-size="12" font-weight="800" fill="white" text-anchor="middle">+</text>
+    </g>
+    <rect x="-92" y="426" width="184" height="66" rx="14" fill="white" stroke="#e2e8f0" stroke-width="1.5"/>
+    <text x="0" y="447" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#1e293b" text-anchor="middle">6 protones | 6 neutrones</text>
+    <text x="0" y="465" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#475569" text-anchor="middle">A = 12</text>
+    <text x="0" y="482" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#16a34a" text-anchor="middle">98.9% natural</text>
+  </g>
+
+  <g transform="translate(600,0)">
+    <text x="0" y="110" font-family="Inter, sans-serif" font-size="22" font-weight="800" fill="#1e293b" text-anchor="middle">Carbono-13</text>
+    <text x="0" y="136" font-family="Inter, sans-serif" font-size="20" font-weight="900" fill="#7c3aed" text-anchor="middle">¹³C</text>
+    <circle cx="0" cy="270" r="78" fill="none" stroke="#cbd5e1" stroke-width="2"/>
+    <circle cx="0" cy="270" r="114" fill="none" stroke="#cbd5e1" stroke-width="2"/>
+    <circle cx="0" cy="192" r="5" fill="#2563eb" stroke="white" stroke-width="1.4"/><path d="M -2 192 L 2 192" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
+    <circle cx="0" cy="348" r="5" fill="#2563eb" stroke="white" stroke-width="1.4"/><path d="M -2 348 L 2 348" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
+    <circle cx="0" cy="156" r="5" fill="#2563eb" stroke="white" stroke-width="1.4"/><path d="M -2 156 L 2 156" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
+    <circle cx="114" cy="270" r="5" fill="#2563eb" stroke="white" stroke-width="1.4"/><path d="M 112 270 L 116 270" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
+    <circle cx="0" cy="384" r="5" fill="#2563eb" stroke="white" stroke-width="1.4"/><path d="M -2 384 L 2 384" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
+    <circle cx="-114" cy="270" r="5" fill="#2563eb" stroke="white" stroke-width="1.4"/><path d="M -116 270 L -112 270" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
+    <circle cx="0" cy="270" r="64" fill="#fff7ed" stroke="#f97316" stroke-width="2" stroke-dasharray="6 5"/>
+    <g transform="translate(0,270)">
+      <circle cx="-24" cy="-22" r="10.5" fill="#64748b" stroke="white" stroke-width="1.2"/><text x="-24" y="-18" font-family="Inter, sans-serif" font-size="11" font-weight="800" fill="white" text-anchor="middle">0</text>
+      <circle cx="0" cy="-22" r="10.5" fill="#ef4444" stroke="white" stroke-width="1.2"/><text x="0" y="-18" font-family="Inter, sans-serif" font-size="12" font-weight="800" fill="white" text-anchor="middle">+</text>
+      <circle cx="24" cy="-22" r="10.5" fill="#64748b" stroke="white" stroke-width="1.2"/><text x="24" y="-18" font-family="Inter, sans-serif" font-size="11" font-weight="800" fill="white" text-anchor="middle">0</text>
+      <circle cx="-24" cy="0" r="10.5" fill="#ef4444" stroke="white" stroke-width="1.2"/><text x="-24" y="4" font-family="Inter, sans-serif" font-size="12" font-weight="800" fill="white" text-anchor="middle">+</text>
+      <circle cx="0" cy="0" r="10.5" fill="#64748b" stroke="white" stroke-width="1.2"/><text x="0" y="4" font-family="Inter, sans-serif" font-size="11" font-weight="800" fill="white" text-anchor="middle">0</text>
+      <circle cx="24" cy="0" r="10.5" fill="#ef4444" stroke="white" stroke-width="1.2"/><text x="24" y="4" font-family="Inter, sans-serif" font-size="12" font-weight="800" fill="white" text-anchor="middle">+</text>
+      <circle cx="-24" cy="22" r="10.5" fill="#64748b" stroke="white" stroke-width="1.2"/><text x="-24" y="26" font-family="Inter, sans-serif" font-size="11" font-weight="800" fill="white" text-anchor="middle">0</text>
+      <circle cx="0" cy="22" r="10.5" fill="#ef4444" stroke="white" stroke-width="1.2"/><text x="0" y="26" font-family="Inter, sans-serif" font-size="12" font-weight="800" fill="white" text-anchor="middle">+</text>
+      <circle cx="24" cy="22" r="10.5" fill="#64748b" stroke="white" stroke-width="1.2"/><text x="24" y="26" font-family="Inter, sans-serif" font-size="11" font-weight="800" fill="white" text-anchor="middle">0</text>
+      <circle cx="-48" cy="0" r="10.5" fill="#ef4444" stroke="white" stroke-width="1.2"/><text x="-48" y="4" font-family="Inter, sans-serif" font-size="12" font-weight="800" fill="white" text-anchor="middle">+</text>
+      <circle cx="48" cy="0" r="10.5" fill="#64748b" stroke="white" stroke-width="1.2"/><text x="48" y="4" font-family="Inter, sans-serif" font-size="11" font-weight="800" fill="white" text-anchor="middle">0</text>
+      <circle cx="0" cy="-44" r="10.5" fill="#ef4444" stroke="white" stroke-width="1.2"/><text x="0" y="-40" font-family="Inter, sans-serif" font-size="12" font-weight="800" fill="white" text-anchor="middle">+</text>
+      <circle cx="0" cy="44" r="10.5" fill="#64748b" stroke="white" stroke-width="1.2"/><text x="0" y="48" font-family="Inter, sans-serif" font-size="11" font-weight="800" fill="white" text-anchor="middle">0</text>
+    </g>
+    <rect x="-92" y="426" width="184" height="66" rx="14" fill="white" stroke="#e2e8f0" stroke-width="1.5"/>
+    <text x="0" y="447" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#1e293b" text-anchor="middle">6 protones | 7 neutrones</text>
+    <text x="0" y="465" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#475569" text-anchor="middle">A = 13</text>
+    <text x="0" y="482" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#16a34a" text-anchor="middle">1.1% natural</text>
+  </g>
+
+  <g transform="translate(1000,0)">
+    <text x="0" y="110" font-family="Inter, sans-serif" font-size="22" font-weight="800" fill="#1e293b" text-anchor="middle">Carbono-14</text>
+    <text x="0" y="136" font-family="Inter, sans-serif" font-size="20" font-weight="900" fill="#7c3aed" text-anchor="middle">¹⁴C</text>
+    <circle cx="0" cy="270" r="78" fill="none" stroke="#cbd5e1" stroke-width="2"/>
+    <circle cx="0" cy="270" r="114" fill="none" stroke="#cbd5e1" stroke-width="2"/>
+    <circle cx="0" cy="192" r="5" fill="#2563eb" stroke="white" stroke-width="1.4"/><path d="M -2 192 L 2 192" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
+    <circle cx="0" cy="348" r="5" fill="#2563eb" stroke="white" stroke-width="1.4"/><path d="M -2 348 L 2 348" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
+    <circle cx="0" cy="156" r="5" fill="#2563eb" stroke="white" stroke-width="1.4"/><path d="M -2 156 L 2 156" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
+    <circle cx="114" cy="270" r="5" fill="#2563eb" stroke="white" stroke-width="1.4"/><path d="M 112 270 L 116 270" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
+    <circle cx="0" cy="384" r="5" fill="#2563eb" stroke="white" stroke-width="1.4"/><path d="M -2 384 L 2 384" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
+    <circle cx="-114" cy="270" r="5" fill="#2563eb" stroke="white" stroke-width="1.4"/><path d="M -116 270 L -112 270" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
+    <circle cx="0" cy="270" r="68" fill="#fff7ed" stroke="#f97316" stroke-width="2" stroke-dasharray="6 5"/>
+    <g transform="translate(0,270)">
+      <circle cx="-24" cy="-22" r="10.5" fill="#64748b" stroke="white" stroke-width="1.2"/><text x="-24" y="-18" font-family="Inter, sans-serif" font-size="11" font-weight="800" fill="white" text-anchor="middle">0</text>
+      <circle cx="0" cy="-22" r="10.5" fill="#ef4444" stroke="white" stroke-width="1.2"/><text x="0" y="-18" font-family="Inter, sans-serif" font-size="12" font-weight="800" fill="white" text-anchor="middle">+</text>
+      <circle cx="24" cy="-22" r="10.5" fill="#64748b" stroke="white" stroke-width="1.2"/><text x="24" y="-18" font-family="Inter, sans-serif" font-size="11" font-weight="800" fill="white" text-anchor="middle">0</text>
+      <circle cx="-24" cy="0" r="10.5" fill="#ef4444" stroke="white" stroke-width="1.2"/><text x="-24" y="4" font-family="Inter, sans-serif" font-size="12" font-weight="800" fill="white" text-anchor="middle">+</text>
+      <circle cx="0" cy="0" r="10.5" fill="#64748b" stroke="white" stroke-width="1.2"/><text x="0" y="4" font-family="Inter, sans-serif" font-size="11" font-weight="800" fill="white" text-anchor="middle">0</text>
+      <circle cx="24" cy="0" r="10.5" fill="#ef4444" stroke="white" stroke-width="1.2"/><text x="24" y="4" font-family="Inter, sans-serif" font-size="12" font-weight="800" fill="white" text-anchor="middle">+</text>
+      <circle cx="-24" cy="22" r="10.5" fill="#64748b" stroke="white" stroke-width="1.2"/><text x="-24" y="26" font-family="Inter, sans-serif" font-size="11" font-weight="800" fill="white" text-anchor="middle">0</text>
+      <circle cx="0" cy="22" r="10.5" fill="#ef4444" stroke="white" stroke-width="1.2"/><text x="0" y="26" font-family="Inter, sans-serif" font-size="12" font-weight="800" fill="white" text-anchor="middle">+</text>
+      <circle cx="24" cy="22" r="10.5" fill="#64748b" stroke="white" stroke-width="1.2"/><text x="24" y="26" font-family="Inter, sans-serif" font-size="11" font-weight="800" fill="white" text-anchor="middle">0</text>
+      <circle cx="-48" cy="0" r="10.5" fill="#ef4444" stroke="white" stroke-width="1.2"/><text x="-48" y="4" font-family="Inter, sans-serif" font-size="12" font-weight="800" fill="white" text-anchor="middle">+</text>
+      <circle cx="48" cy="0" r="10.5" fill="#64748b" stroke="white" stroke-width="1.2"/><text x="48" y="4" font-family="Inter, sans-serif" font-size="11" font-weight="800" fill="white" text-anchor="middle">0</text>
+      <circle cx="0" cy="-44" r="10.5" fill="#ef4444" stroke="white" stroke-width="1.2"/><text x="0" y="-40" font-family="Inter, sans-serif" font-size="12" font-weight="800" fill="white" text-anchor="middle">+</text>
+      <circle cx="0" cy="44" r="10.5" fill="#64748b" stroke="white" stroke-width="1.2"/><text x="0" y="48" font-family="Inter, sans-serif" font-size="11" font-weight="800" fill="white" text-anchor="middle">0</text>
+      <circle cx="-48" cy="-22" r="10.5" fill="#64748b" stroke="white" stroke-width="1.2"/><text x="-48" y="-18" font-family="Inter, sans-serif" font-size="11" font-weight="800" fill="white" text-anchor="middle">0</text>
+      <circle cx="48" cy="22" r="10.5" fill="#64748b" stroke="white" stroke-width="1.2"/><text x="48" y="26" font-family="Inter, sans-serif" font-size="11" font-weight="800" fill="white" text-anchor="middle">0</text>
+    </g>
+    <rect x="-92" y="426" width="184" height="66" rx="14" fill="white" stroke="#e2e8f0" stroke-width="1.5"/>
+    <text x="0" y="447" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#1e293b" text-anchor="middle">6 protones | 8 neutrones</text>
+    <text x="0" y="465" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#475569" text-anchor="middle">A = 14</text>
+    <text x="0" y="482" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#b45309" text-anchor="middle">Trazas radiactivas</text>
+  </g>
+
+  <rect x="300" y="492" width="600" height="18" rx="9" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="600" y="505" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#475569" text-anchor="middle">Después del par principal, se amplía la comparación con el tercer isótopo.</text>
+</svg>

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 410">
+  <rect width="840" height="410" fill="#f8fafc" rx="16"/>
+  <text x="420" y="34" font-family="Inter, sans-serif" font-size="28" font-weight="900" fill="#1e293b" text-anchor="middle">Dos isótopos del hidrógeno</text>
+
+  <g transform="translate(180,0)">
+    <text x="-10" y="68" font-family="Inter, sans-serif" font-size="24" font-weight="800" fill="#1e293b" text-anchor="middle">Protio</text>
+    <rect x="52" y="50" width="74" height="24" rx="12" fill="#ecfdf5" stroke="#86efac" stroke-width="1"/>
+    <text x="89" y="67" font-family="Inter, sans-serif" font-size="12" font-weight="800" fill="#166534" text-anchor="middle">99.985%</text>
+
+    <circle cx="0" cy="204" r="104" fill="none" stroke="#cbd5e1" stroke-width="2"/>
+    <circle cx="0" cy="100" r="5" fill="#2563eb" stroke="white" stroke-width="1.4"/><path d="M -2 100 L 2 100" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+
+    <circle cx="0" cy="204" r="38" fill="#fff7ed" stroke="#f97316" stroke-width="2" stroke-dasharray="6 5"/>
+    <circle cx="0" cy="204" r="14" fill="#ef4444" stroke="white" stroke-width="1.2"/><text x="0" y="208" font-family="Inter, sans-serif" font-size="12" font-weight="800" fill="white" text-anchor="middle">+</text>
+
+    <rect x="-90" y="316" width="180" height="40" rx="16" fill="white" stroke="#e2e8f0" stroke-width="1.5"/>
+    <text x="0" y="332" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#1e293b" text-anchor="middle">1 protón | 0 neutrones</text>
+    <text x="0" y="348" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#475569" text-anchor="middle">A = 1</text>
+  </g>
+
+  <g transform="translate(420,122)">
+    <rect x="-62" y="0" width="124" height="152" rx="18" fill="white" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="-40" y="26" font-family="Inter, sans-serif" font-size="16" font-weight="800" fill="#475569">1</text>
+    <text x="0" y="78" font-family="Inter, sans-serif" font-size="44" font-weight="900" fill="#1e293b" text-anchor="middle">H</text>
+    <text x="0" y="103" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#475569" text-anchor="middle">Hidrógeno</text>
+    <text x="0" y="130" font-family="Inter, sans-serif" font-size="18" font-weight="900" fill="#0f172a" text-anchor="middle">1.008 u</text>
+  </g>
+
+  <g transform="translate(660,0)">
+    <text x="-10" y="68" font-family="Inter, sans-serif" font-size="24" font-weight="800" fill="#1e293b" text-anchor="middle">Deuterio</text>
+    <rect x="52" y="50" width="66" height="24" rx="12" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+    <text x="85" y="67" font-family="Inter, sans-serif" font-size="12" font-weight="800" fill="#1d4ed8" text-anchor="middle">0.015%</text>
+
+    <circle cx="0" cy="204" r="104" fill="none" stroke="#cbd5e1" stroke-width="2"/>
+    <circle cx="0" cy="100" r="5" fill="#2563eb" stroke="white" stroke-width="1.4"/><path d="M -2 100 L 2 100" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+
+    <circle cx="0" cy="204" r="42" fill="#fff7ed" stroke="#f97316" stroke-width="2" stroke-dasharray="6 5"/>
+    <circle cx="-14" cy="204" r="14" fill="#ef4444" stroke="white" stroke-width="1.2"/><text x="-14" y="208" font-family="Inter, sans-serif" font-size="12" font-weight="800" fill="white" text-anchor="middle">+</text>
+    <circle cx="14" cy="204" r="14" fill="#64748b" stroke="white" stroke-width="1.2"/><text x="14" y="208" font-family="Inter, sans-serif" font-size="12" font-weight="800" fill="white" text-anchor="middle">0</text>
+
+    <rect x="-90" y="316" width="180" height="40" rx="16" fill="white" stroke="#e2e8f0" stroke-width="1.5"/>
+    <text x="0" y="332" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#1e293b" text-anchor="middle">1 protón | 1 neutrón</text>
+    <text x="0" y="348" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#475569" text-anchor="middle">A = 2</text>
+  </g>
+
+  <text x="420" y="400" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#475569" text-anchor="middle">Mismo Z, distinto número de neutrones.</text>
+</svg>

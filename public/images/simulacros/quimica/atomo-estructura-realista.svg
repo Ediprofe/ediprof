@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 680">
+  <rect width="900" height="680" rx="18" fill="#f8fafc"/>
+
+  <text x="450" y="58" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800" fill="#102a43">
+    Estructura del átomo
+  </text>
+  <text x="450" y="96" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="#627d98">
+    Oxígeno-16 neutro
+  </text>
+
+  <g transform="translate(450,336)">
+    <circle cx="0" cy="0" r="110" fill="#fff7ed" stroke="#f97316" stroke-width="2.5" stroke-dasharray="6 4"/>
+    <circle cx="0" cy="0" r="158" fill="none" stroke="#cbd5e1" stroke-width="3"/>
+    <circle cx="0" cy="0" r="226" fill="none" stroke="#cbd5e1" stroke-width="3"/>
+
+    <circle cx="0" cy="-158" r="9" fill="#2563eb" stroke="#ffffff" stroke-width="1.5"/>
+    <path d="M -3.2 -158 L 3.2 -158" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round"/>
+    <circle cx="0" cy="158" r="9" fill="#2563eb" stroke="#ffffff" stroke-width="1.5"/>
+    <path d="M -3.2 158 L 3.2 158" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round"/>
+
+    <circle cx="0" cy="-226" r="9" fill="#2563eb" stroke="#ffffff" stroke-width="1.5"/>
+    <path d="M -3.2 -226 L 3.2 -226" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round"/>
+    <circle cx="195.7" cy="-113" r="9" fill="#2563eb" stroke="#ffffff" stroke-width="1.5"/>
+    <path d="M 192.5 -113 L 198.9 -113" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round"/>
+    <circle cx="195.7" cy="113" r="9" fill="#2563eb" stroke="#ffffff" stroke-width="1.5"/>
+    <path d="M 192.5 113 L 198.9 113" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round"/>
+    <circle cx="0" cy="226" r="9" fill="#2563eb" stroke="#ffffff" stroke-width="1.5"/>
+    <path d="M -3.2 226 L 3.2 226" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round"/>
+    <circle cx="-195.7" cy="113" r="9" fill="#2563eb" stroke="#ffffff" stroke-width="1.5"/>
+    <path d="M -198.9 113 L -192.5 113" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round"/>
+    <circle cx="-195.7" cy="-113" r="9" fill="#2563eb" stroke="#ffffff" stroke-width="1.5"/>
+    <path d="M -198.9 -113 L -192.5 -113" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round"/>
+
+    <circle cx="-36" cy="-54" r="19" fill="#ef4444" stroke="#ffffff" stroke-width="1.5"/>
+    <text x="-36" y="-47" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800" fill="#ffffff">+</text>
+    <circle cx="0" cy="-54" r="19" fill="#64748b" stroke="#ffffff" stroke-width="1.5"/>
+    <text x="0" y="-47" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800" fill="#ffffff">0</text>
+    <circle cx="36" cy="-54" r="19" fill="#ef4444" stroke="#ffffff" stroke-width="1.5"/>
+    <text x="36" y="-47" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800" fill="#ffffff">+</text>
+
+    <circle cx="-72" cy="-18" r="19" fill="#64748b" stroke="#ffffff" stroke-width="1.5"/>
+    <text x="-72" y="-11" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800" fill="#ffffff">0</text>
+    <circle cx="-36" cy="-18" r="19" fill="#ef4444" stroke="#ffffff" stroke-width="1.5"/>
+    <text x="-36" y="-11" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800" fill="#ffffff">+</text>
+    <circle cx="0" cy="-18" r="19" fill="#64748b" stroke="#ffffff" stroke-width="1.5"/>
+    <text x="0" y="-11" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800" fill="#ffffff">0</text>
+    <circle cx="36" cy="-18" r="19" fill="#ef4444" stroke="#ffffff" stroke-width="1.5"/>
+    <text x="36" y="-11" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800" fill="#ffffff">+</text>
+    <circle cx="72" cy="-18" r="19" fill="#64748b" stroke="#ffffff" stroke-width="1.5"/>
+    <text x="72" y="-11" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800" fill="#ffffff">0</text>
+
+    <circle cx="-72" cy="18" r="19" fill="#ef4444" stroke="#ffffff" stroke-width="1.5"/>
+    <text x="-72" y="25" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800" fill="#ffffff">+</text>
+    <circle cx="-36" cy="18" r="19" fill="#64748b" stroke="#ffffff" stroke-width="1.5"/>
+    <text x="-36" y="25" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800" fill="#ffffff">0</text>
+    <circle cx="0" cy="18" r="19" fill="#ef4444" stroke="#ffffff" stroke-width="1.5"/>
+    <text x="0" y="25" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800" fill="#ffffff">+</text>
+    <circle cx="36" cy="18" r="19" fill="#64748b" stroke="#ffffff" stroke-width="1.5"/>
+    <text x="36" y="25" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800" fill="#ffffff">0</text>
+    <circle cx="72" cy="18" r="19" fill="#ef4444" stroke="#ffffff" stroke-width="1.5"/>
+    <text x="72" y="25" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800" fill="#ffffff">+</text>
+
+    <circle cx="-36" cy="54" r="19" fill="#64748b" stroke="#ffffff" stroke-width="1.5"/>
+    <text x="-36" y="61" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800" fill="#ffffff">0</text>
+    <circle cx="0" cy="54" r="19" fill="#ef4444" stroke="#ffffff" stroke-width="1.5"/>
+    <text x="0" y="61" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800" fill="#ffffff">+</text>
+    <circle cx="36" cy="54" r="19" fill="#64748b" stroke="#ffffff" stroke-width="1.5"/>
+    <text x="36" y="61" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800" fill="#ffffff">0</text>
+  </g>
+
+  <g font-family="Inter, Arial, sans-serif">
+    <rect x="174" y="592" width="148" height="44" rx="22" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+    <circle cx="198" cy="614" r="13" fill="#ef4444"/>
+    <text x="198" y="620" text-anchor="middle" font-size="18" font-weight="800" fill="#ffffff">+</text>
+    <text x="224" y="621" font-size="19" font-weight="700" fill="#102a43">Protón</text>
+
+    <rect x="348" y="592" width="160" height="44" rx="22" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+    <circle cx="372" cy="614" r="13" fill="#64748b"/>
+    <text x="372" y="620" text-anchor="middle" font-size="17" font-weight="800" fill="#ffffff">0</text>
+    <text x="398" y="621" font-size="19" font-weight="700" fill="#102a43">Neutrón</text>
+
+    <rect x="534" y="592" width="164" height="44" rx="22" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+    <circle cx="558" cy="614" r="13" fill="#2563eb"/>
+    <path d="M 553.6 614 L 562.4 614" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+    <text x="584" y="621" font-size="19" font-weight="700" fill="#102a43">Electrón</text>
+  </g>
+</svg>

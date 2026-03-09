@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500">
+  <rect width="600" height="500" fill="#f8fafc" rx="12"/>
+  <text x="300" y="42" font-family="Inter, sans-serif" font-size="24" font-weight="700" fill="#1e293b" text-anchor="middle">Ejemplo: Sodio (Na)</text>
+  <text x="300" y="66" font-family="Inter, sans-serif" font-size="14" fill="#64748b" text-anchor="middle">Cálculo del número másico (A = 23)</text>
+
+  <rect x="24" y="188" width="190" height="150" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="119" y="230" font-family="Inter, sans-serif" font-size="48" font-weight="900" fill="#1e293b" text-anchor="middle">A</text>
+  <text x="119" y="255" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#f97316" text-anchor="middle">Número másico</text>
+  <text x="119" y="292" font-family="Inter, sans-serif" font-size="24" font-weight="700" fill="#1e293b" text-anchor="middle">=</text>
+  <text x="79" y="322" font-family="Inter, sans-serif" font-size="20" font-weight="700" fill="#ef4444" text-anchor="middle">Z</text>
+  <text x="79" y="338" font-family="Inter, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">(Protones)</text>
+  <text x="119" y="322" font-family="Inter, sans-serif" font-size="20" font-weight="700" fill="#1e293b" text-anchor="middle">+</text>
+  <text x="159" y="322" font-family="Inter, sans-serif" font-size="20" font-weight="700" fill="#64748b" text-anchor="middle">n</text>
+  <text x="159" y="338" font-family="Inter, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">(Neutrones)</text>
+
+  <g transform="translate(402,274)">
+    <circle cx="0" cy="0" r="94" fill="#fff7ed" stroke="#f97316" stroke-width="2" stroke-dasharray="6,4"/>
+    <circle cx="0" cy="0" r="116" fill="none" stroke="#e2e8f0" stroke-width="2"/>
+    <circle cx="0" cy="0" r="152" fill="none" stroke="#e2e8f0" stroke-width="2"/>
+    <circle cx="0" cy="0" r="188" fill="none" stroke="#e2e8f0" stroke-width="2"/>
+
+    <circle cx="0" cy="-116" r="5" fill="#3b82f6" stroke="white" stroke-width="1.5"/><path d="M -2 -116 L 2 -116" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+    <circle cx="0" cy="116" r="5" fill="#3b82f6" stroke="white" stroke-width="1.5"/><path d="M -2 116 L 2 116" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+    <circle cx="0" cy="-152" r="5" fill="#3b82f6" stroke="white" stroke-width="1.5"/><path d="M -2 -152 L 2 -152" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+    <circle cx="131.64" cy="-76" r="5" fill="#3b82f6" stroke="white" stroke-width="1.5"/><path d="M 129.64 -76 L 133.64 -76" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+    <circle cx="131.64" cy="76" r="5" fill="#3b82f6" stroke="white" stroke-width="1.5"/><path d="M 129.64 76 L 133.64 76" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+    <circle cx="0" cy="152" r="5" fill="#3b82f6" stroke="white" stroke-width="1.5"/><path d="M -2 152 L 2 152" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+    <circle cx="-131.64" cy="76" r="5" fill="#3b82f6" stroke="white" stroke-width="1.5"/><path d="M -133.64 76 L -129.64 76" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+    <circle cx="-131.64" cy="-76" r="5" fill="#3b82f6" stroke="white" stroke-width="1.5"/><path d="M -133.64 -76 L -129.64 -76" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+    <circle cx="0" cy="-188" r="5" fill="#3b82f6" stroke="white" stroke-width="1.5"/><path d="M -2 -188 L 2 -188" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+
+    <circle cx="-22" cy="-56" r="9.5" fill="#64748b" stroke="white" stroke-width="1.2"/><text x="-22" y="-52" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="white" text-anchor="middle">0</text>
+    <circle cx="0" cy="-56" r="9.5" fill="#ef4444" stroke="white" stroke-width="1.2"/><text x="0" y="-52" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="white" text-anchor="middle">+</text>
+    <circle cx="22" cy="-56" r="9.5" fill="#64748b" stroke="white" stroke-width="1.2"/><text x="22" y="-52" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="white" text-anchor="middle">0</text>
+
+    <circle cx="-44" cy="-30" r="9.5" fill="#ef4444" stroke="white" stroke-width="1.2"/><text x="-44" y="-26" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="white" text-anchor="middle">+</text>
+    <circle cx="-22" cy="-30" r="9.5" fill="#64748b" stroke="white" stroke-width="1.2"/><text x="-22" y="-26" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="white" text-anchor="middle">0</text>
+    <circle cx="0" cy="-30" r="9.5" fill="#ef4444" stroke="white" stroke-width="1.2"/><text x="0" y="-26" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="white" text-anchor="middle">+</text>
+    <circle cx="22" cy="-30" r="9.5" fill="#64748b" stroke="white" stroke-width="1.2"/><text x="22" y="-26" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="white" text-anchor="middle">0</text>
+    <circle cx="44" cy="-30" r="9.5" fill="#ef4444" stroke="white" stroke-width="1.2"/><text x="44" y="-26" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="white" text-anchor="middle">+</text>
+
+    <circle cx="-66" cy="-4" r="9.5" fill="#64748b" stroke="white" stroke-width="1.2"/><text x="-66" y="0" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="white" text-anchor="middle">0</text>
+    <circle cx="-44" cy="-4" r="9.5" fill="#ef4444" stroke="white" stroke-width="1.2"/><text x="-44" y="0" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="white" text-anchor="middle">+</text>
+    <circle cx="-22" cy="-4" r="9.5" fill="#64748b" stroke="white" stroke-width="1.2"/><text x="-22" y="0" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="white" text-anchor="middle">0</text>
+    <circle cx="0" cy="-4" r="9.5" fill="#ef4444" stroke="white" stroke-width="1.2"/><text x="0" y="0" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="white" text-anchor="middle">+</text>
+    <circle cx="22" cy="-4" r="9.5" fill="#64748b" stroke="white" stroke-width="1.2"/><text x="22" y="0" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="white" text-anchor="middle">0</text>
+    <circle cx="44" cy="-4" r="9.5" fill="#ef4444" stroke="white" stroke-width="1.2"/><text x="44" y="0" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="white" text-anchor="middle">+</text>
+    <circle cx="66" cy="-4" r="9.5" fill="#64748b" stroke="white" stroke-width="1.2"/><text x="66" y="0" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="white" text-anchor="middle">0</text>
+
+    <circle cx="-44" cy="22" r="9.5" fill="#ef4444" stroke="white" stroke-width="1.2"/><text x="-44" y="26" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="white" text-anchor="middle">+</text>
+    <circle cx="-22" cy="22" r="9.5" fill="#64748b" stroke="white" stroke-width="1.2"/><text x="-22" y="26" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="white" text-anchor="middle">0</text>
+    <circle cx="0" cy="22" r="9.5" fill="#ef4444" stroke="white" stroke-width="1.2"/><text x="0" y="26" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="white" text-anchor="middle">+</text>
+    <circle cx="22" cy="22" r="9.5" fill="#64748b" stroke="white" stroke-width="1.2"/><text x="22" y="26" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="white" text-anchor="middle">0</text>
+    <circle cx="44" cy="22" r="9.5" fill="#ef4444" stroke="white" stroke-width="1.2"/><text x="44" y="26" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="white" text-anchor="middle">+</text>
+
+    <circle cx="-22" cy="48" r="9.5" fill="#64748b" stroke="white" stroke-width="1.2"/><text x="-22" y="52" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="white" text-anchor="middle">0</text>
+    <circle cx="0" cy="48" r="9.5" fill="#ef4444" stroke="white" stroke-width="1.2"/><text x="0" y="52" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="white" text-anchor="middle">+</text>
+    <circle cx="22" cy="48" r="9.5" fill="#64748b" stroke="white" stroke-width="1.2"/><text x="22" y="52" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="white" text-anchor="middle">0</text>
+  </g>
+</svg>
