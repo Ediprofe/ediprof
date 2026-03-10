@@ -29,6 +29,9 @@ class WorkshopResource extends JsonResource
                 $question['feedback_mdx'] = '';
                 $question['feedback_assets'] = [];
                 $question['feedback_blocks'] = [];
+                $question['concepts_mdx'] = '';
+                $question['concepts_assets'] = [];
+                $question['concepts_blocks'] = [];
 
                 $question['options'] = array_map(static function (array $option): array {
                     unset($option['is_correct']);
@@ -39,7 +42,7 @@ class WorkshopResource extends JsonResource
             }
 
             if ($appFormat) {
-                unset($question['stem_mdx'], $question['feedback_mdx']);
+                unset($question['stem_mdx'], $question['feedback_mdx'], $question['concepts_mdx']);
             }
 
             return $question;
@@ -48,6 +51,7 @@ class WorkshopResource extends JsonResource
         return [
             'id' => $this->external_id,
             'content_external_id' => $this->content_external_id,
+            'content_type' => $this->content_type,
             'title' => $this->title,
             'route' => $this->route,
             'area_slug' => $this->area_slug,

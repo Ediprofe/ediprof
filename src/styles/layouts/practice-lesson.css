@@ -1,0 +1,393 @@
+.practice-lesson-shell {
+  min-height: 100vh;
+  padding: 5.25rem 1.1rem 2.5rem;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(37, 99, 235, 0.12), transparent 42%),
+    radial-gradient(circle at 90% 10%, rgba(59, 130, 246, 0.08), transparent 38%),
+    linear-gradient(180deg, color-mix(in oklab, var(--bg-primary) 90%, #0f172a 10%), var(--bg-primary)),
+    var(--bg-primary);
+}
+
+.practice-lesson-frame {
+  width: min(100%, 1280px);
+  margin: 0 auto;
+}
+
+.practice-content-article {
+  padding: 2rem 2.2rem 2.3rem;
+}
+
+.practice-content-body {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.practice-surface {
+  display: grid;
+  gap: 1rem;
+}
+
+.practice-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.9rem;
+  padding-bottom: 0.95rem;
+  border-bottom: 1px solid color-mix(in oklab, var(--border-color) 78%, transparent);
+}
+
+.practice-toolbar-copy {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.practice-toolbar-label {
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: color-mix(in oklab, var(--text-secondary) 72%, var(--color-primary) 28%);
+}
+
+.practice-toolbar-title {
+  margin: 0;
+  font-size: clamp(1.25rem, 1.1rem + 0.8vw, 1.85rem);
+  color: var(--text-primary);
+}
+
+.practice-toolbar-desc {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+.practice-toolbar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.practice-mode-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.28rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in oklab, var(--border-color) 74%, var(--color-primary) 26%);
+  background: color-mix(in oklab, var(--bg-primary) 90%, var(--color-primary) 10%);
+}
+
+.practice-mode-button {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.5rem 0.82rem;
+  background: transparent;
+  color: var(--text-secondary);
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 0.16s ease, color 0.16s ease, transform 0.16s ease;
+}
+
+.practice-mode-button:hover {
+  transform: translateY(-1px);
+}
+
+.practice-mode-button.is-active {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: #fff;
+}
+
+.practice-top-meta {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.practice-progress-summary {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.practice-summary-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.practice-stat-pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.34rem 0.72rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  border: 1px solid color-mix(in oklab, var(--border-color) 74%, var(--color-primary) 26%);
+  color: var(--text-secondary);
+  background: color-mix(in oklab, var(--bg-primary) 92%, var(--color-primary) 8%);
+}
+
+.practice-section-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.practice-question-card {
+  border: 1px solid color-mix(in oklab, var(--border-color) 76%, var(--color-primary) 24%);
+  border-radius: 18px;
+  padding: 1.15rem;
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--bg-primary) 94%, var(--color-primary) 6%),
+    var(--bg-primary)
+  );
+  display: grid;
+  gap: 1rem;
+}
+
+.practice-question-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.practice-question-count {
+  margin: 0;
+  font-size: clamp(1.15rem, 1rem + 0.65vw, 1.6rem);
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.practice-question-status {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.3rem 0.72rem;
+  font-size: 0.84rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border: 1px solid color-mix(in oklab, var(--border-color) 74%, var(--color-primary) 26%);
+  background: color-mix(in oklab, var(--bg-primary) 94%, var(--color-primary) 6%);
+  color: var(--text-secondary);
+}
+
+.practice-question-status[data-state="correct"] {
+  border-color: color-mix(in oklab, #27ae60 62%, var(--border-color) 38%);
+  color: #166534;
+  background: color-mix(in oklab, #27ae60 12%, var(--bg-primary) 88%);
+}
+
+.practice-question-status[data-state="wrong"] {
+  border-color: color-mix(in oklab, #c0392b 60%, var(--border-color) 40%);
+  color: #7f1d1d;
+  background: color-mix(in oklab, #c0392b 10%, var(--bg-primary) 90%);
+}
+
+.practice-question-status[data-state="selected"] {
+  border-color: color-mix(in oklab, #2563eb 58%, var(--border-color) 42%);
+  color: #1d4ed8;
+  background: color-mix(in oklab, #2563eb 10%, var(--bg-primary) 90%);
+}
+
+.practice-chip-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(42px, 1fr));
+  gap: 0.45rem;
+}
+
+.practice-panel {
+  border: 1px solid color-mix(in oklab, var(--border-color) 78%, var(--color-secondary) 22%);
+  border-radius: 16px;
+  padding: 0.9rem;
+  background: color-mix(in oklab, var(--bg-primary) 95%, var(--color-secondary) 5%);
+}
+
+.practice-panel-title {
+  margin: 0 0 0.55rem;
+  font-size: 0.86rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: color-mix(in oklab, var(--text-secondary) 72%, var(--color-secondary) 28%);
+}
+
+.practice-rich-heading {
+  margin: 0.8rem 0 0.45rem;
+  color: var(--text-primary);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.practice-rich-heading-2 {
+  font-size: clamp(1.35rem, 1.1rem + 0.7vw, 1.8rem);
+}
+
+.practice-rich-heading-3 {
+  font-size: clamp(1.12rem, 1rem + 0.45vw, 1.4rem);
+}
+
+.practice-rich-heading-4 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+}
+
+.practice-insight-card {
+  border: 1px solid color-mix(in oklab, var(--border-color) 74%, var(--color-primary) 26%);
+  border-radius: 16px;
+  padding: 0.92rem 1rem;
+  background: color-mix(in oklab, var(--bg-primary) 95%, var(--color-primary) 5%);
+  display: grid;
+  gap: 0.5rem;
+}
+
+.practice-insight-grid {
+  display: grid;
+  gap: 0.55rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.practice-insight-label {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+}
+
+.practice-insight-value {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 1.02rem;
+  font-weight: 800;
+}
+
+.practice-details {
+  border: 1px solid color-mix(in oklab, var(--border-color) 72%, var(--color-primary) 28%);
+  border-radius: 16px;
+  background: color-mix(in oklab, var(--bg-primary) 96%, var(--color-primary) 4%);
+  overflow: hidden;
+}
+
+.practice-details summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 0.9rem 1rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.practice-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.practice-details summary::after {
+  content: "▾";
+  float: right;
+  color: var(--text-secondary);
+  transition: transform 0.16s ease;
+}
+
+.practice-details[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.practice-details-body {
+  padding: 0 1rem 1rem;
+}
+
+.practice-results-card {
+  border: 1px solid color-mix(in oklab, var(--border-color) 70%, var(--color-primary) 30%);
+  border-radius: 18px;
+  padding: 1rem 1.05rem;
+  background: linear-gradient(
+    160deg,
+    color-mix(in oklab, var(--bg-primary) 92%, var(--color-primary) 8%),
+    var(--bg-primary)
+  );
+  display: grid;
+  gap: 0.9rem;
+}
+
+.practice-results-grid {
+  display: grid;
+  gap: 0.7rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.practice-result-box {
+  border: 1px solid color-mix(in oklab, var(--border-color) 76%, var(--color-primary) 24%);
+  border-radius: 14px;
+  padding: 0.82rem;
+  background: color-mix(in oklab, var(--bg-primary) 95%, var(--color-primary) 5%);
+}
+
+.practice-result-box h3,
+.practice-result-box p {
+  margin: 0;
+}
+
+.practice-result-box h3 {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.practice-result-box p {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.practice-loading,
+.practice-empty-state {
+  padding: 1.15rem 1rem;
+  border-radius: 16px;
+  border: 1px solid color-mix(in oklab, var(--border-color) 76%, var(--color-primary) 24%);
+  background: color-mix(in oklab, var(--bg-primary) 95%, var(--color-primary) 5%);
+  color: var(--text-secondary);
+}
+
+.practice-page-link {
+  color: var(--color-primary);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.practice-page-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .practice-lesson-shell {
+    padding: 5rem 0.85rem 2rem;
+  }
+
+  .practice-content-article {
+    padding: 1.35rem 1rem 1.6rem;
+  }
+
+  .practice-toolbar {
+    align-items: stretch;
+  }
+
+  .practice-toolbar-actions {
+    width: 100%;
+  }
+
+  .practice-mode-toggle {
+    width: 100%;
+    justify-content: stretch;
+  }
+
+  .practice-mode-button {
+    flex: 1 1 0;
+  }
+
+  .practice-chip-grid {
+    grid-template-columns: repeat(6, minmax(42px, 1fr));
+  }
+}

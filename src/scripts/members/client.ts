@@ -181,6 +181,21 @@ export async function apiLogout(): Promise<void> {
 }
 
 export async function apiWorkshops(options: { published?: boolean } = {}): Promise<any> {
+  return apiCatalog('workshops', options);
+}
+
+export async function apiSimulacros(options: { published?: boolean } = {}): Promise<any> {
+  return apiCatalog('simulacros', options);
+}
+
+function encodeCompositeId(value: string): string {
+  return value
+    .split('/')
+    .map(encodeURIComponent)
+    .join('/');
+}
+
+async function apiCatalog(resource: 'workshops' | 'simulacros', options: { published?: boolean } = {}): Promise<any> {
   const token = getSessionToken();
   const params = new URLSearchParams();
   params.set('per_page', '60');
@@ -188,26 +203,36 @@ export async function apiWorkshops(options: { published?: boolean } = {}): Promi
     params.set('published', String(options.published));
   }
 
-  const response = await fetch(`${getApiBase()}/workshops?${params.toString()}`, {
+  const response = await fetch(`${getApiBase()}/${resource}?${params.toString()}`, {
     headers: token
       ? {
           Authorization: `Bearer ${token}`,
         }
       : undefined,
   });
-
   return parseApiResponse<any>(response);
 }
 
-export async function apiWorkshopDetail(workshopId: string): Promise<any> {
+type DetailOptions = {
+  publishedOnly?: boolean;
+  includeAnswers?: boolean;
+  format?: 'app' | 'default';
+};
+
+async function apiContentDetail(
+  resource: 'workshops' | 'simulacros',
+  contentId: string,
+  options: DetailOptions = {}
+): Promise<any> {
   const token = getSessionToken();
-  const encodedId = workshopId
-    .split('/')
-    .map(encodeURIComponent)
-    .join('/');
+  const encodedId = encodeCompositeId(contentId);
+  const params = new URLSearchParams();
+  params.set('published_only', String(options.publishedOnly ?? false));
+  params.set('include_answers', String(options.includeAnswers ?? false));
+  params.set('format', options.format ?? 'app');
 
   const response = await fetch(
-    `${getApiBase()}/workshops/${encodedId}?published_only=false&include_answers=false&format=app`,
+    `${getApiBase()}/${resource}/${encodedId}?${params.toString()}`,
     {
       headers: token
         ? {
@@ -220,16 +245,26 @@ export async function apiWorkshopDetail(workshopId: string): Promise<any> {
   return parseApiResponse<any>(response);
 }
 
-export async function apiEvaluate(workshopId: string, questionId: string, optionId: string): Promise<any> {
+export async function apiWorkshopDetail(workshopId: string, options: DetailOptions = {}): Promise<any> {
+  return apiContentDetail('workshops', workshopId, options);
+}
+
+export async function apiSimulacroDetail(simulacroId: string, options: DetailOptions = {}): Promise<any> {
+  return apiContentDetail('simulacros', simulacroId, options);
+}
+
+async function apiEvaluateContent(
+  resource: 'workshops' | 'simulacros',
+  contentId: string,
+  questionId: string,
+  optionId: string
+): Promise<any> {
   const token = getSessionToken();
-  const encodedId = workshopId
-    .split('/')
-    .map(encodeURIComponent)
-    .join('/');
+  const encodedId = encodeCompositeId(contentId);
   const encodedQuestion = encodeURIComponent(questionId);
 
   const response = await fetch(
-    `${getApiBase()}/workshops/${encodedId}/questions/${encodedQuestion}/evaluate?published_only=false&format=app`,
+    `${getApiBase()}/${resource}/${encodedId}/questions/${encodedQuestion}/evaluate?published_only=false&format=app`,
     {
       method: 'POST',
       headers: {
@@ -247,6 +282,18 @@ export async function apiEvaluate(workshopId: string, questionId: string, option
   );
 
   return parseApiResponse<any>(response);
+}
+
+export async function apiEvaluate(workshopId: string, questionId: string, optionId: string): Promise<any> {
+  return apiEvaluateContent('workshops', workshopId, questionId, optionId);
+}
+
+export async function apiEvaluateSimulacro(
+  simulacroId: string,
+  questionId: string,
+  optionId: string
+): Promise<any> {
+  return apiEvaluateContent('simulacros', simulacroId, questionId, optionId);
 }
 
 export async function apiAdminListStudents(filters: { status?: string; search?: string } = {}): Promise<any> {

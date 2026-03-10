@@ -95,6 +95,7 @@ class WorkshopCatalogApiTest extends TestCase
         return Workshop::query()->create([
             'external_id' => $externalId,
             'content_external_id' => $externalId,
+            'content_type' => 'taller',
             'title' => 'Taller '.str_replace(':', ' ', $externalId),
             'route' => '/saber/quimica/'.$externalId,
             'area_slug' => 'quimica',

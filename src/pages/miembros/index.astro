@@ -21,6 +21,7 @@ import '../../styles/members.css';
         <div id="profile"></div>
         <div class="members-actions" style="margin-top: 0.8rem;">
           <a class="members-button secondary" href="/miembros/talleres">Ir a talleres</a>
+          <a class="members-button secondary" href="/miembros/simulacros">Ir a simulacros</a>
           <a class="members-button secondary" href="/miembros/admin" id="admin-link" style="display:none;">Panel admin</a>
           <button class="members-button warn" id="logout-btn" type="button">Cerrar sesión</button>
         </div>
@@ -36,6 +37,11 @@ import '../../styles/members.css';
         <h3 class="members-section-title">Tus talleres</h3>
         <div id="workshop-summary"></div>
       </section>
+
+      <section class="members-card">
+        <h3 class="members-section-title">Tus simulacros</h3>
+        <div id="simulacro-summary"></div>
+      </section>
     </main>
 
     <Footer />
@@ -44,6 +50,7 @@ import '../../styles/members.css';
 
 <script>
   import {
+    apiSimulacros,
     apiWorkshops,
     apiLogout,
     apiMe,
@@ -62,9 +69,11 @@ import '../../styles/members.css';
   const feedback = document.getElementById('feedback');
   const routeWrap = document.getElementById('route');
   const workshopSummary = document.getElementById('workshop-summary');
+  const simulacroSummary = document.getElementById('simulacro-summary');
   const adminLink = document.getElementById('admin-link');
   const logoutBtn = document.getElementById('logout-btn');
   const LAST_WORKSHOP_KEY = 'ediprofe_member_last_workshop';
+  const LAST_SIMULACRO_KEY = 'ediprofe_member_last_simulacro';
 
   function statusClass(status) {
     if (status === 'approved') return 'approved';
@@ -211,6 +220,73 @@ import '../../styles/members.css';
     `;
   }
 
+  function renderSimulacroSummary(items) {
+    const total = items.length;
+    const accessible = items.filter((item) => item.can_access);
+    const totalQuestions = accessible.reduce((acc, item) => acc + Number(item?.stats?.total_questions || 0), 0);
+    const lastSimulacroRaw = window.localStorage.getItem(LAST_SIMULACRO_KEY);
+    let lastSimulacro = null;
+    if (lastSimulacroRaw) {
+      try {
+        lastSimulacro = JSON.parse(lastSimulacroRaw);
+      } catch {
+        lastSimulacro = null;
+      }
+    }
+
+    const recent = accessible.slice(0, 3);
+    const recentHtml =
+      recent.length > 0
+        ? recent
+            .map((item) => {
+              const link = `/miembros/simulacros/${toBase64Url(item.id)}`;
+              return `
+              <article class="members-item">
+                <h4>${escapeHtml(item.title)}</h4>
+                <p>${escapeHtml(item.area_slug || 'general')} · ${Number(item?.stats?.total_questions || 0)} preguntas</p>
+                <div class="members-actions" style="margin-top:0.55rem;">
+                  <a class="members-button" href="${link}">Abrir</a>
+                </div>
+              </article>
+            `;
+            })
+            .join('')
+        : '<div class="members-alert">No tienes simulacros con acceso todavía.</div>';
+
+    simulacroSummary.innerHTML = `
+      <div class="members-grid">
+        <article class="members-item">
+          <h4>Simulacros totales</h4>
+          <p>${total}</p>
+        </article>
+        <article class="members-item">
+          <h4>Con acceso</h4>
+          <p>${accessible.length}</p>
+        </article>
+        <article class="members-item">
+          <h4>Preguntas disponibles</h4>
+          <p>${totalQuestions}</p>
+        </article>
+      </div>
+      ${
+        lastSimulacro?.link
+          ? `
+        <div class="members-actions" style="margin-top:0.9rem;">
+          <a class="members-button" href="${escapeHtml(lastSimulacro.link)}">Continuar último simulacro</a>
+          <span class="members-pill pending">${escapeHtml(lastSimulacro.title || 'Simulacro reciente')}</span>
+        </div>
+      `
+          : ''
+      }
+      <div class="members-list" style="margin-top:0.9rem;">
+        ${recentHtml}
+      </div>
+      <div class="members-actions" style="margin-top:0.75rem;">
+        <a class="members-button secondary" href="/miembros/simulacros">Ver catálogo completo</a>
+      </div>
+    `;
+  }
+
   async function boot() {
     try {
       const me = await apiMe();
@@ -252,12 +328,17 @@ import '../../styles/members.css';
         feedback.innerHTML = `<div class="members-alert">Tu cuenta está pendiente de aprobación manual por el administrador.</div>`;
         workshopSummary.innerHTML =
           '<div class="members-alert">Cuando tu estado sea <strong>Aprobado</strong>, aquí verás tus talleres y avance.</div>';
+        simulacroSummary.innerHTML =
+          '<div class="members-alert">Cuando tu estado sea <strong>Aprobado</strong>, aquí verás tus simulacros y avance.</div>';
       } else if (user.member_status === 'blocked') {
         feedback.innerHTML = `<div class="members-alert error">Tu cuenta fue bloqueada. Contacta al administrador.</div>`;
         workshopSummary.innerHTML =
           '<div class="members-alert error">Tu acceso premium está bloqueado. Contacta al administrador.</div>';
+        simulacroSummary.innerHTML =
+          '<div class="members-alert error">Tu acceso premium está bloqueado. Contacta al administrador.</div>';
       } else {
         const workshopsResponse = await apiWorkshops();
+        const simulacrosResponse = await apiSimulacros();
         let items = normalizeWorkshopList(workshopsResponse);
 
         const isLocalHost = ['localhost', '127.0.0.1'].includes(window.location.hostname);
@@ -272,6 +353,7 @@ import '../../styles/members.css';
         }
 
         renderWorkshopSummary(items);
+        renderSimulacroSummary(normalizeWorkshopList(simulacrosResponse));
       }
     } catch (error) {
       clearSession();

@@ -17,6 +17,7 @@ class Workshop extends Model
     protected $fillable = [
         'external_id',
         'content_external_id',
+        'content_type',
         'title',
         'route',
         'area_slug',
@@ -39,6 +40,7 @@ class Workshop extends Model
     protected function casts(): array
     {
         return [
+            'content_type' => 'string',
             'is_published' => 'boolean',
             'total_questions' => 'integer',
             'total_assets' => 'integer',

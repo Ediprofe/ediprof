@@ -21,6 +21,7 @@ class WorkshopSyncManifestCommandTest extends TestCase
                 [
                     'id' => 'content:saber:quimica/la-materia/taller',
                     'content_external_id' => 'content:saber:quimica/la-materia/taller',
+                    'content_type' => 'taller',
                     'route' => '/saber/quimica/la-materia/taller',
                     'title' => 'Taller La Materia',
                     'area_slug' => 'quimica',
@@ -75,6 +76,7 @@ class WorkshopSyncManifestCommandTest extends TestCase
         $this->assertDatabaseHas('workshops', [
             'external_id' => 'content:saber:quimica/la-materia/taller',
             'route' => '/saber/quimica/la-materia/taller',
+            'content_type' => 'taller',
             'title' => 'Taller La Materia',
             'access_tier' => 'premium',
             'is_published' => 1,
@@ -106,6 +108,7 @@ class WorkshopSyncManifestCommandTest extends TestCase
             'workshops' => [
                 [
                     'id' => 'content:saber:test/taller',
+                    'content_type' => 'taller',
                     'route' => '/saber/test/taller',
                     'title' => 'Taller test',
                     'questions' => [

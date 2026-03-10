@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * Exporta talleres Saber (MD/MDX) a un manifiesto JSON para backend/app.
+ * Exporta talleres y simulacros (MD/MDX) a un manifiesto JSON para backend/app.
  *
  * Uso:
  *   node scripts/export-workshops-manifest.mjs
@@ -27,7 +27,22 @@ import {
 
 const DEFAULT_OUTPUT = '/tmp/ediprofe-workshops-manifest.json';
 const DEFAULT_CONTENT_MANIFEST = '/tmp/ediprofe-content-manifest.json';
-const WORKSHOPS_GLOB = 'src/content/saber/**/taller.{md,mdx}';
+const CONTENT_SOURCES = [
+  {
+    glob: 'src/content/saber/**/taller.{md,mdx}',
+    contentRoot: 'src/content/saber',
+    routePrefix: '/saber',
+    idPrefix: 'content:saber:',
+    contentType: 'taller',
+  },
+  {
+    glob: 'src/content/simulacros/**/taller.{md,mdx}',
+    contentRoot: 'src/content/simulacros',
+    routePrefix: '/simulacros',
+    idPrefix: 'content:simulacros:',
+    contentType: 'simulacro',
+  },
+];
 const APP_PAYLOAD_VERSION = 1;
 
 function parseArgs(argv) {
@@ -167,7 +182,18 @@ function parseListItemText(line) {
 
 function isStructuralHtmlLine(line) {
   const normalized = String(line || '').trim();
-  return /^<\/?div\b[^>]*>$/i.test(normalized);
+  return /^<\/?(div|details|summary)\b[^>]*>$/i.test(normalized);
+}
+
+function parseHeadingLine(line) {
+  const normalized = String(line || '').trim();
+  const match = normalized.match(/^(#{1,6})\s+(.+)$/);
+  if (!match) return null;
+
+  return {
+    depth: match[1].length,
+    text: cleanInlineMarkdown(match[2] || ''),
+  };
 }
 
 function parseInlineEquationLine(line) {
@@ -332,6 +358,17 @@ function buildBlocks(content, assetRefs = []) {
         type: 'image',
         src: image.url,
         alt: image.alt,
+      }));
+      i += 1;
+      continue;
+    }
+
+    const heading = parseHeadingLine(line);
+    if (heading) {
+      blocks.push(applyBlockLayout({
+        type: 'heading',
+        depth: heading.depth,
+        inlines: parseInlineSegments(heading.text),
       }));
       i += 1;
       continue;
@@ -521,12 +558,12 @@ function extractTitle(content) {
     .trim();
 }
 
-function toWorkshopId(slugClean) {
-  return `content:saber:${slugClean}`;
+function toContentId(slugClean, source) {
+  return `${source.idPrefix}${slugClean}`;
 }
 
 function splitQuestionSections(content) {
-  const headingRegex = /^##\s+(\d+)\.?\s*$/gm;
+  const headingRegex = /^##\s+(\d+)(?:\s+\([^)]+\))?\.?\s*$/gm;
   const matches = [];
   let match = null;
 
@@ -571,6 +608,28 @@ function parseOptions(optionsBody) {
   return options;
 }
 
+function parseDetailsSections(inner) {
+  const detailsRegex = /<details\b[^>]*>([\s\S]*?)<\/details>/gi;
+  const sections = [];
+  let match = null;
+
+  while ((match = detailsRegex.exec(inner)) !== null) {
+    const raw = String(match[0] || '');
+    const body = String(match[1] || '').trim();
+    const summaryMatch = body.match(/<summary>([\s\S]*?)<\/summary>/i);
+    const summary = cleanInlineMarkdown(stripHtmlTags(summaryMatch?.[1] || '')).trim();
+    const content = body.replace(/<summary>[\s\S]*?<\/summary>/i, '').trim();
+
+    sections.push({
+      raw,
+      summary,
+      content,
+    });
+  }
+
+  return sections;
+}
+
 function parseQuestion(section) {
   const preguntaRegex = /<Pregunta([^>]*)>([\s\S]*?)<\/Pregunta>/i;
   const preguntaMatch = section.raw.match(preguntaRegex);
@@ -589,7 +648,11 @@ function parseQuestion(section) {
   );
 
   const optionsMatch = inner.match(/<Opciones>([\s\S]*?)<\/Opciones>/i);
-  const detailsMatch = inner.match(/<details>([\s\S]*?)<\/details>/i);
+  const detailSections = parseDetailsSections(inner);
+  const answerDetails =
+    detailSections.find((entry) => /respuesta|soluci[oó]n/i.test(entry.summary)) ?? detailSections[0] ?? null;
+  const conceptDetails =
+    detailSections.find((entry) => /conceptos?\s+relacionados/i.test(entry.summary)) ?? null;
 
   const optionsBody = optionsMatch ? optionsMatch[1] : '';
   const options = parseOptions(optionsBody);
@@ -597,17 +660,22 @@ function parseQuestion(section) {
 
   let stemMdx = inner;
   if (optionsMatch) stemMdx = stemMdx.replace(optionsMatch[0], '');
-  if (detailsMatch) stemMdx = stemMdx.replace(detailsMatch[0], '');
+  detailSections.forEach((entry) => {
+    stemMdx = stemMdx.replace(entry.raw, '');
+  });
   const stemMdxRaw = stemMdx.trim();
   stemMdx = stripMdxComments(stemMdxRaw).trim();
 
-  let feedbackMdx = detailsMatch ? detailsMatch[1].trim() : '';
-  feedbackMdx = feedbackMdx.replace(/<summary>[\s\S]*?<\/summary>/i, '').trim();
+  let feedbackMdx = answerDetails ? answerDetails.content.trim() : '';
   const feedbackMdxRaw = feedbackMdx;
   feedbackMdx = stripMdxComments(feedbackMdxRaw).trim();
+  let conceptsMdx = conceptDetails ? conceptDetails.content.trim() : '';
+  const conceptsMdxRaw = conceptsMdx;
+  conceptsMdx = stripMdxComments(conceptsMdxRaw).trim();
 
   const stemAssets = extractAssetRefs(stemMdxRaw);
   const feedbackAssets = extractAssetRefs(feedbackMdxRaw);
+  const conceptsAssets = extractAssetRefs(conceptsMdxRaw);
 
   const questionId = String(attrs.id || section.number).trim();
   const anioRaw = attrs.anio ? Number.parseInt(String(attrs.anio), 10) : null;
@@ -631,6 +699,9 @@ function parseQuestion(section) {
     feedback_mdx: feedbackMdx,
     feedback_assets: feedbackAssets,
     feedback_blocks: buildBlocks(feedbackMdxRaw, feedbackAssets),
+    concepts_mdx: conceptsMdx,
+    concepts_assets: conceptsAssets,
+    concepts_blocks: buildBlocks(conceptsMdxRaw, conceptsAssets),
     app_payload_version: APP_PAYLOAD_VERSION,
     detached_context_mdx: detachedContext,
   };
@@ -652,14 +723,14 @@ function loadContentManifestMap(pathLike) {
   return map;
 }
 
-function buildWorkshopEntry(filePath, contentEntryMap) {
-  const rel = normalizePath(relative('src/content/saber', filePath));
+function buildWorkshopEntry(filePath, contentEntryMap, source) {
+  const rel = normalizePath(relative(source.contentRoot, filePath));
   const parsed = rel.match(/^(.+)\.(md|mdx)$/);
   if (!parsed) return null;
 
   const rawSlug = parsed[1];
   const slugClean = cleanSlug(rawSlug);
-  const route = `/saber/${slugClean}`;
+  const route = `${source.routePrefix}/${slugClean}`;
 
   const rawFile = readFileSync(filePath, 'utf-8');
   const { data: frontmatter, content } = parseFrontmatter(rawFile);
@@ -667,8 +738,7 @@ function buildWorkshopEntry(filePath, contentEntryMap) {
   const sections = splitQuestionSections(content);
   const parsedQuestions = sections
     .map(parseQuestion)
-    .filter(Boolean)
-    .sort((a, b) => a.order - b.order);
+    .filter(Boolean);
 
   if (parsedQuestions.length === 0) {
     return null;
@@ -736,13 +806,18 @@ function buildWorkshopEntry(filePath, contentEntryMap) {
   const accessTier = contentEntry?.accessTier || 'premium';
   const isPublished = Boolean(contentEntry?.flags?.published ?? !(frontmatter.draft === true));
 
-  const allAssets = [...new Set(questions.flatMap((q) => [...q.stem_assets, ...q.feedback_assets]))].sort();
+  const allAssets = [
+    ...new Set(
+      questions.flatMap((q) => [...q.stem_assets, ...q.feedback_assets, ...(q.concepts_assets || [])])
+    ),
+  ].sort();
 
-  const fallbackId = toWorkshopId(slugClean);
+  const fallbackId = toContentId(slugClean, source);
 
   return {
     id: contentEntry?.id || fallbackId,
     content_external_id: contentEntry?.id || fallbackId,
+    content_type: source.contentType,
     route,
     title,
     area_slug: areaSlug,
@@ -762,9 +837,11 @@ function main() {
   const { output, contentManifest, publishedOnly } = parseArgs(process.argv.slice(2));
   const contentEntryMap = loadContentManifestMap(contentManifest);
 
-  const files = globSync(WORKSHOPS_GLOB, { nodir: true }).sort();
+  const files = CONTENT_SOURCES.flatMap((source) =>
+    globSync(source.glob, { nodir: true }).sort().map((filePath) => ({ filePath, source }))
+  );
   const workshops = files
-    .map((filePath) => buildWorkshopEntry(filePath, contentEntryMap))
+    .map(({ filePath, source }) => buildWorkshopEntry(filePath, contentEntryMap, source))
     .filter(Boolean)
     .filter((entry) => !publishedOnly || entry.published)
     .sort((a, b) => a.route.localeCompare(b.route));
@@ -782,7 +859,7 @@ function main() {
     contractVersion: 1,
     appPayloadVersion: APP_PAYLOAD_VERSION,
     source: {
-      workshopsGlob: WORKSHOPS_GLOB,
+      workshopsGlobs: CONTENT_SOURCES.map((source) => source.glob),
       contentManifest: existsSync(resolve(contentManifest)) ? resolve(contentManifest) : null,
       publishedOnly,
     },
@@ -794,8 +871,8 @@ function main() {
   mkdirSync(dirname(outputPath), { recursive: true });
   writeFileSync(outputPath, JSON.stringify(manifest, null, 2));
 
-  console.log('Workshops manifest generated');
-  console.log(`   Workshops: ${totals.workshops}`);
+  console.log('Practice manifest generated');
+  console.log(`   Entries:    ${totals.workshops}`);
   console.log(`   Published: ${totals.published}`);
   console.log(`   Draft:     ${totals.draft}`);
   console.log(`   Questions: ${totals.questions}`);

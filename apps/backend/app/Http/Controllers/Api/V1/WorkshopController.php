@@ -13,13 +13,15 @@ use Illuminate\Http\Request;
 
 class WorkshopController extends Controller
 {
+    protected string $contentType = 'taller';
+
     /**
      * Display paginated workshop catalog entries.
      */
     public function index(Request $request, WorkshopAccessService $accessService): JsonResponse
     {
         $perPage = max(1, min((int) $request->integer('per_page', 20), 100));
-        $query = Workshop::query();
+        $query = $this->baseQuery();
 
         if ($request->filled('published')) {
             $query->where('is_published', filter_var($request->query('published'), FILTER_VALIDATE_BOOL));
@@ -86,7 +88,7 @@ class WorkshopController extends Controller
         $workshop = $this->resolveWorkshop($request, $identifier);
 
         if ($workshop === null) {
-            return $this->workshopNotFoundResponse();
+            return $this->contentNotFoundResponse();
         }
 
         $accessError = $this->resolveAccessErrorResponse($request, $workshop, $accessService);
@@ -114,7 +116,7 @@ class WorkshopController extends Controller
 
         $workshop = $this->resolveWorkshop($request, $identifier);
         if ($workshop === null) {
-            return $this->workshopNotFoundResponse();
+            return $this->contentNotFoundResponse();
         }
 
         $accessError = $this->resolveAccessErrorResponse($request, $workshop, $accessService);
@@ -145,7 +147,7 @@ class WorkshopController extends Controller
                 'ok' => false,
                 'error' => [
                     'code' => 'question_not_found',
-                    'message' => 'Question not found in the selected workshop.',
+                    'message' => 'Question not found in the selected content.',
                 ],
             ], 404);
         }
@@ -207,6 +209,9 @@ class WorkshopController extends Controller
                 'feedback_mdx' => (string) ($question['feedback_mdx'] ?? ''),
                 'feedback_assets' => is_array($question['feedback_assets'] ?? null) ? $question['feedback_assets'] : [],
                 'feedback_blocks' => is_array($question['feedback_blocks'] ?? null) ? $question['feedback_blocks'] : [],
+                'concepts_mdx' => (string) ($question['concepts_mdx'] ?? ''),
+                'concepts_assets' => is_array($question['concepts_assets'] ?? null) ? $question['concepts_assets'] : [],
+                'concepts_blocks' => is_array($question['concepts_blocks'] ?? null) ? $question['concepts_blocks'] : [],
                 'next_question_id' => $nextQuestionId,
             ],
         ]);
@@ -214,7 +219,7 @@ class WorkshopController extends Controller
 
     private function resolveWorkshop(Request $request, string $identifier): ?Workshop
     {
-        $query = Workshop::query();
+        $query = $this->baseQuery();
 
         if ($request->boolean('published_only', true)) {
             $query->where('is_published', true);
@@ -230,6 +235,11 @@ class WorkshopController extends Controller
             ->first();
     }
 
+    private function baseQuery()
+    {
+        return Workshop::query()->where('content_type', $this->contentType);
+    }
+
     private function resolveAccessErrorResponse(
         Request $request,
         Workshop $workshop,
@@ -241,7 +251,7 @@ class WorkshopController extends Controller
                 'ok' => false,
                 'error' => [
                     'code' => 'auth_required',
-                    'message' => 'Authentication is required to access premium workshops.',
+                    'message' => 'Authentication is required to access this premium content.',
                 ],
             ], 401);
         }
@@ -251,7 +261,7 @@ class WorkshopController extends Controller
                 'ok' => false,
                 'error' => [
                     'code' => 'premium_access_required',
-                    'message' => 'Your account does not have access to this premium workshop.',
+                    'message' => 'Your account does not have access to this premium content.',
                 ],
             ], 403);
         }
@@ -259,13 +269,13 @@ class WorkshopController extends Controller
         return null;
     }
 
-    private function workshopNotFoundResponse(): JsonResponse
+    private function contentNotFoundResponse(): JsonResponse
     {
         return response()->json([
             'ok' => false,
             'error' => [
-                'code' => 'workshop_not_found',
-                'message' => 'Workshop not found for the requested identifier.',
+                'code' => 'content_not_found',
+                'message' => 'Requested content was not found for the provided identifier.',
             ],
         ], 404);
     }

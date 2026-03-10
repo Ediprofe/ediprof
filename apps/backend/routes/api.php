@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\V1\AuthController;
 use App\Http\Controllers\Api\V1\Admin\StudentAccessController;
 use App\Http\Controllers\Api\V1\ContentController;
+use App\Http\Controllers\Api\V1\SimulacroController;
 use App\Http\Controllers\Api\V1\WorkshopController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -29,6 +30,11 @@ Route::prefix('v1')->middleware('resolve.api_token')->group(function (): void {
     Route::post('/workshops/{workshopId}/questions/{questionId}/evaluate', [WorkshopController::class, 'evaluateAnswer'])
         ->where('workshopId', '.*');
     Route::get('/workshops/{workshopId}', [WorkshopController::class, 'show'])
+        ->where('workshopId', '.*');
+    Route::get('/simulacros', [SimulacroController::class, 'index']);
+    Route::post('/simulacros/{workshopId}/questions/{questionId}/evaluate', [SimulacroController::class, 'evaluateAnswer'])
+        ->where('workshopId', '.*');
+    Route::get('/simulacros/{workshopId}', [SimulacroController::class, 'show'])
         ->where('workshopId', '.*');
 
     Route::prefix('admin')->middleware(['require.api_token', 'require.admin'])->group(function (): void {

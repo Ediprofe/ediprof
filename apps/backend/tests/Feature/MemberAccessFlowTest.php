@@ -211,6 +211,7 @@ class MemberAccessFlowTest extends TestCase
         Workshop::query()->create([
             'external_id' => 'content:saber:quimica/la-materia/taller',
             'content_external_id' => 'content:saber:quimica/la-materia/taller',
+            'content_type' => 'taller',
             'route' => '/saber/quimica/la-materia/taller',
             'title' => 'Taller: La Materia',
             'area_slug' => 'quimica',

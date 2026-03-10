@@ -20,6 +20,7 @@ class WorkshopSummaryResource extends JsonResource
         return [
             'id' => $this->external_id,
             'content_external_id' => $this->content_external_id,
+            'content_type' => $this->content_type,
             'title' => $this->title,
             'route' => $this->route,
             'area_slug' => $this->area_slug,

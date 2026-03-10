@@ -1,0 +1,88 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import Footer from "../components/Layout/Footer.astro";
+import StickyHeader from "../components/Layout/StickyHeader.astro";
+import PresentationTrigger from "../components/UI/PresentationTrigger.astro";
+import { getMateriaConfig, getMateriaName, type MateriaSlug } from "../config/materias";
+import "../styles/layouts/lesson.css";
+import "../styles/layouts/practice-lesson.css";
+import "../styles/members.css";
+
+type BreadcrumbItem = {
+  label: string;
+  href?: string;
+  icon?: string;
+};
+
+interface Props {
+  title: string;
+  description?: string;
+  materia?: string;
+  badge?: string;
+  icon?: string;
+  breadcrumbItems?: BreadcrumbItem[];
+  contentClass?: string;
+}
+
+const {
+  title,
+  description,
+  materia = "quimica",
+  badge = "Práctica premium",
+  icon,
+  breadcrumbItems = [],
+  contentClass = "",
+} = Astro.props;
+
+const materiaSlug = (["matematicas", "fisica", "quimica", "ciencias", "saber"].includes(materia)
+  ? materia
+  : "quimica") as MateriaSlug;
+const config = getMateriaConfig(materiaSlug);
+const materiaName = getMateriaName(materiaSlug);
+const headerIcon = icon ?? (materiaSlug === "saber" ? "📝" : "📖");
+---
+
+<BaseLayout title={title} description={description} showTopBar={false}>
+  <StickyHeader showBreadcrumb={true} breadcrumbItems={breadcrumbItems} />
+
+  <main class="practice-lesson-shell">
+    <div class="practice-lesson-frame">
+      <header class={`lesson-header lesson-header-${materiaSlug}`}>
+        <div class="header-bg">
+          <div class="header-orb header-orb-1"></div>
+          <div class="header-orb header-orb-2"></div>
+          <div class="header-grid"></div>
+        </div>
+
+        <div class="header-content">
+          <div class="header-main">
+            <div class="header-icon-wrapper" style={`background: ${config.gradient}`}>
+              <span class="header-icon">{headerIcon}</span>
+            </div>
+            <div class="header-text">
+              <span class="header-label">{badge}</span>
+              <h1 class="header-title">{title}</h1>
+              {description && <p class="header-desc">{description}</p>}
+            </div>
+          </div>
+
+          <div class="header-breadcrumb">
+            <span class="crumb-link">
+              <span class="crumb-icon">{config.icon}</span>
+              <span>{materiaName}</span>
+            </span>
+          </div>
+        </div>
+      </header>
+
+      <article class={`content-article content-article-${materiaSlug} practice-content-article`}>
+        <div class={`content-body practice-content-body ${contentClass}`.trim()}>
+          <slot />
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <Footer variant="minimal" />
+  <PresentationTrigger />
+</BaseLayout>

@@ -5,23 +5,23 @@ import { getMateriaConfig, getMateriaName } from '../../../config/materias';
 import { cleanSlug } from '../../../utils/navigation-generator.js';
 
 export async function getStaticPaths() {
-  const talleres = await getCollection('saber');
+  const simulacros = await getCollection('simulacros');
   const paths = new Map();
 
-  for (const taller of talleres) {
-    const normalized = cleanSlug(taller.slug);
-    const workshopId = `content:saber:${normalized}`;
-    const encoded = Buffer.from(workshopId, 'utf8').toString('base64url');
+  for (const simulacro of simulacros) {
+    const normalized = cleanSlug(simulacro.slug);
+    const simulacroId = `content:simulacros:${normalized}`;
+    const encoded = Buffer.from(simulacroId, 'utf8').toString('base64url');
     const [materiaSlug = 'quimica'] = normalized.split('/');
     const config = getMateriaConfig(materiaSlug);
-    const title = taller.data.title || `Taller de ${getMateriaName(materiaSlug)}`;
+    const title = simulacro.data.title || `Simulacro de ${getMateriaName(materiaSlug)}`;
     const description =
-      taller.data.description || 'Resuelve las preguntas una por una y comprueba la retroalimentación al instante.';
+      simulacro.data.description || 'Elige entre modo simulacro y estudio guiado para practicar con retroalimentación.';
 
     paths.set(encoded, {
       params: { id: encoded },
       props: {
-        workshopId,
+        simulacroId,
         title,
         description,
         materiaSlug,
@@ -34,11 +34,11 @@ export async function getStaticPaths() {
 }
 
 const {
-  workshopId,
+  simulacroId,
   title,
   description,
   materiaSlug = 'quimica',
-  materiaIcon = '📝',
+  materiaIcon = '🧪',
 } = Astro.props;
 const materiaName = getMateriaName(materiaSlug);
 ---
@@ -47,19 +47,19 @@ const materiaName = getMateriaName(materiaSlug);
   title={title}
   description={description}
   materia={materiaSlug}
-  badge="Taller premium"
+  badge="Simulacro premium"
   icon={materiaIcon}
   breadcrumbItems={[
     { label: 'Inicio', href: '/', icon: '🏠' },
     { label: 'Miembros', href: '/miembros', icon: '👥' },
-    { label: 'Talleres', href: '/miembros/talleres', icon: '📝' },
+    { label: 'Simulacros', href: '/miembros/simulacros', icon: '🚀' },
     { label: materiaName },
     { label: title },
   ]}
 >
   <div class="practice-surface">
     <div class="members-actions">
-      <a class="members-button secondary" href="/miembros/talleres">Volver a talleres</a>
+      <a class="members-button secondary" href="/miembros/simulacros">Volver a simulacros</a>
       <button type="button" class="members-button warn" id="reset-progress-btn">Reiniciar progreso</button>
     </div>
     <div id="practice-feedback"></div>
@@ -67,15 +67,15 @@ const materiaName = getMateriaName(materiaSlug);
   </div>
 </PracticeLessonLayout>
 
-<script define:vars={{ workshopId }}>
-  window.__EDIPROFE_PRACTICE_ID__ = workshopId;
+<script define:vars={{ simulacroId }}>
+  window.__EDIPROFE_PRACTICE_ID__ = simulacroId;
 </script>
 
 <script>
   import {
-    apiEvaluate,
+    apiEvaluateSimulacro,
     apiMe,
-    apiWorkshopDetail,
+    apiSimulacroDetail,
     clearSession,
     getSessionToken,
     saveSession,
@@ -87,18 +87,18 @@ const materiaName = getMateriaName(materiaSlug);
     feedback: document.getElementById('practice-feedback'),
     resetButton: document.getElementById('reset-progress-btn'),
     contentId: window.__EDIPROFE_PRACTICE_ID__,
-    contentType: 'taller',
-    contentLabel: 'Taller interactivo',
-    backHref: '/miembros/talleres',
-    allowedModes: ['study'],
-    defaultMode: 'study',
+    contentType: 'simulacro',
+    contentLabel: 'Simulacro interactivo',
+    backHref: '/miembros/simulacros',
+    allowedModes: ['exam', 'study'],
+    defaultMode: 'exam',
     api: {
       getSessionToken,
       clearSession,
       saveSession,
       me: apiMe,
-      detail: apiWorkshopDetail,
-      evaluate: apiEvaluate,
+      detail: apiSimulacroDetail,
+      evaluate: apiEvaluateSimulacro,
     },
   });
 </script>

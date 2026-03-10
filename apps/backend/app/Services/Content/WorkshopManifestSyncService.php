@@ -81,6 +81,7 @@ class WorkshopManifestSyncService
                     ['external_id'],
                     [
                         'content_external_id',
+                        'content_type',
                         'title',
                         'route',
                         'area_slug',
@@ -185,6 +186,9 @@ class WorkshopManifestSyncService
         return [
             'external_id' => $externalId,
             'content_external_id' => $this->stringOrNull(Arr::get($entry, 'content_external_id')),
+            'content_type' => $this->normalizeContentType(
+                $this->stringOrNull(Arr::get($entry, 'content_type')) ?? 'taller'
+            ),
             'title' => $this->stringOrNull(Arr::get($entry, 'title')) ?? $route,
             'route' => $route,
             'area_slug' => $this->stringOrNull(Arr::get($entry, 'area_slug')),
@@ -252,13 +256,14 @@ class WorkshopManifestSyncService
                 'feedback_mdx' => $this->stringOrNull(Arr::get($question, 'feedback_mdx')) ?? '',
                 'feedback_assets' => $this->normalizeStringList(Arr::get($question, 'feedback_assets', [])),
                 'feedback_blocks' => $this->normalizeBlocks(Arr::get($question, 'feedback_blocks', [])),
+                'concepts_mdx' => $this->stringOrNull(Arr::get($question, 'concepts_mdx')) ?? '',
+                'concepts_assets' => $this->normalizeStringList(Arr::get($question, 'concepts_assets', [])),
+                'concepts_blocks' => $this->normalizeBlocks(Arr::get($question, 'concepts_blocks', [])),
                 'app_payload_version' => is_numeric(Arr::get($question, 'app_payload_version'))
                     ? (int) Arr::get($question, 'app_payload_version')
                     : null,
             ];
         }
-
-        usort($normalized, static fn (array $a, array $b): int => $a['order'] <=> $b['order']);
 
         return $normalized;
     }
@@ -361,6 +366,11 @@ class WorkshopManifestSyncService
     private function normalizeAccessTier(string $accessTier): string
     {
         return in_array($accessTier, ['free', 'premium'], true) ? $accessTier : 'premium';
+    }
+
+    private function normalizeContentType(string $contentType): string
+    {
+        return in_array($contentType, ['taller', 'simulacro'], true) ? $contentType : 'taller';
     }
 
     private function stringOrNull(mixed $value): ?string
