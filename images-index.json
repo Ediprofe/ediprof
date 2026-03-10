@@ -4669,7 +4669,46 @@
       "canonicalPath": "img/saber/quimica/qb1l-atomos-neutros-e-iones.webp",
       "aliases": [],
       "status": "uploaded"
+    },
+    {
+      "id": "5gnb",
+      "name": "como-comprobar-afirmacion-experimental.webp",
+      "materia": "ciencias",
+      "type": "saber",
+      "date": "2026-03-09",
+      "size": "77KB",
+      "url": "https://cdn.ediprofe.com/img/saber/ciencias/5gnb-como-comprobar-afirmacion-experimental.webp",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/saber/ciencias/5gnb-como-comprobar-afirmacion-experimental.webp",
+      "canonicalPath": "img/saber/ciencias/5gnb-como-comprobar-afirmacion-experimental.webp",
+      "aliases": [],
+      "status": "uploaded"
+    },
+    {
+      "id": "tgu7",
+      "name": "comprobar-afirmacion-experimental.webp",
+      "materia": "ciencias",
+      "type": "saber",
+      "date": "2026-03-09",
+      "size": "92KB",
+      "url": "https://cdn.ediprofe.com/img/saber/ciencias/tgu7-comprobar-afirmacion-experimental.webp",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/saber/ciencias/tgu7-comprobar-afirmacion-experimental.webp",
+      "canonicalPath": "img/saber/ciencias/tgu7-comprobar-afirmacion-experimental.webp",
+      "aliases": [],
+      "status": "uploaded"
+    },
+    {
+      "id": "md49",
+      "name": "modelo-presa-depredador.webp",
+      "materia": "ciencias",
+      "type": "saber",
+      "date": "2026-03-09",
+      "size": "94KB",
+      "url": "https://cdn.ediprofe.com/img/saber/ciencias/md49-modelo-presa-depredador.webp",
+      "canonicalUrl": "https://cdn.ediprofe.com/img/saber/ciencias/md49-modelo-presa-depredador.webp",
+      "canonicalPath": "img/saber/ciencias/md49-modelo-presa-depredador.webp",
+      "aliases": [],
+      "status": "uploaded"
     }
   ],
-  "lastUpdated": "2026-03-09T00:06:24.997Z"
+  "lastUpdated": "2026-03-09T23:37:13.787Z"
 }
