@@ -237,6 +237,19 @@
   color: var(--text-secondary);
 }
 
+.practice-rich-fragment {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.practice-rich-fragment > :first-child {
+  margin-top: 0;
+}
+
+.practice-rich-fragment > :last-child {
+  margin-bottom: 0;
+}
+
 .practice-insight-card {
   border: 1px solid color-mix(in oklab, var(--border-color) 74%, var(--color-primary) 26%);
   border-radius: 16px;
@@ -297,6 +310,14 @@
 
 .practice-details-body {
   padding: 0 1rem 1rem;
+}
+
+.saber-taller .practice-details summary::after {
+  content: none;
+}
+
+.saber-taller .practice-details-body {
+  padding: 0;
 }
 
 .practice-results-card {

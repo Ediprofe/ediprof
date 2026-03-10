@@ -24,6 +24,7 @@ import {
   parseMdxCommentDirective,
   stripMdxComments,
 } from '../src/scripts/workshops/directivesShared.js';
+import { renderPracticeFragmentHtml } from '../src/scripts/workshops/htmlShared.js';
 
 const DEFAULT_OUTPUT = '/tmp/ediprofe-workshops-manifest.json';
 const DEFAULT_CONTENT_MANIFEST = '/tmp/ediprofe-content-manifest.json';
@@ -207,7 +208,7 @@ function parseInlineEquationLine(line) {
   return normalizeMathForDisplay(cleanInlineMarkdown(body));
 }
 
-function buildContextPayload(content) {
+async function buildContextPayload(content, filePath) {
   const rawContext = String(content || '').trim();
   const contextMdx = stripMdxComments(rawContext)
     .split('\n')
@@ -220,6 +221,7 @@ function buildContextPayload(content) {
   if (!rawContext) {
     return {
       context_mdx: '',
+      context_html: '',
       context_assets: [],
       context_blocks: [],
     };
@@ -229,6 +231,7 @@ function buildContextPayload(content) {
 
   return {
     context_mdx: contextMdx,
+    context_html: await renderPracticeFragmentHtml(contextMdx, { filePath }),
     context_assets: contextAssets,
     context_blocks: buildBlocks(rawContext, contextAssets),
   };
@@ -630,7 +633,7 @@ function parseDetailsSections(inner) {
   return sections;
 }
 
-function parseQuestion(section) {
+async function parseQuestion(section, filePath) {
   const preguntaRegex = /<Pregunta([^>]*)>([\s\S]*?)<\/Pregunta>/i;
   const preguntaMatch = section.raw.match(preguntaRegex);
   if (!preguntaMatch) {
@@ -680,6 +683,12 @@ function parseQuestion(section) {
   const questionId = String(attrs.id || section.number).trim();
   const anioRaw = attrs.anio ? Number.parseInt(String(attrs.anio), 10) : null;
 
+  const [stemHtml, feedbackHtml, conceptsHtml] = await Promise.all([
+    renderPracticeFragmentHtml(stemMdx, { filePath }),
+    renderPracticeFragmentHtml(feedbackMdx, { filePath }),
+    renderPracticeFragmentHtml(conceptsMdx, { filePath }),
+  ]);
+
   return {
     id: questionId,
     order: section.number,
@@ -692,14 +701,19 @@ function parseQuestion(section) {
       headerless: attrs.headerless === true,
     },
     stem_mdx: stemMdx,
+    stem_html: stemHtml,
     stem_assets: stemAssets,
     stem_blocks: buildBlocks(stemMdxRaw, stemAssets),
     options,
     correct_option_id: correctOption?.id ?? null,
     feedback_mdx: feedbackMdx,
+    feedback_html: feedbackHtml,
+    feedback_summary: answerDetails?.summary?.trim() || 'Respuesta',
     feedback_assets: feedbackAssets,
     feedback_blocks: buildBlocks(feedbackMdxRaw, feedbackAssets),
     concepts_mdx: conceptsMdx,
+    concepts_html: conceptsHtml,
+    concepts_summary: conceptDetails?.summary?.trim() || 'Conceptos relacionados',
     concepts_assets: conceptsAssets,
     concepts_blocks: buildBlocks(conceptsMdxRaw, conceptsAssets),
     app_payload_version: APP_PAYLOAD_VERSION,
@@ -723,7 +737,7 @@ function loadContentManifestMap(pathLike) {
   return map;
 }
 
-function buildWorkshopEntry(filePath, contentEntryMap, source) {
+async function buildWorkshopEntry(filePath, contentEntryMap, source) {
   const rel = normalizePath(relative(source.contentRoot, filePath));
   const parsed = rel.match(/^(.+)\.(md|mdx)$/);
   if (!parsed) return null;
@@ -736,9 +750,9 @@ function buildWorkshopEntry(filePath, contentEntryMap, source) {
   const { data: frontmatter, content } = parseFrontmatter(rawFile);
 
   const sections = splitQuestionSections(content);
-  const parsedQuestions = sections
-    .map(parseQuestion)
-    .filter(Boolean);
+  const parsedQuestions = (await Promise.all(
+    sections.map((section) => parseQuestion(section, filePath))
+  )).filter(Boolean);
 
   if (parsedQuestions.length === 0) {
     return null;
@@ -752,7 +766,7 @@ function buildWorkshopEntry(filePath, contentEntryMap, source) {
 
     const ranges = parseSharedContextRanges(stripMdxComments(detached));
     if (ranges.length > 0) {
-      const payload = buildContextPayload(detached);
+      const payload = await buildContextPayload(detached, filePath);
       ranges.forEach((range) => {
         sharedContexts.push({
           ...range,
@@ -762,7 +776,7 @@ function buildWorkshopEntry(filePath, contentEntryMap, source) {
       continue;
     }
 
-    Object.assign(question, buildContextPayload(detached));
+    Object.assign(question, await buildContextPayload(detached, filePath));
   }
 
   const questions = parsedQuestions.map((question) => {
@@ -781,11 +795,16 @@ function buildWorkshopEntry(filePath, contentEntryMap, source) {
       .filter(Boolean)
       .join('\n\n')
       .trim();
+    const contextHtml = contextualMatches
+      .map((context) => context.context_html)
+      .filter(Boolean)
+      .join('\n');
 
     const contextAssets = [...new Set(contextualMatches.flatMap((context) => context.context_assets || []))];
     const contextBlocks = contextualMatches.flatMap((context) => context.context_blocks || []);
 
     question.context_mdx = contextMdx;
+    question.context_html = contextHtml;
     question.context_assets = contextAssets;
     question.context_blocks = contextBlocks;
 
@@ -808,7 +827,12 @@ function buildWorkshopEntry(filePath, contentEntryMap, source) {
 
   const allAssets = [
     ...new Set(
-      questions.flatMap((q) => [...q.stem_assets, ...q.feedback_assets, ...(q.concepts_assets || [])])
+      questions.flatMap((q) => [
+        ...(q.context_assets || []),
+        ...(q.stem_assets || []),
+        ...(q.feedback_assets || []),
+        ...(q.concepts_assets || []),
+      ])
     ),
   ].sort();
 
@@ -833,15 +857,16 @@ function buildWorkshopEntry(filePath, contentEntryMap, source) {
   };
 }
 
-function main() {
+async function main() {
   const { output, contentManifest, publishedOnly } = parseArgs(process.argv.slice(2));
   const contentEntryMap = loadContentManifestMap(contentManifest);
 
   const files = CONTENT_SOURCES.flatMap((source) =>
     globSync(source.glob, { nodir: true }).sort().map((filePath) => ({ filePath, source }))
   );
-  const workshops = files
-    .map(({ filePath, source }) => buildWorkshopEntry(filePath, contentEntryMap, source))
+  const workshops = (await Promise.all(
+    files.map(({ filePath, source }) => buildWorkshopEntry(filePath, contentEntryMap, source))
+  ))
     .filter(Boolean)
     .filter((entry) => !publishedOnly || entry.published)
     .sort((a, b) => a.route.localeCompare(b.route));
@@ -879,4 +904,4 @@ function main() {
   console.log(`   Output:    ${output}`);
 }
 
-main();
+void main();

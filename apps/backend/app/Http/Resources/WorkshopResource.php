@@ -27,9 +27,13 @@ class WorkshopResource extends JsonResource
             if (! $includeAnswers) {
                 $question['correct_option_id'] = null;
                 $question['feedback_mdx'] = '';
+                $question['feedback_html'] = '';
+                $question['feedback_summary'] = null;
                 $question['feedback_assets'] = [];
                 $question['feedback_blocks'] = [];
                 $question['concepts_mdx'] = '';
+                $question['concepts_html'] = '';
+                $question['concepts_summary'] = null;
                 $question['concepts_assets'] = [];
                 $question['concepts_blocks'] = [];
 
@@ -42,7 +46,12 @@ class WorkshopResource extends JsonResource
             }
 
             if ($appFormat) {
-                unset($question['stem_mdx'], $question['feedback_mdx'], $question['concepts_mdx']);
+                unset(
+                    $question['stem_mdx'],
+                    $question['context_mdx'],
+                    $question['feedback_mdx'],
+                    $question['concepts_mdx']
+                );
             }
 
             return $question;

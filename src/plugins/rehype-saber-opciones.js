@@ -1,5 +1,5 @@
 /**
- * Plugin de rehype para transformar opciones de respuesta en talleres Saber
+ * Plugin de rehype para transformar opciones de respuesta en contenidos Saber/Simulacros
  *
  * Transforma párrafos con formato "A. texto\nB. texto\nC. texto\nD. texto"
  * en una estructura HTML con clases para estilizado.
@@ -158,8 +158,8 @@ export function rehypeSaberOpciones() {
   return (tree, file) => {
     const filePath = file.history?.[0] || file.path || '';
 
-    // Solo procesar archivos de saber
-    if (!filePath.includes('/saber/')) {
+    // Solo procesar archivos pedagógicos tipo saber/simulacros
+    if (!filePath.includes('/saber/') && !filePath.includes('/simulacros/')) {
       return;
     }
 

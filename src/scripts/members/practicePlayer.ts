@@ -24,14 +24,20 @@ type PracticeQuestion = {
   id: string;
   order?: number;
   stem_mdx?: string;
+  stem_html?: string;
   stem_blocks?: Array<Record<string, any>>;
   context_mdx?: string;
+  context_html?: string;
   context_blocks?: Array<Record<string, any>>;
   options?: PracticeOption[];
   correct_option_id?: string | null;
   feedback_mdx?: string;
+  feedback_html?: string;
+  feedback_summary?: string | null;
   feedback_blocks?: Array<Record<string, any>>;
   concepts_mdx?: string;
+  concepts_html?: string;
+  concepts_summary?: string | null;
   concepts_blocks?: Array<Record<string, any>>;
 };
 
@@ -55,8 +61,12 @@ type EvaluationResult = {
   correct_option_id: string | null;
   is_correct: boolean;
   feedback_mdx?: string;
+  feedback_html?: string;
+  feedback_summary?: string | null;
   feedback_blocks?: Array<Record<string, any>>;
   concepts_mdx?: string;
+  concepts_html?: string;
+  concepts_summary?: string | null;
   concepts_blocks?: Array<Record<string, any>>;
 };
 
@@ -426,7 +436,38 @@ export function mountPracticePlayer(options: PracticePlayerOptions): void {
       .join('');
   }
 
-  function hasMeaningfulContext(blocks: Array<Record<string, any>> = []): boolean {
+  function renderRichFragment(
+    html = '',
+    blocks: Array<Record<string, any>> = [],
+    fallbackText = '',
+    optionsArg: { feedback?: boolean; wrapperClass?: string } = {}
+  ): string {
+    const renderedHtml = String(html || '').trim();
+    if (renderedHtml) {
+      return optionsArg.wrapperClass
+        ? `<div class="${escapeHtml(optionsArg.wrapperClass)}">${renderedHtml}</div>`
+        : renderedHtml;
+    }
+
+    const renderedBlocks = renderBlocks(blocks, fallbackText, optionsArg);
+    if (!renderedBlocks) {
+      return '';
+    }
+
+    return optionsArg.wrapperClass
+      ? `<div class="${escapeHtml(optionsArg.wrapperClass)}">${renderedBlocks}</div>`
+      : renderedBlocks;
+  }
+
+  function hasMeaningfulContext(
+    blocks: Array<Record<string, any>> = [],
+    html = '',
+    fallbackText = ''
+  ): boolean {
+    if (String(html || '').trim() || String(fallbackText || '').trim()) {
+      return true;
+    }
+
     if (!Array.isArray(blocks) || blocks.length === 0) return false;
 
     return blocks.some((block) => {
@@ -650,6 +691,14 @@ export function mountPracticePlayer(options: PracticePlayerOptions): void {
         : Array.isArray(question.feedback_blocks)
         ? question.feedback_blocks
         : [];
+    const feedbackHtml =
+      state.mode === 'study'
+        ? evaluation?.feedback_html ?? ''
+        : question.feedback_html ?? '';
+    const feedbackSummary =
+      state.mode === 'study'
+        ? evaluation?.feedback_summary ?? question.feedback_summary ?? 'Respuesta'
+        : question.feedback_summary ?? 'Respuesta';
     const feedbackMdx =
       state.mode === 'study'
         ? evaluation?.feedback_mdx ?? ''
@@ -660,6 +709,14 @@ export function mountPracticePlayer(options: PracticePlayerOptions): void {
         : Array.isArray(question.concepts_blocks)
         ? question.concepts_blocks
         : [];
+    const conceptsHtml =
+      state.mode === 'study'
+        ? evaluation?.concepts_html ?? ''
+        : question.concepts_html ?? '';
+    const conceptsSummary =
+      state.mode === 'study'
+        ? evaluation?.concepts_summary ?? question.concepts_summary ?? 'Conceptos relacionados'
+        : question.concepts_summary ?? 'Conceptos relacionados';
     const conceptsMdx =
       state.mode === 'study'
         ? evaluation?.concepts_mdx ?? ''
@@ -689,25 +746,21 @@ export function mountPracticePlayer(options: PracticePlayerOptions): void {
           </div>
         </div>
         ${
-          feedbackBlocks.length > 0 || feedbackMdx
+          feedbackBlocks.length > 0 || feedbackMdx || feedbackHtml
             ? `
           <details class="practice-details">
-            <summary>Ver explicación de la respuesta</summary>
-            <div class="practice-details-body members-render">
-              ${renderBlocks(feedbackBlocks, feedbackMdx, { feedback: true })}
-            </div>
+            <summary>${escapeHtml(feedbackSummary || 'Respuesta')}</summary>
+            ${renderRichFragment(feedbackHtml, feedbackBlocks, feedbackMdx, { feedback: true })}
           </details>
         `
             : ''
         }
         ${
-          conceptBlocks.length > 0 || conceptsMdx
+          conceptBlocks.length > 0 || conceptsMdx || conceptsHtml
             ? `
-          <details class="practice-details">
-            <summary>Conceptos relacionados para profundizar</summary>
-            <div class="practice-details-body members-render">
-              ${renderBlocks(conceptBlocks, conceptsMdx, { feedback: true })}
-            </div>
+          <details class="practice-details conceptos-relacionados">
+            <summary>${escapeHtml(conceptsSummary || 'Conceptos relacionados')}</summary>
+            ${renderRichFragment(conceptsHtml, conceptBlocks, conceptsMdx, { feedback: true })}
           </details>
         `
             : ''
@@ -755,7 +808,11 @@ export function mountPracticePlayer(options: PracticePlayerOptions): void {
   function renderQuestionCard(question: PracticeQuestion, questions: PracticeQuestion[]): string {
     const selectedId = state.selectedByQuestion[question.id];
     const evaluation = getQuestionEvaluation(question);
-    const showContext = hasMeaningfulContext(question.context_blocks ?? []);
+    const showContext = hasMeaningfulContext(
+      question.context_blocks ?? [],
+      question.context_html ?? '',
+      question.context_mdx ?? ''
+    );
     const optionsHtml = (question.options ?? [])
       .map((option) => {
         const isSelected = selectedId === option.id;
@@ -805,17 +862,23 @@ export function mountPracticePlayer(options: PracticePlayerOptions): void {
             ? `
           <div class="practice-panel">
             <p class="practice-panel-title">Contexto compartido</p>
-            <div class="members-render">
-              ${renderBlocks(question.context_blocks ?? [], question.context_mdx ?? '')}
-            </div>
+            ${renderRichFragment(
+              question.context_html ?? '',
+              question.context_blocks ?? [],
+              question.context_mdx ?? '',
+              { wrapperClass: 'practice-rich-fragment' }
+            )}
           </div>
         `
             : ''
         }
 
-        <div class="members-render">
-          ${renderBlocks(question.stem_blocks ?? [], question.stem_mdx ?? '')}
-        </div>
+        ${renderRichFragment(
+          question.stem_html ?? '',
+          question.stem_blocks ?? [],
+          question.stem_mdx ?? '',
+          { wrapperClass: 'practice-rich-fragment' }
+        )}
 
         <div class="members-options">${optionsHtml}</div>
 

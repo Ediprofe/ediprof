@@ -8,7 +8,7 @@
  * Nota: Usamos clases específicas "saber-highlight" y "saber-tachado"
  * para evitar conflictos con otros estilos del proyecto.
  *
- * Solo aplica a archivos en /saber/
+ * Aplica a archivos pedagógicos de /saber/ y /simulacros/
  */
 import { visit } from 'unist-util-visit';
 
@@ -20,8 +20,8 @@ export function remarkSaberMarcadores() {
   return (tree, file) => {
     const filePath = file.history?.[0] || file.path || '';
 
-    // Solo procesar archivos de saber
-    if (!filePath.includes('/saber/')) {
+    // Solo procesar archivos pedagógicos tipo saber/simulacros
+    if (!filePath.includes('/saber/') && !filePath.includes('/simulacros/')) {
       return;
     }
 
