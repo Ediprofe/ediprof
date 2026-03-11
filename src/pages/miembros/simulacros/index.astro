@@ -32,7 +32,7 @@ import '../../../styles/members.css';
 </BaseLayout>
 
 <script>
-  import { apiMe, apiSimulacros, clearSession, getSessionToken, saveSession } from '../../../scripts/members/client';
+  import { apiMe, apiMyLibrary, clearSession, getSessionToken, saveSession } from '../../../scripts/members/client';
 
   const token = getSessionToken();
   if (!token) {
@@ -93,12 +93,12 @@ import '../../../styles/members.css';
         return;
       }
 
-      const response = await apiSimulacros();
+      const response = await apiMyLibrary({ contentType: 'simulacro' });
       const items = normalizeList(response);
 
       if (items.length === 0) {
         simulacrosWrap.innerHTML =
-          '<div class="members-alert">No hay simulacros disponibles. Ejecuta <code>npm run workshops:refresh:dev</code> y recarga.</div>';
+          '<div class="members-alert">No hay simulacros disponibles para tus cursos en este momento.</div>';
         return;
       }
 
@@ -133,6 +133,13 @@ import '../../../styles/members.css';
             <article class="members-item">
               <h4>${escapeHtml(item.title)}</h4>
               <p>${escapeHtml(item.area_slug || 'general')} · ${Number(item.stats?.total_questions || 0)} preguntas</p>
+              ${
+                Array.isArray(item.course_names) && item.course_names.length > 0
+                  ? `<p style="margin-top:0.35rem;">${item.course_names
+                      .map((course) => `<span class="members-pill approved">${escapeHtml(course.name)}</span>`)
+                      .join(' ')}</p>`
+                  : ''
+              }
               <div class="members-actions" style="margin-top:0.55rem;">
                 ${badge}
                 <a

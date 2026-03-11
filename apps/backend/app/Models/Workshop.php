@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Workshop extends Model
 {
@@ -49,5 +50,13 @@ class Workshop extends Model
             'metadata' => 'array',
             'synced_at' => 'datetime',
         ];
+    }
+
+    /**
+     * @return HasMany<CourseContent, $this>
+     */
+    public function courseContents(): HasMany
+    {
+        return $this->hasMany(CourseContent::class);
     }
 }

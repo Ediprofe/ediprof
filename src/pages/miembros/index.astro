@@ -20,12 +20,17 @@ import '../../styles/members.css';
       <section class="members-card">
         <div id="profile"></div>
         <div class="members-actions" style="margin-top: 0.8rem;">
-          <a class="members-button secondary" href="/miembros/talleres">Ir a talleres</a>
-          <a class="members-button secondary" href="/miembros/simulacros">Ir a simulacros</a>
+          <a class="members-button secondary" href="/miembros/talleres">Biblioteca de talleres</a>
+          <a class="members-button secondary" href="/miembros/simulacros">Biblioteca de simulacros</a>
           <a class="members-button secondary" href="/miembros/admin" id="admin-link" style="display:none;">Panel admin</a>
           <button class="members-button warn" id="logout-btn" type="button">Cerrar sesión</button>
         </div>
         <div id="feedback"></div>
+      </section>
+
+      <section class="members-card">
+        <h3 class="members-section-title">Mis cursos</h3>
+        <div id="courses-summary"></div>
       </section>
 
       <section class="members-card">
@@ -50,12 +55,11 @@ import '../../styles/members.css';
 
 <script>
   import {
-    apiSimulacros,
-    apiWorkshops,
     apiLogout,
     apiMe,
+    apiMyCourses,
+    apiMyLibrary,
     clearSession,
-    getApiBase,
     getSessionToken,
     saveSession,
   } from '../../scripts/members/client';
@@ -67,6 +71,7 @@ import '../../styles/members.css';
 
   const profile = document.getElementById('profile');
   const feedback = document.getElementById('feedback');
+  const coursesSummary = document.getElementById('courses-summary');
   const routeWrap = document.getElementById('route');
   const workshopSummary = document.getElementById('workshop-summary');
   const simulacroSummary = document.getElementById('simulacro-summary');
@@ -117,38 +122,52 @@ import '../../styles/members.css';
     return [];
   }
 
-  function mergeWorkshops(primary = [], secondary = []) {
-    const byId = new Map();
-    [...primary, ...secondary].forEach((item) => {
-      if (!item?.id) return;
-      byId.set(item.id, item);
-    });
-    return Array.from(byId.values());
-  }
-
   function renderRoute(status) {
-    const approveDone = status === 'approved' || status === 'blocked';
-    const practiceDone = status === 'approved';
-    const feedbackDone = status === 'approved';
-
     routeWrap.innerHTML = `
       <div class="members-steps">
         <article class="members-step done">
-          <strong>1. Registro</strong>
-          <p>Cuenta creada y activa.</p>
+          <strong>1. Ingreso institucional</strong>
+          <p>Acceso con tu correo del colegio.</p>
         </article>
-        <article class="members-step ${approveDone ? 'done' : 'current'}">
-          <strong>2. Revisión admin</strong>
-          <p>${status === 'pending' ? 'Esperando aprobación manual.' : `Estado: ${statusLabel(status)}.`}</p>
+        <article class="members-step ${status === 'approved' ? 'done' : status === 'blocked' ? '' : 'current'}">
+          <strong>2. Cursos asignados</strong>
+          <p>${status === 'approved' ? 'Tus cursos habilitan la biblioteca.' : 'El admin puede activar o ajustar tus accesos.'}</p>
         </article>
-        <article class="members-step ${practiceDone ? 'done' : ''}">
-          <strong>3. Práctica de talleres</strong>
-          <p>${practiceDone ? 'Ya puedes resolver preguntas.' : 'Se habilita al aprobar la cuenta.'}</p>
+        <article class="members-step ${status === 'approved' ? 'done' : ''}">
+          <strong>3. Biblioteca libre</strong>
+          <p>${status === 'approved' ? 'Puedes practicar en modo estudio o simulacro libre.' : 'Se habilita cuando tu acceso esté activo.'}</p>
         </article>
-        <article class="members-step ${feedbackDone ? 'done' : ''}">
+        <article class="members-step ${status === 'approved' ? 'done' : ''}">
           <strong>4. Retroalimentación</strong>
-          <p>${feedbackDone ? 'Recibe explicación inmediata por pregunta.' : 'Disponible cuando empieces a practicar.'}</p>
+          <p>${status === 'approved' ? 'Profundiza con solución guiada y conceptos relacionados.' : 'Aparecerá cuando tu biblioteca esté activa.'}</p>
         </article>
+      </div>
+    `;
+  }
+
+  function renderCourses(courses) {
+    if (!Array.isArray(courses) || courses.length === 0) {
+      coursesSummary.innerHTML =
+        '<div class="members-alert">Todavía no tienes cursos con biblioteca asignada.</div>';
+      return;
+    }
+
+    coursesSummary.innerHTML = `
+      <div class="members-grid">
+        ${courses
+          .map(
+            (course) => `
+          <article class="members-item">
+            <h4>${escapeHtml(course.name)}</h4>
+            <p>${escapeHtml(course.school_year || '2026')}</p>
+            <p style="margin-top:0.35rem;">
+              <span class="members-pill approved">${Number(course?.stats?.contents || 0)} contenidos</span>
+              <span class="members-pill pending" style="margin-left:0.35rem;">${Number(course?.stats?.simulacros || 0)} simulacros</span>
+            </p>
+          </article>
+        `
+          )
+          .join('')}
       </div>
     `;
   }
@@ -312,8 +331,8 @@ import '../../styles/members.css';
             <p><span class="members-pill ${statusClass(user.member_status)}">${statusLabel(user.member_status)}</span></p>
           </div>
           <div class="members-item">
-            <h4>API</h4>
-            <p>${getApiBase()}</p>
+            <h4>Acceso</h4>
+            <p>${user.auth_provider === 'google' ? 'Google institucional' : 'Correo y contraseña'}</p>
           </div>
         </div>
       `;
@@ -325,34 +344,30 @@ import '../../styles/members.css';
       renderRoute(user.member_status);
 
       if (user.member_status === 'pending') {
-        feedback.innerHTML = `<div class="members-alert">Tu cuenta está pendiente de aprobación manual por el administrador.</div>`;
+        feedback.innerHTML = `<div class="members-alert">Tu cuenta todavía no tiene biblioteca activa. El administrador puede asociarte cursos y contenidos.</div>`;
+        coursesSummary.innerHTML =
+          '<div class="members-alert">Aquí verás tus cursos cuando el administrador los asigne.</div>';
         workshopSummary.innerHTML =
-          '<div class="members-alert">Cuando tu estado sea <strong>Aprobado</strong>, aquí verás tus talleres y avance.</div>';
+          '<div class="members-alert">Aquí verás los talleres asignados a tus cursos.</div>';
         simulacroSummary.innerHTML =
-          '<div class="members-alert">Cuando tu estado sea <strong>Aprobado</strong>, aquí verás tus simulacros y avance.</div>';
+          '<div class="members-alert">Aquí verás los simulacros asignados a tus cursos.</div>';
       } else if (user.member_status === 'blocked') {
         feedback.innerHTML = `<div class="members-alert error">Tu cuenta fue bloqueada. Contacta al administrador.</div>`;
+        coursesSummary.innerHTML =
+          '<div class="members-alert error">No tienes acceso a cursos mientras tu cuenta esté bloqueada.</div>';
         workshopSummary.innerHTML =
           '<div class="members-alert error">Tu acceso premium está bloqueado. Contacta al administrador.</div>';
         simulacroSummary.innerHTML =
           '<div class="members-alert error">Tu acceso premium está bloqueado. Contacta al administrador.</div>';
       } else {
-        const workshopsResponse = await apiWorkshops();
-        const simulacrosResponse = await apiSimulacros();
-        let items = normalizeWorkshopList(workshopsResponse);
+        const [coursesResponse, workshopsResponse, simulacrosResponse] = await Promise.all([
+          apiMyCourses(),
+          apiMyLibrary({ contentType: 'taller' }),
+          apiMyLibrary({ contentType: 'simulacro' }),
+        ]);
 
-        const isLocalHost = ['localhost', '127.0.0.1'].includes(window.location.hostname);
-        if (isLocalHost) {
-          try {
-            const draftsResponse = await apiWorkshops({ published: false });
-            const drafts = normalizeWorkshopList(draftsResponse);
-            items = mergeWorkshops(items, drafts);
-          } catch {
-            // Ignorar fallback en local si falla
-          }
-        }
-
-        renderWorkshopSummary(items);
+        renderCourses(Array.isArray(coursesResponse?.data) ? coursesResponse.data : []);
+        renderWorkshopSummary(normalizeWorkshopList(workshopsResponse));
         renderSimulacroSummary(normalizeWorkshopList(simulacrosResponse));
       }
     } catch (error) {

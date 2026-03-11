@@ -2,10 +2,12 @@
 
 namespace Database\Seeders;
 
+use App\Models\Course;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class DatabaseSeeder extends Seeder
 {
@@ -37,8 +39,27 @@ class DatabaseSeeder extends Seeder
                 'password' => Hash::make('password'),
                 'role' => 'student',
                 'member_status' => 'approved',
+                'auth_provider' => 'password',
                 'email_verified_at' => now(),
             ]
         );
+
+        collect([
+            'ICFES 11°1',
+            'ICFES 11°2',
+            'ICFES 11°3',
+            'Ciencias 8°2',
+            'Ciencias 8°3',
+        ])->each(function (string $name): void {
+            Course::query()->updateOrCreate(
+                ['slug' => Str::slug($name)],
+                [
+                    'name' => $name,
+                    'school_year' => '2026',
+                    'is_active' => true,
+                    'notes' => 'Curso base sembrado por Ediprofe.',
+                ]
+            );
+        });
     }
 }

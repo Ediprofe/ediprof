@@ -13,11 +13,14 @@ import '../../styles/members.css';
     <main class="members-container">
       <SectionHeader
         badge="Miembros"
-        title="Crear Cuenta de Estudiante"
-        description="Tu cuenta quedará pendiente y el administrador del colegio la aprobará manualmente."
+        title="Registro local"
+        description="Esta ruta se mantiene solo para desarrollo o acceso administrativo. Tus estudiantes deben ingresar con Google institucional."
       />
 
       <section class="members-card">
+        <div class="members-alert" style="margin-top:0; margin-bottom:0.9rem;">
+          El flujo principal para estudiantes es <strong>Google institucional</strong> desde <a class="members-link" href="/miembros/login">/miembros/login</a>.
+        </div>
         <form id="register-form" class="members-form">
           <label class="members-label" for="api-base">API Base URL</label>
           <input id="api-base" class="members-input" type="url" required />

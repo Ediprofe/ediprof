@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\Api\V1\AuthController;
 use App\Http\Controllers\Api\V1\Admin\StudentAccessController;
+use App\Http\Controllers\Api\V1\Admin\CourseController;
 use App\Http\Controllers\Api\V1\ContentController;
+use App\Http\Controllers\Api\V1\MemberLibraryController;
 use App\Http\Controllers\Api\V1\SimulacroController;
 use App\Http\Controllers\Api\V1\WorkshopController;
 use Illuminate\Http\Request;
@@ -22,8 +24,11 @@ Route::prefix('v1')->middleware('resolve.api_token')->group(function (): void {
 
     Route::post('/auth/register', [AuthController::class, 'register'])->middleware('throttle:auth-register');
     Route::post('/auth/login', [AuthController::class, 'login'])->middleware('throttle:auth-login');
+    Route::post('/auth/google/login', [AuthController::class, 'googleLogin'])->middleware('throttle:auth-login');
     Route::get('/auth/me', [AuthController::class, 'me'])->middleware('require.api_token');
     Route::post('/auth/logout', [AuthController::class, 'logout'])->middleware('require.api_token');
+    Route::get('/me/courses', [MemberLibraryController::class, 'courses'])->middleware('require.api_token');
+    Route::get('/me/library', [MemberLibraryController::class, 'library'])->middleware('require.api_token');
 
     Route::get('/content', [ContentController::class, 'index']);
     Route::get('/workshops', [WorkshopController::class, 'index']);
@@ -42,5 +47,13 @@ Route::prefix('v1')->middleware('resolve.api_token')->group(function (): void {
         Route::post('/students/{studentId}/approve', [StudentAccessController::class, 'approve']);
         Route::post('/students/{studentId}/block', [StudentAccessController::class, 'block']);
         Route::post('/students/{studentId}/revoke-premium', [StudentAccessController::class, 'revokePremium']);
+        Route::get('/courses', [CourseController::class, 'index']);
+        Route::post('/courses', [CourseController::class, 'store']);
+        Route::patch('/courses/{courseId}', [CourseController::class, 'update']);
+        Route::post('/courses/{courseId}/enrollments/import', [CourseController::class, 'importEnrollments']);
+        Route::get('/courses/{courseId}/contents', [CourseController::class, 'contents']);
+        Route::post('/courses/{courseId}/contents', [CourseController::class, 'attachContent']);
+        Route::delete('/courses/{courseId}/contents/{contentId}', [CourseController::class, 'detachContent'])
+            ->where('contentId', '.*');
     });
 });

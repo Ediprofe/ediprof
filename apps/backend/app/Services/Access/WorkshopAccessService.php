@@ -8,6 +8,11 @@ use Illuminate\Support\Carbon;
 
 class WorkshopAccessService
 {
+    public function __construct(
+        private readonly CourseLibraryService $courseLibraryService
+    ) {
+    }
+
     public function canAccessWorkshop(?User $user, Workshop $workshop): bool
     {
         if ($workshop->access_tier !== 'premium') {
@@ -22,12 +27,16 @@ class WorkshopAccessService
             return true;
         }
 
-        if ($this->hasActiveSubscription($user)) {
+        if ($user->member_status !== 'approved') {
+            return false;
+        }
+
+        if ($this->courseLibraryService->userHasWorkshopAccess($user, $workshop)) {
             return true;
         }
 
-        if ($user->member_status !== 'approved') {
-            return false;
+        if ($this->hasActiveSubscription($user)) {
+            return true;
         }
 
         return $this->hasActiveGrant($user, $workshop);

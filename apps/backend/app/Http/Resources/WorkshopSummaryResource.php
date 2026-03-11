@@ -33,6 +33,7 @@ class WorkshopSummaryResource extends JsonResource
             ],
             'asset_preview' => array_slice((array) ($this->assets ?? []), 0, 1),
             'can_access' => (bool) ($this->can_access ?? false),
+            'course_names' => array_values((array) ($this->course_names ?? [])),
             'updated_at' => $this->updated_at?->toIso8601String(),
         ];
     }

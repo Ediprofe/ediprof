@@ -1,0 +1,485 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Layout/Header.astro';
+import Footer from '../../../components/Layout/Footer.astro';
+import SectionHeader from '../../../components/UI/SectionHeader.astro';
+import '../../../styles/members.css';
+---
+
+<BaseLayout title="Miembros | Administración académica" showTopBar={false}>
+  <div class="members-hub">
+    <Header />
+
+    <main class="members-container">
+      <SectionHeader
+        badge="Administración"
+        title="Cursos y biblioteca"
+        description="Crea cursos, importa estudiantes por CSV y asocia talleres o simulacros a cada grupo."
+      />
+
+      <section class="members-card">
+        <div class="members-actions" style="margin-bottom:0.8rem;">
+          <a class="members-button secondary" href="/miembros/admin">Volver al panel admin</a>
+          <a class="members-button secondary" href="/miembros">Volver a miembros</a>
+        </div>
+        <div id="feedback"></div>
+      </section>
+
+      <section class="members-card">
+        <h3 class="members-section-title">Crear curso</h3>
+        <form id="create-course-form" class="members-form">
+          <label class="members-label" for="course-name">Nombre</label>
+          <input id="course-name" class="members-input" type="text" placeholder="ICFES 11°1" required />
+
+          <label class="members-label" for="course-school-year">Año escolar</label>
+          <input id="course-school-year" class="members-input" type="text" value="2026" />
+
+          <label class="members-label" for="course-notes">Notas</label>
+          <textarea id="course-notes" class="members-input" rows="3" placeholder="Uso de clase, observaciones o enfoque del curso."></textarea>
+
+          <div class="members-actions">
+            <button class="members-button" type="submit">Crear curso</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="members-card">
+        <h3 class="members-section-title">Cursos activos</h3>
+        <div id="courses-grid" class="members-grid"></div>
+      </section>
+
+      <section class="members-card" id="course-manager" style="display:none;">
+        <div id="selected-course-summary"></div>
+
+        <div class="members-grid" style="margin-top:1rem;">
+          <article class="members-item">
+            <h4 style="margin-bottom:0.6rem;">Editar curso</h4>
+            <form id="edit-course-form" class="members-form">
+              <label class="members-label" for="edit-course-name">Nombre</label>
+              <input id="edit-course-name" class="members-input" type="text" required />
+
+              <label class="members-label" for="edit-course-school-year">Año escolar</label>
+              <input id="edit-course-school-year" class="members-input" type="text" />
+
+              <label class="members-label" for="edit-course-active">Estado</label>
+              <select id="edit-course-active" class="members-select">
+                <option value="true">Activo</option>
+                <option value="false">Inactivo</option>
+              </select>
+
+              <label class="members-label" for="edit-course-notes">Notas</label>
+              <textarea id="edit-course-notes" class="members-input" rows="4"></textarea>
+
+              <div class="members-actions">
+                <button class="members-button" type="submit">Guardar cambios</button>
+              </div>
+            </form>
+          </article>
+
+          <article class="members-item">
+            <h4 style="margin-bottom:0.6rem;">Importar estudiantes (CSV)</h4>
+            <p class="members-subtitle" style="margin-bottom:0.75rem;">
+              Usa columnas <code>email</code> y opcionalmente <code>name</code>/<code>nombre</code>.
+            </p>
+            <form id="enrollment-import-form" class="members-form">
+              <input id="enrollment-csv" class="members-input" type="file" accept=".csv,text/csv" required />
+              <div class="members-actions">
+                <button class="members-button" type="submit">Importar matrícula</button>
+              </div>
+            </form>
+            <div id="import-result"></div>
+          </article>
+        </div>
+
+        <div class="members-grid" style="margin-top:1rem;">
+          <article class="members-item">
+            <h4 style="margin-bottom:0.6rem;">Asociar contenido</h4>
+            <div class="members-form">
+              <label class="members-label" for="content-type-filter">Tipo</label>
+              <select id="content-type-filter" class="members-select">
+                <option value="all">Todos</option>
+                <option value="taller">Talleres</option>
+                <option value="simulacro">Simulacros</option>
+              </select>
+
+              <label class="members-label" for="content-search">Buscar por título</label>
+              <input id="content-search" class="members-input" type="text" placeholder="Ej. química, genética, sesión 1..." />
+            </div>
+
+            <div id="available-content" class="members-list" style="margin-top:0.8rem;"></div>
+          </article>
+
+          <article class="members-item">
+            <h4 style="margin-bottom:0.6rem;">Biblioteca del curso</h4>
+            <div id="course-contents" class="members-list" style="margin-top:0;"></div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </div>
+</BaseLayout>
+
+<script>
+  import {
+    apiAdminAddCourseContent,
+    apiAdminCourseContents,
+    apiAdminCourses,
+    apiAdminCreateCourse,
+    apiAdminImportCourseEnrollments,
+    apiAdminRemoveCourseContent,
+    apiAdminUpdateCourse,
+    apiMe,
+    apiSimulacros,
+    apiWorkshops,
+    clearSession,
+    getSessionToken,
+    saveSession,
+  } from '../../../scripts/members/client';
+
+  const token = getSessionToken();
+  if (!token) {
+    window.location.href = '/miembros/login';
+  }
+
+  const feedback = document.getElementById('feedback');
+  const coursesGrid = document.getElementById('courses-grid');
+  const courseManager = document.getElementById('course-manager');
+  const selectedCourseSummary = document.getElementById('selected-course-summary');
+  const createCourseForm = document.getElementById('create-course-form');
+  const editCourseForm = document.getElementById('edit-course-form');
+  const enrollmentImportForm = document.getElementById('enrollment-import-form');
+  const enrollmentCsv = document.getElementById('enrollment-csv');
+  const importResult = document.getElementById('import-result');
+  const contentTypeFilter = document.getElementById('content-type-filter');
+  const contentSearch = document.getElementById('content-search');
+  const availableContent = document.getElementById('available-content');
+  const courseContents = document.getElementById('course-contents');
+
+  let courses = [];
+  let selectedCourseId = null;
+  let allContents = [];
+  let attachedContentIds = new Set();
+
+  function escapeHtml(value) {
+    return String(value ?? '')
+      .replaceAll('&', '&amp;')
+      .replaceAll('<', '&lt;')
+      .replaceAll('>', '&gt;')
+      .replaceAll('"', '&quot;')
+      .replaceAll("'", '&#039;');
+  }
+
+  function normalizeList(response) {
+    const firstLevel = response?.data;
+    if (Array.isArray(firstLevel)) return firstLevel;
+    if (Array.isArray(firstLevel?.data)) return firstLevel.data;
+    return [];
+  }
+
+  function currentCourse() {
+    return courses.find((course) => course.id === selectedCourseId) || null;
+  }
+
+  function setFeedback(message, type = 'ok') {
+    feedback.innerHTML = `<div class="members-alert ${type === 'error' ? 'error' : 'ok'}">${escapeHtml(message)}</div>`;
+  }
+
+  function renderCourses() {
+    if (!Array.isArray(courses) || courses.length === 0) {
+      coursesGrid.innerHTML = '<div class="members-alert">Todavía no hay cursos creados.</div>';
+      courseManager.style.display = 'none';
+      return;
+    }
+
+    coursesGrid.innerHTML = courses
+      .map((course) => {
+        const current = course.id === selectedCourseId;
+        return `
+          <article class="members-item" style="${current ? 'border-color: var(--color-primary); box-shadow: 0 0 0 2px color-mix(in oklab, var(--color-primary) 18%, transparent);' : ''}">
+            <h4>${escapeHtml(course.name)}</h4>
+            <p>${escapeHtml(course.school_year || '2026')}</p>
+            <p style="margin-top:0.35rem;">
+              <span class="members-pill approved">${Number(course?.stats?.students || 0)} estudiantes</span>
+              <span class="members-pill pending" style="margin-left:0.35rem;">${Number(course?.stats?.contents || 0)} contenidos</span>
+            </p>
+            <div class="members-actions" style="margin-top:0.65rem;">
+              <button class="members-button secondary" type="button" data-course-id="${course.id}">Gestionar</button>
+            </div>
+          </article>
+        `;
+      })
+      .join('');
+
+    coursesGrid.querySelectorAll('[data-course-id]').forEach((button) => {
+      button.addEventListener('click', async () => {
+        selectedCourseId = Number(button.getAttribute('data-course-id'));
+        renderCourses();
+        await loadSelectedCourse();
+      });
+    });
+  }
+
+  function syncEditForm(course) {
+    document.getElementById('edit-course-name').value = course.name || '';
+    document.getElementById('edit-course-school-year').value = course.school_year || '';
+    document.getElementById('edit-course-active').value = String(Boolean(course.is_active));
+    document.getElementById('edit-course-notes').value = course.notes || '';
+  }
+
+  function renderSelectedCourseHeader(course) {
+    selectedCourseSummary.innerHTML = `
+      <div class="members-grid">
+        <article class="members-item">
+          <h4>${escapeHtml(course.name)}</h4>
+          <p>${escapeHtml(course.school_year || '2026')}</p>
+        </article>
+        <article class="members-item">
+          <h4>Estudiantes activos</h4>
+          <p>${Number(course?.stats?.students || 0)}</p>
+        </article>
+        <article class="members-item">
+          <h4>Biblioteca asociada</h4>
+          <p>${Number(course?.stats?.contents || 0)} contenidos</p>
+        </article>
+      </div>
+    `;
+  }
+
+  function renderAvailableContents() {
+    const type = contentTypeFilter.value;
+    const search = contentSearch.value.trim().toLowerCase();
+
+    const filtered = allContents
+      .filter((item) => (type === 'all' ? true : item.content_type === type))
+      .filter((item) => item.title.toLowerCase().includes(search))
+      .slice(0, 18);
+
+    if (filtered.length === 0) {
+      availableContent.innerHTML = '<div class="members-alert">No hay contenidos que coincidan con ese filtro.</div>';
+      return;
+    }
+
+    availableContent.innerHTML = filtered
+      .map((item) => {
+        const alreadyAttached = attachedContentIds.has(item.id);
+        return `
+          <article class="members-item">
+            <h4>${escapeHtml(item.title)}</h4>
+            <p>${escapeHtml(item.content_type)} · ${escapeHtml(item.area_slug || 'general')} · ${Number(item?.stats?.total_questions || 0)} preguntas</p>
+            <div class="members-actions" style="margin-top:0.55rem;">
+              <button class="members-button ${alreadyAttached ? 'secondary' : ''}" type="button" data-add-content="${escapeHtml(item.id)}" ${alreadyAttached ? 'disabled' : ''}>
+                ${alreadyAttached ? 'Ya asociado' : 'Añadir al curso'}
+              </button>
+            </div>
+          </article>
+        `;
+      })
+      .join('');
+
+    availableContent.querySelectorAll('[data-add-content]').forEach((button) => {
+      button.addEventListener('click', async () => {
+        const contentId = button.getAttribute('data-add-content');
+        if (!selectedCourseId || !contentId) return;
+        try {
+          button.setAttribute('disabled', 'disabled');
+          await apiAdminAddCourseContent(selectedCourseId, contentId);
+          await refreshCourses();
+          await loadSelectedCourse();
+          setFeedback('Contenido asociado correctamente al curso.');
+        } catch (error) {
+          const message = error instanceof Error ? error.message : 'No fue posible asociar el contenido.';
+          setFeedback(message, 'error');
+        } finally {
+          button.removeAttribute('disabled');
+        }
+      });
+    });
+  }
+
+  function renderAttachedContents(items) {
+    attachedContentIds = new Set(items.map((item) => item.id));
+
+    if (items.length === 0) {
+      courseContents.innerHTML = '<div class="members-alert">Este curso todavía no tiene contenidos asociados.</div>';
+      renderAvailableContents();
+      return;
+    }
+
+    courseContents.innerHTML = items
+      .map((item) => `
+        <article class="members-item">
+          <h4>${escapeHtml(item.title)}</h4>
+          <p>${escapeHtml(item.content_type)} · ${escapeHtml(item.area_slug || 'general')} · ${Number(item?.stats?.total_questions || 0)} preguntas</p>
+          <div class="members-actions" style="margin-top:0.55rem;">
+            <button class="members-button warn" type="button" data-remove-content="${escapeHtml(item.id)}">Quitar</button>
+          </div>
+        </article>
+      `)
+      .join('');
+
+    courseContents.querySelectorAll('[data-remove-content]').forEach((button) => {
+      button.addEventListener('click', async () => {
+        const contentId = button.getAttribute('data-remove-content');
+        if (!selectedCourseId || !contentId) return;
+        try {
+          button.setAttribute('disabled', 'disabled');
+          await apiAdminRemoveCourseContent(selectedCourseId, contentId);
+          await refreshCourses();
+          await loadSelectedCourse();
+          setFeedback('Contenido retirado del curso.');
+        } catch (error) {
+          const message = error instanceof Error ? error.message : 'No fue posible retirar el contenido.';
+          setFeedback(message, 'error');
+        } finally {
+          button.removeAttribute('disabled');
+        }
+      });
+    });
+
+    renderAvailableContents();
+  }
+
+  async function refreshCourses() {
+    const response = await apiAdminCourses();
+    courses = Array.isArray(response?.data) ? response.data : [];
+    if (!selectedCourseId && courses.length > 0) {
+      selectedCourseId = courses[0].id;
+    }
+    if (selectedCourseId && !courses.some((course) => course.id === selectedCourseId)) {
+      selectedCourseId = courses[0]?.id ?? null;
+    }
+    renderCourses();
+  }
+
+  async function loadSelectedCourse() {
+    const course = currentCourse();
+    if (!course) {
+      courseManager.style.display = 'none';
+      return;
+    }
+
+    courseManager.style.display = 'block';
+    renderSelectedCourseHeader(course);
+    syncEditForm(course);
+
+    const response = await apiAdminCourseContents(course.id);
+    const items = Array.isArray(response?.data?.items) ? response.data.items : [];
+    renderAttachedContents(items);
+  }
+
+  async function boot() {
+    try {
+      const me = await apiMe();
+      const user = me?.data?.user;
+      if (!user) {
+        throw new Error('No se pudo validar la sesión.');
+      }
+
+      saveSession(token, user);
+
+      if (user.role !== 'admin') {
+        setFeedback('No tienes permisos de administrador.', 'error');
+        return;
+      }
+
+      const [coursesResponse, workshopsResponse, simulacrosResponse] = await Promise.all([
+        apiAdminCourses(),
+        apiWorkshops(),
+        apiSimulacros(),
+      ]);
+
+      courses = Array.isArray(coursesResponse?.data) ? coursesResponse.data : [];
+      allContents = [...normalizeList(workshopsResponse), ...normalizeList(simulacrosResponse)];
+
+      if (courses.length > 0) {
+        selectedCourseId = courses[0].id;
+      }
+
+      renderCourses();
+      await loadSelectedCourse();
+    } catch (error) {
+      clearSession();
+      window.location.href = '/miembros/login';
+    }
+  }
+
+  createCourseForm?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    try {
+      await apiAdminCreateCourse({
+        name: document.getElementById('course-name').value.trim(),
+        school_year: document.getElementById('course-school-year').value.trim(),
+        notes: document.getElementById('course-notes').value.trim(),
+      });
+      createCourseForm.reset();
+      document.getElementById('course-school-year').value = '2026';
+      await refreshCourses();
+      await loadSelectedCourse();
+      setFeedback('Curso creado correctamente.');
+    } catch (error) {
+      const message = error instanceof Error ? error.message : 'No fue posible crear el curso.';
+      setFeedback(message, 'error');
+    }
+  });
+
+  editCourseForm?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    if (!selectedCourseId) return;
+    try {
+      await apiAdminUpdateCourse(selectedCourseId, {
+        name: document.getElementById('edit-course-name').value.trim(),
+        school_year: document.getElementById('edit-course-school-year').value.trim(),
+        is_active: document.getElementById('edit-course-active').value === 'true',
+        notes: document.getElementById('edit-course-notes').value.trim(),
+      });
+      await refreshCourses();
+      await loadSelectedCourse();
+      setFeedback('Curso actualizado correctamente.');
+    } catch (error) {
+      const message = error instanceof Error ? error.message : 'No fue posible actualizar el curso.';
+      setFeedback(message, 'error');
+    }
+  });
+
+  enrollmentImportForm?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    if (!selectedCourseId) return;
+
+    const file = enrollmentCsv?.files?.[0];
+    if (!file) {
+      importResult.innerHTML = '<div class="members-alert error">Selecciona un archivo CSV antes de importar.</div>';
+      return;
+    }
+
+    try {
+      const response = await apiAdminImportCourseEnrollments(selectedCourseId, file);
+      const summary = response?.data?.summary || {};
+      const errors = Array.isArray(response?.data?.errors) ? response.data.errors : [];
+      importResult.innerHTML = `
+        <div class="members-alert ok">
+          Importación lista: ${Number(summary.enrolled_users || 0)} matrículas, ${Number(summary.created_users || 0)} usuarios creados.
+        </div>
+        ${
+          errors.length > 0
+            ? `<div class="members-alert error">${errors
+                .slice(0, 6)
+                .map((item) => `Línea ${escapeHtml(item.line)}: ${escapeHtml(item.message)}`)
+                .join('<br>')}</div>`
+            : ''
+        }
+      `;
+      await refreshCourses();
+      await loadSelectedCourse();
+    } catch (error) {
+      const message = error instanceof Error ? error.message : 'No fue posible importar el CSV.';
+      importResult.innerHTML = `<div class="members-alert error">${escapeHtml(message)}</div>`;
+    }
+  });
+
+  contentTypeFilter?.addEventListener('change', renderAvailableContents);
+  contentSearch?.addEventListener('input', renderAvailableContents);
+
+  boot();
+</script>

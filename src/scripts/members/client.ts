@@ -4,6 +4,8 @@ type MemberUser = {
   email: string;
   role?: string;
   member_status?: string;
+  auth_provider?: string | null;
+  google_avatar_url?: string | null;
 };
 
 type LoginResponse = {
@@ -148,6 +150,21 @@ export async function apiLogin(input: {
   return parseApiResponse<LoginResponse>(response);
 }
 
+export async function apiGoogleLogin(input: {
+  credential: string;
+  device_name?: string;
+}): Promise<LoginResponse> {
+  const response = await fetch(`${getApiBase()}/auth/google/login`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(input),
+  });
+
+  return parseApiResponse<LoginResponse>(response);
+}
+
 export async function apiMe(): Promise<any> {
   const token = getSessionToken();
   if (!token) {
@@ -180,12 +197,56 @@ export async function apiLogout(): Promise<void> {
   clearSession();
 }
 
+function getAuthorizedHeaders(extra: Record<string, string> = {}): Record<string, string> {
+  const token = getSessionToken();
+  if (!token) {
+    throw new Error('No active session.');
+  }
+
+  return {
+    Authorization: `Bearer ${token}`,
+    ...extra,
+  };
+}
+
 export async function apiWorkshops(options: { published?: boolean } = {}): Promise<any> {
   return apiCatalog('workshops', options);
 }
 
 export async function apiSimulacros(options: { published?: boolean } = {}): Promise<any> {
   return apiCatalog('simulacros', options);
+}
+
+export async function apiMyCourses(): Promise<any> {
+  const response = await fetch(`${getApiBase()}/me/courses`, {
+    headers: getAuthorizedHeaders(),
+  });
+
+  return parseApiResponse<any>(response);
+}
+
+export async function apiMyLibrary(options: {
+  published?: boolean;
+  contentType?: 'taller' | 'simulacro';
+  search?: string;
+} = {}): Promise<any> {
+  const params = new URLSearchParams();
+  params.set('per_page', '60');
+  if (typeof options.published === 'boolean') {
+    params.set('published', String(options.published));
+  }
+  if (options.contentType) {
+    params.set('content_type', options.contentType);
+  }
+  if (options.search) {
+    params.set('search', options.search);
+  }
+
+  const response = await fetch(`${getApiBase()}/me/library?${params.toString()}`, {
+    headers: getAuthorizedHeaders(),
+  });
+
+  return parseApiResponse<any>(response);
 }
 
 function encodeCompositeId(value: string): string {
@@ -297,11 +358,6 @@ export async function apiEvaluateSimulacro(
 }
 
 export async function apiAdminListStudents(filters: { status?: string; search?: string } = {}): Promise<any> {
-  const token = getSessionToken();
-  if (!token) {
-    throw new Error('No active session.');
-  }
-
   const params = new URLSearchParams();
   if (filters.status) {
     params.set('status', filters.status);
@@ -312,9 +368,7 @@ export async function apiAdminListStudents(filters: { status?: string; search?: 
   params.set('per_page', '100');
 
   const response = await fetch(`${getApiBase()}/admin/students?${params.toString()}`, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
+    headers: getAuthorizedHeaders(),
   });
 
   return parseApiResponse<any>(response);
@@ -324,16 +378,106 @@ export async function apiAdminAction(
   studentId: number,
   action: 'approve' | 'block' | 'revoke-premium'
 ): Promise<any> {
-  const token = getSessionToken();
-  if (!token) {
-    throw new Error('No active session.');
-  }
-
   const response = await fetch(`${getApiBase()}/admin/students/${studentId}/${action}`, {
     method: 'POST',
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
+    headers: getAuthorizedHeaders(),
+  });
+
+  return parseApiResponse<any>(response);
+}
+
+export async function apiAdminCourses(): Promise<any> {
+  const response = await fetch(`${getApiBase()}/admin/courses`, {
+    headers: getAuthorizedHeaders(),
+  });
+
+  return parseApiResponse<any>(response);
+}
+
+export async function apiAdminCreateCourse(input: {
+  name: string;
+  slug?: string;
+  school_year?: string;
+  is_active?: boolean;
+  notes?: string;
+}): Promise<any> {
+  const response = await fetch(`${getApiBase()}/admin/courses`, {
+    method: 'POST',
+    headers: getAuthorizedHeaders({
+      'Content-Type': 'application/json',
+    }),
+    body: JSON.stringify(input),
+  });
+
+  return parseApiResponse<any>(response);
+}
+
+export async function apiAdminUpdateCourse(
+  courseId: number,
+  input: {
+    name: string;
+    slug?: string;
+    school_year?: string;
+    is_active?: boolean;
+    notes?: string;
+  }
+): Promise<any> {
+  const response = await fetch(`${getApiBase()}/admin/courses/${courseId}`, {
+    method: 'PATCH',
+    headers: getAuthorizedHeaders({
+      'Content-Type': 'application/json',
+    }),
+    body: JSON.stringify(input),
+  });
+
+  return parseApiResponse<any>(response);
+}
+
+export async function apiAdminCourseContents(courseId: number): Promise<any> {
+  const response = await fetch(`${getApiBase()}/admin/courses/${courseId}/contents`, {
+    headers: getAuthorizedHeaders(),
+  });
+
+  return parseApiResponse<any>(response);
+}
+
+export async function apiAdminAddCourseContent(courseId: number, contentId: string): Promise<any> {
+  const response = await fetch(`${getApiBase()}/admin/courses/${courseId}/contents`, {
+    method: 'POST',
+    headers: getAuthorizedHeaders({
+      'Content-Type': 'application/json',
+    }),
+    body: JSON.stringify({
+      content_id: contentId,
+    }),
+  });
+
+  return parseApiResponse<any>(response);
+}
+
+export async function apiAdminRemoveCourseContent(courseId: number, contentId: string): Promise<any> {
+  const response = await fetch(
+    `${getApiBase()}/admin/courses/${courseId}/contents/${contentId
+      .split('/')
+      .map(encodeURIComponent)
+      .join('/')}`,
+    {
+      method: 'DELETE',
+      headers: getAuthorizedHeaders(),
+    }
+  );
+
+  return parseApiResponse<any>(response);
+}
+
+export async function apiAdminImportCourseEnrollments(courseId: number, file: File): Promise<any> {
+  const formData = new FormData();
+  formData.append('csv', file);
+
+  const response = await fetch(`${getApiBase()}/admin/courses/${courseId}/enrollments/import`, {
+    method: 'POST',
+    headers: getAuthorizedHeaders(),
+    body: formData,
   });
 
   return parseApiResponse<any>(response);

@@ -13,6 +13,7 @@ import ThemeToggle from '../UI/ThemeToggle.astro';
       <span class="nav-name">Ediprofe</span>
     </a>
     <div class="nav-actions">
+      <a href="/miembros/login" class="nav-member-link">Ingresar a miembros</a>
       <ThemeToggle />
     </div>
   </div>
@@ -65,5 +66,32 @@ import ThemeToggle from '../UI/ThemeToggle.astro';
     display: flex;
     align-items: center;
     gap: 0.75rem;
+  }
+
+  .nav-member-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.55rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: background 0.16s ease, transform 0.16s ease;
+  }
+
+  .nav-member-link:hover {
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.14);
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 640px) {
+    .nav-member-link {
+      display: none;
+    }
   }
 </style>
