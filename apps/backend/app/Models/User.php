@@ -61,22 +61,6 @@ class User extends Authenticatable
     }
 
     /**
-     * @return HasMany<Subscription, $this>
-     */
-    public function subscriptions(): HasMany
-    {
-        return $this->hasMany(Subscription::class);
-    }
-
-    /**
-     * @return HasMany<AccessGrant, $this>
-     */
-    public function accessGrants(): HasMany
-    {
-        return $this->hasMany(AccessGrant::class);
-    }
-
-    /**
      * @return HasMany<ApiToken, $this>
      */
     public function apiTokens(): HasMany

@@ -3,8 +3,9 @@
 namespace Tests\Feature;
 
 use App\Models\ApiToken;
-use App\Models\Plan;
-use App\Models\Subscription;
+use App\Models\Course;
+use App\Models\CourseContent;
+use App\Models\CourseEnrollment;
 use App\Models\User;
 use App\Models\Workshop;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -47,36 +48,33 @@ class WorkshopCatalogApiTest extends TestCase
         $this->assertFalse((bool) $premiumItem['can_access']);
     }
 
-    public function test_it_marks_premium_workshops_as_accessible_with_active_subscription_token(): void
+    public function test_it_marks_premium_workshops_as_accessible_when_linked_to_student_course(): void
     {
-        $user = User::factory()->create();
+        $user = User::factory()->create([
+            'member_status' => 'approved',
+        ]);
         $plainToken = $this->issueToken($user);
 
-        $plan = Plan::query()->create([
-            'code' => 'premium-mensual',
-            'name' => 'Premium Mensual',
-            'description' => 'Acceso premium',
-            'price_cents' => 19900,
-            'currency' => 'COP',
-            'billing_interval' => 'monthly',
+        $course = Course::query()->create([
+            'name' => 'ICFES 11°2',
+            'slug' => 'icfes-11-2',
+            'school_year' => '2026',
             'is_active' => true,
-            'metadata' => [],
         ]);
 
-        Subscription::query()->create([
+        CourseEnrollment::query()->create([
+            'course_id' => $course->id,
             'user_id' => $user->id,
-            'plan_id' => $plan->id,
             'status' => 'active',
-            'provider' => 'manual',
-            'provider_subscription_id' => 'sub-catalog-1',
-            'starts_at' => now()->subDay(),
-            'ends_at' => now()->addDays(15),
-            'trial_ends_at' => null,
-            'canceled_at' => null,
-            'metadata' => [],
+            'source' => 'manual',
         ]);
 
         $premium = $this->createWorkshop('ws:premium:sub', true, 'premium');
+        CourseContent::query()->create([
+            'course_id' => $course->id,
+            'workshop_id' => $premium->id,
+            'is_active' => true,
+        ]);
 
         $response = $this
             ->withHeaders(['Authorization' => 'Bearer '.$plainToken])

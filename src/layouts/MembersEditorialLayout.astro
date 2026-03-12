@@ -1,0 +1,45 @@
+---
+import PracticeLessonLayout from './PracticeLessonLayout.astro';
+
+type BreadcrumbItem = {
+  label: string;
+  href?: string;
+  icon?: string;
+};
+
+interface Props {
+  title: string;
+  description?: string;
+  badge?: string;
+  icon?: string;
+  breadcrumbTrail?: BreadcrumbItem[];
+  contentClass?: string;
+}
+
+const {
+  title,
+  description,
+  badge = 'Miembros',
+  icon = '🎓',
+  breadcrumbTrail = [],
+  contentClass = '',
+} = Astro.props;
+
+const breadcrumbItems: BreadcrumbItem[] = [
+  { label: 'Inicio', href: '/', icon: '🏠' },
+  { label: 'Miembros', href: '/miembros', icon: '🎓' },
+  ...breadcrumbTrail,
+];
+---
+
+<PracticeLessonLayout
+  title={title}
+  description={description}
+  materia="saber"
+  badge={badge}
+  icon={icon}
+  breadcrumbItems={breadcrumbItems}
+  contentClass={contentClass}
+>
+  <slot />
+</PracticeLessonLayout>

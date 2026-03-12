@@ -1,57 +1,54 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Header from '../../components/Layout/Header.astro';
-import Footer from '../../components/Layout/Footer.astro';
-import SectionHeader from '../../components/UI/SectionHeader.astro';
-import '../../styles/members.css';
+import MembersEditorialLayout from '../../layouts/MembersEditorialLayout.astro';
 ---
 
-<BaseLayout title="Miembros | Panel" showTopBar={false}>
-  <div class="members-hub">
-    <Header />
+<MembersEditorialLayout
+  title="Panel del Estudiante"
+  description="Revisa tu estado, tus cursos y la biblioteca disponible dentro de Ediprofe."
+  badge="Miembros"
+  icon="🧭"
+>
+  <div class="practice-surface members-editorial-stack">
+    <section class="practice-toolbar">
+      <div class="practice-toolbar-copy">
+        <p class="practice-toolbar-label">Biblioteca institucional</p>
+        <h2 class="practice-toolbar-title">Tu ruta de estudio</h2>
+        <p class="practice-toolbar-desc">Accede a talleres y simulacros según los cursos asignados por el docente.</p>
+      </div>
+      <div class="practice-toolbar-actions">
+        <a class="members-button secondary" href="/miembros/talleres">Talleres</a>
+        <a class="members-button secondary" href="/miembros/simulacros">Simulacros</a>
+        <a class="members-button secondary" href="/miembros/admin" id="admin-link" style="display:none;">Administración</a>
+        <button class="members-button warn" id="logout-btn" type="button">Cerrar sesión</button>
+      </div>
+    </section>
 
-    <main class="members-container">
-      <SectionHeader
-        badge="Miembros"
-        title="Panel del Estudiante"
-        description="Revisa tu estado de acceso, entra a los talleres y administra tu sesión."
-      />
+    <section class="members-card">
+      <div id="profile"></div>
+      <div id="feedback"></div>
+    </section>
 
-      <section class="members-card">
-        <div id="profile"></div>
-        <div class="members-actions" style="margin-top: 0.8rem;">
-          <a class="members-button secondary" href="/miembros/talleres">Biblioteca de talleres</a>
-          <a class="members-button secondary" href="/miembros/simulacros">Biblioteca de simulacros</a>
-          <a class="members-button secondary" href="/miembros/admin" id="admin-link" style="display:none;">Panel admin</a>
-          <button class="members-button warn" id="logout-btn" type="button">Cerrar sesión</button>
-        </div>
-        <div id="feedback"></div>
-      </section>
+    <section class="members-card">
+      <h3 class="members-section-title">Mis cursos</h3>
+      <div id="courses-summary"></div>
+    </section>
 
-      <section class="members-card">
-        <h3 class="members-section-title">Mis cursos</h3>
-        <div id="courses-summary"></div>
-      </section>
+    <section class="members-card">
+      <h3 class="members-section-title">Ruta de práctica</h3>
+      <div id="route"></div>
+    </section>
 
-      <section class="members-card">
-        <h3 class="members-section-title">Ruta de práctica</h3>
-        <div id="route"></div>
-      </section>
+    <section class="members-card">
+      <h3 class="members-section-title">Tus talleres</h3>
+      <div id="workshop-summary"></div>
+    </section>
 
-      <section class="members-card">
-        <h3 class="members-section-title">Tus talleres</h3>
-        <div id="workshop-summary"></div>
-      </section>
-
-      <section class="members-card">
-        <h3 class="members-section-title">Tus simulacros</h3>
-        <div id="simulacro-summary"></div>
-      </section>
-    </main>
-
-    <Footer />
+    <section class="members-card">
+      <h3 class="members-section-title">Tus simulacros</h3>
+      <div id="simulacro-summary"></div>
+    </section>
   </div>
-</BaseLayout>
+</MembersEditorialLayout>
 
 <script>
   import {
@@ -83,13 +80,13 @@ import '../../styles/members.css';
   function statusClass(status) {
     if (status === 'approved') return 'approved';
     if (status === 'blocked') return 'blocked';
-    return 'pending';
+    return 'approved';
   }
 
   function statusLabel(status) {
-    if (status === 'approved') return 'Aprobado';
+    if (status === 'approved') return 'Activo';
     if (status === 'blocked') return 'Bloqueado';
-    return 'Pendiente';
+    return 'Activo';
   }
 
   function toBase64Url(value) {
@@ -122,24 +119,24 @@ import '../../styles/members.css';
     return [];
   }
 
-  function renderRoute(status) {
+  function renderRoute(isBlocked) {
     routeWrap.innerHTML = `
       <div class="members-steps">
         <article class="members-step done">
           <strong>1. Ingreso institucional</strong>
           <p>Acceso con tu correo del colegio.</p>
         </article>
-        <article class="members-step ${status === 'approved' ? 'done' : status === 'blocked' ? '' : 'current'}">
+        <article class="members-step ${isBlocked ? '' : 'done'}">
           <strong>2. Cursos asignados</strong>
-          <p>${status === 'approved' ? 'Tus cursos habilitan la biblioteca.' : 'El admin puede activar o ajustar tus accesos.'}</p>
+          <p>${isBlocked ? 'Tu cuenta está bloqueada y no puede usar la biblioteca.' : 'Tus cursos habilitan la biblioteca disponible.'}</p>
         </article>
-        <article class="members-step ${status === 'approved' ? 'done' : ''}">
+        <article class="members-step ${isBlocked ? '' : 'done'}">
           <strong>3. Biblioteca libre</strong>
-          <p>${status === 'approved' ? 'Puedes practicar en modo estudio o simulacro libre.' : 'Se habilita cuando tu acceso esté activo.'}</p>
+          <p>${isBlocked ? 'No disponible mientras el acceso esté bloqueado.' : 'Puedes practicar en modo estudio o simulacro libre.'}</p>
         </article>
-        <article class="members-step ${status === 'approved' ? 'done' : ''}">
+        <article class="members-step ${isBlocked ? '' : 'done'}">
           <strong>4. Retroalimentación</strong>
-          <p>${status === 'approved' ? 'Profundiza con solución guiada y conceptos relacionados.' : 'Aparecerá cuando tu biblioteca esté activa.'}</p>
+          <p>${isBlocked ? 'La retroalimentación se habilita cuando vuelvas a tener acceso.' : 'Profundiza con solución guiada y conceptos relacionados.'}</p>
         </article>
       </div>
     `;
@@ -341,17 +338,9 @@ import '../../styles/members.css';
         adminLink.style.display = 'inline-flex';
       }
 
-      renderRoute(user.member_status);
+      renderRoute(user.member_status === 'blocked');
 
-      if (user.member_status === 'pending') {
-        feedback.innerHTML = `<div class="members-alert">Tu cuenta todavía no tiene biblioteca activa. El administrador puede asociarte cursos y contenidos.</div>`;
-        coursesSummary.innerHTML =
-          '<div class="members-alert">Aquí verás tus cursos cuando el administrador los asigne.</div>';
-        workshopSummary.innerHTML =
-          '<div class="members-alert">Aquí verás los talleres asignados a tus cursos.</div>';
-        simulacroSummary.innerHTML =
-          '<div class="members-alert">Aquí verás los simulacros asignados a tus cursos.</div>';
-      } else if (user.member_status === 'blocked') {
+      if (user.member_status === 'blocked') {
         feedback.innerHTML = `<div class="members-alert error">Tu cuenta fue bloqueada. Contacta al administrador.</div>`;
         coursesSummary.innerHTML =
           '<div class="members-alert error">No tienes acceso a cursos mientras tu cuenta esté bloqueada.</div>';

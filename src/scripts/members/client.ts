@@ -117,23 +117,6 @@ async function parseApiResponse<T>(response: Response): Promise<T> {
   return payload as T;
 }
 
-export async function apiRegister(input: {
-  name: string;
-  email: string;
-  password: string;
-  password_confirmation: string;
-}): Promise<any> {
-  const response = await fetch(`${getApiBase()}/auth/register`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(input),
-  });
-
-  return parseApiResponse<any>(response);
-}
-
 export async function apiLogin(input: {
   email: string;
   password: string;
@@ -355,35 +338,6 @@ export async function apiEvaluateSimulacro(
   optionId: string
 ): Promise<any> {
   return apiEvaluateContent('simulacros', simulacroId, questionId, optionId);
-}
-
-export async function apiAdminListStudents(filters: { status?: string; search?: string } = {}): Promise<any> {
-  const params = new URLSearchParams();
-  if (filters.status) {
-    params.set('status', filters.status);
-  }
-  if (filters.search) {
-    params.set('search', filters.search);
-  }
-  params.set('per_page', '100');
-
-  const response = await fetch(`${getApiBase()}/admin/students?${params.toString()}`, {
-    headers: getAuthorizedHeaders(),
-  });
-
-  return parseApiResponse<any>(response);
-}
-
-export async function apiAdminAction(
-  studentId: number,
-  action: 'approve' | 'block' | 'revoke-premium'
-): Promise<any> {
-  const response = await fetch(`${getApiBase()}/admin/students/${studentId}/${action}`, {
-    method: 'POST',
-    headers: getAuthorizedHeaders(),
-  });
-
-  return parseApiResponse<any>(response);
 }
 
 export async function apiAdminCourses(): Promise<any> {

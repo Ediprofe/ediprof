@@ -28,12 +28,5 @@ class AppServiceProvider extends ServiceProvider
 
             return Limit::perMinute(10)->by($key);
         });
-
-        RateLimiter::for('auth-register', function (Request $request): Limit {
-            $email = mb_strtolower(trim((string) $request->input('email')));
-            $key = sprintf('%s|%s', $request->ip(), $email);
-
-            return Limit::perMinute(5)->by($key);
-        });
     }
 }

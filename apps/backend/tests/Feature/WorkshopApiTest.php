@@ -2,9 +2,9 @@
 
 namespace Tests\Feature;
 
-use App\Models\AccessGrant;
-use App\Models\Plan;
-use App\Models\Subscription;
+use App\Models\Course;
+use App\Models\CourseContent;
+use App\Models\CourseEnrollment;
 use App\Models\User;
 use App\Models\Workshop;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -339,34 +339,27 @@ class WorkshopApiTest extends TestCase
             ->assertJsonPath('error.code', 'auth_required');
     }
 
-    public function test_it_allows_premium_workshop_for_active_subscription(): void
+    public function test_it_allows_premium_workshop_for_student_enrolled_in_course_with_attached_content(): void
     {
-        $user = User::factory()->create();
-        $plan = Plan::query()->create([
-            'code' => 'premium-mensual',
-            'name' => 'Premium Mensual',
-            'description' => 'Acceso premium',
-            'price_cents' => 19900,
-            'currency' => 'COP',
-            'billing_interval' => 'monthly',
+        $user = User::factory()->create([
+            'member_status' => 'approved',
+        ]);
+
+        $course = Course::query()->create([
+            'name' => 'ICFES 11°1',
+            'slug' => 'icfes-11-1',
+            'school_year' => '2026',
             'is_active' => true,
-            'metadata' => [],
         ]);
 
-        Subscription::query()->create([
+        CourseEnrollment::query()->create([
+            'course_id' => $course->id,
             'user_id' => $user->id,
-            'plan_id' => $plan->id,
             'status' => 'active',
-            'provider' => 'manual',
-            'provider_subscription_id' => 'sub-test-1',
-            'starts_at' => now()->subDay(),
-            'ends_at' => now()->addDays(30),
-            'trial_ends_at' => null,
-            'canceled_at' => null,
-            'metadata' => [],
+            'source' => 'manual',
         ]);
 
-        Workshop::query()->create([
+        $workshop = Workshop::query()->create([
             'external_id' => 'content:saber:quimica/la-materia/taller-premium-sub',
             'content_external_id' => 'content:saber:quimica/la-materia/taller-premium-sub',
             'title' => 'Taller Premium Sub',
@@ -396,6 +389,12 @@ class WorkshopApiTest extends TestCase
             'metadata' => [],
         ]);
 
+        CourseContent::query()->create([
+            'course_id' => $course->id,
+            'workshop_id' => $workshop->id,
+            'is_active' => true,
+        ]);
+
         $response = $this
             ->actingAs($user)
             ->getJson('/api/v1/workshops/content:saber:quimica/la-materia/taller-premium-sub');
@@ -406,19 +405,10 @@ class WorkshopApiTest extends TestCase
             ->assertJsonPath('data.id', 'content:saber:quimica/la-materia/taller-premium-sub');
     }
 
-    public function test_it_allows_premium_workshop_for_active_global_grant(): void
+    public function test_it_denies_premium_workshop_when_student_is_not_enrolled_in_any_course_with_that_content(): void
     {
-        $user = User::factory()->create();
-
-        AccessGrant::query()->create([
-            'user_id' => $user->id,
-            'scope' => 'global',
-            'scope_ref' => '*',
-            'reason' => 'school_free_access',
-            'starts_at' => now()->subDay(),
-            'ends_at' => now()->addDays(30),
-            'is_active' => true,
-            'metadata' => ['origin' => 'colegio'],
+        $user = User::factory()->create([
+            'member_status' => 'approved',
         ]);
 
         Workshop::query()->create([
@@ -456,9 +446,9 @@ class WorkshopApiTest extends TestCase
             ->getJson('/api/v1/workshops/content:saber:quimica/la-materia/taller-premium-grant');
 
         $response
-            ->assertOk()
-            ->assertJsonPath('ok', true)
-            ->assertJsonPath('data.id', 'content:saber:quimica/la-materia/taller-premium-grant');
+            ->assertForbidden()
+            ->assertJsonPath('ok', false)
+            ->assertJsonPath('error.code', 'premium_access_required');
     }
 
     public function test_it_returns_403_for_authenticated_user_without_premium_access(): void
