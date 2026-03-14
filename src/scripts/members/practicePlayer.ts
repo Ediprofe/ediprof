@@ -6,7 +6,7 @@ import {
 } from './workshopRender';
 
 type PracticeMode = 'study' | 'exam';
-type ContentType = 'taller' | 'simulacro';
+type ContentType = 'taller' | 'simulacro' | 'assignment';
 
 type MemberUser = {
   id: number;
@@ -43,6 +43,7 @@ type PracticeQuestion = {
 
 type PracticeDetail = {
   id: string;
+  content_external_id?: string;
   title: string;
   route?: string;
   area_slug?: string;
@@ -52,7 +53,24 @@ type PracticeDetail = {
     total_questions?: number;
     total_assets?: number;
   };
+  attempt?: {
+    id: string;
+    mode: string;
+    status: string;
+    submitted: boolean;
+    can_review: boolean;
+    total_questions: number;
+    score_raw?: number | null;
+    score_percent?: number | null;
+    score_scale?: number | null;
+    started_at?: string | null;
+    submitted_at?: string | null;
+    graded_at?: string | null;
+    review_released_at?: string | null;
+  };
   questions?: PracticeQuestion[];
+  selected_by_question?: Record<string, string>;
+  evaluation_by_question?: Record<string, EvaluationResult>;
 };
 
 type EvaluationResult = {
@@ -80,14 +98,20 @@ type PracticePlayerOptions = {
   backHref: string;
   allowedModes: PracticeMode[];
   defaultMode?: PracticeMode;
+  examContentName?: string;
   emptyMessage?: string;
   api: {
     getSessionToken: () => string | null;
     clearSession: () => void;
     saveSession: (token: string, user: MemberUser) => void;
     me: () => Promise<any>;
-    detail: (contentId: string, options?: { includeAnswers?: boolean; publishedOnly?: boolean; format?: 'app' | 'default' }) => Promise<any>;
-    evaluate?: (contentId: string, questionId: string, optionId: string) => Promise<any>;
+    startAttempt: (
+      contentId: string,
+      options?: { mode?: 'study' | 'simulacro' | 'evaluation' | 'exam'; reset?: boolean }
+    ) => Promise<any>;
+    getAttempt: (attemptId: string) => Promise<any>;
+    answerAttempt: (attemptId: string, questionId: string, optionId: string) => Promise<any>;
+    submitAttempt?: (attemptId: string) => Promise<any>;
   };
 };
 
@@ -143,6 +167,10 @@ export function mountPracticePlayer(options: PracticePlayerOptions): void {
     currentUser: null,
     isLoading: true,
   };
+
+  function getExamContentName(): string {
+    return String(options.examContentName || 'simulacro').trim() || 'simulacro';
+  }
 
   const feedbackEl = options.feedback ?? null;
   const resetButton = options.resetButton ?? null;
@@ -211,6 +239,34 @@ export function mountPracticePlayer(options: PracticePlayerOptions): void {
     state.evaluationByQuestion = {};
     state.submitted = false;
     state.detailHasAnswers = false;
+  }
+
+  function getCurrentAttemptId(): string | null {
+    const attemptId = state.detail?.attempt?.id;
+    return typeof attemptId === 'string' && attemptId.trim() !== '' ? attemptId.trim() : null;
+  }
+
+  function hydrateFromAttemptPayload(payload: PracticeDetail | null, mode: PracticeMode): void {
+    state.detail = payload;
+    clearStateForMode();
+
+    if (!payload) {
+      return;
+    }
+
+    state.selectedByQuestion =
+      payload.selected_by_question && typeof payload.selected_by_question === 'object'
+        ? payload.selected_by_question
+        : {};
+
+    state.evaluationByQuestion =
+      payload.evaluation_by_question && typeof payload.evaluation_by_question === 'object'
+        ? payload.evaluation_by_question
+        : {};
+
+    const submitted = Boolean(payload.attempt?.submitted);
+    state.submitted = mode === 'exam' ? submitted : false;
+    state.detailHasAnswers = mode === 'study' ? true : Boolean(payload.attempt?.can_review);
   }
 
   function escapeHtml(value: unknown): string {
@@ -502,14 +558,18 @@ export function mountPracticePlayer(options: PracticePlayerOptions): void {
   }
 
   function getQuestionEvaluation(question: PracticeQuestion): EvaluationResult | null {
-    const selectedId = state.selectedByQuestion[question.id];
-
     if (state.mode === 'study') {
       return state.evaluationByQuestion[question.id] ?? null;
     }
 
     if (!state.submitted || !state.detailHasAnswers) {
       return null;
+    }
+
+    const selectedId = state.selectedByQuestion[question.id];
+    const persistedEvaluation = state.evaluationByQuestion[question.id];
+    if (persistedEvaluation) {
+      return persistedEvaluation;
     }
 
     const correctOptionId = String(question.correct_option_id ?? '');
@@ -597,8 +657,8 @@ export function mountPracticePlayer(options: PracticePlayerOptions): void {
             ${state.mode === 'study'
               ? 'Resuelve una pregunta y verifica de inmediato la explicación.'
               : state.submitted
-              ? 'Ya entregaste el simulacro. Ahora puedes revisar pregunta por pregunta.'
-              : 'Responde primero y revisa la retroalimentación al final.'}
+              ? `Ya entregaste la ${escapeHtml(getExamContentName())}.`
+              : `Responde primero y entrega la ${escapeHtml(getExamContentName())} cuando termines.`}
           </p>
         </div>
         <div class="practice-toolbar-actions">
@@ -625,7 +685,7 @@ export function mountPracticePlayer(options: PracticePlayerOptions): void {
           }
           ${
             state.mode === 'exam' && !state.submitted
-              ? '<button type="button" class="members-button" data-action="submit-exam">Entregar simulacro</button>'
+              ? `<button type="button" class="members-button" data-action="submit-exam">Entregar ${escapeHtml(getExamContentName())}</button>`
               : ''
           }
         </div>
@@ -775,6 +835,10 @@ export function mountPracticePlayer(options: PracticePlayerOptions): void {
     }
 
     const summary = computeExamSummary();
+    const scoreLabel =
+      typeof state.detail?.attempt?.score_percent === 'number'
+        ? `${state.detail.attempt.score_percent}%`
+        : `${summary.score}%`;
 
     return `
       <section class="practice-results-card">
@@ -786,7 +850,7 @@ export function mountPracticePlayer(options: PracticePlayerOptions): void {
         <div class="practice-results-grid">
           <article class="practice-result-box">
             <h3>Puntaje</h3>
-            <p>${summary.score}%</p>
+            <p>${scoreLabel}</p>
           </article>
           <article class="practice-result-box">
             <h3>Aciertos</h3>
@@ -979,7 +1043,7 @@ export function mountPracticePlayer(options: PracticePlayerOptions): void {
     });
 
     root.querySelectorAll<HTMLButtonElement>('[data-option-id]').forEach((button) => {
-      button.addEventListener('click', () => {
+      button.addEventListener('click', async () => {
         const optionId = button.dataset.optionId;
         if (!optionId) return;
 
@@ -991,6 +1055,26 @@ export function mountPracticePlayer(options: PracticePlayerOptions): void {
 
         persistProgress();
         render();
+
+        if (state.mode !== 'exam' || state.submitted) {
+          return;
+        }
+
+        const attemptId = getCurrentAttemptId();
+        if (!attemptId) {
+          return;
+        }
+
+        try {
+          const response = await options.api.answerAttempt(attemptId, currentQuestion.id, optionId);
+          if (response?.data) {
+            state.evaluationByQuestion[currentQuestion.id] = response.data;
+            persistProgress();
+          }
+        } catch (error) {
+          const message = error instanceof Error ? error.message : 'No fue posible guardar la respuesta.';
+          showError(message);
+        }
       });
     });
 
@@ -1025,13 +1109,14 @@ export function mountPracticePlayer(options: PracticePlayerOptions): void {
 
     root.querySelectorAll<HTMLButtonElement>('[data-action="check"]').forEach((button) => {
       button.addEventListener('click', async () => {
-        if (!options.api.evaluate) return;
         const selectedId = state.selectedByQuestion[currentQuestion.id];
         if (!selectedId) return;
+        const attemptId = getCurrentAttemptId();
+        if (!attemptId) return;
 
         try {
           clearFeedback();
-          const response = await options.api.evaluate(options.contentId, currentQuestion.id, selectedId);
+          const response = await options.api.answerAttempt(attemptId, currentQuestion.id, selectedId);
           state.evaluationByQuestion[currentQuestion.id] = response?.data;
           persistProgress();
           render();
@@ -1045,7 +1130,7 @@ export function mountPracticePlayer(options: PracticePlayerOptions): void {
 
     root.querySelectorAll<HTMLButtonElement>('[data-action="submit-exam"]').forEach((button) => {
       button.addEventListener('click', async () => {
-        if (state.mode !== 'exam' || state.submitted) return;
+        if (state.mode !== 'exam' || state.submitted || !options.api.submitAttempt) return;
         await submitExam();
       });
     });
@@ -1055,33 +1140,19 @@ export function mountPracticePlayer(options: PracticePlayerOptions): void {
     });
   }
 
-  async function loadDetailForCurrentMode(): Promise<void> {
+  async function loadDetailForCurrentMode(reset = false): Promise<void> {
     state.isLoading = true;
     render();
 
     const progress = getProgress(state.mode);
-    const needsAnswers = state.mode === 'exam' && Boolean(progress?.submitted);
-    const response = await options.api.detail(options.contentId, {
-      includeAnswers: needsAnswers,
-      publishedOnly: false,
-      format: 'app',
+    const response = await options.api.startAttempt(options.contentId, {
+      mode: state.mode === 'exam' ? 'simulacro' : 'study',
+      reset,
     });
 
-    state.detail = response?.data ?? null;
-    clearStateForMode();
-    state.detailHasAnswers = needsAnswers;
+    hydrateFromAttemptPayload(response?.data ?? null, state.mode);
 
     if (state.detail && progress && progress.content_id === state.detail.id) {
-      state.selectedByQuestion =
-        progress.selected_by_question && typeof progress.selected_by_question === 'object'
-          ? progress.selected_by_question
-          : {};
-      state.evaluationByQuestion =
-        progress.evaluation_by_question && typeof progress.evaluation_by_question === 'object'
-          ? progress.evaluation_by_question
-          : {};
-      state.submitted = Boolean(progress.submitted) && state.mode === 'exam';
-
       const total = Array.isArray(state.detail.questions) ? state.detail.questions.length : 0;
       const nextIndex = Number.parseInt(String(progress.question_index ?? 0), 10);
       state.questionIndex = Number.isFinite(nextIndex)
@@ -1105,8 +1176,8 @@ export function mountPracticePlayer(options: PracticePlayerOptions): void {
     const answered = Object.keys(state.selectedByQuestion).length;
     const shouldSubmit = window.confirm(
       answered < total
-        ? `Has respondido ${answered} de ${total} preguntas. Si entregas ahora, las restantes quedarán omitidas.`
-        : 'Se cerrará el intento y se mostrará la revisión con retroalimentación. ¿Deseas continuar?'
+        ? `Has respondido ${answered} de ${total} preguntas. Si entregas ahora la ${getExamContentName()}, las restantes quedarán omitidas.`
+        : `Se cerrará la ${getExamContentName()} actual. ¿Deseas continuar?`
     );
 
     if (!shouldSubmit) return;
@@ -1115,14 +1186,19 @@ export function mountPracticePlayer(options: PracticePlayerOptions): void {
       clearFeedback();
       state.isLoading = true;
       render();
-      const response = await options.api.detail(options.contentId, {
-        includeAnswers: true,
-        publishedOnly: false,
-        format: 'app',
-      });
-      state.detail = response?.data ?? null;
-      state.detailHasAnswers = true;
-      state.submitted = true;
+      const attemptId = getCurrentAttemptId();
+      if (!attemptId || !options.api.submitAttempt) {
+        throw new Error('No fue posible localizar el intento activo.');
+      }
+
+      const answersToSync = Object.entries(state.selectedByQuestion);
+      for (const [questionId, optionId] of answersToSync) {
+        if (!optionId) continue;
+        await options.api.answerAttempt(attemptId, questionId, optionId);
+      }
+
+      const response = await options.api.submitAttempt(attemptId);
+      hydrateFromAttemptPayload(response?.data ?? null, state.mode);
       persistProgress();
       state.isLoading = false;
       render();
@@ -1131,7 +1207,11 @@ export function mountPracticePlayer(options: PracticePlayerOptions): void {
       state.isLoading = false;
       render();
       const message = error instanceof Error ? error.message : 'No fue posible entregar el simulacro.';
-      showError(message);
+      const normalizedMessage =
+        message === 'No fue posible entregar el simulacro.'
+          ? `No fue posible entregar la ${getExamContentName()}.`
+          : message;
+      showError(normalizedMessage);
     }
   }
 
@@ -1142,7 +1222,7 @@ export function mountPracticePlayer(options: PracticePlayerOptions): void {
 
     clearModeProgress();
     clearFeedback();
-    await loadDetailForCurrentMode();
+    await loadDetailForCurrentMode(true);
     render();
     scrollToTop();
   }

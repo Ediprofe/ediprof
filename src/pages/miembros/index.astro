@@ -16,6 +16,7 @@ import MembersEditorialLayout from '../../layouts/MembersEditorialLayout.astro';
         <p class="practice-toolbar-desc">Accede a talleres y simulacros según los cursos asignados por el docente.</p>
       </div>
       <div class="practice-toolbar-actions">
+        <a class="members-button secondary" href="/miembros/asignaciones">Asignaciones</a>
         <a class="members-button secondary" href="/miembros/talleres">Talleres</a>
         <a class="members-button secondary" href="/miembros/simulacros">Simulacros</a>
         <a class="members-button secondary" href="/miembros/admin" id="admin-link" style="display:none;">Administración</a>
@@ -39,6 +40,11 @@ import MembersEditorialLayout from '../../layouts/MembersEditorialLayout.astro';
     </section>
 
     <section class="members-card">
+      <h3 class="members-section-title">Asignaciones y entregas</h3>
+      <div id="assignment-summary"></div>
+    </section>
+
+    <section class="members-card">
       <h3 class="members-section-title">Tus talleres</h3>
       <div id="workshop-summary"></div>
     </section>
@@ -54,6 +60,7 @@ import MembersEditorialLayout from '../../layouts/MembersEditorialLayout.astro';
   import {
     apiLogout,
     apiMe,
+    apiMyAssignments,
     apiMyCourses,
     apiMyLibrary,
     clearSession,
@@ -70,12 +77,14 @@ import MembersEditorialLayout from '../../layouts/MembersEditorialLayout.astro';
   const feedback = document.getElementById('feedback');
   const coursesSummary = document.getElementById('courses-summary');
   const routeWrap = document.getElementById('route');
+  const assignmentSummary = document.getElementById('assignment-summary');
   const workshopSummary = document.getElementById('workshop-summary');
   const simulacroSummary = document.getElementById('simulacro-summary');
   const adminLink = document.getElementById('admin-link');
   const logoutBtn = document.getElementById('logout-btn');
   const LAST_WORKSHOP_KEY = 'ediprofe_member_last_workshop';
   const LAST_SIMULACRO_KEY = 'ediprofe_member_last_simulacro';
+  const LAST_ASSIGNMENT_KEY = 'ediprofe_member_last_assignment';
 
   function statusClass(status) {
     if (status === 'approved') return 'approved';
@@ -303,6 +312,127 @@ import MembersEditorialLayout from '../../layouts/MembersEditorialLayout.astro';
     `;
   }
 
+  function renderAssignmentSummary(items) {
+    const total = items.length;
+    const activeNow = items.filter((item) => item?.availability?.can_start);
+    const reviewable = items.filter((item) => item?.latest_attempt?.can_review).length;
+    const evaluations = items.filter((item) => item?.mode === 'evaluation').length;
+    const totalQuestions = items.reduce((acc, item) => acc + Number(item?.stats?.effective_questions || 0), 0);
+    const lastAssignmentRaw = window.localStorage.getItem(LAST_ASSIGNMENT_KEY);
+    let lastAssignment = null;
+    if (lastAssignmentRaw) {
+      try {
+        lastAssignment = JSON.parse(lastAssignmentRaw);
+      } catch {
+        lastAssignment = null;
+      }
+    }
+
+    const recent = items.slice(0, 3);
+    const recentHtml =
+      recent.length > 0
+        ? recent
+            .map((item) => {
+              const link = `/miembros/asignaciones/abrir?id=${encodeURIComponent(item.id)}`;
+              const modeLabel =
+                item.mode === 'study' ? 'Estudio guiado' : item.mode === 'evaluation' ? 'Evaluación' : 'Simulacro';
+
+              return `
+              <article class="members-item">
+                <h4>${escapeHtml(item.title)}</h4>
+                <p>${escapeHtml(modeLabel)} · ${Number(item?.stats?.effective_questions || 0)} preguntas</p>
+                ${
+                  item?.course?.name
+                    ? `<p style="margin-top:0.35rem;"><span class="members-pill approved">${escapeHtml(item.course.name)}</span></p>`
+                    : ''
+                }
+                <p style="margin-top:0.45rem;">
+                  <span class="members-pill ${item?.availability?.can_start ? 'approved' : 'pending'}">${
+                    item?.availability?.can_start ? 'Disponible' : 'Seguimiento'
+                  }</span>
+                  ${
+                    item?.attempts?.limit
+                      ? `<span class="members-pill pending" style="margin-left:0.35rem;">Intentos ${Number(item?.attempts?.used || 0)}/${Number(item?.attempts?.limit || 0)}</span>`
+                      : ''
+                  }
+                </p>
+                <div class="members-actions" style="margin-top:0.55rem;">
+                  <a class="members-button" href="${link}" data-assignment-link="${escapeHtml(link)}" data-assignment-title="${escapeHtml(item.title)}">
+                    ${
+                      item?.latest_attempt?.status === 'in_progress'
+                        ? 'Continuar'
+                        : item?.latest_attempt?.can_review
+                        ? 'Ver revisión'
+                        : item?.latest_attempt
+                        ? 'Ver entrega'
+                        : 'Abrir'
+                    }
+                  </a>
+                </div>
+              </article>
+            `;
+            })
+            .join('')
+        : '<div class="members-alert">No tienes asignaciones disponibles todavía.</div>';
+
+    assignmentSummary.innerHTML = `
+      <div class="members-grid">
+        <article class="members-item">
+          <h4>Asignaciones visibles</h4>
+          <p>${total}</p>
+        </article>
+        <article class="members-item">
+          <h4>Disponibles ahora</h4>
+          <p>${activeNow.length}</p>
+        </article>
+        <article class="members-item">
+          <h4>Evaluaciones</h4>
+          <p>${evaluations}</p>
+        </article>
+        <article class="members-item">
+          <h4>Con revisión</h4>
+          <p>${reviewable}</p>
+        </article>
+        <article class="members-item">
+          <h4>Preguntas comprometidas</h4>
+          <p>${totalQuestions}</p>
+        </article>
+      </div>
+      ${
+        lastAssignment?.link
+          ? `
+        <div class="members-actions" style="margin-top:0.9rem;">
+          <a class="members-button" href="${escapeHtml(lastAssignment.link)}">Continuar última asignación</a>
+          <span class="members-pill pending">${escapeHtml(lastAssignment.title || 'Asignación reciente')}</span>
+        </div>
+      `
+          : ''
+      }
+      <div class="members-list" style="margin-top:0.9rem;">
+        ${recentHtml}
+      </div>
+      <div class="members-actions" style="margin-top:0.75rem;">
+        <a class="members-button secondary" href="/miembros/asignaciones">Ver todas las asignaciones</a>
+      </div>
+    `;
+
+    assignmentSummary.querySelectorAll('a[data-assignment-link]').forEach((anchor) => {
+      anchor.addEventListener('click', () => {
+        const link = anchor.getAttribute('data-assignment-link');
+        const title = anchor.getAttribute('data-assignment-title');
+        if (!link) return;
+        window.localStorage.setItem(
+          LAST_ASSIGNMENT_KEY,
+          JSON.stringify({
+            link,
+            title: title || 'Asignación',
+            at: Date.now(),
+          })
+        );
+      });
+    });
+  }
+
   async function boot() {
     try {
       const me = await apiMe();
@@ -344,18 +474,22 @@ import MembersEditorialLayout from '../../layouts/MembersEditorialLayout.astro';
         feedback.innerHTML = `<div class="members-alert error">Tu cuenta fue bloqueada. Contacta al administrador.</div>`;
         coursesSummary.innerHTML =
           '<div class="members-alert error">No tienes acceso a cursos mientras tu cuenta esté bloqueada.</div>';
+        assignmentSummary.innerHTML =
+          '<div class="members-alert error">Tu acceso a asignaciones académicas está bloqueado. Contacta al administrador.</div>';
         workshopSummary.innerHTML =
           '<div class="members-alert error">Tu acceso premium está bloqueado. Contacta al administrador.</div>';
         simulacroSummary.innerHTML =
           '<div class="members-alert error">Tu acceso premium está bloqueado. Contacta al administrador.</div>';
       } else {
-        const [coursesResponse, workshopsResponse, simulacrosResponse] = await Promise.all([
+        const [coursesResponse, assignmentsResponse, workshopsResponse, simulacrosResponse] = await Promise.all([
           apiMyCourses(),
+          apiMyAssignments(),
           apiMyLibrary({ contentType: 'taller' }),
           apiMyLibrary({ contentType: 'simulacro' }),
         ]);
 
         renderCourses(Array.isArray(coursesResponse?.data) ? coursesResponse.data : []);
+        renderAssignmentSummary(Array.isArray(assignmentsResponse?.data) ? assignmentsResponse.data : []);
         renderWorkshopSummary(normalizeWorkshopList(workshopsResponse));
         renderSimulacroSummary(normalizeWorkshopList(simulacrosResponse));
       }

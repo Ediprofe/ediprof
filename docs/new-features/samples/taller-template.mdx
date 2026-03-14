@@ -1,6 +1,9 @@
 import Pregunta from '@/components/saber/Pregunta.astro';
 import Opciones from '@/components/saber/Opciones.astro';
 import Opcion from '@/components/saber/Opcion.astro';
+import ContextoCompartido from '@/components/saber/ContextoCompartido.astro';
+import Respuesta from '@/components/saber/Respuesta.astro';
+import ConceptosRelacionados from '@/components/saber/ConceptosRelacionados.astro';
 
 ## 1.
 <Pregunta
@@ -30,8 +33,7 @@ $$
   <Opcion letra="D">Texto opcion D</Opcion>
 </Opciones>
 
-<details>
-<summary>✅ Respuesta</summary>
+<Respuesta summary="Solución guiada">
 
 Retroalimentacion con formato:
 - ==resaltado==
@@ -40,7 +42,7 @@ Retroalimentacion con formato:
 
 **Respuesta: A**
 
-</details>
+</Respuesta>
 
 </Pregunta>
 
@@ -60,25 +62,27 @@ Enunciado de la pregunta 2.
   <Opcion letra="D">Texto opcion D</Opcion>
 </Opciones>
 
-<details>
-<summary>✅ Respuesta</summary>
+<Respuesta summary="Solución guiada">
 
 Retroalimentacion de la pregunta 2.
 
 **Respuesta: B**
 
-</details>
+</Respuesta>
 
 </Pregunta>
 
-## 3.
+<ContextoCompartido id="ctx-3-5" title="Contexto compartido para las preguntas 3 a 5">
+
 RESPONDA LAS PREGUNTAS 3 A 5 CON BASE EN LA SIGUIENTE INFORMACION.
 
 Contexto compartido para varias preguntas, en markdown puro (sin `<div>` ni `<span>`).
 
 ![contexto-compartido](https://cdn.ediprofe.com/img/saber/quimica/contexto.webp)
+</ContextoCompartido>
 
-<Pregunta id="3" headerless fuente="ICFES" anio="2026">
+## 3.
+<Pregunta id="3" headerless fuente="ICFES" anio="2026" context="ctx-3-5">
 
 Enunciado de la pregunta 3.
 
@@ -89,19 +93,24 @@ Enunciado de la pregunta 3.
   <Opcion letra="D">Texto opcion D</Opcion>
 </Opciones>
 
-<details>
-<summary>✅ Respuesta</summary>
+<Respuesta summary="Solución guiada">
 
 Retroalimentacion de la pregunta 3.
 
 **Respuesta: C**
 
-</details>
+</Respuesta>
+
+<ConceptosRelacionados>
+
+Puedes ampliar aqui la idea clave o dejar una ilustracion de apoyo.
+
+</ConceptosRelacionados>
 
 </Pregunta>
 
 ## 4.
-<Pregunta id="4" headerless fuente="ICFES" anio="2026">
+<Pregunta id="4" headerless fuente="ICFES" anio="2026" context="ctx-3-5">
 
 Enunciado de la pregunta 4.
 
@@ -112,19 +121,18 @@ Enunciado de la pregunta 4.
   <Opcion letra="D">Texto opcion D</Opcion>
 </Opciones>
 
-<details>
-<summary>✅ Respuesta</summary>
+<Respuesta summary="Solución guiada">
 
 Retroalimentacion de la pregunta 4.
 
 **Respuesta: A**
 
-</details>
+</Respuesta>
 
 </Pregunta>
 
 ## 5.
-<Pregunta id="5" headerless fuente="ICFES" anio="2026">
+<Pregunta id="5" headerless fuente="ICFES" anio="2026" context="ctx-3-5">
 
 Enunciado de la pregunta 5.
 
@@ -135,13 +143,12 @@ Enunciado de la pregunta 5.
   <Opcion letra="D" correcta>Texto opcion D</Opcion>
 </Opciones>
 
-<details>
-<summary>✅ Respuesta</summary>
+<Respuesta summary="Solución guiada">
 
 Retroalimentacion de la pregunta 5.
 
 **Respuesta: D**
 
-</details>
+</Respuesta>
 
 </Pregunta>

@@ -74,9 +74,11 @@ const materiaName = getMateriaName(materiaSlug);
 
 <script>
   import {
-    apiEvaluateSimulacro,
+    apiAnswerAssessmentAttempt,
+    apiAssessmentAttempt,
     apiMe,
-    apiSimulacroDetail,
+    apiStartSimulacroAttempt,
+    apiSubmitAssessmentAttempt,
     clearSession,
     getSessionToken,
     saveSession,
@@ -98,8 +100,10 @@ const materiaName = getMateriaName(materiaSlug);
       clearSession,
       saveSession,
       me: apiMe,
-      detail: apiSimulacroDetail,
-      evaluate: apiEvaluateSimulacro,
+      startAttempt: apiStartSimulacroAttempt,
+      getAttempt: apiAssessmentAttempt,
+      answerAttempt: apiAnswerAssessmentAttempt,
+      submitAttempt: apiSubmitAssessmentAttempt,
     },
   });
 </script>

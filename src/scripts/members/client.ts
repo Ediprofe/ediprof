@@ -232,6 +232,27 @@ export async function apiMyLibrary(options: {
   return parseApiResponse<any>(response);
 }
 
+export async function apiMyAssignments(options: { mode?: 'study' | 'simulacro' | 'evaluation' } = {}): Promise<any> {
+  const params = new URLSearchParams();
+  if (options.mode) {
+    params.set('mode', options.mode);
+  }
+
+  const response = await fetch(`${getApiBase()}/me/assignments${params.toString() ? `?${params.toString()}` : ''}`, {
+    headers: getAuthorizedHeaders(),
+  });
+
+  return parseApiResponse<any>(response);
+}
+
+export async function apiMyAssignment(assignmentId: string): Promise<any> {
+  const response = await fetch(`${getApiBase()}/me/assignments/${encodeURIComponent(assignmentId)}`, {
+    headers: getAuthorizedHeaders(),
+  });
+
+  return parseApiResponse<any>(response);
+}
+
 function encodeCompositeId(value: string): string {
   return value
     .split('/')
@@ -261,6 +282,11 @@ type DetailOptions = {
   publishedOnly?: boolean;
   includeAnswers?: boolean;
   format?: 'app' | 'default';
+};
+
+type StartAttemptOptions = {
+  mode?: 'study' | 'simulacro' | 'evaluation' | 'exam';
+  reset?: boolean;
 };
 
 async function apiContentDetail(
@@ -295,6 +321,90 @@ export async function apiWorkshopDetail(workshopId: string, options: DetailOptio
 
 export async function apiSimulacroDetail(simulacroId: string, options: DetailOptions = {}): Promise<any> {
   return apiContentDetail('simulacros', simulacroId, options);
+}
+
+async function apiStartAttempt(
+  resource: 'workshops' | 'simulacros',
+  contentId: string,
+  options: StartAttemptOptions = {}
+): Promise<any> {
+  const encodedId = encodeCompositeId(contentId);
+  const response = await fetch(`${getApiBase()}/${resource}/${encodedId}/attempts`, {
+    method: 'POST',
+    headers: getAuthorizedHeaders({
+      'Content-Type': 'application/json',
+    }),
+    body: JSON.stringify(options),
+  });
+
+  return parseApiResponse<any>(response);
+}
+
+export async function apiStartWorkshopAttempt(
+  workshopId: string,
+  options: StartAttemptOptions = {}
+): Promise<any> {
+  return apiStartAttempt('workshops', workshopId, options);
+}
+
+export async function apiStartSimulacroAttempt(
+  simulacroId: string,
+  options: StartAttemptOptions = {}
+): Promise<any> {
+  return apiStartAttempt('simulacros', simulacroId, options);
+}
+
+export async function apiStartAssignmentAttempt(
+  assignmentId: string,
+  options: StartAttemptOptions = {}
+): Promise<any> {
+  const response = await fetch(`${getApiBase()}/assignments/${encodeURIComponent(assignmentId)}/attempts`, {
+    method: 'POST',
+    headers: getAuthorizedHeaders({
+      'Content-Type': 'application/json',
+    }),
+    body: JSON.stringify(options),
+  });
+
+  return parseApiResponse<any>(response);
+}
+
+export async function apiAssessmentAttempt(attemptId: string): Promise<any> {
+  const response = await fetch(`${getApiBase()}/assessment-attempts/${encodeURIComponent(attemptId)}`, {
+    headers: getAuthorizedHeaders(),
+  });
+
+  return parseApiResponse<any>(response);
+}
+
+export async function apiAnswerAssessmentAttempt(
+  attemptId: string,
+  questionId: string,
+  optionId: string
+): Promise<any> {
+  const response = await fetch(
+    `${getApiBase()}/assessment-attempts/${encodeURIComponent(attemptId)}/questions/${encodeURIComponent(questionId)}`,
+    {
+      method: 'PATCH',
+      headers: getAuthorizedHeaders({
+        'Content-Type': 'application/json',
+      }),
+      body: JSON.stringify({
+        option_id: optionId,
+      }),
+    }
+  );
+
+  return parseApiResponse<any>(response);
+}
+
+export async function apiSubmitAssessmentAttempt(attemptId: string): Promise<any> {
+  const response = await fetch(`${getApiBase()}/assessment-attempts/${encodeURIComponent(attemptId)}/submit`, {
+    method: 'POST',
+    headers: getAuthorizedHeaders(),
+  });
+
+  return parseApiResponse<any>(response);
 }
 
 async function apiEvaluateContent(
@@ -432,6 +542,20 @@ export async function apiAdminImportCourseEnrollments(courseId: number, file: Fi
     method: 'POST',
     headers: getAuthorizedHeaders(),
     body: formData,
+  });
+
+  return parseApiResponse<any>(response);
+}
+
+export async function apiAdminPanelHandoff(redirectTo?: string): Promise<any> {
+  const response = await fetch(`${getApiBase()}/admin/panel-handoff`, {
+    method: 'POST',
+    headers: getAuthorizedHeaders({
+      'Content-Type': 'application/json',
+    }),
+    body: JSON.stringify({
+      redirect_to: redirectTo,
+    }),
   });
 
   return parseApiResponse<any>(response);

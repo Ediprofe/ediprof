@@ -1,0 +1,93 @@
+---
+interface Props {
+  id: string;
+  title?: string;
+  class?: string;
+  headerless?: boolean;
+}
+
+const {
+  id,
+  title = 'Contexto compartido',
+  class: className = '',
+  headerless = false,
+} = Astro.props;
+---
+
+<section class={`saber-contexto-compartido ${className}`.trim()} data-context-id={id}>
+  {
+    !headerless && (
+      <header class="contexto-header">
+        <span class="contexto-chip">Contexto compartido</span>
+        <h3>{title}</h3>
+      </header>
+    )
+  }
+  <div class="contexto-body">
+    <slot />
+  </div>
+</section>
+
+<style>
+  .saber-contexto-compartido {
+    margin: 1.75rem 0 2rem;
+    padding: 1.25rem 1.4rem;
+    border: 2px solid var(--saber-border, #e2e8f0);
+    border-radius: 18px;
+    background:
+      linear-gradient(180deg, rgba(59, 130, 246, 0.04), rgba(59, 130, 246, 0.01)),
+      var(--saber-bg-secondary, #f8fafc);
+  }
+
+  .contexto-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .contexto-header h3 {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.2;
+    color: var(--saber-text, #1e293b);
+  }
+
+  .contexto-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.35rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #1d4ed8;
+    background: rgba(59, 130, 246, 0.12);
+  }
+
+  .contexto-body :global(*:first-child) {
+    margin-top: 0;
+  }
+
+  .contexto-body :global(*:last-child) {
+    margin-bottom: 0;
+  }
+
+  :global(html.dark) .saber-contexto-compartido {
+    background:
+      linear-gradient(180deg, rgba(96, 165, 250, 0.1), rgba(96, 165, 250, 0.03)),
+      rgba(15, 23, 42, 0.72);
+    border-color: rgba(96, 165, 250, 0.28);
+  }
+
+  :global(html.dark) .contexto-chip {
+    color: #bfdbfe;
+    background: rgba(96, 165, 250, 0.18);
+  }
+
+  :global(html.dark) .contexto-header h3 {
+    color: #e2e8f0;
+  }
+</style>

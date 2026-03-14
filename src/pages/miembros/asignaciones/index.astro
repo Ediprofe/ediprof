@@ -1,0 +1,208 @@
+---
+import MembersEditorialLayout from '../../../layouts/MembersEditorialLayout.astro';
+---
+
+<MembersEditorialLayout
+  title="Asignaciones Académicas"
+  description="Aquí aparecen tus evaluaciones, simulacros asignados y entregas disponibles para revisar."
+  badge="Asignaciones"
+  icon="📝"
+  breadcrumbTrail={[{ label: 'Asignaciones' }]}
+>
+  <div class="practice-surface members-editorial-stack">
+    <section class="practice-toolbar">
+      <div class="practice-toolbar-copy">
+        <p class="practice-toolbar-label">Agenda académica</p>
+        <h2 class="practice-toolbar-title">Asignaciones del curso</h2>
+        <p class="practice-toolbar-desc">Aquí ves lo que está activo ahora y también lo que ya entregaste o puedes revisar.</p>
+      </div>
+      <div class="practice-toolbar-actions">
+        <a class="members-button secondary" href="/miembros">Volver al panel</a>
+      </div>
+    </section>
+
+    <section class="members-card">
+      <div id="feedback"></div>
+      <div id="summary"></div>
+      <div id="assignments" class="members-list"></div>
+    </section>
+  </div>
+</MembersEditorialLayout>
+
+<script>
+  import { apiMe, apiMyAssignments, clearSession, getSessionToken, saveSession } from '../../../scripts/members/client';
+
+  const token = getSessionToken();
+  if (!token) {
+    window.location.href = '/miembros/login';
+  }
+
+  const feedback = document.getElementById('feedback');
+  const summary = document.getElementById('summary');
+  const assignmentsWrap = document.getElementById('assignments');
+  const LAST_ASSIGNMENT_KEY = 'ediprofe_member_last_assignment';
+
+  function escapeHtml(value) {
+    return String(value ?? '')
+      .replaceAll('&', '&amp;')
+      .replaceAll('<', '&lt;')
+      .replaceAll('>', '&gt;')
+      .replaceAll('"', '&quot;')
+      .replaceAll("'", '&#039;');
+  }
+
+  function modeLabel(mode) {
+    if (mode === 'study') return 'Estudio guiado';
+    if (mode === 'evaluation') return 'Evaluación';
+    return 'Simulacro';
+  }
+
+  function availabilityLabel(availability) {
+    const state = availability?.state || 'active';
+    if (state === 'scheduled') return 'Programada';
+    if (state === 'closed') return 'Cerrada';
+    if (state === 'draft') return 'Borrador';
+    return 'Disponible';
+  }
+
+  function availabilityClass(availability) {
+    const state = availability?.state || 'active';
+    if (state === 'scheduled') return 'pending';
+    if (state === 'closed' || state === 'draft') return 'blocked';
+    return 'approved';
+  }
+
+  function actionLabel(item) {
+    const latest = item?.latest_attempt;
+    if (latest?.status === 'in_progress') return 'Continuar';
+    if (latest?.status === 'submitted' || latest?.status === 'graded' || latest?.status === 'released') {
+      return latest?.can_review ? 'Ver revisión' : 'Ver entrega';
+    }
+    return item?.availability?.can_start ? 'Iniciar' : 'Ver detalles';
+  }
+
+  function buildLink(id) {
+    return `/miembros/asignaciones/abrir?id=${encodeURIComponent(id)}`;
+  }
+
+  async function boot() {
+    try {
+      const me = await apiMe();
+      const user = me?.data?.user;
+      if (!user) throw new Error('Sesión inválida.');
+
+      saveSession(token, user);
+
+      if (user.member_status === 'blocked' && user.role !== 'admin') {
+        feedback.innerHTML = `
+          <div class="members-alert error">
+            Tu cuenta está bloqueada. No tienes acceso a asignaciones académicas en este momento.
+          </div>
+        `;
+        return;
+      }
+
+      const response = await apiMyAssignments();
+      const items = Array.isArray(response?.data) ? response.data : [];
+
+      if (items.length === 0) {
+        assignmentsWrap.innerHTML =
+          '<div class="members-alert">No tienes asignaciones activas en este momento.</div>';
+        return;
+      }
+
+      const activeNow = items.filter((item) => item?.availability?.can_start);
+      const reviewable = items.filter((item) => item?.latest_attempt?.can_review).length;
+      const evaluations = items.filter((item) => item?.mode === 'evaluation').length;
+      const totalQuestions = items.reduce((acc, item) => acc + Number(item?.stats?.effective_questions || 0), 0);
+
+      summary.innerHTML = `
+        <div class="members-grid" style="margin-bottom:0.85rem;">
+          <article class="members-item">
+            <h4>Asignaciones visibles</h4>
+            <p>${items.length}</p>
+          </article>
+          <article class="members-item">
+            <h4>Disponibles ahora</h4>
+            <p>${activeNow.length}</p>
+          </article>
+          <article class="members-item">
+            <h4>Evaluaciones</h4>
+            <p>${evaluations}</p>
+          </article>
+          <article class="members-item">
+            <h4>Con revisión</h4>
+            <p>${reviewable}</p>
+          </article>
+          <article class="members-item">
+            <h4>Preguntas comprometidas</h4>
+            <p>${totalQuestions}</p>
+          </article>
+        </div>
+      `;
+
+      assignmentsWrap.innerHTML = items
+        .map((item) => {
+          const link = buildLink(item.id);
+          const latest = item.latest_attempt;
+
+          return `
+            <article class="members-item">
+              <h4>${escapeHtml(item.title)}</h4>
+              <p>${escapeHtml(modeLabel(item.mode))} · ${Number(item?.stats?.effective_questions || 0)} preguntas</p>
+              ${
+                item?.course?.name
+                  ? `<p style="margin-top:0.35rem;"><span class="members-pill approved">${escapeHtml(item.course.name)}</span></p>`
+                  : ''
+              }
+              <p style="margin-top:0.5rem;">
+                <span class="members-pill ${availabilityClass(item.availability)}">${escapeHtml(availabilityLabel(item.availability))}</span>
+                ${
+                  latest
+                    ? `<span class="members-pill pending" style="margin-left:0.35rem;">Intento: ${escapeHtml(latest.status || 'sin estado')}</span>`
+                    : ''
+                }
+                ${
+                  item?.attempts?.limit
+                    ? `<span class="members-pill pending" style="margin-left:0.35rem;">Intentos ${Number(item?.attempts?.used || 0)}/${Number(item?.attempts?.limit || 0)}</span>`
+                    : ''
+                }
+              </p>
+              ${
+                item?.availability?.message
+                  ? `<p style="margin-top:0.55rem;">${escapeHtml(item.availability.message)}</p>`
+                  : ''
+              }
+              <div class="members-actions" style="margin-top:0.75rem;">
+                <a class="members-button" href="${link}" data-link="${escapeHtml(link)}" data-title="${escapeHtml(item.title)}">
+                  ${escapeHtml(actionLabel(item))}
+                </a>
+              </div>
+            </article>
+          `;
+        })
+        .join('');
+
+      assignmentsWrap.querySelectorAll('a[data-link]').forEach((anchor) => {
+        anchor.addEventListener('click', () => {
+          const link = anchor.getAttribute('data-link');
+          const title = anchor.getAttribute('data-title');
+          if (!link) return;
+          window.localStorage.setItem(
+            LAST_ASSIGNMENT_KEY,
+            JSON.stringify({
+              link,
+              title: title || 'Asignación',
+              at: Date.now(),
+            })
+          );
+        });
+      });
+    } catch (error) {
+      clearSession();
+      window.location.href = '/miembros/login';
+    }
+  }
+
+  boot();
+</script>

@@ -21,8 +21,17 @@ import { existsSync, readFileSync, unlinkSync } from 'fs';
 import { resolve } from 'path';
 import { globSync } from 'glob';
 import { spawnSync } from 'child_process';
+import {
+  EXPLICIT_CONTEXT_REGEX,
+  parseSupplementSections,
+  parseTagAttributes,
+  splitQuestionSections,
+} from '../src/scripts/workshops/authoringContractShared.js';
 
-const WORKSHOPS_GLOB = 'src/content/saber/**/taller.{md,mdx}';
+const WORKSHOP_GLOBS = [
+  'src/content/saber/**/taller.{md,mdx}',
+  'src/content/simulacros/**/taller.{md,mdx}',
+];
 const TEMP_MANIFEST = '/tmp/ediprofe-workshops-manifest.preflight.json';
 
 function parseArgs(argv) {
@@ -64,46 +73,6 @@ function parseFrontmatter(raw) {
   });
 
   return { data, content };
-}
-
-function splitQuestionSections(content) {
-  const headingRegex = /^##\s+(\d+)\.?\s*$/gm;
-  const matches = [];
-  let match = null;
-
-  while ((match = headingRegex.exec(content)) !== null) {
-    matches.push({
-      number: Number.parseInt(match[1], 10),
-      start: match.index,
-      end: headingRegex.lastIndex,
-    });
-  }
-
-  if (matches.length === 0) return [];
-
-  return matches.map((item, index) => {
-    const nextStart = matches[index + 1]?.start ?? content.length;
-    return {
-      number: item.number,
-      raw: content.slice(item.end, nextStart).trim(),
-    };
-  });
-}
-
-function parseTagAttributes(raw = '') {
-  const attrs = {};
-  const regex = /(\w+)="([^"]*)"|(\w+)/g;
-  let match = null;
-
-  while ((match = regex.exec(raw)) !== null) {
-    if (match[1]) {
-      attrs[match[1]] = match[2];
-    } else if (match[3]) {
-      attrs[match[3]] = true;
-    }
-  }
-
-  return attrs;
 }
 
 function parseOptions(optionsBody) {
@@ -325,7 +294,9 @@ function validateManifestBlocks(manifest, collector) {
 
 function main() {
   const { strictWarnings } = parseArgs(process.argv.slice(2));
-  const files = globSync(WORKSHOPS_GLOB, { nodir: true }).sort();
+  const files = WORKSHOP_GLOBS.flatMap((pattern) =>
+    globSync(pattern, { nodir: true }).sort()
+  );
 
   if (files.length === 0) {
     console.log('No se encontraron talleres para validar.');
@@ -344,6 +315,7 @@ function main() {
     const { content } = parseFrontmatter(rawFile);
     const sections = splitQuestionSections(content);
     const relPath = normalizePath(filePath);
+    const isSimulacroFile = relPath.includes('src/content/simulacros/');
 
     if (sections.length === 0) {
       collector.errors.push(`[${relPath}] no tiene secciones "## N."`);
@@ -351,13 +323,39 @@ function main() {
     }
 
     const seenIds = new Set();
+    const seenContextIds = new Set();
     const sharedRanges = [];
     let expectedNumber = 1;
+
+    const contextRegex = new RegExp(EXPLICIT_CONTEXT_REGEX.source, EXPLICIT_CONTEXT_REGEX.flags);
+    let contextMatch = null;
+    while ((contextMatch = contextRegex.exec(content)) !== null) {
+      const contextAttrs = parseTagAttributes(contextMatch[1] || '');
+      const contextId = String(contextAttrs.id || '').trim();
+
+      if (!contextId) {
+        collector.errors.push(`[${relPath}] <ContextoCompartido> sin id`);
+        continue;
+      }
+
+      if (seenContextIds.has(contextId)) {
+        collector.errors.push(`[${relPath}] contexto compartido duplicado: "${contextId}"`);
+        continue;
+      }
+
+      seenContextIds.add(contextId);
+    }
+
+    if (/^###\s+Contexto compartido\b/m.test(content) && !/<ContextoCompartido\b/.test(content)) {
+      collector.warnings.push(
+        `[${relPath}] usa contexto compartido legado por posición. Recomendado: <ContextoCompartido id=\"...\"> explícito para reutilización robusta.`
+      );
+    }
 
     sections.forEach((section) => {
       collector.questions += 1;
 
-      if (section.number !== expectedNumber) {
+      if (!isSimulacroFile && section.number !== expectedNumber) {
         collector.warnings.push(
           `[${relPath}] numeración no secuencial: se esperaba ${expectedNumber} y se encontró ${section.number}`
         );
@@ -401,9 +399,16 @@ function main() {
         collector.errors.push(`[${relPath}#${section.number}] bloque <Opciones> ausente`);
       }
 
-      const detailsMatch = inner.match(/<details>([\s\S]*?)<\/details>/i);
-      if (!detailsMatch) {
-        collector.errors.push(`[${relPath}#${section.number}] bloque <details> (retroalimentación) ausente`);
+      const supplementSections = parseSupplementSections(inner);
+      const feedbackSection =
+        supplementSections.find((entry) => entry.kind === 'feedback') ??
+        supplementSections.find((entry) => entry.kind === 'details') ??
+        null;
+
+      if (!feedbackSection) {
+        collector.errors.push(
+          `[${relPath}#${section.number}] bloque de retroalimentación ausente (<Respuesta> o <details>)`
+        );
       }
 
       const options = parseOptions(optionsMatch ? optionsMatch[1] : '');
@@ -474,7 +479,7 @@ function main() {
     // no-op
   }
 
-  console.log('Workshop preflight summary');
+  console.log('Practice content preflight summary');
   console.log(`  Files:     ${collector.files}`);
   console.log(`  Questions: ${collector.questions}`);
   console.log(`  Warnings:  ${collector.warnings.length}`);

@@ -74,9 +74,11 @@ const materiaName = getMateriaName(materiaSlug);
 
 <script>
   import {
-    apiEvaluate,
+    apiAnswerAssessmentAttempt,
+    apiAssessmentAttempt,
     apiMe,
-    apiWorkshopDetail,
+    apiStartWorkshopAttempt,
+    apiSubmitAssessmentAttempt,
     clearSession,
     getSessionToken,
     saveSession,
@@ -98,8 +100,10 @@ const materiaName = getMateriaName(materiaSlug);
       clearSession,
       saveSession,
       me: apiMe,
-      detail: apiWorkshopDetail,
-      evaluate: apiEvaluate,
+      startAttempt: apiStartWorkshopAttempt,
+      getAttempt: apiAssessmentAttempt,
+      answerAttempt: apiAnswerAssessmentAttempt,
+      submitAttempt: apiSubmitAssessmentAttempt,
     },
   });
 </script>

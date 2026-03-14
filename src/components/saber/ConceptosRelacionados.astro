@@ -1,0 +1,18 @@
+---
+interface Props {
+  summary?: string;
+  class?: string;
+  open?: boolean;
+}
+
+const {
+  summary = 'Conceptos relacionados',
+  class: className = '',
+  open = false,
+} = Astro.props;
+---
+
+<details class={`conceptos-relacionados ${className}`.trim()} open={open}>
+  <summary>{summary}</summary>
+  <slot />
+</details>

@@ -3,72 +3,64 @@ import MembersEditorialLayout from '../../layouts/MembersEditorialLayout.astro';
 ---
 
 <MembersEditorialLayout
-  title="Administración académica"
-  description="Gestiona cursos, matrículas y biblioteca institucional sin salir del lenguaje visual de Ediprofe."
+  title="Redirigiendo al panel admin"
+  description="Te llevamos al backoffice académico de Ediprofe en Laravel + Filament."
   badge="Administración"
   icon="🗂️"
   breadcrumbTrail={[{ label: 'Administración' }]}
 >
   <div class="practice-surface members-editorial-stack">
-    <section class="practice-toolbar">
-      <div class="practice-toolbar-copy">
-        <p class="practice-toolbar-label">Control académico</p>
-        <h2 class="practice-toolbar-title">Cursos, matrículas y biblioteca</h2>
-        <p class="practice-toolbar-desc">La gestión principal de miembros ahora se organiza por cursos y contenidos asignados.</p>
-      </div>
-      <div class="practice-toolbar-actions">
-        <a class="members-button" href="/miembros/admin/cursos">Abrir cursos</a>
-        <a class="members-button secondary" href="/miembros">Volver al panel</a>
-      </div>
-    </section>
-
     <section class="members-card">
-      <div id="feedback"></div>
-      <div class="members-grid">
-        <article class="members-item">
-          <h3 class="members-section-title" style="margin-bottom:0.35rem;">Cursos</h3>
-          <p class="members-subtitle">Crea grupos como <strong>ICFES 11°1</strong> o <strong>Ciencias 8°3</strong>.</p>
-        </article>
-        <article class="members-item">
-          <h3 class="members-section-title" style="margin-bottom:0.35rem;">Matrículas</h3>
-          <p class="members-subtitle">Importa estudiantes por CSV con correos institucionales y asócialos a cada curso.</p>
-        </article>
-        <article class="members-item">
-          <h3 class="members-section-title" style="margin-bottom:0.35rem;">Biblioteca</h3>
-          <p class="members-subtitle">Vincula talleres y simulacros al curso para habilitar la práctica libre en miembros.</p>
-        </article>
-      </div>
+      <div id="handoff-status" class="members-alert">Validando tu sesión de administrador…</div>
     </section>
   </div>
 </MembersEditorialLayout>
 
 <script>
-  import { apiMe, clearSession, getSessionToken, saveSession } from '../../scripts/members/client';
+  import {
+    apiAdminPanelHandoff,
+    apiMe,
+    getSessionToken,
+    saveSession,
+  } from '../../scripts/members/client';
 
   const token = getSessionToken();
+  const status = document.getElementById('handoff-status');
+
   if (!token) {
     window.location.href = '/miembros/login';
   }
-
-  const feedback = document.getElementById('feedback');
 
   async function boot() {
     try {
       const me = await apiMe();
       const user = me?.data?.user;
+
       if (!user) {
-        throw new Error('No se pudo validar sesión.');
+        throw new Error('No se pudo validar tu sesión.');
       }
 
       saveSession(token, user);
 
       if (user.role !== 'admin') {
-        feedback.innerHTML = '<div class="members-alert error">No tienes permisos de administrador.</div>';
+        status.innerHTML = 'Tu cuenta no tiene permisos de administración.';
+        status.classList.add('error');
         return;
       }
+
+      status.textContent = 'Abriendo el panel administrativo…';
+
+      const handoff = await apiAdminPanelHandoff('/admin');
+      const url = handoff?.data?.url;
+
+      if (!url) {
+        throw new Error('No se pudo generar el acceso al panel.');
+      }
+
+      window.location.href = url;
     } catch (error) {
-      clearSession();
-      window.location.href = '/miembros/login';
+      status.textContent = error instanceof Error ? error.message : 'No se pudo abrir el panel administrativo.';
+      status.classList.add('error');
     }
   }
 

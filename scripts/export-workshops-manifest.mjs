@@ -24,6 +24,12 @@ import {
   parseMdxCommentDirective,
   stripMdxComments,
 } from '../src/scripts/workshops/directivesShared.js';
+import {
+  EXPLICIT_CONTEXT_REGEX,
+  parseSupplementSections,
+  parseTagAttributes,
+  splitQuestionSections,
+} from '../src/scripts/workshops/authoringContractShared.js';
 import { renderPracticeFragmentHtml } from '../src/scripts/workshops/htmlShared.js';
 
 const DEFAULT_OUTPUT = '/tmp/ediprofe-workshops-manifest.json';
@@ -130,22 +136,6 @@ function parseScalar(value) {
   return value;
 }
 
-function parseTagAttributes(raw = '') {
-  const attrs = {};
-  const regex = /(\w+)="([^"]*)"|(\w+)/g;
-  let match = null;
-
-  while ((match = regex.exec(raw)) !== null) {
-    if (match[1]) {
-      attrs[match[1]] = match[2];
-    } else if (match[3]) {
-      attrs[match[3]] = true;
-    }
-  }
-
-  return attrs;
-}
-
 function stripHtmlTags(text) {
   return text
     .replace(/\/\*\{[\s\S]*?\}\*\//g, '')
@@ -163,6 +153,27 @@ function parseImageLine(line) {
   if (!url) return null;
 
   return { alt, url };
+}
+
+function inferAssetType(ref) {
+  if (/\.svg$/i.test(ref)) return 'svg';
+  if (/\.(png|jpg|jpeg|webp|gif|avif)$/i.test(ref)) return 'image';
+  if (/\.(pdf)$/i.test(ref)) return 'document';
+  return 'asset';
+}
+
+function buildAssetRefs(refs = []) {
+  return [...new Set(refs)]
+    .map((src) => String(src || '').trim())
+    .filter(Boolean)
+    .sort()
+    .map((src, index) => ({
+      asset_id: `asset:${Buffer.from(src).toString('base64url').slice(0, 24)}:${index + 1}`,
+      src,
+      alt: null,
+      caption: null,
+      type: inferAssetType(src),
+    }));
 }
 
 function isUnorderedListLine(line) {
@@ -274,7 +285,42 @@ function normalizeDetachedContext(rawContext) {
     kept.push(raw.trimEnd());
   });
 
-  return kept.join('\n').replace(/\n{3,}/g, '\n\n').trim();
+  return kept
+    .join('\n')
+    .replace(EXPLICIT_CONTEXT_REGEX, '')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+}
+
+async function extractExplicitContexts(content, filePath) {
+  const contexts = [];
+  let match = null;
+  let orderBase = 1;
+
+  while ((match = EXPLICIT_CONTEXT_REGEX.exec(content)) !== null) {
+    const attrs = parseTagAttributes(match[1] || '');
+    const externalId = String(attrs.id || '').trim();
+    if (!externalId) {
+      throw new Error(
+        `ContextoCompartido sin id en ${normalizePath(relative(process.cwd(), filePath))}`
+      );
+    }
+
+    const rawContext = String(match[2] || '').trim();
+    const payload = await buildContextPayload(rawContext, filePath);
+    contexts.push({
+      external_id: externalId,
+      title: typeof attrs.title === 'string' ? attrs.title.trim() || null : null,
+      order_base: orderBase,
+      ...payload,
+      metadata: {
+        source: 'explicit',
+      },
+    });
+    orderBase += 1;
+  }
+
+  return contexts;
 }
 
 function parseSharedContextRanges(contextMdx) {
@@ -565,31 +611,6 @@ function toContentId(slugClean, source) {
   return `${source.idPrefix}${slugClean}`;
 }
 
-function splitQuestionSections(content) {
-  const headingRegex = /^##\s+(\d+)(?:\s+\([^)]+\))?\.?\s*$/gm;
-  const matches = [];
-  let match = null;
-
-  while ((match = headingRegex.exec(content)) !== null) {
-    matches.push({
-      number: Number.parseInt(match[1], 10),
-      start: match.index,
-      end: headingRegex.lastIndex,
-    });
-  }
-
-  if (matches.length === 0) return [];
-
-  return matches.map((item, index) => {
-    const nextStart = matches[index + 1]?.start ?? content.length;
-    const body = content.slice(item.end, nextStart).trim();
-    return {
-      number: item.number,
-      raw: body,
-    };
-  });
-}
-
 function parseOptions(optionsBody) {
   const optionRegex = /<Opcion([^>]*)>([\s\S]*?)<\/Opcion>/gi;
   const options = [];
@@ -611,28 +632,6 @@ function parseOptions(optionsBody) {
   return options;
 }
 
-function parseDetailsSections(inner) {
-  const detailsRegex = /<details\b[^>]*>([\s\S]*?)<\/details>/gi;
-  const sections = [];
-  let match = null;
-
-  while ((match = detailsRegex.exec(inner)) !== null) {
-    const raw = String(match[0] || '');
-    const body = String(match[1] || '').trim();
-    const summaryMatch = body.match(/<summary>([\s\S]*?)<\/summary>/i);
-    const summary = cleanInlineMarkdown(stripHtmlTags(summaryMatch?.[1] || '')).trim();
-    const content = body.replace(/<summary>[\s\S]*?<\/summary>/i, '').trim();
-
-    sections.push({
-      raw,
-      summary,
-      content,
-    });
-  }
-
-  return sections;
-}
-
 async function parseQuestion(section, filePath) {
   const preguntaRegex = /<Pregunta([^>]*)>([\s\S]*?)<\/Pregunta>/i;
   const preguntaMatch = section.raw.match(preguntaRegex);
@@ -651,11 +650,13 @@ async function parseQuestion(section, filePath) {
   );
 
   const optionsMatch = inner.match(/<Opciones>([\s\S]*?)<\/Opciones>/i);
-  const detailSections = parseDetailsSections(inner);
+  const supplementSections = parseSupplementSections(inner);
   const answerDetails =
-    detailSections.find((entry) => /respuesta|soluci[oó]n/i.test(entry.summary)) ?? detailSections[0] ?? null;
+    supplementSections.find((entry) => entry.kind === 'feedback') ??
+    supplementSections.find((entry) => entry.kind === 'details') ??
+    null;
   const conceptDetails =
-    detailSections.find((entry) => /conceptos?\s+relacionados/i.test(entry.summary)) ?? null;
+    supplementSections.find((entry) => entry.kind === 'concepts') ?? null;
 
   const optionsBody = optionsMatch ? optionsMatch[1] : '';
   const options = parseOptions(optionsBody);
@@ -663,7 +664,7 @@ async function parseQuestion(section, filePath) {
 
   let stemMdx = inner;
   if (optionsMatch) stemMdx = stemMdx.replace(optionsMatch[0], '');
-  detailSections.forEach((entry) => {
+  supplementSections.forEach((entry) => {
     stemMdx = stemMdx.replace(entry.raw, '');
   });
   const stemMdxRaw = stemMdx.trim();
@@ -682,6 +683,10 @@ async function parseQuestion(section, filePath) {
 
   const questionId = String(attrs.id || section.number).trim();
   const anioRaw = attrs.anio ? Number.parseInt(String(attrs.anio), 10) : null;
+  const contextRefs = String(attrs.context || attrs.contexto || '')
+    .split(',')
+    .map((value) => value.trim())
+    .filter(Boolean);
 
   const [stemHtml, feedbackHtml, conceptsHtml] = await Promise.all([
     renderPracticeFragmentHtml(stemMdx, { filePath }),
@@ -692,6 +697,7 @@ async function parseQuestion(section, filePath) {
   return {
     id: questionId,
     order: section.number,
+    order_base: section.number,
     meta: {
       fuente: attrs.fuente ?? null,
       anio: Number.isFinite(anioRaw) ? anioRaw : null,
@@ -718,7 +724,38 @@ async function parseQuestion(section, filePath) {
     concepts_blocks: buildBlocks(conceptsMdxRaw, conceptsAssets),
     app_payload_version: APP_PAYLOAD_VERSION,
     detached_context_mdx: detachedContext,
+    context_refs: contextRefs,
   };
+}
+
+function assertUniqueExternalIds(entries, key, entityLabel, route) {
+  const seen = new Set();
+
+  entries.forEach((entry) => {
+    const value = String(entry?.[key] || '').trim();
+    if (!value) return;
+
+    if (seen.has(value)) {
+      throw new Error(`ID duplicado de ${entityLabel} "${value}" en ${route}`);
+    }
+
+    seen.add(value);
+  });
+}
+
+function assertQuestionIntegrity(question, route) {
+  const options = Array.isArray(question?.options) ? question.options : [];
+  const correctCount = options.filter((option) => option?.is_correct === true).length;
+
+  if (options.length < 2) {
+    throw new Error(`La pregunta ${question?.id || '?'} en ${route} debe tener al menos 2 opciones`);
+  }
+
+  if (correctCount !== 1) {
+    throw new Error(
+      `La pregunta ${question?.id || '?'} en ${route} debe tener exactamente 1 opción correcta (actual: ${correctCount})`
+    );
+  }
 }
 
 function loadContentManifestMap(pathLike) {
@@ -753,12 +790,18 @@ async function buildWorkshopEntry(filePath, contentEntryMap, source) {
   const parsedQuestions = (await Promise.all(
     sections.map((section) => parseQuestion(section, filePath))
   )).filter(Boolean);
+  const explicitContexts = await extractExplicitContexts(content, filePath);
+
+  assertUniqueExternalIds(parsedQuestions, 'id', 'pregunta', route);
+  assertUniqueExternalIds(explicitContexts, 'external_id', 'contexto', route);
+  parsedQuestions.forEach((question) => assertQuestionIntegrity(question, route));
 
   if (parsedQuestions.length === 0) {
     return null;
   }
 
   const sharedContexts = [];
+  const inlineContexts = [];
 
   for (const question of parsedQuestions) {
     const detached = String(question.detached_context_mdx || '').trim();
@@ -769,6 +812,13 @@ async function buildWorkshopEntry(filePath, contentEntryMap, source) {
       const payload = await buildContextPayload(detached, filePath);
       ranges.forEach((range) => {
         sharedContexts.push({
+          external_id: `legacy:${range.start}-${range.end}`,
+          title: `Contexto compartido (${range.start}-${range.end})`,
+          order_base: range.start,
+          metadata: {
+            source: 'legacy-range',
+            range,
+          },
           ...range,
           ...payload,
         });
@@ -776,41 +826,17 @@ async function buildWorkshopEntry(filePath, contentEntryMap, source) {
       continue;
     }
 
-    Object.assign(question, await buildContextPayload(detached, filePath));
+    inlineContexts.push({
+      external_id: `inline:${question.id}`,
+      title: null,
+      order_base: question.order_base ?? question.order ?? 1,
+      metadata: {
+        source: 'inline-question-context',
+        question_id: question.id,
+      },
+      ...(await buildContextPayload(detached, filePath)),
+    });
   }
-
-  const questions = parsedQuestions.map((question) => {
-    const contextualMatches = sharedContexts.filter(
-      (context) => question.order >= context.start && question.order <= context.end
-    );
-
-    if (contextualMatches.length === 0) {
-      // internal field used during parsing only
-      delete question.detached_context_mdx;
-      return question;
-    }
-
-    const contextMdx = contextualMatches
-      .map((context) => context.context_mdx)
-      .filter(Boolean)
-      .join('\n\n')
-      .trim();
-    const contextHtml = contextualMatches
-      .map((context) => context.context_html)
-      .filter(Boolean)
-      .join('\n');
-
-    const contextAssets = [...new Set(contextualMatches.flatMap((context) => context.context_assets || []))];
-    const contextBlocks = contextualMatches.flatMap((context) => context.context_blocks || []);
-
-    question.context_mdx = contextMdx;
-    question.context_html = contextHtml;
-    question.context_assets = contextAssets;
-    question.context_blocks = contextBlocks;
-
-    delete question.detached_context_mdx;
-    return question;
-  });
 
   const contentEntry = contentEntryMap.get(route);
 
@@ -825,6 +851,90 @@ async function buildWorkshopEntry(filePath, contentEntryMap, source) {
   const accessTier = contentEntry?.accessTier || 'premium';
   const isPublished = Boolean(contentEntry?.flags?.published ?? !(frontmatter.draft === true));
 
+  const contextEntries = [
+    ...explicitContexts,
+    ...sharedContexts,
+    ...inlineContexts,
+  ];
+  const contextsById = new Map();
+
+  contextEntries.forEach((context) => {
+    const externalId = String(context.external_id || '').trim();
+    if (!externalId) return;
+    if (!contextsById.has(externalId)) {
+      contextsById.set(externalId, {
+        external_id: externalId,
+        title: context.title ?? null,
+        order_base: Number(context.order_base ?? 1) || 1,
+        context_mdx: context.context_mdx ?? '',
+        context_html: context.context_html ?? '',
+        context_assets: Array.isArray(context.context_assets) ? context.context_assets : [],
+        context_blocks: Array.isArray(context.context_blocks) ? context.context_blocks : [],
+        metadata: context.metadata ?? {},
+      });
+    }
+  });
+
+  const questions = [];
+  const questionContextLinks = [];
+
+  parsedQuestions.forEach((question) => {
+    const explicitIds = Array.isArray(question.context_refs) ? question.context_refs : [];
+    explicitIds.forEach((contextId) => {
+      if (!contextsById.has(contextId)) {
+        throw new Error(
+          `La pregunta ${question.id} referencia el contexto "${contextId}" que no existe en ${route}`
+        );
+      }
+    });
+
+    const sharedIds = sharedContexts
+      .filter((context) => question.order >= context.start && question.order <= context.end)
+      .map((context) => context.external_id);
+    const inlineId = contextsById.has(`inline:${question.id}`) ? [`inline:${question.id}`] : [];
+    const contextIds = [...new Set([...explicitIds, ...sharedIds, ...inlineId])];
+    const contextPayloads = contextIds
+      .map((contextId) => contextsById.get(contextId))
+      .filter(Boolean)
+      .sort((a, b) => (a.order_base ?? 1) - (b.order_base ?? 1));
+
+    contextPayloads.forEach((context, index) => {
+      questionContextLinks.push({
+        question_external_id: question.id,
+        context_external_id: context.external_id,
+        order_base: index + 1,
+      });
+    });
+
+    const contextMdx = contextPayloads
+      .map((context) => context.context_mdx)
+      .filter(Boolean)
+      .join('\n\n')
+      .trim();
+    const contextHtml = contextPayloads
+      .map((context) => context.context_html)
+      .filter(Boolean)
+      .join('\n');
+    const contextAssets = [...new Set(contextPayloads.flatMap((context) => context.context_assets || []))];
+    const contextBlocks = contextPayloads.flatMap((context) => context.context_blocks || []);
+
+    questions.push({
+      ...question,
+      order_base: Number(question.order_base ?? question.order ?? 1) || 1,
+      source_slug: `${slugClean}#pregunta-${question.id}`,
+      context_ids: contextIds,
+      context_mdx: contextMdx,
+      context_html: contextHtml,
+      context_assets: contextAssets,
+      context_blocks: contextBlocks,
+    });
+  });
+
+  questions.forEach((question) => {
+    delete question.detached_context_mdx;
+    delete question.context_refs;
+  });
+
   const allAssets = [
     ...new Set(
       questions.flatMap((q) => [
@@ -835,6 +945,10 @@ async function buildWorkshopEntry(filePath, contentEntryMap, source) {
       ])
     ),
   ].sort();
+  const assetRefs = buildAssetRefs(allAssets);
+  const contexts = [...contextsById.values()].sort(
+    (a, b) => (a.order_base ?? 1) - (b.order_base ?? 1)
+  );
 
   const fallbackId = toContentId(slugClean, source);
 
@@ -853,6 +967,9 @@ async function buildWorkshopEntry(filePath, contentEntryMap, source) {
       total_assets: allAssets.length,
     },
     assets: allAssets,
+    asset_refs: assetRefs,
+    contexts,
+    question_context_links: questionContextLinks,
     questions,
   };
 }
