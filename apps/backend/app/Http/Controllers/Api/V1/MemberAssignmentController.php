@@ -7,6 +7,7 @@ use App\Models\AssessmentAssignment;
 use App\Models\AssessmentAttempt;
 use App\Models\User;
 use App\Services\Assessments\AssessmentAssignmentAccessService;
+use App\Services\Assessments\AssessmentAttemptService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
@@ -14,30 +15,30 @@ class MemberAssignmentController extends Controller
 {
     public function index(
         Request $request,
-        AssessmentAssignmentAccessService $accessService
+        AssessmentAssignmentAccessService $accessService,
+        AssessmentAttemptService $attemptService
     ): JsonResponse {
         /** @var User $user */
         $user = $request->user();
         $mode = trim((string) $request->query('mode', ''));
 
         $query = $accessService->accessibleAssignmentsQuery($user)
-            ->withCount(['questions'])
+            ->withCount([
+                'questions',
+                'attempts as user_attempts_count' => fn ($builder) => $builder->where('user_id', $user->id),
+            ])
             ->with([
                 'attempts' => fn ($builder) => $builder
                     ->where('user_id', $user->id)
                     ->latest('id'),
             ]);
 
-        if (! $user->isAdmin()) {
-            $query->where('status', AssessmentAssignment::STATUS_ACTIVE);
-        }
-
         if ($mode !== '') {
             $query->where('mode', $mode);
         }
 
         $items = $query->get()
-            ->map(fn (AssessmentAssignment $assignment): array => $this->serializeAssignment($assignment, $user, $accessService))
+            ->map(fn (AssessmentAssignment $assignment): array => $this->serializeAssignment($assignment, $user, $accessService, $attemptService))
             ->filter(fn (array $assignment): bool => (bool) $assignment['availability']['can_view'])
             ->values();
 
@@ -50,19 +51,22 @@ class MemberAssignmentController extends Controller
     public function show(
         Request $request,
         string $assignmentId,
-        AssessmentAssignmentAccessService $accessService
+        AssessmentAssignmentAccessService $accessService,
+        AssessmentAttemptService $attemptService
     ): JsonResponse {
         /** @var User $user */
         $user = $request->user();
 
         $assignment = $accessService->accessibleAssignmentsQuery($user)
-            ->withCount(['questions'])
+            ->withCount([
+                'questions',
+                'attempts as user_attempts_count' => fn ($builder) => $builder->where('user_id', $user->id),
+            ])
             ->with([
                 'attempts' => fn ($builder) => $builder
                     ->where('user_id', $user->id)
                     ->latest('id'),
             ])
-            ->when(! $user->isAdmin(), fn ($query) => $query->where('status', AssessmentAssignment::STATUS_ACTIVE))
             ->where(function ($query) use ($assignmentId): void {
                 $identifier = trim(rawurldecode($assignmentId));
                 $query->where('external_id', $identifier);
@@ -82,7 +86,7 @@ class MemberAssignmentController extends Controller
             ], 404);
         }
 
-        $payload = $this->serializeAssignment($assignment, $user, $accessService);
+        $payload = $this->serializeAssignment($assignment, $user, $accessService, $attemptService);
         if (! $payload['availability']['can_view']) {
             return response()->json([
                 'ok' => false,
@@ -105,7 +109,8 @@ class MemberAssignmentController extends Controller
     private function serializeAssignment(
         AssessmentAssignment $assignment,
         User $user,
-        AssessmentAssignmentAccessService $accessService
+        AssessmentAssignmentAccessService $accessService,
+        AssessmentAttemptService $attemptService
     ): array {
         $availability = $accessService->availability($user, $assignment);
         /** @var AssessmentAttempt|null $latestAttempt */
@@ -113,6 +118,11 @@ class MemberAssignmentController extends Controller
         $effectiveQuestionCount = $assignment->questions_count > 0
             ? (int) $assignment->questions_count
             : (int) ($assignment->template?->total_questions ?? 0);
+        $attemptsUsed = (int) ($assignment->user_attempts_count ?? 0);
+        $maxAttempts = $assignment->max_attempts;
+        $remainingAttempts = $maxAttempts === null
+            ? null
+            : max($maxAttempts - $attemptsUsed, 0);
 
         return [
             'id' => $assignment->external_id,
@@ -141,6 +151,11 @@ class MemberAssignmentController extends Controller
                 'selected_questions' => (int) $assignment->questions_count,
                 'effective_questions' => $effectiveQuestionCount,
             ],
+            'attempts' => [
+                'used' => $attemptsUsed,
+                'limit' => $maxAttempts,
+                'remaining' => $remainingAttempts,
+            ],
             'availability' => $availability,
             'latest_attempt' => $latestAttempt ? [
                 'id' => $latestAttempt->external_id,
@@ -148,8 +163,7 @@ class MemberAssignmentController extends Controller
                 'submitted_at' => $latestAttempt->submitted_at?->toIso8601String(),
                 'score_percent' => $latestAttempt->score_percent,
                 'score_scale' => $latestAttempt->score_scale !== null ? (float) $latestAttempt->score_scale : null,
-                'can_review' => (bool) (($latestAttempt->settings_snapshot['show_feedback_on_submit'] ?? false)
-                    || ($latestAttempt->review_released_at && $latestAttempt->review_released_at->isPast())),
+                'can_review' => $attemptService->canReview($latestAttempt),
             ] : null,
             'updated_at' => $assignment->updated_at?->toIso8601String(),
         ];

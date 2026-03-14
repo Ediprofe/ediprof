@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\V1;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\V1\StartAssessmentAttemptRequest;
 use App\Models\AssessmentAssignment;
+use App\Models\AssessmentAttempt;
 use App\Models\User;
 use App\Services\Assessments\AssessmentAssignmentAccessService;
 use App\Services\Assessments\AssessmentAttemptService;
@@ -41,8 +42,21 @@ class AssessmentAssignmentController extends Controller
             ], 404);
         }
 
-        if ($accessError = $this->resolveAccessErrorResponse($user, $assignment, $accessService)) {
+        $latestAttempt = AssessmentAttempt::query()
+            ->where('user_id', $user->id)
+            ->where('assignment_id', $assignment->id)
+            ->latest('id')
+            ->first();
+
+        if ($accessError = $this->resolveAccessErrorResponse($user, $assignment, $accessService, $latestAttempt)) {
             return $accessError;
+        }
+
+        if ($latestAttempt instanceof AssessmentAttempt && ! $accessService->availability($user, $assignment)['can_start']) {
+            return response()->json([
+                'ok' => true,
+                'data' => $attemptService->toClientPayload($latestAttempt),
+            ]);
         }
 
         $reset = (bool) ($request->validated('reset') ?? false);
@@ -70,11 +84,12 @@ class AssessmentAssignmentController extends Controller
     private function resolveAccessErrorResponse(
         User $user,
         AssessmentAssignment $assignment,
-        AssessmentAssignmentAccessService $accessService
+        AssessmentAssignmentAccessService $accessService,
+        ?AssessmentAttempt $latestAttempt = null
     ): ?JsonResponse
     {
         $availability = $accessService->availability($user, $assignment);
-        if ($availability['can_start']) {
+        if ($availability['can_start'] || $latestAttempt instanceof AssessmentAttempt) {
             return null;
         }
 

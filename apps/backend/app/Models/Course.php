@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 use Illuminate\Support\Str;
 
 class Course extends Model
@@ -55,6 +56,19 @@ class Course extends Model
     public function assignments(): HasMany
     {
         return $this->hasMany(AssessmentAssignment::class);
+    }
+
+    /**
+     * @return HasManyThrough<AssessmentAttempt, AssessmentAssignment, $this>
+     */
+    public function attempts(): HasManyThrough
+    {
+        return $this->hasManyThrough(
+            AssessmentAttempt::class,
+            AssessmentAssignment::class,
+            'course_id',
+            'assignment_id'
+        );
     }
 
     /**

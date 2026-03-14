@@ -130,6 +130,7 @@ class AssessmentAttemptService
     ): array {
         $attempt = $attempt->loadMissing(['template', 'assignment', 'answers']);
         $this->assertAttemptWritable($attempt);
+        $this->assertAttemptCanRecordAnswer($attempt);
 
         $question = $this->findSnapshotQuestion($attempt, $questionExternalId);
         if ($question === null) {
@@ -549,6 +550,42 @@ class AssessmentAttemptService
         }
     }
 
+    private function assertAttemptCanRecordAnswer(AssessmentAttempt $attempt): void
+    {
+        $assignment = $attempt->assignment;
+        if (! $assignment instanceof AssessmentAssignment) {
+            return;
+        }
+
+        if (in_array($assignment->status, [AssessmentAssignment::STATUS_CLOSED, AssessmentAssignment::STATUS_ARCHIVED], true)) {
+            throw ValidationException::withMessages([
+                'attempt' => 'La asignación ya cerró. Solo puedes revisar o entregar lo que ya alcanzaste a responder.',
+            ]);
+        }
+
+        if ($assignment->opens_at instanceof CarbonInterface && $assignment->opens_at->isFuture()) {
+            throw ValidationException::withMessages([
+                'attempt' => 'La asignación todavía no está abierta para responder.',
+            ]);
+        }
+
+        if ($assignment->closes_at instanceof CarbonInterface && $assignment->closes_at->lessThanOrEqualTo(now())) {
+            throw ValidationException::withMessages([
+                'attempt' => 'La asignación ya cerró. Solo puedes revisar o entregar lo que ya alcanzaste a responder.',
+            ]);
+        }
+
+        $timeLimitMinutes = (int) ((is_array($attempt->settings_snapshot) ? ($attempt->settings_snapshot['time_limit_minutes'] ?? null) : null) ?? 0);
+        if ($timeLimitMinutes > 0 && $attempt->started_at instanceof CarbonInterface) {
+            $deadline = $attempt->started_at->copy()->addMinutes($timeLimitMinutes);
+            if ($deadline->lessThanOrEqualTo(now())) {
+                throw ValidationException::withMessages([
+                    'attempt' => 'Se agotó el tiempo límite de este intento.',
+                ]);
+            }
+        }
+    }
+
     /**
      * @return array<string, mixed>|null
      */
@@ -737,6 +774,8 @@ class AssessmentAttemptService
             'randomize_questions' => (bool) $assignment->randomize_questions,
             'show_feedback_on_submit' => (bool) $assignment->show_feedback_on_submit,
             'show_feedback_after_close' => (bool) $assignment->show_feedback_after_close,
+            'max_attempts' => $assignment->max_attempts,
+            'time_limit_minutes' => $assignment->time_limit_minutes,
             'opens_at' => $assignment->opens_at?->toIso8601String(),
             'closes_at' => $assignment->closes_at?->toIso8601String(),
             'review_released_at' => $assignment->review_released_at?->toIso8601String(),

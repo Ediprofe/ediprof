@@ -300,6 +300,117 @@ class AssessmentAttemptApiTest extends TestCase
         Carbon::setTestNow();
     }
 
+    public function test_student_can_reopen_closed_assignment_to_view_existing_attempt(): void
+    {
+        Carbon::setTestNow('2026-03-13 16:30:00');
+
+        [$student, $workshop, $template] = $this->makeAssignedTemplate('simulacro');
+        $course = $student->courses()->firstOrFail();
+
+        $assignment = AssessmentAssignment::query()->create([
+            'course_id' => $course->id,
+            'template_id' => $template->id,
+            'title' => 'Evaluación cerrada con entrega',
+            'mode' => AssessmentAssignment::MODE_EVALUATION,
+            'status' => AssessmentAssignment::STATUS_ACTIVE,
+            'randomize_questions' => false,
+            'show_feedback_on_submit' => false,
+            'show_feedback_after_close' => true,
+            'opens_at' => now()->subHour(),
+            'closes_at' => now()->addMinutes(30),
+        ]);
+
+        $token = $this->loginAndGetToken($student->email, 'Secret1234');
+
+        $startResponse = $this->postJson(
+            '/api/v1/assignments/'.$assignment->external_id.'/attempts',
+            [],
+            ['Authorization' => "Bearer {$token}"],
+        )->assertOk();
+
+        $attemptId = (string) $startResponse->json('data.attempt.id');
+
+        $this->patchJson(
+            '/api/v1/assessment-attempts/'.$attemptId.'/questions/q-1',
+            ['option_id' => 'A'],
+            ['Authorization' => "Bearer {$token}"],
+        )->assertOk();
+
+        $this->postJson(
+            '/api/v1/assessment-attempts/'.$attemptId.'/submit',
+            [],
+            ['Authorization' => "Bearer {$token}"],
+        )->assertOk();
+
+        $assignment->forceFill([
+            'status' => AssessmentAssignment::STATUS_CLOSED,
+            'closes_at' => now()->subMinute(),
+        ])->save();
+
+        $this->getJson('/api/v1/me/assignments', [
+            'Authorization' => "Bearer {$token}",
+        ])->assertOk()
+            ->assertJsonCount(1, 'data')
+            ->assertJsonPath('data.0.availability.can_start', false)
+            ->assertJsonPath('data.0.latest_attempt.id', $attemptId)
+            ->assertJsonPath('data.0.latest_attempt.can_review', true);
+
+        $this->postJson(
+            '/api/v1/assignments/'.$assignment->external_id.'/attempts',
+            [],
+            ['Authorization' => "Bearer {$token}"],
+        )->assertOk()
+            ->assertJsonPath('data.attempt.id', $attemptId)
+            ->assertJsonPath('data.attempt.can_review', true);
+
+        Carbon::setTestNow();
+    }
+
+    public function test_student_cannot_answer_after_assignment_has_closed(): void
+    {
+        Carbon::setTestNow('2026-03-13 16:30:00');
+
+        [$student, $workshop, $template] = $this->makeAssignedTemplate('simulacro');
+        $course = $student->courses()->firstOrFail();
+
+        $assignment = AssessmentAssignment::query()->create([
+            'course_id' => $course->id,
+            'template_id' => $template->id,
+            'title' => 'Evaluación cerrada',
+            'mode' => AssessmentAssignment::MODE_EVALUATION,
+            'status' => AssessmentAssignment::STATUS_ACTIVE,
+            'randomize_questions' => false,
+            'show_feedback_on_submit' => false,
+            'show_feedback_after_close' => false,
+            'opens_at' => now()->subHour(),
+            'closes_at' => now()->addMinutes(30),
+        ]);
+
+        $token = $this->loginAndGetToken($student->email, 'Secret1234');
+
+        $startResponse = $this->postJson(
+            '/api/v1/assignments/'.$assignment->external_id.'/attempts',
+            [],
+            ['Authorization' => "Bearer {$token}"],
+        )->assertOk();
+
+        $attemptId = (string) $startResponse->json('data.attempt.id');
+
+        $assignment->forceFill([
+            'status' => AssessmentAssignment::STATUS_CLOSED,
+            'closes_at' => now()->subMinute(),
+        ])->save();
+
+        $this->patchJson(
+            '/api/v1/assessment-attempts/'.$attemptId.'/questions/q-1',
+            ['option_id' => 'A'],
+            ['Authorization' => "Bearer {$token}"],
+        )->assertStatus(422)
+            ->assertJsonValidationErrors(['attempt']);
+
+        Carbon::setTestNow();
+    }
+
     /**
      * @return array{0:User,1:Workshop,2:AssessmentTemplate}
      */

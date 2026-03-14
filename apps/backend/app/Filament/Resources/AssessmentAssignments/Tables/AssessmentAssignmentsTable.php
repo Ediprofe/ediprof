@@ -8,6 +8,7 @@ use Filament\Actions\Action;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Notifications\Notification;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
@@ -101,6 +102,41 @@ class AssessmentAssignmentsTable
                     ->options(AssessmentAssignment::statusOptions()),
             ])))
             ->recordActions([
+                Action::make('activateAssignment')
+                    ->label('Activar')
+                    ->icon('heroicon-o-play')
+                    ->color('success')
+                    ->visible(fn (AssessmentAssignment $record): bool => in_array($record->status, [
+                        AssessmentAssignment::STATUS_DRAFT,
+                        AssessmentAssignment::STATUS_CLOSED,
+                    ], true))
+                    ->requiresConfirmation()
+                    ->action(function (AssessmentAssignment $record): void {
+                        $record->forceFill([
+                            'status' => AssessmentAssignment::STATUS_ACTIVE,
+                        ])->save();
+
+                        Notification::make()
+                            ->title('Asignación activada')
+                            ->success()
+                            ->send();
+                    }),
+                Action::make('closeAssignment')
+                    ->label('Cerrar')
+                    ->icon('heroicon-o-stop')
+                    ->color('warning')
+                    ->visible(fn (AssessmentAssignment $record): bool => $record->status === AssessmentAssignment::STATUS_ACTIVE)
+                    ->requiresConfirmation()
+                    ->action(function (AssessmentAssignment $record): void {
+                        $record->forceFill([
+                            'status' => AssessmentAssignment::STATUS_CLOSED,
+                        ])->save();
+
+                        Notification::make()
+                            ->title('Asignación cerrada')
+                            ->success()
+                            ->send();
+                    }),
                 Action::make('configureQuestions')
                     ->label('Configurar preguntas')
                     ->icon('heroicon-o-list-bullet')

@@ -6,8 +6,6 @@ use App\Models\AssessmentAssignment;
 use App\Models\AssessmentAttempt;
 use App\Services\Assessments\AssessmentAttemptService;
 use Filament\Actions\Action;
-use Filament\Actions\BulkActionGroup;
-use Filament\Actions\DeleteBulkAction;
 use Filament\Notifications\Notification;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Tables\Columns\TextColumn;
@@ -26,8 +24,25 @@ class AttemptsRelationManager extends RelationManager
         $assignment = $this->getOwnerRecord();
 
         return $table
-            ->modifyQueryUsing(fn ($query) => $query->with(['user'])->withCount('answers'))
-            ->defaultSort('submitted_at', 'desc')
+            ->modifyQueryUsing(fn ($query) => $query
+                ->with(['user'])
+                ->withCount('answers')
+                ->orderBy(
+                    \App\Models\User::query()
+                        ->selectRaw("COALESCE(last_names, '')")
+                        ->whereColumn('users.id', 'assessment_attempts.user_id')
+                )
+                ->orderBy(
+                    \App\Models\User::query()
+                        ->selectRaw("COALESCE(first_names, '')")
+                        ->whereColumn('users.id', 'assessment_attempts.user_id')
+                )
+                ->orderBy(
+                    \App\Models\User::query()
+                        ->selectRaw("COALESCE(institutional_code, '')")
+                        ->whereColumn('users.id', 'assessment_attempts.user_id')
+                )
+                ->orderBy('submitted_at'))
             ->columns([
                 TextColumn::make('user.last_names')
                     ->label('Apellidos')
@@ -138,6 +153,30 @@ class AttemptsRelationManager extends RelationManager
                     ]),
             ])
             ->headerActions([
+                Action::make('exportAssignmentMinimalExcel')
+                    ->label('Lista para pegar')
+                    ->icon('heroicon-o-clipboard-document-list')
+                    ->color('success')
+                    ->url(
+                        fn (): string => route('admin.exports.assignments.results.excel_minimal', ['assignment' => $assignment]),
+                        shouldOpenInNewTab: true,
+                    ),
+                Action::make('exportAssignmentExcel')
+                    ->label('Planilla de notas')
+                    ->icon('heroicon-o-document-arrow-down')
+                    ->color('warning')
+                    ->url(
+                        fn (): string => route('admin.exports.assignments.results.excel', ['assignment' => $assignment]),
+                        shouldOpenInNewTab: true,
+                    ),
+                Action::make('exportAssignmentResults')
+                    ->label('Exportar CSV detallado')
+                    ->icon('heroicon-o-arrow-down-tray')
+                    ->color('gray')
+                    ->url(
+                        fn (): string => route('admin.exports.assignments.results', ['assignment' => $assignment]),
+                        shouldOpenInNewTab: true,
+                    ),
                 Action::make('releaseAllReviews')
                     ->label('Liberar revisión a entregados')
                     ->icon('heroicon-o-eye')
@@ -169,11 +208,6 @@ class AttemptsRelationManager extends RelationManager
                             ->success()
                             ->send();
                     }),
-            ])
-            ->toolbarActions([
-                BulkActionGroup::make([
-                    DeleteBulkAction::make(),
-                ]),
             ])
             ->emptyStateHeading('Todavía no hay intentos de estudiantes.')
             ->emptyStateDescription('Cuando tus estudiantes entren a esta asignación, aquí verás puntaje, estado y revisión.');
