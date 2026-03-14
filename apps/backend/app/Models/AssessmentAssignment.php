@@ -12,6 +12,20 @@ class AssessmentAssignment extends Model
 {
     use HasFactory;
 
+    public const MODE_STUDY = 'study';
+
+    public const MODE_SIMULACRO = 'simulacro';
+
+    public const MODE_EVALUATION = 'evaluation';
+
+    public const STATUS_DRAFT = 'draft';
+
+    public const STATUS_ACTIVE = 'active';
+
+    public const STATUS_CLOSED = 'closed';
+
+    public const STATUS_ARCHIVED = 'archived';
+
     protected $fillable = [
         'external_id',
         'course_id',
@@ -72,5 +86,30 @@ class AssessmentAssignment extends Model
     public function attempts(): HasMany
     {
         return $this->hasMany(AssessmentAttempt::class, 'assignment_id');
+    }
+
+    /**
+     * @return array<string, string>
+     */
+    public static function modeOptions(): array
+    {
+        return [
+            self::MODE_STUDY => 'Estudio guiado',
+            self::MODE_SIMULACRO => 'Simulacro',
+            self::MODE_EVALUATION => 'Evaluación',
+        ];
+    }
+
+    /**
+     * @return array<string, string>
+     */
+    public static function statusOptions(): array
+    {
+        return [
+            self::STATUS_DRAFT => 'Borrador',
+            self::STATUS_ACTIVE => 'Activa',
+            self::STATUS_CLOSED => 'Cerrada',
+            self::STATUS_ARCHIVED => 'Archivada',
+        ];
     }
 }

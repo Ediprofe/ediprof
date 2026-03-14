@@ -3,6 +3,8 @@
 namespace Tests\Feature;
 
 use App\Models\AssessmentContext;
+use App\Models\AssessmentAssignment;
+use App\Models\AssessmentAssignmentQuestion;
 use App\Models\AssessmentQuestion;
 use App\Models\AssessmentTemplate;
 use App\Models\Course;
@@ -11,6 +13,7 @@ use App\Models\CourseEnrollment;
 use App\Models\User;
 use App\Models\Workshop;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Hash;
 use Tests\TestCase;
 
@@ -125,6 +128,107 @@ class AssessmentAttemptApiTest extends TestCase
             ->assertJsonPath('data.questions.0.id', 'q-1')
             ->assertJsonPath('data.questions.1.id', 'q-2')
             ->assertJsonPath('data.evaluation_by_question.q-2.correct_option_id', 'A');
+    }
+
+    public function test_student_can_start_assignment_attempt_with_selected_questions_and_stable_random_order(): void
+    {
+        Carbon::setTestNow('2026-03-13 16:30:00');
+
+        [$student, $workshop, $template] = $this->makeAssignedTemplate('simulacro');
+        $course = $student->courses()->firstOrFail();
+
+        $questionThree = AssessmentQuestion::query()->create([
+            'template_id' => $template->id,
+            'external_id' => 'q-3',
+            'order_base' => 3,
+            'source_slug' => $workshop->route.'#pregunta-q-3',
+            'is_active' => true,
+            'meta' => [],
+            'stem_mdx' => 'Tercera pregunta',
+            'stem_html' => '<p>Tercera pregunta</p>',
+            'stem_assets' => [],
+            'stem_blocks' => [],
+            'options' => [
+                ['id' => 'A', 'text' => 'Correcta', 'is_correct' => true],
+                ['id' => 'B', 'text' => 'Incorrecta', 'is_correct' => false],
+            ],
+            'correct_option_id' => 'A',
+            'feedback_mdx' => 'Explicación 3',
+            'feedback_html' => '<p>Explicación 3</p>',
+            'feedback_summary' => 'Respuesta',
+            'feedback_assets' => [],
+            'feedback_blocks' => [],
+            'concepts_mdx' => 'Concepto 3',
+            'concepts_html' => '<p>Concepto 3</p>',
+            'concepts_summary' => 'Conceptos relacionados',
+            'concepts_assets' => [],
+            'concepts_blocks' => [],
+            'app_payload_version' => 1,
+        ]);
+
+        $assignment = AssessmentAssignment::query()->create([
+            'course_id' => $course->id,
+            'template_id' => $template->id,
+            'title' => 'Evaluación aleatoria 11°1',
+            'mode' => AssessmentAssignment::MODE_EVALUATION,
+            'status' => AssessmentAssignment::STATUS_ACTIVE,
+            'randomize_questions' => true,
+            'show_feedback_on_submit' => false,
+            'show_feedback_after_close' => true,
+            'opens_at' => now()->subMinutes(5),
+            'closes_at' => now()->addHour(),
+        ]);
+
+        AssessmentAssignmentQuestion::query()->create([
+            'assignment_id' => $assignment->id,
+            'question_id' => $template->questions()->where('external_id', 'q-2')->firstOrFail()->id,
+            'order_base' => 1,
+        ]);
+        AssessmentAssignmentQuestion::query()->create([
+            'assignment_id' => $assignment->id,
+            'question_id' => $questionThree->id,
+            'order_base' => 2,
+        ]);
+        AssessmentAssignmentQuestion::query()->create([
+            'assignment_id' => $assignment->id,
+            'question_id' => $template->questions()->where('external_id', 'q-1')->firstOrFail()->id,
+            'order_base' => 3,
+        ]);
+
+        $token = $this->loginAndGetToken($student->email, 'Secret1234');
+
+        $startResponse = $this->postJson(
+            '/api/v1/assignments/'.$assignment->external_id.'/attempts',
+            [],
+            ['Authorization' => "Bearer {$token}"],
+        );
+
+        $startResponse
+            ->assertOk()
+            ->assertJsonPath('data.attempt.mode', 'evaluation')
+            ->assertJsonPath('data.attempt.can_review', false);
+
+        $questionIds = array_values(array_map(
+            static fn (array $question): string => (string) ($question['id'] ?? ''),
+            $startResponse->json('data.questions', []),
+        ));
+
+        $this->assertSame(['q-1', 'q-3', 'q-2'], $questionIds);
+
+        $attemptId = (string) $startResponse->json('data.attempt.id');
+
+        $showResponse = $this->getJson(
+            '/api/v1/assessment-attempts/'.$attemptId,
+            ['Authorization' => "Bearer {$token}"],
+        );
+
+        $showResponse
+            ->assertOk()
+            ->assertJsonPath('data.questions.0.id', 'q-1')
+            ->assertJsonPath('data.questions.1.id', 'q-3')
+            ->assertJsonPath('data.questions.2.id', 'q-2');
+
+        Carbon::setTestNow();
     }
 
     /**

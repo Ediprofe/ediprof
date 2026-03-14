@@ -4,6 +4,7 @@ namespace App\Filament\Resources\Courses;
 
 use App\Filament\Resources\Courses\RelationManagers\ContentsRelationManager;
 use App\Filament\Resources\Courses\RelationManagers\EnrollmentsRelationManager;
+use App\Filament\Resources\Courses\RelationManagers\AssignmentsRelationManager;
 use App\Filament\Resources\Courses\Pages\CreateCourse;
 use App\Filament\Resources\Courses\Pages\EditCourse;
 use App\Filament\Resources\Courses\Pages\ListCourses;
@@ -50,6 +51,7 @@ class CourseResource extends Resource
         return [
             EnrollmentsRelationManager::class,
             ContentsRelationManager::class,
+            AssignmentsRelationManager::class,
         ];
     }
 

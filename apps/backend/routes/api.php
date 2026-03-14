@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\V1\AuthController;
 use App\Http\Controllers\Api\V1\Admin\AdminPanelController;
 use App\Http\Controllers\Api\V1\Admin\CourseController;
+use App\Http\Controllers\Api\V1\AssessmentAssignmentController;
 use App\Http\Controllers\Api\V1\AssessmentAttemptController;
 use App\Http\Controllers\Api\V1\ContentController;
 use App\Http\Controllers\Api\V1\MemberLibraryController;
@@ -52,6 +53,8 @@ Route::prefix('v1')->middleware('resolve.api_token')->group(function (): void {
     Route::patch('/assessment-attempts/{attemptId}/questions/{questionId}', [AssessmentAttemptController::class, 'answer'])
         ->middleware('require.api_token');
     Route::post('/assessment-attempts/{attemptId}/submit', [AssessmentAttemptController::class, 'submit'])
+        ->middleware('require.api_token');
+    Route::post('/assignments/{assignmentId}/attempts', [AssessmentAssignmentController::class, 'startAttempt'])
         ->middleware('require.api_token');
 
     Route::prefix('admin')->middleware(['require.api_token', 'require.admin'])->group(function (): void {

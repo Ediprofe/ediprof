@@ -50,6 +50,14 @@ class Course extends Model
     }
 
     /**
+     * @return HasMany<AssessmentAssignment, $this>
+     */
+    public function assignments(): HasMany
+    {
+        return $this->hasMany(AssessmentAssignment::class);
+    }
+
+    /**
      * @return BelongsToMany<User, $this>
      */
     public function students(): BelongsToMany
