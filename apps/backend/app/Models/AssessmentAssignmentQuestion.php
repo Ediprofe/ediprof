@@ -13,6 +13,7 @@ class AssessmentAssignmentQuestion extends Model
     protected $fillable = [
         'assignment_id',
         'question_id',
+        'selection_group_key',
         'order_base',
     ];
 

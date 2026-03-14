@@ -15,6 +15,13 @@ class AssessmentContext extends Model
         'template_id',
         'external_id',
         'title',
+        'topic',
+        'unit_label',
+        'subtopic',
+        'origin_label',
+        'editorial_status',
+        'tags',
+        'teacher_notes',
         'order_base',
         'is_active',
         'context_mdx',
@@ -29,6 +36,7 @@ class AssessmentContext extends Model
         return [
             'order_base' => 'integer',
             'is_active' => 'boolean',
+            'tags' => 'array',
             'context_assets' => 'array',
             'context_blocks' => 'array',
             'metadata' => 'array',
@@ -48,5 +56,12 @@ class AssessmentContext extends Model
             'context_id',
             'question_id'
         )->withPivot(['order_base'])->withTimestamps();
+    }
+
+    public function getSourceKeyAttribute(): string
+    {
+        $templateExternalId = $this->template?->external_id ?: ('template:'.$this->template_id);
+
+        return $templateExternalId.'#context:'.trim((string) $this->external_id);
     }
 }

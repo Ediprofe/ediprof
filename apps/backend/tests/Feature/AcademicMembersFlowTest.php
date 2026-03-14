@@ -469,6 +469,8 @@ class AcademicMembersFlowTest extends TestCase
             ->assertJsonPath('data.0.mode', 'evaluation')
             ->assertJsonPath('data.0.course.name', 'ICFES 11°1')
             ->assertJsonPath('data.0.stats.effective_questions', 19)
+            ->assertJsonPath('data.0.feedback.policy', 'manual')
+            ->assertJsonPath('data.0.feedback.state', 'pending_teacher')
             ->assertJsonPath('data.0.availability.can_start', true);
     }
 

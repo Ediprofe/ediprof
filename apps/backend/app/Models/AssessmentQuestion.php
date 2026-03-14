@@ -17,6 +17,13 @@ class AssessmentQuestion extends Model
         'external_id',
         'order_base',
         'source_slug',
+        'topic',
+        'unit_label',
+        'subtopic',
+        'origin_label',
+        'editorial_status',
+        'tags',
+        'teacher_notes',
         'is_active',
         'meta',
         'stem_mdx',
@@ -43,6 +50,7 @@ class AssessmentQuestion extends Model
         return [
             'order_base' => 'integer',
             'is_active' => 'boolean',
+            'tags' => 'array',
             'meta' => 'array',
             'stem_assets' => 'array',
             'stem_blocks' => 'array',
@@ -78,5 +86,12 @@ class AssessmentQuestion extends Model
     public function attemptAnswers(): HasMany
     {
         return $this->hasMany(AssessmentAttemptAnswer::class, 'question_id');
+    }
+
+    public function getSourceKeyAttribute(): string
+    {
+        $templateExternalId = $this->template?->external_id ?: ('template:'.$this->template_id);
+
+        return $templateExternalId.'#question:'.trim((string) $this->external_id);
     }
 }

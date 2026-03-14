@@ -8,6 +8,7 @@ use App\Models\AssessmentAttempt;
 use App\Models\User;
 use App\Services\Assessments\AssessmentAssignmentAccessService;
 use App\Services\Assessments\AssessmentAttemptService;
+use Carbon\CarbonInterface;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
@@ -123,6 +124,7 @@ class MemberAssignmentController extends Controller
         $remainingAttempts = $maxAttempts === null
             ? null
             : max($maxAttempts - $attemptsUsed, 0);
+        $feedback = $this->serializeFeedback($assignment, $latestAttempt, $attemptService);
 
         return [
             'id' => $assignment->external_id,
@@ -156,6 +158,7 @@ class MemberAssignmentController extends Controller
                 'limit' => $maxAttempts,
                 'remaining' => $remainingAttempts,
             ],
+            'feedback' => $feedback,
             'availability' => $availability,
             'latest_attempt' => $latestAttempt ? [
                 'id' => $latestAttempt->external_id,
@@ -164,8 +167,150 @@ class MemberAssignmentController extends Controller
                 'score_percent' => $latestAttempt->score_percent,
                 'score_scale' => $latestAttempt->score_scale !== null ? (float) $latestAttempt->score_scale : null,
                 'can_review' => $attemptService->canReview($latestAttempt),
-            ] : null,
+                'feedback_state' => $feedback['state'],
+                'feedback_state_label' => $feedback['state_label'],
+                ] : null,
             'updated_at' => $assignment->updated_at?->toIso8601String(),
         ];
+    }
+
+    /**
+     * @return array{
+     *   policy:string,
+     *   policy_label:string,
+     *   state:string,
+     *   state_label:string,
+     *   message:string,
+     *   available:bool,
+     *   release_at:string|null
+     * }
+     */
+    private function serializeFeedback(
+        AssessmentAssignment $assignment,
+        ?AssessmentAttempt $latestAttempt,
+        AssessmentAttemptService $attemptService
+    ): array {
+        $policy = $this->resolveFeedbackPolicy($assignment);
+        $policyLabel = $this->feedbackPolicyLabel($policy);
+        $releaseAt = $assignment->review_released_at;
+        $canReview = $latestAttempt instanceof AssessmentAttempt
+            ? $attemptService->canReview($latestAttempt)
+            : false;
+        $hasSubmittedAttempt = $latestAttempt instanceof AssessmentAttempt
+            && in_array($latestAttempt->status, ['submitted', 'graded', 'released'], true);
+
+        if ($canReview) {
+            return [
+                'policy' => $policy,
+                'policy_label' => $policyLabel,
+                'state' => 'available',
+                'state_label' => 'Disponible',
+                'message' => 'Ya puedes revisar la respuesta correcta y los conceptos relacionados de esta asignación.',
+                'available' => true,
+                'release_at' => $releaseAt?->toIso8601String(),
+            ];
+        }
+
+        if ($policy === 'scheduled') {
+            if ($releaseAt instanceof CarbonInterface && $releaseAt->isPast()) {
+                return [
+                    'policy' => $policy,
+                    'policy_label' => $policyLabel,
+                    'state' => $hasSubmittedAttempt ? 'available' : 'available_on_submit',
+                    'state_label' => $hasSubmittedAttempt ? 'Disponible' : 'Lista al entregar',
+                    'message' => $hasSubmittedAttempt
+                        ? 'Ya puedes revisar la respuesta correcta y los conceptos relacionados de esta asignación.'
+                        : 'Cuando entregues, la retroalimentación quedará disponible de inmediato.',
+                    'available' => $hasSubmittedAttempt,
+                    'release_at' => $releaseAt->toIso8601String(),
+                ];
+            }
+
+            return [
+                'policy' => $policy,
+                'policy_label' => $policyLabel,
+                'state' => 'scheduled',
+                'state_label' => 'Programada',
+                'message' => $hasSubmittedAttempt
+                    ? 'Tu resultado ya quedó guardado. La retroalimentación se habilitará '.$this->formatReleaseMoment($releaseAt).'.'
+                    : 'Después de entregar, la retroalimentación se habilitará '.$this->formatReleaseMoment($releaseAt).'.',
+                'available' => false,
+                'release_at' => $releaseAt?->toIso8601String(),
+            ];
+        }
+
+        if ($policy === 'on_submit') {
+            return [
+                'policy' => $policy,
+                'policy_label' => $policyLabel,
+                'state' => 'available_on_submit',
+                'state_label' => 'Se muestra al entregar',
+                'message' => 'Cuando entregues, verás la respuesta correcta y los conceptos relacionados de inmediato.',
+                'available' => false,
+                'release_at' => null,
+            ];
+        }
+
+        if ($policy === 'after_close') {
+            return [
+                'policy' => $policy,
+                'policy_label' => $policyLabel,
+                'state' => 'pending_close',
+                'state_label' => $hasSubmittedAttempt ? 'Pendiente por cierre' : 'Se habilita al cerrar',
+                'message' => $hasSubmittedAttempt
+                    ? 'Tu resultado ya quedó guardado. La retroalimentación se habilitará cuando el docente cierre la asignación.'
+                    : 'Después de entregar, la retroalimentación se habilitará cuando el docente cierre la asignación.',
+                'available' => false,
+                'release_at' => null,
+            ];
+        }
+
+        return [
+            'policy' => $policy,
+            'policy_label' => $policyLabel,
+            'state' => 'pending_teacher',
+            'state_label' => $hasSubmittedAttempt ? 'Pendiente por docente' : 'Liberación manual',
+            'message' => $hasSubmittedAttempt
+                ? 'Tu resultado ya quedó guardado. La retroalimentación se habilitará cuando el docente la libere desde el panel.'
+                : 'Después de entregar, la retroalimentación quedará pendiente hasta que el docente la libere desde el panel.',
+            'available' => false,
+            'release_at' => null,
+        ];
+    }
+
+    private function resolveFeedbackPolicy(AssessmentAssignment $assignment): string
+    {
+        if ($assignment->show_feedback_on_submit) {
+            return 'on_submit';
+        }
+
+        if ($assignment->review_released_at instanceof CarbonInterface) {
+            return 'scheduled';
+        }
+
+        if ($assignment->show_feedback_after_close) {
+            return 'after_close';
+        }
+
+        return 'manual';
+    }
+
+    private function feedbackPolicyLabel(string $policy): string
+    {
+        return match ($policy) {
+            'on_submit' => 'Retroalimentación al entregar',
+            'scheduled' => 'Retroalimentación programada',
+            'after_close' => 'Retroalimentación al cerrar',
+            default => 'Retroalimentación manual',
+        };
+    }
+
+    private function formatReleaseMoment(?CarbonInterface $releaseAt): string
+    {
+        if (! $releaseAt instanceof CarbonInterface) {
+            return 'en una fecha programada';
+        }
+
+        return 'a partir del '.$releaseAt->format('d/m/Y H:i');
     }
 }

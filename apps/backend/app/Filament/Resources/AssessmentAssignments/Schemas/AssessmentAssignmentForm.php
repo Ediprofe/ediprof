@@ -77,9 +77,11 @@ class AssessmentAssignmentForm
                 ->default(false),
             Toggle::make('show_feedback_on_submit')
                 ->label('Mostrar retroalimentación al entregar')
+                ->helperText('Si está activa, el estudiante verá la respuesta correcta y los conceptos relacionados apenas entregue.')
                 ->default(true),
             Toggle::make('show_feedback_after_close')
                 ->label('Mostrar retroalimentación al cerrar')
+                ->helperText('Útil cuando no quieres mostrar la solución al entregar, pero sí cuando cierres la asignación.')
                 ->default(false),
             TextInput::make('max_attempts')
                 ->label('Máximo de intentos')
@@ -97,8 +99,8 @@ class AssessmentAssignmentForm
             DateTimePicker::make('closes_at')
                 ->label('Cierre'),
             DateTimePicker::make('review_released_at')
-                ->label('Liberar revisión desde')
-                ->helperText('Útil en evaluaciones donde no quieres mostrar la solución al entregar.'),
+                ->label('Liberar retroalimentación desde')
+                ->helperText('Fecha opcional para habilitar la retroalimentación de forma automática, sin esperar al cierre manual.'),
         );
 
         return $schema->components($components);

@@ -5,13 +5,11 @@ namespace App\Filament\Resources\AssessmentAssignments\RelationManagers;
 use App\Models\AssessmentAssignment;
 use App\Models\AssessmentAssignmentQuestion;
 use App\Models\AssessmentQuestion;
-use Filament\Actions\BulkActionGroup;
+use App\Services\Assessments\AssessmentAssignmentSelectionService;
+use App\Services\Assessments\AssessmentQuestionGroupService;
+use Filament\Actions\Action;
 use Filament\Actions\CreateAction;
-use Filament\Actions\DeleteAction;
-use Filament\Actions\DeleteBulkAction;
-use Filament\Actions\EditAction;
 use Filament\Forms\Components\Select;
-use Filament\Forms\Components\TextInput;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Schemas\Schema;
 use Filament\Tables\Columns\TextColumn;
@@ -52,12 +50,7 @@ class QuestionsRelationManager extends RelationManager
                     return "{$record->external_id} • {$preview}";
                 })
                 ->disabledOn('edit')
-                ->required(),
-            TextInput::make('order_base')
-                ->label('Orden base')
-                ->numeric()
-                ->minValue(1)
-                ->default(fn () => ((int) $assignment->questions()->max('order_base')) + 1)
+                ->helperText('Si la pregunta comparte contexto con otras, la asignación incorporará ese bloque completo y lo mantendrá unido en la evaluación.')
                 ->required(),
         ]);
     }
@@ -75,6 +68,18 @@ class QuestionsRelationManager extends RelationManager
                     ->label('ID pregunta')
                     ->searchable()
                     ->sortable(),
+                TextColumn::make('selection_group_key')
+                    ->label('Unidad')
+                    ->state(function (AssessmentAssignmentQuestion $record): string {
+                        $question = $record->question;
+                        if (! $question instanceof AssessmentQuestion) {
+                            return 'Pregunta individual';
+                        }
+
+                        return app(AssessmentQuestionGroupService::class)->describeBundle($question);
+                    })
+                    ->badge()
+                    ->color(fn (string $state): string => str_contains($state, 'Contexto compartido') ? 'warning' : 'gray'),
                 TextColumn::make('question.source_slug')
                     ->label('Origen')
                     ->wrap()
@@ -94,35 +99,48 @@ class QuestionsRelationManager extends RelationManager
                 CreateAction::make()
                     ->label('Seleccionar subconjunto')
                     ->modalHeading('Añadir pregunta a la asignación')
-                    ->successNotificationTitle('Pregunta añadida.')
+                    ->successNotificationTitle('Selección actualizada.')
                     ->using(function (array $data): AssessmentAssignmentQuestion {
                         /** @var AssessmentAssignment $assignment */
                         $assignment = $this->getOwnerRecord();
+                        /** @var AssessmentQuestion $question */
+                        $question = AssessmentQuestion::query()
+                            ->with([
+                                'template',
+                                'contexts' => fn ($query) => $query
+                                    ->where('assessment_contexts.is_active', true)
+                                    ->orderBy('assessment_question_contexts.order_base'),
+                            ])
+                            ->findOrFail($data['question_id']);
 
-                        return AssessmentAssignmentQuestion::query()->updateOrCreate(
-                            [
-                                'assignment_id' => $assignment->id,
-                                'question_id' => $data['question_id'],
-                            ],
-                            [
-                                'order_base' => (int) $data['order_base'],
-                            ],
-                        );
+                        return app(AssessmentAssignmentSelectionService::class)
+                            ->addQuestionSelection($assignment, $question);
                     }),
             ])
             ->recordActions([
-                EditAction::make()
-                    ->modalHeading('Actualizar orden de la pregunta')
-                    ->successNotificationTitle('Pregunta actualizada.'),
-                DeleteAction::make()
-                    ->label('Quitar'),
-            ])
-            ->toolbarActions([
-                BulkActionGroup::make([
-                    DeleteBulkAction::make(),
-                ]),
+                Action::make('removeSelection')
+                    ->label('Quitar')
+                    ->icon('heroicon-o-trash')
+                    ->color('danger')
+                    ->modalHeading('Quitar unidad seleccionada')
+                    ->successNotificationTitle('Selección actualizada.')
+                    ->requiresConfirmation()
+                    ->action(function (AssessmentAssignmentQuestion $record): void {
+                        /** @var AssessmentAssignment $assignment */
+                        $assignment = $this->getOwnerRecord();
+                        $question = $record->question;
+
+                        if (! $question instanceof AssessmentQuestion) {
+                            $record->delete();
+
+                            return;
+                        }
+
+                        app(AssessmentAssignmentSelectionService::class)
+                            ->removeQuestionSelection($assignment, $question, $record->selection_group_key);
+                    }),
             ])
             ->emptyStateHeading('Se usará la plantilla completa si no seleccionas preguntas.')
-            ->emptyStateDescription('Añade preguntas solo cuando quieras una evaluación con subconjunto y orden base propio. Si dejas esta tabla vacía, se usarán todas las preguntas de la plantilla base.');
+            ->emptyStateDescription('Añade preguntas solo cuando quieras un subconjunto propio. Si una pregunta comparte contexto con otras, la asignación añadirá ese bloque completo y lo mantendrá unido.');
     }
 }

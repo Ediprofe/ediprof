@@ -16,6 +16,11 @@ use Illuminate\Validation\ValidationException;
 
 class AssessmentAttemptService
 {
+    public function __construct(
+        private readonly AssessmentQuestionGroupService $questionGroups,
+    ) {
+    }
+
     public function startTemplateAttempt(
         User $user,
         AssessmentTemplate $template,
@@ -94,13 +99,13 @@ class AssessmentAttemptService
 
         $questions = $this->resolveAssignmentQuestions($assignment);
         $snapshot = $this->buildQuestionsSnapshot($questions);
-        $questionOrder = array_map(static fn (array $question): string => (string) $question['id'], $snapshot);
 
         if ($assignment->randomize_questions) {
             $seed = crc32($user->id.'|'.$assignment->external_id.'|'.now()->timestamp);
-            $questionOrder = $this->shuffleQuestionOrder($questionOrder, $seed);
-            $snapshot = $this->reorderSnapshot($snapshot, $questionOrder);
+            $snapshot = $this->shuffleSnapshotBySelectionGroup($snapshot, $seed);
         }
+
+        $questionOrder = array_map(static fn (array $question): string => (string) $question['id'], $snapshot);
 
         $attempt = AssessmentAttempt::query()->create([
             'assignment_id' => $assignment->id,
@@ -393,17 +398,48 @@ class AssessmentAttemptService
                     ->orderBy('assessment_question_contexts.order_base'),
             ])
             ->orderBy('order_base')
-            ->get();
+            ->get()
+            ->each(function (AssessmentQuestion $question) use ($template): void {
+                $question->setAttribute('template_external_id', $template->external_id);
+                $question->setAttribute(
+                    'selection_group_key',
+                    $this->questionGroups->groupKeyForQuestion($question)
+                );
+            });
     }
 
     private function resolveAssignmentQuestions(AssessmentAssignment $assignment): Collection
     {
-        $assignment->loadMissing(['questions.question.contexts', 'template']);
+        $assignment->loadMissing([
+            'questions' => fn ($query) => $query->orderBy('order_base'),
+            'questions.question.contexts' => fn ($query) => $query
+                ->where('assessment_contexts.is_active', true)
+                ->orderBy('assessment_question_contexts.order_base'),
+            'template',
+        ]);
 
         if ($assignment->questions->isNotEmpty()) {
             return $assignment->questions
                 ->sortBy('order_base')
-                ->map(static fn ($assignmentQuestion) => $assignmentQuestion->question)
+                ->map(function ($assignmentQuestion) use ($assignment) {
+                    $question = $assignmentQuestion->question;
+                    if (! $question instanceof AssessmentQuestion) {
+                        return null;
+                    }
+
+                    $question->setAttribute(
+                        'template_external_id',
+                        $assignment->template?->external_id ?: ('template:'.$question->template_id)
+                    );
+                    $question->setAttribute(
+                        'selection_group_key',
+                        filled($assignmentQuestion->selection_group_key)
+                            ? (string) $assignmentQuestion->selection_group_key
+                            : $this->questionGroups->groupKeyForQuestion($question)
+                    );
+
+                    return $question;
+                })
                 ->filter()
                 ->values();
         }
@@ -424,12 +460,19 @@ class AssessmentAttemptService
         return $questions
             ->values()
             ->map(function (AssessmentQuestion $question): array {
+                $templateExternalId = (string) ($question->getAttribute('template_external_id') ?: ($question->template?->external_id ?: ('template:'.$question->template_id)));
                 $contexts = $question->contexts
                     ->sortBy(fn ($context) => (int) ($context->pivot->order_base ?? $context->order_base ?? 1))
                     ->values();
 
                 $contextIds = $contexts
                     ->map(static fn ($context): string => (string) $context->external_id)
+                    ->filter()
+                    ->values()
+                    ->all();
+
+                $contextSourceKeys = $contexts
+                    ->map(static fn ($context): string => $templateExternalId.'#context:'.(string) $context->external_id)
                     ->filter()
                     ->values()
                     ->all();
@@ -457,11 +500,15 @@ class AssessmentAttemptService
 
                 return [
                     'id' => $question->external_id,
+                    'source_key' => $templateExternalId.'#question:'.(string) $question->external_id,
+                    'template_external_id' => $templateExternalId,
                     'order' => $question->order_base,
                     'order_base' => $question->order_base,
                     'source_slug' => $question->source_slug,
+                    'selection_group_key' => (string) ($question->getAttribute('selection_group_key') ?: $this->questionGroups->groupKeyForQuestion($question)),
                     'meta' => $question->meta ?? [],
                     'context_ids' => $contextIds,
+                    'context_source_keys' => $contextSourceKeys,
                     'context_mdx' => $contextMdx,
                     'context_html' => $contextHtml,
                     'context_assets' => $contextAssets,
@@ -489,53 +536,59 @@ class AssessmentAttemptService
     }
 
     /**
-     * @param  array<int, string>  $questionOrder
-     * @return array<int, string>
-     */
-    private function shuffleQuestionOrder(array $questionOrder, int $seed): array
-    {
-        $scored = array_map(static function (string $questionId) use ($seed): array {
-            return [
-                'id' => $questionId,
-                'score' => crc32($seed.'|'.$questionId),
-            ];
-        }, $questionOrder);
-
-        usort($scored, static fn (array $a, array $b): int => $a['score'] <=> $b['score']);
-
-        return array_values(array_map(static fn (array $item): string => $item['id'], $scored));
-    }
-
-    /**
      * @param  array<int, array<string, mixed>>  $snapshot
-     * @param  array<int, string>  $questionOrder
      * @return array<int, array<string, mixed>>
      */
-    private function reorderSnapshot(array $snapshot, array $questionOrder): array
+    private function shuffleSnapshotBySelectionGroup(array $snapshot, int $seed): array
     {
-        $snapshotMap = [];
+        $groups = [];
         foreach ($snapshot as $question) {
             if (! is_array($question)) {
                 continue;
             }
 
-            $questionId = (string) ($question['id'] ?? '');
-            if ($questionId === '') {
+            $groupKey = trim((string) ($question['selection_group_key'] ?? ''));
+            if ($groupKey === '') {
+                $groupKey = trim((string) ($question['source_key'] ?? $question['id'] ?? ''));
+            }
+
+            if ($groupKey === '') {
                 continue;
             }
 
-            $snapshotMap[$questionId] = $question;
+            if (! isset($groups[$groupKey])) {
+                $groups[$groupKey] = [
+                    'score' => crc32($seed.'|'.$groupKey),
+                    'items' => [],
+                ];
+            }
+
+            $groups[$groupKey]['items'][] = $question;
         }
 
-        $ordered = [];
-        foreach ($questionOrder as $position => $questionId) {
-            $question = $snapshotMap[$questionId] ?? null;
-            if (! is_array($question)) {
-                continue;
-            }
+        $groupList = [];
+        foreach ($groups as $groupKey => $group) {
+            $groupList[] = [
+                'key' => $groupKey,
+                'score' => $group['score'],
+                'items' => $group['items'],
+            ];
+        }
 
-            $question['order'] = $position + 1;
-            $ordered[] = $question;
+        usort($groupList, static fn (array $a, array $b): int => $a['score'] <=> $b['score']);
+
+        $ordered = [];
+        $position = 1;
+
+        foreach ($groupList as $group) {
+            foreach ($group['items'] as $question) {
+                if (! is_array($question)) {
+                    continue;
+                }
+
+                $question['order'] = $position++;
+                $ordered[] = $question;
+            }
         }
 
         return $ordered;
@@ -657,6 +710,27 @@ class AssessmentAttemptService
                 if ($assignment->closes_at instanceof CarbonInterface && $assignment->closes_at->lessThanOrEqualTo(now())) {
                     return true;
                 }
+            }
+        }
+
+        $assignment = $attempt->assignment;
+        if (
+            $assignment instanceof AssessmentAssignment &&
+            $assignment->review_released_at instanceof CarbonInterface &&
+            $assignment->review_released_at->lessThanOrEqualTo(now())
+        ) {
+            return true;
+        }
+
+        $scheduledReviewAt = $settings['review_released_at'] ?? null;
+        if (filled($scheduledReviewAt)) {
+            try {
+                $scheduledAt = Carbon::parse((string) $scheduledReviewAt);
+                if ($scheduledAt->lessThanOrEqualTo(now())) {
+                    return true;
+                }
+            } catch (\Throwable) {
+                // Keep graceful fallback when an old snapshot contains an invalid date.
             }
         }
 
