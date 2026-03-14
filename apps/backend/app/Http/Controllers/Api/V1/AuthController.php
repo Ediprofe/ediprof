@@ -54,6 +54,11 @@ class AuthController extends Controller
         $validated = $request->validated();
         $clientId = trim((string) config('services.google.client_id'));
         $allowedDomain = mb_strtolower(trim((string) config('services.google.allowed_domain', 'sanjoseitagui.edu.co')));
+        $adminEmails = collect(config('services.google.admin_emails', []))
+            ->map(static fn ($value): string => mb_strtolower(trim((string) $value)))
+            ->filter()
+            ->values()
+            ->all();
 
         if ($clientId === '') {
             return response()->json([
@@ -99,7 +104,11 @@ class AuthController extends Controller
         }
 
         $emailDomain = (string) Str::of($email)->afterLast('@');
-        if ($emailDomain !== $allowedDomain || ($hostedDomain !== '' && $hostedDomain !== $allowedDomain)) {
+        $isGoogleAdmin = in_array($email, $adminEmails, true);
+        $isAllowedInstitutionalUser = $emailDomain === $allowedDomain
+            && ($hostedDomain === '' || $hostedDomain === $allowedDomain);
+
+        if (! $isGoogleAdmin && ! $isAllowedInstitutionalUser) {
             return response()->json([
                 'ok' => false,
                 'error' => [
@@ -119,9 +128,11 @@ class AuthController extends Controller
         if ($user === null) {
             $user = User::query()->create([
                 'name' => $name,
+                'first_names' => null,
+                'last_names' => null,
                 'email' => $email,
                 'password' => Hash::make(Str::random(40)),
-                'role' => 'student',
+                'role' => $isGoogleAdmin ? 'admin' : 'student',
                 'member_status' => 'approved',
                 'auth_provider' => 'google',
                 'google_subject' => $subject,
@@ -140,9 +151,15 @@ class AuthController extends Controller
                 ], 403);
             }
 
+            $preserveAcademicName = filled($user->first_names)
+                || filled($user->last_names)
+                || filled($user->institutional_code)
+                || filled($user->document_number);
+
             $user->forceFill([
-                'name' => $user->isAdmin() ? $user->name : $name,
-                'member_status' => $user->isAdmin() ? $user->member_status : 'approved',
+                'name' => $isGoogleAdmin || $user->isAdmin() || $preserveAcademicName ? $user->name : $name,
+                'role' => $isGoogleAdmin ? 'admin' : $user->role,
+                'member_status' => $isGoogleAdmin || $user->isAdmin() ? $user->member_status : 'approved',
                 'auth_provider' => 'google',
                 'google_subject' => $subject,
                 'google_avatar_url' => $picture !== '' ? $picture : $user->google_avatar_url,
@@ -176,7 +193,12 @@ class AuthController extends Controller
                 'user' => [
                     'id' => $user->id,
                     'name' => $user->name,
+                    'first_names' => $user->first_names,
+                    'last_names' => $user->last_names,
                     'email' => $user->email,
+                    'institutional_code' => $user->institutional_code,
+                    'document_number' => $user->document_number,
+                    'grade_group' => $user->grade_group,
                     'role' => $user->role,
                     'member_status' => $user->member_status,
                     'auth_provider' => $user->auth_provider,

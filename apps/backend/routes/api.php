@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\V1\AuthController;
+use App\Http\Controllers\Api\V1\Admin\AdminPanelController;
 use App\Http\Controllers\Api\V1\Admin\CourseController;
 use App\Http\Controllers\Api\V1\ContentController;
 use App\Http\Controllers\Api\V1\MemberLibraryController;
@@ -41,6 +42,7 @@ Route::prefix('v1')->middleware('resolve.api_token')->group(function (): void {
         ->where('workshopId', '.*');
 
     Route::prefix('admin')->middleware(['require.api_token', 'require.admin'])->group(function (): void {
+        Route::post('/panel-handoff', [AdminPanelController::class, 'handoff']);
         Route::get('/courses', [CourseController::class, 'index']);
         Route::post('/courses', [CourseController::class, 'store']);
         Route::patch('/courses/{courseId}', [CourseController::class, 'update']);

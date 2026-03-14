@@ -9,15 +9,19 @@ use App\Models\CourseContent;
 use App\Models\CourseEnrollment;
 use App\Models\User;
 use App\Models\Workshop;
+use App\Services\Courses\CourseEnrollmentImportService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\Http\UploadedFile;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 
 class CourseController extends Controller
 {
+    public function __construct(
+        protected CourseEnrollmentImportService $enrollmentImportService,
+    ) {
+    }
+
     public function index(): JsonResponse
     {
         $courses = Course::query()
@@ -41,7 +45,7 @@ class CourseController extends Controller
             'notes' => ['nullable', 'string', 'max:1000'],
         ])->validate();
 
-        $slug = $this->resolveUniqueSlug(
+        $slug = Course::resolveUniqueSlug(
             trim((string) ($validated['slug'] ?? '')) !== '' ? (string) $validated['slug'] : Str::slug((string) $validated['name'])
         );
 
@@ -72,7 +76,7 @@ class CourseController extends Controller
         ])->validate();
 
         $requestedSlug = trim((string) ($validated['slug'] ?? '')) !== '' ? (string) $validated['slug'] : Str::slug((string) $validated['name']);
-        $slug = $this->resolveUniqueSlug($requestedSlug, $course->id);
+        $slug = Course::resolveUniqueSlug($requestedSlug, $course->id);
 
         $course->forceFill([
             'name' => trim((string) $validated['name']),
@@ -96,88 +100,14 @@ class CourseController extends Controller
             'csv' => ['required', 'file', 'mimetypes:text/plain,text/csv,text/tsv,application/csv,application/vnd.ms-excel'],
         ])->validate();
 
-        /** @var UploadedFile $csv */
-        $csv = $validated['csv'];
-        $rows = $this->parseCsv($csv);
-        $allowedDomain = mb_strtolower((string) config('services.google.allowed_domain', 'sanjoseitagui.edu.co'));
-
-        $createdUsers = 0;
-        $updatedUsers = 0;
-        $enrolledUsers = 0;
-        $errors = [];
-
-        foreach ($rows as $index => $row) {
-            $line = $index + 1;
-            $email = mb_strtolower(trim((string) ($row['email'] ?? '')));
-            $name = trim((string) ($row['name'] ?? ''));
-
-            if ($email === '') {
-                $errors[] = ['line' => $line, 'message' => 'Falta el correo institucional.'];
-                continue;
-            }
-
-            if (! filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                $errors[] = ['line' => $line, 'message' => 'Correo inválido.'];
-                continue;
-            }
-
-            $domain = (string) Str::of($email)->afterLast('@');
-            if ($domain !== $allowedDomain) {
-                $errors[] = ['line' => $line, 'message' => 'El correo no pertenece al dominio institucional permitido.'];
-                continue;
-            }
-
-            $user = User::query()->whereRaw('LOWER(email) = ?', [$email])->first();
-            $wasRecentlyCreated = false;
-
-            if ($user === null) {
-                $user = User::query()->create([
-                    'name' => $name !== '' ? $name : Str::headline(Str::before($email, '@')),
-                    'email' => $email,
-                    'password' => Hash::make(Str::random(40)),
-                    'role' => 'student',
-                    'member_status' => 'approved',
-                    'auth_provider' => 'google',
-                ]);
-                $createdUsers += 1;
-                $wasRecentlyCreated = true;
-            } else {
-                $user->forceFill([
-                    'name' => $name !== '' ? $name : $user->name,
-                    'role' => $user->isAdmin() ? 'admin' : 'student',
-                    'member_status' => $user->member_status === 'blocked' ? 'blocked' : 'approved',
-                    'auth_provider' => $user->auth_provider ?: 'google',
-                ])->save();
-                if (! $wasRecentlyCreated) {
-                    $updatedUsers += 1;
-                }
-            }
-
-            CourseEnrollment::query()->updateOrCreate(
-                [
-                    'course_id' => $course->id,
-                    'user_id' => $user->id,
-                ],
-                [
-                    'status' => 'active',
-                    'source' => 'csv_import',
-                ]
-            );
-
-            $enrolledUsers += 1;
-        }
+        $result = $this->enrollmentImportService->importFromUploadedFile($course, $validated['csv']);
 
         return response()->json([
             'ok' => true,
             'data' => [
-                'course' => $this->coursePayload($course->refresh()),
-                'summary' => [
-                    'created_users' => $createdUsers,
-                    'updated_users' => $updatedUsers,
-                    'enrolled_users' => $enrolledUsers,
-                    'error_count' => count($errors),
-                ],
-                'errors' => $errors,
+                'course' => $this->coursePayload($result['course']),
+                'summary' => $result['summary'],
+                'errors' => $result['errors'],
             ],
         ]);
     }
@@ -290,91 +220,6 @@ class CourseController extends Controller
             'created_at' => $course->created_at?->toIso8601String(),
             'updated_at' => $course->updated_at?->toIso8601String(),
         ];
-    }
-
-    /**
-     * @return array<int, array{email:string,name:string}>
-     */
-    private function parseCsv(UploadedFile $csv): array
-    {
-        $contents = trim((string) file_get_contents($csv->getRealPath()));
-        if ($contents === '') {
-            return [];
-        }
-
-        $lines = preg_split('/\r\n|\n|\r/', preg_replace('/^\xEF\xBB\xBF/', '', $contents) ?: '');
-        if (! is_array($lines) || $lines === []) {
-            return [];
-        }
-
-        $rows = [];
-        $header = array_map(fn ($value) => mb_strtolower(trim((string) $value)), str_getcsv((string) $lines[0]));
-        $hasHeader = in_array('email', $header, true) || in_array('correo', $header, true);
-
-        $emailIndex = 0;
-        $nameIndex = 1;
-        $startIndex = 0;
-
-        if ($hasHeader) {
-            $startIndex = 1;
-            $emailIndex = array_search('email', $header, true);
-            if ($emailIndex === false) {
-                $emailIndex = array_search('correo', $header, true);
-            }
-
-            $nameIndex = array_search('name', $header, true);
-            if ($nameIndex === false) {
-                $nameIndex = array_search('nombre', $header, true);
-            }
-            if ($nameIndex === false) {
-                $nameIndex = 1;
-            }
-        }
-
-        for ($i = $startIndex; $i < count($lines); $i += 1) {
-            $line = trim((string) $lines[$i]);
-            if ($line === '') {
-                continue;
-            }
-
-            $columns = str_getcsv($line);
-            if (! is_array($columns)) {
-                continue;
-            }
-
-            $rows[] = [
-                'email' => trim((string) ($columns[$emailIndex] ?? '')),
-                'name' => trim((string) ($columns[$nameIndex] ?? '')),
-            ];
-        }
-
-        return $rows;
-    }
-
-    private function resolveUniqueSlug(string $baseSlug, ?int $ignoreId = null): string
-    {
-        $slug = Str::slug($baseSlug);
-        if ($slug === '') {
-            $slug = 'curso';
-        }
-
-        $candidate = $slug;
-        $suffix = 2;
-
-        while ($this->slugExists($candidate, $ignoreId)) {
-            $candidate = "{$slug}-{$suffix}";
-            $suffix += 1;
-        }
-
-        return $candidate;
-    }
-
-    private function slugExists(string $slug, ?int $ignoreId = null): bool
-    {
-        return Course::query()
-            ->when($ignoreId !== null, fn ($builder) => $builder->where('id', '!=', $ignoreId))
-            ->where('slug', $slug)
-            ->exists();
     }
 
     private function resolveWorkshop(string $identifier): ?Workshop

@@ -38,6 +38,10 @@ return [
     'google' => [
         'client_id' => env('GOOGLE_CLIENT_ID'),
         'allowed_domain' => env('GOOGLE_ALLOWED_DOMAIN', 'sanjoseitagui.edu.co'),
+        'admin_emails' => array_values(array_filter(array_map(
+            static fn (string $value): string => mb_strtolower(trim($value)),
+            explode(',', (string) env('GOOGLE_ADMIN_EMAILS', ''))
+        ))),
     ],
 
 ];
