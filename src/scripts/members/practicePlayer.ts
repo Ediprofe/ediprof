@@ -835,17 +835,22 @@ export function mountPracticePlayer(options: PracticePlayerOptions): void {
     }
 
     const summary = computeExamSummary();
+    const canReview = Boolean(state.detail?.attempt?.can_review);
     const scoreLabel =
       typeof state.detail?.attempt?.score_percent === 'number'
         ? `${state.detail.attempt.score_percent}%`
         : `${summary.score}%`;
+    const heading = canReview ? `Retroalimentación del ${escapeHtml(getExamContentName())}` : `Resultado del ${escapeHtml(getExamContentName())}`;
+    const description = canReview
+      ? 'Ya puedes revisar cada pregunta con su explicación y profundización.'
+      : 'Tu resultado ya quedó guardado. La retroalimentación todavía no está disponible.';
 
     return `
       <section class="practice-results-card">
         <div>
           <p class="practice-toolbar-label">Resultado final</p>
-          <h2 class="practice-toolbar-title">Revisión del simulacro</h2>
-          <p class="practice-toolbar-desc">Ya puedes revisar cada pregunta con su explicación y profundización.</p>
+          <h2 class="practice-toolbar-title">${heading}</h2>
+          <p class="practice-toolbar-desc">${description}</p>
         </div>
         <div class="practice-results-grid">
           <article class="practice-result-box">
@@ -963,10 +968,14 @@ export function mountPracticePlayer(options: PracticePlayerOptions): void {
     `;
   }
 
-  function showError(message: string): void {
+  function showFeedbackMessage(message: string, type: 'error' | 'warning' | 'ok' = 'error'): void {
     if (feedbackEl) {
-      feedbackEl.innerHTML = `<div class="members-alert error">${escapeHtml(message)}</div>`;
+      feedbackEl.innerHTML = `<div class="members-alert ${type}">${escapeHtml(message)}</div>`;
     }
+  }
+
+  function showError(message: string): void {
+    showFeedbackMessage(message, 'error');
   }
 
   function clearFeedback(): void {
@@ -1201,6 +1210,11 @@ export function mountPracticePlayer(options: PracticePlayerOptions): void {
       hydrateFromAttemptPayload(response?.data ?? null, state.mode);
       persistProgress();
       state.isLoading = false;
+      if (state.detail?.attempt?.can_review) {
+        showFeedbackMessage(`Entrega confirmada. Ya puedes revisar la ${getExamContentName()} con respuesta correcta y conceptos relacionados.`, 'ok');
+      } else {
+        showFeedbackMessage(`Entrega confirmada. Tu resultado quedó guardado, pero la retroalimentación todavía no está disponible.`, 'warning');
+      }
       render();
       scrollToTop();
     } catch (error) {

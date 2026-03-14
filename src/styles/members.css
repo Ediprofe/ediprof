@@ -241,6 +241,12 @@
   background: rgba(46, 204, 113, 0.1);
 }
 
+.members-alert.warning {
+  border-color: #f39c12;
+  color: #b9770e;
+  background: rgba(243, 156, 18, 0.12);
+}
+
 .members-feedback-panel {
   margin-top: 0.92rem;
   border: 1px solid color-mix(in oklab, var(--border-color) 72%, var(--color-primary) 28%);

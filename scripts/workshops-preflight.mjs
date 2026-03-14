@@ -347,8 +347,8 @@ function main() {
     }
 
     if (/^###\s+Contexto compartido\b/m.test(content) && !/<ContextoCompartido\b/.test(content)) {
-      collector.warnings.push(
-        `[${relPath}] usa contexto compartido legado por posición. Recomendado: <ContextoCompartido id=\"...\"> explícito para reutilización robusta.`
+      collector.errors.push(
+        `[${relPath}] usa contexto compartido legado por posición. Debes migrarlo a <ContextoCompartido id=\"...\"> explícito.`
       );
     }
 

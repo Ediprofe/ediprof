@@ -6,6 +6,7 @@ print_title: "Simulacro 11 · Ciencias Naturales · S1"
 import Pregunta from '@/components/saber/Pregunta.astro';
 import Opciones from '@/components/saber/Opciones.astro';
 import Opcion from '@/components/saber/Opcion.astro';
+import ContextoCompartido from '@/components/saber/ContextoCompartido.astro';
 
 ## 67 (Sesión 2).
 <Pregunta id="S2-67" headerless fuente="ICFES" anio="2024" bloque="Indagación" competencia="Uso comprensivo del conocimiento científico" componente="Entorno vivo">
@@ -454,7 +455,7 @@ import Opcion from '@/components/saber/Opcion.astro';
 
 </Pregunta>
 
-### Contexto compartido (Pregunta 96 · Sesión 1)
+<ContextoCompartido id="ctx-s1-95-97" title="Panaderías, manipulación y contaminación bacteriana">
 
 Una investigadora está estudiando dos panaderías: en la primera panadería no se dividen las tareas, sino que el mismo trabajador que recibe el dinero es el encargado de preparar los alimentos, mientras que en la otra panadería sí se dividen las tareas, ya que hay un trabajador designado para cada labor.
 
@@ -464,8 +465,10 @@ Ella se preguntó si hubiera estado acompañada por personas que crecían en los
 
 La investigadora concluyó que la única fuente de contaminación era tener contacto con dinero. Además, determinó la diversidad de bacterias presentes en el pan, encontrando diez especies que causan intoxicación estomacal, siete que causan enfermedades respiratorias y dos que causan enfermedades en la piel.
 
+</ContextoCompartido>
+
 ## 96 (Sesión 1).
-<Pregunta id="S1-96" headerless fuente="ICFES" anio="2024" bloque="Entorno vivo" competencia="Indagación" componente="Biológico">
+<Pregunta id="S1-96" context="ctx-s1-95-97" headerless fuente="ICFES" anio="2024" bloque="Entorno vivo" competencia="Indagación" componente="Biológico">
 
   Teniendo en cuenta la información de la gráfica, ¿el contacto con billetes es la única fuente de contaminación del pan?
 
@@ -498,7 +501,7 @@ La investigadora concluyó que la única fuente de contaminación era tener cont
 </Pregunta>
 
 ## 95 (Sesión 1).
-<Pregunta id="S1-95" headerless fuente="ICFES" anio="2024" bloque="Entorno vivo" competencia="Uso comprensivo del conocimiento científico" componente="Biológico">
+<Pregunta id="S1-95" context="ctx-s1-95-97" headerless fuente="ICFES" anio="2024" bloque="Entorno vivo" competencia="Uso comprensivo del conocimiento científico" componente="Biológico">
 
   Teniendo en cuenta la diversidad de bacterias presentes en los ingredientes del pan, ¿cómo ha influido la presencia de los humanos en la diversidad de estas bacterias?
 
@@ -529,7 +532,7 @@ La investigadora concluyó que la única fuente de contaminación era tener cont
 </Pregunta>
 
 ## 97 (Sesión 1).
-<Pregunta id="S1-97" headerless fuente="ICFES" anio="2024" bloque="Entorno vivo" competencia="Explicación de fenómenos" componente="Biológico">
+<Pregunta id="S1-97" context="ctx-s1-95-97" headerless fuente="ICFES" anio="2024" bloque="Entorno vivo" competencia="Explicación de fenómenos" componente="Biológico">
 
   Teniendo en cuenta lo anterior, ¿por qué dividir las tareas en las panaderías puede disminuir o aumentar la presencia de bacterias?
 

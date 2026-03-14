@@ -7,6 +7,7 @@ Este contrato deja claro qué se autoriza en `MDX`, qué se exporta al backend y
 - `Laravel` es la fuente de verdad para preguntas, contextos, asignaciones, intentos y resultados.
 - `Filament` administra cursos, asignaciones y resultados; no es el editor rico principal de preguntas.
 - El contenido debe ser reutilizable y resistente a reordenamientos.
+- La taxonomía mutable (`tema`, `unidad`, `subtema`, `tags`, `origen`, `estado editorial`, `notas docentes`) se administra en backend y no se obliga en `MDX`.
 
 ## Componentes de autoría recomendados
 Importa siempre estos componentes en `taller.mdx` o `simulacro.mdx`:
@@ -84,6 +85,7 @@ Y referencia ese contexto desde cada pregunta:
 - `ContextoCompartido.id` debe ser único dentro del archivo.
 - `Pregunta.context` debe referenciar contextos existentes.
 - No depender de la posición del contexto para que el vínculo funcione.
+- `Pregunta.id` puede repetirse en otro archivo distinto; la identidad global se resuelve en backend con `template + id local`.
 
 ## Assets
 Se permiten:

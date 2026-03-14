@@ -58,6 +58,11 @@ import PracticeLessonLayout from '../../../layouts/PracticeLessonLayout.astro';
       .replaceAll("'", '&#039;');
   }
 
+  function renderNotice(message, type = 'warning', title = '') {
+    const heading = title ? `<strong>${escapeHtml(title)}</strong><br />` : '';
+    return `<div class="members-alert ${escapeHtml(type)}">${heading}${escapeHtml(message)}</div>`;
+  }
+
   async function boot() {
     try {
       const params = new URLSearchParams(window.location.search);
@@ -84,20 +89,34 @@ import PracticeLessonLayout from '../../../layouts/PracticeLessonLayout.astro';
           ? assignment.latest_attempt.id.trim()
           : null;
       const canStart = Boolean(assignment?.availability?.can_start);
+      const notices = [];
+
+      if (assignment?.feedback?.message) {
+        notices.push(
+          renderNotice(
+            assignment.feedback.message,
+            assignment?.feedback?.available ? 'ok' : 'warning',
+            assignment?.feedback?.policy_label || 'Retroalimentación'
+          )
+        );
+      }
 
       if (!canStart && !latestAttemptId) {
         const message =
           assignment?.availability?.message || 'Esta asignación no está disponible para iniciar nuevos intentos.';
-        feedback.innerHTML = `<div class="members-alert warning">${escapeHtml(message)}</div>`;
+        notices.push(renderNotice(message, 'warning', 'Disponibilidad'));
+        feedback.innerHTML = notices.join('');
         root.innerHTML = '<div class="members-alert">No tienes un intento previo para revisar en este momento.</div>';
         return;
       }
 
       if (!canStart && latestAttemptId) {
         const message =
-          assignment?.availability?.message || 'Esta asignación ya no admite nuevos intentos, pero puedes revisar tu entrega.';
-        feedback.innerHTML = `<div class="members-alert warning">${escapeHtml(message)}</div>`;
+          assignment?.availability?.message || 'Esta asignación ya no admite nuevos intentos, pero puedes consultar tu resultado o retroalimentación.';
+        notices.push(renderNotice(message, 'warning', 'Seguimiento del intento'));
       }
+
+      feedback.innerHTML = notices.join('');
 
       const allowedModes = assignment.mode === 'study' ? ['study'] : ['exam'];
       const defaultMode = assignment.mode === 'study' ? 'study' : 'exam';

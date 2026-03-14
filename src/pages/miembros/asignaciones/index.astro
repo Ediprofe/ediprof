@@ -76,9 +76,27 @@ import MembersEditorialLayout from '../../../layouts/MembersEditorialLayout.astr
     const latest = item?.latest_attempt;
     if (latest?.status === 'in_progress') return 'Continuar';
     if (latest?.status === 'submitted' || latest?.status === 'graded' || latest?.status === 'released') {
-      return latest?.can_review ? 'Ver revisión' : 'Ver entrega';
+      return latest?.can_review ? 'Ver retroalimentación' : 'Ver resultado';
     }
     return item?.availability?.can_start ? 'Iniciar' : 'Ver detalles';
+  }
+
+  function attemptStatusLabel(status) {
+    if (status === 'in_progress') return 'En progreso';
+    if (status === 'submitted') return 'Entregada';
+    if (status === 'graded') return 'Calificada';
+    if (status === 'released') return 'Retro liberada';
+    return 'Sin intento';
+  }
+
+  function feedbackLabel(feedback) {
+    return feedback?.state_label || feedback?.policy_label || 'Retroalimentación';
+  }
+
+  function feedbackClass(feedback) {
+    const state = feedback?.state || '';
+    if (state === 'available') return 'approved';
+    return 'pending';
   }
 
   function buildLink(id) {
@@ -131,7 +149,7 @@ import MembersEditorialLayout from '../../../layouts/MembersEditorialLayout.astr
             <p>${evaluations}</p>
           </article>
           <article class="members-item">
-            <h4>Con revisión</h4>
+            <h4>Retro disponible</h4>
             <p>${reviewable}</p>
           </article>
           <article class="members-item">
@@ -158,8 +176,13 @@ import MembersEditorialLayout from '../../../layouts/MembersEditorialLayout.astr
               <p style="margin-top:0.5rem;">
                 <span class="members-pill ${availabilityClass(item.availability)}">${escapeHtml(availabilityLabel(item.availability))}</span>
                 ${
+                  item?.feedback
+                    ? `<span class="members-pill ${feedbackClass(item.feedback)}" style="margin-left:0.35rem;">${escapeHtml(feedbackLabel(item.feedback))}</span>`
+                    : ''
+                }
+                ${
                   latest
-                    ? `<span class="members-pill pending" style="margin-left:0.35rem;">Intento: ${escapeHtml(latest.status || 'sin estado')}</span>`
+                    ? `<span class="members-pill pending" style="margin-left:0.35rem;">Intento: ${escapeHtml(attemptStatusLabel(latest.status || ''))}</span>`
                     : ''
                 }
                 ${
@@ -171,6 +194,11 @@ import MembersEditorialLayout from '../../../layouts/MembersEditorialLayout.astr
               ${
                 item?.availability?.message
                   ? `<p style="margin-top:0.55rem;">${escapeHtml(item.availability.message)}</p>`
+                  : ''
+              }
+              ${
+                item?.feedback?.message
+                  ? `<p style="margin-top:0.45rem;">${escapeHtml(item.feedback.message)}</p>`
                   : ''
               }
               <div class="members-actions" style="margin-top:0.75rem;">

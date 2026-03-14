@@ -336,6 +336,29 @@ import MembersEditorialLayout from '../../layouts/MembersEditorialLayout.astro';
               const link = `/miembros/asignaciones/abrir?id=${encodeURIComponent(item.id)}`;
               const modeLabel =
                 item.mode === 'study' ? 'Estudio guiado' : item.mode === 'evaluation' ? 'Evaluación' : 'Simulacro';
+              const feedbackLabel = item?.feedback?.state_label || item?.feedback?.policy_label || 'Retroalimentación';
+              const feedbackClass =
+                item?.feedback?.state === 'available'
+                  ? 'approved'
+                  : 'pending';
+              const attemptStatusLabel =
+                item?.latest_attempt?.status === 'in_progress'
+                  ? 'En progreso'
+                  : item?.latest_attempt?.status === 'submitted'
+                  ? 'Entregada'
+                  : item?.latest_attempt?.status === 'graded'
+                  ? 'Calificada'
+                  : item?.latest_attempt?.status === 'released'
+                  ? 'Retro liberada'
+                  : 'Sin intento';
+              const actionLabel =
+                item?.latest_attempt?.status === 'in_progress'
+                  ? 'Continuar'
+                  : item?.latest_attempt?.can_review
+                  ? 'Ver retroalimentación'
+                  : item?.latest_attempt
+                  ? 'Ver resultado'
+                  : 'Abrir';
 
               return `
               <article class="members-item">
@@ -351,22 +374,29 @@ import MembersEditorialLayout from '../../layouts/MembersEditorialLayout.astro';
                     item?.availability?.can_start ? 'Disponible' : 'Seguimiento'
                   }</span>
                   ${
+                    item?.feedback
+                      ? `<span class="members-pill ${feedbackClass}" style="margin-left:0.35rem;">${escapeHtml(feedbackLabel)}</span>`
+                      : ''
+                  }
+                  ${
+                    item?.latest_attempt
+                      ? `<span class="members-pill pending" style="margin-left:0.35rem;">Intento: ${escapeHtml(attemptStatusLabel)}</span>`
+                      : ''
+                  }
+                  ${
                     item?.attempts?.limit
                       ? `<span class="members-pill pending" style="margin-left:0.35rem;">Intentos ${Number(item?.attempts?.used || 0)}/${Number(item?.attempts?.limit || 0)}</span>`
                       : ''
                   }
                 </p>
+                ${
+                  item?.feedback?.message
+                    ? `<p style="margin-top:0.45rem;">${escapeHtml(item.feedback.message)}</p>`
+                    : ''
+                }
                 <div class="members-actions" style="margin-top:0.55rem;">
                   <a class="members-button" href="${link}" data-assignment-link="${escapeHtml(link)}" data-assignment-title="${escapeHtml(item.title)}">
-                    ${
-                      item?.latest_attempt?.status === 'in_progress'
-                        ? 'Continuar'
-                        : item?.latest_attempt?.can_review
-                        ? 'Ver revisión'
-                        : item?.latest_attempt
-                        ? 'Ver entrega'
-                        : 'Abrir'
-                    }
+                    ${actionLabel}
                   </a>
                 </div>
               </article>
@@ -390,7 +420,7 @@ import MembersEditorialLayout from '../../layouts/MembersEditorialLayout.astro';
           <p>${evaluations}</p>
         </article>
         <article class="members-item">
-          <h4>Con revisión</h4>
+          <h4>Retro disponible</h4>
           <p>${reviewable}</p>
         </article>
         <article class="members-item">
