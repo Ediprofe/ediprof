@@ -66,7 +66,8 @@ class AssessmentAssignmentsTable
                     ->toggleable(),
                 TextColumn::make('attempts_count')
                     ->label('Intentos')
-                    ->sortable(),
+                    ->sortable()
+                    ->description(fn (AssessmentAssignment $record): ?string => $record->attempts_count > 0 ? 'Entra a editar para ver resultados.' : null),
                 IconColumn::make('randomize_questions')
                     ->label('Aleatoria')
                     ->boolean(),

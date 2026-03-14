@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\V1\StartAssessmentAttemptRequest;
 use App\Models\AssessmentAssignment;
 use App\Models\User;
+use App\Services\Assessments\AssessmentAssignmentAccessService;
 use App\Services\Assessments\AssessmentAttemptService;
 use Illuminate\Http\JsonResponse;
 
@@ -14,6 +15,7 @@ class AssessmentAssignmentController extends Controller
     public function startAttempt(
         StartAssessmentAttemptRequest $request,
         string $assignmentId,
+        AssessmentAssignmentAccessService $accessService,
         AssessmentAttemptService $attemptService
     ): JsonResponse {
         /** @var User|null $user */
@@ -39,7 +41,7 @@ class AssessmentAssignmentController extends Controller
             ], 404);
         }
 
-        if ($accessError = $this->resolveAccessErrorResponse($user, $assignment)) {
+        if ($accessError = $this->resolveAccessErrorResponse($user, $assignment, $accessService)) {
             return $accessError;
         }
 
@@ -65,68 +67,23 @@ class AssessmentAssignmentController extends Controller
             ->first();
     }
 
-    private function resolveAccessErrorResponse(User $user, AssessmentAssignment $assignment): ?JsonResponse
+    private function resolveAccessErrorResponse(
+        User $user,
+        AssessmentAssignment $assignment,
+        AssessmentAssignmentAccessService $accessService
+    ): ?JsonResponse
     {
-        if ($user->isAdmin()) {
+        $availability = $accessService->availability($user, $assignment);
+        if ($availability['can_start']) {
             return null;
         }
 
-        if ($assignment->status !== AssessmentAssignment::STATUS_ACTIVE) {
-            return response()->json([
-                'ok' => false,
-                'error' => [
-                    'code' => 'assignment_inactive',
-                    'message' => 'Esta asignación todavía no está activa para estudiantes.',
-                ],
-            ], 403);
-        }
-
-        if ($assignment->opens_at && $assignment->opens_at->isFuture()) {
-            return response()->json([
-                'ok' => false,
-                'error' => [
-                    'code' => 'assignment_not_open',
-                    'message' => 'La asignación aún no está abierta.',
-                ],
-            ], 403);
-        }
-
-        if ($assignment->closes_at && $assignment->closes_at->isPast()) {
-            return response()->json([
-                'ok' => false,
-                'error' => [
-                    'code' => 'assignment_closed',
-                    'message' => 'La asignación ya cerró.',
-                ],
-            ], 403);
-        }
-
-        $course = $assignment->course;
-        if (! $course || ! $course->is_active) {
-            return response()->json([
-                'ok' => false,
-                'error' => [
-                    'code' => 'course_inactive',
-                    'message' => 'El curso asociado no está disponible.',
-                ],
-            ], 403);
-        }
-
-        $isEnrolled = $course->enrollments()
-            ->where('user_id', $user->id)
-            ->where('status', 'active')
-            ->exists();
-
-        if (! $isEnrolled) {
-            return response()->json([
-                'ok' => false,
-                'error' => [
-                    'code' => 'assignment_access_denied',
-                    'message' => 'Tu cuenta no tiene acceso a esta asignación.',
-                ],
-            ], 403);
-        }
-
-        return null;
+        return response()->json([
+            'ok' => false,
+            'error' => [
+                'code' => $availability['code'] ?? 'assignment_access_denied',
+                'message' => $availability['message'] ?? 'Tu cuenta no tiene acceso a esta asignación.',
+            ],
+        ], 403);
     }
 }

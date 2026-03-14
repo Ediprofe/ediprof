@@ -2,6 +2,8 @@
 
 namespace Tests\Feature;
 
+use App\Models\AssessmentAssignment;
+use App\Models\AssessmentTemplate;
 use App\Models\Course;
 use App\Models\CourseContent;
 use App\Models\CourseEnrollment;
@@ -378,6 +380,96 @@ class AcademicMembersFlowTest extends TestCase
             ['Authorization' => "Bearer {$token}"],
         )->assertForbidden()
             ->assertJsonPath('error.code', 'premium_access_required');
+    }
+
+    public function test_student_can_list_active_assignments_for_their_courses(): void
+    {
+        $course = Course::query()->create([
+            'name' => 'ICFES 11°1',
+            'slug' => 'icfes-11-1',
+            'school_year' => '2026',
+            'is_active' => true,
+        ]);
+
+        $student = User::query()->create([
+            'name' => 'MARIA PRUEBA',
+            'email' => 'maria-prueba@sanjoseitagui.edu.co',
+            'password' => Hash::make('Secret1234'),
+            'role' => 'student',
+            'member_status' => 'approved',
+            'auth_provider' => 'google',
+        ]);
+
+        CourseEnrollment::query()->create([
+            'course_id' => $course->id,
+            'user_id' => $student->id,
+            'status' => 'active',
+            'source' => 'manual',
+        ]);
+
+        $workshop = $this->createPremiumWorkshop(
+            'content:simulacros:quimica/2026-s1/taller',
+            'simulacro',
+            '/simulacros/quimica/2026-s1/taller',
+            'Simulacro 11 · Ciencias Naturales · S1'
+        );
+
+        $template = AssessmentTemplate::query()->create([
+            'external_id' => $workshop->external_id,
+            'source_workshop_id' => $workshop->id,
+            'title' => $workshop->title,
+            'source_content_type' => $workshop->content_type,
+            'default_mode' => 'simulacro',
+            'route' => $workshop->route,
+            'area_slug' => $workshop->area_slug,
+            'unidad_slug' => $workshop->unidad_slug,
+            'access_tier' => 'premium',
+            'is_published' => true,
+            'total_questions' => 19,
+            'total_assets' => 0,
+            'assets' => [],
+            'asset_refs' => [],
+            'metadata' => [],
+            'synced_at' => now(),
+        ]);
+
+        AssessmentAssignment::query()->create([
+            'course_id' => $course->id,
+            'template_id' => $template->id,
+            'title' => 'Evaluación diagnóstica 11°1',
+            'mode' => AssessmentAssignment::MODE_EVALUATION,
+            'status' => AssessmentAssignment::STATUS_ACTIVE,
+            'randomize_questions' => true,
+            'show_feedback_on_submit' => false,
+            'show_feedback_after_close' => false,
+            'max_attempts' => 1,
+            'time_limit_minutes' => 20,
+            'opens_at' => now()->subMinutes(5),
+            'closes_at' => now()->addHour(),
+        ]);
+
+        AssessmentAssignment::query()->create([
+            'course_id' => $course->id,
+            'template_id' => $template->id,
+            'title' => 'Borrador oculto',
+            'mode' => AssessmentAssignment::MODE_EVALUATION,
+            'status' => AssessmentAssignment::STATUS_DRAFT,
+            'randomize_questions' => false,
+            'show_feedback_on_submit' => false,
+            'show_feedback_after_close' => false,
+        ]);
+
+        $token = $this->loginAndGetToken($student->email, 'Secret1234');
+
+        $this->getJson('/api/v1/me/assignments', [
+            'Authorization' => "Bearer {$token}",
+        ])->assertOk()
+            ->assertJsonCount(1, 'data')
+            ->assertJsonPath('data.0.title', 'Evaluación diagnóstica 11°1')
+            ->assertJsonPath('data.0.mode', 'evaluation')
+            ->assertJsonPath('data.0.course.name', 'ICFES 11°1')
+            ->assertJsonPath('data.0.stats.effective_questions', 19)
+            ->assertJsonPath('data.0.availability.can_start', true);
     }
 
     private function makeAdmin(): User

@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\V1\Admin\CourseController;
 use App\Http\Controllers\Api\V1\AssessmentAssignmentController;
 use App\Http\Controllers\Api\V1\AssessmentAttemptController;
 use App\Http\Controllers\Api\V1\ContentController;
+use App\Http\Controllers\Api\V1\MemberAssignmentController;
 use App\Http\Controllers\Api\V1\MemberLibraryController;
 use App\Http\Controllers\Api\V1\SimulacroController;
 use App\Http\Controllers\Api\V1\WorkshopController;
@@ -30,6 +31,8 @@ Route::prefix('v1')->middleware('resolve.api_token')->group(function (): void {
     Route::post('/auth/logout', [AuthController::class, 'logout'])->middleware('require.api_token');
     Route::get('/me/courses', [MemberLibraryController::class, 'courses'])->middleware('require.api_token');
     Route::get('/me/library', [MemberLibraryController::class, 'library'])->middleware('require.api_token');
+    Route::get('/me/assignments', [MemberAssignmentController::class, 'index'])->middleware('require.api_token');
+    Route::get('/me/assignments/{assignmentId}', [MemberAssignmentController::class, 'show'])->middleware('require.api_token');
 
     Route::get('/content', [ContentController::class, 'index']);
     Route::get('/workshops', [WorkshopController::class, 'index']);

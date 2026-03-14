@@ -5,6 +5,7 @@ namespace App\Filament\Resources\AssessmentAssignments;
 use App\Filament\Resources\AssessmentAssignments\Pages\CreateAssessmentAssignment;
 use App\Filament\Resources\AssessmentAssignments\Pages\EditAssessmentAssignment;
 use App\Filament\Resources\AssessmentAssignments\Pages\ListAssessmentAssignments;
+use App\Filament\Resources\AssessmentAssignments\RelationManagers\AttemptsRelationManager;
 use App\Filament\Resources\AssessmentAssignments\RelationManagers\QuestionsRelationManager;
 use App\Filament\Resources\AssessmentAssignments\Schemas\AssessmentAssignmentForm;
 use App\Filament\Resources\AssessmentAssignments\Tables\AssessmentAssignmentsTable;
@@ -48,6 +49,7 @@ class AssessmentAssignmentResource extends Resource
     {
         return [
             QuestionsRelationManager::class,
+            AttemptsRelationManager::class,
         ];
     }
 

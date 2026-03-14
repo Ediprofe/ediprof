@@ -235,6 +235,59 @@ class AssessmentAttemptService
         return $attempt->fresh(['template', 'assignment', 'answers']);
     }
 
+    public function releaseReview(AssessmentAttempt $attempt, ?CarbonInterface $releasedAt = null): AssessmentAttempt
+    {
+        $attempt = $attempt->loadMissing(['template', 'assignment', 'answers']);
+
+        if (! in_array($attempt->status, ['submitted', 'graded', 'released'], true)) {
+            throw ValidationException::withMessages([
+                'attempt' => 'Solo puedes liberar revisión para intentos ya entregados.',
+            ]);
+        }
+
+        $timestamp = $releasedAt instanceof CarbonInterface
+            ? Carbon::instance($releasedAt)
+            : now();
+
+        $attempt->forceFill([
+            'status' => 'released',
+            'review_released_at' => $timestamp,
+            'last_activity_at' => now(),
+        ])->save();
+
+        return $attempt->fresh(['template', 'assignment', 'answers']);
+    }
+
+    public function releaseReviewsForAssignment(
+        AssessmentAssignment $assignment,
+        ?CarbonInterface $releasedAt = null
+    ): int {
+        $timestamp = $releasedAt instanceof CarbonInterface
+            ? Carbon::instance($releasedAt)
+            : now();
+
+        $assignment->forceFill([
+            'review_released_at' => $timestamp,
+        ])->save();
+
+        return AssessmentAttempt::query()
+            ->where('assignment_id', $assignment->id)
+            ->whereIn('status', ['submitted', 'graded', 'released'])
+            ->update([
+                'status' => 'released',
+                'review_released_at' => $timestamp,
+                'last_activity_at' => now(),
+                'updated_at' => now(),
+            ]);
+    }
+
+    public function canReview(AssessmentAttempt $attempt): bool
+    {
+        $attempt = $attempt->loadMissing(['assignment']);
+
+        return $this->canRevealAll($attempt);
+    }
+
     /**
      * @return array<string, mixed>
      */
@@ -554,6 +607,20 @@ class AssessmentAttemptService
 
         if ($this->shouldRevealReviewOnSubmit($attempt)) {
             return true;
+        }
+
+        $settings = is_array($attempt->settings_snapshot) ? $attempt->settings_snapshot : [];
+        if ((bool) ($settings['show_feedback_after_close'] ?? false)) {
+            $assignment = $attempt->assignment;
+            if ($assignment instanceof AssessmentAssignment) {
+                if (in_array($assignment->status, [AssessmentAssignment::STATUS_CLOSED, AssessmentAssignment::STATUS_ARCHIVED], true)) {
+                    return true;
+                }
+
+                if ($assignment->closes_at instanceof CarbonInterface && $assignment->closes_at->lessThanOrEqualTo(now())) {
+                    return true;
+                }
+            }
         }
 
         $reviewReleasedAt = $attempt->review_released_at;
