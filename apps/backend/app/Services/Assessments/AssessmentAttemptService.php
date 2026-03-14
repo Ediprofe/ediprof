@@ -9,7 +9,6 @@ use App\Models\AssessmentQuestion;
 use App\Models\AssessmentTemplate;
 use App\Models\User;
 use Carbon\CarbonInterface;
-use Illuminate\Support\Arr;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
 use Illuminate\Validation\ValidationException;
@@ -18,8 +17,7 @@ class AssessmentAttemptService
 {
     public function __construct(
         private readonly AssessmentQuestionGroupService $questionGroups,
-    ) {
-    }
+    ) {}
 
     public function startTemplateAttempt(
         User $user,
@@ -337,6 +335,7 @@ class AssessmentAttemptService
 
             if ($attempt->mode === 'study' && $answer instanceof AssessmentAttemptAnswer) {
                 $evaluationByQuestion[$questionId] = $this->serializeAnswerForClient($attempt, $snapshotQuestion, $answer, true);
+
                 continue;
             }
 
@@ -448,7 +447,7 @@ class AssessmentAttemptService
             return $this->resolveTemplateQuestions($assignment->template);
         }
 
-        return new Collection();
+        return new Collection;
     }
 
     /**

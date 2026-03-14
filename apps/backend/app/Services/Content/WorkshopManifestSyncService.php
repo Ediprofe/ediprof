@@ -13,8 +13,7 @@ class WorkshopManifestSyncService
 {
     public function __construct(
         private readonly AssessmentTemplateManifestSyncService $assessmentTemplateSyncService
-    ) {
-    }
+    ) {}
 
     /**
      * Synchronize workshops from a JSON manifest file.

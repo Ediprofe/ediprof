@@ -10,8 +10,7 @@ class AssessmentAssignmentSelectionService
 {
     public function __construct(
         private readonly AssessmentQuestionGroupService $questionGroups,
-    ) {
-    }
+    ) {}
 
     public function addQuestionSelection(AssessmentAssignment $assignment, AssessmentQuestion $question): AssessmentAssignmentQuestion
     {

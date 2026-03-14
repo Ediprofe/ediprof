@@ -103,4 +103,3 @@ class AssessmentQuestionGroupService
         return $question->template?->external_id ?: ('template:'.$question->template_id);
     }
 }
-

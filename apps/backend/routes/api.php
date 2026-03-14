@@ -1,10 +1,10 @@
 <?php
 
-use App\Http\Controllers\Api\V1\AuthController;
 use App\Http\Controllers\Api\V1\Admin\AdminPanelController;
 use App\Http\Controllers\Api\V1\Admin\CourseController;
 use App\Http\Controllers\Api\V1\AssessmentAssignmentController;
 use App\Http\Controllers\Api\V1\AssessmentAttemptController;
+use App\Http\Controllers\Api\V1\AuthController;
 use App\Http\Controllers\Api\V1\ContentController;
 use App\Http\Controllers\Api\V1\MemberAssignmentController;
 use App\Http\Controllers\Api\V1\MemberLibraryController;

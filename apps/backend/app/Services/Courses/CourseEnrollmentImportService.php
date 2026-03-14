@@ -84,17 +84,20 @@ class CourseEnrollmentImportService
 
             if ($email === '') {
                 $errors[] = ['line' => $line, 'message' => 'Falta el correo institucional.'];
+
                 continue;
             }
 
             if (! filter_var($email, FILTER_VALIDATE_EMAIL)) {
                 $errors[] = ['line' => $line, 'message' => 'Correo inválido.'];
+
                 continue;
             }
 
             $domain = (string) Str::of($email)->afterLast('@');
             if ($domain !== $allowedDomain) {
                 $errors[] = ['line' => $line, 'message' => 'El correo no pertenece al dominio institucional permitido.'];
+
                 continue;
             }
 

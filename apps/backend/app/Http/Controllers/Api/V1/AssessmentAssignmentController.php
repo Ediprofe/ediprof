@@ -86,8 +86,7 @@ class AssessmentAssignmentController extends Controller
         AssessmentAssignment $assignment,
         AssessmentAssignmentAccessService $accessService,
         ?AssessmentAttempt $latestAttempt = null
-    ): ?JsonResponse
-    {
+    ): ?JsonResponse {
         $availability = $accessService->availability($user, $assignment);
         if ($availability['can_start'] || $latestAttempt instanceof AssessmentAttempt) {
             return null;

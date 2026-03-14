@@ -169,7 +169,7 @@ class MemberAssignmentController extends Controller
                 'can_review' => $attemptService->canReview($latestAttempt),
                 'feedback_state' => $feedback['state'],
                 'feedback_state_label' => $feedback['state_label'],
-                ] : null,
+            ] : null,
             'updated_at' => $assignment->updated_at?->toIso8601String(),
         ];
     }

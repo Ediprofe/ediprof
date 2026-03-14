@@ -26,4 +26,3 @@ class EvaluateWorkshopAnswerRequest extends FormRequest
         ];
     }
 }
-

@@ -1,8 +1,8 @@
 <?php
 
+use App\Http\Controllers\Dev\WorkshopPreviewController;
 use App\Http\Controllers\Web\Admin\AssessmentResultsExportController;
 use App\Http\Controllers\Web\AdminPanelHandoffController;
-use App\Http\Controllers\Dev\WorkshopPreviewController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {

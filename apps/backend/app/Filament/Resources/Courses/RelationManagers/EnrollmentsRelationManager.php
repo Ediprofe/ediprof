@@ -164,7 +164,7 @@ class EnrollmentsRelationManager extends RelationManager
                         Notification::make()
                             ->title('Importación completada')
                             ->body(
-                                "Matriculados: {$summary['enrolled_users']} · Nuevos usuarios: {$summary['created_users']} · " .
+                                "Matriculados: {$summary['enrolled_users']} · Nuevos usuarios: {$summary['created_users']} · ".
                                 "Actualizados: {$summary['updated_users']} · Errores: {$summary['error_count']}"
                             )
                             ->{$summary['error_count'] > 0 ? 'warning' : 'success'}()

@@ -116,9 +116,6 @@ class AssessmentTemplateManifestSyncService
         ];
     }
 
-    /**
-     * @param  mixed  $contexts
-     */
     private function syncContexts(AssessmentTemplate $template, mixed $contexts): void
     {
         if (! is_array($contexts)) {
@@ -185,9 +182,6 @@ class AssessmentTemplateManifestSyncService
             ->update(['is_active' => false]);
     }
 
-    /**
-     * @param  mixed  $questions
-     */
     private function syncQuestions(AssessmentTemplate $template, mixed $questions, string $route): void
     {
         if (! is_array($questions)) {
@@ -282,9 +276,6 @@ class AssessmentTemplateManifestSyncService
             ->update(['is_active' => false]);
     }
 
-    /**
-     * @param  mixed  $links
-     */
     private function syncQuestionContextLinks(AssessmentTemplate $template, mixed $links): void
     {
         $questionMap = $template->questions()
@@ -340,7 +331,6 @@ class AssessmentTemplateManifestSyncService
     }
 
     /**
-     * @param  mixed  $value
      * @return array<int, mixed>
      */
     private function normalizeArrayValue(mixed $value): array
@@ -349,7 +339,6 @@ class AssessmentTemplateManifestSyncService
     }
 
     /**
-     * @param  mixed  $value
      * @return array<int, string>
      */
     private function normalizeStringList(mixed $value): array
@@ -374,7 +363,6 @@ class AssessmentTemplateManifestSyncService
     }
 
     /**
-     * @param  mixed  $value
      * @return array<int, array<string, mixed>>
      */
     private function normalizeAssetRefs(mixed $value): array

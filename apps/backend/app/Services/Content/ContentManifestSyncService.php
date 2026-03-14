@@ -33,6 +33,7 @@ class ContentManifestSyncService
         foreach ($entries as $entry) {
             if (! is_array($entry)) {
                 $skipped++;
+
                 continue;
             }
 
@@ -40,6 +41,7 @@ class ContentManifestSyncService
 
             if ($normalized === null) {
                 $skipped++;
+
                 continue;
             }
 

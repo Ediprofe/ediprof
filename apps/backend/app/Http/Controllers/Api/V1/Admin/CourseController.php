@@ -6,8 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\WorkshopSummaryResource;
 use App\Models\Course;
 use App\Models\CourseContent;
-use App\Models\CourseEnrollment;
-use App\Models\User;
 use App\Models\Workshop;
 use App\Services\Courses\CourseEnrollmentImportService;
 use Illuminate\Http\JsonResponse;
@@ -19,8 +17,7 @@ class CourseController extends Controller
 {
     public function __construct(
         protected CourseEnrollmentImportService $enrollmentImportService,
-    ) {
-    }
+    ) {}
 
     public function index(): JsonResponse
     {

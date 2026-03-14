@@ -9,8 +9,7 @@ class WorkshopAccessService
 {
     public function __construct(
         private readonly CourseLibraryService $courseLibraryService
-    ) {
-    }
+    ) {}
 
     public function canAccessWorkshop(?User $user, Workshop $workshop): bool
     {

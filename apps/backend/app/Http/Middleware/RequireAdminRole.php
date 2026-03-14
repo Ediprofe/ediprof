@@ -40,4 +40,3 @@ class RequireAdminRole
         return $next($request);
     }
 }
-
