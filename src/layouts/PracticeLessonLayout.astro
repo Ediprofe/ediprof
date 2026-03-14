@@ -23,6 +23,7 @@ interface Props {
   icon?: string;
   breadcrumbItems?: BreadcrumbItem[];
   contentClass?: string;
+  compact?: boolean;
 }
 
 const {
@@ -33,6 +34,7 @@ const {
   icon,
   breadcrumbItems = [],
   contentClass = "",
+  compact = false,
 } = Astro.props;
 
 const materiaSlug = (["matematicas", "fisica", "quimica", "ciencias", "saber"].includes(materia)
@@ -48,35 +50,51 @@ const headerIcon = icon ?? (materiaSlug === "saber" ? "📝" : "📖");
 
   <main class="practice-lesson-shell">
     <div class="practice-lesson-frame">
-      <header class={`lesson-header lesson-header-${materiaSlug}`}>
-        <div class="header-bg">
-          <div class="header-orb header-orb-1"></div>
-          <div class="header-orb header-orb-2"></div>
-          <div class="header-grid"></div>
-        </div>
-
-        <div class="header-content">
-          <div class="header-main">
-            <div class="header-icon-wrapper" style={`background: ${config.gradient}`}>
-              <span class="header-icon">{headerIcon}</span>
-            </div>
-            <div class="header-text">
-              <span class="header-label">{badge}</span>
-              <h1 class="header-title">{title}</h1>
-              {description && <p class="header-desc">{description}</p>}
-            </div>
+      {!compact && (
+        <header class={`lesson-header lesson-header-${materiaSlug}`}>
+          <div class="header-bg">
+            <div class="header-orb header-orb-1"></div>
+            <div class="header-orb header-orb-2"></div>
+            <div class="header-grid"></div>
           </div>
 
-          <div class="header-breadcrumb">
-            <span class="crumb-link">
-              <span class="crumb-icon">{config.icon}</span>
-              <span>{materiaName}</span>
-            </span>
-          </div>
-        </div>
-      </header>
+          <div class="header-content">
+            <div class="header-main">
+              <div class="header-icon-wrapper" style={`background: ${config.gradient}; box-shadow: 0 8px 24px -8px ${config.color}`}>
+                <span class="header-icon">{headerIcon}</span>
+              </div>
+              <div class="header-text">
+                <span class="header-label" style={`color: color-mix(in oklab, white 85%, ${config.color} 15%)`}>{badge}</span>
+                <h1 class="header-title">{title}</h1>
+                {description && <p class="header-desc">{description}</p>}
+              </div>
+            </div>
 
-      <article class={`content-article content-article-${materiaSlug} practice-content-article`}>
+            <div class="header-breadcrumb">
+              <span class="crumb-link" style={`background: color-mix(in oklab, white 10%, transparent); border: 1px solid color-mix(in oklab, white 20%, transparent);`}>
+                <span class="crumb-icon">{config.icon}</span>
+                <span>{materiaName}</span>
+              </span>
+            </div>
+          </div>
+        </header>
+      )}
+
+      <article class={`content-article content-article-${materiaSlug} practice-content-article ${compact ? 'is-compact' : ''}`}>
+        {compact && (
+          <div class="compact-header u-margin-bottom-medium">
+             <div class="u-flex-between" style="align-items: center;">
+                <div>
+                  <span class="header-label" style={`color: ${config.color}; font-weight: 800; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;`}>{badge}</span>
+                  <h1 class="u-margin-bottom-small" style="font-size: 2rem; font-weight: 900; margin-top: 0.25rem;">{title}</h1>
+                  {description && <p style="color: var(--text-secondary); margin: 0;">{description}</p>}
+                </div>
+                <div class="header-icon-wrapper" style={`background: ${config.gradient}; width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;`}>
+                  <span>{headerIcon}</span>
+                </div>
+             </div>
+          </div>
+        )}
         <div class={`content-body practice-content-body ${contentClass}`.trim()}>
           <slot />
         </div>

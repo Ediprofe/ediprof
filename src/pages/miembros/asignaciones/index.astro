@@ -3,28 +3,29 @@ import MembersEditorialLayout from '../../../layouts/MembersEditorialLayout.astr
 ---
 
 <MembersEditorialLayout
-  title="Asignaciones Académicas"
-  description="Aquí aparecen tus evaluaciones, simulacros asignados y entregas disponibles para revisar."
-  badge="Asignaciones"
+  title="Evaluaciones"
+  description="Aquí ves lo que tu docente te dejó asignado: iniciar, continuar, revisar resultados o abrir retroalimentación cuando ya esté disponible."
+  badge="Evaluaciones"
   icon="📝"
-  breadcrumbTrail={[{ label: 'Asignaciones' }]}
+  breadcrumbTrail={[{ label: 'Evaluaciones' }]}
+  activeSection="evaluaciones"
 >
   <div class="practice-surface members-editorial-stack">
-    <section class="practice-toolbar">
-      <div class="practice-toolbar-copy">
-        <p class="practice-toolbar-label">Agenda académica</p>
-        <h2 class="practice-toolbar-title">Asignaciones del curso</h2>
-        <p class="practice-toolbar-desc">Aquí ves lo que está activo ahora y también lo que ya entregaste o puedes revisar.</p>
-      </div>
-      <div class="practice-toolbar-actions">
-        <a class="members-button secondary" href="/miembros">Volver al panel</a>
-      </div>
-    </section>
-
     <section class="members-card">
       <div id="feedback"></div>
-      <div id="summary"></div>
-      <div id="assignments" class="members-list"></div>
+      
+      <div id="summary" class="u-margin-bottom-large"></div>
+      
+      <div class="members-list-header">
+        <div class="members-item-main">
+          <h3 class="members-section-title">📋 Tus evaluaciones del docente</h3>
+          <p class="members-subtitle">Si una ya fue entregada, desde aquí mismo vuelves a ver el resultado o la retroalimentación.</p>
+        </div>
+        <div class="members-actions">
+          <a class="members-button secondary" href="/miembros">Volver al panel</a>
+        </div>
+      </div>
+      <div id="assignments" class="members-list members-list--loose"></div>
     </section>
   </div>
 </MembersEditorialLayout>
@@ -52,7 +53,7 @@ import MembersEditorialLayout from '../../../layouts/MembersEditorialLayout.astr
   }
 
   function modeLabel(mode) {
-    if (mode === 'study') return 'Estudio guiado';
+    if (mode === 'study') return 'Práctica guiada';
     if (mode === 'evaluation') return 'Evaluación';
     return 'Simulacro';
   }
@@ -76,9 +77,9 @@ import MembersEditorialLayout from '../../../layouts/MembersEditorialLayout.astr
     const latest = item?.latest_attempt;
     if (latest?.status === 'in_progress') return 'Continuar';
     if (latest?.status === 'submitted' || latest?.status === 'graded' || latest?.status === 'released') {
-      return latest?.can_review ? 'Ver retroalimentación' : 'Ver resultado';
+      return latest?.can_review ? 'Revisar retroalimentación' : 'Ver resultado';
     }
-    return item?.availability?.can_start ? 'Iniciar' : 'Ver detalles';
+    return item?.availability?.can_start ? 'Iniciar ahora' : 'Ver detalles';
   }
 
   function attemptStatusLabel(status) {
@@ -114,7 +115,7 @@ import MembersEditorialLayout from '../../../layouts/MembersEditorialLayout.astr
       if (user.member_status === 'blocked' && user.role !== 'admin') {
         feedback.innerHTML = `
           <div class="members-alert error">
-            Tu cuenta está bloqueada. No tienes acceso a asignaciones académicas en este momento.
+            Acceso bloqueado. Contacta al administrador.
           </div>
         `;
         return;
@@ -125,36 +126,31 @@ import MembersEditorialLayout from '../../../layouts/MembersEditorialLayout.astr
 
       if (items.length === 0) {
         assignmentsWrap.innerHTML =
-          '<div class="members-alert">No tienes asignaciones activas en este momento.</div>';
+          '<div class="members-alert">No tienes evaluaciones programadas.</div>';
         return;
       }
 
       const activeNow = items.filter((item) => item?.availability?.can_start);
       const reviewable = items.filter((item) => item?.latest_attempt?.can_review).length;
       const evaluations = items.filter((item) => item?.mode === 'evaluation').length;
-      const totalQuestions = items.reduce((acc, item) => acc + Number(item?.stats?.effective_questions || 0), 0);
 
       summary.innerHTML = `
-        <div class="members-grid" style="margin-bottom:0.85rem;">
-          <article class="members-item">
-            <h4>Asignaciones visibles</h4>
-            <p>${items.length}</p>
+        <div class="members-grid summary-stats">
+          <article class="members-item stat-box">
+            <p class="members-subtitle">Activas</p>
+            <p class="stat-value" style="color: #27ae60;">${activeNow.length}</p>
           </article>
-          <article class="members-item">
-            <h4>Disponibles ahora</h4>
-            <p>${activeNow.length}</p>
+          <article class="members-item stat-box">
+            <p class="members-subtitle">Registradas</p>
+            <p class="stat-value">${items.length}</p>
           </article>
-          <article class="members-item">
-            <h4>Evaluaciones</h4>
-            <p>${evaluations}</p>
+          <article class="members-item stat-box">
+            <p class="members-subtitle">Modo evaluación</p>
+            <p class="stat-value" style="color: var(--color-primary);">${evaluations}</p>
           </article>
-          <article class="members-item">
-            <h4>Retro disponible</h4>
-            <p>${reviewable}</p>
-          </article>
-          <article class="members-item">
-            <h4>Preguntas comprometidas</h4>
-            <p>${totalQuestions}</p>
+          <article class="members-item stat-box">
+            <p class="members-subtitle">Con Retro</p>
+            <p class="stat-value" style="color: #f39c12;">${reviewable}</p>
           </article>
         </div>
       `;
@@ -163,49 +159,62 @@ import MembersEditorialLayout from '../../../layouts/MembersEditorialLayout.astr
         .map((item) => {
           const link = buildLink(item.id);
           const latest = item.latest_attempt;
+          const status = availabilityClass(item.availability);
+          const feedbackState = feedbackClass(item.feedback);
+          const statusModifier = status === 'approved' ? 'approved' : status === 'pending' ? 'pending' : 'blocked';
 
           return `
-            <article class="members-item">
-              <h4>${escapeHtml(item.title)}</h4>
-              <p>${escapeHtml(modeLabel(item.mode))} · ${Number(item?.stats?.effective_questions || 0)} preguntas</p>
-              ${
-                item?.course?.name
-                  ? `<p style="margin-top:0.35rem;"><span class="members-pill approved">${escapeHtml(item.course.name)}</span></p>`
-                  : ''
-              }
-              <p style="margin-top:0.5rem;">
-                <span class="members-pill ${availabilityClass(item.availability)}">${escapeHtml(availabilityLabel(item.availability))}</span>
-                ${
-                  item?.feedback
-                    ? `<span class="members-pill ${feedbackClass(item.feedback)}" style="margin-left:0.35rem;">${escapeHtml(feedbackLabel(item.feedback))}</span>`
-                    : ''
-                }
-                ${
-                  latest
-                    ? `<span class="members-pill pending" style="margin-left:0.35rem;">Intento: ${escapeHtml(attemptStatusLabel(latest.status || ''))}</span>`
-                    : ''
-                }
-                ${
-                  item?.attempts?.limit
-                    ? `<span class="members-pill pending" style="margin-left:0.35rem;">Intentos ${Number(item?.attempts?.used || 0)}/${Number(item?.attempts?.limit || 0)}</span>`
-                    : ''
-                }
-              </p>
-              ${
-                item?.availability?.message
-                  ? `<p style="margin-top:0.55rem;">${escapeHtml(item.availability.message)}</p>`
-                  : ''
-              }
-              ${
-                item?.feedback?.message
-                  ? `<p style="margin-top:0.45rem;">${escapeHtml(item.feedback.message)}</p>`
-                  : ''
-              }
-              <div class="members-actions" style="margin-top:0.75rem;">
-                <a class="members-button" href="${link}" data-link="${escapeHtml(link)}" data-title="${escapeHtml(item.title)}">
-                  ${escapeHtml(actionLabel(item))}
-                </a>
+            <article class="members-item members-item--${statusModifier}">
+              <div class="u-flex-between">
+                <div class="members-item-main">
+                  <h4 class="u-margin-bottom-small" style="font-size: 1.25rem;">${escapeHtml(item.title)}</h4>
+                  <p class="members-subtitle u-margin-bottom-medium" style="font-size: 1rem;">
+                    🎯 ${escapeHtml(modeLabel(item.mode))} · 📄 ${Number(item?.stats?.effective_questions || 0)} preguntas
+                  </p>
+                  
+                  <div class="u-flex-wrap u-flex-gap-small u-margin-bottom-medium">
+                    <span class="members-pill ${status}">${escapeHtml(availabilityLabel(item.availability))}</span>
+                    ${
+                      item?.course?.name
+                        ? `<span class="members-pill approved">🎓 ${escapeHtml(item.course.name)}</span>`
+                        : ''
+                    }
+                    ${
+                      item?.feedback
+                        ? `<span class="members-pill ${feedbackState}">💬 ${escapeHtml(feedbackLabel(item.feedback))}</span>`
+                        : ''
+                    }
+                  </div>
+                  
+                  ${
+                    latest
+                      ? `
+                    <div class="members-card" style="padding: 0.75rem 1rem; margin: 0; background: color-mix(in oklab, var(--bg-secondary) 50%, var(--bg-primary)); border-radius: 12px; border: 1px dashed var(--border-color);">
+                      <p style="margin: 0; font-size: 0.9rem; font-weight: 600;">
+                        Último estado: <span class="members-pill pending" style="padding: 0.1rem 0.5rem; margin-left: 0.25rem;">${escapeHtml(attemptStatusLabel(latest.status || ''))}</span>
+                        ${item?.attempts?.limit ? `<span style="margin-left: 1rem; color: var(--text-secondary); font-size: 0.85rem;">(Uso: ${Number(item?.attempts?.used || 0)}/${Number(item?.attempts?.limit || 0)})</span>` : ''}
+                      </p>
+                    </div>
+                    `
+                      : ''
+                  }
+                </div>
+                
+                <div class="members-actions" style="min-width: 150px; justify-content: flex-end;">
+                  <a class="members-button ${status === 'approved' ? '' : 'secondary'}" href="${link}" data-link="${escapeHtml(link)}" data-title="${escapeHtml(item.title)}" style="width: 100%; padding: 0.8rem;">
+                    ${escapeHtml(actionLabel(item))}
+                  </a>
+                </div>
               </div>
+              
+              ${
+                item?.availability?.message || item?.feedback?.message
+                  ? `<div class="members-info-bar">
+                      ${item?.availability?.message ? `<p>ℹ️ ${escapeHtml(item.availability.message)}</p>` : ''}
+                      ${item?.feedback?.message ? `<p>📝 ${escapeHtml(item.feedback.message)}</p>` : ''}
+                    </div>`
+                  : ''
+              }
             </article>
           `;
         })
@@ -220,9 +229,9 @@ import MembersEditorialLayout from '../../../layouts/MembersEditorialLayout.astr
             LAST_ASSIGNMENT_KEY,
             JSON.stringify({
               link,
-              title: title || 'Asignación',
+              title: title || 'Evaluación',
               at: Date.now(),
-            })
+              })
           );
         });
       });

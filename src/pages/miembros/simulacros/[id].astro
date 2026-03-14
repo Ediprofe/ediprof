@@ -1,8 +1,10 @@
 ---
 import { getCollection } from 'astro:content';
-import PracticeLessonLayout from '../../../layouts/PracticeLessonLayout.astro';
+import MembersEditorialLayout from '../../../layouts/MembersEditorialLayout.astro';
 import { getMateriaConfig, getMateriaName } from '../../../config/materias';
 import { cleanSlug } from '../../../utils/navigation-generator.js';
+import '../../../styles/layouts/practice-lesson.css';
+import '../../../styles/saber/preguntas-icfes.css';
 
 export async function getStaticPaths() {
   const simulacros = await getCollection('simulacros');
@@ -43,22 +45,22 @@ const {
 const materiaName = getMateriaName(materiaSlug);
 ---
 
-<PracticeLessonLayout
+<MembersEditorialLayout
   title={title}
   description={description}
-  materia={materiaSlug}
-  badge="Simulacro premium"
+  badge="Simulacros"
   icon={materiaIcon}
-  breadcrumbItems={[
-    { label: 'Inicio', href: '/', icon: '🏠' },
-    { label: 'Miembros', href: '/miembros', icon: '👥' },
+  breadcrumbTrail={[
     { label: 'Simulacros', href: '/miembros/simulacros', icon: '🚀' },
     { label: materiaName },
     { label: title },
   ]}
-  contentClass="saber-taller"
+  contentClass="members-container--workshop saber-taller"
+  showPageIntro={false}
+  showBreadcrumb={false}
+  activeSection="simulacros"
 >
-  <div class="practice-surface">
+  <div class="practice-surface members-editorial-stack">
     <div class="members-actions">
       <a class="members-button secondary" href="/miembros/simulacros">Volver a simulacros</a>
       <button type="button" class="members-button warn" id="reset-progress-btn">Reiniciar progreso</button>
@@ -66,7 +68,7 @@ const materiaName = getMateriaName(materiaSlug);
     <div id="practice-feedback"></div>
     <div id="practice-player"></div>
   </div>
-</PracticeLessonLayout>
+</MembersEditorialLayout>
 
 <script define:vars={{ simulacroId }}>
   window.__EDIPROFE_PRACTICE_ID__ = simulacroId;

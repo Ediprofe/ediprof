@@ -1,31 +1,30 @@
 ---
-import PracticeLessonLayout from '../../../layouts/PracticeLessonLayout.astro';
+import MembersEditorialLayout from '../../../layouts/MembersEditorialLayout.astro';
+import '../../../styles/layouts/practice-lesson.css';
+import '../../../styles/saber/preguntas-icfes.css';
 ---
 
-<PracticeLessonLayout
-  title="Asignación académica"
-  description="Resuelve tu asignación con guardado de intento y seguimiento desde el backend académico."
-  materia="quimica"
-  badge="Asignación"
+<MembersEditorialLayout
+  title="Evaluación"
+  description="Revisa la información antes de iniciar, continuar o consultar tu resultado."
+  badge="Evaluaciones"
   icon="📝"
-  breadcrumbItems={[
-    { label: 'Inicio', href: '/', icon: '🏠' },
-    { label: 'Miembros', href: '/miembros', icon: '👥' },
-    { label: 'Asignaciones', href: '/miembros/asignaciones', icon: '📝' },
-    { label: 'Abrir asignación' },
+  breadcrumbTrail={[
+    { label: 'Evaluaciones', href: '/miembros/asignaciones', icon: '📝' },
+    { label: 'Abrir' },
   ]}
-  contentClass="saber-taller"
+  showPageIntro={false}
+  showBreadcrumb={false}
+  activeSection="evaluaciones"
 >
-  <div class="practice-surface">
-    <div class="members-actions">
-      <a class="members-button secondary" href="/miembros/asignaciones">Volver a asignaciones</a>
-    </div>
+  <div class="practice-surface members-editorial-stack">
     <div id="practice-feedback"></div>
-    <div id="practice-player">
-      <div class="members-alert">Preparando la asignación...</div>
+    <div id="practice-lobby">
+      <div class="members-alert">Cargando la evaluación...</div>
     </div>
+    <div id="practice-player" style="display: none;"></div>
   </div>
-</PracticeLessonLayout>
+</MembersEditorialLayout>
 
 <script>
   import {
@@ -46,6 +45,7 @@ import PracticeLessonLayout from '../../../layouts/PracticeLessonLayout.astro';
     window.location.href = '/miembros/login';
   }
 
+  const lobby = document.getElementById('practice-lobby');
   const feedback = document.getElementById('practice-feedback');
   const root = document.getElementById('practice-player');
 
@@ -63,12 +63,125 @@ import PracticeLessonLayout from '../../../layouts/PracticeLessonLayout.astro';
     return `<div class="members-alert ${escapeHtml(type)}">${heading}${escapeHtml(message)}</div>`;
   }
 
+  function getModeLabel(mode) {
+    if (mode === 'study') return 'Práctica guiada';
+    if (mode === 'evaluation') return 'Evaluación';
+    return 'Simulacro';
+  }
+
+  function getStartLabel(assignment) {
+    const latest = assignment?.latest_attempt;
+    if (latest?.status === 'in_progress') return 'Continuar evaluación';
+    if (latest?.can_review) return 'Ver retroalimentación';
+    if (latest) return 'Ver resultado';
+    return 'Iniciar evaluación';
+  }
+
+  function renderLobby(assignment, canStart, latestAttemptId) {
+    const latestAttempt = assignment?.latest_attempt;
+    const modeLabel = getModeLabel(assignment.mode);
+    const statusModifier = canStart ? 'approved' : latestAttemptId ? 'pending' : 'blocked';
+    const statusLabel = canStart
+      ? 'Disponible para iniciar'
+      : latestAttemptId
+      ? 'Disponible para consulta'
+      : 'No disponible';
+    const attemptUsage = assignment?.attempts?.limit
+      ? `${Number(assignment?.attempts?.used || 0)} de ${Number(assignment?.attempts?.limit || 0)}`
+      : `${Number(assignment?.attempts?.used || 0)} usados`;
+    const feedbackLabel =
+      assignment?.feedback?.state_label || assignment?.feedback?.policy_label || 'Retroalimentación pendiente';
+    const canOpenPlayer = canStart || Boolean(latestAttemptId);
+
+    lobby.innerHTML = `
+      <section class="members-card members-lobby members-item--${statusModifier}">
+        <div class="members-lobby-main">
+          <div class="members-lobby-copy">
+            <p class="members-page-kicker">${escapeHtml(modeLabel)}</p>
+            <h1 class="members-lobby-title">${escapeHtml(assignment.title)}</h1>
+            <div class="members-lobby-meta">
+              ${
+                assignment?.course?.name
+                  ? `<span class="members-pill approved">🎓 ${escapeHtml(assignment.course.name)}</span>`
+                  : ''
+              }
+              <span class="members-pill ${canStart ? 'approved' : 'pending'}">📌 ${escapeHtml(statusLabel)}</span>
+              <span class="members-pill pending">💬 ${escapeHtml(feedbackLabel)}</span>
+            </div>
+          </div>
+          <div class="members-actions">
+            <a class="members-button secondary" href="/miembros/asignaciones">Volver a evaluaciones</a>
+          </div>
+        </div>
+
+        <div class="members-lobby-stats">
+          <article class="members-lobby-stat">
+            <p class="members-lobby-stat-label">Modo</p>
+            <p class="members-lobby-stat-value">${escapeHtml(modeLabel)}</p>
+          </article>
+          <article class="members-lobby-stat">
+            <p class="members-lobby-stat-label">Preguntas</p>
+            <p class="members-lobby-stat-value">${Number(assignment?.stats?.effective_questions || 0)}</p>
+          </article>
+          <article class="members-lobby-stat">
+            <p class="members-lobby-stat-label">Intentos</p>
+            <p class="members-lobby-stat-value">${escapeHtml(attemptUsage)}</p>
+          </article>
+          <article class="members-lobby-stat">
+            <p class="members-lobby-stat-label">Último estado</p>
+            <p class="members-lobby-stat-value">${latestAttempt ? escapeHtml(latestAttempt.status_label || 'Registrado') : 'Sin iniciar'}</p>
+          </article>
+        </div>
+
+        ${
+          latestAttempt
+            ? `
+          <div class="members-info-bar">
+            <p>Último intento: ${escapeHtml(latestAttempt.status_label || 'Registrado')}.</p>
+            ${
+              assignment?.availability?.message
+                ? `<p>ℹ️ ${escapeHtml(assignment.availability.message)}</p>`
+                : ''
+            }
+            ${
+              assignment?.feedback?.message
+                ? `<p>📝 ${escapeHtml(assignment.feedback.message)}</p>`
+                : ''
+            }
+          </div>
+          `
+            : ''
+        }
+
+        ${
+          canOpenPlayer
+            ? `
+          <div class="members-actions members-lobby-actions">
+            <button class="members-button" id="start-btn" type="button">${escapeHtml(getStartLabel(assignment))}</button>
+          </div>
+          `
+            : `
+          <div class="members-alert warning">
+            ${escapeHtml(assignment?.availability?.message || 'Esta evaluación todavía no está disponible para iniciar.')}
+          </div>
+          `
+        }
+      </section>
+    `;
+
+    document.getElementById('start-btn')?.addEventListener('click', () => {
+      lobby.style.display = 'none';
+      root.style.display = 'block';
+      startPlayer();
+    });
+  }
+
   async function boot() {
     try {
       const params = new URLSearchParams(window.location.search);
       const assignmentId = (params.get('id') || '').trim();
       if (!assignmentId) {
-        root.innerHTML = '<div class="members-alert error">No se encontró el identificador de la asignación.</div>';
+        lobby.innerHTML = '<div class="members-alert error">No se encontró el identificador de la evaluación.</div>';
         return;
       }
 
@@ -80,7 +193,7 @@ import PracticeLessonLayout from '../../../layouts/PracticeLessonLayout.astro';
       const response = await apiMyAssignment(assignmentId);
       const assignment = response?.data;
       if (!assignment) {
-        root.innerHTML = '<div class="members-alert error">No fue posible cargar la asignación solicitada.</div>';
+        lobby.innerHTML = '<div class="members-alert error">No fue posible cargar la evaluación solicitada.</div>';
         return;
       }
 
@@ -89,8 +202,8 @@ import PracticeLessonLayout from '../../../layouts/PracticeLessonLayout.astro';
           ? assignment.latest_attempt.id.trim()
           : null;
       const canStart = Boolean(assignment?.availability?.can_start);
-      const notices = [];
 
+      const notices = [];
       if (assignment?.feedback?.message) {
         notices.push(
           renderNotice(
@@ -101,60 +214,62 @@ import PracticeLessonLayout from '../../../layouts/PracticeLessonLayout.astro';
         );
       }
 
-      if (!canStart && !latestAttemptId) {
-        const message =
-          assignment?.availability?.message || 'Esta asignación no está disponible para iniciar nuevos intentos.';
-        notices.push(renderNotice(message, 'warning', 'Disponibilidad'));
-        feedback.innerHTML = notices.join('');
-        root.innerHTML = '<div class="members-alert">No tienes un intento previo para revisar en este momento.</div>';
-        return;
-      }
-
       if (!canStart && latestAttemptId) {
-        const message =
-          assignment?.availability?.message || 'Esta asignación ya no admite nuevos intentos, pero puedes consultar tu resultado o retroalimentación.';
-        notices.push(renderNotice(message, 'warning', 'Seguimiento del intento'));
+        notices.push(
+          renderNotice(
+            assignment?.availability?.message || 'La evaluación ya no admite nuevos intentos, pero puedes consultar tu resultado.',
+            'warning',
+            'Seguimiento del intento'
+          )
+        );
       }
 
       feedback.innerHTML = notices.join('');
+      function startPlayer() {
+        const allowedModes = assignment.mode === 'study' ? ['study'] : ['exam'];
+        const defaultMode = assignment.mode === 'study' ? 'study' : 'exam';
+        const contentLabel =
+          assignment.mode === 'evaluation'
+            ? 'Evaluación'
+            : assignment.mode === 'study'
+            ? 'Práctica guiada'
+            : 'Simulacro';
 
-      const allowedModes = assignment.mode === 'study' ? ['study'] : ['exam'];
-      const defaultMode = assignment.mode === 'study' ? 'study' : 'exam';
-      const contentLabel =
-        assignment.mode === 'evaluation'
-          ? 'Evaluación asignada'
-          : assignment.mode === 'study'
-          ? 'Estudio guiado asignado'
-          : 'Simulacro asignado';
-      const examContentName = assignment.mode === 'evaluation' ? 'evaluación' : 'simulacro';
+        mountPracticePlayer({
+          root,
+          feedback,
+          contentId: assignment.id,
+          contentType: 'assignment',
+          contentLabel,
+          backHref: '/miembros/asignaciones',
+          allowedModes,
+          defaultMode,
+          examContentName: assignment.mode === 'evaluation' ? 'evaluación' : 'simulacro',
+          api: {
+            getSessionToken,
+            clearSession,
+            saveSession,
+            me: apiMe,
+            startAttempt: (contentId, options = {}) =>
+              canStart ? apiStartAssignmentAttempt(contentId, options) : apiAssessmentAttempt(latestAttemptId),
+            getAttempt: apiAssessmentAttempt,
+            answerAttempt: apiAnswerAssessmentAttempt,
+            submitAttempt: apiSubmitAssessmentAttempt,
+          },
+        });
+      }
 
-      mountPracticePlayer({
-        root,
-        feedback,
-        contentId: assignment.id,
-        contentType: 'assignment',
-        contentLabel,
-        backHref: '/miembros/asignaciones',
-        allowedModes,
-        defaultMode,
-        examContentName,
-        api: {
-          getSessionToken,
-          clearSession,
-          saveSession,
-          me: apiMe,
-          startAttempt: (contentId, options = {}) =>
-            canStart
-              ? apiStartAssignmentAttempt(contentId, options)
-              : apiAssessmentAttempt(latestAttemptId),
-          getAttempt: apiAssessmentAttempt,
-          answerAttempt: apiAnswerAssessmentAttempt,
-          submitAttempt: apiSubmitAssessmentAttempt,
-        },
-      });
+      if (latestAttemptId) {
+        lobby.style.display = 'none';
+        root.style.display = 'block';
+        startPlayer();
+        return;
+      }
+
+      renderLobby(assignment, canStart, latestAttemptId);
     } catch (error) {
-      const message = error instanceof Error ? error.message : 'No fue posible abrir la asignación.';
-      root.innerHTML = `<div class="members-alert error">${escapeHtml(message)}</div>`;
+      const message = error instanceof Error ? error.message : 'No fue posible cargar la evaluación.';
+      lobby.innerHTML = `<div class="members-alert error">${escapeHtml(message)}</div>`;
     }
   }
 

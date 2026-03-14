@@ -137,11 +137,6 @@ type PracticeState = {
   isLoading: boolean;
 };
 
-const MODE_LABELS: Record<PracticeMode, string> = {
-  study: 'Estudio guiado',
-  exam: 'Modo simulacro',
-};
-
 export function mountPracticePlayer(options: PracticePlayerOptions): void {
   if (!options.root) {
     return;
@@ -170,6 +165,20 @@ export function mountPracticePlayer(options: PracticePlayerOptions): void {
 
   function getExamContentName(): string {
     return String(options.examContentName || 'simulacro').trim() || 'simulacro';
+  }
+
+  function getModeUiLabel(mode: PracticeMode): string {
+    if (mode === 'study') {
+      return 'Práctica guiada';
+    }
+
+    return getExamContentName() === 'evaluación' ? 'Evaluación' : 'Simulacro';
+  }
+
+  function getExamModeDescription(): string {
+    return getExamContentName() === 'evaluación'
+      ? '📝 <strong>Modo evaluación:</strong> responde todo y entrega al final.'
+      : '⏱️ <strong>Modo simulacro:</strong> responde todo y entrega al final.';
   }
 
   const feedbackEl = options.feedback ?? null;
@@ -385,6 +394,36 @@ export function mountPracticePlayer(options: PracticePlayerOptions): void {
     return `<div class="${classes.join(' ')}">${html}</div>`;
   }
 
+  function hasRenderableBlocks(blocks: Array<Record<string, any>> = []): boolean {
+    if (!Array.isArray(blocks) || blocks.length === 0) return false;
+
+    return blocks.some((block) => {
+      if (!block || typeof block !== 'object') return false;
+
+      if (block.type === 'image') {
+        return Boolean(String(block.src || '').trim());
+      }
+
+      if (block.type === 'table' || block.type === 'equation') {
+        return true;
+      }
+
+      if (block.type === 'html') {
+        return Boolean(String(block.html || '').trim());
+      }
+
+      if (block.type === 'list') {
+        return Array.isArray(block.items) && block.items.length > 0;
+      }
+
+      const text = Array.isArray(block.inlines)
+        ? block.inlines.map((item) => item?.text || '').join(' ').trim()
+        : String(block.text || '').trim();
+
+      return Boolean(text);
+    });
+  }
+
   function renderBlocks(
     blocks: Array<Record<string, any>> = [],
     fallbackText = '',
@@ -498,6 +537,16 @@ export function mountPracticePlayer(options: PracticePlayerOptions): void {
     fallbackText = '',
     optionsArg: { feedback?: boolean; wrapperClass?: string } = {}
   ): string {
+    const renderedBlocks = hasRenderableBlocks(blocks)
+      ? renderBlocks(blocks, fallbackText, optionsArg)
+      : '';
+
+    if (optionsArg.feedback && renderedBlocks) {
+      return optionsArg.wrapperClass
+        ? `<div class="${escapeHtml(optionsArg.wrapperClass)}">${renderedBlocks}</div>`
+        : renderedBlocks;
+    }
+
     const renderedHtml = String(html || '').trim();
     if (renderedHtml) {
       return optionsArg.wrapperClass
@@ -505,7 +554,6 @@ export function mountPracticePlayer(options: PracticePlayerOptions): void {
         : renderedHtml;
     }
 
-    const renderedBlocks = renderBlocks(blocks, fallbackText, optionsArg);
     if (!renderedBlocks) {
       return '';
     }
@@ -621,13 +669,13 @@ export function mountPracticePlayer(options: PracticePlayerOptions): void {
     const answeredCount = Object.keys(state.selectedByQuestion).length;
     const progressCount = state.mode === 'study' ? studyCheckedCount : state.submitted ? total : answeredCount;
     const progressPercent = total > 0 ? Math.round((progressCount / total) * 100) : 0;
+    
     const summaryRow =
       state.mode === 'study'
         ? `
           <div class="practice-summary-row">
-            <span class="practice-stat-pill">Comprobadas ${studyCheckedCount}</span>
-            <span class="practice-stat-pill">Correctas ${studyCorrectCount}</span>
-            <span class="practice-stat-pill">Pendientes ${Math.max(total - studyCheckedCount, 0)}</span>
+            <span class="practice-stat-pill approved">✅ ${studyCorrectCount} Correctas</span>
+            <span class="practice-stat-pill pending">⏳ ${Math.max(total - studyCheckedCount, 0)} Pendientes</span>
           </div>
         `
         : state.submitted
@@ -635,16 +683,16 @@ export function mountPracticePlayer(options: PracticePlayerOptions): void {
             const summary = computeExamSummary();
             return `
               <div class="practice-summary-row">
-                <span class="practice-stat-pill">Aciertos ${summary.correct}</span>
-                <span class="practice-stat-pill">Incorrectas ${summary.wrong}</span>
-                <span class="practice-stat-pill">Omitidas ${summary.unanswered}</span>
+                <span class="practice-stat-pill approved">🎯 ${summary.correct} Aciertos</span>
+                <span class="practice-stat-pill blocked">❌ ${summary.wrong} Incorrectas</span>
+                <span class="practice-stat-pill secondary">⚪ ${summary.unanswered} Omitidas</span>
               </div>
             `;
           })()
         : `
           <div class="practice-summary-row">
-            <span class="practice-stat-pill">Respondidas ${answeredCount}</span>
-            <span class="practice-stat-pill">Pendientes ${Math.max(total - answeredCount, 0)}</span>
+            <span class="practice-stat-pill approved">✍️ ${answeredCount} Respondidas</span>
+            <span class="practice-stat-pill pending">❓ ${Math.max(total - answeredCount, 0)} Pendientes</span>
           </div>
         `;
 
@@ -655,13 +703,14 @@ export function mountPracticePlayer(options: PracticePlayerOptions): void {
           <h2 class="practice-toolbar-title">${escapeHtml(detail.title || 'Práctica interactiva')}</h2>
           <p class="practice-toolbar-desc">
             ${state.mode === 'study'
-              ? 'Resuelve una pregunta y verifica de inmediato la explicación.'
+              ? '📚 <strong>Práctica guiada:</strong> verifica cada respuesta para aprender.'
               : state.submitted
-              ? `Ya entregaste la ${escapeHtml(getExamContentName())}.`
-              : `Responde primero y entrega la ${escapeHtml(getExamContentName())} cuando termines.`}
+              ? `🏁 <strong>Entregado:</strong> Revisa tus resultados abajo.`
+              : getExamModeDescription()}
           </p>
         </div>
         <div class="practice-toolbar-actions">
+          <a class="members-button secondary" href="${escapeHtml(options.backHref)}">Volver</a>
           ${
             options.allowedModes.length > 1
               ? `
@@ -674,7 +723,7 @@ export function mountPracticePlayer(options: PracticePlayerOptions): void {
                   class="practice-mode-button ${state.mode === mode ? 'is-active' : ''}"
                   data-mode="${mode}"
                 >
-                  ${MODE_LABELS[mode]}
+                  ${getModeUiLabel(mode)}
                 </button>
               `
                 )
@@ -685,19 +734,21 @@ export function mountPracticePlayer(options: PracticePlayerOptions): void {
           }
           ${
             state.mode === 'exam' && !state.submitted
-              ? `<button type="button" class="members-button" data-action="submit-exam">Entregar ${escapeHtml(getExamContentName())}</button>`
+              ? `<button type="button" class="members-button" data-action="submit-exam">🚀 Entregar ${escapeHtml(getExamContentName())}</button>`
               : ''
           }
         </div>
       </div>
 
-      <div class="practice-top-meta">
+      <div class="practice-top-meta" style="background: color-mix(in oklab, var(--bg-secondary) 50%, var(--bg-primary)); border-radius: 18px; padding: 1.25rem; border: 1px solid var(--border-color); margin-top: 1rem;">
         <div class="practice-progress-summary">
-          ${summaryRow}
-          <div class="members-progress-track" aria-label="Progreso">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+             ${summaryRow}
+             <span style="font-size: 0.85rem; font-weight: 800; color: var(--color-primary);">${progressPercent}%</span>
+          </div>
+          <div class="members-progress-track" aria-label="Progreso" style="margin-top: 0; height: 12px; background: color-mix(in oklab, var(--border-color) 40%, transparent);">
             <div class="members-progress-fill" style="width:${progressPercent}%"></div>
           </div>
-          <p class="members-progress-label">${progressPercent}% completado</p>
         </div>
       </div>
     `;
@@ -705,23 +756,30 @@ export function mountPracticePlayer(options: PracticePlayerOptions): void {
 
   function renderNavigator(questions: PracticeQuestion[]): string {
     return `
-      <div class="practice-panel">
-        <p class="practice-panel-title">Navegación rápida</p>
-        <div class="practice-chip-grid">
+      <div class="practice-panel" style="background: var(--bg-primary); border-color: color-mix(in oklab, var(--border-color) 60%, var(--color-primary) 40%);">
+        <p class="practice-panel-title">Navegación de preguntas</p>
+        <div class="practice-chip-grid" style="gap: 0.6rem;">
           ${questions
             .map((question, index) => {
               const classes = ['members-qchip', getQuestionState(question)];
               if (index === state.questionIndex) {
                 classes.push('current');
               }
+              const stateEmoji = 
+                getQuestionState(question) === 'correct' ? '✓' :
+                getQuestionState(question) === 'wrong' ? '✕' :
+                getQuestionState(question) === 'selected' ? '•' : '';
+
               return `
                 <button
                   type="button"
                   class="${classes.join(' ')}"
                   data-question-index="${index}"
                   aria-label="Ir a la pregunta ${index + 1}"
+                  style="position: relative;"
                 >
                   <span>${index + 1}</span>
+                  ${stateEmoji ? `<small style="position: absolute; top: -4px; right: -4px; background: inherit; border: 1px solid; border-radius: 50%; width: 14px; height: 14px; font-size: 10px; display: flex; align-items: center; justify-content: center;">${stateEmoji}</small>` : ''}
                 </button>
               `;
             })
@@ -745,6 +803,7 @@ export function mountPracticePlayer(options: PracticePlayerOptions): void {
     const questionCorrectOptionId = String(question.correct_option_id ?? '');
     const correctOptionId = evaluation?.correct_option_id ?? (questionCorrectOptionId || null);
     const correctOption = correctOptionId ? optionsMap.get(correctOptionId) : null;
+    
     const feedbackBlocks =
       state.mode === 'study'
         ? evaluation?.feedback_blocks ?? []
@@ -757,12 +816,13 @@ export function mountPracticePlayer(options: PracticePlayerOptions): void {
         : question.feedback_html ?? '';
     const feedbackSummary =
       state.mode === 'study'
-        ? evaluation?.feedback_summary ?? question.feedback_summary ?? 'Respuesta'
-        : question.feedback_summary ?? 'Respuesta';
+        ? evaluation?.feedback_summary ?? question.feedback_summary ?? '💡 Explicación de la respuesta'
+        : question.feedback_summary ?? '💡 Explicación de la respuesta';
     const feedbackMdx =
       state.mode === 'study'
         ? evaluation?.feedback_mdx ?? ''
         : question.feedback_mdx ?? '';
+        
     const conceptBlocks =
       state.mode === 'study'
         ? evaluation?.concepts_blocks ?? []
@@ -775,53 +835,61 @@ export function mountPracticePlayer(options: PracticePlayerOptions): void {
         : question.concepts_html ?? '';
     const conceptsSummary =
       state.mode === 'study'
-        ? evaluation?.concepts_summary ?? question.concepts_summary ?? 'Conceptos relacionados'
-        : question.concepts_summary ?? 'Conceptos relacionados';
+        ? evaluation?.concepts_summary ?? question.concepts_summary ?? '📚 Conceptos relacionados'
+        : question.concepts_summary ?? '📚 Conceptos relacionados';
     const conceptsMdx =
       state.mode === 'study'
         ? evaluation?.concepts_mdx ?? ''
         : question.concepts_mdx ?? '';
 
     return `
-      <div class="practice-insight-card">
-        <p class="practice-panel-title">Solución guiada</p>
-        <div class="practice-insight-grid">
-          <div>
-            <p class="practice-insight-label">Tu respuesta</p>
-            <p class="practice-insight-value">${selectedOption ? `${escapeHtml(selectedOption.id)}. ${renderInlineText(selectedOption.text)}` : 'Sin responder'}</p>
+      <div class="practice-insight-card" style="border-color: ${evaluation?.is_correct ? '#27ae60' : evaluation ? '#c0392b' : 'var(--border-color)'}; background: color-mix(in oklab, ${evaluation?.is_correct ? '#27ae60' : evaluation ? '#c0392b' : 'var(--bg-primary)'} 6%, var(--bg-primary));">
+        <p class="practice-panel-title">💡 Solución y Retroalimentación</p>
+        
+        <div class="insight-comparison">
+          <div class="insight-item ${selectedOption ? (evaluation?.is_correct ? 'insight-item--correct' : 'insight-item--wrong') : 'insight-item--neutral'}">
+            <div class="insight-item-icon">${evaluation?.is_correct ? '✓' : selectedOption ? '✕' : '•'}</div>
+            <div class="insight-item-content">
+              <label class="insight-item-label">Tu elección</label>
+              <div class="insight-item-value">
+                ${selectedOption ? `<strong>${escapeHtml(selectedOption.id)}</strong>. ${renderInlineText(selectedOption.text)}` : 'Sin responder'}
+              </div>
+            </div>
           </div>
-          <div>
-            <p class="practice-insight-label">Respuesta correcta</p>
-            <p class="practice-insight-value">${correctOption ? `${escapeHtml(correctOption.id)}. ${renderInlineText(correctOption.text)}` : 'No disponible'}</p>
-          </div>
-          <div>
-            <p class="practice-insight-label">Estado</p>
-            <p class="practice-insight-value">${
-              !selectedOption
-                ? 'Omitida'
-                : evaluation?.is_correct
-                ? 'Correcta'
-                : 'Por reforzar'
-            }</p>
+
+          <div class="insight-item insight-item--correct">
+            <div class="insight-item-icon">✓</div>
+            <div class="insight-item-content">
+              <label class="insight-item-label">Respuesta correcta</label>
+              <div class="insight-item-value">
+                ${correctOption ? `<strong>${escapeHtml(correctOption.id)}</strong>. ${renderInlineText(correctOption.text)}` : 'No disponible'}
+              </div>
+            </div>
           </div>
         </div>
+        
         ${
           feedbackBlocks.length > 0 || feedbackMdx || feedbackHtml
             ? `
-          <details class="practice-details">
-            <summary>${escapeHtml(feedbackSummary || 'Respuesta')}</summary>
-            ${renderRichFragment(feedbackHtml, feedbackBlocks, feedbackMdx, { feedback: true })}
-          </details>
+          <div class="practice-details-static">
+            <p class="practice-panel-title" style="margin-bottom: 0.75rem;">${escapeHtml(feedbackSummary)}</p>
+            <div class="members-render">
+              ${renderRichFragment(feedbackHtml, feedbackBlocks, feedbackMdx, { feedback: true })}
+            </div>
+          </div>
         `
             : ''
         }
+        
         ${
           conceptBlocks.length > 0 || conceptsMdx || conceptsHtml
             ? `
-          <details class="practice-details conceptos-relacionados">
-            <summary>${escapeHtml(conceptsSummary || 'Conceptos relacionados')}</summary>
-            ${renderRichFragment(conceptsHtml, conceptBlocks, conceptsMdx, { feedback: true })}
-          </details>
+          <div class="practice-details-static" style="background: color-mix(in oklab, var(--color-secondary) 8%, var(--bg-primary)); border-color: color-mix(in oklab, var(--border-color) 70%, var(--color-secondary) 30%);">
+            <p class="practice-panel-title" style="margin-bottom: 0.75rem;">${escapeHtml(conceptsSummary)}</p>
+            <div class="members-render">
+              ${renderRichFragment(conceptsHtml, conceptBlocks, conceptsMdx, { feedback: true })}
+            </div>
+          </div>
         `
             : ''
         }
@@ -840,34 +908,37 @@ export function mountPracticePlayer(options: PracticePlayerOptions): void {
       typeof state.detail?.attempt?.score_percent === 'number'
         ? `${state.detail.attempt.score_percent}%`
         : `${summary.score}%`;
-    const heading = canReview ? `Retroalimentación del ${escapeHtml(getExamContentName())}` : `Resultado del ${escapeHtml(getExamContentName())}`;
+    const heading = canReview ? `🎯 Retroalimentación disponible` : `📤 Intento entregado con éxito`;
     const description = canReview
-      ? 'Ya puedes revisar cada pregunta con su explicación y profundización.'
-      : 'Tu resultado ya quedó guardado. La retroalimentación todavía no está disponible.';
+      ? 'Excelente, ya puedes revisar cada pregunta con su explicación detallada.'
+      : 'Tu resultado ha sido guardado. Los docentes liberarán la retroalimentación próximamente.';
 
     return `
-      <section class="practice-results-card">
-        <div>
-          <p class="practice-toolbar-label">Resultado final</p>
-          <h2 class="practice-toolbar-title">${heading}</h2>
-          <p class="practice-toolbar-desc">${description}</p>
+      <section class="practice-results-card" style="margin-top: 1rem; background: linear-gradient(135deg, color-mix(in oklab, var(--bg-primary) 92%, var(--color-primary) 8%), var(--bg-primary)); border-color: var(--color-primary); border-width: 2px;">
+        <div style="display: flex; align-items: flex-start; gap: 1rem;">
+          <div style="background: var(--color-primary); color: white; width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0;">🏆</div>
+          <div>
+            <p class="practice-toolbar-label" style="color: var(--color-primary);">Resultados del intento</p>
+            <h2 class="practice-toolbar-title" style="font-size: 1.5rem; margin: 0.25rem 0;">${heading}</h2>
+            <p class="practice-toolbar-desc" style="font-size: 1rem;">${description}</p>
+          </div>
         </div>
-        <div class="practice-results-grid">
-          <article class="practice-result-box">
-            <h3>Puntaje</h3>
-            <p>${scoreLabel}</p>
+        <div class="practice-results-grid" style="margin-top: 0.5rem; gap: 1rem;">
+          <article class="practice-result-box" style="background: var(--bg-primary); border-radius: 16px; border-width: 2px; border-color: var(--color-primary);">
+            <p style="font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-secondary); margin-bottom: 0.25rem;">Puntaje</p>
+            <p style="font-size: 2rem; font-weight: 900; color: var(--color-primary);">${scoreLabel}</p>
           </article>
-          <article class="practice-result-box">
-            <h3>Aciertos</h3>
-            <p>${summary.correct}</p>
+          <article class="practice-result-box" style="background: var(--bg-primary); border-radius: 16px;">
+            <p style="font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-secondary); margin-bottom: 0.25rem;">Aciertos</p>
+            <p style="font-size: 1.75rem; font-weight: 800; color: #27ae60;">${summary.correct}</p>
           </article>
-          <article class="practice-result-box">
-            <h3>Incorrectas</h3>
-            <p>${summary.wrong}</p>
+          <article class="practice-result-box" style="background: var(--bg-primary); border-radius: 16px;">
+            <p style="font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-secondary); margin-bottom: 0.25rem;">Errores</p>
+            <p style="font-size: 1.75rem; font-weight: 800; color: #c0392b;">${summary.wrong}</p>
           </article>
-          <article class="practice-result-box">
-            <h3>Omitidas</h3>
-            <p>${summary.unanswered}</p>
+          <article class="practice-result-box" style="background: var(--bg-primary); border-radius: 16px;">
+            <p style="font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-secondary); margin-bottom: 0.25rem;">Omitidas</p>
+            <p style="font-size: 1.75rem; font-weight: 800; color: var(--text-secondary);">${summary.unanswered}</p>
           </article>
         </div>
       </section>
@@ -882,6 +953,7 @@ export function mountPracticePlayer(options: PracticePlayerOptions): void {
       question.context_html ?? '',
       question.context_mdx ?? ''
     );
+    
     const optionsHtml = (question.options ?? [])
       .map((option) => {
         const isSelected = selectedId === option.id;
@@ -898,71 +970,82 @@ export function mountPracticePlayer(options: PracticePlayerOptions): void {
 
         return `
           <button type="button" class="${classes}" data-option-id="${escapeHtml(option.id)}">
-            ${escapeHtml(option.id)}. ${renderInlineText(option.text || '')}
+            <span class="members-option-prefix" style="font-weight: 900; margin-right: 0.75rem; color: color-mix(in oklab, var(--text-primary) 60%, var(--color-primary) 40%);">${escapeHtml(option.id)}.</span>
+            <span class="members-option-text" style="flex: 1;">${renderInlineText(option.text || '')}</span>
           </button>
         `;
       })
       .join('');
 
     return `
-      <section class="practice-question-card">
-        <div class="practice-question-head">
-          <p class="practice-question-count">
-            Pregunta ${state.questionIndex + 1}
-            <span class="members-current-number"><span>de ${questions.length}</span></span>
-          </p>
-          <span class="practice-question-status" data-state="${getQuestionState(question)}">
+      <section class="practice-question-card" style="margin-top: 1.5rem; border: none; padding: 0; background: transparent;">
+        <div class="practice-question-head" style="margin-bottom: 1rem; align-items: flex-end;">
+          <div style="display: flex; align-items: baseline; gap: 0.75rem;">
+            <p class="practice-question-count" style="font-size: 1.75rem; letter-spacing: -0.02em;">
+              Pregunta <span style="color: var(--color-primary);">${state.questionIndex + 1}</span>
+            </p>
+            <span style="font-size: 1.1rem; font-weight: 600; color: var(--text-secondary);">de ${questions.length}</span>
+          </div>
+          <span class="practice-question-status" data-state="${getQuestionState(question)}" style="box-shadow: 0 4px 10px -4px rgba(15, 23, 42, 0.1); border-width: 2px;">
             ${
               getQuestionState(question) === 'correct'
-                ? 'Correcta'
+                ? '✅ Correcta'
                 : getQuestionState(question) === 'wrong'
-                ? 'Por reforzar'
+                ? '❌ Por reforzar'
                 : getQuestionState(question) === 'selected'
-                ? 'Seleccionada'
-                : 'Pendiente'
+                ? '🔘 Seleccionada'
+                : '⏳ Pendiente'
             }
           </span>
         </div>
 
         ${renderNavigator(questions)}
 
-        ${
-          showContext
-            ? `
-          <div class="practice-panel">
-            <p class="practice-panel-title">Contexto compartido</p>
+        <div class="practice-content-wrap" style="background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 20px; padding: 1.75rem; box-shadow: 0 10px 30px -15px rgba(15, 23, 42, 0.1);">
+          ${
+            showContext
+              ? `
+            <div class="practice-panel" style="background: color-mix(in oklab, var(--bg-secondary) 50%, transparent); border-style: dashed; margin-bottom: 1.5rem;">
+              <p class="practice-panel-title">📖 Contexto de la pregunta</p>
+              <div class="members-render" style="font-size: 1.05rem;">
+                ${renderRichFragment(
+                  question.context_html ?? '',
+                  question.context_blocks ?? [],
+                  question.context_mdx ?? '',
+                  { wrapperClass: 'practice-rich-fragment' }
+                )}
+              </div>
+            </div>
+          `
+              : ''
+          }
+
+          <div class="members-render" style="margin-bottom: 2rem;">
             ${renderRichFragment(
-              question.context_html ?? '',
-              question.context_blocks ?? [],
-              question.context_mdx ?? '',
+              question.stem_html ?? '',
+              question.stem_blocks ?? [],
+              question.stem_mdx ?? '',
               { wrapperClass: 'practice-rich-fragment' }
             )}
           </div>
-        `
-            : ''
-        }
 
-        ${renderRichFragment(
-          question.stem_html ?? '',
-          question.stem_blocks ?? [],
-          question.stem_mdx ?? '',
-          { wrapperClass: 'practice-rich-fragment' }
-        )}
+          <div class="members-options">${optionsHtml}</div>
+          
+          ${renderQuestionInsight(question)}
+        </div>
 
-        <div class="members-options">${optionsHtml}</div>
-
-        ${renderQuestionInsight(question)}
-
-        <div class="members-actions members-actions-primary">
-          <button type="button" class="members-button secondary" data-nav="prev" ${state.questionIndex <= 0 ? 'disabled' : ''}>Anterior</button>
+        <div class="members-actions members-actions-primary" style="margin-top: 1.5rem; justify-content: center; gap: 1rem;">
+          <button type="button" class="members-button secondary" data-nav="prev" ${state.questionIndex <= 0 ? 'disabled' : ''} style="min-width: 120px;">← Anterior</button>
+          
           ${
             state.mode === 'study'
-              ? `<button type="button" class="members-button" data-action="check" ${selectedId ? '' : 'disabled'}>Comprobar</button>`
+              ? `<button type="button" class="members-button" data-action="check" ${selectedId ? '' : 'disabled'} style="min-width: 180px; box-shadow: 0 8px 20px -8px rgba(37, 99, 235, 0.6);">Comprobar respuesta</button>`
               : state.submitted
-              ? `<button type="button" class="members-button secondary" data-action="back-to-top">Ver resultado</button>`
-              : `<button type="button" class="members-button" data-action="submit-exam">${state.questionIndex === questions.length - 1 ? 'Entregar simulacro' : 'Entregar ahora'}</button>`
+              ? `<button type="button" class="members-button secondary" data-action="back-to-top" style="min-width: 180px;">Ver mis resultados</button>`
+              : `<button type="button" class="members-button" data-action="submit-exam" style="min-width: 180px; box-shadow: 0 8px 20px -8px rgba(37, 99, 235, 0.6);">${state.questionIndex === questions.length - 1 ? 'Finalizar y entregar' : 'Entregar simulacro'}</button>`
           }
-          <button type="button" class="members-button secondary" data-nav="next" ${state.questionIndex >= questions.length - 1 ? 'disabled' : ''}>Siguiente</button>
+          
+          <button type="button" class="members-button secondary" data-nav="next" ${state.questionIndex >= questions.length - 1 ? 'disabled' : ''} style="min-width: 120px;">Siguiente →</button>
         </div>
       </section>
     `;

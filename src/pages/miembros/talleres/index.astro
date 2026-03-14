@@ -3,28 +3,28 @@ import MembersEditorialLayout from '../../../layouts/MembersEditorialLayout.astr
 ---
 
 <MembersEditorialLayout
-  title="Talleres Premium"
-  description="Selecciona un taller tipo Saber y practica con retroalimentación inmediata."
+  title="Talleres de Práctica"
+  description="Selecciona un taller y entrena con retroalimentación inmediata para mejorar tu desempeño."
   badge="Práctica"
-  icon="📝"
+  icon="✍️"
   breadcrumbTrail={[{ label: 'Talleres' }]}
+  activeSection="talleres"
 >
   <div class="practice-surface members-editorial-stack">
-    <section class="practice-toolbar">
-      <div class="practice-toolbar-copy">
-        <p class="practice-toolbar-label">Biblioteca</p>
-        <h2 class="practice-toolbar-title">Talleres disponibles</h2>
-        <p class="practice-toolbar-desc">Aquí aparecen solo los talleres asociados a tus cursos.</p>
-      </div>
-      <div class="practice-toolbar-actions">
-        <a class="members-button secondary" href="/miembros">Volver al panel</a>
-      </div>
-    </section>
-
     <section class="members-card">
       <div id="feedback"></div>
-      <div id="summary"></div>
-      <div id="workshops" class="members-list"></div>
+      <div id="summary" class="u-margin-bottom-large"></div>
+      
+      <div class="members-list-header">
+        <div class="members-item-main">
+          <h3 class="members-section-title">📚 Talleres disponibles</h3>
+          <p class="members-subtitle">Aquí aparecen los contenidos habilitados para tu curso o nivel académico.</p>
+        </div>
+        <div class="members-actions">
+          <a class="members-button secondary" href="/miembros">Volver al panel</a>
+        </div>
+      </div>
+      <div id="workshops" class="members-list members-list--loose"></div>
     </section>
   </div>
 </MembersEditorialLayout>
@@ -85,7 +85,7 @@ import MembersEditorialLayout from '../../../layouts/MembersEditorialLayout.astr
       if (user.member_status === 'blocked' && user.role !== 'admin') {
         feedback.innerHTML = `
           <div class="members-alert error">
-            Tu cuenta está bloqueada. No tienes acceso a talleres premium en este momento.
+            Acceso restringido. Contacta al administrador.
           </div>
         `;
         return;
@@ -96,25 +96,26 @@ import MembersEditorialLayout from '../../../layouts/MembersEditorialLayout.astr
 
       if (items.length === 0) {
         workshopsWrap.innerHTML =
-          '<div class="members-alert">No hay talleres disponibles para tus cursos en este momento.</div>';
+          '<div class="members-alert">No hay talleres disponibles en este momento.</div>';
         return;
       }
 
       const withAccess = items.filter((item) => item.can_access);
       const totalQuestions = withAccess.reduce((acc, item) => acc + Number(item?.stats?.total_questions || 0), 0);
+      
       summary.innerHTML = `
-        <div class="members-grid" style="margin-bottom:0.85rem;">
-          <article class="members-item">
-            <h4>Talleres publicados</h4>
-            <p>${items.length}</p>
+        <div class="members-grid summary-stats">
+          <article class="members-item stat-box">
+            <p class="members-subtitle">Disponibles</p>
+            <p class="stat-value" style="color: #27ae60;">${withAccess.length}</p>
           </article>
-          <article class="members-item">
-            <h4>Con acceso ahora</h4>
-            <p>${withAccess.length}</p>
+          <article class="members-item stat-box">
+            <p class="members-subtitle">Totales</p>
+            <p class="stat-value">${items.length}</p>
           </article>
-          <article class="members-item">
-            <h4>Preguntas para practicar</h4>
-            <p>${totalQuestions}</p>
+          <article class="members-item stat-box">
+            <p class="members-subtitle">Preguntas</p>
+            <p class="stat-value" style="color: var(--color-primary);">${totalQuestions}</p>
           </article>
         </div>
       `;
@@ -122,33 +123,44 @@ import MembersEditorialLayout from '../../../layouts/MembersEditorialLayout.astr
       workshopsWrap.innerHTML = items
         .map((item) => {
           const link = `/miembros/talleres/${toBase64Url(item.id)}`;
-          const badge = item.can_access
-            ? '<span class="members-pill approved">Con acceso</span>'
-            : '<span class="members-pill pending">Sin acceso</span>';
+          const canAccess = item.can_access;
+          const statusClass = canAccess ? 'approved' : 'blocked';
+          const statusLabel = canAccess ? '✅ Disponible' : '🔒 Bloqueado';
+          const statusModifier = canAccess ? 'approved' : 'blocked';
 
           return `
-            <article class="members-item">
-              <h4>${escapeHtml(item.title)}</h4>
-              <p>${escapeHtml(item.area_slug || 'general')} · ${Number(item.stats?.total_questions || 0)} preguntas</p>
-              ${
-                Array.isArray(item.course_names) && item.course_names.length > 0
-                  ? `<p style="margin-top:0.35rem;">${item.course_names
-                      .map((course) => `<span class="members-pill approved">${escapeHtml(course.name)}</span>`)
-                      .join(' ')}</p>`
-                  : ''
-              }
-              <div class="members-actions" style="margin-top:0.55rem;">
-                ${badge}
-                <a
-                  class="members-button ${item.can_access ? '' : 'secondary'}"
-                  href="${item.can_access ? link : '#'}"
-                  data-link="${escapeHtml(link)}"
-                  data-title="${escapeHtml(item.title)}"
-                  ${
-            item.can_access ? '' : 'onclick="return false;"'
-          }>
-                  ${item.can_access ? 'Practicar' : 'Bloqueado'}
-                </a>
+            <article class="members-item members-item--${statusModifier}">
+              <div class="u-flex-between">
+                <div class="members-item-main">
+                  <h4 class="u-margin-bottom-small" style="font-size: 1.25rem;">${escapeHtml(item.title)}</h4>
+                  <p class="members-subtitle u-margin-bottom-medium" style="font-size: 1rem;">
+                    📚 ${escapeHtml(item.area_slug || 'general')} · 📄 ${Number(item.stats?.total_questions || 0)} preguntas
+                  </p>
+                  
+                  <div class="u-flex-wrap u-flex-gap-small u-margin-bottom-medium">
+                    <span class="members-pill ${statusClass}">${statusLabel}</span>
+                    ${
+                      Array.isArray(item.course_names) && item.course_names.length > 0
+                        ? item.course_names
+                            .map((course) => `<span class="members-pill approved">🎓 ${escapeHtml(course.name)}</span>`)
+                            .join(' ')
+                        : ''
+                    }
+                  </div>
+                </div>
+                
+                <div class="members-actions" style="min-width: 150px; justify-content: flex-end;">
+                  <a
+                    class="members-button ${canAccess ? '' : 'secondary'}"
+                    href="${canAccess ? link : '#'}"
+                    data-link="${escapeHtml(link)}"
+                    data-title="${escapeHtml(item.title)}"
+                    ${canAccess ? '' : 'onclick="return false;" style="opacity: 0.5; cursor: not-allowed;"'}
+                    style="width: 100%; padding: 0.8rem;"
+                  >
+                    ${canAccess ? 'Iniciar práctica' : 'No disponible'}
+                  </a>
+                </div>
               </div>
             </article>
           `;

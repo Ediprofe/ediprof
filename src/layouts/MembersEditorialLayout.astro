@@ -1,11 +1,18 @@
 ---
-import PracticeLessonLayout from './PracticeLessonLayout.astro';
+import BaseLayout from './BaseLayout.astro';
+import Footer from '../components/Layout/Footer.astro';
+import ThemeToggle from '../components/UI/ThemeToggle.astro';
+import TextZoomToggle from '../components/UI/TextZoomToggle.astro';
+import '../styles/layouts/practice-lesson.css';
+import '../styles/members.css';
 
 type BreadcrumbItem = {
   label: string;
   href?: string;
   icon?: string;
 };
+
+type MembersSection = 'panel' | 'evaluaciones' | 'talleres' | 'simulacros' | null;
 
 interface Props {
   title: string;
@@ -14,6 +21,10 @@ interface Props {
   icon?: string;
   breadcrumbTrail?: BreadcrumbItem[];
   contentClass?: string;
+  showPageIntro?: boolean;
+  showBreadcrumb?: boolean;
+  showSectionNav?: boolean;
+  activeSection?: MembersSection;
 }
 
 const {
@@ -23,23 +34,107 @@ const {
   icon = '🎓',
   breadcrumbTrail = [],
   contentClass = '',
+  showPageIntro = true,
+  showBreadcrumb = true,
+  showSectionNav = true,
+  activeSection = null,
 } = Astro.props;
 
-const breadcrumbItems: BreadcrumbItem[] = [
-  { label: 'Inicio', href: '/', icon: '🏠' },
-  { label: 'Miembros', href: '/miembros', icon: '🎓' },
-  ...breadcrumbTrail,
+const hasTrail = showBreadcrumb && breadcrumbTrail.length > 0;
+const breadcrumbItems: BreadcrumbItem[] = hasTrail
+  ? [
+      { label: 'Inicio', href: '/', icon: '🏠' },
+      { label: 'Miembros', href: '/miembros', icon: '👥' },
+      ...breadcrumbTrail,
+    ]
+  : [];
+
+const sectionLinks: Array<{ key: Exclude<MembersSection, null>; label: string; href: string; icon: string }> = [
+  { key: 'panel', label: 'Panel', href: '/miembros', icon: '🧭' },
+  { key: 'evaluaciones', label: 'Evaluaciones', href: '/miembros/asignaciones', icon: '📝' },
+  { key: 'talleres', label: 'Talleres', href: '/miembros/talleres', icon: '✍️' },
+  { key: 'simulacros', label: 'Simulacros', href: '/miembros/simulacros', icon: '🚀' },
 ];
 ---
 
-<PracticeLessonLayout
-  title={title}
-  description={description}
-  materia="saber"
-  badge={badge}
-  icon={icon}
-  breadcrumbItems={breadcrumbItems}
-  contentClass={contentClass}
->
-  <slot />
-</PracticeLessonLayout>
+<BaseLayout title={title} description={description} showTopBar={false}>
+  <header class="members-header-shell">
+    <div class="members-sticky-bar">
+      <div class="members-sticky-bar__inner">
+        <a class="members-brand" href="/miembros">
+          <span class="members-brand-mark">🎓</span>
+          <span class="members-brand-copy">
+            <strong>Ediprofe</strong>
+            <span>Miembros</span>
+          </span>
+        </a>
+
+        {showSectionNav && (
+          <nav class="members-section-nav" aria-label="Secciones de miembros">
+            <div class="members-section-nav__inner">
+              {sectionLinks.map((section) => (
+                <a
+                  href={section.href}
+                  class={`members-section-link ${activeSection === section.key ? 'is-active' : ''}`.trim()}
+                  aria-current={activeSection === section.key ? 'page' : undefined}
+                >
+                  <span>{section.icon}</span>
+                  <span>{section.label}</span>
+                </a>
+              ))}
+            </div>
+          </nav>
+        )}
+
+        <div class="members-sticky-actions">
+          <TextZoomToggle />
+          <ThemeToggle />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="members-hub">
+    <div class={`members-container ${contentClass}`.trim()}>
+      {(breadcrumbItems.length > 0 || showPageIntro) && (
+        <section class="members-page-intro">
+          {breadcrumbItems.length > 0 && (
+            <nav class="members-breadcrumb" aria-label="Navegación">
+              {breadcrumbItems.map((item, index) => (
+                <>
+                  {index > 0 && <span class="members-breadcrumb-sep">/</span>}
+                  {item.href ? (
+                    <a href={item.href} class="members-breadcrumb-item">
+                      {item.icon && <span>{item.icon}</span>}
+                      <span>{item.label}</span>
+                    </a>
+                  ) : (
+                    <span class="members-breadcrumb-item is-current">
+                      {item.icon && <span>{item.icon}</span>}
+                      <span>{item.label}</span>
+                    </span>
+                  )}
+                </>
+              ))}
+            </nav>
+          )}
+
+          {showPageIntro && (
+            <div class="members-page-intro__content">
+              <div class="members-page-intro__copy">
+                <p class="members-page-kicker">{badge}</p>
+                <h1 class="members-page-title">{title}</h1>
+                {description && <p class="members-page-description">{description}</p>}
+              </div>
+              <div class="members-page-icon" aria-hidden="true">{icon}</div>
+            </div>
+          )}
+        </section>
+      )}
+
+      <slot />
+    </div>
+  </main>
+
+  <Footer variant="minimal" />
+</BaseLayout>

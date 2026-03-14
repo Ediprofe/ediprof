@@ -8,17 +8,16 @@ import MembersEditorialLayout from '../../layouts/MembersEditorialLayout.astro';
   badge="Miembros"
   icon="🔐"
   breadcrumbTrail={[{ label: 'Acceso institucional' }]}
+  showSectionNav={false}
 >
   <div class="practice-surface members-editorial-stack">
     <section class="members-card">
       <div class="members-alert" style="margin-top:0;">
-        Tus estudiantes deben ingresar desde <a class="members-link" href="/miembros/login">/miembros/login</a> con su cuenta institucional
-        <strong>@sanjoseitagui.edu.co</strong>. La administración de cursos, matrículas y biblioteca vive en
-        <a class="members-link" href="/miembros/admin/cursos">/miembros/admin/cursos</a>.
+        Tus estudiantes deben ingresar desde <a class="members-link" href="/miembros/login">/miembros/login</a> con su cuenta institucional.
+        La administración de cursos, matrículas y biblioteca se gestiona desde el panel administrativo.
       </div>
       <div class="members-actions" style="margin-top:0.9rem;">
         <a class="members-button" href="/miembros/login">Ir al acceso institucional</a>
-        <a class="members-button secondary" href="/miembros/admin/cursos">Ir a cursos</a>
       </div>
     </section>
   </div>

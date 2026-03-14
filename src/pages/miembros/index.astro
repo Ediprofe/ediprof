@@ -3,55 +3,43 @@ import MembersEditorialLayout from '../../layouts/MembersEditorialLayout.astro';
 ---
 
 <MembersEditorialLayout
-  title="Panel del Estudiante"
-  description="Revisa tu estado, tus cursos y la biblioteca disponible dentro de Ediprofe."
+  title="Panel del estudiante"
+  description="Aquí entras directo a tus evaluaciones del docente, tus talleres por tema y tus simulacros completos."
   badge="Miembros"
   icon="🧭"
+  activeSection="panel"
 >
   <div class="practice-surface members-editorial-stack">
-    <section class="practice-toolbar">
-      <div class="practice-toolbar-copy">
-        <p class="practice-toolbar-label">Biblioteca institucional</p>
-        <h2 class="practice-toolbar-title">Tu ruta de estudio</h2>
-        <p class="practice-toolbar-desc">Accede a talleres y simulacros según los cursos asignados por el docente.</p>
-      </div>
-      <div class="practice-toolbar-actions">
-        <a class="members-button secondary" href="/miembros/asignaciones">Asignaciones</a>
-        <a class="members-button secondary" href="/miembros/talleres">Talleres</a>
-        <a class="members-button secondary" href="/miembros/simulacros">Simulacros</a>
-        <a class="members-button secondary" href="/miembros/admin" id="admin-link" style="display:none;">Administración</a>
-        <button class="members-button warn" id="logout-btn" type="button">Cerrar sesión</button>
-      </div>
-    </section>
-
-    <section class="members-card">
+    <section class="members-card profile-hero">
       <div id="profile"></div>
       <div id="feedback"></div>
     </section>
 
     <section class="members-card">
-      <h3 class="members-section-title">Mis cursos</h3>
-      <div id="courses-summary"></div>
+      <div class="members-list-header">
+        <div class="members-item-main">
+          <h3 class="members-section-title">🧭 ¿Qué quieres hacer hoy?</h3>
+          <p class="members-subtitle">Escoge una ruta clara según lo que vas a resolver: docente, práctica o examen.</p>
+        </div>
+      </div>
+      <div id="route-cards" class="members-quick-links"></div>
     </section>
 
-    <section class="members-card">
-      <h3 class="members-section-title">Ruta de práctica</h3>
-      <div id="route"></div>
-    </section>
+    <div class="members-editorial-grid">
+      <section class="members-card">
+        <h3 class="members-section-title">📌 Evaluaciones del docente</h3>
+        <div id="assignment-summary"></div>
+      </section>
 
-    <section class="members-card">
-      <h3 class="members-section-title">Asignaciones y entregas</h3>
-      <div id="assignment-summary"></div>
-    </section>
+      <section class="members-card">
+        <h3 class="members-section-title">🎓 Cursos activos</h3>
+        <div id="courses-summary"></div>
+      </section>
+    </div>
 
-    <section class="members-card">
-      <h3 class="members-section-title">Tus talleres</h3>
-      <div id="workshop-summary"></div>
-    </section>
-
-    <section class="members-card">
-      <h3 class="members-section-title">Tus simulacros</h3>
-      <div id="simulacro-summary"></div>
+    <section class="members-actions u-margin-top-medium" style="justify-content: center;">
+      <a class="members-button secondary" href="/miembros/admin" id="admin-link" style="display:none;">⚙️ Administración</a>
+      <button class="members-button warn" id="logout-btn" type="button">🚪 Cerrar sesión</button>
     </section>
   </div>
 </MembersEditorialLayout>
@@ -76,10 +64,8 @@ import MembersEditorialLayout from '../../layouts/MembersEditorialLayout.astro';
   const profile = document.getElementById('profile');
   const feedback = document.getElementById('feedback');
   const coursesSummary = document.getElementById('courses-summary');
-  const routeWrap = document.getElementById('route');
   const assignmentSummary = document.getElementById('assignment-summary');
-  const workshopSummary = document.getElementById('workshop-summary');
-  const simulacroSummary = document.getElementById('simulacro-summary');
+  const routeCards = document.getElementById('route-cards');
   const adminLink = document.getElementById('admin-link');
   const logoutBtn = document.getElementById('logout-btn');
   const LAST_WORKSHOP_KEY = 'ediprofe_member_last_workshop';
@@ -98,12 +84,9 @@ import MembersEditorialLayout from '../../layouts/MembersEditorialLayout.astro';
     return 'Activo';
   }
 
-  function toBase64Url(value) {
-    const utf8 = encodeURIComponent(value).replace(/%([0-9A-F]{2})/g, (_, p1) =>
-      String.fromCharCode(Number.parseInt(p1, 16))
-    );
-
-    return btoa(utf8).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/g, '');
+  function roleLabel(role) {
+    if (role === 'admin') return 'Administrador';
+    return 'Estudiante';
   }
 
   function escapeHtml(value) {
@@ -128,29 +111,6 @@ import MembersEditorialLayout from '../../layouts/MembersEditorialLayout.astro';
     return [];
   }
 
-  function renderRoute(isBlocked) {
-    routeWrap.innerHTML = `
-      <div class="members-steps">
-        <article class="members-step done">
-          <strong>1. Ingreso institucional</strong>
-          <p>Acceso con tu correo del colegio.</p>
-        </article>
-        <article class="members-step ${isBlocked ? '' : 'done'}">
-          <strong>2. Cursos asignados</strong>
-          <p>${isBlocked ? 'Tu cuenta está bloqueada y no puede usar la biblioteca.' : 'Tus cursos habilitan la biblioteca disponible.'}</p>
-        </article>
-        <article class="members-step ${isBlocked ? '' : 'done'}">
-          <strong>3. Biblioteca libre</strong>
-          <p>${isBlocked ? 'No disponible mientras el acceso esté bloqueado.' : 'Puedes practicar en modo estudio o simulacro libre.'}</p>
-        </article>
-        <article class="members-step ${isBlocked ? '' : 'done'}">
-          <strong>4. Retroalimentación</strong>
-          <p>${isBlocked ? 'La retroalimentación se habilita cuando vuelvas a tener acceso.' : 'Profundiza con solución guiada y conceptos relacionados.'}</p>
-        </article>
-      </div>
-    `;
-  }
-
   function renderCourses(courses) {
     if (!Array.isArray(courses) || courses.length === 0) {
       coursesSummary.innerHTML =
@@ -159,17 +119,15 @@ import MembersEditorialLayout from '../../layouts/MembersEditorialLayout.astro';
     }
 
     coursesSummary.innerHTML = `
-      <div class="members-grid">
+      <div class="members-list members-list--tight">
         ${courses
           .map(
             (course) => `
-          <article class="members-item">
-            <h4>${escapeHtml(course.name)}</h4>
-            <p>${escapeHtml(course.school_year || '2026')}</p>
-            <p style="margin-top:0.35rem;">
-              <span class="members-pill approved">${Number(course?.stats?.contents || 0)} contenidos</span>
-              <span class="members-pill pending" style="margin-left:0.35rem;">${Number(course?.stats?.simulacros || 0)} simulacros</span>
-            </p>
+          <article class="members-item course-item" style="padding: 0.75rem 1rem;">
+            <div class="u-flex-between" style="align-items: center;">
+              <h4 style="margin:0; font-size: 1rem;">${escapeHtml(course.name)}</h4>
+              <span class="members-pill approved">📖 ${Number(course?.stats?.contents || 0)}</span>
+            </div>
           </article>
         `
           )
@@ -178,293 +136,157 @@ import MembersEditorialLayout from '../../layouts/MembersEditorialLayout.astro';
     `;
   }
 
-  function renderWorkshopSummary(items) {
-    const total = items.length;
-    const accessible = items.filter((item) => item.can_access);
-    const totalQuestions = accessible.reduce((acc, item) => acc + Number(item?.stats?.total_questions || 0), 0);
-    const lastWorkshopRaw = window.localStorage.getItem(LAST_WORKSHOP_KEY);
-    let lastWorkshop = null;
-    if (lastWorkshopRaw) {
-      try {
-        lastWorkshop = JSON.parse(lastWorkshopRaw);
-      } catch {
-        lastWorkshop = null;
-      }
+  function getStoredActivity(key) {
+    const raw = window.localStorage.getItem(key);
+    if (!raw) return null;
+
+    try {
+      return JSON.parse(raw);
+    } catch {
+      return null;
     }
-
-    const recent = accessible.slice(0, 3);
-    const recentHtml =
-      recent.length > 0
-        ? recent
-            .map((item) => {
-              const link = `/miembros/talleres/${toBase64Url(item.id)}`;
-              return `
-              <article class="members-item">
-                <h4>${escapeHtml(item.title)}</h4>
-                <p>${escapeHtml(item.area_slug || 'general')} · ${Number(item?.stats?.total_questions || 0)} preguntas</p>
-                <div class="members-actions" style="margin-top:0.55rem;">
-                  <a class="members-button" href="${link}">Practicar</a>
-                </div>
-              </article>
-            `;
-            })
-            .join('')
-        : '<div class="members-alert">No tienes talleres con acceso todavía.</div>';
-
-    workshopSummary.innerHTML = `
-      <div class="members-grid">
-        <article class="members-item">
-          <h4>Talleres totales</h4>
-          <p>${total}</p>
-        </article>
-        <article class="members-item">
-          <h4>Con acceso</h4>
-          <p>${accessible.length}</p>
-        </article>
-        <article class="members-item">
-          <h4>Preguntas disponibles</h4>
-          <p>${totalQuestions}</p>
-        </article>
-      </div>
-      ${
-        lastWorkshop?.link
-          ? `
-        <div class="members-actions" style="margin-top:0.9rem;">
-          <a class="members-button" href="${escapeHtml(lastWorkshop.link)}">Continuar último taller</a>
-          <span class="members-pill pending">${escapeHtml(lastWorkshop.title || 'Taller reciente')}</span>
-        </div>
-      `
-          : ''
-      }
-      <div class="members-list" style="margin-top:0.9rem;">
-        ${recentHtml}
-      </div>
-      <div class="members-actions" style="margin-top:0.75rem;">
-        <a class="members-button secondary" href="/miembros/talleres">Ver catálogo completo</a>
-      </div>
-    `;
   }
 
-  function renderSimulacroSummary(items) {
-    const total = items.length;
-    const accessible = items.filter((item) => item.can_access);
-    const totalQuestions = accessible.reduce((acc, item) => acc + Number(item?.stats?.total_questions || 0), 0);
-    const lastSimulacroRaw = window.localStorage.getItem(LAST_SIMULACRO_KEY);
-    let lastSimulacro = null;
-    if (lastSimulacroRaw) {
-      try {
-        lastSimulacro = JSON.parse(lastSimulacroRaw);
-      } catch {
-        lastSimulacro = null;
-      }
-    }
+  function renderRouteCards(assignments, workshops, simulacros) {
+    const lastAssignment = getStoredActivity(LAST_ASSIGNMENT_KEY);
+    const lastWorkshop = getStoredActivity(LAST_WORKSHOP_KEY);
+    const lastSimulacro = getStoredActivity(LAST_SIMULACRO_KEY);
 
-    const recent = accessible.slice(0, 3);
-    const recentHtml =
-      recent.length > 0
-        ? recent
-            .map((item) => {
-              const link = `/miembros/simulacros/${toBase64Url(item.id)}`;
-              return `
-              <article class="members-item">
-                <h4>${escapeHtml(item.title)}</h4>
-                <p>${escapeHtml(item.area_slug || 'general')} · ${Number(item?.stats?.total_questions || 0)} preguntas</p>
-                <div class="members-actions" style="margin-top:0.55rem;">
-                  <a class="members-button" href="${link}">Abrir</a>
-                </div>
-              </article>
-            `;
-            })
-            .join('')
-        : '<div class="members-alert">No tienes simulacros con acceso todavía.</div>';
+    const activeAssignments = assignments.filter((item) => item?.availability?.can_view);
+    const assignmentsWithReview = assignments.filter((item) => item?.latest_attempt?.can_review);
+    const availableWorkshops = workshops.filter((item) => item?.can_access);
+    const availableSimulacros = simulacros.filter((item) => item?.can_access);
+    const workshopQuestions = availableWorkshops.reduce((acc, item) => acc + Number(item?.stats?.total_questions || 0), 0);
+    const simulacroQuestions = availableSimulacros.reduce((acc, item) => acc + Number(item?.stats?.total_questions || 0), 0);
 
-    simulacroSummary.innerHTML = `
-      <div class="members-grid">
-        <article class="members-item">
-          <h4>Simulacros totales</h4>
-          <p>${total}</p>
-        </article>
-        <article class="members-item">
-          <h4>Con acceso</h4>
-          <p>${accessible.length}</p>
-        </article>
-        <article class="members-item">
-          <h4>Preguntas disponibles</h4>
-          <p>${totalQuestions}</p>
-        </article>
-      </div>
-      ${
-        lastSimulacro?.link
-          ? `
-        <div class="members-actions" style="margin-top:0.9rem;">
-          <a class="members-button" href="${escapeHtml(lastSimulacro.link)}">Continuar último simulacro</a>
-          <span class="members-pill pending">${escapeHtml(lastSimulacro.title || 'Simulacro reciente')}</span>
+    routeCards.innerHTML = `
+      <a class="members-quick-link" href="/miembros/asignaciones">
+        <strong>📝 Evaluaciones</strong>
+        <p>Lo que tu docente te dejó asignado. Desde aquí inicias, continúas o revisas retroalimentación.</p>
+        <span class="members-route-metric">📌 ${activeAssignments.length} en tu panel</span>
+        <span class="members-route-metric">💬 ${assignmentsWithReview.length} con retroalimentación</span>
+        <div class="members-route-actions">
+          <span class="members-button">${lastAssignment?.link ? 'Continuar' : 'Ver evaluaciones'}</span>
         </div>
-      `
-          : ''
-      }
-      <div class="members-list" style="margin-top:0.9rem;">
-        ${recentHtml}
-      </div>
-      <div class="members-actions" style="margin-top:0.75rem;">
-        <a class="members-button secondary" href="/miembros/simulacros">Ver catálogo completo</a>
-      </div>
+      </a>
+
+      <a class="members-quick-link" href="/miembros/talleres">
+        <strong>✍️ Talleres</strong>
+        <p>Práctica por tema con revisión inmediata, ideal para reforzar antes de una evaluación.</p>
+        <span class="members-route-metric">📚 ${availableWorkshops.length} disponibles</span>
+        <span class="members-route-metric">📄 ${workshopQuestions} preguntas activas</span>
+        <div class="members-route-actions">
+          <span class="members-button">${lastWorkshop?.link ? 'Seguir taller' : 'Abrir talleres'}</span>
+        </div>
+      </a>
+
+      <a class="members-quick-link" href="/miembros/simulacros">
+        <strong>🚀 Simulacros</strong>
+        <p>Ensayos completos en formato de examen para medir avance y preparar resultados reales.</p>
+        <span class="members-route-metric">🏁 ${availableSimulacros.length} disponibles</span>
+        <span class="members-route-metric">📄 ${simulacroQuestions} preguntas activas</span>
+        <div class="members-route-actions">
+          <span class="members-button">${lastSimulacro?.link ? 'Seguir simulacro' : 'Abrir simulacros'}</span>
+        </div>
+      </a>
     `;
   }
 
   function renderAssignmentSummary(items) {
     const total = items.length;
     const activeNow = items.filter((item) => item?.availability?.can_start);
-    const reviewable = items.filter((item) => item?.latest_attempt?.can_review).length;
-    const evaluations = items.filter((item) => item?.mode === 'evaluation').length;
-    const totalQuestions = items.reduce((acc, item) => acc + Number(item?.stats?.effective_questions || 0), 0);
-    const lastAssignmentRaw = window.localStorage.getItem(LAST_ASSIGNMENT_KEY);
-    let lastAssignment = null;
-    if (lastAssignmentRaw) {
-      try {
-        lastAssignment = JSON.parse(lastAssignmentRaw);
-      } catch {
-        lastAssignment = null;
-      }
-    }
-
+    const lastAssignment = getStoredActivity(LAST_ASSIGNMENT_KEY);
     const recent = items.slice(0, 3);
+    const reviewReady = items.filter((item) => item?.latest_attempt?.can_review).length;
+
     const recentHtml =
       recent.length > 0
         ? recent
             .map((item) => {
               const link = `/miembros/asignaciones/abrir?id=${encodeURIComponent(item.id)}`;
-              const modeLabel =
-                item.mode === 'study' ? 'Estudio guiado' : item.mode === 'evaluation' ? 'Evaluación' : 'Simulacro';
-              const feedbackLabel = item?.feedback?.state_label || item?.feedback?.policy_label || 'Retroalimentación';
-              const feedbackClass =
-                item?.feedback?.state === 'available'
-                  ? 'approved'
-                  : 'pending';
-              const attemptStatusLabel =
-                item?.latest_attempt?.status === 'in_progress'
-                  ? 'En progreso'
-                  : item?.latest_attempt?.status === 'submitted'
-                  ? 'Entregada'
-                  : item?.latest_attempt?.status === 'graded'
-                  ? 'Calificada'
-                  : item?.latest_attempt?.status === 'released'
-                  ? 'Retro liberada'
-                  : 'Sin intento';
+              const latest = item?.latest_attempt;
               const actionLabel =
-                item?.latest_attempt?.status === 'in_progress'
+                latest?.status === 'in_progress'
                   ? 'Continuar'
-                  : item?.latest_attempt?.can_review
-                  ? 'Ver retroalimentación'
-                  : item?.latest_attempt
-                  ? 'Ver resultado'
-                  : 'Abrir';
+                  : latest?.can_review
+                  ? 'Revisar'
+                  : latest
+                  ? 'Abrir'
+                  : 'Comenzar';
 
               return `
-              <article class="members-item">
-                <h4>${escapeHtml(item.title)}</h4>
-                <p>${escapeHtml(modeLabel)} · ${Number(item?.stats?.effective_questions || 0)} preguntas</p>
-                ${
-                  item?.course?.name
-                    ? `<p style="margin-top:0.35rem;"><span class="members-pill approved">${escapeHtml(item.course.name)}</span></p>`
-                    : ''
-                }
-                <p style="margin-top:0.45rem;">
-                  <span class="members-pill ${item?.availability?.can_start ? 'approved' : 'pending'}">${
-                    item?.availability?.can_start ? 'Disponible' : 'Seguimiento'
-                  }</span>
-                  ${
-                    item?.feedback
-                      ? `<span class="members-pill ${feedbackClass}" style="margin-left:0.35rem;">${escapeHtml(feedbackLabel)}</span>`
-                      : ''
-                  }
-                  ${
-                    item?.latest_attempt
-                      ? `<span class="members-pill pending" style="margin-left:0.35rem;">Intento: ${escapeHtml(attemptStatusLabel)}</span>`
-                      : ''
-                  }
-                  ${
-                    item?.attempts?.limit
-                      ? `<span class="members-pill pending" style="margin-left:0.35rem;">Intentos ${Number(item?.attempts?.used || 0)}/${Number(item?.attempts?.limit || 0)}</span>`
-                      : ''
-                  }
-                </p>
-                ${
-                  item?.feedback?.message
-                    ? `<p style="margin-top:0.45rem;">${escapeHtml(item.feedback.message)}</p>`
-                    : ''
-                }
-                <div class="members-actions" style="margin-top:0.55rem;">
-                  <a class="members-button" href="${link}" data-assignment-link="${escapeHtml(link)}" data-assignment-title="${escapeHtml(item.title)}">
-                    ${actionLabel}
-                  </a>
+              <article class="members-item compact">
+                <div class="members-item-main">
+                  <h4 style="font-size: 0.95rem;">${escapeHtml(item.title)}</h4>
+                  <p class="members-subtitle">${item?.course?.name || ''}</p>
+                </div>
+                <div class="members-actions">
+                  <a class="members-button" style="padding: 0.3rem 0.6rem; font-size: 0.8rem;" href="${link}">${actionLabel}</a>
                 </div>
               </article>
             `;
             })
             .join('')
-        : '<div class="members-alert">No tienes asignaciones disponibles todavía.</div>';
+        : '<div class="members-alert">No tienes evaluaciones disponibles en este momento.</div>';
 
     assignmentSummary.innerHTML = `
-      <div class="members-grid">
-        <article class="members-item">
-          <h4>Asignaciones visibles</h4>
-          <p>${total}</p>
-        </article>
-        <article class="members-item">
-          <h4>Disponibles ahora</h4>
-          <p>${activeNow.length}</p>
-        </article>
-        <article class="members-item">
-          <h4>Evaluaciones</h4>
-          <p>${evaluations}</p>
-        </article>
-        <article class="members-item">
-          <h4>Retro disponible</h4>
-          <p>${reviewable}</p>
-        </article>
-        <article class="members-item">
-          <h4>Preguntas comprometidas</h4>
-          <p>${totalQuestions}</p>
-        </article>
+      <div class="members-info-bar" style="margin-top:0; padding-top:0; border-top:none;">
+        <p>📌 <strong>${activeNow.length}</strong> activas ahora · 💬 <strong>${reviewReady}</strong> con retroalimentación · 🗂️ <strong>${total}</strong> registradas</p>
       </div>
+
       ${
         lastAssignment?.link
           ? `
-        <div class="members-actions" style="margin-top:0.9rem;">
-          <a class="members-button" href="${escapeHtml(lastAssignment.link)}">Continuar última asignación</a>
-          <span class="members-pill pending">${escapeHtml(lastAssignment.title || 'Asignación reciente')}</span>
+        <div class="members-card continue-card u-margin-bottom-medium">
+          <p class="continue-card-label">Lo más reciente</p>
+          <h4 class="u-margin-bottom-small">${escapeHtml(lastAssignment.title || 'Evaluación reciente')}</h4>
+          <a class="members-button u-full-width" href="${escapeHtml(lastAssignment.link)}">Abrir evaluación</a>
         </div>
       `
           : ''
       }
-      <div class="members-list" style="margin-top:0.9rem;">
+
+      <div class="members-list members-list--tight">
         ${recentHtml}
       </div>
-      <div class="members-actions" style="margin-top:0.75rem;">
-        <a class="members-button secondary" href="/miembros/asignaciones">Ver todas las asignaciones</a>
-      </div>
     `;
+  }
 
-    assignmentSummary.querySelectorAll('a[data-assignment-link]').forEach((anchor) => {
-      anchor.addEventListener('click', () => {
-        const link = anchor.getAttribute('data-assignment-link');
-        const title = anchor.getAttribute('data-assignment-title');
-        if (!link) return;
-        window.localStorage.setItem(
-          LAST_ASSIGNMENT_KEY,
-          JSON.stringify({
-            link,
-            title: title || 'Asignación',
-            at: Date.now(),
-          })
-        );
-      });
-    });
+  function renderFallbackRouteCards() {
+    routeCards.innerHTML = `
+      <a class="members-quick-link" href="/miembros/asignaciones">
+        <strong>📝 Evaluaciones</strong>
+        <p>Consulta lo que tu docente dejó asignado y revisa tus resultados.</p>
+      </a>
+      <a class="members-quick-link" href="/miembros/talleres">
+        <strong>✍️ Talleres</strong>
+        <p>Practica por tema con retroalimentación inmediata.</p>
+      </a>
+      <a class="members-quick-link" href="/miembros/simulacros">
+        <strong>🚀 Simulacros</strong>
+        <p>Entrena con pruebas completas en formato de examen.</p>
+      </a>
+    `;
+  }
+
+  function renderBlockedState() {
+    routeCards.innerHTML = '';
+    coursesSummary.innerHTML = '<div class="members-alert error">Sin acceso a cursos.</div>';
+    assignmentSummary.innerHTML = '<div class="members-alert error">Acceso bloqueado.</div>';
+  }
+
+  function renderInitialState() {
+    renderFallbackRouteCards();
+  }
+
+  function renderDashboardData(assignments, workshops, simulacros) {
+    renderRouteCards(assignments, workshops, simulacros);
+    renderAssignmentSummary(assignments);
   }
 
   async function boot() {
     try {
+      renderInitialState();
       const me = await apiMe();
       const user = me?.data?.user;
       if (!user) {
@@ -474,22 +296,25 @@ import MembersEditorialLayout from '../../layouts/MembersEditorialLayout.astro';
       saveSession(token, user);
 
       profile.innerHTML = `
-        <div class="members-grid">
-          <div class="members-item">
+        <div class="profile-main-info">
+          <div class="profile-avatar">👨‍🎓</div>
+          <div class="profile-text">
             <h4>${user.name}</h4>
             <p>${user.email}</p>
           </div>
-          <div class="members-item">
-            <h4>Rol</h4>
-            <p>${user.role || 'student'}</p>
+        </div>
+        <div class="profile-stats-row">
+          <div class="profile-stat-item">
+            <label>Rol</label>
+            <span>${roleLabel(user.role || 'student')}</span>
           </div>
-          <div class="members-item">
-            <h4>Estado</h4>
-            <p><span class="members-pill ${statusClass(user.member_status)}">${statusLabel(user.member_status)}</span></p>
+          <div class="profile-stat-item">
+            <label>Estado</label>
+            <span class="members-pill ${statusClass(user.member_status)}">${statusLabel(user.member_status)}</span>
           </div>
-          <div class="members-item">
-            <h4>Acceso</h4>
-            <p>${user.auth_provider === 'google' ? 'Google institucional' : 'Correo y contraseña'}</p>
+          <div class="profile-stat-item">
+            <label>Acceso</label>
+            <span>${user.auth_provider === 'google' ? 'Acceso con Google' : 'Cuenta académica'}</span>
           </div>
         </div>
       `;
@@ -498,18 +323,9 @@ import MembersEditorialLayout from '../../layouts/MembersEditorialLayout.astro';
         adminLink.style.display = 'inline-flex';
       }
 
-      renderRoute(user.member_status === 'blocked');
-
       if (user.member_status === 'blocked') {
         feedback.innerHTML = `<div class="members-alert error">Tu cuenta fue bloqueada. Contacta al administrador.</div>`;
-        coursesSummary.innerHTML =
-          '<div class="members-alert error">No tienes acceso a cursos mientras tu cuenta esté bloqueada.</div>';
-        assignmentSummary.innerHTML =
-          '<div class="members-alert error">Tu acceso a asignaciones académicas está bloqueado. Contacta al administrador.</div>';
-        workshopSummary.innerHTML =
-          '<div class="members-alert error">Tu acceso premium está bloqueado. Contacta al administrador.</div>';
-        simulacroSummary.innerHTML =
-          '<div class="members-alert error">Tu acceso premium está bloqueado. Contacta al administrador.</div>';
+        renderBlockedState();
       } else {
         const [coursesResponse, assignmentsResponse, workshopsResponse, simulacrosResponse] = await Promise.all([
           apiMyCourses(),
@@ -518,10 +334,12 @@ import MembersEditorialLayout from '../../layouts/MembersEditorialLayout.astro';
           apiMyLibrary({ contentType: 'simulacro' }),
         ]);
 
+        const assignments = Array.isArray(assignmentsResponse?.data) ? assignmentsResponse.data : [];
+        const workshops = normalizeWorkshopList(workshopsResponse);
+        const simulacros = normalizeWorkshopList(simulacrosResponse);
+
         renderCourses(Array.isArray(coursesResponse?.data) ? coursesResponse.data : []);
-        renderAssignmentSummary(Array.isArray(assignmentsResponse?.data) ? assignmentsResponse.data : []);
-        renderWorkshopSummary(normalizeWorkshopList(workshopsResponse));
-        renderSimulacroSummary(normalizeWorkshopList(simulacrosResponse));
+        renderDashboardData(assignments, workshops, simulacros);
       }
     } catch (error) {
       clearSession();
