@@ -6,10 +6,16 @@ use App\Models\Workshop;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Schema;
 use RuntimeException;
 
 class WorkshopManifestSyncService
 {
+    public function __construct(
+        private readonly AssessmentTemplateManifestSyncService $assessmentTemplateSyncService
+    ) {
+    }
+
     /**
      * Synchronize workshops from a JSON manifest file.
      *
@@ -27,6 +33,7 @@ class WorkshopManifestSyncService
 
         $now = Carbon::now();
         $rowsByExternalId = [];
+        $entriesByExternalId = [];
         $skipped = 0;
         $duplicates = 0;
 
@@ -50,6 +57,7 @@ class WorkshopManifestSyncService
             }
 
             $rowsByExternalId[$normalized['external_id']] = $normalized;
+            $entriesByExternalId[$normalized['external_id']] = $entry;
         }
 
         $rows = array_values($rowsByExternalId);
@@ -99,12 +107,30 @@ class WorkshopManifestSyncService
                 );
             }
 
+            if (Schema::hasTable('assessment_templates')) {
+                $this->assessmentTemplateSyncService->sync(
+                    $entriesByExternalId,
+                    $now,
+                    false,
+                    $pruneMissing,
+                );
+            }
+
             if ($pruneMissing) {
                 $query = Workshop::query();
                 if ($externalIds !== []) {
                     $query->whereNotIn('external_id', $externalIds);
                 }
                 $deleted = $query->delete();
+            }
+        } else {
+            if (Schema::hasTable('assessment_templates')) {
+                $this->assessmentTemplateSyncService->sync(
+                    $entriesByExternalId,
+                    $now,
+                    true,
+                    $pruneMissing,
+                );
             }
         }
 

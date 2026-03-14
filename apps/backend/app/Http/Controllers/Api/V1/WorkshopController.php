@@ -3,11 +3,14 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Api\V1\StartAssessmentAttemptRequest;
 use App\Http\Requests\Api\V1\EvaluateWorkshopAnswerRequest;
 use App\Http\Resources\WorkshopResource;
 use App\Http\Resources\WorkshopSummaryResource;
+use App\Models\AssessmentTemplate;
 use App\Models\Workshop;
 use App\Services\Access\WorkshopAccessService;
+use App\Services\Assessments\AssessmentAttemptService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
@@ -99,6 +102,63 @@ class WorkshopController extends Controller
         return response()->json([
             'ok' => true,
             'data' => new WorkshopResource($workshop),
+        ]);
+    }
+
+    public function startAttempt(
+        StartAssessmentAttemptRequest $request,
+        string $workshopId,
+        WorkshopAccessService $accessService,
+        AssessmentAttemptService $attemptService
+    ): JsonResponse {
+        $user = $request->user();
+        if (! $user) {
+            return response()->json([
+                'ok' => false,
+                'error' => [
+                    'code' => 'auth_required',
+                    'message' => 'Authentication is required to start an attempt.',
+                ],
+            ], 401);
+        }
+
+        $identifier = trim(rawurldecode($workshopId));
+        $workshop = $this->resolveWorkshop($request, $identifier);
+
+        if ($workshop === null) {
+            return $this->contentNotFoundResponse();
+        }
+
+        $accessError = $this->resolveAccessErrorResponse($request, $workshop, $accessService);
+        if ($accessError !== null) {
+            return $accessError;
+        }
+
+        $template = $this->resolveAssessmentTemplate($workshop);
+        if (! $template instanceof AssessmentTemplate) {
+            return response()->json([
+                'ok' => false,
+                'error' => [
+                    'code' => 'assessment_template_not_found',
+                    'message' => 'No se encontró una plantilla académica sincronizada para este contenido.',
+                ],
+            ], 409);
+        }
+
+        $defaultMode = $this->contentType === 'simulacro' ? 'simulacro' : 'study';
+        $requestedMode = (string) ($request->validated('mode') ?? $defaultMode);
+        $reset = (bool) ($request->validated('reset') ?? false);
+
+        $attempt = $attemptService->startTemplateAttempt(
+            $user,
+            $template,
+            $requestedMode,
+            $reset,
+        );
+
+        return response()->json([
+            'ok' => true,
+            'data' => $attemptService->toClientPayload($attempt),
         ]);
     }
 
@@ -221,7 +281,7 @@ class WorkshopController extends Controller
         ]);
     }
 
-    private function resolveWorkshop(Request $request, string $identifier): ?Workshop
+    protected function resolveWorkshop(Request $request, string $identifier): ?Workshop
     {
         $query = $this->baseQuery();
 
@@ -239,12 +299,12 @@ class WorkshopController extends Controller
             ->first();
     }
 
-    private function baseQuery()
+    protected function baseQuery()
     {
         return Workshop::query()->where('content_type', $this->contentType);
     }
 
-    private function resolveAccessErrorResponse(
+    protected function resolveAccessErrorResponse(
         Request $request,
         Workshop $workshop,
         WorkshopAccessService $accessService
@@ -273,7 +333,15 @@ class WorkshopController extends Controller
         return null;
     }
 
-    private function contentNotFoundResponse(): JsonResponse
+    protected function resolveAssessmentTemplate(Workshop $workshop): ?AssessmentTemplate
+    {
+        return AssessmentTemplate::query()
+            ->where('source_workshop_id', $workshop->id)
+            ->orWhere('external_id', $workshop->external_id)
+            ->first();
+    }
+
+    protected function contentNotFoundResponse(): JsonResponse
     {
         return response()->json([
             'ok' => false,

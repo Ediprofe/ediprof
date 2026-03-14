@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\V1\AuthController;
 use App\Http\Controllers\Api\V1\Admin\AdminPanelController;
 use App\Http\Controllers\Api\V1\Admin\CourseController;
+use App\Http\Controllers\Api\V1\AssessmentAttemptController;
 use App\Http\Controllers\Api\V1\ContentController;
 use App\Http\Controllers\Api\V1\MemberLibraryController;
 use App\Http\Controllers\Api\V1\SimulacroController;
@@ -31,15 +32,27 @@ Route::prefix('v1')->middleware('resolve.api_token')->group(function (): void {
 
     Route::get('/content', [ContentController::class, 'index']);
     Route::get('/workshops', [WorkshopController::class, 'index']);
+    Route::post('/workshops/{workshopId}/attempts', [WorkshopController::class, 'startAttempt'])
+        ->where('workshopId', '.*')
+        ->middleware('require.api_token');
     Route::post('/workshops/{workshopId}/questions/{questionId}/evaluate', [WorkshopController::class, 'evaluateAnswer'])
         ->where('workshopId', '.*');
     Route::get('/workshops/{workshopId}', [WorkshopController::class, 'show'])
         ->where('workshopId', '.*');
     Route::get('/simulacros', [SimulacroController::class, 'index']);
+    Route::post('/simulacros/{workshopId}/attempts', [SimulacroController::class, 'startAttempt'])
+        ->where('workshopId', '.*')
+        ->middleware('require.api_token');
     Route::post('/simulacros/{workshopId}/questions/{questionId}/evaluate', [SimulacroController::class, 'evaluateAnswer'])
         ->where('workshopId', '.*');
     Route::get('/simulacros/{workshopId}', [SimulacroController::class, 'show'])
         ->where('workshopId', '.*');
+    Route::get('/assessment-attempts/{attemptId}', [AssessmentAttemptController::class, 'show'])
+        ->middleware('require.api_token');
+    Route::patch('/assessment-attempts/{attemptId}/questions/{questionId}', [AssessmentAttemptController::class, 'answer'])
+        ->middleware('require.api_token');
+    Route::post('/assessment-attempts/{attemptId}/submit', [AssessmentAttemptController::class, 'submit'])
+        ->middleware('require.api_token');
 
     Route::prefix('admin')->middleware(['require.api_token', 'require.admin'])->group(function (): void {
         Route::post('/panel-handoff', [AdminPanelController::class, 'handoff']);
