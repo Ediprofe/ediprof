@@ -4,7 +4,7 @@
     @php($questionRows = $this->questionReviewRows())
 
     <div class="space-y-6">
-        <x-filament::section heading="Flujo recomendado" description="La idea aquí es simple: pegar, ubicar el borrador en el banco y abrir la vista real. Filament no intenta ser el renderer final.">
+        <x-filament::section heading="Flujo recomendado" description="La idea aquí es simple: pegar un bloque contextual, ubicarlo en el banco y validar la vista real. Filament no intenta ser el renderer final.">
             <div class="mb-4 flex flex-wrap items-center gap-3">
                 <x-filament::button
                     tag="a"
@@ -37,17 +37,17 @@
             <div class="grid gap-4 md:grid-cols-3">
                 <div class="rounded-xl border border-gray-200 bg-white p-4 dark:border-gray-700 dark:bg-gray-900">
                     <p class="text-xs font-semibold uppercase tracking-[0.18em] text-gray-500 dark:text-gray-400">Paso 1</p>
-                    <p class="mt-2 text-sm font-semibold text-gray-950 dark:text-white">Pega el borrador de la IA</p>
-                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Aquí solo necesitamos que ChatGPT o Gemini nos entregue una estructura clara.</p>
+                    <p class="mt-2 text-sm font-semibold text-gray-950 dark:text-white">Pega un bloque contextual</p>
+                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Aquí necesitamos contexto + pregunta(s), no ítems aislados.</p>
                 </div>
                 <div class="rounded-xl border border-gray-200 bg-white p-4 dark:border-gray-700 dark:bg-gray-900">
                     <p class="text-xs font-semibold uppercase tracking-[0.18em] text-gray-500 dark:text-gray-400">Paso 2</p>
-                    <p class="mt-2 text-sm font-semibold text-gray-950 dark:text-white">Confirma si Laravel lo entendió</p>
-                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Revisamos estructura, contextos, correcta y organización mínima del banco.</p>
+                    <p class="mt-2 text-sm font-semibold text-gray-950 dark:text-white">Confirma si Laravel entendió el bloque</p>
+                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Revisamos estructura, contexto, correcta y organización mínima del banco.</p>
                 </div>
                 <div class="rounded-xl border border-gray-200 bg-white p-4 dark:border-gray-700 dark:bg-gray-900">
                     <p class="text-xs font-semibold uppercase tracking-[0.18em] text-gray-500 dark:text-gray-400">Paso 3</p>
-                    <p class="mt-2 text-sm font-semibold text-gray-950 dark:text-white">Guarda y abre la vista real</p>
+                    <p class="mt-2 text-sm font-semibold text-gray-950 dark:text-white">Guarda el bloque y revisa la vista real</p>
                     <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">La apariencia final siempre la validamos en el renderer web real, no dentro de Filament.</p>
                 </div>
             </div>
@@ -58,12 +58,12 @@
 
             <div class="flex flex-wrap items-center gap-3">
                 <x-filament::button type="submit" icon="heroicon-o-sparkles">
-                    Convertir y revisar estructura
+                    Convertir y revisar bloque
                 </x-filament::button>
 
                 @if ($summary)
                     <x-filament::button type="button" color="success" icon="heroicon-o-arrow-down-tray" wire:click="saveDraftAndOpenPreview">
-                        Guardar y abrir preview web
+                        Guardar bloque y abrir preview web
                     </x-filament::button>
                 @endif
 
@@ -74,7 +74,7 @@
                 @endif
 
                 <p class="text-sm text-gray-500 dark:text-gray-400">
-                    Aquí solo tomamos decisiones de estructura y organización. La parte visual se juzga en la vista real.
+                    Aquí solo tomamos decisiones de estructura y organización editorial. La parte visual se juzga en la vista real.
                 </p>
             </div>
         </form>
@@ -148,7 +148,7 @@
                 </x-filament::section>
             @endif
 
-            <x-filament::section heading="Control rápido por pregunta" description="Aquí solo verificamos si cada pregunta quedó lista: correcta, opciones y contexto asociado.">
+            <x-filament::section heading="Control rápido por pregunta" description="Aquí verificamos si cada pregunta quedó lista dentro del bloque: correcta, opciones y contexto asociado.">
                 <div class="space-y-5">
                     @if (count($preview['contexts'] ?? []) > 0)
                         <div class="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-700 dark:bg-gray-900">
@@ -188,7 +188,7 @@
                                             {{ $contextId }}
                                         </span>
                                     @empty
-                                        <span class="text-xs text-gray-500 dark:text-gray-400">Sin contexto compartido</span>
+                                        <span class="text-xs text-danger-600 dark:text-danger-300">Sin contexto vinculado</span>
                                     @endforelse
                                 </div>
                             </div>

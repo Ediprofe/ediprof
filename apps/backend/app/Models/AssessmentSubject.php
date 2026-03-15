@@ -37,7 +37,7 @@ class AssessmentSubject extends Model
                 return;
             }
 
-            foreach (['assessment_templates', 'assessment_questions', 'assessment_contexts'] as $table) {
+            foreach (['assessment_templates', 'assessment_questions', 'assessment_contexts', 'assessment_booklet_sections'] as $table) {
                 DB::table($table)
                     ->where('subject_id', $subject->id)
                     ->update([

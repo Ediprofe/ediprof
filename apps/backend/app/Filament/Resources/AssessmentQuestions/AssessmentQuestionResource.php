@@ -26,9 +26,9 @@ class AssessmentQuestionResource extends Resource
 
     protected static string|UnitEnum|null $navigationGroup = 'Banco académico';
 
-    protected static ?string $navigationLabel = 'Preguntas';
+    protected static ?string $navigationLabel = 'Preguntas (detalle)';
 
-    protected static ?int $navigationSort = 30;
+    protected static ?int $navigationSort = 60;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 

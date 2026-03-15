@@ -30,7 +30,7 @@ class AiQuestionDraftImportService
      * }  $draft
      * @param  array{
      *   subject_id:int,
-     *   unit_id:int,
+     *   unit_id?:int|null,
      *   origin_collection_id:int
      * }  $organization
      */
@@ -38,16 +38,18 @@ class AiQuestionDraftImportService
     {
         return DB::transaction(function () use ($draft, $organization, $title, $actor): AssessmentTemplate {
             $subject = AssessmentSubject::query()->findOrFail((int) ($organization['subject_id'] ?? 0));
-            $unit = AssessmentUnit::query()
-                ->whereKey((int) ($organization['unit_id'] ?? 0))
-                ->where('subject_id', $subject->id)
-                ->firstOrFail();
+            $unit = filled($organization['unit_id'] ?? null)
+                ? AssessmentUnit::query()
+                    ->whereKey((int) $organization['unit_id'])
+                    ->where('subject_id', $subject->id)
+                    ->firstOrFail()
+                : null;
             $originCollection = AssessmentOriginCollection::query()
                 ->whereKey((int) ($organization['origin_collection_id'] ?? 0))
                 ->firstOrFail();
 
             $subjectLabel = $subject->label;
-            $unitLabel = $unit->label;
+            $unitLabel = $unit?->label;
             $originType = $originCollection->origin_type;
             $originLabel = $originCollection->label;
 
@@ -61,8 +63,8 @@ class AiQuestionDraftImportService
                 'default_mode' => 'study',
                 'route' => null,
                 'area_slug' => Str::slug($subjectLabel),
-                'unidad_slug' => Str::slug($unitLabel),
-                'unit_id' => $unit->id,
+                'unidad_slug' => filled($unitLabel) ? Str::slug($unitLabel) : null,
+                'unit_id' => $unit?->id,
                 'unit_label' => $unitLabel,
                 'origin_collection_id' => $originCollection->id,
                 'origin_label' => $originLabel,
@@ -101,7 +103,7 @@ class AiQuestionDraftImportService
                     'subject_label' => $subjectLabel,
                     'order_base' => max((int) ($context['order_base'] ?? ($contextIndex + 1)), 1),
                     'is_active' => true,
-                    'unit_id' => $unit->id,
+                    'unit_id' => $unit?->id,
                     'unit_label' => $unitLabel,
                     'origin_collection_id' => $originCollection->id,
                     'origin_label' => $originLabel,
@@ -138,7 +140,7 @@ class AiQuestionDraftImportService
                     'subject_id' => $subject->id,
                     'subject_label' => $subjectLabel,
                     'is_active' => true,
-                    'unit_id' => $unit->id,
+                    'unit_id' => $unit?->id,
                     'unit_label' => $unitLabel,
                     'origin_collection_id' => $originCollection->id,
                     'origin_label' => $originLabel,

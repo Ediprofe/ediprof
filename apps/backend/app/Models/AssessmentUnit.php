@@ -44,6 +44,13 @@ class AssessmentUnit extends Model
                             'updated_at' => now(),
                         ]);
                 }
+
+                DB::table('assessment_booklet_sections')
+                    ->where('default_unit_id', $unit->id)
+                    ->update([
+                        'default_unit_label' => $unit->label,
+                        'updated_at' => now(),
+                    ]);
             }
 
             if ($unit->wasChanged('subject_id')) {
@@ -57,6 +64,14 @@ class AssessmentUnit extends Model
                             'updated_at' => now(),
                         ]);
                 }
+
+                DB::table('assessment_booklet_sections')
+                    ->where('default_unit_id', $unit->id)
+                    ->update([
+                        'subject_id' => $subject?->id,
+                        'subject_label' => $subject?->label,
+                        'updated_at' => now(),
+                    ]);
             }
         });
     }

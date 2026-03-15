@@ -113,4 +113,60 @@ MD);
         ]);
         $this->assertDatabaseCount('assessment_question_contexts', 1);
     }
+
+    public function test_it_allows_importing_a_draft_without_initial_unit_assignment(): void
+    {
+        $parser = app(AiQuestionDraftParser::class);
+        $importer = app(AiQuestionDraftImportService::class);
+        $admin = User::factory()->create([
+            'role' => 'admin',
+            'member_status' => 'approved',
+        ]);
+        $subject = AssessmentSubject::query()->create([
+            'label' => 'Biología',
+            'is_active' => true,
+        ]);
+        $origin = AssessmentOriginCollection::query()->create([
+            'origin_type' => 'simulacro',
+            'label' => 'Simulacro 2 multiarea',
+            'is_active' => true,
+        ]);
+
+        $draft = $parser->parse(<<<'MD'
+## Contexto
+Se observa una célula procariota al microscopio.
+
+## Pregunta 14
+¿Qué característica diferencia a una célula procariota?
+
+### Opciones
+A. Tiene núcleo definido.
+B. No tiene material genético.
+C. No tiene núcleo definido.
+D. Tiene cloroplastos.
+
+### Correcta
+C
+MD);
+
+        $template = $importer->import($draft, [
+            'subject_id' => $subject->id,
+            'origin_collection_id' => $origin->id,
+        ], 'Borrador IA sin unidad', $admin);
+
+        $this->assertDatabaseHas('assessment_templates', [
+            'id' => $template->id,
+            'subject_id' => $subject->id,
+            'unit_id' => null,
+            'origin_collection_id' => $origin->id,
+        ]);
+
+        $this->assertDatabaseHas('assessment_questions', [
+            'template_id' => $template->id,
+            'external_id' => '14',
+            'subject_id' => $subject->id,
+            'unit_id' => null,
+            'origin_collection_id' => $origin->id,
+        ]);
+    }
 }

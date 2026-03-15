@@ -105,6 +105,11 @@ class AssessmentTemplate extends Model
         return $this->hasMany(AssessmentAssignment::class, 'template_id');
     }
 
+    public function bookletSections(): HasMany
+    {
+        return $this->hasMany(AssessmentBookletSection::class, 'template_id')->orderBy('order_base');
+    }
+
     public function attempts(): HasMany
     {
         return $this->hasMany(AssessmentAttempt::class, 'template_id');

@@ -13,6 +13,9 @@ class AiQuestionDraftParserTest extends TestCase
         $parser = app(AiQuestionDraftParser::class);
 
         $result = $parser->parse(<<<'MD'
+## Contexto
+Observa la siguiente relación entre partículas subatómicas.
+
 ## Pregunta 1
 ¿Cuál es la relación correcta?
 
@@ -35,9 +38,9 @@ La masa atómica se calcula como $A = p^+ + n$.
 MD);
 
         $this->assertSame('ai_question_draft_v1', $result['schema']);
-        $this->assertCount(0, $result['contexts']);
+        $this->assertCount(1, $result['contexts']);
         $this->assertCount(1, $result['questions']);
-        $this->assertCount(0, $result['question_context_links']);
+        $this->assertCount(1, $result['question_context_links']);
 
         $question = $result['questions'][0];
         $this->assertSame('1', $question['id']);
@@ -46,6 +49,28 @@ MD);
         $this->assertCount(4, $question['options']);
         $this->assertSame('**Opción A**', $question['options'][0]['text']);
         $this->assertStringContainsString('Masa atómica', $question['concepts_mdx']);
+    }
+
+    public function test_it_rejects_a_question_without_context(): void
+    {
+        $parser = app(AiQuestionDraftParser::class);
+
+        $this->expectException(RuntimeException::class);
+        $this->expectExceptionMessage('no tiene contexto');
+
+        $parser->parse(<<<'MD'
+## Pregunta 1
+¿Cuál es la relación correcta?
+
+### Opciones
+A. **Opción A**
+B. Opción B
+C. Opción C
+D. Opción D
+
+### Correcta
+B
+MD);
     }
 
     public function test_it_parses_shared_context_and_links_it_to_multiple_questions(): void

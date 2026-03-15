@@ -178,6 +178,13 @@ class AiQuestionDraftParser
 
             $contextRefs = array_values(array_unique($contextRefs));
 
+            if ($contextRefs === []) {
+                throw new RuntimeException(sprintf(
+                    'La pregunta "%s" no tiene contexto. Cada ítem del banco debe pertenecer a un bloque contextual.',
+                    (string) ($currentQuestion['id'] ?? 'sin-id')
+                ));
+            }
+
             foreach ($contextRefs as $index => $contextRef) {
                 $links[] = [
                     'question_external_id' => (string) $currentQuestion['id'],

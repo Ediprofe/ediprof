@@ -37,7 +37,7 @@ class AssessmentOriginCollection extends Model
                 return;
             }
 
-            foreach (['assessment_templates', 'assessment_questions', 'assessment_contexts'] as $table) {
+            foreach (['assessment_templates', 'assessment_questions', 'assessment_contexts', 'assessment_booklets'] as $table) {
                 $payload = [
                     'origin_label' => $collection->label,
                     'updated_at' => now(),

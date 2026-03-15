@@ -128,6 +128,31 @@ class AssessmentQuestion extends Model
         return $this->hasMany(AssessmentAttemptAnswer::class, 'question_id');
     }
 
+    public function bookletQuestions(): HasMany
+    {
+        return $this->hasMany(AssessmentBookletQuestion::class, 'question_id')->orderBy('order_base');
+    }
+
+    public function booklets(): BelongsToMany
+    {
+        return $this->belongsToMany(
+            AssessmentBooklet::class,
+            'assessment_booklet_questions',
+            'question_id',
+            'booklet_id'
+        )->withPivot(['booklet_section_id', 'order_base'])->withTimestamps();
+    }
+
+    public function bookletSections(): BelongsToMany
+    {
+        return $this->belongsToMany(
+            AssessmentBookletSection::class,
+            'assessment_booklet_questions',
+            'question_id',
+            'booklet_section_id'
+        )->withPivot(['booklet_id', 'order_base'])->withTimestamps();
+    }
+
     public function getSourceKeyAttribute(): string
     {
         $templateExternalId = $this->template?->external_id ?: ('template:'.$this->template_id);

@@ -32,7 +32,7 @@ class AssessmentContextsTable
                     ->sortable()
                     ->placeholder('Sin título'),
                 TextColumn::make('template.title')
-                    ->label('Plantilla')
+                    ->label('Bloque')
                     ->searchable()
                     ->sortable()
                     ->wrap(),
@@ -82,7 +82,7 @@ class AssessmentContextsTable
             ])
             ->filters([
                 SelectFilter::make('template_id')
-                    ->label('Plantilla')
+                    ->label('Bloque')
                     ->relationship('template', 'title'),
                 SelectFilter::make('editorial_status')
                     ->label('Estado editorial')
@@ -97,6 +97,6 @@ class AssessmentContextsTable
                 EditAction::make(),
             ])
             ->emptyStateHeading('Todavía no hay contextos sincronizados.')
-            ->emptyStateDescription('Aquí administras la clasificación mínima del banco canónico y sus contextos compartidos.');
+            ->emptyStateDescription('Aquí revisas o corriges contextos específicos cuando necesitas trabajar al nivel de detalle del banco.');
     }
 }

@@ -26,9 +26,9 @@ class AssessmentContextResource extends Resource
 
     protected static string|UnitEnum|null $navigationGroup = 'Banco académico';
 
-    protected static ?string $navigationLabel = 'Contextos';
+    protected static ?string $navigationLabel = 'Contextos (detalle)';
 
-    protected static ?int $navigationSort = 31;
+    protected static ?int $navigationSort = 70;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 

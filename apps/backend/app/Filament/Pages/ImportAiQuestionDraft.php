@@ -28,7 +28,7 @@ class ImportAiQuestionDraft extends Page implements HasForms
 
     protected string $view = 'filament.pages.import-ai-question-draft';
 
-    protected static ?string $navigationLabel = 'Crear preguntas con IA';
+    protected static ?string $navigationLabel = 'Importar bloque con IA';
 
     protected static string|\UnitEnum|null $navigationGroup = 'Banco académico';
 
@@ -36,7 +36,7 @@ class ImportAiQuestionDraft extends Page implements HasForms
 
     protected static string|\BackedEnum|null $navigationIcon = Heroicon::OutlinedSparkles;
 
-    protected static ?string $title = 'Crear preguntas con IA';
+    protected static ?string $title = 'Importar bloque contextual';
 
     public ?array $data = [];
 
@@ -64,15 +64,15 @@ class ImportAiQuestionDraft extends Page implements HasForms
     {
         return $schema
             ->components([
-                Section::make('Paso 1. Pega el borrador que te entregó la IA')
-                    ->description('Aquí no editamos fino todavía. Solo pegamos el borrador, lo separamos bien y verificamos que Laravel entendió contexto, pregunta, opciones y correcta.')
+                Section::make('Paso 1. Pega un bloque contextual')
+                    ->description('Aquí trabajamos como en Saber 11: contexto + una o varias preguntas. Laravel debe reconocer el bloque completo, no preguntas aisladas.')
                     ->components([
                         TextInput::make('draft_title')
                             ->label('Nombre corto del borrador')
                             ->helperText('Opcional. Si lo dejas vacío, Laravel armará un nombre útil con lo que detecte del borrador y su organización.')
                             ->maxLength(255),
                         Textarea::make('draft_markdown')
-                            ->label('Contenido pegado desde ChatGPT o Gemini')
+                            ->label('Bloque pegado desde ChatGPT o Gemini')
                             ->rows(24)
                             ->required()
                             ->placeholder(<<<'TEXT'
@@ -100,7 +100,7 @@ Explica por qué la opción B es válida.
 TEXT),
                     ]),
                 Section::make('Paso 2. Ubícalo en el banco')
-                    ->description('Con esto dejamos el borrador listo para ordenarlo y reutilizarlo después por materia, unidad y origen.')
+                    ->description('Clasificamos el bloque por materia y origen. La unidad queda diferida para no frenar la captura inicial.')
                     ->components([
                         Select::make('subject_id')
                             ->label('Materia')
@@ -109,7 +109,7 @@ TEXT),
                             ->preload()
                             ->native(false)
                             ->live()
-                            ->helperText('Se administra desde Banco académico > Materias.'),
+                            ->helperText('Obligatoria. Todo bloque debe quedar ubicado por materia desde el inicio.'),
                         Select::make('unit_id')
                             ->label('Unidad')
                             ->options(fn (Get $get): array => AssessmentUnit::query()
@@ -121,7 +121,7 @@ TEXT),
                             ->searchable()
                             ->preload()
                             ->native(false)
-                            ->helperText('Se administra desde Banco académico > Unidades. Cada unidad vive dentro de una materia.')
+                            ->helperText('Opcional en esta etapa. Puedes asignarla después con clasificación masiva.')
                             ->disabled(fn (Get $get): bool => blank($get('subject_id')))
                             ->live(),
                         Select::make('origin_collection_id')
@@ -141,7 +141,7 @@ TEXT),
                             ->searchable()
                             ->preload()
                             ->native(false)
-                            ->helperText('Se administra desde Banco académico > Orígenes. El origen puede reutilizarse en varias materias y unidades.'),
+                            ->helperText('Obligatorio. El origen es trazabilidad editorial, no un simple texto decorativo.'),
                     ])
                     ->columns(2),
             ])
@@ -310,17 +310,15 @@ TEXT),
         $signals = collect($this->detectedSignals())->keyBy('label');
 
         if ($questions > 0) {
-            $notes[] = sprintf('Laravel entendió %d pregunta(s). Ya podemos pasar a guardar y revisar la vista real.', $questions);
+            $notes[] = sprintf('Laravel entendió %d pregunta(s) dentro del bloque. Ya podemos pasar a guardar y revisar la vista real.', $questions);
         }
 
         if ($contexts > 0) {
-            $notes[] = sprintf('Se detectó %d contexto compartido. Eso queda listo para reutilizarse sin duplicarlo.', $contexts);
-        } else {
-            $notes[] = 'No se detectó contexto compartido. Eso está bien si tu borrador es de pregunta aislada.';
+            $notes[] = sprintf('Se detectó %d contexto(s). Eso deja el bloque listo para reutilizarse sin duplicarlo.', $contexts);
         }
 
         if ($contexts > 0 && $links === 0) {
-            $notes[] = 'Hay contexto, pero no quedó enlazado a ninguna pregunta. Aquí sí conviene revisar el formato del borrador.';
+            $notes[] = 'Hay contexto, pero no quedó enlazado a ninguna pregunta. Aquí sí conviene revisar el formato del bloque.';
         }
 
         $formulaCount = (int) ($signals->get('Fórmulas detectadas')['value'] ?? 0);
@@ -377,13 +375,12 @@ TEXT),
         $state = $this->form->getState();
         $organization = [
             'subject_id' => (int) ($state['subject_id'] ?? 0),
-            'unit_id' => (int) ($state['unit_id'] ?? 0),
+            'unit_id' => filled($state['unit_id'] ?? null) ? (int) $state['unit_id'] : null,
             'origin_collection_id' => (int) ($state['origin_collection_id'] ?? 0),
         ];
 
         foreach ([
             'subject_id' => 'la materia',
-            'unit_id' => 'la unidad',
             'origin_collection_id' => 'el origen',
         ] as $field => $label) {
             if (($organization[$field] ?? 0) < 1) {
