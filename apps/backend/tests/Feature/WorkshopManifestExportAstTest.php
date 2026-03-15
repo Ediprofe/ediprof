@@ -74,9 +74,11 @@ MDX);
             $this->assertIsArray($question);
 
             $stemBlocks = is_array($question['stem_blocks'] ?? null) ? $question['stem_blocks'] : [];
+            $stemNodes = is_array($question['stem_nodes'] ?? null) ? $question['stem_nodes'] : [];
             $this->assertTrue(collect($stemBlocks)->contains(fn (array $block): bool => ($block['type'] ?? null) === 'table'));
             $this->assertTrue(collect($stemBlocks)->contains(fn (array $block): bool => ($block['type'] ?? null) === 'equation'));
             $this->assertTrue(collect($stemBlocks)->contains(fn (array $block): bool => ($block['type'] ?? null) === 'image'));
+            $this->assertSame($stemBlocks, $stemNodes);
 
             $tableBlock = collect($stemBlocks)->first(fn (array $block): bool => ($block['type'] ?? null) === 'table');
             $this->assertSame('Temperatura de ebullición (°C)', $tableBlock['rows'][0][0] ?? null);
@@ -84,6 +86,7 @@ MDX);
 
             $this->assertSame('A', $question['options'][0]['id'] ?? null);
             $this->assertStringContainsString('<strong>A</strong>', (string) ($question['options'][0]['text_html'] ?? ''));
+            $this->assertSame('paragraph', $question['options'][0]['nodes_mobile'][0]['type'] ?? null);
             $this->assertSame('B', $question['correct_option_id'] ?? null);
             $this->assertStringContainsString('Respuesta: B', (string) ($question['feedback_html'] ?? ''));
         } finally {

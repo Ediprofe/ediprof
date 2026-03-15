@@ -360,6 +360,11 @@ class AssessmentAttemptService
             ],
             'render_contract' => $this->contentNormalizer->renderContract(),
             'assets' => $this->contentNormalizer->normalizeAssetList(is_array($template->assets) ? $template->assets : []),
+            'asset_refs' => $this->contentNormalizer->normalizeAssetRefs(
+                is_array($template->asset_refs) && $template->asset_refs !== []
+                    ? $template->asset_refs
+                    : $this->contentNormalizer->buildAssetRefsFromStrings(is_array($template->assets) ? $template->assets : [])
+            ),
             'attempt' => [
                 'id' => $attempt->external_id,
                 'mode' => $attempt->mode,
@@ -395,6 +400,7 @@ class AssessmentAttemptService
         return $template->questions()
             ->where('is_active', true)
             ->with([
+                'questionOptions',
                 'contexts' => fn ($query) => $query
                     ->where('assessment_contexts.is_active', true)
                     ->orderBy('assessment_question_contexts.order_base'),
@@ -414,6 +420,7 @@ class AssessmentAttemptService
     {
         $assignment->loadMissing([
             'questions' => fn ($query) => $query->orderBy('order_base'),
+            'questions.question.questionOptions',
             'questions.question.contexts' => fn ($query) => $query
                 ->where('assessment_contexts.is_active', true)
                 ->orderBy('assessment_question_contexts.order_base'),
@@ -494,11 +501,14 @@ class AssessmentAttemptService
                     ->unique()
                     ->values()
                     ->all();
+                $contextAssetRefs = $this->contentNormalizer->buildAssetRefsFromStrings($contextAssets);
 
                 $contextBlocks = $contexts
                     ->flatMap(static fn ($context): array => is_array($context->context_blocks) ? $context->context_blocks : [])
                     ->values()
                     ->all();
+
+                $options = $this->resolveQuestionOptions($question);
 
                 return [
                     'id' => $question->external_id,
@@ -514,27 +524,68 @@ class AssessmentAttemptService
                     'context_mdx' => $contextMdx,
                     'context_html' => $contextHtml,
                     'context_assets' => $contextAssets,
+                    'context_asset_refs' => $contextAssetRefs,
                     'context_blocks' => $contextBlocks,
+                    'context_nodes' => $contextBlocks,
                     'stem_mdx' => (string) ($question->stem_mdx ?? ''),
                     'stem_html' => (string) ($question->stem_html ?? ''),
                     'stem_assets' => $question->stem_assets ?? [],
+                    'stem_asset_refs' => $this->contentNormalizer->buildAssetRefsFromStrings(is_array($question->stem_assets) ? $question->stem_assets : []),
                     'stem_blocks' => $question->stem_blocks ?? [],
-                    'options' => $question->options ?? [],
+                    'stem_nodes' => $question->stem_blocks ?? [],
+                    'options' => $options,
                     'correct_option_id' => $question->correct_option_id,
                     'feedback_mdx' => (string) ($question->feedback_mdx ?? ''),
                     'feedback_html' => (string) ($question->feedback_html ?? ''),
                     'feedback_summary' => $question->feedback_summary,
                     'feedback_assets' => $question->feedback_assets ?? [],
+                    'feedback_asset_refs' => $this->contentNormalizer->buildAssetRefsFromStrings(is_array($question->feedback_assets) ? $question->feedback_assets : []),
                     'feedback_blocks' => $question->feedback_blocks ?? [],
+                    'feedback_nodes' => $question->feedback_blocks ?? [],
                     'concepts_mdx' => (string) ($question->concepts_mdx ?? ''),
                     'concepts_html' => (string) ($question->concepts_html ?? ''),
                     'concepts_summary' => $question->concepts_summary,
                     'concepts_assets' => $question->concepts_assets ?? [],
+                    'concepts_asset_refs' => $this->contentNormalizer->buildAssetRefsFromStrings(is_array($question->concepts_assets) ? $question->concepts_assets : []),
                     'concepts_blocks' => $question->concepts_blocks ?? [],
+                    'concepts_nodes' => $question->concepts_blocks ?? [],
                     'app_payload_version' => $question->app_payload_version,
                 ];
             })
             ->all();
+    }
+
+    /**
+     * @return array<int, array<string, mixed>>
+     */
+    private function resolveQuestionOptions(AssessmentQuestion $question): array
+    {
+        if ($question->relationLoaded('questionOptions') && $question->questionOptions->isNotEmpty()) {
+            return $question->questionOptions
+                ->sortBy('order_base')
+                ->values()
+                ->map(static function ($option): array {
+                    $assetRefs = is_array($option->asset_refs) ? $option->asset_refs : [];
+
+                    return [
+                        'id' => (string) $option->option_id,
+                        'text' => (string) ($option->plain_text ?? ''),
+                        'text_html' => filled($option->html_web ?? null) ? (string) $option->html_web : '',
+                        'text_assets' => collect($assetRefs)
+                            ->filter(static fn ($asset): bool => is_array($asset) && filled($asset['src'] ?? null))
+                            ->map(static fn (array $asset): string => (string) $asset['src'])
+                            ->values()
+                            ->all(),
+                        'asset_refs' => $assetRefs,
+                        'nodes_mobile' => is_array($option->nodes_mobile) ? $option->nodes_mobile : [],
+                        'is_correct' => (bool) $option->is_correct,
+                        'order_base' => (int) $option->order_base,
+                    ];
+                })
+                ->all();
+        }
+
+        return is_array($question->options) ? $question->options : [];
     }
 
     /**
@@ -767,11 +818,13 @@ class AssessmentAttemptService
             $payload['feedback_summary'] = null;
             $payload['feedback_assets'] = [];
             $payload['feedback_blocks'] = [];
+            $payload['feedback_nodes'] = [];
             $payload['concepts_mdx'] = '';
             $payload['concepts_html'] = '';
             $payload['concepts_summary'] = null;
             $payload['concepts_assets'] = [];
             $payload['concepts_blocks'] = [];
+            $payload['concepts_nodes'] = [];
             $payload['options'] = array_map(static function (array $option): array {
                 unset($option['is_correct']);
 
@@ -818,6 +871,9 @@ class AssessmentAttemptService
             'feedback_blocks' => $includeReviewFields
                 ? $this->contentNormalizer->normalizeBlocks(is_array($snapshotQuestion['feedback_blocks'] ?? null) ? $snapshotQuestion['feedback_blocks'] : [])
                 : [],
+            'feedback_nodes' => $includeReviewFields
+                ? $this->contentNormalizer->normalizeBlocks(is_array($snapshotQuestion['feedback_nodes'] ?? null) ? $snapshotQuestion['feedback_nodes'] : (is_array($snapshotQuestion['feedback_blocks'] ?? null) ? $snapshotQuestion['feedback_blocks'] : []))
+                : [],
             'concepts_mdx' => $includeReviewFields ? (string) ($snapshotQuestion['concepts_mdx'] ?? '') : '',
             'concepts_html' => $includeReviewFields
                 ? $this->contentNormalizer->normalizeHtml((string) ($snapshotQuestion['concepts_html'] ?? ''))
@@ -827,6 +883,9 @@ class AssessmentAttemptService
                 : null,
             'concepts_blocks' => $includeReviewFields
                 ? $this->contentNormalizer->normalizeBlocks(is_array($snapshotQuestion['concepts_blocks'] ?? null) ? $snapshotQuestion['concepts_blocks'] : [])
+                : [],
+            'concepts_nodes' => $includeReviewFields
+                ? $this->contentNormalizer->normalizeBlocks(is_array($snapshotQuestion['concepts_nodes'] ?? null) ? $snapshotQuestion['concepts_nodes'] : (is_array($snapshotQuestion['concepts_blocks'] ?? null) ? $snapshotQuestion['concepts_blocks'] : []))
                 : [],
         ];
     }

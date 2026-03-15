@@ -1,4 +1,4 @@
-export type InlineVariant = 'plain' | 'highlight' | 'strike' | 'bold';
+export type InlineVariant = 'plain' | 'highlight' | 'strike' | 'bold' | 'italic';
 
 export type InlineSegment = {
   text: string;
@@ -7,10 +7,13 @@ export type InlineSegment = {
 
 export type StemBlock =
   | { type: 'paragraph'; text?: string; inlines?: InlineSegment[] }
+  | { type: 'heading'; depth: number; inlines?: InlineSegment[] }
+  | { type: 'list'; ordered: boolean; items: Array<{ inlines?: InlineSegment[] }> }
   | { type: 'math'; text: string }
   | { type: 'equation'; latex: string }
   | { type: 'table'; rows: string[][] }
-  | { type: 'image'; alt?: string; url?: string; src?: string };
+  | { type: 'image'; alt?: string; url?: string; src?: string }
+  | { type: 'html'; html: string };
 
 export function toSubscriptDigits(value: string): string {
   const digits: Record<string, string> = {

@@ -151,6 +151,10 @@ Notes:
 
 Long-term source of truth should be **Laravel database + storage**, not `MDX`.
 
+Detailed proposed schema and migration direction:
+
+- [Laravel Canonical Content Model](/Users/edilbertosuarez/Documents/EDIPROFE.COM/ediprof/docs/new-features/laravel-canonical-content-model.md)
+
 Recommended content ownership model:
 
 - Laravel stores canonical question/context/option records

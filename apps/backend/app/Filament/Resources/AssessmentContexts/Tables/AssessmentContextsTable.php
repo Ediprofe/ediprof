@@ -39,8 +39,8 @@ class AssessmentContextsTable
                 TextColumn::make('questions_count')
                     ->label('Preguntas')
                     ->sortable(),
-                TextColumn::make('topic')
-                    ->label('Tema')
+                TextColumn::make('subject_label')
+                    ->label('Materia')
                     ->searchable()
                     ->sortable()
                     ->placeholder('Sin clasificar'),
@@ -97,6 +97,6 @@ class AssessmentContextsTable
                 EditAction::make(),
             ])
             ->emptyStateHeading('Todavía no hay contextos sincronizados.')
-            ->emptyStateDescription('Los contextos compartidos llegan desde MDX y aquí administras su clasificación y notas docentes.');
+            ->emptyStateDescription('Aquí administras la clasificación mínima del banco canónico y sus contextos compartidos.');
     }
 }

@@ -55,6 +55,7 @@ class WorkshopApiTest extends TestCase
             ->assertJsonPath('data.id', 'content:saber:quimica/la-materia/taller')
             ->assertJsonPath('data.render_contract.strategy', 'html_first')
             ->assertJsonPath('data.stats.total_questions', 1)
+            ->assertJsonPath('data.asset_refs.0.src', 'https://cdn.ediprofe.com/img/saber/quimica/candado-de-hierro.webp')
             ->assertJsonPath('data.questions.0.correct_option_id', 'A');
     }
 
@@ -261,7 +262,15 @@ class WorkshopApiTest extends TestCase
             ->assertOk()
             ->assertJsonPath('data.assets.0', 'https://ediprofe.com/images/simulacros/quimica/curva-solubilidad-azucar-agua.svg')
             ->assertJsonPath(
+                'data.asset_refs.0.src',
+                'https://ediprofe.com/images/simulacros/quimica/curva-solubilidad-azucar-agua.svg'
+            )
+            ->assertJsonPath(
                 'data.questions.0.stem_assets.0',
+                'https://ediprofe.com/images/simulacros/quimica/curva-solubilidad-azucar-agua.svg'
+            )
+            ->assertJsonPath(
+                'data.questions.0.stem_asset_refs.0.src',
                 'https://ediprofe.com/images/simulacros/quimica/curva-solubilidad-azucar-agua.svg'
             )
             ->assertJsonPath(
@@ -269,12 +278,24 @@ class WorkshopApiTest extends TestCase
                 'https://ediprofe.com/images/simulacros/quimica/curva-solubilidad-azucar-agua.svg'
             )
             ->assertJsonPath(
+                'data.questions.0.options.0.asset_refs.0.src',
+                'https://ediprofe.com/images/simulacros/quimica/curva-solubilidad-azucar-agua.svg'
+            )
+            ->assertJsonPath(
                 'data.questions.0.stem_blocks.0.src',
+                'https://ediprofe.com/images/simulacros/quimica/curva-solubilidad-azucar-agua.svg'
+            )
+            ->assertJsonPath(
+                'data.questions.0.stem_nodes.0.src',
                 'https://ediprofe.com/images/simulacros/quimica/curva-solubilidad-azucar-agua.svg'
             )
             ->assertJsonPath(
                 'data.questions.0.feedback_blocks.0.src',
                 'https://ediprofe.com/images/simulacros/quimica/curva-solubilidad-azucar-agua.svg'
+            )
+            ->assertJsonPath(
+                'data.render_contract.mobile_node_fields.0',
+                'context_nodes'
             );
 
         $this->assertStringContainsString(
@@ -342,7 +363,8 @@ class WorkshopApiTest extends TestCase
             ->assertJsonPath('data.correct_option_id', 'A')
             ->assertJsonPath('data.is_correct', true)
             ->assertJsonPath('data.feedback_mdx', 'Retro para estudiante')
-            ->assertJsonPath('data.feedback_blocks.0.type', 'paragraph');
+            ->assertJsonPath('data.feedback_blocks.0.type', 'paragraph')
+            ->assertJsonPath('data.feedback_nodes.0.type', 'paragraph');
     }
 
     public function test_it_rejects_invalid_option_during_evaluation(): void

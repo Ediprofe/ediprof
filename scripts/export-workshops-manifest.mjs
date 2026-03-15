@@ -183,16 +183,19 @@ async function buildContextPayload(content, filePath) {
       context_html: '',
       context_assets: [],
       context_blocks: [],
+      context_nodes: [],
     };
   }
 
   const contextAssets = extractAssetRefs(rawContext);
+  const contextNodes = buildBlocks(rawContext, contextAssets);
 
   return {
     context_mdx: contextMdx,
     context_html: await renderPracticeFragmentHtml(contextMdx, { filePath }),
     context_assets: contextAssets,
-    context_blocks: buildBlocks(rawContext, contextAssets),
+    context_blocks: contextNodes,
+    context_nodes: contextNodes,
   };
 }
 
@@ -353,12 +356,14 @@ async function parseOptions(optionsBody, filePath) {
     const optionText = cleanInlineMarkdown(stripHtmlTags(rawOptionContent));
     const optionAssets = extractAssetRefs(rawOptionContent);
     const optionHtml = await renderPracticeFragmentHtml(optionMdx, { filePath });
+    const optionNodes = buildBlocks(rawOptionContent, optionAssets);
 
     options.push({
       id: optionId || `OPT_${options.length + 1}`,
       text: optionText,
       text_html: optionHtml,
       text_assets: optionAssets,
+      nodes_mobile: optionNodes,
       is_correct: isCorrect,
     });
   }
@@ -414,6 +419,9 @@ async function parseQuestion(section, filePath) {
   const stemAssets = extractAssetRefs(stemMdxRaw);
   const feedbackAssets = extractAssetRefs(feedbackMdxRaw);
   const conceptsAssets = extractAssetRefs(conceptsMdxRaw);
+  const stemNodes = buildBlocks(stemMdxRaw, stemAssets);
+  const feedbackNodes = buildBlocks(feedbackMdxRaw, feedbackAssets);
+  const conceptsNodes = buildBlocks(conceptsMdxRaw, conceptsAssets);
 
   const questionId = String(attrs.id || section.number).trim();
   const anioRaw = attrs.anio ? Number.parseInt(String(attrs.anio), 10) : null;
@@ -443,19 +451,22 @@ async function parseQuestion(section, filePath) {
     stem_mdx: stemMdx,
     stem_html: stemHtml,
     stem_assets: stemAssets,
-    stem_blocks: buildBlocks(stemMdxRaw, stemAssets),
+    stem_blocks: stemNodes,
+    stem_nodes: stemNodes,
     options,
     correct_option_id: correctOption?.id ?? null,
     feedback_mdx: feedbackMdx,
     feedback_html: feedbackHtml,
     feedback_summary: answerDetails?.summary?.trim() || 'Respuesta',
     feedback_assets: feedbackAssets,
-    feedback_blocks: buildBlocks(feedbackMdxRaw, feedbackAssets),
+    feedback_blocks: feedbackNodes,
+    feedback_nodes: feedbackNodes,
     concepts_mdx: conceptsMdx,
     concepts_html: conceptsHtml,
     concepts_summary: conceptDetails?.summary?.trim() || 'Conceptos relacionados',
     concepts_assets: conceptsAssets,
-    concepts_blocks: buildBlocks(conceptsMdxRaw, conceptsAssets),
+    concepts_blocks: conceptsNodes,
+    concepts_nodes: conceptsNodes,
     app_payload_version: APP_PAYLOAD_VERSION,
     detached_context_mdx: detachedContext,
     context_refs: contextRefs,
@@ -604,6 +615,7 @@ async function buildWorkshopEntry(filePath, contentEntryMap, source) {
         context_html: context.context_html ?? '',
         context_assets: Array.isArray(context.context_assets) ? context.context_assets : [],
         context_blocks: Array.isArray(context.context_blocks) ? context.context_blocks : [],
+        context_nodes: Array.isArray(context.context_nodes) ? context.context_nodes : [],
         metadata: context.metadata ?? {},
       });
     }
@@ -651,6 +663,7 @@ async function buildWorkshopEntry(filePath, contentEntryMap, source) {
       .join('\n');
     const contextAssets = [...new Set(contextPayloads.flatMap((context) => context.context_assets || []))];
     const contextBlocks = contextPayloads.flatMap((context) => context.context_blocks || []);
+    const contextNodes = contextPayloads.flatMap((context) => context.context_nodes || []);
 
     questions.push({
       ...question,
@@ -661,6 +674,7 @@ async function buildWorkshopEntry(filePath, contentEntryMap, source) {
       context_html: contextHtml,
       context_assets: contextAssets,
       context_blocks: contextBlocks,
+      context_nodes: contextNodes,
     });
   });
 

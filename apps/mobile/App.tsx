@@ -13,7 +13,6 @@ import {
 } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { QuestionStem } from './src/components/QuestionStem';
-import { cleanInlineForRender } from './src/lib/workshopRender';
 import { WorkshopCard } from './src/components/WorkshopCard';
 import {
   ApiRequestError,
@@ -1242,6 +1241,7 @@ export default function App() {
               <QuestionStem
                 stem={currentQuestion.stem_mdx ?? ''}
                 stemAssets={currentQuestion.stem_assets}
+                nodes={currentQuestion.stem_nodes}
                 blocks={currentQuestion.stem_blocks}
               />
 
@@ -1264,9 +1264,17 @@ export default function App() {
                       ]}
                       disabled={submittingAnswer}
                     >
-                      <Text style={styles.optionText}>
-                        {option.id}. {cleanInlineForRender(option.text)}
-                      </Text>
+                      <View style={styles.optionInner}>
+                        <Text style={styles.optionLetter}>{option.id}</Text>
+                        <View style={styles.optionContent}>
+                          <QuestionStem
+                            stem={option.text}
+                            stemAssets={option.text_assets ?? []}
+                            nodes={option.nodes_mobile}
+                            compact
+                          />
+                        </View>
+                      </View>
                     </Pressable>
                   );
                 })}
@@ -1321,6 +1329,7 @@ export default function App() {
                   <QuestionStem
                     stem={evaluation.feedback_mdx ?? ''}
                     stemAssets={evaluation.feedback_assets}
+                    nodes={evaluation.feedback_nodes}
                     blocks={evaluation.feedback_blocks}
                   />
                 </View>
@@ -1671,6 +1680,26 @@ const styles = StyleSheet.create({
     backgroundColor: '#0f1a35',
     paddingHorizontal: 10,
     paddingVertical: 10,
+  },
+  optionInner: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    gap: 10,
+  },
+  optionLetter: {
+    width: 30,
+    height: 30,
+    borderRadius: 999,
+    backgroundColor: 'rgba(255,255,255,0.08)',
+    color: '#e7efff',
+    fontSize: 14,
+    fontWeight: '800',
+    textAlign: 'center',
+    lineHeight: 30,
+    flexShrink: 0,
+  },
+  optionContent: {
+    flex: 1,
   },
   optionSelected: {
     borderColor: '#5f8fff',

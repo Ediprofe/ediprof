@@ -6,6 +6,7 @@ use App\Models\AssessmentAssignment;
 use App\Models\AssessmentAssignmentQuestion;
 use App\Models\AssessmentContext;
 use App\Models\AssessmentQuestion;
+use App\Models\AssessmentQuestionOption;
 use App\Models\AssessmentTemplate;
 use App\Models\Course;
 use App\Models\CourseContent;
@@ -116,7 +117,19 @@ class AssessmentAttemptApiTest extends TestCase
                 'https://ediprofe.com/images/simulacros/quimica/curva-solubilidad-azucar-agua.svg'
             )
             ->assertJsonPath(
+                'data.questions.0.stem_nodes.0.src',
+                'https://ediprofe.com/images/simulacros/quimica/curva-solubilidad-azucar-agua.svg'
+            )
+            ->assertJsonPath(
                 'data.questions.0.options.0.text_assets.0',
+                'https://ediprofe.com/images/simulacros/quimica/curva-solubilidad-azucar-agua.svg'
+            )
+            ->assertJsonPath(
+                'data.questions.0.stem_asset_refs.0.src',
+                'https://ediprofe.com/images/simulacros/quimica/curva-solubilidad-azucar-agua.svg'
+            )
+            ->assertJsonPath(
+                'data.questions.0.options.0.asset_refs.0.src',
                 'https://ediprofe.com/images/simulacros/quimica/curva-solubilidad-azucar-agua.svg'
             );
 
@@ -190,6 +203,56 @@ class AssessmentAttemptApiTest extends TestCase
             ->assertJsonPath('data.questions.0.id', 'q-1')
             ->assertJsonPath('data.questions.1.id', 'q-2')
             ->assertJsonPath('data.evaluation_by_question.q-2.correct_option_id', 'A');
+    }
+
+    public function test_attempt_payload_reads_canonical_question_options_when_json_options_are_empty(): void
+    {
+        [$student, $workshop, $template] = $this->makeAssignedTemplate('taller');
+        $question = $template->questions()->where('external_id', 'q-1')->firstOrFail();
+
+        $question->update([
+            'options' => [],
+        ]);
+
+        AssessmentQuestionOption::query()->create([
+            'question_id' => $question->id,
+            'option_id' => 'A',
+            'order_base' => 1,
+            'is_correct' => false,
+            'plain_text' => 'Incorrecta canonical',
+            'html_web' => '<span>Incorrecta canonical</span>',
+            'nodes_mobile' => [],
+            'asset_refs' => [],
+            'metadata' => [],
+        ]);
+
+        AssessmentQuestionOption::query()->create([
+            'question_id' => $question->id,
+            'option_id' => 'B',
+            'order_base' => 2,
+            'is_correct' => true,
+            'plain_text' => 'Correcta canonical',
+            'html_web' => '<span><strong>Correcta canonical</strong></span>',
+            'nodes_mobile' => [],
+            'asset_refs' => [],
+            'metadata' => [],
+        ]);
+
+        $token = $this->loginAndGetToken($student->email, 'Secret1234');
+
+        $response = $this->postJson(
+            '/api/v1/workshops/'.$workshop->external_id.'/attempts',
+            ['mode' => 'study'],
+            ['Authorization' => "Bearer {$token}"],
+        );
+
+        $response
+            ->assertOk()
+            ->assertJsonPath('data.questions.0.id', 'q-1')
+            ->assertJsonPath('data.questions.0.options.0.id', 'A')
+            ->assertJsonPath('data.questions.0.options.1.id', 'B')
+            ->assertJsonPath('data.questions.0.options.1.text_html', '<span><strong>Correcta canonical</strong></span>')
+            ->assertJsonPath('data.questions.0.options.1.nodes_mobile.0.type', 'paragraph');
     }
 
     public function test_student_can_start_assignment_attempt_with_selected_questions_and_stable_random_order(): void

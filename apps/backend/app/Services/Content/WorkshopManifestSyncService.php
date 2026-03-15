@@ -274,10 +274,12 @@ class WorkshopManifestSyncService
                 'stem_html' => $this->stringOrNull(Arr::get($question, 'stem_html')) ?? '',
                 'stem_assets' => $this->normalizeStringList(Arr::get($question, 'stem_assets', [])),
                 'stem_blocks' => $this->normalizeBlocks(Arr::get($question, 'stem_blocks', [])),
+                'stem_nodes' => $this->normalizeBlocks(Arr::get($question, 'stem_nodes', Arr::get($question, 'stem_blocks', []))),
                 'context_mdx' => $this->stringOrNull(Arr::get($question, 'context_mdx')) ?? '',
                 'context_html' => $this->stringOrNull(Arr::get($question, 'context_html')) ?? '',
                 'context_assets' => $this->normalizeStringList(Arr::get($question, 'context_assets', [])),
                 'context_blocks' => $this->normalizeBlocks(Arr::get($question, 'context_blocks', [])),
+                'context_nodes' => $this->normalizeBlocks(Arr::get($question, 'context_nodes', Arr::get($question, 'context_blocks', []))),
                 'options' => $options,
                 'correct_option_id' => $correctOptionId,
                 'feedback_mdx' => $this->stringOrNull(Arr::get($question, 'feedback_mdx')) ?? '',
@@ -285,11 +287,13 @@ class WorkshopManifestSyncService
                 'feedback_summary' => $this->stringOrNull(Arr::get($question, 'feedback_summary')) ?? null,
                 'feedback_assets' => $this->normalizeStringList(Arr::get($question, 'feedback_assets', [])),
                 'feedback_blocks' => $this->normalizeBlocks(Arr::get($question, 'feedback_blocks', [])),
+                'feedback_nodes' => $this->normalizeBlocks(Arr::get($question, 'feedback_nodes', Arr::get($question, 'feedback_blocks', []))),
                 'concepts_mdx' => $this->stringOrNull(Arr::get($question, 'concepts_mdx')) ?? '',
                 'concepts_html' => $this->stringOrNull(Arr::get($question, 'concepts_html')) ?? '',
                 'concepts_summary' => $this->stringOrNull(Arr::get($question, 'concepts_summary')) ?? null,
                 'concepts_assets' => $this->normalizeStringList(Arr::get($question, 'concepts_assets', [])),
                 'concepts_blocks' => $this->normalizeBlocks(Arr::get($question, 'concepts_blocks', [])),
+                'concepts_nodes' => $this->normalizeBlocks(Arr::get($question, 'concepts_nodes', Arr::get($question, 'concepts_blocks', []))),
                 'app_payload_version' => is_numeric(Arr::get($question, 'app_payload_version'))
                     ? (int) Arr::get($question, 'app_payload_version')
                     : null,
@@ -300,7 +304,7 @@ class WorkshopManifestSyncService
     }
 
     /**
-     * @return array<int, array{id:string,text:string,text_html?:string,text_assets?:array<int,string>,is_correct:bool}>
+     * @return array<int, array{id:string,text:string,text_html?:string,text_assets?:array<int,string>,nodes_mobile?:array<int, array<string,mixed>>,is_correct:bool}>
      */
     private function normalizeOptions(mixed $options): array
     {
@@ -330,6 +334,7 @@ class WorkshopManifestSyncService
                 'text' => $text,
                 'text_html' => $textHtml ?? '',
                 'text_assets' => $this->normalizeStringList(Arr::get($option, 'text_assets', [])),
+                'nodes_mobile' => $this->normalizeBlocks(Arr::get($option, 'nodes_mobile', [])),
                 'is_correct' => $isCorrect,
             ];
         }
@@ -343,6 +348,7 @@ class WorkshopManifestSyncService
                     'text' => "Opción {$optionId}",
                     'text_html' => '',
                     'text_assets' => [],
+                    'nodes_mobile' => [],
                     'is_correct' => false,
                 ];
             }

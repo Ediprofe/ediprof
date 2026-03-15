@@ -7,6 +7,7 @@ La regla vigente para este payload es:
 
 - `html` es la fuente principal de render
 - `blocks` quedan como fallback legado
+- `*_nodes` y `options.nodes_mobile` son el contrato explícito para móvil
 - los assets relativos del proyecto se normalizan a URLs absolutas desde backend
 
 ## Generación
@@ -40,6 +41,13 @@ Cada payload expone:
       "feedback_blocks",
       "concepts_blocks"
     ],
+    "mobile_node_fields": [
+      "context_nodes",
+      "stem_nodes",
+      "feedback_nodes",
+      "concepts_nodes",
+      "options.nodes_mobile"
+    ],
     "asset_url_policy": "absolute_or_data_uri"
   }
 }
@@ -50,6 +58,12 @@ Cada payload expone:
 2. Si no existe `*_html`, usa `*_blocks`.
 3. Si tampoco existe `*_blocks`, cae a texto plano solo como último fallback.
 
+### Regla práctica para móvil
+1. Si existe `*_nodes`, usa `*_nodes`.
+2. Para opciones, usa `options[].nodes_mobile`.
+3. Si faltan, cae a `*_blocks`.
+4. Solo como último recurso, usa texto plano.
+
 ## Estructura por pregunta (v1)
 
 ```json
@@ -59,6 +73,15 @@ Cada payload expone:
   "stem_mdx": "...",
   "stem_html": "<p>Texto de la pregunta</p>",
   "stem_assets": ["https://ediprofe.com/images/..."],
+  "stem_nodes": [
+    {
+      "type": "paragraph",
+      "inlines": [
+        { "text": "Texto normal ", "variant": "plain" },
+        { "text": "resaltado", "variant": "highlight" }
+      ]
+    }
+  ],
   "stem_blocks": [
     {
       "type": "paragraph",
@@ -70,13 +93,20 @@ Cada payload expone:
   ],
   "context_html": "<p>Contexto compartido</p>",
   "context_assets": ["https://ediprofe.com/images/..."],
+  "context_nodes": [],
   "context_blocks": [],
   "options": [
     {
       "id": "A",
       "text": "Texto plano",
       "text_html": "<span>Texto rico</span>",
-      "text_assets": ["https://ediprofe.com/images/..."]
+      "text_assets": ["https://ediprofe.com/images/..."],
+      "nodes_mobile": [
+        {
+          "type": "paragraph",
+          "inlines": [{ "text": "Texto rico", "variant": "plain" }]
+        }
+      ]
     },
     {
       "id": "B",
@@ -87,9 +117,11 @@ Cada payload expone:
   "feedback_mdx": "...",
   "feedback_html": "<p>Retroalimentación</p>",
   "feedback_assets": ["https://ediprofe.com/images/..."],
+  "feedback_nodes": [],
   "feedback_blocks": [],
   "concepts_html": "<p>Conceptos relacionados</p>",
   "concepts_assets": [],
+  "concepts_nodes": [],
   "concepts_blocks": [],
   "app_payload_version": 1
 }
@@ -135,14 +167,15 @@ Pero debe mantener:
 
 ## Estado actual
 - El exportador `scripts/export-workshops-manifest.mjs` ya genera HTML rico y `blocks`.
+- El exportador ya genera `*_nodes` y `options[].nodes_mobile` desde el mismo árbol real de markdown/mdx.
 - Los `blocks` ya no se construyen por heurísticas de líneas; se derivan desde el árbol real de markdown/mdx.
-- El sync backend (`workshops:sync-manifest`) persiste HTML, assets y fallback `blocks`.
+- El sync backend (`workshops:sync-manifest`) persiste HTML, assets y el contrato móvil explícito.
 - El backend normaliza assets relativos a URLs absolutas antes de responder a clientes.
 - `members v2` ya consume este contrato en modo `html-first`.
 - El frontend viejo de miembros se mantiene compatible, pero debe considerarse legado.
 
 ## Implicación para móvil
 Para móvil, la recomendación vigente es:
-- usar `html` como fuente principal con un renderer serio
-- usar `blocks` solo cuando falte `html`
+- usar `*_nodes` / `options[].nodes_mobile` como contrato principal
+- usar `blocks` solo como compatibilidad legado
 - no depender de parsear `MDX` o markdown crudo en la app

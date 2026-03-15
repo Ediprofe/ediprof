@@ -4,6 +4,7 @@ use App\Http\Controllers\Dev\WorkshopPreviewController;
 use App\Http\Controllers\Api\V1\AssessmentAssignmentController;
 use App\Http\Controllers\Api\V1\AssessmentAttemptController;
 use App\Http\Controllers\Web\Admin\AssessmentResultsExportController;
+use App\Http\Controllers\Web\Admin\AssessmentDraftPreviewController;
 use App\Http\Controllers\Web\AdminPanelHandoffController;
 use App\Http\Controllers\Web\MemberAuthController;
 use App\Http\Controllers\Web\MembersController;
@@ -51,3 +52,6 @@ Route::middleware('auth')->prefix('admin/exports')->name('admin.exports.')->grou
     Route::get('/courses/{course}/results.csv', [AssessmentResultsExportController::class, 'course'])
         ->name('courses.results');
 });
+
+Route::middleware('auth')->get('/admin/assessment-drafts/{template}/preview-web', AssessmentDraftPreviewController::class)
+    ->name('admin.assessment_drafts.preview_web');

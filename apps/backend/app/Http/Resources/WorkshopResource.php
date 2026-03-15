@@ -75,6 +75,11 @@ class WorkshopResource extends JsonResource
             ],
             'render_contract' => $normalizer->renderContract(),
             'assets' => $normalizer->normalizeAssetList(is_array($this->assets) ? $this->assets : []),
+            'asset_refs' => $normalizer->normalizeAssetRefs(
+                is_array($this->asset_refs ?? null)
+                    ? $this->asset_refs
+                    : $normalizer->buildAssetRefsFromStrings(is_array($this->assets) ? $this->assets : [])
+            ),
             'questions' => $questions,
             'updated_at' => $this->updated_at?->toIso8601String(),
         ];

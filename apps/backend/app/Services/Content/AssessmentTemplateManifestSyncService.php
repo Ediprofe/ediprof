@@ -4,14 +4,20 @@ namespace App\Services\Content;
 
 use App\Models\AssessmentContext;
 use App\Models\AssessmentQuestion;
+use App\Models\AssessmentQuestionOption;
 use App\Models\AssessmentQuestionContext;
 use App\Models\AssessmentTemplate;
+use App\Models\ContentAsset;
 use App\Models\Workshop;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Carbon;
 
 class AssessmentTemplateManifestSyncService
 {
+    public function __construct(
+        private readonly RichContentPayloadNormalizer $contentNormalizer,
+    ) {}
+
     /**
      * @param  array<string, array<string, mixed>>  $entriesByExternalId
      * @return array{total:int,created:int,updated:int,deleted:int,skipped:int}
@@ -93,7 +99,9 @@ class AssessmentTemplateManifestSyncService
 
             $this->syncContexts($template, Arr::get($entry, 'contexts', []));
             $this->syncQuestions($template, $questions, (string) (Arr::get($entry, 'route') ?? ''));
+            $this->syncQuestionOptions($template, $questions);
             $this->syncQuestionContextLinks($template, Arr::get($entry, 'question_context_links', []));
+            $this->syncContentAssets($template, $entry);
         }
 
         $deleted = 0;
@@ -330,6 +338,156 @@ class AssessmentTemplateManifestSyncService
         }
     }
 
+    private function syncQuestionOptions(AssessmentTemplate $template, mixed $questions): void
+    {
+        if (! is_array($questions)) {
+            $questions = [];
+        }
+
+        $questionMap = $template->questions()
+            ->where('is_active', true)
+            ->get()
+            ->keyBy('external_id');
+
+        $questionIds = $questionMap->pluck('id')->filter()->values()->all();
+        if ($questionIds !== []) {
+            AssessmentQuestionOption::query()
+                ->whereIn('question_id', $questionIds)
+                ->delete();
+        }
+
+        $rows = [];
+
+        foreach ($questions as $questionIndex => $question) {
+            if (! is_array($question)) {
+                continue;
+            }
+
+            $externalId = trim((string) ($question['id'] ?? ''));
+            if ($externalId === '') {
+                continue;
+            }
+
+            $questionModel = $questionMap->get($externalId);
+            if (! $questionModel instanceof AssessmentQuestion) {
+                continue;
+            }
+
+            $correctOptionId = trim((string) ($question['correct_option_id'] ?? ''));
+            $options = is_array($question['options'] ?? null) ? $question['options'] : [];
+
+            foreach ($options as $optionIndex => $option) {
+                if (! is_array($option)) {
+                    continue;
+                }
+
+                $optionId = trim((string) ($option['id'] ?? ''));
+                if ($optionId === '') {
+                    continue;
+                }
+
+                $textAssets = $this->normalizeStringList($option['text_assets'] ?? []);
+                $rows[] = [
+                    'question_id' => $questionModel->id,
+                    'option_id' => $optionId,
+                    'order_base' => max((int) ($option['order_base'] ?? ($optionIndex + 1)), 1),
+                    'is_correct' => array_key_exists('is_correct', $option)
+                        ? (bool) $option['is_correct']
+                        : ($correctOptionId !== '' && $correctOptionId === $optionId),
+                    'plain_text' => (string) ($option['text'] ?? ''),
+                    'html_web' => filled($option['text_html'] ?? null) ? (string) $option['text_html'] : null,
+                    'nodes_mobile' => $this->encodeJsonValue($this->normalizeArrayValue($option['nodes_mobile'] ?? [])),
+                    'asset_refs' => $this->encodeJsonValue($this->buildAssetRefsFromStrings($textAssets)),
+                    'metadata' => $this->encodeJsonValue([
+                        'legacy_text_assets' => $textAssets,
+                        'question_external_id' => $externalId,
+                        'question_order' => max((int) ($question['order_base'] ?? $question['order'] ?? ($questionIndex + 1)), 1),
+                    ]),
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ];
+            }
+        }
+
+        if ($rows !== []) {
+            AssessmentQuestionOption::query()->insert($rows);
+        }
+    }
+
+    private function syncContentAssets(AssessmentTemplate $template, mixed $entry): void
+    {
+        if (! is_array($entry)) {
+            return;
+        }
+
+        $assetMap = [];
+
+        foreach ($this->normalizeAssetRefs(Arr::get($entry, 'asset_refs', [])) as $assetRef) {
+            $src = trim((string) ($assetRef['src'] ?? ''));
+            if ($src === '') {
+                continue;
+            }
+
+            $assetMap[$src] = [
+                'src' => $src,
+                'type' => (string) ($assetRef['type'] ?? $this->inferAssetKind($src)),
+                'metadata' => $assetRef,
+            ];
+        }
+
+        foreach ($this->collectStringAssetRefsFromEntry($entry) as $src) {
+            if (! isset($assetMap[$src])) {
+                $assetMap[$src] = [
+                    'src' => $src,
+                    'type' => $this->inferAssetKind($src),
+                    'metadata' => [],
+                ];
+            }
+        }
+
+        if ($assetMap === []) {
+            return;
+        }
+
+        $rows = [];
+        foreach ($assetMap as $src => $asset) {
+            $canonicalUrl = $this->resolveCanonicalAssetUrl($src);
+            $rows[] = [
+                'asset_key' => sha1($src),
+                'source_ref' => $src,
+                'canonical_url' => $canonicalUrl,
+                'asset_kind' => (string) ($asset['type'] ?? $this->inferAssetKind($src)),
+                'mime_type' => $this->inferMimeType($src),
+                'fallback_url' => null,
+                'width' => null,
+                'height' => null,
+                'metadata' => $this->encodeJsonValue([
+                    'template_external_id' => $template->external_id,
+                    'source_content_type' => $template->source_content_type,
+                    'asset_ref' => $asset['metadata'] ?? [],
+                ]),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ];
+        }
+
+        ContentAsset::query()->upsert(
+            $rows,
+            ['asset_key'],
+            [
+                'source_ref',
+                'canonical_url',
+                'asset_kind',
+                'mime_type',
+                'fallback_url',
+                'width',
+                'height',
+                'metadata',
+                'updated_at',
+            ],
+        );
+    }
+
     /**
      * @return array<int, mixed>
      */
@@ -372,6 +530,104 @@ class AssessmentTemplateManifestSyncService
         }
 
         return array_values(array_filter($value, static fn ($item): bool => is_array($item) && filled($item['src'] ?? null)));
+    }
+
+    /**
+     * @return array<int, string>
+     */
+    private function collectStringAssetRefsFromEntry(array $entry): array
+    {
+        $assetRefs = $this->normalizeStringList(Arr::get($entry, 'assets', []));
+
+        foreach (Arr::get($entry, 'contexts', []) as $context) {
+            if (! is_array($context)) {
+                continue;
+            }
+
+            $assetRefs = [
+                ...$assetRefs,
+                ...$this->normalizeStringList($context['context_assets'] ?? []),
+            ];
+        }
+
+        foreach (Arr::get($entry, 'questions', []) as $question) {
+            if (! is_array($question)) {
+                continue;
+            }
+
+            $assetRefs = [
+                ...$assetRefs,
+                ...$this->normalizeStringList($question['context_assets'] ?? []),
+                ...$this->normalizeStringList($question['stem_assets'] ?? []),
+                ...$this->normalizeStringList($question['feedback_assets'] ?? []),
+                ...$this->normalizeStringList($question['concepts_assets'] ?? []),
+            ];
+
+            foreach ($question['options'] ?? [] as $option) {
+                if (! is_array($option)) {
+                    continue;
+                }
+
+                $assetRefs = [
+                    ...$assetRefs,
+                    ...$this->normalizeStringList($option['text_assets'] ?? []),
+                ];
+            }
+        }
+
+        return array_values(array_unique(array_filter($assetRefs)));
+    }
+
+    /**
+     * @param  array<int, string>  $assets
+     * @return array<int, array<string, mixed>>
+     */
+    private function buildAssetRefsFromStrings(array $assets): array
+    {
+        $rows = [];
+
+        foreach (array_values(array_unique(array_filter($assets))) as $index => $src) {
+            $rows[] = [
+                'asset_id' => 'asset:'.substr(sha1($src), 0, 24).':'.($index + 1),
+                'src' => $src,
+                'alt' => null,
+                'caption' => null,
+                'type' => $this->inferAssetKind($src),
+            ];
+        }
+
+        return $rows;
+    }
+
+    private function resolveCanonicalAssetUrl(string $src): string
+    {
+        $assets = $this->contentNormalizer->normalizeAssetList([$src]);
+
+        return $assets[0] ?? trim($src);
+    }
+
+    private function inferAssetKind(string $src): string
+    {
+        return match (true) {
+            preg_match('/\.svg$/i', $src) === 1 => 'svg',
+            preg_match('/\.(png|jpg|jpeg|webp|gif|avif)$/i', $src) === 1 => 'image',
+            preg_match('/\.pdf$/i', $src) === 1 => 'document',
+            default => 'asset',
+        };
+    }
+
+    private function inferMimeType(string $src): ?string
+    {
+        return match (strtolower((string) pathinfo(parse_url($src, PHP_URL_PATH) ?: $src, PATHINFO_EXTENSION))) {
+            'svg' => 'image/svg+xml',
+            'png' => 'image/png',
+            'jpg', 'jpeg' => 'image/jpeg',
+            'webp' => 'image/webp',
+            'gif' => 'image/gif',
+            'avif' => 'image/avif',
+            'pdf' => 'application/pdf',
+            default => null,
+        };
     }
 
     private function resolveDefaultMode(string $contentType): string

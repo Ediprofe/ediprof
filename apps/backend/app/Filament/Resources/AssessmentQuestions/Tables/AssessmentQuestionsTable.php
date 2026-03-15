@@ -31,8 +31,8 @@ class AssessmentQuestionsTable
                     ->searchable()
                     ->sortable()
                     ->wrap(),
-                TextColumn::make('topic')
-                    ->label('Tema')
+                TextColumn::make('subject_label')
+                    ->label('Materia')
                     ->searchable()
                     ->sortable()
                     ->placeholder('Sin clasificar'),
@@ -40,11 +40,6 @@ class AssessmentQuestionsTable
                     ->label('Unidad')
                     ->searchable()
                     ->sortable()
-                    ->placeholder('Sin clasificar'),
-                TextColumn::make('subtopic')
-                    ->label('Subtema')
-                    ->searchable()
-                    ->toggleable()
                     ->placeholder('Sin clasificar'),
                 TextColumn::make('origin_label')
                     ->label('Origen')
@@ -103,6 +98,6 @@ class AssessmentQuestionsTable
                 EditAction::make(),
             ])
             ->emptyStateHeading('Todavía no hay preguntas sincronizadas.')
-            ->emptyStateDescription('Las preguntas llegan desde MDX y aquí solo administras su clasificación y notas docentes.');
+            ->emptyStateDescription('Aquí administras la clasificación mínima del banco canónico y su estado editorial.');
     }
 }

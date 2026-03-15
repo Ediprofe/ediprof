@@ -12,14 +12,31 @@ class AssessmentQuestion extends Model
 {
     use HasFactory;
 
+    protected static function booted(): void
+    {
+        static::saving(function (self $question): void {
+            $subject = $question->subject_id ? AssessmentSubject::query()->find($question->subject_id) : null;
+            $unit = $question->unit_id ? AssessmentUnit::query()->find($question->unit_id) : null;
+            $originCollection = $question->origin_collection_id ? AssessmentOriginCollection::query()->find($question->origin_collection_id) : null;
+
+            $question->subject_label = $subject?->label;
+            $question->unit_label = $unit?->label;
+            $question->origin_label = $originCollection?->label;
+        });
+    }
+
     protected $fillable = [
         'template_id',
         'external_id',
         'order_base',
         'source_slug',
+        'subject_id',
+        'subject_label',
         'topic',
+        'unit_id',
         'unit_label',
         'subtopic',
+        'origin_collection_id',
         'origin_label',
         'editorial_status',
         'tags',
@@ -49,6 +66,9 @@ class AssessmentQuestion extends Model
     {
         return [
             'order_base' => 'integer',
+            'subject_id' => 'integer',
+            'unit_id' => 'integer',
+            'origin_collection_id' => 'integer',
             'is_active' => 'boolean',
             'tags' => 'array',
             'meta' => 'array',
@@ -68,6 +88,21 @@ class AssessmentQuestion extends Model
         return $this->belongsTo(AssessmentTemplate::class, 'template_id');
     }
 
+    public function subject(): BelongsTo
+    {
+        return $this->belongsTo(AssessmentSubject::class, 'subject_id');
+    }
+
+    public function unit(): BelongsTo
+    {
+        return $this->belongsTo(AssessmentUnit::class, 'unit_id');
+    }
+
+    public function originCollection(): BelongsTo
+    {
+        return $this->belongsTo(AssessmentOriginCollection::class, 'origin_collection_id');
+    }
+
     public function contexts(): BelongsToMany
     {
         return $this->belongsToMany(
@@ -81,6 +116,11 @@ class AssessmentQuestion extends Model
     public function assignmentQuestions(): HasMany
     {
         return $this->hasMany(AssessmentAssignmentQuestion::class, 'question_id');
+    }
+
+    public function questionOptions(): HasMany
+    {
+        return $this->hasMany(AssessmentQuestionOption::class, 'question_id')->orderBy('order_base');
     }
 
     public function attemptAnswers(): HasMany

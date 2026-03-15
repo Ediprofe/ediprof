@@ -110,8 +110,21 @@ export type RenderContract = {
     strategy: 'html_first';
     html_primary_fields: string[];
     block_fallback_fields: string[];
+    mobile_node_fields?: string[];
     asset_url_policy: string;
     notes: string[];
+};
+
+export type AssetRef = {
+    asset_id: string;
+    src: string;
+    alt?: string | null;
+    caption?: string | null;
+    type: string;
+    mime_type?: string | null;
+    fallback_url?: string | null;
+    width?: number | null;
+    height?: number | null;
 };
 
 export type AttemptOption = {
@@ -119,6 +132,8 @@ export type AttemptOption = {
     text: string;
     text_html?: string;
     text_assets?: string[];
+    asset_refs?: AssetRef[];
+    nodes_mobile?: Array<Record<string, any>>;
     is_correct?: boolean;
 };
 
@@ -132,10 +147,14 @@ export type AttemptEvaluation = {
     feedback_html?: string;
     feedback_summary?: string | null;
     feedback_blocks?: Array<Record<string, any>>;
+    feedback_nodes?: Array<Record<string, any>>;
+    feedback_asset_refs?: AssetRef[];
     concepts_mdx?: string;
     concepts_html?: string;
     concepts_summary?: string | null;
     concepts_blocks?: Array<Record<string, any>>;
+    concepts_nodes?: Array<Record<string, any>>;
+    concepts_asset_refs?: AssetRef[];
 };
 
 export type AttemptQuestion = {
@@ -144,19 +163,27 @@ export type AttemptQuestion = {
     stem_mdx?: string;
     stem_html?: string;
     stem_blocks?: Array<Record<string, any>>;
+    stem_nodes?: Array<Record<string, any>>;
+    stem_asset_refs?: AssetRef[];
     context_mdx?: string;
     context_html?: string;
     context_blocks?: Array<Record<string, any>>;
+    context_nodes?: Array<Record<string, any>>;
+    context_asset_refs?: AssetRef[];
     options?: AttemptOption[];
     correct_option_id?: string | null;
     feedback_mdx?: string;
     feedback_html?: string;
     feedback_summary?: string | null;
     feedback_blocks?: Array<Record<string, any>>;
+    feedback_nodes?: Array<Record<string, any>>;
+    feedback_asset_refs?: AssetRef[];
     concepts_mdx?: string;
     concepts_html?: string;
     concepts_summary?: string | null;
     concepts_blocks?: Array<Record<string, any>>;
+    concepts_nodes?: Array<Record<string, any>>;
+    concepts_asset_refs?: AssetRef[];
     selection_group_key?: string;
 };
 
@@ -173,6 +200,7 @@ export type AttemptPayload = {
         total_assets?: number;
     };
     render_contract?: RenderContract;
+    asset_refs?: AssetRef[];
     attempt: {
         id: string;
         mode: string;

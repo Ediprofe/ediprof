@@ -3,12 +3,15 @@
 namespace App\Filament\Resources\AssessmentContexts\Schemas;
 
 use App\Models\AssessmentContext;
+use App\Models\AssessmentOriginCollection;
+use App\Models\AssessmentSubject;
+use App\Models\AssessmentUnit;
 use Filament\Forms\Components\Placeholder;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TagsInput;
 use Filament\Forms\Components\Textarea;
-use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
+use Filament\Schemas\Components\Utilities\Get;
 use Illuminate\Support\Str;
 
 class AssessmentContextForm
@@ -32,21 +35,39 @@ class AssessmentContextForm
                 ->content(fn (?AssessmentContext $record): string => $record instanceof AssessmentContext
                     ? Str::limit(Str::of(strip_tags((string) $record->context_html))->squish()->value(), 420)
                     : ''),
-            TextInput::make('topic')
-                ->label('Tema')
-                ->maxLength(255)
+            Select::make('subject_id')
+                ->label('Materia')
+                ->options(fn (): array => AssessmentSubject::query()->where('is_active', true)->orderBy('label')->pluck('label', 'id')->all())
+                ->searchable()
+                ->preload()
+                ->native(false)
                 ->nullable(),
-            TextInput::make('unit_label')
+            Select::make('unit_id')
                 ->label('Unidad')
-                ->maxLength(255)
+                ->options(fn (Get $get): array => AssessmentUnit::query()
+                    ->where('is_active', true)
+                    ->when($get('subject_id'), fn ($query, $subjectId) => $query->where('subject_id', $subjectId))
+                    ->orderBy('label')
+                    ->pluck('label', 'id')
+                    ->all())
+                ->searchable()
+                ->preload()
+                ->native(false)
                 ->nullable(),
-            TextInput::make('subtopic')
-                ->label('Subtema')
-                ->maxLength(255)
-                ->nullable(),
-            TextInput::make('origin_label')
+            Select::make('origin_collection_id')
                 ->label('Origen')
-                ->maxLength(255)
+                ->helperText('El origen puede reutilizarse en distintas materias y unidades.')
+                ->options(fn (): array => AssessmentOriginCollection::query()
+                    ->where('is_active', true)
+                    ->orderBy('label')
+                    ->get()
+                    ->mapWithKeys(fn (AssessmentOriginCollection $collection): array => [
+                        $collection->id => sprintf('%s · %s', ucfirst($collection->origin_type), $collection->label),
+                    ])
+                    ->all())
+                ->searchable()
+                ->preload()
+                ->native(false)
                 ->nullable(),
             Select::make('editorial_status')
                 ->label('Estado editorial')

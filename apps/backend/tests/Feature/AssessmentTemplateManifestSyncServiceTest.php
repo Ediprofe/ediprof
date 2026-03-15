@@ -4,7 +4,9 @@ namespace Tests\Feature;
 
 use App\Models\AssessmentContext;
 use App\Models\AssessmentQuestion;
+use App\Models\AssessmentQuestionOption;
 use App\Models\AssessmentTemplate;
+use App\Models\ContentAsset;
 use App\Models\Workshop;
 use App\Services\Content\AssessmentTemplateManifestSyncService;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -138,6 +140,26 @@ class AssessmentTemplateManifestSyncServiceTest extends TestCase
         $this->assertSame('<p>Contexto de prueba</p>', $context->context_html);
         $this->assertSame('/saber/quimica/la-materia/taller#pregunta-1', $question->source_slug);
         $this->assertSame('<span><strong>Correcta</strong></span>', $question->options[0]['text_html'] ?? null);
+        $this->assertDatabaseHas('assessment_question_options', [
+            'question_id' => $question->id,
+            'option_id' => 'A',
+            'is_correct' => true,
+        ]);
+        $this->assertSame(
+            '<span><strong>Correcta</strong></span>',
+            AssessmentQuestionOption::query()
+                ->where('question_id', $question->id)
+                ->where('option_id', 'A')
+                ->value('html_web')
+        );
+        $this->assertDatabaseHas('content_assets', [
+            'asset_key' => sha1('https://cdn.ediprofe.com/img/saber/quimica/candado-de-hierro.webp'),
+            'asset_kind' => 'image',
+        ]);
+        $this->assertSame(
+            'https://cdn.ediprofe.com/img/saber/quimica/candado-de-hierro.webp',
+            ContentAsset::query()->where('asset_key', sha1('https://cdn.ediprofe.com/img/saber/quimica/candado-de-hierro.webp'))->value('canonical_url')
+        );
         $this->assertDatabaseHas('assessment_question_contexts', [
             'question_id' => $question->id,
             'context_id' => $context->id,
