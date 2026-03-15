@@ -13,10 +13,15 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withCommands()
     ->withMiddleware(function (Middleware $middleware): void {
+        $middleware->web(append: [
+            \App\Http\Middleware\HandleInertiaRequests::class,
+        ]);
+
         $middleware->alias([
             'resolve.api_token' => \App\Http\Middleware\ResolveApiTokenUser::class,
             'require.api_token' => \App\Http\Middleware\RequireApiToken::class,
             'require.admin' => \App\Http\Middleware\RequireAdminRole::class,
+            'ensure.member_session' => \App\Http\Middleware\EnsureMemberSession::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

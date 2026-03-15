@@ -300,7 +300,7 @@ class WorkshopManifestSyncService
     }
 
     /**
-     * @return array<int, array{id:string,text:string,is_correct:bool}>
+     * @return array<int, array{id:string,text:string,text_html?:string,text_assets?:array<int,string>,is_correct:bool}>
      */
     private function normalizeOptions(mixed $options): array
     {
@@ -317,6 +317,7 @@ class WorkshopManifestSyncService
 
             $id = $this->stringOrNull(Arr::get($option, 'id'));
             $text = $this->stringOrNull(Arr::get($option, 'text'));
+            $textHtml = $this->stringOrNull(Arr::get($option, 'text_html'));
 
             if ($id === null || $text === null) {
                 continue;
@@ -327,6 +328,8 @@ class WorkshopManifestSyncService
             $normalized[] = [
                 'id' => $id,
                 'text' => $text,
+                'text_html' => $textHtml ?? '',
+                'text_assets' => $this->normalizeStringList(Arr::get($option, 'text_assets', [])),
                 'is_correct' => $isCorrect,
             ];
         }
@@ -338,6 +341,8 @@ class WorkshopManifestSyncService
                 $normalized[] = [
                     'id' => $optionId,
                     'text' => "Opción {$optionId}",
+                    'text_html' => '',
+                    'text_assets' => [],
                     'is_correct' => false,
                 ];
             }

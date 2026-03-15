@@ -99,6 +99,33 @@ El exportador registra:
 
 Esto permite que web y móvil consuman el mismo material sin entender Astro.
 
+## Salida canónica para clientes
+El backend debe exponer el contenido rico con esta prioridad:
+
+1. `html` como fuente principal de render
+2. `blocks` como fallback legado
+3. texto plano solo como último recurso
+
+Eso aplica a:
+- `context_html`
+- `stem_html`
+- `feedback_html`
+- `concepts_html`
+- `options[].text_html`
+
+Y como fallback:
+- `context_blocks`
+- `stem_blocks`
+- `feedback_blocks`
+- `concepts_blocks`
+
+Los assets relativos del proyecto deben salir normalizados a URL absoluta canónica desde backend, para que:
+- web autenticada
+- web pública
+- y cliente móvil
+
+consuman el mismo contrato sin asumir mismo origen.
+
 ## Compatibilidad actual
 El pipeline todavía soporta:
 - `<details>` para retroalimentación

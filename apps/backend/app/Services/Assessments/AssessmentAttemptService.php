@@ -8,6 +8,7 @@ use App\Models\AssessmentAttemptAnswer;
 use App\Models\AssessmentQuestion;
 use App\Models\AssessmentTemplate;
 use App\Models\User;
+use App\Services\Content\RichContentPayloadNormalizer;
 use Carbon\CarbonInterface;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
@@ -17,6 +18,7 @@ class AssessmentAttemptService
 {
     public function __construct(
         private readonly AssessmentQuestionGroupService $questionGroups,
+        private readonly RichContentPayloadNormalizer $contentNormalizer,
     ) {}
 
     public function startTemplateAttempt(
@@ -356,7 +358,8 @@ class AssessmentAttemptService
                 'total_questions' => count($questionPayloads),
                 'total_assets' => (int) $template->total_assets,
             ],
-            'assets' => $template->assets ?? [],
+            'render_contract' => $this->contentNormalizer->renderContract(),
+            'assets' => $this->contentNormalizer->normalizeAssetList(is_array($template->assets) ? $template->assets : []),
             'attempt' => [
                 'id' => $attempt->external_id,
                 'mode' => $attempt->mode,
@@ -778,7 +781,7 @@ class AssessmentAttemptService
 
         unset($payload['meta']);
 
-        return $payload;
+        return $this->contentNormalizer->normalizeQuestion($payload);
     }
 
     /**
@@ -806,17 +809,25 @@ class AssessmentAttemptService
             'correct_option_id' => $includeReviewFields ? $correctOptionId : null,
             'is_correct' => $includeReviewFields ? $isCorrect : null,
             'feedback_mdx' => $includeReviewFields ? (string) ($snapshotQuestion['feedback_mdx'] ?? '') : '',
-            'feedback_html' => $includeReviewFields ? (string) ($snapshotQuestion['feedback_html'] ?? '') : '',
+            'feedback_html' => $includeReviewFields
+                ? $this->contentNormalizer->normalizeHtml((string) ($snapshotQuestion['feedback_html'] ?? ''))
+                : '',
             'feedback_summary' => $includeReviewFields
                 ? (filled($snapshotQuestion['feedback_summary'] ?? null) ? (string) $snapshotQuestion['feedback_summary'] : null)
                 : null,
-            'feedback_blocks' => $includeReviewFields ? (is_array($snapshotQuestion['feedback_blocks'] ?? null) ? $snapshotQuestion['feedback_blocks'] : []) : [],
+            'feedback_blocks' => $includeReviewFields
+                ? $this->contentNormalizer->normalizeBlocks(is_array($snapshotQuestion['feedback_blocks'] ?? null) ? $snapshotQuestion['feedback_blocks'] : [])
+                : [],
             'concepts_mdx' => $includeReviewFields ? (string) ($snapshotQuestion['concepts_mdx'] ?? '') : '',
-            'concepts_html' => $includeReviewFields ? (string) ($snapshotQuestion['concepts_html'] ?? '') : '',
+            'concepts_html' => $includeReviewFields
+                ? $this->contentNormalizer->normalizeHtml((string) ($snapshotQuestion['concepts_html'] ?? ''))
+                : '',
             'concepts_summary' => $includeReviewFields
                 ? (filled($snapshotQuestion['concepts_summary'] ?? null) ? (string) $snapshotQuestion['concepts_summary'] : null)
                 : null,
-            'concepts_blocks' => $includeReviewFields ? (is_array($snapshotQuestion['concepts_blocks'] ?? null) ? $snapshotQuestion['concepts_blocks'] : []) : [],
+            'concepts_blocks' => $includeReviewFields
+                ? $this->contentNormalizer->normalizeBlocks(is_array($snapshotQuestion['concepts_blocks'] ?? null) ? $snapshotQuestion['concepts_blocks'] : [])
+                : [],
         ];
     }
 

@@ -89,8 +89,8 @@ class AssessmentTemplateManifestSyncServiceTest extends TestCase
                         'stem_assets' => [],
                         'stem_blocks' => [],
                         'options' => [
-                            ['id' => 'A', 'text' => 'Correcta', 'is_correct' => true],
-                            ['id' => 'B', 'text' => 'Incorrecta', 'is_correct' => false],
+                            ['id' => 'A', 'text' => 'Correcta', 'text_html' => '<span><strong>Correcta</strong></span>', 'text_assets' => [], 'is_correct' => true],
+                            ['id' => 'B', 'text' => 'Incorrecta', 'text_html' => '<span>Incorrecta</span>', 'text_assets' => [], 'is_correct' => false],
                         ],
                         'correct_option_id' => 'A',
                         'feedback_mdx' => 'Retro',
@@ -137,6 +137,7 @@ class AssessmentTemplateManifestSyncServiceTest extends TestCase
         $this->assertNotNull($question);
         $this->assertSame('<p>Contexto de prueba</p>', $context->context_html);
         $this->assertSame('/saber/quimica/la-materia/taller#pregunta-1', $question->source_slug);
+        $this->assertSame('<span><strong>Correcta</strong></span>', $question->options[0]['text_html'] ?? null);
         $this->assertDatabaseHas('assessment_question_contexts', [
             'question_id' => $question->id,
             'context_id' => $context->id,

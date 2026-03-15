@@ -15,10 +15,6 @@ import { dirname, relative, resolve } from 'path';
 import { globSync } from 'glob';
 import {
   cleanInlineMarkdown,
-  isTableSeparatorRow,
-  normalizeMathForDisplay,
-  parseInlineSegments,
-  parseTableRow,
 } from '../src/scripts/workshops/inlineShared.js';
 import {
   parseMdxCommentDirective,
@@ -31,6 +27,7 @@ import {
   splitQuestionSections,
 } from '../src/scripts/workshops/authoringContractShared.js';
 import { renderPracticeFragmentHtml } from '../src/scripts/workshops/htmlShared.js';
+import { buildBlocks } from '../src/scripts/workshops/blocksShared.js';
 
 const DEFAULT_OUTPUT = '/tmp/ediprofe-workshops-manifest.json';
 const DEFAULT_CONTENT_MANIFEST = '/tmp/ediprofe-content-manifest.json';
@@ -144,17 +141,6 @@ function stripHtmlTags(text) {
     .trim();
 }
 
-function parseImageLine(line) {
-  const match = line.match(/^!\[([^\]]*)\]\(([^)]+)\)$/);
-  if (!match) return null;
-
-  const alt = (match[1] || '').trim();
-  const url = (match[2] || '').trim();
-  if (!url) return null;
-
-  return { alt, url };
-}
-
 function inferAssetType(ref) {
   if (/\.svg$/i.test(ref)) return 'svg';
   if (/\.(png|jpg|jpeg|webp|gif|avif)$/i.test(ref)) return 'image';
@@ -176,47 +162,9 @@ function buildAssetRefs(refs = []) {
     }));
 }
 
-function isUnorderedListLine(line) {
-  return /^[-*]\s+/.test(String(line || '').trim());
-}
-
-function isOrderedListLine(line) {
-  return /^\d+\.\s+/.test(String(line || '').trim());
-}
-
-function parseListItemText(line) {
-  return String(line || '')
-    .trim()
-    .replace(/^[-*]\s+/, '')
-    .replace(/^\d+\.\s+/, '')
-    .trim();
-}
-
 function isStructuralHtmlLine(line) {
   const normalized = String(line || '').trim();
   return /^<\/?(div|details|summary)\b[^>]*>$/i.test(normalized);
-}
-
-function parseHeadingLine(line) {
-  const normalized = String(line || '').trim();
-  const match = normalized.match(/^(#{1,6})\s+(.+)$/);
-  if (!match) return null;
-
-  return {
-    depth: match[1].length,
-    text: cleanInlineMarkdown(match[2] || ''),
-  };
-}
-
-function parseInlineEquationLine(line) {
-  const normalized = String(line || '').trim();
-  const match = normalized.match(/^\$\$\s*([\s\S]*?)\s*\$\$$/);
-  if (!match) return null;
-
-  const body = String(match[1] || '').trim();
-  if (!body) return null;
-
-  return normalizeMathForDisplay(cleanInlineMarkdown(body));
 }
 
 async function buildContextPayload(content, filePath) {
@@ -343,226 +291,6 @@ function parseSharedContextRanges(contextMdx) {
   return ranges;
 }
 
-function buildBlocks(content, assetRefs = []) {
-  const blocks = [];
-  const lines = String(content || '').replace(/\r\n/g, '\n').split('\n');
-  const renderedImages = new Set();
-  let isInsideComment = false;
-  let activeLayout = null;
-
-  function applyBlockLayout(block) {
-    if (!block || !activeLayout) return block;
-    return {
-      ...block,
-      layout: activeLayout,
-    };
-  }
-
-  let i = 0;
-  while (i < lines.length) {
-    const rawLine = lines[i] || '';
-    const line = rawLine.trim();
-
-    if (isInsideComment) {
-      if (line.includes('*/}')) {
-        isInsideComment = false;
-      }
-      i += 1;
-      continue;
-    }
-
-    if (line === '') {
-      i += 1;
-      continue;
-    }
-
-    if (line === '---') {
-      activeLayout = null;
-      i += 1;
-      continue;
-    }
-
-    if (isStructuralHtmlLine(line)) {
-      i += 1;
-      continue;
-    }
-
-    const commentDirective = parseMdxCommentDirective(line);
-    if (commentDirective?.type === 'layout' && commentDirective.layout === 'full-width') {
-      activeLayout = 'full-width';
-    }
-
-    if (line.includes('{/*') || commentDirective) {
-      if (line.startsWith('{/*') && !line.includes('*/}')) {
-        isInsideComment = true;
-      }
-      i += 1;
-      continue;
-    }
-
-    const image = parseImageLine(line);
-    if (image) {
-      renderedImages.add(image.url);
-      blocks.push(applyBlockLayout({
-        type: 'image',
-        src: image.url,
-        alt: image.alt,
-      }));
-      i += 1;
-      continue;
-    }
-
-    const heading = parseHeadingLine(line);
-    if (heading) {
-      blocks.push(applyBlockLayout({
-        type: 'heading',
-        depth: heading.depth,
-        inlines: parseInlineSegments(heading.text),
-      }));
-      i += 1;
-      continue;
-    }
-
-    const inlineEquation = parseInlineEquationLine(line);
-    if (inlineEquation) {
-      blocks.push(applyBlockLayout({
-        type: 'equation',
-        latex: inlineEquation,
-      }));
-      i += 1;
-      continue;
-    }
-
-    if (line === '$$') {
-      const mathLines = [];
-      i += 1;
-
-      while (i < lines.length && (lines[i] || '').trim() !== '$$') {
-        const value = (lines[i] || '').trim();
-        if (value !== '') {
-          mathLines.push(value);
-        }
-        i += 1;
-      }
-
-      blocks.push(applyBlockLayout({
-        type: 'equation',
-        latex: normalizeMathForDisplay(cleanInlineMarkdown(mathLines.join('\n'))),
-      }));
-
-      if (i < lines.length && (lines[i] || '').trim() === '$$') {
-        i += 1;
-      }
-
-      continue;
-    }
-
-    if (line.includes('|')) {
-      const tableLines = [];
-
-      while (i < lines.length) {
-        const candidate = (lines[i] || '').trim();
-        if (!candidate.includes('|')) {
-          break;
-        }
-        tableLines.push(candidate);
-        i += 1;
-      }
-
-      const rows = tableLines
-        .filter((row) => !isTableSeparatorRow(row))
-        .map(parseTableRow)
-        .filter((row) => row.length > 0);
-
-      if (rows.length > 0) {
-        blocks.push(applyBlockLayout({
-          type: 'table',
-          rows,
-        }));
-        continue;
-      }
-    }
-
-    if (isUnorderedListLine(line) || isOrderedListLine(line)) {
-      const ordered = isOrderedListLine(line);
-      const items = [];
-
-      while (i < lines.length) {
-        const candidate = (lines[i] || '').trim();
-        if (candidate === '') {
-          break;
-        }
-
-        const sameKind = ordered ? isOrderedListLine(candidate) : isUnorderedListLine(candidate);
-        if (!sameKind) {
-          break;
-        }
-
-        const text = cleanInlineMarkdown(parseListItemText(candidate));
-        if (text) {
-          items.push({
-            inlines: parseInlineSegments(text),
-          });
-        }
-
-        i += 1;
-      }
-
-      if (items.length > 0) {
-        blocks.push(applyBlockLayout({
-          type: 'list',
-          ordered,
-          items,
-        }));
-        continue;
-      }
-    }
-
-    const paragraphLines = [];
-    while (i < lines.length) {
-      const candidate = (lines[i] || '').trim();
-      if (candidate === '' || candidate === '$$' || candidate.includes('|') || candidate.includes('$$')) {
-        break;
-      }
-      if (parseImageLine(candidate)) {
-        break;
-      }
-      if (isStructuralHtmlLine(candidate)) {
-        i += 1;
-        continue;
-      }
-      if (isUnorderedListLine(candidate) || isOrderedListLine(candidate)) {
-        break;
-      }
-      if (candidate.includes('{/*')) {
-        break;
-      }
-      paragraphLines.push(candidate);
-      i += 1;
-    }
-
-    const text = cleanInlineMarkdown(paragraphLines.join(' '));
-    if (text) {
-      blocks.push(applyBlockLayout({
-        type: 'paragraph',
-        inlines: parseInlineSegments(text),
-      }));
-    }
-  }
-
-  assetRefs.forEach((asset) => {
-    if (!asset || renderedImages.has(asset)) return;
-    renderedImages.add(asset);
-    blocks.push({
-      type: 'image',
-      src: asset,
-      alt: 'Imagen de apoyo',
-    });
-  });
-
-  return blocks;
-}
-
 function extractAssetRefs(content) {
   const refs = [];
 
@@ -611,7 +339,7 @@ function toContentId(slugClean, source) {
   return `${source.idPrefix}${slugClean}`;
 }
 
-function parseOptions(optionsBody) {
+async function parseOptions(optionsBody, filePath) {
   const optionRegex = /<Opcion([^>]*)>([\s\S]*?)<\/Opcion>/gi;
   const options = [];
   let match = null;
@@ -620,11 +348,17 @@ function parseOptions(optionsBody) {
     const attrs = parseTagAttributes(match[1] || '');
     const optionId = String(attrs.letra || '').trim().toUpperCase();
     const isCorrect = attrs.correcta === true || attrs.correcta === 'true';
-    const optionText = cleanInlineMarkdown(stripHtmlTags(match[2] || ''));
+    const rawOptionContent = String(match[2] || '').trim();
+    const optionMdx = stripMdxComments(rawOptionContent).trim();
+    const optionText = cleanInlineMarkdown(stripHtmlTags(rawOptionContent));
+    const optionAssets = extractAssetRefs(rawOptionContent);
+    const optionHtml = await renderPracticeFragmentHtml(optionMdx, { filePath });
 
     options.push({
       id: optionId || `OPT_${options.length + 1}`,
       text: optionText,
+      text_html: optionHtml,
+      text_assets: optionAssets,
       is_correct: isCorrect,
     });
   }
@@ -659,7 +393,7 @@ async function parseQuestion(section, filePath) {
     supplementSections.find((entry) => entry.kind === 'concepts') ?? null;
 
   const optionsBody = optionsMatch ? optionsMatch[1] : '';
-  const options = parseOptions(optionsBody);
+  const options = await parseOptions(optionsBody, filePath);
   const correctOption = options.find((option) => option.is_correct);
 
   let stemMdx = inner;
@@ -940,6 +674,7 @@ async function buildWorkshopEntry(filePath, contentEntryMap, source) {
       questions.flatMap((q) => [
         ...(q.context_assets || []),
         ...(q.stem_assets || []),
+        ...((Array.isArray(q.options) ? q.options : []).flatMap((option) => option?.text_assets || [])),
         ...(q.feedback_assets || []),
         ...(q.concepts_assets || []),
       ])

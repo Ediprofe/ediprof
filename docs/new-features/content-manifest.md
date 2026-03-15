@@ -17,6 +17,7 @@ Para derivar payload nativo de talleres (UI móvil):
 - Salida por defecto: `/tmp/ediprofe-workshops-manifest.json`
 - Contrato: `docs/new-features/workshops-app-payload-v1.md`
 - Consumo recomendado en app: `GET /api/v1/workshops/{id}?include_answers=false&format=app`
+- Regla de render vigente: `html-first`, con `blocks` solo como fallback legado
 
 Pipeline recomendado de publicación de talleres:
 - `npm run workshops:pipeline`

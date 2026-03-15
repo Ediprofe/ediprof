@@ -9,6 +9,7 @@ use App\Http\Resources\WorkshopResource;
 use App\Http\Resources\WorkshopSummaryResource;
 use App\Models\AssessmentTemplate;
 use App\Models\Workshop;
+use App\Services\Content\RichContentPayloadNormalizer;
 use App\Services\Access\WorkshopAccessService;
 use App\Services\Assessments\AssessmentAttemptService;
 use Illuminate\Http\JsonResponse;
@@ -169,7 +170,8 @@ class WorkshopController extends Controller
         EvaluateWorkshopAnswerRequest $request,
         string $workshopId,
         string $questionId,
-        WorkshopAccessService $accessService
+        WorkshopAccessService $accessService,
+        RichContentPayloadNormalizer $normalizer,
     ): JsonResponse {
         $identifier = trim(rawurldecode($workshopId));
         $normalizedQuestionId = trim(rawurldecode($questionId));
@@ -267,15 +269,15 @@ class WorkshopController extends Controller
                 'correct_option_id' => $correctOptionId !== '' ? $correctOptionId : null,
                 'is_correct' => $isCorrect,
                 'feedback_mdx' => (string) ($question['feedback_mdx'] ?? ''),
-                'feedback_html' => (string) ($question['feedback_html'] ?? ''),
+                'feedback_html' => $normalizer->normalizeHtml((string) ($question['feedback_html'] ?? '')),
                 'feedback_summary' => filled($question['feedback_summary'] ?? null) ? (string) $question['feedback_summary'] : null,
-                'feedback_assets' => is_array($question['feedback_assets'] ?? null) ? $question['feedback_assets'] : [],
-                'feedback_blocks' => is_array($question['feedback_blocks'] ?? null) ? $question['feedback_blocks'] : [],
+                'feedback_assets' => $normalizer->normalizeAssetList(is_array($question['feedback_assets'] ?? null) ? $question['feedback_assets'] : []),
+                'feedback_blocks' => $normalizer->normalizeBlocks(is_array($question['feedback_blocks'] ?? null) ? $question['feedback_blocks'] : []),
                 'concepts_mdx' => (string) ($question['concepts_mdx'] ?? ''),
-                'concepts_html' => (string) ($question['concepts_html'] ?? ''),
+                'concepts_html' => $normalizer->normalizeHtml((string) ($question['concepts_html'] ?? '')),
                 'concepts_summary' => filled($question['concepts_summary'] ?? null) ? (string) $question['concepts_summary'] : null,
-                'concepts_assets' => is_array($question['concepts_assets'] ?? null) ? $question['concepts_assets'] : [],
-                'concepts_blocks' => is_array($question['concepts_blocks'] ?? null) ? $question['concepts_blocks'] : [],
+                'concepts_assets' => $normalizer->normalizeAssetList(is_array($question['concepts_assets'] ?? null) ? $question['concepts_assets'] : []),
+                'concepts_blocks' => $normalizer->normalizeBlocks(is_array($question['concepts_blocks'] ?? null) ? $question['concepts_blocks'] : []),
                 'next_question_id' => $nextQuestionId,
             ],
         ]);

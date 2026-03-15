@@ -151,6 +151,10 @@ For the web student app, move to:
 - Google login with Socialite
 - Laravel session / cookie auth
 - Sanctum stateful mode only if needed for same-origin API calls
+- Google OAuth web client config:
+  - `GOOGLE_CLIENT_ID`
+  - `GOOGLE_CLIENT_SECRET`
+  - `GOOGLE_REDIRECT_URI`
 
 Official references:
 
@@ -169,6 +173,16 @@ This means:
 
 - web does not need bearer tokens for the main authenticated experience
 - mobile still has a clean token-based API path
+
+### OAuth client recommendation
+
+Use the same Google Cloud project, but separate OAuth clients by platform when possible:
+
+- web OAuth client for `miembros.ediprofe.com`
+- existing browser/token-exchange client for the current API-style login if you keep it temporarily
+- mobile client later when the native app is ready
+
+This avoids mixing redirect-based web auth with mobile or browser token flows in one credential.
 
 ### Current Google flow
 
@@ -215,11 +229,19 @@ Astro stays excellent for the public editorial site. The student app should move
 
 ## Rendering contract for questions
 
-This migration is also our opportunity to stop depending on fragile HTML in the student app.
+This migration is also our opportunity to stop depending on ad-hoc parsing in the student app.
 
 ### Rule
 
-For the new members web app, question rendering should be based primarily on structured payloads:
+For the new members web app, question rendering should be based primarily on canonical HTML payloads:
+
+- `context_html`
+- `stem_html`
+- `feedback_html`
+- `concepts_html`
+- `options[].text_html`
+
+And use `blocks` only as fallback:
 
 - `context_blocks`
 - `stem_blocks`
@@ -232,7 +254,7 @@ This is the same data contract that best supports:
 
 - web React renderer
 - future React Native renderer
-- rich content with context blocks, tables, images, equations
+- rich content with tables, images, equations and shared contexts
 
 ### Important note
 
@@ -241,7 +263,7 @@ We are **not** trying to share the exact same UI components between web and mobi
 We are sharing:
 
 - the backend schema
-- the semantic block model
+- the canonical content payload
 - the attempt / question / review payload shape
 
 That is the scalable layer to share.
@@ -357,9 +379,10 @@ The React app should not rebuild the current string-based renderer.
 
 Instead:
 
-- render blocks as components
-- keep HTML only as fallback
-- normalize tables, images, equations and lists into components
+- render canonical HTML first
+- normalize assets and safe wrappers in backend
+- keep blocks only as fallback
+- progressively upgrade tables, images, equations and lists into components where it adds value
 
 This is the piece that reduces the class of bugs we just fixed.
 

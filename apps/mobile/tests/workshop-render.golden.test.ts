@@ -3,6 +3,7 @@ const assert = require('node:assert/strict');
 
 const {
   cleanInlineMarkdown,
+  cleanInlineForRender,
   normalizeMathForDisplay,
   toBlocks,
 } = require('../src/lib/workshopRender.ts');
@@ -31,6 +32,12 @@ test('Q4 golden: \\text blocks are rendered as readable units', () => {
     ),
     'Recipiente II (Agua): 2 ml × 0,99 g/ml = 1,98 g',
   );
+});
+
+test('Q8 golden: superscript notation is presented readably in fallback text', () => {
+  assert.equal(cleanInlineForRender('O^{-2}'), 'O⁻²');
+  assert.equal(cleanInlineForRender('N^{+3}'), 'N⁺³');
+  assert.equal(cleanInlineForRender('2p^6 3s^2 3p^4'), '2p⁶ 3s² 3p⁴');
 });
 
 test('Q12 golden: image order from markdown is preserved', () => {

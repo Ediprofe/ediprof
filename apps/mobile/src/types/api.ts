@@ -43,7 +43,17 @@ export type WorkshopListResponse = {
 export type WorkshopQuestionOption = {
   id: string;
   text: string;
+  text_html?: string;
+  text_assets?: string[];
   is_correct?: boolean;
+};
+
+export type WorkshopRenderContract = {
+  strategy: 'html_first';
+  html_primary_fields: string[];
+  block_fallback_fields: string[];
+  asset_url_policy: string;
+  notes: string[];
 };
 
 export type WorkshopInlineSegment = {
@@ -74,13 +84,23 @@ export type WorkshopQuestion = {
   id: string;
   order: number;
   stem_mdx?: string;
+  stem_html?: string;
   stem_assets: string[];
   stem_blocks?: WorkshopRichBlock[];
+  context_mdx?: string;
+  context_html?: string;
+  context_assets?: string[];
+  context_blocks?: WorkshopRichBlock[];
   options: WorkshopQuestionOption[];
   correct_option_id: string | null;
   feedback_mdx?: string;
+  feedback_html?: string;
   feedback_assets: string[];
   feedback_blocks?: WorkshopRichBlock[];
+  concepts_mdx?: string;
+  concepts_html?: string;
+  concepts_assets?: string[];
+  concepts_blocks?: WorkshopRichBlock[];
   app_payload_version?: number | null;
 };
 
@@ -90,6 +110,7 @@ export type WorkshopDetail = {
   route: string;
   access_tier: 'free' | 'premium';
   published: boolean;
+  render_contract?: WorkshopRenderContract;
   questions: WorkshopQuestion[];
   assets: string[];
   stats: {
@@ -105,8 +126,13 @@ export type WorkshopEvaluationResult = {
   correct_option_id: string | null;
   is_correct: boolean;
   feedback_mdx?: string;
+  feedback_html?: string;
   feedback_assets: string[];
   feedback_blocks?: WorkshopRichBlock[];
+  concepts_mdx?: string;
+  concepts_html?: string;
+  concepts_assets?: string[];
+  concepts_blocks?: WorkshopRichBlock[];
   next_question_id: string | null;
 };
 

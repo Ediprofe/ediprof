@@ -53,6 +53,7 @@ class WorkshopApiTest extends TestCase
             ->assertOk()
             ->assertJsonPath('ok', true)
             ->assertJsonPath('data.id', 'content:saber:quimica/la-materia/taller')
+            ->assertJsonPath('data.render_contract.strategy', 'html_first')
             ->assertJsonPath('data.stats.total_questions', 1)
             ->assertJsonPath('data.questions.0.correct_option_id', 'A');
     }
@@ -188,6 +189,7 @@ class WorkshopApiTest extends TestCase
             ->assertOk()
             ->assertJsonPath('ok', true)
             ->assertJsonPath('data.questions.0.stem_blocks.0.type', 'paragraph')
+            ->assertJsonPath('data.render_contract.strategy', 'html_first')
             ->assertJsonPath('data.questions.0.feedback_blocks', [])
             ->assertJsonPath('data.questions.0.correct_option_id', null);
 
@@ -196,6 +198,93 @@ class WorkshopApiTest extends TestCase
         $this->assertArrayNotHasKey('meta', $question);
         $this->assertArrayNotHasKey('stem_mdx', $question);
         $this->assertArrayNotHasKey('feedback_mdx', $question);
+    }
+
+    public function test_it_normalizes_relative_asset_urls_in_html_payloads(): void
+    {
+        config(['app.content_asset_base_url' => 'https://ediprofe.com']);
+
+        Workshop::query()->create([
+            'external_id' => 'workshop:saber:quimica:la-materia:asset-normalization',
+            'content_external_id' => 'content:saber:quimica/la-materia/asset-normalization',
+            'title' => 'Taller Assets',
+            'route' => '/saber/quimica/la-materia/asset-normalization',
+            'area_slug' => 'quimica',
+            'unidad_slug' => 'la-materia',
+            'access_tier' => 'free',
+            'is_published' => true,
+            'total_questions' => 1,
+            'total_assets' => 1,
+            'assets' => ['/images/simulacros/quimica/curva-solubilidad-azucar-agua.svg'],
+            'questions' => [
+                [
+                    'id' => '1',
+                    'order' => 1,
+                    'meta' => [],
+                    'stem_html' => '<p><img src="/images/simulacros/quimica/curva-solubilidad-azucar-agua.svg" alt="Stem"></p>',
+                    'stem_assets' => ['/images/simulacros/quimica/curva-solubilidad-azucar-agua.svg'],
+                    'stem_blocks' => [
+                        [
+                            'type' => 'image',
+                            'src' => '/images/simulacros/quimica/curva-solubilidad-azucar-agua.svg',
+                            'alt' => 'Stem',
+                        ],
+                    ],
+                    'options' => [
+                        [
+                            'id' => 'A',
+                            'text' => 'Opción A',
+                            'text_html' => '<p><img src="/images/simulacros/quimica/curva-solubilidad-azucar-agua.svg" alt="Opción"></p>',
+                            'text_assets' => ['/images/simulacros/quimica/curva-solubilidad-azucar-agua.svg'],
+                            'is_correct' => true,
+                        ],
+                        ['id' => 'B', 'text' => 'Opción B', 'is_correct' => false],
+                    ],
+                    'correct_option_id' => 'A',
+                    'feedback_html' => '<p><img src="/images/simulacros/quimica/curva-solubilidad-azucar-agua.svg" alt="Feedback"></p>',
+                    'feedback_assets' => ['/images/simulacros/quimica/curva-solubilidad-azucar-agua.svg'],
+                    'feedback_blocks' => [
+                        [
+                            'type' => 'image',
+                            'src' => '/images/simulacros/quimica/curva-solubilidad-azucar-agua.svg',
+                            'alt' => 'Feedback',
+                        ],
+                    ],
+                ],
+            ],
+            'metadata' => [],
+        ]);
+
+        $response = $this->getJson('/api/v1/workshops/workshop:saber:quimica:la-materia:asset-normalization');
+
+        $response
+            ->assertOk()
+            ->assertJsonPath('data.assets.0', 'https://ediprofe.com/images/simulacros/quimica/curva-solubilidad-azucar-agua.svg')
+            ->assertJsonPath(
+                'data.questions.0.stem_assets.0',
+                'https://ediprofe.com/images/simulacros/quimica/curva-solubilidad-azucar-agua.svg'
+            )
+            ->assertJsonPath(
+                'data.questions.0.options.0.text_assets.0',
+                'https://ediprofe.com/images/simulacros/quimica/curva-solubilidad-azucar-agua.svg'
+            )
+            ->assertJsonPath(
+                'data.questions.0.stem_blocks.0.src',
+                'https://ediprofe.com/images/simulacros/quimica/curva-solubilidad-azucar-agua.svg'
+            )
+            ->assertJsonPath(
+                'data.questions.0.feedback_blocks.0.src',
+                'https://ediprofe.com/images/simulacros/quimica/curva-solubilidad-azucar-agua.svg'
+            );
+
+        $this->assertStringContainsString(
+            'https://ediprofe.com/images/simulacros/quimica/curva-solubilidad-azucar-agua.svg',
+            (string) $response->json('data.questions.0.stem_html')
+        );
+        $this->assertStringContainsString(
+            'https://ediprofe.com/images/simulacros/quimica/curva-solubilidad-azucar-agua.svg',
+            (string) $response->json('data.questions.0.options.0.text_html')
+        );
     }
 
     public function test_it_evaluates_answer_and_returns_feedback(): void

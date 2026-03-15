@@ -7,6 +7,7 @@ use App\Http\Requests\Api\V1\GoogleLoginRequest;
 use App\Http\Requests\Api\V1\LoginRequest;
 use App\Models\ApiToken;
 use App\Models\User;
+use App\Services\Auth\GoogleMemberAccountService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
@@ -49,16 +50,10 @@ class AuthController extends Controller
         return $this->issueTokenResponse($request, $user, $validated);
     }
 
-    public function googleLogin(GoogleLoginRequest $request): JsonResponse
+    public function googleLogin(GoogleLoginRequest $request, GoogleMemberAccountService $googleAccountService): JsonResponse
     {
         $validated = $request->validated();
         $clientId = trim((string) config('services.google.client_id'));
-        $allowedDomain = mb_strtolower(trim((string) config('services.google.allowed_domain', 'sanjoseitagui.edu.co')));
-        $adminEmails = collect(config('services.google.admin_emails', []))
-            ->map(static fn ($value): string => mb_strtolower(trim((string) $value)))
-            ->filter()
-            ->values()
-            ->all();
 
         if ($clientId === '') {
             return response()->json([
@@ -88,12 +83,9 @@ class AuthController extends Controller
 
         $claims = $googleResponse->json();
         $audience = trim((string) ($claims['aud'] ?? ''));
-        $email = mb_strtolower(trim((string) ($claims['email'] ?? '')));
-        $subject = trim((string) ($claims['sub'] ?? ''));
         $emailVerified = filter_var($claims['email_verified'] ?? false, FILTER_VALIDATE_BOOL);
-        $hostedDomain = mb_strtolower(trim((string) ($claims['hd'] ?? '')));
 
-        if ($audience !== $clientId || $subject === '' || $email === '' || ! $emailVerified) {
+        if ($audience !== $clientId || ! $emailVerified) {
             return response()->json([
                 'ok' => false,
                 'error' => [
@@ -103,70 +95,27 @@ class AuthController extends Controller
             ], 422);
         }
 
-        $emailDomain = (string) Str::of($email)->afterLast('@');
-        $isGoogleAdmin = in_array($email, $adminEmails, true);
-        $isAllowedInstitutionalUser = $emailDomain === $allowedDomain
-            && ($hostedDomain === '' || $hostedDomain === $allowedDomain);
+        $result = $googleAccountService->authenticate([
+            'email' => $claims['email'] ?? null,
+            'subject' => $claims['sub'] ?? null,
+            'name' => $claims['name'] ?? null,
+            'picture' => $claims['picture'] ?? null,
+            'hosted_domain' => $claims['hd'] ?? null,
+            'email_verified' => $emailVerified,
+        ]);
 
-        if (! $isGoogleAdmin && ! $isAllowedInstitutionalUser) {
+        if (! $result['ok']) {
             return response()->json([
                 'ok' => false,
                 'error' => [
-                    'code' => 'invalid_google_domain',
-                    'message' => 'Your institutional Google account is not allowed for this members area.',
+                    'code' => $result['code'] ?? 'invalid_google_login',
+                    'message' => $result['message'] ?? 'Google login could not be completed.',
                 ],
-            ], 403);
+            ], ($result['code'] ?? null) === 'invalid_google_claims' ? 422 : 403);
         }
 
-        $name = trim((string) ($claims['name'] ?? Str::headline(Str::before($email, '@'))));
-        $picture = trim((string) ($claims['picture'] ?? ''));
-
-        $user = User::query()
-            ->whereRaw('LOWER(email) = ?', [$email])
-            ->first();
-
-        if ($user === null) {
-            $user = User::query()->create([
-                'name' => $name,
-                'first_names' => null,
-                'last_names' => null,
-                'email' => $email,
-                'password' => Hash::make(Str::random(40)),
-                'role' => $isGoogleAdmin ? 'admin' : 'student',
-                'member_status' => 'approved',
-                'auth_provider' => 'google',
-                'google_subject' => $subject,
-                'google_avatar_url' => $picture !== '' ? $picture : null,
-                'email_verified_at' => Carbon::now(),
-                'last_login_at' => Carbon::now(),
-            ]);
-        } else {
-            if ($user->member_status === 'blocked') {
-                return response()->json([
-                    'ok' => false,
-                    'error' => [
-                        'code' => 'account_blocked',
-                        'message' => 'Your account has been blocked. Contact support.',
-                    ],
-                ], 403);
-            }
-
-            $preserveAcademicName = filled($user->first_names)
-                || filled($user->last_names)
-                || filled($user->institutional_code)
-                || filled($user->document_number);
-
-            $user->forceFill([
-                'name' => $isGoogleAdmin || $user->isAdmin() || $preserveAcademicName ? $user->name : $name,
-                'role' => $isGoogleAdmin ? 'admin' : $user->role,
-                'member_status' => $isGoogleAdmin || $user->isAdmin() ? $user->member_status : 'approved',
-                'auth_provider' => 'google',
-                'google_subject' => $subject,
-                'google_avatar_url' => $picture !== '' ? $picture : $user->google_avatar_url,
-                'email_verified_at' => $user->email_verified_at ?? Carbon::now(),
-                'last_login_at' => Carbon::now(),
-            ])->save();
-        }
+        /** @var User $user */
+        $user = $result['user'];
 
         return $this->issueTokenResponse($request, $user, $validated);
     }

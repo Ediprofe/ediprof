@@ -54,6 +54,11 @@ return [
 
     'url' => env('APP_URL', 'http://localhost'),
 
+    'content_asset_base_url' => env(
+        'CONTENT_ASSET_BASE_URL',
+        env('VITE_MEMBERS_PUBLIC_ASSET_BASE_URL', env('APP_URL', ''))
+    ),
+
     /*
     |--------------------------------------------------------------------------
     | Application Timezone

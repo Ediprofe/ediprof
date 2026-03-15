@@ -17,6 +17,7 @@ type MemberUser = {
 type PracticeOption = {
   id: string;
   text: string;
+  text_html?: string;
   is_correct?: boolean;
 };
 
@@ -537,22 +538,16 @@ export function mountPracticePlayer(options: PracticePlayerOptions): void {
     fallbackText = '',
     optionsArg: { feedback?: boolean; wrapperClass?: string } = {}
   ): string {
-    const renderedBlocks = hasRenderableBlocks(blocks)
-      ? renderBlocks(blocks, fallbackText, optionsArg)
-      : '';
-
-    if (optionsArg.feedback && renderedBlocks) {
-      return optionsArg.wrapperClass
-        ? `<div class="${escapeHtml(optionsArg.wrapperClass)}">${renderedBlocks}</div>`
-        : renderedBlocks;
-    }
-
     const renderedHtml = String(html || '').trim();
     if (renderedHtml) {
       return optionsArg.wrapperClass
         ? `<div class="${escapeHtml(optionsArg.wrapperClass)}">${renderedHtml}</div>`
         : renderedHtml;
     }
+
+    const renderedBlocks = hasRenderableBlocks(blocks)
+      ? renderBlocks(blocks, fallbackText, optionsArg)
+      : '';
 
     if (!renderedBlocks) {
       return '';
@@ -627,8 +622,10 @@ export function mountPracticePlayer(options: PracticePlayerOptions): void {
       correct_option_id: correctOptionId || null,
       is_correct: Boolean(selectedId && correctOptionId && selectedId === correctOptionId),
       feedback_mdx: question.feedback_mdx ?? '',
+      feedback_html: question.feedback_html ?? '',
       feedback_blocks: Array.isArray(question.feedback_blocks) ? question.feedback_blocks : [],
       concepts_mdx: question.concepts_mdx ?? '',
+      concepts_html: question.concepts_html ?? '',
       concepts_blocks: Array.isArray(question.concepts_blocks) ? question.concepts_blocks : [],
     };
   }
@@ -971,7 +968,7 @@ export function mountPracticePlayer(options: PracticePlayerOptions): void {
         return `
           <button type="button" class="${classes}" data-option-id="${escapeHtml(option.id)}">
             <span class="members-option-prefix" style="font-weight: 900; margin-right: 0.75rem; color: color-mix(in oklab, var(--text-primary) 60%, var(--color-primary) 40%);">${escapeHtml(option.id)}.</span>
-            <span class="members-option-text" style="flex: 1;">${renderInlineText(option.text || '')}</span>
+            <span class="members-option-text" style="flex: 1;">${String(option.text_html || '').trim() || renderInlineText(option.text || '')}</span>
           </button>
         `;
       })

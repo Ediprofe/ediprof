@@ -37,6 +37,7 @@ class AssessmentAttemptApiTest extends TestCase
             ->assertOk()
             ->assertJsonPath('ok', true)
             ->assertJsonPath('data.id', $template->external_id)
+            ->assertJsonPath('data.render_contract.strategy', 'html_first')
             ->assertJsonPath('data.attempt.mode', 'study')
             ->assertJsonPath('data.questions.0.id', 'q-1')
             ->assertJsonPath('data.questions.0.correct_option_id', null);
@@ -66,6 +67,67 @@ class AssessmentAttemptApiTest extends TestCase
             ->assertOk()
             ->assertJsonPath('data.selected_by_question.q-1', 'B')
             ->assertJsonPath('data.evaluation_by_question.q-1.is_correct', true);
+    }
+
+    public function test_attempt_payload_normalizes_relative_assets_for_client_consumers(): void
+    {
+        config(['app.content_asset_base_url' => 'https://ediprofe.com']);
+
+        [$student, $workshop, $template] = $this->makeAssignedTemplate('taller');
+        $question = $template->questions()->orderBy('order_base')->firstOrFail();
+        $question->update([
+            'stem_html' => '<p><img src="/images/simulacros/quimica/curva-solubilidad-azucar-agua.svg" alt="Stem"></p>',
+            'stem_assets' => ['/images/simulacros/quimica/curva-solubilidad-azucar-agua.svg'],
+            'stem_blocks' => [
+                [
+                    'type' => 'image',
+                    'src' => '/images/simulacros/quimica/curva-solubilidad-azucar-agua.svg',
+                    'alt' => 'Stem',
+                ],
+            ],
+            'options' => [
+                [
+                    'id' => 'A',
+                    'text' => 'Incorrecta',
+                    'text_html' => '<p><img src="/images/simulacros/quimica/curva-solubilidad-azucar-agua.svg" alt="Opt"></p>',
+                    'text_assets' => ['/images/simulacros/quimica/curva-solubilidad-azucar-agua.svg'],
+                    'is_correct' => false,
+                ],
+                ['id' => 'B', 'text' => 'Correcta', 'is_correct' => true],
+            ],
+        ]);
+
+        $token = $this->loginAndGetToken($student->email, 'Secret1234');
+
+        $startResponse = $this->postJson(
+            '/api/v1/workshops/'.$workshop->external_id.'/attempts',
+            ['mode' => 'study'],
+            ['Authorization' => "Bearer {$token}"],
+        );
+
+        $startResponse
+            ->assertOk()
+            ->assertJsonPath(
+                'data.questions.0.stem_assets.0',
+                'https://ediprofe.com/images/simulacros/quimica/curva-solubilidad-azucar-agua.svg'
+            )
+            ->assertJsonPath(
+                'data.questions.0.stem_blocks.0.src',
+                'https://ediprofe.com/images/simulacros/quimica/curva-solubilidad-azucar-agua.svg'
+            )
+            ->assertJsonPath(
+                'data.questions.0.options.0.text_assets.0',
+                'https://ediprofe.com/images/simulacros/quimica/curva-solubilidad-azucar-agua.svg'
+            );
+
+        $this->assertStringContainsString(
+            'https://ediprofe.com/images/simulacros/quimica/curva-solubilidad-azucar-agua.svg',
+            (string) $startResponse->json('data.questions.0.stem_html')
+        );
+        $this->assertStringContainsString(
+            'https://ediprofe.com/images/simulacros/quimica/curva-solubilidad-azucar-agua.svg',
+            (string) $startResponse->json('data.questions.0.options.0.text_html')
+        );
     }
 
     public function test_student_can_submit_a_simulacro_attempt_and_keep_stable_order(): void

@@ -13,6 +13,7 @@ import {
 } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { QuestionStem } from './src/components/QuestionStem';
+import { cleanInlineForRender } from './src/lib/workshopRender';
 import { WorkshopCard } from './src/components/WorkshopCard';
 import {
   ApiRequestError,
@@ -1264,7 +1265,7 @@ export default function App() {
                       disabled={submittingAnswer}
                     >
                       <Text style={styles.optionText}>
-                        {option.id}. {option.text}
+                        {option.id}. {cleanInlineForRender(option.text)}
                       </Text>
                     </Pressable>
                   );

@@ -32,6 +32,33 @@ export function toSubscriptDigits(value: string): string {
     .join('');
 }
 
+export function toSuperscript(value: string): string {
+  const chars: Record<string, string> = {
+    '0': '⁰',
+    '1': '¹',
+    '2': '²',
+    '3': '³',
+    '4': '⁴',
+    '5': '⁵',
+    '6': '⁶',
+    '7': '⁷',
+    '8': '⁸',
+    '9': '⁹',
+    '+': '⁺',
+    '-': '⁻',
+    '=': '⁼',
+    '(': '⁽',
+    ')': '⁾',
+    'n': 'ⁿ',
+    'i': 'ⁱ',
+  };
+
+  return String(value || '')
+    .split('')
+    .map((char) => chars[char] ?? char)
+    .join('');
+}
+
 export function normalizeLatexInlineText(value: string): string {
   return value
     .replace(/\\([%$#&{}])/g, '$1')
@@ -68,7 +95,13 @@ export function cleanInlineMarkdown(value: string): string {
 }
 
 export function cleanInlineForRender(value: string): string {
-  return normalizeLatexInlineText(value);
+  return normalizeLatexInlineText(value)
+    .replace(/([A-Za-z0-9\)])\^\\?\{([^}]+)\}/g, (_m, base: string, exponent: string) => {
+      return `${base}${toSuperscript(exponent)}`;
+    })
+    .replace(/([A-Za-z0-9\)])\^([+\-=\d()ni]+)/g, (_m, base: string, exponent: string) => {
+      return `${base}${toSuperscript(exponent)}`;
+    });
 }
 
 export function normalizeMathForDisplay(value: string): string {

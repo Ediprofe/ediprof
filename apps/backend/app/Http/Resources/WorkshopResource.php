@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Services\Content\RichContentPayloadNormalizer;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -20,8 +21,9 @@ class WorkshopResource extends JsonResource
         $includeAnswers = $request->boolean('include_answers', true);
         $appFormat = strtolower((string) $request->query('format', '')) === 'app';
         $questions = is_array($this->questions) ? $this->questions : [];
+        $normalizer = app(RichContentPayloadNormalizer::class);
 
-        $questions = array_map(static function (array $question) use ($includeAnswers, $appFormat): array {
+        $questions = array_map(function (array $question) use ($includeAnswers, $appFormat, $normalizer): array {
             unset($question['meta']);
 
             if (! $includeAnswers) {
@@ -54,7 +56,7 @@ class WorkshopResource extends JsonResource
                 );
             }
 
-            return $question;
+            return $normalizer->normalizeQuestion($question);
         }, $questions);
 
         return [
@@ -71,7 +73,8 @@ class WorkshopResource extends JsonResource
                 'total_questions' => $this->total_questions,
                 'total_assets' => $this->total_assets,
             ],
-            'assets' => $this->assets ?? [],
+            'render_contract' => $normalizer->renderContract(),
+            'assets' => $normalizer->normalizeAssetList(is_array($this->assets) ? $this->assets : []),
             'questions' => $questions,
             'updated_at' => $this->updated_at?->toIso8601String(),
         ];
