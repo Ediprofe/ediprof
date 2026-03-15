@@ -46,7 +46,7 @@ class ContextsRelationManager extends RelationManager
             ])
             ->recordActions([
                 Action::make('editContext')
-                    ->label('Editar contexto')
+                    ->label('Editar contenido del contexto')
                     ->icon('heroicon-o-pencil-square')
                     ->url(fn (AssessmentContext $record): string => AssessmentContextResource::getUrl('edit', ['record' => $record], panel: 'admin')),
             ])

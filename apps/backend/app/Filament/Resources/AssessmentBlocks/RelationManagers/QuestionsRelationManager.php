@@ -48,7 +48,7 @@ class QuestionsRelationManager extends RelationManager
             ])
             ->recordActions([
                 Action::make('editQuestion')
-                    ->label('Editar pregunta')
+                    ->label('Editar contenido de la pregunta')
                     ->icon('heroicon-o-pencil-square')
                     ->url(fn (AssessmentQuestion $record): string => AssessmentQuestionResource::getUrl('edit', ['record' => $record], panel: 'admin')),
             ])
