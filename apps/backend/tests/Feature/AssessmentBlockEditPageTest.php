@@ -45,7 +45,9 @@ class AssessmentBlockEditPageTest extends TestCase
             ->get(AssessmentBlockResource::getUrl('edit', ['record' => $template], panel: 'admin'))
             ->assertOk()
             ->assertSee('Identidad del bloque')
-            ->assertSee('Clasificación editorial')
+            ->assertSee('Mesa editorial')
+            ->assertSee('Contexto base')
+            ->assertSee('Preguntas que nacen del contexto')
             ->assertSee('Información técnica del sistema');
     }
 }

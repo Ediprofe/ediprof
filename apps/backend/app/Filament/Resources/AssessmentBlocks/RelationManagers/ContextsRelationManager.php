@@ -2,7 +2,6 @@
 
 namespace App\Filament\Resources\AssessmentBlocks\RelationManagers;
 
-use App\Filament\Resources\AssessmentContexts\AssessmentContextResource;
 use App\Models\AssessmentContext;
 use App\Services\Content\AssessmentEditorialContentUpdateService;
 use Filament\Actions\Action;
@@ -30,18 +29,15 @@ class ContextsRelationManager extends RelationManager
                     ->label('#')
                     ->sortable(),
                 TextColumn::make('title')
-                    ->label('Contexto')
+                    ->label('Contexto base')
                     ->searchable()
                     ->wrap()
                     ->placeholder('Sin título'),
                 TextColumn::make('questions_count')
                     ->label('Preguntas vinculadas')
                     ->sortable(),
-                TextColumn::make('unit_label')
-                    ->label('Unidad')
-                    ->placeholder('Diferida'),
                 TextColumn::make('context_html')
-                    ->label('Preview')
+                    ->label('Resumen del contexto')
                     ->state(fn (AssessmentContext $record): string => Str::limit(
                         Str::of(strip_tags((string) $record->context_html))->squish()->value(),
                         150
@@ -56,7 +52,7 @@ class ContextsRelationManager extends RelationManager
                     ->slideOver()
                     ->modalWidth('6xl')
                     ->modalHeading('Editar contexto base del bloque')
-                    ->modalDescription('Primero corrige la base general del bloque. La clasificación queda como apoyo editorial al final.')
+                    ->modalDescription('Aquí solo trabajas la base general del caso, lectura o situación. La clasificación fina vive sobre todo en las preguntas.')
                     ->modalSubmitActionLabel('Guardar contexto')
                     ->fillForm(fn (AssessmentContext $record): array => [
                         'title' => $record->title,
@@ -90,11 +86,6 @@ class ContextsRelationManager extends RelationManager
                             ->success()
                             ->send();
                     }),
-                Action::make('openDetail')
-                    ->label('Abrir detalle')
-                    ->icon('heroicon-o-arrow-top-right-on-square')
-                    ->color('gray')
-                    ->url(fn (AssessmentContext $record): string => AssessmentContextResource::getUrl('edit', ['record' => $record], panel: 'admin')),
             ])
             ->emptyStateHeading('Este bloque todavía no tiene contexto base.');
     }
