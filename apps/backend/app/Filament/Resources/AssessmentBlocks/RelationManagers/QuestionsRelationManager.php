@@ -24,7 +24,7 @@ class QuestionsRelationManager extends RelationManager
 {
     protected static string $relationship = 'questions';
 
-    protected static ?string $title = 'Preguntas del bloque';
+    protected static ?string $title = 'Preguntas que nacen del contexto';
 
     public function table(Table $table): Table
     {
@@ -58,12 +58,14 @@ class QuestionsRelationManager extends RelationManager
             ])
             ->recordActions([
                 Action::make('quickEditQuestion')
-                    ->label('Editar aquí')
+                    ->label('Editar pregunta')
                     ->icon('heroicon-o-pencil-square')
                     ->color('primary')
                     ->slideOver()
                     ->modalWidth('7xl')
                     ->modalHeading('Editar pregunta del bloque')
+                    ->modalDescription('Aquí trabajas lo específico: enunciado, opciones, correcta y apoyo pedagógico.')
+                    ->modalSubmitActionLabel('Guardar pregunta')
                     ->fillForm(function (AssessmentQuestion $record): array {
                         $options = $record->questionOptions()
                             ->orderBy('order_base')
@@ -103,6 +105,7 @@ class QuestionsRelationManager extends RelationManager
                             ->label('Enunciado (Markdown)')
                             ->rows(8)
                             ->required()
+                            ->helperText('Corrige aquí la pregunta específica que sale del contexto base.')
                             ->columnSpanFull(),
                         Repeater::make('options_editor')
                             ->label('Opciones')
@@ -111,6 +114,7 @@ class QuestionsRelationManager extends RelationManager
                             ->defaultItems(4)
                             ->reorderable(false)
                             ->live()
+                            ->helperText('Edita el contenido de las opciones. La letra es solo una referencia simple para identificar cada respuesta.')
                             ->schema([
                                 TextInput::make('option_id')
                                     ->label('Letra')
@@ -145,17 +149,25 @@ class QuestionsRelationManager extends RelationManager
 
                                     return [$optionId => $optionId.($text !== '' ? ' · '.$text : '')];
                                 })
-                                ->all())
+                            ->all())
                             ->required()
+                            ->helperText('Marca cuál opción es la correcta después de revisar el contenido.')
                             ->native(false)
                             ->searchable(false),
                         Textarea::make('feedback_mdx')
                             ->label('Retroalimentación / solución guiada (Markdown)')
                             ->rows(8)
+                            ->helperText('Explica por qué la respuesta correcta lo es y por qué las demás no.')
                             ->columnSpanFull(),
                         Textarea::make('concepts_mdx')
                             ->label('Conceptos relacionados (Markdown)')
                             ->rows(8)
+                            ->helperText('Añade solo lo necesario para profundizar después de responder.')
+                            ->columnSpanFull(),
+                        Textarea::make('teacher_notes')
+                            ->label('Notas docentes')
+                            ->rows(4)
+                            ->helperText('Observaciones internas para revisión o colaboración docente.')
                             ->columnSpanFull(),
                         Select::make('subject_id')
                             ->label('Materia')
@@ -201,10 +213,6 @@ class QuestionsRelationManager extends RelationManager
                             ])
                             ->native(false)
                             ->nullable(),
-                        Textarea::make('teacher_notes')
-                            ->label('Notas docentes')
-                            ->rows(4)
-                            ->columnSpanFull(),
                     ])
                     ->action(function (AssessmentQuestion $record, array $data): void {
                         app(AssessmentEditorialContentUpdateService::class)->updateQuestion($record, $data);

@@ -3,17 +3,11 @@
 namespace App\Filament\Resources\AssessmentContexts\Schemas;
 
 use App\Models\AssessmentContext;
-use App\Models\AssessmentOriginCollection;
-use App\Models\AssessmentSubject;
-use App\Models\AssessmentUnit;
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Placeholder;
-use Filament\Forms\Components\Select;
-use Filament\Forms\Components\TagsInput;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
-use Filament\Schemas\Components\Utilities\Get;
 use Illuminate\Support\Str;
 
 class AssessmentContextForm
@@ -35,7 +29,8 @@ class AssessmentContextForm
                             ? $record->questions()->count().' pregunta(s)'
                             : '0 pregunta(s)'),
                 ])
-                ->columns(3),
+                ->columns(3)
+                ->collapsible(),
             Section::make('Contenido del contexto')
                 ->description('Aquí sí puedes refinar el texto real del contexto. El Markdown se recompila al guardar.')
                 ->components([
@@ -56,63 +51,44 @@ class AssessmentContextForm
                             ? Str::limit(Str::of(strip_tags((string) $record->context_html))->squish()->value(), 420)
                             : '')
                         ->columnSpanFull(),
-                ]),
-            Section::make('Clasificación editorial')
-                ->components([
-                    Select::make('subject_id')
-                        ->label('Materia')
-                        ->options(fn (): array => AssessmentSubject::query()->where('is_active', true)->orderBy('label')->pluck('label', 'id')->all())
-                        ->searchable()
-                        ->preload()
-                        ->native(false)
-                        ->nullable(),
-                    Select::make('unit_id')
-                        ->label('Unidad')
-                        ->options(fn (Get $get): array => AssessmentUnit::query()
-                            ->where('is_active', true)
-                            ->when($get('subject_id'), fn ($query, $subjectId) => $query->where('subject_id', $subjectId))
-                            ->orderBy('label')
-                            ->pluck('label', 'id')
-                            ->all())
-                        ->searchable()
-                        ->preload()
-                        ->native(false)
-                        ->nullable(),
-                    Select::make('origin_collection_id')
-                        ->label('Origen')
-                        ->helperText('El origen puede reutilizarse en distintas materias y unidades.')
-                        ->options(fn (): array => AssessmentOriginCollection::query()
-                            ->where('is_active', true)
-                            ->orderBy('label')
-                            ->get()
-                            ->mapWithKeys(fn (AssessmentOriginCollection $collection): array => [
-                                $collection->id => sprintf('%s · %s', ucfirst($collection->origin_type), $collection->label),
-                            ])
-                            ->all())
-                        ->searchable()
-                        ->preload()
-                        ->native(false)
-                        ->nullable(),
-                    Select::make('editorial_status')
-                        ->label('Estado editorial')
-                        ->options([
-                            'draft' => 'Borrador',
-                            'ready' => 'Lista para usar',
-                            'review' => 'Revisar',
-                            'archived' => 'Archivada',
-                        ])
-                        ->nullable(),
-                    TagsInput::make('tags')
-                        ->label('Tags')
-                        ->helperText('Sirven para agrupar contextos o bloques reutilizables.')
-                        ->columnSpanFull(),
                     Textarea::make('teacher_notes')
                         ->label('Notas docentes')
                         ->rows(5)
                         ->nullable()
+                        ->helperText('Úsalo solo para observaciones internas sobre el contexto base.')
                         ->columnSpanFull(),
+                ]),
+            Section::make('Referencia editorial del contexto')
+                ->description('El contexto funciona como base general del bloque. La clasificación fina vive sobre todo en las preguntas asociadas.')
+                ->components([
+                    Placeholder::make('subject_label')
+                        ->label('Materia')
+                        ->content(fn (?AssessmentContext $record): string => $record?->subject?->label ?? 'Sin materia asignada'),
+                    Placeholder::make('unit_label')
+                        ->label('Unidad')
+                        ->content(fn (?AssessmentContext $record): string => $record?->unit?->label ?? 'Unidad diferida'),
+                    Placeholder::make('origin_label')
+                        ->label('Origen')
+                        ->content(fn (?AssessmentContext $record): string => $record?->originCollection
+                            ? sprintf('%s · %s', ucfirst((string) $record->originCollection->origin_type), $record->originCollection->label)
+                            : 'Sin origen asignado'),
+                    Placeholder::make('editorial_status_label')
+                        ->label('Estado editorial')
+                        ->content(fn (?AssessmentContext $record): string => match ($record?->editorial_status) {
+                            'ready' => 'Lista para usar',
+                            'review' => 'Revisar',
+                            'archived' => 'Archivada',
+                            default => 'Borrador',
+                        }),
+                    Placeholder::make('tags_label')
+                        ->label('Tags')
+                        ->content(fn (?AssessmentContext $record): string => filled($record?->tags)
+                            ? implode(', ', (array) $record->tags)
+                            : 'Sin tags'),
                 ])
-                ->columns(2),
+                ->columns(2)
+                ->collapsible()
+                ->collapsed(),
         ]);
     }
 }

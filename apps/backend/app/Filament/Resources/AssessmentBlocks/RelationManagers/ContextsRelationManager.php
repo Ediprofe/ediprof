@@ -3,18 +3,13 @@
 namespace App\Filament\Resources\AssessmentBlocks\RelationManagers;
 
 use App\Filament\Resources\AssessmentContexts\AssessmentContextResource;
-use App\Models\AssessmentOriginCollection;
 use App\Models\AssessmentContext;
-use App\Models\AssessmentSubject;
-use App\Models\AssessmentUnit;
 use App\Services\Content\AssessmentEditorialContentUpdateService;
 use Filament\Actions\Action;
-use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Notifications\Notification;
 use Filament\Resources\RelationManagers\RelationManager;
-use Filament\Schemas\Components\Utilities\Get;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
@@ -23,7 +18,7 @@ class ContextsRelationManager extends RelationManager
 {
     protected static string $relationship = 'contexts';
 
-    protected static ?string $title = 'Contextos del bloque';
+    protected static ?string $title = 'Contexto base del bloque';
 
     public function table(Table $table): Table
     {
@@ -55,79 +50,35 @@ class ContextsRelationManager extends RelationManager
             ])
             ->recordActions([
                 Action::make('quickEditContext')
-                    ->label('Editar aquí')
+                    ->label('Editar contexto base')
                     ->icon('heroicon-o-pencil-square')
                     ->color('primary')
                     ->slideOver()
                     ->modalWidth('6xl')
-                    ->modalHeading('Editar contexto del bloque')
+                    ->modalHeading('Editar contexto base del bloque')
+                    ->modalDescription('Primero corrige la base general del bloque. La clasificación queda como apoyo editorial al final.')
+                    ->modalSubmitActionLabel('Guardar contexto')
                     ->fillForm(fn (AssessmentContext $record): array => [
                         'title' => $record->title,
                         'context_mdx' => $record->context_mdx,
-                        'subject_id' => $record->subject_id,
-                        'unit_id' => $record->unit_id,
-                        'origin_collection_id' => $record->origin_collection_id,
-                        'editorial_status' => $record->editorial_status,
-                        'tags' => $record->tags ?? [],
                         'teacher_notes' => $record->teacher_notes,
                     ])
                     ->schema([
-                        TextInput::make('title')
-                            ->label('Título del contexto')
-                            ->maxLength(255)
-                            ->columnSpanFull(),
                         Textarea::make('context_mdx')
                             ->label('Contexto (Markdown)')
                             ->rows(16)
                             ->required()
+                            ->helperText('Aquí ajustas el texto base que dará sentido a las preguntas del bloque.')
                             ->columnSpanFull(),
-                        Select::make('subject_id')
-                            ->label('Materia')
-                            ->options(fn (): array => AssessmentSubject::query()->where('is_active', true)->orderBy('label')->pluck('label', 'id')->all())
-                            ->searchable()
-                            ->preload()
-                            ->native(false)
-                            ->nullable()
-                            ->live(),
-                        Select::make('unit_id')
-                            ->label('Unidad')
-                            ->options(fn (Get $get): array => AssessmentUnit::query()
-                                ->where('is_active', true)
-                                ->when($get('subject_id'), fn ($query, $subjectId) => $query->where('subject_id', $subjectId))
-                                ->orderBy('label')
-                                ->pluck('label', 'id')
-                                ->all())
-                            ->searchable()
-                            ->preload()
-                            ->native(false)
-                            ->nullable(),
-                        Select::make('origin_collection_id')
-                            ->label('Origen')
-                            ->options(fn (): array => AssessmentOriginCollection::query()
-                                ->where('is_active', true)
-                                ->orderBy('label')
-                                ->get()
-                                ->mapWithKeys(fn (AssessmentOriginCollection $collection): array => [
-                                    $collection->id => sprintf('%s · %s', ucfirst($collection->origin_type), $collection->label),
-                                ])
-                                ->all())
-                            ->searchable()
-                            ->preload()
-                            ->native(false)
-                            ->nullable(),
-                        Select::make('editorial_status')
-                            ->label('Estado editorial')
-                            ->options([
-                                'draft' => 'Borrador',
-                                'ready' => 'Lista para usar',
-                                'review' => 'Revisar',
-                                'archived' => 'Archivada',
-                            ])
-                            ->native(false)
-                            ->nullable(),
+                        TextInput::make('title')
+                            ->label('Título breve del contexto')
+                            ->helperText('Opcional. Sirve para identificar el bloque, pero no es lo central del trabajo editorial.')
+                            ->maxLength(255)
+                            ->columnSpanFull(),
                         Textarea::make('teacher_notes')
                             ->label('Notas docentes')
                             ->rows(4)
+                            ->helperText('Úsalo solo si necesitas dejar observaciones internas para revisión posterior.')
                             ->columnSpanFull(),
                     ])
                     ->action(function (AssessmentContext $record, array $data): void {
@@ -145,6 +96,6 @@ class ContextsRelationManager extends RelationManager
                     ->color('gray')
                     ->url(fn (AssessmentContext $record): string => AssessmentContextResource::getUrl('edit', ['record' => $record], panel: 'admin')),
             ])
-            ->emptyStateHeading('Este bloque todavía no tiene contextos.');
+            ->emptyStateHeading('Este bloque todavía no tiene contexto base.');
     }
 }

@@ -30,19 +30,42 @@ class AssessmentEditorialContentUpdateService
 
         $compiled = $this->compiler->compile($markdown);
 
-        $context->fill([
-            'title' => filled($data['title'] ?? null) ? trim((string) $data['title']) : null,
-            'subject_id' => filled($data['subject_id'] ?? null) ? (int) $data['subject_id'] : null,
-            'unit_id' => filled($data['unit_id'] ?? null) ? (int) $data['unit_id'] : null,
-            'origin_collection_id' => filled($data['origin_collection_id'] ?? null) ? (int) $data['origin_collection_id'] : null,
-            'editorial_status' => filled($data['editorial_status'] ?? null) ? (string) $data['editorial_status'] : null,
-            'tags' => $this->normalizeTags($data['tags'] ?? []),
-            'teacher_notes' => filled($data['teacher_notes'] ?? null) ? trim((string) $data['teacher_notes']) : null,
+        $payload = [
             'context_mdx' => $compiled['markdown'],
             'context_html' => $compiled['html_web'],
             'context_assets' => $compiled['assets'],
             'context_blocks' => $compiled['blocks'],
-        ]);
+        ];
+
+        if (array_key_exists('title', $data)) {
+            $payload['title'] = filled($data['title'] ?? null) ? trim((string) $data['title']) : null;
+        }
+
+        if (array_key_exists('subject_id', $data)) {
+            $payload['subject_id'] = filled($data['subject_id'] ?? null) ? (int) $data['subject_id'] : null;
+        }
+
+        if (array_key_exists('unit_id', $data)) {
+            $payload['unit_id'] = filled($data['unit_id'] ?? null) ? (int) $data['unit_id'] : null;
+        }
+
+        if (array_key_exists('origin_collection_id', $data)) {
+            $payload['origin_collection_id'] = filled($data['origin_collection_id'] ?? null) ? (int) $data['origin_collection_id'] : null;
+        }
+
+        if (array_key_exists('editorial_status', $data)) {
+            $payload['editorial_status'] = filled($data['editorial_status'] ?? null) ? (string) $data['editorial_status'] : null;
+        }
+
+        if (array_key_exists('tags', $data)) {
+            $payload['tags'] = $this->normalizeTags(is_array($data['tags'] ?? null) ? $data['tags'] : []);
+        }
+
+        if (array_key_exists('teacher_notes', $data)) {
+            $payload['teacher_notes'] = filled($data['teacher_notes'] ?? null) ? trim((string) $data['teacher_notes']) : null;
+        }
+
+        $context->fill($payload);
 
         $context->save();
 
