@@ -24,7 +24,7 @@ class ImportAssessmentBookletPageTest extends TestCase
         $this->actingAs($admin, 'web')
             ->get(ImportAssessmentBooklet::getUrl(panel: 'admin'))
             ->assertOk()
-            ->assertSee('Importar cuadernillo');
+            ->assertSee('Cargar cuadernillo al banco');
     }
 
     public function test_admin_can_open_the_block_booklet_and_question_bank_lists(): void
@@ -37,7 +37,7 @@ class ImportAssessmentBookletPageTest extends TestCase
         $this->actingAs($admin, 'web')
             ->get(AssessmentBlockResource::getUrl('index', panel: 'admin'))
             ->assertOk()
-            ->assertSee('Bloques', false);
+            ->assertSee('Banco editorial de bloques', false);
 
         $this->actingAs($admin, 'web')
             ->get(AssessmentBookletResource::getUrl('index', panel: 'admin'))

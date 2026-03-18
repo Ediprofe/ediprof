@@ -2,6 +2,8 @@
 
 namespace App\Filament\Resources\AssessmentBlocks\Tables;
 
+use App\Filament\Pages\ImportAiQuestionDraft;
+use App\Filament\Pages\ImportAssessmentBooklet;
 use App\Filament\Resources\AssessmentBlocks\AssessmentBlockResource;
 use App\Models\AssessmentTemplate;
 use Filament\Actions\Action;
@@ -95,7 +97,18 @@ class AssessmentBlocksTable
                     ->url(fn (AssessmentTemplate $record): string => route('admin.assessment_drafts.preview_web', $record), shouldOpenInNewTab: true),
                 EditAction::make(),
             ])
-            ->emptyStateHeading('Todavía no hay bloques contextuales en el banco.')
-            ->emptyStateDescription('Importa bloques con IA o desde un cuadernillo para construir el banco editorial reutilizable.');
+            ->emptyStateHeading('Tu banco editorial todavía está vacío.')
+            ->emptyStateDescription('Puedes agregar un bloque suelto o cargar un cuadernillo completo. Ambos caminos terminan alimentando el mismo banco reutilizable.')
+            ->emptyStateActions([
+                Action::make('emptyImportBlock')
+                    ->label('Agregar bloque al banco')
+                    ->icon('heroicon-o-sparkles')
+                    ->url(ImportAiQuestionDraft::getUrl(panel: 'admin')),
+                Action::make('emptyImportBooklet')
+                    ->label('Cargar cuadernillo al banco')
+                    ->icon('heroicon-o-document-duplicate')
+                    ->color('gray')
+                    ->url(ImportAssessmentBooklet::getUrl(panel: 'admin')),
+            ]);
     }
 }

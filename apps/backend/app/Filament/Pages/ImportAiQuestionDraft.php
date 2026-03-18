@@ -28,7 +28,7 @@ class ImportAiQuestionDraft extends Page implements HasForms
 
     protected string $view = 'filament.pages.import-ai-question-draft';
 
-    protected static ?string $navigationLabel = 'Importar bloque con IA';
+    protected static ?string $navigationLabel = 'Agregar bloque al banco';
 
     protected static string|\UnitEnum|null $navigationGroup = 'Banco académico';
 
@@ -36,7 +36,7 @@ class ImportAiQuestionDraft extends Page implements HasForms
 
     protected static string|\BackedEnum|null $navigationIcon = Heroicon::OutlinedSparkles;
 
-    protected static ?string $title = 'Importar bloque contextual';
+    protected static ?string $title = 'Agregar bloque al banco';
 
     public ?array $data = [];
 
@@ -48,6 +48,11 @@ class ImportAiQuestionDraft extends Page implements HasForms
     public ?string $parserError = null;
 
     public ?string $savedPreviewUrl = null;
+
+    public function getSubheading(): ?string
+    {
+        return 'Pega un bloque, revisa qué entendió el sistema y guárdalo en el banco cuando ya se vea editorialmente correcto.';
+    }
 
     public function mount(): void
     {

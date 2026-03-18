@@ -35,7 +35,7 @@ class ImportAssessmentBooklet extends Page implements HasForms
 
     protected static ?string $slug = 'assessment-booklets/import';
 
-    protected static ?string $title = 'Importar cuadernillo';
+    protected static ?string $title = 'Cargar cuadernillo al banco';
 
     protected static string|\BackedEnum|null $navigationIcon = Heroicon::OutlinedDocumentDuplicate;
 
@@ -47,6 +47,11 @@ class ImportAssessmentBooklet extends Page implements HasForms
     public ?array $preview = null;
 
     public ?string $parserError = null;
+
+    public function getSubheading(): ?string
+    {
+        return 'Trae un simulacro o taller completo, revísalo por bloques y guárdalo en el banco sin repetir origen ni clasificación innecesaria.';
+    }
 
     public function mount(): void
     {
