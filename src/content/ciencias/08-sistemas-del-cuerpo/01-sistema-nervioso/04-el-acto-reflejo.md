@@ -14,6 +14,7 @@ Si alguna vez has tocado por accidente una sartén caliente e instantáneamente,
 
 ## La Velocidad Gana la Supervivencia
 
+
 Un **reflejo** es una respuesta rapidísima que el cuerpo ejecuta sin que tengas tiempo para pensar o decidir. Cuando el peligro es inmediato (como quemarte o pincharte), tu sistema nervioso no tiene tiempo de enviar la información hasta el cerebro, pedirle que decida qué hacer y esperar la orden de regreso. El tiempo es oro.
 
 Por eso, el cuerpo toma un "atajo de emergencia". En un acto reflejo, el centro de procesamiento no es el cerebro, sino la **médula espinal**, que procesa la urgencia de manera casi instantánea.
@@ -21,6 +22,8 @@ Por eso, el cuerpo toma un "atajo de emergencia". En un acto reflejo, el centro 
 ---
 
 ## El Camino de Emergencia Paso a Paso
+
+![acto-reflejo](https://cdn.ediprofe.com/img/ciencias/xjet-acto-reflejo.webp)
 
 Imagina la situación de tocar una olla con agua hirviendo. Así sucede internamente la reacción protectora:
 
@@ -31,9 +34,9 @@ Imagina la situación de tocar una olla con agua hirviendo. Así sucede internam
 5. **Neurona Motora:** Toma la orden urgente desde la médula y **envía la orden** corriendo de vuelta al brazo.
 6. **Músculo:** El brazo recibe el mandato urgente y se contrae para **retirar la mano** a gran velocidad antes de sufrir más daño.
 
-![arco-reflejo](https://cdn.ediprofe.com/img/ciencias/t8r4-arco-reflejo.webp)
-
 > **Idea clave:** Un reflejo es una vía corta e inconsciente que tiene como fin actuar ante el peligro antes de que puedas opinar.
+
+![el-camino-de-emergencia-acto-reflejo](https://cdn.ediprofe.com/img/ciencias/nh4i-el-camino-de-emergencia-acto-reflejo.webp)
 
 ---
 
@@ -55,6 +58,8 @@ $$
 \boxed{\text{La médula espinal}}
 $$
 
+![tropiezo-al-caminar-reflejo](https://cdn.ediprofe.com/img/ciencias/obt7-tropiezo-al-caminar-reflejo.webp)
+
 #### Ejemplo 2: El parpadeo involuntario
 
 Un amigo te lanza una bola de papel a la cara inesperadamente. Antes de que él se ría y de que tú reclames, tus párpados se cierran solos con enorme velocidad protegiendo tus globos oculares. ¿Cómo definimos esta respuesta tan rápida y sin análisis lógico de tu parte?
@@ -69,6 +74,8 @@ Un amigo te lanza una bola de papel a la cara inesperadamente. Antes de que él 
 $$
 \boxed{\text{Un acto reflejo}}
 $$
+
+![acto-reflejo-bola-de-papel](https://cdn.ediprofe.com/img/ciencias/yvv6-acto-reflejo-bola-de-papel.webp)
 
 #### Ejemplo 3: El mensajero de regreso veloz
 
@@ -85,6 +92,8 @@ Regresando al ejemplo de pisar un clavo, una vez que la médula espinal decidió
 $$
 \boxed{\text{Las neuronas motoras}}
 $$
+
+![el-mensaje-de-regreso-veloz](https://cdn.ediprofe.com/img/ciencias/imuz-el-mensaje-de-regreso-veloz.webp)
 
 ---
 

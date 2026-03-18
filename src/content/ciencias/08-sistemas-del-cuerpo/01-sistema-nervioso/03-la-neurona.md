@@ -14,6 +14,8 @@ Si el sistema nervioso es una inmensa red de comunicación en tu cuerpo, las neu
 
 ## Células Especiales del Sistema Nervioso
 
+![la-neurona](https://cdn.ediprofe.com/img/ciencias/x7ql-la-neurona.webp)
+
 Al igual que un edificio de ladrillos, todos los órganos están formados por células. Las células que conforman el sistema nervioso se llaman **neuronas**. Su única y vital misión es transmitir información de un extremo a otro, de manera similar a como viaja la corriente eléctrica en un circuito.
 
 Las neuronas nunca dejan de trabajar. Continuamente, **reciben, procesan y transmiten información** sin detenerse en toda tu vida.
@@ -28,17 +30,35 @@ Visualiza a una neurona como a un árbol asimétrico. Tiene ramas de recepción,
 2. **Cuerpo Celular:** Como el centro de la célula. Contiene el núcleo y su trabajo es **procesar la información** recién recibida.
 3. **Axón:** Es un solo cable prolongado o "tronco" que sale del cuerpo de la célula. Su trabajo se trata únicamente de emisión, por lo que **envía señales** eléctricas hacia otras neuronas, músculos u órganos ubicados a la distancia.
 
+![anatomia-de-la-neurona](https://cdn.ediprofe.com/img/ciencias/2i7f-anatomia-de-la-neurona.webp)
+
 ---
 
 ## Tipos de Neuronas (Según su Trabajo)
 
+![tipos-de-neurona](https://cdn.ediprofe.com/img/ciencias/wyxu-tipos-de-neurona.webp)
+
+![como-se-organiza-el-sistema-nervioso](https://cdn.ediprofe.com/img/ciencias/uni7-como-se-organiza-el-sistema-nervioso.webp)
+
 Aunque todas se parecen físicamente, dentro del ciclo de comunicación ocupan tres cargos distintos:
 
 1. **Neuronas Sensoriales:** Son los mensajeros que traen las noticias del ambiente externo. Tienen como meta **llevar información de los sentidos al Sistema Nervioso Central (SNC)**.
+
+![neuronas-sensoriales](https://cdn.ediprofe.com/img/ciencias/mds2-neuronas-sensoriales.webp)
+
+
 2. **Interneuronas:** Son los conectores internos y los verdaderos analizadores y pensadores. Su función requiere **conectar neuronas ubicadas dentro del SNC**, procesando allí toda la información como en un almacén cerrado.
+
+![interneuronas](https://cdn.ediprofe.com/img/ciencias/716c-interneuronas.webp)
+
 3. **Neuronas Motoras:** Son los mensajeros de despachos finales. Son necesarias para **llevar las órdenes directas desde el SNC y entregarlas a los músculos** para generar el movimiento decidido.
 
+![neuronas-motoras](https://cdn.ediprofe.com/img/ciencias/k2sn-neuronas-motoras.webp)
+
+
 > **Idea clave:** Las neuronas se agrupan en redes con tres misiones específicas en cadena para poder ser sensoriales, interneuronas o motoras.
+
+
 
 ---
 
@@ -60,6 +80,8 @@ $$
 \boxed{\text{Las dendritas de la neurona}}
 $$
 
+![dendritas-el-hielo](https://cdn.ediprofe.com/img/ciencias/1ayw-dendritas-el-hielo.webp)
+
 #### Ejemplo 2: El mensaje largo
 
 Si una neurona en el dedo gordo del pie tiene que enviar un calambre hacia tu pierna de forma directa antes de la médula, tiene que utilizar una parte específica de su propia estructura extendida. ¿A qué región estructural pertenece este "cable" emisor?
@@ -76,6 +98,8 @@ $$
 \boxed{\text{El axón}}
 $$
 
+![el-mensaje-largo](https://cdn.ediprofe.com/img/ciencias/6pkf-el-mensaje-largo.webp)
+
 #### Ejemplo 3: El mensajero de regreso a los músculos
 
 Imagina que ya realizaste el análisis mental de patear un balón de fútbol ubicado a un metro de distancia en el piso. ¿Qué clase de neuronas tienen que ser responsables de conducir ese mandato exacto desde tu cerebro hacia las piernas que se preparaban en el piso?
@@ -91,6 +115,8 @@ Imagina que ya realizaste el análisis mental de patear un balón de fútbol ubi
 $$
 \boxed{\text{Las neuronas motoras}}
 $$
+
+![regreso-a-los-musculos](https://cdn.ediprofe.com/img/ciencias/jog3-regreso-a-los-musculos.webp)
 
 ---
 
@@ -246,6 +272,8 @@ Existen personas que pueden tener alteraciones en las que todo movimiento que en
 ---
 
 ## 🔑 Resumen
+
+![resumen-las-neuronas](https://cdn.ediprofe.com/img/ciencias/hw4s-resumen-las-neuronas.webp)
 
 | Parte/Tipo de la Neurona | Función o Descripción principal |
 | :--- | :--- |

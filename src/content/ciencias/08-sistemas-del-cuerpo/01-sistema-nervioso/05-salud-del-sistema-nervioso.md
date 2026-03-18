@@ -14,11 +14,21 @@ Así como llevas el auto al mecánico o proteges la pantalla de tu teléfono cel
 
 ## Enfermedades del Sistema Nervioso
 
+![salud-del-sistema-nervioso](https://cdn.ediprofe.com/img/ciencias/zffr-salud-del-sistema-nervioso.webp)
+
 Cuando el sistema organizativo y central presenta un daño celular crónico o temporal de descargas alteradas en el voltaje natural de comunicación sobre su material conductor sináptico biológico se presentan los padecimientos o síndromes siguientes que conocemos:
 
 1. **Alzheimer:** Es un deterioro progresivo crónico general del lóbulo cerebral y conexiones nerviosas internas superiores afectando seriamente de modo visible la capacidad cerebral retentiva sobre todo en una severa **pérdida progresiva de la memoria**, además de desorientación constante senil de los espacios básicos y su personalidad.
+
+![alzheimer](https://cdn.ediprofe.com/img/ciencias/tqh0-alzheimer.webp)
+
 2. **Parkinson:** Tiene serios e incontrolables padecimientos afectando un grupo selecto de nervios y zona basal celular cerebral causando como principal factor identificatorio un severos **problemas en el movimiento o temblores involuntarios**. Interrumpe severamente la natural transmisión y fluidez regular en las manos y en el andar normal que debiera ordenar sin esfuerzo nuestro sistema motor.
+
+![enfermedad-de-parkinson](https://cdn.ediprofe.com/img/ciencias/9upv-enfermedad-de-parkinson.webp)
+
 3. **Epilepsia:** Consiste en fallos esporádicos en los ritmos en que se disparan las zonas centrales del cableado de alta densidad de información como tormentas aleatorias conocidas más médicamente de lado anatómico neuronal como **descargas eléctricas anormales y asíncronas** por todo lugar sin sentido sobre el cerebro central perdiendo conciencia por su brusquedad inofensiva o severamente grave en colapso muscular a menudo en todo convulsión corporal espástica tónica.
+
+![epilepsia](https://cdn.ediprofe.com/img/ciencias/lmpx-epilepsia.webp)
 
 ---
 
@@ -30,6 +40,8 @@ Los médicos conocen por comprobación de la salud pública, al igual para cualq
 * **Evitar tajantemente toda clases de consumos tóxicos o drogas dañinas de nervios.**
 
 > **Idea clave:** Enfermedades severas como el Parkinson, Epilepsia y Alzheimer aquejan la estabilidad y vitalidad motora si son alteradas sin reposo y desnutridos, los cuidados como el sueño reparador y prevenir excesos dañinos le devolverán la fuerza operativa superior.
+
+![habitos-cuidado-sistema-nervioso](https://cdn.ediprofe.com/img/ciencias/rnrx-habitos-cuidado-sistema-nervioso.webp)
 
 ---
 
