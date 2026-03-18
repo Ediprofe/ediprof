@@ -29,7 +29,7 @@ class AssessmentBlockResource extends Resource
 
     protected static string|UnitEnum|null $navigationGroup = 'Banco académico';
 
-    protected static ?string $navigationLabel = 'Bloques';
+    protected static ?string $navigationLabel = 'Banco de preguntas';
 
     protected static ?int $navigationSort = 15;
 

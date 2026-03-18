@@ -14,27 +14,27 @@ class ListAssessmentBlocks extends ListRecords
 
     public function getTitle(): string
     {
-        return 'Banco editorial de bloques';
+        return 'Banco de preguntas';
     }
 
     public function getSubheading(): ?string
     {
-        return 'Aquí construyes el banco reusable del proyecto: puedes agregar bloques sueltos o cargar un cuadernillo completo para revisarlo y guardarlo.';
+        return 'Aquí construyes el banco reusable del proyecto. Agregas preguntas al banco y el sistema las organiza internamente por bloques con contexto compartido cuando corresponde.';
     }
 
     protected function getHeaderActions(): array
     {
         return [
             Action::make('importBlock')
-                ->label('Agregar bloque al banco')
+                ->label('Agregar preguntas')
                 ->icon('heroicon-o-sparkles')
-                ->tooltip('Pega un bloque y deja que el sistema lo interprete para revisarlo antes de guardarlo.')
+                ->tooltip('Pega preguntas o un bloque contextual y revisa la preview antes de guardarlo en el banco.')
                 ->url(ImportAiQuestionDraft::getUrl(panel: 'admin')),
             Action::make('importBooklet')
-                ->label('Cargar cuadernillo al banco')
+                ->label('Traer preguntas desde cuadernillo')
                 ->icon('heroicon-o-document-duplicate')
                 ->color('gray')
-                ->tooltip('Trae un simulacro o taller completo por bloques para poblar el banco sin repetir trabajo.')
+                ->tooltip('Usa esta vía cuando el material viene como simulacro o taller completo y quieres poblar el banco en lote.')
                 ->url(ImportAssessmentBooklet::getUrl(panel: 'admin')),
         ];
     }

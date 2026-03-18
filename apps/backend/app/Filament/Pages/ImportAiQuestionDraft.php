@@ -28,7 +28,7 @@ class ImportAiQuestionDraft extends Page implements HasForms
 
     protected string $view = 'filament.pages.import-ai-question-draft';
 
-    protected static ?string $navigationLabel = 'Agregar bloque al banco';
+    protected static ?string $navigationLabel = 'Agregar preguntas';
 
     protected static string|\UnitEnum|null $navigationGroup = 'Banco académico';
 
@@ -36,7 +36,7 @@ class ImportAiQuestionDraft extends Page implements HasForms
 
     protected static string|\BackedEnum|null $navigationIcon = Heroicon::OutlinedSparkles;
 
-    protected static ?string $title = 'Agregar bloque al banco';
+    protected static ?string $title = 'Agregar preguntas al banco';
 
     public ?array $data = [];
 
@@ -51,7 +51,7 @@ class ImportAiQuestionDraft extends Page implements HasForms
 
     public function getSubheading(): ?string
     {
-        return 'Pega un bloque, revisa qué entendió el sistema y guárdalo en el banco cuando ya se vea editorialmente correcto.';
+        return 'Pega preguntas o un bloque contextual, revisa qué entendió el sistema y guárdalo cuando ya se vea editorialmente correcto.';
     }
 
     public function mount(): void
@@ -69,15 +69,15 @@ class ImportAiQuestionDraft extends Page implements HasForms
     {
         return $schema
             ->components([
-                Section::make('Paso 1. Pega un bloque contextual')
-                    ->description('Aquí trabajamos como en Saber 11: contexto + una o varias preguntas. Laravel debe reconocer el bloque completo, no preguntas aisladas.')
+                Section::make('Paso 1. Pega preguntas o un bloque')
+                    ->description('Puedes traer contenido desde IA, desde un simulacro o desde cualquier material en texto. El sistema intentará reconocer contexto compartido y preguntas relacionadas.')
                     ->components([
                         TextInput::make('draft_title')
                             ->label('Nombre corto del borrador')
                             ->helperText('Opcional. Si lo dejas vacío, Laravel armará un nombre útil con lo que detecte del borrador y su organización.')
                             ->maxLength(255),
                         Textarea::make('draft_markdown')
-                            ->label('Bloque pegado desde ChatGPT o Gemini')
+                            ->label('Contenido pegado')
                             ->rows(24)
                             ->required()
                             ->placeholder(<<<'TEXT'
@@ -105,7 +105,7 @@ Explica por qué la opción B es válida.
 TEXT),
                     ]),
                 Section::make('Paso 2. Ubícalo en el banco')
-                    ->description('Clasificamos el bloque por materia y origen. La unidad queda diferida para no frenar la captura inicial.')
+                    ->description('Aquí dejas claro de qué materia es el contenido y de dónde viene. La unidad puede quedar diferida mientras revisas el banco.')
                     ->components([
                         Select::make('subject_id')
                             ->label('Materia')

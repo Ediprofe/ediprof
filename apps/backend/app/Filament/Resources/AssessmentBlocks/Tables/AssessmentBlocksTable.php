@@ -22,7 +22,7 @@ class AssessmentBlocksTable
             ->defaultSort('updated_at', 'desc')
             ->columns([
                 TextColumn::make('title')
-                    ->label('Bloque')
+                    ->label('Bloque / grupo de preguntas')
                     ->searchable()
                     ->sortable()
                     ->wrap(),
@@ -97,15 +97,15 @@ class AssessmentBlocksTable
                     ->url(fn (AssessmentTemplate $record): string => route('admin.assessment_drafts.preview_web', $record), shouldOpenInNewTab: true),
                 EditAction::make(),
             ])
-            ->emptyStateHeading('Tu banco editorial todavía está vacío.')
-            ->emptyStateDescription('Puedes agregar un bloque suelto o cargar un cuadernillo completo. Ambos caminos terminan alimentando el mismo banco reutilizable.')
+            ->emptyStateHeading('Tu banco de preguntas todavía está vacío.')
+            ->emptyStateDescription('Puedes agregar preguntas pegando un bloque contextual o traer varias desde un cuadernillo. Ambos caminos alimentan el mismo banco reusable.')
             ->emptyStateActions([
                 Action::make('emptyImportBlock')
-                    ->label('Agregar bloque al banco')
+                    ->label('Agregar preguntas')
                     ->icon('heroicon-o-sparkles')
                     ->url(ImportAiQuestionDraft::getUrl(panel: 'admin')),
                 Action::make('emptyImportBooklet')
-                    ->label('Cargar cuadernillo al banco')
+                    ->label('Traer preguntas desde cuadernillo')
                     ->icon('heroicon-o-document-duplicate')
                     ->color('gray')
                     ->url(ImportAssessmentBooklet::getUrl(panel: 'admin')),

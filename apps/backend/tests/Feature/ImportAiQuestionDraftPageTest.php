@@ -22,7 +22,7 @@ class ImportAiQuestionDraftPageTest extends TestCase
         $this->actingAs($admin, 'web')
             ->get(ImportAiQuestionDraft::getUrl(panel: 'admin'))
             ->assertOk()
-            ->assertSee('Agregar bloque al banco');
+            ->assertSee('Agregar preguntas al banco');
     }
 
     public function test_it_converts_a_shared_context_draft_inside_filament_page(): void
