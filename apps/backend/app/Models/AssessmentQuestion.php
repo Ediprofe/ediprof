@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Services\Content\AssessmentQuestionFingerprintService;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -18,10 +19,13 @@ class AssessmentQuestion extends Model
             $subject = $question->subject_id ? AssessmentSubject::query()->find($question->subject_id) : null;
             $unit = $question->unit_id ? AssessmentUnit::query()->find($question->unit_id) : null;
             $originCollection = $question->origin_collection_id ? AssessmentOriginCollection::query()->find($question->origin_collection_id) : null;
+            $fingerprintService = app(AssessmentQuestionFingerprintService::class);
 
             $question->subject_label = $subject?->label;
             $question->unit_label = $unit?->label;
             $question->origin_label = $originCollection?->label;
+            $question->exact_fingerprint = $fingerprintService->exactFingerprintForQuestion($question);
+            $question->search_document = $fingerprintService->searchDocumentForQuestion($question);
         });
     }
 
@@ -60,6 +64,8 @@ class AssessmentQuestion extends Model
         'concepts_assets',
         'concepts_blocks',
         'app_payload_version',
+        'exact_fingerprint',
+        'search_document',
     ];
 
     protected function casts(): array

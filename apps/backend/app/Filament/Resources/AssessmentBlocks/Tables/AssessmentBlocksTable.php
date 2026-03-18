@@ -3,8 +3,7 @@
 namespace App\Filament\Resources\AssessmentBlocks\Tables;
 
 use App\Filament\Pages\ImportAiQuestionDraft;
-use App\Filament\Pages\ImportAssessmentBooklet;
-use App\Filament\Resources\AssessmentBlocks\AssessmentBlockResource;
+use App\Filament\Resources\AssessmentQuestions\AssessmentQuestionResource;
 use App\Models\AssessmentTemplate;
 use Filament\Actions\Action;
 use Filament\Actions\EditAction;
@@ -97,18 +96,18 @@ class AssessmentBlocksTable
                     ->url(fn (AssessmentTemplate $record): string => route('admin.assessment_drafts.preview_web', $record), shouldOpenInNewTab: true),
                 EditAction::make(),
             ])
-            ->emptyStateHeading('Tu banco de preguntas todavía está vacío.')
-            ->emptyStateDescription('Puedes agregar preguntas pegando un bloque contextual o traer varias desde un cuadernillo. Ambos caminos alimentan el mismo banco reusable.')
+            ->emptyStateHeading('Todavía no hay bloques editoriales para revisar.')
+            ->emptyStateDescription('Cuando agregues preguntas al banco, aquí podrás revisar cómo quedaron organizadas por contexto compartido y bloque.')
             ->emptyStateActions([
+                Action::make('emptyGoToQuestionBank')
+                    ->label('Ir al banco de preguntas')
+                    ->icon('heroicon-o-rectangle-stack')
+                    ->url(AssessmentQuestionResource::getUrl('index', panel: 'admin')),
                 Action::make('emptyImportBlock')
                     ->label('Agregar preguntas')
                     ->icon('heroicon-o-sparkles')
-                    ->url(ImportAiQuestionDraft::getUrl(panel: 'admin')),
-                Action::make('emptyImportBooklet')
-                    ->label('Traer preguntas desde cuadernillo')
-                    ->icon('heroicon-o-document-duplicate')
                     ->color('gray')
-                    ->url(ImportAssessmentBooklet::getUrl(panel: 'admin')),
+                    ->url(ImportAiQuestionDraft::getUrl(panel: 'admin')),
             ]);
     }
 }

@@ -9,6 +9,7 @@ use App\Filament\Resources\AssessmentUnits\AssessmentUnitResource;
 use App\Models\AssessmentOriginCollection;
 use App\Models\AssessmentSubject;
 use App\Models\AssessmentUnit;
+use App\Services\Content\AssessmentQuestionDuplicateDetectionService;
 use App\Services\Content\AiQuestionDraftParser;
 use App\Services\Content\AssessmentBookletImportService;
 use Filament\Forms\Components\Repeater;
@@ -207,7 +208,10 @@ TEXT),
             ->statePath('data');
     }
 
-    public function convertDraft(AiQuestionDraftParser $parser): void
+    public function convertDraft(
+        AiQuestionDraftParser $parser,
+        AssessmentQuestionDuplicateDetectionService $duplicateDetectionService
+    ): void
     {
         $state = $this->form->getState();
         $sections = collect((array) ($state['sections'] ?? []));
@@ -236,7 +240,10 @@ TEXT),
                     ? AssessmentUnit::query()->find((int) $section['default_unit_id'])
                     : null;
 
-                $parsed = $parser->parse($draft);
+                $parsed = $duplicateDetectionService->annotateDraft(
+                    $parser->parse($draft),
+                    (int) $section['subject_id'],
+                );
 
                 return [
                     'title' => filled($section['title'] ?? null) ? trim((string) $section['title']) : null,
@@ -249,6 +256,9 @@ TEXT),
                         'contexts' => count($parsed['contexts'] ?? []),
                         'questions' => count($parsed['questions'] ?? []),
                         'links' => count($parsed['question_context_links'] ?? []),
+                        'new_questions' => (int) data_get($parsed, 'duplicate_summary.new_questions', 0),
+                        'exact_duplicates' => (int) data_get($parsed, 'duplicate_summary.exact_duplicates', 0),
+                        'similar_candidates' => (int) data_get($parsed, 'duplicate_summary.questions_with_similar_candidates', 0),
                     ],
                 ];
             })->all();
@@ -267,6 +277,9 @@ TEXT),
                     'contexts' => collect($parsedSections)->sum(fn (array $section): int => (int) data_get($section, 'summary.contexts', 0)),
                     'questions' => collect($parsedSections)->sum(fn (array $section): int => (int) data_get($section, 'summary.questions', 0)),
                     'links' => collect($parsedSections)->sum(fn (array $section): int => (int) data_get($section, 'summary.links', 0)),
+                    'new_questions' => collect($parsedSections)->sum(fn (array $section): int => (int) data_get($section, 'summary.new_questions', 0)),
+                    'exact_duplicates' => collect($parsedSections)->sum(fn (array $section): int => (int) data_get($section, 'summary.exact_duplicates', 0)),
+                    'similar_candidates' => collect($parsedSections)->sum(fn (array $section): int => (int) data_get($section, 'summary.similar_candidates', 0)),
                 ],
             ];
             $this->parserError = null;
@@ -274,9 +287,11 @@ TEXT),
             Notification::make()
                 ->title('Cuadernillo convertido')
                 ->body(sprintf(
-                    'Se detectaron %d sección(es) y %d pregunta(s).',
+                    'Se detectaron %d sección(es), %d pregunta(s), %d nuevas y %d repetidas exactas.',
                     (int) data_get($this->preview, 'summary.sections', 0),
                     (int) data_get($this->preview, 'summary.questions', 0),
+                    (int) data_get($this->preview, 'summary.new_questions', 0),
+                    (int) data_get($this->preview, 'summary.exact_duplicates', 0),
                 ))
                 ->success()
                 ->send();
@@ -292,9 +307,12 @@ TEXT),
         }
     }
 
-    public function saveBookletAndOpenEdit(AssessmentBookletImportService $importService)
+    public function saveBookletAndOpenEdit(
+        AssessmentBookletImportService $importService,
+        AssessmentQuestionDuplicateDetectionService $duplicateDetectionService
+    )
     {
-        $booklet = $this->persistBooklet($importService);
+        $booklet = $this->persistBooklet($importService, $duplicateDetectionService);
 
         if (! $booklet) {
             return null;
@@ -334,6 +352,16 @@ TEXT),
             $notes[] = "También se detectaron {$contexts} contexto(s), así que el importador conservará el material compartido sin duplicarlo.";
         }
 
+        $exactDuplicates = (int) data_get($this->preview, 'summary.exact_duplicates', 0);
+        if ($exactDuplicates > 0) {
+            $notes[] = "Se detectaron {$exactDuplicates} pregunta(s) repetidas exactas. Se omitirán automáticamente al guardar el cuadernillo.";
+        }
+
+        $similarCandidates = (int) data_get($this->preview, 'summary.similar_candidates', 0);
+        if ($similarCandidates > 0) {
+            $notes[] = "Hay {$similarCandidates} pregunta(s) con parecidas sugeridas. No se bloquean, pero conviene revisar si ya tienes algo muy cercano en el banco.";
+        }
+
         $notes[] = 'Recuerda: la unidad es opcional aquí. Lo fino se puede clasificar después desde el banco.';
 
         return $notes;
@@ -354,7 +382,10 @@ TEXT),
         return AssessmentOriginCollectionResource::getUrl(panel: 'admin');
     }
 
-    private function persistBooklet(AssessmentBookletImportService $importService): ?\App\Models\AssessmentBooklet
+    private function persistBooklet(
+        AssessmentBookletImportService $importService,
+        AssessmentQuestionDuplicateDetectionService $duplicateDetectionService
+    ): ?\App\Models\AssessmentBooklet
     {
         if (! is_array($this->preview)) {
             Notification::make()
@@ -378,6 +409,35 @@ TEXT),
             return null;
         }
 
+        $sectionsToImport = collect((array) ($this->preview['sections'] ?? []))
+            ->map(function (array $section) use ($duplicateDetectionService): array {
+                $savableDraft = $duplicateDetectionService->extractSavableDraft((array) ($section['parsed_draft'] ?? []));
+
+                return [
+                    'title' => $section['title'] ?? null,
+                    'subject_id' => (int) $section['subject_id'],
+                    'default_unit_id' => $section['default_unit_id'] ?? null,
+                    'parsed_draft' => $savableDraft,
+                    'metadata' => [
+                        'source' => 'filament-booklet-import-preview',
+                        'skipped_exact_duplicates' => (int) data_get($section, 'summary.exact_duplicates', 0),
+                    ],
+                ];
+            })
+            ->filter(fn (array $section): bool => count($section['parsed_draft']['questions'] ?? []) > 0)
+            ->values()
+            ->all();
+
+        if ($sectionsToImport === []) {
+            Notification::make()
+                ->title('No hay preguntas nuevas para guardar')
+                ->body('Todas las preguntas de este cuadernillo ya existen en el banco. Revisa las coincidencias detectadas antes de volver a guardarlo.')
+                ->warning()
+                ->send();
+
+            return null;
+        }
+
         return $importService->import(
             [
                 'title' => trim((string) $state['title']),
@@ -389,17 +449,7 @@ TEXT),
                 'is_active' => (bool) ($state['is_active'] ?? true),
                 'editorial_status' => 'draft',
             ],
-            collect((array) ($this->preview['sections'] ?? []))
-                ->map(fn (array $section): array => [
-                    'title' => $section['title'] ?? null,
-                    'subject_id' => (int) $section['subject_id'],
-                    'default_unit_id' => $section['default_unit_id'] ?? null,
-                    'parsed_draft' => $section['parsed_draft'],
-                    'metadata' => [
-                        'source' => 'filament-booklet-import-preview',
-                    ],
-                ])
-                ->all(),
+            $sectionsToImport,
             auth()->user(),
         );
     }

@@ -2,9 +2,11 @@
 
 namespace App\Filament\Resources\AssessmentQuestions\Tables;
 
-use App\Models\AssessmentBooklet;
 use App\Models\AssessmentUnit;
 use App\Services\Content\AssessmentQuestionBulkClassificationService;
+use App\Filament\Resources\AssessmentBlocks\AssessmentBlockResource;
+use App\Filament\Resources\AssessmentQuestions\AssessmentQuestionResource;
+use Filament\Actions\Action;
 use Filament\Actions\BulkAction;
 use Filament\Actions\BulkActionGroup;
 use App\Models\AssessmentQuestion;
@@ -30,15 +32,21 @@ class AssessmentQuestionsTable
             ->modifyQueryUsing(fn ($query) => $query->with(['template', 'contexts'])->withCount(['contexts', 'booklets']))
             ->defaultSort('updated_at', 'desc')
             ->columns([
-                TextColumn::make('external_id')
-                    ->label('ID local')
-                    ->searchable()
-                    ->sortable(),
-                TextColumn::make('source_key')
-                    ->label('Clave global')
-                    ->state(fn (AssessmentQuestion $record): string => $record->source_key)
-                    ->toggleable(isToggledHiddenByDefault: true)
-                    ->copyable(),
+                TextColumn::make('stem_html')
+                    ->label('Pregunta')
+                    ->state(fn (AssessmentQuestion $record): string => Str::limit(
+                        Str::of(strip_tags((string) ($record->stem_html ?: $record->stem_mdx)))->squish()->value(),
+                        180
+                    ))
+                    ->searchable(query: function (Builder $query, string $search): Builder {
+                        return $query->where(function (Builder $nested) use ($search): Builder {
+                            return $nested
+                                ->where('stem_html', 'like', "%{$search}%")
+                                ->orWhere('stem_mdx', 'like', "%{$search}%")
+                                ->orWhere('search_document', 'like', '%'.Str::of($search)->ascii()->lower()->value().'%');
+                        });
+                    })
+                    ->wrap(),
                 TextColumn::make('template.title')
                     ->label('Bloque')
                     ->searchable()
@@ -60,7 +68,7 @@ class AssessmentQuestionsTable
                     ->toggleable()
                     ->placeholder('Sin clasificar'),
                 TextColumn::make('editorial_status')
-                    ->label('Estado editorial')
+                    ->label('Estado')
                     ->badge()
                     ->sortable()
                     ->formatStateUsing(fn (?string $state): string => match ($state) {
@@ -77,22 +85,25 @@ class AssessmentQuestionsTable
                         'draft' => 'danger',
                         default => 'gray',
                     }),
-                TextColumn::make('contexts_count')
-                    ->label('Contextos')
-                    ->state(fn (AssessmentQuestion $record): int => $record->contexts->count())
-                    ->toggleable(),
                 TextColumn::make('booklets_count')
                     ->label('Cuadernillos')
                     ->sortable()
-                    ->toggleable()
+                    ->toggleable(isToggledHiddenByDefault: true)
                     ->placeholder('0'),
-                TextColumn::make('stem_html')
-                    ->label('Enunciado')
-                    ->state(fn (AssessmentQuestion $record): string => Str::limit(
-                        Str::of(strip_tags((string) $record->stem_html))->squish()->value(),
-                        150
-                    ))
-                    ->wrap(),
+                TextColumn::make('contexts_count')
+                    ->label('Contextos')
+                    ->state(fn (AssessmentQuestion $record): int => $record->contexts->count())
+                    ->toggleable(isToggledHiddenByDefault: true),
+                TextColumn::make('external_id')
+                    ->label('ID local')
+                    ->searchable()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+                TextColumn::make('source_key')
+                    ->label('Clave global')
+                    ->state(fn (AssessmentQuestion $record): string => $record->source_key)
+                    ->toggleable(isToggledHiddenByDefault: true)
+                    ->copyable(),
                 TextColumn::make('updated_at')
                     ->label('Actualizada')
                     ->dateTime()
@@ -106,21 +117,14 @@ class AssessmentQuestionsTable
                 SelectFilter::make('subject_id')
                     ->label('Materia')
                     ->relationship('subject', 'label'),
+                SelectFilter::make('unit_id')
+                    ->label('Unidad')
+                    ->relationship('unit', 'label')
+                    ->searchable()
+                    ->preload(),
                 SelectFilter::make('origin_collection_id')
                     ->label('Origen')
                     ->relationship('originCollection', 'label'),
-                SelectFilter::make('booklet_id')
-                    ->label('Cuadernillo')
-                    ->options(fn (): array => AssessmentBooklet::query()->orderBy('title')->pluck('title', 'id')->all())
-                    ->query(function (Builder $query, array $data): Builder {
-                        $value = $data['value'] ?? null;
-
-                        if (! filled($value)) {
-                            return $query;
-                        }
-
-                        return $query->whereHas('booklets', fn (Builder $booklets): Builder => $booklets->whereKey((int) $value));
-                    }),
                 SelectFilter::make('editorial_status')
                     ->label('Estado editorial')
                     ->options([
@@ -141,7 +145,16 @@ class AssessmentQuestionsTable
                     ),
             ])
             ->recordActions([
-                EditAction::make(),
+                EditAction::make()
+                    ->label('Editar pregunta'),
+                Action::make('editBlock')
+                    ->label('Ver bloque')
+                    ->icon('heroicon-o-document-text')
+                    ->color('gray')
+                    ->visible(fn (AssessmentQuestion $record): bool => filled($record->template_id))
+                    ->url(fn (AssessmentQuestion $record): ?string => $record->template_id
+                        ? AssessmentBlockResource::getUrl('edit', ['record' => $record->template_id], panel: 'admin')
+                        : null),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
@@ -204,7 +217,13 @@ class AssessmentQuestionsTable
                         }),
                 ]),
             ])
-            ->emptyStateHeading('Todavía no hay preguntas sincronizadas.')
-            ->emptyStateDescription('Aquí entras cuando necesitas afinar o corregir preguntas puntuales dentro del banco editorial.');
+            ->emptyStateHeading('Tu banco de preguntas todavía está vacío.')
+            ->emptyStateDescription('Empieza agregando una pregunta con su contexto base. Luego la podrás ubicar por materia, unidad, origen o bloque.')
+            ->emptyStateActions([
+                Action::make('emptyCreateQuestion')
+                    ->label('Agregar pregunta')
+                    ->icon('heroicon-o-plus')
+                    ->url(AssessmentQuestionResource::getUrl('create', panel: 'admin')),
+            ]);
     }
 }

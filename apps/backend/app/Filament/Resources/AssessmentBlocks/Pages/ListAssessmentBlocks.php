@@ -3,8 +3,8 @@
 namespace App\Filament\Resources\AssessmentBlocks\Pages;
 
 use App\Filament\Pages\ImportAiQuestionDraft;
-use App\Filament\Pages\ImportAssessmentBooklet;
 use App\Filament\Resources\AssessmentBlocks\AssessmentBlockResource;
+use App\Filament\Resources\AssessmentQuestions\AssessmentQuestionResource;
 use Filament\Actions\Action;
 use Filament\Resources\Pages\ListRecords;
 
@@ -14,28 +14,27 @@ class ListAssessmentBlocks extends ListRecords
 
     public function getTitle(): string
     {
-        return 'Banco de preguntas';
+        return 'Bloques y contextos';
     }
 
     public function getSubheading(): ?string
     {
-        return 'Aquí construyes el banco reusable del proyecto. Agregas preguntas al banco y el sistema las organiza internamente por bloques con contexto compartido cuando corresponde.';
+        return 'Aquí revisas la estructura editorial del banco: contexto compartido, bloque y relación entre preguntas. Es una vista de soporte, no la puerta principal de captura.';
     }
 
     protected function getHeaderActions(): array
     {
         return [
-            Action::make('importBlock')
+            Action::make('goToQuestionBank')
+                ->label('Ir al banco de preguntas')
+                ->icon('heroicon-o-rectangle-stack')
+                ->tooltip('La entrada principal para alimentar y consultar el banco está en Banco de preguntas.')
+                ->url(AssessmentQuestionResource::getUrl('index', panel: 'admin')),
+            Action::make('addQuestions')
                 ->label('Agregar preguntas')
                 ->icon('heroicon-o-sparkles')
-                ->tooltip('Pega preguntas o un bloque contextual y revisa la preview antes de guardarlo en el banco.')
-                ->url(ImportAiQuestionDraft::getUrl(panel: 'admin')),
-            Action::make('importBooklet')
-                ->label('Traer preguntas desde cuadernillo')
-                ->icon('heroicon-o-document-duplicate')
                 ->color('gray')
-                ->tooltip('Usa esta vía cuando el material viene como simulacro o taller completo y quieres poblar el banco en lote.')
-                ->url(ImportAssessmentBooklet::getUrl(panel: 'admin')),
+                ->url(ImportAiQuestionDraft::getUrl(panel: 'admin')),
         ];
     }
 }

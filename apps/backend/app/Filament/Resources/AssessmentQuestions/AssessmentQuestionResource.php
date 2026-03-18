@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\AssessmentQuestions;
 
+use App\Filament\Resources\AssessmentQuestions\Pages\CreateAssessmentQuestion;
 use App\Filament\Resources\AssessmentQuestions\Pages\EditAssessmentQuestion;
 use App\Filament\Resources\AssessmentQuestions\Pages\ListAssessmentQuestions;
 use App\Filament\Resources\AssessmentQuestions\Schemas\AssessmentQuestionForm;
@@ -26,9 +27,9 @@ class AssessmentQuestionResource extends Resource
 
     protected static string|UnitEnum|null $navigationGroup = 'Banco académico';
 
-    protected static ?string $navigationLabel = 'Preguntas (detalle)';
+    protected static ?string $navigationLabel = 'Banco de preguntas';
 
-    protected static ?int $navigationSort = 60;
+    protected static ?int $navigationSort = 10;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
@@ -46,13 +47,14 @@ class AssessmentQuestionResource extends Resource
     {
         return [
             'index' => ListAssessmentQuestions::route('/'),
+            'create' => CreateAssessmentQuestion::route('/create'),
             'edit' => EditAssessmentQuestion::route('/{record}/edit'),
         ];
     }
 
     public static function canCreate(): bool
     {
-        return false;
+        return true;
     }
 
     public static function canDelete($record): bool

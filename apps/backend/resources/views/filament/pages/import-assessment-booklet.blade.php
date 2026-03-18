@@ -3,7 +3,7 @@
     @php($reviewNotes = $this->reviewNotes())
 
     <div class="space-y-6">
-        <x-filament::section heading="Flujo recomendado" description="La idea aquí es cargar un cuadernillo completo sin pelear con la clasificación fina desde el primer momento.">
+        <x-filament::section heading="Flujo recomendado" description="La idea aquí es traer un cuadernillo al banco sin perder tiempo clasificando de más y sin volver a guardar preguntas repetidas exactas.">
             <div class="mb-4 flex flex-wrap items-center gap-3">
                 <x-filament::button tag="a" :href="$this->subjectAdminUrl()" color="gray" icon="heroicon-o-book-open">
                     Materias
@@ -32,12 +32,12 @@
                 <div class="rounded-xl border border-gray-200 bg-white p-4 dark:border-gray-700 dark:bg-gray-900">
                     <p class="text-xs font-semibold uppercase tracking-[0.18em] text-gray-500 dark:text-gray-400">Paso 3</p>
                     <p class="mt-2 text-sm font-semibold text-gray-950 dark:text-white">Revisar estructura</p>
-                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Confirmamos cuántas preguntas y contextos detectó Laravel.</p>
+                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Confirmamos cuántas preguntas son nuevas, cuáles ya existen y qué estructura detectó Laravel.</p>
                 </div>
                 <div class="rounded-xl border border-gray-200 bg-white p-4 dark:border-gray-700 dark:bg-gray-900">
                     <p class="text-xs font-semibold uppercase tracking-[0.18em] text-gray-500 dark:text-gray-400">Paso 4</p>
-                    <p class="mt-2 text-sm font-semibold text-gray-950 dark:text-white">Clasificar después</p>
-                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">La unidad queda opcional y luego se asigna masivamente.</p>
+                    <p class="mt-2 text-sm font-semibold text-gray-950 dark:text-white">Guardar solo lo nuevo</p>
+                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">Las repetidas exactas se omiten y la clasificación fina se puede terminar después.</p>
                 </div>
             </div>
         </x-filament::section>
@@ -52,12 +52,12 @@
 
                 @if ($summary)
                     <x-filament::button type="button" color="success" icon="heroicon-o-arrow-down-tray" wire:click="saveBookletAndOpenEdit">
-                        Guardar cuadernillo
+                        Guardar cuadernillo y omitir repetidas exactas
                     </x-filament::button>
                 @endif
 
                 <p class="text-sm text-gray-500 dark:text-gray-400">
-                    Aquí confirmamos estructura y herencia de materia/origen. La clasificación fina vive después en el banco.
+                    Aquí confirmamos estructura, herencia por materia y qué preguntas realmente entrarán nuevas al banco.
                 </p>
             </div>
         </form>
@@ -72,7 +72,7 @@
 
         @if ($summary)
             <x-filament::section heading="Resumen del cuadernillo" description="Esto te ayuda a validar rápido si la estructura quedó fiel al material original.">
-                <div class="grid gap-4 md:grid-cols-4">
+                <div class="grid gap-4 md:grid-cols-3 xl:grid-cols-6">
                     <div class="rounded-xl border border-gray-200 bg-gray-50 p-4 dark:border-gray-700 dark:bg-gray-900">
                         <p class="text-xs font-semibold uppercase tracking-[0.18em] text-gray-500 dark:text-gray-400">Secciones</p>
                         <p class="mt-2 text-3xl font-semibold text-gray-950 dark:text-white">{{ $summary['sections'] }}</p>
@@ -88,6 +88,18 @@
                     <div class="rounded-xl border border-gray-200 bg-gray-50 p-4 dark:border-gray-700 dark:bg-gray-900">
                         <p class="text-xs font-semibold uppercase tracking-[0.18em] text-gray-500 dark:text-gray-400">Enlaces</p>
                         <p class="mt-2 text-3xl font-semibold text-gray-950 dark:text-white">{{ $summary['links'] }}</p>
+                    </div>
+                    <div class="rounded-xl border border-emerald-200 bg-emerald-50 p-4 dark:border-emerald-500/20 dark:bg-emerald-500/10">
+                        <p class="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-700 dark:text-emerald-200">Nuevas</p>
+                        <p class="mt-2 text-3xl font-semibold text-emerald-800 dark:text-emerald-100">{{ $summary['new_questions'] ?? 0 }}</p>
+                    </div>
+                    <div class="rounded-xl border border-amber-200 bg-amber-50 p-4 dark:border-amber-500/20 dark:bg-amber-500/10">
+                        <p class="text-xs font-semibold uppercase tracking-[0.18em] text-amber-700 dark:text-amber-200">Repetidas exactas</p>
+                        <p class="mt-2 text-3xl font-semibold text-amber-800 dark:text-amber-100">{{ $summary['exact_duplicates'] ?? 0 }}</p>
+                    </div>
+                    <div class="rounded-xl border border-sky-200 bg-sky-50 p-4 dark:border-sky-500/20 dark:bg-sky-500/10">
+                        <p class="text-xs font-semibold uppercase tracking-[0.18em] text-sky-700 dark:text-sky-200">Parecidas sugeridas</p>
+                        <p class="mt-2 text-3xl font-semibold text-sky-800 dark:text-sky-100">{{ $summary['similar_candidates'] ?? 0 }}</p>
                     </div>
                 </div>
             </x-filament::section>
@@ -127,7 +139,7 @@
                                 </span>
                             </div>
 
-                            <div class="mt-4 grid gap-3 sm:grid-cols-3">
+                            <div class="mt-4 grid gap-3 sm:grid-cols-3 xl:grid-cols-6">
                                 <div class="rounded-xl border border-gray-200 bg-gray-50 p-3 text-sm dark:border-gray-700 dark:bg-gray-800/80">
                                     <p class="text-xs font-semibold uppercase tracking-[0.18em] text-gray-500 dark:text-gray-400">Contextos</p>
                                     <p class="mt-2 text-xl font-semibold text-gray-950 dark:text-white">{{ data_get($section, 'summary.contexts', 0) }}</p>
@@ -139,6 +151,18 @@
                                 <div class="rounded-xl border border-gray-200 bg-gray-50 p-3 text-sm dark:border-gray-700 dark:bg-gray-800/80">
                                     <p class="text-xs font-semibold uppercase tracking-[0.18em] text-gray-500 dark:text-gray-400">Enlaces</p>
                                     <p class="mt-2 text-xl font-semibold text-gray-950 dark:text-white">{{ data_get($section, 'summary.links', 0) }}</p>
+                                </div>
+                                <div class="rounded-xl border border-emerald-200 bg-emerald-50 p-3 text-sm dark:border-emerald-500/20 dark:bg-emerald-500/10">
+                                    <p class="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-700 dark:text-emerald-200">Nuevas</p>
+                                    <p class="mt-2 text-xl font-semibold text-emerald-800 dark:text-emerald-100">{{ data_get($section, 'summary.new_questions', 0) }}</p>
+                                </div>
+                                <div class="rounded-xl border border-amber-200 bg-amber-50 p-3 text-sm dark:border-amber-500/20 dark:bg-amber-500/10">
+                                    <p class="text-xs font-semibold uppercase tracking-[0.18em] text-amber-700 dark:text-amber-200">Repetidas exactas</p>
+                                    <p class="mt-2 text-xl font-semibold text-amber-800 dark:text-amber-100">{{ data_get($section, 'summary.exact_duplicates', 0) }}</p>
+                                </div>
+                                <div class="rounded-xl border border-sky-200 bg-sky-50 p-3 text-sm dark:border-sky-500/20 dark:bg-sky-500/10">
+                                    <p class="text-xs font-semibold uppercase tracking-[0.18em] text-sky-700 dark:text-sky-200">Parecidas</p>
+                                    <p class="mt-2 text-xl font-semibold text-sky-800 dark:text-sky-100">{{ data_get($section, 'summary.similar_candidates', 0) }}</p>
                                 </div>
                             </div>
                         </div>

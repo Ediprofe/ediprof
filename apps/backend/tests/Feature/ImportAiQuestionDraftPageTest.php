@@ -3,6 +3,8 @@
 namespace Tests\Feature;
 
 use App\Filament\Pages\ImportAiQuestionDraft;
+use App\Models\AssessmentOriginCollection;
+use App\Models\AssessmentSubject;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Livewire\Livewire;
@@ -34,7 +36,21 @@ class ImportAiQuestionDraftPageTest extends TestCase
 
         $this->actingAs($admin, 'web');
 
+        $subject = AssessmentSubject::query()->create([
+            'label' => 'Química',
+            'is_active' => true,
+        ]);
+
+        $origin = AssessmentOriginCollection::query()->create([
+            'subject_id' => $subject->id,
+            'origin_type' => 'simulacro',
+            'label' => 'Simulacro de prueba',
+            'is_active' => true,
+        ]);
+
         Livewire::test(ImportAiQuestionDraft::class)
+            ->set('data.subject_id', $subject->id)
+            ->set('data.origin_collection_id', $origin->id)
             ->set('data.draft_markdown', <<<'MD'
 ## Contexto compartido: Reacción química
 Se comparan tres muestras.

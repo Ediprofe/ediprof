@@ -3,11 +3,13 @@
 namespace App\Filament\Pages;
 
 use App\Filament\Resources\AssessmentOriginCollections\AssessmentOriginCollectionResource;
+use App\Filament\Resources\AssessmentQuestions\AssessmentQuestionResource;
 use App\Filament\Resources\AssessmentSubjects\AssessmentSubjectResource;
 use App\Filament\Resources\AssessmentUnits\AssessmentUnitResource;
 use App\Models\AssessmentOriginCollection;
 use App\Models\AssessmentSubject;
 use App\Models\AssessmentUnit;
+use App\Services\Content\AssessmentQuestionDuplicateDetectionService;
 use App\Services\Content\AiQuestionDraftImportService;
 use App\Services\Content\AiQuestionDraftParser;
 use Filament\Forms\Components\TextInput;
@@ -27,6 +29,8 @@ class ImportAiQuestionDraft extends Page implements HasForms
     use InteractsWithForms;
 
     protected string $view = 'filament.pages.import-ai-question-draft';
+
+    protected static bool $shouldRegisterNavigation = false;
 
     protected static ?string $navigationLabel = 'Agregar preguntas';
 
@@ -51,7 +55,7 @@ class ImportAiQuestionDraft extends Page implements HasForms
 
     public function getSubheading(): ?string
     {
-        return 'Pega preguntas o un bloque contextual, revisa qué entendió el sistema y guárdalo cuando ya se vea editorialmente correcto.';
+        return 'Aquí agregas preguntas al banco de forma guiada: pegas el contenido, revisas qué entendió el sistema y guardas solo lo nuevo.';
     }
 
     public function mount(): void
@@ -69,8 +73,8 @@ class ImportAiQuestionDraft extends Page implements HasForms
     {
         return $schema
             ->components([
-                Section::make('Paso 1. Pega preguntas o un bloque')
-                    ->description('Puedes traer contenido desde IA, desde un simulacro o desde cualquier material en texto. El sistema intentará reconocer contexto compartido y preguntas relacionadas.')
+                Section::make('Paso 1. Trae tus preguntas')
+                    ->description('Puedes pegar una sola pregunta o varias con contexto compartido. No necesitas pensar primero en bloques: el sistema lo organiza por dentro.')
                     ->components([
                         TextInput::make('draft_title')
                             ->label('Nombre corto del borrador')
@@ -104,8 +108,8 @@ Explica por qué la opción B es válida.
 - Cromatografía
 TEXT),
                     ]),
-                Section::make('Paso 2. Ubícalo en el banco')
-                    ->description('Aquí dejas claro de qué materia es el contenido y de dónde viene. La unidad puede quedar diferida mientras revisas el banco.')
+                Section::make('Paso 2. Ubícalas en el banco')
+                    ->description('Aquí dejas claro de qué materia son y de dónde vienen. La unidad puede quedar diferida mientras limpias y organizas el banco.')
                     ->components([
                         Select::make('subject_id')
                             ->label('Materia')
@@ -113,6 +117,7 @@ TEXT),
                             ->searchable()
                             ->preload()
                             ->native(false)
+                            ->required()
                             ->live()
                             ->helperText('Obligatoria. Todo bloque debe quedar ubicado por materia desde el inicio.'),
                         Select::make('unit_id')
@@ -146,6 +151,7 @@ TEXT),
                             ->searchable()
                             ->preload()
                             ->native(false)
+                            ->required()
                             ->helperText('Obligatorio. El origen es trazabilidad editorial, no un simple texto decorativo.'),
                     ])
                     ->columns(2),
@@ -153,24 +159,35 @@ TEXT),
             ->statePath('data');
     }
 
-    public function convertDraft(AiQuestionDraftParser $parser): void
+    public function convertDraft(
+        AiQuestionDraftParser $parser,
+        AssessmentQuestionDuplicateDetectionService $duplicateDetectionService
+    ): void
     {
         $state = $this->form->getState();
         $draft = trim((string) ($state['draft_markdown'] ?? ''));
 
         try {
-            $this->preview = $parser->parse($draft);
+            $this->preview = $duplicateDetectionService->annotateDraft(
+                $parser->parse($draft),
+                filled($state['subject_id'] ?? null) ? (int) $state['subject_id'] : null,
+            );
             $this->preview['organization'] = $this->selectedOrganizationPreview($state);
             $this->parserError = null;
             $this->savedPreviewUrl = null;
 
+            $duplicateSummary = $this->preview['duplicate_summary'] ?? [];
+            $newQuestions = (int) ($duplicateSummary['new_questions'] ?? 0);
+            $exactDuplicates = (int) ($duplicateSummary['exact_duplicates'] ?? 0);
+
             Notification::make()
                 ->title('Borrador convertido')
                 ->body(sprintf(
-                    'Se detectaron %d contexto(s), %d pregunta(s) y %d enlace(s) de contexto.',
+                    'Se detectaron %d contexto(s), %d pregunta(s), %d nuevas y %d repetidas exactas.',
                     count($this->preview['contexts'] ?? []),
                     count($this->preview['questions'] ?? []),
-                    count($this->preview['question_context_links'] ?? [])
+                    $newQuestions,
+                    $exactDuplicates,
                 ))
                 ->success()
                 ->send();
@@ -201,6 +218,9 @@ TEXT),
             'contexts' => count($this->preview['contexts'] ?? []),
             'questions' => count($this->preview['questions'] ?? []),
             'links' => count($this->preview['question_context_links'] ?? []),
+            'new_questions' => (int) data_get($this->preview, 'duplicate_summary.new_questions', 0),
+            'exact_duplicates' => (int) data_get($this->preview, 'duplicate_summary.exact_duplicates', 0),
+            'similar_candidates' => (int) data_get($this->preview, 'duplicate_summary.questions_with_similar_candidates', 0),
         ];
     }
 
@@ -252,9 +272,12 @@ TEXT),
         ];
     }
 
-    public function saveDraftAndOpenPreview(AiQuestionDraftImportService $importer)
+    public function saveDraftAndOpenPreview(
+        AiQuestionDraftImportService $importer,
+        AssessmentQuestionDuplicateDetectionService $duplicateDetectionService
+    )
     {
-        $template = $this->persistDraft($importer);
+        $template = $this->persistDraft($importer, $duplicateDetectionService);
 
         if (! $template || ! filled($this->savedPreviewUrl)) {
             return;
@@ -315,11 +338,11 @@ TEXT),
         $signals = collect($this->detectedSignals())->keyBy('label');
 
         if ($questions > 0) {
-            $notes[] = sprintf('Laravel entendió %d pregunta(s) dentro del bloque. Ya podemos pasar a guardar y revisar la vista real.', $questions);
+            $notes[] = sprintf('Laravel entendió %d pregunta(s) dentro del contenido pegado.', $questions);
         }
 
         if ($contexts > 0) {
-            $notes[] = sprintf('Se detectó %d contexto(s). Eso deja el bloque listo para reutilizarse sin duplicarlo.', $contexts);
+            $notes[] = sprintf('Se detectó %d contexto(s). El sistema organizará internamente estas preguntas por bloque contextual.', $contexts);
         }
 
         if ($contexts > 0 && $links === 0) {
@@ -331,11 +354,21 @@ TEXT),
             $notes[] = sprintf('Se detectaron %d fórmula(s). El siguiente chequeo importante es abrir la vista web real.', $formulaCount);
         }
 
+        $exactDuplicates = (int) data_get($this->preview, 'duplicate_summary.exact_duplicates', 0);
+        if ($exactDuplicates > 0) {
+            $notes[] = sprintf('Se encontraron %d pregunta(s) que ya existen en el banco. Esas se omitirán automáticamente al guardar.', $exactDuplicates);
+        }
+
+        $similarCandidates = (int) data_get($this->preview, 'duplicate_summary.questions_with_similar_candidates', 0);
+        if ($similarCandidates > 0) {
+            $notes[] = sprintf('Hay %d pregunta(s) con parecidas sugeridas. No se bloquean, pero conviene revisarlas antes de guardar.', $similarCandidates);
+        }
+
         return $notes;
     }
 
     /**
-     * @return array<int, array{id:string, order:int, correct:string, options:int, contexts:array<int, string>}>
+     * @return array<int, array<string, mixed>>
      */
     public function questionReviewRows(): array
     {
@@ -351,6 +384,10 @@ TEXT),
                 return [
                     'id' => (string) ($question['id'] ?? 'sin-id'),
                     'order' => (int) ($question['order'] ?? $question['order_base'] ?? 0),
+                    'stem_excerpt' => \Illuminate\Support\Str::limit(
+                        \Illuminate\Support\Str::of((string) ($question['stem_mdx'] ?? ''))->replace("\n", ' ')->squish()->value(),
+                        180
+                    ),
                     'correct' => (string) ($question['correct_option_id'] ?? 'sin definir'),
                     'options' => count($question['options'] ?? []),
                     'contexts' => $links
@@ -359,13 +396,37 @@ TEXT),
                         ->filter()
                         ->values()
                         ->all(),
+                    'duplicate_status' => (string) ($question['duplicate_status'] ?? 'new'),
+                    'save_decision' => (string) ($question['save_decision'] ?? 'new'),
+                    'exact_match' => $this->decorateCandidate($question['exact_match'] ?? null),
+                    'similar_candidates' => collect((array) ($question['similar_candidates'] ?? []))
+                        ->map(fn ($candidate): array => $this->decorateCandidate($candidate))
+                        ->all(),
                 ];
             })
             ->values()
             ->all();
     }
 
-    private function persistDraft(AiQuestionDraftImportService $importer): ?\App\Models\AssessmentTemplate
+    /**
+     * @param  mixed  $candidate
+     * @return array<string, mixed>|null
+     */
+    private function decorateCandidate($candidate): ?array
+    {
+        if (! is_array($candidate) || ! filled($candidate['question_id'] ?? null)) {
+            return null;
+        }
+
+        return array_merge($candidate, [
+            'edit_url' => AssessmentQuestionResource::getUrl('edit', ['record' => (int) $candidate['question_id']], panel: 'admin'),
+        ]);
+    }
+
+    private function persistDraft(
+        AiQuestionDraftImportService $importer,
+        AssessmentQuestionDuplicateDetectionService $duplicateDetectionService
+    ): ?\App\Models\AssessmentTemplate
     {
         if (! is_array($this->preview)) {
             Notification::make()
@@ -401,14 +462,39 @@ TEXT),
 
         $title = trim((string) ($state['draft_title'] ?? ''));
         $user = auth()->user();
+        $savableDraft = $duplicateDetectionService->extractSavableDraft($this->preview);
+        $savableQuestions = count($savableDraft['questions'] ?? []);
+
+        if ($savableQuestions === 0) {
+            Notification::make()
+                ->title('No hay preguntas nuevas para guardar')
+                ->body('Todas las preguntas de este lote ya existen en el banco. Revísalas desde las coincidencias detectadas.')
+                ->warning()
+                ->send();
+
+            return null;
+        }
+
         $template = $importer->import(
-            $this->preview,
+            $savableDraft,
             $organization,
             $title !== '' ? $title : null,
             $user,
         );
 
         $this->savedPreviewUrl = route('admin.assessment_drafts.preview_web', $template);
+
+        $skippedDuplicates = (int) data_get($this->preview, 'duplicate_summary.exact_duplicates', 0);
+
+        Notification::make()
+            ->title('Preguntas guardadas en el banco')
+            ->body(
+                $skippedDuplicates > 0
+                    ? "Se guardaron {$savableQuestions} pregunta(s) nuevas y se omitieron {$skippedDuplicates} que ya existían."
+                    : "Se guardaron {$savableQuestions} pregunta(s) nuevas."
+            )
+            ->success()
+            ->send();
 
         return $template;
     }

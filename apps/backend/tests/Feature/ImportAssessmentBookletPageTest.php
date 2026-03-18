@@ -37,7 +37,7 @@ class ImportAssessmentBookletPageTest extends TestCase
         $this->actingAs($admin, 'web')
             ->get(AssessmentBlockResource::getUrl('index', panel: 'admin'))
             ->assertOk()
-            ->assertSee('Banco de preguntas', false);
+            ->assertSee('Bloques y contextos', false);
 
         $this->actingAs($admin, 'web')
             ->get(AssessmentBookletResource::getUrl('index', panel: 'admin'))
@@ -47,6 +47,11 @@ class ImportAssessmentBookletPageTest extends TestCase
         $this->actingAs($admin, 'web')
             ->get(AssessmentQuestionResource::getUrl('index', panel: 'admin'))
             ->assertOk()
-            ->assertSee('Preguntas', false);
+            ->assertSee('Banco de preguntas', false)
+            ->assertSee('Agregar pregunta', false)
+            ->assertSee('Listas para usar', false)
+            ->assertSee('Sin unidad', false)
+            ->assertDontSee('Vista rápida del banco', false)
+            ->assertDontSee('Preguntas en banco', false);
     }
 }

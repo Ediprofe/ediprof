@@ -23,15 +23,15 @@ class AssessmentBlockResource extends Resource
 
     protected static ?string $modelLabel = 'bloque contextual';
 
-    protected static ?string $pluralModelLabel = 'bloques contextuales';
+    protected static ?string $pluralModelLabel = 'bloques y contextos';
 
     protected static ?string $recordTitleAttribute = 'title';
 
     protected static string|UnitEnum|null $navigationGroup = 'Banco académico';
 
-    protected static ?string $navigationLabel = 'Banco de preguntas';
+    protected static ?string $navigationLabel = 'Bloques y contextos';
 
-    protected static ?int $navigationSort = 15;
+    protected static ?int $navigationSort = 20;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedDocumentText;
 

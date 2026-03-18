@@ -20,6 +20,8 @@ class AssessmentBookletResource extends Resource
 {
     protected static ?string $model = AssessmentBooklet::class;
 
+    protected static bool $shouldRegisterNavigation = false;
+
     protected static ?string $modelLabel = 'cuadernillo';
 
     protected static ?string $pluralModelLabel = 'cuadernillos';
